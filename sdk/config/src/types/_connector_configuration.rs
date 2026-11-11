@@ -6,11 +6,17 @@
 pub struct ConnectorConfiguration {
     /// <p>The configuration for an Azure connector.</p>
     pub azure: ::std::option::Option<crate::types::AzureConnectorConfiguration>,
+    /// <p>The configuration for a Google Cloud connector.</p>
+    pub gcp: ::std::option::Option<crate::types::GcpConnectorConfiguration>,
 }
 impl ConnectorConfiguration {
     /// <p>The configuration for an Azure connector.</p>
     pub fn azure(&self) -> ::std::option::Option<&crate::types::AzureConnectorConfiguration> {
         self.azure.as_ref()
+    }
+    /// <p>The configuration for a Google Cloud connector.</p>
+    pub fn gcp(&self) -> ::std::option::Option<&crate::types::GcpConnectorConfiguration> {
+        self.gcp.as_ref()
     }
 }
 impl ConnectorConfiguration {
@@ -25,6 +31,7 @@ impl ConnectorConfiguration {
 #[non_exhaustive]
 pub struct ConnectorConfigurationBuilder {
     pub(crate) azure: ::std::option::Option<crate::types::AzureConnectorConfiguration>,
+    pub(crate) gcp: ::std::option::Option<crate::types::GcpConnectorConfiguration>,
 }
 impl ConnectorConfigurationBuilder {
     /// <p>The configuration for an Azure connector.</p>
@@ -41,8 +48,25 @@ impl ConnectorConfigurationBuilder {
     pub fn get_azure(&self) -> &::std::option::Option<crate::types::AzureConnectorConfiguration> {
         &self.azure
     }
+    /// <p>The configuration for a Google Cloud connector.</p>
+    pub fn gcp(mut self, input: crate::types::GcpConnectorConfiguration) -> Self {
+        self.gcp = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for a Google Cloud connector.</p>
+    pub fn set_gcp(mut self, input: ::std::option::Option<crate::types::GcpConnectorConfiguration>) -> Self {
+        self.gcp = input;
+        self
+    }
+    /// <p>The configuration for a Google Cloud connector.</p>
+    pub fn get_gcp(&self) -> &::std::option::Option<crate::types::GcpConnectorConfiguration> {
+        &self.gcp
+    }
     /// Consumes the builder and constructs a [`ConnectorConfiguration`](crate::types::ConnectorConfiguration).
     pub fn build(self) -> crate::types::ConnectorConfiguration {
-        crate::types::ConnectorConfiguration { azure: self.azure }
+        crate::types::ConnectorConfiguration {
+            azure: self.azure,
+            gcp: self.gcp,
+        }
     }
 }

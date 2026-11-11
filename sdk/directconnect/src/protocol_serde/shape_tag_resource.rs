@@ -7,7 +7,7 @@ pub fn de_tag_resource_http_error(
     _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::tag_resource::TagResourceOutput, crate::operation::tag_resource::TagResourceError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -24,7 +24,7 @@ pub fn de_tag_resource_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::DirectConnectClientExceptionBuilder::default();
                 output =
-                    crate::protocol_serde::shape_direct_connect_client_exception::de_direct_connect_client_exception_json_err(_response_body, output)
+                    crate::protocol_serde::shape_direct_connect_client_exception::de_direct_connect_client_exception_cbor_err(_response_body, output)
                         .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -40,7 +40,7 @@ pub fn de_tag_resource_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::DirectConnectServerExceptionBuilder::default();
                 output =
-                    crate::protocol_serde::shape_direct_connect_server_exception::de_direct_connect_server_exception_json_err(_response_body, output)
+                    crate::protocol_serde::shape_direct_connect_server_exception::de_direct_connect_server_exception_cbor_err(_response_body, output)
                         .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -55,7 +55,7 @@ pub fn de_tag_resource_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::DuplicateTagKeysExceptionBuilder::default();
-                output = crate::protocol_serde::shape_duplicate_tag_keys_exception::de_duplicate_tag_keys_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_duplicate_tag_keys_exception::de_duplicate_tag_keys_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -70,7 +70,7 @@ pub fn de_tag_resource_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::TooManyTagsExceptionBuilder::default();
-                output = crate::protocol_serde::shape_too_many_tags_exception::de_too_many_tags_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_too_many_tags_exception::de_too_many_tags_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::tag_resource::TagResourceError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -102,9 +102,10 @@ pub fn de_tag_resource_http_response(
 pub fn ser_tag_resource_input(
     input: &crate::operation::tag_resource::TagResourceInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    let mut out = String::new();
-    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_tag_resource_input::ser_tag_resource_input_input(&mut object, input)?;
-    object.finish();
-    Ok(::aws_smithy_types::body::SdkBody::from(out))
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_tag_resource_input::ser_tag_resource_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }

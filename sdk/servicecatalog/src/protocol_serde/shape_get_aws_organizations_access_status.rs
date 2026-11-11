@@ -10,7 +10,7 @@ pub fn de_get_aws_organizations_access_status_http_error(
     crate::operation::get_aws_organizations_access_status::GetAWSOrganizationsAccessStatusError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::get_aws_organizations_access_status::GetAWSOrganizationsAccessStatusError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -27,7 +27,7 @@ pub fn de_get_aws_organizations_access_status_http_error(
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OperationNotSupportedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_operation_not_supported_exception::de_operation_not_supported_exception_json_err(
+                    output = crate::protocol_serde::shape_operation_not_supported_exception::de_operation_not_supported_exception_cbor_err(
                         _response_body,
                         output,
                     )
@@ -48,7 +48,7 @@ pub fn de_get_aws_organizations_access_status_http_error(
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     output =
-                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_cbor_err(_response_body, output)
                             .map_err(crate::operation::get_aws_organizations_access_status::GetAWSOrganizationsAccessStatusError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
@@ -84,47 +84,70 @@ pub fn de_get_aws_organizations_access_status_http_response(
 }
 
 pub fn ser_get_aws_organizations_access_status_input(
-    _input: &crate::operation::get_aws_organizations_access_status::GetAwsOrganizationsAccessStatusInput,
+    input: &crate::operation::get_aws_organizations_access_status::GetAwsOrganizationsAccessStatusInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    Ok(::aws_smithy_types::body::SdkBody::from("{}"))
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_get_aws_organizations_access_status_input::ser_get_aws_organizations_access_status_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }
 
 pub(crate) fn de_get_aws_organizations_access_status(
-    _value: &[u8],
+    value: &[u8],
     mut builder: crate::operation::get_aws_organizations_access_status::builders::GetAwsOrganizationsAccessStatusOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_aws_organizations_access_status::builders::GetAwsOrganizationsAccessStatusOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
-    let tokens = &mut tokens_owned;
+    #[allow(clippy::match_single_binding, unused_variables)]
+    fn pair(
+        mut builder: crate::operation::get_aws_organizations_access_status::builders::GetAwsOrganizationsAccessStatusOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
+    ) -> ::std::result::Result<
+        crate::operation::get_aws_organizations_access_status::builders::GetAwsOrganizationsAccessStatusOutputBuilder,
+        ::aws_smithy_cbor::decode::DeserializeError,
+    > {
+        builder = match decoder.str()?.as_ref() {
+            "AccessStatus" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_access_status(Some(decoder.string().map(|s| crate::types::AccessStatus::from(s.as_str()))?)))
+            })?,
+            _ => {
+                decoder.skip()?;
+                builder
+            }
+        };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
     #[allow(unused_variables)]
     let depth = 0u32;
-    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "AccessStatus" => {
-                    builder = builder.set_access_status(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::AccessStatus::from(u.as_ref())))
-                            .transpose()?,
-                    );
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
                 }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
-            other => {
-                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {other:?}"
-                )))
+                _ => {
+                    builder = pair(builder, decoder, depth)?;
+                }
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder, depth)?;
             }
         }
+    };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
     }
-    if tokens.next().is_some() {
-        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
+
     Ok(builder)
 }

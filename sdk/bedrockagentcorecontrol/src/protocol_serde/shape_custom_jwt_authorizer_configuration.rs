@@ -73,11 +73,23 @@ pub fn ser_custom_jwt_authorizer_configuration(
         }
         array_21.finish();
     }
-    if let Some(var_24) = &input.allowed_workload_configuration {
+    if let Some(var_24) = &input.certificate_configurations {
+        let mut array_25 = object.key("certificateConfigurations").start_array();
+        for item_26 in var_24 {
+            {
+                #[allow(unused_mut)]
+                let mut object_27 = array_25.value().start_object();
+                crate::protocol_serde::shape_certificate_configuration::ser_certificate_configuration(&mut object_27, item_26)?;
+                object_27.finish();
+            }
+        }
+        array_25.finish();
+    }
+    if let Some(var_28) = &input.allowed_workload_configuration {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("allowedWorkloadConfiguration").start_object();
-        crate::protocol_serde::shape_allowed_workload_configuration::ser_allowed_workload_configuration(&mut object_25, var_24)?;
-        object_25.finish();
+        let mut object_29 = object.key("allowedWorkloadConfiguration").start_object();
+        crate::protocol_serde::shape_allowed_workload_configuration::ser_allowed_workload_configuration(&mut object_29, var_28)?;
+        object_29.finish();
     }
     Ok(())
 }
@@ -160,6 +172,15 @@ where
                         "privateEndpointOverrides" => {
                             builder = builder.set_private_endpoint_overrides(
                                 crate::protocol_serde::shape_private_endpoint_overrides::de_private_endpoint_overrides(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "certificateConfigurations" => {
+                            builder = builder.set_certificate_configurations(
+                                crate::protocol_serde::shape_certificate_configuration_list::de_certificate_configuration_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "allowedWorkloadConfiguration" => {

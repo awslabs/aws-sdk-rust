@@ -181,6 +181,8 @@ pub use crate::types::_conformance_pack_input_parameter::ConformancePackInputPar
 
 pub use crate::types::_azure_connector_configuration::AzureConnectorConfigurationBuilder;
 
+pub use crate::types::_gcp_connector_configuration::GcpConnectorConfigurationBuilder;
+
 pub use crate::types::_config_snapshot_delivery_properties::ConfigSnapshotDeliveryPropertiesBuilder;
 
 pub use crate::types::_evaluation::EvaluationBuilder;

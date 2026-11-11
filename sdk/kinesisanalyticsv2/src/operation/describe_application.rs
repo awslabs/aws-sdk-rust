@@ -326,7 +326,7 @@ pub enum DescribeApplicationError {
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
     /// <p>The request JSON is not valid for the operation.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
-    /// <p>Specified application can't be found.</p>
+    /// <p>The specified application, snapshot, or snapshot operation can't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

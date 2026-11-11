@@ -109,8 +109,28 @@ pub(crate) fn reflens_list_principals_for_portfolio_output_output_next_page_toke
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_provisioned_product_plans_output_output_next_page_token(
+    input: &crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_page_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_provisioning_artifacts_for_service_action_output_output_next_page_token(
     input: &crate::operation::list_provisioning_artifacts_for_service_action::ListProvisioningArtifactsForServiceActionOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_page_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_record_history_output_output_next_page_token(
+    input: &crate::operation::list_record_history::ListRecordHistoryOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_page_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -149,10 +169,30 @@ pub(crate) fn reflens_list_service_actions_for_provisioning_artifact_output_outp
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_stack_instances_for_provisioned_product_output_output_next_page_token(
+    input: &crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_page_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_tag_options_output_output_page_token(
     input: &crate::operation::list_tag_options::ListTagOptionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.page_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_scan_provisioned_products_output_output_next_page_token(
+    input: &crate::operation::scan_provisioned_products::ScanProvisionedProductsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_page_token {
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
@@ -186,5 +226,33 @@ pub(crate) fn reflens_search_provisioned_products_output_output_next_page_token(
         ::std::option::Option::None => return ::std::option::Option::None,
         ::std::option::Option::Some(t) => t,
     };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_provisioned_product_plans_output_output_provisioned_product_plans(
+    input: crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedProductPlanSummary>> {
+    let input = input.provisioned_product_plans?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_record_history_output_output_record_details(
+    input: crate::operation::list_record_history::ListRecordHistoryOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RecordDetail>> {
+    let input = input.record_details?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_stack_instances_for_provisioned_product_output_output_stack_instances(
+    input: crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::StackInstance>> {
+    let input = input.stack_instances?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_scan_provisioned_products_output_output_provisioned_products(
+    input: crate::operation::scan_provisioned_products::ScanProvisionedProductsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedProductDetail>> {
+    let input = input.provisioned_products?;
     ::std::option::Option::Some(input)
 }

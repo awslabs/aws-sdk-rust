@@ -12,7 +12,13 @@ pub struct ConfigurationRecorderSummary {
     pub service_principal: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_ConfigurationItem.html">ConfigurationItems</a> in scope for the configuration recorder are recorded for free (<code>INTERNAL</code>) or if you are charged a service fee for recording (<code>PAID</code>).</p>
     pub recording_scope: crate::types::RecordingScope,
-    /// <p>For service-linked configuration recorders that record resources from a third-party cloud service provider, indicates the cloud service provider. Currently, <code>AZURE</code> is supported.</p>
+    /// <p>For service-linked configuration recorders that record resources from a third-party cloud service provider, indicates the cloud service provider. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AZURE</code> – The recorder records resources from Microsoft Azure</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – The recorder records resources from Google Cloud</p></li>
+    /// </ul>
     pub provider: ::std::option::Option<crate::types::Provider>,
 }
 impl ConfigurationRecorderSummary {
@@ -34,7 +40,13 @@ impl ConfigurationRecorderSummary {
     pub fn recording_scope(&self) -> &crate::types::RecordingScope {
         &self.recording_scope
     }
-    /// <p>For service-linked configuration recorders that record resources from a third-party cloud service provider, indicates the cloud service provider. Currently, <code>AZURE</code> is supported.</p>
+    /// <p>For service-linked configuration recorders that record resources from a third-party cloud service provider, indicates the cloud service provider. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AZURE</code> – The recorder records resources from Microsoft Azure</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – The recorder records resources from Google Cloud</p></li>
+    /// </ul>
     pub fn provider(&self) -> ::std::option::Option<&crate::types::Provider> {
         self.provider.as_ref()
     }
@@ -116,17 +128,35 @@ impl ConfigurationRecorderSummaryBuilder {
     pub fn get_recording_scope(&self) -> &::std::option::Option<crate::types::RecordingScope> {
         &self.recording_scope
     }
-    /// <p>For service-linked configuration recorders that record resources from a third-party cloud service provider, indicates the cloud service provider. Currently, <code>AZURE</code> is supported.</p>
+    /// <p>For service-linked configuration recorders that record resources from a third-party cloud service provider, indicates the cloud service provider. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AZURE</code> – The recorder records resources from Microsoft Azure</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – The recorder records resources from Google Cloud</p></li>
+    /// </ul>
     pub fn provider(mut self, input: crate::types::Provider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
     }
-    /// <p>For service-linked configuration recorders that record resources from a third-party cloud service provider, indicates the cloud service provider. Currently, <code>AZURE</code> is supported.</p>
+    /// <p>For service-linked configuration recorders that record resources from a third-party cloud service provider, indicates the cloud service provider. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AZURE</code> – The recorder records resources from Microsoft Azure</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – The recorder records resources from Google Cloud</p></li>
+    /// </ul>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::Provider>) -> Self {
         self.provider = input;
         self
     }
-    /// <p>For service-linked configuration recorders that record resources from a third-party cloud service provider, indicates the cloud service provider. Currently, <code>AZURE</code> is supported.</p>
+    /// <p>For service-linked configuration recorders that record resources from a third-party cloud service provider, indicates the cloud service provider. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AZURE</code> – The recorder records resources from Microsoft Azure</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – The recorder records resources from Google Cloud</p></li>
+    /// </ul>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::Provider> {
         &self.provider
     }

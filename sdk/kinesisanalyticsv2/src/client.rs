@@ -154,6 +154,8 @@ mod create_application_presigned_url;
 
 mod create_application_snapshot;
 
+mod create_snapshot;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -195,6 +197,8 @@ mod delete_application_snapshot;
 
 mod delete_application_vpc_configuration;
 
+mod delete_snapshot;
+
 mod describe_application;
 
 mod describe_application_operation;
@@ -203,7 +207,15 @@ mod describe_application_snapshot;
 
 mod describe_application_version;
 
+mod describe_snapshot;
+
+mod describe_snapshot_operation;
+
 mod discover_input_schema;
+
+mod export_snapshot;
+
+mod import_snapshot;
 
 mod list_application_operations;
 
@@ -212,6 +224,10 @@ mod list_application_snapshots;
 mod list_application_versions;
 
 mod list_applications;
+
+mod list_snapshot_operations;
+
+mod list_snapshots;
 
 mod list_tags_for_resource;
 

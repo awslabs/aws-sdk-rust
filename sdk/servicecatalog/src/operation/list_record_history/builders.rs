@@ -108,6 +108,12 @@ impl ListRecordHistoryFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_record_history::paginator::ListRecordHistoryPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::list_record_history::paginator::ListRecordHistoryPaginator {
+        crate::operation::list_record_history::paginator::ListRecordHistoryPaginator::new(self.handle, self.inner)
+    }
     /// <p>The language code.</p>
     /// <ul>
     /// <li>

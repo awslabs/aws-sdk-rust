@@ -12,16 +12,112 @@
 /// ```text
 /// # let evaluationformlanguagecode = unimplemented!();
 /// match evaluationformlanguagecode {
+///     EvaluationFormLanguageCode::AfZa => { /* ... */ },
+///     EvaluationFormLanguageCode::AmEt => { /* ... */ },
+///     EvaluationFormLanguageCode::ArAe => { /* ... */ },
+///     EvaluationFormLanguageCode::ArSa => { /* ... */ },
+///     EvaluationFormLanguageCode::BeBy => { /* ... */ },
+///     EvaluationFormLanguageCode::BgBg => { /* ... */ },
+///     EvaluationFormLanguageCode::BnBd => { /* ... */ },
+///     EvaluationFormLanguageCode::BsBa => { /* ... */ },
+///     EvaluationFormLanguageCode::CaEs => { /* ... */ },
+///     EvaluationFormLanguageCode::CkbIq => { /* ... */ },
+///     EvaluationFormLanguageCode::CkbIr => { /* ... */ },
+///     EvaluationFormLanguageCode::CsCz => { /* ... */ },
+///     EvaluationFormLanguageCode::CyGb => { /* ... */ },
+///     EvaluationFormLanguageCode::DaDk => { /* ... */ },
+///     EvaluationFormLanguageCode::DeAt => { /* ... */ },
+///     EvaluationFormLanguageCode::DeCh => { /* ... */ },
 ///     EvaluationFormLanguageCode::DeDe => { /* ... */ },
+///     EvaluationFormLanguageCode::ElGr => { /* ... */ },
+///     EvaluationFormLanguageCode::EnAb => { /* ... */ },
+///     EvaluationFormLanguageCode::EnAu => { /* ... */ },
+///     EvaluationFormLanguageCode::EnGb => { /* ... */ },
+///     EvaluationFormLanguageCode::EnIe => { /* ... */ },
+///     EvaluationFormLanguageCode::EnIn => { /* ... */ },
+///     EvaluationFormLanguageCode::EnNz => { /* ... */ },
+///     EvaluationFormLanguageCode::EnSg => { /* ... */ },
 ///     EvaluationFormLanguageCode::EnUs => { /* ... */ },
+///     EvaluationFormLanguageCode::EnWl => { /* ... */ },
+///     EvaluationFormLanguageCode::EnZa => { /* ... */ },
 ///     EvaluationFormLanguageCode::EsEs => { /* ... */ },
+///     EvaluationFormLanguageCode::EsMx => { /* ... */ },
+///     EvaluationFormLanguageCode::EsUs => { /* ... */ },
+///     EvaluationFormLanguageCode::EtEe => { /* ... */ },
+///     EvaluationFormLanguageCode::EuEs => { /* ... */ },
+///     EvaluationFormLanguageCode::FaAf => { /* ... */ },
+///     EvaluationFormLanguageCode::FaIr => { /* ... */ },
+///     EvaluationFormLanguageCode::FiFi => { /* ... */ },
+///     EvaluationFormLanguageCode::FrBe => { /* ... */ },
+///     EvaluationFormLanguageCode::FrCa => { /* ... */ },
 ///     EvaluationFormLanguageCode::FrFr => { /* ... */ },
+///     EvaluationFormLanguageCode::GaIe => { /* ... */ },
+///     EvaluationFormLanguageCode::GlEs => { /* ... */ },
+///     EvaluationFormLanguageCode::GuIn => { /* ... */ },
+///     EvaluationFormLanguageCode::HeIl => { /* ... */ },
+///     EvaluationFormLanguageCode::HiIn => { /* ... */ },
+///     EvaluationFormLanguageCode::Hmn => { /* ... */ },
+///     EvaluationFormLanguageCode::HrHr => { /* ... */ },
+///     EvaluationFormLanguageCode::HtHt => { /* ... */ },
+///     EvaluationFormLanguageCode::HuHu => { /* ... */ },
+///     EvaluationFormLanguageCode::HyAm => { /* ... */ },
+///     EvaluationFormLanguageCode::IdId => { /* ... */ },
+///     EvaluationFormLanguageCode::IsIs => { /* ... */ },
 ///     EvaluationFormLanguageCode::ItIt => { /* ... */ },
 ///     EvaluationFormLanguageCode::JaJp => { /* ... */ },
+///     EvaluationFormLanguageCode::JvId => { /* ... */ },
+///     EvaluationFormLanguageCode::KaGe => { /* ... */ },
+///     EvaluationFormLanguageCode::KkKz => { /* ... */ },
+///     EvaluationFormLanguageCode::KmKh => { /* ... */ },
+///     EvaluationFormLanguageCode::KnIn => { /* ... */ },
 ///     EvaluationFormLanguageCode::KoKr => { /* ... */ },
+///     EvaluationFormLanguageCode::LgUg => { /* ... */ },
+///     EvaluationFormLanguageCode::LoLa => { /* ... */ },
+///     EvaluationFormLanguageCode::LtLt => { /* ... */ },
+///     EvaluationFormLanguageCode::LvLv => { /* ... */ },
+///     EvaluationFormLanguageCode::MkMk => { /* ... */ },
+///     EvaluationFormLanguageCode::MlIn => { /* ... */ },
+///     EvaluationFormLanguageCode::MrIn => { /* ... */ },
 ///     EvaluationFormLanguageCode::MsMy => { /* ... */ },
+///     EvaluationFormLanguageCode::MyMm => { /* ... */ },
+///     EvaluationFormLanguageCode::NeNp => { /* ... */ },
+///     EvaluationFormLanguageCode::NlBe => { /* ... */ },
+///     EvaluationFormLanguageCode::NlNl => { /* ... */ },
+///     EvaluationFormLanguageCode::NoNo => { /* ... */ },
+///     EvaluationFormLanguageCode::OrIn => { /* ... */ },
+///     EvaluationFormLanguageCode::PaIn => { /* ... */ },
+///     EvaluationFormLanguageCode::PlPl => { /* ... */ },
+///     EvaluationFormLanguageCode::PsAf => { /* ... */ },
 ///     EvaluationFormLanguageCode::PtBr => { /* ... */ },
+///     EvaluationFormLanguageCode::PtPt => { /* ... */ },
+///     EvaluationFormLanguageCode::RoRo => { /* ... */ },
+///     EvaluationFormLanguageCode::RuRu => { /* ... */ },
+///     EvaluationFormLanguageCode::SiLk => { /* ... */ },
+///     EvaluationFormLanguageCode::SkSk => { /* ... */ },
+///     EvaluationFormLanguageCode::SlSi => { /* ... */ },
+///     EvaluationFormLanguageCode::SoSo => { /* ... */ },
+///     EvaluationFormLanguageCode::SqAl => { /* ... */ },
+///     EvaluationFormLanguageCode::SrRs => { /* ... */ },
+///     EvaluationFormLanguageCode::SuId => { /* ... */ },
+///     EvaluationFormLanguageCode::SvSe => { /* ... */ },
+///     EvaluationFormLanguageCode::SwBi => { /* ... */ },
+///     EvaluationFormLanguageCode::SwKe => { /* ... */ },
+///     EvaluationFormLanguageCode::SwRw => { /* ... */ },
+///     EvaluationFormLanguageCode::SwTz => { /* ... */ },
+///     EvaluationFormLanguageCode::SwUg => { /* ... */ },
+///     EvaluationFormLanguageCode::TaIn => { /* ... */ },
+///     EvaluationFormLanguageCode::TeIn => { /* ... */ },
+///     EvaluationFormLanguageCode::ThTh => { /* ... */ },
+///     EvaluationFormLanguageCode::TlPh => { /* ... */ },
+///     EvaluationFormLanguageCode::TrTr => { /* ... */ },
+///     EvaluationFormLanguageCode::UkUa => { /* ... */ },
+///     EvaluationFormLanguageCode::UzUz => { /* ... */ },
+///     EvaluationFormLanguageCode::ViVn => { /* ... */ },
+///     EvaluationFormLanguageCode::XhZa => { /* ... */ },
+///     EvaluationFormLanguageCode::YueHk => { /* ... */ },
 ///     EvaluationFormLanguageCode::ZhCn => { /* ... */ },
+///     EvaluationFormLanguageCode::ZhTw => { /* ... */ },
+///     EvaluationFormLanguageCode::ZuZa => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -51,25 +147,217 @@
 )]
 pub enum EvaluationFormLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
+    AfZa,
+    #[allow(missing_docs)] // documentation missing in model
+    AmEt,
+    #[allow(missing_docs)] // documentation missing in model
+    ArAe,
+    #[allow(missing_docs)] // documentation missing in model
+    ArSa,
+    #[allow(missing_docs)] // documentation missing in model
+    BeBy,
+    #[allow(missing_docs)] // documentation missing in model
+    BgBg,
+    #[allow(missing_docs)] // documentation missing in model
+    BnBd,
+    #[allow(missing_docs)] // documentation missing in model
+    BsBa,
+    #[allow(missing_docs)] // documentation missing in model
+    CaEs,
+    #[allow(missing_docs)] // documentation missing in model
+    CkbIq,
+    #[allow(missing_docs)] // documentation missing in model
+    CkbIr,
+    #[allow(missing_docs)] // documentation missing in model
+    CsCz,
+    #[allow(missing_docs)] // documentation missing in model
+    CyGb,
+    #[allow(missing_docs)] // documentation missing in model
+    DaDk,
+    #[allow(missing_docs)] // documentation missing in model
+    DeAt,
+    #[allow(missing_docs)] // documentation missing in model
+    DeCh,
+    #[allow(missing_docs)] // documentation missing in model
     DeDe,
+    #[allow(missing_docs)] // documentation missing in model
+    ElGr,
+    #[allow(missing_docs)] // documentation missing in model
+    EnAb,
+    #[allow(missing_docs)] // documentation missing in model
+    EnAu,
+    #[allow(missing_docs)] // documentation missing in model
+    EnGb,
+    #[allow(missing_docs)] // documentation missing in model
+    EnIe,
+    #[allow(missing_docs)] // documentation missing in model
+    EnIn,
+    #[allow(missing_docs)] // documentation missing in model
+    EnNz,
+    #[allow(missing_docs)] // documentation missing in model
+    EnSg,
     #[allow(missing_docs)] // documentation missing in model
     EnUs,
     #[allow(missing_docs)] // documentation missing in model
+    EnWl,
+    #[allow(missing_docs)] // documentation missing in model
+    EnZa,
+    #[allow(missing_docs)] // documentation missing in model
     EsEs,
     #[allow(missing_docs)] // documentation missing in model
+    EsMx,
+    #[allow(missing_docs)] // documentation missing in model
+    EsUs,
+    #[allow(missing_docs)] // documentation missing in model
+    EtEe,
+    #[allow(missing_docs)] // documentation missing in model
+    EuEs,
+    #[allow(missing_docs)] // documentation missing in model
+    FaAf,
+    #[allow(missing_docs)] // documentation missing in model
+    FaIr,
+    #[allow(missing_docs)] // documentation missing in model
+    FiFi,
+    #[allow(missing_docs)] // documentation missing in model
+    FrBe,
+    #[allow(missing_docs)] // documentation missing in model
+    FrCa,
+    #[allow(missing_docs)] // documentation missing in model
     FrFr,
+    #[allow(missing_docs)] // documentation missing in model
+    GaIe,
+    #[allow(missing_docs)] // documentation missing in model
+    GlEs,
+    #[allow(missing_docs)] // documentation missing in model
+    GuIn,
+    #[allow(missing_docs)] // documentation missing in model
+    HeIl,
+    #[allow(missing_docs)] // documentation missing in model
+    HiIn,
+    #[allow(missing_docs)] // documentation missing in model
+    Hmn,
+    #[allow(missing_docs)] // documentation missing in model
+    HrHr,
+    #[allow(missing_docs)] // documentation missing in model
+    HtHt,
+    #[allow(missing_docs)] // documentation missing in model
+    HuHu,
+    #[allow(missing_docs)] // documentation missing in model
+    HyAm,
+    #[allow(missing_docs)] // documentation missing in model
+    IdId,
+    #[allow(missing_docs)] // documentation missing in model
+    IsIs,
     #[allow(missing_docs)] // documentation missing in model
     ItIt,
     #[allow(missing_docs)] // documentation missing in model
     JaJp,
     #[allow(missing_docs)] // documentation missing in model
+    JvId,
+    #[allow(missing_docs)] // documentation missing in model
+    KaGe,
+    #[allow(missing_docs)] // documentation missing in model
+    KkKz,
+    #[allow(missing_docs)] // documentation missing in model
+    KmKh,
+    #[allow(missing_docs)] // documentation missing in model
+    KnIn,
+    #[allow(missing_docs)] // documentation missing in model
     KoKr,
+    #[allow(missing_docs)] // documentation missing in model
+    LgUg,
+    #[allow(missing_docs)] // documentation missing in model
+    LoLa,
+    #[allow(missing_docs)] // documentation missing in model
+    LtLt,
+    #[allow(missing_docs)] // documentation missing in model
+    LvLv,
+    #[allow(missing_docs)] // documentation missing in model
+    MkMk,
+    #[allow(missing_docs)] // documentation missing in model
+    MlIn,
+    #[allow(missing_docs)] // documentation missing in model
+    MrIn,
     #[allow(missing_docs)] // documentation missing in model
     MsMy,
     #[allow(missing_docs)] // documentation missing in model
+    MyMm,
+    #[allow(missing_docs)] // documentation missing in model
+    NeNp,
+    #[allow(missing_docs)] // documentation missing in model
+    NlBe,
+    #[allow(missing_docs)] // documentation missing in model
+    NlNl,
+    #[allow(missing_docs)] // documentation missing in model
+    NoNo,
+    #[allow(missing_docs)] // documentation missing in model
+    OrIn,
+    #[allow(missing_docs)] // documentation missing in model
+    PaIn,
+    #[allow(missing_docs)] // documentation missing in model
+    PlPl,
+    #[allow(missing_docs)] // documentation missing in model
+    PsAf,
+    #[allow(missing_docs)] // documentation missing in model
     PtBr,
     #[allow(missing_docs)] // documentation missing in model
+    PtPt,
+    #[allow(missing_docs)] // documentation missing in model
+    RoRo,
+    #[allow(missing_docs)] // documentation missing in model
+    RuRu,
+    #[allow(missing_docs)] // documentation missing in model
+    SiLk,
+    #[allow(missing_docs)] // documentation missing in model
+    SkSk,
+    #[allow(missing_docs)] // documentation missing in model
+    SlSi,
+    #[allow(missing_docs)] // documentation missing in model
+    SoSo,
+    #[allow(missing_docs)] // documentation missing in model
+    SqAl,
+    #[allow(missing_docs)] // documentation missing in model
+    SrRs,
+    #[allow(missing_docs)] // documentation missing in model
+    SuId,
+    #[allow(missing_docs)] // documentation missing in model
+    SvSe,
+    #[allow(missing_docs)] // documentation missing in model
+    SwBi,
+    #[allow(missing_docs)] // documentation missing in model
+    SwKe,
+    #[allow(missing_docs)] // documentation missing in model
+    SwRw,
+    #[allow(missing_docs)] // documentation missing in model
+    SwTz,
+    #[allow(missing_docs)] // documentation missing in model
+    SwUg,
+    #[allow(missing_docs)] // documentation missing in model
+    TaIn,
+    #[allow(missing_docs)] // documentation missing in model
+    TeIn,
+    #[allow(missing_docs)] // documentation missing in model
+    ThTh,
+    #[allow(missing_docs)] // documentation missing in model
+    TlPh,
+    #[allow(missing_docs)] // documentation missing in model
+    TrTr,
+    #[allow(missing_docs)] // documentation missing in model
+    UkUa,
+    #[allow(missing_docs)] // documentation missing in model
+    UzUz,
+    #[allow(missing_docs)] // documentation missing in model
+    ViVn,
+    #[allow(missing_docs)] // documentation missing in model
+    XhZa,
+    #[allow(missing_docs)] // documentation missing in model
+    YueHk,
+    #[allow(missing_docs)] // documentation missing in model
     ZhCn,
+    #[allow(missing_docs)] // documentation missing in model
+    ZhTw,
+    #[allow(missing_docs)] // documentation missing in model
+    ZuZa,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -77,16 +365,112 @@ pub enum EvaluationFormLanguageCode {
 impl ::std::convert::From<&str> for EvaluationFormLanguageCode {
     fn from(s: &str) -> Self {
         match s {
+            "af-ZA" => EvaluationFormLanguageCode::AfZa,
+            "am-ET" => EvaluationFormLanguageCode::AmEt,
+            "ar-AE" => EvaluationFormLanguageCode::ArAe,
+            "ar-SA" => EvaluationFormLanguageCode::ArSa,
+            "be-BY" => EvaluationFormLanguageCode::BeBy,
+            "bg-BG" => EvaluationFormLanguageCode::BgBg,
+            "bn-BD" => EvaluationFormLanguageCode::BnBd,
+            "bs-BA" => EvaluationFormLanguageCode::BsBa,
+            "ca-ES" => EvaluationFormLanguageCode::CaEs,
+            "ckb-IQ" => EvaluationFormLanguageCode::CkbIq,
+            "ckb-IR" => EvaluationFormLanguageCode::CkbIr,
+            "cs-CZ" => EvaluationFormLanguageCode::CsCz,
+            "cy-GB" => EvaluationFormLanguageCode::CyGb,
+            "da-DK" => EvaluationFormLanguageCode::DaDk,
+            "de-AT" => EvaluationFormLanguageCode::DeAt,
+            "de-CH" => EvaluationFormLanguageCode::DeCh,
             "de-DE" => EvaluationFormLanguageCode::DeDe,
+            "el-GR" => EvaluationFormLanguageCode::ElGr,
+            "en-AB" => EvaluationFormLanguageCode::EnAb,
+            "en-AU" => EvaluationFormLanguageCode::EnAu,
+            "en-GB" => EvaluationFormLanguageCode::EnGb,
+            "en-IE" => EvaluationFormLanguageCode::EnIe,
+            "en-IN" => EvaluationFormLanguageCode::EnIn,
+            "en-NZ" => EvaluationFormLanguageCode::EnNz,
+            "en-SG" => EvaluationFormLanguageCode::EnSg,
             "en-US" => EvaluationFormLanguageCode::EnUs,
+            "en-WL" => EvaluationFormLanguageCode::EnWl,
+            "en-ZA" => EvaluationFormLanguageCode::EnZa,
             "es-ES" => EvaluationFormLanguageCode::EsEs,
+            "es-MX" => EvaluationFormLanguageCode::EsMx,
+            "es-US" => EvaluationFormLanguageCode::EsUs,
+            "et-EE" => EvaluationFormLanguageCode::EtEe,
+            "eu-ES" => EvaluationFormLanguageCode::EuEs,
+            "fa-AF" => EvaluationFormLanguageCode::FaAf,
+            "fa-IR" => EvaluationFormLanguageCode::FaIr,
+            "fi-FI" => EvaluationFormLanguageCode::FiFi,
+            "fr-BE" => EvaluationFormLanguageCode::FrBe,
+            "fr-CA" => EvaluationFormLanguageCode::FrCa,
             "fr-FR" => EvaluationFormLanguageCode::FrFr,
+            "ga-IE" => EvaluationFormLanguageCode::GaIe,
+            "gl-ES" => EvaluationFormLanguageCode::GlEs,
+            "gu-IN" => EvaluationFormLanguageCode::GuIn,
+            "he-IL" => EvaluationFormLanguageCode::HeIl,
+            "hi-IN" => EvaluationFormLanguageCode::HiIn,
+            "hmn" => EvaluationFormLanguageCode::Hmn,
+            "hr-HR" => EvaluationFormLanguageCode::HrHr,
+            "ht-HT" => EvaluationFormLanguageCode::HtHt,
+            "hu-HU" => EvaluationFormLanguageCode::HuHu,
+            "hy-AM" => EvaluationFormLanguageCode::HyAm,
+            "id-ID" => EvaluationFormLanguageCode::IdId,
+            "is-IS" => EvaluationFormLanguageCode::IsIs,
             "it-IT" => EvaluationFormLanguageCode::ItIt,
             "ja-JP" => EvaluationFormLanguageCode::JaJp,
+            "jv-ID" => EvaluationFormLanguageCode::JvId,
+            "ka-GE" => EvaluationFormLanguageCode::KaGe,
+            "kk-KZ" => EvaluationFormLanguageCode::KkKz,
+            "km-KH" => EvaluationFormLanguageCode::KmKh,
+            "kn-IN" => EvaluationFormLanguageCode::KnIn,
             "ko-KR" => EvaluationFormLanguageCode::KoKr,
+            "lg-UG" => EvaluationFormLanguageCode::LgUg,
+            "lo-LA" => EvaluationFormLanguageCode::LoLa,
+            "lt-LT" => EvaluationFormLanguageCode::LtLt,
+            "lv-LV" => EvaluationFormLanguageCode::LvLv,
+            "mk-MK" => EvaluationFormLanguageCode::MkMk,
+            "ml-IN" => EvaluationFormLanguageCode::MlIn,
+            "mr-IN" => EvaluationFormLanguageCode::MrIn,
             "ms-MY" => EvaluationFormLanguageCode::MsMy,
+            "my-MM" => EvaluationFormLanguageCode::MyMm,
+            "ne-NP" => EvaluationFormLanguageCode::NeNp,
+            "nl-BE" => EvaluationFormLanguageCode::NlBe,
+            "nl-NL" => EvaluationFormLanguageCode::NlNl,
+            "no-NO" => EvaluationFormLanguageCode::NoNo,
+            "or-IN" => EvaluationFormLanguageCode::OrIn,
+            "pa-IN" => EvaluationFormLanguageCode::PaIn,
+            "pl-PL" => EvaluationFormLanguageCode::PlPl,
+            "ps-AF" => EvaluationFormLanguageCode::PsAf,
             "pt-BR" => EvaluationFormLanguageCode::PtBr,
+            "pt-PT" => EvaluationFormLanguageCode::PtPt,
+            "ro-RO" => EvaluationFormLanguageCode::RoRo,
+            "ru-RU" => EvaluationFormLanguageCode::RuRu,
+            "si-LK" => EvaluationFormLanguageCode::SiLk,
+            "sk-SK" => EvaluationFormLanguageCode::SkSk,
+            "sl-SI" => EvaluationFormLanguageCode::SlSi,
+            "so-SO" => EvaluationFormLanguageCode::SoSo,
+            "sq-AL" => EvaluationFormLanguageCode::SqAl,
+            "sr-RS" => EvaluationFormLanguageCode::SrRs,
+            "su-ID" => EvaluationFormLanguageCode::SuId,
+            "sv-SE" => EvaluationFormLanguageCode::SvSe,
+            "sw-BI" => EvaluationFormLanguageCode::SwBi,
+            "sw-KE" => EvaluationFormLanguageCode::SwKe,
+            "sw-RW" => EvaluationFormLanguageCode::SwRw,
+            "sw-TZ" => EvaluationFormLanguageCode::SwTz,
+            "sw-UG" => EvaluationFormLanguageCode::SwUg,
+            "ta-IN" => EvaluationFormLanguageCode::TaIn,
+            "te-IN" => EvaluationFormLanguageCode::TeIn,
+            "th-TH" => EvaluationFormLanguageCode::ThTh,
+            "tl-PH" => EvaluationFormLanguageCode::TlPh,
+            "tr-TR" => EvaluationFormLanguageCode::TrTr,
+            "uk-UA" => EvaluationFormLanguageCode::UkUa,
+            "uz-UZ" => EvaluationFormLanguageCode::UzUz,
+            "vi-VN" => EvaluationFormLanguageCode::ViVn,
+            "xh-ZA" => EvaluationFormLanguageCode::XhZa,
+            "yue-HK" => EvaluationFormLanguageCode::YueHk,
             "zh-CN" => EvaluationFormLanguageCode::ZhCn,
+            "zh-TW" => EvaluationFormLanguageCode::ZhTw,
+            "zu-ZA" => EvaluationFormLanguageCode::ZuZa,
             other => EvaluationFormLanguageCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -102,22 +486,127 @@ impl EvaluationFormLanguageCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EvaluationFormLanguageCode::AfZa => "af-ZA",
+            EvaluationFormLanguageCode::AmEt => "am-ET",
+            EvaluationFormLanguageCode::ArAe => "ar-AE",
+            EvaluationFormLanguageCode::ArSa => "ar-SA",
+            EvaluationFormLanguageCode::BeBy => "be-BY",
+            EvaluationFormLanguageCode::BgBg => "bg-BG",
+            EvaluationFormLanguageCode::BnBd => "bn-BD",
+            EvaluationFormLanguageCode::BsBa => "bs-BA",
+            EvaluationFormLanguageCode::CaEs => "ca-ES",
+            EvaluationFormLanguageCode::CkbIq => "ckb-IQ",
+            EvaluationFormLanguageCode::CkbIr => "ckb-IR",
+            EvaluationFormLanguageCode::CsCz => "cs-CZ",
+            EvaluationFormLanguageCode::CyGb => "cy-GB",
+            EvaluationFormLanguageCode::DaDk => "da-DK",
+            EvaluationFormLanguageCode::DeAt => "de-AT",
+            EvaluationFormLanguageCode::DeCh => "de-CH",
             EvaluationFormLanguageCode::DeDe => "de-DE",
+            EvaluationFormLanguageCode::ElGr => "el-GR",
+            EvaluationFormLanguageCode::EnAb => "en-AB",
+            EvaluationFormLanguageCode::EnAu => "en-AU",
+            EvaluationFormLanguageCode::EnGb => "en-GB",
+            EvaluationFormLanguageCode::EnIe => "en-IE",
+            EvaluationFormLanguageCode::EnIn => "en-IN",
+            EvaluationFormLanguageCode::EnNz => "en-NZ",
+            EvaluationFormLanguageCode::EnSg => "en-SG",
             EvaluationFormLanguageCode::EnUs => "en-US",
+            EvaluationFormLanguageCode::EnWl => "en-WL",
+            EvaluationFormLanguageCode::EnZa => "en-ZA",
             EvaluationFormLanguageCode::EsEs => "es-ES",
+            EvaluationFormLanguageCode::EsMx => "es-MX",
+            EvaluationFormLanguageCode::EsUs => "es-US",
+            EvaluationFormLanguageCode::EtEe => "et-EE",
+            EvaluationFormLanguageCode::EuEs => "eu-ES",
+            EvaluationFormLanguageCode::FaAf => "fa-AF",
+            EvaluationFormLanguageCode::FaIr => "fa-IR",
+            EvaluationFormLanguageCode::FiFi => "fi-FI",
+            EvaluationFormLanguageCode::FrBe => "fr-BE",
+            EvaluationFormLanguageCode::FrCa => "fr-CA",
             EvaluationFormLanguageCode::FrFr => "fr-FR",
+            EvaluationFormLanguageCode::GaIe => "ga-IE",
+            EvaluationFormLanguageCode::GlEs => "gl-ES",
+            EvaluationFormLanguageCode::GuIn => "gu-IN",
+            EvaluationFormLanguageCode::HeIl => "he-IL",
+            EvaluationFormLanguageCode::HiIn => "hi-IN",
+            EvaluationFormLanguageCode::Hmn => "hmn",
+            EvaluationFormLanguageCode::HrHr => "hr-HR",
+            EvaluationFormLanguageCode::HtHt => "ht-HT",
+            EvaluationFormLanguageCode::HuHu => "hu-HU",
+            EvaluationFormLanguageCode::HyAm => "hy-AM",
+            EvaluationFormLanguageCode::IdId => "id-ID",
+            EvaluationFormLanguageCode::IsIs => "is-IS",
             EvaluationFormLanguageCode::ItIt => "it-IT",
             EvaluationFormLanguageCode::JaJp => "ja-JP",
+            EvaluationFormLanguageCode::JvId => "jv-ID",
+            EvaluationFormLanguageCode::KaGe => "ka-GE",
+            EvaluationFormLanguageCode::KkKz => "kk-KZ",
+            EvaluationFormLanguageCode::KmKh => "km-KH",
+            EvaluationFormLanguageCode::KnIn => "kn-IN",
             EvaluationFormLanguageCode::KoKr => "ko-KR",
+            EvaluationFormLanguageCode::LgUg => "lg-UG",
+            EvaluationFormLanguageCode::LoLa => "lo-LA",
+            EvaluationFormLanguageCode::LtLt => "lt-LT",
+            EvaluationFormLanguageCode::LvLv => "lv-LV",
+            EvaluationFormLanguageCode::MkMk => "mk-MK",
+            EvaluationFormLanguageCode::MlIn => "ml-IN",
+            EvaluationFormLanguageCode::MrIn => "mr-IN",
             EvaluationFormLanguageCode::MsMy => "ms-MY",
+            EvaluationFormLanguageCode::MyMm => "my-MM",
+            EvaluationFormLanguageCode::NeNp => "ne-NP",
+            EvaluationFormLanguageCode::NlBe => "nl-BE",
+            EvaluationFormLanguageCode::NlNl => "nl-NL",
+            EvaluationFormLanguageCode::NoNo => "no-NO",
+            EvaluationFormLanguageCode::OrIn => "or-IN",
+            EvaluationFormLanguageCode::PaIn => "pa-IN",
+            EvaluationFormLanguageCode::PlPl => "pl-PL",
+            EvaluationFormLanguageCode::PsAf => "ps-AF",
             EvaluationFormLanguageCode::PtBr => "pt-BR",
+            EvaluationFormLanguageCode::PtPt => "pt-PT",
+            EvaluationFormLanguageCode::RoRo => "ro-RO",
+            EvaluationFormLanguageCode::RuRu => "ru-RU",
+            EvaluationFormLanguageCode::SiLk => "si-LK",
+            EvaluationFormLanguageCode::SkSk => "sk-SK",
+            EvaluationFormLanguageCode::SlSi => "sl-SI",
+            EvaluationFormLanguageCode::SoSo => "so-SO",
+            EvaluationFormLanguageCode::SqAl => "sq-AL",
+            EvaluationFormLanguageCode::SrRs => "sr-RS",
+            EvaluationFormLanguageCode::SuId => "su-ID",
+            EvaluationFormLanguageCode::SvSe => "sv-SE",
+            EvaluationFormLanguageCode::SwBi => "sw-BI",
+            EvaluationFormLanguageCode::SwKe => "sw-KE",
+            EvaluationFormLanguageCode::SwRw => "sw-RW",
+            EvaluationFormLanguageCode::SwTz => "sw-TZ",
+            EvaluationFormLanguageCode::SwUg => "sw-UG",
+            EvaluationFormLanguageCode::TaIn => "ta-IN",
+            EvaluationFormLanguageCode::TeIn => "te-IN",
+            EvaluationFormLanguageCode::ThTh => "th-TH",
+            EvaluationFormLanguageCode::TlPh => "tl-PH",
+            EvaluationFormLanguageCode::TrTr => "tr-TR",
+            EvaluationFormLanguageCode::UkUa => "uk-UA",
+            EvaluationFormLanguageCode::UzUz => "uz-UZ",
+            EvaluationFormLanguageCode::ViVn => "vi-VN",
+            EvaluationFormLanguageCode::XhZa => "xh-ZA",
+            EvaluationFormLanguageCode::YueHk => "yue-HK",
             EvaluationFormLanguageCode::ZhCn => "zh-CN",
+            EvaluationFormLanguageCode::ZhTw => "zh-TW",
+            EvaluationFormLanguageCode::ZuZa => "zu-ZA",
             EvaluationFormLanguageCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["de-DE", "en-US", "es-ES", "fr-FR", "it-IT", "ja-JP", "ko-KR", "ms-MY", "pt-BR", "zh-CN"]
+        &[
+            "af-ZA", "am-ET", "ar-AE", "ar-SA", "be-BY", "bg-BG", "bn-BD", "bs-BA", "ca-ES", "ckb-IQ", "ckb-IR", "cs-CZ", "cy-GB", "da-DK", "de-AT",
+            "de-CH", "de-DE", "el-GR", "en-AB", "en-AU", "en-GB", "en-IE", "en-IN", "en-NZ", "en-SG", "en-US", "en-WL", "en-ZA", "es-ES", "es-MX",
+            "es-US", "et-EE", "eu-ES", "fa-AF", "fa-IR", "fi-FI", "fr-BE", "fr-CA", "fr-FR", "ga-IE", "gl-ES", "gu-IN", "he-IL", "hi-IN", "hmn",
+            "hr-HR", "ht-HT", "hu-HU", "hy-AM", "id-ID", "is-IS", "it-IT", "ja-JP", "jv-ID", "ka-GE", "kk-KZ", "km-KH", "kn-IN", "ko-KR", "lg-UG",
+            "lo-LA", "lt-LT", "lv-LV", "mk-MK", "ml-IN", "mr-IN", "ms-MY", "my-MM", "ne-NP", "nl-BE", "nl-NL", "no-NO", "or-IN", "pa-IN", "pl-PL",
+            "ps-AF", "pt-BR", "pt-PT", "ro-RO", "ru-RU", "si-LK", "sk-SK", "sl-SI", "so-SO", "sq-AL", "sr-RS", "su-ID", "sv-SE", "sw-BI", "sw-KE",
+            "sw-RW", "sw-TZ", "sw-UG", "ta-IN", "te-IN", "th-TH", "tl-PH", "tr-TR", "uk-UA", "uz-UZ", "vi-VN", "xh-ZA", "yue-HK", "zh-CN", "zh-TW",
+            "zu-ZA",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for EvaluationFormLanguageCode {
@@ -140,16 +629,112 @@ impl EvaluationFormLanguageCode {
 impl ::std::fmt::Display for EvaluationFormLanguageCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            EvaluationFormLanguageCode::AfZa => write!(f, "af-ZA"),
+            EvaluationFormLanguageCode::AmEt => write!(f, "am-ET"),
+            EvaluationFormLanguageCode::ArAe => write!(f, "ar-AE"),
+            EvaluationFormLanguageCode::ArSa => write!(f, "ar-SA"),
+            EvaluationFormLanguageCode::BeBy => write!(f, "be-BY"),
+            EvaluationFormLanguageCode::BgBg => write!(f, "bg-BG"),
+            EvaluationFormLanguageCode::BnBd => write!(f, "bn-BD"),
+            EvaluationFormLanguageCode::BsBa => write!(f, "bs-BA"),
+            EvaluationFormLanguageCode::CaEs => write!(f, "ca-ES"),
+            EvaluationFormLanguageCode::CkbIq => write!(f, "ckb-IQ"),
+            EvaluationFormLanguageCode::CkbIr => write!(f, "ckb-IR"),
+            EvaluationFormLanguageCode::CsCz => write!(f, "cs-CZ"),
+            EvaluationFormLanguageCode::CyGb => write!(f, "cy-GB"),
+            EvaluationFormLanguageCode::DaDk => write!(f, "da-DK"),
+            EvaluationFormLanguageCode::DeAt => write!(f, "de-AT"),
+            EvaluationFormLanguageCode::DeCh => write!(f, "de-CH"),
             EvaluationFormLanguageCode::DeDe => write!(f, "de-DE"),
+            EvaluationFormLanguageCode::ElGr => write!(f, "el-GR"),
+            EvaluationFormLanguageCode::EnAb => write!(f, "en-AB"),
+            EvaluationFormLanguageCode::EnAu => write!(f, "en-AU"),
+            EvaluationFormLanguageCode::EnGb => write!(f, "en-GB"),
+            EvaluationFormLanguageCode::EnIe => write!(f, "en-IE"),
+            EvaluationFormLanguageCode::EnIn => write!(f, "en-IN"),
+            EvaluationFormLanguageCode::EnNz => write!(f, "en-NZ"),
+            EvaluationFormLanguageCode::EnSg => write!(f, "en-SG"),
             EvaluationFormLanguageCode::EnUs => write!(f, "en-US"),
+            EvaluationFormLanguageCode::EnWl => write!(f, "en-WL"),
+            EvaluationFormLanguageCode::EnZa => write!(f, "en-ZA"),
             EvaluationFormLanguageCode::EsEs => write!(f, "es-ES"),
+            EvaluationFormLanguageCode::EsMx => write!(f, "es-MX"),
+            EvaluationFormLanguageCode::EsUs => write!(f, "es-US"),
+            EvaluationFormLanguageCode::EtEe => write!(f, "et-EE"),
+            EvaluationFormLanguageCode::EuEs => write!(f, "eu-ES"),
+            EvaluationFormLanguageCode::FaAf => write!(f, "fa-AF"),
+            EvaluationFormLanguageCode::FaIr => write!(f, "fa-IR"),
+            EvaluationFormLanguageCode::FiFi => write!(f, "fi-FI"),
+            EvaluationFormLanguageCode::FrBe => write!(f, "fr-BE"),
+            EvaluationFormLanguageCode::FrCa => write!(f, "fr-CA"),
             EvaluationFormLanguageCode::FrFr => write!(f, "fr-FR"),
+            EvaluationFormLanguageCode::GaIe => write!(f, "ga-IE"),
+            EvaluationFormLanguageCode::GlEs => write!(f, "gl-ES"),
+            EvaluationFormLanguageCode::GuIn => write!(f, "gu-IN"),
+            EvaluationFormLanguageCode::HeIl => write!(f, "he-IL"),
+            EvaluationFormLanguageCode::HiIn => write!(f, "hi-IN"),
+            EvaluationFormLanguageCode::Hmn => write!(f, "hmn"),
+            EvaluationFormLanguageCode::HrHr => write!(f, "hr-HR"),
+            EvaluationFormLanguageCode::HtHt => write!(f, "ht-HT"),
+            EvaluationFormLanguageCode::HuHu => write!(f, "hu-HU"),
+            EvaluationFormLanguageCode::HyAm => write!(f, "hy-AM"),
+            EvaluationFormLanguageCode::IdId => write!(f, "id-ID"),
+            EvaluationFormLanguageCode::IsIs => write!(f, "is-IS"),
             EvaluationFormLanguageCode::ItIt => write!(f, "it-IT"),
             EvaluationFormLanguageCode::JaJp => write!(f, "ja-JP"),
+            EvaluationFormLanguageCode::JvId => write!(f, "jv-ID"),
+            EvaluationFormLanguageCode::KaGe => write!(f, "ka-GE"),
+            EvaluationFormLanguageCode::KkKz => write!(f, "kk-KZ"),
+            EvaluationFormLanguageCode::KmKh => write!(f, "km-KH"),
+            EvaluationFormLanguageCode::KnIn => write!(f, "kn-IN"),
             EvaluationFormLanguageCode::KoKr => write!(f, "ko-KR"),
+            EvaluationFormLanguageCode::LgUg => write!(f, "lg-UG"),
+            EvaluationFormLanguageCode::LoLa => write!(f, "lo-LA"),
+            EvaluationFormLanguageCode::LtLt => write!(f, "lt-LT"),
+            EvaluationFormLanguageCode::LvLv => write!(f, "lv-LV"),
+            EvaluationFormLanguageCode::MkMk => write!(f, "mk-MK"),
+            EvaluationFormLanguageCode::MlIn => write!(f, "ml-IN"),
+            EvaluationFormLanguageCode::MrIn => write!(f, "mr-IN"),
             EvaluationFormLanguageCode::MsMy => write!(f, "ms-MY"),
+            EvaluationFormLanguageCode::MyMm => write!(f, "my-MM"),
+            EvaluationFormLanguageCode::NeNp => write!(f, "ne-NP"),
+            EvaluationFormLanguageCode::NlBe => write!(f, "nl-BE"),
+            EvaluationFormLanguageCode::NlNl => write!(f, "nl-NL"),
+            EvaluationFormLanguageCode::NoNo => write!(f, "no-NO"),
+            EvaluationFormLanguageCode::OrIn => write!(f, "or-IN"),
+            EvaluationFormLanguageCode::PaIn => write!(f, "pa-IN"),
+            EvaluationFormLanguageCode::PlPl => write!(f, "pl-PL"),
+            EvaluationFormLanguageCode::PsAf => write!(f, "ps-AF"),
             EvaluationFormLanguageCode::PtBr => write!(f, "pt-BR"),
+            EvaluationFormLanguageCode::PtPt => write!(f, "pt-PT"),
+            EvaluationFormLanguageCode::RoRo => write!(f, "ro-RO"),
+            EvaluationFormLanguageCode::RuRu => write!(f, "ru-RU"),
+            EvaluationFormLanguageCode::SiLk => write!(f, "si-LK"),
+            EvaluationFormLanguageCode::SkSk => write!(f, "sk-SK"),
+            EvaluationFormLanguageCode::SlSi => write!(f, "sl-SI"),
+            EvaluationFormLanguageCode::SoSo => write!(f, "so-SO"),
+            EvaluationFormLanguageCode::SqAl => write!(f, "sq-AL"),
+            EvaluationFormLanguageCode::SrRs => write!(f, "sr-RS"),
+            EvaluationFormLanguageCode::SuId => write!(f, "su-ID"),
+            EvaluationFormLanguageCode::SvSe => write!(f, "sv-SE"),
+            EvaluationFormLanguageCode::SwBi => write!(f, "sw-BI"),
+            EvaluationFormLanguageCode::SwKe => write!(f, "sw-KE"),
+            EvaluationFormLanguageCode::SwRw => write!(f, "sw-RW"),
+            EvaluationFormLanguageCode::SwTz => write!(f, "sw-TZ"),
+            EvaluationFormLanguageCode::SwUg => write!(f, "sw-UG"),
+            EvaluationFormLanguageCode::TaIn => write!(f, "ta-IN"),
+            EvaluationFormLanguageCode::TeIn => write!(f, "te-IN"),
+            EvaluationFormLanguageCode::ThTh => write!(f, "th-TH"),
+            EvaluationFormLanguageCode::TlPh => write!(f, "tl-PH"),
+            EvaluationFormLanguageCode::TrTr => write!(f, "tr-TR"),
+            EvaluationFormLanguageCode::UkUa => write!(f, "uk-UA"),
+            EvaluationFormLanguageCode::UzUz => write!(f, "uz-UZ"),
+            EvaluationFormLanguageCode::ViVn => write!(f, "vi-VN"),
+            EvaluationFormLanguageCode::XhZa => write!(f, "xh-ZA"),
+            EvaluationFormLanguageCode::YueHk => write!(f, "yue-HK"),
             EvaluationFormLanguageCode::ZhCn => write!(f, "zh-CN"),
+            EvaluationFormLanguageCode::ZhTw => write!(f, "zh-TW"),
+            EvaluationFormLanguageCode::ZuZa => write!(f, "zu-ZA"),
             EvaluationFormLanguageCode::Unknown(value) => write!(f, "{value}"),
         }
     }

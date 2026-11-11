@@ -9,6 +9,9 @@ pub fn ser_application_restore_configuration(
     if let Some(var_1) = &input.snapshot_name {
         object.key("SnapshotName").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.snapshot_arn {
+        object.key("SnapshotArn").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -43,6 +46,13 @@ where
                         }
                         "SnapshotName" => {
                             builder = builder.set_snapshot_name(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "SnapshotArn" => {
+                            builder = builder.set_snapshot_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

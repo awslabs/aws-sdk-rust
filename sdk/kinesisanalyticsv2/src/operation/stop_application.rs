@@ -321,7 +321,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StopApplicati
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StopApplicationError {
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application or snapshot. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>The user-provided application configuration is not valid.</p>
     InvalidApplicationConfigurationException(crate::types::error::InvalidApplicationConfigurationException),
@@ -329,9 +329,9 @@ pub enum StopApplicationError {
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
     /// <p>The request JSON is not valid for the operation.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
-    /// <p>The application is not available for this operation.</p>
+    /// <p>The application or snapshot is not available for this operation.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),
-    /// <p>Specified application can't be found.</p>
+    /// <p>The specified application, snapshot, or snapshot operation can't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

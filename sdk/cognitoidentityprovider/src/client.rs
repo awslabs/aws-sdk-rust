@@ -217,11 +217,15 @@ mod admin_list_groups_for_user;
 
 mod admin_list_user_auth_events;
 
+mod admin_list_user_sessions;
+
 mod admin_remove_user_from_group;
 
 mod admin_reset_user_password;
 
 mod admin_respond_to_auth_challenge;
+
+mod admin_revoke_user_session;
 
 mod admin_set_user_mfa_preference;
 
@@ -374,7 +378,11 @@ mod get_user_attribute_verification_code;
 
 mod get_user_auth_factors;
 
+mod get_user_pool_client_session_configuration;
+
 mod get_user_pool_mfa_config;
+
+mod get_user_pool_session_configuration;
 
 mod global_sign_out;
 
@@ -402,6 +410,8 @@ mod list_user_pool_replicas;
 
 mod list_user_pools;
 
+mod list_user_sessions;
+
 mod list_users;
 
 mod list_users_in_group;
@@ -414,6 +424,8 @@ mod respond_to_auth_challenge;
 
 mod revoke_token;
 
+mod revoke_user_session;
+
 mod set_log_delivery_configuration;
 
 mod set_risk_configuration;
@@ -422,7 +434,11 @@ mod set_ui_customization;
 
 mod set_user_mfa_preference;
 
+mod set_user_pool_client_session_configuration;
+
 mod set_user_pool_mfa_config;
+
+mod set_user_pool_session_configuration;
 
 mod set_user_settings;
 

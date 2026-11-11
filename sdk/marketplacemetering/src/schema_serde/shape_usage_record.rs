@@ -39,6 +39,16 @@ static USAGERECORD_MEMBER_QUANTITY: ::aws_smithy_schema::Schema<'static> = ::aws
     "Quantity",
     3,
 );
+static USAGERECORD_MEMBER_QUANTITY_AS_DECIMAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#UsageRecord$QuantityAsDecimal",
+        "com.amazonaws.marketplacemetering",
+        "UsageRecord",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "QuantityAsDecimal",
+    4,
+);
 static USAGERECORD_MEMBER_USAGE_ALLOCATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.marketplacemetering#UsageAllocations$member",
@@ -57,7 +67,7 @@ static USAGERECORD_MEMBER_USAGE_ALLOCATIONS: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::List,
     "UsageAllocations",
-    4,
+    5,
 )
 .with_list_member(&USAGERECORD_MEMBER_USAGE_ALLOCATIONS_MEMBER);
 static USAGERECORD_MEMBER_CUSTOMER_AWS_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -68,7 +78,7 @@ static USAGERECORD_MEMBER_CUSTOMER_AWS_ACCOUNT_ID: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CustomerAWSAccountId",
-    5,
+    6,
 );
 static USAGERECORD_MEMBER_LICENSE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -78,7 +88,7 @@ static USAGERECORD_MEMBER_LICENSE_ARN: ::aws_smithy_schema::Schema<'static> = ::
     ),
     ::aws_smithy_schema::ShapeType::String,
     "LicenseArn",
-    6,
+    7,
 );
 static USAGERECORD_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -92,6 +102,7 @@ static USAGERECORD_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_s
         &USAGERECORD_MEMBER_CUSTOMER_IDENTIFIER,
         &USAGERECORD_MEMBER_DIMENSION,
         &USAGERECORD_MEMBER_QUANTITY,
+        &USAGERECORD_MEMBER_QUANTITY_AS_DECIMAL,
         &USAGERECORD_MEMBER_USAGE_ALLOCATIONS,
         &USAGERECORD_MEMBER_CUSTOMER_AWS_ACCOUNT_ID,
         &USAGERECORD_MEMBER_LICENSE_ARN,
@@ -125,6 +136,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::UsageRecor
         }
         if let Some(ref val) = self.quantity {
             ser.write_integer(&USAGERECORD_MEMBER_QUANTITY, *val)?;
+        }
+        if let Some(ref val) = self.quantity_as_decimal {
+            ser.write_string(&USAGERECORD_MEMBER_QUANTITY_AS_DECIMAL, val)?;
         }
         if let Some(ref val) = self.usage_allocations {
             ser.write_list(
@@ -180,6 +194,13 @@ impl crate::types::builders::UsageRecordBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
+                        self.quantity_as_decimal = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
                         self.usage_allocations = Some({
                             let mut container = Vec::new();
                             deser.read_list(member, &mut |deser| {
@@ -190,14 +211,14 @@ impl crate::types::builders::UsageRecordBuilder {
                         });
                     }
                 }
-                Some(5) => {
+                Some(6) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.customer_aws_account_id = Some(deser.read_string(member)?);
                     }
                 }
-                Some(6) => {
+                Some(7) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

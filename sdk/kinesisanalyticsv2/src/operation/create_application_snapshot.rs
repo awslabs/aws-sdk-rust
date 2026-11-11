@@ -336,9 +336,9 @@ pub enum CreateApplicationSnapshotError {
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The number of allowed resources has been exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>The application is not available for this operation.</p>
+    /// <p>The application or snapshot is not available for this operation.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),
-    /// <p>Specified application can't be found.</p>
+    /// <p>The specified application, snapshot, or snapshot operation can't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::types::error::UnsupportedOperationException),

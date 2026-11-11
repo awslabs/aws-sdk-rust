@@ -877,6 +877,8 @@ pub use crate::types::_o_auth_grant_type::OAuthGrantType;
 
 pub use crate::types::_api_key_credential_location::ApiKeyCredentialLocation;
 
+pub use crate::types::_harness_remote_mcp_outbound_auth::HarnessRemoteMcpOutboundAuth;
+
 pub use crate::types::_harness_gateway_outbound_auth::HarnessGatewayOutboundAuth;
 
 pub use crate::types::_harness_hook_lambda_target::HarnessHookLambdaTarget;
@@ -1540,6 +1542,8 @@ mod _harness_open_ai_api_format;
 mod _harness_open_ai_model_config;
 
 mod _harness_remote_mcp_config;
+
+mod _harness_remote_mcp_outbound_auth;
 
 mod _harness_skill;
 

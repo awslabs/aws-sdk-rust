@@ -7,7 +7,7 @@ pub fn de_create_lag_http_error(
     _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::create_lag::CreateLagOutput, crate::operation::create_lag::CreateLagError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::create_lag::CreateLagError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -24,7 +24,7 @@ pub fn de_create_lag_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::DirectConnectClientExceptionBuilder::default();
                 output =
-                    crate::protocol_serde::shape_direct_connect_client_exception::de_direct_connect_client_exception_json_err(_response_body, output)
+                    crate::protocol_serde::shape_direct_connect_client_exception::de_direct_connect_client_exception_cbor_err(_response_body, output)
                         .map_err(crate::operation::create_lag::CreateLagError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -40,7 +40,7 @@ pub fn de_create_lag_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::DirectConnectServerExceptionBuilder::default();
                 output =
-                    crate::protocol_serde::shape_direct_connect_server_exception::de_direct_connect_server_exception_json_err(_response_body, output)
+                    crate::protocol_serde::shape_direct_connect_server_exception::de_direct_connect_server_exception_cbor_err(_response_body, output)
                         .map_err(crate::operation::create_lag::CreateLagError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -55,7 +55,7 @@ pub fn de_create_lag_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::DuplicateTagKeysExceptionBuilder::default();
-                output = crate::protocol_serde::shape_duplicate_tag_keys_exception::de_duplicate_tag_keys_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_duplicate_tag_keys_exception::de_duplicate_tag_keys_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::create_lag::CreateLagError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -70,7 +70,7 @@ pub fn de_create_lag_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::TooManyTagsExceptionBuilder::default();
-                output = crate::protocol_serde::shape_too_many_tags_exception::de_too_many_tags_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_too_many_tags_exception::de_too_many_tags_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::create_lag::CreateLagError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -104,212 +104,156 @@ pub fn de_create_lag_http_response(
 pub fn ser_create_lag_input(
     input: &crate::operation::create_lag::CreateLagInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    let mut out = String::new();
-    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_create_lag_input::ser_create_lag_input_input(&mut object, input)?;
-    object.finish();
-    Ok(::aws_smithy_types::body::SdkBody::from(out))
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_create_lag_input::ser_create_lag_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }
 
 pub(crate) fn de_create_lag(
-    _value: &[u8],
+    value: &[u8],
     mut builder: crate::operation::create_lag::builders::CreateLagOutputBuilder,
-) -> ::std::result::Result<crate::operation::create_lag::builders::CreateLagOutputBuilder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
-    let tokens = &mut tokens_owned;
-    #[allow(unused_variables)]
-    let depth = 0u32;
-    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "connectionsBandwidth" => {
-                    builder = builder.set_connections_bandwidth(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "numberOfConnections" => {
-                    builder = builder.set_number_of_connections(
-                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                            .map(i32::try_from)
-                            .transpose()?,
-                    );
-                }
+) -> ::std::result::Result<crate::operation::create_lag::builders::CreateLagOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
+    #[allow(clippy::match_single_binding, unused_variables)]
+    fn pair(
+        mut builder: crate::operation::create_lag::builders::CreateLagOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
+    ) -> ::std::result::Result<crate::operation::create_lag::builders::CreateLagOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
+        builder =
+            match decoder.str()?.as_ref() {
+                "connectionsBandwidth" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_connections_bandwidth(Some(decoder.string()?)))
+                })?,
+                "numberOfConnections" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_number_of_connections(Some(decoder.integer()?)))
+                })?,
                 "lagId" => {
-                    builder = builder.set_lag_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+                    ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_lag_id(Some(decoder.string()?))))?
                 }
-                "ownerAccount" => {
-                    builder = builder.set_owner_account(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
+                "ownerAccount" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_owner_account(Some(decoder.string()?)))
+                })?,
                 "lagName" => {
-                    builder = builder.set_lag_name(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+                    ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_lag_name(Some(decoder.string()?))))?
                 }
-                "lagState" => {
-                    builder = builder.set_lag_state(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::LagState::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
+                "lagState" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_lag_state(Some(decoder.string().map(|s| crate::types::LagState::from(s.as_str()))?)))
+                })?,
                 "location" => {
-                    builder = builder.set_location(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+                    ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_location(Some(decoder.string()?))))?
                 }
                 "region" => {
-                    builder = builder.set_region(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+                    ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_region(Some(decoder.string()?))))?
                 }
-                "minimumLinks" => {
-                    builder = builder.set_minimum_links(
-                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                            .map(i32::try_from)
-                            .transpose()?,
-                    );
-                }
+                "minimumLinks" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_minimum_links(Some(decoder.integer()?)))
+                })?,
                 "awsDevice" => {
-                    builder = builder.set_aws_device(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+                    ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_aws_device(Some(decoder.string()?))))?
                 }
-                "awsDeviceV2" => {
-                    builder = builder.set_aws_device_v2(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+                "awsDeviceV2" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_aws_device_v2(Some(decoder.string()?)))
+                })?,
+                "awsLogicalDeviceId" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_aws_logical_device_id(Some(decoder.string()?)))
+                })?,
+                "connections" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(
+                        builder.set_connections(Some(crate::protocol_serde::shape_connection_list::de_connection_list(
+                            decoder,
+                            depth + 1,
+                        )?)),
+                    )
+                })?,
+                "allowsHostedConnections" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_allows_hosted_connections(Some(decoder.boolean()?)))
+                })?,
+                "jumboFrameCapable" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_jumbo_frame_capable(Some(decoder.boolean()?)))
+                })?,
+                "hasLogicalRedundancy" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_has_logical_redundancy(Some(decoder.string().map(|s| crate::types::HasLogicalRedundancy::from(s.as_str()))?)))
+                })?,
+                "tags" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_tags(Some(crate::protocol_serde::shape_tag_list::de_tag_list(decoder, depth + 1)?)))
+                })?,
+                "providerName" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_provider_name(Some(decoder.string()?)))
+                })?,
+                "macSecCapable" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_mac_sec_capable(Some(decoder.boolean()?)))
+                })?,
+                "encryptionMode" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_encryption_mode(Some(decoder.string()?)))
+                })?,
+                "macSecKeys" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(
+                        builder.set_mac_sec_keys(Some(crate::protocol_serde::shape_mac_sec_key_list::de_mac_sec_key_list(
+                            decoder,
+                            depth + 1,
+                        )?)),
+                    )
+                })?,
+                "prefixPoolSizeIpv4" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_prefix_pool_size_ipv4(Some(decoder.integer()?)))
+                })?,
+                "prefixPoolSizeIpv6" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_prefix_pool_size_ipv6(Some(decoder.integer()?)))
+                })?,
+                "prefixPoolUnallocatedCountIpv4" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_prefix_pool_unallocated_count_ipv4(Some(decoder.integer()?)))
+                })?,
+                "prefixPoolUnallocatedCountIpv6" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_prefix_pool_unallocated_count_ipv6(Some(decoder.integer()?)))
+                })?,
+                "rateLimiterStatus" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(
+                        builder.set_rate_limiter_status(Some(crate::protocol_serde::shape_rate_limiter_status::de_rate_limiter_status(
+                            decoder,
+                            depth + 1,
+                        )?)),
+                    )
+                })?,
+                "billingMode" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_billing_mode(Some(decoder.string().map(|s| crate::types::BillingMode::from(s.as_str()))?)))
+                })?,
+                _ => {
+                    decoder.skip()?;
+                    builder
                 }
-                "awsLogicalDeviceId" => {
-                    builder = builder.set_aws_logical_device_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+            };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
+    #[allow(unused_variables)]
+    let depth = 0u32;
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
                 }
-                "connections" => {
-                    builder = builder.set_connections(crate::protocol_serde::shape_connection_list::de_connection_list(
-                        tokens,
-                        _value,
-                        depth + 1,
-                    )?);
+                _ => {
+                    builder = pair(builder, decoder, depth)?;
                 }
-                "allowsHostedConnections" => {
-                    builder = builder.set_allows_hosted_connections(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                }
-                "jumboFrameCapable" => {
-                    builder = builder.set_jumbo_frame_capable(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                }
-                "hasLogicalRedundancy" => {
-                    builder = builder.set_has_logical_redundancy(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::HasLogicalRedundancy::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tag_list::de_tag_list(tokens, _value, depth + 1)?);
-                }
-                "providerName" => {
-                    builder = builder.set_provider_name(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "macSecCapable" => {
-                    builder = builder.set_mac_sec_capable(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                }
-                "encryptionMode" => {
-                    builder = builder.set_encryption_mode(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "macSecKeys" => {
-                    builder = builder.set_mac_sec_keys(crate::protocol_serde::shape_mac_sec_key_list::de_mac_sec_key_list(
-                        tokens,
-                        _value,
-                        depth + 1,
-                    )?);
-                }
-                "prefixPoolSizeIpv4" => {
-                    builder = builder.set_prefix_pool_size_ipv4(
-                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                            .map(i32::try_from)
-                            .transpose()?,
-                    );
-                }
-                "prefixPoolSizeIpv6" => {
-                    builder = builder.set_prefix_pool_size_ipv6(
-                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                            .map(i32::try_from)
-                            .transpose()?,
-                    );
-                }
-                "prefixPoolUnallocatedCountIpv4" => {
-                    builder = builder.set_prefix_pool_unallocated_count_ipv4(
-                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                            .map(i32::try_from)
-                            .transpose()?,
-                    );
-                }
-                "prefixPoolUnallocatedCountIpv6" => {
-                    builder = builder.set_prefix_pool_unallocated_count_ipv6(
-                        ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                            .map(i32::try_from)
-                            .transpose()?,
-                    );
-                }
-                "rateLimiterStatus" => {
-                    builder = builder.set_rate_limiter_status(crate::protocol_serde::shape_rate_limiter_status::de_rate_limiter_status(
-                        tokens,
-                        _value,
-                        depth + 1,
-                    )?);
-                }
-                "billingMode" => {
-                    builder = builder.set_billing_mode(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::BillingMode::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
-            other => {
-                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {other:?}"
-                )))
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder, depth)?;
             }
         }
+    };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
     }
-    if tokens.next().is_some() {
-        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
+
     Ok(builder)
 }

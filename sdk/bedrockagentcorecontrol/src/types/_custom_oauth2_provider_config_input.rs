@@ -24,6 +24,8 @@ pub struct CustomOauth2ProviderConfigInput {
     pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
     /// <p>The private endpoint overrides for the custom OAuth2 provider configuration.</p>
     pub private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
+    /// <p>The private certificate authority (CA) configurations for the identity provider. Use this to have AgentCore Identity trust a private CA when establishing TLS connections to identity provider endpoints. You can specify only one certificate authority configuration in this list. Provide the certificate by reference to an Amazon S3 object or an Amazon Web Services Secrets Manager secret. You can use this only together with <code>privateEndpoint</code>.</p>
+    pub certificate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CertificateConfiguration>>,
 }
 impl CustomOauth2ProviderConfigInput {
     /// <p>The OAuth2 discovery information for the custom provider.</p>
@@ -70,6 +72,12 @@ impl CustomOauth2ProviderConfigInput {
     pub fn private_endpoint_overrides(&self) -> &[crate::types::PrivateEndpointOverride] {
         self.private_endpoint_overrides.as_deref().unwrap_or_default()
     }
+    /// <p>The private certificate authority (CA) configurations for the identity provider. Use this to have AgentCore Identity trust a private CA when establishing TLS connections to identity provider endpoints. You can specify only one certificate authority configuration in this list. Provide the certificate by reference to an Amazon S3 object or an Amazon Web Services Secrets Manager secret. You can use this only together with <code>privateEndpoint</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_configurations.is_none()`.
+    pub fn certificate_configurations(&self) -> &[crate::types::CertificateConfiguration] {
+        self.certificate_configurations.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for CustomOauth2ProviderConfigInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -84,6 +92,7 @@ impl ::std::fmt::Debug for CustomOauth2ProviderConfigInput {
         formatter.field("private_key_jwt_config", &self.private_key_jwt_config);
         formatter.field("private_endpoint", &self.private_endpoint);
         formatter.field("private_endpoint_overrides", &self.private_endpoint_overrides);
+        formatter.field("certificate_configurations", &self.certificate_configurations);
         formatter.finish()
     }
 }
@@ -108,6 +117,7 @@ pub struct CustomOauth2ProviderConfigInputBuilder {
     pub(crate) private_key_jwt_config: ::std::option::Option<crate::types::PrivateKeyJwtConfig>,
     pub(crate) private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
     pub(crate) private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
+    pub(crate) certificate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CertificateConfiguration>>,
 }
 impl CustomOauth2ProviderConfigInputBuilder {
     /// <p>The OAuth2 discovery information for the custom provider.</p>
@@ -257,6 +267,26 @@ impl CustomOauth2ProviderConfigInputBuilder {
     pub fn get_private_endpoint_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>> {
         &self.private_endpoint_overrides
     }
+    /// Appends an item to `certificate_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_certificate_configurations`](Self::set_certificate_configurations).
+    ///
+    /// <p>The private certificate authority (CA) configurations for the identity provider. Use this to have AgentCore Identity trust a private CA when establishing TLS connections to identity provider endpoints. You can specify only one certificate authority configuration in this list. Provide the certificate by reference to an Amazon S3 object or an Amazon Web Services Secrets Manager secret. You can use this only together with <code>privateEndpoint</code>.</p>
+    pub fn certificate_configurations(mut self, input: crate::types::CertificateConfiguration) -> Self {
+        let mut v = self.certificate_configurations.unwrap_or_default();
+        v.push(input);
+        self.certificate_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The private certificate authority (CA) configurations for the identity provider. Use this to have AgentCore Identity trust a private CA when establishing TLS connections to identity provider endpoints. You can specify only one certificate authority configuration in this list. Provide the certificate by reference to an Amazon S3 object or an Amazon Web Services Secrets Manager secret. You can use this only together with <code>privateEndpoint</code>.</p>
+    pub fn set_certificate_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateConfiguration>>) -> Self {
+        self.certificate_configurations = input;
+        self
+    }
+    /// <p>The private certificate authority (CA) configurations for the identity provider. Use this to have AgentCore Identity trust a private CA when establishing TLS connections to identity provider endpoints. You can specify only one certificate authority configuration in this list. Provide the certificate by reference to an Amazon S3 object or an Amazon Web Services Secrets Manager secret. You can use this only together with <code>privateEndpoint</code>.</p>
+    pub fn get_certificate_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateConfiguration>> {
+        &self.certificate_configurations
+    }
     /// Consumes the builder and constructs a [`CustomOauth2ProviderConfigInput`](crate::types::CustomOauth2ProviderConfigInput).
     pub fn build(self) -> crate::types::CustomOauth2ProviderConfigInput {
         crate::types::CustomOauth2ProviderConfigInput {
@@ -270,6 +300,7 @@ impl CustomOauth2ProviderConfigInputBuilder {
             private_key_jwt_config: self.private_key_jwt_config,
             private_endpoint: self.private_endpoint,
             private_endpoint_overrides: self.private_endpoint_overrides,
+            certificate_configurations: self.certificate_configurations,
         }
     }
 }
@@ -286,6 +317,7 @@ impl ::std::fmt::Debug for CustomOauth2ProviderConfigInputBuilder {
         formatter.field("private_key_jwt_config", &self.private_key_jwt_config);
         formatter.field("private_endpoint", &self.private_endpoint);
         formatter.field("private_endpoint_overrides", &self.private_endpoint_overrides);
+        formatter.field("certificate_configurations", &self.certificate_configurations);
         formatter.finish()
     }
 }

@@ -386,7 +386,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateLocati
             .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
             .expect("a SharedClientProtocol is required");
         let mut request = protocol
-            .serialize_request(&input, CreateLocationAzureBlob::INPUT_SCHEMA, "/", _cfg)
+            .serialize_request(
+                &input,
+                CreateLocationAzureBlob::INPUT_SCHEMA,
+                "/service/FmrsService/operation/CreateLocationAzureBlob",
+                _cfg,
+            )
             .map_err(::aws_smithy_runtime_api::box_error::BoxError::from)?;
 
         return ::std::result::Result::Ok(request);

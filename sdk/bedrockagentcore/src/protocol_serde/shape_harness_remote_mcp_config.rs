@@ -16,5 +16,11 @@ pub fn ser_harness_remote_mcp_config(
         }
         object_2.finish();
     }
+    if let Some(var_5) = &input.outbound_auth {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("outboundAuth").start_object();
+        crate::protocol_serde::shape_harness_remote_mcp_outbound_auth::ser_harness_remote_mcp_outbound_auth(&mut object_6, var_5)?;
+        object_6.finish();
+    }
     Ok(())
 }

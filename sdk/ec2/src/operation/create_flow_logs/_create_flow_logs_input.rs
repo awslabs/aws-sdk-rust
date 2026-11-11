@@ -20,7 +20,7 @@ pub struct CreateFlowLogsInput {
     pub resource_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of resource to monitor.</p>
     pub resource_type: ::std::option::Option<crate::types::FlowLogsResourceType>,
-    /// <p>The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is not supported for transit gateway resource types. It is required for the other resource types.</p>
+    /// <p>The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is not supported for transit gateway or Cloud WAN resource types. It is required for the other resource types.</p>
     pub traffic_type: ::std::option::Option<crate::types::TrafficType>,
     /// <p>The type of destination for the flow log data.</p>
     /// <p>Default: <code>cloud-watch-logs</code></p>
@@ -40,12 +40,12 @@ pub struct CreateFlowLogsInput {
     /// <p>arn:aws:firehose:<i>region</i>:<i>account_id</i>:deliverystream:<i>my_stream</i></p></li>
     /// </ul>
     pub log_destination: ::std::option::Option<::std::string::String>,
-    /// <p>The fields to include in the flow log record. List the fields in the order in which they should appear. If you omit this parameter, the flow log is created using the default format. If you specify this parameter, you must include at least one field. For more information about the available fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html">Flow log records</a> in the <i>Amazon VPC User Guide</i> or <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
+    /// <p>The fields to include in the flow log record. List the fields in the order in which they should appear. If you omit this parameter, the flow log is created using the default format. If you specify this parameter, you must include at least one field. For more information about the available fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html">Flow log records</a> in the <i>Amazon VPC User Guide</i>, <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>, or <a href="https://docs.aws.amazon.com/network-manager/latest/cloudwan/cwan-flow-logs.html">Cloud WAN Flow Log records</a> in the <i>Amazon Web Services Cloud WAN User Guide</i>.</p>
     /// <p>Specify the fields using the <code>${field-id}</code> format, separated by spaces.</p>
     pub log_format: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the flow logs.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
-    /// <p>The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record. The possible values are 60 seconds (1 minute) or 600 seconds (10 minutes). This parameter must be 60 seconds for transit gateway resource types.</p>
+    /// <p>The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record. The possible values are 60 seconds (1 minute) or 600 seconds (10 minutes). This parameter must be 60 seconds for transit gateway and Cloud WAN resource types.</p>
     /// <p>When a network interface is attached to a <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">Nitro-based instance</a>, the aggregation interval is always 60 seconds or less, regardless of the value that you specify.</p>
     /// <p>Default: 600</p>
     pub max_aggregation_interval: ::std::option::Option<i32>,
@@ -88,7 +88,7 @@ impl CreateFlowLogsInput {
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::FlowLogsResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is not supported for transit gateway resource types. It is required for the other resource types.</p>
+    /// <p>The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is not supported for transit gateway or Cloud WAN resource types. It is required for the other resource types.</p>
     pub fn traffic_type(&self) -> ::std::option::Option<&crate::types::TrafficType> {
         self.traffic_type.as_ref()
     }
@@ -114,7 +114,7 @@ impl CreateFlowLogsInput {
     pub fn log_destination(&self) -> ::std::option::Option<&str> {
         self.log_destination.as_deref()
     }
-    /// <p>The fields to include in the flow log record. List the fields in the order in which they should appear. If you omit this parameter, the flow log is created using the default format. If you specify this parameter, you must include at least one field. For more information about the available fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html">Flow log records</a> in the <i>Amazon VPC User Guide</i> or <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
+    /// <p>The fields to include in the flow log record. List the fields in the order in which they should appear. If you omit this parameter, the flow log is created using the default format. If you specify this parameter, you must include at least one field. For more information about the available fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html">Flow log records</a> in the <i>Amazon VPC User Guide</i>, <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>, or <a href="https://docs.aws.amazon.com/network-manager/latest/cloudwan/cwan-flow-logs.html">Cloud WAN Flow Log records</a> in the <i>Amazon Web Services Cloud WAN User Guide</i>.</p>
     /// <p>Specify the fields using the <code>${field-id}</code> format, separated by spaces.</p>
     pub fn log_format(&self) -> ::std::option::Option<&str> {
         self.log_format.as_deref()
@@ -125,7 +125,7 @@ impl CreateFlowLogsInput {
     pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
         self.tag_specifications.as_deref().unwrap_or_default()
     }
-    /// <p>The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record. The possible values are 60 seconds (1 minute) or 600 seconds (10 minutes). This parameter must be 60 seconds for transit gateway resource types.</p>
+    /// <p>The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record. The possible values are 60 seconds (1 minute) or 600 seconds (10 minutes). This parameter must be 60 seconds for transit gateway and Cloud WAN resource types.</p>
     /// <p>When a network interface is attached to a <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">Nitro-based instance</a>, the aggregation interval is always 60 seconds or less, regardless of the value that you specify.</p>
     /// <p>Default: 600</p>
     pub fn max_aggregation_interval(&self) -> ::std::option::Option<i32> {
@@ -284,17 +284,17 @@ impl CreateFlowLogsInputBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::FlowLogsResourceType> {
         &self.resource_type
     }
-    /// <p>The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is not supported for transit gateway resource types. It is required for the other resource types.</p>
+    /// <p>The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is not supported for transit gateway or Cloud WAN resource types. It is required for the other resource types.</p>
     pub fn traffic_type(mut self, input: crate::types::TrafficType) -> Self {
         self.traffic_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is not supported for transit gateway resource types. It is required for the other resource types.</p>
+    /// <p>The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is not supported for transit gateway or Cloud WAN resource types. It is required for the other resource types.</p>
     pub fn set_traffic_type(mut self, input: ::std::option::Option<crate::types::TrafficType>) -> Self {
         self.traffic_type = input;
         self
     }
-    /// <p>The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is not supported for transit gateway resource types. It is required for the other resource types.</p>
+    /// <p>The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is not supported for transit gateway or Cloud WAN resource types. It is required for the other resource types.</p>
     pub fn get_traffic_type(&self) -> &::std::option::Option<crate::types::TrafficType> {
         &self.traffic_type
     }
@@ -368,19 +368,19 @@ impl CreateFlowLogsInputBuilder {
     pub fn get_log_destination(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_destination
     }
-    /// <p>The fields to include in the flow log record. List the fields in the order in which they should appear. If you omit this parameter, the flow log is created using the default format. If you specify this parameter, you must include at least one field. For more information about the available fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html">Flow log records</a> in the <i>Amazon VPC User Guide</i> or <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
+    /// <p>The fields to include in the flow log record. List the fields in the order in which they should appear. If you omit this parameter, the flow log is created using the default format. If you specify this parameter, you must include at least one field. For more information about the available fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html">Flow log records</a> in the <i>Amazon VPC User Guide</i>, <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>, or <a href="https://docs.aws.amazon.com/network-manager/latest/cloudwan/cwan-flow-logs.html">Cloud WAN Flow Log records</a> in the <i>Amazon Web Services Cloud WAN User Guide</i>.</p>
     /// <p>Specify the fields using the <code>${field-id}</code> format, separated by spaces.</p>
     pub fn log_format(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.log_format = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The fields to include in the flow log record. List the fields in the order in which they should appear. If you omit this parameter, the flow log is created using the default format. If you specify this parameter, you must include at least one field. For more information about the available fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html">Flow log records</a> in the <i>Amazon VPC User Guide</i> or <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
+    /// <p>The fields to include in the flow log record. List the fields in the order in which they should appear. If you omit this parameter, the flow log is created using the default format. If you specify this parameter, you must include at least one field. For more information about the available fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html">Flow log records</a> in the <i>Amazon VPC User Guide</i>, <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>, or <a href="https://docs.aws.amazon.com/network-manager/latest/cloudwan/cwan-flow-logs.html">Cloud WAN Flow Log records</a> in the <i>Amazon Web Services Cloud WAN User Guide</i>.</p>
     /// <p>Specify the fields using the <code>${field-id}</code> format, separated by spaces.</p>
     pub fn set_log_format(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.log_format = input;
         self
     }
-    /// <p>The fields to include in the flow log record. List the fields in the order in which they should appear. If you omit this parameter, the flow log is created using the default format. If you specify this parameter, you must include at least one field. For more information about the available fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html">Flow log records</a> in the <i>Amazon VPC User Guide</i> or <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
+    /// <p>The fields to include in the flow log record. List the fields in the order in which they should appear. If you omit this parameter, the flow log is created using the default format. If you specify this parameter, you must include at least one field. For more information about the available fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html">Flow log records</a> in the <i>Amazon VPC User Guide</i>, <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit Gateway Flow Log records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>, or <a href="https://docs.aws.amazon.com/network-manager/latest/cloudwan/cwan-flow-logs.html">Cloud WAN Flow Log records</a> in the <i>Amazon Web Services Cloud WAN User Guide</i>.</p>
     /// <p>Specify the fields using the <code>${field-id}</code> format, separated by spaces.</p>
     pub fn get_log_format(&self) -> &::std::option::Option<::std::string::String> {
         &self.log_format
@@ -405,21 +405,21 @@ impl CreateFlowLogsInputBuilder {
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
     }
-    /// <p>The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record. The possible values are 60 seconds (1 minute) or 600 seconds (10 minutes). This parameter must be 60 seconds for transit gateway resource types.</p>
+    /// <p>The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record. The possible values are 60 seconds (1 minute) or 600 seconds (10 minutes). This parameter must be 60 seconds for transit gateway and Cloud WAN resource types.</p>
     /// <p>When a network interface is attached to a <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">Nitro-based instance</a>, the aggregation interval is always 60 seconds or less, regardless of the value that you specify.</p>
     /// <p>Default: 600</p>
     pub fn max_aggregation_interval(mut self, input: i32) -> Self {
         self.max_aggregation_interval = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record. The possible values are 60 seconds (1 minute) or 600 seconds (10 minutes). This parameter must be 60 seconds for transit gateway resource types.</p>
+    /// <p>The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record. The possible values are 60 seconds (1 minute) or 600 seconds (10 minutes). This parameter must be 60 seconds for transit gateway and Cloud WAN resource types.</p>
     /// <p>When a network interface is attached to a <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">Nitro-based instance</a>, the aggregation interval is always 60 seconds or less, regardless of the value that you specify.</p>
     /// <p>Default: 600</p>
     pub fn set_max_aggregation_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_aggregation_interval = input;
         self
     }
-    /// <p>The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record. The possible values are 60 seconds (1 minute) or 600 seconds (10 minutes). This parameter must be 60 seconds for transit gateway resource types.</p>
+    /// <p>The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record. The possible values are 60 seconds (1 minute) or 600 seconds (10 minutes). This parameter must be 60 seconds for transit gateway and Cloud WAN resource types.</p>
     /// <p>When a network interface is attached to a <a href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html">Nitro-based instance</a>, the aggregation interval is always 60 seconds or less, regardless of the value that you specify.</p>
     /// <p>Default: 600</p>
     pub fn get_max_aggregation_interval(&self) -> &::std::option::Option<i32> {

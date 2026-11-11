@@ -10,7 +10,7 @@ pub fn de_enable_aws_organizations_access_http_error(
     crate::operation::enable_aws_organizations_access::EnableAWSOrganizationsAccessError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::enable_aws_organizations_access::EnableAWSOrganizationsAccessError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -26,7 +26,7 @@ pub fn de_enable_aws_organizations_access_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidStateExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_state_exception::de_invalid_state_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_invalid_state_exception::de_invalid_state_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::enable_aws_organizations_access::EnableAWSOrganizationsAccessError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -42,7 +42,7 @@ pub fn de_enable_aws_organizations_access_http_error(
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::OperationNotSupportedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_operation_not_supported_exception::de_operation_not_supported_exception_json_err(
+                    output = crate::protocol_serde::shape_operation_not_supported_exception::de_operation_not_supported_exception_cbor_err(
                         _response_body,
                         output,
                     )
@@ -63,7 +63,7 @@ pub fn de_enable_aws_organizations_access_http_error(
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     output =
-                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_cbor_err(_response_body, output)
                             .map_err(crate::operation::enable_aws_organizations_access::EnableAWSOrganizationsAccessError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
@@ -97,7 +97,12 @@ pub fn de_enable_aws_organizations_access_http_response(
 }
 
 pub fn ser_enable_aws_organizations_access_input(
-    _input: &crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessInput,
+    input: &crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    Ok(::aws_smithy_types::body::SdkBody::from("{}"))
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_enable_aws_organizations_access_input::ser_enable_aws_organizations_access_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }

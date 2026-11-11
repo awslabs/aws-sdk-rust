@@ -387,6 +387,8 @@ pub use crate::types::_skill_definition::SkillDefinitionBuilder;
 
 pub use crate::types::_harness_reasoning_text_block::HarnessReasoningTextBlockBuilder;
 
+pub use crate::types::_iam_credential_provider::IamCredentialProviderBuilder;
+
 pub use crate::types::_unit::UnitBuilder;
 
 pub use crate::types::_o_auth_credential_provider::OAuthCredentialProviderBuilder;

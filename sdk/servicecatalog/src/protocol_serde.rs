@@ -15,14 +15,6 @@ where
         .map_err(::std::convert::Into::into)
 }
 
-pub fn parse_http_error_metadata(
-    _response_status: u16,
-    response_headers: &::aws_smithy_runtime_api::http::Headers,
-    response_body: &[u8],
-) -> ::std::result::Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    crate::json_errors::parse_error_metadata(response_body, response_headers)
-}
-
 pub(crate) mod shape_accept_portfolio_share;
 
 pub(crate) mod shape_associate_budget_with_resource;
@@ -215,14 +207,6 @@ pub(crate) mod shape_associate_service_action_with_provisioning_artifact_input;
 
 pub(crate) mod shape_associate_tag_option_with_resource_input;
 
-pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
-    if data.is_empty() {
-        b"{}"
-    } else {
-        data
-    }
-}
-
 pub(crate) mod shape_batch_associate_service_action_with_provisioning_artifact_input;
 
 pub(crate) mod shape_batch_disassociate_service_action_from_provisioning_artifact_input;
@@ -293,6 +277,8 @@ pub(crate) mod shape_describe_service_action_input;
 
 pub(crate) mod shape_describe_tag_option_input;
 
+pub(crate) mod shape_disable_aws_organizations_access_input;
+
 pub(crate) mod shape_disassociate_budget_from_resource_input;
 
 pub(crate) mod shape_disassociate_principal_from_portfolio_input;
@@ -305,9 +291,13 @@ pub(crate) mod shape_disassociate_tag_option_from_resource_input;
 
 pub(crate) mod shape_duplicate_resource_exception;
 
+pub(crate) mod shape_enable_aws_organizations_access_input;
+
 pub(crate) mod shape_execute_provisioned_product_plan_input;
 
 pub(crate) mod shape_execute_provisioned_product_service_action_input;
+
+pub(crate) mod shape_get_aws_organizations_access_status_input;
 
 pub(crate) mod shape_get_provisioned_product_outputs_input;
 

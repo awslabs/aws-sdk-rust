@@ -333,7 +333,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateApplica
 pub enum CreateApplicationError {
     /// <p>The user-provided application code (query) is not valid. This can be a simple syntax error.</p>
     CodeValidationException(crate::types::error::CodeValidationException),
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application or snapshot. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>The specified input parameter value is not valid.</p>
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
@@ -341,7 +341,7 @@ pub enum CreateApplicationError {
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The number of allowed resources has been exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>The application is not available for this operation.</p>
+    /// <p>The application or snapshot is not available for this operation.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),
     /// <p>Application created with too many tags, or too many tags added to an application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50.</p>
     TooManyTagsException(crate::types::error::TooManyTagsException),

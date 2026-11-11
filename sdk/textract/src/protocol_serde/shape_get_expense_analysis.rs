@@ -10,7 +10,7 @@ pub fn de_get_expense_analysis_http_error(
     crate::operation::get_expense_analysis::GetExpenseAnalysisError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::get_expense_analysis::GetExpenseAnalysisError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -26,7 +26,7 @@ pub fn de_get_expense_analysis_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_expense_analysis::GetExpenseAnalysisError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -41,7 +41,7 @@ pub fn de_get_expense_analysis_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
-                output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_expense_analysis::GetExpenseAnalysisError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -56,7 +56,7 @@ pub fn de_get_expense_analysis_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidJobIdExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_job_id_exception::de_invalid_job_id_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_invalid_job_id_exception::de_invalid_job_id_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_expense_analysis::GetExpenseAnalysisError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -71,7 +71,7 @@ pub fn de_get_expense_analysis_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidKmsKeyExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_kms_key_exception::de_invalid_kms_key_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_invalid_kms_key_exception::de_invalid_kms_key_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_expense_analysis::GetExpenseAnalysisError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -86,7 +86,7 @@ pub fn de_get_expense_analysis_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_expense_analysis::GetExpenseAnalysisError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -101,7 +101,7 @@ pub fn de_get_expense_analysis_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidS3ObjectExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_s3_object_exception::de_invalid_s3_object_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_invalid_s3_object_exception::de_invalid_s3_object_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_expense_analysis::GetExpenseAnalysisError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -117,7 +117,7 @@ pub fn de_get_expense_analysis_http_error(
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ProvisionedThroughputExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_provisioned_throughput_exceeded_exception::de_provisioned_throughput_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::get_expense_analysis::GetExpenseAnalysisError::unhandled)?;
+                    output = crate::protocol_serde::shape_provisioned_throughput_exceeded_exception::de_provisioned_throughput_exceeded_exception_cbor_err(_response_body, output).map_err(crate::operation::get_expense_analysis::GetExpenseAnalysisError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -132,7 +132,7 @@ pub fn de_get_expense_analysis_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_expense_analysis::GetExpenseAnalysisError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -169,87 +169,96 @@ pub fn de_get_expense_analysis_http_response(
 pub fn ser_get_expense_analysis_input(
     input: &crate::operation::get_expense_analysis::GetExpenseAnalysisInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    let mut out = String::new();
-    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_get_expense_analysis_input::ser_get_expense_analysis_input_input(&mut object, input)?;
-    object.finish();
-    Ok(::aws_smithy_types::body::SdkBody::from(out))
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_get_expense_analysis_input::ser_get_expense_analysis_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }
 
 pub(crate) fn de_get_expense_analysis(
-    _value: &[u8],
+    value: &[u8],
     mut builder: crate::operation::get_expense_analysis::builders::GetExpenseAnalysisOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::get_expense_analysis::builders::GetExpenseAnalysisOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
-    let tokens = &mut tokens_owned;
+    #[allow(clippy::match_single_binding, unused_variables)]
+    fn pair(
+        mut builder: crate::operation::get_expense_analysis::builders::GetExpenseAnalysisOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
+    ) -> ::std::result::Result<
+        crate::operation::get_expense_analysis::builders::GetExpenseAnalysisOutputBuilder,
+        ::aws_smithy_cbor::decode::DeserializeError,
+    > {
+        builder = match decoder.str()?.as_ref() {
+            "DocumentMetadata" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(
+                    builder.set_document_metadata(Some(crate::protocol_serde::shape_document_metadata::de_document_metadata(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
+            })?,
+            "JobStatus" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_job_status(Some(decoder.string().map(|s| crate::types::JobStatus::from(s.as_str()))?)))
+            })?,
+            "NextToken" => {
+                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_next_token(Some(decoder.string()?))))?
+            }
+            "ExpenseDocuments" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(
+                    builder.set_expense_documents(Some(crate::protocol_serde::shape_expense_document_list::de_expense_document_list(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
+            })?,
+            "Warnings" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_warnings(Some(crate::protocol_serde::shape_warnings::de_warnings(decoder, depth + 1)?)))
+            })?,
+            "StatusMessage" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_status_message(Some(decoder.string()?)))
+            })?,
+            "AnalyzeExpenseModelVersion" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_analyze_expense_model_version(Some(decoder.string()?)))
+            })?,
+            _ => {
+                decoder.skip()?;
+                builder
+            }
+        };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
     #[allow(unused_variables)]
     let depth = 0u32;
-    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "DocumentMetadata" => {
-                    builder = builder.set_document_metadata(crate::protocol_serde::shape_document_metadata::de_document_metadata(
-                        tokens,
-                        _value,
-                        depth + 1,
-                    )?);
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
                 }
-                "JobStatus" => {
-                    builder = builder.set_job_status(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::JobStatus::from(u.as_ref())))
-                            .transpose()?,
-                    );
+                _ => {
+                    builder = pair(builder, decoder, depth)?;
                 }
-                "NextToken" => {
-                    builder = builder.set_next_token(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "ExpenseDocuments" => {
-                    builder = builder.set_expense_documents(crate::protocol_serde::shape_expense_document_list::de_expense_document_list(
-                        tokens,
-                        _value,
-                        depth + 1,
-                    )?);
-                }
-                "Warnings" => {
-                    builder = builder.set_warnings(crate::protocol_serde::shape_warnings::de_warnings(tokens, _value, depth + 1)?);
-                }
-                "StatusMessage" => {
-                    builder = builder.set_status_message(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                "AnalyzeExpenseModelVersion" => {
-                    builder = builder.set_analyze_expense_model_version(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
-            other => {
-                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {other:?}"
-                )))
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder, depth)?;
             }
         }
+    };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
     }
-    if tokens.next().is_some() {
-        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
+
     Ok(builder)
 }

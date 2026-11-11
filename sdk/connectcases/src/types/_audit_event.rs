@@ -7,7 +7,8 @@ pub struct AuditEvent {
     /// <p>Unique identifier of a case audit history event.</p>
     pub event_id: ::std::string::String,
     /// <p>The type of audit history event.</p>
-    /// <p>Valid Values: <code>Case.Created</code> | <code>Case.Updated</code> | <code>RelatedItem.Created</code> | <code>RelatedItem.Updated</code> | <code>RelatedItem.Deleted</code></p>
+    /// <p>Valid Values: <code>Case.Created</code> | <code>Case.Updated</code> | <code>RelatedItem.Created</code> | <code>RelatedItem.Updated</code> | <code>RelatedItem.Deleted</code> | <code>Case.Merged</code></p>
+    /// <p><code>Case.Merged</code> summarizes a merge on each of the two cases that took part in it.</p>
     pub r#type: crate::types::AuditEventType,
     /// <p>The Type of the related item.</p>
     pub related_item_type: ::std::option::Option<crate::types::RelatedItemType>,
@@ -17,6 +18,8 @@ pub struct AuditEvent {
     pub fields: ::std::vec::Vec<::std::option::Option<crate::types::AuditEventField>>,
     /// <p>Information of the user which performed the audit.</p>
     pub performed_by: ::std::option::Option<crate::types::AuditEventPerformedBy>,
+    /// <p>Information about the merge that produced this audit event. Present only on audit events produced by a merge. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.</p>
+    pub merge_metadata: ::std::option::Option<crate::types::AuditMergeMetadata>,
 }
 impl AuditEvent {
     /// <p>Unique identifier of a case audit history event.</p>
@@ -25,7 +28,8 @@ impl AuditEvent {
         self.event_id.deref()
     }
     /// <p>The type of audit history event.</p>
-    /// <p>Valid Values: <code>Case.Created</code> | <code>Case.Updated</code> | <code>RelatedItem.Created</code> | <code>RelatedItem.Updated</code> | <code>RelatedItem.Deleted</code></p>
+    /// <p>Valid Values: <code>Case.Created</code> | <code>Case.Updated</code> | <code>RelatedItem.Created</code> | <code>RelatedItem.Updated</code> | <code>RelatedItem.Deleted</code> | <code>Case.Merged</code></p>
+    /// <p><code>Case.Merged</code> summarizes a merge on each of the two cases that took part in it.</p>
     pub fn r#type(&self) -> &crate::types::AuditEventType {
         &self.r#type
     }
@@ -46,6 +50,10 @@ impl AuditEvent {
     pub fn performed_by(&self) -> ::std::option::Option<&crate::types::AuditEventPerformedBy> {
         self.performed_by.as_ref()
     }
+    /// <p>Information about the merge that produced this audit event. Present only on audit events produced by a merge. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.</p>
+    pub fn merge_metadata(&self) -> ::std::option::Option<&crate::types::AuditMergeMetadata> {
+        self.merge_metadata.as_ref()
+    }
 }
 impl AuditEvent {
     /// Creates a new builder-style object to manufacture [`AuditEvent`](crate::types::AuditEvent).
@@ -64,6 +72,7 @@ pub struct AuditEventBuilder {
     pub(crate) performed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) fields: ::std::option::Option<::std::vec::Vec<::std::option::Option<crate::types::AuditEventField>>>,
     pub(crate) performed_by: ::std::option::Option<crate::types::AuditEventPerformedBy>,
+    pub(crate) merge_metadata: ::std::option::Option<crate::types::AuditMergeMetadata>,
 }
 impl AuditEventBuilder {
     /// <p>Unique identifier of a case audit history event.</p>
@@ -82,20 +91,23 @@ impl AuditEventBuilder {
         &self.event_id
     }
     /// <p>The type of audit history event.</p>
-    /// <p>Valid Values: <code>Case.Created</code> | <code>Case.Updated</code> | <code>RelatedItem.Created</code> | <code>RelatedItem.Updated</code> | <code>RelatedItem.Deleted</code></p>
+    /// <p>Valid Values: <code>Case.Created</code> | <code>Case.Updated</code> | <code>RelatedItem.Created</code> | <code>RelatedItem.Updated</code> | <code>RelatedItem.Deleted</code> | <code>Case.Merged</code></p>
+    /// <p><code>Case.Merged</code> summarizes a merge on each of the two cases that took part in it.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::AuditEventType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of audit history event.</p>
-    /// <p>Valid Values: <code>Case.Created</code> | <code>Case.Updated</code> | <code>RelatedItem.Created</code> | <code>RelatedItem.Updated</code> | <code>RelatedItem.Deleted</code></p>
+    /// <p>Valid Values: <code>Case.Created</code> | <code>Case.Updated</code> | <code>RelatedItem.Created</code> | <code>RelatedItem.Updated</code> | <code>RelatedItem.Deleted</code> | <code>Case.Merged</code></p>
+    /// <p><code>Case.Merged</code> summarizes a merge on each of the two cases that took part in it.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::AuditEventType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The type of audit history event.</p>
-    /// <p>Valid Values: <code>Case.Created</code> | <code>Case.Updated</code> | <code>RelatedItem.Created</code> | <code>RelatedItem.Updated</code> | <code>RelatedItem.Deleted</code></p>
+    /// <p>Valid Values: <code>Case.Created</code> | <code>Case.Updated</code> | <code>RelatedItem.Created</code> | <code>RelatedItem.Updated</code> | <code>RelatedItem.Deleted</code> | <code>Case.Merged</code></p>
+    /// <p><code>Case.Merged</code> summarizes a merge on each of the two cases that took part in it.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AuditEventType> {
         &self.r#type
     }
@@ -162,6 +174,20 @@ impl AuditEventBuilder {
     pub fn get_performed_by(&self) -> &::std::option::Option<crate::types::AuditEventPerformedBy> {
         &self.performed_by
     }
+    /// <p>Information about the merge that produced this audit event. Present only on audit events produced by a merge. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.</p>
+    pub fn merge_metadata(mut self, input: crate::types::AuditMergeMetadata) -> Self {
+        self.merge_metadata = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the merge that produced this audit event. Present only on audit events produced by a merge. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.</p>
+    pub fn set_merge_metadata(mut self, input: ::std::option::Option<crate::types::AuditMergeMetadata>) -> Self {
+        self.merge_metadata = input;
+        self
+    }
+    /// <p>Information about the merge that produced this audit event. Present only on audit events produced by a merge. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.</p>
+    pub fn get_merge_metadata(&self) -> &::std::option::Option<crate::types::AuditMergeMetadata> {
+        &self.merge_metadata
+    }
     /// Consumes the builder and constructs a [`AuditEvent`](crate::types::AuditEvent).
     /// This method will fail if any of the following fields are not set:
     /// - [`event_id`](crate::types::builders::AuditEventBuilder::event_id)
@@ -196,6 +222,7 @@ impl AuditEventBuilder {
                 )
             })?,
             performed_by: self.performed_by,
+            merge_metadata: self.merge_metadata,
         })
     }
 }

@@ -95,6 +95,8 @@ pub use crate::types::_limit_type::LimitTypeBuilder;
 
 pub use crate::types::_ui_customization_type::UiCustomizationTypeBuilder;
 
+pub use crate::types::_client_sso_session_config_type::ClientSsoSessionConfigTypeBuilder;
+
 pub use crate::types::_sms_mfa_config_type::SmsMfaConfigTypeBuilder;
 
 pub use crate::types::_software_token_mfa_config_type::SoftwareTokenMfaConfigTypeBuilder;
@@ -102,6 +104,8 @@ pub use crate::types::_software_token_mfa_config_type::SoftwareTokenMfaConfigTyp
 pub use crate::types::_email_mfa_config_type::EmailMfaConfigTypeBuilder;
 
 pub use crate::types::_web_authn_configuration_type::WebAuthnConfigurationTypeBuilder;
+
+pub use crate::types::_user_pool_token_session_config_type::UserPoolTokenSessionConfigTypeBuilder;
 
 pub use crate::types::_compromised_credentials_risk_configuration_type::CompromisedCredentialsRiskConfigurationTypeBuilder;
 
@@ -118,6 +122,8 @@ pub use crate::types::_mfa_option_type::MfaOptionTypeBuilder;
 pub use crate::types::_new_device_metadata_type::NewDeviceMetadataTypeBuilder;
 
 pub use crate::types::_auth_event_type::AuthEventTypeBuilder;
+
+pub use crate::types::_session_description_type::SessionDescriptionTypeBuilder;
 
 pub use crate::types::_asset_type::AssetTypeBuilder;
 
@@ -174,6 +180,8 @@ pub use crate::types::_event_risk_type::EventRiskTypeBuilder;
 pub use crate::types::_event_context_data_type::EventContextDataTypeBuilder;
 
 pub use crate::types::_event_feedback_type::EventFeedbackTypeBuilder;
+
+pub use crate::types::_session_location_type::SessionLocationTypeBuilder;
 
 pub use crate::types::_recovery_option_type::RecoveryOptionTypeBuilder;
 

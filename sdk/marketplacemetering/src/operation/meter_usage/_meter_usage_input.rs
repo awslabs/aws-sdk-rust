@@ -9,12 +9,19 @@ pub struct MeterUsageInput {
     pub timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>It will be one of the fcp dimension name provided during the publishing of the product.</p>
     pub usage_dimension: ::std::option::Option<::std::string::String>,
-    /// <p>Consumption value for the hour. Defaults to <code>0</code> if not specified.</p>
+    /// <p>The consumption value for the hour, as a whole number. Defaults to <code>0</code> if neither <code>UsageQuantity</code> nor <code>UsageQuantityAsDecimal</code> is specified.</p>
+    /// <p>Use <code>UsageQuantityAsDecimal</code> instead. You can't specify both <code>UsageQuantity</code> and <code>UsageQuantityAsDecimal</code>.</p>
+    #[deprecated(note = "Use UsageQuantityAsDecimal instead.", since = "2026-10-20")]
     pub usage_quantity: ::std::option::Option<i32>,
+    /// <p>The consumption value for the hour, as a decimal string. Use this instead of <code>UsageQuantity</code> to report fractional usage.</p>
+    /// <p>A non-negative decimal number, for example <code>17.42</code>.</p>
+    /// <p>You can't specify both <code>UsageQuantity</code> and <code>UsageQuantityAsDecimal</code>. If you provide <code>UsageAllocations</code>, each allocation must use <code>AllocatedUsageQuantityAsDecimal</code>.</p>
+    /// <p>Quantities are compared by value when checking for duplicate or retried requests, so <code>17</code>, <code>17.0</code>, and <code>17.00</code> are the same quantity, whether you send it in <code>UsageQuantity</code> or <code>UsageQuantityAsDecimal</code>.</p>
+    pub usage_quantity_as_decimal: ::std::option::Option<::std::string::String>,
     /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns <code>DryRunOperation</code>; otherwise, it returns <code>UnauthorizedException</code>. Defaults to <code>false</code> if not specified.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The set of <code>UsageAllocations</code> to submit.</p>
-    /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
+    /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the usage quantity of the <code>MeterUsage</code> request (<code>UsageQuantity</code> or <code>UsageQuantityAsDecimal</code>), and each <code>UsageAllocation</code> must have a unique set of tags (include no tags). Allocations must use the same type of quantity as the request: <code>AllocatedUsageQuantity</code> with <code>UsageQuantity</code>, or <code>AllocatedUsageQuantityAsDecimal</code> with <code>UsageQuantityAsDecimal</code>.</p>
     pub usage_allocations: ::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>>,
     /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value</a>.</p>
     /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
@@ -34,16 +41,25 @@ impl MeterUsageInput {
     pub fn usage_dimension(&self) -> ::std::option::Option<&str> {
         self.usage_dimension.as_deref()
     }
-    /// <p>Consumption value for the hour. Defaults to <code>0</code> if not specified.</p>
+    /// <p>The consumption value for the hour, as a whole number. Defaults to <code>0</code> if neither <code>UsageQuantity</code> nor <code>UsageQuantityAsDecimal</code> is specified.</p>
+    /// <p>Use <code>UsageQuantityAsDecimal</code> instead. You can't specify both <code>UsageQuantity</code> and <code>UsageQuantityAsDecimal</code>.</p>
+    #[deprecated(note = "Use UsageQuantityAsDecimal instead.", since = "2026-10-20")]
     pub fn usage_quantity(&self) -> ::std::option::Option<i32> {
         self.usage_quantity
+    }
+    /// <p>The consumption value for the hour, as a decimal string. Use this instead of <code>UsageQuantity</code> to report fractional usage.</p>
+    /// <p>A non-negative decimal number, for example <code>17.42</code>.</p>
+    /// <p>You can't specify both <code>UsageQuantity</code> and <code>UsageQuantityAsDecimal</code>. If you provide <code>UsageAllocations</code>, each allocation must use <code>AllocatedUsageQuantityAsDecimal</code>.</p>
+    /// <p>Quantities are compared by value when checking for duplicate or retried requests, so <code>17</code>, <code>17.0</code>, and <code>17.00</code> are the same quantity, whether you send it in <code>UsageQuantity</code> or <code>UsageQuantityAsDecimal</code>.</p>
+    pub fn usage_quantity_as_decimal(&self) -> ::std::option::Option<&str> {
+        self.usage_quantity_as_decimal.as_deref()
     }
     /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns <code>DryRunOperation</code>; otherwise, it returns <code>UnauthorizedException</code>. Defaults to <code>false</code> if not specified.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
     /// <p>The set of <code>UsageAllocations</code> to submit.</p>
-    /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
+    /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the usage quantity of the <code>MeterUsage</code> request (<code>UsageQuantity</code> or <code>UsageQuantityAsDecimal</code>), and each <code>UsageAllocation</code> must have a unique set of tags (include no tags). Allocations must use the same type of quantity as the request: <code>AllocatedUsageQuantity</code> with <code>UsageQuantity</code>, or <code>AllocatedUsageQuantityAsDecimal</code> with <code>UsageQuantityAsDecimal</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_allocations.is_none()`.
     pub fn usage_allocations(&self) -> &[crate::types::UsageAllocation] {
@@ -71,6 +87,7 @@ pub struct MeterUsageInputBuilder {
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) usage_dimension: ::std::option::Option<::std::string::String>,
     pub(crate) usage_quantity: ::std::option::Option<i32>,
+    pub(crate) usage_quantity_as_decimal: ::std::option::Option<::std::string::String>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) usage_allocations: ::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -121,19 +138,48 @@ impl MeterUsageInputBuilder {
     pub fn get_usage_dimension(&self) -> &::std::option::Option<::std::string::String> {
         &self.usage_dimension
     }
-    /// <p>Consumption value for the hour. Defaults to <code>0</code> if not specified.</p>
+    /// <p>The consumption value for the hour, as a whole number. Defaults to <code>0</code> if neither <code>UsageQuantity</code> nor <code>UsageQuantityAsDecimal</code> is specified.</p>
+    /// <p>Use <code>UsageQuantityAsDecimal</code> instead. You can't specify both <code>UsageQuantity</code> and <code>UsageQuantityAsDecimal</code>.</p>
+    #[deprecated(note = "Use UsageQuantityAsDecimal instead.", since = "2026-10-20")]
     pub fn usage_quantity(mut self, input: i32) -> Self {
         self.usage_quantity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Consumption value for the hour. Defaults to <code>0</code> if not specified.</p>
+    /// <p>The consumption value for the hour, as a whole number. Defaults to <code>0</code> if neither <code>UsageQuantity</code> nor <code>UsageQuantityAsDecimal</code> is specified.</p>
+    /// <p>Use <code>UsageQuantityAsDecimal</code> instead. You can't specify both <code>UsageQuantity</code> and <code>UsageQuantityAsDecimal</code>.</p>
+    #[deprecated(note = "Use UsageQuantityAsDecimal instead.", since = "2026-10-20")]
     pub fn set_usage_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.usage_quantity = input;
         self
     }
-    /// <p>Consumption value for the hour. Defaults to <code>0</code> if not specified.</p>
+    /// <p>The consumption value for the hour, as a whole number. Defaults to <code>0</code> if neither <code>UsageQuantity</code> nor <code>UsageQuantityAsDecimal</code> is specified.</p>
+    /// <p>Use <code>UsageQuantityAsDecimal</code> instead. You can't specify both <code>UsageQuantity</code> and <code>UsageQuantityAsDecimal</code>.</p>
+    #[deprecated(note = "Use UsageQuantityAsDecimal instead.", since = "2026-10-20")]
     pub fn get_usage_quantity(&self) -> &::std::option::Option<i32> {
         &self.usage_quantity
+    }
+    /// <p>The consumption value for the hour, as a decimal string. Use this instead of <code>UsageQuantity</code> to report fractional usage.</p>
+    /// <p>A non-negative decimal number, for example <code>17.42</code>.</p>
+    /// <p>You can't specify both <code>UsageQuantity</code> and <code>UsageQuantityAsDecimal</code>. If you provide <code>UsageAllocations</code>, each allocation must use <code>AllocatedUsageQuantityAsDecimal</code>.</p>
+    /// <p>Quantities are compared by value when checking for duplicate or retried requests, so <code>17</code>, <code>17.0</code>, and <code>17.00</code> are the same quantity, whether you send it in <code>UsageQuantity</code> or <code>UsageQuantityAsDecimal</code>.</p>
+    pub fn usage_quantity_as_decimal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.usage_quantity_as_decimal = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The consumption value for the hour, as a decimal string. Use this instead of <code>UsageQuantity</code> to report fractional usage.</p>
+    /// <p>A non-negative decimal number, for example <code>17.42</code>.</p>
+    /// <p>You can't specify both <code>UsageQuantity</code> and <code>UsageQuantityAsDecimal</code>. If you provide <code>UsageAllocations</code>, each allocation must use <code>AllocatedUsageQuantityAsDecimal</code>.</p>
+    /// <p>Quantities are compared by value when checking for duplicate or retried requests, so <code>17</code>, <code>17.0</code>, and <code>17.00</code> are the same quantity, whether you send it in <code>UsageQuantity</code> or <code>UsageQuantityAsDecimal</code>.</p>
+    pub fn set_usage_quantity_as_decimal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.usage_quantity_as_decimal = input;
+        self
+    }
+    /// <p>The consumption value for the hour, as a decimal string. Use this instead of <code>UsageQuantity</code> to report fractional usage.</p>
+    /// <p>A non-negative decimal number, for example <code>17.42</code>.</p>
+    /// <p>You can't specify both <code>UsageQuantity</code> and <code>UsageQuantityAsDecimal</code>. If you provide <code>UsageAllocations</code>, each allocation must use <code>AllocatedUsageQuantityAsDecimal</code>.</p>
+    /// <p>Quantities are compared by value when checking for duplicate or retried requests, so <code>17</code>, <code>17.0</code>, and <code>17.00</code> are the same quantity, whether you send it in <code>UsageQuantity</code> or <code>UsageQuantityAsDecimal</code>.</p>
+    pub fn get_usage_quantity_as_decimal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.usage_quantity_as_decimal
     }
     /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns <code>DryRunOperation</code>; otherwise, it returns <code>UnauthorizedException</code>. Defaults to <code>false</code> if not specified.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -154,7 +200,7 @@ impl MeterUsageInputBuilder {
     /// To override the contents of this collection use [`set_usage_allocations`](Self::set_usage_allocations).
     ///
     /// <p>The set of <code>UsageAllocations</code> to submit.</p>
-    /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
+    /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the usage quantity of the <code>MeterUsage</code> request (<code>UsageQuantity</code> or <code>UsageQuantityAsDecimal</code>), and each <code>UsageAllocation</code> must have a unique set of tags (include no tags). Allocations must use the same type of quantity as the request: <code>AllocatedUsageQuantity</code> with <code>UsageQuantity</code>, or <code>AllocatedUsageQuantityAsDecimal</code> with <code>UsageQuantityAsDecimal</code>.</p>
     pub fn usage_allocations(mut self, input: crate::types::UsageAllocation) -> Self {
         let mut v = self.usage_allocations.unwrap_or_default();
         v.push(input);
@@ -162,13 +208,13 @@ impl MeterUsageInputBuilder {
         self
     }
     /// <p>The set of <code>UsageAllocations</code> to submit.</p>
-    /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
+    /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the usage quantity of the <code>MeterUsage</code> request (<code>UsageQuantity</code> or <code>UsageQuantityAsDecimal</code>), and each <code>UsageAllocation</code> must have a unique set of tags (include no tags). Allocations must use the same type of quantity as the request: <code>AllocatedUsageQuantity</code> with <code>UsageQuantity</code>, or <code>AllocatedUsageQuantityAsDecimal</code> with <code>UsageQuantityAsDecimal</code>.</p>
     pub fn set_usage_allocations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>>) -> Self {
         self.usage_allocations = input;
         self
     }
     /// <p>The set of <code>UsageAllocations</code> to submit.</p>
-    /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
+    /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the usage quantity of the <code>MeterUsage</code> request (<code>UsageQuantity</code> or <code>UsageQuantityAsDecimal</code>), and each <code>UsageAllocation</code> must have a unique set of tags (include no tags). Allocations must use the same type of quantity as the request: <code>AllocatedUsageQuantity</code> with <code>UsageQuantity</code>, or <code>AllocatedUsageQuantityAsDecimal</code> with <code>UsageQuantityAsDecimal</code>.</p>
     pub fn get_usage_allocations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>> {
         &self.usage_allocations
     }
@@ -199,6 +245,7 @@ impl MeterUsageInputBuilder {
             timestamp: self.timestamp,
             usage_dimension: self.usage_dimension,
             usage_quantity: self.usage_quantity,
+            usage_quantity_as_decimal: self.usage_quantity_as_decimal,
             dry_run: self.dry_run,
             usage_allocations: self.usage_allocations,
             client_token: self.client_token,

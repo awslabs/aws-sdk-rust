@@ -112,6 +112,17 @@ impl ListStackInstancesForProvisionedProductFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_stack_instances_for_provisioned_product::paginator::ListStackInstancesForProvisionedProductPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_stack_instances_for_provisioned_product::paginator::ListStackInstancesForProvisionedProductPaginator {
+        crate::operation::list_stack_instances_for_provisioned_product::paginator::ListStackInstancesForProvisionedProductPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The language code.</p>
     /// <ul>
     /// <li>

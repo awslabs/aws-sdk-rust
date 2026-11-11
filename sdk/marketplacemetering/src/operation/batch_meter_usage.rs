@@ -667,7 +667,7 @@ pub enum BatchMeterUsageError {
     InvalidProductCodeException(crate::types::error::InvalidProductCodeException),
     /// <p>The tag is invalid, or the number of tags is greater than 5.</p>
     InvalidTagException(crate::types::error::InvalidTagException),
-    /// <p>Sum of allocated usage quantities is not equal to the usage quantity.</p>
+    /// <p>Sum of allocated usage quantities is not equal to the usage quantity, or the allocations don't use the same type of quantity (whole number or decimal) as the usage quantity.</p>
     InvalidUsageAllocationsException(crate::types::error::InvalidUsageAllocationsException),
     /// <p>The usage dimension does not match one of the <code>UsageDimensions</code> associated with products.</p>
     InvalidUsageDimensionException(crate::types::error::InvalidUsageDimensionException),

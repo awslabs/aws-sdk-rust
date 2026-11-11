@@ -9,6 +9,16 @@ static CONNECTORCONFIGURATION_MEMBER_AZURE: ::aws_smithy_schema::Schema<'static>
     "azure",
     0,
 );
+static CONNECTORCONFIGURATION_MEMBER_GCP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConnectorConfiguration$gcp",
+        "com.amazonaws.configservice",
+        "ConnectorConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "gcp",
+    1,
+);
 static CONNECTORCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.configservice#ConnectorConfiguration",
@@ -16,7 +26,7 @@ static CONNECTORCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::a
         "ConnectorConfiguration",
     ),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&CONNECTORCONFIGURATION_MEMBER_AZURE],
+    &[&CONNECTORCONFIGURATION_MEMBER_AZURE, &CONNECTORCONFIGURATION_MEMBER_GCP],
 );
 impl crate::types::ConnectorConfiguration {
     /// The schema for this shape.
@@ -34,6 +44,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::ConnectorC
     ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
         if let Some(ref val) = self.azure {
             ser.write_struct(&CONNECTORCONFIGURATION_MEMBER_AZURE, val)?;
+        }
+        if let Some(ref val) = self.gcp {
+            ser.write_struct(&CONNECTORCONFIGURATION_MEMBER_GCP, val)?;
         }
         Ok(())
     }
@@ -57,6 +70,13 @@ impl crate::types::builders::ConnectorConfigurationBuilder {
                         deser.read_null()?;
                     } else {
                         self.azure = Some(crate::types::AzureConnectorConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gcp = Some(crate::types::GcpConnectorConfiguration::deserialize(deser)?);
                     }
                 }
                 _ => {}

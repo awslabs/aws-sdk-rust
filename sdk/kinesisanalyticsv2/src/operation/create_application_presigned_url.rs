@@ -327,9 +327,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateApplica
 pub enum CreateApplicationPresignedUrlError {
     /// <p>The specified input parameter value is not valid.</p>
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
-    /// <p>The application is not available for this operation.</p>
+    /// <p>The application or snapshot is not available for this operation.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),
-    /// <p>Specified application can't be found.</p>
+    /// <p>The specified application, snapshot, or snapshot operation can't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

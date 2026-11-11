@@ -13,6 +13,7 @@
 /// # let auditeventtype = unimplemented!();
 /// match auditeventtype {
 ///     AuditEventType::CaseCreated => { /* ... */ },
+///     AuditEventType::CaseMerged => { /* ... */ },
 ///     AuditEventType::CaseUpdated => { /* ... */ },
 ///     AuditEventType::RelatedItemCreated => { /* ... */ },
 ///     AuditEventType::RelatedItemDeleted => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum AuditEventType {
     #[allow(missing_docs)] // documentation missing in model
     CaseCreated,
     #[allow(missing_docs)] // documentation missing in model
+    CaseMerged,
+    #[allow(missing_docs)] // documentation missing in model
     CaseUpdated,
     #[allow(missing_docs)] // documentation missing in model
     RelatedItemCreated,
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for AuditEventType {
     fn from(s: &str) -> Self {
         match s {
             "Case.Created" => AuditEventType::CaseCreated,
+            "Case.Merged" => AuditEventType::CaseMerged,
             "Case.Updated" => AuditEventType::CaseUpdated,
             "RelatedItem.Created" => AuditEventType::RelatedItemCreated,
             "RelatedItem.Deleted" => AuditEventType::RelatedItemDeleted,
@@ -83,6 +87,7 @@ impl AuditEventType {
     pub fn as_str(&self) -> &str {
         match self {
             AuditEventType::CaseCreated => "Case.Created",
+            AuditEventType::CaseMerged => "Case.Merged",
             AuditEventType::CaseUpdated => "Case.Updated",
             AuditEventType::RelatedItemCreated => "RelatedItem.Created",
             AuditEventType::RelatedItemDeleted => "RelatedItem.Deleted",
@@ -94,6 +99,7 @@ impl AuditEventType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "Case.Created",
+            "Case.Merged",
             "Case.Updated",
             "RelatedItem.Created",
             "RelatedItem.Deleted",
@@ -122,6 +128,7 @@ impl ::std::fmt::Display for AuditEventType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AuditEventType::CaseCreated => write!(f, "Case.Created"),
+            AuditEventType::CaseMerged => write!(f, "Case.Merged"),
             AuditEventType::CaseUpdated => write!(f, "Case.Updated"),
             AuditEventType::RelatedItemCreated => write!(f, "RelatedItem.Created"),
             AuditEventType::RelatedItemDeleted => write!(f, "RelatedItem.Deleted"),

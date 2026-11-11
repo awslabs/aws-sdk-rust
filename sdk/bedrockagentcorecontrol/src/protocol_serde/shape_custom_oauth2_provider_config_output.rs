@@ -63,6 +63,15 @@ where
                                 crate::protocol_serde::shape_private_endpoint_overrides::de_private_endpoint_overrides(tokens, _value, depth + 1)?,
                             );
                         }
+                        "certificateConfigurations" => {
+                            builder = builder.set_certificate_configurations(
+                                crate::protocol_serde::shape_certificate_configuration_list::de_certificate_configuration_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         "privateKeyJwtConfig" => {
                             builder = builder.set_private_key_jwt_config(
                                 crate::protocol_serde::shape_private_key_jwt_config::de_private_key_jwt_config(tokens, _value, depth + 1)?,

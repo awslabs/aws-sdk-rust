@@ -7,7 +7,7 @@ pub enum Error {
     CustomerNotEntitledException(crate::types::error::CustomerNotEntitledException),
     /// <p>The API is disabled in the Region.</p>
     DisabledApiException(crate::types::error::DisabledApiException),
-    /// <p>A metering record has already been emitted by the same EC2 instance, ECS task, or EKS pod for the given {<code>usageDimension</code>, <code>timestamp</code>} with a different <code>usageQuantity</code>.</p>
+    /// <p>A metering record has already been emitted by the same EC2 instance, ECS task, or EKS pod for the given {<code>usageDimension</code>, <code>timestamp</code>} with a different <code>usageQuantity</code>. Quantities are compared by value, so a whole-number and a decimal quantity with the same value (for example, <code>17</code> and <code>17.00</code>) are not different.</p>
     DuplicateRequestException(crate::types::error::DuplicateRequestException),
     /// <p>The submitted registration token has expired. This can happen if the buyer's browser takes too long to redirect to your page, the buyer has resubmitted the registration token, or your application has held on to the registration token for too long. Your SaaS registration website should redeem this token as soon as it is submitted by the buyer's browser.</p>
     ExpiredTokenException(crate::types::error::ExpiredTokenException),
@@ -31,7 +31,7 @@ pub enum Error {
     InvalidTagException(crate::types::error::InvalidTagException),
     /// <p>Registration token is invalid.</p>
     InvalidTokenException(crate::types::error::InvalidTokenException),
-    /// <p>Sum of allocated usage quantities is not equal to the usage quantity.</p>
+    /// <p>Sum of allocated usage quantities is not equal to the usage quantity, or the allocations don't use the same type of quantity (whole number or decimal) as the usage quantity.</p>
     InvalidUsageAllocationsException(crate::types::error::InvalidUsageAllocationsException),
     /// <p>The usage dimension does not match one of the <code>UsageDimensions</code> associated with products.</p>
     InvalidUsageDimensionException(crate::types::error::InvalidUsageDimensionException),

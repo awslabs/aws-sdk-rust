@@ -275,6 +275,15 @@ pub(crate) fn get_layout_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_merge_cases_status_output_output_correct_errors(
+    mut builder: crate::operation::get_merge_cases_status::builders::GetMergeCasesStatusOutputBuilder,
+) -> crate::operation::get_merge_cases_status::builders::GetMergeCasesStatusOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::MergeStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_template_output_output_correct_errors(
     mut builder: crate::operation::get_template::builders::GetTemplateOutputBuilder,
 ) -> crate::operation::get_template::builders::GetTemplateOutputBuilder {

@@ -6,5 +6,8 @@ pub fn ser_application_snapshot_configuration_update(
     {
         object.key("SnapshotsEnabledUpdate").boolean(input.snapshots_enabled_update);
     }
+    if let Some(var_1) = &input.snapshot_mode_update {
+        object.key("SnapshotModeUpdate").string(var_1.as_str());
+    }
     Ok(())
 }

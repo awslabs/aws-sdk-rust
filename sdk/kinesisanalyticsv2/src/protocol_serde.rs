@@ -41,6 +41,8 @@ pub(crate) mod shape_create_application_presigned_url;
 
 pub(crate) mod shape_create_application_snapshot;
 
+pub(crate) mod shape_create_snapshot;
+
 pub(crate) mod shape_delete_application;
 
 pub(crate) mod shape_delete_application_cloud_watch_logging_option;
@@ -55,6 +57,8 @@ pub(crate) mod shape_delete_application_snapshot;
 
 pub(crate) mod shape_delete_application_vpc_configuration;
 
+pub(crate) mod shape_delete_snapshot;
+
 pub(crate) mod shape_describe_application;
 
 pub(crate) mod shape_describe_application_operation;
@@ -63,7 +67,15 @@ pub(crate) mod shape_describe_application_snapshot;
 
 pub(crate) mod shape_describe_application_version;
 
+pub(crate) mod shape_describe_snapshot;
+
+pub(crate) mod shape_describe_snapshot_operation;
+
 pub(crate) mod shape_discover_input_schema;
+
+pub(crate) mod shape_export_snapshot;
+
+pub(crate) mod shape_import_snapshot;
 
 pub(crate) mod shape_list_application_operations;
 
@@ -72,6 +84,10 @@ pub(crate) mod shape_list_application_snapshots;
 pub(crate) mod shape_list_application_versions;
 
 pub(crate) mod shape_list_applications;
+
+pub(crate) mod shape_list_snapshot_operations;
+
+pub(crate) mod shape_list_snapshots;
 
 pub(crate) mod shape_list_tags_for_resource;
 
@@ -119,6 +135,8 @@ pub(crate) mod shape_create_application_presigned_url_input;
 
 pub(crate) mod shape_create_application_snapshot_input;
 
+pub(crate) mod shape_create_snapshot_input;
+
 pub(crate) mod shape_delete_application_cloud_watch_logging_option_input;
 
 pub(crate) mod shape_delete_application_input;
@@ -133,6 +151,8 @@ pub(crate) mod shape_delete_application_snapshot_input;
 
 pub(crate) mod shape_delete_application_vpc_configuration_input;
 
+pub(crate) mod shape_delete_snapshot_input;
+
 pub(crate) mod shape_describe_application_input;
 
 pub(crate) mod shape_describe_application_operation_input;
@@ -141,7 +161,15 @@ pub(crate) mod shape_describe_application_snapshot_input;
 
 pub(crate) mod shape_describe_application_version_input;
 
+pub(crate) mod shape_describe_snapshot_input;
+
+pub(crate) mod shape_describe_snapshot_operation_input;
+
 pub(crate) mod shape_discover_input_schema_input;
+
+pub(crate) mod shape_export_snapshot_input;
+
+pub(crate) mod shape_import_snapshot_input;
 
 pub(crate) mod shape_invalid_application_configuration_exception;
 
@@ -158,6 +186,10 @@ pub(crate) mod shape_list_application_snapshots_input;
 pub(crate) mod shape_list_application_versions_input;
 
 pub(crate) mod shape_list_applications_input;
+
+pub(crate) mod shape_list_snapshot_operations_input;
+
+pub(crate) mod shape_list_snapshots_input;
 
 pub(crate) mod shape_list_tags_for_resource_input;
 
@@ -213,6 +245,10 @@ pub(crate) mod shape_cloud_watch_logging_option_descriptions;
 
 pub(crate) mod shape_cloud_watch_logging_option_update;
 
+pub(crate) mod shape_export_destination_configuration;
+
+pub(crate) mod shape_import_source_configuration;
+
 pub(crate) mod shape_input;
 
 pub(crate) mod shape_input_descriptions;
@@ -245,6 +281,16 @@ pub(crate) mod shape_s3_configuration;
 
 pub(crate) mod shape_snapshot_details;
 
+pub(crate) mod shape_snapshot_encryption_configuration;
+
+pub(crate) mod shape_snapshot_info_details;
+
+pub(crate) mod shape_snapshot_info_list;
+
+pub(crate) mod shape_snapshot_operation_info_details;
+
+pub(crate) mod shape_snapshot_operation_info_list;
+
 pub(crate) mod shape_snapshot_summaries;
 
 pub(crate) mod shape_source_schema;
@@ -269,6 +315,8 @@ pub(crate) mod shape_application_encryption_configuration_description;
 
 pub(crate) mod shape_application_encryption_configuration_update;
 
+pub(crate) mod shape_application_operation_description;
+
 pub(crate) mod shape_application_operation_info;
 
 pub(crate) mod shape_application_restore_configuration;
@@ -290,6 +338,8 @@ pub(crate) mod shape_application_version_summary;
 pub(crate) mod shape_cloud_watch_logging_option_description;
 
 pub(crate) mod shape_destination_schema;
+
+pub(crate) mod shape_encryption_configuration_description;
 
 pub(crate) mod shape_environment_properties;
 
@@ -331,9 +381,21 @@ pub(crate) mod shape_record_format;
 
 pub(crate) mod shape_reference_data_source_description;
 
+pub(crate) mod shape_s3_prefix_location;
+
 pub(crate) mod shape_s3_reference_data_source;
 
 pub(crate) mod shape_security_group_ids;
+
+pub(crate) mod shape_snapshot_info;
+
+pub(crate) mod shape_snapshot_operation_failure_details;
+
+pub(crate) mod shape_snapshot_operation_info;
+
+pub(crate) mod shape_snapshot_operation_location_description;
+
+pub(crate) mod shape_snapshot_source_description;
 
 pub(crate) mod shape_sql_application_configuration;
 
@@ -414,6 +476,12 @@ pub(crate) mod shape_reference_data_source_update;
 pub(crate) mod shape_run_configuration_description;
 
 pub(crate) mod shape_s3_reference_data_source_description;
+
+pub(crate) mod shape_snapshot_error_info;
+
+pub(crate) mod shape_snapshot_operation_s3_prefix_location;
+
+pub(crate) mod shape_source_application_description;
 
 pub(crate) mod shape_sql_application_configuration_description;
 

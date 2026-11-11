@@ -431,7 +431,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteIpGrou
             .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
             .expect("a SharedClientProtocol is required");
         let mut request = protocol
-            .serialize_request(&input, DeleteIpGroup::INPUT_SCHEMA, "/", _cfg)
+            .serialize_request(
+                &input,
+                DeleteIpGroup::INPUT_SCHEMA,
+                "/service/WorkspacesService/operation/DeleteIpGroup",
+                _cfg,
+            )
             .map_err(::aws_smithy_runtime_api::box_error::BoxError::from)?;
 
         return ::std::result::Result::Ok(request);

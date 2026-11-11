@@ -28,6 +28,9 @@ pub mod create_application_presigned_url;
 /// Types for the `CreateApplicationSnapshot` operation.
 pub mod create_application_snapshot;
 
+/// Types for the `CreateSnapshot` operation.
+pub mod create_snapshot;
+
 /// Types for the `DeleteApplication` operation.
 pub mod delete_application;
 
@@ -49,6 +52,9 @@ pub mod delete_application_snapshot;
 /// Types for the `DeleteApplicationVpcConfiguration` operation.
 pub mod delete_application_vpc_configuration;
 
+/// Types for the `DeleteSnapshot` operation.
+pub mod delete_snapshot;
+
 /// Types for the `DescribeApplication` operation.
 pub mod describe_application;
 
@@ -61,8 +67,20 @@ pub mod describe_application_snapshot;
 /// Types for the `DescribeApplicationVersion` operation.
 pub mod describe_application_version;
 
+/// Types for the `DescribeSnapshot` operation.
+pub mod describe_snapshot;
+
+/// Types for the `DescribeSnapshotOperation` operation.
+pub mod describe_snapshot_operation;
+
 /// Types for the `DiscoverInputSchema` operation.
 pub mod discover_input_schema;
+
+/// Types for the `ExportSnapshot` operation.
+pub mod export_snapshot;
+
+/// Types for the `ImportSnapshot` operation.
+pub mod import_snapshot;
 
 /// Types for the `ListApplicationOperations` operation.
 pub mod list_application_operations;
@@ -75,6 +93,12 @@ pub mod list_application_versions;
 
 /// Types for the `ListApplications` operation.
 pub mod list_applications;
+
+/// Types for the `ListSnapshotOperations` operation.
+pub mod list_snapshot_operations;
+
+/// Types for the `ListSnapshots` operation.
+pub mod list_snapshots;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;

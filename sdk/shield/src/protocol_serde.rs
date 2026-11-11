@@ -15,14 +15,6 @@ where
         .map_err(::std::convert::Into::into)
 }
 
-pub fn parse_http_error_metadata(
-    _response_status: u16,
-    response_headers: &::aws_smithy_runtime_api::http::Headers,
-    response_body: &[u8],
-) -> ::std::result::Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    crate::json_errors::parse_error_metadata(response_body, response_headers)
-}
-
 pub(crate) mod shape_associate_drt_log_bucket;
 
 pub(crate) mod shape_associate_drt_role;
@@ -95,14 +87,6 @@ pub(crate) mod shape_update_protection_group;
 
 pub(crate) mod shape_update_subscription;
 
-pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
-    if data.is_empty() {
-        b"{}"
-    } else {
-        data
-    }
-}
-
 pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_access_denied_for_dependency_exception;
@@ -119,23 +103,43 @@ pub(crate) mod shape_create_protection_group_input;
 
 pub(crate) mod shape_create_protection_input;
 
+pub(crate) mod shape_create_subscription_input;
+
 pub(crate) mod shape_delete_protection_group_input;
 
 pub(crate) mod shape_delete_protection_input;
 
+pub(crate) mod shape_delete_subscription_input;
+
 pub(crate) mod shape_describe_attack_input;
+
+pub(crate) mod shape_describe_attack_statistics_input;
+
+pub(crate) mod shape_describe_drt_access_input;
+
+pub(crate) mod shape_describe_emergency_contact_settings_input;
 
 pub(crate) mod shape_describe_protection_group_input;
 
 pub(crate) mod shape_describe_protection_input;
 
+pub(crate) mod shape_describe_subscription_input;
+
 pub(crate) mod shape_disable_application_layer_automatic_response_input;
 
+pub(crate) mod shape_disable_proactive_engagement_input;
+
 pub(crate) mod shape_disassociate_drt_log_bucket_input;
+
+pub(crate) mod shape_disassociate_drt_role_input;
 
 pub(crate) mod shape_disassociate_health_check_input;
 
 pub(crate) mod shape_enable_application_layer_automatic_response_input;
+
+pub(crate) mod shape_enable_proactive_engagement_input;
+
+pub(crate) mod shape_get_subscription_state_input;
 
 pub(crate) mod shape_internal_error_exception;
 

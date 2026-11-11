@@ -7,7 +7,7 @@ pub fn de_create_rule_group_http_error(
     _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::create_rule_group::CreateRuleGroupOutput, crate::operation::create_rule_group::CreateRuleGroupError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -24,7 +24,7 @@ pub fn de_create_rule_group_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InsufficientCapacityExceptionBuilder::default();
                 output =
-                    crate::protocol_serde::shape_insufficient_capacity_exception::de_insufficient_capacity_exception_json_err(_response_body, output)
+                    crate::protocol_serde::shape_insufficient_capacity_exception::de_insufficient_capacity_exception_cbor_err(_response_body, output)
                         .map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -39,7 +39,7 @@ pub fn de_create_rule_group_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
-                output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_cbor_err(_response_body, output)
                     .map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -54,7 +54,7 @@ pub fn de_create_rule_group_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidRequestExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_invalid_request_exception::de_invalid_request_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -69,7 +69,7 @@ pub fn de_create_rule_group_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -84,7 +84,7 @@ pub fn de_create_rule_group_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::create_rule_group::CreateRuleGroupError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -120,56 +120,65 @@ pub fn de_create_rule_group_http_response(
 pub fn ser_create_rule_group_input(
     input: &crate::operation::create_rule_group::CreateRuleGroupInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    let mut out = String::new();
-    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_create_rule_group_input::ser_create_rule_group_input_input(&mut object, input)?;
-    object.finish();
-    Ok(::aws_smithy_types::body::SdkBody::from(out))
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_create_rule_group_input::ser_create_rule_group_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }
 
 pub(crate) fn de_create_rule_group(
-    _value: &[u8],
+    value: &[u8],
     mut builder: crate::operation::create_rule_group::builders::CreateRuleGroupOutputBuilder,
-) -> ::std::result::Result<
-    crate::operation::create_rule_group::builders::CreateRuleGroupOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
-> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
-    let tokens = &mut tokens_owned;
+) -> ::std::result::Result<crate::operation::create_rule_group::builders::CreateRuleGroupOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
+    #[allow(clippy::match_single_binding, unused_variables)]
+    fn pair(
+        mut builder: crate::operation::create_rule_group::builders::CreateRuleGroupOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
+    ) -> ::std::result::Result<crate::operation::create_rule_group::builders::CreateRuleGroupOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError>
+    {
+        builder = match decoder.str()?.as_ref() {
+            "UpdateToken" => builder.set_update_token(Some(decoder.string()?)),
+            "RuleGroupResponse" => builder.set_rule_group_response(Some(crate::protocol_serde::shape_rule_group_response::de_rule_group_response(
+                decoder,
+                depth + 1,
+            )?)),
+            _ => {
+                decoder.skip()?;
+                builder
+            }
+        };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
     #[allow(unused_variables)]
     let depth = 0u32;
-    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "UpdateToken" => {
-                    builder = builder.set_update_token(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
                 }
-                "RuleGroupResponse" => {
-                    builder = builder.set_rule_group_response(crate::protocol_serde::shape_rule_group_response::de_rule_group_response(
-                        tokens,
-                        _value,
-                        depth + 1,
-                    )?);
+                _ => {
+                    builder = pair(builder, decoder, depth)?;
                 }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
-            other => {
-                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {other:?}"
-                )))
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder, depth)?;
             }
         }
+    };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
     }
-    if tokens.next().is_some() {
-        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
+
     Ok(builder)
 }

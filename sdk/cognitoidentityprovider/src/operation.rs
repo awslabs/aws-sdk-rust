@@ -61,6 +61,9 @@ pub mod admin_list_groups_for_user;
 /// Types for the `AdminListUserAuthEvents` operation.
 pub mod admin_list_user_auth_events;
 
+/// Types for the `AdminListUserSessions` operation.
+pub mod admin_list_user_sessions;
+
 /// Types for the `AdminRemoveUserFromGroup` operation.
 pub mod admin_remove_user_from_group;
 
@@ -69,6 +72,9 @@ pub mod admin_reset_user_password;
 
 /// Types for the `AdminRespondToAuthChallenge` operation.
 pub mod admin_respond_to_auth_challenge;
+
+/// Types for the `AdminRevokeUserSession` operation.
+pub mod admin_revoke_user_session;
 
 /// Types for the `AdminSetUserMFAPreference` operation.
 pub mod admin_set_user_mfa_preference;
@@ -256,8 +262,14 @@ pub mod get_user_attribute_verification_code;
 /// Types for the `GetUserAuthFactors` operation.
 pub mod get_user_auth_factors;
 
+/// Types for the `GetUserPoolClientSessionConfiguration` operation.
+pub mod get_user_pool_client_session_configuration;
+
 /// Types for the `GetUserPoolMfaConfig` operation.
 pub mod get_user_pool_mfa_config;
+
+/// Types for the `GetUserPoolSessionConfiguration` operation.
+pub mod get_user_pool_session_configuration;
 
 /// Types for the `GlobalSignOut` operation.
 pub mod global_sign_out;
@@ -298,6 +310,9 @@ pub mod list_user_pool_replicas;
 /// Types for the `ListUserPools` operation.
 pub mod list_user_pools;
 
+/// Types for the `ListUserSessions` operation.
+pub mod list_user_sessions;
+
 /// Types for the `ListUsers` operation.
 pub mod list_users;
 
@@ -316,6 +331,9 @@ pub mod respond_to_auth_challenge;
 /// Types for the `RevokeToken` operation.
 pub mod revoke_token;
 
+/// Types for the `RevokeUserSession` operation.
+pub mod revoke_user_session;
+
 /// Types for the `SetLogDeliveryConfiguration` operation.
 pub mod set_log_delivery_configuration;
 
@@ -328,8 +346,14 @@ pub mod set_ui_customization;
 /// Types for the `SetUserMFAPreference` operation.
 pub mod set_user_mfa_preference;
 
+/// Types for the `SetUserPoolClientSessionConfiguration` operation.
+pub mod set_user_pool_client_session_configuration;
+
 /// Types for the `SetUserPoolMfaConfig` operation.
 pub mod set_user_pool_mfa_config;
+
+/// Types for the `SetUserPoolSessionConfiguration` operation.
+pub mod set_user_pool_session_configuration;
 
 /// Types for the `SetUserSettings` operation.
 pub mod set_user_settings;

@@ -7,7 +7,7 @@ pub fn de_get_resources_http_error(
     _cfg: &::aws_smithy_types::config_bag::ConfigBag,
 ) -> std::result::Result<crate::operation::get_resources::GetResourcesOutput, crate::operation::get_resources::GetResourcesError> {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::get_resources::GetResourcesError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -23,7 +23,7 @@ pub fn de_get_resources_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServiceExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_service_exception::de_internal_service_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_resources::GetResourcesError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -38,7 +38,7 @@ pub fn de_get_resources_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_resources::GetResourcesError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -53,7 +53,7 @@ pub fn de_get_resources_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::PaginationTokenExpiredExceptionBuilder::default();
-                output = crate::protocol_serde::shape_pagination_token_expired_exception::de_pagination_token_expired_exception_json_err(
+                output = crate::protocol_serde::shape_pagination_token_expired_exception::de_pagination_token_expired_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -71,7 +71,7 @@ pub fn de_get_resources_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ThrottledExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttled_exception::de_throttled_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_throttled_exception::de_throttled_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::get_resources::GetResourcesError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -105,54 +105,68 @@ pub fn de_get_resources_http_response(
 pub fn ser_get_resources_input(
     input: &crate::operation::get_resources::GetResourcesInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    let mut out = String::new();
-    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_get_resources_input::ser_get_resources_input_input(&mut object, input)?;
-    object.finish();
-    Ok(::aws_smithy_types::body::SdkBody::from(out))
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_get_resources_input::ser_get_resources_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }
 
 pub(crate) fn de_get_resources(
-    _value: &[u8],
+    value: &[u8],
     mut builder: crate::operation::get_resources::builders::GetResourcesOutputBuilder,
-) -> ::std::result::Result<
-    crate::operation::get_resources::builders::GetResourcesOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
-> {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
-    let tokens = &mut tokens_owned;
+) -> ::std::result::Result<crate::operation::get_resources::builders::GetResourcesOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError> {
+    #[allow(clippy::match_single_binding, unused_variables)]
+    fn pair(
+        mut builder: crate::operation::get_resources::builders::GetResourcesOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
+    ) -> ::std::result::Result<crate::operation::get_resources::builders::GetResourcesOutputBuilder, ::aws_smithy_cbor::decode::DeserializeError>
+    {
+        builder = match decoder.str()?.as_ref() {
+            "PaginationToken" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_pagination_token(Some(decoder.string()?)))
+            })?,
+            "ResourceTagMappingList" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_resource_tag_mapping_list(Some(
+                    crate::protocol_serde::shape_resource_tag_mapping_list::de_resource_tag_mapping_list(decoder, depth + 1)?,
+                )))
+            })?,
+            _ => {
+                decoder.skip()?;
+                builder
+            }
+        };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
     #[allow(unused_variables)]
     let depth = 0u32;
-    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "PaginationToken" => {
-                    builder = builder.set_pagination_token(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
                 }
-                "ResourceTagMappingList" => {
-                    builder = builder.set_resource_tag_mapping_list(
-                        crate::protocol_serde::shape_resource_tag_mapping_list::de_resource_tag_mapping_list(tokens, _value, depth + 1)?,
-                    );
+                _ => {
+                    builder = pair(builder, decoder, depth)?;
                 }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
-            other => {
-                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {other:?}"
-                )))
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder, depth)?;
             }
         }
+    };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
     }
-    if tokens.next().is_some() {
-        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
+
     Ok(builder)
 }

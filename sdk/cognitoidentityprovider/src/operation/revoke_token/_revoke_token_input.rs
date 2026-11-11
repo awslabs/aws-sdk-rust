@@ -9,6 +9,8 @@ pub struct RevokeTokenInput {
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The client secret of the requested app client, if the client has a secret.</p>
     pub client_secret: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to also revoke the SSO session that is linked to the token session being revoked. <code>NONE</code>, the default, revokes only the token session that is associated with the refresh token. <code>LINKED</code> also revokes the parent SSO session that the token session came through; the other token sessions that came through that SSO session aren't revoked. <code>LINKED</code> has no effect when session tracking is disabled or when the token session has no parent SSO session.</p>
+    pub revoke_associated_sessions: ::std::option::Option<crate::types::RevokeAssociatedSessionsType>,
 }
 impl RevokeTokenInput {
     /// <p>The refresh token that you want to revoke.</p>
@@ -23,6 +25,10 @@ impl RevokeTokenInput {
     pub fn client_secret(&self) -> ::std::option::Option<&str> {
         self.client_secret.as_deref()
     }
+    /// <p>Specifies whether to also revoke the SSO session that is linked to the token session being revoked. <code>NONE</code>, the default, revokes only the token session that is associated with the refresh token. <code>LINKED</code> also revokes the parent SSO session that the token session came through; the other token sessions that came through that SSO session aren't revoked. <code>LINKED</code> has no effect when session tracking is disabled or when the token session has no parent SSO session.</p>
+    pub fn revoke_associated_sessions(&self) -> ::std::option::Option<&crate::types::RevokeAssociatedSessionsType> {
+        self.revoke_associated_sessions.as_ref()
+    }
 }
 impl ::std::fmt::Debug for RevokeTokenInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -30,6 +36,7 @@ impl ::std::fmt::Debug for RevokeTokenInput {
         formatter.field("token", &"*** Sensitive Data Redacted ***");
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
         formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.field("revoke_associated_sessions", &self.revoke_associated_sessions);
         formatter.finish()
     }
 }
@@ -47,6 +54,7 @@ pub struct RevokeTokenInputBuilder {
     pub(crate) token: ::std::option::Option<::std::string::String>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_secret: ::std::option::Option<::std::string::String>,
+    pub(crate) revoke_associated_sessions: ::std::option::Option<crate::types::RevokeAssociatedSessionsType>,
 }
 impl RevokeTokenInputBuilder {
     /// <p>The refresh token that you want to revoke.</p>
@@ -93,12 +101,27 @@ impl RevokeTokenInputBuilder {
     pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_secret
     }
+    /// <p>Specifies whether to also revoke the SSO session that is linked to the token session being revoked. <code>NONE</code>, the default, revokes only the token session that is associated with the refresh token. <code>LINKED</code> also revokes the parent SSO session that the token session came through; the other token sessions that came through that SSO session aren't revoked. <code>LINKED</code> has no effect when session tracking is disabled or when the token session has no parent SSO session.</p>
+    pub fn revoke_associated_sessions(mut self, input: crate::types::RevokeAssociatedSessionsType) -> Self {
+        self.revoke_associated_sessions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to also revoke the SSO session that is linked to the token session being revoked. <code>NONE</code>, the default, revokes only the token session that is associated with the refresh token. <code>LINKED</code> also revokes the parent SSO session that the token session came through; the other token sessions that came through that SSO session aren't revoked. <code>LINKED</code> has no effect when session tracking is disabled or when the token session has no parent SSO session.</p>
+    pub fn set_revoke_associated_sessions(mut self, input: ::std::option::Option<crate::types::RevokeAssociatedSessionsType>) -> Self {
+        self.revoke_associated_sessions = input;
+        self
+    }
+    /// <p>Specifies whether to also revoke the SSO session that is linked to the token session being revoked. <code>NONE</code>, the default, revokes only the token session that is associated with the refresh token. <code>LINKED</code> also revokes the parent SSO session that the token session came through; the other token sessions that came through that SSO session aren't revoked. <code>LINKED</code> has no effect when session tracking is disabled or when the token session has no parent SSO session.</p>
+    pub fn get_revoke_associated_sessions(&self) -> &::std::option::Option<crate::types::RevokeAssociatedSessionsType> {
+        &self.revoke_associated_sessions
+    }
     /// Consumes the builder and constructs a [`RevokeTokenInput`](crate::operation::revoke_token::RevokeTokenInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::revoke_token::RevokeTokenInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::revoke_token::RevokeTokenInput {
             token: self.token,
             client_id: self.client_id,
             client_secret: self.client_secret,
+            revoke_associated_sessions: self.revoke_associated_sessions,
         })
     }
 }
@@ -108,6 +131,7 @@ impl ::std::fmt::Debug for RevokeTokenInputBuilder {
         formatter.field("token", &"*** Sensitive Data Redacted ***");
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
         formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.field("revoke_associated_sessions", &self.revoke_associated_sessions);
         formatter.finish()
     }
 }

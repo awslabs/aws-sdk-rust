@@ -1468,16 +1468,19 @@ impl ServiceRuntimePlugin {
             let mut cfg = ::aws_smithy_types::config_bag::Layer::new("ACMPrivateCA");
             cfg.store_put(::aws_smithy_schema::protocol::ServiceShapeName::new("ACMPrivateCA"));
             cfg.store_put(::aws_smithy_schema::protocol::ServiceShapeNamespace::new("com.amazonaws.acmpca"));
-            cfg.store_put(::aws_smithy_schema::protocol::ServiceVersion::new(""));
+            cfg.store_put(::aws_smithy_schema::protocol::ServiceVersion::new("2017-08-22"));
             if _service_config.protocol().is_none() {
                 cfg.store_put(::aws_smithy_schema::protocol::SharedClientProtocol::new(
-                    ::aws_smithy_json::protocol::aws_json_rpc::AwsJsonRpcProtocol::aws_json_1_1().with_default_namespace("com.amazonaws.acmpca"),
+                    ::aws_smithy_cbor::protocol::RpcV2CborProtocol::new(),
                 ));
             }
             cfg.store_put(::aws_smithy_runtime::client::orchestrator::AuthSchemeAndEndpointOrchestrationV2);
             ::std::option::Option::Some(cfg.freeze())
         };
         let mut runtime_components = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ServiceRuntimePlugin");
+        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            crate::sdk_feature_tracker::rpc_v2_cbor::RpcV2CborFeatureTrackerInterceptor::new(),
+        ));
         runtime_components.set_auth_scheme_option_resolver(::std::option::Option::Some({
             use crate::config::auth::ResolveAuthScheme;
             crate::config::auth::DefaultAuthSchemeResolver::default().into_shared_resolver()

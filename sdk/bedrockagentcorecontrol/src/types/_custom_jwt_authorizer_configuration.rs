@@ -20,6 +20,8 @@ pub struct CustomJwtAuthorizerConfiguration {
     pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
     /// <p>The private endpoint overrides for the custom JWT authorizer configuration.</p>
     pub private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
+    /// <p>The private certificate authority (CA) configurations for the identity provider. Use this to have AgentCore Identity trust a private CA when establishing TLS connections to identity provider endpoints. You can specify only one certificate authority configuration in this list. Provide the certificate by reference to an Amazon S3 object or an Amazon Web Services Secrets Manager secret. You can use this only together with <code>privateEndpoint</code>.</p>
+    pub certificate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CertificateConfiguration>>,
     /// <p>The configuration that restricts which workloads in the request's identity chain are allowed to invoke the target, identified by their hosting environments and workload identities. At launch, this is supported only for AgentCore Runtime targets, and the allowed workloads are AgentCore Gateways.</p>
     pub allowed_workload_configuration: ::std::option::Option<crate::types::AllowedWorkloadConfiguration>,
 }
@@ -67,6 +69,12 @@ impl CustomJwtAuthorizerConfiguration {
     pub fn private_endpoint_overrides(&self) -> &[crate::types::PrivateEndpointOverride] {
         self.private_endpoint_overrides.as_deref().unwrap_or_default()
     }
+    /// <p>The private certificate authority (CA) configurations for the identity provider. Use this to have AgentCore Identity trust a private CA when establishing TLS connections to identity provider endpoints. You can specify only one certificate authority configuration in this list. Provide the certificate by reference to an Amazon S3 object or an Amazon Web Services Secrets Manager secret. You can use this only together with <code>privateEndpoint</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_configurations.is_none()`.
+    pub fn certificate_configurations(&self) -> &[crate::types::CertificateConfiguration] {
+        self.certificate_configurations.as_deref().unwrap_or_default()
+    }
     /// <p>The configuration that restricts which workloads in the request's identity chain are allowed to invoke the target, identified by their hosting environments and workload identities. At launch, this is supported only for AgentCore Runtime targets, and the allowed workloads are AgentCore Gateways.</p>
     pub fn allowed_workload_configuration(&self) -> ::std::option::Option<&crate::types::AllowedWorkloadConfiguration> {
         self.allowed_workload_configuration.as_ref()
@@ -91,6 +99,7 @@ pub struct CustomJwtAuthorizerConfigurationBuilder {
     pub(crate) custom_claims: ::std::option::Option<::std::vec::Vec<crate::types::CustomClaimValidationType>>,
     pub(crate) private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
     pub(crate) private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
+    pub(crate) certificate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CertificateConfiguration>>,
     pub(crate) allowed_workload_configuration: ::std::option::Option<crate::types::AllowedWorkloadConfiguration>,
 }
 impl CustomJwtAuthorizerConfigurationBuilder {
@@ -250,6 +259,26 @@ impl CustomJwtAuthorizerConfigurationBuilder {
     pub fn get_private_endpoint_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>> {
         &self.private_endpoint_overrides
     }
+    /// Appends an item to `certificate_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_certificate_configurations`](Self::set_certificate_configurations).
+    ///
+    /// <p>The private certificate authority (CA) configurations for the identity provider. Use this to have AgentCore Identity trust a private CA when establishing TLS connections to identity provider endpoints. You can specify only one certificate authority configuration in this list. Provide the certificate by reference to an Amazon S3 object or an Amazon Web Services Secrets Manager secret. You can use this only together with <code>privateEndpoint</code>.</p>
+    pub fn certificate_configurations(mut self, input: crate::types::CertificateConfiguration) -> Self {
+        let mut v = self.certificate_configurations.unwrap_or_default();
+        v.push(input);
+        self.certificate_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The private certificate authority (CA) configurations for the identity provider. Use this to have AgentCore Identity trust a private CA when establishing TLS connections to identity provider endpoints. You can specify only one certificate authority configuration in this list. Provide the certificate by reference to an Amazon S3 object or an Amazon Web Services Secrets Manager secret. You can use this only together with <code>privateEndpoint</code>.</p>
+    pub fn set_certificate_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateConfiguration>>) -> Self {
+        self.certificate_configurations = input;
+        self
+    }
+    /// <p>The private certificate authority (CA) configurations for the identity provider. Use this to have AgentCore Identity trust a private CA when establishing TLS connections to identity provider endpoints. You can specify only one certificate authority configuration in this list. Provide the certificate by reference to an Amazon S3 object or an Amazon Web Services Secrets Manager secret. You can use this only together with <code>privateEndpoint</code>.</p>
+    pub fn get_certificate_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateConfiguration>> {
+        &self.certificate_configurations
+    }
     /// <p>The configuration that restricts which workloads in the request's identity chain are allowed to invoke the target, identified by their hosting environments and workload identities. At launch, this is supported only for AgentCore Runtime targets, and the allowed workloads are AgentCore Gateways.</p>
     pub fn allowed_workload_configuration(mut self, input: crate::types::AllowedWorkloadConfiguration) -> Self {
         self.allowed_workload_configuration = ::std::option::Option::Some(input);
@@ -282,6 +311,7 @@ impl CustomJwtAuthorizerConfigurationBuilder {
             custom_claims: self.custom_claims,
             private_endpoint: self.private_endpoint,
             private_endpoint_overrides: self.private_endpoint_overrides,
+            certificate_configurations: self.certificate_configurations,
             allowed_workload_configuration: self.allowed_workload_configuration,
         })
     }

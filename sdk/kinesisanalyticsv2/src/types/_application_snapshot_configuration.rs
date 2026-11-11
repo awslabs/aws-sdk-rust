@@ -6,11 +6,19 @@
 pub struct ApplicationSnapshotConfiguration {
     /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub snapshots_enabled: bool,
+    /// <p>Specifies the snapshot mode for a Managed Service for Apache Flink application. To use enhanced snapshots, specify <code>ENHANCED_SNAPSHOTS</code>. If you don't specify this parameter, the application uses <code>APPLICATION_SNAPSHOTS_LEGACY</code>. For more information, see <a href="https://docs.aws.amazon.com/managed-flink/latest/java/how-snapshots.html">Enhanced Snapshots</a>.</p>
+    /// <p>To use <code>ENHANCED_SNAPSHOTS</code>, the application must use Apache Flink version 1.20 or later.</p>
+    pub snapshot_mode: ::std::option::Option<crate::types::SnapshotMode>,
 }
 impl ApplicationSnapshotConfiguration {
     /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub fn snapshots_enabled(&self) -> bool {
         self.snapshots_enabled
+    }
+    /// <p>Specifies the snapshot mode for a Managed Service for Apache Flink application. To use enhanced snapshots, specify <code>ENHANCED_SNAPSHOTS</code>. If you don't specify this parameter, the application uses <code>APPLICATION_SNAPSHOTS_LEGACY</code>. For more information, see <a href="https://docs.aws.amazon.com/managed-flink/latest/java/how-snapshots.html">Enhanced Snapshots</a>.</p>
+    /// <p>To use <code>ENHANCED_SNAPSHOTS</code>, the application must use Apache Flink version 1.20 or later.</p>
+    pub fn snapshot_mode(&self) -> ::std::option::Option<&crate::types::SnapshotMode> {
+        self.snapshot_mode.as_ref()
     }
 }
 impl ApplicationSnapshotConfiguration {
@@ -25,6 +33,7 @@ impl ApplicationSnapshotConfiguration {
 #[non_exhaustive]
 pub struct ApplicationSnapshotConfigurationBuilder {
     pub(crate) snapshots_enabled: ::std::option::Option<bool>,
+    pub(crate) snapshot_mode: ::std::option::Option<crate::types::SnapshotMode>,
 }
 impl ApplicationSnapshotConfigurationBuilder {
     /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
@@ -42,6 +51,23 @@ impl ApplicationSnapshotConfigurationBuilder {
     pub fn get_snapshots_enabled(&self) -> &::std::option::Option<bool> {
         &self.snapshots_enabled
     }
+    /// <p>Specifies the snapshot mode for a Managed Service for Apache Flink application. To use enhanced snapshots, specify <code>ENHANCED_SNAPSHOTS</code>. If you don't specify this parameter, the application uses <code>APPLICATION_SNAPSHOTS_LEGACY</code>. For more information, see <a href="https://docs.aws.amazon.com/managed-flink/latest/java/how-snapshots.html">Enhanced Snapshots</a>.</p>
+    /// <p>To use <code>ENHANCED_SNAPSHOTS</code>, the application must use Apache Flink version 1.20 or later.</p>
+    pub fn snapshot_mode(mut self, input: crate::types::SnapshotMode) -> Self {
+        self.snapshot_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the snapshot mode for a Managed Service for Apache Flink application. To use enhanced snapshots, specify <code>ENHANCED_SNAPSHOTS</code>. If you don't specify this parameter, the application uses <code>APPLICATION_SNAPSHOTS_LEGACY</code>. For more information, see <a href="https://docs.aws.amazon.com/managed-flink/latest/java/how-snapshots.html">Enhanced Snapshots</a>.</p>
+    /// <p>To use <code>ENHANCED_SNAPSHOTS</code>, the application must use Apache Flink version 1.20 or later.</p>
+    pub fn set_snapshot_mode(mut self, input: ::std::option::Option<crate::types::SnapshotMode>) -> Self {
+        self.snapshot_mode = input;
+        self
+    }
+    /// <p>Specifies the snapshot mode for a Managed Service for Apache Flink application. To use enhanced snapshots, specify <code>ENHANCED_SNAPSHOTS</code>. If you don't specify this parameter, the application uses <code>APPLICATION_SNAPSHOTS_LEGACY</code>. For more information, see <a href="https://docs.aws.amazon.com/managed-flink/latest/java/how-snapshots.html">Enhanced Snapshots</a>.</p>
+    /// <p>To use <code>ENHANCED_SNAPSHOTS</code>, the application must use Apache Flink version 1.20 or later.</p>
+    pub fn get_snapshot_mode(&self) -> &::std::option::Option<crate::types::SnapshotMode> {
+        &self.snapshot_mode
+    }
     /// Consumes the builder and constructs a [`ApplicationSnapshotConfiguration`](crate::types::ApplicationSnapshotConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`snapshots_enabled`](crate::types::builders::ApplicationSnapshotConfigurationBuilder::snapshots_enabled)
@@ -53,6 +79,7 @@ impl ApplicationSnapshotConfigurationBuilder {
                     "snapshots_enabled was not specified but it is required when building ApplicationSnapshotConfiguration",
                 )
             })?,
+            snapshot_mode: self.snapshot_mode,
         })
     }
 }

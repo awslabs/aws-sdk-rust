@@ -152,4 +152,18 @@ impl RevokeTokenFluentBuilder {
     pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_secret()
     }
+    /// <p>Specifies whether to also revoke the SSO session that is linked to the token session being revoked. <code>NONE</code>, the default, revokes only the token session that is associated with the refresh token. <code>LINKED</code> also revokes the parent SSO session that the token session came through; the other token sessions that came through that SSO session aren't revoked. <code>LINKED</code> has no effect when session tracking is disabled or when the token session has no parent SSO session.</p>
+    pub fn revoke_associated_sessions(mut self, input: crate::types::RevokeAssociatedSessionsType) -> Self {
+        self.inner = self.inner.revoke_associated_sessions(input);
+        self
+    }
+    /// <p>Specifies whether to also revoke the SSO session that is linked to the token session being revoked. <code>NONE</code>, the default, revokes only the token session that is associated with the refresh token. <code>LINKED</code> also revokes the parent SSO session that the token session came through; the other token sessions that came through that SSO session aren't revoked. <code>LINKED</code> has no effect when session tracking is disabled or when the token session has no parent SSO session.</p>
+    pub fn set_revoke_associated_sessions(mut self, input: ::std::option::Option<crate::types::RevokeAssociatedSessionsType>) -> Self {
+        self.inner = self.inner.set_revoke_associated_sessions(input);
+        self
+    }
+    /// <p>Specifies whether to also revoke the SSO session that is linked to the token session being revoked. <code>NONE</code>, the default, revokes only the token session that is associated with the refresh token. <code>LINKED</code> also revokes the parent SSO session that the token session came through; the other token sessions that came through that SSO session aren't revoked. <code>LINKED</code> has no effect when session tracking is disabled or when the token session has no parent SSO session.</p>
+    pub fn get_revoke_associated_sessions(&self) -> &::std::option::Option<crate::types::RevokeAssociatedSessionsType> {
+        self.inner.get_revoke_associated_sessions()
+    }
 }

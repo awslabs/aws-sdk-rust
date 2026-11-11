@@ -559,6 +559,8 @@ pub use crate::types::_harness_tool_result_block::HarnessToolResultBlock;
 
 pub use crate::types::_harness_reasoning_content_block::HarnessReasoningContentBlock;
 
+pub use crate::types::_harness_remote_mcp_outbound_auth::HarnessRemoteMcpOutboundAuth;
+
 pub use crate::types::_harness_gateway_outbound_auth::HarnessGatewayOutboundAuth;
 
 pub use crate::types::_harness_tool_use_type::HarnessToolUseType;
@@ -608,6 +610,8 @@ pub use crate::types::_skill_definition::SkillDefinition;
 pub use crate::types::_resource_content_type::ResourceContentType;
 
 pub use crate::types::_harness_reasoning_text_block::HarnessReasoningTextBlock;
+
+pub use crate::types::_iam_credential_provider::IamCredentialProvider;
 
 pub use crate::types::_unit::Unit;
 
@@ -935,6 +939,8 @@ mod _harness_reasoning_text_block;
 
 mod _harness_remote_mcp_config;
 
+mod _harness_remote_mcp_outbound_auth;
+
 mod _harness_skill;
 
 mod _harness_skill_aws_skills_source;
@@ -978,6 +984,8 @@ mod _harness_tool_use_block_start;
 mod _harness_tool_use_status;
 
 mod _harness_tool_use_type;
+
+mod _iam_credential_provider;
 
 mod _ingest_payload_type;
 

@@ -6,7 +6,7 @@
 pub struct NetworkConfigurationDetails {
     /// <p>Specifies whether the identity store can be accessed only through a virtual private cloud (VPC) endpoint. When set to <code>true</code>, requests must originate from a VPC endpoint.</p>
     pub vpce_access_required: bool,
-    /// <p>A list of virtual private cloud (VPC) IDs that are allowed to access the identity store API operations. A request is denied unless it originates from a VPC in this list, or from an IP address in <code>ApiAllowSourceIps</code> if one is configured. If this field is empty, access isn't restricted to specific VPCs, but the VPC endpoint requirement from <code>VpceAccessRequired</code> still applies.</p>
+    /// <p>A list of virtual private cloud (VPC) ARNs that are allowed to access the identity store API operations. A request is denied unless it originates from a VPC in this list, or from an IP address in <code>ApiAllowSourceIps</code> if one is configured. If this field is empty, access isn't restricted to specific VPCs, but the VPC endpoint requirement from <code>VpceAccessRequired</code> still applies.</p>
     pub api_restrict_source_vpcs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of IP address CIDR ranges that are allowed to access the identity store API operations. A request from an IP address in this list bypasses the identity store's other API network controls: it's permitted even if it doesn't come through a VPC endpoint required by <code>VpceAccessRequired</code>, and even if it doesn't originate from a VPC in <code>ApiRestrictSourceVpcs</code>. If this field is empty, no such IP address exception applies.</p>
     pub api_allow_source_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -18,7 +18,7 @@ impl NetworkConfigurationDetails {
     pub fn vpce_access_required(&self) -> bool {
         self.vpce_access_required
     }
-    /// <p>A list of virtual private cloud (VPC) IDs that are allowed to access the identity store API operations. A request is denied unless it originates from a VPC in this list, or from an IP address in <code>ApiAllowSourceIps</code> if one is configured. If this field is empty, access isn't restricted to specific VPCs, but the VPC endpoint requirement from <code>VpceAccessRequired</code> still applies.</p>
+    /// <p>A list of virtual private cloud (VPC) ARNs that are allowed to access the identity store API operations. A request is denied unless it originates from a VPC in this list, or from an IP address in <code>ApiAllowSourceIps</code> if one is configured. If this field is empty, access isn't restricted to specific VPCs, but the VPC endpoint requirement from <code>VpceAccessRequired</code> still applies.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.api_restrict_source_vpcs.is_none()`.
     pub fn api_restrict_source_vpcs(&self) -> &[::std::string::String] {
@@ -73,19 +73,19 @@ impl NetworkConfigurationDetailsBuilder {
     ///
     /// To override the contents of this collection use [`set_api_restrict_source_vpcs`](Self::set_api_restrict_source_vpcs).
     ///
-    /// <p>A list of virtual private cloud (VPC) IDs that are allowed to access the identity store API operations. A request is denied unless it originates from a VPC in this list, or from an IP address in <code>ApiAllowSourceIps</code> if one is configured. If this field is empty, access isn't restricted to specific VPCs, but the VPC endpoint requirement from <code>VpceAccessRequired</code> still applies.</p>
+    /// <p>A list of virtual private cloud (VPC) ARNs that are allowed to access the identity store API operations. A request is denied unless it originates from a VPC in this list, or from an IP address in <code>ApiAllowSourceIps</code> if one is configured. If this field is empty, access isn't restricted to specific VPCs, but the VPC endpoint requirement from <code>VpceAccessRequired</code> still applies.</p>
     pub fn api_restrict_source_vpcs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.api_restrict_source_vpcs.unwrap_or_default();
         v.push(input.into());
         self.api_restrict_source_vpcs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of virtual private cloud (VPC) IDs that are allowed to access the identity store API operations. A request is denied unless it originates from a VPC in this list, or from an IP address in <code>ApiAllowSourceIps</code> if one is configured. If this field is empty, access isn't restricted to specific VPCs, but the VPC endpoint requirement from <code>VpceAccessRequired</code> still applies.</p>
+    /// <p>A list of virtual private cloud (VPC) ARNs that are allowed to access the identity store API operations. A request is denied unless it originates from a VPC in this list, or from an IP address in <code>ApiAllowSourceIps</code> if one is configured. If this field is empty, access isn't restricted to specific VPCs, but the VPC endpoint requirement from <code>VpceAccessRequired</code> still applies.</p>
     pub fn set_api_restrict_source_vpcs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.api_restrict_source_vpcs = input;
         self
     }
-    /// <p>A list of virtual private cloud (VPC) IDs that are allowed to access the identity store API operations. A request is denied unless it originates from a VPC in this list, or from an IP address in <code>ApiAllowSourceIps</code> if one is configured. If this field is empty, access isn't restricted to specific VPCs, but the VPC endpoint requirement from <code>VpceAccessRequired</code> still applies.</p>
+    /// <p>A list of virtual private cloud (VPC) ARNs that are allowed to access the identity store API operations. A request is denied unless it originates from a VPC in this list, or from an IP address in <code>ApiAllowSourceIps</code> if one is configured. If this field is empty, access isn't restricted to specific VPCs, but the VPC endpoint requirement from <code>VpceAccessRequired</code> still applies.</p>
     pub fn get_api_restrict_source_vpcs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.api_restrict_source_vpcs
     }

@@ -105,6 +105,8 @@ pub use crate::types::_dash_dvb_settings::DashDvbSettings;
 
 pub use crate::types::_dash_compactness::DashCompactness;
 
+pub use crate::types::_dash_bandwidth_reporting_mode::DashBandwidthReportingMode;
+
 pub use crate::types::_dash_audio_timeline_pattern::DashAudioTimelinePattern;
 
 pub use crate::types::_dash_subtitle_configuration::DashSubtitleConfiguration;
@@ -204,6 +206,8 @@ mod _custom_ad_type;
 mod _dash_audio_timeline_pattern;
 
 mod _dash_availability_start_time_configuration;
+
+mod _dash_bandwidth_reporting_mode;
 
 mod _dash_base_url;
 

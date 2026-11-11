@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-directconnect = "1.129.0"
+//! aws-sdk-directconnect = "1.130.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -197,9 +197,9 @@ mod sdk_feature_tracker;
 
 mod serialization_settings;
 
-mod endpoint_lib;
+mod cbor_errors;
 
-mod json_errors;
+mod endpoint_lib;
 
 mod serde_util;
 

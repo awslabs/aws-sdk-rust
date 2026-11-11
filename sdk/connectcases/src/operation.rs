@@ -73,6 +73,9 @@ pub mod get_domain;
 /// Types for the `GetLayout` operation.
 pub mod get_layout;
 
+/// Types for the `GetMergeCasesStatus` operation.
+pub mod get_merge_cases_status;
+
 /// Types for the `GetTemplate` operation.
 pub mod get_template;
 
@@ -111,6 +114,9 @@ pub mod search_cases;
 
 /// Types for the `SearchRelatedItems` operation.
 pub mod search_related_items;
+
+/// Types for the `StartMergeCases` operation.
+pub mod start_merge_cases;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

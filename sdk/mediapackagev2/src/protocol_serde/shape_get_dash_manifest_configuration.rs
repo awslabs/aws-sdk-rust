@@ -127,6 +127,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "BandwidthReportingMode" => {
+                            builder = builder.set_bandwidth_reporting_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DashBandwidthReportingMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "AudioTimelinePattern" => {
                             builder = builder.set_audio_timeline_pattern(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

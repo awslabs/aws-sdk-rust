@@ -381,7 +381,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartSandbox
             .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
             .expect("a SharedClientProtocol is required");
         let mut request = protocol
-            .serialize_request(&input, StartSandboxConnection::INPUT_SCHEMA, "/", _cfg)
+            .serialize_request(
+                &input,
+                StartSandboxConnection::INPUT_SCHEMA,
+                "/service/CodeBuild_20161006/operation/StartSandboxConnection",
+                _cfg,
+            )
             .map_err(::aws_smithy_runtime_api::box_error::BoxError::from)?;
 
         return ::std::result::Result::Ok(request);

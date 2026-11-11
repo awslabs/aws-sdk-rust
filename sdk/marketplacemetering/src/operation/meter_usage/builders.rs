@@ -41,6 +41,7 @@ impl crate::operation::meter_usage::builders::MeterUsageInputBuilder {
 /// <p>For <b>Amazon Bedrock AgentCore Runtime</b> deployments, you can report usage multiple times per hour for the same dimension. You do not need to aggregate metering records by the hour. You must include an idempotency token in the <code>ClientToken</code> request parameter. If using an Amazon SDK or the Amazon Web Services CLI, you must use the latest version which automatically includes an idempotency token in the <code>ClientToken</code> request parameter so that the request is processed successfully. The <code>Timestamp</code> request parameter is not rounded down to the hour and is not used for duplicate validation. Requests with duplicate <code>Timestamps</code> are aggregated as long as the <code>ClientToken</code> is unique.</p></li>
 /// </ul>
 /// <p>If you submit records more than six hours after events occur, the records won't be accepted. The timestamp in your request determines when an event is recorded.</p>
+/// <p>To report fractional usage, use <code>UsageQuantityAsDecimal</code> instead of <code>UsageQuantity</code>.</p>
 /// <p>You can optionally include multiple usage allocations, to provide customers with usage data split into buckets by tags that you define or allow the customer to define.</p>
 /// <p>For Amazon Web Services Regions that support <code>MeterUsage</code>, see <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#meterusage-region-support-ec2">MeterUsage Region support for Amazon EC2</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/APIReference/metering-regions.html#meterusage-region-support-ecs-eks">MeterUsage Region support for Amazon ECS and Amazon EKS</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -170,19 +171,48 @@ impl MeterUsageFluentBuilder {
     pub fn get_usage_dimension(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_usage_dimension()
     }
-    /// <p>Consumption value for the hour. Defaults to <code>0</code> if not specified.</p>
+    /// <p>The consumption value for the hour, as a whole number. Defaults to <code>0</code> if neither <code>UsageQuantity</code> nor <code>UsageQuantityAsDecimal</code> is specified.</p>
+    /// <p>Use <code>UsageQuantityAsDecimal</code> instead. You can't specify both <code>UsageQuantity</code> and <code>UsageQuantityAsDecimal</code>.</p>
+    #[deprecated(note = "Use UsageQuantityAsDecimal instead.", since = "2026-10-20")]
     pub fn usage_quantity(mut self, input: i32) -> Self {
         self.inner = self.inner.usage_quantity(input);
         self
     }
-    /// <p>Consumption value for the hour. Defaults to <code>0</code> if not specified.</p>
+    /// <p>The consumption value for the hour, as a whole number. Defaults to <code>0</code> if neither <code>UsageQuantity</code> nor <code>UsageQuantityAsDecimal</code> is specified.</p>
+    /// <p>Use <code>UsageQuantityAsDecimal</code> instead. You can't specify both <code>UsageQuantity</code> and <code>UsageQuantityAsDecimal</code>.</p>
+    #[deprecated(note = "Use UsageQuantityAsDecimal instead.", since = "2026-10-20")]
     pub fn set_usage_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_usage_quantity(input);
         self
     }
-    /// <p>Consumption value for the hour. Defaults to <code>0</code> if not specified.</p>
+    /// <p>The consumption value for the hour, as a whole number. Defaults to <code>0</code> if neither <code>UsageQuantity</code> nor <code>UsageQuantityAsDecimal</code> is specified.</p>
+    /// <p>Use <code>UsageQuantityAsDecimal</code> instead. You can't specify both <code>UsageQuantity</code> and <code>UsageQuantityAsDecimal</code>.</p>
+    #[deprecated(note = "Use UsageQuantityAsDecimal instead.", since = "2026-10-20")]
     pub fn get_usage_quantity(&self) -> &::std::option::Option<i32> {
         self.inner.get_usage_quantity()
+    }
+    /// <p>The consumption value for the hour, as a decimal string. Use this instead of <code>UsageQuantity</code> to report fractional usage.</p>
+    /// <p>A non-negative decimal number, for example <code>17.42</code>.</p>
+    /// <p>You can't specify both <code>UsageQuantity</code> and <code>UsageQuantityAsDecimal</code>. If you provide <code>UsageAllocations</code>, each allocation must use <code>AllocatedUsageQuantityAsDecimal</code>.</p>
+    /// <p>Quantities are compared by value when checking for duplicate or retried requests, so <code>17</code>, <code>17.0</code>, and <code>17.00</code> are the same quantity, whether you send it in <code>UsageQuantity</code> or <code>UsageQuantityAsDecimal</code>.</p>
+    pub fn usage_quantity_as_decimal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.usage_quantity_as_decimal(input.into());
+        self
+    }
+    /// <p>The consumption value for the hour, as a decimal string. Use this instead of <code>UsageQuantity</code> to report fractional usage.</p>
+    /// <p>A non-negative decimal number, for example <code>17.42</code>.</p>
+    /// <p>You can't specify both <code>UsageQuantity</code> and <code>UsageQuantityAsDecimal</code>. If you provide <code>UsageAllocations</code>, each allocation must use <code>AllocatedUsageQuantityAsDecimal</code>.</p>
+    /// <p>Quantities are compared by value when checking for duplicate or retried requests, so <code>17</code>, <code>17.0</code>, and <code>17.00</code> are the same quantity, whether you send it in <code>UsageQuantity</code> or <code>UsageQuantityAsDecimal</code>.</p>
+    pub fn set_usage_quantity_as_decimal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_usage_quantity_as_decimal(input);
+        self
+    }
+    /// <p>The consumption value for the hour, as a decimal string. Use this instead of <code>UsageQuantity</code> to report fractional usage.</p>
+    /// <p>A non-negative decimal number, for example <code>17.42</code>.</p>
+    /// <p>You can't specify both <code>UsageQuantity</code> and <code>UsageQuantityAsDecimal</code>. If you provide <code>UsageAllocations</code>, each allocation must use <code>AllocatedUsageQuantityAsDecimal</code>.</p>
+    /// <p>Quantities are compared by value when checking for duplicate or retried requests, so <code>17</code>, <code>17.0</code>, and <code>17.00</code> are the same quantity, whether you send it in <code>UsageQuantity</code> or <code>UsageQuantityAsDecimal</code>.</p>
+    pub fn get_usage_quantity_as_decimal(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_usage_quantity_as_decimal()
     }
     /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns <code>DryRunOperation</code>; otherwise, it returns <code>UnauthorizedException</code>. Defaults to <code>false</code> if not specified.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -204,19 +234,19 @@ impl MeterUsageFluentBuilder {
     /// To override the contents of this collection use [`set_usage_allocations`](Self::set_usage_allocations).
     ///
     /// <p>The set of <code>UsageAllocations</code> to submit.</p>
-    /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
+    /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the usage quantity of the <code>MeterUsage</code> request (<code>UsageQuantity</code> or <code>UsageQuantityAsDecimal</code>), and each <code>UsageAllocation</code> must have a unique set of tags (include no tags). Allocations must use the same type of quantity as the request: <code>AllocatedUsageQuantity</code> with <code>UsageQuantity</code>, or <code>AllocatedUsageQuantityAsDecimal</code> with <code>UsageQuantityAsDecimal</code>.</p>
     pub fn usage_allocations(mut self, input: crate::types::UsageAllocation) -> Self {
         self.inner = self.inner.usage_allocations(input);
         self
     }
     /// <p>The set of <code>UsageAllocations</code> to submit.</p>
-    /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
+    /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the usage quantity of the <code>MeterUsage</code> request (<code>UsageQuantity</code> or <code>UsageQuantityAsDecimal</code>), and each <code>UsageAllocation</code> must have a unique set of tags (include no tags). Allocations must use the same type of quantity as the request: <code>AllocatedUsageQuantity</code> with <code>UsageQuantity</code>, or <code>AllocatedUsageQuantityAsDecimal</code> with <code>UsageQuantityAsDecimal</code>.</p>
     pub fn set_usage_allocations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>>) -> Self {
         self.inner = self.inner.set_usage_allocations(input);
         self
     }
     /// <p>The set of <code>UsageAllocations</code> to submit.</p>
-    /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
+    /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the usage quantity of the <code>MeterUsage</code> request (<code>UsageQuantity</code> or <code>UsageQuantityAsDecimal</code>), and each <code>UsageAllocation</code> must have a unique set of tags (include no tags). Allocations must use the same type of quantity as the request: <code>AllocatedUsageQuantity</code> with <code>UsageQuantity</code>, or <code>AllocatedUsageQuantityAsDecimal</code> with <code>UsageQuantityAsDecimal</code>.</p>
     pub fn get_usage_allocations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>> {
         self.inner.get_usage_allocations()
     }

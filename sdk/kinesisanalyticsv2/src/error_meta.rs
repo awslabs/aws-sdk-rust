@@ -5,7 +5,7 @@
 pub enum Error {
     /// <p>The user-provided application code (query) is not valid. This can be a simple syntax error.</p>
     CodeValidationException(crate::types::error::CodeValidationException),
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application or snapshot. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>The user-provided application configuration is not valid.</p>
     InvalidApplicationConfigurationException(crate::types::error::InvalidApplicationConfigurationException),
@@ -15,9 +15,9 @@ pub enum Error {
     InvalidRequestException(crate::types::error::InvalidRequestException),
     /// <p>The number of allowed resources has been exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// <p>The application is not available for this operation.</p>
+    /// <p>The application or snapshot is not available for this operation.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),
-    /// <p>Specified application can't be found.</p>
+    /// <p>The specified application, snapshot, or snapshot operation can't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Discovery failed to get a record from the streaming source because of the Kinesis Streams <code>ProvisionedThroughputExceededException</code>. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a> in the Amazon Kinesis Streams API Reference.</p>
     ResourceProvisionedThroughputExceededException(crate::types::error::ResourceProvisionedThroughputExceededException),
@@ -452,6 +452,40 @@ impl From<crate::operation::create_application_snapshot::CreateApplicationSnapsh
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_snapshot::CreateSnapshotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_snapshot::CreateSnapshotError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_snapshot::CreateSnapshotError> for Error {
+    fn from(err: crate::operation::create_snapshot::CreateSnapshotError) -> Self {
+        match err {
+            crate::operation::create_snapshot::CreateSnapshotError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::create_snapshot::CreateSnapshotError::InvalidApplicationConfigurationException(inner) => {
+                Error::InvalidApplicationConfigurationException(inner)
+            }
+            crate::operation::create_snapshot::CreateSnapshotError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::create_snapshot::CreateSnapshotError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_snapshot::CreateSnapshotError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::create_snapshot::CreateSnapshotError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::create_snapshot::CreateSnapshotError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::create_snapshot::CreateSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_application::DeleteApplicationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -713,6 +747,36 @@ impl From<crate::operation::delete_application_vpc_configuration::DeleteApplicat
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_snapshot::DeleteSnapshotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_snapshot::DeleteSnapshotError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_snapshot::DeleteSnapshotError> for Error {
+    fn from(err: crate::operation::delete_snapshot::DeleteSnapshotError) -> Self {
+        match err {
+            crate::operation::delete_snapshot::DeleteSnapshotError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::delete_snapshot::DeleteSnapshotError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::delete_snapshot::DeleteSnapshotError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::delete_snapshot::DeleteSnapshotError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_snapshot::DeleteSnapshotError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::delete_snapshot::DeleteSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_application::DescribeApplicationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -844,6 +908,65 @@ impl From<crate::operation::describe_application_version::DescribeApplicationVer
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_snapshot::DescribeSnapshotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_snapshot::DescribeSnapshotError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_snapshot::DescribeSnapshotError> for Error {
+    fn from(err: crate::operation::describe_snapshot::DescribeSnapshotError) -> Self {
+        match err {
+            crate::operation::describe_snapshot::DescribeSnapshotError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::describe_snapshot::DescribeSnapshotError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::describe_snapshot::DescribeSnapshotError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::describe_snapshot::DescribeSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_snapshot_operation::DescribeSnapshotOperationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_snapshot_operation::DescribeSnapshotOperationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_snapshot_operation::DescribeSnapshotOperationError> for Error {
+    fn from(err: crate::operation::describe_snapshot_operation::DescribeSnapshotOperationError) -> Self {
+        match err {
+            crate::operation::describe_snapshot_operation::DescribeSnapshotOperationError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::describe_snapshot_operation::DescribeSnapshotOperationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_snapshot_operation::DescribeSnapshotOperationError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::describe_snapshot_operation::DescribeSnapshotOperationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::discover_input_schema::DiscoverInputSchemaError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -880,6 +1003,68 @@ impl From<crate::operation::discover_input_schema::DiscoverInputSchemaError> for
                 Error::UnsupportedOperationException(inner)
             }
             crate::operation::discover_input_schema::DiscoverInputSchemaError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::export_snapshot::ExportSnapshotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::export_snapshot::ExportSnapshotError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::export_snapshot::ExportSnapshotError> for Error {
+    fn from(err: crate::operation::export_snapshot::ExportSnapshotError) -> Self {
+        match err {
+            crate::operation::export_snapshot::ExportSnapshotError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::export_snapshot::ExportSnapshotError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::export_snapshot::ExportSnapshotError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::export_snapshot::ExportSnapshotError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::export_snapshot::ExportSnapshotError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::export_snapshot::ExportSnapshotError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::export_snapshot::ExportSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::import_snapshot::ImportSnapshotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::import_snapshot::ImportSnapshotError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::import_snapshot::ImportSnapshotError> for Error {
+    fn from(err: crate::operation::import_snapshot::ImportSnapshotError) -> Self {
+        match err {
+            crate::operation::import_snapshot::ImportSnapshotError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::import_snapshot::ImportSnapshotError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::import_snapshot::ImportSnapshotError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::import_snapshot::ImportSnapshotError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::import_snapshot::ImportSnapshotError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::import_snapshot::ImportSnapshotError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::import_snapshot::ImportSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1001,6 +1186,61 @@ impl From<crate::operation::list_application_versions::ListApplicationVersionsEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_snapshot_operations::ListSnapshotOperationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_snapshot_operations::ListSnapshotOperationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_snapshot_operations::ListSnapshotOperationsError> for Error {
+    fn from(err: crate::operation::list_snapshot_operations::ListSnapshotOperationsError) -> Self {
+        match err {
+            crate::operation::list_snapshot_operations::ListSnapshotOperationsError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::operation::list_snapshot_operations::ListSnapshotOperationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_snapshot_operations::ListSnapshotOperationsError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
+            crate::operation::list_snapshot_operations::ListSnapshotOperationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_snapshots::ListSnapshotsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_snapshots::ListSnapshotsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_snapshots::ListSnapshotsError> for Error {
+    fn from(err: crate::operation::list_snapshots::ListSnapshotsError) -> Self {
+        match err {
+            crate::operation::list_snapshots::ListSnapshotsError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::operation::list_snapshots::ListSnapshotsError::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+            crate::operation::list_snapshots::ListSnapshotsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1090,6 +1330,9 @@ impl From<crate::operation::start_application::StartApplicationError> for Error 
             crate::operation::start_application::StartApplicationError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::start_application::StartApplicationError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::start_application::StartApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_application::StartApplicationError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
             crate::operation::start_application::StartApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1208,6 +1451,9 @@ impl From<crate::operation::update_application::UpdateApplicationError> for Erro
             crate::operation::update_application::UpdateApplicationError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::update_application::UpdateApplicationError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
             crate::operation::update_application::UpdateApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_application::UpdateApplicationError::UnsupportedOperationException(inner) => {
+                Error::UnsupportedOperationException(inner)
+            }
             crate::operation::update_application::UpdateApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

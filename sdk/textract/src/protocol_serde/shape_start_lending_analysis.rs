@@ -10,7 +10,7 @@ pub fn de_start_lending_analysis_http_error(
     crate::operation::start_lending_analysis::StartLendingAnalysisError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::start_lending_analysis::StartLendingAnalysisError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -26,7 +26,7 @@ pub fn de_start_lending_analysis_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
-                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::start_lending_analysis::StartLendingAnalysisError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -41,7 +41,7 @@ pub fn de_start_lending_analysis_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::BadDocumentExceptionBuilder::default();
-                output = crate::protocol_serde::shape_bad_document_exception::de_bad_document_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_bad_document_exception::de_bad_document_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::start_lending_analysis::StartLendingAnalysisError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -56,7 +56,7 @@ pub fn de_start_lending_analysis_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::DocumentTooLargeExceptionBuilder::default();
-                output = crate::protocol_serde::shape_document_too_large_exception::de_document_too_large_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_document_too_large_exception::de_document_too_large_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::start_lending_analysis::StartLendingAnalysisError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -73,7 +73,7 @@ pub fn de_start_lending_analysis_http_error(
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::IdempotentParameterMismatchExceptionBuilder::default();
                     output =
-                        crate::protocol_serde::shape_idempotent_parameter_mismatch_exception::de_idempotent_parameter_mismatch_exception_json_err(
+                        crate::protocol_serde::shape_idempotent_parameter_mismatch_exception::de_idempotent_parameter_mismatch_exception_cbor_err(
                             _response_body,
                             output,
                         )
@@ -92,7 +92,7 @@ pub fn de_start_lending_analysis_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalServerErrorBuilder::default();
-                output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_server_error::de_internal_server_error_cbor_err(_response_body, output)
                     .map_err(crate::operation::start_lending_analysis::StartLendingAnalysisError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -107,7 +107,7 @@ pub fn de_start_lending_analysis_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidKmsKeyExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_kms_key_exception::de_invalid_kms_key_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_invalid_kms_key_exception::de_invalid_kms_key_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::start_lending_analysis::StartLendingAnalysisError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -122,7 +122,7 @@ pub fn de_start_lending_analysis_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::start_lending_analysis::StartLendingAnalysisError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -137,7 +137,7 @@ pub fn de_start_lending_analysis_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InvalidS3ObjectExceptionBuilder::default();
-                output = crate::protocol_serde::shape_invalid_s3_object_exception::de_invalid_s3_object_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_invalid_s3_object_exception::de_invalid_s3_object_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::start_lending_analysis::StartLendingAnalysisError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -152,7 +152,7 @@ pub fn de_start_lending_analysis_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::LimitExceededExceptionBuilder::default();
-                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_limit_exceeded_exception::de_limit_exceeded_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::start_lending_analysis::StartLendingAnalysisError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -168,7 +168,7 @@ pub fn de_start_lending_analysis_http_error(
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ProvisionedThroughputExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_provisioned_throughput_exceeded_exception::de_provisioned_throughput_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::start_lending_analysis::StartLendingAnalysisError::unhandled)?;
+                    output = crate::protocol_serde::shape_provisioned_throughput_exceeded_exception::de_provisioned_throughput_exceeded_exception_cbor_err(_response_body, output).map_err(crate::operation::start_lending_analysis::StartLendingAnalysisError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -183,7 +183,7 @@ pub fn de_start_lending_analysis_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
-                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::start_lending_analysis::StartLendingAnalysisError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -199,7 +199,7 @@ pub fn de_start_lending_analysis_http_error(
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::UnsupportedDocumentExceptionBuilder::default();
                 output =
-                    crate::protocol_serde::shape_unsupported_document_exception::de_unsupported_document_exception_json_err(_response_body, output)
+                    crate::protocol_serde::shape_unsupported_document_exception::de_unsupported_document_exception_cbor_err(_response_body, output)
                         .map_err(crate::operation::start_lending_analysis::StartLendingAnalysisError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -236,49 +236,66 @@ pub fn de_start_lending_analysis_http_response(
 pub fn ser_start_lending_analysis_input(
     input: &crate::operation::start_lending_analysis::StartLendingAnalysisInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    let mut out = String::new();
-    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_start_lending_analysis_input::ser_start_lending_analysis_input_input(&mut object, input)?;
-    object.finish();
-    Ok(::aws_smithy_types::body::SdkBody::from(out))
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_start_lending_analysis_input::ser_start_lending_analysis_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }
 
 pub(crate) fn de_start_lending_analysis(
-    _value: &[u8],
+    value: &[u8],
     mut builder: crate::operation::start_lending_analysis::builders::StartLendingAnalysisOutputBuilder,
 ) -> ::std::result::Result<
     crate::operation::start_lending_analysis::builders::StartLendingAnalysisOutputBuilder,
-    ::aws_smithy_json::deserialize::error::DeserializeError,
+    ::aws_smithy_cbor::decode::DeserializeError,
 > {
-    let mut tokens_owned = ::aws_smithy_json::deserialize::json_token_iter(crate::protocol_serde::or_empty_doc(_value)).peekable();
-    let tokens = &mut tokens_owned;
+    #[allow(clippy::match_single_binding, unused_variables)]
+    fn pair(
+        mut builder: crate::operation::start_lending_analysis::builders::StartLendingAnalysisOutputBuilder,
+        decoder: &mut ::aws_smithy_cbor::Decoder,
+        depth: u32,
+    ) -> ::std::result::Result<
+        crate::operation::start_lending_analysis::builders::StartLendingAnalysisOutputBuilder,
+        ::aws_smithy_cbor::decode::DeserializeError,
+    > {
+        builder = match decoder.str()?.as_ref() {
+            "JobId" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_job_id(Some(decoder.string()?))))?,
+            _ => {
+                decoder.skip()?;
+                builder
+            }
+        };
+        Ok(builder)
+    }
+
+    let decoder = &mut ::aws_smithy_cbor::Decoder::new(value);
     #[allow(unused_variables)]
     let depth = 0u32;
-    ::aws_smithy_json::deserialize::token::expect_start_object(tokens.next())?;
-    loop {
-        match tokens.next().transpose()? {
-            Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "JobId" => {
-                    builder = builder.set_job_id(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
+
+    match decoder.map()? {
+        None => loop {
+            match decoder.datatype()? {
+                ::aws_smithy_cbor::data::Type::Break => {
+                    decoder.skip()?;
+                    break;
                 }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
-            other => {
-                return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
-                    "expected object key or end object, found: {other:?}"
-                )))
+                _ => {
+                    builder = pair(builder, decoder, depth)?;
+                }
+            };
+        },
+        Some(n) => {
+            for _ in 0..n {
+                builder = pair(builder, decoder, depth)?;
             }
         }
+    };
+
+    if decoder.position() != value.len() {
+        return Err(::aws_smithy_cbor::decode::DeserializeError::expected_end_of_stream(decoder.position()));
     }
-    if tokens.next().is_some() {
-        return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
-            "found more JSON tokens after completing parsing",
-        ));
-    }
+
     Ok(builder)
 }

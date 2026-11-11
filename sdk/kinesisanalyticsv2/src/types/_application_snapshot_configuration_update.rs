@@ -6,11 +6,21 @@
 pub struct ApplicationSnapshotConfigurationUpdate {
     /// <p>Describes updates to whether snapshots are enabled for an application.</p>
     pub snapshots_enabled_update: bool,
+    /// <p>Describes updates to the snapshot mode of a Managed Service for Apache Flink application. You can update the snapshot mode from <code>APPLICATION_SNAPSHOTS_LEGACY</code> to <code>ENHANCED_SNAPSHOTS</code>. You can't use <code>UpdateApplication</code> to change the snapshot mode back to <code>APPLICATION_SNAPSHOTS_LEGACY</code>.</p>
+    /// <p>To return to <code>APPLICATION_SNAPSHOTS_LEGACY</code>, use <code>RollbackApplication</code>. After you update an application that uses <code>ENHANCED_SNAPSHOTS</code>, you can't roll it back to <code>APPLICATION_SNAPSHOTS_LEGACY</code>.</p>
+    /// <p>To use <code>ENHANCED_SNAPSHOTS</code>, the application must use Apache Flink version 1.20 or later.</p>
+    pub snapshot_mode_update: ::std::option::Option<crate::types::SnapshotMode>,
 }
 impl ApplicationSnapshotConfigurationUpdate {
     /// <p>Describes updates to whether snapshots are enabled for an application.</p>
     pub fn snapshots_enabled_update(&self) -> bool {
         self.snapshots_enabled_update
+    }
+    /// <p>Describes updates to the snapshot mode of a Managed Service for Apache Flink application. You can update the snapshot mode from <code>APPLICATION_SNAPSHOTS_LEGACY</code> to <code>ENHANCED_SNAPSHOTS</code>. You can't use <code>UpdateApplication</code> to change the snapshot mode back to <code>APPLICATION_SNAPSHOTS_LEGACY</code>.</p>
+    /// <p>To return to <code>APPLICATION_SNAPSHOTS_LEGACY</code>, use <code>RollbackApplication</code>. After you update an application that uses <code>ENHANCED_SNAPSHOTS</code>, you can't roll it back to <code>APPLICATION_SNAPSHOTS_LEGACY</code>.</p>
+    /// <p>To use <code>ENHANCED_SNAPSHOTS</code>, the application must use Apache Flink version 1.20 or later.</p>
+    pub fn snapshot_mode_update(&self) -> ::std::option::Option<&crate::types::SnapshotMode> {
+        self.snapshot_mode_update.as_ref()
     }
 }
 impl ApplicationSnapshotConfigurationUpdate {
@@ -25,6 +35,7 @@ impl ApplicationSnapshotConfigurationUpdate {
 #[non_exhaustive]
 pub struct ApplicationSnapshotConfigurationUpdateBuilder {
     pub(crate) snapshots_enabled_update: ::std::option::Option<bool>,
+    pub(crate) snapshot_mode_update: ::std::option::Option<crate::types::SnapshotMode>,
 }
 impl ApplicationSnapshotConfigurationUpdateBuilder {
     /// <p>Describes updates to whether snapshots are enabled for an application.</p>
@@ -42,6 +53,26 @@ impl ApplicationSnapshotConfigurationUpdateBuilder {
     pub fn get_snapshots_enabled_update(&self) -> &::std::option::Option<bool> {
         &self.snapshots_enabled_update
     }
+    /// <p>Describes updates to the snapshot mode of a Managed Service for Apache Flink application. You can update the snapshot mode from <code>APPLICATION_SNAPSHOTS_LEGACY</code> to <code>ENHANCED_SNAPSHOTS</code>. You can't use <code>UpdateApplication</code> to change the snapshot mode back to <code>APPLICATION_SNAPSHOTS_LEGACY</code>.</p>
+    /// <p>To return to <code>APPLICATION_SNAPSHOTS_LEGACY</code>, use <code>RollbackApplication</code>. After you update an application that uses <code>ENHANCED_SNAPSHOTS</code>, you can't roll it back to <code>APPLICATION_SNAPSHOTS_LEGACY</code>.</p>
+    /// <p>To use <code>ENHANCED_SNAPSHOTS</code>, the application must use Apache Flink version 1.20 or later.</p>
+    pub fn snapshot_mode_update(mut self, input: crate::types::SnapshotMode) -> Self {
+        self.snapshot_mode_update = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes updates to the snapshot mode of a Managed Service for Apache Flink application. You can update the snapshot mode from <code>APPLICATION_SNAPSHOTS_LEGACY</code> to <code>ENHANCED_SNAPSHOTS</code>. You can't use <code>UpdateApplication</code> to change the snapshot mode back to <code>APPLICATION_SNAPSHOTS_LEGACY</code>.</p>
+    /// <p>To return to <code>APPLICATION_SNAPSHOTS_LEGACY</code>, use <code>RollbackApplication</code>. After you update an application that uses <code>ENHANCED_SNAPSHOTS</code>, you can't roll it back to <code>APPLICATION_SNAPSHOTS_LEGACY</code>.</p>
+    /// <p>To use <code>ENHANCED_SNAPSHOTS</code>, the application must use Apache Flink version 1.20 or later.</p>
+    pub fn set_snapshot_mode_update(mut self, input: ::std::option::Option<crate::types::SnapshotMode>) -> Self {
+        self.snapshot_mode_update = input;
+        self
+    }
+    /// <p>Describes updates to the snapshot mode of a Managed Service for Apache Flink application. You can update the snapshot mode from <code>APPLICATION_SNAPSHOTS_LEGACY</code> to <code>ENHANCED_SNAPSHOTS</code>. You can't use <code>UpdateApplication</code> to change the snapshot mode back to <code>APPLICATION_SNAPSHOTS_LEGACY</code>.</p>
+    /// <p>To return to <code>APPLICATION_SNAPSHOTS_LEGACY</code>, use <code>RollbackApplication</code>. After you update an application that uses <code>ENHANCED_SNAPSHOTS</code>, you can't roll it back to <code>APPLICATION_SNAPSHOTS_LEGACY</code>.</p>
+    /// <p>To use <code>ENHANCED_SNAPSHOTS</code>, the application must use Apache Flink version 1.20 or later.</p>
+    pub fn get_snapshot_mode_update(&self) -> &::std::option::Option<crate::types::SnapshotMode> {
+        &self.snapshot_mode_update
+    }
     /// Consumes the builder and constructs a [`ApplicationSnapshotConfigurationUpdate`](crate::types::ApplicationSnapshotConfigurationUpdate).
     /// This method will fail if any of the following fields are not set:
     /// - [`snapshots_enabled_update`](crate::types::builders::ApplicationSnapshotConfigurationUpdateBuilder::snapshots_enabled_update)
@@ -55,6 +86,7 @@ impl ApplicationSnapshotConfigurationUpdateBuilder {
                     "snapshots_enabled_update was not specified but it is required when building ApplicationSnapshotConfigurationUpdate",
                 )
             })?,
+            snapshot_mode_update: self.snapshot_mode_update,
         })
     }
 }

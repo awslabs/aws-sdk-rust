@@ -379,6 +379,7 @@ impl From<crate::operation::create_related_item::CreateRelatedItemError> for Err
     fn from(err: crate::operation::create_related_item::CreateRelatedItemError) -> Self {
         match err {
             crate::operation::create_related_item::CreateRelatedItemError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_related_item::CreateRelatedItemError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_related_item::CreateRelatedItemError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::create_related_item::CreateRelatedItemError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -440,6 +441,7 @@ impl From<crate::operation::delete_case::DeleteCaseError> for Error {
     fn from(err: crate::operation::delete_case::DeleteCaseError) -> Self {
         match err {
             crate::operation::delete_case::DeleteCaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_case::DeleteCaseError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_case::DeleteCaseError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::delete_case::DeleteCaseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::delete_case::DeleteCaseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
@@ -574,6 +576,7 @@ impl From<crate::operation::delete_related_item::DeleteRelatedItemError> for Err
     fn from(err: crate::operation::delete_related_item::DeleteRelatedItemError) -> Self {
         match err {
             crate::operation::delete_related_item::DeleteRelatedItemError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_related_item::DeleteRelatedItemError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_related_item::DeleteRelatedItemError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::delete_related_item::DeleteRelatedItemError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
@@ -753,6 +756,36 @@ impl From<crate::operation::get_layout::GetLayoutError> for Error {
             crate::operation::get_layout::GetLayoutError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_layout::GetLayoutError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_layout::GetLayoutError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_merge_cases_status::GetMergeCasesStatusError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_merge_cases_status::GetMergeCasesStatusError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_merge_cases_status::GetMergeCasesStatusError> for Error {
+    fn from(err: crate::operation::get_merge_cases_status::GetMergeCasesStatusError) -> Self {
+        match err {
+            crate::operation::get_merge_cases_status::GetMergeCasesStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_merge_cases_status::GetMergeCasesStatusError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_merge_cases_status::GetMergeCasesStatusError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_merge_cases_status::GetMergeCasesStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_merge_cases_status::GetMergeCasesStatusError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_merge_cases_status::GetMergeCasesStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1127,6 +1160,36 @@ impl From<crate::operation::search_related_items::SearchRelatedItemsError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_merge_cases::StartMergeCasesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_merge_cases::StartMergeCasesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_merge_cases::StartMergeCasesError> for Error {
+    fn from(err: crate::operation::start_merge_cases::StartMergeCasesError) -> Self {
+        match err {
+            crate::operation::start_merge_cases::StartMergeCasesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_merge_cases::StartMergeCasesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_merge_cases::StartMergeCasesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_merge_cases::StartMergeCasesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_merge_cases::StartMergeCasesError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_merge_cases::StartMergeCasesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_merge_cases::StartMergeCasesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_merge_cases::StartMergeCasesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1197,6 +1260,7 @@ impl From<crate::operation::update_case::UpdateCaseError> for Error {
     fn from(err: crate::operation::update_case::UpdateCaseError) -> Self {
         match err {
             crate::operation::update_case::UpdateCaseError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_case::UpdateCaseError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_case::UpdateCaseError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_case::UpdateCaseError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::update_case::UpdateCaseError::ThrottlingException(inner) => Error::ThrottlingException(inner),
@@ -1308,6 +1372,7 @@ impl From<crate::operation::update_related_item::UpdateRelatedItemError> for Err
     fn from(err: crate::operation::update_related_item::UpdateRelatedItemError) -> Self {
         match err {
             crate::operation::update_related_item::UpdateRelatedItemError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_related_item::UpdateRelatedItemError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_related_item::UpdateRelatedItemError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_related_item::UpdateRelatedItemError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)

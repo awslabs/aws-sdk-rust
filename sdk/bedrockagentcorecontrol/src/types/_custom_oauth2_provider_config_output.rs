@@ -16,6 +16,8 @@ pub struct CustomOauth2ProviderConfigOutput {
     pub private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
     /// <p>The private endpoint overrides for the custom OAuth2 provider configuration.</p>
     pub private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
+    /// <p>The private certificate authority (CA) configurations for the identity provider. Use this to have AgentCore Identity trust a private CA when establishing TLS connections to identity provider endpoints. You can specify only one certificate authority configuration in this list. Provide the certificate by reference to an Amazon S3 object or an Amazon Web Services Secrets Manager secret. You can use this only together with <code>privateEndpoint</code>.</p>
+    pub certificate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CertificateConfiguration>>,
     /// <p>The configuration for private_key_jwt client authentication used by this OAuth2 credential provider.</p>
     pub private_key_jwt_config: ::std::option::Option<crate::types::PrivateKeyJwtConfig>,
 }
@@ -46,6 +48,12 @@ impl CustomOauth2ProviderConfigOutput {
     pub fn private_endpoint_overrides(&self) -> &[crate::types::PrivateEndpointOverride] {
         self.private_endpoint_overrides.as_deref().unwrap_or_default()
     }
+    /// <p>The private certificate authority (CA) configurations for the identity provider. Use this to have AgentCore Identity trust a private CA when establishing TLS connections to identity provider endpoints. You can specify only one certificate authority configuration in this list. Provide the certificate by reference to an Amazon S3 object or an Amazon Web Services Secrets Manager secret. You can use this only together with <code>privateEndpoint</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_configurations.is_none()`.
+    pub fn certificate_configurations(&self) -> &[crate::types::CertificateConfiguration] {
+        self.certificate_configurations.as_deref().unwrap_or_default()
+    }
     /// <p>The configuration for private_key_jwt client authentication used by this OAuth2 credential provider.</p>
     pub fn private_key_jwt_config(&self) -> ::std::option::Option<&crate::types::PrivateKeyJwtConfig> {
         self.private_key_jwt_config.as_ref()
@@ -68,6 +76,7 @@ pub struct CustomOauth2ProviderConfigOutputBuilder {
     pub(crate) client_authentication_method: ::std::option::Option<crate::types::ClientAuthenticationMethodType>,
     pub(crate) private_endpoint: ::std::option::Option<crate::types::PrivateEndpoint>,
     pub(crate) private_endpoint_overrides: ::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>>,
+    pub(crate) certificate_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CertificateConfiguration>>,
     pub(crate) private_key_jwt_config: ::std::option::Option<crate::types::PrivateKeyJwtConfig>,
 }
 impl CustomOauth2ProviderConfigOutputBuilder {
@@ -162,6 +171,26 @@ impl CustomOauth2ProviderConfigOutputBuilder {
     pub fn get_private_endpoint_overrides(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrivateEndpointOverride>> {
         &self.private_endpoint_overrides
     }
+    /// Appends an item to `certificate_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_certificate_configurations`](Self::set_certificate_configurations).
+    ///
+    /// <p>The private certificate authority (CA) configurations for the identity provider. Use this to have AgentCore Identity trust a private CA when establishing TLS connections to identity provider endpoints. You can specify only one certificate authority configuration in this list. Provide the certificate by reference to an Amazon S3 object or an Amazon Web Services Secrets Manager secret. You can use this only together with <code>privateEndpoint</code>.</p>
+    pub fn certificate_configurations(mut self, input: crate::types::CertificateConfiguration) -> Self {
+        let mut v = self.certificate_configurations.unwrap_or_default();
+        v.push(input);
+        self.certificate_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The private certificate authority (CA) configurations for the identity provider. Use this to have AgentCore Identity trust a private CA when establishing TLS connections to identity provider endpoints. You can specify only one certificate authority configuration in this list. Provide the certificate by reference to an Amazon S3 object or an Amazon Web Services Secrets Manager secret. You can use this only together with <code>privateEndpoint</code>.</p>
+    pub fn set_certificate_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CertificateConfiguration>>) -> Self {
+        self.certificate_configurations = input;
+        self
+    }
+    /// <p>The private certificate authority (CA) configurations for the identity provider. Use this to have AgentCore Identity trust a private CA when establishing TLS connections to identity provider endpoints. You can specify only one certificate authority configuration in this list. Provide the certificate by reference to an Amazon S3 object or an Amazon Web Services Secrets Manager secret. You can use this only together with <code>privateEndpoint</code>.</p>
+    pub fn get_certificate_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateConfiguration>> {
+        &self.certificate_configurations
+    }
     /// <p>The configuration for private_key_jwt client authentication used by this OAuth2 credential provider.</p>
     pub fn private_key_jwt_config(mut self, input: crate::types::PrivateKeyJwtConfig) -> Self {
         self.private_key_jwt_config = ::std::option::Option::Some(input);
@@ -185,6 +214,7 @@ impl CustomOauth2ProviderConfigOutputBuilder {
             client_authentication_method: self.client_authentication_method,
             private_endpoint: self.private_endpoint,
             private_endpoint_overrides: self.private_endpoint_overrides,
+            certificate_configurations: self.certificate_configurations,
             private_key_jwt_config: self.private_key_jwt_config,
         }
     }

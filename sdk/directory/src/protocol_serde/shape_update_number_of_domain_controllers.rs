@@ -10,7 +10,7 @@ pub fn de_update_number_of_domain_controllers_http_error(
     crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -26,7 +26,7 @@ pub fn de_update_number_of_domain_controllers_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ClientExceptionBuilder::default();
-                output = crate::protocol_serde::shape_client_exception::de_client_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_client_exception::de_client_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -42,7 +42,7 @@ pub fn de_update_number_of_domain_controllers_http_error(
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DirectoryUnavailableExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_directory_unavailable_exception::de_directory_unavailable_exception_json_err(
+                    output = crate::protocol_serde::shape_directory_unavailable_exception::de_directory_unavailable_exception_cbor_err(
                         _response_body,
                         output,
                     )
@@ -62,7 +62,7 @@ pub fn de_update_number_of_domain_controllers_http_error(
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DomainControllerLimitExceededExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_domain_controller_limit_exceeded_exception::de_domain_controller_limit_exceeded_exception_json_err(_response_body, output).map_err(crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError::unhandled)?;
+                    output = crate::protocol_serde::shape_domain_controller_limit_exceeded_exception::de_domain_controller_limit_exceeded_exception_cbor_err(_response_body, output).map_err(crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };
@@ -78,7 +78,7 @@ pub fn de_update_number_of_domain_controllers_http_error(
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::EntityDoesNotExistExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_entity_does_not_exist_exception::de_entity_does_not_exist_exception_json_err(
+                    output = crate::protocol_serde::shape_entity_does_not_exist_exception::de_entity_does_not_exist_exception_cbor_err(
                         _response_body,
                         output,
                     )
@@ -99,7 +99,7 @@ pub fn de_update_number_of_domain_controllers_http_error(
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::InvalidParameterExceptionBuilder::default();
                     output =
-                        crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_json_err(_response_body, output)
+                        crate::protocol_serde::shape_invalid_parameter_exception::de_invalid_parameter_exception_cbor_err(_response_body, output)
                             .map_err(crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
@@ -115,7 +115,7 @@ pub fn de_update_number_of_domain_controllers_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ServiceExceptionBuilder::default();
-                output = crate::protocol_serde::shape_service_exception::de_service_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_service_exception::de_service_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -131,7 +131,7 @@ pub fn de_update_number_of_domain_controllers_http_error(
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::UnsupportedOperationExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_json_err(
+                    output = crate::protocol_serde::shape_unsupported_operation_exception::de_unsupported_operation_exception_cbor_err(
                         _response_body,
                         output,
                     )
@@ -170,9 +170,10 @@ pub fn de_update_number_of_domain_controllers_http_response(
 pub fn ser_update_number_of_domain_controllers_input(
     input: &crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    let mut out = String::new();
-    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_update_number_of_domain_controllers_input::ser_update_number_of_domain_controllers_input_input(&mut object, input)?;
-    object.finish();
-    Ok(::aws_smithy_types::body::SdkBody::from(out))
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_update_number_of_domain_controllers_input::ser_update_number_of_domain_controllers_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }

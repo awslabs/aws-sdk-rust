@@ -37,6 +37,8 @@ impl crate::operation::update_related_item::builders::UpdateRelatedItemInputBuil
 /// <p>If you provide a value for <code>performedBy.userArn</code>, you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a> permission on the ARN of the user that you provide.</p></li>
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html#system-case-fields">System case fields</a> cannot be used in a custom related item.</p></li>
+/// <li>
+/// <p>If the case is the secondary case of a merge that is running, the request fails with a <code>ConflictException</code>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.</p></li>
 /// </ul>
 /// <p><b>Endpoints</b>: See <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Connect Customer endpoints and quotas</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

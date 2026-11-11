@@ -1129,6 +1129,50 @@ impl From<crate::operation::admin_list_user_auth_events::AdminListUserAuthEvents
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::admin_list_user_sessions::AdminListUserSessionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::admin_list_user_sessions::AdminListUserSessionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::admin_list_user_sessions::AdminListUserSessionsError> for Error {
+    fn from(err: crate::operation::admin_list_user_sessions::AdminListUserSessionsError) -> Self {
+        match err {
+            crate::operation::admin_list_user_sessions::AdminListUserSessionsError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::admin_list_user_sessions::AdminListUserSessionsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::admin_list_user_sessions::AdminListUserSessionsError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::admin_list_user_sessions::AdminListUserSessionsError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::admin_list_user_sessions::AdminListUserSessionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::admin_list_user_sessions::AdminListUserSessionsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::admin_list_user_sessions::AdminListUserSessionsError::UserNotFoundException(inner) => {
+                Error::UserNotFoundException(inner)
+            }
+            crate::operation::admin_list_user_sessions::AdminListUserSessionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError, R>>
     for Error
 where
@@ -1334,6 +1378,51 @@ impl From<crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthC
                 Error::UserNotFoundException(inner)
             }
             crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::admin_revoke_user_session::AdminRevokeUserSessionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::admin_revoke_user_session::AdminRevokeUserSessionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::admin_revoke_user_session::AdminRevokeUserSessionError> for Error {
+    fn from(err: crate::operation::admin_revoke_user_session::AdminRevokeUserSessionError) -> Self {
+        match err {
+            crate::operation::admin_revoke_user_session::AdminRevokeUserSessionError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::admin_revoke_user_session::AdminRevokeUserSessionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::admin_revoke_user_session::AdminRevokeUserSessionError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::admin_revoke_user_session::AdminRevokeUserSessionError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::admin_revoke_user_session::AdminRevokeUserSessionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::admin_revoke_user_session::AdminRevokeUserSessionError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::admin_revoke_user_session::AdminRevokeUserSessionError::UserNotFoundException(inner) => {
+                Error::UserNotFoundException(inner)
+            }
+            crate::operation::admin_revoke_user_session::AdminRevokeUserSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3948,6 +4037,44 @@ impl From<crate::operation::get_user_auth_factors::GetUserAuthFactorsError> for 
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_user_pool_client_session_configuration::GetUserPoolClientSessionConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_user_pool_client_session_configuration::GetUserPoolClientSessionConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_user_pool_client_session_configuration::GetUserPoolClientSessionConfigurationError> for Error {
+    fn from(err: crate::operation::get_user_pool_client_session_configuration::GetUserPoolClientSessionConfigurationError) -> Self {
+        match err {
+            crate::operation::get_user_pool_client_session_configuration::GetUserPoolClientSessionConfigurationError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::get_user_pool_client_session_configuration::GetUserPoolClientSessionConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_user_pool_client_session_configuration::GetUserPoolClientSessionConfigurationError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_user_pool_client_session_configuration::GetUserPoolClientSessionConfigurationError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
+            crate::operation::get_user_pool_client_session_configuration::GetUserPoolClientSessionConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_user_pool_client_session_configuration::GetUserPoolClientSessionConfigurationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_user_pool_client_session_configuration::GetUserPoolClientSessionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3983,6 +4110,56 @@ impl From<crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError>
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::get_user_pool_mfa_config::GetUserPoolMfaConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_user_pool_session_configuration::GetUserPoolSessionConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_user_pool_session_configuration::GetUserPoolSessionConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_user_pool_session_configuration::GetUserPoolSessionConfigurationError> for Error {
+    fn from(err: crate::operation::get_user_pool_session_configuration::GetUserPoolSessionConfigurationError) -> Self {
+        match err {
+            crate::operation::get_user_pool_session_configuration::GetUserPoolSessionConfigurationError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::get_user_pool_session_configuration::GetUserPoolSessionConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_user_pool_session_configuration::GetUserPoolSessionConfigurationError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::get_user_pool_session_configuration::GetUserPoolSessionConfigurationError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::get_user_pool_session_configuration::GetUserPoolSessionConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_user_pool_session_configuration::GetUserPoolSessionConfigurationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_user_pool_session_configuration::GetUserPoolSessionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4466,6 +4643,41 @@ impl From<crate::operation::list_users::ListUsersError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_user_sessions::ListUserSessionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_user_sessions::ListUserSessionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_user_sessions::ListUserSessionsError> for Error {
+    fn from(err: crate::operation::list_user_sessions::ListUserSessionsError) -> Self {
+        match err {
+            crate::operation::list_user_sessions::ListUserSessionsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_user_sessions::ListUserSessionsError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::list_user_sessions::ListUserSessionsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_user_sessions::ListUserSessionsError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_user_sessions::ListUserSessionsError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::list_user_sessions::ListUserSessionsError::PasswordResetRequiredException(inner) => {
+                Error::PasswordResetRequiredException(inner)
+            }
+            crate::operation::list_user_sessions::ListUserSessionsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_user_sessions::ListUserSessionsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_user_sessions::ListUserSessionsError::UserNotConfirmedException(inner) => Error::UserNotConfirmedException(inner),
+            crate::operation::list_user_sessions::ListUserSessionsError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::list_user_sessions::ListUserSessionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_users_in_group::ListUsersInGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4733,6 +4945,47 @@ impl From<crate::operation::revoke_token::RevokeTokenError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::revoke_user_session::RevokeUserSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::revoke_user_session::RevokeUserSessionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::revoke_user_session::RevokeUserSessionError> for Error {
+    fn from(err: crate::operation::revoke_user_session::RevokeUserSessionError) -> Self {
+        match err {
+            crate::operation::revoke_user_session::RevokeUserSessionError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::revoke_user_session::RevokeUserSessionError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::revoke_user_session::RevokeUserSessionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::revoke_user_session::RevokeUserSessionError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::revoke_user_session::RevokeUserSessionError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::revoke_user_session::RevokeUserSessionError::PasswordResetRequiredException(inner) => {
+                Error::PasswordResetRequiredException(inner)
+            }
+            crate::operation::revoke_user_session::RevokeUserSessionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::revoke_user_session::RevokeUserSessionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::revoke_user_session::RevokeUserSessionError::UserNotConfirmedException(inner) => {
+                Error::UserNotConfirmedException(inner)
+            }
+            crate::operation::revoke_user_session::RevokeUserSessionError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::revoke_user_session::RevokeUserSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_log_delivery_configuration::SetLogDeliveryConfigurationError, R>>
     for Error
@@ -4908,6 +5161,46 @@ impl From<crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError> 
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::set_user_pool_client_session_configuration::SetUserPoolClientSessionConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::set_user_pool_client_session_configuration::SetUserPoolClientSessionConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::set_user_pool_client_session_configuration::SetUserPoolClientSessionConfigurationError> for Error {
+    fn from(err: crate::operation::set_user_pool_client_session_configuration::SetUserPoolClientSessionConfigurationError) -> Self {
+        match err {
+            crate::operation::set_user_pool_client_session_configuration::SetUserPoolClientSessionConfigurationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::operation::set_user_pool_client_session_configuration::SetUserPoolClientSessionConfigurationError::FeatureUnavailableInTierException(inner) => Error::FeatureUnavailableInTierException(inner),
+            crate::operation::set_user_pool_client_session_configuration::SetUserPoolClientSessionConfigurationError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::set_user_pool_client_session_configuration::SetUserPoolClientSessionConfigurationError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::set_user_pool_client_session_configuration::SetUserPoolClientSessionConfigurationError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::set_user_pool_client_session_configuration::SetUserPoolClientSessionConfigurationError::OperationNotEnabledException(inner) => Error::OperationNotEnabledException(inner),
+            crate::operation::set_user_pool_client_session_configuration::SetUserPoolClientSessionConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::set_user_pool_client_session_configuration::SetUserPoolClientSessionConfigurationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::set_user_pool_client_session_configuration::SetUserPoolClientSessionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4958,6 +5251,62 @@ impl From<crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError>
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::set_user_pool_session_configuration::SetUserPoolSessionConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::set_user_pool_session_configuration::SetUserPoolSessionConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::set_user_pool_session_configuration::SetUserPoolSessionConfigurationError> for Error {
+    fn from(err: crate::operation::set_user_pool_session_configuration::SetUserPoolSessionConfigurationError) -> Self {
+        match err {
+            crate::operation::set_user_pool_session_configuration::SetUserPoolSessionConfigurationError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::set_user_pool_session_configuration::SetUserPoolSessionConfigurationError::FeatureUnavailableInTierException(inner) => {
+                Error::FeatureUnavailableInTierException(inner)
+            }
+            crate::operation::set_user_pool_session_configuration::SetUserPoolSessionConfigurationError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::set_user_pool_session_configuration::SetUserPoolSessionConfigurationError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::set_user_pool_session_configuration::SetUserPoolSessionConfigurationError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::set_user_pool_session_configuration::SetUserPoolSessionConfigurationError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::set_user_pool_session_configuration::SetUserPoolSessionConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::set_user_pool_session_configuration::SetUserPoolSessionConfigurationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::set_user_pool_session_configuration::SetUserPoolSessionConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

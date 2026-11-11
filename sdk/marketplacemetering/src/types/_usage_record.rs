@@ -15,9 +15,16 @@ pub struct UsageRecord {
     pub customer_identifier: ::std::string::String,
     /// <p>During the process of registering a product on Amazon Web Services Marketplace, dimensions are specified. These represent different units of value in your application.</p>
     pub dimension: ::std::string::String,
-    /// <p>The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if not specified.</p>
+    /// <p>The quantity of usage consumed by the customer for the given dimension and time, as a whole number. Defaults to <code>0</code> if neither <code>Quantity</code> nor <code>QuantityAsDecimal</code> is specified.</p>
+    /// <p>Use <code>QuantityAsDecimal</code> instead. You can't specify both <code>Quantity</code> and <code>QuantityAsDecimal</code> in a usage record.</p>
+    #[deprecated(note = "Use QuantityAsDecimal instead.", since = "2026-10-20")]
     pub quantity: ::std::option::Option<i32>,
-    /// <p>The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code> quantities must equal the Quantity of the <code>UsageRecord</code>.</p>
+    /// <p>The quantity of usage consumed by the customer for the given dimension and time, as a decimal string. Use this instead of <code>Quantity</code> to report fractional usage.</p>
+    /// <p>A non-negative decimal number, for example <code>17.42</code>.</p>
+    /// <p>You can't specify both <code>Quantity</code> and <code>QuantityAsDecimal</code> in a usage record. If you provide <code>UsageAllocations</code>, each allocation must use <code>AllocatedUsageQuantityAsDecimal</code>. If any usage record fails these checks, the entire <code>BatchMeterUsage</code> request fails and no records are processed.</p>
+    /// <p>Quantities are compared by value when checking for duplicate records, so <code>17</code>, <code>17.0</code>, and <code>17.00</code> are the same quantity, whether you send it in <code>Quantity</code> or <code>QuantityAsDecimal</code>.</p>
+    pub quantity_as_decimal: ::std::option::Option<::std::string::String>,
+    /// <p>The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code> quantities must equal the quantity of the <code>UsageRecord</code> (<code>Quantity</code> or <code>QuantityAsDecimal</code>). Allocations must use the same type of quantity as the usage record: <code>AllocatedUsageQuantity</code> with <code>Quantity</code>, or <code>AllocatedUsageQuantityAsDecimal</code> with <code>QuantityAsDecimal</code>.</p>
     pub usage_allocations: ::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>>,
     /// <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID of the buyer.</p><important>
     /// <p>If you have an existing integration and need the <code>CustomerAWSAccountId</code> that corresponds to a <code>CustomerIdentifier</code>, contact <a href="https://aws.amazon.com/marketplace/management/contact-us/">AWS Marketplace Seller Operations</a> to obtain the mapping. Do not request the <code>CustomerAWSAccountId</code> directly from buyers. We cannot verify that a buyer-provided account ID is authentic, which can result in incorrect metering or billing.</p>
@@ -47,11 +54,20 @@ impl UsageRecord {
         use std::ops::Deref;
         self.dimension.deref()
     }
-    /// <p>The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if not specified.</p>
+    /// <p>The quantity of usage consumed by the customer for the given dimension and time, as a whole number. Defaults to <code>0</code> if neither <code>Quantity</code> nor <code>QuantityAsDecimal</code> is specified.</p>
+    /// <p>Use <code>QuantityAsDecimal</code> instead. You can't specify both <code>Quantity</code> and <code>QuantityAsDecimal</code> in a usage record.</p>
+    #[deprecated(note = "Use QuantityAsDecimal instead.", since = "2026-10-20")]
     pub fn quantity(&self) -> ::std::option::Option<i32> {
         self.quantity
     }
-    /// <p>The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code> quantities must equal the Quantity of the <code>UsageRecord</code>.</p>
+    /// <p>The quantity of usage consumed by the customer for the given dimension and time, as a decimal string. Use this instead of <code>Quantity</code> to report fractional usage.</p>
+    /// <p>A non-negative decimal number, for example <code>17.42</code>.</p>
+    /// <p>You can't specify both <code>Quantity</code> and <code>QuantityAsDecimal</code> in a usage record. If you provide <code>UsageAllocations</code>, each allocation must use <code>AllocatedUsageQuantityAsDecimal</code>. If any usage record fails these checks, the entire <code>BatchMeterUsage</code> request fails and no records are processed.</p>
+    /// <p>Quantities are compared by value when checking for duplicate records, so <code>17</code>, <code>17.0</code>, and <code>17.00</code> are the same quantity, whether you send it in <code>Quantity</code> or <code>QuantityAsDecimal</code>.</p>
+    pub fn quantity_as_decimal(&self) -> ::std::option::Option<&str> {
+        self.quantity_as_decimal.as_deref()
+    }
+    /// <p>The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code> quantities must equal the quantity of the <code>UsageRecord</code> (<code>Quantity</code> or <code>QuantityAsDecimal</code>). Allocations must use the same type of quantity as the usage record: <code>AllocatedUsageQuantity</code> with <code>Quantity</code>, or <code>AllocatedUsageQuantityAsDecimal</code> with <code>QuantityAsDecimal</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.usage_allocations.is_none()`.
     pub fn usage_allocations(&self) -> &[crate::types::UsageAllocation] {
@@ -85,6 +101,7 @@ pub struct UsageRecordBuilder {
     pub(crate) customer_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) dimension: ::std::option::Option<::std::string::String>,
     pub(crate) quantity: ::std::option::Option<i32>,
+    pub(crate) quantity_as_decimal: ::std::option::Option<::std::string::String>,
     pub(crate) usage_allocations: ::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>>,
     pub(crate) customer_aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) license_arn: ::std::option::Option<::std::string::String>,
@@ -146,37 +163,66 @@ impl UsageRecordBuilder {
     pub fn get_dimension(&self) -> &::std::option::Option<::std::string::String> {
         &self.dimension
     }
-    /// <p>The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if not specified.</p>
+    /// <p>The quantity of usage consumed by the customer for the given dimension and time, as a whole number. Defaults to <code>0</code> if neither <code>Quantity</code> nor <code>QuantityAsDecimal</code> is specified.</p>
+    /// <p>Use <code>QuantityAsDecimal</code> instead. You can't specify both <code>Quantity</code> and <code>QuantityAsDecimal</code> in a usage record.</p>
+    #[deprecated(note = "Use QuantityAsDecimal instead.", since = "2026-10-20")]
     pub fn quantity(mut self, input: i32) -> Self {
         self.quantity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if not specified.</p>
+    /// <p>The quantity of usage consumed by the customer for the given dimension and time, as a whole number. Defaults to <code>0</code> if neither <code>Quantity</code> nor <code>QuantityAsDecimal</code> is specified.</p>
+    /// <p>Use <code>QuantityAsDecimal</code> instead. You can't specify both <code>Quantity</code> and <code>QuantityAsDecimal</code> in a usage record.</p>
+    #[deprecated(note = "Use QuantityAsDecimal instead.", since = "2026-10-20")]
     pub fn set_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.quantity = input;
         self
     }
-    /// <p>The quantity of usage consumed by the customer for the given dimension and time. Defaults to <code>0</code> if not specified.</p>
+    /// <p>The quantity of usage consumed by the customer for the given dimension and time, as a whole number. Defaults to <code>0</code> if neither <code>Quantity</code> nor <code>QuantityAsDecimal</code> is specified.</p>
+    /// <p>Use <code>QuantityAsDecimal</code> instead. You can't specify both <code>Quantity</code> and <code>QuantityAsDecimal</code> in a usage record.</p>
+    #[deprecated(note = "Use QuantityAsDecimal instead.", since = "2026-10-20")]
     pub fn get_quantity(&self) -> &::std::option::Option<i32> {
         &self.quantity
+    }
+    /// <p>The quantity of usage consumed by the customer for the given dimension and time, as a decimal string. Use this instead of <code>Quantity</code> to report fractional usage.</p>
+    /// <p>A non-negative decimal number, for example <code>17.42</code>.</p>
+    /// <p>You can't specify both <code>Quantity</code> and <code>QuantityAsDecimal</code> in a usage record. If you provide <code>UsageAllocations</code>, each allocation must use <code>AllocatedUsageQuantityAsDecimal</code>. If any usage record fails these checks, the entire <code>BatchMeterUsage</code> request fails and no records are processed.</p>
+    /// <p>Quantities are compared by value when checking for duplicate records, so <code>17</code>, <code>17.0</code>, and <code>17.00</code> are the same quantity, whether you send it in <code>Quantity</code> or <code>QuantityAsDecimal</code>.</p>
+    pub fn quantity_as_decimal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.quantity_as_decimal = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The quantity of usage consumed by the customer for the given dimension and time, as a decimal string. Use this instead of <code>Quantity</code> to report fractional usage.</p>
+    /// <p>A non-negative decimal number, for example <code>17.42</code>.</p>
+    /// <p>You can't specify both <code>Quantity</code> and <code>QuantityAsDecimal</code> in a usage record. If you provide <code>UsageAllocations</code>, each allocation must use <code>AllocatedUsageQuantityAsDecimal</code>. If any usage record fails these checks, the entire <code>BatchMeterUsage</code> request fails and no records are processed.</p>
+    /// <p>Quantities are compared by value when checking for duplicate records, so <code>17</code>, <code>17.0</code>, and <code>17.00</code> are the same quantity, whether you send it in <code>Quantity</code> or <code>QuantityAsDecimal</code>.</p>
+    pub fn set_quantity_as_decimal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.quantity_as_decimal = input;
+        self
+    }
+    /// <p>The quantity of usage consumed by the customer for the given dimension and time, as a decimal string. Use this instead of <code>Quantity</code> to report fractional usage.</p>
+    /// <p>A non-negative decimal number, for example <code>17.42</code>.</p>
+    /// <p>You can't specify both <code>Quantity</code> and <code>QuantityAsDecimal</code> in a usage record. If you provide <code>UsageAllocations</code>, each allocation must use <code>AllocatedUsageQuantityAsDecimal</code>. If any usage record fails these checks, the entire <code>BatchMeterUsage</code> request fails and no records are processed.</p>
+    /// <p>Quantities are compared by value when checking for duplicate records, so <code>17</code>, <code>17.0</code>, and <code>17.00</code> are the same quantity, whether you send it in <code>Quantity</code> or <code>QuantityAsDecimal</code>.</p>
+    pub fn get_quantity_as_decimal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.quantity_as_decimal
     }
     /// Appends an item to `usage_allocations`.
     ///
     /// To override the contents of this collection use [`set_usage_allocations`](Self::set_usage_allocations).
     ///
-    /// <p>The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code> quantities must equal the Quantity of the <code>UsageRecord</code>.</p>
+    /// <p>The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code> quantities must equal the quantity of the <code>UsageRecord</code> (<code>Quantity</code> or <code>QuantityAsDecimal</code>). Allocations must use the same type of quantity as the usage record: <code>AllocatedUsageQuantity</code> with <code>Quantity</code>, or <code>AllocatedUsageQuantityAsDecimal</code> with <code>QuantityAsDecimal</code>.</p>
     pub fn usage_allocations(mut self, input: crate::types::UsageAllocation) -> Self {
         let mut v = self.usage_allocations.unwrap_or_default();
         v.push(input);
         self.usage_allocations = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code> quantities must equal the Quantity of the <code>UsageRecord</code>.</p>
+    /// <p>The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code> quantities must equal the quantity of the <code>UsageRecord</code> (<code>Quantity</code> or <code>QuantityAsDecimal</code>). Allocations must use the same type of quantity as the usage record: <code>AllocatedUsageQuantity</code> with <code>Quantity</code>, or <code>AllocatedUsageQuantityAsDecimal</code> with <code>QuantityAsDecimal</code>.</p>
     pub fn set_usage_allocations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>>) -> Self {
         self.usage_allocations = input;
         self
     }
-    /// <p>The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code> quantities must equal the Quantity of the <code>UsageRecord</code>.</p>
+    /// <p>The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code> quantities must equal the quantity of the <code>UsageRecord</code> (<code>Quantity</code> or <code>QuantityAsDecimal</code>). Allocations must use the same type of quantity as the usage record: <code>AllocatedUsageQuantity</code> with <code>Quantity</code>, or <code>AllocatedUsageQuantityAsDecimal</code> with <code>QuantityAsDecimal</code>.</p>
     pub fn get_usage_allocations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UsageAllocation>> {
         &self.usage_allocations
     }
@@ -240,6 +286,7 @@ impl UsageRecordBuilder {
                 )
             })?,
             quantity: self.quantity,
+            quantity_as_decimal: self.quantity_as_decimal,
             usage_allocations: self.usage_allocations,
             customer_aws_account_id: self.customer_aws_account_id,
             license_arn: self.license_arn,

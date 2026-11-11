@@ -9,7 +9,7 @@ pub struct ListWorkflowsInput {
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
     /// <p>Specifies whether to return one entry per workflow name, with all versions of each workflow aggregated. Defaults to <code>false</code>, which returns one entry per workflow version. You can't combine this option with the <code>version</code> filter.</p>
     pub by_name: ::std::option::Option<bool>,
-    /// <p>The maximum number of items to return in a single request.</p>
+    /// <p>The maximum number of items to return in a single request. If you don't specify a value, Image Builder returns up to 25 items. The largest page size that you can request is 100 items. A page can contain fewer items than the maximum, with a <code>nextToken</code> to continue paging.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ impl ListWorkflowsInput {
     pub fn by_name(&self) -> ::std::option::Option<bool> {
         self.by_name
     }
-    /// <p>The maximum number of items to return in a single request.</p>
+    /// <p>The maximum number of items to return in a single request. If you don't specify a value, Image Builder returns up to 25 items. The largest page size that you can request is 100 items. A page can contain fewer items than the maximum, with a <code>nextToken</code> to continue paging.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -104,17 +104,17 @@ impl ListWorkflowsInputBuilder {
     pub fn get_by_name(&self) -> &::std::option::Option<bool> {
         &self.by_name
     }
-    /// <p>The maximum number of items to return in a single request.</p>
+    /// <p>The maximum number of items to return in a single request. If you don't specify a value, Image Builder returns up to 25 items. The largest page size that you can request is 100 items. A page can contain fewer items than the maximum, with a <code>nextToken</code> to continue paging.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of items to return in a single request.</p>
+    /// <p>The maximum number of items to return in a single request. If you don't specify a value, Image Builder returns up to 25 items. The largest page size that you can request is 100 items. A page can contain fewer items than the maximum, with a <code>nextToken</code> to continue paging.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of items to return in a single request.</p>
+    /// <p>The maximum number of items to return in a single request. If you don't specify a value, Image Builder returns up to 25 items. The largest page size that you can request is 100 items. A page can contain fewer items than the maximum, with a <code>nextToken</code> to continue paging.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

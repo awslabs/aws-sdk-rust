@@ -10,7 +10,7 @@ pub fn de_disassociate_tag_option_from_resource_http_error(
     crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -28,7 +28,7 @@ pub fn de_disassociate_tag_option_from_resource_http_error(
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
                     output =
-                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_cbor_err(_response_body, output)
                             .map_err(crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
@@ -45,7 +45,7 @@ pub fn de_disassociate_tag_option_from_resource_http_error(
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TagOptionNotMigratedExceptionBuilder::default();
-                    output = crate::protocol_serde::shape_tag_option_not_migrated_exception::de_tag_option_not_migrated_exception_json_err(
+                    output = crate::protocol_serde::shape_tag_option_not_migrated_exception::de_tag_option_not_migrated_exception_cbor_err(
                         _response_body,
                         output,
                     )
@@ -84,12 +84,12 @@ pub fn de_disassociate_tag_option_from_resource_http_response(
 pub fn ser_disassociate_tag_option_from_resource_input(
     input: &crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    let mut out = String::new();
-    let mut object = ::aws_smithy_json::serialize::JsonObjectWriter::new(&mut out);
-    crate::protocol_serde::shape_disassociate_tag_option_from_resource_input::ser_disassociate_tag_option_from_resource_input_input(
-        &mut object,
-        input,
-    )?;
-    object.finish();
-    Ok(::aws_smithy_types::body::SdkBody::from(out))
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_disassociate_tag_option_from_resource_input::ser_disassociate_tag_option_from_resource_input_input(
+            encoder, input,
+        )?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }

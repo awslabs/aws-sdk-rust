@@ -57,5 +57,17 @@ pub fn ser_custom_oauth2_provider_config_input(
         }
         array_14.finish();
     }
+    if let Some(var_17) = &input.certificate_configurations {
+        let mut array_18 = object.key("certificateConfigurations").start_array();
+        for item_19 in var_17 {
+            {
+                #[allow(unused_mut)]
+                let mut object_20 = array_18.value().start_object();
+                crate::protocol_serde::shape_certificate_configuration::ser_certificate_configuration(&mut object_20, item_19)?;
+                object_20.finish();
+            }
+        }
+        array_18.finish();
+    }
     Ok(())
 }

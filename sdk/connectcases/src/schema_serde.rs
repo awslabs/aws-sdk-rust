@@ -9,6 +9,8 @@ pub(crate) mod shape_audit_event_field_value_union;
 
 pub(crate) mod shape_audit_event_performed_by;
 
+pub(crate) mod shape_audit_merge_metadata;
+
 pub(crate) mod shape_basic_layout;
 
 pub(crate) mod shape_batch_create_related_item_error_entry;
@@ -191,6 +193,8 @@ pub(crate) mod shape_field_value_input;
 
 pub(crate) mod shape_field_value_union;
 
+pub(crate) mod shape_fields_configuration;
+
 pub(crate) mod shape_file_content;
 
 pub(crate) mod shape_file_filter;
@@ -218,6 +222,10 @@ pub(crate) mod shape_get_field_response;
 pub(crate) mod shape_get_layout_input_input;
 
 pub(crate) mod shape_get_layout_output_output;
+
+pub(crate) mod shape_get_merge_cases_status_input_input;
+
+pub(crate) mod shape_get_merge_cases_status_output_output;
 
 pub(crate) mod shape_get_template_input_input;
 
@@ -287,6 +295,8 @@ pub(crate) mod shape_related_item_type_filter;
 
 pub(crate) mod shape_related_item_update_content;
 
+pub(crate) mod shape_related_items_configuration;
+
 pub(crate) mod shape_required_case_rule;
 
 pub(crate) mod shape_required_field;
@@ -328,6 +338,10 @@ pub(crate) mod shape_sla_input_configuration;
 pub(crate) mod shape_sla_input_content;
 
 pub(crate) mod shape_sort;
+
+pub(crate) mod shape_start_merge_cases_input_input;
+
+pub(crate) mod shape_start_merge_cases_output_output;
 
 pub(crate) mod shape_tag_filter;
 

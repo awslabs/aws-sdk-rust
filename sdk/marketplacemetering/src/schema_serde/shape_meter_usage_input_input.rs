@@ -39,6 +39,16 @@ static METERUSAGEINPUT_MEMBER_USAGE_QUANTITY: ::aws_smithy_schema::Schema<'stati
     "UsageQuantity",
     3,
 );
+static METERUSAGEINPUT_MEMBER_USAGE_QUANTITY_AS_DECIMAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering.synthetic#MeterUsageInput$UsageQuantityAsDecimal",
+        "com.amazonaws.marketplacemetering.synthetic",
+        "MeterUsageInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "UsageQuantityAsDecimal",
+    4,
+);
 static METERUSAGEINPUT_MEMBER_DRY_RUN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.marketplacemetering.synthetic#MeterUsageInput$DryRun",
@@ -47,7 +57,7 @@ static METERUSAGEINPUT_MEMBER_DRY_RUN: ::aws_smithy_schema::Schema<'static> = ::
     ),
     ::aws_smithy_schema::ShapeType::Boolean,
     "DryRun",
-    4,
+    5,
 );
 static METERUSAGEINPUT_MEMBER_USAGE_ALLOCATIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -67,7 +77,7 @@ static METERUSAGEINPUT_MEMBER_USAGE_ALLOCATIONS: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::List,
     "UsageAllocations",
-    5,
+    6,
 )
 .with_list_member(&METERUSAGEINPUT_MEMBER_USAGE_ALLOCATIONS_MEMBER);
 static METERUSAGEINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -78,7 +88,7 @@ static METERUSAGEINPUT_MEMBER_CLIENT_TOKEN: ::aws_smithy_schema::Schema<'static>
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ClientToken",
-    6,
+    7,
 );
 static METERUSAGEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -92,6 +102,7 @@ static METERUSAGEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smit
         &METERUSAGEINPUT_MEMBER_TIMESTAMP,
         &METERUSAGEINPUT_MEMBER_USAGE_DIMENSION,
         &METERUSAGEINPUT_MEMBER_USAGE_QUANTITY,
+        &METERUSAGEINPUT_MEMBER_USAGE_QUANTITY_AS_DECIMAL,
         &METERUSAGEINPUT_MEMBER_DRY_RUN,
         &METERUSAGEINPUT_MEMBER_USAGE_ALLOCATIONS,
         &METERUSAGEINPUT_MEMBER_CLIENT_TOKEN,
@@ -124,6 +135,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::meter_
         }
         if let Some(ref val) = self.usage_quantity {
             ser.write_integer(&METERUSAGEINPUT_MEMBER_USAGE_QUANTITY, *val)?;
+        }
+        if let Some(ref val) = self.usage_quantity_as_decimal {
+            ser.write_string(&METERUSAGEINPUT_MEMBER_USAGE_QUANTITY_AS_DECIMAL, val)?;
         }
         if let Some(ref val) = self.dry_run {
             ser.write_boolean(&METERUSAGEINPUT_MEMBER_DRY_RUN, *val)?;
@@ -191,10 +205,17 @@ impl crate::operation::meter_usage::builders::MeterUsageInputBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.dry_run = Some(deser.read_boolean(member)?);
+                        self.usage_quantity_as_decimal = Some(deser.read_string(member)?);
                     }
                 }
                 Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.dry_run = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(6) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -208,7 +229,7 @@ impl crate::operation::meter_usage::builders::MeterUsageInputBuilder {
                         });
                     }
                 }
-                Some(6) => {
+                Some(7) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

@@ -5,7 +5,7 @@
 pub struct ListComponentBuildVersionsInput {
     /// <p>The component version ARN whose build versions you want to list. The ARN must specify an exact version, without a build number suffix. If you don't specify an ARN, Image Builder returns build versions for the components that your account owns.</p>
     pub component_version_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of items to return in a single request.</p>
+    /// <p>The maximum number of items to return in a single request. If you don't specify a value, Image Builder returns up to 25 items. The largest page size that you can request is 100 items. A page can contain fewer items than the maximum, with a <code>nextToken</code> to continue paging.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token to specify where to start paginating. Use the <code>nextToken</code> value from a previously truncated response.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -15,7 +15,7 @@ impl ListComponentBuildVersionsInput {
     pub fn component_version_arn(&self) -> ::std::option::Option<&str> {
         self.component_version_arn.as_deref()
     }
-    /// <p>The maximum number of items to return in a single request.</p>
+    /// <p>The maximum number of items to return in a single request. If you don't specify a value, Image Builder returns up to 25 items. The largest page size that you can request is 100 items. A page can contain fewer items than the maximum, with a <code>nextToken</code> to continue paging.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -54,17 +54,17 @@ impl ListComponentBuildVersionsInputBuilder {
     pub fn get_component_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.component_version_arn
     }
-    /// <p>The maximum number of items to return in a single request.</p>
+    /// <p>The maximum number of items to return in a single request. If you don't specify a value, Image Builder returns up to 25 items. The largest page size that you can request is 100 items. A page can contain fewer items than the maximum, with a <code>nextToken</code> to continue paging.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of items to return in a single request.</p>
+    /// <p>The maximum number of items to return in a single request. If you don't specify a value, Image Builder returns up to 25 items. The largest page size that you can request is 100 items. A page can contain fewer items than the maximum, with a <code>nextToken</code> to continue paging.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of items to return in a single request.</p>
+    /// <p>The maximum number of items to return in a single request. If you don't specify a value, Image Builder returns up to 25 items. The largest page size that you can request is 100 items. A page can contain fewer items than the maximum, with a <code>nextToken</code> to continue paging.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

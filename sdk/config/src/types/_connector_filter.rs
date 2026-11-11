@@ -6,7 +6,13 @@
 pub struct ConnectorFilter {
     /// <p>The name of the filter. Currently, only <code>provider</code> is supported.</p>
     pub filter_name: ::std::option::Option<crate::types::ConnectorFilterName>,
-    /// <p>The value of the filter. For <code>provider</code>, valid values include: <code>AZURE</code>.</p>
+    /// <p>The value of the filter. For <code>provider</code>, valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AZURE</code> – The connector is for Microsoft Azure</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – The connector is for Google Cloud</p></li>
+    /// </ul>
     pub filter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ConnectorFilter {
@@ -14,7 +20,13 @@ impl ConnectorFilter {
     pub fn filter_name(&self) -> ::std::option::Option<&crate::types::ConnectorFilterName> {
         self.filter_name.as_ref()
     }
-    /// <p>The value of the filter. For <code>provider</code>, valid values include: <code>AZURE</code>.</p>
+    /// <p>The value of the filter. For <code>provider</code>, valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AZURE</code> – The connector is for Microsoft Azure</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – The connector is for Google Cloud</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_values.is_none()`.
     pub fn filter_values(&self) -> &[::std::string::String] {
@@ -54,19 +66,37 @@ impl ConnectorFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_filter_values`](Self::set_filter_values).
     ///
-    /// <p>The value of the filter. For <code>provider</code>, valid values include: <code>AZURE</code>.</p>
+    /// <p>The value of the filter. For <code>provider</code>, valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AZURE</code> – The connector is for Microsoft Azure</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – The connector is for Google Cloud</p></li>
+    /// </ul>
     pub fn filter_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.filter_values.unwrap_or_default();
         v.push(input.into());
         self.filter_values = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The value of the filter. For <code>provider</code>, valid values include: <code>AZURE</code>.</p>
+    /// <p>The value of the filter. For <code>provider</code>, valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AZURE</code> – The connector is for Microsoft Azure</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – The connector is for Google Cloud</p></li>
+    /// </ul>
     pub fn set_filter_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.filter_values = input;
         self
     }
-    /// <p>The value of the filter. For <code>provider</code>, valid values include: <code>AZURE</code>.</p>
+    /// <p>The value of the filter. For <code>provider</code>, valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AZURE</code> – The connector is for Microsoft Azure</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – The connector is for Google Cloud</p></li>
+    /// </ul>
     pub fn get_filter_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.filter_values
     }

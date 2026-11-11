@@ -252,6 +252,8 @@ mod get_domain;
 
 mod get_layout;
 
+mod get_merge_cases_status;
+
 mod get_template;
 
 mod list_case_rules;
@@ -277,6 +279,8 @@ mod search_all_related_items;
 mod search_cases;
 
 mod search_related_items;
+
+mod start_merge_cases;
 
 mod tag_resource;
 

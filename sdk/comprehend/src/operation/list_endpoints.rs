@@ -402,7 +402,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListEndpoint
             .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
             .expect("a SharedClientProtocol is required");
         let mut request = protocol
-            .serialize_request(&input, ListEndpoints::INPUT_SCHEMA, "/", _cfg)
+            .serialize_request(
+                &input,
+                ListEndpoints::INPUT_SCHEMA,
+                "/service/Comprehend_20171127/operation/ListEndpoints",
+                _cfg,
+            )
             .map_err(::aws_smithy_runtime_api::box_error::BoxError::from)?;
 
         return ::std::result::Result::Ok(request);

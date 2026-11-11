@@ -8,6 +8,8 @@ pub struct ApplicationRestoreConfiguration {
     pub application_restore_type: crate::types::ApplicationRestoreType,
     /// <p>The identifier of an existing snapshot of application state to use to restart an application. The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the <code>ApplicationRestoreType</code>.</p>
     pub snapshot_name: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of an existing enhanced snapshot of application state to use to restart an application. The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the <code>ApplicationRestoreType</code> and <code>SnapshotMode</code> is <code>ENHANCED_SNAPSHOTS</code>.</p>
+    pub snapshot_arn: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationRestoreConfiguration {
     /// <p>Specifies how the application should be restored.</p>
@@ -17,6 +19,10 @@ impl ApplicationRestoreConfiguration {
     /// <p>The identifier of an existing snapshot of application state to use to restart an application. The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the <code>ApplicationRestoreType</code>.</p>
     pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
         self.snapshot_name.as_deref()
+    }
+    /// <p>The identifier of an existing enhanced snapshot of application state to use to restart an application. The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the <code>ApplicationRestoreType</code> and <code>SnapshotMode</code> is <code>ENHANCED_SNAPSHOTS</code>.</p>
+    pub fn snapshot_arn(&self) -> ::std::option::Option<&str> {
+        self.snapshot_arn.as_deref()
     }
 }
 impl ApplicationRestoreConfiguration {
@@ -32,6 +38,7 @@ impl ApplicationRestoreConfiguration {
 pub struct ApplicationRestoreConfigurationBuilder {
     pub(crate) application_restore_type: ::std::option::Option<crate::types::ApplicationRestoreType>,
     pub(crate) snapshot_name: ::std::option::Option<::std::string::String>,
+    pub(crate) snapshot_arn: ::std::option::Option<::std::string::String>,
 }
 impl ApplicationRestoreConfigurationBuilder {
     /// <p>Specifies how the application should be restored.</p>
@@ -63,6 +70,20 @@ impl ApplicationRestoreConfigurationBuilder {
     pub fn get_snapshot_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.snapshot_name
     }
+    /// <p>The identifier of an existing enhanced snapshot of application state to use to restart an application. The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the <code>ApplicationRestoreType</code> and <code>SnapshotMode</code> is <code>ENHANCED_SNAPSHOTS</code>.</p>
+    pub fn snapshot_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.snapshot_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of an existing enhanced snapshot of application state to use to restart an application. The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the <code>ApplicationRestoreType</code> and <code>SnapshotMode</code> is <code>ENHANCED_SNAPSHOTS</code>.</p>
+    pub fn set_snapshot_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.snapshot_arn = input;
+        self
+    }
+    /// <p>The identifier of an existing enhanced snapshot of application state to use to restart an application. The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified for the <code>ApplicationRestoreType</code> and <code>SnapshotMode</code> is <code>ENHANCED_SNAPSHOTS</code>.</p>
+    pub fn get_snapshot_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.snapshot_arn
+    }
     /// Consumes the builder and constructs a [`ApplicationRestoreConfiguration`](crate::types::ApplicationRestoreConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`application_restore_type`](crate::types::builders::ApplicationRestoreConfigurationBuilder::application_restore_type)
@@ -75,6 +96,7 @@ impl ApplicationRestoreConfigurationBuilder {
                 )
             })?,
             snapshot_name: self.snapshot_name,
+            snapshot_arn: self.snapshot_arn,
         })
     }
 }

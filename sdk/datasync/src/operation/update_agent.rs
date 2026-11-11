@@ -377,7 +377,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateAgentR
             .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
             .expect("a SharedClientProtocol is required");
         let mut request = protocol
-            .serialize_request(&input, UpdateAgent::INPUT_SCHEMA, "/", _cfg)
+            .serialize_request(&input, UpdateAgent::INPUT_SCHEMA, "/service/FmrsService/operation/UpdateAgent", _cfg)
             .map_err(::aws_smithy_runtime_api::box_error::BoxError::from)?;
 
         return ::std::result::Result::Ok(request);

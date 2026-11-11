@@ -10,7 +10,7 @@ pub struct HarnessAgentCoreRuntimeEnvironment {
     pub agent_runtime_name: ::std::string::String,
     /// <p>The ID of the underlying AgentCore Runtime.</p>
     pub agent_runtime_id: ::std::string::String,
-    /// <p>LifecycleConfiguration lets you manage the lifecycle of runtime sessions and resources in AgentCore Runtime. This configuration helps optimize resource utilization by automatically cleaning up idle sessions and preventing long-running instances from consuming resources indefinitely.</p>
+    /// <p>The lifecycle configuration for the harness's runtime environment. For a harness, <code>idleRuntimeSessionTimeout</code> and <code>maxLifetime</code> each accept a value between 60 and 28800 seconds (8 hours), and <code>idleRuntimeSessionTimeout</code> must be less than or equal to <code>maxLifetime</code>.</p>
     pub lifecycle_configuration: ::std::option::Option<crate::types::LifecycleConfiguration>,
     /// <p>SecurityConfig for the Agent.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
@@ -33,7 +33,7 @@ impl HarnessAgentCoreRuntimeEnvironment {
         use std::ops::Deref;
         self.agent_runtime_id.deref()
     }
-    /// <p>LifecycleConfiguration lets you manage the lifecycle of runtime sessions and resources in AgentCore Runtime. This configuration helps optimize resource utilization by automatically cleaning up idle sessions and preventing long-running instances from consuming resources indefinitely.</p>
+    /// <p>The lifecycle configuration for the harness's runtime environment. For a harness, <code>idleRuntimeSessionTimeout</code> and <code>maxLifetime</code> each accept a value between 60 and 28800 seconds (8 hours), and <code>idleRuntimeSessionTimeout</code> must be less than or equal to <code>maxLifetime</code>.</p>
     pub fn lifecycle_configuration(&self) -> ::std::option::Option<&crate::types::LifecycleConfiguration> {
         self.lifecycle_configuration.as_ref()
     }
@@ -112,18 +112,18 @@ impl HarnessAgentCoreRuntimeEnvironmentBuilder {
     pub fn get_agent_runtime_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agent_runtime_id
     }
-    /// <p>LifecycleConfiguration lets you manage the lifecycle of runtime sessions and resources in AgentCore Runtime. This configuration helps optimize resource utilization by automatically cleaning up idle sessions and preventing long-running instances from consuming resources indefinitely.</p>
+    /// <p>The lifecycle configuration for the harness's runtime environment. For a harness, <code>idleRuntimeSessionTimeout</code> and <code>maxLifetime</code> each accept a value between 60 and 28800 seconds (8 hours), and <code>idleRuntimeSessionTimeout</code> must be less than or equal to <code>maxLifetime</code>.</p>
     /// This field is required.
     pub fn lifecycle_configuration(mut self, input: crate::types::LifecycleConfiguration) -> Self {
         self.lifecycle_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>LifecycleConfiguration lets you manage the lifecycle of runtime sessions and resources in AgentCore Runtime. This configuration helps optimize resource utilization by automatically cleaning up idle sessions and preventing long-running instances from consuming resources indefinitely.</p>
+    /// <p>The lifecycle configuration for the harness's runtime environment. For a harness, <code>idleRuntimeSessionTimeout</code> and <code>maxLifetime</code> each accept a value between 60 and 28800 seconds (8 hours), and <code>idleRuntimeSessionTimeout</code> must be less than or equal to <code>maxLifetime</code>.</p>
     pub fn set_lifecycle_configuration(mut self, input: ::std::option::Option<crate::types::LifecycleConfiguration>) -> Self {
         self.lifecycle_configuration = input;
         self
     }
-    /// <p>LifecycleConfiguration lets you manage the lifecycle of runtime sessions and resources in AgentCore Runtime. This configuration helps optimize resource utilization by automatically cleaning up idle sessions and preventing long-running instances from consuming resources indefinitely.</p>
+    /// <p>The lifecycle configuration for the harness's runtime environment. For a harness, <code>idleRuntimeSessionTimeout</code> and <code>maxLifetime</code> each accept a value between 60 and 28800 seconds (8 hours), and <code>idleRuntimeSessionTimeout</code> must be less than or equal to <code>maxLifetime</code>.</p>
     pub fn get_lifecycle_configuration(&self) -> &::std::option::Option<crate::types::LifecycleConfiguration> {
         &self.lifecycle_configuration
     }

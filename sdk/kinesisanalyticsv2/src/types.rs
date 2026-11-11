@@ -25,9 +25,17 @@ pub use crate::types::_application_detail::ApplicationDetail;
 
 pub use crate::types::_url_type::UrlType;
 
+pub use crate::types::_snapshot_status::SnapshotStatus;
+
+pub use crate::types::_snapshot_operation_status::SnapshotOperationStatus;
+
 pub use crate::types::_application_operation_info_details::ApplicationOperationInfoDetails;
 
 pub use crate::types::_snapshot_details::SnapshotDetails;
+
+pub use crate::types::_snapshot_info_details::SnapshotInfoDetails;
+
+pub use crate::types::_snapshot_operation_info_details::SnapshotOperationInfoDetails;
 
 pub use crate::types::_input_starting_position_configuration::InputStartingPositionConfiguration;
 
@@ -35,7 +43,21 @@ pub use crate::types::_s3_configuration::S3Configuration;
 
 pub use crate::types::_source_schema::SourceSchema;
 
+pub use crate::types::_export_destination_configuration::ExportDestinationConfiguration;
+
+pub use crate::types::_import_source_configuration::ImportSourceConfiguration;
+
+pub use crate::types::_snapshot_encryption_configuration::SnapshotEncryptionConfiguration;
+
+pub use crate::types::_snapshot_format::SnapshotFormat;
+
 pub use crate::types::_operation_status::OperationStatus;
+
+pub use crate::types::_snapshot_operation::SnapshotOperation;
+
+pub use crate::types::_snapshot_initiator::SnapshotInitiator;
+
+pub use crate::types::_snapshot_initiator_operation::SnapshotInitiatorOperation;
 
 pub use crate::types::_run_configuration::RunConfiguration;
 
@@ -101,19 +123,37 @@ pub use crate::types::_application_version_change_details::ApplicationVersionCha
 
 pub use crate::types::_operation_failure_details::OperationFailureDetails;
 
-pub use crate::types::_snapshot_status::SnapshotStatus;
-
 pub use crate::types::_application_encryption_configuration_description::ApplicationEncryptionConfigurationDescription;
+
+pub use crate::types::_snapshot_source_description::SnapshotSourceDescription;
+
+pub use crate::types::_encryption_configuration_description::EncryptionConfigurationDescription;
+
+pub use crate::types::_snapshot_operation_location_description::SnapshotOperationLocationDescription;
+
+pub use crate::types::_application_operation_description::ApplicationOperationDescription;
+
+pub use crate::types::_snapshot_operation_failure_details::SnapshotOperationFailureDetails;
 
 pub use crate::types::_input_starting_position::InputStartingPosition;
 
 pub use crate::types::_record_format::RecordFormat;
+
+pub use crate::types::_storage_location_type::StorageLocationType;
+
+pub use crate::types::_s3_prefix_location::S3PrefixLocation;
+
+pub use crate::types::_key_type::KeyType;
 
 pub use crate::types::_application_operation_info::ApplicationOperationInfo;
 
 pub use crate::types::_application_summary::ApplicationSummary;
 
 pub use crate::types::_application_version_summary::ApplicationVersionSummary;
+
+pub use crate::types::_snapshot_operation_info::SnapshotOperationInfo;
+
+pub use crate::types::_snapshot_info::SnapshotInfo;
 
 pub use crate::types::_flink_run_configuration::FlinkRunConfiguration;
 
@@ -161,13 +201,13 @@ pub use crate::types::_code_content::CodeContent;
 
 pub use crate::types::_code_content_type::CodeContentType;
 
+pub use crate::types::_snapshot_mode::SnapshotMode;
+
 pub use crate::types::_zeppelin_monitoring_configuration::ZeppelinMonitoringConfiguration;
 
 pub use crate::types::_catalog_configuration::CatalogConfiguration;
 
 pub use crate::types::_deploy_as_application_configuration::DeployAsApplicationConfiguration;
-
-pub use crate::types::_key_type::KeyType;
 
 pub use crate::types::_sql_application_configuration_description::SqlApplicationConfigurationDescription;
 
@@ -186,6 +226,12 @@ pub use crate::types::_application_system_rollback_configuration_description::Ap
 pub use crate::types::_zeppelin_application_configuration_description::ZeppelinApplicationConfigurationDescription;
 
 pub use crate::types::_error_info::ErrorInfo;
+
+pub use crate::types::_source_application_description::SourceApplicationDescription;
+
+pub use crate::types::_snapshot_operation_s3_prefix_location::SnapshotOperationS3PrefixLocation;
+
+pub use crate::types::_snapshot_error_info::SnapshotErrorInfo;
 
 pub use crate::types::_mapping_parameters::MappingParameters;
 
@@ -315,6 +361,8 @@ mod _application_maintenance_configuration_update;
 
 mod _application_mode;
 
+mod _application_operation_description;
+
 mod _application_operation_info;
 
 mod _application_operation_info_details;
@@ -387,6 +435,8 @@ mod _deploy_as_application_configuration_update;
 
 mod _destination_schema;
 
+mod _encryption_configuration_description;
+
 mod _environment_properties;
 
 mod _environment_property_descriptions;
@@ -394,6 +444,8 @@ mod _environment_property_descriptions;
 mod _environment_property_updates;
 
 mod _error_info;
+
+mod _export_destination_configuration;
 
 mod _flink_application_configuration;
 
@@ -408,6 +460,8 @@ mod _glue_data_catalog_configuration;
 mod _glue_data_catalog_configuration_description;
 
 mod _glue_data_catalog_configuration_update;
+
+mod _import_source_configuration;
 
 mod _input;
 
@@ -537,6 +591,8 @@ mod _s3_content_location;
 
 mod _s3_content_location_update;
 
+mod _s3_prefix_location;
+
 mod _s3_reference_data_source;
 
 mod _s3_reference_data_source_description;
@@ -545,7 +601,41 @@ mod _s3_reference_data_source_update;
 
 mod _snapshot_details;
 
+mod _snapshot_encryption_configuration;
+
+mod _snapshot_error_info;
+
+mod _snapshot_format;
+
+mod _snapshot_info;
+
+mod _snapshot_info_details;
+
+mod _snapshot_initiator;
+
+mod _snapshot_initiator_operation;
+
+mod _snapshot_mode;
+
+mod _snapshot_operation;
+
+mod _snapshot_operation_failure_details;
+
+mod _snapshot_operation_info;
+
+mod _snapshot_operation_info_details;
+
+mod _snapshot_operation_location_description;
+
+mod _snapshot_operation_s3_prefix_location;
+
+mod _snapshot_operation_status;
+
+mod _snapshot_source_description;
+
 mod _snapshot_status;
+
+mod _source_application_description;
 
 mod _source_schema;
 
@@ -556,6 +646,8 @@ mod _sql_application_configuration_description;
 mod _sql_application_configuration_update;
 
 mod _sql_run_configuration;
+
+mod _storage_location_type;
 
 mod _tag;
 

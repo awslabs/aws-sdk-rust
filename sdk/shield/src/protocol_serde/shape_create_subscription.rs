@@ -10,7 +10,7 @@ pub fn de_create_subscription_http_error(
     crate::operation::create_subscription::CreateSubscriptionError,
 > {
     #[allow(unused_mut)]
-    let mut generic_builder = crate::protocol_serde::parse_http_error_metadata(_response_status, _response_headers, _response_body)
+    let mut generic_builder = crate::cbor_errors::parse_error_metadata(_response_status, _response_headers, _response_body)
         .map_err(crate::operation::create_subscription::CreateSubscriptionError::unhandled)?;
     generic_builder = ::aws_types::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
@@ -26,7 +26,7 @@ pub fn de_create_subscription_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::InternalErrorExceptionBuilder::default();
-                output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_json_err(_response_body, output)
+                output = crate::protocol_serde::shape_internal_error_exception::de_internal_error_exception_cbor_err(_response_body, output)
                     .map_err(crate::operation::create_subscription::CreateSubscriptionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
@@ -41,7 +41,7 @@ pub fn de_create_subscription_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::ResourceAlreadyExistsExceptionBuilder::default();
-                output = crate::protocol_serde::shape_resource_already_exists_exception::de_resource_already_exists_exception_json_err(
+                output = crate::protocol_serde::shape_resource_already_exists_exception::de_resource_already_exists_exception_cbor_err(
                     _response_body,
                     output,
                 )
@@ -77,7 +77,12 @@ pub fn de_create_subscription_http_response(
 }
 
 pub fn ser_create_subscription_input(
-    _input: &crate::operation::create_subscription::CreateSubscriptionInput,
+    input: &crate::operation::create_subscription::CreateSubscriptionInput,
 ) -> ::std::result::Result<::aws_smithy_types::body::SdkBody, ::aws_smithy_types::error::operation::SerializationError> {
-    Ok(::aws_smithy_types::body::SdkBody::from("{}"))
+    let mut encoder = ::aws_smithy_cbor::Encoder::new(Vec::new());
+    {
+        let encoder = &mut encoder;
+        crate::protocol_serde::shape_create_subscription_input::ser_create_subscription_input_input(encoder, input)?;
+    }
+    Ok(::aws_smithy_types::body::SdkBody::from(encoder.into_writer()))
 }

@@ -8,10 +8,20 @@ pub struct ConnectorSummary {
     pub arn: ::std::string::String,
     /// <p>The name of the connector.</p>
     pub name: ::std::string::String,
-    /// <p>The third-party cloud service provider. Currently, <code>AZURE</code> is supported.</p>
+    /// <p>The third-party cloud service provider. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AZURE</code> – The connector is for Microsoft Azure</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – The connector is for Google Cloud</p></li>
+    /// </ul>
     pub provider: crate::types::Provider,
-    /// <p>The Azure tenant identifier for the connector.</p>
-    pub tenant_identifier: ::std::string::String,
+    /// <p>The Azure tenant identifier for the connector. Returned only for Azure connectors.</p>
+    pub tenant_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The Google Cloud organization ID for the connector. Returned only for Google Cloud connectors.</p>
+    pub gcp_organization_id: ::std::option::Option<::std::string::String>,
+    /// <p>The email address of the Google Cloud service account for the connector. Returned only for Google Cloud connectors.</p>
+    pub service_account_email: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the connector was created.</p>
     pub created_time: ::aws_smithy_types::DateTime,
 }
@@ -26,14 +36,27 @@ impl ConnectorSummary {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// <p>The third-party cloud service provider. Currently, <code>AZURE</code> is supported.</p>
+    /// <p>The third-party cloud service provider. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AZURE</code> – The connector is for Microsoft Azure</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – The connector is for Google Cloud</p></li>
+    /// </ul>
     pub fn provider(&self) -> &crate::types::Provider {
         &self.provider
     }
-    /// <p>The Azure tenant identifier for the connector.</p>
-    pub fn tenant_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.tenant_identifier.deref()
+    /// <p>The Azure tenant identifier for the connector. Returned only for Azure connectors.</p>
+    pub fn tenant_identifier(&self) -> ::std::option::Option<&str> {
+        self.tenant_identifier.as_deref()
+    }
+    /// <p>The Google Cloud organization ID for the connector. Returned only for Google Cloud connectors.</p>
+    pub fn gcp_organization_id(&self) -> ::std::option::Option<&str> {
+        self.gcp_organization_id.as_deref()
+    }
+    /// <p>The email address of the Google Cloud service account for the connector. Returned only for Google Cloud connectors.</p>
+    pub fn service_account_email(&self) -> ::std::option::Option<&str> {
+        self.service_account_email.as_deref()
     }
     /// <p>The date and time that the connector was created.</p>
     pub fn created_time(&self) -> &::aws_smithy_types::DateTime {
@@ -55,6 +78,8 @@ pub struct ConnectorSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) provider: ::std::option::Option<crate::types::Provider>,
     pub(crate) tenant_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) gcp_organization_id: ::std::option::Option<::std::string::String>,
+    pub(crate) service_account_email: ::std::option::Option<::std::string::String>,
     pub(crate) created_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ConnectorSummaryBuilder {
@@ -88,35 +113,80 @@ impl ConnectorSummaryBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The third-party cloud service provider. Currently, <code>AZURE</code> is supported.</p>
+    /// <p>The third-party cloud service provider. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AZURE</code> – The connector is for Microsoft Azure</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – The connector is for Google Cloud</p></li>
+    /// </ul>
     /// This field is required.
     pub fn provider(mut self, input: crate::types::Provider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The third-party cloud service provider. Currently, <code>AZURE</code> is supported.</p>
+    /// <p>The third-party cloud service provider. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AZURE</code> – The connector is for Microsoft Azure</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – The connector is for Google Cloud</p></li>
+    /// </ul>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::Provider>) -> Self {
         self.provider = input;
         self
     }
-    /// <p>The third-party cloud service provider. Currently, <code>AZURE</code> is supported.</p>
+    /// <p>The third-party cloud service provider. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AZURE</code> – The connector is for Microsoft Azure</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – The connector is for Google Cloud</p></li>
+    /// </ul>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::Provider> {
         &self.provider
     }
-    /// <p>The Azure tenant identifier for the connector.</p>
-    /// This field is required.
+    /// <p>The Azure tenant identifier for the connector. Returned only for Azure connectors.</p>
     pub fn tenant_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.tenant_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Azure tenant identifier for the connector.</p>
+    /// <p>The Azure tenant identifier for the connector. Returned only for Azure connectors.</p>
     pub fn set_tenant_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.tenant_identifier = input;
         self
     }
-    /// <p>The Azure tenant identifier for the connector.</p>
+    /// <p>The Azure tenant identifier for the connector. Returned only for Azure connectors.</p>
     pub fn get_tenant_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.tenant_identifier
+    }
+    /// <p>The Google Cloud organization ID for the connector. Returned only for Google Cloud connectors.</p>
+    pub fn gcp_organization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.gcp_organization_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Google Cloud organization ID for the connector. Returned only for Google Cloud connectors.</p>
+    pub fn set_gcp_organization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.gcp_organization_id = input;
+        self
+    }
+    /// <p>The Google Cloud organization ID for the connector. Returned only for Google Cloud connectors.</p>
+    pub fn get_gcp_organization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.gcp_organization_id
+    }
+    /// <p>The email address of the Google Cloud service account for the connector. Returned only for Google Cloud connectors.</p>
+    pub fn service_account_email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_account_email = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The email address of the Google Cloud service account for the connector. Returned only for Google Cloud connectors.</p>
+    pub fn set_service_account_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_account_email = input;
+        self
+    }
+    /// <p>The email address of the Google Cloud service account for the connector. Returned only for Google Cloud connectors.</p>
+    pub fn get_service_account_email(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_account_email
     }
     /// <p>The date and time that the connector was created.</p>
     /// This field is required.
@@ -138,7 +208,6 @@ impl ConnectorSummaryBuilder {
     /// - [`arn`](crate::types::builders::ConnectorSummaryBuilder::arn)
     /// - [`name`](crate::types::builders::ConnectorSummaryBuilder::name)
     /// - [`provider`](crate::types::builders::ConnectorSummaryBuilder::provider)
-    /// - [`tenant_identifier`](crate::types::builders::ConnectorSummaryBuilder::tenant_identifier)
     /// - [`created_time`](crate::types::builders::ConnectorSummaryBuilder::created_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ConnectorSummary, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConnectorSummary {
@@ -160,12 +229,9 @@ impl ConnectorSummaryBuilder {
                     "provider was not specified but it is required when building ConnectorSummary",
                 )
             })?,
-            tenant_identifier: self.tenant_identifier.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "tenant_identifier",
-                    "tenant_identifier was not specified but it is required when building ConnectorSummary",
-                )
-            })?,
+            tenant_identifier: self.tenant_identifier,
+            gcp_organization_id: self.gcp_organization_id,
+            service_account_email: self.service_account_email,
             created_time: self.created_time.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_time",

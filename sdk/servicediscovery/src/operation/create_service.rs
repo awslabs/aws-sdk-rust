@@ -478,7 +478,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateServic
             .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
             .expect("a SharedClientProtocol is required");
         let mut request = protocol
-            .serialize_request(&input, CreateService::INPUT_SCHEMA, "/", _cfg)
+            .serialize_request(
+                &input,
+                CreateService::INPUT_SCHEMA,
+                "/service/Route53AutoNaming_v20170314/operation/CreateService",
+                _cfg,
+            )
             .map_err(::aws_smithy_runtime_api::box_error::BoxError::from)?;
 
         return ::std::result::Result::Ok(request);

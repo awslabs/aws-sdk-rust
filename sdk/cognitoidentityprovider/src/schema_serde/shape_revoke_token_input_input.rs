@@ -29,6 +29,16 @@ static REVOKETOKENINPUT_MEMBER_CLIENT_SECRET: ::aws_smithy_schema::Schema<'stati
     "ClientSecret",
     2,
 );
+static REVOKETOKENINPUT_MEMBER_REVOKE_ASSOCIATED_SESSIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#RevokeTokenInput$RevokeAssociatedSessions",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "RevokeTokenInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RevokeAssociatedSessions",
+    3,
+);
 static REVOKETOKENINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.cognitoidentityprovider.synthetic#RevokeTokenInput",
@@ -40,6 +50,7 @@ static REVOKETOKENINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smi
         &REVOKETOKENINPUT_MEMBER_TOKEN,
         &REVOKETOKENINPUT_MEMBER_CLIENT_ID,
         &REVOKETOKENINPUT_MEMBER_CLIENT_SECRET,
+        &REVOKETOKENINPUT_MEMBER_REVOKE_ASSOCIATED_SESSIONS,
     ],
 )
 .with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
@@ -66,6 +77,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::revoke
         }
         if let Some(ref val) = self.client_secret {
             ser.write_string(&REVOKETOKENINPUT_MEMBER_CLIENT_SECRET, val)?;
+        }
+        if let Some(ref val) = self.revoke_associated_sessions {
+            ser.write_string(&REVOKETOKENINPUT_MEMBER_REVOKE_ASSOCIATED_SESSIONS, val.as_str())?;
         }
         Ok(())
     }
@@ -103,6 +117,13 @@ impl crate::operation::revoke_token::builders::RevokeTokenInputBuilder {
                         deser.read_null()?;
                     } else {
                         self.client_secret = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.revoke_associated_sessions = Some(crate::types::RevokeAssociatedSessionsType::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}

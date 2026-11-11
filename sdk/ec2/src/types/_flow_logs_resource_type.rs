@@ -12,6 +12,9 @@
 /// ```text
 /// # let flowlogsresourcetype = unimplemented!();
 /// match flowlogsresourcetype {
+///     FlowLogsResourceType::CoreNetwork => { /* ... */ },
+///     FlowLogsResourceType::CoreNetworkAttachment => { /* ... */ },
+///     FlowLogsResourceType::CoreNetworkEdge => { /* ... */ },
 ///     FlowLogsResourceType::NetworkInterface => { /* ... */ },
 ///     FlowLogsResourceType::RegionalNatGateway => { /* ... */ },
 ///     FlowLogsResourceType::Subnet => { /* ... */ },
@@ -47,6 +50,12 @@
 )]
 pub enum FlowLogsResourceType {
     #[allow(missing_docs)] // documentation missing in model
+    CoreNetwork,
+    #[allow(missing_docs)] // documentation missing in model
+    CoreNetworkAttachment,
+    #[allow(missing_docs)] // documentation missing in model
+    CoreNetworkEdge,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkInterface,
     #[allow(missing_docs)] // documentation missing in model
     RegionalNatGateway,
@@ -65,6 +74,9 @@ pub enum FlowLogsResourceType {
 impl ::std::convert::From<&str> for FlowLogsResourceType {
     fn from(s: &str) -> Self {
         match s {
+            "CoreNetwork" => FlowLogsResourceType::CoreNetwork,
+            "CoreNetworkAttachment" => FlowLogsResourceType::CoreNetworkAttachment,
+            "CoreNetworkEdge" => FlowLogsResourceType::CoreNetworkEdge,
             "NetworkInterface" => FlowLogsResourceType::NetworkInterface,
             "RegionalNatGateway" => FlowLogsResourceType::RegionalNatGateway,
             "Subnet" => FlowLogsResourceType::Subnet,
@@ -86,6 +98,9 @@ impl FlowLogsResourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            FlowLogsResourceType::CoreNetwork => "CoreNetwork",
+            FlowLogsResourceType::CoreNetworkAttachment => "CoreNetworkAttachment",
+            FlowLogsResourceType::CoreNetworkEdge => "CoreNetworkEdge",
             FlowLogsResourceType::NetworkInterface => "NetworkInterface",
             FlowLogsResourceType::RegionalNatGateway => "RegionalNatGateway",
             FlowLogsResourceType::Subnet => "Subnet",
@@ -98,6 +113,9 @@ impl FlowLogsResourceType {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "CoreNetwork",
+            "CoreNetworkAttachment",
+            "CoreNetworkEdge",
             "NetworkInterface",
             "RegionalNatGateway",
             "Subnet",
@@ -127,6 +145,9 @@ impl FlowLogsResourceType {
 impl ::std::fmt::Display for FlowLogsResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            FlowLogsResourceType::CoreNetwork => write!(f, "CoreNetwork"),
+            FlowLogsResourceType::CoreNetworkAttachment => write!(f, "CoreNetworkAttachment"),
+            FlowLogsResourceType::CoreNetworkEdge => write!(f, "CoreNetworkEdge"),
             FlowLogsResourceType::NetworkInterface => write!(f, "NetworkInterface"),
             FlowLogsResourceType::RegionalNatGateway => write!(f, "RegionalNatGateway"),
             FlowLogsResourceType::Subnet => write!(f, "Subnet"),

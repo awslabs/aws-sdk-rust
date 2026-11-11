@@ -175,6 +175,12 @@ impl Default for DefaultAuthSchemeResolver {
                     )],
                 ),
                 (
+                    "ListUserSessions",
+                    vec![::aws_smithy_runtime_api::client::auth::AuthSchemeOption::from(
+                        ::aws_smithy_runtime::client::auth::no_auth::NO_AUTH_SCHEME_ID,
+                    )],
+                ),
+                (
                     "ListWebAuthnCredentials",
                     vec![::aws_smithy_runtime_api::client::auth::AuthSchemeOption::from(
                         ::aws_smithy_runtime::client::auth::no_auth::NO_AUTH_SCHEME_ID,
@@ -194,6 +200,12 @@ impl Default for DefaultAuthSchemeResolver {
                 ),
                 (
                     "RevokeToken",
+                    vec![::aws_smithy_runtime_api::client::auth::AuthSchemeOption::from(
+                        ::aws_smithy_runtime::client::auth::no_auth::NO_AUTH_SCHEME_ID,
+                    )],
+                ),
+                (
+                    "RevokeUserSession",
                     vec![::aws_smithy_runtime_api::client::auth::AuthSchemeOption::from(
                         ::aws_smithy_runtime::client::auth::no_auth::NO_AUTH_SCHEME_ID,
                     )],

@@ -23,11 +23,21 @@ pub use crate::types::_application_operation_info_details::ApplicationOperationI
 
 pub use crate::types::_snapshot_details::SnapshotDetailsBuilder;
 
+pub use crate::types::_snapshot_info_details::SnapshotInfoDetailsBuilder;
+
+pub use crate::types::_snapshot_operation_info_details::SnapshotOperationInfoDetailsBuilder;
+
 pub use crate::types::_input_starting_position_configuration::InputStartingPositionConfigurationBuilder;
 
 pub use crate::types::_s3_configuration::S3ConfigurationBuilder;
 
 pub use crate::types::_source_schema::SourceSchemaBuilder;
+
+pub use crate::types::_export_destination_configuration::ExportDestinationConfigurationBuilder;
+
+pub use crate::types::_import_source_configuration::ImportSourceConfigurationBuilder;
+
+pub use crate::types::_snapshot_encryption_configuration::SnapshotEncryptionConfigurationBuilder;
 
 pub use crate::types::_run_configuration::RunConfigurationBuilder;
 
@@ -93,13 +103,29 @@ pub use crate::types::_operation_failure_details::OperationFailureDetailsBuilder
 
 pub use crate::types::_application_encryption_configuration_description::ApplicationEncryptionConfigurationDescriptionBuilder;
 
+pub use crate::types::_snapshot_source_description::SnapshotSourceDescriptionBuilder;
+
+pub use crate::types::_encryption_configuration_description::EncryptionConfigurationDescriptionBuilder;
+
+pub use crate::types::_snapshot_operation_location_description::SnapshotOperationLocationDescriptionBuilder;
+
+pub use crate::types::_application_operation_description::ApplicationOperationDescriptionBuilder;
+
+pub use crate::types::_snapshot_operation_failure_details::SnapshotOperationFailureDetailsBuilder;
+
 pub use crate::types::_record_format::RecordFormatBuilder;
+
+pub use crate::types::_s3_prefix_location::S3PrefixLocationBuilder;
 
 pub use crate::types::_application_operation_info::ApplicationOperationInfoBuilder;
 
 pub use crate::types::_application_summary::ApplicationSummaryBuilder;
 
 pub use crate::types::_application_version_summary::ApplicationVersionSummaryBuilder;
+
+pub use crate::types::_snapshot_operation_info::SnapshotOperationInfoBuilder;
+
+pub use crate::types::_snapshot_info::SnapshotInfoBuilder;
 
 pub use crate::types::_flink_run_configuration::FlinkRunConfigurationBuilder;
 
@@ -166,6 +192,12 @@ pub use crate::types::_application_system_rollback_configuration_description::Ap
 pub use crate::types::_zeppelin_application_configuration_description::ZeppelinApplicationConfigurationDescriptionBuilder;
 
 pub use crate::types::_error_info::ErrorInfoBuilder;
+
+pub use crate::types::_source_application_description::SourceApplicationDescriptionBuilder;
+
+pub use crate::types::_snapshot_operation_s3_prefix_location::SnapshotOperationS3PrefixLocationBuilder;
+
+pub use crate::types::_snapshot_error_info::SnapshotErrorInfoBuilder;
 
 pub use crate::types::_mapping_parameters::MappingParametersBuilder;
 

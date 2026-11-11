@@ -6,11 +6,17 @@
 pub struct ApplicationSnapshotConfigurationDescription {
     /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub snapshots_enabled: bool,
+    /// <p>Describes the snapshot mode of a Managed Service for Apache Flink application.</p>
+    pub snapshot_mode: ::std::option::Option<crate::types::SnapshotMode>,
 }
 impl ApplicationSnapshotConfigurationDescription {
     /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
     pub fn snapshots_enabled(&self) -> bool {
         self.snapshots_enabled
+    }
+    /// <p>Describes the snapshot mode of a Managed Service for Apache Flink application.</p>
+    pub fn snapshot_mode(&self) -> ::std::option::Option<&crate::types::SnapshotMode> {
+        self.snapshot_mode.as_ref()
     }
 }
 impl ApplicationSnapshotConfigurationDescription {
@@ -25,6 +31,7 @@ impl ApplicationSnapshotConfigurationDescription {
 #[non_exhaustive]
 pub struct ApplicationSnapshotConfigurationDescriptionBuilder {
     pub(crate) snapshots_enabled: ::std::option::Option<bool>,
+    pub(crate) snapshot_mode: ::std::option::Option<crate::types::SnapshotMode>,
 }
 impl ApplicationSnapshotConfigurationDescriptionBuilder {
     /// <p>Describes whether snapshots are enabled for a Managed Service for Apache Flink application.</p>
@@ -42,6 +49,20 @@ impl ApplicationSnapshotConfigurationDescriptionBuilder {
     pub fn get_snapshots_enabled(&self) -> &::std::option::Option<bool> {
         &self.snapshots_enabled
     }
+    /// <p>Describes the snapshot mode of a Managed Service for Apache Flink application.</p>
+    pub fn snapshot_mode(mut self, input: crate::types::SnapshotMode) -> Self {
+        self.snapshot_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Describes the snapshot mode of a Managed Service for Apache Flink application.</p>
+    pub fn set_snapshot_mode(mut self, input: ::std::option::Option<crate::types::SnapshotMode>) -> Self {
+        self.snapshot_mode = input;
+        self
+    }
+    /// <p>Describes the snapshot mode of a Managed Service for Apache Flink application.</p>
+    pub fn get_snapshot_mode(&self) -> &::std::option::Option<crate::types::SnapshotMode> {
+        &self.snapshot_mode
+    }
     /// Consumes the builder and constructs a [`ApplicationSnapshotConfigurationDescription`](crate::types::ApplicationSnapshotConfigurationDescription).
     /// This method will fail if any of the following fields are not set:
     /// - [`snapshots_enabled`](crate::types::builders::ApplicationSnapshotConfigurationDescriptionBuilder::snapshots_enabled)
@@ -55,6 +76,7 @@ impl ApplicationSnapshotConfigurationDescriptionBuilder {
                     "snapshots_enabled was not specified but it is required when building ApplicationSnapshotConfigurationDescription",
                 )
             })?,
+            snapshot_mode: self.snapshot_mode,
         })
     }
 }

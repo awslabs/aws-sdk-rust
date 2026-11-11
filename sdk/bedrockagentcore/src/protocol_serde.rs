@@ -845,6 +845,8 @@ pub(crate) mod shape_harness_gateway_outbound_auth;
 
 pub(crate) mod shape_harness_reasoning_text_block;
 
+pub(crate) mod shape_harness_remote_mcp_outbound_auth;
+
 pub(crate) mod shape_harness_stream_metrics;
 
 pub(crate) mod shape_harness_token_usage;
@@ -930,6 +932,8 @@ pub(crate) mod shape_harness_tool_result_metadata_block_delta;
 pub(crate) mod shape_harness_tool_use_block_delta;
 
 pub(crate) mod shape_harness_tool_use_block_start;
+
+pub(crate) mod shape_iam_credential_provider;
 
 pub(crate) mod shape_log_group_arn_list;
 

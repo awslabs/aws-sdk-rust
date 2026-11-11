@@ -11,6 +11,42 @@ pub(crate) fn create_application_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_snapshot_output_output_correct_errors(
+    mut builder: crate::operation::create_snapshot::builders::CreateSnapshotOutputBuilder,
+) -> crate::operation::create_snapshot::builders::CreateSnapshotOutputBuilder {
+    if builder.snapshot_arn.is_none() {
+        builder.snapshot_arn = Some(Default::default())
+    }
+    if builder.snapshot_status.is_none() {
+        builder.snapshot_status = "no value was set".parse::<crate::types::SnapshotStatus>().ok()
+    }
+    if builder.snapshot_operation_id.is_none() {
+        builder.snapshot_operation_id = Some(Default::default())
+    }
+    if builder.snapshot_operation_status.is_none() {
+        builder.snapshot_operation_status = "no value was set".parse::<crate::types::SnapshotOperationStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn delete_snapshot_output_output_correct_errors(
+    mut builder: crate::operation::delete_snapshot::builders::DeleteSnapshotOutputBuilder,
+) -> crate::operation::delete_snapshot::builders::DeleteSnapshotOutputBuilder {
+    if builder.snapshot_arn.is_none() {
+        builder.snapshot_arn = Some(Default::default())
+    }
+    if builder.snapshot_status.is_none() {
+        builder.snapshot_status = "no value was set".parse::<crate::types::SnapshotStatus>().ok()
+    }
+    if builder.snapshot_operation_id.is_none() {
+        builder.snapshot_operation_id = Some(Default::default())
+    }
+    if builder.snapshot_operation_status.is_none() {
+        builder.snapshot_operation_status = "no value was set".parse::<crate::types::SnapshotOperationStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn describe_application_output_output_correct_errors(
     mut builder: crate::operation::describe_application::builders::DescribeApplicationOutputBuilder,
 ) -> crate::operation::describe_application::builders::DescribeApplicationOutputBuilder {
@@ -35,11 +71,83 @@ pub(crate) fn describe_application_snapshot_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn describe_snapshot_output_output_correct_errors(
+    mut builder: crate::operation::describe_snapshot::builders::DescribeSnapshotOutputBuilder,
+) -> crate::operation::describe_snapshot::builders::DescribeSnapshotOutputBuilder {
+    if builder.snapshot_info_details.is_none() {
+        builder.snapshot_info_details = {
+            let builder = crate::types::builders::SnapshotInfoDetailsBuilder::default();
+            crate::serde_util::snapshot_info_details_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn describe_snapshot_operation_output_output_correct_errors(
+    mut builder: crate::operation::describe_snapshot_operation::builders::DescribeSnapshotOperationOutputBuilder,
+) -> crate::operation::describe_snapshot_operation::builders::DescribeSnapshotOperationOutputBuilder {
+    if builder.snapshot_operation_info_details.is_none() {
+        builder.snapshot_operation_info_details = {
+            let builder = crate::types::builders::SnapshotOperationInfoDetailsBuilder::default();
+            crate::serde_util::snapshot_operation_info_details_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn export_snapshot_output_output_correct_errors(
+    mut builder: crate::operation::export_snapshot::builders::ExportSnapshotOutputBuilder,
+) -> crate::operation::export_snapshot::builders::ExportSnapshotOutputBuilder {
+    if builder.snapshot_operation_id.is_none() {
+        builder.snapshot_operation_id = Some(Default::default())
+    }
+    if builder.snapshot_operation_status.is_none() {
+        builder.snapshot_operation_status = "no value was set".parse::<crate::types::SnapshotOperationStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn import_snapshot_output_output_correct_errors(
+    mut builder: crate::operation::import_snapshot::builders::ImportSnapshotOutputBuilder,
+) -> crate::operation::import_snapshot::builders::ImportSnapshotOutputBuilder {
+    if builder.snapshot_arn.is_none() {
+        builder.snapshot_arn = Some(Default::default())
+    }
+    if builder.snapshot_status.is_none() {
+        builder.snapshot_status = "no value was set".parse::<crate::types::SnapshotStatus>().ok()
+    }
+    if builder.snapshot_operation_id.is_none() {
+        builder.snapshot_operation_id = Some(Default::default())
+    }
+    if builder.snapshot_operation_status.is_none() {
+        builder.snapshot_operation_status = "no value was set".parse::<crate::types::SnapshotOperationStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn list_applications_output_output_correct_errors(
     mut builder: crate::operation::list_applications::builders::ListApplicationsOutputBuilder,
 ) -> crate::operation::list_applications::builders::ListApplicationsOutputBuilder {
     if builder.application_summaries.is_none() {
         builder.application_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_snapshot_operations_output_output_correct_errors(
+    mut builder: crate::operation::list_snapshot_operations::builders::ListSnapshotOperationsOutputBuilder,
+) -> crate::operation::list_snapshot_operations::builders::ListSnapshotOperationsOutputBuilder {
+    if builder.snapshot_operation_info_list.is_none() {
+        builder.snapshot_operation_info_list = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_snapshots_output_output_correct_errors(
+    mut builder: crate::operation::list_snapshots::builders::ListSnapshotsOutputBuilder,
+) -> crate::operation::list_snapshots::builders::ListSnapshotsOutputBuilder {
+    if builder.snapshot_info_list.is_none() {
+        builder.snapshot_info_list = Some(Default::default())
     }
     builder
 }
@@ -100,6 +208,57 @@ pub(crate) fn snapshot_details_correct_errors(
     }
     if builder.application_version_id.is_none() {
         builder.application_version_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn snapshot_info_details_correct_errors(
+    mut builder: crate::types::builders::SnapshotInfoDetailsBuilder,
+) -> crate::types::builders::SnapshotInfoDetailsBuilder {
+    if builder.snapshot_name.is_none() {
+        builder.snapshot_name = Some(Default::default())
+    }
+    if builder.snapshot_arn.is_none() {
+        builder.snapshot_arn = Some(Default::default())
+    }
+    if builder.snapshot_status.is_none() {
+        builder.snapshot_status = "no value was set".parse::<crate::types::SnapshotStatus>().ok()
+    }
+    if builder.snapshot_creation_timestamp.is_none() {
+        builder.snapshot_creation_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.snapshot_initiator.is_none() {
+        builder.snapshot_initiator = "no value was set".parse::<crate::types::SnapshotInitiator>().ok()
+    }
+    if builder.snapshot_initiator_operation.is_none() {
+        builder.snapshot_initiator_operation = "no value was set".parse::<crate::types::SnapshotInitiatorOperation>().ok()
+    }
+    if builder.snapshot_source_description.is_none() {
+        builder.snapshot_source_description = {
+            let builder = crate::types::builders::SnapshotSourceDescriptionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    if builder.snapshot_format.is_none() {
+        builder.snapshot_format = "no value was set".parse::<crate::types::SnapshotFormat>().ok()
+    }
+    builder
+}
+
+pub(crate) fn snapshot_operation_info_details_correct_errors(
+    mut builder: crate::types::builders::SnapshotOperationInfoDetailsBuilder,
+) -> crate::types::builders::SnapshotOperationInfoDetailsBuilder {
+    if builder.snapshot_operation_id.is_none() {
+        builder.snapshot_operation_id = Some(Default::default())
+    }
+    if builder.snapshot_operation.is_none() {
+        builder.snapshot_operation = "no value was set".parse::<crate::types::SnapshotOperation>().ok()
+    }
+    if builder.snapshot_operation_status.is_none() {
+        builder.snapshot_operation_status = "no value was set".parse::<crate::types::SnapshotOperationStatus>().ok()
+    }
+    if builder.snapshot_arn.is_none() {
+        builder.snapshot_arn = Some(Default::default())
     }
     builder
 }
@@ -228,6 +387,15 @@ pub(crate) fn cloud_watch_logging_option_description_correct_errors(
     builder
 }
 
+pub(crate) fn encryption_configuration_description_correct_errors(
+    mut builder: crate::types::builders::EncryptionConfigurationDescriptionBuilder,
+) -> crate::types::builders::EncryptionConfigurationDescriptionBuilder {
+    if builder.key_type.is_none() {
+        builder.key_type = "no value was set".parse::<crate::types::KeyType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn input_lambda_processor_description_correct_errors(
     mut builder: crate::types::builders::InputLambdaProcessorDescriptionBuilder,
 ) -> crate::types::builders::InputLambdaProcessorDescriptionBuilder {
@@ -257,6 +425,72 @@ pub(crate) fn reference_data_source_description_correct_errors(
         builder.s3_reference_data_source_description = {
             let builder = crate::types::builders::S3ReferenceDataSourceDescriptionBuilder::default();
             crate::serde_util::s3_reference_data_source_description_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn snapshot_encryption_configuration_correct_errors(
+    mut builder: crate::types::builders::SnapshotEncryptionConfigurationBuilder,
+) -> crate::types::builders::SnapshotEncryptionConfigurationBuilder {
+    if builder.key_type.is_none() {
+        builder.key_type = "no value was set".parse::<crate::types::KeyType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn snapshot_info_correct_errors(mut builder: crate::types::builders::SnapshotInfoBuilder) -> crate::types::builders::SnapshotInfoBuilder {
+    if builder.snapshot_name.is_none() {
+        builder.snapshot_name = Some(Default::default())
+    }
+    if builder.snapshot_arn.is_none() {
+        builder.snapshot_arn = Some(Default::default())
+    }
+    if builder.snapshot_status.is_none() {
+        builder.snapshot_status = "no value was set".parse::<crate::types::SnapshotStatus>().ok()
+    }
+    if builder.snapshot_creation_timestamp.is_none() {
+        builder.snapshot_creation_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.snapshot_initiator.is_none() {
+        builder.snapshot_initiator = "no value was set".parse::<crate::types::SnapshotInitiator>().ok()
+    }
+    if builder.snapshot_initiator_operation.is_none() {
+        builder.snapshot_initiator_operation = "no value was set".parse::<crate::types::SnapshotInitiatorOperation>().ok()
+    }
+    if builder.snapshot_format.is_none() {
+        builder.snapshot_format = "no value was set".parse::<crate::types::SnapshotFormat>().ok()
+    }
+    builder
+}
+
+pub(crate) fn snapshot_operation_info_correct_errors(
+    mut builder: crate::types::builders::SnapshotOperationInfoBuilder,
+) -> crate::types::builders::SnapshotOperationInfoBuilder {
+    if builder.snapshot_operation_id.is_none() {
+        builder.snapshot_operation_id = Some(Default::default())
+    }
+    if builder.snapshot_operation.is_none() {
+        builder.snapshot_operation = "no value was set".parse::<crate::types::SnapshotOperation>().ok()
+    }
+    if builder.snapshot_operation_status.is_none() {
+        builder.snapshot_operation_status = "no value was set".parse::<crate::types::SnapshotOperationStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn snapshot_operation_location_description_correct_errors(
+    mut builder: crate::types::builders::SnapshotOperationLocationDescriptionBuilder,
+) -> crate::types::builders::SnapshotOperationLocationDescriptionBuilder {
+    if builder.location_type.is_none() {
+        builder.location_type = "no value was set".parse::<crate::types::StorageLocationType>().ok()
+    }
+    if builder.s3_prefix_location.is_none() {
+        builder.s3_prefix_location = {
+            let builder = crate::types::builders::SnapshotOperationS3PrefixLocationBuilder::default();
+            crate::serde_util::snapshot_operation_s3_prefix_location_correct_errors(builder)
                 .build()
                 .ok()
         }
@@ -362,6 +596,18 @@ pub(crate) fn record_column_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn s3_prefix_location_correct_errors(
+    mut builder: crate::types::builders::S3PrefixLocationBuilder,
+) -> crate::types::builders::S3PrefixLocationBuilder {
+    if builder.bucket_arn.is_none() {
+        builder.bucket_arn = Some(Default::default())
+    }
+    if builder.key_prefix.is_none() {
+        builder.key_prefix = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn s3_reference_data_source_description_correct_errors(
     mut builder: crate::types::builders::S3ReferenceDataSourceDescriptionBuilder,
 ) -> crate::types::builders::S3ReferenceDataSourceDescriptionBuilder {
@@ -370,6 +616,33 @@ pub(crate) fn s3_reference_data_source_description_correct_errors(
     }
     if builder.file_key.is_none() {
         builder.file_key = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn snapshot_operation_s3_prefix_location_correct_errors(
+    mut builder: crate::types::builders::SnapshotOperationS3PrefixLocationBuilder,
+) -> crate::types::builders::SnapshotOperationS3PrefixLocationBuilder {
+    if builder.bucket_arn.is_none() {
+        builder.bucket_arn = Some(Default::default())
+    }
+    if builder.key_prefix.is_none() {
+        builder.key_prefix = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn source_application_description_correct_errors(
+    mut builder: crate::types::builders::SourceApplicationDescriptionBuilder,
+) -> crate::types::builders::SourceApplicationDescriptionBuilder {
+    if builder.application_name.is_none() {
+        builder.application_name = Some(Default::default())
+    }
+    if builder.application_creation_timestamp.is_none() {
+        builder.application_creation_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.application_version_id.is_none() {
+        builder.application_version_id = Some(Default::default())
     }
     builder
 }

@@ -7,6 +7,7 @@ pub struct Filter {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The filter values. Filter values are case-sensitive.</p>
+    /// <p>The <code>name</code> filter can use a wildcard: <code>web*</code> matches names that begin with <code>web</code>, and <code>*web*</code> matches names that contain <code>web</code>. The wildcard isn't supported in other positions or in other filters.</p>
     pub values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl Filter {
@@ -15,6 +16,7 @@ impl Filter {
         self.name.as_deref()
     }
     /// <p>The filter values. Filter values are case-sensitive.</p>
+    /// <p>The <code>name</code> filter can use a wildcard: <code>web*</code> matches names that begin with <code>web</code>, and <code>*web*</code> matches names that contain <code>web</code>. The wildcard isn't supported in other positions or in other filters.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.values.is_none()`.
     pub fn values(&self) -> &[::std::string::String] {
@@ -55,6 +57,7 @@ impl FilterBuilder {
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
     /// <p>The filter values. Filter values are case-sensitive.</p>
+    /// <p>The <code>name</code> filter can use a wildcard: <code>web*</code> matches names that begin with <code>web</code>, and <code>*web*</code> matches names that contain <code>web</code>. The wildcard isn't supported in other positions or in other filters.</p>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
         v.push(input.into());
@@ -62,11 +65,13 @@ impl FilterBuilder {
         self
     }
     /// <p>The filter values. Filter values are case-sensitive.</p>
+    /// <p>The <code>name</code> filter can use a wildcard: <code>web*</code> matches names that begin with <code>web</code>, and <code>*web*</code> matches names that contain <code>web</code>. The wildcard isn't supported in other positions or in other filters.</p>
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.values = input;
         self
     }
     /// <p>The filter values. Filter values are case-sensitive.</p>
+    /// <p>The <code>name</code> filter can use a wildcard: <code>web*</code> matches names that begin with <code>web</code>, and <code>*web*</code> matches names that contain <code>web</code>. The wildcard isn't supported in other positions or in other filters.</p>
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.values
     }

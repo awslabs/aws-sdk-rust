@@ -39,6 +39,26 @@ static CONNECTORSUMMARY_MEMBER_TENANT_IDENTIFIER: ::aws_smithy_schema::Schema<'s
     "tenantIdentifier",
     3,
 );
+static CONNECTORSUMMARY_MEMBER_GCP_ORGANIZATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConnectorSummary$gcpOrganizationId",
+        "com.amazonaws.configservice",
+        "ConnectorSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "gcpOrganizationId",
+    4,
+);
+static CONNECTORSUMMARY_MEMBER_SERVICE_ACCOUNT_EMAIL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConnectorSummary$serviceAccountEmail",
+        "com.amazonaws.configservice",
+        "ConnectorSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "serviceAccountEmail",
+    5,
+);
 static CONNECTORSUMMARY_MEMBER_CREATED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.configservice#ConnectorSummary$createdTime",
@@ -47,7 +67,7 @@ static CONNECTORSUMMARY_MEMBER_CREATED_TIME: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::Timestamp,
     "createdTime",
-    4,
+    6,
 );
 static CONNECTORSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -61,6 +81,8 @@ static CONNECTORSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smi
         &CONNECTORSUMMARY_MEMBER_NAME,
         &CONNECTORSUMMARY_MEMBER_PROVIDER,
         &CONNECTORSUMMARY_MEMBER_TENANT_IDENTIFIER,
+        &CONNECTORSUMMARY_MEMBER_GCP_ORGANIZATION_ID,
+        &CONNECTORSUMMARY_MEMBER_SERVICE_ACCOUNT_EMAIL,
         &CONNECTORSUMMARY_MEMBER_CREATED_TIME,
     ],
 );
@@ -90,9 +112,14 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::ConnectorS
             let val = &self.provider;
             ser.write_string(&CONNECTORSUMMARY_MEMBER_PROVIDER, val.as_str())?;
         }
-        {
-            let val = &self.tenant_identifier;
+        if let Some(ref val) = self.tenant_identifier {
             ser.write_string(&CONNECTORSUMMARY_MEMBER_TENANT_IDENTIFIER, val)?;
+        }
+        if let Some(ref val) = self.gcp_organization_id {
+            ser.write_string(&CONNECTORSUMMARY_MEMBER_GCP_ORGANIZATION_ID, val)?;
+        }
+        if let Some(ref val) = self.service_account_email {
+            ser.write_string(&CONNECTORSUMMARY_MEMBER_SERVICE_ACCOUNT_EMAIL, val)?;
         }
         {
             let val = &self.created_time;
@@ -125,9 +152,27 @@ impl crate::types::builders::ConnectorSummaryBuilder {
                     self.provider = Some(crate::types::Provider::from(deser.read_string(member)?.as_str()));
                 }
                 Some(3) => {
-                    self.tenant_identifier = Some(deser.read_string(member)?);
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.tenant_identifier = Some(deser.read_string(member)?);
+                    }
                 }
                 Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gcp_organization_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.service_account_email = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
                     self.created_time = Some(deser.read_timestamp(member)?);
                 }
                 _ => {}
@@ -146,7 +191,6 @@ impl crate::types::ConnectorSummary {
         builder.deserialize_members(deserializer)?;
         builder.arn = builder.arn.or(Some(String::new()));
         builder.name = builder.name.or(Some(String::new()));
-        builder.tenant_identifier = builder.tenant_identifier.or(Some(String::new()));
         builder.created_time = builder.created_time.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
         builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
     }

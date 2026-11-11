@@ -8,6 +8,8 @@ pub struct HarnessRemoteMcpConfig {
     pub url: ::std::string::String,
     /// <p>Custom headers to include when connecting to the remote MCP server.</p>
     pub headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>How the harness authenticates to this MCP server. Defaults to no authentication.</p>
+    pub outbound_auth: ::std::option::Option<crate::types::HarnessRemoteMcpOutboundAuth>,
 }
 impl HarnessRemoteMcpConfig {
     /// <p>URL of the MCP endpoint.</p>
@@ -19,12 +21,17 @@ impl HarnessRemoteMcpConfig {
     pub fn headers(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.headers.as_ref()
     }
+    /// <p>How the harness authenticates to this MCP server. Defaults to no authentication.</p>
+    pub fn outbound_auth(&self) -> ::std::option::Option<&crate::types::HarnessRemoteMcpOutboundAuth> {
+        self.outbound_auth.as_ref()
+    }
 }
 impl ::std::fmt::Debug for HarnessRemoteMcpConfig {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("HarnessRemoteMcpConfig");
         formatter.field("url", &"*** Sensitive Data Redacted ***");
         formatter.field("headers", &"*** Sensitive Data Redacted ***");
+        formatter.field("outbound_auth", &self.outbound_auth);
         formatter.finish()
     }
 }
@@ -41,6 +48,7 @@ impl HarnessRemoteMcpConfig {
 pub struct HarnessRemoteMcpConfigBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
     pub(crate) headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) outbound_auth: ::std::option::Option<crate::types::HarnessRemoteMcpOutboundAuth>,
 }
 impl HarnessRemoteMcpConfigBuilder {
     /// <p>URL of the MCP endpoint.</p>
@@ -78,6 +86,20 @@ impl HarnessRemoteMcpConfigBuilder {
     pub fn get_headers(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.headers
     }
+    /// <p>How the harness authenticates to this MCP server. Defaults to no authentication.</p>
+    pub fn outbound_auth(mut self, input: crate::types::HarnessRemoteMcpOutboundAuth) -> Self {
+        self.outbound_auth = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>How the harness authenticates to this MCP server. Defaults to no authentication.</p>
+    pub fn set_outbound_auth(mut self, input: ::std::option::Option<crate::types::HarnessRemoteMcpOutboundAuth>) -> Self {
+        self.outbound_auth = input;
+        self
+    }
+    /// <p>How the harness authenticates to this MCP server. Defaults to no authentication.</p>
+    pub fn get_outbound_auth(&self) -> &::std::option::Option<crate::types::HarnessRemoteMcpOutboundAuth> {
+        &self.outbound_auth
+    }
     /// Consumes the builder and constructs a [`HarnessRemoteMcpConfig`](crate::types::HarnessRemoteMcpConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`url`](crate::types::builders::HarnessRemoteMcpConfigBuilder::url)
@@ -90,6 +112,7 @@ impl HarnessRemoteMcpConfigBuilder {
                 )
             })?,
             headers: self.headers,
+            outbound_auth: self.outbound_auth,
         })
     }
 }
@@ -98,6 +121,7 @@ impl ::std::fmt::Debug for HarnessRemoteMcpConfigBuilder {
         let mut formatter = f.debug_struct("HarnessRemoteMcpConfigBuilder");
         formatter.field("url", &"*** Sensitive Data Redacted ***");
         formatter.field("headers", &"*** Sensitive Data Redacted ***");
+        formatter.field("outbound_auth", &self.outbound_auth);
         formatter.finish()
     }
 }

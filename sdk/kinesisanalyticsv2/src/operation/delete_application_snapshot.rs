@@ -328,15 +328,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteApplica
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DeleteApplicationSnapshotError {
-    /// <p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>
+    /// <p>Exception thrown as a result of concurrent modifications to an application or snapshot. This error can be the result of attempting to modify an application without using the current application ID.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
     /// <p>The specified input parameter value is not valid.</p>
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
     /// <p>The request JSON is not valid for the operation.</p>
     InvalidRequestException(crate::types::error::InvalidRequestException),
-    /// <p>The application is not available for this operation.</p>
+    /// <p>The application or snapshot is not available for this operation.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),
-    /// <p>Specified application can't be found.</p>
+    /// <p>The specified application, snapshot, or snapshot operation can't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::types::error::UnsupportedOperationException),

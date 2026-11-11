@@ -325,7 +325,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeAppli
 pub enum DescribeApplicationVersionError {
     /// <p>The specified input parameter value is not valid.</p>
     InvalidArgumentException(crate::types::error::InvalidArgumentException),
-    /// <p>Specified application can't be found.</p>
+    /// <p>The specified application, snapshot, or snapshot operation can't be found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request was rejected because a specified parameter is not supported or a specified resource is not valid for this operation.</p>
     UnsupportedOperationException(crate::types::error::UnsupportedOperationException),

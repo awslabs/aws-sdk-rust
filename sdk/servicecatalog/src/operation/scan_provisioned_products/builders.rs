@@ -109,6 +109,12 @@ impl ScanProvisionedProductsFluentBuilder {
         self.config_override = config_override;
         self
     }
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::scan_provisioned_products::paginator::ScanProvisionedProductsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::scan_provisioned_products::paginator::ScanProvisionedProductsPaginator {
+        crate::operation::scan_provisioned_products::paginator::ScanProvisionedProductsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The language code.</p>
     /// <ul>
     /// <li>

@@ -1443,6 +1443,8 @@ pub(crate) mod shape_harness_hook_sns_target;
 
 pub(crate) mod shape_harness_managed_memory_strategy_list;
 
+pub(crate) mod shape_harness_remote_mcp_outbound_auth;
+
 pub(crate) mod shape_hosting_environment;
 
 pub(crate) mod shape_hosting_environment_list_type;

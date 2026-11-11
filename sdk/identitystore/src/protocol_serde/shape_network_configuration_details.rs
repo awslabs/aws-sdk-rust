@@ -25,7 +25,7 @@ where
                             builder = builder.set_vpce_access_required(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "ApiRestrictSourceVpcs" => {
-                            builder = builder.set_api_restrict_source_vpcs(crate::protocol_serde::shape_vpc_id_list::de_vpc_id_list(
+                            builder = builder.set_api_restrict_source_vpcs(crate::protocol_serde::shape_vpc_arn_list::de_vpc_arn_list(
                                 tokens,
                                 _value,
                                 depth + 1,

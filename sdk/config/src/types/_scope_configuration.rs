@@ -4,9 +4,19 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScopeConfiguration {
-    /// <p>The type of scope for the third-party cloud resources. Valid values include <code>tenant</code> and <code>subscription</code>.</p>
+    /// <p>The type of scope for the third-party cloud resources. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>tenant</code> – Applies to all resources in an Azure tenant</p></li>
+    /// <li>
+    /// <p><code>subscription</code> – Applies to resources in the Azure subscriptions you specify</p></li>
+    /// <li>
+    /// <p><code>organization</code> – Applies to all resources in a Google Cloud organization</p></li>
+    /// <li>
+    /// <p><code>project</code> – Applies to resources in the Google Cloud projects you specify</p></li>
+    /// </ul>
     pub scope_type: ::std::string::String,
-    /// <p>The list of specific scope values for the third-party cloud resources. For example, a list of Azure subscriptions or management groups.</p>
+    /// <p>The list of specific scope values for the third-party cloud resources. For example, a list of Azure subscription IDs, or a list of Google Cloud project IDs. Don't specify <code>scopeValues</code> when <code>scopeType</code> is <code>tenant</code> or <code>organization</code>.</p>
     pub scope_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Specifies whether to record resources from all supported regions for the third-party cloud service provider.</p>
     pub all_regions: bool,
@@ -14,12 +24,22 @@ pub struct ScopeConfiguration {
     pub included_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ScopeConfiguration {
-    /// <p>The type of scope for the third-party cloud resources. Valid values include <code>tenant</code> and <code>subscription</code>.</p>
+    /// <p>The type of scope for the third-party cloud resources. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>tenant</code> – Applies to all resources in an Azure tenant</p></li>
+    /// <li>
+    /// <p><code>subscription</code> – Applies to resources in the Azure subscriptions you specify</p></li>
+    /// <li>
+    /// <p><code>organization</code> – Applies to all resources in a Google Cloud organization</p></li>
+    /// <li>
+    /// <p><code>project</code> – Applies to resources in the Google Cloud projects you specify</p></li>
+    /// </ul>
     pub fn scope_type(&self) -> &str {
         use std::ops::Deref;
         self.scope_type.deref()
     }
-    /// <p>The list of specific scope values for the third-party cloud resources. For example, a list of Azure subscriptions or management groups.</p>
+    /// <p>The list of specific scope values for the third-party cloud resources. For example, a list of Azure subscription IDs, or a list of Google Cloud project IDs. Don't specify <code>scopeValues</code> when <code>scopeType</code> is <code>tenant</code> or <code>organization</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.scope_values.is_none()`.
     pub fn scope_values(&self) -> &[::std::string::String] {
@@ -53,18 +73,48 @@ pub struct ScopeConfigurationBuilder {
     pub(crate) included_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ScopeConfigurationBuilder {
-    /// <p>The type of scope for the third-party cloud resources. Valid values include <code>tenant</code> and <code>subscription</code>.</p>
+    /// <p>The type of scope for the third-party cloud resources. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>tenant</code> – Applies to all resources in an Azure tenant</p></li>
+    /// <li>
+    /// <p><code>subscription</code> – Applies to resources in the Azure subscriptions you specify</p></li>
+    /// <li>
+    /// <p><code>organization</code> – Applies to all resources in a Google Cloud organization</p></li>
+    /// <li>
+    /// <p><code>project</code> – Applies to resources in the Google Cloud projects you specify</p></li>
+    /// </ul>
     /// This field is required.
     pub fn scope_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.scope_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The type of scope for the third-party cloud resources. Valid values include <code>tenant</code> and <code>subscription</code>.</p>
+    /// <p>The type of scope for the third-party cloud resources. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>tenant</code> – Applies to all resources in an Azure tenant</p></li>
+    /// <li>
+    /// <p><code>subscription</code> – Applies to resources in the Azure subscriptions you specify</p></li>
+    /// <li>
+    /// <p><code>organization</code> – Applies to all resources in a Google Cloud organization</p></li>
+    /// <li>
+    /// <p><code>project</code> – Applies to resources in the Google Cloud projects you specify</p></li>
+    /// </ul>
     pub fn set_scope_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.scope_type = input;
         self
     }
-    /// <p>The type of scope for the third-party cloud resources. Valid values include <code>tenant</code> and <code>subscription</code>.</p>
+    /// <p>The type of scope for the third-party cloud resources. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>tenant</code> – Applies to all resources in an Azure tenant</p></li>
+    /// <li>
+    /// <p><code>subscription</code> – Applies to resources in the Azure subscriptions you specify</p></li>
+    /// <li>
+    /// <p><code>organization</code> – Applies to all resources in a Google Cloud organization</p></li>
+    /// <li>
+    /// <p><code>project</code> – Applies to resources in the Google Cloud projects you specify</p></li>
+    /// </ul>
     pub fn get_scope_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.scope_type
     }
@@ -72,19 +122,19 @@ impl ScopeConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_scope_values`](Self::set_scope_values).
     ///
-    /// <p>The list of specific scope values for the third-party cloud resources. For example, a list of Azure subscriptions or management groups.</p>
+    /// <p>The list of specific scope values for the third-party cloud resources. For example, a list of Azure subscription IDs, or a list of Google Cloud project IDs. Don't specify <code>scopeValues</code> when <code>scopeType</code> is <code>tenant</code> or <code>organization</code>.</p>
     pub fn scope_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.scope_values.unwrap_or_default();
         v.push(input.into());
         self.scope_values = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of specific scope values for the third-party cloud resources. For example, a list of Azure subscriptions or management groups.</p>
+    /// <p>The list of specific scope values for the third-party cloud resources. For example, a list of Azure subscription IDs, or a list of Google Cloud project IDs. Don't specify <code>scopeValues</code> when <code>scopeType</code> is <code>tenant</code> or <code>organization</code>.</p>
     pub fn set_scope_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.scope_values = input;
         self
     }
-    /// <p>The list of specific scope values for the third-party cloud resources. For example, a list of Azure subscriptions or management groups.</p>
+    /// <p>The list of specific scope values for the third-party cloud resources. For example, a list of Azure subscription IDs, or a list of Google Cloud project IDs. Don't specify <code>scopeValues</code> when <code>scopeType</code> is <code>tenant</code> or <code>organization</code>.</p>
     pub fn get_scope_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.scope_values
     }

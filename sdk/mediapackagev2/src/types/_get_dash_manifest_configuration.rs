@@ -43,6 +43,16 @@ pub struct GetDashManifestConfiguration {
     pub dvb_settings: ::std::option::Option<crate::types::DashDvbSettings>,
     /// <p>The layout of the DASH manifest that MediaPackage produces. <code>STANDARD</code> indicates a default manifest, which is compacted. <code>NONE</code> indicates a full manifest.</p>
     pub compactness: ::std::option::Option<crate::types::DashCompactness>,
+    /// <p>Specifies how MediaPackage calculates the <code>bandwidth</code> attribute of regular (non-iFrame) video <code>Representation</code> elements in the DASH manifest. Audio, subtitle, image, and iFrame-only (trick-play) representations are unchanged.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AVERAGE</code> – MediaPackage reports the average bitrate of the source video track. This is the default.</p></li>
+    /// <li>
+    /// <p><code>MAX</code> – MediaPackage reports the peak bitrate of the video stream.</p></li>
+    /// </ul>
+    /// <p>For information about bandwidth reporting, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/dash-bandwidth-reporting.html">DASH bandwidth reporting</a> in the <i>Elemental MediaPackage v2 User Guide</i>.</p>
+    pub bandwidth_reporting_mode: ::std::option::Option<crate::types::DashBandwidthReportingMode>,
     /// <p>How MediaPackage represents the audio timeline in the DASH manifest, using DASH Segment Duration Patternization for audio adaptation sets. <code>PATTERNED</code> indicates that MediaPackage uses a pattern-based segment template for audio, reducing manifest size. <code>NONE</code> indicates that the manifest contains an explicit timeline for each audio segment.</p>
     pub audio_timeline_pattern: ::std::option::Option<crate::types::DashAudioTimelinePattern>,
     /// <p>The configuration for DASH subtitles.</p>
@@ -134,6 +144,18 @@ impl GetDashManifestConfiguration {
     pub fn compactness(&self) -> ::std::option::Option<&crate::types::DashCompactness> {
         self.compactness.as_ref()
     }
+    /// <p>Specifies how MediaPackage calculates the <code>bandwidth</code> attribute of regular (non-iFrame) video <code>Representation</code> elements in the DASH manifest. Audio, subtitle, image, and iFrame-only (trick-play) representations are unchanged.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AVERAGE</code> – MediaPackage reports the average bitrate of the source video track. This is the default.</p></li>
+    /// <li>
+    /// <p><code>MAX</code> – MediaPackage reports the peak bitrate of the video stream.</p></li>
+    /// </ul>
+    /// <p>For information about bandwidth reporting, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/dash-bandwidth-reporting.html">DASH bandwidth reporting</a> in the <i>Elemental MediaPackage v2 User Guide</i>.</p>
+    pub fn bandwidth_reporting_mode(&self) -> ::std::option::Option<&crate::types::DashBandwidthReportingMode> {
+        self.bandwidth_reporting_mode.as_ref()
+    }
     /// <p>How MediaPackage represents the audio timeline in the DASH manifest, using DASH Segment Duration Patternization for audio adaptation sets. <code>PATTERNED</code> indicates that MediaPackage uses a pattern-based segment template for audio, reducing manifest size. <code>NONE</code> indicates that the manifest contains an explicit timeline for each audio segment.</p>
     pub fn audio_timeline_pattern(&self) -> ::std::option::Option<&crate::types::DashAudioTimelinePattern> {
         self.audio_timeline_pattern.as_ref()
@@ -179,6 +201,7 @@ pub struct GetDashManifestConfigurationBuilder {
     pub(crate) program_information: ::std::option::Option<crate::types::DashProgramInformation>,
     pub(crate) dvb_settings: ::std::option::Option<crate::types::DashDvbSettings>,
     pub(crate) compactness: ::std::option::Option<crate::types::DashCompactness>,
+    pub(crate) bandwidth_reporting_mode: ::std::option::Option<crate::types::DashBandwidthReportingMode>,
     pub(crate) audio_timeline_pattern: ::std::option::Option<crate::types::DashAudioTimelinePattern>,
     pub(crate) subtitle_configuration: ::std::option::Option<crate::types::DashSubtitleConfiguration>,
     pub(crate) uri_path_type: ::std::option::Option<crate::types::UriPathType>,
@@ -458,6 +481,44 @@ impl GetDashManifestConfigurationBuilder {
     pub fn get_compactness(&self) -> &::std::option::Option<crate::types::DashCompactness> {
         &self.compactness
     }
+    /// <p>Specifies how MediaPackage calculates the <code>bandwidth</code> attribute of regular (non-iFrame) video <code>Representation</code> elements in the DASH manifest. Audio, subtitle, image, and iFrame-only (trick-play) representations are unchanged.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AVERAGE</code> – MediaPackage reports the average bitrate of the source video track. This is the default.</p></li>
+    /// <li>
+    /// <p><code>MAX</code> – MediaPackage reports the peak bitrate of the video stream.</p></li>
+    /// </ul>
+    /// <p>For information about bandwidth reporting, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/dash-bandwidth-reporting.html">DASH bandwidth reporting</a> in the <i>Elemental MediaPackage v2 User Guide</i>.</p>
+    pub fn bandwidth_reporting_mode(mut self, input: crate::types::DashBandwidthReportingMode) -> Self {
+        self.bandwidth_reporting_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how MediaPackage calculates the <code>bandwidth</code> attribute of regular (non-iFrame) video <code>Representation</code> elements in the DASH manifest. Audio, subtitle, image, and iFrame-only (trick-play) representations are unchanged.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AVERAGE</code> – MediaPackage reports the average bitrate of the source video track. This is the default.</p></li>
+    /// <li>
+    /// <p><code>MAX</code> – MediaPackage reports the peak bitrate of the video stream.</p></li>
+    /// </ul>
+    /// <p>For information about bandwidth reporting, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/dash-bandwidth-reporting.html">DASH bandwidth reporting</a> in the <i>Elemental MediaPackage v2 User Guide</i>.</p>
+    pub fn set_bandwidth_reporting_mode(mut self, input: ::std::option::Option<crate::types::DashBandwidthReportingMode>) -> Self {
+        self.bandwidth_reporting_mode = input;
+        self
+    }
+    /// <p>Specifies how MediaPackage calculates the <code>bandwidth</code> attribute of regular (non-iFrame) video <code>Representation</code> elements in the DASH manifest. Audio, subtitle, image, and iFrame-only (trick-play) representations are unchanged.</p>
+    /// <p>The allowed values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AVERAGE</code> – MediaPackage reports the average bitrate of the source video track. This is the default.</p></li>
+    /// <li>
+    /// <p><code>MAX</code> – MediaPackage reports the peak bitrate of the video stream.</p></li>
+    /// </ul>
+    /// <p>For information about bandwidth reporting, see <a href="https://docs.aws.amazon.com/mediapackage/latest/userguide/dash-bandwidth-reporting.html">DASH bandwidth reporting</a> in the <i>Elemental MediaPackage v2 User Guide</i>.</p>
+    pub fn get_bandwidth_reporting_mode(&self) -> &::std::option::Option<crate::types::DashBandwidthReportingMode> {
+        &self.bandwidth_reporting_mode
+    }
     /// <p>How MediaPackage represents the audio timeline in the DASH manifest, using DASH Segment Duration Patternization for audio adaptation sets. <code>PATTERNED</code> indicates that MediaPackage uses a pattern-based segment template for audio, reducing manifest size. <code>NONE</code> indicates that the manifest contains an explicit timeline for each audio segment.</p>
     pub fn audio_timeline_pattern(mut self, input: crate::types::DashAudioTimelinePattern) -> Self {
         self.audio_timeline_pattern = ::std::option::Option::Some(input);
@@ -550,6 +611,7 @@ impl GetDashManifestConfigurationBuilder {
             program_information: self.program_information,
             dvb_settings: self.dvb_settings,
             compactness: self.compactness,
+            bandwidth_reporting_mode: self.bandwidth_reporting_mode,
             audio_timeline_pattern: self.audio_timeline_pattern,
             subtitle_configuration: self.subtitle_configuration,
             uri_path_type: self.uri_path_type,

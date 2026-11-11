@@ -30,7 +30,8 @@ impl crate::operation::delete_case::builders::DeleteCaseInputBuilder {
 /// <p>Access audit history</p></li>
 /// <li>
 /// <p>Perform any operations that require the CaseID</p></li>
-/// </ul><important>
+/// </ul>
+/// <p>You can't delete a case while it's part of a merge that is running, as either the primary or the secondary case. The request fails with a <code>ConflictException</code>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.</p><important>
 /// <p>This action is irreversible. After you delete a case, you cannot recover its data.</p>
 /// </important>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

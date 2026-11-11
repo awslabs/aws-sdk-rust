@@ -319,6 +319,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for MeterUsageTel
                 captured.insert("UsageDimension", value);
             }
         }
+        if requested.should_capture("UsageQuantityAsDecimal") {
+            if let ::std::option::Option::Some(value) = input.usage_quantity_as_decimal.as_deref() {
+                captured.insert("UsageQuantityAsDecimal", value);
+            }
+        }
         if requested.should_capture("ClientToken") {
             if let ::std::option::Option::Some(value) = input.client_token.as_deref() {
                 captured.insert("ClientToken", value);
@@ -687,7 +692,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for MeterUsageEnd
 pub enum MeterUsageError {
     /// <p>Exception thrown when the customer does not have a valid subscription for the product.</p>
     CustomerNotEntitledException(crate::types::error::CustomerNotEntitledException),
-    /// <p>A metering record has already been emitted by the same EC2 instance, ECS task, or EKS pod for the given {<code>usageDimension</code>, <code>timestamp</code>} with a different <code>usageQuantity</code>.</p>
+    /// <p>A metering record has already been emitted by the same EC2 instance, ECS task, or EKS pod for the given {<code>usageDimension</code>, <code>timestamp</code>} with a different <code>usageQuantity</code>. Quantities are compared by value, so a whole-number and a decimal quantity with the same value (for example, <code>17</code> and <code>17.00</code>) are not different.</p>
     DuplicateRequestException(crate::types::error::DuplicateRequestException),
     /// <p>The <code>ClientToken</code> is being used for multiple requests.</p>
     IdempotencyConflictException(crate::types::error::IdempotencyConflictException),
@@ -699,7 +704,7 @@ pub enum MeterUsageError {
     InvalidProductCodeException(crate::types::error::InvalidProductCodeException),
     /// <p>The tag is invalid, or the number of tags is greater than 5.</p>
     InvalidTagException(crate::types::error::InvalidTagException),
-    /// <p>Sum of allocated usage quantities is not equal to the usage quantity.</p>
+    /// <p>Sum of allocated usage quantities is not equal to the usage quantity, or the allocations don't use the same type of quantity (whole number or decimal) as the usage quantity.</p>
     InvalidUsageAllocationsException(crate::types::error::InvalidUsageAllocationsException),
     /// <p>The usage dimension does not match one of the <code>UsageDimensions</code> associated with products.</p>
     InvalidUsageDimensionException(crate::types::error::InvalidUsageDimensionException),

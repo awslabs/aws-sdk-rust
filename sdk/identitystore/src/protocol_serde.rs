@@ -197,4 +197,4 @@ pub(crate) mod shape_unique_attribute;
 
 pub(crate) mod shape_user;
 
-pub(crate) mod shape_vpc_id_list;
+pub(crate) mod shape_vpc_arn_list;

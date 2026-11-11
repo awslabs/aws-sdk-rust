@@ -63,6 +63,16 @@ static AUDITEVENT_MEMBER_PERFORMED_BY: ::aws_smithy_schema::Schema<'static> = ::
     "performedBy",
     5,
 );
+static AUDITEVENT_MEMBER_MERGE_METADATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.connectcases#AuditEvent$mergeMetadata",
+        "com.amazonaws.connectcases",
+        "AuditEvent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "mergeMetadata",
+    6,
+);
 static AUDITEVENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.connectcases#AuditEvent", "com.amazonaws.connectcases", "AuditEvent"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -73,6 +83,7 @@ static AUDITEVENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_sc
         &AUDITEVENT_MEMBER_PERFORMED_TIME,
         &AUDITEVENT_MEMBER_FIELDS,
         &AUDITEVENT_MEMBER_PERFORMED_BY,
+        &AUDITEVENT_MEMBER_MERGE_METADATA,
     ],
 );
 impl crate::types::AuditEvent {
@@ -123,6 +134,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::AuditEvent
         }
         if let Some(ref val) = self.performed_by {
             ser.write_struct(&AUDITEVENT_MEMBER_PERFORMED_BY, val)?;
+        }
+        if let Some(ref val) = self.merge_metadata {
+            ser.write_struct(&AUDITEVENT_MEMBER_MERGE_METADATA, val)?;
         }
         Ok(())
     }
@@ -177,6 +191,13 @@ impl crate::types::builders::AuditEventBuilder {
                         deser.read_null()?;
                     } else {
                         self.performed_by = Some(crate::types::AuditEventPerformedBy::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.merge_metadata = Some(crate::types::AuditMergeMetadata::deserialize(deser)?);
                     }
                 }
                 _ => {}

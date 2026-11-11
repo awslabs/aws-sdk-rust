@@ -25,6 +25,7 @@ impl crate::operation::delete_related_item::builders::DeleteRelatedItemInputBuil
 /// <p>Deletes the related item resource under a case.</p><note>
 /// <p>This API cannot be used on a FILE type related attachment. To delete this type of file, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteAttachedFile.html">DeleteAttachedFile</a> API</p>
 /// </note>
+/// <p>If the case is the secondary case of a merge that is running, the request fails with a <code>ConflictException</code>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_StartMergeCases.html">StartMergeCases</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteRelatedItemFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

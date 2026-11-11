@@ -9,6 +9,16 @@ static USAGEALLOCATION_MEMBER_ALLOCATED_USAGE_QUANTITY: ::aws_smithy_schema::Sch
     "AllocatedUsageQuantity",
     0,
 );
+static USAGEALLOCATION_MEMBER_ALLOCATED_USAGE_QUANTITY_AS_DECIMAL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacemetering#UsageAllocation$AllocatedUsageQuantityAsDecimal",
+        "com.amazonaws.marketplacemetering",
+        "UsageAllocation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AllocatedUsageQuantityAsDecimal",
+    1,
+);
 static USAGEALLOCATION_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.marketplacemetering#TagList$member",
@@ -27,7 +37,7 @@ static USAGEALLOCATION_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws
     ),
     ::aws_smithy_schema::ShapeType::List,
     "Tags",
-    1,
+    2,
 )
 .with_list_member(&USAGEALLOCATION_MEMBER_TAGS_MEMBER);
 static USAGEALLOCATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
@@ -37,7 +47,11 @@ static USAGEALLOCATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smit
         "UsageAllocation",
     ),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&USAGEALLOCATION_MEMBER_ALLOCATED_USAGE_QUANTITY, &USAGEALLOCATION_MEMBER_TAGS],
+    &[
+        &USAGEALLOCATION_MEMBER_ALLOCATED_USAGE_QUANTITY,
+        &USAGEALLOCATION_MEMBER_ALLOCATED_USAGE_QUANTITY_AS_DECIMAL,
+        &USAGEALLOCATION_MEMBER_TAGS,
+    ],
 );
 impl crate::types::UsageAllocation {
     /// The schema for this shape.
@@ -56,6 +70,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::UsageAlloc
         {
             let val = &self.allocated_usage_quantity;
             ser.write_integer(&USAGEALLOCATION_MEMBER_ALLOCATED_USAGE_QUANTITY, *val)?;
+        }
+        if let Some(ref val) = self.allocated_usage_quantity_as_decimal {
+            ser.write_string(&USAGEALLOCATION_MEMBER_ALLOCATED_USAGE_QUANTITY_AS_DECIMAL, val)?;
         }
         if let Some(ref val) = self.tags {
             ser.write_list(
@@ -92,6 +109,13 @@ impl crate::types::builders::UsageAllocationBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
+                        self.allocated_usage_quantity_as_decimal = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
                         self.tags = Some({
                             let mut container = Vec::new();
                             deser.read_list(member, &mut |deser| {
@@ -116,7 +140,6 @@ impl crate::types::UsageAllocation {
     ) -> ::std::result::Result<Self, ::aws_smithy_schema::serde::SerdeError> {
         let mut builder = Self::builder();
         builder.deserialize_members(deserializer)?;
-        builder.allocated_usage_quantity = builder.allocated_usage_quantity.or(Some(0i32));
-        builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
+        Ok(builder.build())
     }
 }

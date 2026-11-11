@@ -329,6 +329,8 @@ pub(crate) mod shape_failed_remediation_exception_batch;
 
 pub(crate) mod shape_field_info;
 
+pub(crate) mod shape_gcp_connector_configuration;
+
 pub(crate) mod shape_get_aggregate_compliance_details_by_config_rule_input_input;
 
 pub(crate) mod shape_get_aggregate_compliance_details_by_config_rule_output_output;

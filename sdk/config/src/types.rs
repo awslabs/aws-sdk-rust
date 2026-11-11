@@ -223,6 +223,8 @@ pub use crate::types::_conformance_pack_input_parameter::ConformancePackInputPar
 
 pub use crate::types::_azure_connector_configuration::AzureConnectorConfiguration;
 
+pub use crate::types::_gcp_connector_configuration::GcpConnectorConfiguration;
+
 pub use crate::types::_config_snapshot_delivery_properties::ConfigSnapshotDeliveryProperties;
 
 pub use crate::types::_evaluation::Evaluation;
@@ -484,6 +486,8 @@ mod _failed_remediation_batch;
 mod _failed_remediation_exception_batch;
 
 mod _field_info;
+
+mod _gcp_connector_configuration;
 
 mod _grouped_resource_count;
 

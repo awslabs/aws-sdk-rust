@@ -420,7 +420,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListGitHubAc
             .load::<::aws_smithy_schema::protocol::SharedClientProtocol>()
             .expect("a SharedClientProtocol is required");
         let mut request = protocol
-            .serialize_request(&input, ListGitHubAccountTokenNames::INPUT_SCHEMA, "/", _cfg)
+            .serialize_request(
+                &input,
+                ListGitHubAccountTokenNames::INPUT_SCHEMA,
+                "/service/CodeDeploy_20141006/operation/ListGitHubAccountTokenNames",
+                _cfg,
+            )
             .map_err(::aws_smithy_runtime_api::box_error::BoxError::from)?;
 
         return ::std::result::Result::Ok(request);

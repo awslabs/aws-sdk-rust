@@ -5,15 +5,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UsageAllocation {
-    /// <p>The total quantity allocated to this bucket of usage.</p>
+    /// <p>The total quantity allocated to this bucket of usage, as a whole number.</p>
+    /// <p>Use <code>AllocatedUsageQuantityAsDecimal</code> instead. Each allocation must specify exactly one of <code>AllocatedUsageQuantity</code> or <code>AllocatedUsageQuantityAsDecimal</code>.</p>
+    #[deprecated(note = "Use AllocatedUsageQuantityAsDecimal instead.", since = "2026-10-20")]
     pub allocated_usage_quantity: i32,
+    /// <p>The total quantity allocated to this bucket of usage, as a decimal string. Use this when the usage quantity of the request or usage record is specified as a decimal (<code>UsageQuantityAsDecimal</code> or <code>QuantityAsDecimal</code>).</p>
+    /// <p>A non-negative decimal number, for example <code>17.42</code>.</p>
+    /// <p>Each allocation must specify exactly one of <code>AllocatedUsageQuantity</code> or <code>AllocatedUsageQuantityAsDecimal</code>.</p>
+    pub allocated_usage_quantity_as_decimal: ::std::option::Option<::std::string::String>,
     /// <p>The set of tags that define the bucket of usage. For the bucket of items with no tags, this parameter can be left out.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl UsageAllocation {
-    /// <p>The total quantity allocated to this bucket of usage.</p>
+    /// <p>The total quantity allocated to this bucket of usage, as a whole number.</p>
+    /// <p>Use <code>AllocatedUsageQuantityAsDecimal</code> instead. Each allocation must specify exactly one of <code>AllocatedUsageQuantity</code> or <code>AllocatedUsageQuantityAsDecimal</code>.</p>
+    #[deprecated(note = "Use AllocatedUsageQuantityAsDecimal instead.", since = "2026-10-20")]
     pub fn allocated_usage_quantity(&self) -> i32 {
         self.allocated_usage_quantity
+    }
+    /// <p>The total quantity allocated to this bucket of usage, as a decimal string. Use this when the usage quantity of the request or usage record is specified as a decimal (<code>UsageQuantityAsDecimal</code> or <code>QuantityAsDecimal</code>).</p>
+    /// <p>A non-negative decimal number, for example <code>17.42</code>.</p>
+    /// <p>Each allocation must specify exactly one of <code>AllocatedUsageQuantity</code> or <code>AllocatedUsageQuantityAsDecimal</code>.</p>
+    pub fn allocated_usage_quantity_as_decimal(&self) -> ::std::option::Option<&str> {
+        self.allocated_usage_quantity_as_decimal.as_deref()
     }
     /// <p>The set of tags that define the bucket of usage. For the bucket of items with no tags, this parameter can be left out.</p>
     ///
@@ -34,23 +48,49 @@ impl UsageAllocation {
 #[non_exhaustive]
 pub struct UsageAllocationBuilder {
     pub(crate) allocated_usage_quantity: ::std::option::Option<i32>,
+    pub(crate) allocated_usage_quantity_as_decimal: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl UsageAllocationBuilder {
-    /// <p>The total quantity allocated to this bucket of usage.</p>
-    /// This field is required.
+    /// <p>The total quantity allocated to this bucket of usage, as a whole number.</p>
+    /// <p>Use <code>AllocatedUsageQuantityAsDecimal</code> instead. Each allocation must specify exactly one of <code>AllocatedUsageQuantity</code> or <code>AllocatedUsageQuantityAsDecimal</code>.</p>
+    #[deprecated(note = "Use AllocatedUsageQuantityAsDecimal instead.", since = "2026-10-20")]
     pub fn allocated_usage_quantity(mut self, input: i32) -> Self {
         self.allocated_usage_quantity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total quantity allocated to this bucket of usage.</p>
+    /// <p>The total quantity allocated to this bucket of usage, as a whole number.</p>
+    /// <p>Use <code>AllocatedUsageQuantityAsDecimal</code> instead. Each allocation must specify exactly one of <code>AllocatedUsageQuantity</code> or <code>AllocatedUsageQuantityAsDecimal</code>.</p>
+    #[deprecated(note = "Use AllocatedUsageQuantityAsDecimal instead.", since = "2026-10-20")]
     pub fn set_allocated_usage_quantity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.allocated_usage_quantity = input;
         self
     }
-    /// <p>The total quantity allocated to this bucket of usage.</p>
+    /// <p>The total quantity allocated to this bucket of usage, as a whole number.</p>
+    /// <p>Use <code>AllocatedUsageQuantityAsDecimal</code> instead. Each allocation must specify exactly one of <code>AllocatedUsageQuantity</code> or <code>AllocatedUsageQuantityAsDecimal</code>.</p>
+    #[deprecated(note = "Use AllocatedUsageQuantityAsDecimal instead.", since = "2026-10-20")]
     pub fn get_allocated_usage_quantity(&self) -> &::std::option::Option<i32> {
         &self.allocated_usage_quantity
+    }
+    /// <p>The total quantity allocated to this bucket of usage, as a decimal string. Use this when the usage quantity of the request or usage record is specified as a decimal (<code>UsageQuantityAsDecimal</code> or <code>QuantityAsDecimal</code>).</p>
+    /// <p>A non-negative decimal number, for example <code>17.42</code>.</p>
+    /// <p>Each allocation must specify exactly one of <code>AllocatedUsageQuantity</code> or <code>AllocatedUsageQuantityAsDecimal</code>.</p>
+    pub fn allocated_usage_quantity_as_decimal(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.allocated_usage_quantity_as_decimal = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The total quantity allocated to this bucket of usage, as a decimal string. Use this when the usage quantity of the request or usage record is specified as a decimal (<code>UsageQuantityAsDecimal</code> or <code>QuantityAsDecimal</code>).</p>
+    /// <p>A non-negative decimal number, for example <code>17.42</code>.</p>
+    /// <p>Each allocation must specify exactly one of <code>AllocatedUsageQuantity</code> or <code>AllocatedUsageQuantityAsDecimal</code>.</p>
+    pub fn set_allocated_usage_quantity_as_decimal(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.allocated_usage_quantity_as_decimal = input;
+        self
+    }
+    /// <p>The total quantity allocated to this bucket of usage, as a decimal string. Use this when the usage quantity of the request or usage record is specified as a decimal (<code>UsageQuantityAsDecimal</code> or <code>QuantityAsDecimal</code>).</p>
+    /// <p>A non-negative decimal number, for example <code>17.42</code>.</p>
+    /// <p>Each allocation must specify exactly one of <code>AllocatedUsageQuantity</code> or <code>AllocatedUsageQuantityAsDecimal</code>.</p>
+    pub fn get_allocated_usage_quantity_as_decimal(&self) -> &::std::option::Option<::std::string::String> {
+        &self.allocated_usage_quantity_as_decimal
     }
     /// Appends an item to `tags`.
     ///
@@ -73,17 +113,11 @@ impl UsageAllocationBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`UsageAllocation`](crate::types::UsageAllocation).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`allocated_usage_quantity`](crate::types::builders::UsageAllocationBuilder::allocated_usage_quantity)
-    pub fn build(self) -> ::std::result::Result<crate::types::UsageAllocation, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::UsageAllocation {
-            allocated_usage_quantity: self.allocated_usage_quantity.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "allocated_usage_quantity",
-                    "allocated_usage_quantity was not specified but it is required when building UsageAllocation",
-                )
-            })?,
+    pub fn build(self) -> crate::types::UsageAllocation {
+        crate::types::UsageAllocation {
+            allocated_usage_quantity: self.allocated_usage_quantity.unwrap_or_default(),
+            allocated_usage_quantity_as_decimal: self.allocated_usage_quantity_as_decimal,
             tags: self.tags,
-        })
+        }
     }
 }

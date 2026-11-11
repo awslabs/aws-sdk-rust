@@ -93,6 +93,10 @@ pub(crate) mod shape_admin_list_user_auth_events_input_input;
 
 pub(crate) mod shape_admin_list_user_auth_events_output_output;
 
+pub(crate) mod shape_admin_list_user_sessions_input_input;
+
+pub(crate) mod shape_admin_list_user_sessions_output_output;
+
 pub(crate) mod shape_admin_remove_user_from_group_input_input;
 
 pub(crate) mod shape_admin_remove_user_from_group_output_output;
@@ -104,6 +108,10 @@ pub(crate) mod shape_admin_reset_user_password_output_output;
 pub(crate) mod shape_admin_respond_to_auth_challenge_input_input;
 
 pub(crate) mod shape_admin_respond_to_auth_challenge_output_output;
+
+pub(crate) mod shape_admin_revoke_user_session_input_input;
+
+pub(crate) mod shape_admin_revoke_user_session_output_output;
 
 pub(crate) mod shape_admin_set_user_mfa_preference_input_input;
 
@@ -162,6 +170,8 @@ pub(crate) mod shape_change_password_output_output;
 pub(crate) mod shape_client_authentication_result_type;
 
 pub(crate) mod shape_client_secret_descriptor_type;
+
+pub(crate) mod shape_client_sso_session_config_type;
 
 pub(crate) mod shape_cloud_watch_logs_configuration_type;
 
@@ -435,9 +445,17 @@ pub(crate) mod shape_get_user_input_input;
 
 pub(crate) mod shape_get_user_output_output;
 
+pub(crate) mod shape_get_user_pool_client_session_configuration_input_input;
+
+pub(crate) mod shape_get_user_pool_client_session_configuration_output_output;
+
 pub(crate) mod shape_get_user_pool_mfa_config_input_input;
 
 pub(crate) mod shape_get_user_pool_mfa_config_output_output;
+
+pub(crate) mod shape_get_user_pool_session_configuration_input_input;
+
+pub(crate) mod shape_get_user_pool_session_configuration_output_output;
 
 pub(crate) mod shape_global_sign_out_input_input;
 
@@ -533,6 +551,10 @@ pub(crate) mod shape_list_user_pools_input_input;
 
 pub(crate) mod shape_list_user_pools_output_output;
 
+pub(crate) mod shape_list_user_sessions_input_input;
+
+pub(crate) mod shape_list_user_sessions_output_output;
+
 pub(crate) mod shape_list_users_in_group_input_input;
 
 pub(crate) mod shape_list_users_in_group_output_output;
@@ -609,6 +631,10 @@ pub(crate) mod shape_revoke_token_input_input;
 
 pub(crate) mod shape_revoke_token_output_output;
 
+pub(crate) mod shape_revoke_user_session_input_input;
+
+pub(crate) mod shape_revoke_user_session_output_output;
+
 pub(crate) mod shape_risk_configuration_type;
 
 pub(crate) mod shape_risk_exception_configuration_type;
@@ -622,6 +648,10 @@ pub(crate) mod shape_schema_attribute_type;
 pub(crate) mod shape_scope_does_not_exist_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
+
+pub(crate) mod shape_session_description_type;
+
+pub(crate) mod shape_session_location_type;
 
 pub(crate) mod shape_set_log_delivery_configuration_input_input;
 
@@ -639,9 +669,17 @@ pub(crate) mod shape_set_user_mfa_preference_input_input;
 
 pub(crate) mod shape_set_user_mfa_preference_output_output;
 
+pub(crate) mod shape_set_user_pool_client_session_configuration_input_input;
+
+pub(crate) mod shape_set_user_pool_client_session_configuration_output_output;
+
 pub(crate) mod shape_set_user_pool_mfa_config_input_input;
 
 pub(crate) mod shape_set_user_pool_mfa_config_output_output;
+
+pub(crate) mod shape_set_user_pool_session_configuration_input_input;
+
+pub(crate) mod shape_set_user_pool_session_configuration_output_output;
 
 pub(crate) mod shape_set_user_settings_input_input;
 
@@ -796,6 +834,8 @@ pub(crate) mod shape_user_pool_policy_type;
 pub(crate) mod shape_user_pool_replica_type;
 
 pub(crate) mod shape_user_pool_tagging_exception;
+
+pub(crate) mod shape_user_pool_token_session_config_type;
 
 pub(crate) mod shape_user_pool_type;
 

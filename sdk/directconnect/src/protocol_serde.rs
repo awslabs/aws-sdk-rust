@@ -15,14 +15,6 @@ where
         .map_err(::std::convert::Into::into)
 }
 
-pub fn parse_http_error_metadata(
-    _response_status: u16,
-    response_headers: &::aws_smithy_runtime_api::http::Headers,
-    response_body: &[u8],
-) -> ::std::result::Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    crate::json_errors::parse_error_metadata(response_body, response_headers)
-}
-
 pub(crate) mod shape_accept_direct_connect_gateway_association_proposal;
 
 pub(crate) mod shape_allocate_connection_on_interconnect;
@@ -168,14 +160,6 @@ pub(crate) mod shape_update_lag;
 pub(crate) mod shape_update_resiliency_group;
 
 pub(crate) mod shape_update_virtual_interface_attributes;
-
-pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
-    if data.is_empty() {
-        b"{}"
-    } else {
-        data
-    }
-}
 
 pub(crate) mod shape_accept_direct_connect_gateway_association_proposal_input;
 

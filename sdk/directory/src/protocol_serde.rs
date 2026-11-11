@@ -15,14 +15,6 @@ where
         .map_err(::std::convert::Into::into)
 }
 
-pub fn parse_http_error_metadata(
-    _response_status: u16,
-    response_headers: &::aws_smithy_runtime_api::http::Headers,
-    response_body: &[u8],
-) -> ::std::result::Result<::aws_smithy_types::error::metadata::Builder, ::aws_smithy_json::deserialize::error::DeserializeError> {
-    crate::json_errors::parse_error_metadata(response_body, response_headers)
-}
-
 pub(crate) mod shape_accept_shared_directory;
 
 pub(crate) mod shape_add_ip_routes;
@@ -183,14 +175,6 @@ pub(crate) mod shape_update_trust;
 
 pub(crate) mod shape_verify_trust;
 
-pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
-    if data.is_empty() {
-        b"{}"
-    } else {
-        data
-    }
-}
-
 pub(crate) mod shape_accept_shared_directory_input;
 
 pub(crate) mod shape_access_denied_exception;
@@ -334,6 +318,8 @@ pub(crate) mod shape_enable_sso_input;
 pub(crate) mod shape_entity_already_exists_exception;
 
 pub(crate) mod shape_entity_does_not_exist_exception;
+
+pub(crate) mod shape_get_directory_limits_input;
 
 pub(crate) mod shape_get_snapshot_limits_input;
 

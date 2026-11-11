@@ -21,6 +21,8 @@ pub use crate::types::_challenge_name_type::ChallengeNameType;
 
 pub use crate::types::_authentication_result_type::AuthenticationResultType;
 
+pub use crate::types::_revoke_associated_sessions_type::RevokeAssociatedSessionsType;
+
 pub use crate::types::_sms_mfa_settings_type::SmsMfaSettingsType;
 
 pub use crate::types::_software_token_mfa_settings_type::SoftwareTokenMfaSettingsType;
@@ -123,6 +125,8 @@ pub use crate::types::_limit_type::LimitType;
 
 pub use crate::types::_ui_customization_type::UiCustomizationType;
 
+pub use crate::types::_client_sso_session_config_type::ClientSsoSessionConfigType;
+
 pub use crate::types::_sms_mfa_config_type::SmsMfaConfigType;
 
 pub use crate::types::_software_token_mfa_config_type::SoftwareTokenMfaConfigType;
@@ -130,6 +134,10 @@ pub use crate::types::_software_token_mfa_config_type::SoftwareTokenMfaConfigTyp
 pub use crate::types::_email_mfa_config_type::EmailMfaConfigType;
 
 pub use crate::types::_web_authn_configuration_type::WebAuthnConfigurationType;
+
+pub use crate::types::_user_session_tracking_type::UserSessionTrackingType;
+
+pub use crate::types::_user_pool_token_session_config_type::UserPoolTokenSessionConfigType;
 
 pub use crate::types::_compromised_credentials_risk_configuration_type::CompromisedCredentialsRiskConfigurationType;
 
@@ -154,6 +162,8 @@ pub use crate::types::_auth_factor_type::AuthFactorType;
 pub use crate::types::_new_device_metadata_type::NewDeviceMetadataType;
 
 pub use crate::types::_auth_event_type::AuthEventType;
+
+pub use crate::types::_session_description_type::SessionDescriptionType;
 
 pub use crate::types::_asset_type::AssetType;
 
@@ -258,6 +268,10 @@ pub use crate::types::_event_risk_type::EventRiskType;
 pub use crate::types::_event_context_data_type::EventContextDataType;
 
 pub use crate::types::_event_feedback_type::EventFeedbackType;
+
+pub use crate::types::_session_type_type::SessionTypeType;
+
+pub use crate::types::_session_location_type::SessionLocationType;
 
 pub use crate::types::_asset_category_type::AssetCategoryType;
 
@@ -364,6 +378,8 @@ mod _challenge_response_type;
 mod _client_authentication_result_type;
 
 mod _client_secret_descriptor_type;
+
+mod _client_sso_session_config_type;
 
 mod _cloud_watch_logs_configuration_type;
 
@@ -521,6 +537,8 @@ mod _resource_server_scope_type;
 
 mod _resource_server_type;
 
+mod _revoke_associated_sessions_type;
+
 mod _risk_configuration_type;
 
 mod _risk_decision_type;
@@ -536,6 +554,12 @@ mod _s3_configuration_type;
 mod _schema_attribute_type;
 
 mod _security_policy_type;
+
+mod _session_description_type;
+
+mod _session_location_type;
+
+mod _session_type_type;
 
 mod _sign_in_policy_type;
 
@@ -593,7 +617,11 @@ mod _user_pool_replica_type;
 
 mod _user_pool_tier_type;
 
+mod _user_pool_token_session_config_type;
+
 mod _user_pool_type;
+
+mod _user_session_tracking_type;
 
 mod _user_status_type;
 
