@@ -196,6 +196,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateCloudEx
                 captured.insert("cloudExadataInfrastructureId", value);
             }
         }
+        if requested.should_capture("displayName") {
+            if let ::std::option::Option::Some(value) = input.display_name.as_deref() {
+                captured.insert("displayName", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())

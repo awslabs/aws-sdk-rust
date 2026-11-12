@@ -39,6 +39,7 @@
 ///     OperationType::CreateRelationalDatabase => { /* ... */ },
 ///     OperationType::CreateRelationalDatabaseFromSnapshot => { /* ... */ },
 ///     OperationType::CreateRelationalDatabaseSnapshot => { /* ... */ },
+///     OperationType::CreateSubdomain => { /* ... */ },
 ///     OperationType::DeleteAlarm => { /* ... */ },
 ///     OperationType::DeleteBucket => { /* ... */ },
 ///     OperationType::DeleteBucketAccessKey => { /* ... */ },
@@ -58,6 +59,7 @@
 ///     OperationType::DeleteLoadBalancerTlsCertificate => { /* ... */ },
 ///     OperationType::DeleteRelationalDatabase => { /* ... */ },
 ///     OperationType::DeleteRelationalDatabaseSnapshot => { /* ... */ },
+///     OperationType::DeleteSubdomain => { /* ... */ },
 ///     OperationType::DetachCertificateFromDistribution => { /* ... */ },
 ///     OperationType::DetachDisk => { /* ... */ },
 ///     OperationType::DetachInstancesFromLoadBalancer => { /* ... */ },
@@ -96,6 +98,7 @@
 ///     OperationType::UpdateLoadBalancerAttribute => { /* ... */ },
 ///     OperationType::UpdateRelationalDatabase => { /* ... */ },
 ///     OperationType::UpdateRelationalDatabaseParameters => { /* ... */ },
+///     OperationType::UpdateSubdomainAssociation => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -179,6 +182,8 @@ pub enum OperationType {
     #[allow(missing_docs)] // documentation missing in model
     CreateRelationalDatabaseSnapshot,
     #[allow(missing_docs)] // documentation missing in model
+    CreateSubdomain,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteAlarm,
     #[allow(missing_docs)] // documentation missing in model
     DeleteBucket,
@@ -216,6 +221,8 @@ pub enum OperationType {
     DeleteRelationalDatabase,
     #[allow(missing_docs)] // documentation missing in model
     DeleteRelationalDatabaseSnapshot,
+    #[allow(missing_docs)] // documentation missing in model
+    DeleteSubdomain,
     #[allow(missing_docs)] // documentation missing in model
     DetachCertificateFromDistribution,
     #[allow(missing_docs)] // documentation missing in model
@@ -292,6 +299,8 @@ pub enum OperationType {
     UpdateRelationalDatabase,
     #[allow(missing_docs)] // documentation missing in model
     UpdateRelationalDatabaseParameters,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateSubdomainAssociation,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -326,6 +335,7 @@ impl ::std::convert::From<&str> for OperationType {
             "CreateRelationalDatabase" => OperationType::CreateRelationalDatabase,
             "CreateRelationalDatabaseFromSnapshot" => OperationType::CreateRelationalDatabaseFromSnapshot,
             "CreateRelationalDatabaseSnapshot" => OperationType::CreateRelationalDatabaseSnapshot,
+            "CreateSubdomain" => OperationType::CreateSubdomain,
             "DeleteAlarm" => OperationType::DeleteAlarm,
             "DeleteBucket" => OperationType::DeleteBucket,
             "DeleteBucketAccessKey" => OperationType::DeleteBucketAccessKey,
@@ -345,6 +355,7 @@ impl ::std::convert::From<&str> for OperationType {
             "DeleteLoadBalancerTlsCertificate" => OperationType::DeleteLoadBalancerTlsCertificate,
             "DeleteRelationalDatabase" => OperationType::DeleteRelationalDatabase,
             "DeleteRelationalDatabaseSnapshot" => OperationType::DeleteRelationalDatabaseSnapshot,
+            "DeleteSubdomain" => OperationType::DeleteSubdomain,
             "DetachCertificateFromDistribution" => OperationType::DetachCertificateFromDistribution,
             "DetachDisk" => OperationType::DetachDisk,
             "DetachInstancesFromLoadBalancer" => OperationType::DetachInstancesFromLoadBalancer,
@@ -383,6 +394,7 @@ impl ::std::convert::From<&str> for OperationType {
             "UpdateLoadBalancerAttribute" => OperationType::UpdateLoadBalancerAttribute,
             "UpdateRelationalDatabase" => OperationType::UpdateRelationalDatabase,
             "UpdateRelationalDatabaseParameters" => OperationType::UpdateRelationalDatabaseParameters,
+            "UpdateSubdomainAssociation" => OperationType::UpdateSubdomainAssociation,
             other => OperationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -425,6 +437,7 @@ impl OperationType {
             OperationType::CreateRelationalDatabase => "CreateRelationalDatabase",
             OperationType::CreateRelationalDatabaseFromSnapshot => "CreateRelationalDatabaseFromSnapshot",
             OperationType::CreateRelationalDatabaseSnapshot => "CreateRelationalDatabaseSnapshot",
+            OperationType::CreateSubdomain => "CreateSubdomain",
             OperationType::DeleteAlarm => "DeleteAlarm",
             OperationType::DeleteBucket => "DeleteBucket",
             OperationType::DeleteBucketAccessKey => "DeleteBucketAccessKey",
@@ -444,6 +457,7 @@ impl OperationType {
             OperationType::DeleteLoadBalancerTlsCertificate => "DeleteLoadBalancerTlsCertificate",
             OperationType::DeleteRelationalDatabase => "DeleteRelationalDatabase",
             OperationType::DeleteRelationalDatabaseSnapshot => "DeleteRelationalDatabaseSnapshot",
+            OperationType::DeleteSubdomain => "DeleteSubdomain",
             OperationType::DetachCertificateFromDistribution => "DetachCertificateFromDistribution",
             OperationType::DetachDisk => "DetachDisk",
             OperationType::DetachInstancesFromLoadBalancer => "DetachInstancesFromLoadBalancer",
@@ -482,6 +496,7 @@ impl OperationType {
             OperationType::UpdateLoadBalancerAttribute => "UpdateLoadBalancerAttribute",
             OperationType::UpdateRelationalDatabase => "UpdateRelationalDatabase",
             OperationType::UpdateRelationalDatabaseParameters => "UpdateRelationalDatabaseParameters",
+            OperationType::UpdateSubdomainAssociation => "UpdateSubdomainAssociation",
             OperationType::Unknown(value) => value.as_str(),
         }
     }
@@ -515,6 +530,7 @@ impl OperationType {
             "CreateRelationalDatabase",
             "CreateRelationalDatabaseFromSnapshot",
             "CreateRelationalDatabaseSnapshot",
+            "CreateSubdomain",
             "DeleteAlarm",
             "DeleteBucket",
             "DeleteBucketAccessKey",
@@ -534,6 +550,7 @@ impl OperationType {
             "DeleteLoadBalancerTlsCertificate",
             "DeleteRelationalDatabase",
             "DeleteRelationalDatabaseSnapshot",
+            "DeleteSubdomain",
             "DetachCertificateFromDistribution",
             "DetachDisk",
             "DetachInstancesFromLoadBalancer",
@@ -572,6 +589,7 @@ impl OperationType {
             "UpdateLoadBalancerAttribute",
             "UpdateRelationalDatabase",
             "UpdateRelationalDatabaseParameters",
+            "UpdateSubdomainAssociation",
         ]
     }
 }
@@ -622,6 +640,7 @@ impl ::std::fmt::Display for OperationType {
             OperationType::CreateRelationalDatabase => write!(f, "CreateRelationalDatabase"),
             OperationType::CreateRelationalDatabaseFromSnapshot => write!(f, "CreateRelationalDatabaseFromSnapshot"),
             OperationType::CreateRelationalDatabaseSnapshot => write!(f, "CreateRelationalDatabaseSnapshot"),
+            OperationType::CreateSubdomain => write!(f, "CreateSubdomain"),
             OperationType::DeleteAlarm => write!(f, "DeleteAlarm"),
             OperationType::DeleteBucket => write!(f, "DeleteBucket"),
             OperationType::DeleteBucketAccessKey => write!(f, "DeleteBucketAccessKey"),
@@ -641,6 +660,7 @@ impl ::std::fmt::Display for OperationType {
             OperationType::DeleteLoadBalancerTlsCertificate => write!(f, "DeleteLoadBalancerTlsCertificate"),
             OperationType::DeleteRelationalDatabase => write!(f, "DeleteRelationalDatabase"),
             OperationType::DeleteRelationalDatabaseSnapshot => write!(f, "DeleteRelationalDatabaseSnapshot"),
+            OperationType::DeleteSubdomain => write!(f, "DeleteSubdomain"),
             OperationType::DetachCertificateFromDistribution => write!(f, "DetachCertificateFromDistribution"),
             OperationType::DetachDisk => write!(f, "DetachDisk"),
             OperationType::DetachInstancesFromLoadBalancer => write!(f, "DetachInstancesFromLoadBalancer"),
@@ -679,6 +699,7 @@ impl ::std::fmt::Display for OperationType {
             OperationType::UpdateLoadBalancerAttribute => write!(f, "UpdateLoadBalancerAttribute"),
             OperationType::UpdateRelationalDatabase => write!(f, "UpdateRelationalDatabase"),
             OperationType::UpdateRelationalDatabaseParameters => write!(f, "UpdateRelationalDatabaseParameters"),
+            OperationType::UpdateSubdomainAssociation => write!(f, "UpdateSubdomainAssociation"),
             OperationType::Unknown(value) => write!(f, "{value}"),
         }
     }

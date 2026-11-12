@@ -87,6 +87,17 @@ static UPDATEROUTEROUTPUTINPUT_MEMBER_FABRIC_CONFIGURATION: ::aws_smithy_schema:
     7,
 )
 .with_json_name("fabricConfiguration");
+static UPDATEROUTEROUTPUTINPUT_MEMBER_PROCESSORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconnect.synthetic#UpdateRouterOutputInput$Processors",
+        "com.amazonaws.mediaconnect.synthetic",
+        "UpdateRouterOutputInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Processors",
+    8,
+)
+.with_json_name("processors");
 static UPDATEROUTEROUTPUTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.mediaconnect.synthetic#UpdateRouterOutputInput",
@@ -103,6 +114,7 @@ static UPDATEROUTEROUTPUTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::
         &UPDATEROUTEROUTPUTINPUT_MEMBER_TIER,
         &UPDATEROUTEROUTPUTINPUT_MEMBER_MAINTENANCE_CONFIGURATION,
         &UPDATEROUTEROUTPUTINPUT_MEMBER_FABRIC_CONFIGURATION,
+        &UPDATEROUTEROUTPUTINPUT_MEMBER_PROCESSORS,
     ],
 )
 .with_http(aws_smithy_schema::traits::HttpTrait::new("PUT", "/v1/routerOutput/{Arn}", Some(202)))
@@ -145,6 +157,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::update
         }
         if let Some(ref val) = self.fabric_configuration {
             ser.write_struct(&UPDATEROUTEROUTPUTINPUT_MEMBER_FABRIC_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.processors {
+            ser.write_struct(&UPDATEROUTEROUTPUTINPUT_MEMBER_PROCESSORS, val)?;
         }
         Ok(())
     }
@@ -217,6 +232,13 @@ impl crate::operation::update_router_output::builders::UpdateRouterOutputInputBu
                         deser.read_null()?;
                     } else {
                         self.fabric_configuration = Some(crate::types::FabricConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.processors = Some(crate::types::RouterOutputProcessors::deserialize(deser)?);
                     }
                 }
                 _ => {}

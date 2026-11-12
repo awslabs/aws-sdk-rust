@@ -52,6 +52,8 @@ pub struct CreateSecretInput {
     pub force_overwrite_replica_secret: ::std::option::Option<bool>,
     /// <p>The exact string that identifies the partner that holds the external secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/managed-external-secrets.html">Using Secrets Manager managed external secrets</a>.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of a primary secret in another Amazon Web Services account. Include this field to create a cross-account replica secret that receives replicated data from that primary secret. The primary secret must be in the same Amazon Web Services Region and partition as the replica, and you must specify a customer managed KMS key in <code>KmsKeyId</code>. You can't include <code>SecretString</code>, <code>SecretBinary</code>, <code>Description</code>, <code>AddReplicaRegions</code>, or <code>Type</code>.</p>
+    pub cross_account_primary_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateSecretInput {
     /// <p>The name of the new secret.</p>
@@ -127,6 +129,10 @@ impl CreateSecretInput {
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
+    /// <p>The ARN of a primary secret in another Amazon Web Services account. Include this field to create a cross-account replica secret that receives replicated data from that primary secret. The primary secret must be in the same Amazon Web Services Region and partition as the replica, and you must specify a customer managed KMS key in <code>KmsKeyId</code>. You can't include <code>SecretString</code>, <code>SecretBinary</code>, <code>Description</code>, <code>AddReplicaRegions</code>, or <code>Type</code>.</p>
+    pub fn cross_account_primary_arn(&self) -> ::std::option::Option<&str> {
+        self.cross_account_primary_arn.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateSecretInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -141,6 +147,7 @@ impl ::std::fmt::Debug for CreateSecretInput {
         formatter.field("add_replica_regions", &self.add_replica_regions);
         formatter.field("force_overwrite_replica_secret", &self.force_overwrite_replica_secret);
         formatter.field("r#type", &self.r#type);
+        formatter.field("cross_account_primary_arn", &self.cross_account_primary_arn);
         formatter.finish()
     }
 }
@@ -165,6 +172,7 @@ pub struct CreateSecretInputBuilder {
     pub(crate) add_replica_regions: ::std::option::Option<::std::vec::Vec<crate::types::ReplicaRegionType>>,
     pub(crate) force_overwrite_replica_secret: ::std::option::Option<bool>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) cross_account_primary_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateSecretInputBuilder {
     /// <p>The name of the new secret.</p>
@@ -407,6 +415,20 @@ impl CreateSecretInputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
+    /// <p>The ARN of a primary secret in another Amazon Web Services account. Include this field to create a cross-account replica secret that receives replicated data from that primary secret. The primary secret must be in the same Amazon Web Services Region and partition as the replica, and you must specify a customer managed KMS key in <code>KmsKeyId</code>. You can't include <code>SecretString</code>, <code>SecretBinary</code>, <code>Description</code>, <code>AddReplicaRegions</code>, or <code>Type</code>.</p>
+    pub fn cross_account_primary_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cross_account_primary_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of a primary secret in another Amazon Web Services account. Include this field to create a cross-account replica secret that receives replicated data from that primary secret. The primary secret must be in the same Amazon Web Services Region and partition as the replica, and you must specify a customer managed KMS key in <code>KmsKeyId</code>. You can't include <code>SecretString</code>, <code>SecretBinary</code>, <code>Description</code>, <code>AddReplicaRegions</code>, or <code>Type</code>.</p>
+    pub fn set_cross_account_primary_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cross_account_primary_arn = input;
+        self
+    }
+    /// <p>The ARN of a primary secret in another Amazon Web Services account. Include this field to create a cross-account replica secret that receives replicated data from that primary secret. The primary secret must be in the same Amazon Web Services Region and partition as the replica, and you must specify a customer managed KMS key in <code>KmsKeyId</code>. You can't include <code>SecretString</code>, <code>SecretBinary</code>, <code>Description</code>, <code>AddReplicaRegions</code>, or <code>Type</code>.</p>
+    pub fn get_cross_account_primary_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cross_account_primary_arn
+    }
     /// Consumes the builder and constructs a [`CreateSecretInput`](crate::operation::create_secret::CreateSecretInput).
     pub fn build(
         self,
@@ -422,6 +444,7 @@ impl CreateSecretInputBuilder {
             add_replica_regions: self.add_replica_regions,
             force_overwrite_replica_secret: self.force_overwrite_replica_secret,
             r#type: self.r#type,
+            cross_account_primary_arn: self.cross_account_primary_arn,
         })
     }
 }
@@ -438,6 +461,7 @@ impl ::std::fmt::Debug for CreateSecretInputBuilder {
         formatter.field("add_replica_regions", &self.add_replica_regions);
         formatter.field("force_overwrite_replica_secret", &self.force_overwrite_replica_secret);
         formatter.field("r#type", &self.r#type);
+        formatter.field("cross_account_primary_arn", &self.cross_account_primary_arn);
         formatter.finish()
     }
 }

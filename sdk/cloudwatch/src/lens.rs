@@ -79,6 +79,16 @@ pub(crate) fn reflens_list_managed_insight_rules_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_metric_data_query_definitions_output_output_next_token(
+    input: &crate::operation::list_metric_data_query_definitions::ListMetricDataQueryDefinitionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_metric_streams_output_output_next_token(
     input: &crate::operation::list_metric_streams::ListMetricStreamsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -124,5 +134,12 @@ pub(crate) fn lens_list_dashboards_output_output_dashboard_entries(
     input: crate::operation::list_dashboards::ListDashboardsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DashboardEntry>> {
     let input = input.dashboard_entries?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_metric_data_query_definitions_output_output_items(
+    input: crate::operation::list_metric_data_query_definitions::ListMetricDataQueryDefinitionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQueryDefinitionSummary>> {
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }

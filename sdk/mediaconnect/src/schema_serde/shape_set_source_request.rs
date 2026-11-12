@@ -285,6 +285,17 @@ static SETSOURCEREQUEST_MEMBER_ROUTER_INTEGRATION_TRANSIT_DECRYPTION: ::aws_smit
     22,
 )
 .with_json_name("routerIntegrationTransitDecryption");
+static SETSOURCEREQUEST_MEMBER_RTMP_PUSH_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconnect#SetSourceRequest$RtmpPushSettings",
+        "com.amazonaws.mediaconnect",
+        "SetSourceRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RtmpPushSettings",
+    23,
+)
+.with_json_name("rtmpPushSettings");
 static SETSOURCEREQUEST_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.mediaconnect#SetSourceRequest",
@@ -316,6 +327,7 @@ static SETSOURCEREQUEST_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smi
         &SETSOURCEREQUEST_MEMBER_SOURCE_TAGS,
         &SETSOURCEREQUEST_MEMBER_ROUTER_INTEGRATION_STATE,
         &SETSOURCEREQUEST_MEMBER_ROUTER_INTEGRATION_TRANSIT_DECRYPTION,
+        &SETSOURCEREQUEST_MEMBER_RTMP_PUSH_SETTINGS,
     ],
 );
 impl crate::types::SetSourceRequest {
@@ -417,6 +429,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::SetSourceR
         }
         if let Some(ref val) = self.router_integration_transit_decryption {
             ser.write_struct(&SETSOURCEREQUEST_MEMBER_ROUTER_INTEGRATION_TRANSIT_DECRYPTION, val)?;
+        }
+        if let Some(ref val) = self.rtmp_push_settings {
+            ser.write_struct(&SETSOURCEREQUEST_MEMBER_RTMP_PUSH_SETTINGS, val)?;
         }
         Ok(())
     }
@@ -601,6 +616,13 @@ impl crate::types::builders::SetSourceRequestBuilder {
                         deser.read_null()?;
                     } else {
                         self.router_integration_transit_decryption = Some(crate::types::FlowTransitEncryption::deserialize(deser)?);
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rtmp_push_settings = Some(crate::types::SetRtmpPushSourceSettings::deserialize(deser)?);
                     }
                 }
                 _ => {}

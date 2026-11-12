@@ -121,6 +121,16 @@ static CREATESECRETINPUT_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::a
     "Type",
     9,
 );
+static CREATESECRETINPUT_MEMBER_CROSS_ACCOUNT_PRIMARY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.secretsmanager.synthetic#CreateSecretInput$CrossAccountPrimaryARN",
+        "com.amazonaws.secretsmanager.synthetic",
+        "CreateSecretInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CrossAccountPrimaryARN",
+    10,
+);
 static CREATESECRETINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.secretsmanager.synthetic#CreateSecretInput",
@@ -139,6 +149,7 @@ static CREATESECRETINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_sm
         &CREATESECRETINPUT_MEMBER_ADD_REPLICA_REGIONS,
         &CREATESECRETINPUT_MEMBER_FORCE_OVERWRITE_REPLICA_SECRET,
         &CREATESECRETINPUT_MEMBER_TYPE,
+        &CREATESECRETINPUT_MEMBER_CROSS_ACCOUNT_PRIMARY_ARN,
     ],
 )
 .with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
@@ -202,6 +213,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::create
         }
         if let Some(ref val) = self.r#type {
             ser.write_string(&CREATESECRETINPUT_MEMBER_TYPE, val)?;
+        }
+        if let Some(ref val) = self.cross_account_primary_arn {
+            ser.write_string(&CREATESECRETINPUT_MEMBER_CROSS_ACCOUNT_PRIMARY_ARN, val)?;
         }
         Ok(())
     }
@@ -302,6 +316,13 @@ impl crate::operation::create_secret::builders::CreateSecretInputBuilder {
                         deser.read_null()?;
                     } else {
                         self.r#type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cross_account_primary_arn = Some(deser.read_string(member)?);
                     }
                 }
                 _ => {}

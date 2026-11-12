@@ -12,9 +12,11 @@
 /// ```text
 /// # let statustype = unimplemented!();
 /// match statustype {
+///     StatusType::Detached => { /* ... */ },
 ///     StatusType::Failed => { /* ... */ },
 ///     StatusType::InProgress => { /* ... */ },
 ///     StatusType::InSync => { /* ... */ },
+///     StatusType::Pending => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -44,11 +46,15 @@
 )]
 pub enum StatusType {
     #[allow(missing_docs)] // documentation missing in model
+    Detached,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
     InSync,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -56,9 +62,11 @@ pub enum StatusType {
 impl ::std::convert::From<&str> for StatusType {
     fn from(s: &str) -> Self {
         match s {
+            "Detached" => StatusType::Detached,
             "Failed" => StatusType::Failed,
             "InProgress" => StatusType::InProgress,
             "InSync" => StatusType::InSync,
+            "Pending" => StatusType::Pending,
             other => StatusType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -74,15 +82,17 @@ impl StatusType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            StatusType::Detached => "Detached",
             StatusType::Failed => "Failed",
             StatusType::InProgress => "InProgress",
             StatusType::InSync => "InSync",
+            StatusType::Pending => "Pending",
             StatusType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["Failed", "InProgress", "InSync"]
+        &["Detached", "Failed", "InProgress", "InSync", "Pending"]
     }
 }
 impl ::std::convert::AsRef<str> for StatusType {
@@ -105,9 +115,11 @@ impl StatusType {
 impl ::std::fmt::Display for StatusType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            StatusType::Detached => write!(f, "Detached"),
             StatusType::Failed => write!(f, "Failed"),
             StatusType::InProgress => write!(f, "InProgress"),
             StatusType::InSync => write!(f, "InSync"),
+            StatusType::Pending => write!(f, "Pending"),
             StatusType::Unknown(value) => write!(f, "{value}"),
         }
     }

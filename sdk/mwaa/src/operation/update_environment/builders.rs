@@ -492,4 +492,32 @@ impl UpdateEnvironmentFluentBuilder {
     pub fn get_weekly_maintenance_window_start(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_weekly_maintenance_window_start()
     }
+    /// <p>The Amazon Web Services IAM Identity Center configuration used to authenticate users to the Apache Airflow web UI for your environment.</p>
+    pub fn identity_center_configuration(mut self, input: crate::types::IdentityCenterConfiguration) -> Self {
+        self.inner = self.inner.identity_center_configuration(input);
+        self
+    }
+    /// <p>The Amazon Web Services IAM Identity Center configuration used to authenticate users to the Apache Airflow web UI for your environment.</p>
+    pub fn set_identity_center_configuration(mut self, input: ::std::option::Option<crate::types::IdentityCenterConfiguration>) -> Self {
+        self.inner = self.inner.set_identity_center_configuration(input);
+        self
+    }
+    /// <p>The Amazon Web Services IAM Identity Center configuration used to authenticate users to the Apache Airflow web UI for your environment.</p>
+    pub fn get_identity_center_configuration(&self) -> &::std::option::Option<crate::types::IdentityCenterConfiguration> {
+        self.inner.get_identity_center_configuration()
+    }
+    /// <p>Updates the teams configured for Apache Airflow multi-team support on your Amazon MWAA environment. Use <code>AddOrUpdate</code> to add new teams or change the configuration of existing teams, and <code>Remove</code> to remove teams by name. For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/multi-team-environments.html">Apache Airflow multi-team environments</a>.</p>
+    pub fn teams(mut self, input: crate::types::UpdateTeamsInput) -> Self {
+        self.inner = self.inner.teams(input);
+        self
+    }
+    /// <p>Updates the teams configured for Apache Airflow multi-team support on your Amazon MWAA environment. Use <code>AddOrUpdate</code> to add new teams or change the configuration of existing teams, and <code>Remove</code> to remove teams by name. For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/multi-team-environments.html">Apache Airflow multi-team environments</a>.</p>
+    pub fn set_teams(mut self, input: ::std::option::Option<crate::types::UpdateTeamsInput>) -> Self {
+        self.inner = self.inner.set_teams(input);
+        self
+    }
+    /// <p>Updates the teams configured for Apache Airflow multi-team support on your Amazon MWAA environment. Use <code>AddOrUpdate</code> to add new teams or change the configuration of existing teams, and <code>Remove</code> to remove teams by name. For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/multi-team-environments.html">Apache Airflow multi-team environments</a>.</p>
+    pub fn get_teams(&self) -> &::std::option::Option<crate::types::UpdateTeamsInput> {
+        self.inner.get_teams()
+    }
 }

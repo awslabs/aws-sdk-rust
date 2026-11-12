@@ -262,6 +262,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ocpusLowestScaledValue" => {
+                            builder = builder.set_ocpus_lowest_scaled_value(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i32::try_from)
+                                    .transpose()?,
+                            );
+                        }
                         "provisionableAutonomousContainerDatabases" => {
                             builder = builder.set_provisionable_autonomous_container_databases(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

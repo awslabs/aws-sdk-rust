@@ -51,6 +51,8 @@ pub use crate::types::_usage_statistics::UsageStatisticsBuilder;
 
 pub use crate::types::_coverage_sort_criteria::CoverageSortCriteriaBuilder;
 
+pub use crate::types::_investigation_filter_criteria::InvestigationFilterCriteriaBuilder;
+
 pub use crate::types::_investigation_sort_criteria::InvestigationSortCriteriaBuilder;
 
 pub use crate::types::_list_malware_scans_filter_criteria::ListMalwareScansFilterCriteriaBuilder;
@@ -113,6 +115,10 @@ pub use crate::types::_investigation_metadata::InvestigationMetadataBuilder;
 
 pub use crate::types::_cloud_details::CloudDetailsBuilder;
 
+pub use crate::types::_investigation_summary_data::InvestigationSummaryDataBuilder;
+
+pub use crate::types::_investigation_scope::InvestigationScopeBuilder;
+
 pub use crate::types::_malware_protection_plan_status_reason::MalwareProtectionPlanStatusReasonBuilder;
 
 pub use crate::types::_scanned_resource::ScannedResourceBuilder;
@@ -140,6 +146,8 @@ pub use crate::types::_detection_rule_org_configuration_summary::DetectionRuleOr
 pub use crate::types::_detection_rule_filter::DetectionRuleFilterBuilder;
 
 pub use crate::types::_rule_summary::RuleSummaryBuilder;
+
+pub use crate::types::_investigation_record::InvestigationRecordBuilder;
 
 pub use crate::types::_investigation_summary::InvestigationSummaryBuilder;
 
@@ -207,6 +215,16 @@ pub use crate::types::_severity_statistics::SeverityStatisticsBuilder;
 
 pub use crate::types::_product::ProductBuilder;
 
+pub use crate::types::_threat_assessment::ThreatAssessmentBuilder;
+
+pub use crate::types::_account_analysis::AccountAnalysisBuilder;
+
+pub use crate::types::_organization_analysis::OrganizationAnalysisBuilder;
+
+pub use crate::types::_key_observations::KeyObservationsBuilder;
+
+pub use crate::types::_query_time_window::QueryTimeWindowBuilder;
+
 pub use crate::types::_scanned_resource_details::ScannedResourceDetailsBuilder;
 
 pub use crate::types::_scan_configuration_continuous_scan_details::ScanConfigurationContinuousScanDetailsBuilder;
@@ -228,6 +246,8 @@ pub use crate::types::_usage_resource_result::UsageResourceResultBuilder;
 pub use crate::types::_usage_feature_result::UsageFeatureResultBuilder;
 
 pub use crate::types::_coverage_resource_details::CoverageResourceDetailsBuilder;
+
+pub use crate::types::_investigation_filter_condition::InvestigationFilterConditionBuilder;
 
 pub use crate::types::_list_malware_scans_filter_criterion::ListMalwareScansFilterCriterionBuilder;
 
@@ -303,6 +323,14 @@ pub use crate::types::_detection::DetectionBuilder;
 
 pub use crate::types::_malware_scan_details::MalwareScanDetailsBuilder;
 
+pub use crate::types::_countermeasure::CountermeasureBuilder;
+
+pub use crate::types::_findings_summary::FindingsSummaryBuilder;
+
+pub use crate::types::_organization_findings_summary::OrganizationFindingsSummaryBuilder;
+
+pub use crate::types::_recommendation::RecommendationBuilder;
+
 pub use crate::types::_ebs_snapshot::EbsSnapshotBuilder;
 
 pub use crate::types::_member_features_configuration_result::MemberFeaturesConfigurationResultBuilder;
@@ -324,6 +352,14 @@ pub use crate::types::_coverage_eks_cluster_details::CoverageEksClusterDetailsBu
 pub use crate::types::_coverage_ecs_cluster_details::CoverageEcsClusterDetailsBuilder;
 
 pub use crate::types::_coverage_ec2_instance_details::CoverageEc2InstanceDetailsBuilder;
+
+pub use crate::types::_fetch_record::FetchRecordBuilder;
+
+pub use crate::types::_analysis_record::AnalysisRecordBuilder;
+
+pub use crate::types::_observation_record::ObservationRecordBuilder;
+
+pub use crate::types::_metadata_record::MetadataRecordBuilder;
 
 pub use crate::types::_member_additional_configuration::MemberAdditionalConfigurationBuilder;
 
@@ -377,6 +413,16 @@ pub use crate::types::_sequence::SequenceBuilder;
 
 pub use crate::types::_malware_protection_findings_scan_configuration::MalwareProtectionFindingsScanConfigurationBuilder;
 
+pub use crate::types::_attack_phase::AttackPhaseBuilder;
+
+pub use crate::types::_severity_breakdown::SeverityBreakdownBuilder;
+
+pub use crate::types::_tactic_coverage::TacticCoverageBuilder;
+
+pub use crate::types::_account_affected_resource::AccountAffectedResourceBuilder;
+
+pub use crate::types::_account_summary::AccountSummaryBuilder;
+
 pub use crate::types::_item_details::ItemDetailsBuilder;
 
 pub use crate::types::_scan_condition_pair::ScanConditionPairBuilder;
@@ -390,6 +436,42 @@ pub use crate::types::_fargate_details::FargateDetailsBuilder;
 pub use crate::types::_container_instance_details::ContainerInstanceDetailsBuilder;
 
 pub use crate::types::_agent_details::AgentDetailsBuilder;
+
+pub use crate::types::_fetch_query::FetchQueryBuilder;
+
+pub use crate::types::_fetch_result::FetchResultBuilder;
+
+pub use crate::types::_investigation_threat_assessment::InvestigationThreatAssessmentBuilder;
+
+pub use crate::types::_kubernetes_policy_violation::KubernetesPolicyViolationBuilder;
+
+pub use crate::types::_s3_analysis::S3AnalysisBuilder;
+
+pub use crate::types::_investigation_account_analysis::InvestigationAccountAnalysisBuilder;
+
+pub use crate::types::_finding_detail::FindingDetailBuilder;
+
+pub use crate::types::_investigation_resource::InvestigationResourceBuilder;
+
+pub use crate::types::_network_activity::NetworkActivityBuilder;
+
+pub use crate::types::_rds_login_activity::RdsLoginActivityBuilder;
+
+pub use crate::types::_s3_activity::S3ActivityBuilder;
+
+pub use crate::types::_kubernetes_activity::KubernetesActivityBuilder;
+
+pub use crate::types::_investigation_malware_scan::InvestigationMalwareScanBuilder;
+
+pub use crate::types::_related_findings::RelatedFindingsBuilder;
+
+pub use crate::types::_detection_coverage::DetectionCoverageBuilder;
+
+pub use crate::types::_account_overview::AccountOverviewBuilder;
+
+pub use crate::types::_runtime_signals::RuntimeSignalsBuilder;
+
+pub use crate::types::_distribution::DistributionBuilder;
 
 pub use crate::types::_owner::OwnerBuilder;
 
@@ -437,11 +519,59 @@ pub use crate::types::_anomaly_unusual::AnomalyUnusualBuilder;
 
 pub use crate::types::_threat::ThreatBuilder;
 
+pub use crate::types::_countermeasure_action::CountermeasureActionBuilder;
+
+pub use crate::types::_finding_type_count::FindingTypeCountBuilder;
+
+pub use crate::types::_time_window_group::TimeWindowGroupBuilder;
+
 pub use crate::types::_additional_info::AdditionalInfoBuilder;
 
 pub use crate::types::_member_additional_configuration_result::MemberAdditionalConfigurationResultBuilder;
 
 pub use crate::types::_organization_feature_statistics_additional_configuration::OrganizationFeatureStatisticsAdditionalConfigurationBuilder;
+
+pub use crate::types::_fetch_time_window::FetchTimeWindowBuilder;
+
+pub use crate::types::_finding_type_documentation::FindingTypeDocumentationBuilder;
+
+pub use crate::types::_reputation::ReputationBuilder;
+
+pub use crate::types::_process::ProcessBuilder;
+
+pub use crate::types::_trend::TrendBuilder;
+
+pub use crate::types::_baseline::BaselineBuilder;
+
+pub use crate::types::_investigation_indicator::InvestigationIndicatorBuilder;
+
+pub use crate::types::_activity_window::ActivityWindowBuilder;
+
+pub use crate::types::_investigation_resource_data::InvestigationResourceDataBuilder;
+
+pub use crate::types::_network_ports::NetworkPortsBuilder;
+
+pub use crate::types::_network_traffic::NetworkTrafficBuilder;
+
+pub use crate::types::_network_anomaly::NetworkAnomalyBuilder;
+
+pub use crate::types::_dns_context::DnsContextBuilder;
+
+pub use crate::types::_network_counts::NetworkCountsBuilder;
+
+pub use crate::types::_enrichment::EnrichmentBuilder;
+
+pub use crate::types::_investigation_actor::InvestigationActorBuilder;
+
+pub use crate::types::_kubernetes_api_call::KubernetesApiCallBuilder;
+
+pub use crate::types::_kubernetes_anomaly::KubernetesAnomalyBuilder;
+
+pub use crate::types::_investigation_kubernetes_workload::InvestigationKubernetesWorkloadBuilder;
+
+pub use crate::types::_archive_distribution::ArchiveDistributionBuilder;
+
+pub use crate::types::_representative_finding::RepresentativeFindingBuilder;
 
 pub use crate::types::_permission_configuration::PermissionConfigurationBuilder;
 
@@ -475,6 +605,42 @@ pub use crate::types::_signal::SignalBuilder;
 
 pub use crate::types::_indicator::IndicatorBuilder;
 
+pub use crate::types::_attack::AttackBuilder;
+
+pub use crate::types::_technique_coverage::TechniqueCoverageBuilder;
+
+pub use crate::types::_fetch_criterion::FetchCriterionBuilder;
+
+pub use crate::types::_investigation_detector_feature_configuration::InvestigationDetectorFeatureConfigurationBuilder;
+
+pub use crate::types::_investigation_ec2_instance::InvestigationEc2InstanceBuilder;
+
+pub use crate::types::_lambda_function::LambdaFunctionBuilder;
+
+pub use crate::types::_rds_db_instance::RdsDbInstanceBuilder;
+
+pub use crate::types::_rds_db_user::RdsDbUserBuilder;
+
+pub use crate::types::_investigation_eks_cluster::InvestigationEksClusterBuilder;
+
+pub use crate::types::_investigation_ecs_cluster::InvestigationEcsClusterBuilder;
+
+pub use crate::types::_malware_threat::MalwareThreatBuilder;
+
+pub use crate::types::_correlated_finding::CorrelatedFindingBuilder;
+
+pub use crate::types::_observed_finding_type::ObservedFindingTypeBuilder;
+
+pub use crate::types::_protection_plan::ProtectionPlanBuilder;
+
+pub use crate::types::_member_account_ranking::MemberAccountRankingBuilder;
+
+pub use crate::types::_signal_group::SignalGroupBuilder;
+
+pub use crate::types::_type_distribution::TypeDistributionBuilder;
+
+pub use crate::types::_resource_distribution::ResourceDistributionBuilder;
+
 pub use crate::types::_bucket_level_permissions::BucketLevelPermissionsBuilder;
 
 pub use crate::types::_account_level_permissions::AccountLevelPermissionsBuilder;
@@ -500,6 +666,14 @@ pub use crate::types::_autonomous_system::AutonomousSystemBuilder;
 pub use crate::types::_network_connection::NetworkConnectionBuilder;
 
 pub use crate::types::_item_path::ItemPathBuilder;
+
+pub use crate::types::_threat_reference::ThreatReferenceBuilder;
+
+pub use crate::types::_affected_resource::AffectedResourceBuilder;
+
+pub use crate::types::_finding_reference::FindingReferenceBuilder;
+
+pub use crate::types::_finding_type_classification::FindingTypeClassificationBuilder;
 
 pub use crate::types::_access_control_list::AccessControlListBuilder;
 
@@ -546,6 +720,10 @@ pub use crate::types::_cloudformation_stack::CloudformationStackBuilder;
 pub use crate::types::_bedrock_guardrail_resource::BedrockGuardrailResourceBuilder;
 
 pub use crate::types::_activity::ActivityBuilder;
+
+pub use crate::types::_shared_resource::SharedResourceBuilder;
+
+pub use crate::types::_shared_behavior::SharedBehaviorBuilder;
 
 pub use crate::types::_scan_file_path::ScanFilePathBuilder;
 

@@ -65,6 +65,8 @@ pub struct RouterOutput {
     pub maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
     /// <p>The fabric configuration settings for the router output.</p>
     pub fabric_configuration: ::std::option::Option<crate::types::FabricConfiguration>,
+    /// <p>The processor settings for the router output.</p>
+    pub processors: ::std::option::Option<crate::types::RouterOutputProcessors>,
     /// <p>The Amazon Resource Names (ARNs) of one or more source endpoints that are associated with this router output.</p>
     pub associated_source_endpoint_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -184,6 +186,10 @@ impl RouterOutput {
     pub fn fabric_configuration(&self) -> ::std::option::Option<&crate::types::FabricConfiguration> {
         self.fabric_configuration.as_ref()
     }
+    /// <p>The processor settings for the router output.</p>
+    pub fn processors(&self) -> ::std::option::Option<&crate::types::RouterOutputProcessors> {
+        self.processors.as_ref()
+    }
     /// <p>The Amazon Resource Names (ARNs) of one or more source endpoints that are associated with this router output.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_source_endpoint_arns.is_none()`.
@@ -226,6 +232,7 @@ pub struct RouterOutputBuilder {
     pub(crate) maintenance_schedule_type: ::std::option::Option<crate::types::MaintenanceScheduleType>,
     pub(crate) maintenance_schedule: ::std::option::Option<crate::types::MaintenanceSchedule>,
     pub(crate) fabric_configuration: ::std::option::Option<crate::types::FabricConfiguration>,
+    pub(crate) processors: ::std::option::Option<crate::types::RouterOutputProcessors>,
     pub(crate) associated_source_endpoint_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RouterOutputBuilder {
@@ -634,6 +641,20 @@ impl RouterOutputBuilder {
     pub fn get_fabric_configuration(&self) -> &::std::option::Option<crate::types::FabricConfiguration> {
         &self.fabric_configuration
     }
+    /// <p>The processor settings for the router output.</p>
+    pub fn processors(mut self, input: crate::types::RouterOutputProcessors) -> Self {
+        self.processors = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The processor settings for the router output.</p>
+    pub fn set_processors(mut self, input: ::std::option::Option<crate::types::RouterOutputProcessors>) -> Self {
+        self.processors = input;
+        self
+    }
+    /// <p>The processor settings for the router output.</p>
+    pub fn get_processors(&self) -> &::std::option::Option<crate::types::RouterOutputProcessors> {
+        &self.processors
+    }
     /// Appends an item to `associated_source_endpoint_arns`.
     ///
     /// To override the contents of this collection use [`set_associated_source_endpoint_arns`](Self::set_associated_source_endpoint_arns).
@@ -778,6 +799,7 @@ impl RouterOutputBuilder {
             maintenance_schedule_type: self.maintenance_schedule_type,
             maintenance_schedule: self.maintenance_schedule,
             fabric_configuration: self.fabric_configuration,
+            processors: self.processors,
             associated_source_endpoint_arns: self.associated_source_endpoint_arns,
         })
     }

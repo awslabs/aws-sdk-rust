@@ -20,6 +20,10 @@ pub struct IntegrationAssociationSummary {
     pub source_application_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source.</p>
     pub source_type: ::std::option::Option<crate::types::SourceType>,
+    /// <p>The timestamp when the integration association was last modified.</p>
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon Web Services Region where the integration association was last modified.</p>
+    pub last_modified_region: ::std::option::Option<::std::string::String>,
 }
 impl IntegrationAssociationSummary {
     /// <p>The identifier for the AppIntegration association.</p>
@@ -54,6 +58,14 @@ impl IntegrationAssociationSummary {
     pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
         self.source_type.as_ref()
     }
+    /// <p>The timestamp when the integration association was last modified.</p>
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
+    /// <p>The Amazon Web Services Region where the integration association was last modified.</p>
+    pub fn last_modified_region(&self) -> ::std::option::Option<&str> {
+        self.last_modified_region.as_deref()
+    }
 }
 impl IntegrationAssociationSummary {
     /// Creates a new builder-style object to manufacture [`IntegrationAssociationSummary`](crate::types::IntegrationAssociationSummary).
@@ -74,6 +86,8 @@ pub struct IntegrationAssociationSummaryBuilder {
     pub(crate) source_application_url: ::std::option::Option<::std::string::String>,
     pub(crate) source_application_name: ::std::option::Option<::std::string::String>,
     pub(crate) source_type: ::std::option::Option<crate::types::SourceType>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_modified_region: ::std::option::Option<::std::string::String>,
 }
 impl IntegrationAssociationSummaryBuilder {
     /// <p>The identifier for the AppIntegration association.</p>
@@ -188,6 +202,34 @@ impl IntegrationAssociationSummaryBuilder {
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
         &self.source_type
     }
+    /// <p>The timestamp when the integration association was last modified.</p>
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the integration association was last modified.</p>
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// <p>The timestamp when the integration association was last modified.</p>
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
+    /// <p>The Amazon Web Services Region where the integration association was last modified.</p>
+    pub fn last_modified_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.last_modified_region = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services Region where the integration association was last modified.</p>
+    pub fn set_last_modified_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.last_modified_region = input;
+        self
+    }
+    /// <p>The Amazon Web Services Region where the integration association was last modified.</p>
+    pub fn get_last_modified_region(&self) -> &::std::option::Option<::std::string::String> {
+        &self.last_modified_region
+    }
     /// Consumes the builder and constructs a [`IntegrationAssociationSummary`](crate::types::IntegrationAssociationSummary).
     pub fn build(self) -> crate::types::IntegrationAssociationSummary {
         crate::types::IntegrationAssociationSummary {
@@ -199,6 +241,8 @@ impl IntegrationAssociationSummaryBuilder {
             source_application_url: self.source_application_url,
             source_application_name: self.source_application_name,
             source_type: self.source_type,
+            last_modified_time: self.last_modified_time,
+            last_modified_region: self.last_modified_region,
         }
     }
 }

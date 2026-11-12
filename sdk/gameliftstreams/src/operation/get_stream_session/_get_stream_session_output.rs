@@ -96,6 +96,12 @@ pub struct GetStreamSessionOutput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration for the stream session's virtual monitor.</p>
     pub display_configuration: ::std::option::Option<crate::types::DisplayConfiguration>,
+    /// <p>A timestamp that indicates when the application launched for this stream session. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+    pub application_started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>A timestamp that indicates when streaming started for this stream session, which is when a client connected to the stream session. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+    pub streaming_started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>A timestamp that indicates when streaming ended for this stream session. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+    pub streaming_ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetStreamSessionOutput {
@@ -242,6 +248,18 @@ impl GetStreamSessionOutput {
     pub fn display_configuration(&self) -> ::std::option::Option<&crate::types::DisplayConfiguration> {
         self.display_configuration.as_ref()
     }
+    /// <p>A timestamp that indicates when the application launched for this stream session. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+    pub fn application_started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.application_started_at.as_ref()
+    }
+    /// <p>A timestamp that indicates when streaming started for this stream session, which is when a client connected to the stream session. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+    pub fn streaming_started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.streaming_started_at.as_ref()
+    }
+    /// <p>A timestamp that indicates when streaming ended for this stream session. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+    pub fn streaming_ended_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.streaming_ended_at.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetStreamSessionOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -269,6 +287,9 @@ impl ::std::fmt::Debug for GetStreamSessionOutput {
         formatter.field("export_files_metadata", &self.export_files_metadata);
         formatter.field("role_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("display_configuration", &self.display_configuration);
+        formatter.field("application_started_at", &self.application_started_at);
+        formatter.field("streaming_started_at", &self.streaming_started_at);
+        formatter.field("streaming_ended_at", &self.streaming_ended_at);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -312,6 +333,9 @@ pub struct GetStreamSessionOutputBuilder {
     pub(crate) export_files_metadata: ::std::option::Option<crate::types::ExportFilesMetadata>,
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) display_configuration: ::std::option::Option<crate::types::DisplayConfiguration>,
+    pub(crate) application_started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) streaming_started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) streaming_ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetStreamSessionOutputBuilder {
@@ -799,6 +823,48 @@ impl GetStreamSessionOutputBuilder {
     pub fn get_display_configuration(&self) -> &::std::option::Option<crate::types::DisplayConfiguration> {
         &self.display_configuration
     }
+    /// <p>A timestamp that indicates when the application launched for this stream session. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+    pub fn application_started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.application_started_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A timestamp that indicates when the application launched for this stream session. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+    pub fn set_application_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.application_started_at = input;
+        self
+    }
+    /// <p>A timestamp that indicates when the application launched for this stream session. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+    pub fn get_application_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.application_started_at
+    }
+    /// <p>A timestamp that indicates when streaming started for this stream session, which is when a client connected to the stream session. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+    pub fn streaming_started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.streaming_started_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A timestamp that indicates when streaming started for this stream session, which is when a client connected to the stream session. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+    pub fn set_streaming_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.streaming_started_at = input;
+        self
+    }
+    /// <p>A timestamp that indicates when streaming started for this stream session, which is when a client connected to the stream session. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+    pub fn get_streaming_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.streaming_started_at
+    }
+    /// <p>A timestamp that indicates when streaming ended for this stream session. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+    pub fn streaming_ended_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.streaming_ended_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A timestamp that indicates when streaming ended for this stream session. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+    pub fn set_streaming_ended_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.streaming_ended_at = input;
+        self
+    }
+    /// <p>A timestamp that indicates when streaming ended for this stream session. Timestamps are expressed using in ISO8601 format, such as: <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
+    pub fn get_streaming_ended_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.streaming_ended_at
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -834,6 +900,9 @@ impl GetStreamSessionOutputBuilder {
             export_files_metadata: self.export_files_metadata,
             role_arn: self.role_arn,
             display_configuration: self.display_configuration,
+            application_started_at: self.application_started_at,
+            streaming_started_at: self.streaming_started_at,
+            streaming_ended_at: self.streaming_ended_at,
             _request_id: self._request_id,
         }
     }
@@ -864,6 +933,9 @@ impl ::std::fmt::Debug for GetStreamSessionOutputBuilder {
         formatter.field("export_files_metadata", &self.export_files_metadata);
         formatter.field("role_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("display_configuration", &self.display_configuration);
+        formatter.field("application_started_at", &self.application_started_at);
+        formatter.field("streaming_started_at", &self.streaming_started_at);
+        formatter.field("streaming_ended_at", &self.streaming_ended_at);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

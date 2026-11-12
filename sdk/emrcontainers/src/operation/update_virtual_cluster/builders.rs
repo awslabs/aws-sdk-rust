@@ -122,17 +122,17 @@ impl UpdateVirtualClusterFluentBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_id()
     }
-    /// <p>The scheduler configuration to apply to the virtual cluster. The new configuration fully replaces the existing one. If you omit a field, the corresponding limit is removed.</p>
+    /// <p>The scheduler configuration to apply to the virtual cluster. The new configuration fully replaces the existing one. If you omit <code>maxInQueueJobRuns</code>, the service removes the queue-depth limit. If you omit <code>maxConcurrentJobRuns</code>, the service applies the default limit of 1,000 concurrent job runs.</p>
     pub fn scheduler_configuration(mut self, input: crate::types::SchedulerConfiguration) -> Self {
         self.inner = self.inner.scheduler_configuration(input);
         self
     }
-    /// <p>The scheduler configuration to apply to the virtual cluster. The new configuration fully replaces the existing one. If you omit a field, the corresponding limit is removed.</p>
+    /// <p>The scheduler configuration to apply to the virtual cluster. The new configuration fully replaces the existing one. If you omit <code>maxInQueueJobRuns</code>, the service removes the queue-depth limit. If you omit <code>maxConcurrentJobRuns</code>, the service applies the default limit of 1,000 concurrent job runs.</p>
     pub fn set_scheduler_configuration(mut self, input: ::std::option::Option<crate::types::SchedulerConfiguration>) -> Self {
         self.inner = self.inner.set_scheduler_configuration(input);
         self
     }
-    /// <p>The scheduler configuration to apply to the virtual cluster. The new configuration fully replaces the existing one. If you omit a field, the corresponding limit is removed.</p>
+    /// <p>The scheduler configuration to apply to the virtual cluster. The new configuration fully replaces the existing one. If you omit <code>maxInQueueJobRuns</code>, the service removes the queue-depth limit. If you omit <code>maxConcurrentJobRuns</code>, the service applies the default limit of 1,000 concurrent job runs.</p>
     pub fn get_scheduler_configuration(&self) -> &::std::option::Option<crate::types::SchedulerConfiguration> {
         self.inner.get_scheduler_configuration()
     }

@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`BatchGetSecretValue`](crate::operation::batch_get_secret_value) operation has
-/// a [`Client::batch_get_secret_value`], function which returns a builder for that operation.
+/// For example, the [`AssociateCrossAccountReplica`](crate::operation::associate_cross_account_replica) operation has
+/// a [`Client::associate_cross_account_replica`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.batch_get_secret_value()
-///     .next_token("example")
+/// let result = client.associate_cross_account_replica()
+///     .secret_id("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -177,6 +177,8 @@ impl Client {
     }
 }
 
+mod associate_cross_account_replica;
+
 mod batch_get_secret_value;
 
 mod cancel_rotate_secret;
@@ -194,7 +196,7 @@ mod create_secret;
 /// # let client: aws_sdk_secretsmanager::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.batch_get_secret_value()
+/// let result = client.associate_cross_account_replica()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -216,11 +218,15 @@ mod delete_secret;
 
 mod describe_secret;
 
+mod disassociate_cross_account_replica;
+
 mod get_random_password;
 
 mod get_resource_policy;
 
 mod get_secret_value;
+
+mod list_resource_policies;
 
 mod list_secret_version_ids;
 

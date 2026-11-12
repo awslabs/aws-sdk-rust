@@ -44,6 +44,10 @@ pub struct HubContent {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The last modified time of the hub content.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Information about the user who created the hub content.</p>
+    pub created_by: ::std::option::Option<crate::types::UserContext>,
+    /// <p>Information about the user who last modified the hub content.</p>
+    pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     /// <p>Any tags associated with the hub content.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -132,6 +136,14 @@ impl HubContent {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
+    /// <p>Information about the user who created the hub content.</p>
+    pub fn created_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
+        self.created_by.as_ref()
+    }
+    /// <p>Information about the user who last modified the hub content.</p>
+    pub fn last_modified_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
+        self.last_modified_by.as_ref()
+    }
     /// <p>Any tags associated with the hub content.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
@@ -170,6 +182,8 @@ pub struct HubContentBuilder {
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
+    pub(crate) last_modified_by: ::std::option::Option<crate::types::UserContext>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl HubContentBuilder {
@@ -474,6 +488,34 @@ impl HubContentBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
+    /// <p>Information about the user who created the hub content.</p>
+    pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
+        self.created_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the user who created the hub content.</p>
+    pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
+        self.created_by = input;
+        self
+    }
+    /// <p>Information about the user who created the hub content.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.created_by
+    }
+    /// <p>Information about the user who last modified the hub content.</p>
+    pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
+        self.last_modified_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the user who last modified the hub content.</p>
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
+        self.last_modified_by = input;
+        self
+    }
+    /// <p>Information about the user who last modified the hub content.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.last_modified_by
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -517,6 +559,8 @@ impl HubContentBuilder {
             failure_reason: self.failure_reason,
             creation_time: self.creation_time,
             last_modified_time: self.last_modified_time,
+            created_by: self.created_by,
+            last_modified_by: self.last_modified_by,
             tags: self.tags,
         }
     }

@@ -3,11 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopReplicationToReplicaInput {
-    /// <p>The name of the secret or the replica ARN. The replica ARN is the same as the original primary secret ARN expect the Region is changed to the replica Region.</p>
+    /// <p>The ARN or name of the replica secret.</p>
+    /// <p>For a cross-region replica, the replica ARN is the same as the original primary secret ARN except that the Region is changed to the replica Region. For a cross-account replica, this is the ARN or name of the replica secret in your account.</p>
     pub secret_id: ::std::option::Option<::std::string::String>,
 }
 impl StopReplicationToReplicaInput {
-    /// <p>The name of the secret or the replica ARN. The replica ARN is the same as the original primary secret ARN expect the Region is changed to the replica Region.</p>
+    /// <p>The ARN or name of the replica secret.</p>
+    /// <p>For a cross-region replica, the replica ARN is the same as the original primary secret ARN except that the Region is changed to the replica Region. For a cross-account replica, this is the ARN or name of the replica secret in your account.</p>
     pub fn secret_id(&self) -> ::std::option::Option<&str> {
         self.secret_id.as_deref()
     }
@@ -26,18 +28,21 @@ pub struct StopReplicationToReplicaInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
 }
 impl StopReplicationToReplicaInputBuilder {
-    /// <p>The name of the secret or the replica ARN. The replica ARN is the same as the original primary secret ARN expect the Region is changed to the replica Region.</p>
+    /// <p>The ARN or name of the replica secret.</p>
+    /// <p>For a cross-region replica, the replica ARN is the same as the original primary secret ARN except that the Region is changed to the replica Region. For a cross-account replica, this is the ARN or name of the replica secret in your account.</p>
     /// This field is required.
     pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the secret or the replica ARN. The replica ARN is the same as the original primary secret ARN expect the Region is changed to the replica Region.</p>
+    /// <p>The ARN or name of the replica secret.</p>
+    /// <p>For a cross-region replica, the replica ARN is the same as the original primary secret ARN except that the Region is changed to the replica Region. For a cross-account replica, this is the ARN or name of the replica secret in your account.</p>
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_id = input;
         self
     }
-    /// <p>The name of the secret or the replica ARN. The replica ARN is the same as the original primary secret ARN expect the Region is changed to the replica Region.</p>
+    /// <p>The ARN or name of the replica secret.</p>
+    /// <p>For a cross-region replica, the replica ARN is the same as the original primary secret ARN except that the Region is changed to the replica Region. For a cross-account replica, this is the ARN or name of the replica secret in your account.</p>
     pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_id
     }

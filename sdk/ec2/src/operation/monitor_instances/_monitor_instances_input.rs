@@ -5,6 +5,8 @@
 pub struct MonitorInstancesInput {
     /// <p>The IDs of the instances.</p>
     pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IDs of the metric categories to associate with the instances. The specified metric categories are added to any metric categories that are already associated with the instances.</p>
+    pub metric_category_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
 }
@@ -14,6 +16,12 @@ impl MonitorInstancesInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
     pub fn instance_ids(&self) -> &[::std::string::String] {
         self.instance_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The IDs of the metric categories to associate with the instances. The specified metric categories are added to any metric categories that are already associated with the instances.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_category_ids.is_none()`.
+    pub fn metric_category_ids(&self) -> &[::std::string::String] {
+        self.metric_category_ids.as_deref().unwrap_or_default()
     }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -32,6 +40,7 @@ impl MonitorInstancesInput {
 #[non_exhaustive]
 pub struct MonitorInstancesInputBuilder {
     pub(crate) instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) metric_category_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) dry_run: ::std::option::Option<bool>,
 }
 impl MonitorInstancesInputBuilder {
@@ -55,6 +64,26 @@ impl MonitorInstancesInputBuilder {
     pub fn get_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.instance_ids
     }
+    /// Appends an item to `metric_category_ids`.
+    ///
+    /// To override the contents of this collection use [`set_metric_category_ids`](Self::set_metric_category_ids).
+    ///
+    /// <p>The IDs of the metric categories to associate with the instances. The specified metric categories are added to any metric categories that are already associated with the instances.</p>
+    pub fn metric_category_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.metric_category_ids.unwrap_or_default();
+        v.push(input.into());
+        self.metric_category_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IDs of the metric categories to associate with the instances. The specified metric categories are added to any metric categories that are already associated with the instances.</p>
+    pub fn set_metric_category_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.metric_category_ids = input;
+        self
+    }
+    /// <p>The IDs of the metric categories to associate with the instances. The specified metric categories are added to any metric categories that are already associated with the instances.</p>
+    pub fn get_metric_category_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.metric_category_ids
+    }
     /// <p>Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.dry_run = ::std::option::Option::Some(input);
@@ -75,6 +104,7 @@ impl MonitorInstancesInputBuilder {
     ) -> ::std::result::Result<crate::operation::monitor_instances::MonitorInstancesInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::monitor_instances::MonitorInstancesInput {
             instance_ids: self.instance_ids,
+            metric_category_ids: self.metric_category_ids,
             dry_run: self.dry_run,
         })
     }

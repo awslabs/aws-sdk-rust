@@ -32,6 +32,8 @@ pub struct UpdateRouterOutputInput {
     pub maintenance_configuration: ::std::option::Option<crate::types::MaintenanceConfiguration>,
     /// <p>The updated fabric configuration settings for the router output. You cannot update the fabric configuration while the output has an active route. You must unroute the output before updating the fabric configuration.</p>
     pub fabric_configuration: ::std::option::Option<crate::types::FabricConfiguration>,
+    /// <p>The updated processor settings for the router output. When you update the processors, include every setting that you want to keep. MediaConnect resets the settings that you don't specify to their defaults.</p>
+    pub processors: ::std::option::Option<crate::types::RouterOutputProcessors>,
 }
 impl UpdateRouterOutputInput {
     /// <p>The Amazon Resource Name (ARN) of the router output that you want to update.</p>
@@ -79,6 +81,10 @@ impl UpdateRouterOutputInput {
     pub fn fabric_configuration(&self) -> ::std::option::Option<&crate::types::FabricConfiguration> {
         self.fabric_configuration.as_ref()
     }
+    /// <p>The updated processor settings for the router output. When you update the processors, include every setting that you want to keep. MediaConnect resets the settings that you don't specify to their defaults.</p>
+    pub fn processors(&self) -> ::std::option::Option<&crate::types::RouterOutputProcessors> {
+        self.processors.as_ref()
+    }
 }
 impl UpdateRouterOutputInput {
     /// Creates a new builder-style object to manufacture [`UpdateRouterOutputInput`](crate::operation::update_router_output::UpdateRouterOutputInput).
@@ -99,6 +105,7 @@ pub struct UpdateRouterOutputInputBuilder {
     pub(crate) tier: ::std::option::Option<crate::types::RouterOutputTier>,
     pub(crate) maintenance_configuration: ::std::option::Option<crate::types::MaintenanceConfiguration>,
     pub(crate) fabric_configuration: ::std::option::Option<crate::types::FabricConfiguration>,
+    pub(crate) processors: ::std::option::Option<crate::types::RouterOutputProcessors>,
 }
 impl UpdateRouterOutputInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the router output that you want to update.</p>
@@ -253,6 +260,20 @@ impl UpdateRouterOutputInputBuilder {
     pub fn get_fabric_configuration(&self) -> &::std::option::Option<crate::types::FabricConfiguration> {
         &self.fabric_configuration
     }
+    /// <p>The updated processor settings for the router output. When you update the processors, include every setting that you want to keep. MediaConnect resets the settings that you don't specify to their defaults.</p>
+    pub fn processors(mut self, input: crate::types::RouterOutputProcessors) -> Self {
+        self.processors = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated processor settings for the router output. When you update the processors, include every setting that you want to keep. MediaConnect resets the settings that you don't specify to their defaults.</p>
+    pub fn set_processors(mut self, input: ::std::option::Option<crate::types::RouterOutputProcessors>) -> Self {
+        self.processors = input;
+        self
+    }
+    /// <p>The updated processor settings for the router output. When you update the processors, include every setting that you want to keep. MediaConnect resets the settings that you don't specify to their defaults.</p>
+    pub fn get_processors(&self) -> &::std::option::Option<crate::types::RouterOutputProcessors> {
+        &self.processors
+    }
     /// Consumes the builder and constructs a [`UpdateRouterOutputInput`](crate::operation::update_router_output::UpdateRouterOutputInput).
     pub fn build(
         self,
@@ -267,6 +288,7 @@ impl UpdateRouterOutputInputBuilder {
             tier: self.tier,
             maintenance_configuration: self.maintenance_configuration,
             fabric_configuration: self.fabric_configuration,
+            processors: self.processors,
         })
     }
 }

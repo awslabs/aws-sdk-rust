@@ -81,6 +81,26 @@ static INTEGRATIONASSOCIATIONSUMMARY_MEMBER_SOURCE_TYPE: ::aws_smithy_schema::Sc
     "SourceType",
     7,
 );
+static INTEGRATIONASSOCIATIONSUMMARY_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.connect#IntegrationAssociationSummary$LastModifiedTime",
+        "com.amazonaws.connect",
+        "IntegrationAssociationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "LastModifiedTime",
+    8,
+);
+static INTEGRATIONASSOCIATIONSUMMARY_MEMBER_LAST_MODIFIED_REGION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.connect#IntegrationAssociationSummary$LastModifiedRegion",
+        "com.amazonaws.connect",
+        "IntegrationAssociationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "LastModifiedRegion",
+    9,
+);
 static INTEGRATIONASSOCIATIONSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.connect#IntegrationAssociationSummary",
@@ -97,6 +117,8 @@ static INTEGRATIONASSOCIATIONSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static
         &INTEGRATIONASSOCIATIONSUMMARY_MEMBER_SOURCE_APPLICATION_URL,
         &INTEGRATIONASSOCIATIONSUMMARY_MEMBER_SOURCE_APPLICATION_NAME,
         &INTEGRATIONASSOCIATIONSUMMARY_MEMBER_SOURCE_TYPE,
+        &INTEGRATIONASSOCIATIONSUMMARY_MEMBER_LAST_MODIFIED_TIME,
+        &INTEGRATIONASSOCIATIONSUMMARY_MEMBER_LAST_MODIFIED_REGION,
     ],
 );
 impl crate::types::IntegrationAssociationSummary {
@@ -136,6 +158,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Integratio
         }
         if let Some(ref val) = self.source_type {
             ser.write_string(&INTEGRATIONASSOCIATIONSUMMARY_MEMBER_SOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.last_modified_time {
+            ser.write_timestamp(&INTEGRATIONASSOCIATIONSUMMARY_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.last_modified_region {
+            ser.write_string(&INTEGRATIONASSOCIATIONSUMMARY_MEMBER_LAST_MODIFIED_REGION, val)?;
         }
         Ok(())
     }
@@ -208,6 +236,20 @@ impl crate::types::builders::IntegrationAssociationSummaryBuilder {
                         deser.read_null()?;
                     } else {
                         self.source_type = Some(crate::types::SourceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_region = Some(deser.read_string(member)?);
                     }
                 }
                 _ => {}

@@ -43,6 +43,8 @@ pub(crate) mod shape_create_key_signing_key;
 
 pub(crate) mod shape_create_query_logging_config;
 
+pub(crate) mod shape_create_resource_record_set_protections;
+
 pub(crate) mod shape_create_reusable_delegation_set;
 
 pub(crate) mod shape_create_traffic_policy;
@@ -64,6 +66,8 @@ pub(crate) mod shape_delete_hosted_zone;
 pub(crate) mod shape_delete_key_signing_key;
 
 pub(crate) mod shape_delete_query_logging_config;
+
+pub(crate) mod shape_delete_resource_record_set_protections;
 
 pub(crate) mod shape_delete_reusable_delegation_set;
 
@@ -132,6 +136,8 @@ pub(crate) mod shape_list_hosted_zones_by_name;
 pub(crate) mod shape_list_hosted_zones_by_vpc;
 
 pub(crate) mod shape_list_query_logging_configs;
+
+pub(crate) mod shape_list_resource_record_set_protections;
 
 pub(crate) mod shape_list_resource_record_sets;
 
@@ -207,6 +213,8 @@ pub(crate) mod shape_create_query_logging_config_input;
 
 pub(crate) mod shape_create_query_logging_config_output;
 
+pub(crate) mod shape_create_resource_record_set_protections_input;
+
 pub(crate) mod shape_create_reusable_delegation_set_input;
 
 pub(crate) mod shape_create_reusable_delegation_set_output;
@@ -234,6 +242,8 @@ pub(crate) mod shape_delegation_set_in_use;
 pub(crate) mod shape_delegation_set_not_available;
 
 pub(crate) mod shape_delegation_set_not_reusable;
+
+pub(crate) mod shape_delete_resource_record_set_protections_input;
 
 pub(crate) mod shape_delete_vpc_association_authorization_input;
 
@@ -276,6 +286,8 @@ pub(crate) mod shape_invalid_key_signing_key_status;
 pub(crate) mod shape_invalid_kms_arn;
 
 pub(crate) mod shape_invalid_pagination_token;
+
+pub(crate) mod shape_invalid_resource_record_set_protection_batch;
 
 pub(crate) mod shape_invalid_signing_status;
 
@@ -324,6 +336,8 @@ pub(crate) mod shape_no_such_traffic_policy_instance;
 pub(crate) mod shape_not_authorized_exception;
 
 pub(crate) mod shape_prior_request_not_complete;
+
+pub(crate) mod shape_protection_already_exists;
 
 pub(crate) mod shape_public_zone_vpc_association;
 
@@ -419,11 +433,19 @@ pub(crate) mod shape_key_signing_keys;
 
 pub(crate) mod shape_location_summaries;
 
+pub(crate) mod shape_protection_errors;
+
 pub(crate) mod shape_query_logging_config;
 
 pub(crate) mod shape_query_logging_configs;
 
 pub(crate) mod shape_record_data;
+
+pub(crate) mod shape_resource_record_set_protection_config;
+
+pub(crate) mod shape_resource_record_set_protection_key;
+
+pub(crate) mod shape_resource_record_set_protections;
 
 pub(crate) mod shape_resource_record_sets;
 
@@ -469,7 +491,11 @@ pub(crate) mod shape_linked_service;
 
 pub(crate) mod shape_location_summary;
 
+pub(crate) mod shape_protection_error;
+
 pub(crate) mod shape_resource_record_set;
+
+pub(crate) mod shape_resource_record_set_protection;
 
 pub(crate) mod shape_tag_list;
 

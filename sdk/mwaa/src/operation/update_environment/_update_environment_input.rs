@@ -65,6 +65,10 @@ pub struct UpdateEnvironmentInput {
     pub webserver_access_mode: ::std::option::Option<crate::types::WebserverAccessMode>,
     /// <p>The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only.</p>
     pub weekly_maintenance_window_start: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Web Services IAM Identity Center configuration used to authenticate users to the Apache Airflow web UI for your environment.</p>
+    pub identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfiguration>,
+    /// <p>Updates the teams configured for Apache Airflow multi-team support on your Amazon MWAA environment. Use <code>AddOrUpdate</code> to add new teams or change the configuration of existing teams, and <code>Remove</code> to remove teams by name. For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/multi-team-environments.html">Apache Airflow multi-team environments</a>.</p>
+    pub teams: ::std::option::Option<crate::types::UpdateTeamsInput>,
 }
 impl UpdateEnvironmentInput {
     /// <p>The name of your Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
@@ -175,6 +179,14 @@ impl UpdateEnvironmentInput {
     pub fn weekly_maintenance_window_start(&self) -> ::std::option::Option<&str> {
         self.weekly_maintenance_window_start.as_deref()
     }
+    /// <p>The Amazon Web Services IAM Identity Center configuration used to authenticate users to the Apache Airflow web UI for your environment.</p>
+    pub fn identity_center_configuration(&self) -> ::std::option::Option<&crate::types::IdentityCenterConfiguration> {
+        self.identity_center_configuration.as_ref()
+    }
+    /// <p>Updates the teams configured for Apache Airflow multi-team support on your Amazon MWAA environment. Use <code>AddOrUpdate</code> to add new teams or change the configuration of existing teams, and <code>Remove</code> to remove teams by name. For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/multi-team-environments.html">Apache Airflow multi-team environments</a>.</p>
+    pub fn teams(&self) -> ::std::option::Option<&crate::types::UpdateTeamsInput> {
+        self.teams.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateEnvironmentInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -202,6 +214,8 @@ impl ::std::fmt::Debug for UpdateEnvironmentInput {
         formatter.field("startup_script_s3_object_version", &self.startup_script_s3_object_version);
         formatter.field("webserver_access_mode", &self.webserver_access_mode);
         formatter.field("weekly_maintenance_window_start", &self.weekly_maintenance_window_start);
+        formatter.field("identity_center_configuration", &self.identity_center_configuration);
+        formatter.field("teams", &self.teams);
         formatter.finish()
     }
 }
@@ -239,6 +253,8 @@ pub struct UpdateEnvironmentInputBuilder {
     pub(crate) startup_script_s3_object_version: ::std::option::Option<::std::string::String>,
     pub(crate) webserver_access_mode: ::std::option::Option<crate::types::WebserverAccessMode>,
     pub(crate) weekly_maintenance_window_start: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfiguration>,
+    pub(crate) teams: ::std::option::Option<crate::types::UpdateTeamsInput>,
 }
 impl UpdateEnvironmentInputBuilder {
     /// <p>The name of your Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
@@ -627,6 +643,34 @@ impl UpdateEnvironmentInputBuilder {
     pub fn get_weekly_maintenance_window_start(&self) -> &::std::option::Option<::std::string::String> {
         &self.weekly_maintenance_window_start
     }
+    /// <p>The Amazon Web Services IAM Identity Center configuration used to authenticate users to the Apache Airflow web UI for your environment.</p>
+    pub fn identity_center_configuration(mut self, input: crate::types::IdentityCenterConfiguration) -> Self {
+        self.identity_center_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon Web Services IAM Identity Center configuration used to authenticate users to the Apache Airflow web UI for your environment.</p>
+    pub fn set_identity_center_configuration(mut self, input: ::std::option::Option<crate::types::IdentityCenterConfiguration>) -> Self {
+        self.identity_center_configuration = input;
+        self
+    }
+    /// <p>The Amazon Web Services IAM Identity Center configuration used to authenticate users to the Apache Airflow web UI for your environment.</p>
+    pub fn get_identity_center_configuration(&self) -> &::std::option::Option<crate::types::IdentityCenterConfiguration> {
+        &self.identity_center_configuration
+    }
+    /// <p>Updates the teams configured for Apache Airflow multi-team support on your Amazon MWAA environment. Use <code>AddOrUpdate</code> to add new teams or change the configuration of existing teams, and <code>Remove</code> to remove teams by name. For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/multi-team-environments.html">Apache Airflow multi-team environments</a>.</p>
+    pub fn teams(mut self, input: crate::types::UpdateTeamsInput) -> Self {
+        self.teams = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Updates the teams configured for Apache Airflow multi-team support on your Amazon MWAA environment. Use <code>AddOrUpdate</code> to add new teams or change the configuration of existing teams, and <code>Remove</code> to remove teams by name. For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/multi-team-environments.html">Apache Airflow multi-team environments</a>.</p>
+    pub fn set_teams(mut self, input: ::std::option::Option<crate::types::UpdateTeamsInput>) -> Self {
+        self.teams = input;
+        self
+    }
+    /// <p>Updates the teams configured for Apache Airflow multi-team support on your Amazon MWAA environment. Use <code>AddOrUpdate</code> to add new teams or change the configuration of existing teams, and <code>Remove</code> to remove teams by name. For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/multi-team-environments.html">Apache Airflow multi-team environments</a>.</p>
+    pub fn get_teams(&self) -> &::std::option::Option<crate::types::UpdateTeamsInput> {
+        &self.teams
+    }
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
     pub fn build(
         self,
@@ -655,6 +699,8 @@ impl UpdateEnvironmentInputBuilder {
             startup_script_s3_object_version: self.startup_script_s3_object_version,
             webserver_access_mode: self.webserver_access_mode,
             weekly_maintenance_window_start: self.weekly_maintenance_window_start,
+            identity_center_configuration: self.identity_center_configuration,
+            teams: self.teams,
         })
     }
 }
@@ -684,6 +730,8 @@ impl ::std::fmt::Debug for UpdateEnvironmentInputBuilder {
         formatter.field("startup_script_s3_object_version", &self.startup_script_s3_object_version);
         formatter.field("webserver_access_mode", &self.webserver_access_mode);
         formatter.field("weekly_maintenance_window_start", &self.weekly_maintenance_window_start);
+        formatter.field("identity_center_configuration", &self.identity_center_configuration);
+        formatter.field("teams", &self.teams);
         formatter.finish()
     }
 }

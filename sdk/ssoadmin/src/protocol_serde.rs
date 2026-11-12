@@ -409,6 +409,8 @@ pub(crate) mod shape_list_application_assignments_filter;
 
 pub(crate) mod shape_list_applications_filter;
 
+pub(crate) mod shape_network_configuration_info;
+
 pub(crate) mod shape_operation_status_filter;
 
 pub(crate) mod shape_permission_set;
@@ -455,6 +457,8 @@ pub(crate) mod shape_account_assignment_operation_status_metadata;
 
 pub(crate) mod shape_application;
 
+pub(crate) mod shape_application_arn_list;
+
 pub(crate) mod shape_application_assignment;
 
 pub(crate) mod shape_application_assignment_for_principal;
@@ -472,6 +476,8 @@ pub(crate) mod shape_grant_item;
 pub(crate) mod shape_iam_authentication_method;
 
 pub(crate) mod shape_instance_metadata;
+
+pub(crate) mod shape_ip_cidr_list;
 
 pub(crate) mod shape_jwt_bearer_grant;
 
@@ -494,6 +500,8 @@ pub(crate) mod shape_sign_in_options;
 pub(crate) mod shape_token_exchange_grant;
 
 pub(crate) mod shape_trusted_token_issuer_metadata;
+
+pub(crate) mod shape_vpc_arn_list;
 
 pub(crate) mod shape_access_control_attribute_value;
 

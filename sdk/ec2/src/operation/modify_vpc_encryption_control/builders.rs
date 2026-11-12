@@ -269,4 +269,32 @@ impl ModifyVpcEncryptionControlFluentBuilder {
     pub fn get_elastic_file_system_exclusion(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput> {
         self.inner.get_elastic_file_system_exclusion()
     }
+    /// <p>Specifies whether to exclude AWS Global Accelerator traffic from encryption enforcement.</p>
+    pub fn global_accelerator_exclusion(mut self, input: crate::types::VpcEncryptionControlExclusionStateInput) -> Self {
+        self.inner = self.inner.global_accelerator_exclusion(input);
+        self
+    }
+    /// <p>Specifies whether to exclude AWS Global Accelerator traffic from encryption enforcement.</p>
+    pub fn set_global_accelerator_exclusion(mut self, input: ::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput>) -> Self {
+        self.inner = self.inner.set_global_accelerator_exclusion(input);
+        self
+    }
+    /// <p>Specifies whether to exclude AWS Global Accelerator traffic from encryption enforcement.</p>
+    pub fn get_global_accelerator_exclusion(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput> {
+        self.inner.get_global_accelerator_exclusion()
+    }
+    /// <p>Specifies whether to exclude Amazon API Gateway V2 traffic from encryption enforcement.</p>
+    pub fn api_gateway_v2_exclusion(mut self, input: crate::types::VpcEncryptionControlExclusionStateInput) -> Self {
+        self.inner = self.inner.api_gateway_v2_exclusion(input);
+        self
+    }
+    /// <p>Specifies whether to exclude Amazon API Gateway V2 traffic from encryption enforcement.</p>
+    pub fn set_api_gateway_v2_exclusion(mut self, input: ::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput>) -> Self {
+        self.inner = self.inner.set_api_gateway_v2_exclusion(input);
+        self
+    }
+    /// <p>Specifies whether to exclude Amazon API Gateway V2 traffic from encryption enforcement.</p>
+    pub fn get_api_gateway_v2_exclusion(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput> {
+        self.inner.get_api_gateway_v2_exclusion()
+    }
 }

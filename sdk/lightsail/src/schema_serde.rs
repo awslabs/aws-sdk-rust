@@ -75,6 +75,10 @@ pub(crate) mod shape_certificate;
 
 pub(crate) mod shape_certificate_summary;
 
+pub(crate) mod shape_check_subdomain_availability_input_input;
+
+pub(crate) mod shape_check_subdomain_availability_output_output;
+
 pub(crate) mod shape_close_instance_public_ports_input_input;
 
 pub(crate) mod shape_close_instance_public_ports_output_output;
@@ -215,6 +219,10 @@ pub(crate) mod shape_create_relational_database_snapshot_input_input;
 
 pub(crate) mod shape_create_relational_database_snapshot_output_output;
 
+pub(crate) mod shape_create_subdomain_input_input;
+
+pub(crate) mod shape_create_subdomain_output_output;
+
 pub(crate) mod shape_delete_alarm_input_input;
 
 pub(crate) mod shape_delete_alarm_output_output;
@@ -298,6 +306,10 @@ pub(crate) mod shape_delete_relational_database_output_output;
 pub(crate) mod shape_delete_relational_database_snapshot_input_input;
 
 pub(crate) mod shape_delete_relational_database_snapshot_output_output;
+
+pub(crate) mod shape_delete_subdomain_input_input;
+
+pub(crate) mod shape_delete_subdomain_output_output;
 
 pub(crate) mod shape_destination_info;
 
@@ -627,6 +639,10 @@ pub(crate) mod shape_get_static_ips_input_input;
 
 pub(crate) mod shape_get_static_ips_output_output;
 
+pub(crate) mod shape_get_subdomains_input_input;
+
+pub(crate) mod shape_get_subdomains_output_output;
+
 pub(crate) mod shape_header_object;
 
 pub(crate) mod shape_host_key_attributes;
@@ -676,6 +692,8 @@ pub(crate) mod shape_is_vpc_peered_output_output;
 pub(crate) mod shape_key_pair;
 
 pub(crate) mod shape_lightsail_distribution;
+
+pub(crate) mod shape_lightsail_distribution_subdomain;
 
 pub(crate) mod shape_load_balancer;
 
@@ -853,6 +871,10 @@ pub(crate) mod shape_stop_relational_database_input_input;
 
 pub(crate) mod shape_stop_relational_database_output_output;
 
+pub(crate) mod shape_subdomain;
+
+pub(crate) mod shape_subdomain_attachable_resource;
+
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_resource_input_input;
@@ -914,6 +936,10 @@ pub(crate) mod shape_update_relational_database_output_output;
 pub(crate) mod shape_update_relational_database_parameters_input_input;
 
 pub(crate) mod shape_update_relational_database_parameters_output_output;
+
+pub(crate) mod shape_update_subdomain_association_input_input;
+
+pub(crate) mod shape_update_subdomain_association_output_output;
 
 pub(crate) mod shape_waf_acfp_config;
 

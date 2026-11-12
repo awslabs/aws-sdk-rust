@@ -19,6 +19,16 @@ static PUTRESOURCEPOLICYINPUT_MEMBER_RESOURCE_POLICY: ::aws_smithy_schema::Schem
     "ResourcePolicy",
     1,
 );
+static PUTRESOURCEPOLICYINPUT_MEMBER_POLICY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.secretsmanager.synthetic#PutResourcePolicyInput$PolicyName",
+        "com.amazonaws.secretsmanager.synthetic",
+        "PutResourcePolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PolicyName",
+    2,
+);
 static PUTRESOURCEPOLICYINPUT_MEMBER_BLOCK_PUBLIC_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.secretsmanager.synthetic#PutResourcePolicyInput$BlockPublicPolicy",
@@ -27,7 +37,7 @@ static PUTRESOURCEPOLICYINPUT_MEMBER_BLOCK_PUBLIC_POLICY: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::Boolean,
     "BlockPublicPolicy",
-    2,
+    3,
 );
 static PUTRESOURCEPOLICYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -39,6 +49,7 @@ static PUTRESOURCEPOLICYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::a
     &[
         &PUTRESOURCEPOLICYINPUT_MEMBER_SECRET_ID,
         &PUTRESOURCEPOLICYINPUT_MEMBER_RESOURCE_POLICY,
+        &PUTRESOURCEPOLICYINPUT_MEMBER_POLICY_NAME,
         &PUTRESOURCEPOLICYINPUT_MEMBER_BLOCK_PUBLIC_POLICY,
     ],
 )
@@ -63,6 +74,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::put_re
         }
         if let Some(ref val) = self.resource_policy {
             ser.write_string(&PUTRESOURCEPOLICYINPUT_MEMBER_RESOURCE_POLICY, val)?;
+        }
+        if let Some(ref val) = self.policy_name {
+            ser.write_string(&PUTRESOURCEPOLICYINPUT_MEMBER_POLICY_NAME, val)?;
         }
         if let Some(ref val) = self.block_public_policy {
             ser.write_boolean(&PUTRESOURCEPOLICYINPUT_MEMBER_BLOCK_PUBLIC_POLICY, *val)?;
@@ -99,6 +113,13 @@ impl crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuil
                     }
                 }
                 Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.policy_name = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

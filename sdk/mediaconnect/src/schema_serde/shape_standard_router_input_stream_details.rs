@@ -10,6 +10,17 @@ static STANDARDROUTERINPUTSTREAMDETAILS_MEMBER_SOURCE_IP_ADDRESS: ::aws_smithy_s
     0,
 )
 .with_json_name("sourceIpAddress");
+static STANDARDROUTERINPUTSTREAMDETAILS_MEMBER_RTMP_PUSH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconnect#StandardRouterInputStreamDetails$RtmpPush",
+        "com.amazonaws.mediaconnect",
+        "StandardRouterInputStreamDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RtmpPush",
+    1,
+)
+.with_json_name("rtmpPush");
 static STANDARDROUTERINPUTSTREAMDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.mediaconnect#StandardRouterInputStreamDetails",
@@ -17,7 +28,10 @@ static STANDARDROUTERINPUTSTREAMDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'sta
         "StandardRouterInputStreamDetails",
     ),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&STANDARDROUTERINPUTSTREAMDETAILS_MEMBER_SOURCE_IP_ADDRESS],
+    &[
+        &STANDARDROUTERINPUTSTREAMDETAILS_MEMBER_SOURCE_IP_ADDRESS,
+        &STANDARDROUTERINPUTSTREAMDETAILS_MEMBER_RTMP_PUSH,
+    ],
 );
 impl crate::types::StandardRouterInputStreamDetails {
     /// The schema for this shape.
@@ -35,6 +49,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::StandardRo
     ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
         if let Some(ref val) = self.source_ip_address {
             ser.write_string(&STANDARDROUTERINPUTSTREAMDETAILS_MEMBER_SOURCE_IP_ADDRESS, val)?;
+        }
+        if let Some(ref val) = self.rtmp_push {
+            ser.write_struct(&STANDARDROUTERINPUTSTREAMDETAILS_MEMBER_RTMP_PUSH, val)?;
         }
         Ok(())
     }
@@ -58,6 +75,13 @@ impl crate::types::builders::StandardRouterInputStreamDetailsBuilder {
                         deser.read_null()?;
                     } else {
                         self.source_ip_address = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rtmp_push = Some(crate::types::RtmpPushStreamDetails::deserialize(deser)?);
                     }
                 }
                 _ => {}

@@ -345,6 +345,8 @@ impl PutScalingPolicyFluentBuilder {
     /// <li>
     /// <p><code>ASGAverageCPUUtilization</code></p></li>
     /// <li>
+    /// <p><code>ASGAverageCPUUtilizationHighResolution</code></p></li>
+    /// <li>
     /// <p><code>ASGAverageNetworkIn</code></p></li>
     /// <li>
     /// <p><code>ASGAverageNetworkOut</code></p></li>
@@ -364,6 +366,8 @@ impl PutScalingPolicyFluentBuilder {
     /// <li>
     /// <p><code>ASGAverageCPUUtilization</code></p></li>
     /// <li>
+    /// <p><code>ASGAverageCPUUtilizationHighResolution</code></p></li>
+    /// <li>
     /// <p><code>ASGAverageNetworkIn</code></p></li>
     /// <li>
     /// <p><code>ASGAverageNetworkOut</code></p></li>
@@ -382,6 +386,8 @@ impl PutScalingPolicyFluentBuilder {
     /// <ul>
     /// <li>
     /// <p><code>ASGAverageCPUUtilization</code></p></li>
+    /// <li>
+    /// <p><code>ASGAverageCPUUtilizationHighResolution</code></p></li>
     /// <li>
     /// <p><code>ASGAverageNetworkIn</code></p></li>
     /// <li>

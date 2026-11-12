@@ -14,6 +14,7 @@
 /// match metrictype {
 ///     MetricType::AlbRequestCountPerTarget => { /* ... */ },
 ///     MetricType::AsgAverageCpuUtilization => { /* ... */ },
+///     MetricType::AsgAverageCpuUtilizationHighResolution => { /* ... */ },
 ///     MetricType::AsgAverageNetworkIn => { /* ... */ },
 ///     MetricType::AsgAverageNetworkOut => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -49,6 +50,8 @@ pub enum MetricType {
     #[allow(missing_docs)] // documentation missing in model
     AsgAverageCpuUtilization,
     #[allow(missing_docs)] // documentation missing in model
+    AsgAverageCpuUtilizationHighResolution,
+    #[allow(missing_docs)] // documentation missing in model
     AsgAverageNetworkIn,
     #[allow(missing_docs)] // documentation missing in model
     AsgAverageNetworkOut,
@@ -61,6 +64,7 @@ impl ::std::convert::From<&str> for MetricType {
         match s {
             "ALBRequestCountPerTarget" => MetricType::AlbRequestCountPerTarget,
             "ASGAverageCPUUtilization" => MetricType::AsgAverageCpuUtilization,
+            "ASGAverageCPUUtilizationHighResolution" => MetricType::AsgAverageCpuUtilizationHighResolution,
             "ASGAverageNetworkIn" => MetricType::AsgAverageNetworkIn,
             "ASGAverageNetworkOut" => MetricType::AsgAverageNetworkOut,
             other => MetricType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -80,6 +84,7 @@ impl MetricType {
         match self {
             MetricType::AlbRequestCountPerTarget => "ALBRequestCountPerTarget",
             MetricType::AsgAverageCpuUtilization => "ASGAverageCPUUtilization",
+            MetricType::AsgAverageCpuUtilizationHighResolution => "ASGAverageCPUUtilizationHighResolution",
             MetricType::AsgAverageNetworkIn => "ASGAverageNetworkIn",
             MetricType::AsgAverageNetworkOut => "ASGAverageNetworkOut",
             MetricType::Unknown(value) => value.as_str(),
@@ -90,6 +95,7 @@ impl MetricType {
         &[
             "ALBRequestCountPerTarget",
             "ASGAverageCPUUtilization",
+            "ASGAverageCPUUtilizationHighResolution",
             "ASGAverageNetworkIn",
             "ASGAverageNetworkOut",
         ]
@@ -117,6 +123,7 @@ impl ::std::fmt::Display for MetricType {
         match self {
             MetricType::AlbRequestCountPerTarget => write!(f, "ALBRequestCountPerTarget"),
             MetricType::AsgAverageCpuUtilization => write!(f, "ASGAverageCPUUtilization"),
+            MetricType::AsgAverageCpuUtilizationHighResolution => write!(f, "ASGAverageCPUUtilizationHighResolution"),
             MetricType::AsgAverageNetworkIn => write!(f, "ASGAverageNetworkIn"),
             MetricType::AsgAverageNetworkOut => write!(f, "ASGAverageNetworkOut"),
             MetricType::Unknown(value) => write!(f, "{value}"),

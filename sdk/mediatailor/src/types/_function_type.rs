@@ -15,6 +15,7 @@
 ///     FunctionType::AwsServiceRequest => { /* ... */ },
 ///     FunctionType::ConcurrentExecutor => { /* ... */ },
 ///     FunctionType::CustomOutput => { /* ... */ },
+///     FunctionType::HlsTagProcessor => { /* ... */ },
 ///     FunctionType::HttpRequest => { /* ... */ },
 ///     FunctionType::SequentialExecutor => { /* ... */ },
 ///     FunctionType::VastRequest => { /* ... */ },
@@ -53,6 +54,8 @@ pub enum FunctionType {
     #[allow(missing_docs)] // documentation missing in model
     CustomOutput,
     #[allow(missing_docs)] // documentation missing in model
+    HlsTagProcessor,
+    #[allow(missing_docs)] // documentation missing in model
     HttpRequest,
     #[allow(missing_docs)] // documentation missing in model
     SequentialExecutor,
@@ -68,6 +71,7 @@ impl ::std::convert::From<&str> for FunctionType {
             "AWS_SERVICE_REQUEST" => FunctionType::AwsServiceRequest,
             "CONCURRENT_EXECUTOR" => FunctionType::ConcurrentExecutor,
             "CUSTOM_OUTPUT" => FunctionType::CustomOutput,
+            "HLS_TAG_PROCESSOR" => FunctionType::HlsTagProcessor,
             "HTTP_REQUEST" => FunctionType::HttpRequest,
             "SEQUENTIAL_EXECUTOR" => FunctionType::SequentialExecutor,
             "VAST_REQUEST" => FunctionType::VastRequest,
@@ -89,6 +93,7 @@ impl FunctionType {
             FunctionType::AwsServiceRequest => "AWS_SERVICE_REQUEST",
             FunctionType::ConcurrentExecutor => "CONCURRENT_EXECUTOR",
             FunctionType::CustomOutput => "CUSTOM_OUTPUT",
+            FunctionType::HlsTagProcessor => "HLS_TAG_PROCESSOR",
             FunctionType::HttpRequest => "HTTP_REQUEST",
             FunctionType::SequentialExecutor => "SEQUENTIAL_EXECUTOR",
             FunctionType::VastRequest => "VAST_REQUEST",
@@ -101,6 +106,7 @@ impl FunctionType {
             "AWS_SERVICE_REQUEST",
             "CONCURRENT_EXECUTOR",
             "CUSTOM_OUTPUT",
+            "HLS_TAG_PROCESSOR",
             "HTTP_REQUEST",
             "SEQUENTIAL_EXECUTOR",
             "VAST_REQUEST",
@@ -130,6 +136,7 @@ impl ::std::fmt::Display for FunctionType {
             FunctionType::AwsServiceRequest => write!(f, "AWS_SERVICE_REQUEST"),
             FunctionType::ConcurrentExecutor => write!(f, "CONCURRENT_EXECUTOR"),
             FunctionType::CustomOutput => write!(f, "CUSTOM_OUTPUT"),
+            FunctionType::HlsTagProcessor => write!(f, "HLS_TAG_PROCESSOR"),
             FunctionType::HttpRequest => write!(f, "HTTP_REQUEST"),
             FunctionType::SequentialExecutor => write!(f, "SEQUENTIAL_EXECUTOR"),
             FunctionType::VastRequest => write!(f, "VAST_REQUEST"),

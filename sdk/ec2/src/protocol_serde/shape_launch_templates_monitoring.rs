@@ -26,6 +26,16 @@ pub fn de_launch_templates_monitoring(
                 builder = builder.set_enabled(var_1);
             }
             ,
+            s if s.matches("metricCategoryIdSet") /* MetricCategoryIds com.amazonaws.ec2#LaunchTemplatesMonitoring$MetricCategoryIds */ =>  {
+                let var_2 =
+                    Some(
+                        crate::protocol_serde::shape_metric_category_id_list::de_metric_category_id_list(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_metric_category_ids(var_2);
+            }
+            ,
             _ => {}
         }
     }

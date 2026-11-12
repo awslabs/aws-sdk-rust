@@ -23,6 +23,8 @@ pub use crate::types::_alarm_mute_rule_status::AlarmMuteRuleStatus;
 
 pub use crate::types::_label_options::LabelOptions;
 
+pub use crate::types::_query_type::QueryType;
+
 pub use crate::types::_metric_stream_output_format::MetricStreamOutputFormat;
 
 pub use crate::types::_o_tel_enrichment_status::OTelEnrichmentStatus;
@@ -94,6 +96,8 @@ pub use crate::types::_alarm_mute_rule_summary::AlarmMuteRuleSummary;
 pub use crate::types::_dashboard_entry::DashboardEntry;
 
 pub use crate::types::_managed_rule_description::ManagedRuleDescription;
+
+pub use crate::types::_metric_data_query_definition_summary::MetricDataQueryDefinitionSummary;
 
 pub use crate::types::_dimension_filter::DimensionFilter;
 
@@ -231,6 +235,8 @@ mod _metric_characteristics;
 
 mod _metric_data_query;
 
+mod _metric_data_query_definition_summary;
+
 mod _metric_data_result;
 
 mod _metric_datum;
@@ -256,6 +262,8 @@ mod _o_tel_enrichment_metric_selector;
 mod _o_tel_enrichment_status;
 
 mod _partial_failure;
+
+mod _query_type;
 
 mod _range;
 

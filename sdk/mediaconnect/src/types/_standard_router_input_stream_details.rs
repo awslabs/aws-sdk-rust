@@ -6,11 +6,17 @@
 pub struct StandardRouterInputStreamDetails {
     /// <p>The source IP address for the standard router input stream.</p>
     pub source_ip_address: ::std::option::Option<::std::string::String>,
+    /// <p>The RTMP stream details for the standard router input stream, including the application and stream names.</p>
+    pub rtmp_push: ::std::option::Option<crate::types::RtmpPushStreamDetails>,
 }
 impl StandardRouterInputStreamDetails {
     /// <p>The source IP address for the standard router input stream.</p>
     pub fn source_ip_address(&self) -> ::std::option::Option<&str> {
         self.source_ip_address.as_deref()
+    }
+    /// <p>The RTMP stream details for the standard router input stream, including the application and stream names.</p>
+    pub fn rtmp_push(&self) -> ::std::option::Option<&crate::types::RtmpPushStreamDetails> {
+        self.rtmp_push.as_ref()
     }
 }
 impl StandardRouterInputStreamDetails {
@@ -25,6 +31,7 @@ impl StandardRouterInputStreamDetails {
 #[non_exhaustive]
 pub struct StandardRouterInputStreamDetailsBuilder {
     pub(crate) source_ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) rtmp_push: ::std::option::Option<crate::types::RtmpPushStreamDetails>,
 }
 impl StandardRouterInputStreamDetailsBuilder {
     /// <p>The source IP address for the standard router input stream.</p>
@@ -41,10 +48,25 @@ impl StandardRouterInputStreamDetailsBuilder {
     pub fn get_source_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_ip_address
     }
+    /// <p>The RTMP stream details for the standard router input stream, including the application and stream names.</p>
+    pub fn rtmp_push(mut self, input: crate::types::RtmpPushStreamDetails) -> Self {
+        self.rtmp_push = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The RTMP stream details for the standard router input stream, including the application and stream names.</p>
+    pub fn set_rtmp_push(mut self, input: ::std::option::Option<crate::types::RtmpPushStreamDetails>) -> Self {
+        self.rtmp_push = input;
+        self
+    }
+    /// <p>The RTMP stream details for the standard router input stream, including the application and stream names.</p>
+    pub fn get_rtmp_push(&self) -> &::std::option::Option<crate::types::RtmpPushStreamDetails> {
+        &self.rtmp_push
+    }
     /// Consumes the builder and constructs a [`StandardRouterInputStreamDetails`](crate::types::StandardRouterInputStreamDetails).
     pub fn build(self) -> crate::types::StandardRouterInputStreamDetails {
         crate::types::StandardRouterInputStreamDetails {
             source_ip_address: self.source_ip_address,
+            rtmp_push: self.rtmp_push,
         }
     }
 }

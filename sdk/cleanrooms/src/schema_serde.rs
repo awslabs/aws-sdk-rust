@@ -767,6 +767,8 @@ pub(crate) mod shape_receiver_configuration;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_retry_info;
+
 pub(crate) mod shape_s3_location;
 
 pub(crate) mod shape_schema;

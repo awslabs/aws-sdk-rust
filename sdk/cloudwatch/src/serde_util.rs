@@ -59,6 +59,33 @@ pub(crate) fn get_dataset_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_metric_data_query_definition_output_output_correct_errors(
+    mut builder: crate::operation::get_metric_data_query_definition::builders::GetMetricDataQueryDefinitionOutputBuilder,
+) -> crate::operation::get_metric_data_query_definition::builders::GetMetricDataQueryDefinitionOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.path.is_none() {
+        builder.path = Some(Default::default())
+    }
+    if builder.expression.is_none() {
+        builder.expression = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::QueryType>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn get_o_tel_enrichment_output_output_correct_errors(
     mut builder: crate::operation::get_o_tel_enrichment::builders::GetOTelEnrichmentOutputBuilder,
 ) -> crate::operation::get_o_tel_enrichment::builders::GetOTelEnrichmentOutputBuilder {
@@ -76,6 +103,42 @@ pub(crate) fn get_resource_metrics_configuration_output_output_correct_errors(
             let builder = crate::types::builders::ResourceMetricsConfigurationBuilder::default();
             Some(crate::serde_util::resource_metrics_configuration_correct_errors(builder).build())
         }
+    }
+    builder
+}
+
+pub(crate) fn list_metric_data_query_definitions_output_output_correct_errors(
+    mut builder: crate::operation::list_metric_data_query_definitions::builders::ListMetricDataQueryDefinitionsOutputBuilder,
+) -> crate::operation::list_metric_data_query_definitions::builders::ListMetricDataQueryDefinitionsOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn put_metric_data_query_definition_output_output_correct_errors(
+    mut builder: crate::operation::put_metric_data_query_definition::builders::PutMetricDataQueryDefinitionOutputBuilder,
+) -> crate::operation::put_metric_data_query_definition::builders::PutMetricDataQueryDefinitionOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.path.is_none() {
+        builder.path = Some(Default::default())
+    }
+    if builder.expression.is_none() {
+        builder.expression = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::QueryType>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

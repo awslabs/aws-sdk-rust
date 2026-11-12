@@ -31,6 +31,8 @@ pub use crate::types::_domain_entry::DomainEntryBuilder;
 
 pub use crate::types::_key_pair::KeyPairBuilder;
 
+pub use crate::types::_subdomain::SubdomainBuilder;
+
 pub use crate::types::_add_on_request::AddOnRequestBuilder;
 
 pub use crate::types::_account_level_bpa_sync::AccountLevelBpaSyncBuilder;
@@ -109,7 +111,11 @@ pub use crate::types::_origin::OriginBuilder;
 
 pub use crate::types::_waf_config::WafConfigBuilder;
 
+pub use crate::types::_lightsail_distribution_subdomain::LightsailDistributionSubdomainBuilder;
+
 pub use crate::types::_session::SessionBuilder;
+
+pub use crate::types::_subdomain_attachable_resource::SubdomainAttachableResourceBuilder;
 
 pub use crate::types::_auto_snapshot_add_on_request::AutoSnapshotAddOnRequestBuilder;
 

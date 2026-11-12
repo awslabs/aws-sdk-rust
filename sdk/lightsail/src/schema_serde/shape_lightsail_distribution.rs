@@ -276,6 +276,16 @@ static LIGHTSAILDISTRIBUTION_MEMBER_WAF: ::aws_smithy_schema::Schema<'static> = 
     "waf",
     23,
 );
+static LIGHTSAILDISTRIBUTION_MEMBER_SUBDOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail#LightsailDistribution$subdomain",
+        "com.amazonaws.lightsail",
+        "LightsailDistribution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "subdomain",
+    24,
+);
 static LIGHTSAILDISTRIBUTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.lightsail#LightsailDistribution",
@@ -308,6 +318,7 @@ static LIGHTSAILDISTRIBUTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aw
         &LIGHTSAILDISTRIBUTION_MEMBER_DEFAULT_ROOT_OBJECT,
         &LIGHTSAILDISTRIBUTION_MEMBER_CUSTOM_ERROR_RESPONSES,
         &LIGHTSAILDISTRIBUTION_MEMBER_WAF,
+        &LIGHTSAILDISTRIBUTION_MEMBER_SUBDOMAIN,
     ],
 );
 impl crate::types::LightsailDistribution {
@@ -427,6 +438,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::LightsailD
         }
         if let Some(ref val) = self.waf {
             ser.write_struct(&LIGHTSAILDISTRIBUTION_MEMBER_WAF, val)?;
+        }
+        if let Some(ref val) = self.subdomain {
+            ser.write_struct(&LIGHTSAILDISTRIBUTION_MEMBER_SUBDOMAIN, val)?;
         }
         Ok(())
     }
@@ -632,6 +646,13 @@ impl crate::types::builders::LightsailDistributionBuilder {
                         deser.read_null()?;
                     } else {
                         self.waf = Some(crate::types::WafConfig::deserialize(deser)?);
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subdomain = Some(crate::types::LightsailDistributionSubdomain::deserialize(deser)?);
                     }
                 }
                 _ => {}

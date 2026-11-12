@@ -28,6 +28,8 @@ pub struct MediaPackageV2GroupSettings {
     pub additional_destinations: ::std::option::Option<::std::vec::Vec<crate::types::MediaPackageAdditionalDestinations>>,
     /// Specifies the type of watermarking technology to use.
     pub watermarking_settings: ::std::option::Option<crate::types::MediaPackageV2WatermarkingSettings>,
+    /// Applies only to 608 Embedded output captions. Controls the CLOSED-CAPTIONS signaling that MediaPackage v2 writes into the HLS manifest it delivers. auto: The default. If captionLanguageMappings is non-empty, the HLS manifest includes a CLOSED-CAPTIONS line for each mapped caption channel. If captionLanguageMappings is empty, the HLS manifest omits any CLOSED-CAPTIONS line. none: The HLS manifest carries CLOSED-CAPTIONS=NONE on each EXT-X-STREAM-INF tag, which signals to players that the stream has no closed captions, so they stop offering a CC track. The API rejects none combined with a non-empty captionLanguageMappings.
+    pub caption_language_setting: ::std::option::Option<crate::types::MediaPackageV2CaptionLanguageSetting>,
 }
 impl MediaPackageV2GroupSettings {
     /// Mapping of up to 4 caption channels to caption languages.
@@ -82,6 +84,10 @@ impl MediaPackageV2GroupSettings {
     pub fn watermarking_settings(&self) -> ::std::option::Option<&crate::types::MediaPackageV2WatermarkingSettings> {
         self.watermarking_settings.as_ref()
     }
+    /// Applies only to 608 Embedded output captions. Controls the CLOSED-CAPTIONS signaling that MediaPackage v2 writes into the HLS manifest it delivers. auto: The default. If captionLanguageMappings is non-empty, the HLS manifest includes a CLOSED-CAPTIONS line for each mapped caption channel. If captionLanguageMappings is empty, the HLS manifest omits any CLOSED-CAPTIONS line. none: The HLS manifest carries CLOSED-CAPTIONS=NONE on each EXT-X-STREAM-INF tag, which signals to players that the stream has no closed captions, so they stop offering a CC track. The API rejects none combined with a non-empty captionLanguageMappings.
+    pub fn caption_language_setting(&self) -> ::std::option::Option<&crate::types::MediaPackageV2CaptionLanguageSetting> {
+        self.caption_language_setting.as_ref()
+    }
 }
 impl MediaPackageV2GroupSettings {
     /// Creates a new builder-style object to manufacture [`MediaPackageV2GroupSettings`](crate::types::MediaPackageV2GroupSettings).
@@ -106,6 +112,7 @@ pub struct MediaPackageV2GroupSettingsBuilder {
     pub(crate) timed_metadata_passthrough: ::std::option::Option<crate::types::CmafTimedMetadataPassthrough>,
     pub(crate) additional_destinations: ::std::option::Option<::std::vec::Vec<crate::types::MediaPackageAdditionalDestinations>>,
     pub(crate) watermarking_settings: ::std::option::Option<crate::types::MediaPackageV2WatermarkingSettings>,
+    pub(crate) caption_language_setting: ::std::option::Option<crate::types::MediaPackageV2CaptionLanguageSetting>,
 }
 impl MediaPackageV2GroupSettingsBuilder {
     /// Appends an item to `caption_language_mappings`.
@@ -291,6 +298,20 @@ impl MediaPackageV2GroupSettingsBuilder {
     pub fn get_watermarking_settings(&self) -> &::std::option::Option<crate::types::MediaPackageV2WatermarkingSettings> {
         &self.watermarking_settings
     }
+    /// Applies only to 608 Embedded output captions. Controls the CLOSED-CAPTIONS signaling that MediaPackage v2 writes into the HLS manifest it delivers. auto: The default. If captionLanguageMappings is non-empty, the HLS manifest includes a CLOSED-CAPTIONS line for each mapped caption channel. If captionLanguageMappings is empty, the HLS manifest omits any CLOSED-CAPTIONS line. none: The HLS manifest carries CLOSED-CAPTIONS=NONE on each EXT-X-STREAM-INF tag, which signals to players that the stream has no closed captions, so they stop offering a CC track. The API rejects none combined with a non-empty captionLanguageMappings.
+    pub fn caption_language_setting(mut self, input: crate::types::MediaPackageV2CaptionLanguageSetting) -> Self {
+        self.caption_language_setting = ::std::option::Option::Some(input);
+        self
+    }
+    /// Applies only to 608 Embedded output captions. Controls the CLOSED-CAPTIONS signaling that MediaPackage v2 writes into the HLS manifest it delivers. auto: The default. If captionLanguageMappings is non-empty, the HLS manifest includes a CLOSED-CAPTIONS line for each mapped caption channel. If captionLanguageMappings is empty, the HLS manifest omits any CLOSED-CAPTIONS line. none: The HLS manifest carries CLOSED-CAPTIONS=NONE on each EXT-X-STREAM-INF tag, which signals to players that the stream has no closed captions, so they stop offering a CC track. The API rejects none combined with a non-empty captionLanguageMappings.
+    pub fn set_caption_language_setting(mut self, input: ::std::option::Option<crate::types::MediaPackageV2CaptionLanguageSetting>) -> Self {
+        self.caption_language_setting = input;
+        self
+    }
+    /// Applies only to 608 Embedded output captions. Controls the CLOSED-CAPTIONS signaling that MediaPackage v2 writes into the HLS manifest it delivers. auto: The default. If captionLanguageMappings is non-empty, the HLS manifest includes a CLOSED-CAPTIONS line for each mapped caption channel. If captionLanguageMappings is empty, the HLS manifest omits any CLOSED-CAPTIONS line. none: The HLS manifest carries CLOSED-CAPTIONS=NONE on each EXT-X-STREAM-INF tag, which signals to players that the stream has no closed captions, so they stop offering a CC track. The API rejects none combined with a non-empty captionLanguageMappings.
+    pub fn get_caption_language_setting(&self) -> &::std::option::Option<crate::types::MediaPackageV2CaptionLanguageSetting> {
+        &self.caption_language_setting
+    }
     /// Consumes the builder and constructs a [`MediaPackageV2GroupSettings`](crate::types::MediaPackageV2GroupSettings).
     pub fn build(self) -> crate::types::MediaPackageV2GroupSettings {
         crate::types::MediaPackageV2GroupSettings {
@@ -306,6 +327,7 @@ impl MediaPackageV2GroupSettingsBuilder {
             timed_metadata_passthrough: self.timed_metadata_passthrough,
             additional_destinations: self.additional_destinations,
             watermarking_settings: self.watermarking_settings,
+            caption_language_setting: self.caption_language_setting,
         }
     }
 }

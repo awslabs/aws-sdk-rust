@@ -21,6 +21,10 @@ pub struct AccountVpcEncryptionControlExclusions {
     pub vpc_lattice: ::std::option::Option<crate::types::VpcEncryptionControlExclusionState>,
     /// <p>The exclusion configuration for Elastic File System service.</p>
     pub elastic_file_system: ::std::option::Option<crate::types::VpcEncryptionControlExclusionState>,
+    /// <p>The exclusion configuration for AWS Global Accelerator.</p>
+    pub global_accelerator: ::std::option::Option<crate::types::VpcEncryptionControlExclusionState>,
+    /// <p>The exclusion configuration for Amazon API Gateway V2.</p>
+    pub api_gateway_v2: ::std::option::Option<crate::types::VpcEncryptionControlExclusionState>,
 }
 impl AccountVpcEncryptionControlExclusions {
     /// <p>The exclusion configuration for internet gateway resource.</p>
@@ -55,6 +59,14 @@ impl AccountVpcEncryptionControlExclusions {
     pub fn elastic_file_system(&self) -> ::std::option::Option<&crate::types::VpcEncryptionControlExclusionState> {
         self.elastic_file_system.as_ref()
     }
+    /// <p>The exclusion configuration for AWS Global Accelerator.</p>
+    pub fn global_accelerator(&self) -> ::std::option::Option<&crate::types::VpcEncryptionControlExclusionState> {
+        self.global_accelerator.as_ref()
+    }
+    /// <p>The exclusion configuration for Amazon API Gateway V2.</p>
+    pub fn api_gateway_v2(&self) -> ::std::option::Option<&crate::types::VpcEncryptionControlExclusionState> {
+        self.api_gateway_v2.as_ref()
+    }
 }
 impl AccountVpcEncryptionControlExclusions {
     /// Creates a new builder-style object to manufacture [`AccountVpcEncryptionControlExclusions`](crate::types::AccountVpcEncryptionControlExclusions).
@@ -75,6 +87,8 @@ pub struct AccountVpcEncryptionControlExclusionsBuilder {
     pub(crate) lambda: ::std::option::Option<crate::types::VpcEncryptionControlExclusionState>,
     pub(crate) vpc_lattice: ::std::option::Option<crate::types::VpcEncryptionControlExclusionState>,
     pub(crate) elastic_file_system: ::std::option::Option<crate::types::VpcEncryptionControlExclusionState>,
+    pub(crate) global_accelerator: ::std::option::Option<crate::types::VpcEncryptionControlExclusionState>,
+    pub(crate) api_gateway_v2: ::std::option::Option<crate::types::VpcEncryptionControlExclusionState>,
 }
 impl AccountVpcEncryptionControlExclusionsBuilder {
     /// <p>The exclusion configuration for internet gateway resource.</p>
@@ -189,6 +203,34 @@ impl AccountVpcEncryptionControlExclusionsBuilder {
     pub fn get_elastic_file_system(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlExclusionState> {
         &self.elastic_file_system
     }
+    /// <p>The exclusion configuration for AWS Global Accelerator.</p>
+    pub fn global_accelerator(mut self, input: crate::types::VpcEncryptionControlExclusionState) -> Self {
+        self.global_accelerator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The exclusion configuration for AWS Global Accelerator.</p>
+    pub fn set_global_accelerator(mut self, input: ::std::option::Option<crate::types::VpcEncryptionControlExclusionState>) -> Self {
+        self.global_accelerator = input;
+        self
+    }
+    /// <p>The exclusion configuration for AWS Global Accelerator.</p>
+    pub fn get_global_accelerator(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlExclusionState> {
+        &self.global_accelerator
+    }
+    /// <p>The exclusion configuration for Amazon API Gateway V2.</p>
+    pub fn api_gateway_v2(mut self, input: crate::types::VpcEncryptionControlExclusionState) -> Self {
+        self.api_gateway_v2 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The exclusion configuration for Amazon API Gateway V2.</p>
+    pub fn set_api_gateway_v2(mut self, input: ::std::option::Option<crate::types::VpcEncryptionControlExclusionState>) -> Self {
+        self.api_gateway_v2 = input;
+        self
+    }
+    /// <p>The exclusion configuration for Amazon API Gateway V2.</p>
+    pub fn get_api_gateway_v2(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlExclusionState> {
+        &self.api_gateway_v2
+    }
     /// Consumes the builder and constructs a [`AccountVpcEncryptionControlExclusions`](crate::types::AccountVpcEncryptionControlExclusions).
     pub fn build(self) -> crate::types::AccountVpcEncryptionControlExclusions {
         crate::types::AccountVpcEncryptionControlExclusions {
@@ -200,6 +242,8 @@ impl AccountVpcEncryptionControlExclusionsBuilder {
             lambda: self.lambda,
             vpc_lattice: self.vpc_lattice,
             elastic_file_system: self.elastic_file_system,
+            global_accelerator: self.global_accelerator,
+            api_gateway_v2: self.api_gateway_v2,
         }
     }
 }

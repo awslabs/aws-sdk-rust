@@ -30,6 +30,8 @@
 ///     BackupVaultEvent::CopyJobStarted => { /* ... */ },
 ///     BackupVaultEvent::CopyJobSuccessful => { /* ... */ },
 ///     BackupVaultEvent::EksBackupObjectFailed => { /* ... */ },
+///     BackupVaultEvent::EksRestoreModificationFailed => { /* ... */ },
+///     BackupVaultEvent::EksRestoreModificationSuccess => { /* ... */ },
 ///     BackupVaultEvent::EksRestoreObjectFailed => { /* ... */ },
 ///     BackupVaultEvent::EksRestoreObjectSkipped => { /* ... */ },
 ///     BackupVaultEvent::RecoveryPointIndexingFailed => { /* ... */ },
@@ -107,6 +109,10 @@ pub enum BackupVaultEvent {
     #[allow(missing_docs)] // documentation missing in model
     EksBackupObjectFailed,
     #[allow(missing_docs)] // documentation missing in model
+    EksRestoreModificationFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    EksRestoreModificationSuccess,
+    #[allow(missing_docs)] // documentation missing in model
     EksRestoreObjectFailed,
     #[allow(missing_docs)] // documentation missing in model
     EksRestoreObjectSkipped,
@@ -155,6 +161,8 @@ impl ::std::convert::From<&str> for BackupVaultEvent {
             "COPY_JOB_STARTED" => BackupVaultEvent::CopyJobStarted,
             "COPY_JOB_SUCCESSFUL" => BackupVaultEvent::CopyJobSuccessful,
             "EKS_BACKUP_OBJECT_FAILED" => BackupVaultEvent::EksBackupObjectFailed,
+            "EKS_RESTORE_MODIFICATION_FAILED" => BackupVaultEvent::EksRestoreModificationFailed,
+            "EKS_RESTORE_MODIFICATION_SUCCESS" => BackupVaultEvent::EksRestoreModificationSuccess,
             "EKS_RESTORE_OBJECT_FAILED" => BackupVaultEvent::EksRestoreObjectFailed,
             "EKS_RESTORE_OBJECT_SKIPPED" => BackupVaultEvent::EksRestoreObjectSkipped,
             "RECOVERY_POINT_INDEXING_FAILED" => BackupVaultEvent::RecoveryPointIndexingFailed,
@@ -200,6 +208,8 @@ impl BackupVaultEvent {
             BackupVaultEvent::CopyJobStarted => "COPY_JOB_STARTED",
             BackupVaultEvent::CopyJobSuccessful => "COPY_JOB_SUCCESSFUL",
             BackupVaultEvent::EksBackupObjectFailed => "EKS_BACKUP_OBJECT_FAILED",
+            BackupVaultEvent::EksRestoreModificationFailed => "EKS_RESTORE_MODIFICATION_FAILED",
+            BackupVaultEvent::EksRestoreModificationSuccess => "EKS_RESTORE_MODIFICATION_SUCCESS",
             BackupVaultEvent::EksRestoreObjectFailed => "EKS_RESTORE_OBJECT_FAILED",
             BackupVaultEvent::EksRestoreObjectSkipped => "EKS_RESTORE_OBJECT_SKIPPED",
             BackupVaultEvent::RecoveryPointIndexingFailed => "RECOVERY_POINT_INDEXING_FAILED",
@@ -236,6 +246,8 @@ impl BackupVaultEvent {
             "COPY_JOB_STARTED",
             "COPY_JOB_SUCCESSFUL",
             "EKS_BACKUP_OBJECT_FAILED",
+            "EKS_RESTORE_MODIFICATION_FAILED",
+            "EKS_RESTORE_MODIFICATION_SUCCESS",
             "EKS_RESTORE_OBJECT_FAILED",
             "EKS_RESTORE_OBJECT_SKIPPED",
             "RECOVERY_POINT_INDEXING_FAILED",
@@ -289,6 +301,8 @@ impl ::std::fmt::Display for BackupVaultEvent {
             BackupVaultEvent::CopyJobStarted => write!(f, "COPY_JOB_STARTED"),
             BackupVaultEvent::CopyJobSuccessful => write!(f, "COPY_JOB_SUCCESSFUL"),
             BackupVaultEvent::EksBackupObjectFailed => write!(f, "EKS_BACKUP_OBJECT_FAILED"),
+            BackupVaultEvent::EksRestoreModificationFailed => write!(f, "EKS_RESTORE_MODIFICATION_FAILED"),
+            BackupVaultEvent::EksRestoreModificationSuccess => write!(f, "EKS_RESTORE_MODIFICATION_SUCCESS"),
             BackupVaultEvent::EksRestoreObjectFailed => write!(f, "EKS_RESTORE_OBJECT_FAILED"),
             BackupVaultEvent::EksRestoreObjectSkipped => write!(f, "EKS_RESTORE_OBJECT_SKIPPED"),
             BackupVaultEvent::RecoveryPointIndexingFailed => write!(f, "RECOVERY_POINT_INDEXING_FAILED"),

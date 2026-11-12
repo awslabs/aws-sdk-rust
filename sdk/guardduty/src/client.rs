@@ -342,6 +342,8 @@ mod list_filters;
 
 mod list_findings;
 
+mod list_investigation_records;
+
 mod list_investigations;
 
 mod list_invitations;

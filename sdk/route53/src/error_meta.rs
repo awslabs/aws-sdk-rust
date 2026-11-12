@@ -79,6 +79,7 @@ pub enum Error {
     /// <p>Parameter name is not valid.</p>
     InvalidArgument(crate::types::error::InvalidArgument),
     /// <p>This exception contains a list of messages that might contain one or more error messages. Each error message indicates one error in the change batch.</p>
+    /// <p>Route 53 also returns this error when the change batch creates, updates, or deletes a resource record set whose name and type have a resource record set protection. To make the change, first delete the protection by using <code>DeleteResourceRecordSetProtections</code>.</p>
     InvalidChangeBatch(crate::types::error::InvalidChangeBatch),
     /// <p>The specified domain name is not valid.</p>
     InvalidDomainName(crate::types::error::InvalidDomainName),
@@ -92,6 +93,8 @@ pub enum Error {
     InvalidKeySigningKeyStatus(crate::types::error::InvalidKeySigningKeyStatus),
     /// <p>The value that you specified to get the second or subsequent page of results is invalid.</p>
     InvalidPaginationToken(crate::types::error::InvalidPaginationToken),
+    /// <p>One or more entries in the request couldn't be processed, so Route 53 didn't create or delete any of the protections in the request. The <code>Errors</code> element lists the failing entries and the reason that each one failed.</p>
+    InvalidResourceRecordSetProtectionBatch(crate::types::error::InvalidResourceRecordSetProtectionBatch),
     /// <p>Your hosted zone status isn't valid for this operation. In the hosted zone, change the status to enable <code>DNSSEC</code> or disable <code>DNSSEC</code>.</p>
     InvalidSigningStatus(crate::types::error::InvalidSigningStatus),
     /// <p>The format of the traffic policy document that you specified in the <code>Document</code> element is not valid.</p>
@@ -138,6 +141,8 @@ pub enum Error {
     NotAuthorizedException(crate::types::error::NotAuthorizedException),
     /// <p>If Amazon Route 53 can't process a request before the next request arrives, it will reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code> (<code>Bad request</code>). If Route 53 returns this error repeatedly for the same request, we recommend that you wait, in intervals of increasing duration, before you try the request again.</p>
     PriorRequestNotComplete(crate::types::error::PriorRequestNotComplete),
+    /// <p>A protection already exists for every name and type in the request, so Route 53 didn't create any protections. The <code>Errors</code> element lists each entry.</p>
+    ProtectionAlreadyExists(crate::types::error::ProtectionAlreadyExists),
     /// <p>You're trying to associate a VPC with a public hosted zone. Amazon Route 53 doesn't support associating a VPC with a public hosted zone.</p>
     PublicZoneVpcAssociation(crate::types::error::PublicZoneVpcAssociation),
     /// <p>You can create only one query logging configuration for a hosted zone, and a query logging configuration already exists for this hosted zone.</p>
@@ -225,6 +230,7 @@ impl ::std::fmt::Display for Error {
             Error::InvalidKeySigningKeyName(inner) => inner.fmt(f),
             Error::InvalidKeySigningKeyStatus(inner) => inner.fmt(f),
             Error::InvalidPaginationToken(inner) => inner.fmt(f),
+            Error::InvalidResourceRecordSetProtectionBatch(inner) => inner.fmt(f),
             Error::InvalidSigningStatus(inner) => inner.fmt(f),
             Error::InvalidTrafficPolicyDocument(inner) => inner.fmt(f),
             Error::InvalidVpcId(inner) => inner.fmt(f),
@@ -248,6 +254,7 @@ impl ::std::fmt::Display for Error {
             Error::NoSuchTrafficPolicyInstance(inner) => inner.fmt(f),
             Error::NotAuthorizedException(inner) => inner.fmt(f),
             Error::PriorRequestNotComplete(inner) => inner.fmt(f),
+            Error::ProtectionAlreadyExists(inner) => inner.fmt(f),
             Error::PublicZoneVpcAssociation(inner) => inner.fmt(f),
             Error::QueryLoggingConfigAlreadyExists(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
@@ -315,6 +322,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::InvalidKeySigningKeyName(inner) => inner.meta(),
             Self::InvalidKeySigningKeyStatus(inner) => inner.meta(),
             Self::InvalidPaginationToken(inner) => inner.meta(),
+            Self::InvalidResourceRecordSetProtectionBatch(inner) => inner.meta(),
             Self::InvalidSigningStatus(inner) => inner.meta(),
             Self::InvalidTrafficPolicyDocument(inner) => inner.meta(),
             Self::InvalidVpcId(inner) => inner.meta(),
@@ -338,6 +346,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::NoSuchTrafficPolicyInstance(inner) => inner.meta(),
             Self::NotAuthorizedException(inner) => inner.meta(),
             Self::PriorRequestNotComplete(inner) => inner.meta(),
+            Self::ProtectionAlreadyExists(inner) => inner.meta(),
             Self::PublicZoneVpcAssociation(inner) => inner.meta(),
             Self::QueryLoggingConfigAlreadyExists(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
@@ -685,6 +694,44 @@ impl From<crate::operation::create_query_logging_config::CreateQueryLoggingConfi
                 Error::QueryLoggingConfigAlreadyExists(inner)
             }
             crate::operation::create_query_logging_config::CreateQueryLoggingConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_resource_record_set_protections::CreateResourceRecordSetProtectionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_resource_record_set_protections::CreateResourceRecordSetProtectionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_resource_record_set_protections::CreateResourceRecordSetProtectionsError> for Error {
+    fn from(err: crate::operation::create_resource_record_set_protections::CreateResourceRecordSetProtectionsError) -> Self {
+        match err {
+            crate::operation::create_resource_record_set_protections::CreateResourceRecordSetProtectionsError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::create_resource_record_set_protections::CreateResourceRecordSetProtectionsError::InvalidResourceRecordSetProtectionBatch(inner) => Error::InvalidResourceRecordSetProtectionBatch(inner),
+            crate::operation::create_resource_record_set_protections::CreateResourceRecordSetProtectionsError::LimitsExceeded(inner) => Error::LimitsExceeded(inner),
+            crate::operation::create_resource_record_set_protections::CreateResourceRecordSetProtectionsError::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
+            crate::operation::create_resource_record_set_protections::CreateResourceRecordSetProtectionsError::PriorRequestNotComplete(inner) => Error::PriorRequestNotComplete(inner),
+            crate::operation::create_resource_record_set_protections::CreateResourceRecordSetProtectionsError::ProtectionAlreadyExists(inner) => Error::ProtectionAlreadyExists(inner),
+            crate::operation::create_resource_record_set_protections::CreateResourceRecordSetProtectionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1068,6 +1115,42 @@ impl From<crate::operation::delete_query_logging_config::DeleteQueryLoggingConfi
                 Error::NoSuchQueryLoggingConfig(inner)
             }
             crate::operation::delete_query_logging_config::DeleteQueryLoggingConfigError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_resource_record_set_protections::DeleteResourceRecordSetProtectionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_resource_record_set_protections::DeleteResourceRecordSetProtectionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_resource_record_set_protections::DeleteResourceRecordSetProtectionsError> for Error {
+    fn from(err: crate::operation::delete_resource_record_set_protections::DeleteResourceRecordSetProtectionsError) -> Self {
+        match err {
+            crate::operation::delete_resource_record_set_protections::DeleteResourceRecordSetProtectionsError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::delete_resource_record_set_protections::DeleteResourceRecordSetProtectionsError::InvalidResourceRecordSetProtectionBatch(inner) => Error::InvalidResourceRecordSetProtectionBatch(inner),
+            crate::operation::delete_resource_record_set_protections::DeleteResourceRecordSetProtectionsError::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
+            crate::operation::delete_resource_record_set_protections::DeleteResourceRecordSetProtectionsError::PriorRequestNotComplete(inner) => Error::PriorRequestNotComplete(inner),
+            crate::operation::delete_resource_record_set_protections::DeleteResourceRecordSetProtectionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2036,6 +2119,49 @@ impl From<crate::operation::list_query_logging_configs::ListQueryLoggingConfigsE
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_resource_record_set_protections::ListResourceRecordSetProtectionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_resource_record_set_protections::ListResourceRecordSetProtectionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_resource_record_set_protections::ListResourceRecordSetProtectionsError> for Error {
+    fn from(err: crate::operation::list_resource_record_set_protections::ListResourceRecordSetProtectionsError) -> Self {
+        match err {
+            crate::operation::list_resource_record_set_protections::ListResourceRecordSetProtectionsError::InvalidInput(inner) => {
+                Error::InvalidInput(inner)
+            }
+            crate::operation::list_resource_record_set_protections::ListResourceRecordSetProtectionsError::InvalidPaginationToken(inner) => {
+                Error::InvalidPaginationToken(inner)
+            }
+            crate::operation::list_resource_record_set_protections::ListResourceRecordSetProtectionsError::NoSuchHostedZone(inner) => {
+                Error::NoSuchHostedZone(inner)
+            }
+            crate::operation::list_resource_record_set_protections::ListResourceRecordSetProtectionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resource_record_sets::ListResourceRecordSetsError, R>>
     for Error
 where
@@ -2568,6 +2694,7 @@ impl ::std::error::Error for Error {
             Error::InvalidKeySigningKeyName(inner) => inner.source(),
             Error::InvalidKeySigningKeyStatus(inner) => inner.source(),
             Error::InvalidPaginationToken(inner) => inner.source(),
+            Error::InvalidResourceRecordSetProtectionBatch(inner) => inner.source(),
             Error::InvalidSigningStatus(inner) => inner.source(),
             Error::InvalidTrafficPolicyDocument(inner) => inner.source(),
             Error::InvalidVpcId(inner) => inner.source(),
@@ -2591,6 +2718,7 @@ impl ::std::error::Error for Error {
             Error::NoSuchTrafficPolicyInstance(inner) => inner.source(),
             Error::NotAuthorizedException(inner) => inner.source(),
             Error::PriorRequestNotComplete(inner) => inner.source(),
+            Error::ProtectionAlreadyExists(inner) => inner.source(),
             Error::PublicZoneVpcAssociation(inner) => inner.source(),
             Error::QueryLoggingConfigAlreadyExists(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
@@ -2644,6 +2772,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::InvalidKeySigningKeyName(e) => e.request_id(),
             Self::InvalidKeySigningKeyStatus(e) => e.request_id(),
             Self::InvalidPaginationToken(e) => e.request_id(),
+            Self::InvalidResourceRecordSetProtectionBatch(e) => e.request_id(),
             Self::InvalidSigningStatus(e) => e.request_id(),
             Self::InvalidTrafficPolicyDocument(e) => e.request_id(),
             Self::InvalidVpcId(e) => e.request_id(),
@@ -2667,6 +2796,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::NoSuchTrafficPolicyInstance(e) => e.request_id(),
             Self::NotAuthorizedException(e) => e.request_id(),
             Self::PriorRequestNotComplete(e) => e.request_id(),
+            Self::ProtectionAlreadyExists(e) => e.request_id(),
             Self::PublicZoneVpcAssociation(e) => e.request_id(),
             Self::QueryLoggingConfigAlreadyExists(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),

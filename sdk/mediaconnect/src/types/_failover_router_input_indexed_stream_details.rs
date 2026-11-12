@@ -8,6 +8,8 @@ pub struct FailoverRouterInputIndexedStreamDetails {
     pub source_index: i32,
     /// <p>The IP address of the source for this indexed stream.</p>
     pub source_ip_address: ::std::option::Option<::std::string::String>,
+    /// <p>The RTMP stream details for this indexed stream, including the application and stream names.</p>
+    pub rtmp_push: ::std::option::Option<crate::types::RtmpPushStreamDetails>,
 }
 impl FailoverRouterInputIndexedStreamDetails {
     /// <p>The index number (0 or 1) assigned to this source in the failover configuration.</p>
@@ -17,6 +19,10 @@ impl FailoverRouterInputIndexedStreamDetails {
     /// <p>The IP address of the source for this indexed stream.</p>
     pub fn source_ip_address(&self) -> ::std::option::Option<&str> {
         self.source_ip_address.as_deref()
+    }
+    /// <p>The RTMP stream details for this indexed stream, including the application and stream names.</p>
+    pub fn rtmp_push(&self) -> ::std::option::Option<&crate::types::RtmpPushStreamDetails> {
+        self.rtmp_push.as_ref()
     }
 }
 impl FailoverRouterInputIndexedStreamDetails {
@@ -32,6 +38,7 @@ impl FailoverRouterInputIndexedStreamDetails {
 pub struct FailoverRouterInputIndexedStreamDetailsBuilder {
     pub(crate) source_index: ::std::option::Option<i32>,
     pub(crate) source_ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) rtmp_push: ::std::option::Option<crate::types::RtmpPushStreamDetails>,
 }
 impl FailoverRouterInputIndexedStreamDetailsBuilder {
     /// <p>The index number (0 or 1) assigned to this source in the failover configuration.</p>
@@ -63,6 +70,20 @@ impl FailoverRouterInputIndexedStreamDetailsBuilder {
     pub fn get_source_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_ip_address
     }
+    /// <p>The RTMP stream details for this indexed stream, including the application and stream names.</p>
+    pub fn rtmp_push(mut self, input: crate::types::RtmpPushStreamDetails) -> Self {
+        self.rtmp_push = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The RTMP stream details for this indexed stream, including the application and stream names.</p>
+    pub fn set_rtmp_push(mut self, input: ::std::option::Option<crate::types::RtmpPushStreamDetails>) -> Self {
+        self.rtmp_push = input;
+        self
+    }
+    /// <p>The RTMP stream details for this indexed stream, including the application and stream names.</p>
+    pub fn get_rtmp_push(&self) -> &::std::option::Option<crate::types::RtmpPushStreamDetails> {
+        &self.rtmp_push
+    }
     /// Consumes the builder and constructs a [`FailoverRouterInputIndexedStreamDetails`](crate::types::FailoverRouterInputIndexedStreamDetails).
     /// This method will fail if any of the following fields are not set:
     /// - [`source_index`](crate::types::builders::FailoverRouterInputIndexedStreamDetailsBuilder::source_index)
@@ -77,6 +98,7 @@ impl FailoverRouterInputIndexedStreamDetailsBuilder {
                 )
             })?,
             source_ip_address: self.source_ip_address,
+            rtmp_push: self.rtmp_push,
         })
     }
 }

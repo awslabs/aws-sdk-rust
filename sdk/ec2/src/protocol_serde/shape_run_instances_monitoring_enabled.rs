@@ -5,9 +5,22 @@ pub fn ser_run_instances_monitoring_enabled(
     input: &crate::types::RunInstancesMonitoringEnabled,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
-    let mut scope_1 = writer.prefix("Enabled");
-    if let Some(var_2) = &input.enabled {
-        scope_1.boolean(*var_2);
+    let mut scope_1 = writer.prefix("MetricCategoryId");
+    if let Some(var_2) = &input.metric_category_ids {
+        if !var_2.is_empty() {
+            let mut list_4 = scope_1.start_list(true, Some("item"));
+            for item_3 in var_2 {
+                #[allow(unused_mut)]
+                let mut entry_5 = list_4.entry();
+                entry_5.string(item_3);
+            }
+            list_4.finish();
+        }
+    }
+    #[allow(unused_mut)]
+    let mut scope_6 = writer.prefix("Enabled");
+    if let Some(var_7) = &input.enabled {
+        scope_6.boolean(*var_7);
     }
     Ok(())
 }
@@ -24,8 +37,18 @@ pub fn de_run_instances_monitoring_enabled(
     let mut builder = crate::types::RunInstancesMonitoringEnabled::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
+            s if s.matches("MetricCategoryId") /* MetricCategoryIds com.amazonaws.ec2#RunInstancesMonitoringEnabled$MetricCategoryIds */ =>  {
+                let var_8 =
+                    Some(
+                        crate::protocol_serde::shape_metric_category_id_list::de_metric_category_id_list(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_metric_category_ids(var_8);
+            }
+            ,
             s if s.matches("enabled") /* Enabled com.amazonaws.ec2#RunInstancesMonitoringEnabled$Enabled */ =>  {
-                let var_3 =
+                let var_9 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -36,7 +59,7 @@ pub fn de_run_instances_monitoring_enabled(
                         ?
                     )
                 ;
-                builder = builder.set_enabled(var_3);
+                builder = builder.set_enabled(var_9);
             }
             ,
             _ => {}

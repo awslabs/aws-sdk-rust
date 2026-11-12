@@ -140,6 +140,8 @@ mod accept_marketplace_registration;
 
 mod associate_iam_role_to_resource;
 
+mod associate_virtual_machines_to_cloud_vm_cluster;
+
 mod associate_virtual_machines_to_exadb_vm_cluster;
 
 mod create_autonomous_database;
@@ -208,6 +210,8 @@ mod delete_odb_network;
 mod delete_odb_peering_connection;
 
 mod disassociate_iam_role_from_resource;
+
+mod disassociate_virtual_machines_from_cloud_vm_cluster;
 
 mod disassociate_virtual_machines_from_exadb_vm_cluster;
 
@@ -313,7 +317,13 @@ mod update_autonomous_database;
 
 mod update_autonomous_database_backup;
 
+mod update_cloud_autonomous_vm_cluster;
+
 mod update_cloud_exadata_infrastructure;
+
+mod update_cloud_exadata_infrastructure_storage_capacity;
+
+mod update_cloud_vm_cluster;
 
 mod update_exadb_vm_cluster;
 

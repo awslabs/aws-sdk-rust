@@ -21,6 +21,28 @@ static MERGEROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_RIST: ::aws_smithy_schema::S
     1,
 )
 .with_json_name("rist");
+static MERGEROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_SRTLISTENER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconnect#MergeRouterInputProtocolConfiguration$SrtListener",
+        "com.amazonaws.mediaconnect",
+        "MergeRouterInputProtocolConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SrtListener",
+    2,
+)
+.with_json_name("srtListener");
+static MERGEROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_SRTCALLER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconnect#MergeRouterInputProtocolConfiguration$SrtCaller",
+        "com.amazonaws.mediaconnect",
+        "MergeRouterInputProtocolConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SrtCaller",
+    3,
+)
+.with_json_name("srtCaller");
 static MERGEROUTERINPUTPROTOCOLCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.mediaconnect#MergeRouterInputProtocolConfiguration",
@@ -31,6 +53,8 @@ static MERGEROUTERINPUTPROTOCOLCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema
     &[
         &MERGEROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_RTP,
         &MERGEROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_RIST,
+        &MERGEROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_SRTLISTENER,
+        &MERGEROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_SRTCALLER,
     ],
 );
 impl crate::types::MergeRouterInputProtocolConfiguration {
@@ -53,6 +77,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::MergeRoute
             }
             Self::Rist(val) => {
                 ser.write_struct(&MERGEROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_RIST, val)?;
+            }
+            Self::SrtListener(val) => {
+                ser.write_struct(&MERGEROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_SRTLISTENER, val)?;
+            }
+            Self::SrtCaller(val) => {
+                ser.write_struct(&MERGEROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_SRTCALLER, val)?;
             }
             Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
         }
@@ -77,6 +107,8 @@ impl crate::types::MergeRouterInputProtocolConfiguration {
             result = ::std::option::Option::Some(match member.member_index() {
                 Some(0) => Self::Rtp(crate::types::RtpRouterInputConfiguration::deserialize(deser)?),
                 Some(1) => Self::Rist(crate::types::RistRouterInputConfiguration::deserialize(deser)?),
+                Some(2) => Self::SrtListener(crate::types::SrtListenerRouterInputConfiguration::deserialize(deser)?),
+                Some(3) => Self::SrtCaller(crate::types::SrtCallerRouterInputConfiguration::deserialize(deser)?),
                 _ => Self::Unknown,
             });
             Ok(())

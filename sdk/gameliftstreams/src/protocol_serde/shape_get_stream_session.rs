@@ -144,6 +144,12 @@ pub(crate) fn de_get_stream_session(
                             .transpose()?,
                     );
                 }
+                "ApplicationStartedAt" => {
+                    builder = builder.set_application_started_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
                 "Arn" => {
                     builder = builder.set_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -265,6 +271,18 @@ pub(crate) fn de_get_stream_session(
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "StreamingEndedAt" => {
+                    builder = builder.set_streaming_ended_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "StreamingStartedAt" => {
+                    builder = builder.set_streaming_started_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
                 }
                 "UserId" => {
                     builder = builder.set_user_id(

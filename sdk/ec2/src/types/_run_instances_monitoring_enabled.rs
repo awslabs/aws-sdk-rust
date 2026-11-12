@@ -4,10 +4,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RunInstancesMonitoringEnabled {
+    /// <p>The IDs of the metric categories to associate with the instance. To specify metric categories, you must also enable detailed monitoring.</p>
+    pub metric_category_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
 }
 impl RunInstancesMonitoringEnabled {
+    /// <p>The IDs of the metric categories to associate with the instance. To specify metric categories, you must also enable detailed monitoring.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_category_ids.is_none()`.
+    pub fn metric_category_ids(&self) -> &[::std::string::String] {
+        self.metric_category_ids.as_deref().unwrap_or_default()
+    }
     /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
@@ -24,9 +32,30 @@ impl RunInstancesMonitoringEnabled {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct RunInstancesMonitoringEnabledBuilder {
+    pub(crate) metric_category_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) enabled: ::std::option::Option<bool>,
 }
 impl RunInstancesMonitoringEnabledBuilder {
+    /// Appends an item to `metric_category_ids`.
+    ///
+    /// To override the contents of this collection use [`set_metric_category_ids`](Self::set_metric_category_ids).
+    ///
+    /// <p>The IDs of the metric categories to associate with the instance. To specify metric categories, you must also enable detailed monitoring.</p>
+    pub fn metric_category_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.metric_category_ids.unwrap_or_default();
+        v.push(input.into());
+        self.metric_category_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IDs of the metric categories to associate with the instance. To specify metric categories, you must also enable detailed monitoring.</p>
+    pub fn set_metric_category_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.metric_category_ids = input;
+        self
+    }
+    /// <p>The IDs of the metric categories to associate with the instance. To specify metric categories, you must also enable detailed monitoring.</p>
+    pub fn get_metric_category_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.metric_category_ids
+    }
     /// <p>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</p>
     /// This field is required.
     pub fn enabled(mut self, input: bool) -> Self {
@@ -44,6 +73,9 @@ impl RunInstancesMonitoringEnabledBuilder {
     }
     /// Consumes the builder and constructs a [`RunInstancesMonitoringEnabled`](crate::types::RunInstancesMonitoringEnabled).
     pub fn build(self) -> crate::types::RunInstancesMonitoringEnabled {
-        crate::types::RunInstancesMonitoringEnabled { enabled: self.enabled }
+        crate::types::RunInstancesMonitoringEnabled {
+            metric_category_ids: self.metric_category_ids,
+            enabled: self.enabled,
+        }
     }
 }

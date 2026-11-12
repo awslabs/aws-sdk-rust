@@ -21,6 +21,17 @@ static FAILOVERROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_SRTLISTENER: ::aws_smithy
     1,
 )
 .with_json_name("srtListener");
+static FAILOVERROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_RTMPPUSH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconnect#FailoverRouterInputProtocolConfiguration$RtmpPush",
+        "com.amazonaws.mediaconnect",
+        "FailoverRouterInputProtocolConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RtmpPush",
+    2,
+)
+.with_json_name("rtmpPush");
 static FAILOVERROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_SRTCALLER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.mediaconnect#FailoverRouterInputProtocolConfiguration$SrtCaller",
@@ -29,7 +40,7 @@ static FAILOVERROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_SRTCALLER: ::aws_smithy_s
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "SrtCaller",
-    2,
+    3,
 )
 .with_json_name("srtCaller");
 static FAILOVERROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_RTP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -40,7 +51,7 @@ static FAILOVERROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_RTP: ::aws_smithy_schema:
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "Rtp",
-    3,
+    4,
 )
 .with_json_name("rtp");
 static FAILOVERROUTERINPUTPROTOCOLCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
@@ -53,6 +64,7 @@ static FAILOVERROUTERINPUTPROTOCOLCONFIGURATION_SCHEMA: ::aws_smithy_schema::Sch
     &[
         &FAILOVERROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_RIST,
         &FAILOVERROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_SRTLISTENER,
+        &FAILOVERROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_RTMPPUSH,
         &FAILOVERROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_SRTCALLER,
         &FAILOVERROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_RTP,
     ],
@@ -77,6 +89,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::FailoverRo
             }
             Self::SrtListener(val) => {
                 ser.write_struct(&FAILOVERROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_SRTLISTENER, val)?;
+            }
+            Self::RtmpPush(val) => {
+                ser.write_struct(&FAILOVERROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_RTMPPUSH, val)?;
             }
             Self::SrtCaller(val) => {
                 ser.write_struct(&FAILOVERROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_SRTCALLER, val)?;
@@ -107,8 +122,9 @@ impl crate::types::FailoverRouterInputProtocolConfiguration {
             result = ::std::option::Option::Some(match member.member_index() {
                 Some(0) => Self::Rist(crate::types::RistRouterInputConfiguration::deserialize(deser)?),
                 Some(1) => Self::SrtListener(crate::types::SrtListenerRouterInputConfiguration::deserialize(deser)?),
-                Some(2) => Self::SrtCaller(crate::types::SrtCallerRouterInputConfiguration::deserialize(deser)?),
-                Some(3) => Self::Rtp(crate::types::RtpRouterInputConfiguration::deserialize(deser)?),
+                Some(2) => Self::RtmpPush(crate::types::RtmpPushRouterInputConfiguration::deserialize(deser)?),
+                Some(3) => Self::SrtCaller(crate::types::SrtCallerRouterInputConfiguration::deserialize(deser)?),
+                Some(4) => Self::Rtp(crate::types::RtpRouterInputConfiguration::deserialize(deser)?),
                 _ => Self::Unknown,
             });
             Ok(())

@@ -22,8 +22,12 @@ pub struct Investigation {
     pub risk: ::std::option::Option<::std::string::String>,
     /// <p>The confidence level of the investigation's assessment. Possible values are <code>Unknown</code>, <code>Low</code>, <code>Medium</code>, and <code>High</code>.</p>
     pub confidence: ::std::option::Option<crate::types::Confidence>,
-    /// <p>A structured summary of the investigation findings, including affected resources, threat assessment, and recommended remediation steps.</p>
+    /// <p>A summary of the investigation results as text, up to 262,144 characters. Returned only when the investigation status is <code>COMPLETED</code>. When you set <code>SummaryFormat</code> to <code>STRUCTURED</code>, the summary is returned in <code>SummaryData</code> instead, unless it isn't available in a structured form, in which case it's returned in this field.</p>
     pub summary: ::std::option::Option<::std::string::String>,
+    /// <p>A structured summary of the investigation results. GuardDuty returns this field only when you set <code>SummaryFormat</code> to <code>STRUCTURED</code>, the investigation status is <code>COMPLETED</code>, and the summary is available in a structured form. When this field is returned, <code>Summary</code> isn't returned.</p>
+    pub summary_data: ::std::option::Option<crate::types::InvestigationSummaryData>,
+    /// <p>Information about what the investigation analyzed, including the investigation type, the finding, account, or organization that was analyzed, and, for <code>ACCOUNT</code> and <code>ORGANIZATION</code> investigations, the time window over which the investigation queried data. Returned only when the investigation status is <code>COMPLETED</code>.</p>
+    pub scope: ::std::option::Option<crate::types::InvestigationScope>,
     /// <p>The timestamp at which the investigation started.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp at which the investigation completed.</p>
@@ -68,9 +72,17 @@ impl Investigation {
     pub fn confidence(&self) -> ::std::option::Option<&crate::types::Confidence> {
         self.confidence.as_ref()
     }
-    /// <p>A structured summary of the investigation findings, including affected resources, threat assessment, and recommended remediation steps.</p>
+    /// <p>A summary of the investigation results as text, up to 262,144 characters. Returned only when the investigation status is <code>COMPLETED</code>. When you set <code>SummaryFormat</code> to <code>STRUCTURED</code>, the summary is returned in <code>SummaryData</code> instead, unless it isn't available in a structured form, in which case it's returned in this field.</p>
     pub fn summary(&self) -> ::std::option::Option<&str> {
         self.summary.as_deref()
+    }
+    /// <p>A structured summary of the investigation results. GuardDuty returns this field only when you set <code>SummaryFormat</code> to <code>STRUCTURED</code>, the investigation status is <code>COMPLETED</code>, and the summary is available in a structured form. When this field is returned, <code>Summary</code> isn't returned.</p>
+    pub fn summary_data(&self) -> ::std::option::Option<&crate::types::InvestigationSummaryData> {
+        self.summary_data.as_ref()
+    }
+    /// <p>Information about what the investigation analyzed, including the investigation type, the finding, account, or organization that was analyzed, and, for <code>ACCOUNT</code> and <code>ORGANIZATION</code> investigations, the time window over which the investigation queried data. Returned only when the investigation status is <code>COMPLETED</code>.</p>
+    pub fn scope(&self) -> ::std::option::Option<&crate::types::InvestigationScope> {
+        self.scope.as_ref()
     }
     /// <p>The timestamp at which the investigation started.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -106,6 +118,8 @@ pub struct InvestigationBuilder {
     pub(crate) risk: ::std::option::Option<::std::string::String>,
     pub(crate) confidence: ::std::option::Option<crate::types::Confidence>,
     pub(crate) summary: ::std::option::Option<::std::string::String>,
+    pub(crate) summary_data: ::std::option::Option<crate::types::InvestigationSummaryData>,
+    pub(crate) scope: ::std::option::Option<crate::types::InvestigationScope>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) error: ::std::option::Option<::std::string::String>,
@@ -241,19 +255,47 @@ impl InvestigationBuilder {
     pub fn get_confidence(&self) -> &::std::option::Option<crate::types::Confidence> {
         &self.confidence
     }
-    /// <p>A structured summary of the investigation findings, including affected resources, threat assessment, and recommended remediation steps.</p>
+    /// <p>A summary of the investigation results as text, up to 262,144 characters. Returned only when the investigation status is <code>COMPLETED</code>. When you set <code>SummaryFormat</code> to <code>STRUCTURED</code>, the summary is returned in <code>SummaryData</code> instead, unless it isn't available in a structured form, in which case it's returned in this field.</p>
     pub fn summary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.summary = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A structured summary of the investigation findings, including affected resources, threat assessment, and recommended remediation steps.</p>
+    /// <p>A summary of the investigation results as text, up to 262,144 characters. Returned only when the investigation status is <code>COMPLETED</code>. When you set <code>SummaryFormat</code> to <code>STRUCTURED</code>, the summary is returned in <code>SummaryData</code> instead, unless it isn't available in a structured form, in which case it's returned in this field.</p>
     pub fn set_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.summary = input;
         self
     }
-    /// <p>A structured summary of the investigation findings, including affected resources, threat assessment, and recommended remediation steps.</p>
+    /// <p>A summary of the investigation results as text, up to 262,144 characters. Returned only when the investigation status is <code>COMPLETED</code>. When you set <code>SummaryFormat</code> to <code>STRUCTURED</code>, the summary is returned in <code>SummaryData</code> instead, unless it isn't available in a structured form, in which case it's returned in this field.</p>
     pub fn get_summary(&self) -> &::std::option::Option<::std::string::String> {
         &self.summary
+    }
+    /// <p>A structured summary of the investigation results. GuardDuty returns this field only when you set <code>SummaryFormat</code> to <code>STRUCTURED</code>, the investigation status is <code>COMPLETED</code>, and the summary is available in a structured form. When this field is returned, <code>Summary</code> isn't returned.</p>
+    pub fn summary_data(mut self, input: crate::types::InvestigationSummaryData) -> Self {
+        self.summary_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A structured summary of the investigation results. GuardDuty returns this field only when you set <code>SummaryFormat</code> to <code>STRUCTURED</code>, the investigation status is <code>COMPLETED</code>, and the summary is available in a structured form. When this field is returned, <code>Summary</code> isn't returned.</p>
+    pub fn set_summary_data(mut self, input: ::std::option::Option<crate::types::InvestigationSummaryData>) -> Self {
+        self.summary_data = input;
+        self
+    }
+    /// <p>A structured summary of the investigation results. GuardDuty returns this field only when you set <code>SummaryFormat</code> to <code>STRUCTURED</code>, the investigation status is <code>COMPLETED</code>, and the summary is available in a structured form. When this field is returned, <code>Summary</code> isn't returned.</p>
+    pub fn get_summary_data(&self) -> &::std::option::Option<crate::types::InvestigationSummaryData> {
+        &self.summary_data
+    }
+    /// <p>Information about what the investigation analyzed, including the investigation type, the finding, account, or organization that was analyzed, and, for <code>ACCOUNT</code> and <code>ORGANIZATION</code> investigations, the time window over which the investigation queried data. Returned only when the investigation status is <code>COMPLETED</code>.</p>
+    pub fn scope(mut self, input: crate::types::InvestigationScope) -> Self {
+        self.scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about what the investigation analyzed, including the investigation type, the finding, account, or organization that was analyzed, and, for <code>ACCOUNT</code> and <code>ORGANIZATION</code> investigations, the time window over which the investigation queried data. Returned only when the investigation status is <code>COMPLETED</code>.</p>
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::InvestigationScope>) -> Self {
+        self.scope = input;
+        self
+    }
+    /// <p>Information about what the investigation analyzed, including the investigation type, the finding, account, or organization that was analyzed, and, for <code>ACCOUNT</code> and <code>ORGANIZATION</code> investigations, the time window over which the investigation queried data. Returned only when the investigation status is <code>COMPLETED</code>.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::InvestigationScope> {
+        &self.scope
     }
     /// <p>The timestamp at which the investigation started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -310,6 +352,8 @@ impl InvestigationBuilder {
             risk: self.risk,
             confidence: self.confidence,
             summary: self.summary,
+            summary_data: self.summary_data,
+            scope: self.scope,
             start_time: self.start_time,
             end_time: self.end_time,
             error: self.error,

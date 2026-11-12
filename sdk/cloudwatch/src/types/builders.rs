@@ -67,6 +67,8 @@ pub use crate::types::_dashboard_entry::DashboardEntryBuilder;
 
 pub use crate::types::_managed_rule_description::ManagedRuleDescriptionBuilder;
 
+pub use crate::types::_metric_data_query_definition_summary::MetricDataQueryDefinitionSummaryBuilder;
+
 pub use crate::types::_dimension_filter::DimensionFilterBuilder;
 
 pub use crate::types::_metric::MetricBuilder;

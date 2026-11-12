@@ -31,6 +31,9 @@ pub mod create_key_signing_key;
 /// Types for the `CreateQueryLoggingConfig` operation.
 pub mod create_query_logging_config;
 
+/// Types for the `CreateResourceRecordSetProtections` operation.
+pub mod create_resource_record_set_protections;
+
 /// Types for the `CreateReusableDelegationSet` operation.
 pub mod create_reusable_delegation_set;
 
@@ -63,6 +66,9 @@ pub mod delete_key_signing_key;
 
 /// Types for the `DeleteQueryLoggingConfig` operation.
 pub mod delete_query_logging_config;
+
+/// Types for the `DeleteResourceRecordSetProtections` operation.
+pub mod delete_resource_record_set_protections;
 
 /// Types for the `DeleteReusableDelegationSet` operation.
 pub mod delete_reusable_delegation_set;
@@ -165,6 +171,9 @@ pub mod list_hosted_zones_by_vpc;
 
 /// Types for the `ListQueryLoggingConfigs` operation.
 pub mod list_query_logging_configs;
+
+/// Types for the `ListResourceRecordSetProtections` operation.
+pub mod list_resource_record_set_protections;
 
 /// Types for the `ListResourceRecordSets` operation.
 pub mod list_resource_record_sets;

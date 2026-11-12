@@ -1159,6 +1159,8 @@ pub use crate::types::_static_key_settings::StaticKeySettings;
 
 pub use crate::types::_media_package_v2_watermarking_settings::MediaPackageV2WatermarkingSettings;
 
+pub use crate::types::_media_package_v2_caption_language_setting::MediaPackageV2CaptionLanguageSetting;
+
 pub use crate::types::_rtmp_ad_markers::RtmpAdMarkers;
 
 pub use crate::types::_cmaf_ingest_caption_language_mapping::CmafIngestCaptionLanguageMapping;
@@ -2354,6 +2356,8 @@ mod _media_package_output_destination_settings;
 mod _media_package_output_settings;
 
 mod _media_package_v2_ab_watermarker_irdeto_settings;
+
+mod _media_package_v2_caption_language_setting;
 
 mod _media_package_v2_destination_settings;
 

@@ -6,11 +6,26 @@ pub fn ser_update_cloud_exadata_infrastructure_input_input(
     if let Some(var_1) = &input.cloud_exadata_infrastructure_id {
         object.key("cloudExadataInfrastructureId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.maintenance_window {
+    if let Some(var_2) = &input.display_name {
+        object.key("displayName").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.compute_count {
+        object.key("computeCount").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+        );
+    }
+    if let Some(var_4) = &input.maintenance_window {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("maintenanceWindow").start_object();
-        crate::protocol_serde::shape_maintenance_window::ser_maintenance_window(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_5 = object.key("maintenanceWindow").start_object();
+        crate::protocol_serde::shape_maintenance_window::ser_maintenance_window(&mut object_5, var_4)?;
+        object_5.finish();
+    }
+    if let Some(var_6) = &input.storage_count {
+        object.key("storageCount").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+        );
     }
     Ok(())
 }

@@ -62,6 +62,15 @@ pub(crate) fn instance_access_control_attribute_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn network_configuration_info_correct_errors(
+    mut builder: crate::types::builders::NetworkConfigurationInfoBuilder,
+) -> crate::types::builders::NetworkConfigurationInfoBuilder {
+    if builder.vpce_access_required.is_none() {
+        builder.vpce_access_required = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn application_assignment_correct_errors(
     mut builder: crate::types::builders::ApplicationAssignmentBuilder,
 ) -> crate::types::builders::ApplicationAssignmentBuilder {

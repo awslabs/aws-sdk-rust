@@ -466,4 +466,18 @@ impl UpdateFlowSourceFluentBuilder {
     pub fn get_router_integration_transit_decryption(&self) -> &::std::option::Option<crate::types::FlowTransitEncryption> {
         self.inner.get_router_integration_transit_decryption()
     }
+    /// <p>The settings for the RTMP (Real-Time Messaging Protocol) source.</p>
+    pub fn rtmp_push_settings(mut self, input: crate::types::SetRtmpPushSourceSettings) -> Self {
+        self.inner = self.inner.rtmp_push_settings(input);
+        self
+    }
+    /// <p>The settings for the RTMP (Real-Time Messaging Protocol) source.</p>
+    pub fn set_rtmp_push_settings(mut self, input: ::std::option::Option<crate::types::SetRtmpPushSourceSettings>) -> Self {
+        self.inner = self.inner.set_rtmp_push_settings(input);
+        self
+    }
+    /// <p>The settings for the RTMP (Real-Time Messaging Protocol) source.</p>
+    pub fn get_rtmp_push_settings(&self) -> &::std::option::Option<crate::types::SetRtmpPushSourceSettings> {
+        self.inner.get_rtmp_push_settings()
+    }
 }

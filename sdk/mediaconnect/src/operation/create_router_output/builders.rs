@@ -306,4 +306,18 @@ impl CreateRouterOutputFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    /// <p>The processor settings for the router output.</p>
+    pub fn processors(mut self, input: crate::types::RouterOutputProcessors) -> Self {
+        self.inner = self.inner.processors(input);
+        self
+    }
+    /// <p>The processor settings for the router output.</p>
+    pub fn set_processors(mut self, input: ::std::option::Option<crate::types::RouterOutputProcessors>) -> Self {
+        self.inner = self.inner.set_processors(input);
+        self
+    }
+    /// <p>The processor settings for the router output.</p>
+    pub fn get_processors(&self) -> &::std::option::Option<crate::types::RouterOutputProcessors> {
+        self.inner.get_processors()
+    }
 }

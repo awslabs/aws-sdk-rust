@@ -38,6 +38,8 @@ pub struct CreateRouterOutputInput {
     pub fabric_configuration: ::std::option::Option<crate::types::FabricConfiguration>,
     /// <p>A unique identifier for the request to ensure idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The processor settings for the router output.</p>
+    pub processors: ::std::option::Option<crate::types::RouterOutputProcessors>,
 }
 impl CreateRouterOutputInput {
     /// <p>The name of the router output.</p>
@@ -97,6 +99,10 @@ impl CreateRouterOutputInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The processor settings for the router output.</p>
+    pub fn processors(&self) -> ::std::option::Option<&crate::types::RouterOutputProcessors> {
+        self.processors.as_ref()
+    }
 }
 impl CreateRouterOutputInput {
     /// Creates a new builder-style object to manufacture [`CreateRouterOutputInput`](crate::operation::create_router_output::CreateRouterOutputInput).
@@ -120,6 +126,7 @@ pub struct CreateRouterOutputInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) fabric_configuration: ::std::option::Option<crate::types::FabricConfiguration>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) processors: ::std::option::Option<crate::types::RouterOutputProcessors>,
 }
 impl CreateRouterOutputInputBuilder {
     /// <p>The name of the router output.</p>
@@ -326,6 +333,20 @@ impl CreateRouterOutputInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
+    /// <p>The processor settings for the router output.</p>
+    pub fn processors(mut self, input: crate::types::RouterOutputProcessors) -> Self {
+        self.processors = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The processor settings for the router output.</p>
+    pub fn set_processors(mut self, input: ::std::option::Option<crate::types::RouterOutputProcessors>) -> Self {
+        self.processors = input;
+        self
+    }
+    /// <p>The processor settings for the router output.</p>
+    pub fn get_processors(&self) -> &::std::option::Option<crate::types::RouterOutputProcessors> {
+        &self.processors
+    }
     /// Consumes the builder and constructs a [`CreateRouterOutputInput`](crate::operation::create_router_output::CreateRouterOutputInput).
     pub fn build(
         self,
@@ -343,6 +364,7 @@ impl CreateRouterOutputInputBuilder {
             tags: self.tags,
             fabric_configuration: self.fabric_configuration,
             client_token: self.client_token,
+            processors: self.processors,
         })
     }
 }

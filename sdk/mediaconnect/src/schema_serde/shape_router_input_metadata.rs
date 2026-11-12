@@ -10,6 +10,17 @@ static ROUTERINPUTMETADATA_MEMBER_TRANSPORTSTREAMMEDIAINFO: ::aws_smithy_schema:
     0,
 )
 .with_json_name("transportStreamMediaInfo");
+static ROUTERINPUTMETADATA_MEMBER_RTMPINFO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconnect#RouterInputMetadata$RtmpInfo",
+        "com.amazonaws.mediaconnect",
+        "RouterInputMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RtmpInfo",
+    1,
+)
+.with_json_name("rtmpInfo");
 static ROUTERINPUTMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.mediaconnect#RouterInputMetadata",
@@ -17,7 +28,7 @@ static ROUTERINPUTMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_
         "RouterInputMetadata",
     ),
     ::aws_smithy_schema::ShapeType::Union,
-    &[&ROUTERINPUTMETADATA_MEMBER_TRANSPORTSTREAMMEDIAINFO],
+    &[&ROUTERINPUTMETADATA_MEMBER_TRANSPORTSTREAMMEDIAINFO, &ROUTERINPUTMETADATA_MEMBER_RTMPINFO],
 );
 impl crate::types::RouterInputMetadata {
     /// The schema for this shape.
@@ -36,6 +47,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::RouterInpu
         match self {
             Self::TransportStreamMediaInfo(val) => {
                 ser.write_struct(&ROUTERINPUTMETADATA_MEMBER_TRANSPORTSTREAMMEDIAINFO, val)?;
+            }
+            Self::RtmpInfo(val) => {
+                ser.write_struct(&ROUTERINPUTMETADATA_MEMBER_RTMPINFO, val)?;
             }
             Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
         }
@@ -59,6 +73,7 @@ impl crate::types::RouterInputMetadata {
             }
             result = ::std::option::Option::Some(match member.member_index() {
                 Some(0) => Self::TransportStreamMediaInfo(crate::types::TransportMediaInfo::deserialize(deser)?),
+                Some(1) => Self::RtmpInfo(crate::types::RtmpSourceMetadataInfo::deserialize(deser)?),
                 _ => Self::Unknown,
             });
             Ok(())

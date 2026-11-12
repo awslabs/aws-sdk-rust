@@ -155,6 +155,17 @@ static MEDIAPACKAGEV2GROUPSETTINGS_MEMBER_WATERMARKING_SETTINGS: ::aws_smithy_sc
     11,
 )
 .with_json_name("watermarkingSettings");
+static MEDIAPACKAGEV2GROUPSETTINGS_MEMBER_CAPTION_LANGUAGE_SETTING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.medialive#MediaPackageV2GroupSettings$CaptionLanguageSetting",
+        "com.amazonaws.medialive",
+        "MediaPackageV2GroupSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CaptionLanguageSetting",
+    12,
+)
+.with_json_name("captionLanguageSetting");
 static MEDIAPACKAGEV2GROUPSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.medialive#MediaPackageV2GroupSettings",
@@ -175,6 +186,7 @@ static MEDIAPACKAGEV2GROUPSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> 
         &MEDIAPACKAGEV2GROUPSETTINGS_MEMBER_TIMED_METADATA_PASSTHROUGH,
         &MEDIAPACKAGEV2GROUPSETTINGS_MEMBER_ADDITIONAL_DESTINATIONS,
         &MEDIAPACKAGEV2GROUPSETTINGS_MEMBER_WATERMARKING_SETTINGS,
+        &MEDIAPACKAGEV2GROUPSETTINGS_MEMBER_CAPTION_LANGUAGE_SETTING,
     ],
 );
 impl crate::types::MediaPackageV2GroupSettings {
@@ -242,6 +254,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::MediaPacka
         }
         if let Some(ref val) = self.watermarking_settings {
             ser.write_struct(&MEDIAPACKAGEV2GROUPSETTINGS_MEMBER_WATERMARKING_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.caption_language_setting {
+            ser.write_string(&MEDIAPACKAGEV2GROUPSETTINGS_MEMBER_CAPTION_LANGUAGE_SETTING, val.as_str())?;
         }
         Ok(())
     }
@@ -356,6 +371,15 @@ impl crate::types::builders::MediaPackageV2GroupSettingsBuilder {
                         deser.read_null()?;
                     } else {
                         self.watermarking_settings = Some(crate::types::MediaPackageV2WatermarkingSettings::deserialize(deser)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.caption_language_setting = Some(crate::types::MediaPackageV2CaptionLanguageSetting::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
                     }
                 }
                 _ => {}

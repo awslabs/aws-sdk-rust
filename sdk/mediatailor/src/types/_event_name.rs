@@ -13,6 +13,7 @@
 /// # let eventname = unimplemented!();
 /// match eventname {
 ///     EventName::PostAdsResponse => { /* ... */ },
+///     EventName::PostOriginResponse => { /* ... */ },
 ///     EventName::PreAdsRequest => { /* ... */ },
 ///     EventName::PreManifestInsertion => { /* ... */ },
 ///     EventName::PreSessionInitialization => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum EventName {
     #[allow(missing_docs)] // documentation missing in model
     PostAdsResponse,
     #[allow(missing_docs)] // documentation missing in model
+    PostOriginResponse,
+    #[allow(missing_docs)] // documentation missing in model
     PreAdsRequest,
     #[allow(missing_docs)] // documentation missing in model
     PreManifestInsertion,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for EventName {
     fn from(s: &str) -> Self {
         match s {
             "POST_ADS_RESPONSE" => EventName::PostAdsResponse,
+            "POST_ORIGIN_RESPONSE" => EventName::PostOriginResponse,
             "PRE_ADS_REQUEST" => EventName::PreAdsRequest,
             "PRE_MANIFEST_INSERTION" => EventName::PreManifestInsertion,
             "PRE_SESSION_INITIALIZATION" => EventName::PreSessionInitialization,
@@ -79,6 +83,7 @@ impl EventName {
     pub fn as_str(&self) -> &str {
         match self {
             EventName::PostAdsResponse => "POST_ADS_RESPONSE",
+            EventName::PostOriginResponse => "POST_ORIGIN_RESPONSE",
             EventName::PreAdsRequest => "PRE_ADS_REQUEST",
             EventName::PreManifestInsertion => "PRE_MANIFEST_INSERTION",
             EventName::PreSessionInitialization => "PRE_SESSION_INITIALIZATION",
@@ -89,6 +94,7 @@ impl EventName {
     pub const fn values() -> &'static [&'static str] {
         &[
             "POST_ADS_RESPONSE",
+            "POST_ORIGIN_RESPONSE",
             "PRE_ADS_REQUEST",
             "PRE_MANIFEST_INSERTION",
             "PRE_SESSION_INITIALIZATION",
@@ -116,6 +122,7 @@ impl ::std::fmt::Display for EventName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EventName::PostAdsResponse => write!(f, "POST_ADS_RESPONSE"),
+            EventName::PostOriginResponse => write!(f, "POST_ORIGIN_RESPONSE"),
             EventName::PreAdsRequest => write!(f, "PRE_ADS_REQUEST"),
             EventName::PreManifestInsertion => write!(f, "PRE_MANIFEST_INSERTION"),
             EventName::PreSessionInitialization => write!(f, "PRE_SESSION_INITIALIZATION"),

@@ -16,8 +16,14 @@ pub struct InvestigationSummary {
     pub confidence: ::std::option::Option<crate::types::Confidence>,
     /// <p>A short title summarizing the investigation.</p>
     pub title: ::std::option::Option<::std::string::String>,
+    /// <p>The type of investigation. Possible values are <code>FINDING</code>, <code>ACCOUNT</code>, and <code>ORGANIZATION</code>. GuardDuty sets this field when the investigation completes.</p>
+    pub investigation_type: ::std::option::Option<crate::types::InvestigationType>,
+    /// <p>For a <code>FINDING</code> investigation, the ID of the finding that the investigation analyzed. GuardDuty sets this field when the investigation completes.</p>
+    pub finding_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID associated with the investigation.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
+    /// <p>For an <code>ORGANIZATION</code> investigation, the ID of the administrator account of the organization that the investigation analyzed. GuardDuty sets this field when the investigation completes.</p>
+    pub admin_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the investigation started.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp at which the investigation completed.</p>
@@ -48,9 +54,21 @@ impl InvestigationSummary {
     pub fn title(&self) -> ::std::option::Option<&str> {
         self.title.as_deref()
     }
+    /// <p>The type of investigation. Possible values are <code>FINDING</code>, <code>ACCOUNT</code>, and <code>ORGANIZATION</code>. GuardDuty sets this field when the investigation completes.</p>
+    pub fn investigation_type(&self) -> ::std::option::Option<&crate::types::InvestigationType> {
+        self.investigation_type.as_ref()
+    }
+    /// <p>For a <code>FINDING</code> investigation, the ID of the finding that the investigation analyzed. GuardDuty sets this field when the investigation completes.</p>
+    pub fn finding_id(&self) -> ::std::option::Option<&str> {
+        self.finding_id.as_deref()
+    }
     /// <p>The Amazon Web Services account ID associated with the investigation.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
+    }
+    /// <p>For an <code>ORGANIZATION</code> investigation, the ID of the administrator account of the organization that the investigation analyzed. GuardDuty sets this field when the investigation completes.</p>
+    pub fn admin_account_id(&self) -> ::std::option::Option<&str> {
+        self.admin_account_id.as_deref()
     }
     /// <p>The timestamp at which the investigation started.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -78,7 +96,10 @@ pub struct InvestigationSummaryBuilder {
     pub(crate) risk_level: ::std::option::Option<crate::types::RiskLevel>,
     pub(crate) confidence: ::std::option::Option<crate::types::Confidence>,
     pub(crate) title: ::std::option::Option<::std::string::String>,
+    pub(crate) investigation_type: ::std::option::Option<crate::types::InvestigationType>,
+    pub(crate) finding_id: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) admin_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -167,6 +188,34 @@ impl InvestigationSummaryBuilder {
     pub fn get_title(&self) -> &::std::option::Option<::std::string::String> {
         &self.title
     }
+    /// <p>The type of investigation. Possible values are <code>FINDING</code>, <code>ACCOUNT</code>, and <code>ORGANIZATION</code>. GuardDuty sets this field when the investigation completes.</p>
+    pub fn investigation_type(mut self, input: crate::types::InvestigationType) -> Self {
+        self.investigation_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of investigation. Possible values are <code>FINDING</code>, <code>ACCOUNT</code>, and <code>ORGANIZATION</code>. GuardDuty sets this field when the investigation completes.</p>
+    pub fn set_investigation_type(mut self, input: ::std::option::Option<crate::types::InvestigationType>) -> Self {
+        self.investigation_type = input;
+        self
+    }
+    /// <p>The type of investigation. Possible values are <code>FINDING</code>, <code>ACCOUNT</code>, and <code>ORGANIZATION</code>. GuardDuty sets this field when the investigation completes.</p>
+    pub fn get_investigation_type(&self) -> &::std::option::Option<crate::types::InvestigationType> {
+        &self.investigation_type
+    }
+    /// <p>For a <code>FINDING</code> investigation, the ID of the finding that the investigation analyzed. GuardDuty sets this field when the investigation completes.</p>
+    pub fn finding_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.finding_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>For a <code>FINDING</code> investigation, the ID of the finding that the investigation analyzed. GuardDuty sets this field when the investigation completes.</p>
+    pub fn set_finding_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.finding_id = input;
+        self
+    }
+    /// <p>For a <code>FINDING</code> investigation, the ID of the finding that the investigation analyzed. GuardDuty sets this field when the investigation completes.</p>
+    pub fn get_finding_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.finding_id
+    }
     /// <p>The Amazon Web Services account ID associated with the investigation.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -180,6 +229,20 @@ impl InvestigationSummaryBuilder {
     /// <p>The Amazon Web Services account ID associated with the investigation.</p>
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
+    }
+    /// <p>For an <code>ORGANIZATION</code> investigation, the ID of the administrator account of the organization that the investigation analyzed. GuardDuty sets this field when the investigation completes.</p>
+    pub fn admin_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.admin_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>For an <code>ORGANIZATION</code> investigation, the ID of the administrator account of the organization that the investigation analyzed. GuardDuty sets this field when the investigation completes.</p>
+    pub fn set_admin_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.admin_account_id = input;
+        self
+    }
+    /// <p>For an <code>ORGANIZATION</code> investigation, the ID of the administrator account of the organization that the investigation analyzed. GuardDuty sets this field when the investigation completes.</p>
+    pub fn get_admin_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.admin_account_id
     }
     /// <p>The timestamp at which the investigation started.</p>
     pub fn start_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -218,7 +281,10 @@ impl InvestigationSummaryBuilder {
             risk_level: self.risk_level,
             confidence: self.confidence,
             title: self.title,
+            investigation_type: self.investigation_type,
+            finding_id: self.finding_id,
             account_id: self.account_id,
+            admin_account_id: self.admin_account_id,
             start_time: self.start_time,
             end_time: self.end_time,
         }

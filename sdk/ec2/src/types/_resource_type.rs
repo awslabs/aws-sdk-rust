@@ -64,6 +64,7 @@
 ///     ResourceType::LocalGatewayVirtualInterface => { /* ... */ },
 ///     ResourceType::LocalGatewayVirtualInterfaceGroup => { /* ... */ },
 ///     ResourceType::MacModificationTask => { /* ... */ },
+///     ResourceType::MetricCategory => { /* ... */ },
 ///     ResourceType::Natgateway => { /* ... */ },
 ///     ResourceType::NetworkAcl => { /* ... */ },
 ///     ResourceType::NetworkInsightsAccessScope => { /* ... */ },
@@ -257,6 +258,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     MacModificationTask,
     #[allow(missing_docs)] // documentation missing in model
+    MetricCategory,
+    #[allow(missing_docs)] // documentation missing in model
     Natgateway,
     #[allow(missing_docs)] // documentation missing in model
     NetworkAcl,
@@ -435,6 +438,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "local-gateway-virtual-interface" => ResourceType::LocalGatewayVirtualInterface,
             "local-gateway-virtual-interface-group" => ResourceType::LocalGatewayVirtualInterfaceGroup,
             "mac-modification-task" => ResourceType::MacModificationTask,
+            "metric-category" => ResourceType::MetricCategory,
             "natgateway" => ResourceType::Natgateway,
             "network-acl" => ResourceType::NetworkAcl,
             "network-insights-access-scope" => ResourceType::NetworkInsightsAccessScope,
@@ -562,6 +566,7 @@ impl ResourceType {
             ResourceType::LocalGatewayVirtualInterface => "local-gateway-virtual-interface",
             ResourceType::LocalGatewayVirtualInterfaceGroup => "local-gateway-virtual-interface-group",
             ResourceType::MacModificationTask => "mac-modification-task",
+            ResourceType::MetricCategory => "metric-category",
             ResourceType::Natgateway => "natgateway",
             ResourceType::NetworkAcl => "network-acl",
             ResourceType::NetworkInsightsAccessScope => "network-insights-access-scope",
@@ -680,6 +685,7 @@ impl ResourceType {
             "local-gateway-virtual-interface",
             "local-gateway-virtual-interface-group",
             "mac-modification-task",
+            "metric-category",
             "natgateway",
             "network-acl",
             "network-insights-access-scope",
@@ -817,6 +823,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::LocalGatewayVirtualInterface => write!(f, "local-gateway-virtual-interface"),
             ResourceType::LocalGatewayVirtualInterfaceGroup => write!(f, "local-gateway-virtual-interface-group"),
             ResourceType::MacModificationTask => write!(f, "mac-modification-task"),
+            ResourceType::MetricCategory => write!(f, "metric-category"),
             ResourceType::Natgateway => write!(f, "natgateway"),
             ResourceType::NetworkAcl => write!(f, "network-acl"),
             ResourceType::NetworkInsightsAccessScope => write!(f, "network-insights-access-scope"),

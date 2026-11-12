@@ -262,6 +262,8 @@ mod delete_dashboards;
 
 mod delete_insight_rules;
 
+mod delete_metric_data_query_definition;
+
 mod delete_metric_stream;
 
 mod delete_resource_metrics_configuration;
@@ -298,6 +300,8 @@ mod get_insight_rule_report;
 
 mod get_metric_data;
 
+mod get_metric_data_query_definition;
+
 mod get_metric_statistics;
 
 mod get_metric_stream;
@@ -313,6 +317,8 @@ mod list_alarm_mute_rules;
 mod list_dashboards;
 
 mod list_managed_insight_rules;
+
+mod list_metric_data_query_definitions;
 
 mod list_metric_streams;
 
@@ -337,6 +343,8 @@ mod put_managed_insight_rules;
 mod put_metric_alarm;
 
 mod put_metric_data;
+
+mod put_metric_data_query_definition;
 
 mod put_metric_stream;
 

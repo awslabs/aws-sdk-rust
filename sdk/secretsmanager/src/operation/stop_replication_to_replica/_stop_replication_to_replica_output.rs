@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopReplicationToReplicaOutput {
-    /// <p>The ARN of the promoted secret. The ARN is the same as the original primary secret except the Region is changed.</p>
+    /// <p>The ARN of the promoted secret. For a cross-region replica, this ARN is the same as the original primary secret's ARN except that the Region is changed. For a cross-account replica, this is the ARN of the promoted secret in your account.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl StopReplicationToReplicaOutput {
-    /// <p>The ARN of the promoted secret. The ARN is the same as the original primary secret except the Region is changed.</p>
+    /// <p>The ARN of the promoted secret. For a cross-region replica, this ARN is the same as the original primary secret's ARN except that the Region is changed. For a cross-account replica, this is the ARN of the promoted secret in your account.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct StopReplicationToReplicaOutputBuilder {
     _request_id: Option<String>,
 }
 impl StopReplicationToReplicaOutputBuilder {
-    /// <p>The ARN of the promoted secret. The ARN is the same as the original primary secret except the Region is changed.</p>
+    /// <p>The ARN of the promoted secret. For a cross-region replica, this ARN is the same as the original primary secret's ARN except that the Region is changed. For a cross-account replica, this is the ARN of the promoted secret in your account.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the promoted secret. The ARN is the same as the original primary secret except the Region is changed.</p>
+    /// <p>The ARN of the promoted secret. For a cross-region replica, this ARN is the same as the original primary secret's ARN except that the Region is changed. For a cross-account replica, this is the ARN of the promoted secret in your account.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// <p>The ARN of the promoted secret. The ARN is the same as the original primary secret except the Region is changed.</p>
+    /// <p>The ARN of the promoted secret. For a cross-region replica, this ARN is the same as the original primary secret's ARN except that the Region is changed. For a cross-account replica, this is the ARN of the promoted secret in your account.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

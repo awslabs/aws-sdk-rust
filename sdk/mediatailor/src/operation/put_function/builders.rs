@@ -131,6 +131,8 @@ impl PutFunctionFluentBuilder {
     /// <li>
     /// <p><code>AWS_SERVICE_REQUEST</code> – Makes an authenticated request to a supported AWS service API and evaluates output expressions that can reference the response.</p></li>
     /// <li>
+    /// <p><code>HLS_TAG_PROCESSOR</code> – Reads and changes HLS tags in the origin manifest at the <code>POST_ORIGIN_RESPONSE</code> lifecycle hook.</p></li>
+    /// <li>
     /// <p><code>VAST_REQUEST</code> – Calls a VAST endpoint, parses the response as VAST, and makes the parsed ads available to output expressions.</p></li>
     /// <li>
     /// <p><code>SEQUENTIAL_EXECUTOR</code> – Runs a sequence of child functions in order, passing data between steps through temporary data.</p></li>
@@ -151,6 +153,8 @@ impl PutFunctionFluentBuilder {
     /// <li>
     /// <p><code>AWS_SERVICE_REQUEST</code> – Makes an authenticated request to a supported AWS service API and evaluates output expressions that can reference the response.</p></li>
     /// <li>
+    /// <p><code>HLS_TAG_PROCESSOR</code> – Reads and changes HLS tags in the origin manifest at the <code>POST_ORIGIN_RESPONSE</code> lifecycle hook.</p></li>
+    /// <li>
     /// <p><code>VAST_REQUEST</code> – Calls a VAST endpoint, parses the response as VAST, and makes the parsed ads available to output expressions.</p></li>
     /// <li>
     /// <p><code>SEQUENTIAL_EXECUTOR</code> – Runs a sequence of child functions in order, passing data between steps through temporary data.</p></li>
@@ -170,6 +174,8 @@ impl PutFunctionFluentBuilder {
     /// <p><code>HTTP_REQUEST</code> – Makes an HTTP call to an external service and evaluates output expressions that can reference the response.</p></li>
     /// <li>
     /// <p><code>AWS_SERVICE_REQUEST</code> – Makes an authenticated request to a supported AWS service API and evaluates output expressions that can reference the response.</p></li>
+    /// <li>
+    /// <p><code>HLS_TAG_PROCESSOR</code> – Reads and changes HLS tags in the origin manifest at the <code>POST_ORIGIN_RESPONSE</code> lifecycle hook.</p></li>
     /// <li>
     /// <p><code>VAST_REQUEST</code> – Calls a VAST endpoint, parses the response as VAST, and makes the parsed ads available to output expressions.</p></li>
     /// <li>
@@ -278,6 +284,20 @@ impl PutFunctionFluentBuilder {
     /// <p>The configuration for a <code>VAST_REQUEST</code> function. Specifies the HTTP method, URL, headers, body, timeout, and output expressions. Required when <code>FunctionType</code> is <code>VAST_REQUEST</code>.</p>
     pub fn get_vast_request_configuration(&self) -> &::std::option::Option<crate::types::VastRequestConfiguration> {
         self.inner.get_vast_request_configuration()
+    }
+    /// <p>The configuration for an <code>HLS_TAG_PROCESSOR</code> function. Specifies the runtime, tag filter, optional run condition, and output expressions. Required when <code>FunctionType</code> is <code>HLS_TAG_PROCESSOR</code>.</p>
+    pub fn hls_tag_processor_configuration(mut self, input: crate::types::HlsTagProcessorConfiguration) -> Self {
+        self.inner = self.inner.hls_tag_processor_configuration(input);
+        self
+    }
+    /// <p>The configuration for an <code>HLS_TAG_PROCESSOR</code> function. Specifies the runtime, tag filter, optional run condition, and output expressions. Required when <code>FunctionType</code> is <code>HLS_TAG_PROCESSOR</code>.</p>
+    pub fn set_hls_tag_processor_configuration(mut self, input: ::std::option::Option<crate::types::HlsTagProcessorConfiguration>) -> Self {
+        self.inner = self.inner.set_hls_tag_processor_configuration(input);
+        self
+    }
+    /// <p>The configuration for an <code>HLS_TAG_PROCESSOR</code> function. Specifies the runtime, tag filter, optional run condition, and output expressions. Required when <code>FunctionType</code> is <code>HLS_TAG_PROCESSOR</code>.</p>
+    pub fn get_hls_tag_processor_configuration(&self) -> &::std::option::Option<crate::types::HlsTagProcessorConfiguration> {
+        self.inner.get_hls_tag_processor_configuration()
     }
     ///
     /// Adds a key-value pair to `Tags`.

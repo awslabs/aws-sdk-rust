@@ -60,6 +60,16 @@ pub fn ser_modify_vpc_encryption_control_input_input_input(
     if let Some(var_22) = &input.elastic_file_system_exclusion {
         scope_21.string(var_22.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_23 = writer.prefix("GlobalAcceleratorExclusion");
+    if let Some(var_24) = &input.global_accelerator_exclusion {
+        scope_23.string(var_24.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_25 = writer.prefix("ApiGatewayV2Exclusion");
+    if let Some(var_26) = &input.api_gateway_v2_exclusion {
+        scope_25.string(var_26.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -326,6 +326,38 @@ impl From<crate::operation::delete_insight_rules::DeleteInsightRulesError> for E
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_metric_data_query_definition::DeleteMetricDataQueryDefinitionError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_metric_data_query_definition::DeleteMetricDataQueryDefinitionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_metric_data_query_definition::DeleteMetricDataQueryDefinitionError> for Error {
+    fn from(err: crate::operation::delete_metric_data_query_definition::DeleteMetricDataQueryDefinitionError) -> Self {
+        match err {
+            crate::operation::delete_metric_data_query_definition::DeleteMetricDataQueryDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_metric_stream::DeleteMetricStreamError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -792,6 +824,37 @@ impl From<crate::operation::get_metric_data::GetMetricDataError> for Error {
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_metric_data_query_definition::GetMetricDataQueryDefinitionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_metric_data_query_definition::GetMetricDataQueryDefinitionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_metric_data_query_definition::GetMetricDataQueryDefinitionError> for Error {
+    fn from(err: crate::operation::get_metric_data_query_definition::GetMetricDataQueryDefinitionError) -> Self {
+        match err {
+            crate::operation::get_metric_data_query_definition::GetMetricDataQueryDefinitionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_metric_data_query_definition::GetMetricDataQueryDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_metric_statistics::GetMetricStatisticsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1012,6 +1075,38 @@ impl From<crate::operation::list_managed_insight_rules::ListManagedInsightRulesE
                 Error::MissingRequiredParameterException(inner)
             }
             crate::operation::list_managed_insight_rules::ListManagedInsightRulesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_metric_data_query_definitions::ListMetricDataQueryDefinitionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_metric_data_query_definitions::ListMetricDataQueryDefinitionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_metric_data_query_definitions::ListMetricDataQueryDefinitionsError> for Error {
+    fn from(err: crate::operation::list_metric_data_query_definitions::ListMetricDataQueryDefinitionsError) -> Self {
+        match err {
+            crate::operation::list_metric_data_query_definitions::ListMetricDataQueryDefinitionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1326,6 +1421,43 @@ impl From<crate::operation::put_metric_data::PutMetricDataError> for Error {
                 Error::MissingRequiredParameterException(inner)
             }
             crate::operation::put_metric_data::PutMetricDataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_metric_data_query_definition::PutMetricDataQueryDefinitionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_metric_data_query_definition::PutMetricDataQueryDefinitionError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_metric_data_query_definition::PutMetricDataQueryDefinitionError> for Error {
+    fn from(err: crate::operation::put_metric_data_query_definition::PutMetricDataQueryDefinitionError) -> Self {
+        match err {
+            crate::operation::put_metric_data_query_definition::PutMetricDataQueryDefinitionError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_metric_data_query_definition::PutMetricDataQueryDefinitionError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::put_metric_data_query_definition::PutMetricDataQueryDefinitionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_metric_data_query_definition::PutMetricDataQueryDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

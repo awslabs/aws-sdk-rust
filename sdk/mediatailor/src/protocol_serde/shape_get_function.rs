@@ -98,6 +98,11 @@ pub(crate) fn de_get_function(
                             .transpose()?,
                     );
                 }
+                "HlsTagProcessorConfiguration" => {
+                    builder = builder.set_hls_tag_processor_configuration(
+                        crate::protocol_serde::shape_hls_tag_processor_configuration::de_hls_tag_processor_configuration(tokens, _value, depth + 1)?,
+                    );
+                }
                 "HttpRequestConfiguration" => {
                     builder = builder.set_http_request_configuration(
                         crate::protocol_serde::shape_http_request_configuration::de_http_request_configuration(tokens, _value, depth + 1)?,

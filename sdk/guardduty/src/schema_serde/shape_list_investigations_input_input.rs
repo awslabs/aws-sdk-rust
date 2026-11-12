@@ -10,6 +10,17 @@ static LISTINVESTIGATIONSINPUT_MEMBER_DETECTOR_ID: ::aws_smithy_schema::Schema<'
     0,
 )
 .with_http_label();
+static LISTINVESTIGATIONSINPUT_MEMBER_FILTER_CRITERIA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.guardduty.synthetic#ListInvestigationsInput$FilterCriteria",
+        "com.amazonaws.guardduty.synthetic",
+        "ListInvestigationsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "FilterCriteria",
+    1,
+)
+.with_json_name("filterCriteria");
 static LISTINVESTIGATIONSINPUT_MEMBER_SORT_CRITERIA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.guardduty.synthetic#ListInvestigationsInput$SortCriteria",
@@ -18,7 +29,7 @@ static LISTINVESTIGATIONSINPUT_MEMBER_SORT_CRITERIA: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "SortCriteria",
-    1,
+    2,
 )
 .with_json_name("sortCriteria");
 static LISTINVESTIGATIONSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -29,7 +40,7 @@ static LISTINVESTIGATIONSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "MaxResults",
-    2,
+    3,
 )
 .with_json_name("maxResults");
 static LISTINVESTIGATIONSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -40,7 +51,7 @@ static LISTINVESTIGATIONSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "NextToken",
-    3,
+    4,
 )
 .with_json_name("nextToken");
 static LISTINVESTIGATIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
@@ -52,6 +63,7 @@ static LISTINVESTIGATIONSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::
     ::aws_smithy_schema::ShapeType::Structure,
     &[
         &LISTINVESTIGATIONSINPUT_MEMBER_DETECTOR_ID,
+        &LISTINVESTIGATIONSINPUT_MEMBER_FILTER_CRITERIA,
         &LISTINVESTIGATIONSINPUT_MEMBER_SORT_CRITERIA,
         &LISTINVESTIGATIONSINPUT_MEMBER_MAX_RESULTS,
         &LISTINVESTIGATIONSINPUT_MEMBER_NEXT_TOKEN,
@@ -80,6 +92,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::list_i
     ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
         if let Some(ref val) = self.detector_id {
             ser.write_string(&LISTINVESTIGATIONSINPUT_MEMBER_DETECTOR_ID, val)?;
+        }
+        if let Some(ref val) = self.filter_criteria {
+            ser.write_struct(&LISTINVESTIGATIONSINPUT_MEMBER_FILTER_CRITERIA, val)?;
         }
         if let Some(ref val) = self.sort_criteria {
             ser.write_struct(&LISTINVESTIGATIONSINPUT_MEMBER_SORT_CRITERIA, val)?;
@@ -118,17 +133,24 @@ impl crate::operation::list_investigations::builders::ListInvestigationsInputBui
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.sort_criteria = Some(crate::types::InvestigationSortCriteria::deserialize(deser)?);
+                        self.filter_criteria = Some(crate::types::InvestigationFilterCriteria::deserialize(deser)?);
                     }
                 }
                 Some(2) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.max_results = Some(deser.read_integer(member)?);
+                        self.sort_criteria = Some(crate::types::InvestigationSortCriteria::deserialize(deser)?);
                     }
                 }
                 Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

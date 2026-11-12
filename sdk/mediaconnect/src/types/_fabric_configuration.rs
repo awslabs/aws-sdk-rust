@@ -12,6 +12,17 @@ pub struct FabricConfiguration {
     /// <p><code>LOW_LATENCY</code> – Reduces latency at the potential cost of stream quality under adverse network conditions.</p></li>
     /// </ul>
     pub recovery_latency_mode: crate::types::FabricLatencyMode,
+    /// <p>The switching mode that the router output uses when it switches to a new router input. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IMMEDIATE</code> (default) – Switches to the new router input immediately.</p></li>
+    /// <li>
+    /// <p><code>KEY_FRAME</code> – Waits for a key frame on the new router input before it switches.</p></li>
+    /// </ul>
+    /// <p>If you specify it, it must match the switching configuration.</p>
+    pub switching_mode: ::std::option::Option<crate::types::FabricSwitchingMode>,
+    /// <p>The configuration settings for the switching mode.</p>
+    pub switching_configuration: ::std::option::Option<crate::types::FabricSwitchingConfiguration>,
 }
 impl FabricConfiguration {
     /// <p>The recovery latency mode for the router fabric connection. Valid values include the following:</p>
@@ -23,6 +34,21 @@ impl FabricConfiguration {
     /// </ul>
     pub fn recovery_latency_mode(&self) -> &crate::types::FabricLatencyMode {
         &self.recovery_latency_mode
+    }
+    /// <p>The switching mode that the router output uses when it switches to a new router input. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IMMEDIATE</code> (default) – Switches to the new router input immediately.</p></li>
+    /// <li>
+    /// <p><code>KEY_FRAME</code> – Waits for a key frame on the new router input before it switches.</p></li>
+    /// </ul>
+    /// <p>If you specify it, it must match the switching configuration.</p>
+    pub fn switching_mode(&self) -> ::std::option::Option<&crate::types::FabricSwitchingMode> {
+        self.switching_mode.as_ref()
+    }
+    /// <p>The configuration settings for the switching mode.</p>
+    pub fn switching_configuration(&self) -> ::std::option::Option<&crate::types::FabricSwitchingConfiguration> {
+        self.switching_configuration.as_ref()
     }
 }
 impl FabricConfiguration {
@@ -37,6 +63,8 @@ impl FabricConfiguration {
 #[non_exhaustive]
 pub struct FabricConfigurationBuilder {
     pub(crate) recovery_latency_mode: ::std::option::Option<crate::types::FabricLatencyMode>,
+    pub(crate) switching_mode: ::std::option::Option<crate::types::FabricSwitchingMode>,
+    pub(crate) switching_configuration: ::std::option::Option<crate::types::FabricSwitchingConfiguration>,
 }
 impl FabricConfigurationBuilder {
     /// <p>The recovery latency mode for the router fabric connection. Valid values include the following:</p>
@@ -72,6 +100,55 @@ impl FabricConfigurationBuilder {
     pub fn get_recovery_latency_mode(&self) -> &::std::option::Option<crate::types::FabricLatencyMode> {
         &self.recovery_latency_mode
     }
+    /// <p>The switching mode that the router output uses when it switches to a new router input. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IMMEDIATE</code> (default) – Switches to the new router input immediately.</p></li>
+    /// <li>
+    /// <p><code>KEY_FRAME</code> – Waits for a key frame on the new router input before it switches.</p></li>
+    /// </ul>
+    /// <p>If you specify it, it must match the switching configuration.</p>
+    pub fn switching_mode(mut self, input: crate::types::FabricSwitchingMode) -> Self {
+        self.switching_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The switching mode that the router output uses when it switches to a new router input. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IMMEDIATE</code> (default) – Switches to the new router input immediately.</p></li>
+    /// <li>
+    /// <p><code>KEY_FRAME</code> – Waits for a key frame on the new router input before it switches.</p></li>
+    /// </ul>
+    /// <p>If you specify it, it must match the switching configuration.</p>
+    pub fn set_switching_mode(mut self, input: ::std::option::Option<crate::types::FabricSwitchingMode>) -> Self {
+        self.switching_mode = input;
+        self
+    }
+    /// <p>The switching mode that the router output uses when it switches to a new router input. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IMMEDIATE</code> (default) – Switches to the new router input immediately.</p></li>
+    /// <li>
+    /// <p><code>KEY_FRAME</code> – Waits for a key frame on the new router input before it switches.</p></li>
+    /// </ul>
+    /// <p>If you specify it, it must match the switching configuration.</p>
+    pub fn get_switching_mode(&self) -> &::std::option::Option<crate::types::FabricSwitchingMode> {
+        &self.switching_mode
+    }
+    /// <p>The configuration settings for the switching mode.</p>
+    pub fn switching_configuration(mut self, input: crate::types::FabricSwitchingConfiguration) -> Self {
+        self.switching_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration settings for the switching mode.</p>
+    pub fn set_switching_configuration(mut self, input: ::std::option::Option<crate::types::FabricSwitchingConfiguration>) -> Self {
+        self.switching_configuration = input;
+        self
+    }
+    /// <p>The configuration settings for the switching mode.</p>
+    pub fn get_switching_configuration(&self) -> &::std::option::Option<crate::types::FabricSwitchingConfiguration> {
+        &self.switching_configuration
+    }
     /// Consumes the builder and constructs a [`FabricConfiguration`](crate::types::FabricConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`recovery_latency_mode`](crate::types::builders::FabricConfigurationBuilder::recovery_latency_mode)
@@ -83,6 +160,8 @@ impl FabricConfigurationBuilder {
                     "recovery_latency_mode was not specified but it is required when building FabricConfiguration",
                 )
             })?,
+            switching_mode: self.switching_mode,
+            switching_configuration: self.switching_configuration,
         })
     }
 }

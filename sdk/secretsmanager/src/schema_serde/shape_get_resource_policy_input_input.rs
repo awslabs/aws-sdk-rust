@@ -9,6 +9,16 @@ static GETRESOURCEPOLICYINPUT_MEMBER_SECRET_ID: ::aws_smithy_schema::Schema<'sta
     "SecretId",
     0,
 );
+static GETRESOURCEPOLICYINPUT_MEMBER_POLICY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.secretsmanager.synthetic#GetResourcePolicyInput$PolicyName",
+        "com.amazonaws.secretsmanager.synthetic",
+        "GetResourcePolicyInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PolicyName",
+    1,
+);
 static GETRESOURCEPOLICYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.secretsmanager.synthetic#GetResourcePolicyInput",
@@ -16,7 +26,7 @@ static GETRESOURCEPOLICYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::a
         "GetResourcePolicyInput",
     ),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&GETRESOURCEPOLICYINPUT_MEMBER_SECRET_ID],
+    &[&GETRESOURCEPOLICYINPUT_MEMBER_SECRET_ID, &GETRESOURCEPOLICYINPUT_MEMBER_POLICY_NAME],
 )
 .with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
 .with_original_name("GetResourcePolicyRequest");
@@ -36,6 +46,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::get_re
     ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
         if let Some(ref val) = self.secret_id {
             ser.write_string(&GETRESOURCEPOLICYINPUT_MEMBER_SECRET_ID, val)?;
+        }
+        if let Some(ref val) = self.policy_name {
+            ser.write_string(&GETRESOURCEPOLICYINPUT_MEMBER_POLICY_NAME, val)?;
         }
         Ok(())
     }
@@ -59,6 +72,13 @@ impl crate::operation::get_resource_policy::builders::GetResourcePolicyInputBuil
                         deser.read_null()?;
                     } else {
                         self.secret_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.policy_name = Some(deser.read_string(member)?);
                     }
                 }
                 _ => {}

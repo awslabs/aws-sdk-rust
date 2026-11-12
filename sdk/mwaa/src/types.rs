@@ -7,6 +7,8 @@ pub use crate::types::_webserver_access_mode::WebserverAccessMode;
 
 pub use crate::types::_endpoint_management::EndpointManagement;
 
+pub use crate::types::_identity_center_configuration::IdentityCenterConfiguration;
+
 pub use crate::types::_environment::Environment;
 
 pub use crate::types::_rest_api_method::RestApiMethod;
@@ -15,7 +17,11 @@ pub use crate::types::_worker_replacement_strategy::WorkerReplacementStrategy;
 
 pub use crate::types::_update_network_configuration_input::UpdateNetworkConfigurationInput;
 
+pub use crate::types::_update_teams_input::UpdateTeamsInput;
+
 pub use crate::types::_module_logging_configuration_input::ModuleLoggingConfigurationInput;
+
+pub use crate::types::_team_config::TeamConfig;
 
 pub use crate::types::_environment_status::EnvironmentStatus;
 
@@ -47,6 +53,8 @@ mod _environment;
 
 mod _environment_status;
 
+mod _identity_center_configuration;
+
 mod _last_update;
 
 mod _logging_configuration;
@@ -67,6 +75,8 @@ mod _rest_api_method;
 
 mod _statistic_set;
 
+mod _team_config;
+
 mod _unit;
 
 mod _update_error;
@@ -74,6 +84,8 @@ mod _update_error;
 mod _update_network_configuration_input;
 
 mod _update_status;
+
+mod _update_teams_input;
 
 mod _webserver_access_mode;
 

@@ -8,6 +8,15 @@ pub struct GetInvestigationInput {
     pub detector_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the investigation to retrieve.</p>
     pub investigation_id: ::std::option::Option<::std::string::String>,
+    /// <p>The format in which to return the investigation summary. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STRING</code> – (Default) Returns the summary as text in <code>Summary</code>.</p></li>
+    /// <li>
+    /// <p><code>STRUCTURED</code> – Returns a typed summary in <code>SummaryData</code>.</p></li>
+    /// </ul>
+    /// <p>GuardDuty returns a summary only when the investigation status is <code>COMPLETED</code>.</p>
+    pub summary_format: ::std::option::Option<crate::types::SummaryFormat>,
 }
 impl GetInvestigationInput {
     /// <p>The unique ID of the GuardDuty detector associated with the investigation.</p>
@@ -18,6 +27,17 @@ impl GetInvestigationInput {
     /// <p>The unique identifier of the investigation to retrieve.</p>
     pub fn investigation_id(&self) -> ::std::option::Option<&str> {
         self.investigation_id.as_deref()
+    }
+    /// <p>The format in which to return the investigation summary. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STRING</code> – (Default) Returns the summary as text in <code>Summary</code>.</p></li>
+    /// <li>
+    /// <p><code>STRUCTURED</code> – Returns a typed summary in <code>SummaryData</code>.</p></li>
+    /// </ul>
+    /// <p>GuardDuty returns a summary only when the investigation status is <code>COMPLETED</code>.</p>
+    pub fn summary_format(&self) -> ::std::option::Option<&crate::types::SummaryFormat> {
+        self.summary_format.as_ref()
     }
 }
 impl GetInvestigationInput {
@@ -33,6 +53,7 @@ impl GetInvestigationInput {
 pub struct GetInvestigationInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
     pub(crate) investigation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) summary_format: ::std::option::Option<crate::types::SummaryFormat>,
 }
 impl GetInvestigationInputBuilder {
     /// <p>The unique ID of the GuardDuty detector associated with the investigation.</p>
@@ -68,6 +89,41 @@ impl GetInvestigationInputBuilder {
     pub fn get_investigation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.investigation_id
     }
+    /// <p>The format in which to return the investigation summary. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STRING</code> – (Default) Returns the summary as text in <code>Summary</code>.</p></li>
+    /// <li>
+    /// <p><code>STRUCTURED</code> – Returns a typed summary in <code>SummaryData</code>.</p></li>
+    /// </ul>
+    /// <p>GuardDuty returns a summary only when the investigation status is <code>COMPLETED</code>.</p>
+    pub fn summary_format(mut self, input: crate::types::SummaryFormat) -> Self {
+        self.summary_format = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The format in which to return the investigation summary. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STRING</code> – (Default) Returns the summary as text in <code>Summary</code>.</p></li>
+    /// <li>
+    /// <p><code>STRUCTURED</code> – Returns a typed summary in <code>SummaryData</code>.</p></li>
+    /// </ul>
+    /// <p>GuardDuty returns a summary only when the investigation status is <code>COMPLETED</code>.</p>
+    pub fn set_summary_format(mut self, input: ::std::option::Option<crate::types::SummaryFormat>) -> Self {
+        self.summary_format = input;
+        self
+    }
+    /// <p>The format in which to return the investigation summary. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STRING</code> – (Default) Returns the summary as text in <code>Summary</code>.</p></li>
+    /// <li>
+    /// <p><code>STRUCTURED</code> – Returns a typed summary in <code>SummaryData</code>.</p></li>
+    /// </ul>
+    /// <p>GuardDuty returns a summary only when the investigation status is <code>COMPLETED</code>.</p>
+    pub fn get_summary_format(&self) -> &::std::option::Option<crate::types::SummaryFormat> {
+        &self.summary_format
+    }
     /// Consumes the builder and constructs a [`GetInvestigationInput`](crate::operation::get_investigation::GetInvestigationInput).
     pub fn build(
         self,
@@ -75,6 +131,7 @@ impl GetInvestigationInputBuilder {
         ::std::result::Result::Ok(crate::operation::get_investigation::GetInvestigationInput {
             detector_id: self.detector_id,
             investigation_id: self.investigation_id,
+            summary_format: self.summary_format,
         })
     }
 }

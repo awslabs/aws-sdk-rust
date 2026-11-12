@@ -259,4 +259,18 @@ impl UpdateRouterOutputFluentBuilder {
     pub fn get_fabric_configuration(&self) -> &::std::option::Option<crate::types::FabricConfiguration> {
         self.inner.get_fabric_configuration()
     }
+    /// <p>The updated processor settings for the router output. When you update the processors, include every setting that you want to keep. MediaConnect resets the settings that you don't specify to their defaults.</p>
+    pub fn processors(mut self, input: crate::types::RouterOutputProcessors) -> Self {
+        self.inner = self.inner.processors(input);
+        self
+    }
+    /// <p>The updated processor settings for the router output. When you update the processors, include every setting that you want to keep. MediaConnect resets the settings that you don't specify to their defaults.</p>
+    pub fn set_processors(mut self, input: ::std::option::Option<crate::types::RouterOutputProcessors>) -> Self {
+        self.inner = self.inner.set_processors(input);
+        self
+    }
+    /// <p>The updated processor settings for the router output. When you update the processors, include every setting that you want to keep. MediaConnect resets the settings that you don't specify to their defaults.</p>
+    pub fn get_processors(&self) -> &::std::option::Option<crate::types::RouterOutputProcessors> {
+        self.inner.get_processors()
+    }
 }

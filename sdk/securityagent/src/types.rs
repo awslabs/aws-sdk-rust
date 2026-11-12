@@ -43,6 +43,8 @@ pub use crate::types::_vpc_config::VpcConfig;
 
 pub use crate::types::_network_traffic_config::NetworkTrafficConfig;
 
+pub use crate::types::_clean_up_strategy::CleanUpStrategy;
+
 pub use crate::types::_ci_cd_configuration::CiCdConfiguration;
 
 pub use crate::types::_test_scope::TestScope;
@@ -234,8 +236,6 @@ pub use crate::types::_security_requirement_pack_summary::SecurityRequirementPac
 pub use crate::types::_target_domain_summary::TargetDomainSummary;
 
 pub use crate::types::_target_domain::TargetDomain;
-
-pub use crate::types::_clean_up_strategy::CleanUpStrategy;
 
 pub use crate::types::_error_code::ErrorCode;
 

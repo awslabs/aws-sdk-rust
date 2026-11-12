@@ -21,6 +21,17 @@ static ROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_SRTLISTENER: ::aws_smithy_schema:
     1,
 )
 .with_json_name("srtListener");
+static ROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_RTMPPUSH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconnect#RouterInputProtocolConfiguration$RtmpPush",
+        "com.amazonaws.mediaconnect",
+        "RouterInputProtocolConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RtmpPush",
+    2,
+)
+.with_json_name("rtmpPush");
 static ROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_SRTCALLER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.mediaconnect#RouterInputProtocolConfiguration$SrtCaller",
@@ -29,7 +40,7 @@ static ROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_SRTCALLER: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "SrtCaller",
-    2,
+    3,
 )
 .with_json_name("srtCaller");
 static ROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_RTP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -40,7 +51,7 @@ static ROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_RTP: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "Rtp",
-    3,
+    4,
 )
 .with_json_name("rtp");
 static ROUTERINPUTPROTOCOLCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
@@ -53,6 +64,7 @@ static ROUTERINPUTPROTOCOLCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'sta
     &[
         &ROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_RIST,
         &ROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_SRTLISTENER,
+        &ROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_RTMPPUSH,
         &ROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_SRTCALLER,
         &ROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_RTP,
     ],
@@ -77,6 +89,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::RouterInpu
             }
             Self::SrtListener(val) => {
                 ser.write_struct(&ROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_SRTLISTENER, val)?;
+            }
+            Self::RtmpPush(val) => {
+                ser.write_struct(&ROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_RTMPPUSH, val)?;
             }
             Self::SrtCaller(val) => {
                 ser.write_struct(&ROUTERINPUTPROTOCOLCONFIGURATION_MEMBER_SRTCALLER, val)?;
@@ -107,8 +122,9 @@ impl crate::types::RouterInputProtocolConfiguration {
             result = ::std::option::Option::Some(match member.member_index() {
                 Some(0) => Self::Rist(crate::types::RistRouterInputConfiguration::deserialize(deser)?),
                 Some(1) => Self::SrtListener(crate::types::SrtListenerRouterInputConfiguration::deserialize(deser)?),
-                Some(2) => Self::SrtCaller(crate::types::SrtCallerRouterInputConfiguration::deserialize(deser)?),
-                Some(3) => Self::Rtp(crate::types::RtpRouterInputConfiguration::deserialize(deser)?),
+                Some(2) => Self::RtmpPush(crate::types::RtmpPushRouterInputConfiguration::deserialize(deser)?),
+                Some(3) => Self::SrtCaller(crate::types::SrtCallerRouterInputConfiguration::deserialize(deser)?),
+                Some(4) => Self::Rtp(crate::types::RtpRouterInputConfiguration::deserialize(deser)?),
                 _ => Self::Unknown,
             });
             Ok(())

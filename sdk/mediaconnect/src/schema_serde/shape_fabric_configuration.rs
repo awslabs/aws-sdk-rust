@@ -10,6 +10,28 @@ static FABRICCONFIGURATION_MEMBER_RECOVERY_LATENCY_MODE: ::aws_smithy_schema::Sc
     0,
 )
 .with_json_name("recoveryLatencyMode");
+static FABRICCONFIGURATION_MEMBER_SWITCHING_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconnect#FabricConfiguration$SwitchingMode",
+        "com.amazonaws.mediaconnect",
+        "FabricConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SwitchingMode",
+    1,
+)
+.with_json_name("switchingMode");
+static FABRICCONFIGURATION_MEMBER_SWITCHING_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconnect#FabricConfiguration$SwitchingConfiguration",
+        "com.amazonaws.mediaconnect",
+        "FabricConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "SwitchingConfiguration",
+    2,
+)
+.with_json_name("switchingConfiguration");
 static FABRICCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.mediaconnect#FabricConfiguration",
@@ -17,7 +39,11 @@ static FABRICCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_
         "FabricConfiguration",
     ),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&FABRICCONFIGURATION_MEMBER_RECOVERY_LATENCY_MODE],
+    &[
+        &FABRICCONFIGURATION_MEMBER_RECOVERY_LATENCY_MODE,
+        &FABRICCONFIGURATION_MEMBER_SWITCHING_MODE,
+        &FABRICCONFIGURATION_MEMBER_SWITCHING_CONFIGURATION,
+    ],
 );
 impl crate::types::FabricConfiguration {
     /// The schema for this shape.
@@ -36,6 +62,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::FabricConf
         {
             let val = &self.recovery_latency_mode;
             ser.write_string(&FABRICCONFIGURATION_MEMBER_RECOVERY_LATENCY_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.switching_mode {
+            ser.write_string(&FABRICCONFIGURATION_MEMBER_SWITCHING_MODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.switching_configuration {
+            ser.write_struct(&FABRICCONFIGURATION_MEMBER_SWITCHING_CONFIGURATION, val)?;
         }
         Ok(())
     }
@@ -56,6 +88,20 @@ impl crate::types::builders::FabricConfigurationBuilder {
             match member.member_index() {
                 Some(0) => {
                     self.recovery_latency_mode = Some(crate::types::FabricLatencyMode::from(deser.read_string(member)?.as_str()));
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.switching_mode = Some(crate::types::FabricSwitchingMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.switching_configuration = Some(crate::types::FabricSwitchingConfiguration::deserialize(deser)?);
+                    }
                 }
                 _ => {}
             }

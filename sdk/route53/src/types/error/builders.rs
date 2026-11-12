@@ -69,6 +69,10 @@ pub use crate::types::error::_no_such_cloud_watch_logs_log_group::NoSuchCloudWat
 
 pub use crate::types::error::_query_logging_config_already_exists::QueryLoggingConfigAlreadyExistsBuilder;
 
+pub use crate::types::error::_invalid_resource_record_set_protection_batch::InvalidResourceRecordSetProtectionBatchBuilder;
+
+pub use crate::types::error::_protection_already_exists::ProtectionAlreadyExistsBuilder;
+
 pub use crate::types::error::_delegation_set_already_created::DelegationSetAlreadyCreatedBuilder;
 
 pub use crate::types::error::_delegation_set_already_reusable::DelegationSetAlreadyReusableBuilder;

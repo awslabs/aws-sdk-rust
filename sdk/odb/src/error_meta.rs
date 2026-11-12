@@ -156,6 +156,44 @@ impl From<crate::operation::associate_iam_role_to_resource::AssociateIamRoleToRe
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_virtual_machines_to_cloud_vm_cluster::AssociateVirtualMachinesToCloudVmClusterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_virtual_machines_to_cloud_vm_cluster::AssociateVirtualMachinesToCloudVmClusterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_virtual_machines_to_cloud_vm_cluster::AssociateVirtualMachinesToCloudVmClusterError> for Error {
+    fn from(err: crate::operation::associate_virtual_machines_to_cloud_vm_cluster::AssociateVirtualMachinesToCloudVmClusterError) -> Self {
+        match err {
+            crate::operation::associate_virtual_machines_to_cloud_vm_cluster::AssociateVirtualMachinesToCloudVmClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::associate_virtual_machines_to_cloud_vm_cluster::AssociateVirtualMachinesToCloudVmClusterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::associate_virtual_machines_to_cloud_vm_cluster::AssociateVirtualMachinesToCloudVmClusterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::associate_virtual_machines_to_cloud_vm_cluster::AssociateVirtualMachinesToCloudVmClusterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::associate_virtual_machines_to_cloud_vm_cluster::AssociateVirtualMachinesToCloudVmClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_virtual_machines_to_cloud_vm_cluster::AssociateVirtualMachinesToCloudVmClusterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_virtual_machines_to_cloud_vm_cluster::AssociateVirtualMachinesToCloudVmClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::associate_virtual_machines_to_exadb_vm_cluster::AssociateVirtualMachinesToExadbVmClusterError,
             R,
         >,
@@ -1040,6 +1078,44 @@ impl From<crate::operation::disassociate_iam_role_from_resource::DisassociateIam
                 Error::ValidationException(inner)
             }
             crate::operation::disassociate_iam_role_from_resource::DisassociateIamRoleFromResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_virtual_machines_from_cloud_vm_cluster::DisassociateVirtualMachinesFromCloudVmClusterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_virtual_machines_from_cloud_vm_cluster::DisassociateVirtualMachinesFromCloudVmClusterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_virtual_machines_from_cloud_vm_cluster::DisassociateVirtualMachinesFromCloudVmClusterError> for Error {
+    fn from(err: crate::operation::disassociate_virtual_machines_from_cloud_vm_cluster::DisassociateVirtualMachinesFromCloudVmClusterError) -> Self {
+        match err {
+            crate::operation::disassociate_virtual_machines_from_cloud_vm_cluster::DisassociateVirtualMachinesFromCloudVmClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disassociate_virtual_machines_from_cloud_vm_cluster::DisassociateVirtualMachinesFromCloudVmClusterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::disassociate_virtual_machines_from_cloud_vm_cluster::DisassociateVirtualMachinesFromCloudVmClusterError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::disassociate_virtual_machines_from_cloud_vm_cluster::DisassociateVirtualMachinesFromCloudVmClusterError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::disassociate_virtual_machines_from_cloud_vm_cluster::DisassociateVirtualMachinesFromCloudVmClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::disassociate_virtual_machines_from_cloud_vm_cluster::DisassociateVirtualMachinesFromCloudVmClusterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::disassociate_virtual_machines_from_cloud_vm_cluster::DisassociateVirtualMachinesFromCloudVmClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2869,6 +2945,56 @@ impl From<crate::operation::update_autonomous_database_backup::UpdateAutonomousD
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_cloud_autonomous_vm_cluster::UpdateCloudAutonomousVmClusterError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_cloud_autonomous_vm_cluster::UpdateCloudAutonomousVmClusterError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_cloud_autonomous_vm_cluster::UpdateCloudAutonomousVmClusterError> for Error {
+    fn from(err: crate::operation::update_cloud_autonomous_vm_cluster::UpdateCloudAutonomousVmClusterError) -> Self {
+        match err {
+            crate::operation::update_cloud_autonomous_vm_cluster::UpdateCloudAutonomousVmClusterError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_cloud_autonomous_vm_cluster::UpdateCloudAutonomousVmClusterError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_cloud_autonomous_vm_cluster::UpdateCloudAutonomousVmClusterError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_cloud_autonomous_vm_cluster::UpdateCloudAutonomousVmClusterError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_cloud_autonomous_vm_cluster::UpdateCloudAutonomousVmClusterError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_cloud_autonomous_vm_cluster::UpdateCloudAutonomousVmClusterError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_cloud_autonomous_vm_cluster::UpdateCloudAutonomousVmClusterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_cloud_exadata_infrastructure::UpdateCloudExadataInfrastructureError,
             R,
         >,
@@ -2913,6 +3039,79 @@ impl From<crate::operation::update_cloud_exadata_infrastructure::UpdateCloudExad
                 Error::ValidationException(inner)
             }
             crate::operation::update_cloud_exadata_infrastructure::UpdateCloudExadataInfrastructureError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_cloud_exadata_infrastructure_storage_capacity::UpdateCloudExadataInfrastructureStorageCapacityError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_cloud_exadata_infrastructure_storage_capacity::UpdateCloudExadataInfrastructureStorageCapacityError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_cloud_exadata_infrastructure_storage_capacity::UpdateCloudExadataInfrastructureStorageCapacityError> for Error {
+    fn from(
+        err: crate::operation::update_cloud_exadata_infrastructure_storage_capacity::UpdateCloudExadataInfrastructureStorageCapacityError,
+    ) -> Self {
+        match err {
+            crate::operation::update_cloud_exadata_infrastructure_storage_capacity::UpdateCloudExadataInfrastructureStorageCapacityError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_cloud_exadata_infrastructure_storage_capacity::UpdateCloudExadataInfrastructureStorageCapacityError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_cloud_exadata_infrastructure_storage_capacity::UpdateCloudExadataInfrastructureStorageCapacityError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_cloud_exadata_infrastructure_storage_capacity::UpdateCloudExadataInfrastructureStorageCapacityError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_cloud_exadata_infrastructure_storage_capacity::UpdateCloudExadataInfrastructureStorageCapacityError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_cloud_exadata_infrastructure_storage_capacity::UpdateCloudExadataInfrastructureStorageCapacityError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_cloud_exadata_infrastructure_storage_capacity::UpdateCloudExadataInfrastructureStorageCapacityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cloud_vm_cluster::UpdateCloudVmClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cloud_vm_cluster::UpdateCloudVmClusterError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_cloud_vm_cluster::UpdateCloudVmClusterError> for Error {
+    fn from(err: crate::operation::update_cloud_vm_cluster::UpdateCloudVmClusterError) -> Self {
+        match err {
+            crate::operation::update_cloud_vm_cluster::UpdateCloudVmClusterError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_cloud_vm_cluster::UpdateCloudVmClusterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_cloud_vm_cluster::UpdateCloudVmClusterError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_cloud_vm_cluster::UpdateCloudVmClusterError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_cloud_vm_cluster::UpdateCloudVmClusterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_cloud_vm_cluster::UpdateCloudVmClusterError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_cloud_vm_cluster::UpdateCloudVmClusterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

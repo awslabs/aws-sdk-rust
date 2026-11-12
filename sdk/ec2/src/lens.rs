@@ -699,6 +699,16 @@ pub(crate) fn reflens_describe_managed_prefix_lists_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_metric_categories_output_output_next_token(
+    input: &crate::operation::describe_metric_categories::DescribeMetricCategoriesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_moving_addresses_output_output_next_token(
     input: &crate::operation::describe_moving_addresses::DescribeMovingAddressesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -2206,6 +2216,13 @@ pub(crate) fn lens_describe_managed_prefix_lists_output_output_prefix_lists(
     input: crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ManagedPrefixList>> {
     let input = input.prefix_lists?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_metric_categories_output_output_metric_categories(
+    input: crate::operation::describe_metric_categories::DescribeMetricCategoriesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::MetricCategory>> {
+    let input = input.metric_categories?;
     ::std::option::Option::Some(input)
 }
 

@@ -248,6 +248,18 @@ where
                                     .transpose()?,
                             );
                         }
+                        "IdentityCenterConfiguration" => {
+                            builder = builder.set_identity_center_configuration(
+                                crate::protocol_serde::shape_identity_center_configuration::de_identity_center_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "Teams" => {
+                            builder = builder.set_teams(crate::protocol_serde::shape_team_map::de_team_map(tokens, _value, depth + 1)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

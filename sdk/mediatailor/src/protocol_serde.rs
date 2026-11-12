@@ -213,6 +213,8 @@ pub(crate) mod shape_function_mapping;
 
 pub(crate) mod shape_hls_configuration;
 
+pub(crate) mod shape_hls_tag_processor_configuration;
+
 pub(crate) mod shape_http_configuration;
 
 pub(crate) mod shape_http_package_configuration;
@@ -348,6 +350,8 @@ pub(crate) mod shape_secrets_manager_access_token_configuration;
 pub(crate) mod shape_source_location;
 
 pub(crate) mod shape_splice_insert_message;
+
+pub(crate) mod shape_tag_filter_list;
 
 pub(crate) mod shape_time_signal_message;
 

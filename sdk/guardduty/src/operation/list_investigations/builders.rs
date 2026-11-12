@@ -23,7 +23,7 @@ impl crate::operation::list_investigations::builders::ListInvestigationsInputBui
 /// Fluent builder constructing a request to `ListInvestigations`.
 ///
 /// <p>This API is currently available as a preview. This feature is available in the following Amazon Web Services Regions: US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), Europe (Frankfurt), Europe (Ireland), Europe (London), Europe (Paris), Europe (Stockholm), and Asia Pacific (Tokyo).</p>
-/// <p>Returns a list of investigations associated with the specified GuardDuty detector.</p>
+/// <p>Returns a list of investigations associated with the specified GuardDuty detector. You can filter the investigations by status, risk level, confidence, finding ID, and investigation type, and sort them by start time, end time, status, risk level, or confidence.</p>
 /// <p>An administrator account sees all investigations across the organization. Member accounts see only the investigations that belong to them.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListInvestigationsFluentBuilder {
@@ -132,6 +132,20 @@ impl ListInvestigationsFluentBuilder {
     /// <p>To find the <code>detectorId</code> in the current Region, see the Settings page in the GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a> API.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_detector_id()
+    }
+    /// <p>The criteria used to filter investigations. GuardDuty returns only the investigations that match all of the specified criteria.</p>
+    pub fn filter_criteria(mut self, input: crate::types::InvestigationFilterCriteria) -> Self {
+        self.inner = self.inner.filter_criteria(input);
+        self
+    }
+    /// <p>The criteria used to filter investigations. GuardDuty returns only the investigations that match all of the specified criteria.</p>
+    pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::InvestigationFilterCriteria>) -> Self {
+        self.inner = self.inner.set_filter_criteria(input);
+        self
+    }
+    /// <p>The criteria used to filter investigations. GuardDuty returns only the investigations that match all of the specified criteria.</p>
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::InvestigationFilterCriteria> {
+        self.inner.get_filter_criteria()
     }
     /// <p>Represents the criteria used for sorting investigations.</p>
     pub fn sort_criteria(mut self, input: crate::types::InvestigationSortCriteria) -> Self {

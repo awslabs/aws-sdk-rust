@@ -6,6 +6,8 @@ pub struct ListInvestigationsInput {
     /// <p>The unique ID of the GuardDuty detector whose investigations you want to list.</p>
     /// <p>To find the <code>detectorId</code> in the current Region, see the Settings page in the GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a> API.</p>
     pub detector_id: ::std::option::Option<::std::string::String>,
+    /// <p>The criteria used to filter investigations. GuardDuty returns only the investigations that match all of the specified criteria.</p>
+    pub filter_criteria: ::std::option::Option<crate::types::InvestigationFilterCriteria>,
     /// <p>Represents the criteria used for sorting investigations.</p>
     pub sort_criteria: ::std::option::Option<crate::types::InvestigationSortCriteria>,
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50.</p>
@@ -18,6 +20,10 @@ impl ListInvestigationsInput {
     /// <p>To find the <code>detectorId</code> in the current Region, see the Settings page in the GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a> API.</p>
     pub fn detector_id(&self) -> ::std::option::Option<&str> {
         self.detector_id.as_deref()
+    }
+    /// <p>The criteria used to filter investigations. GuardDuty returns only the investigations that match all of the specified criteria.</p>
+    pub fn filter_criteria(&self) -> ::std::option::Option<&crate::types::InvestigationFilterCriteria> {
+        self.filter_criteria.as_ref()
     }
     /// <p>Represents the criteria used for sorting investigations.</p>
     pub fn sort_criteria(&self) -> ::std::option::Option<&crate::types::InvestigationSortCriteria> {
@@ -44,6 +50,7 @@ impl ListInvestigationsInput {
 #[non_exhaustive]
 pub struct ListInvestigationsInputBuilder {
     pub(crate) detector_id: ::std::option::Option<::std::string::String>,
+    pub(crate) filter_criteria: ::std::option::Option<crate::types::InvestigationFilterCriteria>,
     pub(crate) sort_criteria: ::std::option::Option<crate::types::InvestigationSortCriteria>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
@@ -66,6 +73,20 @@ impl ListInvestigationsInputBuilder {
     /// <p>To find the <code>detectorId</code> in the current Region, see the Settings page in the GuardDuty console, or run the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a> API.</p>
     pub fn get_detector_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.detector_id
+    }
+    /// <p>The criteria used to filter investigations. GuardDuty returns only the investigations that match all of the specified criteria.</p>
+    pub fn filter_criteria(mut self, input: crate::types::InvestigationFilterCriteria) -> Self {
+        self.filter_criteria = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The criteria used to filter investigations. GuardDuty returns only the investigations that match all of the specified criteria.</p>
+    pub fn set_filter_criteria(mut self, input: ::std::option::Option<crate::types::InvestigationFilterCriteria>) -> Self {
+        self.filter_criteria = input;
+        self
+    }
+    /// <p>The criteria used to filter investigations. GuardDuty returns only the investigations that match all of the specified criteria.</p>
+    pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::InvestigationFilterCriteria> {
+        &self.filter_criteria
     }
     /// <p>Represents the criteria used for sorting investigations.</p>
     pub fn sort_criteria(mut self, input: crate::types::InvestigationSortCriteria) -> Self {
@@ -115,6 +136,7 @@ impl ListInvestigationsInputBuilder {
     ) -> ::std::result::Result<crate::operation::list_investigations::ListInvestigationsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_investigations::ListInvestigationsInput {
             detector_id: self.detector_id,
+            filter_criteria: self.filter_criteria,
             sort_criteria: self.sort_criteria,
             max_results: self.max_results,
             next_token: self.next_token,

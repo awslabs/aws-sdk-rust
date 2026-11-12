@@ -13,6 +13,8 @@ pub struct DescribeFlowSourceMetadataOutput {
     pub transport_media_info: ::std::option::Option<crate::types::TransportMediaInfo>,
     /// <p>The NDI® specific information about the flow's source. This includes the current active NDI sender, a list of all discovered NDI senders, the associated media streams for the active NDI sender, and any relevant status messages.</p>
     pub ndi_info: ::std::option::Option<crate::types::NdiSourceMetadataInfo>,
+    /// <p>The RTMP (Real-Time Messaging Protocol) specific information about the flow's source. This includes the application name, the stream name, and the associated audio and video streams.</p>
+    pub rtmp_info: ::std::option::Option<crate::types::RtmpSourceMetadataInfo>,
     _request_id: Option<String>,
 }
 impl DescribeFlowSourceMetadataOutput {
@@ -38,6 +40,10 @@ impl DescribeFlowSourceMetadataOutput {
     pub fn ndi_info(&self) -> ::std::option::Option<&crate::types::NdiSourceMetadataInfo> {
         self.ndi_info.as_ref()
     }
+    /// <p>The RTMP (Real-Time Messaging Protocol) specific information about the flow's source. This includes the application name, the stream name, and the associated audio and video streams.</p>
+    pub fn rtmp_info(&self) -> ::std::option::Option<&crate::types::RtmpSourceMetadataInfo> {
+        self.rtmp_info.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeFlowSourceMetadataOutput {
     fn request_id(&self) -> Option<&str> {
@@ -60,6 +66,7 @@ pub struct DescribeFlowSourceMetadataOutputBuilder {
     pub(crate) timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) transport_media_info: ::std::option::Option<crate::types::TransportMediaInfo>,
     pub(crate) ndi_info: ::std::option::Option<crate::types::NdiSourceMetadataInfo>,
+    pub(crate) rtmp_info: ::std::option::Option<crate::types::RtmpSourceMetadataInfo>,
     _request_id: Option<String>,
 }
 impl DescribeFlowSourceMetadataOutputBuilder {
@@ -139,6 +146,20 @@ impl DescribeFlowSourceMetadataOutputBuilder {
     pub fn get_ndi_info(&self) -> &::std::option::Option<crate::types::NdiSourceMetadataInfo> {
         &self.ndi_info
     }
+    /// <p>The RTMP (Real-Time Messaging Protocol) specific information about the flow's source. This includes the application name, the stream name, and the associated audio and video streams.</p>
+    pub fn rtmp_info(mut self, input: crate::types::RtmpSourceMetadataInfo) -> Self {
+        self.rtmp_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The RTMP (Real-Time Messaging Protocol) specific information about the flow's source. This includes the application name, the stream name, and the associated audio and video streams.</p>
+    pub fn set_rtmp_info(mut self, input: ::std::option::Option<crate::types::RtmpSourceMetadataInfo>) -> Self {
+        self.rtmp_info = input;
+        self
+    }
+    /// <p>The RTMP (Real-Time Messaging Protocol) specific information about the flow's source. This includes the application name, the stream name, and the associated audio and video streams.</p>
+    pub fn get_rtmp_info(&self) -> &::std::option::Option<crate::types::RtmpSourceMetadataInfo> {
+        &self.rtmp_info
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -156,6 +177,7 @@ impl DescribeFlowSourceMetadataOutputBuilder {
             timestamp: self.timestamp,
             transport_media_info: self.transport_media_info,
             ndi_info: self.ndi_info,
+            rtmp_info: self.rtmp_info,
             _request_id: self._request_id,
         }
     }

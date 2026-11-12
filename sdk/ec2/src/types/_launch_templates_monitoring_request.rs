@@ -6,11 +6,19 @@
 pub struct LaunchTemplatesMonitoringRequest {
     /// <p>Specify <code>true</code> to enable detailed monitoring. Otherwise, basic monitoring is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
+    /// <p>The IDs of the metric categories to associate with the instance. To specify metric categories, you must also enable detailed monitoring.</p>
+    pub metric_category_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LaunchTemplatesMonitoringRequest {
     /// <p>Specify <code>true</code> to enable detailed monitoring. Otherwise, basic monitoring is enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
+    }
+    /// <p>The IDs of the metric categories to associate with the instance. To specify metric categories, you must also enable detailed monitoring.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_category_ids.is_none()`.
+    pub fn metric_category_ids(&self) -> &[::std::string::String] {
+        self.metric_category_ids.as_deref().unwrap_or_default()
     }
 }
 impl LaunchTemplatesMonitoringRequest {
@@ -25,6 +33,7 @@ impl LaunchTemplatesMonitoringRequest {
 #[non_exhaustive]
 pub struct LaunchTemplatesMonitoringRequestBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) metric_category_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl LaunchTemplatesMonitoringRequestBuilder {
     /// <p>Specify <code>true</code> to enable detailed monitoring. Otherwise, basic monitoring is enabled.</p>
@@ -41,8 +50,31 @@ impl LaunchTemplatesMonitoringRequestBuilder {
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
+    /// Appends an item to `metric_category_ids`.
+    ///
+    /// To override the contents of this collection use [`set_metric_category_ids`](Self::set_metric_category_ids).
+    ///
+    /// <p>The IDs of the metric categories to associate with the instance. To specify metric categories, you must also enable detailed monitoring.</p>
+    pub fn metric_category_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.metric_category_ids.unwrap_or_default();
+        v.push(input.into());
+        self.metric_category_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IDs of the metric categories to associate with the instance. To specify metric categories, you must also enable detailed monitoring.</p>
+    pub fn set_metric_category_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.metric_category_ids = input;
+        self
+    }
+    /// <p>The IDs of the metric categories to associate with the instance. To specify metric categories, you must also enable detailed monitoring.</p>
+    pub fn get_metric_category_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.metric_category_ids
+    }
     /// Consumes the builder and constructs a [`LaunchTemplatesMonitoringRequest`](crate::types::LaunchTemplatesMonitoringRequest).
     pub fn build(self) -> crate::types::LaunchTemplatesMonitoringRequest {
-        crate::types::LaunchTemplatesMonitoringRequest { enabled: self.enabled }
+        crate::types::LaunchTemplatesMonitoringRequest {
+            enabled: self.enabled,
+            metric_category_ids: self.metric_category_ids,
+        }
     }
 }

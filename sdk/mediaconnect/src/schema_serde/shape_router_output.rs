@@ -293,6 +293,17 @@ static ROUTEROUTPUT_MEMBER_FABRIC_CONFIGURATION: ::aws_smithy_schema::Schema<'st
     23,
 )
 .with_json_name("fabricConfiguration");
+static ROUTEROUTPUT_MEMBER_PROCESSORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconnect#RouterOutput$Processors",
+        "com.amazonaws.mediaconnect",
+        "RouterOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Processors",
+    24,
+)
+.with_json_name("processors");
 static ROUTEROUTPUT_MEMBER_ASSOCIATED_SOURCE_ENDPOINT_ARNS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.mediaconnect#SourceEndpointArnList$member",
@@ -311,7 +322,7 @@ static ROUTEROUTPUT_MEMBER_ASSOCIATED_SOURCE_ENDPOINT_ARNS: ::aws_smithy_schema:
     ),
     ::aws_smithy_schema::ShapeType::List,
     "AssociatedSourceEndpointArns",
-    24,
+    25,
 )
 .with_json_name("associatedSourceEndpointArns")
 .with_list_member(&ROUTEROUTPUT_MEMBER_ASSOCIATED_SOURCE_ENDPOINT_ARNS_MEMBER);
@@ -343,6 +354,7 @@ static ROUTEROUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_
         &ROUTEROUTPUT_MEMBER_MAINTENANCE_SCHEDULE_TYPE,
         &ROUTEROUTPUT_MEMBER_MAINTENANCE_SCHEDULE,
         &ROUTEROUTPUT_MEMBER_FABRIC_CONFIGURATION,
+        &ROUTEROUTPUT_MEMBER_PROCESSORS,
         &ROUTEROUTPUT_MEMBER_ASSOCIATED_SOURCE_ENDPOINT_ARNS,
     ],
 );
@@ -463,6 +475,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::RouterOutp
         }
         if let Some(ref val) = self.fabric_configuration {
             ser.write_struct(&ROUTEROUTPUT_MEMBER_FABRIC_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.processors {
+            ser.write_struct(&ROUTEROUTPUT_MEMBER_PROCESSORS, val)?;
         }
         if let Some(ref val) = self.associated_source_endpoint_arns {
             ser.write_list(
@@ -604,6 +619,13 @@ impl crate::types::builders::RouterOutputBuilder {
                     }
                 }
                 Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.processors = Some(crate::types::RouterOutputProcessors::deserialize(deser)?);
+                    }
+                }
+                Some(25) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

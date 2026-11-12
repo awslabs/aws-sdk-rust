@@ -21,6 +21,17 @@ static GETINVESTIGATIONINPUT_MEMBER_INVESTIGATION_ID: ::aws_smithy_schema::Schem
     1,
 )
 .with_http_label();
+static GETINVESTIGATIONINPUT_MEMBER_SUMMARY_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.guardduty.synthetic#GetInvestigationInput$SummaryFormat",
+        "com.amazonaws.guardduty.synthetic",
+        "GetInvestigationInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SummaryFormat",
+    2,
+)
+.with_http_query("summaryFormat");
 static GETINVESTIGATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.guardduty.synthetic#GetInvestigationInput",
@@ -28,7 +39,11 @@ static GETINVESTIGATIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aw
         "GetInvestigationInput",
     ),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&GETINVESTIGATIONINPUT_MEMBER_DETECTOR_ID, &GETINVESTIGATIONINPUT_MEMBER_INVESTIGATION_ID],
+    &[
+        &GETINVESTIGATIONINPUT_MEMBER_DETECTOR_ID,
+        &GETINVESTIGATIONINPUT_MEMBER_INVESTIGATION_ID,
+        &GETINVESTIGATIONINPUT_MEMBER_SUMMARY_FORMAT,
+    ],
 )
 .with_http(aws_smithy_schema::traits::HttpTrait::new(
     "GET",
@@ -57,6 +72,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::get_in
         }
         if let Some(ref val) = self.investigation_id {
             ser.write_string(&GETINVESTIGATIONINPUT_MEMBER_INVESTIGATION_ID, val)?;
+        }
+        if let Some(ref val) = self.summary_format {
+            ser.write_string(&GETINVESTIGATIONINPUT_MEMBER_SUMMARY_FORMAT, val.as_str())?;
         }
         Ok(())
     }
@@ -87,6 +105,13 @@ impl crate::operation::get_investigation::builders::GetInvestigationInputBuilder
                         deser.read_null()?;
                     } else {
                         self.investigation_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.summary_format = Some(crate::types::SummaryFormat::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}

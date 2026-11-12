@@ -37,6 +37,8 @@
 ///     ManifestServiceExcludeEventType::NoMediaPlaylist => { /* ... */ },
 ///     ManifestServiceExcludeEventType::OriginManifest => { /* ... */ },
 ///     ManifestServiceExcludeEventType::ParsingError => { /* ... */ },
+///     ManifestServiceExcludeEventType::PostOriginResponseFunctionError => { /* ... */ },
+///     ManifestServiceExcludeEventType::PostOriginResponseHookError => { /* ... */ },
 ///     ManifestServiceExcludeEventType::PreSessionInitFunctionError => { /* ... */ },
 ///     ManifestServiceExcludeEventType::PreSessionInitHookError => { /* ... */ },
 ///     ManifestServiceExcludeEventType::Scte35ParsingError => { /* ... */ },
@@ -125,6 +127,10 @@ pub enum ManifestServiceExcludeEventType {
     #[allow(missing_docs)] // documentation missing in model
     ParsingError,
     #[allow(missing_docs)] // documentation missing in model
+    PostOriginResponseFunctionError,
+    #[allow(missing_docs)] // documentation missing in model
+    PostOriginResponseHookError,
+    #[allow(missing_docs)] // documentation missing in model
     PreSessionInitFunctionError,
     #[allow(missing_docs)] // documentation missing in model
     PreSessionInitHookError,
@@ -174,6 +180,8 @@ impl ::std::convert::From<&str> for ManifestServiceExcludeEventType {
             "NO_MEDIA_PLAYLIST" => ManifestServiceExcludeEventType::NoMediaPlaylist,
             "ORIGIN_MANIFEST" => ManifestServiceExcludeEventType::OriginManifest,
             "PARSING_ERROR" => ManifestServiceExcludeEventType::ParsingError,
+            "POST_ORIGIN_RESPONSE_FUNCTION_ERROR" => ManifestServiceExcludeEventType::PostOriginResponseFunctionError,
+            "POST_ORIGIN_RESPONSE_HOOK_ERROR" => ManifestServiceExcludeEventType::PostOriginResponseHookError,
             "PRE_SESSION_INIT_FUNCTION_ERROR" => ManifestServiceExcludeEventType::PreSessionInitFunctionError,
             "PRE_SESSION_INIT_HOOK_ERROR" => ManifestServiceExcludeEventType::PreSessionInitHookError,
             "SCTE35_PARSING_ERROR" => ManifestServiceExcludeEventType::Scte35ParsingError,
@@ -223,6 +231,8 @@ impl ManifestServiceExcludeEventType {
             ManifestServiceExcludeEventType::NoMediaPlaylist => "NO_MEDIA_PLAYLIST",
             ManifestServiceExcludeEventType::OriginManifest => "ORIGIN_MANIFEST",
             ManifestServiceExcludeEventType::ParsingError => "PARSING_ERROR",
+            ManifestServiceExcludeEventType::PostOriginResponseFunctionError => "POST_ORIGIN_RESPONSE_FUNCTION_ERROR",
+            ManifestServiceExcludeEventType::PostOriginResponseHookError => "POST_ORIGIN_RESPONSE_HOOK_ERROR",
             ManifestServiceExcludeEventType::PreSessionInitFunctionError => "PRE_SESSION_INIT_FUNCTION_ERROR",
             ManifestServiceExcludeEventType::PreSessionInitHookError => "PRE_SESSION_INIT_HOOK_ERROR",
             ManifestServiceExcludeEventType::Scte35ParsingError => "SCTE35_PARSING_ERROR",
@@ -263,6 +273,8 @@ impl ManifestServiceExcludeEventType {
             "NO_MEDIA_PLAYLIST",
             "ORIGIN_MANIFEST",
             "PARSING_ERROR",
+            "POST_ORIGIN_RESPONSE_FUNCTION_ERROR",
+            "POST_ORIGIN_RESPONSE_HOOK_ERROR",
             "PRE_SESSION_INIT_FUNCTION_ERROR",
             "PRE_SESSION_INIT_HOOK_ERROR",
             "SCTE35_PARSING_ERROR",
@@ -320,6 +332,8 @@ impl ::std::fmt::Display for ManifestServiceExcludeEventType {
             ManifestServiceExcludeEventType::NoMediaPlaylist => write!(f, "NO_MEDIA_PLAYLIST"),
             ManifestServiceExcludeEventType::OriginManifest => write!(f, "ORIGIN_MANIFEST"),
             ManifestServiceExcludeEventType::ParsingError => write!(f, "PARSING_ERROR"),
+            ManifestServiceExcludeEventType::PostOriginResponseFunctionError => write!(f, "POST_ORIGIN_RESPONSE_FUNCTION_ERROR"),
+            ManifestServiceExcludeEventType::PostOriginResponseHookError => write!(f, "POST_ORIGIN_RESPONSE_HOOK_ERROR"),
             ManifestServiceExcludeEventType::PreSessionInitFunctionError => write!(f, "PRE_SESSION_INIT_FUNCTION_ERROR"),
             ManifestServiceExcludeEventType::PreSessionInitHookError => write!(f, "PRE_SESSION_INIT_HOOK_ERROR"),
             ManifestServiceExcludeEventType::Scte35ParsingError => write!(f, "SCTE35_PARSING_ERROR"),

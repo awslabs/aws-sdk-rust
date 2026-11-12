@@ -267,6 +267,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutResourcePo
                 captured.insert("ResourcePolicy", value);
             }
         }
+        if requested.should_capture("PolicyName") {
+            if let ::std::option::Option::Some(value) = input.policy_name.as_deref() {
+                captured.insert("PolicyName", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())

@@ -9,12 +9,16 @@ pub struct PredefinedMetricSpecification {
     /// <li>
     /// <p><code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p></li>
     /// <li>
+    /// <p><code>ASGAverageCPUUtilizationHighResolution</code> - Average CPU utilization of the Auto Scaling group using a high-resolution metric.</p></li>
+    /// <li>
     /// <p><code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p></li>
     /// <li>
     /// <p><code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p></li>
     /// <li>
     /// <p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
-    /// </ul>
+    /// </ul><important>
+    /// <p>To help ensure that target tracking has metric data to use for the <code>ASGAverageCPUUtilizationHighResolution</code> metric type, configure the Auto Scaling group's launch template and existing instances to publish high-resolution CPU utilization metrics.</p>
+    /// </important>
     pub predefined_metric_type: ::std::option::Option<crate::types::MetricType>,
     /// <p>A label that uniquely identifies a specific Application Load Balancer target group from which to determine the average request count served by your Auto Scaling group. You can't specify a resource label unless the target group is attached to the Auto Scaling group.</p>
     /// <p>You create the resource label by appending the final portion of the load balancer ARN and the final portion of the target group ARN into a single value, separated by a forward slash (/). The format of the resource label is:</p>
@@ -45,12 +49,16 @@ impl PredefinedMetricSpecification {
     /// <li>
     /// <p><code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p></li>
     /// <li>
+    /// <p><code>ASGAverageCPUUtilizationHighResolution</code> - Average CPU utilization of the Auto Scaling group using a high-resolution metric.</p></li>
+    /// <li>
     /// <p><code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p></li>
     /// <li>
     /// <p><code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p></li>
     /// <li>
     /// <p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
-    /// </ul>
+    /// </ul><important>
+    /// <p>To help ensure that target tracking has metric data to use for the <code>ASGAverageCPUUtilizationHighResolution</code> metric type, configure the Auto Scaling group's launch template and existing instances to publish high-resolution CPU utilization metrics.</p>
+    /// </important>
     pub fn predefined_metric_type(&self) -> ::std::option::Option<&crate::types::MetricType> {
         self.predefined_metric_type.as_ref()
     }
@@ -99,12 +107,16 @@ impl PredefinedMetricSpecificationBuilder {
     /// <li>
     /// <p><code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p></li>
     /// <li>
+    /// <p><code>ASGAverageCPUUtilizationHighResolution</code> - Average CPU utilization of the Auto Scaling group using a high-resolution metric.</p></li>
+    /// <li>
     /// <p><code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p></li>
     /// <li>
     /// <p><code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p></li>
     /// <li>
     /// <p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
-    /// </ul>
+    /// </ul><important>
+    /// <p>To help ensure that target tracking has metric data to use for the <code>ASGAverageCPUUtilizationHighResolution</code> metric type, configure the Auto Scaling group's launch template and existing instances to publish high-resolution CPU utilization metrics.</p>
+    /// </important>
     /// This field is required.
     pub fn predefined_metric_type(mut self, input: crate::types::MetricType) -> Self {
         self.predefined_metric_type = ::std::option::Option::Some(input);
@@ -115,12 +127,16 @@ impl PredefinedMetricSpecificationBuilder {
     /// <li>
     /// <p><code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p></li>
     /// <li>
+    /// <p><code>ASGAverageCPUUtilizationHighResolution</code> - Average CPU utilization of the Auto Scaling group using a high-resolution metric.</p></li>
+    /// <li>
     /// <p><code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p></li>
     /// <li>
     /// <p><code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p></li>
     /// <li>
     /// <p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
-    /// </ul>
+    /// </ul><important>
+    /// <p>To help ensure that target tracking has metric data to use for the <code>ASGAverageCPUUtilizationHighResolution</code> metric type, configure the Auto Scaling group's launch template and existing instances to publish high-resolution CPU utilization metrics.</p>
+    /// </important>
     pub fn set_predefined_metric_type(mut self, input: ::std::option::Option<crate::types::MetricType>) -> Self {
         self.predefined_metric_type = input;
         self
@@ -130,12 +146,16 @@ impl PredefinedMetricSpecificationBuilder {
     /// <li>
     /// <p><code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto Scaling group.</p></li>
     /// <li>
+    /// <p><code>ASGAverageCPUUtilizationHighResolution</code> - Average CPU utilization of the Auto Scaling group using a high-resolution metric.</p></li>
+    /// <li>
     /// <p><code>ASGAverageNetworkIn</code> - Average number of bytes received on all network interfaces by the Auto Scaling group.</p></li>
     /// <li>
     /// <p><code>ASGAverageNetworkOut</code> - Average number of bytes sent out on all network interfaces by the Auto Scaling group.</p></li>
     /// <li>
     /// <p><code>ALBRequestCountPerTarget</code> - Average Application Load Balancer request count per target for your Auto Scaling group.</p></li>
-    /// </ul>
+    /// </ul><important>
+    /// <p>To help ensure that target tracking has metric data to use for the <code>ASGAverageCPUUtilizationHighResolution</code> metric type, configure the Auto Scaling group's launch template and existing instances to publish high-resolution CPU utilization metrics.</p>
+    /// </important>
     pub fn get_predefined_metric_type(&self) -> &::std::option::Option<crate::types::MetricType> {
         &self.predefined_metric_type
     }

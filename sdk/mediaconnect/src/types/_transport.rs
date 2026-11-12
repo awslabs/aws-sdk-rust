@@ -48,6 +48,10 @@ pub struct Transport {
     pub ndi_output_timecode_source: ::std::option::Option<crate::types::NdiOutputTimecodeSource>,
     /// <p>The audio reference level of the NDI receiver, in decibels relative to full scale (dBFS). Common values are <code>-20</code> (NDI and SMPTE) and <code>-18</code> (EBU). For NDI outputs, this field is always present and defaults to <code>-20</code>.</p>
     pub ndi_audio_reference_level: ::std::option::Option<i32>,
+    /// <p>The settings for the RTMP (Real-Time Messaging Protocol) source.</p>
+    pub rtmp_push_source_settings: ::std::option::Option<crate::types::RtmpPushSourceSettings>,
+    /// <p>The settings for an output that pushes a stream to a destination using the RTMP (Real-Time Messaging Protocol) protocol, or RTMPS (RTMP over TLS) when TLS encryption is specified.</p>
+    pub rtmp_push_output_settings: ::std::option::Option<crate::types::RtmpPushOutputSettings>,
 }
 impl Transport {
     /// <p>The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16</p>
@@ -132,6 +136,14 @@ impl Transport {
     pub fn ndi_audio_reference_level(&self) -> ::std::option::Option<i32> {
         self.ndi_audio_reference_level
     }
+    /// <p>The settings for the RTMP (Real-Time Messaging Protocol) source.</p>
+    pub fn rtmp_push_source_settings(&self) -> ::std::option::Option<&crate::types::RtmpPushSourceSettings> {
+        self.rtmp_push_source_settings.as_ref()
+    }
+    /// <p>The settings for an output that pushes a stream to a destination using the RTMP (Real-Time Messaging Protocol) protocol, or RTMPS (RTMP over TLS) when TLS encryption is specified.</p>
+    pub fn rtmp_push_output_settings(&self) -> ::std::option::Option<&crate::types::RtmpPushOutputSettings> {
+        self.rtmp_push_output_settings.as_ref()
+    }
 }
 impl Transport {
     /// Creates a new builder-style object to manufacture [`Transport`](crate::types::Transport).
@@ -162,6 +174,8 @@ pub struct TransportBuilder {
     pub(crate) ndi_source_settings: ::std::option::Option<crate::types::NdiSourceSettings>,
     pub(crate) ndi_output_timecode_source: ::std::option::Option<crate::types::NdiOutputTimecodeSource>,
     pub(crate) ndi_audio_reference_level: ::std::option::Option<i32>,
+    pub(crate) rtmp_push_source_settings: ::std::option::Option<crate::types::RtmpPushSourceSettings>,
+    pub(crate) rtmp_push_output_settings: ::std::option::Option<crate::types::RtmpPushOutputSettings>,
 }
 impl TransportBuilder {
     /// Appends an item to `cidr_allow_list`.
@@ -447,6 +461,34 @@ impl TransportBuilder {
     pub fn get_ndi_audio_reference_level(&self) -> &::std::option::Option<i32> {
         &self.ndi_audio_reference_level
     }
+    /// <p>The settings for the RTMP (Real-Time Messaging Protocol) source.</p>
+    pub fn rtmp_push_source_settings(mut self, input: crate::types::RtmpPushSourceSettings) -> Self {
+        self.rtmp_push_source_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings for the RTMP (Real-Time Messaging Protocol) source.</p>
+    pub fn set_rtmp_push_source_settings(mut self, input: ::std::option::Option<crate::types::RtmpPushSourceSettings>) -> Self {
+        self.rtmp_push_source_settings = input;
+        self
+    }
+    /// <p>The settings for the RTMP (Real-Time Messaging Protocol) source.</p>
+    pub fn get_rtmp_push_source_settings(&self) -> &::std::option::Option<crate::types::RtmpPushSourceSettings> {
+        &self.rtmp_push_source_settings
+    }
+    /// <p>The settings for an output that pushes a stream to a destination using the RTMP (Real-Time Messaging Protocol) protocol, or RTMPS (RTMP over TLS) when TLS encryption is specified.</p>
+    pub fn rtmp_push_output_settings(mut self, input: crate::types::RtmpPushOutputSettings) -> Self {
+        self.rtmp_push_output_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings for an output that pushes a stream to a destination using the RTMP (Real-Time Messaging Protocol) protocol, or RTMPS (RTMP over TLS) when TLS encryption is specified.</p>
+    pub fn set_rtmp_push_output_settings(mut self, input: ::std::option::Option<crate::types::RtmpPushOutputSettings>) -> Self {
+        self.rtmp_push_output_settings = input;
+        self
+    }
+    /// <p>The settings for an output that pushes a stream to a destination using the RTMP (Real-Time Messaging Protocol) protocol, or RTMPS (RTMP over TLS) when TLS encryption is specified.</p>
+    pub fn get_rtmp_push_output_settings(&self) -> &::std::option::Option<crate::types::RtmpPushOutputSettings> {
+        &self.rtmp_push_output_settings
+    }
     /// Consumes the builder and constructs a [`Transport`](crate::types::Transport).
     pub fn build(self) -> crate::types::Transport {
         crate::types::Transport {
@@ -468,6 +510,8 @@ impl TransportBuilder {
             ndi_source_settings: self.ndi_source_settings,
             ndi_output_timecode_source: self.ndi_output_timecode_source,
             ndi_audio_reference_level: self.ndi_audio_reference_level,
+            rtmp_push_source_settings: self.rtmp_push_source_settings,
+            rtmp_push_output_settings: self.rtmp_push_output_settings,
         }
     }
 }

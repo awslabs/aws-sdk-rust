@@ -23,6 +23,10 @@ pub struct DescribeHubOutput {
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the hub was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Information about the user who created the hub.</p>
+    pub created_by: ::std::option::Option<crate::types::UserContext>,
+    /// <p>Information about the user who last modified the hub.</p>
+    pub last_modified_by: ::std::option::Option<crate::types::UserContext>,
     _request_id: Option<String>,
 }
 impl DescribeHubOutput {
@@ -68,6 +72,14 @@ impl DescribeHubOutput {
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
+    /// <p>Information about the user who created the hub.</p>
+    pub fn created_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
+        self.created_by.as_ref()
+    }
+    /// <p>Information about the user who last modified the hub.</p>
+    pub fn last_modified_by(&self) -> ::std::option::Option<&crate::types::UserContext> {
+        self.last_modified_by.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeHubOutput {
     fn request_id(&self) -> Option<&str> {
@@ -95,6 +107,8 @@ pub struct DescribeHubOutputBuilder {
     pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) created_by: ::std::option::Option<crate::types::UserContext>,
+    pub(crate) last_modified_by: ::std::option::Option<crate::types::UserContext>,
     _request_id: Option<String>,
 }
 impl DescribeHubOutputBuilder {
@@ -249,6 +263,34 @@ impl DescribeHubOutputBuilder {
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
     }
+    /// <p>Information about the user who created the hub.</p>
+    pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
+        self.created_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the user who created the hub.</p>
+    pub fn set_created_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
+        self.created_by = input;
+        self
+    }
+    /// <p>Information about the user who created the hub.</p>
+    pub fn get_created_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.created_by
+    }
+    /// <p>Information about the user who last modified the hub.</p>
+    pub fn last_modified_by(mut self, input: crate::types::UserContext) -> Self {
+        self.last_modified_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the user who last modified the hub.</p>
+    pub fn set_last_modified_by(mut self, input: ::std::option::Option<crate::types::UserContext>) -> Self {
+        self.last_modified_by = input;
+        self
+    }
+    /// <p>Information about the user who last modified the hub.</p>
+    pub fn get_last_modified_by(&self) -> &::std::option::Option<crate::types::UserContext> {
+        &self.last_modified_by
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -271,6 +313,8 @@ impl DescribeHubOutputBuilder {
             failure_reason: self.failure_reason,
             creation_time: self.creation_time,
             last_modified_time: self.last_modified_time,
+            created_by: self.created_by,
+            last_modified_by: self.last_modified_by,
             _request_id: self._request_id,
         }
     }

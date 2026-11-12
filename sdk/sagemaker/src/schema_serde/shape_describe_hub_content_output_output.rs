@@ -224,6 +224,26 @@ static DESCRIBEHUBCONTENTOUTPUT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::
     "LastModifiedTime",
     19,
 );
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_CREATED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$CreatedBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CreatedBy",
+    20,
+);
+static DESCRIBEHUBCONTENTOUTPUT_MEMBER_LAST_MODIFIED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput$LastModifiedBy",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeHubContentOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LastModifiedBy",
+    21,
+);
 static DESCRIBEHUBCONTENTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.sagemaker.synthetic#DescribeHubContentOutput",
@@ -252,6 +272,8 @@ static DESCRIBEHUBCONTENTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = :
         &DESCRIBEHUBCONTENTOUTPUT_MEMBER_FAILURE_REASON,
         &DESCRIBEHUBCONTENTOUTPUT_MEMBER_CREATION_TIME,
         &DESCRIBEHUBCONTENTOUTPUT_MEMBER_LAST_MODIFIED_TIME,
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_CREATED_BY,
+        &DESCRIBEHUBCONTENTOUTPUT_MEMBER_LAST_MODIFIED_BY,
     ],
 )
 .with_original_name("DescribeHubContentResponse");
@@ -344,6 +366,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::descri
         }
         if let Some(ref val) = self.last_modified_time {
             ser.write_timestamp(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.created_by {
+            ser.write_struct(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_CREATED_BY, val)?;
+        }
+        if let Some(ref val) = self.last_modified_by {
+            ser.write_struct(&DESCRIBEHUBCONTENTOUTPUT_MEMBER_LAST_MODIFIED_BY, val)?;
         }
         Ok(())
     }
@@ -507,6 +535,20 @@ impl crate::operation::describe_hub_content::builders::DescribeHubContentOutputB
                         deser.read_null()?;
                     } else {
                         self.last_modified_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_by = Some(crate::types::UserContext::deserialize(deser)?);
                     }
                 }
                 _ => {}

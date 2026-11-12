@@ -185,6 +185,8 @@ mod create_key_signing_key;
 
 mod create_query_logging_config;
 
+mod create_resource_record_set_protections;
+
 mod create_reusable_delegation_set;
 
 mod create_traffic_policy;
@@ -233,6 +235,8 @@ mod delete_hosted_zone;
 mod delete_key_signing_key;
 
 mod delete_query_logging_config;
+
+mod delete_resource_record_set_protections;
 
 mod delete_reusable_delegation_set;
 
@@ -301,6 +305,8 @@ mod list_hosted_zones_by_name;
 mod list_hosted_zones_by_vpc;
 
 mod list_query_logging_configs;
+
+mod list_resource_record_set_protections;
 
 mod list_resource_record_sets;
 

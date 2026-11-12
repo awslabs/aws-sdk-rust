@@ -107,6 +107,18 @@ pub(crate) fn custom_output_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn hls_tag_processor_configuration_correct_errors(
+    mut builder: crate::types::builders::HlsTagProcessorConfigurationBuilder,
+) -> crate::types::builders::HlsTagProcessorConfigurationBuilder {
+    if builder.runtime.is_none() {
+        builder.runtime = "no value was set".parse::<crate::types::RuntimeType>().ok()
+    }
+    if builder.tag_filter.is_none() {
+        builder.tag_filter = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn http_configuration_correct_errors(
     mut builder: crate::types::builders::HttpConfigurationBuilder,
 ) -> crate::types::builders::HttpConfigurationBuilder {

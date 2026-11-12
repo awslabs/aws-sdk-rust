@@ -97,6 +97,49 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_cross_account_replica::AssociateCrossAccountReplicaError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_cross_account_replica::AssociateCrossAccountReplicaError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_cross_account_replica::AssociateCrossAccountReplicaError> for Error {
+    fn from(err: crate::operation::associate_cross_account_replica::AssociateCrossAccountReplicaError) -> Self {
+        match err {
+            crate::operation::associate_cross_account_replica::AssociateCrossAccountReplicaError::InternalServiceError(inner) => {
+                Error::InternalServiceError(inner)
+            }
+            crate::operation::associate_cross_account_replica::AssociateCrossAccountReplicaError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::associate_cross_account_replica::AssociateCrossAccountReplicaError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::associate_cross_account_replica::AssociateCrossAccountReplicaError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::associate_cross_account_replica::AssociateCrossAccountReplicaError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_cross_account_replica::AssociateCrossAccountReplicaError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_get_secret_value::BatchGetSecretValueError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -274,6 +317,50 @@ impl From<crate::operation::describe_secret::DescribeSecretError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_cross_account_replica::DisassociateCrossAccountReplicaError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_cross_account_replica::DisassociateCrossAccountReplicaError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_cross_account_replica::DisassociateCrossAccountReplicaError> for Error {
+    fn from(err: crate::operation::disassociate_cross_account_replica::DisassociateCrossAccountReplicaError) -> Self {
+        match err {
+            crate::operation::disassociate_cross_account_replica::DisassociateCrossAccountReplicaError::InternalServiceError(inner) => {
+                Error::InternalServiceError(inner)
+            }
+            crate::operation::disassociate_cross_account_replica::DisassociateCrossAccountReplicaError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::disassociate_cross_account_replica::DisassociateCrossAccountReplicaError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::disassociate_cross_account_replica::DisassociateCrossAccountReplicaError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_cross_account_replica::DisassociateCrossAccountReplicaError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_random_password::GetRandomPasswordError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -352,6 +439,40 @@ impl From<crate::operation::get_secret_value::GetSecretValueError> for Error {
             crate::operation::get_secret_value::GetSecretValueError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
             crate::operation::get_secret_value::GetSecretValueError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::get_secret_value::GetSecretValueError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resource_policies::ListResourcePoliciesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resource_policies::ListResourcePoliciesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_resource_policies::ListResourcePoliciesError> for Error {
+    fn from(err: crate::operation::list_resource_policies::ListResourcePoliciesError) -> Self {
+        match err {
+            crate::operation::list_resource_policies::ListResourcePoliciesError::InternalServiceError(inner) => Error::InternalServiceError(inner),
+            crate::operation::list_resource_policies::ListResourcePoliciesError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::operation::list_resource_policies::ListResourcePoliciesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_resource_policies::ListResourcePoliciesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_resource_policies::ListResourcePoliciesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_resource_policies::ListResourcePoliciesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

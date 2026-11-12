@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum RouterInputMetadata {
+    /// <p>The RTMP (Real-Time Messaging Protocol) specific information about the router input's source. This includes the application name, the stream name, and the associated audio and video streams.</p>
+    RtmpInfo(crate::types::RtmpSourceMetadataInfo),
     /// <p>The metadata of the transport stream in the current flow's source.</p>
     TransportStreamMediaInfo(crate::types::TransportMediaInfo),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum RouterInputMetadata {
     Unknown,
 }
 impl RouterInputMetadata {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`RtmpInfo`](crate::types::RouterInputMetadata::RtmpInfo), extracting the inner [`RtmpSourceMetadataInfo`](crate::types::RtmpSourceMetadataInfo).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_rtmp_info(&self) -> ::std::result::Result<&crate::types::RtmpSourceMetadataInfo, &Self> {
+        if let RouterInputMetadata::RtmpInfo(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`RtmpInfo`](crate::types::RouterInputMetadata::RtmpInfo).
+    pub fn is_rtmp_info(&self) -> bool {
+        self.as_rtmp_info().is_ok()
+    }
     /// Tries to convert the enum instance into [`TransportStreamMediaInfo`](crate::types::RouterInputMetadata::TransportStreamMediaInfo), extracting the inner [`TransportMediaInfo`](crate::types::TransportMediaInfo).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_transport_stream_media_info(&self) -> ::std::result::Result<&crate::types::TransportMediaInfo, &Self> {

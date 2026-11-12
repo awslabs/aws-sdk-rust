@@ -17,7 +17,7 @@ pub struct ListPipelinesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of pipelines to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>Filters the pipelines by who manages them. Specify <code>AWS</code> to return pipelines that AWS manages, or <code>CUSTOMER</code> to return pipelines that you created. If you don't specify a value, the response includes both.</p>
+    /// <p>Filters the pipelines by who manages them. Specify <code>AWS</code> to return pipelines that Amazon Web Services manages, or <code>CUSTOMER</code> to return pipelines that you created. If you don't specify a value, the response includes both.</p>
     pub managed_by: ::std::option::Option<crate::types::PipelineManagedBy>,
 }
 impl ListPipelinesInput {
@@ -49,7 +49,7 @@ impl ListPipelinesInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Filters the pipelines by who manages them. Specify <code>AWS</code> to return pipelines that AWS manages, or <code>CUSTOMER</code> to return pipelines that you created. If you don't specify a value, the response includes both.</p>
+    /// <p>Filters the pipelines by who manages them. Specify <code>AWS</code> to return pipelines that Amazon Web Services manages, or <code>CUSTOMER</code> to return pipelines that you created. If you don't specify a value, the response includes both.</p>
     pub fn managed_by(&self) -> ::std::option::Option<&crate::types::PipelineManagedBy> {
         self.managed_by.as_ref()
     }
@@ -173,17 +173,17 @@ impl ListPipelinesInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>Filters the pipelines by who manages them. Specify <code>AWS</code> to return pipelines that AWS manages, or <code>CUSTOMER</code> to return pipelines that you created. If you don't specify a value, the response includes both.</p>
+    /// <p>Filters the pipelines by who manages them. Specify <code>AWS</code> to return pipelines that Amazon Web Services manages, or <code>CUSTOMER</code> to return pipelines that you created. If you don't specify a value, the response includes both.</p>
     pub fn managed_by(mut self, input: crate::types::PipelineManagedBy) -> Self {
         self.managed_by = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filters the pipelines by who manages them. Specify <code>AWS</code> to return pipelines that AWS manages, or <code>CUSTOMER</code> to return pipelines that you created. If you don't specify a value, the response includes both.</p>
+    /// <p>Filters the pipelines by who manages them. Specify <code>AWS</code> to return pipelines that Amazon Web Services manages, or <code>CUSTOMER</code> to return pipelines that you created. If you don't specify a value, the response includes both.</p>
     pub fn set_managed_by(mut self, input: ::std::option::Option<crate::types::PipelineManagedBy>) -> Self {
         self.managed_by = input;
         self
     }
-    /// <p>Filters the pipelines by who manages them. Specify <code>AWS</code> to return pipelines that AWS manages, or <code>CUSTOMER</code> to return pipelines that you created. If you don't specify a value, the response includes both.</p>
+    /// <p>Filters the pipelines by who manages them. Specify <code>AWS</code> to return pipelines that Amazon Web Services manages, or <code>CUSTOMER</code> to return pipelines that you created. If you don't specify a value, the response includes both.</p>
     pub fn get_managed_by(&self) -> &::std::option::Option<crate::types::PipelineManagedBy> {
         &self.managed_by
     }

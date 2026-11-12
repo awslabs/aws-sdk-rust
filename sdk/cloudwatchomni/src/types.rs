@@ -195,6 +195,10 @@ pub use crate::types::_signal_type::SignalType;
 
 pub use crate::types::_metric_semantics::MetricSemantics;
 
+pub use crate::types::_metric_aggregation_temporality::MetricAggregationTemporality;
+
+pub use crate::types::_metric_monotonicity::MetricMonotonicity;
+
 pub use crate::types::_edge_traffic_stats::EdgeTrafficStats;
 
 pub use crate::types::_row_scope::RowScope;
@@ -301,7 +305,11 @@ mod _log_metadata;
 
 mod _metadata;
 
+mod _metric_aggregation_temporality;
+
 mod _metric_metadata;
+
+mod _metric_monotonicity;
 
 mod _metric_semantics;
 

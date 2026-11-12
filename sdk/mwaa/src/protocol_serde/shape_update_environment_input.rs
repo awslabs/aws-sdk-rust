@@ -25,77 +25,89 @@ pub fn ser_update_environment_input_input(
     if let Some(var_8) = &input.execution_role_arn {
         object.key("ExecutionRoleArn").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.logging_configuration {
+    if let Some(var_9) = &input.identity_center_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("LoggingConfiguration").start_object();
-        crate::protocol_serde::shape_logging_configuration_input::ser_logging_configuration_input(&mut object_10, var_9)?;
+        let mut object_10 = object.key("IdentityCenterConfiguration").start_object();
+        crate::protocol_serde::shape_identity_center_configuration::ser_identity_center_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.max_webservers {
+    if let Some(var_11) = &input.logging_configuration {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("LoggingConfiguration").start_object();
+        crate::protocol_serde::shape_logging_configuration_input::ser_logging_configuration_input(&mut object_12, var_11)?;
+        object_12.finish();
+    }
+    if let Some(var_13) = &input.max_webservers {
         object.key("MaxWebservers").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_11).into()),
-        );
-    }
-    if let Some(var_12) = &input.max_workers {
-        object.key("MaxWorkers").number(
-            #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_12).into()),
-        );
-    }
-    if let Some(var_13) = &input.min_webservers {
-        object.key("MinWebservers").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_13).into()),
         );
     }
-    if let Some(var_14) = &input.min_workers {
-        object.key("MinWorkers").number(
+    if let Some(var_14) = &input.max_workers {
+        object.key("MaxWorkers").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    if let Some(var_15) = &input.network_configuration {
-        #[allow(unused_mut)]
-        let mut object_16 = object.key("NetworkConfiguration").start_object();
-        crate::protocol_serde::shape_update_network_configuration_input::ser_update_network_configuration_input(&mut object_16, var_15)?;
-        object_16.finish();
-    }
-    if let Some(var_17) = &input.plugins_s3_object_version {
-        object.key("PluginsS3ObjectVersion").string(var_17.as_str());
-    }
-    if let Some(var_18) = &input.plugins_s3_path {
-        object.key("PluginsS3Path").string(var_18.as_str());
-    }
-    if let Some(var_19) = &input.requirements_s3_object_version {
-        object.key("RequirementsS3ObjectVersion").string(var_19.as_str());
-    }
-    if let Some(var_20) = &input.requirements_s3_path {
-        object.key("RequirementsS3Path").string(var_20.as_str());
-    }
-    if let Some(var_21) = &input.schedulers {
-        object.key("Schedulers").number(
+    if let Some(var_15) = &input.min_webservers {
+        object.key("MinWebservers").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_21).into()),
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_22) = &input.source_bucket_arn {
-        object.key("SourceBucketArn").string(var_22.as_str());
+    if let Some(var_16) = &input.min_workers {
+        object.key("MinWorkers").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_16).into()),
+        );
     }
-    if let Some(var_23) = &input.startup_script_s3_object_version {
-        object.key("StartupScriptS3ObjectVersion").string(var_23.as_str());
+    if let Some(var_17) = &input.network_configuration {
+        #[allow(unused_mut)]
+        let mut object_18 = object.key("NetworkConfiguration").start_object();
+        crate::protocol_serde::shape_update_network_configuration_input::ser_update_network_configuration_input(&mut object_18, var_17)?;
+        object_18.finish();
     }
-    if let Some(var_24) = &input.startup_script_s3_path {
-        object.key("StartupScriptS3Path").string(var_24.as_str());
+    if let Some(var_19) = &input.plugins_s3_object_version {
+        object.key("PluginsS3ObjectVersion").string(var_19.as_str());
     }
-    if let Some(var_25) = &input.webserver_access_mode {
-        object.key("WebserverAccessMode").string(var_25.as_str());
+    if let Some(var_20) = &input.plugins_s3_path {
+        object.key("PluginsS3Path").string(var_20.as_str());
     }
-    if let Some(var_26) = &input.weekly_maintenance_window_start {
-        object.key("WeeklyMaintenanceWindowStart").string(var_26.as_str());
+    if let Some(var_21) = &input.requirements_s3_object_version {
+        object.key("RequirementsS3ObjectVersion").string(var_21.as_str());
     }
-    if let Some(var_27) = &input.worker_replacement_strategy {
-        object.key("WorkerReplacementStrategy").string(var_27.as_str());
+    if let Some(var_22) = &input.requirements_s3_path {
+        object.key("RequirementsS3Path").string(var_22.as_str());
+    }
+    if let Some(var_23) = &input.schedulers {
+        object.key("Schedulers").number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_23).into()),
+        );
+    }
+    if let Some(var_24) = &input.source_bucket_arn {
+        object.key("SourceBucketArn").string(var_24.as_str());
+    }
+    if let Some(var_25) = &input.startup_script_s3_object_version {
+        object.key("StartupScriptS3ObjectVersion").string(var_25.as_str());
+    }
+    if let Some(var_26) = &input.startup_script_s3_path {
+        object.key("StartupScriptS3Path").string(var_26.as_str());
+    }
+    if let Some(var_27) = &input.teams {
+        #[allow(unused_mut)]
+        let mut object_28 = object.key("Teams").start_object();
+        crate::protocol_serde::shape_update_teams_input::ser_update_teams_input(&mut object_28, var_27)?;
+        object_28.finish();
+    }
+    if let Some(var_29) = &input.webserver_access_mode {
+        object.key("WebserverAccessMode").string(var_29.as_str());
+    }
+    if let Some(var_30) = &input.weekly_maintenance_window_start {
+        object.key("WeeklyMaintenanceWindowStart").string(var_30.as_str());
+    }
+    if let Some(var_31) = &input.worker_replacement_strategy {
+        object.key("WorkerReplacementStrategy").string(var_31.as_str());
     }
     Ok(())
 }

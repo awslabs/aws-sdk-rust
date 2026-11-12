@@ -29,7 +29,7 @@ pub struct GetWorkflowOutput {
     pub code: ::std::option::Option<crate::types::Code>,
     /// <p>The time at which the code artifacts were copied for this workflow, in ISO 8601 date-time format.</p>
     pub code_snapshotted_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The schedule configuration for the workflow, including cron expressions for automated execution. Amazon Managed Workflows for Apache Airflow Serverless uses EventBridge Scheduler for cost-effective, timezone-aware scheduling. When a workflow includes schedule information in its YAML definition, the service automatically configures the appropriate triggers for automated execution. Only one version of a workflow can have an active schedule at any given time.</p>
+    /// <p>The schedule configuration for the workflow. Only one version of a workflow can have an active schedule at any given time.</p>
     pub schedule_configuration: ::std::option::Option<crate::types::ScheduleConfiguration>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used for workflow execution.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
@@ -97,7 +97,7 @@ impl GetWorkflowOutput {
     pub fn code_snapshotted_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.code_snapshotted_at.as_ref()
     }
-    /// <p>The schedule configuration for the workflow, including cron expressions for automated execution. Amazon Managed Workflows for Apache Airflow Serverless uses EventBridge Scheduler for cost-effective, timezone-aware scheduling. When a workflow includes schedule information in its YAML definition, the service automatically configures the appropriate triggers for automated execution. Only one version of a workflow can have an active schedule at any given time.</p>
+    /// <p>The schedule configuration for the workflow. Only one version of a workflow can have an active schedule at any given time.</p>
     pub fn schedule_configuration(&self) -> ::std::option::Option<&crate::types::ScheduleConfiguration> {
         self.schedule_configuration.as_ref()
     }
@@ -343,17 +343,17 @@ impl GetWorkflowOutputBuilder {
     pub fn get_code_snapshotted_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.code_snapshotted_at
     }
-    /// <p>The schedule configuration for the workflow, including cron expressions for automated execution. Amazon Managed Workflows for Apache Airflow Serverless uses EventBridge Scheduler for cost-effective, timezone-aware scheduling. When a workflow includes schedule information in its YAML definition, the service automatically configures the appropriate triggers for automated execution. Only one version of a workflow can have an active schedule at any given time.</p>
+    /// <p>The schedule configuration for the workflow. Only one version of a workflow can have an active schedule at any given time.</p>
     pub fn schedule_configuration(mut self, input: crate::types::ScheduleConfiguration) -> Self {
         self.schedule_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The schedule configuration for the workflow, including cron expressions for automated execution. Amazon Managed Workflows for Apache Airflow Serverless uses EventBridge Scheduler for cost-effective, timezone-aware scheduling. When a workflow includes schedule information in its YAML definition, the service automatically configures the appropriate triggers for automated execution. Only one version of a workflow can have an active schedule at any given time.</p>
+    /// <p>The schedule configuration for the workflow. Only one version of a workflow can have an active schedule at any given time.</p>
     pub fn set_schedule_configuration(mut self, input: ::std::option::Option<crate::types::ScheduleConfiguration>) -> Self {
         self.schedule_configuration = input;
         self
     }
-    /// <p>The schedule configuration for the workflow, including cron expressions for automated execution. Amazon Managed Workflows for Apache Airflow Serverless uses EventBridge Scheduler for cost-effective, timezone-aware scheduling. When a workflow includes schedule information in its YAML definition, the service automatically configures the appropriate triggers for automated execution. Only one version of a workflow can have an active schedule at any given time.</p>
+    /// <p>The schedule configuration for the workflow. Only one version of a workflow can have an active schedule at any given time.</p>
     pub fn get_schedule_configuration(&self) -> &::std::option::Option<crate::types::ScheduleConfiguration> {
         &self.schedule_configuration
     }

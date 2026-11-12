@@ -2072,6 +2072,42 @@ impl From<crate::operation::list_findings::ListFindingsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_investigation_records::ListInvestigationRecordsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_investigation_records::ListInvestigationRecordsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_investigation_records::ListInvestigationRecordsError> for Error {
+    fn from(err: crate::operation::list_investigation_records::ListInvestigationRecordsError) -> Self {
+        match err {
+            crate::operation::list_investigation_records::ListInvestigationRecordsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_investigation_records::ListInvestigationRecordsError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::list_investigation_records::ListInvestigationRecordsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_investigation_records::ListInvestigationRecordsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_investigation_records::ListInvestigationRecordsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_investigations::ListInvestigationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

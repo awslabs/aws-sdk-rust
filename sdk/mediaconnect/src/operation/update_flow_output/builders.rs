@@ -483,4 +483,18 @@ impl UpdateFlowOutputFluentBuilder {
     pub fn get_ndi_audio_reference_level(&self) -> &::std::option::Option<i32> {
         self.inner.get_ndi_audio_reference_level()
     }
+    /// <p>The settings for an output that pushes a stream to a destination using the RTMP (Real-Time Messaging Protocol) protocol, or RTMPS (RTMP over TLS) when TLS encryption is specified.</p>
+    pub fn rtmp_push_settings(mut self, input: crate::types::RtmpPushOutputSettings) -> Self {
+        self.inner = self.inner.rtmp_push_settings(input);
+        self
+    }
+    /// <p>The settings for an output that pushes a stream to a destination using the RTMP (Real-Time Messaging Protocol) protocol, or RTMPS (RTMP over TLS) when TLS encryption is specified.</p>
+    pub fn set_rtmp_push_settings(mut self, input: ::std::option::Option<crate::types::RtmpPushOutputSettings>) -> Self {
+        self.inner = self.inner.set_rtmp_push_settings(input);
+        self
+    }
+    /// <p>The settings for an output that pushes a stream to a destination using the RTMP (Real-Time Messaging Protocol) protocol, or RTMPS (RTMP over TLS) when TLS encryption is specified.</p>
+    pub fn get_rtmp_push_settings(&self) -> &::std::option::Option<crate::types::RtmpPushOutputSettings> {
+        self.inner.get_rtmp_push_settings()
+    }
 }

@@ -25,6 +25,8 @@ pub struct DescribeInstanceOutput {
     pub regions: ::std::option::Option<::std::vec::Vec<crate::types::RegionMetadata>>,
     /// <p>Contains the encryption configuration for your IAM Identity Center instance, including the encryption status, KMS key type, and KMS key ARN.</p>
     pub encryption_configuration_details: ::std::option::Option<crate::types::EncryptionConfigurationDetails>,
+    /// <p>The network access controls configured for your Identity Center instance, including whether VPC endpoint access is required, and any VPC, IP address range, or application controls applied to instance traffic. Present only after a network configuration has been set on the instance.</p>
+    pub network_configuration_details: ::std::option::Option<crate::types::NetworkConfigurationInfo>,
     /// <p>Indicates whether permission sets are enabled for this Identity Center instance.</p>
     pub permission_sets_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
@@ -76,6 +78,10 @@ impl DescribeInstanceOutput {
     pub fn encryption_configuration_details(&self) -> ::std::option::Option<&crate::types::EncryptionConfigurationDetails> {
         self.encryption_configuration_details.as_ref()
     }
+    /// <p>The network access controls configured for your Identity Center instance, including whether VPC endpoint access is required, and any VPC, IP address range, or application controls applied to instance traffic. Present only after a network configuration has been set on the instance.</p>
+    pub fn network_configuration_details(&self) -> ::std::option::Option<&crate::types::NetworkConfigurationInfo> {
+        self.network_configuration_details.as_ref()
+    }
     /// <p>Indicates whether permission sets are enabled for this Identity Center instance.</p>
     pub fn permission_sets_enabled(&self) -> ::std::option::Option<bool> {
         self.permission_sets_enabled
@@ -108,6 +114,7 @@ pub struct DescribeInstanceOutputBuilder {
     pub(crate) primary_region: ::std::option::Option<::std::string::String>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<crate::types::RegionMetadata>>,
     pub(crate) encryption_configuration_details: ::std::option::Option<crate::types::EncryptionConfigurationDetails>,
+    pub(crate) network_configuration_details: ::std::option::Option<crate::types::NetworkConfigurationInfo>,
     pub(crate) permission_sets_enabled: ::std::option::Option<bool>,
     _request_id: Option<String>,
 }
@@ -272,6 +279,20 @@ impl DescribeInstanceOutputBuilder {
     pub fn get_encryption_configuration_details(&self) -> &::std::option::Option<crate::types::EncryptionConfigurationDetails> {
         &self.encryption_configuration_details
     }
+    /// <p>The network access controls configured for your Identity Center instance, including whether VPC endpoint access is required, and any VPC, IP address range, or application controls applied to instance traffic. Present only after a network configuration has been set on the instance.</p>
+    pub fn network_configuration_details(mut self, input: crate::types::NetworkConfigurationInfo) -> Self {
+        self.network_configuration_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The network access controls configured for your Identity Center instance, including whether VPC endpoint access is required, and any VPC, IP address range, or application controls applied to instance traffic. Present only after a network configuration has been set on the instance.</p>
+    pub fn set_network_configuration_details(mut self, input: ::std::option::Option<crate::types::NetworkConfigurationInfo>) -> Self {
+        self.network_configuration_details = input;
+        self
+    }
+    /// <p>The network access controls configured for your Identity Center instance, including whether VPC endpoint access is required, and any VPC, IP address range, or application controls applied to instance traffic. Present only after a network configuration has been set on the instance.</p>
+    pub fn get_network_configuration_details(&self) -> &::std::option::Option<crate::types::NetworkConfigurationInfo> {
+        &self.network_configuration_details
+    }
     /// <p>Indicates whether permission sets are enabled for this Identity Center instance.</p>
     pub fn permission_sets_enabled(mut self, input: bool) -> Self {
         self.permission_sets_enabled = ::std::option::Option::Some(input);
@@ -309,6 +330,7 @@ impl DescribeInstanceOutputBuilder {
             primary_region: self.primary_region,
             regions: self.regions,
             encryption_configuration_details: self.encryption_configuration_details,
+            network_configuration_details: self.network_configuration_details,
             permission_sets_enabled: self.permission_sets_enabled,
             _request_id: self._request_id,
         }

@@ -15,6 +15,8 @@ pub struct PutFunctionInput {
     /// <li>
     /// <p><code>AWS_SERVICE_REQUEST</code> – Makes an authenticated request to a supported AWS service API and evaluates output expressions that can reference the response.</p></li>
     /// <li>
+    /// <p><code>HLS_TAG_PROCESSOR</code> – Reads and changes HLS tags in the origin manifest at the <code>POST_ORIGIN_RESPONSE</code> lifecycle hook.</p></li>
+    /// <li>
     /// <p><code>VAST_REQUEST</code> – Calls a VAST endpoint, parses the response as VAST, and makes the parsed ads available to output expressions.</p></li>
     /// <li>
     /// <p><code>SEQUENTIAL_EXECUTOR</code> – Runs a sequence of child functions in order, passing data between steps through temporary data.</p></li>
@@ -37,6 +39,8 @@ pub struct PutFunctionInput {
     pub sequential_executor_configuration: ::std::option::Option<crate::types::SequentialExecutorConfiguration>,
     /// <p>The configuration for a <code>VAST_REQUEST</code> function. Specifies the HTTP method, URL, headers, body, timeout, and output expressions. Required when <code>FunctionType</code> is <code>VAST_REQUEST</code>.</p>
     pub vast_request_configuration: ::std::option::Option<crate::types::VastRequestConfiguration>,
+    /// <p>The configuration for an <code>HLS_TAG_PROCESSOR</code> function. Specifies the runtime, tag filter, optional run condition, and output expressions. Required when <code>FunctionType</code> is <code>HLS_TAG_PROCESSOR</code>.</p>
+    pub hls_tag_processor_configuration: ::std::option::Option<crate::types::HlsTagProcessorConfiguration>,
     /// <p>The tags to assign to the function. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -53,6 +57,8 @@ impl PutFunctionInput {
     /// <p><code>HTTP_REQUEST</code> – Makes an HTTP call to an external service and evaluates output expressions that can reference the response.</p></li>
     /// <li>
     /// <p><code>AWS_SERVICE_REQUEST</code> – Makes an authenticated request to a supported AWS service API and evaluates output expressions that can reference the response.</p></li>
+    /// <li>
+    /// <p><code>HLS_TAG_PROCESSOR</code> – Reads and changes HLS tags in the origin manifest at the <code>POST_ORIGIN_RESPONSE</code> lifecycle hook.</p></li>
     /// <li>
     /// <p><code>VAST_REQUEST</code> – Calls a VAST endpoint, parses the response as VAST, and makes the parsed ads available to output expressions.</p></li>
     /// <li>
@@ -92,6 +98,10 @@ impl PutFunctionInput {
     pub fn vast_request_configuration(&self) -> ::std::option::Option<&crate::types::VastRequestConfiguration> {
         self.vast_request_configuration.as_ref()
     }
+    /// <p>The configuration for an <code>HLS_TAG_PROCESSOR</code> function. Specifies the runtime, tag filter, optional run condition, and output expressions. Required when <code>FunctionType</code> is <code>HLS_TAG_PROCESSOR</code>.</p>
+    pub fn hls_tag_processor_configuration(&self) -> ::std::option::Option<&crate::types::HlsTagProcessorConfiguration> {
+        self.hls_tag_processor_configuration.as_ref()
+    }
     /// <p>The tags to assign to the function. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -117,6 +127,7 @@ pub struct PutFunctionInputBuilder {
     pub(crate) concurrent_executor_configuration: ::std::option::Option<crate::types::ConcurrentExecutorConfiguration>,
     pub(crate) sequential_executor_configuration: ::std::option::Option<crate::types::SequentialExecutorConfiguration>,
     pub(crate) vast_request_configuration: ::std::option::Option<crate::types::VastRequestConfiguration>,
+    pub(crate) hls_tag_processor_configuration: ::std::option::Option<crate::types::HlsTagProcessorConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl PutFunctionInputBuilder {
@@ -144,6 +155,8 @@ impl PutFunctionInputBuilder {
     /// <li>
     /// <p><code>AWS_SERVICE_REQUEST</code> – Makes an authenticated request to a supported AWS service API and evaluates output expressions that can reference the response.</p></li>
     /// <li>
+    /// <p><code>HLS_TAG_PROCESSOR</code> – Reads and changes HLS tags in the origin manifest at the <code>POST_ORIGIN_RESPONSE</code> lifecycle hook.</p></li>
+    /// <li>
     /// <p><code>VAST_REQUEST</code> – Calls a VAST endpoint, parses the response as VAST, and makes the parsed ads available to output expressions.</p></li>
     /// <li>
     /// <p><code>SEQUENTIAL_EXECUTOR</code> – Runs a sequence of child functions in order, passing data between steps through temporary data.</p></li>
@@ -165,6 +178,8 @@ impl PutFunctionInputBuilder {
     /// <li>
     /// <p><code>AWS_SERVICE_REQUEST</code> – Makes an authenticated request to a supported AWS service API and evaluates output expressions that can reference the response.</p></li>
     /// <li>
+    /// <p><code>HLS_TAG_PROCESSOR</code> – Reads and changes HLS tags in the origin manifest at the <code>POST_ORIGIN_RESPONSE</code> lifecycle hook.</p></li>
+    /// <li>
     /// <p><code>VAST_REQUEST</code> – Calls a VAST endpoint, parses the response as VAST, and makes the parsed ads available to output expressions.</p></li>
     /// <li>
     /// <p><code>SEQUENTIAL_EXECUTOR</code> – Runs a sequence of child functions in order, passing data between steps through temporary data.</p></li>
@@ -184,6 +199,8 @@ impl PutFunctionInputBuilder {
     /// <p><code>HTTP_REQUEST</code> – Makes an HTTP call to an external service and evaluates output expressions that can reference the response.</p></li>
     /// <li>
     /// <p><code>AWS_SERVICE_REQUEST</code> – Makes an authenticated request to a supported AWS service API and evaluates output expressions that can reference the response.</p></li>
+    /// <li>
+    /// <p><code>HLS_TAG_PROCESSOR</code> – Reads and changes HLS tags in the origin manifest at the <code>POST_ORIGIN_RESPONSE</code> lifecycle hook.</p></li>
     /// <li>
     /// <p><code>VAST_REQUEST</code> – Calls a VAST endpoint, parses the response as VAST, and makes the parsed ads available to output expressions.</p></li>
     /// <li>
@@ -293,6 +310,20 @@ impl PutFunctionInputBuilder {
     pub fn get_vast_request_configuration(&self) -> &::std::option::Option<crate::types::VastRequestConfiguration> {
         &self.vast_request_configuration
     }
+    /// <p>The configuration for an <code>HLS_TAG_PROCESSOR</code> function. Specifies the runtime, tag filter, optional run condition, and output expressions. Required when <code>FunctionType</code> is <code>HLS_TAG_PROCESSOR</code>.</p>
+    pub fn hls_tag_processor_configuration(mut self, input: crate::types::HlsTagProcessorConfiguration) -> Self {
+        self.hls_tag_processor_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for an <code>HLS_TAG_PROCESSOR</code> function. Specifies the runtime, tag filter, optional run condition, and output expressions. Required when <code>FunctionType</code> is <code>HLS_TAG_PROCESSOR</code>.</p>
+    pub fn set_hls_tag_processor_configuration(mut self, input: ::std::option::Option<crate::types::HlsTagProcessorConfiguration>) -> Self {
+        self.hls_tag_processor_configuration = input;
+        self
+    }
+    /// <p>The configuration for an <code>HLS_TAG_PROCESSOR</code> function. Specifies the runtime, tag filter, optional run condition, and output expressions. Required when <code>FunctionType</code> is <code>HLS_TAG_PROCESSOR</code>.</p>
+    pub fn get_hls_tag_processor_configuration(&self) -> &::std::option::Option<crate::types::HlsTagProcessorConfiguration> {
+        &self.hls_tag_processor_configuration
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -325,6 +356,7 @@ impl PutFunctionInputBuilder {
             concurrent_executor_configuration: self.concurrent_executor_configuration,
             sequential_executor_configuration: self.sequential_executor_configuration,
             vast_request_configuration: self.vast_request_configuration,
+            hls_tag_processor_configuration: self.hls_tag_processor_configuration,
             tags: self.tags,
         })
     }

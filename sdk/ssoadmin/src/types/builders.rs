@@ -15,6 +15,8 @@ pub use crate::types::_resource_server_config::ResourceServerConfigBuilder;
 
 pub use crate::types::_encryption_configuration_details::EncryptionConfigurationDetailsBuilder;
 
+pub use crate::types::_network_configuration_info::NetworkConfigurationInfoBuilder;
+
 pub use crate::types::_permission_set_provisioning_status::PermissionSetProvisioningStatusBuilder;
 
 pub use crate::types::_permissions_boundary::PermissionsBoundaryBuilder;

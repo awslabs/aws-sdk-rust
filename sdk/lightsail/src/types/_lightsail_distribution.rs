@@ -52,11 +52,15 @@ pub struct LightsailDistribution {
     /// <p>The minimum TLS protocol version that the distribution can use to communicate with viewers.</p>
     pub viewer_minimum_tls_protocol_version: ::std::option::Option<::std::string::String>,
     /// <p>The object (for example, <code>index.html</code>) that the distribution returns when a viewer requests the root URL of the distribution (<code>/</code>) instead of a specific object.</p>
+    /// <p>This value is returned only when you specify <code>distributionName</code> in your <code>GetDistributions</code> request. It isn't included in the response when you list all of your distributions.</p>
     pub default_root_object: ::std::option::Option<::std::string::String>,
     /// <p>An array of objects that describe the custom error responses configured for the distribution.</p>
+    /// <p>This value is returned only when you specify <code>distributionName</code> in your <code>GetDistributions</code> request. It isn't included in the response when you list all of your distributions.</p>
     pub custom_error_responses: ::std::option::Option<::std::vec::Vec<crate::types::DistributionCustomErrorResponse>>,
     /// <p>An object that describes the Web Application Firewall (WAF) configuration of the distribution.</p>
     pub waf: ::std::option::Option<crate::types::WafConfig>,
+    /// <p>An object that describes the Lightsail subdomain that's associated with the distribution, or is being associated with it.</p>
+    pub subdomain: ::std::option::Option<crate::types::LightsailDistributionSubdomain>,
 }
 impl LightsailDistribution {
     /// <p>The name of the distribution.</p>
@@ -155,10 +159,12 @@ impl LightsailDistribution {
         self.viewer_minimum_tls_protocol_version.as_deref()
     }
     /// <p>The object (for example, <code>index.html</code>) that the distribution returns when a viewer requests the root URL of the distribution (<code>/</code>) instead of a specific object.</p>
+    /// <p>This value is returned only when you specify <code>distributionName</code> in your <code>GetDistributions</code> request. It isn't included in the response when you list all of your distributions.</p>
     pub fn default_root_object(&self) -> ::std::option::Option<&str> {
         self.default_root_object.as_deref()
     }
     /// <p>An array of objects that describe the custom error responses configured for the distribution.</p>
+    /// <p>This value is returned only when you specify <code>distributionName</code> in your <code>GetDistributions</code> request. It isn't included in the response when you list all of your distributions.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.custom_error_responses.is_none()`.
     pub fn custom_error_responses(&self) -> &[crate::types::DistributionCustomErrorResponse] {
@@ -167,6 +173,10 @@ impl LightsailDistribution {
     /// <p>An object that describes the Web Application Firewall (WAF) configuration of the distribution.</p>
     pub fn waf(&self) -> ::std::option::Option<&crate::types::WafConfig> {
         self.waf.as_ref()
+    }
+    /// <p>An object that describes the Lightsail subdomain that's associated with the distribution, or is being associated with it.</p>
+    pub fn subdomain(&self) -> ::std::option::Option<&crate::types::LightsailDistributionSubdomain> {
+        self.subdomain.as_ref()
     }
 }
 impl LightsailDistribution {
@@ -204,6 +214,7 @@ pub struct LightsailDistributionBuilder {
     pub(crate) default_root_object: ::std::option::Option<::std::string::String>,
     pub(crate) custom_error_responses: ::std::option::Option<::std::vec::Vec<crate::types::DistributionCustomErrorResponse>>,
     pub(crate) waf: ::std::option::Option<crate::types::WafConfig>,
+    pub(crate) subdomain: ::std::option::Option<crate::types::LightsailDistributionSubdomain>,
 }
 impl LightsailDistributionBuilder {
     /// <p>The name of the distribution.</p>
@@ -534,16 +545,19 @@ impl LightsailDistributionBuilder {
         &self.viewer_minimum_tls_protocol_version
     }
     /// <p>The object (for example, <code>index.html</code>) that the distribution returns when a viewer requests the root URL of the distribution (<code>/</code>) instead of a specific object.</p>
+    /// <p>This value is returned only when you specify <code>distributionName</code> in your <code>GetDistributions</code> request. It isn't included in the response when you list all of your distributions.</p>
     pub fn default_root_object(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.default_root_object = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The object (for example, <code>index.html</code>) that the distribution returns when a viewer requests the root URL of the distribution (<code>/</code>) instead of a specific object.</p>
+    /// <p>This value is returned only when you specify <code>distributionName</code> in your <code>GetDistributions</code> request. It isn't included in the response when you list all of your distributions.</p>
     pub fn set_default_root_object(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.default_root_object = input;
         self
     }
     /// <p>The object (for example, <code>index.html</code>) that the distribution returns when a viewer requests the root URL of the distribution (<code>/</code>) instead of a specific object.</p>
+    /// <p>This value is returned only when you specify <code>distributionName</code> in your <code>GetDistributions</code> request. It isn't included in the response when you list all of your distributions.</p>
     pub fn get_default_root_object(&self) -> &::std::option::Option<::std::string::String> {
         &self.default_root_object
     }
@@ -552,6 +566,7 @@ impl LightsailDistributionBuilder {
     /// To override the contents of this collection use [`set_custom_error_responses`](Self::set_custom_error_responses).
     ///
     /// <p>An array of objects that describe the custom error responses configured for the distribution.</p>
+    /// <p>This value is returned only when you specify <code>distributionName</code> in your <code>GetDistributions</code> request. It isn't included in the response when you list all of your distributions.</p>
     pub fn custom_error_responses(mut self, input: crate::types::DistributionCustomErrorResponse) -> Self {
         let mut v = self.custom_error_responses.unwrap_or_default();
         v.push(input);
@@ -559,6 +574,7 @@ impl LightsailDistributionBuilder {
         self
     }
     /// <p>An array of objects that describe the custom error responses configured for the distribution.</p>
+    /// <p>This value is returned only when you specify <code>distributionName</code> in your <code>GetDistributions</code> request. It isn't included in the response when you list all of your distributions.</p>
     pub fn set_custom_error_responses(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::DistributionCustomErrorResponse>>,
@@ -567,6 +583,7 @@ impl LightsailDistributionBuilder {
         self
     }
     /// <p>An array of objects that describe the custom error responses configured for the distribution.</p>
+    /// <p>This value is returned only when you specify <code>distributionName</code> in your <code>GetDistributions</code> request. It isn't included in the response when you list all of your distributions.</p>
     pub fn get_custom_error_responses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DistributionCustomErrorResponse>> {
         &self.custom_error_responses
     }
@@ -583,6 +600,20 @@ impl LightsailDistributionBuilder {
     /// <p>An object that describes the Web Application Firewall (WAF) configuration of the distribution.</p>
     pub fn get_waf(&self) -> &::std::option::Option<crate::types::WafConfig> {
         &self.waf
+    }
+    /// <p>An object that describes the Lightsail subdomain that's associated with the distribution, or is being associated with it.</p>
+    pub fn subdomain(mut self, input: crate::types::LightsailDistributionSubdomain) -> Self {
+        self.subdomain = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that describes the Lightsail subdomain that's associated with the distribution, or is being associated with it.</p>
+    pub fn set_subdomain(mut self, input: ::std::option::Option<crate::types::LightsailDistributionSubdomain>) -> Self {
+        self.subdomain = input;
+        self
+    }
+    /// <p>An object that describes the Lightsail subdomain that's associated with the distribution, or is being associated with it.</p>
+    pub fn get_subdomain(&self) -> &::std::option::Option<crate::types::LightsailDistributionSubdomain> {
+        &self.subdomain
     }
     /// Consumes the builder and constructs a [`LightsailDistribution`](crate::types::LightsailDistribution).
     pub fn build(self) -> crate::types::LightsailDistribution {
@@ -611,6 +642,7 @@ impl LightsailDistributionBuilder {
             default_root_object: self.default_root_object,
             custom_error_responses: self.custom_error_responses,
             waf: self.waf,
+            subdomain: self.subdomain,
         }
     }
 }

@@ -333,6 +333,45 @@ impl From<crate::operation::attach_static_ip::AttachStaticIpError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::check_subdomain_availability::CheckSubdomainAvailabilityError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::check_subdomain_availability::CheckSubdomainAvailabilityError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::check_subdomain_availability::CheckSubdomainAvailabilityError> for Error {
+    fn from(err: crate::operation::check_subdomain_availability::CheckSubdomainAvailabilityError) -> Self {
+        match err {
+            crate::operation::check_subdomain_availability::CheckSubdomainAvailabilityError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::check_subdomain_availability::CheckSubdomainAvailabilityError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::check_subdomain_availability::CheckSubdomainAvailabilityError::OperationFailureException(inner) => {
+                Error::OperationFailureException(inner)
+            }
+            crate::operation::check_subdomain_availability::CheckSubdomainAvailabilityError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::check_subdomain_availability::CheckSubdomainAvailabilityError::UnauthenticatedException(inner) => {
+                Error::UnauthenticatedException(inner)
+            }
+            crate::operation::check_subdomain_availability::CheckSubdomainAvailabilityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::close_instance_public_ports::CloseInstancePublicPortsError, R>>
     for Error
 where
@@ -1370,6 +1409,33 @@ impl From<crate::operation::create_relational_database_snapshot::CreateRelationa
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_subdomain::CreateSubdomainError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_subdomain::CreateSubdomainError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_subdomain::CreateSubdomainError> for Error {
+    fn from(err: crate::operation::create_subdomain::CreateSubdomainError) -> Self {
+        match err {
+            crate::operation::create_subdomain::CreateSubdomainError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_subdomain::CreateSubdomainError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::create_subdomain::CreateSubdomainError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_subdomain::CreateSubdomainError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::create_subdomain::CreateSubdomainError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::create_subdomain::CreateSubdomainError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::create_subdomain::CreateSubdomainError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_alarm::DeleteAlarmError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2126,6 +2192,33 @@ impl From<crate::operation::delete_relational_database_snapshot::DeleteRelationa
                 Error::UnauthenticatedException(inner)
             }
             crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_subdomain::DeleteSubdomainError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_subdomain::DeleteSubdomainError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_subdomain::DeleteSubdomainError> for Error {
+    fn from(err: crate::operation::delete_subdomain::DeleteSubdomainError) -> Self {
+        match err {
+            crate::operation::delete_subdomain::DeleteSubdomainError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_subdomain::DeleteSubdomainError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::delete_subdomain::DeleteSubdomainError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_subdomain::DeleteSubdomainError::OperationFailureException(inner) => Error::OperationFailureException(inner),
+            crate::operation::delete_subdomain::DeleteSubdomainError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_subdomain::DeleteSubdomainError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::delete_subdomain::DeleteSubdomainError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4939,6 +5032,32 @@ impl From<crate::operation::get_static_ips::GetStaticIpsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_subdomains::GetSubdomainsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_subdomains::GetSubdomainsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_subdomains::GetSubdomainsError> for Error {
+    fn from(err: crate::operation::get_subdomains::GetSubdomainsError) -> Self {
+        match err {
+            crate::operation::get_subdomains::GetSubdomainsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_subdomains::GetSubdomainsError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::operation::get_subdomains::GetSubdomainsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::get_subdomains::GetSubdomainsError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::get_subdomains::GetSubdomainsError::UnauthenticatedException(inner) => Error::UnauthenticatedException(inner),
+            crate::operation::get_subdomains::GetSubdomainsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::import_key_pair::ImportKeyPairError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -6217,6 +6336,48 @@ impl From<crate::operation::update_relational_database_parameters::UpdateRelatio
             crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_subdomain_association::UpdateSubdomainAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_subdomain_association::UpdateSubdomainAssociationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_subdomain_association::UpdateSubdomainAssociationError> for Error {
+    fn from(err: crate::operation::update_subdomain_association::UpdateSubdomainAssociationError) -> Self {
+        match err {
+            crate::operation::update_subdomain_association::UpdateSubdomainAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_subdomain_association::UpdateSubdomainAssociationError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::update_subdomain_association::UpdateSubdomainAssociationError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::update_subdomain_association::UpdateSubdomainAssociationError::OperationFailureException(inner) => {
+                Error::OperationFailureException(inner)
+            }
+            crate::operation::update_subdomain_association::UpdateSubdomainAssociationError::ServiceException(inner) => {
+                Error::ServiceException(inner)
+            }
+            crate::operation::update_subdomain_association::UpdateSubdomainAssociationError::UnauthenticatedException(inner) => {
+                Error::UnauthenticatedException(inner)
+            }
+            crate::operation::update_subdomain_association::UpdateSubdomainAssociationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

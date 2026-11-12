@@ -175,6 +175,8 @@ pub use crate::types::_mac_system_integrity_protection_configuration_request::Ma
 
 pub use crate::types::_managed_prefix_list::ManagedPrefixListBuilder;
 
+pub use crate::types::_metric_category::MetricCategoryBuilder;
+
 pub use crate::types::_nat_gateway::NatGatewayBuilder;
 
 pub use crate::types::_network_acl::NetworkAclBuilder;

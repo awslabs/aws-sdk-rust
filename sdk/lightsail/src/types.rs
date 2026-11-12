@@ -43,6 +43,8 @@ pub use crate::types::_status::Status;
 
 pub use crate::types::_key_pair::KeyPair;
 
+pub use crate::types::_subdomain::Subdomain;
+
 pub use crate::types::_add_on_type::AddOnType;
 
 pub use crate::types::_add_on_request::AddOnRequest;
@@ -129,6 +131,8 @@ pub use crate::types::_http_protocol_ipv6::HttpProtocolIpv6;
 
 pub use crate::types::_load_balancer_attribute_name::LoadBalancerAttributeName;
 
+pub use crate::types::_subdomain_association_action::SubdomainAssociationAction;
+
 pub use crate::types::_resource_location::ResourceLocation;
 
 pub use crate::types::_operation_type::OperationType;
@@ -185,7 +189,13 @@ pub use crate::types::_origin::Origin;
 
 pub use crate::types::_waf_config::WafConfig;
 
+pub use crate::types::_lightsail_distribution_subdomain::LightsailDistributionSubdomain;
+
 pub use crate::types::_session::Session;
+
+pub use crate::types::_subdomain_state::SubdomainState;
+
+pub use crate::types::_subdomain_attachable_resource::SubdomainAttachableResource;
 
 pub use crate::types::_auto_snapshot_add_on_request::AutoSnapshotAddOnRequest;
 
@@ -302,6 +312,8 @@ pub use crate::types::_waf_atp_config::WafAtpConfig;
 pub use crate::types::_waf_acfp_config::WafAcfpConfig;
 
 pub use crate::types::_waf_bot_control_config::WafBotControlConfig;
+
+pub use crate::types::_lightsail_distribution_subdomain_state_enum::LightsailDistributionSubdomainStateEnum;
 
 pub use crate::types::_disk_map::DiskMap;
 
@@ -695,6 +707,10 @@ mod _key_pair;
 
 mod _lightsail_distribution;
 
+mod _lightsail_distribution_subdomain;
+
+mod _lightsail_distribution_subdomain_state_enum;
+
 mod _load_balancer;
 
 mod _load_balancer_attribute_name;
@@ -860,6 +876,14 @@ mod _status;
 mod _status_type;
 
 mod _stop_instance_on_idle_request;
+
+mod _subdomain;
+
+mod _subdomain_association_action;
+
+mod _subdomain_attachable_resource;
+
+mod _subdomain_state;
 
 mod _tag;
 

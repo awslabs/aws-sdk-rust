@@ -39,6 +39,14 @@ pub(crate) fn de_metric_metadata(
                     )?)),
                 )
             })?,
+            "aggregationTemporality" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_aggregation_temporality(Some(
+                    decoder.string().map(|s| crate::types::MetricAggregationTemporality::from(s.as_str()))?,
+                )))
+            })?,
+            "monotonicity" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_monotonicity(Some(decoder.string().map(|s| crate::types::MetricMonotonicity::from(s.as_str()))?)))
+            })?,
             _ => {
                 decoder.skip()?;
                 builder

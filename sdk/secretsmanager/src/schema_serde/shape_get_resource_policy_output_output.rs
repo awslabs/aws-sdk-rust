@@ -29,6 +29,16 @@ static GETRESOURCEPOLICYOUTPUT_MEMBER_RESOURCE_POLICY: ::aws_smithy_schema::Sche
     "ResourcePolicy",
     2,
 );
+static GETRESOURCEPOLICYOUTPUT_MEMBER_POLICY_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.secretsmanager.synthetic#GetResourcePolicyOutput$PolicyName",
+        "com.amazonaws.secretsmanager.synthetic",
+        "GetResourcePolicyOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "PolicyName",
+    3,
+);
 static GETRESOURCEPOLICYOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.secretsmanager.synthetic#GetResourcePolicyOutput",
@@ -40,6 +50,7 @@ static GETRESOURCEPOLICYOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::
         &GETRESOURCEPOLICYOUTPUT_MEMBER_ARN,
         &GETRESOURCEPOLICYOUTPUT_MEMBER_NAME,
         &GETRESOURCEPOLICYOUTPUT_MEMBER_RESOURCE_POLICY,
+        &GETRESOURCEPOLICYOUTPUT_MEMBER_POLICY_NAME,
     ],
 )
 .with_original_name("GetResourcePolicyResponse");
@@ -65,6 +76,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::get_re
         }
         if let Some(ref val) = self.resource_policy {
             ser.write_string(&GETRESOURCEPOLICYOUTPUT_MEMBER_RESOURCE_POLICY, val)?;
+        }
+        if let Some(ref val) = self.policy_name {
+            ser.write_string(&GETRESOURCEPOLICYOUTPUT_MEMBER_POLICY_NAME, val)?;
         }
         Ok(())
     }
@@ -102,6 +116,13 @@ impl crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBui
                         deser.read_null()?;
                     } else {
                         self.resource_policy = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.policy_name = Some(deser.read_string(member)?);
                     }
                 }
                 _ => {}

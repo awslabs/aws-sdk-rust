@@ -83,6 +83,8 @@ pub(crate) mod shape_environment;
 
 pub(crate) mod shape_environment_list;
 
+pub(crate) mod shape_identity_center_configuration;
+
 pub(crate) mod shape_logging_configuration_input;
 
 pub(crate) mod shape_metric_datum;
@@ -91,7 +93,11 @@ pub(crate) mod shape_network_configuration;
 
 pub(crate) mod shape_tag_map;
 
+pub(crate) mod shape_team_config;
+
 pub(crate) mod shape_update_network_configuration_input;
+
+pub(crate) mod shape_update_teams_input;
 
 pub(crate) mod shape_airflow_configuration_options;
 
@@ -104,6 +110,8 @@ pub(crate) mod shape_logging_configuration;
 pub(crate) mod shape_module_logging_configuration_input;
 
 pub(crate) mod shape_statistic_set;
+
+pub(crate) mod shape_team_map;
 
 pub(crate) mod shape_module_logging_configuration;
 

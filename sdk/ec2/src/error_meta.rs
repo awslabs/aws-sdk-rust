@@ -3053,6 +3053,27 @@ impl From<crate::operation::create_managed_prefix_list::CreateManagedPrefixListE
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_metric_category::CreateMetricCategoryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_metric_category::CreateMetricCategoryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_metric_category::CreateMetricCategoryError> for Error {
+    fn from(err: crate::operation::create_metric_category::CreateMetricCategoryError) -> Self {
+        match err {
+            crate::operation::create_metric_category::CreateMetricCategoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_nat_gateway::CreateNatGatewayError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5648,6 +5669,27 @@ impl From<crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListE
     fn from(err: crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListError) -> Self {
         match err {
             crate::operation::delete_managed_prefix_list::DeleteManagedPrefixListError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_metric_category::DeleteMetricCategoryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_metric_category::DeleteMetricCategoryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_metric_category::DeleteMetricCategoryError> for Error {
+    fn from(err: crate::operation::delete_metric_category::DeleteMetricCategoryError) -> Self {
+        match err {
+            crate::operation::delete_metric_category::DeleteMetricCategoryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -10229,6 +10271,30 @@ impl From<crate::operation::describe_managed_prefix_lists::DescribeManagedPrefix
     fn from(err: crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsError) -> Self {
         match err {
             crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_metric_categories::DescribeMetricCategoriesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_metric_categories::DescribeMetricCategoriesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_metric_categories::DescribeMetricCategoriesError> for Error {
+    fn from(err: crate::operation::describe_metric_categories::DescribeMetricCategoriesError) -> Self {
+        match err {
+            crate::operation::describe_metric_categories::DescribeMetricCategoriesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -18715,6 +18781,27 @@ impl From<crate::operation::modify_managed_resource_visibility::ModifyManagedRes
     fn from(err: crate::operation::modify_managed_resource_visibility::ModifyManagedResourceVisibilityError) -> Self {
         match err {
             crate::operation::modify_managed_resource_visibility::ModifyManagedResourceVisibilityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_metric_category::ModifyMetricCategoryError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::modify_metric_category::ModifyMetricCategoryError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_metric_category::ModifyMetricCategoryError> for Error {
+    fn from(err: crate::operation::modify_metric_category::ModifyMetricCategoryError) -> Self {
+        match err {
+            crate::operation::modify_metric_category::ModifyMetricCategoryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

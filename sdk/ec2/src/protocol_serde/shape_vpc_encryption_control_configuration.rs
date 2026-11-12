@@ -49,5 +49,15 @@ pub fn ser_vpc_encryption_control_configuration(
     if let Some(var_18) = &input.elastic_file_system_exclusion {
         scope_17.string(var_18.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_19 = writer.prefix("GlobalAcceleratorExclusion");
+    if let Some(var_20) = &input.global_accelerator_exclusion {
+        scope_19.string(var_20.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_21 = writer.prefix("ApiGatewayV2Exclusion");
+    if let Some(var_22) = &input.api_gateway_v2_exclusion {
+        scope_21.string(var_22.as_str());
+    }
     Ok(())
 }

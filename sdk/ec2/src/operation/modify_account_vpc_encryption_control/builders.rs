@@ -249,4 +249,32 @@ impl ModifyAccountVpcEncryptionControlFluentBuilder {
     pub fn get_elastic_file_system(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput> {
         self.inner.get_elastic_file_system()
     }
+    /// <p>Specifies whether to exclude AWS Global Accelerator from account-level encryption enforcement.</p>
+    pub fn global_accelerator(mut self, input: crate::types::VpcEncryptionControlExclusionStateInput) -> Self {
+        self.inner = self.inner.global_accelerator(input);
+        self
+    }
+    /// <p>Specifies whether to exclude AWS Global Accelerator from account-level encryption enforcement.</p>
+    pub fn set_global_accelerator(mut self, input: ::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput>) -> Self {
+        self.inner = self.inner.set_global_accelerator(input);
+        self
+    }
+    /// <p>Specifies whether to exclude AWS Global Accelerator from account-level encryption enforcement.</p>
+    pub fn get_global_accelerator(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput> {
+        self.inner.get_global_accelerator()
+    }
+    /// <p>Specifies whether to exclude Amazon API Gateway V2 from account-level encryption enforcement.</p>
+    pub fn api_gateway_v2(mut self, input: crate::types::VpcEncryptionControlExclusionStateInput) -> Self {
+        self.inner = self.inner.api_gateway_v2(input);
+        self
+    }
+    /// <p>Specifies whether to exclude Amazon API Gateway V2 from account-level encryption enforcement.</p>
+    pub fn set_api_gateway_v2(mut self, input: ::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput>) -> Self {
+        self.inner = self.inner.set_api_gateway_v2(input);
+        self
+    }
+    /// <p>Specifies whether to exclude Amazon API Gateway V2 from account-level encryption enforcement.</p>
+    pub fn get_api_gateway_v2(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput> {
+        self.inner.get_api_gateway_v2()
+    }
 }

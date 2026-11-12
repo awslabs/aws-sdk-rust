@@ -17,17 +17,27 @@ pub(crate) mod shape_access_key_details;
 
 pub(crate) mod shape_account;
 
+pub(crate) mod shape_account_affected_resource;
+
+pub(crate) mod shape_account_analysis;
+
 pub(crate) mod shape_account_detail;
 
 pub(crate) mod shape_account_free_trial_info;
 
 pub(crate) mod shape_account_level_permissions;
 
+pub(crate) mod shape_account_overview;
+
 pub(crate) mod shape_account_statistics;
+
+pub(crate) mod shape_account_summary;
 
 pub(crate) mod shape_action;
 
 pub(crate) mod shape_activity;
+
+pub(crate) mod shape_activity_window;
 
 pub(crate) mod shape_actor;
 
@@ -41,7 +51,11 @@ pub(crate) mod shape_admin_account;
 
 pub(crate) mod shape_administrator;
 
+pub(crate) mod shape_affected_resource;
+
 pub(crate) mod shape_agent_details;
+
+pub(crate) mod shape_analysis_record;
 
 pub(crate) mod shape_anomaly;
 
@@ -51,6 +65,8 @@ pub(crate) mod shape_anomaly_unusual;
 
 pub(crate) mod shape_api_call;
 
+pub(crate) mod shape_archive_distribution;
+
 pub(crate) mod shape_archive_findings_input_input;
 
 pub(crate) mod shape_archive_findings_output_output;
@@ -59,6 +75,10 @@ pub(crate) mod shape_association_detail;
 
 pub(crate) mod shape_association_summary;
 
+pub(crate) mod shape_attack;
+
+pub(crate) mod shape_attack_phase;
+
 pub(crate) mod shape_autonomous_system;
 
 pub(crate) mod shape_autoscaling_auto_scaling_group;
@@ -66,6 +86,8 @@ pub(crate) mod shape_autoscaling_auto_scaling_group;
 pub(crate) mod shape_aws_api_call_action;
 
 pub(crate) mod shape_bad_request_exception;
+
+pub(crate) mod shape_baseline;
 
 pub(crate) mod shape_bedrock_guardrail;
 
@@ -100,6 +122,12 @@ pub(crate) mod shape_container_instance_details;
 pub(crate) mod shape_content_policy_filter;
 
 pub(crate) mod shape_continuous_scan_details;
+
+pub(crate) mod shape_correlated_finding;
+
+pub(crate) mod shape_countermeasure;
+
+pub(crate) mod shape_countermeasure_action;
 
 pub(crate) mod shape_country;
 
@@ -261,6 +289,8 @@ pub(crate) mod shape_destination_properties;
 
 pub(crate) mod shape_detection;
 
+pub(crate) mod shape_detection_coverage;
+
 pub(crate) mod shape_detection_rule_ec2_requirements;
 
 pub(crate) mod shape_detection_rule_ecs_fargate_requirements;
@@ -300,6 +330,10 @@ pub(crate) mod shape_disassociate_from_master_account_output_output;
 pub(crate) mod shape_disassociate_members_input_input;
 
 pub(crate) mod shape_disassociate_members_output_output;
+
+pub(crate) mod shape_distribution;
+
+pub(crate) mod shape_dns_context;
 
 pub(crate) mod shape_dns_logs_configuration_result;
 
@@ -345,9 +379,21 @@ pub(crate) mod shape_enable_organization_admin_account_input_input;
 
 pub(crate) mod shape_enable_organization_admin_account_output_output;
 
+pub(crate) mod shape_enrichment;
+
 pub(crate) mod shape_evidence;
 
 pub(crate) mod shape_fargate_details;
+
+pub(crate) mod shape_fetch_criterion;
+
+pub(crate) mod shape_fetch_query;
+
+pub(crate) mod shape_fetch_record;
+
+pub(crate) mod shape_fetch_result;
+
+pub(crate) mod shape_fetch_time_window;
 
 pub(crate) mod shape_filter_condition;
 
@@ -359,9 +405,21 @@ pub(crate) mod shape_finding;
 
 pub(crate) mod shape_finding_criteria;
 
+pub(crate) mod shape_finding_detail;
+
+pub(crate) mod shape_finding_reference;
+
 pub(crate) mod shape_finding_statistics;
 
+pub(crate) mod shape_finding_type_classification;
+
+pub(crate) mod shape_finding_type_count;
+
+pub(crate) mod shape_finding_type_documentation;
+
 pub(crate) mod shape_finding_type_statistics;
+
+pub(crate) mod shape_findings_summary;
 
 pub(crate) mod shape_flow_logs_configuration_result;
 
@@ -487,11 +545,45 @@ pub(crate) mod shape_internal_server_error_exception;
 
 pub(crate) mod shape_investigation;
 
+pub(crate) mod shape_investigation_account_analysis;
+
+pub(crate) mod shape_investigation_actor;
+
+pub(crate) mod shape_investigation_detector_feature_configuration;
+
+pub(crate) mod shape_investigation_ec2_instance;
+
+pub(crate) mod shape_investigation_ecs_cluster;
+
+pub(crate) mod shape_investigation_eks_cluster;
+
+pub(crate) mod shape_investigation_filter_condition;
+
+pub(crate) mod shape_investigation_filter_criteria;
+
+pub(crate) mod shape_investigation_indicator;
+
+pub(crate) mod shape_investigation_kubernetes_workload;
+
+pub(crate) mod shape_investigation_malware_scan;
+
 pub(crate) mod shape_investigation_metadata;
+
+pub(crate) mod shape_investigation_record;
+
+pub(crate) mod shape_investigation_resource;
+
+pub(crate) mod shape_investigation_resource_data;
+
+pub(crate) mod shape_investigation_scope;
 
 pub(crate) mod shape_investigation_sort_criteria;
 
 pub(crate) mod shape_investigation_summary;
+
+pub(crate) mod shape_investigation_summary_data;
+
+pub(crate) mod shape_investigation_threat_assessment;
 
 pub(crate) mod shape_invitation;
 
@@ -502,6 +594,14 @@ pub(crate) mod shape_invite_members_output_output;
 pub(crate) mod shape_item_details;
 
 pub(crate) mod shape_item_path;
+
+pub(crate) mod shape_key_observations;
+
+pub(crate) mod shape_kubernetes_activity;
+
+pub(crate) mod shape_kubernetes_anomaly;
+
+pub(crate) mod shape_kubernetes_api_call;
 
 pub(crate) mod shape_kubernetes_api_call_action;
 
@@ -519,6 +619,8 @@ pub(crate) mod shape_kubernetes_details;
 
 pub(crate) mod shape_kubernetes_permission_checked_details;
 
+pub(crate) mod shape_kubernetes_policy_violation;
+
 pub(crate) mod shape_kubernetes_role_binding_details;
 
 pub(crate) mod shape_kubernetes_role_details;
@@ -530,6 +632,8 @@ pub(crate) mod shape_kubernetes_workload;
 pub(crate) mod shape_kubernetes_workload_details;
 
 pub(crate) mod shape_lambda_details;
+
+pub(crate) mod shape_lambda_function;
 
 pub(crate) mod shape_lineage_object;
 
@@ -560,6 +664,10 @@ pub(crate) mod shape_list_filters_output_output;
 pub(crate) mod shape_list_findings_input_input;
 
 pub(crate) mod shape_list_findings_output_output;
+
+pub(crate) mod shape_list_investigation_records_input_input;
+
+pub(crate) mod shape_list_investigation_records_output_output;
 
 pub(crate) mod shape_list_investigations_input_input;
 
@@ -639,9 +747,13 @@ pub(crate) mod shape_malware_scan;
 
 pub(crate) mod shape_malware_scan_details;
 
+pub(crate) mod shape_malware_threat;
+
 pub(crate) mod shape_master;
 
 pub(crate) mod shape_member;
+
+pub(crate) mod shape_member_account_ranking;
 
 pub(crate) mod shape_member_additional_configuration;
 
@@ -653,11 +765,19 @@ pub(crate) mod shape_member_features_configuration;
 
 pub(crate) mod shape_member_features_configuration_result;
 
+pub(crate) mod shape_metadata_record;
+
 pub(crate) mod shape_model_detail;
+
+pub(crate) mod shape_network_activity;
+
+pub(crate) mod shape_network_anomaly;
 
 pub(crate) mod shape_network_connection;
 
 pub(crate) mod shape_network_connection_action;
+
+pub(crate) mod shape_network_counts;
 
 pub(crate) mod shape_network_endpoint;
 
@@ -665,13 +785,23 @@ pub(crate) mod shape_network_geo_location;
 
 pub(crate) mod shape_network_interface;
 
+pub(crate) mod shape_network_ports;
+
+pub(crate) mod shape_network_traffic;
+
+pub(crate) mod shape_observation_record;
+
 pub(crate) mod shape_observations;
+
+pub(crate) mod shape_observed_finding_type;
 
 pub(crate) mod shape_organization;
 
 pub(crate) mod shape_organization_additional_configuration;
 
 pub(crate) mod shape_organization_additional_configuration_result;
+
+pub(crate) mod shape_organization_analysis;
 
 pub(crate) mod shape_organization_data_source_configurations;
 
@@ -690,6 +820,8 @@ pub(crate) mod shape_organization_feature_configuration_result;
 pub(crate) mod shape_organization_feature_statistics;
 
 pub(crate) mod shape_organization_feature_statistics_additional_configuration;
+
+pub(crate) mod shape_organization_findings_summary;
 
 pub(crate) mod shape_organization_kubernetes_audit_logs_configuration;
 
@@ -723,27 +855,43 @@ pub(crate) mod shape_port_probe_detail;
 
 pub(crate) mod shape_private_ip_address_details;
 
+pub(crate) mod shape_process;
+
 pub(crate) mod shape_process_details;
 
 pub(crate) mod shape_product;
 
 pub(crate) mod shape_product_code;
 
+pub(crate) mod shape_protection_plan;
+
 pub(crate) mod shape_public_access;
 
 pub(crate) mod shape_public_access_configuration;
 
+pub(crate) mod shape_query_time_window;
+
+pub(crate) mod shape_rds_db_instance;
+
 pub(crate) mod shape_rds_db_instance_details;
+
+pub(crate) mod shape_rds_db_user;
 
 pub(crate) mod shape_rds_db_user_details;
 
 pub(crate) mod shape_rds_limitless_db_details;
 
+pub(crate) mod shape_rds_login_activity;
+
 pub(crate) mod shape_rds_login_attempt_action;
+
+pub(crate) mod shape_recommendation;
 
 pub(crate) mod shape_recovery_point;
 
 pub(crate) mod shape_recovery_point_details;
+
+pub(crate) mod shape_related_findings;
 
 pub(crate) mod shape_remote_account_details;
 
@@ -751,11 +899,17 @@ pub(crate) mod shape_remote_ip_details;
 
 pub(crate) mod shape_remote_port_details;
 
+pub(crate) mod shape_representative_finding;
+
+pub(crate) mod shape_reputation;
+
 pub(crate) mod shape_resource;
 
 pub(crate) mod shape_resource_data;
 
 pub(crate) mod shape_resource_details;
+
+pub(crate) mod shape_resource_distribution;
 
 pub(crate) mod shape_resource_not_found_exception;
 
@@ -772,6 +926,12 @@ pub(crate) mod shape_rule_summary;
 pub(crate) mod shape_runtime_context;
 
 pub(crate) mod shape_runtime_details;
+
+pub(crate) mod shape_runtime_signals;
+
+pub(crate) mod shape_s3_activity;
+
+pub(crate) mod shape_s3_analysis;
 
 pub(crate) mod shape_s3_bucket;
 
@@ -837,9 +997,17 @@ pub(crate) mod shape_service_additional_info;
 
 pub(crate) mod shape_session;
 
+pub(crate) mod shape_severity_breakdown;
+
 pub(crate) mod shape_severity_statistics;
 
+pub(crate) mod shape_shared_behavior;
+
+pub(crate) mod shape_shared_resource;
+
 pub(crate) mod shape_signal;
+
+pub(crate) mod shape_signal_group;
 
 pub(crate) mod shape_sort_criteria;
 
@@ -857,23 +1025,39 @@ pub(crate) mod shape_stop_monitoring_members_input_input;
 
 pub(crate) mod shape_stop_monitoring_members_output_output;
 
+pub(crate) mod shape_supporting_data;
+
+pub(crate) mod shape_tactic_coverage;
+
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_resource_input_input;
 
 pub(crate) mod shape_tag_resource_output_output;
 
+pub(crate) mod shape_technique_coverage;
+
 pub(crate) mod shape_threat;
+
+pub(crate) mod shape_threat_assessment;
 
 pub(crate) mod shape_threat_detected_by_name;
 
 pub(crate) mod shape_threat_intelligence_detail;
 
+pub(crate) mod shape_threat_reference;
+
 pub(crate) mod shape_threats_detected_item_count;
+
+pub(crate) mod shape_time_window_group;
 
 pub(crate) mod shape_total;
 
+pub(crate) mod shape_trend;
+
 pub(crate) mod shape_trigger_details;
+
+pub(crate) mod shape_type_distribution;
 
 pub(crate) mod shape_unarchive_findings_input_input;
 

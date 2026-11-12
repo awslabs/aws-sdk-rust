@@ -45,6 +45,8 @@ pub use crate::types::_transport_media_info::TransportMediaInfoBuilder;
 
 pub use crate::types::_ndi_source_metadata_info::NdiSourceMetadataInfoBuilder;
 
+pub use crate::types::_rtmp_source_metadata_info::RtmpSourceMetadataInfoBuilder;
+
 pub use crate::types::_thumbnail_details::ThumbnailDetailsBuilder;
 
 pub use crate::types::_update_encryption::UpdateEncryptionBuilder;
@@ -59,11 +61,15 @@ pub use crate::types::_vpc_interface_attachment::VpcInterfaceAttachmentBuilder;
 
 pub use crate::types::_flow_transit_encryption::FlowTransitEncryptionBuilder;
 
+pub use crate::types::_rtmp_push_output_settings::RtmpPushOutputSettingsBuilder;
+
 pub use crate::types::_output::OutputBuilder;
 
 pub use crate::types::_update_gateway_bridge_source_request::UpdateGatewayBridgeSourceRequestBuilder;
 
 pub use crate::types::_ndi_source_settings::NdiSourceSettingsBuilder;
+
+pub use crate::types::_set_rtmp_push_source_settings::SetRtmpPushSourceSettingsBuilder;
 
 pub use crate::types::_source::SourceBuilder;
 
@@ -86,6 +92,8 @@ pub use crate::types::_router_input_thumbnail_details::RouterInputThumbnailDetai
 pub use crate::types::_router_network_interface::RouterNetworkInterfaceBuilder;
 
 pub use crate::types::_fabric_configuration::FabricConfigurationBuilder;
+
+pub use crate::types::_router_output_processors::RouterOutputProcessorsBuilder;
 
 pub use crate::types::_router_output::RouterOutputBuilder;
 
@@ -147,11 +155,15 @@ pub use crate::types::_ndi_source_info::NdiSourceInfoBuilder;
 
 pub use crate::types::_ndi_media_info::NdiMediaInfoBuilder;
 
+pub use crate::types::_rtmp_media_info::RtmpMediaInfoBuilder;
+
 pub use crate::types::_fmtp_request::FmtpRequestBuilder;
 
 pub use crate::types::_media_stream_attributes::MediaStreamAttributesBuilder;
 
 pub use crate::types::_media_stream_output_configuration_request::MediaStreamOutputConfigurationRequestBuilder;
+
+pub use crate::types::_tls_encryption::TlsEncryptionBuilder;
 
 pub use crate::types::_transport::TransportBuilder;
 
@@ -209,6 +221,8 @@ pub use crate::types::_media_live_input_router_output_configuration::MediaLiveIn
 
 pub use crate::types::_source_endpoint_router_output_configuration::SourceEndpointRouterOutputConfigurationBuilder;
 
+pub use crate::types::_single_program_transport_stream_pid_map_configuration::SingleProgramTransportStreamPidMapConfigurationBuilder;
+
 pub use crate::types::_batch_get_router_output_error::BatchGetRouterOutputErrorBuilder;
 
 pub use crate::types::_listed_source_endpoint::ListedSourceEndpointBuilder;
@@ -261,6 +275,12 @@ pub use crate::types::_automatic_encryption_key_configuration::AutomaticEncrypti
 
 pub use crate::types::_media_stream_output_configuration::MediaStreamOutputConfigurationBuilder;
 
+pub use crate::types::_rtmp_push_source_settings::RtmpPushSourceSettingsBuilder;
+
+pub use crate::types::_manual_rtmp_push_naming_configuration::ManualRtmpPushNamingConfigurationBuilder;
+
+pub use crate::types::_automatic_rtmp_push_naming_configuration::AutomaticRtmpPushNamingConfigurationBuilder;
+
 pub use crate::types::_media_stream_source_configuration::MediaStreamSourceConfigurationBuilder;
 
 pub use crate::types::_media_live_transit_encryption::MediaLiveTransitEncryptionBuilder;
@@ -284,6 +304,12 @@ pub use crate::types::_failover_router_input_stream_details::FailoverRouterInput
 pub use crate::types::_media_connect_flow_router_input_stream_details::MediaConnectFlowRouterInputStreamDetailsBuilder;
 
 pub use crate::types::_merge_router_input_stream_details::MergeRouterInputStreamDetailsBuilder;
+
+pub use crate::types::_immediate_fabric_switching_configuration::ImmediateFabricSwitchingConfigurationBuilder;
+
+pub use crate::types::_key_frame_fabric_switching_configuration::KeyFrameFabricSwitchingConfigurationBuilder;
+
+pub use crate::types::_auto_pid_map_configuration::AutoPidMapConfigurationBuilder;
 
 pub use crate::types::_router_output_message::RouterOutputMessageBuilder;
 
@@ -327,7 +353,11 @@ pub use crate::types::_frozen_frames::FrozenFramesBuilder;
 
 pub use crate::types::_ndi_media_stream_info::NdiMediaStreamInfoBuilder;
 
+pub use crate::types::_rtmp_media_stream_info::RtmpMediaStreamInfoBuilder;
+
 pub use crate::types::_destination_configuration_request::DestinationConfigurationRequestBuilder;
+
+pub use crate::types::_public_tls_encryption_configuration::PublicTlsEncryptionConfigurationBuilder;
 
 pub use crate::types::_encoding_parameters::EncodingParametersBuilder;
 
@@ -337,9 +367,13 @@ pub use crate::types::_rist_router_input_configuration::RistRouterInputConfigura
 
 pub use crate::types::_srt_listener_router_input_configuration::SrtListenerRouterInputConfigurationBuilder;
 
+pub use crate::types::_rtmp_push_router_input_configuration::RtmpPushRouterInputConfigurationBuilder;
+
 pub use crate::types::_srt_caller_router_input_configuration::SrtCallerRouterInputConfigurationBuilder;
 
 pub use crate::types::_rtp_router_input_configuration::RtpRouterInputConfigurationBuilder;
+
+pub use crate::types::_rtmp_push_stream_details::RtmpPushStreamDetailsBuilder;
 
 pub use crate::types::_failover_router_input_indexed_stream_details::FailoverRouterInputIndexedStreamDetailsBuilder;
 
@@ -356,6 +390,10 @@ pub use crate::types::_rtmp_push_router_output_configuration::RtmpPushRouterOutp
 pub use crate::types::_srt_caller_router_output_configuration::SrtCallerRouterOutputConfigurationBuilder;
 
 pub use crate::types::_rtp_router_output_configuration::RtpRouterOutputConfigurationBuilder;
+
+pub use crate::types::_pid_map_rule::PidMapRuleBuilder;
+
+pub use crate::types::_passthrough::PassthroughBuilder;
 
 pub use crate::types::_public_source_endpoint_networking_configuration::PublicSourceEndpointNetworkingConfigurationBuilder;
 
@@ -385,12 +423,8 @@ pub use crate::types::_srt_decryption_configuration::SrtDecryptionConfigurationB
 
 pub use crate::types::_srt_encryption_configuration::SrtEncryptionConfigurationBuilder;
 
-pub use crate::types::_tls_encryption::TlsEncryptionBuilder;
-
 pub use crate::types::_public_destination_endpoint_networking_configuration_allow_rule::PublicDestinationEndpointNetworkingConfigurationAllowRuleBuilder;
 
 pub use crate::types::_interface::InterfaceBuilder;
 
 pub use crate::types::_public_source_endpoint_networking_configuration_allow_rule::PublicSourceEndpointNetworkingConfigurationAllowRuleBuilder;
-
-pub use crate::types::_public_tls_encryption_configuration::PublicTlsEncryptionConfigurationBuilder;

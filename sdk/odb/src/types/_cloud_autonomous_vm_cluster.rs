@@ -80,6 +80,8 @@ pub struct CloudAutonomousVmCluster {
     pub node_count: ::std::option::Option<i32>,
     /// <p>The number of Autonomous CDBs that can't be provisioned because of resource constraints.</p>
     pub non_provisionable_autonomous_container_databases: ::std::option::Option<i32>,
+    /// <p>The minimum value to which you can scale down the number of CPU cores.</p>
+    pub ocpus_lowest_scaled_value: ::std::option::Option<i32>,
     /// <p>The number of Autonomous CDBs that can be provisioned in the Autonomous VM cluster.</p>
     pub provisionable_autonomous_container_databases: ::std::option::Option<i32>,
     /// <p>The number of Autonomous CDBs currently provisioned in the Autonomous VM cluster.</p>
@@ -265,6 +267,10 @@ impl CloudAutonomousVmCluster {
     pub fn non_provisionable_autonomous_container_databases(&self) -> ::std::option::Option<i32> {
         self.non_provisionable_autonomous_container_databases
     }
+    /// <p>The minimum value to which you can scale down the number of CPU cores.</p>
+    pub fn ocpus_lowest_scaled_value(&self) -> ::std::option::Option<i32> {
+        self.ocpus_lowest_scaled_value
+    }
     /// <p>The number of Autonomous CDBs that can be provisioned in the Autonomous VM cluster.</p>
     pub fn provisionable_autonomous_container_databases(&self) -> ::std::option::Option<i32> {
         self.provisionable_autonomous_container_databases
@@ -373,6 +379,7 @@ pub struct CloudAutonomousVmClusterBuilder {
     pub(crate) memory_size_in_gbs: ::std::option::Option<i32>,
     pub(crate) node_count: ::std::option::Option<i32>,
     pub(crate) non_provisionable_autonomous_container_databases: ::std::option::Option<i32>,
+    pub(crate) ocpus_lowest_scaled_value: ::std::option::Option<i32>,
     pub(crate) provisionable_autonomous_container_databases: ::std::option::Option<i32>,
     pub(crate) provisioned_autonomous_container_databases: ::std::option::Option<i32>,
     pub(crate) provisioned_cpus: ::std::option::Option<f32>,
@@ -928,6 +935,20 @@ impl CloudAutonomousVmClusterBuilder {
     pub fn get_non_provisionable_autonomous_container_databases(&self) -> &::std::option::Option<i32> {
         &self.non_provisionable_autonomous_container_databases
     }
+    /// <p>The minimum value to which you can scale down the number of CPU cores.</p>
+    pub fn ocpus_lowest_scaled_value(mut self, input: i32) -> Self {
+        self.ocpus_lowest_scaled_value = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The minimum value to which you can scale down the number of CPU cores.</p>
+    pub fn set_ocpus_lowest_scaled_value(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.ocpus_lowest_scaled_value = input;
+        self
+    }
+    /// <p>The minimum value to which you can scale down the number of CPU cores.</p>
+    pub fn get_ocpus_lowest_scaled_value(&self) -> &::std::option::Option<i32> {
+        &self.ocpus_lowest_scaled_value
+    }
     /// <p>The number of Autonomous CDBs that can be provisioned in the Autonomous VM cluster.</p>
     pub fn provisionable_autonomous_container_databases(mut self, input: i32) -> Self {
         self.provisionable_autonomous_container_databases = ::std::option::Option::Some(input);
@@ -1178,6 +1199,7 @@ impl CloudAutonomousVmClusterBuilder {
             memory_size_in_gbs: self.memory_size_in_gbs,
             node_count: self.node_count,
             non_provisionable_autonomous_container_databases: self.non_provisionable_autonomous_container_databases,
+            ocpus_lowest_scaled_value: self.ocpus_lowest_scaled_value,
             provisionable_autonomous_container_databases: self.provisionable_autonomous_container_databases,
             provisioned_autonomous_container_databases: self.provisioned_autonomous_container_databases,
             provisioned_cpus: self.provisioned_cpus,

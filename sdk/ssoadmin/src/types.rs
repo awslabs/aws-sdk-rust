@@ -43,6 +43,8 @@ pub use crate::types::_instance_status::InstanceStatus;
 
 pub use crate::types::_encryption_configuration_details::EncryptionConfigurationDetails;
 
+pub use crate::types::_network_configuration_info::NetworkConfigurationInfo;
+
 pub use crate::types::_instance_access_control_attribute_configuration_status::InstanceAccessControlAttributeConfigurationStatus;
 
 pub use crate::types::_permission_set_provisioning_status::PermissionSetProvisioningStatus;
@@ -220,6 +222,8 @@ mod _list_account_assignments_filter;
 mod _list_application_assignments_filter;
 
 mod _list_applications_filter;
+
+mod _network_configuration_info;
 
 mod _oidc_jwt_configuration;
 

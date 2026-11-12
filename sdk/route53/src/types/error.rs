@@ -69,6 +69,10 @@ pub use crate::types::error::_no_such_cloud_watch_logs_log_group::NoSuchCloudWat
 
 pub use crate::types::error::_query_logging_config_already_exists::QueryLoggingConfigAlreadyExists;
 
+pub use crate::types::error::_invalid_resource_record_set_protection_batch::InvalidResourceRecordSetProtectionBatch;
+
+pub use crate::types::error::_protection_already_exists::ProtectionAlreadyExists;
+
 pub use crate::types::error::_delegation_set_already_created::DelegationSetAlreadyCreated;
 
 pub use crate::types::error::_delegation_set_already_reusable::DelegationSetAlreadyReusable;
@@ -199,6 +203,8 @@ mod _invalid_kms_arn;
 
 mod _invalid_pagination_token;
 
+mod _invalid_resource_record_set_protection_batch;
+
 mod _invalid_signing_status;
 
 mod _invalid_traffic_policy_document;
@@ -244,6 +250,8 @@ mod _no_such_traffic_policy_instance;
 mod _not_authorized_exception;
 
 mod _prior_request_not_complete;
+
+mod _protection_already_exists;
 
 mod _public_zone_vpc_association;
 

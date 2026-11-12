@@ -273,6 +273,8 @@ pub use crate::types::_mac_system_integrity_protection_setting_status::MacSystem
 
 pub use crate::types::_managed_prefix_list::ManagedPrefixList;
 
+pub use crate::types::_metric_category::MetricCategory;
+
 pub use crate::types::_availability_mode::AvailabilityMode;
 
 pub use crate::types::_connectivity_type::ConnectivityType;
@@ -4640,6 +4642,8 @@ mod _memory_mib_request;
 mod _metadata_default_http_tokens_state;
 
 mod _metric;
+
+mod _metric_category;
 
 mod _metric_data_result;
 

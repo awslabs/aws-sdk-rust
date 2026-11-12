@@ -19,6 +19,9 @@ pub mod attach_load_balancer_tls_certificate;
 /// Types for the `AttachStaticIp` operation.
 pub mod attach_static_ip;
 
+/// Types for the `CheckSubdomainAvailability` operation.
+pub mod check_subdomain_availability;
+
 /// Types for the `CloseInstancePublicPorts` operation.
 pub mod close_instance_public_ports;
 
@@ -97,6 +100,9 @@ pub mod create_relational_database_from_snapshot;
 /// Types for the `CreateRelationalDatabaseSnapshot` operation.
 pub mod create_relational_database_snapshot;
 
+/// Types for the `CreateSubdomain` operation.
+pub mod create_subdomain;
+
 /// Types for the `DeleteAlarm` operation.
 pub mod delete_alarm;
 
@@ -159,6 +165,9 @@ pub mod delete_relational_database;
 
 /// Types for the `DeleteRelationalDatabaseSnapshot` operation.
 pub mod delete_relational_database_snapshot;
+
+/// Types for the `DeleteSubdomain` operation.
+pub mod delete_subdomain;
 
 /// Types for the `DetachCertificateFromDistribution` operation.
 pub mod detach_certificate_from_distribution;
@@ -382,6 +391,9 @@ pub mod get_static_ip;
 /// Types for the `GetStaticIps` operation.
 pub mod get_static_ips;
 
+/// Types for the `GetSubdomains` operation.
+pub mod get_subdomains;
+
 /// Types for the `ImportKeyPair` operation.
 pub mod import_key_pair;
 
@@ -486,3 +498,6 @@ pub mod update_relational_database;
 
 /// Types for the `UpdateRelationalDatabaseParameters` operation.
 pub mod update_relational_database_parameters;
+
+/// Types for the `UpdateSubdomainAssociation` operation.
+pub mod update_subdomain_association;

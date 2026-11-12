@@ -452,6 +452,21 @@ pub(crate) fn list_findings_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_investigation_records_output_output_correct_errors(
+    mut builder: crate::operation::list_investigation_records::builders::ListInvestigationRecordsOutputBuilder,
+) -> crate::operation::list_investigation_records::builders::ListInvestigationRecordsOutputBuilder {
+    if builder.investigation_id.is_none() {
+        builder.investigation_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::InvestigationStatus>().ok()
+    }
+    if builder.records.is_none() {
+        builder.records = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_investigations_output_output_correct_errors(
     mut builder: crate::operation::list_investigations::builders::ListInvestigationsOutputBuilder,
 ) -> crate::operation::list_investigations::builders::ListInvestigationsOutputBuilder {

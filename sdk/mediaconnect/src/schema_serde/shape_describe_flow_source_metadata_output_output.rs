@@ -66,6 +66,17 @@ static DESCRIBEFLOWSOURCEMETADATAOUTPUT_MEMBER_NDI_INFO: ::aws_smithy_schema::Sc
     4,
 )
 .with_json_name("ndiInfo");
+static DESCRIBEFLOWSOURCEMETADATAOUTPUT_MEMBER_RTMP_INFO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconnect.synthetic#DescribeFlowSourceMetadataOutput$RtmpInfo",
+        "com.amazonaws.mediaconnect.synthetic",
+        "DescribeFlowSourceMetadataOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RtmpInfo",
+    5,
+)
+.with_json_name("rtmpInfo");
 static DESCRIBEFLOWSOURCEMETADATAOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.mediaconnect.synthetic#DescribeFlowSourceMetadataOutput",
@@ -79,6 +90,7 @@ static DESCRIBEFLOWSOURCEMETADATAOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'sta
         &DESCRIBEFLOWSOURCEMETADATAOUTPUT_MEMBER_TIMESTAMP,
         &DESCRIBEFLOWSOURCEMETADATAOUTPUT_MEMBER_TRANSPORT_MEDIA_INFO,
         &DESCRIBEFLOWSOURCEMETADATAOUTPUT_MEMBER_NDI_INFO,
+        &DESCRIBEFLOWSOURCEMETADATAOUTPUT_MEMBER_RTMP_INFO,
     ],
 )
 .with_original_name("DescribeFlowSourceMetadataResponse");
@@ -118,6 +130,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::descri
         }
         if let Some(ref val) = self.ndi_info {
             ser.write_struct(&DESCRIBEFLOWSOURCEMETADATAOUTPUT_MEMBER_NDI_INFO, val)?;
+        }
+        if let Some(ref val) = self.rtmp_info {
+            ser.write_struct(&DESCRIBEFLOWSOURCEMETADATAOUTPUT_MEMBER_RTMP_INFO, val)?;
         }
         Ok(())
     }
@@ -176,6 +191,13 @@ impl crate::operation::describe_flow_source_metadata::builders::DescribeFlowSour
                         deser.read_null()?;
                     } else {
                         self.ndi_info = Some(crate::types::NdiSourceMetadataInfo::deserialize(deser)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rtmp_info = Some(crate::types::RtmpSourceMetadataInfo::deserialize(deser)?);
                     }
                 }
                 _ => {}

@@ -55,6 +55,16 @@ pub fn ser_modify_account_vpc_encryption_control_input_input_input(
     if let Some(var_20) = &input.elastic_file_system {
         scope_19.string(var_20.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_21 = writer.prefix("GlobalAccelerator");
+    if let Some(var_22) = &input.global_accelerator {
+        scope_21.string(var_22.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_23 = writer.prefix("ApiGatewayV2");
+    if let Some(var_24) = &input.api_gateway_v2 {
+        scope_23.string(var_24.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

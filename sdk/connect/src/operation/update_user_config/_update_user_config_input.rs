@@ -5,7 +5,7 @@
 pub struct UpdateUserConfigInput {
     /// <p>The list of auto-accept configuration settings for each channel. When auto-accept is enabled for a channel, available agents are automatically connected to contacts from that channel without needing to manually accept. Auto-accept connects agents to contacts in less than one second.</p>
     pub auto_accept_configs: ::std::option::Option<::std::vec::Vec<crate::types::AutoAcceptConfig>>,
-    /// <p>The list of after contact work (ACW) timeout configuration settings for each channel. ACW timeout specifies how many seconds agents have for after contact work, such as entering notes about the contact. The minimum setting is 1 second, and the maximum is 2,000,000 seconds (24 days). Enter 0 for an indefinite amount of time, meaning agents must manually choose to end ACW.</p>
+    /// <p>The list of after contact work (ACW) timeout configuration settings for each channel. ACW timeout specifies how many seconds agents have for after contact work, such as entering notes about the contact. The minimum setting is 1 second, and the maximum is 2,000,000 seconds (24 days). For the CHAT channel, the maximum for a specific duration is 5,400 seconds (90 minutes); higher values end ACW after 90 minutes. For all channels, including chat, you can enter 0 for an indefinite amount of time, meaning agents must manually choose to end ACW.</p>
     pub after_contact_work_configs: ::std::option::Option<::std::vec::Vec<crate::types::AfterContactWorkConfigPerChannel>>,
     /// <p>The list of phone number configuration settings for each channel.</p>
     pub phone_number_configs: ::std::option::Option<::std::vec::Vec<crate::types::PhoneNumberConfig>>,
@@ -25,7 +25,7 @@ impl UpdateUserConfigInput {
     pub fn auto_accept_configs(&self) -> &[crate::types::AutoAcceptConfig] {
         self.auto_accept_configs.as_deref().unwrap_or_default()
     }
-    /// <p>The list of after contact work (ACW) timeout configuration settings for each channel. ACW timeout specifies how many seconds agents have for after contact work, such as entering notes about the contact. The minimum setting is 1 second, and the maximum is 2,000,000 seconds (24 days). Enter 0 for an indefinite amount of time, meaning agents must manually choose to end ACW.</p>
+    /// <p>The list of after contact work (ACW) timeout configuration settings for each channel. ACW timeout specifies how many seconds agents have for after contact work, such as entering notes about the contact. The minimum setting is 1 second, and the maximum is 2,000,000 seconds (24 days). For the CHAT channel, the maximum for a specific duration is 5,400 seconds (90 minutes); higher values end ACW after 90 minutes. For all channels, including chat, you can enter 0 for an indefinite amount of time, meaning agents must manually choose to end ACW.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.after_contact_work_configs.is_none()`.
     pub fn after_contact_work_configs(&self) -> &[crate::types::AfterContactWorkConfigPerChannel] {
@@ -102,14 +102,14 @@ impl UpdateUserConfigInputBuilder {
     ///
     /// To override the contents of this collection use [`set_after_contact_work_configs`](Self::set_after_contact_work_configs).
     ///
-    /// <p>The list of after contact work (ACW) timeout configuration settings for each channel. ACW timeout specifies how many seconds agents have for after contact work, such as entering notes about the contact. The minimum setting is 1 second, and the maximum is 2,000,000 seconds (24 days). Enter 0 for an indefinite amount of time, meaning agents must manually choose to end ACW.</p>
+    /// <p>The list of after contact work (ACW) timeout configuration settings for each channel. ACW timeout specifies how many seconds agents have for after contact work, such as entering notes about the contact. The minimum setting is 1 second, and the maximum is 2,000,000 seconds (24 days). For the CHAT channel, the maximum for a specific duration is 5,400 seconds (90 minutes); higher values end ACW after 90 minutes. For all channels, including chat, you can enter 0 for an indefinite amount of time, meaning agents must manually choose to end ACW.</p>
     pub fn after_contact_work_configs(mut self, input: crate::types::AfterContactWorkConfigPerChannel) -> Self {
         let mut v = self.after_contact_work_configs.unwrap_or_default();
         v.push(input);
         self.after_contact_work_configs = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of after contact work (ACW) timeout configuration settings for each channel. ACW timeout specifies how many seconds agents have for after contact work, such as entering notes about the contact. The minimum setting is 1 second, and the maximum is 2,000,000 seconds (24 days). Enter 0 for an indefinite amount of time, meaning agents must manually choose to end ACW.</p>
+    /// <p>The list of after contact work (ACW) timeout configuration settings for each channel. ACW timeout specifies how many seconds agents have for after contact work, such as entering notes about the contact. The minimum setting is 1 second, and the maximum is 2,000,000 seconds (24 days). For the CHAT channel, the maximum for a specific duration is 5,400 seconds (90 minutes); higher values end ACW after 90 minutes. For all channels, including chat, you can enter 0 for an indefinite amount of time, meaning agents must manually choose to end ACW.</p>
     pub fn set_after_contact_work_configs(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::AfterContactWorkConfigPerChannel>>,
@@ -117,7 +117,7 @@ impl UpdateUserConfigInputBuilder {
         self.after_contact_work_configs = input;
         self
     }
-    /// <p>The list of after contact work (ACW) timeout configuration settings for each channel. ACW timeout specifies how many seconds agents have for after contact work, such as entering notes about the contact. The minimum setting is 1 second, and the maximum is 2,000,000 seconds (24 days). Enter 0 for an indefinite amount of time, meaning agents must manually choose to end ACW.</p>
+    /// <p>The list of after contact work (ACW) timeout configuration settings for each channel. ACW timeout specifies how many seconds agents have for after contact work, such as entering notes about the contact. The minimum setting is 1 second, and the maximum is 2,000,000 seconds (24 days). For the CHAT channel, the maximum for a specific duration is 5,400 seconds (90 minutes); higher values end ACW after 90 minutes. For all channels, including chat, you can enter 0 for an indefinite amount of time, meaning agents must manually choose to end ACW.</p>
     pub fn get_after_contact_work_configs(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AfterContactWorkConfigPerChannel>> {
         &self.after_contact_work_configs
     }

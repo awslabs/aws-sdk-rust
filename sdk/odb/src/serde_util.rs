@@ -68,6 +68,15 @@ pub(crate) fn resource_not_found_exception_correct_errors(
     builder
 }
 
+pub(crate) fn associate_virtual_machines_to_cloud_vm_cluster_output_output_correct_errors(
+    mut builder: crate::operation::associate_virtual_machines_to_cloud_vm_cluster::builders::AssociateVirtualMachinesToCloudVmClusterOutputBuilder,
+) -> crate::operation::associate_virtual_machines_to_cloud_vm_cluster::builders::AssociateVirtualMachinesToCloudVmClusterOutputBuilder {
+    if builder.cloud_vm_cluster_id.is_none() {
+        builder.cloud_vm_cluster_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn service_quota_exceeded_exception_correct_errors(
     mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
 ) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
@@ -181,6 +190,15 @@ pub(crate) fn create_odb_peering_connection_output_output_correct_errors(
 ) -> crate::operation::create_odb_peering_connection::builders::CreateOdbPeeringConnectionOutputBuilder {
     if builder.odb_peering_connection_id.is_none() {
         builder.odb_peering_connection_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn disassociate_virtual_machines_from_cloud_vm_cluster_output_output_correct_errors(
+    mut builder: crate::operation::disassociate_virtual_machines_from_cloud_vm_cluster::builders::DisassociateVirtualMachinesFromCloudVmClusterOutputBuilder,
+) -> crate::operation::disassociate_virtual_machines_from_cloud_vm_cluster::builders::DisassociateVirtualMachinesFromCloudVmClusterOutputBuilder {
+    if builder.cloud_vm_cluster_id.is_none() {
+        builder.cloud_vm_cluster_id = Some(Default::default())
     }
     builder
 }
@@ -539,11 +557,38 @@ pub(crate) fn update_autonomous_database_backup_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_cloud_autonomous_vm_cluster_output_output_correct_errors(
+    mut builder: crate::operation::update_cloud_autonomous_vm_cluster::builders::UpdateCloudAutonomousVmClusterOutputBuilder,
+) -> crate::operation::update_cloud_autonomous_vm_cluster::builders::UpdateCloudAutonomousVmClusterOutputBuilder {
+    if builder.cloud_autonomous_vm_cluster_id.is_none() {
+        builder.cloud_autonomous_vm_cluster_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_cloud_exadata_infrastructure_output_output_correct_errors(
     mut builder: crate::operation::update_cloud_exadata_infrastructure::builders::UpdateCloudExadataInfrastructureOutputBuilder,
 ) -> crate::operation::update_cloud_exadata_infrastructure::builders::UpdateCloudExadataInfrastructureOutputBuilder {
     if builder.cloud_exadata_infrastructure_id.is_none() {
         builder.cloud_exadata_infrastructure_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_cloud_exadata_infrastructure_storage_capacity_output_output_correct_errors(
+    mut builder: crate::operation::update_cloud_exadata_infrastructure_storage_capacity::builders::UpdateCloudExadataInfrastructureStorageCapacityOutputBuilder,
+) -> crate::operation::update_cloud_exadata_infrastructure_storage_capacity::builders::UpdateCloudExadataInfrastructureStorageCapacityOutputBuilder {
+    if builder.cloud_exadata_infrastructure_id.is_none() {
+        builder.cloud_exadata_infrastructure_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_cloud_vm_cluster_output_output_correct_errors(
+    mut builder: crate::operation::update_cloud_vm_cluster::builders::UpdateCloudVmClusterOutputBuilder,
+) -> crate::operation::update_cloud_vm_cluster::builders::UpdateCloudVmClusterOutputBuilder {
+    if builder.cloud_vm_cluster_id.is_none() {
+        builder.cloud_vm_cluster_id = Some(Default::default())
     }
     builder
 }

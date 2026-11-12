@@ -7,3 +7,13 @@ pub(crate) fn list_environments_output_output_correct_errors(
     }
     builder
 }
+
+pub(crate) fn team_config_correct_errors(mut builder: crate::types::builders::TeamConfigBuilder) -> crate::types::builders::TeamConfigBuilder {
+    if builder.source_bucket_arn.is_none() {
+        builder.source_bucket_arn = Some(Default::default())
+    }
+    if builder.dag_s3_path.is_none() {
+        builder.dag_s3_path = Some(Default::default())
+    }
+    builder
+}

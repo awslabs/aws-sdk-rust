@@ -189,6 +189,8 @@ mod attach_load_balancer_tls_certificate;
 
 mod attach_static_ip;
 
+mod check_subdomain_availability;
+
 mod close_instance_public_ports;
 
 mod copy_snapshot;
@@ -240,6 +242,8 @@ mod create_relational_database;
 mod create_relational_database_from_snapshot;
 
 mod create_relational_database_snapshot;
+
+mod create_subdomain;
 
 /// Operation customization and supporting types.
 ///
@@ -309,6 +313,8 @@ mod delete_load_balancer_tls_certificate;
 mod delete_relational_database;
 
 mod delete_relational_database_snapshot;
+
+mod delete_subdomain;
 
 mod detach_certificate_from_distribution;
 
@@ -458,6 +464,8 @@ mod get_static_ip;
 
 mod get_static_ips;
 
+mod get_subdomains;
+
 mod import_key_pair;
 
 mod is_vpc_peered;
@@ -527,3 +535,5 @@ mod update_load_balancer_attribute;
 mod update_relational_database;
 
 mod update_relational_database_parameters;
+
+mod update_subdomain_association;

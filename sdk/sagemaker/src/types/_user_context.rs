@@ -10,7 +10,7 @@ pub struct UserContext {
     pub user_profile_name: ::std::option::Option<::std::string::String>,
     /// <p>The domain associated with the user.</p>
     pub domain_id: ::std::option::Option<::std::string::String>,
-    /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages, and project entities only.</p>
+    /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages, project entities, hubs, and hub content only.</p>
     pub iam_identity: ::std::option::Option<crate::types::IamIdentity>,
 }
 impl UserContext {
@@ -26,7 +26,7 @@ impl UserContext {
     pub fn domain_id(&self) -> ::std::option::Option<&str> {
         self.domain_id.as_deref()
     }
-    /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages, and project entities only.</p>
+    /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages, project entities, hubs, and hub content only.</p>
     pub fn iam_identity(&self) -> ::std::option::Option<&crate::types::IamIdentity> {
         self.iam_identity.as_ref()
     }
@@ -90,17 +90,17 @@ impl UserContextBuilder {
     pub fn get_domain_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain_id
     }
-    /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages, and project entities only.</p>
+    /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages, project entities, hubs, and hub content only.</p>
     pub fn iam_identity(mut self, input: crate::types::IamIdentity) -> Self {
         self.iam_identity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages, and project entities only.</p>
+    /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages, project entities, hubs, and hub content only.</p>
     pub fn set_iam_identity(mut self, input: ::std::option::Option<crate::types::IamIdentity>) -> Self {
         self.iam_identity = input;
         self
     }
-    /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages, and project entities only.</p>
+    /// <p>The IAM Identity details associated with the user. These details are associated with model package groups, model packages, project entities, hubs, and hub content only.</p>
     pub fn get_iam_identity(&self) -> &::std::option::Option<crate::types::IamIdentity> {
         &self.iam_identity
     }

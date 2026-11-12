@@ -53,6 +53,8 @@ pub use crate::types::_transport_media_info::TransportMediaInfo;
 
 pub use crate::types::_ndi_source_metadata_info::NdiSourceMetadataInfo;
 
+pub use crate::types::_rtmp_source_metadata_info::RtmpSourceMetadataInfo;
+
 pub use crate::types::_thumbnail_details::ThumbnailDetails;
 
 pub use crate::types::_update_encryption::UpdateEncryption;
@@ -79,11 +81,15 @@ pub use crate::types::_flow_transit_encryption::FlowTransitEncryption;
 
 pub use crate::types::_ndi_output_timecode_source::NdiOutputTimecodeSource;
 
+pub use crate::types::_rtmp_push_output_settings::RtmpPushOutputSettings;
+
 pub use crate::types::_output::Output;
 
 pub use crate::types::_update_gateway_bridge_source_request::UpdateGatewayBridgeSourceRequest;
 
 pub use crate::types::_ndi_source_settings::NdiSourceSettings;
+
+pub use crate::types::_set_rtmp_push_source_settings::SetRtmpPushSourceSettings;
 
 pub use crate::types::_source::Source;
 
@@ -134,6 +140,8 @@ pub use crate::types::_router_output_configuration::RouterOutputConfiguration;
 pub use crate::types::_router_output_tier::RouterOutputTier;
 
 pub use crate::types::_fabric_configuration::FabricConfiguration;
+
+pub use crate::types::_router_output_processors::RouterOutputProcessors;
 
 pub use crate::types::_router_output::RouterOutput;
 
@@ -237,6 +245,8 @@ pub use crate::types::_ndi_source_info::NdiSourceInfo;
 
 pub use crate::types::_ndi_media_info::NdiMediaInfo;
 
+pub use crate::types::_rtmp_media_info::RtmpMediaInfo;
+
 pub use crate::types::_algorithm::Algorithm;
 
 pub use crate::types::_key_type::KeyType;
@@ -251,9 +261,13 @@ pub use crate::types::_flow_transit_encryption_key_type::FlowTransitEncryptionKe
 
 pub use crate::types::_flow_transit_encryption_key_configuration::FlowTransitEncryptionKeyConfiguration;
 
+pub use crate::types::_tls_encryption::TlsEncryption;
+
 pub use crate::types::_transport::Transport;
 
 pub use crate::types::_media_stream_source_configuration_request::MediaStreamSourceConfigurationRequest;
+
+pub use crate::types::_rtmp_push_naming_configuration::RtmpPushNamingConfiguration;
 
 pub use crate::types::_gateway_bridge_source::GatewayBridgeSource;
 
@@ -340,6 +354,12 @@ pub use crate::types::_media_live_input_router_output_configuration::MediaLiveIn
 pub use crate::types::_source_endpoint_router_output_configuration::SourceEndpointRouterOutputConfiguration;
 
 pub use crate::types::_fabric_latency_mode::FabricLatencyMode;
+
+pub use crate::types::_fabric_switching_mode::FabricSwitchingMode;
+
+pub use crate::types::_fabric_switching_configuration::FabricSwitchingConfiguration;
+
+pub use crate::types::_single_program_transport_stream_pid_map_configuration::SingleProgramTransportStreamPidMapConfiguration;
 
 pub use crate::types::_router_output_type::RouterOutputType;
 
@@ -431,7 +451,17 @@ pub use crate::types::_secrets_manager_encryption_key_configuration::SecretsMana
 
 pub use crate::types::_automatic_encryption_key_configuration::AutomaticEncryptionKeyConfiguration;
 
+pub use crate::types::_tls_encryption_type::TlsEncryptionType;
+
+pub use crate::types::_tls_encryption_configuration::TlsEncryptionConfiguration;
+
 pub use crate::types::_media_stream_output_configuration::MediaStreamOutputConfiguration;
+
+pub use crate::types::_rtmp_push_source_settings::RtmpPushSourceSettings;
+
+pub use crate::types::_manual_rtmp_push_naming_configuration::ManualRtmpPushNamingConfiguration;
+
+pub use crate::types::_automatic_rtmp_push_naming_configuration::AutomaticRtmpPushNamingConfiguration;
 
 pub use crate::types::_media_stream_source_configuration::MediaStreamSourceConfiguration;
 
@@ -474,6 +504,20 @@ pub use crate::types::_router_output_protocol_configuration::RouterOutputProtoco
 pub use crate::types::_router_output_protocol::RouterOutputProtocol;
 
 pub use crate::types::_media_live_input_pipeline_id::MediaLiveInputPipelineId;
+
+pub use crate::types::_immediate_fabric_switching_configuration::ImmediateFabricSwitchingConfiguration;
+
+pub use crate::types::_key_frame_fabric_switching_configuration::KeyFrameFabricSwitchingConfiguration;
+
+pub use crate::types::_transport_stream_id_configuration::TransportStreamIdConfiguration;
+
+pub use crate::types::_program_number_configuration::ProgramNumberConfiguration;
+
+pub use crate::types::_program_map_table_pid_configuration::ProgramMapTablePidConfiguration;
+
+pub use crate::types::_program_clock_reference_pid_configuration::ProgramClockReferencePidConfiguration;
+
+pub use crate::types::_auto_pid_map_configuration::AutoPidMapConfiguration;
 
 pub use crate::types::_router_output_message::RouterOutputMessage;
 
@@ -527,17 +571,25 @@ pub use crate::types::_frozen_frames::FrozenFrames;
 
 pub use crate::types::_ndi_media_stream_info::NdiMediaStreamInfo;
 
+pub use crate::types::_rtmp_media_stream_info::RtmpMediaStreamInfo;
+
 pub use crate::types::_destination_configuration_request::DestinationConfigurationRequest;
 
 pub use crate::types::_encoder_profile::EncoderProfile;
 
+pub use crate::types::_public_tls_encryption_configuration::PublicTlsEncryptionConfiguration;
+
 pub use crate::types::_encoding_parameters::EncodingParameters;
+
+pub use crate::types::_rtmp_push_naming_type::RtmpPushNamingType;
 
 pub use crate::types::_input_configuration_request::InputConfigurationRequest;
 
 pub use crate::types::_rist_router_input_configuration::RistRouterInputConfiguration;
 
 pub use crate::types::_srt_listener_router_input_configuration::SrtListenerRouterInputConfiguration;
+
+pub use crate::types::_rtmp_push_router_input_configuration::RtmpPushRouterInputConfiguration;
 
 pub use crate::types::_srt_caller_router_input_configuration::SrtCallerRouterInputConfiguration;
 
@@ -550,6 +602,8 @@ pub use crate::types::_media_live_transit_encryption_key_configuration::MediaLiv
 pub use crate::types::_failover_router_input_protocol_configuration::FailoverRouterInputProtocolConfiguration;
 
 pub use crate::types::_merge_router_input_protocol_configuration::MergeRouterInputProtocolConfiguration;
+
+pub use crate::types::_rtmp_push_stream_details::RtmpPushStreamDetails;
 
 pub use crate::types::_failover_router_input_indexed_stream_details::FailoverRouterInputIndexedStreamDetails;
 
@@ -566,6 +620,10 @@ pub use crate::types::_rtmp_push_router_output_configuration::RtmpPushRouterOutp
 pub use crate::types::_srt_caller_router_output_configuration::SrtCallerRouterOutputConfiguration;
 
 pub use crate::types::_rtp_router_output_configuration::RtpRouterOutputConfiguration;
+
+pub use crate::types::_pid_map_rule::PidMapRule;
+
+pub use crate::types::_passthrough::Passthrough;
 
 pub use crate::types::_public_source_endpoint_networking_configuration::PublicSourceEndpointNetworkingConfiguration;
 
@@ -587,6 +645,8 @@ pub use crate::types::_color_information::ColorInformation;
 
 pub use crate::types::_frame_resolution::FrameResolution;
 
+pub use crate::types::_source_media_stream_type::SourceMediaStreamType;
+
 pub use crate::types::_interface_request::InterfaceRequest;
 
 pub use crate::types::_destination_configuration::DestinationConfiguration;
@@ -596,8 +656,6 @@ pub use crate::types::_input_configuration::InputConfiguration;
 pub use crate::types::_srt_decryption_configuration::SrtDecryptionConfiguration;
 
 pub use crate::types::_srt_encryption_configuration::SrtEncryptionConfiguration;
-
-pub use crate::types::_tls_encryption::TlsEncryption;
 
 pub use crate::types::_public_destination_endpoint_networking_configuration_allow_rule::PublicDestinationEndpointNetworkingConfigurationAllowRule;
 
@@ -609,13 +667,7 @@ pub use crate::types::_video_matrix_coefficients::VideoMatrixCoefficients;
 
 pub use crate::types::_interface::Interface;
 
-pub use crate::types::_tls_encryption_type::TlsEncryptionType;
-
-pub use crate::types::_tls_encryption_configuration::TlsEncryptionConfiguration;
-
 pub use crate::types::_public_source_endpoint_networking_configuration_allow_rule::PublicSourceEndpointNetworkingConfigurationAllowRule;
-
-pub use crate::types::_public_tls_encryption_configuration::PublicTlsEncryptionConfiguration;
 
 mod _add_bridge_flow_source_request;
 
@@ -641,9 +693,13 @@ mod _algorithm;
 
 mod _audio_monitoring_setting;
 
+mod _auto_pid_map_configuration;
+
 mod _automatic_encryption_key_configuration;
 
 mod _automatic_endpoint_encryption_configuration;
+
+mod _automatic_rtmp_push_naming_configuration;
 
 mod _batch_get_destination_endpoint_error;
 
@@ -761,6 +817,10 @@ mod _fabric_configuration;
 
 mod _fabric_latency_mode;
 
+mod _fabric_switching_configuration;
+
+mod _fabric_switching_mode;
+
 mod _failover_config;
 
 mod _failover_input_source_priority_mode;
@@ -809,6 +869,8 @@ mod _gateway_state;
 
 mod _grant_entitlement_request;
 
+mod _immediate_fabric_switching_configuration;
+
 mod _ingress_gateway_bridge;
 
 mod _input_configuration;
@@ -820,6 +882,8 @@ mod _instance_state;
 mod _interface;
 
 mod _interface_request;
+
+mod _key_frame_fabric_switching_configuration;
 
 mod _key_type;
 
@@ -854,6 +918,8 @@ mod _maintenance_schedule;
 mod _maintenance_schedule_type;
 
 mod _maintenance_type;
+
+mod _manual_rtmp_push_naming_configuration;
 
 mod _media_connect_flow_router_input_configuration;
 
@@ -941,9 +1007,19 @@ mod _output_status;
 
 mod _owned_resource_share_details;
 
+mod _passthrough;
+
+mod _pid_map_rule;
+
 mod _preferred_day_time_maintenance_configuration;
 
 mod _price_units;
+
+mod _program_clock_reference_pid_configuration;
+
+mod _program_map_table_pid_configuration;
+
+mod _program_number_configuration;
 
 mod _protocol;
 
@@ -1045,6 +1121,8 @@ mod _router_output_filter;
 
 mod _router_output_message;
 
+mod _router_output_processors;
+
 mod _router_output_protocol;
 
 mod _router_output_protocol_configuration;
@@ -1067,7 +1145,25 @@ mod _router_output_type;
 
 mod _routing_scope;
 
+mod _rtmp_media_info;
+
+mod _rtmp_media_stream_info;
+
+mod _rtmp_push_naming_configuration;
+
+mod _rtmp_push_naming_type;
+
+mod _rtmp_push_output_settings;
+
+mod _rtmp_push_router_input_configuration;
+
 mod _rtmp_push_router_output_configuration;
+
+mod _rtmp_push_source_settings;
+
+mod _rtmp_push_stream_details;
+
+mod _rtmp_source_metadata_info;
 
 mod _rtp_router_input_configuration;
 
@@ -1085,11 +1181,15 @@ mod _secrets_manager_endpoint_encryption_configuration;
 
 mod _set_gateway_bridge_source_request;
 
+mod _set_rtmp_push_source_settings;
+
 mod _set_source_request;
 
 mod _silent_audio;
 
 mod _silent_audio_configuration;
+
+mod _single_program_transport_stream_pid_map_configuration;
 
 mod _source;
 
@@ -1118,6 +1218,8 @@ mod _source_endpoint_router_output_configuration;
 mod _source_endpoint_router_output_stream_details;
 
 mod _source_endpoint_type;
+
+mod _source_media_stream_type;
 
 mod _source_priority;
 
@@ -1192,6 +1294,8 @@ mod _transport;
 mod _transport_media_info;
 
 mod _transport_stream;
+
+mod _transport_stream_id_configuration;
 
 mod _transport_stream_program;
 

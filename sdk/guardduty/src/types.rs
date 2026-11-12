@@ -59,6 +59,8 @@ pub use crate::types::_order_by::OrderBy;
 
 pub use crate::types::_finding_statistics::FindingStatistics;
 
+pub use crate::types::_summary_format::SummaryFormat;
+
 pub use crate::types::_investigation::Investigation;
 
 pub use crate::types::_ip_set_status::IpSetStatus;
@@ -102,6 +104,10 @@ pub use crate::types::_usage_statistics::UsageStatistics;
 pub use crate::types::_coverage_sort_criteria::CoverageSortCriteria;
 
 pub use crate::types::_detection_rule_configuration_status::DetectionRuleConfigurationStatus;
+
+pub use crate::types::_investigation_status::InvestigationStatus;
+
+pub use crate::types::_investigation_filter_criteria::InvestigationFilterCriteria;
 
 pub use crate::types::_investigation_sort_criteria::InvestigationSortCriteria;
 
@@ -175,8 +181,6 @@ pub use crate::types::_finding::Finding;
 
 pub use crate::types::_finding_statistic_type::FindingStatisticType;
 
-pub use crate::types::_investigation_status::InvestigationStatus;
-
 pub use crate::types::_investigation_metadata::InvestigationMetadata;
 
 pub use crate::types::_cloud_details::CloudDetails;
@@ -184,6 +188,10 @@ pub use crate::types::_cloud_details::CloudDetails;
 pub use crate::types::_risk_level::RiskLevel;
 
 pub use crate::types::_confidence::Confidence;
+
+pub use crate::types::_investigation_summary_data::InvestigationSummaryData;
+
+pub use crate::types::_investigation_scope::InvestigationScope;
 
 pub use crate::types::_malware_protection_plan_status_reason::MalwareProtectionPlanStatusReason;
 
@@ -216,6 +224,10 @@ pub use crate::types::_detection_rule_org_configuration_summary::DetectionRuleOr
 pub use crate::types::_detection_rule_filter::DetectionRuleFilter;
 
 pub use crate::types::_rule_summary::RuleSummary;
+
+pub use crate::types::_record_type::RecordType;
+
+pub use crate::types::_investigation_record::InvestigationRecord;
 
 pub use crate::types::_investigation_sort_field::InvestigationSortField;
 
@@ -311,6 +323,18 @@ pub use crate::types::_product::Product;
 
 pub use crate::types::_cloud_provider::CloudProvider;
 
+pub use crate::types::_threat_assessment::ThreatAssessment;
+
+pub use crate::types::_account_analysis::AccountAnalysis;
+
+pub use crate::types::_organization_analysis::OrganizationAnalysis;
+
+pub use crate::types::_key_observations::KeyObservations;
+
+pub use crate::types::_investigation_type::InvestigationType;
+
+pub use crate::types::_query_time_window::QueryTimeWindow;
+
 pub use crate::types::_scanned_resource_details::ScannedResourceDetails;
 
 pub use crate::types::_trigger_type::TriggerType;
@@ -344,6 +368,12 @@ pub use crate::types::_coverage_resource_details::CoverageResourceDetails;
 pub use crate::types::_filter_field_name::FilterFieldName;
 
 pub use crate::types::_detection_rule_filter_condition::DetectionRuleFilterCondition;
+
+pub use crate::types::_supporting_data::SupportingData;
+
+pub use crate::types::_investigation_filter_criterion_key::InvestigationFilterCriterionKey;
+
+pub use crate::types::_investigation_filter_condition::InvestigationFilterCondition;
 
 pub use crate::types::_list_malware_scans_filter_criterion::ListMalwareScansFilterCriterion;
 
@@ -427,6 +457,14 @@ pub use crate::types::_detection::Detection;
 
 pub use crate::types::_malware_scan_details::MalwareScanDetails;
 
+pub use crate::types::_countermeasure::Countermeasure;
+
+pub use crate::types::_findings_summary::FindingsSummary;
+
+pub use crate::types::_organization_findings_summary::OrganizationFindingsSummary;
+
+pub use crate::types::_recommendation::Recommendation;
+
 pub use crate::types::_ebs_snapshot::EbsSnapshot;
 
 pub use crate::types::_detection_source::DetectionSource;
@@ -450,6 +488,14 @@ pub use crate::types::_coverage_eks_cluster_details::CoverageEksClusterDetails;
 pub use crate::types::_coverage_ecs_cluster_details::CoverageEcsClusterDetails;
 
 pub use crate::types::_coverage_ec2_instance_details::CoverageEc2InstanceDetails;
+
+pub use crate::types::_fetch_record::FetchRecord;
+
+pub use crate::types::_analysis_record::AnalysisRecord;
+
+pub use crate::types::_observation_record::ObservationRecord;
+
+pub use crate::types::_metadata_record::MetadataRecord;
 
 pub use crate::types::_list_malware_scans_criterion_key::ListMalwareScansCriterionKey;
 
@@ -513,6 +559,22 @@ pub use crate::types::_sequence::Sequence;
 
 pub use crate::types::_malware_protection_findings_scan_configuration::MalwareProtectionFindingsScanConfiguration;
 
+pub use crate::types::_attack_phase::AttackPhase;
+
+pub use crate::types::_defense_tactic::DefenseTactic;
+
+pub use crate::types::_severity_breakdown::SeverityBreakdown;
+
+pub use crate::types::_tactic_coverage::TacticCoverage;
+
+pub use crate::types::_account_affected_resource::AccountAffectedResource;
+
+pub use crate::types::_account_summary::AccountSummary;
+
+pub use crate::types::_recommendation_category::RecommendationCategory;
+
+pub use crate::types::_action_priority::ActionPriority;
+
 pub use crate::types::_item_details::ItemDetails;
 
 pub use crate::types::_scan_condition_pair::ScanConditionPair;
@@ -530,6 +592,48 @@ pub use crate::types::_fargate_details::FargateDetails;
 pub use crate::types::_container_instance_details::ContainerInstanceDetails;
 
 pub use crate::types::_agent_details::AgentDetails;
+
+pub use crate::types::_fetch_type::FetchType;
+
+pub use crate::types::_fetch_query::FetchQuery;
+
+pub use crate::types::_fetch_result::FetchResult;
+
+pub use crate::types::_analysis_type::AnalysisType;
+
+pub use crate::types::_investigation_threat_assessment::InvestigationThreatAssessment;
+
+pub use crate::types::_kubernetes_policy_violation::KubernetesPolicyViolation;
+
+pub use crate::types::_s3_analysis::S3Analysis;
+
+pub use crate::types::_investigation_account_analysis::InvestigationAccountAnalysis;
+
+pub use crate::types::_observation_type::ObservationType;
+
+pub use crate::types::_finding_detail::FindingDetail;
+
+pub use crate::types::_investigation_resource::InvestigationResource;
+
+pub use crate::types::_network_activity::NetworkActivity;
+
+pub use crate::types::_rds_login_activity::RdsLoginActivity;
+
+pub use crate::types::_s3_activity::S3Activity;
+
+pub use crate::types::_kubernetes_activity::KubernetesActivity;
+
+pub use crate::types::_investigation_malware_scan::InvestigationMalwareScan;
+
+pub use crate::types::_related_findings::RelatedFindings;
+
+pub use crate::types::_detection_coverage::DetectionCoverage;
+
+pub use crate::types::_account_overview::AccountOverview;
+
+pub use crate::types::_runtime_signals::RuntimeSignals;
+
+pub use crate::types::_distribution::Distribution;
 
 pub use crate::types::_owner::Owner;
 
@@ -577,11 +681,71 @@ pub use crate::types::_anomaly_unusual::AnomalyUnusual;
 
 pub use crate::types::_threat::Threat;
 
+pub use crate::types::_attack_phase_name::AttackPhaseName;
+
+pub use crate::types::_countermeasure_action::CountermeasureAction;
+
+pub use crate::types::_finding_type_count::FindingTypeCount;
+
+pub use crate::types::_time_window_group::TimeWindowGroup;
+
+pub use crate::types::_investigation_resource_type::InvestigationResourceType;
+
 pub use crate::types::_additional_info::AdditionalInfo;
 
 pub use crate::types::_member_additional_configuration_result::MemberAdditionalConfigurationResult;
 
 pub use crate::types::_organization_feature_statistics_additional_configuration::OrganizationFeatureStatisticsAdditionalConfiguration;
+
+pub use crate::types::_fetch_time_window::FetchTimeWindow;
+
+pub use crate::types::_investigation_indicator_type::InvestigationIndicatorType;
+
+pub use crate::types::_fetch_verdict::FetchVerdict;
+
+pub use crate::types::_finding_type_documentation::FindingTypeDocumentation;
+
+pub use crate::types::_reputation::Reputation;
+
+pub use crate::types::_threat_confidence::ThreatConfidence;
+
+pub use crate::types::_process::Process;
+
+pub use crate::types::_trend::Trend;
+
+pub use crate::types::_baseline::Baseline;
+
+pub use crate::types::_investigation_indicator::InvestigationIndicator;
+
+pub use crate::types::_activity_window::ActivityWindow;
+
+pub use crate::types::_investigation_resource_data::InvestigationResourceData;
+
+pub use crate::types::_network_ports::NetworkPorts;
+
+pub use crate::types::_network_traffic::NetworkTraffic;
+
+pub use crate::types::_network_anomaly::NetworkAnomaly;
+
+pub use crate::types::_dns_context::DnsContext;
+
+pub use crate::types::_network_counts::NetworkCounts;
+
+pub use crate::types::_enrichment::Enrichment;
+
+pub use crate::types::_investigation_actor::InvestigationActor;
+
+pub use crate::types::_kubernetes_api_call::KubernetesApiCall;
+
+pub use crate::types::_kubernetes_anomaly::KubernetesAnomaly;
+
+pub use crate::types::_investigation_kubernetes_workload::InvestigationKubernetesWorkload;
+
+pub use crate::types::_distribution_dimension::DistributionDimension;
+
+pub use crate::types::_archive_distribution::ArchiveDistribution;
+
+pub use crate::types::_representative_finding::RepresentativeFinding;
 
 pub use crate::types::_permission_configuration::PermissionConfiguration;
 
@@ -621,6 +785,48 @@ pub use crate::types::_signal::Signal;
 
 pub use crate::types::_indicator::Indicator;
 
+pub use crate::types::_attack::Attack;
+
+pub use crate::types::_disposition::Disposition;
+
+pub use crate::types::_technique_coverage::TechniqueCoverage;
+
+pub use crate::types::_fetch_criterion::FetchCriterion;
+
+pub use crate::types::_investigation_detector_feature_configuration::InvestigationDetectorFeatureConfiguration;
+
+pub use crate::types::_time_granularity::TimeGranularity;
+
+pub use crate::types::_investigation_ec2_instance::InvestigationEc2Instance;
+
+pub use crate::types::_lambda_function::LambdaFunction;
+
+pub use crate::types::_rds_db_instance::RdsDbInstance;
+
+pub use crate::types::_rds_db_user::RdsDbUser;
+
+pub use crate::types::_investigation_eks_cluster::InvestigationEksCluster;
+
+pub use crate::types::_investigation_ecs_cluster::InvestigationEcsCluster;
+
+pub use crate::types::_malware_threat::MalwareThreat;
+
+pub use crate::types::_correlated_finding::CorrelatedFinding;
+
+pub use crate::types::_observed_finding_type::ObservedFindingType;
+
+pub use crate::types::_protection_plan::ProtectionPlan;
+
+pub use crate::types::_investigation_detector_feature::InvestigationDetectorFeature;
+
+pub use crate::types::_member_account_ranking::MemberAccountRanking;
+
+pub use crate::types::_signal_group::SignalGroup;
+
+pub use crate::types::_type_distribution::TypeDistribution;
+
+pub use crate::types::_resource_distribution::ResourceDistribution;
+
 pub use crate::types::_bucket_level_permissions::BucketLevelPermissions;
 
 pub use crate::types::_account_level_permissions::AccountLevelPermissions;
@@ -652,6 +858,16 @@ pub use crate::types::_signal_type::SignalType;
 pub use crate::types::_indicator_type::IndicatorType;
 
 pub use crate::types::_item_path::ItemPath;
+
+pub use crate::types::_threat_reference::ThreatReference;
+
+pub use crate::types::_affected_resource::AffectedResource;
+
+pub use crate::types::_fetch_criterion_condition::FetchCriterionCondition;
+
+pub use crate::types::_finding_reference::FindingReference;
+
+pub use crate::types::_finding_type_classification::FindingTypeClassification;
 
 pub use crate::types::_access_control_list::AccessControlList;
 
@@ -703,6 +919,12 @@ pub use crate::types::_network_direction::NetworkDirection;
 
 pub use crate::types::_activity::Activity;
 
+pub use crate::types::_correlation_reason::CorrelationReason;
+
+pub use crate::types::_shared_resource::SharedResource;
+
+pub use crate::types::_shared_behavior::SharedBehavior;
+
 pub use crate::types::_scan_file_path::ScanFilePath;
 
 pub use crate::types::_profile_type::ProfileType;
@@ -739,19 +961,31 @@ mod _access_key_details;
 
 mod _account;
 
+mod _account_affected_resource;
+
+mod _account_analysis;
+
 mod _account_detail;
 
 mod _account_free_trial_info;
 
 mod _account_level_permissions;
 
+mod _account_overview;
+
 mod _account_statistics;
 
+mod _account_summary;
+
 mod _action;
+
+mod _action_priority;
 
 mod _activity;
 
 mod _activity_type;
+
+mod _activity_window;
 
 mod _actor;
 
@@ -767,7 +1001,13 @@ mod _admin_status;
 
 mod _administrator;
 
+mod _affected_resource;
+
 mod _agent_details;
+
+mod _analysis_record;
+
+mod _analysis_type;
 
 mod _anomaly;
 
@@ -777,11 +1017,19 @@ mod _anomaly_unusual;
 
 mod _api_call;
 
+mod _archive_distribution;
+
 mod _association_detail;
 
 mod _association_mode;
 
 mod _association_summary;
+
+mod _attack;
+
+mod _attack_phase;
+
+mod _attack_phase_name;
 
 mod _auto_enable_members;
 
@@ -790,6 +1038,8 @@ mod _autonomous_system;
 mod _autoscaling_auto_scaling_group;
 
 mod _aws_api_call_action;
+
+mod _baseline;
 
 mod _bedrock_guardrail;
 
@@ -834,6 +1084,14 @@ mod _content_policy_filter_action;
 mod _content_policy_filter_type;
 
 mod _continuous_scan_details;
+
+mod _correlated_finding;
+
+mod _correlation_reason;
+
+mod _countermeasure;
+
+mod _countermeasure_action;
 
 mod _country;
 
@@ -887,6 +1145,8 @@ mod _date_statistics;
 
 mod _default_server_side_encryption;
 
+mod _defense_tactic;
+
 mod _destination;
 
 mod _destination_properties;
@@ -894,6 +1154,8 @@ mod _destination_properties;
 mod _destination_type;
 
 mod _detection;
+
+mod _detection_coverage;
 
 mod _detection_rule_configuration_status;
 
@@ -934,6 +1196,14 @@ mod _detector_feature_configuration_result;
 mod _detector_feature_result;
 
 mod _detector_status;
+
+mod _disposition;
+
+mod _distribution;
+
+mod _distribution_dimension;
+
+mod _dns_context;
 
 mod _dns_logs_configuration_result;
 
@@ -981,6 +1251,8 @@ mod _eks_cluster;
 
 mod _eks_cluster_details;
 
+mod _enrichment;
+
 mod _evidence;
 
 mod _fargate_details;
@@ -990,6 +1262,22 @@ mod _feature_additional_configuration;
 mod _feature_status;
 
 mod _feedback;
+
+mod _fetch_criterion;
+
+mod _fetch_criterion_condition;
+
+mod _fetch_query;
+
+mod _fetch_record;
+
+mod _fetch_result;
+
+mod _fetch_time_window;
+
+mod _fetch_type;
+
+mod _fetch_verdict;
 
 mod _filter_action;
 
@@ -1005,7 +1293,11 @@ mod _finding;
 
 mod _finding_criteria;
 
+mod _finding_detail;
+
 mod _finding_publishing_frequency;
+
+mod _finding_reference;
 
 mod _finding_resource_type;
 
@@ -1013,7 +1305,15 @@ mod _finding_statistic_type;
 
 mod _finding_statistics;
 
+mod _finding_type_classification;
+
+mod _finding_type_count;
+
+mod _finding_type_documentation;
+
 mod _finding_type_statistics;
+
+mod _findings_summary;
 
 mod _flow_logs_configuration_result;
 
@@ -1051,7 +1351,45 @@ mod _instance_details;
 
 mod _investigation;
 
+mod _investigation_account_analysis;
+
+mod _investigation_actor;
+
+mod _investigation_detector_feature;
+
+mod _investigation_detector_feature_configuration;
+
+mod _investigation_ec2_instance;
+
+mod _investigation_ecs_cluster;
+
+mod _investigation_eks_cluster;
+
+mod _investigation_filter_condition;
+
+mod _investigation_filter_criteria;
+
+mod _investigation_filter_criterion_key;
+
+mod _investigation_indicator;
+
+mod _investigation_indicator_type;
+
+mod _investigation_kubernetes_workload;
+
+mod _investigation_malware_scan;
+
 mod _investigation_metadata;
+
+mod _investigation_record;
+
+mod _investigation_resource;
+
+mod _investigation_resource_data;
+
+mod _investigation_resource_type;
+
+mod _investigation_scope;
 
 mod _investigation_sort_criteria;
 
@@ -1060,6 +1398,12 @@ mod _investigation_sort_field;
 mod _investigation_status;
 
 mod _investigation_summary;
+
+mod _investigation_summary_data;
+
+mod _investigation_threat_assessment;
+
+mod _investigation_type;
 
 mod _invitation;
 
@@ -1070,6 +1414,14 @@ mod _ip_set_status;
 mod _item_details;
 
 mod _item_path;
+
+mod _key_observations;
+
+mod _kubernetes_activity;
+
+mod _kubernetes_anomaly;
+
+mod _kubernetes_api_call;
 
 mod _kubernetes_api_call_action;
 
@@ -1087,6 +1439,8 @@ mod _kubernetes_details;
 
 mod _kubernetes_permission_checked_details;
 
+mod _kubernetes_policy_violation;
+
 mod _kubernetes_resources_types;
 
 mod _kubernetes_role_binding_details;
@@ -1100,6 +1454,8 @@ mod _kubernetes_workload;
 mod _kubernetes_workload_details;
 
 mod _lambda_details;
+
+mod _lambda_function;
 
 mod _lineage_object;
 
@@ -1145,6 +1501,8 @@ mod _malware_scan;
 
 mod _malware_scan_details;
 
+mod _malware_threat;
+
 mod _managed_by;
 
 mod _management_type;
@@ -1152,6 +1510,8 @@ mod _management_type;
 mod _master;
 
 mod _member;
+
+mod _member_account_ranking;
 
 mod _member_additional_configuration;
 
@@ -1163,13 +1523,21 @@ mod _member_features_configuration;
 
 mod _member_features_configuration_result;
 
+mod _metadata_record;
+
 mod _mfa_status;
 
 mod _model_detail;
 
+mod _network_activity;
+
+mod _network_anomaly;
+
 mod _network_connection;
 
 mod _network_connection_action;
+
+mod _network_counts;
 
 mod _network_direction;
 
@@ -1179,7 +1547,17 @@ mod _network_geo_location;
 
 mod _network_interface;
 
+mod _network_ports;
+
+mod _network_traffic;
+
+mod _observation_record;
+
+mod _observation_type;
+
 mod _observations;
+
+mod _observed_finding_type;
 
 mod _order_by;
 
@@ -1194,6 +1572,8 @@ mod _organization;
 mod _organization_additional_configuration;
 
 mod _organization_additional_configuration_result;
+
+mod _organization_analysis;
 
 mod _organization_data_source_configurations;
 
@@ -1212,6 +1592,8 @@ mod _organization_feature_configuration_result;
 mod _organization_feature_statistics;
 
 mod _organization_feature_statistics_additional_configuration;
+
+mod _organization_findings_summary;
 
 mod _organization_kubernetes_audit_logs_configuration;
 
@@ -1245,6 +1627,8 @@ mod _port_probe_detail;
 
 mod _private_ip_address_details;
 
+mod _process;
+
 mod _process_details;
 
 mod _product;
@@ -1254,6 +1638,8 @@ mod _product_code;
 mod _profile_subtype;
 
 mod _profile_type;
+
+mod _protection_plan;
 
 mod _public_access;
 
@@ -1267,17 +1653,33 @@ mod _public_bucket_restrict_behavior;
 
 mod _publishing_status;
 
+mod _query_time_window;
+
+mod _rds_db_instance;
+
 mod _rds_db_instance_details;
+
+mod _rds_db_user;
 
 mod _rds_db_user_details;
 
 mod _rds_limitless_db_details;
 
+mod _rds_login_activity;
+
 mod _rds_login_attempt_action;
+
+mod _recommendation;
+
+mod _recommendation_category;
+
+mod _record_type;
 
 mod _recovery_point;
 
 mod _recovery_point_details;
+
+mod _related_findings;
 
 mod _remote_account_details;
 
@@ -1285,11 +1687,17 @@ mod _remote_ip_details;
 
 mod _remote_port_details;
 
+mod _representative_finding;
+
+mod _reputation;
+
 mod _resource;
 
 mod _resource_data;
 
 mod _resource_details;
+
+mod _resource_distribution;
 
 mod _resource_statistics;
 
@@ -1312,6 +1720,12 @@ mod _rule_summary;
 mod _runtime_context;
 
 mod _runtime_details;
+
+mod _runtime_signals;
+
+mod _s3_activity;
+
+mod _s3_analysis;
 
 mod _s3_bucket;
 
@@ -1387,9 +1801,17 @@ mod _service_additional_info;
 
 mod _session;
 
+mod _severity_breakdown;
+
 mod _severity_statistics;
 
+mod _shared_behavior;
+
+mod _shared_resource;
+
 mod _signal;
+
+mod _signal_group;
 
 mod _signal_type;
 
@@ -1397,9 +1819,21 @@ mod _sort_criteria;
 
 mod _start_malware_scan_configuration;
 
+mod _summary_format;
+
+mod _supporting_data;
+
+mod _tactic_coverage;
+
 mod _tag;
 
+mod _technique_coverage;
+
 mod _threat;
+
+mod _threat_assessment;
+
+mod _threat_confidence;
 
 mod _threat_detected_by_name;
 
@@ -1413,9 +1847,17 @@ mod _threat_intel_set_status;
 
 mod _threat_intelligence_detail;
 
+mod _threat_reference;
+
 mod _threats_detected_item_count;
 
+mod _time_granularity;
+
+mod _time_window_group;
+
 mod _total;
+
+mod _trend;
 
 mod _trigger_details;
 
@@ -1424,6 +1866,8 @@ mod _trigger_type;
 mod _trusted_entity_set_format;
 
 mod _trusted_entity_set_status;
+
+mod _type_distribution;
 
 mod _unprocessed_account;
 

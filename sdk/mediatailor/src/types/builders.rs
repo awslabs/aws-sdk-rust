@@ -21,6 +21,8 @@ pub use crate::types::_sequential_executor_configuration::SequentialExecutorConf
 
 pub use crate::types::_vast_request_configuration::VastRequestConfigurationBuilder;
 
+pub use crate::types::_hls_tag_processor_configuration::HlsTagProcessorConfigurationBuilder;
+
 pub use crate::types::_avail_suppression::AvailSuppressionBuilder;
 
 pub use crate::types::_bumper::BumperBuilder;

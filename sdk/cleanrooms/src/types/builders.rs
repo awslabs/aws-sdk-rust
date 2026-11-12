@@ -279,6 +279,8 @@ pub use crate::types::_membership_synthetic_data_generation_payment_config::Memb
 
 pub use crate::types::_billed_job_resource_utilization::BilledJobResourceUtilizationBuilder;
 
+pub use crate::types::_retry_info::RetryInfoBuilder;
+
 pub use crate::types::_billed_resource_utilization::BilledResourceUtilizationBuilder;
 
 pub use crate::types::_intermediate_table_output_configuration::IntermediateTableOutputConfigurationBuilder;

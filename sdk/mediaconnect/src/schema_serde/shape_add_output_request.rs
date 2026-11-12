@@ -296,6 +296,17 @@ static ADDOUTPUTREQUEST_MEMBER_NDI_AUDIO_REFERENCE_LEVEL: ::aws_smithy_schema::S
     22,
 )
 .with_json_name("ndiAudioReferenceLevel");
+static ADDOUTPUTREQUEST_MEMBER_RTMP_PUSH_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconnect#AddOutputRequest$RtmpPushSettings",
+        "com.amazonaws.mediaconnect",
+        "AddOutputRequest",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RtmpPushSettings",
+    23,
+)
+.with_json_name("rtmpPushSettings");
 static ADDOUTPUTREQUEST_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.mediaconnect#AddOutputRequest",
@@ -327,6 +338,7 @@ static ADDOUTPUTREQUEST_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smi
         &ADDOUTPUTREQUEST_MEMBER_ROUTER_INTEGRATION_TRANSIT_ENCRYPTION,
         &ADDOUTPUTREQUEST_MEMBER_NDI_OUTPUT_TIMECODE_SOURCE,
         &ADDOUTPUTREQUEST_MEMBER_NDI_AUDIO_REFERENCE_LEVEL,
+        &ADDOUTPUTREQUEST_MEMBER_RTMP_PUSH_SETTINGS,
     ],
 );
 impl crate::types::AddOutputRequest {
@@ -436,6 +448,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::AddOutputR
         }
         if let Some(ref val) = self.ndi_audio_reference_level {
             ser.write_integer(&ADDOUTPUTREQUEST_MEMBER_NDI_AUDIO_REFERENCE_LEVEL, *val)?;
+        }
+        if let Some(ref val) = self.rtmp_push_settings {
+            ser.write_struct(&ADDOUTPUTREQUEST_MEMBER_RTMP_PUSH_SETTINGS, val)?;
         }
         Ok(())
     }
@@ -620,6 +635,13 @@ impl crate::types::builders::AddOutputRequestBuilder {
                         deser.read_null()?;
                     } else {
                         self.ndi_audio_reference_level = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rtmp_push_settings = Some(crate::types::RtmpPushOutputSettings::deserialize(deser)?);
                     }
                 }
                 _ => {}

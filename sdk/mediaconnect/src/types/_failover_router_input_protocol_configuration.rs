@@ -6,6 +6,8 @@
 pub enum FailoverRouterInputProtocolConfiguration {
     /// <p>The configuration settings for a router input using the RIST (Reliable Internet Stream Transport) protocol, including the port and recovery latency.</p>
     Rist(crate::types::RistRouterInputConfiguration),
+    /// <p>The configuration settings for a failover router input that uses the RTMP protocol.</p>
+    RtmpPush(crate::types::RtmpPushRouterInputConfiguration),
     /// <p>The configuration settings for a Router Input using the RTP (Real-Time Transport Protocol) protocol, including the port and forward error correction state.</p>
     Rtp(crate::types::RtpRouterInputConfiguration),
     /// <p>The configuration settings for a router input using the SRT (Secure Reliable Transport) protocol in caller mode, including the source address and port, minimum latency, stream ID, and decryption key configuration.</p>
@@ -35,6 +37,19 @@ impl FailoverRouterInputProtocolConfiguration {
     /// Returns true if this is a [`Rist`](crate::types::FailoverRouterInputProtocolConfiguration::Rist).
     pub fn is_rist(&self) -> bool {
         self.as_rist().is_ok()
+    }
+    /// Tries to convert the enum instance into [`RtmpPush`](crate::types::FailoverRouterInputProtocolConfiguration::RtmpPush), extracting the inner [`RtmpPushRouterInputConfiguration`](crate::types::RtmpPushRouterInputConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_rtmp_push(&self) -> ::std::result::Result<&crate::types::RtmpPushRouterInputConfiguration, &Self> {
+        if let FailoverRouterInputProtocolConfiguration::RtmpPush(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`RtmpPush`](crate::types::FailoverRouterInputProtocolConfiguration::RtmpPush).
+    pub fn is_rtmp_push(&self) -> bool {
+        self.as_rtmp_push().is_ok()
     }
     /// Tries to convert the enum instance into [`Rtp`](crate::types::FailoverRouterInputProtocolConfiguration::Rtp), extracting the inner [`RtpRouterInputConfiguration`](crate::types::RtpRouterInputConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

@@ -6,7 +6,7 @@
 pub struct UpdateVirtualClusterInput {
     /// <p>The ID of the virtual cluster to update.</p>
     pub id: ::std::option::Option<::std::string::String>,
-    /// <p>The scheduler configuration to apply to the virtual cluster. The new configuration fully replaces the existing one. If you omit a field, the corresponding limit is removed.</p>
+    /// <p>The scheduler configuration to apply to the virtual cluster. The new configuration fully replaces the existing one. If you omit <code>maxInQueueJobRuns</code>, the service removes the queue-depth limit. If you omit <code>maxConcurrentJobRuns</code>, the service applies the default limit of 1,000 concurrent job runs.</p>
     pub scheduler_configuration: ::std::option::Option<crate::types::SchedulerConfiguration>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure that the operation completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ impl UpdateVirtualClusterInput {
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The scheduler configuration to apply to the virtual cluster. The new configuration fully replaces the existing one. If you omit a field, the corresponding limit is removed.</p>
+    /// <p>The scheduler configuration to apply to the virtual cluster. The new configuration fully replaces the existing one. If you omit <code>maxInQueueJobRuns</code>, the service removes the queue-depth limit. If you omit <code>maxConcurrentJobRuns</code>, the service applies the default limit of 1,000 concurrent job runs.</p>
     pub fn scheduler_configuration(&self) -> ::std::option::Option<&crate::types::SchedulerConfiguration> {
         self.scheduler_configuration.as_ref()
     }
@@ -56,17 +56,17 @@ impl UpdateVirtualClusterInputBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The scheduler configuration to apply to the virtual cluster. The new configuration fully replaces the existing one. If you omit a field, the corresponding limit is removed.</p>
+    /// <p>The scheduler configuration to apply to the virtual cluster. The new configuration fully replaces the existing one. If you omit <code>maxInQueueJobRuns</code>, the service removes the queue-depth limit. If you omit <code>maxConcurrentJobRuns</code>, the service applies the default limit of 1,000 concurrent job runs.</p>
     pub fn scheduler_configuration(mut self, input: crate::types::SchedulerConfiguration) -> Self {
         self.scheduler_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The scheduler configuration to apply to the virtual cluster. The new configuration fully replaces the existing one. If you omit a field, the corresponding limit is removed.</p>
+    /// <p>The scheduler configuration to apply to the virtual cluster. The new configuration fully replaces the existing one. If you omit <code>maxInQueueJobRuns</code>, the service removes the queue-depth limit. If you omit <code>maxConcurrentJobRuns</code>, the service applies the default limit of 1,000 concurrent job runs.</p>
     pub fn set_scheduler_configuration(mut self, input: ::std::option::Option<crate::types::SchedulerConfiguration>) -> Self {
         self.scheduler_configuration = input;
         self
     }
-    /// <p>The scheduler configuration to apply to the virtual cluster. The new configuration fully replaces the existing one. If you omit a field, the corresponding limit is removed.</p>
+    /// <p>The scheduler configuration to apply to the virtual cluster. The new configuration fully replaces the existing one. If you omit <code>maxInQueueJobRuns</code>, the service removes the queue-depth limit. If you omit <code>maxConcurrentJobRuns</code>, the service applies the default limit of 1,000 concurrent job runs.</p>
     pub fn get_scheduler_configuration(&self) -> &::std::option::Option<crate::types::SchedulerConfiguration> {
         &self.scheduler_configuration
     }

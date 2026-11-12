@@ -52,6 +52,8 @@ pub struct SetSourceRequest {
     pub router_integration_state: ::std::option::Option<crate::types::State>,
     /// <p>The decryption configuration for the flow source when router integration is enabled. Specifies how the source content should be decrypted when router integration is used.</p>
     pub router_integration_transit_decryption: ::std::option::Option<crate::types::FlowTransitEncryption>,
+    /// <p>The settings for the RTMP (Real-Time Messaging Protocol) source.</p>
+    pub rtmp_push_settings: ::std::option::Option<crate::types::SetRtmpPushSourceSettings>,
 }
 impl SetSourceRequest {
     /// <p>The type of encryption that is used on the content ingested from this source. Allowable encryption types: static-key.</p>
@@ -150,6 +152,10 @@ impl SetSourceRequest {
     pub fn router_integration_transit_decryption(&self) -> ::std::option::Option<&crate::types::FlowTransitEncryption> {
         self.router_integration_transit_decryption.as_ref()
     }
+    /// <p>The settings for the RTMP (Real-Time Messaging Protocol) source.</p>
+    pub fn rtmp_push_settings(&self) -> ::std::option::Option<&crate::types::SetRtmpPushSourceSettings> {
+        self.rtmp_push_settings.as_ref()
+    }
 }
 impl SetSourceRequest {
     /// Creates a new builder-style object to manufacture [`SetSourceRequest`](crate::types::SetSourceRequest).
@@ -185,6 +191,7 @@ pub struct SetSourceRequestBuilder {
     pub(crate) source_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) router_integration_state: ::std::option::Option<crate::types::State>,
     pub(crate) router_integration_transit_decryption: ::std::option::Option<crate::types::FlowTransitEncryption>,
+    pub(crate) rtmp_push_settings: ::std::option::Option<crate::types::SetRtmpPushSourceSettings>,
 }
 impl SetSourceRequestBuilder {
     /// <p>The type of encryption that is used on the content ingested from this source. Allowable encryption types: static-key.</p>
@@ -535,6 +542,20 @@ impl SetSourceRequestBuilder {
     pub fn get_router_integration_transit_decryption(&self) -> &::std::option::Option<crate::types::FlowTransitEncryption> {
         &self.router_integration_transit_decryption
     }
+    /// <p>The settings for the RTMP (Real-Time Messaging Protocol) source.</p>
+    pub fn rtmp_push_settings(mut self, input: crate::types::SetRtmpPushSourceSettings) -> Self {
+        self.rtmp_push_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings for the RTMP (Real-Time Messaging Protocol) source.</p>
+    pub fn set_rtmp_push_settings(mut self, input: ::std::option::Option<crate::types::SetRtmpPushSourceSettings>) -> Self {
+        self.rtmp_push_settings = input;
+        self
+    }
+    /// <p>The settings for the RTMP (Real-Time Messaging Protocol) source.</p>
+    pub fn get_rtmp_push_settings(&self) -> &::std::option::Option<crate::types::SetRtmpPushSourceSettings> {
+        &self.rtmp_push_settings
+    }
     /// Consumes the builder and constructs a [`SetSourceRequest`](crate::types::SetSourceRequest).
     pub fn build(self) -> crate::types::SetSourceRequest {
         crate::types::SetSourceRequest {
@@ -561,6 +582,7 @@ impl SetSourceRequestBuilder {
             source_tags: self.source_tags,
             router_integration_state: self.router_integration_state,
             router_integration_transit_decryption: self.router_integration_transit_decryption,
+            rtmp_push_settings: self.rtmp_push_settings,
         }
     }
 }

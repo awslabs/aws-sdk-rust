@@ -208,6 +208,9 @@ pub mod list_filters;
 /// Types for the `ListFindings` operation.
 pub mod list_findings;
 
+/// Types for the `ListInvestigationRecords` operation.
+pub mod list_investigation_records;
+
 /// Types for the `ListInvestigations` operation.
 pub mod list_investigations;
 

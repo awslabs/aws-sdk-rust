@@ -8,6 +8,10 @@ pub enum MergeRouterInputProtocolConfiguration {
     Rist(crate::types::RistRouterInputConfiguration),
     /// <p>The configuration settings for a Router Input using the RTP (Real-Time Transport Protocol) protocol, including the port and forward error correction state.</p>
     Rtp(crate::types::RtpRouterInputConfiguration),
+    /// <p>The configuration settings for a router input using the SRT (Secure Reliable Transport) protocol in caller mode, including the source address and port, minimum latency, stream ID, and decryption key configuration.</p>
+    SrtCaller(crate::types::SrtCallerRouterInputConfiguration),
+    /// <p>The configuration settings for a router input using the SRT (Secure Reliable Transport) protocol in listener mode, including the port, minimum latency, and decryption key configuration.</p>
+    SrtListener(crate::types::SrtListenerRouterInputConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -44,6 +48,32 @@ impl MergeRouterInputProtocolConfiguration {
     /// Returns true if this is a [`Rtp`](crate::types::MergeRouterInputProtocolConfiguration::Rtp).
     pub fn is_rtp(&self) -> bool {
         self.as_rtp().is_ok()
+    }
+    /// Tries to convert the enum instance into [`SrtCaller`](crate::types::MergeRouterInputProtocolConfiguration::SrtCaller), extracting the inner [`SrtCallerRouterInputConfiguration`](crate::types::SrtCallerRouterInputConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_srt_caller(&self) -> ::std::result::Result<&crate::types::SrtCallerRouterInputConfiguration, &Self> {
+        if let MergeRouterInputProtocolConfiguration::SrtCaller(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`SrtCaller`](crate::types::MergeRouterInputProtocolConfiguration::SrtCaller).
+    pub fn is_srt_caller(&self) -> bool {
+        self.as_srt_caller().is_ok()
+    }
+    /// Tries to convert the enum instance into [`SrtListener`](crate::types::MergeRouterInputProtocolConfiguration::SrtListener), extracting the inner [`SrtListenerRouterInputConfiguration`](crate::types::SrtListenerRouterInputConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_srt_listener(&self) -> ::std::result::Result<&crate::types::SrtListenerRouterInputConfiguration, &Self> {
+        if let MergeRouterInputProtocolConfiguration::SrtListener(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`SrtListener`](crate::types::MergeRouterInputProtocolConfiguration::SrtListener).
+    pub fn is_srt_listener(&self) -> bool {
+        self.as_srt_listener().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

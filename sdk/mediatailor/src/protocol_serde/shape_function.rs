@@ -84,6 +84,15 @@ where
                                 crate::protocol_serde::shape_vast_request_configuration::de_vast_request_configuration(tokens, _value, depth + 1)?,
                             );
                         }
+                        "HlsTagProcessorConfiguration" => {
+                            builder = builder.set_hls_tag_processor_configuration(
+                                crate::protocol_serde::shape_hls_tag_processor_configuration::de_hls_tag_processor_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens, _value, depth + 1)?);
                         }

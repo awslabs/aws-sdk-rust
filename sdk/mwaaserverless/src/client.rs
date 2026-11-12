@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod create_airflow_ui_url;
+
 mod create_workflow;
 
 /// Operation customization and supporting types.
@@ -149,7 +151,7 @@ mod create_workflow;
 /// # let client: aws_sdk_mwaaserverless::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_workflow()
+/// let result = client.create_airflow_ui_url()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value

@@ -7,6 +7,9 @@ pub mod accept_marketplace_registration;
 /// Types for the `AssociateIamRoleToResource` operation.
 pub mod associate_iam_role_to_resource;
 
+/// Types for the `AssociateVirtualMachinesToCloudVmCluster` operation.
+pub mod associate_virtual_machines_to_cloud_vm_cluster;
+
 /// Types for the `AssociateVirtualMachinesToExadbVmCluster` operation.
 pub mod associate_virtual_machines_to_exadb_vm_cluster;
 
@@ -69,6 +72,9 @@ pub mod delete_odb_peering_connection;
 
 /// Types for the `DisassociateIamRoleFromResource` operation.
 pub mod disassociate_iam_role_from_resource;
+
+/// Types for the `DisassociateVirtualMachinesFromCloudVmCluster` operation.
+pub mod disassociate_virtual_machines_from_cloud_vm_cluster;
 
 /// Types for the `DisassociateVirtualMachinesFromExadbVmCluster` operation.
 pub mod disassociate_virtual_machines_from_exadb_vm_cluster;
@@ -226,8 +232,17 @@ pub mod update_autonomous_database;
 /// Types for the `UpdateAutonomousDatabaseBackup` operation.
 pub mod update_autonomous_database_backup;
 
+/// Types for the `UpdateCloudAutonomousVmCluster` operation.
+pub mod update_cloud_autonomous_vm_cluster;
+
 /// Types for the `UpdateCloudExadataInfrastructure` operation.
 pub mod update_cloud_exadata_infrastructure;
+
+/// Types for the `UpdateCloudExadataInfrastructureStorageCapacity` operation.
+pub mod update_cloud_exadata_infrastructure_storage_capacity;
+
+/// Types for the `UpdateCloudVmCluster` operation.
+pub mod update_cloud_vm_cluster;
 
 /// Types for the `UpdateExadbVmCluster` operation.
 pub mod update_exadb_vm_cluster;

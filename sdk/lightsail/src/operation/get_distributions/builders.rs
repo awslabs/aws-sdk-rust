@@ -22,7 +22,9 @@ impl crate::operation::get_distributions::builders::GetDistributionsInputBuilder
 }
 /// Fluent builder constructing a request to `GetDistributions`.
 ///
-/// <p>Returns information about one or more of your Amazon Lightsail content delivery network (CDN) distributions.</p>
+/// <p>Returns information about one or more of your Amazon Lightsail content delivery network (CDN) distributions.</p><note>
+/// <p>The <code>defaultRootObject</code> and <code>customErrorResponses</code> values are returned only when you specify <code>distributionName</code> to retrieve a single distribution. When you call <code>GetDistributions</code> without a distribution name to list all distributions, these two fields aren't included in the response.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetDistributionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

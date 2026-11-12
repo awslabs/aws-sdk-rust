@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageUsageResourceTypeRequest {
     /// <p>The resource type.</p>
-    /// <p>Valid values: <code>ec2:Instance</code> | <code>ec2:LaunchTemplate</code></p>
+    /// <p>Valid values: <code>ec2:Instance</code> | <code>ec2:LaunchTemplate</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code></p>
     pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>The options that affect the scope of the report. Valid only when <code>ResourceType</code> is <code>ec2:LaunchTemplate</code>.</p>
     pub resource_type_options: ::std::option::Option<::std::vec::Vec<crate::types::ImageUsageResourceTypeOptionRequest>>,
 }
 impl ImageUsageResourceTypeRequest {
     /// <p>The resource type.</p>
-    /// <p>Valid values: <code>ec2:Instance</code> | <code>ec2:LaunchTemplate</code></p>
+    /// <p>Valid values: <code>ec2:Instance</code> | <code>ec2:LaunchTemplate</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code></p>
     pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
@@ -39,19 +39,19 @@ pub struct ImageUsageResourceTypeRequestBuilder {
 }
 impl ImageUsageResourceTypeRequestBuilder {
     /// <p>The resource type.</p>
-    /// <p>Valid values: <code>ec2:Instance</code> | <code>ec2:LaunchTemplate</code></p>
+    /// <p>Valid values: <code>ec2:Instance</code> | <code>ec2:LaunchTemplate</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code></p>
     pub fn resource_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource type.</p>
-    /// <p>Valid values: <code>ec2:Instance</code> | <code>ec2:LaunchTemplate</code></p>
+    /// <p>Valid values: <code>ec2:Instance</code> | <code>ec2:LaunchTemplate</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code></p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The resource type.</p>
-    /// <p>Valid values: <code>ec2:Instance</code> | <code>ec2:LaunchTemplate</code></p>
+    /// <p>Valid values: <code>ec2:Instance</code> | <code>ec2:LaunchTemplate</code> | <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code></p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_type
     }

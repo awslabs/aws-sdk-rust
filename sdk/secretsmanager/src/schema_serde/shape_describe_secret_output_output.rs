@@ -278,6 +278,37 @@ static DESCRIBESECRETOUTPUT_MEMBER_REPLICATION_STATUS: ::aws_smithy_schema::Sche
     20,
 )
 .with_list_member(&DESCRIBESECRETOUTPUT_MEMBER_REPLICATION_STATUS_MEMBER);
+static DESCRIBESECRETOUTPUT_MEMBER_CROSS_ACCOUNT_PRIMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.secretsmanager.synthetic#DescribeSecretOutput$CrossAccountPrimary",
+        "com.amazonaws.secretsmanager.synthetic",
+        "DescribeSecretOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CrossAccountPrimary",
+    21,
+);
+static DESCRIBESECRETOUTPUT_MEMBER_CROSS_ACCOUNT_REPLICAS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.secretsmanager#CrossAccountReplicaListType$member",
+        "com.amazonaws.secretsmanager",
+        "CrossAccountReplicaListType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static DESCRIBESECRETOUTPUT_MEMBER_CROSS_ACCOUNT_REPLICAS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.secretsmanager.synthetic#DescribeSecretOutput$CrossAccountReplicas",
+        "com.amazonaws.secretsmanager.synthetic",
+        "DescribeSecretOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CrossAccountReplicas",
+    22,
+)
+.with_list_member(&DESCRIBESECRETOUTPUT_MEMBER_CROSS_ACCOUNT_REPLICAS_MEMBER);
 static DESCRIBESECRETOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.secretsmanager.synthetic#DescribeSecretOutput",
@@ -307,6 +338,8 @@ static DESCRIBESECRETOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws
         &DESCRIBESECRETOUTPUT_MEMBER_CREATED_DATE,
         &DESCRIBESECRETOUTPUT_MEMBER_PRIMARY_REGION,
         &DESCRIBESECRETOUTPUT_MEMBER_REPLICATION_STATUS,
+        &DESCRIBESECRETOUTPUT_MEMBER_CROSS_ACCOUNT_PRIMARY,
+        &DESCRIBESECRETOUTPUT_MEMBER_CROSS_ACCOUNT_REPLICAS,
     ],
 )
 .with_original_name("DescribeSecretResponse");
@@ -424,6 +457,20 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::descri
                 &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
                     for item in val {
                         ser.write_struct(crate::types::ReplicationStatusType::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.cross_account_primary {
+            ser.write_struct(&DESCRIBESECRETOUTPUT_MEMBER_CROSS_ACCOUNT_PRIMARY, val)?;
+        }
+        if let Some(ref val) = self.cross_account_replicas {
+            ser.write_list(
+                &DESCRIBESECRETOUTPUT_MEMBER_CROSS_ACCOUNT_REPLICAS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::CrossAccountReplicaEntry::SCHEMA, item)?;
                     }
                     Ok(())
                 },
@@ -622,6 +669,27 @@ impl crate::operation::describe_secret::builders::DescribeSecretOutputBuilder {
                             let mut container = Vec::new();
                             deser.read_list(member, &mut |deser| {
                                 container.push(crate::types::ReplicationStatusType::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cross_account_primary = Some(crate::types::CrossAccountPrimaryType::deserialize(deser)?);
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cross_account_replicas = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CrossAccountReplicaEntry::deserialize(deser)?);
                                 Ok(())
                             })?;
                             container

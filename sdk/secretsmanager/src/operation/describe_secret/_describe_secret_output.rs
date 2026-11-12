@@ -67,6 +67,10 @@ pub struct DescribeSecretOutput {
     /// <p><code>InSync</code>, which indicates that the replica was created.</p></li>
     /// </ul>
     pub replication_status: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
+    /// <p>Information about the primary secret in the other Amazon Web Services account that this cross-account replica secret replicates from, including the primary secret ARN and the replication status. This field is omitted if the secret is not a cross-account replica.</p>
+    pub cross_account_primary: ::std::option::Option<crate::types::CrossAccountPrimaryType>,
+    /// <p>A list of this secret's cross-account replica secrets and their replication status, if this secret is the primary for cross-account replication. This field is omitted if the secret has no cross-account replicas.</p>
+    pub cross_account_replicas: ::std::option::Option<::std::vec::Vec<crate::types::CrossAccountReplicaEntry>>,
     _request_id: Option<String>,
 }
 impl DescribeSecretOutput {
@@ -184,6 +188,16 @@ impl DescribeSecretOutput {
     pub fn replication_status(&self) -> &[crate::types::ReplicationStatusType] {
         self.replication_status.as_deref().unwrap_or_default()
     }
+    /// <p>Information about the primary secret in the other Amazon Web Services account that this cross-account replica secret replicates from, including the primary secret ARN and the replication status. This field is omitted if the secret is not a cross-account replica.</p>
+    pub fn cross_account_primary(&self) -> ::std::option::Option<&crate::types::CrossAccountPrimaryType> {
+        self.cross_account_primary.as_ref()
+    }
+    /// <p>A list of this secret's cross-account replica secrets and their replication status, if this secret is the primary for cross-account replication. This field is omitted if the secret has no cross-account replicas.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cross_account_replicas.is_none()`.
+    pub fn cross_account_replicas(&self) -> &[crate::types::CrossAccountReplicaEntry] {
+        self.cross_account_replicas.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeSecretOutput {
     fn request_id(&self) -> Option<&str> {
@@ -223,6 +237,8 @@ pub struct DescribeSecretOutputBuilder {
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) primary_region: ::std::option::Option<::std::string::String>,
     pub(crate) replication_status: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>>,
+    pub(crate) cross_account_primary: ::std::option::Option<crate::types::CrossAccountPrimaryType>,
+    pub(crate) cross_account_replicas: ::std::option::Option<::std::vec::Vec<crate::types::CrossAccountReplicaEntry>>,
     _request_id: Option<String>,
 }
 impl DescribeSecretOutputBuilder {
@@ -618,6 +634,40 @@ impl DescribeSecretOutputBuilder {
     pub fn get_replication_status(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ReplicationStatusType>> {
         &self.replication_status
     }
+    /// <p>Information about the primary secret in the other Amazon Web Services account that this cross-account replica secret replicates from, including the primary secret ARN and the replication status. This field is omitted if the secret is not a cross-account replica.</p>
+    pub fn cross_account_primary(mut self, input: crate::types::CrossAccountPrimaryType) -> Self {
+        self.cross_account_primary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the primary secret in the other Amazon Web Services account that this cross-account replica secret replicates from, including the primary secret ARN and the replication status. This field is omitted if the secret is not a cross-account replica.</p>
+    pub fn set_cross_account_primary(mut self, input: ::std::option::Option<crate::types::CrossAccountPrimaryType>) -> Self {
+        self.cross_account_primary = input;
+        self
+    }
+    /// <p>Information about the primary secret in the other Amazon Web Services account that this cross-account replica secret replicates from, including the primary secret ARN and the replication status. This field is omitted if the secret is not a cross-account replica.</p>
+    pub fn get_cross_account_primary(&self) -> &::std::option::Option<crate::types::CrossAccountPrimaryType> {
+        &self.cross_account_primary
+    }
+    /// Appends an item to `cross_account_replicas`.
+    ///
+    /// To override the contents of this collection use [`set_cross_account_replicas`](Self::set_cross_account_replicas).
+    ///
+    /// <p>A list of this secret's cross-account replica secrets and their replication status, if this secret is the primary for cross-account replication. This field is omitted if the secret has no cross-account replicas.</p>
+    pub fn cross_account_replicas(mut self, input: crate::types::CrossAccountReplicaEntry) -> Self {
+        let mut v = self.cross_account_replicas.unwrap_or_default();
+        v.push(input);
+        self.cross_account_replicas = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of this secret's cross-account replica secrets and their replication status, if this secret is the primary for cross-account replication. This field is omitted if the secret has no cross-account replicas.</p>
+    pub fn set_cross_account_replicas(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CrossAccountReplicaEntry>>) -> Self {
+        self.cross_account_replicas = input;
+        self
+    }
+    /// <p>A list of this secret's cross-account replica secrets and their replication status, if this secret is the primary for cross-account replication. This field is omitted if the secret has no cross-account replicas.</p>
+    pub fn get_cross_account_replicas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CrossAccountReplicaEntry>> {
+        &self.cross_account_replicas
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -651,6 +701,8 @@ impl DescribeSecretOutputBuilder {
             created_date: self.created_date,
             primary_region: self.primary_region,
             replication_status: self.replication_status,
+            cross_account_primary: self.cross_account_primary,
+            cross_account_replicas: self.cross_account_replicas,
             _request_id: self._request_id,
         }
     }

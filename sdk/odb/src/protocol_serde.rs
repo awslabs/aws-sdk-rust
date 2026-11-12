@@ -27,6 +27,8 @@ pub(crate) mod shape_accept_marketplace_registration;
 
 pub(crate) mod shape_associate_iam_role_to_resource;
 
+pub(crate) mod shape_associate_virtual_machines_to_cloud_vm_cluster;
+
 pub(crate) mod shape_associate_virtual_machines_to_exadb_vm_cluster;
 
 pub(crate) mod shape_create_autonomous_database;
@@ -68,6 +70,8 @@ pub(crate) mod shape_delete_odb_network;
 pub(crate) mod shape_delete_odb_peering_connection;
 
 pub(crate) mod shape_disassociate_iam_role_from_resource;
+
+pub(crate) mod shape_disassociate_virtual_machines_from_cloud_vm_cluster;
 
 pub(crate) mod shape_disassociate_virtual_machines_from_exadb_vm_cluster;
 
@@ -173,7 +177,13 @@ pub(crate) mod shape_update_autonomous_database;
 
 pub(crate) mod shape_update_autonomous_database_backup;
 
+pub(crate) mod shape_update_cloud_autonomous_vm_cluster;
+
 pub(crate) mod shape_update_cloud_exadata_infrastructure;
+
+pub(crate) mod shape_update_cloud_exadata_infrastructure_storage_capacity;
+
+pub(crate) mod shape_update_cloud_vm_cluster;
 
 pub(crate) mod shape_update_exadb_vm_cluster;
 
@@ -198,6 +208,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_associate_iam_role_to_resource_input;
+
+pub(crate) mod shape_associate_virtual_machines_to_cloud_vm_cluster_input;
 
 pub(crate) mod shape_associate_virtual_machines_to_exadb_vm_cluster_input;
 
@@ -242,6 +254,8 @@ pub(crate) mod shape_delete_odb_network_input;
 pub(crate) mod shape_delete_odb_peering_connection_input;
 
 pub(crate) mod shape_disassociate_iam_role_from_resource_input;
+
+pub(crate) mod shape_disassociate_virtual_machines_from_cloud_vm_cluster_input;
 
 pub(crate) mod shape_disassociate_virtual_machines_from_exadb_vm_cluster_input;
 
@@ -353,7 +367,13 @@ pub(crate) mod shape_update_autonomous_database_backup_input;
 
 pub(crate) mod shape_update_autonomous_database_input;
 
+pub(crate) mod shape_update_cloud_autonomous_vm_cluster_input;
+
 pub(crate) mod shape_update_cloud_exadata_infrastructure_input;
+
+pub(crate) mod shape_update_cloud_exadata_infrastructure_storage_capacity_input;
+
+pub(crate) mod shape_update_cloud_vm_cluster_input;
 
 pub(crate) mod shape_update_exadb_vm_cluster_input;
 

@@ -22,7 +22,9 @@ impl crate::operation::describe_secret::builders::DescribeSecretInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeSecret`.
 ///
-/// <p>Retrieves the details of a secret. It does not include the encrypted secret value. Secrets Manager only returns fields that have a value in the response.</p>
+/// <p>Retrieves the details of a secret. It does not include the encrypted secret value. Secrets Manager only returns fields that have a value in the response.</p><note>
+/// <p>The <code>VersionIdsToStages</code> field in the response includes every version ID that has a staging label attached, even if that version doesn't contain a secret value. In contrast, <code>ListSecretVersionIds</code> only returns versions that contain a secret value. To check whether a secret version contains a value, call <code>GetSecretValue</code>.</p>
+/// </note>
 /// <p>Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information in request parameters because it might be logged. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets Manager events with CloudTrail</a>.</p>
 /// <p><b>Required permissions: </b> <code>secretsmanager:DescribeSecret</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

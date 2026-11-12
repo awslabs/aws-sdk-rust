@@ -122,6 +122,24 @@ pub(crate) fn create_query_logging_config_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn invalid_resource_record_set_protection_batch_correct_errors(
+    mut builder: crate::types::error::builders::InvalidResourceRecordSetProtectionBatchBuilder,
+) -> crate::types::error::builders::InvalidResourceRecordSetProtectionBatchBuilder {
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn protection_already_exists_correct_errors(
+    mut builder: crate::types::error::builders::ProtectionAlreadyExistsBuilder,
+) -> crate::types::error::builders::ProtectionAlreadyExistsBuilder {
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_reusable_delegation_set_output_output_correct_errors(
     mut builder: crate::operation::create_reusable_delegation_set::builders::CreateReusableDelegationSetOutputBuilder,
 ) -> crate::operation::create_reusable_delegation_set::builders::CreateReusableDelegationSetOutputBuilder {
@@ -566,6 +584,15 @@ pub(crate) fn list_query_logging_configs_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_resource_record_set_protections_output_output_correct_errors(
+    mut builder: crate::operation::list_resource_record_set_protections::builders::ListResourceRecordSetProtectionsOutputBuilder,
+) -> crate::operation::list_resource_record_set_protections::builders::ListResourceRecordSetProtectionsOutputBuilder {
+    if builder.resource_record_set_protections.is_none() {
+        builder.resource_record_set_protections = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_resource_record_sets_output_output_correct_errors(
     mut builder: crate::operation::list_resource_record_sets::builders::ListResourceRecordSetsOutputBuilder,
 ) -> crate::operation::list_resource_record_sets::builders::ListResourceRecordSetsOutputBuilder {
@@ -996,6 +1023,24 @@ pub(crate) fn hosted_zone_summary_correct_errors(
     builder
 }
 
+pub(crate) fn protection_error_correct_errors(
+    mut builder: crate::types::builders::ProtectionErrorBuilder,
+) -> crate::types::builders::ProtectionErrorBuilder {
+    if builder.record_name.is_none() {
+        builder.record_name = Some(Default::default())
+    }
+    if builder.record_type.is_none() {
+        builder.record_type = "no value was set".parse::<crate::types::RrType>().ok()
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn resource_record_set_correct_errors(
     mut builder: crate::types::builders::ResourceRecordSetBuilder,
 ) -> crate::types::builders::ResourceRecordSetBuilder {
@@ -1004,6 +1049,18 @@ pub(crate) fn resource_record_set_correct_errors(
     }
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::RrType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn resource_record_set_protection_correct_errors(
+    mut builder: crate::types::builders::ResourceRecordSetProtectionBuilder,
+) -> crate::types::builders::ResourceRecordSetProtectionBuilder {
+    if builder.record_name.is_none() {
+        builder.record_name = Some(Default::default())
+    }
+    if builder.record_type.is_none() {
+        builder.record_type = "no value was set".parse::<crate::types::RrType>().ok()
     }
     builder
 }

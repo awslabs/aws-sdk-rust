@@ -87,6 +87,17 @@ static TRANSPORTSTREAM_MEMBER_SAMPLE_SIZE: ::aws_smithy_schema::Schema<'static> 
     7,
 )
 .with_json_name("sampleSize");
+static TRANSPORTSTREAM_MEMBER_SCAN_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconnect#TransportStream$ScanMode",
+        "com.amazonaws.mediaconnect",
+        "TransportStream",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ScanMode",
+    8,
+)
+.with_json_name("scanMode");
 static TRANSPORTSTREAM_MEMBER_STREAM_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.mediaconnect#TransportStream$StreamType",
@@ -95,9 +106,20 @@ static TRANSPORTSTREAM_MEMBER_STREAM_TYPE: ::aws_smithy_schema::Schema<'static> 
     ),
     ::aws_smithy_schema::ShapeType::String,
     "StreamType",
-    8,
+    9,
 )
 .with_json_name("streamType");
+static TRANSPORTSTREAM_MEMBER_LANGUAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconnect#TransportStream$Language",
+        "com.amazonaws.mediaconnect",
+        "TransportStream",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Language",
+    10,
+)
+.with_json_name("language");
 static TRANSPORTSTREAM_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.mediaconnect#TransportStream",
@@ -114,7 +136,9 @@ static TRANSPORTSTREAM_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smit
         &TRANSPORTSTREAM_MEMBER_PID,
         &TRANSPORTSTREAM_MEMBER_SAMPLE_RATE,
         &TRANSPORTSTREAM_MEMBER_SAMPLE_SIZE,
+        &TRANSPORTSTREAM_MEMBER_SCAN_MODE,
         &TRANSPORTSTREAM_MEMBER_STREAM_TYPE,
+        &TRANSPORTSTREAM_MEMBER_LANGUAGE,
     ],
 );
 impl crate::types::TransportStream {
@@ -155,8 +179,14 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::TransportS
         if let Some(ref val) = self.sample_size {
             ser.write_integer(&TRANSPORTSTREAM_MEMBER_SAMPLE_SIZE, *val)?;
         }
+        if let Some(ref val) = self.scan_mode {
+            ser.write_string(&TRANSPORTSTREAM_MEMBER_SCAN_MODE, val.as_str())?;
+        }
         if let Some(ref val) = self.stream_type {
             ser.write_string(&TRANSPORTSTREAM_MEMBER_STREAM_TYPE, val)?;
+        }
+        if let Some(ref val) = self.language {
+            ser.write_string(&TRANSPORTSTREAM_MEMBER_LANGUAGE, val)?;
         }
         Ok(())
     }
@@ -235,7 +265,21 @@ impl crate::types::builders::TransportStreamBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
+                        self.scan_mode = Some(crate::types::ScanMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
                         self.stream_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.language = Some(deser.read_string(member)?);
                     }
                 }
                 _ => {}

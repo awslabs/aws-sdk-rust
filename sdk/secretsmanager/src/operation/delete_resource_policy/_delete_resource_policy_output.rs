@@ -7,6 +7,8 @@ pub struct DeleteResourcePolicyOutput {
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the secret that the resource-based policy was deleted for.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the deleted resource policy. If you didn't specify <code>PolicyName</code> in the request, this is <code>default</code>.</p>
+    pub policy_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteResourcePolicyOutput {
@@ -17,6 +19,10 @@ impl DeleteResourcePolicyOutput {
     /// <p>The name of the secret that the resource-based policy was deleted for.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// <p>The name of the deleted resource policy. If you didn't specify <code>PolicyName</code> in the request, this is <code>default</code>.</p>
+    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+        self.policy_name.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for DeleteResourcePolicyOutput {
@@ -37,6 +43,7 @@ impl DeleteResourcePolicyOutput {
 pub struct DeleteResourcePolicyOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteResourcePolicyOutputBuilder {
@@ -68,6 +75,20 @@ impl DeleteResourcePolicyOutputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
+    /// <p>The name of the deleted resource policy. If you didn't specify <code>PolicyName</code> in the request, this is <code>default</code>.</p>
+    pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the deleted resource policy. If you didn't specify <code>PolicyName</code> in the request, this is <code>default</code>.</p>
+    pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.policy_name = input;
+        self
+    }
+    /// <p>The name of the deleted resource policy. If you didn't specify <code>PolicyName</code> in the request, this is <code>default</code>.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -82,6 +103,7 @@ impl DeleteResourcePolicyOutputBuilder {
         crate::operation::delete_resource_policy::DeleteResourcePolicyOutput {
             arn: self.arn,
             name: self.name,
+            policy_name: self.policy_name,
             _request_id: self._request_id,
         }
     }

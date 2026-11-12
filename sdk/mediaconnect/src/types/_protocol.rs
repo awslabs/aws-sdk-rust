@@ -16,6 +16,7 @@
 ///     Protocol::FujitsuQos => { /* ... */ },
 ///     Protocol::NdiSpeedHq => { /* ... */ },
 ///     Protocol::Rist => { /* ... */ },
+///     Protocol::RtmpPush => { /* ... */ },
 ///     Protocol::Rtp => { /* ... */ },
 ///     Protocol::RtpFec => { /* ... */ },
 ///     Protocol::SrtCaller => { /* ... */ },
@@ -61,6 +62,8 @@ pub enum Protocol {
     #[allow(missing_docs)] // documentation missing in model
     Rist,
     #[allow(missing_docs)] // documentation missing in model
+    RtmpPush,
+    #[allow(missing_docs)] // documentation missing in model
     Rtp,
     #[allow(missing_docs)] // documentation missing in model
     RtpFec,
@@ -87,6 +90,7 @@ impl ::std::convert::From<&str> for Protocol {
             "fujitsu-qos" => Protocol::FujitsuQos,
             "ndi-speed-hq" => Protocol::NdiSpeedHq,
             "rist" => Protocol::Rist,
+            "rtmp-push" => Protocol::RtmpPush,
             "rtp" => Protocol::Rtp,
             "rtp-fec" => Protocol::RtpFec,
             "srt-caller" => Protocol::SrtCaller,
@@ -114,6 +118,7 @@ impl Protocol {
             Protocol::FujitsuQos => "fujitsu-qos",
             Protocol::NdiSpeedHq => "ndi-speed-hq",
             Protocol::Rist => "rist",
+            Protocol::RtmpPush => "rtmp-push",
             Protocol::Rtp => "rtp",
             Protocol::RtpFec => "rtp-fec",
             Protocol::SrtCaller => "srt-caller",
@@ -132,6 +137,7 @@ impl Protocol {
             "fujitsu-qos",
             "ndi-speed-hq",
             "rist",
+            "rtmp-push",
             "rtp",
             "rtp-fec",
             "srt-caller",
@@ -167,6 +173,7 @@ impl ::std::fmt::Display for Protocol {
             Protocol::FujitsuQos => write!(f, "fujitsu-qos"),
             Protocol::NdiSpeedHq => write!(f, "ndi-speed-hq"),
             Protocol::Rist => write!(f, "rist"),
+            Protocol::RtmpPush => write!(f, "rtmp-push"),
             Protocol::Rtp => write!(f, "rtp"),
             Protocol::RtpFec => write!(f, "rtp-fec"),
             Protocol::SrtCaller => write!(f, "srt-caller"),

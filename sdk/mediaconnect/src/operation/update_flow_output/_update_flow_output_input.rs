@@ -59,6 +59,8 @@ pub struct UpdateFlowOutputInput {
     pub ndi_output_timecode_source: ::std::option::Option<crate::types::NdiOutputTimecodeSource>,
     /// <p>The audio reference level of the NDI receiver, in decibels relative to full scale (dBFS). Common values are <code>-20</code> (NDI and SMPTE) and <code>-18</code> (EBU). If you don't specify this field, MediaConnect leaves the value unchanged.</p>
     pub ndi_audio_reference_level: ::std::option::Option<i32>,
+    /// <p>The settings for an output that pushes a stream to a destination using the RTMP (Real-Time Messaging Protocol) protocol, or RTMPS (RTMP over TLS) when TLS encryption is specified.</p>
+    pub rtmp_push_settings: ::std::option::Option<crate::types::RtmpPushOutputSettings>,
 }
 impl UpdateFlowOutputInput {
     /// <p>The range of IP addresses that should be allowed to initiate output requests to this flow. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.</p>
@@ -169,6 +171,10 @@ impl UpdateFlowOutputInput {
     pub fn ndi_audio_reference_level(&self) -> ::std::option::Option<i32> {
         self.ndi_audio_reference_level
     }
+    /// <p>The settings for an output that pushes a stream to a destination using the RTMP (Real-Time Messaging Protocol) protocol, or RTMPS (RTMP over TLS) when TLS encryption is specified.</p>
+    pub fn rtmp_push_settings(&self) -> ::std::option::Option<&crate::types::RtmpPushOutputSettings> {
+        self.rtmp_push_settings.as_ref()
+    }
 }
 impl UpdateFlowOutputInput {
     /// Creates a new builder-style object to manufacture [`UpdateFlowOutputInput`](crate::operation::update_flow_output::UpdateFlowOutputInput).
@@ -205,6 +211,7 @@ pub struct UpdateFlowOutputInputBuilder {
     pub(crate) router_integration_transit_encryption: ::std::option::Option<crate::types::FlowTransitEncryption>,
     pub(crate) ndi_output_timecode_source: ::std::option::Option<crate::types::NdiOutputTimecodeSource>,
     pub(crate) ndi_audio_reference_level: ::std::option::Option<i32>,
+    pub(crate) rtmp_push_settings: ::std::option::Option<crate::types::RtmpPushOutputSettings>,
 }
 impl UpdateFlowOutputInputBuilder {
     /// Appends an item to `cidr_allow_list`.
@@ -586,6 +593,20 @@ impl UpdateFlowOutputInputBuilder {
     pub fn get_ndi_audio_reference_level(&self) -> &::std::option::Option<i32> {
         &self.ndi_audio_reference_level
     }
+    /// <p>The settings for an output that pushes a stream to a destination using the RTMP (Real-Time Messaging Protocol) protocol, or RTMPS (RTMP over TLS) when TLS encryption is specified.</p>
+    pub fn rtmp_push_settings(mut self, input: crate::types::RtmpPushOutputSettings) -> Self {
+        self.rtmp_push_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The settings for an output that pushes a stream to a destination using the RTMP (Real-Time Messaging Protocol) protocol, or RTMPS (RTMP over TLS) when TLS encryption is specified.</p>
+    pub fn set_rtmp_push_settings(mut self, input: ::std::option::Option<crate::types::RtmpPushOutputSettings>) -> Self {
+        self.rtmp_push_settings = input;
+        self
+    }
+    /// <p>The settings for an output that pushes a stream to a destination using the RTMP (Real-Time Messaging Protocol) protocol, or RTMPS (RTMP over TLS) when TLS encryption is specified.</p>
+    pub fn get_rtmp_push_settings(&self) -> &::std::option::Option<crate::types::RtmpPushOutputSettings> {
+        &self.rtmp_push_settings
+    }
     /// Consumes the builder and constructs a [`UpdateFlowOutputInput`](crate::operation::update_flow_output::UpdateFlowOutputInput).
     pub fn build(
         self,
@@ -615,6 +636,7 @@ impl UpdateFlowOutputInputBuilder {
             router_integration_transit_encryption: self.router_integration_transit_encryption,
             ndi_output_timecode_source: self.ndi_output_timecode_source,
             ndi_audio_reference_level: self.ndi_audio_reference_level,
+            rtmp_push_settings: self.rtmp_push_settings,
         })
     }
 }

@@ -97,6 +97,24 @@ static INVESTIGATION_MEMBER_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aw
     9,
 )
 .with_json_name("summary");
+static INVESTIGATION_MEMBER_SUMMARY_DATA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.guardduty#Investigation$SummaryData",
+        "com.amazonaws.guardduty",
+        "Investigation",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SummaryData",
+    10,
+)
+.with_json_name("summaryData");
+static INVESTIGATION_MEMBER_SCOPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.guardduty#Investigation$Scope", "com.amazonaws.guardduty", "Investigation"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Scope",
+    11,
+)
+.with_json_name("scope");
 static INVESTIGATION_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.guardduty#Investigation$StartTime",
@@ -105,7 +123,7 @@ static INVESTIGATION_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = :
     ),
     ::aws_smithy_schema::ShapeType::Timestamp,
     "StartTime",
-    10,
+    12,
 )
 .with_json_name("startTime");
 static INVESTIGATION_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -116,14 +134,14 @@ static INVESTIGATION_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::a
     ),
     ::aws_smithy_schema::ShapeType::Timestamp,
     "EndTime",
-    11,
+    13,
 )
 .with_json_name("endTime");
 static INVESTIGATION_MEMBER_ERROR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.guardduty#Investigation$Error", "com.amazonaws.guardduty", "Investigation"),
     ::aws_smithy_schema::ShapeType::String,
     "Error",
-    12,
+    14,
 )
 .with_json_name("error");
 static INVESTIGATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
@@ -140,6 +158,8 @@ static INVESTIGATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy
         &INVESTIGATION_MEMBER_RISK,
         &INVESTIGATION_MEMBER_CONFIDENCE,
         &INVESTIGATION_MEMBER_SUMMARY,
+        &INVESTIGATION_MEMBER_SUMMARY_DATA,
+        &INVESTIGATION_MEMBER_SCOPE,
         &INVESTIGATION_MEMBER_START_TIME,
         &INVESTIGATION_MEMBER_END_TIME,
         &INVESTIGATION_MEMBER_ERROR,
@@ -188,6 +208,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Investigat
         }
         if let Some(ref val) = self.summary {
             ser.write_string(&INVESTIGATION_MEMBER_SUMMARY, val)?;
+        }
+        if let Some(ref val) = self.summary_data {
+            ser.write_struct(&INVESTIGATION_MEMBER_SUMMARY_DATA, val)?;
+        }
+        if let Some(ref val) = self.scope {
+            ser.write_struct(&INVESTIGATION_MEMBER_SCOPE, val)?;
         }
         if let Some(ref val) = self.start_time {
             ser.write_timestamp(&INVESTIGATION_MEMBER_START_TIME, val)?;
@@ -289,17 +315,31 @@ impl crate::types::builders::InvestigationBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.start_time = Some(deser.read_timestamp(member)?);
+                        self.summary_data = Some(crate::types::InvestigationSummaryData::deserialize(deser)?);
                     }
                 }
                 Some(11) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.end_time = Some(deser.read_timestamp(member)?);
+                        self.scope = Some(crate::types::InvestigationScope::deserialize(deser)?);
                     }
                 }
                 Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.end_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(14) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

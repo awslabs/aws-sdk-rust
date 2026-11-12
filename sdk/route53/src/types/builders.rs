@@ -49,6 +49,12 @@ pub use crate::types::_cloud_watch_alarm_configuration::CloudWatchAlarmConfigura
 
 pub use crate::types::_hosted_zone_features::HostedZoneFeaturesBuilder;
 
+pub use crate::types::_resource_record_set_protection_config::ResourceRecordSetProtectionConfigBuilder;
+
+pub use crate::types::_protection_error::ProtectionErrorBuilder;
+
+pub use crate::types::_resource_record_set_protection_key::ResourceRecordSetProtectionKeyBuilder;
+
 pub use crate::types::_health_check_observation::HealthCheckObservationBuilder;
 
 pub use crate::types::_cidr_block_summary::CidrBlockSummaryBuilder;
@@ -58,6 +64,8 @@ pub use crate::types::_collection_summary::CollectionSummaryBuilder;
 pub use crate::types::_location_summary::LocationSummaryBuilder;
 
 pub use crate::types::_hosted_zone_summary::HostedZoneSummaryBuilder;
+
+pub use crate::types::_resource_record_set_protection::ResourceRecordSetProtectionBuilder;
 
 pub use crate::types::_resource_record_set::ResourceRecordSetBuilder;
 

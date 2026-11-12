@@ -68,6 +68,10 @@ pub struct CreateEnvironmentInput {
     /// <p>The maximum number of web servers that you want to run in your environment. Amazon MWAA scales the number of Apache Airflow web servers up to the number you specify for <code>MaxWebservers</code> when you interact with your Apache Airflow environment using Apache Airflow REST API, or the Apache Airflow CLI. For example, in scenarios where your workload requires network calls to the Apache Airflow REST API with a high transaction-per-second (TPS) rate, Amazon MWAA will increase the number of web servers up to the number set in <code>MaxWebserers</code>. As TPS rates decrease Amazon MWAA disposes of the additional web servers, and scales down to the number set in <code>MinxWebserers</code>.</p>
     /// <p>Valid values: For environments larger than mw1.micro, accepts values from <code>2</code> to <code>5</code>. Defaults to <code>2</code> for all environment sizes except mw1.micro, which defaults to <code>1</code>.</p>
     pub max_webservers: ::std::option::Option<i32>,
+    /// <p>The Amazon Web Services IAM Identity Center configuration used to authenticate users to the Apache Airflow web UI for your environment.</p>
+    pub identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfiguration>,
+    /// <p>A map of teams to configure for Apache Airflow multi-team support on your Amazon MWAA environment. Each entry maps a team name to a object that defines the Amazon S3 location of that team's DAG code. The team name must match the display name of an Amazon Web Services IAM Identity Center group that you associate with your environment, so you must configure IAM Identity Center for the environment before you add teams. You can configure between <code>1</code> and <code>20</code> teams. For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/multi-team-environments.html">Apache Airflow multi-team environments</a>.</p>
+    pub teams: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TeamConfig>>,
 }
 impl CreateEnvironmentInput {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
@@ -184,6 +188,14 @@ impl CreateEnvironmentInput {
     pub fn max_webservers(&self) -> ::std::option::Option<i32> {
         self.max_webservers
     }
+    /// <p>The Amazon Web Services IAM Identity Center configuration used to authenticate users to the Apache Airflow web UI for your environment.</p>
+    pub fn identity_center_configuration(&self) -> ::std::option::Option<&crate::types::IdentityCenterConfiguration> {
+        self.identity_center_configuration.as_ref()
+    }
+    /// <p>A map of teams to configure for Apache Airflow multi-team support on your Amazon MWAA environment. Each entry maps a team name to a object that defines the Amazon S3 location of that team's DAG code. The team name must match the display name of an Amazon Web Services IAM Identity Center group that you associate with your environment, so you must configure IAM Identity Center for the environment before you add teams. You can configure between <code>1</code> and <code>20</code> teams. For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/multi-team-environments.html">Apache Airflow multi-team environments</a>.</p>
+    pub fn teams(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::TeamConfig>> {
+        self.teams.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateEnvironmentInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -213,6 +225,8 @@ impl ::std::fmt::Debug for CreateEnvironmentInput {
         formatter.field("endpoint_management", &self.endpoint_management);
         formatter.field("min_webservers", &self.min_webservers);
         formatter.field("max_webservers", &self.max_webservers);
+        formatter.field("identity_center_configuration", &self.identity_center_configuration);
+        formatter.field("teams", &self.teams);
         formatter.finish()
     }
 }
@@ -252,6 +266,8 @@ pub struct CreateEnvironmentInputBuilder {
     pub(crate) endpoint_management: ::std::option::Option<crate::types::EndpointManagement>,
     pub(crate) min_webservers: ::std::option::Option<i32>,
     pub(crate) max_webservers: ::std::option::Option<i32>,
+    pub(crate) identity_center_configuration: ::std::option::Option<crate::types::IdentityCenterConfiguration>,
+    pub(crate) teams: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TeamConfig>>,
 }
 impl CreateEnvironmentInputBuilder {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
@@ -672,6 +688,40 @@ impl CreateEnvironmentInputBuilder {
     pub fn get_max_webservers(&self) -> &::std::option::Option<i32> {
         &self.max_webservers
     }
+    /// <p>The Amazon Web Services IAM Identity Center configuration used to authenticate users to the Apache Airflow web UI for your environment.</p>
+    pub fn identity_center_configuration(mut self, input: crate::types::IdentityCenterConfiguration) -> Self {
+        self.identity_center_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon Web Services IAM Identity Center configuration used to authenticate users to the Apache Airflow web UI for your environment.</p>
+    pub fn set_identity_center_configuration(mut self, input: ::std::option::Option<crate::types::IdentityCenterConfiguration>) -> Self {
+        self.identity_center_configuration = input;
+        self
+    }
+    /// <p>The Amazon Web Services IAM Identity Center configuration used to authenticate users to the Apache Airflow web UI for your environment.</p>
+    pub fn get_identity_center_configuration(&self) -> &::std::option::Option<crate::types::IdentityCenterConfiguration> {
+        &self.identity_center_configuration
+    }
+    /// Adds a key-value pair to `teams`.
+    ///
+    /// To override the contents of this collection use [`set_teams`](Self::set_teams).
+    ///
+    /// <p>A map of teams to configure for Apache Airflow multi-team support on your Amazon MWAA environment. Each entry maps a team name to a object that defines the Amazon S3 location of that team's DAG code. The team name must match the display name of an Amazon Web Services IAM Identity Center group that you associate with your environment, so you must configure IAM Identity Center for the environment before you add teams. You can configure between <code>1</code> and <code>20</code> teams. For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/multi-team-environments.html">Apache Airflow multi-team environments</a>.</p>
+    pub fn teams(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::TeamConfig) -> Self {
+        let mut hash_map = self.teams.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.teams = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of teams to configure for Apache Airflow multi-team support on your Amazon MWAA environment. Each entry maps a team name to a object that defines the Amazon S3 location of that team's DAG code. The team name must match the display name of an Amazon Web Services IAM Identity Center group that you associate with your environment, so you must configure IAM Identity Center for the environment before you add teams. You can configure between <code>1</code> and <code>20</code> teams. For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/multi-team-environments.html">Apache Airflow multi-team environments</a>.</p>
+    pub fn set_teams(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TeamConfig>>) -> Self {
+        self.teams = input;
+        self
+    }
+    /// <p>A map of teams to configure for Apache Airflow multi-team support on your Amazon MWAA environment. Each entry maps a team name to a object that defines the Amazon S3 location of that team's DAG code. The team name must match the display name of an Amazon Web Services IAM Identity Center group that you associate with your environment, so you must configure IAM Identity Center for the environment before you add teams. You can configure between <code>1</code> and <code>20</code> teams. For more information, refer to <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/multi-team-environments.html">Apache Airflow multi-team environments</a>.</p>
+    pub fn get_teams(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::TeamConfig>> {
+        &self.teams
+    }
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
     pub fn build(
         self,
@@ -702,6 +752,8 @@ impl CreateEnvironmentInputBuilder {
             endpoint_management: self.endpoint_management,
             min_webservers: self.min_webservers,
             max_webservers: self.max_webservers,
+            identity_center_configuration: self.identity_center_configuration,
+            teams: self.teams,
         })
     }
 }
@@ -733,6 +785,8 @@ impl ::std::fmt::Debug for CreateEnvironmentInputBuilder {
         formatter.field("endpoint_management", &self.endpoint_management);
         formatter.field("min_webservers", &self.min_webservers);
         formatter.field("max_webservers", &self.max_webservers);
+        formatter.field("identity_center_configuration", &self.identity_center_configuration);
+        formatter.field("teams", &self.teams);
         formatter.finish()
     }
 }

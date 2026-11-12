@@ -65,6 +65,28 @@ static INVESTIGATIONSUMMARY_MEMBER_TITLE: ::aws_smithy_schema::Schema<'static> =
     5,
 )
 .with_json_name("title");
+static INVESTIGATIONSUMMARY_MEMBER_INVESTIGATION_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.guardduty#InvestigationSummary$InvestigationType",
+        "com.amazonaws.guardduty",
+        "InvestigationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "InvestigationType",
+    6,
+)
+.with_json_name("investigationType");
+static INVESTIGATIONSUMMARY_MEMBER_FINDING_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.guardduty#InvestigationSummary$FindingId",
+        "com.amazonaws.guardduty",
+        "InvestigationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FindingId",
+    7,
+)
+.with_json_name("findingId");
 static INVESTIGATIONSUMMARY_MEMBER_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.guardduty#InvestigationSummary$AccountId",
@@ -73,9 +95,20 @@ static INVESTIGATIONSUMMARY_MEMBER_ACCOUNT_ID: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "AccountId",
-    6,
+    8,
 )
 .with_json_name("accountId");
+static INVESTIGATIONSUMMARY_MEMBER_ADMIN_ACCOUNT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.guardduty#InvestigationSummary$AdminAccountId",
+        "com.amazonaws.guardduty",
+        "InvestigationSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AdminAccountId",
+    9,
+)
+.with_json_name("adminAccountId");
 static INVESTIGATIONSUMMARY_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.guardduty#InvestigationSummary$StartTime",
@@ -84,7 +117,7 @@ static INVESTIGATIONSUMMARY_MEMBER_START_TIME: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::Timestamp,
     "StartTime",
-    7,
+    10,
 )
 .with_json_name("startTime");
 static INVESTIGATIONSUMMARY_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -95,7 +128,7 @@ static INVESTIGATIONSUMMARY_MEMBER_END_TIME: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::Timestamp,
     "EndTime",
-    8,
+    11,
 )
 .with_json_name("endTime");
 static INVESTIGATIONSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
@@ -112,7 +145,10 @@ static INVESTIGATIONSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws
         &INVESTIGATIONSUMMARY_MEMBER_RISK_LEVEL,
         &INVESTIGATIONSUMMARY_MEMBER_CONFIDENCE,
         &INVESTIGATIONSUMMARY_MEMBER_TITLE,
+        &INVESTIGATIONSUMMARY_MEMBER_INVESTIGATION_TYPE,
+        &INVESTIGATIONSUMMARY_MEMBER_FINDING_ID,
         &INVESTIGATIONSUMMARY_MEMBER_ACCOUNT_ID,
+        &INVESTIGATIONSUMMARY_MEMBER_ADMIN_ACCOUNT_ID,
         &INVESTIGATIONSUMMARY_MEMBER_START_TIME,
         &INVESTIGATIONSUMMARY_MEMBER_END_TIME,
     ],
@@ -149,8 +185,17 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Investigat
         if let Some(ref val) = self.title {
             ser.write_string(&INVESTIGATIONSUMMARY_MEMBER_TITLE, val)?;
         }
+        if let Some(ref val) = self.investigation_type {
+            ser.write_string(&INVESTIGATIONSUMMARY_MEMBER_INVESTIGATION_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.finding_id {
+            ser.write_string(&INVESTIGATIONSUMMARY_MEMBER_FINDING_ID, val)?;
+        }
         if let Some(ref val) = self.account_id {
             ser.write_string(&INVESTIGATIONSUMMARY_MEMBER_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.admin_account_id {
+            ser.write_string(&INVESTIGATIONSUMMARY_MEMBER_ADMIN_ACCOUNT_ID, val)?;
         }
         if let Some(ref val) = self.start_time {
             ser.write_timestamp(&INVESTIGATIONSUMMARY_MEMBER_START_TIME, val)?;
@@ -221,17 +266,38 @@ impl crate::types::builders::InvestigationSummaryBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.account_id = Some(deser.read_string(member)?);
+                        self.investigation_type = Some(crate::types::InvestigationType::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(7) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.start_time = Some(deser.read_timestamp(member)?);
+                        self.finding_id = Some(deser.read_string(member)?);
                     }
                 }
                 Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.admin_account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.start_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(11) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

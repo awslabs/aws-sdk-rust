@@ -53,6 +53,9 @@ pub struct CreateDistributionInput {
     /// <p><code>large_1_0</code> – Supports the rule groups for <code>medium_1_0</code>, plus <code>AWSManagedRulesAdminProtectionRuleSet</code>, <code>AWSManagedRulesSQLiRuleSet</code>, <code>AWSManagedRulesLinuxRuleSet</code>, <code>AWSManagedRulesUnixRuleSet</code>, <code>AWSManagedRulesWindowsRuleSet</code>, <code>AWSManagedRulesPHPRuleSet</code>, <code>AWSManagedRulesWordPressRuleSet</code>, <code>AWSManagedRulesAmazonIpReputationList</code>, <code>AWSManagedRulesATPRuleSet</code>, <code>AWSManagedRulesACFPRuleSet</code>, and <code>AWSManagedRulesBotControlRuleSet</code> rule groups.</p></li>
     /// </ul>
     pub waf_rules: ::std::option::Option<::std::vec::Vec<crate::types::WafRule>>,
+    /// <p>The Lightsail subdomain to create and associate with the distribution (for example, <code>mysite</code>, for the web address <code>mysite.amazonlightsail.com</code>).</p>
+    /// <p>After the distribution is deployed, Lightsail creates the subdomain and associates it with the distribution. If Lightsail can't create or associate the subdomain, it still creates the distribution, but the <code>CreateDistribution</code> operation fails and the <code>state</code> of the distribution's <code>subdomain</code> is <code>Error</code>. To check the status, use the <code>subdomain</code> parameter of the distribution.</p>
+    pub subdomain_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateDistributionInput {
     /// <p>The name for the distribution.</p>
@@ -143,6 +146,11 @@ impl CreateDistributionInput {
     pub fn waf_rules(&self) -> &[crate::types::WafRule] {
         self.waf_rules.as_deref().unwrap_or_default()
     }
+    /// <p>The Lightsail subdomain to create and associate with the distribution (for example, <code>mysite</code>, for the web address <code>mysite.amazonlightsail.com</code>).</p>
+    /// <p>After the distribution is deployed, Lightsail creates the subdomain and associates it with the distribution. If Lightsail can't create or associate the subdomain, it still creates the distribution, but the <code>CreateDistribution</code> operation fails and the <code>state</code> of the distribution's <code>subdomain</code> is <code>Error</code>. To check the status, use the <code>subdomain</code> parameter of the distribution.</p>
+    pub fn subdomain_name(&self) -> ::std::option::Option<&str> {
+        self.subdomain_name.as_deref()
+    }
 }
 impl CreateDistributionInput {
     /// Creates a new builder-style object to manufacture [`CreateDistributionInput`](crate::operation::create_distribution::CreateDistributionInput).
@@ -170,6 +178,7 @@ pub struct CreateDistributionInputBuilder {
     pub(crate) custom_error_responses: ::std::option::Option<::std::vec::Vec<crate::types::DistributionCustomErrorResponse>>,
     pub(crate) enable_waf: ::std::option::Option<bool>,
     pub(crate) waf_rules: ::std::option::Option<::std::vec::Vec<crate::types::WafRule>>,
+    pub(crate) subdomain_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateDistributionInputBuilder {
     /// <p>The name for the distribution.</p>
@@ -476,6 +485,23 @@ impl CreateDistributionInputBuilder {
     pub fn get_waf_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WafRule>> {
         &self.waf_rules
     }
+    /// <p>The Lightsail subdomain to create and associate with the distribution (for example, <code>mysite</code>, for the web address <code>mysite.amazonlightsail.com</code>).</p>
+    /// <p>After the distribution is deployed, Lightsail creates the subdomain and associates it with the distribution. If Lightsail can't create or associate the subdomain, it still creates the distribution, but the <code>CreateDistribution</code> operation fails and the <code>state</code> of the distribution's <code>subdomain</code> is <code>Error</code>. To check the status, use the <code>subdomain</code> parameter of the distribution.</p>
+    pub fn subdomain_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subdomain_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Lightsail subdomain to create and associate with the distribution (for example, <code>mysite</code>, for the web address <code>mysite.amazonlightsail.com</code>).</p>
+    /// <p>After the distribution is deployed, Lightsail creates the subdomain and associates it with the distribution. If Lightsail can't create or associate the subdomain, it still creates the distribution, but the <code>CreateDistribution</code> operation fails and the <code>state</code> of the distribution's <code>subdomain</code> is <code>Error</code>. To check the status, use the <code>subdomain</code> parameter of the distribution.</p>
+    pub fn set_subdomain_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.subdomain_name = input;
+        self
+    }
+    /// <p>The Lightsail subdomain to create and associate with the distribution (for example, <code>mysite</code>, for the web address <code>mysite.amazonlightsail.com</code>).</p>
+    /// <p>After the distribution is deployed, Lightsail creates the subdomain and associates it with the distribution. If Lightsail can't create or associate the subdomain, it still creates the distribution, but the <code>CreateDistribution</code> operation fails and the <code>state</code> of the distribution's <code>subdomain</code> is <code>Error</code>. To check the status, use the <code>subdomain</code> parameter of the distribution.</p>
+    pub fn get_subdomain_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subdomain_name
+    }
     /// Consumes the builder and constructs a [`CreateDistributionInput`](crate::operation::create_distribution::CreateDistributionInput).
     pub fn build(
         self,
@@ -496,6 +522,7 @@ impl CreateDistributionInputBuilder {
             custom_error_responses: self.custom_error_responses,
             enable_waf: self.enable_waf,
             waf_rules: self.waf_rules,
+            subdomain_name: self.subdomain_name,
         })
     }
 }

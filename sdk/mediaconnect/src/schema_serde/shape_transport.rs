@@ -196,6 +196,28 @@ static TRANSPORT_MEMBER_NDI_AUDIO_REFERENCE_LEVEL: ::aws_smithy_schema::Schema<'
     17,
 )
 .with_json_name("ndiAudioReferenceLevel");
+static TRANSPORT_MEMBER_RTMP_PUSH_SOURCE_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconnect#Transport$RtmpPushSourceSettings",
+        "com.amazonaws.mediaconnect",
+        "Transport",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RtmpPushSourceSettings",
+    18,
+)
+.with_json_name("rtmpPushSourceSettings");
+static TRANSPORT_MEMBER_RTMP_PUSH_OUTPUT_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconnect#Transport$RtmpPushOutputSettings",
+        "com.amazonaws.mediaconnect",
+        "Transport",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RtmpPushOutputSettings",
+    19,
+)
+.with_json_name("rtmpPushOutputSettings");
 static TRANSPORT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.mediaconnect#Transport", "com.amazonaws.mediaconnect", "Transport"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -218,6 +240,8 @@ static TRANSPORT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_sch
         &TRANSPORT_MEMBER_NDI_SOURCE_SETTINGS,
         &TRANSPORT_MEMBER_NDI_OUTPUT_TIMECODE_SOURCE,
         &TRANSPORT_MEMBER_NDI_AUDIO_REFERENCE_LEVEL,
+        &TRANSPORT_MEMBER_RTMP_PUSH_SOURCE_SETTINGS,
+        &TRANSPORT_MEMBER_RTMP_PUSH_OUTPUT_SETTINGS,
     ],
 );
 impl crate::types::Transport {
@@ -295,6 +319,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Transport 
         }
         if let Some(ref val) = self.ndi_audio_reference_level {
             ser.write_integer(&TRANSPORT_MEMBER_NDI_AUDIO_REFERENCE_LEVEL, *val)?;
+        }
+        if let Some(ref val) = self.rtmp_push_source_settings {
+            ser.write_struct(&TRANSPORT_MEMBER_RTMP_PUSH_SOURCE_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.rtmp_push_output_settings {
+            ser.write_struct(&TRANSPORT_MEMBER_RTMP_PUSH_OUTPUT_SETTINGS, val)?;
         }
         Ok(())
     }
@@ -437,6 +467,20 @@ impl crate::types::builders::TransportBuilder {
                         deser.read_null()?;
                     } else {
                         self.ndi_audio_reference_level = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(18) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rtmp_push_source_settings = Some(crate::types::RtmpPushSourceSettings::deserialize(deser)?);
+                    }
+                }
+                Some(19) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rtmp_push_output_settings = Some(crate::types::RtmpPushOutputSettings::deserialize(deser)?);
                     }
                 }
                 _ => {}

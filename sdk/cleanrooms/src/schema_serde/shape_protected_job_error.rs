@@ -19,6 +19,16 @@ static PROTECTEDJOBERROR_MEMBER_CODE: ::aws_smithy_schema::Schema<'static> = ::a
     "code",
     1,
 );
+static PROTECTEDJOBERROR_MEMBER_RETRY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cleanrooms#ProtectedJobError$retry",
+        "com.amazonaws.cleanrooms",
+        "ProtectedJobError",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "retry",
+    2,
+);
 static PROTECTEDJOBERROR_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.cleanrooms#ProtectedJobError",
@@ -26,7 +36,11 @@ static PROTECTEDJOBERROR_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_sm
         "ProtectedJobError",
     ),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&PROTECTEDJOBERROR_MEMBER_MESSAGE, &PROTECTEDJOBERROR_MEMBER_CODE],
+    &[
+        &PROTECTEDJOBERROR_MEMBER_MESSAGE,
+        &PROTECTEDJOBERROR_MEMBER_CODE,
+        &PROTECTEDJOBERROR_MEMBER_RETRY,
+    ],
 );
 impl crate::types::ProtectedJobError {
     /// The schema for this shape.
@@ -50,6 +64,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::ProtectedJ
             let val = &self.code;
             ser.write_string(&PROTECTEDJOBERROR_MEMBER_CODE, val)?;
         }
+        if let Some(ref val) = self.retry {
+            ser.write_struct(&PROTECTEDJOBERROR_MEMBER_RETRY, val)?;
+        }
         Ok(())
     }
 }
@@ -72,6 +89,13 @@ impl crate::types::builders::ProtectedJobErrorBuilder {
                 }
                 Some(1) => {
                     self.code = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.retry = Some(crate::types::RetryInfo::deserialize(deser)?);
+                    }
                 }
                 _ => {}
             }

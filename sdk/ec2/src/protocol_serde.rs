@@ -479,6 +479,10 @@ pub(crate) mod shape_create_managed_prefix_list;
 
 pub(crate) mod shape_create_managed_prefix_list_input;
 
+pub(crate) mod shape_create_metric_category;
+
+pub(crate) mod shape_create_metric_category_input;
+
 pub(crate) mod shape_create_nat_gateway;
 
 pub(crate) mod shape_create_nat_gateway_input;
@@ -874,6 +878,10 @@ pub(crate) mod shape_delete_local_gateway_virtual_interface_input;
 pub(crate) mod shape_delete_managed_prefix_list;
 
 pub(crate) mod shape_delete_managed_prefix_list_input;
+
+pub(crate) mod shape_delete_metric_category;
+
+pub(crate) mod shape_delete_metric_category_input;
 
 pub(crate) mod shape_delete_nat_gateway;
 
@@ -1554,6 +1562,10 @@ pub(crate) mod shape_describe_mac_modification_tasks_input;
 pub(crate) mod shape_describe_managed_prefix_lists;
 
 pub(crate) mod shape_describe_managed_prefix_lists_input;
+
+pub(crate) mod shape_describe_metric_categories;
+
+pub(crate) mod shape_describe_metric_categories_input;
 
 pub(crate) mod shape_describe_moving_addresses;
 
@@ -2762,6 +2774,10 @@ pub(crate) mod shape_modify_managed_prefix_list_input;
 pub(crate) mod shape_modify_managed_resource_visibility;
 
 pub(crate) mod shape_modify_managed_resource_visibility_input;
+
+pub(crate) mod shape_modify_metric_category;
+
+pub(crate) mod shape_modify_metric_category_input;
 
 pub(crate) mod shape_modify_network_interface_attribute;
 
@@ -4173,6 +4189,10 @@ pub(crate) mod shape_memory_gib_per_v_cpu_request;
 
 pub(crate) mod shape_memory_mib_request;
 
+pub(crate) mod shape_metric_category;
+
+pub(crate) mod shape_metric_category_list;
+
 pub(crate) mod shape_metric_data_result_set;
 
 pub(crate) mod shape_metric_dimension_result_set;
@@ -5055,6 +5075,8 @@ pub(crate) mod shape_mac_host;
 
 pub(crate) mod shape_mac_system_integrity_protection_configuration;
 
+pub(crate) mod shape_metric_category_metric_name_list;
+
 pub(crate) mod shape_metric_data_result;
 
 pub(crate) mod shape_modification_quote_current_configuration;
@@ -5650,6 +5672,8 @@ pub(crate) mod shape_memory_gib_per_v_cpu;
 pub(crate) mod shape_memory_info;
 
 pub(crate) mod shape_memory_mib;
+
+pub(crate) mod shape_metric_category_id_list;
 
 pub(crate) mod shape_metric_points;
 

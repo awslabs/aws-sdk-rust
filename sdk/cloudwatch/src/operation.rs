@@ -22,6 +22,9 @@ pub mod delete_dashboards;
 /// Types for the `DeleteInsightRules` operation.
 pub mod delete_insight_rules;
 
+/// Types for the `DeleteMetricDataQueryDefinition` operation.
+pub mod delete_metric_data_query_definition;
+
 /// Types for the `DeleteMetricStream` operation.
 pub mod delete_metric_stream;
 
@@ -76,6 +79,9 @@ pub mod get_insight_rule_report;
 /// Types for the `GetMetricData` operation.
 pub mod get_metric_data;
 
+/// Types for the `GetMetricDataQueryDefinition` operation.
+pub mod get_metric_data_query_definition;
+
 /// Types for the `GetMetricStatistics` operation.
 pub mod get_metric_statistics;
 
@@ -99,6 +105,9 @@ pub mod list_dashboards;
 
 /// Types for the `ListManagedInsightRules` operation.
 pub mod list_managed_insight_rules;
+
+/// Types for the `ListMetricDataQueryDefinitions` operation.
+pub mod list_metric_data_query_definitions;
 
 /// Types for the `ListMetricStreams` operation.
 pub mod list_metric_streams;
@@ -135,6 +144,9 @@ pub mod put_metric_alarm;
 
 /// Types for the `PutMetricData` operation.
 pub mod put_metric_data;
+
+/// Types for the `PutMetricDataQueryDefinition` operation.
+pub mod put_metric_data_query_definition;
 
 /// Types for the `PutMetricStream` operation.
 pub mod put_metric_stream;

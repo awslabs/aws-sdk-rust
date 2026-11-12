@@ -123,6 +123,34 @@ pub fn de_account_vpc_encryption_control_exclusions(
                 builder = builder.set_elastic_file_system(var_8);
             }
             ,
+            s if s.matches("globalAccelerator") /* GlobalAccelerator com.amazonaws.ec2#AccountVpcEncryptionControlExclusions$GlobalAccelerator */ =>  {
+                let var_9 =
+                    Some(
+                        Result::<crate::types::VpcEncryptionControlExclusionState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::VpcEncryptionControlExclusionState::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_global_accelerator(var_9);
+            }
+            ,
+            s if s.matches("apiGatewayV2") /* ApiGatewayV2 com.amazonaws.ec2#AccountVpcEncryptionControlExclusions$ApiGatewayV2 */ =>  {
+                let var_10 =
+                    Some(
+                        Result::<crate::types::VpcEncryptionControlExclusionState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::VpcEncryptionControlExclusionState::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_api_gateway_v2(var_10);
+            }
+            ,
             _ => {}
         }
     }

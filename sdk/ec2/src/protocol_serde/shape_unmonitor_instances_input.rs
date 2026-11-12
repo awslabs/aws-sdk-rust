@@ -19,9 +19,22 @@ pub fn ser_unmonitor_instances_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_6 = writer.prefix("DryRun");
-    if let Some(var_7) = &input.dry_run {
-        scope_6.boolean(*var_7);
+    let mut scope_6 = writer.prefix("MetricCategoryId");
+    if let Some(var_7) = &input.metric_category_ids {
+        if !var_7.is_empty() {
+            let mut list_9 = scope_6.start_list(true, Some("item"));
+            for item_8 in var_7 {
+                #[allow(unused_mut)]
+                let mut entry_10 = list_9.entry();
+                entry_10.string(item_8);
+            }
+            list_9.finish();
+        }
+    }
+    #[allow(unused_mut)]
+    let mut scope_11 = writer.prefix("DryRun");
+    if let Some(var_12) = &input.dry_run {
+        scope_11.boolean(*var_12);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

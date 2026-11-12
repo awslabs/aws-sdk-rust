@@ -22,7 +22,7 @@ impl crate::operation::delete_reservation::builders::DeleteReservationInputBuild
 }
 /// Fluent builder constructing a request to `DeleteReservation`.
 ///
-/// Delete an expired reservation.
+/// Delete an expired reservation, or cancel an active reservation during the calendar month (UTC) in which you purchased it. You can't cancel an active reservation that you purchased in an earlier month, including one that renewed automatically. You also can't cancel an active reservation during the last hour of the month, from 23:00 UTC on the last day of the month.
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteReservationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

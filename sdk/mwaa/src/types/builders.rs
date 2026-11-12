@@ -3,11 +3,17 @@ pub use crate::types::_network_configuration::NetworkConfigurationBuilder;
 
 pub use crate::types::_logging_configuration_input::LoggingConfigurationInputBuilder;
 
+pub use crate::types::_identity_center_configuration::IdentityCenterConfigurationBuilder;
+
 pub use crate::types::_environment::EnvironmentBuilder;
 
 pub use crate::types::_update_network_configuration_input::UpdateNetworkConfigurationInputBuilder;
 
+pub use crate::types::_update_teams_input::UpdateTeamsInputBuilder;
+
 pub use crate::types::_module_logging_configuration_input::ModuleLoggingConfigurationInputBuilder;
+
+pub use crate::types::_team_config::TeamConfigBuilder;
 
 pub use crate::types::_logging_configuration::LoggingConfigurationBuilder;
 

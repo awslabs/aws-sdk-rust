@@ -23,6 +23,10 @@ pub struct ModifyAccountVpcEncryptionControlInput {
     pub vpc_lattice: ::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput>,
     /// <p>Specifies whether to exclude Elastic File System service from account-level encryption enforcement.</p>
     pub elastic_file_system: ::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput>,
+    /// <p>Specifies whether to exclude AWS Global Accelerator from account-level encryption enforcement.</p>
+    pub global_accelerator: ::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput>,
+    /// <p>Specifies whether to exclude Amazon API Gateway V2 from account-level encryption enforcement.</p>
+    pub api_gateway_v2: ::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput>,
 }
 impl ModifyAccountVpcEncryptionControlInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -65,6 +69,14 @@ impl ModifyAccountVpcEncryptionControlInput {
     pub fn elastic_file_system(&self) -> ::std::option::Option<&crate::types::VpcEncryptionControlExclusionStateInput> {
         self.elastic_file_system.as_ref()
     }
+    /// <p>Specifies whether to exclude AWS Global Accelerator from account-level encryption enforcement.</p>
+    pub fn global_accelerator(&self) -> ::std::option::Option<&crate::types::VpcEncryptionControlExclusionStateInput> {
+        self.global_accelerator.as_ref()
+    }
+    /// <p>Specifies whether to exclude Amazon API Gateway V2 from account-level encryption enforcement.</p>
+    pub fn api_gateway_v2(&self) -> ::std::option::Option<&crate::types::VpcEncryptionControlExclusionStateInput> {
+        self.api_gateway_v2.as_ref()
+    }
 }
 impl ModifyAccountVpcEncryptionControlInput {
     /// Creates a new builder-style object to manufacture [`ModifyAccountVpcEncryptionControlInput`](crate::operation::modify_account_vpc_encryption_control::ModifyAccountVpcEncryptionControlInput).
@@ -87,6 +99,8 @@ pub struct ModifyAccountVpcEncryptionControlInputBuilder {
     pub(crate) lambda: ::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput>,
     pub(crate) vpc_lattice: ::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput>,
     pub(crate) elastic_file_system: ::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput>,
+    pub(crate) global_accelerator: ::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput>,
+    pub(crate) api_gateway_v2: ::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput>,
 }
 impl ModifyAccountVpcEncryptionControlInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -229,6 +243,34 @@ impl ModifyAccountVpcEncryptionControlInputBuilder {
     pub fn get_elastic_file_system(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput> {
         &self.elastic_file_system
     }
+    /// <p>Specifies whether to exclude AWS Global Accelerator from account-level encryption enforcement.</p>
+    pub fn global_accelerator(mut self, input: crate::types::VpcEncryptionControlExclusionStateInput) -> Self {
+        self.global_accelerator = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to exclude AWS Global Accelerator from account-level encryption enforcement.</p>
+    pub fn set_global_accelerator(mut self, input: ::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput>) -> Self {
+        self.global_accelerator = input;
+        self
+    }
+    /// <p>Specifies whether to exclude AWS Global Accelerator from account-level encryption enforcement.</p>
+    pub fn get_global_accelerator(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput> {
+        &self.global_accelerator
+    }
+    /// <p>Specifies whether to exclude Amazon API Gateway V2 from account-level encryption enforcement.</p>
+    pub fn api_gateway_v2(mut self, input: crate::types::VpcEncryptionControlExclusionStateInput) -> Self {
+        self.api_gateway_v2 = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to exclude Amazon API Gateway V2 from account-level encryption enforcement.</p>
+    pub fn set_api_gateway_v2(mut self, input: ::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput>) -> Self {
+        self.api_gateway_v2 = input;
+        self
+    }
+    /// <p>Specifies whether to exclude Amazon API Gateway V2 from account-level encryption enforcement.</p>
+    pub fn get_api_gateway_v2(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput> {
+        &self.api_gateway_v2
+    }
     /// Consumes the builder and constructs a [`ModifyAccountVpcEncryptionControlInput`](crate::operation::modify_account_vpc_encryption_control::ModifyAccountVpcEncryptionControlInput).
     pub fn build(
         self,
@@ -248,6 +290,8 @@ impl ModifyAccountVpcEncryptionControlInputBuilder {
                 lambda: self.lambda,
                 vpc_lattice: self.vpc_lattice,
                 elastic_file_system: self.elastic_file_system,
+                global_accelerator: self.global_accelerator,
+                api_gateway_v2: self.api_gateway_v2,
             },
         )
     }

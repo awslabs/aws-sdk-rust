@@ -32,27 +32,6 @@ pub(crate) fn internal_server_exception_correct_errors(
     builder
 }
 
-pub(crate) fn service_quota_exceeded_exception_correct_errors(
-    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
-) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    if builder.resource_id.is_none() {
-        builder.resource_id = Some(Default::default())
-    }
-    if builder.resource_type.is_none() {
-        builder.resource_type = Some(Default::default())
-    }
-    if builder.service_code.is_none() {
-        builder.service_code = Some(Default::default())
-    }
-    if builder.quota_code.is_none() {
-        builder.quota_code = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn throttling_exception_correct_errors(
     mut builder: crate::types::error::builders::ThrottlingExceptionBuilder,
 ) -> crate::types::error::builders::ThrottlingExceptionBuilder {
@@ -76,6 +55,45 @@ pub(crate) fn validation_exception_correct_errors(
     }
     if builder.reason.is_none() {
         builder.reason = "no value was set".parse::<crate::types::ValidationExceptionReason>().ok()
+    }
+    builder
+}
+
+pub(crate) fn create_airflow_ui_url_output_output_correct_errors(
+    mut builder: crate::operation::create_airflow_ui_url::builders::CreateAirflowUiUrlOutputBuilder,
+) -> crate::operation::create_airflow_ui_url::builders::CreateAirflowUiUrlOutputBuilder {
+    if builder.authorized_url.is_none() {
+        builder.authorized_url = Some(Default::default())
+    }
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    if builder.url_expires_at.is_none() {
+        builder.url_expires_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.session_expires_at.is_none() {
+        builder.session_expires_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn service_quota_exceeded_exception_correct_errors(
+    mut builder: crate::types::error::builders::ServiceQuotaExceededExceptionBuilder,
+) -> crate::types::error::builders::ServiceQuotaExceededExceptionBuilder {
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    if builder.resource_id.is_none() {
+        builder.resource_id = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = Some(Default::default())
+    }
+    if builder.service_code.is_none() {
+        builder.service_code = Some(Default::default())
+    }
+    if builder.quota_code.is_none() {
+        builder.quota_code = Some(Default::default())
     }
     builder
 }

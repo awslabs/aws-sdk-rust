@@ -27,33 +27,39 @@ pub fn ser_put_function_input_input(
     if let Some(var_8) = &input.function_type {
         object.key("FunctionType").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.http_request_configuration {
+    if let Some(var_9) = &input.hls_tag_processor_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("HttpRequestConfiguration").start_object();
-        crate::protocol_serde::shape_http_request_configuration::ser_http_request_configuration(&mut object_10, var_9)?;
+        let mut object_10 = object.key("HlsTagProcessorConfiguration").start_object();
+        crate::protocol_serde::shape_hls_tag_processor_configuration::ser_hls_tag_processor_configuration(&mut object_10, var_9)?;
         object_10.finish();
     }
-    if let Some(var_11) = &input.sequential_executor_configuration {
+    if let Some(var_11) = &input.http_request_configuration {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("SequentialExecutorConfiguration").start_object();
-        crate::protocol_serde::shape_sequential_executor_configuration::ser_sequential_executor_configuration(&mut object_12, var_11)?;
+        let mut object_12 = object.key("HttpRequestConfiguration").start_object();
+        crate::protocol_serde::shape_http_request_configuration::ser_http_request_configuration(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.tags {
+    if let Some(var_13) = &input.sequential_executor_configuration {
         #[allow(unused_mut)]
-        let mut object_14 = object.key("tags").start_object();
-        for (key_15, value_16) in var_13 {
-            {
-                object_14.key(key_15.as_str()).string(value_16.as_str());
-            }
-        }
+        let mut object_14 = object.key("SequentialExecutorConfiguration").start_object();
+        crate::protocol_serde::shape_sequential_executor_configuration::ser_sequential_executor_configuration(&mut object_14, var_13)?;
         object_14.finish();
     }
-    if let Some(var_17) = &input.vast_request_configuration {
+    if let Some(var_15) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("VastRequestConfiguration").start_object();
-        crate::protocol_serde::shape_vast_request_configuration::ser_vast_request_configuration(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_16 = object.key("tags").start_object();
+        for (key_17, value_18) in var_15 {
+            {
+                object_16.key(key_17.as_str()).string(value_18.as_str());
+            }
+        }
+        object_16.finish();
+    }
+    if let Some(var_19) = &input.vast_request_configuration {
+        #[allow(unused_mut)]
+        let mut object_20 = object.key("VastRequestConfiguration").start_object();
+        crate::protocol_serde::shape_vast_request_configuration::ser_vast_request_configuration(&mut object_20, var_19)?;
+        object_20.finish();
     }
     Ok(())
 }

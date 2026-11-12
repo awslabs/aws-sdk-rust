@@ -127,4 +127,18 @@ impl GetResourcePolicyFluentBuilder {
     pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_secret_id()
     }
+    /// <p>The name of the resource policy to retrieve. If you don't specify this field, Secrets Manager uses <code>default</code>. If you specify a name other than <code>default</code> and no policy with that name exists, the operation returns a <code>ResourceNotFoundException</code>.</p>
+    pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.policy_name(input.into());
+        self
+    }
+    /// <p>The name of the resource policy to retrieve. If you don't specify this field, Secrets Manager uses <code>default</code>. If you specify a name other than <code>default</code> and no policy with that name exists, the operation returns a <code>ResourceNotFoundException</code>.</p>
+    pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_policy_name(input);
+        self
+    }
+    /// <p>The name of the resource policy to retrieve. If you don't specify this field, Secrets Manager uses <code>default</code>. If you specify a name other than <code>default</code> and no policy with that name exists, the operation returns a <code>ResourceNotFoundException</code>.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_policy_name()
+    }
 }

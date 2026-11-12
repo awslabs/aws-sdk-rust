@@ -631,6 +631,8 @@ mod create_mac_system_integrity_protection_modification_task;
 
 mod create_managed_prefix_list;
 
+mod create_metric_category;
+
 mod create_nat_gateway;
 
 mod create_network_acl;
@@ -855,6 +857,8 @@ mod delete_local_gateway_virtual_interface;
 mod delete_local_gateway_virtual_interface_group;
 
 mod delete_managed_prefix_list;
+
+mod delete_metric_category;
 
 mod delete_nat_gateway;
 
@@ -1195,6 +1199,8 @@ mod describe_mac_hosts;
 mod describe_mac_modification_tasks;
 
 mod describe_managed_prefix_lists;
+
+mod describe_metric_categories;
 
 mod describe_moving_addresses;
 
@@ -1799,6 +1805,8 @@ mod modify_local_gateway_route;
 mod modify_managed_prefix_list;
 
 mod modify_managed_resource_visibility;
+
+mod modify_metric_category;
 
 mod modify_network_interface_attribute;
 

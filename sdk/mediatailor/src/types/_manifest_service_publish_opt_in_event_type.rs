@@ -12,6 +12,8 @@
 /// ```text
 /// # let manifestservicepublishoptineventtype = unimplemented!();
 /// match manifestservicepublishoptineventtype {
+///     ManifestServicePublishOptInEventType::PostOriginResponseFunctionCompleted => { /* ... */ },
+///     ManifestServicePublishOptInEventType::PostOriginResponseHookSummary => { /* ... */ },
 ///     ManifestServicePublishOptInEventType::PreSessionInitFunctionCompleted => { /* ... */ },
 ///     ManifestServicePublishOptInEventType::PreSessionInitHookSummary => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +45,10 @@
 )]
 pub enum ManifestServicePublishOptInEventType {
     #[allow(missing_docs)] // documentation missing in model
+    PostOriginResponseFunctionCompleted,
+    #[allow(missing_docs)] // documentation missing in model
+    PostOriginResponseHookSummary,
+    #[allow(missing_docs)] // documentation missing in model
     PreSessionInitFunctionCompleted,
     #[allow(missing_docs)] // documentation missing in model
     PreSessionInitHookSummary,
@@ -53,6 +59,8 @@ pub enum ManifestServicePublishOptInEventType {
 impl ::std::convert::From<&str> for ManifestServicePublishOptInEventType {
     fn from(s: &str) -> Self {
         match s {
+            "POST_ORIGIN_RESPONSE_FUNCTION_COMPLETED" => ManifestServicePublishOptInEventType::PostOriginResponseFunctionCompleted,
+            "POST_ORIGIN_RESPONSE_HOOK_SUMMARY" => ManifestServicePublishOptInEventType::PostOriginResponseHookSummary,
             "PRE_SESSION_INIT_FUNCTION_COMPLETED" => ManifestServicePublishOptInEventType::PreSessionInitFunctionCompleted,
             "PRE_SESSION_INIT_HOOK_SUMMARY" => ManifestServicePublishOptInEventType::PreSessionInitHookSummary,
             other => ManifestServicePublishOptInEventType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +78,8 @@ impl ManifestServicePublishOptInEventType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ManifestServicePublishOptInEventType::PostOriginResponseFunctionCompleted => "POST_ORIGIN_RESPONSE_FUNCTION_COMPLETED",
+            ManifestServicePublishOptInEventType::PostOriginResponseHookSummary => "POST_ORIGIN_RESPONSE_HOOK_SUMMARY",
             ManifestServicePublishOptInEventType::PreSessionInitFunctionCompleted => "PRE_SESSION_INIT_FUNCTION_COMPLETED",
             ManifestServicePublishOptInEventType::PreSessionInitHookSummary => "PRE_SESSION_INIT_HOOK_SUMMARY",
             ManifestServicePublishOptInEventType::Unknown(value) => value.as_str(),
@@ -77,7 +87,12 @@ impl ManifestServicePublishOptInEventType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["PRE_SESSION_INIT_FUNCTION_COMPLETED", "PRE_SESSION_INIT_HOOK_SUMMARY"]
+        &[
+            "POST_ORIGIN_RESPONSE_FUNCTION_COMPLETED",
+            "POST_ORIGIN_RESPONSE_HOOK_SUMMARY",
+            "PRE_SESSION_INIT_FUNCTION_COMPLETED",
+            "PRE_SESSION_INIT_HOOK_SUMMARY",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ManifestServicePublishOptInEventType {
@@ -100,6 +115,8 @@ impl ManifestServicePublishOptInEventType {
 impl ::std::fmt::Display for ManifestServicePublishOptInEventType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ManifestServicePublishOptInEventType::PostOriginResponseFunctionCompleted => write!(f, "POST_ORIGIN_RESPONSE_FUNCTION_COMPLETED"),
+            ManifestServicePublishOptInEventType::PostOriginResponseHookSummary => write!(f, "POST_ORIGIN_RESPONSE_HOOK_SUMMARY"),
             ManifestServicePublishOptInEventType::PreSessionInitFunctionCompleted => write!(f, "PRE_SESSION_INIT_FUNCTION_COMPLETED"),
             ManifestServicePublishOptInEventType::PreSessionInitHookSummary => write!(f, "PRE_SESSION_INIT_HOOK_SUMMARY"),
             ManifestServicePublishOptInEventType::Unknown(value) => write!(f, "{value}"),

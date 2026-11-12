@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`timestamp(Option<DateTime>)`](crate::operation::describe_flow_source_metadata::DescribeFlowSourceMetadataOutput::timestamp): <p>The timestamp of the most recent change in metadata for this flow’s source.</p>
     ///   - [`transport_media_info(Option<TransportMediaInfo>)`](crate::operation::describe_flow_source_metadata::DescribeFlowSourceMetadataOutput::transport_media_info): <p>Information about the flow's transport media.</p>
     ///   - [`ndi_info(Option<NdiSourceMetadataInfo>)`](crate::operation::describe_flow_source_metadata::DescribeFlowSourceMetadataOutput::ndi_info): <p>The NDI® specific information about the flow's source. This includes the current active NDI sender, a list of all discovered NDI senders, the associated media streams for the active NDI sender, and any relevant status messages.</p>
+    ///   - [`rtmp_info(Option<RtmpSourceMetadataInfo>)`](crate::operation::describe_flow_source_metadata::DescribeFlowSourceMetadataOutput::rtmp_info): <p>The RTMP (Real-Time Messaging Protocol) specific information about the flow's source. This includes the application name, the stream name, and the associated audio and video streams.</p>
     /// - On failure, responds with [`SdkError<DescribeFlowSourceMetadataError>`](crate::operation::describe_flow_source_metadata::DescribeFlowSourceMetadataError)
     pub fn describe_flow_source_metadata(
         &self,

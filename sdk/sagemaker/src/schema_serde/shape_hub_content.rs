@@ -209,6 +209,22 @@ static HUBCONTENT_MEMBER_LAST_MODIFIED_TIME: ::aws_smithy_schema::Schema<'static
     "LastModifiedTime",
     19,
 );
+static HUBCONTENT_MEMBER_CREATED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#HubContent$CreatedBy", "com.amazonaws.sagemaker", "HubContent"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CreatedBy",
+    20,
+);
+static HUBCONTENT_MEMBER_LAST_MODIFIED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#HubContent$LastModifiedBy",
+        "com.amazonaws.sagemaker",
+        "HubContent",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "LastModifiedBy",
+    21,
+);
 static HUBCONTENT_MEMBER_TAGS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#TagList$member", "com.amazonaws.sagemaker", "TagList"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -219,7 +235,7 @@ static HUBCONTENT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smit
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.sagemaker#HubContent$Tags", "com.amazonaws.sagemaker", "HubContent"),
     ::aws_smithy_schema::ShapeType::List,
     "Tags",
-    20,
+    22,
 )
 .with_list_member(&HUBCONTENT_MEMBER_TAGS_MEMBER);
 static HUBCONTENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
@@ -246,6 +262,8 @@ static HUBCONTENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_sc
         &HUBCONTENT_MEMBER_FAILURE_REASON,
         &HUBCONTENT_MEMBER_CREATION_TIME,
         &HUBCONTENT_MEMBER_LAST_MODIFIED_TIME,
+        &HUBCONTENT_MEMBER_CREATED_BY,
+        &HUBCONTENT_MEMBER_LAST_MODIFIED_BY,
         &HUBCONTENT_MEMBER_TAGS,
     ],
 );
@@ -338,6 +356,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::HubContent
         }
         if let Some(ref val) = self.last_modified_time {
             ser.write_timestamp(&HUBCONTENT_MEMBER_LAST_MODIFIED_TIME, val)?;
+        }
+        if let Some(ref val) = self.created_by {
+            ser.write_struct(&HUBCONTENT_MEMBER_CREATED_BY, val)?;
+        }
+        if let Some(ref val) = self.last_modified_by {
+            ser.write_struct(&HUBCONTENT_MEMBER_LAST_MODIFIED_BY, val)?;
         }
         if let Some(ref val) = self.tags {
             ser.write_list(&HUBCONTENT_MEMBER_TAGS, &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
@@ -512,6 +536,20 @@ impl crate::types::builders::HubContentBuilder {
                     }
                 }
                 Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.created_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.last_modified_by = Some(crate::types::UserContext::deserialize(deser)?);
+                    }
+                }
+                Some(22) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

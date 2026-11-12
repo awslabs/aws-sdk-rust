@@ -59,6 +59,16 @@ pub(crate) fn reflens_list_query_logging_configs_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_resource_record_set_protections_output_output_next_token(
+    input: &crate::operation::list_resource_record_set_protections::ListResourceRecordSetProtectionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_cidr_blocks_output_output_cidr_blocks(
     input: crate::operation::list_cidr_blocks::ListCidrBlocksOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::CidrBlockSummary>> {
@@ -98,5 +108,12 @@ pub(crate) fn lens_list_query_logging_configs_output_output_query_logging_config
     input: crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::QueryLoggingConfig>> {
     let input = input.query_logging_configs;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_resource_record_set_protections_output_output_resource_record_set_protections(
+    input: crate::operation::list_resource_record_set_protections::ListResourceRecordSetProtectionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceRecordSetProtection>> {
+    let input = input.resource_record_set_protections;
     ::std::option::Option::Some(input)
 }

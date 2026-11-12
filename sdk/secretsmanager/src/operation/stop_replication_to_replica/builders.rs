@@ -22,10 +22,16 @@ impl crate::operation::stop_replication_to_replica::builders::StopReplicationToR
 }
 /// Fluent builder constructing a request to `StopReplicationToReplica`.
 ///
-/// <p>Removes the link between the replica secret and the primary secret and promotes the replica to a primary secret in the replica Region.</p>
-/// <p>You must call this operation from the Region in which you want to promote the replica to a primary secret.</p>
+/// <p>Removes the link between a replica secret and its primary secret, and stops replication to the replica. You call this operation from the replica account or Region. Depending on the type of replica, the behavior is:</p>
+/// <ul>
+/// <li>
+/// <p><b>Cross-Region replica</b>: promotes the replica to a standalone primary secret in the replica Region.</p></li>
+/// <li>
+/// <p><b>Cross-account replica</b>: promotes the replica in your account to a standalone secret and stops replication from its primary secret in the other account. Secrets Manager updates the primary secret's replication status to <code>Detached</code> for this replica.</p></li>
+/// </ul>
+/// <p>To stop cross-account replication from the primary account instead, use <code>DisassociateCrossAccountReplica</code>.</p>
 /// <p>Secrets Manager generates a CloudTrail log entry when you call this action. Do not include sensitive information in request parameters because it might be logged. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging Secrets Manager events with CloudTrail</a>.</p>
-/// <p><b>Required permissions: </b> <code>secretsmanager:StopReplicationToReplica</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>.</p>
+/// <p><b>Required permissions: </b> <code>secretsmanager:StopReplicationToReplica</code>. For cross-account replica secrets, you must also have <code>secretsmanager:DeleteResourcePolicy</code> permissions. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions"> IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication and access control in Secrets Manager</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopReplicationToReplicaFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -111,17 +117,20 @@ impl StopReplicationToReplicaFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The name of the secret or the replica ARN. The replica ARN is the same as the original primary secret ARN expect the Region is changed to the replica Region.</p>
+    /// <p>The ARN or name of the replica secret.</p>
+    /// <p>For a cross-region replica, the replica ARN is the same as the original primary secret ARN except that the Region is changed to the replica Region. For a cross-account replica, this is the ARN or name of the replica secret in your account.</p>
     pub fn secret_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.secret_id(input.into());
         self
     }
-    /// <p>The name of the secret or the replica ARN. The replica ARN is the same as the original primary secret ARN expect the Region is changed to the replica Region.</p>
+    /// <p>The ARN or name of the replica secret.</p>
+    /// <p>For a cross-region replica, the replica ARN is the same as the original primary secret ARN except that the Region is changed to the replica Region. For a cross-account replica, this is the ARN or name of the replica secret in your account.</p>
     pub fn set_secret_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_secret_id(input);
         self
     }
-    /// <p>The name of the secret or the replica ARN. The replica ARN is the same as the original primary secret ARN expect the Region is changed to the replica Region.</p>
+    /// <p>The ARN or name of the replica secret.</p>
+    /// <p>For a cross-region replica, the replica ARN is the same as the original primary secret ARN except that the Region is changed to the replica Region. For a cross-account replica, this is the ARN or name of the replica secret in your account.</p>
     pub fn get_secret_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_secret_id()
     }

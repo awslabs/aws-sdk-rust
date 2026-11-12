@@ -343,6 +343,9 @@ pub mod create_mac_system_integrity_protection_modification_task;
 /// Types for the `CreateManagedPrefixList` operation.
 pub mod create_managed_prefix_list;
 
+/// Types for the `CreateMetricCategory` operation.
+pub mod create_metric_category;
+
 /// Types for the `CreateNatGateway` operation.
 pub mod create_nat_gateway;
 
@@ -639,6 +642,9 @@ pub mod delete_local_gateway_virtual_interface_group;
 
 /// Types for the `DeleteManagedPrefixList` operation.
 pub mod delete_managed_prefix_list;
+
+/// Types for the `DeleteMetricCategory` operation.
+pub mod delete_metric_category;
 
 /// Types for the `DeleteNatGateway` operation.
 pub mod delete_nat_gateway;
@@ -1149,6 +1155,9 @@ pub mod describe_mac_modification_tasks;
 
 /// Types for the `DescribeManagedPrefixLists` operation.
 pub mod describe_managed_prefix_lists;
+
+/// Types for the `DescribeMetricCategories` operation.
+pub mod describe_metric_categories;
 
 /// Types for the `DescribeMovingAddresses` operation.
 pub mod describe_moving_addresses;
@@ -2055,6 +2064,9 @@ pub mod modify_managed_prefix_list;
 
 /// Types for the `ModifyManagedResourceVisibility` operation.
 pub mod modify_managed_resource_visibility;
+
+/// Types for the `ModifyMetricCategory` operation.
+pub mod modify_metric_category;
 
 /// Types for the `ModifyNetworkInterfaceAttribute` operation.
 pub mod modify_network_interface_attribute;

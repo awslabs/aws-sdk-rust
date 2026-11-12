@@ -59,6 +59,10 @@ pub(crate) mod shape_delete_insight_rules_input_input;
 
 pub(crate) mod shape_delete_insight_rules_output_output;
 
+pub(crate) mod shape_delete_metric_data_query_definition_input_input;
+
+pub(crate) mod shape_delete_metric_data_query_definition_output_output;
+
 pub(crate) mod shape_delete_metric_stream_input_input;
 
 pub(crate) mod shape_delete_metric_stream_output_output;
@@ -143,6 +147,10 @@ pub(crate) mod shape_get_metric_data_input_input;
 
 pub(crate) mod shape_get_metric_data_output_output;
 
+pub(crate) mod shape_get_metric_data_query_definition_input_input;
+
+pub(crate) mod shape_get_metric_data_query_definition_output_output;
+
 pub(crate) mod shape_get_metric_statistics_input_input;
 
 pub(crate) mod shape_get_metric_statistics_output_output;
@@ -205,6 +213,10 @@ pub(crate) mod shape_list_managed_insight_rules_input_input;
 
 pub(crate) mod shape_list_managed_insight_rules_output_output;
 
+pub(crate) mod shape_list_metric_data_query_definitions_input_input;
+
+pub(crate) mod shape_list_metric_data_query_definitions_output_output;
+
 pub(crate) mod shape_list_metric_streams_input_input;
 
 pub(crate) mod shape_list_metric_streams_output_output;
@@ -234,6 +246,8 @@ pub(crate) mod shape_metric_alarm;
 pub(crate) mod shape_metric_characteristics;
 
 pub(crate) mod shape_metric_data_query;
+
+pub(crate) mod shape_metric_data_query_definition_summary;
 
 pub(crate) mod shape_metric_data_result;
 
@@ -294,6 +308,10 @@ pub(crate) mod shape_put_metric_alarm_output_output;
 pub(crate) mod shape_put_metric_data_input_input;
 
 pub(crate) mod shape_put_metric_data_output_output;
+
+pub(crate) mod shape_put_metric_data_query_definition_input_input;
+
+pub(crate) mod shape_put_metric_data_query_definition_output_output;
 
 pub(crate) mod shape_put_metric_stream_input_input;
 

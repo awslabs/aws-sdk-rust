@@ -22,6 +22,17 @@ static FAILOVERROUTERINPUTINDEXEDSTREAMDETAILS_MEMBER_SOURCE_IP_ADDRESS: ::aws_s
         1,
     )
     .with_json_name("sourceIpAddress");
+static FAILOVERROUTERINPUTINDEXEDSTREAMDETAILS_MEMBER_RTMP_PUSH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconnect#FailoverRouterInputIndexedStreamDetails$RtmpPush",
+        "com.amazonaws.mediaconnect",
+        "FailoverRouterInputIndexedStreamDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "RtmpPush",
+    2,
+)
+.with_json_name("rtmpPush");
 static FAILOVERROUTERINPUTINDEXEDSTREAMDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.mediaconnect#FailoverRouterInputIndexedStreamDetails",
@@ -32,6 +43,7 @@ static FAILOVERROUTERINPUTINDEXEDSTREAMDETAILS_SCHEMA: ::aws_smithy_schema::Sche
     &[
         &FAILOVERROUTERINPUTINDEXEDSTREAMDETAILS_MEMBER_SOURCE_INDEX,
         &FAILOVERROUTERINPUTINDEXEDSTREAMDETAILS_MEMBER_SOURCE_IP_ADDRESS,
+        &FAILOVERROUTERINPUTINDEXEDSTREAMDETAILS_MEMBER_RTMP_PUSH,
     ],
 );
 impl crate::types::FailoverRouterInputIndexedStreamDetails {
@@ -54,6 +66,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::FailoverRo
         }
         if let Some(ref val) = self.source_ip_address {
             ser.write_string(&FAILOVERROUTERINPUTINDEXEDSTREAMDETAILS_MEMBER_SOURCE_IP_ADDRESS, val)?;
+        }
+        if let Some(ref val) = self.rtmp_push {
+            ser.write_struct(&FAILOVERROUTERINPUTINDEXEDSTREAMDETAILS_MEMBER_RTMP_PUSH, val)?;
         }
         Ok(())
     }
@@ -80,6 +95,13 @@ impl crate::types::builders::FailoverRouterInputIndexedStreamDetailsBuilder {
                         deser.read_null()?;
                     } else {
                         self.source_ip_address = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.rtmp_push = Some(crate::types::RtmpPushStreamDetails::deserialize(deser)?);
                     }
                 }
                 _ => {}

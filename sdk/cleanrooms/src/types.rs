@@ -443,6 +443,8 @@ pub use crate::types::_billed_job_resource_utilization::BilledJobResourceUtiliza
 
 pub use crate::types::_protected_job_output::ProtectedJobOutput;
 
+pub use crate::types::_retry_info::RetryInfo;
+
 pub use crate::types::_billed_resource_utilization::BilledResourceUtilization;
 
 pub use crate::types::_protected_query_output::ProtectedQueryOutput;
@@ -1168,6 +1170,8 @@ mod _resource_status;
 mod _resource_type;
 
 mod _result_format;
+
+mod _retry_info;
 
 mod _s3_location;
 

@@ -69,6 +69,12 @@ pub use crate::types::_cloud_watch_alarm_configuration::CloudWatchAlarmConfigura
 
 pub use crate::types::_hosted_zone_features::HostedZoneFeatures;
 
+pub use crate::types::_resource_record_set_protection_config::ResourceRecordSetProtectionConfig;
+
+pub use crate::types::_protection_error::ProtectionError;
+
+pub use crate::types::_resource_record_set_protection_key::ResourceRecordSetProtectionKey;
+
 pub use crate::types::_health_check_observation::HealthCheckObservation;
 
 pub use crate::types::_cidr_block_summary::CidrBlockSummary;
@@ -78,6 +84,8 @@ pub use crate::types::_collection_summary::CollectionSummary;
 pub use crate::types::_location_summary::LocationSummary;
 
 pub use crate::types::_hosted_zone_summary::HostedZoneSummary;
+
+pub use crate::types::_resource_record_set_protection::ResourceRecordSetProtection;
 
 pub use crate::types::_resource_record_set::ResourceRecordSet;
 
@@ -213,6 +221,8 @@ mod _linked_service;
 
 mod _location_summary;
 
+mod _protection_error;
+
 mod _query_logging_config;
 
 mod _resettable_element_name;
@@ -222,6 +232,12 @@ mod _resource_record;
 mod _resource_record_set;
 
 mod _resource_record_set_failover;
+
+mod _resource_record_set_protection;
+
+mod _resource_record_set_protection_config;
+
+mod _resource_record_set_protection_key;
 
 mod _resource_record_set_region;
 

@@ -24,6 +24,7 @@ impl crate::operation::get_investigation::builders::GetInvestigationInputBuilder
 ///
 /// <p>This API is currently available as a preview. This feature is available in the following Amazon Web Services Regions: US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), Europe (Frankfurt), Europe (Ireland), Europe (London), Europe (Paris), Europe (Stockholm), and Asia Pacific (Tokyo).</p>
 /// <p>Retrieves the results and status of a specific GuardDuty investigation.</p>
+/// <p>GuardDuty returns the results, including the summary and the scope of the investigation, only when the investigation status is <code>COMPLETED</code>. By default, GuardDuty returns the summary as text in <code>Summary</code>. To return a typed summary in <code>SummaryData</code> instead, set <code>SummaryFormat</code> to <code>STRUCTURED</code>.</p>
 /// <p>An administrator account can retrieve any investigation within the organization. Member accounts can only retrieve investigations that belong to them.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetInvestigationFluentBuilder {
@@ -140,5 +141,40 @@ impl GetInvestigationFluentBuilder {
     /// <p>The unique identifier of the investigation to retrieve.</p>
     pub fn get_investigation_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_investigation_id()
+    }
+    /// <p>The format in which to return the investigation summary. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STRING</code> – (Default) Returns the summary as text in <code>Summary</code>.</p></li>
+    /// <li>
+    /// <p><code>STRUCTURED</code> – Returns a typed summary in <code>SummaryData</code>.</p></li>
+    /// </ul>
+    /// <p>GuardDuty returns a summary only when the investigation status is <code>COMPLETED</code>.</p>
+    pub fn summary_format(mut self, input: crate::types::SummaryFormat) -> Self {
+        self.inner = self.inner.summary_format(input);
+        self
+    }
+    /// <p>The format in which to return the investigation summary. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STRING</code> – (Default) Returns the summary as text in <code>Summary</code>.</p></li>
+    /// <li>
+    /// <p><code>STRUCTURED</code> – Returns a typed summary in <code>SummaryData</code>.</p></li>
+    /// </ul>
+    /// <p>GuardDuty returns a summary only when the investigation status is <code>COMPLETED</code>.</p>
+    pub fn set_summary_format(mut self, input: ::std::option::Option<crate::types::SummaryFormat>) -> Self {
+        self.inner = self.inner.set_summary_format(input);
+        self
+    }
+    /// <p>The format in which to return the investigation summary. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>STRING</code> – (Default) Returns the summary as text in <code>Summary</code>.</p></li>
+    /// <li>
+    /// <p><code>STRUCTURED</code> – Returns a typed summary in <code>SummaryData</code>.</p></li>
+    /// </ul>
+    /// <p>GuardDuty returns a summary only when the investigation status is <code>COMPLETED</code>.</p>
+    pub fn get_summary_format(&self) -> &::std::option::Option<crate::types::SummaryFormat> {
+        self.inner.get_summary_format()
     }
 }

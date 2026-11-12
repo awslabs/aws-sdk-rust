@@ -47,9 +47,13 @@ pub(crate) mod shape_add_output_request;
 
 pub(crate) mod shape_audio_monitoring_setting;
 
+pub(crate) mod shape_auto_pid_map_configuration;
+
 pub(crate) mod shape_automatic_encryption_key_configuration;
 
 pub(crate) mod shape_automatic_endpoint_encryption_configuration;
+
+pub(crate) mod shape_automatic_rtmp_push_naming_configuration;
 
 pub(crate) mod shape_bad_request_exception;
 
@@ -257,6 +261,8 @@ pub(crate) mod shape_entitlement;
 
 pub(crate) mod shape_fabric_configuration;
 
+pub(crate) mod shape_fabric_switching_configuration;
+
 pub(crate) mod shape_failover_config;
 
 pub(crate) mod shape_failover_router_input_configuration;
@@ -329,6 +335,8 @@ pub(crate) mod shape_grant_flow_entitlements_input_input;
 
 pub(crate) mod shape_grant_flow_entitlements_output_output;
 
+pub(crate) mod shape_immediate_fabric_switching_configuration;
+
 pub(crate) mod shape_ingress_gateway_bridge;
 
 pub(crate) mod shape_input_configuration;
@@ -340,6 +348,8 @@ pub(crate) mod shape_interface;
 pub(crate) mod shape_interface_request;
 
 pub(crate) mod shape_internal_server_error_exception;
+
+pub(crate) mod shape_key_frame_fabric_switching_configuration;
 
 pub(crate) mod shape_list_bridges_input_input;
 
@@ -423,6 +433,8 @@ pub(crate) mod shape_maintenance_configuration;
 
 pub(crate) mod shape_maintenance_schedule;
 
+pub(crate) mod shape_manual_rtmp_push_naming_configuration;
+
 pub(crate) mod shape_media_connect_flow_router_input_configuration;
 
 pub(crate) mod shape_media_connect_flow_router_input_stream_details;
@@ -495,7 +507,17 @@ pub(crate) mod shape_output;
 
 pub(crate) mod shape_owned_resource_share_details;
 
+pub(crate) mod shape_passthrough;
+
+pub(crate) mod shape_pid_map_rule;
+
 pub(crate) mod shape_preferred_day_time_maintenance_configuration;
+
+pub(crate) mod shape_program_clock_reference_pid_configuration;
+
+pub(crate) mod shape_program_map_table_pid_configuration;
+
+pub(crate) mod shape_program_number_configuration;
 
 pub(crate) mod shape_public_destination_endpoint_networking_configuration;
 
@@ -621,6 +643,8 @@ pub(crate) mod shape_router_output_filter;
 
 pub(crate) mod shape_router_output_message;
 
+pub(crate) mod shape_router_output_processors;
+
 pub(crate) mod shape_router_output_protocol_configuration;
 
 pub(crate) mod shape_router_output_service_quota_exceeded_exception;
@@ -633,7 +657,23 @@ pub(crate) mod shape_router_output_source_endpoint_connection_details;
 
 pub(crate) mod shape_router_output_stream_details;
 
+pub(crate) mod shape_rtmp_media_info;
+
+pub(crate) mod shape_rtmp_media_stream_info;
+
+pub(crate) mod shape_rtmp_push_naming_configuration;
+
+pub(crate) mod shape_rtmp_push_output_settings;
+
+pub(crate) mod shape_rtmp_push_router_input_configuration;
+
 pub(crate) mod shape_rtmp_push_router_output_configuration;
+
+pub(crate) mod shape_rtmp_push_source_settings;
+
+pub(crate) mod shape_rtmp_push_stream_details;
+
+pub(crate) mod shape_rtmp_source_metadata_info;
 
 pub(crate) mod shape_rtp_router_input_configuration;
 
@@ -651,11 +691,15 @@ pub(crate) mod shape_service_unavailable_exception;
 
 pub(crate) mod shape_set_gateway_bridge_source_request;
 
+pub(crate) mod shape_set_rtmp_push_source_settings;
+
 pub(crate) mod shape_set_source_request;
 
 pub(crate) mod shape_silent_audio;
 
 pub(crate) mod shape_silent_audio_configuration;
+
+pub(crate) mod shape_single_program_transport_stream_pid_map_configuration;
 
 pub(crate) mod shape_source;
 
@@ -776,6 +820,8 @@ pub(crate) mod shape_transport;
 pub(crate) mod shape_transport_media_info;
 
 pub(crate) mod shape_transport_stream;
+
+pub(crate) mod shape_transport_stream_id_configuration;
 
 pub(crate) mod shape_transport_stream_program;
 

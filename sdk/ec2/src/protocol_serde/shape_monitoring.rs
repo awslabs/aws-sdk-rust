@@ -11,8 +11,18 @@ pub fn de_monitoring(
     let mut builder = crate::types::Monitoring::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("state") /* State com.amazonaws.ec2#Monitoring$State */ =>  {
+            s if s.matches("metricCategoryIdSet") /* MetricCategoryIds com.amazonaws.ec2#Monitoring$MetricCategoryIds */ =>  {
                 let var_1 =
+                    Some(
+                        crate::protocol_serde::shape_metric_category_id_list::de_metric_category_id_list(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_metric_category_ids(var_1);
+            }
+            ,
+            s if s.matches("state") /* State com.amazonaws.ec2#Monitoring$State */ =>  {
+                let var_2 =
                     Some(
                         Result::<crate::types::MonitoringState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::MonitoringState::from(
@@ -22,7 +32,7 @@ pub fn de_monitoring(
                         ?
                     )
                 ;
-                builder = builder.set_state(var_1);
+                builder = builder.set_state(var_2);
             }
             ,
             _ => {}

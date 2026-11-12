@@ -186,6 +186,16 @@ static CREATEDISTRIBUTIONINPUT_MEMBER_WAF_RULES: ::aws_smithy_schema::Schema<'st
     14,
 )
 .with_list_member(&CREATEDISTRIBUTIONINPUT_MEMBER_WAF_RULES_MEMBER);
+static CREATEDISTRIBUTIONINPUT_MEMBER_SUBDOMAIN_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.lightsail.synthetic#CreateDistributionInput$subdomainName",
+        "com.amazonaws.lightsail.synthetic",
+        "CreateDistributionInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "subdomainName",
+    15,
+);
 static CREATEDISTRIBUTIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.lightsail.synthetic#CreateDistributionInput",
@@ -209,6 +219,7 @@ static CREATEDISTRIBUTIONINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::
         &CREATEDISTRIBUTIONINPUT_MEMBER_CUSTOM_ERROR_RESPONSES,
         &CREATEDISTRIBUTIONINPUT_MEMBER_ENABLE_WAF,
         &CREATEDISTRIBUTIONINPUT_MEMBER_WAF_RULES,
+        &CREATEDISTRIBUTIONINPUT_MEMBER_SUBDOMAIN_NAME,
     ],
 )
 .with_http(aws_smithy_schema::traits::HttpTrait::new(
@@ -308,6 +319,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::create
                     Ok(())
                 },
             )?;
+        }
+        if let Some(ref val) = self.subdomain_name {
+            ser.write_string(&CREATEDISTRIBUTIONINPUT_MEMBER_SUBDOMAIN_NAME, val)?;
         }
         Ok(())
     }
@@ -459,6 +473,13 @@ impl crate::operation::create_distribution::builders::CreateDistributionInputBui
                             })?;
                             container
                         });
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.subdomain_name = Some(deser.read_string(member)?);
                     }
                 }
                 _ => {}

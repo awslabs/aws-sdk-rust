@@ -122,18 +122,63 @@ impl UpdateCloudExadataInfrastructureFluentBuilder {
     pub fn get_cloud_exadata_infrastructure_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cloud_exadata_infrastructure_id()
     }
-    /// <p>The scheduling details for the maintenance window. Patching and system updates take place during the maintenance window.</p>
+    /// <p>A new user-friendly name for the Exadata infrastructure.</p>
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.display_name(input.into());
+        self
+    }
+    /// <p>A new user-friendly name for the Exadata infrastructure.</p>
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_display_name(input);
+        self
+    }
+    /// <p>A new user-friendly name for the Exadata infrastructure.</p>
+    pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_display_name()
+    }
+    /// <p>The number of database servers for the Exadata infrastructure.</p>
+    pub fn compute_count(mut self, input: i32) -> Self {
+        self.inner = self.inner.compute_count(input);
+        self
+    }
+    /// <p>The number of database servers for the Exadata infrastructure.</p>
+    pub fn set_compute_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_compute_count(input);
+        self
+    }
+    /// <p>The number of database servers for the Exadata infrastructure.</p>
+    pub fn get_compute_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_compute_count()
+    }
+    /// <p>The maintenance window configuration for the Exadata Cloud infrastructure.</p>
+    /// <p>This allows you to define when maintenance operations such as patching and updates can be performed on the infrastructure.</p>
     pub fn maintenance_window(mut self, input: crate::types::MaintenanceWindow) -> Self {
         self.inner = self.inner.maintenance_window(input);
         self
     }
-    /// <p>The scheduling details for the maintenance window. Patching and system updates take place during the maintenance window.</p>
+    /// <p>The maintenance window configuration for the Exadata Cloud infrastructure.</p>
+    /// <p>This allows you to define when maintenance operations such as patching and updates can be performed on the infrastructure.</p>
     pub fn set_maintenance_window(mut self, input: ::std::option::Option<crate::types::MaintenanceWindow>) -> Self {
         self.inner = self.inner.set_maintenance_window(input);
         self
     }
-    /// <p>The scheduling details for the maintenance window. Patching and system updates take place during the maintenance window.</p>
+    /// <p>The maintenance window configuration for the Exadata Cloud infrastructure.</p>
+    /// <p>This allows you to define when maintenance operations such as patching and updates can be performed on the infrastructure.</p>
     pub fn get_maintenance_window(&self) -> &::std::option::Option<crate::types::MaintenanceWindow> {
         self.inner.get_maintenance_window()
+    }
+    /// <p>The number of storage servers to activate for the Exadata infrastructure.</p>
+    pub fn storage_count(mut self, input: i32) -> Self {
+        self.inner = self.inner.storage_count(input);
+        self
+    }
+    /// <p>The number of storage servers to activate for the Exadata infrastructure.</p>
+    pub fn set_storage_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_storage_count(input);
+        self
+    }
+    /// <p>The number of storage servers to activate for the Exadata infrastructure.</p>
+    pub fn get_storage_count(&self) -> &::std::option::Option<i32> {
+        self.inner.get_storage_count()
     }
 }

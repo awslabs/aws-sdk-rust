@@ -20,8 +20,12 @@ pub struct TransportStream {
     pub sample_rate: ::std::option::Option<i32>,
     /// <p>The sample bit size used by the audio stream.</p>
     pub sample_size: ::std::option::Option<i32>,
+    /// <p>The scan mode used by the video stream.</p>
+    pub scan_mode: ::std::option::Option<crate::types::ScanMode>,
     /// <p>The Stream Type as it is reported in the Program Map Table.</p>
     pub stream_type: ::std::option::Option<::std::string::String>,
+    /// <p>The language of the elementary stream.</p>
+    pub language: ::std::option::Option<::std::string::String>,
 }
 impl TransportStream {
     /// <p>The number of channels in the audio stream.</p>
@@ -56,9 +60,17 @@ impl TransportStream {
     pub fn sample_size(&self) -> ::std::option::Option<i32> {
         self.sample_size
     }
+    /// <p>The scan mode used by the video stream.</p>
+    pub fn scan_mode(&self) -> ::std::option::Option<&crate::types::ScanMode> {
+        self.scan_mode.as_ref()
+    }
     /// <p>The Stream Type as it is reported in the Program Map Table.</p>
     pub fn stream_type(&self) -> ::std::option::Option<&str> {
         self.stream_type.as_deref()
+    }
+    /// <p>The language of the elementary stream.</p>
+    pub fn language(&self) -> ::std::option::Option<&str> {
+        self.language.as_deref()
     }
 }
 impl TransportStream {
@@ -80,7 +92,9 @@ pub struct TransportStreamBuilder {
     pub(crate) pid: ::std::option::Option<i32>,
     pub(crate) sample_rate: ::std::option::Option<i32>,
     pub(crate) sample_size: ::std::option::Option<i32>,
+    pub(crate) scan_mode: ::std::option::Option<crate::types::ScanMode>,
     pub(crate) stream_type: ::std::option::Option<::std::string::String>,
+    pub(crate) language: ::std::option::Option<::std::string::String>,
 }
 impl TransportStreamBuilder {
     /// <p>The number of channels in the audio stream.</p>
@@ -196,6 +210,20 @@ impl TransportStreamBuilder {
     pub fn get_sample_size(&self) -> &::std::option::Option<i32> {
         &self.sample_size
     }
+    /// <p>The scan mode used by the video stream.</p>
+    pub fn scan_mode(mut self, input: crate::types::ScanMode) -> Self {
+        self.scan_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The scan mode used by the video stream.</p>
+    pub fn set_scan_mode(mut self, input: ::std::option::Option<crate::types::ScanMode>) -> Self {
+        self.scan_mode = input;
+        self
+    }
+    /// <p>The scan mode used by the video stream.</p>
+    pub fn get_scan_mode(&self) -> &::std::option::Option<crate::types::ScanMode> {
+        &self.scan_mode
+    }
     /// <p>The Stream Type as it is reported in the Program Map Table.</p>
     /// This field is required.
     pub fn stream_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -211,6 +239,20 @@ impl TransportStreamBuilder {
     pub fn get_stream_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_type
     }
+    /// <p>The language of the elementary stream.</p>
+    pub fn language(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.language = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The language of the elementary stream.</p>
+    pub fn set_language(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.language = input;
+        self
+    }
+    /// <p>The language of the elementary stream.</p>
+    pub fn get_language(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language
+    }
     /// Consumes the builder and constructs a [`TransportStream`](crate::types::TransportStream).
     pub fn build(self) -> crate::types::TransportStream {
         crate::types::TransportStream {
@@ -222,7 +264,9 @@ impl TransportStreamBuilder {
             pid: self.pid,
             sample_rate: self.sample_rate,
             sample_size: self.sample_size,
+            scan_mode: self.scan_mode,
             stream_type: self.stream_type,
+            language: self.language,
         }
     }
 }

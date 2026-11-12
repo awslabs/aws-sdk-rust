@@ -91,6 +91,26 @@ pub fn de_vpc_encryption_control_exclusions(
                 builder = builder.set_elastic_file_system(var_8);
             }
             ,
+            s if s.matches("globalAccelerator") /* GlobalAccelerator com.amazonaws.ec2#VpcEncryptionControlExclusions$GlobalAccelerator */ =>  {
+                let var_9 =
+                    Some(
+                        crate::protocol_serde::shape_vpc_encryption_control_exclusion::de_vpc_encryption_control_exclusion(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_global_accelerator(var_9);
+            }
+            ,
+            s if s.matches("apiGatewayV2") /* ApiGatewayV2 com.amazonaws.ec2#VpcEncryptionControlExclusions$ApiGatewayV2 */ =>  {
+                let var_10 =
+                    Some(
+                        crate::protocol_serde::shape_vpc_encryption_control_exclusion::de_vpc_encryption_control_exclusion(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_api_gateway_v2(var_10);
+            }
+            ,
             _ => {}
         }
     }

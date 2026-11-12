@@ -203,6 +203,11 @@ pub(crate) fn de_describe_instance(
                         )?,
                     );
                 }
+                "NetworkConfigurationDetails" => {
+                    builder = builder.set_network_configuration_details(
+                        crate::protocol_serde::shape_network_configuration_info::de_network_configuration_info(tokens, _value, depth + 1)?,
+                    );
+                }
                 "PermissionSetsEnabled" => {
                     builder = builder.set_permission_sets_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }

@@ -29,6 +29,8 @@ pub use crate::types::_sequential_executor_configuration::SequentialExecutorConf
 
 pub use crate::types::_vast_request_configuration::VastRequestConfiguration;
 
+pub use crate::types::_hls_tag_processor_configuration::HlsTagProcessorConfiguration;
+
 pub use crate::types::_avail_suppression::AvailSuppression;
 
 pub use crate::types::_bumper::Bumper;
@@ -183,6 +185,8 @@ pub use crate::types::_schedule_entry_type::ScheduleEntryType;
 
 pub use crate::types::_function_ref::FunctionRef;
 
+pub use crate::types::_hls_tag_name::HlsTagName;
+
 pub use crate::types::_type_::Type;
 
 pub use crate::types::_pre_roll_vast_response::PreRollVastResponse;
@@ -310,6 +314,10 @@ mod _function_type;
 mod _hls_configuration;
 
 mod _hls_playlist_settings;
+
+mod _hls_tag_name;
+
+mod _hls_tag_processor_configuration;
 
 mod _http_configuration;
 

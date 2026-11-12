@@ -197,17 +197,17 @@ impl CreateVirtualClusterFluentBuilder {
     pub fn get_session_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_session_enabled()
     }
-    /// <p>The scheduler configuration (concurrency and queue limits) to apply to the virtual cluster at creation time. When omitted, no limits are applied.</p>
+    /// <p>The scheduler configuration (concurrency and queue limits) to apply to the virtual cluster at creation time. If you omit this field, the service applies a default limit of 1,000 concurrent job runs and does not limit queue depth.</p>
     pub fn scheduler_configuration(mut self, input: crate::types::SchedulerConfiguration) -> Self {
         self.inner = self.inner.scheduler_configuration(input);
         self
     }
-    /// <p>The scheduler configuration (concurrency and queue limits) to apply to the virtual cluster at creation time. When omitted, no limits are applied.</p>
+    /// <p>The scheduler configuration (concurrency and queue limits) to apply to the virtual cluster at creation time. If you omit this field, the service applies a default limit of 1,000 concurrent job runs and does not limit queue depth.</p>
     pub fn set_scheduler_configuration(mut self, input: ::std::option::Option<crate::types::SchedulerConfiguration>) -> Self {
         self.inner = self.inner.set_scheduler_configuration(input);
         self
     }
-    /// <p>The scheduler configuration (concurrency and queue limits) to apply to the virtual cluster at creation time. When omitted, no limits are applied.</p>
+    /// <p>The scheduler configuration (concurrency and queue limits) to apply to the virtual cluster at creation time. If you omit this field, the service applies a default limit of 1,000 concurrent job runs and does not limit queue depth.</p>
     pub fn get_scheduler_configuration(&self) -> &::std::option::Option<crate::types::SchedulerConfiguration> {
         self.inner.get_scheduler_configuration()
     }

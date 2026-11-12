@@ -18,5 +18,11 @@ pub fn ser_update_instance_input_input(
     if let Some(var_5) = &input.permission_sets_enabled {
         object.key("PermissionSetsEnabled").boolean(*var_5);
     }
+    if let Some(var_6) = &input.network_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("NetworkConfiguration").start_object();
+        crate::protocol_serde::shape_network_configuration_info::ser_network_configuration_info(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }

@@ -8,6 +8,8 @@ pub struct PutResourcePolicyInput {
     pub secret_id: ::std::option::Option<::std::string::String>,
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
     pub resource_policy: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the resource policy to attach. If you don't specify this field, Secrets Manager uses <code>default</code>. You can only attach the <code>default</code> policy; if you specify any other name, the operation returns an <code>InvalidParameterException</code>.</p>
+    pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal. By default, public policies aren't blocked.</p><important>
     /// <p>Resource policy validation and the BlockPublicPolicy parameter help protect your resources by preventing public access from being granted through the resource policies that are directly attached to your secrets. In addition to using these features, carefully inspect the following policies to confirm that they do not grant public access:</p>
     /// <ul>
@@ -29,6 +31,10 @@ impl PutResourcePolicyInput {
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
     pub fn resource_policy(&self) -> ::std::option::Option<&str> {
         self.resource_policy.as_deref()
+    }
+    /// <p>The name of the resource policy to attach. If you don't specify this field, Secrets Manager uses <code>default</code>. You can only attach the <code>default</code> policy; if you specify any other name, the operation returns an <code>InvalidParameterException</code>.</p>
+    pub fn policy_name(&self) -> ::std::option::Option<&str> {
+        self.policy_name.as_deref()
     }
     /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal. By default, public policies aren't blocked.</p><important>
     /// <p>Resource policy validation and the BlockPublicPolicy parameter help protect your resources by preventing public access from being granted through the resource policies that are directly attached to your secrets. In addition to using these features, carefully inspect the following policies to confirm that they do not grant public access:</p>
@@ -57,6 +63,7 @@ impl PutResourcePolicyInput {
 pub struct PutResourcePolicyInputBuilder {
     pub(crate) secret_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_policy: ::std::option::Option<::std::string::String>,
+    pub(crate) policy_name: ::std::option::Option<::std::string::String>,
     pub(crate) block_public_policy: ::std::option::Option<bool>,
 }
 impl PutResourcePolicyInputBuilder {
@@ -92,6 +99,20 @@ impl PutResourcePolicyInputBuilder {
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
     pub fn get_resource_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_policy
+    }
+    /// <p>The name of the resource policy to attach. If you don't specify this field, Secrets Manager uses <code>default</code>. You can only attach the <code>default</code> policy; if you specify any other name, the operation returns an <code>InvalidParameterException</code>.</p>
+    pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the resource policy to attach. If you don't specify this field, Secrets Manager uses <code>default</code>. You can only attach the <code>default</code> policy; if you specify any other name, the operation returns an <code>InvalidParameterException</code>.</p>
+    pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.policy_name = input;
+        self
+    }
+    /// <p>The name of the resource policy to attach. If you don't specify this field, Secrets Manager uses <code>default</code>. You can only attach the <code>default</code> policy; if you specify any other name, the operation returns an <code>InvalidParameterException</code>.</p>
+    pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.policy_name
     }
     /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal. By default, public policies aren't blocked.</p><important>
     /// <p>Resource policy validation and the BlockPublicPolicy parameter help protect your resources by preventing public access from being granted through the resource policies that are directly attached to your secrets. In addition to using these features, carefully inspect the following policies to confirm that they do not grant public access:</p>
@@ -141,6 +162,7 @@ impl PutResourcePolicyInputBuilder {
         ::std::result::Result::Ok(crate::operation::put_resource_policy::PutResourcePolicyInput {
             secret_id: self.secret_id,
             resource_policy: self.resource_policy,
+            policy_name: self.policy_name,
             block_public_policy: self.block_public_policy,
         })
     }

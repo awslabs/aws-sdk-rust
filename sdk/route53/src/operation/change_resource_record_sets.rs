@@ -330,6 +330,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ChangeResourc
 #[derive(::std::fmt::Debug)]
 pub enum ChangeResourceRecordSetsError {
     /// <p>This exception contains a list of messages that might contain one or more error messages. Each error message indicates one error in the change batch.</p>
+    /// <p>Route 53 also returns this error when the change batch creates, updates, or deletes a resource record set whose name and type have a resource record set protection. To make the change, first delete the protection by using <code>DeleteResourceRecordSetProtections</code>.</p>
     InvalidChangeBatch(crate::types::error::InvalidChangeBatch),
     /// <p>The input is not valid.</p>
     InvalidInput(crate::types::error::InvalidInput),
