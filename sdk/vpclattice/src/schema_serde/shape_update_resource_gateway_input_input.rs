@@ -31,6 +31,17 @@ static UPDATERESOURCEGATEWAYINPUT_MEMBER_SECURITY_GROUP_IDS: ::aws_smithy_schema
     1,
 )
 .with_list_member(&UPDATERESOURCEGATEWAYINPUT_MEMBER_SECURITY_GROUP_IDS_MEMBER);
+static UPDATERESOURCEGATEWAYINPUT_MEMBER_RESOURCE_CONFIG_DNS_RESOLUTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.vpclattice.synthetic#UpdateResourceGatewayInput$resourceConfigDnsResolution",
+            "com.amazonaws.vpclattice.synthetic",
+            "UpdateResourceGatewayInput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "resourceConfigDnsResolution",
+        2,
+    );
 static UPDATERESOURCEGATEWAYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.vpclattice.synthetic#UpdateResourceGatewayInput",
@@ -41,6 +52,7 @@ static UPDATERESOURCEGATEWAYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> =
     &[
         &UPDATERESOURCEGATEWAYINPUT_MEMBER_RESOURCE_GATEWAY_IDENTIFIER,
         &UPDATERESOURCEGATEWAYINPUT_MEMBER_SECURITY_GROUP_IDS,
+        &UPDATERESOURCEGATEWAYINPUT_MEMBER_RESOURCE_CONFIG_DNS_RESOLUTION,
     ],
 )
 .with_http(aws_smithy_schema::traits::HttpTrait::new(
@@ -78,6 +90,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::update
                 },
             )?;
         }
+        if let Some(ref val) = self.resource_config_dns_resolution {
+            ser.write_string(&UPDATERESOURCEGATEWAYINPUT_MEMBER_RESOURCE_CONFIG_DNS_RESOLUTION, val.as_str())?;
+        }
         Ok(())
     }
 }
@@ -107,6 +122,14 @@ impl crate::operation::update_resource_gateway::builders::UpdateResourceGatewayI
                         deser.read_null()?;
                     } else {
                         self.security_group_ids = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_config_dns_resolution =
+                            Some(crate::types::ResourceConfigDnsResolution::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}

@@ -15,6 +15,7 @@
 ///     AcceleratorName::A10G => { /* ... */ },
 ///     AcceleratorName::L4 => { /* ... */ },
 ///     AcceleratorName::L40S => { /* ... */ },
+///     AcceleratorName::RtxPro4500 => { /* ... */ },
 ///     AcceleratorName::RtxProServer6000 => { /* ... */ },
 ///     AcceleratorName::T4 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -52,6 +53,8 @@ pub enum AcceleratorName {
     #[allow(missing_docs)] // documentation missing in model
     L40S,
     #[allow(missing_docs)] // documentation missing in model
+    RtxPro4500,
+    #[allow(missing_docs)] // documentation missing in model
     RtxProServer6000,
     #[allow(missing_docs)] // documentation missing in model
     T4,
@@ -65,6 +68,7 @@ impl ::std::convert::From<&str> for AcceleratorName {
             "a10g" => AcceleratorName::A10G,
             "l4" => AcceleratorName::L4,
             "l40s" => AcceleratorName::L40S,
+            "rtx-pro-4500" => AcceleratorName::RtxPro4500,
             "rtx-pro-server-6000" => AcceleratorName::RtxProServer6000,
             "t4" => AcceleratorName::T4,
             other => AcceleratorName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -85,6 +89,7 @@ impl AcceleratorName {
             AcceleratorName::A10G => "a10g",
             AcceleratorName::L4 => "l4",
             AcceleratorName::L40S => "l40s",
+            AcceleratorName::RtxPro4500 => "rtx-pro-4500",
             AcceleratorName::RtxProServer6000 => "rtx-pro-server-6000",
             AcceleratorName::T4 => "t4",
             AcceleratorName::Unknown(value) => value.as_str(),
@@ -92,7 +97,7 @@ impl AcceleratorName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["a10g", "l4", "l40s", "rtx-pro-server-6000", "t4"]
+        &["a10g", "l4", "l40s", "rtx-pro-4500", "rtx-pro-server-6000", "t4"]
     }
 }
 impl ::std::convert::AsRef<str> for AcceleratorName {
@@ -118,6 +123,7 @@ impl ::std::fmt::Display for AcceleratorName {
             AcceleratorName::A10G => write!(f, "a10g"),
             AcceleratorName::L4 => write!(f, "l4"),
             AcceleratorName::L40S => write!(f, "l40s"),
+            AcceleratorName::RtxPro4500 => write!(f, "rtx-pro-4500"),
             AcceleratorName::RtxProServer6000 => write!(f, "rtx-pro-server-6000"),
             AcceleratorName::T4 => write!(f, "t4"),
             AcceleratorName::Unknown(value) => write!(f, "{value}"),

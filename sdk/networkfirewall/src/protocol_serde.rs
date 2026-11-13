@@ -23,8 +23,6 @@ pub(crate) mod shape_associate_firewall_policy;
 
 pub(crate) mod shape_associate_subnets;
 
-pub(crate) mod shape_attach_rule_groups_to_proxy_configuration;
-
 pub(crate) mod shape_create_container_association;
 
 pub(crate) mod shape_create_firewall;
@@ -32,14 +30,6 @@ pub(crate) mod shape_create_firewall;
 pub(crate) mod shape_create_firewall_policy;
 
 pub(crate) mod shape_create_firewall_policy_v2;
-
-pub(crate) mod shape_create_proxy;
-
-pub(crate) mod shape_create_proxy_configuration;
-
-pub(crate) mod shape_create_proxy_rule_group;
-
-pub(crate) mod shape_create_proxy_rules;
 
 pub(crate) mod shape_create_rule_group;
 
@@ -58,12 +48,6 @@ pub(crate) mod shape_delete_firewall_policy_v2;
 pub(crate) mod shape_delete_network_firewall_transit_gateway_attachment;
 
 pub(crate) mod shape_delete_proxy;
-
-pub(crate) mod shape_delete_proxy_configuration;
-
-pub(crate) mod shape_delete_proxy_rule_group;
-
-pub(crate) mod shape_delete_proxy_rules;
 
 pub(crate) mod shape_delete_resource_policy;
 
@@ -89,12 +73,6 @@ pub(crate) mod shape_describe_logging_configuration;
 
 pub(crate) mod shape_describe_proxy;
 
-pub(crate) mod shape_describe_proxy_configuration;
-
-pub(crate) mod shape_describe_proxy_rule;
-
-pub(crate) mod shape_describe_proxy_rule_group;
-
 pub(crate) mod shape_describe_resource_policy;
 
 pub(crate) mod shape_describe_rule_group;
@@ -106,8 +84,6 @@ pub(crate) mod shape_describe_rule_group_summary;
 pub(crate) mod shape_describe_tls_inspection_configuration;
 
 pub(crate) mod shape_describe_vpc_endpoint_association;
-
-pub(crate) mod shape_detach_rule_groups_from_proxy_configuration;
 
 pub(crate) mod shape_disassociate_availability_zones;
 
@@ -128,12 +104,6 @@ pub(crate) mod shape_list_firewalls;
 pub(crate) mod shape_list_flow_operation_results;
 
 pub(crate) mod shape_list_flow_operations;
-
-pub(crate) mod shape_list_proxies;
-
-pub(crate) mod shape_list_proxy_configurations;
-
-pub(crate) mod shape_list_proxy_rule_groups;
 
 pub(crate) mod shape_list_rule_groups;
 
@@ -177,16 +147,6 @@ pub(crate) mod shape_update_firewall_policy_v2;
 
 pub(crate) mod shape_update_logging_configuration;
 
-pub(crate) mod shape_update_proxy;
-
-pub(crate) mod shape_update_proxy_configuration;
-
-pub(crate) mod shape_update_proxy_rule;
-
-pub(crate) mod shape_update_proxy_rule_group_priorities;
-
-pub(crate) mod shape_update_proxy_rule_priorities;
-
 pub(crate) mod shape_update_proxy_settings;
 
 pub(crate) mod shape_update_rule_group;
@@ -203,8 +163,6 @@ pub(crate) mod shape_associate_firewall_policy_input;
 
 pub(crate) mod shape_associate_subnets_input;
 
-pub(crate) mod shape_attach_rule_groups_to_proxy_configuration_input;
-
 pub(crate) mod shape_create_container_association_input;
 
 pub(crate) mod shape_create_firewall_input;
@@ -212,14 +170,6 @@ pub(crate) mod shape_create_firewall_input;
 pub(crate) mod shape_create_firewall_policy_input;
 
 pub(crate) mod shape_create_firewall_policy_v2_input;
-
-pub(crate) mod shape_create_proxy_configuration_input;
-
-pub(crate) mod shape_create_proxy_input;
-
-pub(crate) mod shape_create_proxy_rule_group_input;
-
-pub(crate) mod shape_create_proxy_rules_input;
 
 pub(crate) mod shape_create_rule_group_input;
 
@@ -237,13 +187,7 @@ pub(crate) mod shape_delete_firewall_policy_v2_input;
 
 pub(crate) mod shape_delete_network_firewall_transit_gateway_attachment_input;
 
-pub(crate) mod shape_delete_proxy_configuration_input;
-
 pub(crate) mod shape_delete_proxy_input;
-
-pub(crate) mod shape_delete_proxy_rule_group_input;
-
-pub(crate) mod shape_delete_proxy_rules_input;
 
 pub(crate) mod shape_delete_resource_policy_input;
 
@@ -267,13 +211,7 @@ pub(crate) mod shape_describe_flow_operation_input;
 
 pub(crate) mod shape_describe_logging_configuration_input;
 
-pub(crate) mod shape_describe_proxy_configuration_input;
-
 pub(crate) mod shape_describe_proxy_input;
-
-pub(crate) mod shape_describe_proxy_rule_group_input;
-
-pub(crate) mod shape_describe_proxy_rule_input;
 
 pub(crate) mod shape_describe_resource_policy_input;
 
@@ -286,8 +224,6 @@ pub(crate) mod shape_describe_rule_group_summary_input;
 pub(crate) mod shape_describe_tls_inspection_configuration_input;
 
 pub(crate) mod shape_describe_vpc_endpoint_association_input;
-
-pub(crate) mod shape_detach_rule_groups_from_proxy_configuration_input;
 
 pub(crate) mod shape_disassociate_availability_zones_input;
 
@@ -322,12 +258,6 @@ pub(crate) mod shape_list_firewalls_input;
 pub(crate) mod shape_list_flow_operation_results_input;
 
 pub(crate) mod shape_list_flow_operations_input;
-
-pub(crate) mod shape_list_proxies_input;
-
-pub(crate) mod shape_list_proxy_configurations_input;
-
-pub(crate) mod shape_list_proxy_rule_groups_input;
 
 pub(crate) mod shape_list_rule_groups_input;
 
@@ -381,16 +311,6 @@ pub(crate) mod shape_update_firewall_policy_v2_input;
 
 pub(crate) mod shape_update_logging_configuration_input;
 
-pub(crate) mod shape_update_proxy_configuration_input;
-
-pub(crate) mod shape_update_proxy_input;
-
-pub(crate) mod shape_update_proxy_rule_group_priorities_input;
-
-pub(crate) mod shape_update_proxy_rule_input;
-
-pub(crate) mod shape_update_proxy_rule_priorities_input;
-
 pub(crate) mod shape_update_proxy_settings_input;
 
 pub(crate) mod shape_update_rule_group_input;
@@ -412,8 +332,6 @@ pub(crate) mod shape_container_associations;
 pub(crate) mod shape_container_monitoring_configuration;
 
 pub(crate) mod shape_container_monitoring_configurations;
-
-pub(crate) mod shape_create_proxy_rules_by_request_phase;
 
 pub(crate) mod shape_describe_proxy_resource;
 
@@ -451,43 +369,9 @@ pub(crate) mod shape_flows;
 
 pub(crate) mod shape_ips_rule_group;
 
-pub(crate) mod shape_listener_property_request;
-
 pub(crate) mod shape_logging_configuration;
 
-pub(crate) mod shape_nat_gateway_mapping;
-
-pub(crate) mod shape_proxies;
-
-pub(crate) mod shape_proxy;
-
-pub(crate) mod shape_proxy_config_default_rule_phase_actions_request;
-
-pub(crate) mod shape_proxy_configuration;
-
-pub(crate) mod shape_proxy_configurations;
-
-pub(crate) mod shape_proxy_rule;
-
-pub(crate) mod shape_proxy_rule_condition;
-
-pub(crate) mod shape_proxy_rule_condition_list;
-
-pub(crate) mod shape_proxy_rule_group;
-
-pub(crate) mod shape_proxy_rule_group_attachment;
-
-pub(crate) mod shape_proxy_rule_group_priority;
-
-pub(crate) mod shape_proxy_rule_group_priority_result_list;
-
-pub(crate) mod shape_proxy_rule_groups;
-
-pub(crate) mod shape_proxy_rule_priority;
-
-pub(crate) mod shape_proxy_rule_priority_list;
-
-pub(crate) mod shape_proxy_rules_by_request_phase;
+pub(crate) mod shape_nat_gateway_create_mapping;
 
 pub(crate) mod shape_proxy_settings;
 
@@ -521,8 +405,6 @@ pub(crate) mod shape_tls_inspection_configuration_response;
 
 pub(crate) mod shape_tls_inspection_configurations;
 
-pub(crate) mod shape_tls_intercept_properties_request;
-
 pub(crate) mod shape_vpc_endpoint;
 
 pub(crate) mod shape_vpc_endpoint_association;
@@ -550,8 +432,6 @@ pub(crate) mod shape_certificates;
 pub(crate) mod shape_container_association_summary;
 
 pub(crate) mod shape_container_attribute;
-
-pub(crate) mod shape_create_proxy_rule;
 
 pub(crate) mod shape_custom_action;
 
@@ -591,19 +471,9 @@ pub(crate) mod shape_log_destination_config;
 
 pub(crate) mod shape_log_destination_configs;
 
-pub(crate) mod shape_nat_gateway_mappings_list;
+pub(crate) mod shape_nat_gateway_create_mappings_list;
 
 pub(crate) mod shape_policy_variables;
-
-pub(crate) mod shape_proxy_config_rule_group_set;
-
-pub(crate) mod shape_proxy_configuration_metadata;
-
-pub(crate) mod shape_proxy_metadata;
-
-pub(crate) mod shape_proxy_rule_group_metadata;
-
-pub(crate) mod shape_proxy_rule_group_priority_result;
 
 pub(crate) mod shape_reference_sets;
 
@@ -685,12 +555,6 @@ pub(crate) mod shape_port_set;
 
 pub(crate) mod shape_port_sets;
 
-pub(crate) mod shape_proxy_condition_value_list;
-
-pub(crate) mod shape_proxy_config_rule_group;
-
-pub(crate) mod shape_proxy_rule_list;
-
 pub(crate) mod shape_route53_resolved_ip_validation_addresses;
 
 pub(crate) mod shape_rule_summary;
@@ -717,13 +581,19 @@ pub(crate) mod shape_unique_sources;
 
 pub(crate) mod shape_attachment;
 
+pub(crate) mod shape_domain_match;
+
 pub(crate) mod shape_header;
 
 pub(crate) mod shape_ip_set_metadata_map;
 
 pub(crate) mod shape_log_destination_map;
 
+pub(crate) mod shape_nat_gateway_allocation_id_list;
+
 pub(crate) mod shape_nat_gateway_attachments_list;
+
+pub(crate) mod shape_nat_gateway_private_ip_list;
 
 pub(crate) mod shape_port_range;
 
@@ -778,6 +648,8 @@ pub(crate) mod shape_protocol_numbers;
 pub(crate) mod shape_settings;
 
 pub(crate) mod shape_tcp_flag_field;
+
+pub(crate) mod shape_tls_inspection_domains;
 
 pub(crate) mod shape_tcp_flags;
 

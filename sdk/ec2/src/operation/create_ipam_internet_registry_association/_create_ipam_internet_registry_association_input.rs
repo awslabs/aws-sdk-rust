@@ -7,7 +7,7 @@ pub struct CreateIpamInternetRegistryAssociationInput {
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the IPAM to associate with the internet registry.</p>
     pub ipam_id: ::std::option::Option<::std::string::String>,
-    /// <p>The Regional Internet Registry to associate with. Possible values:</p>
+    /// <p>The internet registry to associate with. Possible values:</p>
     /// <ul>
     /// <li>
     /// <p><code>ripe</code> - RIPE NCC (Europe, the Middle East, and Central Asia).</p></li>
@@ -17,6 +17,8 @@ pub struct CreateIpamInternetRegistryAssociationInput {
     /// <p><code>arin</code> - ARIN (North America).</p></li>
     /// <li>
     /// <p><code>lacnic</code> - LACNIC (Latin America and the Caribbean).</p></li>
+    /// <li>
+    /// <p><code>nicbr</code> - NIC.br (Brazil).</p></li>
     /// </ul>
     pub rir: ::std::option::Option<crate::types::Rir>,
     /// <p>The organization handle at the internet registry (for example, a RIPE NCC organization ID or ARIN Org ID).</p>
@@ -37,7 +39,7 @@ impl CreateIpamInternetRegistryAssociationInput {
     pub fn ipam_id(&self) -> ::std::option::Option<&str> {
         self.ipam_id.as_deref()
     }
-    /// <p>The Regional Internet Registry to associate with. Possible values:</p>
+    /// <p>The internet registry to associate with. Possible values:</p>
     /// <ul>
     /// <li>
     /// <p><code>ripe</code> - RIPE NCC (Europe, the Middle East, and Central Asia).</p></li>
@@ -47,6 +49,8 @@ impl CreateIpamInternetRegistryAssociationInput {
     /// <p><code>arin</code> - ARIN (North America).</p></li>
     /// <li>
     /// <p><code>lacnic</code> - LACNIC (Latin America and the Caribbean).</p></li>
+    /// <li>
+    /// <p><code>nicbr</code> - NIC.br (Brazil).</p></li>
     /// </ul>
     pub fn rir(&self) -> ::std::option::Option<&crate::types::Rir> {
         self.rir.as_ref()
@@ -119,7 +123,7 @@ impl CreateIpamInternetRegistryAssociationInputBuilder {
     pub fn get_ipam_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipam_id
     }
-    /// <p>The Regional Internet Registry to associate with. Possible values:</p>
+    /// <p>The internet registry to associate with. Possible values:</p>
     /// <ul>
     /// <li>
     /// <p><code>ripe</code> - RIPE NCC (Europe, the Middle East, and Central Asia).</p></li>
@@ -129,13 +133,15 @@ impl CreateIpamInternetRegistryAssociationInputBuilder {
     /// <p><code>arin</code> - ARIN (North America).</p></li>
     /// <li>
     /// <p><code>lacnic</code> - LACNIC (Latin America and the Caribbean).</p></li>
+    /// <li>
+    /// <p><code>nicbr</code> - NIC.br (Brazil).</p></li>
     /// </ul>
     /// This field is required.
     pub fn rir(mut self, input: crate::types::Rir) -> Self {
         self.rir = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Regional Internet Registry to associate with. Possible values:</p>
+    /// <p>The internet registry to associate with. Possible values:</p>
     /// <ul>
     /// <li>
     /// <p><code>ripe</code> - RIPE NCC (Europe, the Middle East, and Central Asia).</p></li>
@@ -145,12 +151,14 @@ impl CreateIpamInternetRegistryAssociationInputBuilder {
     /// <p><code>arin</code> - ARIN (North America).</p></li>
     /// <li>
     /// <p><code>lacnic</code> - LACNIC (Latin America and the Caribbean).</p></li>
+    /// <li>
+    /// <p><code>nicbr</code> - NIC.br (Brazil).</p></li>
     /// </ul>
     pub fn set_rir(mut self, input: ::std::option::Option<crate::types::Rir>) -> Self {
         self.rir = input;
         self
     }
-    /// <p>The Regional Internet Registry to associate with. Possible values:</p>
+    /// <p>The internet registry to associate with. Possible values:</p>
     /// <ul>
     /// <li>
     /// <p><code>ripe</code> - RIPE NCC (Europe, the Middle East, and Central Asia).</p></li>
@@ -160,6 +168,8 @@ impl CreateIpamInternetRegistryAssociationInputBuilder {
     /// <p><code>arin</code> - ARIN (North America).</p></li>
     /// <li>
     /// <p><code>lacnic</code> - LACNIC (Latin America and the Caribbean).</p></li>
+    /// <li>
+    /// <p><code>nicbr</code> - NIC.br (Brazil).</p></li>
     /// </ul>
     pub fn get_rir(&self) -> &::std::option::Option<crate::types::Rir> {
         &self.rir

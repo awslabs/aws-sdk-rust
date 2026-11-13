@@ -356,7 +356,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListNetworkCo
 pub enum ListNetworkConnectorVersionsError {
     /// <p>One of the parameters in the request is not valid. Check the error message for details about which parameter failed validation.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p>The specified network connector does not exist. Verify the identifier (ID, name, or ARN) and Region.</p>
+    /// <p>The specified resource does not exist. Verify the identifier and Region.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>An internal service error occurred. Retry the request with exponential backoff.</p>
     ServiceException(crate::types::error::ServiceException),

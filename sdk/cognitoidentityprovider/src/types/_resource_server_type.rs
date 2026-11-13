@@ -13,6 +13,8 @@ pub struct ResourceServerType {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A list of scopes that are defined for the resource server.</p>
     pub scopes: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>,
+    /// <p>This value is reserved for resource servers that Amazon Cognito manages. Resource servers that you create don't have this value.</p>
+    pub managed_by: ::std::option::Option<crate::types::ResourceServerManagedByType>,
 }
 impl ResourceServerType {
     /// <p>The ID of the user pool that contains the resource server configuration.</p>
@@ -34,6 +36,10 @@ impl ResourceServerType {
     pub fn scopes(&self) -> &[crate::types::ResourceServerScopeType] {
         self.scopes.as_deref().unwrap_or_default()
     }
+    /// <p>This value is reserved for resource servers that Amazon Cognito manages. Resource servers that you create don't have this value.</p>
+    pub fn managed_by(&self) -> ::std::option::Option<&crate::types::ResourceServerManagedByType> {
+        self.managed_by.as_ref()
+    }
 }
 impl ResourceServerType {
     /// Creates a new builder-style object to manufacture [`ResourceServerType`](crate::types::ResourceServerType).
@@ -50,6 +56,7 @@ pub struct ResourceServerTypeBuilder {
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) scopes: ::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>>,
+    pub(crate) managed_by: ::std::option::Option<crate::types::ResourceServerManagedByType>,
 }
 impl ResourceServerTypeBuilder {
     /// <p>The ID of the user pool that contains the resource server configuration.</p>
@@ -117,6 +124,20 @@ impl ResourceServerTypeBuilder {
     pub fn get_scopes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceServerScopeType>> {
         &self.scopes
     }
+    /// <p>This value is reserved for resource servers that Amazon Cognito manages. Resource servers that you create don't have this value.</p>
+    pub fn managed_by(mut self, input: crate::types::ResourceServerManagedByType) -> Self {
+        self.managed_by = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>This value is reserved for resource servers that Amazon Cognito manages. Resource servers that you create don't have this value.</p>
+    pub fn set_managed_by(mut self, input: ::std::option::Option<crate::types::ResourceServerManagedByType>) -> Self {
+        self.managed_by = input;
+        self
+    }
+    /// <p>This value is reserved for resource servers that Amazon Cognito manages. Resource servers that you create don't have this value.</p>
+    pub fn get_managed_by(&self) -> &::std::option::Option<crate::types::ResourceServerManagedByType> {
+        &self.managed_by
+    }
     /// Consumes the builder and constructs a [`ResourceServerType`](crate::types::ResourceServerType).
     pub fn build(self) -> crate::types::ResourceServerType {
         crate::types::ResourceServerType {
@@ -124,6 +145,7 @@ impl ResourceServerTypeBuilder {
             identifier: self.identifier,
             name: self.name,
             scopes: self.scopes,
+            managed_by: self.managed_by,
         }
     }
 }

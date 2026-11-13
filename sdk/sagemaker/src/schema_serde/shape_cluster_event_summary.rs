@@ -89,6 +89,16 @@ static CLUSTEREVENTSUMMARY_MEMBER_EVENT_LEVEL: ::aws_smithy_schema::Schema<'stat
     "EventLevel",
     8,
 );
+static CLUSTEREVENTSUMMARY_MEMBER_OPERATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterEventSummary$OperationId",
+        "com.amazonaws.sagemaker",
+        "ClusterEventSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OperationId",
+    9,
+);
 static CLUSTEREVENTSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.sagemaker#ClusterEventSummary",
@@ -106,6 +116,7 @@ static CLUSTEREVENTSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_
         &CLUSTEREVENTSUMMARY_MEMBER_EVENT_TIME,
         &CLUSTEREVENTSUMMARY_MEMBER_DESCRIPTION,
         &CLUSTEREVENTSUMMARY_MEMBER_EVENT_LEVEL,
+        &CLUSTEREVENTSUMMARY_MEMBER_OPERATION_ID,
     ],
 );
 impl crate::types::ClusterEventSummary {
@@ -148,6 +159,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::ClusterEve
         }
         if let Some(ref val) = self.event_level {
             ser.write_string(&CLUSTEREVENTSUMMARY_MEMBER_EVENT_LEVEL, val.as_str())?;
+        }
+        if let Some(ref val) = self.operation_id {
+            ser.write_string(&CLUSTEREVENTSUMMARY_MEMBER_OPERATION_ID, val)?;
         }
         Ok(())
     }
@@ -227,6 +241,13 @@ impl crate::types::builders::ClusterEventSummaryBuilder {
                         deser.read_null()?;
                     } else {
                         self.event_level = Some(crate::types::ClusterEventLevel::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.operation_id = Some(deser.read_string(member)?);
                     }
                 }
                 _ => {}

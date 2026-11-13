@@ -25,6 +25,7 @@ impl crate::operation::delete_firewall::builders::DeleteFirewallInputBuilder {
 /// <p>Deletes the specified <code>Firewall</code> and its <code>FirewallStatus</code>. This operation requires the firewall's <code>DeleteProtection</code> flag to be <code>FALSE</code>. You can't revert this operation.</p>
 /// <p>You can check whether a firewall is in use by reviewing the route tables for the Availability Zones where you have firewall subnet mappings. Retrieve the subnet mappings by calling <code>DescribeFirewall</code>. You define and update the route tables through Amazon VPC. As needed, update the route tables for the zones to remove the firewall endpoints. When the route tables no longer use the firewall endpoints, you can remove the firewall safely.</p>
 /// <p>To delete a firewall, remove the delete protection if you need to using <code>UpdateFirewallDeleteProtection</code>, then delete the firewall by calling <code>DeleteFirewall</code>.</p>
+/// <p>Deleting a proxy mode firewall detaches its NAT gateways. To also delete the NAT gateways that Network Firewall created for the firewall, specify <code>DeleteAssociatedNatGateways</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteFirewallFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -143,5 +144,40 @@ impl DeleteFirewallFluentBuilder {
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_arn()
+    }
+    /// <p>Specifies whether to delete the NAT gateways that Network Firewall created for a proxy mode firewall when you delete the firewall. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FALSE</code> - Network Firewall detaches the NAT gateways from the firewall and keeps them. This is the default.</p></li>
+    /// <li>
+    /// <p><code>TRUE</code> - Network Firewall also deletes the NAT gateways. The firewall status stays <code>DELETING</code> until they're deleted. You need permission to call the Amazon EC2 <code>DeleteNatGateway</code> action.</p></li>
+    /// </ul>
+    /// <p>You can't specify <code>TRUE</code> for a firewall that isn't a proxy mode firewall.</p>
+    pub fn delete_associated_nat_gateways(mut self, input: bool) -> Self {
+        self.inner = self.inner.delete_associated_nat_gateways(input);
+        self
+    }
+    /// <p>Specifies whether to delete the NAT gateways that Network Firewall created for a proxy mode firewall when you delete the firewall. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FALSE</code> - Network Firewall detaches the NAT gateways from the firewall and keeps them. This is the default.</p></li>
+    /// <li>
+    /// <p><code>TRUE</code> - Network Firewall also deletes the NAT gateways. The firewall status stays <code>DELETING</code> until they're deleted. You need permission to call the Amazon EC2 <code>DeleteNatGateway</code> action.</p></li>
+    /// </ul>
+    /// <p>You can't specify <code>TRUE</code> for a firewall that isn't a proxy mode firewall.</p>
+    pub fn set_delete_associated_nat_gateways(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_delete_associated_nat_gateways(input);
+        self
+    }
+    /// <p>Specifies whether to delete the NAT gateways that Network Firewall created for a proxy mode firewall when you delete the firewall. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FALSE</code> - Network Firewall detaches the NAT gateways from the firewall and keeps them. This is the default.</p></li>
+    /// <li>
+    /// <p><code>TRUE</code> - Network Firewall also deletes the NAT gateways. The firewall status stays <code>DELETING</code> until they're deleted. You need permission to call the Amazon EC2 <code>DeleteNatGateway</code> action.</p></li>
+    /// </ul>
+    /// <p>You can't specify <code>TRUE</code> for a firewall that isn't a proxy mode firewall.</p>
+    pub fn get_delete_associated_nat_gateways(&self) -> &::std::option::Option<bool> {
+        self.inner.get_delete_associated_nat_gateways()
     }
 }

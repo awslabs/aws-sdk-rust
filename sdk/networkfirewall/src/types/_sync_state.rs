@@ -16,7 +16,8 @@ pub struct SyncState {
     pub attachment: ::std::option::Option<crate::types::Attachment>,
     /// <p>The configuration status of the firewall endpoint in a single VPC subnet. Network Firewall provides each endpoint with the rules that are configured in the firewall policy. Each time you add a subnet or modify the associated firewall policy, Network Firewall synchronizes the rules in the endpoint, so it can properly filter network traffic.</p>
     pub config: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PerObjectStatus>>,
-    /// <p>The status of the NAT gateway attachments for a proxy mode firewall in the Availability Zone. This reflects the attachment of the firewall to each NAT gateway that proxies its traffic.</p>
+    /// <p>The NAT gateway that's attached to a proxy mode firewall in the Availability Zone, and the status of the attachment. To get NAT gateway details, such as IP addresses, use the Amazon EC2 <code>DescribeNatGateways</code> action.</p>
+    /// <p>A proxy mode firewall is <code>READY</code> when at least one Availability Zone's firewall endpoint and NAT gateway attachment are <code>READY</code>.</p>
     pub nat_gateway_attachments: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAttachment>>,
 }
 impl SyncState {
@@ -28,7 +29,8 @@ impl SyncState {
     pub fn config(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PerObjectStatus>> {
         self.config.as_ref()
     }
-    /// <p>The status of the NAT gateway attachments for a proxy mode firewall in the Availability Zone. This reflects the attachment of the firewall to each NAT gateway that proxies its traffic.</p>
+    /// <p>The NAT gateway that's attached to a proxy mode firewall in the Availability Zone, and the status of the attachment. To get NAT gateway details, such as IP addresses, use the Amazon EC2 <code>DescribeNatGateways</code> action.</p>
+    /// <p>A proxy mode firewall is <code>READY</code> when at least one Availability Zone's firewall endpoint and NAT gateway attachment are <code>READY</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nat_gateway_attachments.is_none()`.
     pub fn nat_gateway_attachments(&self) -> &[crate::types::NatGatewayAttachment] {
@@ -92,19 +94,22 @@ impl SyncStateBuilder {
     ///
     /// To override the contents of this collection use [`set_nat_gateway_attachments`](Self::set_nat_gateway_attachments).
     ///
-    /// <p>The status of the NAT gateway attachments for a proxy mode firewall in the Availability Zone. This reflects the attachment of the firewall to each NAT gateway that proxies its traffic.</p>
+    /// <p>The NAT gateway that's attached to a proxy mode firewall in the Availability Zone, and the status of the attachment. To get NAT gateway details, such as IP addresses, use the Amazon EC2 <code>DescribeNatGateways</code> action.</p>
+    /// <p>A proxy mode firewall is <code>READY</code> when at least one Availability Zone's firewall endpoint and NAT gateway attachment are <code>READY</code>.</p>
     pub fn nat_gateway_attachments(mut self, input: crate::types::NatGatewayAttachment) -> Self {
         let mut v = self.nat_gateway_attachments.unwrap_or_default();
         v.push(input);
         self.nat_gateway_attachments = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The status of the NAT gateway attachments for a proxy mode firewall in the Availability Zone. This reflects the attachment of the firewall to each NAT gateway that proxies its traffic.</p>
+    /// <p>The NAT gateway that's attached to a proxy mode firewall in the Availability Zone, and the status of the attachment. To get NAT gateway details, such as IP addresses, use the Amazon EC2 <code>DescribeNatGateways</code> action.</p>
+    /// <p>A proxy mode firewall is <code>READY</code> when at least one Availability Zone's firewall endpoint and NAT gateway attachment are <code>READY</code>.</p>
     pub fn set_nat_gateway_attachments(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAttachment>>) -> Self {
         self.nat_gateway_attachments = input;
         self
     }
-    /// <p>The status of the NAT gateway attachments for a proxy mode firewall in the Availability Zone. This reflects the attachment of the firewall to each NAT gateway that proxies its traffic.</p>
+    /// <p>The NAT gateway that's attached to a proxy mode firewall in the Availability Zone, and the status of the attachment. To get NAT gateway details, such as IP addresses, use the Amazon EC2 <code>DescribeNatGateways</code> action.</p>
+    /// <p>A proxy mode firewall is <code>READY</code> when at least one Availability Zone's firewall endpoint and NAT gateway attachment are <code>READY</code>.</p>
     pub fn get_nat_gateway_attachments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAttachment>> {
         &self.nat_gateway_attachments
     }

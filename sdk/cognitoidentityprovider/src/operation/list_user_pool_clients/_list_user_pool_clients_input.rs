@@ -10,6 +10,23 @@ pub struct ListUserPoolClientsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Returns only app clients of this type. For dynamic client registration (<code>DCR</code>) and other app clients, the following values are valid.</p>
+    /// <dl>
+    /// <dt>
+    /// REGULAR
+    /// </dt>
+    /// <dd>
+    /// <p>An app client not created through dynamic client registration.</p>
+    /// </dd>
+    /// <dt>
+    /// DCR
+    /// </dt>
+    /// <dd>
+    /// <p>An app client created through dynamic client registration.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>If you omit <code>ClientType</code>, the response includes app clients of all types. When you set this filter, a page of results can contain fewer app clients than <code>MaxResults</code>, or none, while the response still includes a <code>NextToken</code>. Continue to request pages until the response has no <code>NextToken</code>. The app clients in the response don't include their type. To get the type of an app client, call <code>DescribeUserPoolClient</code>.</p>
+    pub client_type: ::std::option::Option<crate::types::ClientTypeType>,
 }
 impl ListUserPoolClientsInput {
     /// <p>The ID of the user pool where you want to list user pool clients.</p>
@@ -23,6 +40,25 @@ impl ListUserPoolClientsInput {
     /// <p>This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+    /// <p>Returns only app clients of this type. For dynamic client registration (<code>DCR</code>) and other app clients, the following values are valid.</p>
+    /// <dl>
+    /// <dt>
+    /// REGULAR
+    /// </dt>
+    /// <dd>
+    /// <p>An app client not created through dynamic client registration.</p>
+    /// </dd>
+    /// <dt>
+    /// DCR
+    /// </dt>
+    /// <dd>
+    /// <p>An app client created through dynamic client registration.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>If you omit <code>ClientType</code>, the response includes app clients of all types. When you set this filter, a page of results can contain fewer app clients than <code>MaxResults</code>, or none, while the response still includes a <code>NextToken</code>. Continue to request pages until the response has no <code>NextToken</code>. The app clients in the response don't include their type. To get the type of an app client, call <code>DescribeUserPoolClient</code>.</p>
+    pub fn client_type(&self) -> ::std::option::Option<&crate::types::ClientTypeType> {
+        self.client_type.as_ref()
     }
 }
 impl ListUserPoolClientsInput {
@@ -39,6 +75,7 @@ pub struct ListUserPoolClientsInputBuilder {
     pub(crate) user_pool_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) client_type: ::std::option::Option<crate::types::ClientTypeType>,
 }
 impl ListUserPoolClientsInputBuilder {
     /// <p>The ID of the user pool where you want to list user pool clients.</p>
@@ -84,6 +121,65 @@ impl ListUserPoolClientsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>Returns only app clients of this type. For dynamic client registration (<code>DCR</code>) and other app clients, the following values are valid.</p>
+    /// <dl>
+    /// <dt>
+    /// REGULAR
+    /// </dt>
+    /// <dd>
+    /// <p>An app client not created through dynamic client registration.</p>
+    /// </dd>
+    /// <dt>
+    /// DCR
+    /// </dt>
+    /// <dd>
+    /// <p>An app client created through dynamic client registration.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>If you omit <code>ClientType</code>, the response includes app clients of all types. When you set this filter, a page of results can contain fewer app clients than <code>MaxResults</code>, or none, while the response still includes a <code>NextToken</code>. Continue to request pages until the response has no <code>NextToken</code>. The app clients in the response don't include their type. To get the type of an app client, call <code>DescribeUserPoolClient</code>.</p>
+    pub fn client_type(mut self, input: crate::types::ClientTypeType) -> Self {
+        self.client_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Returns only app clients of this type. For dynamic client registration (<code>DCR</code>) and other app clients, the following values are valid.</p>
+    /// <dl>
+    /// <dt>
+    /// REGULAR
+    /// </dt>
+    /// <dd>
+    /// <p>An app client not created through dynamic client registration.</p>
+    /// </dd>
+    /// <dt>
+    /// DCR
+    /// </dt>
+    /// <dd>
+    /// <p>An app client created through dynamic client registration.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>If you omit <code>ClientType</code>, the response includes app clients of all types. When you set this filter, a page of results can contain fewer app clients than <code>MaxResults</code>, or none, while the response still includes a <code>NextToken</code>. Continue to request pages until the response has no <code>NextToken</code>. The app clients in the response don't include their type. To get the type of an app client, call <code>DescribeUserPoolClient</code>.</p>
+    pub fn set_client_type(mut self, input: ::std::option::Option<crate::types::ClientTypeType>) -> Self {
+        self.client_type = input;
+        self
+    }
+    /// <p>Returns only app clients of this type. For dynamic client registration (<code>DCR</code>) and other app clients, the following values are valid.</p>
+    /// <dl>
+    /// <dt>
+    /// REGULAR
+    /// </dt>
+    /// <dd>
+    /// <p>An app client not created through dynamic client registration.</p>
+    /// </dd>
+    /// <dt>
+    /// DCR
+    /// </dt>
+    /// <dd>
+    /// <p>An app client created through dynamic client registration.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>If you omit <code>ClientType</code>, the response includes app clients of all types. When you set this filter, a page of results can contain fewer app clients than <code>MaxResults</code>, or none, while the response still includes a <code>NextToken</code>. Continue to request pages until the response has no <code>NextToken</code>. The app clients in the response don't include their type. To get the type of an app client, call <code>DescribeUserPoolClient</code>.</p>
+    pub fn get_client_type(&self) -> &::std::option::Option<crate::types::ClientTypeType> {
+        &self.client_type
+    }
     /// Consumes the builder and constructs a [`ListUserPoolClientsInput`](crate::operation::list_user_pool_clients::ListUserPoolClientsInput).
     pub fn build(
         self,
@@ -93,6 +189,7 @@ impl ListUserPoolClientsInputBuilder {
             user_pool_id: self.user_pool_id,
             max_results: self.max_results,
             next_token: self.next_token,
+            client_type: self.client_type,
         })
     }
 }

@@ -21,6 +21,10 @@ pub use crate::types::_ecs_parameters::EcsParameters;
 
 pub use crate::types::_event_bridge_parameters::EventBridgeParameters;
 
+pub use crate::types::_event_bridge_put_events_v2_parameters::EventBridgePutEventsV2Parameters;
+
+pub use crate::types::_event_bridge_put_raw_events_parameters::EventBridgePutRawEventsParameters;
+
 pub use crate::types::_kinesis_parameters::KinesisParameters;
 
 pub use crate::types::_sage_maker_pipeline_parameters::SageMakerPipelineParameters;
@@ -68,6 +72,10 @@ mod _dead_letter_config;
 mod _ecs_parameters;
 
 mod _event_bridge_parameters;
+
+mod _event_bridge_put_events_v2_parameters;
+
+mod _event_bridge_put_raw_events_parameters;
 
 mod _flexible_time_window;
 

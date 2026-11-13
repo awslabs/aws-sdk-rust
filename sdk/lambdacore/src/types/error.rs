@@ -5,11 +5,13 @@ pub use crate::types::error::_service_exception::ServiceException;
 
 pub use crate::types::error::_too_many_requests_exception::TooManyRequestsException;
 
-pub use crate::types::error::_network_connector_limit_exceeded_exception::NetworkConnectorLimitExceededException;
-
 pub use crate::types::error::_resource_conflict_exception::ResourceConflictException;
 
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
+
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundException;
+
+pub use crate::types::error::_network_connector_limit_exceeded_exception::NetworkConnectorLimitExceededException;
 
 mod _invalid_parameter_value_exception;
 
@@ -20,6 +22,8 @@ mod _resource_conflict_exception;
 mod _resource_not_found_exception;
 
 mod _service_exception;
+
+mod _service_quota_exceeded_exception;
 
 mod _too_many_requests_exception;
 

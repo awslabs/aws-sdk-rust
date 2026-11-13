@@ -31,6 +31,16 @@ pub fn ser_message_template_attributes(
         }
         object_8.finish();
     }
+    if let Some(var_11) = &input.case_attributes {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("caseAttributes").start_object();
+        for (key_13, value_14) in var_11 {
+            {
+                object_12.key(key_13.as_str()).string(value_14.as_str());
+            }
+        }
+        object_12.finish();
+    }
     Ok(())
 }
 
@@ -77,6 +87,13 @@ where
                         }
                         "customAttributes" => {
                             builder = builder.set_custom_attributes(crate::protocol_serde::shape_custom_attributes::de_custom_attributes(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "caseAttributes" => {
+                            builder = builder.set_case_attributes(crate::protocol_serde::shape_case_attributes::de_case_attributes(
                                 tokens,
                                 _value,
                                 depth + 1,

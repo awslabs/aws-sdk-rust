@@ -10,11 +10,13 @@
 /// <li>
 /// <p><code>a10g</code>: Uses G5 instance family</p></li>
 /// <li>
-/// <p><code>l4</code>: Uses G6 and Gr6 instance families</p></li>
+/// <p><code>l4</code>: Uses G6, G6f, Gr6, and Gr6f instance families</p></li>
 /// <li>
 /// <p><code>l40s</code>: Uses G6e instance family</p></li>
 /// <li>
 /// <p><code>rtx-pro-server-6000</code>: Uses G7e instance family</p></li>
+/// <li>
+/// <p><code>rtx-pro-4500</code>: Uses G7 instance family</p></li>
 /// </ul>
 /// </note>
 #[non_exhaustive]

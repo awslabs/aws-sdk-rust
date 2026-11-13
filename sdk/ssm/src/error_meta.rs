@@ -5042,6 +5042,9 @@ impl From<crate::operation::update_cloud_connector::UpdateCloudConnectorError> f
             crate::operation::update_cloud_connector::UpdateCloudConnectorError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::update_cloud_connector::UpdateCloudConnectorError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::update_cloud_connector::UpdateCloudConnectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }

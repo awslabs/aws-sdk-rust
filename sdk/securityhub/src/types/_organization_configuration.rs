@@ -9,6 +9,7 @@ pub struct OrganizationConfiguration {
     /// <p>If you use central configuration, the delegated administrator can create configuration policies. Configuration policies can be used to configure Security Hub CSPM, security standards, and security controls in multiple accounts and Regions. If you want new organization accounts to use a specific configuration, you can create a configuration policy and associate it with the root or specific organizational units (OUs). New accounts will inherit the policy from the root or their assigned OU.</p>
     pub configuration_type: ::std::option::Option<crate::types::OrganizationConfigurationConfigurationType>,
     /// <p>Describes whether central configuration could be enabled as the <code>ConfigurationType</code> for the organization. If your <code>ConfigurationType</code> is local configuration, then the value of <code>Status</code> is always <code>ENABLED</code>.</p>
+    /// <p>If the value of <code>Status</code> is <code>DISABLED</code>, central configuration is disabled because the organization is managed by Security Hub CSPM policies in Organizations.</p>
     pub status: ::std::option::Option<crate::types::OrganizationConfigurationStatus>,
     /// <p>Provides an explanation if the value of <code>Status</code> is equal to <code>FAILED</code> when <code>ConfigurationType</code> is equal to <code>CENTRAL</code>.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
@@ -21,6 +22,7 @@ impl OrganizationConfiguration {
         self.configuration_type.as_ref()
     }
     /// <p>Describes whether central configuration could be enabled as the <code>ConfigurationType</code> for the organization. If your <code>ConfigurationType</code> is local configuration, then the value of <code>Status</code> is always <code>ENABLED</code>.</p>
+    /// <p>If the value of <code>Status</code> is <code>DISABLED</code>, central configuration is disabled because the organization is managed by Security Hub CSPM policies in Organizations.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::OrganizationConfigurationStatus> {
         self.status.as_ref()
     }
@@ -66,16 +68,19 @@ impl OrganizationConfigurationBuilder {
         &self.configuration_type
     }
     /// <p>Describes whether central configuration could be enabled as the <code>ConfigurationType</code> for the organization. If your <code>ConfigurationType</code> is local configuration, then the value of <code>Status</code> is always <code>ENABLED</code>.</p>
+    /// <p>If the value of <code>Status</code> is <code>DISABLED</code>, central configuration is disabled because the organization is managed by Security Hub CSPM policies in Organizations.</p>
     pub fn status(mut self, input: crate::types::OrganizationConfigurationStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes whether central configuration could be enabled as the <code>ConfigurationType</code> for the organization. If your <code>ConfigurationType</code> is local configuration, then the value of <code>Status</code> is always <code>ENABLED</code>.</p>
+    /// <p>If the value of <code>Status</code> is <code>DISABLED</code>, central configuration is disabled because the organization is managed by Security Hub CSPM policies in Organizations.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::OrganizationConfigurationStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>Describes whether central configuration could be enabled as the <code>ConfigurationType</code> for the organization. If your <code>ConfigurationType</code> is local configuration, then the value of <code>Status</code> is always <code>ENABLED</code>.</p>
+    /// <p>If the value of <code>Status</code> is <code>DISABLED</code>, central configuration is disabled because the organization is managed by Security Hub CSPM policies in Organizations.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::OrganizationConfigurationStatus> {
         &self.status
     }

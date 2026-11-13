@@ -50,6 +50,16 @@ static RESOURCESERVERTYPE_MEMBER_SCOPES: ::aws_smithy_schema::Schema<'static> = 
     3,
 )
 .with_list_member(&RESOURCESERVERTYPE_MEMBER_SCOPES_MEMBER);
+static RESOURCESERVERTYPE_MEMBER_MANAGED_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#ResourceServerType$ManagedBy",
+        "com.amazonaws.cognitoidentityprovider",
+        "ResourceServerType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ManagedBy",
+    4,
+);
 static RESOURCESERVERTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.cognitoidentityprovider#ResourceServerType",
@@ -62,6 +72,7 @@ static RESOURCESERVERTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_s
         &RESOURCESERVERTYPE_MEMBER_IDENTIFIER,
         &RESOURCESERVERTYPE_MEMBER_NAME,
         &RESOURCESERVERTYPE_MEMBER_SCOPES,
+        &RESOURCESERVERTYPE_MEMBER_MANAGED_BY,
     ],
 );
 impl crate::types::ResourceServerType {
@@ -97,6 +108,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::ResourceSe
                     Ok(())
                 },
             )?;
+        }
+        if let Some(ref val) = self.managed_by {
+            ser.write_string(&RESOURCESERVERTYPE_MEMBER_MANAGED_BY, val.as_str())?;
         }
         Ok(())
     }
@@ -148,6 +162,13 @@ impl crate::types::builders::ResourceServerTypeBuilder {
                             })?;
                             container
                         });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.managed_by = Some(crate::types::ResourceServerManagedByType::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}

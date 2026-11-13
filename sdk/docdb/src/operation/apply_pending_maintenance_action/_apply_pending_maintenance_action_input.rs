@@ -7,7 +7,7 @@ pub struct ApplyPendingMaintenanceActionInput {
     /// <p>The Amazon Resource Name (ARN) of the resource that the pending maintenance action applies to.</p>
     pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The pending maintenance action to apply to this resource.</p>
-    /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code></p>
+    /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>serverless-platform-version-update</code></p>
     pub apply_action: ::std::option::Option<::std::string::String>,
     /// <p>A value that specifies the type of opt-in request or undoes an opt-in request. An opt-in request of type <code>immediate</code> can't be undone.</p>
     /// <p>Valid values:</p>
@@ -27,7 +27,7 @@ impl ApplyPendingMaintenanceActionInput {
         self.resource_identifier.as_deref()
     }
     /// <p>The pending maintenance action to apply to this resource.</p>
-    /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code></p>
+    /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>serverless-platform-version-update</code></p>
     pub fn apply_action(&self) -> ::std::option::Option<&str> {
         self.apply_action.as_deref()
     }
@@ -77,20 +77,20 @@ impl ApplyPendingMaintenanceActionInputBuilder {
         &self.resource_identifier
     }
     /// <p>The pending maintenance action to apply to this resource.</p>
-    /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code></p>
+    /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>serverless-platform-version-update</code></p>
     /// This field is required.
     pub fn apply_action(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.apply_action = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pending maintenance action to apply to this resource.</p>
-    /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code></p>
+    /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>serverless-platform-version-update</code></p>
     pub fn set_apply_action(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.apply_action = input;
         self
     }
     /// <p>The pending maintenance action to apply to this resource.</p>
-    /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code></p>
+    /// <p>Valid values: <code>system-update</code>, <code>db-upgrade</code>, <code>serverless-platform-version-update</code></p>
     pub fn get_apply_action(&self) -> &::std::option::Option<::std::string::String> {
         &self.apply_action
     }

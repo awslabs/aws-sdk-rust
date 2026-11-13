@@ -3,7 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAttributeMappingInput {
-    /// <p>The unique identifier of the profile.</p>
+    /// <p>The profile to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile ID.</p></li>
+    /// <li>
+    /// <p>The profile ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the profile.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a profile in your account and Region.</p>
     pub profile_id: ::std::option::Option<::std::string::String>,
     /// <p>Fields (x509Subject, x509Issuer and x509SAN) within X.509 certificates.</p>
     pub certificate_field: ::std::option::Option<crate::types::CertificateField>,
@@ -11,7 +20,16 @@ pub struct PutAttributeMappingInput {
     pub mapping_rules: ::std::option::Option<::std::vec::Vec<crate::types::MappingRule>>,
 }
 impl PutAttributeMappingInput {
-    /// <p>The unique identifier of the profile.</p>
+    /// <p>The profile to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile ID.</p></li>
+    /// <li>
+    /// <p>The profile ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the profile.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a profile in your account and Region.</p>
     pub fn profile_id(&self) -> ::std::option::Option<&str> {
         self.profile_id.as_deref()
     }
@@ -42,18 +60,45 @@ pub struct PutAttributeMappingInputBuilder {
     pub(crate) mapping_rules: ::std::option::Option<::std::vec::Vec<crate::types::MappingRule>>,
 }
 impl PutAttributeMappingInputBuilder {
-    /// <p>The unique identifier of the profile.</p>
+    /// <p>The profile to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile ID.</p></li>
+    /// <li>
+    /// <p>The profile ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the profile.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a profile in your account and Region.</p>
     /// This field is required.
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the profile.</p>
+    /// <p>The profile to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile ID.</p></li>
+    /// <li>
+    /// <p>The profile ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the profile.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a profile in your account and Region.</p>
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_id = input;
         self
     }
-    /// <p>The unique identifier of the profile.</p>
+    /// <p>The profile to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile ID.</p></li>
+    /// <li>
+    /// <p>The profile ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the profile.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a profile in your account and Region.</p>
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.profile_id
     }

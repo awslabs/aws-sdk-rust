@@ -14,6 +14,75 @@ pub(crate) fn create_network_connector_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_runtime_output_output_correct_errors(
+    mut builder: crate::operation::create_runtime::builders::CreateRuntimeOutputBuilder,
+) -> crate::operation::create_runtime::builders::CreateRuntimeOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.created.is_none() {
+        builder.created = Some(Default::default())
+    }
+    if builder.last_modified.is_none() {
+        builder.last_modified = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_runtime_alias_output_output_correct_errors(
+    mut builder: crate::operation::create_runtime_alias::builders::CreateRuntimeAliasOutputBuilder,
+) -> crate::operation::create_runtime_alias::builders::CreateRuntimeAliasOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.runtime_version.is_none() {
+        builder.runtime_version = Some(Default::default())
+    }
+    if builder.runtime_version_arn.is_none() {
+        builder.runtime_version_arn = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RuntimeAliasState>().ok()
+    }
+    if builder.created.is_none() {
+        builder.created = Some(Default::default())
+    }
+    if builder.last_modified.is_none() {
+        builder.last_modified = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_runtime_version_output_output_correct_errors(
+    mut builder: crate::operation::create_runtime_version::builders::CreateRuntimeVersionOutputBuilder,
+) -> crate::operation::create_runtime_version::builders::CreateRuntimeVersionOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.resolved_uri.is_none() {
+        builder.resolved_uri = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RuntimeVersionState>().ok()
+    }
+    if builder.created.is_none() {
+        builder.created = Some(Default::default())
+    }
+    if builder.last_modified.is_none() {
+        builder.last_modified = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn delete_network_connector_output_output_correct_errors(
     mut builder: crate::operation::delete_network_connector::builders::DeleteNetworkConnectorOutputBuilder,
 ) -> crate::operation::delete_network_connector::builders::DeleteNetworkConnectorOutputBuilder {
@@ -44,6 +113,75 @@ pub(crate) fn get_network_connector_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_runtime_output_output_correct_errors(
+    mut builder: crate::operation::get_runtime::builders::GetRuntimeOutputBuilder,
+) -> crate::operation::get_runtime::builders::GetRuntimeOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.created.is_none() {
+        builder.created = Some(Default::default())
+    }
+    if builder.last_modified.is_none() {
+        builder.last_modified = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_runtime_alias_output_output_correct_errors(
+    mut builder: crate::operation::get_runtime_alias::builders::GetRuntimeAliasOutputBuilder,
+) -> crate::operation::get_runtime_alias::builders::GetRuntimeAliasOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.runtime_version.is_none() {
+        builder.runtime_version = Some(Default::default())
+    }
+    if builder.runtime_version_arn.is_none() {
+        builder.runtime_version_arn = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RuntimeAliasState>().ok()
+    }
+    if builder.created.is_none() {
+        builder.created = Some(Default::default())
+    }
+    if builder.last_modified.is_none() {
+        builder.last_modified = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_runtime_version_output_output_correct_errors(
+    mut builder: crate::operation::get_runtime_version::builders::GetRuntimeVersionOutputBuilder,
+) -> crate::operation::get_runtime_version::builders::GetRuntimeVersionOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.resolved_uri.is_none() {
+        builder.resolved_uri = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RuntimeVersionState>().ok()
+    }
+    if builder.created.is_none() {
+        builder.created = Some(Default::default())
+    }
+    if builder.last_modified.is_none() {
+        builder.last_modified = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_network_connector_versions_output_output_correct_errors(
     mut builder: crate::operation::list_network_connector_versions::builders::ListNetworkConnectorVersionsOutputBuilder,
 ) -> crate::operation::list_network_connector_versions::builders::ListNetworkConnectorVersionsOutputBuilder {
@@ -62,6 +200,51 @@ pub(crate) fn list_network_connectors_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_runtime_aliases_output_output_correct_errors(
+    mut builder: crate::operation::list_runtime_aliases::builders::ListRuntimeAliasesOutputBuilder,
+) -> crate::operation::list_runtime_aliases::builders::ListRuntimeAliasesOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_runtime_versions_output_output_correct_errors(
+    mut builder: crate::operation::list_runtime_versions::builders::ListRuntimeVersionsOutputBuilder,
+) -> crate::operation::list_runtime_versions::builders::ListRuntimeVersionsOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_runtimes_output_output_correct_errors(
+    mut builder: crate::operation::list_runtimes::builders::ListRuntimesOutputBuilder,
+) -> crate::operation::list_runtimes::builders::ListRuntimesOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn restore_runtime_output_output_correct_errors(
+    mut builder: crate::operation::restore_runtime::builders::RestoreRuntimeOutputBuilder,
+) -> crate::operation::restore_runtime::builders::RestoreRuntimeOutputBuilder {
+    if builder.runtime_name.is_none() {
+        builder.runtime_name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RuntimeState>().ok()
+    }
+    if builder.last_modified.is_none() {
+        builder.last_modified = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_network_connector_output_output_correct_errors(
     mut builder: crate::operation::update_network_connector::builders::UpdateNetworkConnectorOutputBuilder,
 ) -> crate::operation::update_network_connector::builders::UpdateNetworkConnectorOutputBuilder {
@@ -73,6 +256,78 @@ pub(crate) fn update_network_connector_output_output_correct_errors(
     }
     if builder.id.is_none() {
         builder.id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_runtime_output_output_correct_errors(
+    mut builder: crate::operation::update_runtime::builders::UpdateRuntimeOutputBuilder,
+) -> crate::operation::update_runtime::builders::UpdateRuntimeOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.created.is_none() {
+        builder.created = Some(Default::default())
+    }
+    if builder.last_modified.is_none() {
+        builder.last_modified = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_runtime_alias_output_output_correct_errors(
+    mut builder: crate::operation::update_runtime_alias::builders::UpdateRuntimeAliasOutputBuilder,
+) -> crate::operation::update_runtime_alias::builders::UpdateRuntimeAliasOutputBuilder {
+    if builder.runtime_name.is_none() {
+        builder.runtime_name = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.runtime_version.is_none() {
+        builder.runtime_version = Some(Default::default())
+    }
+    if builder.runtime_version_arn.is_none() {
+        builder.runtime_version_arn = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RuntimeAliasState>().ok()
+    }
+    if builder.created.is_none() {
+        builder.created = Some(Default::default())
+    }
+    if builder.last_modified.is_none() {
+        builder.last_modified = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_runtime_version_output_output_correct_errors(
+    mut builder: crate::operation::update_runtime_version::builders::UpdateRuntimeVersionOutputBuilder,
+) -> crate::operation::update_runtime_version::builders::UpdateRuntimeVersionOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.resolved_uri.is_none() {
+        builder.resolved_uri = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RuntimeVersionState>().ok()
+    }
+    if builder.created.is_none() {
+        builder.created = Some(Default::default())
+    }
+    if builder.last_modified.is_none() {
+        builder.last_modified = Some(Default::default())
     }
     builder
 }
@@ -115,6 +370,86 @@ pub(crate) fn network_connector_version_summary_correct_errors(
     }
     if builder.state.is_none() {
         builder.state = "no value was set".parse::<crate::types::NetworkConnectorState>().ok()
+    }
+    builder
+}
+
+pub(crate) fn platform_correct_errors(mut builder: crate::types::builders::PlatformBuilder) -> crate::types::builders::PlatformBuilder {
+    if builder.architecture.is_none() {
+        builder.architecture = Some(Default::default())
+    }
+    if builder.os.is_none() {
+        builder.os = Some(Default::default())
+    }
+    if builder.digest.is_none() {
+        builder.digest = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn runtime_alias_info_correct_errors(
+    mut builder: crate::types::builders::RuntimeAliasInfoBuilder,
+) -> crate::types::builders::RuntimeAliasInfoBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.runtime_version.is_none() {
+        builder.runtime_version = Some(Default::default())
+    }
+    if builder.runtime_version_arn.is_none() {
+        builder.runtime_version_arn = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RuntimeAliasState>().ok()
+    }
+    if builder.created.is_none() {
+        builder.created = Some(Default::default())
+    }
+    if builder.last_modified.is_none() {
+        builder.last_modified = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn runtime_info_correct_errors(mut builder: crate::types::builders::RuntimeInfoBuilder) -> crate::types::builders::RuntimeInfoBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.created.is_none() {
+        builder.created = Some(Default::default())
+    }
+    if builder.last_modified.is_none() {
+        builder.last_modified = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn runtime_version_info_correct_errors(
+    mut builder: crate::types::builders::RuntimeVersionInfoBuilder,
+) -> crate::types::builders::RuntimeVersionInfoBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.resolved_uri.is_none() {
+        builder.resolved_uri = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::RuntimeVersionState>().ok()
+    }
+    if builder.created.is_none() {
+        builder.created = Some(Default::default())
+    }
+    if builder.last_modified.is_none() {
+        builder.last_modified = Some(Default::default())
     }
     builder
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCrl`](crate::operation::get_crl::builders::GetCrlFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`crl_id(impl Into<String>)`](crate::operation::get_crl::builders::GetCrlFluentBuilder::crl_id) / [`set_crl_id(Option<String>)`](crate::operation::get_crl::builders::GetCrlFluentBuilder::set_crl_id):<br>required: **true**<br><p>The unique identifier of the certificate revocation list (CRL).</p><br>
+    ///   - [`crl_id(impl Into<String>)`](crate::operation::get_crl::builders::GetCrlFluentBuilder::crl_id) / [`set_crl_id(Option<String>)`](crate::operation::get_crl::builders::GetCrlFluentBuilder::set_crl_id):<br>required: **true**<br><p>The certificate revocation list (CRL) to act on. You can specify one of the following:</p> <ul>  <li>   <p>The CRL ID.</p></li>  <li>   <p>The CRL ARN.</p></li>  <li>   <p>The alias ARN of the CRL.</p></li> </ul> <p>An ARN must be for a CRL in your account and Region.</p><br>
     /// - On success, responds with [`GetCrlOutput`](crate::operation::get_crl::GetCrlOutput) with field(s):
     ///   - [`crl(Option<CrlDetail>)`](crate::operation::get_crl::GetCrlOutput::crl): <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
     /// - On failure, responds with [`SdkError<GetCrlError>`](crate::operation::get_crl::GetCrlError)

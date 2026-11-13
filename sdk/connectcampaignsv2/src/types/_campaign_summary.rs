@@ -22,6 +22,8 @@ pub struct CampaignSummary {
     pub entry_limits_config: ::std::option::Option<crate::types::EntryLimitsConfig>,
     /// Amazon Resource Names(ARN)
     pub connect_campaign_flow_arn: ::std::option::Option<::std::string::String>,
+    /// The timestamp of the most recent modification to the campaign or its configuration. Null for campaigns created before this field was introduced.
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CampaignSummary {
     /// Identifier representing a Campaign
@@ -65,6 +67,10 @@ impl CampaignSummary {
     pub fn connect_campaign_flow_arn(&self) -> ::std::option::Option<&str> {
         self.connect_campaign_flow_arn.as_deref()
     }
+    /// The timestamp of the most recent modification to the campaign or its configuration. Null for campaigns created before this field was introduced.
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
 }
 impl CampaignSummary {
     /// Creates a new builder-style object to manufacture [`CampaignSummary`](crate::types::CampaignSummary).
@@ -86,6 +92,7 @@ pub struct CampaignSummaryBuilder {
     pub(crate) schedule: ::std::option::Option<crate::types::Schedule>,
     pub(crate) entry_limits_config: ::std::option::Option<crate::types::EntryLimitsConfig>,
     pub(crate) connect_campaign_flow_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CampaignSummaryBuilder {
     /// Identifier representing a Campaign
@@ -224,6 +231,20 @@ impl CampaignSummaryBuilder {
     pub fn get_connect_campaign_flow_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.connect_campaign_flow_arn
     }
+    /// The timestamp of the most recent modification to the campaign or its configuration. Null for campaigns created before this field was introduced.
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// The timestamp of the most recent modification to the campaign or its configuration. Null for campaigns created before this field was introduced.
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// The timestamp of the most recent modification to the campaign or its configuration. Null for campaigns created before this field was introduced.
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// Consumes the builder and constructs a [`CampaignSummary`](crate::types::CampaignSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::CampaignSummaryBuilder::id)
@@ -267,6 +288,7 @@ impl CampaignSummaryBuilder {
             schedule: self.schedule,
             entry_limits_config: self.entry_limits_config,
             connect_campaign_flow_arn: self.connect_campaign_flow_arn,
+            last_modified_time: self.last_modified_time,
         })
     }
 }

@@ -49,6 +49,16 @@ pub fn ser_server_certificate_scope(
             }
         }
     }
+    if let Some(var_11) = &input.domain_match {
+        encoder.str("DomainMatch");
+        crate::protocol_serde::shape_domain_match::ser_domain_match(encoder, var_11)?;
+    }
+    if let Some(var_12) = &input.decryption_action {
+        encoder.str("DecryptionAction").str(var_12.as_str());
+    }
+    if let Some(var_13) = &input.deployment_mode {
+        encoder.str("DeploymentMode").str(var_13.as_str());
+    }
     encoder.end();
     Ok(())
 }
@@ -89,6 +99,19 @@ pub(crate) fn de_server_certificate_scope(
                         depth + 1,
                     )?)),
                 )
+            })?,
+            "DomainMatch" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_domain_match(Some(crate::protocol_serde::shape_domain_match::de_domain_match(decoder, depth + 1)?)))
+            })?,
+            "DecryptionAction" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_decryption_action(Some(decoder.string().map(|s| crate::types::DecryptionAction::from(s.as_str()))?)))
+            })?,
+            "DeploymentMode" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_deployment_mode(Some(
+                    decoder
+                        .string()
+                        .map(|s| crate::types::TlsInspectionScopeDeploymentMode::from(s.as_str()))?,
+                )))
             })?,
             _ => {
                 decoder.skip()?;

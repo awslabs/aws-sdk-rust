@@ -121,6 +121,7 @@ impl ListImageBuildVersionsFluentBuilder {
     /// <patch></patch>
     /// </minor>
     /// </major></code>) - wildcards aren't allowed. This parameter is optional. If you don't specify it, Image Builder returns build versions for all of the images in your account.</p>
+    /// <p>If the ARN that you specify doesn't exist, Image Builder returns an empty list rather than a <code>ResourceNotFoundException</code> error.</p>
     pub fn image_version_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_version_arn(input.into());
         self
@@ -132,6 +133,7 @@ impl ListImageBuildVersionsFluentBuilder {
     /// <patch></patch>
     /// </minor>
     /// </major></code>) - wildcards aren't allowed. This parameter is optional. If you don't specify it, Image Builder returns build versions for all of the images in your account.</p>
+    /// <p>If the ARN that you specify doesn't exist, Image Builder returns an empty list rather than a <code>ResourceNotFoundException</code> error.</p>
     pub fn set_image_version_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_version_arn(input);
         self
@@ -143,6 +145,7 @@ impl ListImageBuildVersionsFluentBuilder {
     /// <patch></patch>
     /// </minor>
     /// </major></code>) - wildcards aren't allowed. This parameter is optional. If you don't specify it, Image Builder returns build versions for all of the images in your account.</p>
+    /// <p>If the ARN that you specify doesn't exist, Image Builder returns an empty list rather than a <code>ResourceNotFoundException</code> error.</p>
     pub fn get_image_version_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_image_version_arn()
     }

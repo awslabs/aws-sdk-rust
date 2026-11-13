@@ -10,7 +10,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::get_cloud_connector::GetCloudConnectorOutput::description): <p>The description of the cloud connector.</p>
     ///   - [`role_arn(Option<String>)`](crate::operation::get_cloud_connector::GetCloudConnectorOutput::role_arn): <p>The ARN of the IAM role used by the cloud connector.</p>
     ///   - [`configuration(Option<CloudConnectorConfiguration>)`](crate::operation::get_cloud_connector::GetCloudConnectorOutput::configuration): <p>The configuration details for the third-party cloud environment connection.</p>
-    ///   - [`config_connector_arn(Option<String>)`](crate::operation::get_cloud_connector::GetCloudConnectorOutput::config_connector_arn): <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector.</p>
+    ///   - [`config_connector_arn(Option<String>)`](crate::operation::get_cloud_connector::GetCloudConnectorOutput::config_connector_arn): <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector. This value is returned only if the cloud connector was created with an Amazon Web Services Config connector.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_cloud_connector::GetCloudConnectorOutput::created_at): <p>The date and time the cloud connector was created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_cloud_connector::GetCloudConnectorOutput::updated_at): <p>The date and time the cloud connector was last updated.</p>
     /// - On failure, responds with [`SdkError<GetCloudConnectorError>`](crate::operation::get_cloud_connector::GetCloudConnectorError)

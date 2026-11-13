@@ -437,6 +437,12 @@ pub(crate) mod shape_failure_details;
 
 pub(crate) mod shape_feature_not_available_exception;
 
+pub(crate) mod shape_gcp_configuration;
+
+pub(crate) mod shape_gcp_configuration_targets;
+
+pub(crate) mod shape_gcp_project;
+
 pub(crate) mod shape_get_access_token_input_input;
 
 pub(crate) mod shape_get_access_token_output_output;
@@ -1146,6 +1152,8 @@ pub(crate) mod shape_target_location;
 pub(crate) mod shape_target_not_connected;
 
 pub(crate) mod shape_target_preview;
+
+pub(crate) mod shape_targets_summary;
 
 pub(crate) mod shape_terminate_session_input_input;
 

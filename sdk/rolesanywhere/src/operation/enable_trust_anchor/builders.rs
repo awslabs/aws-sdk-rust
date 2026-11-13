@@ -109,17 +109,44 @@ impl EnableTrustAnchorFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the trust anchor.</p>
+    /// <p>The trust anchor to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The trust anchor ID.</p></li>
+    /// <li>
+    /// <p>The trust anchor ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the trust anchor.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a trust anchor in your account and Region.</p>
     pub fn trust_anchor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.trust_anchor_id(input.into());
         self
     }
-    /// <p>The unique identifier of the trust anchor.</p>
+    /// <p>The trust anchor to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The trust anchor ID.</p></li>
+    /// <li>
+    /// <p>The trust anchor ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the trust anchor.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a trust anchor in your account and Region.</p>
     pub fn set_trust_anchor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_trust_anchor_id(input);
         self
     }
-    /// <p>The unique identifier of the trust anchor.</p>
+    /// <p>The trust anchor to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The trust anchor ID.</p></li>
+    /// <li>
+    /// <p>The trust anchor ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the trust anchor.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a trust anchor in your account and Region.</p>
     pub fn get_trust_anchor_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_trust_anchor_id()
     }

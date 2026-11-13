@@ -6,7 +6,7 @@
 pub struct StringFilterExpression {
     /// The field name to search.
     pub name: ::std::string::String,
-    /// The type of comparison to use for this search.
+    /// The type of comparison to use for this search. Only `EQUAL` and `NOT_EQUAL` are supported.
     pub operator: crate::types::ComparisonOperator,
     /// The string to search for.
     pub value: ::std::string::String,
@@ -17,7 +17,7 @@ impl StringFilterExpression {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// The type of comparison to use for this search.
+    /// The type of comparison to use for this search. Only `EQUAL` and `NOT_EQUAL` are supported.
     pub fn operator(&self) -> &crate::types::ComparisonOperator {
         &self.operator
     }
@@ -58,18 +58,18 @@ impl StringFilterExpressionBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// The type of comparison to use for this search.
+    /// The type of comparison to use for this search. Only `EQUAL` and `NOT_EQUAL` are supported.
     /// This field is required.
     pub fn operator(mut self, input: crate::types::ComparisonOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
     }
-    /// The type of comparison to use for this search.
+    /// The type of comparison to use for this search. Only `EQUAL` and `NOT_EQUAL` are supported.
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
         self.operator = input;
         self
     }
-    /// The type of comparison to use for this search.
+    /// The type of comparison to use for this search. Only `EQUAL` and `NOT_EQUAL` are supported.
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
         &self.operator
     }

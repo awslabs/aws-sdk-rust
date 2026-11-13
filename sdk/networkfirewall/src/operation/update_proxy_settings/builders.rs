@@ -22,7 +22,8 @@ impl crate::operation::update_proxy_settings::builders::UpdateProxySettingsInput
 }
 /// Fluent builder constructing a request to `UpdateProxySettings`.
 ///
-/// <p>Modifies the proxy listener configuration of a proxy mode firewall. Proxy mode firewalls are created with <code>NoSourcePreservation</code> set to <code>TRUE</code>. Use this operation to change the ports and protocols on which the firewall's proxy listens for traffic.</p>
+/// <p>Modifies the proxy settings of a proxy mode firewall. Use this operation to change the ports and protocols on which the firewall's proxy listens for traffic. The new listeners take effect without recreating the firewall.</p>
+/// <p>The <code>ProxySettings</code> that you provide replace the firewall's current proxy settings. If you created the firewall with your own <code>CertificateArn</code> and <code>DomainName</code>, you must specify the same values in every request. You can't change or remove them.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateProxySettingsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -162,17 +163,17 @@ impl UpdateProxySettingsFluentBuilder {
     pub fn get_update_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_update_token()
     }
-    /// <p>The proxy listener configuration to set on the firewall. This specifies the ports and protocols on which the firewall's proxy listens for traffic.</p>
+    /// <p>The proxy settings to set on the firewall. These replace the current proxy settings. Specify at least one listener, and at most one HTTP listener and one HTTPS listener, on different ports. If the firewall uses your own <code>CertificateArn</code> and <code>DomainName</code>, specify the same values that you used to create the firewall.</p>
     pub fn proxy_settings(mut self, input: crate::types::ProxySettings) -> Self {
         self.inner = self.inner.proxy_settings(input);
         self
     }
-    /// <p>The proxy listener configuration to set on the firewall. This specifies the ports and protocols on which the firewall's proxy listens for traffic.</p>
+    /// <p>The proxy settings to set on the firewall. These replace the current proxy settings. Specify at least one listener, and at most one HTTP listener and one HTTPS listener, on different ports. If the firewall uses your own <code>CertificateArn</code> and <code>DomainName</code>, specify the same values that you used to create the firewall.</p>
     pub fn set_proxy_settings(mut self, input: ::std::option::Option<crate::types::ProxySettings>) -> Self {
         self.inner = self.inner.set_proxy_settings(input);
         self
     }
-    /// <p>The proxy listener configuration to set on the firewall. This specifies the ports and protocols on which the firewall's proxy listens for traffic.</p>
+    /// <p>The proxy settings to set on the firewall. These replace the current proxy settings. Specify at least one listener, and at most one HTTP listener and one HTTPS listener, on different ports. If the firewall uses your own <code>CertificateArn</code> and <code>DomainName</code>, specify the same values that you used to create the firewall.</p>
     pub fn get_proxy_settings(&self) -> &::std::option::Option<crate::types::ProxySettings> {
         self.inner.get_proxy_settings()
     }

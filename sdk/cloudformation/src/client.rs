@@ -393,7 +393,11 @@ mod register_publisher;
 
 mod register_type;
 
+mod remove_alias;
+
 mod rollback_stack;
+
+mod set_alias;
 
 mod set_stack_policy;
 

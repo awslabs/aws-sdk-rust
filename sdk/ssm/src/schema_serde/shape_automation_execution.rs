@@ -516,6 +516,16 @@ static AUTOMATIONEXECUTION_MEMBER_VARIABLES: ::aws_smithy_schema::Schema<'static
     35,
 )
 .with_map_members(&AUTOMATIONEXECUTION_MEMBER_VARIABLES_KEY, &AUTOMATIONEXECUTION_MEMBER_VARIABLES_VALUE);
+static AUTOMATIONEXECUTION_MEMBER_TARGETS_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#AutomationExecution$TargetsSummary",
+        "com.amazonaws.ssm",
+        "AutomationExecution",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "TargetsSummary",
+    36,
+);
 static AUTOMATIONEXECUTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#AutomationExecution", "com.amazonaws.ssm", "AutomationExecution"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -556,6 +566,7 @@ static AUTOMATIONEXECUTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_
         &AUTOMATIONEXECUTION_MEMBER_ASSOCIATION_ID,
         &AUTOMATIONEXECUTION_MEMBER_CHANGE_REQUEST_NAME,
         &AUTOMATIONEXECUTION_MEMBER_VARIABLES,
+        &AUTOMATIONEXECUTION_MEMBER_TARGETS_SUMMARY,
     ],
 );
 impl crate::types::AutomationExecution {
@@ -800,6 +811,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Automation
                     Ok(())
                 },
             )?;
+        }
+        if let Some(ref val) = self.targets_summary {
+            ser.write_struct(&AUTOMATIONEXECUTION_MEMBER_TARGETS_SUMMARY, val)?;
         }
         Ok(())
     }
@@ -1163,6 +1177,13 @@ impl crate::types::builders::AutomationExecutionBuilder {
                             })?;
                             container
                         });
+                    }
+                }
+                Some(36) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.targets_summary = Some(crate::types::TargetsSummary::deserialize(deser)?);
                     }
                 }
                 _ => {}

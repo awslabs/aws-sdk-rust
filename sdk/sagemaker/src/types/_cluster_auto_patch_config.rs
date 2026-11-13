@@ -10,12 +10,18 @@ pub struct ClusterAutoPatchConfig {
     /// <p><code>WhenIdle</code>: Cordons all instances and patches each instance as it becomes idle (no running jobs). Each instance is uncordoned immediately after patching and becomes available for new jobs. If instances do not become idle, they remain on the previous AMI version. You can then use UpdateClusterSoftware with the desired ImageReleaseVersion to manually update the remaining instances.</p></li>
     /// <li>
     /// <p><code>WhenAllIdle</code>: Cordons all instances and waits for all to become idle before patching. All instances are uncordoned after patching completes. If not all instances become idle, no patching occurs and all instances remain on the previous AMI version.</p></li>
+    /// <li>
+    /// <p><code>DrainFirst</code>: Designed for workloads that never become idle, such as inference. Cordons instances, evicts the running pods, and then patches each instance in batches. Each instance is uncordoned after patching. Use <code>DrainPolicy</code> to control how long to wait for pods to drain and what happens if the drain times out. Requires <code>MaximumBatchSize</code> in <code>DeploymentConfig</code>. Available only for clusters that use Amazon EKS as the orchestrator.</p></li>
     /// </ul>
     pub patching_strategy: crate::types::ClusterPatchingStrategy,
     /// <p>The schedule for automatic patching, including the next patch date.</p>
     pub patch_schedule: ::std::option::Option<crate::types::ClusterPatchSchedule>,
     /// <p>The deployment configuration for rolling patch updates, including rollback settings and batch sizes. Only applicable when using a rolling patching strategy.</p>
     pub deployment_config: ::std::option::Option<crate::types::DeploymentConfiguration>,
+    /// <p>The maximum time, in seconds, that automatic patching waits for instances to become idle after a scheduled patch starts. Automatic patching uncordons instances that don't become idle within this window, and they remain on the previous AMI version. Valid values are from 3600 (1 hour) to 2160000 (25 days). The default is 86400 (24 hours). This setting applies only to the <code>WhenIdle</code> and <code>WhenAllIdle</code> strategies.</p>
+    pub idle_wait_window_in_seconds: ::std::option::Option<i32>,
+    /// <p>The policy that controls how pods are evicted from an instance before it is patched. Valid only when <code>PatchingStrategy</code> is <code>DrainFirst</code>.</p>
+    pub drain_policy: ::std::option::Option<crate::types::ClusterDrainPolicy>,
 }
 impl ClusterAutoPatchConfig {
     /// <p>The strategy for applying patches to instances in the group.</p>
@@ -24,6 +30,8 @@ impl ClusterAutoPatchConfig {
     /// <p><code>WhenIdle</code>: Cordons all instances and patches each instance as it becomes idle (no running jobs). Each instance is uncordoned immediately after patching and becomes available for new jobs. If instances do not become idle, they remain on the previous AMI version. You can then use UpdateClusterSoftware with the desired ImageReleaseVersion to manually update the remaining instances.</p></li>
     /// <li>
     /// <p><code>WhenAllIdle</code>: Cordons all instances and waits for all to become idle before patching. All instances are uncordoned after patching completes. If not all instances become idle, no patching occurs and all instances remain on the previous AMI version.</p></li>
+    /// <li>
+    /// <p><code>DrainFirst</code>: Designed for workloads that never become idle, such as inference. Cordons instances, evicts the running pods, and then patches each instance in batches. Each instance is uncordoned after patching. Use <code>DrainPolicy</code> to control how long to wait for pods to drain and what happens if the drain times out. Requires <code>MaximumBatchSize</code> in <code>DeploymentConfig</code>. Available only for clusters that use Amazon EKS as the orchestrator.</p></li>
     /// </ul>
     pub fn patching_strategy(&self) -> &crate::types::ClusterPatchingStrategy {
         &self.patching_strategy
@@ -35,6 +43,14 @@ impl ClusterAutoPatchConfig {
     /// <p>The deployment configuration for rolling patch updates, including rollback settings and batch sizes. Only applicable when using a rolling patching strategy.</p>
     pub fn deployment_config(&self) -> ::std::option::Option<&crate::types::DeploymentConfiguration> {
         self.deployment_config.as_ref()
+    }
+    /// <p>The maximum time, in seconds, that automatic patching waits for instances to become idle after a scheduled patch starts. Automatic patching uncordons instances that don't become idle within this window, and they remain on the previous AMI version. Valid values are from 3600 (1 hour) to 2160000 (25 days). The default is 86400 (24 hours). This setting applies only to the <code>WhenIdle</code> and <code>WhenAllIdle</code> strategies.</p>
+    pub fn idle_wait_window_in_seconds(&self) -> ::std::option::Option<i32> {
+        self.idle_wait_window_in_seconds
+    }
+    /// <p>The policy that controls how pods are evicted from an instance before it is patched. Valid only when <code>PatchingStrategy</code> is <code>DrainFirst</code>.</p>
+    pub fn drain_policy(&self) -> ::std::option::Option<&crate::types::ClusterDrainPolicy> {
+        self.drain_policy.as_ref()
     }
 }
 impl ClusterAutoPatchConfig {
@@ -51,6 +67,8 @@ pub struct ClusterAutoPatchConfigBuilder {
     pub(crate) patching_strategy: ::std::option::Option<crate::types::ClusterPatchingStrategy>,
     pub(crate) patch_schedule: ::std::option::Option<crate::types::ClusterPatchSchedule>,
     pub(crate) deployment_config: ::std::option::Option<crate::types::DeploymentConfiguration>,
+    pub(crate) idle_wait_window_in_seconds: ::std::option::Option<i32>,
+    pub(crate) drain_policy: ::std::option::Option<crate::types::ClusterDrainPolicy>,
 }
 impl ClusterAutoPatchConfigBuilder {
     /// <p>The strategy for applying patches to instances in the group.</p>
@@ -59,6 +77,8 @@ impl ClusterAutoPatchConfigBuilder {
     /// <p><code>WhenIdle</code>: Cordons all instances and patches each instance as it becomes idle (no running jobs). Each instance is uncordoned immediately after patching and becomes available for new jobs. If instances do not become idle, they remain on the previous AMI version. You can then use UpdateClusterSoftware with the desired ImageReleaseVersion to manually update the remaining instances.</p></li>
     /// <li>
     /// <p><code>WhenAllIdle</code>: Cordons all instances and waits for all to become idle before patching. All instances are uncordoned after patching completes. If not all instances become idle, no patching occurs and all instances remain on the previous AMI version.</p></li>
+    /// <li>
+    /// <p><code>DrainFirst</code>: Designed for workloads that never become idle, such as inference. Cordons instances, evicts the running pods, and then patches each instance in batches. Each instance is uncordoned after patching. Use <code>DrainPolicy</code> to control how long to wait for pods to drain and what happens if the drain times out. Requires <code>MaximumBatchSize</code> in <code>DeploymentConfig</code>. Available only for clusters that use Amazon EKS as the orchestrator.</p></li>
     /// </ul>
     /// This field is required.
     pub fn patching_strategy(mut self, input: crate::types::ClusterPatchingStrategy) -> Self {
@@ -71,6 +91,8 @@ impl ClusterAutoPatchConfigBuilder {
     /// <p><code>WhenIdle</code>: Cordons all instances and patches each instance as it becomes idle (no running jobs). Each instance is uncordoned immediately after patching and becomes available for new jobs. If instances do not become idle, they remain on the previous AMI version. You can then use UpdateClusterSoftware with the desired ImageReleaseVersion to manually update the remaining instances.</p></li>
     /// <li>
     /// <p><code>WhenAllIdle</code>: Cordons all instances and waits for all to become idle before patching. All instances are uncordoned after patching completes. If not all instances become idle, no patching occurs and all instances remain on the previous AMI version.</p></li>
+    /// <li>
+    /// <p><code>DrainFirst</code>: Designed for workloads that never become idle, such as inference. Cordons instances, evicts the running pods, and then patches each instance in batches. Each instance is uncordoned after patching. Use <code>DrainPolicy</code> to control how long to wait for pods to drain and what happens if the drain times out. Requires <code>MaximumBatchSize</code> in <code>DeploymentConfig</code>. Available only for clusters that use Amazon EKS as the orchestrator.</p></li>
     /// </ul>
     pub fn set_patching_strategy(mut self, input: ::std::option::Option<crate::types::ClusterPatchingStrategy>) -> Self {
         self.patching_strategy = input;
@@ -82,6 +104,8 @@ impl ClusterAutoPatchConfigBuilder {
     /// <p><code>WhenIdle</code>: Cordons all instances and patches each instance as it becomes idle (no running jobs). Each instance is uncordoned immediately after patching and becomes available for new jobs. If instances do not become idle, they remain on the previous AMI version. You can then use UpdateClusterSoftware with the desired ImageReleaseVersion to manually update the remaining instances.</p></li>
     /// <li>
     /// <p><code>WhenAllIdle</code>: Cordons all instances and waits for all to become idle before patching. All instances are uncordoned after patching completes. If not all instances become idle, no patching occurs and all instances remain on the previous AMI version.</p></li>
+    /// <li>
+    /// <p><code>DrainFirst</code>: Designed for workloads that never become idle, such as inference. Cordons instances, evicts the running pods, and then patches each instance in batches. Each instance is uncordoned after patching. Use <code>DrainPolicy</code> to control how long to wait for pods to drain and what happens if the drain times out. Requires <code>MaximumBatchSize</code> in <code>DeploymentConfig</code>. Available only for clusters that use Amazon EKS as the orchestrator.</p></li>
     /// </ul>
     pub fn get_patching_strategy(&self) -> &::std::option::Option<crate::types::ClusterPatchingStrategy> {
         &self.patching_strategy
@@ -114,6 +138,34 @@ impl ClusterAutoPatchConfigBuilder {
     pub fn get_deployment_config(&self) -> &::std::option::Option<crate::types::DeploymentConfiguration> {
         &self.deployment_config
     }
+    /// <p>The maximum time, in seconds, that automatic patching waits for instances to become idle after a scheduled patch starts. Automatic patching uncordons instances that don't become idle within this window, and they remain on the previous AMI version. Valid values are from 3600 (1 hour) to 2160000 (25 days). The default is 86400 (24 hours). This setting applies only to the <code>WhenIdle</code> and <code>WhenAllIdle</code> strategies.</p>
+    pub fn idle_wait_window_in_seconds(mut self, input: i32) -> Self {
+        self.idle_wait_window_in_seconds = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum time, in seconds, that automatic patching waits for instances to become idle after a scheduled patch starts. Automatic patching uncordons instances that don't become idle within this window, and they remain on the previous AMI version. Valid values are from 3600 (1 hour) to 2160000 (25 days). The default is 86400 (24 hours). This setting applies only to the <code>WhenIdle</code> and <code>WhenAllIdle</code> strategies.</p>
+    pub fn set_idle_wait_window_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.idle_wait_window_in_seconds = input;
+        self
+    }
+    /// <p>The maximum time, in seconds, that automatic patching waits for instances to become idle after a scheduled patch starts. Automatic patching uncordons instances that don't become idle within this window, and they remain on the previous AMI version. Valid values are from 3600 (1 hour) to 2160000 (25 days). The default is 86400 (24 hours). This setting applies only to the <code>WhenIdle</code> and <code>WhenAllIdle</code> strategies.</p>
+    pub fn get_idle_wait_window_in_seconds(&self) -> &::std::option::Option<i32> {
+        &self.idle_wait_window_in_seconds
+    }
+    /// <p>The policy that controls how pods are evicted from an instance before it is patched. Valid only when <code>PatchingStrategy</code> is <code>DrainFirst</code>.</p>
+    pub fn drain_policy(mut self, input: crate::types::ClusterDrainPolicy) -> Self {
+        self.drain_policy = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The policy that controls how pods are evicted from an instance before it is patched. Valid only when <code>PatchingStrategy</code> is <code>DrainFirst</code>.</p>
+    pub fn set_drain_policy(mut self, input: ::std::option::Option<crate::types::ClusterDrainPolicy>) -> Self {
+        self.drain_policy = input;
+        self
+    }
+    /// <p>The policy that controls how pods are evicted from an instance before it is patched. Valid only when <code>PatchingStrategy</code> is <code>DrainFirst</code>.</p>
+    pub fn get_drain_policy(&self) -> &::std::option::Option<crate::types::ClusterDrainPolicy> {
+        &self.drain_policy
+    }
     /// Consumes the builder and constructs a [`ClusterAutoPatchConfig`](crate::types::ClusterAutoPatchConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`patching_strategy`](crate::types::builders::ClusterAutoPatchConfigBuilder::patching_strategy)
@@ -127,6 +179,8 @@ impl ClusterAutoPatchConfigBuilder {
             })?,
             patch_schedule: self.patch_schedule,
             deployment_config: self.deployment_config,
+            idle_wait_window_in_seconds: self.idle_wait_window_in_seconds,
+            drain_policy: self.drain_policy,
         })
     }
 }

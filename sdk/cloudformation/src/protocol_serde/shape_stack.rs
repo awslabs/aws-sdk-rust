@@ -349,6 +349,19 @@ pub fn de_stack(
                 builder = builder.set_last_operations(var_27);
             }
             ,
+            s if s.matches("AliasName") /* AliasName com.amazonaws.cloudformation#Stack$AliasName */ =>  {
+                let var_28 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_alias_name(var_28);
+            }
+            ,
             _ => {}
         }
     }

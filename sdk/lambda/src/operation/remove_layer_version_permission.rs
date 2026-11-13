@@ -388,6 +388,8 @@ pub enum RemoveLayerVersionPermissionError {
     /// <p><b>For all other API operations:</b> Call <code>GetFunction</code> or <code>GetAlias</code> to retrieve the latest RevisionId for your resource.</p></li>
     /// </ul>
     PreconditionFailedException(crate::types::error::PreconditionFailedException),
+    /// <p>The resource already exists, or another operation is in progress.</p>
+    ResourceConflictException(crate::types::error::ResourceConflictException),
     /// <p>The resource specified in the request does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The Lambda service encountered an internal error.</p>
@@ -429,6 +431,7 @@ impl RemoveLayerVersionPermissionError {
         match self {
             Self::InvalidParameterValueException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::PreconditionFailedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TooManyRequestsException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -442,6 +445,10 @@ impl RemoveLayerVersionPermissionError {
     /// Returns `true` if the error kind is `RemoveLayerVersionPermissionError::PreconditionFailedException`.
     pub fn is_precondition_failed_exception(&self) -> bool {
         matches!(self, Self::PreconditionFailedException(_))
+    }
+    /// Returns `true` if the error kind is `RemoveLayerVersionPermissionError::ResourceConflictException`.
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(self, Self::ResourceConflictException(_))
     }
     /// Returns `true` if the error kind is `RemoveLayerVersionPermissionError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
@@ -461,6 +468,7 @@ impl ::std::error::Error for RemoveLayerVersionPermissionError {
         match self {
             Self::InvalidParameterValueException(_inner) => ::std::option::Option::Some(_inner),
             Self::PreconditionFailedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::TooManyRequestsException(_inner) => ::std::option::Option::Some(_inner),
@@ -473,6 +481,7 @@ impl ::std::fmt::Display for RemoveLayerVersionPermissionError {
         match self {
             Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
             Self::PreconditionFailedException(_inner) => _inner.fmt(f),
+            Self::ResourceConflictException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceException(_inner) => _inner.fmt(f),
             Self::TooManyRequestsException(_inner) => _inner.fmt(f),
@@ -499,6 +508,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for RemoveLayerVe
         match self {
             Self::InvalidParameterValueException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PreconditionFailedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TooManyRequestsException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

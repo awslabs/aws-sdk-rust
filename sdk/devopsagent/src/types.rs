@@ -317,6 +317,8 @@ pub use crate::types::_slack_bidirectional_configuration::SlackBidirectionalConf
 
 pub use crate::types::_ms_teams_transmission_target::MsTeamsTransmissionTarget;
 
+pub use crate::types::_ms_teams_bidirectional_configuration::MsTeamsBidirectionalConfiguration;
+
 pub use crate::types::_network_access_configuration::NetworkAccessConfiguration;
 
 pub use crate::types::_dynatrace_o_auth_client_credentials_config::DynatraceOAuthClientCredentialsConfig;
@@ -542,6 +544,8 @@ mod _message;
 mod _monitor_account_type;
 
 mod _monthly_recurrence;
+
+mod _ms_teams_bidirectional_configuration;
 
 mod _ms_teams_channel;
 

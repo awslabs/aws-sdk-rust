@@ -75,6 +75,8 @@ pub use crate::types::_tenancy_config::TenancyConfigBuilder;
 
 pub use crate::types::_capacity_provider_config::CapacityProviderConfigBuilder;
 
+pub use crate::types::_function_runtime_config::FunctionRuntimeConfigBuilder;
+
 pub use crate::types::_vpc_config_response::VpcConfigResponseBuilder;
 
 pub use crate::types::_environment_response::EnvironmentResponseBuilder;

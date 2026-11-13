@@ -22,6 +22,8 @@ pub struct ClusterEventSummary {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The severity level of the event. Valid values are <code>Info</code>, <code>Warn</code>, and <code>Error</code>.</p>
     pub event_level: ::std::option::Option<crate::types::ClusterEventLevel>,
+    /// <p>The unique identifier (UUID) of the cluster operation that the event is associated with, such as a scaling operation. This field is not returned when the event is not associated with an operation.</p>
+    pub operation_id: ::std::option::Option<::std::string::String>,
 }
 impl ClusterEventSummary {
     /// <p>The unique identifier (UUID) of the event.</p>
@@ -60,6 +62,10 @@ impl ClusterEventSummary {
     pub fn event_level(&self) -> ::std::option::Option<&crate::types::ClusterEventLevel> {
         self.event_level.as_ref()
     }
+    /// <p>The unique identifier (UUID) of the cluster operation that the event is associated with, such as a scaling operation. This field is not returned when the event is not associated with an operation.</p>
+    pub fn operation_id(&self) -> ::std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
 }
 impl ClusterEventSummary {
     /// Creates a new builder-style object to manufacture [`ClusterEventSummary`](crate::types::ClusterEventSummary).
@@ -81,6 +87,7 @@ pub struct ClusterEventSummaryBuilder {
     pub(crate) event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) event_level: ::std::option::Option<crate::types::ClusterEventLevel>,
+    pub(crate) operation_id: ::std::option::Option<::std::string::String>,
 }
 impl ClusterEventSummaryBuilder {
     /// <p>The unique identifier (UUID) of the event.</p>
@@ -214,6 +221,20 @@ impl ClusterEventSummaryBuilder {
     pub fn get_event_level(&self) -> &::std::option::Option<crate::types::ClusterEventLevel> {
         &self.event_level
     }
+    /// <p>The unique identifier (UUID) of the cluster operation that the event is associated with, such as a scaling operation. This field is not returned when the event is not associated with an operation.</p>
+    pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.operation_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier (UUID) of the cluster operation that the event is associated with, such as a scaling operation. This field is not returned when the event is not associated with an operation.</p>
+    pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.operation_id = input;
+        self
+    }
+    /// <p>The unique identifier (UUID) of the cluster operation that the event is associated with, such as a scaling operation. This field is not returned when the event is not associated with an operation.</p>
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_id
+    }
     /// Consumes the builder and constructs a [`ClusterEventSummary`](crate::types::ClusterEventSummary).
     pub fn build(self) -> crate::types::ClusterEventSummary {
         crate::types::ClusterEventSummary {
@@ -226,6 +247,7 @@ impl ClusterEventSummaryBuilder {
             event_time: self.event_time,
             description: self.description,
             event_level: self.event_level,
+            operation_id: self.operation_id,
         }
     }
 }

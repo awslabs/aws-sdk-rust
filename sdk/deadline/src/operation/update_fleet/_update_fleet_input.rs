@@ -23,7 +23,7 @@ pub struct UpdateFleetInput {
     pub min_worker_count: ::std::option::Option<i32>,
     /// The maximum number of workers in the fleet. Deadline Cloud limits the number of workers to less than or equal to the fleet's maximum worker count. The service maintains eventual consistency for the worker count. If you make multiple rapid calls to <code>CreateWorker</code> before the field updates, you might exceed your fleet's maximum worker count. For example, if your <code>maxWorkerCount</code> is 10 and you currently have 9 workers, making two quick <code>CreateWorker</code> calls might successfully create 2 workers instead of 1, resulting in 11 total workers.
     pub max_worker_count: ::std::option::Option<i32>,
-    /// The fleet configuration to update.
+    /// The fleet configuration to update. The new configuration replaces the existing one, so include every setting you want to keep. Settings that you omit revert to their defaults.
     pub configuration: ::std::option::Option<crate::types::FleetConfiguration>,
     /// Provides a script that runs as a worker is starting up that you can use to provide additional configuration for workers in your fleet.
     pub host_configuration: ::std::option::Option<crate::types::HostConfiguration>,
@@ -65,7 +65,7 @@ impl UpdateFleetInput {
     pub fn max_worker_count(&self) -> ::std::option::Option<i32> {
         self.max_worker_count
     }
-    /// The fleet configuration to update.
+    /// The fleet configuration to update. The new configuration replaces the existing one, so include every setting you want to keep. Settings that you omit revert to their defaults.
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::FleetConfiguration> {
         self.configuration.as_ref()
     }
@@ -239,17 +239,17 @@ impl UpdateFleetInputBuilder {
     pub fn get_max_worker_count(&self) -> &::std::option::Option<i32> {
         &self.max_worker_count
     }
-    /// The fleet configuration to update.
+    /// The fleet configuration to update. The new configuration replaces the existing one, so include every setting you want to keep. Settings that you omit revert to their defaults.
     pub fn configuration(mut self, input: crate::types::FleetConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
     }
-    /// The fleet configuration to update.
+    /// The fleet configuration to update. The new configuration replaces the existing one, so include every setting you want to keep. Settings that you omit revert to their defaults.
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::FleetConfiguration>) -> Self {
         self.configuration = input;
         self
     }
-    /// The fleet configuration to update.
+    /// The fleet configuration to update. The new configuration replaces the existing one, so include every setting you want to keep. Settings that you omit revert to their defaults.
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::FleetConfiguration> {
         &self.configuration
     }

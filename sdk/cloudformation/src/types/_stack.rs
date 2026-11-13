@@ -74,6 +74,8 @@ pub struct Stack {
     pub detailed_status: ::std::option::Option<crate::types::DetailedStatus>,
     /// <p>Information about the most recent operations performed on this stack.</p>
     pub last_operations: ::std::option::Option<::std::vec::Vec<crate::types::OperationEntry>>,
+    /// <p>The alias assigned to the stack, if one has been set. An alias is an alternative name that can be used in place of the stack name in any CloudFormation API call that accepts the <code>StackName</code> parameter.</p>
+    pub alias_name: ::std::option::Option<::std::string::String>,
 }
 impl Stack {
     /// <p>Unique identifier of the stack.</p>
@@ -212,6 +214,10 @@ impl Stack {
     pub fn last_operations(&self) -> &[crate::types::OperationEntry] {
         self.last_operations.as_deref().unwrap_or_default()
     }
+    /// <p>The alias assigned to the stack, if one has been set. An alias is an alternative name that can be used in place of the stack name in any CloudFormation API call that accepts the <code>StackName</code> parameter.</p>
+    pub fn alias_name(&self) -> ::std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
 }
 impl Stack {
     /// Creates a new builder-style object to manufacture [`Stack`](crate::types::Stack).
@@ -251,6 +257,7 @@ pub struct StackBuilder {
     pub(crate) deletion_mode: ::std::option::Option<crate::types::DeletionMode>,
     pub(crate) detailed_status: ::std::option::Option<crate::types::DetailedStatus>,
     pub(crate) last_operations: ::std::option::Option<::std::vec::Vec<crate::types::OperationEntry>>,
+    pub(crate) alias_name: ::std::option::Option<::std::string::String>,
 }
 impl StackBuilder {
     /// <p>Unique identifier of the stack.</p>
@@ -718,6 +725,20 @@ impl StackBuilder {
     pub fn get_last_operations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OperationEntry>> {
         &self.last_operations
     }
+    /// <p>The alias assigned to the stack, if one has been set. An alias is an alternative name that can be used in place of the stack name in any CloudFormation API call that accepts the <code>StackName</code> parameter.</p>
+    pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alias_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The alias assigned to the stack, if one has been set. An alias is an alternative name that can be used in place of the stack name in any CloudFormation API call that accepts the <code>StackName</code> parameter.</p>
+    pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alias_name = input;
+        self
+    }
+    /// <p>The alias assigned to the stack, if one has been set. An alias is an alternative name that can be used in place of the stack name in any CloudFormation API call that accepts the <code>StackName</code> parameter.</p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_name
+    }
     /// Consumes the builder and constructs a [`Stack`](crate::types::Stack).
     pub fn build(self) -> crate::types::Stack {
         crate::types::Stack {
@@ -748,6 +769,7 @@ impl StackBuilder {
             deletion_mode: self.deletion_mode,
             detailed_status: self.detailed_status,
             last_operations: self.last_operations,
+            alias_name: self.alias_name,
         }
     }
 }

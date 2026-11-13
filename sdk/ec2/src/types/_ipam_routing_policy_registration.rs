@@ -16,7 +16,7 @@ pub struct IpamRoutingPolicyRegistration {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the most recent delta that modified this registration.</p>
     pub latest_delta_id: ::std::option::Option<::std::string::String>,
-    /// <p>The state of the routing policy registration. Valid values: <code>pending-activate</code> | <code>activate-failed</code> | <code>create-in-progress</code> | <code>create-complete</code> | <code>update-in-progress</code> | <code>update-complete</code> | <code>delete-in-progress</code> | <code>delete-complete</code>.</p>
+    /// <p>The state of the routing policy registration. Valid values: <code>pending-activate</code> | <code>activate-failed</code> | <code>create-in-progress</code> | <code>create-complete</code> | <code>update-in-progress</code> | <code>update-complete</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>disable-complete</code>.</p>
     pub state: ::std::option::Option<crate::types::IpamRoutingPolicyRegistrationState>,
 }
 impl IpamRoutingPolicyRegistration {
@@ -46,7 +46,7 @@ impl IpamRoutingPolicyRegistration {
     pub fn latest_delta_id(&self) -> ::std::option::Option<&str> {
         self.latest_delta_id.as_deref()
     }
-    /// <p>The state of the routing policy registration. Valid values: <code>pending-activate</code> | <code>activate-failed</code> | <code>create-in-progress</code> | <code>create-complete</code> | <code>update-in-progress</code> | <code>update-complete</code> | <code>delete-in-progress</code> | <code>delete-complete</code>.</p>
+    /// <p>The state of the routing policy registration. Valid values: <code>pending-activate</code> | <code>activate-failed</code> | <code>create-in-progress</code> | <code>create-complete</code> | <code>update-in-progress</code> | <code>update-complete</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>disable-complete</code>.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::IpamRoutingPolicyRegistrationState> {
         self.state.as_ref()
     }
@@ -161,17 +161,17 @@ impl IpamRoutingPolicyRegistrationBuilder {
     pub fn get_latest_delta_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_delta_id
     }
-    /// <p>The state of the routing policy registration. Valid values: <code>pending-activate</code> | <code>activate-failed</code> | <code>create-in-progress</code> | <code>create-complete</code> | <code>update-in-progress</code> | <code>update-complete</code> | <code>delete-in-progress</code> | <code>delete-complete</code>.</p>
+    /// <p>The state of the routing policy registration. Valid values: <code>pending-activate</code> | <code>activate-failed</code> | <code>create-in-progress</code> | <code>create-complete</code> | <code>update-in-progress</code> | <code>update-complete</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>disable-complete</code>.</p>
     pub fn state(mut self, input: crate::types::IpamRoutingPolicyRegistrationState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The state of the routing policy registration. Valid values: <code>pending-activate</code> | <code>activate-failed</code> | <code>create-in-progress</code> | <code>create-complete</code> | <code>update-in-progress</code> | <code>update-complete</code> | <code>delete-in-progress</code> | <code>delete-complete</code>.</p>
+    /// <p>The state of the routing policy registration. Valid values: <code>pending-activate</code> | <code>activate-failed</code> | <code>create-in-progress</code> | <code>create-complete</code> | <code>update-in-progress</code> | <code>update-complete</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>disable-complete</code>.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::IpamRoutingPolicyRegistrationState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The state of the routing policy registration. Valid values: <code>pending-activate</code> | <code>activate-failed</code> | <code>create-in-progress</code> | <code>create-complete</code> | <code>update-in-progress</code> | <code>update-complete</code> | <code>delete-in-progress</code> | <code>delete-complete</code>.</p>
+    /// <p>The state of the routing policy registration. Valid values: <code>pending-activate</code> | <code>activate-failed</code> | <code>create-in-progress</code> | <code>create-complete</code> | <code>update-in-progress</code> | <code>update-complete</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>disable-complete</code>.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::IpamRoutingPolicyRegistrationState> {
         &self.state
     }

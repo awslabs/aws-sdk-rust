@@ -14,6 +14,8 @@
 /// match validationfindingscopetype {
 ///     ValidationFindingScopeType::AzureSubscription => { /* ... */ },
 ///     ValidationFindingScopeType::AzureTenant => { /* ... */ },
+///     ValidationFindingScopeType::GcpOrganization => { /* ... */ },
+///     ValidationFindingScopeType::GcpProject => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +48,10 @@ pub enum ValidationFindingScopeType {
     AzureSubscription,
     #[allow(missing_docs)] // documentation missing in model
     AzureTenant,
+    #[allow(missing_docs)] // documentation missing in model
+    GcpOrganization,
+    #[allow(missing_docs)] // documentation missing in model
+    GcpProject,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +61,8 @@ impl ::std::convert::From<&str> for ValidationFindingScopeType {
         match s {
             "azure:subscription" => ValidationFindingScopeType::AzureSubscription,
             "azure:tenant" => ValidationFindingScopeType::AzureTenant,
+            "gcp:organization" => ValidationFindingScopeType::GcpOrganization,
+            "gcp:project" => ValidationFindingScopeType::GcpProject,
             other => ValidationFindingScopeType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +80,14 @@ impl ValidationFindingScopeType {
         match self {
             ValidationFindingScopeType::AzureSubscription => "azure:subscription",
             ValidationFindingScopeType::AzureTenant => "azure:tenant",
+            ValidationFindingScopeType::GcpOrganization => "gcp:organization",
+            ValidationFindingScopeType::GcpProject => "gcp:project",
             ValidationFindingScopeType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["azure:subscription", "azure:tenant"]
+        &["azure:subscription", "azure:tenant", "gcp:organization", "gcp:project"]
     }
 }
 impl ::std::convert::AsRef<str> for ValidationFindingScopeType {
@@ -102,6 +112,8 @@ impl ::std::fmt::Display for ValidationFindingScopeType {
         match self {
             ValidationFindingScopeType::AzureSubscription => write!(f, "azure:subscription"),
             ValidationFindingScopeType::AzureTenant => write!(f, "azure:tenant"),
+            ValidationFindingScopeType::GcpOrganization => write!(f, "gcp:organization"),
+            ValidationFindingScopeType::GcpProject => write!(f, "gcp:project"),
             ValidationFindingScopeType::Unknown(value) => write!(f, "{value}"),
         }
     }

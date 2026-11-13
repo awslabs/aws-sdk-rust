@@ -36,23 +36,35 @@ pub fn ser_target(
         crate::protocol_serde::shape_event_bridge_parameters::ser_event_bridge_parameters(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.kinesis_parameters {
+    if let Some(var_10) = &input.event_bridge_put_events_v2_parameters {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("KinesisParameters").start_object();
-        crate::protocol_serde::shape_kinesis_parameters::ser_kinesis_parameters(&mut object_11, var_10)?;
+        let mut object_11 = object.key("EventBridgePutEventsV2Parameters").start_object();
+        crate::protocol_serde::shape_event_bridge_put_events_v2_parameters::ser_event_bridge_put_events_v2_parameters(&mut object_11, var_10)?;
         object_11.finish();
     }
-    if let Some(var_12) = &input.sage_maker_pipeline_parameters {
+    if let Some(var_12) = &input.event_bridge_put_raw_events_parameters {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("SageMakerPipelineParameters").start_object();
-        crate::protocol_serde::shape_sage_maker_pipeline_parameters::ser_sage_maker_pipeline_parameters(&mut object_13, var_12)?;
+        let mut object_13 = object.key("EventBridgePutRawEventsParameters").start_object();
+        crate::protocol_serde::shape_event_bridge_put_raw_events_parameters::ser_event_bridge_put_raw_events_parameters(&mut object_13, var_12)?;
         object_13.finish();
     }
-    if let Some(var_14) = &input.sqs_parameters {
+    if let Some(var_14) = &input.kinesis_parameters {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("SqsParameters").start_object();
-        crate::protocol_serde::shape_sqs_parameters::ser_sqs_parameters(&mut object_15, var_14)?;
+        let mut object_15 = object.key("KinesisParameters").start_object();
+        crate::protocol_serde::shape_kinesis_parameters::ser_kinesis_parameters(&mut object_15, var_14)?;
         object_15.finish();
+    }
+    if let Some(var_16) = &input.sage_maker_pipeline_parameters {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("SageMakerPipelineParameters").start_object();
+        crate::protocol_serde::shape_sage_maker_pipeline_parameters::ser_sage_maker_pipeline_parameters(&mut object_17, var_16)?;
+        object_17.finish();
+    }
+    if let Some(var_18) = &input.sqs_parameters {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("SqsParameters").start_object();
+        crate::protocol_serde::shape_sqs_parameters::ser_sqs_parameters(&mut object_19, var_18)?;
+        object_19.finish();
     }
     Ok(())
 }
@@ -121,6 +133,24 @@ where
                         "EventBridgeParameters" => {
                             builder = builder.set_event_bridge_parameters(
                                 crate::protocol_serde::shape_event_bridge_parameters::de_event_bridge_parameters(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "EventBridgePutEventsV2Parameters" => {
+                            builder = builder.set_event_bridge_put_events_v2_parameters(
+                                crate::protocol_serde::shape_event_bridge_put_events_v2_parameters::de_event_bridge_put_events_v2_parameters(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "EventBridgePutRawEventsParameters" => {
+                            builder = builder.set_event_bridge_put_raw_events_parameters(
+                                crate::protocol_serde::shape_event_bridge_put_raw_events_parameters::de_event_bridge_put_raw_events_parameters(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "KinesisParameters" => {

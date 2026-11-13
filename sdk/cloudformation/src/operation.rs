@@ -229,8 +229,14 @@ pub mod register_publisher;
 /// Types for the `RegisterType` operation.
 pub mod register_type;
 
+/// Types for the `RemoveAlias` operation.
+pub mod remove_alias;
+
 /// Types for the `RollbackStack` operation.
 pub mod rollback_stack;
+
+/// Types for the `SetAlias` operation.
+pub mod set_alias;
 
 /// Types for the `SetStackPolicy` operation.
 pub mod set_stack_policy;

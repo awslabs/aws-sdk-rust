@@ -22,6 +22,13 @@ pub struct TrustAnchorDetail {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of notification settings to be associated to the trust anchor.</p>
     pub notification_settings: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingDetail>>,
+    /// <p>The alias of the trust anchor. Present only if the trust anchor has an alias.</p>
+    pub alias_name: ::std::option::Option<::std::string::String>,
+    /// <p>The alias ARN of the trust anchor, in the form <code>arn:<i>partition</i>:rolesanywhere:<i>region</i>:<i>account</i>:alias/trust-anchor/<i>alias-name</i> </code>. Present only if the trust anchor has an alias.</p>
+    /// <p>You can use the alias ARN in place of the resource ID or ARN in the request parameters whose descriptions say that they accept an alias ARN. Don't use the alias ARN in Identity and Access Management (IAM) policies. A policy statement that names an alias ARN doesn't apply to the resource that holds the alias. Write policies with the ARN that contains the resource ID instead.</p>
+    pub alias_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The alias that the resource had before the update request. IAM Roles Anywhere returns this value only in the response to an update request that changed or removed an existing alias. It isn't returned when the alias was unchanged, when the resource had no alias before the request, or by other operations.</p>
+    pub previous_alias_name: ::std::option::Option<::std::string::String>,
 }
 impl TrustAnchorDetail {
     /// <p>The unique identifier of the trust anchor.</p>
@@ -62,6 +69,19 @@ impl TrustAnchorDetail {
     pub fn notification_settings(&self) -> &[crate::types::NotificationSettingDetail] {
         self.notification_settings.as_deref().unwrap_or_default()
     }
+    /// <p>The alias of the trust anchor. Present only if the trust anchor has an alias.</p>
+    pub fn alias_name(&self) -> ::std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
+    /// <p>The alias ARN of the trust anchor, in the form <code>arn:<i>partition</i>:rolesanywhere:<i>region</i>:<i>account</i>:alias/trust-anchor/<i>alias-name</i> </code>. Present only if the trust anchor has an alias.</p>
+    /// <p>You can use the alias ARN in place of the resource ID or ARN in the request parameters whose descriptions say that they accept an alias ARN. Don't use the alias ARN in Identity and Access Management (IAM) policies. A policy statement that names an alias ARN doesn't apply to the resource that holds the alias. Write policies with the ARN that contains the resource ID instead.</p>
+    pub fn alias_arn(&self) -> ::std::option::Option<&str> {
+        self.alias_arn.as_deref()
+    }
+    /// <p>The alias that the resource had before the update request. IAM Roles Anywhere returns this value only in the response to an update request that changed or removed an existing alias. It isn't returned when the alias was unchanged, when the resource had no alias before the request, or by other operations.</p>
+    pub fn previous_alias_name(&self) -> ::std::option::Option<&str> {
+        self.previous_alias_name.as_deref()
+    }
 }
 impl TrustAnchorDetail {
     /// Creates a new builder-style object to manufacture [`TrustAnchorDetail`](crate::types::TrustAnchorDetail).
@@ -83,6 +103,9 @@ pub struct TrustAnchorDetailBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) notification_settings: ::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingDetail>>,
+    pub(crate) alias_name: ::std::option::Option<::std::string::String>,
+    pub(crate) alias_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) previous_alias_name: ::std::option::Option<::std::string::String>,
 }
 impl TrustAnchorDetailBuilder {
     /// <p>The unique identifier of the trust anchor.</p>
@@ -217,6 +240,51 @@ impl TrustAnchorDetailBuilder {
     pub fn get_notification_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NotificationSettingDetail>> {
         &self.notification_settings
     }
+    /// <p>The alias of the trust anchor. Present only if the trust anchor has an alias.</p>
+    pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alias_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The alias of the trust anchor. Present only if the trust anchor has an alias.</p>
+    pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alias_name = input;
+        self
+    }
+    /// <p>The alias of the trust anchor. Present only if the trust anchor has an alias.</p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_name
+    }
+    /// <p>The alias ARN of the trust anchor, in the form <code>arn:<i>partition</i>:rolesanywhere:<i>region</i>:<i>account</i>:alias/trust-anchor/<i>alias-name</i> </code>. Present only if the trust anchor has an alias.</p>
+    /// <p>You can use the alias ARN in place of the resource ID or ARN in the request parameters whose descriptions say that they accept an alias ARN. Don't use the alias ARN in Identity and Access Management (IAM) policies. A policy statement that names an alias ARN doesn't apply to the resource that holds the alias. Write policies with the ARN that contains the resource ID instead.</p>
+    pub fn alias_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alias_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The alias ARN of the trust anchor, in the form <code>arn:<i>partition</i>:rolesanywhere:<i>region</i>:<i>account</i>:alias/trust-anchor/<i>alias-name</i> </code>. Present only if the trust anchor has an alias.</p>
+    /// <p>You can use the alias ARN in place of the resource ID or ARN in the request parameters whose descriptions say that they accept an alias ARN. Don't use the alias ARN in Identity and Access Management (IAM) policies. A policy statement that names an alias ARN doesn't apply to the resource that holds the alias. Write policies with the ARN that contains the resource ID instead.</p>
+    pub fn set_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alias_arn = input;
+        self
+    }
+    /// <p>The alias ARN of the trust anchor, in the form <code>arn:<i>partition</i>:rolesanywhere:<i>region</i>:<i>account</i>:alias/trust-anchor/<i>alias-name</i> </code>. Present only if the trust anchor has an alias.</p>
+    /// <p>You can use the alias ARN in place of the resource ID or ARN in the request parameters whose descriptions say that they accept an alias ARN. Don't use the alias ARN in Identity and Access Management (IAM) policies. A policy statement that names an alias ARN doesn't apply to the resource that holds the alias. Write policies with the ARN that contains the resource ID instead.</p>
+    pub fn get_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_arn
+    }
+    /// <p>The alias that the resource had before the update request. IAM Roles Anywhere returns this value only in the response to an update request that changed or removed an existing alias. It isn't returned when the alias was unchanged, when the resource had no alias before the request, or by other operations.</p>
+    pub fn previous_alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.previous_alias_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The alias that the resource had before the update request. IAM Roles Anywhere returns this value only in the response to an update request that changed or removed an existing alias. It isn't returned when the alias was unchanged, when the resource had no alias before the request, or by other operations.</p>
+    pub fn set_previous_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.previous_alias_name = input;
+        self
+    }
+    /// <p>The alias that the resource had before the update request. IAM Roles Anywhere returns this value only in the response to an update request that changed or removed an existing alias. It isn't returned when the alias was unchanged, when the resource had no alias before the request, or by other operations.</p>
+    pub fn get_previous_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.previous_alias_name
+    }
     /// Consumes the builder and constructs a [`TrustAnchorDetail`](crate::types::TrustAnchorDetail).
     pub fn build(self) -> crate::types::TrustAnchorDetail {
         crate::types::TrustAnchorDetail {
@@ -229,6 +297,9 @@ impl TrustAnchorDetailBuilder {
             created_at: self.created_at,
             updated_at: self.updated_at,
             notification_settings: self.notification_settings,
+            alias_name: self.alias_name,
+            alias_arn: self.alias_arn,
+            previous_alias_name: self.previous_alias_name,
         }
     }
 }

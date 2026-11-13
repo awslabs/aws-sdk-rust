@@ -8,7 +8,7 @@ pub struct EcsParameters {
     pub task_definition_arn: ::std::string::String,
     /// <p>The number of tasks to create based on <code>TaskDefinition</code>. The default is <code>1</code>.</p>
     pub task_count: ::std::option::Option<i32>,
-    /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">AWS Fargate on Amazon ECS</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">Amazon Web Services Fargate on Amazon ECS</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub launch_type: ::std::option::Option<crate::types::LaunchType>,
     /// <p>This structure specifies the network configuration for an ECS task.</p>
     pub network_configuration: ::std::option::Option<crate::types::NetworkConfiguration>,
@@ -43,7 +43,7 @@ impl EcsParameters {
     pub fn task_count(&self) -> ::std::option::Option<i32> {
         self.task_count
     }
-    /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">AWS Fargate on Amazon ECS</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">Amazon Web Services Fargate on Amazon ECS</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub fn launch_type(&self) -> ::std::option::Option<&crate::types::LaunchType> {
         self.launch_type.as_ref()
     }
@@ -156,17 +156,17 @@ impl EcsParametersBuilder {
     pub fn get_task_count(&self) -> &::std::option::Option<i32> {
         &self.task_count
     }
-    /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">AWS Fargate on Amazon ECS</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">Amazon Web Services Fargate on Amazon ECS</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub fn launch_type(mut self, input: crate::types::LaunchType) -> Self {
         self.launch_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">AWS Fargate on Amazon ECS</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">Amazon Web Services Fargate on Amazon ECS</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub fn set_launch_type(mut self, input: ::std::option::Option<crate::types::LaunchType>) -> Self {
         self.launch_type = input;
         self
     }
-    /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">AWS Fargate on Amazon ECS</a> in the <i>Amazon ECS Developer Guide</i>.</p>
+    /// <p>Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The <code>FARGATE</code> value is supported only in the Regions where Fargate with Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">Amazon Web Services Fargate on Amazon ECS</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     pub fn get_launch_type(&self) -> &::std::option::Option<crate::types::LaunchType> {
         &self.launch_type
     }

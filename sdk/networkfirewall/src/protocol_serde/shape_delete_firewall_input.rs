@@ -10,6 +10,9 @@ pub fn ser_delete_firewall_input_input(
     if let Some(var_2) = &input.firewall_arn {
         encoder.str("FirewallArn").str(var_2.as_str());
     }
+    if let Some(var_3) = &input.delete_associated_nat_gateways {
+        encoder.str("DeleteAssociatedNatGateways").boolean(*var_3);
+    }
     encoder.end();
     Ok(())
 }

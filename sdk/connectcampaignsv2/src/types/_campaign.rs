@@ -28,6 +28,8 @@ pub struct Campaign {
     pub communication_time_config: ::std::option::Option<crate::types::CommunicationTimeConfig>,
     /// Communication limits config
     pub communication_limits_override: ::std::option::Option<crate::types::CommunicationLimitsConfig>,
+    /// The timestamp of the most recent modification to the campaign or its configuration. Null for campaigns created before this field was introduced.
+    pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// Tag map with key and value.
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -84,6 +86,10 @@ impl Campaign {
     pub fn communication_limits_override(&self) -> ::std::option::Option<&crate::types::CommunicationLimitsConfig> {
         self.communication_limits_override.as_ref()
     }
+    /// The timestamp of the most recent modification to the campaign or its configuration. Null for campaigns created before this field was introduced.
+    pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.last_modified_time.as_ref()
+    }
     /// Tag map with key and value.
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -112,6 +118,7 @@ pub struct CampaignBuilder {
     pub(crate) entry_limits_config: ::std::option::Option<crate::types::EntryLimitsConfig>,
     pub(crate) communication_time_config: ::std::option::Option<crate::types::CommunicationTimeConfig>,
     pub(crate) communication_limits_override: ::std::option::Option<crate::types::CommunicationLimitsConfig>,
+    pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CampaignBuilder {
@@ -287,6 +294,20 @@ impl CampaignBuilder {
     pub fn get_communication_limits_override(&self) -> &::std::option::Option<crate::types::CommunicationLimitsConfig> {
         &self.communication_limits_override
     }
+    /// The timestamp of the most recent modification to the campaign or its configuration. Null for campaigns created before this field was introduced.
+    pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_modified_time = ::std::option::Option::Some(input);
+        self
+    }
+    /// The timestamp of the most recent modification to the campaign or its configuration. Null for campaigns created before this field was introduced.
+    pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.last_modified_time = input;
+        self
+    }
+    /// The timestamp of the most recent modification to the campaign or its configuration. Null for campaigns created before this field was introduced.
+    pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.last_modified_time
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -347,6 +368,7 @@ impl CampaignBuilder {
             entry_limits_config: self.entry_limits_config,
             communication_time_config: self.communication_time_config,
             communication_limits_override: self.communication_limits_override,
+            last_modified_time: self.last_modified_time,
             tags: self.tags,
         })
     }

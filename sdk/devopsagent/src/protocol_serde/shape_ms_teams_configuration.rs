@@ -15,6 +15,12 @@ pub fn ser_ms_teams_configuration(
         crate::protocol_serde::shape_ms_teams_transmission_target::ser_ms_teams_transmission_target(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.bidirectional {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("bidirectional").start_object();
+        crate::protocol_serde::shape_ms_teams_bidirectional_configuration::ser_ms_teams_bidirectional_configuration(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -57,6 +63,15 @@ where
                         "transmissionTarget" => {
                             builder = builder.set_transmission_target(
                                 crate::protocol_serde::shape_ms_teams_transmission_target::de_ms_teams_transmission_target(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "bidirectional" => {
+                            builder = builder.set_bidirectional(
+                                crate::protocol_serde::shape_ms_teams_bidirectional_configuration::de_ms_teams_bidirectional_configuration(
                                     tokens,
                                     _value,
                                     depth + 1,

@@ -29,6 +29,26 @@ static CLUSTERAUTOPATCHCONFIG_MEMBER_DEPLOYMENT_CONFIG: ::aws_smithy_schema::Sch
     "DeploymentConfig",
     2,
 );
+static CLUSTERAUTOPATCHCONFIG_MEMBER_IDLE_WAIT_WINDOW_IN_SECONDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterAutoPatchConfig$IdleWaitWindowInSeconds",
+        "com.amazonaws.sagemaker",
+        "ClusterAutoPatchConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "IdleWaitWindowInSeconds",
+    3,
+);
+static CLUSTERAUTOPATCHCONFIG_MEMBER_DRAIN_POLICY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterAutoPatchConfig$DrainPolicy",
+        "com.amazonaws.sagemaker",
+        "ClusterAutoPatchConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DrainPolicy",
+    4,
+);
 static CLUSTERAUTOPATCHCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.sagemaker#ClusterAutoPatchConfig",
@@ -40,6 +60,8 @@ static CLUSTERAUTOPATCHCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::a
         &CLUSTERAUTOPATCHCONFIG_MEMBER_PATCHING_STRATEGY,
         &CLUSTERAUTOPATCHCONFIG_MEMBER_PATCH_SCHEDULE,
         &CLUSTERAUTOPATCHCONFIG_MEMBER_DEPLOYMENT_CONFIG,
+        &CLUSTERAUTOPATCHCONFIG_MEMBER_IDLE_WAIT_WINDOW_IN_SECONDS,
+        &CLUSTERAUTOPATCHCONFIG_MEMBER_DRAIN_POLICY,
     ],
 );
 impl crate::types::ClusterAutoPatchConfig {
@@ -65,6 +87,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::ClusterAut
         }
         if let Some(ref val) = self.deployment_config {
             ser.write_struct(&CLUSTERAUTOPATCHCONFIG_MEMBER_DEPLOYMENT_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.idle_wait_window_in_seconds {
+            ser.write_integer(&CLUSTERAUTOPATCHCONFIG_MEMBER_IDLE_WAIT_WINDOW_IN_SECONDS, *val)?;
+        }
+        if let Some(ref val) = self.drain_policy {
+            ser.write_struct(&CLUSTERAUTOPATCHCONFIG_MEMBER_DRAIN_POLICY, val)?;
         }
         Ok(())
     }
@@ -98,6 +126,20 @@ impl crate::types::builders::ClusterAutoPatchConfigBuilder {
                         deser.read_null()?;
                     } else {
                         self.deployment_config = Some(crate::types::DeploymentConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.idle_wait_window_in_seconds = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.drain_policy = Some(crate::types::ClusterDrainPolicy::deserialize(deser)?);
                     }
                 }
                 _ => {}

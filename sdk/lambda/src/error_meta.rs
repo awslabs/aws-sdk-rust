@@ -95,6 +95,10 @@ pub enum Error {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The function is inactive and its VPC connection is no longer available. Wait for the VPC connection to reestablish and try again.</p>
     ResourceNotReadyException(crate::types::error::ResourceNotReadyException),
+    /// <p>The runtime alias for your function is no longer available. Update your function to use an available runtime alias.</p>
+    RuntimeAliasDeletedException(crate::types::error::RuntimeAliasDeletedException),
+    /// <p>The runtime version used by your function is no longer available. Update your function to use an available runtime version or runtime alias.</p>
+    RuntimeVersionDeletedException(crate::types::error::RuntimeVersionDeletedException),
     /// <p>The Lambda function couldn't make a network connection to the configured S3 Files access point.</p>
     S3FilesMountConnectivityException(crate::types::error::S3FilesMountConnectivityException),
     /// <p>The Lambda function couldn't mount the configured S3 Files access point due to a permission or configuration issue.</p>
@@ -176,6 +180,8 @@ impl ::std::fmt::Display for Error {
             Error::ResourceInUseException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ResourceNotReadyException(inner) => inner.fmt(f),
+            Error::RuntimeAliasDeletedException(inner) => inner.fmt(f),
+            Error::RuntimeVersionDeletedException(inner) => inner.fmt(f),
             Error::S3FilesMountConnectivityException(inner) => inner.fmt(f),
             Error::S3FilesMountFailureException(inner) => inner.fmt(f),
             Error::S3FilesMountTimeoutException(inner) => inner.fmt(f),
@@ -253,6 +259,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ResourceInUseException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ResourceNotReadyException(inner) => inner.meta(),
+            Self::RuntimeAliasDeletedException(inner) => inner.meta(),
+            Self::RuntimeVersionDeletedException(inner) => inner.meta(),
             Self::S3FilesMountConnectivityException(inner) => inner.meta(),
             Self::S3FilesMountFailureException(inner) => inner.meta(),
             Self::S3FilesMountTimeoutException(inner) => inner.meta(),
@@ -1868,6 +1876,8 @@ impl From<crate::operation::invoke::InvokeError> for Error {
             crate::operation::invoke::InvokeError::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
             crate::operation::invoke::InvokeError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::invoke::InvokeError::ResourceNotReadyException(inner) => Error::ResourceNotReadyException(inner),
+            crate::operation::invoke::InvokeError::RuntimeAliasDeletedException(inner) => Error::RuntimeAliasDeletedException(inner),
+            crate::operation::invoke::InvokeError::RuntimeVersionDeletedException(inner) => Error::RuntimeVersionDeletedException(inner),
             crate::operation::invoke::InvokeError::S3FilesMountConnectivityException(inner) => Error::S3FilesMountConnectivityException(inner),
             crate::operation::invoke::InvokeError::S3FilesMountFailureException(inner) => Error::S3FilesMountFailureException(inner),
             crate::operation::invoke::InvokeError::S3FilesMountTimeoutException(inner) => Error::S3FilesMountTimeoutException(inner),
@@ -2043,6 +2053,12 @@ impl From<crate::operation::invoke_with_response_stream::InvokeWithResponseStrea
             }
             crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::ResourceNotReadyException(inner) => {
                 Error::ResourceNotReadyException(inner)
+            }
+            crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::RuntimeAliasDeletedException(inner) => {
+                Error::RuntimeAliasDeletedException(inner)
+            }
+            crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::RuntimeVersionDeletedException(inner) => {
+                Error::RuntimeVersionDeletedException(inner)
             }
             crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::S3FilesMountConnectivityException(inner) => {
                 Error::S3FilesMountConnectivityException(inner)
@@ -3010,6 +3026,9 @@ impl From<crate::operation::remove_layer_version_permission::RemoveLayerVersionP
             crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::PreconditionFailedException(inner) => {
                 Error::PreconditionFailedException(inner)
             }
+            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
             crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
@@ -3703,6 +3722,8 @@ impl ::std::error::Error for Error {
             Error::ResourceInUseException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ResourceNotReadyException(inner) => inner.source(),
+            Error::RuntimeAliasDeletedException(inner) => inner.source(),
+            Error::RuntimeVersionDeletedException(inner) => inner.source(),
             Error::S3FilesMountConnectivityException(inner) => inner.source(),
             Error::S3FilesMountFailureException(inner) => inner.source(),
             Error::S3FilesMountTimeoutException(inner) => inner.source(),
@@ -3766,6 +3787,8 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ResourceInUseException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ResourceNotReadyException(e) => e.request_id(),
+            Self::RuntimeAliasDeletedException(e) => e.request_id(),
+            Self::RuntimeVersionDeletedException(e) => e.request_id(),
             Self::S3FilesMountConnectivityException(e) => e.request_id(),
             Self::S3FilesMountFailureException(e) => e.request_id(),
             Self::S3FilesMountTimeoutException(e) => e.request_id(),

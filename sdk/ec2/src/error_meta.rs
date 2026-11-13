@@ -823,6 +823,40 @@ impl From<crate::operation::associate_nat_gateway_address::AssociateNatGatewayAd
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_networking_flex_cost_allocation_policy::AssociateNetworkingFlexCostAllocationPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::associate_networking_flex_cost_allocation_policy::AssociateNetworkingFlexCostAllocationPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_networking_flex_cost_allocation_policy::AssociateNetworkingFlexCostAllocationPolicyError> for Error {
+    fn from(err: crate::operation::associate_networking_flex_cost_allocation_policy::AssociateNetworkingFlexCostAllocationPolicyError) -> Self {
+        match err {
+            crate::operation::associate_networking_flex_cost_allocation_policy::AssociateNetworkingFlexCostAllocationPolicyError::Unhandled(
+                inner,
+            ) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_route_server::AssociateRouteServerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3136,6 +3170,40 @@ impl From<crate::operation::create_network_acl_entry::CreateNetworkAclEntryError
     fn from(err: crate::operation::create_network_acl_entry::CreateNetworkAclEntryError) -> Self {
         match err {
             crate::operation::create_network_acl_entry::CreateNetworkAclEntryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_networking_flex_cost_allocation_policy::CreateNetworkingFlexCostAllocationPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_networking_flex_cost_allocation_policy::CreateNetworkingFlexCostAllocationPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_networking_flex_cost_allocation_policy::CreateNetworkingFlexCostAllocationPolicyError> for Error {
+    fn from(err: crate::operation::create_networking_flex_cost_allocation_policy::CreateNetworkingFlexCostAllocationPolicyError) -> Self {
+        match err {
+            crate::operation::create_networking_flex_cost_allocation_policy::CreateNetworkingFlexCostAllocationPolicyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -5755,6 +5823,40 @@ impl From<crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryError
     fn from(err: crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryError) -> Self {
         match err {
             crate::operation::delete_network_acl_entry::DeleteNetworkAclEntryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_networking_flex_cost_allocation_policies::DeleteNetworkingFlexCostAllocationPoliciesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_networking_flex_cost_allocation_policies::DeleteNetworkingFlexCostAllocationPoliciesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_networking_flex_cost_allocation_policies::DeleteNetworkingFlexCostAllocationPoliciesError> for Error {
+    fn from(err: crate::operation::delete_networking_flex_cost_allocation_policies::DeleteNetworkingFlexCostAllocationPoliciesError) -> Self {
+        match err {
+            crate::operation::delete_networking_flex_cost_allocation_policies::DeleteNetworkingFlexCostAllocationPoliciesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -10367,6 +10469,64 @@ impl From<crate::operation::describe_network_acls::DescribeNetworkAclsError> for
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_networking_flex_cost_allocation_policies::DescribeNetworkingFlexCostAllocationPoliciesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_networking_flex_cost_allocation_policies::DescribeNetworkingFlexCostAllocationPoliciesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_networking_flex_cost_allocation_policies::DescribeNetworkingFlexCostAllocationPoliciesError> for Error {
+    fn from(err: crate::operation::describe_networking_flex_cost_allocation_policies::DescribeNetworkingFlexCostAllocationPoliciesError) -> Self {
+        match err {
+            crate::operation::describe_networking_flex_cost_allocation_policies::DescribeNetworkingFlexCostAllocationPoliciesError::Unhandled(
+                inner,
+            ) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_networking_flex_cost_allocation_policy_associations::DescribeNetworkingFlexCostAllocationPolicyAssociationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_networking_flex_cost_allocation_policy_associations::DescribeNetworkingFlexCostAllocationPolicyAssociationsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(
+                                        crate::error::sealed_unhandled::Unhandled {
+                                            meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                                            source: err.into(),
+                                        }
+                                    ),
+        }
+    }
+}
+impl From<crate::operation::describe_networking_flex_cost_allocation_policy_associations::DescribeNetworkingFlexCostAllocationPolicyAssociationsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::describe_networking_flex_cost_allocation_policy_associations::DescribeNetworkingFlexCostAllocationPolicyAssociationsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_networking_flex_cost_allocation_policy_associations::DescribeNetworkingFlexCostAllocationPolicyAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_network_insights_access_scope_analyses::DescribeNetworkInsightsAccessScopeAnalysesError,
             R,
         >,
@@ -13951,6 +14111,40 @@ impl From<crate::operation::disassociate_nat_gateway_address::DisassociateNatGat
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_networking_flex_cost_allocation_policy::DisassociateNetworkingFlexCostAllocationPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_networking_flex_cost_allocation_policy::DisassociateNetworkingFlexCostAllocationPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_networking_flex_cost_allocation_policy::DisassociateNetworkingFlexCostAllocationPolicyError> for Error {
+    fn from(err: crate::operation::disassociate_networking_flex_cost_allocation_policy::DisassociateNetworkingFlexCostAllocationPolicyError) -> Self {
+        match err {
+            crate::operation::disassociate_networking_flex_cost_allocation_policy::DisassociateNetworkingFlexCostAllocationPolicyError::Unhandled(
+                inner,
+            ) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_route_server::DisassociateRouteServerError, R>>
     for Error
 where
@@ -16559,6 +16753,40 @@ impl From<crate::operation::get_managed_resource_visibility::GetManagedResourceV
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_networking_flex_cost_allocation_policy_versions::GetNetworkingFlexCostAllocationPolicyVersionsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_networking_flex_cost_allocation_policy_versions::GetNetworkingFlexCostAllocationPolicyVersionsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_networking_flex_cost_allocation_policy_versions::GetNetworkingFlexCostAllocationPolicyVersionsError> for Error {
+    fn from(err: crate::operation::get_networking_flex_cost_allocation_policy_versions::GetNetworkingFlexCostAllocationPolicyVersionsError) -> Self {
+        match err {
+            crate::operation::get_networking_flex_cost_allocation_policy_versions::GetNetworkingFlexCostAllocationPolicyVersionsError::Unhandled(
+                inner,
+            ) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsError,
             R,
         >,
@@ -18802,6 +19030,40 @@ impl From<crate::operation::modify_metric_category::ModifyMetricCategoryError> f
     fn from(err: crate::operation::modify_metric_category::ModifyMetricCategoryError) -> Self {
         match err {
             crate::operation::modify_metric_category::ModifyMetricCategoryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_networking_flex_cost_allocation_policy::ModifyNetworkingFlexCostAllocationPolicyError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_networking_flex_cost_allocation_policy::ModifyNetworkingFlexCostAllocationPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_networking_flex_cost_allocation_policy::ModifyNetworkingFlexCostAllocationPolicyError> for Error {
+    fn from(err: crate::operation::modify_networking_flex_cost_allocation_policy::ModifyNetworkingFlexCostAllocationPolicyError) -> Self {
+        match err {
+            crate::operation::modify_networking_flex_cost_allocation_policy::ModifyNetworkingFlexCostAllocationPolicyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }

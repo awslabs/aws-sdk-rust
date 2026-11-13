@@ -31,7 +31,7 @@ pub struct CreateImagePipelineInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The settings that determine whether and how Amazon Inspector scans the images that this pipeline creates.</p>
     pub image_scanning_configuration: ::std::option::Option<crate::types::ImageScanningConfiguration>,
-    /// <p>The array of workflow configuration objects for builds that this pipeline starts. You must also specify <code>executionRole</code> when you provide workflows.</p>
+    /// <p>The array of workflow configuration objects for builds that this pipeline starts. If you specify workflows, they replace the default workflows that Image Builder otherwise runs for the pipeline's builds. For example, if your list doesn't include a test workflow, the pipeline's builds don't run one. You must also specify <code>executionRole</code> when you provide workflows.</p>
     pub workflows: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>,
     /// <p>The name or Amazon Resource Name (ARN) for the IAM role you create that grants Image Builder access to perform workflow actions.</p>
     pub execution_role: ::std::option::Option<::std::string::String>,
@@ -97,7 +97,7 @@ impl CreateImagePipelineInput {
     pub fn image_scanning_configuration(&self) -> ::std::option::Option<&crate::types::ImageScanningConfiguration> {
         self.image_scanning_configuration.as_ref()
     }
-    /// <p>The array of workflow configuration objects for builds that this pipeline starts. You must also specify <code>executionRole</code> when you provide workflows.</p>
+    /// <p>The array of workflow configuration objects for builds that this pipeline starts. If you specify workflows, they replace the default workflows that Image Builder otherwise runs for the pipeline's builds. For example, if your list doesn't include a test workflow, the pipeline's builds don't run one. You must also specify <code>executionRole</code> when you provide workflows.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.workflows.is_none()`.
     pub fn workflows(&self) -> &[crate::types::WorkflowConfiguration] {
@@ -362,19 +362,19 @@ impl CreateImagePipelineInputBuilder {
     ///
     /// To override the contents of this collection use [`set_workflows`](Self::set_workflows).
     ///
-    /// <p>The array of workflow configuration objects for builds that this pipeline starts. You must also specify <code>executionRole</code> when you provide workflows.</p>
+    /// <p>The array of workflow configuration objects for builds that this pipeline starts. If you specify workflows, they replace the default workflows that Image Builder otherwise runs for the pipeline's builds. For example, if your list doesn't include a test workflow, the pipeline's builds don't run one. You must also specify <code>executionRole</code> when you provide workflows.</p>
     pub fn workflows(mut self, input: crate::types::WorkflowConfiguration) -> Self {
         let mut v = self.workflows.unwrap_or_default();
         v.push(input);
         self.workflows = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The array of workflow configuration objects for builds that this pipeline starts. You must also specify <code>executionRole</code> when you provide workflows.</p>
+    /// <p>The array of workflow configuration objects for builds that this pipeline starts. If you specify workflows, they replace the default workflows that Image Builder otherwise runs for the pipeline's builds. For example, if your list doesn't include a test workflow, the pipeline's builds don't run one. You must also specify <code>executionRole</code> when you provide workflows.</p>
     pub fn set_workflows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>) -> Self {
         self.workflows = input;
         self
     }
-    /// <p>The array of workflow configuration objects for builds that this pipeline starts. You must also specify <code>executionRole</code> when you provide workflows.</p>
+    /// <p>The array of workflow configuration objects for builds that this pipeline starts. If you specify workflows, they replace the default workflows that Image Builder otherwise runs for the pipeline's builds. For example, if your list doesn't include a test workflow, the pipeline's builds don't run one. You must also specify <code>executionRole</code> when you provide workflows.</p>
     pub fn get_workflows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>> {
         &self.workflows
     }

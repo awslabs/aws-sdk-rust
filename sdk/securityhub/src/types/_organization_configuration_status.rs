@@ -12,6 +12,7 @@
 /// ```text
 /// # let organizationconfigurationstatus = unimplemented!();
 /// match organizationconfigurationstatus {
+///     OrganizationConfigurationStatus::Disabled => { /* ... */ },
 ///     OrganizationConfigurationStatus::Enabled => { /* ... */ },
 ///     OrganizationConfigurationStatus::Failed => { /* ... */ },
 ///     OrganizationConfigurationStatus::Pending => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum OrganizationConfigurationStatus {
     #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -56,6 +59,7 @@ pub enum OrganizationConfigurationStatus {
 impl ::std::convert::From<&str> for OrganizationConfigurationStatus {
     fn from(s: &str) -> Self {
         match s {
+            "DISABLED" => OrganizationConfigurationStatus::Disabled,
             "ENABLED" => OrganizationConfigurationStatus::Enabled,
             "FAILED" => OrganizationConfigurationStatus::Failed,
             "PENDING" => OrganizationConfigurationStatus::Pending,
@@ -74,6 +78,7 @@ impl OrganizationConfigurationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            OrganizationConfigurationStatus::Disabled => "DISABLED",
             OrganizationConfigurationStatus::Enabled => "ENABLED",
             OrganizationConfigurationStatus::Failed => "FAILED",
             OrganizationConfigurationStatus::Pending => "PENDING",
@@ -82,7 +87,7 @@ impl OrganizationConfigurationStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ENABLED", "FAILED", "PENDING"]
+        &["DISABLED", "ENABLED", "FAILED", "PENDING"]
     }
 }
 impl ::std::convert::AsRef<str> for OrganizationConfigurationStatus {
@@ -105,6 +110,7 @@ impl OrganizationConfigurationStatus {
 impl ::std::fmt::Display for OrganizationConfigurationStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            OrganizationConfigurationStatus::Disabled => write!(f, "DISABLED"),
             OrganizationConfigurationStatus::Enabled => write!(f, "ENABLED"),
             OrganizationConfigurationStatus::Failed => write!(f, "FAILED"),
             OrganizationConfigurationStatus::Pending => write!(f, "PENDING"),

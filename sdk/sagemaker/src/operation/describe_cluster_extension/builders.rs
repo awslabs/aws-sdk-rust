@@ -22,7 +22,7 @@ impl crate::operation::describe_cluster_extension::builders::DescribeClusterExte
 }
 /// Fluent builder constructing a request to `DescribeClusterExtension`.
 ///
-/// <p>Retrieves information about an extension installed on a SageMaker HyperPod cluster. The information includes the extension's version, configuration, and status, and a summary of how many cluster nodes are running the current version and configuration of the extension.</p>
+/// <p>Retrieves information about an extension installed on a SageMaker HyperPod cluster. The information includes the extension's version, configuration, and status, and a summary of how many cluster nodes are running the current version and configuration of the extension. If the extension has problems on some nodes, the response also lists the problems and how many nodes each one affects.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeClusterExtensionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

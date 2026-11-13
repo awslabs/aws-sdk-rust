@@ -287,6 +287,8 @@ pub use crate::types::_ai_guardrail_assessment::AiGuardrailAssessmentBuilder;
 
 pub use crate::types::_email_header::EmailHeaderBuilder;
 
+pub use crate::types::_profile_recommendation::ProfileRecommendationBuilder;
+
 pub use crate::types::_generative_reference::GenerativeReferenceBuilder;
 
 pub use crate::types::_suggested_message_reference::SuggestedMessageReferenceBuilder;
@@ -334,6 +336,8 @@ pub use crate::types::_citation::CitationBuilder;
 pub use crate::types::_span_message::SpanMessageBuilder;
 
 pub use crate::types::_span_guardrail_assessment::SpanGuardrailAssessmentBuilder;
+
+pub use crate::types::_profile_catalog_item::ProfileCatalogItemBuilder;
 
 pub use crate::types::_highlight::HighlightBuilder;
 

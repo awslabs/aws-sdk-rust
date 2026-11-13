@@ -37,7 +37,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-imagebuilder = "1.140.0"
+//! aws-sdk-imagebuilder = "1.141.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -169,6 +169,20 @@ pub use config::Config;
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 pub mod client;
 
 /// Configuration for EC2 Image Builder.
@@ -208,6 +222,11 @@ mod endpoint_lib;
 mod lens;
 
 pub(crate) mod schema_serde;
+
+/// Supporting types for waiters.
+///
+/// Note: to use waiters, import the [`Waiters`](crate::client::Waiters) trait, which adds methods prefixed with `wait_until` to the client.
+pub mod waiters;
 
 #[doc(inline)]
 pub use client::Client;

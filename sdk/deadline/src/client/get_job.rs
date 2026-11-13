@@ -14,10 +14,10 @@ impl super::Client {
     ///   - [`priority(i32)`](crate::operation::get_job::GetJobOutput::priority): The job priority.
     ///   - [`created_at(DateTime)`](crate::operation::get_job::GetJobOutput::created_at): The date and time the resource was created.
     ///   - [`created_by(String)`](crate::operation::get_job::GetJobOutput::created_by): The user or system that created this resource.
-    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_job::GetJobOutput::updated_at): The date and time the resource was updated.
+    ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_job::GetJobOutput::updated_at): The date and time the resource was updated. Task status changes don't update this value.
     ///   - [`updated_by(Option<String>)`](crate::operation::get_job::GetJobOutput::updated_by): The user or system that updated this resource.
-    ///   - [`started_at(Option<DateTime>)`](crate::operation::get_job::GetJobOutput::started_at): The date and time the resource started running.
-    ///   - [`ended_at(Option<DateTime>)`](crate::operation::get_job::GetJobOutput::ended_at): The date and time the resource ended running.
+    ///   - [`started_at(Option<DateTime>)`](crate::operation::get_job::GetJobOutput::started_at): The date and time the resource started running. Requeuing the job doesn't change this value.
+    ///   - [`ended_at(Option<DateTime>)`](crate::operation::get_job::GetJobOutput::ended_at): The date and time the resource ended running. Returned only when the job has finished.
     ///   - [`task_run_status(Option<TaskRunStatus>)`](crate::operation::get_job::GetJobOutput::task_run_status): The task run status for the job.
     ///   - [`target_task_run_status(Option<JobTargetTaskRunStatus>)`](crate::operation::get_job::GetJobOutput::target_task_run_status): The task status with which the job started.
     ///   - [`task_run_status_counts(Option<HashMap::<TaskRunStatus, i32>>)`](crate::operation::get_job::GetJobOutput::task_run_status_counts): The number of tasks running on the job.

@@ -483,6 +483,8 @@ pub(crate) mod shape_mcp_tool_detail;
 
 pub(crate) mod shape_message;
 
+pub(crate) mod shape_ms_teams_bidirectional_configuration;
+
 pub(crate) mod shape_ms_teams_transmission_target;
 
 pub(crate) mod shape_network_access_configuration;

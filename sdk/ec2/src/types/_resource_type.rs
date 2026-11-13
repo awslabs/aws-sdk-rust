@@ -31,6 +31,7 @@
 ///     ResourceType::ElasticIp => { /* ... */ },
 ///     ResourceType::ExportImageTask => { /* ... */ },
 ///     ResourceType::ExportInstanceTask => { /* ... */ },
+///     ResourceType::FcaPolicy => { /* ... */ },
 ///     ResourceType::Fleet => { /* ... */ },
 ///     ResourceType::FpgaImage => { /* ... */ },
 ///     ResourceType::HostReservation => { /* ... */ },
@@ -191,6 +192,8 @@ pub enum ResourceType {
     ExportImageTask,
     #[allow(missing_docs)] // documentation missing in model
     ExportInstanceTask,
+    #[allow(missing_docs)] // documentation missing in model
+    FcaPolicy,
     #[allow(missing_docs)] // documentation missing in model
     Fleet,
     #[allow(missing_docs)] // documentation missing in model
@@ -405,6 +408,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "elastic-ip" => ResourceType::ElasticIp,
             "export-image-task" => ResourceType::ExportImageTask,
             "export-instance-task" => ResourceType::ExportInstanceTask,
+            "fca-policy" => ResourceType::FcaPolicy,
             "fleet" => ResourceType::Fleet,
             "fpga-image" => ResourceType::FpgaImage,
             "host-reservation" => ResourceType::HostReservation,
@@ -533,6 +537,7 @@ impl ResourceType {
             ResourceType::ElasticIp => "elastic-ip",
             ResourceType::ExportImageTask => "export-image-task",
             ResourceType::ExportInstanceTask => "export-instance-task",
+            ResourceType::FcaPolicy => "fca-policy",
             ResourceType::Fleet => "fleet",
             ResourceType::FpgaImage => "fpga-image",
             ResourceType::HostReservation => "host-reservation",
@@ -652,6 +657,7 @@ impl ResourceType {
             "elastic-ip",
             "export-image-task",
             "export-instance-task",
+            "fca-policy",
             "fleet",
             "fpga-image",
             "host-reservation",
@@ -788,6 +794,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::ElasticIp => write!(f, "elastic-ip"),
             ResourceType::ExportImageTask => write!(f, "export-image-task"),
             ResourceType::ExportInstanceTask => write!(f, "export-instance-task"),
+            ResourceType::FcaPolicy => write!(f, "fca-policy"),
             ResourceType::Fleet => write!(f, "fleet"),
             ResourceType::FpgaImage => write!(f, "fpga-image"),
             ResourceType::HostReservation => write!(f, "host-reservation"),

@@ -9,6 +9,15 @@ pub struct DeleteFirewallInput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub firewall_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to delete the NAT gateways that Network Firewall created for a proxy mode firewall when you delete the firewall. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FALSE</code> - Network Firewall detaches the NAT gateways from the firewall and keeps them. This is the default.</p></li>
+    /// <li>
+    /// <p><code>TRUE</code> - Network Firewall also deletes the NAT gateways. The firewall status stays <code>DELETING</code> until they're deleted. You need permission to call the Amazon EC2 <code>DeleteNatGateway</code> action.</p></li>
+    /// </ul>
+    /// <p>You can't specify <code>TRUE</code> for a firewall that isn't a proxy mode firewall.</p>
+    pub delete_associated_nat_gateways: ::std::option::Option<bool>,
 }
 impl DeleteFirewallInput {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -20,6 +29,17 @@ impl DeleteFirewallInput {
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn firewall_arn(&self) -> ::std::option::Option<&str> {
         self.firewall_arn.as_deref()
+    }
+    /// <p>Specifies whether to delete the NAT gateways that Network Firewall created for a proxy mode firewall when you delete the firewall. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FALSE</code> - Network Firewall detaches the NAT gateways from the firewall and keeps them. This is the default.</p></li>
+    /// <li>
+    /// <p><code>TRUE</code> - Network Firewall also deletes the NAT gateways. The firewall status stays <code>DELETING</code> until they're deleted. You need permission to call the Amazon EC2 <code>DeleteNatGateway</code> action.</p></li>
+    /// </ul>
+    /// <p>You can't specify <code>TRUE</code> for a firewall that isn't a proxy mode firewall.</p>
+    pub fn delete_associated_nat_gateways(&self) -> ::std::option::Option<bool> {
+        self.delete_associated_nat_gateways
     }
 }
 impl DeleteFirewallInput {
@@ -35,6 +55,7 @@ impl DeleteFirewallInput {
 pub struct DeleteFirewallInputBuilder {
     pub(crate) firewall_name: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) delete_associated_nat_gateways: ::std::option::Option<bool>,
 }
 impl DeleteFirewallInputBuilder {
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
@@ -71,6 +92,41 @@ impl DeleteFirewallInputBuilder {
     pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_arn
     }
+    /// <p>Specifies whether to delete the NAT gateways that Network Firewall created for a proxy mode firewall when you delete the firewall. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FALSE</code> - Network Firewall detaches the NAT gateways from the firewall and keeps them. This is the default.</p></li>
+    /// <li>
+    /// <p><code>TRUE</code> - Network Firewall also deletes the NAT gateways. The firewall status stays <code>DELETING</code> until they're deleted. You need permission to call the Amazon EC2 <code>DeleteNatGateway</code> action.</p></li>
+    /// </ul>
+    /// <p>You can't specify <code>TRUE</code> for a firewall that isn't a proxy mode firewall.</p>
+    pub fn delete_associated_nat_gateways(mut self, input: bool) -> Self {
+        self.delete_associated_nat_gateways = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to delete the NAT gateways that Network Firewall created for a proxy mode firewall when you delete the firewall. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FALSE</code> - Network Firewall detaches the NAT gateways from the firewall and keeps them. This is the default.</p></li>
+    /// <li>
+    /// <p><code>TRUE</code> - Network Firewall also deletes the NAT gateways. The firewall status stays <code>DELETING</code> until they're deleted. You need permission to call the Amazon EC2 <code>DeleteNatGateway</code> action.</p></li>
+    /// </ul>
+    /// <p>You can't specify <code>TRUE</code> for a firewall that isn't a proxy mode firewall.</p>
+    pub fn set_delete_associated_nat_gateways(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.delete_associated_nat_gateways = input;
+        self
+    }
+    /// <p>Specifies whether to delete the NAT gateways that Network Firewall created for a proxy mode firewall when you delete the firewall. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>FALSE</code> - Network Firewall detaches the NAT gateways from the firewall and keeps them. This is the default.</p></li>
+    /// <li>
+    /// <p><code>TRUE</code> - Network Firewall also deletes the NAT gateways. The firewall status stays <code>DELETING</code> until they're deleted. You need permission to call the Amazon EC2 <code>DeleteNatGateway</code> action.</p></li>
+    /// </ul>
+    /// <p>You can't specify <code>TRUE</code> for a firewall that isn't a proxy mode firewall.</p>
+    pub fn get_delete_associated_nat_gateways(&self) -> &::std::option::Option<bool> {
+        &self.delete_associated_nat_gateways
+    }
     /// Consumes the builder and constructs a [`DeleteFirewallInput`](crate::operation::delete_firewall::DeleteFirewallInput).
     pub fn build(
         self,
@@ -78,6 +134,7 @@ impl DeleteFirewallInputBuilder {
         ::std::result::Result::Ok(crate::operation::delete_firewall::DeleteFirewallInput {
             firewall_name: self.firewall_name,
             firewall_arn: self.firewall_arn,
+            delete_associated_nat_gateways: self.delete_associated_nat_gateways,
         })
     }
 }

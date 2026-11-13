@@ -85,6 +85,9 @@ pub mod associate_ipam_resource_discovery;
 /// Types for the `AssociateNatGatewayAddress` operation.
 pub mod associate_nat_gateway_address;
 
+/// Types for the `AssociateNetworkingFlexCostAllocationPolicy` operation.
+pub mod associate_networking_flex_cost_allocation_policy;
+
 /// Types for the `AssociateRouteServer` operation.
 pub mod associate_route_server;
 
@@ -366,6 +369,9 @@ pub mod create_network_interface;
 
 /// Types for the `CreateNetworkInterfacePermission` operation.
 pub mod create_network_interface_permission;
+
+/// Types for the `CreateNetworkingFlexCostAllocationPolicy` operation.
+pub mod create_networking_flex_cost_allocation_policy;
 
 /// Types for the `CreatePlacementGroup` operation.
 pub mod create_placement_group;
@@ -672,6 +678,9 @@ pub mod delete_network_interface;
 
 /// Types for the `DeleteNetworkInterfacePermission` operation.
 pub mod delete_network_interface_permission;
+
+/// Types for the `DeleteNetworkingFlexCostAllocationPolicies` operation.
+pub mod delete_networking_flex_cost_allocation_policies;
 
 /// Types for the `DeletePlacementGroup` operation.
 pub mod delete_placement_group;
@@ -1189,6 +1198,12 @@ pub mod describe_network_interface_permissions;
 /// Types for the `DescribeNetworkInterfaces` operation.
 pub mod describe_network_interfaces;
 
+/// Types for the `DescribeNetworkingFlexCostAllocationPolicies` operation.
+pub mod describe_networking_flex_cost_allocation_policies;
+
+/// Types for the `DescribeNetworkingFlexCostAllocationPolicyAssociations` operation.
+pub mod describe_networking_flex_cost_allocation_policy_associations;
+
 /// Types for the `DescribeOutpostLags` operation.
 pub mod describe_outpost_lags;
 
@@ -1549,6 +1564,9 @@ pub mod disassociate_ipam_resource_discovery;
 /// Types for the `DisassociateNatGatewayAddress` operation.
 pub mod disassociate_nat_gateway_address;
 
+/// Types for the `DisassociateNetworkingFlexCostAllocationPolicy` operation.
+pub mod disassociate_networking_flex_cost_allocation_policy;
+
 /// Types for the `DisassociateRouteServer` operation.
 pub mod disassociate_route_server;
 
@@ -1831,6 +1849,9 @@ pub mod get_network_insights_access_scope_analysis_findings;
 /// Types for the `GetNetworkInsightsAccessScopeContent` operation.
 pub mod get_network_insights_access_scope_content;
 
+/// Types for the `GetNetworkingFlexCostAllocationPolicyVersions` operation.
+pub mod get_networking_flex_cost_allocation_policy_versions;
+
 /// Types for the `GetPasswordData` operation.
 pub mod get_password_data;
 
@@ -2070,6 +2091,9 @@ pub mod modify_metric_category;
 
 /// Types for the `ModifyNetworkInterfaceAttribute` operation.
 pub mod modify_network_interface_attribute;
+
+/// Types for the `ModifyNetworkingFlexCostAllocationPolicy` operation.
+pub mod modify_networking_flex_cost_allocation_policy;
 
 /// Types for the `ModifyPrivateDnsNameOptions` operation.
 pub mod modify_private_dns_name_options;

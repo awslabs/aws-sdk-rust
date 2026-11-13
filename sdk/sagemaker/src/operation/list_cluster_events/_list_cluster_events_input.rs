@@ -19,6 +19,8 @@ pub struct ListClusterEventsInput {
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>The type of resource for which to filter events. Valid values are <code>Cluster</code>, <code>InstanceGroup</code>, or <code>Instance</code>.</p>
     pub resource_type: ::std::option::Option<crate::types::ClusterEventResourceType>,
+    /// <p>The unique identifier (UUID) of a cluster operation for which to filter events. If specified, only events associated with this operation are returned. This ID can be obtained from the <code>ListClusterOperations</code> operation.</p>
+    pub operation_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of events to return in the response. Valid range is 1 to 100.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token to retrieve the next set of results. This token is obtained from the output of a previous <code>ListClusterEvents</code> call.</p>
@@ -57,6 +59,10 @@ impl ListClusterEventsInput {
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ClusterEventResourceType> {
         self.resource_type.as_ref()
     }
+    /// <p>The unique identifier (UUID) of a cluster operation for which to filter events. If specified, only events associated with this operation are returned. This ID can be obtained from the <code>ListClusterOperations</code> operation.</p>
+    pub fn operation_id(&self) -> ::std::option::Option<&str> {
+        self.operation_id.as_deref()
+    }
     /// <p>The maximum number of events to return in the response. Valid range is 1 to 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
@@ -85,6 +91,7 @@ pub struct ListClusterEventsInputBuilder {
     pub(crate) sort_by: ::std::option::Option<crate::types::EventSortBy>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) resource_type: ::std::option::Option<crate::types::ClusterEventResourceType>,
+    pub(crate) operation_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -202,6 +209,20 @@ impl ListClusterEventsInputBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ClusterEventResourceType> {
         &self.resource_type
     }
+    /// <p>The unique identifier (UUID) of a cluster operation for which to filter events. If specified, only events associated with this operation are returned. This ID can be obtained from the <code>ListClusterOperations</code> operation.</p>
+    pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.operation_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier (UUID) of a cluster operation for which to filter events. If specified, only events associated with this operation are returned. This ID can be obtained from the <code>ListClusterOperations</code> operation.</p>
+    pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.operation_id = input;
+        self
+    }
+    /// <p>The unique identifier (UUID) of a cluster operation for which to filter events. If specified, only events associated with this operation are returned. This ID can be obtained from the <code>ListClusterOperations</code> operation.</p>
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.operation_id
+    }
     /// <p>The maximum number of events to return in the response. Valid range is 1 to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
@@ -243,6 +264,7 @@ impl ListClusterEventsInputBuilder {
             sort_by: self.sort_by,
             sort_order: self.sort_order,
             resource_type: self.resource_type,
+            operation_id: self.operation_id,
             max_results: self.max_results,
             next_token: self.next_token,
         })

@@ -234,17 +234,17 @@ impl UpdateFleetFluentBuilder {
     pub fn get_max_worker_count(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_worker_count()
     }
-    /// The fleet configuration to update.
+    /// The fleet configuration to update. The new configuration replaces the existing one, so include every setting you want to keep. Settings that you omit revert to their defaults.
     pub fn configuration(mut self, input: crate::types::FleetConfiguration) -> Self {
         self.inner = self.inner.configuration(input);
         self
     }
-    /// The fleet configuration to update.
+    /// The fleet configuration to update. The new configuration replaces the existing one, so include every setting you want to keep. Settings that you omit revert to their defaults.
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::FleetConfiguration>) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
-    /// The fleet configuration to update.
+    /// The fleet configuration to update. The new configuration replaces the existing one, so include every setting you want to keep. Settings that you omit revert to their defaults.
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::FleetConfiguration> {
         self.inner.get_configuration()
     }

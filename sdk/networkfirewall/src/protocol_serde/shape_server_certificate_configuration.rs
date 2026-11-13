@@ -29,6 +29,9 @@ pub fn ser_server_certificate_configuration(
         encoder.str("CheckCertificateRevocationStatus");
         crate::protocol_serde::shape_check_certificate_revocation_status_actions::ser_check_certificate_revocation_status_actions(encoder, var_6)?;
     }
+    if let Some(var_7) = &input.default_decryption_behavior {
+        encoder.str("DefaultDecryptionBehavior").str(var_7.as_str());
+    }
     encoder.end();
     Ok(())
 }
@@ -73,6 +76,9 @@ pub(crate) fn de_server_certificate_configuration(
                         depth + 1,
                     )?,
                 )))
+            })?,
+            "DefaultDecryptionBehavior" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_default_decryption_behavior(Some(decoder.string().map(|s| crate::types::DecryptionAction::from(s.as_str()))?)))
             })?,
             _ => {
                 decoder.skip()?;

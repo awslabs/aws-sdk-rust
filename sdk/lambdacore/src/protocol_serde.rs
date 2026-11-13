@@ -25,15 +25,47 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_create_network_connector;
 
+pub(crate) mod shape_create_runtime;
+
+pub(crate) mod shape_create_runtime_alias;
+
+pub(crate) mod shape_create_runtime_version;
+
 pub(crate) mod shape_delete_network_connector;
 
+pub(crate) mod shape_delete_runtime;
+
+pub(crate) mod shape_delete_runtime_alias;
+
+pub(crate) mod shape_delete_runtime_version;
+
 pub(crate) mod shape_get_network_connector;
+
+pub(crate) mod shape_get_runtime;
+
+pub(crate) mod shape_get_runtime_alias;
+
+pub(crate) mod shape_get_runtime_version;
 
 pub(crate) mod shape_list_network_connector_versions;
 
 pub(crate) mod shape_list_network_connectors;
 
+pub(crate) mod shape_list_runtime_aliases;
+
+pub(crate) mod shape_list_runtime_versions;
+
+pub(crate) mod shape_list_runtimes;
+
+pub(crate) mod shape_restore_runtime;
+
 pub(crate) mod shape_update_network_connector;
+
+pub(crate) mod shape_update_runtime;
+
+pub(crate) mod shape_update_runtime_alias;
+
+pub(crate) mod shape_update_runtime_version;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -45,6 +77,12 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_create_network_connector_input;
 
+pub(crate) mod shape_create_runtime_alias_input;
+
+pub(crate) mod shape_create_runtime_input;
+
+pub(crate) mod shape_create_runtime_version_input;
+
 pub(crate) mod shape_invalid_parameter_value_exception;
 
 pub(crate) mod shape_network_connector_limit_exceeded_exception;
@@ -55,9 +93,19 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_exception;
 
+pub(crate) mod shape_service_quota_exceeded_exception;
+
 pub(crate) mod shape_too_many_requests_exception;
 
 pub(crate) mod shape_update_network_connector_input;
+
+pub(crate) mod shape_update_runtime_alias_input;
+
+pub(crate) mod shape_update_runtime_input;
+
+pub(crate) mod shape_update_runtime_version_input;
+
+pub(crate) mod shape_compatibility;
 
 pub(crate) mod shape_network_connector_configuration;
 
@@ -65,11 +113,33 @@ pub(crate) mod shape_network_connector_versions_list;
 
 pub(crate) mod shape_network_connectors_list;
 
+pub(crate) mod shape_platform_list;
+
+pub(crate) mod shape_runtime_alias_list;
+
+pub(crate) mod shape_runtime_list;
+
+pub(crate) mod shape_runtime_release_lifecycle;
+
+pub(crate) mod shape_runtime_version_list;
+
+pub(crate) mod shape_integration_model_list;
+
 pub(crate) mod shape_network_connector_summary;
 
 pub(crate) mod shape_network_connector_version_summary;
 
 pub(crate) mod shape_network_connector_vpc_egress_configuration;
+
+pub(crate) mod shape_platform;
+
+pub(crate) mod shape_runtime_alias_info;
+
+pub(crate) mod shape_runtime_architecture_list;
+
+pub(crate) mod shape_runtime_info;
+
+pub(crate) mod shape_runtime_version_info;
 
 pub(crate) mod shape_associated_compute_resource_types_list;
 

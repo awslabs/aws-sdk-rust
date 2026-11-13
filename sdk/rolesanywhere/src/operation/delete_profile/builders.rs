@@ -109,17 +109,44 @@ impl DeleteProfileFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The unique identifier of the profile.</p>
+    /// <p>The profile to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile ID.</p></li>
+    /// <li>
+    /// <p>The profile ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the profile.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a profile in your account and Region.</p>
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.profile_id(input.into());
         self
     }
-    /// <p>The unique identifier of the profile.</p>
+    /// <p>The profile to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile ID.</p></li>
+    /// <li>
+    /// <p>The profile ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the profile.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a profile in your account and Region.</p>
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_profile_id(input);
         self
     }
-    /// <p>The unique identifier of the profile.</p>
+    /// <p>The profile to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile ID.</p></li>
+    /// <li>
+    /// <p>The profile ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the profile.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a profile in your account and Region.</p>
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_profile_id()
     }

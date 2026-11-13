@@ -141,6 +141,8 @@ pub struct ImageBuilder {
     pub latest_appstream_agent_version: ::std::option::Option<crate::types::LatestAppstreamAgentVersion>,
     /// <p>Indicates whether Instance Metadata Service Version 1 (IMDSv1) is disabled for the image builder.</p>
     pub disable_imdsv1: ::std::option::Option<bool>,
+    /// <p>The agent access configuration of the image builder, if agent access is enabled.</p>
+    pub agent_access_config: ::std::option::Option<crate::types::ImageBuilderAgentAccessConfig>,
 }
 impl ImageBuilder {
     /// <p>The name of the image builder.</p>
@@ -326,6 +328,10 @@ impl ImageBuilder {
     pub fn disable_imdsv1(&self) -> ::std::option::Option<bool> {
         self.disable_imdsv1
     }
+    /// <p>The agent access configuration of the image builder, if agent access is enabled.</p>
+    pub fn agent_access_config(&self) -> ::std::option::Option<&crate::types::ImageBuilderAgentAccessConfig> {
+        self.agent_access_config.as_ref()
+    }
 }
 impl ImageBuilder {
     /// Creates a new builder-style object to manufacture [`ImageBuilder`](crate::types::ImageBuilder).
@@ -359,6 +365,7 @@ pub struct ImageBuilderBuilder {
     pub(crate) root_volume_config: ::std::option::Option<crate::types::VolumeConfig>,
     pub(crate) latest_appstream_agent_version: ::std::option::Option<crate::types::LatestAppstreamAgentVersion>,
     pub(crate) disable_imdsv1: ::std::option::Option<bool>,
+    pub(crate) agent_access_config: ::std::option::Option<crate::types::ImageBuilderAgentAccessConfig>,
 }
 impl ImageBuilderBuilder {
     /// <p>The name of the image builder.</p>
@@ -953,6 +960,20 @@ impl ImageBuilderBuilder {
     pub fn get_disable_imdsv1(&self) -> &::std::option::Option<bool> {
         &self.disable_imdsv1
     }
+    /// <p>The agent access configuration of the image builder, if agent access is enabled.</p>
+    pub fn agent_access_config(mut self, input: crate::types::ImageBuilderAgentAccessConfig) -> Self {
+        self.agent_access_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The agent access configuration of the image builder, if agent access is enabled.</p>
+    pub fn set_agent_access_config(mut self, input: ::std::option::Option<crate::types::ImageBuilderAgentAccessConfig>) -> Self {
+        self.agent_access_config = input;
+        self
+    }
+    /// <p>The agent access configuration of the image builder, if agent access is enabled.</p>
+    pub fn get_agent_access_config(&self) -> &::std::option::Option<crate::types::ImageBuilderAgentAccessConfig> {
+        &self.agent_access_config
+    }
     /// Consumes the builder and constructs a [`ImageBuilder`](crate::types::ImageBuilder).
     pub fn build(self) -> crate::types::ImageBuilder {
         crate::types::ImageBuilder {
@@ -977,6 +998,7 @@ impl ImageBuilderBuilder {
             root_volume_config: self.root_volume_config,
             latest_appstream_agent_version: self.latest_appstream_agent_version,
             disable_imdsv1: self.disable_imdsv1,
+            agent_access_config: self.agent_access_config,
         }
     }
 }

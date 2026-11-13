@@ -608,11 +608,11 @@ pub(crate) fn log_destination_config_correct_errors(
     builder
 }
 
-pub(crate) fn nat_gateway_mapping_correct_errors(
-    mut builder: crate::types::builders::NatGatewayMappingBuilder,
-) -> crate::types::builders::NatGatewayMappingBuilder {
-    if builder.nat_gateway_id.is_none() {
-        builder.nat_gateway_id = Some(Default::default())
+pub(crate) fn nat_gateway_create_mapping_correct_errors(
+    mut builder: crate::types::builders::NatGatewayCreateMappingBuilder,
+) -> crate::types::builders::NatGatewayCreateMappingBuilder {
+    if builder.subnet_id.is_none() {
+        builder.subnet_id = Some(Default::default())
     }
     builder
 }
@@ -767,6 +767,13 @@ pub(crate) fn stateless_rule_correct_errors(
     }
     if builder.priority.is_none() {
         builder.priority = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn domain_match_correct_errors(mut builder: crate::types::builders::DomainMatchBuilder) -> crate::types::builders::DomainMatchBuilder {
+    if builder.domains.is_none() {
+        builder.domains = Some(Default::default())
     }
     builder
 }

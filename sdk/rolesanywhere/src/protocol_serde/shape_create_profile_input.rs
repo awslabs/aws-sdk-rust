@@ -6,53 +6,56 @@ pub fn ser_create_profile_input_input(
     if let Some(var_1) = &input.accept_role_session_name {
         object.key("acceptRoleSessionName").boolean(*var_1);
     }
-    if let Some(var_2) = &input.duration_seconds {
+    if let Some(var_2) = &input.alias_name {
+        object.key("aliasName").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.duration_seconds {
         object.key("durationSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.enabled {
-        object.key("enabled").boolean(*var_3);
+    if let Some(var_4) = &input.enabled {
+        object.key("enabled").boolean(*var_4);
     }
-    if let Some(var_4) = &input.managed_policy_arns {
-        let mut array_5 = object.key("managedPolicyArns").start_array();
-        for item_6 in var_4 {
+    if let Some(var_5) = &input.managed_policy_arns {
+        let mut array_6 = object.key("managedPolicyArns").start_array();
+        for item_7 in var_5 {
             {
-                array_5.value().string(item_6.as_str());
+                array_6.value().string(item_7.as_str());
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
-    if let Some(var_7) = &input.name {
-        object.key("name").string(var_7.as_str());
+    if let Some(var_8) = &input.name {
+        object.key("name").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.require_instance_properties {
-        object.key("requireInstanceProperties").boolean(*var_8);
+    if let Some(var_9) = &input.require_instance_properties {
+        object.key("requireInstanceProperties").boolean(*var_9);
     }
-    if let Some(var_9) = &input.role_arns {
-        let mut array_10 = object.key("roleArns").start_array();
-        for item_11 in var_9 {
+    if let Some(var_10) = &input.role_arns {
+        let mut array_11 = object.key("roleArns").start_array();
+        for item_12 in var_10 {
             {
-                array_10.value().string(item_11.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_10.finish();
+        array_11.finish();
     }
-    if let Some(var_12) = &input.session_policy {
-        object.key("sessionPolicy").string(var_12.as_str());
+    if let Some(var_13) = &input.session_policy {
+        object.key("sessionPolicy").string(var_13.as_str());
     }
-    if let Some(var_13) = &input.tags {
-        let mut array_14 = object.key("tags").start_array();
-        for item_15 in var_13 {
+    if let Some(var_14) = &input.tags {
+        let mut array_15 = object.key("tags").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_17, item_16)?;
+                object_17.finish();
             }
         }
-        array_14.finish();
+        array_15.finish();
     }
     Ok(())
 }

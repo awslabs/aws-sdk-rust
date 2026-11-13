@@ -13,7 +13,7 @@ pub struct GetCloudConnectorOutput {
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration details for the third-party cloud environment connection.</p>
     pub configuration: ::std::option::Option<crate::types::CloudConnectorConfiguration>,
-    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector.</p>
+    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector. This value is returned only if the cloud connector was created with an Amazon Web Services Config connector.</p>
     pub config_connector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time the cloud connector was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -42,7 +42,7 @@ impl GetCloudConnectorOutput {
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::CloudConnectorConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector.</p>
+    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector. This value is returned only if the cloud connector was created with an Amazon Web Services Config connector.</p>
     pub fn config_connector_arn(&self) -> ::std::option::Option<&str> {
         self.config_connector_arn.as_deref()
     }
@@ -152,17 +152,17 @@ impl GetCloudConnectorOutputBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::CloudConnectorConfiguration> {
         &self.configuration
     }
-    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector.</p>
+    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector. This value is returned only if the cloud connector was created with an Amazon Web Services Config connector.</p>
     pub fn config_connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_connector_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector.</p>
+    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector. This value is returned only if the cloud connector was created with an Amazon Web Services Config connector.</p>
     pub fn set_config_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_connector_arn = input;
         self
     }
-    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector.</p>
+    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector. This value is returned only if the cloud connector was created with an Amazon Web Services Config connector.</p>
     pub fn get_config_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.config_connector_arn
     }

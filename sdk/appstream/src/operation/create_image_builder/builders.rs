@@ -976,4 +976,18 @@ impl CreateImageBuilderFluentBuilder {
     pub fn get_disable_imdsv1(&self) -> &::std::option::Option<bool> {
         self.inner.get_disable_imdsv1()
     }
+    /// <p>The configuration for agent access on the image builder. If specified, agent access is enabled for the image builder.</p>
+    pub fn agent_access_config(mut self, input: crate::types::ImageBuilderAgentAccessConfig) -> Self {
+        self.inner = self.inner.agent_access_config(input);
+        self
+    }
+    /// <p>The configuration for agent access on the image builder. If specified, agent access is enabled for the image builder.</p>
+    pub fn set_agent_access_config(mut self, input: ::std::option::Option<crate::types::ImageBuilderAgentAccessConfig>) -> Self {
+        self.inner = self.inner.set_agent_access_config(input);
+        self
+    }
+    /// <p>The configuration for agent access on the image builder. If specified, agent access is enabled for the image builder.</p>
+    pub fn get_agent_access_config(&self) -> &::std::option::Option<crate::types::ImageBuilderAgentAccessConfig> {
+        self.inner.get_agent_access_config()
+    }
 }

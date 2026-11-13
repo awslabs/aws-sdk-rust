@@ -4,12 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AgentAccessConfig {
-    /// <p>The list of agent access settings that define permissions for each agent action. You must specify at least one setting.</p>
+    /// <p>The list of agent access settings that define permissions for each agent action. You must specify at least one setting, and at least one agent action must be enabled.</p>
     pub settings: ::std::option::Option<::std::vec::Vec<crate::types::AgentAccessSetting>>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where agent screenshots are stored. Required when ScreenshotsUploadEnabled is true.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where agent screenshots and Replay Session artifacts are stored. Required when ScreenshotsUploadEnabled or ReplaySessionEnabled is true.</p>
     pub s3_bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether screenshot uploads to Amazon S3 are enabled for agent sessions.</p>
     pub screenshots_upload_enabled: ::std::option::Option<bool>,
+    /// <p>Indicates whether Replay Session is enabled for agent sessions. WorkSpaces Applications delivers a video combining session screenshots, a transcript, and a report for each session. Requires the COMPUTER_VISION agent action.</p>
+    pub replay_session_enabled: ::std::option::Option<bool>,
+    /// <p>The Amazon Resource Name (ARN) of the customer managed symmetric encryption KMS key that encrypts Replay Session artifacts while WorkSpaces Applications processes them. The key must be in the same Region as the stack, and ReplaySessionEnabled must be true.</p>
+    pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The screen resolution for the agent streaming environment.</p>
     pub screen_resolution: ::std::option::Option<crate::types::ScreenResolution>,
     /// <p>The image format for agent screen captures.</p>
@@ -18,19 +22,27 @@ pub struct AgentAccessConfig {
     pub user_control_mode: ::std::option::Option<crate::types::UserControlMode>,
 }
 impl AgentAccessConfig {
-    /// <p>The list of agent access settings that define permissions for each agent action. You must specify at least one setting.</p>
+    /// <p>The list of agent access settings that define permissions for each agent action. You must specify at least one setting, and at least one agent action must be enabled.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.settings.is_none()`.
     pub fn settings(&self) -> &[crate::types::AgentAccessSetting] {
         self.settings.as_deref().unwrap_or_default()
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where agent screenshots are stored. Required when ScreenshotsUploadEnabled is true.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where agent screenshots and Replay Session artifacts are stored. Required when ScreenshotsUploadEnabled or ReplaySessionEnabled is true.</p>
     pub fn s3_bucket_arn(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_arn.as_deref()
     }
     /// <p>Indicates whether screenshot uploads to Amazon S3 are enabled for agent sessions.</p>
     pub fn screenshots_upload_enabled(&self) -> ::std::option::Option<bool> {
         self.screenshots_upload_enabled
+    }
+    /// <p>Indicates whether Replay Session is enabled for agent sessions. WorkSpaces Applications delivers a video combining session screenshots, a transcript, and a report for each session. Requires the COMPUTER_VISION agent action.</p>
+    pub fn replay_session_enabled(&self) -> ::std::option::Option<bool> {
+        self.replay_session_enabled
+    }
+    /// <p>The Amazon Resource Name (ARN) of the customer managed symmetric encryption KMS key that encrypts Replay Session artifacts while WorkSpaces Applications processes them. The key must be in the same Region as the stack, and ReplaySessionEnabled must be true.</p>
+    pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
+        self.kms_key_arn.as_deref()
     }
     /// <p>The screen resolution for the agent streaming environment.</p>
     pub fn screen_resolution(&self) -> ::std::option::Option<&crate::types::ScreenResolution> {
@@ -59,6 +71,8 @@ pub struct AgentAccessConfigBuilder {
     pub(crate) settings: ::std::option::Option<::std::vec::Vec<crate::types::AgentAccessSetting>>,
     pub(crate) s3_bucket_arn: ::std::option::Option<::std::string::String>,
     pub(crate) screenshots_upload_enabled: ::std::option::Option<bool>,
+    pub(crate) replay_session_enabled: ::std::option::Option<bool>,
+    pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) screen_resolution: ::std::option::Option<crate::types::ScreenResolution>,
     pub(crate) screen_image_format: ::std::option::Option<crate::types::ScreenImageFormat>,
     pub(crate) user_control_mode: ::std::option::Option<crate::types::UserControlMode>,
@@ -68,33 +82,33 @@ impl AgentAccessConfigBuilder {
     ///
     /// To override the contents of this collection use [`set_settings`](Self::set_settings).
     ///
-    /// <p>The list of agent access settings that define permissions for each agent action. You must specify at least one setting.</p>
+    /// <p>The list of agent access settings that define permissions for each agent action. You must specify at least one setting, and at least one agent action must be enabled.</p>
     pub fn settings(mut self, input: crate::types::AgentAccessSetting) -> Self {
         let mut v = self.settings.unwrap_or_default();
         v.push(input);
         self.settings = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of agent access settings that define permissions for each agent action. You must specify at least one setting.</p>
+    /// <p>The list of agent access settings that define permissions for each agent action. You must specify at least one setting, and at least one agent action must be enabled.</p>
     pub fn set_settings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AgentAccessSetting>>) -> Self {
         self.settings = input;
         self
     }
-    /// <p>The list of agent access settings that define permissions for each agent action. You must specify at least one setting.</p>
+    /// <p>The list of agent access settings that define permissions for each agent action. You must specify at least one setting, and at least one agent action must be enabled.</p>
     pub fn get_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AgentAccessSetting>> {
         &self.settings
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where agent screenshots are stored. Required when ScreenshotsUploadEnabled is true.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where agent screenshots and Replay Session artifacts are stored. Required when ScreenshotsUploadEnabled or ReplaySessionEnabled is true.</p>
     pub fn s3_bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.s3_bucket_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where agent screenshots are stored. Required when ScreenshotsUploadEnabled is true.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where agent screenshots and Replay Session artifacts are stored. Required when ScreenshotsUploadEnabled or ReplaySessionEnabled is true.</p>
     pub fn set_s3_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_bucket_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where agent screenshots are stored. Required when ScreenshotsUploadEnabled is true.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where agent screenshots and Replay Session artifacts are stored. Required when ScreenshotsUploadEnabled or ReplaySessionEnabled is true.</p>
     pub fn get_s3_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.s3_bucket_arn
     }
@@ -111,6 +125,34 @@ impl AgentAccessConfigBuilder {
     /// <p>Indicates whether screenshot uploads to Amazon S3 are enabled for agent sessions.</p>
     pub fn get_screenshots_upload_enabled(&self) -> &::std::option::Option<bool> {
         &self.screenshots_upload_enabled
+    }
+    /// <p>Indicates whether Replay Session is enabled for agent sessions. WorkSpaces Applications delivers a video combining session screenshots, a transcript, and a report for each session. Requires the COMPUTER_VISION agent action.</p>
+    pub fn replay_session_enabled(mut self, input: bool) -> Self {
+        self.replay_session_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether Replay Session is enabled for agent sessions. WorkSpaces Applications delivers a video combining session screenshots, a transcript, and a report for each session. Requires the COMPUTER_VISION agent action.</p>
+    pub fn set_replay_session_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.replay_session_enabled = input;
+        self
+    }
+    /// <p>Indicates whether Replay Session is enabled for agent sessions. WorkSpaces Applications delivers a video combining session screenshots, a transcript, and a report for each session. Requires the COMPUTER_VISION agent action.</p>
+    pub fn get_replay_session_enabled(&self) -> &::std::option::Option<bool> {
+        &self.replay_session_enabled
+    }
+    /// <p>The Amazon Resource Name (ARN) of the customer managed symmetric encryption KMS key that encrypts Replay Session artifacts while WorkSpaces Applications processes them. The key must be in the same Region as the stack, and ReplaySessionEnabled must be true.</p>
+    pub fn kms_key_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the customer managed symmetric encryption KMS key that encrypts Replay Session artifacts while WorkSpaces Applications processes them. The key must be in the same Region as the stack, and ReplaySessionEnabled must be true.</p>
+    pub fn set_kms_key_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the customer managed symmetric encryption KMS key that encrypts Replay Session artifacts while WorkSpaces Applications processes them. The key must be in the same Region as the stack, and ReplaySessionEnabled must be true.</p>
+    pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_arn
     }
     /// <p>The screen resolution for the agent streaming environment.</p>
     /// This field is required.
@@ -162,6 +204,8 @@ impl AgentAccessConfigBuilder {
             settings: self.settings,
             s3_bucket_arn: self.s3_bucket_arn,
             screenshots_upload_enabled: self.screenshots_upload_enabled,
+            replay_session_enabled: self.replay_session_enabled,
+            kms_key_arn: self.kms_key_arn,
             screen_resolution: self.screen_resolution,
             screen_image_format: self.screen_image_format,
             user_control_mode: self.user_control_mode,

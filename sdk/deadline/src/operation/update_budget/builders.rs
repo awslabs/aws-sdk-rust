@@ -193,9 +193,9 @@ impl UpdateBudgetFluentBuilder {
     /// <p>Updates the status of the budget.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–The budget is being evaluated.</p></li>
+    /// <p><code>ACTIVE</code> - The budget is being evaluated.</p></li>
     /// <li>
-    /// <p><code>INACTIVE</code>–The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
+    /// <p><code>INACTIVE</code> - The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::BudgetStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -204,9 +204,9 @@ impl UpdateBudgetFluentBuilder {
     /// <p>Updates the status of the budget.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–The budget is being evaluated.</p></li>
+    /// <p><code>ACTIVE</code> - The budget is being evaluated.</p></li>
     /// <li>
-    /// <p><code>INACTIVE</code>–The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
+    /// <p><code>INACTIVE</code> - The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::BudgetStatus>) -> Self {
         self.inner = self.inner.set_status(input);
@@ -215,9 +215,9 @@ impl UpdateBudgetFluentBuilder {
     /// <p>Updates the status of the budget.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–The budget is being evaluated.</p></li>
+    /// <p><code>ACTIVE</code> - The budget is being evaluated.</p></li>
     /// <li>
-    /// <p><code>INACTIVE</code>–The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
+    /// <p><code>INACTIVE</code> - The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::BudgetStatus> {
         self.inner.get_status()

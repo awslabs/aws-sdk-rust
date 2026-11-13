@@ -20,9 +20,9 @@ pub struct UpdateBudgetInput {
     /// <p>Updates the status of the budget.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–The budget is being evaluated.</p></li>
+    /// <p><code>ACTIVE</code> - The budget is being evaluated.</p></li>
     /// <li>
-    /// <p><code>INACTIVE</code>–The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
+    /// <p><code>INACTIVE</code> - The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::BudgetStatus>,
     /// The dollar limit to update on the budget. Based on consumed usage.
@@ -62,9 +62,9 @@ impl UpdateBudgetInput {
     /// <p>Updates the status of the budget.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–The budget is being evaluated.</p></li>
+    /// <p><code>ACTIVE</code> - The budget is being evaluated.</p></li>
     /// <li>
-    /// <p><code>INACTIVE</code>–The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
+    /// <p><code>INACTIVE</code> - The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::BudgetStatus> {
         self.status.as_ref()
@@ -216,9 +216,9 @@ impl UpdateBudgetInputBuilder {
     /// <p>Updates the status of the budget.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–The budget is being evaluated.</p></li>
+    /// <p><code>ACTIVE</code> - The budget is being evaluated.</p></li>
     /// <li>
-    /// <p><code>INACTIVE</code>–The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
+    /// <p><code>INACTIVE</code> - The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::BudgetStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -227,9 +227,9 @@ impl UpdateBudgetInputBuilder {
     /// <p>Updates the status of the budget.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–The budget is being evaluated.</p></li>
+    /// <p><code>ACTIVE</code> - The budget is being evaluated.</p></li>
     /// <li>
-    /// <p><code>INACTIVE</code>–The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
+    /// <p><code>INACTIVE</code> - The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::BudgetStatus>) -> Self {
         self.status = input;
@@ -238,9 +238,9 @@ impl UpdateBudgetInputBuilder {
     /// <p>Updates the status of the budget.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–The budget is being evaluated.</p></li>
+    /// <p><code>ACTIVE</code> - The budget is being evaluated.</p></li>
     /// <li>
-    /// <p><code>INACTIVE</code>–The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
+    /// <p><code>INACTIVE</code> - The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::BudgetStatus> {
         &self.status

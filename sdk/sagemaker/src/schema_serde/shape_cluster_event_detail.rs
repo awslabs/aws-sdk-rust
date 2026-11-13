@@ -99,6 +99,16 @@ static CLUSTEREVENTDETAIL_MEMBER_EVENT_LEVEL: ::aws_smithy_schema::Schema<'stati
     "EventLevel",
     9,
 );
+static CLUSTEREVENTDETAIL_MEMBER_OPERATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker#ClusterEventDetail$OperationId",
+        "com.amazonaws.sagemaker",
+        "ClusterEventDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OperationId",
+    10,
+);
 static CLUSTEREVENTDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.sagemaker#ClusterEventDetail",
@@ -117,6 +127,7 @@ static CLUSTEREVENTDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_s
         &CLUSTEREVENTDETAIL_MEMBER_EVENT_DETAILS,
         &CLUSTEREVENTDETAIL_MEMBER_DESCRIPTION,
         &CLUSTEREVENTDETAIL_MEMBER_EVENT_LEVEL,
+        &CLUSTEREVENTDETAIL_MEMBER_OPERATION_ID,
     ],
 );
 impl crate::types::ClusterEventDetail {
@@ -162,6 +173,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::ClusterEve
         }
         if let Some(ref val) = self.event_level {
             ser.write_string(&CLUSTEREVENTDETAIL_MEMBER_EVENT_LEVEL, val.as_str())?;
+        }
+        if let Some(ref val) = self.operation_id {
+            ser.write_string(&CLUSTEREVENTDETAIL_MEMBER_OPERATION_ID, val)?;
         }
         Ok(())
     }
@@ -248,6 +262,13 @@ impl crate::types::builders::ClusterEventDetailBuilder {
                         deser.read_null()?;
                     } else {
                         self.event_level = Some(crate::types::ClusterEventLevel::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.operation_id = Some(deser.read_string(member)?);
                     }
                 }
                 _ => {}

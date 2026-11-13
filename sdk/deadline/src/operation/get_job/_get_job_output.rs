@@ -17,13 +17,13 @@ pub struct GetJobOutput {
     pub created_at: ::aws_smithy_types::DateTime,
     /// The user or system that created this resource.
     pub created_by: ::std::string::String,
-    /// The date and time the resource was updated.
+    /// The date and time the resource was updated. Task status changes don't update this value.
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// The user or system that updated this resource.
     pub updated_by: ::std::option::Option<::std::string::String>,
-    /// The date and time the resource started running.
+    /// The date and time the resource started running. Requeuing the job doesn't change this value.
     pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// The date and time the resource ended running.
+    /// The date and time the resource ended running. Returned only when the job has finished.
     pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// The task run status for the job.
     pub task_run_status: ::std::option::Option<crate::types::TaskRunStatus>,
@@ -86,7 +86,7 @@ impl GetJobOutput {
         use std::ops::Deref;
         self.created_by.deref()
     }
-    /// The date and time the resource was updated.
+    /// The date and time the resource was updated. Task status changes don't update this value.
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
@@ -94,11 +94,11 @@ impl GetJobOutput {
     pub fn updated_by(&self) -> ::std::option::Option<&str> {
         self.updated_by.as_deref()
     }
-    /// The date and time the resource started running.
+    /// The date and time the resource started running. Requeuing the job doesn't change this value.
     pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
-    /// The date and time the resource ended running.
+    /// The date and time the resource ended running. Returned only when the job has finished.
     pub fn ended_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.ended_at.as_ref()
     }
@@ -330,17 +330,17 @@ impl GetJobOutputBuilder {
     pub fn get_created_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.created_by
     }
-    /// The date and time the resource was updated.
+    /// The date and time the resource was updated. Task status changes don't update this value.
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.updated_at = ::std::option::Option::Some(input);
         self
     }
-    /// The date and time the resource was updated.
+    /// The date and time the resource was updated. Task status changes don't update this value.
     pub fn set_updated_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.updated_at = input;
         self
     }
-    /// The date and time the resource was updated.
+    /// The date and time the resource was updated. Task status changes don't update this value.
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
@@ -358,31 +358,31 @@ impl GetJobOutputBuilder {
     pub fn get_updated_by(&self) -> &::std::option::Option<::std::string::String> {
         &self.updated_by
     }
-    /// The date and time the resource started running.
+    /// The date and time the resource started running. Requeuing the job doesn't change this value.
     pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.started_at = ::std::option::Option::Some(input);
         self
     }
-    /// The date and time the resource started running.
+    /// The date and time the resource started running. Requeuing the job doesn't change this value.
     pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.started_at = input;
         self
     }
-    /// The date and time the resource started running.
+    /// The date and time the resource started running. Requeuing the job doesn't change this value.
     pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.started_at
     }
-    /// The date and time the resource ended running.
+    /// The date and time the resource ended running. Returned only when the job has finished.
     pub fn ended_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.ended_at = ::std::option::Option::Some(input);
         self
     }
-    /// The date and time the resource ended running.
+    /// The date and time the resource ended running. Returned only when the job has finished.
     pub fn set_ended_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.ended_at = input;
         self
     }
-    /// The date and time the resource ended running.
+    /// The date and time the resource ended running. Returned only when the job has finished.
     pub fn get_ended_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.ended_at
     }

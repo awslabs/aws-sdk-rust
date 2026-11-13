@@ -2036,6 +2036,15 @@ pub(crate) fn list_candidates_for_auto_ml_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_cluster_extension_versions_output_output_correct_errors(
+    mut builder: crate::operation::list_cluster_extension_versions::builders::ListClusterExtensionVersionsOutputBuilder,
+) -> crate::operation::list_cluster_extension_versions::builders::ListClusterExtensionVersionsOutputBuilder {
+    if builder.extension_versions.is_none() {
+        builder.extension_versions = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_cluster_extensions_output_output_correct_errors(
     mut builder: crate::operation::list_cluster_extensions::builders::ListClusterExtensionsOutputBuilder,
 ) -> crate::operation::list_cluster_extensions::builders::ListClusterExtensionsOutputBuilder {

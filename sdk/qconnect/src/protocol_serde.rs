@@ -691,6 +691,8 @@ pub(crate) mod shape_association_configuration;
 
 pub(crate) mod shape_bedrock_foundation_model_configuration_for_parsing;
 
+pub(crate) mod shape_case_attributes;
+
 pub(crate) mod shape_connect_configuration;
 
 pub(crate) mod shape_contact_attribute_keys;
@@ -735,6 +737,8 @@ pub(crate) mod shape_multi_agent_configuration;
 
 pub(crate) mod shape_or_conditions;
 
+pub(crate) mod shape_profile_recommendation;
+
 pub(crate) mod shape_push_adm_message_template_content;
 
 pub(crate) mod shape_push_apns_message_template_content;
@@ -775,6 +779,8 @@ pub(crate) mod shape_association_configuration_data;
 
 pub(crate) mod shape_association_configuration_list;
 
+pub(crate) mod shape_calculated_attributes;
+
 pub(crate) mod shape_citation;
 
 pub(crate) mod shape_citations;
@@ -802,6 +808,10 @@ pub(crate) mod shape_multi_agent_configuration_list;
 pub(crate) mod shape_object_fields_list;
 
 pub(crate) mod shape_parsing_prompt;
+
+pub(crate) mod shape_profile_catalog_item;
+
+pub(crate) mod shape_profile_recommendations;
 
 pub(crate) mod shape_query_recommendation_trigger_data;
 
@@ -914,6 +924,8 @@ pub(crate) mod shape_tool_override_constant_input_value;
 pub(crate) mod shape_tool_override_input_value_list;
 
 pub(crate) mod shape_guardrail_policy_result;
+
+pub(crate) mod shape_profile_catalog_item_attributes;
 
 pub(crate) mod shape_span_citation_list;
 

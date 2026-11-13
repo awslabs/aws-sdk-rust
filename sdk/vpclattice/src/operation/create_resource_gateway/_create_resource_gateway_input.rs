@@ -26,10 +26,11 @@ pub struct CreateResourceGatewayInput {
     pub ip_address_type: ::std::option::Option<crate::types::ResourceGatewayIpAddressType>,
     /// <p>The number of IPv4 addresses in each ENI for the resource gateway.</p>
     pub ipv4_addresses_per_eni: ::std::option::Option<i32>,
-    /// <p>Indicates how DNS is resolved for resource configurations associated with this resource gateway. This value is set when you create the resource gateway and can't be changed afterward. The default is <code>PUBLIC</code>.</p>
+    /// <p>Indicates how DNS is resolved for resource configurations associated with this resource gateway. The default is <code>PUBLIC</code>. To change the value after you create the resource gateway, use <code>UpdateResourceGateway</code>.</p>
     /// <ul>
     /// <li>
-    /// <p><code>IN_VPC</code> - DNS resolution occurs privately within the resource gateway's VPC. DNS queries for resources behind this resource gateway resolve using the DNS resolvers defined in the VPC's DHCP option sets. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC. A CIDR resource configuration requires a resource gateway that uses <code>IN_VPC</code>, and an <code>IN_VPC</code> resource gateway can't be used for ARN resource configurations, so a single resource gateway can't serve both ARN and CIDR resource configurations.</p></li>
+    /// <p><code>IN_VPC</code> - DNS resolution occurs privately within the resource gateway's VPC. DNS queries for resources behind this resource gateway resolve using the DNS resolvers defined in the VPC's DHCP option sets. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC. A CIDR resource configuration requires a resource gateway that uses <code>IN_VPC</code>, and an <code>IN_VPC</code> resource gateway can't be used for ARN resource configurations, so a single resource gateway can't serve both ARN and CIDR resource configurations.</p>
+    /// <p>DNS queries for an <code>IN_VPC</code> resource gateway use UDP only, with no TCP fallback. If responses exceed 8.4 KB, DNS resolution fails. The DNS resolver must be recursive. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/resource-gateway.html#resource-config-dns-resolution">Resource Config DNS Resolution</a> in the <i>Amazon VPC Lattice User Guide</i>.</p></li>
     /// <li>
     /// <p><code>PUBLIC</code> - DNS resolution occurs against public DNS resolvers. DNS queries for resources behind this resource gateway resolve using standard public DNS. Use this when your resource domain names are publicly resolvable.</p></li>
     /// </ul>
@@ -79,10 +80,11 @@ impl CreateResourceGatewayInput {
     pub fn ipv4_addresses_per_eni(&self) -> ::std::option::Option<i32> {
         self.ipv4_addresses_per_eni
     }
-    /// <p>Indicates how DNS is resolved for resource configurations associated with this resource gateway. This value is set when you create the resource gateway and can't be changed afterward. The default is <code>PUBLIC</code>.</p>
+    /// <p>Indicates how DNS is resolved for resource configurations associated with this resource gateway. The default is <code>PUBLIC</code>. To change the value after you create the resource gateway, use <code>UpdateResourceGateway</code>.</p>
     /// <ul>
     /// <li>
-    /// <p><code>IN_VPC</code> - DNS resolution occurs privately within the resource gateway's VPC. DNS queries for resources behind this resource gateway resolve using the DNS resolvers defined in the VPC's DHCP option sets. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC. A CIDR resource configuration requires a resource gateway that uses <code>IN_VPC</code>, and an <code>IN_VPC</code> resource gateway can't be used for ARN resource configurations, so a single resource gateway can't serve both ARN and CIDR resource configurations.</p></li>
+    /// <p><code>IN_VPC</code> - DNS resolution occurs privately within the resource gateway's VPC. DNS queries for resources behind this resource gateway resolve using the DNS resolvers defined in the VPC's DHCP option sets. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC. A CIDR resource configuration requires a resource gateway that uses <code>IN_VPC</code>, and an <code>IN_VPC</code> resource gateway can't be used for ARN resource configurations, so a single resource gateway can't serve both ARN and CIDR resource configurations.</p>
+    /// <p>DNS queries for an <code>IN_VPC</code> resource gateway use UDP only, with no TCP fallback. If responses exceed 8.4 KB, DNS resolution fails. The DNS resolver must be recursive. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/resource-gateway.html#resource-config-dns-resolution">Resource Config DNS Resolution</a> in the <i>Amazon VPC Lattice User Guide</i>.</p></li>
     /// <li>
     /// <p><code>PUBLIC</code> - DNS resolution occurs against public DNS resolvers. DNS queries for resources behind this resource gateway resolve using standard public DNS. Use this when your resource domain names are publicly resolvable.</p></li>
     /// </ul>
@@ -254,10 +256,11 @@ impl CreateResourceGatewayInputBuilder {
     pub fn get_ipv4_addresses_per_eni(&self) -> &::std::option::Option<i32> {
         &self.ipv4_addresses_per_eni
     }
-    /// <p>Indicates how DNS is resolved for resource configurations associated with this resource gateway. This value is set when you create the resource gateway and can't be changed afterward. The default is <code>PUBLIC</code>.</p>
+    /// <p>Indicates how DNS is resolved for resource configurations associated with this resource gateway. The default is <code>PUBLIC</code>. To change the value after you create the resource gateway, use <code>UpdateResourceGateway</code>.</p>
     /// <ul>
     /// <li>
-    /// <p><code>IN_VPC</code> - DNS resolution occurs privately within the resource gateway's VPC. DNS queries for resources behind this resource gateway resolve using the DNS resolvers defined in the VPC's DHCP option sets. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC. A CIDR resource configuration requires a resource gateway that uses <code>IN_VPC</code>, and an <code>IN_VPC</code> resource gateway can't be used for ARN resource configurations, so a single resource gateway can't serve both ARN and CIDR resource configurations.</p></li>
+    /// <p><code>IN_VPC</code> - DNS resolution occurs privately within the resource gateway's VPC. DNS queries for resources behind this resource gateway resolve using the DNS resolvers defined in the VPC's DHCP option sets. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC. A CIDR resource configuration requires a resource gateway that uses <code>IN_VPC</code>, and an <code>IN_VPC</code> resource gateway can't be used for ARN resource configurations, so a single resource gateway can't serve both ARN and CIDR resource configurations.</p>
+    /// <p>DNS queries for an <code>IN_VPC</code> resource gateway use UDP only, with no TCP fallback. If responses exceed 8.4 KB, DNS resolution fails. The DNS resolver must be recursive. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/resource-gateway.html#resource-config-dns-resolution">Resource Config DNS Resolution</a> in the <i>Amazon VPC Lattice User Guide</i>.</p></li>
     /// <li>
     /// <p><code>PUBLIC</code> - DNS resolution occurs against public DNS resolvers. DNS queries for resources behind this resource gateway resolve using standard public DNS. Use this when your resource domain names are publicly resolvable.</p></li>
     /// </ul>
@@ -265,10 +268,11 @@ impl CreateResourceGatewayInputBuilder {
         self.resource_config_dns_resolution = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates how DNS is resolved for resource configurations associated with this resource gateway. This value is set when you create the resource gateway and can't be changed afterward. The default is <code>PUBLIC</code>.</p>
+    /// <p>Indicates how DNS is resolved for resource configurations associated with this resource gateway. The default is <code>PUBLIC</code>. To change the value after you create the resource gateway, use <code>UpdateResourceGateway</code>.</p>
     /// <ul>
     /// <li>
-    /// <p><code>IN_VPC</code> - DNS resolution occurs privately within the resource gateway's VPC. DNS queries for resources behind this resource gateway resolve using the DNS resolvers defined in the VPC's DHCP option sets. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC. A CIDR resource configuration requires a resource gateway that uses <code>IN_VPC</code>, and an <code>IN_VPC</code> resource gateway can't be used for ARN resource configurations, so a single resource gateway can't serve both ARN and CIDR resource configurations.</p></li>
+    /// <p><code>IN_VPC</code> - DNS resolution occurs privately within the resource gateway's VPC. DNS queries for resources behind this resource gateway resolve using the DNS resolvers defined in the VPC's DHCP option sets. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC. A CIDR resource configuration requires a resource gateway that uses <code>IN_VPC</code>, and an <code>IN_VPC</code> resource gateway can't be used for ARN resource configurations, so a single resource gateway can't serve both ARN and CIDR resource configurations.</p>
+    /// <p>DNS queries for an <code>IN_VPC</code> resource gateway use UDP only, with no TCP fallback. If responses exceed 8.4 KB, DNS resolution fails. The DNS resolver must be recursive. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/resource-gateway.html#resource-config-dns-resolution">Resource Config DNS Resolution</a> in the <i>Amazon VPC Lattice User Guide</i>.</p></li>
     /// <li>
     /// <p><code>PUBLIC</code> - DNS resolution occurs against public DNS resolvers. DNS queries for resources behind this resource gateway resolve using standard public DNS. Use this when your resource domain names are publicly resolvable.</p></li>
     /// </ul>
@@ -276,10 +280,11 @@ impl CreateResourceGatewayInputBuilder {
         self.resource_config_dns_resolution = input;
         self
     }
-    /// <p>Indicates how DNS is resolved for resource configurations associated with this resource gateway. This value is set when you create the resource gateway and can't be changed afterward. The default is <code>PUBLIC</code>.</p>
+    /// <p>Indicates how DNS is resolved for resource configurations associated with this resource gateway. The default is <code>PUBLIC</code>. To change the value after you create the resource gateway, use <code>UpdateResourceGateway</code>.</p>
     /// <ul>
     /// <li>
-    /// <p><code>IN_VPC</code> - DNS resolution occurs privately within the resource gateway's VPC. DNS queries for resources behind this resource gateway resolve using the DNS resolvers defined in the VPC's DHCP option sets. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC. A CIDR resource configuration requires a resource gateway that uses <code>IN_VPC</code>, and an <code>IN_VPC</code> resource gateway can't be used for ARN resource configurations, so a single resource gateway can't serve both ARN and CIDR resource configurations.</p></li>
+    /// <p><code>IN_VPC</code> - DNS resolution occurs privately within the resource gateway's VPC. DNS queries for resources behind this resource gateway resolve using the DNS resolvers defined in the VPC's DHCP option sets. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC. A CIDR resource configuration requires a resource gateway that uses <code>IN_VPC</code>, and an <code>IN_VPC</code> resource gateway can't be used for ARN resource configurations, so a single resource gateway can't serve both ARN and CIDR resource configurations.</p>
+    /// <p>DNS queries for an <code>IN_VPC</code> resource gateway use UDP only, with no TCP fallback. If responses exceed 8.4 KB, DNS resolution fails. The DNS resolver must be recursive. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/resource-gateway.html#resource-config-dns-resolution">Resource Config DNS Resolution</a> in the <i>Amazon VPC Lattice User Guide</i>.</p></li>
     /// <li>
     /// <p><code>PUBLIC</code> - DNS resolution occurs against public DNS resolvers. DNS queries for resources behind this resource gateway resolve using standard public DNS. Use this when your resource domain names are publicly resolvable.</p></li>
     /// </ul>

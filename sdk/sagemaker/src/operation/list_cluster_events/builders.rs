@@ -226,6 +226,20 @@ impl ListClusterEventsFluentBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ClusterEventResourceType> {
         self.inner.get_resource_type()
     }
+    /// <p>The unique identifier (UUID) of a cluster operation for which to filter events. If specified, only events associated with this operation are returned. This ID can be obtained from the <code>ListClusterOperations</code> operation.</p>
+    pub fn operation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.operation_id(input.into());
+        self
+    }
+    /// <p>The unique identifier (UUID) of a cluster operation for which to filter events. If specified, only events associated with this operation are returned. This ID can be obtained from the <code>ListClusterOperations</code> operation.</p>
+    pub fn set_operation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_operation_id(input);
+        self
+    }
+    /// <p>The unique identifier (UUID) of a cluster operation for which to filter events. If specified, only events associated with this operation are returned. This ID can be obtained from the <code>ListClusterOperations</code> operation.</p>
+    pub fn get_operation_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_operation_id()
+    }
     /// <p>The maximum number of events to return in the response. Valid range is 1 to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);

@@ -46,6 +46,7 @@ impl super::Client {
     ///   - [`capacity_provider_config(Option<CapacityProviderConfig>)`](crate::operation::get_function_configuration::GetFunctionConfigurationOutput::capacity_provider_config): <p>Configuration for the capacity provider that manages compute resources for Lambda functions.</p>
     ///   - [`config_sha256(Option<String>)`](crate::operation::get_function_configuration::GetFunctionConfigurationOutput::config_sha256): <p>The SHA256 hash of the function configuration.</p>
     ///   - [`durable_config(Option<DurableConfig>)`](crate::operation::get_function_configuration::GetFunctionConfigurationOutput::durable_config): <p>The function's durable execution configuration settings, if the function is configured for durability.</p>
+    ///   - [`runtime_config(Option<FunctionRuntimeConfig>)`](crate::operation::get_function_configuration::GetFunctionConfigurationOutput::runtime_config): <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
     /// - On failure, responds with [`SdkError<GetFunctionConfigurationError>`](crate::operation::get_function_configuration::GetFunctionConfigurationError)
     pub fn get_function_configuration(&self) -> crate::operation::get_function_configuration::builders::GetFunctionConfigurationFluentBuilder {
         crate::operation::get_function_configuration::builders::GetFunctionConfigurationFluentBuilder::new(self.handle.clone())

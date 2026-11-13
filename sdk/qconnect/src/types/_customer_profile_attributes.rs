@@ -120,6 +120,10 @@ pub struct CustomerProfileAttributes {
     pub billing_state: ::std::option::Option<::std::string::String>,
     /// <p>The custom attributes in customer profile attributes.</p>
     pub custom: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The recommendations that are associated with the customer profile.</p>
+    pub recommendations: ::std::option::Option<::std::vec::Vec<crate::types::ProfileRecommendation>>,
+    /// <p>The calculated attributes from the customer profile that are used with the message template.</p>
+    pub calculated_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CustomerProfileAttributes {
     /// <p>The unique identifier of a customer profile.</p>
@@ -354,6 +358,16 @@ impl CustomerProfileAttributes {
     pub fn custom(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.custom.as_ref()
     }
+    /// <p>The recommendations that are associated with the customer profile.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendations.is_none()`.
+    pub fn recommendations(&self) -> &[crate::types::ProfileRecommendation] {
+        self.recommendations.as_deref().unwrap_or_default()
+    }
+    /// <p>The calculated attributes from the customer profile that are used with the message template.</p>
+    pub fn calculated_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.calculated_attributes.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CustomerProfileAttributes {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -416,6 +430,8 @@ impl ::std::fmt::Debug for CustomerProfileAttributes {
         formatter.field("billing_province", &"*** Sensitive Data Redacted ***");
         formatter.field("billing_state", &"*** Sensitive Data Redacted ***");
         formatter.field("custom", &"*** Sensitive Data Redacted ***");
+        formatter.field("recommendations", &self.recommendations);
+        formatter.field("calculated_attributes", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -488,6 +504,8 @@ pub struct CustomerProfileAttributesBuilder {
     pub(crate) billing_province: ::std::option::Option<::std::string::String>,
     pub(crate) billing_state: ::std::option::Option<::std::string::String>,
     pub(crate) custom: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) recommendations: ::std::option::Option<::std::vec::Vec<crate::types::ProfileRecommendation>>,
+    pub(crate) calculated_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CustomerProfileAttributesBuilder {
     /// <p>The unique identifier of a customer profile.</p>
@@ -1308,6 +1326,53 @@ impl CustomerProfileAttributesBuilder {
     pub fn get_custom(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.custom
     }
+    /// Appends an item to `recommendations`.
+    ///
+    /// To override the contents of this collection use [`set_recommendations`](Self::set_recommendations).
+    ///
+    /// <p>The recommendations that are associated with the customer profile.</p>
+    pub fn recommendations(mut self, input: crate::types::ProfileRecommendation) -> Self {
+        let mut v = self.recommendations.unwrap_or_default();
+        v.push(input);
+        self.recommendations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The recommendations that are associated with the customer profile.</p>
+    pub fn set_recommendations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ProfileRecommendation>>) -> Self {
+        self.recommendations = input;
+        self
+    }
+    /// <p>The recommendations that are associated with the customer profile.</p>
+    pub fn get_recommendations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ProfileRecommendation>> {
+        &self.recommendations
+    }
+    /// Adds a key-value pair to `calculated_attributes`.
+    ///
+    /// To override the contents of this collection use [`set_calculated_attributes`](Self::set_calculated_attributes).
+    ///
+    /// <p>The calculated attributes from the customer profile that are used with the message template.</p>
+    pub fn calculated_attributes(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.calculated_attributes.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.calculated_attributes = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The calculated attributes from the customer profile that are used with the message template.</p>
+    pub fn set_calculated_attributes(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.calculated_attributes = input;
+        self
+    }
+    /// <p>The calculated attributes from the customer profile that are used with the message template.</p>
+    pub fn get_calculated_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.calculated_attributes
+    }
     /// Consumes the builder and constructs a [`CustomerProfileAttributes`](crate::types::CustomerProfileAttributes).
     pub fn build(self) -> crate::types::CustomerProfileAttributes {
         crate::types::CustomerProfileAttributes {
@@ -1369,6 +1434,8 @@ impl CustomerProfileAttributesBuilder {
             billing_province: self.billing_province,
             billing_state: self.billing_state,
             custom: self.custom,
+            recommendations: self.recommendations,
+            calculated_attributes: self.calculated_attributes,
         }
     }
 }
@@ -1433,6 +1500,8 @@ impl ::std::fmt::Debug for CustomerProfileAttributesBuilder {
         formatter.field("billing_province", &"*** Sensitive Data Redacted ***");
         formatter.field("billing_state", &"*** Sensitive Data Redacted ***");
         formatter.field("custom", &"*** Sensitive Data Redacted ***");
+        formatter.field("recommendations", &self.recommendations);
+        formatter.field("calculated_attributes", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

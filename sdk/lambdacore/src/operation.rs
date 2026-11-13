@@ -4,11 +4,38 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `CreateNetworkConnector` operation.
 pub mod create_network_connector;
 
+/// Types for the `CreateRuntime` operation.
+pub mod create_runtime;
+
+/// Types for the `CreateRuntimeAlias` operation.
+pub mod create_runtime_alias;
+
+/// Types for the `CreateRuntimeVersion` operation.
+pub mod create_runtime_version;
+
 /// Types for the `DeleteNetworkConnector` operation.
 pub mod delete_network_connector;
 
+/// Types for the `DeleteRuntime` operation.
+pub mod delete_runtime;
+
+/// Types for the `DeleteRuntimeAlias` operation.
+pub mod delete_runtime_alias;
+
+/// Types for the `DeleteRuntimeVersion` operation.
+pub mod delete_runtime_version;
+
 /// Types for the `GetNetworkConnector` operation.
 pub mod get_network_connector;
+
+/// Types for the `GetRuntime` operation.
+pub mod get_runtime;
+
+/// Types for the `GetRuntimeAlias` operation.
+pub mod get_runtime_alias;
+
+/// Types for the `GetRuntimeVersion` operation.
+pub mod get_runtime_version;
 
 /// Types for the `ListNetworkConnectorVersions` operation.
 pub mod list_network_connector_versions;
@@ -16,5 +43,26 @@ pub mod list_network_connector_versions;
 /// Types for the `ListNetworkConnectors` operation.
 pub mod list_network_connectors;
 
+/// Types for the `ListRuntimeAliases` operation.
+pub mod list_runtime_aliases;
+
+/// Types for the `ListRuntimeVersions` operation.
+pub mod list_runtime_versions;
+
+/// Types for the `ListRuntimes` operation.
+pub mod list_runtimes;
+
+/// Types for the `RestoreRuntime` operation.
+pub mod restore_runtime;
+
 /// Types for the `UpdateNetworkConnector` operation.
 pub mod update_network_connector;
+
+/// Types for the `UpdateRuntime` operation.
+pub mod update_runtime;
+
+/// Types for the `UpdateRuntimeAlias` operation.
+pub mod update_runtime_alias;
+
+/// Types for the `UpdateRuntimeVersion` operation.
+pub mod update_runtime_version;

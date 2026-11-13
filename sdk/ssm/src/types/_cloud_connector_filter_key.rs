@@ -12,6 +12,8 @@
 /// ```text
 /// # let cloudconnectorfilterkey = unimplemented!();
 /// match cloudconnectorfilterkey {
+///     CloudConnectorFilterKey::OrganizationId => { /* ... */ },
+///     CloudConnectorFilterKey::ProjectId => { /* ... */ },
 ///     CloudConnectorFilterKey::SubscriptionId => { /* ... */ },
 ///     CloudConnectorFilterKey::TenantId => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +45,10 @@
 )]
 pub enum CloudConnectorFilterKey {
     #[allow(missing_docs)] // documentation missing in model
+    OrganizationId,
+    #[allow(missing_docs)] // documentation missing in model
+    ProjectId,
+    #[allow(missing_docs)] // documentation missing in model
     SubscriptionId,
     #[allow(missing_docs)] // documentation missing in model
     TenantId,
@@ -53,6 +59,8 @@ pub enum CloudConnectorFilterKey {
 impl ::std::convert::From<&str> for CloudConnectorFilterKey {
     fn from(s: &str) -> Self {
         match s {
+            "OrganizationId" => CloudConnectorFilterKey::OrganizationId,
+            "ProjectId" => CloudConnectorFilterKey::ProjectId,
             "SubscriptionId" => CloudConnectorFilterKey::SubscriptionId,
             "TenantId" => CloudConnectorFilterKey::TenantId,
             other => CloudConnectorFilterKey::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +78,8 @@ impl CloudConnectorFilterKey {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            CloudConnectorFilterKey::OrganizationId => "OrganizationId",
+            CloudConnectorFilterKey::ProjectId => "ProjectId",
             CloudConnectorFilterKey::SubscriptionId => "SubscriptionId",
             CloudConnectorFilterKey::TenantId => "TenantId",
             CloudConnectorFilterKey::Unknown(value) => value.as_str(),
@@ -77,7 +87,7 @@ impl CloudConnectorFilterKey {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SubscriptionId", "TenantId"]
+        &["OrganizationId", "ProjectId", "SubscriptionId", "TenantId"]
     }
 }
 impl ::std::convert::AsRef<str> for CloudConnectorFilterKey {
@@ -100,6 +110,8 @@ impl CloudConnectorFilterKey {
 impl ::std::fmt::Display for CloudConnectorFilterKey {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            CloudConnectorFilterKey::OrganizationId => write!(f, "OrganizationId"),
+            CloudConnectorFilterKey::ProjectId => write!(f, "ProjectId"),
             CloudConnectorFilterKey::SubscriptionId => write!(f, "SubscriptionId"),
             CloudConnectorFilterKey::TenantId => write!(f, "TenantId"),
             CloudConnectorFilterKey::Unknown(value) => write!(f, "{value}"),

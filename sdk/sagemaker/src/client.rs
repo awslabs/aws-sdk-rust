@@ -631,6 +631,8 @@ mod describe_cluster_extension;
 
 mod describe_cluster_node;
 
+mod describe_cluster_operation;
+
 mod describe_cluster_scheduler_config;
 
 mod describe_code_repository;
@@ -809,9 +811,13 @@ mod list_candidates_for_auto_ml_job;
 
 mod list_cluster_events;
 
+mod list_cluster_extension_versions;
+
 mod list_cluster_extensions;
 
 mod list_cluster_nodes;
+
+mod list_cluster_operations;
 
 mod list_cluster_scheduler_configs;
 

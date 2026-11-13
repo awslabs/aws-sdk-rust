@@ -93,6 +93,10 @@ pub(crate) mod shape_ecs_parameters;
 
 pub(crate) mod shape_event_bridge_parameters;
 
+pub(crate) mod shape_event_bridge_put_events_v2_parameters;
+
+pub(crate) mod shape_event_bridge_put_raw_events_parameters;
+
 pub(crate) mod shape_kinesis_parameters;
 
 pub(crate) mod shape_retry_policy;
@@ -108,6 +112,8 @@ pub(crate) mod shape_sqs_parameters;
 pub(crate) mod shape_capacity_provider_strategy;
 
 pub(crate) mod shape_capacity_provider_strategy_item;
+
+pub(crate) mod shape_event_bridge_metadata_map;
 
 pub(crate) mod shape_network_configuration;
 

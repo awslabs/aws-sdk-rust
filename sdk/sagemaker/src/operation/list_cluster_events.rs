@@ -227,6 +227,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListClusterEv
                 captured.insert("NodeId", value);
             }
         }
+        if requested.should_capture("OperationId") {
+            if let ::std::option::Option::Some(value) = input.operation_id.as_deref() {
+                captured.insert("OperationId", value);
+            }
+        }
         if requested.should_capture("NextToken") {
             if let ::std::option::Option::Some(value) = input.next_token.as_deref() {
                 captured.insert("NextToken", value);

@@ -13,6 +13,12 @@ pub fn ser_proxy_settings(
             }
         }
     }
+    if let Some(var_2) = &input.certificate_arn {
+        encoder.str("CertificateArn").str(var_2.as_str());
+    }
+    if let Some(var_3) = &input.domain_name {
+        encoder.str("DomainName").str(var_3.as_str());
+    }
     encoder.end();
     Ok(())
 }
@@ -38,6 +44,12 @@ pub(crate) fn de_proxy_settings(
                 decoder,
                 depth + 1,
             )?)),
+            "CertificateArn" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_certificate_arn(Some(decoder.string()?)))
+            })?,
+            "DomainName" => {
+                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_domain_name(Some(decoder.string()?))))?
+            }
             _ => {
                 decoder.skip()?;
                 builder

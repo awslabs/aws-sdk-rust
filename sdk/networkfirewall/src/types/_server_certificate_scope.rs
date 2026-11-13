@@ -17,6 +17,26 @@ pub struct ServerCertificateScope {
     /// <p>The protocols to inspect for, specified using the assigned internet protocol number (IANA) for each protocol. If not specified, this matches with any protocol.</p>
     /// <p>Network Firewall currently supports only TCP.</p>
     pub protocols: ::std::option::Option<::std::vec::Vec<i32>>,
+    /// <p>The domains that this scope matches, based on the host name in the client's HTTP CONNECT request. Domain matching applies only to proxy mode firewalls. If you specify <code>DomainMatch</code>, you must set <code>DeploymentMode</code> to <code>EXPLICIT_PROXY_ONLY</code>. If you don't specify <code>DomainMatch</code>, the scope matches traffic by its source, destination, ports, and protocols only.</p>
+    pub domain_match: ::std::option::Option<crate::types::DomainMatch>,
+    /// <p>Whether the firewall decrypts traffic that matches this scope. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DECRYPT</code> - The firewall decrypts the traffic for inspection.</p></li>
+    /// <li>
+    /// <p><code>BYPASS</code> - The firewall doesn't decrypt the traffic.</p></li>
+    /// </ul>
+    pub decryption_action: ::std::option::Option<crate::types::DecryptionAction>,
+    /// <p>The type of firewall that this scope applies to. If you don't specify a value, the scope applies to both types, the same as <code>ALL</code>. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ALL</code> - The scope applies to both transparent firewalls and proxy mode firewalls.</p></li>
+    /// <li>
+    /// <p><code>TRANSPARENT_FIREWALL_ONLY</code> - The scope applies only to transparent firewalls.</p></li>
+    /// <li>
+    /// <p><code>EXPLICIT_PROXY_ONLY</code> - The scope applies only to proxy mode firewalls. A scope that specifies <code>DomainMatch</code> must use this value.</p></li>
+    /// </ul>
+    pub deployment_mode: ::std::option::Option<crate::types::TlsInspectionScopeDeploymentMode>,
 }
 impl ServerCertificateScope {
     /// <p>The source IP addresses and address ranges to decrypt for inspection, in CIDR notation. If not specified, this matches with any source address.</p>
@@ -52,6 +72,32 @@ impl ServerCertificateScope {
     pub fn protocols(&self) -> &[i32] {
         self.protocols.as_deref().unwrap_or_default()
     }
+    /// <p>The domains that this scope matches, based on the host name in the client's HTTP CONNECT request. Domain matching applies only to proxy mode firewalls. If you specify <code>DomainMatch</code>, you must set <code>DeploymentMode</code> to <code>EXPLICIT_PROXY_ONLY</code>. If you don't specify <code>DomainMatch</code>, the scope matches traffic by its source, destination, ports, and protocols only.</p>
+    pub fn domain_match(&self) -> ::std::option::Option<&crate::types::DomainMatch> {
+        self.domain_match.as_ref()
+    }
+    /// <p>Whether the firewall decrypts traffic that matches this scope. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DECRYPT</code> - The firewall decrypts the traffic for inspection.</p></li>
+    /// <li>
+    /// <p><code>BYPASS</code> - The firewall doesn't decrypt the traffic.</p></li>
+    /// </ul>
+    pub fn decryption_action(&self) -> ::std::option::Option<&crate::types::DecryptionAction> {
+        self.decryption_action.as_ref()
+    }
+    /// <p>The type of firewall that this scope applies to. If you don't specify a value, the scope applies to both types, the same as <code>ALL</code>. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ALL</code> - The scope applies to both transparent firewalls and proxy mode firewalls.</p></li>
+    /// <li>
+    /// <p><code>TRANSPARENT_FIREWALL_ONLY</code> - The scope applies only to transparent firewalls.</p></li>
+    /// <li>
+    /// <p><code>EXPLICIT_PROXY_ONLY</code> - The scope applies only to proxy mode firewalls. A scope that specifies <code>DomainMatch</code> must use this value.</p></li>
+    /// </ul>
+    pub fn deployment_mode(&self) -> ::std::option::Option<&crate::types::TlsInspectionScopeDeploymentMode> {
+        self.deployment_mode.as_ref()
+    }
 }
 impl ServerCertificateScope {
     /// Creates a new builder-style object to manufacture [`ServerCertificateScope`](crate::types::ServerCertificateScope).
@@ -69,6 +115,9 @@ pub struct ServerCertificateScopeBuilder {
     pub(crate) source_ports: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
     pub(crate) destination_ports: ::std::option::Option<::std::vec::Vec<crate::types::PortRange>>,
     pub(crate) protocols: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) domain_match: ::std::option::Option<crate::types::DomainMatch>,
+    pub(crate) decryption_action: ::std::option::Option<crate::types::DecryptionAction>,
+    pub(crate) deployment_mode: ::std::option::Option<crate::types::TlsInspectionScopeDeploymentMode>,
 }
 impl ServerCertificateScopeBuilder {
     /// Appends an item to `sources`.
@@ -180,6 +229,90 @@ impl ServerCertificateScopeBuilder {
     pub fn get_protocols(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
         &self.protocols
     }
+    /// <p>The domains that this scope matches, based on the host name in the client's HTTP CONNECT request. Domain matching applies only to proxy mode firewalls. If you specify <code>DomainMatch</code>, you must set <code>DeploymentMode</code> to <code>EXPLICIT_PROXY_ONLY</code>. If you don't specify <code>DomainMatch</code>, the scope matches traffic by its source, destination, ports, and protocols only.</p>
+    pub fn domain_match(mut self, input: crate::types::DomainMatch) -> Self {
+        self.domain_match = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The domains that this scope matches, based on the host name in the client's HTTP CONNECT request. Domain matching applies only to proxy mode firewalls. If you specify <code>DomainMatch</code>, you must set <code>DeploymentMode</code> to <code>EXPLICIT_PROXY_ONLY</code>. If you don't specify <code>DomainMatch</code>, the scope matches traffic by its source, destination, ports, and protocols only.</p>
+    pub fn set_domain_match(mut self, input: ::std::option::Option<crate::types::DomainMatch>) -> Self {
+        self.domain_match = input;
+        self
+    }
+    /// <p>The domains that this scope matches, based on the host name in the client's HTTP CONNECT request. Domain matching applies only to proxy mode firewalls. If you specify <code>DomainMatch</code>, you must set <code>DeploymentMode</code> to <code>EXPLICIT_PROXY_ONLY</code>. If you don't specify <code>DomainMatch</code>, the scope matches traffic by its source, destination, ports, and protocols only.</p>
+    pub fn get_domain_match(&self) -> &::std::option::Option<crate::types::DomainMatch> {
+        &self.domain_match
+    }
+    /// <p>Whether the firewall decrypts traffic that matches this scope. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DECRYPT</code> - The firewall decrypts the traffic for inspection.</p></li>
+    /// <li>
+    /// <p><code>BYPASS</code> - The firewall doesn't decrypt the traffic.</p></li>
+    /// </ul>
+    pub fn decryption_action(mut self, input: crate::types::DecryptionAction) -> Self {
+        self.decryption_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether the firewall decrypts traffic that matches this scope. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DECRYPT</code> - The firewall decrypts the traffic for inspection.</p></li>
+    /// <li>
+    /// <p><code>BYPASS</code> - The firewall doesn't decrypt the traffic.</p></li>
+    /// </ul>
+    pub fn set_decryption_action(mut self, input: ::std::option::Option<crate::types::DecryptionAction>) -> Self {
+        self.decryption_action = input;
+        self
+    }
+    /// <p>Whether the firewall decrypts traffic that matches this scope. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DECRYPT</code> - The firewall decrypts the traffic for inspection.</p></li>
+    /// <li>
+    /// <p><code>BYPASS</code> - The firewall doesn't decrypt the traffic.</p></li>
+    /// </ul>
+    pub fn get_decryption_action(&self) -> &::std::option::Option<crate::types::DecryptionAction> {
+        &self.decryption_action
+    }
+    /// <p>The type of firewall that this scope applies to. If you don't specify a value, the scope applies to both types, the same as <code>ALL</code>. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ALL</code> - The scope applies to both transparent firewalls and proxy mode firewalls.</p></li>
+    /// <li>
+    /// <p><code>TRANSPARENT_FIREWALL_ONLY</code> - The scope applies only to transparent firewalls.</p></li>
+    /// <li>
+    /// <p><code>EXPLICIT_PROXY_ONLY</code> - The scope applies only to proxy mode firewalls. A scope that specifies <code>DomainMatch</code> must use this value.</p></li>
+    /// </ul>
+    pub fn deployment_mode(mut self, input: crate::types::TlsInspectionScopeDeploymentMode) -> Self {
+        self.deployment_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of firewall that this scope applies to. If you don't specify a value, the scope applies to both types, the same as <code>ALL</code>. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ALL</code> - The scope applies to both transparent firewalls and proxy mode firewalls.</p></li>
+    /// <li>
+    /// <p><code>TRANSPARENT_FIREWALL_ONLY</code> - The scope applies only to transparent firewalls.</p></li>
+    /// <li>
+    /// <p><code>EXPLICIT_PROXY_ONLY</code> - The scope applies only to proxy mode firewalls. A scope that specifies <code>DomainMatch</code> must use this value.</p></li>
+    /// </ul>
+    pub fn set_deployment_mode(mut self, input: ::std::option::Option<crate::types::TlsInspectionScopeDeploymentMode>) -> Self {
+        self.deployment_mode = input;
+        self
+    }
+    /// <p>The type of firewall that this scope applies to. If you don't specify a value, the scope applies to both types, the same as <code>ALL</code>. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ALL</code> - The scope applies to both transparent firewalls and proxy mode firewalls.</p></li>
+    /// <li>
+    /// <p><code>TRANSPARENT_FIREWALL_ONLY</code> - The scope applies only to transparent firewalls.</p></li>
+    /// <li>
+    /// <p><code>EXPLICIT_PROXY_ONLY</code> - The scope applies only to proxy mode firewalls. A scope that specifies <code>DomainMatch</code> must use this value.</p></li>
+    /// </ul>
+    pub fn get_deployment_mode(&self) -> &::std::option::Option<crate::types::TlsInspectionScopeDeploymentMode> {
+        &self.deployment_mode
+    }
     /// Consumes the builder and constructs a [`ServerCertificateScope`](crate::types::ServerCertificateScope).
     pub fn build(self) -> crate::types::ServerCertificateScope {
         crate::types::ServerCertificateScope {
@@ -188,6 +321,9 @@ impl ServerCertificateScopeBuilder {
             source_ports: self.source_ports,
             destination_ports: self.destination_ports,
             protocols: self.protocols,
+            domain_match: self.domain_match,
+            decryption_action: self.decryption_action,
+            deployment_mode: self.deployment_mode,
         }
     }
 }

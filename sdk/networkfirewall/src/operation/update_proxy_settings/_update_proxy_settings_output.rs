@@ -11,7 +11,7 @@ pub struct UpdateProxySettingsOutput {
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub update_token: ::std::option::Option<::std::string::String>,
-    /// <p>The updated proxy listener configuration on the firewall.</p>
+    /// <p>The updated proxy settings for the firewall.</p>
     pub proxy_settings: ::std::option::Option<crate::types::ProxySettings>,
     _request_id: Option<String>,
 }
@@ -30,7 +30,7 @@ impl UpdateProxySettingsOutput {
     pub fn update_token(&self) -> ::std::option::Option<&str> {
         self.update_token.as_deref()
     }
-    /// <p>The updated proxy listener configuration on the firewall.</p>
+    /// <p>The updated proxy settings for the firewall.</p>
     pub fn proxy_settings(&self) -> ::std::option::Option<&crate::types::ProxySettings> {
         self.proxy_settings.as_ref()
     }
@@ -106,17 +106,17 @@ impl UpdateProxySettingsOutputBuilder {
     pub fn get_update_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.update_token
     }
-    /// <p>The updated proxy listener configuration on the firewall.</p>
+    /// <p>The updated proxy settings for the firewall.</p>
     pub fn proxy_settings(mut self, input: crate::types::ProxySettings) -> Self {
         self.proxy_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated proxy listener configuration on the firewall.</p>
+    /// <p>The updated proxy settings for the firewall.</p>
     pub fn set_proxy_settings(mut self, input: ::std::option::Option<crate::types::ProxySettings>) -> Self {
         self.proxy_settings = input;
         self
     }
-    /// <p>The updated proxy listener configuration on the firewall.</p>
+    /// <p>The updated proxy settings for the firewall.</p>
     pub fn get_proxy_settings(&self) -> &::std::option::Option<crate::types::ProxySettings> {
         &self.proxy_settings
     }

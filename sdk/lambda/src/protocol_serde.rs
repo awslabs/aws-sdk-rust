@@ -351,6 +351,10 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_resource_not_ready_exception;
 
+pub(crate) mod shape_runtime_alias_deleted_exception;
+
+pub(crate) mod shape_runtime_version_deleted_exception;
+
 pub(crate) mod shape_s3_files_mount_connectivity_exception;
 
 pub(crate) mod shape_s3_files_mount_failure_exception;
@@ -492,6 +496,8 @@ pub(crate) mod shape_function_event_invoke_config_list;
 pub(crate) mod shape_function_list;
 
 pub(crate) mod shape_function_response_type_list;
+
+pub(crate) mod shape_function_runtime_config;
 
 pub(crate) mod shape_function_scaling_config;
 

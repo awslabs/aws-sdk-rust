@@ -7,6 +7,14 @@ pub struct UpdateResourceGatewayInput {
     pub resource_gateway_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the security groups associated with the resource gateway.</p>
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Indicates how DNS is resolved for resource configurations associated with this resource gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IN_VPC</code> - DNS resolution occurs privately within the resource gateway's VPC. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC</code> - DNS resolution occurs against public DNS resolvers. Use this when your resource domain names are publicly resolvable.</p></li>
+    /// </ul>
+    pub resource_config_dns_resolution: ::std::option::Option<crate::types::ResourceConfigDnsResolution>,
 }
 impl UpdateResourceGatewayInput {
     /// <p>The ID or ARN of the resource gateway.</p>
@@ -18,6 +26,16 @@ impl UpdateResourceGatewayInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.security_group_ids.is_none()`.
     pub fn security_group_ids(&self) -> &[::std::string::String] {
         self.security_group_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>Indicates how DNS is resolved for resource configurations associated with this resource gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IN_VPC</code> - DNS resolution occurs privately within the resource gateway's VPC. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC</code> - DNS resolution occurs against public DNS resolvers. Use this when your resource domain names are publicly resolvable.</p></li>
+    /// </ul>
+    pub fn resource_config_dns_resolution(&self) -> ::std::option::Option<&crate::types::ResourceConfigDnsResolution> {
+        self.resource_config_dns_resolution.as_ref()
     }
 }
 impl UpdateResourceGatewayInput {
@@ -33,6 +51,7 @@ impl UpdateResourceGatewayInput {
 pub struct UpdateResourceGatewayInputBuilder {
     pub(crate) resource_gateway_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) resource_config_dns_resolution: ::std::option::Option<crate::types::ResourceConfigDnsResolution>,
 }
 impl UpdateResourceGatewayInputBuilder {
     /// <p>The ID or ARN of the resource gateway.</p>
@@ -70,6 +89,38 @@ impl UpdateResourceGatewayInputBuilder {
     pub fn get_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.security_group_ids
     }
+    /// <p>Indicates how DNS is resolved for resource configurations associated with this resource gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IN_VPC</code> - DNS resolution occurs privately within the resource gateway's VPC. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC</code> - DNS resolution occurs against public DNS resolvers. Use this when your resource domain names are publicly resolvable.</p></li>
+    /// </ul>
+    pub fn resource_config_dns_resolution(mut self, input: crate::types::ResourceConfigDnsResolution) -> Self {
+        self.resource_config_dns_resolution = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates how DNS is resolved for resource configurations associated with this resource gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IN_VPC</code> - DNS resolution occurs privately within the resource gateway's VPC. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC</code> - DNS resolution occurs against public DNS resolvers. Use this when your resource domain names are publicly resolvable.</p></li>
+    /// </ul>
+    pub fn set_resource_config_dns_resolution(mut self, input: ::std::option::Option<crate::types::ResourceConfigDnsResolution>) -> Self {
+        self.resource_config_dns_resolution = input;
+        self
+    }
+    /// <p>Indicates how DNS is resolved for resource configurations associated with this resource gateway.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IN_VPC</code> - DNS resolution occurs privately within the resource gateway's VPC. Use this when your resource domain names are hosted in private Route 53 hosted zones or on-premises DNS servers reachable from the VPC.</p></li>
+    /// <li>
+    /// <p><code>PUBLIC</code> - DNS resolution occurs against public DNS resolvers. Use this when your resource domain names are publicly resolvable.</p></li>
+    /// </ul>
+    pub fn get_resource_config_dns_resolution(&self) -> &::std::option::Option<crate::types::ResourceConfigDnsResolution> {
+        &self.resource_config_dns_resolution
+    }
     /// Consumes the builder and constructs a [`UpdateResourceGatewayInput`](crate::operation::update_resource_gateway::UpdateResourceGatewayInput).
     pub fn build(
         self,
@@ -78,6 +129,7 @@ impl UpdateResourceGatewayInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_resource_gateway::UpdateResourceGatewayInput {
             resource_gateway_identifier: self.resource_gateway_identifier,
             security_group_ids: self.security_group_ids,
+            resource_config_dns_resolution: self.resource_config_dns_resolution,
         })
     }
 }

@@ -20,6 +20,13 @@ pub struct CrlDetail {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ISO-8601 timestamp when the certificate revocation list (CRL) was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The alias of the certificate revocation list (CRL). Present only if the CRL has an alias.</p>
+    pub alias_name: ::std::option::Option<::std::string::String>,
+    /// <p>The alias ARN of the certificate revocation list (CRL), in the form <code>arn:<i>partition</i>:rolesanywhere:<i>region</i>:<i>account</i>:alias/crl/<i>alias-name</i> </code>. Present only if the CRL has an alias.</p>
+    /// <p>You can use the alias ARN in place of the resource ID or ARN in the request parameters whose descriptions say that they accept an alias ARN. Don't use the alias ARN in Identity and Access Management (IAM) policies. A policy statement that names an alias ARN doesn't apply to the resource that holds the alias. Write policies with the ARN that contains the resource ID instead.</p>
+    pub alias_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The alias that the resource had before the update request. IAM Roles Anywhere returns this value only in the response to an update request that changed or removed an existing alias. It isn't returned when the alias was unchanged, when the resource had no alias before the request, or by other operations.</p>
+    pub previous_alias_name: ::std::option::Option<::std::string::String>,
 }
 impl CrlDetail {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
@@ -54,6 +61,19 @@ impl CrlDetail {
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>The alias of the certificate revocation list (CRL). Present only if the CRL has an alias.</p>
+    pub fn alias_name(&self) -> ::std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
+    /// <p>The alias ARN of the certificate revocation list (CRL), in the form <code>arn:<i>partition</i>:rolesanywhere:<i>region</i>:<i>account</i>:alias/crl/<i>alias-name</i> </code>. Present only if the CRL has an alias.</p>
+    /// <p>You can use the alias ARN in place of the resource ID or ARN in the request parameters whose descriptions say that they accept an alias ARN. Don't use the alias ARN in Identity and Access Management (IAM) policies. A policy statement that names an alias ARN doesn't apply to the resource that holds the alias. Write policies with the ARN that contains the resource ID instead.</p>
+    pub fn alias_arn(&self) -> ::std::option::Option<&str> {
+        self.alias_arn.as_deref()
+    }
+    /// <p>The alias that the resource had before the update request. IAM Roles Anywhere returns this value only in the response to an update request that changed or removed an existing alias. It isn't returned when the alias was unchanged, when the resource had no alias before the request, or by other operations.</p>
+    pub fn previous_alias_name(&self) -> ::std::option::Option<&str> {
+        self.previous_alias_name.as_deref()
+    }
 }
 impl CrlDetail {
     /// Creates a new builder-style object to manufacture [`CrlDetail`](crate::types::CrlDetail).
@@ -74,6 +94,9 @@ pub struct CrlDetailBuilder {
     pub(crate) trust_anchor_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) alias_name: ::std::option::Option<::std::string::String>,
+    pub(crate) alias_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) previous_alias_name: ::std::option::Option<::std::string::String>,
 }
 impl CrlDetailBuilder {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
@@ -188,6 +211,51 @@ impl CrlDetailBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>The alias of the certificate revocation list (CRL). Present only if the CRL has an alias.</p>
+    pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alias_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The alias of the certificate revocation list (CRL). Present only if the CRL has an alias.</p>
+    pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alias_name = input;
+        self
+    }
+    /// <p>The alias of the certificate revocation list (CRL). Present only if the CRL has an alias.</p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_name
+    }
+    /// <p>The alias ARN of the certificate revocation list (CRL), in the form <code>arn:<i>partition</i>:rolesanywhere:<i>region</i>:<i>account</i>:alias/crl/<i>alias-name</i> </code>. Present only if the CRL has an alias.</p>
+    /// <p>You can use the alias ARN in place of the resource ID or ARN in the request parameters whose descriptions say that they accept an alias ARN. Don't use the alias ARN in Identity and Access Management (IAM) policies. A policy statement that names an alias ARN doesn't apply to the resource that holds the alias. Write policies with the ARN that contains the resource ID instead.</p>
+    pub fn alias_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alias_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The alias ARN of the certificate revocation list (CRL), in the form <code>arn:<i>partition</i>:rolesanywhere:<i>region</i>:<i>account</i>:alias/crl/<i>alias-name</i> </code>. Present only if the CRL has an alias.</p>
+    /// <p>You can use the alias ARN in place of the resource ID or ARN in the request parameters whose descriptions say that they accept an alias ARN. Don't use the alias ARN in Identity and Access Management (IAM) policies. A policy statement that names an alias ARN doesn't apply to the resource that holds the alias. Write policies with the ARN that contains the resource ID instead.</p>
+    pub fn set_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alias_arn = input;
+        self
+    }
+    /// <p>The alias ARN of the certificate revocation list (CRL), in the form <code>arn:<i>partition</i>:rolesanywhere:<i>region</i>:<i>account</i>:alias/crl/<i>alias-name</i> </code>. Present only if the CRL has an alias.</p>
+    /// <p>You can use the alias ARN in place of the resource ID or ARN in the request parameters whose descriptions say that they accept an alias ARN. Don't use the alias ARN in Identity and Access Management (IAM) policies. A policy statement that names an alias ARN doesn't apply to the resource that holds the alias. Write policies with the ARN that contains the resource ID instead.</p>
+    pub fn get_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_arn
+    }
+    /// <p>The alias that the resource had before the update request. IAM Roles Anywhere returns this value only in the response to an update request that changed or removed an existing alias. It isn't returned when the alias was unchanged, when the resource had no alias before the request, or by other operations.</p>
+    pub fn previous_alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.previous_alias_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The alias that the resource had before the update request. IAM Roles Anywhere returns this value only in the response to an update request that changed or removed an existing alias. It isn't returned when the alias was unchanged, when the resource had no alias before the request, or by other operations.</p>
+    pub fn set_previous_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.previous_alias_name = input;
+        self
+    }
+    /// <p>The alias that the resource had before the update request. IAM Roles Anywhere returns this value only in the response to an update request that changed or removed an existing alias. It isn't returned when the alias was unchanged, when the resource had no alias before the request, or by other operations.</p>
+    pub fn get_previous_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.previous_alias_name
+    }
     /// Consumes the builder and constructs a [`CrlDetail`](crate::types::CrlDetail).
     pub fn build(self) -> crate::types::CrlDetail {
         crate::types::CrlDetail {
@@ -199,6 +267,9 @@ impl CrlDetailBuilder {
             trust_anchor_arn: self.trust_anchor_arn,
             created_at: self.created_at,
             updated_at: self.updated_at,
+            alias_name: self.alias_name,
+            alias_arn: self.alias_arn,
+            previous_alias_name: self.previous_alias_name,
         }
     }
 }

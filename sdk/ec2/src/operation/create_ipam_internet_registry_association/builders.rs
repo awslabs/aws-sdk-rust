@@ -139,7 +139,7 @@ impl CreateIpamInternetRegistryAssociationFluentBuilder {
     pub fn get_ipam_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ipam_id()
     }
-    /// <p>The Regional Internet Registry to associate with. Possible values:</p>
+    /// <p>The internet registry to associate with. Possible values:</p>
     /// <ul>
     /// <li>
     /// <p><code>ripe</code> - RIPE NCC (Europe, the Middle East, and Central Asia).</p></li>
@@ -149,12 +149,14 @@ impl CreateIpamInternetRegistryAssociationFluentBuilder {
     /// <p><code>arin</code> - ARIN (North America).</p></li>
     /// <li>
     /// <p><code>lacnic</code> - LACNIC (Latin America and the Caribbean).</p></li>
+    /// <li>
+    /// <p><code>nicbr</code> - NIC.br (Brazil).</p></li>
     /// </ul>
     pub fn rir(mut self, input: crate::types::Rir) -> Self {
         self.inner = self.inner.rir(input);
         self
     }
-    /// <p>The Regional Internet Registry to associate with. Possible values:</p>
+    /// <p>The internet registry to associate with. Possible values:</p>
     /// <ul>
     /// <li>
     /// <p><code>ripe</code> - RIPE NCC (Europe, the Middle East, and Central Asia).</p></li>
@@ -164,12 +166,14 @@ impl CreateIpamInternetRegistryAssociationFluentBuilder {
     /// <p><code>arin</code> - ARIN (North America).</p></li>
     /// <li>
     /// <p><code>lacnic</code> - LACNIC (Latin America and the Caribbean).</p></li>
+    /// <li>
+    /// <p><code>nicbr</code> - NIC.br (Brazil).</p></li>
     /// </ul>
     pub fn set_rir(mut self, input: ::std::option::Option<crate::types::Rir>) -> Self {
         self.inner = self.inner.set_rir(input);
         self
     }
-    /// <p>The Regional Internet Registry to associate with. Possible values:</p>
+    /// <p>The internet registry to associate with. Possible values:</p>
     /// <ul>
     /// <li>
     /// <p><code>ripe</code> - RIPE NCC (Europe, the Middle East, and Central Asia).</p></li>
@@ -179,6 +183,8 @@ impl CreateIpamInternetRegistryAssociationFluentBuilder {
     /// <p><code>arin</code> - ARIN (North America).</p></li>
     /// <li>
     /// <p><code>lacnic</code> - LACNIC (Latin America and the Caribbean).</p></li>
+    /// <li>
+    /// <p><code>nicbr</code> - NIC.br (Brazil).</p></li>
     /// </ul>
     pub fn get_rir(&self) -> &::std::option::Option<crate::types::Rir> {
         self.inner.get_rir()

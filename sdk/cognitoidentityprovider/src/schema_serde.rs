@@ -251,6 +251,8 @@ pub(crate) mod shape_custom_email_lambda_version_config_type;
 
 pub(crate) mod shape_custom_sms_lambda_version_config_type;
 
+pub(crate) mod shape_dcr_configuration_type;
+
 pub(crate) mod shape_delete_group_input_input;
 
 pub(crate) mod shape_delete_group_output_output;

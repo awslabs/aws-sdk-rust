@@ -23,7 +23,7 @@ impl crate::operation::update_distribution_configuration::builders::UpdateDistri
 /// Fluent builder constructing a request to `UpdateDistributionConfiguration`.
 ///
 /// <p>Updates a distribution configuration. Distribution configurations define and configure the outputs for your images, including the target Regions, accounts, and settings for each Region.</p><note>
-/// <p>This operation doesn't support selective updates. The request replaces the stored configuration, so include every setting that you want to keep.</p>
+/// <p>This operation doesn't support selective updates. The request replaces the entire distribution configuration, so include every setting that you want to keep. Any optional property that you omit is removed or reset to its default.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateDistributionConfigurationFluentBuilder {

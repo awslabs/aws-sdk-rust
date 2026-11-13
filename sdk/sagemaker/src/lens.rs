@@ -149,6 +149,16 @@ pub(crate) fn reflens_list_cluster_events_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_cluster_extension_versions_output_output_next_token(
+    input: &crate::operation::list_cluster_extension_versions::ListClusterExtensionVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_cluster_extensions_output_output_next_token(
     input: &crate::operation::list_cluster_extensions::ListClusterExtensionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -161,6 +171,16 @@ pub(crate) fn reflens_list_cluster_extensions_output_output_next_token(
 
 pub(crate) fn reflens_list_cluster_nodes_output_output_next_token(
     input: &crate::operation::list_cluster_nodes::ListClusterNodesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_cluster_operations_output_output_next_token(
+    input: &crate::operation::list_cluster_operations::ListClusterOperationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -1034,6 +1054,13 @@ pub(crate) fn lens_list_cluster_events_output_output_events(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_cluster_extension_versions_output_output_extension_versions(
+    input: crate::operation::list_cluster_extension_versions::ListClusterExtensionVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ExtensionVersionSummary>> {
+    let input = input.extension_versions?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_cluster_extensions_output_output_extensions(
     input: crate::operation::list_cluster_extensions::ListClusterExtensionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ExtensionSummary>> {
@@ -1045,6 +1072,13 @@ pub(crate) fn lens_list_cluster_nodes_output_output_cluster_node_summaries(
     input: crate::operation::list_cluster_nodes::ListClusterNodesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ClusterNodeSummary>> {
     let input = input.cluster_node_summaries?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_cluster_operations_output_output_cluster_operation_summaries(
+    input: crate::operation::list_cluster_operations::ListClusterOperationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationSummary>> {
+    let input = input.cluster_operation_summaries?;
     ::std::option::Option::Some(input)
 }
 

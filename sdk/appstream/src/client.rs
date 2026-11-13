@@ -410,6 +410,8 @@ mod update_entitlement;
 
 mod update_fleet;
 
+mod update_image_builder;
+
 mod update_image_permissions;
 
 mod update_stack;

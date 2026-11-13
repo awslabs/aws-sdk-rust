@@ -29,25 +29,25 @@ pub struct JobSummary {
     /// <p>The task run status for the job.</p>
     /// <ul>
     /// <li>
-    /// <p><code>PENDING</code>–pending and waiting for resources.</p></li>
+    /// <p><code>PENDING</code> - pending and waiting for resources.</p></li>
     /// <li>
-    /// <p><code>READY</code>–ready to be processed.</p></li>
+    /// <p><code>READY</code> - ready to be processed.</p></li>
     /// <li>
-    /// <p><code>ASSIGNED</code>–assigned and will run next on a worker.</p></li>
+    /// <p><code>ASSIGNED</code> - assigned and will run next on a worker.</p></li>
     /// <li>
-    /// <p><code>SCHEDULED</code>–scheduled to be run on a worker.</p></li>
+    /// <p><code>SCHEDULED</code> - scheduled to be run on a worker.</p></li>
     /// <li>
-    /// <p><code>INTERRUPTING</code>–being interrupted.</p></li>
+    /// <p><code>INTERRUPTING</code> - being interrupted.</p></li>
     /// <li>
-    /// <p><code>RUNNING</code>–running on a worker.</p></li>
+    /// <p><code>RUNNING</code> - running on a worker.</p></li>
     /// <li>
-    /// <p><code>SUSPENDED</code>–the task is suspended.</p></li>
+    /// <p><code>SUSPENDED</code> - the task is suspended.</p></li>
     /// <li>
-    /// <p><code>CANCELED</code>–the task has been canceled.</p></li>
+    /// <p><code>CANCELED</code> - the task has been canceled.</p></li>
     /// <li>
-    /// <p><code>FAILED</code>–the task has failed.</p></li>
+    /// <p><code>FAILED</code> - the task has failed.</p></li>
     /// <li>
-    /// <p><code>SUCCEEDED</code>–the task has succeeded.</p></li>
+    /// <p><code>SUCCEEDED</code> - the task has succeeded.</p></li>
     /// </ul>
     pub task_run_status: ::std::option::Option<crate::types::TaskRunStatus>,
     /// The task status to update the job's tasks to.
@@ -117,25 +117,25 @@ impl JobSummary {
     /// <p>The task run status for the job.</p>
     /// <ul>
     /// <li>
-    /// <p><code>PENDING</code>–pending and waiting for resources.</p></li>
+    /// <p><code>PENDING</code> - pending and waiting for resources.</p></li>
     /// <li>
-    /// <p><code>READY</code>–ready to be processed.</p></li>
+    /// <p><code>READY</code> - ready to be processed.</p></li>
     /// <li>
-    /// <p><code>ASSIGNED</code>–assigned and will run next on a worker.</p></li>
+    /// <p><code>ASSIGNED</code> - assigned and will run next on a worker.</p></li>
     /// <li>
-    /// <p><code>SCHEDULED</code>–scheduled to be run on a worker.</p></li>
+    /// <p><code>SCHEDULED</code> - scheduled to be run on a worker.</p></li>
     /// <li>
-    /// <p><code>INTERRUPTING</code>–being interrupted.</p></li>
+    /// <p><code>INTERRUPTING</code> - being interrupted.</p></li>
     /// <li>
-    /// <p><code>RUNNING</code>–running on a worker.</p></li>
+    /// <p><code>RUNNING</code> - running on a worker.</p></li>
     /// <li>
-    /// <p><code>SUSPENDED</code>–the task is suspended.</p></li>
+    /// <p><code>SUSPENDED</code> - the task is suspended.</p></li>
     /// <li>
-    /// <p><code>CANCELED</code>–the task has been canceled.</p></li>
+    /// <p><code>CANCELED</code> - the task has been canceled.</p></li>
     /// <li>
-    /// <p><code>FAILED</code>–the task has failed.</p></li>
+    /// <p><code>FAILED</code> - the task has failed.</p></li>
     /// <li>
-    /// <p><code>SUCCEEDED</code>–the task has succeeded.</p></li>
+    /// <p><code>SUCCEEDED</code> - the task has succeeded.</p></li>
     /// </ul>
     pub fn task_run_status(&self) -> ::std::option::Option<&crate::types::TaskRunStatus> {
         self.task_run_status.as_ref()
@@ -365,25 +365,25 @@ impl JobSummaryBuilder {
     /// <p>The task run status for the job.</p>
     /// <ul>
     /// <li>
-    /// <p><code>PENDING</code>–pending and waiting for resources.</p></li>
+    /// <p><code>PENDING</code> - pending and waiting for resources.</p></li>
     /// <li>
-    /// <p><code>READY</code>–ready to be processed.</p></li>
+    /// <p><code>READY</code> - ready to be processed.</p></li>
     /// <li>
-    /// <p><code>ASSIGNED</code>–assigned and will run next on a worker.</p></li>
+    /// <p><code>ASSIGNED</code> - assigned and will run next on a worker.</p></li>
     /// <li>
-    /// <p><code>SCHEDULED</code>–scheduled to be run on a worker.</p></li>
+    /// <p><code>SCHEDULED</code> - scheduled to be run on a worker.</p></li>
     /// <li>
-    /// <p><code>INTERRUPTING</code>–being interrupted.</p></li>
+    /// <p><code>INTERRUPTING</code> - being interrupted.</p></li>
     /// <li>
-    /// <p><code>RUNNING</code>–running on a worker.</p></li>
+    /// <p><code>RUNNING</code> - running on a worker.</p></li>
     /// <li>
-    /// <p><code>SUSPENDED</code>–the task is suspended.</p></li>
+    /// <p><code>SUSPENDED</code> - the task is suspended.</p></li>
     /// <li>
-    /// <p><code>CANCELED</code>–the task has been canceled.</p></li>
+    /// <p><code>CANCELED</code> - the task has been canceled.</p></li>
     /// <li>
-    /// <p><code>FAILED</code>–the task has failed.</p></li>
+    /// <p><code>FAILED</code> - the task has failed.</p></li>
     /// <li>
-    /// <p><code>SUCCEEDED</code>–the task has succeeded.</p></li>
+    /// <p><code>SUCCEEDED</code> - the task has succeeded.</p></li>
     /// </ul>
     pub fn task_run_status(mut self, input: crate::types::TaskRunStatus) -> Self {
         self.task_run_status = ::std::option::Option::Some(input);
@@ -392,25 +392,25 @@ impl JobSummaryBuilder {
     /// <p>The task run status for the job.</p>
     /// <ul>
     /// <li>
-    /// <p><code>PENDING</code>–pending and waiting for resources.</p></li>
+    /// <p><code>PENDING</code> - pending and waiting for resources.</p></li>
     /// <li>
-    /// <p><code>READY</code>–ready to be processed.</p></li>
+    /// <p><code>READY</code> - ready to be processed.</p></li>
     /// <li>
-    /// <p><code>ASSIGNED</code>–assigned and will run next on a worker.</p></li>
+    /// <p><code>ASSIGNED</code> - assigned and will run next on a worker.</p></li>
     /// <li>
-    /// <p><code>SCHEDULED</code>–scheduled to be run on a worker.</p></li>
+    /// <p><code>SCHEDULED</code> - scheduled to be run on a worker.</p></li>
     /// <li>
-    /// <p><code>INTERRUPTING</code>–being interrupted.</p></li>
+    /// <p><code>INTERRUPTING</code> - being interrupted.</p></li>
     /// <li>
-    /// <p><code>RUNNING</code>–running on a worker.</p></li>
+    /// <p><code>RUNNING</code> - running on a worker.</p></li>
     /// <li>
-    /// <p><code>SUSPENDED</code>–the task is suspended.</p></li>
+    /// <p><code>SUSPENDED</code> - the task is suspended.</p></li>
     /// <li>
-    /// <p><code>CANCELED</code>–the task has been canceled.</p></li>
+    /// <p><code>CANCELED</code> - the task has been canceled.</p></li>
     /// <li>
-    /// <p><code>FAILED</code>–the task has failed.</p></li>
+    /// <p><code>FAILED</code> - the task has failed.</p></li>
     /// <li>
-    /// <p><code>SUCCEEDED</code>–the task has succeeded.</p></li>
+    /// <p><code>SUCCEEDED</code> - the task has succeeded.</p></li>
     /// </ul>
     pub fn set_task_run_status(mut self, input: ::std::option::Option<crate::types::TaskRunStatus>) -> Self {
         self.task_run_status = input;
@@ -419,25 +419,25 @@ impl JobSummaryBuilder {
     /// <p>The task run status for the job.</p>
     /// <ul>
     /// <li>
-    /// <p><code>PENDING</code>–pending and waiting for resources.</p></li>
+    /// <p><code>PENDING</code> - pending and waiting for resources.</p></li>
     /// <li>
-    /// <p><code>READY</code>–ready to be processed.</p></li>
+    /// <p><code>READY</code> - ready to be processed.</p></li>
     /// <li>
-    /// <p><code>ASSIGNED</code>–assigned and will run next on a worker.</p></li>
+    /// <p><code>ASSIGNED</code> - assigned and will run next on a worker.</p></li>
     /// <li>
-    /// <p><code>SCHEDULED</code>–scheduled to be run on a worker.</p></li>
+    /// <p><code>SCHEDULED</code> - scheduled to be run on a worker.</p></li>
     /// <li>
-    /// <p><code>INTERRUPTING</code>–being interrupted.</p></li>
+    /// <p><code>INTERRUPTING</code> - being interrupted.</p></li>
     /// <li>
-    /// <p><code>RUNNING</code>–running on a worker.</p></li>
+    /// <p><code>RUNNING</code> - running on a worker.</p></li>
     /// <li>
-    /// <p><code>SUSPENDED</code>–the task is suspended.</p></li>
+    /// <p><code>SUSPENDED</code> - the task is suspended.</p></li>
     /// <li>
-    /// <p><code>CANCELED</code>–the task has been canceled.</p></li>
+    /// <p><code>CANCELED</code> - the task has been canceled.</p></li>
     /// <li>
-    /// <p><code>FAILED</code>–the task has failed.</p></li>
+    /// <p><code>FAILED</code> - the task has failed.</p></li>
     /// <li>
-    /// <p><code>SUCCEEDED</code>–the task has succeeded.</p></li>
+    /// <p><code>SUCCEEDED</code> - the task has succeeded.</p></li>
     /// </ul>
     pub fn get_task_run_status(&self) -> &::std::option::Option<crate::types::TaskRunStatus> {
         &self.task_run_status

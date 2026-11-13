@@ -259,6 +259,9 @@ pub mod update_entitlement;
 /// Types for the `UpdateFleet` operation.
 pub mod update_fleet;
 
+/// Types for the `UpdateImageBuilder` operation.
+pub mod update_image_builder;
+
 /// Types for the `UpdateImagePermissions` operation.
 pub mod update_image_permissions;
 

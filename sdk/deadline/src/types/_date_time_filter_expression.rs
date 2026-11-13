@@ -6,7 +6,7 @@
 pub struct DateTimeFilterExpression {
     /// The name of the date-time field to filter on.
     pub name: ::std::string::String,
-    /// The type of comparison to use to filter the results.
+    /// The type of comparison to use to filter the results. `NOT_EQUAL`, `ANY_EQUALS`, and `ALL_NOT_EQUALS` aren't supported.
     pub operator: crate::types::ComparisonOperator,
     /// The date and time.
     pub date_time: ::aws_smithy_types::DateTime,
@@ -17,7 +17,7 @@ impl DateTimeFilterExpression {
         use std::ops::Deref;
         self.name.deref()
     }
-    /// The type of comparison to use to filter the results.
+    /// The type of comparison to use to filter the results. `NOT_EQUAL`, `ANY_EQUALS`, and `ALL_NOT_EQUALS` aren't supported.
     pub fn operator(&self) -> &crate::types::ComparisonOperator {
         &self.operator
     }
@@ -57,18 +57,18 @@ impl DateTimeFilterExpressionBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// The type of comparison to use to filter the results.
+    /// The type of comparison to use to filter the results. `NOT_EQUAL`, `ANY_EQUALS`, and `ALL_NOT_EQUALS` aren't supported.
     /// This field is required.
     pub fn operator(mut self, input: crate::types::ComparisonOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
     }
-    /// The type of comparison to use to filter the results.
+    /// The type of comparison to use to filter the results. `NOT_EQUAL`, `ANY_EQUALS`, and `ALL_NOT_EQUALS` aren't supported.
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::ComparisonOperator>) -> Self {
         self.operator = input;
         self
     }
-    /// The type of comparison to use to filter the results.
+    /// The type of comparison to use to filter the results. `NOT_EQUAL`, `ANY_EQUALS`, and `ALL_NOT_EQUALS` aren't supported.
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::ComparisonOperator> {
         &self.operator
     }

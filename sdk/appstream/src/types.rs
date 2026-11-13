@@ -45,6 +45,8 @@ pub use crate::types::_volume_config::VolumeConfig;
 
 pub use crate::types::_fleet::Fleet;
 
+pub use crate::types::_image_builder_agent_access_config::ImageBuilderAgentAccessConfig;
+
 pub use crate::types::_image_builder::ImageBuilder;
 
 pub use crate::types::_runtime_validation_config::RuntimeValidationConfig;
@@ -77,6 +79,8 @@ pub use crate::types::_authentication_type::AuthenticationType;
 
 pub use crate::types::_visibility_type::VisibilityType;
 
+pub use crate::types::_image_builder_agent_access_config_for_update::ImageBuilderAgentAccessConfigForUpdate;
+
 pub use crate::types::_image_permissions::ImagePermissions;
 
 pub use crate::types::_agent_access_config_for_update::AgentAccessConfigForUpdate;
@@ -104,6 +108,12 @@ pub use crate::types::_export_image_task_state::ExportImageTaskState;
 pub use crate::types::_compute_capacity_status::ComputeCapacityStatus;
 
 pub use crate::types::_fleet_state::FleetState;
+
+pub use crate::types::_screen_resolution::ScreenResolution;
+
+pub use crate::types::_screen_image_format::ScreenImageFormat;
+
+pub use crate::types::_user_control_mode::UserControlMode;
 
 pub use crate::types::_image_builder_state::ImageBuilderState;
 
@@ -135,12 +145,6 @@ pub use crate::types::_preferred_protocol::PreferredProtocol;
 
 pub use crate::types::_url_redirection_config::UrlRedirectionConfig;
 
-pub use crate::types::_screen_resolution::ScreenResolution;
-
-pub use crate::types::_screen_image_format::ScreenImageFormat;
-
-pub use crate::types::_user_control_mode::UserControlMode;
-
 pub use crate::types::_application_settings_response::ApplicationSettingsResponse;
 
 pub use crate::types::_theme_footer_link::ThemeFooterLink;
@@ -167,6 +171,8 @@ pub use crate::types::_application_attribute::ApplicationAttribute;
 
 pub use crate::types::_fleet_attribute::FleetAttribute;
 
+pub use crate::types::_image_builder_attribute::ImageBuilderAttribute;
+
 pub use crate::types::_stack_attribute::StackAttribute;
 
 pub use crate::types::_theme_attribute::ThemeAttribute;
@@ -183,6 +189,8 @@ pub use crate::types::_app_block_builder_state_change_reason_code::AppBlockBuild
 
 pub use crate::types::_fleet_error::FleetError;
 
+pub use crate::types::_agent_access_setting::AgentAccessSetting;
+
 pub use crate::types::_image_builder_state_change_reason_code::ImageBuilderStateChangeReasonCode;
 
 pub use crate::types::_image_state_change_reason_code::ImageStateChangeReasonCode;
@@ -192,8 +200,6 @@ pub use crate::types::_storage_connector_type::StorageConnectorType;
 pub use crate::types::_action::Action;
 
 pub use crate::types::_permission::Permission;
-
-pub use crate::types::_agent_access_setting::AgentAccessSetting;
 
 pub use crate::types::_stack_error::StackError;
 
@@ -312,6 +318,12 @@ mod _fleet_type;
 mod _image;
 
 mod _image_builder;
+
+mod _image_builder_agent_access_config;
+
+mod _image_builder_agent_access_config_for_update;
+
+mod _image_builder_attribute;
 
 mod _image_builder_state;
 

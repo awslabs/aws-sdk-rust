@@ -481,6 +481,8 @@ pub use crate::types::_email_header::EmailHeader;
 
 pub use crate::types::_push_message_action::PushMessageAction;
 
+pub use crate::types::_profile_recommendation::ProfileRecommendation;
+
 pub use crate::types::_generative_reference::GenerativeReference;
 
 pub use crate::types::_suggested_message_reference::SuggestedMessageReference;
@@ -536,6 +538,8 @@ pub use crate::types::_span_message::SpanMessage;
 pub use crate::types::_span_message_value::SpanMessageValue;
 
 pub use crate::types::_span_guardrail_assessment::SpanGuardrailAssessment;
+
+pub use crate::types::_profile_catalog_item::ProfileCatalogItem;
 
 pub use crate::types::_highlight::Highlight;
 
@@ -952,6 +956,10 @@ mod _participant;
 mod _priority;
 
 mod _proactive_recommendation_data_details;
+
+mod _profile_catalog_item;
+
+mod _profile_recommendation;
 
 mod _push_adm_message_template_content;
 

@@ -20,7 +20,20 @@ pub struct CloudConnectorFilter {
     /// <dd>
     /// <p>The Azure tenant ID to filter by. Filters the results to connectors that target the specified tenant.</p>
     /// </dd>
+    /// <dt>
+    /// ProjectId
+    /// </dt>
+    /// <dd>
+    /// <p>The Google Cloud Platform (GCP) project ID to filter by. Filters the results to connectors that target the specified project.</p>
+    /// </dd>
+    /// <dt>
+    /// OrganizationId
+    /// </dt>
+    /// <dd>
+    /// <p>The GCP organization ID to filter by. Filters the results to connectors that target the entire specified organization.</p>
+    /// </dd>
     /// </dl>
+    /// <p>You can't combine Azure filter keys (<code>SubscriptionId</code> and <code>TenantId</code>) with GCP filter keys (<code>ProjectId</code> and <code>OrganizationId</code>) in the same request.</p>
     pub filter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl CloudConnectorFilter {
@@ -42,7 +55,20 @@ impl CloudConnectorFilter {
     /// <dd>
     /// <p>The Azure tenant ID to filter by. Filters the results to connectors that target the specified tenant.</p>
     /// </dd>
+    /// <dt>
+    /// ProjectId
+    /// </dt>
+    /// <dd>
+    /// <p>The Google Cloud Platform (GCP) project ID to filter by. Filters the results to connectors that target the specified project.</p>
+    /// </dd>
+    /// <dt>
+    /// OrganizationId
+    /// </dt>
+    /// <dd>
+    /// <p>The GCP organization ID to filter by. Filters the results to connectors that target the entire specified organization.</p>
+    /// </dd>
     /// </dl>
+    /// <p>You can't combine Azure filter keys (<code>SubscriptionId</code> and <code>TenantId</code>) with GCP filter keys (<code>ProjectId</code> and <code>OrganizationId</code>) in the same request.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filter_values.is_none()`.
     pub fn filter_values(&self) -> &[::std::string::String] {
@@ -96,7 +122,20 @@ impl CloudConnectorFilterBuilder {
     /// <dd>
     /// <p>The Azure tenant ID to filter by. Filters the results to connectors that target the specified tenant.</p>
     /// </dd>
+    /// <dt>
+    /// ProjectId
+    /// </dt>
+    /// <dd>
+    /// <p>The Google Cloud Platform (GCP) project ID to filter by. Filters the results to connectors that target the specified project.</p>
+    /// </dd>
+    /// <dt>
+    /// OrganizationId
+    /// </dt>
+    /// <dd>
+    /// <p>The GCP organization ID to filter by. Filters the results to connectors that target the entire specified organization.</p>
+    /// </dd>
     /// </dl>
+    /// <p>You can't combine Azure filter keys (<code>SubscriptionId</code> and <code>TenantId</code>) with GCP filter keys (<code>ProjectId</code> and <code>OrganizationId</code>) in the same request.</p>
     pub fn filter_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.filter_values.unwrap_or_default();
         v.push(input.into());
@@ -117,7 +156,20 @@ impl CloudConnectorFilterBuilder {
     /// <dd>
     /// <p>The Azure tenant ID to filter by. Filters the results to connectors that target the specified tenant.</p>
     /// </dd>
+    /// <dt>
+    /// ProjectId
+    /// </dt>
+    /// <dd>
+    /// <p>The Google Cloud Platform (GCP) project ID to filter by. Filters the results to connectors that target the specified project.</p>
+    /// </dd>
+    /// <dt>
+    /// OrganizationId
+    /// </dt>
+    /// <dd>
+    /// <p>The GCP organization ID to filter by. Filters the results to connectors that target the entire specified organization.</p>
+    /// </dd>
     /// </dl>
+    /// <p>You can't combine Azure filter keys (<code>SubscriptionId</code> and <code>TenantId</code>) with GCP filter keys (<code>ProjectId</code> and <code>OrganizationId</code>) in the same request.</p>
     pub fn set_filter_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.filter_values = input;
         self
@@ -136,7 +188,20 @@ impl CloudConnectorFilterBuilder {
     /// <dd>
     /// <p>The Azure tenant ID to filter by. Filters the results to connectors that target the specified tenant.</p>
     /// </dd>
+    /// <dt>
+    /// ProjectId
+    /// </dt>
+    /// <dd>
+    /// <p>The Google Cloud Platform (GCP) project ID to filter by. Filters the results to connectors that target the specified project.</p>
+    /// </dd>
+    /// <dt>
+    /// OrganizationId
+    /// </dt>
+    /// <dd>
+    /// <p>The GCP organization ID to filter by. Filters the results to connectors that target the entire specified organization.</p>
+    /// </dd>
     /// </dl>
+    /// <p>You can't combine Azure filter keys (<code>SubscriptionId</code> and <code>TenantId</code>) with GCP filter keys (<code>ProjectId</code> and <code>OrganizationId</code>) in the same request.</p>
     pub fn get_filter_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.filter_values
     }

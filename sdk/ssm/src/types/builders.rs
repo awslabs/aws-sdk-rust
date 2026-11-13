@@ -67,6 +67,8 @@ pub use crate::types::_failed_create_association::FailedCreateAssociationBuilder
 
 pub use crate::types::_azure_configuration::AzureConfigurationBuilder;
 
+pub use crate::types::_gcp_configuration::GcpConfigurationBuilder;
+
 pub use crate::types::_document_requires::DocumentRequiresBuilder;
 
 pub use crate::types::_attachments_source::AttachmentsSourceBuilder;
@@ -176,6 +178,8 @@ pub use crate::types::_session::SessionBuilder;
 pub use crate::types::_resolved_targets::ResolvedTargetsBuilder;
 
 pub use crate::types::_progress_counters::ProgressCountersBuilder;
+
+pub use crate::types::_targets_summary::TargetsSummaryBuilder;
 
 pub use crate::types::_attachment_content::AttachmentContentBuilder;
 
@@ -342,3 +346,5 @@ pub use crate::types::_severity_summary::SeveritySummaryBuilder;
 pub use crate::types::_instance_info::InstanceInfoBuilder;
 
 pub use crate::types::_azure_subscription::AzureSubscriptionBuilder;
+
+pub use crate::types::_gcp_project::GcpProjectBuilder;

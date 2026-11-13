@@ -20,7 +20,8 @@ pub struct Attachment {
     pub status: ::std::option::Option<crate::types::AttachmentStatus>,
     /// <p>If Network Firewall fails to create or delete the firewall endpoint in the subnet, it populates this with the reason for the error or failure and how to resolve it. A <code>FAILED</code> status indicates a non-recoverable state, and a <code>ERROR</code> status indicates an issue that you can fix. Depending on the error, it can take as many as 15 minutes to populate this field. For more information about the causes for failiure or errors and solutions available for this field, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html">Troubleshooting firewall endpoint failures</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
-    /// <p>The DNS name that resolves to the firewall endpoint in the subnet. This is populated for proxy mode firewalls, where clients direct traffic to the firewall's proxy using this name.</p>
+    /// <p>The proxy DNS name of a proxy mode firewall. Your clients send proxy requests to the firewall at this name. It's your <code>ProxySettings</code> <code>DomainName</code> if you specified one, or a name that Network Firewall generates in the format <code>proxy-<i>id</i>.nfw.<i>region</i>.amazonaws.com</code>.</p>
+    /// <p>The firewall has one proxy DNS name for every Availability Zone and VPC that it serves. In each Availability Zone, the name resolves to the firewall endpoint in that Availability Zone, so traffic stays in your client's Availability Zone. Your clients must use the VPC's Route 53 Resolver.</p>
     pub dns_name: ::std::option::Option<::std::string::String>,
 }
 impl Attachment {
@@ -41,7 +42,8 @@ impl Attachment {
     pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
-    /// <p>The DNS name that resolves to the firewall endpoint in the subnet. This is populated for proxy mode firewalls, where clients direct traffic to the firewall's proxy using this name.</p>
+    /// <p>The proxy DNS name of a proxy mode firewall. Your clients send proxy requests to the firewall at this name. It's your <code>ProxySettings</code> <code>DomainName</code> if you specified one, or a name that Network Firewall generates in the format <code>proxy-<i>id</i>.nfw.<i>region</i>.amazonaws.com</code>.</p>
+    /// <p>The firewall has one proxy DNS name for every Availability Zone and VPC that it serves. In each Availability Zone, the name resolves to the firewall endpoint in that Availability Zone, so traffic stays in your client's Availability Zone. Your clients must use the VPC's Route 53 Resolver.</p>
     pub fn dns_name(&self) -> ::std::option::Option<&str> {
         self.dns_name.as_deref()
     }
@@ -123,17 +125,20 @@ impl AttachmentBuilder {
     pub fn get_status_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_message
     }
-    /// <p>The DNS name that resolves to the firewall endpoint in the subnet. This is populated for proxy mode firewalls, where clients direct traffic to the firewall's proxy using this name.</p>
+    /// <p>The proxy DNS name of a proxy mode firewall. Your clients send proxy requests to the firewall at this name. It's your <code>ProxySettings</code> <code>DomainName</code> if you specified one, or a name that Network Firewall generates in the format <code>proxy-<i>id</i>.nfw.<i>region</i>.amazonaws.com</code>.</p>
+    /// <p>The firewall has one proxy DNS name for every Availability Zone and VPC that it serves. In each Availability Zone, the name resolves to the firewall endpoint in that Availability Zone, so traffic stays in your client's Availability Zone. Your clients must use the VPC's Route 53 Resolver.</p>
     pub fn dns_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.dns_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The DNS name that resolves to the firewall endpoint in the subnet. This is populated for proxy mode firewalls, where clients direct traffic to the firewall's proxy using this name.</p>
+    /// <p>The proxy DNS name of a proxy mode firewall. Your clients send proxy requests to the firewall at this name. It's your <code>ProxySettings</code> <code>DomainName</code> if you specified one, or a name that Network Firewall generates in the format <code>proxy-<i>id</i>.nfw.<i>region</i>.amazonaws.com</code>.</p>
+    /// <p>The firewall has one proxy DNS name for every Availability Zone and VPC that it serves. In each Availability Zone, the name resolves to the firewall endpoint in that Availability Zone, so traffic stays in your client's Availability Zone. Your clients must use the VPC's Route 53 Resolver.</p>
     pub fn set_dns_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dns_name = input;
         self
     }
-    /// <p>The DNS name that resolves to the firewall endpoint in the subnet. This is populated for proxy mode firewalls, where clients direct traffic to the firewall's proxy using this name.</p>
+    /// <p>The proxy DNS name of a proxy mode firewall. Your clients send proxy requests to the firewall at this name. It's your <code>ProxySettings</code> <code>DomainName</code> if you specified one, or a name that Network Firewall generates in the format <code>proxy-<i>id</i>.nfw.<i>region</i>.amazonaws.com</code>.</p>
+    /// <p>The firewall has one proxy DNS name for every Availability Zone and VPC that it serves. In each Availability Zone, the name resolves to the firewall endpoint in that Availability Zone, so traffic stays in your client's Availability Zone. Your clients must use the VPC's Route 53 Resolver.</p>
     pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dns_name
     }

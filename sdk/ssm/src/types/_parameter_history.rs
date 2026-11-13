@@ -30,7 +30,7 @@ pub struct ParameterHistory {
     /// <p>Information about the policies assigned to a parameter.</p>
     /// <p><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub policies: ::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>>,
-    /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+    /// <p>The data type of the parameter, such as <code>text</code>, <code>aws:ec2:image</code>, or <code>json</code>. The default is <code>text</code>. For the list of data types, see the <code>DataType</code> parameter of <code>PutParameter</code>.</p>
     pub data_type: ::std::option::Option<::std::string::String>,
 }
 impl ParameterHistory {
@@ -88,7 +88,7 @@ impl ParameterHistory {
     pub fn policies(&self) -> &[crate::types::ParameterInlinePolicy] {
         self.policies.as_deref().unwrap_or_default()
     }
-    /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+    /// <p>The data type of the parameter, such as <code>text</code>, <code>aws:ec2:image</code>, or <code>json</code>. The default is <code>text</code>. For the list of data types, see the <code>DataType</code> parameter of <code>PutParameter</code>.</p>
     pub fn data_type(&self) -> ::std::option::Option<&str> {
         self.data_type.as_deref()
     }
@@ -324,17 +324,17 @@ impl ParameterHistoryBuilder {
     pub fn get_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ParameterInlinePolicy>> {
         &self.policies
     }
-    /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+    /// <p>The data type of the parameter, such as <code>text</code>, <code>aws:ec2:image</code>, or <code>json</code>. The default is <code>text</code>. For the list of data types, see the <code>DataType</code> parameter of <code>PutParameter</code>.</p>
     pub fn data_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.data_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+    /// <p>The data type of the parameter, such as <code>text</code>, <code>aws:ec2:image</code>, or <code>json</code>. The default is <code>text</code>. For the list of data types, see the <code>DataType</code> parameter of <code>PutParameter</code>.</p>
     pub fn set_data_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_type = input;
         self
     }
-    /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
+    /// <p>The data type of the parameter, such as <code>text</code>, <code>aws:ec2:image</code>, or <code>json</code>. The default is <code>text</code>. For the list of data types, see the <code>DataType</code> parameter of <code>PutParameter</code>.</p>
     pub fn get_data_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_type
     }

@@ -4,6 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListImagePipelineImagesInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
+    /// <p>If the ARN that you specify doesn't exist, Image Builder returns an empty list rather than a <code>ResourceNotFoundException</code> error.</p>
     pub image_pipeline_arn: ::std::option::Option<::std::string::String>,
     /// <p>Use the following filters to streamline results:</p>
     /// <ul>
@@ -20,6 +21,7 @@ pub struct ListImagePipelineImagesInput {
 }
 impl ListImagePipelineImagesInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
+    /// <p>If the ARN that you specify doesn't exist, Image Builder returns an empty list rather than a <code>ResourceNotFoundException</code> error.</p>
     pub fn image_pipeline_arn(&self) -> ::std::option::Option<&str> {
         self.image_pipeline_arn.as_deref()
     }
@@ -62,17 +64,20 @@ pub struct ListImagePipelineImagesInputBuilder {
 }
 impl ListImagePipelineImagesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
+    /// <p>If the ARN that you specify doesn't exist, Image Builder returns an empty list rather than a <code>ResourceNotFoundException</code> error.</p>
     /// This field is required.
     pub fn image_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.image_pipeline_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
+    /// <p>If the ARN that you specify doesn't exist, Image Builder returns an empty list rather than a <code>ResourceNotFoundException</code> error.</p>
     pub fn set_image_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.image_pipeline_arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
+    /// <p>If the ARN that you specify doesn't exist, Image Builder returns an empty list rather than a <code>ResourceNotFoundException</code> error.</p>
     pub fn get_image_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_pipeline_arn
     }

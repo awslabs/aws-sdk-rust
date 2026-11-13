@@ -19,6 +19,36 @@ pub(crate) fn reflens_list_network_connectors_output_output_next_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_runtime_aliases_output_output_next_token(
+    input: &crate::operation::list_runtime_aliases::ListRuntimeAliasesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_runtime_versions_output_output_next_token(
+    input: &crate::operation::list_runtime_versions::ListRuntimeVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_runtimes_output_output_next_token(
+    input: &crate::operation::list_runtimes::ListRuntimesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_network_connector_versions_output_output_network_connector_versions(
     input: crate::operation::list_network_connector_versions::ListNetworkConnectorVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::NetworkConnectorVersionSummary>> {
@@ -30,5 +60,26 @@ pub(crate) fn lens_list_network_connectors_output_output_network_connectors(
     input: crate::operation::list_network_connectors::ListNetworkConnectorsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::NetworkConnectorSummary>> {
     let input = input.network_connectors;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_runtime_aliases_output_output_items(
+    input: crate::operation::list_runtime_aliases::ListRuntimeAliasesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RuntimeAliasInfo>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_runtime_versions_output_output_items(
+    input: crate::operation::list_runtime_versions::ListRuntimeVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RuntimeVersionInfo>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_runtimes_output_output_items(
+    input: crate::operation::list_runtimes::ListRuntimesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RuntimeInfo>> {
+    let input = input.items;
     ::std::option::Option::Some(input)
 }

@@ -6,7 +6,7 @@
 pub struct ExtensionNodeSummary {
     /// <p>The number of nodes in your cluster that the extension targets. SageMaker HyperPod targets every running node in your cluster, including nodes that you add after you create the extension.</p>
     pub total_count: ::std::option::Option<i32>,
-    /// <p>The number of nodes that are running the extension's current version and configuration. While SageMaker HyperPod creates or updates the extension, <code>ActiveCount</code> is lower than <code>TotalCount</code>.</p>
+    /// <p>The number of nodes that are running the extension's current version and configuration. Nodes that report the extension as unhealthy aren't counted. While SageMaker HyperPod creates or updates the extension, <code>ActiveCount</code> is lower than <code>TotalCount</code>. To see why nodes aren't counted, see <code>Health</code> in <code>DescribeClusterExtension</code>.</p>
     pub active_count: ::std::option::Option<i32>,
 }
 impl ExtensionNodeSummary {
@@ -14,7 +14,7 @@ impl ExtensionNodeSummary {
     pub fn total_count(&self) -> ::std::option::Option<i32> {
         self.total_count
     }
-    /// <p>The number of nodes that are running the extension's current version and configuration. While SageMaker HyperPod creates or updates the extension, <code>ActiveCount</code> is lower than <code>TotalCount</code>.</p>
+    /// <p>The number of nodes that are running the extension's current version and configuration. Nodes that report the extension as unhealthy aren't counted. While SageMaker HyperPod creates or updates the extension, <code>ActiveCount</code> is lower than <code>TotalCount</code>. To see why nodes aren't counted, see <code>Health</code> in <code>DescribeClusterExtension</code>.</p>
     pub fn active_count(&self) -> ::std::option::Option<i32> {
         self.active_count
     }
@@ -49,18 +49,18 @@ impl ExtensionNodeSummaryBuilder {
     pub fn get_total_count(&self) -> &::std::option::Option<i32> {
         &self.total_count
     }
-    /// <p>The number of nodes that are running the extension's current version and configuration. While SageMaker HyperPod creates or updates the extension, <code>ActiveCount</code> is lower than <code>TotalCount</code>.</p>
+    /// <p>The number of nodes that are running the extension's current version and configuration. Nodes that report the extension as unhealthy aren't counted. While SageMaker HyperPod creates or updates the extension, <code>ActiveCount</code> is lower than <code>TotalCount</code>. To see why nodes aren't counted, see <code>Health</code> in <code>DescribeClusterExtension</code>.</p>
     /// This field is required.
     pub fn active_count(mut self, input: i32) -> Self {
         self.active_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of nodes that are running the extension's current version and configuration. While SageMaker HyperPod creates or updates the extension, <code>ActiveCount</code> is lower than <code>TotalCount</code>.</p>
+    /// <p>The number of nodes that are running the extension's current version and configuration. Nodes that report the extension as unhealthy aren't counted. While SageMaker HyperPod creates or updates the extension, <code>ActiveCount</code> is lower than <code>TotalCount</code>. To see why nodes aren't counted, see <code>Health</code> in <code>DescribeClusterExtension</code>.</p>
     pub fn set_active_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.active_count = input;
         self
     }
-    /// <p>The number of nodes that are running the extension's current version and configuration. While SageMaker HyperPod creates or updates the extension, <code>ActiveCount</code> is lower than <code>TotalCount</code>.</p>
+    /// <p>The number of nodes that are running the extension's current version and configuration. Nodes that report the extension as unhealthy aren't counted. While SageMaker HyperPod creates or updates the extension, <code>ActiveCount</code> is lower than <code>TotalCount</code>. To see why nodes aren't counted, see <code>Health</code> in <code>DescribeClusterExtension</code>.</p>
     pub fn get_active_count(&self) -> &::std::option::Option<i32> {
         &self.active_count
     }

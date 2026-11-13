@@ -31,6 +31,8 @@ pub use crate::types::_asn_association::AsnAssociationBuilder;
 
 pub use crate::types::_ipam_resource_discovery_association::IpamResourceDiscoveryAssociationBuilder;
 
+pub use crate::types::_flex_cost_allocation_network_resource_scope::FlexCostAllocationNetworkResourceScopeBuilder;
+
 pub use crate::types::_route_server_association::RouteServerAssociationBuilder;
 
 pub use crate::types::_route_table_association_state::RouteTableAssociationStateBuilder;
@@ -184,6 +186,12 @@ pub use crate::types::_network_acl::NetworkAclBuilder;
 pub use crate::types::_icmp_type_code::IcmpTypeCodeBuilder;
 
 pub use crate::types::_port_range::PortRangeBuilder;
+
+pub use crate::types::_nat_flex_cost_allocation_policy_document::NatFlexCostAllocationPolicyDocumentBuilder;
+
+pub use crate::types::_instance_flex_cost_allocation_policy_document::InstanceFlexCostAllocationPolicyDocumentBuilder;
+
+pub use crate::types::_pcx_flex_cost_allocation_policy_document::PcxFlexCostAllocationPolicyDocumentBuilder;
 
 pub use crate::types::_network_insights_access_scope::NetworkInsightsAccessScopeBuilder;
 
@@ -555,6 +563,10 @@ pub use crate::types::_iam_instance_profile::IamInstanceProfileBuilder;
 
 pub use crate::types::_instance_event_window_association_target::InstanceEventWindowAssociationTargetBuilder;
 
+pub use crate::types::_flex_cost_allocation_policy_association_description::FlexCostAllocationPolicyAssociationDescriptionBuilder;
+
+pub use crate::types::_flex_cost_allocation_operation_failure::FlexCostAllocationOperationFailureBuilder;
+
 pub use crate::types::_subnet_cidr_block_state::SubnetCidrBlockStateBuilder;
 
 pub use crate::types::_vpc_cidr_block_state::VpcCidrBlockStateBuilder;
@@ -704,6 +716,8 @@ pub use crate::types::_add_prefix_list_entry::AddPrefixListEntryBuilder;
 pub use crate::types::_availability_zone_address::AvailabilityZoneAddressBuilder;
 
 pub use crate::types::_provisioned_bandwidth::ProvisionedBandwidthBuilder;
+
+pub use crate::types::_flex_cost_allocation_cidr_range_specifications::FlexCostAllocationCidrRangeSpecificationsBuilder;
 
 pub use crate::types::_access_scope_path_request::AccessScopePathRequestBuilder;
 
@@ -921,6 +935,8 @@ pub use crate::types::_mac_host::MacHostBuilder;
 
 pub use crate::types::_moving_address_status::MovingAddressStatusBuilder;
 
+pub use crate::types::_flex_cost_allocation_policy_description::FlexCostAllocationPolicyDescriptionBuilder;
+
 pub use crate::types::_attachment_ena_srd_specification::AttachmentEnaSrdSpecificationBuilder;
 
 pub use crate::types::_outpost_lag::OutpostLagBuilder;
@@ -1098,6 +1114,8 @@ pub use crate::types::_launch_template_network_performance_options::LaunchTempla
 pub use crate::types::_prefix_list_association::PrefixListAssociationBuilder;
 
 pub use crate::types::_prefix_list_entry::PrefixListEntryBuilder;
+
+pub use crate::types::_flex_cost_allocation_policy_version::FlexCostAllocationPolicyVersionBuilder;
 
 pub use crate::types::_access_scope_analysis_finding::AccessScopeAnalysisFindingBuilder;
 
@@ -1640,6 +1658,8 @@ pub use crate::types::_image_usage_resource_type_option_request::ImageUsageResou
 pub use crate::types::_ipam_prefix_list_resolver_rule_condition_request::IpamPrefixListResolverRuleConditionRequestBuilder;
 
 pub use crate::types::_launch_template_ebs_block_device_request::LaunchTemplateEbsBlockDeviceRequestBuilder;
+
+pub use crate::types::_flex_cost_allocation_cidr_mapping::FlexCostAllocationCidrMappingBuilder;
 
 pub use crate::types::_packet_header_statement_request::PacketHeaderStatementRequestBuilder;
 

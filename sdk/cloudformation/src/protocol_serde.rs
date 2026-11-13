@@ -327,9 +327,17 @@ pub(crate) mod shape_register_type;
 
 pub(crate) mod shape_register_type_input;
 
+pub(crate) mod shape_remove_alias;
+
+pub(crate) mod shape_remove_alias_input;
+
 pub(crate) mod shape_rollback_stack;
 
 pub(crate) mod shape_rollback_stack_input;
+
+pub(crate) mod shape_set_alias;
+
+pub(crate) mod shape_set_alias_input;
 
 pub(crate) mod shape_set_stack_policy;
 

@@ -799,6 +799,26 @@ pub(crate) fn reflens_describe_network_interfaces_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_networking_flex_cost_allocation_policies_output_output_next_token(
+    input: &crate::operation::describe_networking_flex_cost_allocation_policies::DescribeNetworkingFlexCostAllocationPoliciesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_networking_flex_cost_allocation_policy_associations_output_output_next_token(
+    input: &crate::operation::describe_networking_flex_cost_allocation_policy_associations::DescribeNetworkingFlexCostAllocationPolicyAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_describe_prefix_lists_output_output_next_token(
     input: &crate::operation::describe_prefix_lists::DescribePrefixListsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -2286,6 +2306,20 @@ pub(crate) fn lens_describe_network_interfaces_output_output_network_interfaces(
     input: crate::operation::describe_network_interfaces::DescribeNetworkInterfacesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::NetworkInterface>> {
     let input = input.network_interfaces?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_networking_flex_cost_allocation_policies_output_output_flex_cost_allocation_policies(
+    input: crate::operation::describe_networking_flex_cost_allocation_policies::DescribeNetworkingFlexCostAllocationPoliciesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::FlexCostAllocationPolicyDescription>> {
+    let input = input.flex_cost_allocation_policies?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_networking_flex_cost_allocation_policy_associations_output_output_fca_policy_associations(
+    input: crate::operation::describe_networking_flex_cost_allocation_policy_associations::DescribeNetworkingFlexCostAllocationPolicyAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::FlexCostAllocationPolicyAssociationDescription>> {
+    let input = input.fca_policy_associations?;
     ::std::option::Option::Some(input)
 }
 

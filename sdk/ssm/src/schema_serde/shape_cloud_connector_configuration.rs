@@ -9,6 +9,16 @@ static CLOUDCONNECTORCONFIGURATION_MEMBER_AZURECONFIGURATION: ::aws_smithy_schem
     "AzureConfiguration",
     0,
 );
+static CLOUDCONNECTORCONFIGURATION_MEMBER_GCPCONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CloudConnectorConfiguration$GcpConfiguration",
+        "com.amazonaws.ssm",
+        "CloudConnectorConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "GcpConfiguration",
+    1,
+);
 static CLOUDCONNECTORCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.ssm#CloudConnectorConfiguration",
@@ -16,7 +26,10 @@ static CLOUDCONNECTORCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> 
         "CloudConnectorConfiguration",
     ),
     ::aws_smithy_schema::ShapeType::Union,
-    &[&CLOUDCONNECTORCONFIGURATION_MEMBER_AZURECONFIGURATION],
+    &[
+        &CLOUDCONNECTORCONFIGURATION_MEMBER_AZURECONFIGURATION,
+        &CLOUDCONNECTORCONFIGURATION_MEMBER_GCPCONFIGURATION,
+    ],
 );
 impl crate::types::CloudConnectorConfiguration {
     /// The schema for this shape.
@@ -35,6 +48,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::CloudConne
         match self {
             Self::AzureConfiguration(val) => {
                 ser.write_struct(&CLOUDCONNECTORCONFIGURATION_MEMBER_AZURECONFIGURATION, val)?;
+            }
+            Self::GcpConfiguration(val) => {
+                ser.write_struct(&CLOUDCONNECTORCONFIGURATION_MEMBER_GCPCONFIGURATION, val)?;
             }
             Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
         }
@@ -58,6 +74,7 @@ impl crate::types::CloudConnectorConfiguration {
             }
             result = ::std::option::Option::Some(match member.member_index() {
                 Some(0) => Self::AzureConfiguration(crate::types::AzureConfiguration::deserialize(deser)?),
+                Some(1) => Self::GcpConfiguration(crate::types::GcpConfiguration::deserialize(deser)?),
                 _ => Self::Unknown,
             });
             Ok(())

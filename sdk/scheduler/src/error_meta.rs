@@ -13,7 +13,7 @@ pub enum Error {
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by an AWS service.</p>
+    /// <p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -143,6 +143,9 @@ impl From<crate::operation::delete_schedule::DeleteScheduleError> for Error {
             crate::operation::delete_schedule::DeleteScheduleError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::delete_schedule::DeleteScheduleError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::delete_schedule::DeleteScheduleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_schedule::DeleteScheduleError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::delete_schedule::DeleteScheduleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_schedule::DeleteScheduleError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_schedule::DeleteScheduleError::Unhandled(inner) => Error::Unhandled(inner),
@@ -198,6 +201,7 @@ impl From<crate::operation::get_schedule::GetScheduleError> for Error {
         match err {
             crate::operation::get_schedule::GetScheduleError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_schedule::GetScheduleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_schedule::GetScheduleError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::get_schedule::GetScheduleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_schedule::GetScheduleError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_schedule::GetScheduleError::Unhandled(inner) => Error::Unhandled(inner),
@@ -379,6 +383,9 @@ impl From<crate::operation::update_schedule::UpdateScheduleError> for Error {
             crate::operation::update_schedule::UpdateScheduleError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::update_schedule::UpdateScheduleError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::update_schedule::UpdateScheduleError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_schedule::UpdateScheduleError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
             crate::operation::update_schedule::UpdateScheduleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_schedule::UpdateScheduleError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_schedule::UpdateScheduleError::Unhandled(inner) => Error::Unhandled(inner),

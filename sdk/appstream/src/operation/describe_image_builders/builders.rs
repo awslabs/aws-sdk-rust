@@ -23,6 +23,7 @@ impl crate::operation::describe_image_builders::builders::DescribeImageBuildersI
 /// Fluent builder constructing a request to `DescribeImageBuilders`.
 ///
 /// <p>Retrieves a list that describes one or more specified image builders, if the image builder names are provided. Otherwise, all image builders in the account are described.</p>
+/// <p>The description of each image builder includes its agent access configuration, if agent access is enabled.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeImageBuildersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

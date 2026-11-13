@@ -91,6 +91,12 @@ where
                                 crate::protocol_serde::shape_communication_limits_config::de_communication_limits_config(tokens, _value, depth + 1)?,
                             );
                         }
+                        "lastModifiedTime" => {
+                            builder = builder.set_last_modified_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                            )?);
+                        }
                         "tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_map::de_tag_map(tokens, _value, depth + 1)?);
                         }

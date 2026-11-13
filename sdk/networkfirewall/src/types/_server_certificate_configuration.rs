@@ -23,6 +23,14 @@ pub struct ServerCertificateConfiguration {
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
     /// <p>When enabled, Network Firewall checks if the server certificate presented by the server in the SSL/TLS connection has a revoked or unkown status. If the certificate has an unknown or revoked status, you must specify the actions that Network Firewall takes on outbound traffic. To check the certificate revocation status, you must also specify a <code>CertificateAuthorityArn</code> in <code>ServerCertificateConfiguration</code>.</p>
     pub check_certificate_revocation_status: ::std::option::Option<crate::types::CheckCertificateRevocationStatusActions>,
+    /// <p>What the firewall does with SSL/TLS traffic that doesn't match any scope in this server certificate configuration. This setting applies only to proxy mode firewalls. If you don't specify a value, the firewall uses <code>BYPASS</code>. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BYPASS</code> - The firewall doesn't decrypt the traffic.</p></li>
+    /// <li>
+    /// <p><code>DECRYPT</code> - The firewall decrypts the traffic for inspection. You can use <code>DECRYPT</code> only if every scope in the configuration sets <code>DeploymentMode</code> to <code>EXPLICIT_PROXY_ONLY</code>.</p></li>
+    /// </ul>
+    pub default_decryption_behavior: ::std::option::Option<crate::types::DecryptionAction>,
 }
 impl ServerCertificateConfiguration {
     /// <p>The list of server certificates to use for inbound SSL/TLS inspection.</p>
@@ -54,6 +62,16 @@ impl ServerCertificateConfiguration {
     pub fn check_certificate_revocation_status(&self) -> ::std::option::Option<&crate::types::CheckCertificateRevocationStatusActions> {
         self.check_certificate_revocation_status.as_ref()
     }
+    /// <p>What the firewall does with SSL/TLS traffic that doesn't match any scope in this server certificate configuration. This setting applies only to proxy mode firewalls. If you don't specify a value, the firewall uses <code>BYPASS</code>. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BYPASS</code> - The firewall doesn't decrypt the traffic.</p></li>
+    /// <li>
+    /// <p><code>DECRYPT</code> - The firewall decrypts the traffic for inspection. You can use <code>DECRYPT</code> only if every scope in the configuration sets <code>DeploymentMode</code> to <code>EXPLICIT_PROXY_ONLY</code>.</p></li>
+    /// </ul>
+    pub fn default_decryption_behavior(&self) -> ::std::option::Option<&crate::types::DecryptionAction> {
+        self.default_decryption_behavior.as_ref()
+    }
 }
 impl ServerCertificateConfiguration {
     /// Creates a new builder-style object to manufacture [`ServerCertificateConfiguration`](crate::types::ServerCertificateConfiguration).
@@ -70,6 +88,7 @@ pub struct ServerCertificateConfigurationBuilder {
     pub(crate) scopes: ::std::option::Option<::std::vec::Vec<crate::types::ServerCertificateScope>>,
     pub(crate) certificate_authority_arn: ::std::option::Option<::std::string::String>,
     pub(crate) check_certificate_revocation_status: ::std::option::Option<crate::types::CheckCertificateRevocationStatusActions>,
+    pub(crate) default_decryption_behavior: ::std::option::Option<crate::types::DecryptionAction>,
 }
 impl ServerCertificateConfigurationBuilder {
     /// Appends an item to `server_certificates`.
@@ -170,6 +189,38 @@ impl ServerCertificateConfigurationBuilder {
     pub fn get_check_certificate_revocation_status(&self) -> &::std::option::Option<crate::types::CheckCertificateRevocationStatusActions> {
         &self.check_certificate_revocation_status
     }
+    /// <p>What the firewall does with SSL/TLS traffic that doesn't match any scope in this server certificate configuration. This setting applies only to proxy mode firewalls. If you don't specify a value, the firewall uses <code>BYPASS</code>. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BYPASS</code> - The firewall doesn't decrypt the traffic.</p></li>
+    /// <li>
+    /// <p><code>DECRYPT</code> - The firewall decrypts the traffic for inspection. You can use <code>DECRYPT</code> only if every scope in the configuration sets <code>DeploymentMode</code> to <code>EXPLICIT_PROXY_ONLY</code>.</p></li>
+    /// </ul>
+    pub fn default_decryption_behavior(mut self, input: crate::types::DecryptionAction) -> Self {
+        self.default_decryption_behavior = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>What the firewall does with SSL/TLS traffic that doesn't match any scope in this server certificate configuration. This setting applies only to proxy mode firewalls. If you don't specify a value, the firewall uses <code>BYPASS</code>. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BYPASS</code> - The firewall doesn't decrypt the traffic.</p></li>
+    /// <li>
+    /// <p><code>DECRYPT</code> - The firewall decrypts the traffic for inspection. You can use <code>DECRYPT</code> only if every scope in the configuration sets <code>DeploymentMode</code> to <code>EXPLICIT_PROXY_ONLY</code>.</p></li>
+    /// </ul>
+    pub fn set_default_decryption_behavior(mut self, input: ::std::option::Option<crate::types::DecryptionAction>) -> Self {
+        self.default_decryption_behavior = input;
+        self
+    }
+    /// <p>What the firewall does with SSL/TLS traffic that doesn't match any scope in this server certificate configuration. This setting applies only to proxy mode firewalls. If you don't specify a value, the firewall uses <code>BYPASS</code>. You can choose from the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BYPASS</code> - The firewall doesn't decrypt the traffic.</p></li>
+    /// <li>
+    /// <p><code>DECRYPT</code> - The firewall decrypts the traffic for inspection. You can use <code>DECRYPT</code> only if every scope in the configuration sets <code>DeploymentMode</code> to <code>EXPLICIT_PROXY_ONLY</code>.</p></li>
+    /// </ul>
+    pub fn get_default_decryption_behavior(&self) -> &::std::option::Option<crate::types::DecryptionAction> {
+        &self.default_decryption_behavior
+    }
     /// Consumes the builder and constructs a [`ServerCertificateConfiguration`](crate::types::ServerCertificateConfiguration).
     pub fn build(self) -> crate::types::ServerCertificateConfiguration {
         crate::types::ServerCertificateConfiguration {
@@ -177,6 +228,7 @@ impl ServerCertificateConfigurationBuilder {
             scopes: self.scopes,
             certificate_authority_arn: self.certificate_authority_arn,
             check_certificate_revocation_status: self.check_certificate_revocation_status,
+            default_decryption_behavior: self.default_decryption_behavior,
         }
     }
 }

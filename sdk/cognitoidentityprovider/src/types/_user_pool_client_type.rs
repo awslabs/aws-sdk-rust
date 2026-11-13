@@ -149,6 +149,22 @@ pub struct UserPoolClientType {
     pub auth_session_validity: ::std::option::Option<i32>,
     /// <p>The configuration of your app client for refresh token rotation. When enabled, your app client issues new ID, access, and refresh tokens when users renew their sessions with refresh tokens. When disabled, token refresh issues only ID and access tokens.</p>
     pub refresh_token_rotation: ::std::option::Option<crate::types::RefreshTokenRotationType>,
+    /// <p>How the app client was created.</p>
+    /// <dl>
+    /// <dt>
+    /// REGULAR
+    /// </dt>
+    /// <dd>
+    /// <p>The app client wasn't created through dynamic client registration. For example, you created it with <code>CreateUserPoolClient</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// DCR
+    /// </dt>
+    /// <dd>
+    /// <p>An application registered the app client through dynamic client registration. These app clients don't support client secret operations such as <code>AddUserPoolClientSecret</code>, and they can't hold the <code>aws.cognito/dcr/register</code> scope.</p>
+    /// </dd>
+    /// </dl>
+    pub client_type: ::std::option::Option<crate::types::ClientTypeType>,
 }
 impl UserPoolClientType {
     /// <p>The ID of the user pool associated with the app client.</p>
@@ -364,6 +380,24 @@ impl UserPoolClientType {
     pub fn refresh_token_rotation(&self) -> ::std::option::Option<&crate::types::RefreshTokenRotationType> {
         self.refresh_token_rotation.as_ref()
     }
+    /// <p>How the app client was created.</p>
+    /// <dl>
+    /// <dt>
+    /// REGULAR
+    /// </dt>
+    /// <dd>
+    /// <p>The app client wasn't created through dynamic client registration. For example, you created it with <code>CreateUserPoolClient</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// DCR
+    /// </dt>
+    /// <dd>
+    /// <p>An application registered the app client through dynamic client registration. These app clients don't support client secret operations such as <code>AddUserPoolClientSecret</code>, and they can't hold the <code>aws.cognito/dcr/register</code> scope.</p>
+    /// </dd>
+    /// </dl>
+    pub fn client_type(&self) -> ::std::option::Option<&crate::types::ClientTypeType> {
+        self.client_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UserPoolClientType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -397,6 +431,7 @@ impl ::std::fmt::Debug for UserPoolClientType {
         );
         formatter.field("auth_session_validity", &self.auth_session_validity);
         formatter.field("refresh_token_rotation", &self.refresh_token_rotation);
+        formatter.field("client_type", &self.client_type);
         formatter.finish()
     }
 }
@@ -437,6 +472,7 @@ pub struct UserPoolClientTypeBuilder {
     pub(crate) enable_propagate_additional_user_context_data: ::std::option::Option<bool>,
     pub(crate) auth_session_validity: ::std::option::Option<i32>,
     pub(crate) refresh_token_rotation: ::std::option::Option<crate::types::RefreshTokenRotationType>,
+    pub(crate) client_type: ::std::option::Option<crate::types::ClientTypeType>,
 }
 impl UserPoolClientTypeBuilder {
     /// <p>The ID of the user pool associated with the app client.</p>
@@ -1130,6 +1166,62 @@ impl UserPoolClientTypeBuilder {
     pub fn get_refresh_token_rotation(&self) -> &::std::option::Option<crate::types::RefreshTokenRotationType> {
         &self.refresh_token_rotation
     }
+    /// <p>How the app client was created.</p>
+    /// <dl>
+    /// <dt>
+    /// REGULAR
+    /// </dt>
+    /// <dd>
+    /// <p>The app client wasn't created through dynamic client registration. For example, you created it with <code>CreateUserPoolClient</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// DCR
+    /// </dt>
+    /// <dd>
+    /// <p>An application registered the app client through dynamic client registration. These app clients don't support client secret operations such as <code>AddUserPoolClientSecret</code>, and they can't hold the <code>aws.cognito/dcr/register</code> scope.</p>
+    /// </dd>
+    /// </dl>
+    pub fn client_type(mut self, input: crate::types::ClientTypeType) -> Self {
+        self.client_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>How the app client was created.</p>
+    /// <dl>
+    /// <dt>
+    /// REGULAR
+    /// </dt>
+    /// <dd>
+    /// <p>The app client wasn't created through dynamic client registration. For example, you created it with <code>CreateUserPoolClient</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// DCR
+    /// </dt>
+    /// <dd>
+    /// <p>An application registered the app client through dynamic client registration. These app clients don't support client secret operations such as <code>AddUserPoolClientSecret</code>, and they can't hold the <code>aws.cognito/dcr/register</code> scope.</p>
+    /// </dd>
+    /// </dl>
+    pub fn set_client_type(mut self, input: ::std::option::Option<crate::types::ClientTypeType>) -> Self {
+        self.client_type = input;
+        self
+    }
+    /// <p>How the app client was created.</p>
+    /// <dl>
+    /// <dt>
+    /// REGULAR
+    /// </dt>
+    /// <dd>
+    /// <p>The app client wasn't created through dynamic client registration. For example, you created it with <code>CreateUserPoolClient</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// DCR
+    /// </dt>
+    /// <dd>
+    /// <p>An application registered the app client through dynamic client registration. These app clients don't support client secret operations such as <code>AddUserPoolClientSecret</code>, and they can't hold the <code>aws.cognito/dcr/register</code> scope.</p>
+    /// </dd>
+    /// </dl>
+    pub fn get_client_type(&self) -> &::std::option::Option<crate::types::ClientTypeType> {
+        &self.client_type
+    }
     /// Consumes the builder and constructs a [`UserPoolClientType`](crate::types::UserPoolClientType).
     pub fn build(self) -> crate::types::UserPoolClientType {
         crate::types::UserPoolClientType {
@@ -1159,6 +1251,7 @@ impl UserPoolClientTypeBuilder {
             enable_propagate_additional_user_context_data: self.enable_propagate_additional_user_context_data,
             auth_session_validity: self.auth_session_validity,
             refresh_token_rotation: self.refresh_token_rotation,
+            client_type: self.client_type,
         }
     }
 }
@@ -1194,6 +1287,7 @@ impl ::std::fmt::Debug for UserPoolClientTypeBuilder {
         );
         formatter.field("auth_session_validity", &self.auth_session_validity);
         formatter.field("refresh_token_rotation", &self.refresh_token_rotation);
+        formatter.field("client_type", &self.client_type);
         formatter.finish()
     }
 }

@@ -490,6 +490,9 @@ pub mod describe_cluster_extension;
 /// Types for the `DescribeClusterNode` operation.
 pub mod describe_cluster_node;
 
+/// Types for the `DescribeClusterOperation` operation.
+pub mod describe_cluster_operation;
+
 /// Types for the `DescribeClusterSchedulerConfig` operation.
 pub mod describe_cluster_scheduler_config;
 
@@ -757,11 +760,17 @@ pub mod list_candidates_for_auto_ml_job;
 /// Types for the `ListClusterEvents` operation.
 pub mod list_cluster_events;
 
+/// Types for the `ListClusterExtensionVersions` operation.
+pub mod list_cluster_extension_versions;
+
 /// Types for the `ListClusterExtensions` operation.
 pub mod list_cluster_extensions;
 
 /// Types for the `ListClusterNodes` operation.
 pub mod list_cluster_nodes;
+
+/// Types for the `ListClusterOperations` operation.
+pub mod list_cluster_operations;
 
 /// Types for the `ListClusterSchedulerConfigs` operation.
 pub mod list_cluster_scheduler_configs;

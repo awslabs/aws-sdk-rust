@@ -79,6 +79,16 @@ static LISTCLUSTEREVENTSINPUT_MEMBER_RESOURCE_TYPE: ::aws_smithy_schema::Schema<
     "ResourceType",
     7,
 );
+static LISTCLUSTEREVENTSINPUT_MEMBER_OPERATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#ListClusterEventsInput$OperationId",
+        "com.amazonaws.sagemaker.synthetic",
+        "ListClusterEventsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OperationId",
+    8,
+);
 static LISTCLUSTEREVENTSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.sagemaker.synthetic#ListClusterEventsInput$MaxResults",
@@ -87,7 +97,7 @@ static LISTCLUSTEREVENTSINPUT_MEMBER_MAX_RESULTS: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "MaxResults",
-    8,
+    9,
 );
 static LISTCLUSTEREVENTSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -97,7 +107,7 @@ static LISTCLUSTEREVENTSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::String,
     "NextToken",
-    9,
+    10,
 );
 static LISTCLUSTEREVENTSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -115,6 +125,7 @@ static LISTCLUSTEREVENTSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::a
         &LISTCLUSTEREVENTSINPUT_MEMBER_SORT_BY,
         &LISTCLUSTEREVENTSINPUT_MEMBER_SORT_ORDER,
         &LISTCLUSTEREVENTSINPUT_MEMBER_RESOURCE_TYPE,
+        &LISTCLUSTEREVENTSINPUT_MEMBER_OPERATION_ID,
         &LISTCLUSTEREVENTSINPUT_MEMBER_MAX_RESULTS,
         &LISTCLUSTEREVENTSINPUT_MEMBER_NEXT_TOKEN,
     ],
@@ -158,6 +169,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::list_c
         }
         if let Some(ref val) = self.resource_type {
             ser.write_string(&LISTCLUSTEREVENTSINPUT_MEMBER_RESOURCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.operation_id {
+            ser.write_string(&LISTCLUSTEREVENTSINPUT_MEMBER_OPERATION_ID, val)?;
         }
         if let Some(ref val) = self.max_results {
             ser.write_integer(&LISTCLUSTEREVENTSINPUT_MEMBER_MAX_RESULTS, *val)?;
@@ -242,10 +256,17 @@ impl crate::operation::list_cluster_events::builders::ListClusterEventsInputBuil
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.max_results = Some(deser.read_integer(member)?);
+                        self.operation_id = Some(deser.read_string(member)?);
                     }
                 }
                 Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.max_results = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(10) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

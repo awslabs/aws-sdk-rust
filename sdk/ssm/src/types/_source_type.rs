@@ -16,6 +16,7 @@
 ///     SourceType::AwsIotThing => { /* ... */ },
 ///     SourceType::AwsSsmManagedinstance => { /* ... */ },
 ///     SourceType::AzureInstance => { /* ... */ },
+///     SourceType::GcpInstance => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,6 +53,8 @@ pub enum SourceType {
     AwsSsmManagedinstance,
     #[allow(missing_docs)] // documentation missing in model
     AzureInstance,
+    #[allow(missing_docs)] // documentation missing in model
+    GcpInstance,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for SourceType {
             "AWS::IoT::Thing" => SourceType::AwsIotThing,
             "AWS::SSM::ManagedInstance" => SourceType::AwsSsmManagedinstance,
             "Microsoft.Compute/virtualMachines" => SourceType::AzureInstance,
+            "compute.googleapis.com/Instance" => SourceType::GcpInstance,
             other => SourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,6 +86,7 @@ impl SourceType {
             SourceType::AwsIotThing => "AWS::IoT::Thing",
             SourceType::AwsSsmManagedinstance => "AWS::SSM::ManagedInstance",
             SourceType::AzureInstance => "Microsoft.Compute/virtualMachines",
+            SourceType::GcpInstance => "compute.googleapis.com/Instance",
             SourceType::Unknown(value) => value.as_str(),
         }
     }
@@ -92,6 +97,7 @@ impl SourceType {
             "AWS::IoT::Thing",
             "AWS::SSM::ManagedInstance",
             "Microsoft.Compute/virtualMachines",
+            "compute.googleapis.com/Instance",
         ]
     }
 }
@@ -119,6 +125,7 @@ impl ::std::fmt::Display for SourceType {
             SourceType::AwsIotThing => write!(f, "AWS::IoT::Thing"),
             SourceType::AwsSsmManagedinstance => write!(f, "AWS::SSM::ManagedInstance"),
             SourceType::AzureInstance => write!(f, "Microsoft.Compute/virtualMachines"),
+            SourceType::GcpInstance => write!(f, "compute.googleapis.com/Instance"),
             SourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

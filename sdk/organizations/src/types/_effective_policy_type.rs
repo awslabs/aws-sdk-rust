@@ -21,6 +21,7 @@
 ///     EffectivePolicyType::InspectorPolicy => { /* ... */ },
 ///     EffectivePolicyType::NetworkSecurityDirectorPolicy => { /* ... */ },
 ///     EffectivePolicyType::S3Policy => { /* ... */ },
+///     EffectivePolicyType::SecurityhubCspmPolicy => { /* ... */ },
 ///     EffectivePolicyType::SecurityhubPolicy => { /* ... */ },
 ///     EffectivePolicyType::TagPolicy => { /* ... */ },
 ///     EffectivePolicyType::UpgradeRolloutPolicy => { /* ... */ },
@@ -71,6 +72,8 @@ pub enum EffectivePolicyType {
     #[allow(missing_docs)] // documentation missing in model
     S3Policy,
     #[allow(missing_docs)] // documentation missing in model
+    SecurityhubCspmPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     SecurityhubPolicy,
     #[allow(missing_docs)] // documentation missing in model
     TagPolicy,
@@ -92,6 +95,7 @@ impl ::std::convert::From<&str> for EffectivePolicyType {
             "INSPECTOR_POLICY" => EffectivePolicyType::InspectorPolicy,
             "NETWORK_SECURITY_DIRECTOR_POLICY" => EffectivePolicyType::NetworkSecurityDirectorPolicy,
             "S3_POLICY" => EffectivePolicyType::S3Policy,
+            "SECURITYHUB_CSPM_POLICY" => EffectivePolicyType::SecurityhubCspmPolicy,
             "SECURITYHUB_POLICY" => EffectivePolicyType::SecurityhubPolicy,
             "TAG_POLICY" => EffectivePolicyType::TagPolicy,
             "UPGRADE_ROLLOUT_POLICY" => EffectivePolicyType::UpgradeRolloutPolicy,
@@ -119,6 +123,7 @@ impl EffectivePolicyType {
             EffectivePolicyType::InspectorPolicy => "INSPECTOR_POLICY",
             EffectivePolicyType::NetworkSecurityDirectorPolicy => "NETWORK_SECURITY_DIRECTOR_POLICY",
             EffectivePolicyType::S3Policy => "S3_POLICY",
+            EffectivePolicyType::SecurityhubCspmPolicy => "SECURITYHUB_CSPM_POLICY",
             EffectivePolicyType::SecurityhubPolicy => "SECURITYHUB_POLICY",
             EffectivePolicyType::TagPolicy => "TAG_POLICY",
             EffectivePolicyType::UpgradeRolloutPolicy => "UPGRADE_ROLLOUT_POLICY",
@@ -137,6 +142,7 @@ impl EffectivePolicyType {
             "INSPECTOR_POLICY",
             "NETWORK_SECURITY_DIRECTOR_POLICY",
             "S3_POLICY",
+            "SECURITYHUB_CSPM_POLICY",
             "SECURITYHUB_POLICY",
             "TAG_POLICY",
             "UPGRADE_ROLLOUT_POLICY",
@@ -172,6 +178,7 @@ impl ::std::fmt::Display for EffectivePolicyType {
             EffectivePolicyType::InspectorPolicy => write!(f, "INSPECTOR_POLICY"),
             EffectivePolicyType::NetworkSecurityDirectorPolicy => write!(f, "NETWORK_SECURITY_DIRECTOR_POLICY"),
             EffectivePolicyType::S3Policy => write!(f, "S3_POLICY"),
+            EffectivePolicyType::SecurityhubCspmPolicy => write!(f, "SECURITYHUB_CSPM_POLICY"),
             EffectivePolicyType::SecurityhubPolicy => write!(f, "SECURITYHUB_POLICY"),
             EffectivePolicyType::TagPolicy => write!(f, "TAG_POLICY"),
             EffectivePolicyType::UpgradeRolloutPolicy => write!(f, "UPGRADE_ROLLOUT_POLICY"),

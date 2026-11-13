@@ -11,13 +11,13 @@ pub struct QueueFleetAssociationSummary {
     /// <p>The status of task scheduling in the queue-fleet association.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–Association is active.</p></li>
+    /// <p><code>ACTIVE</code> - Association is active.</p></li>
     /// <li>
-    /// <p><code>STOP_SCHEDULING_AND_COMPLETE_TASKS</code>–Association has stopped scheduling new tasks and is completing current tasks.</p></li>
+    /// <p><code>STOP_SCHEDULING_AND_COMPLETE_TASKS</code> - Association has stopped scheduling new tasks and is completing current tasks.</p></li>
     /// <li>
-    /// <p><code>STOP_SCHEDULING_AND_CANCEL_TASKS</code>–Association has stopped scheduling new tasks and is canceling current tasks.</p></li>
+    /// <p><code>STOP_SCHEDULING_AND_CANCEL_TASKS</code> - Association has stopped scheduling new tasks and is canceling current tasks.</p></li>
     /// <li>
-    /// <p><code>STOPPED</code>–Association has been stopped.</p></li>
+    /// <p><code>STOPPED</code> - Association has been stopped.</p></li>
     /// </ul>
     pub status: crate::types::QueueFleetAssociationStatus,
     /// The date and time the resource was created.
@@ -43,13 +43,13 @@ impl QueueFleetAssociationSummary {
     /// <p>The status of task scheduling in the queue-fleet association.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–Association is active.</p></li>
+    /// <p><code>ACTIVE</code> - Association is active.</p></li>
     /// <li>
-    /// <p><code>STOP_SCHEDULING_AND_COMPLETE_TASKS</code>–Association has stopped scheduling new tasks and is completing current tasks.</p></li>
+    /// <p><code>STOP_SCHEDULING_AND_COMPLETE_TASKS</code> - Association has stopped scheduling new tasks and is completing current tasks.</p></li>
     /// <li>
-    /// <p><code>STOP_SCHEDULING_AND_CANCEL_TASKS</code>–Association has stopped scheduling new tasks and is canceling current tasks.</p></li>
+    /// <p><code>STOP_SCHEDULING_AND_CANCEL_TASKS</code> - Association has stopped scheduling new tasks and is canceling current tasks.</p></li>
     /// <li>
-    /// <p><code>STOPPED</code>–Association has been stopped.</p></li>
+    /// <p><code>STOPPED</code> - Association has been stopped.</p></li>
     /// </ul>
     pub fn status(&self) -> &crate::types::QueueFleetAssociationStatus {
         &self.status
@@ -125,13 +125,13 @@ impl QueueFleetAssociationSummaryBuilder {
     /// <p>The status of task scheduling in the queue-fleet association.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–Association is active.</p></li>
+    /// <p><code>ACTIVE</code> - Association is active.</p></li>
     /// <li>
-    /// <p><code>STOP_SCHEDULING_AND_COMPLETE_TASKS</code>–Association has stopped scheduling new tasks and is completing current tasks.</p></li>
+    /// <p><code>STOP_SCHEDULING_AND_COMPLETE_TASKS</code> - Association has stopped scheduling new tasks and is completing current tasks.</p></li>
     /// <li>
-    /// <p><code>STOP_SCHEDULING_AND_CANCEL_TASKS</code>–Association has stopped scheduling new tasks and is canceling current tasks.</p></li>
+    /// <p><code>STOP_SCHEDULING_AND_CANCEL_TASKS</code> - Association has stopped scheduling new tasks and is canceling current tasks.</p></li>
     /// <li>
-    /// <p><code>STOPPED</code>–Association has been stopped.</p></li>
+    /// <p><code>STOPPED</code> - Association has been stopped.</p></li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::QueueFleetAssociationStatus) -> Self {
@@ -141,13 +141,13 @@ impl QueueFleetAssociationSummaryBuilder {
     /// <p>The status of task scheduling in the queue-fleet association.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–Association is active.</p></li>
+    /// <p><code>ACTIVE</code> - Association is active.</p></li>
     /// <li>
-    /// <p><code>STOP_SCHEDULING_AND_COMPLETE_TASKS</code>–Association has stopped scheduling new tasks and is completing current tasks.</p></li>
+    /// <p><code>STOP_SCHEDULING_AND_COMPLETE_TASKS</code> - Association has stopped scheduling new tasks and is completing current tasks.</p></li>
     /// <li>
-    /// <p><code>STOP_SCHEDULING_AND_CANCEL_TASKS</code>–Association has stopped scheduling new tasks and is canceling current tasks.</p></li>
+    /// <p><code>STOP_SCHEDULING_AND_CANCEL_TASKS</code> - Association has stopped scheduling new tasks and is canceling current tasks.</p></li>
     /// <li>
-    /// <p><code>STOPPED</code>–Association has been stopped.</p></li>
+    /// <p><code>STOPPED</code> - Association has been stopped.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::QueueFleetAssociationStatus>) -> Self {
         self.status = input;
@@ -156,13 +156,13 @@ impl QueueFleetAssociationSummaryBuilder {
     /// <p>The status of task scheduling in the queue-fleet association.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–Association is active.</p></li>
+    /// <p><code>ACTIVE</code> - Association is active.</p></li>
     /// <li>
-    /// <p><code>STOP_SCHEDULING_AND_COMPLETE_TASKS</code>–Association has stopped scheduling new tasks and is completing current tasks.</p></li>
+    /// <p><code>STOP_SCHEDULING_AND_COMPLETE_TASKS</code> - Association has stopped scheduling new tasks and is completing current tasks.</p></li>
     /// <li>
-    /// <p><code>STOP_SCHEDULING_AND_CANCEL_TASKS</code>–Association has stopped scheduling new tasks and is canceling current tasks.</p></li>
+    /// <p><code>STOP_SCHEDULING_AND_CANCEL_TASKS</code> - Association has stopped scheduling new tasks and is canceling current tasks.</p></li>
     /// <li>
-    /// <p><code>STOPPED</code>–Association has been stopped.</p></li>
+    /// <p><code>STOPPED</code> - Association has been stopped.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::QueueFleetAssociationStatus> {
         &self.status

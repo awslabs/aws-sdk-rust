@@ -85,6 +85,10 @@ pub use crate::types::error::_request_too_large_exception::RequestTooLargeExcept
 
 pub use crate::types::error::_resource_not_ready_exception::ResourceNotReadyExceptionBuilder;
 
+pub use crate::types::error::_runtime_alias_deleted_exception::RuntimeAliasDeletedExceptionBuilder;
+
+pub use crate::types::error::_runtime_version_deleted_exception::RuntimeVersionDeletedExceptionBuilder;
+
 pub use crate::types::error::_s3_files_mount_connectivity_exception::S3FilesMountConnectivityExceptionBuilder;
 
 pub use crate::types::error::_s3_files_mount_failure_exception::S3FilesMountFailureExceptionBuilder;

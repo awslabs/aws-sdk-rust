@@ -23,7 +23,7 @@ impl crate::operation::update_image_pipeline::builders::UpdateImagePipelineInput
 /// Fluent builder constructing a request to `UpdateImagePipeline`.
 ///
 /// <p>Updates an image pipeline. Use image pipelines to automate the creation and distribution of images. You must specify exactly one recipe for your image, using either a <code>containerRecipeArn</code> or an <code>imageRecipeArn</code>. The recipe must be the same type, image or container, as the pipeline's current recipe.</p><note>
-/// <p>UpdateImagePipeline does not support selective updates. The request replaces the pipeline's entire configuration, so include every setting that you want to keep. Any optional property that you omit is removed or reset to its default.</p>
+/// <p>This operation doesn't support selective updates. The request replaces the entire pipeline configuration, so include every setting that you want to keep. Any optional property that you omit is removed or reset to its default.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateImagePipelineFluentBuilder {
@@ -283,17 +283,17 @@ impl UpdateImagePipelineFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_workflows`](Self::set_workflows).
     ///
-    /// <p>The array of workflow configuration objects for builds that this pipeline starts. You must also specify <code>executionRole</code> when you provide workflows.</p>
+    /// <p>The array of workflow configuration objects for builds that this pipeline starts. If you specify workflows, they replace the default workflows that Image Builder otherwise runs for the pipeline's builds. For example, if your list doesn't include a test workflow, the pipeline's builds don't run one. You must also specify <code>executionRole</code> when you provide workflows.</p>
     pub fn workflows(mut self, input: crate::types::WorkflowConfiguration) -> Self {
         self.inner = self.inner.workflows(input);
         self
     }
-    /// <p>The array of workflow configuration objects for builds that this pipeline starts. You must also specify <code>executionRole</code> when you provide workflows.</p>
+    /// <p>The array of workflow configuration objects for builds that this pipeline starts. If you specify workflows, they replace the default workflows that Image Builder otherwise runs for the pipeline's builds. For example, if your list doesn't include a test workflow, the pipeline's builds don't run one. You must also specify <code>executionRole</code> when you provide workflows.</p>
     pub fn set_workflows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>>) -> Self {
         self.inner = self.inner.set_workflows(input);
         self
     }
-    /// <p>The array of workflow configuration objects for builds that this pipeline starts. You must also specify <code>executionRole</code> when you provide workflows.</p>
+    /// <p>The array of workflow configuration objects for builds that this pipeline starts. If you specify workflows, they replace the default workflows that Image Builder otherwise runs for the pipeline's builds. For example, if your list doesn't include a test workflow, the pipeline's builds don't run one. You must also specify <code>executionRole</code> when you provide workflows.</p>
     pub fn get_workflows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::WorkflowConfiguration>> {
         self.inner.get_workflows()
     }

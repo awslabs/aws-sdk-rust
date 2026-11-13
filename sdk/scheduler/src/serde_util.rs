@@ -138,6 +138,18 @@ pub(crate) fn event_bridge_parameters_correct_errors(
     builder
 }
 
+pub(crate) fn event_bridge_put_events_v2_parameters_correct_errors(
+    mut builder: crate::types::builders::EventBridgePutEventsV2ParametersBuilder,
+) -> crate::types::builders::EventBridgePutEventsV2ParametersBuilder {
+    if builder.detail_type.is_none() {
+        builder.detail_type = Some(Default::default())
+    }
+    if builder.source.is_none() {
+        builder.source = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn kinesis_parameters_correct_errors(
     mut builder: crate::types::builders::KinesisParametersBuilder,
 ) -> crate::types::builders::KinesisParametersBuilder {

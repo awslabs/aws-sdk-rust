@@ -71,12 +71,12 @@ pub fn ser_create_firewall_input_input(
     if let Some(var_18) = &input.availability_zone_change_protection {
         encoder.str("AvailabilityZoneChangeProtection").boolean(*var_18);
     }
-    if let Some(var_19) = &input.nat_gateway_mappings {
-        encoder.str("NatGatewayMappings");
+    if let Some(var_19) = &input.nat_gateway_create_mappings {
+        encoder.str("NatGatewayCreateMappings");
         encoder.array((*var_19).len());
         for item_20 in var_19 {
             {
-                crate::protocol_serde::shape_nat_gateway_mapping::ser_nat_gateway_mapping(encoder, item_20)?;
+                crate::protocol_serde::shape_nat_gateway_create_mapping::ser_nat_gateway_create_mapping(encoder, item_20)?;
             }
         }
     }
@@ -84,12 +84,12 @@ pub fn ser_create_firewall_input_input(
         encoder.str("ProxySettings");
         crate::protocol_serde::shape_proxy_settings::ser_proxy_settings(encoder, var_21)?;
     }
-    if let Some(var_22) = &input.no_source_preservation {
-        encoder.str("NoSourcePreservation").boolean(*var_22);
-    }
-    if let Some(var_23) = &input.vpc_endpoint {
+    if let Some(var_22) = &input.vpc_endpoint {
         encoder.str("VpcEndpoint");
-        crate::protocol_serde::shape_vpc_endpoint::ser_vpc_endpoint(encoder, var_23)?;
+        crate::protocol_serde::shape_vpc_endpoint::ser_vpc_endpoint(encoder, var_22)?;
+    }
+    if let Some(var_23) = &input.transparent_filtering_nat_scope {
+        encoder.str("TransparentFilteringNatScope").str(var_23.as_str());
     }
     encoder.end();
     Ok(())

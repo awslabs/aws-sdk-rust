@@ -59,6 +59,24 @@ pub fn de_remove_layer_version_permission_http_error(
                 tmp
             })
         }
+        "ResourceConflictException" => {
+            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::ResourceConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceConflictExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_resource_conflict_exception::de_resource_conflict_exception_json_err(_response_body, output)
+                            .map_err(crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "ResourceNotFoundException" => {
             crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError::ResourceNotFoundException({
                 #[allow(unused_mut)]

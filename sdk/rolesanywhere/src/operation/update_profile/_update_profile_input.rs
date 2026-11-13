@@ -3,7 +3,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProfileInput {
-    /// <p>The unique identifier of the profile.</p>
+    /// <p>The profile to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile ID.</p></li>
+    /// <li>
+    /// <p>The profile ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the profile.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a profile in your account and Region.</p>
     pub profile_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the profile.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -17,9 +26,31 @@ pub struct UpdateProfileInput {
     pub duration_seconds: ::std::option::Option<i32>,
     /// <p>Used to determine if a custom role session name will be accepted in a temporary credential request.</p>
     pub accept_role_session_name: ::std::option::Option<bool>,
+    /// <p>The alias for the profile.</p>
+    /// <p>You can use this parameter in the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p>To set or change the alias, specify the new alias name. After the change, the previous alias ARN no longer identifies the resource. You can then assign the previous alias to another resource of the same type. A change can take a short time to take effect for requests that use an alias ARN.</p></li>
+    /// <li>
+    /// <p>To remove the alias, specify an empty string.</p></li>
+    /// <li>
+    /// <p>To keep the current alias, omit this parameter.</p></li>
+    /// </ul>
+    /// <p>An alias name contains 1 to 256 characters. It must begin with a letter (A-Z or a-z). It can contain only letters (A-Z and a-z), numbers (0-9), underscores (_), hyphens (-), and forward slashes (/). A forward slash can appear only between two other characters, so an alias name can't end with a forward slash or contain two in a row. Alias names that begin with <code>aws/</code>, in any combination of uppercase and lowercase letters, are reserved. Alias names are case sensitive.</p>
+    /// <p>The alias name must be unique among resources of the same type in your account and Region. If another resource of the same type already has the alias, the request fails with a <code>ValidationException</code>. An invalid or reserved alias name also causes a <code>ValidationException</code>.</p>
+    pub alias_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateProfileInput {
-    /// <p>The unique identifier of the profile.</p>
+    /// <p>The profile to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile ID.</p></li>
+    /// <li>
+    /// <p>The profile ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the profile.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a profile in your account and Region.</p>
     pub fn profile_id(&self) -> ::std::option::Option<&str> {
         self.profile_id.as_deref()
     }
@@ -51,6 +82,21 @@ impl UpdateProfileInput {
     pub fn accept_role_session_name(&self) -> ::std::option::Option<bool> {
         self.accept_role_session_name
     }
+    /// <p>The alias for the profile.</p>
+    /// <p>You can use this parameter in the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p>To set or change the alias, specify the new alias name. After the change, the previous alias ARN no longer identifies the resource. You can then assign the previous alias to another resource of the same type. A change can take a short time to take effect for requests that use an alias ARN.</p></li>
+    /// <li>
+    /// <p>To remove the alias, specify an empty string.</p></li>
+    /// <li>
+    /// <p>To keep the current alias, omit this parameter.</p></li>
+    /// </ul>
+    /// <p>An alias name contains 1 to 256 characters. It must begin with a letter (A-Z or a-z). It can contain only letters (A-Z and a-z), numbers (0-9), underscores (_), hyphens (-), and forward slashes (/). A forward slash can appear only between two other characters, so an alias name can't end with a forward slash or contain two in a row. Alias names that begin with <code>aws/</code>, in any combination of uppercase and lowercase letters, are reserved. Alias names are case sensitive.</p>
+    /// <p>The alias name must be unique among resources of the same type in your account and Region. If another resource of the same type already has the alias, the request fails with a <code>ValidationException</code>. An invalid or reserved alias name also causes a <code>ValidationException</code>.</p>
+    pub fn alias_name(&self) -> ::std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
 }
 impl UpdateProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
@@ -70,20 +116,48 @@ pub struct UpdateProfileInputBuilder {
     pub(crate) managed_policy_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) duration_seconds: ::std::option::Option<i32>,
     pub(crate) accept_role_session_name: ::std::option::Option<bool>,
+    pub(crate) alias_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateProfileInputBuilder {
-    /// <p>The unique identifier of the profile.</p>
+    /// <p>The profile to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile ID.</p></li>
+    /// <li>
+    /// <p>The profile ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the profile.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a profile in your account and Region.</p>
     /// This field is required.
     pub fn profile_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.profile_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the profile.</p>
+    /// <p>The profile to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile ID.</p></li>
+    /// <li>
+    /// <p>The profile ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the profile.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a profile in your account and Region.</p>
     pub fn set_profile_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.profile_id = input;
         self
     }
-    /// <p>The unique identifier of the profile.</p>
+    /// <p>The profile to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The profile ID.</p></li>
+    /// <li>
+    /// <p>The profile ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the profile.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a profile in your account and Region.</p>
     pub fn get_profile_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.profile_id
     }
@@ -183,6 +257,53 @@ impl UpdateProfileInputBuilder {
     pub fn get_accept_role_session_name(&self) -> &::std::option::Option<bool> {
         &self.accept_role_session_name
     }
+    /// <p>The alias for the profile.</p>
+    /// <p>You can use this parameter in the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p>To set or change the alias, specify the new alias name. After the change, the previous alias ARN no longer identifies the resource. You can then assign the previous alias to another resource of the same type. A change can take a short time to take effect for requests that use an alias ARN.</p></li>
+    /// <li>
+    /// <p>To remove the alias, specify an empty string.</p></li>
+    /// <li>
+    /// <p>To keep the current alias, omit this parameter.</p></li>
+    /// </ul>
+    /// <p>An alias name contains 1 to 256 characters. It must begin with a letter (A-Z or a-z). It can contain only letters (A-Z and a-z), numbers (0-9), underscores (_), hyphens (-), and forward slashes (/). A forward slash can appear only between two other characters, so an alias name can't end with a forward slash or contain two in a row. Alias names that begin with <code>aws/</code>, in any combination of uppercase and lowercase letters, are reserved. Alias names are case sensitive.</p>
+    /// <p>The alias name must be unique among resources of the same type in your account and Region. If another resource of the same type already has the alias, the request fails with a <code>ValidationException</code>. An invalid or reserved alias name also causes a <code>ValidationException</code>.</p>
+    pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alias_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The alias for the profile.</p>
+    /// <p>You can use this parameter in the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p>To set or change the alias, specify the new alias name. After the change, the previous alias ARN no longer identifies the resource. You can then assign the previous alias to another resource of the same type. A change can take a short time to take effect for requests that use an alias ARN.</p></li>
+    /// <li>
+    /// <p>To remove the alias, specify an empty string.</p></li>
+    /// <li>
+    /// <p>To keep the current alias, omit this parameter.</p></li>
+    /// </ul>
+    /// <p>An alias name contains 1 to 256 characters. It must begin with a letter (A-Z or a-z). It can contain only letters (A-Z and a-z), numbers (0-9), underscores (_), hyphens (-), and forward slashes (/). A forward slash can appear only between two other characters, so an alias name can't end with a forward slash or contain two in a row. Alias names that begin with <code>aws/</code>, in any combination of uppercase and lowercase letters, are reserved. Alias names are case sensitive.</p>
+    /// <p>The alias name must be unique among resources of the same type in your account and Region. If another resource of the same type already has the alias, the request fails with a <code>ValidationException</code>. An invalid or reserved alias name also causes a <code>ValidationException</code>.</p>
+    pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alias_name = input;
+        self
+    }
+    /// <p>The alias for the profile.</p>
+    /// <p>You can use this parameter in the following ways:</p>
+    /// <ul>
+    /// <li>
+    /// <p>To set or change the alias, specify the new alias name. After the change, the previous alias ARN no longer identifies the resource. You can then assign the previous alias to another resource of the same type. A change can take a short time to take effect for requests that use an alias ARN.</p></li>
+    /// <li>
+    /// <p>To remove the alias, specify an empty string.</p></li>
+    /// <li>
+    /// <p>To keep the current alias, omit this parameter.</p></li>
+    /// </ul>
+    /// <p>An alias name contains 1 to 256 characters. It must begin with a letter (A-Z or a-z). It can contain only letters (A-Z and a-z), numbers (0-9), underscores (_), hyphens (-), and forward slashes (/). A forward slash can appear only between two other characters, so an alias name can't end with a forward slash or contain two in a row. Alias names that begin with <code>aws/</code>, in any combination of uppercase and lowercase letters, are reserved. Alias names are case sensitive.</p>
+    /// <p>The alias name must be unique among resources of the same type in your account and Region. If another resource of the same type already has the alias, the request fails with a <code>ValidationException</code>. An invalid or reserved alias name also causes a <code>ValidationException</code>.</p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_name
+    }
     /// Consumes the builder and constructs a [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
     pub fn build(
         self,
@@ -195,6 +316,7 @@ impl UpdateProfileInputBuilder {
             managed_policy_arns: self.managed_policy_arns,
             duration_seconds: self.duration_seconds,
             accept_role_session_name: self.accept_role_session_name,
+            alias_name: self.alias_name,
         })
     }
 }

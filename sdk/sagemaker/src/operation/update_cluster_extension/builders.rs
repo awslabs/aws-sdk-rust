@@ -29,6 +29,7 @@ impl crate::operation::update_cluster_extension::builders::UpdateClusterExtensio
 /// <li>
 /// <p><b>Version:</b> You can update to a later version. You can't update to an earlier version. To use an earlier version, delete the extension and create it again with that version.</p></li>
 /// </ul>
+/// <p>To retry the operation on nodes where it failed, fix the cause that <code>DescribeClusterExtension</code> reports in <code>Health</code>, and then send an <code>UpdateClusterExtension</code> request that doesn't change the version or the configuration.</p>
 /// <p>You can't update an extension while it is being deleted.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateClusterExtensionFluentBuilder {

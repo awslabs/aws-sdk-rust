@@ -79,6 +79,8 @@ pub struct AutomationExecution {
     pub change_request_name: ::std::option::Option<::std::string::String>,
     /// <p>Variables defined for the automation.</p>
     pub variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    /// <p>A summary of the child executions that a rate control execution started for its targets. This field is returned only for rate control executions.</p>
+    pub targets_summary: ::std::option::Option<crate::types::TargetsSummary>,
 }
 impl AutomationExecution {
     /// <p>The execution ID.</p>
@@ -239,6 +241,10 @@ impl AutomationExecution {
     pub fn variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.variables.as_ref()
     }
+    /// <p>A summary of the child executions that a rate control execution started for its targets. This field is returned only for rate control executions.</p>
+    pub fn targets_summary(&self) -> ::std::option::Option<&crate::types::TargetsSummary> {
+        self.targets_summary.as_ref()
+    }
 }
 impl AutomationExecution {
     /// Creates a new builder-style object to manufacture [`AutomationExecution`](crate::types::AutomationExecution).
@@ -288,6 +294,7 @@ pub struct AutomationExecutionBuilder {
     pub(crate) association_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_request_name: ::std::option::Option<::std::string::String>,
     pub(crate) variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    pub(crate) targets_summary: ::std::option::Option<crate::types::TargetsSummary>,
 }
 impl AutomationExecutionBuilder {
     /// <p>The execution ID.</p>
@@ -872,6 +879,20 @@ impl AutomationExecutionBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.variables
     }
+    /// <p>A summary of the child executions that a rate control execution started for its targets. This field is returned only for rate control executions.</p>
+    pub fn targets_summary(mut self, input: crate::types::TargetsSummary) -> Self {
+        self.targets_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A summary of the child executions that a rate control execution started for its targets. This field is returned only for rate control executions.</p>
+    pub fn set_targets_summary(mut self, input: ::std::option::Option<crate::types::TargetsSummary>) -> Self {
+        self.targets_summary = input;
+        self
+    }
+    /// <p>A summary of the child executions that a rate control execution started for its targets. This field is returned only for rate control executions.</p>
+    pub fn get_targets_summary(&self) -> &::std::option::Option<crate::types::TargetsSummary> {
+        &self.targets_summary
+    }
     /// Consumes the builder and constructs a [`AutomationExecution`](crate::types::AutomationExecution).
     pub fn build(self) -> crate::types::AutomationExecution {
         crate::types::AutomationExecution {
@@ -911,6 +932,7 @@ impl AutomationExecutionBuilder {
             association_id: self.association_id,
             change_request_name: self.change_request_name,
             variables: self.variables,
+            targets_summary: self.targets_summary,
         }
     }
 }

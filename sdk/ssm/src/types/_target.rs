@@ -25,6 +25,15 @@
 /// <li>
 /// <p><code>Key=InstanceIds,Values=*</code></p></li>
 /// </ul></li>
+/// <li>
+/// <p>Automation only, to target Microsoft Azure or Google Cloud Platform (GCP) resources:</p>
+/// <ul>
+/// <li>
+/// <p><code>Key=CloudConnector,Values=cloud-connector-id</code></p></li>
+/// <li>
+/// <p><code>Key=CloudConnector,Values={"CloudConnectorId":"cloud-connector-id","SsmManagedNodeFilter":"MANAGED","CloudProviderRegions":\["eastus"\]}</code></p></li>
+/// </ul>
+/// <p>Supported JSON keys: <code>CloudConnectorId</code> (required), <code>SsmManagedNodeFilter</code>, <code>CloudProviderRegions</code>, and, for GCP, <code>IncludesLabels</code>, <code>ExcludesLabels</code>, <code>OsPolicyComplianceFilter</code>, and <code>OsPolicyOrchestratorId</code>.</p></li>
 /// </ul>
 /// <p><b>For Run Command and Maintenance Windows:</b></p>
 /// <ul>
@@ -53,6 +62,15 @@
 /// <li>
 /// <p><code>Key=InstanceIds,Values=*</code></p></li>
 /// </ul></li>
+/// <li>
+/// <p>For associations that run an Automation runbook, to target Microsoft Azure or Google Cloud Platform (GCP) resources:</p>
+/// <ul>
+/// <li>
+/// <p><code>Key=CloudConnector,Values=cloud-connector-id</code></p></li>
+/// <li>
+/// <p><code>Key=CloudConnector,Values={"CloudConnectorId":"cloud-connector-id","SsmManagedNodeFilter":"UNMANAGED"}</code></p></li>
+/// </ul>
+/// <p>Supported JSON keys: <code>CloudConnectorId</code> (required), <code>SsmManagedNodeFilter</code>, and <code>CloudProviderRegions</code>.</p></li>
 /// </ul>
 /// <p>For more information about how to send commands that target managed nodes using <code>Key,Value</code> parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting multiple managed nodes</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 #[non_exhaustive]

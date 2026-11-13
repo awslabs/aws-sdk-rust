@@ -2138,6 +2138,27 @@ impl From<crate::operation::register_type::RegisterTypeError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_alias::RemoveAliasError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_alias::RemoveAliasError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::remove_alias::RemoveAliasError> for Error {
+    fn from(err: crate::operation::remove_alias::RemoveAliasError) -> Self {
+        match err {
+            crate::operation::remove_alias::RemoveAliasError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::rollback_stack::RollbackStackError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2157,6 +2178,29 @@ impl From<crate::operation::rollback_stack::RollbackStackError> for Error {
         match err {
             crate::operation::rollback_stack::RollbackStackError::TokenAlreadyExistsException(inner) => Error::TokenAlreadyExistsException(inner),
             crate::operation::rollback_stack::RollbackStackError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_alias::SetAliasError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::set_alias::SetAliasError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::set_alias::SetAliasError> for Error {
+    fn from(err: crate::operation::set_alias::SetAliasError) -> Self {
+        match err {
+            crate::operation::set_alias::SetAliasError::AlreadyExistsException(inner) => Error::AlreadyExistsException(inner),
+            crate::operation::set_alias::SetAliasError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::set_alias::SetAliasError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

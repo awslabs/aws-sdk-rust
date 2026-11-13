@@ -40,6 +40,26 @@ static AGENTACCESSCONFIGFORUPDATE_MEMBER_SCREENSHOTS_UPLOAD_ENABLED: ::aws_smith
     "ScreenshotsUploadEnabled",
     2,
 );
+static AGENTACCESSCONFIGFORUPDATE_MEMBER_REPLAY_SESSION_ENABLED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#AgentAccessConfigForUpdate$ReplaySessionEnabled",
+        "com.amazonaws.appstream",
+        "AgentAccessConfigForUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "ReplaySessionEnabled",
+    3,
+);
+static AGENTACCESSCONFIGFORUPDATE_MEMBER_KMS_KEY_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream#AgentAccessConfigForUpdate$KmsKeyArn",
+        "com.amazonaws.appstream",
+        "AgentAccessConfigForUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "KmsKeyArn",
+    4,
+);
 static AGENTACCESSCONFIGFORUPDATE_MEMBER_SCREEN_RESOLUTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.appstream#AgentAccessConfigForUpdate$ScreenResolution",
@@ -48,7 +68,7 @@ static AGENTACCESSCONFIGFORUPDATE_MEMBER_SCREEN_RESOLUTION: ::aws_smithy_schema:
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ScreenResolution",
-    3,
+    5,
 );
 static AGENTACCESSCONFIGFORUPDATE_MEMBER_SCREEN_IMAGE_FORMAT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -58,7 +78,7 @@ static AGENTACCESSCONFIGFORUPDATE_MEMBER_SCREEN_IMAGE_FORMAT: ::aws_smithy_schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ScreenImageFormat",
-    4,
+    6,
 );
 static AGENTACCESSCONFIGFORUPDATE_MEMBER_USER_CONTROL_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -68,7 +88,7 @@ static AGENTACCESSCONFIGFORUPDATE_MEMBER_USER_CONTROL_MODE: ::aws_smithy_schema:
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UserControlMode",
-    5,
+    7,
 );
 static AGENTACCESSCONFIGFORUPDATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -81,6 +101,8 @@ static AGENTACCESSCONFIGFORUPDATE_SCHEMA: ::aws_smithy_schema::Schema<'static> =
         &AGENTACCESSCONFIGFORUPDATE_MEMBER_SETTINGS,
         &AGENTACCESSCONFIGFORUPDATE_MEMBER_S3_BUCKET_ARN,
         &AGENTACCESSCONFIGFORUPDATE_MEMBER_SCREENSHOTS_UPLOAD_ENABLED,
+        &AGENTACCESSCONFIGFORUPDATE_MEMBER_REPLAY_SESSION_ENABLED,
+        &AGENTACCESSCONFIGFORUPDATE_MEMBER_KMS_KEY_ARN,
         &AGENTACCESSCONFIGFORUPDATE_MEMBER_SCREEN_RESOLUTION,
         &AGENTACCESSCONFIGFORUPDATE_MEMBER_SCREEN_IMAGE_FORMAT,
         &AGENTACCESSCONFIGFORUPDATE_MEMBER_USER_CONTROL_MODE,
@@ -116,6 +138,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::AgentAcces
         }
         if let Some(ref val) = self.screenshots_upload_enabled {
             ser.write_boolean(&AGENTACCESSCONFIGFORUPDATE_MEMBER_SCREENSHOTS_UPLOAD_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.replay_session_enabled {
+            ser.write_boolean(&AGENTACCESSCONFIGFORUPDATE_MEMBER_REPLAY_SESSION_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.kms_key_arn {
+            ser.write_string(&AGENTACCESSCONFIGFORUPDATE_MEMBER_KMS_KEY_ARN, val)?;
         }
         if let Some(ref val) = self.screen_resolution {
             ser.write_string(&AGENTACCESSCONFIGFORUPDATE_MEMBER_SCREEN_RESOLUTION, val.as_str())?;
@@ -175,17 +203,31 @@ impl crate::types::builders::AgentAccessConfigForUpdateBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.screen_resolution = Some(crate::types::ScreenResolution::from(deser.read_string(member)?.as_str()));
+                        self.replay_session_enabled = Some(deser.read_boolean(member)?);
                     }
                 }
                 Some(4) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.screen_image_format = Some(crate::types::ScreenImageFormat::from(deser.read_string(member)?.as_str()));
+                        self.kms_key_arn = Some(deser.read_string(member)?);
                     }
                 }
                 Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.screen_resolution = Some(crate::types::ScreenResolution::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.screen_image_format = Some(crate::types::ScreenImageFormat::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

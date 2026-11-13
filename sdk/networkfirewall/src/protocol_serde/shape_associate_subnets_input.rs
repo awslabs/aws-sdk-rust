@@ -22,6 +22,15 @@ pub fn ser_associate_subnets_input_input(
             }
         }
     }
+    if let Some(var_6) = &input.nat_gateway_create_mappings {
+        encoder.str("NatGatewayCreateMappings");
+        encoder.array((*var_6).len());
+        for item_7 in var_6 {
+            {
+                crate::protocol_serde::shape_nat_gateway_create_mapping::ser_nat_gateway_create_mapping(encoder, item_7)?;
+            }
+        }
+    }
     encoder.end();
     Ok(())
 }

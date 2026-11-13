@@ -14,7 +14,7 @@ pub struct IpamInternetRegistryAssociation {
     pub ipam_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region of the IPAM.</p>
     pub ipam_region: ::std::option::Option<::std::string::String>,
-    /// <p>The Regional Internet Registry. Possible values:</p>
+    /// <p>The internet registry. Possible values:</p>
     /// <ul>
     /// <li>
     /// <p><code>ripe</code> - RIPE NCC (Europe, the Middle East, and Central Asia).</p></li>
@@ -24,13 +24,15 @@ pub struct IpamInternetRegistryAssociation {
     /// <p><code>arin</code> - ARIN (North America).</p></li>
     /// <li>
     /// <p><code>lacnic</code> - LACNIC (Latin America and the Caribbean).</p></li>
+    /// <li>
+    /// <p><code>nicbr</code> - NIC.br (Brazil).</p></li>
     /// </ul>
     pub rir: ::std::option::Option<crate::types::Rir>,
     /// <p>The organization handle at the internet registry.</p>
     pub organization_handle: ::std::option::Option<::std::string::String>,
     /// <p>The description of the internet registry association.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The state of the internet registry association. Valid values: <code>pending-activation</code> | <code>pending-enable</code> | <code>create-in-progress</code> | <code>create-failed</code> | <code>enable-in-progress</code> | <code>enable-complete</code> | <code>enable-failed</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>delete-failed</code>.</p>
+    /// <p>The state of the internet registry association. Valid values: <code>pending-enable</code> | <code>create-in-progress</code> | <code>create-failed</code> | <code>enable-in-progress</code> | <code>enable-complete</code> | <code>enable-failed</code> | <code>disable-in-progress</code> | <code>disable-complete</code> | <code>disable-failed</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>delete-failed</code>.</p>
     pub state: ::std::option::Option<crate::types::IpamInternetRegistryAssociationState>,
     /// <p>A message describing the current state of the internet registry association, including additional details such as the reason for a failure.</p>
     pub state_message: ::std::option::Option<::std::string::String>,
@@ -60,7 +62,7 @@ impl IpamInternetRegistryAssociation {
     pub fn ipam_region(&self) -> ::std::option::Option<&str> {
         self.ipam_region.as_deref()
     }
-    /// <p>The Regional Internet Registry. Possible values:</p>
+    /// <p>The internet registry. Possible values:</p>
     /// <ul>
     /// <li>
     /// <p><code>ripe</code> - RIPE NCC (Europe, the Middle East, and Central Asia).</p></li>
@@ -70,6 +72,8 @@ impl IpamInternetRegistryAssociation {
     /// <p><code>arin</code> - ARIN (North America).</p></li>
     /// <li>
     /// <p><code>lacnic</code> - LACNIC (Latin America and the Caribbean).</p></li>
+    /// <li>
+    /// <p><code>nicbr</code> - NIC.br (Brazil).</p></li>
     /// </ul>
     pub fn rir(&self) -> ::std::option::Option<&crate::types::Rir> {
         self.rir.as_ref()
@@ -82,7 +86,7 @@ impl IpamInternetRegistryAssociation {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The state of the internet registry association. Valid values: <code>pending-activation</code> | <code>pending-enable</code> | <code>create-in-progress</code> | <code>create-failed</code> | <code>enable-in-progress</code> | <code>enable-complete</code> | <code>enable-failed</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>delete-failed</code>.</p>
+    /// <p>The state of the internet registry association. Valid values: <code>pending-enable</code> | <code>create-in-progress</code> | <code>create-failed</code> | <code>enable-in-progress</code> | <code>enable-complete</code> | <code>enable-failed</code> | <code>disable-in-progress</code> | <code>disable-complete</code> | <code>disable-failed</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>delete-failed</code>.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::IpamInternetRegistryAssociationState> {
         self.state.as_ref()
     }
@@ -196,7 +200,7 @@ impl IpamInternetRegistryAssociationBuilder {
     pub fn get_ipam_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.ipam_region
     }
-    /// <p>The Regional Internet Registry. Possible values:</p>
+    /// <p>The internet registry. Possible values:</p>
     /// <ul>
     /// <li>
     /// <p><code>ripe</code> - RIPE NCC (Europe, the Middle East, and Central Asia).</p></li>
@@ -206,12 +210,14 @@ impl IpamInternetRegistryAssociationBuilder {
     /// <p><code>arin</code> - ARIN (North America).</p></li>
     /// <li>
     /// <p><code>lacnic</code> - LACNIC (Latin America and the Caribbean).</p></li>
+    /// <li>
+    /// <p><code>nicbr</code> - NIC.br (Brazil).</p></li>
     /// </ul>
     pub fn rir(mut self, input: crate::types::Rir) -> Self {
         self.rir = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Regional Internet Registry. Possible values:</p>
+    /// <p>The internet registry. Possible values:</p>
     /// <ul>
     /// <li>
     /// <p><code>ripe</code> - RIPE NCC (Europe, the Middle East, and Central Asia).</p></li>
@@ -221,12 +227,14 @@ impl IpamInternetRegistryAssociationBuilder {
     /// <p><code>arin</code> - ARIN (North America).</p></li>
     /// <li>
     /// <p><code>lacnic</code> - LACNIC (Latin America and the Caribbean).</p></li>
+    /// <li>
+    /// <p><code>nicbr</code> - NIC.br (Brazil).</p></li>
     /// </ul>
     pub fn set_rir(mut self, input: ::std::option::Option<crate::types::Rir>) -> Self {
         self.rir = input;
         self
     }
-    /// <p>The Regional Internet Registry. Possible values:</p>
+    /// <p>The internet registry. Possible values:</p>
     /// <ul>
     /// <li>
     /// <p><code>ripe</code> - RIPE NCC (Europe, the Middle East, and Central Asia).</p></li>
@@ -236,6 +244,8 @@ impl IpamInternetRegistryAssociationBuilder {
     /// <p><code>arin</code> - ARIN (North America).</p></li>
     /// <li>
     /// <p><code>lacnic</code> - LACNIC (Latin America and the Caribbean).</p></li>
+    /// <li>
+    /// <p><code>nicbr</code> - NIC.br (Brazil).</p></li>
     /// </ul>
     pub fn get_rir(&self) -> &::std::option::Option<crate::types::Rir> {
         &self.rir
@@ -268,17 +278,17 @@ impl IpamInternetRegistryAssociationBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The state of the internet registry association. Valid values: <code>pending-activation</code> | <code>pending-enable</code> | <code>create-in-progress</code> | <code>create-failed</code> | <code>enable-in-progress</code> | <code>enable-complete</code> | <code>enable-failed</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>delete-failed</code>.</p>
+    /// <p>The state of the internet registry association. Valid values: <code>pending-enable</code> | <code>create-in-progress</code> | <code>create-failed</code> | <code>enable-in-progress</code> | <code>enable-complete</code> | <code>enable-failed</code> | <code>disable-in-progress</code> | <code>disable-complete</code> | <code>disable-failed</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>delete-failed</code>.</p>
     pub fn state(mut self, input: crate::types::IpamInternetRegistryAssociationState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The state of the internet registry association. Valid values: <code>pending-activation</code> | <code>pending-enable</code> | <code>create-in-progress</code> | <code>create-failed</code> | <code>enable-in-progress</code> | <code>enable-complete</code> | <code>enable-failed</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>delete-failed</code>.</p>
+    /// <p>The state of the internet registry association. Valid values: <code>pending-enable</code> | <code>create-in-progress</code> | <code>create-failed</code> | <code>enable-in-progress</code> | <code>enable-complete</code> | <code>enable-failed</code> | <code>disable-in-progress</code> | <code>disable-complete</code> | <code>disable-failed</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>delete-failed</code>.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::IpamInternetRegistryAssociationState>) -> Self {
         self.state = input;
         self
     }
-    /// <p>The state of the internet registry association. Valid values: <code>pending-activation</code> | <code>pending-enable</code> | <code>create-in-progress</code> | <code>create-failed</code> | <code>enable-in-progress</code> | <code>enable-complete</code> | <code>enable-failed</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>delete-failed</code>.</p>
+    /// <p>The state of the internet registry association. Valid values: <code>pending-enable</code> | <code>create-in-progress</code> | <code>create-failed</code> | <code>enable-in-progress</code> | <code>enable-complete</code> | <code>enable-failed</code> | <code>disable-in-progress</code> | <code>disable-complete</code> | <code>disable-failed</code> | <code>delete-in-progress</code> | <code>delete-complete</code> | <code>delete-failed</code>.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::IpamInternetRegistryAssociationState> {
         &self.state
     }

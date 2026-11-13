@@ -437,7 +437,13 @@ pub use crate::types::_extension_details::ExtensionDetails;
 
 pub use crate::types::_extension_node_summary::ExtensionNodeSummary;
 
+pub use crate::types::_extension_health::ExtensionHealth;
+
 pub use crate::types::_cluster_node_details::ClusterNodeDetails;
+
+pub use crate::types::_cluster_operation_type::ClusterOperationType;
+
+pub use crate::types::_cluster_operation_status::ClusterOperationStatus;
 
 pub use crate::types::_scheduler_resource_status::SchedulerResourceStatus;
 
@@ -674,6 +680,8 @@ pub use crate::types::_event_sort_by::EventSortBy;
 pub use crate::types::_cluster_event_resource_type::ClusterEventResourceType;
 
 pub use crate::types::_cluster_sort_by::ClusterSortBy;
+
+pub use crate::types::_cluster_operation_sort_by::ClusterOperationSortBy;
 
 pub use crate::types::_sort_cluster_scheduler_config_by::SortClusterSchedulerConfigBy;
 
@@ -1265,6 +1273,10 @@ pub use crate::types::_cluster_capacity_type::ClusterCapacityType;
 
 pub use crate::types::_cluster_network_interface_details::ClusterNetworkInterfaceDetails;
 
+pub use crate::types::_cluster_operation_scaling_details::ClusterOperationScalingDetails;
+
+pub use crate::types::_instance_group_health_check_configuration::InstanceGroupHealthCheckConfiguration;
+
 pub use crate::types::_scheduler_config_component::SchedulerConfigComponent;
 
 pub use crate::types::_edge_model::EdgeModel;
@@ -1359,7 +1371,11 @@ pub use crate::types::_cluster_event_summary::ClusterEventSummary;
 
 pub use crate::types::_extension_summary::ExtensionSummary;
 
+pub use crate::types::_extension_version_summary::ExtensionVersionSummary;
+
 pub use crate::types::_cluster_node_summary::ClusterNodeSummary;
+
+pub use crate::types::_cluster_operation_summary::ClusterOperationSummary;
 
 pub use crate::types::_cluster_summary::ClusterSummary;
 
@@ -1518,8 +1534,6 @@ pub use crate::types::_training_plan_offering::TrainingPlanOffering;
 pub use crate::types::_training_plan_extension_offering::TrainingPlanExtensionOffering;
 
 pub use crate::types::_output_parameter::OutputParameter;
-
-pub use crate::types::_instance_group_health_check_configuration::InstanceGroupHealthCheckConfiguration;
 
 pub use crate::types::_model_variant_action::ModelVariantAction;
 
@@ -1851,9 +1865,13 @@ pub use crate::types::_environment_config_details::EnvironmentConfigDetails;
 
 pub use crate::types::_event_metadata::EventMetadata;
 
+pub use crate::types::_extension_health_issue::ExtensionHealthIssue;
+
 pub use crate::types::_cluster_instance_storage_config::ClusterInstanceStorageConfig;
 
 pub use crate::types::_cluster_interface_type::ClusterInterfaceType;
+
+pub use crate::types::_cluster_operation_scaling_configuration::ClusterOperationScalingConfiguration;
 
 pub use crate::types::_edge_deployment_status::EdgeDeploymentStatus;
 
@@ -2002,6 +2020,8 @@ pub use crate::types::_deep_health_check_type::DeepHealthCheckType;
 pub use crate::types::_cluster_patching_strategy::ClusterPatchingStrategy;
 
 pub use crate::types::_cluster_patch_schedule::ClusterPatchSchedule;
+
+pub use crate::types::_cluster_drain_policy::ClusterDrainPolicy;
 
 pub use crate::types::_cluster_slurm_node_type::ClusterSlurmNodeType;
 
@@ -2173,6 +2193,8 @@ pub use crate::types::_database_configuration_metadata::DatabaseConfigurationMet
 
 pub use crate::types::_slurm_health_metadata::SlurmHealthMetadata;
 
+pub use crate::types::_extension_health_issue_code::ExtensionHealthIssueCode;
+
 pub use crate::types::_cluster_ebs_volume_config::ClusterEbsVolumeConfig;
 
 pub use crate::types::_cluster_fsx_lustre_config::ClusterFsxLustreConfig;
@@ -2282,6 +2304,8 @@ pub use crate::types::_categorical_parameter_range_specification::CategoricalPar
 pub use crate::types::_auto_mls3_data_type::AutoMls3DataType;
 
 pub use crate::types::_aggregation_transformation_value::AggregationTransformationValue;
+
+pub use crate::types::_cluster_on_drain_timeout::ClusterOnDrainTimeout;
 
 pub use crate::types::_mig_profile_type::MigProfileType;
 
@@ -2855,6 +2879,8 @@ mod _cluster_capacity_type;
 
 mod _cluster_config_mode;
 
+mod _cluster_drain_policy;
+
 mod _cluster_ebs_volume_config;
 
 mod _cluster_event_detail;
@@ -2922,6 +2948,20 @@ mod _cluster_node_recovery;
 mod _cluster_node_summary;
 
 mod _cluster_on_demand_options;
+
+mod _cluster_on_drain_timeout;
+
+mod _cluster_operation_scaling_configuration;
+
+mod _cluster_operation_scaling_details;
+
+mod _cluster_operation_sort_by;
+
+mod _cluster_operation_status;
+
+mod _cluster_operation_summary;
+
+mod _cluster_operation_type;
 
 mod _cluster_orchestrator;
 
@@ -3265,11 +3305,19 @@ mod _explainer_config;
 
 mod _extension_details;
 
+mod _extension_health;
+
+mod _extension_health_issue;
+
+mod _extension_health_issue_code;
+
 mod _extension_node_summary;
 
 mod _extension_status;
 
 mod _extension_summary;
+
+mod _extension_version_summary;
 
 mod _f_sx_lustre_config;
 

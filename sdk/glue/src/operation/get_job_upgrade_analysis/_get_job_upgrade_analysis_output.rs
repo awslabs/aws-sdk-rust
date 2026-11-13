@@ -15,11 +15,11 @@ pub struct GetJobUpgradeAnalysisOutput {
     pub target_version: ::std::string::String,
     /// <p>The type of upgrade analysis. For auto-upgrade jobs, this value is <code>AUTO_UPGRADE</code>.</p>
     pub analysis_type: ::std::option::Option<crate::types::AnalysisType>,
-    /// <p>The Amazon S3 URI of the terminal-state evaluation summary, available once the analysis reaches a terminal status (<code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+    /// <p>A presigned URL for downloading the auto upgrade evaluation summary for the analysis. Available once the analysis reaches a terminal status (<code>SUCCEEDED</code> or <code>FAILED</code>). The URL expires after 1 hour. Calling <code>GetJobUpgradeAnalysis</code> again returns a new URL.</p>
     pub auto_upgrade_evaluation_summary: ::std::option::Option<::std::string::String>,
     /// <p>The reason the analysis did not complete.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon S3 URI of the consent report summarizing upgrade assessment findings. Populated when the analysis reaches <code>WAITING_FOR_CONSENT</code> and remains available in all subsequent states.</p>
+    /// <p>A presigned URL for downloading the auto upgrade eligibility summary, which lists the compatibility results for the job. Available once the analysis reaches <code>WAITING_FOR_CONSENT</code> and in all subsequent states. The URL expires after 1 hour. Calling <code>GetJobUpgradeAnalysis</code> again returns a new URL.</p>
     pub auto_upgrade_eligibility_summary: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,7 +51,7 @@ impl GetJobUpgradeAnalysisOutput {
     pub fn analysis_type(&self) -> ::std::option::Option<&crate::types::AnalysisType> {
         self.analysis_type.as_ref()
     }
-    /// <p>The Amazon S3 URI of the terminal-state evaluation summary, available once the analysis reaches a terminal status (<code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+    /// <p>A presigned URL for downloading the auto upgrade evaluation summary for the analysis. Available once the analysis reaches a terminal status (<code>SUCCEEDED</code> or <code>FAILED</code>). The URL expires after 1 hour. Calling <code>GetJobUpgradeAnalysis</code> again returns a new URL.</p>
     pub fn auto_upgrade_evaluation_summary(&self) -> ::std::option::Option<&str> {
         self.auto_upgrade_evaluation_summary.as_deref()
     }
@@ -59,7 +59,7 @@ impl GetJobUpgradeAnalysisOutput {
     pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
-    /// <p>The Amazon S3 URI of the consent report summarizing upgrade assessment findings. Populated when the analysis reaches <code>WAITING_FOR_CONSENT</code> and remains available in all subsequent states.</p>
+    /// <p>A presigned URL for downloading the auto upgrade eligibility summary, which lists the compatibility results for the job. Available once the analysis reaches <code>WAITING_FOR_CONSENT</code> and in all subsequent states. The URL expires after 1 hour. Calling <code>GetJobUpgradeAnalysis</code> again returns a new URL.</p>
     pub fn auto_upgrade_eligibility_summary(&self) -> ::std::option::Option<&str> {
         self.auto_upgrade_eligibility_summary.as_deref()
     }
@@ -180,17 +180,17 @@ impl GetJobUpgradeAnalysisOutputBuilder {
     pub fn get_analysis_type(&self) -> &::std::option::Option<crate::types::AnalysisType> {
         &self.analysis_type
     }
-    /// <p>The Amazon S3 URI of the terminal-state evaluation summary, available once the analysis reaches a terminal status (<code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+    /// <p>A presigned URL for downloading the auto upgrade evaluation summary for the analysis. Available once the analysis reaches a terminal status (<code>SUCCEEDED</code> or <code>FAILED</code>). The URL expires after 1 hour. Calling <code>GetJobUpgradeAnalysis</code> again returns a new URL.</p>
     pub fn auto_upgrade_evaluation_summary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_upgrade_evaluation_summary = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon S3 URI of the terminal-state evaluation summary, available once the analysis reaches a terminal status (<code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+    /// <p>A presigned URL for downloading the auto upgrade evaluation summary for the analysis. Available once the analysis reaches a terminal status (<code>SUCCEEDED</code> or <code>FAILED</code>). The URL expires after 1 hour. Calling <code>GetJobUpgradeAnalysis</code> again returns a new URL.</p>
     pub fn set_auto_upgrade_evaluation_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_upgrade_evaluation_summary = input;
         self
     }
-    /// <p>The Amazon S3 URI of the terminal-state evaluation summary, available once the analysis reaches a terminal status (<code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+    /// <p>A presigned URL for downloading the auto upgrade evaluation summary for the analysis. Available once the analysis reaches a terminal status (<code>SUCCEEDED</code> or <code>FAILED</code>). The URL expires after 1 hour. Calling <code>GetJobUpgradeAnalysis</code> again returns a new URL.</p>
     pub fn get_auto_upgrade_evaluation_summary(&self) -> &::std::option::Option<::std::string::String> {
         &self.auto_upgrade_evaluation_summary
     }
@@ -208,17 +208,17 @@ impl GetJobUpgradeAnalysisOutputBuilder {
     pub fn get_error_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.error_message
     }
-    /// <p>The Amazon S3 URI of the consent report summarizing upgrade assessment findings. Populated when the analysis reaches <code>WAITING_FOR_CONSENT</code> and remains available in all subsequent states.</p>
+    /// <p>A presigned URL for downloading the auto upgrade eligibility summary, which lists the compatibility results for the job. Available once the analysis reaches <code>WAITING_FOR_CONSENT</code> and in all subsequent states. The URL expires after 1 hour. Calling <code>GetJobUpgradeAnalysis</code> again returns a new URL.</p>
     pub fn auto_upgrade_eligibility_summary(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.auto_upgrade_eligibility_summary = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon S3 URI of the consent report summarizing upgrade assessment findings. Populated when the analysis reaches <code>WAITING_FOR_CONSENT</code> and remains available in all subsequent states.</p>
+    /// <p>A presigned URL for downloading the auto upgrade eligibility summary, which lists the compatibility results for the job. Available once the analysis reaches <code>WAITING_FOR_CONSENT</code> and in all subsequent states. The URL expires after 1 hour. Calling <code>GetJobUpgradeAnalysis</code> again returns a new URL.</p>
     pub fn set_auto_upgrade_eligibility_summary(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.auto_upgrade_eligibility_summary = input;
         self
     }
-    /// <p>The Amazon S3 URI of the consent report summarizing upgrade assessment findings. Populated when the analysis reaches <code>WAITING_FOR_CONSENT</code> and remains available in all subsequent states.</p>
+    /// <p>A presigned URL for downloading the auto upgrade eligibility summary, which lists the compatibility results for the job. Available once the analysis reaches <code>WAITING_FOR_CONSENT</code> and in all subsequent states. The URL expires after 1 hour. Calling <code>GetJobUpgradeAnalysis</code> again returns a new URL.</p>
     pub fn get_auto_upgrade_eligibility_summary(&self) -> &::std::option::Option<::std::string::String> {
         &self.auto_upgrade_eligibility_summary
     }

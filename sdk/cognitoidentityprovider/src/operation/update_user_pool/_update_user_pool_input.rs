@@ -46,6 +46,10 @@ pub struct UpdateUserPoolInput {
     /// <p>Contains settings for activation of threat protection, including the operating mode and additional authentication types. To log user security information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to potentially unwanted traffic to your user pool, set to <code>ENFORCED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding advanced security to a user pool</a>. To activate this setting, your user pool must be on the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html"> Plus tier</a>.</p>
     pub user_pool_add_ons: ::std::option::Option<crate::types::UserPoolAddOnsType>,
+    /// <p>The dynamic client registration configuration for the user pool. With dynamic client registration, applications can register their own app clients at runtime through the registration endpoint of your user pool domain. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    /// <p>If you omit this parameter, Amazon Cognito keeps the existing configuration. If you include it, Amazon Cognito replaces the existing configuration with the one that you provide. Members that you omit revert to their default values, and an omitted <code>EnableStatus</code> turns dynamic client registration on.</p>
+    /// <p>To change the feature plan of the user pool to Lite, you must also set <code>EnableStatus</code> to <code>Disabled</code>.</p>
+    pub dcr_configuration: ::std::option::Option<crate::types::DcrConfigurationType>,
     /// <p>The available verified method a user can use to recover their password when they call <code>ForgotPassword</code>. You can use this setting to define a preferred method when a user has more than one method available. With this setting, SMS doesn't qualify for a valid password recovery mechanism if the user also has SMS multi-factor authentication (MFA) activated. In the absence of this setting, Amazon Cognito uses the legacy behavior to determine the recovery method where SMS is preferred through email.</p>
     pub account_recovery_setting: ::std::option::Option<crate::types::AccountRecoverySettingType>,
     /// <p>The updated name of your user pool.</p>
@@ -141,6 +145,12 @@ impl UpdateUserPoolInput {
     pub fn user_pool_add_ons(&self) -> ::std::option::Option<&crate::types::UserPoolAddOnsType> {
         self.user_pool_add_ons.as_ref()
     }
+    /// <p>The dynamic client registration configuration for the user pool. With dynamic client registration, applications can register their own app clients at runtime through the registration endpoint of your user pool domain. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    /// <p>If you omit this parameter, Amazon Cognito keeps the existing configuration. If you include it, Amazon Cognito replaces the existing configuration with the one that you provide. Members that you omit revert to their default values, and an omitted <code>EnableStatus</code> turns dynamic client registration on.</p>
+    /// <p>To change the feature plan of the user pool to Lite, you must also set <code>EnableStatus</code> to <code>Disabled</code>.</p>
+    pub fn dcr_configuration(&self) -> ::std::option::Option<&crate::types::DcrConfigurationType> {
+        self.dcr_configuration.as_ref()
+    }
     /// <p>The available verified method a user can use to recover their password when they call <code>ForgotPassword</code>. You can use this setting to define a preferred method when a user has more than one method available. With this setting, SMS doesn't qualify for a valid password recovery mechanism if the user also has SMS multi-factor authentication (MFA) activated. In the absence of this setting, Amazon Cognito uses the legacy behavior to determine the recovery method where SMS is preferred through email.</p>
     pub fn account_recovery_setting(&self) -> ::std::option::Option<&crate::types::AccountRecoverySettingType> {
         self.account_recovery_setting.as_ref()
@@ -196,6 +206,7 @@ pub struct UpdateUserPoolInputBuilder {
     pub(crate) user_pool_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) admin_create_user_config: ::std::option::Option<crate::types::AdminCreateUserConfigType>,
     pub(crate) user_pool_add_ons: ::std::option::Option<crate::types::UserPoolAddOnsType>,
+    pub(crate) dcr_configuration: ::std::option::Option<crate::types::DcrConfigurationType>,
     pub(crate) account_recovery_setting: ::std::option::Option<crate::types::AccountRecoverySettingType>,
     pub(crate) pool_name: ::std::option::Option<::std::string::String>,
     pub(crate) user_pool_tier: ::std::option::Option<crate::types::UserPoolTierType>,
@@ -494,6 +505,26 @@ impl UpdateUserPoolInputBuilder {
     pub fn get_user_pool_add_ons(&self) -> &::std::option::Option<crate::types::UserPoolAddOnsType> {
         &self.user_pool_add_ons
     }
+    /// <p>The dynamic client registration configuration for the user pool. With dynamic client registration, applications can register their own app clients at runtime through the registration endpoint of your user pool domain. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    /// <p>If you omit this parameter, Amazon Cognito keeps the existing configuration. If you include it, Amazon Cognito replaces the existing configuration with the one that you provide. Members that you omit revert to their default values, and an omitted <code>EnableStatus</code> turns dynamic client registration on.</p>
+    /// <p>To change the feature plan of the user pool to Lite, you must also set <code>EnableStatus</code> to <code>Disabled</code>.</p>
+    pub fn dcr_configuration(mut self, input: crate::types::DcrConfigurationType) -> Self {
+        self.dcr_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The dynamic client registration configuration for the user pool. With dynamic client registration, applications can register their own app clients at runtime through the registration endpoint of your user pool domain. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    /// <p>If you omit this parameter, Amazon Cognito keeps the existing configuration. If you include it, Amazon Cognito replaces the existing configuration with the one that you provide. Members that you omit revert to their default values, and an omitted <code>EnableStatus</code> turns dynamic client registration on.</p>
+    /// <p>To change the feature plan of the user pool to Lite, you must also set <code>EnableStatus</code> to <code>Disabled</code>.</p>
+    pub fn set_dcr_configuration(mut self, input: ::std::option::Option<crate::types::DcrConfigurationType>) -> Self {
+        self.dcr_configuration = input;
+        self
+    }
+    /// <p>The dynamic client registration configuration for the user pool. With dynamic client registration, applications can register their own app clients at runtime through the registration endpoint of your user pool domain. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    /// <p>If you omit this parameter, Amazon Cognito keeps the existing configuration. If you include it, Amazon Cognito replaces the existing configuration with the one that you provide. Members that you omit revert to their default values, and an omitted <code>EnableStatus</code> turns dynamic client registration on.</p>
+    /// <p>To change the feature plan of the user pool to Lite, you must also set <code>EnableStatus</code> to <code>Disabled</code>.</p>
+    pub fn get_dcr_configuration(&self) -> &::std::option::Option<crate::types::DcrConfigurationType> {
+        &self.dcr_configuration
+    }
     /// <p>The available verified method a user can use to recover their password when they call <code>ForgotPassword</code>. You can use this setting to define a preferred method when a user has more than one method available. With this setting, SMS doesn't qualify for a valid password recovery mechanism if the user also has SMS multi-factor authentication (MFA) activated. In the absence of this setting, Amazon Cognito uses the legacy behavior to determine the recovery method where SMS is preferred through email.</p>
     pub fn account_recovery_setting(mut self, input: crate::types::AccountRecoverySettingType) -> Self {
         self.account_recovery_setting = ::std::option::Option::Some(input);
@@ -615,6 +646,7 @@ impl UpdateUserPoolInputBuilder {
             user_pool_tags: self.user_pool_tags,
             admin_create_user_config: self.admin_create_user_config,
             user_pool_add_ons: self.user_pool_add_ons,
+            dcr_configuration: self.dcr_configuration,
             account_recovery_setting: self.account_recovery_setting,
             pool_name: self.pool_name,
             user_pool_tier: self.user_pool_tier,

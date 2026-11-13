@@ -109,35 +109,17 @@ impl GetServiceLinkedRoleDeletionStatusFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The deletion task identifier. This identifier is returned by the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html">DeleteServiceLinkedRole</a> operation in the format <code>task/aws-service-role/<service-principal-name>
-    /// /
-    /// <role-name>
-    /// /
-    /// <task-uuid></task-uuid>
-    /// </role-name>
-    /// </service-principal-name></code>.</p>
+    /// <p>The deletion task identifier. This identifier is returned by the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html">DeleteServiceLinkedRole</a> operation in the format <code>task/aws-service-role/&lt;service-principal-name&gt;/&lt;role-name&gt;/&lt;task-uuid&gt;</code>.</p>
     pub fn deletion_task_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.deletion_task_id(input.into());
         self
     }
-    /// <p>The deletion task identifier. This identifier is returned by the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html">DeleteServiceLinkedRole</a> operation in the format <code>task/aws-service-role/<service-principal-name>
-    /// /
-    /// <role-name>
-    /// /
-    /// <task-uuid></task-uuid>
-    /// </role-name>
-    /// </service-principal-name></code>.</p>
+    /// <p>The deletion task identifier. This identifier is returned by the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html">DeleteServiceLinkedRole</a> operation in the format <code>task/aws-service-role/&lt;service-principal-name&gt;/&lt;role-name&gt;/&lt;task-uuid&gt;</code>.</p>
     pub fn set_deletion_task_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_deletion_task_id(input);
         self
     }
-    /// <p>The deletion task identifier. This identifier is returned by the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html">DeleteServiceLinkedRole</a> operation in the format <code>task/aws-service-role/<service-principal-name>
-    /// /
-    /// <role-name>
-    /// /
-    /// <task-uuid></task-uuid>
-    /// </role-name>
-    /// </service-principal-name></code>.</p>
+    /// <p>The deletion task identifier. This identifier is returned by the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html">DeleteServiceLinkedRole</a> operation in the format <code>task/aws-service-role/&lt;service-principal-name&gt;/&lt;role-name&gt;/&lt;task-uuid&gt;</code>.</p>
     pub fn get_deletion_task_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_deletion_task_id()
     }

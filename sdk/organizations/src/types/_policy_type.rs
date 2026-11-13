@@ -22,6 +22,7 @@
 ///     PolicyType::NetworkSecurityDirectorPolicy => { /* ... */ },
 ///     PolicyType::ResourceControlPolicy => { /* ... */ },
 ///     PolicyType::S3Policy => { /* ... */ },
+///     PolicyType::SecurityhubCspmPolicy => { /* ... */ },
 ///     PolicyType::SecurityhubPolicy => { /* ... */ },
 ///     PolicyType::ServiceControlPolicy => { /* ... */ },
 ///     PolicyType::TagPolicy => { /* ... */ },
@@ -75,6 +76,8 @@ pub enum PolicyType {
     #[allow(missing_docs)] // documentation missing in model
     S3Policy,
     #[allow(missing_docs)] // documentation missing in model
+    SecurityhubCspmPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     SecurityhubPolicy,
     #[allow(missing_docs)] // documentation missing in model
     ServiceControlPolicy,
@@ -99,6 +102,7 @@ impl ::std::convert::From<&str> for PolicyType {
             "NETWORK_SECURITY_DIRECTOR_POLICY" => PolicyType::NetworkSecurityDirectorPolicy,
             "RESOURCE_CONTROL_POLICY" => PolicyType::ResourceControlPolicy,
             "S3_POLICY" => PolicyType::S3Policy,
+            "SECURITYHUB_CSPM_POLICY" => PolicyType::SecurityhubCspmPolicy,
             "SECURITYHUB_POLICY" => PolicyType::SecurityhubPolicy,
             "SERVICE_CONTROL_POLICY" => PolicyType::ServiceControlPolicy,
             "TAG_POLICY" => PolicyType::TagPolicy,
@@ -128,6 +132,7 @@ impl PolicyType {
             PolicyType::NetworkSecurityDirectorPolicy => "NETWORK_SECURITY_DIRECTOR_POLICY",
             PolicyType::ResourceControlPolicy => "RESOURCE_CONTROL_POLICY",
             PolicyType::S3Policy => "S3_POLICY",
+            PolicyType::SecurityhubCspmPolicy => "SECURITYHUB_CSPM_POLICY",
             PolicyType::SecurityhubPolicy => "SECURITYHUB_POLICY",
             PolicyType::ServiceControlPolicy => "SERVICE_CONTROL_POLICY",
             PolicyType::TagPolicy => "TAG_POLICY",
@@ -148,6 +153,7 @@ impl PolicyType {
             "NETWORK_SECURITY_DIRECTOR_POLICY",
             "RESOURCE_CONTROL_POLICY",
             "S3_POLICY",
+            "SECURITYHUB_CSPM_POLICY",
             "SECURITYHUB_POLICY",
             "SERVICE_CONTROL_POLICY",
             "TAG_POLICY",
@@ -185,6 +191,7 @@ impl ::std::fmt::Display for PolicyType {
             PolicyType::NetworkSecurityDirectorPolicy => write!(f, "NETWORK_SECURITY_DIRECTOR_POLICY"),
             PolicyType::ResourceControlPolicy => write!(f, "RESOURCE_CONTROL_POLICY"),
             PolicyType::S3Policy => write!(f, "S3_POLICY"),
+            PolicyType::SecurityhubCspmPolicy => write!(f, "SECURITYHUB_CSPM_POLICY"),
             PolicyType::SecurityhubPolicy => write!(f, "SECURITYHUB_POLICY"),
             PolicyType::ServiceControlPolicy => write!(f, "SERVICE_CONTROL_POLICY"),
             PolicyType::TagPolicy => write!(f, "TAG_POLICY"),

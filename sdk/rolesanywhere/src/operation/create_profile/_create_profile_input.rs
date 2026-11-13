@@ -21,6 +21,11 @@ pub struct CreateProfileInput {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Used to determine if a custom role session name will be accepted in a temporary credential request.</p>
     pub accept_role_session_name: ::std::option::Option<bool>,
+    /// <p>An alias for the profile. When you set an alias, the response includes the alias ARN of the profile in <code>aliasArn</code>.</p>
+    /// <p>An alias name contains 1 to 256 characters. It must begin with a letter (A-Z or a-z). It can contain only letters (A-Z and a-z), numbers (0-9), underscores (_), hyphens (-), and forward slashes (/). A forward slash can appear only between two other characters, so an alias name can't end with a forward slash or contain two in a row. Alias names that begin with <code>aws/</code>, in any combination of uppercase and lowercase letters, are reserved. Alias names are case sensitive.</p>
+    /// <p>The alias name must be unique among resources of the same type in your account and Region. If another resource of the same type already has the alias, the request fails with a <code>ValidationException</code>. An invalid or reserved alias name also causes a <code>ValidationException</code>.</p>
+    /// <p>If you omit this parameter or specify an empty string, the resource is created without an alias.</p>
+    pub alias_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateProfileInput {
     /// <p>The name of the profile.</p>
@@ -65,6 +70,13 @@ impl CreateProfileInput {
     pub fn accept_role_session_name(&self) -> ::std::option::Option<bool> {
         self.accept_role_session_name
     }
+    /// <p>An alias for the profile. When you set an alias, the response includes the alias ARN of the profile in <code>aliasArn</code>.</p>
+    /// <p>An alias name contains 1 to 256 characters. It must begin with a letter (A-Z or a-z). It can contain only letters (A-Z and a-z), numbers (0-9), underscores (_), hyphens (-), and forward slashes (/). A forward slash can appear only between two other characters, so an alias name can't end with a forward slash or contain two in a row. Alias names that begin with <code>aws/</code>, in any combination of uppercase and lowercase letters, are reserved. Alias names are case sensitive.</p>
+    /// <p>The alias name must be unique among resources of the same type in your account and Region. If another resource of the same type already has the alias, the request fails with a <code>ValidationException</code>. An invalid or reserved alias name also causes a <code>ValidationException</code>.</p>
+    /// <p>If you omit this parameter or specify an empty string, the resource is created without an alias.</p>
+    pub fn alias_name(&self) -> ::std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
 }
 impl CreateProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
@@ -86,6 +98,7 @@ pub struct CreateProfileInputBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) accept_role_session_name: ::std::option::Option<bool>,
+    pub(crate) alias_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateProfileInputBuilder {
     /// <p>The name of the profile.</p>
@@ -233,6 +246,29 @@ impl CreateProfileInputBuilder {
     pub fn get_accept_role_session_name(&self) -> &::std::option::Option<bool> {
         &self.accept_role_session_name
     }
+    /// <p>An alias for the profile. When you set an alias, the response includes the alias ARN of the profile in <code>aliasArn</code>.</p>
+    /// <p>An alias name contains 1 to 256 characters. It must begin with a letter (A-Z or a-z). It can contain only letters (A-Z and a-z), numbers (0-9), underscores (_), hyphens (-), and forward slashes (/). A forward slash can appear only between two other characters, so an alias name can't end with a forward slash or contain two in a row. Alias names that begin with <code>aws/</code>, in any combination of uppercase and lowercase letters, are reserved. Alias names are case sensitive.</p>
+    /// <p>The alias name must be unique among resources of the same type in your account and Region. If another resource of the same type already has the alias, the request fails with a <code>ValidationException</code>. An invalid or reserved alias name also causes a <code>ValidationException</code>.</p>
+    /// <p>If you omit this parameter or specify an empty string, the resource is created without an alias.</p>
+    pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alias_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An alias for the profile. When you set an alias, the response includes the alias ARN of the profile in <code>aliasArn</code>.</p>
+    /// <p>An alias name contains 1 to 256 characters. It must begin with a letter (A-Z or a-z). It can contain only letters (A-Z and a-z), numbers (0-9), underscores (_), hyphens (-), and forward slashes (/). A forward slash can appear only between two other characters, so an alias name can't end with a forward slash or contain two in a row. Alias names that begin with <code>aws/</code>, in any combination of uppercase and lowercase letters, are reserved. Alias names are case sensitive.</p>
+    /// <p>The alias name must be unique among resources of the same type in your account and Region. If another resource of the same type already has the alias, the request fails with a <code>ValidationException</code>. An invalid or reserved alias name also causes a <code>ValidationException</code>.</p>
+    /// <p>If you omit this parameter or specify an empty string, the resource is created without an alias.</p>
+    pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alias_name = input;
+        self
+    }
+    /// <p>An alias for the profile. When you set an alias, the response includes the alias ARN of the profile in <code>aliasArn</code>.</p>
+    /// <p>An alias name contains 1 to 256 characters. It must begin with a letter (A-Z or a-z). It can contain only letters (A-Z and a-z), numbers (0-9), underscores (_), hyphens (-), and forward slashes (/). A forward slash can appear only between two other characters, so an alias name can't end with a forward slash or contain two in a row. Alias names that begin with <code>aws/</code>, in any combination of uppercase and lowercase letters, are reserved. Alias names are case sensitive.</p>
+    /// <p>The alias name must be unique among resources of the same type in your account and Region. If another resource of the same type already has the alias, the request fails with a <code>ValidationException</code>. An invalid or reserved alias name also causes a <code>ValidationException</code>.</p>
+    /// <p>If you omit this parameter or specify an empty string, the resource is created without an alias.</p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_name
+    }
     /// Consumes the builder and constructs a [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
     pub fn build(
         self,
@@ -247,6 +283,7 @@ impl CreateProfileInputBuilder {
             enabled: self.enabled,
             tags: self.tags,
             accept_role_session_name: self.accept_role_session_name,
+            alias_name: self.alias_name,
         })
     }
 }

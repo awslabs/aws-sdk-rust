@@ -11,7 +11,7 @@ pub struct CreateCloudConnectorInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The configuration details for connecting to the third-party cloud environment.</p>
     pub configuration: ::std::option::Option<crate::types::CloudConnectorConfiguration>,
-    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector.</p>
+    /// <p>The ARN of the Amazon Web Services Config connector to associate with this cloud connector. If you omit it, the cloud connector is created without Amazon Web Services Config integration.</p>
     pub config_connector_arn: ::std::option::Option<::std::string::String>,
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -33,7 +33,7 @@ impl CreateCloudConnectorInput {
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::CloudConnectorConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector.</p>
+    /// <p>The ARN of the Amazon Web Services Config connector to associate with this cloud connector. If you omit it, the cloud connector is created without Amazon Web Services Config integration.</p>
     pub fn config_connector_arn(&self) -> ::std::option::Option<&str> {
         self.config_connector_arn.as_deref()
     }
@@ -122,18 +122,17 @@ impl CreateCloudConnectorInputBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::CloudConnectorConfiguration> {
         &self.configuration
     }
-    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector.</p>
-    /// This field is required.
+    /// <p>The ARN of the Amazon Web Services Config connector to associate with this cloud connector. If you omit it, the cloud connector is created without Amazon Web Services Config integration.</p>
     pub fn config_connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.config_connector_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector.</p>
+    /// <p>The ARN of the Amazon Web Services Config connector to associate with this cloud connector. If you omit it, the cloud connector is created without Amazon Web Services Config integration.</p>
     pub fn set_config_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.config_connector_arn = input;
         self
     }
-    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector.</p>
+    /// <p>The ARN of the Amazon Web Services Config connector to associate with this cloud connector. If you omit it, the cloud connector is created without Amazon Web Services Config integration.</p>
     pub fn get_config_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.config_connector_arn
     }

@@ -8,13 +8,14 @@ pub struct SelfManagedKafkaEventSourceConfig {
     pub consumer_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Specific configuration settings for a Kafka schema registry.</p>
     pub schema_registry_config: ::std::option::Option<crate::types::KafkaSchemaRegistryConfig>,
-    /// <p>The mode that Lambda uses to consume records from your self-managed Apache Kafka topic. The default is <code>Stream</code>.</p>
+    /// <p>The mode that Lambda uses to consume records from your self-managed Apache Kafka topic. Valid values are the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Stream</code> – Lambda consumes records using a Kafka consumer group and preserves the order of records within each partition. This is the default when you omit <code>ConsumptionMode</code>.</p></li>
+    /// <p><code>Stream</code> (default) – Lambda consumes records using a Kafka consumer group and preserves the order of records within each partition.</p></li>
     /// <li>
-    /// <p><code>Queue</code> – Lambda consumes records using a Kafka share group. Multiple consumers can process records from the same partitions concurrently. Queue mode does not preserve per-partition order. Queue mode requires an Apache Kafka cluster running version 4.2 or later with share groups enabled.</p></li>
+    /// <p><code>Queue</code> – Lambda consumes records using a Kafka share group. Multiple consumers can process records from the same partition concurrently, so Lambda doesn't preserve per-partition order. To use Queue mode, your cluster must run Apache Kafka version 4.2 or later with share groups enabled.</p></li>
     /// </ul>
+    /// <p>If you omit this parameter, Lambda uses <code>Stream</code>.</p>
     /// <p>You cannot change <code>ConsumptionMode</code> after you create the event source mapping. To use a different consumption mode, create a new event source mapping.</p>
     /// <p>When <code>ConsumptionMode</code> is <code>Queue</code>, the <code>StartingPosition</code>, <code>StartingPositionTimestamp</code>, and <code>MaximumBatchingWindowInSeconds</code> parameters are not supported.</p>
     pub consumption_mode: ::std::option::Option<crate::types::KafkaEventSourceMappingConsumptionMode>,
@@ -28,13 +29,14 @@ impl SelfManagedKafkaEventSourceConfig {
     pub fn schema_registry_config(&self) -> ::std::option::Option<&crate::types::KafkaSchemaRegistryConfig> {
         self.schema_registry_config.as_ref()
     }
-    /// <p>The mode that Lambda uses to consume records from your self-managed Apache Kafka topic. The default is <code>Stream</code>.</p>
+    /// <p>The mode that Lambda uses to consume records from your self-managed Apache Kafka topic. Valid values are the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Stream</code> – Lambda consumes records using a Kafka consumer group and preserves the order of records within each partition. This is the default when you omit <code>ConsumptionMode</code>.</p></li>
+    /// <p><code>Stream</code> (default) – Lambda consumes records using a Kafka consumer group and preserves the order of records within each partition.</p></li>
     /// <li>
-    /// <p><code>Queue</code> – Lambda consumes records using a Kafka share group. Multiple consumers can process records from the same partitions concurrently. Queue mode does not preserve per-partition order. Queue mode requires an Apache Kafka cluster running version 4.2 or later with share groups enabled.</p></li>
+    /// <p><code>Queue</code> – Lambda consumes records using a Kafka share group. Multiple consumers can process records from the same partition concurrently, so Lambda doesn't preserve per-partition order. To use Queue mode, your cluster must run Apache Kafka version 4.2 or later with share groups enabled.</p></li>
     /// </ul>
+    /// <p>If you omit this parameter, Lambda uses <code>Stream</code>.</p>
     /// <p>You cannot change <code>ConsumptionMode</code> after you create the event source mapping. To use a different consumption mode, create a new event source mapping.</p>
     /// <p>When <code>ConsumptionMode</code> is <code>Queue</code>, the <code>StartingPosition</code>, <code>StartingPositionTimestamp</code>, and <code>MaximumBatchingWindowInSeconds</code> parameters are not supported.</p>
     pub fn consumption_mode(&self) -> ::std::option::Option<&crate::types::KafkaEventSourceMappingConsumptionMode> {
@@ -85,39 +87,42 @@ impl SelfManagedKafkaEventSourceConfigBuilder {
     pub fn get_schema_registry_config(&self) -> &::std::option::Option<crate::types::KafkaSchemaRegistryConfig> {
         &self.schema_registry_config
     }
-    /// <p>The mode that Lambda uses to consume records from your self-managed Apache Kafka topic. The default is <code>Stream</code>.</p>
+    /// <p>The mode that Lambda uses to consume records from your self-managed Apache Kafka topic. Valid values are the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Stream</code> – Lambda consumes records using a Kafka consumer group and preserves the order of records within each partition. This is the default when you omit <code>ConsumptionMode</code>.</p></li>
+    /// <p><code>Stream</code> (default) – Lambda consumes records using a Kafka consumer group and preserves the order of records within each partition.</p></li>
     /// <li>
-    /// <p><code>Queue</code> – Lambda consumes records using a Kafka share group. Multiple consumers can process records from the same partitions concurrently. Queue mode does not preserve per-partition order. Queue mode requires an Apache Kafka cluster running version 4.2 or later with share groups enabled.</p></li>
+    /// <p><code>Queue</code> – Lambda consumes records using a Kafka share group. Multiple consumers can process records from the same partition concurrently, so Lambda doesn't preserve per-partition order. To use Queue mode, your cluster must run Apache Kafka version 4.2 or later with share groups enabled.</p></li>
     /// </ul>
+    /// <p>If you omit this parameter, Lambda uses <code>Stream</code>.</p>
     /// <p>You cannot change <code>ConsumptionMode</code> after you create the event source mapping. To use a different consumption mode, create a new event source mapping.</p>
     /// <p>When <code>ConsumptionMode</code> is <code>Queue</code>, the <code>StartingPosition</code>, <code>StartingPositionTimestamp</code>, and <code>MaximumBatchingWindowInSeconds</code> parameters are not supported.</p>
     pub fn consumption_mode(mut self, input: crate::types::KafkaEventSourceMappingConsumptionMode) -> Self {
         self.consumption_mode = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The mode that Lambda uses to consume records from your self-managed Apache Kafka topic. The default is <code>Stream</code>.</p>
+    /// <p>The mode that Lambda uses to consume records from your self-managed Apache Kafka topic. Valid values are the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Stream</code> – Lambda consumes records using a Kafka consumer group and preserves the order of records within each partition. This is the default when you omit <code>ConsumptionMode</code>.</p></li>
+    /// <p><code>Stream</code> (default) – Lambda consumes records using a Kafka consumer group and preserves the order of records within each partition.</p></li>
     /// <li>
-    /// <p><code>Queue</code> – Lambda consumes records using a Kafka share group. Multiple consumers can process records from the same partitions concurrently. Queue mode does not preserve per-partition order. Queue mode requires an Apache Kafka cluster running version 4.2 or later with share groups enabled.</p></li>
+    /// <p><code>Queue</code> – Lambda consumes records using a Kafka share group. Multiple consumers can process records from the same partition concurrently, so Lambda doesn't preserve per-partition order. To use Queue mode, your cluster must run Apache Kafka version 4.2 or later with share groups enabled.</p></li>
     /// </ul>
+    /// <p>If you omit this parameter, Lambda uses <code>Stream</code>.</p>
     /// <p>You cannot change <code>ConsumptionMode</code> after you create the event source mapping. To use a different consumption mode, create a new event source mapping.</p>
     /// <p>When <code>ConsumptionMode</code> is <code>Queue</code>, the <code>StartingPosition</code>, <code>StartingPositionTimestamp</code>, and <code>MaximumBatchingWindowInSeconds</code> parameters are not supported.</p>
     pub fn set_consumption_mode(mut self, input: ::std::option::Option<crate::types::KafkaEventSourceMappingConsumptionMode>) -> Self {
         self.consumption_mode = input;
         self
     }
-    /// <p>The mode that Lambda uses to consume records from your self-managed Apache Kafka topic. The default is <code>Stream</code>.</p>
+    /// <p>The mode that Lambda uses to consume records from your self-managed Apache Kafka topic. Valid values are the following:</p>
     /// <ul>
     /// <li>
-    /// <p><code>Stream</code> – Lambda consumes records using a Kafka consumer group and preserves the order of records within each partition. This is the default when you omit <code>ConsumptionMode</code>.</p></li>
+    /// <p><code>Stream</code> (default) – Lambda consumes records using a Kafka consumer group and preserves the order of records within each partition.</p></li>
     /// <li>
-    /// <p><code>Queue</code> – Lambda consumes records using a Kafka share group. Multiple consumers can process records from the same partitions concurrently. Queue mode does not preserve per-partition order. Queue mode requires an Apache Kafka cluster running version 4.2 or later with share groups enabled.</p></li>
+    /// <p><code>Queue</code> – Lambda consumes records using a Kafka share group. Multiple consumers can process records from the same partition concurrently, so Lambda doesn't preserve per-partition order. To use Queue mode, your cluster must run Apache Kafka version 4.2 or later with share groups enabled.</p></li>
     /// </ul>
+    /// <p>If you omit this parameter, Lambda uses <code>Stream</code>.</p>
     /// <p>You cannot change <code>ConsumptionMode</code> after you create the event source mapping. To use a different consumption mode, create a new event source mapping.</p>
     /// <p>When <code>ConsumptionMode</code> is <code>Queue</code>, the <code>StartingPosition</code>, <code>StartingPositionTimestamp</code>, and <code>MaximumBatchingWindowInSeconds</code> parameters are not supported.</p>
     pub fn get_consumption_mode(&self) -> &::std::option::Option<crate::types::KafkaEventSourceMappingConsumptionMode> {

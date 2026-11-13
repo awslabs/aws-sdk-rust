@@ -22,7 +22,9 @@ impl crate::operation::update_lifecycle_policy::builders::UpdateLifecyclePolicyI
 }
 /// Fluent builder constructing a request to `UpdateLifecyclePolicy`.
 ///
-/// <p>Updates the specified lifecycle policy. The request replaces the existing policy configuration rather than merging changes, so re-specify every setting that you want to keep. The <code>resourceType</code> must match the existing policy's value.</p>
+/// <p>Updates the specified lifecycle policy. The <code>resourceType</code> must match the existing policy's value.</p><note>
+/// <p>This operation doesn't support selective updates. The request replaces the entire lifecycle policy configuration, so include every setting that you want to keep. Any optional property that you omit is removed or reset to its default.</p>
+/// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLifecyclePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

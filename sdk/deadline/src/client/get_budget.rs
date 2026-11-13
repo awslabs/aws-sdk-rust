@@ -8,7 +8,7 @@ impl super::Client {
     /// - On success, responds with [`GetBudgetOutput`](crate::operation::get_budget::GetBudgetOutput) with field(s):
     ///   - [`budget_id(String)`](crate::operation::get_budget::GetBudgetOutput::budget_id): The budget ID.
     ///   - [`usage_tracking_resource(Option<UsageTrackingResource>)`](crate::operation::get_budget::GetBudgetOutput::usage_tracking_resource): The resource that the budget is tracking usage for.
-    ///   - [`status(BudgetStatus)`](crate::operation::get_budget::GetBudgetOutput::status): <p>The status of the budget.</p> <ul>  <li>   <p><code>ACTIVE</code>–Get a budget being evaluated.</p></li>  <li>   <p><code>INACTIVE</code>–Get an inactive budget. This can include expired, canceled, or deleted statuses.</p></li> </ul>
+    ///   - [`status(BudgetStatus)`](crate::operation::get_budget::GetBudgetOutput::status): <p>The status of the budget.</p> <ul>  <li>   <p><code>ACTIVE</code> - Get a budget being evaluated.</p></li>  <li>   <p><code>INACTIVE</code> - Get an inactive budget. This can include expired, canceled, or deleted statuses.</p></li> </ul>
     ///   - [`display_name(String)`](crate::operation::get_budget::GetBudgetOutput::display_name): <p>The display name of the budget.</p><important>  <p>This field can store any content. Escape or encode this content before displaying it on a webpage or any other system that might interpret the content of this field.</p> </important>
     ///   - [`approximate_dollar_limit(f32)`](crate::operation::get_budget::GetBudgetOutput::approximate_dollar_limit): The consumed usage limit for the budget.
     ///   - [`usages(Option<ConsumedUsages>)`](crate::operation::get_budget::GetBudgetOutput::usages): The usages of the budget.

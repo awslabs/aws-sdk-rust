@@ -68,6 +68,8 @@ pub struct UpdateFunctionConfigurationInput {
     pub capacity_provider_config: ::std::option::Option<crate::types::CapacityProviderConfig>,
     /// <p>Configuration settings for <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable functions</a>, including execution timeout, retention period for execution history, and an optional ARN of the Key Management Service (KMS) customer managed key that is used to encrypt your durable execution's payload data, including input, output, and error payloads.</p>
     pub durable_config: ::std::option::Option<crate::types::DurableConfig>,
+    /// <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
+    pub runtime_config: ::std::option::Option<crate::types::FunctionRuntimeConfig>,
 }
 impl UpdateFunctionConfigurationInput {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -181,6 +183,10 @@ impl UpdateFunctionConfigurationInput {
     pub fn durable_config(&self) -> ::std::option::Option<&crate::types::DurableConfig> {
         self.durable_config.as_ref()
     }
+    /// <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
+    pub fn runtime_config(&self) -> ::std::option::Option<&crate::types::FunctionRuntimeConfig> {
+        self.runtime_config.as_ref()
+    }
 }
 impl UpdateFunctionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateFunctionConfigurationInput`](crate::operation::update_function_configuration::UpdateFunctionConfigurationInput).
@@ -214,6 +220,7 @@ pub struct UpdateFunctionConfigurationInputBuilder {
     pub(crate) logging_config: ::std::option::Option<crate::types::LoggingConfig>,
     pub(crate) capacity_provider_config: ::std::option::Option<crate::types::CapacityProviderConfig>,
     pub(crate) durable_config: ::std::option::Option<crate::types::DurableConfig>,
+    pub(crate) runtime_config: ::std::option::Option<crate::types::FunctionRuntimeConfig>,
 }
 impl UpdateFunctionConfigurationInputBuilder {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -592,6 +599,20 @@ impl UpdateFunctionConfigurationInputBuilder {
     pub fn get_durable_config(&self) -> &::std::option::Option<crate::types::DurableConfig> {
         &self.durable_config
     }
+    /// <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
+    pub fn runtime_config(mut self, input: crate::types::FunctionRuntimeConfig) -> Self {
+        self.runtime_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
+    pub fn set_runtime_config(mut self, input: ::std::option::Option<crate::types::FunctionRuntimeConfig>) -> Self {
+        self.runtime_config = input;
+        self
+    }
+    /// <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
+    pub fn get_runtime_config(&self) -> &::std::option::Option<crate::types::FunctionRuntimeConfig> {
+        &self.runtime_config
+    }
     /// Consumes the builder and constructs a [`UpdateFunctionConfigurationInput`](crate::operation::update_function_configuration::UpdateFunctionConfigurationInput).
     pub fn build(
         self,
@@ -621,6 +642,7 @@ impl UpdateFunctionConfigurationInputBuilder {
             logging_config: self.logging_config,
             capacity_provider_config: self.capacity_provider_config,
             durable_config: self.durable_config,
+            runtime_config: self.runtime_config,
         })
     }
 }

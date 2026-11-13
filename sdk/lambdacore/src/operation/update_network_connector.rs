@@ -350,9 +350,9 @@ pub enum UpdateNetworkConnectorError {
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
     /// <p>The request would exceed a network connector limit. For <code>CreateNetworkConnector</code>, the account has reached the maximum number of network connectors allowed. For <code>UpdateNetworkConnector</code>, the connector has reached the maximum number of versions allowed.</p>
     NetworkConnectorLimitExceededException(crate::types::error::NetworkConnectorLimitExceededException),
-    /// <p>The request could not be completed due to a conflict with the current state of the resource. For example, attempting to update a connector that is not in <code>ACTIVE</code> state.</p>
+    /// <p>The request could not be completed due to a conflict with the current state of the resource. For example, attempting to modify a resource that is not in a state that permits the operation.</p>
     ResourceConflictException(crate::types::error::ResourceConflictException),
-    /// <p>The specified network connector does not exist. Verify the identifier (ID, name, or ARN) and Region.</p>
+    /// <p>The specified resource does not exist. Verify the identifier and Region.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>An internal service error occurred. Retry the request with exponential backoff.</p>
     ServiceException(crate::types::error::ServiceException),

@@ -214,6 +214,16 @@ static UPDATEUSERPOOLINPUT_MEMBER_USER_POOL_ADD_ONS: ::aws_smithy_schema::Schema
     "UserPoolAddOns",
     17,
 );
+static UPDATEUSERPOOLINPUT_MEMBER_DCR_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#UpdateUserPoolInput$DcrConfiguration",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "UpdateUserPoolInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DcrConfiguration",
+    18,
+);
 static UPDATEUSERPOOLINPUT_MEMBER_ACCOUNT_RECOVERY_SETTING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.cognitoidentityprovider.synthetic#UpdateUserPoolInput$AccountRecoverySetting",
@@ -222,7 +232,7 @@ static UPDATEUSERPOOLINPUT_MEMBER_ACCOUNT_RECOVERY_SETTING: ::aws_smithy_schema:
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "AccountRecoverySetting",
-    18,
+    19,
 );
 static UPDATEUSERPOOLINPUT_MEMBER_POOL_NAME: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -232,7 +242,7 @@ static UPDATEUSERPOOLINPUT_MEMBER_POOL_NAME: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::String,
     "PoolName",
-    19,
+    20,
 );
 static UPDATEUSERPOOLINPUT_MEMBER_USER_POOL_TIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -242,7 +252,7 @@ static UPDATEUSERPOOLINPUT_MEMBER_USER_POOL_TIER: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UserPoolTier",
-    20,
+    21,
 );
 static UPDATEUSERPOOLINPUT_MEMBER_KEY_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -252,7 +262,7 @@ static UPDATEUSERPOOLINPUT_MEMBER_KEY_CONFIGURATION: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "KeyConfiguration",
-    21,
+    22,
 );
 static UPDATEUSERPOOLINPUT_MEMBER_ISSUER_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -262,7 +272,7 @@ static UPDATEUSERPOOLINPUT_MEMBER_ISSUER_CONFIGURATION: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "IssuerConfiguration",
-    22,
+    23,
 );
 static UPDATEUSERPOOLINPUT_MEMBER_ACR_CONFIGURATION_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -292,7 +302,7 @@ static UPDATEUSERPOOLINPUT_MEMBER_ACR_CONFIGURATION: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::Map,
     "AcrConfiguration",
-    23,
+    24,
 )
 .with_map_members(
     &UPDATEUSERPOOLINPUT_MEMBER_ACR_CONFIGURATION_KEY,
@@ -324,6 +334,7 @@ static UPDATEUSERPOOLINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_
         &UPDATEUSERPOOLINPUT_MEMBER_USER_POOL_TAGS,
         &UPDATEUSERPOOLINPUT_MEMBER_ADMIN_CREATE_USER_CONFIG,
         &UPDATEUSERPOOLINPUT_MEMBER_USER_POOL_ADD_ONS,
+        &UPDATEUSERPOOLINPUT_MEMBER_DCR_CONFIGURATION,
         &UPDATEUSERPOOLINPUT_MEMBER_ACCOUNT_RECOVERY_SETTING,
         &UPDATEUSERPOOLINPUT_MEMBER_POOL_NAME,
         &UPDATEUSERPOOLINPUT_MEMBER_USER_POOL_TIER,
@@ -418,6 +429,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::update
         }
         if let Some(ref val) = self.user_pool_add_ons {
             ser.write_struct(&UPDATEUSERPOOLINPUT_MEMBER_USER_POOL_ADD_ONS, val)?;
+        }
+        if let Some(ref val) = self.dcr_configuration {
+            ser.write_struct(&UPDATEUSERPOOLINPUT_MEMBER_DCR_CONFIGURATION, val)?;
         }
         if let Some(ref val) = self.account_recovery_setting {
             ser.write_struct(&UPDATEUSERPOOLINPUT_MEMBER_ACCOUNT_RECOVERY_SETTING, val)?;
@@ -602,38 +616,45 @@ impl crate::operation::update_user_pool::builders::UpdateUserPoolInputBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.account_recovery_setting = Some(crate::types::AccountRecoverySettingType::deserialize(deser)?);
+                        self.dcr_configuration = Some(crate::types::DcrConfigurationType::deserialize(deser)?);
                     }
                 }
                 Some(19) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.pool_name = Some(deser.read_string(member)?);
+                        self.account_recovery_setting = Some(crate::types::AccountRecoverySettingType::deserialize(deser)?);
                     }
                 }
                 Some(20) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.user_pool_tier = Some(crate::types::UserPoolTierType::from(deser.read_string(member)?.as_str()));
+                        self.pool_name = Some(deser.read_string(member)?);
                     }
                 }
                 Some(21) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.key_configuration = Some(crate::types::KeyConfigurationType::deserialize(deser)?);
+                        self.user_pool_tier = Some(crate::types::UserPoolTierType::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(22) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.issuer_configuration = Some(crate::types::IssuerConfigurationType::deserialize(deser)?);
+                        self.key_configuration = Some(crate::types::KeyConfigurationType::deserialize(deser)?);
                     }
                 }
                 Some(23) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.issuer_configuration = Some(crate::types::IssuerConfigurationType::deserialize(deser)?);
+                    }
+                }
+                Some(24) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

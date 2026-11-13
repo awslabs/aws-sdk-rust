@@ -345,6 +345,18 @@ pub(crate) fn ephemeral_storage_correct_errors(
     builder
 }
 
+pub(crate) fn function_runtime_config_correct_errors(
+    mut builder: crate::types::builders::FunctionRuntimeConfigBuilder,
+) -> crate::types::builders::FunctionRuntimeConfigBuilder {
+    if builder.runtime_arn.is_none() {
+        builder.runtime_arn = Some(Default::default())
+    }
+    if builder.runtime_alias.is_none() {
+        builder.runtime_alias = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn tags_error_correct_errors(mut builder: crate::types::builders::TagsErrorBuilder) -> crate::types::builders::TagsErrorBuilder {
     if builder.error_code.is_none() {
         builder.error_code = Some(Default::default())

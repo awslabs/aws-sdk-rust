@@ -15,6 +15,10 @@ pub use crate::types::_ecs_parameters::EcsParametersBuilder;
 
 pub use crate::types::_event_bridge_parameters::EventBridgeParametersBuilder;
 
+pub use crate::types::_event_bridge_put_events_v2_parameters::EventBridgePutEventsV2ParametersBuilder;
+
+pub use crate::types::_event_bridge_put_raw_events_parameters::EventBridgePutRawEventsParametersBuilder;
+
 pub use crate::types::_kinesis_parameters::KinesisParametersBuilder;
 
 pub use crate::types::_sage_maker_pipeline_parameters::SageMakerPipelineParametersBuilder;

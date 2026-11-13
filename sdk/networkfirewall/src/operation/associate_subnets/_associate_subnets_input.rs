@@ -15,6 +15,9 @@ pub struct AssociateSubnetsInput {
     pub firewall_name: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the subnets that you want to associate with the firewall.</p>
     pub subnet_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>>,
+    /// <p>The NAT gateways that Network Firewall creates for the Availability Zones that you add to a proxy mode firewall. For a proxy mode firewall, you must specify one mapping for each Availability Zone in <code>SubnetMappings</code>, and no other Availability Zones. Each NAT gateway subnet must be in the firewall's VPC and can't be one of the firewall endpoint subnets.</p>
+    /// <p>You can't specify this for a firewall that isn't a proxy mode firewall.</p>
+    pub nat_gateway_create_mappings: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayCreateMapping>>,
 }
 impl AssociateSubnetsInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.</p>
@@ -39,6 +42,13 @@ impl AssociateSubnetsInput {
     pub fn subnet_mappings(&self) -> &[crate::types::SubnetMapping] {
         self.subnet_mappings.as_deref().unwrap_or_default()
     }
+    /// <p>The NAT gateways that Network Firewall creates for the Availability Zones that you add to a proxy mode firewall. For a proxy mode firewall, you must specify one mapping for each Availability Zone in <code>SubnetMappings</code>, and no other Availability Zones. Each NAT gateway subnet must be in the firewall's VPC and can't be one of the firewall endpoint subnets.</p>
+    /// <p>You can't specify this for a firewall that isn't a proxy mode firewall.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nat_gateway_create_mappings.is_none()`.
+    pub fn nat_gateway_create_mappings(&self) -> &[crate::types::NatGatewayCreateMapping] {
+        self.nat_gateway_create_mappings.as_deref().unwrap_or_default()
+    }
 }
 impl AssociateSubnetsInput {
     /// Creates a new builder-style object to manufacture [`AssociateSubnetsInput`](crate::operation::associate_subnets::AssociateSubnetsInput).
@@ -55,6 +65,7 @@ pub struct AssociateSubnetsInputBuilder {
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_name: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_mappings: ::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>>,
+    pub(crate) nat_gateway_create_mappings: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayCreateMapping>>,
 }
 impl AssociateSubnetsInputBuilder {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.</p>
@@ -131,6 +142,29 @@ impl AssociateSubnetsInputBuilder {
     pub fn get_subnet_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubnetMapping>> {
         &self.subnet_mappings
     }
+    /// Appends an item to `nat_gateway_create_mappings`.
+    ///
+    /// To override the contents of this collection use [`set_nat_gateway_create_mappings`](Self::set_nat_gateway_create_mappings).
+    ///
+    /// <p>The NAT gateways that Network Firewall creates for the Availability Zones that you add to a proxy mode firewall. For a proxy mode firewall, you must specify one mapping for each Availability Zone in <code>SubnetMappings</code>, and no other Availability Zones. Each NAT gateway subnet must be in the firewall's VPC and can't be one of the firewall endpoint subnets.</p>
+    /// <p>You can't specify this for a firewall that isn't a proxy mode firewall.</p>
+    pub fn nat_gateway_create_mappings(mut self, input: crate::types::NatGatewayCreateMapping) -> Self {
+        let mut v = self.nat_gateway_create_mappings.unwrap_or_default();
+        v.push(input);
+        self.nat_gateway_create_mappings = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The NAT gateways that Network Firewall creates for the Availability Zones that you add to a proxy mode firewall. For a proxy mode firewall, you must specify one mapping for each Availability Zone in <code>SubnetMappings</code>, and no other Availability Zones. Each NAT gateway subnet must be in the firewall's VPC and can't be one of the firewall endpoint subnets.</p>
+    /// <p>You can't specify this for a firewall that isn't a proxy mode firewall.</p>
+    pub fn set_nat_gateway_create_mappings(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayCreateMapping>>) -> Self {
+        self.nat_gateway_create_mappings = input;
+        self
+    }
+    /// <p>The NAT gateways that Network Firewall creates for the Availability Zones that you add to a proxy mode firewall. For a proxy mode firewall, you must specify one mapping for each Availability Zone in <code>SubnetMappings</code>, and no other Availability Zones. Each NAT gateway subnet must be in the firewall's VPC and can't be one of the firewall endpoint subnets.</p>
+    /// <p>You can't specify this for a firewall that isn't a proxy mode firewall.</p>
+    pub fn get_nat_gateway_create_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NatGatewayCreateMapping>> {
+        &self.nat_gateway_create_mappings
+    }
     /// Consumes the builder and constructs a [`AssociateSubnetsInput`](crate::operation::associate_subnets::AssociateSubnetsInput).
     pub fn build(
         self,
@@ -140,6 +174,7 @@ impl AssociateSubnetsInputBuilder {
             firewall_arn: self.firewall_arn,
             firewall_name: self.firewall_name,
             subnet_mappings: self.subnet_mappings,
+            nat_gateway_create_mappings: self.nat_gateway_create_mappings,
         })
     }
 }

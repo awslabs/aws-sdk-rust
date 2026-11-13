@@ -8,7 +8,7 @@ pub struct AssociationFilters {
     pub configuration_policy_id: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the association between a target and a configuration was directly applied by the Security Hub CSPM delegated administrator or inherited from a parent.</p>
     pub association_type: ::std::option::Option<crate::types::AssociationType>,
-    /// <p>The current status of the association between a target and a configuration policy.</p>
+    /// <p>The current status of the association between a target and a configuration policy. Possible values are <code>PENDING</code>, <code>SUCCESS</code>, <code>FAILED</code>, and <code>DISABLED</code>. The value is <code>DISABLED</code> when central configuration is disabled because the organization is managed by Security Hub CSPM policies in Organizations.</p>
     pub association_status: ::std::option::Option<crate::types::ConfigurationPolicyAssociationStatus>,
 }
 impl AssociationFilters {
@@ -20,7 +20,7 @@ impl AssociationFilters {
     pub fn association_type(&self) -> ::std::option::Option<&crate::types::AssociationType> {
         self.association_type.as_ref()
     }
-    /// <p>The current status of the association between a target and a configuration policy.</p>
+    /// <p>The current status of the association between a target and a configuration policy. Possible values are <code>PENDING</code>, <code>SUCCESS</code>, <code>FAILED</code>, and <code>DISABLED</code>. The value is <code>DISABLED</code> when central configuration is disabled because the organization is managed by Security Hub CSPM policies in Organizations.</p>
     pub fn association_status(&self) -> ::std::option::Option<&crate::types::ConfigurationPolicyAssociationStatus> {
         self.association_status.as_ref()
     }
@@ -69,17 +69,17 @@ impl AssociationFiltersBuilder {
     pub fn get_association_type(&self) -> &::std::option::Option<crate::types::AssociationType> {
         &self.association_type
     }
-    /// <p>The current status of the association between a target and a configuration policy.</p>
+    /// <p>The current status of the association between a target and a configuration policy. Possible values are <code>PENDING</code>, <code>SUCCESS</code>, <code>FAILED</code>, and <code>DISABLED</code>. The value is <code>DISABLED</code> when central configuration is disabled because the organization is managed by Security Hub CSPM policies in Organizations.</p>
     pub fn association_status(mut self, input: crate::types::ConfigurationPolicyAssociationStatus) -> Self {
         self.association_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the association between a target and a configuration policy.</p>
+    /// <p>The current status of the association between a target and a configuration policy. Possible values are <code>PENDING</code>, <code>SUCCESS</code>, <code>FAILED</code>, and <code>DISABLED</code>. The value is <code>DISABLED</code> when central configuration is disabled because the organization is managed by Security Hub CSPM policies in Organizations.</p>
     pub fn set_association_status(mut self, input: ::std::option::Option<crate::types::ConfigurationPolicyAssociationStatus>) -> Self {
         self.association_status = input;
         self
     }
-    /// <p>The current status of the association between a target and a configuration policy.</p>
+    /// <p>The current status of the association between a target and a configuration policy. Possible values are <code>PENDING</code>, <code>SUCCESS</code>, <code>FAILED</code>, and <code>DISABLED</code>. The value is <code>DISABLED</code> when central configuration is disabled because the organization is managed by Security Hub CSPM policies in Organizations.</p>
     pub fn get_association_status(&self) -> &::std::option::Option<crate::types::ConfigurationPolicyAssociationStatus> {
         &self.association_status
     }

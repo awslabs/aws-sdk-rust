@@ -23,8 +23,9 @@ impl crate::operation::get_software_resources_v2::builders::GetSoftwareResources
 /// Fluent builder constructing a request to `GetSoftwareResourcesV2`.
 ///
 /// <p>Returns a list of resources that contain a specific software package. You identify the package with <code>PackageName</code> and <code>PackageType</code>. To narrow the results to one version of the package, include <code>PackageVersion</code>.</p>
-/// <p>You can use the <code>Scopes</code> parameter to define the data boundary for the query. Currently, <code>Scopes</code> supports <code>AwsOrganizations</code>, which lets you retrieve resources from your entire organization or from specific organizational units. Only the delegated administrator account can use <code>Scopes</code>.</p>
+/// <p>You can use the <code>Scopes</code> parameter to define the data boundary for the query. Currently, <code>Scopes</code> supports <code>AwsOrganizations</code>. With <code>AwsOrganizations</code>, you can retrieve resources from your entire organization or from specific organizational units. Only the delegated administrator account can use <code>Scopes</code>.</p>
 /// <p>You can use the <code>Filters</code> parameter to further refine results based on resource attributes, such as <code>ResourceType</code> or <code>Region</code>.</p>
+/// <p>This operation returns paginated results. To retrieve additional results, use the <code>NextToken</code> value from the previous response.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetSoftwareResourcesV2FluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -240,6 +240,8 @@ pub struct CreateImageBuilderInput {
     /// <p>Before disabling IMDSv1, ensure your WorkSpaces Applications images are running the agent version or managed image update released on or after January 16, 2024 to support IMDSv2 enforcement.</p>
     /// </note>
     pub disable_imdsv1: ::std::option::Option<bool>,
+    /// <p>The configuration for agent access on the image builder. If specified, agent access is enabled for the image builder.</p>
+    pub agent_access_config: ::std::option::Option<crate::types::ImageBuilderAgentAccessConfig>,
 }
 impl CreateImageBuilderInput {
     /// <p>A unique name for the image builder.</p>
@@ -519,6 +521,10 @@ impl CreateImageBuilderInput {
     pub fn disable_imdsv1(&self) -> ::std::option::Option<bool> {
         self.disable_imdsv1
     }
+    /// <p>The configuration for agent access on the image builder. If specified, agent access is enabled for the image builder.</p>
+    pub fn agent_access_config(&self) -> ::std::option::Option<&crate::types::ImageBuilderAgentAccessConfig> {
+        self.agent_access_config.as_ref()
+    }
 }
 impl CreateImageBuilderInput {
     /// Creates a new builder-style object to manufacture [`CreateImageBuilderInput`](crate::operation::create_image_builder::CreateImageBuilderInput).
@@ -548,6 +554,7 @@ pub struct CreateImageBuilderInputBuilder {
     pub(crate) softwares_to_install: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) softwares_to_uninstall: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) disable_imdsv1: ::std::option::Option<bool>,
+    pub(crate) agent_access_config: ::std::option::Option<crate::types::ImageBuilderAgentAccessConfig>,
 }
 impl CreateImageBuilderInputBuilder {
     /// <p>A unique name for the image builder.</p>
@@ -1423,6 +1430,20 @@ impl CreateImageBuilderInputBuilder {
     pub fn get_disable_imdsv1(&self) -> &::std::option::Option<bool> {
         &self.disable_imdsv1
     }
+    /// <p>The configuration for agent access on the image builder. If specified, agent access is enabled for the image builder.</p>
+    pub fn agent_access_config(mut self, input: crate::types::ImageBuilderAgentAccessConfig) -> Self {
+        self.agent_access_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The configuration for agent access on the image builder. If specified, agent access is enabled for the image builder.</p>
+    pub fn set_agent_access_config(mut self, input: ::std::option::Option<crate::types::ImageBuilderAgentAccessConfig>) -> Self {
+        self.agent_access_config = input;
+        self
+    }
+    /// <p>The configuration for agent access on the image builder. If specified, agent access is enabled for the image builder.</p>
+    pub fn get_agent_access_config(&self) -> &::std::option::Option<crate::types::ImageBuilderAgentAccessConfig> {
+        &self.agent_access_config
+    }
     /// Consumes the builder and constructs a [`CreateImageBuilderInput`](crate::operation::create_image_builder::CreateImageBuilderInput).
     pub fn build(
         self,
@@ -1446,6 +1467,7 @@ impl CreateImageBuilderInputBuilder {
             softwares_to_install: self.softwares_to_install,
             softwares_to_uninstall: self.softwares_to_uninstall,
             disable_imdsv1: self.disable_imdsv1,
+            agent_access_config: self.agent_access_config,
         })
     }
 }

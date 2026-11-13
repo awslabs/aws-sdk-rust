@@ -19,6 +19,16 @@ static DESCRIBECLUSTEREXTENSIONOUTPUT_MEMBER_NODE_SUMMARY: ::aws_smithy_schema::
     "NodeSummary",
     1,
 );
+static DESCRIBECLUSTEREXTENSIONOUTPUT_MEMBER_HEALTH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeClusterExtensionOutput$Health",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeClusterExtensionOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Health",
+    2,
+);
 static DESCRIBECLUSTEREXTENSIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.sagemaker.synthetic#DescribeClusterExtensionOutput",
@@ -29,6 +39,7 @@ static DESCRIBECLUSTEREXTENSIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'stati
     &[
         &DESCRIBECLUSTEREXTENSIONOUTPUT_MEMBER_EXTENSION_DETAILS,
         &DESCRIBECLUSTEREXTENSIONOUTPUT_MEMBER_NODE_SUMMARY,
+        &DESCRIBECLUSTEREXTENSIONOUTPUT_MEMBER_HEALTH,
     ],
 )
 .with_original_name("DescribeClusterExtensionResponse");
@@ -51,6 +62,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::descri
         }
         if let Some(ref val) = self.node_summary {
             ser.write_struct(&DESCRIBECLUSTEREXTENSIONOUTPUT_MEMBER_NODE_SUMMARY, val)?;
+        }
+        if let Some(ref val) = self.health {
+            ser.write_struct(&DESCRIBECLUSTEREXTENSIONOUTPUT_MEMBER_HEALTH, val)?;
         }
         Ok(())
     }
@@ -81,6 +95,13 @@ impl crate::operation::describe_cluster_extension::builders::DescribeClusterExte
                         deser.read_null()?;
                     } else {
                         self.node_summary = Some(crate::types::ExtensionNodeSummary::deserialize(deser)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.health = Some(crate::types::ExtensionHealth::deserialize(deser)?);
                     }
                 }
                 _ => {}

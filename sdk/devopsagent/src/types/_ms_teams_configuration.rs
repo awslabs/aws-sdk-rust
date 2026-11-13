@@ -10,6 +10,8 @@ pub struct MsTeamsConfiguration {
     pub team_name: ::std::string::String,
     /// <p>The Microsoft Teams channels that receive agent notifications.</p>
     pub transmission_target: ::std::option::Option<crate::types::MsTeamsTransmissionTarget>,
+    /// <p>The bidirectional communication configuration for the Microsoft Teams integration. Provide this configuration with <code>enabled</code> set to <code>true</code> to allow users to interact with the agent directly from Microsoft Teams.</p>
+    pub bidirectional: ::std::option::Option<crate::types::MsTeamsBidirectionalConfiguration>,
 }
 impl MsTeamsConfiguration {
     /// <p>The identifier of the Microsoft Teams team to connect to the DevOps Agent service.</p>
@@ -26,6 +28,10 @@ impl MsTeamsConfiguration {
     pub fn transmission_target(&self) -> ::std::option::Option<&crate::types::MsTeamsTransmissionTarget> {
         self.transmission_target.as_ref()
     }
+    /// <p>The bidirectional communication configuration for the Microsoft Teams integration. Provide this configuration with <code>enabled</code> set to <code>true</code> to allow users to interact with the agent directly from Microsoft Teams.</p>
+    pub fn bidirectional(&self) -> ::std::option::Option<&crate::types::MsTeamsBidirectionalConfiguration> {
+        self.bidirectional.as_ref()
+    }
 }
 impl MsTeamsConfiguration {
     /// Creates a new builder-style object to manufacture [`MsTeamsConfiguration`](crate::types::MsTeamsConfiguration).
@@ -41,6 +47,7 @@ pub struct MsTeamsConfigurationBuilder {
     pub(crate) team_id: ::std::option::Option<::std::string::String>,
     pub(crate) team_name: ::std::option::Option<::std::string::String>,
     pub(crate) transmission_target: ::std::option::Option<crate::types::MsTeamsTransmissionTarget>,
+    pub(crate) bidirectional: ::std::option::Option<crate::types::MsTeamsBidirectionalConfiguration>,
 }
 impl MsTeamsConfigurationBuilder {
     /// <p>The identifier of the Microsoft Teams team to connect to the DevOps Agent service.</p>
@@ -88,6 +95,20 @@ impl MsTeamsConfigurationBuilder {
     pub fn get_transmission_target(&self) -> &::std::option::Option<crate::types::MsTeamsTransmissionTarget> {
         &self.transmission_target
     }
+    /// <p>The bidirectional communication configuration for the Microsoft Teams integration. Provide this configuration with <code>enabled</code> set to <code>true</code> to allow users to interact with the agent directly from Microsoft Teams.</p>
+    pub fn bidirectional(mut self, input: crate::types::MsTeamsBidirectionalConfiguration) -> Self {
+        self.bidirectional = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The bidirectional communication configuration for the Microsoft Teams integration. Provide this configuration with <code>enabled</code> set to <code>true</code> to allow users to interact with the agent directly from Microsoft Teams.</p>
+    pub fn set_bidirectional(mut self, input: ::std::option::Option<crate::types::MsTeamsBidirectionalConfiguration>) -> Self {
+        self.bidirectional = input;
+        self
+    }
+    /// <p>The bidirectional communication configuration for the Microsoft Teams integration. Provide this configuration with <code>enabled</code> set to <code>true</code> to allow users to interact with the agent directly from Microsoft Teams.</p>
+    pub fn get_bidirectional(&self) -> &::std::option::Option<crate::types::MsTeamsBidirectionalConfiguration> {
+        &self.bidirectional
+    }
     /// Consumes the builder and constructs a [`MsTeamsConfiguration`](crate::types::MsTeamsConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`team_id`](crate::types::builders::MsTeamsConfigurationBuilder::team_id)
@@ -107,6 +128,7 @@ impl MsTeamsConfigurationBuilder {
                 )
             })?,
             transmission_target: self.transmission_target,
+            bidirectional: self.bidirectional,
         })
     }
 }

@@ -19,6 +19,8 @@ pub struct UpdateResourceGatewayOutput {
     pub security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The type of IP address used by the resource gateway.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    /// <p>The DNS resolution type for resource configurations that are associated with this resource gateway.</p>
+    pub resource_config_dns_resolution: ::std::option::Option<crate::types::ResourceConfigDnsResolution>,
     _request_id: Option<String>,
 }
 impl UpdateResourceGatewayOutput {
@@ -58,6 +60,10 @@ impl UpdateResourceGatewayOutput {
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
+    /// <p>The DNS resolution type for resource configurations that are associated with this resource gateway.</p>
+    pub fn resource_config_dns_resolution(&self) -> ::std::option::Option<&crate::types::ResourceConfigDnsResolution> {
+        self.resource_config_dns_resolution.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for UpdateResourceGatewayOutput {
     fn request_id(&self) -> Option<&str> {
@@ -83,6 +89,7 @@ pub struct UpdateResourceGatewayOutputBuilder {
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    pub(crate) resource_config_dns_resolution: ::std::option::Option<crate::types::ResourceConfigDnsResolution>,
     _request_id: Option<String>,
 }
 impl UpdateResourceGatewayOutputBuilder {
@@ -210,6 +217,20 @@ impl UpdateResourceGatewayOutputBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         &self.ip_address_type
     }
+    /// <p>The DNS resolution type for resource configurations that are associated with this resource gateway.</p>
+    pub fn resource_config_dns_resolution(mut self, input: crate::types::ResourceConfigDnsResolution) -> Self {
+        self.resource_config_dns_resolution = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The DNS resolution type for resource configurations that are associated with this resource gateway.</p>
+    pub fn set_resource_config_dns_resolution(mut self, input: ::std::option::Option<crate::types::ResourceConfigDnsResolution>) -> Self {
+        self.resource_config_dns_resolution = input;
+        self
+    }
+    /// <p>The DNS resolution type for resource configurations that are associated with this resource gateway.</p>
+    pub fn get_resource_config_dns_resolution(&self) -> &::std::option::Option<crate::types::ResourceConfigDnsResolution> {
+        &self.resource_config_dns_resolution
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -230,6 +251,7 @@ impl UpdateResourceGatewayOutputBuilder {
             subnet_ids: self.subnet_ids,
             security_group_ids: self.security_group_ids,
             ip_address_type: self.ip_address_type,
+            resource_config_dns_resolution: self.resource_config_dns_resolution,
             _request_id: self._request_id,
         }
     }

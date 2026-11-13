@@ -355,6 +355,8 @@ pub(crate) mod shape_cluster_auto_scaling_config_output;
 
 pub(crate) mod shape_cluster_capacity_requirements;
 
+pub(crate) mod shape_cluster_drain_policy;
+
 pub(crate) mod shape_cluster_ebs_volume_config;
 
 pub(crate) mod shape_cluster_event_detail;
@@ -402,6 +404,12 @@ pub(crate) mod shape_cluster_node_details;
 pub(crate) mod shape_cluster_node_summary;
 
 pub(crate) mod shape_cluster_on_demand_options;
+
+pub(crate) mod shape_cluster_operation_scaling_configuration;
+
+pub(crate) mod shape_cluster_operation_scaling_details;
+
+pub(crate) mod shape_cluster_operation_summary;
 
 pub(crate) mod shape_cluster_orchestrator;
 
@@ -1153,6 +1161,10 @@ pub(crate) mod shape_describe_cluster_node_input_input;
 
 pub(crate) mod shape_describe_cluster_node_output_output;
 
+pub(crate) mod shape_describe_cluster_operation_input_input;
+
+pub(crate) mod shape_describe_cluster_operation_output_output;
+
 pub(crate) mod shape_describe_cluster_output_output;
 
 pub(crate) mod shape_describe_cluster_scheduler_config_input_input;
@@ -1557,9 +1569,15 @@ pub(crate) mod shape_extend_training_plan_output_output;
 
 pub(crate) mod shape_extension_details;
 
+pub(crate) mod shape_extension_health;
+
+pub(crate) mod shape_extension_health_issue;
+
 pub(crate) mod shape_extension_node_summary;
 
 pub(crate) mod shape_extension_summary;
+
+pub(crate) mod shape_extension_version_summary;
 
 pub(crate) mod shape_f_sx_lustre_config;
 
@@ -1913,6 +1931,10 @@ pub(crate) mod shape_list_cluster_events_input_input;
 
 pub(crate) mod shape_list_cluster_events_output_output;
 
+pub(crate) mod shape_list_cluster_extension_versions_input_input;
+
+pub(crate) mod shape_list_cluster_extension_versions_output_output;
+
 pub(crate) mod shape_list_cluster_extensions_input_input;
 
 pub(crate) mod shape_list_cluster_extensions_output_output;
@@ -1920,6 +1942,10 @@ pub(crate) mod shape_list_cluster_extensions_output_output;
 pub(crate) mod shape_list_cluster_nodes_input_input;
 
 pub(crate) mod shape_list_cluster_nodes_output_output;
+
+pub(crate) mod shape_list_cluster_operations_input_input;
+
+pub(crate) mod shape_list_cluster_operations_output_output;
 
 pub(crate) mod shape_list_cluster_scheduler_configs_input_input;
 

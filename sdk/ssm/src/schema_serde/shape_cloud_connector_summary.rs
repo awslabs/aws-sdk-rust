@@ -59,6 +59,26 @@ static CLOUDCONNECTORSUMMARY_MEMBER_UPDATED_AT: ::aws_smithy_schema::Schema<'sta
     "UpdatedAt",
     5,
 );
+static CLOUDCONNECTORSUMMARY_MEMBER_PROVIDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CloudConnectorSummary$Provider",
+        "com.amazonaws.ssm",
+        "CloudConnectorSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Provider",
+    6,
+);
+static CLOUDCONNECTORSUMMARY_MEMBER_CONFIG_CONNECTOR_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#CloudConnectorSummary$ConfigConnectorArn",
+        "com.amazonaws.ssm",
+        "CloudConnectorSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ConfigConnectorArn",
+    7,
+);
 static CLOUDCONNECTORSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#CloudConnectorSummary", "com.amazonaws.ssm", "CloudConnectorSummary"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -69,6 +89,8 @@ static CLOUDCONNECTORSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aw
         &CLOUDCONNECTORSUMMARY_MEMBER_ROLE_ARN,
         &CLOUDCONNECTORSUMMARY_MEMBER_CREATED_AT,
         &CLOUDCONNECTORSUMMARY_MEMBER_UPDATED_AT,
+        &CLOUDCONNECTORSUMMARY_MEMBER_PROVIDER,
+        &CLOUDCONNECTORSUMMARY_MEMBER_CONFIG_CONNECTOR_ARN,
     ],
 );
 impl crate::types::CloudConnectorSummary {
@@ -102,6 +124,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::CloudConne
         }
         if let Some(ref val) = self.updated_at {
             ser.write_timestamp(&CLOUDCONNECTORSUMMARY_MEMBER_UPDATED_AT, val)?;
+        }
+        if let Some(ref val) = self.provider {
+            ser.write_string(&CLOUDCONNECTORSUMMARY_MEMBER_PROVIDER, val.as_str())?;
+        }
+        if let Some(ref val) = self.config_connector_arn {
+            ser.write_string(&CLOUDCONNECTORSUMMARY_MEMBER_CONFIG_CONNECTOR_ARN, val)?;
         }
         Ok(())
     }
@@ -160,6 +188,20 @@ impl crate::types::builders::CloudConnectorSummaryBuilder {
                         deser.read_null()?;
                     } else {
                         self.updated_at = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.provider = Some(crate::types::Provider::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.config_connector_arn = Some(deser.read_string(member)?);
                     }
                 }
                 _ => {}

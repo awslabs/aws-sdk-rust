@@ -3,29 +3,32 @@ pub fn ser_import_crl_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::import_crl::ImportCrlInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.crl_data {
-        object.key("crlData").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
+    if let Some(var_1) = &input.alias_name {
+        object.key("aliasName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.enabled {
-        object.key("enabled").boolean(*var_2);
+    if let Some(var_2) = &input.crl_data {
+        object.key("crlData").string_unchecked(&::aws_smithy_types::base64::encode(var_2));
     }
-    if let Some(var_3) = &input.name {
-        object.key("name").string(var_3.as_str());
+    if let Some(var_3) = &input.enabled {
+        object.key("enabled").boolean(*var_3);
     }
-    if let Some(var_4) = &input.tags {
-        let mut array_5 = object.key("tags").start_array();
-        for item_6 in var_4 {
+    if let Some(var_4) = &input.name {
+        object.key("name").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.tags {
+        let mut array_6 = object.key("tags").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
-    if let Some(var_8) = &input.trust_anchor_arn {
-        object.key("trustAnchorArn").string(var_8.as_str());
+    if let Some(var_9) = &input.trust_anchor_arn {
+        object.key("trustAnchorArn").string(var_9.as_str());
     }
     Ok(())
 }

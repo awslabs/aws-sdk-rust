@@ -16,7 +16,9 @@
 ///     ValidationFindingCode::OutboundWebIdentityFederationDisabled => { /* ... */ },
 ///     ValidationFindingCode::ProviderCredentialCreationFailed => { /* ... */ },
 ///     ValidationFindingCode::SubscriptionAccessible => { /* ... */ },
+///     ValidationFindingCode::TargetApiDisabled => { /* ... */ },
 ///     ValidationFindingCode::TargetInaccessible => { /* ... */ },
+///     ValidationFindingCode::TargetMissingPermissions => { /* ... */ },
 ///     ValidationFindingCode::TargetStateWarning => { /* ... */ },
 ///     ValidationFindingCode::TargetUnusable => { /* ... */ },
 ///     ValidationFindingCode::TenantSummary => { /* ... */ },
@@ -58,7 +60,11 @@ pub enum ValidationFindingCode {
     #[allow(missing_docs)] // documentation missing in model
     SubscriptionAccessible,
     #[allow(missing_docs)] // documentation missing in model
+    TargetApiDisabled,
+    #[allow(missing_docs)] // documentation missing in model
     TargetInaccessible,
+    #[allow(missing_docs)] // documentation missing in model
+    TargetMissingPermissions,
     #[allow(missing_docs)] // documentation missing in model
     TargetStateWarning,
     #[allow(missing_docs)] // documentation missing in model
@@ -78,7 +84,9 @@ impl ::std::convert::From<&str> for ValidationFindingCode {
             "OutboundWebIdentityFederationDisabled" => ValidationFindingCode::OutboundWebIdentityFederationDisabled,
             "ProviderCredentialCreationFailed" => ValidationFindingCode::ProviderCredentialCreationFailed,
             "SubscriptionAccessible" => ValidationFindingCode::SubscriptionAccessible,
+            "TargetApiDisabled" => ValidationFindingCode::TargetApiDisabled,
             "TargetInaccessible" => ValidationFindingCode::TargetInaccessible,
+            "TargetMissingPermissions" => ValidationFindingCode::TargetMissingPermissions,
             "TargetStateWarning" => ValidationFindingCode::TargetStateWarning,
             "TargetUnusable" => ValidationFindingCode::TargetUnusable,
             "TenantSummary" => ValidationFindingCode::TenantSummary,
@@ -102,7 +110,9 @@ impl ValidationFindingCode {
             ValidationFindingCode::OutboundWebIdentityFederationDisabled => "OutboundWebIdentityFederationDisabled",
             ValidationFindingCode::ProviderCredentialCreationFailed => "ProviderCredentialCreationFailed",
             ValidationFindingCode::SubscriptionAccessible => "SubscriptionAccessible",
+            ValidationFindingCode::TargetApiDisabled => "TargetApiDisabled",
             ValidationFindingCode::TargetInaccessible => "TargetInaccessible",
+            ValidationFindingCode::TargetMissingPermissions => "TargetMissingPermissions",
             ValidationFindingCode::TargetStateWarning => "TargetStateWarning",
             ValidationFindingCode::TargetUnusable => "TargetUnusable",
             ValidationFindingCode::TenantSummary => "TenantSummary",
@@ -117,7 +127,9 @@ impl ValidationFindingCode {
             "OutboundWebIdentityFederationDisabled",
             "ProviderCredentialCreationFailed",
             "SubscriptionAccessible",
+            "TargetApiDisabled",
             "TargetInaccessible",
+            "TargetMissingPermissions",
             "TargetStateWarning",
             "TargetUnusable",
             "TenantSummary",
@@ -149,7 +161,9 @@ impl ::std::fmt::Display for ValidationFindingCode {
             ValidationFindingCode::OutboundWebIdentityFederationDisabled => write!(f, "OutboundWebIdentityFederationDisabled"),
             ValidationFindingCode::ProviderCredentialCreationFailed => write!(f, "ProviderCredentialCreationFailed"),
             ValidationFindingCode::SubscriptionAccessible => write!(f, "SubscriptionAccessible"),
+            ValidationFindingCode::TargetApiDisabled => write!(f, "TargetApiDisabled"),
             ValidationFindingCode::TargetInaccessible => write!(f, "TargetInaccessible"),
+            ValidationFindingCode::TargetMissingPermissions => write!(f, "TargetMissingPermissions"),
             ValidationFindingCode::TargetStateWarning => write!(f, "TargetStateWarning"),
             ValidationFindingCode::TargetUnusable => write!(f, "TargetUnusable"),
             ValidationFindingCode::TenantSummary => write!(f, "TenantSummary"),

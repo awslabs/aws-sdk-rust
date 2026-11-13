@@ -3,44 +3,47 @@ pub fn ser_create_trust_anchor_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_trust_anchor::CreateTrustAnchorInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.crl_dp_revocation_enabled {
-        object.key("crlDpRevocationEnabled").boolean(*var_1);
+    if let Some(var_1) = &input.alias_name {
+        object.key("aliasName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.enabled {
-        object.key("enabled").boolean(*var_2);
+    if let Some(var_2) = &input.crl_dp_revocation_enabled {
+        object.key("crlDpRevocationEnabled").boolean(*var_2);
     }
-    if let Some(var_3) = &input.name {
-        object.key("name").string(var_3.as_str());
+    if let Some(var_3) = &input.enabled {
+        object.key("enabled").boolean(*var_3);
     }
-    if let Some(var_4) = &input.notification_settings {
-        let mut array_5 = object.key("notificationSettings").start_array();
-        for item_6 in var_4 {
+    if let Some(var_4) = &input.name {
+        object.key("name").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.notification_settings {
+        let mut array_6 = object.key("notificationSettings").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_notification_setting::ser_notification_setting(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_notification_setting::ser_notification_setting(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
-    if let Some(var_8) = &input.source {
+    if let Some(var_9) = &input.source {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("source").start_object();
-        crate::protocol_serde::shape_source::ser_source(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_10 = object.key("source").start_object();
+        crate::protocol_serde::shape_source::ser_source(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_10) = &input.tags {
-        let mut array_11 = object.key("tags").start_array();
-        for item_12 in var_10 {
+    if let Some(var_11) = &input.tags {
+        let mut array_12 = object.key("tags").start_array();
+        for item_13 in var_11 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_14 = array_12.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_14, item_13)?;
+                object_14.finish();
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
     Ok(())
 }

@@ -12,6 +12,7 @@
 /// ```text
 /// # let configurationpolicyassociationstatus = unimplemented!();
 /// match configurationpolicyassociationstatus {
+///     ConfigurationPolicyAssociationStatus::Disabled => { /* ... */ },
 ///     ConfigurationPolicyAssociationStatus::Failed => { /* ... */ },
 ///     ConfigurationPolicyAssociationStatus::Pending => { /* ... */ },
 ///     ConfigurationPolicyAssociationStatus::Success => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum ConfigurationPolicyAssociationStatus {
     #[allow(missing_docs)] // documentation missing in model
+    Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
@@ -56,6 +59,7 @@ pub enum ConfigurationPolicyAssociationStatus {
 impl ::std::convert::From<&str> for ConfigurationPolicyAssociationStatus {
     fn from(s: &str) -> Self {
         match s {
+            "DISABLED" => ConfigurationPolicyAssociationStatus::Disabled,
             "FAILED" => ConfigurationPolicyAssociationStatus::Failed,
             "PENDING" => ConfigurationPolicyAssociationStatus::Pending,
             "SUCCESS" => ConfigurationPolicyAssociationStatus::Success,
@@ -74,6 +78,7 @@ impl ConfigurationPolicyAssociationStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ConfigurationPolicyAssociationStatus::Disabled => "DISABLED",
             ConfigurationPolicyAssociationStatus::Failed => "FAILED",
             ConfigurationPolicyAssociationStatus::Pending => "PENDING",
             ConfigurationPolicyAssociationStatus::Success => "SUCCESS",
@@ -82,7 +87,7 @@ impl ConfigurationPolicyAssociationStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "PENDING", "SUCCESS"]
+        &["DISABLED", "FAILED", "PENDING", "SUCCESS"]
     }
 }
 impl ::std::convert::AsRef<str> for ConfigurationPolicyAssociationStatus {
@@ -105,6 +110,7 @@ impl ConfigurationPolicyAssociationStatus {
 impl ::std::fmt::Display for ConfigurationPolicyAssociationStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ConfigurationPolicyAssociationStatus::Disabled => write!(f, "DISABLED"),
             ConfigurationPolicyAssociationStatus::Failed => write!(f, "FAILED"),
             ConfigurationPolicyAssociationStatus::Pending => write!(f, "PENDING"),
             ConfigurationPolicyAssociationStatus::Success => write!(f, "SUCCESS"),

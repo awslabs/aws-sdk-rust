@@ -32,6 +32,13 @@ pub struct ProfileDetail {
     pub accept_role_session_name: ::std::option::Option<bool>,
     /// <p>A mapping applied to the authenticating end-entity certificate.</p>
     pub attribute_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AttributeMapping>>,
+    /// <p>The alias of the profile. Present only if the profile has an alias.</p>
+    pub alias_name: ::std::option::Option<::std::string::String>,
+    /// <p>The alias ARN of the profile, in the form <code>arn:<i>partition</i>:rolesanywhere:<i>region</i>:<i>account</i>:alias/profile/<i>alias-name</i> </code>. Present only if the profile has an alias.</p>
+    /// <p>You can use the alias ARN in place of the resource ID or ARN in the request parameters whose descriptions say that they accept an alias ARN. Don't use the alias ARN in Identity and Access Management (IAM) policies. A policy statement that names an alias ARN doesn't apply to the resource that holds the alias. Write policies with the ARN that contains the resource ID instead.</p>
+    pub alias_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The alias that the resource had before the update request. IAM Roles Anywhere returns this value only in the response to an update request that changed or removed an existing alias. It isn't returned when the alias was unchanged, when the resource had no alias before the request, or by other operations.</p>
+    pub previous_alias_name: ::std::option::Option<::std::string::String>,
 }
 impl ProfileDetail {
     /// <p>The unique identifier of the profile.</p>
@@ -96,6 +103,19 @@ impl ProfileDetail {
     pub fn attribute_mappings(&self) -> &[crate::types::AttributeMapping] {
         self.attribute_mappings.as_deref().unwrap_or_default()
     }
+    /// <p>The alias of the profile. Present only if the profile has an alias.</p>
+    pub fn alias_name(&self) -> ::std::option::Option<&str> {
+        self.alias_name.as_deref()
+    }
+    /// <p>The alias ARN of the profile, in the form <code>arn:<i>partition</i>:rolesanywhere:<i>region</i>:<i>account</i>:alias/profile/<i>alias-name</i> </code>. Present only if the profile has an alias.</p>
+    /// <p>You can use the alias ARN in place of the resource ID or ARN in the request parameters whose descriptions say that they accept an alias ARN. Don't use the alias ARN in Identity and Access Management (IAM) policies. A policy statement that names an alias ARN doesn't apply to the resource that holds the alias. Write policies with the ARN that contains the resource ID instead.</p>
+    pub fn alias_arn(&self) -> ::std::option::Option<&str> {
+        self.alias_arn.as_deref()
+    }
+    /// <p>The alias that the resource had before the update request. IAM Roles Anywhere returns this value only in the response to an update request that changed or removed an existing alias. It isn't returned when the alias was unchanged, when the resource had no alias before the request, or by other operations.</p>
+    pub fn previous_alias_name(&self) -> ::std::option::Option<&str> {
+        self.previous_alias_name.as_deref()
+    }
 }
 impl ProfileDetail {
     /// Creates a new builder-style object to manufacture [`ProfileDetail`](crate::types::ProfileDetail).
@@ -122,6 +142,9 @@ pub struct ProfileDetailBuilder {
     pub(crate) duration_seconds: ::std::option::Option<i32>,
     pub(crate) accept_role_session_name: ::std::option::Option<bool>,
     pub(crate) attribute_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AttributeMapping>>,
+    pub(crate) alias_name: ::std::option::Option<::std::string::String>,
+    pub(crate) alias_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) previous_alias_name: ::std::option::Option<::std::string::String>,
 }
 impl ProfileDetailBuilder {
     /// <p>The unique identifier of the profile.</p>
@@ -338,6 +361,51 @@ impl ProfileDetailBuilder {
     pub fn get_attribute_mappings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AttributeMapping>> {
         &self.attribute_mappings
     }
+    /// <p>The alias of the profile. Present only if the profile has an alias.</p>
+    pub fn alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alias_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The alias of the profile. Present only if the profile has an alias.</p>
+    pub fn set_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alias_name = input;
+        self
+    }
+    /// <p>The alias of the profile. Present only if the profile has an alias.</p>
+    pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_name
+    }
+    /// <p>The alias ARN of the profile, in the form <code>arn:<i>partition</i>:rolesanywhere:<i>region</i>:<i>account</i>:alias/profile/<i>alias-name</i> </code>. Present only if the profile has an alias.</p>
+    /// <p>You can use the alias ARN in place of the resource ID or ARN in the request parameters whose descriptions say that they accept an alias ARN. Don't use the alias ARN in Identity and Access Management (IAM) policies. A policy statement that names an alias ARN doesn't apply to the resource that holds the alias. Write policies with the ARN that contains the resource ID instead.</p>
+    pub fn alias_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.alias_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The alias ARN of the profile, in the form <code>arn:<i>partition</i>:rolesanywhere:<i>region</i>:<i>account</i>:alias/profile/<i>alias-name</i> </code>. Present only if the profile has an alias.</p>
+    /// <p>You can use the alias ARN in place of the resource ID or ARN in the request parameters whose descriptions say that they accept an alias ARN. Don't use the alias ARN in Identity and Access Management (IAM) policies. A policy statement that names an alias ARN doesn't apply to the resource that holds the alias. Write policies with the ARN that contains the resource ID instead.</p>
+    pub fn set_alias_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.alias_arn = input;
+        self
+    }
+    /// <p>The alias ARN of the profile, in the form <code>arn:<i>partition</i>:rolesanywhere:<i>region</i>:<i>account</i>:alias/profile/<i>alias-name</i> </code>. Present only if the profile has an alias.</p>
+    /// <p>You can use the alias ARN in place of the resource ID or ARN in the request parameters whose descriptions say that they accept an alias ARN. Don't use the alias ARN in Identity and Access Management (IAM) policies. A policy statement that names an alias ARN doesn't apply to the resource that holds the alias. Write policies with the ARN that contains the resource ID instead.</p>
+    pub fn get_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.alias_arn
+    }
+    /// <p>The alias that the resource had before the update request. IAM Roles Anywhere returns this value only in the response to an update request that changed or removed an existing alias. It isn't returned when the alias was unchanged, when the resource had no alias before the request, or by other operations.</p>
+    pub fn previous_alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.previous_alias_name = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The alias that the resource had before the update request. IAM Roles Anywhere returns this value only in the response to an update request that changed or removed an existing alias. It isn't returned when the alias was unchanged, when the resource had no alias before the request, or by other operations.</p>
+    pub fn set_previous_alias_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.previous_alias_name = input;
+        self
+    }
+    /// <p>The alias that the resource had before the update request. IAM Roles Anywhere returns this value only in the response to an update request that changed or removed an existing alias. It isn't returned when the alias was unchanged, when the resource had no alias before the request, or by other operations.</p>
+    pub fn get_previous_alias_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.previous_alias_name
+    }
     /// Consumes the builder and constructs a [`ProfileDetail`](crate::types::ProfileDetail).
     pub fn build(self) -> crate::types::ProfileDetail {
         crate::types::ProfileDetail {
@@ -355,6 +423,9 @@ impl ProfileDetailBuilder {
             duration_seconds: self.duration_seconds,
             accept_role_session_name: self.accept_role_session_name,
             attribute_mappings: self.attribute_mappings,
+            alias_name: self.alias_name,
+            alias_arn: self.alias_arn,
+            previous_alias_name: self.previous_alias_name,
         }
     }
 }

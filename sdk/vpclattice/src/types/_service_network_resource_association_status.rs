@@ -46,17 +46,17 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ServiceNetworkResourceAssociationStatus {
-    /// ServiceNetwork and Service association is active
+    /// ServiceNetwork and Resource association is active
     Active,
-    /// ServiceNetwork and Service association creation failed.
+    /// ServiceNetwork and Resource association creation failed.
     CreateFailed,
-    /// ServiceNetwork and Service association creation in progress
+    /// ServiceNetwork and Resource association creation in progress
     CreateInProgress,
-    /// ServiceNetwork and Service association deletion failed
+    /// ServiceNetwork and Resource association deletion failed
     DeleteFailed,
-    /// ServiceNetwork and Service association deletion in progress
+    /// ServiceNetwork and Resource association deletion in progress
     DeleteInProgress,
-    /// ServiceNetwork and Service association is partial
+    /// ServiceNetwork and Resource association is partial
     Partial,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

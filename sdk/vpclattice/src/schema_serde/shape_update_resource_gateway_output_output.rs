@@ -97,6 +97,17 @@ static UPDATERESOURCEGATEWAYOUTPUT_MEMBER_IP_ADDRESS_TYPE: ::aws_smithy_schema::
     "ipAddressType",
     7,
 );
+static UPDATERESOURCEGATEWAYOUTPUT_MEMBER_RESOURCE_CONFIG_DNS_RESOLUTION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.vpclattice.synthetic#UpdateResourceGatewayOutput$resourceConfigDnsResolution",
+            "com.amazonaws.vpclattice.synthetic",
+            "UpdateResourceGatewayOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "resourceConfigDnsResolution",
+        8,
+    );
 static UPDATERESOURCEGATEWAYOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.vpclattice.synthetic#UpdateResourceGatewayOutput",
@@ -113,6 +124,7 @@ static UPDATERESOURCEGATEWAYOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> 
         &UPDATERESOURCEGATEWAYOUTPUT_MEMBER_SUBNET_IDS,
         &UPDATERESOURCEGATEWAYOUTPUT_MEMBER_SECURITY_GROUP_IDS,
         &UPDATERESOURCEGATEWAYOUTPUT_MEMBER_IP_ADDRESS_TYPE,
+        &UPDATERESOURCEGATEWAYOUTPUT_MEMBER_RESOURCE_CONFIG_DNS_RESOLUTION,
     ],
 )
 .with_original_name("UpdateResourceGatewayResponse");
@@ -169,6 +181,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::update
         }
         if let Some(ref val) = self.ip_address_type {
             ser.write_string(&UPDATERESOURCEGATEWAYOUTPUT_MEMBER_IP_ADDRESS_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.resource_config_dns_resolution {
+            ser.write_string(&UPDATERESOURCEGATEWAYOUTPUT_MEMBER_RESOURCE_CONFIG_DNS_RESOLUTION, val.as_str())?;
         }
         Ok(())
     }
@@ -241,6 +256,14 @@ impl crate::operation::update_resource_gateway::builders::UpdateResourceGatewayO
                         deser.read_null()?;
                     } else {
                         self.ip_address_type = Some(crate::types::IpAddressType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_config_dns_resolution =
+                            Some(crate::types::ResourceConfigDnsResolution::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}

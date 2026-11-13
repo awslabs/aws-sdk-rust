@@ -10,9 +10,9 @@ pub struct GetBudgetOutput {
     /// <p>The status of the budget.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–Get a budget being evaluated.</p></li>
+    /// <p><code>ACTIVE</code> - Get a budget being evaluated.</p></li>
     /// <li>
-    /// <p><code>INACTIVE</code>–Get an inactive budget. This can include expired, canceled, or deleted statuses.</p></li>
+    /// <p><code>INACTIVE</code> - Get an inactive budget. This can include expired, canceled, or deleted statuses.</p></li>
     /// </ul>
     pub status: crate::types::BudgetStatus,
     /// <p>The display name of the budget.</p><important>
@@ -56,9 +56,9 @@ impl GetBudgetOutput {
     /// <p>The status of the budget.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–Get a budget being evaluated.</p></li>
+    /// <p><code>ACTIVE</code> - Get a budget being evaluated.</p></li>
     /// <li>
-    /// <p><code>INACTIVE</code>–Get an inactive budget. This can include expired, canceled, or deleted statuses.</p></li>
+    /// <p><code>INACTIVE</code> - Get an inactive budget. This can include expired, canceled, or deleted statuses.</p></li>
     /// </ul>
     pub fn status(&self) -> &crate::types::BudgetStatus {
         &self.status
@@ -202,9 +202,9 @@ impl GetBudgetOutputBuilder {
     /// <p>The status of the budget.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–Get a budget being evaluated.</p></li>
+    /// <p><code>ACTIVE</code> - Get a budget being evaluated.</p></li>
     /// <li>
-    /// <p><code>INACTIVE</code>–Get an inactive budget. This can include expired, canceled, or deleted statuses.</p></li>
+    /// <p><code>INACTIVE</code> - Get an inactive budget. This can include expired, canceled, or deleted statuses.</p></li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::BudgetStatus) -> Self {
@@ -214,9 +214,9 @@ impl GetBudgetOutputBuilder {
     /// <p>The status of the budget.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–Get a budget being evaluated.</p></li>
+    /// <p><code>ACTIVE</code> - Get a budget being evaluated.</p></li>
     /// <li>
-    /// <p><code>INACTIVE</code>–Get an inactive budget. This can include expired, canceled, or deleted statuses.</p></li>
+    /// <p><code>INACTIVE</code> - Get an inactive budget. This can include expired, canceled, or deleted statuses.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::BudgetStatus>) -> Self {
         self.status = input;
@@ -225,9 +225,9 @@ impl GetBudgetOutputBuilder {
     /// <p>The status of the budget.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–Get a budget being evaluated.</p></li>
+    /// <p><code>ACTIVE</code> - Get a budget being evaluated.</p></li>
     /// <li>
-    /// <p><code>INACTIVE</code>–Get an inactive budget. This can include expired, canceled, or deleted statuses.</p></li>
+    /// <p><code>INACTIVE</code> - Get an inactive budget. This can include expired, canceled, or deleted statuses.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::BudgetStatus> {
         &self.status

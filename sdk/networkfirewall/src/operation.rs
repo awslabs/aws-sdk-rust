@@ -13,9 +13,6 @@ pub mod associate_firewall_policy;
 /// Types for the `AssociateSubnets` operation.
 pub mod associate_subnets;
 
-/// Types for the `AttachRuleGroupsToProxyConfiguration` operation.
-pub mod attach_rule_groups_to_proxy_configuration;
-
 /// Types for the `CreateContainerAssociation` operation.
 pub mod create_container_association;
 
@@ -27,18 +24,6 @@ pub mod create_firewall_policy;
 
 /// Types for the `CreateFirewallPolicyV2` operation.
 pub mod create_firewall_policy_v2;
-
-/// Types for the `CreateProxy` operation.
-pub mod create_proxy;
-
-/// Types for the `CreateProxyConfiguration` operation.
-pub mod create_proxy_configuration;
-
-/// Types for the `CreateProxyRuleGroup` operation.
-pub mod create_proxy_rule_group;
-
-/// Types for the `CreateProxyRules` operation.
-pub mod create_proxy_rules;
 
 /// Types for the `CreateRuleGroup` operation.
 pub mod create_rule_group;
@@ -66,15 +51,6 @@ pub mod delete_network_firewall_transit_gateway_attachment;
 
 /// Types for the `DeleteProxy` operation.
 pub mod delete_proxy;
-
-/// Types for the `DeleteProxyConfiguration` operation.
-pub mod delete_proxy_configuration;
-
-/// Types for the `DeleteProxyRuleGroup` operation.
-pub mod delete_proxy_rule_group;
-
-/// Types for the `DeleteProxyRules` operation.
-pub mod delete_proxy_rules;
 
 /// Types for the `DeleteResourcePolicy` operation.
 pub mod delete_resource_policy;
@@ -112,15 +88,6 @@ pub mod describe_logging_configuration;
 /// Types for the `DescribeProxy` operation.
 pub mod describe_proxy;
 
-/// Types for the `DescribeProxyConfiguration` operation.
-pub mod describe_proxy_configuration;
-
-/// Types for the `DescribeProxyRule` operation.
-pub mod describe_proxy_rule;
-
-/// Types for the `DescribeProxyRuleGroup` operation.
-pub mod describe_proxy_rule_group;
-
 /// Types for the `DescribeResourcePolicy` operation.
 pub mod describe_resource_policy;
 
@@ -138,9 +105,6 @@ pub mod describe_tls_inspection_configuration;
 
 /// Types for the `DescribeVpcEndpointAssociation` operation.
 pub mod describe_vpc_endpoint_association;
-
-/// Types for the `DetachRuleGroupsFromProxyConfiguration` operation.
-pub mod detach_rule_groups_from_proxy_configuration;
 
 /// Types for the `DisassociateAvailabilityZones` operation.
 pub mod disassociate_availability_zones;
@@ -171,15 +135,6 @@ pub mod list_flow_operation_results;
 
 /// Types for the `ListFlowOperations` operation.
 pub mod list_flow_operations;
-
-/// Types for the `ListProxies` operation.
-pub mod list_proxies;
-
-/// Types for the `ListProxyConfigurations` operation.
-pub mod list_proxy_configurations;
-
-/// Types for the `ListProxyRuleGroups` operation.
-pub mod list_proxy_rule_groups;
 
 /// Types for the `ListRuleGroups` operation.
 pub mod list_rule_groups;
@@ -243,21 +198,6 @@ pub mod update_firewall_policy_v2;
 
 /// Types for the `UpdateLoggingConfiguration` operation.
 pub mod update_logging_configuration;
-
-/// Types for the `UpdateProxy` operation.
-pub mod update_proxy;
-
-/// Types for the `UpdateProxyConfiguration` operation.
-pub mod update_proxy_configuration;
-
-/// Types for the `UpdateProxyRule` operation.
-pub mod update_proxy_rule;
-
-/// Types for the `UpdateProxyRuleGroupPriorities` operation.
-pub mod update_proxy_rule_group_priorities;
-
-/// Types for the `UpdateProxyRulePriorities` operation.
-pub mod update_proxy_rule_priorities;
 
 /// Types for the `UpdateProxySettings` operation.
 pub mod update_proxy_settings;

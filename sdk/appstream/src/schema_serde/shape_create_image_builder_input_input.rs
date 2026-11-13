@@ -207,6 +207,16 @@ static CREATEIMAGEBUILDERINPUT_MEMBER_DISABLE_IMDSV1: ::aws_smithy_schema::Schem
     "DisableIMDSV1",
     16,
 );
+static CREATEIMAGEBUILDERINPUT_MEMBER_AGENT_ACCESS_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateImageBuilderInput$AgentAccessConfig",
+        "com.amazonaws.appstream.synthetic",
+        "CreateImageBuilderInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AgentAccessConfig",
+    17,
+);
 static CREATEIMAGEBUILDERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.appstream.synthetic#CreateImageBuilderInput",
@@ -232,6 +242,7 @@ static CREATEIMAGEBUILDERINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::
         &CREATEIMAGEBUILDERINPUT_MEMBER_SOFTWARES_TO_INSTALL,
         &CREATEIMAGEBUILDERINPUT_MEMBER_SOFTWARES_TO_UNINSTALL,
         &CREATEIMAGEBUILDERINPUT_MEMBER_DISABLE_IMDSV1,
+        &CREATEIMAGEBUILDERINPUT_MEMBER_AGENT_ACCESS_CONFIG,
     ],
 )
 .with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
@@ -333,6 +344,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::create
         }
         if let Some(ref val) = self.disable_imdsv1 {
             ser.write_boolean(&CREATEIMAGEBUILDERINPUT_MEMBER_DISABLE_IMDSV1, *val)?;
+        }
+        if let Some(ref val) = self.agent_access_config {
+            ser.write_struct(&CREATEIMAGEBUILDERINPUT_MEMBER_AGENT_ACCESS_CONFIG, val)?;
         }
         Ok(())
     }
@@ -475,6 +489,13 @@ impl crate::operation::create_image_builder::builders::CreateImageBuilderInputBu
                         deser.read_null()?;
                     } else {
                         self.disable_imdsv1 = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.agent_access_config = Some(crate::types::ImageBuilderAgentAccessConfig::deserialize(deser)?);
                     }
                 }
                 _ => {}

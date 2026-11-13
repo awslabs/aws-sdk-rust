@@ -2835,6 +2835,48 @@ impl From<crate::operation::update_fleet::UpdateFleetError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_image_builder::UpdateImageBuilderError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_image_builder::UpdateImageBuilderError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_image_builder::UpdateImageBuilderError> for Error {
+    fn from(err: crate::operation::update_image_builder::UpdateImageBuilderError) -> Self {
+        match err {
+            crate::operation::update_image_builder::UpdateImageBuilderError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::update_image_builder::UpdateImageBuilderError::IncompatibleImageException(inner) => {
+                Error::IncompatibleImageException(inner)
+            }
+            crate::operation::update_image_builder::UpdateImageBuilderError::InvalidAccountStatusException(inner) => {
+                Error::InvalidAccountStatusException(inner)
+            }
+            crate::operation::update_image_builder::UpdateImageBuilderError::InvalidParameterCombinationException(inner) => {
+                Error::InvalidParameterCombinationException(inner)
+            }
+            crate::operation::update_image_builder::UpdateImageBuilderError::OperationNotPermittedException(inner) => {
+                Error::OperationNotPermittedException(inner)
+            }
+            crate::operation::update_image_builder::UpdateImageBuilderError::RequestLimitExceededException(inner) => {
+                Error::RequestLimitExceededException(inner)
+            }
+            crate::operation::update_image_builder::UpdateImageBuilderError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_image_builder::UpdateImageBuilderError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_image_permissions::UpdateImagePermissionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

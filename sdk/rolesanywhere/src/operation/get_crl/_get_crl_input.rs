@@ -3,11 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCrlInput {
-    /// <p>The unique identifier of the certificate revocation list (CRL).</p>
+    /// <p>The certificate revocation list (CRL) to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The CRL ID.</p></li>
+    /// <li>
+    /// <p>The CRL ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the CRL.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a CRL in your account and Region.</p>
     pub crl_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCrlInput {
-    /// <p>The unique identifier of the certificate revocation list (CRL).</p>
+    /// <p>The certificate revocation list (CRL) to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The CRL ID.</p></li>
+    /// <li>
+    /// <p>The CRL ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the CRL.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a CRL in your account and Region.</p>
     pub fn crl_id(&self) -> ::std::option::Option<&str> {
         self.crl_id.as_deref()
     }
@@ -26,18 +44,45 @@ pub struct GetCrlInputBuilder {
     pub(crate) crl_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCrlInputBuilder {
-    /// <p>The unique identifier of the certificate revocation list (CRL).</p>
+    /// <p>The certificate revocation list (CRL) to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The CRL ID.</p></li>
+    /// <li>
+    /// <p>The CRL ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the CRL.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a CRL in your account and Region.</p>
     /// This field is required.
     pub fn crl_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.crl_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the certificate revocation list (CRL).</p>
+    /// <p>The certificate revocation list (CRL) to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The CRL ID.</p></li>
+    /// <li>
+    /// <p>The CRL ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the CRL.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a CRL in your account and Region.</p>
     pub fn set_crl_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.crl_id = input;
         self
     }
-    /// <p>The unique identifier of the certificate revocation list (CRL).</p>
+    /// <p>The certificate revocation list (CRL) to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The CRL ID.</p></li>
+    /// <li>
+    /// <p>The CRL ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the CRL.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a CRL in your account and Region.</p>
     pub fn get_crl_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.crl_id
     }

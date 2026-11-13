@@ -5,8 +5,10 @@ pub use crate::types::error::_service_exception::ServiceExceptionBuilder;
 
 pub use crate::types::error::_too_many_requests_exception::TooManyRequestsExceptionBuilder;
 
-pub use crate::types::error::_network_connector_limit_exceeded_exception::NetworkConnectorLimitExceededExceptionBuilder;
-
 pub use crate::types::error::_resource_conflict_exception::ResourceConflictExceptionBuilder;
 
+pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededExceptionBuilder;
+
 pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExceptionBuilder;
+
+pub use crate::types::error::_network_connector_limit_exceeded_exception::NetworkConnectorLimitExceededExceptionBuilder;

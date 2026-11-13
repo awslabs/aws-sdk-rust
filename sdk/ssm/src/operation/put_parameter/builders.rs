@@ -392,6 +392,8 @@ impl PutParameterFluentBuilder {
     /// <li>
     /// <p>The parameter uses a parameter policy.</p></li>
     /// <li>
+    /// <p>The parameter uses the <code>url</code>, <code>json</code>, or <code>jsonc</code> data type.</p></li>
+    /// <li>
     /// <p>More than 10,000 parameters already exist in your Amazon Web Services account in the current Amazon Web Services Region.</p></li>
     /// </ul>
     /// <p>For more information about configuring the default tier option, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#ps-default-tier">Specifying a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -422,6 +424,8 @@ impl PutParameterFluentBuilder {
     /// <li>
     /// <p>The parameter uses a parameter policy.</p></li>
     /// <li>
+    /// <p>The parameter uses the <code>url</code>, <code>json</code>, or <code>jsonc</code> data type.</p></li>
+    /// <li>
     /// <p>More than 10,000 parameters already exist in your Amazon Web Services account in the current Amazon Web Services Region.</p></li>
     /// </ul>
     /// <p>For more information about configuring the default tier option, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#ps-default-tier">Specifying a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
@@ -451,6 +455,8 @@ impl PutParameterFluentBuilder {
     /// <p>The content size of the parameter is more than 4 KB.</p></li>
     /// <li>
     /// <p>The parameter uses a parameter policy.</p></li>
+    /// <li>
+    /// <p>The parameter uses the <code>url</code>, <code>json</code>, or <code>jsonc</code> data type.</p></li>
     /// <li>
     /// <p>More than 10,000 parameters already exist in your Amazon Web Services account in the current Amazon Web Services Region.</p></li>
     /// </ul>
@@ -484,7 +490,7 @@ impl PutParameterFluentBuilder {
     pub fn get_policies(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policies()
     }
-    /// <p>The data type for a <code>String</code> parameter. Supported data types include plain text and Amazon Machine Image (AMI) IDs.</p>
+    /// <p>The data type of the parameter value. Parameter Store validates the value against the data type when you create or update the parameter. The default is <code>text</code>, which performs no validation.</p>
     /// <p><b>The following data type values are supported.</b></p>
     /// <ul>
     /// <li>
@@ -493,7 +499,36 @@ impl PutParameterFluentBuilder {
     /// <p><code>aws:ec2:image</code></p></li>
     /// <li>
     /// <p><code>aws:ssm:integration</code></p></li>
+    /// <li>
+    /// <p><code>aws:region</code></p></li>
+    /// <li>
+    /// <p><code>aws:account:id</code></p></li>
+    /// <li>
+    /// <p><code>boolean</code></p></li>
+    /// <li>
+    /// <p><code>integer</code></p></li>
+    /// <li>
+    /// <p><code>float</code></p></li>
+    /// <li>
+    /// <p><code>binary</code></p></li>
+    /// <li>
+    /// <p><code>hostname</code></p></li>
+    /// <li>
+    /// <p><code>email</code></p></li>
+    /// <li>
+    /// <p><code>ipv4-address</code></p></li>
+    /// <li>
+    /// <p><code>ipv6-address</code></p></li>
+    /// <li>
+    /// <p><code>url</code></p></li>
+    /// <li>
+    /// <p><code>json</code></p></li>
+    /// <li>
+    /// <p><code>jsonc</code></p></li>
     /// </ul>
+    /// <p>For more information about the supported data types, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-data-types.html">Working with parameter data types in Parameter Store</a>.</p><note>
+    /// <p>Regardless of a parameter's data type, the Parameter Store API operations that retrieve parameters, such as <code>GetParameter</code>, <code>GetParameters</code>, and <code>GetParametersByPath</code>, return the parameter value as a string. For example, if a parameter has the data type <code>integer</code> and the value <code>443</code>, <code>GetParameter</code> returns the value as the string <code>"443"</code>. Convert the value to the type your application needs after you retrieve it.</p>
+    /// </note>
     /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services Systems Manager validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account.</p><note>
     /// <p>If the action is successful, the service sends back an HTTP 200 response which indicates a successful <code>PutParameter</code> call for all cases except for data type <code>aws:ec2:image</code>. If you call <code>PutParameter</code> with <code>aws:ec2:image</code> data type, a successful HTTP 200 response does not guarantee that your parameter was successfully created or updated. The <code>aws:ec2:image</code> value is validated asynchronously, and the <code>PutParameter</code> call returns before the validation is complete. If you submit an invalid AMI value, the PutParameter operation will return success, but the asynchronous validation will fail and the parameter will not be created or updated. To monitor whether your <code>aws:ec2:image</code> parameters are created successfully, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting up notifications or trigger actions based on Parameter Store events</a>. For more information about AMI format validation , see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support for Amazon Machine Image IDs</a>.</p>
     /// </note>
@@ -501,7 +536,7 @@ impl PutParameterFluentBuilder {
         self.inner = self.inner.data_type(input.into());
         self
     }
-    /// <p>The data type for a <code>String</code> parameter. Supported data types include plain text and Amazon Machine Image (AMI) IDs.</p>
+    /// <p>The data type of the parameter value. Parameter Store validates the value against the data type when you create or update the parameter. The default is <code>text</code>, which performs no validation.</p>
     /// <p><b>The following data type values are supported.</b></p>
     /// <ul>
     /// <li>
@@ -510,7 +545,36 @@ impl PutParameterFluentBuilder {
     /// <p><code>aws:ec2:image</code></p></li>
     /// <li>
     /// <p><code>aws:ssm:integration</code></p></li>
+    /// <li>
+    /// <p><code>aws:region</code></p></li>
+    /// <li>
+    /// <p><code>aws:account:id</code></p></li>
+    /// <li>
+    /// <p><code>boolean</code></p></li>
+    /// <li>
+    /// <p><code>integer</code></p></li>
+    /// <li>
+    /// <p><code>float</code></p></li>
+    /// <li>
+    /// <p><code>binary</code></p></li>
+    /// <li>
+    /// <p><code>hostname</code></p></li>
+    /// <li>
+    /// <p><code>email</code></p></li>
+    /// <li>
+    /// <p><code>ipv4-address</code></p></li>
+    /// <li>
+    /// <p><code>ipv6-address</code></p></li>
+    /// <li>
+    /// <p><code>url</code></p></li>
+    /// <li>
+    /// <p><code>json</code></p></li>
+    /// <li>
+    /// <p><code>jsonc</code></p></li>
     /// </ul>
+    /// <p>For more information about the supported data types, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-data-types.html">Working with parameter data types in Parameter Store</a>.</p><note>
+    /// <p>Regardless of a parameter's data type, the Parameter Store API operations that retrieve parameters, such as <code>GetParameter</code>, <code>GetParameters</code>, and <code>GetParametersByPath</code>, return the parameter value as a string. For example, if a parameter has the data type <code>integer</code> and the value <code>443</code>, <code>GetParameter</code> returns the value as the string <code>"443"</code>. Convert the value to the type your application needs after you retrieve it.</p>
+    /// </note>
     /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services Systems Manager validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account.</p><note>
     /// <p>If the action is successful, the service sends back an HTTP 200 response which indicates a successful <code>PutParameter</code> call for all cases except for data type <code>aws:ec2:image</code>. If you call <code>PutParameter</code> with <code>aws:ec2:image</code> data type, a successful HTTP 200 response does not guarantee that your parameter was successfully created or updated. The <code>aws:ec2:image</code> value is validated asynchronously, and the <code>PutParameter</code> call returns before the validation is complete. If you submit an invalid AMI value, the PutParameter operation will return success, but the asynchronous validation will fail and the parameter will not be created or updated. To monitor whether your <code>aws:ec2:image</code> parameters are created successfully, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting up notifications or trigger actions based on Parameter Store events</a>. For more information about AMI format validation , see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support for Amazon Machine Image IDs</a>.</p>
     /// </note>
@@ -518,7 +582,7 @@ impl PutParameterFluentBuilder {
         self.inner = self.inner.set_data_type(input);
         self
     }
-    /// <p>The data type for a <code>String</code> parameter. Supported data types include plain text and Amazon Machine Image (AMI) IDs.</p>
+    /// <p>The data type of the parameter value. Parameter Store validates the value against the data type when you create or update the parameter. The default is <code>text</code>, which performs no validation.</p>
     /// <p><b>The following data type values are supported.</b></p>
     /// <ul>
     /// <li>
@@ -527,7 +591,36 @@ impl PutParameterFluentBuilder {
     /// <p><code>aws:ec2:image</code></p></li>
     /// <li>
     /// <p><code>aws:ssm:integration</code></p></li>
+    /// <li>
+    /// <p><code>aws:region</code></p></li>
+    /// <li>
+    /// <p><code>aws:account:id</code></p></li>
+    /// <li>
+    /// <p><code>boolean</code></p></li>
+    /// <li>
+    /// <p><code>integer</code></p></li>
+    /// <li>
+    /// <p><code>float</code></p></li>
+    /// <li>
+    /// <p><code>binary</code></p></li>
+    /// <li>
+    /// <p><code>hostname</code></p></li>
+    /// <li>
+    /// <p><code>email</code></p></li>
+    /// <li>
+    /// <p><code>ipv4-address</code></p></li>
+    /// <li>
+    /// <p><code>ipv6-address</code></p></li>
+    /// <li>
+    /// <p><code>url</code></p></li>
+    /// <li>
+    /// <p><code>json</code></p></li>
+    /// <li>
+    /// <p><code>jsonc</code></p></li>
     /// </ul>
+    /// <p>For more information about the supported data types, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-data-types.html">Working with parameter data types in Parameter Store</a>.</p><note>
+    /// <p>Regardless of a parameter's data type, the Parameter Store API operations that retrieve parameters, such as <code>GetParameter</code>, <code>GetParameters</code>, and <code>GetParametersByPath</code>, return the parameter value as a string. For example, if a parameter has the data type <code>integer</code> and the value <code>443</code>, <code>GetParameter</code> returns the value as the string <code>"443"</code>. Convert the value to the type your application needs after you retrieve it.</p>
+    /// </note>
     /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>, Amazon Web Services Systems Manager validates the parameter value is in the required format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your Amazon Web Services account.</p><note>
     /// <p>If the action is successful, the service sends back an HTTP 200 response which indicates a successful <code>PutParameter</code> call for all cases except for data type <code>aws:ec2:image</code>. If you call <code>PutParameter</code> with <code>aws:ec2:image</code> data type, a successful HTTP 200 response does not guarantee that your parameter was successfully created or updated. The <code>aws:ec2:image</code> value is validated asynchronously, and the <code>PutParameter</code> call returns before the validation is complete. If you submit an invalid AMI value, the PutParameter operation will return success, but the asynchronous validation will fail and the parameter will not be created or updated. To monitor whether your <code>aws:ec2:image</code> parameters are created successfully, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting up notifications or trigger actions based on Parameter Store events</a>. For more information about AMI format validation , see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support for Amazon Machine Image IDs</a>.</p>
     /// </note>

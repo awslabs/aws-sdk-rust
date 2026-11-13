@@ -425,6 +425,10 @@ pub enum InvokeWithResponseStreamError {
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The function is inactive and its VPC connection is no longer available. Wait for the VPC connection to reestablish and try again.</p>
     ResourceNotReadyException(crate::types::error::ResourceNotReadyException),
+    /// <p>The runtime alias for your function is no longer available. Update your function to use an available runtime alias.</p>
+    RuntimeAliasDeletedException(crate::types::error::RuntimeAliasDeletedException),
+    /// <p>The runtime version used by your function is no longer available. Update your function to use an available runtime version or runtime alias.</p>
+    RuntimeVersionDeletedException(crate::types::error::RuntimeVersionDeletedException),
     /// <p>The Lambda function couldn't make a network connection to the configured S3 Files access point.</p>
     S3FilesMountConnectivityException(crate::types::error::S3FilesMountConnectivityException),
     /// <p>The Lambda function couldn't mount the configured S3 Files access point due to a permission or configuration issue.</p>
@@ -511,6 +515,8 @@ impl InvokeWithResponseStreamError {
             Self::ResourceConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotReadyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::RuntimeAliasDeletedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::RuntimeVersionDeletedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::S3FilesMountConnectivityException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::S3FilesMountFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::S3FilesMountTimeoutException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -635,6 +641,14 @@ impl InvokeWithResponseStreamError {
     pub fn is_resource_not_ready_exception(&self) -> bool {
         matches!(self, Self::ResourceNotReadyException(_))
     }
+    /// Returns `true` if the error kind is `InvokeWithResponseStreamError::RuntimeAliasDeletedException`.
+    pub fn is_runtime_alias_deleted_exception(&self) -> bool {
+        matches!(self, Self::RuntimeAliasDeletedException(_))
+    }
+    /// Returns `true` if the error kind is `InvokeWithResponseStreamError::RuntimeVersionDeletedException`.
+    pub fn is_runtime_version_deleted_exception(&self) -> bool {
+        matches!(self, Self::RuntimeVersionDeletedException(_))
+    }
     /// Returns `true` if the error kind is `InvokeWithResponseStreamError::S3FilesMountConnectivityException`.
     pub fn is_s3_files_mount_connectivity_exception(&self) -> bool {
         matches!(self, Self::S3FilesMountConnectivityException(_))
@@ -718,6 +732,8 @@ impl ::std::error::Error for InvokeWithResponseStreamError {
             Self::ResourceConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotReadyException(_inner) => ::std::option::Option::Some(_inner),
+            Self::RuntimeAliasDeletedException(_inner) => ::std::option::Option::Some(_inner),
+            Self::RuntimeVersionDeletedException(_inner) => ::std::option::Option::Some(_inner),
             Self::S3FilesMountConnectivityException(_inner) => ::std::option::Option::Some(_inner),
             Self::S3FilesMountFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::S3FilesMountTimeoutException(_inner) => ::std::option::Option::Some(_inner),
@@ -765,6 +781,8 @@ impl ::std::fmt::Display for InvokeWithResponseStreamError {
             Self::ResourceConflictException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ResourceNotReadyException(_inner) => _inner.fmt(f),
+            Self::RuntimeAliasDeletedException(_inner) => _inner.fmt(f),
+            Self::RuntimeVersionDeletedException(_inner) => _inner.fmt(f),
             Self::S3FilesMountConnectivityException(_inner) => _inner.fmt(f),
             Self::S3FilesMountFailureException(_inner) => _inner.fmt(f),
             Self::S3FilesMountTimeoutException(_inner) => _inner.fmt(f),
@@ -826,6 +844,8 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for InvokeWithRes
             Self::ResourceConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotReadyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RuntimeAliasDeletedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::RuntimeVersionDeletedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::S3FilesMountConnectivityException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::S3FilesMountFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::S3FilesMountTimeoutException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

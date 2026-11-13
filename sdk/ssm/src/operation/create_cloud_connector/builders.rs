@@ -164,17 +164,17 @@ impl CreateCloudConnectorFluentBuilder {
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::CloudConnectorConfiguration> {
         self.inner.get_configuration()
     }
-    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector.</p>
+    /// <p>The ARN of the Amazon Web Services Config connector to associate with this cloud connector. If you omit it, the cloud connector is created without Amazon Web Services Config integration.</p>
     pub fn config_connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.config_connector_arn(input.into());
         self
     }
-    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector.</p>
+    /// <p>The ARN of the Amazon Web Services Config connector to associate with this cloud connector. If you omit it, the cloud connector is created without Amazon Web Services Config integration.</p>
     pub fn set_config_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_config_connector_arn(input);
         self
     }
-    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector.</p>
+    /// <p>The ARN of the Amazon Web Services Config connector to associate with this cloud connector. If you omit it, the cloud connector is created without Amazon Web Services Config integration.</p>
     pub fn get_config_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_config_connector_arn()
     }

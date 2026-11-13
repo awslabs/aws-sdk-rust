@@ -206,7 +206,6 @@ impl crate::operation::create_cloud_connector::CreateCloudConnectorInput {
         builder.deserialize_members(deserializer)?;
         builder.display_name = builder.display_name.or(Some(String::new()));
         builder.role_arn = builder.role_arn.or(Some(String::new()));
-        builder.config_connector_arn = builder.config_connector_arn.or(Some(String::new()));
         builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
     }
 }

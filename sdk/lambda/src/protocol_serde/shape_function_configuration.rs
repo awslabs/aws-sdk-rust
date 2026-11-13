@@ -292,6 +292,11 @@ where
                                     depth + 1,
                                 )?);
                             }
+                            "RuntimeConfig" => {
+                                builder = builder.set_runtime_config(
+                                    crate::protocol_serde::shape_function_runtime_config::de_function_runtime_config(tokens, _value, depth + 1)?,
+                                );
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

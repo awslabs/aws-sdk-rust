@@ -26,7 +26,7 @@ pub struct InstanceInfo {
     pub platform_version: ::std::option::Option<::std::string::String>,
     /// <p>The type of instance, either an EC2 instance or another supported machine type in a hybrid fleet.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
-    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>.</p>
+    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>. For Azure Virtual Machines, <code>SourceType</code> is <code>Microsoft.Compute/virtualMachines</code>. For Google Cloud Platform (GCP) Compute Engine Virtual Machines, <code>SourceType</code> is <code>compute.googleapis.com/Instance</code>.</p>
     pub source_type: ::std::option::Option<crate::types::SourceType>,
     /// <p>The ID of the source resource. For IoT Greengrass devices, <code>SourceId</code> is the Thing name.</p>
     pub source_id: ::std::option::Option<::std::string::String>,
@@ -82,7 +82,7 @@ impl InstanceInfo {
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>.</p>
+    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>. For Azure Virtual Machines, <code>SourceType</code> is <code>Microsoft.Compute/virtualMachines</code>. For Google Cloud Platform (GCP) Compute Engine Virtual Machines, <code>SourceType</code> is <code>compute.googleapis.com/Instance</code>.</p>
     pub fn source_type(&self) -> ::std::option::Option<&crate::types::SourceType> {
         self.source_type.as_ref()
     }
@@ -308,17 +308,17 @@ impl InstanceInfoBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }
-    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>.</p>
+    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>. For Azure Virtual Machines, <code>SourceType</code> is <code>Microsoft.Compute/virtualMachines</code>. For Google Cloud Platform (GCP) Compute Engine Virtual Machines, <code>SourceType</code> is <code>compute.googleapis.com/Instance</code>.</p>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
         self.source_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>.</p>
+    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>. For Azure Virtual Machines, <code>SourceType</code> is <code>Microsoft.Compute/virtualMachines</code>. For Google Cloud Platform (GCP) Compute Engine Virtual Machines, <code>SourceType</code> is <code>compute.googleapis.com/Instance</code>.</p>
     pub fn set_source_type(mut self, input: ::std::option::Option<crate::types::SourceType>) -> Self {
         self.source_type = input;
         self
     }
-    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>.</p>
+    /// <p>The type of the source resource. For IoT Greengrass devices, <code>SourceType</code> is <code>AWS::IoT::Thing</code>. For Azure Virtual Machines, <code>SourceType</code> is <code>Microsoft.Compute/virtualMachines</code>. For Google Cloud Platform (GCP) Compute Engine Virtual Machines, <code>SourceType</code> is <code>compute.googleapis.com/Instance</code>.</p>
     pub fn get_source_type(&self) -> &::std::option::Option<crate::types::SourceType> {
         &self.source_type
     }

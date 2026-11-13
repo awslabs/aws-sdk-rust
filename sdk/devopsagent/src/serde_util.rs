@@ -1526,6 +1526,15 @@ pub(crate) fn user_reference_correct_errors(
     builder
 }
 
+pub(crate) fn ms_teams_bidirectional_configuration_correct_errors(
+    mut builder: crate::types::builders::MsTeamsBidirectionalConfigurationBuilder,
+) -> crate::types::builders::MsTeamsBidirectionalConfigurationBuilder {
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn slack_bidirectional_configuration_correct_errors(
     mut builder: crate::types::builders::SlackBidirectionalConfigurationBuilder,
 ) -> crate::types::builders::SlackBidirectionalConfigurationBuilder {

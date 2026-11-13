@@ -6,6 +6,8 @@
 pub enum CloudConnectorConfiguration {
     /// <p>The access details and targets for connecting to a Microsoft Azure environment.</p>
     AzureConfiguration(crate::types::AzureConfiguration),
+    /// <p>The access details and targets for connecting to a Google Cloud Platform (GCP) environment.</p>
+    GcpConfiguration(crate::types::GcpConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum CloudConnectorConfiguration {
     Unknown,
 }
 impl CloudConnectorConfiguration {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`AzureConfiguration`](crate::types::CloudConnectorConfiguration::AzureConfiguration), extracting the inner [`AzureConfiguration`](crate::types::AzureConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_azure_configuration(&self) -> ::std::result::Result<&crate::types::AzureConfiguration, &Self> {
@@ -30,6 +31,19 @@ impl CloudConnectorConfiguration {
     /// Returns true if this is a [`AzureConfiguration`](crate::types::CloudConnectorConfiguration::AzureConfiguration).
     pub fn is_azure_configuration(&self) -> bool {
         self.as_azure_configuration().is_ok()
+    }
+    /// Tries to convert the enum instance into [`GcpConfiguration`](crate::types::CloudConnectorConfiguration::GcpConfiguration), extracting the inner [`GcpConfiguration`](crate::types::GcpConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_gcp_configuration(&self) -> ::std::result::Result<&crate::types::GcpConfiguration, &Self> {
+        if let CloudConnectorConfiguration::GcpConfiguration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`GcpConfiguration`](crate::types::CloudConnectorConfiguration::GcpConfiguration).
+    pub fn is_gcp_configuration(&self) -> bool {
+        self.as_gcp_configuration().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

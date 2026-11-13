@@ -22,7 +22,7 @@ impl crate::operation::delete_proxy::builders::DeleteProxyInputBuilder {
 }
 /// Fluent builder constructing a request to `DeleteProxy`.
 ///
-/// <p>Deletes the specified <code>Proxy</code>.</p>
+/// <p>Deletes the specified proxy.</p>
 /// <p>Detaches a Proxy configuration from a NAT Gateway.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteProxyFluentBuilder {

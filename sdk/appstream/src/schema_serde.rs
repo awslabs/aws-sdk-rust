@@ -335,6 +335,10 @@ pub(crate) mod shape_image;
 
 pub(crate) mod shape_image_builder;
 
+pub(crate) mod shape_image_builder_agent_access_config;
+
+pub(crate) mod shape_image_builder_agent_access_config_for_update;
+
 pub(crate) mod shape_image_builder_state_change_reason;
 
 pub(crate) mod shape_image_permissions;
@@ -472,6 +476,10 @@ pub(crate) mod shape_update_entitlement_output_output;
 pub(crate) mod shape_update_fleet_input_input;
 
 pub(crate) mod shape_update_fleet_output_output;
+
+pub(crate) mod shape_update_image_builder_input_input;
+
+pub(crate) mod shape_update_image_builder_output_output;
 
 pub(crate) mod shape_update_image_permissions_input_input;
 

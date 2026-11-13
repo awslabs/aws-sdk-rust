@@ -16,7 +16,7 @@ pub struct InstanceInformationStringFilter {
     /// <li>
     /// <p>Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance</p></li>
     /// <li>
-    /// <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing | Microsoft.Compute/virtualMachines</p></li>
+    /// <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing | Microsoft.Compute/virtualMachines | compute.googleapis.com/Instance</p></li>
     /// <li>
     /// <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p></li>
     /// </ul>
@@ -37,7 +37,7 @@ impl InstanceInformationStringFilter {
     /// <li>
     /// <p>Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance</p></li>
     /// <li>
-    /// <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing | Microsoft.Compute/virtualMachines</p></li>
+    /// <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing | Microsoft.Compute/virtualMachines | compute.googleapis.com/Instance</p></li>
     /// <li>
     /// <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p></li>
     /// </ul>
@@ -78,7 +78,7 @@ impl InstanceInformationStringFilterBuilder {
     /// <li>
     /// <p>Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance</p></li>
     /// <li>
-    /// <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing | Microsoft.Compute/virtualMachines</p></li>
+    /// <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing | Microsoft.Compute/virtualMachines | compute.googleapis.com/Instance</p></li>
     /// <li>
     /// <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p></li>
     /// </ul>
@@ -99,7 +99,7 @@ impl InstanceInformationStringFilterBuilder {
     /// <li>
     /// <p>Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance</p></li>
     /// <li>
-    /// <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing | Microsoft.Compute/virtualMachines</p></li>
+    /// <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing | Microsoft.Compute/virtualMachines | compute.googleapis.com/Instance</p></li>
     /// <li>
     /// <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p></li>
     /// </ul>
@@ -119,7 +119,7 @@ impl InstanceInformationStringFilterBuilder {
     /// <li>
     /// <p>Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance</p></li>
     /// <li>
-    /// <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing | Microsoft.Compute/virtualMachines</p></li>
+    /// <p>Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance | AWS::IoT::Thing | Microsoft.Compute/virtualMachines | compute.googleapis.com/Instance</p></li>
     /// <li>
     /// <p>Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.</p></li>
     /// </ul>

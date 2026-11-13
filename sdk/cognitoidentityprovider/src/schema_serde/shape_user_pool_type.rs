@@ -364,6 +364,16 @@ static USERPOOLTYPE_MEMBER_USER_POOL_ADD_ONS: ::aws_smithy_schema::Schema<'stati
     "UserPoolAddOns",
     29,
 );
+static USERPOOLTYPE_MEMBER_DCR_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserPoolType$DcrConfiguration",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserPoolType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DcrConfiguration",
+    30,
+);
 static USERPOOLTYPE_MEMBER_USERNAME_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.cognitoidentityprovider#UserPoolType$UsernameConfiguration",
@@ -372,7 +382,7 @@ static USERPOOLTYPE_MEMBER_USERNAME_CONFIGURATION: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "UsernameConfiguration",
-    30,
+    31,
 );
 static USERPOOLTYPE_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -382,7 +392,7 @@ static USERPOOLTYPE_MEMBER_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smi
     ),
     ::aws_smithy_schema::ShapeType::String,
     "Arn",
-    31,
+    32,
 );
 static USERPOOLTYPE_MEMBER_ACCOUNT_RECOVERY_SETTING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -392,7 +402,7 @@ static USERPOOLTYPE_MEMBER_ACCOUNT_RECOVERY_SETTING: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "AccountRecoverySetting",
-    32,
+    33,
 );
 static USERPOOLTYPE_MEMBER_USER_POOL_TIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -402,7 +412,7 @@ static USERPOOLTYPE_MEMBER_USER_POOL_TIER: ::aws_smithy_schema::Schema<'static> 
     ),
     ::aws_smithy_schema::ShapeType::String,
     "UserPoolTier",
-    33,
+    34,
 );
 static USERPOOLTYPE_MEMBER_KEY_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -412,7 +422,7 @@ static USERPOOLTYPE_MEMBER_KEY_CONFIGURATION: ::aws_smithy_schema::Schema<'stati
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "KeyConfiguration",
-    34,
+    35,
 );
 static USERPOOLTYPE_MEMBER_ISSUER_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -422,7 +432,7 @@ static USERPOOLTYPE_MEMBER_ISSUER_CONFIGURATION: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "IssuerConfiguration",
-    35,
+    36,
 );
 static USERPOOLTYPE_MEMBER_ACR_CONFIGURATION_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -452,7 +462,7 @@ static USERPOOLTYPE_MEMBER_ACR_CONFIGURATION: ::aws_smithy_schema::Schema<'stati
     ),
     ::aws_smithy_schema::ShapeType::Map,
     "AcrConfiguration",
-    36,
+    37,
 )
 .with_map_members(&USERPOOLTYPE_MEMBER_ACR_CONFIGURATION_KEY, &USERPOOLTYPE_MEMBER_ACR_CONFIGURATION_VALUE);
 static USERPOOLTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
@@ -493,6 +503,7 @@ static USERPOOLTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_
         &USERPOOLTYPE_MEMBER_CUSTOM_DOMAIN,
         &USERPOOLTYPE_MEMBER_ADMIN_CREATE_USER_CONFIG,
         &USERPOOLTYPE_MEMBER_USER_POOL_ADD_ONS,
+        &USERPOOLTYPE_MEMBER_DCR_CONFIGURATION,
         &USERPOOLTYPE_MEMBER_USERNAME_CONFIGURATION,
         &USERPOOLTYPE_MEMBER_ARN,
         &USERPOOLTYPE_MEMBER_ACCOUNT_RECOVERY_SETTING,
@@ -647,6 +658,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::UserPoolTy
         }
         if let Some(ref val) = self.user_pool_add_ons {
             ser.write_struct(&USERPOOLTYPE_MEMBER_USER_POOL_ADD_ONS, val)?;
+        }
+        if let Some(ref val) = self.dcr_configuration {
+            ser.write_struct(&USERPOOLTYPE_MEMBER_DCR_CONFIGURATION, val)?;
         }
         if let Some(ref val) = self.username_configuration {
             ser.write_struct(&USERPOOLTYPE_MEMBER_USERNAME_CONFIGURATION, val)?;
@@ -939,45 +953,52 @@ impl crate::types::builders::UserPoolTypeBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.username_configuration = Some(crate::types::UsernameConfigurationType::deserialize(deser)?);
+                        self.dcr_configuration = Some(crate::types::DcrConfigurationType::deserialize(deser)?);
                     }
                 }
                 Some(31) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.arn = Some(deser.read_string(member)?);
+                        self.username_configuration = Some(crate::types::UsernameConfigurationType::deserialize(deser)?);
                     }
                 }
                 Some(32) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.account_recovery_setting = Some(crate::types::AccountRecoverySettingType::deserialize(deser)?);
+                        self.arn = Some(deser.read_string(member)?);
                     }
                 }
                 Some(33) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.user_pool_tier = Some(crate::types::UserPoolTierType::from(deser.read_string(member)?.as_str()));
+                        self.account_recovery_setting = Some(crate::types::AccountRecoverySettingType::deserialize(deser)?);
                     }
                 }
                 Some(34) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.key_configuration = Some(crate::types::KeyConfigurationType::deserialize(deser)?);
+                        self.user_pool_tier = Some(crate::types::UserPoolTierType::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(35) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.issuer_configuration = Some(crate::types::IssuerConfigurationType::deserialize(deser)?);
+                        self.key_configuration = Some(crate::types::KeyConfigurationType::deserialize(deser)?);
                     }
                 }
                 Some(36) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.issuer_configuration = Some(crate::types::IssuerConfigurationType::deserialize(deser)?);
+                    }
+                }
+                Some(37) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

@@ -11,9 +11,9 @@ pub struct BudgetSummary {
     /// <p>The status of the budget.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–The budget is being evaluated.</p></li>
+    /// <p><code>ACTIVE</code> - The budget is being evaluated.</p></li>
     /// <li>
-    /// <p><code>INACTIVE</code>–The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
+    /// <p><code>INACTIVE</code> - The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
     /// </ul>
     pub status: crate::types::BudgetStatus,
     /// <p>The display name of the budget summary to update.</p><important>
@@ -51,9 +51,9 @@ impl BudgetSummary {
     /// <p>The status of the budget.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–The budget is being evaluated.</p></li>
+    /// <p><code>ACTIVE</code> - The budget is being evaluated.</p></li>
     /// <li>
-    /// <p><code>INACTIVE</code>–The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
+    /// <p><code>INACTIVE</code> - The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
     /// </ul>
     pub fn status(&self) -> &crate::types::BudgetStatus {
         &self.status
@@ -172,9 +172,9 @@ impl BudgetSummaryBuilder {
     /// <p>The status of the budget.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–The budget is being evaluated.</p></li>
+    /// <p><code>ACTIVE</code> - The budget is being evaluated.</p></li>
     /// <li>
-    /// <p><code>INACTIVE</code>–The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
+    /// <p><code>INACTIVE</code> - The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::BudgetStatus) -> Self {
@@ -184,9 +184,9 @@ impl BudgetSummaryBuilder {
     /// <p>The status of the budget.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–The budget is being evaluated.</p></li>
+    /// <p><code>ACTIVE</code> - The budget is being evaluated.</p></li>
     /// <li>
-    /// <p><code>INACTIVE</code>–The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
+    /// <p><code>INACTIVE</code> - The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::BudgetStatus>) -> Self {
         self.status = input;
@@ -195,9 +195,9 @@ impl BudgetSummaryBuilder {
     /// <p>The status of the budget.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–The budget is being evaluated.</p></li>
+    /// <p><code>ACTIVE</code> - The budget is being evaluated.</p></li>
     /// <li>
-    /// <p><code>INACTIVE</code>–The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
+    /// <p><code>INACTIVE</code> - The budget is inactive. This can include Expired, Canceled, or deleted Deleted statuses.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::BudgetStatus> {
         &self.status

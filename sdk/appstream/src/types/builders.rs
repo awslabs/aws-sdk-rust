@@ -33,6 +33,8 @@ pub use crate::types::_volume_config::VolumeConfigBuilder;
 
 pub use crate::types::_fleet::FleetBuilder;
 
+pub use crate::types::_image_builder_agent_access_config::ImageBuilderAgentAccessConfigBuilder;
+
 pub use crate::types::_image_builder::ImageBuilderBuilder;
 
 pub use crate::types::_runtime_validation_config::RuntimeValidationConfigBuilder;
@@ -50,6 +52,8 @@ pub use crate::types::_agent_access_config::AgentAccessConfigBuilder;
 pub use crate::types::_stack::StackBuilder;
 
 pub use crate::types::_theme::ThemeBuilder;
+
+pub use crate::types::_image_builder_agent_access_config_for_update::ImageBuilderAgentAccessConfigForUpdateBuilder;
 
 pub use crate::types::_image_permissions::ImagePermissionsBuilder;
 

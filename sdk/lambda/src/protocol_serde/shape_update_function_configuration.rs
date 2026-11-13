@@ -448,6 +448,13 @@ pub(crate) fn de_update_function_configuration(
                             .transpose()?,
                     );
                 }
+                "RuntimeConfig" => {
+                    builder = builder.set_runtime_config(crate::protocol_serde::shape_function_runtime_config::de_function_runtime_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "RuntimeVersionConfig" => {
                     builder = builder.set_runtime_version_config(crate::protocol_serde::shape_runtime_version_config::de_runtime_version_config(
                         tokens,

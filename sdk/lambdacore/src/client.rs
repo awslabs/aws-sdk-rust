@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -120,6 +134,26 @@ impl Client {
     }
 }
 
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait until a runtime alias has finished provisioning/updating and reached the ACTIVE state.
+    fn wait_until_runtime_alias_active(&self) -> crate::waiters::runtime_alias_active::RuntimeAliasActiveFluentBuilder;
+    /// Wait until a runtime version has finished provisioning and reached the ACTIVE state.
+    fn wait_until_runtime_version_active(&self) -> crate::waiters::runtime_version_active::RuntimeVersionActiveFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_runtime_alias_active(&self) -> crate::waiters::runtime_alias_active::RuntimeAliasActiveFluentBuilder {
+        crate::waiters::runtime_alias_active::RuntimeAliasActiveFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_runtime_version_active(&self) -> crate::waiters::runtime_version_active::RuntimeVersionActiveFluentBuilder {
+        crate::waiters::runtime_version_active::RuntimeVersionActiveFluentBuilder::new(self.handle.clone())
+    }
+}
+
 impl Client {
     /// Creates a new client from an [SDK Config](::aws_types::sdk_config::SdkConfig).
     ///
@@ -137,6 +171,12 @@ impl Client {
 }
 
 mod create_network_connector;
+
+mod create_runtime;
+
+mod create_runtime_alias;
+
+mod create_runtime_version;
 
 /// Operation customization and supporting types.
 ///
@@ -167,10 +207,36 @@ pub mod customize;
 
 mod delete_network_connector;
 
+mod delete_runtime;
+
+mod delete_runtime_alias;
+
+mod delete_runtime_version;
+
 mod get_network_connector;
+
+mod get_runtime;
+
+mod get_runtime_alias;
+
+mod get_runtime_version;
 
 mod list_network_connector_versions;
 
 mod list_network_connectors;
 
+mod list_runtime_aliases;
+
+mod list_runtime_versions;
+
+mod list_runtimes;
+
+mod restore_runtime;
+
 mod update_network_connector;
+
+mod update_runtime;
+
+mod update_runtime_alias;
+
+mod update_runtime_version;

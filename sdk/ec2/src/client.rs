@@ -459,6 +459,8 @@ mod associate_ipam_resource_discovery;
 
 mod associate_nat_gateway_address;
 
+mod associate_networking_flex_cost_allocation_policy;
+
 mod associate_route_server;
 
 mod associate_route_table;
@@ -646,6 +648,8 @@ mod create_network_insights_path;
 mod create_network_interface;
 
 mod create_network_interface_permission;
+
+mod create_networking_flex_cost_allocation_policy;
 
 mod create_placement_group;
 
@@ -877,6 +881,8 @@ mod delete_network_insights_path;
 mod delete_network_interface;
 
 mod delete_network_interface_permission;
+
+mod delete_networking_flex_cost_allocation_policies;
 
 mod delete_placement_group;
 
@@ -1222,6 +1228,10 @@ mod describe_network_interface_permissions;
 
 mod describe_network_interfaces;
 
+mod describe_networking_flex_cost_allocation_policies;
+
+mod describe_networking_flex_cost_allocation_policy_associations;
+
 mod describe_outpost_lags;
 
 mod describe_placement_groups;
@@ -1462,6 +1472,8 @@ mod disassociate_ipam_resource_discovery;
 
 mod disassociate_nat_gateway_address;
 
+mod disassociate_networking_flex_cost_allocation_policy;
+
 mod disassociate_route_server;
 
 mod disassociate_route_table;
@@ -1650,6 +1662,8 @@ mod get_network_insights_access_scope_analysis_findings;
 
 mod get_network_insights_access_scope_content;
 
+mod get_networking_flex_cost_allocation_policy_versions;
+
 mod get_password_data;
 
 mod get_reserved_instances_exchange_quote;
@@ -1809,6 +1823,8 @@ mod modify_managed_resource_visibility;
 mod modify_metric_category;
 
 mod modify_network_interface_attribute;
+
+mod modify_networking_flex_cost_allocation_policy;
 
 mod modify_private_dns_name_options;
 

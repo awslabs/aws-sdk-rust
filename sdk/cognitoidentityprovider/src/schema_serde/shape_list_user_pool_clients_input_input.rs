@@ -29,6 +29,16 @@ static LISTUSERPOOLCLIENTSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'
     "NextToken",
     2,
 );
+static LISTUSERPOOLCLIENTSINPUT_MEMBER_CLIENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider.synthetic#ListUserPoolClientsInput$ClientType",
+        "com.amazonaws.cognitoidentityprovider.synthetic",
+        "ListUserPoolClientsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientType",
+    3,
+);
 static LISTUSERPOOLCLIENTSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.cognitoidentityprovider.synthetic#ListUserPoolClientsInput",
@@ -40,6 +50,7 @@ static LISTUSERPOOLCLIENTSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = :
         &LISTUSERPOOLCLIENTSINPUT_MEMBER_USER_POOL_ID,
         &LISTUSERPOOLCLIENTSINPUT_MEMBER_MAX_RESULTS,
         &LISTUSERPOOLCLIENTSINPUT_MEMBER_NEXT_TOKEN,
+        &LISTUSERPOOLCLIENTSINPUT_MEMBER_CLIENT_TYPE,
     ],
 )
 .with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
@@ -66,6 +77,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::list_u
         }
         if let Some(ref val) = self.next_token {
             ser.write_string(&LISTUSERPOOLCLIENTSINPUT_MEMBER_NEXT_TOKEN, val)?;
+        }
+        if let Some(ref val) = self.client_type {
+            ser.write_string(&LISTUSERPOOLCLIENTSINPUT_MEMBER_CLIENT_TYPE, val.as_str())?;
         }
         Ok(())
     }
@@ -103,6 +117,13 @@ impl crate::operation::list_user_pool_clients::builders::ListUserPoolClientsInpu
                         deser.read_null()?;
                     } else {
                         self.next_token = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_type = Some(crate::types::ClientTypeType::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}

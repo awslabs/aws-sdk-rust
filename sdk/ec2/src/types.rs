@@ -39,6 +39,8 @@ pub use crate::types::_asn_association::AsnAssociation;
 
 pub use crate::types::_ipam_resource_discovery_association::IpamResourceDiscoveryAssociation;
 
+pub use crate::types::_flex_cost_allocation_network_resource_scope::FlexCostAllocationNetworkResourceScope;
+
 pub use crate::types::_route_server_association::RouteServerAssociation;
 
 pub use crate::types::_route_table_association_state::RouteTableAssociationState;
@@ -288,6 +290,14 @@ pub use crate::types::_rule_action::RuleAction;
 pub use crate::types::_icmp_type_code::IcmpTypeCode;
 
 pub use crate::types::_port_range::PortRange;
+
+pub use crate::types::_flex_cost_allocation_network_resource_type::FlexCostAllocationNetworkResourceType;
+
+pub use crate::types::_nat_flex_cost_allocation_policy_document::NatFlexCostAllocationPolicyDocument;
+
+pub use crate::types::_instance_flex_cost_allocation_policy_document::InstanceFlexCostAllocationPolicyDocument;
+
+pub use crate::types::_pcx_flex_cost_allocation_policy_document::PcxFlexCostAllocationPolicyDocument;
 
 pub use crate::types::_network_insights_access_scope::NetworkInsightsAccessScope;
 
@@ -925,6 +935,12 @@ pub use crate::types::_ipam_associated_resource_discovery_status::IpamAssociated
 
 pub use crate::types::_ipam_resource_discovery_association_state::IpamResourceDiscoveryAssociationState;
 
+pub use crate::types::_flex_cost_allocation_network_resource_scope_type::FlexCostAllocationNetworkResourceScopeType;
+
+pub use crate::types::_flex_cost_allocation_policy_association_description::FlexCostAllocationPolicyAssociationDescription;
+
+pub use crate::types::_flex_cost_allocation_operation_failure::FlexCostAllocationOperationFailure;
+
 pub use crate::types::_route_server_association_state::RouteServerAssociationState;
 
 pub use crate::types::_route_table_association_state_code::RouteTableAssociationStateCode;
@@ -1184,6 +1200,8 @@ pub use crate::types::_nat_gateway_state::NatGatewayState;
 pub use crate::types::_auto_scaling_ips_state::AutoScalingIpsState;
 
 pub use crate::types::_auto_provision_zones_state::AutoProvisionZonesState;
+
+pub use crate::types::_flex_cost_allocation_cidr_range_specifications::FlexCostAllocationCidrRangeSpecifications;
 
 pub use crate::types::_access_scope_path_request::AccessScopePathRequest;
 
@@ -1511,6 +1529,8 @@ pub use crate::types::_mac_host::MacHost;
 
 pub use crate::types::_moving_address_status::MovingAddressStatus;
 
+pub use crate::types::_flex_cost_allocation_policy_description::FlexCostAllocationPolicyDescription;
+
 pub use crate::types::_attachment_ena_srd_specification::AttachmentEnaSrdSpecification;
 
 pub use crate::types::_outpost_lag::OutpostLag;
@@ -1711,6 +1731,8 @@ pub use crate::types::_prefix_list_association::PrefixListAssociation;
 
 pub use crate::types::_prefix_list_entry::PrefixListEntry;
 
+pub use crate::types::_flex_cost_allocation_policy_version::FlexCostAllocationPolicyVersion;
+
 pub use crate::types::_access_scope_analysis_finding::AccessScopeAnalysisFinding;
 
 pub use crate::types::_reserved_instance_reservation_value::ReservedInstanceReservationValue;
@@ -1901,6 +1923,8 @@ pub use crate::types::_nat_gateway_address_status::NatGatewayAddressStatus;
 
 pub use crate::types::_instance_event_window_time_range::InstanceEventWindowTimeRange;
 
+pub use crate::types::_flex_cost_allocation_association_mode::FlexCostAllocationAssociationMode;
+
 pub use crate::types::_subnet_cidr_block_state_code::SubnetCidrBlockStateCode;
 
 pub use crate::types::_vpc_cidr_block_state_code::VpcCidrBlockStateCode;
@@ -2020,6 +2044,10 @@ pub use crate::types::_nat_gateway_attached_appliance::NatGatewayAttachedApplian
 pub use crate::types::_network_acl_association::NetworkAclAssociation;
 
 pub use crate::types::_network_acl_entry::NetworkAclEntry;
+
+pub use crate::types::_flex_cost_allocation_reporting_granularity::FlexCostAllocationReportingGranularity;
+
+pub use crate::types::_flex_cost_allocation_cost_dimension::FlexCostAllocationCostDimension;
 
 pub use crate::types::_path_statement_request::PathStatementRequest;
 
@@ -2512,6 +2540,8 @@ pub use crate::types::_nat_gateway_appliance_type::NatGatewayApplianceType;
 pub use crate::types::_nat_gateway_appliance_state::NatGatewayApplianceState;
 
 pub use crate::types::_nat_gateway_appliance_modify_state::NatGatewayApplianceModifyState;
+
+pub use crate::types::_flex_cost_allocation_cidr_mapping::FlexCostAllocationCidrMapping;
 
 pub use crate::types::_packet_header_statement_request::PacketHeaderStatementRequest;
 
@@ -3823,6 +3853,30 @@ mod _fleet_state_code;
 
 mod _fleet_type;
 
+mod _flex_cost_allocation_association_mode;
+
+mod _flex_cost_allocation_cidr_mapping;
+
+mod _flex_cost_allocation_cidr_range_specifications;
+
+mod _flex_cost_allocation_cost_dimension;
+
+mod _flex_cost_allocation_network_resource_scope;
+
+mod _flex_cost_allocation_network_resource_scope_type;
+
+mod _flex_cost_allocation_network_resource_type;
+
+mod _flex_cost_allocation_operation_failure;
+
+mod _flex_cost_allocation_policy_association_description;
+
+mod _flex_cost_allocation_policy_description;
+
+mod _flex_cost_allocation_policy_version;
+
+mod _flex_cost_allocation_reporting_granularity;
+
 mod _flexible_ena_queues_support;
 
 mod _flow_log;
@@ -4058,6 +4112,8 @@ mod _instance_event_window_time_range_request;
 mod _instance_export_details;
 
 mod _instance_family_credit_specification;
+
+mod _instance_flex_cost_allocation_policy_document;
 
 mod _instance_generation;
 
@@ -4693,6 +4749,8 @@ mod _moving_address_status;
 
 mod _multicast_support_value;
 
+mod _nat_flex_cost_allocation_policy_document;
+
 mod _nat_gateway;
 
 mod _nat_gateway_address;
@@ -4836,6 +4894,8 @@ mod _payer_responsibility_type;
 mod _payment_option;
 
 mod _pci_id;
+
+mod _pcx_flex_cost_allocation_policy_document;
 
 mod _peering_attachment_status;
 

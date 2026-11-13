@@ -6,35 +6,38 @@ pub fn ser_update_profile_input_input(
     if let Some(var_1) = &input.accept_role_session_name {
         object.key("acceptRoleSessionName").boolean(*var_1);
     }
-    if let Some(var_2) = &input.duration_seconds {
+    if let Some(var_2) = &input.alias_name {
+        object.key("aliasName").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.duration_seconds {
         object.key("durationSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.managed_policy_arns {
-        let mut array_4 = object.key("managedPolicyArns").start_array();
-        for item_5 in var_3 {
+    if let Some(var_4) = &input.managed_policy_arns {
+        let mut array_5 = object.key("managedPolicyArns").start_array();
+        for item_6 in var_4 {
             {
-                array_4.value().string(item_5.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
-    if let Some(var_6) = &input.name {
-        object.key("name").string(var_6.as_str());
+    if let Some(var_7) = &input.name {
+        object.key("name").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.role_arns {
-        let mut array_8 = object.key("roleArns").start_array();
-        for item_9 in var_7 {
+    if let Some(var_8) = &input.role_arns {
+        let mut array_9 = object.key("roleArns").start_array();
+        for item_10 in var_8 {
             {
-                array_8.value().string(item_9.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_8.finish();
+        array_9.finish();
     }
-    if let Some(var_10) = &input.session_policy {
-        object.key("sessionPolicy").string(var_10.as_str());
+    if let Some(var_11) = &input.session_policy {
+        object.key("sessionPolicy").string(var_11.as_str());
     }
     Ok(())
 }

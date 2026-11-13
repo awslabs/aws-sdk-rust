@@ -91,6 +91,8 @@ pub use crate::types::_tenancy_config::TenancyConfig;
 
 pub use crate::types::_capacity_provider_config::CapacityProviderConfig;
 
+pub use crate::types::_function_runtime_config::FunctionRuntimeConfig;
+
 pub use crate::types::_vpc_config_response::VpcConfigResponse;
 
 pub use crate::types::_environment_response::EnvironmentResponse;
@@ -510,6 +512,8 @@ mod _function_configuration;
 mod _function_event_invoke_config;
 
 mod _function_response_type;
+
+mod _function_runtime_config;
 
 mod _function_scaling_config;
 

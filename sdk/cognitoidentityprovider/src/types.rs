@@ -81,6 +81,8 @@ pub use crate::types::_admin_create_user_config_type::AdminCreateUserConfigType;
 
 pub use crate::types::_user_pool_add_ons_type::UserPoolAddOnsType;
 
+pub use crate::types::_dcr_configuration_type::DcrConfigurationType;
+
 pub use crate::types::_username_configuration_type::UsernameConfigurationType;
 
 pub use crate::types::_account_recovery_setting_type::AccountRecoverySettingType;
@@ -139,6 +141,8 @@ pub use crate::types::_user_session_tracking_type::UserSessionTrackingType;
 
 pub use crate::types::_user_pool_token_session_config_type::UserPoolTokenSessionConfigType;
 
+pub use crate::types::_client_type_type::ClientTypeType;
+
 pub use crate::types::_compromised_credentials_risk_configuration_type::CompromisedCredentialsRiskConfigurationType;
 
 pub use crate::types::_account_takeover_risk_configuration_type::AccountTakeoverRiskConfigurationType;
@@ -168,6 +172,8 @@ pub use crate::types::_session_description_type::SessionDescriptionType;
 pub use crate::types::_asset_type::AssetType;
 
 pub use crate::types::_resource_server_scope_type::ResourceServerScopeType;
+
+pub use crate::types::_resource_server_managed_by_type::ResourceServerManagedByType;
 
 pub use crate::types::_user_import_job_status_type::UserImportJobStatusType;
 
@@ -201,13 +207,13 @@ pub use crate::types::_advanced_security_mode_type::AdvancedSecurityModeType;
 
 pub use crate::types::_advanced_security_additional_flows_type::AdvancedSecurityAdditionalFlowsType;
 
+pub use crate::types::_status_type::StatusType;
+
 pub use crate::types::_encryption_key_type::EncryptionKeyType;
 
 pub use crate::types::_issuer_type::IssuerType;
 
 pub use crate::types::_acr_level_config_type::AcrLevelConfigType;
-
-pub use crate::types::_status_type::StatusType;
 
 pub use crate::types::_time_units_type::TimeUnitsType;
 
@@ -381,6 +387,8 @@ mod _client_secret_descriptor_type;
 
 mod _client_sso_session_config_type;
 
+mod _client_type_type;
+
 mod _cloud_watch_logs_configuration_type;
 
 mod _code_delivery_details_type;
@@ -404,6 +412,8 @@ mod _custom_email_sender_lambda_version_type;
 mod _custom_sms_lambda_version_config_type;
 
 mod _custom_sms_sender_lambda_version_type;
+
+mod _dcr_configuration_type;
 
 mod _default_email_option_type;
 
@@ -532,6 +542,8 @@ mod _refresh_token_rotation_type;
 mod _replica_role_type;
 
 mod _replica_status_type;
+
+mod _resource_server_managed_by_type;
 
 mod _resource_server_scope_type;
 

@@ -13,6 +13,7 @@
 /// # let messagetemplateattributetype = unimplemented!();
 /// match messagetemplateattributetype {
 ///     MessageTemplateAttributeType::Agent => { /* ... */ },
+///     MessageTemplateAttributeType::Case => { /* ... */ },
 ///     MessageTemplateAttributeType::Custom => { /* ... */ },
 ///     MessageTemplateAttributeType::CustomerProfile => { /* ... */ },
 ///     MessageTemplateAttributeType::System => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum MessageTemplateAttributeType {
     #[allow(missing_docs)] // documentation missing in model
     Agent,
     #[allow(missing_docs)] // documentation missing in model
+    Case,
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
     #[allow(missing_docs)] // documentation missing in model
     CustomerProfile,
@@ -60,6 +63,7 @@ impl ::std::convert::From<&str> for MessageTemplateAttributeType {
     fn from(s: &str) -> Self {
         match s {
             "AGENT" => MessageTemplateAttributeType::Agent,
+            "CASE" => MessageTemplateAttributeType::Case,
             "CUSTOM" => MessageTemplateAttributeType::Custom,
             "CUSTOMER_PROFILE" => MessageTemplateAttributeType::CustomerProfile,
             "SYSTEM" => MessageTemplateAttributeType::System,
@@ -79,6 +83,7 @@ impl MessageTemplateAttributeType {
     pub fn as_str(&self) -> &str {
         match self {
             MessageTemplateAttributeType::Agent => "AGENT",
+            MessageTemplateAttributeType::Case => "CASE",
             MessageTemplateAttributeType::Custom => "CUSTOM",
             MessageTemplateAttributeType::CustomerProfile => "CUSTOMER_PROFILE",
             MessageTemplateAttributeType::System => "SYSTEM",
@@ -87,7 +92,7 @@ impl MessageTemplateAttributeType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AGENT", "CUSTOM", "CUSTOMER_PROFILE", "SYSTEM"]
+        &["AGENT", "CASE", "CUSTOM", "CUSTOMER_PROFILE", "SYSTEM"]
     }
 }
 impl ::std::convert::AsRef<str> for MessageTemplateAttributeType {
@@ -111,6 +116,7 @@ impl ::std::fmt::Display for MessageTemplateAttributeType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             MessageTemplateAttributeType::Agent => write!(f, "AGENT"),
+            MessageTemplateAttributeType::Case => write!(f, "CASE"),
             MessageTemplateAttributeType::Custom => write!(f, "CUSTOM"),
             MessageTemplateAttributeType::CustomerProfile => write!(f, "CUSTOMER_PROFILE"),
             MessageTemplateAttributeType::System => write!(f, "SYSTEM"),

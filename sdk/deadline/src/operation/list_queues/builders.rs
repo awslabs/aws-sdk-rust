@@ -173,11 +173,11 @@ impl ListQueuesFluentBuilder {
     /// <p>The status of the queues listed.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–The queues are active.</p></li>
+    /// <p><code>ACTIVE</code> - The queues are active.</p></li>
     /// <li>
-    /// <p><code>SCHEDULING</code>–The queues are scheduling.</p></li>
+    /// <p><code>SCHEDULING</code> - The queues are scheduling.</p></li>
     /// <li>
-    /// <p><code>SCHEDULING_BLOCKED</code>–The queue scheduling is blocked for these queues.</p></li>
+    /// <p><code>SCHEDULING_BLOCKED</code> - The queue scheduling is blocked for these queues.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::QueueStatus) -> Self {
         self.inner = self.inner.status(input);
@@ -186,11 +186,11 @@ impl ListQueuesFluentBuilder {
     /// <p>The status of the queues listed.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–The queues are active.</p></li>
+    /// <p><code>ACTIVE</code> - The queues are active.</p></li>
     /// <li>
-    /// <p><code>SCHEDULING</code>–The queues are scheduling.</p></li>
+    /// <p><code>SCHEDULING</code> - The queues are scheduling.</p></li>
     /// <li>
-    /// <p><code>SCHEDULING_BLOCKED</code>–The queue scheduling is blocked for these queues.</p></li>
+    /// <p><code>SCHEDULING_BLOCKED</code> - The queue scheduling is blocked for these queues.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::QueueStatus>) -> Self {
         self.inner = self.inner.set_status(input);
@@ -199,11 +199,11 @@ impl ListQueuesFluentBuilder {
     /// <p>The status of the queues listed.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–The queues are active.</p></li>
+    /// <p><code>ACTIVE</code> - The queues are active.</p></li>
     /// <li>
-    /// <p><code>SCHEDULING</code>–The queues are scheduling.</p></li>
+    /// <p><code>SCHEDULING</code> - The queues are scheduling.</p></li>
     /// <li>
-    /// <p><code>SCHEDULING_BLOCKED</code>–The queue scheduling is blocked for these queues.</p></li>
+    /// <p><code>SCHEDULING_BLOCKED</code> - The queue scheduling is blocked for these queues.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::QueueStatus> {
         self.inner.get_status()

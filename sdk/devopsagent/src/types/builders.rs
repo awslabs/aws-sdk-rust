@@ -215,6 +215,8 @@ pub use crate::types::_slack_bidirectional_configuration::SlackBidirectionalConf
 
 pub use crate::types::_ms_teams_transmission_target::MsTeamsTransmissionTargetBuilder;
 
+pub use crate::types::_ms_teams_bidirectional_configuration::MsTeamsBidirectionalConfigurationBuilder;
+
 pub use crate::types::_dynatrace_o_auth_client_credentials_config::DynatraceOAuthClientCredentialsConfigBuilder;
 
 pub use crate::types::_service_now_o_auth_client_credentials_config::ServiceNowOAuthClientCredentialsConfigBuilder;

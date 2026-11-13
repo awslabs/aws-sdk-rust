@@ -117,45 +117,51 @@ pub fn ser_create_function_input_input(
     if let Some(var_37) = &input.runtime {
         object.key("Runtime").string(var_37.as_str());
     }
-    if let Some(var_38) = &input.snap_start {
+    if let Some(var_38) = &input.runtime_config {
         #[allow(unused_mut)]
-        let mut object_39 = object.key("SnapStart").start_object();
-        crate::protocol_serde::shape_snap_start::ser_snap_start(&mut object_39, var_38)?;
+        let mut object_39 = object.key("RuntimeConfig").start_object();
+        crate::protocol_serde::shape_function_runtime_config::ser_function_runtime_config(&mut object_39, var_38)?;
         object_39.finish();
     }
-    if let Some(var_40) = &input.tags {
+    if let Some(var_40) = &input.snap_start {
         #[allow(unused_mut)]
-        let mut object_41 = object.key("Tags").start_object();
-        for (key_42, value_43) in var_40 {
-            {
-                object_41.key(key_42.as_str()).string(value_43.as_str());
-            }
-        }
+        let mut object_41 = object.key("SnapStart").start_object();
+        crate::protocol_serde::shape_snap_start::ser_snap_start(&mut object_41, var_40)?;
         object_41.finish();
     }
-    if let Some(var_44) = &input.tenancy_config {
+    if let Some(var_42) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_45 = object.key("TenancyConfig").start_object();
-        crate::protocol_serde::shape_tenancy_config::ser_tenancy_config(&mut object_45, var_44)?;
-        object_45.finish();
+        let mut object_43 = object.key("Tags").start_object();
+        for (key_44, value_45) in var_42 {
+            {
+                object_43.key(key_44.as_str()).string(value_45.as_str());
+            }
+        }
+        object_43.finish();
     }
-    if let Some(var_46) = &input.timeout {
+    if let Some(var_46) = &input.tenancy_config {
+        #[allow(unused_mut)]
+        let mut object_47 = object.key("TenancyConfig").start_object();
+        crate::protocol_serde::shape_tenancy_config::ser_tenancy_config(&mut object_47, var_46)?;
+        object_47.finish();
+    }
+    if let Some(var_48) = &input.timeout {
         object.key("Timeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_46).into()),
+            ::aws_smithy_types::Number::NegInt((*var_48).into()),
         );
     }
-    if let Some(var_47) = &input.tracing_config {
+    if let Some(var_49) = &input.tracing_config {
         #[allow(unused_mut)]
-        let mut object_48 = object.key("TracingConfig").start_object();
-        crate::protocol_serde::shape_tracing_config::ser_tracing_config(&mut object_48, var_47)?;
-        object_48.finish();
-    }
-    if let Some(var_49) = &input.vpc_config {
-        #[allow(unused_mut)]
-        let mut object_50 = object.key("VpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_50, var_49)?;
+        let mut object_50 = object.key("TracingConfig").start_object();
+        crate::protocol_serde::shape_tracing_config::ser_tracing_config(&mut object_50, var_49)?;
         object_50.finish();
+    }
+    if let Some(var_51) = &input.vpc_config {
+        #[allow(unused_mut)]
+        let mut object_52 = object.key("VpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_52, var_51)?;
+        object_52.finish();
     }
     Ok(())
 }

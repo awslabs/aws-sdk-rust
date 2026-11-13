@@ -16,6 +16,10 @@ pub struct CloudConnectorSummary {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time the cloud connector was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The third-party cloud provider that the cloud connector connects to. Valid values: <code>Azure</code> | <code>GCP</code>.</p>
+    pub provider: ::std::option::Option<crate::types::Provider>,
+    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector. This value is returned only if the cloud connector was created with an Amazon Web Services Config connector.</p>
+    pub config_connector_arn: ::std::option::Option<::std::string::String>,
 }
 impl CloudConnectorSummary {
     /// <p>The ID of the cloud connector.</p>
@@ -42,6 +46,14 @@ impl CloudConnectorSummary {
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
+    /// <p>The third-party cloud provider that the cloud connector connects to. Valid values: <code>Azure</code> | <code>GCP</code>.</p>
+    pub fn provider(&self) -> ::std::option::Option<&crate::types::Provider> {
+        self.provider.as_ref()
+    }
+    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector. This value is returned only if the cloud connector was created with an Amazon Web Services Config connector.</p>
+    pub fn config_connector_arn(&self) -> ::std::option::Option<&str> {
+        self.config_connector_arn.as_deref()
+    }
 }
 impl CloudConnectorSummary {
     /// Creates a new builder-style object to manufacture [`CloudConnectorSummary`](crate::types::CloudConnectorSummary).
@@ -60,6 +72,8 @@ pub struct CloudConnectorSummaryBuilder {
     pub(crate) role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) provider: ::std::option::Option<crate::types::Provider>,
+    pub(crate) config_connector_arn: ::std::option::Option<::std::string::String>,
 }
 impl CloudConnectorSummaryBuilder {
     /// <p>The ID of the cloud connector.</p>
@@ -146,6 +160,34 @@ impl CloudConnectorSummaryBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>The third-party cloud provider that the cloud connector connects to. Valid values: <code>Azure</code> | <code>GCP</code>.</p>
+    pub fn provider(mut self, input: crate::types::Provider) -> Self {
+        self.provider = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The third-party cloud provider that the cloud connector connects to. Valid values: <code>Azure</code> | <code>GCP</code>.</p>
+    pub fn set_provider(mut self, input: ::std::option::Option<crate::types::Provider>) -> Self {
+        self.provider = input;
+        self
+    }
+    /// <p>The third-party cloud provider that the cloud connector connects to. Valid values: <code>Azure</code> | <code>GCP</code>.</p>
+    pub fn get_provider(&self) -> &::std::option::Option<crate::types::Provider> {
+        &self.provider
+    }
+    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector. This value is returned only if the cloud connector was created with an Amazon Web Services Config connector.</p>
+    pub fn config_connector_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.config_connector_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector. This value is returned only if the cloud connector was created with an Amazon Web Services Config connector.</p>
+    pub fn set_config_connector_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.config_connector_arn = input;
+        self
+    }
+    /// <p>The ARN of the Amazon Web Services Config connector associated with this cloud connector. This value is returned only if the cloud connector was created with an Amazon Web Services Config connector.</p>
+    pub fn get_config_connector_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.config_connector_arn
+    }
     /// Consumes the builder and constructs a [`CloudConnectorSummary`](crate::types::CloudConnectorSummary).
     pub fn build(self) -> crate::types::CloudConnectorSummary {
         crate::types::CloudConnectorSummary {
@@ -155,6 +197,8 @@ impl CloudConnectorSummaryBuilder {
             role_arn: self.role_arn,
             created_at: self.created_at,
             updated_at: self.updated_at,
+            provider: self.provider,
+            config_connector_arn: self.config_connector_arn,
         }
     }
 }

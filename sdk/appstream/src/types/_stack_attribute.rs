@@ -14,6 +14,7 @@
 /// match stackattribute {
 ///     StackAttribute::AccessEndpoints => { /* ... */ },
 ///     StackAttribute::AgentAccessConfig => { /* ... */ },
+///     StackAttribute::AgentAccessConfigKmsKeyArn => { /* ... */ },
 ///     StackAttribute::ContentRedirection => { /* ... */ },
 ///     StackAttribute::EmbedHostDomains => { /* ... */ },
 ///     StackAttribute::FeedbackUrl => { /* ... */ },
@@ -91,6 +92,9 @@
 /// <p>AGENT_ACCESS_CONFIG</p>
 /// </li>
 /// <li>
+/// <p>AGENT_ACCESS_CONFIG_KMS_KEY_ARN</p>
+/// </li>
+/// <li>
 /// <p>STORAGE_CONNECTOR_AUTHENTICATION</p>
 /// </li>
 /// </ul>
@@ -103,6 +107,8 @@ pub enum StackAttribute {
     AccessEndpoints,
     #[allow(missing_docs)] // documentation missing in model
     AgentAccessConfig,
+    #[allow(missing_docs)] // documentation missing in model
+    AgentAccessConfigKmsKeyArn,
     #[allow(missing_docs)] // documentation missing in model
     ContentRedirection,
     #[allow(missing_docs)] // documentation missing in model
@@ -138,6 +144,7 @@ impl ::std::convert::From<&str> for StackAttribute {
         match s {
             "ACCESS_ENDPOINTS" => StackAttribute::AccessEndpoints,
             "AGENT_ACCESS_CONFIG" => StackAttribute::AgentAccessConfig,
+            "AGENT_ACCESS_CONFIG_KMS_KEY_ARN" => StackAttribute::AgentAccessConfigKmsKeyArn,
             "CONTENT_REDIRECTION" => StackAttribute::ContentRedirection,
             "EMBED_HOST_DOMAINS" => StackAttribute::EmbedHostDomains,
             "FEEDBACK_URL" => StackAttribute::FeedbackUrl,
@@ -168,6 +175,7 @@ impl StackAttribute {
         match self {
             StackAttribute::AccessEndpoints => "ACCESS_ENDPOINTS",
             StackAttribute::AgentAccessConfig => "AGENT_ACCESS_CONFIG",
+            StackAttribute::AgentAccessConfigKmsKeyArn => "AGENT_ACCESS_CONFIG_KMS_KEY_ARN",
             StackAttribute::ContentRedirection => "CONTENT_REDIRECTION",
             StackAttribute::EmbedHostDomains => "EMBED_HOST_DOMAINS",
             StackAttribute::FeedbackUrl => "FEEDBACK_URL",
@@ -189,6 +197,7 @@ impl StackAttribute {
         &[
             "ACCESS_ENDPOINTS",
             "AGENT_ACCESS_CONFIG",
+            "AGENT_ACCESS_CONFIG_KMS_KEY_ARN",
             "CONTENT_REDIRECTION",
             "EMBED_HOST_DOMAINS",
             "FEEDBACK_URL",
@@ -227,6 +236,7 @@ impl ::std::fmt::Display for StackAttribute {
         match self {
             StackAttribute::AccessEndpoints => write!(f, "ACCESS_ENDPOINTS"),
             StackAttribute::AgentAccessConfig => write!(f, "AGENT_ACCESS_CONFIG"),
+            StackAttribute::AgentAccessConfigKmsKeyArn => write!(f, "AGENT_ACCESS_CONFIG_KMS_KEY_ARN"),
             StackAttribute::ContentRedirection => write!(f, "CONTENT_REDIRECTION"),
             StackAttribute::EmbedHostDomains => write!(f, "EMBED_HOST_DOMAINS"),
             StackAttribute::FeedbackUrl => write!(f, "FEEDBACK_URL"),

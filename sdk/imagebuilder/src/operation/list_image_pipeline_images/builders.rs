@@ -115,16 +115,19 @@ impl ListImagePipelineImagesFluentBuilder {
         crate::operation::list_image_pipeline_images::paginator::ListImagePipelineImagesPaginator::new(self.handle, self.inner)
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
+    /// <p>If the ARN that you specify doesn't exist, Image Builder returns an empty list rather than a <code>ResourceNotFoundException</code> error.</p>
     pub fn image_pipeline_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.image_pipeline_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
+    /// <p>If the ARN that you specify doesn't exist, Image Builder returns an empty list rather than a <code>ResourceNotFoundException</code> error.</p>
     pub fn set_image_pipeline_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_image_pipeline_arn(input);
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
+    /// <p>If the ARN that you specify doesn't exist, Image Builder returns an empty list rather than a <code>ResourceNotFoundException</code> error.</p>
     pub fn get_image_pipeline_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_image_pipeline_arn()
     }

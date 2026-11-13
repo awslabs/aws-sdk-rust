@@ -14,11 +14,11 @@ pub struct GetQueueOutput {
     /// <p>The status of the queue.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–The queue is active.</p></li>
+    /// <p><code>ACTIVE</code> - The queue is active.</p></li>
     /// <li>
-    /// <p><code>SCHEDULING</code>–The queue is scheduling.</p></li>
+    /// <p><code>SCHEDULING</code> - The queue is scheduling.</p></li>
     /// <li>
-    /// <p><code>SCHEDULING_BLOCKED</code>–The queue scheduling is blocked. See the provided reason.</p></li>
+    /// <p><code>SCHEDULING_BLOCKED</code> - The queue scheduling is blocked. See the provided reason.</p></li>
     /// </ul>
     pub status: crate::types::QueueStatus,
     /// The default action taken on a queue if a budget wasn't configured.
@@ -72,11 +72,11 @@ impl GetQueueOutput {
     /// <p>The status of the queue.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–The queue is active.</p></li>
+    /// <p><code>ACTIVE</code> - The queue is active.</p></li>
     /// <li>
-    /// <p><code>SCHEDULING</code>–The queue is scheduling.</p></li>
+    /// <p><code>SCHEDULING</code> - The queue is scheduling.</p></li>
     /// <li>
-    /// <p><code>SCHEDULING_BLOCKED</code>–The queue scheduling is blocked. See the provided reason.</p></li>
+    /// <p><code>SCHEDULING_BLOCKED</code> - The queue scheduling is blocked. See the provided reason.</p></li>
     /// </ul>
     pub fn status(&self) -> &crate::types::QueueStatus {
         &self.status
@@ -255,11 +255,11 @@ impl GetQueueOutputBuilder {
     /// <p>The status of the queue.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–The queue is active.</p></li>
+    /// <p><code>ACTIVE</code> - The queue is active.</p></li>
     /// <li>
-    /// <p><code>SCHEDULING</code>–The queue is scheduling.</p></li>
+    /// <p><code>SCHEDULING</code> - The queue is scheduling.</p></li>
     /// <li>
-    /// <p><code>SCHEDULING_BLOCKED</code>–The queue scheduling is blocked. See the provided reason.</p></li>
+    /// <p><code>SCHEDULING_BLOCKED</code> - The queue scheduling is blocked. See the provided reason.</p></li>
     /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::QueueStatus) -> Self {
@@ -269,11 +269,11 @@ impl GetQueueOutputBuilder {
     /// <p>The status of the queue.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–The queue is active.</p></li>
+    /// <p><code>ACTIVE</code> - The queue is active.</p></li>
     /// <li>
-    /// <p><code>SCHEDULING</code>–The queue is scheduling.</p></li>
+    /// <p><code>SCHEDULING</code> - The queue is scheduling.</p></li>
     /// <li>
-    /// <p><code>SCHEDULING_BLOCKED</code>–The queue scheduling is blocked. See the provided reason.</p></li>
+    /// <p><code>SCHEDULING_BLOCKED</code> - The queue scheduling is blocked. See the provided reason.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::QueueStatus>) -> Self {
         self.status = input;
@@ -282,11 +282,11 @@ impl GetQueueOutputBuilder {
     /// <p>The status of the queue.</p>
     /// <ul>
     /// <li>
-    /// <p><code>ACTIVE</code>–The queue is active.</p></li>
+    /// <p><code>ACTIVE</code> - The queue is active.</p></li>
     /// <li>
-    /// <p><code>SCHEDULING</code>–The queue is scheduling.</p></li>
+    /// <p><code>SCHEDULING</code> - The queue is scheduling.</p></li>
     /// <li>
-    /// <p><code>SCHEDULING_BLOCKED</code>–The queue scheduling is blocked. See the provided reason.</p></li>
+    /// <p><code>SCHEDULING_BLOCKED</code> - The queue scheduling is blocked. See the provided reason.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::QueueStatus> {
         &self.status

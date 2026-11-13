@@ -82,6 +82,8 @@ pub struct CreateFunctionInput {
     pub capacity_provider_config: ::std::option::Option<crate::types::CapacityProviderConfig>,
     /// <p>Configuration settings for durable functions. Enables creating functions with durability that can remember their state and continue execution even after interruptions.</p>
     pub durable_config: ::std::option::Option<crate::types::DurableConfig>,
+    /// <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
+    pub runtime_config: ::std::option::Option<crate::types::FunctionRuntimeConfig>,
 }
 impl CreateFunctionInput {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -225,6 +227,10 @@ impl CreateFunctionInput {
     pub fn durable_config(&self) -> ::std::option::Option<&crate::types::DurableConfig> {
         self.durable_config.as_ref()
     }
+    /// <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
+    pub fn runtime_config(&self) -> ::std::option::Option<&crate::types::FunctionRuntimeConfig> {
+        self.runtime_config.as_ref()
+    }
 }
 impl CreateFunctionInput {
     /// Creates a new builder-style object to manufacture [`CreateFunctionInput`](crate::operation::create_function::CreateFunctionInput).
@@ -265,6 +271,7 @@ pub struct CreateFunctionInputBuilder {
     pub(crate) tenancy_config: ::std::option::Option<crate::types::TenancyConfig>,
     pub(crate) capacity_provider_config: ::std::option::Option<crate::types::CapacityProviderConfig>,
     pub(crate) durable_config: ::std::option::Option<crate::types::DurableConfig>,
+    pub(crate) runtime_config: ::std::option::Option<crate::types::FunctionRuntimeConfig>,
 }
 impl CreateFunctionInputBuilder {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -755,6 +762,20 @@ impl CreateFunctionInputBuilder {
     pub fn get_durable_config(&self) -> &::std::option::Option<crate::types::DurableConfig> {
         &self.durable_config
     }
+    /// <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
+    pub fn runtime_config(mut self, input: crate::types::FunctionRuntimeConfig) -> Self {
+        self.runtime_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
+    pub fn set_runtime_config(mut self, input: ::std::option::Option<crate::types::FunctionRuntimeConfig>) -> Self {
+        self.runtime_config = input;
+        self
+    }
+    /// <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
+    pub fn get_runtime_config(&self) -> &::std::option::Option<crate::types::FunctionRuntimeConfig> {
+        &self.runtime_config
+    }
     /// Consumes the builder and constructs a [`CreateFunctionInput`](crate::operation::create_function::CreateFunctionInput).
     pub fn build(
         self,
@@ -788,6 +809,7 @@ impl CreateFunctionInputBuilder {
             tenancy_config: self.tenancy_config,
             capacity_provider_config: self.capacity_provider_config,
             durable_config: self.durable_config,
+            runtime_config: self.runtime_config,
         })
     }
 }

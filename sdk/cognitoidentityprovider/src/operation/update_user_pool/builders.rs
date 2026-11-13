@@ -410,6 +410,26 @@ impl UpdateUserPoolFluentBuilder {
     pub fn get_user_pool_add_ons(&self) -> &::std::option::Option<crate::types::UserPoolAddOnsType> {
         self.inner.get_user_pool_add_ons()
     }
+    /// <p>The dynamic client registration configuration for the user pool. With dynamic client registration, applications can register their own app clients at runtime through the registration endpoint of your user pool domain. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    /// <p>If you omit this parameter, Amazon Cognito keeps the existing configuration. If you include it, Amazon Cognito replaces the existing configuration with the one that you provide. Members that you omit revert to their default values, and an omitted <code>EnableStatus</code> turns dynamic client registration on.</p>
+    /// <p>To change the feature plan of the user pool to Lite, you must also set <code>EnableStatus</code> to <code>Disabled</code>.</p>
+    pub fn dcr_configuration(mut self, input: crate::types::DcrConfigurationType) -> Self {
+        self.inner = self.inner.dcr_configuration(input);
+        self
+    }
+    /// <p>The dynamic client registration configuration for the user pool. With dynamic client registration, applications can register their own app clients at runtime through the registration endpoint of your user pool domain. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    /// <p>If you omit this parameter, Amazon Cognito keeps the existing configuration. If you include it, Amazon Cognito replaces the existing configuration with the one that you provide. Members that you omit revert to their default values, and an omitted <code>EnableStatus</code> turns dynamic client registration on.</p>
+    /// <p>To change the feature plan of the user pool to Lite, you must also set <code>EnableStatus</code> to <code>Disabled</code>.</p>
+    pub fn set_dcr_configuration(mut self, input: ::std::option::Option<crate::types::DcrConfigurationType>) -> Self {
+        self.inner = self.inner.set_dcr_configuration(input);
+        self
+    }
+    /// <p>The dynamic client registration configuration for the user pool. With dynamic client registration, applications can register their own app clients at runtime through the registration endpoint of your user pool domain. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    /// <p>If you omit this parameter, Amazon Cognito keeps the existing configuration. If you include it, Amazon Cognito replaces the existing configuration with the one that you provide. Members that you omit revert to their default values, and an omitted <code>EnableStatus</code> turns dynamic client registration on.</p>
+    /// <p>To change the feature plan of the user pool to Lite, you must also set <code>EnableStatus</code> to <code>Disabled</code>.</p>
+    pub fn get_dcr_configuration(&self) -> &::std::option::Option<crate::types::DcrConfigurationType> {
+        self.inner.get_dcr_configuration()
+    }
     /// <p>The available verified method a user can use to recover their password when they call <code>ForgotPassword</code>. You can use this setting to define a preferred method when a user has more than one method available. With this setting, SMS doesn't qualify for a valid password recovery mechanism if the user also has SMS multi-factor authentication (MFA) activated. In the absence of this setting, Amazon Cognito uses the legacy behavior to determine the recovery method where SMS is preferred through email.</p>
     pub fn account_recovery_setting(mut self, input: crate::types::AccountRecoverySettingType) -> Self {
         self.inner = self.inner.account_recovery_setting(input);

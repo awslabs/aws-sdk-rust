@@ -3,11 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableTrustAnchorInput {
-    /// <p>The unique identifier of the trust anchor.</p>
+    /// <p>The trust anchor to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The trust anchor ID.</p></li>
+    /// <li>
+    /// <p>The trust anchor ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the trust anchor.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a trust anchor in your account and Region.</p>
     pub trust_anchor_id: ::std::option::Option<::std::string::String>,
 }
 impl DisableTrustAnchorInput {
-    /// <p>The unique identifier of the trust anchor.</p>
+    /// <p>The trust anchor to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The trust anchor ID.</p></li>
+    /// <li>
+    /// <p>The trust anchor ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the trust anchor.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a trust anchor in your account and Region.</p>
     pub fn trust_anchor_id(&self) -> ::std::option::Option<&str> {
         self.trust_anchor_id.as_deref()
     }
@@ -26,18 +44,45 @@ pub struct DisableTrustAnchorInputBuilder {
     pub(crate) trust_anchor_id: ::std::option::Option<::std::string::String>,
 }
 impl DisableTrustAnchorInputBuilder {
-    /// <p>The unique identifier of the trust anchor.</p>
+    /// <p>The trust anchor to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The trust anchor ID.</p></li>
+    /// <li>
+    /// <p>The trust anchor ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the trust anchor.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a trust anchor in your account and Region.</p>
     /// This field is required.
     pub fn trust_anchor_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.trust_anchor_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of the trust anchor.</p>
+    /// <p>The trust anchor to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The trust anchor ID.</p></li>
+    /// <li>
+    /// <p>The trust anchor ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the trust anchor.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a trust anchor in your account and Region.</p>
     pub fn set_trust_anchor_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.trust_anchor_id = input;
         self
     }
-    /// <p>The unique identifier of the trust anchor.</p>
+    /// <p>The trust anchor to act on. You can specify one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>The trust anchor ID.</p></li>
+    /// <li>
+    /// <p>The trust anchor ARN.</p></li>
+    /// <li>
+    /// <p>The alias ARN of the trust anchor.</p></li>
+    /// </ul>
+    /// <p>An ARN must be for a trust anchor in your account and Region.</p>
     pub fn get_trust_anchor_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.trust_anchor_id
     }

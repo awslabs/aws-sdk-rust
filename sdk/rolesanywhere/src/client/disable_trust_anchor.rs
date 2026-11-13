@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisableTrustAnchor`](crate::operation::disable_trust_anchor::builders::DisableTrustAnchorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`trust_anchor_id(impl Into<String>)`](crate::operation::disable_trust_anchor::builders::DisableTrustAnchorFluentBuilder::trust_anchor_id) / [`set_trust_anchor_id(Option<String>)`](crate::operation::disable_trust_anchor::builders::DisableTrustAnchorFluentBuilder::set_trust_anchor_id):<br>required: **true**<br><p>The unique identifier of the trust anchor.</p><br>
+    ///   - [`trust_anchor_id(impl Into<String>)`](crate::operation::disable_trust_anchor::builders::DisableTrustAnchorFluentBuilder::trust_anchor_id) / [`set_trust_anchor_id(Option<String>)`](crate::operation::disable_trust_anchor::builders::DisableTrustAnchorFluentBuilder::set_trust_anchor_id):<br>required: **true**<br><p>The trust anchor to act on. You can specify one of the following:</p> <ul>  <li>   <p>The trust anchor ID.</p></li>  <li>   <p>The trust anchor ARN.</p></li>  <li>   <p>The alias ARN of the trust anchor.</p></li> </ul> <p>An ARN must be for a trust anchor in your account and Region.</p><br>
     /// - On success, responds with [`DisableTrustAnchorOutput`](crate::operation::disable_trust_anchor::DisableTrustAnchorOutput) with field(s):
     ///   - [`trust_anchor(Option<TrustAnchorDetail>)`](crate::operation::disable_trust_anchor::DisableTrustAnchorOutput::trust_anchor): <p>The state of the trust anchor after a read or write operation.</p>
     /// - On failure, responds with [`SdkError<DisableTrustAnchorError>`](crate::operation::disable_trust_anchor::DisableTrustAnchorError)

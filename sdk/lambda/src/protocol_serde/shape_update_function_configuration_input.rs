@@ -90,29 +90,35 @@ pub fn ser_update_function_configuration_input_input(
     if let Some(var_28) = &input.runtime {
         object.key("Runtime").string(var_28.as_str());
     }
-    if let Some(var_29) = &input.snap_start {
+    if let Some(var_29) = &input.runtime_config {
         #[allow(unused_mut)]
-        let mut object_30 = object.key("SnapStart").start_object();
-        crate::protocol_serde::shape_snap_start::ser_snap_start(&mut object_30, var_29)?;
+        let mut object_30 = object.key("RuntimeConfig").start_object();
+        crate::protocol_serde::shape_function_runtime_config::ser_function_runtime_config(&mut object_30, var_29)?;
         object_30.finish();
     }
-    if let Some(var_31) = &input.timeout {
+    if let Some(var_31) = &input.snap_start {
+        #[allow(unused_mut)]
+        let mut object_32 = object.key("SnapStart").start_object();
+        crate::protocol_serde::shape_snap_start::ser_snap_start(&mut object_32, var_31)?;
+        object_32.finish();
+    }
+    if let Some(var_33) = &input.timeout {
         object.key("Timeout").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_31).into()),
+            ::aws_smithy_types::Number::NegInt((*var_33).into()),
         );
     }
-    if let Some(var_32) = &input.tracing_config {
+    if let Some(var_34) = &input.tracing_config {
         #[allow(unused_mut)]
-        let mut object_33 = object.key("TracingConfig").start_object();
-        crate::protocol_serde::shape_tracing_config::ser_tracing_config(&mut object_33, var_32)?;
-        object_33.finish();
-    }
-    if let Some(var_34) = &input.vpc_config {
-        #[allow(unused_mut)]
-        let mut object_35 = object.key("VpcConfig").start_object();
-        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_35, var_34)?;
+        let mut object_35 = object.key("TracingConfig").start_object();
+        crate::protocol_serde::shape_tracing_config::ser_tracing_config(&mut object_35, var_34)?;
         object_35.finish();
+    }
+    if let Some(var_36) = &input.vpc_config {
+        #[allow(unused_mut)]
+        let mut object_37 = object.key("VpcConfig").start_object();
+        crate::protocol_serde::shape_vpc_config::ser_vpc_config(&mut object_37, var_36)?;
+        object_37.finish();
     }
     Ok(())
 }

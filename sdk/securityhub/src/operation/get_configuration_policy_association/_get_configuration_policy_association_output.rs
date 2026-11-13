@@ -13,7 +13,17 @@ pub struct GetConfigurationPolicyAssociationOutput {
     pub association_type: ::std::option::Option<crate::types::AssociationType>,
     /// <p>The date and time, in UTC and ISO 8601 format, that the configuration policy association was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The current status of the association between the specified target and the configuration.</p>
+    /// <p>The current status of the association between the specified target and the configuration. Possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PENDING</code> - The association is in progress.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code> - The association succeeded.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The association failed. For details, see <code>AssociationStatusMessage</code>.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> - Central configuration is disabled because the organization is managed by Security Hub CSPM policies in Organizations.</p></li>
+    /// </ul>
     pub association_status: ::std::option::Option<crate::types::ConfigurationPolicyAssociationStatus>,
     /// <p>The explanation for a <code>FAILED</code> value for <code>AssociationStatus</code>.</p>
     pub association_status_message: ::std::option::Option<::std::string::String>,
@@ -40,7 +50,17 @@ impl GetConfigurationPolicyAssociationOutput {
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
-    /// <p>The current status of the association between the specified target and the configuration.</p>
+    /// <p>The current status of the association between the specified target and the configuration. Possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PENDING</code> - The association is in progress.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code> - The association succeeded.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The association failed. For details, see <code>AssociationStatusMessage</code>.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> - Central configuration is disabled because the organization is managed by Security Hub CSPM policies in Organizations.</p></li>
+    /// </ul>
     pub fn association_status(&self) -> ::std::option::Option<&crate::types::ConfigurationPolicyAssociationStatus> {
         self.association_status.as_ref()
     }
@@ -145,17 +165,47 @@ impl GetConfigurationPolicyAssociationOutputBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
-    /// <p>The current status of the association between the specified target and the configuration.</p>
+    /// <p>The current status of the association between the specified target and the configuration. Possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PENDING</code> - The association is in progress.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code> - The association succeeded.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The association failed. For details, see <code>AssociationStatusMessage</code>.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> - Central configuration is disabled because the organization is managed by Security Hub CSPM policies in Organizations.</p></li>
+    /// </ul>
     pub fn association_status(mut self, input: crate::types::ConfigurationPolicyAssociationStatus) -> Self {
         self.association_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the association between the specified target and the configuration.</p>
+    /// <p>The current status of the association between the specified target and the configuration. Possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PENDING</code> - The association is in progress.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code> - The association succeeded.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The association failed. For details, see <code>AssociationStatusMessage</code>.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> - Central configuration is disabled because the organization is managed by Security Hub CSPM policies in Organizations.</p></li>
+    /// </ul>
     pub fn set_association_status(mut self, input: ::std::option::Option<crate::types::ConfigurationPolicyAssociationStatus>) -> Self {
         self.association_status = input;
         self
     }
-    /// <p>The current status of the association between the specified target and the configuration.</p>
+    /// <p>The current status of the association between the specified target and the configuration. Possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PENDING</code> - The association is in progress.</p></li>
+    /// <li>
+    /// <p><code>SUCCESS</code> - The association succeeded.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - The association failed. For details, see <code>AssociationStatusMessage</code>.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code> - Central configuration is disabled because the organization is managed by Security Hub CSPM policies in Organizations.</p></li>
+    /// </ul>
     pub fn get_association_status(&self) -> &::std::option::Option<crate::types::ConfigurationPolicyAssociationStatus> {
         &self.association_status
     }

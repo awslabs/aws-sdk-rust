@@ -200,6 +200,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateProfile
                 captured.insert("sessionPolicy", value);
             }
         }
+        if requested.should_capture("aliasName") {
+            if let ::std::option::Option::Some(value) = input.alias_name.as_deref() {
+                captured.insert("aliasName", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())

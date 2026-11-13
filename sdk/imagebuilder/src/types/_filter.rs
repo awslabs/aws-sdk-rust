@@ -5,6 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Filter {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
+    /// <p>The <code>name</code> filter matches the name that you gave the resource when you created it, exactly as you entered it. It doesn't match the name segment of the resource ARN, which Image Builder converts to lowercase with hyphens in place of spaces and underscores. For example, a resource named <code>My Image</code> has an ARN that contains <code>my-image</code> – filter on <code>My Image</code> to find it.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The filter values. Filter values are case-sensitive.</p>
     /// <p>The <code>name</code> filter can use a wildcard: <code>web*</code> matches names that begin with <code>web</code>, and <code>*web*</code> matches names that contain <code>web</code>. The wildcard isn't supported in other positions or in other filters.</p>
@@ -12,6 +13,7 @@ pub struct Filter {
 }
 impl Filter {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
+    /// <p>The <code>name</code> filter matches the name that you gave the resource when you created it, exactly as you entered it. It doesn't match the name segment of the resource ARN, which Image Builder converts to lowercase with hyphens in place of spaces and underscores. For example, a resource named <code>My Image</code> has an ARN that contains <code>my-image</code> – filter on <code>My Image</code> to find it.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
@@ -39,16 +41,19 @@ pub struct FilterBuilder {
 }
 impl FilterBuilder {
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
+    /// <p>The <code>name</code> filter matches the name that you gave the resource when you created it, exactly as you entered it. It doesn't match the name segment of the resource ARN, which Image Builder converts to lowercase with hyphens in place of spaces and underscores. For example, a resource named <code>My Image</code> has an ARN that contains <code>my-image</code> – filter on <code>My Image</code> to find it.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
+    /// <p>The <code>name</code> filter matches the name that you gave the resource when you created it, exactly as you entered it. It doesn't match the name segment of the resource ARN, which Image Builder converts to lowercase with hyphens in place of spaces and underscores. For example, a resource named <code>My Image</code> has an ARN that contains <code>my-image</code> – filter on <code>My Image</code> to find it.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The name of the filter. Filter names are case-sensitive.</p>
+    /// <p>The <code>name</code> filter matches the name that you gave the resource when you created it, exactly as you entered it. It doesn't match the name segment of the resource ARN, which Image Builder converts to lowercase with hyphens in place of spaces and underscores. For example, a resource named <code>My Image</code> has an ARN that contains <code>my-image</code> – filter on <code>My Image</code> to find it.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

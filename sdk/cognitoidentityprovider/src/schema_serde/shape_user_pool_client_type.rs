@@ -349,6 +349,16 @@ static USERPOOLCLIENTTYPE_MEMBER_REFRESH_TOKEN_ROTATION: ::aws_smithy_schema::Sc
     "RefreshTokenRotation",
     25,
 );
+static USERPOOLCLIENTTYPE_MEMBER_CLIENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserPoolClientType$ClientType",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserPoolClientType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientType",
+    26,
+);
 static USERPOOLCLIENTTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.cognitoidentityprovider#UserPoolClientType",
@@ -383,6 +393,7 @@ static USERPOOLCLIENTTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_s
         &USERPOOLCLIENTTYPE_MEMBER_ENABLE_PROPAGATE_ADDITIONAL_USER_CONTEXT_DATA,
         &USERPOOLCLIENTTYPE_MEMBER_AUTH_SESSION_VALIDITY,
         &USERPOOLCLIENTTYPE_MEMBER_REFRESH_TOKEN_ROTATION,
+        &USERPOOLCLIENTTYPE_MEMBER_CLIENT_TYPE,
     ],
 );
 impl crate::types::UserPoolClientType {
@@ -541,6 +552,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::UserPoolCl
         }
         if let Some(ref val) = self.refresh_token_rotation {
             ser.write_struct(&USERPOOLCLIENTTYPE_MEMBER_REFRESH_TOKEN_ROTATION, val)?;
+        }
+        if let Some(ref val) = self.client_type {
+            ser.write_string(&USERPOOLCLIENTTYPE_MEMBER_CLIENT_TYPE, val.as_str())?;
         }
         Ok(())
     }
@@ -754,6 +768,13 @@ impl crate::types::builders::UserPoolClientTypeBuilder {
                         deser.read_null()?;
                     } else {
                         self.refresh_token_rotation = Some(crate::types::RefreshTokenRotationType::deserialize(deser)?);
+                    }
+                }
+                Some(26) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.client_type = Some(crate::types::ClientTypeType::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}

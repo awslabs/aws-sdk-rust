@@ -12,6 +12,7 @@
 /// ```text
 /// # let clusterpatchingstrategy = unimplemented!();
 /// match clusterpatchingstrategy {
+///     ClusterPatchingStrategy::DrainFirst => { /* ... */ },
 ///     ClusterPatchingStrategy::WhenAllIdle => { /* ... */ },
 ///     ClusterPatchingStrategy::WhenIdle => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -36,12 +37,14 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// <p>The strategy for applying automatic patches to instances.</p> <ul> <li> <p> <code>WhenIdle</code>: Cordons all instances and patches each instance as it becomes idle (no running jobs). Each instance is uncordoned immediately after patching and becomes available for new jobs. If instances do not become idle, they remain on the previous AMI version. You can then use UpdateClusterSoftware with the desired ImageReleaseVersion to manually update the remaining instances.</p> </li> <li> <p> <code>WhenAllIdle</code>: Cordons all instances and waits for all to become idle before patching. All instances are uncordoned after patching completes. If not all instances become idle, no patching occurs and all instances remain on the previous AMI version.</p> </li> </ul>
+/// <p>The strategy for applying automatic patches to instances.</p> <ul> <li> <p> <code>WhenIdle</code>: Cordons all instances and patches each instance as it becomes idle (no running jobs). Each instance is uncordoned immediately after patching and becomes available for new jobs. If instances do not become idle, they remain on the previous AMI version. You can then use UpdateClusterSoftware with the desired ImageReleaseVersion to manually update the remaining instances.</p> </li> <li> <p> <code>WhenAllIdle</code>: Cordons all instances and waits for all to become idle before patching. All instances are uncordoned after patching completes. If not all instances become idle, no patching occurs and all instances remain on the previous AMI version.</p> </li> <li> <p> <code>DrainFirst</code>: Designed for workloads that never become idle, such as inference. Cordons instances, evicts the running pods, and then patches each instance in batches. Each instance is uncordoned after patching. Use <code>DrainPolicy</code> to control how long to wait for pods to drain and what happens if the drain times out. Requires <code>MaximumBatchSize</code> in <code>DeploymentConfig</code>. Available only for clusters that use Amazon EKS as the orchestrator.</p> </li> </ul>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ClusterPatchingStrategy {
+    #[allow(missing_docs)] // documentation missing in model
+    DrainFirst,
     #[allow(missing_docs)] // documentation missing in model
     WhenAllIdle,
     #[allow(missing_docs)] // documentation missing in model
@@ -53,6 +56,7 @@ pub enum ClusterPatchingStrategy {
 impl ::std::convert::From<&str> for ClusterPatchingStrategy {
     fn from(s: &str) -> Self {
         match s {
+            "DrainFirst" => ClusterPatchingStrategy::DrainFirst,
             "WhenAllIdle" => ClusterPatchingStrategy::WhenAllIdle,
             "WhenIdle" => ClusterPatchingStrategy::WhenIdle,
             other => ClusterPatchingStrategy::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl ClusterPatchingStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ClusterPatchingStrategy::DrainFirst => "DrainFirst",
             ClusterPatchingStrategy::WhenAllIdle => "WhenAllIdle",
             ClusterPatchingStrategy::WhenIdle => "WhenIdle",
             ClusterPatchingStrategy::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl ClusterPatchingStrategy {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["WhenAllIdle", "WhenIdle"]
+        &["DrainFirst", "WhenAllIdle", "WhenIdle"]
     }
 }
 impl ::std::convert::AsRef<str> for ClusterPatchingStrategy {
@@ -100,6 +105,7 @@ impl ClusterPatchingStrategy {
 impl ::std::fmt::Display for ClusterPatchingStrategy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ClusterPatchingStrategy::DrainFirst => write!(f, "DrainFirst"),
             ClusterPatchingStrategy::WhenAllIdle => write!(f, "WhenAllIdle"),
             ClusterPatchingStrategy::WhenIdle => write!(f, "WhenIdle"),
             ClusterPatchingStrategy::Unknown(value) => write!(f, "{value}"),

@@ -135,6 +135,10 @@ pub(crate) mod shape_associate_nat_gateway_address;
 
 pub(crate) mod shape_associate_nat_gateway_address_input;
 
+pub(crate) mod shape_associate_networking_flex_cost_allocation_policy;
+
+pub(crate) mod shape_associate_networking_flex_cost_allocation_policy_input;
+
 pub(crate) mod shape_associate_route_server;
 
 pub(crate) mod shape_associate_route_server_input;
@@ -510,6 +514,10 @@ pub(crate) mod shape_create_network_interface_input;
 pub(crate) mod shape_create_network_interface_permission;
 
 pub(crate) mod shape_create_network_interface_permission_input;
+
+pub(crate) mod shape_create_networking_flex_cost_allocation_policy;
+
+pub(crate) mod shape_create_networking_flex_cost_allocation_policy_input;
 
 pub(crate) mod shape_create_placement_group;
 
@@ -918,6 +926,10 @@ pub(crate) mod shape_delete_network_interface_input;
 pub(crate) mod shape_delete_network_interface_permission;
 
 pub(crate) mod shape_delete_network_interface_permission_input;
+
+pub(crate) mod shape_delete_networking_flex_cost_allocation_policies;
+
+pub(crate) mod shape_delete_networking_flex_cost_allocation_policies_input;
 
 pub(crate) mod shape_delete_placement_group;
 
@@ -1607,6 +1619,14 @@ pub(crate) mod shape_describe_network_interfaces;
 
 pub(crate) mod shape_describe_network_interfaces_input;
 
+pub(crate) mod shape_describe_networking_flex_cost_allocation_policies;
+
+pub(crate) mod shape_describe_networking_flex_cost_allocation_policies_input;
+
+pub(crate) mod shape_describe_networking_flex_cost_allocation_policy_associations;
+
+pub(crate) mod shape_describe_networking_flex_cost_allocation_policy_associations_input;
+
 pub(crate) mod shape_describe_outpost_lags;
 
 pub(crate) mod shape_describe_outpost_lags_input;
@@ -2087,6 +2107,10 @@ pub(crate) mod shape_disassociate_nat_gateway_address;
 
 pub(crate) mod shape_disassociate_nat_gateway_address_input;
 
+pub(crate) mod shape_disassociate_networking_flex_cost_allocation_policy;
+
+pub(crate) mod shape_disassociate_networking_flex_cost_allocation_policy_input;
+
 pub(crate) mod shape_disassociate_route_server;
 
 pub(crate) mod shape_disassociate_route_server_input;
@@ -2463,6 +2487,10 @@ pub(crate) mod shape_get_network_insights_access_scope_content;
 
 pub(crate) mod shape_get_network_insights_access_scope_content_input;
 
+pub(crate) mod shape_get_networking_flex_cost_allocation_policy_versions;
+
+pub(crate) mod shape_get_networking_flex_cost_allocation_policy_versions_input;
+
 pub(crate) mod shape_get_password_data;
 
 pub(crate) mod shape_get_password_data_input;
@@ -2782,6 +2810,10 @@ pub(crate) mod shape_modify_metric_category_input;
 pub(crate) mod shape_modify_network_interface_attribute;
 
 pub(crate) mod shape_modify_network_interface_attribute_input;
+
+pub(crate) mod shape_modify_networking_flex_cost_allocation_policy;
+
+pub(crate) mod shape_modify_networking_flex_cost_allocation_policy_input;
 
 pub(crate) mod shape_modify_private_dns_name_options;
 
@@ -3389,6 +3421,8 @@ pub(crate) mod shape_filter;
 
 pub(crate) mod shape_fleet_launch_template_config_request;
 
+pub(crate) mod shape_flex_cost_allocation_network_resource_scope;
+
 pub(crate) mod shape_health_check_path_request_object;
 
 pub(crate) mod shape_hibernation_options_request;
@@ -3418,6 +3452,8 @@ pub(crate) mod shape_instance_event_window_association_request;
 pub(crate) mod shape_instance_event_window_disassociation_request;
 
 pub(crate) mod shape_instance_event_window_time_range_request;
+
+pub(crate) mod shape_instance_flex_cost_allocation_policy_document;
 
 pub(crate) mod shape_instance_ipv6_address;
 
@@ -3489,6 +3525,8 @@ pub(crate) mod shape_modify_verified_access_trust_provider_oidc_options;
 
 pub(crate) mod shape_modify_vpn_tunnel_options_specification;
 
+pub(crate) mod shape_nat_flex_cost_allocation_policy_document;
+
 pub(crate) mod shape_network_interface_attachment_changes;
 
 pub(crate) mod shape_new_dhcp_configuration;
@@ -3498,6 +3536,8 @@ pub(crate) mod shape_on_demand_options_request;
 pub(crate) mod shape_operator_request;
 
 pub(crate) mod shape_path_request_filter;
+
+pub(crate) mod shape_pcx_flex_cost_allocation_policy_document;
 
 pub(crate) mod shape_peering_connection_options_request;
 
@@ -3870,6 +3910,20 @@ pub(crate) mod shape_fleet_launch_template_specification_request;
 pub(crate) mod shape_fleet_set;
 
 pub(crate) mod shape_fleet_spot_maintenance_strategies_request;
+
+pub(crate) mod shape_flex_cost_allocation_cidr_range_specifications;
+
+pub(crate) mod shape_flex_cost_allocation_operation_failure_list;
+
+pub(crate) mod shape_flex_cost_allocation_policy_association_id_list;
+
+pub(crate) mod shape_flex_cost_allocation_policy_association_set;
+
+pub(crate) mod shape_flex_cost_allocation_policy_id_list;
+
+pub(crate) mod shape_flex_cost_allocation_policy_set;
+
+pub(crate) mod shape_flex_cost_allocation_policy_version_set;
 
 pub(crate) mod shape_flow_log_set;
 
@@ -4876,6 +4930,16 @@ pub(crate) mod shape_fleet_iam_instance_profile_specification_request;
 pub(crate) mod shape_fleet_instance_metadata_options_request;
 
 pub(crate) mod shape_fleet_spot_capacity_rebalance_request;
+
+pub(crate) mod shape_flex_cost_allocation_cidr_mapping;
+
+pub(crate) mod shape_flex_cost_allocation_operation_failure;
+
+pub(crate) mod shape_flex_cost_allocation_policy_association_description;
+
+pub(crate) mod shape_flex_cost_allocation_policy_description;
+
+pub(crate) mod shape_flex_cost_allocation_policy_version;
 
 pub(crate) mod shape_flow_log;
 
@@ -5963,6 +6027,10 @@ pub(crate) mod shape_fleet_launch_template_overrides;
 
 pub(crate) mod shape_fleet_spot_maintenance_strategies;
 
+pub(crate) mod shape_flex_cost_allocation_cost_dimension_list;
+
+pub(crate) mod shape_flex_cost_allocation_reporting_granularity_list;
+
 pub(crate) mod shape_fpga_device_info_list;
 
 pub(crate) mod shape_gpu_device_info_list;
@@ -6144,6 +6212,8 @@ pub(crate) mod shape_federated_authentication;
 pub(crate) mod shape_fleet_launch_template_overrides_list;
 
 pub(crate) mod shape_fleet_spot_capacity_rebalance;
+
+pub(crate) mod shape_flex_cost_allocation_cidr_mapping_list;
 
 pub(crate) mod shape_fpga_device_info;
 

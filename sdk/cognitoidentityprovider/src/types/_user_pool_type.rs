@@ -94,6 +94,8 @@ pub struct UserPoolType {
     /// <p>Contains settings for activation of threat protection, including the operating mode and additional authentication types. To log user security information but take no action, set to <code>AUDIT</code>. To configure automatic security responses to potentially unwanted traffic to your user pool, set to <code>ENFORCED</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-advanced-security.html">Adding advanced security to a user pool</a>. To activate this setting, your user pool must be on the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html"> Plus tier</a>.</p>
     pub user_pool_add_ons: ::std::option::Option<crate::types::UserPoolAddOnsType>,
+    /// <p>The dynamic client registration configuration for the user pool. With dynamic client registration, applications can register their own app clients at runtime through the registration endpoint of your user pool domain. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    pub dcr_configuration: ::std::option::Option<crate::types::DcrConfigurationType>,
     /// <p>Case sensitivity of the username input for the selected sign-in option. When case sensitivity is set to <code>False</code> (case insensitive), users can sign in with any combination of capital and lowercase letters. For example, <code>username</code>, <code>USERNAME</code>, or <code>UserName</code>, or for email, <code>email@example.com</code> or <code>EMaiL@eXamplE.Com</code>. For most use cases, set case sensitivity to <code>False</code> (case insensitive) as a best practice. When usernames and email addresses are case insensitive, Amazon Cognito treats any variation in case as the same user, and prevents a case variation from being assigned to the same attribute for a different user.</p>
     pub username_configuration: ::std::option::Option<crate::types::UsernameConfigurationType>,
     /// <p>The Amazon Resource Name (ARN) of the user pool.</p>
@@ -269,6 +271,10 @@ impl UserPoolType {
     pub fn user_pool_add_ons(&self) -> ::std::option::Option<&crate::types::UserPoolAddOnsType> {
         self.user_pool_add_ons.as_ref()
     }
+    /// <p>The dynamic client registration configuration for the user pool. With dynamic client registration, applications can register their own app clients at runtime through the registration endpoint of your user pool domain. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    pub fn dcr_configuration(&self) -> ::std::option::Option<&crate::types::DcrConfigurationType> {
+        self.dcr_configuration.as_ref()
+    }
     /// <p>Case sensitivity of the username input for the selected sign-in option. When case sensitivity is set to <code>False</code> (case insensitive), users can sign in with any combination of capital and lowercase letters. For example, <code>username</code>, <code>USERNAME</code>, or <code>UserName</code>, or for email, <code>email@example.com</code> or <code>EMaiL@eXamplE.Com</code>. For most use cases, set case sensitivity to <code>False</code> (case insensitive) as a best practice. When usernames and email addresses are case insensitive, Amazon Cognito treats any variation in case as the same user, and prevents a case variation from being assigned to the same attribute for a different user.</p>
     pub fn username_configuration(&self) -> ::std::option::Option<&crate::types::UsernameConfigurationType> {
         self.username_configuration.as_ref()
@@ -340,6 +346,7 @@ pub struct UserPoolTypeBuilder {
     pub(crate) custom_domain: ::std::option::Option<::std::string::String>,
     pub(crate) admin_create_user_config: ::std::option::Option<crate::types::AdminCreateUserConfigType>,
     pub(crate) user_pool_add_ons: ::std::option::Option<crate::types::UserPoolAddOnsType>,
+    pub(crate) dcr_configuration: ::std::option::Option<crate::types::DcrConfigurationType>,
     pub(crate) username_configuration: ::std::option::Option<crate::types::UsernameConfigurationType>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) account_recovery_setting: ::std::option::Option<crate::types::AccountRecoverySettingType>,
@@ -896,6 +903,20 @@ impl UserPoolTypeBuilder {
     pub fn get_user_pool_add_ons(&self) -> &::std::option::Option<crate::types::UserPoolAddOnsType> {
         &self.user_pool_add_ons
     }
+    /// <p>The dynamic client registration configuration for the user pool. With dynamic client registration, applications can register their own app clients at runtime through the registration endpoint of your user pool domain. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    pub fn dcr_configuration(mut self, input: crate::types::DcrConfigurationType) -> Self {
+        self.dcr_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The dynamic client registration configuration for the user pool. With dynamic client registration, applications can register their own app clients at runtime through the registration endpoint of your user pool domain. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    pub fn set_dcr_configuration(mut self, input: ::std::option::Option<crate::types::DcrConfigurationType>) -> Self {
+        self.dcr_configuration = input;
+        self
+    }
+    /// <p>The dynamic client registration configuration for the user pool. With dynamic client registration, applications can register their own app clients at runtime through the registration endpoint of your user pool domain. To activate this setting, your user pool must be in the <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html"> Essentials tier</a> or higher.</p>
+    pub fn get_dcr_configuration(&self) -> &::std::option::Option<crate::types::DcrConfigurationType> {
+        &self.dcr_configuration
+    }
     /// <p>Case sensitivity of the username input for the selected sign-in option. When case sensitivity is set to <code>False</code> (case insensitive), users can sign in with any combination of capital and lowercase letters. For example, <code>username</code>, <code>USERNAME</code>, or <code>UserName</code>, or for email, <code>email@example.com</code> or <code>EMaiL@eXamplE.Com</code>. For most use cases, set case sensitivity to <code>False</code> (case insensitive) as a best practice. When usernames and email addresses are case insensitive, Amazon Cognito treats any variation in case as the same user, and prevents a case variation from being assigned to the same attribute for a different user.</p>
     pub fn username_configuration(mut self, input: crate::types::UsernameConfigurationType) -> Self {
         self.username_configuration = ::std::option::Option::Some(input);
@@ -1041,6 +1062,7 @@ impl UserPoolTypeBuilder {
             custom_domain: self.custom_domain,
             admin_create_user_config: self.admin_create_user_config,
             user_pool_add_ons: self.user_pool_add_ons,
+            dcr_configuration: self.dcr_configuration,
             username_configuration: self.username_configuration,
             arn: self.arn,
             account_recovery_setting: self.account_recovery_setting,

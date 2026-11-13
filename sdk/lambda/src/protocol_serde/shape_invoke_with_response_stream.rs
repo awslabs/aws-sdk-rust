@@ -547,6 +547,46 @@ pub fn de_invoke_with_response_stream_http_error(
             }
             tmp
         }),
+        "RuntimeAliasDeletedException" => {
+            crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::RuntimeAliasDeletedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::RuntimeAliasDeletedExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_runtime_alias_deleted_exception::de_runtime_alias_deleted_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "RuntimeVersionDeletedException" => {
+            crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::RuntimeVersionDeletedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::RuntimeVersionDeletedExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_runtime_version_deleted_exception::de_runtime_version_deleted_exception_json_err(
+                        _response_body,
+                        output,
+                    )
+                    .map_err(crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "S3FilesMountConnectivityException" => {
             crate::operation::invoke_with_response_stream::InvokeWithResponseStreamError::S3FilesMountConnectivityException({
                 #[allow(unused_mut)]

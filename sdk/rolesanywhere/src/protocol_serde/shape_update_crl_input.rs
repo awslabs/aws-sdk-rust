@@ -3,11 +3,14 @@ pub fn ser_update_crl_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_crl::UpdateCrlInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.crl_data {
-        object.key("crlData").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
+    if let Some(var_1) = &input.alias_name {
+        object.key("aliasName").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    if let Some(var_2) = &input.crl_data {
+        object.key("crlData").string_unchecked(&::aws_smithy_types::base64::encode(var_2));
+    }
+    if let Some(var_3) = &input.name {
+        object.key("name").string(var_3.as_str());
     }
     Ok(())
 }

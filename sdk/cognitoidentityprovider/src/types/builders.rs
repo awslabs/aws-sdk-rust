@@ -55,6 +55,8 @@ pub use crate::types::_admin_create_user_config_type::AdminCreateUserConfigTypeB
 
 pub use crate::types::_user_pool_add_ons_type::UserPoolAddOnsTypeBuilder;
 
+pub use crate::types::_dcr_configuration_type::DcrConfigurationTypeBuilder;
+
 pub use crate::types::_username_configuration_type::UsernameConfigurationTypeBuilder;
 
 pub use crate::types::_account_recovery_setting_type::AccountRecoverySettingTypeBuilder;

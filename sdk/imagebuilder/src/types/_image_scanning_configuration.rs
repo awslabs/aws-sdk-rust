@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImageScanningConfiguration {
     /// <p>Specifies whether Amazon Inspector scans for vulnerabilities when you create a new image. You must also enable image tests. For AMI output, <code>imageScanningTypes</code> sets whether Amazon Inspector scans the test instance or the output AMI. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository from your <code>ecrConfiguration</code> settings.</p>
-    /// <p>To use container image scans, you must activate Amazon Inspector for Amazon ECR scanning in your account. The Image Builder <code>ListImageScanFindings</code> operation returns the findings of these scans.</p>
+    /// <p>To use container image scans, you must activate Amazon Inspector for Amazon ECR scanning in the account and Amazon Web Services Region where the build runs. Amazon Inspector activation is Regional. The Image Builder <code>ListImageScanFindings</code> operation returns the findings of these scans.</p>
     pub image_scanning_enabled: ::std::option::Option<bool>,
     /// <p>Contains Amazon ECR settings for vulnerability scans.</p>
     pub ecr_configuration: ::std::option::Option<crate::types::EcrConfiguration>,
     /// <p>The type of vulnerability scan that Image Builder runs for AMI output when <code>imageScanningEnabled</code> is <code>true</code>. Specify a single value. If you omit <code>imageScanningTypes</code>, Image Builder uses <code>TEST_INSTANCE_CVE</code>. The scan types work as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>With <code>TEST_INSTANCE_CVE</code>, Amazon Inspector scans the test instance during image tests. To use this scan, you must activate Amazon Inspector for Amazon EC2 scanning in your account. The Image Builder <code>ListImageScanFindings</code> operation returns the findings.</p></li>
+    /// <p>With <code>TEST_INSTANCE_CVE</code>, Amazon Inspector scans the test instance during image tests. To use this scan, you must activate Amazon Inspector for Amazon EC2 scanning in the account and Amazon Web Services Region where the build runs. The Image Builder <code>ListImageScanFindings</code> operation returns the findings.</p></li>
     /// <li>
     /// <p>With <code>ON_DEMAND_AMI_CVE</code>, Amazon Inspector starts an on-demand scan of the output AMI during image tests. To use this scan, you must build from an image recipe, but you do not need to activate Amazon Inspector in your account. The Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageFindings.html">GetImageFindings</a> operation returns the findings.</p></li>
     /// </ul>
@@ -23,7 +23,7 @@ pub struct ImageScanningConfiguration {
 }
 impl ImageScanningConfiguration {
     /// <p>Specifies whether Amazon Inspector scans for vulnerabilities when you create a new image. You must also enable image tests. For AMI output, <code>imageScanningTypes</code> sets whether Amazon Inspector scans the test instance or the output AMI. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository from your <code>ecrConfiguration</code> settings.</p>
-    /// <p>To use container image scans, you must activate Amazon Inspector for Amazon ECR scanning in your account. The Image Builder <code>ListImageScanFindings</code> operation returns the findings of these scans.</p>
+    /// <p>To use container image scans, you must activate Amazon Inspector for Amazon ECR scanning in the account and Amazon Web Services Region where the build runs. Amazon Inspector activation is Regional. The Image Builder <code>ListImageScanFindings</code> operation returns the findings of these scans.</p>
     pub fn image_scanning_enabled(&self) -> ::std::option::Option<bool> {
         self.image_scanning_enabled
     }
@@ -34,7 +34,7 @@ impl ImageScanningConfiguration {
     /// <p>The type of vulnerability scan that Image Builder runs for AMI output when <code>imageScanningEnabled</code> is <code>true</code>. Specify a single value. If you omit <code>imageScanningTypes</code>, Image Builder uses <code>TEST_INSTANCE_CVE</code>. The scan types work as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>With <code>TEST_INSTANCE_CVE</code>, Amazon Inspector scans the test instance during image tests. To use this scan, you must activate Amazon Inspector for Amazon EC2 scanning in your account. The Image Builder <code>ListImageScanFindings</code> operation returns the findings.</p></li>
+    /// <p>With <code>TEST_INSTANCE_CVE</code>, Amazon Inspector scans the test instance during image tests. To use this scan, you must activate Amazon Inspector for Amazon EC2 scanning in the account and Amazon Web Services Region where the build runs. The Image Builder <code>ListImageScanFindings</code> operation returns the findings.</p></li>
     /// <li>
     /// <p>With <code>ON_DEMAND_AMI_CVE</code>, Amazon Inspector starts an on-demand scan of the output AMI during image tests. To use this scan, you must build from an image recipe, but you do not need to activate Amazon Inspector in your account. The Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageFindings.html">GetImageFindings</a> operation returns the findings.</p></li>
     /// </ul>
@@ -67,19 +67,19 @@ pub struct ImageScanningConfigurationBuilder {
 }
 impl ImageScanningConfigurationBuilder {
     /// <p>Specifies whether Amazon Inspector scans for vulnerabilities when you create a new image. You must also enable image tests. For AMI output, <code>imageScanningTypes</code> sets whether Amazon Inspector scans the test instance or the output AMI. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository from your <code>ecrConfiguration</code> settings.</p>
-    /// <p>To use container image scans, you must activate Amazon Inspector for Amazon ECR scanning in your account. The Image Builder <code>ListImageScanFindings</code> operation returns the findings of these scans.</p>
+    /// <p>To use container image scans, you must activate Amazon Inspector for Amazon ECR scanning in the account and Amazon Web Services Region where the build runs. Amazon Inspector activation is Regional. The Image Builder <code>ListImageScanFindings</code> operation returns the findings of these scans.</p>
     pub fn image_scanning_enabled(mut self, input: bool) -> Self {
         self.image_scanning_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether Amazon Inspector scans for vulnerabilities when you create a new image. You must also enable image tests. For AMI output, <code>imageScanningTypes</code> sets whether Amazon Inspector scans the test instance or the output AMI. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository from your <code>ecrConfiguration</code> settings.</p>
-    /// <p>To use container image scans, you must activate Amazon Inspector for Amazon ECR scanning in your account. The Image Builder <code>ListImageScanFindings</code> operation returns the findings of these scans.</p>
+    /// <p>To use container image scans, you must activate Amazon Inspector for Amazon ECR scanning in the account and Amazon Web Services Region where the build runs. Amazon Inspector activation is Regional. The Image Builder <code>ListImageScanFindings</code> operation returns the findings of these scans.</p>
     pub fn set_image_scanning_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.image_scanning_enabled = input;
         self
     }
     /// <p>Specifies whether Amazon Inspector scans for vulnerabilities when you create a new image. You must also enable image tests. For AMI output, <code>imageScanningTypes</code> sets whether Amazon Inspector scans the test instance or the output AMI. For container output, Amazon Inspector scans the container image that Image Builder pushes to the Amazon ECR repository from your <code>ecrConfiguration</code> settings.</p>
-    /// <p>To use container image scans, you must activate Amazon Inspector for Amazon ECR scanning in your account. The Image Builder <code>ListImageScanFindings</code> operation returns the findings of these scans.</p>
+    /// <p>To use container image scans, you must activate Amazon Inspector for Amazon ECR scanning in the account and Amazon Web Services Region where the build runs. Amazon Inspector activation is Regional. The Image Builder <code>ListImageScanFindings</code> operation returns the findings of these scans.</p>
     pub fn get_image_scanning_enabled(&self) -> &::std::option::Option<bool> {
         &self.image_scanning_enabled
     }
@@ -104,7 +104,7 @@ impl ImageScanningConfigurationBuilder {
     /// <p>The type of vulnerability scan that Image Builder runs for AMI output when <code>imageScanningEnabled</code> is <code>true</code>. Specify a single value. If you omit <code>imageScanningTypes</code>, Image Builder uses <code>TEST_INSTANCE_CVE</code>. The scan types work as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>With <code>TEST_INSTANCE_CVE</code>, Amazon Inspector scans the test instance during image tests. To use this scan, you must activate Amazon Inspector for Amazon EC2 scanning in your account. The Image Builder <code>ListImageScanFindings</code> operation returns the findings.</p></li>
+    /// <p>With <code>TEST_INSTANCE_CVE</code>, Amazon Inspector scans the test instance during image tests. To use this scan, you must activate Amazon Inspector for Amazon EC2 scanning in the account and Amazon Web Services Region where the build runs. The Image Builder <code>ListImageScanFindings</code> operation returns the findings.</p></li>
     /// <li>
     /// <p>With <code>ON_DEMAND_AMI_CVE</code>, Amazon Inspector starts an on-demand scan of the output AMI during image tests. To use this scan, you must build from an image recipe, but you do not need to activate Amazon Inspector in your account. The Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageFindings.html">GetImageFindings</a> operation returns the findings.</p></li>
     /// </ul>
@@ -117,7 +117,7 @@ impl ImageScanningConfigurationBuilder {
     /// <p>The type of vulnerability scan that Image Builder runs for AMI output when <code>imageScanningEnabled</code> is <code>true</code>. Specify a single value. If you omit <code>imageScanningTypes</code>, Image Builder uses <code>TEST_INSTANCE_CVE</code>. The scan types work as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>With <code>TEST_INSTANCE_CVE</code>, Amazon Inspector scans the test instance during image tests. To use this scan, you must activate Amazon Inspector for Amazon EC2 scanning in your account. The Image Builder <code>ListImageScanFindings</code> operation returns the findings.</p></li>
+    /// <p>With <code>TEST_INSTANCE_CVE</code>, Amazon Inspector scans the test instance during image tests. To use this scan, you must activate Amazon Inspector for Amazon EC2 scanning in the account and Amazon Web Services Region where the build runs. The Image Builder <code>ListImageScanFindings</code> operation returns the findings.</p></li>
     /// <li>
     /// <p>With <code>ON_DEMAND_AMI_CVE</code>, Amazon Inspector starts an on-demand scan of the output AMI during image tests. To use this scan, you must build from an image recipe, but you do not need to activate Amazon Inspector in your account. The Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageFindings.html">GetImageFindings</a> operation returns the findings.</p></li>
     /// </ul>
@@ -128,7 +128,7 @@ impl ImageScanningConfigurationBuilder {
     /// <p>The type of vulnerability scan that Image Builder runs for AMI output when <code>imageScanningEnabled</code> is <code>true</code>. Specify a single value. If you omit <code>imageScanningTypes</code>, Image Builder uses <code>TEST_INSTANCE_CVE</code>. The scan types work as follows:</p>
     /// <ul>
     /// <li>
-    /// <p>With <code>TEST_INSTANCE_CVE</code>, Amazon Inspector scans the test instance during image tests. To use this scan, you must activate Amazon Inspector for Amazon EC2 scanning in your account. The Image Builder <code>ListImageScanFindings</code> operation returns the findings.</p></li>
+    /// <p>With <code>TEST_INSTANCE_CVE</code>, Amazon Inspector scans the test instance during image tests. To use this scan, you must activate Amazon Inspector for Amazon EC2 scanning in the account and Amazon Web Services Region where the build runs. The Image Builder <code>ListImageScanFindings</code> operation returns the findings.</p></li>
     /// <li>
     /// <p>With <code>ON_DEMAND_AMI_CVE</code>, Amazon Inspector starts an on-demand scan of the output AMI during image tests. To use this scan, you must build from an image recipe, but you do not need to activate Amazon Inspector in your account. The Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageFindings.html">GetImageFindings</a> operation returns the findings.</p></li>
     /// </ul>

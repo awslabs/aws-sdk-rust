@@ -12,13 +12,17 @@ pub struct Target {
     pub dead_letter_config: ::std::option::Option<crate::types::DeadLetterConfig>,
     /// <p>A <code>RetryPolicy</code> object that includes information about the retry policy settings, including the maximum age of an event, and the maximum number of times EventBridge Scheduler will try to deliver the event to a target.</p>
     pub retry_policy: ::std::option::Option<crate::types::RetryPolicy>,
-    /// <p>The text, or well-formed JSON, passed to the target. If you are configuring a templated Lambda, AWS Step Functions, or Amazon EventBridge target, the input must be a well-formed JSON. For all other target types, a JSON is not required. If you do not specify anything for this field, EventBridge Scheduler delivers a default notification to the target.</p>
+    /// <p>The text, or well-formed JSON, passed to the target. If you are configuring a templated Lambda, Amazon Web Services Step Functions, or Amazon EventBridge target, the input must be a well-formed JSON. For all other target types, a JSON is not required. If you do not specify anything for this field, EventBridge Scheduler delivers a default notification to the target. The maximum size of the <code>Input</code> field is 256 KB.</p>
     pub input: ::std::option::Option<::std::string::String>,
     /// <p>The templated target type for the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html"> <code>RunTask</code> </a> API operation.</p>
     pub ecs_parameters: ::std::option::Option<crate::types::EcsParameters>,
     /// <p>The templated target type for the EventBridge <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html"> <code>PutEvents</code> </a> API operation.</p>
     pub event_bridge_parameters: ::std::option::Option<crate::types::EventBridgeParameters>,
-    /// <p>The templated target type for the Amazon Kinesis <a href="kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code> </a> API operation.</p>
+    /// <p>The templated target type for the EventBridge event bus v2 <a href="https://docs.aws.amazon.com/eventbridgev2/latest/APIReference/API_PutEvents.html"> <code>PutEvents</code> </a> API operation.</p>
+    pub event_bridge_put_events_v2_parameters: ::std::option::Option<crate::types::EventBridgePutEventsV2Parameters>,
+    /// <p>The templated target type for the EventBridge event bus v2 <a href="https://docs.aws.amazon.com/eventbridgev2/latest/APIReference/API_PutRawEvents.html"> <code>PutRawEvents</code> </a> API operation.</p>
+    pub event_bridge_put_raw_events_parameters: ::std::option::Option<crate::types::EventBridgePutRawEventsParameters>,
+    /// <p>The templated target type for the Amazon Kinesis <a href="https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code> </a> API operation.</p>
     pub kinesis_parameters: ::std::option::Option<crate::types::KinesisParameters>,
     /// <p>The templated target type for the Amazon SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartPipelineExecution.html"> <code>StartPipelineExecution</code> </a> API operation.</p>
     pub sage_maker_pipeline_parameters: ::std::option::Option<crate::types::SageMakerPipelineParameters>,
@@ -44,7 +48,7 @@ impl Target {
     pub fn retry_policy(&self) -> ::std::option::Option<&crate::types::RetryPolicy> {
         self.retry_policy.as_ref()
     }
-    /// <p>The text, or well-formed JSON, passed to the target. If you are configuring a templated Lambda, AWS Step Functions, or Amazon EventBridge target, the input must be a well-formed JSON. For all other target types, a JSON is not required. If you do not specify anything for this field, EventBridge Scheduler delivers a default notification to the target.</p>
+    /// <p>The text, or well-formed JSON, passed to the target. If you are configuring a templated Lambda, Amazon Web Services Step Functions, or Amazon EventBridge target, the input must be a well-formed JSON. For all other target types, a JSON is not required. If you do not specify anything for this field, EventBridge Scheduler delivers a default notification to the target. The maximum size of the <code>Input</code> field is 256 KB.</p>
     pub fn input(&self) -> ::std::option::Option<&str> {
         self.input.as_deref()
     }
@@ -56,7 +60,15 @@ impl Target {
     pub fn event_bridge_parameters(&self) -> ::std::option::Option<&crate::types::EventBridgeParameters> {
         self.event_bridge_parameters.as_ref()
     }
-    /// <p>The templated target type for the Amazon Kinesis <a href="kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code> </a> API operation.</p>
+    /// <p>The templated target type for the EventBridge event bus v2 <a href="https://docs.aws.amazon.com/eventbridgev2/latest/APIReference/API_PutEvents.html"> <code>PutEvents</code> </a> API operation.</p>
+    pub fn event_bridge_put_events_v2_parameters(&self) -> ::std::option::Option<&crate::types::EventBridgePutEventsV2Parameters> {
+        self.event_bridge_put_events_v2_parameters.as_ref()
+    }
+    /// <p>The templated target type for the EventBridge event bus v2 <a href="https://docs.aws.amazon.com/eventbridgev2/latest/APIReference/API_PutRawEvents.html"> <code>PutRawEvents</code> </a> API operation.</p>
+    pub fn event_bridge_put_raw_events_parameters(&self) -> ::std::option::Option<&crate::types::EventBridgePutRawEventsParameters> {
+        self.event_bridge_put_raw_events_parameters.as_ref()
+    }
+    /// <p>The templated target type for the Amazon Kinesis <a href="https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code> </a> API operation.</p>
     pub fn kinesis_parameters(&self) -> ::std::option::Option<&crate::types::KinesisParameters> {
         self.kinesis_parameters.as_ref()
     }
@@ -87,6 +99,8 @@ pub struct TargetBuilder {
     pub(crate) input: ::std::option::Option<::std::string::String>,
     pub(crate) ecs_parameters: ::std::option::Option<crate::types::EcsParameters>,
     pub(crate) event_bridge_parameters: ::std::option::Option<crate::types::EventBridgeParameters>,
+    pub(crate) event_bridge_put_events_v2_parameters: ::std::option::Option<crate::types::EventBridgePutEventsV2Parameters>,
+    pub(crate) event_bridge_put_raw_events_parameters: ::std::option::Option<crate::types::EventBridgePutRawEventsParameters>,
     pub(crate) kinesis_parameters: ::std::option::Option<crate::types::KinesisParameters>,
     pub(crate) sage_maker_pipeline_parameters: ::std::option::Option<crate::types::SageMakerPipelineParameters>,
     pub(crate) sqs_parameters: ::std::option::Option<crate::types::SqsParameters>,
@@ -150,17 +164,17 @@ impl TargetBuilder {
     pub fn get_retry_policy(&self) -> &::std::option::Option<crate::types::RetryPolicy> {
         &self.retry_policy
     }
-    /// <p>The text, or well-formed JSON, passed to the target. If you are configuring a templated Lambda, AWS Step Functions, or Amazon EventBridge target, the input must be a well-formed JSON. For all other target types, a JSON is not required. If you do not specify anything for this field, EventBridge Scheduler delivers a default notification to the target.</p>
+    /// <p>The text, or well-formed JSON, passed to the target. If you are configuring a templated Lambda, Amazon Web Services Step Functions, or Amazon EventBridge target, the input must be a well-formed JSON. For all other target types, a JSON is not required. If you do not specify anything for this field, EventBridge Scheduler delivers a default notification to the target. The maximum size of the <code>Input</code> field is 256 KB.</p>
     pub fn input(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.input = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The text, or well-formed JSON, passed to the target. If you are configuring a templated Lambda, AWS Step Functions, or Amazon EventBridge target, the input must be a well-formed JSON. For all other target types, a JSON is not required. If you do not specify anything for this field, EventBridge Scheduler delivers a default notification to the target.</p>
+    /// <p>The text, or well-formed JSON, passed to the target. If you are configuring a templated Lambda, Amazon Web Services Step Functions, or Amazon EventBridge target, the input must be a well-formed JSON. For all other target types, a JSON is not required. If you do not specify anything for this field, EventBridge Scheduler delivers a default notification to the target. The maximum size of the <code>Input</code> field is 256 KB.</p>
     pub fn set_input(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.input = input;
         self
     }
-    /// <p>The text, or well-formed JSON, passed to the target. If you are configuring a templated Lambda, AWS Step Functions, or Amazon EventBridge target, the input must be a well-formed JSON. For all other target types, a JSON is not required. If you do not specify anything for this field, EventBridge Scheduler delivers a default notification to the target.</p>
+    /// <p>The text, or well-formed JSON, passed to the target. If you are configuring a templated Lambda, Amazon Web Services Step Functions, or Amazon EventBridge target, the input must be a well-formed JSON. For all other target types, a JSON is not required. If you do not specify anything for this field, EventBridge Scheduler delivers a default notification to the target. The maximum size of the <code>Input</code> field is 256 KB.</p>
     pub fn get_input(&self) -> &::std::option::Option<::std::string::String> {
         &self.input
     }
@@ -192,17 +206,48 @@ impl TargetBuilder {
     pub fn get_event_bridge_parameters(&self) -> &::std::option::Option<crate::types::EventBridgeParameters> {
         &self.event_bridge_parameters
     }
-    /// <p>The templated target type for the Amazon Kinesis <a href="kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code> </a> API operation.</p>
+    /// <p>The templated target type for the EventBridge event bus v2 <a href="https://docs.aws.amazon.com/eventbridgev2/latest/APIReference/API_PutEvents.html"> <code>PutEvents</code> </a> API operation.</p>
+    pub fn event_bridge_put_events_v2_parameters(mut self, input: crate::types::EventBridgePutEventsV2Parameters) -> Self {
+        self.event_bridge_put_events_v2_parameters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The templated target type for the EventBridge event bus v2 <a href="https://docs.aws.amazon.com/eventbridgev2/latest/APIReference/API_PutEvents.html"> <code>PutEvents</code> </a> API operation.</p>
+    pub fn set_event_bridge_put_events_v2_parameters(mut self, input: ::std::option::Option<crate::types::EventBridgePutEventsV2Parameters>) -> Self {
+        self.event_bridge_put_events_v2_parameters = input;
+        self
+    }
+    /// <p>The templated target type for the EventBridge event bus v2 <a href="https://docs.aws.amazon.com/eventbridgev2/latest/APIReference/API_PutEvents.html"> <code>PutEvents</code> </a> API operation.</p>
+    pub fn get_event_bridge_put_events_v2_parameters(&self) -> &::std::option::Option<crate::types::EventBridgePutEventsV2Parameters> {
+        &self.event_bridge_put_events_v2_parameters
+    }
+    /// <p>The templated target type for the EventBridge event bus v2 <a href="https://docs.aws.amazon.com/eventbridgev2/latest/APIReference/API_PutRawEvents.html"> <code>PutRawEvents</code> </a> API operation.</p>
+    pub fn event_bridge_put_raw_events_parameters(mut self, input: crate::types::EventBridgePutRawEventsParameters) -> Self {
+        self.event_bridge_put_raw_events_parameters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The templated target type for the EventBridge event bus v2 <a href="https://docs.aws.amazon.com/eventbridgev2/latest/APIReference/API_PutRawEvents.html"> <code>PutRawEvents</code> </a> API operation.</p>
+    pub fn set_event_bridge_put_raw_events_parameters(
+        mut self,
+        input: ::std::option::Option<crate::types::EventBridgePutRawEventsParameters>,
+    ) -> Self {
+        self.event_bridge_put_raw_events_parameters = input;
+        self
+    }
+    /// <p>The templated target type for the EventBridge event bus v2 <a href="https://docs.aws.amazon.com/eventbridgev2/latest/APIReference/API_PutRawEvents.html"> <code>PutRawEvents</code> </a> API operation.</p>
+    pub fn get_event_bridge_put_raw_events_parameters(&self) -> &::std::option::Option<crate::types::EventBridgePutRawEventsParameters> {
+        &self.event_bridge_put_raw_events_parameters
+    }
+    /// <p>The templated target type for the Amazon Kinesis <a href="https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code> </a> API operation.</p>
     pub fn kinesis_parameters(mut self, input: crate::types::KinesisParameters) -> Self {
         self.kinesis_parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The templated target type for the Amazon Kinesis <a href="kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code> </a> API operation.</p>
+    /// <p>The templated target type for the Amazon Kinesis <a href="https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code> </a> API operation.</p>
     pub fn set_kinesis_parameters(mut self, input: ::std::option::Option<crate::types::KinesisParameters>) -> Self {
         self.kinesis_parameters = input;
         self
     }
-    /// <p>The templated target type for the Amazon Kinesis <a href="kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code> </a> API operation.</p>
+    /// <p>The templated target type for the Amazon Kinesis <a href="https://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecord.html"> <code>PutRecord</code> </a> API operation.</p>
     pub fn get_kinesis_parameters(&self) -> &::std::option::Option<crate::types::KinesisParameters> {
         &self.kinesis_parameters
     }
@@ -257,6 +302,8 @@ impl TargetBuilder {
             input: self.input,
             ecs_parameters: self.ecs_parameters,
             event_bridge_parameters: self.event_bridge_parameters,
+            event_bridge_put_events_v2_parameters: self.event_bridge_put_events_v2_parameters,
+            event_bridge_put_raw_events_parameters: self.event_bridge_put_raw_events_parameters,
             kinesis_parameters: self.kinesis_parameters,
             sage_maker_pipeline_parameters: self.sage_maker_pipeline_parameters,
             sqs_parameters: self.sqs_parameters,

@@ -97,6 +97,8 @@ pub struct GetFunctionConfigurationOutput {
     pub config_sha256: ::std::option::Option<::std::string::String>,
     /// <p>The function's durable execution configuration settings, if the function is configured for durability.</p>
     pub durable_config: ::std::option::Option<crate::types::DurableConfig>,
+    /// <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
+    pub runtime_config: ::std::option::Option<crate::types::FunctionRuntimeConfig>,
     _request_id: Option<String>,
 }
 impl GetFunctionConfigurationOutput {
@@ -279,6 +281,10 @@ impl GetFunctionConfigurationOutput {
     pub fn durable_config(&self) -> ::std::option::Option<&crate::types::DurableConfig> {
         self.durable_config.as_ref()
     }
+    /// <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
+    pub fn runtime_config(&self) -> ::std::option::Option<&crate::types::FunctionRuntimeConfig> {
+        self.runtime_config.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetFunctionConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -336,6 +342,7 @@ pub struct GetFunctionConfigurationOutputBuilder {
     pub(crate) capacity_provider_config: ::std::option::Option<crate::types::CapacityProviderConfig>,
     pub(crate) config_sha256: ::std::option::Option<::std::string::String>,
     pub(crate) durable_config: ::std::option::Option<crate::types::DurableConfig>,
+    pub(crate) runtime_config: ::std::option::Option<crate::types::FunctionRuntimeConfig>,
     _request_id: Option<String>,
 }
 impl GetFunctionConfigurationOutputBuilder {
@@ -956,6 +963,20 @@ impl GetFunctionConfigurationOutputBuilder {
     pub fn get_durable_config(&self) -> &::std::option::Option<crate::types::DurableConfig> {
         &self.durable_config
     }
+    /// <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
+    pub fn runtime_config(mut self, input: crate::types::FunctionRuntimeConfig) -> Self {
+        self.runtime_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
+    pub fn set_runtime_config(mut self, input: ::std::option::Option<crate::types::FunctionRuntimeConfig>) -> Self {
+        self.runtime_config = input;
+        self
+    }
+    /// <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
+    pub fn get_runtime_config(&self) -> &::std::option::Option<crate::types::FunctionRuntimeConfig> {
+        &self.runtime_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -1008,6 +1029,7 @@ impl GetFunctionConfigurationOutputBuilder {
             capacity_provider_config: self.capacity_provider_config,
             config_sha256: self.config_sha256,
             durable_config: self.durable_config,
+            runtime_config: self.runtime_config,
             _request_id: self._request_id,
         }
     }

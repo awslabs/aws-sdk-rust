@@ -484,4 +484,18 @@ impl UpdateFunctionConfigurationFluentBuilder {
     pub fn get_durable_config(&self) -> &::std::option::Option<crate::types::DurableConfig> {
         self.inner.get_durable_config()
     }
+    /// <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
+    pub fn runtime_config(mut self, input: crate::types::FunctionRuntimeConfig) -> Self {
+        self.inner = self.inner.runtime_config(input);
+        self
+    }
+    /// <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
+    pub fn set_runtime_config(mut self, input: ::std::option::Option<crate::types::FunctionRuntimeConfig>) -> Self {
+        self.inner = self.inner.set_runtime_config(input);
+        self
+    }
+    /// <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
+    pub fn get_runtime_config(&self) -> &::std::option::Option<crate::types::FunctionRuntimeConfig> {
+        self.inner.get_runtime_config()
+    }
 }

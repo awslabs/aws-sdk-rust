@@ -12,6 +12,8 @@ pub struct MessageTemplateAttributes {
     pub customer_profile_attributes: ::std::option::Option<crate::types::CustomerProfileAttributes>,
     /// <p>The custom attributes that are used with the message template.</p>
     pub custom_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The case attributes that are used with the message template.</p>
+    pub case_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl MessageTemplateAttributes {
     /// <p>The system attributes that are used with the message template.</p>
@@ -30,6 +32,10 @@ impl MessageTemplateAttributes {
     pub fn custom_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.custom_attributes.as_ref()
     }
+    /// <p>The case attributes that are used with the message template.</p>
+    pub fn case_attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.case_attributes.as_ref()
+    }
 }
 impl ::std::fmt::Debug for MessageTemplateAttributes {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -38,6 +44,7 @@ impl ::std::fmt::Debug for MessageTemplateAttributes {
         formatter.field("agent_attributes", &self.agent_attributes);
         formatter.field("customer_profile_attributes", &self.customer_profile_attributes);
         formatter.field("custom_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("case_attributes", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -56,6 +63,7 @@ pub struct MessageTemplateAttributesBuilder {
     pub(crate) agent_attributes: ::std::option::Option<crate::types::AgentAttributes>,
     pub(crate) customer_profile_attributes: ::std::option::Option<crate::types::CustomerProfileAttributes>,
     pub(crate) custom_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) case_attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl MessageTemplateAttributesBuilder {
     /// <p>The system attributes that are used with the message template.</p>
@@ -127,6 +135,33 @@ impl MessageTemplateAttributesBuilder {
     pub fn get_custom_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.custom_attributes
     }
+    /// Adds a key-value pair to `case_attributes`.
+    ///
+    /// To override the contents of this collection use [`set_case_attributes`](Self::set_case_attributes).
+    ///
+    /// <p>The case attributes that are used with the message template.</p>
+    pub fn case_attributes(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        let mut hash_map = self.case_attributes.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.case_attributes = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The case attributes that are used with the message template.</p>
+    pub fn set_case_attributes(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.case_attributes = input;
+        self
+    }
+    /// <p>The case attributes that are used with the message template.</p>
+    pub fn get_case_attributes(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.case_attributes
+    }
     /// Consumes the builder and constructs a [`MessageTemplateAttributes`](crate::types::MessageTemplateAttributes).
     pub fn build(self) -> crate::types::MessageTemplateAttributes {
         crate::types::MessageTemplateAttributes {
@@ -134,6 +169,7 @@ impl MessageTemplateAttributesBuilder {
             agent_attributes: self.agent_attributes,
             customer_profile_attributes: self.customer_profile_attributes,
             custom_attributes: self.custom_attributes,
+            case_attributes: self.case_attributes,
         }
     }
 }
@@ -144,6 +180,7 @@ impl ::std::fmt::Debug for MessageTemplateAttributesBuilder {
         formatter.field("agent_attributes", &self.agent_attributes);
         formatter.field("customer_profile_attributes", &self.customer_profile_attributes);
         formatter.field("custom_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("case_attributes", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

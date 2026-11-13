@@ -79,19 +79,21 @@ pub(crate) fn de_firewall(
                 "AvailabilityZoneChangeProtection" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_availability_zone_change_protection(Some(decoder.boolean()?)))
                 })?,
-                "NatGatewayMappings" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_nat_gateway_mappings(Some(
-                        crate::protocol_serde::shape_nat_gateway_mappings_list::de_nat_gateway_mappings_list(decoder, depth + 1)?,
+                "NatGatewayCreateMappings" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_nat_gateway_create_mappings(Some(
+                        crate::protocol_serde::shape_nat_gateway_create_mappings_list::de_nat_gateway_create_mappings_list(decoder, depth + 1)?,
                     )))
                 })?,
                 "ProxySettings" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_proxy_settings(Some(crate::protocol_serde::shape_proxy_settings::de_proxy_settings(decoder, depth + 1)?)))
                 })?,
-                "NoSourcePreservation" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                    Ok(builder.set_no_source_preservation(Some(decoder.boolean()?)))
-                })?,
                 "VpcEndpoint" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_vpc_endpoint(Some(crate::protocol_serde::shape_vpc_endpoint::de_vpc_endpoint(decoder, depth + 1)?)))
+                })?,
+                "TransparentFilteringNatScope" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_transparent_filtering_nat_scope(Some(
+                        decoder.string().map(|s| crate::types::TransparentFilteringNatScope::from(s.as_str()))?,
+                    )))
                 })?,
                 _ => {
                     decoder.skip()?;

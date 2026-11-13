@@ -7,6 +7,8 @@ pub struct DescribeClusterExtensionOutput {
     pub extension_details: ::std::option::Option<crate::types::ExtensionDetails>,
     /// <p>A summary of how many nodes in your cluster the extension targets, and how many of them run the extension's current version and configuration.</p>
     pub node_summary: ::std::option::Option<crate::types::ExtensionNodeSummary>,
+    /// <p>The problems that affect the extension on the cluster's nodes, grouped by cause, with the number of nodes that each problem affects. Use it to find out why <code>ActiveCount</code> is lower than <code>TotalCount</code>, or why the status is <code>Degraded</code>, <code>CreateFailed</code>, or <code>UpdateFailed</code>. SageMaker HyperPod omits <code>Health</code> when no node has a problem. Nodes where SageMaker HyperPod hasn't finished installing or updating the extension aren't counted in any issue, unless an earlier attempt failed on them.</p>
+    pub health: ::std::option::Option<crate::types::ExtensionHealth>,
     _request_id: Option<String>,
 }
 impl DescribeClusterExtensionOutput {
@@ -17,6 +19,10 @@ impl DescribeClusterExtensionOutput {
     /// <p>A summary of how many nodes in your cluster the extension targets, and how many of them run the extension's current version and configuration.</p>
     pub fn node_summary(&self) -> ::std::option::Option<&crate::types::ExtensionNodeSummary> {
         self.node_summary.as_ref()
+    }
+    /// <p>The problems that affect the extension on the cluster's nodes, grouped by cause, with the number of nodes that each problem affects. Use it to find out why <code>ActiveCount</code> is lower than <code>TotalCount</code>, or why the status is <code>Degraded</code>, <code>CreateFailed</code>, or <code>UpdateFailed</code>. SageMaker HyperPod omits <code>Health</code> when no node has a problem. Nodes where SageMaker HyperPod hasn't finished installing or updating the extension aren't counted in any issue, unless an earlier attempt failed on them.</p>
+    pub fn health(&self) -> ::std::option::Option<&crate::types::ExtensionHealth> {
+        self.health.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeClusterExtensionOutput {
@@ -37,6 +43,7 @@ impl DescribeClusterExtensionOutput {
 pub struct DescribeClusterExtensionOutputBuilder {
     pub(crate) extension_details: ::std::option::Option<crate::types::ExtensionDetails>,
     pub(crate) node_summary: ::std::option::Option<crate::types::ExtensionNodeSummary>,
+    pub(crate) health: ::std::option::Option<crate::types::ExtensionHealth>,
     _request_id: Option<String>,
 }
 impl DescribeClusterExtensionOutputBuilder {
@@ -69,6 +76,20 @@ impl DescribeClusterExtensionOutputBuilder {
     pub fn get_node_summary(&self) -> &::std::option::Option<crate::types::ExtensionNodeSummary> {
         &self.node_summary
     }
+    /// <p>The problems that affect the extension on the cluster's nodes, grouped by cause, with the number of nodes that each problem affects. Use it to find out why <code>ActiveCount</code> is lower than <code>TotalCount</code>, or why the status is <code>Degraded</code>, <code>CreateFailed</code>, or <code>UpdateFailed</code>. SageMaker HyperPod omits <code>Health</code> when no node has a problem. Nodes where SageMaker HyperPod hasn't finished installing or updating the extension aren't counted in any issue, unless an earlier attempt failed on them.</p>
+    pub fn health(mut self, input: crate::types::ExtensionHealth) -> Self {
+        self.health = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The problems that affect the extension on the cluster's nodes, grouped by cause, with the number of nodes that each problem affects. Use it to find out why <code>ActiveCount</code> is lower than <code>TotalCount</code>, or why the status is <code>Degraded</code>, <code>CreateFailed</code>, or <code>UpdateFailed</code>. SageMaker HyperPod omits <code>Health</code> when no node has a problem. Nodes where SageMaker HyperPod hasn't finished installing or updating the extension aren't counted in any issue, unless an earlier attempt failed on them.</p>
+    pub fn set_health(mut self, input: ::std::option::Option<crate::types::ExtensionHealth>) -> Self {
+        self.health = input;
+        self
+    }
+    /// <p>The problems that affect the extension on the cluster's nodes, grouped by cause, with the number of nodes that each problem affects. Use it to find out why <code>ActiveCount</code> is lower than <code>TotalCount</code>, or why the status is <code>Degraded</code>, <code>CreateFailed</code>, or <code>UpdateFailed</code>. SageMaker HyperPod omits <code>Health</code> when no node has a problem. Nodes where SageMaker HyperPod hasn't finished installing or updating the extension aren't counted in any issue, unless an earlier attempt failed on them.</p>
+    pub fn get_health(&self) -> &::std::option::Option<crate::types::ExtensionHealth> {
+        &self.health
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -83,6 +104,7 @@ impl DescribeClusterExtensionOutputBuilder {
         crate::operation::describe_cluster_extension::DescribeClusterExtensionOutput {
             extension_details: self.extension_details,
             node_summary: self.node_summary,
+            health: self.health,
             _request_id: self._request_id,
         }
     }

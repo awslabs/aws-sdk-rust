@@ -23,7 +23,7 @@ impl crate::operation::update_infrastructure_configuration::builders::UpdateInfr
 /// Fluent builder constructing a request to `UpdateInfrastructureConfiguration`.
 ///
 /// <p>Updates an infrastructure configuration. An infrastructure configuration defines the environment in which Image Builder builds and tests your image.</p><note>
-/// <p>This operation doesn't support selective updates. The request replaces the configuration, so include every setting that you want to keep. Omitted optional properties are cleared.</p>
+/// <p>This operation doesn't support selective updates. The request replaces the entire infrastructure configuration, so include every setting that you want to keep. Any optional property that you omit is removed or reset to its default.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateInfrastructureConfigurationFluentBuilder {

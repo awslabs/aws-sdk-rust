@@ -145,6 +145,8 @@ pub use crate::types::_failed_create_association::FailedCreateAssociation;
 
 pub use crate::types::_azure_configuration::AzureConfiguration;
 
+pub use crate::types::_gcp_configuration::GcpConfiguration;
+
 pub use crate::types::_document_requires::DocumentRequires;
 
 pub use crate::types::_attachments_source::AttachmentsSource;
@@ -261,6 +263,8 @@ pub use crate::types::_progress_counters::ProgressCounters;
 
 pub use crate::types::_automation_subtype::AutomationSubtype;
 
+pub use crate::types::_targets_summary::TargetsSummary;
+
 pub use crate::types::_attachment_content::AttachmentContent;
 
 pub use crate::types::_automation_execution_preview::AutomationExecutionPreview;
@@ -373,6 +377,8 @@ pub use crate::types::_fault::Fault;
 
 pub use crate::types::_configuration_targets::ConfigurationTargets;
 
+pub use crate::types::_gcp_configuration_targets::GcpConfigurationTargets;
+
 pub use crate::types::_attachments_source_key::AttachmentsSourceKey;
 
 pub use crate::types::_document_parameter::DocumentParameter;
@@ -465,6 +471,8 @@ pub use crate::types::_association_filter_key::AssociationFilterKey;
 
 pub use crate::types::_cloud_connector_filter_key::CloudConnectorFilterKey;
 
+pub use crate::types::_provider::Provider;
+
 pub use crate::types::_command_filter_key::CommandFilterKey;
 
 pub use crate::types::_compliance_query_operator_type::ComplianceQueryOperatorType;
@@ -554,6 +562,8 @@ pub use crate::types::_document_review_comment_type::DocumentReviewCommentType;
 pub use crate::types::_validation_finding_scope_type::ValidationFindingScopeType;
 
 pub use crate::types::_azure_subscription::AzureSubscription;
+
+pub use crate::types::_gcp_project::GcpProject;
 
 pub use crate::types::_inventory_attribute_data_type::InventoryAttributeDataType;
 
@@ -768,6 +778,12 @@ mod _failed_create_association;
 mod _failure_details;
 
 mod _fault;
+
+mod _gcp_configuration;
+
+mod _gcp_configuration_targets;
+
+mod _gcp_project;
 
 mod _get_resource_policies_response_entry;
 
@@ -1033,6 +1049,8 @@ mod _platform_type;
 
 mod _progress_counters;
 
+mod _provider;
+
 mod _reboot_option;
 
 mod _registration_metadata_item;
@@ -1112,6 +1130,8 @@ mod _target;
 mod _target_location;
 
 mod _target_preview;
+
+mod _targets_summary;
 
 mod _validation_finding;
 

@@ -333,6 +333,8 @@ pub use crate::types::_extension_details::ExtensionDetailsBuilder;
 
 pub use crate::types::_extension_node_summary::ExtensionNodeSummaryBuilder;
 
+pub use crate::types::_extension_health::ExtensionHealthBuilder;
+
 pub use crate::types::_cluster_node_details::ClusterNodeDetailsBuilder;
 
 pub use crate::types::_model_artifacts::ModelArtifactsBuilder;
@@ -761,6 +763,10 @@ pub use crate::types::_cluster_kubernetes_config_node_details::ClusterKubernetes
 
 pub use crate::types::_cluster_network_interface_details::ClusterNetworkInterfaceDetailsBuilder;
 
+pub use crate::types::_cluster_operation_scaling_details::ClusterOperationScalingDetailsBuilder;
+
+pub use crate::types::_instance_group_health_check_configuration::InstanceGroupHealthCheckConfigurationBuilder;
+
 pub use crate::types::_edge_model::EdgeModelBuilder;
 
 pub use crate::types::_deployment_stage_status_summary::DeploymentStageStatusSummaryBuilder;
@@ -841,7 +847,11 @@ pub use crate::types::_cluster_event_summary::ClusterEventSummaryBuilder;
 
 pub use crate::types::_extension_summary::ExtensionSummaryBuilder;
 
+pub use crate::types::_extension_version_summary::ExtensionVersionSummaryBuilder;
+
 pub use crate::types::_cluster_node_summary::ClusterNodeSummaryBuilder;
+
+pub use crate::types::_cluster_operation_summary::ClusterOperationSummaryBuilder;
 
 pub use crate::types::_cluster_summary::ClusterSummaryBuilder;
 
@@ -996,8 +1006,6 @@ pub use crate::types::_training_plan_offering::TrainingPlanOfferingBuilder;
 pub use crate::types::_training_plan_extension_offering::TrainingPlanExtensionOfferingBuilder;
 
 pub use crate::types::_output_parameter::OutputParameterBuilder;
-
-pub use crate::types::_instance_group_health_check_configuration::InstanceGroupHealthCheckConfigurationBuilder;
 
 pub use crate::types::_update_cluster_software_instance_group_specification::UpdateClusterSoftwareInstanceGroupSpecificationBuilder;
 
@@ -1241,6 +1249,10 @@ pub use crate::types::_cluster_slurm_config_details::ClusterSlurmConfigDetailsBu
 
 pub use crate::types::_environment_config_details::EnvironmentConfigDetailsBuilder;
 
+pub use crate::types::_extension_health_issue::ExtensionHealthIssueBuilder;
+
+pub use crate::types::_cluster_operation_scaling_configuration::ClusterOperationScalingConfigurationBuilder;
+
 pub use crate::types::_edge_deployment_status::EdgeDeploymentStatusBuilder;
 
 pub use crate::types::_production_variant_capacity_reservation_summary::ProductionVariantCapacityReservationSummaryBuilder;
@@ -1360,6 +1372,8 @@ pub use crate::types::_auto_ml_algorithm_config::AutoMlAlgorithmConfigBuilder;
 pub use crate::types::_holiday_config_attributes::HolidayConfigAttributesBuilder;
 
 pub use crate::types::_cluster_patch_schedule::ClusterPatchScheduleBuilder;
+
+pub use crate::types::_cluster_drain_policy::ClusterDrainPolicyBuilder;
 
 pub use crate::types::_cluster_spot_options::ClusterSpotOptionsBuilder;
 
