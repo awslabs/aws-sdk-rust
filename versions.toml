@@ -2813,6 +2813,10 @@ source_hash = 'b6fba3b5f7fd5f30739c09f563c66f0f9522c0f1f2aa2a9160cd363ca2a10c8e'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = '707e39445a794a25507f7a86738cd18569952d9db0909d2b8db35e24bc08e3f5'
+
+[release]
+tag = 'release-2026-11-13'
+
 [release.crates]
 aws-sdk-appstream = '1.141.0'
 aws-sdk-cloudformation = '1.139.0'
