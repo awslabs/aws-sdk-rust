@@ -200,20 +200,17 @@ pub fn de_create_snapshot(
                 builder = builder.set_full_snapshot_size_in_bytes(var_11);
             }
             ,
-            s if s.matches("snapshotId") /* SnapshotId com.amazonaws.ec2.synthetic#CreateSnapshotOutput$SnapshotId */ =>  {
+            s if s.matches("associatedKmsKeySet") /* AssociatedKmsKeys com.amazonaws.ec2.synthetic#CreateSnapshotOutput$AssociatedKmsKeys */ =>  {
                 let var_12 =
                     Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
+                        crate::protocol_serde::shape_associated_kms_key_set::de_associated_kms_key_set(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_snapshot_id(var_12);
+                builder = builder.set_associated_kms_keys(var_12);
             }
             ,
-            s if s.matches("volumeId") /* VolumeId com.amazonaws.ec2.synthetic#CreateSnapshotOutput$VolumeId */ =>  {
+            s if s.matches("snapshotId") /* SnapshotId com.amazonaws.ec2.synthetic#CreateSnapshotOutput$SnapshotId */ =>  {
                 let var_13 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -223,11 +220,24 @@ pub fn de_create_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_volume_id(var_13);
+                builder = builder.set_snapshot_id(var_13);
+            }
+            ,
+            s if s.matches("volumeId") /* VolumeId com.amazonaws.ec2.synthetic#CreateSnapshotOutput$VolumeId */ =>  {
+                let var_14 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_volume_id(var_14);
             }
             ,
             s if s.matches("status") /* State com.amazonaws.ec2.synthetic#CreateSnapshotOutput$State */ =>  {
-                let var_14 =
+                let var_15 =
                     Some(
                         Result::<crate::types::SnapshotState, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::SnapshotState::from(
@@ -237,11 +247,11 @@ pub fn de_create_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_state(var_14);
+                builder = builder.set_state(var_15);
             }
             ,
             s if s.matches("statusMessage") /* StateMessage com.amazonaws.ec2.synthetic#CreateSnapshotOutput$StateMessage */ =>  {
-                let var_15 =
+                let var_16 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -250,11 +260,11 @@ pub fn de_create_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_state_message(var_15);
+                builder = builder.set_state_message(var_16);
             }
             ,
             s if s.matches("startTime") /* StartTime com.amazonaws.ec2.synthetic#CreateSnapshotOutput$StartTime */ =>  {
-                let var_16 =
+                let var_17 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -264,23 +274,10 @@ pub fn de_create_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_start_time(var_16);
+                builder = builder.set_start_time(var_17);
             }
             ,
             s if s.matches("progress") /* Progress com.amazonaws.ec2.synthetic#CreateSnapshotOutput$Progress */ =>  {
-                let var_17 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_progress(var_17);
-            }
-            ,
-            s if s.matches("ownerId") /* OwnerId com.amazonaws.ec2.synthetic#CreateSnapshotOutput$OwnerId */ =>  {
                 let var_18 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -290,10 +287,10 @@ pub fn de_create_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_owner_id(var_18);
+                builder = builder.set_progress(var_18);
             }
             ,
-            s if s.matches("description") /* Description com.amazonaws.ec2.synthetic#CreateSnapshotOutput$Description */ =>  {
+            s if s.matches("ownerId") /* OwnerId com.amazonaws.ec2.synthetic#CreateSnapshotOutput$OwnerId */ =>  {
                 let var_19 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -303,11 +300,24 @@ pub fn de_create_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_description(var_19);
+                builder = builder.set_owner_id(var_19);
+            }
+            ,
+            s if s.matches("description") /* Description com.amazonaws.ec2.synthetic#CreateSnapshotOutput$Description */ =>  {
+                let var_20 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_description(var_20);
             }
             ,
             s if s.matches("volumeSize") /* VolumeSize com.amazonaws.ec2.synthetic#CreateSnapshotOutput$VolumeSize */ =>  {
-                let var_20 =
+                let var_21 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -318,11 +328,11 @@ pub fn de_create_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_volume_size(var_20);
+                builder = builder.set_volume_size(var_21);
             }
             ,
             s if s.matches("encrypted") /* Encrypted com.amazonaws.ec2.synthetic#CreateSnapshotOutput$Encrypted */ =>  {
-                let var_21 =
+                let var_22 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -333,23 +343,10 @@ pub fn de_create_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_encrypted(var_21);
+                builder = builder.set_encrypted(var_22);
             }
             ,
             s if s.matches("kmsKeyId") /* KmsKeyId com.amazonaws.ec2.synthetic#CreateSnapshotOutput$KmsKeyId */ =>  {
-                let var_22 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_kms_key_id(var_22);
-            }
-            ,
-            s if s.matches("dataEncryptionKeyId") /* DataEncryptionKeyId com.amazonaws.ec2.synthetic#CreateSnapshotOutput$DataEncryptionKeyId */ =>  {
                 let var_23 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -359,7 +356,20 @@ pub fn de_create_snapshot(
                         ?
                     )
                 ;
-                builder = builder.set_data_encryption_key_id(var_23);
+                builder = builder.set_kms_key_id(var_23);
+            }
+            ,
+            s if s.matches("dataEncryptionKeyId") /* DataEncryptionKeyId com.amazonaws.ec2.synthetic#CreateSnapshotOutput$DataEncryptionKeyId */ =>  {
+                let var_24 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_data_encryption_key_id(var_24);
             }
             ,
             _ => {}

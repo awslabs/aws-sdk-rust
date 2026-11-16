@@ -65,6 +65,8 @@ pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_index_mode;
 
+pub(crate) mod shape_update_metadata_configuration;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -135,6 +137,8 @@ pub(crate) mod shape_too_many_requests_exception;
 
 pub(crate) mod shape_update_index_mode_input;
 
+pub(crate) mod shape_update_metadata_configuration_input;
+
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_encryption_configuration;
@@ -151,7 +155,13 @@ pub(crate) mod shape_list_vectors_output_list;
 
 pub(crate) mod shape_metadata_configuration;
 
+pub(crate) mod shape_metadata_configuration_add;
+
+pub(crate) mod shape_metadata_configuration_delete;
+
 pub(crate) mod shape_put_input_vector;
+
+pub(crate) mod shape_query_text;
 
 pub(crate) mod shape_query_vectors_output_list;
 
@@ -171,10 +181,22 @@ pub(crate) mod shape_list_output_vector;
 
 pub(crate) mod shape_query_output_vector;
 
+pub(crate) mod shape_text_search_configuration;
+
+pub(crate) mod shape_text_search_configuration_key;
+
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_vector_bucket_summary;
 
 pub(crate) mod shape_non_filterable_metadata_keys;
 
+pub(crate) mod shape_query_scores;
+
+pub(crate) mod shape_text_search_configurations;
+
+pub(crate) mod shape_bm25_score_list;
+
 pub(crate) mod shape_float32_vector_data;
+
+pub(crate) mod shape_bm25_score;

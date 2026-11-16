@@ -22,7 +22,8 @@ impl crate::operation::list_key_policies::builders::ListKeyPoliciesInputBuilder 
 }
 /// Fluent builder constructing a request to `ListKeyPolicies`.
 ///
-/// <p>Gets the names of the key policies that are attached to a KMS key. This operation is designed to get policy names that you can use in a <code>GetKeyPolicy</code> operation. However, the only valid policy name is <code>default</code>.</p>
+/// <p>Gets the names of the key policies that are attached to a KMS key. This operation is designed to get policy names that you can use in a <code>GetKeyPolicy</code> operation. The valid policy names are <code>default</code> and <code>AWS_RAM</code>.</p>
+/// <p>For information about the <code>AWS_RAM</code> key policy, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-sharing-ram.html">Sharing KMS keys with RAM</a> in the <i>Key Management Service Developer Guide</i>.</p>
 /// <p><b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a different Amazon Web Services account.</p>
 /// <p><b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ListKeyPolicies</a> (key policy)</p>
 /// <p><b>Related operations:</b></p>
@@ -167,21 +168,21 @@ impl ListKeyPoliciesFluentBuilder {
     }
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
-    /// <p>Only one policy can be attached to a key.</p>
+    /// <p>A KMS key can have at most two key policies, <code>default</code> and <code>AWS_RAM</code>.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);
         self
     }
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
-    /// <p>Only one policy can be attached to a key.</p>
+    /// <p>A KMS key can have at most two key policies, <code>default</code> and <code>AWS_RAM</code>.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_limit(input);
         self
     }
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
-    /// <p>Only one policy can be attached to a key.</p>
+    /// <p>A KMS key can have at most two key policies, <code>default</code> and <code>AWS_RAM</code>.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         self.inner.get_limit()
     }

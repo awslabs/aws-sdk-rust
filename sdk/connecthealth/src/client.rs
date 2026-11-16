@@ -138,6 +138,8 @@ impl Client {
 
 mod activate_subscription;
 
+mod create_dataset;
+
 mod create_domain;
 
 mod create_subscription;
@@ -171,9 +173,15 @@ pub mod customize;
 
 mod deactivate_subscription;
 
+mod delete_dataset;
+
 mod delete_domain;
 
+mod get_dataset;
+
 mod get_domain;
+
+mod get_medical_coding_job;
 
 mod get_medical_scribe_listening_session;
 
@@ -181,15 +189,21 @@ mod get_patient_insights_job;
 
 mod get_subscription;
 
+mod list_datasets;
+
 mod list_domains;
 
 mod list_subscriptions;
 
 mod list_tags_for_resource;
 
+mod start_medical_coding_job;
+
 mod start_medical_scribe_listening_session;
 
 mod start_patient_insights_job;
+
+mod submit_feedback;
 
 mod tag_resource;
 

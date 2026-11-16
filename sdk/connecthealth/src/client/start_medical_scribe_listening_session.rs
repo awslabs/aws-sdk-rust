@@ -18,7 +18,7 @@ impl super::Client {
     ///   - [`language_code(Option<MedicalScribeLanguageCode>)`](crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionOutput::language_code): <p>The Language Code for the audio in the session</p>
     ///   - [`media_sample_rate_hertz(Option<i32>)`](crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionOutput::media_sample_rate_hertz): <p>The sample rate of the input audio</p>
     ///   - [`media_encoding(Option<MedicalScribeMediaEncoding>)`](crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionOutput::media_encoding): <p>The encoding for the input audio</p>
-    ///   - [`response_stream(EventReceiver<MedicalScribeOutputStream, MedicalScribeOutputStreamError>)`](crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionOutput::response_stream): <p>The output stream containing transcript events</p>
+    ///   - [`response_stream(EventReceiver<MedicalScribeOutputStream, MedicalScribeOutputStreamError>)`](crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionOutput::response_stream): <p>The output stream that contains transcript events, periodontal chart events, checklist events, and errors.</p>
     /// - On failure, responds with [`SdkError<StartMedicalScribeListeningSessionError>`](crate::operation::start_medical_scribe_listening_session::StartMedicalScribeListeningSessionError)
     pub fn start_medical_scribe_listening_session(
         &self,

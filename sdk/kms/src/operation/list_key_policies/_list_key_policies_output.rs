@@ -3,7 +3,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKeyPoliciesOutput {
-    /// <p>A list of key policy names. The only valid value is <code>default</code>.</p>
+    /// <p>A list of key policy names. Valid values are:</p>
+    /// <dl>
+    /// <dt>
+    /// default
+    /// </dt>
+    /// <dd>
+    /// <p>The key policy that you manage.</p>
+    /// </dd>
+    /// <dt>
+    /// AWS_RAM
+    /// </dt>
+    /// <dd>
+    /// <p>The key policy that RAM manages for KMS keys that you share through RAM.</p>
+    /// </dd>
+    /// </dl>
     pub policy_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
@@ -12,7 +26,21 @@ pub struct ListKeyPoliciesOutput {
     _request_id: Option<String>,
 }
 impl ListKeyPoliciesOutput {
-    /// <p>A list of key policy names. The only valid value is <code>default</code>.</p>
+    /// <p>A list of key policy names. Valid values are:</p>
+    /// <dl>
+    /// <dt>
+    /// default
+    /// </dt>
+    /// <dd>
+    /// <p>The key policy that you manage.</p>
+    /// </dd>
+    /// <dt>
+    /// AWS_RAM
+    /// </dt>
+    /// <dd>
+    /// <p>The key policy that RAM manages for KMS keys that you share through RAM.</p>
+    /// </dd>
+    /// </dl>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.policy_names.is_none()`.
     pub fn policy_names(&self) -> &[::std::string::String] {
@@ -53,19 +81,61 @@ impl ListKeyPoliciesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
     ///
-    /// <p>A list of key policy names. The only valid value is <code>default</code>.</p>
+    /// <p>A list of key policy names. Valid values are:</p>
+    /// <dl>
+    /// <dt>
+    /// default
+    /// </dt>
+    /// <dd>
+    /// <p>The key policy that you manage.</p>
+    /// </dd>
+    /// <dt>
+    /// AWS_RAM
+    /// </dt>
+    /// <dd>
+    /// <p>The key policy that RAM manages for KMS keys that you share through RAM.</p>
+    /// </dd>
+    /// </dl>
     pub fn policy_names(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.policy_names.unwrap_or_default();
         v.push(input.into());
         self.policy_names = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of key policy names. The only valid value is <code>default</code>.</p>
+    /// <p>A list of key policy names. Valid values are:</p>
+    /// <dl>
+    /// <dt>
+    /// default
+    /// </dt>
+    /// <dd>
+    /// <p>The key policy that you manage.</p>
+    /// </dd>
+    /// <dt>
+    /// AWS_RAM
+    /// </dt>
+    /// <dd>
+    /// <p>The key policy that RAM manages for KMS keys that you share through RAM.</p>
+    /// </dd>
+    /// </dl>
     pub fn set_policy_names(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.policy_names = input;
         self
     }
-    /// <p>A list of key policy names. The only valid value is <code>default</code>.</p>
+    /// <p>A list of key policy names. Valid values are:</p>
+    /// <dl>
+    /// <dt>
+    /// default
+    /// </dt>
+    /// <dd>
+    /// <p>The key policy that you manage.</p>
+    /// </dd>
+    /// <dt>
+    /// AWS_RAM
+    /// </dt>
+    /// <dd>
+    /// <p>The key policy that RAM manages for KMS keys that you share through RAM.</p>
+    /// </dd>
+    /// </dl>
     pub fn get_policy_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.policy_names
     }

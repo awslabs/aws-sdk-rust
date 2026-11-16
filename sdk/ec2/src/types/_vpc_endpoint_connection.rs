@@ -30,6 +30,10 @@ pub struct VpcEndpointConnection {
     pub vpc_endpoint_region: ::std::option::Option<::std::string::String>,
     /// <p>The payer responsibility settings for the endpoint.</p>
     pub payer_responsibilities: ::std::option::Option<::std::vec::Vec<crate::types::PayerResponsibilityEntry>>,
+    /// <p>The ID of the transit gateway attachment, if the connection is for a transit gateway attachment.</p>
+    pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the Amazon Web Services account that owns the transit gateway attachment, if the connection is for a transit gateway attachment.</p>
+    pub transit_gateway_attachment_owner: ::std::option::Option<::std::string::String>,
 }
 impl VpcEndpointConnection {
     /// <p>The ID of the service to which the endpoint is connected.</p>
@@ -94,6 +98,14 @@ impl VpcEndpointConnection {
     pub fn payer_responsibilities(&self) -> &[crate::types::PayerResponsibilityEntry] {
         self.payer_responsibilities.as_deref().unwrap_or_default()
     }
+    /// <p>The ID of the transit gateway attachment, if the connection is for a transit gateway attachment.</p>
+    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<&str> {
+        self.transit_gateway_attachment_id.as_deref()
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the transit gateway attachment, if the connection is for a transit gateway attachment.</p>
+    pub fn transit_gateway_attachment_owner(&self) -> ::std::option::Option<&str> {
+        self.transit_gateway_attachment_owner.as_deref()
+    }
 }
 impl VpcEndpointConnection {
     /// Creates a new builder-style object to manufacture [`VpcEndpointConnection`](crate::types::VpcEndpointConnection).
@@ -119,6 +131,8 @@ pub struct VpcEndpointConnectionBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) vpc_endpoint_region: ::std::option::Option<::std::string::String>,
     pub(crate) payer_responsibilities: ::std::option::Option<::std::vec::Vec<crate::types::PayerResponsibilityEntry>>,
+    pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) transit_gateway_attachment_owner: ::std::option::Option<::std::string::String>,
 }
 impl VpcEndpointConnectionBuilder {
     /// <p>The ID of the service to which the endpoint is connected.</p>
@@ -333,6 +347,34 @@ impl VpcEndpointConnectionBuilder {
     pub fn get_payer_responsibilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PayerResponsibilityEntry>> {
         &self.payer_responsibilities
     }
+    /// <p>The ID of the transit gateway attachment, if the connection is for a transit gateway attachment.</p>
+    pub fn transit_gateway_attachment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the transit gateway attachment, if the connection is for a transit gateway attachment.</p>
+    pub fn set_transit_gateway_attachment_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transit_gateway_attachment_id = input;
+        self
+    }
+    /// <p>The ID of the transit gateway attachment, if the connection is for a transit gateway attachment.</p>
+    pub fn get_transit_gateway_attachment_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_attachment_id
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the transit gateway attachment, if the connection is for a transit gateway attachment.</p>
+    pub fn transit_gateway_attachment_owner(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.transit_gateway_attachment_owner = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the transit gateway attachment, if the connection is for a transit gateway attachment.</p>
+    pub fn set_transit_gateway_attachment_owner(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.transit_gateway_attachment_owner = input;
+        self
+    }
+    /// <p>The ID of the Amazon Web Services account that owns the transit gateway attachment, if the connection is for a transit gateway attachment.</p>
+    pub fn get_transit_gateway_attachment_owner(&self) -> &::std::option::Option<::std::string::String> {
+        &self.transit_gateway_attachment_owner
+    }
     /// Consumes the builder and constructs a [`VpcEndpointConnection`](crate::types::VpcEndpointConnection).
     pub fn build(self) -> crate::types::VpcEndpointConnection {
         crate::types::VpcEndpointConnection {
@@ -349,6 +391,8 @@ impl VpcEndpointConnectionBuilder {
             tags: self.tags,
             vpc_endpoint_region: self.vpc_endpoint_region,
             payer_responsibilities: self.payer_responsibilities,
+            transit_gateway_attachment_id: self.transit_gateway_attachment_id,
+            transit_gateway_attachment_owner: self.transit_gateway_attachment_owner,
         }
     }
 }

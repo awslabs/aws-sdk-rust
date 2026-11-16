@@ -6,17 +6,24 @@
 pub struct EncounterContext {
     /// <p>Unstructured context information in markdown format</p>
     pub unstructured_context: ::std::option::Option<::std::string::String>,
+    /// <p>Structured patient and encounter context for medical code generation.</p>
+    pub medical_coding_context: ::std::option::Option<crate::types::MedicalCodingContext>,
 }
 impl EncounterContext {
     /// <p>Unstructured context information in markdown format</p>
     pub fn unstructured_context(&self) -> ::std::option::Option<&str> {
         self.unstructured_context.as_deref()
     }
+    /// <p>Structured patient and encounter context for medical code generation.</p>
+    pub fn medical_coding_context(&self) -> ::std::option::Option<&crate::types::MedicalCodingContext> {
+        self.medical_coding_context.as_ref()
+    }
 }
 impl ::std::fmt::Debug for EncounterContext {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EncounterContext");
         formatter.field("unstructured_context", &"*** Sensitive Data Redacted ***");
+        formatter.field("medical_coding_context", &self.medical_coding_context);
         formatter.finish()
     }
 }
@@ -32,6 +39,7 @@ impl EncounterContext {
 #[non_exhaustive]
 pub struct EncounterContextBuilder {
     pub(crate) unstructured_context: ::std::option::Option<::std::string::String>,
+    pub(crate) medical_coding_context: ::std::option::Option<crate::types::MedicalCodingContext>,
 }
 impl EncounterContextBuilder {
     /// <p>Unstructured context information in markdown format</p>
@@ -48,10 +56,25 @@ impl EncounterContextBuilder {
     pub fn get_unstructured_context(&self) -> &::std::option::Option<::std::string::String> {
         &self.unstructured_context
     }
+    /// <p>Structured patient and encounter context for medical code generation.</p>
+    pub fn medical_coding_context(mut self, input: crate::types::MedicalCodingContext) -> Self {
+        self.medical_coding_context = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Structured patient and encounter context for medical code generation.</p>
+    pub fn set_medical_coding_context(mut self, input: ::std::option::Option<crate::types::MedicalCodingContext>) -> Self {
+        self.medical_coding_context = input;
+        self
+    }
+    /// <p>Structured patient and encounter context for medical code generation.</p>
+    pub fn get_medical_coding_context(&self) -> &::std::option::Option<crate::types::MedicalCodingContext> {
+        &self.medical_coding_context
+    }
     /// Consumes the builder and constructs a [`EncounterContext`](crate::types::EncounterContext).
     pub fn build(self) -> crate::types::EncounterContext {
         crate::types::EncounterContext {
             unstructured_context: self.unstructured_context,
+            medical_coding_context: self.medical_coding_context,
         }
     }
 }
@@ -59,6 +82,7 @@ impl ::std::fmt::Debug for EncounterContextBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("EncounterContextBuilder");
         formatter.field("unstructured_context", &"*** Sensitive Data Redacted ***");
+        formatter.field("medical_coding_context", &self.medical_coding_context);
         formatter.finish()
     }
 }

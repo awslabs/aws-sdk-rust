@@ -5,7 +5,21 @@
 pub struct GetKeyPolicyOutput {
     /// <p>A key policy document in JSON format.</p>
     pub policy: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+    /// <p>The name of the key policy. Valid values are:</p>
+    /// <dl>
+    /// <dt>
+    /// default
+    /// </dt>
+    /// <dd>
+    /// <p>The key policy that you manage.</p>
+    /// </dd>
+    /// <dt>
+    /// AWS_RAM
+    /// </dt>
+    /// <dd>
+    /// <p>The key policy that RAM manages for KMS keys that you share through RAM.</p>
+    /// </dd>
+    /// </dl>
     pub policy_name: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -14,7 +28,21 @@ impl GetKeyPolicyOutput {
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
-    /// <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+    /// <p>The name of the key policy. Valid values are:</p>
+    /// <dl>
+    /// <dt>
+    /// default
+    /// </dt>
+    /// <dd>
+    /// <p>The key policy that you manage.</p>
+    /// </dd>
+    /// <dt>
+    /// AWS_RAM
+    /// </dt>
+    /// <dd>
+    /// <p>The key policy that RAM manages for KMS keys that you share through RAM.</p>
+    /// </dd>
+    /// </dl>
     pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
@@ -54,17 +82,59 @@ impl GetKeyPolicyOutputBuilder {
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }
-    /// <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+    /// <p>The name of the key policy. Valid values are:</p>
+    /// <dl>
+    /// <dt>
+    /// default
+    /// </dt>
+    /// <dd>
+    /// <p>The key policy that you manage.</p>
+    /// </dd>
+    /// <dt>
+    /// AWS_RAM
+    /// </dt>
+    /// <dd>
+    /// <p>The key policy that RAM manages for KMS keys that you share through RAM.</p>
+    /// </dd>
+    /// </dl>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+    /// <p>The name of the key policy. Valid values are:</p>
+    /// <dl>
+    /// <dt>
+    /// default
+    /// </dt>
+    /// <dd>
+    /// <p>The key policy that you manage.</p>
+    /// </dd>
+    /// <dt>
+    /// AWS_RAM
+    /// </dt>
+    /// <dd>
+    /// <p>The key policy that RAM manages for KMS keys that you share through RAM.</p>
+    /// </dd>
+    /// </dl>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
     }
-    /// <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+    /// <p>The name of the key policy. Valid values are:</p>
+    /// <dl>
+    /// <dt>
+    /// default
+    /// </dt>
+    /// <dd>
+    /// <p>The key policy that you manage.</p>
+    /// </dd>
+    /// <dt>
+    /// AWS_RAM
+    /// </dt>
+    /// <dd>
+    /// <p>The key policy that RAM manages for KMS keys that you share through RAM.</p>
+    /// </dd>
+    /// </dl>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_name
     }

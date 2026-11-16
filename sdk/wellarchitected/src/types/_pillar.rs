@@ -39,7 +39,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <note> <p> <code>OPERATIONAL_EXCELLENCE</code> can appear in recommendation results but cannot be specified as a request parameter. The requestable values are <code>COST_OPTIMIZATION</code>, <code>SECURITY</code>, <code>RESILIENCE</code>, and <code>PERFORMANCE</code>.</p> </note> <p>A pillar of the Amazon Web Services Well-Architected Framework, used to scope recommendation generation.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

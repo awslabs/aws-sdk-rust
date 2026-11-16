@@ -226,6 +226,9 @@ pub mod create_workspace_page;
 /// Types for the `DeactivateEvaluationForm` operation.
 pub mod deactivate_evaluation_form;
 
+/// Types for the `DeleteAllEntitySessions` operation.
+pub mod delete_all_entity_sessions;
+
 /// Types for the `DeleteAttachedFile` operation.
 pub mod delete_attached_file;
 

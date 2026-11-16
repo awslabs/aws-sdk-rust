@@ -25,15 +25,23 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_activate_subscription;
 
+pub(crate) mod shape_create_dataset;
+
 pub(crate) mod shape_create_domain;
 
 pub(crate) mod shape_create_subscription;
 
 pub(crate) mod shape_deactivate_subscription;
 
+pub(crate) mod shape_delete_dataset;
+
 pub(crate) mod shape_delete_domain;
 
+pub(crate) mod shape_get_dataset;
+
 pub(crate) mod shape_get_domain;
+
+pub(crate) mod shape_get_medical_coding_job;
 
 pub(crate) mod shape_get_medical_scribe_listening_session;
 
@@ -41,15 +49,21 @@ pub(crate) mod shape_get_patient_insights_job;
 
 pub(crate) mod shape_get_subscription;
 
+pub(crate) mod shape_list_datasets;
+
 pub(crate) mod shape_list_domains;
 
 pub(crate) mod shape_list_subscriptions;
 
 pub(crate) mod shape_list_tags_for_resource;
 
+pub(crate) mod shape_start_medical_coding_job;
+
 pub(crate) mod shape_start_medical_scribe_listening_session;
 
 pub(crate) mod shape_start_patient_insights_job;
+
+pub(crate) mod shape_submit_feedback;
 
 pub(crate) mod shape_tag_resource;
 
@@ -67,6 +81,8 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_conflict_exception;
 
+pub(crate) mod shape_create_dataset_input;
+
 pub(crate) mod shape_create_domain_input;
 
 pub(crate) mod shape_internal_server_exception;
@@ -77,9 +93,13 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_start_medical_coding_job_input;
+
 pub(crate) mod shape_start_medical_scribe_listening_session_output;
 
 pub(crate) mod shape_start_patient_insights_job_input;
+
+pub(crate) mod shape_submit_feedback_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -95,6 +115,12 @@ pub fn parse_event_stream_error_metadata(
 
 pub(crate) mod shape_create_web_app_configuration;
 
+pub(crate) mod shape_dataset_artifacts;
+
+pub(crate) mod shape_dataset_config;
+
+pub(crate) mod shape_dataset_summary_list;
+
 pub(crate) mod shape_domain_summary_list;
 
 pub(crate) mod shape_encryption_context;
@@ -104,6 +130,14 @@ pub(crate) mod shape_input_data_config;
 pub(crate) mod shape_insights_context;
 
 pub(crate) mod shape_insights_output;
+
+pub(crate) mod shape_medical_codes_encounter_context;
+
+pub(crate) mod shape_medical_codes_patient_context;
+
+pub(crate) mod shape_medical_coding_output;
+
+pub(crate) mod shape_medical_coding_output_data_config;
 
 pub(crate) mod shape_medical_scribe_audio_event;
 
@@ -129,15 +163,25 @@ pub(crate) mod shape_user_context;
 
 pub(crate) mod shape_web_app_configuration;
 
+pub(crate) mod shape_dataset_summary;
+
 pub(crate) mod shape_domain_summary;
 
 pub(crate) mod shape_encounter_context;
 
 pub(crate) mod shape_fhir_server;
 
+pub(crate) mod shape_medical_coding_dataset_artifacts;
+
+pub(crate) mod shape_medical_coding_dataset_config;
+
 pub(crate) mod shape_medical_scribe_channel_definition;
 
 pub(crate) mod shape_medical_scribe_channel_definitions;
+
+pub(crate) mod shape_medical_scribe_checklist_event;
+
+pub(crate) mod shape_medical_scribe_periodontal_chart_event;
 
 pub(crate) mod shape_medical_scribe_post_stream_action_settings;
 
@@ -157,13 +201,29 @@ pub(crate) mod shape_clinical_note_generation_settings;
 
 pub(crate) mod shape_clinical_note_generation_settings_response;
 
+pub(crate) mod shape_medical_code_generation_result;
+
+pub(crate) mod shape_medical_code_generation_settings;
+
+pub(crate) mod shape_medical_code_generation_settings_response;
+
+pub(crate) mod shape_medical_coding_context;
+
 pub(crate) mod shape_artifact_details;
+
+pub(crate) mod shape_checklist_list;
 
 pub(crate) mod shape_medical_scribe_transcript_segment;
 
 pub(crate) mod shape_note_template_settings;
 
 pub(crate) mod shape_note_template_settings_response;
+
+pub(crate) mod shape_periodontal_review_list;
+
+pub(crate) mod shape_periodontal_tooth_list;
+
+pub(crate) mod shape_checklist;
 
 pub(crate) mod shape_custom_template;
 
@@ -173,4 +233,18 @@ pub(crate) mod shape_managed_template;
 
 pub(crate) mod shape_managed_template_response;
 
+pub(crate) mod shape_periodontal_review;
+
+pub(crate) mod shape_periodontal_tooth;
+
+pub(crate) mod shape_checklist_item_list;
+
+pub(crate) mod shape_periodontal_site_list;
+
+pub(crate) mod shape_periodontal_site_name_list;
+
 pub(crate) mod shape_template_section_instruction;
+
+pub(crate) mod shape_checklist_item;
+
+pub(crate) mod shape_periodontal_site;

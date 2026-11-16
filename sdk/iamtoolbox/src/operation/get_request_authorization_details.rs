@@ -350,7 +350,7 @@ pub enum GetRequestAuthorizationDetailsError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An unexpected error occurred while processing the request. Try again.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The requested authorization details do not exist in this region or have expired. Verify that the authorization ID from the access denied error message is correct and the call is made in the region where the denial occurred. Ensure that the calling principal belongs to the same account or organization as the original denied request.</p>
+    /// <p>The requested policy or authorization details do not exist in this region or have expired. Verify that the authorization ID from the access denied error message is correct and the call is made in the region where the denial occurred. Ensure that the calling principal belongs to the same account or organization as the original denied request. If you specified a policy URI, verify that it is from the <code>policies</code> list that <code>GetRequestAuthorizationDetails</code> returns for the same authorization ID.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request is malformed or is missing one or more required parameters. Check the request parameters and try again.</p>
     ValidationException(crate::types::error::ValidationException),

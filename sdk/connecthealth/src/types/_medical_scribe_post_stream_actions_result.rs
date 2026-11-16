@@ -6,11 +6,17 @@
 pub struct MedicalScribePostStreamActionsResult {
     /// <p>Results of clinical note generation</p>
     pub clinical_note_generation_result: ::std::option::Option<crate::types::ClinicalNoteGenerationResult>,
+    /// <p>Results of medical code generation. Returned if medical code generation runs for the session. Not returned if you set enabled to false in medicalCodeGenerationSettings.</p>
+    pub medical_code_generation_result: ::std::option::Option<crate::types::MedicalCodeGenerationResult>,
 }
 impl MedicalScribePostStreamActionsResult {
     /// <p>Results of clinical note generation</p>
     pub fn clinical_note_generation_result(&self) -> ::std::option::Option<&crate::types::ClinicalNoteGenerationResult> {
         self.clinical_note_generation_result.as_ref()
+    }
+    /// <p>Results of medical code generation. Returned if medical code generation runs for the session. Not returned if you set enabled to false in medicalCodeGenerationSettings.</p>
+    pub fn medical_code_generation_result(&self) -> ::std::option::Option<&crate::types::MedicalCodeGenerationResult> {
+        self.medical_code_generation_result.as_ref()
     }
 }
 impl MedicalScribePostStreamActionsResult {
@@ -25,6 +31,7 @@ impl MedicalScribePostStreamActionsResult {
 #[non_exhaustive]
 pub struct MedicalScribePostStreamActionsResultBuilder {
     pub(crate) clinical_note_generation_result: ::std::option::Option<crate::types::ClinicalNoteGenerationResult>,
+    pub(crate) medical_code_generation_result: ::std::option::Option<crate::types::MedicalCodeGenerationResult>,
 }
 impl MedicalScribePostStreamActionsResultBuilder {
     /// <p>Results of clinical note generation</p>
@@ -41,10 +48,25 @@ impl MedicalScribePostStreamActionsResultBuilder {
     pub fn get_clinical_note_generation_result(&self) -> &::std::option::Option<crate::types::ClinicalNoteGenerationResult> {
         &self.clinical_note_generation_result
     }
+    /// <p>Results of medical code generation. Returned if medical code generation runs for the session. Not returned if you set enabled to false in medicalCodeGenerationSettings.</p>
+    pub fn medical_code_generation_result(mut self, input: crate::types::MedicalCodeGenerationResult) -> Self {
+        self.medical_code_generation_result = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Results of medical code generation. Returned if medical code generation runs for the session. Not returned if you set enabled to false in medicalCodeGenerationSettings.</p>
+    pub fn set_medical_code_generation_result(mut self, input: ::std::option::Option<crate::types::MedicalCodeGenerationResult>) -> Self {
+        self.medical_code_generation_result = input;
+        self
+    }
+    /// <p>Results of medical code generation. Returned if medical code generation runs for the session. Not returned if you set enabled to false in medicalCodeGenerationSettings.</p>
+    pub fn get_medical_code_generation_result(&self) -> &::std::option::Option<crate::types::MedicalCodeGenerationResult> {
+        &self.medical_code_generation_result
+    }
     /// Consumes the builder and constructs a [`MedicalScribePostStreamActionsResult`](crate::types::MedicalScribePostStreamActionsResult).
     pub fn build(self) -> crate::types::MedicalScribePostStreamActionsResult {
         crate::types::MedicalScribePostStreamActionsResult {
             clinical_note_generation_result: self.clinical_note_generation_result,
+            medical_code_generation_result: self.medical_code_generation_result,
         }
     }
 }

@@ -170,4 +170,29 @@ impl ListDatabasesFluentBuilder {
     pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_work_group()
     }
+    ///
+    /// Appends an item to `AttributesToGet`.
+    ///
+    /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
+    ///
+    /// <p>Specifies the database properties returned by the <code>ListDatabases</code> call. The only valid value is <code>NAME</code>, which returns only the name of each database and omits the remaining properties. If you omit this parameter or specify an empty list, all database properties are returned.</p>
+    /// <p>Requesting only names can reduce response time for catalogs that contain many databases, especially resource links to databases shared from other accounts.</p>
+    /// <p>This parameter applies only to the Glue Data Catalog. For other data catalog types, it is ignored.</p>
+    pub fn attributes_to_get(mut self, input: crate::types::DatabaseAttributes) -> Self {
+        self.inner = self.inner.attributes_to_get(input);
+        self
+    }
+    /// <p>Specifies the database properties returned by the <code>ListDatabases</code> call. The only valid value is <code>NAME</code>, which returns only the name of each database and omits the remaining properties. If you omit this parameter or specify an empty list, all database properties are returned.</p>
+    /// <p>Requesting only names can reduce response time for catalogs that contain many databases, especially resource links to databases shared from other accounts.</p>
+    /// <p>This parameter applies only to the Glue Data Catalog. For other data catalog types, it is ignored.</p>
+    pub fn set_attributes_to_get(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseAttributes>>) -> Self {
+        self.inner = self.inner.set_attributes_to_get(input);
+        self
+    }
+    /// <p>Specifies the database properties returned by the <code>ListDatabases</code> call. The only valid value is <code>NAME</code>, which returns only the name of each database and omits the remaining properties. If you omit this parameter or specify an empty list, all database properties are returned.</p>
+    /// <p>Requesting only names can reduce response time for catalogs that contain many databases, especially resource links to databases shared from other accounts.</p>
+    /// <p>This parameter applies only to the Glue Data Catalog. For other data catalog types, it is ignored.</p>
+    pub fn get_attributes_to_get(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseAttributes>> {
+        self.inner.get_attributes_to_get()
+    }
 }

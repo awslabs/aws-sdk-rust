@@ -11,7 +11,7 @@ pub struct CreateAgentProfileInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The business overview for this profile.</p>
     pub business_overview: ::std::option::Option<::std::string::String>,
-    /// <p>The Well-Architected Tool Framework pillars to associate with this profile.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars to associate with this profile.</p>
     pub pillars: ::std::option::Option<::std::vec::Vec<crate::types::Pillar>>,
     /// <p>Indicates whether deletion protection is enabled for the profile.</p>
     pub deletion_protection: ::std::option::Option<bool>,
@@ -41,7 +41,7 @@ impl CreateAgentProfileInput {
     pub fn business_overview(&self) -> ::std::option::Option<&str> {
         self.business_overview.as_deref()
     }
-    /// <p>The Well-Architected Tool Framework pillars to associate with this profile.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars to associate with this profile.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pillars.is_none()`.
     pub fn pillars(&self) -> &[crate::types::Pillar] {
@@ -172,19 +172,19 @@ impl CreateAgentProfileInputBuilder {
     ///
     /// To override the contents of this collection use [`set_pillars`](Self::set_pillars).
     ///
-    /// <p>The Well-Architected Tool Framework pillars to associate with this profile.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars to associate with this profile.</p>
     pub fn pillars(mut self, input: crate::types::Pillar) -> Self {
         let mut v = self.pillars.unwrap_or_default();
         v.push(input);
         self.pillars = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Well-Architected Tool Framework pillars to associate with this profile.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars to associate with this profile.</p>
     pub fn set_pillars(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Pillar>>) -> Self {
         self.pillars = input;
         self
     }
-    /// <p>The Well-Architected Tool Framework pillars to associate with this profile.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars to associate with this profile.</p>
     pub fn get_pillars(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Pillar>> {
         &self.pillars
     }

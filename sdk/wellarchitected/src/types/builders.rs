@@ -5,19 +5,25 @@ pub use crate::types::_context_summary::ContextSummaryBuilder;
 
 pub use crate::types::_goal_summary::GoalSummaryBuilder;
 
+pub use crate::types::_organizational_aggregation_configuration::OrganizationalAggregationConfigurationBuilder;
+
+pub use crate::types::_organizational_report_filters::OrganizationalReportFiltersBuilder;
+
 pub use crate::types::_workload_discovery_config::WorkloadDiscoveryConfigBuilder;
 
 pub use crate::types::_workload_jira_configuration_input::WorkloadJiraConfigurationInputBuilder;
+
+pub use crate::types::_coverage_summary::CoverageSummaryBuilder;
 
 pub use crate::types::_roi::RoiBuilder;
 
 pub use crate::types::_remediation_summary::RemediationSummaryBuilder;
 
+pub use crate::types::_error_details::ErrorDetailsBuilder;
+
 pub use crate::types::_scope::ScopeBuilder;
 
 pub use crate::types::_progress::ProgressBuilder;
-
-pub use crate::types::_error_details::ErrorDetailsBuilder;
 
 pub use crate::types::_answer::AnswerBuilder;
 
@@ -55,11 +61,15 @@ pub use crate::types::_workload_share::WorkloadShareBuilder;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
 
-pub use crate::types::_aggregation_configuration::AggregationConfigurationBuilder;
-
 pub use crate::types::_tag::TagBuilder;
 
+pub use crate::types::_time_window::TimeWindowBuilder;
+
+pub use crate::types::_aggregation_configuration::AggregationConfigurationBuilder;
+
 pub use crate::types::_profile_question_update::ProfileQuestionUpdateBuilder;
+
+pub use crate::types::_preference_entry::PreferenceEntryBuilder;
 
 pub use crate::types::_insight::InsightBuilder;
 
@@ -76,6 +86,8 @@ pub use crate::types::_jira_configuration::JiraConfigurationBuilder;
 pub use crate::types::_consolidated_report_metric::ConsolidatedReportMetricBuilder;
 
 pub use crate::types::_workload_jira_configuration_output::WorkloadJiraConfigurationOutputBuilder;
+
+pub use crate::types::_organizational_report_summary::OrganizationalReportSummaryBuilder;
 
 pub use crate::types::_agent_profile_summary::AgentProfileSummaryBuilder;
 
@@ -121,9 +133,23 @@ pub use crate::types::_workload_summary::WorkloadSummaryBuilder;
 
 pub use crate::types::_workload_share_summary::WorkloadShareSummaryBuilder;
 
+pub use crate::types::_preference_update::PreferenceUpdateBuilder;
+
 pub use crate::types::_choice_update::ChoiceUpdateBuilder;
 
 pub use crate::types::_context_resource_tag::ContextResourceTagBuilder;
+
+pub use crate::types::_organizational_unit_entry::OrganizationalUnitEntryBuilder;
+
+pub use crate::types::_organizational_account_entry::OrganizationalAccountEntryBuilder;
+
+pub use crate::types::_pillar_count::PillarCountBuilder;
+
+pub use crate::types::_priority_count::PriorityCountBuilder;
+
+pub use crate::types::_failed_account::FailedAccountBuilder;
+
+pub use crate::types::_failed_organizational_unit::FailedOrganizationalUnitBuilder;
 
 pub use crate::types::_pillar_item::PillarItemBuilder;
 
@@ -142,6 +168,8 @@ pub use crate::types::_profile_question::ProfileQuestionBuilder;
 pub use crate::types::_profile_template_question::ProfileTemplateQuestionBuilder;
 
 pub use crate::types::_review_template_pillar_review_summary::ReviewTemplatePillarReviewSummaryBuilder;
+
+pub use crate::types::_auto_remediation::AutoRemediationBuilder;
 
 pub use crate::types::_lens_upgrade_summary::LensUpgradeSummaryBuilder;
 

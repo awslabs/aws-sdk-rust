@@ -20,6 +20,8 @@ pub struct CreateClusterOutput {
     pub deletion_protection_enabled: bool,
     /// <p>The connection endpoint for the created cluster.</p>
     pub endpoint: ::std::option::Option<::std::string::String>,
+    /// <p>The metric groups that you enabled for advanced monitoring on the created cluster.</p>
+    pub metric_groups: ::std::option::Option<::std::vec::Vec<crate::types::MetricGroupResponse>>,
     _request_id: Option<String>,
 }
 impl CreateClusterOutput {
@@ -57,6 +59,12 @@ impl CreateClusterOutput {
     pub fn endpoint(&self) -> ::std::option::Option<&str> {
         self.endpoint.as_deref()
     }
+    /// <p>The metric groups that you enabled for advanced monitoring on the created cluster.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_groups.is_none()`.
+    pub fn metric_groups(&self) -> &[crate::types::MetricGroupResponse] {
+        self.metric_groups.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateClusterOutput {
     fn request_id(&self) -> Option<&str> {
@@ -82,6 +90,7 @@ pub struct CreateClusterOutputBuilder {
     pub(crate) encryption_details: ::std::option::Option<crate::types::EncryptionDetails>,
     pub(crate) deletion_protection_enabled: ::std::option::Option<bool>,
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
+    pub(crate) metric_groups: ::std::option::Option<::std::vec::Vec<crate::types::MetricGroupResponse>>,
     _request_id: Option<String>,
 }
 impl CreateClusterOutputBuilder {
@@ -202,6 +211,26 @@ impl CreateClusterOutputBuilder {
     pub fn get_endpoint(&self) -> &::std::option::Option<::std::string::String> {
         &self.endpoint
     }
+    /// Appends an item to `metric_groups`.
+    ///
+    /// To override the contents of this collection use [`set_metric_groups`](Self::set_metric_groups).
+    ///
+    /// <p>The metric groups that you enabled for advanced monitoring on the created cluster.</p>
+    pub fn metric_groups(mut self, input: crate::types::MetricGroupResponse) -> Self {
+        let mut v = self.metric_groups.unwrap_or_default();
+        v.push(input);
+        self.metric_groups = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The metric groups that you enabled for advanced monitoring on the created cluster.</p>
+    pub fn set_metric_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricGroupResponse>>) -> Self {
+        self.metric_groups = input;
+        self
+    }
+    /// <p>The metric groups that you enabled for advanced monitoring on the created cluster.</p>
+    pub fn get_metric_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGroupResponse>> {
+        &self.metric_groups
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -255,6 +284,7 @@ impl CreateClusterOutputBuilder {
                 )
             })?,
             endpoint: self.endpoint,
+            metric_groups: self.metric_groups,
             _request_id: self._request_id,
         })
     }

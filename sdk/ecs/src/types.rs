@@ -465,6 +465,8 @@ pub use crate::types::_gateway_connector_health_check::GatewayConnectorHealthChe
 
 pub use crate::types::_gateway_connector_filters::GatewayConnectorFilters;
 
+pub use crate::types::_gateway_connector_deregistration_delay::GatewayConnectorDeregistrationDelay;
+
 pub use crate::types::_metric_configuration::MetricConfiguration;
 
 pub use crate::types::_deployment::Deployment;
@@ -1018,6 +1020,8 @@ mod _gateway_connection_alb_resources;
 mod _gateway_connection_resources;
 
 mod _gateway_connector;
+
+mod _gateway_connector_deregistration_delay;
 
 mod _gateway_connector_filters;
 

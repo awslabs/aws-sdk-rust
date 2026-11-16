@@ -453,3 +453,12 @@ pub(crate) fn runtime_version_info_correct_errors(
     }
     builder
 }
+
+pub(crate) fn elastic_ip_configuration_correct_errors(
+    mut builder: crate::types::builders::ElasticIpConfigurationBuilder,
+) -> crate::types::builders::ElasticIpConfigurationBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::ElasticIpType>().ok()
+    }
+    builder
+}

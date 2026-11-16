@@ -109,6 +109,8 @@ pub(crate) mod shape_configuration_overrides;
 
 pub(crate) mod shape_disk_encryption_configuration;
 
+pub(crate) mod shape_flex_execution;
+
 pub(crate) mod shape_identity_center_configuration_input;
 
 pub(crate) mod shape_image_configuration_input;

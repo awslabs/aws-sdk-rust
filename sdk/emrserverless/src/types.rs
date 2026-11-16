@@ -37,6 +37,8 @@ pub use crate::types::_configuration_overrides::ConfigurationOverrides;
 
 pub use crate::types::_retry_policy::RetryPolicy;
 
+pub use crate::types::_flex_execution::FlexExecution;
+
 pub use crate::types::_job_run::JobRun;
 
 pub use crate::types::_session_configuration_overrides::SessionConfigurationOverrides;
@@ -106,6 +108,8 @@ mod _configuration;
 mod _configuration_overrides;
 
 mod _disk_encryption_configuration;
+
+mod _flex_execution;
 
 mod _hive;
 

@@ -17,16 +17,24 @@
 ///     JobSecondaryStatus::Deleting => { /* ... */ },
 ///     JobSecondaryStatus::Downloading => { /* ... */ },
 ///     JobSecondaryStatus::Evaluating => { /* ... */ },
+///     JobSecondaryStatus::Executing => { /* ... */ },
 ///     JobSecondaryStatus::Failed => { /* ... */ },
+///     JobSecondaryStatus::Finalizing => { /* ... */ },
+///     JobSecondaryStatus::Generating => { /* ... */ },
 ///     JobSecondaryStatus::Interrupted => { /* ... */ },
 ///     JobSecondaryStatus::MaxRuntimeExceeded => { /* ... */ },
+///     JobSecondaryStatus::PartialGeneration => { /* ... */ },
 ///     JobSecondaryStatus::Pending => { /* ... */ },
+///     JobSecondaryStatus::Preparing => { /* ... */ },
+///     JobSecondaryStatus::Publishing => { /* ... */ },
 ///     JobSecondaryStatus::Restarting => { /* ... */ },
 ///     JobSecondaryStatus::Starting => { /* ... */ },
 ///     JobSecondaryStatus::Stopped => { /* ... */ },
 ///     JobSecondaryStatus::Stopping => { /* ... */ },
 ///     JobSecondaryStatus::Training => { /* ... */ },
+///     JobSecondaryStatus::Transforming => { /* ... */ },
 ///     JobSecondaryStatus::Uploading => { /* ... */ },
+///     JobSecondaryStatus::Validating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -66,13 +74,25 @@ pub enum JobSecondaryStatus {
     #[allow(missing_docs)] // documentation missing in model
     Evaluating,
     #[allow(missing_docs)] // documentation missing in model
+    Executing,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Finalizing,
+    #[allow(missing_docs)] // documentation missing in model
+    Generating,
     #[allow(missing_docs)] // documentation missing in model
     Interrupted,
     #[allow(missing_docs)] // documentation missing in model
     MaxRuntimeExceeded,
     #[allow(missing_docs)] // documentation missing in model
+    PartialGeneration,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    Preparing,
+    #[allow(missing_docs)] // documentation missing in model
+    Publishing,
     #[allow(missing_docs)] // documentation missing in model
     Restarting,
     #[allow(missing_docs)] // documentation missing in model
@@ -84,7 +104,11 @@ pub enum JobSecondaryStatus {
     #[allow(missing_docs)] // documentation missing in model
     Training,
     #[allow(missing_docs)] // documentation missing in model
+    Transforming,
+    #[allow(missing_docs)] // documentation missing in model
     Uploading,
+    #[allow(missing_docs)] // documentation missing in model
+    Validating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -97,16 +121,24 @@ impl ::std::convert::From<&str> for JobSecondaryStatus {
             "Deleting" => JobSecondaryStatus::Deleting,
             "Downloading" => JobSecondaryStatus::Downloading,
             "Evaluating" => JobSecondaryStatus::Evaluating,
+            "Executing" => JobSecondaryStatus::Executing,
             "Failed" => JobSecondaryStatus::Failed,
+            "Finalizing" => JobSecondaryStatus::Finalizing,
+            "Generating" => JobSecondaryStatus::Generating,
             "Interrupted" => JobSecondaryStatus::Interrupted,
             "MaxRuntimeExceeded" => JobSecondaryStatus::MaxRuntimeExceeded,
+            "PartialGeneration" => JobSecondaryStatus::PartialGeneration,
             "Pending" => JobSecondaryStatus::Pending,
+            "Preparing" => JobSecondaryStatus::Preparing,
+            "Publishing" => JobSecondaryStatus::Publishing,
             "Restarting" => JobSecondaryStatus::Restarting,
             "Starting" => JobSecondaryStatus::Starting,
             "Stopped" => JobSecondaryStatus::Stopped,
             "Stopping" => JobSecondaryStatus::Stopping,
             "Training" => JobSecondaryStatus::Training,
+            "Transforming" => JobSecondaryStatus::Transforming,
             "Uploading" => JobSecondaryStatus::Uploading,
+            "Validating" => JobSecondaryStatus::Validating,
             other => JobSecondaryStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -127,16 +159,24 @@ impl JobSecondaryStatus {
             JobSecondaryStatus::Deleting => "Deleting",
             JobSecondaryStatus::Downloading => "Downloading",
             JobSecondaryStatus::Evaluating => "Evaluating",
+            JobSecondaryStatus::Executing => "Executing",
             JobSecondaryStatus::Failed => "Failed",
+            JobSecondaryStatus::Finalizing => "Finalizing",
+            JobSecondaryStatus::Generating => "Generating",
             JobSecondaryStatus::Interrupted => "Interrupted",
             JobSecondaryStatus::MaxRuntimeExceeded => "MaxRuntimeExceeded",
+            JobSecondaryStatus::PartialGeneration => "PartialGeneration",
             JobSecondaryStatus::Pending => "Pending",
+            JobSecondaryStatus::Preparing => "Preparing",
+            JobSecondaryStatus::Publishing => "Publishing",
             JobSecondaryStatus::Restarting => "Restarting",
             JobSecondaryStatus::Starting => "Starting",
             JobSecondaryStatus::Stopped => "Stopped",
             JobSecondaryStatus::Stopping => "Stopping",
             JobSecondaryStatus::Training => "Training",
+            JobSecondaryStatus::Transforming => "Transforming",
             JobSecondaryStatus::Uploading => "Uploading",
+            JobSecondaryStatus::Validating => "Validating",
             JobSecondaryStatus::Unknown(value) => value.as_str(),
         }
     }
@@ -148,16 +188,24 @@ impl JobSecondaryStatus {
             "Deleting",
             "Downloading",
             "Evaluating",
+            "Executing",
             "Failed",
+            "Finalizing",
+            "Generating",
             "Interrupted",
             "MaxRuntimeExceeded",
+            "PartialGeneration",
             "Pending",
+            "Preparing",
+            "Publishing",
             "Restarting",
             "Starting",
             "Stopped",
             "Stopping",
             "Training",
+            "Transforming",
             "Uploading",
+            "Validating",
         ]
     }
 }
@@ -186,16 +234,24 @@ impl ::std::fmt::Display for JobSecondaryStatus {
             JobSecondaryStatus::Deleting => write!(f, "Deleting"),
             JobSecondaryStatus::Downloading => write!(f, "Downloading"),
             JobSecondaryStatus::Evaluating => write!(f, "Evaluating"),
+            JobSecondaryStatus::Executing => write!(f, "Executing"),
             JobSecondaryStatus::Failed => write!(f, "Failed"),
+            JobSecondaryStatus::Finalizing => write!(f, "Finalizing"),
+            JobSecondaryStatus::Generating => write!(f, "Generating"),
             JobSecondaryStatus::Interrupted => write!(f, "Interrupted"),
             JobSecondaryStatus::MaxRuntimeExceeded => write!(f, "MaxRuntimeExceeded"),
+            JobSecondaryStatus::PartialGeneration => write!(f, "PartialGeneration"),
             JobSecondaryStatus::Pending => write!(f, "Pending"),
+            JobSecondaryStatus::Preparing => write!(f, "Preparing"),
+            JobSecondaryStatus::Publishing => write!(f, "Publishing"),
             JobSecondaryStatus::Restarting => write!(f, "Restarting"),
             JobSecondaryStatus::Starting => write!(f, "Starting"),
             JobSecondaryStatus::Stopped => write!(f, "Stopped"),
             JobSecondaryStatus::Stopping => write!(f, "Stopping"),
             JobSecondaryStatus::Training => write!(f, "Training"),
+            JobSecondaryStatus::Transforming => write!(f, "Transforming"),
             JobSecondaryStatus::Uploading => write!(f, "Uploading"),
+            JobSecondaryStatus::Validating => write!(f, "Validating"),
             JobSecondaryStatus::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -95,6 +95,16 @@ static REGISTERWORKSPACEDIRECTORYINPUT_MEMBER_USER_IDENTITY_TYPE: ::aws_smithy_s
     "UserIdentityType",
     7,
 );
+static REGISTERWORKSPACEDIRECTORYINPUT_MEMBER_WORKSPACE_OS_USER_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces.synthetic#RegisterWorkspaceDirectoryInput$WorkspaceOsUserMode",
+        "com.amazonaws.workspaces.synthetic",
+        "RegisterWorkspaceDirectoryInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkspaceOsUserMode",
+    8,
+);
 static REGISTERWORKSPACEDIRECTORYINPUT_MEMBER_IDC_INSTANCE_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.workspaces.synthetic#RegisterWorkspaceDirectoryInput$IdcInstanceArn",
@@ -103,7 +113,7 @@ static REGISTERWORKSPACEDIRECTORYINPUT_MEMBER_IDC_INSTANCE_ARN: ::aws_smithy_sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "IdcInstanceArn",
-    8,
+    9,
 );
 static REGISTERWORKSPACEDIRECTORYINPUT_MEMBER_MICROSOFT_ENTRA_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -113,7 +123,7 @@ static REGISTERWORKSPACEDIRECTORYINPUT_MEMBER_MICROSOFT_ENTRA_CONFIG: ::aws_smit
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "MicrosoftEntraConfig",
-    9,
+    10,
 );
 static REGISTERWORKSPACEDIRECTORYINPUT_MEMBER_WORKSPACE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -123,7 +133,7 @@ static REGISTERWORKSPACEDIRECTORYINPUT_MEMBER_WORKSPACE_TYPE: ::aws_smithy_schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "WorkspaceType",
-    10,
+    11,
 );
 static REGISTERWORKSPACEDIRECTORYINPUT_MEMBER_ACTIVE_DIRECTORY_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -133,7 +143,7 @@ static REGISTERWORKSPACEDIRECTORYINPUT_MEMBER_ACTIVE_DIRECTORY_CONFIG: ::aws_smi
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "ActiveDirectoryConfig",
-    11,
+    12,
 );
 static REGISTERWORKSPACEDIRECTORYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -151,6 +161,7 @@ static REGISTERWORKSPACEDIRECTORYINPUT_SCHEMA: ::aws_smithy_schema::Schema<'stat
         &REGISTERWORKSPACEDIRECTORYINPUT_MEMBER_WORKSPACE_DIRECTORY_NAME,
         &REGISTERWORKSPACEDIRECTORYINPUT_MEMBER_WORKSPACE_DIRECTORY_DESCRIPTION,
         &REGISTERWORKSPACEDIRECTORYINPUT_MEMBER_USER_IDENTITY_TYPE,
+        &REGISTERWORKSPACEDIRECTORYINPUT_MEMBER_WORKSPACE_OS_USER_MODE,
         &REGISTERWORKSPACEDIRECTORYINPUT_MEMBER_IDC_INSTANCE_ARN,
         &REGISTERWORKSPACEDIRECTORYINPUT_MEMBER_MICROSOFT_ENTRA_CONFIG,
         &REGISTERWORKSPACEDIRECTORYINPUT_MEMBER_WORKSPACE_TYPE,
@@ -212,6 +223,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::regist
         }
         if let Some(ref val) = self.user_identity_type {
             ser.write_string(&REGISTERWORKSPACEDIRECTORYINPUT_MEMBER_USER_IDENTITY_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.workspace_os_user_mode {
+            ser.write_string(&REGISTERWORKSPACEDIRECTORYINPUT_MEMBER_WORKSPACE_OS_USER_MODE, val.as_str())?;
         }
         if let Some(ref val) = self.idc_instance_arn {
             ser.write_string(&REGISTERWORKSPACEDIRECTORYINPUT_MEMBER_IDC_INSTANCE_ARN, val)?;
@@ -309,24 +323,31 @@ impl crate::operation::register_workspace_directory::builders::RegisterWorkspace
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.idc_instance_arn = Some(deser.read_string(member)?);
+                        self.workspace_os_user_mode = Some(crate::types::WorkspaceOsUserMode::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(9) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.microsoft_entra_config = Some(crate::types::MicrosoftEntraConfig::deserialize(deser)?);
+                        self.idc_instance_arn = Some(deser.read_string(member)?);
                     }
                 }
                 Some(10) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.workspace_type = Some(crate::types::WorkspaceType::from(deser.read_string(member)?.as_str()));
+                        self.microsoft_entra_config = Some(crate::types::MicrosoftEntraConfig::deserialize(deser)?);
                     }
                 }
                 Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_type = Some(crate::types::WorkspaceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(12) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

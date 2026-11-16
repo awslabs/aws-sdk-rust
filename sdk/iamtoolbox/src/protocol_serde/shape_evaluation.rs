@@ -56,6 +56,9 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "checks" => {
+                            builder = builder.set_checks(crate::protocol_serde::shape_check_list::de_check_list(tokens, _value, depth + 1)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

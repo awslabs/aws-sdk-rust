@@ -7,6 +7,14 @@ pub use crate::types::_encryption_context::EncryptionContextBuilder;
 
 pub use crate::types::_web_app_configuration::WebAppConfigurationBuilder;
 
+pub use crate::types::_medical_codes_patient_context::MedicalCodesPatientContextBuilder;
+
+pub use crate::types::_medical_codes_encounter_context::MedicalCodesEncounterContextBuilder;
+
+pub use crate::types::_medical_coding_output_data_config::MedicalCodingOutputDataConfigBuilder;
+
+pub use crate::types::_medical_coding_output::MedicalCodingOutputBuilder;
+
 pub use crate::types::_medical_scribe_listening_session_details::MedicalScribeListeningSessionDetailsBuilder;
 
 pub use crate::types::_insights_output::InsightsOutputBuilder;
@@ -23,11 +31,17 @@ pub use crate::types::_input_data_config::InputDataConfigBuilder;
 
 pub use crate::types::_output_data_config::OutputDataConfigBuilder;
 
+pub use crate::types::_medical_coding_dataset_config::MedicalCodingDatasetConfigBuilder;
+
+pub use crate::types::_medical_coding_dataset_artifacts::MedicalCodingDatasetArtifactsBuilder;
+
 pub use crate::types::_medical_scribe_post_stream_action_settings_response::MedicalScribePostStreamActionSettingsResponseBuilder;
 
 pub use crate::types::_medical_scribe_post_stream_actions_result::MedicalScribePostStreamActionsResultBuilder;
 
 pub use crate::types::_fhir_server::FhirServerBuilder;
+
+pub use crate::types::_dataset_summary::DatasetSummaryBuilder;
 
 pub use crate::types::_domain_summary::DomainSummaryBuilder;
 
@@ -41,11 +55,19 @@ pub use crate::types::_medical_scribe_configuration_event::MedicalScribeConfigur
 
 pub use crate::types::_medical_scribe_transcript_event::MedicalScribeTranscriptEventBuilder;
 
+pub use crate::types::_medical_scribe_periodontal_chart_event::MedicalScribePeriodontalChartEventBuilder;
+
+pub use crate::types::_medical_scribe_checklist_event::MedicalScribeChecklistEventBuilder;
+
 pub use crate::types::_medical_scribe_channel_definition::MedicalScribeChannelDefinitionBuilder;
 
 pub use crate::types::_clinical_note_generation_settings_response::ClinicalNoteGenerationSettingsResponseBuilder;
 
+pub use crate::types::_medical_code_generation_settings_response::MedicalCodeGenerationSettingsResponseBuilder;
+
 pub use crate::types::_clinical_note_generation_result::ClinicalNoteGenerationResultBuilder;
+
+pub use crate::types::_medical_code_generation_result::MedicalCodeGenerationResultBuilder;
 
 pub use crate::types::_s3_source::S3SourceBuilder;
 
@@ -59,6 +81,16 @@ pub use crate::types::_artifact_details::ArtifactDetailsBuilder;
 
 pub use crate::types::_clinical_note_generation_settings::ClinicalNoteGenerationSettingsBuilder;
 
+pub use crate::types::_medical_code_generation_settings::MedicalCodeGenerationSettingsBuilder;
+
+pub use crate::types::_medical_coding_context::MedicalCodingContextBuilder;
+
+pub use crate::types::_periodontal_tooth::PeriodontalToothBuilder;
+
+pub use crate::types::_periodontal_review::PeriodontalReviewBuilder;
+
+pub use crate::types::_checklist::ChecklistBuilder;
+
 pub use crate::types::_managed_template_response::ManagedTemplateResponseBuilder;
 
 pub use crate::types::_custom_template_response::CustomTemplateResponseBuilder;
@@ -66,5 +98,9 @@ pub use crate::types::_custom_template_response::CustomTemplateResponseBuilder;
 pub use crate::types::_managed_template::ManagedTemplateBuilder;
 
 pub use crate::types::_custom_template::CustomTemplateBuilder;
+
+pub use crate::types::_periodontal_site::PeriodontalSiteBuilder;
+
+pub use crate::types::_checklist_item::ChecklistItemBuilder;
 
 pub use crate::types::_template_section_instruction::TemplateSectionInstructionBuilder;

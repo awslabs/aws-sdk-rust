@@ -95,6 +95,8 @@ pub(crate) mod shape_list_analysis_reports;
 
 pub(crate) mod shape_list_container_associations;
 
+pub(crate) mod shape_list_context_stores;
+
 pub(crate) mod shape_list_firewall_policies;
 
 pub(crate) mod shape_list_firewall_policies_v2;
@@ -104,6 +106,8 @@ pub(crate) mod shape_list_firewalls;
 pub(crate) mod shape_list_flow_operation_results;
 
 pub(crate) mod shape_list_flow_operations;
+
+pub(crate) mod shape_list_resources_in_context_store;
 
 pub(crate) mod shape_list_rule_groups;
 
@@ -249,6 +253,8 @@ pub(crate) mod shape_list_analysis_reports_input;
 
 pub(crate) mod shape_list_container_associations_input;
 
+pub(crate) mod shape_list_context_stores_input;
+
 pub(crate) mod shape_list_firewall_policies_input;
 
 pub(crate) mod shape_list_firewall_policies_v2_input;
@@ -258,6 +264,8 @@ pub(crate) mod shape_list_firewalls_input;
 pub(crate) mod shape_list_flow_operation_results_input;
 
 pub(crate) mod shape_list_flow_operations_input;
+
+pub(crate) mod shape_list_resources_in_context_store_input;
 
 pub(crate) mod shape_list_rule_groups_input;
 
@@ -333,6 +341,10 @@ pub(crate) mod shape_container_monitoring_configuration;
 
 pub(crate) mod shape_container_monitoring_configurations;
 
+pub(crate) mod shape_context_filters;
+
+pub(crate) mod shape_context_stores;
+
 pub(crate) mod shape_describe_proxy_resource;
 
 pub(crate) mod shape_enabled_analysis_types;
@@ -374,6 +386,8 @@ pub(crate) mod shape_logging_configuration;
 pub(crate) mod shape_nat_gateway_create_mapping;
 
 pub(crate) mod shape_proxy_settings;
+
+pub(crate) mod shape_resource_contexts;
 
 pub(crate) mod shape_rule_group;
 
@@ -433,6 +447,10 @@ pub(crate) mod shape_container_association_summary;
 
 pub(crate) mod shape_container_attribute;
 
+pub(crate) mod shape_context_store;
+
+pub(crate) mod shape_context_store_sync_state;
+
 pub(crate) mod shape_custom_action;
 
 pub(crate) mod shape_custom_actions;
@@ -476,6 +494,8 @@ pub(crate) mod shape_nat_gateway_create_mappings_list;
 pub(crate) mod shape_policy_variables;
 
 pub(crate) mod shape_reference_sets;
+
+pub(crate) mod shape_resource_context;
 
 pub(crate) mod shape_route53_resolved_ip_validation;
 
@@ -530,6 +550,10 @@ pub(crate) mod shape_check_certificate_revocation_status_actions;
 pub(crate) mod shape_cidr_summary;
 
 pub(crate) mod shape_container_attributes;
+
+pub(crate) mod shape_context_set;
+
+pub(crate) mod shape_context_sets;
 
 pub(crate) mod shape_firewall_policy_error;
 
@@ -620,6 +644,8 @@ pub(crate) mod shape_stateless_rules;
 pub(crate) mod shape_sync_state_config;
 
 pub(crate) mod shape_target_types;
+
+pub(crate) mod shape_context_definition_list;
 
 pub(crate) mod shape_dimension;
 

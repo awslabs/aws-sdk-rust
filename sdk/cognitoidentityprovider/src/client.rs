@@ -356,6 +356,8 @@ mod get_client_token;
 
 mod get_csv_header;
 
+mod get_derived_token;
+
 mod get_device;
 
 mod get_group;

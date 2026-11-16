@@ -15,6 +15,10 @@ where
         .map_err(::std::convert::Into::into)
 }
 
+pub(crate) mod shape_configure_tags;
+
+pub(crate) mod shape_configure_tags_for_organization;
+
 pub(crate) mod shape_describe_affected_accounts_for_organization;
 
 pub(crate) mod shape_describe_affected_entities;
@@ -41,11 +45,35 @@ pub(crate) mod shape_describe_health_service_status_for_organization;
 
 pub(crate) mod shape_describe_service_lifecycle;
 
+pub(crate) mod shape_describe_tag_keys;
+
+pub(crate) mod shape_describe_tag_keys_for_organization;
+
+pub(crate) mod shape_describe_tags;
+
+pub(crate) mod shape_describe_tags_for_organization;
+
+pub(crate) mod shape_describe_tags_onboarding_status;
+
+pub(crate) mod shape_describe_tags_onboarding_status_for_organization;
+
 pub(crate) mod shape_disable_health_service_access_for_organization;
+
+pub(crate) mod shape_disable_tags;
+
+pub(crate) mod shape_disable_tags_for_organization;
 
 pub(crate) mod shape_enable_health_service_access_for_organization;
 
+pub(crate) mod shape_enable_tags;
+
+pub(crate) mod shape_enable_tags_for_organization;
+
 pub(crate) mod shape_concurrent_modification_exception;
+
+pub(crate) mod shape_configure_tags_for_organization_input;
+
+pub(crate) mod shape_configure_tags_input;
 
 pub(crate) mod shape_describe_affected_accounts_for_organization_input;
 
@@ -71,11 +99,25 @@ pub(crate) mod shape_describe_events_input;
 
 pub(crate) mod shape_describe_service_lifecycle_input;
 
+pub(crate) mod shape_describe_tags_for_organization_input;
+
+pub(crate) mod shape_describe_tags_input;
+
 pub(crate) mod shape_invalid_pagination_token;
 
 pub(crate) mod shape_unsupported_locale;
 
+pub(crate) mod shape_account_tag_list;
+
+pub(crate) mod shape_affected_account_entity_list;
+
+pub(crate) mod shape_affected_account_filter;
+
 pub(crate) mod shape_affected_accounts_list;
+
+pub(crate) mod shape_configure_tags_for_organization_tag_key_list;
+
+pub(crate) mod shape_configure_tags_resource_tag_key_list;
 
 pub(crate) mod shape_describe_affected_entities_for_organization_failed_set;
 
@@ -87,7 +129,11 @@ pub(crate) mod shape_describe_event_details_for_organization_successful_set;
 
 pub(crate) mod shape_describe_event_details_successful_set;
 
+pub(crate) mod shape_describe_tags_for_organization_filter;
+
 pub(crate) mod shape_entity_account_filter;
+
+pub(crate) mod shape_entity_aggregate_filter;
 
 pub(crate) mod shape_entity_aggregate_list;
 
@@ -107,15 +153,31 @@ pub(crate) mod shape_event_type_filter;
 
 pub(crate) mod shape_event_type_list;
 
+pub(crate) mod shape_organization_entity_aggregate_filter;
+
 pub(crate) mod shape_organization_entity_aggregates_list;
 
 pub(crate) mod shape_organization_event_filter;
 
 pub(crate) mod shape_organization_event_list;
 
+pub(crate) mod shape_organization_tag_key_list;
+
+pub(crate) mod shape_organization_tag_list;
+
+pub(crate) mod shape_resource_tag_key;
+
+pub(crate) mod shape_resource_tag_key_list;
+
 pub(crate) mod shape_service_lifecycle_filter;
 
 pub(crate) mod shape_service_lifecycle_list;
+
+pub(crate) mod shape_tag_key_for_organization;
+
+pub(crate) mod shape_account_entity;
+
+pub(crate) mod shape_account_tag;
 
 pub(crate) mod shape_affected_entity;
 
@@ -143,9 +205,15 @@ pub(crate) mod shape_organization_event_details;
 
 pub(crate) mod shape_organization_event_details_error_item;
 
+pub(crate) mod shape_organization_tag;
+
+pub(crate) mod shape_organization_tag_key;
+
 pub(crate) mod shape_service_lifecycle;
 
 pub(crate) mod shape_account_entity_aggregates_list;
+
+pub(crate) mod shape_account_tag_set;
 
 pub(crate) mod shape_entity_metadata;
 
@@ -160,6 +228,8 @@ pub(crate) mod shape_event_persona_list;
 pub(crate) mod shape_event_type_persona_list;
 
 pub(crate) mod shape_lifecycle_event_list;
+
+pub(crate) mod shape_resource_tag_set;
 
 pub(crate) mod shape_tag_set;
 

@@ -25,6 +25,9 @@ where
                             builder = builder
                                 .set_distance(::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?.map(|v| v.to_f32_lossy()));
                         }
+                        "scores" => {
+                            builder = builder.set_scores(crate::protocol_serde::shape_query_scores::de_query_scores(tokens, _value, depth + 1)?);
+                        }
                         "key" => {
                             builder = builder.set_key(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

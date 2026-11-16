@@ -18,6 +18,8 @@ pub struct FirewallStatus {
     pub capacity_usage_summary: ::std::option::Option<crate::types::CapacityUsageSummary>,
     /// <p>The synchronization state of the transit gateway attachment. This indicates whether the firewall's transit gateway configuration is properly synchronized and operational. Use this to verify that your transit gateway configuration changes have been applied.</p>
     pub transit_gateway_attachment_sync_state: ::std::option::Option<crate::types::TransitGatewayAttachmentSyncState>,
+    /// <p>The synchronization state of the context sets in the firewall's rule groups with the firewall's context store. This field is only present when the firewall has a context store and its rule groups reference context sets.</p>
+    pub context_store_sync_state: ::std::option::Option<crate::types::ContextStoreSyncState>,
 }
 impl FirewallStatus {
     /// <p>The readiness of the configured firewall to handle network traffic across all of the Availability Zones where you have it configured. This setting is <code>READY</code> only when the <code>ConfigurationSyncStateSummary</code> value is <code>IN_SYNC</code> and the <code>Attachment</code> <code>Status</code> values for all of the configured subnets are <code>READY</code>.</p>
@@ -43,6 +45,10 @@ impl FirewallStatus {
     pub fn transit_gateway_attachment_sync_state(&self) -> ::std::option::Option<&crate::types::TransitGatewayAttachmentSyncState> {
         self.transit_gateway_attachment_sync_state.as_ref()
     }
+    /// <p>The synchronization state of the context sets in the firewall's rule groups with the firewall's context store. This field is only present when the firewall has a context store and its rule groups reference context sets.</p>
+    pub fn context_store_sync_state(&self) -> ::std::option::Option<&crate::types::ContextStoreSyncState> {
+        self.context_store_sync_state.as_ref()
+    }
 }
 impl FirewallStatus {
     /// Creates a new builder-style object to manufacture [`FirewallStatus`](crate::types::FirewallStatus).
@@ -60,6 +66,7 @@ pub struct FirewallStatusBuilder {
     pub(crate) sync_states: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::SyncState>>,
     pub(crate) capacity_usage_summary: ::std::option::Option<crate::types::CapacityUsageSummary>,
     pub(crate) transit_gateway_attachment_sync_state: ::std::option::Option<crate::types::TransitGatewayAttachmentSyncState>,
+    pub(crate) context_store_sync_state: ::std::option::Option<crate::types::ContextStoreSyncState>,
 }
 impl FirewallStatusBuilder {
     /// <p>The readiness of the configured firewall to handle network traffic across all of the Availability Zones where you have it configured. This setting is <code>READY</code> only when the <code>ConfigurationSyncStateSummary</code> value is <code>IN_SYNC</code> and the <code>Attachment</code> <code>Status</code> values for all of the configured subnets are <code>READY</code>.</p>
@@ -155,6 +162,20 @@ impl FirewallStatusBuilder {
     pub fn get_transit_gateway_attachment_sync_state(&self) -> &::std::option::Option<crate::types::TransitGatewayAttachmentSyncState> {
         &self.transit_gateway_attachment_sync_state
     }
+    /// <p>The synchronization state of the context sets in the firewall's rule groups with the firewall's context store. This field is only present when the firewall has a context store and its rule groups reference context sets.</p>
+    pub fn context_store_sync_state(mut self, input: crate::types::ContextStoreSyncState) -> Self {
+        self.context_store_sync_state = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The synchronization state of the context sets in the firewall's rule groups with the firewall's context store. This field is only present when the firewall has a context store and its rule groups reference context sets.</p>
+    pub fn set_context_store_sync_state(mut self, input: ::std::option::Option<crate::types::ContextStoreSyncState>) -> Self {
+        self.context_store_sync_state = input;
+        self
+    }
+    /// <p>The synchronization state of the context sets in the firewall's rule groups with the firewall's context store. This field is only present when the firewall has a context store and its rule groups reference context sets.</p>
+    pub fn get_context_store_sync_state(&self) -> &::std::option::Option<crate::types::ContextStoreSyncState> {
+        &self.context_store_sync_state
+    }
     /// Consumes the builder and constructs a [`FirewallStatus`](crate::types::FirewallStatus).
     /// This method will fail if any of the following fields are not set:
     /// - [`status`](crate::types::builders::FirewallStatusBuilder::status)
@@ -176,6 +197,7 @@ impl FirewallStatusBuilder {
             sync_states: self.sync_states,
             capacity_usage_summary: self.capacity_usage_summary,
             transit_gateway_attachment_sync_state: self.transit_gateway_attachment_sync_state,
+            context_store_sync_state: self.context_store_sync_state,
         })
     }
 }

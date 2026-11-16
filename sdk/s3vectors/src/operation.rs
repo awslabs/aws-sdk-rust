@@ -63,3 +63,6 @@ pub mod untag_resource;
 
 /// Types for the `UpdateIndexMode` operation.
 pub mod update_index_mode;
+
+/// Types for the `UpdateMetadataConfiguration` operation.
+pub mod update_metadata_configuration;

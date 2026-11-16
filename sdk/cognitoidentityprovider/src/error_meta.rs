@@ -3600,6 +3600,44 @@ impl From<crate::operation::get_csv_header::GetCSVHeaderError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_derived_token::GetDerivedTokenError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_derived_token::GetDerivedTokenError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_derived_token::GetDerivedTokenError> for Error {
+    fn from(err: crate::operation::get_derived_token::GetDerivedTokenError) -> Self {
+        match err {
+            crate::operation::get_derived_token::GetDerivedTokenError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::get_derived_token::GetDerivedTokenError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::get_derived_token::GetDerivedTokenError::InvalidLambdaResponseException(inner) => {
+                Error::InvalidLambdaResponseException(inner)
+            }
+            crate::operation::get_derived_token::GetDerivedTokenError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_derived_token::GetDerivedTokenError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::get_derived_token::GetDerivedTokenError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::get_derived_token::GetDerivedTokenError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_derived_token::GetDerivedTokenError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_derived_token::GetDerivedTokenError::UnexpectedLambdaException(inner) => Error::UnexpectedLambdaException(inner),
+            crate::operation::get_derived_token::GetDerivedTokenError::UserLambdaValidationException(inner) => {
+                Error::UserLambdaValidationException(inner)
+            }
+            crate::operation::get_derived_token::GetDerivedTokenError::UserNotFoundException(inner) => Error::UserNotFoundException(inner),
+            crate::operation::get_derived_token::GetDerivedTokenError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_device::GetDeviceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

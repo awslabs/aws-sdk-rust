@@ -29,6 +29,16 @@ pub(crate) fn reflens_list_agent_goals_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_agent_organizational_reports_output_output_next_token(
+    input: &crate::operation::list_agent_organizational_reports::ListAgentOrganizationalReportsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_agent_profiles_output_output_next_token(
     input: &crate::operation::list_agent_profiles::ListAgentProfilesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -259,6 +269,13 @@ pub(crate) fn lens_list_agent_contexts_output_output_items(
 pub(crate) fn lens_list_agent_goals_output_output_items(
     input: crate::operation::list_agent_goals::ListAgentGoalsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::GoalSummary>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_agent_organizational_reports_output_output_items(
+    input: crate::operation::list_agent_organizational_reports::ListAgentOrganizationalReportsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::OrganizationalReportSummary>> {
     let input = input.items;
     ::std::option::Option::Some(input)
 }

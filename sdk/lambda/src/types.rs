@@ -93,6 +93,8 @@ pub use crate::types::_capacity_provider_config::CapacityProviderConfig;
 
 pub use crate::types::_function_runtime_config::FunctionRuntimeConfig;
 
+pub use crate::types::_accelerator_config::AcceleratorConfig;
+
 pub use crate::types::_vpc_config_response::VpcConfigResponse;
 
 pub use crate::types::_environment_response::EnvironmentResponse;
@@ -346,6 +348,8 @@ pub use crate::types::_direct_s3_read::DirectS3Read;
 pub use crate::types::_kafka_schema_registry_auth_type::KafkaSchemaRegistryAuthType;
 
 pub use crate::types::_kafka_schema_validation_attribute::KafkaSchemaValidationAttribute;
+
+mod _accelerator_config;
 
 mod _account_limit;
 

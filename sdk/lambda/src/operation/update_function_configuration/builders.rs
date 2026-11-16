@@ -414,17 +414,17 @@ impl UpdateFunctionConfigurationFluentBuilder {
     pub fn get_image_config(&self) -> &::std::option::Option<crate::types::ImageConfig> {
         self.inner.get_image_config()
     }
-    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
+    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For functions that use <code>AcceleratorConfig</code>, the maximum is 32,768 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
     pub fn ephemeral_storage(mut self, input: crate::types::EphemeralStorage) -> Self {
         self.inner = self.inner.ephemeral_storage(input);
         self
     }
-    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
+    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For functions that use <code>AcceleratorConfig</code>, the maximum is 32,768 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
     pub fn set_ephemeral_storage(mut self, input: ::std::option::Option<crate::types::EphemeralStorage>) -> Self {
         self.inner = self.inner.set_ephemeral_storage(input);
         self
     }
-    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
+    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For functions that use <code>AcceleratorConfig</code>, the maximum is 32,768 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
     pub fn get_ephemeral_storage(&self) -> &::std::option::Option<crate::types::EphemeralStorage> {
         self.inner.get_ephemeral_storage()
     }
@@ -497,5 +497,19 @@ impl UpdateFunctionConfigurationFluentBuilder {
     /// <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
     pub fn get_runtime_config(&self) -> &::std::option::Option<crate::types::FunctionRuntimeConfig> {
         self.inner.get_runtime_config()
+    }
+    /// <p>The accelerator resource settings for a Lambda execution environment.</p>
+    pub fn accelerator_config(mut self, input: crate::types::AcceleratorConfig) -> Self {
+        self.inner = self.inner.accelerator_config(input);
+        self
+    }
+    /// <p>The accelerator resource settings for a Lambda execution environment.</p>
+    pub fn set_accelerator_config(mut self, input: ::std::option::Option<crate::types::AcceleratorConfig>) -> Self {
+        self.inner = self.inner.set_accelerator_config(input);
+        self
+    }
+    /// <p>The accelerator resource settings for a Lambda execution environment.</p>
+    pub fn get_accelerator_config(&self) -> &::std::option::Option<crate::types::AcceleratorConfig> {
+        self.inner.get_accelerator_config()
     }
 }

@@ -176,6 +176,18 @@ pub(crate) fn de_get_agent_recommendation_generation(
                         ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                     )?);
                 }
+                "generationRecommendationTypes" => {
+                    builder = builder.set_generation_recommendation_types(
+                        crate::protocol_serde::shape_generation_recommendation_types::de_generation_recommendation_types(tokens, _value, depth + 1)?,
+                    );
+                }
+                "generationType" => {
+                    builder = builder.set_generation_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::GenerationType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "id" => {
                     builder = builder.set_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -21,11 +21,21 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
-//! Amazon Web Services Well-Architected helps you evaluate your architectures against Amazon Web Services best practices across operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability. The service includes the Amazon Web Services Well-Architected Agent for AI-powered recommendations tailored to your specific environment, and the [Well-Architected Tool](http://aws.amazon.com/well-architected-tool) for conducting reviews and tracking improvements.
+//! This is the _Amazon Web Services Well-Architected API Reference_. Amazon Web Services Well-Architected helps you evaluate your architectures against Amazon Web Services best practices across operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability.
 //!
-//! This is the _Amazon Web Services Well-Architected API Reference_. Through this API, you can programmatically access personalized recommendations and automation scripts from the Amazon Web Services Well-Architected Agent, and create and manage workloads, conduct lens reviews, track milestones, manage custom lenses, share workloads across accounts, and manage profiles with the Well-Architected Tool.
+//! To view API actions organized by service, see [API actions](https://docs.aws.amazon.com/wellarchitected/latest/userguide/wa-api-actions.html).
 //!
-//! For more information about the service, see the [Amazon Web Services Well-Architected User Guide](https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html).
+//! __Amazon Web Services Well-Architected Agent (preview)__
+//!
+//! Describes the API operations for managing optimization profiles, goals, application context, and recommendations in the Amazon Web Services Well-Architected Agent. Through this API, you can create and configure agent profiles that define the scope of your Amazon Web Services environment to analyze, set optimization goals across cost, security, performance, and resilience pillars, start recommendation generation, retrieve prioritized recommendations with ready-to-deploy remediation scripts, and provide feedback to improve future recommendations.
+//!
+//! For more information, see [What is Amazon Web Services Well-Architected Agent?](https://docs.aws.amazon.com/wellarchitected/latest/userguide/agent.html)
+//!
+//! __Well-Architected Tool__
+//!
+//! Describes the API operations for creating and managing workloads, conducting lens reviews, tracking milestones, managing custom lenses, sharing workloads across accounts, and managing profiles with the Well-Architected Tool.
+//!
+//! For more information, see [What is Well-Architected Tool?](https://docs.aws.amazon.com/wellarchitected/latest/userguide/tool.html)
 //!
 //! ## Getting Started
 //!
@@ -39,7 +49,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-wellarchitected = "1.123.0"
+//! aws-sdk-wellarchitected = "1.124.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -171,6 +181,20 @@ pub use config::Config;
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 pub mod client;
 
 /// Configuration for AWS Well-Architected Tool.
@@ -210,6 +234,11 @@ mod endpoint_lib;
 mod lens;
 
 mod serde_util;
+
+/// Supporting types for waiters.
+///
+/// Note: to use waiters, import the [`Waiters`](crate::client::Waiters) trait, which adds methods prefixed with `wait_until` to the client.
+pub mod waiters;
 
 mod json_errors;
 

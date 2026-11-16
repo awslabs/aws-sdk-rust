@@ -30,6 +30,15 @@ where
                                 )?,
                             );
                         }
+                        "medicalCodeGenerationResult" => {
+                            builder = builder.set_medical_code_generation_result(
+                                crate::protocol_serde::shape_medical_code_generation_result::de_medical_code_generation_result(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

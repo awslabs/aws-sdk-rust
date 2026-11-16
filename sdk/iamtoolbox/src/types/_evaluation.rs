@@ -17,11 +17,16 @@ pub struct Evaluation {
     /// <li>
     /// <p><code>EXPLICIT_DENY</code> - The action was explicitly denied by a policy.</p></li>
     /// <li>
-    /// <p><code>IMPLICIT_DENY</code> - The action was denied because no policy allowed it.</p></li>
+    /// <p><code>IMPLICIT_DENY</code> - The action was denied because at least one required authorization check had no matching allow statement.</p></li>
     /// </ul>
     pub evaluated_effect: ::std::option::Option<crate::types::EvaluatedEffect>,
-    /// <p>The policies that matched during evaluation of this action and resource. An implicit denial produces no matched policies.</p>
+    /// <p><code>matchedPolicies</code> is deprecated. Use <code>checks</code> instead. This value contains the policies that matched during evaluation of this action and resource.</p>
+    #[deprecated(note = "Use checks, which group matched policies by the requirement they apply to.", since = "2026-11-13")]
     pub matched_policies: ::std::option::Option<::std::vec::Vec<crate::types::MatchedPolicy>>,
+    /// <p><code>checks</code> contains the authorization checks that explain an evaluation result. Each check is one authorization requirement and reports its result and policies from the top-level <code>policies</code> list with matching statements. The output lists RCP checks from the organization root to the account, then SCP checks from the organization root to the account. It then lists VPC endpoint, resource, principal, permissions boundary, and session checks. When <code>checks</code> is present, an <code>EXPLICIT_DENY</code> evaluation includes an <code>EXPLICIT_DENY</code> check. When <code>checks</code> is present for an <code>IMPLICIT_DENY</code> evaluation, it includes an <code>IMPLICIT_DENY</code> check and no <code>EXPLICIT_DENY</code> check. For more information about how IAM evaluates policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic_policy-eval-denyallow.html">Policy evaluation logic</a>.</p>
+    /// <p><code>PRINCIPAL</code>, <code>PERMISSIONS_BOUNDARY</code>, and <code>SESSION</code> checks appear when they apply to the principal that made the request, even if none of their policies matched. A missing allow produces <code>IMPLICIT_DENY</code>, or <code>NO_IMPACT</code> when another path already allowed the request.</p>
+    /// <p>Returned when the caller is in the request principal's account or organization. The absence of <code>checks</code> does not mean no authorization checks applied.</p>
+    pub checks: ::std::option::Option<::std::vec::Vec<crate::types::Check>>,
 }
 impl Evaluation {
     /// <p>The action evaluated for this request (for example, <code>iam:PassRole</code>).</p>
@@ -45,16 +50,25 @@ impl Evaluation {
     /// <li>
     /// <p><code>EXPLICIT_DENY</code> - The action was explicitly denied by a policy.</p></li>
     /// <li>
-    /// <p><code>IMPLICIT_DENY</code> - The action was denied because no policy allowed it.</p></li>
+    /// <p><code>IMPLICIT_DENY</code> - The action was denied because at least one required authorization check had no matching allow statement.</p></li>
     /// </ul>
     pub fn evaluated_effect(&self) -> ::std::option::Option<&crate::types::EvaluatedEffect> {
         self.evaluated_effect.as_ref()
     }
-    /// <p>The policies that matched during evaluation of this action and resource. An implicit denial produces no matched policies.</p>
+    /// <p><code>matchedPolicies</code> is deprecated. Use <code>checks</code> instead. This value contains the policies that matched during evaluation of this action and resource.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.matched_policies.is_none()`.
+    #[deprecated(note = "Use checks, which group matched policies by the requirement they apply to.", since = "2026-11-13")]
     pub fn matched_policies(&self) -> &[crate::types::MatchedPolicy] {
         self.matched_policies.as_deref().unwrap_or_default()
+    }
+    /// <p><code>checks</code> contains the authorization checks that explain an evaluation result. Each check is one authorization requirement and reports its result and policies from the top-level <code>policies</code> list with matching statements. The output lists RCP checks from the organization root to the account, then SCP checks from the organization root to the account. It then lists VPC endpoint, resource, principal, permissions boundary, and session checks. When <code>checks</code> is present, an <code>EXPLICIT_DENY</code> evaluation includes an <code>EXPLICIT_DENY</code> check. When <code>checks</code> is present for an <code>IMPLICIT_DENY</code> evaluation, it includes an <code>IMPLICIT_DENY</code> check and no <code>EXPLICIT_DENY</code> check. For more information about how IAM evaluates policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic_policy-eval-denyallow.html">Policy evaluation logic</a>.</p>
+    /// <p><code>PRINCIPAL</code>, <code>PERMISSIONS_BOUNDARY</code>, and <code>SESSION</code> checks appear when they apply to the principal that made the request, even if none of their policies matched. A missing allow produces <code>IMPLICIT_DENY</code>, or <code>NO_IMPACT</code> when another path already allowed the request.</p>
+    /// <p>Returned when the caller is in the request principal's account or organization. The absence of <code>checks</code> does not mean no authorization checks applied.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.checks.is_none()`.
+    pub fn checks(&self) -> &[crate::types::Check] {
+        self.checks.as_deref().unwrap_or_default()
     }
 }
 impl Evaluation {
@@ -73,6 +87,7 @@ pub struct EvaluationBuilder {
     pub(crate) context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
     pub(crate) evaluated_effect: ::std::option::Option<crate::types::EvaluatedEffect>,
     pub(crate) matched_policies: ::std::option::Option<::std::vec::Vec<crate::types::MatchedPolicy>>,
+    pub(crate) checks: ::std::option::Option<::std::vec::Vec<crate::types::Check>>,
 }
 impl EvaluationBuilder {
     /// <p>The action evaluated for this request (for example, <code>iam:PassRole</code>).</p>
@@ -135,7 +150,7 @@ impl EvaluationBuilder {
     /// <li>
     /// <p><code>EXPLICIT_DENY</code> - The action was explicitly denied by a policy.</p></li>
     /// <li>
-    /// <p><code>IMPLICIT_DENY</code> - The action was denied because no policy allowed it.</p></li>
+    /// <p><code>IMPLICIT_DENY</code> - The action was denied because at least one required authorization check had no matching allow statement.</p></li>
     /// </ul>
     pub fn evaluated_effect(mut self, input: crate::types::EvaluatedEffect) -> Self {
         self.evaluated_effect = ::std::option::Option::Some(input);
@@ -148,7 +163,7 @@ impl EvaluationBuilder {
     /// <li>
     /// <p><code>EXPLICIT_DENY</code> - The action was explicitly denied by a policy.</p></li>
     /// <li>
-    /// <p><code>IMPLICIT_DENY</code> - The action was denied because no policy allowed it.</p></li>
+    /// <p><code>IMPLICIT_DENY</code> - The action was denied because at least one required authorization check had no matching allow statement.</p></li>
     /// </ul>
     pub fn set_evaluated_effect(mut self, input: ::std::option::Option<crate::types::EvaluatedEffect>) -> Self {
         self.evaluated_effect = input;
@@ -161,7 +176,7 @@ impl EvaluationBuilder {
     /// <li>
     /// <p><code>EXPLICIT_DENY</code> - The action was explicitly denied by a policy.</p></li>
     /// <li>
-    /// <p><code>IMPLICIT_DENY</code> - The action was denied because no policy allowed it.</p></li>
+    /// <p><code>IMPLICIT_DENY</code> - The action was denied because at least one required authorization check had no matching allow statement.</p></li>
     /// </ul>
     pub fn get_evaluated_effect(&self) -> &::std::option::Option<crate::types::EvaluatedEffect> {
         &self.evaluated_effect
@@ -170,21 +185,50 @@ impl EvaluationBuilder {
     ///
     /// To override the contents of this collection use [`set_matched_policies`](Self::set_matched_policies).
     ///
-    /// <p>The policies that matched during evaluation of this action and resource. An implicit denial produces no matched policies.</p>
+    /// <p><code>matchedPolicies</code> is deprecated. Use <code>checks</code> instead. This value contains the policies that matched during evaluation of this action and resource.</p>
+    #[deprecated(note = "Use checks, which group matched policies by the requirement they apply to.", since = "2026-11-13")]
     pub fn matched_policies(mut self, input: crate::types::MatchedPolicy) -> Self {
         let mut v = self.matched_policies.unwrap_or_default();
         v.push(input);
         self.matched_policies = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The policies that matched during evaluation of this action and resource. An implicit denial produces no matched policies.</p>
+    /// <p><code>matchedPolicies</code> is deprecated. Use <code>checks</code> instead. This value contains the policies that matched during evaluation of this action and resource.</p>
+    #[deprecated(note = "Use checks, which group matched policies by the requirement they apply to.", since = "2026-11-13")]
     pub fn set_matched_policies(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MatchedPolicy>>) -> Self {
         self.matched_policies = input;
         self
     }
-    /// <p>The policies that matched during evaluation of this action and resource. An implicit denial produces no matched policies.</p>
+    /// <p><code>matchedPolicies</code> is deprecated. Use <code>checks</code> instead. This value contains the policies that matched during evaluation of this action and resource.</p>
+    #[deprecated(note = "Use checks, which group matched policies by the requirement they apply to.", since = "2026-11-13")]
     pub fn get_matched_policies(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MatchedPolicy>> {
         &self.matched_policies
+    }
+    /// Appends an item to `checks`.
+    ///
+    /// To override the contents of this collection use [`set_checks`](Self::set_checks).
+    ///
+    /// <p><code>checks</code> contains the authorization checks that explain an evaluation result. Each check is one authorization requirement and reports its result and policies from the top-level <code>policies</code> list with matching statements. The output lists RCP checks from the organization root to the account, then SCP checks from the organization root to the account. It then lists VPC endpoint, resource, principal, permissions boundary, and session checks. When <code>checks</code> is present, an <code>EXPLICIT_DENY</code> evaluation includes an <code>EXPLICIT_DENY</code> check. When <code>checks</code> is present for an <code>IMPLICIT_DENY</code> evaluation, it includes an <code>IMPLICIT_DENY</code> check and no <code>EXPLICIT_DENY</code> check. For more information about how IAM evaluates policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic_policy-eval-denyallow.html">Policy evaluation logic</a>.</p>
+    /// <p><code>PRINCIPAL</code>, <code>PERMISSIONS_BOUNDARY</code>, and <code>SESSION</code> checks appear when they apply to the principal that made the request, even if none of their policies matched. A missing allow produces <code>IMPLICIT_DENY</code>, or <code>NO_IMPACT</code> when another path already allowed the request.</p>
+    /// <p>Returned when the caller is in the request principal's account or organization. The absence of <code>checks</code> does not mean no authorization checks applied.</p>
+    pub fn checks(mut self, input: crate::types::Check) -> Self {
+        let mut v = self.checks.unwrap_or_default();
+        v.push(input);
+        self.checks = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p><code>checks</code> contains the authorization checks that explain an evaluation result. Each check is one authorization requirement and reports its result and policies from the top-level <code>policies</code> list with matching statements. The output lists RCP checks from the organization root to the account, then SCP checks from the organization root to the account. It then lists VPC endpoint, resource, principal, permissions boundary, and session checks. When <code>checks</code> is present, an <code>EXPLICIT_DENY</code> evaluation includes an <code>EXPLICIT_DENY</code> check. When <code>checks</code> is present for an <code>IMPLICIT_DENY</code> evaluation, it includes an <code>IMPLICIT_DENY</code> check and no <code>EXPLICIT_DENY</code> check. For more information about how IAM evaluates policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic_policy-eval-denyallow.html">Policy evaluation logic</a>.</p>
+    /// <p><code>PRINCIPAL</code>, <code>PERMISSIONS_BOUNDARY</code>, and <code>SESSION</code> checks appear when they apply to the principal that made the request, even if none of their policies matched. A missing allow produces <code>IMPLICIT_DENY</code>, or <code>NO_IMPACT</code> when another path already allowed the request.</p>
+    /// <p>Returned when the caller is in the request principal's account or organization. The absence of <code>checks</code> does not mean no authorization checks applied.</p>
+    pub fn set_checks(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Check>>) -> Self {
+        self.checks = input;
+        self
+    }
+    /// <p><code>checks</code> contains the authorization checks that explain an evaluation result. Each check is one authorization requirement and reports its result and policies from the top-level <code>policies</code> list with matching statements. The output lists RCP checks from the organization root to the account, then SCP checks from the organization root to the account. It then lists VPC endpoint, resource, principal, permissions boundary, and session checks. When <code>checks</code> is present, an <code>EXPLICIT_DENY</code> evaluation includes an <code>EXPLICIT_DENY</code> check. When <code>checks</code> is present for an <code>IMPLICIT_DENY</code> evaluation, it includes an <code>IMPLICIT_DENY</code> check and no <code>EXPLICIT_DENY</code> check. For more information about how IAM evaluates policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic_policy-eval-denyallow.html">Policy evaluation logic</a>.</p>
+    /// <p><code>PRINCIPAL</code>, <code>PERMISSIONS_BOUNDARY</code>, and <code>SESSION</code> checks appear when they apply to the principal that made the request, even if none of their policies matched. A missing allow produces <code>IMPLICIT_DENY</code>, or <code>NO_IMPACT</code> when another path already allowed the request.</p>
+    /// <p>Returned when the caller is in the request principal's account or organization. The absence of <code>checks</code> does not mean no authorization checks applied.</p>
+    pub fn get_checks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Check>> {
+        &self.checks
     }
     /// Consumes the builder and constructs a [`Evaluation`](crate::types::Evaluation).
     /// This method will fail if any of the following fields are not set:
@@ -207,6 +251,7 @@ impl EvaluationBuilder {
             context: self.context,
             evaluated_effect: self.evaluated_effect,
             matched_policies: self.matched_policies,
+            checks: self.checks,
         })
     }
 }

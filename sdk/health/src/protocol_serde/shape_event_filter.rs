@@ -114,13 +114,14 @@ pub fn ser_event_filter(
     }
     if let Some(var_25) = &input.tags {
         encoder.str("tags");
-        encoder.array((*var_25).len());
-        for item_26 in var_25 {
+        encoder.map((*var_25).len());
+        for (key_26, value_27) in var_25 {
             {
-                encoder.map((*item_26).len());
-                for (key_27, value_28) in item_26 {
+                encoder.str(key_26.as_str());
+                encoder.array((*value_27).len());
+                for item_28 in value_27 {
                     {
-                        encoder.str(key_27.as_str()).str(value_28.as_str());
+                        encoder.str(item_28.as_str());
                     }
                 }
             }

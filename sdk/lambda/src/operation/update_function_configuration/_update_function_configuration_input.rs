@@ -58,7 +58,7 @@ pub struct UpdateFunctionConfigurationInput {
     pub file_system_configs: ::std::option::Option<::std::vec::Vec<crate::types::FileSystemConfig>>,
     /// <p><a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container image configuration values</a> that override the values in the container image Docker file.</p>
     pub image_config: ::std::option::Option<crate::types::ImageConfig>,
-    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
+    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For functions that use <code>AcceleratorConfig</code>, the maximum is 32,768 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
     pub ephemeral_storage: ::std::option::Option<crate::types::EphemeralStorage>,
     /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a> setting.</p>
     pub snap_start: ::std::option::Option<crate::types::SnapStart>,
@@ -70,6 +70,8 @@ pub struct UpdateFunctionConfigurationInput {
     pub durable_config: ::std::option::Option<crate::types::DurableConfig>,
     /// <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
     pub runtime_config: ::std::option::Option<crate::types::FunctionRuntimeConfig>,
+    /// <p>The accelerator resource settings for a Lambda execution environment.</p>
+    pub accelerator_config: ::std::option::Option<crate::types::AcceleratorConfig>,
 }
 impl UpdateFunctionConfigurationInput {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -163,7 +165,7 @@ impl UpdateFunctionConfigurationInput {
     pub fn image_config(&self) -> ::std::option::Option<&crate::types::ImageConfig> {
         self.image_config.as_ref()
     }
-    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
+    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For functions that use <code>AcceleratorConfig</code>, the maximum is 32,768 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
     pub fn ephemeral_storage(&self) -> ::std::option::Option<&crate::types::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
@@ -186,6 +188,10 @@ impl UpdateFunctionConfigurationInput {
     /// <p>The customer-managed runtime configuration for your function. Specifies the customer-managed runtime and the runtime alias that your function uses.</p>
     pub fn runtime_config(&self) -> ::std::option::Option<&crate::types::FunctionRuntimeConfig> {
         self.runtime_config.as_ref()
+    }
+    /// <p>The accelerator resource settings for a Lambda execution environment.</p>
+    pub fn accelerator_config(&self) -> ::std::option::Option<&crate::types::AcceleratorConfig> {
+        self.accelerator_config.as_ref()
     }
 }
 impl UpdateFunctionConfigurationInput {
@@ -221,6 +227,7 @@ pub struct UpdateFunctionConfigurationInputBuilder {
     pub(crate) capacity_provider_config: ::std::option::Option<crate::types::CapacityProviderConfig>,
     pub(crate) durable_config: ::std::option::Option<crate::types::DurableConfig>,
     pub(crate) runtime_config: ::std::option::Option<crate::types::FunctionRuntimeConfig>,
+    pub(crate) accelerator_config: ::std::option::Option<crate::types::AcceleratorConfig>,
 }
 impl UpdateFunctionConfigurationInputBuilder {
     /// <p>The name or ARN of the Lambda function.</p>
@@ -529,17 +536,17 @@ impl UpdateFunctionConfigurationInputBuilder {
     pub fn get_image_config(&self) -> &::std::option::Option<crate::types::ImageConfig> {
         &self.image_config
     }
-    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
+    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For functions that use <code>AcceleratorConfig</code>, the maximum is 32,768 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
     pub fn ephemeral_storage(mut self, input: crate::types::EphemeralStorage) -> Self {
         self.ephemeral_storage = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
+    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For functions that use <code>AcceleratorConfig</code>, the maximum is 32,768 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
     pub fn set_ephemeral_storage(mut self, input: ::std::option::Option<crate::types::EphemeralStorage>) -> Self {
         self.ephemeral_storage = input;
         self
     }
-    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
+    /// <p>The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole number between 512 and 10,240 MB. For functions that use <code>AcceleratorConfig</code>, the maximum is 32,768 MB. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring ephemeral storage (console)</a>.</p>
     pub fn get_ephemeral_storage(&self) -> &::std::option::Option<crate::types::EphemeralStorage> {
         &self.ephemeral_storage
     }
@@ -613,6 +620,20 @@ impl UpdateFunctionConfigurationInputBuilder {
     pub fn get_runtime_config(&self) -> &::std::option::Option<crate::types::FunctionRuntimeConfig> {
         &self.runtime_config
     }
+    /// <p>The accelerator resource settings for a Lambda execution environment.</p>
+    pub fn accelerator_config(mut self, input: crate::types::AcceleratorConfig) -> Self {
+        self.accelerator_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The accelerator resource settings for a Lambda execution environment.</p>
+    pub fn set_accelerator_config(mut self, input: ::std::option::Option<crate::types::AcceleratorConfig>) -> Self {
+        self.accelerator_config = input;
+        self
+    }
+    /// <p>The accelerator resource settings for a Lambda execution environment.</p>
+    pub fn get_accelerator_config(&self) -> &::std::option::Option<crate::types::AcceleratorConfig> {
+        &self.accelerator_config
+    }
     /// Consumes the builder and constructs a [`UpdateFunctionConfigurationInput`](crate::operation::update_function_configuration::UpdateFunctionConfigurationInput).
     pub fn build(
         self,
@@ -643,6 +664,7 @@ impl UpdateFunctionConfigurationInputBuilder {
             capacity_provider_config: self.capacity_provider_config,
             durable_config: self.durable_config,
             runtime_config: self.runtime_config,
+            accelerator_config: self.accelerator_config,
         })
     }
 }

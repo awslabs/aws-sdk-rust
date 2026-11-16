@@ -22,6 +22,16 @@ pub struct AgentRecommendationGenerationSummary {
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the generation was last modified.</p>
     pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>How the generation was started.</p>
+    pub generation_type: ::std::option::Option<crate::types::GenerationType>,
+    /// <p>The recommendation types the generation covers.</p>
+    pub generation_recommendation_types: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationType>>,
+    /// <p>The timestamp when the recommendation generation process started.</p>
+    pub started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The timestamp when the recommendation generation process completed.</p>
+    pub ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Details about the error if the generation status is ERROR.</p>
+    pub error_details: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl AgentRecommendationGenerationSummary {
     /// <p>The unique identifier of the recommendation generation.</p>
@@ -63,6 +73,28 @@ impl AgentRecommendationGenerationSummary {
     pub fn last_modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
+    /// <p>How the generation was started.</p>
+    pub fn generation_type(&self) -> ::std::option::Option<&crate::types::GenerationType> {
+        self.generation_type.as_ref()
+    }
+    /// <p>The recommendation types the generation covers.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.generation_recommendation_types.is_none()`.
+    pub fn generation_recommendation_types(&self) -> &[crate::types::RecommendationType] {
+        self.generation_recommendation_types.as_deref().unwrap_or_default()
+    }
+    /// <p>The timestamp when the recommendation generation process started.</p>
+    pub fn started_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.started_at.as_ref()
+    }
+    /// <p>The timestamp when the recommendation generation process completed.</p>
+    pub fn ended_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.ended_at.as_ref()
+    }
+    /// <p>Details about the error if the generation status is ERROR.</p>
+    pub fn error_details(&self) -> ::std::option::Option<&crate::types::ErrorDetails> {
+        self.error_details.as_ref()
+    }
 }
 impl AgentRecommendationGenerationSummary {
     /// Creates a new builder-style object to manufacture [`AgentRecommendationGenerationSummary`](crate::types::AgentRecommendationGenerationSummary).
@@ -84,6 +116,11 @@ pub struct AgentRecommendationGenerationSummaryBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_by: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) generation_type: ::std::option::Option<crate::types::GenerationType>,
+    pub(crate) generation_recommendation_types: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationType>>,
+    pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) ended_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) error_details: ::std::option::Option<crate::types::ErrorDetails>,
 }
 impl AgentRecommendationGenerationSummaryBuilder {
     /// <p>The unique identifier of the recommendation generation.</p>
@@ -217,6 +254,82 @@ impl AgentRecommendationGenerationSummaryBuilder {
     pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_at
     }
+    /// <p>How the generation was started.</p>
+    pub fn generation_type(mut self, input: crate::types::GenerationType) -> Self {
+        self.generation_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>How the generation was started.</p>
+    pub fn set_generation_type(mut self, input: ::std::option::Option<crate::types::GenerationType>) -> Self {
+        self.generation_type = input;
+        self
+    }
+    /// <p>How the generation was started.</p>
+    pub fn get_generation_type(&self) -> &::std::option::Option<crate::types::GenerationType> {
+        &self.generation_type
+    }
+    /// Appends an item to `generation_recommendation_types`.
+    ///
+    /// To override the contents of this collection use [`set_generation_recommendation_types`](Self::set_generation_recommendation_types).
+    ///
+    /// <p>The recommendation types the generation covers.</p>
+    pub fn generation_recommendation_types(mut self, input: crate::types::RecommendationType) -> Self {
+        let mut v = self.generation_recommendation_types.unwrap_or_default();
+        v.push(input);
+        self.generation_recommendation_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The recommendation types the generation covers.</p>
+    pub fn set_generation_recommendation_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationType>>) -> Self {
+        self.generation_recommendation_types = input;
+        self
+    }
+    /// <p>The recommendation types the generation covers.</p>
+    pub fn get_generation_recommendation_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationType>> {
+        &self.generation_recommendation_types
+    }
+    /// <p>The timestamp when the recommendation generation process started.</p>
+    pub fn started_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.started_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the recommendation generation process started.</p>
+    pub fn set_started_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.started_at = input;
+        self
+    }
+    /// <p>The timestamp when the recommendation generation process started.</p>
+    pub fn get_started_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.started_at
+    }
+    /// <p>The timestamp when the recommendation generation process completed.</p>
+    pub fn ended_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.ended_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the recommendation generation process completed.</p>
+    pub fn set_ended_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.ended_at = input;
+        self
+    }
+    /// <p>The timestamp when the recommendation generation process completed.</p>
+    pub fn get_ended_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.ended_at
+    }
+    /// <p>Details about the error if the generation status is ERROR.</p>
+    pub fn error_details(mut self, input: crate::types::ErrorDetails) -> Self {
+        self.error_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Details about the error if the generation status is ERROR.</p>
+    pub fn set_error_details(mut self, input: ::std::option::Option<crate::types::ErrorDetails>) -> Self {
+        self.error_details = input;
+        self
+    }
+    /// <p>Details about the error if the generation status is ERROR.</p>
+    pub fn get_error_details(&self) -> &::std::option::Option<crate::types::ErrorDetails> {
+        &self.error_details
+    }
     /// Consumes the builder and constructs a [`AgentRecommendationGenerationSummary`](crate::types::AgentRecommendationGenerationSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::AgentRecommendationGenerationSummaryBuilder::id)
@@ -262,6 +375,11 @@ impl AgentRecommendationGenerationSummaryBuilder {
             })?,
             last_modified_by: self.last_modified_by,
             last_modified_at: self.last_modified_at,
+            generation_type: self.generation_type,
+            generation_recommendation_types: self.generation_recommendation_types,
+            started_at: self.started_at,
+            ended_at: self.ended_at,
+            error_details: self.error_details,
         })
     }
 }

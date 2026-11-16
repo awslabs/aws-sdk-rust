@@ -7,7 +7,7 @@ pub struct GetAgentRecommendationOutput {
     pub recommendation_arn: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the associated profile.</p>
     pub profile_arn: ::std::string::String,
-    /// <p>The identifier of the generation process that produced this recommendation.</p>
+    /// <p>The identifier of the generation that produced this recommendation.</p>
     pub generation_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the recommendation.</p>
     pub title: ::std::string::String,
@@ -15,7 +15,7 @@ pub struct GetAgentRecommendationOutput {
     pub description: ::std::string::String,
     /// <p>The type of the recommendation.</p>
     pub r#type: crate::types::RecommendationType,
-    /// <p>The Well-Architected Tool Framework pillar that the recommendation addresses.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillar that the recommendation addresses.</p>
     pub pillar: crate::types::Pillar,
     /// <p>The priority of the recommendation.</p>
     pub priority: crate::types::Priority,
@@ -80,7 +80,7 @@ impl GetAgentRecommendationOutput {
         use std::ops::Deref;
         self.profile_arn.deref()
     }
-    /// <p>The identifier of the generation process that produced this recommendation.</p>
+    /// <p>The identifier of the generation that produced this recommendation.</p>
     pub fn generation_id(&self) -> ::std::option::Option<&str> {
         self.generation_id.as_deref()
     }
@@ -98,7 +98,7 @@ impl GetAgentRecommendationOutput {
     pub fn r#type(&self) -> &crate::types::RecommendationType {
         &self.r#type
     }
-    /// <p>The Well-Architected Tool Framework pillar that the recommendation addresses.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillar that the recommendation addresses.</p>
     pub fn pillar(&self) -> &crate::types::Pillar {
         &self.pillar
     }
@@ -345,17 +345,17 @@ impl GetAgentRecommendationOutputBuilder {
     pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.profile_arn
     }
-    /// <p>The identifier of the generation process that produced this recommendation.</p>
+    /// <p>The identifier of the generation that produced this recommendation.</p>
     pub fn generation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.generation_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the generation process that produced this recommendation.</p>
+    /// <p>The identifier of the generation that produced this recommendation.</p>
     pub fn set_generation_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.generation_id = input;
         self
     }
-    /// <p>The identifier of the generation process that produced this recommendation.</p>
+    /// <p>The identifier of the generation that produced this recommendation.</p>
     pub fn get_generation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.generation_id
     }
@@ -404,18 +404,18 @@ impl GetAgentRecommendationOutputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::RecommendationType> {
         &self.r#type
     }
-    /// <p>The Well-Architected Tool Framework pillar that the recommendation addresses.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillar that the recommendation addresses.</p>
     /// This field is required.
     pub fn pillar(mut self, input: crate::types::Pillar) -> Self {
         self.pillar = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The Well-Architected Tool Framework pillar that the recommendation addresses.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillar that the recommendation addresses.</p>
     pub fn set_pillar(mut self, input: ::std::option::Option<crate::types::Pillar>) -> Self {
         self.pillar = input;
         self
     }
-    /// <p>The Well-Architected Tool Framework pillar that the recommendation addresses.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillar that the recommendation addresses.</p>
     pub fn get_pillar(&self) -> &::std::option::Option<crate::types::Pillar> {
         &self.pillar
     }

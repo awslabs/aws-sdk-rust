@@ -14,6 +14,8 @@ pub struct ContextContent {
     pub resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Resource tags used to scope this application context.</p>
     pub resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ContextResourceTag>>,
+    /// <p>The AWS Organizations organizational unit (OU) IDs associated with this application context. Valid only for organizational profiles; rejected for standard profiles.</p>
+    pub organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A free-form overview of the application.</p>
     pub application_overview: ::std::option::Option<::std::string::String>,
     /// <p>The industry vertical for this application.</p>
@@ -58,6 +60,12 @@ impl ContextContent {
     pub fn resource_tags(&self) -> &[crate::types::ContextResourceTag] {
         self.resource_tags.as_deref().unwrap_or_default()
     }
+    /// <p>The AWS Organizations organizational unit (OU) IDs associated with this application context. Valid only for organizational profiles; rejected for standard profiles.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_unit_ids.is_none()`.
+    pub fn organizational_unit_ids(&self) -> &[::std::string::String] {
+        self.organizational_unit_ids.as_deref().unwrap_or_default()
+    }
     /// <p>A free-form overview of the application.</p>
     pub fn application_overview(&self) -> ::std::option::Option<&str> {
         self.application_overview.as_deref()
@@ -91,6 +99,7 @@ impl ::std::fmt::Debug for ContextContent {
         formatter.field("aws_services", &self.aws_services);
         formatter.field("resource_types", &self.resource_types);
         formatter.field("resource_tags", &self.resource_tags);
+        formatter.field("organizational_unit_ids", &self.organizational_unit_ids);
         formatter.field("application_overview", &"*** Sensitive Data Redacted ***");
         formatter.field("industry", &"*** Sensitive Data Redacted ***");
         formatter.field("application_type", &self.application_type);
@@ -116,6 +125,7 @@ pub struct ContextContentBuilder {
     pub(crate) aws_services: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resource_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::ContextResourceTag>>,
+    pub(crate) organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) application_overview: ::std::option::Option<::std::string::String>,
     pub(crate) industry: ::std::option::Option<::std::string::String>,
     pub(crate) application_type: ::std::option::Option<crate::types::ApplicationType>,
@@ -224,6 +234,26 @@ impl ContextContentBuilder {
     pub fn get_resource_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContextResourceTag>> {
         &self.resource_tags
     }
+    /// Appends an item to `organizational_unit_ids`.
+    ///
+    /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
+    ///
+    /// <p>The AWS Organizations organizational unit (OU) IDs associated with this application context. Valid only for organizational profiles; rejected for standard profiles.</p>
+    pub fn organizational_unit_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.organizational_unit_ids.unwrap_or_default();
+        v.push(input.into());
+        self.organizational_unit_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The AWS Organizations organizational unit (OU) IDs associated with this application context. Valid only for organizational profiles; rejected for standard profiles.</p>
+    pub fn set_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.organizational_unit_ids = input;
+        self
+    }
+    /// <p>The AWS Organizations organizational unit (OU) IDs associated with this application context. Valid only for organizational profiles; rejected for standard profiles.</p>
+    pub fn get_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.organizational_unit_ids
+    }
     /// <p>A free-form overview of the application.</p>
     pub fn application_overview(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.application_overview = ::std::option::Option::Some(input.into());
@@ -316,6 +346,7 @@ impl ContextContentBuilder {
             aws_services: self.aws_services,
             resource_types: self.resource_types,
             resource_tags: self.resource_tags,
+            organizational_unit_ids: self.organizational_unit_ids,
             application_overview: self.application_overview,
             industry: self.industry,
             application_type: self.application_type,
@@ -333,6 +364,7 @@ impl ::std::fmt::Debug for ContextContentBuilder {
         formatter.field("aws_services", &self.aws_services);
         formatter.field("resource_types", &self.resource_types);
         formatter.field("resource_tags", &self.resource_tags);
+        formatter.field("organizational_unit_ids", &self.organizational_unit_ids);
         formatter.field("application_overview", &"*** Sensitive Data Redacted ***");
         formatter.field("industry", &"*** Sensitive Data Redacted ***");
         formatter.field("application_type", &self.application_type);

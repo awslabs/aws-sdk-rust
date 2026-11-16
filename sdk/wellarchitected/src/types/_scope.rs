@@ -4,26 +4,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Scope {
-    /// <p>The Well-Architected Tool Framework pillars to include in the generation scope.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars to include in the generation scope.</p>
     pub pillars: ::std::vec::Vec<crate::types::Pillar>,
-    /// <p>Specific goal IDs to focus on during recommendation generation.</p>
+    /// <p>Specific goal IDs to focus on during recommendation generation. Use <code>ListAgentGoals</code> to retrieve goal IDs.</p>
     pub goal_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Optional per-pillar item filtering configuration.</p>
+    /// <p>An optional per-pillar filter. When you specify items, only the listed items are processed for each pillar. When you omit items, all items are processed.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::PillarItem>>,
 }
 impl Scope {
-    /// <p>The Well-Architected Tool Framework pillars to include in the generation scope.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars to include in the generation scope.</p>
     pub fn pillars(&self) -> &[crate::types::Pillar] {
         use std::ops::Deref;
         self.pillars.deref()
     }
-    /// <p>Specific goal IDs to focus on during recommendation generation.</p>
+    /// <p>Specific goal IDs to focus on during recommendation generation. Use <code>ListAgentGoals</code> to retrieve goal IDs.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.goal_ids.is_none()`.
     pub fn goal_ids(&self) -> &[::std::string::String] {
         self.goal_ids.as_deref().unwrap_or_default()
     }
-    /// <p>Optional per-pillar item filtering configuration.</p>
+    /// <p>An optional per-pillar filter. When you specify items, only the listed items are processed for each pillar. When you omit items, all items are processed.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.items.is_none()`.
     pub fn items(&self) -> &[crate::types::PillarItem] {
@@ -50,19 +50,19 @@ impl ScopeBuilder {
     ///
     /// To override the contents of this collection use [`set_pillars`](Self::set_pillars).
     ///
-    /// <p>The Well-Architected Tool Framework pillars to include in the generation scope.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars to include in the generation scope.</p>
     pub fn pillars(mut self, input: crate::types::Pillar) -> Self {
         let mut v = self.pillars.unwrap_or_default();
         v.push(input);
         self.pillars = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Well-Architected Tool Framework pillars to include in the generation scope.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars to include in the generation scope.</p>
     pub fn set_pillars(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Pillar>>) -> Self {
         self.pillars = input;
         self
     }
-    /// <p>The Well-Architected Tool Framework pillars to include in the generation scope.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars to include in the generation scope.</p>
     pub fn get_pillars(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Pillar>> {
         &self.pillars
     }
@@ -70,19 +70,19 @@ impl ScopeBuilder {
     ///
     /// To override the contents of this collection use [`set_goal_ids`](Self::set_goal_ids).
     ///
-    /// <p>Specific goal IDs to focus on during recommendation generation.</p>
+    /// <p>Specific goal IDs to focus on during recommendation generation. Use <code>ListAgentGoals</code> to retrieve goal IDs.</p>
     pub fn goal_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.goal_ids.unwrap_or_default();
         v.push(input.into());
         self.goal_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Specific goal IDs to focus on during recommendation generation.</p>
+    /// <p>Specific goal IDs to focus on during recommendation generation. Use <code>ListAgentGoals</code> to retrieve goal IDs.</p>
     pub fn set_goal_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.goal_ids = input;
         self
     }
-    /// <p>Specific goal IDs to focus on during recommendation generation.</p>
+    /// <p>Specific goal IDs to focus on during recommendation generation. Use <code>ListAgentGoals</code> to retrieve goal IDs.</p>
     pub fn get_goal_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.goal_ids
     }
@@ -90,19 +90,19 @@ impl ScopeBuilder {
     ///
     /// To override the contents of this collection use [`set_items`](Self::set_items).
     ///
-    /// <p>Optional per-pillar item filtering configuration.</p>
+    /// <p>An optional per-pillar filter. When you specify items, only the listed items are processed for each pillar. When you omit items, all items are processed.</p>
     pub fn items(mut self, input: crate::types::PillarItem) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
         self.items = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Optional per-pillar item filtering configuration.</p>
+    /// <p>An optional per-pillar filter. When you specify items, only the listed items are processed for each pillar. When you omit items, all items are processed.</p>
     pub fn set_items(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PillarItem>>) -> Self {
         self.items = input;
         self
     }
-    /// <p>Optional per-pillar item filtering configuration.</p>
+    /// <p>An optional per-pillar filter. When you specify items, only the listed items are processed for each pillar. When you omit items, all items are processed.</p>
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PillarItem>> {
         &self.items
     }

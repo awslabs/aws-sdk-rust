@@ -19,6 +19,8 @@ pub struct RegisterWorkspaceDirectoryInput {
     pub workspace_directory_description: ::std::option::Option<::std::string::String>,
     /// <p>The type of identity management the user is using.</p>
     pub user_identity_type: ::std::option::Option<crate::types::UserIdentityType>,
+    /// <p>Indicates how users are set up on the WorkSpace operating system. To use local users with an AWS IAM Identity Center directory, specify <code>LOCAL_USER</code>.</p>
+    pub workspace_os_user_mode: ::std::option::Option<crate::types::WorkspaceOsUserMode>,
     /// <p>The Amazon Resource Name (ARN) of the identity center instance.</p>
     pub idc_instance_arn: ::std::option::Option<::std::string::String>,
     /// <p>The details about Microsoft Entra config.</p>
@@ -65,6 +67,10 @@ impl RegisterWorkspaceDirectoryInput {
     pub fn user_identity_type(&self) -> ::std::option::Option<&crate::types::UserIdentityType> {
         self.user_identity_type.as_ref()
     }
+    /// <p>Indicates how users are set up on the WorkSpace operating system. To use local users with an AWS IAM Identity Center directory, specify <code>LOCAL_USER</code>.</p>
+    pub fn workspace_os_user_mode(&self) -> ::std::option::Option<&crate::types::WorkspaceOsUserMode> {
+        self.workspace_os_user_mode.as_ref()
+    }
     /// <p>The Amazon Resource Name (ARN) of the identity center instance.</p>
     pub fn idc_instance_arn(&self) -> ::std::option::Option<&str> {
         self.idc_instance_arn.as_deref()
@@ -101,6 +107,7 @@ pub struct RegisterWorkspaceDirectoryInputBuilder {
     pub(crate) workspace_directory_name: ::std::option::Option<::std::string::String>,
     pub(crate) workspace_directory_description: ::std::option::Option<::std::string::String>,
     pub(crate) user_identity_type: ::std::option::Option<crate::types::UserIdentityType>,
+    pub(crate) workspace_os_user_mode: ::std::option::Option<crate::types::WorkspaceOsUserMode>,
     pub(crate) idc_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) microsoft_entra_config: ::std::option::Option<crate::types::MicrosoftEntraConfig>,
     pub(crate) workspace_type: ::std::option::Option<crate::types::WorkspaceType>,
@@ -231,6 +238,20 @@ impl RegisterWorkspaceDirectoryInputBuilder {
     pub fn get_user_identity_type(&self) -> &::std::option::Option<crate::types::UserIdentityType> {
         &self.user_identity_type
     }
+    /// <p>Indicates how users are set up on the WorkSpace operating system. To use local users with an AWS IAM Identity Center directory, specify <code>LOCAL_USER</code>.</p>
+    pub fn workspace_os_user_mode(mut self, input: crate::types::WorkspaceOsUserMode) -> Self {
+        self.workspace_os_user_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates how users are set up on the WorkSpace operating system. To use local users with an AWS IAM Identity Center directory, specify <code>LOCAL_USER</code>.</p>
+    pub fn set_workspace_os_user_mode(mut self, input: ::std::option::Option<crate::types::WorkspaceOsUserMode>) -> Self {
+        self.workspace_os_user_mode = input;
+        self
+    }
+    /// <p>Indicates how users are set up on the WorkSpace operating system. To use local users with an AWS IAM Identity Center directory, specify <code>LOCAL_USER</code>.</p>
+    pub fn get_workspace_os_user_mode(&self) -> &::std::option::Option<crate::types::WorkspaceOsUserMode> {
+        &self.workspace_os_user_mode
+    }
     /// <p>The Amazon Resource Name (ARN) of the identity center instance.</p>
     pub fn idc_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.idc_instance_arn = ::std::option::Option::Some(input.into());
@@ -303,6 +324,7 @@ impl RegisterWorkspaceDirectoryInputBuilder {
             workspace_directory_name: self.workspace_directory_name,
             workspace_directory_description: self.workspace_directory_description,
             user_identity_type: self.user_identity_type,
+            workspace_os_user_mode: self.workspace_os_user_mode,
             idc_instance_arn: self.idc_instance_arn,
             microsoft_entra_config: self.microsoft_entra_config,
             workspace_type: self.workspace_type,

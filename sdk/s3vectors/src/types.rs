@@ -15,6 +15,10 @@ pub use crate::types::_metadata_configuration::MetadataConfiguration;
 
 pub use crate::types::_index::Index;
 
+pub use crate::types::_metadata_configuration_add::MetadataConfigurationAdd;
+
+pub use crate::types::_metadata_configuration_delete::MetadataConfigurationDelete;
+
 pub use crate::types::_vector_data::VectorData;
 
 pub use crate::types::_sse_type::SseType;
@@ -29,7 +33,25 @@ pub use crate::types::_list_output_vector::ListOutputVector;
 
 pub use crate::types::_put_input_vector::PutInputVector;
 
+pub use crate::types::_query_text::QueryText;
+
 pub use crate::types::_query_output_vector::QueryOutputVector;
+
+pub use crate::types::_text_search_configuration::TextSearchConfiguration;
+
+pub use crate::types::_text_search_configuration_key::TextSearchConfigurationKey;
+
+pub use crate::types::_query_scores::QueryScores;
+
+pub use crate::types::_language_code::LanguageCode;
+
+pub use crate::types::_analyzer_status::AnalyzerStatus;
+
+pub use crate::types::_bm25_score::Bm25Score;
+
+mod _analyzer_status;
+
+mod _bm25_score;
 
 mod _data_type;
 
@@ -45,15 +67,29 @@ mod _index_mode;
 
 mod _index_summary;
 
+mod _language_code;
+
 mod _list_output_vector;
 
 mod _metadata_configuration;
+
+mod _metadata_configuration_add;
+
+mod _metadata_configuration_delete;
 
 mod _put_input_vector;
 
 mod _query_output_vector;
 
+mod _query_scores;
+
+mod _query_text;
+
 mod _sse_type;
+
+mod _text_search_configuration;
+
+mod _text_search_configuration_key;
 
 mod _validation_exception_field;
 

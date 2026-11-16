@@ -15,6 +15,9 @@ pub struct UpdateClusterInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The new multi-Region cluster configuration settings to be applied during an update operation.</p>
     pub multi_region_properties: ::std::option::Option<crate::types::MultiRegionProperties>,
+    /// <p>The complete set of metric groups to enable for advanced monitoring on the cluster. This list replaces the current set, so any metric group that you don't include is disabled. To disable all metric groups, specify an empty list (<code>\[\]</code>). If you omit this parameter, the current setting doesn't change.</p>
+    /// <p>To view the metric groups enabled on a cluster, use <i>GetCluster</i>.</p>
+    pub metric_groups: ::std::option::Option<::std::vec::Vec<crate::types::MetricGroupRequest>>,
 }
 impl UpdateClusterInput {
     /// <p>The ID of the cluster you want to update.</p>
@@ -39,6 +42,13 @@ impl UpdateClusterInput {
     pub fn multi_region_properties(&self) -> ::std::option::Option<&crate::types::MultiRegionProperties> {
         self.multi_region_properties.as_ref()
     }
+    /// <p>The complete set of metric groups to enable for advanced monitoring on the cluster. This list replaces the current set, so any metric group that you don't include is disabled. To disable all metric groups, specify an empty list (<code>\[\]</code>). If you omit this parameter, the current setting doesn't change.</p>
+    /// <p>To view the metric groups enabled on a cluster, use <i>GetCluster</i>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_groups.is_none()`.
+    pub fn metric_groups(&self) -> &[crate::types::MetricGroupRequest] {
+        self.metric_groups.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateClusterInput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
@@ -56,6 +66,7 @@ pub struct UpdateClusterInputBuilder {
     pub(crate) kms_encryption_key: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) multi_region_properties: ::std::option::Option<crate::types::MultiRegionProperties>,
+    pub(crate) metric_groups: ::std::option::Option<::std::vec::Vec<crate::types::MetricGroupRequest>>,
 }
 impl UpdateClusterInputBuilder {
     /// <p>The ID of the cluster you want to update.</p>
@@ -135,6 +146,29 @@ impl UpdateClusterInputBuilder {
     pub fn get_multi_region_properties(&self) -> &::std::option::Option<crate::types::MultiRegionProperties> {
         &self.multi_region_properties
     }
+    /// Appends an item to `metric_groups`.
+    ///
+    /// To override the contents of this collection use [`set_metric_groups`](Self::set_metric_groups).
+    ///
+    /// <p>The complete set of metric groups to enable for advanced monitoring on the cluster. This list replaces the current set, so any metric group that you don't include is disabled. To disable all metric groups, specify an empty list (<code>\[\]</code>). If you omit this parameter, the current setting doesn't change.</p>
+    /// <p>To view the metric groups enabled on a cluster, use <i>GetCluster</i>.</p>
+    pub fn metric_groups(mut self, input: crate::types::MetricGroupRequest) -> Self {
+        let mut v = self.metric_groups.unwrap_or_default();
+        v.push(input);
+        self.metric_groups = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The complete set of metric groups to enable for advanced monitoring on the cluster. This list replaces the current set, so any metric group that you don't include is disabled. To disable all metric groups, specify an empty list (<code>\[\]</code>). If you omit this parameter, the current setting doesn't change.</p>
+    /// <p>To view the metric groups enabled on a cluster, use <i>GetCluster</i>.</p>
+    pub fn set_metric_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricGroupRequest>>) -> Self {
+        self.metric_groups = input;
+        self
+    }
+    /// <p>The complete set of metric groups to enable for advanced monitoring on the cluster. This list replaces the current set, so any metric group that you don't include is disabled. To disable all metric groups, specify an empty list (<code>\[\]</code>). If you omit this parameter, the current setting doesn't change.</p>
+    /// <p>To view the metric groups enabled on a cluster, use <i>GetCluster</i>.</p>
+    pub fn get_metric_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGroupRequest>> {
+        &self.metric_groups
+    }
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
     pub fn build(
         self,
@@ -145,6 +179,7 @@ impl UpdateClusterInputBuilder {
             kms_encryption_key: self.kms_encryption_key,
             client_token: self.client_token,
             multi_region_properties: self.multi_region_properties,
+            metric_groups: self.metric_groups,
         })
     }
 }

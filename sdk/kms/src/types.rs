@@ -73,6 +73,8 @@ pub use crate::types::_grant_list_entry::GrantListEntry;
 
 pub use crate::types::_rotations_list_entry::RotationsListEntry;
 
+pub use crate::types::_resource_owner_type::ResourceOwnerType;
+
 pub use crate::types::_key_list_entry::KeyListEntry;
 
 pub use crate::types::_multi_region_key_type::MultiRegionKeyType;
@@ -164,6 +166,8 @@ mod _multi_region_key_type;
 mod _origin_type;
 
 mod _recipient_info;
+
+mod _resource_owner_type;
 
 mod _rotation_type;
 

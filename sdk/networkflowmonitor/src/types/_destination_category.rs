@@ -14,10 +14,14 @@
 /// match destinationcategory {
 ///     DestinationCategory::AmazonDynamodb => { /* ... */ },
 ///     DestinationCategory::AmazonS3 => { /* ... */ },
+///     DestinationCategory::AwsService => { /* ... */ },
+///     DestinationCategory::Internet => { /* ... */ },
 ///     DestinationCategory::InterAz => { /* ... */ },
 ///     DestinationCategory::InterRegion => { /* ... */ },
 ///     DestinationCategory::InterVpc => { /* ... */ },
 ///     DestinationCategory::IntraAz => { /* ... */ },
+///     DestinationCategory::LocalZone => { /* ... */ },
+///     DestinationCategory::TransitGateway => { /* ... */ },
 ///     DestinationCategory::Unclassified => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -52,6 +56,10 @@ pub enum DestinationCategory {
     #[allow(missing_docs)] // documentation missing in model
     AmazonS3,
     #[allow(missing_docs)] // documentation missing in model
+    AwsService,
+    #[allow(missing_docs)] // documentation missing in model
+    Internet,
+    #[allow(missing_docs)] // documentation missing in model
     InterAz,
     #[allow(missing_docs)] // documentation missing in model
     InterRegion,
@@ -59,6 +67,10 @@ pub enum DestinationCategory {
     InterVpc,
     #[allow(missing_docs)] // documentation missing in model
     IntraAz,
+    #[allow(missing_docs)] // documentation missing in model
+    LocalZone,
+    #[allow(missing_docs)] // documentation missing in model
+    TransitGateway,
     #[allow(missing_docs)] // documentation missing in model
     Unclassified,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -70,10 +82,14 @@ impl ::std::convert::From<&str> for DestinationCategory {
         match s {
             "AMAZON_DYNAMODB" => DestinationCategory::AmazonDynamodb,
             "AMAZON_S3" => DestinationCategory::AmazonS3,
+            "AWS_SERVICE" => DestinationCategory::AwsService,
+            "INTERNET" => DestinationCategory::Internet,
             "INTER_AZ" => DestinationCategory::InterAz,
             "INTER_REGION" => DestinationCategory::InterRegion,
             "INTER_VPC" => DestinationCategory::InterVpc,
             "INTRA_AZ" => DestinationCategory::IntraAz,
+            "LOCAL_ZONE" => DestinationCategory::LocalZone,
+            "TRANSIT_GATEWAY" => DestinationCategory::TransitGateway,
             "UNCLASSIFIED" => DestinationCategory::Unclassified,
             other => DestinationCategory::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -92,10 +108,14 @@ impl DestinationCategory {
         match self {
             DestinationCategory::AmazonDynamodb => "AMAZON_DYNAMODB",
             DestinationCategory::AmazonS3 => "AMAZON_S3",
+            DestinationCategory::AwsService => "AWS_SERVICE",
+            DestinationCategory::Internet => "INTERNET",
             DestinationCategory::InterAz => "INTER_AZ",
             DestinationCategory::InterRegion => "INTER_REGION",
             DestinationCategory::InterVpc => "INTER_VPC",
             DestinationCategory::IntraAz => "INTRA_AZ",
+            DestinationCategory::LocalZone => "LOCAL_ZONE",
+            DestinationCategory::TransitGateway => "TRANSIT_GATEWAY",
             DestinationCategory::Unclassified => "UNCLASSIFIED",
             DestinationCategory::Unknown(value) => value.as_str(),
         }
@@ -105,10 +125,14 @@ impl DestinationCategory {
         &[
             "AMAZON_DYNAMODB",
             "AMAZON_S3",
+            "AWS_SERVICE",
+            "INTERNET",
             "INTER_AZ",
             "INTER_REGION",
             "INTER_VPC",
             "INTRA_AZ",
+            "LOCAL_ZONE",
+            "TRANSIT_GATEWAY",
             "UNCLASSIFIED",
         ]
     }
@@ -135,10 +159,14 @@ impl ::std::fmt::Display for DestinationCategory {
         match self {
             DestinationCategory::AmazonDynamodb => write!(f, "AMAZON_DYNAMODB"),
             DestinationCategory::AmazonS3 => write!(f, "AMAZON_S3"),
+            DestinationCategory::AwsService => write!(f, "AWS_SERVICE"),
+            DestinationCategory::Internet => write!(f, "INTERNET"),
             DestinationCategory::InterAz => write!(f, "INTER_AZ"),
             DestinationCategory::InterRegion => write!(f, "INTER_REGION"),
             DestinationCategory::InterVpc => write!(f, "INTER_VPC"),
             DestinationCategory::IntraAz => write!(f, "INTRA_AZ"),
+            DestinationCategory::LocalZone => write!(f, "LOCAL_ZONE"),
+            DestinationCategory::TransitGateway => write!(f, "TRANSIT_GATEWAY"),
             DestinationCategory::Unclassified => write!(f, "UNCLASSIFIED"),
             DestinationCategory::Unknown(value) => write!(f, "{value}"),
         }

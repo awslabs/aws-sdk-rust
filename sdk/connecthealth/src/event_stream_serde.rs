@@ -109,6 +109,27 @@ impl ::aws_smithy_eventstream::frame::UnmarshallMessage for MedicalScribeOutputS
                         crate::types::MedicalScribeOutputStream::TranscriptEvent(parsed),
                     ))
                 }
+                "periodontalChartEvent" => {
+                    let parsed =
+                        crate::protocol_serde::shape_medical_scribe_periodontal_chart_event::de_medical_scribe_periodontal_chart_event_payload(
+                            &message.payload()[..],
+                        )
+                        .map_err(|err| {
+                            ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall PeriodontalChartEvent: {err}"))
+                        })?;
+                    Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
+                        crate::types::MedicalScribeOutputStream::PeriodontalChartEvent(parsed),
+                    ))
+                }
+                "checklistEvent" => {
+                    let parsed = crate::protocol_serde::shape_medical_scribe_checklist_event::de_medical_scribe_checklist_event_payload(
+                        &message.payload()[..],
+                    )
+                    .map_err(|err| ::aws_smithy_eventstream::error::Error::unmarshalling(format!("failed to unmarshall ChecklistEvent: {err}")))?;
+                    Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
+                        crate::types::MedicalScribeOutputStream::ChecklistEvent(parsed),
+                    ))
+                }
                 _unknown_variant => Ok(::aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                     crate::types::MedicalScribeOutputStream::Unknown,
                 )),

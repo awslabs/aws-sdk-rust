@@ -164,3 +164,5 @@ impl Client {
 pub mod customize;
 
 mod get_request_authorization_details;
+
+mod get_request_authorization_policy;

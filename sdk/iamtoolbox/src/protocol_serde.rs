@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_get_request_authorization_details;
 
+pub(crate) mod shape_get_request_authorization_policy;
+
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
         b"{}"
@@ -53,12 +55,20 @@ pub(crate) mod shape_policy_info;
 
 pub(crate) mod shape_attached_to_list;
 
+pub(crate) mod shape_check_list;
+
 pub(crate) mod shape_matched_policy_list;
 
+pub(crate) mod shape_policy_source;
+
 pub(crate) mod shape_attached_to;
+
+pub(crate) mod shape_check;
 
 pub(crate) mod shape_matched_policy;
 
 pub(crate) mod shape_matched_statement_list;
+
+pub(crate) mod shape_policy_type_list;
 
 pub(crate) mod shape_matched_statement;

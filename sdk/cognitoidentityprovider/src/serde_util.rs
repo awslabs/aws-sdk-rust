@@ -89,6 +89,21 @@ pub(crate) fn describe_risk_configuration_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_derived_token_output_output_correct_errors(
+    mut builder: crate::operation::get_derived_token::builders::GetDerivedTokenOutputBuilder,
+) -> crate::operation::get_derived_token::builders::GetDerivedTokenOutputBuilder {
+    if builder.issued_token.is_none() {
+        builder.issued_token = Some(Default::default())
+    }
+    if builder.issued_token_type.is_none() {
+        builder.issued_token_type = "no value was set".parse::<crate::types::IssuedTokenTypeIdentifierType>().ok()
+    }
+    if builder.token_type.is_none() {
+        builder.token_type = "no value was set".parse::<crate::types::OAuthTokenTypeType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_device_output_output_correct_errors(
     mut builder: crate::operation::get_device::builders::GetDeviceOutputBuilder,
 ) -> crate::operation::get_device::builders::GetDeviceOutputBuilder {

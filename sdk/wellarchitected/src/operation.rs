@@ -7,11 +7,20 @@ pub mod associate_lenses;
 /// Types for the `AssociateProfiles` operation.
 pub mod associate_profiles;
 
+/// Types for the `CreateAgentBasicProfile` operation.
+pub mod create_agent_basic_profile;
+
 /// Types for the `CreateAgentContext` operation.
 pub mod create_agent_context;
 
 /// Types for the `CreateAgentGoal` operation.
 pub mod create_agent_goal;
+
+/// Types for the `CreateAgentOrganizationalProfile` operation.
+pub mod create_agent_organizational_profile;
+
+/// Types for the `CreateAgentOrganizationalReport` operation.
+pub mod create_agent_organizational_report;
 
 /// Types for the `CreateAgentProfile` operation.
 pub mod create_agent_profile;
@@ -49,8 +58,17 @@ pub mod delete_agent_context;
 /// Types for the `DeleteAgentGoal` operation.
 pub mod delete_agent_goal;
 
+/// Types for the `DeleteAgentOrganizationalReport` operation.
+pub mod delete_agent_organizational_report;
+
 /// Types for the `DeleteAgentProfile` operation.
 pub mod delete_agent_profile;
+
+/// Types for the `DeleteAgentProfilePolicy` operation.
+pub mod delete_agent_profile_policy;
+
+/// Types for the `DeleteAgentRecommendationPolicy` operation.
+pub mod delete_agent_recommendation_policy;
 
 /// Types for the `DeleteLens` operation.
 pub mod delete_lens;
@@ -91,14 +109,29 @@ pub mod get_agent_context;
 /// Types for the `GetAgentGoal` operation.
 pub mod get_agent_goal;
 
+/// Types for the `GetAgentOrganizationalReport` operation.
+pub mod get_agent_organizational_report;
+
+/// Types for the `GetAgentOrganizationalReportData` operation.
+pub mod get_agent_organizational_report_data;
+
+/// Types for the `GetAgentPreferences` operation.
+pub mod get_agent_preferences;
+
 /// Types for the `GetAgentProfile` operation.
 pub mod get_agent_profile;
+
+/// Types for the `GetAgentProfilePolicy` operation.
+pub mod get_agent_profile_policy;
 
 /// Types for the `GetAgentRecommendation` operation.
 pub mod get_agent_recommendation;
 
 /// Types for the `GetAgentRecommendationGeneration` operation.
 pub mod get_agent_recommendation_generation;
+
+/// Types for the `GetAgentRecommendationPolicy` operation.
+pub mod get_agent_recommendation_policy;
 
 /// Types for the `GetAnswer` operation.
 pub mod get_answer;
@@ -150,6 +183,9 @@ pub mod list_agent_contexts;
 
 /// Types for the `ListAgentGoals` operation.
 pub mod list_agent_goals;
+
+/// Types for the `ListAgentOrganizationalReports` operation.
+pub mod list_agent_organizational_reports;
 
 /// Types for the `ListAgentProfiles` operation.
 pub mod list_agent_profiles;
@@ -220,8 +256,20 @@ pub mod list_workload_shares;
 /// Types for the `ListWorkloads` operation.
 pub mod list_workloads;
 
+/// Types for the `PutAgentPreferences` operation.
+pub mod put_agent_preferences;
+
+/// Types for the `PutAgentProfilePolicy` operation.
+pub mod put_agent_profile_policy;
+
 /// Types for the `PutAgentRecommendationFeedback` operation.
 pub mod put_agent_recommendation_feedback;
+
+/// Types for the `PutAgentRecommendationPolicy` operation.
+pub mod put_agent_recommendation_policy;
+
+/// Types for the `SendAgentOrganizationalReportDataToS3` operation.
+pub mod send_agent_organizational_report_data_to_s3;
 
 /// Types for the `StartAgentRecommendationGeneration` operation.
 pub mod start_agent_recommendation_generation;
@@ -237,6 +285,9 @@ pub mod update_agent_context;
 
 /// Types for the `UpdateAgentGoal` operation.
 pub mod update_agent_goal;
+
+/// Types for the `UpdateAgentOrganizationalProfile` operation.
+pub mod update_agent_organizational_profile;
 
 /// Types for the `UpdateAgentProfile` operation.
 pub mod update_agent_profile;

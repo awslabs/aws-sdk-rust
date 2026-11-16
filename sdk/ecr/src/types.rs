@@ -145,6 +145,8 @@ pub use crate::types::_remediation::Remediation;
 
 pub use crate::types::_score_details::ScoreDetails;
 
+pub use crate::types::_delete_replication::DeleteReplication;
+
 pub use crate::types::_image_action_type::ImageActionType;
 
 pub use crate::types::_lifecycle_policy_target_storage_class::LifecyclePolicyTargetStorageClass;
@@ -192,6 +194,8 @@ mod _cvss_score;
 mod _cvss_score_adjustment;
 
 mod _cvss_score_details;
+
+mod _delete_replication;
 
 mod _describe_images_filter;
 

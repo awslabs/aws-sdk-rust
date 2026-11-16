@@ -69,6 +69,8 @@ pub use crate::types::_summary::Summary;
 
 pub use crate::types::_enabled_analysis_type::EnabledAnalysisType;
 
+pub use crate::types::_context_filters::ContextFilters;
+
 pub use crate::types::_resource_managed_status::ResourceManagedStatus;
 
 pub use crate::types::_resource_managed_type::ResourceManagedType;
@@ -90,6 +92,8 @@ pub use crate::types::_configuration_sync_state::ConfigurationSyncState;
 pub use crate::types::_capacity_usage_summary::CapacityUsageSummary;
 
 pub use crate::types::_transit_gateway_attachment_sync_state::TransitGatewayAttachmentSyncState;
+
+pub use crate::types::_context_store_sync_state::ContextStoreSyncState;
 
 pub use crate::types::_stateful_engine_options::StatefulEngineOptions;
 
@@ -135,6 +139,8 @@ pub use crate::types::_analysis_report::AnalysisReport;
 
 pub use crate::types::_container_association_summary::ContainerAssociationSummary;
 
+pub use crate::types::_context_store::ContextStore;
+
 pub use crate::types::_firewall_policy_metadata::FirewallPolicyMetadata;
 
 pub use crate::types::_firewall_policy_v2_metadata::FirewallPolicyV2Metadata;
@@ -144,6 +150,10 @@ pub use crate::types::_firewall_metadata::FirewallMetadata;
 pub use crate::types::_flow::Flow;
 
 pub use crate::types::_flow_operation_metadata::FlowOperationMetadata;
+
+pub use crate::types::_resource_type::ResourceType;
+
+pub use crate::types::_resource_context::ResourceContext;
 
 pub use crate::types::_rule_group_metadata::RuleGroupMetadata;
 
@@ -158,6 +168,8 @@ pub use crate::types::_listener_property::ListenerProperty;
 pub use crate::types::_sync_state::SyncState;
 
 pub use crate::types::_cidr_summary::CidrSummary;
+
+pub use crate::types::_context_store_sync_status::ContextStoreSyncStatus;
 
 pub use crate::types::_stateless_rule_group_reference::StatelessRuleGroupReference;
 
@@ -205,6 +217,8 @@ pub use crate::types::_unique_sources::UniqueSources;
 
 pub use crate::types::_address::Address;
 
+pub use crate::types::_context_type::ContextType;
+
 pub use crate::types::_container_attribute::ContainerAttribute;
 
 pub use crate::types::_listener_property_type::ListenerPropertyType;
@@ -222,6 +236,8 @@ pub use crate::types::_firewall_policy_error_code::FirewallPolicyErrorCode;
 pub use crate::types::_ips_rule_group_override::IpsRuleGroupOverride;
 
 pub use crate::types::_port_set::PortSet;
+
+pub use crate::types::_context_set::ContextSet;
 
 pub use crate::types::_ip_set_reference::IpSetReference;
 
@@ -342,6 +358,18 @@ mod _container_attribute;
 mod _container_monitoring_configuration;
 
 mod _container_monitoring_type;
+
+mod _context_filters;
+
+mod _context_set;
+
+mod _context_store;
+
+mod _context_store_sync_state;
+
+mod _context_store_sync_status;
+
+mod _context_type;
 
 mod _custom_action;
 
@@ -483,11 +511,15 @@ mod _publish_metric_action;
 
 mod _reference_sets;
 
+mod _resource_context;
+
 mod _resource_managed_status;
 
 mod _resource_managed_type;
 
 mod _resource_status;
+
+mod _resource_type;
 
 mod _revocation_check_action;
 

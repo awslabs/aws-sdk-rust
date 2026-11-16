@@ -89,6 +89,8 @@ pub use crate::types::_tenancy::Tenancy;
 
 pub use crate::types::_user_identity_type::UserIdentityType;
 
+pub use crate::types::_workspace_os_user_mode::WorkspaceOsUserMode;
+
 pub use crate::types::_microsoft_entra_config::MicrosoftEntraConfig;
 
 pub use crate::types::_workspace_type::WorkspaceType;
@@ -596,6 +598,8 @@ mod _workspace_image_ingestion_process;
 mod _workspace_image_required_tenancy;
 
 mod _workspace_image_state;
+
+mod _workspace_os_user_mode;
 
 mod _workspace_properties;
 

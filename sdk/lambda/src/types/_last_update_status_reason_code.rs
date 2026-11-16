@@ -33,6 +33,7 @@
 ///     LastUpdateStatusReasonCode::FunctionErrorTooManyExtensions => { /* ... */ },
 ///     LastUpdateStatusReasonCode::ImageAccessDenied => { /* ... */ },
 ///     LastUpdateStatusReasonCode::ImageDeleted => { /* ... */ },
+///     LastUpdateStatusReasonCode::IncompatibleAcceleratorInstanceTypes => { /* ... */ },
 ///     LastUpdateStatusReasonCode::InsufficientCapacity => { /* ... */ },
 ///     LastUpdateStatusReasonCode::InsufficientRolePermissions => { /* ... */ },
 ///     LastUpdateStatusReasonCode::InternalError => { /* ... */ },
@@ -119,6 +120,8 @@ pub enum LastUpdateStatusReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     ImageDeleted,
     #[allow(missing_docs)] // documentation missing in model
+    IncompatibleAcceleratorInstanceTypes,
+    #[allow(missing_docs)] // documentation missing in model
     InsufficientCapacity,
     #[allow(missing_docs)] // documentation missing in model
     InsufficientRolePermissions,
@@ -176,6 +179,7 @@ impl ::std::convert::From<&str> for LastUpdateStatusReasonCode {
             "FunctionError.TooManyExtensions" => LastUpdateStatusReasonCode::FunctionErrorTooManyExtensions,
             "ImageAccessDenied" => LastUpdateStatusReasonCode::ImageAccessDenied,
             "ImageDeleted" => LastUpdateStatusReasonCode::ImageDeleted,
+            "IncompatibleAcceleratorInstanceTypes" => LastUpdateStatusReasonCode::IncompatibleAcceleratorInstanceTypes,
             "InsufficientCapacity" => LastUpdateStatusReasonCode::InsufficientCapacity,
             "InsufficientRolePermissions" => LastUpdateStatusReasonCode::InsufficientRolePermissions,
             "InternalError" => LastUpdateStatusReasonCode::InternalError,
@@ -227,6 +231,7 @@ impl LastUpdateStatusReasonCode {
             LastUpdateStatusReasonCode::FunctionErrorTooManyExtensions => "FunctionError.TooManyExtensions",
             LastUpdateStatusReasonCode::ImageAccessDenied => "ImageAccessDenied",
             LastUpdateStatusReasonCode::ImageDeleted => "ImageDeleted",
+            LastUpdateStatusReasonCode::IncompatibleAcceleratorInstanceTypes => "IncompatibleAcceleratorInstanceTypes",
             LastUpdateStatusReasonCode::InsufficientCapacity => "InsufficientCapacity",
             LastUpdateStatusReasonCode::InsufficientRolePermissions => "InsufficientRolePermissions",
             LastUpdateStatusReasonCode::InternalError => "InternalError",
@@ -269,6 +274,7 @@ impl LastUpdateStatusReasonCode {
             "FunctionError.TooManyExtensions",
             "ImageAccessDenied",
             "ImageDeleted",
+            "IncompatibleAcceleratorInstanceTypes",
             "InsufficientCapacity",
             "InsufficientRolePermissions",
             "InternalError",
@@ -328,6 +334,7 @@ impl ::std::fmt::Display for LastUpdateStatusReasonCode {
             LastUpdateStatusReasonCode::FunctionErrorTooManyExtensions => write!(f, "FunctionError.TooManyExtensions"),
             LastUpdateStatusReasonCode::ImageAccessDenied => write!(f, "ImageAccessDenied"),
             LastUpdateStatusReasonCode::ImageDeleted => write!(f, "ImageDeleted"),
+            LastUpdateStatusReasonCode::IncompatibleAcceleratorInstanceTypes => write!(f, "IncompatibleAcceleratorInstanceTypes"),
             LastUpdateStatusReasonCode::InsufficientCapacity => write!(f, "InsufficientCapacity"),
             LastUpdateStatusReasonCode::InsufficientRolePermissions => write!(f, "InsufficientRolePermissions"),
             LastUpdateStatusReasonCode::InternalError => write!(f, "InternalError"),

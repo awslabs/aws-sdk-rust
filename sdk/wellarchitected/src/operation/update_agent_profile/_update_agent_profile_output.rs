@@ -11,7 +11,7 @@ pub struct UpdateAgentProfileOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The business overview of the updated profile.</p>
     pub business_overview: ::std::option::Option<::std::string::String>,
-    /// <p>The Well-Architected Tool Framework pillars associated with the updated profile.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars associated with the updated profile.</p>
     pub pillars: ::std::vec::Vec<crate::types::Pillar>,
     /// <p>Indicates whether deletion protection is enabled.</p>
     pub deletion_protection: bool,
@@ -27,8 +27,6 @@ pub struct UpdateAgentProfileOutput {
     pub eligible_for_architecture_generation: ::std::option::Option<bool>,
     /// <p>A map of field paths to error messages for invalid or missing input fields.</p>
     pub field_errors: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The tags associated with the updated profile.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The identifier of the user or system that created this profile.</p>
     pub created_by: ::std::string::String,
     /// <p>The timestamp when the profile was created.</p>
@@ -57,7 +55,7 @@ impl UpdateAgentProfileOutput {
     pub fn business_overview(&self) -> ::std::option::Option<&str> {
         self.business_overview.as_deref()
     }
-    /// <p>The Well-Architected Tool Framework pillars associated with the updated profile.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars associated with the updated profile.</p>
     pub fn pillars(&self) -> &[crate::types::Pillar] {
         use std::ops::Deref;
         self.pillars.deref()
@@ -93,12 +91,6 @@ impl UpdateAgentProfileOutput {
     pub fn field_errors(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.field_errors.as_ref()
     }
-    /// <p>The tags associated with the updated profile.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
-    }
     /// <p>The identifier of the user or system that created this profile.</p>
     pub fn created_by(&self) -> &str {
         use std::ops::Deref;
@@ -132,7 +124,6 @@ impl ::std::fmt::Debug for UpdateAgentProfileOutput {
         formatter.field("eligible_for_scheduled_generation", &self.eligible_for_scheduled_generation);
         formatter.field("eligible_for_architecture_generation", &self.eligible_for_architecture_generation);
         formatter.field("field_errors", &self.field_errors);
-        formatter.field("tags", &self.tags);
         formatter.field("created_by", &self.created_by);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_modified_by", &self.last_modified_by);
@@ -169,7 +160,6 @@ pub struct UpdateAgentProfileOutputBuilder {
     pub(crate) eligible_for_scheduled_generation: ::std::option::Option<bool>,
     pub(crate) eligible_for_architecture_generation: ::std::option::Option<bool>,
     pub(crate) field_errors: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_by: ::std::option::Option<::std::string::String>,
@@ -238,19 +228,19 @@ impl UpdateAgentProfileOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_pillars`](Self::set_pillars).
     ///
-    /// <p>The Well-Architected Tool Framework pillars associated with the updated profile.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars associated with the updated profile.</p>
     pub fn pillars(mut self, input: crate::types::Pillar) -> Self {
         let mut v = self.pillars.unwrap_or_default();
         v.push(input);
         self.pillars = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Well-Architected Tool Framework pillars associated with the updated profile.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars associated with the updated profile.</p>
     pub fn set_pillars(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Pillar>>) -> Self {
         self.pillars = input;
         self
     }
-    /// <p>The Well-Architected Tool Framework pillars associated with the updated profile.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars associated with the updated profile.</p>
     pub fn get_pillars(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Pillar>> {
         &self.pillars
     }
@@ -368,26 +358,6 @@ impl UpdateAgentProfileOutputBuilder {
     /// <p>A map of field paths to error messages for invalid or missing input fields.</p>
     pub fn get_field_errors(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.field_errors
-    }
-    /// Appends an item to `tags`.
-    ///
-    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-    ///
-    /// <p>The tags associated with the updated profile.</p>
-    pub fn tags(mut self, input: crate::types::Tag) -> Self {
-        let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The tags associated with the updated profile.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
-    }
-    /// <p>The tags associated with the updated profile.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
-        &self.tags
     }
     /// <p>The identifier of the user or system that created this profile.</p>
     /// This field is required.
@@ -507,7 +477,6 @@ impl UpdateAgentProfileOutputBuilder {
             eligible_for_scheduled_generation: self.eligible_for_scheduled_generation,
             eligible_for_architecture_generation: self.eligible_for_architecture_generation,
             field_errors: self.field_errors,
-            tags: self.tags,
             created_by: self.created_by.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_by",
@@ -541,7 +510,6 @@ impl ::std::fmt::Debug for UpdateAgentProfileOutputBuilder {
         formatter.field("eligible_for_scheduled_generation", &self.eligible_for_scheduled_generation);
         formatter.field("eligible_for_architecture_generation", &self.eligible_for_architecture_generation);
         formatter.field("field_errors", &self.field_errors);
-        formatter.field("tags", &self.tags);
         formatter.field("created_by", &self.created_by);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_modified_by", &self.last_modified_by);

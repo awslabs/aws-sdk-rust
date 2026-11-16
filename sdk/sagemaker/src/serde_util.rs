@@ -296,6 +296,15 @@ pub(crate) fn create_inference_recommendations_job_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_inference_router_output_output_correct_errors(
+    mut builder: crate::operation::create_inference_router::builders::CreateInferenceRouterOutputBuilder,
+) -> crate::operation::create_inference_router::builders::CreateInferenceRouterOutputBuilder {
+    if builder.inference_router_arn.is_none() {
+        builder.inference_router_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_job_output_output_correct_errors(
     mut builder: crate::operation::create_job::builders::CreateJobOutputBuilder,
 ) -> crate::operation::create_job::builders::CreateJobOutputBuilder {
@@ -1283,6 +1292,30 @@ pub(crate) fn describe_inference_recommendations_job_output_output_correct_error
     builder
 }
 
+pub(crate) fn describe_inference_router_output_output_correct_errors(
+    mut builder: crate::operation::describe_inference_router::builders::DescribeInferenceRouterOutputBuilder,
+) -> crate::operation::describe_inference_router::builders::DescribeInferenceRouterOutputBuilder {
+    if builder.inference_router_name.is_none() {
+        builder.inference_router_name = Some(Default::default())
+    }
+    if builder.inference_router_arn.is_none() {
+        builder.inference_router_arn = Some(Default::default())
+    }
+    if builder.routing_targets.is_none() {
+        builder.routing_targets = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::InferenceRouterStatus>().ok()
+    }
+    if builder.creation_time.is_none() {
+        builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_time.is_none() {
+        builder.last_modified_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn describe_job_output_output_correct_errors(
     mut builder: crate::operation::describe_job::builders::DescribeJobOutputBuilder,
 ) -> crate::operation::describe_job::builders::DescribeJobOutputBuilder {
@@ -2234,6 +2267,15 @@ pub(crate) fn list_inference_recommendations_jobs_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_inference_routers_output_output_correct_errors(
+    mut builder: crate::operation::list_inference_routers::builders::ListInferenceRoutersOutputBuilder,
+) -> crate::operation::list_inference_routers::builders::ListInferenceRoutersOutputBuilder {
+    if builder.inference_routers.is_none() {
+        builder.inference_routers = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_job_schema_versions_output_output_correct_errors(
     mut builder: crate::operation::list_job_schema_versions::builders::ListJobSchemaVersionsOutputBuilder,
 ) -> crate::operation::list_job_schema_versions::builders::ListJobSchemaVersionsOutputBuilder {
@@ -2695,6 +2737,15 @@ pub(crate) fn update_inference_experiment_output_output_correct_errors(
 ) -> crate::operation::update_inference_experiment::builders::UpdateInferenceExperimentOutputBuilder {
     if builder.inference_experiment_arn.is_none() {
         builder.inference_experiment_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_inference_router_output_output_correct_errors(
+    mut builder: crate::operation::update_inference_router::builders::UpdateInferenceRouterOutputBuilder,
+) -> crate::operation::update_inference_router::builders::UpdateInferenceRouterOutputBuilder {
+    if builder.inference_router_arn.is_none() {
+        builder.inference_router_arn = Some(Default::default())
     }
     builder
 }

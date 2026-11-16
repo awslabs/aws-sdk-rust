@@ -28,10 +28,10 @@ pub struct EventFilter {
     pub entity_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
     pub event_type_categories: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>>,
-    /// <p>A map of entity tags attached to the affected entity.</p><note>
+    /// <p>A map of resource tag key-value pairs to filter affected entities.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
-    pub tags: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>A list of event status codes.</p>
     pub event_status_codes: ::std::option::Option<::std::vec::Vec<crate::types::EventStatusCode>>,
     /// <p>A list of persona values to filter events. Use this to filter events based on their target audience: <code>OPERATIONS</code>, <code>SECURITY</code>, or <code>BILLING</code>.</p>
@@ -110,13 +110,11 @@ impl EventFilter {
     pub fn event_type_categories(&self) -> &[crate::types::EventTypeCategory] {
         self.event_type_categories.as_deref().unwrap_or_default()
     }
-    /// <p>A map of entity tags attached to the affected entity.</p><note>
+    /// <p>A map of resource tag key-value pairs to filter affected entities.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[::std::collections::HashMap<::std::string::String, ::std::string::String>] {
-        self.tags.as_deref().unwrap_or_default()
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+        self.tags.as_ref()
     }
     /// <p>A list of event status codes.</p>
     ///
@@ -154,7 +152,7 @@ pub struct EventFilterBuilder {
     pub(crate) entity_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) entity_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) event_type_categories: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     pub(crate) event_status_codes: ::std::option::Option<::std::vec::Vec<crate::types::EventStatusCode>>,
     pub(crate) personas: ::std::option::Option<::std::vec::Vec<crate::types::EventPersona>>,
 }
@@ -399,33 +397,33 @@ impl EventFilterBuilder {
     pub fn get_event_type_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>> {
         &self.event_type_categories
     }
-    /// Appends an item to `tags`.
+    /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A map of entity tags attached to the affected entity.</p><note>
+    /// <p>A map of resource tag key-value pairs to filter affected entities.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
-    pub fn tags(mut self, input: ::std::collections::HashMap<::std::string::String, ::std::string::String>) -> Self {
-        let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A map of entity tags attached to the affected entity.</p><note>
+    /// <p>A map of resource tag key-value pairs to filter affected entities.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub fn set_tags(
         mut self,
-        input: ::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>>,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     ) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A map of entity tags attached to the affected entity.</p><note>
+    /// <p>A map of resource tag key-value pairs to filter affected entities.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<::std::collections::HashMap<::std::string::String, ::std::string::String>>> {
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.tags
     }
     /// Appends an item to `event_status_codes`.

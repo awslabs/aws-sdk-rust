@@ -80,6 +80,21 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
+pub(crate) fn create_agent_basic_profile_output_output_correct_errors(
+    mut builder: crate::operation::create_agent_basic_profile::builders::CreateAgentBasicProfileOutputBuilder,
+) -> crate::operation::create_agent_basic_profile::builders::CreateAgentBasicProfileOutputBuilder {
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_agent_context_output_output_correct_errors(
     mut builder: crate::operation::create_agent_context::builders::CreateAgentContextOutputBuilder,
 ) -> crate::operation::create_agent_context::builders::CreateAgentContextOutputBuilder {
@@ -100,6 +115,42 @@ pub(crate) fn create_agent_goal_output_output_correct_errors(
             let builder = crate::types::builders::GoalSummaryBuilder::default();
             crate::serde_util::goal_summary_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn create_agent_organizational_profile_output_output_correct_errors(
+    mut builder: crate::operation::create_agent_organizational_profile::builders::CreateAgentOrganizationalProfileOutputBuilder,
+) -> crate::operation::create_agent_organizational_profile::builders::CreateAgentOrganizationalProfileOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.pillars.is_none() {
+        builder.pillars = Some(Default::default())
+    }
+    if builder.organization_id.is_none() {
+        builder.organization_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn create_agent_organizational_report_output_output_correct_errors(
+    mut builder: crate::operation::create_agent_organizational_report::builders::CreateAgentOrganizationalReportOutputBuilder,
+) -> crate::operation::create_agent_organizational_report::builders::CreateAgentOrganizationalReportOutputBuilder {
+    if builder.report_id.is_none() {
+        builder.report_id = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::OrganizationalReportState>().ok()
     }
     builder
 }
@@ -155,20 +206,53 @@ pub(crate) fn get_agent_goal_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_agent_organizational_report_output_output_correct_errors(
+    mut builder: crate::operation::get_agent_organizational_report::builders::GetAgentOrganizationalReportOutputBuilder,
+) -> crate::operation::get_agent_organizational_report::builders::GetAgentOrganizationalReportOutputBuilder {
+    if builder.report_id.is_none() {
+        builder.report_id = Some(Default::default())
+    }
+    if builder.owner_account_id.is_none() {
+        builder.owner_account_id = Some(Default::default())
+    }
+    if builder.organization_id.is_none() {
+        builder.organization_id = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::OrganizationalReportState>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn get_agent_organizational_report_data_output_output_correct_errors(
+    mut builder: crate::operation::get_agent_organizational_report_data::builders::GetAgentOrganizationalReportDataOutputBuilder,
+) -> crate::operation::get_agent_organizational_report_data::builders::GetAgentOrganizationalReportDataOutputBuilder {
+    if builder.download_url.is_none() {
+        builder.download_url = Some(Default::default())
+    }
+    if builder.expires_at.is_none() {
+        builder.expires_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn get_agent_preferences_output_output_correct_errors(
+    mut builder: crate::operation::get_agent_preferences::builders::GetAgentPreferencesOutputBuilder,
+) -> crate::operation::get_agent_preferences::builders::GetAgentPreferencesOutputBuilder {
+    if builder.preferences.is_none() {
+        builder.preferences = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_agent_profile_output_output_correct_errors(
     mut builder: crate::operation::get_agent_profile::builders::GetAgentProfileOutputBuilder,
 ) -> crate::operation::get_agent_profile::builders::GetAgentProfileOutputBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
-    }
-    if builder.pillars.is_none() {
-        builder.pillars = Some(Default::default())
-    }
-    if builder.execution_role_arn.is_none() {
-        builder.execution_role_arn = Some(Default::default())
-    }
-    if builder.aggregation_configuration.is_none() {
-        builder.aggregation_configuration = Some(Default::default())
     }
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
@@ -178,6 +262,18 @@ pub(crate) fn get_agent_profile_output_output_correct_errors(
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn get_agent_profile_policy_output_output_correct_errors(
+    mut builder: crate::operation::get_agent_profile_policy::builders::GetAgentProfilePolicyOutputBuilder,
+) -> crate::operation::get_agent_profile_policy::builders::GetAgentProfilePolicyOutputBuilder {
+    if builder.profile_arn.is_none() {
+        builder.profile_arn = Some(Default::default())
+    }
+    if builder.policy.is_none() {
+        builder.policy = Some(Default::default())
     }
     builder
 }
@@ -269,6 +365,18 @@ pub(crate) fn get_agent_recommendation_generation_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_agent_recommendation_policy_output_output_correct_errors(
+    mut builder: crate::operation::get_agent_recommendation_policy::builders::GetAgentRecommendationPolicyOutputBuilder,
+) -> crate::operation::get_agent_recommendation_policy::builders::GetAgentRecommendationPolicyOutputBuilder {
+    if builder.recommendation_arn.is_none() {
+        builder.recommendation_arn = Some(Default::default())
+    }
+    if builder.policy.is_none() {
+        builder.policy = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_agent_contexts_output_output_correct_errors(
     mut builder: crate::operation::list_agent_contexts::builders::ListAgentContextsOutputBuilder,
 ) -> crate::operation::list_agent_contexts::builders::ListAgentContextsOutputBuilder {
@@ -281,6 +389,15 @@ pub(crate) fn list_agent_contexts_output_output_correct_errors(
 pub(crate) fn list_agent_goals_output_output_correct_errors(
     mut builder: crate::operation::list_agent_goals::builders::ListAgentGoalsOutputBuilder,
 ) -> crate::operation::list_agent_goals::builders::ListAgentGoalsOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_agent_organizational_reports_output_output_correct_errors(
+    mut builder: crate::operation::list_agent_organizational_reports::builders::ListAgentOrganizationalReportsOutputBuilder,
+) -> crate::operation::list_agent_organizational_reports::builders::ListAgentOrganizationalReportsOutputBuilder {
     if builder.items.is_none() {
         builder.items = Some(Default::default())
     }
@@ -319,6 +436,15 @@ pub(crate) fn list_agent_recommendations_output_output_correct_errors(
 ) -> crate::operation::list_agent_recommendations::builders::ListAgentRecommendationsOutputBuilder {
     if builder.items.is_none() {
         builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn send_agent_organizational_report_data_to_s3_output_output_correct_errors(
+    mut builder: crate::operation::send_agent_organizational_report_data_to_s3::builders::SendAgentOrganizationalReportDataToS3OutputBuilder,
+) -> crate::operation::send_agent_organizational_report_data_to_s3::builders::SendAgentOrganizationalReportDataToS3OutputBuilder {
+    if builder.delivered_to.is_none() {
+        builder.delivered_to = Some(Default::default())
     }
     builder
 }
@@ -364,6 +490,30 @@ pub(crate) fn update_agent_goal_output_output_correct_errors(
             let builder = crate::types::builders::GoalSummaryBuilder::default();
             crate::serde_util::goal_summary_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn update_agent_organizational_profile_output_output_correct_errors(
+    mut builder: crate::operation::update_agent_organizational_profile::builders::UpdateAgentOrganizationalProfileOutputBuilder,
+) -> crate::operation::update_agent_organizational_profile::builders::UpdateAgentOrganizationalProfileOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.pillars.is_none() {
+        builder.pillars = Some(Default::default())
+    }
+    if builder.organization_id.is_none() {
+        builder.organization_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.created_by.is_none() {
+        builder.created_by = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -466,6 +616,30 @@ pub(crate) fn remediation_summary_correct_errors(
     builder
 }
 
+pub(crate) fn coverage_summary_correct_errors(
+    mut builder: crate::types::builders::CoverageSummaryBuilder,
+) -> crate::types::builders::CoverageSummaryBuilder {
+    if builder.total_accounts_in_scope.is_none() {
+        builder.total_accounts_in_scope = Some(Default::default())
+    }
+    if builder.accounts_with_profile.is_none() {
+        builder.accounts_with_profile = Some(Default::default())
+    }
+    if builder.accounts_without_profile.is_none() {
+        builder.accounts_without_profile = Some(Default::default())
+    }
+    if builder.failed_account_count.is_none() {
+        builder.failed_account_count = Some(Default::default())
+    }
+    if builder.total_profiles.is_none() {
+        builder.total_profiles = Some(Default::default())
+    }
+    if builder.total_recommendations.is_none() {
+        builder.total_recommendations = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn error_details_correct_errors(mut builder: crate::types::builders::ErrorDetailsBuilder) -> crate::types::builders::ErrorDetailsBuilder {
     if builder.code.is_none() {
         builder.code = Some(Default::default())
@@ -501,15 +675,6 @@ pub(crate) fn agent_profile_summary_correct_errors(
 ) -> crate::types::builders::AgentProfileSummaryBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
-    }
-    if builder.pillars.is_none() {
-        builder.pillars = Some(Default::default())
-    }
-    if builder.execution_role_arn.is_none() {
-        builder.execution_role_arn = Some(Default::default())
-    }
-    if builder.aggregation_configuration.is_none() {
-        builder.aggregation_configuration = Some(Default::default())
     }
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
@@ -680,6 +845,39 @@ pub(crate) fn insight_correct_errors(mut builder: crate::types::builders::Insigh
     builder
 }
 
+pub(crate) fn organizational_report_summary_correct_errors(
+    mut builder: crate::types::builders::OrganizationalReportSummaryBuilder,
+) -> crate::types::builders::OrganizationalReportSummaryBuilder {
+    if builder.report_id.is_none() {
+        builder.report_id = Some(Default::default())
+    }
+    if builder.owner_account_id.is_none() {
+        builder.owner_account_id = Some(Default::default())
+    }
+    if builder.organization_id.is_none() {
+        builder.organization_id = Some(Default::default())
+    }
+    if builder.state.is_none() {
+        builder.state = "no value was set".parse::<crate::types::OrganizationalReportState>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn preference_entry_correct_errors(
+    mut builder: crate::types::builders::PreferenceEntryBuilder,
+) -> crate::types::builders::PreferenceEntryBuilder {
+    if builder.key.is_none() {
+        builder.key = "no value was set".parse::<crate::types::PreferenceKey>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::PreferenceStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn recommendation_goal_correct_errors(
     mut builder: crate::types::builders::RecommendationGoalBuilder,
 ) -> crate::types::builders::RecommendationGoalBuilder {
@@ -730,12 +928,82 @@ pub(crate) fn validation_exception_field_correct_errors(
     builder
 }
 
+pub(crate) fn failed_account_correct_errors(
+    mut builder: crate::types::builders::FailedAccountBuilder,
+) -> crate::types::builders::FailedAccountBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.reason.is_none() {
+        builder.reason = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn failed_organizational_unit_correct_errors(
+    mut builder: crate::types::builders::FailedOrganizationalUnitBuilder,
+) -> crate::types::builders::FailedOrganizationalUnitBuilder {
+    if builder.organizational_unit_id.is_none() {
+        builder.organizational_unit_id = Some(Default::default())
+    }
+    if builder.reason.is_none() {
+        builder.reason = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn organizational_account_entry_correct_errors(
+    mut builder: crate::types::builders::OrganizationalAccountEntryBuilder,
+) -> crate::types::builders::OrganizationalAccountEntryBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.regions.is_none() {
+        builder.regions = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn organizational_unit_entry_correct_errors(
+    mut builder: crate::types::builders::OrganizationalUnitEntryBuilder,
+) -> crate::types::builders::OrganizationalUnitEntryBuilder {
+    if builder.organizational_unit_id.is_none() {
+        builder.organizational_unit_id = Some(Default::default())
+    }
+    if builder.regions.is_none() {
+        builder.regions = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn pillar_count_correct_errors(mut builder: crate::types::builders::PillarCountBuilder) -> crate::types::builders::PillarCountBuilder {
+    if builder.pillar.is_none() {
+        builder.pillar = "no value was set".parse::<crate::types::Pillar>().ok()
+    }
+    if builder.count.is_none() {
+        builder.count = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn pillar_item_correct_errors(mut builder: crate::types::builders::PillarItemBuilder) -> crate::types::builders::PillarItemBuilder {
     if builder.pillar.is_none() {
         builder.pillar = "no value was set".parse::<crate::types::Pillar>().ok()
     }
     if builder.ids.is_none() {
         builder.ids = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn priority_count_correct_errors(
+    mut builder: crate::types::builders::PriorityCountBuilder,
+) -> crate::types::builders::PriorityCountBuilder {
+    if builder.priority.is_none() {
+        builder.priority = "no value was set".parse::<crate::types::Priority>().ok()
+    }
+    if builder.count.is_none() {
+        builder.count = Some(Default::default())
     }
     builder
 }

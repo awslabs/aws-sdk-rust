@@ -5,6 +5,8 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_connect_peer_association::ConnectPeerAssociation;
 
+pub use crate::types::_context_store_association::ContextStoreAssociation;
+
 pub use crate::types::_customer_gateway_association::CustomerGatewayAssociation;
 
 pub use crate::types::_link_association::LinkAssociation;
@@ -22,6 +24,8 @@ pub use crate::types::_connection::Connection;
 pub use crate::types::_bgp_options::BgpOptions;
 
 pub use crate::types::_connect_peer::ConnectPeer;
+
+pub use crate::types::_context_store::ContextStore;
 
 pub use crate::types::_core_network::CoreNetwork;
 
@@ -91,6 +95,8 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_connect_peer_association_state::ConnectPeerAssociationState;
 
+pub use crate::types::_context_store_association_state::ContextStoreAssociationState;
+
 pub use crate::types::_customer_gateway_association_state::CustomerGatewayAssociationState;
 
 pub use crate::types::_link_association_state::LinkAssociationState;
@@ -108,6 +114,8 @@ pub use crate::types::_connection_state::ConnectionState;
 pub use crate::types::_connect_peer_state::ConnectPeerState;
 
 pub use crate::types::_connect_peer_configuration::ConnectPeerConfiguration;
+
+pub use crate::types::_context_store_state::ContextStoreState;
 
 pub use crate::types::_core_network_state::CoreNetworkState;
 
@@ -155,6 +163,10 @@ pub use crate::types::_attachment_routing_policy_association_summary::Attachment
 
 pub use crate::types::_connect_peer_summary::ConnectPeerSummary;
 
+pub use crate::types::_context_change::ContextChange;
+
+pub use crate::types::_context_entry::ContextEntry;
+
 pub use crate::types::_core_network_policy_version::CoreNetworkPolicyVersion;
 
 pub use crate::types::_prefix_list_association::PrefixListAssociation;
@@ -192,6 +204,8 @@ pub use crate::types::_core_network_change_values::CoreNetworkChangeValues;
 pub use crate::types::_connection_health::ConnectionHealth;
 
 pub use crate::types::_route_analysis_completion::RouteAnalysisCompletion;
+
+pub use crate::types::_context_change_type::ContextChangeType;
 
 pub use crate::types::_routing_information_next_hop::RoutingInformationNextHop;
 
@@ -304,6 +318,20 @@ mod _connection_state;
 mod _connection_status;
 
 mod _connection_type;
+
+mod _context_change;
+
+mod _context_change_type;
+
+mod _context_entry;
+
+mod _context_store;
+
+mod _context_store_association;
+
+mod _context_store_association_state;
+
+mod _context_store_state;
 
 mod _core_network;
 

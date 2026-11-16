@@ -3,6 +3,8 @@ pub use crate::types::_attachment::AttachmentBuilder;
 
 pub use crate::types::_connect_peer_association::ConnectPeerAssociationBuilder;
 
+pub use crate::types::_context_store_association::ContextStoreAssociationBuilder;
+
 pub use crate::types::_customer_gateway_association::CustomerGatewayAssociationBuilder;
 
 pub use crate::types::_link_association::LinkAssociationBuilder;
@@ -18,6 +20,8 @@ pub use crate::types::_connection::ConnectionBuilder;
 pub use crate::types::_bgp_options::BgpOptionsBuilder;
 
 pub use crate::types::_connect_peer::ConnectPeerBuilder;
+
+pub use crate::types::_context_store::ContextStoreBuilder;
 
 pub use crate::types::_core_network::CoreNetworkBuilder;
 
@@ -104,6 +108,10 @@ pub use crate::types::_attachment_nat_configuration::AttachmentNatConfigurationB
 pub use crate::types::_attachment_routing_policy_association_summary::AttachmentRoutingPolicyAssociationSummaryBuilder;
 
 pub use crate::types::_connect_peer_summary::ConnectPeerSummaryBuilder;
+
+pub use crate::types::_context_change::ContextChangeBuilder;
+
+pub use crate::types::_context_entry::ContextEntryBuilder;
 
 pub use crate::types::_core_network_policy_version::CoreNetworkPolicyVersionBuilder;
 

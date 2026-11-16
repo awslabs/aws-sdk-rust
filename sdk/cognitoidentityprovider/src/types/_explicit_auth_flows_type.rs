@@ -16,6 +16,8 @@
 ///     ExplicitAuthFlowsType::AllowAdminUserPasswordAuth => { /* ... */ },
 ///     ExplicitAuthFlowsType::AllowCustomAuth => { /* ... */ },
 ///     ExplicitAuthFlowsType::AllowRefreshTokenAuth => { /* ... */ },
+///     ExplicitAuthFlowsType::AllowTokenExchangeDelegation => { /* ... */ },
+///     ExplicitAuthFlowsType::AllowTokenExchangeImpersonation => { /* ... */ },
 ///     ExplicitAuthFlowsType::AllowUserAuth => { /* ... */ },
 ///     ExplicitAuthFlowsType::AllowUserPasswordAuth => { /* ... */ },
 ///     ExplicitAuthFlowsType::AllowUserSrpAuth => { /* ... */ },
@@ -58,6 +60,10 @@ pub enum ExplicitAuthFlowsType {
     #[allow(missing_docs)] // documentation missing in model
     AllowRefreshTokenAuth,
     #[allow(missing_docs)] // documentation missing in model
+    AllowTokenExchangeDelegation,
+    #[allow(missing_docs)] // documentation missing in model
+    AllowTokenExchangeImpersonation,
+    #[allow(missing_docs)] // documentation missing in model
     AllowUserAuth,
     #[allow(missing_docs)] // documentation missing in model
     AllowUserPasswordAuth,
@@ -78,6 +84,8 @@ impl ::std::convert::From<&str> for ExplicitAuthFlowsType {
             "ALLOW_ADMIN_USER_PASSWORD_AUTH" => ExplicitAuthFlowsType::AllowAdminUserPasswordAuth,
             "ALLOW_CUSTOM_AUTH" => ExplicitAuthFlowsType::AllowCustomAuth,
             "ALLOW_REFRESH_TOKEN_AUTH" => ExplicitAuthFlowsType::AllowRefreshTokenAuth,
+            "ALLOW_TOKEN_EXCHANGE_DELEGATION" => ExplicitAuthFlowsType::AllowTokenExchangeDelegation,
+            "ALLOW_TOKEN_EXCHANGE_IMPERSONATION" => ExplicitAuthFlowsType::AllowTokenExchangeImpersonation,
             "ALLOW_USER_AUTH" => ExplicitAuthFlowsType::AllowUserAuth,
             "ALLOW_USER_PASSWORD_AUTH" => ExplicitAuthFlowsType::AllowUserPasswordAuth,
             "ALLOW_USER_SRP_AUTH" => ExplicitAuthFlowsType::AllowUserSrpAuth,
@@ -102,6 +110,8 @@ impl ExplicitAuthFlowsType {
             ExplicitAuthFlowsType::AllowAdminUserPasswordAuth => "ALLOW_ADMIN_USER_PASSWORD_AUTH",
             ExplicitAuthFlowsType::AllowCustomAuth => "ALLOW_CUSTOM_AUTH",
             ExplicitAuthFlowsType::AllowRefreshTokenAuth => "ALLOW_REFRESH_TOKEN_AUTH",
+            ExplicitAuthFlowsType::AllowTokenExchangeDelegation => "ALLOW_TOKEN_EXCHANGE_DELEGATION",
+            ExplicitAuthFlowsType::AllowTokenExchangeImpersonation => "ALLOW_TOKEN_EXCHANGE_IMPERSONATION",
             ExplicitAuthFlowsType::AllowUserAuth => "ALLOW_USER_AUTH",
             ExplicitAuthFlowsType::AllowUserPasswordAuth => "ALLOW_USER_PASSWORD_AUTH",
             ExplicitAuthFlowsType::AllowUserSrpAuth => "ALLOW_USER_SRP_AUTH",
@@ -117,6 +127,8 @@ impl ExplicitAuthFlowsType {
             "ALLOW_ADMIN_USER_PASSWORD_AUTH",
             "ALLOW_CUSTOM_AUTH",
             "ALLOW_REFRESH_TOKEN_AUTH",
+            "ALLOW_TOKEN_EXCHANGE_DELEGATION",
+            "ALLOW_TOKEN_EXCHANGE_IMPERSONATION",
             "ALLOW_USER_AUTH",
             "ALLOW_USER_PASSWORD_AUTH",
             "ALLOW_USER_SRP_AUTH",
@@ -149,6 +161,8 @@ impl ::std::fmt::Display for ExplicitAuthFlowsType {
             ExplicitAuthFlowsType::AllowAdminUserPasswordAuth => write!(f, "ALLOW_ADMIN_USER_PASSWORD_AUTH"),
             ExplicitAuthFlowsType::AllowCustomAuth => write!(f, "ALLOW_CUSTOM_AUTH"),
             ExplicitAuthFlowsType::AllowRefreshTokenAuth => write!(f, "ALLOW_REFRESH_TOKEN_AUTH"),
+            ExplicitAuthFlowsType::AllowTokenExchangeDelegation => write!(f, "ALLOW_TOKEN_EXCHANGE_DELEGATION"),
+            ExplicitAuthFlowsType::AllowTokenExchangeImpersonation => write!(f, "ALLOW_TOKEN_EXCHANGE_IMPERSONATION"),
             ExplicitAuthFlowsType::AllowUserAuth => write!(f, "ALLOW_USER_AUTH"),
             ExplicitAuthFlowsType::AllowUserPasswordAuth => write!(f, "ALLOW_USER_PASSWORD_AUTH"),
             ExplicitAuthFlowsType::AllowUserSrpAuth => write!(f, "ALLOW_USER_SRP_AUTH"),

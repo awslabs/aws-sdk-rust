@@ -5,6 +5,8 @@
 pub struct DescribeAffectedAccountsForOrganizationOutput {
     /// <p>A JSON set of elements of the affected accounts.</p>
     pub affected_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The list of affected account entities, including account IDs and their associated tags.</p>
+    pub affected_account_entities: ::std::option::Option<::std::vec::Vec<crate::types::AccountEntity>>,
     /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
     /// <ul>
     /// <li>
@@ -25,6 +27,12 @@ impl DescribeAffectedAccountsForOrganizationOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.affected_accounts.is_none()`.
     pub fn affected_accounts(&self) -> &[::std::string::String] {
         self.affected_accounts.as_deref().unwrap_or_default()
+    }
+    /// <p>The list of affected account entities, including account IDs and their associated tags.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.affected_account_entities.is_none()`.
+    pub fn affected_account_entities(&self) -> &[crate::types::AccountEntity] {
+        self.affected_account_entities.as_deref().unwrap_or_default()
     }
     /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
     /// <ul>
@@ -61,6 +69,7 @@ impl DescribeAffectedAccountsForOrganizationOutput {
 #[non_exhaustive]
 pub struct DescribeAffectedAccountsForOrganizationOutputBuilder {
     pub(crate) affected_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) affected_account_entities: ::std::option::Option<::std::vec::Vec<crate::types::AccountEntity>>,
     pub(crate) event_scope_code: ::std::option::Option<crate::types::EventScopeCode>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -85,6 +94,26 @@ impl DescribeAffectedAccountsForOrganizationOutputBuilder {
     /// <p>A JSON set of elements of the affected accounts.</p>
     pub fn get_affected_accounts(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.affected_accounts
+    }
+    /// Appends an item to `affected_account_entities`.
+    ///
+    /// To override the contents of this collection use [`set_affected_account_entities`](Self::set_affected_account_entities).
+    ///
+    /// <p>The list of affected account entities, including account IDs and their associated tags.</p>
+    pub fn affected_account_entities(mut self, input: crate::types::AccountEntity) -> Self {
+        let mut v = self.affected_account_entities.unwrap_or_default();
+        v.push(input);
+        self.affected_account_entities = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The list of affected account entities, including account IDs and their associated tags.</p>
+    pub fn set_affected_account_entities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccountEntity>>) -> Self {
+        self.affected_account_entities = input;
+        self
+    }
+    /// <p>The list of affected account entities, including account IDs and their associated tags.</p>
+    pub fn get_affected_account_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccountEntity>> {
+        &self.affected_account_entities
     }
     /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
     /// <ul>
@@ -151,6 +180,7 @@ impl DescribeAffectedAccountsForOrganizationOutputBuilder {
     pub fn build(self) -> crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput {
         crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput {
             affected_accounts: self.affected_accounts,
+            affected_account_entities: self.affected_account_entities,
             event_scope_code: self.event_scope_code,
             next_token: self.next_token,
             _request_id: self._request_id,

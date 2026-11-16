@@ -37,10 +37,24 @@ static REPLICATIONRULE_MEMBER_REPOSITORY_FILTERS: ::aws_smithy_schema::Schema<'s
     1,
 )
 .with_list_member(&REPLICATIONRULE_MEMBER_REPOSITORY_FILTERS_MEMBER);
+static REPLICATIONRULE_MEMBER_DELETE_REPLICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecr#ReplicationRule$deleteReplication",
+        "com.amazonaws.ecr",
+        "ReplicationRule",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "deleteReplication",
+    2,
+);
 static REPLICATIONRULE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecr#ReplicationRule", "com.amazonaws.ecr", "ReplicationRule"),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&REPLICATIONRULE_MEMBER_DESTINATIONS, &REPLICATIONRULE_MEMBER_REPOSITORY_FILTERS],
+    &[
+        &REPLICATIONRULE_MEMBER_DESTINATIONS,
+        &REPLICATIONRULE_MEMBER_REPOSITORY_FILTERS,
+        &REPLICATIONRULE_MEMBER_DELETE_REPLICATION,
+    ],
 );
 impl crate::types::ReplicationRule {
     /// The schema for this shape.
@@ -79,6 +93,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Replicatio
                     Ok(())
                 },
             )?;
+        }
+        if let Some(ref val) = self.delete_replication {
+            ser.write_struct(&REPLICATIONRULE_MEMBER_DELETE_REPLICATION, val)?;
         }
         Ok(())
     }
@@ -119,6 +136,13 @@ impl crate::types::builders::ReplicationRuleBuilder {
                             })?;
                             container
                         });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.delete_replication = Some(crate::types::DeleteReplication::deserialize(deser)?);
                     }
                 }
                 _ => {}

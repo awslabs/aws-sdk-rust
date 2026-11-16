@@ -119,6 +119,12 @@ pub use crate::types::_code_delivery_details_type::CodeDeliveryDetailsType;
 
 pub use crate::types::_client_authentication_result_type::ClientAuthenticationResultType;
 
+pub use crate::types::_token_type_identifier_type::TokenTypeIdentifierType;
+
+pub use crate::types::_issued_token_type_identifier_type::IssuedTokenTypeIdentifierType;
+
+pub use crate::types::_o_auth_token_type_type::OAuthTokenTypeType;
+
 pub use crate::types::_log_delivery_configuration_type::LogDeliveryConfigurationType;
 
 pub use crate::types::_limit_definition_type::LimitDefinitionType;
@@ -481,6 +487,8 @@ mod _inbound_federation_lambda_type;
 
 mod _inbound_federation_lambda_version_type;
 
+mod _issued_token_type_identifier_type;
+
 mod _issuer_configuration_type;
 
 mod _issuer_type;
@@ -518,6 +526,8 @@ mod _notify_email_type;
 mod _number_attribute_constraints_type;
 
 mod _o_auth_flow_type;
+
+mod _o_auth_token_type_type;
 
 mod _password_hashing_algorithm_type;
 
@@ -598,6 +608,8 @@ mod _terms_source_type;
 mod _terms_type;
 
 mod _time_units_type;
+
+mod _token_type_identifier_type;
 
 mod _token_validity_units_type;
 

@@ -172,6 +172,16 @@ static DESCRIBEENDPOINTOUTPUT_MEMBER_METRICS_CONFIG: ::aws_smithy_schema::Schema
     "MetricsConfig",
     14,
 );
+static DESCRIBEENDPOINTOUTPUT_MEMBER_CROSS_REGION_TRAFFIC_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.sagemaker.synthetic#DescribeEndpointOutput$CrossRegionTrafficConfig",
+        "com.amazonaws.sagemaker.synthetic",
+        "DescribeEndpointOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "CrossRegionTrafficConfig",
+    15,
+);
 static DESCRIBEENDPOINTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.sagemaker.synthetic#DescribeEndpointOutput",
@@ -195,6 +205,7 @@ static DESCRIBEENDPOINTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::a
         &DESCRIBEENDPOINTOUTPUT_MEMBER_EXPLAINER_CONFIG,
         &DESCRIBEENDPOINTOUTPUT_MEMBER_SHADOW_PRODUCTION_VARIANTS,
         &DESCRIBEENDPOINTOUTPUT_MEMBER_METRICS_CONFIG,
+        &DESCRIBEENDPOINTOUTPUT_MEMBER_CROSS_REGION_TRAFFIC_CONFIG,
     ],
 )
 .with_original_name("DescribeEndpointOutput");
@@ -272,6 +283,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::descri
         }
         if let Some(ref val) = self.metrics_config {
             ser.write_struct(&DESCRIBEENDPOINTOUTPUT_MEMBER_METRICS_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.cross_region_traffic_config {
+            ser.write_struct(&DESCRIBEENDPOINTOUTPUT_MEMBER_CROSS_REGION_TRAFFIC_CONFIG, val)?;
         }
         Ok(())
     }
@@ -407,6 +421,13 @@ impl crate::operation::describe_endpoint::builders::DescribeEndpointOutputBuilde
                         deser.read_null()?;
                     } else {
                         self.metrics_config = Some(crate::types::MetricsConfig::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cross_region_traffic_config = Some(crate::types::CrossRegionTrafficConfig::deserialize(deser)?);
                     }
                 }
                 _ => {}

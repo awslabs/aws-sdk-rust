@@ -4,14 +4,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MetadataConfiguration {
-    /// <p>Non-filterable metadata keys allow you to enrich vectors with additional context during storage and retrieval. Unlike default metadata keys, these keys can’t be used as query filters. Non-filterable metadata keys can be retrieved but can’t be searched, queried, or filtered. You can access non-filterable metadata keys of your vectors after finding the vectors. For more information about non-filterable metadata keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-vectors.html">Vectors</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-limitations.html">Limitations and restrictions</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Non-filterable metadata keys allow you to enrich vectors with additional context during storage and retrieval. You can't use these keys in metadata filters. You can still make a non-filterable key full-text searchable by configuring it separately in <code>textSearchConfigurations</code>. You can retrieve non-filterable metadata keys after finding the vectors. For more information about non-filterable metadata keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-vectors.html">Vectors</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-limitations.html">Limitations and restrictions</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub non_filterable_metadata_keys: ::std::vec::Vec<::std::string::String>,
+    /// <p>Full-text search configurations for searchable metadata keys.</p>
+    pub text_search_configurations: ::std::vec::Vec<crate::types::TextSearchConfiguration>,
 }
 impl MetadataConfiguration {
-    /// <p>Non-filterable metadata keys allow you to enrich vectors with additional context during storage and retrieval. Unlike default metadata keys, these keys can’t be used as query filters. Non-filterable metadata keys can be retrieved but can’t be searched, queried, or filtered. You can access non-filterable metadata keys of your vectors after finding the vectors. For more information about non-filterable metadata keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-vectors.html">Vectors</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-limitations.html">Limitations and restrictions</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Non-filterable metadata keys allow you to enrich vectors with additional context during storage and retrieval. You can't use these keys in metadata filters. You can still make a non-filterable key full-text searchable by configuring it separately in <code>textSearchConfigurations</code>. You can retrieve non-filterable metadata keys after finding the vectors. For more information about non-filterable metadata keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-vectors.html">Vectors</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-limitations.html">Limitations and restrictions</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn non_filterable_metadata_keys(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.non_filterable_metadata_keys.deref()
+    }
+    /// <p>Full-text search configurations for searchable metadata keys.</p>
+    pub fn text_search_configurations(&self) -> &[crate::types::TextSearchConfiguration] {
+        use std::ops::Deref;
+        self.text_search_configurations.deref()
     }
 }
 impl MetadataConfiguration {
@@ -26,39 +33,54 @@ impl MetadataConfiguration {
 #[non_exhaustive]
 pub struct MetadataConfigurationBuilder {
     pub(crate) non_filterable_metadata_keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) text_search_configurations: ::std::option::Option<::std::vec::Vec<crate::types::TextSearchConfiguration>>,
 }
 impl MetadataConfigurationBuilder {
     /// Appends an item to `non_filterable_metadata_keys`.
     ///
     /// To override the contents of this collection use [`set_non_filterable_metadata_keys`](Self::set_non_filterable_metadata_keys).
     ///
-    /// <p>Non-filterable metadata keys allow you to enrich vectors with additional context during storage and retrieval. Unlike default metadata keys, these keys can’t be used as query filters. Non-filterable metadata keys can be retrieved but can’t be searched, queried, or filtered. You can access non-filterable metadata keys of your vectors after finding the vectors. For more information about non-filterable metadata keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-vectors.html">Vectors</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-limitations.html">Limitations and restrictions</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Non-filterable metadata keys allow you to enrich vectors with additional context during storage and retrieval. You can't use these keys in metadata filters. You can still make a non-filterable key full-text searchable by configuring it separately in <code>textSearchConfigurations</code>. You can retrieve non-filterable metadata keys after finding the vectors. For more information about non-filterable metadata keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-vectors.html">Vectors</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-limitations.html">Limitations and restrictions</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn non_filterable_metadata_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.non_filterable_metadata_keys.unwrap_or_default();
         v.push(input.into());
         self.non_filterable_metadata_keys = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Non-filterable metadata keys allow you to enrich vectors with additional context during storage and retrieval. Unlike default metadata keys, these keys can’t be used as query filters. Non-filterable metadata keys can be retrieved but can’t be searched, queried, or filtered. You can access non-filterable metadata keys of your vectors after finding the vectors. For more information about non-filterable metadata keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-vectors.html">Vectors</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-limitations.html">Limitations and restrictions</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Non-filterable metadata keys allow you to enrich vectors with additional context during storage and retrieval. You can't use these keys in metadata filters. You can still make a non-filterable key full-text searchable by configuring it separately in <code>textSearchConfigurations</code>. You can retrieve non-filterable metadata keys after finding the vectors. For more information about non-filterable metadata keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-vectors.html">Vectors</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-limitations.html">Limitations and restrictions</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_non_filterable_metadata_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.non_filterable_metadata_keys = input;
         self
     }
-    /// <p>Non-filterable metadata keys allow you to enrich vectors with additional context during storage and retrieval. Unlike default metadata keys, these keys can’t be used as query filters. Non-filterable metadata keys can be retrieved but can’t be searched, queried, or filtered. You can access non-filterable metadata keys of your vectors after finding the vectors. For more information about non-filterable metadata keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-vectors.html">Vectors</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-limitations.html">Limitations and restrictions</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>Non-filterable metadata keys allow you to enrich vectors with additional context during storage and retrieval. You can't use these keys in metadata filters. You can still make a non-filterable key full-text searchable by configuring it separately in <code>textSearchConfigurations</code>. You can retrieve non-filterable metadata keys after finding the vectors. For more information about non-filterable metadata keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-vectors.html">Vectors</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-limitations.html">Limitations and restrictions</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn get_non_filterable_metadata_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.non_filterable_metadata_keys
     }
+    /// Appends an item to `text_search_configurations`.
+    ///
+    /// To override the contents of this collection use [`set_text_search_configurations`](Self::set_text_search_configurations).
+    ///
+    /// <p>Full-text search configurations for searchable metadata keys.</p>
+    pub fn text_search_configurations(mut self, input: crate::types::TextSearchConfiguration) -> Self {
+        let mut v = self.text_search_configurations.unwrap_or_default();
+        v.push(input);
+        self.text_search_configurations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Full-text search configurations for searchable metadata keys.</p>
+    pub fn set_text_search_configurations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TextSearchConfiguration>>) -> Self {
+        self.text_search_configurations = input;
+        self
+    }
+    /// <p>Full-text search configurations for searchable metadata keys.</p>
+    pub fn get_text_search_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TextSearchConfiguration>> {
+        &self.text_search_configurations
+    }
     /// Consumes the builder and constructs a [`MetadataConfiguration`](crate::types::MetadataConfiguration).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`non_filterable_metadata_keys`](crate::types::builders::MetadataConfigurationBuilder::non_filterable_metadata_keys)
-    pub fn build(self) -> ::std::result::Result<crate::types::MetadataConfiguration, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::MetadataConfiguration {
-            non_filterable_metadata_keys: self.non_filterable_metadata_keys.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "non_filterable_metadata_keys",
-                    "non_filterable_metadata_keys was not specified but it is required when building MetadataConfiguration",
-                )
-            })?,
-        })
+    pub fn build(self) -> crate::types::MetadataConfiguration {
+        crate::types::MetadataConfiguration {
+            non_filterable_metadata_keys: self.non_filterable_metadata_keys.unwrap_or_default(),
+            text_search_configurations: self.text_search_configurations.unwrap_or_default(),
+        }
     }
 }

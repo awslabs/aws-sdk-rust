@@ -121,6 +121,9 @@ pub mod list_analysis_reports;
 /// Types for the `ListContainerAssociations` operation.
 pub mod list_container_associations;
 
+/// Types for the `ListContextStores` operation.
+pub mod list_context_stores;
+
 /// Types for the `ListFirewallPolicies` operation.
 pub mod list_firewall_policies;
 
@@ -135,6 +138,9 @@ pub mod list_flow_operation_results;
 
 /// Types for the `ListFlowOperations` operation.
 pub mod list_flow_operations;
+
+/// Types for the `ListResourcesInContextStore` operation.
+pub mod list_resources_in_context_store;
 
 /// Types for the `ListRuleGroups` operation.
 pub mod list_rule_groups;

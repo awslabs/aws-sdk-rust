@@ -8,6 +8,8 @@ pub struct RuleVariables {
     pub ip_sets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IpSet>>,
     /// <p>A list of port ranges.</p>
     pub port_sets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PortSet>>,
+    /// <p>A list of context sets. Each context set lists resources from the context store that is associated with the firewall.</p>
+    pub context_sets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContextSet>>,
 }
 impl RuleVariables {
     /// <p>A list of IP addresses and address ranges, in CIDR notation.</p>
@@ -17,6 +19,10 @@ impl RuleVariables {
     /// <p>A list of port ranges.</p>
     pub fn port_sets(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PortSet>> {
         self.port_sets.as_ref()
+    }
+    /// <p>A list of context sets. Each context set lists resources from the context store that is associated with the firewall.</p>
+    pub fn context_sets(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ContextSet>> {
+        self.context_sets.as_ref()
     }
 }
 impl RuleVariables {
@@ -32,6 +38,7 @@ impl RuleVariables {
 pub struct RuleVariablesBuilder {
     pub(crate) ip_sets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::IpSet>>,
     pub(crate) port_sets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PortSet>>,
+    pub(crate) context_sets: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContextSet>>,
 }
 impl RuleVariablesBuilder {
     /// Adds a key-value pair to `ip_sets`.
@@ -74,11 +81,35 @@ impl RuleVariablesBuilder {
     pub fn get_port_sets(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PortSet>> {
         &self.port_sets
     }
+    /// Adds a key-value pair to `context_sets`.
+    ///
+    /// To override the contents of this collection use [`set_context_sets`](Self::set_context_sets).
+    ///
+    /// <p>A list of context sets. Each context set lists resources from the context store that is associated with the firewall.</p>
+    pub fn context_sets(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::ContextSet) -> Self {
+        let mut hash_map = self.context_sets.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.context_sets = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A list of context sets. Each context set lists resources from the context store that is associated with the firewall.</p>
+    pub fn set_context_sets(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContextSet>>,
+    ) -> Self {
+        self.context_sets = input;
+        self
+    }
+    /// <p>A list of context sets. Each context set lists resources from the context store that is associated with the firewall.</p>
+    pub fn get_context_sets(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ContextSet>> {
+        &self.context_sets
+    }
     /// Consumes the builder and constructs a [`RuleVariables`](crate::types::RuleVariables).
     pub fn build(self) -> crate::types::RuleVariables {
         crate::types::RuleVariables {
             ip_sets: self.ip_sets,
             port_sets: self.port_sets,
+            context_sets: self.context_sets,
         }
     }
 }

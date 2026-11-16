@@ -12,11 +12,23 @@ pub fn ser_update_cluster_input_input(
     if let Some(var_3) = &input.kms_encryption_key {
         object.key("kmsEncryptionKey").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.multi_region_properties {
+    if let Some(var_4) = &input.metric_groups {
+        let mut array_5 = object.key("metricGroups").start_array();
+        for item_6 in var_4 {
+            {
+                #[allow(unused_mut)]
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_metric_group_request::ser_metric_group_request(&mut object_7, item_6)?;
+                object_7.finish();
+            }
+        }
+        array_5.finish();
+    }
+    if let Some(var_8) = &input.multi_region_properties {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("multiRegionProperties").start_object();
-        crate::protocol_serde::shape_multi_region_properties::ser_multi_region_properties(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_9 = object.key("multiRegionProperties").start_object();
+        crate::protocol_serde::shape_multi_region_properties::ser_multi_region_properties(&mut object_9, var_8)?;
+        object_9.finish();
     }
     Ok(())
 }

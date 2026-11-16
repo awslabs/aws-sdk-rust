@@ -55,6 +55,13 @@ where
                         "deletionProtection" => {
                             builder = builder.set_deletion_protection(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "profileType" => {
+                            builder = builder.set_profile_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ProfileType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "executionRoleArn" => {
                             builder = builder.set_execution_role_arn(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -86,9 +93,6 @@ where
                             builder =
                                 builder.set_field_errors(crate::protocol_serde::shape_field_errors::de_field_errors(tokens, _value, depth + 1)?);
                         }
-                        "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
-                        }
                         "createdBy" => {
                             builder = builder.set_created_by(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -114,6 +118,15 @@ where
                                 tokens.next(),
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
+                        }
+                        "organizationalAggregationConfiguration" => {
+                            builder = builder.set_organizational_aggregation_configuration(
+                                crate::protocol_serde::shape_organizational_aggregation_configuration::de_organizational_aggregation_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

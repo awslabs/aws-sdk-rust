@@ -64,6 +64,20 @@ pub fn de_added_principal(
                 builder = builder.set_service_id(var_4);
             }
             ,
+            s if s.matches("permissionType") /* PermissionType com.amazonaws.ec2#AddedPrincipal$PermissionType */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<crate::types::PermissionType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::PermissionType::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_permission_type(var_5);
+            }
+            ,
             _ => {}
         }
     }

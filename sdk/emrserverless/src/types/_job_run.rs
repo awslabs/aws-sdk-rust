@@ -65,6 +65,8 @@ pub struct JobRun {
     pub image_configuration: ::std::option::Option<crate::types::ImageConfiguration>,
     /// <p>The specification applied to each worker type. Includes the JobRun-level ImageConfiguration when the applicationLevelDigestResolution is false for the application.</p>
     pub worker_type_specifications: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>>,
+    /// <p>The Amazon EMR Serverless Flex settings for the job run.</p>
+    pub flex_execution: ::std::option::Option<crate::types::FlexExecution>,
 }
 impl JobRun {
     /// <p>The ID of the application the job is running on.</p>
@@ -197,6 +199,10 @@ impl JobRun {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>> {
         self.worker_type_specifications.as_ref()
     }
+    /// <p>The Amazon EMR Serverless Flex settings for the job run.</p>
+    pub fn flex_execution(&self) -> ::std::option::Option<&crate::types::FlexExecution> {
+        self.flex_execution.as_ref()
+    }
 }
 impl JobRun {
     /// Creates a new builder-style object to manufacture [`JobRun`](crate::types::JobRun).
@@ -240,6 +246,7 @@ pub struct JobRunBuilder {
     pub(crate) image_configuration: ::std::option::Option<crate::types::ImageConfiguration>,
     pub(crate) worker_type_specifications:
         ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>>,
+    pub(crate) flex_execution: ::std::option::Option<crate::types::FlexExecution>,
 }
 impl JobRunBuilder {
     /// <p>The ID of the application the job is running on.</p>
@@ -697,6 +704,20 @@ impl JobRunBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::WorkerTypeSpecification>> {
         &self.worker_type_specifications
     }
+    /// <p>The Amazon EMR Serverless Flex settings for the job run.</p>
+    pub fn flex_execution(mut self, input: crate::types::FlexExecution) -> Self {
+        self.flex_execution = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon EMR Serverless Flex settings for the job run.</p>
+    pub fn set_flex_execution(mut self, input: ::std::option::Option<crate::types::FlexExecution>) -> Self {
+        self.flex_execution = input;
+        self
+    }
+    /// <p>The Amazon EMR Serverless Flex settings for the job run.</p>
+    pub fn get_flex_execution(&self) -> &::std::option::Option<crate::types::FlexExecution> {
+        &self.flex_execution
+    }
     /// Consumes the builder and constructs a [`JobRun`](crate::types::JobRun).
     /// This method will fail if any of the following fields are not set:
     /// - [`application_id`](crate::types::builders::JobRunBuilder::application_id)
@@ -791,6 +812,7 @@ impl JobRunBuilder {
             queued_duration_milliseconds: self.queued_duration_milliseconds,
             image_configuration: self.image_configuration,
             worker_type_specifications: self.worker_type_specifications,
+            flex_execution: self.flex_execution,
         })
     }
 }

@@ -168,6 +168,32 @@ pub fn de_vpc_endpoint_connection(
                 builder = builder.set_payer_responsibilities(var_13);
             }
             ,
+            s if s.matches("transitGatewayAttachmentId") /* TransitGatewayAttachmentId com.amazonaws.ec2#VpcEndpointConnection$TransitGatewayAttachmentId */ =>  {
+                let var_14 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_transit_gateway_attachment_id(var_14);
+            }
+            ,
+            s if s.matches("transitGatewayAttachmentOwner") /* TransitGatewayAttachmentOwner com.amazonaws.ec2#VpcEndpointConnection$TransitGatewayAttachmentOwner */ =>  {
+                let var_15 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_transit_gateway_attachment_owner(var_15);
+            }
+            ,
             _ => {}
         }
     }

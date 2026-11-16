@@ -8,6 +8,26 @@ pub struct ListKeysInput {
     pub limit: ::std::option::Option<i32>,
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>
     pub marker: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whose KMS keys to list. Use this parameter to list KMS keys that other Amazon Web Services accounts shared with your Amazon Web Services account through Resource Access Manager (RAM).</p>
+    /// <p>Specify one or two values. Valid values are:</p>
+    /// <dl>
+    /// <dt>
+    /// SELF
+    /// </dt>
+    /// <dd>
+    /// <p>Lists the KMS keys in your Amazon Web Services account and Region.</p>
+    /// </dd>
+    /// <dt>
+    /// OTHER_ACCOUNTS_VIA_RAM
+    /// </dt>
+    /// <dd>
+    /// <p>Lists the KMS keys in the Region that other Amazon Web Services accounts currently share with your Amazon Web Services account through RAM. This list doesn't include KMS keys that your Amazon Web Services account owns. For each of these KMS keys, the key ARN in the response contains the account ID of the Amazon Web Services account that owns the KMS key.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>If you omit this parameter, <code>ListKeys</code> lists only the KMS keys in your Amazon Web Services account. If you specify both values, in either order, <code>ListKeys</code> returns the KMS keys in your Amazon Web Services account first, and then the KMS keys that other Amazon Web Services accounts shared with you. A single response doesn't contain both kinds of KMS keys.</p>
+    /// <p>When <code>ResourceOwners</code> includes <code>OTHER_ACCOUNTS_VIA_RAM</code>, a response can contain fewer KMS keys than the <code>Limit</code> value, or none, even when <code>Truncated</code> is true. To get all of the KMS keys, continue calling <code>ListKeys</code> with the <code>NextMarker</code> value from each response until <code>Truncated</code> is false. Use a <code>NextMarker</code> value only in a request that has the same <code>ResourceOwners</code> value as the request that returned it. Otherwise, the request can fail with an <code>InvalidMarkerException</code>.</p>
+    /// <p>KMS keys that other Amazon Web Services accounts share with you can take some time to appear in or disappear from the results after changes to resource shares.</p>
+    pub resource_owners: ::std::option::Option<::std::vec::Vec<crate::types::ResourceOwnerType>>,
 }
 impl ListKeysInput {
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
@@ -18,6 +38,30 @@ impl ListKeysInput {
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>
     pub fn marker(&self) -> ::std::option::Option<&str> {
         self.marker.as_deref()
+    }
+    /// <p>Specifies whose KMS keys to list. Use this parameter to list KMS keys that other Amazon Web Services accounts shared with your Amazon Web Services account through Resource Access Manager (RAM).</p>
+    /// <p>Specify one or two values. Valid values are:</p>
+    /// <dl>
+    /// <dt>
+    /// SELF
+    /// </dt>
+    /// <dd>
+    /// <p>Lists the KMS keys in your Amazon Web Services account and Region.</p>
+    /// </dd>
+    /// <dt>
+    /// OTHER_ACCOUNTS_VIA_RAM
+    /// </dt>
+    /// <dd>
+    /// <p>Lists the KMS keys in the Region that other Amazon Web Services accounts currently share with your Amazon Web Services account through RAM. This list doesn't include KMS keys that your Amazon Web Services account owns. For each of these KMS keys, the key ARN in the response contains the account ID of the Amazon Web Services account that owns the KMS key.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>If you omit this parameter, <code>ListKeys</code> lists only the KMS keys in your Amazon Web Services account. If you specify both values, in either order, <code>ListKeys</code> returns the KMS keys in your Amazon Web Services account first, and then the KMS keys that other Amazon Web Services accounts shared with you. A single response doesn't contain both kinds of KMS keys.</p>
+    /// <p>When <code>ResourceOwners</code> includes <code>OTHER_ACCOUNTS_VIA_RAM</code>, a response can contain fewer KMS keys than the <code>Limit</code> value, or none, even when <code>Truncated</code> is true. To get all of the KMS keys, continue calling <code>ListKeys</code> with the <code>NextMarker</code> value from each response until <code>Truncated</code> is false. Use a <code>NextMarker</code> value only in a request that has the same <code>ResourceOwners</code> value as the request that returned it. Otherwise, the request can fail with an <code>InvalidMarkerException</code>.</p>
+    /// <p>KMS keys that other Amazon Web Services accounts share with you can take some time to appear in or disappear from the results after changes to resource shares.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_owners.is_none()`.
+    pub fn resource_owners(&self) -> &[crate::types::ResourceOwnerType] {
+        self.resource_owners.as_deref().unwrap_or_default()
     }
 }
 impl ListKeysInput {
@@ -33,6 +77,7 @@ impl ListKeysInput {
 pub struct ListKeysInputBuilder {
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) marker: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_owners: ::std::option::Option<::std::vec::Vec<crate::types::ResourceOwnerType>>,
 }
 impl ListKeysInputBuilder {
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
@@ -66,11 +111,86 @@ impl ListKeysInputBuilder {
     pub fn get_marker(&self) -> &::std::option::Option<::std::string::String> {
         &self.marker
     }
+    /// Appends an item to `resource_owners`.
+    ///
+    /// To override the contents of this collection use [`set_resource_owners`](Self::set_resource_owners).
+    ///
+    /// <p>Specifies whose KMS keys to list. Use this parameter to list KMS keys that other Amazon Web Services accounts shared with your Amazon Web Services account through Resource Access Manager (RAM).</p>
+    /// <p>Specify one or two values. Valid values are:</p>
+    /// <dl>
+    /// <dt>
+    /// SELF
+    /// </dt>
+    /// <dd>
+    /// <p>Lists the KMS keys in your Amazon Web Services account and Region.</p>
+    /// </dd>
+    /// <dt>
+    /// OTHER_ACCOUNTS_VIA_RAM
+    /// </dt>
+    /// <dd>
+    /// <p>Lists the KMS keys in the Region that other Amazon Web Services accounts currently share with your Amazon Web Services account through RAM. This list doesn't include KMS keys that your Amazon Web Services account owns. For each of these KMS keys, the key ARN in the response contains the account ID of the Amazon Web Services account that owns the KMS key.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>If you omit this parameter, <code>ListKeys</code> lists only the KMS keys in your Amazon Web Services account. If you specify both values, in either order, <code>ListKeys</code> returns the KMS keys in your Amazon Web Services account first, and then the KMS keys that other Amazon Web Services accounts shared with you. A single response doesn't contain both kinds of KMS keys.</p>
+    /// <p>When <code>ResourceOwners</code> includes <code>OTHER_ACCOUNTS_VIA_RAM</code>, a response can contain fewer KMS keys than the <code>Limit</code> value, or none, even when <code>Truncated</code> is true. To get all of the KMS keys, continue calling <code>ListKeys</code> with the <code>NextMarker</code> value from each response until <code>Truncated</code> is false. Use a <code>NextMarker</code> value only in a request that has the same <code>ResourceOwners</code> value as the request that returned it. Otherwise, the request can fail with an <code>InvalidMarkerException</code>.</p>
+    /// <p>KMS keys that other Amazon Web Services accounts share with you can take some time to appear in or disappear from the results after changes to resource shares.</p>
+    pub fn resource_owners(mut self, input: crate::types::ResourceOwnerType) -> Self {
+        let mut v = self.resource_owners.unwrap_or_default();
+        v.push(input);
+        self.resource_owners = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies whose KMS keys to list. Use this parameter to list KMS keys that other Amazon Web Services accounts shared with your Amazon Web Services account through Resource Access Manager (RAM).</p>
+    /// <p>Specify one or two values. Valid values are:</p>
+    /// <dl>
+    /// <dt>
+    /// SELF
+    /// </dt>
+    /// <dd>
+    /// <p>Lists the KMS keys in your Amazon Web Services account and Region.</p>
+    /// </dd>
+    /// <dt>
+    /// OTHER_ACCOUNTS_VIA_RAM
+    /// </dt>
+    /// <dd>
+    /// <p>Lists the KMS keys in the Region that other Amazon Web Services accounts currently share with your Amazon Web Services account through RAM. This list doesn't include KMS keys that your Amazon Web Services account owns. For each of these KMS keys, the key ARN in the response contains the account ID of the Amazon Web Services account that owns the KMS key.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>If you omit this parameter, <code>ListKeys</code> lists only the KMS keys in your Amazon Web Services account. If you specify both values, in either order, <code>ListKeys</code> returns the KMS keys in your Amazon Web Services account first, and then the KMS keys that other Amazon Web Services accounts shared with you. A single response doesn't contain both kinds of KMS keys.</p>
+    /// <p>When <code>ResourceOwners</code> includes <code>OTHER_ACCOUNTS_VIA_RAM</code>, a response can contain fewer KMS keys than the <code>Limit</code> value, or none, even when <code>Truncated</code> is true. To get all of the KMS keys, continue calling <code>ListKeys</code> with the <code>NextMarker</code> value from each response until <code>Truncated</code> is false. Use a <code>NextMarker</code> value only in a request that has the same <code>ResourceOwners</code> value as the request that returned it. Otherwise, the request can fail with an <code>InvalidMarkerException</code>.</p>
+    /// <p>KMS keys that other Amazon Web Services accounts share with you can take some time to appear in or disappear from the results after changes to resource shares.</p>
+    pub fn set_resource_owners(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceOwnerType>>) -> Self {
+        self.resource_owners = input;
+        self
+    }
+    /// <p>Specifies whose KMS keys to list. Use this parameter to list KMS keys that other Amazon Web Services accounts shared with your Amazon Web Services account through Resource Access Manager (RAM).</p>
+    /// <p>Specify one or two values. Valid values are:</p>
+    /// <dl>
+    /// <dt>
+    /// SELF
+    /// </dt>
+    /// <dd>
+    /// <p>Lists the KMS keys in your Amazon Web Services account and Region.</p>
+    /// </dd>
+    /// <dt>
+    /// OTHER_ACCOUNTS_VIA_RAM
+    /// </dt>
+    /// <dd>
+    /// <p>Lists the KMS keys in the Region that other Amazon Web Services accounts currently share with your Amazon Web Services account through RAM. This list doesn't include KMS keys that your Amazon Web Services account owns. For each of these KMS keys, the key ARN in the response contains the account ID of the Amazon Web Services account that owns the KMS key.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>If you omit this parameter, <code>ListKeys</code> lists only the KMS keys in your Amazon Web Services account. If you specify both values, in either order, <code>ListKeys</code> returns the KMS keys in your Amazon Web Services account first, and then the KMS keys that other Amazon Web Services accounts shared with you. A single response doesn't contain both kinds of KMS keys.</p>
+    /// <p>When <code>ResourceOwners</code> includes <code>OTHER_ACCOUNTS_VIA_RAM</code>, a response can contain fewer KMS keys than the <code>Limit</code> value, or none, even when <code>Truncated</code> is true. To get all of the KMS keys, continue calling <code>ListKeys</code> with the <code>NextMarker</code> value from each response until <code>Truncated</code> is false. Use a <code>NextMarker</code> value only in a request that has the same <code>ResourceOwners</code> value as the request that returned it. Otherwise, the request can fail with an <code>InvalidMarkerException</code>.</p>
+    /// <p>KMS keys that other Amazon Web Services accounts share with you can take some time to appear in or disappear from the results after changes to resource shares.</p>
+    pub fn get_resource_owners(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceOwnerType>> {
+        &self.resource_owners
+    }
     /// Consumes the builder and constructs a [`ListKeysInput`](crate::operation::list_keys::ListKeysInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_keys::ListKeysInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_keys::ListKeysInput {
             limit: self.limit,
             marker: self.marker,
+            resource_owners: self.resource_owners,
         })
     }
 }

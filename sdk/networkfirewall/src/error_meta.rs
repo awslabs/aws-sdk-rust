@@ -1527,6 +1527,30 @@ impl From<crate::operation::list_container_associations::ListContainerAssociatio
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_context_stores::ListContextStoresError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_context_stores::ListContextStoresError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_context_stores::ListContextStoresError> for Error {
+    fn from(err: crate::operation::list_context_stores::ListContextStoresError) -> Self {
+        match err {
+            crate::operation::list_context_stores::ListContextStoresError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::list_context_stores::ListContextStoresError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
+            crate::operation::list_context_stores::ListContextStoresError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_context_stores::ListContextStoresError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_firewall_policies::ListFirewallPoliciesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1666,6 +1690,46 @@ impl From<crate::operation::list_flow_operations::ListFlowOperationsError> for E
             }
             crate::operation::list_flow_operations::ListFlowOperationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_flow_operations::ListFlowOperationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resources_in_context_store::ListResourcesInContextStoreError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_resources_in_context_store::ListResourcesInContextStoreError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_resources_in_context_store::ListResourcesInContextStoreError> for Error {
+    fn from(err: crate::operation::list_resources_in_context_store::ListResourcesInContextStoreError) -> Self {
+        match err {
+            crate::operation::list_resources_in_context_store::ListResourcesInContextStoreError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::operation::list_resources_in_context_store::ListResourcesInContextStoreError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::list_resources_in_context_store::ListResourcesInContextStoreError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_resources_in_context_store::ListResourcesInContextStoreError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_resources_in_context_store::ListResourcesInContextStoreError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

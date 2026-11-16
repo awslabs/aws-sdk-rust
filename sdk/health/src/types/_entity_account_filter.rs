@@ -12,6 +12,9 @@ pub struct EntityAccountFilter {
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of entity status codes.</p>
     pub status_codes: ::std::option::Option<::std::vec::Vec<crate::types::EntityStatusCode>>,
+    /// <p>A map of tag keys to lists of tag values. A tag matches when its key is in the map and its value is one of the values listed for that key. Matching is case sensitive, and the filter matches when at least one key in the map matches.</p>
+    /// <p>An entity is returned when the tags of the resource, or of the account it belongs to, match. When you specify several filters in <code>organizationEntityAccountFilters</code>, the tags must be identical in every filter.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl EntityAccountFilter {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
@@ -31,6 +34,11 @@ impl EntityAccountFilter {
     pub fn status_codes(&self) -> &[crate::types::EntityStatusCode] {
         self.status_codes.as_deref().unwrap_or_default()
     }
+    /// <p>A map of tag keys to lists of tag values. A tag matches when its key is in the map and its value is one of the values listed for that key. Matching is case sensitive, and the filter matches when at least one key in the map matches.</p>
+    /// <p>An entity is returned when the tags of the resource, or of the account it belongs to, match. When you specify several filters in <code>organizationEntityAccountFilters</code>, the tags must be identical in every filter.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+        self.tags.as_ref()
+    }
 }
 impl EntityAccountFilter {
     /// Creates a new builder-style object to manufacture [`EntityAccountFilter`](crate::types::EntityAccountFilter).
@@ -46,6 +54,7 @@ pub struct EntityAccountFilterBuilder {
     pub(crate) event_arn: ::std::option::Option<::std::string::String>,
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) status_codes: ::std::option::Option<::std::vec::Vec<crate::types::EntityStatusCode>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl EntityAccountFilterBuilder {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
@@ -103,6 +112,32 @@ impl EntityAccountFilterBuilder {
     pub fn get_status_codes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EntityStatusCode>> {
         &self.status_codes
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A map of tag keys to lists of tag values. A tag matches when its key is in the map and its value is one of the values listed for that key. Matching is case sensitive, and the filter matches when at least one key in the map matches.</p>
+    /// <p>An entity is returned when the tags of the resource, or of the account it belongs to, match. When you specify several filters in <code>organizationEntityAccountFilters</code>, the tags must be identical in every filter.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of tag keys to lists of tag values. A tag matches when its key is in the map and its value is one of the values listed for that key. Matching is case sensitive, and the filter matches when at least one key in the map matches.</p>
+    /// <p>An entity is returned when the tags of the resource, or of the account it belongs to, match. When you specify several filters in <code>organizationEntityAccountFilters</code>, the tags must be identical in every filter.</p>
+    pub fn set_tags(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    ) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A map of tag keys to lists of tag values. A tag matches when its key is in the map and its value is one of the values listed for that key. Matching is case sensitive, and the filter matches when at least one key in the map matches.</p>
+    /// <p>An entity is returned when the tags of the resource, or of the account it belongs to, match. When you specify several filters in <code>organizationEntityAccountFilters</code>, the tags must be identical in every filter.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`EntityAccountFilter`](crate::types::EntityAccountFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`event_arn`](crate::types::builders::EntityAccountFilterBuilder::event_arn)
@@ -116,6 +151,7 @@ impl EntityAccountFilterBuilder {
             })?,
             aws_account_id: self.aws_account_id,
             status_codes: self.status_codes,
+            tags: self.tags,
         })
     }
 }

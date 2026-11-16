@@ -209,6 +209,46 @@ pub(crate) fn reflens_list_connect_peers_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_context_changes_output_output_next_token(
+    input: &crate::operation::list_context_changes::ListContextChangesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_context_store_associations_output_output_next_token(
+    input: &crate::operation::list_context_store_associations::ListContextStoreAssociationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_context_stores_output_output_next_token(
+    input: &crate::operation::list_context_stores::ListContextStoresOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_contexts_output_output_next_token(
+    input: &crate::operation::list_contexts::ListContextsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_core_network_policy_versions_output_output_next_token(
     input: &crate::operation::list_core_network_policy_versions::ListCoreNetworkPolicyVersionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -403,6 +443,34 @@ pub(crate) fn lens_list_connect_peers_output_output_connect_peers(
     input: crate::operation::list_connect_peers::ListConnectPeersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ConnectPeerSummary>> {
     let input = input.connect_peers?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_context_changes_output_output_context_changes(
+    input: crate::operation::list_context_changes::ListContextChangesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ContextChange>> {
+    let input = input.context_changes?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_context_store_associations_output_output_context_store_associations(
+    input: crate::operation::list_context_store_associations::ListContextStoreAssociationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ContextStoreAssociation>> {
+    let input = input.context_store_associations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_context_stores_output_output_context_stores(
+    input: crate::operation::list_context_stores::ListContextStoresOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ContextStore>> {
+    let input = input.context_stores?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_contexts_output_output_contexts(
+    input: crate::operation::list_contexts::ListContextsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ContextEntry>> {
+    let input = input.contexts?;
     ::std::option::Option::Some(input)
 }
 

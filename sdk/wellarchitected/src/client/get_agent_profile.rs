@@ -9,10 +9,11 @@ impl super::Client {
     ///   - [`display_name(Option<String>)`](crate::operation::get_agent_profile::GetAgentProfileOutput::display_name): <p>The display name of the profile.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_agent_profile::GetAgentProfileOutput::description): <p>A description of the profile.</p>
     ///   - [`business_overview(Option<String>)`](crate::operation::get_agent_profile::GetAgentProfileOutput::business_overview): <p>The business overview of the profile.</p>
-    ///   - [`pillars(Vec::<Pillar>)`](crate::operation::get_agent_profile::GetAgentProfileOutput::pillars): <p>The Well-Architected Tool Framework pillars associated with the profile.</p>
+    ///   - [`pillars(Option<Vec::<Pillar>>)`](crate::operation::get_agent_profile::GetAgentProfileOutput::pillars): <p>The Amazon Web Services Well-Architected Framework pillars associated with the profile. Not present for basic profiles.</p>
     ///   - [`deletion_protection(bool)`](crate::operation::get_agent_profile::GetAgentProfileOutput::deletion_protection): <p>Indicates whether deletion protection is enabled.</p>
-    ///   - [`execution_role_arn(String)`](crate::operation::get_agent_profile::GetAgentProfileOutput::execution_role_arn): <p>The ARN of the IAM execution role.</p>
-    ///   - [`aggregation_configuration(Vec::<AggregationConfiguration>)`](crate::operation::get_agent_profile::GetAgentProfileOutput::aggregation_configuration): <p>The aggregation configuration.</p>
+    ///   - [`profile_type(Option<ProfileType>)`](crate::operation::get_agent_profile::GetAgentProfileOutput::profile_type): <p>The type of the profile.</p>
+    ///   - [`execution_role_arn(Option<String>)`](crate::operation::get_agent_profile::GetAgentProfileOutput::execution_role_arn): <p>The ARN of the IAM execution role. Not present for basic profiles.</p>
+    ///   - [`aggregation_configuration(Option<Vec::<AggregationConfiguration>>)`](crate::operation::get_agent_profile::GetAgentProfileOutput::aggregation_configuration): <p>The aggregation configuration. Not present for basic profiles.</p>
     ///   - [`arn(String)`](crate::operation::get_agent_profile::GetAgentProfileOutput::arn): <p>The Amazon Resource Name (ARN) of the profile.</p>
     ///   - [`eligible_for_scheduled_generation(Option<bool>)`](crate::operation::get_agent_profile::GetAgentProfileOutput::eligible_for_scheduled_generation): <p>Indicates whether the profile is valid for scheduled recommendation generation.</p>
     ///   - [`eligible_for_architecture_generation(Option<bool>)`](crate::operation::get_agent_profile::GetAgentProfileOutput::eligible_for_architecture_generation): <p>Indicates whether the profile is valid for manual architecture generation.</p>
@@ -22,6 +23,7 @@ impl super::Client {
     ///   - [`created_at(DateTime)`](crate::operation::get_agent_profile::GetAgentProfileOutput::created_at): <p>The timestamp when the profile was created.</p>
     ///   - [`last_modified_by(Option<String>)`](crate::operation::get_agent_profile::GetAgentProfileOutput::last_modified_by): <p>The identifier of the user or system that last modified this profile.</p>
     ///   - [`last_modified_at(Option<DateTime>)`](crate::operation::get_agent_profile::GetAgentProfileOutput::last_modified_at): <p>The timestamp when the profile was last modified.</p>
+    ///   - [`organizational_aggregation_configuration(Option<OrganizationalAggregationConfiguration>)`](crate::operation::get_agent_profile::GetAgentProfileOutput::organizational_aggregation_configuration): <p>The organizational monitoring boundary. Present only for organizational profiles.</p>
     /// - On failure, responds with [`SdkError<GetAgentProfileError>`](crate::operation::get_agent_profile::GetAgentProfileError)
     pub fn get_agent_profile(&self) -> crate::operation::get_agent_profile::builders::GetAgentProfileFluentBuilder {
         crate::operation::get_agent_profile::builders::GetAgentProfileFluentBuilder::new(self.handle.clone())

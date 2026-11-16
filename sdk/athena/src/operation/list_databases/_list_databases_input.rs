@@ -11,6 +11,10 @@ pub struct ListDatabasesInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The name of the workgroup for which the metadata is being fetched. Required if requesting an IAM Identity Center enabled Glue Data Catalog.</p>
     pub work_group: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies the database properties returned by the <code>ListDatabases</code> call. The only valid value is <code>NAME</code>, which returns only the name of each database and omits the remaining properties. If you omit this parameter or specify an empty list, all database properties are returned.</p>
+    /// <p>Requesting only names can reduce response time for catalogs that contain many databases, especially resource links to databases shared from other accounts.</p>
+    /// <p>This parameter applies only to the Glue Data Catalog. For other data catalog types, it is ignored.</p>
+    pub attributes_to_get: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseAttributes>>,
 }
 impl ListDatabasesInput {
     /// <p>The name of the data catalog that contains the databases to return.</p>
@@ -29,6 +33,14 @@ impl ListDatabasesInput {
     pub fn work_group(&self) -> ::std::option::Option<&str> {
         self.work_group.as_deref()
     }
+    /// <p>Specifies the database properties returned by the <code>ListDatabases</code> call. The only valid value is <code>NAME</code>, which returns only the name of each database and omits the remaining properties. If you omit this parameter or specify an empty list, all database properties are returned.</p>
+    /// <p>Requesting only names can reduce response time for catalogs that contain many databases, especially resource links to databases shared from other accounts.</p>
+    /// <p>This parameter applies only to the Glue Data Catalog. For other data catalog types, it is ignored.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.attributes_to_get.is_none()`.
+    pub fn attributes_to_get(&self) -> &[crate::types::DatabaseAttributes] {
+        self.attributes_to_get.as_deref().unwrap_or_default()
+    }
 }
 impl ListDatabasesInput {
     /// Creates a new builder-style object to manufacture [`ListDatabasesInput`](crate::operation::list_databases::ListDatabasesInput).
@@ -45,6 +57,7 @@ pub struct ListDatabasesInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) work_group: ::std::option::Option<::std::string::String>,
+    pub(crate) attributes_to_get: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseAttributes>>,
 }
 impl ListDatabasesInputBuilder {
     /// <p>The name of the data catalog that contains the databases to return.</p>
@@ -104,6 +117,32 @@ impl ListDatabasesInputBuilder {
     pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
         &self.work_group
     }
+    /// Appends an item to `attributes_to_get`.
+    ///
+    /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
+    ///
+    /// <p>Specifies the database properties returned by the <code>ListDatabases</code> call. The only valid value is <code>NAME</code>, which returns only the name of each database and omits the remaining properties. If you omit this parameter or specify an empty list, all database properties are returned.</p>
+    /// <p>Requesting only names can reduce response time for catalogs that contain many databases, especially resource links to databases shared from other accounts.</p>
+    /// <p>This parameter applies only to the Glue Data Catalog. For other data catalog types, it is ignored.</p>
+    pub fn attributes_to_get(mut self, input: crate::types::DatabaseAttributes) -> Self {
+        let mut v = self.attributes_to_get.unwrap_or_default();
+        v.push(input);
+        self.attributes_to_get = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specifies the database properties returned by the <code>ListDatabases</code> call. The only valid value is <code>NAME</code>, which returns only the name of each database and omits the remaining properties. If you omit this parameter or specify an empty list, all database properties are returned.</p>
+    /// <p>Requesting only names can reduce response time for catalogs that contain many databases, especially resource links to databases shared from other accounts.</p>
+    /// <p>This parameter applies only to the Glue Data Catalog. For other data catalog types, it is ignored.</p>
+    pub fn set_attributes_to_get(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DatabaseAttributes>>) -> Self {
+        self.attributes_to_get = input;
+        self
+    }
+    /// <p>Specifies the database properties returned by the <code>ListDatabases</code> call. The only valid value is <code>NAME</code>, which returns only the name of each database and omits the remaining properties. If you omit this parameter or specify an empty list, all database properties are returned.</p>
+    /// <p>Requesting only names can reduce response time for catalogs that contain many databases, especially resource links to databases shared from other accounts.</p>
+    /// <p>This parameter applies only to the Glue Data Catalog. For other data catalog types, it is ignored.</p>
+    pub fn get_attributes_to_get(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DatabaseAttributes>> {
+        &self.attributes_to_get
+    }
     /// Consumes the builder and constructs a [`ListDatabasesInput`](crate::operation::list_databases::ListDatabasesInput).
     pub fn build(
         self,
@@ -113,6 +152,7 @@ impl ListDatabasesInputBuilder {
             next_token: self.next_token,
             max_results: self.max_results,
             work_group: self.work_group,
+            attributes_to_get: self.attributes_to_get,
         })
     }
 }

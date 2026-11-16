@@ -354,6 +354,8 @@ pub mod customize;
 
 mod deactivate_evaluation_form;
 
+mod delete_all_entity_sessions;
+
 mod delete_attached_file;
 
 mod delete_contact_data;

@@ -28,6 +28,19 @@ pub fn ser_reject_vpc_endpoint_connections_input_input_input(
             list_8.finish();
         }
     }
+    #[allow(unused_mut)]
+    let mut scope_10 = writer.prefix("TransitGatewayAttachmentId");
+    if let Some(var_11) = &input.transit_gateway_attachment_ids {
+        if !var_11.is_empty() {
+            let mut list_13 = scope_10.start_list(true, Some("item"));
+            for item_12 in var_11 {
+                #[allow(unused_mut)]
+                let mut entry_14 = list_13.entry();
+                entry_14.string(item_12);
+            }
+            list_13.finish();
+        }
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

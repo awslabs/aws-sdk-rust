@@ -5,7 +5,7 @@
 pub struct ListAgentContextsOutput {
     /// <p>A list of context summaries associated with the profile.</p>
     pub items: ::std::vec::Vec<crate::types::ContextSummary>,
-    /// <p>The token to use to retrieve the next set of results.</p>
+    /// <p>A pagination token to retrieve the next set of results, if available.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
@@ -15,7 +15,7 @@ impl ListAgentContextsOutput {
         use std::ops::Deref;
         self.items.deref()
     }
-    /// <p>The token to use to retrieve the next set of results.</p>
+    /// <p>A pagination token to retrieve the next set of results, if available.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -61,17 +61,17 @@ impl ListAgentContextsOutputBuilder {
     pub fn get_items(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContextSummary>> {
         &self.items
     }
-    /// <p>The token to use to retrieve the next set of results.</p>
+    /// <p>A pagination token to retrieve the next set of results, if available.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to use to retrieve the next set of results.</p>
+    /// <p>A pagination token to retrieve the next set of results, if available.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token to use to retrieve the next set of results.</p>
+    /// <p>A pagination token to retrieve the next set of results, if available.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

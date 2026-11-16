@@ -403,6 +403,10 @@ pub(crate) mod shape_get_csv_header_input_input;
 
 pub(crate) mod shape_get_csv_header_output_output;
 
+pub(crate) mod shape_get_derived_token_input_input;
+
+pub(crate) mod shape_get_derived_token_output_output;
+
 pub(crate) mod shape_get_device_input_input;
 
 pub(crate) mod shape_get_device_output_output;

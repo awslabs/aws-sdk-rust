@@ -174,4 +174,18 @@ impl DescribeAffectedAccountsForOrganizationFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn filter(mut self, input: crate::types::AffectedAccountFilter) -> Self {
+        self.inner = self.inner.filter(input);
+        self
+    }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::AffectedAccountFilter>) -> Self {
+        self.inner = self.inner.set_filter(input);
+        self
+    }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::AffectedAccountFilter> {
+        self.inner.get_filter()
+    }
 }

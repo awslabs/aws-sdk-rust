@@ -12,6 +12,8 @@ pub struct NetworkConnectorVpcEgressConfiguration {
     pub network_protocol: ::std::option::Option<crate::types::NetworkProtocol>,
     /// <p>The types of Lambda compute resources that can use this connector. Valid values are <code>MicroVm</code> and <code>WebFunction</code>. Specify exactly one value.</p>
     pub associated_compute_resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ComputeResourceType>>,
+    /// <p>The Elastic IP configuration for the connector's ENIs. Specify <code>ServiceManaged</code> to have Lambda assign a service-managed Elastic IP address to each ENI. The operator role must allow <code>ec2:AllocateAddress</code> and <code>ec2:AssociateAddress</code>.</p>
+    pub elastic_ip_configuration: ::std::option::Option<crate::types::ElasticIpConfiguration>,
 }
 impl NetworkConnectorVpcEgressConfiguration {
     /// <p>The IDs of the VPC subnets where Lambda provisions elastic network interfaces (ENIs). Specify 1 to 16 subnets. All subnets must be in the same VPC.</p>
@@ -36,6 +38,10 @@ impl NetworkConnectorVpcEgressConfiguration {
     pub fn associated_compute_resource_types(&self) -> &[crate::types::ComputeResourceType] {
         self.associated_compute_resource_types.as_deref().unwrap_or_default()
     }
+    /// <p>The Elastic IP configuration for the connector's ENIs. Specify <code>ServiceManaged</code> to have Lambda assign a service-managed Elastic IP address to each ENI. The operator role must allow <code>ec2:AllocateAddress</code> and <code>ec2:AssociateAddress</code>.</p>
+    pub fn elastic_ip_configuration(&self) -> ::std::option::Option<&crate::types::ElasticIpConfiguration> {
+        self.elastic_ip_configuration.as_ref()
+    }
 }
 impl NetworkConnectorVpcEgressConfiguration {
     /// Creates a new builder-style object to manufacture [`NetworkConnectorVpcEgressConfiguration`](crate::types::NetworkConnectorVpcEgressConfiguration).
@@ -52,6 +58,7 @@ pub struct NetworkConnectorVpcEgressConfigurationBuilder {
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) network_protocol: ::std::option::Option<crate::types::NetworkProtocol>,
     pub(crate) associated_compute_resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ComputeResourceType>>,
+    pub(crate) elastic_ip_configuration: ::std::option::Option<crate::types::ElasticIpConfiguration>,
 }
 impl NetworkConnectorVpcEgressConfigurationBuilder {
     /// Appends an item to `subnet_ids`.
@@ -128,6 +135,20 @@ impl NetworkConnectorVpcEgressConfigurationBuilder {
     pub fn get_associated_compute_resource_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ComputeResourceType>> {
         &self.associated_compute_resource_types
     }
+    /// <p>The Elastic IP configuration for the connector's ENIs. Specify <code>ServiceManaged</code> to have Lambda assign a service-managed Elastic IP address to each ENI. The operator role must allow <code>ec2:AllocateAddress</code> and <code>ec2:AssociateAddress</code>.</p>
+    pub fn elastic_ip_configuration(mut self, input: crate::types::ElasticIpConfiguration) -> Self {
+        self.elastic_ip_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Elastic IP configuration for the connector's ENIs. Specify <code>ServiceManaged</code> to have Lambda assign a service-managed Elastic IP address to each ENI. The operator role must allow <code>ec2:AllocateAddress</code> and <code>ec2:AssociateAddress</code>.</p>
+    pub fn set_elastic_ip_configuration(mut self, input: ::std::option::Option<crate::types::ElasticIpConfiguration>) -> Self {
+        self.elastic_ip_configuration = input;
+        self
+    }
+    /// <p>The Elastic IP configuration for the connector's ENIs. Specify <code>ServiceManaged</code> to have Lambda assign a service-managed Elastic IP address to each ENI. The operator role must allow <code>ec2:AllocateAddress</code> and <code>ec2:AssociateAddress</code>.</p>
+    pub fn get_elastic_ip_configuration(&self) -> &::std::option::Option<crate::types::ElasticIpConfiguration> {
+        &self.elastic_ip_configuration
+    }
     /// Consumes the builder and constructs a [`NetworkConnectorVpcEgressConfiguration`](crate::types::NetworkConnectorVpcEgressConfiguration).
     pub fn build(self) -> crate::types::NetworkConnectorVpcEgressConfiguration {
         crate::types::NetworkConnectorVpcEgressConfiguration {
@@ -135,6 +156,7 @@ impl NetworkConnectorVpcEgressConfigurationBuilder {
             security_group_ids: self.security_group_ids,
             network_protocol: self.network_protocol,
             associated_compute_resource_types: self.associated_compute_resource_types,
+            elastic_ip_configuration: self.elastic_ip_configuration,
         }
     }
 }

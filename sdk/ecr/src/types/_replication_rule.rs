@@ -8,6 +8,8 @@ pub struct ReplicationRule {
     pub destinations: ::std::vec::Vec<crate::types::ReplicationDestination>,
     /// <p>An array of objects representing the filters for a replication rule. Specifying a repository filter for a replication rule provides a method for controlling which repositories in a private registry are replicated.</p>
     pub repository_filters: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryFilter>>,
+    /// <p>The delete replication settings for the replication rule. When delete replication is enabled, the service replicates image deletions and image tag removals from the source registry to the replication destinations. If you do not specify this parameter, the service does not replicate image deletions or image tag removals for the replication rule.</p>
+    pub delete_replication: ::std::option::Option<crate::types::DeleteReplication>,
 }
 impl ReplicationRule {
     /// <p>An array of objects representing the destination for a replication rule.</p>
@@ -20,6 +22,10 @@ impl ReplicationRule {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.repository_filters.is_none()`.
     pub fn repository_filters(&self) -> &[crate::types::RepositoryFilter] {
         self.repository_filters.as_deref().unwrap_or_default()
+    }
+    /// <p>The delete replication settings for the replication rule. When delete replication is enabled, the service replicates image deletions and image tag removals from the source registry to the replication destinations. If you do not specify this parameter, the service does not replicate image deletions or image tag removals for the replication rule.</p>
+    pub fn delete_replication(&self) -> ::std::option::Option<&crate::types::DeleteReplication> {
+        self.delete_replication.as_ref()
     }
 }
 impl ReplicationRule {
@@ -35,6 +41,7 @@ impl ReplicationRule {
 pub struct ReplicationRuleBuilder {
     pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationDestination>>,
     pub(crate) repository_filters: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryFilter>>,
+    pub(crate) delete_replication: ::std::option::Option<crate::types::DeleteReplication>,
 }
 impl ReplicationRuleBuilder {
     /// Appends an item to `destinations`.
@@ -77,6 +84,20 @@ impl ReplicationRuleBuilder {
     pub fn get_repository_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RepositoryFilter>> {
         &self.repository_filters
     }
+    /// <p>The delete replication settings for the replication rule. When delete replication is enabled, the service replicates image deletions and image tag removals from the source registry to the replication destinations. If you do not specify this parameter, the service does not replicate image deletions or image tag removals for the replication rule.</p>
+    pub fn delete_replication(mut self, input: crate::types::DeleteReplication) -> Self {
+        self.delete_replication = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The delete replication settings for the replication rule. When delete replication is enabled, the service replicates image deletions and image tag removals from the source registry to the replication destinations. If you do not specify this parameter, the service does not replicate image deletions or image tag removals for the replication rule.</p>
+    pub fn set_delete_replication(mut self, input: ::std::option::Option<crate::types::DeleteReplication>) -> Self {
+        self.delete_replication = input;
+        self
+    }
+    /// <p>The delete replication settings for the replication rule. When delete replication is enabled, the service replicates image deletions and image tag removals from the source registry to the replication destinations. If you do not specify this parameter, the service does not replicate image deletions or image tag removals for the replication rule.</p>
+    pub fn get_delete_replication(&self) -> &::std::option::Option<crate::types::DeleteReplication> {
+        &self.delete_replication
+    }
     /// Consumes the builder and constructs a [`ReplicationRule`](crate::types::ReplicationRule).
     /// This method will fail if any of the following fields are not set:
     /// - [`destinations`](crate::types::builders::ReplicationRuleBuilder::destinations)
@@ -89,6 +110,7 @@ impl ReplicationRuleBuilder {
                 )
             })?,
             repository_filters: self.repository_filters,
+            delete_replication: self.delete_replication,
         })
     }
 }

@@ -204,3 +204,5 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_index_mode;
+
+mod update_metadata_configuration;

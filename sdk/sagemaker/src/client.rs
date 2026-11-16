@@ -374,6 +374,8 @@ mod create_inference_experiment;
 
 mod create_inference_recommendations_job;
 
+mod create_inference_router;
+
 mod create_job;
 
 mod create_labeling_job;
@@ -519,6 +521,8 @@ mod delete_endpoint;
 
 mod delete_endpoint_config;
 
+mod delete_endpoint_policy;
+
 mod delete_experiment;
 
 mod delete_feature_group;
@@ -542,6 +546,8 @@ mod delete_image_version;
 mod delete_inference_component;
 
 mod delete_inference_experiment;
+
+mod delete_inference_router;
 
 mod delete_job;
 
@@ -685,6 +691,8 @@ mod describe_inference_experiment;
 
 mod describe_inference_recommendations_job;
 
+mod describe_inference_router;
+
 mod describe_job;
 
 mod describe_job_schema_version;
@@ -772,6 +780,8 @@ mod enable_sagemaker_servicecatalog_portfolio;
 mod extend_training_plan;
 
 mod get_device_fleet_report;
+
+mod get_endpoint_policy;
 
 mod get_lineage_group_policy;
 
@@ -875,6 +885,8 @@ mod list_inference_recommendations_job_steps;
 
 mod list_inference_recommendations_jobs;
 
+mod list_inference_routers;
+
 mod list_job_schema_versions;
 
 mod list_jobs;
@@ -972,6 +984,8 @@ mod list_user_profiles;
 mod list_workforces;
 
 mod list_workteams;
+
+mod put_endpoint_policy;
 
 mod put_model_package_group_policy;
 
@@ -1098,6 +1112,8 @@ mod update_inference_component;
 mod update_inference_component_runtime_config;
 
 mod update_inference_experiment;
+
+mod update_inference_router;
 
 mod update_mlflow_app;
 

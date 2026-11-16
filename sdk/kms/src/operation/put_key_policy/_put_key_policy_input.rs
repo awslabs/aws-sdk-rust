@@ -14,7 +14,7 @@ pub struct PutKeyPolicyInput {
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub key_id: ::std::option::Option<::std::string::String>,
-    /// <p>The name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only valid value is <code>default</code>.</p>
+    /// <p>The name of the key policy. If no policy name is specified, the default value is <code>default</code>. Valid values are <code>default</code> and <code>AWS_RAM</code>, but you can set only the <code>default</code> key policy. RAM manages the <code>AWS_RAM</code> key policy for KMS keys that you share through RAM. If you specify <code>AWS_RAM</code>, the request fails with a <code>ValidationException</code>, or with an <code>AccessDeniedException</code> if you don't have permission to call <code>PutKeyPolicy</code> with that policy name.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
     /// <p>The key policy to attach to the KMS key.</p>
     /// <p>The key policy must meet the following criteria:</p>
@@ -45,6 +45,7 @@ pub struct PutKeyPolicyInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </important>
     /// <p>Use this parameter only when you intend to prevent the principal that is making the request from making a subsequent <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a> request on the KMS key.</p>
+    /// <p>The key policy lockout safety check and the <code>BypassPolicyLockoutSafetyCheck</code> parameter apply only to the <code>default</code> key policy. The check evaluates only the new <code>default</code> key policy, with <code>kms:PolicyName</code> set to <code>default</code>. It doesn't consider permissions in the <code>AWS_RAM</code> key policy.</p>
     pub bypass_policy_lockout_safety_check: ::std::option::Option<bool>,
 }
 impl PutKeyPolicyInput {
@@ -61,7 +62,7 @@ impl PutKeyPolicyInput {
     pub fn key_id(&self) -> ::std::option::Option<&str> {
         self.key_id.as_deref()
     }
-    /// <p>The name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only valid value is <code>default</code>.</p>
+    /// <p>The name of the key policy. If no policy name is specified, the default value is <code>default</code>. Valid values are <code>default</code> and <code>AWS_RAM</code>, but you can set only the <code>default</code> key policy. RAM manages the <code>AWS_RAM</code> key policy for KMS keys that you share through RAM. If you specify <code>AWS_RAM</code>, the request fails with a <code>ValidationException</code>, or with an <code>AccessDeniedException</code> if you don't have permission to call <code>PutKeyPolicy</code> with that policy name.</p>
     pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
@@ -96,6 +97,7 @@ impl PutKeyPolicyInput {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </important>
     /// <p>Use this parameter only when you intend to prevent the principal that is making the request from making a subsequent <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a> request on the KMS key.</p>
+    /// <p>The key policy lockout safety check and the <code>BypassPolicyLockoutSafetyCheck</code> parameter apply only to the <code>default</code> key policy. The check evaluates only the new <code>default</code> key policy, with <code>kms:PolicyName</code> set to <code>default</code>. It doesn't consider permissions in the <code>AWS_RAM</code> key policy.</p>
     pub fn bypass_policy_lockout_safety_check(&self) -> ::std::option::Option<bool> {
         self.bypass_policy_lockout_safety_check
     }
@@ -159,17 +161,17 @@ impl PutKeyPolicyInputBuilder {
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_id
     }
-    /// <p>The name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only valid value is <code>default</code>.</p>
+    /// <p>The name of the key policy. If no policy name is specified, the default value is <code>default</code>. Valid values are <code>default</code> and <code>AWS_RAM</code>, but you can set only the <code>default</code> key policy. RAM manages the <code>AWS_RAM</code> key policy for KMS keys that you share through RAM. If you specify <code>AWS_RAM</code>, the request fails with a <code>ValidationException</code>, or with an <code>AccessDeniedException</code> if you don't have permission to call <code>PutKeyPolicy</code> with that policy name.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only valid value is <code>default</code>.</p>
+    /// <p>The name of the key policy. If no policy name is specified, the default value is <code>default</code>. Valid values are <code>default</code> and <code>AWS_RAM</code>, but you can set only the <code>default</code> key policy. RAM manages the <code>AWS_RAM</code> key policy for KMS keys that you share through RAM. If you specify <code>AWS_RAM</code>, the request fails with a <code>ValidationException</code>, or with an <code>AccessDeniedException</code> if you don't have permission to call <code>PutKeyPolicy</code> with that policy name.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
     }
-    /// <p>The name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only valid value is <code>default</code>.</p>
+    /// <p>The name of the key policy. If no policy name is specified, the default value is <code>default</code>. Valid values are <code>default</code> and <code>AWS_RAM</code>, but you can set only the <code>default</code> key policy. RAM manages the <code>AWS_RAM</code> key policy for KMS keys that you share through RAM. If you specify <code>AWS_RAM</code>, the request fails with a <code>ValidationException</code>, or with an <code>AccessDeniedException</code> if you don't have permission to call <code>PutKeyPolicy</code> with that policy name.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_name
     }
@@ -259,6 +261,7 @@ impl PutKeyPolicyInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </important>
     /// <p>Use this parameter only when you intend to prevent the principal that is making the request from making a subsequent <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a> request on the KMS key.</p>
+    /// <p>The key policy lockout safety check and the <code>BypassPolicyLockoutSafetyCheck</code> parameter apply only to the <code>default</code> key policy. The check evaluates only the new <code>default</code> key policy, with <code>kms:PolicyName</code> set to <code>default</code>. It doesn't consider permissions in the <code>AWS_RAM</code> key policy.</p>
     pub fn bypass_policy_lockout_safety_check(mut self, input: bool) -> Self {
         self.bypass_policy_lockout_safety_check = ::std::option::Option::Some(input);
         self
@@ -268,6 +271,7 @@ impl PutKeyPolicyInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </important>
     /// <p>Use this parameter only when you intend to prevent the principal that is making the request from making a subsequent <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a> request on the KMS key.</p>
+    /// <p>The key policy lockout safety check and the <code>BypassPolicyLockoutSafetyCheck</code> parameter apply only to the <code>default</code> key policy. The check evaluates only the new <code>default</code> key policy, with <code>kms:PolicyName</code> set to <code>default</code>. It doesn't consider permissions in the <code>AWS_RAM</code> key policy.</p>
     pub fn set_bypass_policy_lockout_safety_check(mut self, input: ::std::option::Option<bool>) -> Self {
         self.bypass_policy_lockout_safety_check = input;
         self
@@ -277,6 +281,7 @@ impl PutKeyPolicyInputBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </important>
     /// <p>Use this parameter only when you intend to prevent the principal that is making the request from making a subsequent <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a> request on the KMS key.</p>
+    /// <p>The key policy lockout safety check and the <code>BypassPolicyLockoutSafetyCheck</code> parameter apply only to the <code>default</code> key policy. The check evaluates only the new <code>default</code> key policy, with <code>kms:PolicyName</code> set to <code>default</code>. It doesn't consider permissions in the <code>AWS_RAM</code> key policy.</p>
     pub fn get_bypass_policy_lockout_safety_check(&self) -> &::std::option::Option<bool> {
         &self.bypass_policy_lockout_safety_check
     }

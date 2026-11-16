@@ -8,7 +8,7 @@ pub struct GoalSummary {
     pub id: ::std::string::String,
     /// <p>The Amazon Resource Name (ARN) of the associated profile.</p>
     pub profile_arn: ::std::string::String,
-    /// <p>The Well-Architected Tool Framework pillars associated with this goal.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars associated with this goal.</p>
     pub pillars: ::std::vec::Vec<crate::types::Pillar>,
     /// <p>The title of the goal.</p>
     pub title: ::std::string::String,
@@ -34,7 +34,7 @@ impl GoalSummary {
         use std::ops::Deref;
         self.profile_arn.deref()
     }
-    /// <p>The Well-Architected Tool Framework pillars associated with this goal.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars associated with this goal.</p>
     pub fn pillars(&self) -> &[crate::types::Pillar] {
         use std::ops::Deref;
         self.pillars.deref()
@@ -137,19 +137,19 @@ impl GoalSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_pillars`](Self::set_pillars).
     ///
-    /// <p>The Well-Architected Tool Framework pillars associated with this goal.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars associated with this goal.</p>
     pub fn pillars(mut self, input: crate::types::Pillar) -> Self {
         let mut v = self.pillars.unwrap_or_default();
         v.push(input);
         self.pillars = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Well-Architected Tool Framework pillars associated with this goal.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars associated with this goal.</p>
     pub fn set_pillars(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Pillar>>) -> Self {
         self.pillars = input;
         self
     }
-    /// <p>The Well-Architected Tool Framework pillars associated with this goal.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars associated with this goal.</p>
     pub fn get_pillars(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Pillar>> {
         &self.pillars
     }

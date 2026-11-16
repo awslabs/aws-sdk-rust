@@ -236,6 +236,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon Connect Contact Lens | [aws-sdk-connectcontactlens](https://crates.io/crates/aws-sdk-connectcontactlens) ([docs](https://docs.rs/aws-sdk-connectcontactlens)) |
 | Amazon Connect Customer Profiles | [aws-sdk-customerprofiles](https://crates.io/crates/aws-sdk-customerprofiles) ([docs](https://docs.rs/aws-sdk-customerprofiles)) |
 | Amazon Connect Participant Service | [aws-sdk-connectparticipant](https://crates.io/crates/aws-sdk-connectparticipant) ([docs](https://docs.rs/aws-sdk-connectparticipant)) |
+| Amazon Connect Scheduling | [aws-sdk-connectscheduling](https://crates.io/crates/aws-sdk-connectscheduling) ([docs](https://docs.rs/aws-sdk-connectscheduling)) |
 | Amazon Connect Service | [aws-sdk-connect](https://crates.io/crates/aws-sdk-connect) ([docs](https://docs.rs/aws-sdk-connect)) |
 | Amazon Connect Wisdom Service | [aws-sdk-wisdom](https://crates.io/crates/aws-sdk-wisdom) ([docs](https://docs.rs/aws-sdk-wisdom)) |
 | Amazon Data Lifecycle Manager | [aws-sdk-dlm](https://crates.io/crates/aws-sdk-dlm) ([docs](https://docs.rs/aws-sdk-dlm)) |
@@ -313,6 +314,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon NeptuneData | [aws-sdk-neptunedata](https://crates.io/crates/aws-sdk-neptunedata) ([docs](https://docs.rs/aws-sdk-neptunedata)) |
 | Amazon Omics | [aws-sdk-omics](https://crates.io/crates/aws-sdk-omics) ([docs](https://docs.rs/aws-sdk-omics)) |
 | Amazon OpenSearch Ingestion | [aws-sdk-osis](https://crates.io/crates/aws-sdk-osis) ([docs](https://docs.rs/aws-sdk-osis)) |
+| Amazon OpenSearch Memory | [aws-sdk-opensearchmemory](https://crates.io/crates/aws-sdk-opensearchmemory) ([docs](https://docs.rs/aws-sdk-opensearchmemory)) |
 | Amazon OpenSearch Service | [aws-sdk-opensearch](https://crates.io/crates/aws-sdk-opensearch) ([docs](https://docs.rs/aws-sdk-opensearch)) |
 | Amazon Personalize | [aws-sdk-personalize](https://crates.io/crates/aws-sdk-personalize) ([docs](https://docs.rs/aws-sdk-personalize)) |
 | Amazon Personalize Events | [aws-sdk-personalizeevents](https://crates.io/crates/aws-sdk-personalizeevents) ([docs](https://docs.rs/aws-sdk-personalizeevents)) |
@@ -338,6 +340,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon S3 Vectors | [aws-sdk-s3vectors](https://crates.io/crates/aws-sdk-s3vectors) ([docs](https://docs.rs/aws-sdk-s3vectors)) |
 | Amazon S3 on Outposts | [aws-sdk-s3outposts](https://crates.io/crates/aws-sdk-s3outposts) ([docs](https://docs.rs/aws-sdk-s3outposts)) |
 | Amazon SageMaker Feature Store Runtime | [aws-sdk-sagemakerfeaturestoreruntime](https://crates.io/crates/aws-sdk-sagemakerfeaturestoreruntime) ([docs](https://docs.rs/aws-sdk-sagemakerfeaturestoreruntime)) |
+| Amazon SageMaker Inference Router Runtime | [aws-sdk-sagemakerinferencerouterruntime](https://crates.io/crates/aws-sdk-sagemakerinferencerouterruntime) ([docs](https://docs.rs/aws-sdk-sagemakerinferencerouterruntime)) |
 | Amazon SageMaker Metrics Service | [aws-sdk-sagemakermetrics](https://crates.io/crates/aws-sdk-sagemakermetrics) ([docs](https://docs.rs/aws-sdk-sagemakermetrics)) |
 | Amazon SageMaker Runtime | [aws-sdk-sagemakerruntime](https://crates.io/crates/aws-sdk-sagemakerruntime) ([docs](https://docs.rs/aws-sdk-sagemakerruntime)) |
 | Amazon SageMaker Runtime HTTP2 | [aws-sdk-sagemakerruntimehttp2](https://crates.io/crates/aws-sdk-sagemakerruntimehttp2) ([docs](https://docs.rs/aws-sdk-sagemakerruntimehttp2)) |

@@ -7,7 +7,11 @@ pub use crate::types::error::_resource_in_use::ResourceInUse;
 
 pub use crate::types::error::_conflict_exception::ConflictException;
 
+pub use crate::types::error::_resource_already_exists::ResourceAlreadyExists;
+
 mod _conflict_exception;
+
+mod _resource_already_exists;
 
 mod _resource_in_use;
 

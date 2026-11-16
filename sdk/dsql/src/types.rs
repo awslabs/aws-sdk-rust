@@ -27,9 +27,15 @@ pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_cluster_summary::ClusterSummary;
 
+pub use crate::types::_metric_group_request::MetricGroupRequest;
+
+pub use crate::types::_metric_group_response::MetricGroupResponse;
+
 pub use crate::types::_stream_summary::StreamSummary;
 
 pub use crate::types::_stream_failure_error_code::StreamFailureErrorCode;
+
+pub use crate::types::_metric_group::MetricGroup;
 
 mod _cluster_status;
 
@@ -42,6 +48,12 @@ mod _encryption_status;
 mod _encryption_type;
 
 mod _kinesis_target_definition;
+
+mod _metric_group;
+
+mod _metric_group_request;
+
+mod _metric_group_response;
 
 mod _multi_region_properties;
 

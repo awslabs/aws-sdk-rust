@@ -219,8 +219,24 @@ pub(crate) fn de_get_agent_profile(
                             .transpose()?,
                     );
                 }
+                "organizationalAggregationConfiguration" => {
+                    builder = builder.set_organizational_aggregation_configuration(
+                        crate::protocol_serde::shape_organizational_aggregation_configuration::de_organizational_aggregation_configuration(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
+                    );
+                }
                 "pillars" => {
                     builder = builder.set_pillars(crate::protocol_serde::shape_pillars::de_pillars(tokens, _value, depth + 1)?);
+                }
+                "profileType" => {
+                    builder = builder.set_profile_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::ProfileType::from(u.as_ref())))
+                            .transpose()?,
+                    );
                 }
                 "tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);

@@ -229,6 +229,9 @@ pub mod get_client_token;
 /// Types for the `GetCSVHeader` operation.
 pub mod get_csv_header;
 
+/// Types for the `GetDerivedToken` operation.
+pub mod get_derived_token;
+
 /// Types for the `GetDevice` operation.
 pub mod get_device;
 

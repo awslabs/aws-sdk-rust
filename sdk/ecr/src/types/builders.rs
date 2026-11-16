@@ -95,6 +95,8 @@ pub use crate::types::_remediation::RemediationBuilder;
 
 pub use crate::types::_score_details::ScoreDetailsBuilder;
 
+pub use crate::types::_delete_replication::DeleteReplicationBuilder;
+
 pub use crate::types::_signing_repository_filter::SigningRepositoryFilterBuilder;
 
 pub use crate::types::_attribute::AttributeBuilder;

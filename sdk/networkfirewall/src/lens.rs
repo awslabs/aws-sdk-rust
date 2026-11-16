@@ -29,6 +29,16 @@ pub(crate) fn reflens_list_container_associations_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_context_stores_output_output_next_token(
+    input: &crate::operation::list_context_stores::ListContextStoresOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_firewall_policies_output_output_next_token(
     input: &crate::operation::list_firewall_policies::ListFirewallPoliciesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -71,6 +81,16 @@ pub(crate) fn reflens_list_flow_operation_results_output_output_next_token(
 
 pub(crate) fn reflens_list_flow_operations_output_output_next_token(
     input: &crate::operation::list_flow_operations::ListFlowOperationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_resources_in_context_store_output_output_next_token(
+    input: &crate::operation::list_resources_in_context_store::ListResourcesInContextStoreOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -140,6 +160,13 @@ pub(crate) fn lens_list_container_associations_output_output_container_associati
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_context_stores_output_output_context_stores(
+    input: crate::operation::list_context_stores::ListContextStoresOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ContextStore>> {
+    let input = input.context_stores;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_firewall_policies_output_output_firewall_policies(
     input: crate::operation::list_firewall_policies::ListFirewallPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FirewallPolicyMetadata>> {
@@ -172,6 +199,13 @@ pub(crate) fn lens_list_flow_operations_output_output_flow_operations(
     input: crate::operation::list_flow_operations::ListFlowOperationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FlowOperationMetadata>> {
     let input = input.flow_operations?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_resources_in_context_store_output_output_resource_contexts(
+    input: crate::operation::list_resources_in_context_store::ListResourcesInContextStoreOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceContext>> {
+    let input = input.resource_contexts;
     ::std::option::Option::Some(input)
 }
 

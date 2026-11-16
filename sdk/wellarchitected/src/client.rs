@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -120,6 +134,25 @@ impl Client {
     }
 }
 
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait for `agent_organizational_report_completed`
+    fn wait_until_agent_organizational_report_completed(
+        &self,
+    ) -> crate::waiters::agent_organizational_report_completed::AgentOrganizationalReportCompletedFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_agent_organizational_report_completed(
+        &self,
+    ) -> crate::waiters::agent_organizational_report_completed::AgentOrganizationalReportCompletedFluentBuilder {
+        crate::waiters::agent_organizational_report_completed::AgentOrganizationalReportCompletedFluentBuilder::new(self.handle.clone())
+    }
+}
+
 impl Client {
     /// Creates a new client from an [SDK Config](::aws_types::sdk_config::SdkConfig).
     ///
@@ -140,9 +173,15 @@ mod associate_lenses;
 
 mod associate_profiles;
 
+mod create_agent_basic_profile;
+
 mod create_agent_context;
 
 mod create_agent_goal;
+
+mod create_agent_organizational_profile;
+
+mod create_agent_organizational_report;
 
 mod create_agent_profile;
 
@@ -195,7 +234,13 @@ mod delete_agent_context;
 
 mod delete_agent_goal;
 
+mod delete_agent_organizational_report;
+
 mod delete_agent_profile;
+
+mod delete_agent_profile_policy;
+
+mod delete_agent_recommendation_policy;
 
 mod delete_lens;
 
@@ -223,11 +268,21 @@ mod get_agent_context;
 
 mod get_agent_goal;
 
+mod get_agent_organizational_report;
+
+mod get_agent_organizational_report_data;
+
+mod get_agent_preferences;
+
 mod get_agent_profile;
+
+mod get_agent_profile_policy;
 
 mod get_agent_recommendation;
 
 mod get_agent_recommendation_generation;
+
+mod get_agent_recommendation_policy;
 
 mod get_answer;
 
@@ -262,6 +317,8 @@ mod import_lens;
 mod list_agent_contexts;
 
 mod list_agent_goals;
+
+mod list_agent_organizational_reports;
 
 mod list_agent_profiles;
 
@@ -309,7 +366,15 @@ mod list_workload_shares;
 
 mod list_workloads;
 
+mod put_agent_preferences;
+
+mod put_agent_profile_policy;
+
 mod put_agent_recommendation_feedback;
+
+mod put_agent_recommendation_policy;
+
+mod send_agent_organizational_report_data_to_s3;
 
 mod start_agent_recommendation_generation;
 
@@ -320,6 +385,8 @@ mod untag_resource;
 mod update_agent_context;
 
 mod update_agent_goal;
+
+mod update_agent_organizational_profile;
 
 mod update_agent_profile;
 

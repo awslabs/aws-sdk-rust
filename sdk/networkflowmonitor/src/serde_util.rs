@@ -26,6 +26,33 @@ pub(crate) fn create_monitor_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_performance_monitor_output_output_correct_errors(
+    mut builder: crate::operation::create_performance_monitor::builders::CreatePerformanceMonitorOutputBuilder,
+) -> crate::operation::create_performance_monitor::builders::CreatePerformanceMonitorOutputBuilder {
+    if builder.monitor_arn.is_none() {
+        builder.monitor_arn = Some(Default::default())
+    }
+    if builder.monitor_name.is_none() {
+        builder.monitor_name = Some(Default::default())
+    }
+    if builder.monitor_status.is_none() {
+        builder.monitor_status = "no value was set".parse::<crate::types::MonitorStatus>().ok()
+    }
+    if builder.monitor_type.is_none() {
+        builder.monitor_type = "no value was set".parse::<crate::types::PerformanceMonitorType>().ok()
+    }
+    if builder.targets.is_none() {
+        builder.targets = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.modified_at.is_none() {
+        builder.modified_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn create_scope_output_output_correct_errors(
     mut builder: crate::operation::create_scope::builders::CreateScopeOutputBuilder,
 ) -> crate::operation::create_scope::builders::CreateScopeOutputBuilder {
@@ -68,6 +95,57 @@ pub(crate) fn get_monitor_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_monitor_scope_suggestions_output_output_correct_errors(
+    mut builder: crate::operation::get_monitor_scope_suggestions::builders::GetMonitorScopeSuggestionsOutputBuilder,
+) -> crate::operation::get_monitor_scope_suggestions::builders::GetMonitorScopeSuggestionsOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ScopeCoverageStatus>().ok()
+    }
+    if builder.accounts_to_add.is_none() {
+        builder.accounts_to_add = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_performance_monitor_output_output_correct_errors(
+    mut builder: crate::operation::get_performance_monitor::builders::GetPerformanceMonitorOutputBuilder,
+) -> crate::operation::get_performance_monitor::builders::GetPerformanceMonitorOutputBuilder {
+    if builder.monitor_arn.is_none() {
+        builder.monitor_arn = Some(Default::default())
+    }
+    if builder.monitor_name.is_none() {
+        builder.monitor_name = Some(Default::default())
+    }
+    if builder.monitor_status.is_none() {
+        builder.monitor_status = "no value was set".parse::<crate::types::MonitorStatus>().ok()
+    }
+    if builder.monitor_type.is_none() {
+        builder.monitor_type = "no value was set".parse::<crate::types::PerformanceMonitorType>().ok()
+    }
+    if builder.targets.is_none() {
+        builder.targets = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.modified_at.is_none() {
+        builder.modified_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn get_query_results_performance_monitor_output_output_correct_errors(
+    mut builder: crate::operation::get_query_results_performance_monitor::builders::GetQueryResultsPerformanceMonitorOutputBuilder,
+) -> crate::operation::get_query_results_performance_monitor::builders::GetQueryResultsPerformanceMonitorOutputBuilder {
+    if builder.fields.is_none() {
+        builder.fields = Some(Default::default())
+    }
+    if builder.data.is_none() {
+        builder.data = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_query_results_workload_insights_top_contributors_data_output_output_correct_errors(mut builder: crate::operation::get_query_results_workload_insights_top_contributors_data::builders::GetQueryResultsWorkloadInsightsTopContributorsDataOutputBuilder) -> crate::operation::get_query_results_workload_insights_top_contributors_data::builders::GetQueryResultsWorkloadInsightsTopContributorsDataOutputBuilder{
     if builder.unit.is_none() {
         builder.unit = "no value was set".parse::<crate::types::MetricUnit>().ok()
@@ -81,6 +159,15 @@ pub(crate) fn get_query_results_workload_insights_top_contributors_data_output_o
 pub(crate) fn get_query_status_monitor_top_contributors_output_output_correct_errors(
     mut builder: crate::operation::get_query_status_monitor_top_contributors::builders::GetQueryStatusMonitorTopContributorsOutputBuilder,
 ) -> crate::operation::get_query_status_monitor_top_contributors::builders::GetQueryStatusMonitorTopContributorsOutputBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::QueryStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn get_query_status_performance_monitor_output_output_correct_errors(
+    mut builder: crate::operation::get_query_status_performance_monitor::builders::GetQueryStatusPerformanceMonitorOutputBuilder,
+) -> crate::operation::get_query_status_performance_monitor::builders::GetQueryStatusPerformanceMonitorOutputBuilder {
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::QueryStatus>().ok()
     }
@@ -130,6 +217,15 @@ pub(crate) fn list_monitors_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_performance_monitors_output_output_correct_errors(
+    mut builder: crate::operation::list_performance_monitors::builders::ListPerformanceMonitorsOutputBuilder,
+) -> crate::operation::list_performance_monitors::builders::ListPerformanceMonitorsOutputBuilder {
+    if builder.monitors.is_none() {
+        builder.monitors = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_scopes_output_output_correct_errors(
     mut builder: crate::operation::list_scopes::builders::ListScopesOutputBuilder,
 ) -> crate::operation::list_scopes::builders::ListScopesOutputBuilder {
@@ -142,6 +238,15 @@ pub(crate) fn list_scopes_output_output_correct_errors(
 pub(crate) fn start_query_monitor_top_contributors_output_output_correct_errors(
     mut builder: crate::operation::start_query_monitor_top_contributors::builders::StartQueryMonitorTopContributorsOutputBuilder,
 ) -> crate::operation::start_query_monitor_top_contributors::builders::StartQueryMonitorTopContributorsOutputBuilder {
+    if builder.query_id.is_none() {
+        builder.query_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_query_performance_monitor_output_output_correct_errors(
+    mut builder: crate::operation::start_query_performance_monitor::builders::StartQueryPerformanceMonitorOutputBuilder,
+) -> crate::operation::start_query_performance_monitor::builders::StartQueryPerformanceMonitorOutputBuilder {
     if builder.query_id.is_none() {
         builder.query_id = Some(Default::default())
     }
@@ -193,6 +298,33 @@ pub(crate) fn update_monitor_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_performance_monitor_output_output_correct_errors(
+    mut builder: crate::operation::update_performance_monitor::builders::UpdatePerformanceMonitorOutputBuilder,
+) -> crate::operation::update_performance_monitor::builders::UpdatePerformanceMonitorOutputBuilder {
+    if builder.monitor_arn.is_none() {
+        builder.monitor_arn = Some(Default::default())
+    }
+    if builder.monitor_name.is_none() {
+        builder.monitor_name = Some(Default::default())
+    }
+    if builder.monitor_status.is_none() {
+        builder.monitor_status = "no value was set".parse::<crate::types::MonitorStatus>().ok()
+    }
+    if builder.monitor_type.is_none() {
+        builder.monitor_type = "no value was set".parse::<crate::types::PerformanceMonitorType>().ok()
+    }
+    if builder.targets.is_none() {
+        builder.targets = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.modified_at.is_none() {
+        builder.modified_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn update_scope_output_output_correct_errors(
     mut builder: crate::operation::update_scope::builders::UpdateScopeOutputBuilder,
 ) -> crate::operation::update_scope::builders::UpdateScopeOutputBuilder {
@@ -204,6 +336,19 @@ pub(crate) fn update_scope_output_output_correct_errors(
     }
     if builder.scope_arn.is_none() {
         builder.scope_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn account_to_add_correct_errors(mut builder: crate::types::builders::AccountToAddBuilder) -> crate::types::builders::AccountToAddBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    if builder.membership.is_none() {
+        builder.membership = "no value was set".parse::<crate::types::OrgMembershipStatus>().ok()
     }
     builder
 }
@@ -243,6 +388,46 @@ pub(crate) fn monitor_summary_correct_errors(
     }
     if builder.monitor_status.is_none() {
         builder.monitor_status = "no value was set".parse::<crate::types::MonitorStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn performance_monitor_summary_correct_errors(
+    mut builder: crate::types::builders::PerformanceMonitorSummaryBuilder,
+) -> crate::types::builders::PerformanceMonitorSummaryBuilder {
+    if builder.monitor_arn.is_none() {
+        builder.monitor_arn = Some(Default::default())
+    }
+    if builder.monitor_name.is_none() {
+        builder.monitor_name = Some(Default::default())
+    }
+    if builder.monitor_status.is_none() {
+        builder.monitor_status = "no value was set".parse::<crate::types::MonitorStatus>().ok()
+    }
+    if builder.monitor_type.is_none() {
+        builder.monitor_type = "no value was set".parse::<crate::types::PerformanceMonitorType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn performance_monitor_target_correct_errors(
+    mut builder: crate::types::builders::PerformanceMonitorTargetBuilder,
+) -> crate::types::builders::PerformanceMonitorTargetBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::PerformanceMonitorTargetType>().ok()
+    }
+    if builder.identifier.is_none() {
+        builder.identifier = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn query_field_correct_errors(mut builder: crate::types::builders::QueryFieldBuilder) -> crate::types::builders::QueryFieldBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = Some(Default::default())
     }
     builder
 }

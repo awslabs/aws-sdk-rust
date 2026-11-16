@@ -297,6 +297,13 @@ where
                                     crate::protocol_serde::shape_function_runtime_config::de_function_runtime_config(tokens, _value, depth + 1)?,
                                 );
                             }
+                            "AcceleratorConfig" => {
+                                builder = builder.set_accelerator_config(crate::protocol_serde::shape_accelerator_config::de_accelerator_config(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
                             _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

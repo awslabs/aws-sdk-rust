@@ -261,6 +261,8 @@ pub use crate::types::_create_transit_gateway_multicast_domain_request_options::
 
 pub use crate::types::_transit_gateway_multicast_domain::TransitGatewayMulticastDomainBuilder;
 
+pub use crate::types::_transit_gateway_network_function_attachment::TransitGatewayNetworkFunctionAttachmentBuilder;
+
 pub use crate::types::_create_transit_gateway_peering_attachment_request_options::CreateTransitGatewayPeeringAttachmentRequestOptionsBuilder;
 
 pub use crate::types::_transit_gateway_policy_table::TransitGatewayPolicyTableBuilder;
@@ -748,6 +750,8 @@ pub use crate::types::_route_server_bgp_options::RouteServerBgpOptionsBuilder;
 pub use crate::types::_route_server_bgp_status::RouteServerBgpStatusBuilder;
 
 pub use crate::types::_route_server_bfd_status::RouteServerBfdStatusBuilder;
+
+pub use crate::types::_associated_kms_key::AssociatedKmsKeyBuilder;
 
 pub use crate::types::_snapshot_info::SnapshotInfoBuilder;
 

@@ -339,6 +339,15 @@ pub(crate) fn kinesis_target_definition_correct_errors(
     builder
 }
 
+pub(crate) fn metric_group_response_correct_errors(
+    mut builder: crate::types::builders::MetricGroupResponseBuilder,
+) -> crate::types::builders::MetricGroupResponseBuilder {
+    if builder.metric_group.is_none() {
+        builder.metric_group = "no value was set".parse::<crate::types::MetricGroup>().ok()
+    }
+    builder
+}
+
 pub(crate) fn stream_summary_correct_errors(
     mut builder: crate::types::builders::StreamSummaryBuilder,
 ) -> crate::types::builders::StreamSummaryBuilder {

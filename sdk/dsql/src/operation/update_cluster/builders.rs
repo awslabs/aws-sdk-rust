@@ -256,4 +256,26 @@ impl UpdateClusterFluentBuilder {
     pub fn get_multi_region_properties(&self) -> &::std::option::Option<crate::types::MultiRegionProperties> {
         self.inner.get_multi_region_properties()
     }
+    ///
+    /// Appends an item to `metricGroups`.
+    ///
+    /// To override the contents of this collection use [`set_metric_groups`](Self::set_metric_groups).
+    ///
+    /// <p>The complete set of metric groups to enable for advanced monitoring on the cluster. This list replaces the current set, so any metric group that you don't include is disabled. To disable all metric groups, specify an empty list (<code>\[\]</code>). If you omit this parameter, the current setting doesn't change.</p>
+    /// <p>To view the metric groups enabled on a cluster, use <i>GetCluster</i>.</p>
+    pub fn metric_groups(mut self, input: crate::types::MetricGroupRequest) -> Self {
+        self.inner = self.inner.metric_groups(input);
+        self
+    }
+    /// <p>The complete set of metric groups to enable for advanced monitoring on the cluster. This list replaces the current set, so any metric group that you don't include is disabled. To disable all metric groups, specify an empty list (<code>\[\]</code>). If you omit this parameter, the current setting doesn't change.</p>
+    /// <p>To view the metric groups enabled on a cluster, use <i>GetCluster</i>.</p>
+    pub fn set_metric_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricGroupRequest>>) -> Self {
+        self.inner = self.inner.set_metric_groups(input);
+        self
+    }
+    /// <p>The complete set of metric groups to enable for advanced monitoring on the cluster. This list replaces the current set, so any metric group that you don't include is disabled. To disable all metric groups, specify an empty list (<code>\[\]</code>). If you omit this parameter, the current setting doesn't change.</p>
+    /// <p>To view the metric groups enabled on a cluster, use <i>GetCluster</i>.</p>
+    pub fn get_metric_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGroupRequest>> {
+        self.inner.get_metric_groups()
+    }
 }

@@ -181,6 +181,8 @@ mod accept_attachment;
 
 mod associate_connect_peer;
 
+mod associate_context_store;
+
 mod associate_customer_gateway;
 
 mod associate_link;
@@ -192,6 +194,8 @@ mod create_connect_attachment;
 mod create_connect_peer;
 
 mod create_connection;
+
+mod create_context_store;
 
 mod create_core_network;
 
@@ -248,6 +252,8 @@ mod delete_connect_peer;
 
 mod delete_connection;
 
+mod delete_context_store;
+
 mod delete_core_network;
 
 mod delete_core_network_policy_version;
@@ -272,6 +278,8 @@ mod describe_global_networks;
 
 mod disassociate_connect_peer;
 
+mod disassociate_context_store;
+
 mod disassociate_customer_gateway;
 
 mod disassociate_link;
@@ -287,6 +295,12 @@ mod get_connect_peer;
 mod get_connect_peer_associations;
 
 mod get_connections;
+
+mod get_context_store;
+
+mod get_context_store_association;
+
+mod get_context_version;
 
 mod get_core_network;
 
@@ -342,6 +356,14 @@ mod list_attachments;
 
 mod list_connect_peers;
 
+mod list_context_changes;
+
+mod list_context_store_associations;
+
+mod list_context_stores;
+
+mod list_contexts;
+
 mod list_core_network_policy_versions;
 
 mod list_core_network_prefix_list_associations;
@@ -381,6 +403,8 @@ mod untag_resource;
 mod update_attachment_nat_configuration;
 
 mod update_connection;
+
+mod update_context_store;
 
 mod update_core_network;
 

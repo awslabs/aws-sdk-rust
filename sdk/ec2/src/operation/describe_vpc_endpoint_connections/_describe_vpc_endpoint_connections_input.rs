@@ -12,6 +12,8 @@ pub struct DescribeVpcEndpointConnectionsInput {
     /// <li>
     /// <p><code>service-id</code> - The ID of the service.</p></li>
     /// <li>
+    /// <p><code>transit-gateway-attachment-id</code> - The ID of the transit gateway attachment.</p></li>
+    /// <li>
     /// <p><code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID that owns the endpoint.</p></li>
     /// <li>
     /// <p><code>vpc-endpoint-region</code> - The Region of the endpoint or <code>cross-region</code> to find endpoints for other Regions.</p></li>
@@ -37,6 +39,8 @@ impl DescribeVpcEndpointConnectionsInput {
     /// <p><code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
     /// <li>
     /// <p><code>service-id</code> - The ID of the service.</p></li>
+    /// <li>
+    /// <p><code>transit-gateway-attachment-id</code> - The ID of the transit gateway attachment.</p></li>
     /// <li>
     /// <p><code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID that owns the endpoint.</p></li>
     /// <li>
@@ -102,6 +106,8 @@ impl DescribeVpcEndpointConnectionsInputBuilder {
     /// <li>
     /// <p><code>service-id</code> - The ID of the service.</p></li>
     /// <li>
+    /// <p><code>transit-gateway-attachment-id</code> - The ID of the transit gateway attachment.</p></li>
+    /// <li>
     /// <p><code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID that owns the endpoint.</p></li>
     /// <li>
     /// <p><code>vpc-endpoint-region</code> - The Region of the endpoint or <code>cross-region</code> to find endpoints for other Regions.</p></li>
@@ -123,6 +129,8 @@ impl DescribeVpcEndpointConnectionsInputBuilder {
     /// <li>
     /// <p><code>service-id</code> - The ID of the service.</p></li>
     /// <li>
+    /// <p><code>transit-gateway-attachment-id</code> - The ID of the transit gateway attachment.</p></li>
+    /// <li>
     /// <p><code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID that owns the endpoint.</p></li>
     /// <li>
     /// <p><code>vpc-endpoint-region</code> - The Region of the endpoint or <code>cross-region</code> to find endpoints for other Regions.</p></li>
@@ -141,6 +149,8 @@ impl DescribeVpcEndpointConnectionsInputBuilder {
     /// <p><code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).</p></li>
     /// <li>
     /// <p><code>service-id</code> - The ID of the service.</p></li>
+    /// <li>
+    /// <p><code>transit-gateway-attachment-id</code> - The ID of the transit gateway attachment.</p></li>
     /// <li>
     /// <p><code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID that owns the endpoint.</p></li>
     /// <li>

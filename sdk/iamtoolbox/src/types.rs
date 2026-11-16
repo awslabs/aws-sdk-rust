@@ -9,13 +9,25 @@ pub use crate::types::_policy_type::PolicyType;
 
 pub use crate::types::_matched_policy::MatchedPolicy;
 
+pub use crate::types::_check::Check;
+
 pub use crate::types::_attached_to::AttachedTo;
+
+pub use crate::types::_check_type::CheckType;
+
+pub use crate::types::_check_effect::CheckEffect;
 
 pub use crate::types::_matched_statement::MatchedStatement;
 
 pub use crate::types::_statement_effect::StatementEffect;
 
 mod _attached_to;
+
+mod _check;
+
+mod _check_effect;
+
+mod _check_type;
 
 mod _evaluated_effect;
 

@@ -153,6 +153,17 @@ static DESCRIBEENDPOINTCONFIGOUTPUT_MEMBER_METRICS_CONFIG: ::aws_smithy_schema::
     "MetricsConfig",
     12,
 );
+static DESCRIBEENDPOINTCONFIGOUTPUT_MEMBER_CROSS_REGION_TRAFFIC_CONFIG: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.sagemaker.synthetic#DescribeEndpointConfigOutput$CrossRegionTrafficConfig",
+            "com.amazonaws.sagemaker.synthetic",
+            "DescribeEndpointConfigOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "CrossRegionTrafficConfig",
+        13,
+    );
 static DESCRIBEENDPOINTCONFIGOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.sagemaker.synthetic#DescribeEndpointConfigOutput",
@@ -174,6 +185,7 @@ static DESCRIBEENDPOINTCONFIGOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static>
         &DESCRIBEENDPOINTCONFIGOUTPUT_MEMBER_VPC_CONFIG,
         &DESCRIBEENDPOINTCONFIGOUTPUT_MEMBER_ENABLE_NETWORK_ISOLATION,
         &DESCRIBEENDPOINTCONFIGOUTPUT_MEMBER_METRICS_CONFIG,
+        &DESCRIBEENDPOINTCONFIGOUTPUT_MEMBER_CROSS_REGION_TRAFFIC_CONFIG,
     ],
 )
 .with_original_name("DescribeEndpointConfigOutput");
@@ -245,6 +257,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::descri
         }
         if let Some(ref val) = self.metrics_config {
             ser.write_struct(&DESCRIBEENDPOINTCONFIGOUTPUT_MEMBER_METRICS_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.cross_region_traffic_config {
+            ser.write_struct(&DESCRIBEENDPOINTCONFIGOUTPUT_MEMBER_CROSS_REGION_TRAFFIC_CONFIG, val)?;
         }
         Ok(())
     }
@@ -366,6 +381,13 @@ impl crate::operation::describe_endpoint_config::builders::DescribeEndpointConfi
                         deser.read_null()?;
                     } else {
                         self.metrics_config = Some(crate::types::MetricsConfig::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cross_region_traffic_config = Some(crate::types::CrossRegionTrafficConfig::deserialize(deser)?);
                     }
                 }
                 _ => {}

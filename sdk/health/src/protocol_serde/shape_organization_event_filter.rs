@@ -106,6 +106,21 @@ pub fn ser_organization_event_filter(
             }
         }
     }
+    if let Some(var_24) = &input.tags {
+        encoder.str("tags");
+        encoder.map((*var_24).len());
+        for (key_25, value_26) in var_24 {
+            {
+                encoder.str(key_25.as_str());
+                encoder.array((*value_26).len());
+                for item_27 in value_26 {
+                    {
+                        encoder.str(item_27.as_str());
+                    }
+                }
+            }
+        }
+    }
     encoder.end();
     Ok(())
 }

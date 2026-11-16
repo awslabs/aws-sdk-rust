@@ -29,6 +29,8 @@ pub use crate::types::_configuration_overrides::ConfigurationOverridesBuilder;
 
 pub use crate::types::_retry_policy::RetryPolicyBuilder;
 
+pub use crate::types::_flex_execution::FlexExecutionBuilder;
+
 pub use crate::types::_job_run::JobRunBuilder;
 
 pub use crate::types::_session_configuration_overrides::SessionConfigurationOverridesBuilder;

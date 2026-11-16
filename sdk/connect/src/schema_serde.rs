@@ -633,6 +633,10 @@ pub(crate) mod shape_decimal_condition;
 
 pub(crate) mod shape_default_vocabulary;
 
+pub(crate) mod shape_delete_all_entity_sessions_input_input;
+
+pub(crate) mod shape_delete_all_entity_sessions_output_output;
+
 pub(crate) mod shape_delete_attached_file_input_input;
 
 pub(crate) mod shape_delete_attached_file_output_output;

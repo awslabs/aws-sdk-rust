@@ -12,5 +12,11 @@ pub fn ser_medical_scribe_post_stream_action_settings(
         crate::protocol_serde::shape_clinical_note_generation_settings::ser_clinical_note_generation_settings(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.medical_code_generation_settings {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("medicalCodeGenerationSettings").start_object();
+        crate::protocol_serde::shape_medical_code_generation_settings::ser_medical_code_generation_settings(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }

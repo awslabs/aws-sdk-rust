@@ -59,6 +59,27 @@ static LISTTABLEMETADATAINPUT_MEMBER_WORK_GROUP: ::aws_smithy_schema::Schema<'st
     "WorkGroup",
     5,
 );
+static LISTTABLEMETADATAINPUT_MEMBER_ATTRIBUTES_TO_GET_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#TableAttributesList$member",
+        "com.amazonaws.athena",
+        "TableAttributesList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static LISTTABLEMETADATAINPUT_MEMBER_ATTRIBUTES_TO_GET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#ListTableMetadataInput$AttributesToGet",
+        "com.amazonaws.athena.synthetic",
+        "ListTableMetadataInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AttributesToGet",
+    6,
+)
+.with_list_member(&LISTTABLEMETADATAINPUT_MEMBER_ATTRIBUTES_TO_GET_MEMBER);
 static LISTTABLEMETADATAINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.athena.synthetic#ListTableMetadataInput",
@@ -73,6 +94,7 @@ static LISTTABLEMETADATAINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::a
         &LISTTABLEMETADATAINPUT_MEMBER_NEXT_TOKEN,
         &LISTTABLEMETADATAINPUT_MEMBER_MAX_RESULTS,
         &LISTTABLEMETADATAINPUT_MEMBER_WORK_GROUP,
+        &LISTTABLEMETADATAINPUT_MEMBER_ATTRIBUTES_TO_GET,
     ],
 )
 .with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
@@ -108,6 +130,17 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::list_t
         }
         if let Some(ref val) = self.work_group {
             ser.write_string(&LISTTABLEMETADATAINPUT_MEMBER_WORK_GROUP, val)?;
+        }
+        if let Some(ref val) = self.attributes_to_get {
+            ser.write_list(
+                &LISTTABLEMETADATAINPUT_MEMBER_ATTRIBUTES_TO_GET,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
         }
         Ok(())
     }
@@ -166,6 +199,22 @@ impl crate::operation::list_table_metadata::builders::ListTableMetadataInputBuil
                         deser.read_null()?;
                     } else {
                         self.work_group = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attributes_to_get = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::TableAttributes::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
                     }
                 }
                 _ => {}

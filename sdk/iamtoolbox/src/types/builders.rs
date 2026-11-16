@@ -5,6 +5,8 @@ pub use crate::types::_policy_info::PolicyInfoBuilder;
 
 pub use crate::types::_matched_policy::MatchedPolicyBuilder;
 
+pub use crate::types::_check::CheckBuilder;
+
 pub use crate::types::_attached_to::AttachedToBuilder;
 
 pub use crate::types::_matched_statement::MatchedStatementBuilder;

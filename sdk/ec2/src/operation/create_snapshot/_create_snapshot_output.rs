@@ -40,6 +40,8 @@ pub struct CreateSnapshotOutput {
     /// <p>This is <b>not</b> the incremental size of the snapshot. This is the full snapshot size and represents the size of all the blocks that were written to the source volume at the time the snapshot was created.</p>
     /// </important>
     pub full_snapshot_size_in_bytes: ::std::option::Option<i64>,
+    /// <p>The additional KMS keys that are associated with the snapshot.</p>
+    pub associated_kms_keys: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedKmsKey>>,
     /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</p>
     pub snapshot_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the volume that was used to create the snapshot. Snapshots created by a copy snapshot operation have an arbitrary volume ID that you should not use for any purpose.</p>
@@ -127,6 +129,12 @@ impl CreateSnapshotOutput {
     pub fn full_snapshot_size_in_bytes(&self) -> ::std::option::Option<i64> {
         self.full_snapshot_size_in_bytes
     }
+    /// <p>The additional KMS keys that are associated with the snapshot.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.associated_kms_keys.is_none()`.
+    pub fn associated_kms_keys(&self) -> &[crate::types::AssociatedKmsKey] {
+        self.associated_kms_keys.as_deref().unwrap_or_default()
+    }
     /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</p>
     pub fn snapshot_id(&self) -> ::std::option::Option<&str> {
         self.snapshot_id.as_deref()
@@ -203,6 +211,7 @@ pub struct CreateSnapshotOutputBuilder {
     pub(crate) completion_duration_minutes: ::std::option::Option<i32>,
     pub(crate) completion_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) full_snapshot_size_in_bytes: ::std::option::Option<i64>,
+    pub(crate) associated_kms_keys: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedKmsKey>>,
     pub(crate) snapshot_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::SnapshotState>,
@@ -420,6 +429,26 @@ impl CreateSnapshotOutputBuilder {
     pub fn get_full_snapshot_size_in_bytes(&self) -> &::std::option::Option<i64> {
         &self.full_snapshot_size_in_bytes
     }
+    /// Appends an item to `associated_kms_keys`.
+    ///
+    /// To override the contents of this collection use [`set_associated_kms_keys`](Self::set_associated_kms_keys).
+    ///
+    /// <p>The additional KMS keys that are associated with the snapshot.</p>
+    pub fn associated_kms_keys(mut self, input: crate::types::AssociatedKmsKey) -> Self {
+        let mut v = self.associated_kms_keys.unwrap_or_default();
+        v.push(input);
+        self.associated_kms_keys = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The additional KMS keys that are associated with the snapshot.</p>
+    pub fn set_associated_kms_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AssociatedKmsKey>>) -> Self {
+        self.associated_kms_keys = input;
+        self
+    }
+    /// <p>The additional KMS keys that are associated with the snapshot.</p>
+    pub fn get_associated_kms_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AssociatedKmsKey>> {
+        &self.associated_kms_keys
+    }
     /// <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is created.</p>
     pub fn snapshot_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.snapshot_id = ::std::option::Option::Some(input.into());
@@ -611,6 +640,7 @@ impl CreateSnapshotOutputBuilder {
             completion_duration_minutes: self.completion_duration_minutes,
             completion_time: self.completion_time,
             full_snapshot_size_in_bytes: self.full_snapshot_size_in_bytes,
+            associated_kms_keys: self.associated_kms_keys,
             snapshot_id: self.snapshot_id,
             volume_id: self.volume_id,
             state: self.state,

@@ -799,6 +799,27 @@ impl From<crate::operation::associate_ipam_resource_discovery::AssociateIpamReso
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_kms_key_id::AssociateKmsKeyIdError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_kms_key_id::AssociateKmsKeyIdError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_kms_key_id::AssociateKmsKeyIdError> for Error {
+    fn from(err: crate::operation::associate_kms_key_id::AssociateKmsKeyIdError) -> Self {
+        match err {
+            crate::operation::associate_kms_key_id::AssociateKmsKeyIdError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressError, R>>
     for Error
 where
@@ -4082,6 +4103,40 @@ impl From<crate::operation::create_transit_gateway_multicast_domain::CreateTrans
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_transit_gateway_network_function_attachment::CreateTransitGatewayNetworkFunctionAttachmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_transit_gateway_network_function_attachment::CreateTransitGatewayNetworkFunctionAttachmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_transit_gateway_network_function_attachment::CreateTransitGatewayNetworkFunctionAttachmentError> for Error {
+    fn from(err: crate::operation::create_transit_gateway_network_function_attachment::CreateTransitGatewayNetworkFunctionAttachmentError) -> Self {
+        match err {
+            crate::operation::create_transit_gateway_network_function_attachment::CreateTransitGatewayNetworkFunctionAttachmentError::Unhandled(
+                inner,
+            ) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_transit_gateway_peering_attachment::CreateTransitGatewayPeeringAttachmentError,
             R,
         >,
@@ -6727,6 +6782,40 @@ impl From<crate::operation::delete_transit_gateway_multicast_domain::DeleteTrans
             crate::operation::delete_transit_gateway_multicast_domain::DeleteTransitGatewayMulticastDomainError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_transit_gateway_network_function_attachment::DeleteTransitGatewayNetworkFunctionAttachmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_transit_gateway_network_function_attachment::DeleteTransitGatewayNetworkFunctionAttachmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_transit_gateway_network_function_attachment::DeleteTransitGatewayNetworkFunctionAttachmentError> for Error {
+    fn from(err: crate::operation::delete_transit_gateway_network_function_attachment::DeleteTransitGatewayNetworkFunctionAttachmentError) -> Self {
+        match err {
+            crate::operation::delete_transit_gateway_network_function_attachment::DeleteTransitGatewayNetworkFunctionAttachmentError::Unhandled(
+                inner,
+            ) => Error::Unhandled(inner),
         }
     }
 }
@@ -12025,6 +12114,40 @@ impl From<crate::operation::describe_transit_gateway_multicast_domains::Describe
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_transit_gateway_network_function_attachments::DescribeTransitGatewayNetworkFunctionAttachmentsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_transit_gateway_network_function_attachments::DescribeTransitGatewayNetworkFunctionAttachmentsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_transit_gateway_network_function_attachments::DescribeTransitGatewayNetworkFunctionAttachmentsError> for Error {
+    fn from(
+        err: crate::operation::describe_transit_gateway_network_function_attachments::DescribeTransitGatewayNetworkFunctionAttachmentsError,
+    ) -> Self {
+        match err {
+            crate::operation::describe_transit_gateway_network_function_attachments::DescribeTransitGatewayNetworkFunctionAttachmentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_transit_gateway_peering_attachments::DescribeTransitGatewayPeeringAttachmentsError,
             R,
         >,
@@ -14079,6 +14202,29 @@ impl From<crate::operation::disassociate_ipam_resource_discovery::DisassociateIp
             crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_kms_key_id::DisassociateKmsKeyIdError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_kms_key_id::DisassociateKmsKeyIdError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_kms_key_id::DisassociateKmsKeyIdError> for Error {
+    fn from(err: crate::operation::disassociate_kms_key_id::DisassociateKmsKeyIdError) -> Self {
+        match err {
+            crate::operation::disassociate_kms_key_id::DisassociateKmsKeyIdError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -19493,6 +19639,40 @@ impl From<crate::operation::modify_transit_gateway_metering_policy::ModifyTransi
             crate::operation::modify_transit_gateway_metering_policy::ModifyTransitGatewayMeteringPolicyError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_transit_gateway_network_function_attachment::ModifyTransitGatewayNetworkFunctionAttachmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::modify_transit_gateway_network_function_attachment::ModifyTransitGatewayNetworkFunctionAttachmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::modify_transit_gateway_network_function_attachment::ModifyTransitGatewayNetworkFunctionAttachmentError> for Error {
+    fn from(err: crate::operation::modify_transit_gateway_network_function_attachment::ModifyTransitGatewayNetworkFunctionAttachmentError) -> Self {
+        match err {
+            crate::operation::modify_transit_gateway_network_function_attachment::ModifyTransitGatewayNetworkFunctionAttachmentError::Unhandled(
+                inner,
+            ) => Error::Unhandled(inner),
         }
     }
 }

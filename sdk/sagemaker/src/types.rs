@@ -143,6 +143,8 @@ pub use crate::types::_explainer_config::ExplainerConfig;
 
 pub use crate::types::_metrics_config::MetricsConfig;
 
+pub use crate::types::_cross_region_traffic_config::CrossRegionTrafficConfig;
+
 pub use crate::types::_online_store_config::OnlineStoreConfig;
 
 pub use crate::types::_offline_store_config::OfflineStoreConfig;
@@ -520,6 +522,8 @@ pub use crate::types::_inference_experiment_status::InferenceExperimentStatus;
 pub use crate::types::_endpoint_metadata::EndpointMetadata;
 
 pub use crate::types::_recommendation_job_status::RecommendationJobStatus;
+
+pub use crate::types::_inference_router_status::InferenceRouterStatus;
 
 pub use crate::types::_job_status::JobStatus;
 
@@ -1105,6 +1109,8 @@ pub use crate::types::_flat_invocations::FlatInvocations;
 
 pub use crate::types::_recommendation_job_compiled_output_config::RecommendationJobCompiledOutputConfig;
 
+pub use crate::types::_routing_target::RoutingTarget;
+
 pub use crate::types::_labeling_job_data_source::LabelingJobDataSource;
 
 pub use crate::types::_labeling_job_data_attributes::LabelingJobDataAttributes;
@@ -1431,6 +1437,8 @@ pub use crate::types::_inference_recommendations_job::InferenceRecommendationsJo
 
 pub use crate::types::_inference_recommendations_job_step::InferenceRecommendationsJobStep;
 
+pub use crate::types::_inference_router_summary::InferenceRouterSummary;
+
 pub use crate::types::_job_summary::JobSummary;
 
 pub use crate::types::_job_config_schema_version_summary::JobConfigSchemaVersionSummary;
@@ -1746,6 +1754,10 @@ pub use crate::types::_recommendation_job_supported_endpoint_type::Recommendatio
 pub use crate::types::_endpoint_info::EndpointInfo;
 
 pub use crate::types::_model_latency_threshold::ModelLatencyThreshold;
+
+pub use crate::types::_routing_target_async_inference_config::RoutingTargetAsyncInferenceConfig;
+
+pub use crate::types::_inference_router_routing_preference::InferenceRouterRoutingPreference;
 
 pub use crate::types::_labeling_job_s3_data_source::LabelingJobS3DataSource;
 
@@ -2111,6 +2123,12 @@ pub use crate::types::_phase::Phase;
 
 pub use crate::types::_environment_parameter_ranges::EnvironmentParameterRanges;
 
+pub use crate::types::_destination::Destination;
+
+pub use crate::types::_routing_target_async_inference_output_config::RoutingTargetAsyncInferenceOutputConfig;
+
+pub use crate::types::_routing_target_async_inference_client_config::RoutingTargetAsyncInferenceClientConfig;
+
 pub use crate::types::_content_classifier::ContentClassifier;
 
 pub use crate::types::_s3_model_data_type::S3ModelDataType;
@@ -2328,6 +2346,10 @@ pub use crate::types::_clarify_text_language::ClarifyTextLanguage;
 pub use crate::types::_clarify_text_granularity::ClarifyTextGranularity;
 
 pub use crate::types::_hyper_parameter_scaling_type::HyperParameterScalingType;
+
+pub use crate::types::_routing_status::RoutingStatus;
+
+pub use crate::types::_routing_target_async_inference_notification_config::RoutingTargetAsyncInferenceNotificationConfig;
 
 pub use crate::types::_model_speculative_decoding_s3_data_type::ModelSpeculativeDecodingS3DataType;
 
@@ -3073,6 +3095,8 @@ mod _create_template_provider;
 
 mod _cross_account_filter_option;
 
+mod _cross_region_traffic_config;
+
 mod _custom_file_system;
 
 mod _custom_file_system_config;
@@ -3142,6 +3166,8 @@ mod _deployment_stage_status_summary;
 mod _derived_information;
 
 mod _desired_weight_and_capacity;
+
+mod _destination;
 
 mod _detailed_algorithm_status;
 
@@ -3586,6 +3612,12 @@ mod _inference_recommendation;
 mod _inference_recommendations_job;
 
 mod _inference_recommendations_job_step;
+
+mod _inference_router_routing_preference;
+
+mod _inference_router_status;
+
+mod _inference_router_summary;
 
 mod _inference_specification;
 
@@ -4405,7 +4437,19 @@ mod _rolling_update_policy;
 
 mod _root_access;
 
+mod _routing_status;
+
 mod _routing_strategy;
+
+mod _routing_target;
+
+mod _routing_target_async_inference_client_config;
+
+mod _routing_target_async_inference_config;
+
+mod _routing_target_async_inference_notification_config;
+
+mod _routing_target_async_inference_output_config;
 
 mod _rule_evaluation_status;
 

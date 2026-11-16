@@ -270,4 +270,18 @@ impl StartJobRunFluentBuilder {
     pub fn get_retry_policy(&self) -> &::std::option::Option<crate::types::RetryPolicy> {
         self.inner.get_retry_policy()
     }
+    /// <p>The Amazon EMR Serverless Flex settings for the job run. If you don't specify these settings, the job run doesn't use Flex capacity.</p>
+    pub fn flex_execution(mut self, input: crate::types::FlexExecution) -> Self {
+        self.inner = self.inner.flex_execution(input);
+        self
+    }
+    /// <p>The Amazon EMR Serverless Flex settings for the job run. If you don't specify these settings, the job run doesn't use Flex capacity.</p>
+    pub fn set_flex_execution(mut self, input: ::std::option::Option<crate::types::FlexExecution>) -> Self {
+        self.inner = self.inner.set_flex_execution(input);
+        self
+    }
+    /// <p>The Amazon EMR Serverless Flex settings for the job run. If you don't specify these settings, the job run doesn't use Flex capacity.</p>
+    pub fn get_flex_execution(&self) -> &::std::option::Option<crate::types::FlexExecution> {
+        self.inner.get_flex_execution()
+    }
 }

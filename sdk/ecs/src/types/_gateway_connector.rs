@@ -10,6 +10,8 @@ pub struct GatewayConnector {
     pub health_check: ::std::option::Option<crate::types::GatewayConnectorHealthCheck>,
     /// <p>The filters that control which gateway ingress paths the connector applies to.</p>
     pub filters: ::std::option::Option<crate::types::GatewayConnectorFilters>,
+    /// <p>The deregistration delay settings for the targets of this connector.</p>
+    pub deregistration_delay: ::std::option::Option<crate::types::GatewayConnectorDeregistrationDelay>,
 }
 impl GatewayConnector {
     /// <p>The name of the service port that the gateway routes ingress traffic to.</p>
@@ -24,6 +26,10 @@ impl GatewayConnector {
     /// <p>The filters that control which gateway ingress paths the connector applies to.</p>
     pub fn filters(&self) -> ::std::option::Option<&crate::types::GatewayConnectorFilters> {
         self.filters.as_ref()
+    }
+    /// <p>The deregistration delay settings for the targets of this connector.</p>
+    pub fn deregistration_delay(&self) -> ::std::option::Option<&crate::types::GatewayConnectorDeregistrationDelay> {
+        self.deregistration_delay.as_ref()
     }
 }
 impl GatewayConnector {
@@ -40,6 +46,7 @@ pub struct GatewayConnectorBuilder {
     pub(crate) port_name: ::std::option::Option<::std::string::String>,
     pub(crate) health_check: ::std::option::Option<crate::types::GatewayConnectorHealthCheck>,
     pub(crate) filters: ::std::option::Option<crate::types::GatewayConnectorFilters>,
+    pub(crate) deregistration_delay: ::std::option::Option<crate::types::GatewayConnectorDeregistrationDelay>,
 }
 impl GatewayConnectorBuilder {
     /// <p>The name of the service port that the gateway routes ingress traffic to.</p>
@@ -85,6 +92,20 @@ impl GatewayConnectorBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<crate::types::GatewayConnectorFilters> {
         &self.filters
     }
+    /// <p>The deregistration delay settings for the targets of this connector.</p>
+    pub fn deregistration_delay(mut self, input: crate::types::GatewayConnectorDeregistrationDelay) -> Self {
+        self.deregistration_delay = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The deregistration delay settings for the targets of this connector.</p>
+    pub fn set_deregistration_delay(mut self, input: ::std::option::Option<crate::types::GatewayConnectorDeregistrationDelay>) -> Self {
+        self.deregistration_delay = input;
+        self
+    }
+    /// <p>The deregistration delay settings for the targets of this connector.</p>
+    pub fn get_deregistration_delay(&self) -> &::std::option::Option<crate::types::GatewayConnectorDeregistrationDelay> {
+        &self.deregistration_delay
+    }
     /// Consumes the builder and constructs a [`GatewayConnector`](crate::types::GatewayConnector).
     /// This method will fail if any of the following fields are not set:
     /// - [`port_name`](crate::types::builders::GatewayConnectorBuilder::port_name)
@@ -98,6 +119,7 @@ impl GatewayConnectorBuilder {
             })?,
             health_check: self.health_check,
             filters: self.filters,
+            deregistration_delay: self.deregistration_delay,
         })
     }
 }

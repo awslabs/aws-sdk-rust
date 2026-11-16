@@ -9,6 +9,12 @@ pub use crate::types::_context_summary::ContextSummary;
 
 pub use crate::types::_goal_summary::GoalSummary;
 
+pub use crate::types::_organizational_aggregation_configuration::OrganizationalAggregationConfiguration;
+
+pub use crate::types::_organizational_report_filters::OrganizationalReportFilters;
+
+pub use crate::types::_organizational_report_state::OrganizationalReportState;
+
 pub use crate::types::_workload_environment::WorkloadEnvironment;
 
 pub use crate::types::_workload_discovery_config::WorkloadDiscoveryConfig;
@@ -18,6 +24,12 @@ pub use crate::types::_workload_jira_configuration_input::WorkloadJiraConfigurat
 pub use crate::types::_permission_type::PermissionType;
 
 pub use crate::types::_lens_status_type::LensStatusType;
+
+pub use crate::types::_coverage_summary::CoverageSummary;
+
+pub use crate::types::_organizational_report_format::OrganizationalReportFormat;
+
+pub use crate::types::_profile_type::ProfileType;
 
 pub use crate::types::_remediation_type::RemediationType;
 
@@ -41,11 +53,13 @@ pub use crate::types::_remediation_summary::RemediationSummary;
 
 pub use crate::types::_generation_status::GenerationStatus;
 
+pub use crate::types::_generation_type::GenerationType;
+
+pub use crate::types::_error_details::ErrorDetails;
+
 pub use crate::types::_scope::Scope;
 
 pub use crate::types::_progress::Progress;
-
-pub use crate::types::_error_details::ErrorDetails;
 
 pub use crate::types::_answer::Answer;
 
@@ -115,13 +129,15 @@ pub use crate::types::_workload_share::WorkloadShare;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
+pub use crate::types::_tag::Tag;
+
 pub use crate::types::_application_type::ApplicationType;
 
 pub use crate::types::_criticality::Criticality;
 
-pub use crate::types::_aggregation_configuration::AggregationConfiguration;
+pub use crate::types::_time_window::TimeWindow;
 
-pub use crate::types::_tag::Tag;
+pub use crate::types::_aggregation_configuration::AggregationConfiguration;
 
 pub use crate::types::_profile_question_update::ProfileQuestionUpdate;
 
@@ -130,6 +146,8 @@ pub use crate::types::_trusted_advisor_integration_status::TrustedAdvisorIntegra
 pub use crate::types::_workload_issue_management_status::WorkloadIssueManagementStatus;
 
 pub use crate::types::_issue_management_type::IssueManagementType;
+
+pub use crate::types::_preference_entry::PreferenceEntry;
 
 pub use crate::types::_insight::Insight;
 
@@ -160,6 +178,8 @@ pub use crate::types::_review_template_update_status::ReviewTemplateUpdateStatus
 pub use crate::types::_review_template_answer_status::ReviewTemplateAnswerStatus;
 
 pub use crate::types::_workload_jira_configuration_output::WorkloadJiraConfigurationOutput;
+
+pub use crate::types::_organizational_report_summary::OrganizationalReportSummary;
 
 pub use crate::types::_agent_profile_summary::AgentProfileSummary;
 
@@ -205,13 +225,31 @@ pub use crate::types::_workload_summary::WorkloadSummary;
 
 pub use crate::types::_workload_share_summary::WorkloadShareSummary;
 
+pub use crate::types::_preference_update::PreferenceUpdate;
+
 pub use crate::types::_choice_update::ChoiceUpdate;
 
 pub use crate::types::_integration_status_input::IntegrationStatusInput;
 
 pub use crate::types::_context_resource_tag::ContextResourceTag;
 
+pub use crate::types::_organizational_unit_entry::OrganizationalUnitEntry;
+
+pub use crate::types::_organizational_account_entry::OrganizationalAccountEntry;
+
 pub use crate::types::_definition_type::DefinitionType;
+
+pub use crate::types::_pillar_count::PillarCount;
+
+pub use crate::types::_priority_count::PriorityCount;
+
+pub use crate::types::_failed_account::FailedAccount;
+
+pub use crate::types::_failed_organizational_unit::FailedOrganizationalUnit;
+
+pub use crate::types::_preference_key::PreferenceKey;
+
+pub use crate::types::_preference_status::PreferenceStatus;
 
 pub use crate::types::_risk_rating::RiskRating;
 
@@ -237,6 +275,8 @@ pub use crate::types::_question::Question;
 
 pub use crate::types::_review_template_pillar_review_summary::ReviewTemplatePillarReviewSummary;
 
+pub use crate::types::_auto_remediation::AutoRemediation;
+
 pub use crate::types::_question_type::QuestionType;
 
 pub use crate::types::_check_provider::CheckProvider;
@@ -250,6 +290,8 @@ pub use crate::types::_notification_type::NotificationType;
 pub use crate::types::_lens_upgrade_summary::LensUpgradeSummary;
 
 pub use crate::types::_profile_notification_type::ProfileNotificationType;
+
+pub use crate::types::_preference_state::PreferenceState;
 
 pub use crate::types::_choice_status::ChoiceStatus;
 
@@ -317,6 +359,8 @@ mod _answer_summary;
 
 mod _application_type;
 
+mod _auto_remediation;
+
 mod _best_practice;
 
 mod _check_detail;
@@ -355,6 +399,8 @@ mod _context_summary;
 
 mod _context_type;
 
+mod _coverage_summary;
+
 mod _criticality;
 
 mod _cross_pillar_benefit;
@@ -369,9 +415,15 @@ mod _effort;
 
 mod _error_details;
 
+mod _failed_account;
+
+mod _failed_organizational_unit;
+
 mod _feedback_category;
 
 mod _generation_status;
+
+mod _generation_type;
 
 mod _goal_summary;
 
@@ -429,9 +481,25 @@ mod _notification_type;
 
 mod _organization_sharing_status;
 
+mod _organizational_account_entry;
+
+mod _organizational_aggregation_configuration;
+
+mod _organizational_report_filters;
+
+mod _organizational_report_format;
+
+mod _organizational_report_state;
+
+mod _organizational_report_summary;
+
+mod _organizational_unit_entry;
+
 mod _permission_type;
 
 mod _pillar;
+
+mod _pillar_count;
 
 mod _pillar_difference;
 
@@ -441,7 +509,19 @@ mod _pillar_metric;
 
 mod _pillar_review_summary;
 
+mod _preference_entry;
+
+mod _preference_key;
+
+mod _preference_state;
+
+mod _preference_status;
+
+mod _preference_update;
+
 mod _priority;
+
+mod _priority_count;
 
 mod _profile;
 
@@ -466,6 +546,8 @@ mod _profile_template;
 mod _profile_template_choice;
 
 mod _profile_template_question;
+
+mod _profile_type;
 
 mod _progress;
 
@@ -542,6 +624,8 @@ mod _share_status;
 mod _tag;
 
 mod _template_share_summary;
+
+mod _time_window;
 
 mod _trade_off;
 

@@ -49,6 +49,8 @@ pub use crate::types::_stateful_rule_options::StatefulRuleOptionsBuilder;
 
 pub use crate::types::_summary::SummaryBuilder;
 
+pub use crate::types::_context_filters::ContextFiltersBuilder;
+
 pub use crate::types::_availability_zone_mapping::AvailabilityZoneMappingBuilder;
 
 pub use crate::types::_nat_gateway_create_mapping::NatGatewayCreateMappingBuilder;
@@ -60,6 +62,8 @@ pub use crate::types::_tag::TagBuilder;
 pub use crate::types::_capacity_usage_summary::CapacityUsageSummaryBuilder;
 
 pub use crate::types::_transit_gateway_attachment_sync_state::TransitGatewayAttachmentSyncStateBuilder;
+
+pub use crate::types::_context_store_sync_state::ContextStoreSyncStateBuilder;
 
 pub use crate::types::_stateful_engine_options::StatefulEngineOptionsBuilder;
 
@@ -91,6 +95,8 @@ pub use crate::types::_analysis_report::AnalysisReportBuilder;
 
 pub use crate::types::_container_association_summary::ContainerAssociationSummaryBuilder;
 
+pub use crate::types::_context_store::ContextStoreBuilder;
+
 pub use crate::types::_firewall_policy_metadata::FirewallPolicyMetadataBuilder;
 
 pub use crate::types::_firewall_policy_v2_metadata::FirewallPolicyV2MetadataBuilder;
@@ -100,6 +106,8 @@ pub use crate::types::_firewall_metadata::FirewallMetadataBuilder;
 pub use crate::types::_flow::FlowBuilder;
 
 pub use crate::types::_flow_operation_metadata::FlowOperationMetadataBuilder;
+
+pub use crate::types::_resource_context::ResourceContextBuilder;
 
 pub use crate::types::_rule_group_metadata::RuleGroupMetadataBuilder;
 
@@ -162,6 +170,8 @@ pub use crate::types::_ip_set::IpSetBuilder;
 pub use crate::types::_ips_rule_group_override::IpsRuleGroupOverrideBuilder;
 
 pub use crate::types::_port_set::PortSetBuilder;
+
+pub use crate::types::_context_set::ContextSetBuilder;
 
 pub use crate::types::_ip_set_reference::IpSetReferenceBuilder;
 

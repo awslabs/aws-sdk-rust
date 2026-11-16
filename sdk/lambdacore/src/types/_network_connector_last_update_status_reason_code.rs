@@ -16,6 +16,7 @@
 ///     NetworkConnectorLastUpdateStatusReasonCode::Ec2RequestLimitExceeded => { /* ... */ },
 ///     NetworkConnectorLastUpdateStatusReasonCode::InsufficientRolePermissions => { /* ... */ },
 ///     NetworkConnectorLastUpdateStatusReasonCode::InternalError => { /* ... */ },
+///     NetworkConnectorLastUpdateStatusReasonCode::InternetGatewayNotAttached => { /* ... */ },
 ///     NetworkConnectorLastUpdateStatusReasonCode::InvalidSecurityGroup => { /* ... */ },
 ///     NetworkConnectorLastUpdateStatusReasonCode::InvalidSubnet => { /* ... */ },
 ///     NetworkConnectorLastUpdateStatusReasonCode::SecurityGroupsPerInterfaceLimitExceeded => { /* ... */ },
@@ -57,6 +58,8 @@ pub enum NetworkConnectorLastUpdateStatusReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     InternalError,
     #[allow(missing_docs)] // documentation missing in model
+    InternetGatewayNotAttached,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidSecurityGroup,
     #[allow(missing_docs)] // documentation missing in model
     InvalidSubnet,
@@ -75,6 +78,7 @@ impl ::std::convert::From<&str> for NetworkConnectorLastUpdateStatusReasonCode {
             "Ec2RequestLimitExceeded" => NetworkConnectorLastUpdateStatusReasonCode::Ec2RequestLimitExceeded,
             "InsufficientRolePermissions" => NetworkConnectorLastUpdateStatusReasonCode::InsufficientRolePermissions,
             "InternalError" => NetworkConnectorLastUpdateStatusReasonCode::InternalError,
+            "InternetGatewayNotAttached" => NetworkConnectorLastUpdateStatusReasonCode::InternetGatewayNotAttached,
             "InvalidSecurityGroup" => NetworkConnectorLastUpdateStatusReasonCode::InvalidSecurityGroup,
             "InvalidSubnet" => NetworkConnectorLastUpdateStatusReasonCode::InvalidSubnet,
             "SecurityGroupsPerInterfaceLimitExceeded" => NetworkConnectorLastUpdateStatusReasonCode::SecurityGroupsPerInterfaceLimitExceeded,
@@ -100,6 +104,7 @@ impl NetworkConnectorLastUpdateStatusReasonCode {
             NetworkConnectorLastUpdateStatusReasonCode::Ec2RequestLimitExceeded => "Ec2RequestLimitExceeded",
             NetworkConnectorLastUpdateStatusReasonCode::InsufficientRolePermissions => "InsufficientRolePermissions",
             NetworkConnectorLastUpdateStatusReasonCode::InternalError => "InternalError",
+            NetworkConnectorLastUpdateStatusReasonCode::InternetGatewayNotAttached => "InternetGatewayNotAttached",
             NetworkConnectorLastUpdateStatusReasonCode::InvalidSecurityGroup => "InvalidSecurityGroup",
             NetworkConnectorLastUpdateStatusReasonCode::InvalidSubnet => "InvalidSubnet",
             NetworkConnectorLastUpdateStatusReasonCode::SecurityGroupsPerInterfaceLimitExceeded => "SecurityGroupsPerInterfaceLimitExceeded",
@@ -114,6 +119,7 @@ impl NetworkConnectorLastUpdateStatusReasonCode {
             "Ec2RequestLimitExceeded",
             "InsufficientRolePermissions",
             "InternalError",
+            "InternetGatewayNotAttached",
             "InvalidSecurityGroup",
             "InvalidSubnet",
             "SecurityGroupsPerInterfaceLimitExceeded",
@@ -145,6 +151,7 @@ impl ::std::fmt::Display for NetworkConnectorLastUpdateStatusReasonCode {
             NetworkConnectorLastUpdateStatusReasonCode::Ec2RequestLimitExceeded => write!(f, "Ec2RequestLimitExceeded"),
             NetworkConnectorLastUpdateStatusReasonCode::InsufficientRolePermissions => write!(f, "InsufficientRolePermissions"),
             NetworkConnectorLastUpdateStatusReasonCode::InternalError => write!(f, "InternalError"),
+            NetworkConnectorLastUpdateStatusReasonCode::InternetGatewayNotAttached => write!(f, "InternetGatewayNotAttached"),
             NetworkConnectorLastUpdateStatusReasonCode::InvalidSecurityGroup => write!(f, "InvalidSecurityGroup"),
             NetworkConnectorLastUpdateStatusReasonCode::InvalidSubnet => write!(f, "InvalidSubnet"),
             NetworkConnectorLastUpdateStatusReasonCode::SecurityGroupsPerInterfaceLimitExceeded => {

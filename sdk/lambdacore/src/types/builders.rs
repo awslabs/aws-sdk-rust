@@ -7,6 +7,8 @@ pub use crate::types::_network_connector_vpc_egress_configuration::NetworkConnec
 
 pub use crate::types::_platform::PlatformBuilder;
 
+pub use crate::types::_elastic_ip_configuration::ElasticIpConfigurationBuilder;
+
 pub use crate::types::_runtime_info::RuntimeInfoBuilder;
 
 pub use crate::types::_network_connector_summary::NetworkConnectorSummaryBuilder;

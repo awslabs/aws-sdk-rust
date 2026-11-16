@@ -12,6 +12,18 @@ pub fn ser_metadata_configuration(
         }
         array_1.finish();
     }
+    {
+        let mut array_3 = object.key("textSearchConfigurations").start_array();
+        for item_4 in &input.text_search_configurations {
+            {
+                #[allow(unused_mut)]
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_text_search_configuration::ser_text_search_configuration(&mut object_5, item_4)?;
+                object_5.finish();
+            }
+        }
+        array_3.finish();
+    }
     Ok(())
 }
 
@@ -46,6 +58,11 @@ where
                                 )?,
                             );
                         }
+                        "textSearchConfigurations" => {
+                            builder = builder.set_text_search_configurations(
+                                crate::protocol_serde::shape_text_search_configurations::de_text_search_configurations(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -55,9 +72,7 @@ where
                     }
                 }
             }
-            Ok(Some(crate::serde_util::metadata_configuration_correct_errors(builder).build().map_err(
-                |err| ::aws_smithy_json::deserialize::error::DeserializeError::custom_source("Response was invalid", err),
-            )?))
+            Ok(Some(builder.build()))
         }
         _ => Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(
             "expected start object or null",

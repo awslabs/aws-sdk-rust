@@ -1,10 +1,10 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "tests/no-default-features",
     "tests/telemetry",
+    "tests/webassembly-no-os",
     "tests/webassembly-wstd",
-    "tests/webassembly-no-os"
+    "tests/no-default-features"
 ]
 members = [
     "sdk/accessanalyzer",
@@ -147,6 +147,7 @@ members = [
     "sdk/connectcontactlens",
     "sdk/connecthealth",
     "sdk/connectparticipant",
+    "sdk/connectscheduling",
     "sdk/continuum",
     "sdk/controlcatalog",
     "sdk/controltower",
@@ -330,6 +331,7 @@ members = [
     "sdk/odb",
     "sdk/omics",
     "sdk/opensearch",
+    "sdk/opensearchmemory",
     "sdk/opensearchserverless",
     "sdk/organizations",
     "sdk/osis",
@@ -397,6 +399,7 @@ members = [
     "sdk/sagemakeredge",
     "sdk/sagemakerfeaturestoreruntime",
     "sdk/sagemakergeospatial",
+    "sdk/sagemakerinferencerouterruntime",
     "sdk/sagemakerjobruntime",
     "sdk/sagemakermetrics",
     "sdk/sagemakerruntime",

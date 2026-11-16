@@ -19,6 +19,21 @@ pub fn ser_entity_account_filter(
             }
         }
     }
+    if let Some(var_4) = &input.tags {
+        encoder.str("tags");
+        encoder.map((*var_4).len());
+        for (key_5, value_6) in var_4 {
+            {
+                encoder.str(key_5.as_str());
+                encoder.array((*value_6).len());
+                for item_7 in value_6 {
+                    {
+                        encoder.str(item_7.as_str());
+                    }
+                }
+            }
+        }
+    }
     encoder.end();
     Ok(())
 }

@@ -5,6 +5,8 @@
 pub struct DescribeEntityAggregatesInput {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
     pub event_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Values to narrow the results returned.</p>
+    pub filter: ::std::option::Option<crate::types::EntityAggregateFilter>,
 }
 impl DescribeEntityAggregatesInput {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
@@ -12,6 +14,10 @@ impl DescribeEntityAggregatesInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_arns.is_none()`.
     pub fn event_arns(&self) -> &[::std::string::String] {
         self.event_arns.as_deref().unwrap_or_default()
+    }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn filter(&self) -> ::std::option::Option<&crate::types::EntityAggregateFilter> {
+        self.filter.as_ref()
     }
 }
 impl DescribeEntityAggregatesInput {
@@ -26,6 +32,7 @@ impl DescribeEntityAggregatesInput {
 #[non_exhaustive]
 pub struct DescribeEntityAggregatesInputBuilder {
     pub(crate) event_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) filter: ::std::option::Option<crate::types::EntityAggregateFilter>,
 }
 impl DescribeEntityAggregatesInputBuilder {
     /// Appends an item to `event_arns`.
@@ -48,6 +55,20 @@ impl DescribeEntityAggregatesInputBuilder {
     pub fn get_event_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.event_arns
     }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn filter(mut self, input: crate::types::EntityAggregateFilter) -> Self {
+        self.filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::EntityAggregateFilter>) -> Self {
+        self.filter = input;
+        self
+    }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::EntityAggregateFilter> {
+        &self.filter
+    }
     /// Consumes the builder and constructs a [`DescribeEntityAggregatesInput`](crate::operation::describe_entity_aggregates::DescribeEntityAggregatesInput).
     pub fn build(
         self,
@@ -55,6 +76,9 @@ impl DescribeEntityAggregatesInputBuilder {
         crate::operation::describe_entity_aggregates::DescribeEntityAggregatesInput,
         ::aws_smithy_types::error::operation::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::describe_entity_aggregates::DescribeEntityAggregatesInput { event_arns: self.event_arns })
+        ::std::result::Result::Ok(crate::operation::describe_entity_aggregates::DescribeEntityAggregatesInput {
+            event_arns: self.event_arns,
+            filter: self.filter,
+        })
     }
 }

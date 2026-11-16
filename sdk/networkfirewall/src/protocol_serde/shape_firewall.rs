@@ -90,6 +90,12 @@ pub(crate) fn de_firewall(
                 "VpcEndpoint" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_vpc_endpoint(Some(crate::protocol_serde::shape_vpc_endpoint::de_vpc_endpoint(decoder, depth + 1)?)))
                 })?,
+                "ContextStoreId" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_context_store_id(Some(decoder.string()?)))
+                })?,
+                "ContextStoreOwnerAccountId" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_context_store_owner_account_id(Some(decoder.string()?)))
+                })?,
                 "TransparentFilteringNatScope" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_transparent_filtering_nat_scope(Some(
                         decoder.string().map(|s| crate::types::TransparentFilteringNatScope::from(s.as_str()))?,

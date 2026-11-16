@@ -16,7 +16,7 @@ pub struct WorkGroupConfiguration {
     pub bytes_scanned_cutoff_per_query: ::std::option::Option<i64>,
     /// <p>If set to <code>true</code>, allows members assigned to a workgroup to reference Amazon S3 Requester Pays buckets in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For more information about Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
     pub requester_pays_enabled: ::std::option::Option<bool>,
-    /// <p>The engine version that all queries running on the workgroup use. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
+    /// <p>The engine version that all queries running on the workgroup use.</p>
     pub engine_version: ::std::option::Option<crate::types::EngineVersion>,
     /// <p>Specifies a user defined JSON string that is passed to the notebook engine.</p>
     pub additional_configuration: ::std::option::Option<::std::string::String>,
@@ -64,7 +64,7 @@ impl WorkGroupConfiguration {
     pub fn requester_pays_enabled(&self) -> ::std::option::Option<bool> {
         self.requester_pays_enabled
     }
-    /// <p>The engine version that all queries running on the workgroup use. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
+    /// <p>The engine version that all queries running on the workgroup use.</p>
     pub fn engine_version(&self) -> ::std::option::Option<&crate::types::EngineVersion> {
         self.engine_version.as_ref()
     }
@@ -222,17 +222,17 @@ impl WorkGroupConfigurationBuilder {
     pub fn get_requester_pays_enabled(&self) -> &::std::option::Option<bool> {
         &self.requester_pays_enabled
     }
-    /// <p>The engine version that all queries running on the workgroup use. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
+    /// <p>The engine version that all queries running on the workgroup use.</p>
     pub fn engine_version(mut self, input: crate::types::EngineVersion) -> Self {
         self.engine_version = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The engine version that all queries running on the workgroup use. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
+    /// <p>The engine version that all queries running on the workgroup use.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<crate::types::EngineVersion>) -> Self {
         self.engine_version = input;
         self
     }
-    /// <p>The engine version that all queries running on the workgroup use. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
+    /// <p>The engine version that all queries running on the workgroup use.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<crate::types::EngineVersion> {
         &self.engine_version
     }

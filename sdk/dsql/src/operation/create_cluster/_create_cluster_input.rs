@@ -16,6 +16,8 @@ pub struct CreateClusterInput {
     pub multi_region_properties: ::std::option::Option<crate::types::MultiRegionProperties>,
     /// <p>An optional resource-based policy document in JSON format that defines access permissions for the cluster.</p>
     pub policy: ::std::option::Option<::std::string::String>,
+    /// <p>The metric groups to enable for advanced monitoring on the cluster. Advanced monitoring collects detailed, query-level database metrics to help you analyze and resolve performance issues. If you omit this parameter, no metric groups are enabled.</p>
+    pub metric_groups: ::std::option::Option<::std::vec::Vec<crate::types::MetricGroupRequest>>,
     /// <p>An optional field that controls whether to bypass the lockout prevention check. When set to true, this parameter allows you to apply a policy that might lock you out of the cluster. Use with caution.</p>
     pub bypass_policy_lockout_safety_check: ::std::option::Option<bool>,
 }
@@ -45,6 +47,12 @@ impl CreateClusterInput {
     pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
+    /// <p>The metric groups to enable for advanced monitoring on the cluster. Advanced monitoring collects detailed, query-level database metrics to help you analyze and resolve performance issues. If you omit this parameter, no metric groups are enabled.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_groups.is_none()`.
+    pub fn metric_groups(&self) -> &[crate::types::MetricGroupRequest] {
+        self.metric_groups.as_deref().unwrap_or_default()
+    }
     /// <p>An optional field that controls whether to bypass the lockout prevention check. When set to true, this parameter allows you to apply a policy that might lock you out of the cluster. Use with caution.</p>
     pub fn bypass_policy_lockout_safety_check(&self) -> ::std::option::Option<bool> {
         self.bypass_policy_lockout_safety_check
@@ -67,6 +75,7 @@ pub struct CreateClusterInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) multi_region_properties: ::std::option::Option<crate::types::MultiRegionProperties>,
     pub(crate) policy: ::std::option::Option<::std::string::String>,
+    pub(crate) metric_groups: ::std::option::Option<::std::vec::Vec<crate::types::MetricGroupRequest>>,
     pub(crate) bypass_policy_lockout_safety_check: ::std::option::Option<bool>,
 }
 impl CreateClusterInputBuilder {
@@ -163,6 +172,26 @@ impl CreateClusterInputBuilder {
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy
     }
+    /// Appends an item to `metric_groups`.
+    ///
+    /// To override the contents of this collection use [`set_metric_groups`](Self::set_metric_groups).
+    ///
+    /// <p>The metric groups to enable for advanced monitoring on the cluster. Advanced monitoring collects detailed, query-level database metrics to help you analyze and resolve performance issues. If you omit this parameter, no metric groups are enabled.</p>
+    pub fn metric_groups(mut self, input: crate::types::MetricGroupRequest) -> Self {
+        let mut v = self.metric_groups.unwrap_or_default();
+        v.push(input);
+        self.metric_groups = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The metric groups to enable for advanced monitoring on the cluster. Advanced monitoring collects detailed, query-level database metrics to help you analyze and resolve performance issues. If you omit this parameter, no metric groups are enabled.</p>
+    pub fn set_metric_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricGroupRequest>>) -> Self {
+        self.metric_groups = input;
+        self
+    }
+    /// <p>The metric groups to enable for advanced monitoring on the cluster. Advanced monitoring collects detailed, query-level database metrics to help you analyze and resolve performance issues. If you omit this parameter, no metric groups are enabled.</p>
+    pub fn get_metric_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGroupRequest>> {
+        &self.metric_groups
+    }
     /// <p>An optional field that controls whether to bypass the lockout prevention check. When set to true, this parameter allows you to apply a policy that might lock you out of the cluster. Use with caution.</p>
     pub fn bypass_policy_lockout_safety_check(mut self, input: bool) -> Self {
         self.bypass_policy_lockout_safety_check = ::std::option::Option::Some(input);
@@ -188,6 +217,7 @@ impl CreateClusterInputBuilder {
             client_token: self.client_token,
             multi_region_properties: self.multi_region_properties,
             policy: self.policy,
+            metric_groups: self.metric_groups,
             bypass_policy_lockout_safety_check: self.bypass_policy_lockout_safety_check,
         })
     }

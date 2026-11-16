@@ -22,7 +22,10 @@ impl crate::operation::start_agent_recommendation_generation::builders::StartAge
 }
 /// Fluent builder constructing a request to `StartAgentRecommendationGeneration`.
 ///
-/// <p>Initiates a new recommendation generation process for the specified optimization profile. This asynchronous operation analyzes your Amazon Web Services resources and generates optimization recommendations based on the configured pillars and scope. Use GetAgentRecommendationGeneration to check status.</p>
+/// <p>Starts a recommendation generation process for the specified agent profile. This asynchronous operation returns immediately. Use <code>GetAgentRecommendationGeneration</code> to check the status of the generation.</p>
+/// <p>Currently, only the <code>ARCHITECTURE</code> recommendation type is supported. <code>RESOURCE</code> and <code>APPLICATION</code> recommendations are generated only by the scheduled generation cycle and cannot be started with this operation.</p>
+/// <p>For the <code>ARCHITECTURE</code> type, the generation analyzes the infrastructure as code (IaC) template that you specify in <code>additionalContext</code>, and returns updated templates with best practice fixes applied. You must specify <code>scope</code> and <code>additionalContext</code>. You can optionally specify <code>name</code>.</p>
+/// <p>Architecture review generations are subject to a daily quota for each profile. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/agent-quotas.html">Quotas and limits</a> in the Amazon Web Services Well-Architected User Guide.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartAgentRecommendationGenerationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -127,59 +130,83 @@ impl StartAgentRecommendationGenerationFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_types`](Self::set_types).
     ///
-    /// <p>The types of recommendations to generate.</p>
+    /// <p>The types of recommendations to generate. You can specify up to two types in a single request. Currently, only <code>ARCHITECTURE</code> is supported for this operation.</p>
     pub fn types(mut self, input: crate::types::RecommendationType) -> Self {
         self.inner = self.inner.types(input);
         self
     }
-    /// <p>The types of recommendations to generate.</p>
+    /// <p>The types of recommendations to generate. You can specify up to two types in a single request. Currently, only <code>ARCHITECTURE</code> is supported for this operation.</p>
     pub fn set_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RecommendationType>>) -> Self {
         self.inner = self.inner.set_types(input);
         self
     }
-    /// <p>The types of recommendations to generate.</p>
+    /// <p>The types of recommendations to generate. You can specify up to two types in a single request. Currently, only <code>ARCHITECTURE</code> is supported for this operation.</p>
     pub fn get_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendationType>> {
         self.inner.get_types()
     }
-    /// <p>An optional name for this generation process to help identify it in lists and logs.</p>
+    /// <p>An optional name for this generation that identifies the architecture review in the console and in <code>ListAgentRecommendationGenerations</code> results. Applies to <code>ARCHITECTURE</code> type only. Must be absent for other types.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>An optional name for this generation process to help identify it in lists and logs.</p>
+    /// <p>An optional name for this generation that identifies the architecture review in the console and in <code>ListAgentRecommendationGenerations</code> results. Applies to <code>ARCHITECTURE</code> type only. Must be absent for other types.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>An optional name for this generation process to help identify it in lists and logs.</p>
+    /// <p>An optional name for this generation that identifies the architecture review in the console and in <code>ListAgentRecommendationGenerations</code> results. Applies to <code>ARCHITECTURE</code> type only. Must be absent for other types.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>Optional additional context to guide the recommendation generation, such as specific business requirements or constraints.</p>
+    /// <p>The location of the infrastructure as code (IaC) template to review, and the lenses to review it against. Required for the <code>ARCHITECTURE</code> type. Must be absent for other types. Specify a JSON object with the following members:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>s3Uri</code>: The Amazon S3 URI of the IaC template, .zip archive, or folder to review.</p></li>
+    /// <li>
+    /// <p><code>s3VersionId</code>: The version ID of the Amazon S3 object. If you omit this member, the current version is used.</p></li>
+    /// <li>
+    /// <p><code>lensArns</code>: The ARNs of the lenses to review against. Only <code>arn:aws:wellarchitected::aws:lens/wellarchitected</code> is supported.</p></li>
+    /// </ul>
     pub fn additional_context(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.inner = self.inner.additional_context(input);
         self
     }
-    /// <p>Optional additional context to guide the recommendation generation, such as specific business requirements or constraints.</p>
+    /// <p>The location of the infrastructure as code (IaC) template to review, and the lenses to review it against. Required for the <code>ARCHITECTURE</code> type. Must be absent for other types. Specify a JSON object with the following members:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>s3Uri</code>: The Amazon S3 URI of the IaC template, .zip archive, or folder to review.</p></li>
+    /// <li>
+    /// <p><code>s3VersionId</code>: The version ID of the Amazon S3 object. If you omit this member, the current version is used.</p></li>
+    /// <li>
+    /// <p><code>lensArns</code>: The ARNs of the lenses to review against. Only <code>arn:aws:wellarchitected::aws:lens/wellarchitected</code> is supported.</p></li>
+    /// </ul>
     pub fn set_additional_context(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.inner = self.inner.set_additional_context(input);
         self
     }
-    /// <p>Optional additional context to guide the recommendation generation, such as specific business requirements or constraints.</p>
+    /// <p>The location of the infrastructure as code (IaC) template to review, and the lenses to review it against. Required for the <code>ARCHITECTURE</code> type. Must be absent for other types. Specify a JSON object with the following members:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>s3Uri</code>: The Amazon S3 URI of the IaC template, .zip archive, or folder to review.</p></li>
+    /// <li>
+    /// <p><code>s3VersionId</code>: The version ID of the Amazon S3 object. If you omit this member, the current version is used.</p></li>
+    /// <li>
+    /// <p><code>lensArns</code>: The ARNs of the lenses to review against. Only <code>arn:aws:wellarchitected::aws:lens/wellarchitected</code> is supported.</p></li>
+    /// </ul>
     pub fn get_additional_context(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         self.inner.get_additional_context()
     }
-    /// <p>Scope configuration to focus the generation on specific pillars or goals.</p>
+    /// <p>Defines which pillars, goals, and items the review covers. Required for the <code>ARCHITECTURE</code> type. Must be absent for other types.</p>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.inner = self.inner.scope(input);
         self
     }
-    /// <p>Scope configuration to focus the generation on specific pillars or goals.</p>
+    /// <p>Defines which pillars, goals, and items the review covers. Required for the <code>ARCHITECTURE</code> type. Must be absent for other types.</p>
     pub fn set_scope(mut self, input: ::std::option::Option<crate::types::Scope>) -> Self {
         self.inner = self.inner.set_scope(input);
         self
     }
-    /// <p>Scope configuration to focus the generation on specific pillars or goals.</p>
+    /// <p>Defines which pillars, goals, and items the review covers. Required for the <code>ARCHITECTURE</code> type. Must be absent for other types.</p>
     pub fn get_scope(&self) -> &::std::option::Option<crate::types::Scope> {
         self.inner.get_scope()
     }

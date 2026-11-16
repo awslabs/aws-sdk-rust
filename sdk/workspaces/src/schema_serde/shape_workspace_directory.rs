@@ -319,6 +319,16 @@ static WORKSPACEDIRECTORY_MEMBER_STREAMING_PROPERTIES: ::aws_smithy_schema::Sche
     "StreamingProperties",
     27,
 );
+static WORKSPACEDIRECTORY_MEMBER_WORKSPACE_OS_USER_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#WorkspaceDirectory$WorkspaceOsUserMode",
+        "com.amazonaws.workspaces",
+        "WorkspaceDirectory",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "WorkspaceOsUserMode",
+    28,
+);
 static WORKSPACEDIRECTORY_MEMBER_ERROR_MESSAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.workspaces#WorkspaceDirectory$ErrorMessage",
@@ -327,7 +337,7 @@ static WORKSPACEDIRECTORY_MEMBER_ERROR_MESSAGE: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ErrorMessage",
-    28,
+    29,
 );
 static WORKSPACEDIRECTORY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -365,6 +375,7 @@ static WORKSPACEDIRECTORY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_s
         &WORKSPACEDIRECTORY_MEMBER_IDC_CONFIG,
         &WORKSPACEDIRECTORY_MEMBER_ACTIVE_DIRECTORY_CONFIG,
         &WORKSPACEDIRECTORY_MEMBER_STREAMING_PROPERTIES,
+        &WORKSPACEDIRECTORY_MEMBER_WORKSPACE_OS_USER_MODE,
         &WORKSPACEDIRECTORY_MEMBER_ERROR_MESSAGE,
     ],
 );
@@ -497,6 +508,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::WorkspaceD
         }
         if let Some(ref val) = self.streaming_properties {
             ser.write_struct(&WORKSPACEDIRECTORY_MEMBER_STREAMING_PROPERTIES, val)?;
+        }
+        if let Some(ref val) = self.workspace_os_user_mode {
+            ser.write_string(&WORKSPACEDIRECTORY_MEMBER_WORKSPACE_OS_USER_MODE, val.as_str())?;
         }
         if let Some(ref val) = self.error_message {
             ser.write_string(&WORKSPACEDIRECTORY_MEMBER_ERROR_MESSAGE, val)?;
@@ -715,6 +729,13 @@ impl crate::types::builders::WorkspaceDirectoryBuilder {
                     }
                 }
                 Some(28) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.workspace_os_user_mode = Some(crate::types::WorkspaceOsUserMode::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(29) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

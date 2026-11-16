@@ -27,9 +27,15 @@ pub(crate) mod shape_associate_lenses;
 
 pub(crate) mod shape_associate_profiles;
 
+pub(crate) mod shape_create_agent_basic_profile;
+
 pub(crate) mod shape_create_agent_context;
 
 pub(crate) mod shape_create_agent_goal;
+
+pub(crate) mod shape_create_agent_organizational_profile;
+
+pub(crate) mod shape_create_agent_organizational_report;
 
 pub(crate) mod shape_create_agent_profile;
 
@@ -55,7 +61,13 @@ pub(crate) mod shape_delete_agent_context;
 
 pub(crate) mod shape_delete_agent_goal;
 
+pub(crate) mod shape_delete_agent_organizational_report;
+
 pub(crate) mod shape_delete_agent_profile;
+
+pub(crate) mod shape_delete_agent_profile_policy;
+
+pub(crate) mod shape_delete_agent_recommendation_policy;
 
 pub(crate) mod shape_delete_lens;
 
@@ -83,11 +95,21 @@ pub(crate) mod shape_get_agent_context;
 
 pub(crate) mod shape_get_agent_goal;
 
+pub(crate) mod shape_get_agent_organizational_report;
+
+pub(crate) mod shape_get_agent_organizational_report_data;
+
+pub(crate) mod shape_get_agent_preferences;
+
 pub(crate) mod shape_get_agent_profile;
+
+pub(crate) mod shape_get_agent_profile_policy;
 
 pub(crate) mod shape_get_agent_recommendation;
 
 pub(crate) mod shape_get_agent_recommendation_generation;
+
+pub(crate) mod shape_get_agent_recommendation_policy;
 
 pub(crate) mod shape_get_answer;
 
@@ -122,6 +144,8 @@ pub(crate) mod shape_import_lens;
 pub(crate) mod shape_list_agent_contexts;
 
 pub(crate) mod shape_list_agent_goals;
+
+pub(crate) mod shape_list_agent_organizational_reports;
 
 pub(crate) mod shape_list_agent_profiles;
 
@@ -169,7 +193,15 @@ pub(crate) mod shape_list_workload_shares;
 
 pub(crate) mod shape_list_workloads;
 
+pub(crate) mod shape_put_agent_preferences;
+
+pub(crate) mod shape_put_agent_profile_policy;
+
 pub(crate) mod shape_put_agent_recommendation_feedback;
+
+pub(crate) mod shape_put_agent_recommendation_policy;
+
+pub(crate) mod shape_send_agent_organizational_report_data_to_s3;
 
 pub(crate) mod shape_start_agent_recommendation_generation;
 
@@ -180,6 +212,8 @@ pub(crate) mod shape_untag_resource;
 pub(crate) mod shape_update_agent_context;
 
 pub(crate) mod shape_update_agent_goal;
+
+pub(crate) mod shape_update_agent_organizational_profile;
 
 pub(crate) mod shape_update_agent_profile;
 
@@ -229,9 +263,15 @@ pub(crate) mod shape_associate_profiles_input;
 
 pub(crate) mod shape_conflict_exception;
 
+pub(crate) mod shape_create_agent_basic_profile_input;
+
 pub(crate) mod shape_create_agent_context_input;
 
 pub(crate) mod shape_create_agent_goal_input;
+
+pub(crate) mod shape_create_agent_organizational_profile_input;
+
+pub(crate) mod shape_create_agent_organizational_report_input;
 
 pub(crate) mod shape_create_agent_profile_input;
 
@@ -271,9 +311,17 @@ pub(crate) mod shape_list_notifications_input;
 
 pub(crate) mod shape_list_workloads_input;
 
+pub(crate) mod shape_put_agent_preferences_input;
+
+pub(crate) mod shape_put_agent_profile_policy_input;
+
 pub(crate) mod shape_put_agent_recommendation_feedback_input;
 
+pub(crate) mod shape_put_agent_recommendation_policy_input;
+
 pub(crate) mod shape_resource_not_found_exception;
+
+pub(crate) mod shape_send_agent_organizational_report_data_to_s3_input;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
@@ -286,6 +334,8 @@ pub(crate) mod shape_throttling_exception;
 pub(crate) mod shape_update_agent_context_input;
 
 pub(crate) mod shape_update_agent_goal_input;
+
+pub(crate) mod shape_update_agent_organizational_profile_input;
 
 pub(crate) mod shape_update_agent_profile_input;
 
@@ -357,11 +407,15 @@ pub(crate) mod shape_context_summaries;
 
 pub(crate) mod shape_context_summary;
 
+pub(crate) mod shape_coverage_summary;
+
 pub(crate) mod shape_cross_pillar_benefits;
 
 pub(crate) mod shape_error_details;
 
 pub(crate) mod shape_field_errors;
+
+pub(crate) mod shape_generation_recommendation_types;
 
 pub(crate) mod shape_goal_summaries;
 
@@ -395,7 +449,17 @@ pub(crate) mod shape_milestone_summaries;
 
 pub(crate) mod shape_notification_summaries;
 
+pub(crate) mod shape_organizational_aggregation_configuration;
+
+pub(crate) mod shape_organizational_report_filters;
+
+pub(crate) mod shape_organizational_report_summary_list;
+
 pub(crate) mod shape_pillars;
+
+pub(crate) mod shape_preference_entries;
+
+pub(crate) mod shape_preference_update;
 
 pub(crate) mod shape_profile;
 
@@ -489,6 +553,10 @@ pub(crate) mod shape_context_resource_tag;
 
 pub(crate) mod shape_cross_pillar_benefit;
 
+pub(crate) mod shape_failed_account_list;
+
+pub(crate) mod shape_failed_organizational_unit_list;
+
 pub(crate) mod shape_goal_id_list;
 
 pub(crate) mod shape_improvement_summary;
@@ -507,13 +575,37 @@ pub(crate) mod shape_milestone_summary;
 
 pub(crate) mod shape_notification_summary;
 
+pub(crate) mod shape_organizational_account_entry;
+
+pub(crate) mod shape_organizational_account_entry_list;
+
+pub(crate) mod shape_organizational_report_account_id_list;
+
+pub(crate) mod shape_organizational_report_summary;
+
+pub(crate) mod shape_organizational_unit_entry;
+
+pub(crate) mod shape_organizational_unit_entry_list;
+
+pub(crate) mod shape_organizational_unit_id_list;
+
+pub(crate) mod shape_pillar_count_list;
+
 pub(crate) mod shape_pillar_differences;
 
 pub(crate) mod shape_pillar_item;
 
 pub(crate) mod shape_pillar_items;
 
+pub(crate) mod shape_pillar_list;
+
 pub(crate) mod shape_pillar_review_summaries;
+
+pub(crate) mod shape_preference_entry;
+
+pub(crate) mod shape_priority_count_list;
+
+pub(crate) mod shape_priority_list;
 
 pub(crate) mod shape_profile_notification_summary;
 
@@ -526,6 +618,10 @@ pub(crate) mod shape_profile_summary;
 pub(crate) mod shape_question_counts;
 
 pub(crate) mod shape_recommendation_goal;
+
+pub(crate) mod shape_recommendation_status_list;
+
+pub(crate) mod shape_recommendation_type_list;
 
 pub(crate) mod shape_recommended_fix_steps;
 
@@ -548,6 +644,8 @@ pub(crate) mod shape_share_invitation_summary;
 pub(crate) mod shape_template_questions;
 
 pub(crate) mod shape_template_share_summary;
+
+pub(crate) mod shape_time_window;
 
 pub(crate) mod shape_trade_off;
 
@@ -575,6 +673,8 @@ pub(crate) mod shape_workload_summary;
 
 pub(crate) mod shape_account_summary;
 
+pub(crate) mod shape_auto_remediation;
+
 pub(crate) mod shape_choice;
 
 pub(crate) mod shape_choice_answer;
@@ -587,19 +687,29 @@ pub(crate) mod shape_context_account_id_list;
 
 pub(crate) mod shape_context_aws_service_list;
 
+pub(crate) mod shape_context_organizational_unit_id_list;
+
 pub(crate) mod shape_context_region_list;
 
 pub(crate) mod shape_context_resource_tag_list;
 
 pub(crate) mod shape_context_resource_type_list;
 
+pub(crate) mod shape_failed_account;
+
+pub(crate) mod shape_failed_organizational_unit;
+
 pub(crate) mod shape_lens_metrics;
 
 pub(crate) mod shape_lens_upgrade_summary;
 
+pub(crate) mod shape_pillar_count;
+
 pub(crate) mod shape_pillar_difference;
 
 pub(crate) mod shape_pillar_review_summary;
+
+pub(crate) mod shape_priority_count;
 
 pub(crate) mod shape_profile_question;
 

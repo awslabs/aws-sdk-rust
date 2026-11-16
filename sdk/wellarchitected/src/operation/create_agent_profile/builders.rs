@@ -169,17 +169,17 @@ impl CreateAgentProfileFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_pillars`](Self::set_pillars).
     ///
-    /// <p>The Well-Architected Tool Framework pillars to associate with this profile.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars to associate with this profile.</p>
     pub fn pillars(mut self, input: crate::types::Pillar) -> Self {
         self.inner = self.inner.pillars(input);
         self
     }
-    /// <p>The Well-Architected Tool Framework pillars to associate with this profile.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars to associate with this profile.</p>
     pub fn set_pillars(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Pillar>>) -> Self {
         self.inner = self.inner.set_pillars(input);
         self
     }
-    /// <p>The Well-Architected Tool Framework pillars to associate with this profile.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars to associate with this profile.</p>
     pub fn get_pillars(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Pillar>> {
         self.inner.get_pillars()
     }

@@ -71,6 +71,13 @@ where
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
                         }
+                        "autoRemediation" => {
+                            builder = builder.set_auto_remediation(crate::protocol_serde::shape_auto_remediation::de_auto_remediation(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

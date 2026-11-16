@@ -6,5 +6,11 @@ pub fn ser_encounter_context(
     if let Some(var_1) = &input.unstructured_context {
         object.key("unstructuredContext").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.medical_coding_context {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("medicalCodingContext").start_object();
+        crate::protocol_serde::shape_medical_coding_context::ser_medical_coding_context(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }

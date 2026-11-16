@@ -24,6 +24,8 @@ pub struct MedicalScribeListeningSessionDetails {
     pub post_stream_action_result: ::std::option::Option<crate::types::MedicalScribePostStreamActionsResult>,
     /// <p>Indicates whether encounter context was provided</p>
     pub encounter_context_provided: ::std::option::Option<bool>,
+    /// <p>Indicates whether medical coding context was provided.</p>
+    pub medical_coding_context_provided: ::std::option::Option<bool>,
     /// <p>The current status of the stream</p>
     pub stream_status: ::std::option::Option<crate::types::MedicalScribeStreamStatus>,
     /// <p>The timestamp when the stream was created</p>
@@ -74,6 +76,10 @@ impl MedicalScribeListeningSessionDetails {
     pub fn encounter_context_provided(&self) -> ::std::option::Option<bool> {
         self.encounter_context_provided
     }
+    /// <p>Indicates whether medical coding context was provided.</p>
+    pub fn medical_coding_context_provided(&self) -> ::std::option::Option<bool> {
+        self.medical_coding_context_provided
+    }
     /// <p>The current status of the stream</p>
     pub fn stream_status(&self) -> ::std::option::Option<&crate::types::MedicalScribeStreamStatus> {
         self.stream_status.as_ref()
@@ -108,6 +114,7 @@ pub struct MedicalScribeListeningSessionDetailsBuilder {
     pub(crate) post_stream_action_settings: ::std::option::Option<crate::types::MedicalScribePostStreamActionSettingsResponse>,
     pub(crate) post_stream_action_result: ::std::option::Option<crate::types::MedicalScribePostStreamActionsResult>,
     pub(crate) encounter_context_provided: ::std::option::Option<bool>,
+    pub(crate) medical_coding_context_provided: ::std::option::Option<bool>,
     pub(crate) stream_status: ::std::option::Option<crate::types::MedicalScribeStreamStatus>,
     pub(crate) stream_creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) stream_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -262,6 +269,20 @@ impl MedicalScribeListeningSessionDetailsBuilder {
     pub fn get_encounter_context_provided(&self) -> &::std::option::Option<bool> {
         &self.encounter_context_provided
     }
+    /// <p>Indicates whether medical coding context was provided.</p>
+    pub fn medical_coding_context_provided(mut self, input: bool) -> Self {
+        self.medical_coding_context_provided = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether medical coding context was provided.</p>
+    pub fn set_medical_coding_context_provided(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.medical_coding_context_provided = input;
+        self
+    }
+    /// <p>Indicates whether medical coding context was provided.</p>
+    pub fn get_medical_coding_context_provided(&self) -> &::std::option::Option<bool> {
+        &self.medical_coding_context_provided
+    }
     /// <p>The current status of the stream</p>
     pub fn stream_status(mut self, input: crate::types::MedicalScribeStreamStatus) -> Self {
         self.stream_status = ::std::option::Option::Some(input);
@@ -317,6 +338,7 @@ impl MedicalScribeListeningSessionDetailsBuilder {
             post_stream_action_settings: self.post_stream_action_settings,
             post_stream_action_result: self.post_stream_action_result,
             encounter_context_provided: self.encounter_context_provided,
+            medical_coding_context_provided: self.medical_coding_context_provided,
             stream_status: self.stream_status,
             stream_creation_time: self.stream_creation_time,
             stream_end_time: self.stream_end_time,

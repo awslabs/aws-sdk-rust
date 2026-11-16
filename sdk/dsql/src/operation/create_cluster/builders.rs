@@ -252,6 +252,25 @@ impl CreateClusterFluentBuilder {
     pub fn get_policy(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy()
     }
+    ///
+    /// Appends an item to `metricGroups`.
+    ///
+    /// To override the contents of this collection use [`set_metric_groups`](Self::set_metric_groups).
+    ///
+    /// <p>The metric groups to enable for advanced monitoring on the cluster. Advanced monitoring collects detailed, query-level database metrics to help you analyze and resolve performance issues. If you omit this parameter, no metric groups are enabled.</p>
+    pub fn metric_groups(mut self, input: crate::types::MetricGroupRequest) -> Self {
+        self.inner = self.inner.metric_groups(input);
+        self
+    }
+    /// <p>The metric groups to enable for advanced monitoring on the cluster. Advanced monitoring collects detailed, query-level database metrics to help you analyze and resolve performance issues. If you omit this parameter, no metric groups are enabled.</p>
+    pub fn set_metric_groups(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MetricGroupRequest>>) -> Self {
+        self.inner = self.inner.set_metric_groups(input);
+        self
+    }
+    /// <p>The metric groups to enable for advanced monitoring on the cluster. Advanced monitoring collects detailed, query-level database metrics to help you analyze and resolve performance issues. If you omit this parameter, no metric groups are enabled.</p>
+    pub fn get_metric_groups(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MetricGroupRequest>> {
+        self.inner.get_metric_groups()
+    }
     /// <p>An optional field that controls whether to bypass the lockout prevention check. When set to true, this parameter allows you to apply a policy that might lock you out of the cluster. Use with caution.</p>
     pub fn bypass_policy_lockout_safety_check(mut self, input: bool) -> Self {
         self.inner = self.inner.bypass_policy_lockout_safety_check(input);

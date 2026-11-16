@@ -39,6 +39,27 @@ static LISTDATABASESINPUT_MEMBER_WORK_GROUP: ::aws_smithy_schema::Schema<'static
     "WorkGroup",
     3,
 );
+static LISTDATABASESINPUT_MEMBER_ATTRIBUTES_TO_GET_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena#DatabaseAttributesList$member",
+        "com.amazonaws.athena",
+        "DatabaseAttributesList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static LISTDATABASESINPUT_MEMBER_ATTRIBUTES_TO_GET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.athena.synthetic#ListDatabasesInput$AttributesToGet",
+        "com.amazonaws.athena.synthetic",
+        "ListDatabasesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "AttributesToGet",
+    4,
+)
+.with_list_member(&LISTDATABASESINPUT_MEMBER_ATTRIBUTES_TO_GET_MEMBER);
 static LISTDATABASESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.athena.synthetic#ListDatabasesInput",
@@ -51,6 +72,7 @@ static LISTDATABASESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_s
         &LISTDATABASESINPUT_MEMBER_NEXT_TOKEN,
         &LISTDATABASESINPUT_MEMBER_MAX_RESULTS,
         &LISTDATABASESINPUT_MEMBER_WORK_GROUP,
+        &LISTDATABASESINPUT_MEMBER_ATTRIBUTES_TO_GET,
     ],
 )
 .with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
@@ -80,6 +102,17 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::list_d
         }
         if let Some(ref val) = self.work_group {
             ser.write_string(&LISTDATABASESINPUT_MEMBER_WORK_GROUP, val)?;
+        }
+        if let Some(ref val) = self.attributes_to_get {
+            ser.write_list(
+                &LISTDATABASESINPUT_MEMBER_ATTRIBUTES_TO_GET,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
         }
         Ok(())
     }
@@ -124,6 +157,22 @@ impl crate::operation::list_databases::builders::ListDatabasesInputBuilder {
                         deser.read_null()?;
                     } else {
                         self.work_group = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.attributes_to_get = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::DatabaseAttributes::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
                     }
                 }
                 _ => {}

@@ -145,6 +145,9 @@ pub mod create_inference_experiment;
 /// Types for the `CreateInferenceRecommendationsJob` operation.
 pub mod create_inference_recommendations_job;
 
+/// Types for the `CreateInferenceRouter` operation.
+pub mod create_inference_router;
+
 /// Types for the `CreateJob` operation.
 pub mod create_job;
 
@@ -322,6 +325,9 @@ pub mod delete_endpoint;
 /// Types for the `DeleteEndpointConfig` operation.
 pub mod delete_endpoint_config;
 
+/// Types for the `DeleteEndpointPolicy` operation.
+pub mod delete_endpoint_policy;
+
 /// Types for the `DeleteExperiment` operation.
 pub mod delete_experiment;
 
@@ -357,6 +363,9 @@ pub mod delete_inference_component;
 
 /// Types for the `DeleteInferenceExperiment` operation.
 pub mod delete_inference_experiment;
+
+/// Types for the `DeleteInferenceRouter` operation.
+pub mod delete_inference_router;
 
 /// Types for the `DeleteJob` operation.
 pub mod delete_job;
@@ -571,6 +580,9 @@ pub mod describe_inference_experiment;
 /// Types for the `DescribeInferenceRecommendationsJob` operation.
 pub mod describe_inference_recommendations_job;
 
+/// Types for the `DescribeInferenceRouter` operation.
+pub mod describe_inference_router;
+
 /// Types for the `DescribeJob` operation.
 pub mod describe_job;
 
@@ -702,6 +714,9 @@ pub mod extend_training_plan;
 
 /// Types for the `GetDeviceFleetReport` operation.
 pub mod get_device_fleet_report;
+
+/// Types for the `GetEndpointPolicy` operation.
+pub mod get_endpoint_policy;
 
 /// Types for the `GetLineageGroupPolicy` operation.
 pub mod get_lineage_group_policy;
@@ -856,6 +871,9 @@ pub mod list_inference_recommendations_job_steps;
 /// Types for the `ListInferenceRecommendationsJobs` operation.
 pub mod list_inference_recommendations_jobs;
 
+/// Types for the `ListInferenceRouters` operation.
+pub mod list_inference_routers;
+
 /// Types for the `ListJobSchemaVersions` operation.
 pub mod list_job_schema_versions;
 
@@ -1002,6 +1020,9 @@ pub mod list_workforces;
 
 /// Types for the `ListWorkteams` operation.
 pub mod list_workteams;
+
+/// Types for the `PutEndpointPolicy` operation.
+pub mod put_endpoint_policy;
 
 /// Types for the `PutModelPackageGroupPolicy` operation.
 pub mod put_model_package_group_policy;
@@ -1191,6 +1212,9 @@ pub mod update_inference_component_runtime_config;
 
 /// Types for the `UpdateInferenceExperiment` operation.
 pub mod update_inference_experiment;
+
+/// Types for the `UpdateInferenceRouter` operation.
+pub mod update_inference_router;
 
 /// Types for the `UpdateMlflowApp` operation.
 pub mod update_mlflow_app;

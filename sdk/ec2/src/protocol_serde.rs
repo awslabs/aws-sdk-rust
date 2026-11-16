@@ -131,6 +131,10 @@ pub(crate) mod shape_associate_ipam_resource_discovery;
 
 pub(crate) mod shape_associate_ipam_resource_discovery_input;
 
+pub(crate) mod shape_associate_kms_key_id;
+
+pub(crate) mod shape_associate_kms_key_id_input;
+
 pub(crate) mod shape_associate_nat_gateway_address;
 
 pub(crate) mod shape_associate_nat_gateway_address_input;
@@ -639,6 +643,10 @@ pub(crate) mod shape_create_transit_gateway_multicast_domain;
 
 pub(crate) mod shape_create_transit_gateway_multicast_domain_input;
 
+pub(crate) mod shape_create_transit_gateway_network_function_attachment;
+
+pub(crate) mod shape_create_transit_gateway_network_function_attachment_input;
+
 pub(crate) mod shape_create_transit_gateway_peering_attachment;
 
 pub(crate) mod shape_create_transit_gateway_peering_attachment_input;
@@ -1038,6 +1046,10 @@ pub(crate) mod shape_delete_transit_gateway_metering_policy_input;
 pub(crate) mod shape_delete_transit_gateway_multicast_domain;
 
 pub(crate) mod shape_delete_transit_gateway_multicast_domain_input;
+
+pub(crate) mod shape_delete_transit_gateway_network_function_attachment;
+
+pub(crate) mod shape_delete_transit_gateway_network_function_attachment_input;
 
 pub(crate) mod shape_delete_transit_gateway_peering_attachment;
 
@@ -1815,6 +1827,10 @@ pub(crate) mod shape_describe_transit_gateway_multicast_domains;
 
 pub(crate) mod shape_describe_transit_gateway_multicast_domains_input;
 
+pub(crate) mod shape_describe_transit_gateway_network_function_attachments;
+
+pub(crate) mod shape_describe_transit_gateway_network_function_attachments_input;
+
 pub(crate) mod shape_describe_transit_gateway_peering_attachments;
 
 pub(crate) mod shape_describe_transit_gateway_peering_attachments_input;
@@ -2102,6 +2118,10 @@ pub(crate) mod shape_disassociate_ipam_byoasn_input;
 pub(crate) mod shape_disassociate_ipam_resource_discovery;
 
 pub(crate) mod shape_disassociate_ipam_resource_discovery_input;
+
+pub(crate) mod shape_disassociate_kms_key_id;
+
+pub(crate) mod shape_disassociate_kms_key_id_input;
 
 pub(crate) mod shape_disassociate_nat_gateway_address;
 
@@ -2874,6 +2894,10 @@ pub(crate) mod shape_modify_transit_gateway_input;
 pub(crate) mod shape_modify_transit_gateway_metering_policy;
 
 pub(crate) mod shape_modify_transit_gateway_metering_policy_input;
+
+pub(crate) mod shape_modify_transit_gateway_network_function_attachment;
+
+pub(crate) mod shape_modify_transit_gateway_network_function_attachment_input;
 
 pub(crate) mod shape_modify_transit_gateway_policy_table_entry;
 
@@ -3680,6 +3704,8 @@ pub(crate) mod shape_application_statuses_response_type;
 pub(crate) mod shape_asn_association;
 
 pub(crate) mod shape_assigned_private_ip_address_list;
+
+pub(crate) mod shape_associated_kms_key_set;
 
 pub(crate) mod shape_associated_roles_list;
 
@@ -4585,6 +4611,10 @@ pub(crate) mod shape_transit_gateway_multicast_registered_group_sources;
 
 pub(crate) mod shape_transit_gateway_nat_rule_list;
 
+pub(crate) mod shape_transit_gateway_network_function_attachment;
+
+pub(crate) mod shape_transit_gateway_network_function_attachment_list;
+
 pub(crate) mod shape_transit_gateway_peering_attachment;
 
 pub(crate) mod shape_transit_gateway_peering_attachment_list;
@@ -4780,6 +4810,8 @@ pub(crate) mod shape_arn_list;
 pub(crate) mod shape_asn_association_set;
 
 pub(crate) mod shape_assigned_private_ip_address;
+
+pub(crate) mod shape_associated_kms_key;
 
 pub(crate) mod shape_associated_role;
 

@@ -14,6 +14,7 @@ impl super::Client {
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_cluster::GetClusterOutput::tags): <p>Map of tags.</p>
     ///   - [`encryption_details(Option<EncryptionDetails>)`](crate::operation::get_cluster::GetClusterOutput::encryption_details): <p>The current encryption configuration details for the cluster.</p>
     ///   - [`endpoint(Option<String>)`](crate::operation::get_cluster::GetClusterOutput::endpoint): <p>The connection endpoint for the cluster.</p>
+    ///   - [`metric_groups(Option<Vec::<MetricGroupResponse>>)`](crate::operation::get_cluster::GetClusterOutput::metric_groups): <p>The metric groups that you enabled for advanced monitoring on the cluster. If you haven't enabled any metric groups, the list is empty.</p>
     /// - On failure, responds with [`SdkError<GetClusterError>`](crate::operation::get_cluster::GetClusterError)
     pub fn get_cluster(&self) -> crate::operation::get_cluster::builders::GetClusterFluentBuilder {
         crate::operation::get_cluster::builders::GetClusterFluentBuilder::new(self.handle.clone())

@@ -14,6 +14,8 @@ pub struct AllowedPrincipal {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ID of the service.</p>
     pub service_id: ::std::option::Option<::std::string::String>,
+    /// <p>The type of permission granted to the principal.</p>
+    pub permission_type: ::std::option::Option<crate::types::PermissionType>,
 }
 impl AllowedPrincipal {
     /// <p>The type of principal.</p>
@@ -38,6 +40,10 @@ impl AllowedPrincipal {
     pub fn service_id(&self) -> ::std::option::Option<&str> {
         self.service_id.as_deref()
     }
+    /// <p>The type of permission granted to the principal.</p>
+    pub fn permission_type(&self) -> ::std::option::Option<&crate::types::PermissionType> {
+        self.permission_type.as_ref()
+    }
 }
 impl AllowedPrincipal {
     /// Creates a new builder-style object to manufacture [`AllowedPrincipal`](crate::types::AllowedPrincipal).
@@ -55,6 +61,7 @@ pub struct AllowedPrincipalBuilder {
     pub(crate) service_permission_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) service_id: ::std::option::Option<::std::string::String>,
+    pub(crate) permission_type: ::std::option::Option<crate::types::PermissionType>,
 }
 impl AllowedPrincipalBuilder {
     /// <p>The type of principal.</p>
@@ -133,6 +140,20 @@ impl AllowedPrincipalBuilder {
     pub fn get_service_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.service_id
     }
+    /// <p>The type of permission granted to the principal.</p>
+    pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
+        self.permission_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of permission granted to the principal.</p>
+    pub fn set_permission_type(mut self, input: ::std::option::Option<crate::types::PermissionType>) -> Self {
+        self.permission_type = input;
+        self
+    }
+    /// <p>The type of permission granted to the principal.</p>
+    pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::PermissionType> {
+        &self.permission_type
+    }
     /// Consumes the builder and constructs a [`AllowedPrincipal`](crate::types::AllowedPrincipal).
     pub fn build(self) -> crate::types::AllowedPrincipal {
         crate::types::AllowedPrincipal {
@@ -141,6 +162,7 @@ impl AllowedPrincipalBuilder {
             service_permission_id: self.service_permission_id,
             tags: self.tags,
             service_id: self.service_id,
+            permission_type: self.permission_type,
         }
     }
 }

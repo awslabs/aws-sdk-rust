@@ -262,6 +262,13 @@ pub(crate) fn de_update_function_code(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "AcceleratorConfig" => {
+                    builder = builder.set_accelerator_config(crate::protocol_serde::shape_accelerator_config::de_accelerator_config(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "Architectures" => {
                     builder = builder.set_architectures(crate::protocol_serde::shape_architectures_list::de_architectures_list(
                         tokens,

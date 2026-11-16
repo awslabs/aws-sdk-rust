@@ -17,6 +17,16 @@ static GATEWAYCONNECTOR_MEMBER_FILTERS: ::aws_smithy_schema::Schema<'static> = :
     "filters",
     2,
 );
+static GATEWAYCONNECTOR_MEMBER_DEREGISTRATION_DELAY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ecs#GatewayConnector$deregistrationDelay",
+        "com.amazonaws.ecs",
+        "GatewayConnector",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "deregistrationDelay",
+    3,
+);
 static GATEWAYCONNECTOR_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ecs#GatewayConnector", "com.amazonaws.ecs", "GatewayConnector"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -24,6 +34,7 @@ static GATEWAYCONNECTOR_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smi
         &GATEWAYCONNECTOR_MEMBER_PORT_NAME,
         &GATEWAYCONNECTOR_MEMBER_HEALTH_CHECK,
         &GATEWAYCONNECTOR_MEMBER_FILTERS,
+        &GATEWAYCONNECTOR_MEMBER_DEREGISTRATION_DELAY,
     ],
 );
 impl crate::types::GatewayConnector {
@@ -49,6 +60,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::GatewayCon
         }
         if let Some(ref val) = self.filters {
             ser.write_struct(&GATEWAYCONNECTOR_MEMBER_FILTERS, val)?;
+        }
+        if let Some(ref val) = self.deregistration_delay {
+            ser.write_struct(&GATEWAYCONNECTOR_MEMBER_DEREGISTRATION_DELAY, val)?;
         }
         Ok(())
     }
@@ -82,6 +96,13 @@ impl crate::types::builders::GatewayConnectorBuilder {
                         deser.read_null()?;
                     } else {
                         self.filters = Some(crate::types::GatewayConnectorFilters::deserialize(deser)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.deregistration_delay = Some(crate::types::GatewayConnectorDeregistrationDelay::deserialize(deser)?);
                     }
                 }
                 _ => {}

@@ -95,6 +95,46 @@ impl From<crate::operation::create_monitor::CreateMonitorError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_performance_monitor::CreatePerformanceMonitorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_performance_monitor::CreatePerformanceMonitorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_performance_monitor::CreatePerformanceMonitorError> for Error {
+    fn from(err: crate::operation::create_performance_monitor::CreatePerformanceMonitorError) -> Self {
+        match err {
+            crate::operation::create_performance_monitor::CreatePerformanceMonitorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_performance_monitor::CreatePerformanceMonitorError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_performance_monitor::CreatePerformanceMonitorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_performance_monitor::CreatePerformanceMonitorError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_performance_monitor::CreatePerformanceMonitorError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_performance_monitor::CreatePerformanceMonitorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_performance_monitor::CreatePerformanceMonitorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_scope::CreateScopeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -146,6 +186,46 @@ impl From<crate::operation::delete_monitor::DeleteMonitorError> for Error {
             crate::operation::delete_monitor::DeleteMonitorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_monitor::DeleteMonitorError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_monitor::DeleteMonitorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_performance_monitor::DeletePerformanceMonitorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_performance_monitor::DeletePerformanceMonitorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_performance_monitor::DeletePerformanceMonitorError> for Error {
+    fn from(err: crate::operation::delete_performance_monitor::DeletePerformanceMonitorError) -> Self {
+        match err {
+            crate::operation::delete_performance_monitor::DeletePerformanceMonitorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_performance_monitor::DeletePerformanceMonitorError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_performance_monitor::DeletePerformanceMonitorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_performance_monitor::DeletePerformanceMonitorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_performance_monitor::DeletePerformanceMonitorError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_performance_monitor::DeletePerformanceMonitorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_performance_monitor::DeletePerformanceMonitorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -203,6 +283,79 @@ impl From<crate::operation::get_monitor::GetMonitorError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_monitor_scope_suggestions::GetMonitorScopeSuggestionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_monitor_scope_suggestions::GetMonitorScopeSuggestionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_monitor_scope_suggestions::GetMonitorScopeSuggestionsError> for Error {
+    fn from(err: crate::operation::get_monitor_scope_suggestions::GetMonitorScopeSuggestionsError) -> Self {
+        match err {
+            crate::operation::get_monitor_scope_suggestions::GetMonitorScopeSuggestionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_monitor_scope_suggestions::GetMonitorScopeSuggestionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_monitor_scope_suggestions::GetMonitorScopeSuggestionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_monitor_scope_suggestions::GetMonitorScopeSuggestionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_monitor_scope_suggestions::GetMonitorScopeSuggestionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_monitor_scope_suggestions::GetMonitorScopeSuggestionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_performance_monitor::GetPerformanceMonitorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_performance_monitor::GetPerformanceMonitorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_performance_monitor::GetPerformanceMonitorError> for Error {
+    fn from(err: crate::operation::get_performance_monitor::GetPerformanceMonitorError) -> Self {
+        match err {
+            crate::operation::get_performance_monitor::GetPerformanceMonitorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_performance_monitor::GetPerformanceMonitorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_performance_monitor::GetPerformanceMonitorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_performance_monitor::GetPerformanceMonitorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_performance_monitor::GetPerformanceMonitorError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_performance_monitor::GetPerformanceMonitorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -238,6 +391,58 @@ impl From<crate::operation::get_query_results_monitor_top_contributors::GetQuery
             crate::operation::get_query_results_monitor_top_contributors::GetQueryResultsMonitorTopContributorsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_query_results_monitor_top_contributors::GetQueryResultsMonitorTopContributorsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_query_results_monitor_top_contributors::GetQueryResultsMonitorTopContributorsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_query_results_performance_monitor::GetQueryResultsPerformanceMonitorError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_query_results_performance_monitor::GetQueryResultsPerformanceMonitorError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_query_results_performance_monitor::GetQueryResultsPerformanceMonitorError> for Error {
+    fn from(err: crate::operation::get_query_results_performance_monitor::GetQueryResultsPerformanceMonitorError) -> Self {
+        match err {
+            crate::operation::get_query_results_performance_monitor::GetQueryResultsPerformanceMonitorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_query_results_performance_monitor::GetQueryResultsPerformanceMonitorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_query_results_performance_monitor::GetQueryResultsPerformanceMonitorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_query_results_performance_monitor::GetQueryResultsPerformanceMonitorError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::get_query_results_performance_monitor::GetQueryResultsPerformanceMonitorError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_query_results_performance_monitor::GetQueryResultsPerformanceMonitorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_query_results_performance_monitor::GetQueryResultsPerformanceMonitorError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -375,6 +580,58 @@ impl From<crate::operation::get_query_status_monitor_top_contributors::GetQueryS
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_query_status_performance_monitor::GetQueryStatusPerformanceMonitorError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_query_status_performance_monitor::GetQueryStatusPerformanceMonitorError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_query_status_performance_monitor::GetQueryStatusPerformanceMonitorError> for Error {
+    fn from(err: crate::operation::get_query_status_performance_monitor::GetQueryStatusPerformanceMonitorError) -> Self {
+        match err {
+            crate::operation::get_query_status_performance_monitor::GetQueryStatusPerformanceMonitorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_query_status_performance_monitor::GetQueryStatusPerformanceMonitorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_query_status_performance_monitor::GetQueryStatusPerformanceMonitorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_query_status_performance_monitor::GetQueryStatusPerformanceMonitorError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::get_query_status_performance_monitor::GetQueryStatusPerformanceMonitorError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_query_status_performance_monitor::GetQueryStatusPerformanceMonitorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_query_status_performance_monitor::GetQueryStatusPerformanceMonitorError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_query_status_workload_insights_top_contributors::GetQueryStatusWorkloadInsightsTopContributorsError,
             R,
         >,
@@ -502,6 +759,42 @@ impl From<crate::operation::list_monitors::ListMonitorsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_performance_monitors::ListPerformanceMonitorsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_performance_monitors::ListPerformanceMonitorsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_performance_monitors::ListPerformanceMonitorsError> for Error {
+    fn from(err: crate::operation::list_performance_monitors::ListPerformanceMonitorsError) -> Self {
+        match err {
+            crate::operation::list_performance_monitors::ListPerformanceMonitorsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_performance_monitors::ListPerformanceMonitorsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_performance_monitors::ListPerformanceMonitorsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_performance_monitors::ListPerformanceMonitorsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_performance_monitors::ListPerformanceMonitorsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_scopes::ListScopesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -605,6 +898,52 @@ impl From<crate::operation::start_query_monitor_top_contributors::StartQueryMoni
             crate::operation::start_query_monitor_top_contributors::StartQueryMonitorTopContributorsError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_query_performance_monitor::StartQueryPerformanceMonitorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_query_performance_monitor::StartQueryPerformanceMonitorError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_query_performance_monitor::StartQueryPerformanceMonitorError> for Error {
+    fn from(err: crate::operation::start_query_performance_monitor::StartQueryPerformanceMonitorError) -> Self {
+        match err {
+            crate::operation::start_query_performance_monitor::StartQueryPerformanceMonitorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_query_performance_monitor::StartQueryPerformanceMonitorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_query_performance_monitor::StartQueryPerformanceMonitorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_query_performance_monitor::StartQueryPerformanceMonitorError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_query_performance_monitor::StartQueryPerformanceMonitorError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_query_performance_monitor::StartQueryPerformanceMonitorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_query_performance_monitor::StartQueryPerformanceMonitorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -726,6 +1065,52 @@ impl From<crate::operation::stop_query_monitor_top_contributors::StopQueryMonito
                 Error::ValidationException(inner)
             }
             crate::operation::stop_query_monitor_top_contributors::StopQueryMonitorTopContributorsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_query_performance_monitor::StopQueryPerformanceMonitorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::stop_query_performance_monitor::StopQueryPerformanceMonitorError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_query_performance_monitor::StopQueryPerformanceMonitorError> for Error {
+    fn from(err: crate::operation::stop_query_performance_monitor::StopQueryPerformanceMonitorError) -> Self {
+        match err {
+            crate::operation::stop_query_performance_monitor::StopQueryPerformanceMonitorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::stop_query_performance_monitor::StopQueryPerformanceMonitorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::stop_query_performance_monitor::StopQueryPerformanceMonitorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::stop_query_performance_monitor::StopQueryPerformanceMonitorError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::stop_query_performance_monitor::StopQueryPerformanceMonitorError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::stop_query_performance_monitor::StopQueryPerformanceMonitorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::stop_query_performance_monitor::StopQueryPerformanceMonitorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -880,6 +1265,49 @@ impl From<crate::operation::update_monitor::UpdateMonitorError> for Error {
             crate::operation::update_monitor::UpdateMonitorError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_monitor::UpdateMonitorError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_monitor::UpdateMonitorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_performance_monitor::UpdatePerformanceMonitorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_performance_monitor::UpdatePerformanceMonitorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_performance_monitor::UpdatePerformanceMonitorError> for Error {
+    fn from(err: crate::operation::update_performance_monitor::UpdatePerformanceMonitorError) -> Self {
+        match err {
+            crate::operation::update_performance_monitor::UpdatePerformanceMonitorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_performance_monitor::UpdatePerformanceMonitorError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_performance_monitor::UpdatePerformanceMonitorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_performance_monitor::UpdatePerformanceMonitorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_performance_monitor::UpdatePerformanceMonitorError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_performance_monitor::UpdatePerformanceMonitorError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_performance_monitor::UpdatePerformanceMonitorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_performance_monitor::UpdatePerformanceMonitorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

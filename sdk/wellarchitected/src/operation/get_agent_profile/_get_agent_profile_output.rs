@@ -11,14 +11,16 @@ pub struct GetAgentProfileOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The business overview of the profile.</p>
     pub business_overview: ::std::option::Option<::std::string::String>,
-    /// <p>The Well-Architected Tool Framework pillars associated with the profile.</p>
-    pub pillars: ::std::vec::Vec<crate::types::Pillar>,
+    /// <p>The Amazon Web Services Well-Architected Framework pillars associated with the profile. Not present for basic profiles.</p>
+    pub pillars: ::std::option::Option<::std::vec::Vec<crate::types::Pillar>>,
     /// <p>Indicates whether deletion protection is enabled.</p>
     pub deletion_protection: bool,
-    /// <p>The ARN of the IAM execution role.</p>
-    pub execution_role_arn: ::std::string::String,
-    /// <p>The aggregation configuration.</p>
-    pub aggregation_configuration: ::std::vec::Vec<crate::types::AggregationConfiguration>,
+    /// <p>The type of the profile.</p>
+    pub profile_type: ::std::option::Option<crate::types::ProfileType>,
+    /// <p>The ARN of the IAM execution role. Not present for basic profiles.</p>
+    pub execution_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The aggregation configuration. Not present for basic profiles.</p>
+    pub aggregation_configuration: ::std::option::Option<::std::vec::Vec<crate::types::AggregationConfiguration>>,
     /// <p>The Amazon Resource Name (ARN) of the profile.</p>
     pub arn: ::std::string::String,
     /// <p>Indicates whether the profile is valid for scheduled recommendation generation.</p>
@@ -37,6 +39,8 @@ pub struct GetAgentProfileOutput {
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the profile was last modified.</p>
     pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The organizational monitoring boundary. Present only for organizational profiles.</p>
+    pub organizational_aggregation_configuration: ::std::option::Option<crate::types::OrganizationalAggregationConfiguration>,
     _request_id: Option<String>,
 }
 impl GetAgentProfileOutput {
@@ -57,24 +61,29 @@ impl GetAgentProfileOutput {
     pub fn business_overview(&self) -> ::std::option::Option<&str> {
         self.business_overview.as_deref()
     }
-    /// <p>The Well-Architected Tool Framework pillars associated with the profile.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars associated with the profile. Not present for basic profiles.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pillars.is_none()`.
     pub fn pillars(&self) -> &[crate::types::Pillar] {
-        use std::ops::Deref;
-        self.pillars.deref()
+        self.pillars.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether deletion protection is enabled.</p>
     pub fn deletion_protection(&self) -> bool {
         self.deletion_protection
     }
-    /// <p>The ARN of the IAM execution role.</p>
-    pub fn execution_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.execution_role_arn.deref()
+    /// <p>The type of the profile.</p>
+    pub fn profile_type(&self) -> ::std::option::Option<&crate::types::ProfileType> {
+        self.profile_type.as_ref()
     }
-    /// <p>The aggregation configuration.</p>
+    /// <p>The ARN of the IAM execution role. Not present for basic profiles.</p>
+    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>The aggregation configuration. Not present for basic profiles.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregation_configuration.is_none()`.
     pub fn aggregation_configuration(&self) -> &[crate::types::AggregationConfiguration] {
-        use std::ops::Deref;
-        self.aggregation_configuration.deref()
+        self.aggregation_configuration.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the profile.</p>
     pub fn arn(&self) -> &str {
@@ -116,6 +125,10 @@ impl GetAgentProfileOutput {
     pub fn last_modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
+    /// <p>The organizational monitoring boundary. Present only for organizational profiles.</p>
+    pub fn organizational_aggregation_configuration(&self) -> ::std::option::Option<&crate::types::OrganizationalAggregationConfiguration> {
+        self.organizational_aggregation_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetAgentProfileOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -126,6 +139,7 @@ impl ::std::fmt::Debug for GetAgentProfileOutput {
         formatter.field("business_overview", &"*** Sensitive Data Redacted ***");
         formatter.field("pillars", &self.pillars);
         formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("profile_type", &self.profile_type);
         formatter.field("execution_role_arn", &self.execution_role_arn);
         formatter.field("aggregation_configuration", &self.aggregation_configuration);
         formatter.field("arn", &self.arn);
@@ -137,6 +151,7 @@ impl ::std::fmt::Debug for GetAgentProfileOutput {
         formatter.field("created_at", &self.created_at);
         formatter.field("last_modified_by", &self.last_modified_by);
         formatter.field("last_modified_at", &self.last_modified_at);
+        formatter.field("organizational_aggregation_configuration", &self.organizational_aggregation_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -163,6 +178,7 @@ pub struct GetAgentProfileOutputBuilder {
     pub(crate) business_overview: ::std::option::Option<::std::string::String>,
     pub(crate) pillars: ::std::option::Option<::std::vec::Vec<crate::types::Pillar>>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
+    pub(crate) profile_type: ::std::option::Option<crate::types::ProfileType>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) aggregation_configuration: ::std::option::Option<::std::vec::Vec<crate::types::AggregationConfiguration>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
@@ -174,6 +190,7 @@ pub struct GetAgentProfileOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_by: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) organizational_aggregation_configuration: ::std::option::Option<crate::types::OrganizationalAggregationConfiguration>,
     _request_id: Option<String>,
 }
 impl GetAgentProfileOutputBuilder {
@@ -238,19 +255,19 @@ impl GetAgentProfileOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_pillars`](Self::set_pillars).
     ///
-    /// <p>The Well-Architected Tool Framework pillars associated with the profile.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars associated with the profile. Not present for basic profiles.</p>
     pub fn pillars(mut self, input: crate::types::Pillar) -> Self {
         let mut v = self.pillars.unwrap_or_default();
         v.push(input);
         self.pillars = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Well-Architected Tool Framework pillars associated with the profile.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars associated with the profile. Not present for basic profiles.</p>
     pub fn set_pillars(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Pillar>>) -> Self {
         self.pillars = input;
         self
     }
-    /// <p>The Well-Architected Tool Framework pillars associated with the profile.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars associated with the profile. Not present for basic profiles.</p>
     pub fn get_pillars(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Pillar>> {
         &self.pillars
     }
@@ -268,18 +285,31 @@ impl GetAgentProfileOutputBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection
     }
-    /// <p>The ARN of the IAM execution role.</p>
-    /// This field is required.
+    /// <p>The type of the profile.</p>
+    pub fn profile_type(mut self, input: crate::types::ProfileType) -> Self {
+        self.profile_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the profile.</p>
+    pub fn set_profile_type(mut self, input: ::std::option::Option<crate::types::ProfileType>) -> Self {
+        self.profile_type = input;
+        self
+    }
+    /// <p>The type of the profile.</p>
+    pub fn get_profile_type(&self) -> &::std::option::Option<crate::types::ProfileType> {
+        &self.profile_type
+    }
+    /// <p>The ARN of the IAM execution role. Not present for basic profiles.</p>
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM execution role.</p>
+    /// <p>The ARN of the IAM execution role. Not present for basic profiles.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
-    /// <p>The ARN of the IAM execution role.</p>
+    /// <p>The ARN of the IAM execution role. Not present for basic profiles.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role_arn
     }
@@ -287,19 +317,19 @@ impl GetAgentProfileOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_aggregation_configuration`](Self::set_aggregation_configuration).
     ///
-    /// <p>The aggregation configuration.</p>
+    /// <p>The aggregation configuration. Not present for basic profiles.</p>
     pub fn aggregation_configuration(mut self, input: crate::types::AggregationConfiguration) -> Self {
         let mut v = self.aggregation_configuration.unwrap_or_default();
         v.push(input);
         self.aggregation_configuration = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The aggregation configuration.</p>
+    /// <p>The aggregation configuration. Not present for basic profiles.</p>
     pub fn set_aggregation_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregationConfiguration>>) -> Self {
         self.aggregation_configuration = input;
         self
     }
-    /// <p>The aggregation configuration.</p>
+    /// <p>The aggregation configuration. Not present for basic profiles.</p>
     pub fn get_aggregation_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregationConfiguration>> {
         &self.aggregation_configuration
     }
@@ -447,6 +477,23 @@ impl GetAgentProfileOutputBuilder {
     pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_at
     }
+    /// <p>The organizational monitoring boundary. Present only for organizational profiles.</p>
+    pub fn organizational_aggregation_configuration(mut self, input: crate::types::OrganizationalAggregationConfiguration) -> Self {
+        self.organizational_aggregation_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The organizational monitoring boundary. Present only for organizational profiles.</p>
+    pub fn set_organizational_aggregation_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::OrganizationalAggregationConfiguration>,
+    ) -> Self {
+        self.organizational_aggregation_configuration = input;
+        self
+    }
+    /// <p>The organizational monitoring boundary. Present only for organizational profiles.</p>
+    pub fn get_organizational_aggregation_configuration(&self) -> &::std::option::Option<crate::types::OrganizationalAggregationConfiguration> {
+        &self.organizational_aggregation_configuration
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -459,9 +506,6 @@ impl GetAgentProfileOutputBuilder {
     /// Consumes the builder and constructs a [`GetAgentProfileOutput`](crate::operation::get_agent_profile::GetAgentProfileOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::operation::get_agent_profile::builders::GetAgentProfileOutputBuilder::name)
-    /// - [`pillars`](crate::operation::get_agent_profile::builders::GetAgentProfileOutputBuilder::pillars)
-    /// - [`execution_role_arn`](crate::operation::get_agent_profile::builders::GetAgentProfileOutputBuilder::execution_role_arn)
-    /// - [`aggregation_configuration`](crate::operation::get_agent_profile::builders::GetAgentProfileOutputBuilder::aggregation_configuration)
     /// - [`arn`](crate::operation::get_agent_profile::builders::GetAgentProfileOutputBuilder::arn)
     /// - [`created_by`](crate::operation::get_agent_profile::builders::GetAgentProfileOutputBuilder::created_by)
     /// - [`created_at`](crate::operation::get_agent_profile::builders::GetAgentProfileOutputBuilder::created_at)
@@ -478,25 +522,11 @@ impl GetAgentProfileOutputBuilder {
             display_name: self.display_name,
             description: self.description,
             business_overview: self.business_overview,
-            pillars: self.pillars.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pillars",
-                    "pillars was not specified but it is required when building GetAgentProfileOutput",
-                )
-            })?,
+            pillars: self.pillars,
             deletion_protection: self.deletion_protection.unwrap_or(true),
-            execution_role_arn: self.execution_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "execution_role_arn",
-                    "execution_role_arn was not specified but it is required when building GetAgentProfileOutput",
-                )
-            })?,
-            aggregation_configuration: self.aggregation_configuration.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aggregation_configuration",
-                    "aggregation_configuration was not specified but it is required when building GetAgentProfileOutput",
-                )
-            })?,
+            profile_type: self.profile_type,
+            execution_role_arn: self.execution_role_arn,
+            aggregation_configuration: self.aggregation_configuration,
             arn: self.arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
@@ -521,6 +551,7 @@ impl GetAgentProfileOutputBuilder {
             })?,
             last_modified_by: self.last_modified_by,
             last_modified_at: self.last_modified_at,
+            organizational_aggregation_configuration: self.organizational_aggregation_configuration,
             _request_id: self._request_id,
         })
     }
@@ -534,6 +565,7 @@ impl ::std::fmt::Debug for GetAgentProfileOutputBuilder {
         formatter.field("business_overview", &"*** Sensitive Data Redacted ***");
         formatter.field("pillars", &self.pillars);
         formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("profile_type", &self.profile_type);
         formatter.field("execution_role_arn", &self.execution_role_arn);
         formatter.field("aggregation_configuration", &self.aggregation_configuration);
         formatter.field("arn", &self.arn);
@@ -545,6 +577,7 @@ impl ::std::fmt::Debug for GetAgentProfileOutputBuilder {
         formatter.field("created_at", &self.created_at);
         formatter.field("last_modified_by", &self.last_modified_by);
         formatter.field("last_modified_at", &self.last_modified_at);
+        formatter.field("organizational_aggregation_configuration", &self.organizational_aggregation_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

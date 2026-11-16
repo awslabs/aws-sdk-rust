@@ -8,6 +8,8 @@ pub struct MedicalScribePostStreamActionSettings {
     pub output_s3_uri: ::std::string::String,
     /// <p>Settings for clinical note generation</p>
     pub clinical_note_generation_settings: ::std::option::Option<crate::types::ClinicalNoteGenerationSettings>,
+    /// <p>Settings for medical code generation. Medical code generation is in preview release and is subject to change.</p>
+    pub medical_code_generation_settings: ::std::option::Option<crate::types::MedicalCodeGenerationSettings>,
 }
 impl MedicalScribePostStreamActionSettings {
     /// <p></p>
@@ -18,6 +20,10 @@ impl MedicalScribePostStreamActionSettings {
     /// <p>Settings for clinical note generation</p>
     pub fn clinical_note_generation_settings(&self) -> ::std::option::Option<&crate::types::ClinicalNoteGenerationSettings> {
         self.clinical_note_generation_settings.as_ref()
+    }
+    /// <p>Settings for medical code generation. Medical code generation is in preview release and is subject to change.</p>
+    pub fn medical_code_generation_settings(&self) -> ::std::option::Option<&crate::types::MedicalCodeGenerationSettings> {
+        self.medical_code_generation_settings.as_ref()
     }
 }
 impl MedicalScribePostStreamActionSettings {
@@ -33,6 +39,7 @@ impl MedicalScribePostStreamActionSettings {
 pub struct MedicalScribePostStreamActionSettingsBuilder {
     pub(crate) output_s3_uri: ::std::option::Option<::std::string::String>,
     pub(crate) clinical_note_generation_settings: ::std::option::Option<crate::types::ClinicalNoteGenerationSettings>,
+    pub(crate) medical_code_generation_settings: ::std::option::Option<crate::types::MedicalCodeGenerationSettings>,
 }
 impl MedicalScribePostStreamActionSettingsBuilder {
     /// <p></p>
@@ -65,6 +72,20 @@ impl MedicalScribePostStreamActionSettingsBuilder {
     pub fn get_clinical_note_generation_settings(&self) -> &::std::option::Option<crate::types::ClinicalNoteGenerationSettings> {
         &self.clinical_note_generation_settings
     }
+    /// <p>Settings for medical code generation. Medical code generation is in preview release and is subject to change.</p>
+    pub fn medical_code_generation_settings(mut self, input: crate::types::MedicalCodeGenerationSettings) -> Self {
+        self.medical_code_generation_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings for medical code generation. Medical code generation is in preview release and is subject to change.</p>
+    pub fn set_medical_code_generation_settings(mut self, input: ::std::option::Option<crate::types::MedicalCodeGenerationSettings>) -> Self {
+        self.medical_code_generation_settings = input;
+        self
+    }
+    /// <p>Settings for medical code generation. Medical code generation is in preview release and is subject to change.</p>
+    pub fn get_medical_code_generation_settings(&self) -> &::std::option::Option<crate::types::MedicalCodeGenerationSettings> {
+        &self.medical_code_generation_settings
+    }
     /// Consumes the builder and constructs a [`MedicalScribePostStreamActionSettings`](crate::types::MedicalScribePostStreamActionSettings).
     /// This method will fail if any of the following fields are not set:
     /// - [`output_s3_uri`](crate::types::builders::MedicalScribePostStreamActionSettingsBuilder::output_s3_uri)
@@ -79,6 +100,7 @@ impl MedicalScribePostStreamActionSettingsBuilder {
                 )
             })?,
             clinical_note_generation_settings: self.clinical_note_generation_settings,
+            medical_code_generation_settings: self.medical_code_generation_settings,
         })
     }
 }

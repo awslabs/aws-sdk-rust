@@ -150,4 +150,18 @@ impl DescribeEntityAggregatesForOrganizationFluentBuilder {
     pub fn get_aws_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_aws_account_ids()
     }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn filter(mut self, input: crate::types::OrganizationEntityAggregateFilter) -> Self {
+        self.inner = self.inner.filter(input);
+        self
+    }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::OrganizationEntityAggregateFilter>) -> Self {
+        self.inner = self.inner.set_filter(input);
+        self
+    }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::OrganizationEntityAggregateFilter> {
+        self.inner.get_filter()
+    }
 }

@@ -142,17 +142,42 @@ impl RejectVpcEndpointConnectionsFluentBuilder {
     /// To override the contents of this collection use [`set_vpc_endpoint_ids`](Self::set_vpc_endpoint_ids).
     ///
     /// <p>The IDs of the VPC endpoints.</p>
+    /// <p>You must specify either <code>VpcEndpointIds</code> or <code>TransitGatewayAttachmentIds</code>, but not both.</p>
     pub fn vpc_endpoint_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_endpoint_ids(input.into());
         self
     }
     /// <p>The IDs of the VPC endpoints.</p>
+    /// <p>You must specify either <code>VpcEndpointIds</code> or <code>TransitGatewayAttachmentIds</code>, but not both.</p>
     pub fn set_vpc_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_endpoint_ids(input);
         self
     }
     /// <p>The IDs of the VPC endpoints.</p>
+    /// <p>You must specify either <code>VpcEndpointIds</code> or <code>TransitGatewayAttachmentIds</code>, but not both.</p>
     pub fn get_vpc_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_endpoint_ids()
+    }
+    ///
+    /// Appends an item to `TransitGatewayAttachmentIds`.
+    ///
+    /// To override the contents of this collection use [`set_transit_gateway_attachment_ids`](Self::set_transit_gateway_attachment_ids).
+    ///
+    /// <p>The IDs of the transit gateway attachments to reject. This parameter is supported only for Gateway Load Balancer endpoint services.</p>
+    /// <p>You must specify either <code>VpcEndpointIds</code> or <code>TransitGatewayAttachmentIds</code>, but not both.</p>
+    pub fn transit_gateway_attachment_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.transit_gateway_attachment_ids(input.into());
+        self
+    }
+    /// <p>The IDs of the transit gateway attachments to reject. This parameter is supported only for Gateway Load Balancer endpoint services.</p>
+    /// <p>You must specify either <code>VpcEndpointIds</code> or <code>TransitGatewayAttachmentIds</code>, but not both.</p>
+    pub fn set_transit_gateway_attachment_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_transit_gateway_attachment_ids(input);
+        self
+    }
+    /// <p>The IDs of the transit gateway attachments to reject. This parameter is supported only for Gateway Load Balancer endpoint services.</p>
+    /// <p>You must specify either <code>VpcEndpointIds</code> or <code>TransitGatewayAttachmentIds</code>, but not both.</p>
+    pub fn get_transit_gateway_attachment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_transit_gateway_attachment_ids()
     }
 }

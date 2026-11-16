@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct QueryVectorsOutput {
-    /// <p>The vectors in the approximate nearest neighbor search.</p>
+    /// <p>The matching vector results in ranked order. Results are ranked by vector distance for a vector-only search, by BM25 relevance for a full-text-only search, and by RRF score for a hybrid search.</p>
     pub vectors: ::std::vec::Vec<crate::types::QueryOutputVector>,
     /// <p>The distance metric that was used for the similarity search calculation. This is the same distance metric that was configured for the vector index when it was created.</p>
     pub distance_metric: ::std::option::Option<crate::types::DistanceMetric>,
@@ -12,7 +12,7 @@ pub struct QueryVectorsOutput {
     _request_id: Option<String>,
 }
 impl QueryVectorsOutput {
-    /// <p>The vectors in the approximate nearest neighbor search.</p>
+    /// <p>The matching vector results in ranked order. Results are ranked by vector distance for a vector-only search, by BM25 relevance for a full-text-only search, and by RRF score for a hybrid search.</p>
     pub fn vectors(&self) -> &[crate::types::QueryOutputVector] {
         use std::ops::Deref;
         self.vectors.deref()
@@ -52,19 +52,19 @@ impl QueryVectorsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_vectors`](Self::set_vectors).
     ///
-    /// <p>The vectors in the approximate nearest neighbor search.</p>
+    /// <p>The matching vector results in ranked order. Results are ranked by vector distance for a vector-only search, by BM25 relevance for a full-text-only search, and by RRF score for a hybrid search.</p>
     pub fn vectors(mut self, input: crate::types::QueryOutputVector) -> Self {
         let mut v = self.vectors.unwrap_or_default();
         v.push(input);
         self.vectors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The vectors in the approximate nearest neighbor search.</p>
+    /// <p>The matching vector results in ranked order. Results are ranked by vector distance for a vector-only search, by BM25 relevance for a full-text-only search, and by RRF score for a hybrid search.</p>
     pub fn set_vectors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryOutputVector>>) -> Self {
         self.vectors = input;
         self
     }
-    /// <p>The vectors in the approximate nearest neighbor search.</p>
+    /// <p>The matching vector results in ranked order. Results are ranked by vector distance for a vector-only search, by BM25 relevance for a full-text-only search, and by RRF score for a hybrid search.</p>
     pub fn get_vectors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryOutputVector>> {
         &self.vectors
     }

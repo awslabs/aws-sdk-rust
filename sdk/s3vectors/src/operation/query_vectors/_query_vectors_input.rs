@@ -11,7 +11,7 @@ pub struct QueryVectorsInput {
     pub index_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of results to return for each query.</p>
     pub top_k: ::std::option::Option<i32>,
-    /// <p>The query vector. Ensure that the query vector has the same dimension as the dimension of the vector index that's being queried. For example, if your vector index contains vectors with 384 dimensions, your query vector must also have 384 dimensions.</p>
+    /// <p>The query vector for vector similarity search. The query vector must have the same dimension as the vector index. For example, if the vector index has 384 dimensions, the query vector must also have 384 dimensions. You can omit this parameter when you supply <code>queryTexts</code> to perform a full-text-only search. A request must include <code>queryVector</code>, <code>queryTexts</code>, or both.</p>
     pub query_vector: ::std::option::Option<crate::types::VectorData>,
     /// <p>Metadata filter to apply during the query. For more information about metadata keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-metadata-filtering.html">Metadata filtering</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub filter: ::std::option::Option<::aws_smithy_types::Document>,
@@ -28,6 +28,10 @@ pub struct QueryVectorsInput {
     pub return_metadata: ::std::option::Option<bool>,
     /// <p>Indicates whether to include the computed distance in the response. The default value is <code>false</code>.</p>
     pub return_distance: ::std::option::Option<bool>,
+    /// <p>Full-text queries for searchable metadata keys. Omit <code>queryVector</code> to run a full-text-only search, or provide both fields to run a hybrid search. Each entry must target a distinct searchable metadata key.</p>
+    pub query_texts: ::std::option::Option<::std::vec::Vec<crate::types::QueryText>>,
+    /// <p>Indicates whether to include relevance scores in the response. Full-text-only results can include BM25 scores. Hybrid results can also include a Reciprocal Rank Fusion (RRF) score and vector distance. This setting doesn't add scores to vector-only requests. The default value is <code>false</code>.</p>
+    pub return_scores: ::std::option::Option<bool>,
     /// <p>Pagination token from a previous request. The value of this field is empty for an initial request.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -48,7 +52,7 @@ impl QueryVectorsInput {
     pub fn top_k(&self) -> ::std::option::Option<i32> {
         self.top_k
     }
-    /// <p>The query vector. Ensure that the query vector has the same dimension as the dimension of the vector index that's being queried. For example, if your vector index contains vectors with 384 dimensions, your query vector must also have 384 dimensions.</p>
+    /// <p>The query vector for vector similarity search. The query vector must have the same dimension as the vector index. For example, if the vector index has 384 dimensions, the query vector must also have 384 dimensions. You can omit this parameter when you supply <code>queryTexts</code> to perform a full-text-only search. A request must include <code>queryVector</code>, <code>queryTexts</code>, or both.</p>
     pub fn query_vector(&self) -> ::std::option::Option<&crate::types::VectorData> {
         self.query_vector.as_ref()
     }
@@ -75,6 +79,16 @@ impl QueryVectorsInput {
     pub fn return_distance(&self) -> ::std::option::Option<bool> {
         self.return_distance
     }
+    /// <p>Full-text queries for searchable metadata keys. Omit <code>queryVector</code> to run a full-text-only search, or provide both fields to run a hybrid search. Each entry must target a distinct searchable metadata key.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.query_texts.is_none()`.
+    pub fn query_texts(&self) -> &[crate::types::QueryText] {
+        self.query_texts.as_deref().unwrap_or_default()
+    }
+    /// <p>Indicates whether to include relevance scores in the response. Full-text-only results can include BM25 scores. Hybrid results can also include a Reciprocal Rank Fusion (RRF) score and vector distance. This setting doesn't add scores to vector-only requests. The default value is <code>false</code>.</p>
+    pub fn return_scores(&self) -> ::std::option::Option<bool> {
+        self.return_scores
+    }
     /// <p>Pagination token from a previous request. The value of this field is empty for an initial request.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
@@ -100,6 +114,8 @@ pub struct QueryVectorsInputBuilder {
     pub(crate) query_mode: ::std::option::Option<crate::types::IndexMode>,
     pub(crate) return_metadata: ::std::option::Option<bool>,
     pub(crate) return_distance: ::std::option::Option<bool>,
+    pub(crate) query_texts: ::std::option::Option<::std::vec::Vec<crate::types::QueryText>>,
+    pub(crate) return_scores: ::std::option::Option<bool>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl QueryVectorsInputBuilder {
@@ -160,18 +176,17 @@ impl QueryVectorsInputBuilder {
     pub fn get_top_k(&self) -> &::std::option::Option<i32> {
         &self.top_k
     }
-    /// <p>The query vector. Ensure that the query vector has the same dimension as the dimension of the vector index that's being queried. For example, if your vector index contains vectors with 384 dimensions, your query vector must also have 384 dimensions.</p>
-    /// This field is required.
+    /// <p>The query vector for vector similarity search. The query vector must have the same dimension as the vector index. For example, if the vector index has 384 dimensions, the query vector must also have 384 dimensions. You can omit this parameter when you supply <code>queryTexts</code> to perform a full-text-only search. A request must include <code>queryVector</code>, <code>queryTexts</code>, or both.</p>
     pub fn query_vector(mut self, input: crate::types::VectorData) -> Self {
         self.query_vector = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The query vector. Ensure that the query vector has the same dimension as the dimension of the vector index that's being queried. For example, if your vector index contains vectors with 384 dimensions, your query vector must also have 384 dimensions.</p>
+    /// <p>The query vector for vector similarity search. The query vector must have the same dimension as the vector index. For example, if the vector index has 384 dimensions, the query vector must also have 384 dimensions. You can omit this parameter when you supply <code>queryTexts</code> to perform a full-text-only search. A request must include <code>queryVector</code>, <code>queryTexts</code>, or both.</p>
     pub fn set_query_vector(mut self, input: ::std::option::Option<crate::types::VectorData>) -> Self {
         self.query_vector = input;
         self
     }
-    /// <p>The query vector. Ensure that the query vector has the same dimension as the dimension of the vector index that's being queried. For example, if your vector index contains vectors with 384 dimensions, your query vector must also have 384 dimensions.</p>
+    /// <p>The query vector for vector similarity search. The query vector must have the same dimension as the vector index. For example, if the vector index has 384 dimensions, the query vector must also have 384 dimensions. You can omit this parameter when you supply <code>queryTexts</code> to perform a full-text-only search. A request must include <code>queryVector</code>, <code>queryTexts</code>, or both.</p>
     pub fn get_query_vector(&self) -> &::std::option::Option<crate::types::VectorData> {
         &self.query_vector
     }
@@ -252,6 +267,40 @@ impl QueryVectorsInputBuilder {
     pub fn get_return_distance(&self) -> &::std::option::Option<bool> {
         &self.return_distance
     }
+    /// Appends an item to `query_texts`.
+    ///
+    /// To override the contents of this collection use [`set_query_texts`](Self::set_query_texts).
+    ///
+    /// <p>Full-text queries for searchable metadata keys. Omit <code>queryVector</code> to run a full-text-only search, or provide both fields to run a hybrid search. Each entry must target a distinct searchable metadata key.</p>
+    pub fn query_texts(mut self, input: crate::types::QueryText) -> Self {
+        let mut v = self.query_texts.unwrap_or_default();
+        v.push(input);
+        self.query_texts = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Full-text queries for searchable metadata keys. Omit <code>queryVector</code> to run a full-text-only search, or provide both fields to run a hybrid search. Each entry must target a distinct searchable metadata key.</p>
+    pub fn set_query_texts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryText>>) -> Self {
+        self.query_texts = input;
+        self
+    }
+    /// <p>Full-text queries for searchable metadata keys. Omit <code>queryVector</code> to run a full-text-only search, or provide both fields to run a hybrid search. Each entry must target a distinct searchable metadata key.</p>
+    pub fn get_query_texts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryText>> {
+        &self.query_texts
+    }
+    /// <p>Indicates whether to include relevance scores in the response. Full-text-only results can include BM25 scores. Hybrid results can also include a Reciprocal Rank Fusion (RRF) score and vector distance. This setting doesn't add scores to vector-only requests. The default value is <code>false</code>.</p>
+    pub fn return_scores(mut self, input: bool) -> Self {
+        self.return_scores = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether to include relevance scores in the response. Full-text-only results can include BM25 scores. Hybrid results can also include a Reciprocal Rank Fusion (RRF) score and vector distance. This setting doesn't add scores to vector-only requests. The default value is <code>false</code>.</p>
+    pub fn set_return_scores(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.return_scores = input;
+        self
+    }
+    /// <p>Indicates whether to include relevance scores in the response. Full-text-only results can include BM25 scores. Hybrid results can also include a Reciprocal Rank Fusion (RRF) score and vector distance. This setting doesn't add scores to vector-only requests. The default value is <code>false</code>.</p>
+    pub fn get_return_scores(&self) -> &::std::option::Option<bool> {
+        &self.return_scores
+    }
     /// <p>Pagination token from a previous request. The value of this field is empty for an initial request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -280,6 +329,8 @@ impl QueryVectorsInputBuilder {
             query_mode: self.query_mode,
             return_metadata: self.return_metadata,
             return_distance: self.return_distance,
+            query_texts: self.query_texts,
+            return_scores: self.return_scores,
             next_token: self.next_token,
         })
     }

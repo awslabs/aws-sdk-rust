@@ -12,6 +12,7 @@
 /// ```text
 /// # let routingstrategy = unimplemented!();
 /// match routingstrategy {
+///     RoutingStrategy::KvAware => { /* ... */ },
 ///     RoutingStrategy::LeastOutstandingRequests => { /* ... */ },
 ///     RoutingStrategy::PrefixAware => { /* ... */ },
 ///     RoutingStrategy::Random => { /* ... */ },
@@ -44,6 +45,8 @@
 )]
 pub enum RoutingStrategy {
     #[allow(missing_docs)] // documentation missing in model
+    KvAware,
+    #[allow(missing_docs)] // documentation missing in model
     LeastOutstandingRequests,
     #[allow(missing_docs)] // documentation missing in model
     PrefixAware,
@@ -56,6 +59,7 @@ pub enum RoutingStrategy {
 impl ::std::convert::From<&str> for RoutingStrategy {
     fn from(s: &str) -> Self {
         match s {
+            "KV_AWARE" => RoutingStrategy::KvAware,
             "LEAST_OUTSTANDING_REQUESTS" => RoutingStrategy::LeastOutstandingRequests,
             "PREFIX_AWARE" => RoutingStrategy::PrefixAware,
             "RANDOM" => RoutingStrategy::Random,
@@ -74,6 +78,7 @@ impl RoutingStrategy {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RoutingStrategy::KvAware => "KV_AWARE",
             RoutingStrategy::LeastOutstandingRequests => "LEAST_OUTSTANDING_REQUESTS",
             RoutingStrategy::PrefixAware => "PREFIX_AWARE",
             RoutingStrategy::Random => "RANDOM",
@@ -82,7 +87,7 @@ impl RoutingStrategy {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["LEAST_OUTSTANDING_REQUESTS", "PREFIX_AWARE", "RANDOM"]
+        &["KV_AWARE", "LEAST_OUTSTANDING_REQUESTS", "PREFIX_AWARE", "RANDOM"]
     }
 }
 impl ::std::convert::AsRef<str> for RoutingStrategy {
@@ -105,6 +110,7 @@ impl RoutingStrategy {
 impl ::std::fmt::Display for RoutingStrategy {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RoutingStrategy::KvAware => write!(f, "KV_AWARE"),
             RoutingStrategy::LeastOutstandingRequests => write!(f, "LEAST_OUTSTANDING_REQUESTS"),
             RoutingStrategy::PrefixAware => write!(f, "PREFIX_AWARE"),
             RoutingStrategy::Random => write!(f, "RANDOM"),

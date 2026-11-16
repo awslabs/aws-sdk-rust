@@ -79,6 +79,26 @@ pub(crate) fn reflens_describe_service_lifecycle_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_describe_tags_output_output_next_token(
+    input: &crate::operation::describe_tags::DescribeTagsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_describe_tags_for_organization_output_output_next_token(
+    input: &crate::operation::describe_tags_for_organization::DescribeTagsForOrganizationOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_describe_affected_accounts_for_organization_output_output_affected_accounts(
     input: crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
@@ -132,5 +152,19 @@ pub(crate) fn lens_describe_service_lifecycle_output_output_service_lifecycles(
     input: crate::operation::describe_service_lifecycle::DescribeServiceLifecycleOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ServiceLifecycle>> {
     let input = input.service_lifecycles?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_tags_output_output_tags(
+    input: crate::operation::describe_tags::DescribeTagsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AccountTag>> {
+    let input = input.tags?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_describe_tags_for_organization_output_output_tags(
+    input: crate::operation::describe_tags_for_organization::DescribeTagsForOrganizationOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::OrganizationTag>> {
+    let input = input.tags?;
     ::std::option::Option::Some(input)
 }

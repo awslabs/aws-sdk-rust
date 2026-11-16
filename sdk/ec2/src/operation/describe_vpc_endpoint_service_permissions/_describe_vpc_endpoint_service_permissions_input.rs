@@ -10,6 +10,8 @@ pub struct DescribeVpcEndpointServicePermissionsInput {
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
+    /// <p><code>permission-type</code> - The permission type (<code>vpc-endpoint</code> | <code>transit-gateway-attachment</code>).</p></li>
+    /// <li>
     /// <p><code>principal</code> - The ARN of the principal.</p></li>
     /// <li>
     /// <p><code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p></li>
@@ -31,6 +33,8 @@ impl DescribeVpcEndpointServicePermissionsInput {
     }
     /// <p>The filters.</p>
     /// <ul>
+    /// <li>
+    /// <p><code>permission-type</code> - The permission type (<code>vpc-endpoint</code> | <code>transit-gateway-attachment</code>).</p></li>
     /// <li>
     /// <p><code>principal</code> - The ARN of the principal.</p></li>
     /// <li>
@@ -104,6 +108,8 @@ impl DescribeVpcEndpointServicePermissionsInputBuilder {
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
+    /// <p><code>permission-type</code> - The permission type (<code>vpc-endpoint</code> | <code>transit-gateway-attachment</code>).</p></li>
+    /// <li>
     /// <p><code>principal</code> - The ARN of the principal.</p></li>
     /// <li>
     /// <p><code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p></li>
@@ -117,6 +123,8 @@ impl DescribeVpcEndpointServicePermissionsInputBuilder {
     /// <p>The filters.</p>
     /// <ul>
     /// <li>
+    /// <p><code>permission-type</code> - The permission type (<code>vpc-endpoint</code> | <code>transit-gateway-attachment</code>).</p></li>
+    /// <li>
     /// <p><code>principal</code> - The ARN of the principal.</p></li>
     /// <li>
     /// <p><code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p></li>
@@ -127,6 +135,8 @@ impl DescribeVpcEndpointServicePermissionsInputBuilder {
     }
     /// <p>The filters.</p>
     /// <ul>
+    /// <li>
+    /// <p><code>permission-type</code> - The permission type (<code>vpc-endpoint</code> | <code>transit-gateway-attachment</code>).</p></li>
     /// <li>
     /// <p><code>principal</code> - The ARN of the principal.</p></li>
     /// <li>

@@ -40,23 +40,23 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The origin system that produced a recommendation.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RecommendationSource {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Recommendation sourced from Amazon CloudWatch metrics analysis.</p>
     Cloudwatch,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Recommendation sourced from Amazon Web Services Cost Explorer analysis.</p>
     CostExplorer,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Recommendation sourced from customer infrastructure-as-code analysis.</p>
     CustomerIac,
     #[allow(missing_docs)] // documentation missing in model
     TrustedAdvisor,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Recommendation sourced from Well-Architected Agent.</p>
     WellArchitectedAgent,
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>Recommendation sourced from Well-Architected Tool.</p>
     WellArchitectedTool,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

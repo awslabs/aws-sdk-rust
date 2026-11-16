@@ -50,12 +50,31 @@ pub(crate) fn get_request_authorization_details_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_request_authorization_policy_output_output_correct_errors(
+    mut builder: crate::operation::get_request_authorization_policy::builders::GetRequestAuthorizationPolicyOutputBuilder,
+) -> crate::operation::get_request_authorization_policy::builders::GetRequestAuthorizationPolicyOutputBuilder {
+    if builder.policy_document.is_none() {
+        builder.policy_document = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn evaluation_correct_errors(mut builder: crate::types::builders::EvaluationBuilder) -> crate::types::builders::EvaluationBuilder {
     if builder.action.is_none() {
         builder.action = Some(Default::default())
     }
     if builder.resource.is_none() {
         builder.resource = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn check_correct_errors(mut builder: crate::types::builders::CheckBuilder) -> crate::types::builders::CheckBuilder {
+    if builder.check_type.is_none() {
+        builder.check_type = "no value was set".parse::<crate::types::CheckType>().ok()
+    }
+    if builder.evaluated_effect.is_none() {
+        builder.evaluated_effect = "no value was set".parse::<crate::types::CheckEffect>().ok()
     }
     builder
 }

@@ -57,6 +57,8 @@ pub(crate) mod shape_delete_registry_policy_input_input;
 
 pub(crate) mod shape_delete_registry_policy_output_output;
 
+pub(crate) mod shape_delete_replication;
+
 pub(crate) mod shape_delete_repository_creation_template_input_input;
 
 pub(crate) mod shape_delete_repository_creation_template_output_output;

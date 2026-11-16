@@ -218,11 +218,29 @@ pub(crate) fn describe_tls_inspection_configuration_output_output_correct_errors
     builder
 }
 
+pub(crate) fn list_context_stores_output_output_correct_errors(
+    mut builder: crate::operation::list_context_stores::builders::ListContextStoresOutputBuilder,
+) -> crate::operation::list_context_stores::builders::ListContextStoresOutputBuilder {
+    if builder.context_stores.is_none() {
+        builder.context_stores = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_firewall_policies_v2_output_output_correct_errors(
     mut builder: crate::operation::list_firewall_policies_v2::builders::ListFirewallPoliciesV2OutputBuilder,
 ) -> crate::operation::list_firewall_policies_v2::builders::ListFirewallPoliciesV2OutputBuilder {
     if builder.firewall_policies_v2.is_none() {
         builder.firewall_policies_v2 = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_resources_in_context_store_output_output_correct_errors(
+    mut builder: crate::operation::list_resources_in_context_store::builders::ListResourcesInContextStoreOutputBuilder,
+) -> crate::operation::list_resources_in_context_store::builders::ListResourcesInContextStoreOutputBuilder {
+    if builder.resource_contexts.is_none() {
+        builder.resource_contexts = Some(Default::default())
     }
     builder
 }
@@ -517,6 +535,25 @@ pub(crate) fn container_monitoring_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn context_store_correct_errors(mut builder: crate::types::builders::ContextStoreBuilder) -> crate::types::builders::ContextStoreBuilder {
+    if builder.context_store_id.is_none() {
+        builder.context_store_id = Some(Default::default())
+    }
+    if builder.context_store_owner_account_id.is_none() {
+        builder.context_store_owner_account_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn resource_context_correct_errors(
+    mut builder: crate::types::builders::ResourceContextBuilder,
+) -> crate::types::builders::ResourceContextBuilder {
+    if builder.public_id.is_none() {
+        builder.public_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn route53_resolved_ip_validation_correct_errors(
     mut builder: crate::types::builders::Route53ResolvedIpValidationBuilder,
 ) -> crate::types::builders::Route53ResolvedIpValidationBuilder {
@@ -670,6 +707,13 @@ pub(crate) fn container_attribute_correct_errors(
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn context_set_correct_errors(mut builder: crate::types::builders::ContextSetBuilder) -> crate::types::builders::ContextSetBuilder {
+    if builder.definition.is_none() {
+        builder.definition = Some(Default::default())
     }
     builder
 }

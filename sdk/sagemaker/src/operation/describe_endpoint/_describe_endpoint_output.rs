@@ -53,6 +53,8 @@ pub struct DescribeEndpointOutput {
     pub shadow_production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>>,
     /// <p>The configuration parameters for utilization metrics.</p>
     pub metrics_config: ::std::option::Option<crate::types::MetricsConfig>,
+    /// <p>The cross-Region traffic cap, if the endpoint configuration sets one.</p>
+    pub cross_region_traffic_config: ::std::option::Option<crate::types::CrossRegionTrafficConfig>,
     _request_id: Option<String>,
 }
 impl DescribeEndpointOutput {
@@ -140,6 +142,10 @@ impl DescribeEndpointOutput {
     pub fn metrics_config(&self) -> ::std::option::Option<&crate::types::MetricsConfig> {
         self.metrics_config.as_ref()
     }
+    /// <p>The cross-Region traffic cap, if the endpoint configuration sets one.</p>
+    pub fn cross_region_traffic_config(&self) -> ::std::option::Option<&crate::types::CrossRegionTrafficConfig> {
+        self.cross_region_traffic_config.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeEndpointOutput {
     fn request_id(&self) -> Option<&str> {
@@ -172,6 +178,7 @@ pub struct DescribeEndpointOutputBuilder {
     pub(crate) explainer_config: ::std::option::Option<crate::types::ExplainerConfig>,
     pub(crate) shadow_production_variants: ::std::option::Option<::std::vec::Vec<crate::types::ProductionVariantSummary>>,
     pub(crate) metrics_config: ::std::option::Option<crate::types::MetricsConfig>,
+    pub(crate) cross_region_traffic_config: ::std::option::Option<crate::types::CrossRegionTrafficConfig>,
     _request_id: Option<String>,
 }
 impl DescribeEndpointOutputBuilder {
@@ -462,6 +469,20 @@ impl DescribeEndpointOutputBuilder {
     pub fn get_metrics_config(&self) -> &::std::option::Option<crate::types::MetricsConfig> {
         &self.metrics_config
     }
+    /// <p>The cross-Region traffic cap, if the endpoint configuration sets one.</p>
+    pub fn cross_region_traffic_config(mut self, input: crate::types::CrossRegionTrafficConfig) -> Self {
+        self.cross_region_traffic_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The cross-Region traffic cap, if the endpoint configuration sets one.</p>
+    pub fn set_cross_region_traffic_config(mut self, input: ::std::option::Option<crate::types::CrossRegionTrafficConfig>) -> Self {
+        self.cross_region_traffic_config = input;
+        self
+    }
+    /// <p>The cross-Region traffic cap, if the endpoint configuration sets one.</p>
+    pub fn get_cross_region_traffic_config(&self) -> &::std::option::Option<crate::types::CrossRegionTrafficConfig> {
+        &self.cross_region_traffic_config
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -489,6 +510,7 @@ impl DescribeEndpointOutputBuilder {
             explainer_config: self.explainer_config,
             shadow_production_variants: self.shadow_production_variants,
             metrics_config: self.metrics_config,
+            cross_region_traffic_config: self.cross_region_traffic_config,
             _request_id: self._request_id,
         }
     }

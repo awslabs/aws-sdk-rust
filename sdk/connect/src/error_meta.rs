@@ -3153,6 +3153,48 @@ impl From<crate::operation::deactivate_evaluation_form::DeactivateEvaluationForm
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_all_entity_sessions::DeleteAllEntitySessionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_all_entity_sessions::DeleteAllEntitySessionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_all_entity_sessions::DeleteAllEntitySessionsError> for Error {
+    fn from(err: crate::operation::delete_all_entity_sessions::DeleteAllEntitySessionsError) -> Self {
+        match err {
+            crate::operation::delete_all_entity_sessions::DeleteAllEntitySessionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_all_entity_sessions::DeleteAllEntitySessionsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::operation::delete_all_entity_sessions::DeleteAllEntitySessionsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::delete_all_entity_sessions::DeleteAllEntitySessionsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::delete_all_entity_sessions::DeleteAllEntitySessionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_all_entity_sessions::DeleteAllEntitySessionsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_all_entity_sessions::DeleteAllEntitySessionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_attached_file::DeleteAttachedFileError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

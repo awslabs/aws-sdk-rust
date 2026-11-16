@@ -7,7 +7,7 @@ pub struct CreateAgentGoalInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the profile to associate the goal with.</p>
     pub profile_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The Well-Architected Tool Framework pillars to associate with this goal.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars to associate with this goal.</p>
     pub pillars: ::std::option::Option<::std::vec::Vec<crate::types::Pillar>>,
     /// <p>The title of the goal.</p>
     pub title: ::std::option::Option<::std::string::String>,
@@ -23,7 +23,7 @@ impl CreateAgentGoalInput {
     pub fn profile_arn(&self) -> ::std::option::Option<&str> {
         self.profile_arn.as_deref()
     }
-    /// <p>The Well-Architected Tool Framework pillars to associate with this goal.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars to associate with this goal.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pillars.is_none()`.
     pub fn pillars(&self) -> &[crate::types::Pillar] {
@@ -100,19 +100,19 @@ impl CreateAgentGoalInputBuilder {
     ///
     /// To override the contents of this collection use [`set_pillars`](Self::set_pillars).
     ///
-    /// <p>The Well-Architected Tool Framework pillars to associate with this goal.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars to associate with this goal.</p>
     pub fn pillars(mut self, input: crate::types::Pillar) -> Self {
         let mut v = self.pillars.unwrap_or_default();
         v.push(input);
         self.pillars = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Well-Architected Tool Framework pillars to associate with this goal.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars to associate with this goal.</p>
     pub fn set_pillars(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Pillar>>) -> Self {
         self.pillars = input;
         self
     }
-    /// <p>The Well-Architected Tool Framework pillars to associate with this goal.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars to associate with this goal.</p>
     pub fn get_pillars(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Pillar>> {
         &self.pillars
     }

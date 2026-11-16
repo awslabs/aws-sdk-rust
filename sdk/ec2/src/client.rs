@@ -457,6 +457,8 @@ mod associate_ipam_byoasn;
 
 mod associate_ipam_resource_discovery;
 
+mod associate_kms_key_id;
+
 mod associate_nat_gateway_address;
 
 mod associate_networking_flex_cost_allocation_policy;
@@ -711,6 +713,8 @@ mod create_transit_gateway_metering_policy_entry;
 
 mod create_transit_gateway_multicast_domain;
 
+mod create_transit_gateway_network_function_attachment;
+
 mod create_transit_gateway_peering_attachment;
 
 mod create_transit_gateway_policy_table;
@@ -937,6 +941,8 @@ mod delete_transit_gateway_metering_policy;
 mod delete_transit_gateway_metering_policy_entry;
 
 mod delete_transit_gateway_multicast_domain;
+
+mod delete_transit_gateway_network_function_attachment;
 
 mod delete_transit_gateway_peering_attachment;
 
@@ -1326,6 +1332,8 @@ mod describe_transit_gateway_metering_policies;
 
 mod describe_transit_gateway_multicast_domains;
 
+mod describe_transit_gateway_network_function_attachments;
+
 mod describe_transit_gateway_peering_attachments;
 
 mod describe_transit_gateway_policy_tables;
@@ -1469,6 +1477,8 @@ mod disassociate_instance_event_window;
 mod disassociate_ipam_byoasn;
 
 mod disassociate_ipam_resource_discovery;
+
+mod disassociate_kms_key_id;
 
 mod disassociate_nat_gateway_address;
 
@@ -1855,6 +1865,8 @@ mod modify_transit_gateway;
 mod modify_transit_gateway_attachment_nat_configuration;
 
 mod modify_transit_gateway_metering_policy;
+
+mod modify_transit_gateway_network_function_attachment;
 
 mod modify_transit_gateway_policy_table_entry;
 

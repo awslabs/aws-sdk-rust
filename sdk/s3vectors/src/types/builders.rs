@@ -9,6 +9,10 @@ pub use crate::types::_metadata_configuration::MetadataConfigurationBuilder;
 
 pub use crate::types::_index::IndexBuilder;
 
+pub use crate::types::_metadata_configuration_add::MetadataConfigurationAddBuilder;
+
+pub use crate::types::_metadata_configuration_delete::MetadataConfigurationDeleteBuilder;
+
 pub use crate::types::_vector_bucket_summary::VectorBucketSummaryBuilder;
 
 pub use crate::types::_index_summary::IndexSummaryBuilder;
@@ -19,4 +23,14 @@ pub use crate::types::_list_output_vector::ListOutputVectorBuilder;
 
 pub use crate::types::_put_input_vector::PutInputVectorBuilder;
 
+pub use crate::types::_query_text::QueryTextBuilder;
+
 pub use crate::types::_query_output_vector::QueryOutputVectorBuilder;
+
+pub use crate::types::_text_search_configuration::TextSearchConfigurationBuilder;
+
+pub use crate::types::_text_search_configuration_key::TextSearchConfigurationKeyBuilder;
+
+pub use crate::types::_query_scores::QueryScoresBuilder;
+
+pub use crate::types::_bm25_score::Bm25ScoreBuilder;

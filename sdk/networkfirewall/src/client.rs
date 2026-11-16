@@ -272,6 +272,8 @@ mod list_analysis_reports;
 
 mod list_container_associations;
 
+mod list_context_stores;
+
 mod list_firewall_policies;
 
 mod list_firewall_policies_v2;
@@ -281,6 +283,8 @@ mod list_firewalls;
 mod list_flow_operation_results;
 
 mod list_flow_operations;
+
+mod list_resources_in_context_store;
 
 mod list_rule_groups;
 

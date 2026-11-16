@@ -82,6 +82,9 @@ pub mod associate_ipam_byoasn;
 /// Types for the `AssociateIpamResourceDiscovery` operation.
 pub mod associate_ipam_resource_discovery;
 
+/// Types for the `AssociateKmsKeyId` operation.
+pub mod associate_kms_key_id;
+
 /// Types for the `AssociateNatGatewayAddress` operation.
 pub mod associate_nat_gateway_address;
 
@@ -463,6 +466,9 @@ pub mod create_transit_gateway_metering_policy_entry;
 /// Types for the `CreateTransitGatewayMulticastDomain` operation.
 pub mod create_transit_gateway_multicast_domain;
 
+/// Types for the `CreateTransitGatewayNetworkFunctionAttachment` operation.
+pub mod create_transit_gateway_network_function_attachment;
+
 /// Types for the `CreateTransitGatewayPeeringAttachment` operation.
 pub mod create_transit_gateway_peering_attachment;
 
@@ -762,6 +768,9 @@ pub mod delete_transit_gateway_metering_policy_entry;
 
 /// Types for the `DeleteTransitGatewayMulticastDomain` operation.
 pub mod delete_transit_gateway_multicast_domain;
+
+/// Types for the `DeleteTransitGatewayNetworkFunctionAttachment` operation.
+pub mod delete_transit_gateway_network_function_attachment;
 
 /// Types for the `DeleteTransitGatewayPeeringAttachment` operation.
 pub mod delete_transit_gateway_peering_attachment;
@@ -1345,6 +1354,9 @@ pub mod describe_transit_gateway_metering_policies;
 /// Types for the `DescribeTransitGatewayMulticastDomains` operation.
 pub mod describe_transit_gateway_multicast_domains;
 
+/// Types for the `DescribeTransitGatewayNetworkFunctionAttachments` operation.
+pub mod describe_transit_gateway_network_function_attachments;
+
 /// Types for the `DescribeTransitGatewayPeeringAttachments` operation.
 pub mod describe_transit_gateway_peering_attachments;
 
@@ -1560,6 +1572,9 @@ pub mod disassociate_ipam_byoasn;
 
 /// Types for the `DisassociateIpamResourceDiscovery` operation.
 pub mod disassociate_ipam_resource_discovery;
+
+/// Types for the `DisassociateKmsKeyId` operation.
+pub mod disassociate_kms_key_id;
 
 /// Types for the `DisassociateNatGatewayAddress` operation.
 pub mod disassociate_nat_gateway_address;
@@ -2139,6 +2154,9 @@ pub mod modify_transit_gateway_attachment_nat_configuration;
 
 /// Types for the `ModifyTransitGatewayMeteringPolicy` operation.
 pub mod modify_transit_gateway_metering_policy;
+
+/// Types for the `ModifyTransitGatewayNetworkFunctionAttachment` operation.
+pub mod modify_transit_gateway_network_function_attachment;
 
 /// Types for the `ModifyTransitGatewayPolicyTableEntry` operation.
 pub mod modify_transit_gateway_policy_table_entry;

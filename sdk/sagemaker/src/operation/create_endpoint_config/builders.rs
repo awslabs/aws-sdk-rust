@@ -351,4 +351,18 @@ impl CreateEndpointConfigFluentBuilder {
     pub fn get_metrics_config(&self) -> &::std::option::Option<crate::types::MetricsConfig> {
         self.inner.get_metrics_config()
     }
+    /// <p>The cross-Region traffic cap for the endpoint. The cap limits the requests per second that the endpoint accepts from inference routers in other Amazon Web Services Regions. If you don't specify it, these requests aren't limited. You can't specify it with serverless variants or with <code>AsyncInferenceConfig</code>. For information about the cross-Region traffic cap, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-router.html#inference-router-cross-region-limit">Limit requests from other Regions</a>.</p>
+    pub fn cross_region_traffic_config(mut self, input: crate::types::CrossRegionTrafficConfig) -> Self {
+        self.inner = self.inner.cross_region_traffic_config(input);
+        self
+    }
+    /// <p>The cross-Region traffic cap for the endpoint. The cap limits the requests per second that the endpoint accepts from inference routers in other Amazon Web Services Regions. If you don't specify it, these requests aren't limited. You can't specify it with serverless variants or with <code>AsyncInferenceConfig</code>. For information about the cross-Region traffic cap, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-router.html#inference-router-cross-region-limit">Limit requests from other Regions</a>.</p>
+    pub fn set_cross_region_traffic_config(mut self, input: ::std::option::Option<crate::types::CrossRegionTrafficConfig>) -> Self {
+        self.inner = self.inner.set_cross_region_traffic_config(input);
+        self
+    }
+    /// <p>The cross-Region traffic cap for the endpoint. The cap limits the requests per second that the endpoint accepts from inference routers in other Amazon Web Services Regions. If you don't specify it, these requests aren't limited. You can't specify it with serverless variants or with <code>AsyncInferenceConfig</code>. For information about the cross-Region traffic cap, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-router.html#inference-router-cross-region-limit">Limit requests from other Regions</a>.</p>
+    pub fn get_cross_region_traffic_config(&self) -> &::std::option::Option<crate::types::CrossRegionTrafficConfig> {
+        self.inner.get_cross_region_traffic_config()
+    }
 }

@@ -138,6 +138,8 @@ impl Client {
 
 mod create_monitor;
 
+mod create_performance_monitor;
+
 mod create_scope;
 
 /// Operation customization and supporting types.
@@ -169,17 +171,27 @@ pub mod customize;
 
 mod delete_monitor;
 
+mod delete_performance_monitor;
+
 mod delete_scope;
 
 mod get_monitor;
 
+mod get_monitor_scope_suggestions;
+
+mod get_performance_monitor;
+
 mod get_query_results_monitor_top_contributors;
+
+mod get_query_results_performance_monitor;
 
 mod get_query_results_workload_insights_top_contributors;
 
 mod get_query_results_workload_insights_top_contributors_data;
 
 mod get_query_status_monitor_top_contributors;
+
+mod get_query_status_performance_monitor;
 
 mod get_query_status_workload_insights_top_contributors;
 
@@ -189,17 +201,23 @@ mod get_scope;
 
 mod list_monitors;
 
+mod list_performance_monitors;
+
 mod list_scopes;
 
 mod list_tags_for_resource;
 
 mod start_query_monitor_top_contributors;
 
+mod start_query_performance_monitor;
+
 mod start_query_workload_insights_top_contributors;
 
 mod start_query_workload_insights_top_contributors_data;
 
 mod stop_query_monitor_top_contributors;
+
+mod stop_query_performance_monitor;
 
 mod stop_query_workload_insights_top_contributors;
 
@@ -210,5 +228,7 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_monitor;
+
+mod update_performance_monitor;
 
 mod update_scope;

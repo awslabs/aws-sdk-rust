@@ -54,6 +54,10 @@ pub struct CreateUserPoolClientInput {
     /// <p><code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p></li>
     /// <li>
     /// <p><code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p></li>
+    /// <li>
+    /// <p><code>ALLOW_TOKEN_EXCHANGE_IMPERSONATION</code> – Use this flow to request <code>GetDerivedToken</code> token exchanges without an <code>ActorToken</code>. The issued token represents the subject user directly.</p></li>
+    /// <li>
+    /// <p><code>ALLOW_TOKEN_EXCHANGE_DELEGATION</code> – Use this flow to request <code>GetDerivedToken</code> token exchanges that include an <code>ActorToken</code>. The issued token carries an <code>act</code> claim that identifies the intermediary acting on the behalf of the subject.</p></li>
     /// </ul>
     /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
     pub explicit_auth_flows: ::std::option::Option<::std::vec::Vec<crate::types::ExplicitAuthFlowsType>>,
@@ -207,6 +211,10 @@ impl CreateUserPoolClientInput {
     /// <p><code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p></li>
     /// <li>
     /// <p><code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p></li>
+    /// <li>
+    /// <p><code>ALLOW_TOKEN_EXCHANGE_IMPERSONATION</code> – Use this flow to request <code>GetDerivedToken</code> token exchanges without an <code>ActorToken</code>. The issued token represents the subject user directly.</p></li>
+    /// <li>
+    /// <p><code>ALLOW_TOKEN_EXCHANGE_DELEGATION</code> – Use this flow to request <code>GetDerivedToken</code> token exchanges that include an <code>ActorToken</code>. The issued token carries an <code>act</code> claim that identifies the intermediary acting on the behalf of the subject.</p></li>
     /// </ul>
     /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
     ///
@@ -607,6 +615,10 @@ impl CreateUserPoolClientInputBuilder {
     /// <p><code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p></li>
     /// <li>
     /// <p><code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p></li>
+    /// <li>
+    /// <p><code>ALLOW_TOKEN_EXCHANGE_IMPERSONATION</code> – Use this flow to request <code>GetDerivedToken</code> token exchanges without an <code>ActorToken</code>. The issued token represents the subject user directly.</p></li>
+    /// <li>
+    /// <p><code>ALLOW_TOKEN_EXCHANGE_DELEGATION</code> – Use this flow to request <code>GetDerivedToken</code> token exchanges that include an <code>ActorToken</code>. The issued token carries an <code>act</code> claim that identifies the intermediary acting on the behalf of the subject.</p></li>
     /// </ul>
     /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
     pub fn explicit_auth_flows(mut self, input: crate::types::ExplicitAuthFlowsType) -> Self {
@@ -633,6 +645,10 @@ impl CreateUserPoolClientInputBuilder {
     /// <p><code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p></li>
     /// <li>
     /// <p><code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p></li>
+    /// <li>
+    /// <p><code>ALLOW_TOKEN_EXCHANGE_IMPERSONATION</code> – Use this flow to request <code>GetDerivedToken</code> token exchanges without an <code>ActorToken</code>. The issued token represents the subject user directly.</p></li>
+    /// <li>
+    /// <p><code>ALLOW_TOKEN_EXCHANGE_DELEGATION</code> – Use this flow to request <code>GetDerivedToken</code> token exchanges that include an <code>ActorToken</code>. The issued token carries an <code>act</code> claim that identifies the intermediary acting on the behalf of the subject.</p></li>
     /// </ul>
     /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
     pub fn set_explicit_auth_flows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExplicitAuthFlowsType>>) -> Self {
@@ -657,6 +673,10 @@ impl CreateUserPoolClientInputBuilder {
     /// <p><code>ALLOW_USER_SRP_AUTH</code>: Enable SRP-based authentication.</p></li>
     /// <li>
     /// <p><code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.</p></li>
+    /// <li>
+    /// <p><code>ALLOW_TOKEN_EXCHANGE_IMPERSONATION</code> – Use this flow to request <code>GetDerivedToken</code> token exchanges without an <code>ActorToken</code>. The issued token represents the subject user directly.</p></li>
+    /// <li>
+    /// <p><code>ALLOW_TOKEN_EXCHANGE_DELEGATION</code> – Use this flow to request <code>GetDerivedToken</code> token exchanges that include an <code>ActorToken</code>. The issued token carries an <code>act</code> claim that identifies the intermediary acting on the behalf of the subject.</p></li>
     /// </ul>
     /// <p>In some environments, you will see the values <code>ADMIN_NO_SRP_AUTH</code>, <code>CUSTOM_AUTH_FLOW_ONLY</code>, or <code>USER_PASSWORD_AUTH</code>. You can't assign these legacy <code>ExplicitAuthFlows</code> values to user pool clients at the same time as values that begin with <code>ALLOW_</code>, like <code>ALLOW_USER_SRP_AUTH</code>.</p>
     pub fn get_explicit_auth_flows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExplicitAuthFlowsType>> {

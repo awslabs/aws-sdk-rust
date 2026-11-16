@@ -55,6 +55,11 @@ where
                                 )?,
                             );
                         }
+                        "ElasticIpConfiguration" => {
+                            builder = builder.set_elastic_ip_configuration(
+                                crate::protocol_serde::shape_elastic_ip_configuration::de_elastic_ip_configuration(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -105,6 +110,12 @@ pub fn ser_network_connector_vpc_egress_configuration(
             }
         }
         array_9.finish();
+    }
+    if let Some(var_11) = &input.elastic_ip_configuration {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("ElasticIpConfiguration").start_object();
+        crate::protocol_serde::shape_elastic_ip_configuration::ser_elastic_ip_configuration(&mut object_12, var_11)?;
+        object_12.finish();
     }
     Ok(())
 }

@@ -3,3 +3,6 @@ pub use ::aws_types::request_id::RequestId;
 
 /// Types for the `GetRequestAuthorizationDetails` operation.
 pub mod get_request_authorization_details;
+
+/// Types for the `GetRequestAuthorizationPolicy` operation.
+pub mod get_request_authorization_policy;

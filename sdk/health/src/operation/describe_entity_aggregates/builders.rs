@@ -127,4 +127,18 @@ impl DescribeEntityAggregatesFluentBuilder {
     pub fn get_event_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_event_arns()
     }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn filter(mut self, input: crate::types::EntityAggregateFilter) -> Self {
+        self.inner = self.inner.filter(input);
+        self
+    }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::EntityAggregateFilter>) -> Self {
+        self.inner = self.inner.set_filter(input);
+        self
+    }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::EntityAggregateFilter> {
+        self.inner.get_filter()
+    }
 }

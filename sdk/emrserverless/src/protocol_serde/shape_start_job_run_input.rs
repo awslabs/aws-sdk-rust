@@ -27,33 +27,39 @@ pub fn ser_start_job_run_input_input(
             ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    if let Some(var_8) = &input.job_driver {
+    if let Some(var_8) = &input.flex_execution {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("jobDriver").start_object();
-        crate::protocol_serde::shape_job_driver::ser_job_driver(&mut object_9, var_8)?;
+        let mut object_9 = object.key("flexExecution").start_object();
+        crate::protocol_serde::shape_flex_execution::ser_flex_execution(&mut object_9, var_8)?;
         object_9.finish();
     }
-    if let Some(var_10) = &input.mode {
-        object.key("mode").string(var_10.as_str());
-    }
-    if let Some(var_11) = &input.name {
-        object.key("name").string(var_11.as_str());
-    }
-    if let Some(var_12) = &input.retry_policy {
+    if let Some(var_10) = &input.job_driver {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("retryPolicy").start_object();
-        crate::protocol_serde::shape_retry_policy::ser_retry_policy(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_11 = object.key("jobDriver").start_object();
+        crate::protocol_serde::shape_job_driver::ser_job_driver(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_14) = &input.tags {
+    if let Some(var_12) = &input.mode {
+        object.key("mode").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.name {
+        object.key("name").string(var_13.as_str());
+    }
+    if let Some(var_14) = &input.retry_policy {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("tags").start_object();
-        for (key_16, value_17) in var_14 {
+        let mut object_15 = object.key("retryPolicy").start_object();
+        crate::protocol_serde::shape_retry_policy::ser_retry_policy(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_17 = object.key("tags").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                object_15.key(key_16.as_str()).string(value_17.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
-        object_15.finish();
+        object_17.finish();
     }
     Ok(())
 }

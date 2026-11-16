@@ -198,4 +198,29 @@ impl ListTableMetadataFluentBuilder {
     pub fn get_work_group(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_work_group()
     }
+    ///
+    /// Appends an item to `AttributesToGet`.
+    ///
+    /// To override the contents of this collection use [`set_attributes_to_get`](Self::set_attributes_to_get).
+    ///
+    /// <p>Specifies the table properties returned by the <code>ListTableMetadata</code> call. This parameter doesn't accept an empty list, and the request must include <code>NAME</code>. The valid combinations of values are <code>NAME</code>, which returns the name of each table, and <code>NAME</code> and <code>TABLE_TYPE</code>, which return the name and table type of each table. The remaining properties are omitted. If you omit this parameter, all table properties are returned.</p>
+    /// <p>Requesting only the properties you need can reduce response time for databases that contain many tables.</p>
+    /// <p>This parameter applies only to the Glue Data Catalog. For other data catalog types, it is ignored.</p>
+    pub fn attributes_to_get(mut self, input: crate::types::TableAttributes) -> Self {
+        self.inner = self.inner.attributes_to_get(input);
+        self
+    }
+    /// <p>Specifies the table properties returned by the <code>ListTableMetadata</code> call. This parameter doesn't accept an empty list, and the request must include <code>NAME</code>. The valid combinations of values are <code>NAME</code>, which returns the name of each table, and <code>NAME</code> and <code>TABLE_TYPE</code>, which return the name and table type of each table. The remaining properties are omitted. If you omit this parameter, all table properties are returned.</p>
+    /// <p>Requesting only the properties you need can reduce response time for databases that contain many tables.</p>
+    /// <p>This parameter applies only to the Glue Data Catalog. For other data catalog types, it is ignored.</p>
+    pub fn set_attributes_to_get(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TableAttributes>>) -> Self {
+        self.inner = self.inner.set_attributes_to_get(input);
+        self
+    }
+    /// <p>Specifies the table properties returned by the <code>ListTableMetadata</code> call. This parameter doesn't accept an empty list, and the request must include <code>NAME</code>. The valid combinations of values are <code>NAME</code>, which returns the name of each table, and <code>NAME</code> and <code>TABLE_TYPE</code>, which return the name and table type of each table. The remaining properties are omitted. If you omit this parameter, all table properties are returned.</p>
+    /// <p>Requesting only the properties you need can reduce response time for databases that contain many tables.</p>
+    /// <p>This parameter applies only to the Glue Data Catalog. For other data catalog types, it is ignored.</p>
+    pub fn get_attributes_to_get(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TableAttributes>> {
+        self.inner.get_attributes_to_get()
+    }
 }

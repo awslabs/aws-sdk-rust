@@ -66,6 +66,24 @@ pub fn de_update_agent_profile_http_error(
             }
             tmp
         }),
+        "ServiceQuotaExceededException" => crate::operation::update_agent_profile::UpdateAgentProfileError::ServiceQuotaExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ServiceQuotaExceededExceptionBuilder::default();
+                output = crate::protocol_serde::shape_service_quota_exceeded_exception::de_service_quota_exceeded_exception_json_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::update_agent_profile::UpdateAgentProfileError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::service_quota_exceeded_exception_correct_errors(output).build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ThrottlingException" => crate::operation::update_agent_profile::UpdateAgentProfileError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -237,9 +255,6 @@ pub(crate) fn de_update_agent_profile(
                 }
                 "pillars" => {
                     builder = builder.set_pillars(crate::protocol_serde::shape_pillars::de_pillars(tokens, _value, depth + 1)?);
-                }
-                "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens, _value, depth + 1)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

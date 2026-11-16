@@ -240,6 +240,13 @@ pub(crate) fn de_create_cluster(
                                 .transpose()?,
                         );
                     }
+                    "metricGroups" => {
+                        builder = builder.set_metric_groups(crate::protocol_serde::shape_metric_group_response_list::de_metric_group_response_list(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?);
+                    }
                     "multiRegionProperties" => {
                         builder = builder.set_multi_region_properties(
                             crate::protocol_serde::shape_multi_region_properties::de_multi_region_properties(tokens, _value, depth + 1)?,

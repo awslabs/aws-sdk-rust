@@ -14,6 +14,9 @@
 /// match jobcategory {
 ///     JobCategory::AgentRft => { /* ... */ },
 ///     JobCategory::AgentRftEvaluation => { /* ... */ },
+///     JobCategory::DataQualityEvaluation => { /* ... */ },
+///     JobCategory::DataTransformation => { /* ... */ },
+///     JobCategory::SyntheticDataGeneration => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +49,12 @@ pub enum JobCategory {
     AgentRft,
     #[allow(missing_docs)] // documentation missing in model
     AgentRftEvaluation,
+    #[allow(missing_docs)] // documentation missing in model
+    DataQualityEvaluation,
+    #[allow(missing_docs)] // documentation missing in model
+    DataTransformation,
+    #[allow(missing_docs)] // documentation missing in model
+    SyntheticDataGeneration,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +64,9 @@ impl ::std::convert::From<&str> for JobCategory {
         match s {
             "AgentRFT" => JobCategory::AgentRft,
             "AgentRFTEvaluation" => JobCategory::AgentRftEvaluation,
+            "DataQualityEvaluation" => JobCategory::DataQualityEvaluation,
+            "DataTransformation" => JobCategory::DataTransformation,
+            "SyntheticDataGeneration" => JobCategory::SyntheticDataGeneration,
             other => JobCategory::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +84,21 @@ impl JobCategory {
         match self {
             JobCategory::AgentRft => "AgentRFT",
             JobCategory::AgentRftEvaluation => "AgentRFTEvaluation",
+            JobCategory::DataQualityEvaluation => "DataQualityEvaluation",
+            JobCategory::DataTransformation => "DataTransformation",
+            JobCategory::SyntheticDataGeneration => "SyntheticDataGeneration",
             JobCategory::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AgentRFT", "AgentRFTEvaluation"]
+        &[
+            "AgentRFT",
+            "AgentRFTEvaluation",
+            "DataQualityEvaluation",
+            "DataTransformation",
+            "SyntheticDataGeneration",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for JobCategory {
@@ -102,6 +123,9 @@ impl ::std::fmt::Display for JobCategory {
         match self {
             JobCategory::AgentRft => write!(f, "AgentRFT"),
             JobCategory::AgentRftEvaluation => write!(f, "AgentRFTEvaluation"),
+            JobCategory::DataQualityEvaluation => write!(f, "DataQualityEvaluation"),
+            JobCategory::DataTransformation => write!(f, "DataTransformation"),
+            JobCategory::SyntheticDataGeneration => write!(f, "SyntheticDataGeneration"),
             JobCategory::Unknown(value) => write!(f, "{value}"),
         }
     }

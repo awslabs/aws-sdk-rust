@@ -215,6 +215,15 @@ pub(crate) fn query_vectors_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_metadata_configuration_output_output_correct_errors(
+    mut builder: crate::operation::update_metadata_configuration::builders::UpdateMetadataConfigurationOutputBuilder,
+) -> crate::operation::update_metadata_configuration::builders::UpdateMetadataConfigurationOutputBuilder {
+    if builder.index_arn.is_none() {
+        builder.index_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn index_correct_errors(mut builder: crate::types::builders::IndexBuilder) -> crate::types::builders::IndexBuilder {
     if builder.vector_bucket_name.is_none() {
         builder.vector_bucket_name = Some(Default::default())
@@ -287,15 +296,6 @@ pub(crate) fn list_output_vector_correct_errors(
     builder
 }
 
-pub(crate) fn metadata_configuration_correct_errors(
-    mut builder: crate::types::builders::MetadataConfigurationBuilder,
-) -> crate::types::builders::MetadataConfigurationBuilder {
-    if builder.non_filterable_metadata_keys.is_none() {
-        builder.non_filterable_metadata_keys = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn query_output_vector_correct_errors(
     mut builder: crate::types::builders::QueryOutputVectorBuilder,
 ) -> crate::types::builders::QueryOutputVectorBuilder {
@@ -328,6 +328,25 @@ pub(crate) fn vector_bucket_summary_correct_errors(
     }
     if builder.creation_time.is_none() {
         builder.creation_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn text_search_configuration_correct_errors(
+    mut builder: crate::types::builders::TextSearchConfigurationBuilder,
+) -> crate::types::builders::TextSearchConfigurationBuilder {
+    if builder.metadata_key.is_none() {
+        builder.metadata_key = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn bm25_score_correct_errors(mut builder: crate::types::builders::Bm25ScoreBuilder) -> crate::types::builders::Bm25ScoreBuilder {
+    if builder.metadata_key.is_none() {
+        builder.metadata_key = Some(Default::default())
+    }
+    if builder.score.is_none() {
+        builder.score = Some(Default::default())
     }
     builder
 }

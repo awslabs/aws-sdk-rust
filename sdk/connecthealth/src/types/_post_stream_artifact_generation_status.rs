@@ -15,6 +15,8 @@
 ///     PostStreamArtifactGenerationStatus::Completed => { /* ... */ },
 ///     PostStreamArtifactGenerationStatus::Failed => { /* ... */ },
 ///     PostStreamArtifactGenerationStatus::InProgress => { /* ... */ },
+///     PostStreamArtifactGenerationStatus::Pending => { /* ... */ },
+///     PostStreamArtifactGenerationStatus::Skipped => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +51,10 @@ pub enum PostStreamArtifactGenerationStatus {
     Failed,
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    Skipped,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +65,8 @@ impl ::std::convert::From<&str> for PostStreamArtifactGenerationStatus {
             "COMPLETED" => PostStreamArtifactGenerationStatus::Completed,
             "FAILED" => PostStreamArtifactGenerationStatus::Failed,
             "IN_PROGRESS" => PostStreamArtifactGenerationStatus::InProgress,
+            "PENDING" => PostStreamArtifactGenerationStatus::Pending,
+            "SKIPPED" => PostStreamArtifactGenerationStatus::Skipped,
             other => PostStreamArtifactGenerationStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +85,14 @@ impl PostStreamArtifactGenerationStatus {
             PostStreamArtifactGenerationStatus::Completed => "COMPLETED",
             PostStreamArtifactGenerationStatus::Failed => "FAILED",
             PostStreamArtifactGenerationStatus::InProgress => "IN_PROGRESS",
+            PostStreamArtifactGenerationStatus::Pending => "PENDING",
+            PostStreamArtifactGenerationStatus::Skipped => "SKIPPED",
             PostStreamArtifactGenerationStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "FAILED", "IN_PROGRESS"]
+        &["COMPLETED", "FAILED", "IN_PROGRESS", "PENDING", "SKIPPED"]
     }
 }
 impl ::std::convert::AsRef<str> for PostStreamArtifactGenerationStatus {
@@ -108,6 +118,8 @@ impl ::std::fmt::Display for PostStreamArtifactGenerationStatus {
             PostStreamArtifactGenerationStatus::Completed => write!(f, "COMPLETED"),
             PostStreamArtifactGenerationStatus::Failed => write!(f, "FAILED"),
             PostStreamArtifactGenerationStatus::InProgress => write!(f, "IN_PROGRESS"),
+            PostStreamArtifactGenerationStatus::Pending => write!(f, "PENDING"),
+            PostStreamArtifactGenerationStatus::Skipped => write!(f, "SKIPPED"),
             PostStreamArtifactGenerationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }

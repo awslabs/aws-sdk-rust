@@ -4,11 +4,17 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `CreateMonitor` operation.
 pub mod create_monitor;
 
+/// Types for the `CreatePerformanceMonitor` operation.
+pub mod create_performance_monitor;
+
 /// Types for the `CreateScope` operation.
 pub mod create_scope;
 
 /// Types for the `DeleteMonitor` operation.
 pub mod delete_monitor;
+
+/// Types for the `DeletePerformanceMonitor` operation.
+pub mod delete_performance_monitor;
 
 /// Types for the `DeleteScope` operation.
 pub mod delete_scope;
@@ -16,8 +22,17 @@ pub mod delete_scope;
 /// Types for the `GetMonitor` operation.
 pub mod get_monitor;
 
+/// Types for the `GetMonitorScopeSuggestions` operation.
+pub mod get_monitor_scope_suggestions;
+
+/// Types for the `GetPerformanceMonitor` operation.
+pub mod get_performance_monitor;
+
 /// Types for the `GetQueryResultsMonitorTopContributors` operation.
 pub mod get_query_results_monitor_top_contributors;
+
+/// Types for the `GetQueryResultsPerformanceMonitor` operation.
+pub mod get_query_results_performance_monitor;
 
 /// Types for the `GetQueryResultsWorkloadInsightsTopContributors` operation.
 pub mod get_query_results_workload_insights_top_contributors;
@@ -27,6 +42,9 @@ pub mod get_query_results_workload_insights_top_contributors_data;
 
 /// Types for the `GetQueryStatusMonitorTopContributors` operation.
 pub mod get_query_status_monitor_top_contributors;
+
+/// Types for the `GetQueryStatusPerformanceMonitor` operation.
+pub mod get_query_status_performance_monitor;
 
 /// Types for the `GetQueryStatusWorkloadInsightsTopContributors` operation.
 pub mod get_query_status_workload_insights_top_contributors;
@@ -40,6 +58,9 @@ pub mod get_scope;
 /// Types for the `ListMonitors` operation.
 pub mod list_monitors;
 
+/// Types for the `ListPerformanceMonitors` operation.
+pub mod list_performance_monitors;
+
 /// Types for the `ListScopes` operation.
 pub mod list_scopes;
 
@@ -49,6 +70,9 @@ pub mod list_tags_for_resource;
 /// Types for the `StartQueryMonitorTopContributors` operation.
 pub mod start_query_monitor_top_contributors;
 
+/// Types for the `StartQueryPerformanceMonitor` operation.
+pub mod start_query_performance_monitor;
+
 /// Types for the `StartQueryWorkloadInsightsTopContributors` operation.
 pub mod start_query_workload_insights_top_contributors;
 
@@ -57,6 +81,9 @@ pub mod start_query_workload_insights_top_contributors_data;
 
 /// Types for the `StopQueryMonitorTopContributors` operation.
 pub mod stop_query_monitor_top_contributors;
+
+/// Types for the `StopQueryPerformanceMonitor` operation.
+pub mod stop_query_performance_monitor;
 
 /// Types for the `StopQueryWorkloadInsightsTopContributors` operation.
 pub mod stop_query_workload_insights_top_contributors;
@@ -72,6 +99,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateMonitor` operation.
 pub mod update_monitor;
+
+/// Types for the `UpdatePerformanceMonitor` operation.
+pub mod update_performance_monitor;
 
 /// Types for the `UpdateScope` operation.
 pub mod update_scope;

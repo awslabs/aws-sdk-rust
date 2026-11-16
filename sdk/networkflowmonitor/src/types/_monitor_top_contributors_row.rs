@@ -68,6 +68,8 @@ pub struct MonitorTopContributorsRow {
     pub remote_subnet_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of a remote VPC.</p>
     pub remote_vpc_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Additional information about the network flow, such as the network that the remote address belongs to and the location of the client.</p>
+    pub additional_flow_info: ::std::option::Option<crate::types::AdditionalFlowInfo>,
 }
 impl MonitorTopContributorsRow {
     /// <p>The IP address of the local resource for a top contributor network flow.</p>
@@ -186,6 +188,10 @@ impl MonitorTopContributorsRow {
     pub fn remote_vpc_arn(&self) -> ::std::option::Option<&str> {
         self.remote_vpc_arn.as_deref()
     }
+    /// <p>Additional information about the network flow, such as the network that the remote address belongs to and the location of the client.</p>
+    pub fn additional_flow_info(&self) -> ::std::option::Option<&crate::types::AdditionalFlowInfo> {
+        self.additional_flow_info.as_ref()
+    }
 }
 impl MonitorTopContributorsRow {
     /// Creates a new builder-style object to manufacture [`MonitorTopContributorsRow`](crate::types::MonitorTopContributorsRow).
@@ -223,6 +229,7 @@ pub struct MonitorTopContributorsRowBuilder {
     pub(crate) remote_instance_arn: ::std::option::Option<::std::string::String>,
     pub(crate) remote_subnet_arn: ::std::option::Option<::std::string::String>,
     pub(crate) remote_vpc_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) additional_flow_info: ::std::option::Option<crate::types::AdditionalFlowInfo>,
 }
 impl MonitorTopContributorsRowBuilder {
     /// <p>The IP address of the local resource for a top contributor network flow.</p>
@@ -623,6 +630,20 @@ impl MonitorTopContributorsRowBuilder {
     pub fn get_remote_vpc_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.remote_vpc_arn
     }
+    /// <p>Additional information about the network flow, such as the network that the remote address belongs to and the location of the client.</p>
+    pub fn additional_flow_info(mut self, input: crate::types::AdditionalFlowInfo) -> Self {
+        self.additional_flow_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Additional information about the network flow, such as the network that the remote address belongs to and the location of the client.</p>
+    pub fn set_additional_flow_info(mut self, input: ::std::option::Option<crate::types::AdditionalFlowInfo>) -> Self {
+        self.additional_flow_info = input;
+        self
+    }
+    /// <p>Additional information about the network flow, such as the network that the remote address belongs to and the location of the client.</p>
+    pub fn get_additional_flow_info(&self) -> &::std::option::Option<crate::types::AdditionalFlowInfo> {
+        &self.additional_flow_info
+    }
     /// Consumes the builder and constructs a [`MonitorTopContributorsRow`](crate::types::MonitorTopContributorsRow).
     pub fn build(self) -> crate::types::MonitorTopContributorsRow {
         crate::types::MonitorTopContributorsRow {
@@ -651,6 +672,7 @@ impl MonitorTopContributorsRowBuilder {
             remote_instance_arn: self.remote_instance_arn,
             remote_subnet_arn: self.remote_subnet_arn,
             remote_vpc_arn: self.remote_vpc_arn,
+            additional_flow_info: self.additional_flow_info,
         }
     }
 }

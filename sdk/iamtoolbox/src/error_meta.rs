@@ -7,7 +7,7 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An unexpected error occurred while processing the request. Try again.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The requested authorization details do not exist in this region or have expired. Verify that the authorization ID from the access denied error message is correct and the call is made in the region where the denial occurred. Ensure that the calling principal belongs to the same account or organization as the original denied request.</p>
+    /// <p>The requested policy or authorization details do not exist in this region or have expired. Verify that the authorization ID from the access denied error message is correct and the call is made in the region where the denial occurred. Ensure that the calling principal belongs to the same account or organization as the original denied request. If you specified a policy URI, verify that it is from the <code>policies</code> list that <code>GetRequestAuthorizationDetails</code> returns for the same authorization ID.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request is malformed or is missing one or more required parameters. Check the request parameters and try again.</p>
     ValidationException(crate::types::error::ValidationException),
@@ -97,6 +97,47 @@ impl From<crate::operation::get_request_authorization_details::GetRequestAuthori
                 Error::ValidationException(inner)
             }
             crate::operation::get_request_authorization_details::GetRequestAuthorizationDetailsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_request_authorization_policy::GetRequestAuthorizationPolicyError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_request_authorization_policy::GetRequestAuthorizationPolicyError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_request_authorization_policy::GetRequestAuthorizationPolicyError> for Error {
+    fn from(err: crate::operation::get_request_authorization_policy::GetRequestAuthorizationPolicyError) -> Self {
+        match err {
+            crate::operation::get_request_authorization_policy::GetRequestAuthorizationPolicyError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_request_authorization_policy::GetRequestAuthorizationPolicyError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_request_authorization_policy::GetRequestAuthorizationPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_request_authorization_policy::GetRequestAuthorizationPolicyError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_request_authorization_policy::GetRequestAuthorizationPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

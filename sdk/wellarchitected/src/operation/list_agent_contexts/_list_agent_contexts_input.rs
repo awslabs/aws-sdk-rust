@@ -5,9 +5,9 @@
 pub struct ListAgentContextsInput {
     /// <p>The Amazon Resource Name (ARN) of the profile to list contexts for.</p>
     pub profile_arn: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of results to return for this request.</p>
+    /// <p>The maximum number of contexts to return in a single call. Default is 100.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The token to use to retrieve the next set of results.</p>
+    /// <p>A pagination token returned from a previous call to continue retrieving results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListAgentContextsInput {
@@ -15,11 +15,11 @@ impl ListAgentContextsInput {
     pub fn profile_arn(&self) -> ::std::option::Option<&str> {
         self.profile_arn.as_deref()
     }
-    /// <p>The maximum number of results to return for this request.</p>
+    /// <p>The maximum number of contexts to return in a single call. Default is 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The token to use to retrieve the next set of results.</p>
+    /// <p>A pagination token returned from a previous call to continue retrieving results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -55,31 +55,31 @@ impl ListAgentContextsInputBuilder {
     pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.profile_arn
     }
-    /// <p>The maximum number of results to return for this request.</p>
+    /// <p>The maximum number of contexts to return in a single call. Default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results to return for this request.</p>
+    /// <p>The maximum number of contexts to return in a single call. Default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results to return for this request.</p>
+    /// <p>The maximum number of contexts to return in a single call. Default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The token to use to retrieve the next set of results.</p>
+    /// <p>A pagination token returned from a previous call to continue retrieving results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The token to use to retrieve the next set of results.</p>
+    /// <p>A pagination token returned from a previous call to continue retrieving results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>The token to use to retrieve the next set of results.</p>
+    /// <p>A pagination token returned from a previous call to continue retrieving results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

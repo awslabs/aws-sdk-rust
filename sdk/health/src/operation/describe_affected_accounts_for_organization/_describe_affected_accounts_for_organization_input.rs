@@ -11,6 +11,8 @@ pub struct DescribeAffectedAccountsForOrganizationInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of items to return in one batch, between 10 and 100, inclusive.</p>
     pub max_results: ::std::option::Option<i32>,
+    /// <p>Values to narrow the results returned.</p>
+    pub filter: ::std::option::Option<crate::types::AffectedAccountFilter>,
 }
 impl DescribeAffectedAccountsForOrganizationInput {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
@@ -27,6 +29,10 @@ impl DescribeAffectedAccountsForOrganizationInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn filter(&self) -> ::std::option::Option<&crate::types::AffectedAccountFilter> {
+        self.filter.as_ref()
+    }
 }
 impl DescribeAffectedAccountsForOrganizationInput {
     /// Creates a new builder-style object to manufacture [`DescribeAffectedAccountsForOrganizationInput`](crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationInput).
@@ -42,6 +48,7 @@ pub struct DescribeAffectedAccountsForOrganizationInputBuilder {
     pub(crate) event_arn: ::std::option::Option<::std::string::String>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
+    pub(crate) filter: ::std::option::Option<crate::types::AffectedAccountFilter>,
 }
 impl DescribeAffectedAccountsForOrganizationInputBuilder {
     /// <p>The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code> format.</p>
@@ -93,6 +100,20 @@ impl DescribeAffectedAccountsForOrganizationInputBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn filter(mut self, input: crate::types::AffectedAccountFilter) -> Self {
+        self.filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::AffectedAccountFilter>) -> Self {
+        self.filter = input;
+        self
+    }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::AffectedAccountFilter> {
+        &self.filter
+    }
     /// Consumes the builder and constructs a [`DescribeAffectedAccountsForOrganizationInput`](crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationInput).
     pub fn build(
         self,
@@ -105,6 +126,7 @@ impl DescribeAffectedAccountsForOrganizationInputBuilder {
                 event_arn: self.event_arn,
                 next_token: self.next_token,
                 max_results: self.max_results,
+                filter: self.filter,
             },
         )
     }

@@ -133,6 +133,41 @@ impl From<crate::operation::associate_connect_peer::AssociateConnectPeerError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_context_store::AssociateContextStoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_context_store::AssociateContextStoreError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_context_store::AssociateContextStoreError> for Error {
+    fn from(err: crate::operation::associate_context_store::AssociateContextStoreError) -> Self {
+        match err {
+            crate::operation::associate_context_store::AssociateContextStoreError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::associate_context_store::AssociateContextStoreError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::associate_context_store::AssociateContextStoreError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::associate_context_store::AssociateContextStoreError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::associate_context_store::AssociateContextStoreError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_context_store::AssociateContextStoreError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_context_store::AssociateContextStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_customer_gateway::AssociateCustomerGatewayError, R>>
     for Error
 where
@@ -354,6 +389,38 @@ impl From<crate::operation::create_connect_peer::CreateConnectPeerError> for Err
             crate::operation::create_connect_peer::CreateConnectPeerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_connect_peer::CreateConnectPeerError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_connect_peer::CreateConnectPeerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_context_store::CreateContextStoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_context_store::CreateContextStoreError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_context_store::CreateContextStoreError> for Error {
+    fn from(err: crate::operation::create_context_store::CreateContextStoreError) -> Self {
+        match err {
+            crate::operation::create_context_store::CreateContextStoreError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_context_store::CreateContextStoreError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_context_store::CreateContextStoreError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_context_store::CreateContextStoreError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_context_store::CreateContextStoreError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_context_store::CreateContextStoreError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_context_store::CreateContextStoreError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_context_store::CreateContextStoreError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -843,6 +910,35 @@ impl From<crate::operation::delete_connect_peer::DeleteConnectPeerError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_context_store::DeleteContextStoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_context_store::DeleteContextStoreError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_context_store::DeleteContextStoreError> for Error {
+    fn from(err: crate::operation::delete_context_store::DeleteContextStoreError) -> Self {
+        match err {
+            crate::operation::delete_context_store::DeleteContextStoreError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_context_store::DeleteContextStoreError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_context_store::DeleteContextStoreError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_context_store::DeleteContextStoreError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_context_store::DeleteContextStoreError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_context_store::DeleteContextStoreError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_context_store::DeleteContextStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_core_network::DeleteCoreNetworkError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1242,6 +1338,46 @@ impl From<crate::operation::disassociate_connect_peer::DisassociateConnectPeerEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_context_store::DisassociateContextStoreError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_context_store::DisassociateContextStoreError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_context_store::DisassociateContextStoreError> for Error {
+    fn from(err: crate::operation::disassociate_context_store::DisassociateContextStoreError) -> Self {
+        match err {
+            crate::operation::disassociate_context_store::DisassociateContextStoreError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::disassociate_context_store::DisassociateContextStoreError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::disassociate_context_store::DisassociateContextStoreError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::disassociate_context_store::DisassociateContextStoreError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::disassociate_context_store::DisassociateContextStoreError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::disassociate_context_store::DisassociateContextStoreError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::disassociate_context_store::DisassociateContextStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_customer_gateway::DisassociateCustomerGatewayError, R>>
     for Error
 where
@@ -1530,6 +1666,99 @@ impl From<crate::operation::get_connect_peer_associations::GetConnectPeerAssocia
                 Error::ValidationException(inner)
             }
             crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_context_store::GetContextStoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_context_store::GetContextStoreError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_context_store::GetContextStoreError> for Error {
+    fn from(err: crate::operation::get_context_store::GetContextStoreError) -> Self {
+        match err {
+            crate::operation::get_context_store::GetContextStoreError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_context_store::GetContextStoreError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_context_store::GetContextStoreError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_context_store::GetContextStoreError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_context_store::GetContextStoreError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_context_store::GetContextStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_context_store_association::GetContextStoreAssociationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_context_store_association::GetContextStoreAssociationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_context_store_association::GetContextStoreAssociationError> for Error {
+    fn from(err: crate::operation::get_context_store_association::GetContextStoreAssociationError) -> Self {
+        match err {
+            crate::operation::get_context_store_association::GetContextStoreAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_context_store_association::GetContextStoreAssociationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_context_store_association::GetContextStoreAssociationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_context_store_association::GetContextStoreAssociationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_context_store_association::GetContextStoreAssociationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_context_store_association::GetContextStoreAssociationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_context_version::GetContextVersionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_context_version::GetContextVersionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_context_version::GetContextVersionError> for Error {
+    fn from(err: crate::operation::get_context_version::GetContextVersionError) -> Self {
+        match err {
+            crate::operation::get_context_version::GetContextVersionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_context_version::GetContextVersionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_context_version::GetContextVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_context_version::GetContextVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_context_version::GetContextVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_context_version::GetContextVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2472,6 +2701,131 @@ impl From<crate::operation::list_connect_peers::ListConnectPeersError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_context_changes::ListContextChangesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_context_changes::ListContextChangesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_context_changes::ListContextChangesError> for Error {
+    fn from(err: crate::operation::list_context_changes::ListContextChangesError) -> Self {
+        match err {
+            crate::operation::list_context_changes::ListContextChangesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_context_changes::ListContextChangesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_context_changes::ListContextChangesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_context_changes::ListContextChangesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_context_changes::ListContextChangesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_context_changes::ListContextChangesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_contexts::ListContextsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_contexts::ListContextsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_contexts::ListContextsError> for Error {
+    fn from(err: crate::operation::list_contexts::ListContextsError) -> Self {
+        match err {
+            crate::operation::list_contexts::ListContextsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_contexts::ListContextsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_contexts::ListContextsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_contexts::ListContextsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_contexts::ListContextsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_contexts::ListContextsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_context_store_associations::ListContextStoreAssociationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_context_store_associations::ListContextStoreAssociationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_context_store_associations::ListContextStoreAssociationsError> for Error {
+    fn from(err: crate::operation::list_context_store_associations::ListContextStoreAssociationsError) -> Self {
+        match err {
+            crate::operation::list_context_store_associations::ListContextStoreAssociationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_context_store_associations::ListContextStoreAssociationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_context_store_associations::ListContextStoreAssociationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_context_store_associations::ListContextStoreAssociationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_context_store_associations::ListContextStoreAssociationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_context_store_associations::ListContextStoreAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_context_stores::ListContextStoresError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_context_stores::ListContextStoresError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_context_stores::ListContextStoresError> for Error {
+    fn from(err: crate::operation::list_context_stores::ListContextStoresError) -> Self {
+        match err {
+            crate::operation::list_context_stores::ListContextStoresError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_context_stores::ListContextStoresError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_context_stores::ListContextStoresError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_context_stores::ListContextStoresError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_context_stores::ListContextStoresError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_context_stores::ListContextStoresError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -3229,6 +3583,35 @@ impl From<crate::operation::update_connection::UpdateConnectionError> for Error 
             crate::operation::update_connection::UpdateConnectionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_connection::UpdateConnectionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_connection::UpdateConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_context_store::UpdateContextStoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_context_store::UpdateContextStoreError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_context_store::UpdateContextStoreError> for Error {
+    fn from(err: crate::operation::update_context_store::UpdateContextStoreError) -> Self {
+        match err {
+            crate::operation::update_context_store::UpdateContextStoreError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_context_store::UpdateContextStoreError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_context_store::UpdateContextStoreError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_context_store::UpdateContextStoreError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_context_store::UpdateContextStoreError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_context_store::UpdateContextStoreError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_context_store::UpdateContextStoreError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

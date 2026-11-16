@@ -136,6 +136,10 @@ impl Client {
     }
 }
 
+mod configure_tags;
+
+mod configure_tags_for_organization;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -147,7 +151,7 @@ impl Client {
 /// # let client: aws_sdk_health::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.describe_affected_accounts_for_organization()
+/// let result = client.configure_tags()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -189,6 +193,26 @@ mod describe_health_service_status_for_organization;
 
 mod describe_service_lifecycle;
 
+mod describe_tag_keys;
+
+mod describe_tag_keys_for_organization;
+
+mod describe_tags;
+
+mod describe_tags_for_organization;
+
+mod describe_tags_onboarding_status;
+
+mod describe_tags_onboarding_status_for_organization;
+
 mod disable_health_service_access_for_organization;
 
+mod disable_tags;
+
+mod disable_tags_for_organization;
+
 mod enable_health_service_access_for_organization;
+
+mod enable_tags;
+
+mod enable_tags_for_organization;

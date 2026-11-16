@@ -60,6 +60,8 @@ pub struct WorkspaceDirectory {
     pub active_directory_config: ::std::option::Option<crate::types::ActiveDirectoryConfig>,
     /// <p>The streaming properties to configure.</p>
     pub streaming_properties: ::std::option::Option<crate::types::StreamingProperties>,
+    /// <p>Indicates how users are set up on the WorkSpace operating system.</p>
+    pub workspace_os_user_mode: ::std::option::Option<crate::types::WorkspaceOsUserMode>,
     /// <p>The error message returned.</p>
     pub error_message: ::std::option::Option<::std::string::String>,
 }
@@ -184,6 +186,10 @@ impl WorkspaceDirectory {
     pub fn streaming_properties(&self) -> ::std::option::Option<&crate::types::StreamingProperties> {
         self.streaming_properties.as_ref()
     }
+    /// <p>Indicates how users are set up on the WorkSpace operating system.</p>
+    pub fn workspace_os_user_mode(&self) -> ::std::option::Option<&crate::types::WorkspaceOsUserMode> {
+        self.workspace_os_user_mode.as_ref()
+    }
     /// <p>The error message returned.</p>
     pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
@@ -228,6 +234,7 @@ pub struct WorkspaceDirectoryBuilder {
     pub(crate) idc_config: ::std::option::Option<crate::types::IdcConfig>,
     pub(crate) active_directory_config: ::std::option::Option<crate::types::ActiveDirectoryConfig>,
     pub(crate) streaming_properties: ::std::option::Option<crate::types::StreamingProperties>,
+    pub(crate) workspace_os_user_mode: ::std::option::Option<crate::types::WorkspaceOsUserMode>,
     pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl WorkspaceDirectoryBuilder {
@@ -647,6 +654,20 @@ impl WorkspaceDirectoryBuilder {
     pub fn get_streaming_properties(&self) -> &::std::option::Option<crate::types::StreamingProperties> {
         &self.streaming_properties
     }
+    /// <p>Indicates how users are set up on the WorkSpace operating system.</p>
+    pub fn workspace_os_user_mode(mut self, input: crate::types::WorkspaceOsUserMode) -> Self {
+        self.workspace_os_user_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates how users are set up on the WorkSpace operating system.</p>
+    pub fn set_workspace_os_user_mode(mut self, input: ::std::option::Option<crate::types::WorkspaceOsUserMode>) -> Self {
+        self.workspace_os_user_mode = input;
+        self
+    }
+    /// <p>Indicates how users are set up on the WorkSpace operating system.</p>
+    pub fn get_workspace_os_user_mode(&self) -> &::std::option::Option<crate::types::WorkspaceOsUserMode> {
+        &self.workspace_os_user_mode
+    }
     /// <p>The error message returned.</p>
     pub fn error_message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.error_message = ::std::option::Option::Some(input.into());
@@ -692,6 +713,7 @@ impl WorkspaceDirectoryBuilder {
             idc_config: self.idc_config,
             active_directory_config: self.active_directory_config,
             streaming_properties: self.streaming_properties,
+            workspace_os_user_mode: self.workspace_os_user_mode,
             error_message: self.error_message,
         }
     }

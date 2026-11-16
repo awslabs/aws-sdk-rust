@@ -439,6 +439,16 @@ pub(crate) fn reflens_list_inference_recommendations_jobs_output_output_next_tok
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_inference_routers_output_output_next_token(
+    input: &crate::operation::list_inference_routers::ListInferenceRoutersOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_job_schema_versions_output_output_next_token(
     input: &crate::operation::list_job_schema_versions::ListJobSchemaVersionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -1254,6 +1264,13 @@ pub(crate) fn lens_list_inference_recommendations_jobs_output_output_inference_r
     input: crate::operation::list_inference_recommendations_jobs::ListInferenceRecommendationsJobsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InferenceRecommendationsJob>> {
     let input = input.inference_recommendations_jobs?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_inference_routers_output_output_inference_routers(
+    input: crate::operation::list_inference_routers::ListInferenceRoutersOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::InferenceRouterSummary>> {
+    let input = input.inference_routers?;
     ::std::option::Option::Some(input)
 }
 

@@ -41,6 +41,11 @@ pub fn ser_modify_vpc_endpoint_service_permissions_input_input_input(
             list_13.finish();
         }
     }
+    #[allow(unused_mut)]
+    let mut scope_15 = writer.prefix("PermissionType");
+    if let Some(var_16) = &input.permission_type {
+        scope_15.string(var_16.as_str());
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

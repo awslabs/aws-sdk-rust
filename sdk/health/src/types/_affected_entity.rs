@@ -20,7 +20,11 @@ pub struct AffectedEntity {
     pub last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The most recent status of the entity affected by the event. The possible values are <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, <code>UNKNOWN</code>, <code>PENDING</code>, and <code>RESOLVED</code>.</p>
     pub status_code: ::std::option::Option<crate::types::EntityStatusCode>,
-    /// <p>A map of entity tags attached to the affected entity.</p><note>
+    /// <p>A map of resource tag key-value pairs attached to the affected entity.</p>
+    pub resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>A map of account tag key-value pairs attached to the affected entity.</p>
+    pub account_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>A map of resource tag key-value pairs attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -58,7 +62,15 @@ impl AffectedEntity {
     pub fn status_code(&self) -> ::std::option::Option<&crate::types::EntityStatusCode> {
         self.status_code.as_ref()
     }
-    /// <p>A map of entity tags attached to the affected entity.</p><note>
+    /// <p>A map of resource tag key-value pairs attached to the affected entity.</p>
+    pub fn resource_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.resource_tags.as_ref()
+    }
+    /// <p>A map of account tag key-value pairs attached to the affected entity.</p>
+    pub fn account_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.account_tags.as_ref()
+    }
+    /// <p>A map of resource tag key-value pairs attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -87,6 +99,8 @@ pub struct AffectedEntityBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status_code: ::std::option::Option<crate::types::EntityStatusCode>,
+    pub(crate) resource_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) account_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) entity_metadata: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -195,11 +209,57 @@ impl AffectedEntityBuilder {
     pub fn get_status_code(&self) -> &::std::option::Option<crate::types::EntityStatusCode> {
         &self.status_code
     }
+    /// Adds a key-value pair to `resource_tags`.
+    ///
+    /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
+    ///
+    /// <p>A map of resource tag key-value pairs attached to the affected entity.</p>
+    pub fn resource_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.resource_tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.resource_tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of resource tag key-value pairs attached to the affected entity.</p>
+    pub fn set_resource_tags(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.resource_tags = input;
+        self
+    }
+    /// <p>A map of resource tag key-value pairs attached to the affected entity.</p>
+    pub fn get_resource_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.resource_tags
+    }
+    /// Adds a key-value pair to `account_tags`.
+    ///
+    /// To override the contents of this collection use [`set_account_tags`](Self::set_account_tags).
+    ///
+    /// <p>A map of account tag key-value pairs attached to the affected entity.</p>
+    pub fn account_tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.account_tags.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.account_tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of account tag key-value pairs attached to the affected entity.</p>
+    pub fn set_account_tags(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    ) -> Self {
+        self.account_tags = input;
+        self
+    }
+    /// <p>A map of account tag key-value pairs attached to the affected entity.</p>
+    pub fn get_account_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.account_tags
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A map of entity tags attached to the affected entity.</p><note>
+    /// <p>A map of resource tag key-value pairs attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -208,14 +268,14 @@ impl AffectedEntityBuilder {
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A map of entity tags attached to the affected entity.</p><note>
+    /// <p>A map of resource tag key-value pairs attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// <p>A map of entity tags attached to the affected entity.</p><note>
+    /// <p>A map of resource tag key-value pairs attached to the affected entity.</p><note>
     /// <p>Currently, the <code>tags</code> property isn't supported.</p>
     /// </note>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -258,6 +318,8 @@ impl AffectedEntityBuilder {
             aws_account_id: self.aws_account_id,
             last_updated_time: self.last_updated_time,
             status_code: self.status_code,
+            resource_tags: self.resource_tags,
+            account_tags: self.account_tags,
             tags: self.tags,
             entity_metadata: self.entity_metadata,
         }

@@ -379,6 +379,8 @@ pub(crate) mod shape_gateway_connection_resources;
 
 pub(crate) mod shape_gateway_connector;
 
+pub(crate) mod shape_gateway_connector_deregistration_delay;
+
 pub(crate) mod shape_gateway_connector_filters;
 
 pub(crate) mod shape_gateway_connector_health_check;

@@ -230,6 +230,20 @@ impl RegisterWorkspaceDirectoryFluentBuilder {
     pub fn get_user_identity_type(&self) -> &::std::option::Option<crate::types::UserIdentityType> {
         self.inner.get_user_identity_type()
     }
+    /// <p>Indicates how users are set up on the WorkSpace operating system. To use local users with an AWS IAM Identity Center directory, specify <code>LOCAL_USER</code>.</p>
+    pub fn workspace_os_user_mode(mut self, input: crate::types::WorkspaceOsUserMode) -> Self {
+        self.inner = self.inner.workspace_os_user_mode(input);
+        self
+    }
+    /// <p>Indicates how users are set up on the WorkSpace operating system. To use local users with an AWS IAM Identity Center directory, specify <code>LOCAL_USER</code>.</p>
+    pub fn set_workspace_os_user_mode(mut self, input: ::std::option::Option<crate::types::WorkspaceOsUserMode>) -> Self {
+        self.inner = self.inner.set_workspace_os_user_mode(input);
+        self
+    }
+    /// <p>Indicates how users are set up on the WorkSpace operating system. To use local users with an AWS IAM Identity Center directory, specify <code>LOCAL_USER</code>.</p>
+    pub fn get_workspace_os_user_mode(&self) -> &::std::option::Option<crate::types::WorkspaceOsUserMode> {
+        self.inner.get_workspace_os_user_mode()
+    }
     /// <p>The Amazon Resource Name (ARN) of the identity center instance.</p>
     pub fn idc_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.idc_instance_arn(input.into());

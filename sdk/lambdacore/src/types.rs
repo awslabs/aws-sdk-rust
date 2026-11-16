@@ -31,6 +31,8 @@ pub use crate::types::_throttle_reason::ThrottleReason;
 
 pub use crate::types::_network_protocol::NetworkProtocol;
 
+pub use crate::types::_elastic_ip_configuration::ElasticIpConfiguration;
+
 pub use crate::types::_integration_model::IntegrationModel;
 
 pub use crate::types::_runtime_architecture::RuntimeArchitecture;
@@ -47,6 +49,8 @@ pub use crate::types::_runtime_version_info::RuntimeVersionInfo;
 
 pub use crate::types::_compute_resource_type::ComputeResourceType;
 
+pub use crate::types::_elastic_ip_type::ElasticIpType;
+
 pub use crate::types::_network_connector_type::NetworkConnectorType;
 
 mod _compatibility;
@@ -54,6 +58,10 @@ mod _compatibility;
 mod _compatibility_policy;
 
 mod _compute_resource_type;
+
+mod _elastic_ip_configuration;
+
+mod _elastic_ip_type;
 
 mod _integration_model;
 

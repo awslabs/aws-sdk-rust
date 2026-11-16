@@ -13,6 +13,10 @@ pub fn ser_describe_affected_accounts_for_organization_input_input(
     if let Some(var_3) = &input.max_results {
         encoder.str("maxResults").integer(*var_3);
     }
+    if let Some(var_4) = &input.filter {
+        encoder.str("filter");
+        crate::protocol_serde::shape_affected_account_filter::ser_affected_account_filter(encoder, var_4)?;
+    }
     encoder.end();
     Ok(())
 }

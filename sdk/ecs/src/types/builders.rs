@@ -287,6 +287,8 @@ pub use crate::types::_gateway_connector_health_check::GatewayConnectorHealthChe
 
 pub use crate::types::_gateway_connector_filters::GatewayConnectorFiltersBuilder;
 
+pub use crate::types::_gateway_connector_deregistration_delay::GatewayConnectorDeregistrationDelayBuilder;
+
 pub use crate::types::_metric_configuration::MetricConfigurationBuilder;
 
 pub use crate::types::_deployment::DeploymentBuilder;

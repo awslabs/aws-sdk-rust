@@ -16,7 +16,7 @@ pub struct ListKeyPoliciesInput {
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
-    /// <p>Only one policy can be attached to a key.</p>
+    /// <p>A KMS key can have at most two key policies, <code>default</code> and <code>AWS_RAM</code>.</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>
     pub marker: ::std::option::Option<::std::string::String>,
@@ -37,7 +37,7 @@ impl ListKeyPoliciesInput {
     }
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
-    /// <p>Only one policy can be attached to a key.</p>
+    /// <p>A KMS key can have at most two key policies, <code>default</code> and <code>AWS_RAM</code>.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
         self.limit
     }
@@ -106,21 +106,21 @@ impl ListKeyPoliciesInputBuilder {
     }
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
-    /// <p>Only one policy can be attached to a key.</p>
+    /// <p>A KMS key can have at most two key policies, <code>default</code> and <code>AWS_RAM</code>.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
-    /// <p>Only one policy can be attached to a key.</p>
+    /// <p>A KMS key can have at most two key policies, <code>default</code> and <code>AWS_RAM</code>.</p>
     pub fn set_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.limit = input;
         self
     }
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
-    /// <p>Only one policy can be attached to a key.</p>
+    /// <p>A KMS key can have at most two key policies, <code>default</code> and <code>AWS_RAM</code>.</p>
     pub fn get_limit(&self) -> &::std::option::Option<i32> {
         &self.limit
     }

@@ -24,6 +24,7 @@ impl crate::operation::modify_vpc_endpoint_service_permissions::builders::Modify
 ///
 /// <p>Modifies the permissions for your VPC endpoint service. You can add or remove permissions for service consumers (Amazon Web Services accounts, users, and IAM roles) to connect to your endpoint service. Principal ARNs with path components aren't supported.</p>
 /// <p>If you grant permissions to all principals, the service is public. Any users who know the name of a public service can send a request to attach an endpoint. If the service does not require manual approval, attachments are automatically approved.</p>
+/// <p>By default, principals that you grant permissions to can create VPC endpoints that connect to your endpoint service. For Gateway Load Balancer endpoint services, you can instead grant permissions so that principals can create transit gateway attachments that connect to your endpoint service. To do so, specify <code>transit-gateway-attachment</code> for <code>PermissionType</code>. The two permission types are independent. A principal can have either or both.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ModifyVpcEndpointServicePermissionsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -175,5 +176,40 @@ impl ModifyVpcEndpointServicePermissionsFluentBuilder {
     /// <p>The Amazon Resource Names (ARN) of the principals. Permissions are revoked for principals in this list.</p>
     pub fn get_remove_allowed_principals(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_remove_allowed_principals()
+    }
+    /// <p>The type of permission to add or remove. The permission type applies to all principals in <code>AddAllowedPrincipals</code> and <code>RemoveAllowedPrincipals</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>vpc-endpoint</code> - Principals can create VPC endpoints that connect to the endpoint service.</p></li>
+    /// <li>
+    /// <p><code>transit-gateway-attachment</code> - Principals can create transit gateway attachments that connect to the endpoint service. This permission type is supported only for Gateway Load Balancer endpoint services. You can grant it only to Amazon Web Services accounts (<code>arn:aws:iam::account-id:root</code>). You can't grant it to users, IAM roles, organizations, organizational units, or all principals (*).</p></li>
+    /// </ul>
+    /// <p>Default: <code>vpc-endpoint</code></p>
+    pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
+        self.inner = self.inner.permission_type(input);
+        self
+    }
+    /// <p>The type of permission to add or remove. The permission type applies to all principals in <code>AddAllowedPrincipals</code> and <code>RemoveAllowedPrincipals</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>vpc-endpoint</code> - Principals can create VPC endpoints that connect to the endpoint service.</p></li>
+    /// <li>
+    /// <p><code>transit-gateway-attachment</code> - Principals can create transit gateway attachments that connect to the endpoint service. This permission type is supported only for Gateway Load Balancer endpoint services. You can grant it only to Amazon Web Services accounts (<code>arn:aws:iam::account-id:root</code>). You can't grant it to users, IAM roles, organizations, organizational units, or all principals (*).</p></li>
+    /// </ul>
+    /// <p>Default: <code>vpc-endpoint</code></p>
+    pub fn set_permission_type(mut self, input: ::std::option::Option<crate::types::PermissionType>) -> Self {
+        self.inner = self.inner.set_permission_type(input);
+        self
+    }
+    /// <p>The type of permission to add or remove. The permission type applies to all principals in <code>AddAllowedPrincipals</code> and <code>RemoveAllowedPrincipals</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>vpc-endpoint</code> - Principals can create VPC endpoints that connect to the endpoint service.</p></li>
+    /// <li>
+    /// <p><code>transit-gateway-attachment</code> - Principals can create transit gateway attachments that connect to the endpoint service. This permission type is supported only for Gateway Load Balancer endpoint services. You can grant it only to Amazon Web Services accounts (<code>arn:aws:iam::account-id:root</code>). You can't grant it to users, IAM roles, organizations, organizational units, or all principals (*).</p></li>
+    /// </ul>
+    /// <p>Default: <code>vpc-endpoint</code></p>
+    pub fn get_permission_type(&self) -> &::std::option::Option<crate::types::PermissionType> {
+        self.inner.get_permission_type()
     }
 }

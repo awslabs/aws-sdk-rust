@@ -24,6 +24,16 @@ pub fn ser_rule_variables(
             }
         }
     }
+    if let Some(var_7) = &input.context_sets {
+        encoder.str("ContextSets");
+        encoder.map((*var_7).len());
+        for (key_8, value_9) in var_7 {
+            {
+                encoder.str(key_8.as_str());
+                crate::protocol_serde::shape_context_set::ser_context_set(encoder, value_9)?;
+            }
+        }
+    }
     encoder.end();
     Ok(())
 }
@@ -50,6 +60,9 @@ pub(crate) fn de_rule_variables(
             })?,
             "PortSets" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_port_sets(Some(crate::protocol_serde::shape_port_sets::de_port_sets(decoder, depth + 1)?)))
+            })?,
+            "ContextSets" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_context_sets(Some(crate::protocol_serde::shape_context_sets::de_context_sets(decoder, depth + 1)?)))
             })?,
             _ => {
                 decoder.skip()?;

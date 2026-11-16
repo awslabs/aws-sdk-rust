@@ -51,6 +51,10 @@ pub struct Firewall {
     pub proxy_settings: ::std::option::Option<crate::types::ProxySettings>,
     /// <p>The VPC and subnets for the endpoints of a proxy mode firewall.</p>
     pub vpc_endpoint: ::std::option::Option<crate::types::VpcEndpoint>,
+    /// <p>The unique identifier of the context store that the firewall uses to resolve context sets in its rule groups. Network Firewall discovers the context store from the transit gateway association in Network Manager. This field is only present for transit gateway-attached firewalls whose transit gateway is associated with a context store.</p>
+    pub context_store_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Web Services account ID that owns the context store. This may be different from the firewall owner's account ID.</p>
+    pub context_store_owner_account_id: ::std::option::Option<::std::string::String>,
     /// <p>How a proxy mode firewall handles traffic that isn't sent to its proxy listener. <code>NAT_ALL</code> sends this traffic out through the firewall's NAT gateway after inspection. <code>NAT_NONE</code> returns it to the firewall endpoint without address translation.</p>
     pub transparent_filtering_nat_scope: ::std::option::Option<crate::types::TransparentFilteringNatScope>,
 }
@@ -154,6 +158,14 @@ impl Firewall {
     pub fn vpc_endpoint(&self) -> ::std::option::Option<&crate::types::VpcEndpoint> {
         self.vpc_endpoint.as_ref()
     }
+    /// <p>The unique identifier of the context store that the firewall uses to resolve context sets in its rule groups. Network Firewall discovers the context store from the transit gateway association in Network Manager. This field is only present for transit gateway-attached firewalls whose transit gateway is associated with a context store.</p>
+    pub fn context_store_id(&self) -> ::std::option::Option<&str> {
+        self.context_store_id.as_deref()
+    }
+    /// <p>The Amazon Web Services account ID that owns the context store. This may be different from the firewall owner's account ID.</p>
+    pub fn context_store_owner_account_id(&self) -> ::std::option::Option<&str> {
+        self.context_store_owner_account_id.as_deref()
+    }
     /// <p>How a proxy mode firewall handles traffic that isn't sent to its proxy listener. <code>NAT_ALL</code> sends this traffic out through the firewall's NAT gateway after inspection. <code>NAT_NONE</code> returns it to the firewall endpoint without address translation.</p>
     pub fn transparent_filtering_nat_scope(&self) -> ::std::option::Option<&crate::types::TransparentFilteringNatScope> {
         self.transparent_filtering_nat_scope.as_ref()
@@ -191,6 +203,8 @@ pub struct FirewallBuilder {
     pub(crate) nat_gateway_create_mappings: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayCreateMapping>>,
     pub(crate) proxy_settings: ::std::option::Option<crate::types::ProxySettings>,
     pub(crate) vpc_endpoint: ::std::option::Option<crate::types::VpcEndpoint>,
+    pub(crate) context_store_id: ::std::option::Option<::std::string::String>,
+    pub(crate) context_store_owner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) transparent_filtering_nat_scope: ::std::option::Option<crate::types::TransparentFilteringNatScope>,
 }
 impl FirewallBuilder {
@@ -530,6 +544,34 @@ impl FirewallBuilder {
     pub fn get_vpc_endpoint(&self) -> &::std::option::Option<crate::types::VpcEndpoint> {
         &self.vpc_endpoint
     }
+    /// <p>The unique identifier of the context store that the firewall uses to resolve context sets in its rule groups. Network Firewall discovers the context store from the transit gateway association in Network Manager. This field is only present for transit gateway-attached firewalls whose transit gateway is associated with a context store.</p>
+    pub fn context_store_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.context_store_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The unique identifier of the context store that the firewall uses to resolve context sets in its rule groups. Network Firewall discovers the context store from the transit gateway association in Network Manager. This field is only present for transit gateway-attached firewalls whose transit gateway is associated with a context store.</p>
+    pub fn set_context_store_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.context_store_id = input;
+        self
+    }
+    /// <p>The unique identifier of the context store that the firewall uses to resolve context sets in its rule groups. Network Firewall discovers the context store from the transit gateway association in Network Manager. This field is only present for transit gateway-attached firewalls whose transit gateway is associated with a context store.</p>
+    pub fn get_context_store_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context_store_id
+    }
+    /// <p>The Amazon Web Services account ID that owns the context store. This may be different from the firewall owner's account ID.</p>
+    pub fn context_store_owner_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.context_store_owner_account_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the context store. This may be different from the firewall owner's account ID.</p>
+    pub fn set_context_store_owner_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.context_store_owner_account_id = input;
+        self
+    }
+    /// <p>The Amazon Web Services account ID that owns the context store. This may be different from the firewall owner's account ID.</p>
+    pub fn get_context_store_owner_account_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.context_store_owner_account_id
+    }
     /// <p>How a proxy mode firewall handles traffic that isn't sent to its proxy listener. <code>NAT_ALL</code> sends this traffic out through the firewall's NAT gateway after inspection. <code>NAT_NONE</code> returns it to the firewall endpoint without address translation.</p>
     pub fn transparent_filtering_nat_scope(mut self, input: crate::types::TransparentFilteringNatScope) -> Self {
         self.transparent_filtering_nat_scope = ::std::option::Option::Some(input);
@@ -593,6 +635,8 @@ impl FirewallBuilder {
             nat_gateway_create_mappings: self.nat_gateway_create_mappings,
             proxy_settings: self.proxy_settings,
             vpc_endpoint: self.vpc_endpoint,
+            context_store_id: self.context_store_id,
+            context_store_owner_account_id: self.context_store_owner_account_id,
             transparent_filtering_nat_scope: self.transparent_filtering_nat_scope,
         })
     }

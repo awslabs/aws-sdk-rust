@@ -123,6 +123,8 @@ pub use crate::types::_application_dpu_sizes::ApplicationDpuSizes;
 
 pub use crate::types::_calculation_summary::CalculationSummary;
 
+pub use crate::types::_database_attributes::DatabaseAttributes;
+
 pub use crate::types::_data_catalog_summary::DataCatalogSummary;
 
 pub use crate::types::_executors_summary::ExecutorsSummary;
@@ -134,6 +136,8 @@ pub use crate::types::_prepared_statement_summary::PreparedStatementSummary;
 pub use crate::types::_session_summary::SessionSummary;
 
 pub use crate::types::_system_table_status::SystemTableStatus;
+
+pub use crate::types::_table_attributes::TableAttributes;
 
 pub use crate::types::_work_group_summary::WorkGroupSummary;
 
@@ -236,6 +240,8 @@ mod _data_catalog_summary;
 mod _data_catalog_type;
 
 mod _database;
+
+mod _database_attributes;
 
 mod _datum;
 
@@ -340,6 +346,8 @@ mod _system_table_name;
 mod _system_table_status;
 
 mod _system_table_type;
+
+mod _table_attributes;
 
 mod _table_metadata;
 

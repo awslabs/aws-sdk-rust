@@ -11,4 +11,8 @@ pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuild
 
 pub use crate::types::_cluster_summary::ClusterSummaryBuilder;
 
+pub use crate::types::_metric_group_request::MetricGroupRequestBuilder;
+
+pub use crate::types::_metric_group_response::MetricGroupResponseBuilder;
+
 pub use crate::types::_stream_summary::StreamSummaryBuilder;

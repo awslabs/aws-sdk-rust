@@ -23,8 +23,10 @@ impl crate::operation::get_key_policy::builders::GetKeyPolicyInputBuilder {
 /// Fluent builder constructing a request to `GetKeyPolicy`.
 ///
 /// <p>Gets a key policy attached to the specified KMS key.</p>
+/// <p>A KMS key can have two key policies. You manage the <code>default</code> key policy. Resource Access Manager (RAM) manages the <code>AWS_RAM</code> key policy for KMS keys that you share through RAM. You can use <code>GetKeyPolicy</code> to view the <code>AWS_RAM</code> key policy, but you can't change it with <code>PutKeyPolicy</code>. To get the <code>AWS_RAM</code> key policy, set the <code>PolicyName</code> parameter to <code>AWS_RAM</code>. If the KMS key doesn't have an <code>AWS_RAM</code> key policy, <code>GetKeyPolicy</code> returns a <code>NotFoundException</code>. For information about sharing KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-sharing-ram.html">Sharing KMS keys with RAM</a> in the <i>Key Management Service Developer Guide</i>. For information about RAM managed permissions, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/security-ram-permissions.html">Managing permissions in RAM</a> in the <i>RAM User Guide</i>.</p>
 /// <p><b>Cross-account use</b>: No. You cannot perform this operation on a KMS key in a different Amazon Web Services account.</p>
 /// <p><b>Required permissions</b>: <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GetKeyPolicy</a> (key policy)</p>
+/// <p>You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-kms-policy-name">kms:PolicyName</a> condition key to control access to this operation based on the value of the <code>PolicyName</code> parameter in the request. If the request doesn't include <code>PolicyName</code>, the value of <code>kms:PolicyName</code> is <code>default</code>.</p>
 /// <p><b>Related operations</b>: <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html">PutKeyPolicy</a></p>
 /// <p><b>Eventual consistency</b>: The KMS API follows an eventual consistency model. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS eventual consistency</a>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -112,7 +114,7 @@ impl GetKeyPolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>Gets the key policy for the specified KMS key.</p>
+    /// <p>Identifies the KMS key whose key policy you want to get.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -126,7 +128,7 @@ impl GetKeyPolicyFluentBuilder {
         self.inner = self.inner.key_id(input.into());
         self
     }
-    /// <p>Gets the key policy for the specified KMS key.</p>
+    /// <p>Identifies the KMS key whose key policy you want to get.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -140,7 +142,7 @@ impl GetKeyPolicyFluentBuilder {
         self.inner = self.inner.set_key_id(input);
         self
     }
-    /// <p>Gets the key policy for the specified KMS key.</p>
+    /// <p>Identifies the KMS key whose key policy you want to get.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -153,17 +155,17 @@ impl GetKeyPolicyFluentBuilder {
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_key_id()
     }
-    /// <p>Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only valid name is <code>default</code>. To get the names of key policies, use <code>ListKeyPolicies</code>.</p>
+    /// <p>Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>. Valid values are <code>default</code> and <code>AWS_RAM</code>. Use <code>AWS_RAM</code> to get the key policy that RAM manages for a KMS key that you share through RAM. If the KMS key doesn't have an <code>AWS_RAM</code> key policy, the request fails with a <code>NotFoundException</code>. To get the names of key policies, use <code>ListKeyPolicies</code>.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_name(input.into());
         self
     }
-    /// <p>Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only valid name is <code>default</code>. To get the names of key policies, use <code>ListKeyPolicies</code>.</p>
+    /// <p>Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>. Valid values are <code>default</code> and <code>AWS_RAM</code>. Use <code>AWS_RAM</code> to get the key policy that RAM manages for a KMS key that you share through RAM. If the KMS key doesn't have an <code>AWS_RAM</code> key policy, the request fails with a <code>NotFoundException</code>. To get the names of key policies, use <code>ListKeyPolicies</code>.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_name(input);
         self
     }
-    /// <p>Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only valid name is <code>default</code>. To get the names of key policies, use <code>ListKeyPolicies</code>.</p>
+    /// <p>Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>. Valid values are <code>default</code> and <code>AWS_RAM</code>. Use <code>AWS_RAM</code> to get the key policy that RAM manages for a KMS key that you share through RAM. If the KMS key doesn't have an <code>AWS_RAM</code> key policy, the request fails with a <code>NotFoundException</code>. To get the names of key policies, use <code>ListKeyPolicies</code>.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_name()
     }

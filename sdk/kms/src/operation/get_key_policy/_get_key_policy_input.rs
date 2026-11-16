@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetKeyPolicyInput {
-    /// <p>Gets the key policy for the specified KMS key.</p>
+    /// <p>Identifies the KMS key whose key policy you want to get.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -14,11 +14,11 @@ pub struct GetKeyPolicyInput {
     /// </ul>
     /// <p>To get the key ID and key ARN for a KMS key, use <code>ListKeys</code> or <code>DescribeKey</code>.</p>
     pub key_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only valid name is <code>default</code>. To get the names of key policies, use <code>ListKeyPolicies</code>.</p>
+    /// <p>Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>. Valid values are <code>default</code> and <code>AWS_RAM</code>. Use <code>AWS_RAM</code> to get the key policy that RAM manages for a KMS key that you share through RAM. If the KMS key doesn't have an <code>AWS_RAM</code> key policy, the request fails with a <code>NotFoundException</code>. To get the names of key policies, use <code>ListKeyPolicies</code>.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
 }
 impl GetKeyPolicyInput {
-    /// <p>Gets the key policy for the specified KMS key.</p>
+    /// <p>Identifies the KMS key whose key policy you want to get.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -31,7 +31,7 @@ impl GetKeyPolicyInput {
     pub fn key_id(&self) -> ::std::option::Option<&str> {
         self.key_id.as_deref()
     }
-    /// <p>Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only valid name is <code>default</code>. To get the names of key policies, use <code>ListKeyPolicies</code>.</p>
+    /// <p>Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>. Valid values are <code>default</code> and <code>AWS_RAM</code>. Use <code>AWS_RAM</code> to get the key policy that RAM manages for a KMS key that you share through RAM. If the KMS key doesn't have an <code>AWS_RAM</code> key policy, the request fails with a <code>NotFoundException</code>. To get the names of key policies, use <code>ListKeyPolicies</code>.</p>
     pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
@@ -51,7 +51,7 @@ pub struct GetKeyPolicyInputBuilder {
     pub(crate) policy_name: ::std::option::Option<::std::string::String>,
 }
 impl GetKeyPolicyInputBuilder {
-    /// <p>Gets the key policy for the specified KMS key.</p>
+    /// <p>Identifies the KMS key whose key policy you want to get.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -66,7 +66,7 @@ impl GetKeyPolicyInputBuilder {
         self.key_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Gets the key policy for the specified KMS key.</p>
+    /// <p>Identifies the KMS key whose key policy you want to get.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -80,7 +80,7 @@ impl GetKeyPolicyInputBuilder {
         self.key_id = input;
         self
     }
-    /// <p>Gets the key policy for the specified KMS key.</p>
+    /// <p>Identifies the KMS key whose key policy you want to get.</p>
     /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
@@ -93,17 +93,17 @@ impl GetKeyPolicyInputBuilder {
     pub fn get_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.key_id
     }
-    /// <p>Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only valid name is <code>default</code>. To get the names of key policies, use <code>ListKeyPolicies</code>.</p>
+    /// <p>Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>. Valid values are <code>default</code> and <code>AWS_RAM</code>. Use <code>AWS_RAM</code> to get the key policy that RAM manages for a KMS key that you share through RAM. If the KMS key doesn't have an <code>AWS_RAM</code> key policy, the request fails with a <code>NotFoundException</code>. To get the names of key policies, use <code>ListKeyPolicies</code>.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only valid name is <code>default</code>. To get the names of key policies, use <code>ListKeyPolicies</code>.</p>
+    /// <p>Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>. Valid values are <code>default</code> and <code>AWS_RAM</code>. Use <code>AWS_RAM</code> to get the key policy that RAM manages for a KMS key that you share through RAM. If the KMS key doesn't have an <code>AWS_RAM</code> key policy, the request fails with a <code>NotFoundException</code>. To get the names of key policies, use <code>ListKeyPolicies</code>.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
     }
-    /// <p>Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>. The only valid name is <code>default</code>. To get the names of key policies, use <code>ListKeyPolicies</code>.</p>
+    /// <p>Specifies the name of the key policy. If no policy name is specified, the default value is <code>default</code>. Valid values are <code>default</code> and <code>AWS_RAM</code>. Use <code>AWS_RAM</code> to get the key policy that RAM manages for a KMS key that you share through RAM. If the KMS key doesn't have an <code>AWS_RAM</code> key policy, the request fails with a <code>NotFoundException</code>. To get the names of key policies, use <code>ListKeyPolicies</code>.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_name
     }

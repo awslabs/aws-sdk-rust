@@ -42,13 +42,14 @@ pub fn ser_entity_filter(
     }
     if let Some(var_8) = &input.tags {
         encoder.str("tags");
-        encoder.array((*var_8).len());
-        for item_9 in var_8 {
+        encoder.map((*var_8).len());
+        for (key_9, value_10) in var_8 {
             {
-                encoder.map((*item_9).len());
-                for (key_10, value_11) in item_9 {
+                encoder.str(key_9.as_str());
+                encoder.array((*value_10).len());
+                for item_11 in value_10 {
                     {
-                        encoder.str(key_10.as_str()).str(value_11.as_str());
+                        encoder.str(item_11.as_str());
                     }
                 }
             }

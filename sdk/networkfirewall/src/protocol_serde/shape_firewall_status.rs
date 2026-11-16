@@ -36,6 +36,13 @@ pub(crate) fn de_firewall_status(
                     crate::protocol_serde::shape_transit_gateway_attachment_sync_state::de_transit_gateway_attachment_sync_state(decoder, depth + 1)?,
                 )))
             })?,
+            "ContextStoreSyncState" => {
+                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_context_store_sync_state(Some(
+                        crate::protocol_serde::shape_context_store_sync_state::de_context_store_sync_state(decoder, depth + 1)?,
+                    )))
+                })?
+            }
             _ => {
                 decoder.skip()?;
                 builder

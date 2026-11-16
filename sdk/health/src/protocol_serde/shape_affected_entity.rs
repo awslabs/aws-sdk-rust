@@ -37,6 +37,22 @@ pub(crate) fn de_affected_entity(
             "statusCode" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_status_code(Some(decoder.string().map(|s| crate::types::EntityStatusCode::from(s.as_str()))?)))
             })?,
+            "resourceTags" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(
+                    builder.set_resource_tags(Some(crate::protocol_serde::shape_resource_tag_set::de_resource_tag_set(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
+            })?,
+            "accountTags" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(
+                    builder.set_account_tags(Some(crate::protocol_serde::shape_account_tag_set::de_account_tag_set(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
+            })?,
             "tags" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_tags(Some(crate::protocol_serde::shape_tag_set::de_tag_set(decoder, depth + 1)?)))
             })?,

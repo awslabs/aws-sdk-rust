@@ -8,11 +8,11 @@ impl super::Client {
     /// - On success, responds with [`GetAgentRecommendationOutput`](crate::operation::get_agent_recommendation::GetAgentRecommendationOutput) with field(s):
     ///   - [`recommendation_arn(String)`](crate::operation::get_agent_recommendation::GetAgentRecommendationOutput::recommendation_arn): <p>The Amazon Resource Name (ARN) of the recommendation.</p>
     ///   - [`profile_arn(String)`](crate::operation::get_agent_recommendation::GetAgentRecommendationOutput::profile_arn): <p>The Amazon Resource Name (ARN) of the associated profile.</p>
-    ///   - [`generation_id(Option<String>)`](crate::operation::get_agent_recommendation::GetAgentRecommendationOutput::generation_id): <p>The identifier of the generation process that produced this recommendation.</p>
+    ///   - [`generation_id(Option<String>)`](crate::operation::get_agent_recommendation::GetAgentRecommendationOutput::generation_id): <p>The identifier of the generation that produced this recommendation.</p>
     ///   - [`title(String)`](crate::operation::get_agent_recommendation::GetAgentRecommendationOutput::title): <p>The title of the recommendation.</p>
     ///   - [`description(String)`](crate::operation::get_agent_recommendation::GetAgentRecommendationOutput::description): <p>A description of the recommendation.</p>
     ///   - [`r#type(RecommendationType)`](crate::operation::get_agent_recommendation::GetAgentRecommendationOutput::type): <p>The type of the recommendation.</p>
-    ///   - [`pillar(Pillar)`](crate::operation::get_agent_recommendation::GetAgentRecommendationOutput::pillar): <p>The Well-Architected Tool Framework pillar that the recommendation addresses.</p>
+    ///   - [`pillar(Pillar)`](crate::operation::get_agent_recommendation::GetAgentRecommendationOutput::pillar): <p>The Amazon Web Services Well-Architected Framework pillar that the recommendation addresses.</p>
     ///   - [`priority(Priority)`](crate::operation::get_agent_recommendation::GetAgentRecommendationOutput::priority): <p>The priority of the recommendation.</p>
     ///   - [`effort(Effort)`](crate::operation::get_agent_recommendation::GetAgentRecommendationOutput::effort): <p>The effort required to implement the recommendation.</p>
     ///   - [`status(RecommendationStatus)`](crate::operation::get_agent_recommendation::GetAgentRecommendationOutput::status): <p>The current status of the recommendation.</p>

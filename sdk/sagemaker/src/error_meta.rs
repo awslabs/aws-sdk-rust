@@ -5,6 +5,8 @@
 pub enum Error {
     /// <p>There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code> or <code>Artifact</code>.</p>
     ConflictException(crate::types::error::ConflictException),
+    /// <p>The resource that you are trying to create already exists. Use a different resource name, or delete the existing resource before retrying.</p>
+    ResourceAlreadyExists(crate::types::error::ResourceAlreadyExists),
     /// <p>Resource being accessed is in use.</p>
     ResourceInUse(crate::types::error::ResourceInUse),
     /// <p>You have exceeded an SageMaker resource limit. For example, you might have too many training jobs created.</p>
@@ -24,6 +26,7 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::ConflictException(inner) => inner.fmt(f),
+            Error::ResourceAlreadyExists(inner) => inner.fmt(f),
             Error::ResourceInUse(inner) => inner.fmt(f),
             Error::ResourceLimitExceeded(inner) => inner.fmt(f),
             Error::ResourceNotFound(inner) => inner.fmt(f),
@@ -49,6 +52,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::ConflictException(inner) => inner.meta(),
+            Self::ResourceAlreadyExists(inner) => inner.meta(),
             Self::ResourceInUse(inner) => inner.meta(),
             Self::ResourceLimitExceeded(inner) => inner.meta(),
             Self::ResourceNotFound(inner) => inner.meta(),
@@ -1291,6 +1295,36 @@ impl From<crate::operation::create_inference_recommendations_job::CreateInferenc
             crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_inference_router::CreateInferenceRouterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_inference_router::CreateInferenceRouterError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_inference_router::CreateInferenceRouterError> for Error {
+    fn from(err: crate::operation::create_inference_router::CreateInferenceRouterError) -> Self {
+        match err {
+            crate::operation::create_inference_router::CreateInferenceRouterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_inference_router::CreateInferenceRouterError::ResourceAlreadyExists(inner) => {
+                Error::ResourceAlreadyExists(inner)
+            }
+            crate::operation::create_inference_router::CreateInferenceRouterError::ResourceLimitExceeded(inner) => {
+                Error::ResourceLimitExceeded(inner)
+            }
+            crate::operation::create_inference_router::CreateInferenceRouterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2810,6 +2844,28 @@ impl From<crate::operation::delete_endpoint_config::DeleteEndpointConfigError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_endpoint_policy::DeleteEndpointPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_endpoint_policy::DeleteEndpointPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_endpoint_policy::DeleteEndpointPolicyError> for Error {
+    fn from(err: crate::operation::delete_endpoint_policy::DeleteEndpointPolicyError) -> Self {
+        match err {
+            crate::operation::delete_endpoint_policy::DeleteEndpointPolicyError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::delete_endpoint_policy::DeleteEndpointPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_experiment::DeleteExperimentError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3097,6 +3153,31 @@ impl From<crate::operation::delete_inference_experiment::DeleteInferenceExperime
             }
             crate::operation::delete_inference_experiment::DeleteInferenceExperimentError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::delete_inference_experiment::DeleteInferenceExperimentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_inference_router::DeleteInferenceRouterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_inference_router::DeleteInferenceRouterError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_inference_router::DeleteInferenceRouterError> for Error {
+    fn from(err: crate::operation::delete_inference_router::DeleteInferenceRouterError) -> Self {
+        match err {
+            crate::operation::delete_inference_router::DeleteInferenceRouterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_inference_router::DeleteInferenceRouterError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::delete_inference_router::DeleteInferenceRouterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4853,6 +4934,31 @@ impl From<crate::operation::describe_inference_recommendations_job::DescribeInfe
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_inference_router::DescribeInferenceRouterError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_inference_router::DescribeInferenceRouterError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_inference_router::DescribeInferenceRouterError> for Error {
+    fn from(err: crate::operation::describe_inference_router::DescribeInferenceRouterError) -> Self {
+        match err {
+            crate::operation::describe_inference_router::DescribeInferenceRouterError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::describe_inference_router::DescribeInferenceRouterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_job::DescribeJobError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -5986,6 +6092,28 @@ impl From<crate::operation::get_device_fleet_report::GetDeviceFleetReportError> 
     fn from(err: crate::operation::get_device_fleet_report::GetDeviceFleetReportError) -> Self {
         match err {
             crate::operation::get_device_fleet_report::GetDeviceFleetReportError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_endpoint_policy::GetEndpointPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_endpoint_policy::GetEndpointPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_endpoint_policy::GetEndpointPolicyError> for Error {
+    fn from(err: crate::operation::get_endpoint_policy::GetEndpointPolicyError) -> Self {
+        match err {
+            crate::operation::get_endpoint_policy::GetEndpointPolicyError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::get_endpoint_policy::GetEndpointPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -7202,6 +7330,27 @@ impl From<crate::operation::list_inference_recommendations_job_steps::ListInfere
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_inference_routers::ListInferenceRoutersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_inference_routers::ListInferenceRoutersError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_inference_routers::ListInferenceRoutersError> for Error {
+    fn from(err: crate::operation::list_inference_routers::ListInferenceRoutersError) -> Self {
+        match err {
+            crate::operation::list_inference_routers::ListInferenceRoutersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_jobs::ListJobsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -8375,6 +8524,28 @@ impl From<crate::operation::list_workteams::ListWorkteamsError> for Error {
     fn from(err: crate::operation::list_workteams::ListWorkteamsError) -> Self {
         match err {
             crate::operation::list_workteams::ListWorkteamsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_endpoint_policy::PutEndpointPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_endpoint_policy::PutEndpointPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_endpoint_policy::PutEndpointPolicyError> for Error {
+    fn from(err: crate::operation::put_endpoint_policy::PutEndpointPolicyError) -> Self {
+        match err {
+            crate::operation::put_endpoint_policy::PutEndpointPolicyError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::put_endpoint_policy::PutEndpointPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -9977,6 +10148,34 @@ impl From<crate::operation::update_inference_experiment::UpdateInferenceExperime
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_inference_router::UpdateInferenceRouterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_inference_router::UpdateInferenceRouterError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_inference_router::UpdateInferenceRouterError> for Error {
+    fn from(err: crate::operation::update_inference_router::UpdateInferenceRouterError) -> Self {
+        match err {
+            crate::operation::update_inference_router::UpdateInferenceRouterError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_inference_router::UpdateInferenceRouterError::ResourceLimitExceeded(inner) => {
+                Error::ResourceLimitExceeded(inner)
+            }
+            crate::operation::update_inference_router::UpdateInferenceRouterError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::update_inference_router::UpdateInferenceRouterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_mlflow_app::UpdateMlflowAppError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -10493,6 +10692,7 @@ impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::ConflictException(inner) => inner.source(),
+            Error::ResourceAlreadyExists(inner) => inner.source(),
             Error::ResourceInUse(inner) => inner.source(),
             Error::ResourceLimitExceeded(inner) => inner.source(),
             Error::ResourceNotFound(inner) => inner.source(),
@@ -10504,6 +10704,7 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::ConflictException(e) => e.request_id(),
+            Self::ResourceAlreadyExists(e) => e.request_id(),
             Self::ResourceInUse(e) => e.request_id(),
             Self::ResourceLimitExceeded(e) => e.request_id(),
             Self::ResourceNotFound(e) => e.request_id(),

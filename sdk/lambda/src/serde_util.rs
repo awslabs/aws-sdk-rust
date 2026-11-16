@@ -322,6 +322,15 @@ pub(crate) fn code_signing_config_correct_errors(
     builder
 }
 
+pub(crate) fn accelerator_config_correct_errors(
+    mut builder: crate::types::builders::AcceleratorConfigBuilder,
+) -> crate::types::builders::AcceleratorConfigBuilder {
+    if builder.accelerator_memory_size.is_none() {
+        builder.accelerator_memory_size = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn capacity_provider_config_correct_errors(
     mut builder: crate::types::builders::CapacityProviderConfigBuilder,
 ) -> crate::types::builders::CapacityProviderConfigBuilder {

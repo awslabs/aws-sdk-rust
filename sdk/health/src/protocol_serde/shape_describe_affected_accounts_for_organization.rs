@@ -110,6 +110,11 @@ pub(crate) fn de_describe_affected_accounts_for_organization(
                     )?)),
                 )
             })?,
+            "affectedAccountEntities" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_affected_account_entities(Some(
+                    crate::protocol_serde::shape_affected_account_entity_list::de_affected_account_entity_list(decoder, depth + 1)?,
+                )))
+            })?,
             "eventScopeCode" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_event_scope_code(Some(decoder.string().map(|s| crate::types::EventScopeCode::from(s.as_str()))?)))
             })?,

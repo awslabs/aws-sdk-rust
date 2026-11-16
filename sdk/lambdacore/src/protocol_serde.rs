@@ -143,6 +143,8 @@ pub(crate) mod shape_runtime_version_info;
 
 pub(crate) mod shape_associated_compute_resource_types_list;
 
+pub(crate) mod shape_elastic_ip_configuration;
+
 pub(crate) mod shape_network_connector_security_group_ids;
 
 pub(crate) mod shape_network_connector_subnet_ids;

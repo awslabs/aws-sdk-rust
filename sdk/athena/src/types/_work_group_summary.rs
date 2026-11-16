@@ -12,7 +12,7 @@ pub struct WorkGroupSummary {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The workgroup creation date and time.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The engine version setting for all queries on the workgroup. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
+    /// <p>The engine version setting for all queries on the workgroup.</p>
     pub engine_version: ::std::option::Option<crate::types::EngineVersion>,
     /// <p>The ARN of the IAM Identity Center enabled application associated with the workgroup.</p>
     pub identity_center_application_arn: ::std::option::Option<::std::string::String>,
@@ -34,7 +34,7 @@ impl WorkGroupSummary {
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The engine version setting for all queries on the workgroup. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
+    /// <p>The engine version setting for all queries on the workgroup.</p>
     pub fn engine_version(&self) -> ::std::option::Option<&crate::types::EngineVersion> {
         self.engine_version.as_ref()
     }
@@ -118,17 +118,17 @@ impl WorkGroupSummaryBuilder {
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// <p>The engine version setting for all queries on the workgroup. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
+    /// <p>The engine version setting for all queries on the workgroup.</p>
     pub fn engine_version(mut self, input: crate::types::EngineVersion) -> Self {
         self.engine_version = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The engine version setting for all queries on the workgroup. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
+    /// <p>The engine version setting for all queries on the workgroup.</p>
     pub fn set_engine_version(mut self, input: ::std::option::Option<crate::types::EngineVersion>) -> Self {
         self.engine_version = input;
         self
     }
-    /// <p>The engine version setting for all queries on the workgroup. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
+    /// <p>The engine version setting for all queries on the workgroup.</p>
     pub fn get_engine_version(&self) -> &::std::option::Option<crate::types::EngineVersion> {
         &self.engine_version
     }

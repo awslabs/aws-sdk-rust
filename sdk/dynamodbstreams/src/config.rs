@@ -213,6 +213,7 @@ impl Builder {
                 .load::<::aws_runtime::service_clock_skew::DisableClockSkewCorrection>()
                 .map(|it| it.is_disabled()),
         );
+        builder.set_account_id_endpoint_mode(config_bag.load::<::aws_types::endpoint_config::AccountIdEndpointMode>().cloned());
         builder.set_endpoint_url(config_bag.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()));
         builder.set_use_dual_stack(config_bag.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0));
         builder.set_use_fips(config_bag.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0));
@@ -1198,6 +1199,19 @@ impl Builder {
         self.config.store_or_unset(gen);
         self
     }
+    /// The AccountId Endpoint Mode.
+    pub fn account_id_endpoint_mode(mut self, account_id_endpoint_mode: ::aws_types::endpoint_config::AccountIdEndpointMode) -> Self {
+        self.set_account_id_endpoint_mode(::std::option::Option::Some(account_id_endpoint_mode));
+        self
+    }
+    /// The AccountId Endpoint Mode.
+    pub fn set_account_id_endpoint_mode(
+        &mut self,
+        account_id_endpoint_mode: ::std::option::Option<::aws_types::endpoint_config::AccountIdEndpointMode>,
+    ) -> &mut Self {
+        self.config.store_or_unset(account_id_endpoint_mode);
+        self
+    }
     /// Sets the endpoint URL used to communicate with this service.
     ///
     /// Note: this is used in combination with other endpoint rules, e.g. an API that applies a host-label prefix
@@ -1469,6 +1483,9 @@ impl ServiceRuntimePlugin {
         runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
             ::aws_runtime::recursion_detection::RecursionDetectionInterceptor::new(),
         ));
+        runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+            crate::account_id_endpoint::AccountIdEndpointFeatureTrackerInterceptor,
+        ));
         runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
             ::aws_runtime::auth::sigv4::SigV4AuthScheme::new(),
         ));
@@ -1593,6 +1610,7 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
                     .or_else(|| input.endpoint_url().map(|s| s.to_string())),
             );
         }
+        builder.set_account_id_endpoint_mode(input.account_id_endpoint_mode().cloned());
         // resiliency
         builder.set_retry_config(input.retry_config().cloned());
         builder.set_timeout_config(input.timeout_config().cloned());

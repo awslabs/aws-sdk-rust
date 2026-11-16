@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `ActivateSubscription` operation.
 pub mod activate_subscription;
 
+/// Types for the `CreateDataset` operation.
+pub mod create_dataset;
+
 /// Types for the `CreateDomain` operation.
 pub mod create_domain;
 
@@ -13,11 +16,20 @@ pub mod create_subscription;
 /// Types for the `DeactivateSubscription` operation.
 pub mod deactivate_subscription;
 
+/// Types for the `DeleteDataset` operation.
+pub mod delete_dataset;
+
 /// Types for the `DeleteDomain` operation.
 pub mod delete_domain;
 
+/// Types for the `GetDataset` operation.
+pub mod get_dataset;
+
 /// Types for the `GetDomain` operation.
 pub mod get_domain;
+
+/// Types for the `GetMedicalCodingJob` operation.
+pub mod get_medical_coding_job;
 
 /// Types for the `GetMedicalScribeListeningSession` operation.
 pub mod get_medical_scribe_listening_session;
@@ -28,6 +40,9 @@ pub mod get_patient_insights_job;
 /// Types for the `GetSubscription` operation.
 pub mod get_subscription;
 
+/// Types for the `ListDatasets` operation.
+pub mod list_datasets;
+
 /// Types for the `ListDomains` operation.
 pub mod list_domains;
 
@@ -37,11 +52,17 @@ pub mod list_subscriptions;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `StartMedicalCodingJob` operation.
+pub mod start_medical_coding_job;
+
 /// Types for the `StartMedicalScribeListeningSession` operation.
 pub mod start_medical_scribe_listening_session;
 
 /// Types for the `StartPatientInsightsJob` operation.
 pub mod start_patient_insights_job;
+
+/// Types for the `SubmitFeedback` operation.
+pub mod submit_feedback;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

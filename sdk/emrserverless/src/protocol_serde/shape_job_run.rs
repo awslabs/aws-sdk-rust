@@ -210,6 +210,13 @@ where
                                 )?,
                             );
                         }
+                        "flexExecution" => {
+                            builder = builder.set_flex_execution(crate::protocol_serde::shape_flex_execution::de_flex_execution(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

@@ -13,6 +13,10 @@ pub fn ser_describe_entity_aggregates_input_input(
             }
         }
     }
+    if let Some(var_3) = &input.filter {
+        encoder.str("filter");
+        crate::protocol_serde::shape_entity_aggregate_filter::ser_entity_aggregate_filter(encoder, var_3)?;
+    }
     encoder.end();
     Ok(())
 }

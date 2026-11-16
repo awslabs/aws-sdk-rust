@@ -22,7 +22,9 @@ impl crate::operation::update_agent_profile::builders::UpdateAgentProfileInputBu
 }
 /// Fluent builder constructing a request to `UpdateAgentProfile`.
 ///
-/// <p>Updates an existing optimization profile's configuration, including its pillars, execution role, and aggregation settings.</p>
+/// <p>Updates an existing optimization profile's configuration, including its pillars, execution role, and aggregation settings. Include only the fields you want to change. Any field you omit from the request keeps its current value, so you do not need to retrieve the profile first and resend the fields you are not changing.</p>
+/// <p>To clear an optional text field, supply an empty string for it; the field is then unset, and a subsequent read omits it rather than returning an empty string. Omitting the field from the request leaves the stored value in place. <code>description</code> and <code>businessOverview</code> can be cleared this way. <code>displayName</code> cannot be cleared because a display name is required, though you can change it. <code>pillars</code> cannot be cleared because a profile must target at least one pillar.</p>
+/// <p><code>aggregationConfiguration</code> behaves differently because it is a list of per-account configurations rather than a text field. Supplying an empty list removes every account entry, but the field itself remains set: a subsequent read returns an empty list rather than omitting the field. Omitting it from the request keeps the stored entries.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAgentProfileFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,45 +138,45 @@ impl UpdateAgentProfileFluentBuilder {
     pub fn get_profile_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_profile_arn()
     }
-    /// <p>The updated display name of the profile.</p>
+    /// <p>The updated display name of the profile. Omit this field to keep the current display name. A display name is required, so it cannot be cleared.</p>
     pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.display_name(input.into());
         self
     }
-    /// <p>The updated display name of the profile.</p>
+    /// <p>The updated display name of the profile. Omit this field to keep the current display name. A display name is required, so it cannot be cleared.</p>
     pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_display_name(input);
         self
     }
-    /// <p>The updated display name of the profile.</p>
+    /// <p>The updated display name of the profile. Omit this field to keep the current display name. A display name is required, so it cannot be cleared.</p>
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }
-    /// <p>The updated description of the profile.</p>
+    /// <p>The updated description of the profile. Omit this field to keep the current description, or supply an empty string to clear it; a cleared description is read back as absent rather than as an empty string.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The updated description of the profile.</p>
+    /// <p>The updated description of the profile. Omit this field to keep the current description, or supply an empty string to clear it; a cleared description is read back as absent rather than as an empty string.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The updated description of the profile.</p>
+    /// <p>The updated description of the profile. Omit this field to keep the current description, or supply an empty string to clear it; a cleared description is read back as absent rather than as an empty string.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// <p>The updated ARN of the IAM execution role.</p>
+    /// <p>The updated ARN of the IAM execution role. Omit this field to keep the current execution role.</p>
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.execution_role_arn(input.into());
         self
     }
-    /// <p>The updated ARN of the IAM execution role.</p>
+    /// <p>The updated ARN of the IAM execution role. Omit this field to keep the current execution role.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_execution_role_arn(input);
         self
     }
-    /// <p>The updated ARN of the IAM execution role.</p>
+    /// <p>The updated ARN of the IAM execution role. Omit this field to keep the current execution role.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_execution_role_arn()
     }
@@ -183,31 +185,31 @@ impl UpdateAgentProfileFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_aggregation_configuration`](Self::set_aggregation_configuration).
     ///
-    /// <p>The updated aggregation configuration.</p>
+    /// <p>The updated aggregation configuration, as a list of per-account entries. Omit this field to keep the current entries, or supply an empty list to remove them all. The field remains set either way — an emptied configuration is read back as an empty list, not as an absent field.</p>
     pub fn aggregation_configuration(mut self, input: crate::types::AggregationConfiguration) -> Self {
         self.inner = self.inner.aggregation_configuration(input);
         self
     }
-    /// <p>The updated aggregation configuration.</p>
+    /// <p>The updated aggregation configuration, as a list of per-account entries. Omit this field to keep the current entries, or supply an empty list to remove them all. The field remains set either way — an emptied configuration is read back as an empty list, not as an absent field.</p>
     pub fn set_aggregation_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregationConfiguration>>) -> Self {
         self.inner = self.inner.set_aggregation_configuration(input);
         self
     }
-    /// <p>The updated aggregation configuration.</p>
+    /// <p>The updated aggregation configuration, as a list of per-account entries. Omit this field to keep the current entries, or supply an empty list to remove them all. The field remains set either way — an emptied configuration is read back as an empty list, not as an absent field.</p>
     pub fn get_aggregation_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregationConfiguration>> {
         self.inner.get_aggregation_configuration()
     }
-    /// <p>The updated business overview for the profile.</p>
+    /// <p>The updated business overview for the profile. Omit this field to keep the current business overview, or supply an empty string to clear it; a cleared business overview is read back as absent rather than as an empty string.</p>
     pub fn business_overview(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.business_overview(input.into());
         self
     }
-    /// <p>The updated business overview for the profile.</p>
+    /// <p>The updated business overview for the profile. Omit this field to keep the current business overview, or supply an empty string to clear it; a cleared business overview is read back as absent rather than as an empty string.</p>
     pub fn set_business_overview(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_business_overview(input);
         self
     }
-    /// <p>The updated business overview for the profile.</p>
+    /// <p>The updated business overview for the profile. Omit this field to keep the current business overview, or supply an empty string to clear it; a cleared business overview is read back as absent rather than as an empty string.</p>
     pub fn get_business_overview(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_business_overview()
     }
@@ -216,17 +218,17 @@ impl UpdateAgentProfileFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_pillars`](Self::set_pillars).
     ///
-    /// <p>The updated Well-Architected Tool Framework pillars for the profile.</p>
+    /// <p>The updated Amazon Web Services Well-Architected Framework pillars for the profile. Omit this field to keep the current pillars. A profile must target at least one pillar, so an empty list is rejected.</p>
     pub fn pillars(mut self, input: crate::types::Pillar) -> Self {
         self.inner = self.inner.pillars(input);
         self
     }
-    /// <p>The updated Well-Architected Tool Framework pillars for the profile.</p>
+    /// <p>The updated Amazon Web Services Well-Architected Framework pillars for the profile. Omit this field to keep the current pillars. A profile must target at least one pillar, so an empty list is rejected.</p>
     pub fn set_pillars(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Pillar>>) -> Self {
         self.inner = self.inner.set_pillars(input);
         self
     }
-    /// <p>The updated Well-Architected Tool Framework pillars for the profile.</p>
+    /// <p>The updated Amazon Web Services Well-Architected Framework pillars for the profile. Omit this field to keep the current pillars. A profile must target at least one pillar, so an empty list is rejected.</p>
     pub fn get_pillars(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Pillar>> {
         self.inner.get_pillars()
     }

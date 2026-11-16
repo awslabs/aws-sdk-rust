@@ -17,7 +17,7 @@ pub struct StartMedicalScribeListeningSessionOutput {
     pub media_sample_rate_hertz: ::std::option::Option<i32>,
     /// <p>The encoding for the input audio</p>
     pub media_encoding: ::std::option::Option<crate::types::MedicalScribeMediaEncoding>,
-    /// <p>The output stream containing transcript events</p>
+    /// <p>The output stream that contains transcript events, periodontal chart events, checklist events, and errors.</p>
     pub response_stream:
         crate::event_receiver::EventReceiver<crate::types::MedicalScribeOutputStream, crate::types::error::MedicalScribeOutputStreamError>,
     _request_id: Option<String>,
@@ -51,7 +51,7 @@ impl StartMedicalScribeListeningSessionOutput {
     pub fn media_encoding(&self) -> ::std::option::Option<&crate::types::MedicalScribeMediaEncoding> {
         self.media_encoding.as_ref()
     }
-    /// <p>The output stream containing transcript events</p>
+    /// <p>The output stream that contains transcript events, periodontal chart events, checklist events, and errors.</p>
     pub fn response_stream(
         &self,
     ) -> &crate::event_receiver::EventReceiver<crate::types::MedicalScribeOutputStream, crate::types::error::MedicalScribeOutputStreamError> {
@@ -185,7 +185,7 @@ impl StartMedicalScribeListeningSessionOutputBuilder {
     pub fn get_media_encoding(&self) -> &::std::option::Option<crate::types::MedicalScribeMediaEncoding> {
         &self.media_encoding
     }
-    /// <p>The output stream containing transcript events</p>
+    /// <p>The output stream that contains transcript events, periodontal chart events, checklist events, and errors.</p>
     pub fn response_stream(
         mut self,
         input: crate::event_receiver::EventReceiver<crate::types::MedicalScribeOutputStream, crate::types::error::MedicalScribeOutputStreamError>,
@@ -193,7 +193,7 @@ impl StartMedicalScribeListeningSessionOutputBuilder {
         self.response_stream = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The output stream containing transcript events</p>
+    /// <p>The output stream that contains transcript events, periodontal chart events, checklist events, and errors.</p>
     pub fn set_response_stream(
         mut self,
         input: ::std::option::Option<
@@ -203,7 +203,7 @@ impl StartMedicalScribeListeningSessionOutputBuilder {
         self.response_stream = input;
         self
     }
-    /// <p>The output stream containing transcript events</p>
+    /// <p>The output stream that contains transcript events, periodontal chart events, checklist events, and errors.</p>
     pub fn get_response_stream(
         &self,
     ) -> &::std::option::Option<

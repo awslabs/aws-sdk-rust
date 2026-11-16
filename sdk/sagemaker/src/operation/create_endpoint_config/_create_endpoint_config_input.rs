@@ -45,6 +45,8 @@ pub struct CreateEndpointConfigInput {
     pub enable_network_isolation: ::std::option::Option<bool>,
     /// <p>The configuration parameters for utilization metrics.</p>
     pub metrics_config: ::std::option::Option<crate::types::MetricsConfig>,
+    /// <p>The cross-Region traffic cap for the endpoint. The cap limits the requests per second that the endpoint accepts from inference routers in other Amazon Web Services Regions. If you don't specify it, these requests aren't limited. You can't specify it with serverless variants or with <code>AsyncInferenceConfig</code>. For information about the cross-Region traffic cap, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-router.html#inference-router-cross-region-limit">Limit requests from other Regions</a>.</p>
+    pub cross_region_traffic_config: ::std::option::Option<crate::types::CrossRegionTrafficConfig>,
 }
 impl CreateEndpointConfigInput {
     /// <p>The name of the endpoint configuration. You specify this name in a <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a> request.</p>
@@ -119,6 +121,10 @@ impl CreateEndpointConfigInput {
     pub fn metrics_config(&self) -> ::std::option::Option<&crate::types::MetricsConfig> {
         self.metrics_config.as_ref()
     }
+    /// <p>The cross-Region traffic cap for the endpoint. The cap limits the requests per second that the endpoint accepts from inference routers in other Amazon Web Services Regions. If you don't specify it, these requests aren't limited. You can't specify it with serverless variants or with <code>AsyncInferenceConfig</code>. For information about the cross-Region traffic cap, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-router.html#inference-router-cross-region-limit">Limit requests from other Regions</a>.</p>
+    pub fn cross_region_traffic_config(&self) -> ::std::option::Option<&crate::types::CrossRegionTrafficConfig> {
+        self.cross_region_traffic_config.as_ref()
+    }
 }
 impl CreateEndpointConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateEndpointConfigInput`](crate::operation::create_endpoint_config::CreateEndpointConfigInput).
@@ -143,6 +149,7 @@ pub struct CreateEndpointConfigInputBuilder {
     pub(crate) vpc_config: ::std::option::Option<crate::types::VpcConfig>,
     pub(crate) enable_network_isolation: ::std::option::Option<bool>,
     pub(crate) metrics_config: ::std::option::Option<crate::types::MetricsConfig>,
+    pub(crate) cross_region_traffic_config: ::std::option::Option<crate::types::CrossRegionTrafficConfig>,
 }
 impl CreateEndpointConfigInputBuilder {
     /// <p>The name of the endpoint configuration. You specify this name in a <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a> request.</p>
@@ -386,6 +393,20 @@ impl CreateEndpointConfigInputBuilder {
     pub fn get_metrics_config(&self) -> &::std::option::Option<crate::types::MetricsConfig> {
         &self.metrics_config
     }
+    /// <p>The cross-Region traffic cap for the endpoint. The cap limits the requests per second that the endpoint accepts from inference routers in other Amazon Web Services Regions. If you don't specify it, these requests aren't limited. You can't specify it with serverless variants or with <code>AsyncInferenceConfig</code>. For information about the cross-Region traffic cap, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-router.html#inference-router-cross-region-limit">Limit requests from other Regions</a>.</p>
+    pub fn cross_region_traffic_config(mut self, input: crate::types::CrossRegionTrafficConfig) -> Self {
+        self.cross_region_traffic_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The cross-Region traffic cap for the endpoint. The cap limits the requests per second that the endpoint accepts from inference routers in other Amazon Web Services Regions. If you don't specify it, these requests aren't limited. You can't specify it with serverless variants or with <code>AsyncInferenceConfig</code>. For information about the cross-Region traffic cap, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-router.html#inference-router-cross-region-limit">Limit requests from other Regions</a>.</p>
+    pub fn set_cross_region_traffic_config(mut self, input: ::std::option::Option<crate::types::CrossRegionTrafficConfig>) -> Self {
+        self.cross_region_traffic_config = input;
+        self
+    }
+    /// <p>The cross-Region traffic cap for the endpoint. The cap limits the requests per second that the endpoint accepts from inference routers in other Amazon Web Services Regions. If you don't specify it, these requests aren't limited. You can't specify it with serverless variants or with <code>AsyncInferenceConfig</code>. For information about the cross-Region traffic cap, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-router.html#inference-router-cross-region-limit">Limit requests from other Regions</a>.</p>
+    pub fn get_cross_region_traffic_config(&self) -> &::std::option::Option<crate::types::CrossRegionTrafficConfig> {
+        &self.cross_region_traffic_config
+    }
     /// Consumes the builder and constructs a [`CreateEndpointConfigInput`](crate::operation::create_endpoint_config::CreateEndpointConfigInput).
     pub fn build(
         self,
@@ -404,6 +425,7 @@ impl CreateEndpointConfigInputBuilder {
             vpc_config: self.vpc_config,
             enable_network_isolation: self.enable_network_isolation,
             metrics_config: self.metrics_config,
+            cross_region_traffic_config: self.cross_region_traffic_config,
         })
     }
 }

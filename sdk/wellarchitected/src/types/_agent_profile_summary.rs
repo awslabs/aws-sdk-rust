@@ -12,14 +12,16 @@ pub struct AgentProfileSummary {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The business overview for this profile.</p>
     pub business_overview: ::std::option::Option<::std::string::String>,
-    /// <p>The Well-Architected Tool Framework pillars associated with this profile.</p>
-    pub pillars: ::std::vec::Vec<crate::types::Pillar>,
+    /// <p>The Amazon Web Services Well-Architected Framework pillars associated with this profile. Not present for basic profiles.</p>
+    pub pillars: ::std::option::Option<::std::vec::Vec<crate::types::Pillar>>,
     /// <p>Indicates whether deletion protection is enabled for the profile.</p>
     pub deletion_protection: bool,
-    /// <p>The ARN of the IAM execution role used for recommendation actions.</p>
-    pub execution_role_arn: ::std::string::String,
-    /// <p>The aggregation configuration that defines which Amazon Web Services accounts and Regions to analyze.</p>
-    pub aggregation_configuration: ::std::vec::Vec<crate::types::AggregationConfiguration>,
+    /// <p>The type of the profile.</p>
+    pub profile_type: ::std::option::Option<crate::types::ProfileType>,
+    /// <p>The ARN of the IAM execution role used for recommendation actions. Not present for basic profiles.</p>
+    pub execution_role_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The aggregation configuration that defines which Amazon Web Services accounts and Regions to analyze. Not present for basic profiles.</p>
+    pub aggregation_configuration: ::std::option::Option<::std::vec::Vec<crate::types::AggregationConfiguration>>,
     /// <p>The Amazon Resource Name (ARN) of the optimization profile.</p>
     pub arn: ::std::string::String,
     /// <p>Indicates whether the profile is valid for scheduled recommendation generation.</p>
@@ -28,8 +30,6 @@ pub struct AgentProfileSummary {
     pub eligible_for_architecture_generation: ::std::option::Option<bool>,
     /// <p>A map of field paths to error messages for invalid or missing input fields.</p>
     pub field_errors: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The tags associated with the profile.</p>
-    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The identifier of the user or system that created this profile.</p>
     pub created_by: ::std::string::String,
     /// <p>The timestamp when the profile was created.</p>
@@ -38,6 +38,8 @@ pub struct AgentProfileSummary {
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the profile was last modified.</p>
     pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The organizational monitoring boundary. Present only for organizational profiles.</p>
+    pub organizational_aggregation_configuration: ::std::option::Option<crate::types::OrganizationalAggregationConfiguration>,
 }
 impl AgentProfileSummary {
     /// <p>The system name of the profile.</p>
@@ -57,24 +59,29 @@ impl AgentProfileSummary {
     pub fn business_overview(&self) -> ::std::option::Option<&str> {
         self.business_overview.as_deref()
     }
-    /// <p>The Well-Architected Tool Framework pillars associated with this profile.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars associated with this profile. Not present for basic profiles.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pillars.is_none()`.
     pub fn pillars(&self) -> &[crate::types::Pillar] {
-        use std::ops::Deref;
-        self.pillars.deref()
+        self.pillars.as_deref().unwrap_or_default()
     }
     /// <p>Indicates whether deletion protection is enabled for the profile.</p>
     pub fn deletion_protection(&self) -> bool {
         self.deletion_protection
     }
-    /// <p>The ARN of the IAM execution role used for recommendation actions.</p>
-    pub fn execution_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.execution_role_arn.deref()
+    /// <p>The type of the profile.</p>
+    pub fn profile_type(&self) -> ::std::option::Option<&crate::types::ProfileType> {
+        self.profile_type.as_ref()
     }
-    /// <p>The aggregation configuration that defines which Amazon Web Services accounts and Regions to analyze.</p>
+    /// <p>The ARN of the IAM execution role used for recommendation actions. Not present for basic profiles.</p>
+    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
+    }
+    /// <p>The aggregation configuration that defines which Amazon Web Services accounts and Regions to analyze. Not present for basic profiles.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aggregation_configuration.is_none()`.
     pub fn aggregation_configuration(&self) -> &[crate::types::AggregationConfiguration] {
-        use std::ops::Deref;
-        self.aggregation_configuration.deref()
+        self.aggregation_configuration.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the optimization profile.</p>
     pub fn arn(&self) -> &str {
@@ -93,12 +100,6 @@ impl AgentProfileSummary {
     pub fn field_errors(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.field_errors.as_ref()
     }
-    /// <p>The tags associated with the profile.</p>
-    ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
-    pub fn tags(&self) -> &[crate::types::Tag] {
-        self.tags.as_deref().unwrap_or_default()
-    }
     /// <p>The identifier of the user or system that created this profile.</p>
     pub fn created_by(&self) -> &str {
         use std::ops::Deref;
@@ -116,6 +117,10 @@ impl AgentProfileSummary {
     pub fn last_modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
+    /// <p>The organizational monitoring boundary. Present only for organizational profiles.</p>
+    pub fn organizational_aggregation_configuration(&self) -> ::std::option::Option<&crate::types::OrganizationalAggregationConfiguration> {
+        self.organizational_aggregation_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for AgentProfileSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -126,17 +131,18 @@ impl ::std::fmt::Debug for AgentProfileSummary {
         formatter.field("business_overview", &"*** Sensitive Data Redacted ***");
         formatter.field("pillars", &self.pillars);
         formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("profile_type", &self.profile_type);
         formatter.field("execution_role_arn", &self.execution_role_arn);
         formatter.field("aggregation_configuration", &self.aggregation_configuration);
         formatter.field("arn", &self.arn);
         formatter.field("eligible_for_scheduled_generation", &self.eligible_for_scheduled_generation);
         formatter.field("eligible_for_architecture_generation", &self.eligible_for_architecture_generation);
         formatter.field("field_errors", &self.field_errors);
-        formatter.field("tags", &self.tags);
         formatter.field("created_by", &self.created_by);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_modified_by", &self.last_modified_by);
         formatter.field("last_modified_at", &self.last_modified_at);
+        formatter.field("organizational_aggregation_configuration", &self.organizational_aggregation_configuration);
         formatter.finish()
     }
 }
@@ -157,17 +163,18 @@ pub struct AgentProfileSummaryBuilder {
     pub(crate) business_overview: ::std::option::Option<::std::string::String>,
     pub(crate) pillars: ::std::option::Option<::std::vec::Vec<crate::types::Pillar>>,
     pub(crate) deletion_protection: ::std::option::Option<bool>,
+    pub(crate) profile_type: ::std::option::Option<crate::types::ProfileType>,
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) aggregation_configuration: ::std::option::Option<::std::vec::Vec<crate::types::AggregationConfiguration>>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) eligible_for_scheduled_generation: ::std::option::Option<bool>,
     pub(crate) eligible_for_architecture_generation: ::std::option::Option<bool>,
     pub(crate) field_errors: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_by: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) organizational_aggregation_configuration: ::std::option::Option<crate::types::OrganizationalAggregationConfiguration>,
 }
 impl AgentProfileSummaryBuilder {
     /// <p>The system name of the profile.</p>
@@ -231,19 +238,19 @@ impl AgentProfileSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_pillars`](Self::set_pillars).
     ///
-    /// <p>The Well-Architected Tool Framework pillars associated with this profile.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars associated with this profile. Not present for basic profiles.</p>
     pub fn pillars(mut self, input: crate::types::Pillar) -> Self {
         let mut v = self.pillars.unwrap_or_default();
         v.push(input);
         self.pillars = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The Well-Architected Tool Framework pillars associated with this profile.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars associated with this profile. Not present for basic profiles.</p>
     pub fn set_pillars(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Pillar>>) -> Self {
         self.pillars = input;
         self
     }
-    /// <p>The Well-Architected Tool Framework pillars associated with this profile.</p>
+    /// <p>The Amazon Web Services Well-Architected Framework pillars associated with this profile. Not present for basic profiles.</p>
     pub fn get_pillars(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Pillar>> {
         &self.pillars
     }
@@ -261,18 +268,31 @@ impl AgentProfileSummaryBuilder {
     pub fn get_deletion_protection(&self) -> &::std::option::Option<bool> {
         &self.deletion_protection
     }
-    /// <p>The ARN of the IAM execution role used for recommendation actions.</p>
-    /// This field is required.
+    /// <p>The type of the profile.</p>
+    pub fn profile_type(mut self, input: crate::types::ProfileType) -> Self {
+        self.profile_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the profile.</p>
+    pub fn set_profile_type(mut self, input: ::std::option::Option<crate::types::ProfileType>) -> Self {
+        self.profile_type = input;
+        self
+    }
+    /// <p>The type of the profile.</p>
+    pub fn get_profile_type(&self) -> &::std::option::Option<crate::types::ProfileType> {
+        &self.profile_type
+    }
+    /// <p>The ARN of the IAM execution role used for recommendation actions. Not present for basic profiles.</p>
     pub fn execution_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the IAM execution role used for recommendation actions.</p>
+    /// <p>The ARN of the IAM execution role used for recommendation actions. Not present for basic profiles.</p>
     pub fn set_execution_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_arn = input;
         self
     }
-    /// <p>The ARN of the IAM execution role used for recommendation actions.</p>
+    /// <p>The ARN of the IAM execution role used for recommendation actions. Not present for basic profiles.</p>
     pub fn get_execution_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role_arn
     }
@@ -280,19 +300,19 @@ impl AgentProfileSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_aggregation_configuration`](Self::set_aggregation_configuration).
     ///
-    /// <p>The aggregation configuration that defines which Amazon Web Services accounts and Regions to analyze.</p>
+    /// <p>The aggregation configuration that defines which Amazon Web Services accounts and Regions to analyze. Not present for basic profiles.</p>
     pub fn aggregation_configuration(mut self, input: crate::types::AggregationConfiguration) -> Self {
         let mut v = self.aggregation_configuration.unwrap_or_default();
         v.push(input);
         self.aggregation_configuration = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The aggregation configuration that defines which Amazon Web Services accounts and Regions to analyze.</p>
+    /// <p>The aggregation configuration that defines which Amazon Web Services accounts and Regions to analyze. Not present for basic profiles.</p>
     pub fn set_aggregation_configuration(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AggregationConfiguration>>) -> Self {
         self.aggregation_configuration = input;
         self
     }
-    /// <p>The aggregation configuration that defines which Amazon Web Services accounts and Regions to analyze.</p>
+    /// <p>The aggregation configuration that defines which Amazon Web Services accounts and Regions to analyze. Not present for basic profiles.</p>
     pub fn get_aggregation_configuration(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AggregationConfiguration>> {
         &self.aggregation_configuration
     }
@@ -362,26 +382,6 @@ impl AgentProfileSummaryBuilder {
     pub fn get_field_errors(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.field_errors
     }
-    /// Appends an item to `tags`.
-    ///
-    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
-    ///
-    /// <p>The tags associated with the profile.</p>
-    pub fn tags(mut self, input: crate::types::Tag) -> Self {
-        let mut v = self.tags.unwrap_or_default();
-        v.push(input);
-        self.tags = ::std::option::Option::Some(v);
-        self
-    }
-    /// <p>The tags associated with the profile.</p>
-    pub fn set_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input;
-        self
-    }
-    /// <p>The tags associated with the profile.</p>
-    pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
-        &self.tags
-    }
     /// <p>The identifier of the user or system that created this profile.</p>
     /// This field is required.
     pub fn created_by(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -440,12 +440,26 @@ impl AgentProfileSummaryBuilder {
     pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_at
     }
+    /// <p>The organizational monitoring boundary. Present only for organizational profiles.</p>
+    pub fn organizational_aggregation_configuration(mut self, input: crate::types::OrganizationalAggregationConfiguration) -> Self {
+        self.organizational_aggregation_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The organizational monitoring boundary. Present only for organizational profiles.</p>
+    pub fn set_organizational_aggregation_configuration(
+        mut self,
+        input: ::std::option::Option<crate::types::OrganizationalAggregationConfiguration>,
+    ) -> Self {
+        self.organizational_aggregation_configuration = input;
+        self
+    }
+    /// <p>The organizational monitoring boundary. Present only for organizational profiles.</p>
+    pub fn get_organizational_aggregation_configuration(&self) -> &::std::option::Option<crate::types::OrganizationalAggregationConfiguration> {
+        &self.organizational_aggregation_configuration
+    }
     /// Consumes the builder and constructs a [`AgentProfileSummary`](crate::types::AgentProfileSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AgentProfileSummaryBuilder::name)
-    /// - [`pillars`](crate::types::builders::AgentProfileSummaryBuilder::pillars)
-    /// - [`execution_role_arn`](crate::types::builders::AgentProfileSummaryBuilder::execution_role_arn)
-    /// - [`aggregation_configuration`](crate::types::builders::AgentProfileSummaryBuilder::aggregation_configuration)
     /// - [`arn`](crate::types::builders::AgentProfileSummaryBuilder::arn)
     /// - [`created_by`](crate::types::builders::AgentProfileSummaryBuilder::created_by)
     /// - [`created_at`](crate::types::builders::AgentProfileSummaryBuilder::created_at)
@@ -460,25 +474,11 @@ impl AgentProfileSummaryBuilder {
             display_name: self.display_name,
             description: self.description,
             business_overview: self.business_overview,
-            pillars: self.pillars.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "pillars",
-                    "pillars was not specified but it is required when building AgentProfileSummary",
-                )
-            })?,
+            pillars: self.pillars,
             deletion_protection: self.deletion_protection.unwrap_or(true),
-            execution_role_arn: self.execution_role_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "execution_role_arn",
-                    "execution_role_arn was not specified but it is required when building AgentProfileSummary",
-                )
-            })?,
-            aggregation_configuration: self.aggregation_configuration.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "aggregation_configuration",
-                    "aggregation_configuration was not specified but it is required when building AgentProfileSummary",
-                )
-            })?,
+            profile_type: self.profile_type,
+            execution_role_arn: self.execution_role_arn,
+            aggregation_configuration: self.aggregation_configuration,
             arn: self.arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
@@ -488,7 +488,6 @@ impl AgentProfileSummaryBuilder {
             eligible_for_scheduled_generation: self.eligible_for_scheduled_generation,
             eligible_for_architecture_generation: self.eligible_for_architecture_generation,
             field_errors: self.field_errors,
-            tags: self.tags,
             created_by: self.created_by.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_by",
@@ -503,6 +502,7 @@ impl AgentProfileSummaryBuilder {
             })?,
             last_modified_by: self.last_modified_by,
             last_modified_at: self.last_modified_at,
+            organizational_aggregation_configuration: self.organizational_aggregation_configuration,
         })
     }
 }
@@ -515,17 +515,18 @@ impl ::std::fmt::Debug for AgentProfileSummaryBuilder {
         formatter.field("business_overview", &"*** Sensitive Data Redacted ***");
         formatter.field("pillars", &self.pillars);
         formatter.field("deletion_protection", &self.deletion_protection);
+        formatter.field("profile_type", &self.profile_type);
         formatter.field("execution_role_arn", &self.execution_role_arn);
         formatter.field("aggregation_configuration", &self.aggregation_configuration);
         formatter.field("arn", &self.arn);
         formatter.field("eligible_for_scheduled_generation", &self.eligible_for_scheduled_generation);
         formatter.field("eligible_for_architecture_generation", &self.eligible_for_architecture_generation);
         formatter.field("field_errors", &self.field_errors);
-        formatter.field("tags", &self.tags);
         formatter.field("created_by", &self.created_by);
         formatter.field("created_at", &self.created_at);
         formatter.field("last_modified_by", &self.last_modified_by);
         formatter.field("last_modified_at", &self.last_modified_at);
+        formatter.field("organizational_aggregation_configuration", &self.organizational_aggregation_configuration);
         formatter.finish()
     }
 }

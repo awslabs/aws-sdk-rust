@@ -107,6 +107,8 @@ pub use crate::types::_explainer_config::ExplainerConfigBuilder;
 
 pub use crate::types::_metrics_config::MetricsConfigBuilder;
 
+pub use crate::types::_cross_region_traffic_config::CrossRegionTrafficConfigBuilder;
+
 pub use crate::types::_online_store_config::OnlineStoreConfigBuilder;
 
 pub use crate::types::_offline_store_config::OfflineStoreConfigBuilder;
@@ -653,6 +655,8 @@ pub use crate::types::_recommendation_job_vpc_config::RecommendationJobVpcConfig
 
 pub use crate::types::_recommendation_job_compiled_output_config::RecommendationJobCompiledOutputConfigBuilder;
 
+pub use crate::types::_routing_target::RoutingTargetBuilder;
+
 pub use crate::types::_labeling_job_data_source::LabelingJobDataSourceBuilder;
 
 pub use crate::types::_labeling_job_data_attributes::LabelingJobDataAttributesBuilder;
@@ -907,6 +911,8 @@ pub use crate::types::_inference_recommendations_job::InferenceRecommendationsJo
 
 pub use crate::types::_inference_recommendations_job_step::InferenceRecommendationsJobStepBuilder;
 
+pub use crate::types::_inference_router_summary::InferenceRouterSummaryBuilder;
+
 pub use crate::types::_job_summary::JobSummaryBuilder;
 
 pub use crate::types::_job_config_schema_version_summary::JobConfigSchemaVersionSummaryBuilder;
@@ -1150,6 +1156,8 @@ pub use crate::types::_recommendation_job_payload_config::RecommendationJobPaylo
 pub use crate::types::_endpoint_info::EndpointInfoBuilder;
 
 pub use crate::types::_model_latency_threshold::ModelLatencyThresholdBuilder;
+
+pub use crate::types::_routing_target_async_inference_config::RoutingTargetAsyncInferenceConfigBuilder;
 
 pub use crate::types::_labeling_job_s3_data_source::LabelingJobS3DataSourceBuilder;
 
@@ -1437,6 +1445,12 @@ pub use crate::types::_phase::PhaseBuilder;
 
 pub use crate::types::_environment_parameter_ranges::EnvironmentParameterRangesBuilder;
 
+pub use crate::types::_destination::DestinationBuilder;
+
+pub use crate::types::_routing_target_async_inference_output_config::RoutingTargetAsyncInferenceOutputConfigBuilder;
+
+pub use crate::types::_routing_target_async_inference_client_config::RoutingTargetAsyncInferenceClientConfigBuilder;
+
 pub use crate::types::_inference_hub_access_config::InferenceHubAccessConfigBuilder;
 
 pub use crate::types::_metrics_endpoint::MetricsEndpointBuilder;
@@ -1586,6 +1600,8 @@ pub use crate::types::_integer_parameter_range_specification::IntegerParameterRa
 pub use crate::types::_continuous_parameter_range_specification::ContinuousParameterRangeSpecificationBuilder;
 
 pub use crate::types::_categorical_parameter_range_specification::CategoricalParameterRangeSpecificationBuilder;
+
+pub use crate::types::_routing_target_async_inference_notification_config::RoutingTargetAsyncInferenceNotificationConfigBuilder;
 
 pub use crate::types::_cfn_stack_create_parameter::CfnStackCreateParameterBuilder;
 

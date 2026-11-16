@@ -405,6 +405,8 @@ pub fn parse_event_stream_error_metadata(
     crate::json_errors::parse_error_metadata(payload, &::aws_smithy_runtime_api::http::Headers::new())
 }
 
+pub(crate) mod shape_accelerator_config;
+
 pub(crate) mod shape_account_limit;
 
 pub(crate) mod shape_account_usage;

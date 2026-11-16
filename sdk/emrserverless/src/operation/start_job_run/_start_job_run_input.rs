@@ -26,6 +26,8 @@ pub struct StartJobRunInput {
     pub mode: ::std::option::Option<crate::types::JobRunMode>,
     /// <p>The retry policy when job run starts.</p>
     pub retry_policy: ::std::option::Option<crate::types::RetryPolicy>,
+    /// <p>The Amazon EMR Serverless Flex settings for the job run. If you don't specify these settings, the job run doesn't use Flex capacity.</p>
+    pub flex_execution: ::std::option::Option<crate::types::FlexExecution>,
 }
 impl StartJobRunInput {
     /// <p>The ID of the application on which to run the job.</p>
@@ -73,6 +75,10 @@ impl StartJobRunInput {
     pub fn retry_policy(&self) -> ::std::option::Option<&crate::types::RetryPolicy> {
         self.retry_policy.as_ref()
     }
+    /// <p>The Amazon EMR Serverless Flex settings for the job run. If you don't specify these settings, the job run doesn't use Flex capacity.</p>
+    pub fn flex_execution(&self) -> ::std::option::Option<&crate::types::FlexExecution> {
+        self.flex_execution.as_ref()
+    }
 }
 impl StartJobRunInput {
     /// Creates a new builder-style object to manufacture [`StartJobRunInput`](crate::operation::start_job_run::StartJobRunInput).
@@ -96,6 +102,7 @@ pub struct StartJobRunInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) mode: ::std::option::Option<crate::types::JobRunMode>,
     pub(crate) retry_policy: ::std::option::Option<crate::types::RetryPolicy>,
+    pub(crate) flex_execution: ::std::option::Option<crate::types::FlexExecution>,
 }
 impl StartJobRunInputBuilder {
     /// <p>The ID of the application on which to run the job.</p>
@@ -264,6 +271,20 @@ impl StartJobRunInputBuilder {
     pub fn get_retry_policy(&self) -> &::std::option::Option<crate::types::RetryPolicy> {
         &self.retry_policy
     }
+    /// <p>The Amazon EMR Serverless Flex settings for the job run. If you don't specify these settings, the job run doesn't use Flex capacity.</p>
+    pub fn flex_execution(mut self, input: crate::types::FlexExecution) -> Self {
+        self.flex_execution = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon EMR Serverless Flex settings for the job run. If you don't specify these settings, the job run doesn't use Flex capacity.</p>
+    pub fn set_flex_execution(mut self, input: ::std::option::Option<crate::types::FlexExecution>) -> Self {
+        self.flex_execution = input;
+        self
+    }
+    /// <p>The Amazon EMR Serverless Flex settings for the job run. If you don't specify these settings, the job run doesn't use Flex capacity.</p>
+    pub fn get_flex_execution(&self) -> &::std::option::Option<crate::types::FlexExecution> {
+        &self.flex_execution
+    }
     /// Consumes the builder and constructs a [`StartJobRunInput`](crate::operation::start_job_run::StartJobRunInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_job_run::StartJobRunInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_job_run::StartJobRunInput {
@@ -278,6 +299,7 @@ impl StartJobRunInputBuilder {
             name: self.name,
             mode: self.mode,
             retry_policy: self.retry_policy,
+            flex_execution: self.flex_execution,
         })
     }
 }

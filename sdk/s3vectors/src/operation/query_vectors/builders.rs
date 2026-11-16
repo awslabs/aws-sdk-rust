@@ -22,7 +22,8 @@ impl crate::operation::query_vectors::builders::QueryVectorsInputBuilder {
 }
 /// Fluent builder constructing a request to `QueryVectors`.
 ///
-/// <p>Performs an approximate nearest neighbor search query in a vector index using a query vector. By default, it returns the keys of approximate nearest neighbors. You can optionally include the computed distance (between the query vector and each vector in the response) and metadata of each vector in the response.</p>
+/// <p>Returns matching vector keys from a vector index ranked by vector similarity, full-text relevance, or both. Specify <code>queryVector</code> to perform a vector search, specify <code>queryTexts</code> to perform a full-text search, or specify both to perform a hybrid search. Full-text search ranks results using BM25. Hybrid search combines the vector and full-text rankings using Reciprocal Rank Fusion (RRF).</p>
+/// <p>Amazon S3 Vectors ranks results by distance for a vector-only search, by BM25 score for a full-text-only search, and by RRF score for a hybrid search. You can optionally include computed distances, relevance scores, and vector metadata in the response. Full-text and hybrid searches require a vector index in <code>ENHANCED</code> mode.</p>
 /// <p>To specify the vector index, you can either use both the vector bucket name and the vector index name, or use the vector index Amazon Resource Name (ARN).</p>
 /// <dl>
 /// <dt>
@@ -32,9 +33,9 @@ impl crate::operation::query_vectors::builders::QueryVectorsInputBuilder {
 /// <p>You must have the <code>s3vectors:QueryVectors</code> permission to use this operation. Additional permissions are required based on the request parameters you specify:</p>
 /// <ul>
 /// <li>
-/// <p>With only <code>s3vectors:QueryVectors</code> permission, you can retrieve vector keys of approximate nearest neighbors and computed distances between these vectors. This permission is sufficient only when you don't set any metadata filters and don't request metadata (by keeping the <code>returnMetadata</code> parameter set to <code>false</code> or not specified).</p></li>
+/// <p>With only <code>s3vectors:QueryVectors</code> permission, you can retrieve vector keys of approximate nearest neighbors and computed distances between these vectors. This permission is sufficient only when you don't set <code>queryTexts</code>, don't set any metadata filters, and don't request metadata (by keeping the <code>returnMetadata</code> parameter set to <code>false</code> or not specified).</p></li>
 /// <li>
-/// <p>If you specify a metadata filter or set <code>returnMetadata</code> to true, you must have both <code>s3vectors:QueryVectors</code> and <code>s3vectors:GetVectors</code> permissions. The request fails with a <code>403 Forbidden error</code> if you request metadata filtering or metadata without the <code>s3vectors:GetVectors</code> permission.</p></li>
+/// <p>To use <code>queryTexts</code>, a metadata filter, or <code>returnMetadata</code> set to <code>true</code> with this operation, you must have both the <code>s3vectors:QueryVectors</code> and <code>s3vectors:GetVectors</code> permissions. If you use any of these options without the <code>s3vectors:GetVectors</code> permission, Amazon S3 Vectors returns an <code>AccessDeniedException</code>.</p></li>
 /// </ul>
 /// </dd>
 /// </dl>
@@ -185,17 +186,17 @@ impl QueryVectorsFluentBuilder {
     pub fn get_top_k(&self) -> &::std::option::Option<i32> {
         self.inner.get_top_k()
     }
-    /// <p>The query vector. Ensure that the query vector has the same dimension as the dimension of the vector index that's being queried. For example, if your vector index contains vectors with 384 dimensions, your query vector must also have 384 dimensions.</p>
+    /// <p>The query vector for vector similarity search. The query vector must have the same dimension as the vector index. For example, if the vector index has 384 dimensions, the query vector must also have 384 dimensions. You can omit this parameter when you supply <code>queryTexts</code> to perform a full-text-only search. A request must include <code>queryVector</code>, <code>queryTexts</code>, or both.</p>
     pub fn query_vector(mut self, input: crate::types::VectorData) -> Self {
         self.inner = self.inner.query_vector(input);
         self
     }
-    /// <p>The query vector. Ensure that the query vector has the same dimension as the dimension of the vector index that's being queried. For example, if your vector index contains vectors with 384 dimensions, your query vector must also have 384 dimensions.</p>
+    /// <p>The query vector for vector similarity search. The query vector must have the same dimension as the vector index. For example, if the vector index has 384 dimensions, the query vector must also have 384 dimensions. You can omit this parameter when you supply <code>queryTexts</code> to perform a full-text-only search. A request must include <code>queryVector</code>, <code>queryTexts</code>, or both.</p>
     pub fn set_query_vector(mut self, input: ::std::option::Option<crate::types::VectorData>) -> Self {
         self.inner = self.inner.set_query_vector(input);
         self
     }
-    /// <p>The query vector. Ensure that the query vector has the same dimension as the dimension of the vector index that's being queried. For example, if your vector index contains vectors with 384 dimensions, your query vector must also have 384 dimensions.</p>
+    /// <p>The query vector for vector similarity search. The query vector must have the same dimension as the vector index. For example, if the vector index has 384 dimensions, the query vector must also have 384 dimensions. You can omit this parameter when you supply <code>queryTexts</code> to perform a full-text-only search. A request must include <code>queryVector</code>, <code>queryTexts</code>, or both.</p>
     pub fn get_query_vector(&self) -> &::std::option::Option<crate::types::VectorData> {
         self.inner.get_query_vector()
     }
@@ -275,6 +276,39 @@ impl QueryVectorsFluentBuilder {
     /// <p>Indicates whether to include the computed distance in the response. The default value is <code>false</code>.</p>
     pub fn get_return_distance(&self) -> &::std::option::Option<bool> {
         self.inner.get_return_distance()
+    }
+    ///
+    /// Appends an item to `queryTexts`.
+    ///
+    /// To override the contents of this collection use [`set_query_texts`](Self::set_query_texts).
+    ///
+    /// <p>Full-text queries for searchable metadata keys. Omit <code>queryVector</code> to run a full-text-only search, or provide both fields to run a hybrid search. Each entry must target a distinct searchable metadata key.</p>
+    pub fn query_texts(mut self, input: crate::types::QueryText) -> Self {
+        self.inner = self.inner.query_texts(input);
+        self
+    }
+    /// <p>Full-text queries for searchable metadata keys. Omit <code>queryVector</code> to run a full-text-only search, or provide both fields to run a hybrid search. Each entry must target a distinct searchable metadata key.</p>
+    pub fn set_query_texts(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::QueryText>>) -> Self {
+        self.inner = self.inner.set_query_texts(input);
+        self
+    }
+    /// <p>Full-text queries for searchable metadata keys. Omit <code>queryVector</code> to run a full-text-only search, or provide both fields to run a hybrid search. Each entry must target a distinct searchable metadata key.</p>
+    pub fn get_query_texts(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::QueryText>> {
+        self.inner.get_query_texts()
+    }
+    /// <p>Indicates whether to include relevance scores in the response. Full-text-only results can include BM25 scores. Hybrid results can also include a Reciprocal Rank Fusion (RRF) score and vector distance. This setting doesn't add scores to vector-only requests. The default value is <code>false</code>.</p>
+    pub fn return_scores(mut self, input: bool) -> Self {
+        self.inner = self.inner.return_scores(input);
+        self
+    }
+    /// <p>Indicates whether to include relevance scores in the response. Full-text-only results can include BM25 scores. Hybrid results can also include a Reciprocal Rank Fusion (RRF) score and vector distance. This setting doesn't add scores to vector-only requests. The default value is <code>false</code>.</p>
+    pub fn set_return_scores(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_return_scores(input);
+        self
+    }
+    /// <p>Indicates whether to include relevance scores in the response. Full-text-only results can include BM25 scores. Hybrid results can also include a Reciprocal Rank Fusion (RRF) score and vector distance. This setting doesn't add scores to vector-only requests. The default value is <code>false</code>.</p>
+    pub fn get_return_scores(&self) -> &::std::option::Option<bool> {
+        self.inner.get_return_scores()
     }
     /// <p>Pagination token from a previous request. The value of this field is empty for an initial request.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

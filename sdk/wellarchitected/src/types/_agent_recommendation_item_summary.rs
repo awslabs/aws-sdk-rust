@@ -20,6 +20,8 @@ pub struct AgentRecommendationItemSummary {
     pub last_modified_by: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the recommendation item was last modified.</p>
     pub last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The optional per-resource auto-remediation for this affected resource, representing an SSM runbook execution. Present only when the item's check is backed by an SSM automation runbook.</p>
+    pub auto_remediation: ::std::option::Option<crate::types::AutoRemediation>,
 }
 impl AgentRecommendationItemSummary {
     /// <p>The unique identifier of the recommendation item.</p>
@@ -57,6 +59,10 @@ impl AgentRecommendationItemSummary {
     pub fn last_modified_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_at.as_ref()
     }
+    /// <p>The optional per-resource auto-remediation for this affected resource, representing an SSM runbook execution. Present only when the item's check is backed by an SSM automation runbook.</p>
+    pub fn auto_remediation(&self) -> ::std::option::Option<&crate::types::AutoRemediation> {
+        self.auto_remediation.as_ref()
+    }
 }
 impl AgentRecommendationItemSummary {
     /// Creates a new builder-style object to manufacture [`AgentRecommendationItemSummary`](crate::types::AgentRecommendationItemSummary).
@@ -77,6 +83,7 @@ pub struct AgentRecommendationItemSummaryBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_by: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) auto_remediation: ::std::option::Option<crate::types::AutoRemediation>,
 }
 impl AgentRecommendationItemSummaryBuilder {
     /// <p>The unique identifier of the recommendation item.</p>
@@ -197,6 +204,20 @@ impl AgentRecommendationItemSummaryBuilder {
     pub fn get_last_modified_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_at
     }
+    /// <p>The optional per-resource auto-remediation for this affected resource, representing an SSM runbook execution. Present only when the item's check is backed by an SSM automation runbook.</p>
+    pub fn auto_remediation(mut self, input: crate::types::AutoRemediation) -> Self {
+        self.auto_remediation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The optional per-resource auto-remediation for this affected resource, representing an SSM runbook execution. Present only when the item's check is backed by an SSM automation runbook.</p>
+    pub fn set_auto_remediation(mut self, input: ::std::option::Option<crate::types::AutoRemediation>) -> Self {
+        self.auto_remediation = input;
+        self
+    }
+    /// <p>The optional per-resource auto-remediation for this affected resource, representing an SSM runbook execution. Present only when the item's check is backed by an SSM automation runbook.</p>
+    pub fn get_auto_remediation(&self) -> &::std::option::Option<crate::types::AutoRemediation> {
+        &self.auto_remediation
+    }
     /// Consumes the builder and constructs a [`AgentRecommendationItemSummary`](crate::types::AgentRecommendationItemSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::AgentRecommendationItemSummaryBuilder::id)
@@ -245,6 +266,7 @@ impl AgentRecommendationItemSummaryBuilder {
             })?,
             last_modified_by: self.last_modified_by,
             last_modified_at: self.last_modified_at,
+            auto_remediation: self.auto_remediation,
         })
     }
 }

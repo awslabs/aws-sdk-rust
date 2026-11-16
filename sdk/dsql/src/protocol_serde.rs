@@ -91,6 +91,10 @@ pub(crate) mod shape_cluster_list;
 
 pub(crate) mod shape_encryption_details;
 
+pub(crate) mod shape_metric_group_request;
+
+pub(crate) mod shape_metric_group_response_list;
+
 pub(crate) mod shape_multi_region_properties;
 
 pub(crate) mod shape_status_reason;
@@ -108,6 +112,8 @@ pub(crate) mod shape_cluster_arn_list;
 pub(crate) mod shape_cluster_summary;
 
 pub(crate) mod shape_kinesis_target_definition;
+
+pub(crate) mod shape_metric_group_response;
 
 pub(crate) mod shape_stream_summary;
 

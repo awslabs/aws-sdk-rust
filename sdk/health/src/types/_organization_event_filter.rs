@@ -30,6 +30,9 @@ pub struct OrganizationEventFilter {
     pub event_status_codes: ::std::option::Option<::std::vec::Vec<crate::types::EventStatusCode>>,
     /// <p>A list of persona values to filter events. Use this to filter events based on their target audience: <code>OPERATIONS</code>, <code>SECURITY</code>, or <code>BILLING</code>.</p>
     pub personas: ::std::option::Option<::std::vec::Vec<crate::types::EventPersona>>,
+    /// <p>A map of tag keys to lists of tag values. A tag matches when its key is in the map and its value is one of the values listed for that key. Matching is case sensitive, and the filter matches when at least one key in the map matches.</p>
+    /// <p>An event is returned when one of its affected accounts, or one of the entities of those accounts, has tags that match.</p>
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl OrganizationEventFilter {
     /// <p>A list of actionability values to filter events. Use this to filter events based on whether they require action (<code>ACTION_REQUIRED</code>), may require action (<code>ACTION_MAY_BE_REQUIRED</code>) or are informational (<code>INFORMATIONAL</code>).</p>
@@ -104,6 +107,11 @@ impl OrganizationEventFilter {
     pub fn personas(&self) -> &[crate::types::EventPersona] {
         self.personas.as_deref().unwrap_or_default()
     }
+    /// <p>A map of tag keys to lists of tag values. A tag matches when its key is in the map and its value is one of the values listed for that key. Matching is case sensitive, and the filter matches when at least one key in the map matches.</p>
+    /// <p>An event is returned when one of its affected accounts, or one of the entities of those accounts, has tags that match.</p>
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+        self.tags.as_ref()
+    }
 }
 impl OrganizationEventFilter {
     /// Creates a new builder-style object to manufacture [`OrganizationEventFilter`](crate::types::OrganizationEventFilter).
@@ -129,6 +137,7 @@ pub struct OrganizationEventFilterBuilder {
     pub(crate) event_type_categories: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>>,
     pub(crate) event_status_codes: ::std::option::Option<::std::vec::Vec<crate::types::EventStatusCode>>,
     pub(crate) personas: ::std::option::Option<::std::vec::Vec<crate::types::EventPersona>>,
+    pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
 }
 impl OrganizationEventFilterBuilder {
     /// Appends an item to `actionabilities`.
@@ -373,6 +382,32 @@ impl OrganizationEventFilterBuilder {
     pub fn get_personas(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventPersona>> {
         &self.personas
     }
+    /// Adds a key-value pair to `tags`.
+    ///
+    /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+    ///
+    /// <p>A map of tag keys to lists of tag values. A tag matches when its key is in the map and its value is one of the values listed for that key. Matching is case sensitive, and the filter matches when at least one key in the map matches.</p>
+    /// <p>An event is returned when one of its affected accounts, or one of the entities of those accounts, has tags that match.</p>
+    pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
+        let mut hash_map = self.tags.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.tags = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of tag keys to lists of tag values. A tag matches when its key is in the map and its value is one of the values listed for that key. Matching is case sensitive, and the filter matches when at least one key in the map matches.</p>
+    /// <p>An event is returned when one of its affected accounts, or one of the entities of those accounts, has tags that match.</p>
+    pub fn set_tags(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
+    ) -> Self {
+        self.tags = input;
+        self
+    }
+    /// <p>A map of tag keys to lists of tag values. A tag matches when its key is in the map and its value is one of the values listed for that key. Matching is case sensitive, and the filter matches when at least one key in the map matches.</p>
+    /// <p>An event is returned when one of its affected accounts, or one of the entities of those accounts, has tags that match.</p>
+    pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
+        &self.tags
+    }
     /// Consumes the builder and constructs a [`OrganizationEventFilter`](crate::types::OrganizationEventFilter).
     pub fn build(self) -> crate::types::OrganizationEventFilter {
         crate::types::OrganizationEventFilter {
@@ -389,6 +424,7 @@ impl OrganizationEventFilterBuilder {
             event_type_categories: self.event_type_categories,
             event_status_codes: self.event_status_codes,
             personas: self.personas,
+            tags: self.tags,
         }
     }
 }

@@ -45,6 +45,10 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "policySource" => {
+                            builder =
+                                builder.set_policy_source(crate::protocol_serde::shape_policy_source::de_policy_source(tokens, _value, depth + 1)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

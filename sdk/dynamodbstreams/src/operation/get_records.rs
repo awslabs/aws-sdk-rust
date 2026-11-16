@@ -292,10 +292,25 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetRecordsEnd
             .ok_or("failed to downcast to GetRecordsInput")?;
 
         let params = crate::config::endpoint::Params::builder()
+            .set_region(cfg.load::<::aws_types::region::Region>().map(|r| r.as_ref().to_owned()))
             .set_use_dual_stack(cfg.load::<::aws_types::endpoint_config::UseDualStack>().map(|ty| ty.0))
             .set_use_fips(cfg.load::<::aws_types::endpoint_config::UseFips>().map(|ty| ty.0))
             .set_endpoint(cfg.load::<::aws_types::endpoint_config::EndpointUrl>().map(|ty| ty.0.clone()))
-            .set_region(cfg.load::<::aws_types::region::Region>().map(|r| r.as_ref().to_owned()))
+            .set_account_id_endpoint_mode(::std::option::Option::Some(
+                cfg.load::<::aws_types::endpoint_config::AccountIdEndpointMode>()
+                    .cloned()
+                    .unwrap_or_default()
+                    .to_string(),
+            ))
+            .set_shard_iterator(Some(
+                _input
+                    .shard_iterator
+                    .clone()
+                    .filter(|f| !AsRef::<str>::as_ref(f).trim().is_empty())
+                    .ok_or_else(|| {
+                        ::aws_smithy_types::error::operation::BuildError::missing_field("shard_iterator", "A required field was not set")
+                    })?,
+            ))
             .build()
             .map_err(|err| {
                 ::aws_smithy_runtime_api::client::interceptors::error::ContextAttachedError::new("endpoint params could not be built", err)

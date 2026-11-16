@@ -22,6 +22,9 @@ impl crate::operation::get_agent_recommendation_generation::builders::GetAgentRe
 }
 /// Fluent builder constructing a request to `GetAgentRecommendationGeneration`.
 ///
+/// <important>
+/// <p>Application-level recommendations are a new recommendation format currently in beta. We are actively seeking customer feedback to improve their quality and relevance. As with any AI-generated content, please thoroughly review each recommendation before taking any action based on it.</p>
+/// </important>
 /// <p>Retrieves information about a recommendation generation process, including its status, progress, and results. Recommendation generation is asynchronous: poll this operation until status reaches a terminal value of COMPLETED (results are ready) or ERROR (see errorDetails). Intermediate values are QUEUED and IN_PROGRESS.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAgentRecommendationGenerationFluentBuilder {

@@ -7,6 +7,8 @@ pub struct DescribeEntityAggregatesForOrganizationInput {
     pub event_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of 12-digit Amazon Web Services account numbers that contains the affected entities.</p>
     pub aws_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Values to narrow the results returned.</p>
+    pub filter: ::std::option::Option<crate::types::OrganizationEntityAggregateFilter>,
 }
 impl DescribeEntityAggregatesForOrganizationInput {
     /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code></p>
@@ -20,6 +22,10 @@ impl DescribeEntityAggregatesForOrganizationInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.aws_account_ids.is_none()`.
     pub fn aws_account_ids(&self) -> &[::std::string::String] {
         self.aws_account_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn filter(&self) -> ::std::option::Option<&crate::types::OrganizationEntityAggregateFilter> {
+        self.filter.as_ref()
     }
 }
 impl DescribeEntityAggregatesForOrganizationInput {
@@ -35,6 +41,7 @@ impl DescribeEntityAggregatesForOrganizationInput {
 pub struct DescribeEntityAggregatesForOrganizationInputBuilder {
     pub(crate) event_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) aws_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) filter: ::std::option::Option<crate::types::OrganizationEntityAggregateFilter>,
 }
 impl DescribeEntityAggregatesForOrganizationInputBuilder {
     /// Appends an item to `event_arns`.
@@ -77,6 +84,20 @@ impl DescribeEntityAggregatesForOrganizationInputBuilder {
     pub fn get_aws_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.aws_account_ids
     }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn filter(mut self, input: crate::types::OrganizationEntityAggregateFilter) -> Self {
+        self.filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::OrganizationEntityAggregateFilter>) -> Self {
+        self.filter = input;
+        self
+    }
+    /// <p>Values to narrow the results returned.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::OrganizationEntityAggregateFilter> {
+        &self.filter
+    }
     /// Consumes the builder and constructs a [`DescribeEntityAggregatesForOrganizationInput`](crate::operation::describe_entity_aggregates_for_organization::DescribeEntityAggregatesForOrganizationInput).
     pub fn build(
         self,
@@ -88,6 +109,7 @@ impl DescribeEntityAggregatesForOrganizationInputBuilder {
             crate::operation::describe_entity_aggregates_for_organization::DescribeEntityAggregatesForOrganizationInput {
                 event_arns: self.event_arns,
                 aws_account_ids: self.aws_account_ids,
+                filter: self.filter,
             },
         )
     }

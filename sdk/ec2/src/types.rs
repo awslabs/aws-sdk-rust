@@ -401,6 +401,8 @@ pub use crate::types::_create_transit_gateway_multicast_domain_request_options::
 
 pub use crate::types::_transit_gateway_multicast_domain::TransitGatewayMulticastDomain;
 
+pub use crate::types::_transit_gateway_network_function_attachment::TransitGatewayNetworkFunctionAttachment;
+
 pub use crate::types::_create_transit_gateway_peering_attachment_request_options::CreateTransitGatewayPeeringAttachmentRequestOptions;
 
 pub use crate::types::_transit_gateway_policy_table::TransitGatewayPolicyTable;
@@ -794,6 +796,8 @@ pub use crate::types::_payer_responsibility_type::PayerResponsibilityType;
 pub use crate::types::_payer_responsibility_scope::PayerResponsibilityScope;
 
 pub use crate::types::_payer_responsibility::PayerResponsibility;
+
+pub use crate::types::_permission_type::PermissionType;
 
 pub use crate::types::_peering_connection_options_request::PeeringConnectionOptionsRequest;
 
@@ -1254,6 +1258,8 @@ pub use crate::types::_route_server_bfd_status::RouteServerBfdStatus;
 pub use crate::types::_secondary_network_state::SecondaryNetworkState;
 
 pub use crate::types::_secondary_subnet_state::SecondarySubnetState;
+
+pub use crate::types::_associated_kms_key::AssociatedKmsKey;
 
 pub use crate::types::_snapshot_info::SnapshotInfo;
 
@@ -3119,6 +3125,8 @@ mod _asn_state;
 
 mod _assigned_private_ip_address;
 
+mod _associated_kms_key;
+
 mod _associated_network_type;
 
 mod _associated_role;
@@ -4915,6 +4923,8 @@ mod _period_type;
 
 mod _permission_group;
 
+mod _permission_type;
+
 mod _phase1_dh_group_numbers_list_value;
 
 mod _phase1_dh_group_numbers_request_list_value;
@@ -5632,6 +5642,8 @@ mod _transit_gateway_nat_rule;
 mod _transit_gateway_nat_rule_request;
 
 mod _transit_gateway_nat_rule_state;
+
+mod _transit_gateway_network_function_attachment;
 
 mod _transit_gateway_options;
 

@@ -22,6 +22,10 @@ pub fn ser_describe_entity_aggregates_for_organization_input_input(
             }
         }
     }
+    if let Some(var_5) = &input.filter {
+        encoder.str("filter");
+        crate::protocol_serde::shape_organization_entity_aggregate_filter::ser_organization_entity_aggregate_filter(encoder, var_5)?;
+    }
     encoder.end();
     Ok(())
 }

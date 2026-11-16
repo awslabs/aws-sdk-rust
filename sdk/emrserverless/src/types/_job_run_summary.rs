@@ -36,6 +36,8 @@ pub struct JobRunSummary {
     pub attempt_created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time of when the job run attempt was last updated.</p>
     pub attempt_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The Amazon EMR Serverless Flex settings for the job run.</p>
+    pub flex_execution: ::std::option::Option<crate::types::FlexExecution>,
 }
 impl JobRunSummary {
     /// <p>The ID of the application the job is running on.</p>
@@ -109,6 +111,10 @@ impl JobRunSummary {
     pub fn attempt_updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.attempt_updated_at.as_ref()
     }
+    /// <p>The Amazon EMR Serverless Flex settings for the job run.</p>
+    pub fn flex_execution(&self) -> ::std::option::Option<&crate::types::FlexExecution> {
+        self.flex_execution.as_ref()
+    }
 }
 impl JobRunSummary {
     /// Creates a new builder-style object to manufacture [`JobRunSummary`](crate::types::JobRunSummary).
@@ -137,6 +143,7 @@ pub struct JobRunSummaryBuilder {
     pub(crate) attempt: ::std::option::Option<i32>,
     pub(crate) attempt_created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) attempt_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) flex_execution: ::std::option::Option<crate::types::FlexExecution>,
 }
 impl JobRunSummaryBuilder {
     /// <p>The ID of the application the job is running on.</p>
@@ -373,6 +380,20 @@ impl JobRunSummaryBuilder {
     pub fn get_attempt_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.attempt_updated_at
     }
+    /// <p>The Amazon EMR Serverless Flex settings for the job run.</p>
+    pub fn flex_execution(mut self, input: crate::types::FlexExecution) -> Self {
+        self.flex_execution = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon EMR Serverless Flex settings for the job run.</p>
+    pub fn set_flex_execution(mut self, input: ::std::option::Option<crate::types::FlexExecution>) -> Self {
+        self.flex_execution = input;
+        self
+    }
+    /// <p>The Amazon EMR Serverless Flex settings for the job run.</p>
+    pub fn get_flex_execution(&self) -> &::std::option::Option<crate::types::FlexExecution> {
+        &self.flex_execution
+    }
     /// Consumes the builder and constructs a [`JobRunSummary`](crate::types::JobRunSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`application_id`](crate::types::builders::JobRunSummaryBuilder::application_id)
@@ -453,6 +474,7 @@ impl JobRunSummaryBuilder {
             attempt: self.attempt,
             attempt_created_at: self.attempt_created_at,
             attempt_updated_at: self.attempt_updated_at,
+            flex_execution: self.flex_execution,
         })
     }
 }

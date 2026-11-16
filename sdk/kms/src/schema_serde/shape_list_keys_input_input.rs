@@ -19,6 +19,23 @@ static LISTKEYSINPUT_MEMBER_MARKER: ::aws_smithy_schema::Schema<'static> = ::aws
     "Marker",
     1,
 );
+static LISTKEYSINPUT_MEMBER_RESOURCE_OWNERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kms#ResourceOwnersList$member", "com.amazonaws.kms", "ResourceOwnersList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static LISTKEYSINPUT_MEMBER_RESOURCE_OWNERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kms.synthetic#ListKeysInput$ResourceOwners",
+        "com.amazonaws.kms.synthetic",
+        "ListKeysInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ResourceOwners",
+    2,
+)
+.with_list_member(&LISTKEYSINPUT_MEMBER_RESOURCE_OWNERS_MEMBER);
 static LISTKEYSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.kms.synthetic#ListKeysInput",
@@ -26,7 +43,11 @@ static LISTKEYSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy
         "ListKeysInput",
     ),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&LISTKEYSINPUT_MEMBER_LIMIT, &LISTKEYSINPUT_MEMBER_MARKER],
+    &[
+        &LISTKEYSINPUT_MEMBER_LIMIT,
+        &LISTKEYSINPUT_MEMBER_MARKER,
+        &LISTKEYSINPUT_MEMBER_RESOURCE_OWNERS,
+    ],
 )
 .with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
 .with_original_name("ListKeysRequest");
@@ -49,6 +70,17 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::list_k
         }
         if let Some(ref val) = self.marker {
             ser.write_string(&LISTKEYSINPUT_MEMBER_MARKER, val)?;
+        }
+        if let Some(ref val) = self.resource_owners {
+            ser.write_list(
+                &LISTKEYSINPUT_MEMBER_RESOURCE_OWNERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
         }
         Ok(())
     }
@@ -79,6 +111,22 @@ impl crate::operation::list_keys::builders::ListKeysInputBuilder {
                         deser.read_null()?;
                     } else {
                         self.marker = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_owners = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::ResourceOwnerType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
                     }
                 }
                 _ => {}

@@ -36,6 +36,7 @@
 ///     StateReasonCode::Idle => { /* ... */ },
 ///     StateReasonCode::ImageAccessDenied => { /* ... */ },
 ///     StateReasonCode::ImageDeleted => { /* ... */ },
+///     StateReasonCode::IncompatibleAcceleratorInstanceTypes => { /* ... */ },
 ///     StateReasonCode::InsufficientCapacity => { /* ... */ },
 ///     StateReasonCode::InsufficientRolePermissions => { /* ... */ },
 ///     StateReasonCode::InternalError => { /* ... */ },
@@ -129,6 +130,8 @@ pub enum StateReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     ImageDeleted,
     #[allow(missing_docs)] // documentation missing in model
+    IncompatibleAcceleratorInstanceTypes,
+    #[allow(missing_docs)] // documentation missing in model
     InsufficientCapacity,
     #[allow(missing_docs)] // documentation missing in model
     InsufficientRolePermissions,
@@ -191,6 +194,7 @@ impl ::std::convert::From<&str> for StateReasonCode {
             "Idle" => StateReasonCode::Idle,
             "ImageAccessDenied" => StateReasonCode::ImageAccessDenied,
             "ImageDeleted" => StateReasonCode::ImageDeleted,
+            "IncompatibleAcceleratorInstanceTypes" => StateReasonCode::IncompatibleAcceleratorInstanceTypes,
             "InsufficientCapacity" => StateReasonCode::InsufficientCapacity,
             "InsufficientRolePermissions" => StateReasonCode::InsufficientRolePermissions,
             "InternalError" => StateReasonCode::InternalError,
@@ -246,6 +250,7 @@ impl StateReasonCode {
             StateReasonCode::Idle => "Idle",
             StateReasonCode::ImageAccessDenied => "ImageAccessDenied",
             StateReasonCode::ImageDeleted => "ImageDeleted",
+            StateReasonCode::IncompatibleAcceleratorInstanceTypes => "IncompatibleAcceleratorInstanceTypes",
             StateReasonCode::InsufficientCapacity => "InsufficientCapacity",
             StateReasonCode::InsufficientRolePermissions => "InsufficientRolePermissions",
             StateReasonCode::InternalError => "InternalError",
@@ -292,6 +297,7 @@ impl StateReasonCode {
             "Idle",
             "ImageAccessDenied",
             "ImageDeleted",
+            "IncompatibleAcceleratorInstanceTypes",
             "InsufficientCapacity",
             "InsufficientRolePermissions",
             "InternalError",
@@ -355,6 +361,7 @@ impl ::std::fmt::Display for StateReasonCode {
             StateReasonCode::Idle => write!(f, "Idle"),
             StateReasonCode::ImageAccessDenied => write!(f, "ImageAccessDenied"),
             StateReasonCode::ImageDeleted => write!(f, "ImageDeleted"),
+            StateReasonCode::IncompatibleAcceleratorInstanceTypes => write!(f, "IncompatibleAcceleratorInstanceTypes"),
             StateReasonCode::InsufficientCapacity => write!(f, "InsufficientCapacity"),
             StateReasonCode::InsufficientRolePermissions => write!(f, "InsufficientRolePermissions"),
             StateReasonCode::InternalError => write!(f, "InternalError"),

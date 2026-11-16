@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListKeysOutput {
-    /// <p>A list of KMS keys.</p>
+    /// <p>A list of KMS keys. For a KMS key that another Amazon Web Services account shared with you through RAM, the key ARN contains the account ID of the Amazon Web Services account that owns the KMS key.</p>
     pub keys: ::std::option::Option<::std::vec::Vec<crate::types::KeyListEntry>>,
     /// <p>When <code>Truncated</code> is true, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent request.</p>
     pub next_marker: ::std::option::Option<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListKeysOutput {
     _request_id: Option<String>,
 }
 impl ListKeysOutput {
-    /// <p>A list of KMS keys.</p>
+    /// <p>A list of KMS keys. For a KMS key that another Amazon Web Services account shared with you through RAM, the key ARN contains the account ID of the Amazon Web Services account that owns the KMS key.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.keys.is_none()`.
     pub fn keys(&self) -> &[crate::types::KeyListEntry] {
@@ -53,19 +53,19 @@ impl ListKeysOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_keys`](Self::set_keys).
     ///
-    /// <p>A list of KMS keys.</p>
+    /// <p>A list of KMS keys. For a KMS key that another Amazon Web Services account shared with you through RAM, the key ARN contains the account ID of the Amazon Web Services account that owns the KMS key.</p>
     pub fn keys(mut self, input: crate::types::KeyListEntry) -> Self {
         let mut v = self.keys.unwrap_or_default();
         v.push(input);
         self.keys = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of KMS keys.</p>
+    /// <p>A list of KMS keys. For a KMS key that another Amazon Web Services account shared with you through RAM, the key ARN contains the account ID of the Amazon Web Services account that owns the KMS key.</p>
     pub fn set_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::KeyListEntry>>) -> Self {
         self.keys = input;
         self
     }
-    /// <p>A list of KMS keys.</p>
+    /// <p>A list of KMS keys. For a KMS key that another Amazon Web Services account shared with you through RAM, the key ARN contains the account ID of the Amazon Web Services account that owns the KMS key.</p>
     pub fn get_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::KeyListEntry>> {
         &self.keys
     }

@@ -8,7 +8,11 @@ pub struct RejectVpcEndpointConnectionsInput {
     /// <p>The ID of the service.</p>
     pub service_id: ::std::option::Option<::std::string::String>,
     /// <p>The IDs of the VPC endpoints.</p>
+    /// <p>You must specify either <code>VpcEndpointIds</code> or <code>TransitGatewayAttachmentIds</code>, but not both.</p>
     pub vpc_endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The IDs of the transit gateway attachments to reject. This parameter is supported only for Gateway Load Balancer endpoint services.</p>
+    /// <p>You must specify either <code>VpcEndpointIds</code> or <code>TransitGatewayAttachmentIds</code>, but not both.</p>
+    pub transit_gateway_attachment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RejectVpcEndpointConnectionsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -20,10 +24,18 @@ impl RejectVpcEndpointConnectionsInput {
         self.service_id.as_deref()
     }
     /// <p>The IDs of the VPC endpoints.</p>
+    /// <p>You must specify either <code>VpcEndpointIds</code> or <code>TransitGatewayAttachmentIds</code>, but not both.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vpc_endpoint_ids.is_none()`.
     pub fn vpc_endpoint_ids(&self) -> &[::std::string::String] {
         self.vpc_endpoint_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The IDs of the transit gateway attachments to reject. This parameter is supported only for Gateway Load Balancer endpoint services.</p>
+    /// <p>You must specify either <code>VpcEndpointIds</code> or <code>TransitGatewayAttachmentIds</code>, but not both.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.transit_gateway_attachment_ids.is_none()`.
+    pub fn transit_gateway_attachment_ids(&self) -> &[::std::string::String] {
+        self.transit_gateway_attachment_ids.as_deref().unwrap_or_default()
     }
 }
 impl RejectVpcEndpointConnectionsInput {
@@ -40,6 +52,7 @@ pub struct RejectVpcEndpointConnectionsInputBuilder {
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) service_id: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_endpoint_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) transit_gateway_attachment_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl RejectVpcEndpointConnectionsInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -76,6 +89,7 @@ impl RejectVpcEndpointConnectionsInputBuilder {
     /// To override the contents of this collection use [`set_vpc_endpoint_ids`](Self::set_vpc_endpoint_ids).
     ///
     /// <p>The IDs of the VPC endpoints.</p>
+    /// <p>You must specify either <code>VpcEndpointIds</code> or <code>TransitGatewayAttachmentIds</code>, but not both.</p>
     pub fn vpc_endpoint_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.vpc_endpoint_ids.unwrap_or_default();
         v.push(input.into());
@@ -83,13 +97,38 @@ impl RejectVpcEndpointConnectionsInputBuilder {
         self
     }
     /// <p>The IDs of the VPC endpoints.</p>
+    /// <p>You must specify either <code>VpcEndpointIds</code> or <code>TransitGatewayAttachmentIds</code>, but not both.</p>
     pub fn set_vpc_endpoint_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.vpc_endpoint_ids = input;
         self
     }
     /// <p>The IDs of the VPC endpoints.</p>
+    /// <p>You must specify either <code>VpcEndpointIds</code> or <code>TransitGatewayAttachmentIds</code>, but not both.</p>
     pub fn get_vpc_endpoint_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.vpc_endpoint_ids
+    }
+    /// Appends an item to `transit_gateway_attachment_ids`.
+    ///
+    /// To override the contents of this collection use [`set_transit_gateway_attachment_ids`](Self::set_transit_gateway_attachment_ids).
+    ///
+    /// <p>The IDs of the transit gateway attachments to reject. This parameter is supported only for Gateway Load Balancer endpoint services.</p>
+    /// <p>You must specify either <code>VpcEndpointIds</code> or <code>TransitGatewayAttachmentIds</code>, but not both.</p>
+    pub fn transit_gateway_attachment_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.transit_gateway_attachment_ids.unwrap_or_default();
+        v.push(input.into());
+        self.transit_gateway_attachment_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The IDs of the transit gateway attachments to reject. This parameter is supported only for Gateway Load Balancer endpoint services.</p>
+    /// <p>You must specify either <code>VpcEndpointIds</code> or <code>TransitGatewayAttachmentIds</code>, but not both.</p>
+    pub fn set_transit_gateway_attachment_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.transit_gateway_attachment_ids = input;
+        self
+    }
+    /// <p>The IDs of the transit gateway attachments to reject. This parameter is supported only for Gateway Load Balancer endpoint services.</p>
+    /// <p>You must specify either <code>VpcEndpointIds</code> or <code>TransitGatewayAttachmentIds</code>, but not both.</p>
+    pub fn get_transit_gateway_attachment_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.transit_gateway_attachment_ids
     }
     /// Consumes the builder and constructs a [`RejectVpcEndpointConnectionsInput`](crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsInput).
     pub fn build(
@@ -102,6 +141,7 @@ impl RejectVpcEndpointConnectionsInputBuilder {
             dry_run: self.dry_run,
             service_id: self.service_id,
             vpc_endpoint_ids: self.vpc_endpoint_ids,
+            transit_gateway_attachment_ids: self.transit_gateway_attachment_ids,
         })
     }
 }

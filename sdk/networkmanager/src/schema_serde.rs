@@ -11,6 +11,10 @@ pub(crate) mod shape_associate_connect_peer_input_input;
 
 pub(crate) mod shape_associate_connect_peer_output_output;
 
+pub(crate) mod shape_associate_context_store_input_input;
+
+pub(crate) mod shape_associate_context_store_output_output;
+
 pub(crate) mod shape_associate_customer_gateway_input_input;
 
 pub(crate) mod shape_associate_customer_gateway_output_output;
@@ -59,6 +63,14 @@ pub(crate) mod shape_connection;
 
 pub(crate) mod shape_connection_health;
 
+pub(crate) mod shape_context_change;
+
+pub(crate) mod shape_context_entry;
+
+pub(crate) mod shape_context_store;
+
+pub(crate) mod shape_context_store_association;
+
 pub(crate) mod shape_core_network;
 
 pub(crate) mod shape_core_network_change;
@@ -102,6 +114,10 @@ pub(crate) mod shape_create_connect_peer_output_output;
 pub(crate) mod shape_create_connection_input_input;
 
 pub(crate) mod shape_create_connection_output_output;
+
+pub(crate) mod shape_create_context_store_input_input;
+
+pub(crate) mod shape_create_context_store_output_output;
 
 pub(crate) mod shape_create_core_network_input_input;
 
@@ -161,6 +177,10 @@ pub(crate) mod shape_delete_connection_input_input;
 
 pub(crate) mod shape_delete_connection_output_output;
 
+pub(crate) mod shape_delete_context_store_input_input;
+
+pub(crate) mod shape_delete_context_store_output_output;
+
 pub(crate) mod shape_delete_core_network_input_input;
 
 pub(crate) mod shape_delete_core_network_output_output;
@@ -213,6 +233,10 @@ pub(crate) mod shape_disassociate_connect_peer_input_input;
 
 pub(crate) mod shape_disassociate_connect_peer_output_output;
 
+pub(crate) mod shape_disassociate_context_store_input_input;
+
+pub(crate) mod shape_disassociate_context_store_output_output;
+
 pub(crate) mod shape_disassociate_customer_gateway_input_input;
 
 pub(crate) mod shape_disassociate_customer_gateway_output_output;
@@ -246,6 +270,18 @@ pub(crate) mod shape_get_connect_peer_output_output;
 pub(crate) mod shape_get_connections_input_input;
 
 pub(crate) mod shape_get_connections_output_output;
+
+pub(crate) mod shape_get_context_store_association_input_input;
+
+pub(crate) mod shape_get_context_store_association_output_output;
+
+pub(crate) mod shape_get_context_store_input_input;
+
+pub(crate) mod shape_get_context_store_output_output;
+
+pub(crate) mod shape_get_context_version_input_input;
+
+pub(crate) mod shape_get_context_version_output_output;
 
 pub(crate) mod shape_get_core_network_change_events_input_input;
 
@@ -362,6 +398,22 @@ pub(crate) mod shape_list_attachments_output_output;
 pub(crate) mod shape_list_connect_peers_input_input;
 
 pub(crate) mod shape_list_connect_peers_output_output;
+
+pub(crate) mod shape_list_context_changes_input_input;
+
+pub(crate) mod shape_list_context_changes_output_output;
+
+pub(crate) mod shape_list_context_store_associations_input_input;
+
+pub(crate) mod shape_list_context_store_associations_output_output;
+
+pub(crate) mod shape_list_context_stores_input_input;
+
+pub(crate) mod shape_list_context_stores_output_output;
+
+pub(crate) mod shape_list_contexts_input_input;
+
+pub(crate) mod shape_list_contexts_output_output;
 
 pub(crate) mod shape_list_core_network_policy_versions_input_input;
 
@@ -522,6 +574,10 @@ pub(crate) mod shape_update_attachment_nat_configuration_output_output;
 pub(crate) mod shape_update_connection_input_input;
 
 pub(crate) mod shape_update_connection_output_output;
+
+pub(crate) mod shape_update_context_store_input_input;
+
+pub(crate) mod shape_update_context_store_output_output;
 
 pub(crate) mod shape_update_core_network_input_input;
 

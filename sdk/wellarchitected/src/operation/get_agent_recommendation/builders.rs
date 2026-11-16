@@ -22,6 +22,9 @@ impl crate::operation::get_agent_recommendation::builders::GetAgentRecommendatio
 }
 /// Fluent builder constructing a request to `GetAgentRecommendation`.
 ///
+/// <important>
+/// <p>Application-level recommendations are a new recommendation format currently in beta. We are actively seeking customer feedback to improve their quality and relevance. As with any AI-generated content, please thoroughly review each recommendation before taking any action based on it.</p>
+/// </important>
 /// <p>Retrieves detailed information about a specific optimization recommendation, including its impact analysis, content, and implementation guidance.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetAgentRecommendationFluentBuilder {

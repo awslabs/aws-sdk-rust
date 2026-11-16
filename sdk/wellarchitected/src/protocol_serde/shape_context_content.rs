@@ -51,23 +51,32 @@ pub fn ser_context_content(
         }
         array_14.finish();
     }
-    if let Some(var_17) = &input.application_overview {
-        object.key("applicationOverview").string(var_17.as_str());
+    if let Some(var_17) = &input.organizational_unit_ids {
+        let mut array_18 = object.key("organizationalUnitIds").start_array();
+        for item_19 in var_17 {
+            {
+                array_18.value().string(item_19.as_str());
+            }
+        }
+        array_18.finish();
     }
-    if let Some(var_18) = &input.industry {
-        object.key("industry").string(var_18.as_str());
+    if let Some(var_20) = &input.application_overview {
+        object.key("applicationOverview").string(var_20.as_str());
     }
-    if let Some(var_19) = &input.application_type {
-        object.key("applicationType").string(var_19.as_str());
+    if let Some(var_21) = &input.industry {
+        object.key("industry").string(var_21.as_str());
     }
-    if let Some(var_20) = &input.criticality {
-        object.key("criticality").string(var_20.as_str());
+    if let Some(var_22) = &input.application_type {
+        object.key("applicationType").string(var_22.as_str());
     }
-    if let Some(var_21) = &input.architecture_overview {
-        object.key("architectureOverview").string(var_21.as_str());
+    if let Some(var_23) = &input.criticality {
+        object.key("criticality").string(var_23.as_str());
     }
-    if let Some(var_22) = &input.additional_context {
-        object.key("additionalContext").string(var_22.as_str());
+    if let Some(var_24) = &input.architecture_overview {
+        object.key("architectureOverview").string(var_24.as_str());
+    }
+    if let Some(var_25) = &input.additional_context {
+        object.key("additionalContext").string(var_25.as_str());
     }
     Ok(())
 }
@@ -123,6 +132,15 @@ where
                         "resourceTags" => {
                             builder = builder.set_resource_tags(
                                 crate::protocol_serde::shape_context_resource_tag_list::de_context_resource_tag_list(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "organizationalUnitIds" => {
+                            builder = builder.set_organizational_unit_ids(
+                                crate::protocol_serde::shape_context_organizational_unit_id_list::de_context_organizational_unit_id_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         "applicationOverview" => {

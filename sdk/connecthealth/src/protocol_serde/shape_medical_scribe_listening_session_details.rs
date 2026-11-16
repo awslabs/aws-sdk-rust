@@ -87,6 +87,10 @@ where
                                 builder = builder
                                     .set_encounter_context_provided(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                             }
+                            "medicalCodingContextProvided" => {
+                                builder = builder
+                                    .set_medical_coding_context_provided(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                            }
                             "streamStatus" => {
                                 builder = builder.set_stream_status(
                                     ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

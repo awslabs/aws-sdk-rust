@@ -81,6 +81,38 @@ where
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);
                         }
+                        "generationType" => {
+                            builder = builder.set_generation_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::GenerationType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "generationRecommendationTypes" => {
+                            builder = builder.set_generation_recommendation_types(
+                                crate::protocol_serde::shape_generation_recommendation_types::de_generation_recommendation_types(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "startedAt" => {
+                            builder = builder.set_started_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                            )?);
+                        }
+                        "endedAt" => {
+                            builder = builder.set_ended_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                            )?);
+                        }
+                        "errorDetails" => {
+                            builder =
+                                builder.set_error_details(crate::protocol_serde::shape_error_details::de_error_details(tokens, _value, depth + 1)?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

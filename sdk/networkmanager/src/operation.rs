@@ -7,6 +7,9 @@ pub mod accept_attachment;
 /// Types for the `AssociateConnectPeer` operation.
 pub mod associate_connect_peer;
 
+/// Types for the `AssociateContextStore` operation.
+pub mod associate_context_store;
+
 /// Types for the `AssociateCustomerGateway` operation.
 pub mod associate_customer_gateway;
 
@@ -24,6 +27,9 @@ pub mod create_connect_peer;
 
 /// Types for the `CreateConnection` operation.
 pub mod create_connection;
+
+/// Types for the `CreateContextStore` operation.
+pub mod create_context_store;
 
 /// Types for the `CreateCoreNetwork` operation.
 pub mod create_core_network;
@@ -67,6 +73,9 @@ pub mod delete_connect_peer;
 /// Types for the `DeleteConnection` operation.
 pub mod delete_connection;
 
+/// Types for the `DeleteContextStore` operation.
+pub mod delete_context_store;
+
 /// Types for the `DeleteCoreNetwork` operation.
 pub mod delete_core_network;
 
@@ -103,6 +112,9 @@ pub mod describe_global_networks;
 /// Types for the `DisassociateConnectPeer` operation.
 pub mod disassociate_connect_peer;
 
+/// Types for the `DisassociateContextStore` operation.
+pub mod disassociate_context_store;
+
 /// Types for the `DisassociateCustomerGateway` operation.
 pub mod disassociate_customer_gateway;
 
@@ -126,6 +138,15 @@ pub mod get_connect_peer_associations;
 
 /// Types for the `GetConnections` operation.
 pub mod get_connections;
+
+/// Types for the `GetContextStore` operation.
+pub mod get_context_store;
+
+/// Types for the `GetContextStoreAssociation` operation.
+pub mod get_context_store_association;
+
+/// Types for the `GetContextVersion` operation.
+pub mod get_context_version;
 
 /// Types for the `GetCoreNetwork` operation.
 pub mod get_core_network;
@@ -208,6 +229,18 @@ pub mod list_attachments;
 /// Types for the `ListConnectPeers` operation.
 pub mod list_connect_peers;
 
+/// Types for the `ListContextChanges` operation.
+pub mod list_context_changes;
+
+/// Types for the `ListContextStoreAssociations` operation.
+pub mod list_context_store_associations;
+
+/// Types for the `ListContextStores` operation.
+pub mod list_context_stores;
+
+/// Types for the `ListContexts` operation.
+pub mod list_contexts;
+
 /// Types for the `ListCoreNetworkPolicyVersions` operation.
 pub mod list_core_network_policy_versions;
 
@@ -267,6 +300,9 @@ pub mod update_attachment_nat_configuration;
 
 /// Types for the `UpdateConnection` operation.
 pub mod update_connection;
+
+/// Types for the `UpdateContextStore` operation.
+pub mod update_context_store;
 
 /// Types for the `UpdateCoreNetwork` operation.
 pub mod update_core_network;

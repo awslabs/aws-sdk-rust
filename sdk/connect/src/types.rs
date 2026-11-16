@@ -149,6 +149,8 @@ pub use crate::types::_vocabulary_state::VocabularyState;
 
 pub use crate::types::_workspace_theme::WorkspaceTheme;
 
+pub use crate::types::_session_entity_type::SessionEntityType;
+
 pub use crate::types::_media_type::MediaType;
 
 pub use crate::types::_agent_status::AgentStatus;
@@ -3022,6 +3024,8 @@ mod _send_notification_action_definition;
 mod _sentiment_configuration;
 
 mod _service_quota_exceeded_exception_reason;
+
+mod _session_entity_type;
 
 mod _sign_in_config;
 

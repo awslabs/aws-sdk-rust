@@ -24,6 +24,7 @@ impl crate::operation::get_request_authorization_details::builders::GetRequestAu
 ///
 /// <p>Retrieves the authorization details for a specific access denied request. The details include the request context, the evaluations performed, and the policies that were evaluated.</p>
 /// <p>Use this operation to understand why a request was denied. Supported services include an authorization ID in the access denied error message. Pass that ID to this operation to retrieve the details.</p>
+/// <p>To retrieve the content for a policy in the <code>policies</code> list, call <code>GetRequestAuthorizationPolicy</code>.</p>
 /// <p>Authorization details are available for at least 24 hours after the denial.</p>
 /// <p>To use this operation, you must have the <code>iam:GetRequestAuthorizationDetails</code> permission.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

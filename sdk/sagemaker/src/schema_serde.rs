@@ -643,6 +643,10 @@ pub(crate) mod shape_create_inference_recommendations_job_input_input;
 
 pub(crate) mod shape_create_inference_recommendations_job_output_output;
 
+pub(crate) mod shape_create_inference_router_input_input;
+
+pub(crate) mod shape_create_inference_router_output_output;
+
 pub(crate) mod shape_create_job_input_input;
 
 pub(crate) mod shape_create_job_output_output;
@@ -789,6 +793,8 @@ pub(crate) mod shape_create_workteam_input_input;
 
 pub(crate) mod shape_create_workteam_output_output;
 
+pub(crate) mod shape_cross_region_traffic_config;
+
 pub(crate) mod shape_custom_file_system;
 
 pub(crate) mod shape_custom_file_system_config;
@@ -925,6 +931,10 @@ pub(crate) mod shape_delete_endpoint_input_input;
 
 pub(crate) mod shape_delete_endpoint_output_output;
 
+pub(crate) mod shape_delete_endpoint_policy_input_input;
+
+pub(crate) mod shape_delete_endpoint_policy_output_output;
+
 pub(crate) mod shape_delete_experiment_input_input;
 
 pub(crate) mod shape_delete_experiment_output_output;
@@ -972,6 +982,10 @@ pub(crate) mod shape_delete_inference_component_output_output;
 pub(crate) mod shape_delete_inference_experiment_input_input;
 
 pub(crate) mod shape_delete_inference_experiment_output_output;
+
+pub(crate) mod shape_delete_inference_router_input_input;
+
+pub(crate) mod shape_delete_inference_router_output_output;
 
 pub(crate) mod shape_delete_job_input_input;
 
@@ -1271,6 +1285,10 @@ pub(crate) mod shape_describe_inference_recommendations_job_input_input;
 
 pub(crate) mod shape_describe_inference_recommendations_job_output_output;
 
+pub(crate) mod shape_describe_inference_router_input_input;
+
+pub(crate) mod shape_describe_inference_router_output_output;
+
 pub(crate) mod shape_describe_job_input_input;
 
 pub(crate) mod shape_describe_job_output_output;
@@ -1424,6 +1442,8 @@ pub(crate) mod shape_describe_workteam_input_input;
 pub(crate) mod shape_describe_workteam_output_output;
 
 pub(crate) mod shape_desired_weight_and_capacity;
+
+pub(crate) mod shape_destination;
 
 pub(crate) mod shape_detach_cluster_node_volume_input_input;
 
@@ -1623,6 +1643,10 @@ pub(crate) mod shape_get_device_fleet_report_input_input;
 
 pub(crate) mod shape_get_device_fleet_report_output_output;
 
+pub(crate) mod shape_get_endpoint_policy_input_input;
+
+pub(crate) mod shape_get_endpoint_policy_output_output;
+
 pub(crate) mod shape_get_lineage_group_policy_input_input;
 
 pub(crate) mod shape_get_lineage_group_policy_output_output;
@@ -1784,6 +1808,8 @@ pub(crate) mod shape_inference_recommendation;
 pub(crate) mod shape_inference_recommendations_job;
 
 pub(crate) mod shape_inference_recommendations_job_step;
+
+pub(crate) mod shape_inference_router_summary;
 
 pub(crate) mod shape_inference_specification;
 
@@ -2058,6 +2084,10 @@ pub(crate) mod shape_list_inference_recommendations_job_steps_output_output;
 pub(crate) mod shape_list_inference_recommendations_jobs_input_input;
 
 pub(crate) mod shape_list_inference_recommendations_jobs_output_output;
+
+pub(crate) mod shape_list_inference_routers_input_input;
+
+pub(crate) mod shape_list_inference_routers_output_output;
 
 pub(crate) mod shape_list_job_schema_versions_input_input;
 
@@ -2647,6 +2677,10 @@ pub(crate) mod shape_provisioning_parameter;
 
 pub(crate) mod shape_public_workforce_task_price;
 
+pub(crate) mod shape_put_endpoint_policy_input_input;
+
+pub(crate) mod shape_put_endpoint_policy_output_output;
+
 pub(crate) mod shape_put_model_package_group_policy_input_input;
 
 pub(crate) mod shape_put_model_package_group_policy_output_output;
@@ -2719,6 +2753,8 @@ pub(crate) mod shape_reserved_capacity_summary;
 
 pub(crate) mod shape_resolved_attributes;
 
+pub(crate) mod shape_resource_already_exists;
+
 pub(crate) mod shape_resource_catalog;
 
 pub(crate) mod shape_resource_config;
@@ -2750,6 +2786,16 @@ pub(crate) mod shape_role_group_assignment;
 pub(crate) mod shape_rolling_deployment_policy;
 
 pub(crate) mod shape_rolling_update_policy;
+
+pub(crate) mod shape_routing_target;
+
+pub(crate) mod shape_routing_target_async_inference_client_config;
+
+pub(crate) mod shape_routing_target_async_inference_config;
+
+pub(crate) mod shape_routing_target_async_inference_notification_config;
+
+pub(crate) mod shape_routing_target_async_inference_output_config;
 
 pub(crate) mod shape_s3_data_source;
 
@@ -3224,6 +3270,10 @@ pub(crate) mod shape_update_inference_component_runtime_config_output_output;
 pub(crate) mod shape_update_inference_experiment_input_input;
 
 pub(crate) mod shape_update_inference_experiment_output_output;
+
+pub(crate) mod shape_update_inference_router_input_input;
+
+pub(crate) mod shape_update_inference_router_output_output;
 
 pub(crate) mod shape_update_mlflow_app_input_input;
 
