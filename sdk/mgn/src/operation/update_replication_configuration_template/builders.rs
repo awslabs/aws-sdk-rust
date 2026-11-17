@@ -370,6 +370,20 @@ impl UpdateReplicationConfigurationTemplateFluentBuilder {
     pub fn get_store_snapshot_on_local_zone(&self) -> &::std::option::Option<bool> {
         self.inner.get_store_snapshot_on_local_zone()
     }
+    /// <p>Updates the location of replication snapshots in the Replication Configuration template when the staging area subnet is on an AWS Outpost. Set to <code>OUTPOST</code> to keep replication snapshots on the Outpost, or <code>REGION</code> to store them in the AWS Region. Required when the staging area subnet is on an Outpost, and not allowed otherwise.</p>
+    pub fn outpost_snapshot_location(mut self, input: crate::types::OutpostSnapshotLocation) -> Self {
+        self.inner = self.inner.outpost_snapshot_location(input);
+        self
+    }
+    /// <p>Updates the location of replication snapshots in the Replication Configuration template when the staging area subnet is on an AWS Outpost. Set to <code>OUTPOST</code> to keep replication snapshots on the Outpost, or <code>REGION</code> to store them in the AWS Region. Required when the staging area subnet is on an Outpost, and not allowed otherwise.</p>
+    pub fn set_outpost_snapshot_location(mut self, input: ::std::option::Option<crate::types::OutpostSnapshotLocation>) -> Self {
+        self.inner = self.inner.set_outpost_snapshot_location(input);
+        self
+    }
+    /// <p>Updates the location of replication snapshots in the Replication Configuration template when the staging area subnet is on an AWS Outpost. Set to <code>OUTPOST</code> to keep replication snapshots on the Outpost, or <code>REGION</code> to store them in the AWS Region. Required when the staging area subnet is on an Outpost, and not allowed otherwise.</p>
+    pub fn get_outpost_snapshot_location(&self) -> &::std::option::Option<crate::types::OutpostSnapshotLocation> {
+        self.inner.get_outpost_snapshot_location()
+    }
     /// <p>Update replication configuration template storage configuration request.</p>
     pub fn storage_configuration(mut self, input: crate::types::StorageConfiguration) -> Self {
         self.inner = self.inner.storage_configuration(input);

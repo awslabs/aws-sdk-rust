@@ -267,6 +267,20 @@ impl UpdateLaunchConfigurationFluentBuilder {
     pub fn get_map_auto_tagging_mpe_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_map_auto_tagging_mpe_id()
     }
+    /// <p>Launch configuration map auto tagging key.</p>
+    pub fn map_auto_tagging_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.map_auto_tagging_key(input.into());
+        self
+    }
+    /// <p>Launch configuration map auto tagging key.</p>
+    pub fn set_map_auto_tagging_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_map_auto_tagging_key(input);
+        self
+    }
+    /// <p>Launch configuration map auto tagging key.</p>
+    pub fn get_map_auto_tagging_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_map_auto_tagging_key()
+    }
     /// <p>Update Launch configuration Account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.account_id(input.into());

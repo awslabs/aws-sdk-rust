@@ -2,7 +2,7 @@
 
 /// <p>Represents the full configuration of a procurement portal preference, including settings for e-invoice delivery and purchase order retrieval.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ProcurementPortalPreference {
     /// <p>The Amazon Web Services account ID associated with this procurement portal preference.</p>
     pub aws_account_id: ::std::string::String,
@@ -163,6 +163,46 @@ impl ProcurementPortalPreference {
         &self.last_update_date
     }
 }
+impl ::std::fmt::Debug for ProcurementPortalPreference {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ProcurementPortalPreference");
+        formatter.field("aws_account_id", &self.aws_account_id);
+        formatter.field("procurement_portal_preference_arn", &self.procurement_portal_preference_arn);
+        formatter.field("procurement_portal_name", &self.procurement_portal_name);
+        formatter.field("buyer_domain", &self.buyer_domain);
+        formatter.field("buyer_identifier", &self.buyer_identifier);
+        formatter.field("supplier_domain", &self.supplier_domain);
+        formatter.field("supplier_identifier", &self.supplier_identifier);
+        formatter.field("selector", &self.selector);
+        formatter.field("procurement_portal_shared_secret", &self.procurement_portal_shared_secret);
+        formatter.field("procurement_portal_instance_endpoint", &self.procurement_portal_instance_endpoint);
+        formatter.field("purchase_order_retrieval_endpoint", &self.purchase_order_retrieval_endpoint);
+        formatter.field("test_env_preference", &self.test_env_preference);
+        formatter.field("einvoice_delivery_enabled", &self.einvoice_delivery_enabled);
+        formatter.field("einvoice_delivery_preference", &self.einvoice_delivery_preference);
+        formatter.field("purchase_order_retrieval_enabled", &self.purchase_order_retrieval_enabled);
+        formatter.field("marketplace_punch_out_enabled", &self.marketplace_punch_out_enabled);
+        formatter.field("marketplace_punch_out_preference", &self.marketplace_punch_out_preference);
+        formatter.field("contacts", &"*** Sensitive Data Redacted ***");
+        formatter.field("einvoice_delivery_preference_status", &self.einvoice_delivery_preference_status);
+        formatter.field(
+            "einvoice_delivery_preference_status_reason",
+            &self.einvoice_delivery_preference_status_reason,
+        );
+        formatter.field(
+            "purchase_order_retrieval_preference_status",
+            &self.purchase_order_retrieval_preference_status,
+        );
+        formatter.field(
+            "purchase_order_retrieval_preference_status_reason",
+            &self.purchase_order_retrieval_preference_status_reason,
+        );
+        formatter.field("version", &self.version);
+        formatter.field("create_date", &self.create_date);
+        formatter.field("last_update_date", &self.last_update_date);
+        formatter.finish()
+    }
+}
 impl ProcurementPortalPreference {
     /// Creates a new builder-style object to manufacture [`ProcurementPortalPreference`](crate::types::ProcurementPortalPreference).
     pub fn builder() -> crate::types::builders::ProcurementPortalPreferenceBuilder {
@@ -171,7 +211,7 @@ impl ProcurementPortalPreference {
 }
 
 /// A builder for [`ProcurementPortalPreference`](crate::types::ProcurementPortalPreference).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ProcurementPortalPreferenceBuilder {
     pub(crate) aws_account_id: ::std::option::Option<::std::string::String>,
@@ -674,5 +714,45 @@ impl ProcurementPortalPreferenceBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for ProcurementPortalPreferenceBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ProcurementPortalPreferenceBuilder");
+        formatter.field("aws_account_id", &self.aws_account_id);
+        formatter.field("procurement_portal_preference_arn", &self.procurement_portal_preference_arn);
+        formatter.field("procurement_portal_name", &self.procurement_portal_name);
+        formatter.field("buyer_domain", &self.buyer_domain);
+        formatter.field("buyer_identifier", &self.buyer_identifier);
+        formatter.field("supplier_domain", &self.supplier_domain);
+        formatter.field("supplier_identifier", &self.supplier_identifier);
+        formatter.field("selector", &self.selector);
+        formatter.field("procurement_portal_shared_secret", &self.procurement_portal_shared_secret);
+        formatter.field("procurement_portal_instance_endpoint", &self.procurement_portal_instance_endpoint);
+        formatter.field("purchase_order_retrieval_endpoint", &self.purchase_order_retrieval_endpoint);
+        formatter.field("test_env_preference", &self.test_env_preference);
+        formatter.field("einvoice_delivery_enabled", &self.einvoice_delivery_enabled);
+        formatter.field("einvoice_delivery_preference", &self.einvoice_delivery_preference);
+        formatter.field("purchase_order_retrieval_enabled", &self.purchase_order_retrieval_enabled);
+        formatter.field("marketplace_punch_out_enabled", &self.marketplace_punch_out_enabled);
+        formatter.field("marketplace_punch_out_preference", &self.marketplace_punch_out_preference);
+        formatter.field("contacts", &"*** Sensitive Data Redacted ***");
+        formatter.field("einvoice_delivery_preference_status", &self.einvoice_delivery_preference_status);
+        formatter.field(
+            "einvoice_delivery_preference_status_reason",
+            &self.einvoice_delivery_preference_status_reason,
+        );
+        formatter.field(
+            "purchase_order_retrieval_preference_status",
+            &self.purchase_order_retrieval_preference_status,
+        );
+        formatter.field(
+            "purchase_order_retrieval_preference_status_reason",
+            &self.purchase_order_retrieval_preference_status_reason,
+        );
+        formatter.field("version", &self.version);
+        formatter.field("create_date", &self.create_date);
+        formatter.field("last_update_date", &self.last_update_date);
+        formatter.finish()
     }
 }

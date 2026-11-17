@@ -56,6 +56,35 @@ pub fn de_vpc_peering_connection_options_description(
                 builder = builder.set_allow_egress_from_local_vpc_to_remote_classic_link(var_3);
             }
             ,
+            s if s.matches("allowMultipathResilience") /* AllowMultipathResilience com.amazonaws.ec2#VpcPeeringConnectionOptionsDescription$AllowMultipathResilience */ =>  {
+                let var_4 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_allow_multipath_resilience(var_4);
+            }
+            ,
+            s if s.matches("multipathResilienceMode") /* MultipathResilienceMode com.amazonaws.ec2#VpcPeeringConnectionOptionsDescription$MultipathResilienceMode */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<crate::types::MultipathResilienceMode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::MultipathResilienceMode::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_multipath_resilience_mode(var_5);
+            }
+            ,
             _ => {}
         }
     }

@@ -4,7 +4,7 @@
 /// <p>Due to changes made by the Amazon Alexa service, this data type is no longer available for use. For more information, refer to the <a href="https://developer.amazon.com/en-US/alexa/alexasmartproperties">Alexa Smart Properties</a> page.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SipMediaApplicationAlexaSkillConfiguration {
     /// <p>The status of the Alexa Skill configuration.</p>
     pub alexa_skill_status: crate::types::AlexaSkillStatus,
@@ -22,6 +22,14 @@ impl SipMediaApplicationAlexaSkillConfiguration {
         self.alexa_skill_ids.deref()
     }
 }
+impl ::std::fmt::Debug for SipMediaApplicationAlexaSkillConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SipMediaApplicationAlexaSkillConfiguration");
+        formatter.field("alexa_skill_status", &self.alexa_skill_status);
+        formatter.field("alexa_skill_ids", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl SipMediaApplicationAlexaSkillConfiguration {
     /// Creates a new builder-style object to manufacture [`SipMediaApplicationAlexaSkillConfiguration`](crate::types::SipMediaApplicationAlexaSkillConfiguration).
     pub fn builder() -> crate::types::builders::SipMediaApplicationAlexaSkillConfigurationBuilder {
@@ -30,7 +38,7 @@ impl SipMediaApplicationAlexaSkillConfiguration {
 }
 
 /// A builder for [`SipMediaApplicationAlexaSkillConfiguration`](crate::types::SipMediaApplicationAlexaSkillConfiguration).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct SipMediaApplicationAlexaSkillConfigurationBuilder {
     pub(crate) alexa_skill_status: ::std::option::Option<crate::types::AlexaSkillStatus>,
@@ -93,5 +101,13 @@ impl SipMediaApplicationAlexaSkillConfigurationBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for SipMediaApplicationAlexaSkillConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SipMediaApplicationAlexaSkillConfigurationBuilder");
+        formatter.field("alexa_skill_status", &self.alexa_skill_status);
+        formatter.field("alexa_skill_ids", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

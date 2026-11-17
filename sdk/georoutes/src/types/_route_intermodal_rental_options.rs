@@ -2,7 +2,7 @@
 
 /// <p>Options for the rental leg of the intermodal route.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteIntermodalRentalOptions {
     /// <p>Allowed rental transport modes when calculating the route. By default, all transport modes are allowed. Cannot be used together with <code>ExcludedModes</code>.</p>
     pub allowed_modes: ::std::option::Option<::std::vec::Vec<crate::types::RouteRentalMode>>,
@@ -51,6 +51,15 @@ impl RouteIntermodalRentalOptions {
         self.excluded_modes.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for RouteIntermodalRentalOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteIntermodalRentalOptions");
+        formatter.field("allowed_modes", &"*** Sensitive Data Redacted ***");
+        formatter.field("enabled_for", &"*** Sensitive Data Redacted ***");
+        formatter.field("excluded_modes", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteIntermodalRentalOptions {
     /// Creates a new builder-style object to manufacture [`RouteIntermodalRentalOptions`](crate::types::RouteIntermodalRentalOptions).
     pub fn builder() -> crate::types::builders::RouteIntermodalRentalOptionsBuilder {
@@ -59,7 +68,7 @@ impl RouteIntermodalRentalOptions {
 }
 
 /// A builder for [`RouteIntermodalRentalOptions`](crate::types::RouteIntermodalRentalOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteIntermodalRentalOptionsBuilder {
     pub(crate) allowed_modes: ::std::option::Option<::std::vec::Vec<crate::types::RouteRentalMode>>,
@@ -164,5 +173,14 @@ impl RouteIntermodalRentalOptionsBuilder {
             enabled_for: self.enabled_for,
             excluded_modes: self.excluded_modes,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteIntermodalRentalOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteIntermodalRentalOptionsBuilder");
+        formatter.field("allowed_modes", &"*** Sensitive Data Redacted ***");
+        formatter.field("enabled_for", &"*** Sensitive Data Redacted ***");
+        formatter.field("excluded_modes", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

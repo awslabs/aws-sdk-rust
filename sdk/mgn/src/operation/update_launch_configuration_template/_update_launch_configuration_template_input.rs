@@ -11,6 +11,8 @@ pub struct UpdateLaunchConfigurationTemplateInput {
     pub enable_map_auto_tagging: ::std::option::Option<bool>,
     /// <p>Launch configuration template map auto tagging MPE ID.</p>
     pub map_auto_tagging_mpe_id: ::std::option::Option<::std::string::String>,
+    /// <p>Launch configuration template map auto tagging key.</p>
+    pub map_auto_tagging_key: ::std::option::Option<::std::string::String>,
     /// <p>Launch disposition.</p>
     pub launch_disposition: ::std::option::Option<crate::types::LaunchDisposition>,
     /// <p>Target instance type right-sizing method.</p>
@@ -52,6 +54,10 @@ impl UpdateLaunchConfigurationTemplateInput {
     /// <p>Launch configuration template map auto tagging MPE ID.</p>
     pub fn map_auto_tagging_mpe_id(&self) -> ::std::option::Option<&str> {
         self.map_auto_tagging_mpe_id.as_deref()
+    }
+    /// <p>Launch configuration template map auto tagging key.</p>
+    pub fn map_auto_tagging_key(&self) -> ::std::option::Option<&str> {
+        self.map_auto_tagging_key.as_deref()
     }
     /// <p>Launch disposition.</p>
     pub fn launch_disposition(&self) -> ::std::option::Option<&crate::types::LaunchDisposition> {
@@ -117,6 +123,7 @@ pub struct UpdateLaunchConfigurationTemplateInputBuilder {
     pub(crate) post_launch_actions: ::std::option::Option<crate::types::PostLaunchActions>,
     pub(crate) enable_map_auto_tagging: ::std::option::Option<bool>,
     pub(crate) map_auto_tagging_mpe_id: ::std::option::Option<::std::string::String>,
+    pub(crate) map_auto_tagging_key: ::std::option::Option<::std::string::String>,
     pub(crate) launch_disposition: ::std::option::Option<crate::types::LaunchDisposition>,
     pub(crate) target_instance_type_right_sizing_method: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
     pub(crate) copy_private_ip: ::std::option::Option<bool>,
@@ -187,6 +194,20 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
     /// <p>Launch configuration template map auto tagging MPE ID.</p>
     pub fn get_map_auto_tagging_mpe_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.map_auto_tagging_mpe_id
+    }
+    /// <p>Launch configuration template map auto tagging key.</p>
+    pub fn map_auto_tagging_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.map_auto_tagging_key = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Launch configuration template map auto tagging key.</p>
+    pub fn set_map_auto_tagging_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.map_auto_tagging_key = input;
+        self
+    }
+    /// <p>Launch configuration template map auto tagging key.</p>
+    pub fn get_map_auto_tagging_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_auto_tagging_key
     }
     /// <p>Launch disposition.</p>
     pub fn launch_disposition(mut self, input: crate::types::LaunchDisposition) -> Self {
@@ -372,6 +393,7 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
                 post_launch_actions: self.post_launch_actions,
                 enable_map_auto_tagging: self.enable_map_auto_tagging,
                 map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id,
+                map_auto_tagging_key: self.map_auto_tagging_key,
                 launch_disposition: self.launch_disposition,
                 target_instance_type_right_sizing_method: self.target_instance_type_right_sizing_method,
                 copy_private_ip: self.copy_private_ip,

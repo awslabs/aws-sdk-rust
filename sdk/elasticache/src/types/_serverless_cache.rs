@@ -46,6 +46,8 @@ pub struct ServerlessCache {
     pub connection_type: ::std::option::Option<crate::types::ConnectionType>,
     /// <p>Provides a summary of the migration status for the serverless cache.</p>
     pub migration: ::std::option::Option<crate::types::MigrationSummary>,
+    /// <p>Configured integrations and their status.</p>
+    pub integrations: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>,
 }
 impl ServerlessCache {
     /// <p>The unique identifier of the serverless cache.</p>
@@ -136,6 +138,12 @@ impl ServerlessCache {
     pub fn migration(&self) -> ::std::option::Option<&crate::types::MigrationSummary> {
         self.migration.as_ref()
     }
+    /// <p>Configured integrations and their status.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.integrations.is_none()`.
+    pub fn integrations(&self) -> &[crate::types::Integration] {
+        self.integrations.as_deref().unwrap_or_default()
+    }
 }
 impl ServerlessCache {
     /// Creates a new builder-style object to manufacture [`ServerlessCache`](crate::types::ServerlessCache).
@@ -169,6 +177,7 @@ pub struct ServerlessCacheBuilder {
     pub(crate) network_type: ::std::option::Option<crate::types::NetworkType>,
     pub(crate) connection_type: ::std::option::Option<crate::types::ConnectionType>,
     pub(crate) migration: ::std::option::Option<crate::types::MigrationSummary>,
+    pub(crate) integrations: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>,
 }
 impl ServerlessCacheBuilder {
     /// <p>The unique identifier of the serverless cache.</p>
@@ -477,6 +486,26 @@ impl ServerlessCacheBuilder {
     pub fn get_migration(&self) -> &::std::option::Option<crate::types::MigrationSummary> {
         &self.migration
     }
+    /// Appends an item to `integrations`.
+    ///
+    /// To override the contents of this collection use [`set_integrations`](Self::set_integrations).
+    ///
+    /// <p>Configured integrations and their status.</p>
+    pub fn integrations(mut self, input: crate::types::Integration) -> Self {
+        let mut v = self.integrations.unwrap_or_default();
+        v.push(input);
+        self.integrations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Configured integrations and their status.</p>
+    pub fn set_integrations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Integration>>) -> Self {
+        self.integrations = input;
+        self
+    }
+    /// <p>Configured integrations and their status.</p>
+    pub fn get_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Integration>> {
+        &self.integrations
+    }
     /// Consumes the builder and constructs a [`ServerlessCache`](crate::types::ServerlessCache).
     pub fn build(self) -> crate::types::ServerlessCache {
         crate::types::ServerlessCache {
@@ -501,6 +530,7 @@ impl ServerlessCacheBuilder {
             network_type: self.network_type,
             connection_type: self.connection_type,
             migration: self.migration,
+            integrations: self.integrations,
         }
     }
 }

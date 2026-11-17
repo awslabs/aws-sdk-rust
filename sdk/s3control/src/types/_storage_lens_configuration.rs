@@ -16,6 +16,8 @@ pub struct StorageLensConfiguration {
     pub data_export: ::std::option::Option<crate::types::StorageLensDataExport>,
     /// <p>A container that configures your S3 Storage Lens expanded prefixes metrics report.</p>
     pub expanded_prefixes_data_export: ::std::option::Option<crate::types::StorageLensExpandedPrefixesDataExport>,
+    /// <p>A container for the configuration used to publish S3 Storage Lens cost data to Amazon Web Services Cost and Usage Reports (Amazon Web Services CUR).</p>
+    pub cost_and_usage_reports_publish: ::std::option::Option<crate::types::StorageLensCostAndUsageReportsPublish>,
     /// <p>A container for whether the S3 Storage Lens configuration is enabled.</p>
     pub is_enabled: bool,
     /// <p>A container for the Amazon Web Services organization for this S3 Storage Lens configuration.</p>
@@ -33,6 +35,8 @@ pub struct StorageLensConfiguration {
     /// </ul>
     /// </note>
     pub prefix_delimiter: ::std::option::Option<::std::string::String>,
+    /// <p>A container element for S3 Storage Lens Intelligent-Tiering access tier metrics.</p>
+    pub int_access_tiers: ::std::option::Option<crate::types::IntAccessTiers>,
 }
 impl StorageLensConfiguration {
     /// <p>A container for the Amazon S3 Storage Lens configuration ID.</p>
@@ -60,6 +64,10 @@ impl StorageLensConfiguration {
     pub fn expanded_prefixes_data_export(&self) -> ::std::option::Option<&crate::types::StorageLensExpandedPrefixesDataExport> {
         self.expanded_prefixes_data_export.as_ref()
     }
+    /// <p>A container for the configuration used to publish S3 Storage Lens cost data to Amazon Web Services Cost and Usage Reports (Amazon Web Services CUR).</p>
+    pub fn cost_and_usage_reports_publish(&self) -> ::std::option::Option<&crate::types::StorageLensCostAndUsageReportsPublish> {
+        self.cost_and_usage_reports_publish.as_ref()
+    }
     /// <p>A container for whether the S3 Storage Lens configuration is enabled.</p>
     pub fn is_enabled(&self) -> bool {
         self.is_enabled
@@ -85,6 +93,10 @@ impl StorageLensConfiguration {
     pub fn prefix_delimiter(&self) -> ::std::option::Option<&str> {
         self.prefix_delimiter.as_deref()
     }
+    /// <p>A container element for S3 Storage Lens Intelligent-Tiering access tier metrics.</p>
+    pub fn int_access_tiers(&self) -> ::std::option::Option<&crate::types::IntAccessTiers> {
+        self.int_access_tiers.as_ref()
+    }
 }
 impl StorageLensConfiguration {
     /// Creates a new builder-style object to manufacture [`StorageLensConfiguration`](crate::types::StorageLensConfiguration).
@@ -103,10 +115,12 @@ pub struct StorageLensConfigurationBuilder {
     pub(crate) exclude: ::std::option::Option<crate::types::Exclude>,
     pub(crate) data_export: ::std::option::Option<crate::types::StorageLensDataExport>,
     pub(crate) expanded_prefixes_data_export: ::std::option::Option<crate::types::StorageLensExpandedPrefixesDataExport>,
+    pub(crate) cost_and_usage_reports_publish: ::std::option::Option<crate::types::StorageLensCostAndUsageReportsPublish>,
     pub(crate) is_enabled: ::std::option::Option<bool>,
     pub(crate) aws_org: ::std::option::Option<crate::types::StorageLensAwsOrg>,
     pub(crate) storage_lens_arn: ::std::option::Option<::std::string::String>,
     pub(crate) prefix_delimiter: ::std::option::Option<::std::string::String>,
+    pub(crate) int_access_tiers: ::std::option::Option<crate::types::IntAccessTiers>,
 }
 impl StorageLensConfigurationBuilder {
     /// <p>A container for the Amazon S3 Storage Lens configuration ID.</p>
@@ -195,6 +209,20 @@ impl StorageLensConfigurationBuilder {
     pub fn get_expanded_prefixes_data_export(&self) -> &::std::option::Option<crate::types::StorageLensExpandedPrefixesDataExport> {
         &self.expanded_prefixes_data_export
     }
+    /// <p>A container for the configuration used to publish S3 Storage Lens cost data to Amazon Web Services Cost and Usage Reports (Amazon Web Services CUR).</p>
+    pub fn cost_and_usage_reports_publish(mut self, input: crate::types::StorageLensCostAndUsageReportsPublish) -> Self {
+        self.cost_and_usage_reports_publish = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A container for the configuration used to publish S3 Storage Lens cost data to Amazon Web Services Cost and Usage Reports (Amazon Web Services CUR).</p>
+    pub fn set_cost_and_usage_reports_publish(mut self, input: ::std::option::Option<crate::types::StorageLensCostAndUsageReportsPublish>) -> Self {
+        self.cost_and_usage_reports_publish = input;
+        self
+    }
+    /// <p>A container for the configuration used to publish S3 Storage Lens cost data to Amazon Web Services Cost and Usage Reports (Amazon Web Services CUR).</p>
+    pub fn get_cost_and_usage_reports_publish(&self) -> &::std::option::Option<crate::types::StorageLensCostAndUsageReportsPublish> {
+        &self.cost_and_usage_reports_publish
+    }
     /// <p>A container for whether the S3 Storage Lens configuration is enabled.</p>
     /// This field is required.
     pub fn is_enabled(mut self, input: bool) -> Self {
@@ -279,6 +307,20 @@ impl StorageLensConfigurationBuilder {
     pub fn get_prefix_delimiter(&self) -> &::std::option::Option<::std::string::String> {
         &self.prefix_delimiter
     }
+    /// <p>A container element for S3 Storage Lens Intelligent-Tiering access tier metrics.</p>
+    pub fn int_access_tiers(mut self, input: crate::types::IntAccessTiers) -> Self {
+        self.int_access_tiers = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A container element for S3 Storage Lens Intelligent-Tiering access tier metrics.</p>
+    pub fn set_int_access_tiers(mut self, input: ::std::option::Option<crate::types::IntAccessTiers>) -> Self {
+        self.int_access_tiers = input;
+        self
+    }
+    /// <p>A container element for S3 Storage Lens Intelligent-Tiering access tier metrics.</p>
+    pub fn get_int_access_tiers(&self) -> &::std::option::Option<crate::types::IntAccessTiers> {
+        &self.int_access_tiers
+    }
     /// Consumes the builder and constructs a [`StorageLensConfiguration`](crate::types::StorageLensConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::StorageLensConfigurationBuilder::id)
@@ -295,10 +337,12 @@ impl StorageLensConfigurationBuilder {
             exclude: self.exclude,
             data_export: self.data_export,
             expanded_prefixes_data_export: self.expanded_prefixes_data_export,
+            cost_and_usage_reports_publish: self.cost_and_usage_reports_publish,
             is_enabled: self.is_enabled.unwrap_or_default(),
             aws_org: self.aws_org,
             storage_lens_arn: self.storage_lens_arn,
             prefix_delimiter: self.prefix_delimiter,
+            int_access_tiers: self.int_access_tiers,
         })
     }
 }

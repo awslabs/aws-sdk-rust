@@ -15,14 +15,17 @@ pub fn ser_update_global_resolver_input_input(
     if let Some(var_4) = &input.observability_region {
         object.key("observabilityRegion").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.regions {
-        let mut array_6 = object.key("regions").start_array();
-        for item_7 in var_5 {
+    if let Some(var_5) = &input.public_ip_status {
+        object.key("publicIpStatus").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.regions {
+        let mut array_7 = object.key("regions").start_array();
+        for item_8 in var_6 {
             {
-                array_6.value().string(item_7.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
     Ok(())
 }

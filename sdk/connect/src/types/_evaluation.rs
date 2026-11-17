@@ -26,6 +26,20 @@ pub struct Evaluation {
     pub evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>A map of item (section or question) identifiers to their enablement status, computed by the service from each item's conditional enablement configuration. Disabled items are excluded from scoring. Valid values: <code>ENABLED</code> | <code>DISABLED</code>.</p>
+    pub item_enablement_status: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationEnablementStatus>>,
+    /// <p>The aggregate status of resolving the external source data (such as Contact Lens analysis and AI metrics) that is used by conditional enablement in the evaluation. Source data is resolved asynchronously after the evaluation is started. While a source is pending or after it fails to resolve, conditions that depend on it evaluate to the item's <code>DefaultAction</code>. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PENDING</code> - One or more sources have not been resolved yet. Call <code>DescribeContactEvaluation</code> again to get updated <code>ItemEnablementStatus</code> values.</p></li>
+    /// <li>
+    /// <p><code>RESOLVED</code> - All sources have been resolved.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - One or more sources could not be resolved. Dependent conditions use the item's <code>DefaultAction</code>.</p></li>
+    /// </ul>
+    pub source_resolution_status: ::std::option::Option<crate::types::EvaluationItemResolutionStatus>,
+    /// <p>The resolved values of the external sources (such as contact data, evaluation metadata, form metadata, and AI metrics) that are used by the conditions in the evaluation form. You can use these values to evaluate the conditions against the current answers without calling <code>DescribeContactEvaluation</code> again.</p>
+    pub source_values: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResolvedSource>>,
 }
 impl Evaluation {
     /// <p>A unique identifier for the contact evaluation.</p>
@@ -74,6 +88,30 @@ impl Evaluation {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>A map of item (section or question) identifiers to their enablement status, computed by the service from each item's conditional enablement configuration. Disabled items are excluded from scoring. Valid values: <code>ENABLED</code> | <code>DISABLED</code>.</p>
+    pub fn item_enablement_status(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::EvaluationEnablementStatus>> {
+        self.item_enablement_status.as_ref()
+    }
+    /// <p>The aggregate status of resolving the external source data (such as Contact Lens analysis and AI metrics) that is used by conditional enablement in the evaluation. Source data is resolved asynchronously after the evaluation is started. While a source is pending or after it fails to resolve, conditions that depend on it evaluate to the item's <code>DefaultAction</code>. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PENDING</code> - One or more sources have not been resolved yet. Call <code>DescribeContactEvaluation</code> again to get updated <code>ItemEnablementStatus</code> values.</p></li>
+    /// <li>
+    /// <p><code>RESOLVED</code> - All sources have been resolved.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - One or more sources could not be resolved. Dependent conditions use the item's <code>DefaultAction</code>.</p></li>
+    /// </ul>
+    pub fn source_resolution_status(&self) -> ::std::option::Option<&crate::types::EvaluationItemResolutionStatus> {
+        self.source_resolution_status.as_ref()
+    }
+    /// <p>The resolved values of the external sources (such as contact data, evaluation metadata, form metadata, and AI metrics) that are used by the conditions in the evaluation form. You can use these values to evaluate the conditions against the current answers without calling <code>DescribeContactEvaluation</code> again.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_values.is_none()`.
+    pub fn source_values(&self) -> &[crate::types::EvaluationResolvedSource] {
+        self.source_values.as_deref().unwrap_or_default()
+    }
 }
 impl Evaluation {
     /// Creates a new builder-style object to manufacture [`Evaluation`](crate::types::Evaluation).
@@ -97,6 +135,10 @@ pub struct EvaluationBuilder {
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) evaluation_type: ::std::option::Option<crate::types::EvaluationType>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) item_enablement_status:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationEnablementStatus>>,
+    pub(crate) source_resolution_status: ::std::option::Option<crate::types::EvaluationItemResolutionStatus>,
+    pub(crate) source_values: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResolvedSource>>,
 }
 impl EvaluationBuilder {
     /// <p>A unique identifier for the contact evaluation.</p>
@@ -292,6 +334,93 @@ impl EvaluationBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// Adds a key-value pair to `item_enablement_status`.
+    ///
+    /// To override the contents of this collection use [`set_item_enablement_status`](Self::set_item_enablement_status).
+    ///
+    /// <p>A map of item (section or question) identifiers to their enablement status, computed by the service from each item's conditional enablement configuration. Disabled items are excluded from scoring. Valid values: <code>ENABLED</code> | <code>DISABLED</code>.</p>
+    pub fn item_enablement_status(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: crate::types::EvaluationEnablementStatus,
+    ) -> Self {
+        let mut hash_map = self.item_enablement_status.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.item_enablement_status = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>A map of item (section or question) identifiers to their enablement status, computed by the service from each item's conditional enablement configuration. Disabled items are excluded from scoring. Valid values: <code>ENABLED</code> | <code>DISABLED</code>.</p>
+    pub fn set_item_enablement_status(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationEnablementStatus>>,
+    ) -> Self {
+        self.item_enablement_status = input;
+        self
+    }
+    /// <p>A map of item (section or question) identifiers to their enablement status, computed by the service from each item's conditional enablement configuration. Disabled items are excluded from scoring. Valid values: <code>ENABLED</code> | <code>DISABLED</code>.</p>
+    pub fn get_item_enablement_status(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::EvaluationEnablementStatus>> {
+        &self.item_enablement_status
+    }
+    /// <p>The aggregate status of resolving the external source data (such as Contact Lens analysis and AI metrics) that is used by conditional enablement in the evaluation. Source data is resolved asynchronously after the evaluation is started. While a source is pending or after it fails to resolve, conditions that depend on it evaluate to the item's <code>DefaultAction</code>. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PENDING</code> - One or more sources have not been resolved yet. Call <code>DescribeContactEvaluation</code> again to get updated <code>ItemEnablementStatus</code> values.</p></li>
+    /// <li>
+    /// <p><code>RESOLVED</code> - All sources have been resolved.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - One or more sources could not be resolved. Dependent conditions use the item's <code>DefaultAction</code>.</p></li>
+    /// </ul>
+    pub fn source_resolution_status(mut self, input: crate::types::EvaluationItemResolutionStatus) -> Self {
+        self.source_resolution_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The aggregate status of resolving the external source data (such as Contact Lens analysis and AI metrics) that is used by conditional enablement in the evaluation. Source data is resolved asynchronously after the evaluation is started. While a source is pending or after it fails to resolve, conditions that depend on it evaluate to the item's <code>DefaultAction</code>. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PENDING</code> - One or more sources have not been resolved yet. Call <code>DescribeContactEvaluation</code> again to get updated <code>ItemEnablementStatus</code> values.</p></li>
+    /// <li>
+    /// <p><code>RESOLVED</code> - All sources have been resolved.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - One or more sources could not be resolved. Dependent conditions use the item's <code>DefaultAction</code>.</p></li>
+    /// </ul>
+    pub fn set_source_resolution_status(mut self, input: ::std::option::Option<crate::types::EvaluationItemResolutionStatus>) -> Self {
+        self.source_resolution_status = input;
+        self
+    }
+    /// <p>The aggregate status of resolving the external source data (such as Contact Lens analysis and AI metrics) that is used by conditional enablement in the evaluation. Source data is resolved asynchronously after the evaluation is started. While a source is pending or after it fails to resolve, conditions that depend on it evaluate to the item's <code>DefaultAction</code>. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PENDING</code> - One or more sources have not been resolved yet. Call <code>DescribeContactEvaluation</code> again to get updated <code>ItemEnablementStatus</code> values.</p></li>
+    /// <li>
+    /// <p><code>RESOLVED</code> - All sources have been resolved.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> - One or more sources could not be resolved. Dependent conditions use the item's <code>DefaultAction</code>.</p></li>
+    /// </ul>
+    pub fn get_source_resolution_status(&self) -> &::std::option::Option<crate::types::EvaluationItemResolutionStatus> {
+        &self.source_resolution_status
+    }
+    /// Appends an item to `source_values`.
+    ///
+    /// To override the contents of this collection use [`set_source_values`](Self::set_source_values).
+    ///
+    /// <p>The resolved values of the external sources (such as contact data, evaluation metadata, form metadata, and AI metrics) that are used by the conditions in the evaluation form. You can use these values to evaluate the conditions against the current answers without calling <code>DescribeContactEvaluation</code> again.</p>
+    pub fn source_values(mut self, input: crate::types::EvaluationResolvedSource) -> Self {
+        let mut v = self.source_values.unwrap_or_default();
+        v.push(input);
+        self.source_values = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The resolved values of the external sources (such as contact data, evaluation metadata, form metadata, and AI metrics) that are used by the conditions in the evaluation form. You can use these values to evaluate the conditions against the current answers without calling <code>DescribeContactEvaluation</code> again.</p>
+    pub fn set_source_values(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationResolvedSource>>) -> Self {
+        self.source_values = input;
+        self
+    }
+    /// <p>The resolved values of the external sources (such as contact data, evaluation metadata, form metadata, and AI metrics) that are used by the conditions in the evaluation form. You can use these values to evaluate the conditions against the current answers without calling <code>DescribeContactEvaluation</code> again.</p>
+    pub fn get_source_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationResolvedSource>> {
+        &self.source_values
+    }
     /// Consumes the builder and constructs a [`Evaluation`](crate::types::Evaluation).
     /// This method will fail if any of the following fields are not set:
     /// - [`evaluation_id`](crate::types::builders::EvaluationBuilder::evaluation_id)
@@ -349,6 +478,9 @@ impl EvaluationBuilder {
             })?,
             evaluation_type: self.evaluation_type,
             tags: self.tags,
+            item_enablement_status: self.item_enablement_status,
+            source_resolution_status: self.source_resolution_status,
+            source_values: self.source_values,
         })
     }
 }

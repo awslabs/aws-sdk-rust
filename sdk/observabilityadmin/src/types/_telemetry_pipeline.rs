@@ -20,6 +20,12 @@ pub struct TelemetryPipeline {
     pub status_reason: ::std::option::Option<crate::types::TelemetryPipelineStatusReason>,
     /// <p>The key-value pairs associated with the telemetry pipeline resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The timestamp when the most recent refresh of the telemetry pipeline started. This field is only present for external-cloud pipelines that you have refreshed.</p>
+    pub last_refresh_time_stamp: ::std::option::Option<i64>,
+    /// <p>The progress of source activation for the telemetry pipeline. This field is only present for external-cloud pipelines.</p>
+    pub source_progress: ::std::option::Option<crate::types::SourceProgress>,
+    /// <p>A summary of the pipeline configuration components.</p>
+    pub configuration_summary: ::std::option::Option<crate::types::ConfigurationSummary>,
 }
 impl TelemetryPipeline {
     /// <p>The timestamp when the telemetry pipeline was created.</p>
@@ -54,6 +60,18 @@ impl TelemetryPipeline {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The timestamp when the most recent refresh of the telemetry pipeline started. This field is only present for external-cloud pipelines that you have refreshed.</p>
+    pub fn last_refresh_time_stamp(&self) -> ::std::option::Option<i64> {
+        self.last_refresh_time_stamp
+    }
+    /// <p>The progress of source activation for the telemetry pipeline. This field is only present for external-cloud pipelines.</p>
+    pub fn source_progress(&self) -> ::std::option::Option<&crate::types::SourceProgress> {
+        self.source_progress.as_ref()
+    }
+    /// <p>A summary of the pipeline configuration components.</p>
+    pub fn configuration_summary(&self) -> ::std::option::Option<&crate::types::ConfigurationSummary> {
+        self.configuration_summary.as_ref()
+    }
 }
 impl TelemetryPipeline {
     /// Creates a new builder-style object to manufacture [`TelemetryPipeline`](crate::types::TelemetryPipeline).
@@ -74,6 +92,9 @@ pub struct TelemetryPipelineBuilder {
     pub(crate) status: ::std::option::Option<crate::types::TelemetryPipelineStatus>,
     pub(crate) status_reason: ::std::option::Option<crate::types::TelemetryPipelineStatusReason>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) last_refresh_time_stamp: ::std::option::Option<i64>,
+    pub(crate) source_progress: ::std::option::Option<crate::types::SourceProgress>,
+    pub(crate) configuration_summary: ::std::option::Option<crate::types::ConfigurationSummary>,
 }
 impl TelemetryPipelineBuilder {
     /// <p>The timestamp when the telemetry pipeline was created.</p>
@@ -194,6 +215,48 @@ impl TelemetryPipelineBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// <p>The timestamp when the most recent refresh of the telemetry pipeline started. This field is only present for external-cloud pipelines that you have refreshed.</p>
+    pub fn last_refresh_time_stamp(mut self, input: i64) -> Self {
+        self.last_refresh_time_stamp = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp when the most recent refresh of the telemetry pipeline started. This field is only present for external-cloud pipelines that you have refreshed.</p>
+    pub fn set_last_refresh_time_stamp(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.last_refresh_time_stamp = input;
+        self
+    }
+    /// <p>The timestamp when the most recent refresh of the telemetry pipeline started. This field is only present for external-cloud pipelines that you have refreshed.</p>
+    pub fn get_last_refresh_time_stamp(&self) -> &::std::option::Option<i64> {
+        &self.last_refresh_time_stamp
+    }
+    /// <p>The progress of source activation for the telemetry pipeline. This field is only present for external-cloud pipelines.</p>
+    pub fn source_progress(mut self, input: crate::types::SourceProgress) -> Self {
+        self.source_progress = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The progress of source activation for the telemetry pipeline. This field is only present for external-cloud pipelines.</p>
+    pub fn set_source_progress(mut self, input: ::std::option::Option<crate::types::SourceProgress>) -> Self {
+        self.source_progress = input;
+        self
+    }
+    /// <p>The progress of source activation for the telemetry pipeline. This field is only present for external-cloud pipelines.</p>
+    pub fn get_source_progress(&self) -> &::std::option::Option<crate::types::SourceProgress> {
+        &self.source_progress
+    }
+    /// <p>A summary of the pipeline configuration components.</p>
+    pub fn configuration_summary(mut self, input: crate::types::ConfigurationSummary) -> Self {
+        self.configuration_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A summary of the pipeline configuration components.</p>
+    pub fn set_configuration_summary(mut self, input: ::std::option::Option<crate::types::ConfigurationSummary>) -> Self {
+        self.configuration_summary = input;
+        self
+    }
+    /// <p>A summary of the pipeline configuration components.</p>
+    pub fn get_configuration_summary(&self) -> &::std::option::Option<crate::types::ConfigurationSummary> {
+        &self.configuration_summary
+    }
     /// Consumes the builder and constructs a [`TelemetryPipeline`](crate::types::TelemetryPipeline).
     pub fn build(self) -> crate::types::TelemetryPipeline {
         crate::types::TelemetryPipeline {
@@ -205,6 +268,9 @@ impl TelemetryPipelineBuilder {
             status: self.status,
             status_reason: self.status_reason,
             tags: self.tags,
+            last_refresh_time_stamp: self.last_refresh_time_stamp,
+            source_progress: self.source_progress,
+            configuration_summary: self.configuration_summary,
         }
     }
 }

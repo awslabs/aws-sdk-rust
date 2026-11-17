@@ -34,7 +34,7 @@ pub struct StandardsSubscription {
     pub standards_controls_updatable: ::std::option::Option<crate::types::StandardsControlsUpdatable>,
     /// <p>The reason for the current status.</p>
     pub standards_status_reason: ::std::option::Option<crate::types::StandardsStatusReason>,
-    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
     pub provider: ::std::option::Option<crate::types::StandardsProvider>,
 }
 impl StandardsSubscription {
@@ -80,7 +80,7 @@ impl StandardsSubscription {
     pub fn standards_status_reason(&self) -> ::std::option::Option<&crate::types::StandardsStatusReason> {
         self.standards_status_reason.as_ref()
     }
-    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
     pub fn provider(&self) -> ::std::option::Option<&crate::types::StandardsProvider> {
         self.provider.as_ref()
     }
@@ -259,17 +259,17 @@ impl StandardsSubscriptionBuilder {
     pub fn get_standards_status_reason(&self) -> &::std::option::Option<crate::types::StandardsStatusReason> {
         &self.standards_status_reason
     }
-    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
     pub fn provider(mut self, input: crate::types::StandardsProvider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::StandardsProvider>) -> Self {
         self.provider = input;
         self
     }
-    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::StandardsProvider> {
         &self.provider
     }

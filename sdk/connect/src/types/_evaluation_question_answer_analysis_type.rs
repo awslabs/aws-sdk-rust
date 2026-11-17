@@ -12,6 +12,7 @@
 /// ```text
 /// # let evaluationquestionansweranalysistype = unimplemented!();
 /// match evaluationquestionansweranalysistype {
+///     EvaluationQuestionAnswerAnalysisType::Condition => { /* ... */ },
 ///     EvaluationQuestionAnswerAnalysisType::ContactLensData => { /* ... */ },
 ///     EvaluationQuestionAnswerAnalysisType::GenAi => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum EvaluationQuestionAnswerAnalysisType {
     #[allow(missing_docs)] // documentation missing in model
+    Condition,
+    #[allow(missing_docs)] // documentation missing in model
     ContactLensData,
     #[allow(missing_docs)] // documentation missing in model
     GenAi,
@@ -53,6 +56,7 @@ pub enum EvaluationQuestionAnswerAnalysisType {
 impl ::std::convert::From<&str> for EvaluationQuestionAnswerAnalysisType {
     fn from(s: &str) -> Self {
         match s {
+            "CONDITION" => EvaluationQuestionAnswerAnalysisType::Condition,
             "CONTACT_LENS_DATA" => EvaluationQuestionAnswerAnalysisType::ContactLensData,
             "GEN_AI" => EvaluationQuestionAnswerAnalysisType::GenAi,
             other => EvaluationQuestionAnswerAnalysisType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl EvaluationQuestionAnswerAnalysisType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EvaluationQuestionAnswerAnalysisType::Condition => "CONDITION",
             EvaluationQuestionAnswerAnalysisType::ContactLensData => "CONTACT_LENS_DATA",
             EvaluationQuestionAnswerAnalysisType::GenAi => "GEN_AI",
             EvaluationQuestionAnswerAnalysisType::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl EvaluationQuestionAnswerAnalysisType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONTACT_LENS_DATA", "GEN_AI"]
+        &["CONDITION", "CONTACT_LENS_DATA", "GEN_AI"]
     }
 }
 impl ::std::convert::AsRef<str> for EvaluationQuestionAnswerAnalysisType {
@@ -100,6 +105,7 @@ impl EvaluationQuestionAnswerAnalysisType {
 impl ::std::fmt::Display for EvaluationQuestionAnswerAnalysisType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            EvaluationQuestionAnswerAnalysisType::Condition => write!(f, "CONDITION"),
             EvaluationQuestionAnswerAnalysisType::ContactLensData => write!(f, "CONTACT_LENS_DATA"),
             EvaluationQuestionAnswerAnalysisType::GenAi => write!(f, "GEN_AI"),
             EvaluationQuestionAnswerAnalysisType::Unknown(value) => write!(f, "{value}"),

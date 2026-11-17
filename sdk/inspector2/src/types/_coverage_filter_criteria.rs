@@ -12,7 +12,15 @@ pub struct CoverageFilterCriteria {
     pub account_id: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>An array of Amazon Web Services resource IDs to return coverage statistics for.</p>
     pub resource_id: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code> or <code>AWS_ACCOUNT</code>.</p>
+    /// <p>An array of resource types to return coverage statistics for. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services – <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code>, <code>MACHINE_IMAGE</code>, <code>CODE_REPOSITORY</code>, or <code>AWS_ACCOUNT</code>.</p></li>
+    /// <li>
+    /// <p>Microsoft Azure – <code>Microsoft.Compute/virtualMachines</code>, <code>Microsoft.ContainerRegistry/registries</code>, <code>Microsoft.ContainerRegistry/registry/containerRepository</code>, <code>Microsoft.ContainerRegistry/registry/containerImage</code>, or <code>Microsoft.Web/sites</code>.</p></li>
+    /// <li>
+    /// <p>Google Cloud Platform (GCP) – <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, <code>artifactregistry.googleapis.com/Repository</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p></li>
+    /// </ul>
     pub resource_type: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>An array of Amazon Inspector scan types to return coverage statistics for.</p>
     pub scan_type: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
@@ -48,11 +56,35 @@ pub struct CoverageFilterCriteria {
     pub code_repository_provider_type_visibility: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>Filter criteria for code repositories based on the ID of the last scanned commit.</p>
     pub last_scanned_commit_id: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    /// <p>The cloud provider to filter coverage results by.</p>
+    /// <p>The cloud provider to filter coverage results by. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub cloud_provider: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    /// <p>The cloud provider account ID to filter coverage results by.</p>
+    /// <p>The cloud provider account ID to filter coverage results by. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>An Azure subscription ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) project ID, such as <code>my-project</code>.</p></li>
+    /// </ul>
     pub cloud_provider_account_id: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
-    /// <p>The cloud provider region to filter coverage results by.</p>
+    /// <p>The cloud provider region to filter coverage results by. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
+    /// </ul>
     pub cloud_provider_region: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>The cloud VM instance tags to filter coverage results by.</p>
     pub cloud_vm_instance_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
@@ -68,7 +100,15 @@ pub struct CoverageFilterCriteria {
     pub cloud_serverless_function_runtime: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
     /// <p>The cloud serverless function tags to filter coverage results by.</p>
     pub cloud_serverless_function_tags: ::std::option::Option<::std::vec::Vec<crate::types::CoverageMapFilter>>,
-    /// <p>The cloud provider organization ID to filter coverage results by.</p>
+    /// <p>The cloud provider organization ID to filter coverage results by. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Organizations organization ID.</p></li>
+    /// <li>
+    /// <p>An Azure tenant ID.</p></li>
+    /// <li>
+    /// <p>A numeric Google Cloud Platform (GCP) organization ID.</p></li>
+    /// </ul>
     pub cloud_provider_org_id: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>,
 }
 impl CoverageFilterCriteria {
@@ -96,7 +136,15 @@ impl CoverageFilterCriteria {
     pub fn resource_id(&self) -> &[crate::types::CoverageStringFilter] {
         self.resource_id.as_deref().unwrap_or_default()
     }
-    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code> or <code>AWS_ACCOUNT</code>.</p>
+    /// <p>An array of resource types to return coverage statistics for. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services – <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code>, <code>MACHINE_IMAGE</code>, <code>CODE_REPOSITORY</code>, or <code>AWS_ACCOUNT</code>.</p></li>
+    /// <li>
+    /// <p>Microsoft Azure – <code>Microsoft.Compute/virtualMachines</code>, <code>Microsoft.ContainerRegistry/registries</code>, <code>Microsoft.ContainerRegistry/registry/containerRepository</code>, <code>Microsoft.ContainerRegistry/registry/containerImage</code>, or <code>Microsoft.Web/sites</code>.</p></li>
+    /// <li>
+    /// <p>Google Cloud Platform (GCP) – <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, <code>artifactregistry.googleapis.com/Repository</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_type.is_none()`.
     pub fn resource_type(&self) -> &[crate::types::CoverageStringFilter] {
@@ -204,19 +252,43 @@ impl CoverageFilterCriteria {
     pub fn last_scanned_commit_id(&self) -> &[crate::types::CoverageStringFilter] {
         self.last_scanned_commit_id.as_deref().unwrap_or_default()
     }
-    /// <p>The cloud provider to filter coverage results by.</p>
+    /// <p>The cloud provider to filter coverage results by. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_provider.is_none()`.
     pub fn cloud_provider(&self) -> &[crate::types::CoverageStringFilter] {
         self.cloud_provider.as_deref().unwrap_or_default()
     }
-    /// <p>The cloud provider account ID to filter coverage results by.</p>
+    /// <p>The cloud provider account ID to filter coverage results by. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>An Azure subscription ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) project ID, such as <code>my-project</code>.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_provider_account_id.is_none()`.
     pub fn cloud_provider_account_id(&self) -> &[crate::types::CoverageStringFilter] {
         self.cloud_provider_account_id.as_deref().unwrap_or_default()
     }
-    /// <p>The cloud provider region to filter coverage results by.</p>
+    /// <p>The cloud provider region to filter coverage results by. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_provider_region.is_none()`.
     pub fn cloud_provider_region(&self) -> &[crate::types::CoverageStringFilter] {
@@ -264,7 +336,15 @@ impl CoverageFilterCriteria {
     pub fn cloud_serverless_function_tags(&self) -> &[crate::types::CoverageMapFilter] {
         self.cloud_serverless_function_tags.as_deref().unwrap_or_default()
     }
-    /// <p>The cloud provider organization ID to filter coverage results by.</p>
+    /// <p>The cloud provider organization ID to filter coverage results by. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Organizations organization ID.</p></li>
+    /// <li>
+    /// <p>An Azure tenant ID.</p></li>
+    /// <li>
+    /// <p>A numeric Google Cloud Platform (GCP) organization ID.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_provider_org_id.is_none()`.
     pub fn cloud_provider_org_id(&self) -> &[crate::types::CoverageStringFilter] {
@@ -401,19 +481,43 @@ impl CoverageFilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_type`](Self::set_resource_type).
     ///
-    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code> or <code>AWS_ACCOUNT</code>.</p>
+    /// <p>An array of resource types to return coverage statistics for. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services – <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code>, <code>MACHINE_IMAGE</code>, <code>CODE_REPOSITORY</code>, or <code>AWS_ACCOUNT</code>.</p></li>
+    /// <li>
+    /// <p>Microsoft Azure – <code>Microsoft.Compute/virtualMachines</code>, <code>Microsoft.ContainerRegistry/registries</code>, <code>Microsoft.ContainerRegistry/registry/containerRepository</code>, <code>Microsoft.ContainerRegistry/registry/containerImage</code>, or <code>Microsoft.Web/sites</code>.</p></li>
+    /// <li>
+    /// <p>Google Cloud Platform (GCP) – <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, <code>artifactregistry.googleapis.com/Repository</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p></li>
+    /// </ul>
     pub fn resource_type(mut self, input: crate::types::CoverageStringFilter) -> Self {
         let mut v = self.resource_type.unwrap_or_default();
         v.push(input);
         self.resource_type = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code> or <code>AWS_ACCOUNT</code>.</p>
+    /// <p>An array of resource types to return coverage statistics for. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services – <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code>, <code>MACHINE_IMAGE</code>, <code>CODE_REPOSITORY</code>, or <code>AWS_ACCOUNT</code>.</p></li>
+    /// <li>
+    /// <p>Microsoft Azure – <code>Microsoft.Compute/virtualMachines</code>, <code>Microsoft.ContainerRegistry/registries</code>, <code>Microsoft.ContainerRegistry/registry/containerRepository</code>, <code>Microsoft.ContainerRegistry/registry/containerImage</code>, or <code>Microsoft.Web/sites</code>.</p></li>
+    /// <li>
+    /// <p>Google Cloud Platform (GCP) – <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, <code>artifactregistry.googleapis.com/Repository</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p></li>
+    /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>An array of Amazon Web Services resource types to return coverage statistics for. The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code> or <code>AWS_ACCOUNT</code>.</p>
+    /// <p>An array of resource types to return coverage statistics for. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services – <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code>, <code>MACHINE_IMAGE</code>, <code>CODE_REPOSITORY</code>, or <code>AWS_ACCOUNT</code>.</p></li>
+    /// <li>
+    /// <p>Microsoft Azure – <code>Microsoft.Compute/virtualMachines</code>, <code>Microsoft.ContainerRegistry/registries</code>, <code>Microsoft.ContainerRegistry/registry/containerRepository</code>, <code>Microsoft.ContainerRegistry/registry/containerImage</code>, or <code>Microsoft.Web/sites</code>.</p></li>
+    /// <li>
+    /// <p>Google Cloud Platform (GCP) – <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, <code>artifactregistry.googleapis.com/Repository</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p></li>
+    /// </ul>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.resource_type
     }
@@ -764,19 +868,43 @@ impl CoverageFilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_cloud_provider`](Self::set_cloud_provider).
     ///
-    /// <p>The cloud provider to filter coverage results by.</p>
+    /// <p>The cloud provider to filter coverage results by. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn cloud_provider(mut self, input: crate::types::CoverageStringFilter) -> Self {
         let mut v = self.cloud_provider.unwrap_or_default();
         v.push(input);
         self.cloud_provider = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The cloud provider to filter coverage results by.</p>
+    /// <p>The cloud provider to filter coverage results by. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn set_cloud_provider(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
         self.cloud_provider = input;
         self
     }
-    /// <p>The cloud provider to filter coverage results by.</p>
+    /// <p>The cloud provider to filter coverage results by. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn get_cloud_provider(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.cloud_provider
     }
@@ -784,19 +912,43 @@ impl CoverageFilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_cloud_provider_account_id`](Self::set_cloud_provider_account_id).
     ///
-    /// <p>The cloud provider account ID to filter coverage results by.</p>
+    /// <p>The cloud provider account ID to filter coverage results by. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>An Azure subscription ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) project ID, such as <code>my-project</code>.</p></li>
+    /// </ul>
     pub fn cloud_provider_account_id(mut self, input: crate::types::CoverageStringFilter) -> Self {
         let mut v = self.cloud_provider_account_id.unwrap_or_default();
         v.push(input);
         self.cloud_provider_account_id = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The cloud provider account ID to filter coverage results by.</p>
+    /// <p>The cloud provider account ID to filter coverage results by. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>An Azure subscription ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) project ID, such as <code>my-project</code>.</p></li>
+    /// </ul>
     pub fn set_cloud_provider_account_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
         self.cloud_provider_account_id = input;
         self
     }
-    /// <p>The cloud provider account ID to filter coverage results by.</p>
+    /// <p>The cloud provider account ID to filter coverage results by. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>An Azure subscription ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) project ID, such as <code>my-project</code>.</p></li>
+    /// </ul>
     pub fn get_cloud_provider_account_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.cloud_provider_account_id
     }
@@ -804,19 +956,43 @@ impl CoverageFilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_cloud_provider_region`](Self::set_cloud_provider_region).
     ///
-    /// <p>The cloud provider region to filter coverage results by.</p>
+    /// <p>The cloud provider region to filter coverage results by. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
+    /// </ul>
     pub fn cloud_provider_region(mut self, input: crate::types::CoverageStringFilter) -> Self {
         let mut v = self.cloud_provider_region.unwrap_or_default();
         v.push(input);
         self.cloud_provider_region = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The cloud provider region to filter coverage results by.</p>
+    /// <p>The cloud provider region to filter coverage results by. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
+    /// </ul>
     pub fn set_cloud_provider_region(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
         self.cloud_provider_region = input;
         self
     }
-    /// <p>The cloud provider region to filter coverage results by.</p>
+    /// <p>The cloud provider region to filter coverage results by. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
+    /// </ul>
     pub fn get_cloud_provider_region(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.cloud_provider_region
     }
@@ -967,19 +1143,43 @@ impl CoverageFilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_cloud_provider_org_id`](Self::set_cloud_provider_org_id).
     ///
-    /// <p>The cloud provider organization ID to filter coverage results by.</p>
+    /// <p>The cloud provider organization ID to filter coverage results by. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Organizations organization ID.</p></li>
+    /// <li>
+    /// <p>An Azure tenant ID.</p></li>
+    /// <li>
+    /// <p>A numeric Google Cloud Platform (GCP) organization ID.</p></li>
+    /// </ul>
     pub fn cloud_provider_org_id(mut self, input: crate::types::CoverageStringFilter) -> Self {
         let mut v = self.cloud_provider_org_id.unwrap_or_default();
         v.push(input);
         self.cloud_provider_org_id = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The cloud provider organization ID to filter coverage results by.</p>
+    /// <p>The cloud provider organization ID to filter coverage results by. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Organizations organization ID.</p></li>
+    /// <li>
+    /// <p>An Azure tenant ID.</p></li>
+    /// <li>
+    /// <p>A numeric Google Cloud Platform (GCP) organization ID.</p></li>
+    /// </ul>
     pub fn set_cloud_provider_org_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>>) -> Self {
         self.cloud_provider_org_id = input;
         self
     }
-    /// <p>The cloud provider organization ID to filter coverage results by.</p>
+    /// <p>The cloud provider organization ID to filter coverage results by. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Organizations organization ID.</p></li>
+    /// <li>
+    /// <p>An Azure tenant ID.</p></li>
+    /// <li>
+    /// <p>A numeric Google Cloud Platform (GCP) organization ID.</p></li>
+    /// </ul>
     pub fn get_cloud_provider_org_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CoverageStringFilter>> {
         &self.cloud_provider_org_id
     }

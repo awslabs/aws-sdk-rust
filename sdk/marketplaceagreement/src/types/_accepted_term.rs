@@ -10,7 +10,7 @@ pub enum AcceptedTerm {
     ConfigurableUpfrontPricingTerm(crate::types::ConfigurableUpfrontPricingTerm),
     /// <p>Defines a pre-paid pricing model where the customers are charged a fixed upfront amount.</p>
     FixedUpfrontPricingTerm(crate::types::FixedUpfrontPricingTerm),
-    /// <p>Defines a short-term free pricing model where the buyers aren’t charged anything within a specified limit.</p>
+    /// <p>Defines a short-term free pricing model where the buyers aren't charged anything within a specified limit.</p>
     FreeTrialPricingTerm(crate::types::FreeTrialPricingTerm),
     /// <p>Defines the list of text agreements proposed to the acceptors. An example is the end user license agreement (EULA).</p>
     LegalTerm(crate::types::LegalTerm),

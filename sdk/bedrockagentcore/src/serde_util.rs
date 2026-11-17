@@ -194,6 +194,18 @@ pub(crate) fn delete_capacity_provider_session_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_dataset_generation_output_output_correct_errors(
+    mut builder: crate::operation::delete_dataset_generation::builders::DeleteDatasetGenerationOutputBuilder,
+) -> crate::operation::delete_dataset_generation::builders::DeleteDatasetGenerationOutputBuilder {
+    if builder.generation_id.is_none() {
+        builder.generation_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DatasetGenerationStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn delete_event_output_output_correct_errors(
     mut builder: crate::operation::delete_event::builders::DeleteEventOutputBuilder,
 ) -> crate::operation::delete_event::builders::DeleteEventOutputBuilder {
@@ -296,6 +308,39 @@ pub(crate) fn get_agent_card_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_agent_insight_output_output_correct_errors(
+    mut builder: crate::operation::get_agent_insight::builders::GetAgentInsightOutputBuilder,
+) -> crate::operation::get_agent_insight::builders::GetAgentInsightOutputBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::InsightType>().ok()
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.agent_insight_id.is_none() {
+        builder.agent_insight_id = Some(Default::default())
+    }
+    if builder.application_name.is_none() {
+        builder.application_name = Some(Default::default())
+    }
+    if builder.customer_metadata_status.is_none() {
+        builder.customer_metadata_status = "no value was set".parse::<crate::types::AgentInsightCustomerMetadataStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.archive_status.is_none() {
+        builder.archive_status = "no value was set".parse::<crate::types::AgentInsightArchiveStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_batch_evaluation_output_output_correct_errors(
     mut builder: crate::operation::get_batch_evaluation::builders::GetBatchEvaluationOutputBuilder,
 ) -> crate::operation::get_batch_evaluation::builders::GetBatchEvaluationOutputBuilder {
@@ -340,6 +385,30 @@ pub(crate) fn get_code_interpreter_session_output_output_correct_errors(
     }
     if builder.session_id.is_none() {
         builder.session_id = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn get_dataset_generation_output_output_correct_errors(
+    mut builder: crate::operation::get_dataset_generation::builders::GetDatasetGenerationOutputBuilder,
+) -> crate::operation::get_dataset_generation::builders::GetDatasetGenerationOutputBuilder {
+    if builder.generation_id.is_none() {
+        builder.generation_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.dataset_id.is_none() {
+        builder.dataset_id = Some(Default::default())
+    }
+    if builder.scenario_type.is_none() {
+        builder.scenario_type = "no value was set".parse::<crate::types::ScenarioType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DatasetGenerationStatus>().ok()
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -560,6 +629,15 @@ pub(crate) fn list_actors_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_agent_insights_output_output_correct_errors(
+    mut builder: crate::operation::list_agent_insights::builders::ListAgentInsightsOutputBuilder,
+) -> crate::operation::list_agent_insights::builders::ListAgentInsightsOutputBuilder {
+    if builder.agent_insights.is_none() {
+        builder.agent_insights = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_batch_evaluations_output_output_correct_errors(
     mut builder: crate::operation::list_batch_evaluations::builders::ListBatchEvaluationsOutputBuilder,
 ) -> crate::operation::list_batch_evaluations::builders::ListBatchEvaluationsOutputBuilder {
@@ -583,6 +661,15 @@ pub(crate) fn list_code_interpreter_sessions_output_output_correct_errors(
 ) -> crate::operation::list_code_interpreter_sessions::builders::ListCodeInterpreterSessionsOutputBuilder {
     if builder.items.is_none() {
         builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_dataset_generations_output_output_correct_errors(
+    mut builder: crate::operation::list_dataset_generations::builders::ListDatasetGenerationsOutputBuilder,
+) -> crate::operation::list_dataset_generations::builders::ListDatasetGenerationsOutputBuilder {
+    if builder.dataset_generations.is_none() {
+        builder.dataset_generations = Some(Default::default())
     }
     builder
 }
@@ -770,6 +857,27 @@ pub(crate) fn start_code_interpreter_session_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn start_dataset_generation_output_output_correct_errors(
+    mut builder: crate::operation::start_dataset_generation::builders::StartDatasetGenerationOutputBuilder,
+) -> crate::operation::start_dataset_generation::builders::StartDatasetGenerationOutputBuilder {
+    if builder.generation_id.is_none() {
+        builder.generation_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.dataset_id.is_none() {
+        builder.dataset_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DatasetGenerationStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn start_memory_extraction_job_output_output_correct_errors(
     mut builder: crate::operation::start_memory_extraction_job::builders::StartMemoryExtractionJobOutputBuilder,
 ) -> crate::operation::start_memory_extraction_job::builders::StartMemoryExtractionJobOutputBuilder {
@@ -868,6 +976,21 @@ pub(crate) fn update_ab_test_output_output_correct_errors(
     }
     if builder.execution_status.is_none() {
         builder.execution_status = "no value was set".parse::<crate::types::AbTestExecutionStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn update_agent_insight_output_output_correct_errors(
+    mut builder: crate::operation::update_agent_insight::builders::UpdateAgentInsightOutputBuilder,
+) -> crate::operation::update_agent_insight::builders::UpdateAgentInsightOutputBuilder {
+    if builder.agent_insight_id.is_none() {
+        builder.agent_insight_id = Some(Default::default())
+    }
+    if builder.archive_status.is_none() {
+        builder.archive_status = "no value was set".parse::<crate::types::AgentInsightArchiveStatus>().ok()
     }
     if builder.updated_at.is_none() {
         builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -1043,6 +1166,21 @@ pub(crate) fn browser_profile_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn dataset_execution_details_correct_errors(
+    mut builder: crate::types::builders::DatasetExecutionDetailsBuilder,
+) -> crate::types::builders::DatasetExecutionDetailsBuilder {
+    if builder.dataset.is_none() {
+        builder.dataset = {
+            let builder = crate::types::builders::DatasetDetailsBuilder::default();
+            crate::serde_util::dataset_details_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.agent_invocation.is_none() {
+        builder.agent_invocation = Some(crate::types::AgentInvocationDetails::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn execution_summary_clustering_result_content_correct_errors(
     mut builder: crate::types::builders::ExecutionSummaryClusteringResultContentBuilder,
 ) -> crate::types::builders::ExecutionSummaryClusteringResultContentBuilder {
@@ -1131,6 +1269,39 @@ pub(crate) fn ab_test_summary_correct_errors(
 pub(crate) fn actor_summary_correct_errors(mut builder: crate::types::builders::ActorSummaryBuilder) -> crate::types::builders::ActorSummaryBuilder {
     if builder.actor_id.is_none() {
         builder.actor_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn agent_insight_summary_correct_errors(
+    mut builder: crate::types::builders::AgentInsightSummaryBuilder,
+) -> crate::types::builders::AgentInsightSummaryBuilder {
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::InsightType>().ok()
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.agent_insight_id.is_none() {
+        builder.agent_insight_id = Some(Default::default())
+    }
+    if builder.application_name.is_none() {
+        builder.application_name = Some(Default::default())
+    }
+    if builder.customer_metadata_status.is_none() {
+        builder.customer_metadata_status = "no value was set".parse::<crate::types::AgentInsightCustomerMetadataStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.archive_status.is_none() {
+        builder.archive_status = "no value was set".parse::<crate::types::AgentInsightArchiveStatus>().ok()
     }
     builder
 }
@@ -1254,6 +1425,42 @@ pub(crate) fn crypto_x402_payment_output_correct_errors(
     builder
 }
 
+pub(crate) fn dataset_details_correct_errors(
+    mut builder: crate::types::builders::DatasetDetailsBuilder,
+) -> crate::types::builders::DatasetDetailsBuilder {
+    if builder.dataset_id.is_none() {
+        builder.dataset_id = Some(Default::default())
+    }
+    if builder.dataset_version.is_none() {
+        builder.dataset_version = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn dataset_generation_summary_correct_errors(
+    mut builder: crate::types::builders::DatasetGenerationSummaryBuilder,
+) -> crate::types::builders::DatasetGenerationSummaryBuilder {
+    if builder.generation_id.is_none() {
+        builder.generation_id = Some(Default::default())
+    }
+    if builder.dataset_id.is_none() {
+        builder.dataset_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.scenario_type.is_none() {
+        builder.scenario_type = "no value was set".parse::<crate::types::ScenarioType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DatasetGenerationStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn evaluation_result_content_correct_errors(
     mut builder: crate::types::builders::EvaluationResultContentBuilder,
 ) -> crate::types::builders::EvaluationResultContentBuilder {
@@ -1312,6 +1519,18 @@ pub(crate) fn insight_result_correct_errors(
     }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn insight_root_cause_correct_errors(
+    mut builder: crate::types::builders::InsightRootCauseBuilder,
+) -> crate::types::builders::InsightRootCauseBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.explanation.is_none() {
+        builder.explanation = Some(Default::default())
     }
     builder
 }
@@ -1556,6 +1775,15 @@ pub(crate) fn registry_record_summary_correct_errors(
     builder
 }
 
+pub(crate) fn sample_session_correct_errors(
+    mut builder: crate::types::builders::SampleSessionBuilder,
+) -> crate::types::builders::SampleSessionBuilder {
+    if builder.session_id.is_none() {
+        builder.session_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn screenshot_result_correct_errors(
     mut builder: crate::types::builders::ScreenshotResultBuilder,
 ) -> crate::types::builders::ScreenshotResultBuilder {
@@ -1665,6 +1893,18 @@ pub(crate) fn web_search_result_correct_errors(
     builder
 }
 
+pub(crate) fn agent_core_runtime_invocation_details_correct_errors(
+    mut builder: crate::types::builders::AgentCoreRuntimeInvocationDetailsBuilder,
+) -> crate::types::builders::AgentCoreRuntimeInvocationDetailsBuilder {
+    if builder.agent_runtime_endpoint_arn.is_none() {
+        builder.agent_runtime_endpoint_arn = Some(Default::default())
+    }
+    if builder.agent_runtime_version.is_none() {
+        builder.agent_runtime_version = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn amount_correct_errors(mut builder: crate::types::builders::AmountBuilder) -> crate::types::builders::AmountBuilder {
     if builder.value.is_none() {
         builder.value = Some(Default::default())
@@ -1767,6 +2007,15 @@ pub(crate) fn failure_category_cluster_correct_errors(
     }
     if builder.sub_categories.is_none() {
         builder.sub_categories = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn ground_truth_config_correct_errors(
+    mut builder: crate::types::builders::GroundTruthConfigBuilder,
+) -> crate::types::builders::GroundTruthConfigBuilder {
+    if builder.fields.is_none() {
+        builder.fields = Some(Default::default())
     }
     builder
 }
@@ -1948,11 +2197,29 @@ pub(crate) fn agent_skills_descriptor_correct_errors(
     builder
 }
 
+pub(crate) fn batch_evaluation_source_config_correct_errors(
+    mut builder: crate::types::builders::BatchEvaluationSourceConfigBuilder,
+) -> crate::types::builders::BatchEvaluationSourceConfigBuilder {
+    if builder.batch_evaluation_arn.is_none() {
+        builder.batch_evaluation_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn batch_evaluation_trace_config_correct_errors(
     mut builder: crate::types::builders::BatchEvaluationTraceConfigBuilder,
 ) -> crate::types::builders::BatchEvaluationTraceConfigBuilder {
     if builder.batch_evaluation_arn.is_none() {
         builder.batch_evaluation_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn cloud_watch_logs_source_config_correct_errors(
+    mut builder: crate::types::builders::CloudWatchLogsSourceConfigBuilder,
+) -> crate::types::builders::CloudWatchLogsSourceConfigBuilder {
+    if builder.service_names.is_none() {
+        builder.service_names = Some(Default::default())
     }
     builder
 }
@@ -2060,18 +2327,6 @@ pub(crate) fn harness_token_usage_correct_errors(
     builder
 }
 
-pub(crate) fn insight_root_cause_correct_errors(
-    mut builder: crate::types::builders::InsightRootCauseBuilder,
-) -> crate::types::builders::InsightRootCauseBuilder {
-    if builder.name.is_none() {
-        builder.name = Some(Default::default())
-    }
-    if builder.explanation.is_none() {
-        builder.explanation = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn mcp_descriptor_correct_errors(
     mut builder: crate::types::builders::McpDescriptorBuilder,
 ) -> crate::types::builders::McpDescriptorBuilder {
@@ -2095,6 +2350,15 @@ pub(crate) fn memory_json_data_correct_errors(
 ) -> crate::types::builders::MemoryJsonDataBuilder {
     if builder.content.is_none() {
         builder.content = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn online_evaluation_source_config_correct_errors(
+    mut builder: crate::types::builders::OnlineEvaluationSourceConfigBuilder,
+) -> crate::types::builders::OnlineEvaluationSourceConfigBuilder {
+    if builder.online_evaluation_config_arn.is_none() {
+        builder.online_evaluation_config_arn = Some(Default::default())
     }
     builder
 }
@@ -2124,20 +2388,20 @@ pub(crate) fn s3_location_correct_errors(mut builder: crate::types::builders::S3
     builder
 }
 
-pub(crate) fn sample_session_correct_errors(
-    mut builder: crate::types::builders::SampleSessionBuilder,
-) -> crate::types::builders::SampleSessionBuilder {
-    if builder.session_id.is_none() {
-        builder.session_id = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn secrets_manager_location_correct_errors(
     mut builder: crate::types::builders::SecretsManagerLocationBuilder,
 ) -> crate::types::builders::SecretsManagerLocationBuilder {
     if builder.secret_arn.is_none() {
         builder.secret_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn session_finding_correct_errors(
+    mut builder: crate::types::builders::SessionFindingBuilder,
+) -> crate::types::builders::SessionFindingBuilder {
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
     }
     builder
 }
@@ -2207,6 +2471,33 @@ pub(crate) fn tool_description_text_input_correct_errors(
 pub(crate) fn content_block_correct_errors(mut builder: crate::types::builders::ContentBlockBuilder) -> crate::types::builders::ContentBlockBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::ContentBlockType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn custom_data_identifier_correct_errors(
+    mut builder: crate::types::builders::CustomDataIdentifierBuilder,
+) -> crate::types::builders::CustomDataIdentifierBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.regex.is_none() {
+        builder.regex = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn evaluator_filter_correct_errors(
+    mut builder: crate::types::builders::EvaluatorFilterBuilder,
+) -> crate::types::builders::EvaluatorFilterBuilder {
+    if builder.evaluator_id.is_none() {
+        builder.evaluator_id = Some(Default::default())
+    }
+    if builder.operator.is_none() {
+        builder.operator = "no value was set".parse::<crate::types::GenerationFilterOperator>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(crate::types::GenerationFilterValue::Unknown)
     }
     builder
 }
@@ -2368,6 +2659,21 @@ pub(crate) fn configuration_bundle_tool_entry_correct_errors(
     builder
 }
 
+pub(crate) fn generation_attribute_filter_correct_errors(
+    mut builder: crate::types::builders::GenerationAttributeFilterBuilder,
+) -> crate::types::builders::GenerationAttributeFilterBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.operator.is_none() {
+        builder.operator = "no value was set".parse::<crate::types::GenerationFilterOperator>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(crate::types::GenerationFilterValue::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn linked_account_developer_jwt_correct_errors(
     mut builder: crate::types::builders::LinkedAccountDeveloperJwtBuilder,
 ) -> crate::types::builders::LinkedAccountDeveloperJwtBuilder {
@@ -2403,15 +2709,6 @@ pub(crate) fn resource_content_correct_errors(
 ) -> crate::types::builders::ResourceContentBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::ResourceContentType>().ok()
-    }
-    builder
-}
-
-pub(crate) fn session_finding_correct_errors(
-    mut builder: crate::types::builders::SessionFindingBuilder,
-) -> crate::types::builders::SessionFindingBuilder {
-    if builder.description.is_none() {
-        builder.description = Some(Default::default())
     }
     builder
 }

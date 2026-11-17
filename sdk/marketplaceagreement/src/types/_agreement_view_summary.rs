@@ -10,7 +10,7 @@ pub struct AgreementViewSummary {
     pub acceptance_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the agreement starts.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go agreements, which don’t have end dates.</p>
+    /// <p>The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go agreements, which don't have end dates.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the agreement was last updated. An agreement is updated when any of its attributes or accepted terms change. Amendments, renewals, and a party changing whether the agreement renews are all examples.</p>
     /// <p>Use the <code>BeforeLastUpdateTime</code> and <code>AfterLastUpdateTime</code> filters to search on this value, and <code>LastUpdateTime</code> as the <code>SortBy</code> value to sort by it. Sorting by <code>LastUpdateTime</code> is supported only when <code>PartyType</code> is <code>Proposer</code>.</p>
@@ -58,6 +58,8 @@ pub struct AgreementViewSummary {
     /// <p>The date and time when the free trial of the agreement ends. This field is present only when the agreement includes a free trial.</p>
     /// <p>For an agreement that includes both a free trial and usage-based pricing, the agreement converts to paid usage at this time.</p>
     pub free_trial_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The types of contact information on file for the agreement. For example, <code>ACCEPTOR</code> indicates that the acceptor's contact information is on file, which you can retrieve with <code>GetAgreementContacts</code>.</p>
+    pub includes_contact_of_type: ::std::option::Option<::std::vec::Vec<crate::types::ContactType>>,
 }
 impl AgreementViewSummary {
     /// <p>The unique identifier of the agreement.</p>
@@ -72,7 +74,7 @@ impl AgreementViewSummary {
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go agreements, which don’t have end dates.</p>
+    /// <p>The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go agreements, which don't have end dates.</p>
     pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
@@ -146,6 +148,12 @@ impl AgreementViewSummary {
     pub fn free_trial_end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.free_trial_end_time.as_ref()
     }
+    /// <p>The types of contact information on file for the agreement. For example, <code>ACCEPTOR</code> indicates that the acceptor's contact information is on file, which you can retrieve with <code>GetAgreementContacts</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.includes_contact_of_type.is_none()`.
+    pub fn includes_contact_of_type(&self) -> &[crate::types::ContactType] {
+        self.includes_contact_of_type.as_deref().unwrap_or_default()
+    }
 }
 impl AgreementViewSummary {
     /// Creates a new builder-style object to manufacture [`AgreementViewSummary`](crate::types::AgreementViewSummary).
@@ -173,6 +181,7 @@ pub struct AgreementViewSummaryBuilder {
     pub(crate) end_time_behavior_type: ::std::option::Option<crate::types::EndTimeBehaviorType>,
     pub(crate) end_time_behavior_reason_code: ::std::option::Option<crate::types::EndTimeBehaviorReasonCode>,
     pub(crate) free_trial_end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) includes_contact_of_type: ::std::option::Option<::std::vec::Vec<crate::types::ContactType>>,
 }
 impl AgreementViewSummaryBuilder {
     /// <p>The unique identifier of the agreement.</p>
@@ -217,17 +226,17 @@ impl AgreementViewSummaryBuilder {
     pub fn get_start_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_time
     }
-    /// <p>The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go agreements, which don’t have end dates.</p>
+    /// <p>The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go agreements, which don't have end dates.</p>
     pub fn end_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.end_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go agreements, which don’t have end dates.</p>
+    /// <p>The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go agreements, which don't have end dates.</p>
     pub fn set_end_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.end_time = input;
         self
     }
-    /// <p>The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go agreements, which don’t have end dates.</p>
+    /// <p>The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go agreements, which don't have end dates.</p>
     pub fn get_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.end_time
     }
@@ -463,6 +472,26 @@ impl AgreementViewSummaryBuilder {
     pub fn get_free_trial_end_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.free_trial_end_time
     }
+    /// Appends an item to `includes_contact_of_type`.
+    ///
+    /// To override the contents of this collection use [`set_includes_contact_of_type`](Self::set_includes_contact_of_type).
+    ///
+    /// <p>The types of contact information on file for the agreement. For example, <code>ACCEPTOR</code> indicates that the acceptor's contact information is on file, which you can retrieve with <code>GetAgreementContacts</code>.</p>
+    pub fn includes_contact_of_type(mut self, input: crate::types::ContactType) -> Self {
+        let mut v = self.includes_contact_of_type.unwrap_or_default();
+        v.push(input);
+        self.includes_contact_of_type = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The types of contact information on file for the agreement. For example, <code>ACCEPTOR</code> indicates that the acceptor's contact information is on file, which you can retrieve with <code>GetAgreementContacts</code>.</p>
+    pub fn set_includes_contact_of_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContactType>>) -> Self {
+        self.includes_contact_of_type = input;
+        self
+    }
+    /// <p>The types of contact information on file for the agreement. For example, <code>ACCEPTOR</code> indicates that the acceptor's contact information is on file, which you can retrieve with <code>GetAgreementContacts</code>.</p>
+    pub fn get_includes_contact_of_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContactType>> {
+        &self.includes_contact_of_type
+    }
     /// Consumes the builder and constructs a [`AgreementViewSummary`](crate::types::AgreementViewSummary).
     pub fn build(self) -> crate::types::AgreementViewSummary {
         crate::types::AgreementViewSummary {
@@ -481,6 +510,7 @@ impl AgreementViewSummaryBuilder {
             end_time_behavior_type: self.end_time_behavior_type,
             end_time_behavior_reason_code: self.end_time_behavior_reason_code,
             free_trial_end_time: self.free_trial_end_time,
+            includes_contact_of_type: self.includes_contact_of_type,
         }
     }
 }

@@ -1195,6 +1195,8 @@ pub(crate) mod shape_evaluation_question_answer_analysis_details;
 
 pub(crate) mod shape_evaluation_question_input_details;
 
+pub(crate) mod shape_evaluation_resolved_source;
+
 pub(crate) mod shape_evaluation_review_configuration;
 
 pub(crate) mod shape_evaluation_review_metadata;
@@ -2302,6 +2304,8 @@ pub(crate) mod shape_service_quota_exceeded_exception_reason;
 pub(crate) mod shape_sign_in_config;
 
 pub(crate) mod shape_sign_in_distribution;
+
+pub(crate) mod shape_single_select_question_automation_rule;
 
 pub(crate) mod shape_single_select_question_rule_category_automation;
 

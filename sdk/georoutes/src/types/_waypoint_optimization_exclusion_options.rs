@@ -2,7 +2,7 @@
 
 /// <p>Specifies strict exclusion options for the route calculation. This setting mandates that the router will avoid any routes that include the specified options, rather than merely attempting to minimize them.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WaypointOptimizationExclusionOptions {
     /// <p>List of countries to be avoided defined by two-letter or three-letter country codes.</p>
     pub countries: ::std::vec::Vec<::std::string::String>,
@@ -14,6 +14,13 @@ impl WaypointOptimizationExclusionOptions {
         self.countries.deref()
     }
 }
+impl ::std::fmt::Debug for WaypointOptimizationExclusionOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationExclusionOptions");
+        formatter.field("countries", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl WaypointOptimizationExclusionOptions {
     /// Creates a new builder-style object to manufacture [`WaypointOptimizationExclusionOptions`](crate::types::WaypointOptimizationExclusionOptions).
     pub fn builder() -> crate::types::builders::WaypointOptimizationExclusionOptionsBuilder {
@@ -22,7 +29,7 @@ impl WaypointOptimizationExclusionOptions {
 }
 
 /// A builder for [`WaypointOptimizationExclusionOptions`](crate::types::WaypointOptimizationExclusionOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct WaypointOptimizationExclusionOptionsBuilder {
     pub(crate) countries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -62,5 +69,12 @@ impl WaypointOptimizationExclusionOptionsBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for WaypointOptimizationExclusionOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WaypointOptimizationExclusionOptionsBuilder");
+        formatter.field("countries", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

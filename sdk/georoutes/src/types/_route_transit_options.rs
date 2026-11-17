@@ -4,7 +4,7 @@
 /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteTransitOptions {
     /// <p>Accessibility attributes to consider when calculating the route.</p>
     pub accessibility_attributes: ::std::option::Option<::std::vec::Vec<crate::types::RouteAccessibilityAttribute>>,
@@ -45,6 +45,17 @@ impl RouteTransitOptions {
         self.pedestrian.as_ref()
     }
 }
+impl ::std::fmt::Debug for RouteTransitOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTransitOptions");
+        formatter.field("accessibility_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("allowed_modes", &"*** Sensitive Data Redacted ***");
+        formatter.field("excluded_modes", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_transfers", &self.max_transfers);
+        formatter.field("pedestrian", &self.pedestrian);
+        formatter.finish()
+    }
+}
 impl RouteTransitOptions {
     /// Creates a new builder-style object to manufacture [`RouteTransitOptions`](crate::types::RouteTransitOptions).
     pub fn builder() -> crate::types::builders::RouteTransitOptionsBuilder {
@@ -53,7 +64,7 @@ impl RouteTransitOptions {
 }
 
 /// A builder for [`RouteTransitOptions`](crate::types::RouteTransitOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteTransitOptionsBuilder {
     pub(crate) accessibility_attributes: ::std::option::Option<::std::vec::Vec<crate::types::RouteAccessibilityAttribute>>,
@@ -160,5 +171,16 @@ impl RouteTransitOptionsBuilder {
             max_transfers: self.max_transfers,
             pedestrian: self.pedestrian,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteTransitOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteTransitOptionsBuilder");
+        formatter.field("accessibility_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("allowed_modes", &"*** Sensitive Data Redacted ***");
+        formatter.field("excluded_modes", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_transfers", &self.max_transfers);
+        formatter.field("pedestrian", &self.pedestrian);
+        formatter.finish()
     }
 }

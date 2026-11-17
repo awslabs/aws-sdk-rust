@@ -57,6 +57,8 @@ pub use crate::types::_ab_test_execution_status::AbTestExecutionStatus;
 
 pub use crate::types::_batch_evaluation_status::BatchEvaluationStatus;
 
+pub use crate::types::_dataset_generation_status::DatasetGenerationStatus;
+
 pub use crate::types::_recommendation_status::RecommendationStatus;
 
 pub use crate::types::_evaluation_input::EvaluationInput;
@@ -64,6 +66,12 @@ pub use crate::types::_evaluation_input::EvaluationInput;
 pub use crate::types::_evaluation_target::EvaluationTarget;
 
 pub use crate::types::_ab_test_results::AbTestResults;
+
+pub use crate::types::_insight_type::InsightType;
+
+pub use crate::types::_agent_insight_customer_metadata_status::AgentInsightCustomerMetadataStatus;
+
+pub use crate::types::_agent_insight_archive_status::AgentInsightArchiveStatus;
 
 pub use crate::types::_data_source_config::DataSourceConfig;
 
@@ -77,6 +85,16 @@ pub use crate::types::_user_intent_clustering_result_content::UserIntentClusteri
 
 pub use crate::types::_execution_summary_clustering_result_content::ExecutionSummaryClusteringResultContent;
 
+pub use crate::types::_dataset_execution_details::DatasetExecutionDetails;
+
+pub use crate::types::_scenario_type::ScenarioType;
+
+pub use crate::types::_generation_source_record::GenerationSourceRecord;
+
+pub use crate::types::_generation_results::GenerationResults;
+
+pub use crate::types::_redaction_summary::RedactionSummary;
+
 pub use crate::types::_recommendation_type::RecommendationType;
 
 pub use crate::types::_recommendation_config::RecommendationConfig;
@@ -84,6 +102,10 @@ pub use crate::types::_recommendation_config::RecommendationConfig;
 pub use crate::types::_recommendation_result::RecommendationResult;
 
 pub use crate::types::_evaluation_metadata::EvaluationMetadata;
+
+pub use crate::types::_dataset_execution_config::DatasetExecutionConfig;
+
+pub use crate::types::_generation_source::GenerationSource;
 
 pub use crate::types::_record_expiry_specification::RecordExpirySpecification;
 
@@ -249,6 +271,10 @@ pub use crate::types::_evaluation_reference_input::EvaluationReferenceInput;
 
 pub use crate::types::_evaluation_result_content::EvaluationResultContent;
 
+pub use crate::types::_sample_session::SampleSession;
+
+pub use crate::types::_insight_root_cause::InsightRootCause;
+
 pub use crate::types::_evaluator::Evaluator;
 
 pub use crate::types::_insight::Insight;
@@ -261,6 +287,14 @@ pub use crate::types::_cloud_watch_output_config::CloudWatchOutputConfig;
 
 pub use crate::types::_insight_result::InsightResult;
 
+pub use crate::types::_dataset_details::DatasetDetails;
+
+pub use crate::types::_agent_invocation_details::AgentInvocationDetails;
+
+pub use crate::types::_trace_generation_record::TraceGenerationRecord;
+
+pub use crate::types::_generation_error_detail::GenerationErrorDetail;
+
 pub use crate::types::_system_prompt_recommendation_config::SystemPromptRecommendationConfig;
 
 pub use crate::types::_tool_description_recommendation_config::ToolDescriptionRecommendationConfig;
@@ -271,9 +305,19 @@ pub use crate::types::_tool_description_recommendation_result::ToolDescriptionRe
 
 pub use crate::types::_ab_test_summary::AbTestSummary;
 
+pub use crate::types::_agent_insight_summary::AgentInsightSummary;
+
 pub use crate::types::_batch_evaluation_summary::BatchEvaluationSummary;
 
+pub use crate::types::_dataset_generation_summary::DatasetGenerationSummary;
+
 pub use crate::types::_recommendation_summary::RecommendationSummary;
+
+pub use crate::types::_dataset_source::DatasetSource;
+
+pub use crate::types::_agent_invocation_config::AgentInvocationConfig;
+
+pub use crate::types::_trace_generation_source::TraceGenerationSource;
 
 pub use crate::types::_memory_record_create_input::MemoryRecordCreateInput;
 
@@ -415,13 +459,23 @@ pub use crate::types::_result_destination::ResultDestination;
 
 pub use crate::types::_evaluator_summary::EvaluatorSummary;
 
-pub use crate::types::_insight_type::InsightType;
-
 pub use crate::types::_failure_category_cluster::FailureCategoryCluster;
 
 pub use crate::types::_user_intent_cluster::UserIntentCluster;
 
 pub use crate::types::_execution_summary_cluster::ExecutionSummaryCluster;
+
+pub use crate::types::_agent_core_runtime_invocation_details::AgentCoreRuntimeInvocationDetails;
+
+pub use crate::types::_trace_source_config::TraceSourceConfig;
+
+pub use crate::types::_generation_selection_record::GenerationSelectionRecord;
+
+pub use crate::types::_generation_sampling_config::GenerationSamplingConfig;
+
+pub use crate::types::_ground_truth_config::GroundTruthConfig;
+
+pub use crate::types::_redaction_configuration::RedactionConfiguration;
 
 pub use crate::types::_system_prompt_config::SystemPromptConfig;
 
@@ -434,6 +488,10 @@ pub use crate::types::_tool_description_source::ToolDescriptionSource;
 pub use crate::types::_recommendation_result_configuration_bundle::RecommendationResultConfigurationBundle;
 
 pub use crate::types::_session_metadata_shape::SessionMetadataShape;
+
+pub use crate::types::_agent_core_runtime_invocation::AgentCoreRuntimeInvocation;
+
+pub use crate::types::_generation_selection::GenerationSelection;
 
 pub use crate::types::_memory_record_status::MemoryRecordStatus;
 
@@ -505,11 +563,19 @@ pub use crate::types::_span_context::SpanContext;
 
 pub use crate::types::_control_stats::ControlStats;
 
+pub use crate::types::_session_finding::SessionFinding;
+
 pub use crate::types::_evaluator_statistics::EvaluatorStatistics;
 
-pub use crate::types::_sample_session::SampleSession;
+pub use crate::types::_cloud_watch_logs_source_config::CloudWatchLogsSourceConfig;
 
-pub use crate::types::_insight_root_cause::InsightRootCause;
+pub use crate::types::_online_evaluation_source_config::OnlineEvaluationSourceConfig;
+
+pub use crate::types::_batch_evaluation_source_config::BatchEvaluationSourceConfig;
+
+pub use crate::types::_generation_filters::GenerationFilters;
+
+pub use crate::types::_generation_identifier_counts::GenerationIdentifierCounts;
 
 pub use crate::types::_system_prompt_configuration_bundle::SystemPromptConfigurationBundle;
 
@@ -526,6 +592,8 @@ pub use crate::types::_tool_description_configuration_bundle::ToolDescriptionCon
 pub use crate::types::_tool_description_output::ToolDescriptionOutput;
 
 pub use crate::types::_ground_truth_source::GroundTruthSource;
+
+pub use crate::types::_generation_identifiers::GenerationIdentifiers;
 
 pub use crate::types::_content::Content;
 
@@ -573,6 +641,8 @@ pub use crate::types::_proxy_credentials::ProxyCredentials;
 
 pub use crate::types::_variant_result::VariantResult;
 
+pub use crate::types::_finding_target_type::FindingTargetType;
+
 pub use crate::types::_session_trace_ids::SessionTraceIds;
 
 pub use crate::types::_failure_sub_category_cluster::FailureSubCategoryCluster;
@@ -580,6 +650,16 @@ pub use crate::types::_failure_sub_category_cluster::FailureSubCategoryCluster;
 pub use crate::types::_user_intent_affected_session::UserIntentAffectedSession;
 
 pub use crate::types::_execution_summary_affected_session::ExecutionSummaryAffectedSession;
+
+pub use crate::types::_turn_count_range::TurnCountRange;
+
+pub use crate::types::_ground_truth_field::GroundTruthField;
+
+pub use crate::types::_evaluator_filter::EvaluatorFilter;
+
+pub use crate::types::_redaction_identifier::RedactionIdentifier;
+
+pub use crate::types::_custom_data_identifier::CustomDataIdentifier;
 
 pub use crate::types::_cloud_watch_logs_rule::CloudWatchLogsRule;
 
@@ -621,7 +701,13 @@ pub use crate::types::_basic_auth::BasicAuth;
 
 pub use crate::types::_confidence_interval::ConfidenceInterval;
 
-pub use crate::types::_session_finding::SessionFinding;
+pub use crate::types::_generation_attribute_filter::GenerationAttributeFilter;
+
+pub use crate::types::_generation_filter_operator::GenerationFilterOperator;
+
+pub use crate::types::_generation_filter_value::GenerationFilterValue;
+
+pub use crate::types::_result_aggregation::ResultAggregation;
 
 pub use crate::types::_tool_description_input::ToolDescriptionInput;
 
@@ -632,8 +718,6 @@ pub use crate::types::_o_auth2_authentication::OAuth2Authentication;
 pub use crate::types::_harness_tool_result_content_block::HarnessToolResultContentBlock;
 
 pub use crate::types::_o_auth_grant_type::OAuthGrantType;
-
-pub use crate::types::_finding_target_type::FindingTargetType;
 
 pub use crate::types::_root_cause_cluster::RootCauseCluster;
 
@@ -675,6 +759,20 @@ mod _affected_session;
 
 mod _agent_card_definition;
 
+mod _agent_core_runtime_invocation;
+
+mod _agent_core_runtime_invocation_details;
+
+mod _agent_insight_archive_status;
+
+mod _agent_insight_customer_metadata_status;
+
+mod _agent_insight_summary;
+
+mod _agent_invocation_config;
+
+mod _agent_invocation_details;
+
 mod _agent_skills_descriptor;
 
 mod _agent_traces_config;
@@ -690,6 +788,8 @@ mod _automation_stream_update;
 mod _available_limits;
 
 mod _basic_auth;
+
+mod _batch_evaluation_source_config;
 
 mod _batch_evaluation_status;
 
@@ -738,6 +838,8 @@ mod _cloud_watch_logs_filter_operator;
 mod _cloud_watch_logs_rule;
 
 mod _cloud_watch_logs_source;
+
+mod _cloud_watch_logs_source_config;
 
 mod _cloud_watch_logs_trace_config;
 
@@ -791,9 +893,23 @@ mod _crypto_x402_payment_output;
 
 mod _currency;
 
+mod _custom_data_identifier;
+
 mod _custom_descriptor;
 
 mod _data_source_config;
+
+mod _dataset_details;
+
+mod _dataset_execution_config;
+
+mod _dataset_execution_details;
+
+mod _dataset_generation_status;
+
+mod _dataset_generation_summary;
+
+mod _dataset_source;
 
 mod _descriptor_type;
 
@@ -822,6 +938,8 @@ mod _evaluation_result_content;
 mod _evaluation_target;
 
 mod _evaluator;
+
+mod _evaluator_filter;
 
 mod _evaluator_metric;
 
@@ -872,6 +990,36 @@ mod _filter_value;
 mod _finding_target_type;
 
 mod _gateway_filter;
+
+mod _generation_attribute_filter;
+
+mod _generation_error_detail;
+
+mod _generation_filter_operator;
+
+mod _generation_filter_value;
+
+mod _generation_filters;
+
+mod _generation_identifier_counts;
+
+mod _generation_identifiers;
+
+mod _generation_results;
+
+mod _generation_sampling_config;
+
+mod _generation_selection;
+
+mod _generation_selection_record;
+
+mod _generation_source;
+
+mod _generation_source_record;
+
+mod _ground_truth_config;
+
+mod _ground_truth_field;
 
 mod _ground_truth_source;
 
@@ -1109,6 +1257,8 @@ mod _oauth2_flow_type;
 
 mod _online_evaluation_config_source;
 
+mod _online_evaluation_source_config;
+
 mod _online_evaluation_trace_config;
 
 mod _operator_type;
@@ -1181,6 +1331,12 @@ mod _record_expiry_action;
 
 mod _record_expiry_specification;
 
+mod _redaction_configuration;
+
+mod _redaction_identifier;
+
+mod _redaction_summary;
+
 mod _registry_record_status;
 
 mod _registry_record_summary;
@@ -1192,6 +1348,8 @@ mod _resource_content_type;
 mod _resource_location;
 
 mod _response_chunk;
+
+mod _result_aggregation;
 
 mod _result_destination;
 
@@ -1206,6 +1364,8 @@ mod _s3_files_configuration;
 mod _s3_location;
 
 mod _sample_session;
+
+mod _scenario_type;
 
 mod _screenshot_arguments;
 
@@ -1288,6 +1448,14 @@ mod _tool_result_structured_content;
 mod _tools_definition;
 
 mod _tools_file_system_configuration;
+
+mod _trace_generation_record;
+
+mod _trace_generation_source;
+
+mod _trace_source_config;
+
+mod _turn_count_range;
 
 mod _unit;
 

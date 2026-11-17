@@ -2,7 +2,7 @@
 
 /// <p>The geomerty used to filter device positions.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TrackingFilterGeometry {
     /// <p>The set of arrays which define the polygon. A polygon can have between 4 and 1000 vertices.</p>
     pub polygon: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
@@ -15,6 +15,13 @@ impl TrackingFilterGeometry {
         self.polygon.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for TrackingFilterGeometry {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TrackingFilterGeometry");
+        formatter.field("polygon", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl TrackingFilterGeometry {
     /// Creates a new builder-style object to manufacture [`TrackingFilterGeometry`](crate::types::TrackingFilterGeometry).
     pub fn builder() -> crate::types::builders::TrackingFilterGeometryBuilder {
@@ -23,7 +30,7 @@ impl TrackingFilterGeometry {
 }
 
 /// A builder for [`TrackingFilterGeometry`](crate::types::TrackingFilterGeometry).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct TrackingFilterGeometryBuilder {
     pub(crate) polygon: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
@@ -52,5 +59,12 @@ impl TrackingFilterGeometryBuilder {
     /// Consumes the builder and constructs a [`TrackingFilterGeometry`](crate::types::TrackingFilterGeometry).
     pub fn build(self) -> crate::types::TrackingFilterGeometry {
         crate::types::TrackingFilterGeometry { polygon: self.polygon }
+    }
+}
+impl ::std::fmt::Debug for TrackingFilterGeometryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TrackingFilterGeometryBuilder");
+        formatter.field("polygon", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

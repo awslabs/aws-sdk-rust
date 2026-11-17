@@ -18,61 +18,64 @@ pub fn ser_create_network_migration_definition_input_input(
     if let Some(var_5) = &input.client_token {
         object.key("clientToken").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.description {
-        object.key("description").string(var_6.as_str());
+    if let Some(var_6) = &input.definition_type {
+        object.key("definitionType").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.name {
-        object.key("name").string(var_7.as_str());
+    if let Some(var_7) = &input.description {
+        object.key("description").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.scope_tags {
+    if let Some(var_8) = &input.name {
+        object.key("name").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.scope_tags {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("scopeTags").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_10 = object.key("scopeTags").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_9.finish();
+        object_10.finish();
     }
-    if let Some(var_12) = &input.source_configurations {
-        let mut array_13 = object.key("sourceConfigurations").start_array();
-        for item_14 in var_12 {
+    if let Some(var_13) = &input.source_configurations {
+        let mut array_14 = object.key("sourceConfigurations").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_source_configuration::ser_source_configuration(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_source_configuration::ser_source_configuration(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_13.finish();
+        array_14.finish();
     }
-    if let Some(var_16) = &input.tags {
+    if let Some(var_17) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("tags").start_object();
-        for (key_18, value_19) in var_16 {
+        let mut object_18 = object.key("tags").start_object();
+        for (key_19, value_20) in var_17 {
             {
-                object_17.key(key_18.as_str()).string(value_19.as_str());
+                object_18.key(key_19.as_str()).string(value_20.as_str());
             }
         }
-        object_17.finish();
+        object_18.finish();
     }
-    if let Some(var_20) = &input.target_deployment {
-        object.key("targetDeployment").string(var_20.as_str());
+    if let Some(var_21) = &input.target_deployment {
+        object.key("targetDeployment").string(var_21.as_str());
     }
-    if let Some(var_21) = &input.target_network {
+    if let Some(var_22) = &input.target_network {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("targetNetwork").start_object();
-        crate::protocol_serde::shape_target_network::ser_target_network(&mut object_22, var_21)?;
-        object_22.finish();
+        let mut object_23 = object.key("targetNetwork").start_object();
+        crate::protocol_serde::shape_target_network::ser_target_network(&mut object_23, var_22)?;
+        object_23.finish();
     }
-    if let Some(var_23) = &input.target_s3_configuration {
+    if let Some(var_24) = &input.target_s3_configuration {
         #[allow(unused_mut)]
-        let mut object_24 = object.key("targetS3Configuration").start_object();
-        crate::protocol_serde::shape_target_s3_configuration::ser_target_s3_configuration(&mut object_24, var_23)?;
-        object_24.finish();
+        let mut object_25 = object.key("targetS3Configuration").start_object();
+        crate::protocol_serde::shape_target_s3_configuration::ser_target_s3_configuration(&mut object_25, var_24)?;
+        object_25.finish();
     }
-    if let Some(var_25) = &input.vpc_provisioning_strategy {
-        object.key("vpcProvisioningStrategy").string(var_25.as_str());
+    if let Some(var_26) = &input.vpc_provisioning_strategy {
+        object.key("vpcProvisioningStrategy").string(var_26.as_str());
     }
     Ok(())
 }

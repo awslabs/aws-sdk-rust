@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SupportedEmailDomainsParameters {
     /// <p></p>
     pub enabled: ::std::option::Option<crate::types::FeatureEnableParameter>,
@@ -21,6 +21,14 @@ impl SupportedEmailDomainsParameters {
         self.allowed_domains.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for SupportedEmailDomainsParameters {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SupportedEmailDomainsParameters");
+        formatter.field("enabled", &self.enabled);
+        formatter.field("allowed_domains", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl SupportedEmailDomainsParameters {
     /// Creates a new builder-style object to manufacture [`SupportedEmailDomainsParameters`](crate::types::SupportedEmailDomainsParameters).
     pub fn builder() -> crate::types::builders::SupportedEmailDomainsParametersBuilder {
@@ -29,7 +37,7 @@ impl SupportedEmailDomainsParameters {
 }
 
 /// A builder for [`SupportedEmailDomainsParameters`](crate::types::SupportedEmailDomainsParameters).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct SupportedEmailDomainsParametersBuilder {
     pub(crate) enabled: ::std::option::Option<crate::types::FeatureEnableParameter>,
@@ -76,5 +84,13 @@ impl SupportedEmailDomainsParametersBuilder {
             enabled: self.enabled,
             allowed_domains: self.allowed_domains,
         }
+    }
+}
+impl ::std::fmt::Debug for SupportedEmailDomainsParametersBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SupportedEmailDomainsParametersBuilder");
+        formatter.field("enabled", &self.enabled);
+        formatter.field("allowed_domains", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

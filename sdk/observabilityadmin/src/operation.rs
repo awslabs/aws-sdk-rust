@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `CreateCentralizationRuleForOrganization` operation.
 pub mod create_centralization_rule_for_organization;
 
+/// Types for the `CreateConnector` operation.
+pub mod create_connector;
+
 /// Types for the `CreateDatasetIntegration` operation.
 pub mod create_dataset_integration;
 
@@ -22,6 +25,9 @@ pub mod create_telemetry_rule_for_organization;
 /// Types for the `DeleteCentralizationRuleForOrganization` operation.
 pub mod delete_centralization_rule_for_organization;
 
+/// Types for the `DeleteConnector` operation.
+pub mod delete_connector;
+
 /// Types for the `DeleteDatasetIntegration` operation.
 pub mod delete_dataset_integration;
 
@@ -39,6 +45,15 @@ pub mod delete_telemetry_rule_for_organization;
 
 /// Types for the `GetCentralizationRuleForOrganization` operation.
 pub mod get_centralization_rule_for_organization;
+
+/// Types for the `GetConnector` operation.
+pub mod get_connector;
+
+/// Types for the `GetConnectorTelemetryManifest` operation.
+pub mod get_connector_telemetry_manifest;
+
+/// Types for the `GetConnectorTelemetrySetup` operation.
+pub mod get_connector_telemetry_setup;
 
 /// Types for the `GetDatasetIntegration` operation.
 pub mod get_dataset_integration;
@@ -64,8 +79,14 @@ pub mod get_telemetry_rule;
 /// Types for the `GetTelemetryRuleForOrganization` operation.
 pub mod get_telemetry_rule_for_organization;
 
+/// Types for the `GetThirdPartyTelemetryEnrichment` operation.
+pub mod get_third_party_telemetry_enrichment;
+
 /// Types for the `ListCentralizationRulesForOrganization` operation.
 pub mod list_centralization_rules_for_organization;
+
+/// Types for the `ListConnectors` operation.
+pub mod list_connectors;
 
 /// Types for the `ListDatasetIntegrations` operation.
 pub mod list_dataset_integrations;
@@ -75,6 +96,9 @@ pub mod list_resource_telemetry;
 
 /// Types for the `ListResourceTelemetryForOrganization` operation.
 pub mod list_resource_telemetry_for_organization;
+
+/// Types for the `ListResourcesByConnector` operation.
+pub mod list_resources_by_connector;
 
 /// Types for the `ListS3TableIntegrations` operation.
 pub mod list_s3_table_integrations;
@@ -91,6 +115,12 @@ pub mod list_telemetry_rules;
 /// Types for the `ListTelemetryRulesForOrganization` operation.
 pub mod list_telemetry_rules_for_organization;
 
+/// Types for the `ListThirdPartyTelemetryEnrichments` operation.
+pub mod list_third_party_telemetry_enrichments;
+
+/// Types for the `PutConnectorTelemetryManifest` operation.
+pub mod put_connector_telemetry_manifest;
+
 /// Types for the `StartTelemetryEnrichment` operation.
 pub mod start_telemetry_enrichment;
 
@@ -100,6 +130,12 @@ pub mod start_telemetry_evaluation;
 /// Types for the `StartTelemetryEvaluationForOrganization` operation.
 pub mod start_telemetry_evaluation_for_organization;
 
+/// Types for the `StartTelemetryPipelineRefresh` operation.
+pub mod start_telemetry_pipeline_refresh;
+
+/// Types for the `StartThirdPartyTelemetryEnrichment` operation.
+pub mod start_third_party_telemetry_enrichment;
+
 /// Types for the `StopTelemetryEnrichment` operation.
 pub mod stop_telemetry_enrichment;
 
@@ -108,6 +144,9 @@ pub mod stop_telemetry_evaluation;
 
 /// Types for the `StopTelemetryEvaluationForOrganization` operation.
 pub mod stop_telemetry_evaluation_for_organization;
+
+/// Types for the `StopThirdPartyTelemetryEnrichment` operation.
+pub mod stop_third_party_telemetry_enrichment;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

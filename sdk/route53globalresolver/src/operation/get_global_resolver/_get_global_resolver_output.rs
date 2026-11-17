@@ -31,6 +31,16 @@ pub struct GetGlobalResolverOutput {
     pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IP address type configured for the Global Resolver.</p>
     pub ip_address_type: ::std::option::Option<crate::types::GlobalResolverIpAddressType>,
+    /// <p>The public IP connectivity configured for the Route 53 Global Resolver. Public IP addresses let DNS clients send queries to the resolver over the internet. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED_RESERVED</code> - Public IP connectivity is enabled, and the global anycast public IP addresses are reserved for the Route 53 Global Resolver.</p></li>
+    /// <li>
+    /// <p><code>DISABLED_RESERVED</code> - Public IP connectivity is disabled, and the global anycast public IP addresses remain reserved for the Route 53 Global Resolver.</p></li>
+    /// <li>
+    /// <p><code>DISABLED_RELEASED</code> - Public IP connectivity is disabled, and the global anycast public IP addresses are released.</p></li>
+    /// </ul>
+    pub public_ip_status: ::std::option::Option<crate::types::PublicIpStatus>,
     _request_id: Option<String>,
 }
 impl GetGlobalResolverOutput {
@@ -99,6 +109,18 @@ impl GetGlobalResolverOutput {
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::GlobalResolverIpAddressType> {
         self.ip_address_type.as_ref()
     }
+    /// <p>The public IP connectivity configured for the Route 53 Global Resolver. Public IP addresses let DNS clients send queries to the resolver over the internet. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED_RESERVED</code> - Public IP connectivity is enabled, and the global anycast public IP addresses are reserved for the Route 53 Global Resolver.</p></li>
+    /// <li>
+    /// <p><code>DISABLED_RESERVED</code> - Public IP connectivity is disabled, and the global anycast public IP addresses remain reserved for the Route 53 Global Resolver.</p></li>
+    /// <li>
+    /// <p><code>DISABLED_RELEASED</code> - Public IP connectivity is disabled, and the global anycast public IP addresses are released.</p></li>
+    /// </ul>
+    pub fn public_ip_status(&self) -> ::std::option::Option<&crate::types::PublicIpStatus> {
+        self.public_ip_status.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetGlobalResolverOutput {
     fn request_id(&self) -> Option<&str> {
@@ -130,6 +152,7 @@ pub struct GetGlobalResolverOutputBuilder {
     pub(crate) ipv4_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::GlobalResolverIpAddressType>,
+    pub(crate) public_ip_status: ::std::option::Option<crate::types::PublicIpStatus>,
     _request_id: Option<String>,
 }
 impl GetGlobalResolverOutputBuilder {
@@ -355,6 +378,44 @@ impl GetGlobalResolverOutputBuilder {
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::GlobalResolverIpAddressType> {
         &self.ip_address_type
     }
+    /// <p>The public IP connectivity configured for the Route 53 Global Resolver. Public IP addresses let DNS clients send queries to the resolver over the internet. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED_RESERVED</code> - Public IP connectivity is enabled, and the global anycast public IP addresses are reserved for the Route 53 Global Resolver.</p></li>
+    /// <li>
+    /// <p><code>DISABLED_RESERVED</code> - Public IP connectivity is disabled, and the global anycast public IP addresses remain reserved for the Route 53 Global Resolver.</p></li>
+    /// <li>
+    /// <p><code>DISABLED_RELEASED</code> - Public IP connectivity is disabled, and the global anycast public IP addresses are released.</p></li>
+    /// </ul>
+    pub fn public_ip_status(mut self, input: crate::types::PublicIpStatus) -> Self {
+        self.public_ip_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The public IP connectivity configured for the Route 53 Global Resolver. Public IP addresses let DNS clients send queries to the resolver over the internet. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED_RESERVED</code> - Public IP connectivity is enabled, and the global anycast public IP addresses are reserved for the Route 53 Global Resolver.</p></li>
+    /// <li>
+    /// <p><code>DISABLED_RESERVED</code> - Public IP connectivity is disabled, and the global anycast public IP addresses remain reserved for the Route 53 Global Resolver.</p></li>
+    /// <li>
+    /// <p><code>DISABLED_RELEASED</code> - Public IP connectivity is disabled, and the global anycast public IP addresses are released.</p></li>
+    /// </ul>
+    pub fn set_public_ip_status(mut self, input: ::std::option::Option<crate::types::PublicIpStatus>) -> Self {
+        self.public_ip_status = input;
+        self
+    }
+    /// <p>The public IP connectivity configured for the Route 53 Global Resolver. Public IP addresses let DNS clients send queries to the resolver over the internet. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED_RESERVED</code> - Public IP connectivity is enabled, and the global anycast public IP addresses are reserved for the Route 53 Global Resolver.</p></li>
+    /// <li>
+    /// <p><code>DISABLED_RESERVED</code> - Public IP connectivity is disabled, and the global anycast public IP addresses remain reserved for the Route 53 Global Resolver.</p></li>
+    /// <li>
+    /// <p><code>DISABLED_RELEASED</code> - Public IP connectivity is disabled, and the global anycast public IP addresses are released.</p></li>
+    /// </ul>
+    pub fn get_public_ip_status(&self) -> &::std::option::Option<crate::types::PublicIpStatus> {
+        &self.public_ip_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -444,6 +505,7 @@ impl GetGlobalResolverOutputBuilder {
             })?,
             ipv6_addresses: self.ipv6_addresses,
             ip_address_type: self.ip_address_type,
+            public_ip_status: self.public_ip_status,
             _request_id: self._request_id,
         })
     }

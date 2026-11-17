@@ -2,7 +2,7 @@
 
 /// <p>Defines the prompt datasets, built-in metric names and custom metric names, and the task type.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EvaluationDatasetMetricConfig {
     /// <p>The the type of task you want to evaluate for your evaluation job. This applies only to model evaluation jobs and is ignored for knowledge base evaluation jobs.</p>
     pub task_type: crate::types::EvaluationTaskType,
@@ -34,6 +34,15 @@ impl EvaluationDatasetMetricConfig {
         self.metric_names.deref()
     }
 }
+impl ::std::fmt::Debug for EvaluationDatasetMetricConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("EvaluationDatasetMetricConfig");
+        formatter.field("task_type", &self.task_type);
+        formatter.field("dataset", &self.dataset);
+        formatter.field("metric_names", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl EvaluationDatasetMetricConfig {
     /// Creates a new builder-style object to manufacture [`EvaluationDatasetMetricConfig`](crate::types::EvaluationDatasetMetricConfig).
     pub fn builder() -> crate::types::builders::EvaluationDatasetMetricConfigBuilder {
@@ -42,7 +51,7 @@ impl EvaluationDatasetMetricConfig {
 }
 
 /// A builder for [`EvaluationDatasetMetricConfig`](crate::types::EvaluationDatasetMetricConfig).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct EvaluationDatasetMetricConfigBuilder {
     pub(crate) task_type: ::std::option::Option<crate::types::EvaluationTaskType>,
@@ -132,5 +141,14 @@ impl EvaluationDatasetMetricConfigBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for EvaluationDatasetMetricConfigBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("EvaluationDatasetMetricConfigBuilder");
+        formatter.field("task_type", &self.task_type);
+        formatter.field("dataset", &self.dataset);
+        formatter.field("metric_names", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

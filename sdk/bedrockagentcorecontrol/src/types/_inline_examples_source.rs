@@ -2,7 +2,7 @@
 
 /// <p>Inline examples provided directly in the request body.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InlineExamplesSource {
     /// <p>Examples to add. Each example is assigned an auto-generated UUID.</p>
     pub examples: ::std::vec::Vec<::aws_smithy_types::Document>,
@@ -14,6 +14,13 @@ impl InlineExamplesSource {
         self.examples.deref()
     }
 }
+impl ::std::fmt::Debug for InlineExamplesSource {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("InlineExamplesSource");
+        formatter.field("examples", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl InlineExamplesSource {
     /// Creates a new builder-style object to manufacture [`InlineExamplesSource`](crate::types::InlineExamplesSource).
     pub fn builder() -> crate::types::builders::InlineExamplesSourceBuilder {
@@ -22,7 +29,7 @@ impl InlineExamplesSource {
 }
 
 /// A builder for [`InlineExamplesSource`](crate::types::InlineExamplesSource).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct InlineExamplesSourceBuilder {
     pub(crate) examples: ::std::option::Option<::std::vec::Vec<::aws_smithy_types::Document>>,
@@ -60,5 +67,12 @@ impl InlineExamplesSourceBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for InlineExamplesSourceBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("InlineExamplesSourceBuilder");
+        formatter.field("examples", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -20,11 +20,13 @@ pub struct GetDatasetOutput {
     /// <p>Populated when status is CREATE_FAILED, UPDATE_FAILED, or DELETE_FAILED. Describes the reason for the failure.</p>
     pub failure_reason: ::std::option::Option<::std::string::String>,
     /// <p>The schema type declared at create time. Immutable after creation.</p>
-    pub schema_type: crate::types::DatasetSchemaType,
+    pub schema_type: ::std::option::Option<crate::types::DatasetSchemaType>,
     /// <p>KMS key ARN used for server-side encryption on service Amazon S3 writes, if configured.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>The number of examples in the DRAFT.</p>
     pub example_count: i64,
+    /// <p>The number of examples that have each field, for the resolved version. Absent when the counts are unknown.</p>
+    pub example_count_by_field: ::std::option::Option<crate::types::ExampleCountByField>,
     /// <p>Presigned Amazon S3 URL to download the consolidated dataset file for the resolved version. Expires after 5 minutes. Omitted if the file does not yet exist.</p>
     pub download_url: ::std::option::Option<::std::string::String>,
     /// <p>Expiry timestamp for the download URL.</p>
@@ -75,8 +77,8 @@ impl GetDatasetOutput {
         self.failure_reason.as_deref()
     }
     /// <p>The schema type declared at create time. Immutable after creation.</p>
-    pub fn schema_type(&self) -> &crate::types::DatasetSchemaType {
-        &self.schema_type
+    pub fn schema_type(&self) -> ::std::option::Option<&crate::types::DatasetSchemaType> {
+        self.schema_type.as_ref()
     }
     /// <p>KMS key ARN used for server-side encryption on service Amazon S3 writes, if configured.</p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
@@ -85,6 +87,10 @@ impl GetDatasetOutput {
     /// <p>The number of examples in the DRAFT.</p>
     pub fn example_count(&self) -> i64 {
         self.example_count
+    }
+    /// <p>The number of examples that have each field, for the resolved version. Absent when the counts are unknown.</p>
+    pub fn example_count_by_field(&self) -> ::std::option::Option<&crate::types::ExampleCountByField> {
+        self.example_count_by_field.as_ref()
     }
     /// <p>Presigned Amazon S3 URL to download the consolidated dataset file for the resolved version. Expires after 5 minutes. Omitted if the file does not yet exist.</p>
     pub fn download_url(&self) -> ::std::option::Option<&str> {
@@ -121,6 +127,7 @@ impl ::std::fmt::Debug for GetDatasetOutput {
         formatter.field("schema_type", &self.schema_type);
         formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("example_count", &self.example_count);
+        formatter.field("example_count_by_field", &self.example_count_by_field);
         formatter.field("download_url", &"*** Sensitive Data Redacted ***");
         formatter.field("download_url_expires_at", &self.download_url_expires_at);
         formatter.field("created_at", &self.created_at);
@@ -157,6 +164,7 @@ pub struct GetDatasetOutputBuilder {
     pub(crate) schema_type: ::std::option::Option<crate::types::DatasetSchemaType>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) example_count: ::std::option::Option<i64>,
+    pub(crate) example_count_by_field: ::std::option::Option<crate::types::ExampleCountByField>,
     pub(crate) download_url: ::std::option::Option<::std::string::String>,
     pub(crate) download_url_expires_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -283,7 +291,6 @@ impl GetDatasetOutputBuilder {
         &self.failure_reason
     }
     /// <p>The schema type declared at create time. Immutable after creation.</p>
-    /// This field is required.
     pub fn schema_type(mut self, input: crate::types::DatasetSchemaType) -> Self {
         self.schema_type = ::std::option::Option::Some(input);
         self
@@ -325,6 +332,20 @@ impl GetDatasetOutputBuilder {
     /// <p>The number of examples in the DRAFT.</p>
     pub fn get_example_count(&self) -> &::std::option::Option<i64> {
         &self.example_count
+    }
+    /// <p>The number of examples that have each field, for the resolved version. Absent when the counts are unknown.</p>
+    pub fn example_count_by_field(mut self, input: crate::types::ExampleCountByField) -> Self {
+        self.example_count_by_field = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of examples that have each field, for the resolved version. Absent when the counts are unknown.</p>
+    pub fn set_example_count_by_field(mut self, input: ::std::option::Option<crate::types::ExampleCountByField>) -> Self {
+        self.example_count_by_field = input;
+        self
+    }
+    /// <p>The number of examples that have each field, for the resolved version. Absent when the counts are unknown.</p>
+    pub fn get_example_count_by_field(&self) -> &::std::option::Option<crate::types::ExampleCountByField> {
+        &self.example_count_by_field
     }
     /// <p>Presigned Amazon S3 URL to download the consolidated dataset file for the resolved version. Expires after 5 minutes. Omitted if the file does not yet exist.</p>
     pub fn download_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -420,7 +441,6 @@ impl GetDatasetOutputBuilder {
     /// - [`dataset_version`](crate::operation::get_dataset::builders::GetDatasetOutputBuilder::dataset_version)
     /// - [`dataset_name`](crate::operation::get_dataset::builders::GetDatasetOutputBuilder::dataset_name)
     /// - [`status`](crate::operation::get_dataset::builders::GetDatasetOutputBuilder::status)
-    /// - [`schema_type`](crate::operation::get_dataset::builders::GetDatasetOutputBuilder::schema_type)
     /// - [`example_count`](crate::operation::get_dataset::builders::GetDatasetOutputBuilder::example_count)
     /// - [`created_at`](crate::operation::get_dataset::builders::GetDatasetOutputBuilder::created_at)
     /// - [`updated_at`](crate::operation::get_dataset::builders::GetDatasetOutputBuilder::updated_at)
@@ -459,12 +479,7 @@ impl GetDatasetOutputBuilder {
             })?,
             draft_status: self.draft_status,
             failure_reason: self.failure_reason,
-            schema_type: self.schema_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schema_type",
-                    "schema_type was not specified but it is required when building GetDatasetOutput",
-                )
-            })?,
+            schema_type: self.schema_type,
             kms_key_arn: self.kms_key_arn,
             example_count: self.example_count.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -472,6 +487,7 @@ impl GetDatasetOutputBuilder {
                     "example_count was not specified but it is required when building GetDatasetOutput",
                 )
             })?,
+            example_count_by_field: self.example_count_by_field,
             download_url: self.download_url,
             download_url_expires_at: self.download_url_expires_at,
             created_at: self.created_at.ok_or_else(|| {
@@ -505,6 +521,7 @@ impl ::std::fmt::Debug for GetDatasetOutputBuilder {
         formatter.field("schema_type", &self.schema_type);
         formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("example_count", &self.example_count);
+        formatter.field("example_count_by_field", &self.example_count_by_field);
         formatter.field("download_url", &"*** Sensitive Data Redacted ***");
         formatter.field("download_url_expires_at", &self.download_url_expires_at);
         formatter.field("created_at", &self.created_at);

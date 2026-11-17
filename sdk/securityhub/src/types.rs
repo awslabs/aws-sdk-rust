@@ -183,6 +183,8 @@ pub use crate::types::_security_hub_policy::SecurityHubPolicy;
 
 pub use crate::types::_azure_provider_configuration::AzureProviderConfiguration;
 
+pub use crate::types::_gcp_provider_configuration::GcpProviderConfiguration;
+
 pub use crate::types::_jira_cloud_provider_configuration::JiraCloudProviderConfiguration;
 
 pub use crate::types::_service_now_provider_configuration::ServiceNowProviderConfiguration;
@@ -210,6 +212,8 @@ pub use crate::types::_standard::Standard;
 pub use crate::types::_standards_control::StandardsControl;
 
 pub use crate::types::_azure_detail::AzureDetail;
+
+pub use crate::types::_gcp_detail::GcpDetail;
 
 pub use crate::types::_jira_cloud_detail::JiraCloudDetail;
 
@@ -287,6 +291,8 @@ pub use crate::types::_standards_control_association_summary::StandardsControlAs
 
 pub use crate::types::_azure_update_configuration::AzureUpdateConfiguration;
 
+pub use crate::types::_gcp_update_configuration::GcpUpdateConfiguration;
+
 pub use crate::types::_jira_cloud_update_configuration::JiraCloudUpdateConfiguration;
 
 pub use crate::types::_service_now_update_configuration::ServiceNowUpdateConfiguration;
@@ -356,6 +362,8 @@ pub use crate::types::_automation_rules_resource_fields_update_v2::AutomationRul
 pub use crate::types::_security_controls_configuration::SecurityControlsConfiguration;
 
 pub use crate::types::_azure_scope_configuration::AzureScopeConfiguration;
+
+pub use crate::types::_gcp_scope_configuration::GcpScopeConfiguration;
 
 pub use crate::types::_ip_filter::IpFilter;
 
@@ -484,6 +492,8 @@ pub use crate::types::_date_range::DateRange;
 pub use crate::types::_map_filter_comparison::MapFilterComparison;
 
 pub use crate::types::_scope_type::ScopeType;
+
+pub use crate::types::_gcp_scope_type::GcpScopeType;
 
 pub use crate::types::_integration_type::IntegrationType;
 
@@ -3088,6 +3098,16 @@ mod _free_trial_status;
 mod _free_trial_status_value;
 
 mod _free_trial_type;
+
+mod _gcp_detail;
+
+mod _gcp_provider_configuration;
+
+mod _gcp_scope_configuration;
+
+mod _gcp_scope_type;
+
+mod _gcp_update_configuration;
 
 mod _generator_details;
 

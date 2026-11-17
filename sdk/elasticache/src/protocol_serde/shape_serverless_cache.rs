@@ -272,6 +272,16 @@ pub fn de_serverless_cache(
                 builder = builder.set_migration(var_21);
             }
             ,
+            s if s.matches("Integrations") /* Integrations com.amazonaws.elasticache#ServerlessCache$Integrations */ =>  {
+                let var_22 =
+                    Some(
+                        crate::protocol_serde::shape_integration_list::de_integration_list(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_integrations(var_22);
+            }
+            ,
             _ => {}
         }
     }

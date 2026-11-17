@@ -15,6 +15,10 @@ pub struct ListNetworkMigrationMapperSegmentConstructsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Whether to return construct properties using their native value types.</p>
+    pub include_enriched_properties: ::std::option::Option<bool>,
+    /// <p>Whether to return construct-type-specific behavioral configuration.</p>
+    pub include_configuration: ::std::option::Option<bool>,
 }
 impl ListNetworkMigrationMapperSegmentConstructsInput {
     /// <p>The unique identifier of the network migration execution.</p>
@@ -41,6 +45,14 @@ impl ListNetworkMigrationMapperSegmentConstructsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>Whether to return construct properties using their native value types.</p>
+    pub fn include_enriched_properties(&self) -> ::std::option::Option<bool> {
+        self.include_enriched_properties
+    }
+    /// <p>Whether to return construct-type-specific behavioral configuration.</p>
+    pub fn include_configuration(&self) -> ::std::option::Option<bool> {
+        self.include_configuration
+    }
 }
 impl ListNetworkMigrationMapperSegmentConstructsInput {
     /// Creates a new builder-style object to manufacture [`ListNetworkMigrationMapperSegmentConstructsInput`](crate::operation::list_network_migration_mapper_segment_constructs::ListNetworkMigrationMapperSegmentConstructsInput).
@@ -61,6 +73,8 @@ pub struct ListNetworkMigrationMapperSegmentConstructsInputBuilder {
     pub(crate) filters: ::std::option::Option<crate::types::ListNetworkMigrationMapperSegmentConstructsFilters>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) include_enriched_properties: ::std::option::Option<bool>,
+    pub(crate) include_configuration: ::std::option::Option<bool>,
 }
 impl ListNetworkMigrationMapperSegmentConstructsInputBuilder {
     /// <p>The unique identifier of the network migration execution.</p>
@@ -150,6 +164,34 @@ impl ListNetworkMigrationMapperSegmentConstructsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>Whether to return construct properties using their native value types.</p>
+    pub fn include_enriched_properties(mut self, input: bool) -> Self {
+        self.include_enriched_properties = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether to return construct properties using their native value types.</p>
+    pub fn set_include_enriched_properties(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_enriched_properties = input;
+        self
+    }
+    /// <p>Whether to return construct properties using their native value types.</p>
+    pub fn get_include_enriched_properties(&self) -> &::std::option::Option<bool> {
+        &self.include_enriched_properties
+    }
+    /// <p>Whether to return construct-type-specific behavioral configuration.</p>
+    pub fn include_configuration(mut self, input: bool) -> Self {
+        self.include_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether to return construct-type-specific behavioral configuration.</p>
+    pub fn set_include_configuration(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.include_configuration = input;
+        self
+    }
+    /// <p>Whether to return construct-type-specific behavioral configuration.</p>
+    pub fn get_include_configuration(&self) -> &::std::option::Option<bool> {
+        &self.include_configuration
+    }
     /// Consumes the builder and constructs a [`ListNetworkMigrationMapperSegmentConstructsInput`](crate::operation::list_network_migration_mapper_segment_constructs::ListNetworkMigrationMapperSegmentConstructsInput).
     pub fn build(
         self,
@@ -165,6 +207,8 @@ impl ListNetworkMigrationMapperSegmentConstructsInputBuilder {
                 filters: self.filters,
                 max_results: self.max_results,
                 next_token: self.next_token,
+                include_enriched_properties: self.include_enriched_properties,
+                include_configuration: self.include_configuration,
             },
         )
     }

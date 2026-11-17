@@ -11,6 +11,24 @@ pub(crate) fn batch_create_billing_adjustment_request_output_output_correct_erro
     builder
 }
 
+pub(crate) fn get_agreement_request_approval_plans_output_output_correct_errors(
+    mut builder: crate::operation::get_agreement_request_approval_plans::builders::GetAgreementRequestApprovalPlansOutputBuilder,
+) -> crate::operation::get_agreement_request_approval_plans::builders::GetAgreementRequestApprovalPlansOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_agreement_request_terms_output_output_correct_errors(
+    mut builder: crate::operation::get_agreement_request_terms::builders::GetAgreementRequestTermsOutputBuilder,
+) -> crate::operation::get_agreement_request_terms::builders::GetAgreementRequestTermsOutputBuilder {
+    if builder.terms.is_none() {
+        builder.terms = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn get_billing_adjustment_request_output_output_correct_errors(
     mut builder: crate::operation::get_billing_adjustment_request::builders::GetBillingAdjustmentRequestOutputBuilder,
 ) -> crate::operation::get_billing_adjustment_request::builders::GetBillingAdjustmentRequestOutputBuilder {
@@ -44,6 +62,15 @@ pub(crate) fn get_billing_adjustment_request_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_agreement_approvals_output_output_correct_errors(
+    mut builder: crate::operation::list_agreement_approvals::builders::ListAgreementApprovalsOutputBuilder,
+) -> crate::operation::list_agreement_approvals::builders::ListAgreementApprovalsOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_agreement_payment_requests_output_output_correct_errors(
     mut builder: crate::operation::list_agreement_payment_requests::builders::ListAgreementPaymentRequestsOutputBuilder,
 ) -> crate::operation::list_agreement_payment_requests::builders::ListAgreementPaymentRequestsOutputBuilder {
@@ -62,11 +89,165 @@ pub(crate) fn list_billing_adjustment_requests_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn start_agreement_approvals_output_output_correct_errors(
+    mut builder: crate::operation::start_agreement_approvals::builders::StartAgreementApprovalsOutputBuilder,
+) -> crate::operation::start_agreement_approvals::builders::StartAgreementApprovalsOutputBuilder {
+    if builder.approval_summaries.is_none() {
+        builder.approval_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn acceptor_contact_correct_errors(
+    mut builder: crate::types::builders::AcceptorContactBuilder,
+) -> crate::types::builders::AcceptorContactBuilder {
+    if builder.first_name.is_none() {
+        builder.first_name = Some(Default::default())
+    }
+    if builder.last_name.is_none() {
+        builder.last_name = Some(Default::default())
+    }
+    if builder.email_address.is_none() {
+        builder.email_address = Some(Default::default())
+    }
+    if builder.company_name.is_none() {
+        builder.company_name = Some(Default::default())
+    }
+    if builder.country_code.is_none() {
+        builder.country_code = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn buyer_agreement_approval_correct_errors(
+    mut builder: crate::types::builders::BuyerAgreementApprovalBuilder,
+) -> crate::types::builders::BuyerAgreementApprovalBuilder {
+    if builder.approval_type.is_none() {
+        builder.approval_type = "no value was set".parse::<crate::types::AgreementApprovalType>().ok()
+    }
+    if builder.agreement_approval_id.is_none() {
+        builder.agreement_approval_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.agreement_request_id.is_none() {
+        builder.agreement_request_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::AgreementApprovalStatus>().ok()
+    }
+    if builder.requester.is_none() {
+        builder.requester = {
+            let builder = crate::types::builders::AgreementApprovalRequesterBuilder::default();
+            crate::serde_util::agreement_approval_requester_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.approval_needed_by.is_none() {
+        builder.approval_needed_by = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.levels.is_none() {
+        builder.levels = Some(Default::default())
+    }
+    if builder.plan_input.is_none() {
+        builder.plan_input = {
+            let builder = crate::types::builders::BuyerAgreementApprovalPlanInputBuilder::default();
+            crate::serde_util::buyer_agreement_approval_plan_input_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.proposer.is_none() {
+        builder.proposer = {
+            let builder = crate::types::builders::AgreementApprovalProposerBuilder::default();
+            crate::serde_util::agreement_approval_proposer_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.proposal_summary.is_none() {
+        builder.proposal_summary = {
+            let builder = crate::types::builders::AgreementApprovalProposalSummaryBuilder::default();
+            crate::serde_util::agreement_approval_proposal_summary_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn end_time_behavior_correct_errors(
     mut builder: crate::types::builders::EndTimeBehaviorBuilder,
 ) -> crate::types::builders::EndTimeBehaviorBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::EndTimeBehaviorType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn agreement_approval_proposal_summary_correct_errors(
+    mut builder: crate::types::builders::AgreementApprovalProposalSummaryBuilder,
+) -> crate::types::builders::AgreementApprovalProposalSummaryBuilder {
+    if builder.offer_id.is_none() {
+        builder.offer_id = Some(Default::default())
+    }
+    if builder.visibility_scope.is_none() {
+        builder.visibility_scope = "no value was set".parse::<crate::types::OfferVisibilityScope>().ok()
+    }
+    builder
+}
+
+pub(crate) fn agreement_approval_proposer_correct_errors(
+    mut builder: crate::types::builders::AgreementApprovalProposerBuilder,
+) -> crate::types::builders::AgreementApprovalProposerBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    if builder.legal_name.is_none() {
+        builder.legal_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn agreement_approval_requester_correct_errors(
+    mut builder: crate::types::builders::AgreementApprovalRequesterBuilder,
+) -> crate::types::builders::AgreementApprovalRequesterBuilder {
+    if builder.account_id.is_none() {
+        builder.account_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn agreement_approval_summary_correct_errors(
+    mut builder: crate::types::builders::AgreementApprovalSummaryBuilder,
+) -> crate::types::builders::AgreementApprovalSummaryBuilder {
+    if builder.approval_type.is_none() {
+        builder.approval_type = "no value was set".parse::<crate::types::AgreementApprovalType>().ok()
+    }
+    if builder.agreement_request_id.is_none() {
+        builder.agreement_request_id = Some(Default::default())
+    }
+    if builder.agreement_approval_id.is_none() {
+        builder.agreement_approval_id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::AgreementApprovalStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.approval_needed_by.is_none() {
+        builder.approval_needed_by = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -134,6 +315,15 @@ pub(crate) fn billing_adjustment_summary_correct_errors(
     builder
 }
 
+pub(crate) fn buyer_agreement_approval_plan_input_correct_errors(
+    mut builder: crate::types::builders::BuyerAgreementApprovalPlanInputBuilder,
+) -> crate::types::builders::BuyerAgreementApprovalPlanInputBuilder {
+    if builder.plan_reference.is_none() {
+        builder.plan_reference = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn validation_exception_field_correct_errors(
     mut builder: crate::types::builders::ValidationExceptionFieldBuilder,
 ) -> crate::types::builders::ValidationExceptionFieldBuilder {
@@ -146,6 +336,27 @@ pub(crate) fn validation_exception_field_correct_errors(
     builder
 }
 
+pub(crate) fn buyer_agreement_approval_level_correct_errors(
+    mut builder: crate::types::builders::BuyerAgreementApprovalLevelBuilder,
+) -> crate::types::builders::BuyerAgreementApprovalLevelBuilder {
+    if builder.groups.is_none() {
+        builder.groups = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn buyer_agreement_approval_plan_correct_errors(
+    mut builder: crate::types::builders::BuyerAgreementApprovalPlanBuilder,
+) -> crate::types::builders::BuyerAgreementApprovalPlanBuilder {
+    if builder.plan_reference.is_none() {
+        builder.plan_reference = Some(Default::default())
+    }
+    if builder.levels.is_none() {
+        builder.levels = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn invoice_billing_period_correct_errors(
     mut builder: crate::types::builders::InvoiceBillingPeriodBuilder,
 ) -> crate::types::builders::InvoiceBillingPeriodBuilder {
@@ -154,6 +365,21 @@ pub(crate) fn invoice_billing_period_correct_errors(
     }
     if builder.year.is_none() {
         builder.year = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn agreement_approval_resource_correct_errors(
+    mut builder: crate::types::builders::AgreementApprovalResourceBuilder,
+) -> crate::types::builders::AgreementApprovalResourceBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
     }
     builder
 }
@@ -188,12 +414,147 @@ pub(crate) fn variable_payment_term_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn buyer_agreement_approval_group_correct_errors(
+    mut builder: crate::types::builders::BuyerAgreementApprovalGroupBuilder,
+) -> crate::types::builders::BuyerAgreementApprovalGroupBuilder {
+    if builder.approval_criteria.is_none() {
+        builder.approval_criteria = {
+            let builder = crate::types::builders::BuyerAgreementApprovalCriteriaBuilder::default();
+            crate::serde_util::buyer_agreement_approval_criteria_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.approvers.is_none() {
+        builder.approvers = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn buyer_agreement_approval_plan_level_correct_errors(
+    mut builder: crate::types::builders::BuyerAgreementApprovalPlanLevelBuilder,
+) -> crate::types::builders::BuyerAgreementApprovalPlanLevelBuilder {
+    if builder.groups.is_none() {
+        builder.groups = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn buyer_agreement_approval_criteria_correct_errors(
+    mut builder: crate::types::builders::BuyerAgreementApprovalCriteriaBuilder,
+) -> crate::types::builders::BuyerAgreementApprovalCriteriaBuilder {
+    if builder.required_approval_count.is_none() {
+        builder.required_approval_count = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn dimension_correct_errors(mut builder: crate::types::builders::DimensionBuilder) -> crate::types::builders::DimensionBuilder {
     if builder.dimension_key.is_none() {
         builder.dimension_key = Some(Default::default())
     }
     if builder.dimension_value.is_none() {
         builder.dimension_value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn buyer_agreement_approval_plan_group_correct_errors(
+    mut builder: crate::types::builders::BuyerAgreementApprovalPlanGroupBuilder,
+) -> crate::types::builders::BuyerAgreementApprovalPlanGroupBuilder {
+    if builder.approval_criteria.is_none() {
+        builder.approval_criteria = {
+            let builder = crate::types::builders::BuyerAgreementApprovalCriteriaBuilder::default();
+            crate::serde_util::buyer_agreement_approval_criteria_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.approvers.is_none() {
+        builder.approvers = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn aws_organization_approver_outcome_correct_errors(
+    mut builder: crate::types::builders::AwsOrganizationApproverOutcomeBuilder,
+) -> crate::types::builders::AwsOrganizationApproverOutcomeBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ApproverOutcomeStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn email_approver_outcome_correct_errors(
+    mut builder: crate::types::builders::EmailApproverOutcomeBuilder,
+) -> crate::types::builders::EmailApproverOutcomeBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ApproverOutcomeStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.email_address.is_none() {
+        builder.email_address = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn procurement_tool_approver_outcome_correct_errors(
+    mut builder: crate::types::builders::ProcurementToolApproverOutcomeBuilder,
+) -> crate::types::builders::ProcurementToolApproverOutcomeBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ApproverOutcomeStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn caller_identity_correct_errors(
+    mut builder: crate::types::builders::CallerIdentityBuilder,
+) -> crate::types::builders::CallerIdentityBuilder {
+    if builder.principal_arn.is_none() {
+        builder.principal_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn agreement_approval_purchase_order_correct_errors(
+    mut builder: crate::types::builders::AgreementApprovalPurchaseOrderBuilder,
+) -> crate::types::builders::AgreementApprovalPurchaseOrderBuilder {
+    if builder.charge_id.is_none() {
+        builder.charge_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn aws_organization_admin_approver_correct_errors(
+    mut builder: crate::types::builders::AwsOrganizationAdminApproverBuilder,
+) -> crate::types::builders::AwsOrganizationAdminApproverBuilder {
+    if builder.organization_id.is_none() {
+        builder.organization_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn email_approver_correct_errors(
+    mut builder: crate::types::builders::EmailApproverBuilder,
+) -> crate::types::builders::EmailApproverBuilder {
+    if builder.email_address.is_none() {
+        builder.email_address = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn procurement_tool_approver_correct_errors(
+    mut builder: crate::types::builders::ProcurementToolApproverBuilder,
+) -> crate::types::builders::ProcurementToolApproverBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
     }
     builder
 }

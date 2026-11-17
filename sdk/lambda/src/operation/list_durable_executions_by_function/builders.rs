@@ -161,17 +161,71 @@ impl ListDurableExecutionsByFunctionFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
     ///
-    /// <p>Filter executions by status. Valid values: RUNNING, SUCCEEDED, FAILED, TIMED_OUT, STOPPED.</p>
+    /// <p>Filters the executions by status. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RUNNING</code> – The execution is running or waiting for pending operations to complete.</p></li>
+    /// <li>
+    /// <p><code>PAUSING</code> – The execution is waiting for an in-progress invocation to reach its next checkpoint before it pauses.</p></li>
+    /// <li>
+    /// <p><code>PAUSED</code> – The execution is paused, and Lambda doesn't invoke your function.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> – The execution completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The execution completed with an error.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – The execution exceeded its execution timeout.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> – A <code>StopDurableExecution</code> request stopped the execution.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> – A <code>DeleteDurableExecution</code> request is deleting the execution and its data.</p></li>
+    /// </ul>
     pub fn statuses(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.inner = self.inner.statuses(input);
         self
     }
-    /// <p>Filter executions by status. Valid values: RUNNING, SUCCEEDED, FAILED, TIMED_OUT, STOPPED.</p>
+    /// <p>Filters the executions by status. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RUNNING</code> – The execution is running or waiting for pending operations to complete.</p></li>
+    /// <li>
+    /// <p><code>PAUSING</code> – The execution is waiting for an in-progress invocation to reach its next checkpoint before it pauses.</p></li>
+    /// <li>
+    /// <p><code>PAUSED</code> – The execution is paused, and Lambda doesn't invoke your function.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> – The execution completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The execution completed with an error.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – The execution exceeded its execution timeout.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> – A <code>StopDurableExecution</code> request stopped the execution.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> – A <code>DeleteDurableExecution</code> request is deleting the execution and its data.</p></li>
+    /// </ul>
     pub fn set_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionStatus>>) -> Self {
         self.inner = self.inner.set_statuses(input);
         self
     }
-    /// <p>Filter executions by status. Valid values: RUNNING, SUCCEEDED, FAILED, TIMED_OUT, STOPPED.</p>
+    /// <p>Filters the executions by status. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RUNNING</code> – The execution is running or waiting for pending operations to complete.</p></li>
+    /// <li>
+    /// <p><code>PAUSING</code> – The execution is waiting for an in-progress invocation to reach its next checkpoint before it pauses.</p></li>
+    /// <li>
+    /// <p><code>PAUSED</code> – The execution is paused, and Lambda doesn't invoke your function.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> – The execution completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The execution completed with an error.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – The execution exceeded its execution timeout.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> – A <code>StopDurableExecution</code> request stopped the execution.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> – A <code>DeleteDurableExecution</code> request is deleting the execution and its data.</p></li>
+    /// </ul>
     pub fn get_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExecutionStatus>> {
         self.inner.get_statuses()
     }

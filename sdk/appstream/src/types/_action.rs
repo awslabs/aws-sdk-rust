@@ -20,6 +20,7 @@
 ///     Action::FileDownload => { /* ... */ },
 ///     Action::FileUpload => { /* ... */ },
 ///     Action::PrintingToLocalDevice => { /* ... */ },
+///     Action::SmartCardRedirection => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -64,6 +65,8 @@ pub enum Action {
     FileUpload,
     #[allow(missing_docs)] // documentation missing in model
     PrintingToLocalDevice,
+    #[allow(missing_docs)] // documentation missing in model
+    SmartCardRedirection,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -79,6 +82,7 @@ impl ::std::convert::From<&str> for Action {
             "FILE_DOWNLOAD" => Action::FileDownload,
             "FILE_UPLOAD" => Action::FileUpload,
             "PRINTING_TO_LOCAL_DEVICE" => Action::PrintingToLocalDevice,
+            "SMART_CARD_REDIRECTION" => Action::SmartCardRedirection,
             other => Action::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -102,6 +106,7 @@ impl Action {
             Action::FileDownload => "FILE_DOWNLOAD",
             Action::FileUpload => "FILE_UPLOAD",
             Action::PrintingToLocalDevice => "PRINTING_TO_LOCAL_DEVICE",
+            Action::SmartCardRedirection => "SMART_CARD_REDIRECTION",
             Action::Unknown(value) => value.as_str(),
         }
     }
@@ -116,6 +121,7 @@ impl Action {
             "FILE_DOWNLOAD",
             "FILE_UPLOAD",
             "PRINTING_TO_LOCAL_DEVICE",
+            "SMART_CARD_REDIRECTION",
         ]
     }
 }
@@ -147,6 +153,7 @@ impl ::std::fmt::Display for Action {
             Action::FileDownload => write!(f, "FILE_DOWNLOAD"),
             Action::FileUpload => write!(f, "FILE_UPLOAD"),
             Action::PrintingToLocalDevice => write!(f, "PRINTING_TO_LOCAL_DEVICE"),
+            Action::SmartCardRedirection => write!(f, "SMART_CARD_REDIRECTION"),
             Action::Unknown(value) => write!(f, "{value}"),
         }
     }

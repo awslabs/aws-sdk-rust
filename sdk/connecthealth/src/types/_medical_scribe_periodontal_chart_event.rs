@@ -3,7 +3,7 @@
 /// <p>Real-time extraction is in preview release for Amazon Connect Health and is subject to change. To request access to this feature, contact your AWS account team.</p>
 /// <p>The periodontal chart as of this point in the session. Each event carries every tooth charted so far, not only the teeth that changed.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MedicalScribePeriodontalChartEvent {
     /// <p>The version of this snapshot. Versions increase within a session and can skip values. Keep the snapshot with the highest version and ignore any event whose version is not higher, including after you reconnect to the session. Versions of checklist events and periodontal chart events are independent.</p>
     pub snapshot_version: i64,
@@ -29,6 +29,15 @@ impl MedicalScribePeriodontalChartEvent {
         self.review_items.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for MedicalScribePeriodontalChartEvent {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MedicalScribePeriodontalChartEvent");
+        formatter.field("snapshot_version", &self.snapshot_version);
+        formatter.field("teeth", &"*** Sensitive Data Redacted ***");
+        formatter.field("review_items", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl MedicalScribePeriodontalChartEvent {
     /// Creates a new builder-style object to manufacture [`MedicalScribePeriodontalChartEvent`](crate::types::MedicalScribePeriodontalChartEvent).
     pub fn builder() -> crate::types::builders::MedicalScribePeriodontalChartEventBuilder {
@@ -37,7 +46,7 @@ impl MedicalScribePeriodontalChartEvent {
 }
 
 /// A builder for [`MedicalScribePeriodontalChartEvent`](crate::types::MedicalScribePeriodontalChartEvent).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct MedicalScribePeriodontalChartEventBuilder {
     pub(crate) snapshot_version: ::std::option::Option<i64>,
@@ -120,5 +129,14 @@ impl MedicalScribePeriodontalChartEventBuilder {
             })?,
             review_items: self.review_items,
         })
+    }
+}
+impl ::std::fmt::Debug for MedicalScribePeriodontalChartEventBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MedicalScribePeriodontalChartEventBuilder");
+        formatter.field("snapshot_version", &self.snapshot_version);
+        formatter.field("teeth", &"*** Sensitive Data Redacted ***");
+        formatter.field("review_items", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

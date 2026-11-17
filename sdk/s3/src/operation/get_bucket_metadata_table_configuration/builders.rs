@@ -23,7 +23,7 @@ impl crate::operation::get_bucket_metadata_table_configuration::builders::GetBuc
 /// Fluent builder constructing a request to `GetBucketMetadataTableConfiguration`.
 ///
 /// <important>
-/// <p>We recommend that you retrieve your S3 Metadata configurations by using the V2 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataTableConfiguration.html">GetBucketMetadataTableConfiguration</a> API operation. We no longer recommend using the V1 <code>GetBucketMetadataTableConfiguration</code> API operation.</p>
+/// <p>We recommend that you retrieve your S3 Metadata configurations by using the V2 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketMetadataConfiguration.html">GetBucketMetadataConfiguration</a> API operation. We no longer recommend using the V1 <code>GetBucketMetadataTableConfiguration</code> API operation.</p>
 /// <p>If you created your S3 Metadata configuration before July 15, 2025, we recommend that you delete and re-create your configuration by using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a> so that you can expire journal table records and create a live inventory table.</p>
 /// </important>
 /// <p>Retrieves the V1 S3 Metadata configuration for a general purpose bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>.</p><note>

@@ -2,7 +2,7 @@
 
 /// <p>Optional metadata for export associated with the key material. This data is signed but transmitted in clear text.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct KeyBlockHeaders {
     /// <p>The list of cryptographic operations that you can perform using the key. The modes of use are deﬁned in section A.5.3 of the TR-31 spec.</p>
     pub key_modes_of_use: ::std::option::Option<crate::types::KeyModesOfUse>,
@@ -35,6 +35,16 @@ impl KeyBlockHeaders {
         self.optional_blocks.as_ref()
     }
 }
+impl ::std::fmt::Debug for KeyBlockHeaders {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("KeyBlockHeaders");
+        formatter.field("key_modes_of_use", &self.key_modes_of_use);
+        formatter.field("key_exportability", &self.key_exportability);
+        formatter.field("key_version", &self.key_version);
+        formatter.field("optional_blocks", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl KeyBlockHeaders {
     /// Creates a new builder-style object to manufacture [`KeyBlockHeaders`](crate::types::KeyBlockHeaders).
     pub fn builder() -> crate::types::builders::KeyBlockHeadersBuilder {
@@ -43,7 +53,7 @@ impl KeyBlockHeaders {
 }
 
 /// A builder for [`KeyBlockHeaders`](crate::types::KeyBlockHeaders).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct KeyBlockHeadersBuilder {
     pub(crate) key_modes_of_use: ::std::option::Option<crate::types::KeyModesOfUse>,
@@ -135,5 +145,15 @@ impl KeyBlockHeadersBuilder {
             key_version: self.key_version,
             optional_blocks: self.optional_blocks,
         }
+    }
+}
+impl ::std::fmt::Debug for KeyBlockHeadersBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("KeyBlockHeadersBuilder");
+        formatter.field("key_modes_of_use", &self.key_modes_of_use);
+        formatter.field("key_exportability", &self.key_exportability);
+        formatter.field("key_version", &self.key_version);
+        formatter.field("optional_blocks", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

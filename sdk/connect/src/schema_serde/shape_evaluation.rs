@@ -141,6 +141,67 @@ static EVALUATION_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = ::aws_smit
     10,
 )
 .with_map_members(&EVALUATION_MEMBER_TAGS_KEY, &EVALUATION_MEMBER_TAGS_VALUE);
+static EVALUATION_MEMBER_ITEM_ENABLEMENT_STATUS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.connect#EvaluationEnablementStatusMap$key",
+        "com.amazonaws.connect",
+        "EvaluationEnablementStatusMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "key",
+    0,
+);
+static EVALUATION_MEMBER_ITEM_ENABLEMENT_STATUS_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.connect#EvaluationEnablementStatusMap$value",
+        "com.amazonaws.connect",
+        "EvaluationEnablementStatusMap",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "value",
+    1,
+);
+static EVALUATION_MEMBER_ITEM_ENABLEMENT_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.connect#Evaluation$ItemEnablementStatus",
+        "com.amazonaws.connect",
+        "Evaluation",
+    ),
+    ::aws_smithy_schema::ShapeType::Map,
+    "ItemEnablementStatus",
+    11,
+)
+.with_map_members(
+    &EVALUATION_MEMBER_ITEM_ENABLEMENT_STATUS_KEY,
+    &EVALUATION_MEMBER_ITEM_ENABLEMENT_STATUS_VALUE,
+);
+static EVALUATION_MEMBER_SOURCE_RESOLUTION_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.connect#Evaluation$SourceResolutionStatus",
+        "com.amazonaws.connect",
+        "Evaluation",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SourceResolutionStatus",
+    12,
+);
+static EVALUATION_MEMBER_SOURCE_VALUES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.connect#EvaluationResolvedSourceList$member",
+        "com.amazonaws.connect",
+        "EvaluationResolvedSourceList",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "member",
+    0,
+);
+static EVALUATION_MEMBER_SOURCE_VALUES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.connect#Evaluation$SourceValues", "com.amazonaws.connect", "Evaluation"),
+    ::aws_smithy_schema::ShapeType::List,
+    "SourceValues",
+    13,
+)
+.with_list_member(&EVALUATION_MEMBER_SOURCE_VALUES_MEMBER);
 static EVALUATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.connect#Evaluation", "com.amazonaws.connect", "Evaluation"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -156,6 +217,9 @@ static EVALUATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_sc
         &EVALUATION_MEMBER_LAST_MODIFIED_TIME,
         &EVALUATION_MEMBER_EVALUATION_TYPE,
         &EVALUATION_MEMBER_TAGS,
+        &EVALUATION_MEMBER_ITEM_ENABLEMENT_STATUS,
+        &EVALUATION_MEMBER_SOURCE_RESOLUTION_STATUS,
+        &EVALUATION_MEMBER_SOURCE_VALUES,
     ],
 );
 impl crate::types::Evaluation {
@@ -240,6 +304,32 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Evaluation
                 }
                 Ok(())
             })?;
+        }
+        if let Some(ref val) = self.item_enablement_status {
+            ser.write_map(
+                &EVALUATION_MEMBER_ITEM_ENABLEMENT_STATUS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, value.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.source_resolution_status {
+            ser.write_string(&EVALUATION_MEMBER_SOURCE_RESOLUTION_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.source_values {
+            ser.write_list(
+                &EVALUATION_MEMBER_SOURCE_VALUES,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_struct(crate::types::EvaluationResolvedSource::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
         }
         Ok(())
     }
@@ -326,6 +416,46 @@ impl crate::types::builders::EvaluationBuilder {
                         deser.read_null()?;
                     } else {
                         self.tags = Some(deser.read_string_string_map(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.item_enablement_status = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(
+                                    key,
+                                    crate::types::EvaluationEnablementStatus::from(
+                                        deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                    ),
+                                );
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_resolution_status = Some(crate::types::EvaluationItemResolutionStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source_values = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::EvaluationResolvedSource::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
                     }
                 }
                 _ => {}

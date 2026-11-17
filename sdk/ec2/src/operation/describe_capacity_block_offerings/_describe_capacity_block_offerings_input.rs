@@ -25,6 +25,8 @@ pub struct DescribeCapacityBlockOfferingsInput {
     pub ultraserver_count: ::std::option::Option<i32>,
     /// <p>Include all Availability Zones and Local Zones, regardless of your opt-in status. If you do not use this parameter, the results include available offerings from all Availability Zones in the Amazon Web Services Region and Local Zones you are opted into.</p>
     pub all_availability_zones: ::std::option::Option<bool>,
+    /// <p>List of instance type preferences for the Capacity Block offering search. Accepts one or more instance type names. Either this or the legacy <code>InstanceType</code> parameter is required.</p>
+    pub instance_type_preferences: ::std::option::Option<::std::vec::Vec<crate::types::CapacityBlockInstanceTypePreference>>,
 }
 impl DescribeCapacityBlockOfferingsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -71,6 +73,12 @@ impl DescribeCapacityBlockOfferingsInput {
     pub fn all_availability_zones(&self) -> ::std::option::Option<bool> {
         self.all_availability_zones
     }
+    /// <p>List of instance type preferences for the Capacity Block offering search. Accepts one or more instance type names. Either this or the legacy <code>InstanceType</code> parameter is required.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_type_preferences.is_none()`.
+    pub fn instance_type_preferences(&self) -> &[crate::types::CapacityBlockInstanceTypePreference] {
+        self.instance_type_preferences.as_deref().unwrap_or_default()
+    }
 }
 impl DescribeCapacityBlockOfferingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeCapacityBlockOfferingsInput`](crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsInput).
@@ -94,6 +102,7 @@ pub struct DescribeCapacityBlockOfferingsInputBuilder {
     pub(crate) ultraserver_type: ::std::option::Option<::std::string::String>,
     pub(crate) ultraserver_count: ::std::option::Option<i32>,
     pub(crate) all_availability_zones: ::std::option::Option<bool>,
+    pub(crate) instance_type_preferences: ::std::option::Option<::std::vec::Vec<crate::types::CapacityBlockInstanceTypePreference>>,
 }
 impl DescribeCapacityBlockOfferingsInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -251,6 +260,29 @@ impl DescribeCapacityBlockOfferingsInputBuilder {
     pub fn get_all_availability_zones(&self) -> &::std::option::Option<bool> {
         &self.all_availability_zones
     }
+    /// Appends an item to `instance_type_preferences`.
+    ///
+    /// To override the contents of this collection use [`set_instance_type_preferences`](Self::set_instance_type_preferences).
+    ///
+    /// <p>List of instance type preferences for the Capacity Block offering search. Accepts one or more instance type names. Either this or the legacy <code>InstanceType</code> parameter is required.</p>
+    pub fn instance_type_preferences(mut self, input: crate::types::CapacityBlockInstanceTypePreference) -> Self {
+        let mut v = self.instance_type_preferences.unwrap_or_default();
+        v.push(input);
+        self.instance_type_preferences = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>List of instance type preferences for the Capacity Block offering search. Accepts one or more instance type names. Either this or the legacy <code>InstanceType</code> parameter is required.</p>
+    pub fn set_instance_type_preferences(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityBlockInstanceTypePreference>>,
+    ) -> Self {
+        self.instance_type_preferences = input;
+        self
+    }
+    /// <p>List of instance type preferences for the Capacity Block offering search. Accepts one or more instance type names. Either this or the legacy <code>InstanceType</code> parameter is required.</p>
+    pub fn get_instance_type_preferences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityBlockInstanceTypePreference>> {
+        &self.instance_type_preferences
+    }
     /// Consumes the builder and constructs a [`DescribeCapacityBlockOfferingsInput`](crate::operation::describe_capacity_block_offerings::DescribeCapacityBlockOfferingsInput).
     pub fn build(
         self,
@@ -270,6 +302,7 @@ impl DescribeCapacityBlockOfferingsInputBuilder {
             ultraserver_type: self.ultraserver_type,
             ultraserver_count: self.ultraserver_count,
             all_availability_zones: self.all_availability_zones,
+            instance_type_preferences: self.instance_type_preferences,
         })
     }
 }

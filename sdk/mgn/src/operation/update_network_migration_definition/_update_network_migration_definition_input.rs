@@ -23,6 +23,8 @@ pub struct UpdateNetworkMigrationDefinitionInput {
     pub cidr_mappings: ::std::option::Option<::std::vec::Vec<crate::types::CidrMapping>>,
     /// <p>The updated scope tags for the network migration definition.</p>
     pub scope_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The updated type of the network migration definition.</p>
+    pub definition_type: ::std::option::Option<crate::types::DefinitionType>,
 }
 impl UpdateNetworkMigrationDefinitionInput {
     /// <p>The unique identifier of the network migration definition to update.</p>
@@ -69,6 +71,10 @@ impl UpdateNetworkMigrationDefinitionInput {
     pub fn scope_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.scope_tags.as_ref()
     }
+    /// <p>The updated type of the network migration definition.</p>
+    pub fn definition_type(&self) -> ::std::option::Option<&crate::types::DefinitionType> {
+        self.definition_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateNetworkMigrationDefinitionInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -83,6 +89,7 @@ impl ::std::fmt::Debug for UpdateNetworkMigrationDefinitionInput {
         formatter.field("vpc_provisioning_strategy", &self.vpc_provisioning_strategy);
         formatter.field("cidr_mappings", &self.cidr_mappings);
         formatter.field("scope_tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("definition_type", &self.definition_type);
         formatter.finish()
     }
 }
@@ -107,6 +114,7 @@ pub struct UpdateNetworkMigrationDefinitionInputBuilder {
     pub(crate) vpc_provisioning_strategy: ::std::option::Option<crate::types::VpcProvisioningStrategy>,
     pub(crate) cidr_mappings: ::std::option::Option<::std::vec::Vec<crate::types::CidrMapping>>,
     pub(crate) scope_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) definition_type: ::std::option::Option<crate::types::DefinitionType>,
 }
 impl UpdateNetworkMigrationDefinitionInputBuilder {
     /// <p>The unique identifier of the network migration definition to update.</p>
@@ -268,6 +276,20 @@ impl UpdateNetworkMigrationDefinitionInputBuilder {
     pub fn get_scope_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.scope_tags
     }
+    /// <p>The updated type of the network migration definition.</p>
+    pub fn definition_type(mut self, input: crate::types::DefinitionType) -> Self {
+        self.definition_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The updated type of the network migration definition.</p>
+    pub fn set_definition_type(mut self, input: ::std::option::Option<crate::types::DefinitionType>) -> Self {
+        self.definition_type = input;
+        self
+    }
+    /// <p>The updated type of the network migration definition.</p>
+    pub fn get_definition_type(&self) -> &::std::option::Option<crate::types::DefinitionType> {
+        &self.definition_type
+    }
     /// Consumes the builder and constructs a [`UpdateNetworkMigrationDefinitionInput`](crate::operation::update_network_migration_definition::UpdateNetworkMigrationDefinitionInput).
     pub fn build(
         self,
@@ -287,6 +309,7 @@ impl UpdateNetworkMigrationDefinitionInputBuilder {
                 vpc_provisioning_strategy: self.vpc_provisioning_strategy,
                 cidr_mappings: self.cidr_mappings,
                 scope_tags: self.scope_tags,
+                definition_type: self.definition_type,
             },
         )
     }
@@ -304,6 +327,7 @@ impl ::std::fmt::Debug for UpdateNetworkMigrationDefinitionInputBuilder {
         formatter.field("vpc_provisioning_strategy", &self.vpc_provisioning_strategy);
         formatter.field("cidr_mappings", &self.cidr_mappings);
         formatter.field("scope_tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("definition_type", &self.definition_type);
         formatter.finish()
     }
 }

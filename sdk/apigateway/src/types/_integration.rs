@@ -16,7 +16,7 @@ pub struct Integration {
     pub connection_type: ::std::option::Option<crate::types::ConnectionType>,
     /// <p>The ID of the VpcLink used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
     pub connection_id: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported Amazon Web Services services, specify null.</p>
+    /// <p>Specifies the credentials required for the integration, if any. For Amazon Web Services integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported Amazon Web Services services, specify null.</p>
     pub credentials: ::std::option::Option<::std::string::String>,
     /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
     pub request_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -39,7 +39,7 @@ pub struct Integration {
     pub tls_config: ::std::option::Option<crate::types::TlsConfig>,
     /// <p>The response transfer mode of the integration.</p>
     pub response_transfer_mode: ::std::option::Option<crate::types::ResponseTransferMode>,
-    /// <p>The ALB or NLB listener to send the request to.</p>
+    /// <p>The ALB or NLB ARN to send the request to.</p>
     pub integration_target: ::std::option::Option<::std::string::String>,
 }
 impl Integration {
@@ -65,7 +65,7 @@ impl Integration {
     pub fn connection_id(&self) -> ::std::option::Option<&str> {
         self.connection_id.as_deref()
     }
-    /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported Amazon Web Services services, specify null.</p>
+    /// <p>Specifies the credentials required for the integration, if any. For Amazon Web Services integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported Amazon Web Services services, specify null.</p>
     pub fn credentials(&self) -> ::std::option::Option<&str> {
         self.credentials.as_deref()
     }
@@ -114,7 +114,7 @@ impl Integration {
     pub fn response_transfer_mode(&self) -> ::std::option::Option<&crate::types::ResponseTransferMode> {
         self.response_transfer_mode.as_ref()
     }
-    /// <p>The ALB or NLB listener to send the request to.</p>
+    /// <p>The ALB or NLB ARN to send the request to.</p>
     pub fn integration_target(&self) -> ::std::option::Option<&str> {
         self.integration_target.as_deref()
     }
@@ -225,17 +225,17 @@ impl IntegrationBuilder {
     pub fn get_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.connection_id
     }
-    /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported Amazon Web Services services, specify null.</p>
+    /// <p>Specifies the credentials required for the integration, if any. For Amazon Web Services integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported Amazon Web Services services, specify null.</p>
     pub fn credentials(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.credentials = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported Amazon Web Services services, specify null.</p>
+    /// <p>Specifies the credentials required for the integration, if any. For Amazon Web Services integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported Amazon Web Services services, specify null.</p>
     pub fn set_credentials(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.credentials = input;
         self
     }
-    /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported Amazon Web Services services, specify null.</p>
+    /// <p>Specifies the credentials required for the integration, if any. For Amazon Web Services integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported Amazon Web Services services, specify null.</p>
     pub fn get_credentials(&self) -> &::std::option::Option<::std::string::String> {
         &self.credentials
     }
@@ -425,17 +425,17 @@ impl IntegrationBuilder {
     pub fn get_response_transfer_mode(&self) -> &::std::option::Option<crate::types::ResponseTransferMode> {
         &self.response_transfer_mode
     }
-    /// <p>The ALB or NLB listener to send the request to.</p>
+    /// <p>The ALB or NLB ARN to send the request to.</p>
     pub fn integration_target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.integration_target = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ALB or NLB listener to send the request to.</p>
+    /// <p>The ALB or NLB ARN to send the request to.</p>
     pub fn set_integration_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.integration_target = input;
         self
     }
-    /// <p>The ALB or NLB listener to send the request to.</p>
+    /// <p>The ALB or NLB ARN to send the request to.</p>
     pub fn get_integration_target(&self) -> &::std::option::Option<::std::string::String> {
         &self.integration_target
     }

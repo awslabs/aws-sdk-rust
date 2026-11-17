@@ -2,7 +2,7 @@
 
 /// <p>Details about a message.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Message {
     /// <p>The message's role.</p>
     pub role: crate::types::ConversationRole,
@@ -20,6 +20,14 @@ impl Message {
         self.content.deref()
     }
 }
+impl ::std::fmt::Debug for Message {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Message");
+        formatter.field("role", &self.role);
+        formatter.field("content", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Message {
     /// Creates a new builder-style object to manufacture [`Message`](crate::types::Message).
     pub fn builder() -> crate::types::builders::MessageBuilder {
@@ -28,7 +36,7 @@ impl Message {
 }
 
 /// A builder for [`Message`](crate::types::Message).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct MessageBuilder {
     pub(crate) role: ::std::option::Option<crate::types::ConversationRole>,
@@ -89,5 +97,13 @@ impl MessageBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for MessageBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MessageBuilder");
+        formatter.field("role", &self.role);
+        formatter.field("content", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

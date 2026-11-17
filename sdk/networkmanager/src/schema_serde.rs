@@ -445,6 +445,8 @@ pub(crate) mod shape_list_tags_for_resource_output_output;
 
 pub(crate) mod shape_location;
 
+pub(crate) mod shape_multipath_resilience_change_values;
+
 pub(crate) mod shape_nat_rule;
 
 pub(crate) mod shape_nat_rule_request;

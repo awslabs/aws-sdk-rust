@@ -15,54 +15,57 @@ pub fn ser_update_network_migration_definition_input_input(
         }
         array_2.finish();
     }
-    if let Some(var_5) = &input.description {
-        object.key("description").string(var_5.as_str());
+    if let Some(var_5) = &input.definition_type {
+        object.key("definitionType").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.name {
-        object.key("name").string(var_6.as_str());
+    if let Some(var_6) = &input.description {
+        object.key("description").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.network_migration_definition_id {
-        object.key("networkMigrationDefinitionID").string(var_7.as_str());
+    if let Some(var_7) = &input.name {
+        object.key("name").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.scope_tags {
+    if let Some(var_8) = &input.network_migration_definition_id {
+        object.key("networkMigrationDefinitionID").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.scope_tags {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("scopeTags").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_10 = object.key("scopeTags").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_9.finish();
+        object_10.finish();
     }
-    if let Some(var_12) = &input.source_configurations {
-        let mut array_13 = object.key("sourceConfigurations").start_array();
-        for item_14 in var_12 {
+    if let Some(var_13) = &input.source_configurations {
+        let mut array_14 = object.key("sourceConfigurations").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_15 = array_13.value().start_object();
-                crate::protocol_serde::shape_source_configuration::ser_source_configuration(&mut object_15, item_14)?;
-                object_15.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_source_configuration::ser_source_configuration(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_13.finish();
+        array_14.finish();
     }
-    if let Some(var_16) = &input.target_deployment {
-        object.key("targetDeployment").string(var_16.as_str());
+    if let Some(var_17) = &input.target_deployment {
+        object.key("targetDeployment").string(var_17.as_str());
     }
-    if let Some(var_17) = &input.target_network {
+    if let Some(var_18) = &input.target_network {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("targetNetwork").start_object();
-        crate::protocol_serde::shape_target_network_update::ser_target_network_update(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_19 = object.key("targetNetwork").start_object();
+        crate::protocol_serde::shape_target_network_update::ser_target_network_update(&mut object_19, var_18)?;
+        object_19.finish();
     }
-    if let Some(var_19) = &input.target_s3_configuration {
+    if let Some(var_20) = &input.target_s3_configuration {
         #[allow(unused_mut)]
-        let mut object_20 = object.key("targetS3Configuration").start_object();
-        crate::protocol_serde::shape_target_s3_configuration_update::ser_target_s3_configuration_update(&mut object_20, var_19)?;
-        object_20.finish();
+        let mut object_21 = object.key("targetS3Configuration").start_object();
+        crate::protocol_serde::shape_target_s3_configuration_update::ser_target_s3_configuration_update(&mut object_21, var_20)?;
+        object_21.finish();
     }
-    if let Some(var_21) = &input.vpc_provisioning_strategy {
-        object.key("vpcProvisioningStrategy").string(var_21.as_str());
+    if let Some(var_22) = &input.vpc_provisioning_strategy {
+        object.key("vpcProvisioningStrategy").string(var_22.as_str());
     }
     Ok(())
 }

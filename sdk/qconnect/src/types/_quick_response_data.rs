@@ -2,7 +2,7 @@
 
 /// <p>Information about the quick response.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct QuickResponseData {
     /// <p>The Amazon Resource Name (ARN) of the quick response.</p>
     pub quick_response_arn: ::std::string::String,
@@ -141,6 +141,31 @@ impl QuickResponseData {
         self.tags.as_ref()
     }
 }
+impl ::std::fmt::Debug for QuickResponseData {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("QuickResponseData");
+        formatter.field("quick_response_arn", &self.quick_response_arn);
+        formatter.field("quick_response_id", &self.quick_response_id);
+        formatter.field("knowledge_base_arn", &self.knowledge_base_arn);
+        formatter.field("knowledge_base_id", &self.knowledge_base_id);
+        formatter.field("name", &self.name);
+        formatter.field("content_type", &self.content_type);
+        formatter.field("status", &self.status);
+        formatter.field("created_time", &self.created_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("last_modified_region", &self.last_modified_region);
+        formatter.field("contents", &self.contents);
+        formatter.field("description", &self.description);
+        formatter.field("grouping_configuration", &self.grouping_configuration);
+        formatter.field("shortcut_key", &self.shortcut_key);
+        formatter.field("last_modified_by", &self.last_modified_by);
+        formatter.field("is_active", &self.is_active);
+        formatter.field("channels", &"*** Sensitive Data Redacted ***");
+        formatter.field("language", &self.language);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
 impl QuickResponseData {
     /// Creates a new builder-style object to manufacture [`QuickResponseData`](crate::types::QuickResponseData).
     pub fn builder() -> crate::types::builders::QuickResponseDataBuilder {
@@ -149,7 +174,7 @@ impl QuickResponseData {
 }
 
 /// A builder for [`QuickResponseData`](crate::types::QuickResponseData).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct QuickResponseDataBuilder {
     pub(crate) quick_response_arn: ::std::option::Option<::std::string::String>,
@@ -556,5 +581,30 @@ impl QuickResponseDataBuilder {
             language: self.language,
             tags: self.tags,
         })
+    }
+}
+impl ::std::fmt::Debug for QuickResponseDataBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("QuickResponseDataBuilder");
+        formatter.field("quick_response_arn", &self.quick_response_arn);
+        formatter.field("quick_response_id", &self.quick_response_id);
+        formatter.field("knowledge_base_arn", &self.knowledge_base_arn);
+        formatter.field("knowledge_base_id", &self.knowledge_base_id);
+        formatter.field("name", &self.name);
+        formatter.field("content_type", &self.content_type);
+        formatter.field("status", &self.status);
+        formatter.field("created_time", &self.created_time);
+        formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("last_modified_region", &self.last_modified_region);
+        formatter.field("contents", &self.contents);
+        formatter.field("description", &self.description);
+        formatter.field("grouping_configuration", &self.grouping_configuration);
+        formatter.field("shortcut_key", &self.shortcut_key);
+        formatter.field("last_modified_by", &self.last_modified_by);
+        formatter.field("is_active", &self.is_active);
+        formatter.field("channels", &"*** Sensitive Data Redacted ***");
+        formatter.field("language", &self.language);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
     }
 }

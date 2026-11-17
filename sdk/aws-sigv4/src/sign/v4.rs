@@ -23,6 +23,10 @@ pub(crate) fn sha256_hex_string(bytes: impl AsRef<[u8]>) -> String {
     hex::encode(hasher.finalize_fixed())
 }
 
+/// `sha256_hex_string` of an empty input.
+pub(crate) const EMPTY_PAYLOAD_SHA256: &str =
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
+
 /// Calculates a Sigv4 signature
 pub fn calculate_signature(signing_key: impl AsRef<[u8]>, string_to_sign: &[u8]) -> String {
     let mut mac = Hmac::<Sha256>::new_from_slice(signing_key.as_ref())
@@ -207,7 +211,7 @@ pub fn sign_chunk<'a, S>(
     running_signature: &'a str,
     params: &'a SigningParams<'a, S>,
 ) -> Result<SigningOutput<()>, SigningError> {
-    let payload_hash = format!("{}\n{}", sha256_hex_string([]), sha256_hex_string(chunk));
+    let payload_hash = format!("{EMPTY_PAYLOAD_SHA256}\n{}", sha256_hex_string(chunk));
     sign_streaming_payload(
         HMAC_SHA256_PAYLOAD,
         running_signature,
@@ -286,7 +290,9 @@ fn sign_streaming_payload<'a, S>(
 
 #[cfg(test)]
 mod tests {
-    use super::{calculate_signature, generate_signing_key, sha256_hex_string};
+    use super::{
+        calculate_signature, generate_signing_key, sha256_hex_string, EMPTY_PAYLOAD_SHA256,
+    };
     use crate::date_time::test_parsers::parse_date_time;
 
     #[test]
@@ -310,5 +316,6 @@ f536975d06c0309214f805bb90ccff089219ecd68b2577efef23edd43b7e1a59"#;
         let expected = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
         let actual = sha256_hex_string([]);
         assert_eq!(expected, actual);
+        assert_eq!(EMPTY_PAYLOAD_SHA256, actual);
     }
 }

@@ -25,6 +25,78 @@ pub fn de_transit_gateway_peering_attachment_options(
                 builder = builder.set_dynamic_routing(var_1);
             }
             ,
+            s if s.matches("requesterAllowMultipathResilience") /* RequesterAllowMultipathResilience com.amazonaws.ec2#TransitGatewayPeeringAttachmentOptions$RequesterAllowMultipathResilience */ =>  {
+                let var_2 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_requester_allow_multipath_resilience(var_2);
+            }
+            ,
+            s if s.matches("requesterMultipathResilienceMode") /* RequesterMultipathResilienceMode com.amazonaws.ec2#TransitGatewayPeeringAttachmentOptions$RequesterMultipathResilienceMode */ =>  {
+                let var_3 =
+                    Some(
+                        Result::<crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_requester_multipath_resilience_mode(var_3);
+            }
+            ,
+            s if s.matches("accepterAllowMultipathResilience") /* AccepterAllowMultipathResilience com.amazonaws.ec2#TransitGatewayPeeringAttachmentOptions$AccepterAllowMultipathResilience */ =>  {
+                let var_4 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.ec2#Boolean`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_accepter_allow_multipath_resilience(var_4);
+            }
+            ,
+            s if s.matches("accepterMultipathResilienceMode") /* AccepterMultipathResilienceMode com.amazonaws.ec2#TransitGatewayPeeringAttachmentOptions$AccepterMultipathResilienceMode */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_accepter_multipath_resilience_mode(var_5);
+            }
+            ,
+            s if s.matches("multipathResilienceStatus") /* MultipathResilienceStatus com.amazonaws.ec2#TransitGatewayPeeringAttachmentOptions$MultipathResilienceStatus */ =>  {
+                let var_6 =
+                    Some(
+                        Result::<crate::types::TransitGatewayPeeringAttachmentMultipathResilienceStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::TransitGatewayPeeringAttachmentMultipathResilienceStatus::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_multipath_resilience_status(var_6);
+            }
+            ,
             _ => {}
         }
     }

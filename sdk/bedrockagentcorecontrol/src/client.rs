@@ -339,6 +339,8 @@ mod delete_resource_policy;
 
 mod delete_workload_identity;
 
+mod get_agent_insight_store;
+
 mod get_agent_runtime;
 
 mod get_agent_runtime_endpoint;
@@ -408,6 +410,8 @@ mod get_resource_policy;
 mod get_token_vault;
 
 mod get_workload_identity;
+
+mod list_agent_insight_stores;
 
 mod list_agent_runtime_endpoints;
 
@@ -506,6 +510,8 @@ mod synchronize_gateway_targets;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_agent_insight_store;
 
 mod update_agent_runtime;
 

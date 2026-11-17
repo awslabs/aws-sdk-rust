@@ -110,6 +110,35 @@ impl From<crate::operation::create_centralization_rule_for_organization::CreateC
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_connector::CreateConnectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_connector::CreateConnectorError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_connector::CreateConnectorError> for Error {
+    fn from(err: crate::operation::create_connector::CreateConnectorError) -> Self {
+        match err {
+            crate::operation::create_connector::CreateConnectorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_connector::CreateConnectorError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_connector::CreateConnectorError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_connector::CreateConnectorError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_connector::CreateConnectorError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_connector::CreateConnectorError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_connector::CreateConnectorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_dataset_integration::CreateDatasetIntegrationError, R>>
     for Error
 where
@@ -346,6 +375,33 @@ impl From<crate::operation::delete_centralization_rule_for_organization::DeleteC
             crate::operation::delete_centralization_rule_for_organization::DeleteCentralizationRuleForOrganizationError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::delete_centralization_rule_for_organization::DeleteCentralizationRuleForOrganizationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_centralization_rule_for_organization::DeleteCentralizationRuleForOrganizationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_connector::DeleteConnectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_connector::DeleteConnectorError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_connector::DeleteConnectorError> for Error {
+    fn from(err: crate::operation::delete_connector::DeleteConnectorError) -> Self {
+        match err {
+            crate::operation::delete_connector::DeleteConnectorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_connector::DeleteConnectorError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_connector::DeleteConnectorError::InvalidStateException(inner) => Error::InvalidStateException(inner),
+            crate::operation::delete_connector::DeleteConnectorError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_connector::DeleteConnectorError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_connector::DeleteConnectorError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_connector::DeleteConnectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -597,6 +653,115 @@ impl From<crate::operation::get_centralization_rule_for_organization::GetCentral
             crate::operation::get_centralization_rule_for_organization::GetCentralizationRuleForOrganizationError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_connector::GetConnectorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_connector::GetConnectorError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_connector::GetConnectorError> for Error {
+    fn from(err: crate::operation::get_connector::GetConnectorError) -> Self {
+        match err {
+            crate::operation::get_connector::GetConnectorError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_connector::GetConnectorError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_connector::GetConnectorError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_connector::GetConnectorError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::get_connector::GetConnectorError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_connector::GetConnectorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_connector_telemetry_manifest::GetConnectorTelemetryManifestError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_connector_telemetry_manifest::GetConnectorTelemetryManifestError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_connector_telemetry_manifest::GetConnectorTelemetryManifestError> for Error {
+    fn from(err: crate::operation::get_connector_telemetry_manifest::GetConnectorTelemetryManifestError) -> Self {
+        match err {
+            crate::operation::get_connector_telemetry_manifest::GetConnectorTelemetryManifestError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_connector_telemetry_manifest::GetConnectorTelemetryManifestError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_connector_telemetry_manifest::GetConnectorTelemetryManifestError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_connector_telemetry_manifest::GetConnectorTelemetryManifestError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_connector_telemetry_manifest::GetConnectorTelemetryManifestError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_connector_telemetry_manifest::GetConnectorTelemetryManifestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_connector_telemetry_setup::GetConnectorTelemetrySetupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_connector_telemetry_setup::GetConnectorTelemetrySetupError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_connector_telemetry_setup::GetConnectorTelemetrySetupError> for Error {
+    fn from(err: crate::operation::get_connector_telemetry_setup::GetConnectorTelemetrySetupError) -> Self {
+        match err {
+            crate::operation::get_connector_telemetry_setup::GetConnectorTelemetrySetupError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_connector_telemetry_setup::GetConnectorTelemetrySetupError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_connector_telemetry_setup::GetConnectorTelemetrySetupError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_connector_telemetry_setup::GetConnectorTelemetrySetupError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_connector_telemetry_setup::GetConnectorTelemetrySetupError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_connector_telemetry_setup::GetConnectorTelemetrySetupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -893,6 +1058,55 @@ impl From<crate::operation::get_telemetry_rule_for_organization::GetTelemetryRul
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_third_party_telemetry_enrichment::GetThirdPartyTelemetryEnrichmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_third_party_telemetry_enrichment::GetThirdPartyTelemetryEnrichmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_third_party_telemetry_enrichment::GetThirdPartyTelemetryEnrichmentError> for Error {
+    fn from(err: crate::operation::get_third_party_telemetry_enrichment::GetThirdPartyTelemetryEnrichmentError) -> Self {
+        match err {
+            crate::operation::get_third_party_telemetry_enrichment::GetThirdPartyTelemetryEnrichmentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_third_party_telemetry_enrichment::GetThirdPartyTelemetryEnrichmentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_third_party_telemetry_enrichment::GetThirdPartyTelemetryEnrichmentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_third_party_telemetry_enrichment::GetThirdPartyTelemetryEnrichmentError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::get_third_party_telemetry_enrichment::GetThirdPartyTelemetryEnrichmentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_third_party_telemetry_enrichment::GetThirdPartyTelemetryEnrichmentError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_centralization_rules_for_organization::ListCentralizationRulesForOrganizationError,
             R,
         >,
@@ -936,6 +1150,31 @@ impl From<crate::operation::list_centralization_rules_for_organization::ListCent
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_connectors::ListConnectorsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_connectors::ListConnectorsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_connectors::ListConnectorsError> for Error {
+    fn from(err: crate::operation::list_connectors::ListConnectorsError) -> Self {
+        match err {
+            crate::operation::list_connectors::ListConnectorsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_connectors::ListConnectorsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_connectors::ListConnectorsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_connectors::ListConnectorsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_connectors::ListConnectorsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_dataset_integrations::ListDatasetIntegrationsError, R>>
     for Error
 where
@@ -969,6 +1208,45 @@ impl From<crate::operation::list_dataset_integrations::ListDatasetIntegrationsEr
                 Error::ValidationException(inner)
             }
             crate::operation::list_dataset_integrations::ListDatasetIntegrationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resources_by_connector::ListResourcesByConnectorError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resources_by_connector::ListResourcesByConnectorError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_resources_by_connector::ListResourcesByConnectorError> for Error {
+    fn from(err: crate::operation::list_resources_by_connector::ListResourcesByConnectorError) -> Self {
+        match err {
+            crate::operation::list_resources_by_connector::ListResourcesByConnectorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_resources_by_connector::ListResourcesByConnectorError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_resources_by_connector::ListResourcesByConnectorError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_resources_by_connector::ListResourcesByConnectorError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_resources_by_connector::ListResourcesByConnectorError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_resources_by_connector::ListResourcesByConnectorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1225,6 +1503,99 @@ impl From<crate::operation::list_telemetry_rules_for_organization::ListTelemetry
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_third_party_telemetry_enrichments::ListThirdPartyTelemetryEnrichmentsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_third_party_telemetry_enrichments::ListThirdPartyTelemetryEnrichmentsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_third_party_telemetry_enrichments::ListThirdPartyTelemetryEnrichmentsError> for Error {
+    fn from(err: crate::operation::list_third_party_telemetry_enrichments::ListThirdPartyTelemetryEnrichmentsError) -> Self {
+        match err {
+            crate::operation::list_third_party_telemetry_enrichments::ListThirdPartyTelemetryEnrichmentsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_third_party_telemetry_enrichments::ListThirdPartyTelemetryEnrichmentsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_third_party_telemetry_enrichments::ListThirdPartyTelemetryEnrichmentsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_third_party_telemetry_enrichments::ListThirdPartyTelemetryEnrichmentsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_third_party_telemetry_enrichments::ListThirdPartyTelemetryEnrichmentsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_connector_telemetry_manifest::PutConnectorTelemetryManifestError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_connector_telemetry_manifest::PutConnectorTelemetryManifestError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_connector_telemetry_manifest::PutConnectorTelemetryManifestError> for Error {
+    fn from(err: crate::operation::put_connector_telemetry_manifest::PutConnectorTelemetryManifestError) -> Self {
+        match err {
+            crate::operation::put_connector_telemetry_manifest::PutConnectorTelemetryManifestError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_connector_telemetry_manifest::PutConnectorTelemetryManifestError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_connector_telemetry_manifest::PutConnectorTelemetryManifestError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_connector_telemetry_manifest::PutConnectorTelemetryManifestError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_connector_telemetry_manifest::PutConnectorTelemetryManifestError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::put_connector_telemetry_manifest::PutConnectorTelemetryManifestError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_connector_telemetry_manifest::PutConnectorTelemetryManifestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_telemetry_enrichment::StartTelemetryEnrichmentError, R>>
     for Error
 where
@@ -1341,6 +1712,105 @@ impl From<crate::operation::start_telemetry_evaluation_for_organization::StartTe
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_telemetry_pipeline_refresh::StartTelemetryPipelineRefreshError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_telemetry_pipeline_refresh::StartTelemetryPipelineRefreshError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_telemetry_pipeline_refresh::StartTelemetryPipelineRefreshError> for Error {
+    fn from(err: crate::operation::start_telemetry_pipeline_refresh::StartTelemetryPipelineRefreshError) -> Self {
+        match err {
+            crate::operation::start_telemetry_pipeline_refresh::StartTelemetryPipelineRefreshError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_telemetry_pipeline_refresh::StartTelemetryPipelineRefreshError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_telemetry_pipeline_refresh::StartTelemetryPipelineRefreshError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_telemetry_pipeline_refresh::StartTelemetryPipelineRefreshError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_telemetry_pipeline_refresh::StartTelemetryPipelineRefreshError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::start_telemetry_pipeline_refresh::StartTelemetryPipelineRefreshError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_telemetry_pipeline_refresh::StartTelemetryPipelineRefreshError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_third_party_telemetry_enrichment::StartThirdPartyTelemetryEnrichmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_third_party_telemetry_enrichment::StartThirdPartyTelemetryEnrichmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_third_party_telemetry_enrichment::StartThirdPartyTelemetryEnrichmentError> for Error {
+    fn from(err: crate::operation::start_third_party_telemetry_enrichment::StartThirdPartyTelemetryEnrichmentError) -> Self {
+        match err {
+            crate::operation::start_third_party_telemetry_enrichment::StartThirdPartyTelemetryEnrichmentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_third_party_telemetry_enrichment::StartThirdPartyTelemetryEnrichmentError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_third_party_telemetry_enrichment::StartThirdPartyTelemetryEnrichmentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_third_party_telemetry_enrichment::StartThirdPartyTelemetryEnrichmentError::ServiceQuotaExceededException(
+                inner,
+            ) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::start_third_party_telemetry_enrichment::StartThirdPartyTelemetryEnrichmentError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::start_third_party_telemetry_enrichment::StartThirdPartyTelemetryEnrichmentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_third_party_telemetry_enrichment::StartThirdPartyTelemetryEnrichmentError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_telemetry_enrichment::StopTelemetryEnrichmentError, R>>
     for Error
 where
@@ -1452,6 +1922,58 @@ impl From<crate::operation::stop_telemetry_evaluation_for_organization::StopTele
                 Error::ValidationException(inner)
             }
             crate::operation::stop_telemetry_evaluation_for_organization::StopTelemetryEvaluationForOrganizationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::stop_third_party_telemetry_enrichment::StopThirdPartyTelemetryEnrichmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::stop_third_party_telemetry_enrichment::StopThirdPartyTelemetryEnrichmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_third_party_telemetry_enrichment::StopThirdPartyTelemetryEnrichmentError> for Error {
+    fn from(err: crate::operation::stop_third_party_telemetry_enrichment::StopThirdPartyTelemetryEnrichmentError) -> Self {
+        match err {
+            crate::operation::stop_third_party_telemetry_enrichment::StopThirdPartyTelemetryEnrichmentError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::stop_third_party_telemetry_enrichment::StopThirdPartyTelemetryEnrichmentError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::stop_third_party_telemetry_enrichment::StopThirdPartyTelemetryEnrichmentError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::stop_third_party_telemetry_enrichment::StopThirdPartyTelemetryEnrichmentError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::stop_third_party_telemetry_enrichment::StopThirdPartyTelemetryEnrichmentError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::stop_third_party_telemetry_enrichment::StopThirdPartyTelemetryEnrichmentError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::stop_third_party_telemetry_enrichment::StopThirdPartyTelemetryEnrichmentError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
         }

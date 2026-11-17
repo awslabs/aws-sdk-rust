@@ -72,6 +72,19 @@ pub fn ser_describe_capacity_block_offerings_input_input_input(
     if let Some(var_22) = &input.all_availability_zones {
         scope_21.boolean(*var_22);
     }
+    #[allow(unused_mut)]
+    let mut scope_23 = writer.prefix("InstanceTypePreference");
+    if let Some(var_24) = &input.instance_type_preferences {
+        if !var_24.is_empty() {
+            let mut list_26 = scope_23.start_list(true, Some("item"));
+            for item_25 in var_24 {
+                #[allow(unused_mut)]
+                let mut entry_27 = list_26.entry();
+                crate::protocol_serde::shape_capacity_block_instance_type_preference::ser_capacity_block_instance_type_preference(entry_27, item_25)?;
+            }
+            list_26.finish();
+        }
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

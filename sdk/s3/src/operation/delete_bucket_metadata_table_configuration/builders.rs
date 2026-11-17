@@ -23,7 +23,7 @@ impl crate::operation::delete_bucket_metadata_table_configuration::builders::Del
 /// Fluent builder constructing a request to `DeleteBucketMetadataTableConfiguration`.
 ///
 /// <important>
-/// <p>We recommend that you delete your S3 Metadata configurations by using the V2 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataTableConfiguration.html">DeleteBucketMetadataTableConfiguration</a> API operation. We no longer recommend using the V1 <code>DeleteBucketMetadataTableConfiguration</code> API operation.</p>
+/// <p>We recommend that you delete your S3 Metadata configurations by using the V2 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketMetadataConfiguration.html">DeleteBucketMetadataConfiguration</a> API operation. We no longer recommend using the V1 <code>DeleteBucketMetadataTableConfiguration</code> API operation.</p>
 /// <p>If you created your S3 Metadata configuration before July 15, 2025, we recommend that you delete and re-create your configuration by using <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucketMetadataConfiguration.html">CreateBucketMetadataConfiguration</a> so that you can expire journal table records and create a live inventory table.</p>
 /// </important>
 /// <p>Deletes a V1 S3 Metadata configuration from a general purpose bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html">Accelerating data discovery with S3 Metadata</a> in the <i>Amazon S3 User Guide</i>.</p><note>

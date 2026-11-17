@@ -2,7 +2,7 @@
 
 /// <p>Contains information on a promotion. A promotion defines additional business rules that apply to a configurable subset of recommended items.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RecommenderPromotionalFilter {
     /// <p>The name of the recommender filter to use for the promotion.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -31,6 +31,16 @@ impl RecommenderPromotionalFilter {
         self.percent_promoted_items
     }
 }
+impl ::std::fmt::Debug for RecommenderPromotionalFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RecommenderPromotionalFilter");
+        formatter.field("name", &self.name);
+        formatter.field("values", &"*** Sensitive Data Redacted ***");
+        formatter.field("promotion_name", &self.promotion_name);
+        formatter.field("percent_promoted_items", &self.percent_promoted_items);
+        formatter.finish()
+    }
+}
 impl RecommenderPromotionalFilter {
     /// Creates a new builder-style object to manufacture [`RecommenderPromotionalFilter`](crate::types::RecommenderPromotionalFilter).
     pub fn builder() -> crate::types::builders::RecommenderPromotionalFilterBuilder {
@@ -39,7 +49,7 @@ impl RecommenderPromotionalFilter {
 }
 
 /// A builder for [`RecommenderPromotionalFilter`](crate::types::RecommenderPromotionalFilter).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RecommenderPromotionalFilterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -118,5 +128,15 @@ impl RecommenderPromotionalFilterBuilder {
             promotion_name: self.promotion_name,
             percent_promoted_items: self.percent_promoted_items,
         }
+    }
+}
+impl ::std::fmt::Debug for RecommenderPromotionalFilterBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RecommenderPromotionalFilterBuilder");
+        formatter.field("name", &self.name);
+        formatter.field("values", &"*** Sensitive Data Redacted ***");
+        formatter.field("promotion_name", &self.promotion_name);
+        formatter.field("percent_promoted_items", &self.percent_promoted_items);
+        formatter.finish()
     }
 }

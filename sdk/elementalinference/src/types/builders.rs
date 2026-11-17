@@ -23,6 +23,22 @@ pub use crate::types::_fixed_mode_schedule_action_start_settings::FixedModeSched
 
 pub use crate::types::_schedule_action::ScheduleActionBuilder;
 
+pub use crate::types::_function_summary::FunctionSummaryBuilder;
+
+pub use crate::types::_bedrock_function_target::BedrockFunctionTargetBuilder;
+
+pub use crate::types::_passthrough_function_target::PassthroughFunctionTargetBuilder;
+
+pub use crate::types::_question_set_summary::QuestionSetSummaryBuilder;
+
+pub use crate::types::_yes_no_question::YesNoQuestionBuilder;
+
+pub use crate::types::_yes_no_per_option_question::YesNoPerOptionQuestionBuilder;
+
+pub use crate::types::_choose_one_question::ChooseOneQuestionBuilder;
+
+pub use crate::types::_question_set_version_summary::QuestionSetVersionSummaryBuilder;
+
 pub use crate::types::_update_output_status::UpdateOutputStatusBuilder;
 
 pub use crate::types::_update_clipping_data_source_configuration::UpdateClippingDataSourceConfigurationBuilder;
@@ -37,8 +53,36 @@ pub use crate::types::_subtitling_config::SubtitlingConfigBuilder;
 
 pub use crate::types::_contextual_metadata_config::ContextualMetadataConfigBuilder;
 
+pub use crate::types::_function_config::FunctionConfigBuilder;
+
 pub use crate::types::_data_source_configuration::DataSourceConfigurationBuilder;
+
+pub use crate::types::_question_option::QuestionOptionBuilder;
 
 pub use crate::types::_aspect_ratio::AspectRatioBuilder;
 
+pub use crate::types::_custom_questions_config::CustomQuestionsConfigBuilder;
+
+pub use crate::types::_frame_settings::FrameSettingsBuilder;
+
+pub use crate::types::_subtitling_settings::SubtitlingSettingsBuilder;
+
+pub use crate::types::_contextual_metadata_settings::ContextualMetadataSettingsBuilder;
+
+pub use crate::types::_clipping_settings::ClippingSettingsBuilder;
+
 pub use crate::types::_template_group::TemplateGroupBuilder;
+
+pub use crate::types::_question_set_reference::QuestionSetReferenceBuilder;
+
+pub use crate::types::_fixed_interval_trigger::FixedIntervalTriggerBuilder;
+
+pub use crate::types::_shot_trigger::ShotTriggerBuilder;
+
+pub use crate::types::_scene_trigger::SceneTriggerBuilder;
+
+pub use crate::types::_clip_trigger::ClipTriggerBuilder;
+
+pub use crate::types::_frame_sampling_strategy::FrameSamplingStrategyBuilder;
+
+pub use crate::types::_frame_size::FrameSizeBuilder;

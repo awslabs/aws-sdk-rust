@@ -75,6 +75,10 @@ pub use crate::types::_investment_summary::InvestmentSummary;
 
 pub use crate::types::_linked_account_charge::LinkedAccountCharge;
 
+pub use crate::types::_split_portion::SplitPortion;
+
+pub use crate::types::_child_credit::ChildCredit;
+
 pub use crate::types::_billing_preference_for_key::BillingPreferenceForKey;
 
 pub use crate::types::_dimension::Dimension;
@@ -203,6 +207,8 @@ mod _business_support_tier_charge;
 
 mod _charge_account;
 
+mod _child_credit;
+
 mod _contract_account;
 
 mod _contract_details;
@@ -272,6 +278,8 @@ mod _resource_tag;
 mod _search_option;
 
 mod _service_level_account_usage;
+
+mod _split_portion;
 
 mod _string_search;
 

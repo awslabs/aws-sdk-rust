@@ -9,6 +9,12 @@ pub fn ser_contextual_metadata_config(
     if let Some(var_2) = &input.extended_analysis {
         object.key("extendedAnalysis").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.custom_questions {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("customQuestions").start_object();
+        crate::protocol_serde::shape_custom_questions_config::ser_custom_questions_config(&mut object_4, var_3)?;
+        object_4.finish();
+    }
     Ok(())
 }
 
@@ -33,23 +39,30 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "summaryGeneration" => {
-                            builder = builder.set_summary_generation(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::SummaryGenerationMode::from(u.as_ref())))
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "summaryGeneration" => {
+                                builder = builder.set_summary_generation(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::SummaryGenerationMode::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "extendedAnalysis" => {
+                                builder = builder.set_extended_analysis(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| crate::types::ExtendedAnalysisMode::from(u.as_ref())))
+                                        .transpose()?,
+                                );
+                            }
+                            "customQuestions" => {
+                                builder = builder.set_custom_questions(
+                                    crate::protocol_serde::shape_custom_questions_config::de_custom_questions_config(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "extendedAnalysis" => {
-                            builder = builder.set_extended_analysis(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| crate::types::ExtendedAnalysisMode::from(u.as_ref())))
-                                    .transpose()?,
-                            );
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

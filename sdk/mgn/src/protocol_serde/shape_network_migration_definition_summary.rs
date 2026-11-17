@@ -56,6 +56,13 @@ where
                             builder =
                                 builder.set_scope_tags(crate::protocol_serde::shape_scope_tags_map::de_scope_tags_map(tokens, _value, depth + 1)?);
                         }
+                        "definitionType" => {
+                            builder = builder.set_definition_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DefinitionType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

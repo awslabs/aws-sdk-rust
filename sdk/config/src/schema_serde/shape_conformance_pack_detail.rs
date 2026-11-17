@@ -102,6 +102,36 @@ static CONFORMANCEPACKDETAIL_MEMBER_TEMPLATE_SSM_DOCUMENT_DETAILS: ::aws_smithy_
     "TemplateSSMDocumentDetails",
     8,
 );
+static CONFORMANCEPACKDETAIL_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackDetail$Type",
+        "com.amazonaws.configservice",
+        "ConformancePackDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    9,
+);
+static CONFORMANCEPACKDETAIL_MEMBER_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackDetail$Source",
+        "com.amazonaws.configservice",
+        "ConformancePackDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Source",
+    10,
+);
+static CONFORMANCEPACKDETAIL_MEMBER_SCOPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackDetail$Scope",
+        "com.amazonaws.configservice",
+        "ConformancePackDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Scope",
+    11,
+);
 static CONFORMANCEPACKDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.configservice#ConformancePackDetail",
@@ -119,6 +149,9 @@ static CONFORMANCEPACKDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aw
         &CONFORMANCEPACKDETAIL_MEMBER_LAST_UPDATE_REQUESTED_TIME,
         &CONFORMANCEPACKDETAIL_MEMBER_CREATED_BY,
         &CONFORMANCEPACKDETAIL_MEMBER_TEMPLATE_SSM_DOCUMENT_DETAILS,
+        &CONFORMANCEPACKDETAIL_MEMBER_TYPE,
+        &CONFORMANCEPACKDETAIL_MEMBER_SOURCE,
+        &CONFORMANCEPACKDETAIL_MEMBER_SCOPE,
     ],
 );
 impl crate::types::ConformancePackDetail {
@@ -172,6 +205,15 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Conformanc
         }
         if let Some(ref val) = self.template_ssm_document_details {
             ser.write_struct(&CONFORMANCEPACKDETAIL_MEMBER_TEMPLATE_SSM_DOCUMENT_DETAILS, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&CONFORMANCEPACKDETAIL_MEMBER_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.source {
+            ser.write_struct(&CONFORMANCEPACKDETAIL_MEMBER_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.scope {
+            ser.write_struct(&CONFORMANCEPACKDETAIL_MEMBER_SCOPE, val)?;
         }
         Ok(())
     }
@@ -246,6 +288,27 @@ impl crate::types::builders::ConformancePackDetailBuilder {
                         deser.read_null()?;
                     } else {
                         self.template_ssm_document_details = Some(crate::types::TemplateSsmDocumentDetails::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::ConformancePackType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source = Some(crate::types::ConformancePackSource::deserialize(deser)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scope = Some(crate::types::ConformancePackScope::deserialize(deser)?);
                     }
                 }
                 _ => {}

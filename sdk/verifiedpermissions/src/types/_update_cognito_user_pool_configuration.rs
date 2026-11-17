@@ -2,7 +2,7 @@
 
 /// <p>Contains configuration details of a Amazon Cognito user pool for use with an identity source.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateCognitoUserPoolConfiguration {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool associated with this identity source.</p>
     pub user_pool_arn: ::std::string::String,
@@ -28,6 +28,15 @@ impl UpdateCognitoUserPoolConfiguration {
         self.group_configuration.as_ref()
     }
 }
+impl ::std::fmt::Debug for UpdateCognitoUserPoolConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateCognitoUserPoolConfiguration");
+        formatter.field("user_pool_arn", &self.user_pool_arn);
+        formatter.field("client_ids", &"*** Sensitive Data Redacted ***");
+        formatter.field("group_configuration", &self.group_configuration);
+        formatter.finish()
+    }
+}
 impl UpdateCognitoUserPoolConfiguration {
     /// Creates a new builder-style object to manufacture [`UpdateCognitoUserPoolConfiguration`](crate::types::UpdateCognitoUserPoolConfiguration).
     pub fn builder() -> crate::types::builders::UpdateCognitoUserPoolConfigurationBuilder {
@@ -36,7 +45,7 @@ impl UpdateCognitoUserPoolConfiguration {
 }
 
 /// A builder for [`UpdateCognitoUserPoolConfiguration`](crate::types::UpdateCognitoUserPoolConfiguration).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct UpdateCognitoUserPoolConfigurationBuilder {
     pub(crate) user_pool_arn: ::std::option::Option<::std::string::String>,
@@ -107,5 +116,14 @@ impl UpdateCognitoUserPoolConfigurationBuilder {
             client_ids: self.client_ids,
             group_configuration: self.group_configuration,
         })
+    }
+}
+impl ::std::fmt::Debug for UpdateCognitoUserPoolConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateCognitoUserPoolConfigurationBuilder");
+        formatter.field("user_pool_arn", &self.user_pool_arn);
+        formatter.field("client_ids", &"*** Sensitive Data Redacted ***");
+        formatter.field("group_configuration", &self.group_configuration);
+        formatter.finish()
     }
 }

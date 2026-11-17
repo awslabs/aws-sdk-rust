@@ -60,8 +60,6 @@ impl crate::operation::get_bucket_lifecycle_configuration::builders::GetBucketLi
 /// <p>Description: The lifecycle configuration does not exist.</p></li>
 /// <li>
 /// <p>HTTP Status Code: 404 Not Found</p></li>
-/// <li>
-/// <p>SOAP Fault Code Prefix: Client</p></li>
 /// </ul></li>
 /// </ul>
 /// <p>The following operations are related to <code>GetBucketLifecycleConfiguration</code>:</p>

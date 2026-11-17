@@ -219,7 +219,11 @@ mod list_tags_for_resource;
 
 mod redeem_credits;
 
+mod split_credit;
+
 mod tag_resource;
+
+mod transfer_credit;
 
 mod untag_resource;
 

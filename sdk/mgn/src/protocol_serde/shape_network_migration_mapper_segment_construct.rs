@@ -78,6 +78,22 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "enrichedProperties" => {
+                            builder = builder.set_enriched_properties(crate::protocol_serde::shape_enriched_properties::de_enriched_properties(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "configuration" => {
+                            builder = builder.set_configuration(
+                                crate::protocol_serde::shape_operation_configuration_union::de_operation_configuration_union(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

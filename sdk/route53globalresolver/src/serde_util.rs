@@ -146,17 +146,11 @@ pub(crate) fn create_access_source_output_output_correct_errors(
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
     }
-    if builder.cidr.is_none() {
-        builder.cidr = Some(Default::default())
-    }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     if builder.id.is_none() {
         builder.id = Some(Default::default())
-    }
-    if builder.ip_address_type.is_none() {
-        builder.ip_address_type = "no value was set".parse::<crate::types::IpAddressType>().ok()
     }
     if builder.dns_view_id.is_none() {
         builder.dns_view_id = Some(Default::default())
@@ -196,6 +190,39 @@ pub(crate) fn create_access_token_output_output_correct_errors(
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_core_network_endpoint_output_output_correct_errors(
+    mut builder: crate::operation::create_core_network_endpoint::builders::CreateCoreNetworkEndpointOutputBuilder,
+) -> crate::operation::create_core_network_endpoint::builders::CreateCoreNetworkEndpointOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.available_regions.is_none() {
+        builder.available_regions = Some(Default::default())
+    }
+    if builder.core_network_arn.is_none() {
+        builder.core_network_arn = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.global_resolver_id.is_none() {
+        builder.global_resolver_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.ip_addresses.is_none() {
+        builder.ip_addresses = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CrResourceStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -338,17 +365,11 @@ pub(crate) fn delete_access_source_output_output_correct_errors(
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
     }
-    if builder.cidr.is_none() {
-        builder.cidr = Some(Default::default())
-    }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     if builder.id.is_none() {
         builder.id = Some(Default::default())
-    }
-    if builder.ip_address_type.is_none() {
-        builder.ip_address_type = "no value was set".parse::<crate::types::IpAddressType>().ok()
     }
     if builder.dns_view_id.is_none() {
         builder.dns_view_id = Some(Default::default())
@@ -376,6 +397,39 @@ pub(crate) fn delete_access_token_output_output_correct_errors(
     }
     if builder.deleted_at.is_none() {
         builder.deleted_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn delete_core_network_endpoint_output_output_correct_errors(
+    mut builder: crate::operation::delete_core_network_endpoint::builders::DeleteCoreNetworkEndpointOutputBuilder,
+) -> crate::operation::delete_core_network_endpoint::builders::DeleteCoreNetworkEndpointOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.available_regions.is_none() {
+        builder.available_regions = Some(Default::default())
+    }
+    if builder.core_network_arn.is_none() {
+        builder.core_network_arn = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.global_resolver_id.is_none() {
+        builder.global_resolver_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.ip_addresses.is_none() {
+        builder.ip_addresses = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CrResourceStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -608,17 +662,11 @@ pub(crate) fn get_access_source_output_output_correct_errors(
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
     }
-    if builder.cidr.is_none() {
-        builder.cidr = Some(Default::default())
-    }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     if builder.id.is_none() {
         builder.id = Some(Default::default())
-    }
-    if builder.ip_address_type.is_none() {
-        builder.ip_address_type = "no value was set".parse::<crate::types::IpAddressType>().ok()
     }
     if builder.dns_view_id.is_none() {
         builder.dns_view_id = Some(Default::default())
@@ -664,6 +712,39 @@ pub(crate) fn get_access_token_output_output_correct_errors(
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_core_network_endpoint_output_output_correct_errors(
+    mut builder: crate::operation::get_core_network_endpoint::builders::GetCoreNetworkEndpointOutputBuilder,
+) -> crate::operation::get_core_network_endpoint::builders::GetCoreNetworkEndpointOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.available_regions.is_none() {
+        builder.available_regions = Some(Default::default())
+    }
+    if builder.core_network_arn.is_none() {
+        builder.core_network_arn = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.global_resolver_id.is_none() {
+        builder.global_resolver_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.ip_addresses.is_none() {
+        builder.ip_addresses = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CrResourceStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -869,6 +950,15 @@ pub(crate) fn list_access_sources_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_core_network_endpoints_output_output_correct_errors(
+    mut builder: crate::operation::list_core_network_endpoints::builders::ListCoreNetworkEndpointsOutputBuilder,
+) -> crate::operation::list_core_network_endpoints::builders::ListCoreNetworkEndpointsOutputBuilder {
+    if builder.core_network_endpoints.is_none() {
+        builder.core_network_endpoints = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_dns_views_output_output_correct_errors(
     mut builder: crate::operation::list_dns_views::builders::ListDnsViewsOutputBuilder,
 ) -> crate::operation::list_dns_views::builders::ListDnsViewsOutputBuilder {
@@ -947,17 +1037,11 @@ pub(crate) fn update_access_source_output_output_correct_errors(
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
     }
-    if builder.cidr.is_none() {
-        builder.cidr = Some(Default::default())
-    }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     if builder.id.is_none() {
         builder.id = Some(Default::default())
-    }
-    if builder.ip_address_type.is_none() {
-        builder.ip_address_type = "no value was set".parse::<crate::types::IpAddressType>().ok()
     }
     if builder.dns_view_id.is_none() {
         builder.dns_view_id = Some(Default::default())
@@ -982,6 +1066,39 @@ pub(crate) fn update_access_token_output_output_correct_errors(
     }
     if builder.name.is_none() {
         builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_core_network_endpoint_output_output_correct_errors(
+    mut builder: crate::operation::update_core_network_endpoint::builders::UpdateCoreNetworkEndpointOutputBuilder,
+) -> crate::operation::update_core_network_endpoint::builders::UpdateCoreNetworkEndpointOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.available_regions.is_none() {
+        builder.available_regions = Some(Default::default())
+    }
+    if builder.core_network_arn.is_none() {
+        builder.core_network_arn = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.global_resolver_id.is_none() {
+        builder.global_resolver_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.ip_addresses.is_none() {
+        builder.ip_addresses = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CrResourceStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -1139,17 +1256,11 @@ pub(crate) fn access_sources_item_correct_errors(
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
     }
-    if builder.cidr.is_none() {
-        builder.cidr = Some(Default::default())
-    }
     if builder.created_at.is_none() {
         builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     if builder.id.is_none() {
         builder.id = Some(Default::default())
-    }
-    if builder.ip_address_type.is_none() {
-        builder.ip_address_type = "no value was set".parse::<crate::types::IpAddressType>().ok()
     }
     if builder.dns_view_id.is_none() {
         builder.dns_view_id = Some(Default::default())
@@ -1237,6 +1348,51 @@ pub(crate) fn batch_update_firewall_rule_output_item_correct_errors(
     }
     if builder.code.is_none() {
         builder.code = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn core_network_endpoint_dns_ip_item_correct_errors(
+    mut builder: crate::types::builders::CoreNetworkEndpointDnsIpItemBuilder,
+) -> crate::types::builders::CoreNetworkEndpointDnsIpItemBuilder {
+    if builder.dns_label.is_none() {
+        builder.dns_label = Some(Default::default())
+    }
+    if builder.region_scope.is_none() {
+        builder.region_scope = "no value was set".parse::<crate::types::RegionScopeType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn core_network_endpoints_item_correct_errors(
+    mut builder: crate::types::builders::CoreNetworkEndpointsItemBuilder,
+) -> crate::types::builders::CoreNetworkEndpointsItemBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.available_regions.is_none() {
+        builder.available_regions = Some(Default::default())
+    }
+    if builder.core_network_arn.is_none() {
+        builder.core_network_arn = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.global_resolver_id.is_none() {
+        builder.global_resolver_id = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.ip_addresses.is_none() {
+        builder.ip_addresses = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::CrResourceStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

@@ -2,7 +2,7 @@
 
 /// <p>Provides a comprehensive analysis of the quality and completeness of an Automated Reasoning policy definition, highlighting potential issues and optimization opportunities.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AutomatedReasoningPolicyDefinitionQualityReport {
     /// <p>The total number of custom types defined in the policy.</p>
     pub type_count: i32,
@@ -60,6 +60,20 @@ impl AutomatedReasoningPolicyDefinitionQualityReport {
         self.disjoint_rule_sets.deref()
     }
 }
+impl ::std::fmt::Debug for AutomatedReasoningPolicyDefinitionQualityReport {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AutomatedReasoningPolicyDefinitionQualityReport");
+        formatter.field("type_count", &self.type_count);
+        formatter.field("variable_count", &self.variable_count);
+        formatter.field("rule_count", &self.rule_count);
+        formatter.field("unused_types", &"*** Sensitive Data Redacted ***");
+        formatter.field("unused_type_values", &self.unused_type_values);
+        formatter.field("unused_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("conflicting_rules", &self.conflicting_rules);
+        formatter.field("disjoint_rule_sets", &self.disjoint_rule_sets);
+        formatter.finish()
+    }
+}
 impl AutomatedReasoningPolicyDefinitionQualityReport {
     /// Creates a new builder-style object to manufacture [`AutomatedReasoningPolicyDefinitionQualityReport`](crate::types::AutomatedReasoningPolicyDefinitionQualityReport).
     pub fn builder() -> crate::types::builders::AutomatedReasoningPolicyDefinitionQualityReportBuilder {
@@ -68,7 +82,7 @@ impl AutomatedReasoningPolicyDefinitionQualityReport {
 }
 
 /// A builder for [`AutomatedReasoningPolicyDefinitionQualityReport`](crate::types::AutomatedReasoningPolicyDefinitionQualityReport).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct AutomatedReasoningPolicyDefinitionQualityReportBuilder {
     pub(crate) type_count: ::std::option::Option<i32>,
@@ -295,5 +309,19 @@ impl AutomatedReasoningPolicyDefinitionQualityReportBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for AutomatedReasoningPolicyDefinitionQualityReportBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AutomatedReasoningPolicyDefinitionQualityReportBuilder");
+        formatter.field("type_count", &self.type_count);
+        formatter.field("variable_count", &self.variable_count);
+        formatter.field("rule_count", &self.rule_count);
+        formatter.field("unused_types", &"*** Sensitive Data Redacted ***");
+        formatter.field("unused_type_values", &self.unused_type_values);
+        formatter.field("unused_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("conflicting_rules", &self.conflicting_rules);
+        formatter.field("disjoint_rule_sets", &self.disjoint_rule_sets);
+        formatter.finish()
     }
 }

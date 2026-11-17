@@ -2158,6 +2158,9 @@ pub mod modify_transit_gateway_metering_policy;
 /// Types for the `ModifyTransitGatewayNetworkFunctionAttachment` operation.
 pub mod modify_transit_gateway_network_function_attachment;
 
+/// Types for the `ModifyTransitGatewayPeeringAttachment` operation.
+pub mod modify_transit_gateway_peering_attachment;
+
 /// Types for the `ModifyTransitGatewayPolicyTableEntry` operation.
 pub mod modify_transit_gateway_policy_table_entry;
 

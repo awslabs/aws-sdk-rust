@@ -1868,6 +1868,8 @@ mod modify_transit_gateway_metering_policy;
 
 mod modify_transit_gateway_network_function_attachment;
 
+mod modify_transit_gateway_peering_attachment;
+
 mod modify_transit_gateway_policy_table_entry;
 
 mod modify_transit_gateway_prefix_list_reference;

@@ -2,7 +2,7 @@
 
 /// <p>A list of message attribute values.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MessageAttributeValue {
     /// <p>The strings in a message attribute value.</p>
     pub string_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -15,6 +15,13 @@ impl MessageAttributeValue {
         self.string_values.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for MessageAttributeValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MessageAttributeValue");
+        formatter.field("string_values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl MessageAttributeValue {
     /// Creates a new builder-style object to manufacture [`MessageAttributeValue`](crate::types::MessageAttributeValue).
     pub fn builder() -> crate::types::builders::MessageAttributeValueBuilder {
@@ -23,7 +30,7 @@ impl MessageAttributeValue {
 }
 
 /// A builder for [`MessageAttributeValue`](crate::types::MessageAttributeValue).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct MessageAttributeValueBuilder {
     pub(crate) string_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -54,5 +61,12 @@ impl MessageAttributeValueBuilder {
         crate::types::MessageAttributeValue {
             string_values: self.string_values,
         }
+    }
+}
+impl ::std::fmt::Debug for MessageAttributeValueBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MessageAttributeValueBuilder");
+        formatter.field("string_values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

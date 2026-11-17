@@ -12,7 +12,7 @@ use crate::http_request::uri_path_normalization::normalize_uri_path;
 use crate::http_request::url_escape::percent_encode_path;
 use crate::http_request::{PayloadChecksumKind, SignableBody, SignatureLocation, SigningParams};
 use crate::http_request::{PercentEncodingMode, SigningSettings};
-use crate::sign::v4::{sha256_hex_string, HMAC_SHA256};
+use crate::sign::v4::{sha256_hex_string, EMPTY_PAYLOAD_SHA256, HMAC_SHA256};
 use crate::SignatureVersion;
 use aws_smithy_http::query_writer::QueryWriter;
 use http::header::{AsHeaderName, HeaderName, HOST};
@@ -337,13 +337,14 @@ impl CanonicalRequest<'_> {
         //
         // Based on the input body, set the payload_hash of the canonical request:
         // Either:
-        // - compute a hash
+        // - compute a hash, or use the known hash of an empty body
         // - use the precomputed hash
         // - use `UnsignedPayload`
         // - use `UnsignedPayload` for streaming requests
         // - use `StreamingUnsignedPayloadTrailer` for streaming requests with trailers
         // - use `StreamingSignedPayloadTrailer` for streaming requests with trailers
         match body {
+            SignableBody::Bytes([]) => Cow::Borrowed(EMPTY_PAYLOAD_SHA256),
             SignableBody::Bytes(data) => Cow::Owned(sha256_hex_string(data)),
             SignableBody::Precomputed(digest) => Cow::Borrowed(digest.as_str()),
             SignableBody::UnsignedPayload => Cow::Borrowed(UNSIGNED_PAYLOAD),
@@ -752,7 +753,7 @@ mod tests {
         SigningParams, SigningSettings,
     };
     use crate::sign::v4;
-    use crate::sign::v4::sha256_hex_string;
+    use crate::sign::v4::{sha256_hex_string, EMPTY_PAYLOAD_SHA256};
     use aws_credential_types::Credentials;
     use aws_smithy_http::query_writer::QueryWriter;
     use aws_smithy_runtime_api::client::identity::Identity;
@@ -867,6 +868,14 @@ mod tests {
         signing_params.set_payload_checksum_kind(PayloadChecksumKind::NoHeader);
         let creq = CanonicalRequest::from(&req, &signing_params).unwrap();
         assert_eq!(creq.values.signed_headers().as_str(), "host;x-amz-date");
+    }
+
+    #[test]
+    fn test_empty_payload_hash_is_not_computed() {
+        assert!(matches!(
+            CanonicalRequest::payload_hash(&SignableBody::empty()),
+            Cow::Borrowed(EMPTY_PAYLOAD_SHA256)
+        ));
     }
 
     #[test]

@@ -21,7 +21,7 @@ pub struct AccountVpcEncryptionControlExclusions {
     pub vpc_lattice: ::std::option::Option<crate::types::VpcEncryptionControlExclusionState>,
     /// <p>The exclusion configuration for Elastic File System service.</p>
     pub elastic_file_system: ::std::option::Option<crate::types::VpcEncryptionControlExclusionState>,
-    /// <p>The exclusion configuration for AWS Global Accelerator.</p>
+    /// <p>The exclusion configuration for Amazon Web Services Global Accelerator.</p>
     pub global_accelerator: ::std::option::Option<crate::types::VpcEncryptionControlExclusionState>,
     /// <p>The exclusion configuration for Amazon API Gateway V2.</p>
     pub api_gateway_v2: ::std::option::Option<crate::types::VpcEncryptionControlExclusionState>,
@@ -59,7 +59,7 @@ impl AccountVpcEncryptionControlExclusions {
     pub fn elastic_file_system(&self) -> ::std::option::Option<&crate::types::VpcEncryptionControlExclusionState> {
         self.elastic_file_system.as_ref()
     }
-    /// <p>The exclusion configuration for AWS Global Accelerator.</p>
+    /// <p>The exclusion configuration for Amazon Web Services Global Accelerator.</p>
     pub fn global_accelerator(&self) -> ::std::option::Option<&crate::types::VpcEncryptionControlExclusionState> {
         self.global_accelerator.as_ref()
     }
@@ -203,17 +203,17 @@ impl AccountVpcEncryptionControlExclusionsBuilder {
     pub fn get_elastic_file_system(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlExclusionState> {
         &self.elastic_file_system
     }
-    /// <p>The exclusion configuration for AWS Global Accelerator.</p>
+    /// <p>The exclusion configuration for Amazon Web Services Global Accelerator.</p>
     pub fn global_accelerator(mut self, input: crate::types::VpcEncryptionControlExclusionState) -> Self {
         self.global_accelerator = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The exclusion configuration for AWS Global Accelerator.</p>
+    /// <p>The exclusion configuration for Amazon Web Services Global Accelerator.</p>
     pub fn set_global_accelerator(mut self, input: ::std::option::Option<crate::types::VpcEncryptionControlExclusionState>) -> Self {
         self.global_accelerator = input;
         self
     }
-    /// <p>The exclusion configuration for AWS Global Accelerator.</p>
+    /// <p>The exclusion configuration for Amazon Web Services Global Accelerator.</p>
     pub fn get_global_accelerator(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlExclusionState> {
         &self.global_accelerator
     }

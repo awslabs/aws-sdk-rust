@@ -12,6 +12,8 @@ pub struct ChatExecution {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Summary or title of the chat</p>
     pub summary: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether the chat execution is archived or active.</p>
+    pub archive_status: ::std::option::Option<crate::types::ChatArchiveStatus>,
 }
 impl ChatExecution {
     /// <p>The unique identifier for the execution</p>
@@ -31,6 +33,10 @@ impl ChatExecution {
     pub fn summary(&self) -> ::std::option::Option<&str> {
         self.summary.as_deref()
     }
+    /// <p>Indicates whether the chat execution is archived or active.</p>
+    pub fn archive_status(&self) -> ::std::option::Option<&crate::types::ChatArchiveStatus> {
+        self.archive_status.as_ref()
+    }
 }
 impl ChatExecution {
     /// Creates a new builder-style object to manufacture [`ChatExecution`](crate::types::ChatExecution).
@@ -47,6 +53,7 @@ pub struct ChatExecutionBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) summary: ::std::option::Option<::std::string::String>,
+    pub(crate) archive_status: ::std::option::Option<crate::types::ChatArchiveStatus>,
 }
 impl ChatExecutionBuilder {
     /// <p>The unique identifier for the execution</p>
@@ -107,6 +114,20 @@ impl ChatExecutionBuilder {
     pub fn get_summary(&self) -> &::std::option::Option<::std::string::String> {
         &self.summary
     }
+    /// <p>Indicates whether the chat execution is archived or active.</p>
+    pub fn archive_status(mut self, input: crate::types::ChatArchiveStatus) -> Self {
+        self.archive_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the chat execution is archived or active.</p>
+    pub fn set_archive_status(mut self, input: ::std::option::Option<crate::types::ChatArchiveStatus>) -> Self {
+        self.archive_status = input;
+        self
+    }
+    /// <p>Indicates whether the chat execution is archived or active.</p>
+    pub fn get_archive_status(&self) -> &::std::option::Option<crate::types::ChatArchiveStatus> {
+        &self.archive_status
+    }
     /// Consumes the builder and constructs a [`ChatExecution`](crate::types::ChatExecution).
     /// This method will fail if any of the following fields are not set:
     /// - [`execution_id`](crate::types::builders::ChatExecutionBuilder::execution_id)
@@ -127,6 +148,7 @@ impl ChatExecutionBuilder {
             })?,
             updated_at: self.updated_at,
             summary: self.summary,
+            archive_status: self.archive_status,
         })
     }
 }

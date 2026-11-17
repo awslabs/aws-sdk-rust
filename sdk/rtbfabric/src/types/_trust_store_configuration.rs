@@ -2,7 +2,7 @@
 
 /// <p>Describes the configuration of a trust store.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TrustStoreConfiguration {
     /// <p>The certificate authority certificate.</p>
     pub certificate_authority_certificates: ::std::vec::Vec<::std::string::String>,
@@ -14,6 +14,13 @@ impl TrustStoreConfiguration {
         self.certificate_authority_certificates.deref()
     }
 }
+impl ::std::fmt::Debug for TrustStoreConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TrustStoreConfiguration");
+        formatter.field("certificate_authority_certificates", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl TrustStoreConfiguration {
     /// Creates a new builder-style object to manufacture [`TrustStoreConfiguration`](crate::types::TrustStoreConfiguration).
     pub fn builder() -> crate::types::builders::TrustStoreConfigurationBuilder {
@@ -22,7 +29,7 @@ impl TrustStoreConfiguration {
 }
 
 /// A builder for [`TrustStoreConfiguration`](crate::types::TrustStoreConfiguration).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct TrustStoreConfigurationBuilder {
     pub(crate) certificate_authority_certificates: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -60,5 +67,12 @@ impl TrustStoreConfigurationBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for TrustStoreConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TrustStoreConfigurationBuilder");
+        formatter.field("certificate_authority_certificates", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

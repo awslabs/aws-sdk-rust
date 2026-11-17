@@ -148,6 +148,8 @@ mod create_access_source;
 
 mod create_access_token;
 
+mod create_core_network_endpoint;
+
 mod create_dns_view;
 
 mod create_firewall_domain_list;
@@ -187,6 +189,8 @@ mod delete_access_source;
 
 mod delete_access_token;
 
+mod delete_core_network_endpoint;
+
 mod delete_dns_view;
 
 mod delete_firewall_domain_list;
@@ -205,6 +209,8 @@ mod get_access_source;
 
 mod get_access_token;
 
+mod get_core_network_endpoint;
+
 mod get_dns_view;
 
 mod get_firewall_domain_list;
@@ -222,6 +228,8 @@ mod import_firewall_domains;
 mod list_access_sources;
 
 mod list_access_tokens;
+
+mod list_core_network_endpoints;
 
 mod list_dns_views;
 
@@ -248,6 +256,8 @@ mod untag_resource;
 mod update_access_source;
 
 mod update_access_token;
+
+mod update_core_network_endpoint;
 
 mod update_dns_view;
 

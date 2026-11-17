@@ -2,7 +2,7 @@
 
 /// <p>The configuration for in-session inline redaction.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InlineRedactionConfiguration {
     /// <p>The inline redaction patterns to be enabled for the inline redaction configuration.</p>
     pub inline_redaction_patterns: ::std::vec::Vec<crate::types::InlineRedactionPattern>,
@@ -36,6 +36,16 @@ impl InlineRedactionConfiguration {
         self.global_confidence_level
     }
 }
+impl ::std::fmt::Debug for InlineRedactionConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("InlineRedactionConfiguration");
+        formatter.field("inline_redaction_patterns", &self.inline_redaction_patterns);
+        formatter.field("global_enforced_urls", &"*** Sensitive Data Redacted ***");
+        formatter.field("global_exempt_urls", &"*** Sensitive Data Redacted ***");
+        formatter.field("global_confidence_level", &self.global_confidence_level);
+        formatter.finish()
+    }
+}
 impl InlineRedactionConfiguration {
     /// Creates a new builder-style object to manufacture [`InlineRedactionConfiguration`](crate::types::InlineRedactionConfiguration).
     pub fn builder() -> crate::types::builders::InlineRedactionConfigurationBuilder {
@@ -44,7 +54,7 @@ impl InlineRedactionConfiguration {
 }
 
 /// A builder for [`InlineRedactionConfiguration`](crate::types::InlineRedactionConfiguration).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct InlineRedactionConfigurationBuilder {
     pub(crate) inline_redaction_patterns: ::std::option::Option<::std::vec::Vec<crate::types::InlineRedactionPattern>>,
@@ -142,5 +152,15 @@ impl InlineRedactionConfigurationBuilder {
             global_exempt_urls: self.global_exempt_urls,
             global_confidence_level: self.global_confidence_level,
         })
+    }
+}
+impl ::std::fmt::Debug for InlineRedactionConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("InlineRedactionConfigurationBuilder");
+        formatter.field("inline_redaction_patterns", &self.inline_redaction_patterns);
+        formatter.field("global_enforced_urls", &"*** Sensitive Data Redacted ***");
+        formatter.field("global_exempt_urls", &"*** Sensitive Data Redacted ***");
+        formatter.field("global_confidence_level", &self.global_confidence_level);
+        formatter.finish()
     }
 }

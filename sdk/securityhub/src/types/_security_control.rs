@@ -24,7 +24,7 @@ pub struct SecurityControl {
     pub parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterConfiguration>>,
     /// <p>The most recent reason for updating the customizable properties of a security control. This differs from the <code>UpdateReason</code> field of the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html"> <code>BatchUpdateStandardsControlAssociations</code> </a> API, which tracks the reason for updating the enablement status of a control. This field accepts alphanumeric characters in addition to white spaces, dashes, and underscores.</p>
     pub last_update_reason: ::std::option::Option<::std::string::String>,
-    /// <p>The cloud provider whose resources the security control evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    /// <p>The cloud provider whose resources the security control evaluates. For example, <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
     pub provider: ::std::option::Option<crate::types::SecurityControlsProvider>,
 }
 impl SecurityControl {
@@ -68,7 +68,7 @@ impl SecurityControl {
     pub fn last_update_reason(&self) -> ::std::option::Option<&str> {
         self.last_update_reason.as_deref()
     }
-    /// <p>The cloud provider whose resources the security control evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    /// <p>The cloud provider whose resources the security control evaluates. For example, <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
     pub fn provider(&self) -> ::std::option::Option<&crate::types::SecurityControlsProvider> {
         self.provider.as_ref()
     }
@@ -253,17 +253,17 @@ impl SecurityControlBuilder {
     pub fn get_last_update_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.last_update_reason
     }
-    /// <p>The cloud provider whose resources the security control evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    /// <p>The cloud provider whose resources the security control evaluates. For example, <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
     pub fn provider(mut self, input: crate::types::SecurityControlsProvider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The cloud provider whose resources the security control evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    /// <p>The cloud provider whose resources the security control evaluates. For example, <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::SecurityControlsProvider>) -> Self {
         self.provider = input;
         self
     }
-    /// <p>The cloud provider whose resources the security control evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    /// <p>The cloud provider whose resources the security control evaluates. For example, <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::SecurityControlsProvider> {
         &self.provider
     }

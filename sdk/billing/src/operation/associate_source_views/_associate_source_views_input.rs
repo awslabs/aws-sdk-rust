@@ -5,7 +5,19 @@
 pub struct AssociateSourceViewsInput {
     /// <p>The Amazon Resource Name (ARN) of the billing view to associate source views with.</p>
     pub arn: ::std::option::Option<::std::string::String>,
-    /// <p>A list of ARNs of the source billing views to associate.</p>
+    /// <p>A list of ARNs of the source billing views to associate. Source views can be of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PRIMARY</code> - The billing view that contains all cost management data associated with an account.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code> - A billing view that a customer creates from one or more source views.</p></li>
+    /// <li>
+    /// <p><code>BILLING_GROUP</code> - The billing view for an Billing Conductor billing group.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER</code> - The billing view for the billing data that a bill transfer account is financially responsible for.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER_SHOWBACK</code> - The billing view for billing data configured for showback or chargeback purposes.</p></li>
+    /// </ul>
     pub source_views: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssociateSourceViewsInput {
@@ -13,7 +25,19 @@ impl AssociateSourceViewsInput {
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
-    /// <p>A list of ARNs of the source billing views to associate.</p>
+    /// <p>A list of ARNs of the source billing views to associate. Source views can be of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PRIMARY</code> - The billing view that contains all cost management data associated with an account.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code> - A billing view that a customer creates from one or more source views.</p></li>
+    /// <li>
+    /// <p><code>BILLING_GROUP</code> - The billing view for an Billing Conductor billing group.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER</code> - The billing view for the billing data that a bill transfer account is financially responsible for.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER_SHOWBACK</code> - The billing view for billing data configured for showback or chargeback purposes.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_views.is_none()`.
     pub fn source_views(&self) -> &[::std::string::String] {
@@ -54,19 +78,55 @@ impl AssociateSourceViewsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_source_views`](Self::set_source_views).
     ///
-    /// <p>A list of ARNs of the source billing views to associate.</p>
+    /// <p>A list of ARNs of the source billing views to associate. Source views can be of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PRIMARY</code> - The billing view that contains all cost management data associated with an account.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code> - A billing view that a customer creates from one or more source views.</p></li>
+    /// <li>
+    /// <p><code>BILLING_GROUP</code> - The billing view for an Billing Conductor billing group.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER</code> - The billing view for the billing data that a bill transfer account is financially responsible for.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER_SHOWBACK</code> - The billing view for billing data configured for showback or chargeback purposes.</p></li>
+    /// </ul>
     pub fn source_views(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_views.unwrap_or_default();
         v.push(input.into());
         self.source_views = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of ARNs of the source billing views to associate.</p>
+    /// <p>A list of ARNs of the source billing views to associate. Source views can be of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PRIMARY</code> - The billing view that contains all cost management data associated with an account.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code> - A billing view that a customer creates from one or more source views.</p></li>
+    /// <li>
+    /// <p><code>BILLING_GROUP</code> - The billing view for an Billing Conductor billing group.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER</code> - The billing view for the billing data that a bill transfer account is financially responsible for.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER_SHOWBACK</code> - The billing view for billing data configured for showback or chargeback purposes.</p></li>
+    /// </ul>
     pub fn set_source_views(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.source_views = input;
         self
     }
-    /// <p>A list of ARNs of the source billing views to associate.</p>
+    /// <p>A list of ARNs of the source billing views to associate. Source views can be of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PRIMARY</code> - The billing view that contains all cost management data associated with an account.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code> - A billing view that a customer creates from one or more source views.</p></li>
+    /// <li>
+    /// <p><code>BILLING_GROUP</code> - The billing view for an Billing Conductor billing group.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER</code> - The billing view for the billing data that a bill transfer account is financially responsible for.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER_SHOWBACK</code> - The billing view for billing data configured for showback or chargeback purposes.</p></li>
+    /// </ul>
     pub fn get_source_views(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_views
     }

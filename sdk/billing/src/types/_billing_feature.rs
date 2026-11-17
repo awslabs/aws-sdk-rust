@@ -12,6 +12,7 @@
 /// ```text
 /// # let billingfeature = unimplemented!();
 /// match billingfeature {
+///     BillingFeature::BenefitLevelSharing => { /* ... */ },
 ///     BillingFeature::BillingAlerts => { /* ... */ },
 ///     BillingFeature::CreditLevelSharing => { /* ... */ },
 ///     BillingFeature::CreditPreferenceOptions => { /* ... */ },
@@ -48,6 +49,8 @@
 )]
 pub enum BillingFeature {
     #[allow(missing_docs)] // documentation missing in model
+    BenefitLevelSharing,
+    #[allow(missing_docs)] // documentation missing in model
     BillingAlerts,
     #[allow(missing_docs)] // documentation missing in model
     CreditLevelSharing,
@@ -68,6 +71,7 @@ pub enum BillingFeature {
 impl ::std::convert::From<&str> for BillingFeature {
     fn from(s: &str) -> Self {
         match s {
+            "BENEFIT_LEVEL_SHARING" => BillingFeature::BenefitLevelSharing,
             "BILLING_ALERTS" => BillingFeature::BillingAlerts,
             "CREDIT_LEVEL_SHARING" => BillingFeature::CreditLevelSharing,
             "CREDIT_PREFERENCE_OPTIONS" => BillingFeature::CreditPreferenceOptions,
@@ -90,6 +94,7 @@ impl BillingFeature {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            BillingFeature::BenefitLevelSharing => "BENEFIT_LEVEL_SHARING",
             BillingFeature::BillingAlerts => "BILLING_ALERTS",
             BillingFeature::CreditLevelSharing => "CREDIT_LEVEL_SHARING",
             BillingFeature::CreditPreferenceOptions => "CREDIT_PREFERENCE_OPTIONS",
@@ -103,6 +108,7 @@ impl BillingFeature {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "BENEFIT_LEVEL_SHARING",
             "BILLING_ALERTS",
             "CREDIT_LEVEL_SHARING",
             "CREDIT_PREFERENCE_OPTIONS",
@@ -133,6 +139,7 @@ impl BillingFeature {
 impl ::std::fmt::Display for BillingFeature {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            BillingFeature::BenefitLevelSharing => write!(f, "BENEFIT_LEVEL_SHARING"),
             BillingFeature::BillingAlerts => write!(f, "BILLING_ALERTS"),
             BillingFeature::CreditLevelSharing => write!(f, "CREDIT_LEVEL_SHARING"),
             BillingFeature::CreditPreferenceOptions => write!(f, "CREDIT_PREFERENCE_OPTIONS"),

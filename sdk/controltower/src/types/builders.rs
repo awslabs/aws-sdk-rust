@@ -55,6 +55,8 @@ pub use crate::types::_enabled_control_parameter_summary::EnabledControlParamete
 
 pub use crate::types::_enabled_baseline_inheritance_drift::EnabledBaselineInheritanceDriftBuilder;
 
+pub use crate::types::_enabled_baseline_source_drift::EnabledBaselineSourceDriftBuilder;
+
 pub use crate::types::_enabled_control_inheritance_drift::EnabledControlInheritanceDriftBuilder;
 
 pub use crate::types::_enabled_control_resource_drift::EnabledControlResourceDriftBuilder;

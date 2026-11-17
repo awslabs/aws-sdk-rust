@@ -27,6 +27,8 @@ pub struct GetLaunchConfigurationOutput {
     pub enable_map_auto_tagging: ::std::option::Option<bool>,
     /// <p>Map auto tagging MPE ID.</p>
     pub map_auto_tagging_mpe_id: ::std::option::Option<::std::string::String>,
+    /// <p>Map auto tagging key.</p>
+    pub map_auto_tagging_key: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetLaunchConfigurationOutput {
@@ -78,6 +80,10 @@ impl GetLaunchConfigurationOutput {
     pub fn map_auto_tagging_mpe_id(&self) -> ::std::option::Option<&str> {
         self.map_auto_tagging_mpe_id.as_deref()
     }
+    /// <p>Map auto tagging key.</p>
+    pub fn map_auto_tagging_key(&self) -> ::std::option::Option<&str> {
+        self.map_auto_tagging_key.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetLaunchConfigurationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -107,6 +113,7 @@ pub struct GetLaunchConfigurationOutputBuilder {
     pub(crate) post_launch_actions: ::std::option::Option<crate::types::PostLaunchActions>,
     pub(crate) enable_map_auto_tagging: ::std::option::Option<bool>,
     pub(crate) map_auto_tagging_mpe_id: ::std::option::Option<::std::string::String>,
+    pub(crate) map_auto_tagging_key: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetLaunchConfigurationOutputBuilder {
@@ -281,6 +288,20 @@ impl GetLaunchConfigurationOutputBuilder {
     pub fn get_map_auto_tagging_mpe_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.map_auto_tagging_mpe_id
     }
+    /// <p>Map auto tagging key.</p>
+    pub fn map_auto_tagging_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.map_auto_tagging_key = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Map auto tagging key.</p>
+    pub fn set_map_auto_tagging_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.map_auto_tagging_key = input;
+        self
+    }
+    /// <p>Map auto tagging key.</p>
+    pub fn get_map_auto_tagging_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_auto_tagging_key
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -305,6 +326,7 @@ impl GetLaunchConfigurationOutputBuilder {
             post_launch_actions: self.post_launch_actions,
             enable_map_auto_tagging: self.enable_map_auto_tagging,
             map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id,
+            map_auto_tagging_key: self.map_auto_tagging_key,
             _request_id: self._request_id,
         }
     }

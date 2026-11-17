@@ -128,17 +128,17 @@ impl ListCoverageStatisticsFluentBuilder {
     pub fn get_filter_criteria(&self) -> &::std::option::Option<crate::types::CoverageFilterCriteria> {
         self.inner.get_filter_criteria()
     }
-    /// <p>The value to group the results by.</p>
+    /// <p>The value to group the results by. For multi-cloud resources, use <code>PROVIDER</code>, <code>PROVIDER_ACCOUNT_ID</code> (Azure subscription ID or Google Cloud Platform (GCP) project ID), <code>PROVIDER_ORG_ID</code> (Azure tenant ID or Google Cloud Platform (GCP) organization ID), or <code>PROVIDER_REGION</code>.</p>
     pub fn group_by(mut self, input: crate::types::GroupKey) -> Self {
         self.inner = self.inner.group_by(input);
         self
     }
-    /// <p>The value to group the results by.</p>
+    /// <p>The value to group the results by. For multi-cloud resources, use <code>PROVIDER</code>, <code>PROVIDER_ACCOUNT_ID</code> (Azure subscription ID or Google Cloud Platform (GCP) project ID), <code>PROVIDER_ORG_ID</code> (Azure tenant ID or Google Cloud Platform (GCP) organization ID), or <code>PROVIDER_REGION</code>.</p>
     pub fn set_group_by(mut self, input: ::std::option::Option<crate::types::GroupKey>) -> Self {
         self.inner = self.inner.set_group_by(input);
         self
     }
-    /// <p>The value to group the results by.</p>
+    /// <p>The value to group the results by. For multi-cloud resources, use <code>PROVIDER</code>, <code>PROVIDER_ACCOUNT_ID</code> (Azure subscription ID or Google Cloud Platform (GCP) project ID), <code>PROVIDER_ORG_ID</code> (Azure tenant ID or Google Cloud Platform (GCP) organization ID), or <code>PROVIDER_REGION</code>.</p>
     pub fn get_group_by(&self) -> &::std::option::Option<crate::types::GroupKey> {
         self.inner.get_group_by()
     }

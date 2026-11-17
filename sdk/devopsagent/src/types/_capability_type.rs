@@ -12,6 +12,8 @@
 /// ```text
 /// # let capabilitytype = unimplemented!();
 /// match capabilitytype {
+///     CapabilityType::CodeChangeRiskAnalysis => { /* ... */ },
+///     CapabilityType::CodeChangeRiskAnalysisAutomatedTesting => { /* ... */ },
 ///     CapabilityType::ReleaseReadinessReview => { /* ... */ },
 ///     CapabilityType::ReleaseReadinessReviewAutomatedTesting => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -42,6 +44,10 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum CapabilityType {
+    #[allow(missing_docs)] // documentation missing in model
+    CodeChangeRiskAnalysis,
+    #[allow(missing_docs)] // documentation missing in model
+    CodeChangeRiskAnalysisAutomatedTesting,
     /// <p>Release readiness review auto-trigger capability.</p>
     ReleaseReadinessReview,
     /// <p>Release readiness review automated testing capability.</p>
@@ -53,6 +59,8 @@ pub enum CapabilityType {
 impl ::std::convert::From<&str> for CapabilityType {
     fn from(s: &str) -> Self {
         match s {
+            "CODE_CHANGE_RISK_ANALYSIS" => CapabilityType::CodeChangeRiskAnalysis,
+            "CODE_CHANGE_RISK_ANALYSIS_AUTOMATED_TESTING" => CapabilityType::CodeChangeRiskAnalysisAutomatedTesting,
             "RELEASE_READINESS_REVIEW" => CapabilityType::ReleaseReadinessReview,
             "RELEASE_READINESS_REVIEW_AUTOMATED_TESTING" => CapabilityType::ReleaseReadinessReviewAutomatedTesting,
             other => CapabilityType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +78,8 @@ impl CapabilityType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            CapabilityType::CodeChangeRiskAnalysis => "CODE_CHANGE_RISK_ANALYSIS",
+            CapabilityType::CodeChangeRiskAnalysisAutomatedTesting => "CODE_CHANGE_RISK_ANALYSIS_AUTOMATED_TESTING",
             CapabilityType::ReleaseReadinessReview => "RELEASE_READINESS_REVIEW",
             CapabilityType::ReleaseReadinessReviewAutomatedTesting => "RELEASE_READINESS_REVIEW_AUTOMATED_TESTING",
             CapabilityType::Unknown(value) => value.as_str(),
@@ -77,7 +87,12 @@ impl CapabilityType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["RELEASE_READINESS_REVIEW", "RELEASE_READINESS_REVIEW_AUTOMATED_TESTING"]
+        &[
+            "CODE_CHANGE_RISK_ANALYSIS",
+            "CODE_CHANGE_RISK_ANALYSIS_AUTOMATED_TESTING",
+            "RELEASE_READINESS_REVIEW",
+            "RELEASE_READINESS_REVIEW_AUTOMATED_TESTING",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for CapabilityType {
@@ -100,6 +115,8 @@ impl CapabilityType {
 impl ::std::fmt::Display for CapabilityType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            CapabilityType::CodeChangeRiskAnalysis => write!(f, "CODE_CHANGE_RISK_ANALYSIS"),
+            CapabilityType::CodeChangeRiskAnalysisAutomatedTesting => write!(f, "CODE_CHANGE_RISK_ANALYSIS_AUTOMATED_TESTING"),
             CapabilityType::ReleaseReadinessReview => write!(f, "RELEASE_READINESS_REVIEW"),
             CapabilityType::ReleaseReadinessReviewAutomatedTesting => write!(f, "RELEASE_READINESS_REVIEW_AUTOMATED_TESTING"),
             CapabilityType::Unknown(value) => write!(f, "{value}"),

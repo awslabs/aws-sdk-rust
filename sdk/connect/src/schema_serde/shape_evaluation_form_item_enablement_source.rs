@@ -19,6 +19,59 @@ static EVALUATIONFORMITEMENABLEMENTSOURCE_MEMBER_REF_ID: ::aws_smithy_schema::Sc
     "RefId",
     1,
 );
+static EVALUATIONFORMITEMENABLEMENTSOURCE_MEMBER_CONTACT_FIELD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.connect#EvaluationFormItemEnablementSource$ContactField",
+        "com.amazonaws.connect",
+        "EvaluationFormItemEnablementSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ContactField",
+    2,
+);
+static EVALUATIONFORMITEMENABLEMENTSOURCE_MEMBER_CONTACT_ATTRIBUTE_KEY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.connect#EvaluationFormItemEnablementSource$ContactAttributeKey",
+            "com.amazonaws.connect",
+            "EvaluationFormItemEnablementSource",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "ContactAttributeKey",
+        3,
+    );
+static EVALUATIONFORMITEMENABLEMENTSOURCE_MEMBER_SEGMENT_ATTRIBUTE_KEY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.connect#EvaluationFormItemEnablementSource$SegmentAttributeKey",
+            "com.amazonaws.connect",
+            "EvaluationFormItemEnablementSource",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "SegmentAttributeKey",
+        4,
+    );
+static EVALUATIONFORMITEMENABLEMENTSOURCE_MEMBER_EVALUATION_METADATA_FIELD: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.connect#EvaluationFormItemEnablementSource$EvaluationMetadataField",
+            "com.amazonaws.connect",
+            "EvaluationFormItemEnablementSource",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "EvaluationMetadataField",
+        5,
+    );
+static EVALUATIONFORMITEMENABLEMENTSOURCE_MEMBER_AI_METRICS_FIELD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.connect#EvaluationFormItemEnablementSource$AiMetricsField",
+        "com.amazonaws.connect",
+        "EvaluationFormItemEnablementSource",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "AiMetricsField",
+    6,
+);
 static EVALUATIONFORMITEMENABLEMENTSOURCE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.connect#EvaluationFormItemEnablementSource",
@@ -29,6 +82,11 @@ static EVALUATIONFORMITEMENABLEMENTSOURCE_SCHEMA: ::aws_smithy_schema::Schema<'s
     &[
         &EVALUATIONFORMITEMENABLEMENTSOURCE_MEMBER_TYPE,
         &EVALUATIONFORMITEMENABLEMENTSOURCE_MEMBER_REF_ID,
+        &EVALUATIONFORMITEMENABLEMENTSOURCE_MEMBER_CONTACT_FIELD,
+        &EVALUATIONFORMITEMENABLEMENTSOURCE_MEMBER_CONTACT_ATTRIBUTE_KEY,
+        &EVALUATIONFORMITEMENABLEMENTSOURCE_MEMBER_SEGMENT_ATTRIBUTE_KEY,
+        &EVALUATIONFORMITEMENABLEMENTSOURCE_MEMBER_EVALUATION_METADATA_FIELD,
+        &EVALUATIONFORMITEMENABLEMENTSOURCE_MEMBER_AI_METRICS_FIELD,
     ],
 );
 impl crate::types::EvaluationFormItemEnablementSource {
@@ -51,6 +109,21 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Evaluation
         }
         if let Some(ref val) = self.ref_id {
             ser.write_string(&EVALUATIONFORMITEMENABLEMENTSOURCE_MEMBER_REF_ID, val)?;
+        }
+        if let Some(ref val) = self.contact_field {
+            ser.write_string(&EVALUATIONFORMITEMENABLEMENTSOURCE_MEMBER_CONTACT_FIELD, val.as_str())?;
+        }
+        if let Some(ref val) = self.contact_attribute_key {
+            ser.write_string(&EVALUATIONFORMITEMENABLEMENTSOURCE_MEMBER_CONTACT_ATTRIBUTE_KEY, val)?;
+        }
+        if let Some(ref val) = self.segment_attribute_key {
+            ser.write_string(&EVALUATIONFORMITEMENABLEMENTSOURCE_MEMBER_SEGMENT_ATTRIBUTE_KEY, val)?;
+        }
+        if let Some(ref val) = self.evaluation_metadata_field {
+            ser.write_string(&EVALUATIONFORMITEMENABLEMENTSOURCE_MEMBER_EVALUATION_METADATA_FIELD, val.as_str())?;
+        }
+        if let Some(ref val) = self.ai_metrics_field {
+            ser.write_string(&EVALUATIONFORMITEMENABLEMENTSOURCE_MEMBER_AI_METRICS_FIELD, val.as_str())?;
         }
         Ok(())
     }
@@ -79,6 +152,43 @@ impl crate::types::builders::EvaluationFormItemEnablementSourceBuilder {
                         deser.read_null()?;
                     } else {
                         self.ref_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.contact_field = Some(crate::types::EvaluationFormContactField::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.contact_attribute_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.segment_attribute_key = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.evaluation_metadata_field = Some(crate::types::EvaluationFormEvaluationMetadataField::from(
+                            deser.read_string(member)?.as_str(),
+                        ));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.ai_metrics_field = Some(crate::types::EvaluationFormAiMetricsField::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}

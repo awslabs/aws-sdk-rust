@@ -184,6 +184,9 @@ pub mod delete_resource_policy;
 /// Types for the `DeleteWorkloadIdentity` operation.
 pub mod delete_workload_identity;
 
+/// Types for the `GetAgentInsightStore` operation.
+pub mod get_agent_insight_store;
+
 /// Types for the `GetAgentRuntime` operation.
 pub mod get_agent_runtime;
 
@@ -288,6 +291,9 @@ pub mod get_token_vault;
 
 /// Types for the `GetWorkloadIdentity` operation.
 pub mod get_workload_identity;
+
+/// Types for the `ListAgentInsightStores` operation.
+pub mod list_agent_insight_stores;
 
 /// Types for the `ListAgentRuntimeEndpoints` operation.
 pub mod list_agent_runtime_endpoints;
@@ -435,6 +441,9 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateAgentInsightStore` operation.
+pub mod update_agent_insight_store;
 
 /// Types for the `UpdateAgentRuntime` operation.
 pub mod update_agent_runtime;

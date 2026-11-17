@@ -4,19 +4,69 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationFormItemEnablementSource {
-    /// <p>A type of source item.</p>
+    /// <p>A type of source item. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>QUESTION_REF_ID</code> - The answer to another question in the evaluation form.</p></li>
+    /// <li>
+    /// <p><code>CONTACT</code> - Data from the evaluated contact.</p></li>
+    /// <li>
+    /// <p><code>EVALUATION_METADATA</code> - Metadata of the evaluation, such as the evaluation type.</p></li>
+    /// <li>
+    /// <p><code>AI_METRICS</code> - Metrics about AI agents, AI sessions, and AI tools on the contact.</p></li>
+    /// </ul>
     pub r#type: crate::types::EvaluationFormItemEnablementSourceType,
-    /// <p>A referenceId of the source item.</p>
+    /// <p>A referenceId of the source item. Use when <code>Type</code> is <code>QUESTION_REF_ID</code>.</p>
     pub ref_id: ::std::option::Option<::std::string::String>,
+    /// <p>The contact field to use as the source, such as <code>CHANNEL</code>, <code>QUEUE_ARN</code>, <code>OVERALL_CUSTOMER_SENTIMENT_SCORE</code>, or <code>RECORDING_MEDIA_STREAM_TYPES</code>. Use when <code>Type</code> is <code>CONTACT</code>.</p>
+    pub contact_field: ::std::option::Option<crate::types::EvaluationFormContactField>,
+    /// <p>The key of the contact attribute to use as the source. Use when <code>Type</code> is <code>CONTACT</code>.</p>
+    pub contact_attribute_key: ::std::option::Option<::std::string::String>,
+    /// <p>The key of the contact segment attribute to use as the source. Use when <code>Type</code> is <code>CONTACT</code>.</p>
+    pub segment_attribute_key: ::std::option::Option<::std::string::String>,
+    /// <p>The evaluation metadata field to use as the source. Use when <code>Type</code> is <code>EVALUATION_METADATA</code>.</p>
+    pub evaluation_metadata_field: ::std::option::Option<crate::types::EvaluationFormEvaluationMetadataField>,
+    /// <p>The AI metrics field to use as the source. Use when <code>Type</code> is <code>AI_METRICS</code>.</p>
+    pub ai_metrics_field: ::std::option::Option<crate::types::EvaluationFormAiMetricsField>,
 }
 impl EvaluationFormItemEnablementSource {
-    /// <p>A type of source item.</p>
+    /// <p>A type of source item. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>QUESTION_REF_ID</code> - The answer to another question in the evaluation form.</p></li>
+    /// <li>
+    /// <p><code>CONTACT</code> - Data from the evaluated contact.</p></li>
+    /// <li>
+    /// <p><code>EVALUATION_METADATA</code> - Metadata of the evaluation, such as the evaluation type.</p></li>
+    /// <li>
+    /// <p><code>AI_METRICS</code> - Metrics about AI agents, AI sessions, and AI tools on the contact.</p></li>
+    /// </ul>
     pub fn r#type(&self) -> &crate::types::EvaluationFormItemEnablementSourceType {
         &self.r#type
     }
-    /// <p>A referenceId of the source item.</p>
+    /// <p>A referenceId of the source item. Use when <code>Type</code> is <code>QUESTION_REF_ID</code>.</p>
     pub fn ref_id(&self) -> ::std::option::Option<&str> {
         self.ref_id.as_deref()
+    }
+    /// <p>The contact field to use as the source, such as <code>CHANNEL</code>, <code>QUEUE_ARN</code>, <code>OVERALL_CUSTOMER_SENTIMENT_SCORE</code>, or <code>RECORDING_MEDIA_STREAM_TYPES</code>. Use when <code>Type</code> is <code>CONTACT</code>.</p>
+    pub fn contact_field(&self) -> ::std::option::Option<&crate::types::EvaluationFormContactField> {
+        self.contact_field.as_ref()
+    }
+    /// <p>The key of the contact attribute to use as the source. Use when <code>Type</code> is <code>CONTACT</code>.</p>
+    pub fn contact_attribute_key(&self) -> ::std::option::Option<&str> {
+        self.contact_attribute_key.as_deref()
+    }
+    /// <p>The key of the contact segment attribute to use as the source. Use when <code>Type</code> is <code>CONTACT</code>.</p>
+    pub fn segment_attribute_key(&self) -> ::std::option::Option<&str> {
+        self.segment_attribute_key.as_deref()
+    }
+    /// <p>The evaluation metadata field to use as the source. Use when <code>Type</code> is <code>EVALUATION_METADATA</code>.</p>
+    pub fn evaluation_metadata_field(&self) -> ::std::option::Option<&crate::types::EvaluationFormEvaluationMetadataField> {
+        self.evaluation_metadata_field.as_ref()
+    }
+    /// <p>The AI metrics field to use as the source. Use when <code>Type</code> is <code>AI_METRICS</code>.</p>
+    pub fn ai_metrics_field(&self) -> ::std::option::Option<&crate::types::EvaluationFormAiMetricsField> {
+        self.ai_metrics_field.as_ref()
     }
 }
 impl EvaluationFormItemEnablementSource {
@@ -32,36 +82,141 @@ impl EvaluationFormItemEnablementSource {
 pub struct EvaluationFormItemEnablementSourceBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::EvaluationFormItemEnablementSourceType>,
     pub(crate) ref_id: ::std::option::Option<::std::string::String>,
+    pub(crate) contact_field: ::std::option::Option<crate::types::EvaluationFormContactField>,
+    pub(crate) contact_attribute_key: ::std::option::Option<::std::string::String>,
+    pub(crate) segment_attribute_key: ::std::option::Option<::std::string::String>,
+    pub(crate) evaluation_metadata_field: ::std::option::Option<crate::types::EvaluationFormEvaluationMetadataField>,
+    pub(crate) ai_metrics_field: ::std::option::Option<crate::types::EvaluationFormAiMetricsField>,
 }
 impl EvaluationFormItemEnablementSourceBuilder {
-    /// <p>A type of source item.</p>
+    /// <p>A type of source item. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>QUESTION_REF_ID</code> - The answer to another question in the evaluation form.</p></li>
+    /// <li>
+    /// <p><code>CONTACT</code> - Data from the evaluated contact.</p></li>
+    /// <li>
+    /// <p><code>EVALUATION_METADATA</code> - Metadata of the evaluation, such as the evaluation type.</p></li>
+    /// <li>
+    /// <p><code>AI_METRICS</code> - Metrics about AI agents, AI sessions, and AI tools on the contact.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::EvaluationFormItemEnablementSourceType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A type of source item.</p>
+    /// <p>A type of source item. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>QUESTION_REF_ID</code> - The answer to another question in the evaluation form.</p></li>
+    /// <li>
+    /// <p><code>CONTACT</code> - Data from the evaluated contact.</p></li>
+    /// <li>
+    /// <p><code>EVALUATION_METADATA</code> - Metadata of the evaluation, such as the evaluation type.</p></li>
+    /// <li>
+    /// <p><code>AI_METRICS</code> - Metrics about AI agents, AI sessions, and AI tools on the contact.</p></li>
+    /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::EvaluationFormItemEnablementSourceType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>A type of source item.</p>
+    /// <p>A type of source item. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>QUESTION_REF_ID</code> - The answer to another question in the evaluation form.</p></li>
+    /// <li>
+    /// <p><code>CONTACT</code> - Data from the evaluated contact.</p></li>
+    /// <li>
+    /// <p><code>EVALUATION_METADATA</code> - Metadata of the evaluation, such as the evaluation type.</p></li>
+    /// <li>
+    /// <p><code>AI_METRICS</code> - Metrics about AI agents, AI sessions, and AI tools on the contact.</p></li>
+    /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::EvaluationFormItemEnablementSourceType> {
         &self.r#type
     }
-    /// <p>A referenceId of the source item.</p>
+    /// <p>A referenceId of the source item. Use when <code>Type</code> is <code>QUESTION_REF_ID</code>.</p>
     pub fn ref_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ref_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A referenceId of the source item.</p>
+    /// <p>A referenceId of the source item. Use when <code>Type</code> is <code>QUESTION_REF_ID</code>.</p>
     pub fn set_ref_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ref_id = input;
         self
     }
-    /// <p>A referenceId of the source item.</p>
+    /// <p>A referenceId of the source item. Use when <code>Type</code> is <code>QUESTION_REF_ID</code>.</p>
     pub fn get_ref_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.ref_id
+    }
+    /// <p>The contact field to use as the source, such as <code>CHANNEL</code>, <code>QUEUE_ARN</code>, <code>OVERALL_CUSTOMER_SENTIMENT_SCORE</code>, or <code>RECORDING_MEDIA_STREAM_TYPES</code>. Use when <code>Type</code> is <code>CONTACT</code>.</p>
+    pub fn contact_field(mut self, input: crate::types::EvaluationFormContactField) -> Self {
+        self.contact_field = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The contact field to use as the source, such as <code>CHANNEL</code>, <code>QUEUE_ARN</code>, <code>OVERALL_CUSTOMER_SENTIMENT_SCORE</code>, or <code>RECORDING_MEDIA_STREAM_TYPES</code>. Use when <code>Type</code> is <code>CONTACT</code>.</p>
+    pub fn set_contact_field(mut self, input: ::std::option::Option<crate::types::EvaluationFormContactField>) -> Self {
+        self.contact_field = input;
+        self
+    }
+    /// <p>The contact field to use as the source, such as <code>CHANNEL</code>, <code>QUEUE_ARN</code>, <code>OVERALL_CUSTOMER_SENTIMENT_SCORE</code>, or <code>RECORDING_MEDIA_STREAM_TYPES</code>. Use when <code>Type</code> is <code>CONTACT</code>.</p>
+    pub fn get_contact_field(&self) -> &::std::option::Option<crate::types::EvaluationFormContactField> {
+        &self.contact_field
+    }
+    /// <p>The key of the contact attribute to use as the source. Use when <code>Type</code> is <code>CONTACT</code>.</p>
+    pub fn contact_attribute_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.contact_attribute_key = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The key of the contact attribute to use as the source. Use when <code>Type</code> is <code>CONTACT</code>.</p>
+    pub fn set_contact_attribute_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.contact_attribute_key = input;
+        self
+    }
+    /// <p>The key of the contact attribute to use as the source. Use when <code>Type</code> is <code>CONTACT</code>.</p>
+    pub fn get_contact_attribute_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.contact_attribute_key
+    }
+    /// <p>The key of the contact segment attribute to use as the source. Use when <code>Type</code> is <code>CONTACT</code>.</p>
+    pub fn segment_attribute_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.segment_attribute_key = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The key of the contact segment attribute to use as the source. Use when <code>Type</code> is <code>CONTACT</code>.</p>
+    pub fn set_segment_attribute_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.segment_attribute_key = input;
+        self
+    }
+    /// <p>The key of the contact segment attribute to use as the source. Use when <code>Type</code> is <code>CONTACT</code>.</p>
+    pub fn get_segment_attribute_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment_attribute_key
+    }
+    /// <p>The evaluation metadata field to use as the source. Use when <code>Type</code> is <code>EVALUATION_METADATA</code>.</p>
+    pub fn evaluation_metadata_field(mut self, input: crate::types::EvaluationFormEvaluationMetadataField) -> Self {
+        self.evaluation_metadata_field = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The evaluation metadata field to use as the source. Use when <code>Type</code> is <code>EVALUATION_METADATA</code>.</p>
+    pub fn set_evaluation_metadata_field(mut self, input: ::std::option::Option<crate::types::EvaluationFormEvaluationMetadataField>) -> Self {
+        self.evaluation_metadata_field = input;
+        self
+    }
+    /// <p>The evaluation metadata field to use as the source. Use when <code>Type</code> is <code>EVALUATION_METADATA</code>.</p>
+    pub fn get_evaluation_metadata_field(&self) -> &::std::option::Option<crate::types::EvaluationFormEvaluationMetadataField> {
+        &self.evaluation_metadata_field
+    }
+    /// <p>The AI metrics field to use as the source. Use when <code>Type</code> is <code>AI_METRICS</code>.</p>
+    pub fn ai_metrics_field(mut self, input: crate::types::EvaluationFormAiMetricsField) -> Self {
+        self.ai_metrics_field = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The AI metrics field to use as the source. Use when <code>Type</code> is <code>AI_METRICS</code>.</p>
+    pub fn set_ai_metrics_field(mut self, input: ::std::option::Option<crate::types::EvaluationFormAiMetricsField>) -> Self {
+        self.ai_metrics_field = input;
+        self
+    }
+    /// <p>The AI metrics field to use as the source. Use when <code>Type</code> is <code>AI_METRICS</code>.</p>
+    pub fn get_ai_metrics_field(&self) -> &::std::option::Option<crate::types::EvaluationFormAiMetricsField> {
+        &self.ai_metrics_field
     }
     /// Consumes the builder and constructs a [`EvaluationFormItemEnablementSource`](crate::types::EvaluationFormItemEnablementSource).
     /// This method will fail if any of the following fields are not set:
@@ -75,6 +230,11 @@ impl EvaluationFormItemEnablementSourceBuilder {
                 )
             })?,
             ref_id: self.ref_id,
+            contact_field: self.contact_field,
+            contact_attribute_key: self.contact_attribute_key,
+            segment_attribute_key: self.segment_attribute_key,
+            evaluation_metadata_field: self.evaluation_metadata_field,
+            ai_metrics_field: self.ai_metrics_field,
         })
     }
 }

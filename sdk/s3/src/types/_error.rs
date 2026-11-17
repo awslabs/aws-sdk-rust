@@ -23,8 +23,6 @@ pub struct Error {
     /// <p><i>Description:</i> Access Denied</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -34,8 +32,6 @@ pub struct Error {
     /// <p><i>Description:</i> There is a problem with your Amazon Web Services account that prevents the action from completing successfully. Contact Amazon Web Services Support for further assistance.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -45,8 +41,6 @@ pub struct Error {
     /// <p><i>Description:</i> All access to this Amazon S3 resource has been disabled. Contact Amazon Web Services Support for further assistance.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -56,8 +50,6 @@ pub struct Error {
     /// <p><i>Description:</i> The email address you provided is associated with more than one account.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -78,8 +70,6 @@ pub struct Error {
     /// <p><i>Description:</i> The Content-MD5 you specified did not match what we received.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -89,8 +79,6 @@ pub struct Error {
     /// <p><i>Description:</i> The requested bucket name is not available. The bucket namespace is shared by all users of the system. Please select a different name and try again.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -100,8 +88,6 @@ pub struct Error {
     /// <p><i>Description:</i> The bucket you tried to create already exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in the North Virginia Region. For legacy compatibility, if you re-create an existing bucket that you already own in the North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access control lists (ACLs).</p></li>
     /// <li>
     /// <p><i>Code:</i> 409 Conflict (in all Regions except the North Virginia Region)</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -111,8 +97,6 @@ pub struct Error {
     /// <p><i>Description:</i> The bucket you tried to delete is not empty.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -122,8 +106,6 @@ pub struct Error {
     /// <p><i>Description:</i> This request does not support credentials.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -133,8 +115,6 @@ pub struct Error {
     /// <p><i>Description:</i> Cross-location logging not allowed. Buckets in one geographic location cannot log information to a bucket in another location.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -144,8 +124,6 @@ pub struct Error {
     /// <p><i>Description:</i> Your proposed upload is smaller than the minimum allowed object size.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -155,8 +133,6 @@ pub struct Error {
     /// <p><i>Description:</i> Your proposed upload exceeds the maximum allowed object size.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -166,8 +142,6 @@ pub struct Error {
     /// <p><i>Description:</i> The provided token has expired.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -177,8 +151,6 @@ pub struct Error {
     /// <p><i>Description:</i> Indicates that the versioning configuration specified in the request is invalid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -188,8 +160,6 @@ pub struct Error {
     /// <p><i>Description:</i> You did not provide the number of bytes specified by the Content-Length HTTP header</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -199,8 +169,6 @@ pub struct Error {
     /// <p><i>Description:</i> POST requires exactly one file upload per request.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -210,8 +178,6 @@ pub struct Error {
     /// <p><i>Description:</i> Inline data exceeds the maximum allowed size.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -221,8 +187,6 @@ pub struct Error {
     /// <p><i>Description:</i> We encountered an internal error. Please try again.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 500 Internal Server Error</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Server</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -232,8 +196,6 @@ pub struct Error {
     /// <p><i>Description:</i> The Amazon Web Services access key ID you provided does not exist in our records.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -243,8 +205,6 @@ pub struct Error {
     /// <p><i>Description:</i> You must specify the Anonymous role.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> N/A</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -254,8 +214,6 @@ pub struct Error {
     /// <p><i>Description:</i> Invalid Argument</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -265,8 +223,6 @@ pub struct Error {
     /// <p><i>Description:</i> The specified bucket is not valid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -276,8 +232,6 @@ pub struct Error {
     /// <p><i>Description:</i> The request is not valid with the current state of the bucket.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -287,8 +241,6 @@ pub struct Error {
     /// <p><i>Description:</i> The Content-MD5 you specified is not valid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -298,8 +250,6 @@ pub struct Error {
     /// <p><i>Description:</i> The encryption request you specified is not valid. The valid value is AES256.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -309,8 +259,6 @@ pub struct Error {
     /// <p><i>Description:</i> The specified location constraint is not valid. For more information about Regions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How to Select a Region for Your Buckets</a>.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -320,8 +268,6 @@ pub struct Error {
     /// <p><i>Description:</i> The action is not valid for the current state of the object.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -331,8 +277,6 @@ pub struct Error {
     /// <p><i>Description:</i> One or more of the specified parts could not be found. The part might not have been uploaded, or the specified entity tag might not have matched the part's entity tag.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -342,8 +286,6 @@ pub struct Error {
     /// <p><i>Description:</i> The list of parts was not in ascending order. Parts list must be specified in order by part number.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -353,8 +295,6 @@ pub struct Error {
     /// <p><i>Description:</i> All access to this object has been disabled. Please contact Amazon Web Services Support for further assistance.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -364,8 +304,6 @@ pub struct Error {
     /// <p><i>Description:</i> The content of the form does not meet the conditions specified in the policy document.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -375,8 +313,6 @@ pub struct Error {
     /// <p><i>Description:</i> The requested range cannot be satisfied.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 416 Requested Range Not Satisfiable</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -388,17 +324,6 @@ pub struct Error {
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
     /// <li>
     /// <p><i>Code:</i> N/A</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <ul>
-    /// <li>
-    /// <p><i>Code:</i> InvalidRequest</p></li>
-    /// <li>
-    /// <p><i>Description:</i> SOAP requests must be made over an HTTPS connection.</p></li>
-    /// <li>
-    /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -485,19 +410,6 @@ pub struct Error {
     /// <p><i>Description:</i> The provided security credentials are not valid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <ul>
-    /// <li>
-    /// <p><i>Code:</i> InvalidSOAPRequest</p></li>
-    /// <li>
-    /// <p><i>Description:</i> The SOAP request body is invalid.</p></li>
-    /// <li>
-    /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -507,8 +419,6 @@ pub struct Error {
     /// <p><i>Description:</i> The storage class you specified is not valid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -518,8 +428,6 @@ pub struct Error {
     /// <p><i>Description:</i> The target bucket for logging does not exist, is not owned by you, or does not have the appropriate grants for the log-delivery group.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -529,8 +437,6 @@ pub struct Error {
     /// <p><i>Description:</i> The provided token is malformed or otherwise invalid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -540,8 +446,6 @@ pub struct Error {
     /// <p><i>Description:</i> Couldn't parse the specified URI.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -551,8 +455,6 @@ pub struct Error {
     /// <p><i>Description:</i> Your key is too long.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -562,8 +464,6 @@ pub struct Error {
     /// <p><i>Description:</i> The XML you provided was not well-formed or did not validate against our published schema.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -573,8 +473,6 @@ pub struct Error {
     /// <p><i>Description:</i> The body of your POST request is not well-formed multipart/form-data.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -584,8 +482,6 @@ pub struct Error {
     /// <p><i>Description:</i> This happens when the user sends malformed XML (XML that doesn't conform to the published XSD) for the configuration. The error message is, "The XML you provided was not well-formed or did not validate against our published schema."</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -595,8 +491,6 @@ pub struct Error {
     /// <p><i>Description:</i> Your request was too big.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -606,8 +500,6 @@ pub struct Error {
     /// <p><i>Description:</i> Your POST request fields preceding the upload file were too large.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -617,8 +509,6 @@ pub struct Error {
     /// <p><i>Description:</i> Your metadata headers exceed the maximum allowed metadata size.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -628,19 +518,6 @@ pub struct Error {
     /// <p><i>Description:</i> The specified method is not allowed against this resource.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 405 Method Not Allowed</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <ul>
-    /// <li>
-    /// <p><i>Code:</i> MissingAttachment</p></li>
-    /// <li>
-    /// <p><i>Description:</i> A SOAP attachment was expected, but none were found.</p></li>
-    /// <li>
-    /// <p><i>HTTP Status Code:</i> N/A</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -650,8 +527,6 @@ pub struct Error {
     /// <p><i>Description:</i> You must provide the Content-Length HTTP header.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 411 Length Required</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -661,19 +536,6 @@ pub struct Error {
     /// <p><i>Description:</i> This happens when the user sends an empty XML document as a request. The error message is, "Request body is empty."</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <ul>
-    /// <li>
-    /// <p><i>Code:</i> MissingSecurityElement</p></li>
-    /// <li>
-    /// <p><i>Description:</i> The SOAP 1.1 request is missing a security element.</p></li>
-    /// <li>
-    /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -683,8 +545,6 @@ pub struct Error {
     /// <p><i>Description:</i> Your request is missing a required header.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -694,8 +554,6 @@ pub struct Error {
     /// <p><i>Description:</i> There is no such thing as a logging status subresource for a key.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -705,8 +563,6 @@ pub struct Error {
     /// <p><i>Description:</i> The specified bucket does not exist.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -716,8 +572,6 @@ pub struct Error {
     /// <p><i>Description:</i> The specified bucket does not have a bucket policy.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -727,8 +581,6 @@ pub struct Error {
     /// <p><i>Description:</i> The specified key does not exist.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -738,8 +590,6 @@ pub struct Error {
     /// <p><i>Description:</i> The lifecycle configuration does not exist.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -749,8 +599,6 @@ pub struct Error {
     /// <p><i>Description:</i> The specified multipart upload does not exist. The upload ID might be invalid, or the multipart upload might have been aborted or completed.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -760,8 +608,6 @@ pub struct Error {
     /// <p><i>Description:</i> Indicates that the version ID specified in the request does not match an existing version.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -771,8 +617,6 @@ pub struct Error {
     /// <p><i>Description:</i> A header you provided implies functionality that is not implemented.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 501 Not Implemented</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Server</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -782,8 +626,6 @@ pub struct Error {
     /// <p><i>Description:</i> Your account is not signed up for the Amazon S3 service. You must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="http://aws.amazon.com/s3">Amazon S3</a></p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -793,8 +635,6 @@ pub struct Error {
     /// <p><i>Description:</i> A conflicting conditional action is currently in progress against this resource. Try again.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -804,8 +644,6 @@ pub struct Error {
     /// <p><i>Description:</i> The bucket you are attempting to access must be addressed using the specified endpoint. Send all future requests to this endpoint.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 301 Moved Permanently</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -815,8 +653,6 @@ pub struct Error {
     /// <p><i>Description:</i> At least one of the preconditions you specified did not hold.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 412 Precondition Failed</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -826,8 +662,6 @@ pub struct Error {
     /// <p><i>Description:</i> Temporary redirect.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 307 Moved Temporarily</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -837,8 +671,6 @@ pub struct Error {
     /// <p><i>Description:</i> Object restore is already in progress.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -848,8 +680,6 @@ pub struct Error {
     /// <p><i>Description:</i> Bucket POST must be of the enclosure-type multipart/form-data.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -859,8 +689,6 @@ pub struct Error {
     /// <p><i>Description:</i> Your socket connection to the server was not read from or written to within the timeout period.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -870,8 +698,6 @@ pub struct Error {
     /// <p><i>Description:</i> The difference between the request time and the server's time is too large.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -881,19 +707,15 @@ pub struct Error {
     /// <p><i>Description:</i> Requesting the torrent file of a bucket is not permitted.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
     /// <li>
     /// <p><i>Code:</i> SignatureDoesNotMatch</p></li>
     /// <li>
-    /// <p><i>Description:</i> The request signature we calculated does not match the signature you provided. Check your Amazon Web Services secret access key and signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP Authentication</a> for details.</p></li>
+    /// <p><i>Description:</i> The request signature we calculated does not match the signature you provided. Check your Amazon Web Services secret access key and signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a> for details.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -903,8 +725,6 @@ pub struct Error {
     /// <p><i>Description:</i> Service is unable to handle request.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 503 Service Unavailable</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Server</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -914,8 +734,6 @@ pub struct Error {
     /// <p><i>Description:</i> Reduce your request rate.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 503 Slow Down</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Server</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -925,8 +743,6 @@ pub struct Error {
     /// <p><i>Description:</i> You are being redirected to the bucket while DNS updates.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 307 Moved Temporarily</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -936,8 +752,6 @@ pub struct Error {
     /// <p><i>Description:</i> The provided token must be refreshed.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -947,8 +761,6 @@ pub struct Error {
     /// <p><i>Description:</i> You have attempted to create more buckets than allowed.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -958,8 +770,6 @@ pub struct Error {
     /// <p><i>Description:</i> This request does not support content.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -969,8 +779,6 @@ pub struct Error {
     /// <p><i>Description:</i> The email address you provided does not match any account on record.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -980,8 +788,6 @@ pub struct Error {
     /// <p><i>Description:</i> The bucket POST must contain the specified field name. If it is specified, check the order of the fields.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// </ul>
     /// <p></p>
@@ -1010,8 +816,6 @@ impl Error {
     /// <p><i>Description:</i> Access Denied</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1021,8 +825,6 @@ impl Error {
     /// <p><i>Description:</i> There is a problem with your Amazon Web Services account that prevents the action from completing successfully. Contact Amazon Web Services Support for further assistance.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1032,8 +834,6 @@ impl Error {
     /// <p><i>Description:</i> All access to this Amazon S3 resource has been disabled. Contact Amazon Web Services Support for further assistance.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1043,8 +843,6 @@ impl Error {
     /// <p><i>Description:</i> The email address you provided is associated with more than one account.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1065,8 +863,6 @@ impl Error {
     /// <p><i>Description:</i> The Content-MD5 you specified did not match what we received.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1076,8 +872,6 @@ impl Error {
     /// <p><i>Description:</i> The requested bucket name is not available. The bucket namespace is shared by all users of the system. Please select a different name and try again.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1087,8 +881,6 @@ impl Error {
     /// <p><i>Description:</i> The bucket you tried to create already exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in the North Virginia Region. For legacy compatibility, if you re-create an existing bucket that you already own in the North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access control lists (ACLs).</p></li>
     /// <li>
     /// <p><i>Code:</i> 409 Conflict (in all Regions except the North Virginia Region)</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1098,8 +890,6 @@ impl Error {
     /// <p><i>Description:</i> The bucket you tried to delete is not empty.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1109,8 +899,6 @@ impl Error {
     /// <p><i>Description:</i> This request does not support credentials.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1120,8 +908,6 @@ impl Error {
     /// <p><i>Description:</i> Cross-location logging not allowed. Buckets in one geographic location cannot log information to a bucket in another location.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1131,8 +917,6 @@ impl Error {
     /// <p><i>Description:</i> Your proposed upload is smaller than the minimum allowed object size.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1142,8 +926,6 @@ impl Error {
     /// <p><i>Description:</i> Your proposed upload exceeds the maximum allowed object size.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1153,8 +935,6 @@ impl Error {
     /// <p><i>Description:</i> The provided token has expired.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1164,8 +944,6 @@ impl Error {
     /// <p><i>Description:</i> Indicates that the versioning configuration specified in the request is invalid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1175,8 +953,6 @@ impl Error {
     /// <p><i>Description:</i> You did not provide the number of bytes specified by the Content-Length HTTP header</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1186,8 +962,6 @@ impl Error {
     /// <p><i>Description:</i> POST requires exactly one file upload per request.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1197,8 +971,6 @@ impl Error {
     /// <p><i>Description:</i> Inline data exceeds the maximum allowed size.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1208,8 +980,6 @@ impl Error {
     /// <p><i>Description:</i> We encountered an internal error. Please try again.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 500 Internal Server Error</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Server</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1219,8 +989,6 @@ impl Error {
     /// <p><i>Description:</i> The Amazon Web Services access key ID you provided does not exist in our records.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1230,8 +998,6 @@ impl Error {
     /// <p><i>Description:</i> You must specify the Anonymous role.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> N/A</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1241,8 +1007,6 @@ impl Error {
     /// <p><i>Description:</i> Invalid Argument</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1252,8 +1016,6 @@ impl Error {
     /// <p><i>Description:</i> The specified bucket is not valid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1263,8 +1025,6 @@ impl Error {
     /// <p><i>Description:</i> The request is not valid with the current state of the bucket.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1274,8 +1034,6 @@ impl Error {
     /// <p><i>Description:</i> The Content-MD5 you specified is not valid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1285,8 +1043,6 @@ impl Error {
     /// <p><i>Description:</i> The encryption request you specified is not valid. The valid value is AES256.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1296,8 +1052,6 @@ impl Error {
     /// <p><i>Description:</i> The specified location constraint is not valid. For more information about Regions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How to Select a Region for Your Buckets</a>.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1307,8 +1061,6 @@ impl Error {
     /// <p><i>Description:</i> The action is not valid for the current state of the object.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1318,8 +1070,6 @@ impl Error {
     /// <p><i>Description:</i> One or more of the specified parts could not be found. The part might not have been uploaded, or the specified entity tag might not have matched the part's entity tag.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1329,8 +1079,6 @@ impl Error {
     /// <p><i>Description:</i> The list of parts was not in ascending order. Parts list must be specified in order by part number.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1340,8 +1088,6 @@ impl Error {
     /// <p><i>Description:</i> All access to this object has been disabled. Please contact Amazon Web Services Support for further assistance.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1351,8 +1097,6 @@ impl Error {
     /// <p><i>Description:</i> The content of the form does not meet the conditions specified in the policy document.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1362,8 +1106,6 @@ impl Error {
     /// <p><i>Description:</i> The requested range cannot be satisfied.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 416 Requested Range Not Satisfiable</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1375,17 +1117,6 @@ impl Error {
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
     /// <li>
     /// <p><i>Code:</i> N/A</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <ul>
-    /// <li>
-    /// <p><i>Code:</i> InvalidRequest</p></li>
-    /// <li>
-    /// <p><i>Description:</i> SOAP requests must be made over an HTTPS connection.</p></li>
-    /// <li>
-    /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1472,19 +1203,6 @@ impl Error {
     /// <p><i>Description:</i> The provided security credentials are not valid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <ul>
-    /// <li>
-    /// <p><i>Code:</i> InvalidSOAPRequest</p></li>
-    /// <li>
-    /// <p><i>Description:</i> The SOAP request body is invalid.</p></li>
-    /// <li>
-    /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1494,8 +1212,6 @@ impl Error {
     /// <p><i>Description:</i> The storage class you specified is not valid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1505,8 +1221,6 @@ impl Error {
     /// <p><i>Description:</i> The target bucket for logging does not exist, is not owned by you, or does not have the appropriate grants for the log-delivery group.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1516,8 +1230,6 @@ impl Error {
     /// <p><i>Description:</i> The provided token is malformed or otherwise invalid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1527,8 +1239,6 @@ impl Error {
     /// <p><i>Description:</i> Couldn't parse the specified URI.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1538,8 +1248,6 @@ impl Error {
     /// <p><i>Description:</i> Your key is too long.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1549,8 +1257,6 @@ impl Error {
     /// <p><i>Description:</i> The XML you provided was not well-formed or did not validate against our published schema.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1560,8 +1266,6 @@ impl Error {
     /// <p><i>Description:</i> The body of your POST request is not well-formed multipart/form-data.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1571,8 +1275,6 @@ impl Error {
     /// <p><i>Description:</i> This happens when the user sends malformed XML (XML that doesn't conform to the published XSD) for the configuration. The error message is, "The XML you provided was not well-formed or did not validate against our published schema."</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1582,8 +1284,6 @@ impl Error {
     /// <p><i>Description:</i> Your request was too big.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1593,8 +1293,6 @@ impl Error {
     /// <p><i>Description:</i> Your POST request fields preceding the upload file were too large.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1604,8 +1302,6 @@ impl Error {
     /// <p><i>Description:</i> Your metadata headers exceed the maximum allowed metadata size.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1615,19 +1311,6 @@ impl Error {
     /// <p><i>Description:</i> The specified method is not allowed against this resource.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 405 Method Not Allowed</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <ul>
-    /// <li>
-    /// <p><i>Code:</i> MissingAttachment</p></li>
-    /// <li>
-    /// <p><i>Description:</i> A SOAP attachment was expected, but none were found.</p></li>
-    /// <li>
-    /// <p><i>HTTP Status Code:</i> N/A</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1637,8 +1320,6 @@ impl Error {
     /// <p><i>Description:</i> You must provide the Content-Length HTTP header.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 411 Length Required</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1648,19 +1329,6 @@ impl Error {
     /// <p><i>Description:</i> This happens when the user sends an empty XML document as a request. The error message is, "Request body is empty."</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <ul>
-    /// <li>
-    /// <p><i>Code:</i> MissingSecurityElement</p></li>
-    /// <li>
-    /// <p><i>Description:</i> The SOAP 1.1 request is missing a security element.</p></li>
-    /// <li>
-    /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1670,8 +1338,6 @@ impl Error {
     /// <p><i>Description:</i> Your request is missing a required header.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1681,8 +1347,6 @@ impl Error {
     /// <p><i>Description:</i> There is no such thing as a logging status subresource for a key.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1692,8 +1356,6 @@ impl Error {
     /// <p><i>Description:</i> The specified bucket does not exist.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1703,8 +1365,6 @@ impl Error {
     /// <p><i>Description:</i> The specified bucket does not have a bucket policy.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1714,8 +1374,6 @@ impl Error {
     /// <p><i>Description:</i> The specified key does not exist.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1725,8 +1383,6 @@ impl Error {
     /// <p><i>Description:</i> The lifecycle configuration does not exist.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1736,8 +1392,6 @@ impl Error {
     /// <p><i>Description:</i> The specified multipart upload does not exist. The upload ID might be invalid, or the multipart upload might have been aborted or completed.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1747,8 +1401,6 @@ impl Error {
     /// <p><i>Description:</i> Indicates that the version ID specified in the request does not match an existing version.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1758,8 +1410,6 @@ impl Error {
     /// <p><i>Description:</i> A header you provided implies functionality that is not implemented.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 501 Not Implemented</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Server</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1769,8 +1419,6 @@ impl Error {
     /// <p><i>Description:</i> Your account is not signed up for the Amazon S3 service. You must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="http://aws.amazon.com/s3">Amazon S3</a></p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1780,8 +1428,6 @@ impl Error {
     /// <p><i>Description:</i> A conflicting conditional action is currently in progress against this resource. Try again.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1791,8 +1437,6 @@ impl Error {
     /// <p><i>Description:</i> The bucket you are attempting to access must be addressed using the specified endpoint. Send all future requests to this endpoint.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 301 Moved Permanently</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1802,8 +1446,6 @@ impl Error {
     /// <p><i>Description:</i> At least one of the preconditions you specified did not hold.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 412 Precondition Failed</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1813,8 +1455,6 @@ impl Error {
     /// <p><i>Description:</i> Temporary redirect.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 307 Moved Temporarily</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1824,8 +1464,6 @@ impl Error {
     /// <p><i>Description:</i> Object restore is already in progress.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1835,8 +1473,6 @@ impl Error {
     /// <p><i>Description:</i> Bucket POST must be of the enclosure-type multipart/form-data.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1846,8 +1482,6 @@ impl Error {
     /// <p><i>Description:</i> Your socket connection to the server was not read from or written to within the timeout period.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1857,8 +1491,6 @@ impl Error {
     /// <p><i>Description:</i> The difference between the request time and the server's time is too large.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1868,19 +1500,15 @@ impl Error {
     /// <p><i>Description:</i> Requesting the torrent file of a bucket is not permitted.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
     /// <li>
     /// <p><i>Code:</i> SignatureDoesNotMatch</p></li>
     /// <li>
-    /// <p><i>Description:</i> The request signature we calculated does not match the signature you provided. Check your Amazon Web Services secret access key and signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP Authentication</a> for details.</p></li>
+    /// <p><i>Description:</i> The request signature we calculated does not match the signature you provided. Check your Amazon Web Services secret access key and signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a> for details.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1890,8 +1518,6 @@ impl Error {
     /// <p><i>Description:</i> Service is unable to handle request.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 503 Service Unavailable</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Server</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1901,8 +1527,6 @@ impl Error {
     /// <p><i>Description:</i> Reduce your request rate.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 503 Slow Down</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Server</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1912,8 +1536,6 @@ impl Error {
     /// <p><i>Description:</i> You are being redirected to the bucket while DNS updates.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 307 Moved Temporarily</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1923,8 +1545,6 @@ impl Error {
     /// <p><i>Description:</i> The provided token must be refreshed.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1934,8 +1554,6 @@ impl Error {
     /// <p><i>Description:</i> You have attempted to create more buckets than allowed.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1945,8 +1563,6 @@ impl Error {
     /// <p><i>Description:</i> This request does not support content.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1956,8 +1572,6 @@ impl Error {
     /// <p><i>Description:</i> The email address you provided does not match any account on record.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -1967,8 +1581,6 @@ impl Error {
     /// <p><i>Description:</i> The bucket POST must contain the specified field name. If it is specified, check the order of the fields.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// </ul>
     /// <p></p>
@@ -2041,8 +1653,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Access Denied</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2052,8 +1662,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> There is a problem with your Amazon Web Services account that prevents the action from completing successfully. Contact Amazon Web Services Support for further assistance.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2063,8 +1671,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> All access to this Amazon S3 resource has been disabled. Contact Amazon Web Services Support for further assistance.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2074,8 +1680,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The email address you provided is associated with more than one account.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2096,8 +1700,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The Content-MD5 you specified did not match what we received.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2107,8 +1709,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The requested bucket name is not available. The bucket namespace is shared by all users of the system. Please select a different name and try again.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2118,8 +1718,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The bucket you tried to create already exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in the North Virginia Region. For legacy compatibility, if you re-create an existing bucket that you already own in the North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access control lists (ACLs).</p></li>
     /// <li>
     /// <p><i>Code:</i> 409 Conflict (in all Regions except the North Virginia Region)</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2129,8 +1727,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The bucket you tried to delete is not empty.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2140,8 +1736,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> This request does not support credentials.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2151,8 +1745,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Cross-location logging not allowed. Buckets in one geographic location cannot log information to a bucket in another location.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2162,8 +1754,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your proposed upload is smaller than the minimum allowed object size.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2173,8 +1763,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your proposed upload exceeds the maximum allowed object size.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2184,8 +1772,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The provided token has expired.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2195,8 +1781,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Indicates that the versioning configuration specified in the request is invalid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2206,8 +1790,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> You did not provide the number of bytes specified by the Content-Length HTTP header</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2217,8 +1799,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> POST requires exactly one file upload per request.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2228,8 +1808,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Inline data exceeds the maximum allowed size.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2239,8 +1817,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> We encountered an internal error. Please try again.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 500 Internal Server Error</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Server</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2250,8 +1826,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The Amazon Web Services access key ID you provided does not exist in our records.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2261,8 +1835,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> You must specify the Anonymous role.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> N/A</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2272,8 +1844,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Invalid Argument</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2283,8 +1853,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The specified bucket is not valid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2294,8 +1862,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The request is not valid with the current state of the bucket.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2305,8 +1871,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The Content-MD5 you specified is not valid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2316,8 +1880,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The encryption request you specified is not valid. The valid value is AES256.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2327,8 +1889,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The specified location constraint is not valid. For more information about Regions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How to Select a Region for Your Buckets</a>.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2338,8 +1898,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The action is not valid for the current state of the object.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2349,8 +1907,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> One or more of the specified parts could not be found. The part might not have been uploaded, or the specified entity tag might not have matched the part's entity tag.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2360,8 +1916,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The list of parts was not in ascending order. Parts list must be specified in order by part number.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2371,8 +1925,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> All access to this object has been disabled. Please contact Amazon Web Services Support for further assistance.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2382,8 +1934,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The content of the form does not meet the conditions specified in the policy document.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2393,8 +1943,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The requested range cannot be satisfied.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 416 Requested Range Not Satisfiable</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2406,17 +1954,6 @@ impl ErrorBuilder {
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
     /// <li>
     /// <p><i>Code:</i> N/A</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <ul>
-    /// <li>
-    /// <p><i>Code:</i> InvalidRequest</p></li>
-    /// <li>
-    /// <p><i>Description:</i> SOAP requests must be made over an HTTPS connection.</p></li>
-    /// <li>
-    /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2503,19 +2040,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The provided security credentials are not valid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <ul>
-    /// <li>
-    /// <p><i>Code:</i> InvalidSOAPRequest</p></li>
-    /// <li>
-    /// <p><i>Description:</i> The SOAP request body is invalid.</p></li>
-    /// <li>
-    /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2525,8 +2049,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The storage class you specified is not valid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2536,8 +2058,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The target bucket for logging does not exist, is not owned by you, or does not have the appropriate grants for the log-delivery group.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2547,8 +2067,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The provided token is malformed or otherwise invalid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2558,8 +2076,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Couldn't parse the specified URI.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2569,8 +2085,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your key is too long.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2580,8 +2094,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The XML you provided was not well-formed or did not validate against our published schema.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2591,8 +2103,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The body of your POST request is not well-formed multipart/form-data.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2602,8 +2112,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> This happens when the user sends malformed XML (XML that doesn't conform to the published XSD) for the configuration. The error message is, "The XML you provided was not well-formed or did not validate against our published schema."</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2613,8 +2121,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your request was too big.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2624,8 +2130,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your POST request fields preceding the upload file were too large.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2635,8 +2139,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your metadata headers exceed the maximum allowed metadata size.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2646,19 +2148,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The specified method is not allowed against this resource.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 405 Method Not Allowed</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <ul>
-    /// <li>
-    /// <p><i>Code:</i> MissingAttachment</p></li>
-    /// <li>
-    /// <p><i>Description:</i> A SOAP attachment was expected, but none were found.</p></li>
-    /// <li>
-    /// <p><i>HTTP Status Code:</i> N/A</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2668,8 +2157,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> You must provide the Content-Length HTTP header.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 411 Length Required</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2679,19 +2166,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> This happens when the user sends an empty XML document as a request. The error message is, "Request body is empty."</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <ul>
-    /// <li>
-    /// <p><i>Code:</i> MissingSecurityElement</p></li>
-    /// <li>
-    /// <p><i>Description:</i> The SOAP 1.1 request is missing a security element.</p></li>
-    /// <li>
-    /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2701,8 +2175,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your request is missing a required header.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2712,8 +2184,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> There is no such thing as a logging status subresource for a key.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2723,8 +2193,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The specified bucket does not exist.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2734,8 +2202,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The specified bucket does not have a bucket policy.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2745,8 +2211,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The specified key does not exist.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2756,8 +2220,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The lifecycle configuration does not exist.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2767,8 +2229,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The specified multipart upload does not exist. The upload ID might be invalid, or the multipart upload might have been aborted or completed.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2778,8 +2238,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Indicates that the version ID specified in the request does not match an existing version.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2789,8 +2247,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> A header you provided implies functionality that is not implemented.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 501 Not Implemented</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Server</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2800,8 +2256,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your account is not signed up for the Amazon S3 service. You must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="http://aws.amazon.com/s3">Amazon S3</a></p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2811,8 +2265,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> A conflicting conditional action is currently in progress against this resource. Try again.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2822,8 +2274,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The bucket you are attempting to access must be addressed using the specified endpoint. Send all future requests to this endpoint.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 301 Moved Permanently</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2833,8 +2283,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> At least one of the preconditions you specified did not hold.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 412 Precondition Failed</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2844,8 +2292,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Temporary redirect.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 307 Moved Temporarily</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2855,8 +2301,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Object restore is already in progress.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2866,8 +2310,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Bucket POST must be of the enclosure-type multipart/form-data.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2877,8 +2319,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your socket connection to the server was not read from or written to within the timeout period.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2888,8 +2328,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The difference between the request time and the server's time is too large.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2899,19 +2337,15 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Requesting the torrent file of a bucket is not permitted.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
     /// <li>
     /// <p><i>Code:</i> SignatureDoesNotMatch</p></li>
     /// <li>
-    /// <p><i>Description:</i> The request signature we calculated does not match the signature you provided. Check your Amazon Web Services secret access key and signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP Authentication</a> for details.</p></li>
+    /// <p><i>Description:</i> The request signature we calculated does not match the signature you provided. Check your Amazon Web Services secret access key and signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a> for details.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2921,8 +2355,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Service is unable to handle request.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 503 Service Unavailable</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Server</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2932,8 +2364,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Reduce your request rate.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 503 Slow Down</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Server</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2943,8 +2373,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> You are being redirected to the bucket while DNS updates.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 307 Moved Temporarily</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2954,8 +2382,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The provided token must be refreshed.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2965,8 +2391,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> You have attempted to create more buckets than allowed.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2976,8 +2400,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> This request does not support content.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2987,8 +2409,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The email address you provided does not match any account on record.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -2998,8 +2418,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The bucket POST must contain the specified field name. If it is specified, check the order of the fields.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// </ul>
     /// <p></p>
@@ -3017,8 +2435,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Access Denied</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3028,8 +2444,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> There is a problem with your Amazon Web Services account that prevents the action from completing successfully. Contact Amazon Web Services Support for further assistance.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3039,8 +2453,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> All access to this Amazon S3 resource has been disabled. Contact Amazon Web Services Support for further assistance.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3050,8 +2462,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The email address you provided is associated with more than one account.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3072,8 +2482,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The Content-MD5 you specified did not match what we received.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3083,8 +2491,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The requested bucket name is not available. The bucket namespace is shared by all users of the system. Please select a different name and try again.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3094,8 +2500,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The bucket you tried to create already exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in the North Virginia Region. For legacy compatibility, if you re-create an existing bucket that you already own in the North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access control lists (ACLs).</p></li>
     /// <li>
     /// <p><i>Code:</i> 409 Conflict (in all Regions except the North Virginia Region)</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3105,8 +2509,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The bucket you tried to delete is not empty.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3116,8 +2518,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> This request does not support credentials.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3127,8 +2527,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Cross-location logging not allowed. Buckets in one geographic location cannot log information to a bucket in another location.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3138,8 +2536,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your proposed upload is smaller than the minimum allowed object size.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3149,8 +2545,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your proposed upload exceeds the maximum allowed object size.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3160,8 +2554,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The provided token has expired.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3171,8 +2563,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Indicates that the versioning configuration specified in the request is invalid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3182,8 +2572,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> You did not provide the number of bytes specified by the Content-Length HTTP header</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3193,8 +2581,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> POST requires exactly one file upload per request.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3204,8 +2590,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Inline data exceeds the maximum allowed size.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3215,8 +2599,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> We encountered an internal error. Please try again.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 500 Internal Server Error</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Server</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3226,8 +2608,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The Amazon Web Services access key ID you provided does not exist in our records.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3237,8 +2617,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> You must specify the Anonymous role.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> N/A</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3248,8 +2626,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Invalid Argument</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3259,8 +2635,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The specified bucket is not valid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3270,8 +2644,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The request is not valid with the current state of the bucket.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3281,8 +2653,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The Content-MD5 you specified is not valid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3292,8 +2662,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The encryption request you specified is not valid. The valid value is AES256.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3303,8 +2671,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The specified location constraint is not valid. For more information about Regions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How to Select a Region for Your Buckets</a>.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3314,8 +2680,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The action is not valid for the current state of the object.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3325,8 +2689,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> One or more of the specified parts could not be found. The part might not have been uploaded, or the specified entity tag might not have matched the part's entity tag.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3336,8 +2698,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The list of parts was not in ascending order. Parts list must be specified in order by part number.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3347,8 +2707,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> All access to this object has been disabled. Please contact Amazon Web Services Support for further assistance.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3358,8 +2716,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The content of the form does not meet the conditions specified in the policy document.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3369,8 +2725,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The requested range cannot be satisfied.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 416 Requested Range Not Satisfiable</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3382,17 +2736,6 @@ impl ErrorBuilder {
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
     /// <li>
     /// <p><i>Code:</i> N/A</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <ul>
-    /// <li>
-    /// <p><i>Code:</i> InvalidRequest</p></li>
-    /// <li>
-    /// <p><i>Description:</i> SOAP requests must be made over an HTTPS connection.</p></li>
-    /// <li>
-    /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3479,19 +2822,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The provided security credentials are not valid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <ul>
-    /// <li>
-    /// <p><i>Code:</i> InvalidSOAPRequest</p></li>
-    /// <li>
-    /// <p><i>Description:</i> The SOAP request body is invalid.</p></li>
-    /// <li>
-    /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3501,8 +2831,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The storage class you specified is not valid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3512,8 +2840,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The target bucket for logging does not exist, is not owned by you, or does not have the appropriate grants for the log-delivery group.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3523,8 +2849,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The provided token is malformed or otherwise invalid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3534,8 +2858,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Couldn't parse the specified URI.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3545,8 +2867,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your key is too long.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3556,8 +2876,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The XML you provided was not well-formed or did not validate against our published schema.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3567,8 +2885,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The body of your POST request is not well-formed multipart/form-data.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3578,8 +2894,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> This happens when the user sends malformed XML (XML that doesn't conform to the published XSD) for the configuration. The error message is, "The XML you provided was not well-formed or did not validate against our published schema."</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3589,8 +2903,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your request was too big.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3600,8 +2912,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your POST request fields preceding the upload file were too large.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3611,8 +2921,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your metadata headers exceed the maximum allowed metadata size.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3622,19 +2930,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The specified method is not allowed against this resource.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 405 Method Not Allowed</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <ul>
-    /// <li>
-    /// <p><i>Code:</i> MissingAttachment</p></li>
-    /// <li>
-    /// <p><i>Description:</i> A SOAP attachment was expected, but none were found.</p></li>
-    /// <li>
-    /// <p><i>HTTP Status Code:</i> N/A</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3644,8 +2939,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> You must provide the Content-Length HTTP header.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 411 Length Required</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3655,19 +2948,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> This happens when the user sends an empty XML document as a request. The error message is, "Request body is empty."</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <ul>
-    /// <li>
-    /// <p><i>Code:</i> MissingSecurityElement</p></li>
-    /// <li>
-    /// <p><i>Description:</i> The SOAP 1.1 request is missing a security element.</p></li>
-    /// <li>
-    /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3677,8 +2957,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your request is missing a required header.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3688,8 +2966,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> There is no such thing as a logging status subresource for a key.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3699,8 +2975,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The specified bucket does not exist.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3710,8 +2984,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The specified bucket does not have a bucket policy.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3721,8 +2993,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The specified key does not exist.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3732,8 +3002,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The lifecycle configuration does not exist.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3743,8 +3011,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The specified multipart upload does not exist. The upload ID might be invalid, or the multipart upload might have been aborted or completed.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3754,8 +3020,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Indicates that the version ID specified in the request does not match an existing version.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3765,8 +3029,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> A header you provided implies functionality that is not implemented.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 501 Not Implemented</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Server</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3776,8 +3038,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your account is not signed up for the Amazon S3 service. You must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="http://aws.amazon.com/s3">Amazon S3</a></p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3787,8 +3047,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> A conflicting conditional action is currently in progress against this resource. Try again.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3798,8 +3056,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The bucket you are attempting to access must be addressed using the specified endpoint. Send all future requests to this endpoint.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 301 Moved Permanently</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3809,8 +3065,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> At least one of the preconditions you specified did not hold.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 412 Precondition Failed</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3820,8 +3074,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Temporary redirect.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 307 Moved Temporarily</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3831,8 +3083,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Object restore is already in progress.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3842,8 +3092,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Bucket POST must be of the enclosure-type multipart/form-data.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3853,8 +3101,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your socket connection to the server was not read from or written to within the timeout period.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3864,8 +3110,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The difference between the request time and the server's time is too large.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3875,19 +3119,15 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Requesting the torrent file of a bucket is not permitted.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
     /// <li>
     /// <p><i>Code:</i> SignatureDoesNotMatch</p></li>
     /// <li>
-    /// <p><i>Description:</i> The request signature we calculated does not match the signature you provided. Check your Amazon Web Services secret access key and signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP Authentication</a> for details.</p></li>
+    /// <p><i>Description:</i> The request signature we calculated does not match the signature you provided. Check your Amazon Web Services secret access key and signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a> for details.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3897,8 +3137,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Service is unable to handle request.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 503 Service Unavailable</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Server</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3908,8 +3146,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Reduce your request rate.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 503 Slow Down</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Server</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3919,8 +3155,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> You are being redirected to the bucket while DNS updates.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 307 Moved Temporarily</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3930,8 +3164,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The provided token must be refreshed.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3941,8 +3173,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> You have attempted to create more buckets than allowed.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3952,8 +3182,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> This request does not support content.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3963,8 +3191,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The email address you provided does not match any account on record.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -3974,8 +3200,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The bucket POST must contain the specified field name. If it is specified, check the order of the fields.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// </ul>
     /// <p></p>
@@ -3993,8 +3217,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Access Denied</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4004,8 +3226,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> There is a problem with your Amazon Web Services account that prevents the action from completing successfully. Contact Amazon Web Services Support for further assistance.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4015,8 +3235,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> All access to this Amazon S3 resource has been disabled. Contact Amazon Web Services Support for further assistance.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4026,8 +3244,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The email address you provided is associated with more than one account.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4048,8 +3264,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The Content-MD5 you specified did not match what we received.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4059,8 +3273,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The requested bucket name is not available. The bucket namespace is shared by all users of the system. Please select a different name and try again.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4070,8 +3282,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The bucket you tried to create already exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in the North Virginia Region. For legacy compatibility, if you re-create an existing bucket that you already own in the North Virginia Region, Amazon S3 returns 200 OK and resets the bucket access control lists (ACLs).</p></li>
     /// <li>
     /// <p><i>Code:</i> 409 Conflict (in all Regions except the North Virginia Region)</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4081,8 +3291,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The bucket you tried to delete is not empty.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4092,8 +3300,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> This request does not support credentials.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4103,8 +3309,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Cross-location logging not allowed. Buckets in one geographic location cannot log information to a bucket in another location.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4114,8 +3318,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your proposed upload is smaller than the minimum allowed object size.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4125,8 +3327,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your proposed upload exceeds the maximum allowed object size.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4136,8 +3336,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The provided token has expired.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4147,8 +3345,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Indicates that the versioning configuration specified in the request is invalid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4158,8 +3354,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> You did not provide the number of bytes specified by the Content-Length HTTP header</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4169,8 +3363,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> POST requires exactly one file upload per request.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4180,8 +3372,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Inline data exceeds the maximum allowed size.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4191,8 +3381,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> We encountered an internal error. Please try again.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 500 Internal Server Error</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Server</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4202,8 +3390,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The Amazon Web Services access key ID you provided does not exist in our records.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4213,8 +3399,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> You must specify the Anonymous role.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> N/A</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4224,8 +3408,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Invalid Argument</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4235,8 +3417,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The specified bucket is not valid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4246,8 +3426,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The request is not valid with the current state of the bucket.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4257,8 +3435,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The Content-MD5 you specified is not valid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4268,8 +3444,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The encryption request you specified is not valid. The valid value is AES256.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4279,8 +3453,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The specified location constraint is not valid. For more information about Regions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">How to Select a Region for Your Buckets</a>.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4290,8 +3462,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The action is not valid for the current state of the object.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4301,8 +3471,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> One or more of the specified parts could not be found. The part might not have been uploaded, or the specified entity tag might not have matched the part's entity tag.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4312,8 +3480,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The list of parts was not in ascending order. Parts list must be specified in order by part number.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4323,8 +3489,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> All access to this object has been disabled. Please contact Amazon Web Services Support for further assistance.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4334,8 +3498,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The content of the form does not meet the conditions specified in the policy document.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4345,8 +3507,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The requested range cannot be satisfied.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 416 Requested Range Not Satisfiable</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4358,17 +3518,6 @@ impl ErrorBuilder {
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
     /// <li>
     /// <p><i>Code:</i> N/A</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <ul>
-    /// <li>
-    /// <p><i>Code:</i> InvalidRequest</p></li>
-    /// <li>
-    /// <p><i>Description:</i> SOAP requests must be made over an HTTPS connection.</p></li>
-    /// <li>
-    /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4455,19 +3604,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The provided security credentials are not valid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <ul>
-    /// <li>
-    /// <p><i>Code:</i> InvalidSOAPRequest</p></li>
-    /// <li>
-    /// <p><i>Description:</i> The SOAP request body is invalid.</p></li>
-    /// <li>
-    /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4477,8 +3613,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The storage class you specified is not valid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4488,8 +3622,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The target bucket for logging does not exist, is not owned by you, or does not have the appropriate grants for the log-delivery group.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4499,8 +3631,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The provided token is malformed or otherwise invalid.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4510,8 +3640,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Couldn't parse the specified URI.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4521,8 +3649,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your key is too long.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4532,8 +3658,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The XML you provided was not well-formed or did not validate against our published schema.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4543,8 +3667,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The body of your POST request is not well-formed multipart/form-data.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4554,8 +3676,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> This happens when the user sends malformed XML (XML that doesn't conform to the published XSD) for the configuration. The error message is, "The XML you provided was not well-formed or did not validate against our published schema."</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4565,8 +3685,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your request was too big.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4576,8 +3694,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your POST request fields preceding the upload file were too large.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4587,8 +3703,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your metadata headers exceed the maximum allowed metadata size.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4598,19 +3712,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The specified method is not allowed against this resource.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 405 Method Not Allowed</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <ul>
-    /// <li>
-    /// <p><i>Code:</i> MissingAttachment</p></li>
-    /// <li>
-    /// <p><i>Description:</i> A SOAP attachment was expected, but none were found.</p></li>
-    /// <li>
-    /// <p><i>HTTP Status Code:</i> N/A</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4620,8 +3721,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> You must provide the Content-Length HTTP header.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 411 Length Required</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4631,19 +3730,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> This happens when the user sends an empty XML document as a request. The error message is, "Request body is empty."</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
-    /// </ul></li>
-    /// <li>
-    /// <ul>
-    /// <li>
-    /// <p><i>Code:</i> MissingSecurityElement</p></li>
-    /// <li>
-    /// <p><i>Description:</i> The SOAP 1.1 request is missing a security element.</p></li>
-    /// <li>
-    /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4653,8 +3739,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your request is missing a required header.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4664,8 +3748,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> There is no such thing as a logging status subresource for a key.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4675,8 +3757,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The specified bucket does not exist.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4686,8 +3766,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The specified bucket does not have a bucket policy.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4697,8 +3775,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The specified key does not exist.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4708,8 +3784,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The lifecycle configuration does not exist.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4719,8 +3793,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The specified multipart upload does not exist. The upload ID might be invalid, or the multipart upload might have been aborted or completed.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4730,8 +3802,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Indicates that the version ID specified in the request does not match an existing version.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 404 Not Found</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4741,8 +3811,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> A header you provided implies functionality that is not implemented.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 501 Not Implemented</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Server</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4752,8 +3820,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your account is not signed up for the Amazon S3 service. You must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="http://aws.amazon.com/s3">Amazon S3</a></p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4763,8 +3829,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> A conflicting conditional action is currently in progress against this resource. Try again.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4774,8 +3838,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The bucket you are attempting to access must be addressed using the specified endpoint. Send all future requests to this endpoint.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 301 Moved Permanently</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4785,8 +3847,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> At least one of the preconditions you specified did not hold.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 412 Precondition Failed</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4796,8 +3856,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Temporary redirect.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 307 Moved Temporarily</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4807,8 +3865,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Object restore is already in progress.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 409 Conflict</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4818,8 +3874,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Bucket POST must be of the enclosure-type multipart/form-data.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4829,8 +3883,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Your socket connection to the server was not read from or written to within the timeout period.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4840,8 +3892,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The difference between the request time and the server's time is too large.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4851,19 +3901,15 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Requesting the torrent file of a bucket is not permitted.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
     /// <li>
     /// <p><i>Code:</i> SignatureDoesNotMatch</p></li>
     /// <li>
-    /// <p><i>Description:</i> The request signature we calculated does not match the signature you provided. Check your Amazon Web Services secret access key and signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP Authentication</a> for details.</p></li>
+    /// <p><i>Description:</i> The request signature we calculated does not match the signature you provided. Check your Amazon Web Services secret access key and signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a> for details.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 403 Forbidden</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4873,8 +3919,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Service is unable to handle request.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 503 Service Unavailable</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Server</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4884,8 +3928,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> Reduce your request rate.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 503 Slow Down</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Server</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4895,8 +3937,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> You are being redirected to the bucket while DNS updates.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 307 Moved Temporarily</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4906,8 +3946,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The provided token must be refreshed.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4917,8 +3955,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> You have attempted to create more buckets than allowed.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4928,8 +3964,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> This request does not support content.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4939,8 +3973,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The email address you provided does not match any account on record.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// <li>
     /// <ul>
@@ -4950,8 +3982,6 @@ impl ErrorBuilder {
     /// <p><i>Description:</i> The bucket POST must contain the specified field name. If it is specified, check the order of the fields.</p></li>
     /// <li>
     /// <p><i>HTTP Status Code:</i> 400 Bad Request</p></li>
-    /// <li>
-    /// <p><i>SOAP Fault Code Prefix:</i> Client</p></li>
     /// </ul></li>
     /// </ul>
     /// <p></p>

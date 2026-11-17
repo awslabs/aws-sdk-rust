@@ -186,6 +186,11 @@ pub(crate) fn de_get_batch_evaluation(
                         depth + 1,
                     )?);
                 }
+                "datasetExecutionDetails" => {
+                    builder = builder.set_dataset_execution_details(
+                        crate::protocol_serde::shape_dataset_execution_details::de_dataset_execution_details(tokens, _value, depth + 1)?,
+                    );
+                }
                 "description" => {
                     builder = builder.set_description(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

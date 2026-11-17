@@ -200,6 +200,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateLaunchC
                 captured.insert("mapAutoTaggingMpeID", value);
             }
         }
+        if requested.should_capture("mapAutoTaggingKey") {
+            if let ::std::option::Option::Some(value) = input.map_auto_tagging_key.as_deref() {
+                captured.insert("mapAutoTaggingKey", value);
+            }
+        }
         if requested.should_capture("accountID") {
             if let ::std::option::Option::Some(value) = input.account_id.as_deref() {
                 captured.insert("accountID", value);

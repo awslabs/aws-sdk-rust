@@ -21,7 +21,12 @@ pub struct ContextualMetadataConfig {
     /// <li>
     /// <p>DISABLED – Elemental Inference doesn't populate the people, environments, brands, and on-screen text fields.</p></li>
     /// </ul>
+    /// <p>If you specify <code>customQuestions</code>, you must set this property to DISABLED.</p>
     pub extended_analysis: ::std::option::Option<crate::types::ExtendedAnalysisMode>,
+    /// <p>The question sets that you ask Elemental Inference about each shot, each scene, or both, in this output.</p>
+    /// <p>If you specify customQuestions, you must also set extendedAnalysis to DISABLED. If you omit extendedAnalysis, it defaults to ENABLED, and the request fails.</p>
+    /// <p>While a feed references a version of a question set, you can't delete that version or the question set.</p>
+    pub custom_questions: ::std::option::Option<crate::types::CustomQuestionsConfig>,
 }
 impl ContextualMetadataConfig {
     /// <p>Specifies whether Elemental Inference generates a descriptive summary of the media content for this output, along with the objects and actions that it detects. This setting is independent of <code>extendedAnalysis</code>.</p>
@@ -43,8 +48,15 @@ impl ContextualMetadataConfig {
     /// <li>
     /// <p>DISABLED – Elemental Inference doesn't populate the people, environments, brands, and on-screen text fields.</p></li>
     /// </ul>
+    /// <p>If you specify <code>customQuestions</code>, you must set this property to DISABLED.</p>
     pub fn extended_analysis(&self) -> ::std::option::Option<&crate::types::ExtendedAnalysisMode> {
         self.extended_analysis.as_ref()
+    }
+    /// <p>The question sets that you ask Elemental Inference about each shot, each scene, or both, in this output.</p>
+    /// <p>If you specify customQuestions, you must also set extendedAnalysis to DISABLED. If you omit extendedAnalysis, it defaults to ENABLED, and the request fails.</p>
+    /// <p>While a feed references a version of a question set, you can't delete that version or the question set.</p>
+    pub fn custom_questions(&self) -> ::std::option::Option<&crate::types::CustomQuestionsConfig> {
+        self.custom_questions.as_ref()
     }
 }
 impl ContextualMetadataConfig {
@@ -60,6 +72,7 @@ impl ContextualMetadataConfig {
 pub struct ContextualMetadataConfigBuilder {
     pub(crate) summary_generation: ::std::option::Option<crate::types::SummaryGenerationMode>,
     pub(crate) extended_analysis: ::std::option::Option<crate::types::ExtendedAnalysisMode>,
+    pub(crate) custom_questions: ::std::option::Option<crate::types::CustomQuestionsConfig>,
 }
 impl ContextualMetadataConfigBuilder {
     /// <p>Specifies whether Elemental Inference generates a descriptive summary of the media content for this output, along with the objects and actions that it detects. This setting is independent of <code>extendedAnalysis</code>.</p>
@@ -105,6 +118,7 @@ impl ContextualMetadataConfigBuilder {
     /// <li>
     /// <p>DISABLED – Elemental Inference doesn't populate the people, environments, brands, and on-screen text fields.</p></li>
     /// </ul>
+    /// <p>If you specify <code>customQuestions</code>, you must set this property to DISABLED.</p>
     pub fn extended_analysis(mut self, input: crate::types::ExtendedAnalysisMode) -> Self {
         self.extended_analysis = ::std::option::Option::Some(input);
         self
@@ -117,6 +131,7 @@ impl ContextualMetadataConfigBuilder {
     /// <li>
     /// <p>DISABLED – Elemental Inference doesn't populate the people, environments, brands, and on-screen text fields.</p></li>
     /// </ul>
+    /// <p>If you specify <code>customQuestions</code>, you must set this property to DISABLED.</p>
     pub fn set_extended_analysis(mut self, input: ::std::option::Option<crate::types::ExtendedAnalysisMode>) -> Self {
         self.extended_analysis = input;
         self
@@ -129,14 +144,36 @@ impl ContextualMetadataConfigBuilder {
     /// <li>
     /// <p>DISABLED – Elemental Inference doesn't populate the people, environments, brands, and on-screen text fields.</p></li>
     /// </ul>
+    /// <p>If you specify <code>customQuestions</code>, you must set this property to DISABLED.</p>
     pub fn get_extended_analysis(&self) -> &::std::option::Option<crate::types::ExtendedAnalysisMode> {
         &self.extended_analysis
+    }
+    /// <p>The question sets that you ask Elemental Inference about each shot, each scene, or both, in this output.</p>
+    /// <p>If you specify customQuestions, you must also set extendedAnalysis to DISABLED. If you omit extendedAnalysis, it defaults to ENABLED, and the request fails.</p>
+    /// <p>While a feed references a version of a question set, you can't delete that version or the question set.</p>
+    pub fn custom_questions(mut self, input: crate::types::CustomQuestionsConfig) -> Self {
+        self.custom_questions = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The question sets that you ask Elemental Inference about each shot, each scene, or both, in this output.</p>
+    /// <p>If you specify customQuestions, you must also set extendedAnalysis to DISABLED. If you omit extendedAnalysis, it defaults to ENABLED, and the request fails.</p>
+    /// <p>While a feed references a version of a question set, you can't delete that version or the question set.</p>
+    pub fn set_custom_questions(mut self, input: ::std::option::Option<crate::types::CustomQuestionsConfig>) -> Self {
+        self.custom_questions = input;
+        self
+    }
+    /// <p>The question sets that you ask Elemental Inference about each shot, each scene, or both, in this output.</p>
+    /// <p>If you specify customQuestions, you must also set extendedAnalysis to DISABLED. If you omit extendedAnalysis, it defaults to ENABLED, and the request fails.</p>
+    /// <p>While a feed references a version of a question set, you can't delete that version or the question set.</p>
+    pub fn get_custom_questions(&self) -> &::std::option::Option<crate::types::CustomQuestionsConfig> {
+        &self.custom_questions
     }
     /// Consumes the builder and constructs a [`ContextualMetadataConfig`](crate::types::ContextualMetadataConfig).
     pub fn build(self) -> crate::types::ContextualMetadataConfig {
         crate::types::ContextualMetadataConfig {
             summary_generation: self.summary_generation,
             extended_analysis: self.extended_analysis,
+            custom_questions: self.custom_questions,
         }
     }
 }

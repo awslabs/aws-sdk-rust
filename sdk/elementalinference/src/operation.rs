@@ -10,6 +10,15 @@ pub mod create_dictionary;
 /// Types for the `CreateFeed` operation.
 pub mod create_feed;
 
+/// Types for the `CreateFunction` operation.
+pub mod create_function;
+
+/// Types for the `CreateQuestionSet` operation.
+pub mod create_question_set;
+
+/// Types for the `CreateQuestionSetVersion` operation.
+pub mod create_question_set_version;
+
 /// Types for the `CreateScheduleAction` operation.
 pub mod create_schedule_action;
 
@@ -21,6 +30,15 @@ pub mod delete_feed;
 
 /// Types for the `DeleteFeedPolicy` operation.
 pub mod delete_feed_policy;
+
+/// Types for the `DeleteFunction` operation.
+pub mod delete_function;
+
+/// Types for the `DeleteQuestionSet` operation.
+pub mod delete_question_set;
+
+/// Types for the `DeleteQuestionSetVersion` operation.
+pub mod delete_question_set_version;
 
 /// Types for the `DeleteScheduleAction` operation.
 pub mod delete_schedule_action;
@@ -43,11 +61,26 @@ pub mod get_feed_policy;
 /// Types for the `GetFixture` operation.
 pub mod get_fixture;
 
+/// Types for the `GetFunction` operation.
+pub mod get_function;
+
+/// Types for the `GetQuestionSet` operation.
+pub mod get_question_set;
+
 /// Types for the `ListDictionaries` operation.
 pub mod list_dictionaries;
 
 /// Types for the `ListFeeds` operation.
 pub mod list_feeds;
+
+/// Types for the `ListFunctions` operation.
+pub mod list_functions;
+
+/// Types for the `ListQuestionSetVersions` operation.
+pub mod list_question_set_versions;
+
+/// Types for the `ListQuestionSets` operation.
+pub mod list_question_sets;
 
 /// Types for the `ListScheduleActions` operation.
 pub mod list_schedule_actions;
@@ -72,3 +105,9 @@ pub mod update_dictionary;
 
 /// Types for the `UpdateFeed` operation.
 pub mod update_feed;
+
+/// Types for the `UpdateFunction` operation.
+pub mod update_function;
+
+/// Types for the `UpdateQuestionSet` operation.
+pub mod update_question_set;

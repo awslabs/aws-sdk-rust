@@ -417,6 +417,8 @@ pub(crate) mod shape_exclude;
 
 pub(crate) mod shape_include;
 
+pub(crate) mod shape_int_access_tiers;
+
 pub(crate) mod shape_job_failure_list;
 
 pub(crate) mod shape_job_list_descriptor;
@@ -484,6 +486,8 @@ pub(crate) mod shape_s3_update_object_encryption_operation;
 pub(crate) mod shape_scope_permission_list;
 
 pub(crate) mod shape_storage_lens_aws_org;
+
+pub(crate) mod shape_storage_lens_cost_and_usage_reports_publish;
 
 pub(crate) mod shape_storage_lens_data_export;
 
@@ -567,6 +571,8 @@ pub(crate) mod shape_s3_retention;
 
 pub(crate) mod shape_source_selection_criteria;
 
+pub(crate) mod shape_storage_lens_cost_and_usage_reports_prefix_level;
+
 pub(crate) mod shape_storage_lens_group_and_operator;
 
 pub(crate) mod shape_storage_lens_group_level;
@@ -632,6 +638,8 @@ pub(crate) mod shape_s3_object_lock_retention_event_hold_duration;
 pub(crate) mod shape_s3_update_object_encryption_ssekms;
 
 pub(crate) mod shape_sse_kms_encrypted_objects;
+
+pub(crate) mod shape_storage_lens_cost_and_usage_reports_selection_criteria;
 
 pub(crate) mod shape_storage_lens_data_export_encryption;
 

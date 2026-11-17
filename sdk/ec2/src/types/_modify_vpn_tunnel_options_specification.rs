@@ -70,10 +70,10 @@ pub struct ModifyVpnTunnelOptionsSpecification {
     /// <p>Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> | <code>SHA2-512</code></p>
     pub phase2_integrity_algorithms: ::std::option::Option<::std::vec::Vec<crate::types::Phase2IntegrityAlgorithmsRequestListValue>>,
     /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
-    /// <p>Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code></p>
+    /// <p>Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> | <code>35</code></p>
     pub phase1_dh_group_numbers: ::std::option::Option<::std::vec::Vec<crate::types::Phase1DhGroupNumbersRequestListValue>>,
     /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
-    /// <p>Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code></p>
+    /// <p>Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> | <code>35</code> | <code>36</code> | <code>37</code></p>
     pub phase2_dh_group_numbers: ::std::option::Option<::std::vec::Vec<crate::types::Phase2DhGroupNumbersRequestListValue>>,
     /// <p>The IKE versions that are permitted for the VPN tunnel.</p>
     /// <p>Valid values: <code>ikev1</code> | <code>ikev2</code></p>
@@ -86,6 +86,12 @@ pub struct ModifyVpnTunnelOptionsSpecification {
     pub log_options: ::std::option::Option<crate::types::VpnTunnelLogOptionsSpecification>,
     /// <p>Turn on or off tunnel endpoint lifecycle control feature.</p>
     pub enable_tunnel_lifecycle_control: ::std::option::Option<bool>,
+    /// <p>One or more additional key exchange rounds that are permitted for the VPN tunnel for phase 1 IKE negotiations. Additional key exchanges occur after the initial Diffie-Hellman exchange. Each round must have a unique round number.</p>
+    /// <p>Additional key exchanges are supported only with IKEv2. You can't specify a <code>required</code> round if <code>IKEVersions</code> contains only <code>ikev1</code>.</p>
+    pub phase1_additional_key_exchanges: ::std::option::Option<::std::vec::Vec<crate::types::VpnAdditionalKeyExchangeRequest>>,
+    /// <p>One or more additional key exchange rounds that are permitted for the VPN tunnel for phase 2 IKE negotiations. Additional key exchanges occur after the initial Diffie-Hellman exchange. Each round must have a unique round number.</p>
+    /// <p>Additional key exchanges are supported only with IKEv2. You can't specify a <code>required</code> round if <code>IKEVersions</code> contains only <code>ikev1</code>.</p>
+    pub phase2_additional_key_exchanges: ::std::option::Option<::std::vec::Vec<crate::types::VpnAdditionalKeyExchangeRequest>>,
 }
 impl ModifyVpnTunnelOptionsSpecification {
     /// <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same virtual private gateway.</p>
@@ -190,14 +196,14 @@ impl ModifyVpnTunnelOptionsSpecification {
         self.phase2_integrity_algorithms.as_deref().unwrap_or_default()
     }
     /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
-    /// <p>Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code></p>
+    /// <p>Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> | <code>35</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase1_dh_group_numbers.is_none()`.
     pub fn phase1_dh_group_numbers(&self) -> &[crate::types::Phase1DhGroupNumbersRequestListValue] {
         self.phase1_dh_group_numbers.as_deref().unwrap_or_default()
     }
     /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
-    /// <p>Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code></p>
+    /// <p>Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> | <code>35</code> | <code>36</code> | <code>37</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase2_dh_group_numbers.is_none()`.
     pub fn phase2_dh_group_numbers(&self) -> &[crate::types::Phase2DhGroupNumbersRequestListValue] {
@@ -224,6 +230,20 @@ impl ModifyVpnTunnelOptionsSpecification {
     pub fn enable_tunnel_lifecycle_control(&self) -> ::std::option::Option<bool> {
         self.enable_tunnel_lifecycle_control
     }
+    /// <p>One or more additional key exchange rounds that are permitted for the VPN tunnel for phase 1 IKE negotiations. Additional key exchanges occur after the initial Diffie-Hellman exchange. Each round must have a unique round number.</p>
+    /// <p>Additional key exchanges are supported only with IKEv2. You can't specify a <code>required</code> round if <code>IKEVersions</code> contains only <code>ikev1</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase1_additional_key_exchanges.is_none()`.
+    pub fn phase1_additional_key_exchanges(&self) -> &[crate::types::VpnAdditionalKeyExchangeRequest] {
+        self.phase1_additional_key_exchanges.as_deref().unwrap_or_default()
+    }
+    /// <p>One or more additional key exchange rounds that are permitted for the VPN tunnel for phase 2 IKE negotiations. Additional key exchanges occur after the initial Diffie-Hellman exchange. Each round must have a unique round number.</p>
+    /// <p>Additional key exchanges are supported only with IKEv2. You can't specify a <code>required</code> round if <code>IKEVersions</code> contains only <code>ikev1</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase2_additional_key_exchanges.is_none()`.
+    pub fn phase2_additional_key_exchanges(&self) -> &[crate::types::VpnAdditionalKeyExchangeRequest] {
+        self.phase2_additional_key_exchanges.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for ModifyVpnTunnelOptionsSpecification {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -248,6 +268,8 @@ impl ::std::fmt::Debug for ModifyVpnTunnelOptionsSpecification {
         formatter.field("startup_action", &"*** Sensitive Data Redacted ***");
         formatter.field("log_options", &"*** Sensitive Data Redacted ***");
         formatter.field("enable_tunnel_lifecycle_control", &"*** Sensitive Data Redacted ***");
+        formatter.field("phase1_additional_key_exchanges", &"*** Sensitive Data Redacted ***");
+        formatter.field("phase2_additional_key_exchanges", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -282,6 +304,8 @@ pub struct ModifyVpnTunnelOptionsSpecificationBuilder {
     pub(crate) startup_action: ::std::option::Option<::std::string::String>,
     pub(crate) log_options: ::std::option::Option<crate::types::VpnTunnelLogOptionsSpecification>,
     pub(crate) enable_tunnel_lifecycle_control: ::std::option::Option<bool>,
+    pub(crate) phase1_additional_key_exchanges: ::std::option::Option<::std::vec::Vec<crate::types::VpnAdditionalKeyExchangeRequest>>,
+    pub(crate) phase2_additional_key_exchanges: ::std::option::Option<::std::vec::Vec<crate::types::VpnAdditionalKeyExchangeRequest>>,
 }
 impl ModifyVpnTunnelOptionsSpecificationBuilder {
     /// <p>The range of inside IPv4 addresses for the tunnel. Any specified CIDR blocks must be unique across all VPN connections that use the same virtual private gateway.</p>
@@ -640,7 +664,7 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
     /// To override the contents of this collection use [`set_phase1_dh_group_numbers`](Self::set_phase1_dh_group_numbers).
     ///
     /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
-    /// <p>Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code></p>
+    /// <p>Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> | <code>35</code></p>
     pub fn phase1_dh_group_numbers(mut self, input: crate::types::Phase1DhGroupNumbersRequestListValue) -> Self {
         let mut v = self.phase1_dh_group_numbers.unwrap_or_default();
         v.push(input);
@@ -648,7 +672,7 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
         self
     }
     /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
-    /// <p>Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code></p>
+    /// <p>Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> | <code>35</code></p>
     pub fn set_phase1_dh_group_numbers(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::Phase1DhGroupNumbersRequestListValue>>,
@@ -657,7 +681,7 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
         self
     }
     /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 1 IKE negotiations.</p>
-    /// <p>Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code></p>
+    /// <p>Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> | <code>35</code></p>
     pub fn get_phase1_dh_group_numbers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Phase1DhGroupNumbersRequestListValue>> {
         &self.phase1_dh_group_numbers
     }
@@ -666,7 +690,7 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
     /// To override the contents of this collection use [`set_phase2_dh_group_numbers`](Self::set_phase2_dh_group_numbers).
     ///
     /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
-    /// <p>Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code></p>
+    /// <p>Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> | <code>35</code> | <code>36</code> | <code>37</code></p>
     pub fn phase2_dh_group_numbers(mut self, input: crate::types::Phase2DhGroupNumbersRequestListValue) -> Self {
         let mut v = self.phase2_dh_group_numbers.unwrap_or_default();
         v.push(input);
@@ -674,7 +698,7 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
         self
     }
     /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
-    /// <p>Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code></p>
+    /// <p>Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> | <code>35</code> | <code>36</code> | <code>37</code></p>
     pub fn set_phase2_dh_group_numbers(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::Phase2DhGroupNumbersRequestListValue>>,
@@ -683,7 +707,7 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
         self
     }
     /// <p>One or more Diffie-Hellman group numbers that are permitted for the VPN tunnel for phase 2 IKE negotiations.</p>
-    /// <p>Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code></p>
+    /// <p>Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code> | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> | <code>35</code> | <code>36</code> | <code>37</code></p>
     pub fn get_phase2_dh_group_numbers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Phase2DhGroupNumbersRequestListValue>> {
         &self.phase2_dh_group_numbers
     }
@@ -758,6 +782,58 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
     pub fn get_enable_tunnel_lifecycle_control(&self) -> &::std::option::Option<bool> {
         &self.enable_tunnel_lifecycle_control
     }
+    /// Appends an item to `phase1_additional_key_exchanges`.
+    ///
+    /// To override the contents of this collection use [`set_phase1_additional_key_exchanges`](Self::set_phase1_additional_key_exchanges).
+    ///
+    /// <p>One or more additional key exchange rounds that are permitted for the VPN tunnel for phase 1 IKE negotiations. Additional key exchanges occur after the initial Diffie-Hellman exchange. Each round must have a unique round number.</p>
+    /// <p>Additional key exchanges are supported only with IKEv2. You can't specify a <code>required</code> round if <code>IKEVersions</code> contains only <code>ikev1</code>.</p>
+    pub fn phase1_additional_key_exchanges(mut self, input: crate::types::VpnAdditionalKeyExchangeRequest) -> Self {
+        let mut v = self.phase1_additional_key_exchanges.unwrap_or_default();
+        v.push(input);
+        self.phase1_additional_key_exchanges = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>One or more additional key exchange rounds that are permitted for the VPN tunnel for phase 1 IKE negotiations. Additional key exchanges occur after the initial Diffie-Hellman exchange. Each round must have a unique round number.</p>
+    /// <p>Additional key exchanges are supported only with IKEv2. You can't specify a <code>required</code> round if <code>IKEVersions</code> contains only <code>ikev1</code>.</p>
+    pub fn set_phase1_additional_key_exchanges(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VpnAdditionalKeyExchangeRequest>>,
+    ) -> Self {
+        self.phase1_additional_key_exchanges = input;
+        self
+    }
+    /// <p>One or more additional key exchange rounds that are permitted for the VPN tunnel for phase 1 IKE negotiations. Additional key exchanges occur after the initial Diffie-Hellman exchange. Each round must have a unique round number.</p>
+    /// <p>Additional key exchanges are supported only with IKEv2. You can't specify a <code>required</code> round if <code>IKEVersions</code> contains only <code>ikev1</code>.</p>
+    pub fn get_phase1_additional_key_exchanges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpnAdditionalKeyExchangeRequest>> {
+        &self.phase1_additional_key_exchanges
+    }
+    /// Appends an item to `phase2_additional_key_exchanges`.
+    ///
+    /// To override the contents of this collection use [`set_phase2_additional_key_exchanges`](Self::set_phase2_additional_key_exchanges).
+    ///
+    /// <p>One or more additional key exchange rounds that are permitted for the VPN tunnel for phase 2 IKE negotiations. Additional key exchanges occur after the initial Diffie-Hellman exchange. Each round must have a unique round number.</p>
+    /// <p>Additional key exchanges are supported only with IKEv2. You can't specify a <code>required</code> round if <code>IKEVersions</code> contains only <code>ikev1</code>.</p>
+    pub fn phase2_additional_key_exchanges(mut self, input: crate::types::VpnAdditionalKeyExchangeRequest) -> Self {
+        let mut v = self.phase2_additional_key_exchanges.unwrap_or_default();
+        v.push(input);
+        self.phase2_additional_key_exchanges = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>One or more additional key exchange rounds that are permitted for the VPN tunnel for phase 2 IKE negotiations. Additional key exchanges occur after the initial Diffie-Hellman exchange. Each round must have a unique round number.</p>
+    /// <p>Additional key exchanges are supported only with IKEv2. You can't specify a <code>required</code> round if <code>IKEVersions</code> contains only <code>ikev1</code>.</p>
+    pub fn set_phase2_additional_key_exchanges(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VpnAdditionalKeyExchangeRequest>>,
+    ) -> Self {
+        self.phase2_additional_key_exchanges = input;
+        self
+    }
+    /// <p>One or more additional key exchange rounds that are permitted for the VPN tunnel for phase 2 IKE negotiations. Additional key exchanges occur after the initial Diffie-Hellman exchange. Each round must have a unique round number.</p>
+    /// <p>Additional key exchanges are supported only with IKEv2. You can't specify a <code>required</code> round if <code>IKEVersions</code> contains only <code>ikev1</code>.</p>
+    pub fn get_phase2_additional_key_exchanges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpnAdditionalKeyExchangeRequest>> {
+        &self.phase2_additional_key_exchanges
+    }
     /// Consumes the builder and constructs a [`ModifyVpnTunnelOptionsSpecification`](crate::types::ModifyVpnTunnelOptionsSpecification).
     pub fn build(self) -> crate::types::ModifyVpnTunnelOptionsSpecification {
         crate::types::ModifyVpnTunnelOptionsSpecification {
@@ -781,6 +857,8 @@ impl ModifyVpnTunnelOptionsSpecificationBuilder {
             startup_action: self.startup_action,
             log_options: self.log_options,
             enable_tunnel_lifecycle_control: self.enable_tunnel_lifecycle_control,
+            phase1_additional_key_exchanges: self.phase1_additional_key_exchanges,
+            phase2_additional_key_exchanges: self.phase2_additional_key_exchanges,
         }
     }
 }
@@ -807,6 +885,8 @@ impl ::std::fmt::Debug for ModifyVpnTunnelOptionsSpecificationBuilder {
         formatter.field("startup_action", &"*** Sensitive Data Redacted ***");
         formatter.field("log_options", &"*** Sensitive Data Redacted ***");
         formatter.field("enable_tunnel_lifecycle_control", &"*** Sensitive Data Redacted ***");
+        formatter.field("phase1_additional_key_exchanges", &"*** Sensitive Data Redacted ***");
+        formatter.field("phase2_additional_key_exchanges", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

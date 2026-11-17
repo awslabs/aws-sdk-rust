@@ -24,6 +24,11 @@ pub struct MultipartUpload {
     pub checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
     /// <p>The checksum type that is used to calculate the object’s checksum value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub checksum_type: ::std::option::Option<crate::types::ChecksumType>,
+    /// <p>Version ID of the object.</p>
+    /// <p>Returns the Version ID of the object for the multipart upload, if bucket versioning is enabled.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub version_id: ::std::option::Option<::std::string::String>,
 }
 impl MultipartUpload {
     /// <p>Upload ID that identifies the multipart upload.</p>
@@ -62,6 +67,13 @@ impl MultipartUpload {
     pub fn checksum_type(&self) -> ::std::option::Option<&crate::types::ChecksumType> {
         self.checksum_type.as_ref()
     }
+    /// <p>Version ID of the object.</p>
+    /// <p>Returns the Version ID of the object for the multipart upload, if bucket versioning is enabled.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub fn version_id(&self) -> ::std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
 }
 impl MultipartUpload {
     /// Creates a new builder-style object to manufacture [`MultipartUpload`](crate::types::MultipartUpload).
@@ -82,6 +94,7 @@ pub struct MultipartUploadBuilder {
     pub(crate) initiator: ::std::option::Option<crate::types::Initiator>,
     pub(crate) checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
     pub(crate) checksum_type: ::std::option::Option<crate::types::ChecksumType>,
+    pub(crate) version_id: ::std::option::Option<::std::string::String>,
 }
 impl MultipartUploadBuilder {
     /// <p>Upload ID that identifies the multipart upload.</p>
@@ -208,6 +221,29 @@ impl MultipartUploadBuilder {
     pub fn get_checksum_type(&self) -> &::std::option::Option<crate::types::ChecksumType> {
         &self.checksum_type
     }
+    /// <p>Version ID of the object.</p>
+    /// <p>Returns the Version ID of the object for the multipart upload, if bucket versioning is enabled.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Version ID of the object.</p>
+    /// <p>Returns the Version ID of the object for the multipart upload, if bucket versioning is enabled.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_id = input;
+        self
+    }
+    /// <p>Version ID of the object.</p>
+    /// <p>Returns the Version ID of the object for the multipart upload, if bucket versioning is enabled.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
+    }
     /// Consumes the builder and constructs a [`MultipartUpload`](crate::types::MultipartUpload).
     pub fn build(self) -> crate::types::MultipartUpload {
         crate::types::MultipartUpload {
@@ -219,6 +255,7 @@ impl MultipartUploadBuilder {
             initiator: self.initiator,
             checksum_algorithm: self.checksum_algorithm,
             checksum_type: self.checksum_type,
+            version_id: self.version_id,
         }
     }
 }

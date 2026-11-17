@@ -154,6 +154,8 @@ mod create_launch_configuration_template;
 
 mod create_network_migration_definition;
 
+mod create_remote_source_action;
+
 mod create_replication_configuration_template;
 
 mod create_wave;
@@ -195,6 +197,8 @@ mod delete_launch_configuration_template;
 
 mod delete_network_migration_definition;
 
+mod delete_remote_source_action;
+
 mod delete_replication_configuration_template;
 
 mod delete_source_server;
@@ -224,6 +228,8 @@ mod disconnect_from_service;
 mod finalize_cutover;
 
 mod get_launch_configuration;
+
+mod get_launch_configuration_defaults;
 
 mod get_network_migration_definition;
 
@@ -265,6 +271,8 @@ mod list_network_migration_deployments;
 
 mod list_network_migration_executions;
 
+mod list_network_migration_insights;
+
 mod list_network_migration_mapper_segment_constructs;
 
 mod list_network_migration_mapper_segments;
@@ -272,6 +280,14 @@ mod list_network_migration_mapper_segments;
 mod list_network_migration_mapping_updates;
 
 mod list_network_migration_mappings;
+
+mod list_remote_source_action_invocation_results;
+
+mod list_remote_source_action_invocations;
+
+mod list_remote_source_action_jobs;
+
+mod list_remote_source_actions;
 
 mod list_source_server_actions;
 
@@ -315,6 +331,8 @@ mod start_network_migration_mapping;
 
 mod start_network_migration_mapping_update;
 
+mod start_remote_source_action_job;
+
 mod start_replication;
 
 mod start_test;
@@ -337,11 +355,15 @@ mod update_connector;
 
 mod update_launch_configuration;
 
+mod update_launch_configuration_defaults;
+
 mod update_launch_configuration_template;
 
 mod update_network_migration_definition;
 
 mod update_network_migration_mapper_segment;
+
+mod update_remote_source_action;
 
 mod update_replication_configuration;
 

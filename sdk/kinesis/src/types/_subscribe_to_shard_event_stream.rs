@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum SubscribeToShardEventStream {
-    /// <p>After you call <code>SubscribeToShard</code>, Kinesis Data Streams sends events of this type to your consumer. For an example of how to handle these events, see <a href="/streams/latest/dev/building-enhanced-consumers-api.html">Enhanced Fan-Out Using the Kinesis Data Streams API</a>.</p>
+    /// <p>After you call <code>SubscribeToShard</code>, Kinesis Data Streams sends events of this type to your consumer. For an example of how to handle these events, see <a href="/streams/latest/dev/building-enhanced-consumers-api.html">Develop enhanced fan-out consumers with the Amazon Web Services SDK for Java</a>.</p>
     SubscribeToShardEvent(crate::types::SubscribeToShardEvent),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

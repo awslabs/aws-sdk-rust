@@ -119,6 +119,72 @@ pub(crate) fn create_feed_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_function_output_output_correct_errors(
+    mut builder: crate::operation::create_function::builders::CreateFunctionOutputBuilder,
+) -> crate::operation::create_function::builders::CreateFunctionOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.target.is_none() {
+        builder.target = Some(crate::types::FunctionTarget::Unknown)
+    }
+    if builder.request_expression.is_none() {
+        builder.request_expression = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::FunctionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn create_question_set_output_output_correct_errors(
+    mut builder: crate::operation::create_question_set::builders::CreateQuestionSetOutputBuilder,
+) -> crate::operation::create_question_set::builders::CreateQuestionSetOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.sha256.is_none() {
+        builder.sha256 = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn create_question_set_version_output_output_correct_errors(
+    mut builder: crate::operation::create_question_set_version::builders::CreateQuestionSetVersionOutputBuilder,
+) -> crate::operation::create_question_set_version::builders::CreateQuestionSetVersionOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.sha256.is_none() {
+        builder.sha256 = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_schedule_action_output_output_correct_errors(
     mut builder: crate::operation::create_schedule_action::builders::CreateScheduleActionOutputBuilder,
 ) -> crate::operation::create_schedule_action::builders::CreateScheduleActionOutputBuilder {
@@ -163,6 +229,33 @@ pub(crate) fn delete_feed_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::FeedStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn delete_function_output_output_correct_errors(
+    mut builder: crate::operation::delete_function::builders::DeleteFunctionOutputBuilder,
+) -> crate::operation::delete_function::builders::DeleteFunctionOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::FunctionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn delete_question_set_output_output_correct_errors(
+    mut builder: crate::operation::delete_question_set::builders::DeleteQuestionSetOutputBuilder,
+) -> crate::operation::delete_question_set::builders::DeleteQuestionSetOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
     }
     builder
 }
@@ -278,6 +371,51 @@ pub(crate) fn get_fixture_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_function_output_output_correct_errors(
+    mut builder: crate::operation::get_function::builders::GetFunctionOutputBuilder,
+) -> crate::operation::get_function::builders::GetFunctionOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.target.is_none() {
+        builder.target = Some(crate::types::FunctionTarget::Unknown)
+    }
+    if builder.request_expression.is_none() {
+        builder.request_expression = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::FunctionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn get_question_set_output_output_correct_errors(
+    mut builder: crate::operation::get_question_set::builders::GetQuestionSetOutputBuilder,
+) -> crate::operation::get_question_set::builders::GetQuestionSetOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.sha256.is_none() {
+        builder.sha256 = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_dictionaries_output_output_correct_errors(
     mut builder: crate::operation::list_dictionaries::builders::ListDictionariesOutputBuilder,
 ) -> crate::operation::list_dictionaries::builders::ListDictionariesOutputBuilder {
@@ -292,6 +430,33 @@ pub(crate) fn list_feeds_output_output_correct_errors(
 ) -> crate::operation::list_feeds::builders::ListFeedsOutputBuilder {
     if builder.feeds.is_none() {
         builder.feeds = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_functions_output_output_correct_errors(
+    mut builder: crate::operation::list_functions::builders::ListFunctionsOutputBuilder,
+) -> crate::operation::list_functions::builders::ListFunctionsOutputBuilder {
+    if builder.functions.is_none() {
+        builder.functions = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_question_set_versions_output_output_correct_errors(
+    mut builder: crate::operation::list_question_set_versions::builders::ListQuestionSetVersionsOutputBuilder,
+) -> crate::operation::list_question_set_versions::builders::ListQuestionSetVersionsOutputBuilder {
+    if builder.versions.is_none() {
+        builder.versions = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_question_sets_output_output_correct_errors(
+    mut builder: crate::operation::list_question_sets::builders::ListQuestionSetsOutputBuilder,
+) -> crate::operation::list_question_sets::builders::ListQuestionSetsOutputBuilder {
+    if builder.question_sets.is_none() {
+        builder.question_sets = Some(Default::default())
     }
     builder
 }
@@ -359,6 +524,51 @@ pub(crate) fn update_feed_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_function_output_output_correct_errors(
+    mut builder: crate::operation::update_function::builders::UpdateFunctionOutputBuilder,
+) -> crate::operation::update_function::builders::UpdateFunctionOutputBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.target.is_none() {
+        builder.target = Some(crate::types::FunctionTarget::Unknown)
+    }
+    if builder.request_expression.is_none() {
+        builder.request_expression = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::FunctionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn update_question_set_output_output_correct_errors(
+    mut builder: crate::operation::update_question_set::builders::UpdateQuestionSetOutputBuilder,
+) -> crate::operation::update_question_set::builders::UpdateQuestionSetOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.sha256.is_none() {
+        builder.sha256 = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn feed_association_correct_errors(
     mut builder: crate::types::builders::FeedAssociationBuilder,
 ) -> crate::types::builders::FeedAssociationBuilder {
@@ -376,6 +586,33 @@ pub(crate) fn schedule_action_error_correct_errors(
     }
     if builder.error_message.is_none() {
         builder.error_message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn bedrock_function_target_correct_errors(
+    mut builder: crate::types::builders::BedrockFunctionTargetBuilder,
+) -> crate::types::builders::BedrockFunctionTargetBuilder {
+    if builder.api.is_none() {
+        builder.api = "no value was set".parse::<crate::types::BedrockApi>().ok()
+    }
+    if builder.model.is_none() {
+        builder.model = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn choose_one_question_correct_errors(
+    mut builder: crate::types::builders::ChooseOneQuestionBuilder,
+) -> crate::types::builders::ChooseOneQuestionBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.question.is_none() {
+        builder.question = Some(Default::default())
+    }
+    if builder.options.is_none() {
+        builder.options = Some(Default::default())
     }
     builder
 }
@@ -444,6 +681,24 @@ pub(crate) fn fixture_summary_correct_errors(
     builder
 }
 
+pub(crate) fn function_summary_correct_errors(
+    mut builder: crate::types::builders::FunctionSummaryBuilder,
+) -> crate::types::builders::FunctionSummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::FunctionStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_output_correct_errors(mut builder: crate::types::builders::GetOutputBuilder) -> crate::types::builders::GetOutputBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
@@ -453,6 +708,36 @@ pub(crate) fn get_output_correct_errors(mut builder: crate::types::builders::Get
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::OutputStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn question_set_summary_correct_errors(
+    mut builder: crate::types::builders::QuestionSetSummaryBuilder,
+) -> crate::types::builders::QuestionSetSummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn question_set_version_summary_correct_errors(
+    mut builder: crate::types::builders::QuestionSetVersionSummaryBuilder,
+) -> crate::types::builders::QuestionSetVersionSummaryBuilder {
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.sha256.is_none() {
+        builder.sha256 = Some(Default::default())
+    }
+    if builder.last_modified_at.is_none() {
+        builder.last_modified_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -471,6 +756,33 @@ pub(crate) fn schedule_action_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::ScheduleActionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn yes_no_per_option_question_correct_errors(
+    mut builder: crate::types::builders::YesNoPerOptionQuestionBuilder,
+) -> crate::types::builders::YesNoPerOptionQuestionBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.question.is_none() {
+        builder.question = Some(Default::default())
+    }
+    if builder.options.is_none() {
+        builder.options = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn yes_no_question_correct_errors(
+    mut builder: crate::types::builders::YesNoQuestionBuilder,
+) -> crate::types::builders::YesNoQuestionBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.question.is_none() {
+        builder.question = Some(Default::default())
     }
     builder
 }
@@ -520,6 +832,30 @@ pub(crate) fn data_source_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn function_config_correct_errors(
+    mut builder: crate::types::builders::FunctionConfigBuilder,
+) -> crate::types::builders::FunctionConfigBuilder {
+    if builder.function_arn.is_none() {
+        builder.function_arn = Some(Default::default())
+    }
+    if builder.trigger.is_none() {
+        builder.trigger = Some(crate::types::Trigger::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn question_option_correct_errors(
+    mut builder: crate::types::builders::QuestionOptionBuilder,
+) -> crate::types::builders::QuestionOptionBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.text.is_none() {
+        builder.text = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn subtitling_config_correct_errors(
     mut builder: crate::types::builders::SubtitlingConfigBuilder,
 ) -> crate::types::builders::SubtitlingConfigBuilder {
@@ -535,6 +871,85 @@ pub(crate) fn aspect_ratio_correct_errors(mut builder: crate::types::builders::A
     }
     if builder.height.is_none() {
         builder.height = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn clipping_settings_correct_errors(
+    mut builder: crate::types::builders::ClippingSettingsBuilder,
+) -> crate::types::builders::ClippingSettingsBuilder {
+    if builder.output_name.is_none() {
+        builder.output_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn contextual_metadata_settings_correct_errors(
+    mut builder: crate::types::builders::ContextualMetadataSettingsBuilder,
+) -> crate::types::builders::ContextualMetadataSettingsBuilder {
+    if builder.output_name.is_none() {
+        builder.output_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn frame_settings_correct_errors(
+    mut builder: crate::types::builders::FrameSettingsBuilder,
+) -> crate::types::builders::FrameSettingsBuilder {
+    if builder.frame_sampling.is_none() {
+        builder.frame_sampling = {
+            let builder = crate::types::builders::FrameSamplingStrategyBuilder::default();
+            crate::serde_util::frame_sampling_strategy_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn subtitling_settings_correct_errors(
+    mut builder: crate::types::builders::SubtitlingSettingsBuilder,
+) -> crate::types::builders::SubtitlingSettingsBuilder {
+    if builder.output_name.is_none() {
+        builder.output_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn fixed_interval_trigger_correct_errors(
+    mut builder: crate::types::builders::FixedIntervalTriggerBuilder,
+) -> crate::types::builders::FixedIntervalTriggerBuilder {
+    if builder.interval_seconds.is_none() {
+        builder.interval_seconds = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn frame_sampling_strategy_correct_errors(
+    mut builder: crate::types::builders::FrameSamplingStrategyBuilder,
+) -> crate::types::builders::FrameSamplingStrategyBuilder {
+    if builder.mode.is_none() {
+        builder.mode = "no value was set".parse::<crate::types::FrameSamplingMode>().ok()
+    }
+    builder
+}
+
+pub(crate) fn frame_size_correct_errors(mut builder: crate::types::builders::FrameSizeBuilder) -> crate::types::builders::FrameSizeBuilder {
+    if builder.width_pixels.is_none() {
+        builder.width_pixels = Some(Default::default())
+    }
+    if builder.height_pixels.is_none() {
+        builder.height_pixels = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn question_set_reference_correct_errors(
+    mut builder: crate::types::builders::QuestionSetReferenceBuilder,
+) -> crate::types::builders::QuestionSetReferenceBuilder {
+    if builder.question_set_id.is_none() {
+        builder.question_set_id = Some(Default::default())
+    }
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
     }
     builder
 }

@@ -25,6 +25,8 @@ pub struct UpdateLaunchConfigurationInput {
     pub enable_map_auto_tagging: ::std::option::Option<bool>,
     /// <p>Launch configuration map auto tagging MPE ID.</p>
     pub map_auto_tagging_mpe_id: ::std::option::Option<::std::string::String>,
+    /// <p>Launch configuration map auto tagging key.</p>
+    pub map_auto_tagging_key: ::std::option::Option<::std::string::String>,
     /// <p>Update Launch configuration Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
@@ -73,6 +75,10 @@ impl UpdateLaunchConfigurationInput {
     pub fn map_auto_tagging_mpe_id(&self) -> ::std::option::Option<&str> {
         self.map_auto_tagging_mpe_id.as_deref()
     }
+    /// <p>Launch configuration map auto tagging key.</p>
+    pub fn map_auto_tagging_key(&self) -> ::std::option::Option<&str> {
+        self.map_auto_tagging_key.as_deref()
+    }
     /// <p>Update Launch configuration Account ID.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
@@ -100,6 +106,7 @@ pub struct UpdateLaunchConfigurationInputBuilder {
     pub(crate) post_launch_actions: ::std::option::Option<crate::types::PostLaunchActions>,
     pub(crate) enable_map_auto_tagging: ::std::option::Option<bool>,
     pub(crate) map_auto_tagging_mpe_id: ::std::option::Option<::std::string::String>,
+    pub(crate) map_auto_tagging_key: ::std::option::Option<::std::string::String>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLaunchConfigurationInputBuilder {
@@ -261,6 +268,20 @@ impl UpdateLaunchConfigurationInputBuilder {
     pub fn get_map_auto_tagging_mpe_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.map_auto_tagging_mpe_id
     }
+    /// <p>Launch configuration map auto tagging key.</p>
+    pub fn map_auto_tagging_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.map_auto_tagging_key = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Launch configuration map auto tagging key.</p>
+    pub fn set_map_auto_tagging_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.map_auto_tagging_key = input;
+        self
+    }
+    /// <p>Launch configuration map auto tagging key.</p>
+    pub fn get_map_auto_tagging_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_auto_tagging_key
+    }
     /// <p>Update Launch configuration Account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.account_id = ::std::option::Option::Some(input.into());
@@ -294,6 +315,7 @@ impl UpdateLaunchConfigurationInputBuilder {
             post_launch_actions: self.post_launch_actions,
             enable_map_auto_tagging: self.enable_map_auto_tagging,
             map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id,
+            map_auto_tagging_key: self.map_auto_tagging_key,
             account_id: self.account_id,
         })
     }

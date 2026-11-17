@@ -13,6 +13,7 @@
 /// # let authorizertype = unimplemented!();
 /// match authorizertype {
 ///     AuthorizerType::CognitoUserPools => { /* ... */ },
+///     AuthorizerType::Jwt => { /* ... */ },
 ///     AuthorizerType::Request => { /* ... */ },
 ///     AuthorizerType::Token => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -37,7 +38,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
+/// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool, and <code>JWT</code> for using a native JWT authorizer with the trusted issuers, audiences, and signing algorithms that you declare.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -45,6 +46,8 @@
 pub enum AuthorizerType {
     #[allow(missing_docs)] // documentation missing in model
     CognitoUserPools,
+    #[allow(missing_docs)] // documentation missing in model
+    Jwt,
     #[allow(missing_docs)] // documentation missing in model
     Request,
     #[allow(missing_docs)] // documentation missing in model
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for AuthorizerType {
     fn from(s: &str) -> Self {
         match s {
             "COGNITO_USER_POOLS" => AuthorizerType::CognitoUserPools,
+            "JWT" => AuthorizerType::Jwt,
             "REQUEST" => AuthorizerType::Request,
             "TOKEN" => AuthorizerType::Token,
             other => AuthorizerType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl AuthorizerType {
     pub fn as_str(&self) -> &str {
         match self {
             AuthorizerType::CognitoUserPools => "COGNITO_USER_POOLS",
+            AuthorizerType::Jwt => "JWT",
             AuthorizerType::Request => "REQUEST",
             AuthorizerType::Token => "TOKEN",
             AuthorizerType::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl AuthorizerType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COGNITO_USER_POOLS", "REQUEST", "TOKEN"]
+        &["COGNITO_USER_POOLS", "JWT", "REQUEST", "TOKEN"]
     }
 }
 impl ::std::convert::AsRef<str> for AuthorizerType {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for AuthorizerType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AuthorizerType::CognitoUserPools => write!(f, "COGNITO_USER_POOLS"),
+            AuthorizerType::Jwt => write!(f, "JWT"),
             AuthorizerType::Request => write!(f, "REQUEST"),
             AuthorizerType::Token => write!(f, "TOKEN"),
             AuthorizerType::Unknown(value) => write!(f, "{value}"),

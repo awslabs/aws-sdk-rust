@@ -171,6 +171,12 @@ mod create_dictionary;
 
 mod create_feed;
 
+mod create_function;
+
+mod create_question_set;
+
+mod create_question_set_version;
+
 mod create_schedule_action;
 
 /// Operation customization and supporting types.
@@ -206,6 +212,12 @@ mod delete_feed;
 
 mod delete_feed_policy;
 
+mod delete_function;
+
+mod delete_question_set;
+
+mod delete_question_set_version;
+
 mod delete_schedule_action;
 
 mod disassociate_feed;
@@ -220,9 +232,19 @@ mod get_feed_policy;
 
 mod get_fixture;
 
+mod get_function;
+
+mod get_question_set;
+
 mod list_dictionaries;
 
 mod list_feeds;
+
+mod list_functions;
+
+mod list_question_set_versions;
+
+mod list_question_sets;
 
 mod list_schedule_actions;
 
@@ -239,3 +261,7 @@ mod untag_resource;
 mod update_dictionary;
 
 mod update_feed;
+
+mod update_function;
+
+mod update_question_set;

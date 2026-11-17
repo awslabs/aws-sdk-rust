@@ -14,6 +14,7 @@
 /// match standardsprovider {
 ///     StandardsProvider::Aws => { /* ... */ },
 ///     StandardsProvider::Azure => { /* ... */ },
+///     StandardsProvider::Gcp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum StandardsProvider {
     Aws,
     #[allow(missing_docs)] // documentation missing in model
     Azure,
+    #[allow(missing_docs)] // documentation missing in model
+    Gcp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for StandardsProvider {
         match s {
             "AWS" => StandardsProvider::Aws,
             "Azure" => StandardsProvider::Azure,
+            "GCP" => StandardsProvider::Gcp,
             other => StandardsProvider::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl StandardsProvider {
         match self {
             StandardsProvider::Aws => "AWS",
             StandardsProvider::Azure => "Azure",
+            StandardsProvider::Gcp => "GCP",
             StandardsProvider::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS", "Azure"]
+        &["AWS", "Azure", "GCP"]
     }
 }
 impl ::std::convert::AsRef<str> for StandardsProvider {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for StandardsProvider {
         match self {
             StandardsProvider::Aws => write!(f, "AWS"),
             StandardsProvider::Azure => write!(f, "Azure"),
+            StandardsProvider::Gcp => write!(f, "GCP"),
             StandardsProvider::Unknown(value) => write!(f, "{value}"),
         }
     }

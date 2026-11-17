@@ -16,11 +16,35 @@ pub struct Resource {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>An object that contains details about the resource involved in a finding.</p>
     pub details: ::std::option::Option<crate::types::ResourceDetails>,
-    /// <p>The cloud provider of the resource.</p>
+    /// <p>The cloud provider of the resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub provider: ::std::option::Option<crate::types::Provider>,
-    /// <p>The cloud provider account ID of the resource.</p>
+    /// <p>The cloud provider account ID of the resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>An Azure subscription ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) project ID, such as <code>my-project</code>.</p></li>
+    /// </ul>
     pub provider_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The cloud provider organization ID of the resource.</p>
+    /// <p>The cloud provider organization ID of the resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Organizations organization ID.</p></li>
+    /// <li>
+    /// <p>An Azure tenant ID.</p></li>
+    /// <li>
+    /// <p>A numeric Google Cloud Platform (GCP) organization ID.</p></li>
+    /// </ul>
     pub provider_org_id: ::std::option::Option<::std::string::String>,
 }
 impl Resource {
@@ -49,15 +73,39 @@ impl Resource {
     pub fn details(&self) -> ::std::option::Option<&crate::types::ResourceDetails> {
         self.details.as_ref()
     }
-    /// <p>The cloud provider of the resource.</p>
+    /// <p>The cloud provider of the resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn provider(&self) -> ::std::option::Option<&crate::types::Provider> {
         self.provider.as_ref()
     }
-    /// <p>The cloud provider account ID of the resource.</p>
+    /// <p>The cloud provider account ID of the resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>An Azure subscription ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) project ID, such as <code>my-project</code>.</p></li>
+    /// </ul>
     pub fn provider_account_id(&self) -> ::std::option::Option<&str> {
         self.provider_account_id.as_deref()
     }
-    /// <p>The cloud provider organization ID of the resource.</p>
+    /// <p>The cloud provider organization ID of the resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Organizations organization ID.</p></li>
+    /// <li>
+    /// <p>An Azure tenant ID.</p></li>
+    /// <li>
+    /// <p>A numeric Google Cloud Platform (GCP) organization ID.</p></li>
+    /// </ul>
     pub fn provider_org_id(&self) -> ::std::option::Option<&str> {
         self.provider_org_id.as_deref()
     }
@@ -176,45 +224,117 @@ impl ResourceBuilder {
     pub fn get_details(&self) -> &::std::option::Option<crate::types::ResourceDetails> {
         &self.details
     }
-    /// <p>The cloud provider of the resource.</p>
+    /// <p>The cloud provider of the resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn provider(mut self, input: crate::types::Provider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The cloud provider of the resource.</p>
+    /// <p>The cloud provider of the resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::Provider>) -> Self {
         self.provider = input;
         self
     }
-    /// <p>The cloud provider of the resource.</p>
+    /// <p>The cloud provider of the resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::Provider> {
         &self.provider
     }
-    /// <p>The cloud provider account ID of the resource.</p>
+    /// <p>The cloud provider account ID of the resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>An Azure subscription ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) project ID, such as <code>my-project</code>.</p></li>
+    /// </ul>
     pub fn provider_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The cloud provider account ID of the resource.</p>
+    /// <p>The cloud provider account ID of the resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>An Azure subscription ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) project ID, such as <code>my-project</code>.</p></li>
+    /// </ul>
     pub fn set_provider_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_account_id = input;
         self
     }
-    /// <p>The cloud provider account ID of the resource.</p>
+    /// <p>The cloud provider account ID of the resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>An Azure subscription ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) project ID, such as <code>my-project</code>.</p></li>
+    /// </ul>
     pub fn get_provider_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider_account_id
     }
-    /// <p>The cloud provider organization ID of the resource.</p>
+    /// <p>The cloud provider organization ID of the resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Organizations organization ID.</p></li>
+    /// <li>
+    /// <p>An Azure tenant ID.</p></li>
+    /// <li>
+    /// <p>A numeric Google Cloud Platform (GCP) organization ID.</p></li>
+    /// </ul>
     pub fn provider_org_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_org_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The cloud provider organization ID of the resource.</p>
+    /// <p>The cloud provider organization ID of the resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Organizations organization ID.</p></li>
+    /// <li>
+    /// <p>An Azure tenant ID.</p></li>
+    /// <li>
+    /// <p>A numeric Google Cloud Platform (GCP) organization ID.</p></li>
+    /// </ul>
     pub fn set_provider_org_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_org_id = input;
         self
     }
-    /// <p>The cloud provider organization ID of the resource.</p>
+    /// <p>The cloud provider organization ID of the resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Organizations organization ID.</p></li>
+    /// <li>
+    /// <p>An Azure tenant ID.</p></li>
+    /// <li>
+    /// <p>A numeric Google Cloud Platform (GCP) organization ID.</p></li>
+    /// </ul>
     pub fn get_provider_org_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider_org_id
     }

@@ -22,7 +22,7 @@ impl crate::operation::update_authorizer::builders::UpdateAuthorizerInputBuilder
 }
 /// Fluent builder constructing a request to `UpdateAuthorizer`.
 ///
-/// <p>Updates an existing Authorizer resource.</p>
+/// <p>Updates an existing Authorizer resource. For a <code>JWT</code> authorizer, the only JWT patch operation is <code>replace</code> on the path <code>/jwtConfiguration</code>. Its value is the complete configuration as a JSON string in the <code>JwtConfigurationInput</code> shape. This replaces the entire configuration; nothing from the previous configuration is retained. A <code>replace</code> operation on the path <code>/type</code> is supported in both directions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateAuthorizerFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

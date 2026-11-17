@@ -12,6 +12,8 @@
 /// ```text
 /// # let scopetype = unimplemented!();
 /// match scopetype {
+///     ScopeType::Organization => { /* ... */ },
+///     ScopeType::Project => { /* ... */ },
 ///     ScopeType::Subscription => { /* ... */ },
 ///     ScopeType::Tenant => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +45,10 @@
 )]
 pub enum ScopeType {
     #[allow(missing_docs)] // documentation missing in model
+    Organization,
+    #[allow(missing_docs)] // documentation missing in model
+    Project,
+    #[allow(missing_docs)] // documentation missing in model
     Subscription,
     #[allow(missing_docs)] // documentation missing in model
     Tenant,
@@ -53,6 +59,8 @@ pub enum ScopeType {
 impl ::std::convert::From<&str> for ScopeType {
     fn from(s: &str) -> Self {
         match s {
+            "ORGANIZATION" => ScopeType::Organization,
+            "PROJECT" => ScopeType::Project,
             "SUBSCRIPTION" => ScopeType::Subscription,
             "TENANT" => ScopeType::Tenant,
             other => ScopeType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +78,8 @@ impl ScopeType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ScopeType::Organization => "ORGANIZATION",
+            ScopeType::Project => "PROJECT",
             ScopeType::Subscription => "SUBSCRIPTION",
             ScopeType::Tenant => "TENANT",
             ScopeType::Unknown(value) => value.as_str(),
@@ -77,7 +87,7 @@ impl ScopeType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SUBSCRIPTION", "TENANT"]
+        &["ORGANIZATION", "PROJECT", "SUBSCRIPTION", "TENANT"]
     }
 }
 impl ::std::convert::AsRef<str> for ScopeType {
@@ -100,6 +110,8 @@ impl ScopeType {
 impl ::std::fmt::Display for ScopeType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ScopeType::Organization => write!(f, "ORGANIZATION"),
+            ScopeType::Project => write!(f, "PROJECT"),
             ScopeType::Subscription => write!(f, "SUBSCRIPTION"),
             ScopeType::Tenant => write!(f, "TENANT"),
             ScopeType::Unknown(value) => write!(f, "{value}"),

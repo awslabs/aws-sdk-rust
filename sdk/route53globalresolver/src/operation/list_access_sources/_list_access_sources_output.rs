@@ -5,7 +5,7 @@
 pub struct ListAccessSourcesOutput {
     /// <p>A pagination token used for large sets of results that can't be returned in a single response. Provide this token in the next call to get the results not returned in this call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>An array containing information about the access sources, such as the ID, CIDR etc.</p>
+    /// <p>An array containing information about the access sources, such as the ID and CIDR.</p>
     pub access_sources: ::std::vec::Vec<crate::types::AccessSourcesItem>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListAccessSourcesOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array containing information about the access sources, such as the ID, CIDR etc.</p>
+    /// <p>An array containing information about the access sources, such as the ID and CIDR.</p>
     pub fn access_sources(&self) -> &[crate::types::AccessSourcesItem] {
         use std::ops::Deref;
         self.access_sources.deref()
@@ -59,19 +59,19 @@ impl ListAccessSourcesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_access_sources`](Self::set_access_sources).
     ///
-    /// <p>An array containing information about the access sources, such as the ID, CIDR etc.</p>
+    /// <p>An array containing information about the access sources, such as the ID and CIDR.</p>
     pub fn access_sources(mut self, input: crate::types::AccessSourcesItem) -> Self {
         let mut v = self.access_sources.unwrap_or_default();
         v.push(input);
         self.access_sources = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array containing information about the access sources, such as the ID, CIDR etc.</p>
+    /// <p>An array containing information about the access sources, such as the ID and CIDR.</p>
     pub fn set_access_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::AccessSourcesItem>>) -> Self {
         self.access_sources = input;
         self
     }
-    /// <p>An array containing information about the access sources, such as the ID, CIDR etc.</p>
+    /// <p>An array containing information about the access sources, such as the ID and CIDR.</p>
     pub fn get_access_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AccessSourcesItem>> {
         &self.access_sources
     }

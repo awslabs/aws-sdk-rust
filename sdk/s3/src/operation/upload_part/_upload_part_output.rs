@@ -45,6 +45,11 @@ pub struct UploadPartOutput {
     /// <p>This functionality is not supported for directory buckets.</p>
     /// </note>
     pub request_charged: ::std::option::Option<crate::types::RequestCharged>,
+    /// <p>Version ID of the object.</p>
+    /// <p>Returns the Version ID of the object for the uploaded part, if bucket versioning is enabled.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub version_id: ::std::option::Option<::std::string::String>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -125,6 +130,13 @@ impl UploadPartOutput {
     pub fn request_charged(&self) -> ::std::option::Option<&crate::types::RequestCharged> {
         self.request_charged.as_ref()
     }
+    /// <p>Version ID of the object.</p>
+    /// <p>Returns the Version ID of the object for the uploaded part, if bucket versioning is enabled.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub fn version_id(&self) -> ::std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for UploadPartOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -146,6 +158,7 @@ impl ::std::fmt::Debug for UploadPartOutput {
         formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
         formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
         formatter.field("request_charged", &self.request_charged);
+        formatter.field("version_id", &self.version_id);
         formatter.field("_extended_request_id", &self._extended_request_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -189,6 +202,7 @@ pub struct UploadPartOutputBuilder {
     pub(crate) ssekms_key_id: ::std::option::Option<::std::string::String>,
     pub(crate) bucket_key_enabled: ::std::option::Option<bool>,
     pub(crate) request_charged: ::std::option::Option<crate::types::RequestCharged>,
+    pub(crate) version_id: ::std::option::Option<::std::string::String>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -455,6 +469,29 @@ impl UploadPartOutputBuilder {
     pub fn get_request_charged(&self) -> &::std::option::Option<crate::types::RequestCharged> {
         &self.request_charged
     }
+    /// <p>Version ID of the object.</p>
+    /// <p>Returns the Version ID of the object for the uploaded part, if bucket versioning is enabled.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Version ID of the object.</p>
+    /// <p>Returns the Version ID of the object for the uploaded part, if bucket versioning is enabled.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_id = input;
+        self
+    }
+    /// <p>Version ID of the object.</p>
+    /// <p>Returns the Version ID of the object for the uploaded part, if bucket versioning is enabled.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
+    }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());
         self
@@ -493,6 +530,7 @@ impl UploadPartOutputBuilder {
             ssekms_key_id: self.ssekms_key_id,
             bucket_key_enabled: self.bucket_key_enabled,
             request_charged: self.request_charged,
+            version_id: self.version_id,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
@@ -518,6 +556,7 @@ impl ::std::fmt::Debug for UploadPartOutputBuilder {
         formatter.field("ssekms_key_id", &"*** Sensitive Data Redacted ***");
         formatter.field("bucket_key_enabled", &self.bucket_key_enabled);
         formatter.field("request_charged", &self.request_charged);
+        formatter.field("version_id", &self.version_id);
         formatter.field("_extended_request_id", &self._extended_request_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

@@ -295,7 +295,81 @@ async fn operation_input_test_list_shards_8() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_shards_9() {
+async fn operation_input_test_put_resource_policy_9() {
+    /* documentation: ResourceARN with queue type: basic control endpoint */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_kinesis::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_kinesis::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .put_resource_policy()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId".to_owned()
+            ))
+            .set_policy(::std::option::Option::Some("{}".to_owned()))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://myQueueId.control-kinesis-queues.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://myQueueId.control-kinesis-queues.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_tag_resource_10() {
+    /* documentation: ResourceARN with queue type: DualStack */
+    /* builtIns: {
+        "AWS::Region": "us-west-2",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_kinesis::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_kinesis::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .tag_resource()
+            .set_resource_arn(::std::option::Option::Some(
+                "arn:aws:kinesis:us-west-2:123456789012:queue/myQueueId".to_owned()
+            ))
+            .set_tags(::std::option::Option::Some({
+                let mut ret = ::std::collections::HashMap::new();
+                ret.insert("key1".to_owned(), "value1".to_owned());
+                ret
+            }))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://myQueueId.control-kinesis-queues.us-west-2.api.aws"),
+        "expected URI to start with `https://myQueueId.control-kinesis-queues.us-west-2.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_shards_11() {
     /* documentation: Account Id with account id endpoint mode disabled */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -334,7 +408,7 @@ async fn operation_input_test_list_shards_9() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_shards_10() {
+async fn operation_input_test_list_shards_12() {
     /* documentation: Account Id missing with account id endpoint mode required */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -369,7 +443,7 @@ async fn operation_input_test_list_shards_10() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_stream_11() {
+async fn operation_input_test_create_stream_13() {
     /* documentation: CreateStream: control operation type with AccountId */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -409,7 +483,7 @@ async fn operation_input_test_create_stream_11() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_stream_12() {
+async fn operation_input_test_create_stream_14() {
     /* documentation: CreateStream: control operation type with FIPS and AccountId */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -451,7 +525,7 @@ async fn operation_input_test_create_stream_12() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_streams_13() {
+async fn operation_input_test_list_streams_15() {
     /* documentation: ListStreams: control operation type with AccountId */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -484,7 +558,7 @@ async fn operation_input_test_list_streams_13() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_streams_14() {
+async fn operation_input_test_list_streams_16() {
     /* documentation: ListStreams: control operation type with FIPS and DualStack */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -521,7 +595,7 @@ async fn operation_input_test_list_streams_14() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_describe_limits_15() {
+async fn operation_input_test_describe_limits_17() {
     /* documentation: DescribeLimits: control operation type with AccountId */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -554,7 +628,7 @@ async fn operation_input_test_describe_limits_15() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_describe_limits_16() {
+async fn operation_input_test_describe_limits_18() {
     /* documentation: DescribeLimits: control operation type with FIPS */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -589,7 +663,7 @@ async fn operation_input_test_describe_limits_16() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_describe_account_settings_17() {
+async fn operation_input_test_describe_account_settings_19() {
     /* documentation: DescribeAccountSettings: control operation type with AccountId */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -622,7 +696,7 @@ async fn operation_input_test_describe_account_settings_17() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_describe_account_settings_18() {
+async fn operation_input_test_describe_account_settings_20() {
     /* documentation: DescribeAccountSettings: control operation type with FIPS and DualStack */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -659,7 +733,7 @@ async fn operation_input_test_describe_account_settings_18() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_update_account_settings_19() {
+async fn operation_input_test_update_account_settings_21() {
     /* documentation: UpdateAccountSettings: control operation type with AccountId */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -707,7 +781,7 @@ async fn operation_input_test_update_account_settings_19() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_update_account_settings_20() {
+async fn operation_input_test_update_account_settings_22() {
     /* documentation: UpdateAccountSettings: control operation type with FIPS */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -757,7 +831,7 @@ async fn operation_input_test_update_account_settings_20() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_stream_21() {
+async fn operation_input_test_create_stream_23() {
     /* documentation: CreateStream: account id endpoint mode disabled falls back to regional endpoint */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -797,7 +871,7 @@ async fn operation_input_test_create_stream_21() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_streams_22() {
+async fn operation_input_test_list_streams_24() {
     /* documentation: ListStreams: account id endpoint mode disabled falls back to regional endpoint */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -830,7 +904,7 @@ async fn operation_input_test_list_streams_22() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_describe_limits_23() {
+async fn operation_input_test_describe_limits_25() {
     /* documentation: DescribeLimits: account id endpoint mode disabled falls back to regional endpoint */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -863,7 +937,7 @@ async fn operation_input_test_describe_limits_23() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_describe_account_settings_24() {
+async fn operation_input_test_describe_account_settings_26() {
     /* documentation: DescribeAccountSettings: account id endpoint mode disabled falls back to regional endpoint */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -896,7 +970,7 @@ async fn operation_input_test_describe_account_settings_24() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_update_account_settings_25() {
+async fn operation_input_test_update_account_settings_27() {
     /* documentation: UpdateAccountSettings: account id endpoint mode disabled falls back to regional endpoint */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -944,7 +1018,7 @@ async fn operation_input_test_update_account_settings_25() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_stream_26() {
+async fn operation_input_test_create_stream_28() {
     /* documentation: CreateStream: account id endpoint mode disabled with FIPS falls back to regional FIPS endpoint */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -986,7 +1060,7 @@ async fn operation_input_test_create_stream_26() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_stream_27() {
+async fn operation_input_test_create_stream_29() {
     /* documentation: CreateStream: account id endpoint mode disabled with DualStack falls back to regional DualStack endpoint */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -1028,7 +1102,7 @@ async fn operation_input_test_create_stream_27() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_stream_28() {
+async fn operation_input_test_create_stream_30() {
     /* documentation: CreateStream: account id endpoint mode disabled with FIPS and DualStack falls back to regional FIPS DualStack endpoint */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -1072,7 +1146,7 @@ async fn operation_input_test_create_stream_28() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_channel_29() {
+async fn operation_input_test_create_channel_31() {
     /* documentation: CreateChannel: control operation type with AccountId */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -1130,7 +1204,7 @@ async fn operation_input_test_create_channel_29() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_channel_30() {
+async fn operation_input_test_create_channel_32() {
     /* documentation: CreateChannel: control operation type with FIPS and AccountId */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -1190,7 +1264,7 @@ async fn operation_input_test_create_channel_30() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_channel_31() {
+async fn operation_input_test_create_channel_33() {
     /* documentation: CreateChannel: control operation type with DualStack and AccountId */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -1250,7 +1324,7 @@ async fn operation_input_test_create_channel_31() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_channel_32() {
+async fn operation_input_test_create_channel_34() {
     /* documentation: CreateChannel: control operation type with FIPS and DualStack and AccountId */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -1312,7 +1386,7 @@ async fn operation_input_test_create_channel_32() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_channel_33() {
+async fn operation_input_test_create_channel_35() {
     /* documentation: CreateChannel: account id endpoint mode disabled falls back to regional endpoint */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -1370,7 +1444,7 @@ async fn operation_input_test_create_channel_33() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_channel_34() {
+async fn operation_input_test_create_channel_36() {
     /* documentation: CreateChannel: account id endpoint mode disabled with FIPS falls back to regional FIPS endpoint */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -1430,7 +1504,7 @@ async fn operation_input_test_create_channel_34() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_channel_35() {
+async fn operation_input_test_create_channel_37() {
     /* documentation: CreateChannel: account id endpoint mode disabled with DualStack falls back to regional DualStack endpoint */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -1490,7 +1564,7 @@ async fn operation_input_test_create_channel_35() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_create_channel_36() {
+async fn operation_input_test_create_channel_38() {
     /* documentation: CreateChannel: account id endpoint mode disabled with FIPS and DualStack falls back to regional FIPS DualStack endpoint */
     /* builtIns: {
         "AWS::Region": "us-east-1",
@@ -1552,7 +1626,7 @@ async fn operation_input_test_create_channel_36() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_channels_37() {
+async fn operation_input_test_list_channels_39() {
     /* documentation: ListChannels: control operation type with AccountId */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -1585,7 +1659,7 @@ async fn operation_input_test_list_channels_37() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_channels_38() {
+async fn operation_input_test_list_channels_40() {
     /* documentation: ListChannels: control operation type with FIPS and DualStack */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -1622,7 +1696,7 @@ async fn operation_input_test_list_channels_38() {
 }
 
 #[::tokio::test]
-async fn operation_input_test_list_channels_39() {
+async fn operation_input_test_list_channels_41() {
     /* documentation: ListChannels: account id endpoint mode disabled falls back to regional endpoint */
     /* builtIns: {
         "AWS::Region": "us-west-2",
@@ -1650,6 +1724,480 @@ async fn operation_input_test_list_channels_39() {
     assert!(
         uri.starts_with("https://kinesis.us-west-2.amazonaws.com"),
         "expected URI to start with `https://kinesis.us-west-2.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_describe_queue_42() {
+    /* documentation: QueueARN: basic endpoint resolution with control operation type */
+    /* builtIns: {
+        "AWS::Region": "us-east-1"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_kinesis::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        builder.build()
+    };
+    let client = aws_sdk_kinesis::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .describe_queue()
+            .set_queue_arn(::std::option::Option::Some(
+                "arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId".to_owned()
+            ))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://myQueueId.control-kinesis-queues.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://myQueueId.control-kinesis-queues.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_update_queue_43() {
+    /* documentation: QueueARN: endpoint with FIPS */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_kinesis::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_kinesis::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .update_queue()
+            .set_queue_arn(::std::option::Option::Some(
+                "arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId".to_owned()
+            ))
+            .set_queue_attributes(::std::option::Option::Some(
+                aws_sdk_kinesis::types::QueueAttributes::builder()
+                    .set_visibility_timeout_seconds(::std::option::Option::Some(30))
+                    .build()
+            ))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://myQueueId.control-kinesis-queues-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://myQueueId.control-kinesis-queues-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_delete_queue_44() {
+    /* documentation: QueueARN: endpoint with DualStack */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_kinesis::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_kinesis::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .delete_queue()
+            .set_queue_arn(::std::option::Option::Some(
+                "arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId".to_owned()
+            ))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://myQueueId.control-kinesis-queues.us-east-1.api.aws"),
+        "expected URI to start with `https://myQueueId.control-kinesis-queues.us-east-1.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_receive_queue_records_45() {
+    /* documentation: QueueARN: data operation type */
+    /* builtIns: {
+        "AWS::Region": "us-west-2"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_kinesis::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        builder.build()
+    };
+    let client = aws_sdk_kinesis::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .receive_queue_records()
+            .set_queue_arn(::std::option::Option::Some(
+                "arn:aws:kinesis:us-west-2:123456789012:queue/abc123def456".to_owned()
+            ))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://abc123def456.data-kinesis-queues.us-west-2.amazonaws.com"),
+        "expected URI to start with `https://abc123def456.data-kinesis-queues.us-west-2.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_acknowledge_queue_records_46() {
+    /* documentation: QueueARN: data operation type with FIPS */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_kinesis::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_kinesis::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .acknowledge_queue_records()
+            .set_queue_arn(::std::option::Option::Some(
+                "arn:aws:kinesis:us-east-1:123456789012:queue/abc123def456".to_owned()
+            ))
+            .set_entries(::std::option::Option::Some(vec![
+                aws_sdk_kinesis::types::AcknowledgeQueueRecordsRequestEntry::builder()
+                    .set_receipt_handle(::std::option::Option::Some("handle1".to_owned()))
+                    .build()
+                    .unwrap(),
+            ]))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://abc123def456.data-kinesis-queues-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://abc123def456.data-kinesis-queues-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_update_queue_records_visibility_47() {
+    /* documentation: QueueARN: data operation type with DualStack */
+    /* builtIns: {
+        "AWS::Region": "us-west-2",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_kinesis::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-west-2"));
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_kinesis::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .update_queue_records_visibility()
+            .set_queue_arn(::std::option::Option::Some(
+                "arn:aws:kinesis:us-west-2:123456789012:queue/abc123def456".to_owned()
+            ))
+            .set_entries(::std::option::Option::Some(vec![
+                aws_sdk_kinesis::types::UpdateQueueRecordsVisibilityRequestEntry::builder()
+                    .set_receipt_handle(::std::option::Option::Some("handle1".to_owned()))
+                    .set_visibility_timeout_seconds(::std::option::Option::Some(30))
+                    .build()
+                    .unwrap(),
+            ]))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://abc123def456.data-kinesis-queues.us-west-2.api.aws"),
+        "expected URI to start with `https://abc123def456.data-kinesis-queues.us-west-2.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_create_queue_48() {
+    /* documentation: Queue AccountId: basic endpoint with AccountId */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::Auth::AccountId": "123456789012",
+        "AWS::Auth::AccountIdEndpointMode": "preferred"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_kinesis::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("123456789012").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_kinesis::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .create_queue()
+            .set_queue_name(::std::option::Option::Some("test-queue".to_owned()))
+            .set_stream_configuration_list(::std::option::Option::Some(vec![
+                aws_sdk_kinesis::types::QueueStreamConfiguration::builder()
+                    .set_stream_arn(::std::option::Option::Some(
+                        "arn:aws:kinesis:us-east-1:123456789012:stream/test-stream".to_owned()
+                    ))
+                    .build()
+                    .unwrap(),
+            ]))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://123456789012.control-kinesis-queues.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://123456789012.control-kinesis-queues.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_queues_49() {
+    /* documentation: Queue AccountId: endpoint with FIPS */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::Auth::AccountId": "123456789012",
+        "AWS::Auth::AccountIdEndpointMode": "preferred",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_kinesis::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("123456789012").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("preferred").expect("should parse"),
+        );
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_kinesis::Client::from_conf(conf);
+    let _result = dbg!(client.list_queues().send().await);
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://123456789012.control-kinesis-queues-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://123456789012.control-kinesis-queues-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_create_queue_50() {
+    /* documentation: Queue AccountId: disabled mode falls back to regional queue endpoint */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::Auth::AccountId": "123456789012",
+        "AWS::Auth::AccountIdEndpointMode": "disabled"
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_kinesis::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("123456789012").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        builder.build()
+    };
+    let client = aws_sdk_kinesis::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .create_queue()
+            .set_queue_name(::std::option::Option::Some("test-queue".to_owned()))
+            .set_stream_configuration_list(::std::option::Option::Some(vec![
+                aws_sdk_kinesis::types::QueueStreamConfiguration::builder()
+                    .set_stream_arn(::std::option::Option::Some(
+                        "arn:aws:kinesis:us-east-1:123456789012:stream/test-stream".to_owned()
+                    ))
+                    .build()
+                    .unwrap(),
+            ]))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://kinesis-queues.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://kinesis-queues.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_queues_51() {
+    /* documentation: Queue AccountId: disabled mode with FIPS falls back to regional queue FIPS endpoint */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::Auth::AccountId": "123456789012",
+        "AWS::Auth::AccountIdEndpointMode": "disabled",
+        "AWS::UseFIPS": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_kinesis::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("123456789012").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        let builder = builder.use_fips(true);
+        builder.build()
+    };
+    let client = aws_sdk_kinesis::Client::from_conf(conf);
+    let _result = dbg!(client.list_queues().send().await);
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://kinesis-queues-fips.us-east-1.amazonaws.com"),
+        "expected URI to start with `https://kinesis-queues-fips.us-east-1.amazonaws.com` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_create_queue_52() {
+    /* documentation: Queue AccountId: disabled mode with DualStack falls back to regional queue DualStack endpoint */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::Auth::AccountId": "123456789012",
+        "AWS::Auth::AccountIdEndpointMode": "disabled",
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_kinesis::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("123456789012").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_kinesis::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .create_queue()
+            .set_queue_name(::std::option::Option::Some("test-queue".to_owned()))
+            .set_stream_configuration_list(::std::option::Option::Some(vec![
+                aws_sdk_kinesis::types::QueueStreamConfiguration::builder()
+                    .set_stream_arn(::std::option::Option::Some(
+                        "arn:aws:kinesis:us-east-1:123456789012:stream/test-stream".to_owned()
+                    ))
+                    .build()
+                    .unwrap(),
+            ]))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://kinesis-queues.us-east-1.api.aws"),
+        "expected URI to start with `https://kinesis-queues.us-east-1.api.aws` but it was `{}`",
+        uri
+    );
+}
+
+#[::tokio::test]
+async fn operation_input_test_list_queues_53() {
+    /* documentation: Queue AccountId: disabled mode with FIPS and DualStack falls back to regional queue FIPS DualStack endpoint */
+    /* builtIns: {
+        "AWS::Region": "us-east-1",
+        "AWS::Auth::AccountId": "123456789012",
+        "AWS::Auth::AccountIdEndpointMode": "disabled",
+        "AWS::UseFIPS": true,
+        "AWS::UseDualStack": true
+    } */
+    /* clientParams: {} */
+    let (http_client, rcvr) = ::aws_smithy_http_client::test_util::capture_request(None);
+    let conf = {
+        #[allow(unused_mut)]
+        let mut builder = aws_sdk_kinesis::Config::builder().with_test_defaults().http_client(http_client);
+        let builder = builder.region(::aws_types::region::Region::new("us-east-1"));
+        let builder = builder.credentials_provider(::aws_credential_types::provider::SharedCredentialsProvider::new(
+            ::aws_credential_types::CredentialsBuilder::for_tests().account_id("123456789012").build(),
+        ));
+        let builder = builder.account_id_endpoint_mode(
+            <::aws_types::endpoint_config::AccountIdEndpointMode as std::str::FromStr>::from_str("disabled").expect("should parse"),
+        );
+        let builder = builder.use_fips(true);
+        let builder = builder.use_dual_stack(true);
+        builder.build()
+    };
+    let client = aws_sdk_kinesis::Client::from_conf(conf);
+    let _result = dbg!(client.list_queues().send().await);
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(
+        uri.starts_with("https://kinesis-queues-fips.us-east-1.api.aws"),
+        "expected URI to start with `https://kinesis-queues-fips.us-east-1.api.aws` but it was `{}`",
         uri
     );
 }

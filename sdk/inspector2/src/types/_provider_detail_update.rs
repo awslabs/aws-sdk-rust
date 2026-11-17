@@ -6,6 +6,8 @@
 pub enum ProviderDetailUpdate {
     /// <p>The Azure-specific details for updating a connector.</p>
     Azure(crate::types::AzureProviderDetailUpdate),
+    /// <p>The details specific to Google Cloud Platform (GCP) for updating a connector.</p>
+    Gcp(crate::types::GcpProviderDetailUpdate),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -17,7 +19,6 @@ pub enum ProviderDetailUpdate {
     Unknown,
 }
 impl ProviderDetailUpdate {
-    #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`Azure`](crate::types::ProviderDetailUpdate::Azure), extracting the inner [`AzureProviderDetailUpdate`](crate::types::AzureProviderDetailUpdate).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_azure(&self) -> ::std::result::Result<&crate::types::AzureProviderDetailUpdate, &Self> {
@@ -30,6 +31,19 @@ impl ProviderDetailUpdate {
     /// Returns true if this is a [`Azure`](crate::types::ProviderDetailUpdate::Azure).
     pub fn is_azure(&self) -> bool {
         self.as_azure().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Gcp`](crate::types::ProviderDetailUpdate::Gcp), extracting the inner [`GcpProviderDetailUpdate`](crate::types::GcpProviderDetailUpdate).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_gcp(&self) -> ::std::result::Result<&crate::types::GcpProviderDetailUpdate, &Self> {
+        if let ProviderDetailUpdate::Gcp(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Gcp`](crate::types::ProviderDetailUpdate::Gcp).
+    pub fn is_gcp(&self) -> bool {
+        self.as_gcp().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

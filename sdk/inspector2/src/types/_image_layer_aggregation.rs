@@ -16,6 +16,8 @@ pub struct ImageLayerAggregation {
     /// <p><code>AWS</code> – Findings from Amazon Web Services resources.</p></li>
     /// <li>
     /// <p><code>AZURE</code> – Findings from Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Findings from Google Cloud Platform (GCP) resources.</p></li>
     /// </ul>
     pub cloud_providers: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The cloud account IDs to aggregate findings for.</p>
@@ -28,6 +30,8 @@ pub struct ImageLayerAggregation {
     /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
     /// <li>
     /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
     /// </ul>
     pub cloud_regions: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The cloud partitions to aggregate findings for. Valid values:</p>
@@ -72,6 +76,8 @@ impl ImageLayerAggregation {
     /// <p><code>AWS</code> – Findings from Amazon Web Services resources.</p></li>
     /// <li>
     /// <p><code>AZURE</code> – Findings from Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Findings from Google Cloud Platform (GCP) resources.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_providers.is_none()`.
@@ -96,6 +102,8 @@ impl ImageLayerAggregation {
     /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
     /// <li>
     /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
     /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_regions.is_none()`.
@@ -220,6 +228,8 @@ impl ImageLayerAggregationBuilder {
     /// <p><code>AWS</code> – Findings from Amazon Web Services resources.</p></li>
     /// <li>
     /// <p><code>AZURE</code> – Findings from Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Findings from Google Cloud Platform (GCP) resources.</p></li>
     /// </ul>
     pub fn cloud_providers(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.cloud_providers.unwrap_or_default();
@@ -233,6 +243,8 @@ impl ImageLayerAggregationBuilder {
     /// <p><code>AWS</code> – Findings from Amazon Web Services resources.</p></li>
     /// <li>
     /// <p><code>AZURE</code> – Findings from Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Findings from Google Cloud Platform (GCP) resources.</p></li>
     /// </ul>
     pub fn set_cloud_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.cloud_providers = input;
@@ -244,6 +256,8 @@ impl ImageLayerAggregationBuilder {
     /// <p><code>AWS</code> – Findings from Amazon Web Services resources.</p></li>
     /// <li>
     /// <p><code>AZURE</code> – Findings from Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Findings from Google Cloud Platform (GCP) resources.</p></li>
     /// </ul>
     pub fn get_cloud_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.cloud_providers
@@ -298,6 +312,8 @@ impl ImageLayerAggregationBuilder {
     /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
     /// <li>
     /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
     /// </ul>
     pub fn cloud_regions(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.cloud_regions.unwrap_or_default();
@@ -311,6 +327,8 @@ impl ImageLayerAggregationBuilder {
     /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
     /// <li>
     /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
     /// </ul>
     pub fn set_cloud_regions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.cloud_regions = input;
@@ -322,6 +340,8 @@ impl ImageLayerAggregationBuilder {
     /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
     /// <li>
     /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
     /// </ul>
     pub fn get_cloud_regions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.cloud_regions

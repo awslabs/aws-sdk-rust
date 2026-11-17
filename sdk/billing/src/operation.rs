@@ -85,8 +85,14 @@ pub mod list_tags_for_resource;
 /// Types for the `RedeemCredits` operation.
 pub mod redeem_credits;
 
+/// Types for the `SplitCredit` operation.
+pub mod split_credit;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
+
+/// Types for the `TransferCredit` operation.
+pub mod transfer_credit;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;

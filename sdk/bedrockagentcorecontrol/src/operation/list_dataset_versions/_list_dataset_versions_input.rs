@@ -5,6 +5,8 @@
 pub struct ListDatasetVersionsInput {
     /// <p>The unique identifier of the dataset.</p>
     pub dataset_id: ::std::option::Option<::std::string::String>,
+    /// <p>A filter to apply to the dataset versions.</p>
+    pub filter: ::std::option::Option<crate::types::ListDatasetVersionsFilter>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of versions to return per page.</p>
@@ -14,6 +16,10 @@ impl ListDatasetVersionsInput {
     /// <p>The unique identifier of the dataset.</p>
     pub fn dataset_id(&self) -> ::std::option::Option<&str> {
         self.dataset_id.as_deref()
+    }
+    /// <p>A filter to apply to the dataset versions.</p>
+    pub fn filter(&self) -> ::std::option::Option<&crate::types::ListDatasetVersionsFilter> {
+        self.filter.as_ref()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -36,6 +42,7 @@ impl ListDatasetVersionsInput {
 #[non_exhaustive]
 pub struct ListDatasetVersionsInputBuilder {
     pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
+    pub(crate) filter: ::std::option::Option<crate::types::ListDatasetVersionsFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
@@ -54,6 +61,20 @@ impl ListDatasetVersionsInputBuilder {
     /// <p>The unique identifier of the dataset.</p>
     pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.dataset_id
+    }
+    /// <p>A filter to apply to the dataset versions.</p>
+    pub fn filter(mut self, input: crate::types::ListDatasetVersionsFilter) -> Self {
+        self.filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A filter to apply to the dataset versions.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListDatasetVersionsFilter>) -> Self {
+        self.filter = input;
+        self
+    }
+    /// <p>A filter to apply to the dataset versions.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListDatasetVersionsFilter> {
+        &self.filter
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -90,6 +111,7 @@ impl ListDatasetVersionsInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::list_dataset_versions::ListDatasetVersionsInput {
             dataset_id: self.dataset_id,
+            filter: self.filter,
             next_token: self.next_token,
             max_results: self.max_results,
         })

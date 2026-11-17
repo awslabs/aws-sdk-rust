@@ -2,7 +2,7 @@
 
 /// <p>This action replaces the email envelope recipients with the given list of recipients. If the condition of this action applies only to a subset of recipients, only those recipients are replaced with the recipients specified in the action. The message contents and headers are unaffected by this action, only the envelope recipients are updated.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ReplaceRecipientAction {
     /// <p>This action specifies the replacement recipient email addresses to insert.</p>
     pub replace_with: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -15,6 +15,13 @@ impl ReplaceRecipientAction {
         self.replace_with.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for ReplaceRecipientAction {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ReplaceRecipientAction");
+        formatter.field("replace_with", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ReplaceRecipientAction {
     /// Creates a new builder-style object to manufacture [`ReplaceRecipientAction`](crate::types::ReplaceRecipientAction).
     pub fn builder() -> crate::types::builders::ReplaceRecipientActionBuilder {
@@ -23,7 +30,7 @@ impl ReplaceRecipientAction {
 }
 
 /// A builder for [`ReplaceRecipientAction`](crate::types::ReplaceRecipientAction).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ReplaceRecipientActionBuilder {
     pub(crate) replace_with: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -54,5 +61,12 @@ impl ReplaceRecipientActionBuilder {
         crate::types::ReplaceRecipientAction {
             replace_with: self.replace_with,
         }
+    }
+}
+impl ::std::fmt::Debug for ReplaceRecipientActionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ReplaceRecipientActionBuilder");
+        formatter.field("replace_with", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

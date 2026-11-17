@@ -699,6 +699,42 @@ impl From<crate::operation::delete_code_signing_config::DeleteCodeSigningConfigE
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_durable_execution::DeleteDurableExecutionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_durable_execution::DeleteDurableExecutionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_durable_execution::DeleteDurableExecutionError> for Error {
+    fn from(err: crate::operation::delete_durable_execution::DeleteDurableExecutionError) -> Self {
+        match err {
+            crate::operation::delete_durable_execution::DeleteDurableExecutionError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::delete_durable_execution::DeleteDurableExecutionError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::delete_durable_execution::DeleteDurableExecutionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_durable_execution::DeleteDurableExecutionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::delete_durable_execution::DeleteDurableExecutionError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::delete_durable_execution::DeleteDurableExecutionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError, R>>
     for Error
 where
@@ -2603,6 +2639,50 @@ impl From<crate::operation::list_versions_by_function::ListVersionsByFunctionErr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::pause_durable_execution::PauseDurableExecutionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::pause_durable_execution::PauseDurableExecutionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::pause_durable_execution::PauseDurableExecutionError> for Error {
+    fn from(err: crate::operation::pause_durable_execution::PauseDurableExecutionError) -> Self {
+        match err {
+            crate::operation::pause_durable_execution::PauseDurableExecutionError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::pause_durable_execution::PauseDurableExecutionError::KmsAccessDeniedException(inner) => {
+                Error::KmsAccessDeniedException(inner)
+            }
+            crate::operation::pause_durable_execution::PauseDurableExecutionError::KmsDisabledException(inner) => Error::KmsDisabledException(inner),
+            crate::operation::pause_durable_execution::PauseDurableExecutionError::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::operation::pause_durable_execution::PauseDurableExecutionError::KmsNotFoundException(inner) => Error::KmsNotFoundException(inner),
+            crate::operation::pause_durable_execution::PauseDurableExecutionError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::pause_durable_execution::PauseDurableExecutionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::pause_durable_execution::PauseDurableExecutionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::pause_durable_execution::PauseDurableExecutionError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::pause_durable_execution::PauseDurableExecutionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::publish_layer_version::PublishLayerVersionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3070,6 +3150,54 @@ impl From<crate::operation::remove_permission::RemovePermissionError> for Error 
             crate::operation::remove_permission::RemovePermissionError::ServiceException(inner) => Error::ServiceException(inner),
             crate::operation::remove_permission::RemovePermissionError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
             crate::operation::remove_permission::RemovePermissionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::resume_durable_execution::ResumeDurableExecutionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::resume_durable_execution::ResumeDurableExecutionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::resume_durable_execution::ResumeDurableExecutionError> for Error {
+    fn from(err: crate::operation::resume_durable_execution::ResumeDurableExecutionError) -> Self {
+        match err {
+            crate::operation::resume_durable_execution::ResumeDurableExecutionError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::resume_durable_execution::ResumeDurableExecutionError::KmsAccessDeniedException(inner) => {
+                Error::KmsAccessDeniedException(inner)
+            }
+            crate::operation::resume_durable_execution::ResumeDurableExecutionError::KmsDisabledException(inner) => {
+                Error::KmsDisabledException(inner)
+            }
+            crate::operation::resume_durable_execution::ResumeDurableExecutionError::KmsInvalidStateException(inner) => {
+                Error::KmsInvalidStateException(inner)
+            }
+            crate::operation::resume_durable_execution::ResumeDurableExecutionError::KmsNotFoundException(inner) => {
+                Error::KmsNotFoundException(inner)
+            }
+            crate::operation::resume_durable_execution::ResumeDurableExecutionError::ResourceConflictException(inner) => {
+                Error::ResourceConflictException(inner)
+            }
+            crate::operation::resume_durable_execution::ResumeDurableExecutionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::resume_durable_execution::ResumeDurableExecutionError::ServiceException(inner) => Error::ServiceException(inner),
+            crate::operation::resume_durable_execution::ResumeDurableExecutionError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::resume_durable_execution::ResumeDurableExecutionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

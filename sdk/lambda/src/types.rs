@@ -37,6 +37,8 @@ pub use crate::types::_trace_header::TraceHeader;
 
 pub use crate::types::_durable_config::DurableConfig;
 
+pub use crate::types::_pause_details::PauseDetails;
+
 pub use crate::types::_checkpoint_updated_execution_state::CheckpointUpdatedExecutionState;
 
 pub use crate::types::_filter_criteria::FilterCriteria;
@@ -303,6 +305,10 @@ pub use crate::types::_callback_timed_out_details::CallbackTimedOutDetails;
 
 pub use crate::types::_invocation_completed_details::InvocationCompletedDetails;
 
+pub use crate::types::_execution_paused_details::ExecutionPausedDetails;
+
+pub use crate::types::_execution_resumed_details::ExecutionResumedDetails;
+
 pub use crate::types::_operation_status::OperationStatus;
 
 pub use crate::types::_execution_details::ExecutionDetails;
@@ -338,6 +344,10 @@ pub use crate::types::_event_result::EventResult;
 pub use crate::types::_event_error::EventError;
 
 pub use crate::types::_retry_details::RetryDetails;
+
+pub use crate::types::_event_pause_reason::EventPauseReason;
+
+pub use crate::types::_event_resume_reason::EventResumeReason;
 
 pub use crate::types::_kafka_schema_registry_access_config::KafkaSchemaRegistryAccessConfig;
 
@@ -463,7 +473,11 @@ mod _event_error;
 
 mod _event_input;
 
+mod _event_pause_reason;
+
 mod _event_result;
+
+mod _event_resume_reason;
 
 mod _event_source_mapping_configuration;
 
@@ -484,6 +498,10 @@ mod _execution;
 mod _execution_details;
 
 mod _execution_failed_details;
+
+mod _execution_paused_details;
+
+mod _execution_resumed_details;
 
 mod _execution_started_details;
 
@@ -600,6 +618,8 @@ mod _operation_type;
 mod _operation_update;
 
 mod _package_type;
+
+mod _pause_details;
 
 mod _propagate_tags;
 

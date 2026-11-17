@@ -39,6 +39,8 @@ pub struct UpdateReplicationConfigurationTemplateOutput {
     pub internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
     /// <p>Replication Configuration template store snapshot on local zone.</p>
     pub store_snapshot_on_local_zone: ::std::option::Option<bool>,
+    /// <p>Indicates the location of replication snapshots in the Replication Configuration template when the staging area subnet is on an AWS Outpost. <code>OUTPOST</code> keeps replication snapshots on the Outpost, and <code>REGION</code> stores them in the AWS Region.</p>
+    pub outpost_snapshot_location: ::std::option::Option<crate::types::OutpostSnapshotLocation>,
     /// <p>Replication Configuration template storage configuration.</p>
     pub storage_configuration: ::std::option::Option<crate::types::StorageConfiguration>,
     _request_id: Option<String>,
@@ -119,6 +121,10 @@ impl UpdateReplicationConfigurationTemplateOutput {
     pub fn store_snapshot_on_local_zone(&self) -> ::std::option::Option<bool> {
         self.store_snapshot_on_local_zone
     }
+    /// <p>Indicates the location of replication snapshots in the Replication Configuration template when the staging area subnet is on an AWS Outpost. <code>OUTPOST</code> keeps replication snapshots on the Outpost, and <code>REGION</code> stores them in the AWS Region.</p>
+    pub fn outpost_snapshot_location(&self) -> ::std::option::Option<&crate::types::OutpostSnapshotLocation> {
+        self.outpost_snapshot_location.as_ref()
+    }
     /// <p>Replication Configuration template storage configuration.</p>
     pub fn storage_configuration(&self) -> ::std::option::Option<&crate::types::StorageConfiguration> {
         self.storage_configuration.as_ref()
@@ -145,6 +151,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationTemplateOutput {
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("internet_protocol", &self.internet_protocol);
         formatter.field("store_snapshot_on_local_zone", &self.store_snapshot_on_local_zone);
+        formatter.field("outpost_snapshot_location", &self.outpost_snapshot_location);
         formatter.field("storage_configuration", &self.storage_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -184,6 +191,7 @@ pub struct UpdateReplicationConfigurationTemplateOutputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) internet_protocol: ::std::option::Option<crate::types::InternetProtocol>,
     pub(crate) store_snapshot_on_local_zone: ::std::option::Option<bool>,
+    pub(crate) outpost_snapshot_location: ::std::option::Option<crate::types::OutpostSnapshotLocation>,
     pub(crate) storage_configuration: ::std::option::Option<crate::types::StorageConfiguration>,
     _request_id: Option<String>,
 }
@@ -469,6 +477,20 @@ impl UpdateReplicationConfigurationTemplateOutputBuilder {
     pub fn get_store_snapshot_on_local_zone(&self) -> &::std::option::Option<bool> {
         &self.store_snapshot_on_local_zone
     }
+    /// <p>Indicates the location of replication snapshots in the Replication Configuration template when the staging area subnet is on an AWS Outpost. <code>OUTPOST</code> keeps replication snapshots on the Outpost, and <code>REGION</code> stores them in the AWS Region.</p>
+    pub fn outpost_snapshot_location(mut self, input: crate::types::OutpostSnapshotLocation) -> Self {
+        self.outpost_snapshot_location = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates the location of replication snapshots in the Replication Configuration template when the staging area subnet is on an AWS Outpost. <code>OUTPOST</code> keeps replication snapshots on the Outpost, and <code>REGION</code> stores them in the AWS Region.</p>
+    pub fn set_outpost_snapshot_location(mut self, input: ::std::option::Option<crate::types::OutpostSnapshotLocation>) -> Self {
+        self.outpost_snapshot_location = input;
+        self
+    }
+    /// <p>Indicates the location of replication snapshots in the Replication Configuration template when the staging area subnet is on an AWS Outpost. <code>OUTPOST</code> keeps replication snapshots on the Outpost, and <code>REGION</code> stores them in the AWS Region.</p>
+    pub fn get_outpost_snapshot_location(&self) -> &::std::option::Option<crate::types::OutpostSnapshotLocation> {
+        &self.outpost_snapshot_location
+    }
     /// <p>Replication Configuration template storage configuration.</p>
     pub fn storage_configuration(mut self, input: crate::types::StorageConfiguration) -> Self {
         self.storage_configuration = ::std::option::Option::Some(input);
@@ -543,6 +565,8 @@ impl UpdateReplicationConfigurationTemplateOutputBuilder {
                 ,
                 store_snapshot_on_local_zone: self.store_snapshot_on_local_zone
                 ,
+                outpost_snapshot_location: self.outpost_snapshot_location
+                ,
                 storage_configuration: self.storage_configuration
                 ,
                 _request_id: self._request_id,
@@ -571,6 +595,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationTemplateOutputBuilder {
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("internet_protocol", &self.internet_protocol);
         formatter.field("store_snapshot_on_local_zone", &self.store_snapshot_on_local_zone);
+        formatter.field("outpost_snapshot_location", &self.outpost_snapshot_location);
         formatter.field("storage_configuration", &self.storage_configuration);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

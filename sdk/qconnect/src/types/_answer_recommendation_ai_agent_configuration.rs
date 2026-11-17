@@ -2,7 +2,7 @@
 
 /// <p>The configuration for the <code>ANSWER_RECOMMENDATION</code> AI Agent type.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AnswerRecommendationAiAgentConfiguration {
     /// <p>The AI Prompt identifier for the Intent Labeling prompt used by the <code>ANSWER_RECOMMENDATION</code> AI Agent.</p>
     pub intent_labeling_generation_ai_prompt_id: ::std::option::Option<::std::string::String>,
@@ -57,6 +57,19 @@ impl AnswerRecommendationAiAgentConfiguration {
         self.suggested_messages.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for AnswerRecommendationAiAgentConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AnswerRecommendationAiAgentConfiguration");
+        formatter.field("intent_labeling_generation_ai_prompt_id", &self.intent_labeling_generation_ai_prompt_id);
+        formatter.field("query_reformulation_ai_prompt_id", &self.query_reformulation_ai_prompt_id);
+        formatter.field("answer_generation_ai_prompt_id", &self.answer_generation_ai_prompt_id);
+        formatter.field("answer_generation_ai_guardrail_id", &self.answer_generation_ai_guardrail_id);
+        formatter.field("association_configurations", &self.association_configurations);
+        formatter.field("locale", &self.locale);
+        formatter.field("suggested_messages", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl AnswerRecommendationAiAgentConfiguration {
     /// Creates a new builder-style object to manufacture [`AnswerRecommendationAiAgentConfiguration`](crate::types::AnswerRecommendationAiAgentConfiguration).
     pub fn builder() -> crate::types::builders::AnswerRecommendationAiAgentConfigurationBuilder {
@@ -65,7 +78,7 @@ impl AnswerRecommendationAiAgentConfiguration {
 }
 
 /// A builder for [`AnswerRecommendationAiAgentConfiguration`](crate::types::AnswerRecommendationAiAgentConfiguration).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct AnswerRecommendationAiAgentConfigurationBuilder {
     pub(crate) intent_labeling_generation_ai_prompt_id: ::std::option::Option<::std::string::String>,
@@ -204,5 +217,18 @@ impl AnswerRecommendationAiAgentConfigurationBuilder {
             locale: self.locale,
             suggested_messages: self.suggested_messages,
         }
+    }
+}
+impl ::std::fmt::Debug for AnswerRecommendationAiAgentConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AnswerRecommendationAiAgentConfigurationBuilder");
+        formatter.field("intent_labeling_generation_ai_prompt_id", &self.intent_labeling_generation_ai_prompt_id);
+        formatter.field("query_reformulation_ai_prompt_id", &self.query_reformulation_ai_prompt_id);
+        formatter.field("answer_generation_ai_prompt_id", &self.answer_generation_ai_prompt_id);
+        formatter.field("answer_generation_ai_guardrail_id", &self.answer_generation_ai_guardrail_id);
+        formatter.field("association_configurations", &self.association_configurations);
+        formatter.field("locale", &self.locale);
+        formatter.field("suggested_messages", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

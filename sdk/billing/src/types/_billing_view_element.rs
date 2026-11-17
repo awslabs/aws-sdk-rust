@@ -10,7 +10,19 @@ pub struct BillingViewElement {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the billing view.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The type of billing group.</p>
+    /// <p>The type of billing view. The following values are valid:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PRIMARY</code> - The billing view that contains all cost management data associated with an account.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code> - A billing view that a customer creates from one or more source views.</p></li>
+    /// <li>
+    /// <p><code>BILLING_GROUP</code> - The billing view for an Billing Conductor billing group.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER</code> - The billing view for the billing data that a bill transfer account is financially responsible for.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER_SHOWBACK</code> - The billing view for billing data configured for showback or chargeback purposes.</p></li>
+    /// </ul>
     pub billing_view_type: ::std::option::Option<crate::types::BillingViewType>,
     /// <p>The account owner of the billing view.</p>
     pub owner_account_id: ::std::option::Option<::std::string::String>,
@@ -44,7 +56,19 @@ impl BillingViewElement {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The type of billing group.</p>
+    /// <p>The type of billing view. The following values are valid:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PRIMARY</code> - The billing view that contains all cost management data associated with an account.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code> - A billing view that a customer creates from one or more source views.</p></li>
+    /// <li>
+    /// <p><code>BILLING_GROUP</code> - The billing view for an Billing Conductor billing group.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER</code> - The billing view for the billing data that a bill transfer account is financially responsible for.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER_SHOWBACK</code> - The billing view for billing data configured for showback or chargeback purposes.</p></li>
+    /// </ul>
     pub fn billing_view_type(&self) -> ::std::option::Option<&crate::types::BillingViewType> {
         self.billing_view_type.as_ref()
     }
@@ -172,17 +196,53 @@ impl BillingViewElementBuilder {
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// <p>The type of billing group.</p>
+    /// <p>The type of billing view. The following values are valid:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PRIMARY</code> - The billing view that contains all cost management data associated with an account.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code> - A billing view that a customer creates from one or more source views.</p></li>
+    /// <li>
+    /// <p><code>BILLING_GROUP</code> - The billing view for an Billing Conductor billing group.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER</code> - The billing view for the billing data that a bill transfer account is financially responsible for.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER_SHOWBACK</code> - The billing view for billing data configured for showback or chargeback purposes.</p></li>
+    /// </ul>
     pub fn billing_view_type(mut self, input: crate::types::BillingViewType) -> Self {
         self.billing_view_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of billing group.</p>
+    /// <p>The type of billing view. The following values are valid:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PRIMARY</code> - The billing view that contains all cost management data associated with an account.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code> - A billing view that a customer creates from one or more source views.</p></li>
+    /// <li>
+    /// <p><code>BILLING_GROUP</code> - The billing view for an Billing Conductor billing group.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER</code> - The billing view for the billing data that a bill transfer account is financially responsible for.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER_SHOWBACK</code> - The billing view for billing data configured for showback or chargeback purposes.</p></li>
+    /// </ul>
     pub fn set_billing_view_type(mut self, input: ::std::option::Option<crate::types::BillingViewType>) -> Self {
         self.billing_view_type = input;
         self
     }
-    /// <p>The type of billing group.</p>
+    /// <p>The type of billing view. The following values are valid:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PRIMARY</code> - The billing view that contains all cost management data associated with an account.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code> - A billing view that a customer creates from one or more source views.</p></li>
+    /// <li>
+    /// <p><code>BILLING_GROUP</code> - The billing view for an Billing Conductor billing group.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER</code> - The billing view for the billing data that a bill transfer account is financially responsible for.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER_SHOWBACK</code> - The billing view for billing data configured for showback or chargeback purposes.</p></li>
+    /// </ul>
     pub fn get_billing_view_type(&self) -> &::std::option::Option<crate::types::BillingViewType> {
         &self.billing_view_type
     }

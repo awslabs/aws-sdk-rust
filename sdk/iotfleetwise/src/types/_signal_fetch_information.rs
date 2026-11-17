@@ -4,7 +4,7 @@
 /// <p>Access to certain Amazon Web Services IoT FleetWise features is currently gated. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/fleetwise-regions.html">Amazon Web Services Region and feature availability</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>
 /// </important>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SignalFetchInformation {
     /// <p>The fully qualified name of the signal to be fetched.</p>
     pub fully_qualified_name: ::std::string::String,
@@ -35,6 +35,16 @@ impl SignalFetchInformation {
         self.actions.deref()
     }
 }
+impl ::std::fmt::Debug for SignalFetchInformation {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SignalFetchInformation");
+        formatter.field("fully_qualified_name", &self.fully_qualified_name);
+        formatter.field("signal_fetch_config", &self.signal_fetch_config);
+        formatter.field("condition_language_version", &self.condition_language_version);
+        formatter.field("actions", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl SignalFetchInformation {
     /// Creates a new builder-style object to manufacture [`SignalFetchInformation`](crate::types::SignalFetchInformation).
     pub fn builder() -> crate::types::builders::SignalFetchInformationBuilder {
@@ -43,7 +53,7 @@ impl SignalFetchInformation {
 }
 
 /// A builder for [`SignalFetchInformation`](crate::types::SignalFetchInformation).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct SignalFetchInformationBuilder {
     pub(crate) fully_qualified_name: ::std::option::Option<::std::string::String>,
@@ -137,5 +147,15 @@ impl SignalFetchInformationBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for SignalFetchInformationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SignalFetchInformationBuilder");
+        formatter.field("fully_qualified_name", &self.fully_qualified_name);
+        formatter.field("signal_fetch_config", &self.signal_fetch_config);
+        formatter.field("condition_language_version", &self.condition_language_version);
+        formatter.field("actions", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

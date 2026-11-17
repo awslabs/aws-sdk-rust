@@ -2,7 +2,7 @@
 
 /// <p>Represents a list of string values used in filter conditions.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DataSetStringListFilterValue {
     /// <p>A list of static string values used for filtering.</p>
     pub static_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -15,6 +15,13 @@ impl DataSetStringListFilterValue {
         self.static_values.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for DataSetStringListFilterValue {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DataSetStringListFilterValue");
+        formatter.field("static_values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl DataSetStringListFilterValue {
     /// Creates a new builder-style object to manufacture [`DataSetStringListFilterValue`](crate::types::DataSetStringListFilterValue).
     pub fn builder() -> crate::types::builders::DataSetStringListFilterValueBuilder {
@@ -23,7 +30,7 @@ impl DataSetStringListFilterValue {
 }
 
 /// A builder for [`DataSetStringListFilterValue`](crate::types::DataSetStringListFilterValue).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct DataSetStringListFilterValueBuilder {
     pub(crate) static_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -54,5 +61,12 @@ impl DataSetStringListFilterValueBuilder {
         crate::types::DataSetStringListFilterValue {
             static_values: self.static_values,
         }
+    }
+}
+impl ::std::fmt::Debug for DataSetStringListFilterValueBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DataSetStringListFilterValueBuilder");
+        formatter.field("static_values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

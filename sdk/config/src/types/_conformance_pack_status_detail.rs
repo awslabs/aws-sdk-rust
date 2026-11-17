@@ -20,19 +20,35 @@ pub struct ConformancePackStatusDetail {
     /// <li>
     /// <p>CREATE_FAILED when a conformance pack creation failed in your account.</p></li>
     /// <li>
+    /// <p>UPDATE_IN_PROGRESS when a conformance pack update is in progress for an account.</p></li>
+    /// <li>
+    /// <p>UPDATE_COMPLETE when a conformance pack has been successfully updated in your account.</p></li>
+    /// <li>
+    /// <p>UPDATE_FAILED when a conformance pack update failed in your account.</p></li>
+    /// <li>
     /// <p>DELETE_IN_PROGRESS when a conformance pack deletion is in progress.</p></li>
     /// <li>
     /// <p>DELETE_FAILED when a conformance pack deletion failed in your account.</p></li>
     /// </ul>
     pub conformance_pack_state: crate::types::ConformancePackState,
-    /// <p>Amazon Resource Name (ARN) of CloudFormation stack.</p>
-    pub stack_arn: ::std::string::String,
+    /// <p>Amazon Resource Name (ARN) of CloudFormation stack.</p><note>
+    /// <p>Custom conformance packs populate this field. Managed conformance packs leave it empty.</p>
+    /// </note>
+    pub stack_arn: ::std::option::Option<::std::string::String>,
     /// <p>The reason of conformance pack creation failure.</p>
     pub conformance_pack_status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Last time when conformation pack creation and update was requested.</p>
     pub last_update_requested_time: ::aws_smithy_types::DateTime,
     /// <p>Last time when conformation pack creation and update was successful.</p>
     pub last_update_completed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The type of the conformance pack. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM</code> – A custom conformance pack.</p></li>
+    /// <li>
+    /// <p><code>MANAGED</code> – A managed conformance pack.</p></li>
+    /// </ul>
+    pub r#type: ::std::option::Option<crate::types::ConformancePackType>,
 }
 impl ConformancePackStatusDetail {
     /// <p>Name of the conformance pack.</p>
@@ -60,6 +76,12 @@ impl ConformancePackStatusDetail {
     /// <li>
     /// <p>CREATE_FAILED when a conformance pack creation failed in your account.</p></li>
     /// <li>
+    /// <p>UPDATE_IN_PROGRESS when a conformance pack update is in progress for an account.</p></li>
+    /// <li>
+    /// <p>UPDATE_COMPLETE when a conformance pack has been successfully updated in your account.</p></li>
+    /// <li>
+    /// <p>UPDATE_FAILED when a conformance pack update failed in your account.</p></li>
+    /// <li>
     /// <p>DELETE_IN_PROGRESS when a conformance pack deletion is in progress.</p></li>
     /// <li>
     /// <p>DELETE_FAILED when a conformance pack deletion failed in your account.</p></li>
@@ -67,10 +89,11 @@ impl ConformancePackStatusDetail {
     pub fn conformance_pack_state(&self) -> &crate::types::ConformancePackState {
         &self.conformance_pack_state
     }
-    /// <p>Amazon Resource Name (ARN) of CloudFormation stack.</p>
-    pub fn stack_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.stack_arn.deref()
+    /// <p>Amazon Resource Name (ARN) of CloudFormation stack.</p><note>
+    /// <p>Custom conformance packs populate this field. Managed conformance packs leave it empty.</p>
+    /// </note>
+    pub fn stack_arn(&self) -> ::std::option::Option<&str> {
+        self.stack_arn.as_deref()
     }
     /// <p>The reason of conformance pack creation failure.</p>
     pub fn conformance_pack_status_reason(&self) -> ::std::option::Option<&str> {
@@ -83,6 +106,16 @@ impl ConformancePackStatusDetail {
     /// <p>Last time when conformation pack creation and update was successful.</p>
     pub fn last_update_completed_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_update_completed_time.as_ref()
+    }
+    /// <p>The type of the conformance pack. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM</code> – A custom conformance pack.</p></li>
+    /// <li>
+    /// <p><code>MANAGED</code> – A managed conformance pack.</p></li>
+    /// </ul>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ConformancePackType> {
+        self.r#type.as_ref()
     }
 }
 impl ConformancePackStatusDetail {
@@ -104,6 +137,7 @@ pub struct ConformancePackStatusDetailBuilder {
     pub(crate) conformance_pack_status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) last_update_requested_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_update_completed_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ConformancePackType>,
 }
 impl ConformancePackStatusDetailBuilder {
     /// <p>Name of the conformance pack.</p>
@@ -161,6 +195,12 @@ impl ConformancePackStatusDetailBuilder {
     /// <li>
     /// <p>CREATE_FAILED when a conformance pack creation failed in your account.</p></li>
     /// <li>
+    /// <p>UPDATE_IN_PROGRESS when a conformance pack update is in progress for an account.</p></li>
+    /// <li>
+    /// <p>UPDATE_COMPLETE when a conformance pack has been successfully updated in your account.</p></li>
+    /// <li>
+    /// <p>UPDATE_FAILED when a conformance pack update failed in your account.</p></li>
+    /// <li>
     /// <p>DELETE_IN_PROGRESS when a conformance pack deletion is in progress.</p></li>
     /// <li>
     /// <p>DELETE_FAILED when a conformance pack deletion failed in your account.</p></li>
@@ -180,6 +220,12 @@ impl ConformancePackStatusDetailBuilder {
     /// <li>
     /// <p>CREATE_FAILED when a conformance pack creation failed in your account.</p></li>
     /// <li>
+    /// <p>UPDATE_IN_PROGRESS when a conformance pack update is in progress for an account.</p></li>
+    /// <li>
+    /// <p>UPDATE_COMPLETE when a conformance pack has been successfully updated in your account.</p></li>
+    /// <li>
+    /// <p>UPDATE_FAILED when a conformance pack update failed in your account.</p></li>
+    /// <li>
     /// <p>DELETE_IN_PROGRESS when a conformance pack deletion is in progress.</p></li>
     /// <li>
     /// <p>DELETE_FAILED when a conformance pack deletion failed in your account.</p></li>
@@ -198,6 +244,12 @@ impl ConformancePackStatusDetailBuilder {
     /// <li>
     /// <p>CREATE_FAILED when a conformance pack creation failed in your account.</p></li>
     /// <li>
+    /// <p>UPDATE_IN_PROGRESS when a conformance pack update is in progress for an account.</p></li>
+    /// <li>
+    /// <p>UPDATE_COMPLETE when a conformance pack has been successfully updated in your account.</p></li>
+    /// <li>
+    /// <p>UPDATE_FAILED when a conformance pack update failed in your account.</p></li>
+    /// <li>
     /// <p>DELETE_IN_PROGRESS when a conformance pack deletion is in progress.</p></li>
     /// <li>
     /// <p>DELETE_FAILED when a conformance pack deletion failed in your account.</p></li>
@@ -205,18 +257,23 @@ impl ConformancePackStatusDetailBuilder {
     pub fn get_conformance_pack_state(&self) -> &::std::option::Option<crate::types::ConformancePackState> {
         &self.conformance_pack_state
     }
-    /// <p>Amazon Resource Name (ARN) of CloudFormation stack.</p>
-    /// This field is required.
+    /// <p>Amazon Resource Name (ARN) of CloudFormation stack.</p><note>
+    /// <p>Custom conformance packs populate this field. Managed conformance packs leave it empty.</p>
+    /// </note>
     pub fn stack_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.stack_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Amazon Resource Name (ARN) of CloudFormation stack.</p>
+    /// <p>Amazon Resource Name (ARN) of CloudFormation stack.</p><note>
+    /// <p>Custom conformance packs populate this field. Managed conformance packs leave it empty.</p>
+    /// </note>
     pub fn set_stack_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.stack_arn = input;
         self
     }
-    /// <p>Amazon Resource Name (ARN) of CloudFormation stack.</p>
+    /// <p>Amazon Resource Name (ARN) of CloudFormation stack.</p><note>
+    /// <p>Custom conformance packs populate this field. Managed conformance packs leave it empty.</p>
+    /// </note>
     pub fn get_stack_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_arn
     }
@@ -263,13 +320,44 @@ impl ConformancePackStatusDetailBuilder {
     pub fn get_last_update_completed_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_update_completed_time
     }
+    /// <p>The type of the conformance pack. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM</code> – A custom conformance pack.</p></li>
+    /// <li>
+    /// <p><code>MANAGED</code> – A managed conformance pack.</p></li>
+    /// </ul>
+    pub fn r#type(mut self, input: crate::types::ConformancePackType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the conformance pack. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM</code> – A custom conformance pack.</p></li>
+    /// <li>
+    /// <p><code>MANAGED</code> – A managed conformance pack.</p></li>
+    /// </ul>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ConformancePackType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of the conformance pack. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM</code> – A custom conformance pack.</p></li>
+    /// <li>
+    /// <p><code>MANAGED</code> – A managed conformance pack.</p></li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ConformancePackType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`ConformancePackStatusDetail`](crate::types::ConformancePackStatusDetail).
     /// This method will fail if any of the following fields are not set:
     /// - [`conformance_pack_name`](crate::types::builders::ConformancePackStatusDetailBuilder::conformance_pack_name)
     /// - [`conformance_pack_id`](crate::types::builders::ConformancePackStatusDetailBuilder::conformance_pack_id)
     /// - [`conformance_pack_arn`](crate::types::builders::ConformancePackStatusDetailBuilder::conformance_pack_arn)
     /// - [`conformance_pack_state`](crate::types::builders::ConformancePackStatusDetailBuilder::conformance_pack_state)
-    /// - [`stack_arn`](crate::types::builders::ConformancePackStatusDetailBuilder::stack_arn)
     /// - [`last_update_requested_time`](crate::types::builders::ConformancePackStatusDetailBuilder::last_update_requested_time)
     pub fn build(self) -> ::std::result::Result<crate::types::ConformancePackStatusDetail, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::ConformancePackStatusDetail {
@@ -297,12 +385,7 @@ impl ConformancePackStatusDetailBuilder {
                     "conformance_pack_state was not specified but it is required when building ConformancePackStatusDetail",
                 )
             })?,
-            stack_arn: self.stack_arn.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "stack_arn",
-                    "stack_arn was not specified but it is required when building ConformancePackStatusDetail",
-                )
-            })?,
+            stack_arn: self.stack_arn,
             conformance_pack_status_reason: self.conformance_pack_status_reason,
             last_update_requested_time: self.last_update_requested_time.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -311,6 +394,7 @@ impl ConformancePackStatusDetailBuilder {
                 )
             })?,
             last_update_completed_time: self.last_update_completed_time,
+            r#type: self.r#type,
         })
     }
 }

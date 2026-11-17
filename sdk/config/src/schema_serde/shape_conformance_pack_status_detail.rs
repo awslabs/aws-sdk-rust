@@ -80,6 +80,16 @@ static CONFORMANCEPACKSTATUSDETAIL_MEMBER_LAST_UPDATE_COMPLETED_TIME: ::aws_smit
     "LastUpdateCompletedTime",
     7,
 );
+static CONFORMANCEPACKSTATUSDETAIL_MEMBER_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice#ConformancePackStatusDetail$Type",
+        "com.amazonaws.configservice",
+        "ConformancePackStatusDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Type",
+    8,
+);
 static CONFORMANCEPACKSTATUSDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.configservice#ConformancePackStatusDetail",
@@ -96,6 +106,7 @@ static CONFORMANCEPACKSTATUSDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> 
         &CONFORMANCEPACKSTATUSDETAIL_MEMBER_CONFORMANCE_PACK_STATUS_REASON,
         &CONFORMANCEPACKSTATUSDETAIL_MEMBER_LAST_UPDATE_REQUESTED_TIME,
         &CONFORMANCEPACKSTATUSDETAIL_MEMBER_LAST_UPDATE_COMPLETED_TIME,
+        &CONFORMANCEPACKSTATUSDETAIL_MEMBER_TYPE,
     ],
 );
 impl crate::types::ConformancePackStatusDetail {
@@ -128,8 +139,7 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Conformanc
             let val = &self.conformance_pack_state;
             ser.write_string(&CONFORMANCEPACKSTATUSDETAIL_MEMBER_CONFORMANCE_PACK_STATE, val.as_str())?;
         }
-        {
-            let val = &self.stack_arn;
+        if let Some(ref val) = self.stack_arn {
             ser.write_string(&CONFORMANCEPACKSTATUSDETAIL_MEMBER_STACK_ARN, val)?;
         }
         if let Some(ref val) = self.conformance_pack_status_reason {
@@ -141,6 +151,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Conformanc
         }
         if let Some(ref val) = self.last_update_completed_time {
             ser.write_timestamp(&CONFORMANCEPACKSTATUSDETAIL_MEMBER_LAST_UPDATE_COMPLETED_TIME, val)?;
+        }
+        if let Some(ref val) = self.r#type {
+            ser.write_string(&CONFORMANCEPACKSTATUSDETAIL_MEMBER_TYPE, val.as_str())?;
         }
         Ok(())
     }
@@ -172,7 +185,11 @@ impl crate::types::builders::ConformancePackStatusDetailBuilder {
                     self.conformance_pack_state = Some(crate::types::ConformancePackState::from(deser.read_string(member)?.as_str()));
                 }
                 Some(4) => {
-                    self.stack_arn = Some(deser.read_string(member)?);
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.stack_arn = Some(deser.read_string(member)?);
+                    }
                 }
                 Some(5) => {
                     if deser.is_null() {
@@ -189,6 +206,13 @@ impl crate::types::builders::ConformancePackStatusDetailBuilder {
                         deser.read_null()?;
                     } else {
                         self.last_update_completed_time = Some(deser.read_timestamp(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.r#type = Some(crate::types::ConformancePackType::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}
@@ -208,7 +232,6 @@ impl crate::types::ConformancePackStatusDetail {
         builder.conformance_pack_name = builder.conformance_pack_name.or(Some(String::new()));
         builder.conformance_pack_id = builder.conformance_pack_id.or(Some(String::new()));
         builder.conformance_pack_arn = builder.conformance_pack_arn.or(Some(String::new()));
-        builder.stack_arn = builder.stack_arn.or(Some(String::new()));
         builder.last_update_requested_time = builder.last_update_requested_time.or(Some(::aws_smithy_types::DateTime::from_secs(0)));
         builder.build().map_err(|e| aws_smithy_schema::serde::SerdeError::custom(e.to_string()))
     }

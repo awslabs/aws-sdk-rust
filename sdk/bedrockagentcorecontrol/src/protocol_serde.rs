@@ -145,6 +145,8 @@ pub(crate) mod shape_delete_resource_policy;
 
 pub(crate) mod shape_delete_workload_identity;
 
+pub(crate) mod shape_get_agent_insight_store;
+
 pub(crate) mod shape_get_agent_runtime;
 
 pub(crate) mod shape_get_agent_runtime_endpoint;
@@ -214,6 +216,8 @@ pub(crate) mod shape_get_resource_policy;
 pub(crate) mod shape_get_token_vault;
 
 pub(crate) mod shape_get_workload_identity;
+
+pub(crate) mod shape_list_agent_insight_stores;
 
 pub(crate) mod shape_list_agent_runtime_endpoints;
 
@@ -312,6 +316,8 @@ pub(crate) mod shape_synchronize_gateway_targets;
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
+
+pub(crate) mod shape_update_agent_insight_store;
 
 pub(crate) mod shape_update_agent_runtime;
 
@@ -481,6 +487,12 @@ pub(crate) mod shape_list_configuration_bundle_versions_input;
 
 pub(crate) mod shape_list_consent_portals_input;
 
+pub(crate) mod shape_list_dataset_examples_input;
+
+pub(crate) mod shape_list_dataset_versions_input;
+
+pub(crate) mod shape_list_datasets_input;
+
 pub(crate) mod shape_list_memories_input;
 
 pub(crate) mod shape_list_oauth2_credential_providers_input;
@@ -520,6 +532,8 @@ pub(crate) mod shape_throttled_exception;
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_unauthorized_exception;
+
+pub(crate) mod shape_update_agent_insight_store_input;
 
 pub(crate) mod shape_update_agent_runtime_endpoint_input;
 
@@ -580,6 +594,10 @@ pub(crate) mod shape_validation_exception;
 pub(crate) mod shape_action;
 
 pub(crate) mod shape_actions;
+
+pub(crate) mod shape_agent_insight_store_encryption_configuration;
+
+pub(crate) mod shape_agent_insight_store_summary_list;
 
 pub(crate) mod shape_agent_runtime_artifact;
 
@@ -697,6 +715,8 @@ pub(crate) mod shape_evaluator_reference;
 
 pub(crate) mod shape_evaluator_summary_list;
 
+pub(crate) mod shape_example_count_by_field;
+
 pub(crate) mod shape_example_id_list;
 
 pub(crate) mod shape_filesystem_configuration;
@@ -760,6 +780,12 @@ pub(crate) mod shape_lifecycle_configuration;
 pub(crate) mod shape_limit_entries;
 
 pub(crate) mod shape_limit_entry;
+
+pub(crate) mod shape_list_dataset_examples_filter;
+
+pub(crate) mod shape_list_dataset_versions_filter;
+
+pub(crate) mod shape_list_datasets_filter;
 
 pub(crate) mod shape_memory;
 
@@ -897,6 +923,8 @@ pub(crate) mod shape_workload_identity_list;
 
 pub(crate) mod shape_a2a_descriptor;
 
+pub(crate) mod shape_agent_insight_store_summary;
+
 pub(crate) mod shape_agent_runtime;
 
 pub(crate) mod shape_agent_runtime_endpoint;
@@ -992,6 +1020,10 @@ pub(crate) mod shape_efs_configuration;
 pub(crate) mod shape_episodic_memory_strategy_input;
 
 pub(crate) mod shape_evaluator_summary;
+
+pub(crate) mod shape_example_count_by_field_condition;
+
+pub(crate) mod shape_example_field_condition;
 
 pub(crate) mod shape_filter;
 

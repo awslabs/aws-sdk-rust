@@ -19,8 +19,28 @@ pub(crate) fn reflens_list_actors_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_agent_insights_output_output_next_token(
+    input: &crate::operation::list_agent_insights::ListAgentInsightsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_batch_evaluations_output_output_next_token(
     input: &crate::operation::list_batch_evaluations::ListBatchEvaluationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_dataset_generations_output_output_next_token(
+    input: &crate::operation::list_dataset_generations::ListDatasetGenerationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -123,10 +143,24 @@ pub(crate) fn lens_list_actors_output_output_actor_summaries(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_agent_insights_output_output_agent_insights(
+    input: crate::operation::list_agent_insights::ListAgentInsightsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AgentInsightSummary>> {
+    let input = input.agent_insights;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_batch_evaluations_output_output_batch_evaluations(
     input: crate::operation::list_batch_evaluations::ListBatchEvaluationsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::BatchEvaluationSummary>> {
     let input = input.batch_evaluations;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_dataset_generations_output_output_dataset_generations(
+    input: crate::operation::list_dataset_generations::ListDatasetGenerationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::DatasetGenerationSummary>> {
+    let input = input.dataset_generations;
     ::std::option::Option::Some(input)
 }
 

@@ -11,6 +11,8 @@ pub struct CreateNetworkMigrationDefinitionInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A list of source configurations for the network migration.</p>
     pub source_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfiguration>>,
+    /// <p>Specifies the type of the definition. <code>MIGRATION</code> migrates an existing network. <code>NEW_NETWORK</code> designs a new network. If you omit this value, the definition type is <code>MIGRATION</code>.</p>
+    pub definition_type: ::std::option::Option<crate::types::DefinitionType>,
     /// <p>The S3 configuration for storing the target network artifacts.</p>
     pub target_s3_configuration: ::std::option::Option<crate::types::TargetS3Configuration>,
     /// <p>The target network configuration including topology and CIDR ranges.</p>
@@ -44,6 +46,10 @@ impl CreateNetworkMigrationDefinitionInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_configurations.is_none()`.
     pub fn source_configurations(&self) -> &[crate::types::SourceConfiguration] {
         self.source_configurations.as_deref().unwrap_or_default()
+    }
+    /// <p>Specifies the type of the definition. <code>MIGRATION</code> migrates an existing network. <code>NEW_NETWORK</code> designs a new network. If you omit this value, the definition type is <code>MIGRATION</code>.</p>
+    pub fn definition_type(&self) -> ::std::option::Option<&crate::types::DefinitionType> {
+        self.definition_type.as_ref()
     }
     /// <p>The S3 configuration for storing the target network artifacts.</p>
     pub fn target_s3_configuration(&self) -> ::std::option::Option<&crate::types::TargetS3Configuration> {
@@ -83,6 +89,7 @@ impl ::std::fmt::Debug for CreateNetworkMigrationDefinitionInput {
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("source_configurations", &self.source_configurations);
+        formatter.field("definition_type", &self.definition_type);
         formatter.field("target_s3_configuration", &self.target_s3_configuration);
         formatter.field("target_network", &self.target_network);
         formatter.field("target_deployment", &self.target_deployment);
@@ -108,6 +115,7 @@ pub struct CreateNetworkMigrationDefinitionInputBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) source_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SourceConfiguration>>,
+    pub(crate) definition_type: ::std::option::Option<crate::types::DefinitionType>,
     pub(crate) target_s3_configuration: ::std::option::Option<crate::types::TargetS3Configuration>,
     pub(crate) target_network: ::std::option::Option<crate::types::TargetNetwork>,
     pub(crate) target_deployment: ::std::option::Option<crate::types::TargetDeployment>,
@@ -179,6 +187,20 @@ impl CreateNetworkMigrationDefinitionInputBuilder {
     /// <p>A list of source configurations for the network migration.</p>
     pub fn get_source_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceConfiguration>> {
         &self.source_configurations
+    }
+    /// <p>Specifies the type of the definition. <code>MIGRATION</code> migrates an existing network. <code>NEW_NETWORK</code> designs a new network. If you omit this value, the definition type is <code>MIGRATION</code>.</p>
+    pub fn definition_type(mut self, input: crate::types::DefinitionType) -> Self {
+        self.definition_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the type of the definition. <code>MIGRATION</code> migrates an existing network. <code>NEW_NETWORK</code> designs a new network. If you omit this value, the definition type is <code>MIGRATION</code>.</p>
+    pub fn set_definition_type(mut self, input: ::std::option::Option<crate::types::DefinitionType>) -> Self {
+        self.definition_type = input;
+        self
+    }
+    /// <p>Specifies the type of the definition. <code>MIGRATION</code> migrates an existing network. <code>NEW_NETWORK</code> designs a new network. If you omit this value, the definition type is <code>MIGRATION</code>.</p>
+    pub fn get_definition_type(&self) -> &::std::option::Option<crate::types::DefinitionType> {
+        &self.definition_type
     }
     /// <p>The S3 configuration for storing the target network artifacts.</p>
     /// This field is required.
@@ -311,6 +333,7 @@ impl CreateNetworkMigrationDefinitionInputBuilder {
                 name: self.name,
                 description: self.description,
                 source_configurations: self.source_configurations,
+                definition_type: self.definition_type,
                 target_s3_configuration: self.target_s3_configuration,
                 target_network: self.target_network,
                 target_deployment: self.target_deployment,
@@ -329,6 +352,7 @@ impl ::std::fmt::Debug for CreateNetworkMigrationDefinitionInputBuilder {
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("source_configurations", &self.source_configurations);
+        formatter.field("definition_type", &self.definition_type);
         formatter.field("target_s3_configuration", &self.target_s3_configuration);
         formatter.field("target_network", &self.target_network);
         formatter.field("target_deployment", &self.target_deployment);

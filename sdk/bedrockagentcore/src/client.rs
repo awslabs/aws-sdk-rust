@@ -185,6 +185,8 @@ mod delete_batch_evaluation;
 
 mod delete_capacity_provider_session;
 
+mod delete_dataset_generation;
+
 mod delete_event;
 
 mod delete_memory_record;
@@ -201,11 +203,15 @@ mod get_ab_test;
 
 mod get_agent_card;
 
+mod get_agent_insight;
+
 mod get_batch_evaluation;
 
 mod get_browser_session;
 
 mod get_code_interpreter_session;
+
+mod get_dataset_generation;
 
 mod get_event;
 
@@ -249,11 +255,15 @@ mod list_ab_tests;
 
 mod list_actors;
 
+mod list_agent_insights;
+
 mod list_batch_evaluations;
 
 mod list_browser_sessions;
 
 mod list_code_interpreter_sessions;
+
+mod list_dataset_generations;
 
 mod list_events;
 
@@ -283,6 +293,8 @@ mod start_browser_session;
 
 mod start_code_interpreter_session;
 
+mod start_dataset_generation;
+
 mod start_memory_extraction_job;
 
 mod start_recommendation;
@@ -296,5 +308,7 @@ mod stop_code_interpreter_session;
 mod stop_runtime_session;
 
 mod update_ab_test;
+
+mod update_agent_insight;
 
 mod update_browser_stream;

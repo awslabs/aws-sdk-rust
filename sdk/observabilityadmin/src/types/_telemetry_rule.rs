@@ -6,7 +6,7 @@
 pub struct TelemetryRule {
     /// <p>The type of Amazon Web Services resource to configure telemetry for (for example, <code>AWS::EC2::VPC</code>, <code>AWS::EKS::Cluster</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::Bedrock::KnowledgeBase</code>, <code>AWS::BedrockAgentCore::PaymentManager</code>, or <code>AWS::XRay::TransactionSearchConfig</code>).</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
-    /// <p>The type of telemetry to collect (Logs, Metrics, or Traces).</p>
+    /// <p>The type of telemetry to collect (Logs, Metrics, Traces, or Insights).</p>
     pub telemetry_type: crate::types::TelemetryType,
     /// <p>The specific telemetry source types to configure for the resource, such as VPC_FLOW_LOGS or EKS_AUDIT_LOGS. TelemetrySourceTypes must be correlated with the specific resource type.</p>
     pub telemetry_source_types: ::std::option::Option<::std::vec::Vec<crate::types::TelemetrySourceType>>,
@@ -28,7 +28,7 @@ impl TelemetryRule {
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The type of telemetry to collect (Logs, Metrics, or Traces).</p>
+    /// <p>The type of telemetry to collect (Logs, Metrics, Traces, or Insights).</p>
     pub fn telemetry_type(&self) -> &crate::types::TelemetryType {
         &self.telemetry_type
     }
@@ -101,18 +101,18 @@ impl TelemetryRuleBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }
-    /// <p>The type of telemetry to collect (Logs, Metrics, or Traces).</p>
+    /// <p>The type of telemetry to collect (Logs, Metrics, Traces, or Insights).</p>
     /// This field is required.
     pub fn telemetry_type(mut self, input: crate::types::TelemetryType) -> Self {
         self.telemetry_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of telemetry to collect (Logs, Metrics, or Traces).</p>
+    /// <p>The type of telemetry to collect (Logs, Metrics, Traces, or Insights).</p>
     pub fn set_telemetry_type(mut self, input: ::std::option::Option<crate::types::TelemetryType>) -> Self {
         self.telemetry_type = input;
         self
     }
-    /// <p>The type of telemetry to collect (Logs, Metrics, or Traces).</p>
+    /// <p>The type of telemetry to collect (Logs, Metrics, Traces, or Insights).</p>
     pub fn get_telemetry_type(&self) -> &::std::option::Option<crate::types::TelemetryType> {
         &self.telemetry_type
     }

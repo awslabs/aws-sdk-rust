@@ -5,7 +5,7 @@
 /// <p>If you specify multiple values for a filter, the values are joined by OR. Filter values are case-sensitive.</p>
 /// <p><code>FromEmailAddress</code>, <code>Destination</code>, and <code>Subject</code> filters support partial match. A partial match is performed by using the <code>*</code> wildcard character placed at the beginning (suffix match), the end (prefix match) or both ends of the string (contains match). In order to match the literal characters <code>*</code> or <code>\</code>, they must be escaped using the <code>\</code> character. If no wildcard character is present, an exact match is performed.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MessageInsightsFilters {
     /// <p>The from address used to send the message.</p>
     pub from_email_address: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -68,6 +68,19 @@ impl MessageInsightsFilters {
         self.last_engagement_event.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for MessageInsightsFilters {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MessageInsightsFilters");
+        formatter.field("from_email_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("destination", &"*** Sensitive Data Redacted ***");
+        formatter.field("subject", &"*** Sensitive Data Redacted ***");
+        formatter.field("isp", &self.isp);
+        formatter.field("tenant_name", &self.tenant_name);
+        formatter.field("last_delivery_event", &self.last_delivery_event);
+        formatter.field("last_engagement_event", &self.last_engagement_event);
+        formatter.finish()
+    }
+}
 impl MessageInsightsFilters {
     /// Creates a new builder-style object to manufacture [`MessageInsightsFilters`](crate::types::MessageInsightsFilters).
     pub fn builder() -> crate::types::builders::MessageInsightsFiltersBuilder {
@@ -76,7 +89,7 @@ impl MessageInsightsFilters {
 }
 
 /// A builder for [`MessageInsightsFilters`](crate::types::MessageInsightsFilters).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct MessageInsightsFiltersBuilder {
     pub(crate) from_email_address: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -242,5 +255,18 @@ impl MessageInsightsFiltersBuilder {
             last_delivery_event: self.last_delivery_event,
             last_engagement_event: self.last_engagement_event,
         }
+    }
+}
+impl ::std::fmt::Debug for MessageInsightsFiltersBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MessageInsightsFiltersBuilder");
+        formatter.field("from_email_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("destination", &"*** Sensitive Data Redacted ***");
+        formatter.field("subject", &"*** Sensitive Data Redacted ***");
+        formatter.field("isp", &self.isp);
+        formatter.field("tenant_name", &self.tenant_name);
+        formatter.field("last_delivery_event", &self.last_delivery_event);
+        formatter.field("last_engagement_event", &self.last_engagement_event);
+        formatter.finish()
     }
 }

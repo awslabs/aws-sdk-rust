@@ -2,7 +2,7 @@
 
 /// <p>Authorization configuration for SigV4-authenticated MCP server.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct McpServerSigV4AuthorizationConfig {
     /// <p>AWS region for SigV4 signing. Use '*' for SigV4a multi-region signing.</p>
     pub region: ::std::string::String,
@@ -42,6 +42,17 @@ impl McpServerSigV4AuthorizationConfig {
         self.custom_headers.as_ref()
     }
 }
+impl ::std::fmt::Debug for McpServerSigV4AuthorizationConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("McpServerSigV4AuthorizationConfig");
+        formatter.field("region", &self.region);
+        formatter.field("service", &self.service);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("mcp_role_arn", &self.mcp_role_arn);
+        formatter.field("custom_headers", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl McpServerSigV4AuthorizationConfig {
     /// Creates a new builder-style object to manufacture [`McpServerSigV4AuthorizationConfig`](crate::types::McpServerSigV4AuthorizationConfig).
     pub fn builder() -> crate::types::builders::McpServerSigV4AuthorizationConfigBuilder {
@@ -50,7 +61,7 @@ impl McpServerSigV4AuthorizationConfig {
 }
 
 /// A builder for [`McpServerSigV4AuthorizationConfig`](crate::types::McpServerSigV4AuthorizationConfig).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct McpServerSigV4AuthorizationConfigBuilder {
     pub(crate) region: ::std::option::Option<::std::string::String>,
@@ -170,5 +181,16 @@ impl McpServerSigV4AuthorizationConfigBuilder {
             mcp_role_arn: self.mcp_role_arn,
             custom_headers: self.custom_headers,
         })
+    }
+}
+impl ::std::fmt::Debug for McpServerSigV4AuthorizationConfigBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("McpServerSigV4AuthorizationConfigBuilder");
+        formatter.field("region", &self.region);
+        formatter.field("service", &self.service);
+        formatter.field("role_arn", &self.role_arn);
+        formatter.field("mcp_role_arn", &self.mcp_role_arn);
+        formatter.field("custom_headers", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -42,6 +42,9 @@ async fn test_dns_caching() {
 
     // Verify same IPs returned
     assert_eq!(first_ips, second_ips);
+
+    // Queries to explicitly configured nameservers carry no EDNS(0) record
+    assert_eq!(0, dns_server.edns_query_count());
 }
 
 #[test]
@@ -107,7 +110,7 @@ async fn test_dns_error_handling() {
 #[cfg(test)]
 mod test_dns_server {
     use std::{
-        collections::HashMap,
+        collections::{HashMap, HashSet},
         net::{IpAddr, Ipv4Addr, SocketAddr},
         sync::{atomic::AtomicUsize, Arc},
         time::Duration,
@@ -134,6 +137,7 @@ mod test_dns_server {
         addr: SocketAddr,
         shutdown: Arc<Notify>,
         query_count: Arc<AtomicUsize>,
+        edns_query_count: Arc<AtomicUsize>,
     }
 
     impl TestDnsServer {
@@ -141,26 +145,47 @@ mod test_dns_server {
             records: HashMap<String, IpAddr>,
         ) -> Result<Self, Box<dyn std::error::Error + Send + Sync>> {
             // localhost, random port
-            let socket = UdpSocket::bind("127.0.0.1:0").await?;
+            let socket = Arc::new(UdpSocket::bind("127.0.0.1:0").await?);
             let addr = socket.local_addr()?;
 
             let shutdown = Arc::new(Notify::new());
             let shutdown_clone = shutdown.clone();
             let query_count = Arc::new(AtomicUsize::new(0));
             let query_count_clone = query_count.clone();
+            let edns_query_count = Arc::new(AtomicUsize::new(0));
+            let edns_query_count_clone = edns_query_count.clone();
+            let records = Arc::new(records);
 
             let handle = tokio::spawn(async move {
                 let mut buf = [0; 512];
+                // The resolver retransmits a UDP query under the same message ID while the
+                // response is outstanding, so a lookup is counted once per distinct
+                // (ID, name, type).
+                let mut seen_queries = HashSet::new();
                 loop {
                     tokio::select! {
                         _ = shutdown_clone.notified() => break,
                         result = socket.recv_from(&mut buf) => {
                             if let Ok((len, src)) = result {
-                                query_count_clone.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
-                                // Short sleep before returning DNS response to simulate network latency
-                                tokio::time::sleep(Duration::from_millis(1000)).await;
-                                let response = create_dns_response(&buf[..len], &records);
-                                let _ = socket.send_to(&response, src).await;
+                                let query = buf[..len].to_vec();
+                                if let Some(parsed) = DnsQuery::parse(&query) {
+                                    if seen_queries.insert((parsed.id, parsed.domain, parsed.query_type)) {
+                                        query_count_clone.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
+                                    }
+                                    if parsed.additional_count > 0 {
+                                        edns_query_count_clone.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
+                                    }
+                                }
+                                // Each response is sent from its own task so that retransmitted
+                                // queries do not queue behind the simulated latency.
+                                let socket = socket.clone();
+                                let records = records.clone();
+                                tokio::spawn(async move {
+                                    // Short sleep before returning DNS response to simulate network latency
+                                    tokio::time::sleep(Duration::from_millis(1000)).await;
+                                    let response = create_dns_response(&query, &records);
+                                    let _ = socket.send_to(&response, src).await;
+                                });
                             }
                         }
                     }
@@ -172,6 +197,7 @@ mod test_dns_server {
                 addr,
                 shutdown,
                 query_count,
+                edns_query_count,
             })
         }
 
@@ -181,6 +207,12 @@ mod test_dns_server {
 
         pub fn query_count(&self) -> usize {
             self.query_count.load(std::sync::atomic::Ordering::Relaxed)
+        }
+
+        /// Number of datagrams received with a non-empty additional section (an EDNS(0) OPT record).
+        pub fn edns_query_count(&self) -> usize {
+            self.edns_query_count
+                .load(std::sync::atomic::Ordering::Relaxed)
         }
     }
 
@@ -212,6 +244,7 @@ mod test_dns_server {
         id: u16,
         flags: u16,
         question_count: u16,
+        additional_count: u16,
         domain: String,
         query_type: u16,
         query_class: u16,
@@ -226,6 +259,7 @@ mod test_dns_server {
             let id = u16::from_be_bytes([data[0], data[1]]);
             let flags = u16::from_be_bytes([data[2], data[3]]);
             let question_count = u16::from_be_bytes([data[4], data[5]]);
+            let additional_count = u16::from_be_bytes([data[10], data[11]]);
 
             if question_count == 0 {
                 return None;
@@ -268,6 +302,7 @@ mod test_dns_server {
                 id,
                 flags,
                 question_count,
+                additional_count,
                 domain,
                 query_type,
                 query_class,

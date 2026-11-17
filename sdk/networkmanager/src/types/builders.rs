@@ -153,6 +153,8 @@ pub use crate::types::_service_insertion_segments::ServiceInsertionSegmentsBuild
 
 pub use crate::types::_permissions_error_context::PermissionsErrorContextBuilder;
 
+pub use crate::types::_multipath_resilience_change_values::MultipathResilienceChangeValuesBuilder;
+
 pub use crate::types::_network_route_destination::NetworkRouteDestinationBuilder;
 
 pub use crate::types::_path_component::PathComponentBuilder;

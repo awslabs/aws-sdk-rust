@@ -38,6 +38,8 @@ pub struct CoreNetworkChangeValues {
     pub attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The names of the routing policies and other association details in the core network change values.</p>
     pub routing_policy_association_details: ::std::option::Option<::std::vec::Vec<crate::types::RoutingPolicyAssociationDetail>>,
+    /// <p>The change in multipath resilience configuration in the core network change values.</p>
+    pub multipath_resilience: ::std::option::Option<crate::types::MultipathResilienceChangeValues>,
 }
 impl CoreNetworkChangeValues {
     /// <p>The names of the segments in a core network.</p>
@@ -120,6 +122,10 @@ impl CoreNetworkChangeValues {
     pub fn routing_policy_association_details(&self) -> &[crate::types::RoutingPolicyAssociationDetail] {
         self.routing_policy_association_details.as_deref().unwrap_or_default()
     }
+    /// <p>The change in multipath resilience configuration in the core network change values.</p>
+    pub fn multipath_resilience(&self) -> ::std::option::Option<&crate::types::MultipathResilienceChangeValues> {
+        self.multipath_resilience.as_ref()
+    }
 }
 impl CoreNetworkChangeValues {
     /// Creates a new builder-style object to manufacture [`CoreNetworkChangeValues`](crate::types::CoreNetworkChangeValues).
@@ -149,6 +155,7 @@ pub struct CoreNetworkChangeValuesBuilder {
     pub(crate) peer_edge_locations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) attachment_id: ::std::option::Option<::std::string::String>,
     pub(crate) routing_policy_association_details: ::std::option::Option<::std::vec::Vec<crate::types::RoutingPolicyAssociationDetail>>,
+    pub(crate) multipath_resilience: ::std::option::Option<crate::types::MultipathResilienceChangeValues>,
 }
 impl CoreNetworkChangeValuesBuilder {
     /// <p>The names of the segments in a core network.</p>
@@ -428,6 +435,20 @@ impl CoreNetworkChangeValuesBuilder {
     pub fn get_routing_policy_association_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RoutingPolicyAssociationDetail>> {
         &self.routing_policy_association_details
     }
+    /// <p>The change in multipath resilience configuration in the core network change values.</p>
+    pub fn multipath_resilience(mut self, input: crate::types::MultipathResilienceChangeValues) -> Self {
+        self.multipath_resilience = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The change in multipath resilience configuration in the core network change values.</p>
+    pub fn set_multipath_resilience(mut self, input: ::std::option::Option<crate::types::MultipathResilienceChangeValues>) -> Self {
+        self.multipath_resilience = input;
+        self
+    }
+    /// <p>The change in multipath resilience configuration in the core network change values.</p>
+    pub fn get_multipath_resilience(&self) -> &::std::option::Option<crate::types::MultipathResilienceChangeValues> {
+        &self.multipath_resilience
+    }
     /// Consumes the builder and constructs a [`CoreNetworkChangeValues`](crate::types::CoreNetworkChangeValues).
     pub fn build(self) -> crate::types::CoreNetworkChangeValues {
         crate::types::CoreNetworkChangeValues {
@@ -448,6 +469,7 @@ impl CoreNetworkChangeValuesBuilder {
             peer_edge_locations: self.peer_edge_locations,
             attachment_id: self.attachment_id,
             routing_policy_association_details: self.routing_policy_association_details,
+            multipath_resilience: self.multipath_resilience,
         }
     }
 }

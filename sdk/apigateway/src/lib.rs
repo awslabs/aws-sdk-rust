@@ -21,7 +21,7 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
-//! Amazon API Gateway helps developers deliver robust, secure, and scalable mobile and web application back ends. API Gateway allows developers to securely connect mobile and web applications to APIs that run on Lambda, Amazon EC2, or other publicly addressable web services that are hosted outside of AWS.
+//! Amazon API Gateway helps developers deliver robust, secure, and scalable mobile and web application back ends. API Gateway allows developers to securely connect mobile and web applications to APIs that run on Lambda, Amazon EC2, or other publicly addressable web services that are hosted outside of Amazon Web Services.
 //!
 //! ## Getting Started
 //!
@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-apigateway = "1.127.0"
+//! aws-sdk-apigateway = "1.128.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -177,6 +177,8 @@ pub mod error;
 
 mod error_meta;
 
+mod error_type_registry;
+
 /// Information about this crate.
 pub mod meta;
 
@@ -186,14 +188,14 @@ pub mod operation;
 /// Primitives such as `Blob` or `DateTime` used by other types.
 pub mod primitives;
 
+mod type_registry;
+
 /// Data structures used by operation inputs/outputs.
 pub mod types;
 
 mod apigateway_interceptors;
 
 mod observability_feature;
-
-pub(crate) mod protocol_serde;
 
 mod sdk_feature_tracker;
 
@@ -203,9 +205,7 @@ mod endpoint_lib;
 
 mod lens;
 
-mod json_errors;
-
-mod serde_util;
+pub(crate) mod schema_serde;
 
 #[doc(inline)]
 pub use client::Client;

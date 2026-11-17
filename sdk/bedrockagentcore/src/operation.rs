@@ -34,6 +34,9 @@ pub mod delete_batch_evaluation;
 /// Types for the `DeleteCapacityProviderSession` operation.
 pub mod delete_capacity_provider_session;
 
+/// Types for the `DeleteDatasetGeneration` operation.
+pub mod delete_dataset_generation;
+
 /// Types for the `DeleteEvent` operation.
 pub mod delete_event;
 
@@ -58,6 +61,9 @@ pub mod get_ab_test;
 /// Types for the `GetAgentCard` operation.
 pub mod get_agent_card;
 
+/// Types for the `GetAgentInsight` operation.
+pub mod get_agent_insight;
+
 /// Types for the `GetBatchEvaluation` operation.
 pub mod get_batch_evaluation;
 
@@ -66,6 +72,9 @@ pub mod get_browser_session;
 
 /// Types for the `GetCodeInterpreterSession` operation.
 pub mod get_code_interpreter_session;
+
+/// Types for the `GetDatasetGeneration` operation.
+pub mod get_dataset_generation;
 
 /// Types for the `GetEvent` operation.
 pub mod get_event;
@@ -130,6 +139,9 @@ pub mod list_ab_tests;
 /// Types for the `ListActors` operation.
 pub mod list_actors;
 
+/// Types for the `ListAgentInsights` operation.
+pub mod list_agent_insights;
+
 /// Types for the `ListBatchEvaluations` operation.
 pub mod list_batch_evaluations;
 
@@ -138,6 +150,9 @@ pub mod list_browser_sessions;
 
 /// Types for the `ListCodeInterpreterSessions` operation.
 pub mod list_code_interpreter_sessions;
+
+/// Types for the `ListDatasetGenerations` operation.
+pub mod list_dataset_generations;
 
 /// Types for the `ListEvents` operation.
 pub mod list_events;
@@ -181,6 +196,9 @@ pub mod start_browser_session;
 /// Types for the `StartCodeInterpreterSession` operation.
 pub mod start_code_interpreter_session;
 
+/// Types for the `StartDatasetGeneration` operation.
+pub mod start_dataset_generation;
+
 /// Types for the `StartMemoryExtractionJob` operation.
 pub mod start_memory_extraction_job;
 
@@ -201,6 +219,9 @@ pub mod stop_runtime_session;
 
 /// Types for the `UpdateABTest` operation.
 pub mod update_ab_test;
+
+/// Types for the `UpdateAgentInsight` operation.
+pub mod update_agent_insight;
 
 /// Types for the `UpdateBrowserStream` operation.
 pub mod update_browser_stream;

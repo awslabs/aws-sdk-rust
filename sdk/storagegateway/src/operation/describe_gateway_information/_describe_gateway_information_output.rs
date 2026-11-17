@@ -2,7 +2,7 @@
 
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DescribeGatewayInformationOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub gateway_arn: ::std::option::Option<::std::string::String>,
@@ -156,6 +156,35 @@ impl DescribeGatewayInformationOutput {
         self.software_version.as_deref()
     }
 }
+impl ::std::fmt::Debug for DescribeGatewayInformationOutput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeGatewayInformationOutput");
+        formatter.field("gateway_arn", &self.gateway_arn);
+        formatter.field("gateway_id", &self.gateway_id);
+        formatter.field("gateway_name", &self.gateway_name);
+        formatter.field("gateway_timezone", &self.gateway_timezone);
+        formatter.field("gateway_state", &self.gateway_state);
+        formatter.field("gateway_network_interfaces", &"*** Sensitive Data Redacted ***");
+        formatter.field("gateway_type", &self.gateway_type);
+        formatter.field("next_update_availability_date", &self.next_update_availability_date);
+        formatter.field("last_software_update", &self.last_software_update);
+        formatter.field("ec2_instance_id", &self.ec2_instance_id);
+        formatter.field("ec2_instance_region", &self.ec2_instance_region);
+        formatter.field("tags", &self.tags);
+        formatter.field("vpc_endpoint", &self.vpc_endpoint);
+        formatter.field("cloud_watch_log_group_arn", &self.cloud_watch_log_group_arn);
+        formatter.field("host_environment", &self.host_environment);
+        formatter.field("endpoint_type", &self.endpoint_type);
+        formatter.field("software_updates_end_date", &self.software_updates_end_date);
+        formatter.field("deprecation_date", &self.deprecation_date);
+        formatter.field("gateway_capacity", &self.gateway_capacity);
+        formatter.field("supported_gateway_capacities", &self.supported_gateway_capacities);
+        formatter.field("host_environment_id", &self.host_environment_id);
+        formatter.field("software_version", &self.software_version);
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
+    }
+}
 impl ::aws_types::request_id::RequestId for DescribeGatewayInformationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
@@ -169,7 +198,7 @@ impl DescribeGatewayInformationOutput {
 }
 
 /// A builder for [`DescribeGatewayInformationOutput`](crate::operation::describe_gateway_information::DescribeGatewayInformationOutput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct DescribeGatewayInformationOutputBuilder {
     pub(crate) gateway_arn: ::std::option::Option<::std::string::String>,
@@ -574,5 +603,34 @@ impl DescribeGatewayInformationOutputBuilder {
             software_version: self.software_version,
             _request_id: self._request_id,
         }
+    }
+}
+impl ::std::fmt::Debug for DescribeGatewayInformationOutputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeGatewayInformationOutputBuilder");
+        formatter.field("gateway_arn", &self.gateway_arn);
+        formatter.field("gateway_id", &self.gateway_id);
+        formatter.field("gateway_name", &self.gateway_name);
+        formatter.field("gateway_timezone", &self.gateway_timezone);
+        formatter.field("gateway_state", &self.gateway_state);
+        formatter.field("gateway_network_interfaces", &"*** Sensitive Data Redacted ***");
+        formatter.field("gateway_type", &self.gateway_type);
+        formatter.field("next_update_availability_date", &self.next_update_availability_date);
+        formatter.field("last_software_update", &self.last_software_update);
+        formatter.field("ec2_instance_id", &self.ec2_instance_id);
+        formatter.field("ec2_instance_region", &self.ec2_instance_region);
+        formatter.field("tags", &self.tags);
+        formatter.field("vpc_endpoint", &self.vpc_endpoint);
+        formatter.field("cloud_watch_log_group_arn", &self.cloud_watch_log_group_arn);
+        formatter.field("host_environment", &self.host_environment);
+        formatter.field("endpoint_type", &self.endpoint_type);
+        formatter.field("software_updates_end_date", &self.software_updates_end_date);
+        formatter.field("deprecation_date", &self.deprecation_date);
+        formatter.field("gateway_capacity", &self.gateway_capacity);
+        formatter.field("supported_gateway_capacities", &self.supported_gateway_capacities);
+        formatter.field("host_environment_id", &self.host_environment_id);
+        formatter.field("software_version", &self.software_version);
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
     }
 }

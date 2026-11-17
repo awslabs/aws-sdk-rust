@@ -28,6 +28,7 @@ impl crate::operation::delete_stream::builders::DeleteStreamInputBuilder {
 /// <p>If the stream is in the <code>ACTIVE</code> state, you can delete it. After a <code>DeleteStream</code> request, the specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p>
 /// <p><b>Note:</b> Kinesis Data Streams might continue to accept data read and write operations, such as <code>PutRecord</code>, <code>PutRecords</code>, and <code>GetRecords</code>, on a stream in the <code>DELETING</code> state until the stream deletion is complete.</p>
 /// <p>When you delete a stream, any shards in that stream are also deleted, and any tags are dissociated from the stream.</p>
+/// <p>Before you can delete a data stream that has queues, you must delete every queue on the stream with <code>DeleteQueue</code>.</p>
 /// <p>You can use the <code>DescribeStreamSummary</code> operation to check the state of the stream, which is returned in <code>StreamStatus</code>.</p>
 /// <p><code>DeleteStream</code> has a limit of five transactions per second per account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -129,17 +130,23 @@ impl DeleteStreamFluentBuilder {
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_stream_name()
     }
-    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.</p>
+    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered enhanced fan-out consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.</p>
+    /// <p>If you set it to <code>true</code>, <code>DeleteStream</code> deletes the stream and every consumer registered with it.</p>
+    /// <p>This parameter does not apply to queues. A stream that has queues cannot be deleted until every queue on it is deleted with <code>DeleteQueue</code>, whatever this parameter is set to.</p>
     pub fn enforce_consumer_deletion(mut self, input: bool) -> Self {
         self.inner = self.inner.enforce_consumer_deletion(input);
         self
     }
-    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.</p>
+    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered enhanced fan-out consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.</p>
+    /// <p>If you set it to <code>true</code>, <code>DeleteStream</code> deletes the stream and every consumer registered with it.</p>
+    /// <p>This parameter does not apply to queues. A stream that has queues cannot be deleted until every queue on it is deleted with <code>DeleteQueue</code>, whatever this parameter is set to.</p>
     pub fn set_enforce_consumer_deletion(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enforce_consumer_deletion(input);
         self
     }
-    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.</p>
+    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered enhanced fan-out consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.</p>
+    /// <p>If you set it to <code>true</code>, <code>DeleteStream</code> deletes the stream and every consumer registered with it.</p>
+    /// <p>This parameter does not apply to queues. A stream that has queues cannot be deleted until every queue on it is deleted with <code>DeleteQueue</code>, whatever this parameter is set to.</p>
     pub fn get_enforce_consumer_deletion(&self) -> &::std::option::Option<bool> {
         self.inner.get_enforce_consumer_deletion()
     }

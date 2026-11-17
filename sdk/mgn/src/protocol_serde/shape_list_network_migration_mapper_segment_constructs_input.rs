@@ -9,23 +9,29 @@ pub fn ser_list_network_migration_mapper_segment_constructs_input_input(
         crate::protocol_serde::shape_list_network_migration_mapper_segment_constructs_filters::ser_list_network_migration_mapper_segment_constructs_filters(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.max_results {
+    if let Some(var_3) = &input.include_configuration {
+        object.key("includeConfiguration").boolean(*var_3);
+    }
+    if let Some(var_4) = &input.include_enriched_properties {
+        object.key("includeEnrichedProperties").boolean(*var_4);
+    }
+    if let Some(var_5) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_4) = &input.network_migration_definition_id {
-        object.key("networkMigrationDefinitionID").string(var_4.as_str());
+    if let Some(var_6) = &input.network_migration_definition_id {
+        object.key("networkMigrationDefinitionID").string(var_6.as_str());
     }
-    if let Some(var_5) = &input.network_migration_execution_id {
-        object.key("networkMigrationExecutionID").string(var_5.as_str());
+    if let Some(var_7) = &input.network_migration_execution_id {
+        object.key("networkMigrationExecutionID").string(var_7.as_str());
     }
-    if let Some(var_6) = &input.next_token {
-        object.key("nextToken").string(var_6.as_str());
+    if let Some(var_8) = &input.next_token {
+        object.key("nextToken").string(var_8.as_str());
     }
-    if let Some(var_7) = &input.segment_id {
-        object.key("segmentID").string(var_7.as_str());
+    if let Some(var_9) = &input.segment_id {
+        object.key("segmentID").string(var_9.as_str());
     }
     Ok(())
 }

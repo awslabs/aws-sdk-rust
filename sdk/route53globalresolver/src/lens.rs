@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_access_tokens_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_core_network_endpoints_output_output_next_token(
+    input: &crate::operation::list_core_network_endpoints::ListCoreNetworkEndpointsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_dns_views_output_output_next_token(
     input: &crate::operation::list_dns_views::ListDnsViewsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -110,6 +120,13 @@ pub(crate) fn lens_list_access_tokens_output_output_access_tokens(
     input: crate::operation::list_access_tokens::ListAccessTokensOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AccessTokenItem>> {
     let input = input.access_tokens?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_core_network_endpoints_output_output_core_network_endpoints(
+    input: crate::operation::list_core_network_endpoints::ListCoreNetworkEndpointsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CoreNetworkEndpointsItem>> {
+    let input = input.core_network_endpoints;
     ::std::option::Option::Some(input)
 }
 

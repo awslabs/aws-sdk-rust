@@ -161,4 +161,18 @@ impl ListChatsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    /// <p>The archive status to filter by. Use this parameter to list only archived chat executions or only active ones.</p>
+    pub fn archive_status(mut self, input: crate::types::ChatArchiveStatus) -> Self {
+        self.inner = self.inner.archive_status(input);
+        self
+    }
+    /// <p>The archive status to filter by. Use this parameter to list only archived chat executions or only active ones.</p>
+    pub fn set_archive_status(mut self, input: ::std::option::Option<crate::types::ChatArchiveStatus>) -> Self {
+        self.inner = self.inner.set_archive_status(input);
+        self
+    }
+    /// <p>The archive status to filter by. Use this parameter to list only archived chat executions or only active ones.</p>
+    pub fn get_archive_status(&self) -> &::std::option::Option<crate::types::ChatArchiveStatus> {
+        self.inner.get_archive_status()
+    }
 }

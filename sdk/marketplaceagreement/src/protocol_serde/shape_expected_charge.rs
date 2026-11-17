@@ -35,6 +35,9 @@ pub(crate) fn de_expected_charge(
                     )?)),
                 )
             })?,
+            "purchaseOrderReference" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_purchase_order_reference(Some(decoder.string()?)))
+            })?,
             _ => {
                 decoder.skip()?;
                 builder

@@ -368,6 +368,39 @@ pub(crate) fn list_source_views_for_billing_view_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn split_credit_output_output_correct_errors(
+    mut builder: crate::operation::split_credit::builders::SplitCreditOutputBuilder,
+) -> crate::operation::split_credit::builders::SplitCreditOutputBuilder {
+    if builder.parent_credit_id.is_none() {
+        builder.parent_credit_id = Some(Default::default())
+    }
+    if builder.child_credits.is_none() {
+        builder.child_credits = Some(Default::default())
+    }
+    if builder.dry_run.is_none() {
+        builder.dry_run = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn transfer_credit_output_output_correct_errors(
+    mut builder: crate::operation::transfer_credit::builders::TransferCreditOutputBuilder,
+) -> crate::operation::transfer_credit::builders::TransferCreditOutputBuilder {
+    if builder.source_credit_id.is_none() {
+        builder.source_credit_id = Some(Default::default())
+    }
+    if builder.destination_account_id.is_none() {
+        builder.destination_account_id = Some(Default::default())
+    }
+    if builder.amount.is_none() {
+        builder.amount = Some(Default::default())
+    }
+    if builder.dry_run.is_none() {
+        builder.dry_run = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_billing_view_output_output_correct_errors(
     mut builder: crate::operation::update_billing_view::builders::UpdateBillingViewOutputBuilder,
 ) -> crate::operation::update_billing_view::builders::UpdateBillingViewOutputBuilder {
@@ -452,6 +485,13 @@ pub(crate) fn charge_account_correct_errors(
     }
     if builder.charge_percentage.is_none() {
         builder.charge_percentage = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn child_credit_correct_errors(mut builder: crate::types::builders::ChildCreditBuilder) -> crate::types::builders::ChildCreditBuilder {
+    if builder.amount.is_none() {
+        builder.amount = Some(Default::default())
     }
     builder
 }

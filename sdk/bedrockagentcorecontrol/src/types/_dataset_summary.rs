@@ -17,9 +17,11 @@ pub struct DatasetSummary {
     /// <p>Publish synchronization state. Only authoritative when status is ACTIVE.</p>
     pub draft_status: ::std::option::Option<crate::types::DraftStatus>,
     /// <p>The schema type of the dataset.</p>
-    pub schema_type: crate::types::DatasetSchemaType,
+    pub schema_type: ::std::option::Option<crate::types::DatasetSchemaType>,
     /// <p>The number of examples in the dataset.</p>
     pub example_count: i64,
+    /// <p>The number of examples that have each field, for the DRAFT. Absent when the counts are unknown.</p>
+    pub example_count_by_field: ::std::option::Option<crate::types::ExampleCountByField>,
     /// <p>The timestamp when the dataset was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp when the dataset was last updated.</p>
@@ -54,12 +56,16 @@ impl DatasetSummary {
         self.draft_status.as_ref()
     }
     /// <p>The schema type of the dataset.</p>
-    pub fn schema_type(&self) -> &crate::types::DatasetSchemaType {
-        &self.schema_type
+    pub fn schema_type(&self) -> ::std::option::Option<&crate::types::DatasetSchemaType> {
+        self.schema_type.as_ref()
     }
     /// <p>The number of examples in the dataset.</p>
     pub fn example_count(&self) -> i64 {
         self.example_count
+    }
+    /// <p>The number of examples that have each field, for the DRAFT. Absent when the counts are unknown.</p>
+    pub fn example_count_by_field(&self) -> ::std::option::Option<&crate::types::ExampleCountByField> {
+        self.example_count_by_field.as_ref()
     }
     /// <p>The timestamp when the dataset was created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
@@ -89,6 +95,7 @@ pub struct DatasetSummaryBuilder {
     pub(crate) draft_status: ::std::option::Option<crate::types::DraftStatus>,
     pub(crate) schema_type: ::std::option::Option<crate::types::DatasetSchemaType>,
     pub(crate) example_count: ::std::option::Option<i64>,
+    pub(crate) example_count_by_field: ::std::option::Option<crate::types::ExampleCountByField>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -182,7 +189,6 @@ impl DatasetSummaryBuilder {
         &self.draft_status
     }
     /// <p>The schema type of the dataset.</p>
-    /// This field is required.
     pub fn schema_type(mut self, input: crate::types::DatasetSchemaType) -> Self {
         self.schema_type = ::std::option::Option::Some(input);
         self
@@ -210,6 +216,20 @@ impl DatasetSummaryBuilder {
     /// <p>The number of examples in the dataset.</p>
     pub fn get_example_count(&self) -> &::std::option::Option<i64> {
         &self.example_count
+    }
+    /// <p>The number of examples that have each field, for the DRAFT. Absent when the counts are unknown.</p>
+    pub fn example_count_by_field(mut self, input: crate::types::ExampleCountByField) -> Self {
+        self.example_count_by_field = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of examples that have each field, for the DRAFT. Absent when the counts are unknown.</p>
+    pub fn set_example_count_by_field(mut self, input: ::std::option::Option<crate::types::ExampleCountByField>) -> Self {
+        self.example_count_by_field = input;
+        self
+    }
+    /// <p>The number of examples that have each field, for the DRAFT. Absent when the counts are unknown.</p>
+    pub fn get_example_count_by_field(&self) -> &::std::option::Option<crate::types::ExampleCountByField> {
+        &self.example_count_by_field
     }
     /// <p>The timestamp when the dataset was created.</p>
     /// This field is required.
@@ -247,7 +267,6 @@ impl DatasetSummaryBuilder {
     /// - [`dataset_id`](crate::types::builders::DatasetSummaryBuilder::dataset_id)
     /// - [`dataset_name`](crate::types::builders::DatasetSummaryBuilder::dataset_name)
     /// - [`status`](crate::types::builders::DatasetSummaryBuilder::status)
-    /// - [`schema_type`](crate::types::builders::DatasetSummaryBuilder::schema_type)
     /// - [`example_count`](crate::types::builders::DatasetSummaryBuilder::example_count)
     /// - [`created_at`](crate::types::builders::DatasetSummaryBuilder::created_at)
     /// - [`updated_at`](crate::types::builders::DatasetSummaryBuilder::updated_at)
@@ -279,18 +298,14 @@ impl DatasetSummaryBuilder {
                 )
             })?,
             draft_status: self.draft_status,
-            schema_type: self.schema_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "schema_type",
-                    "schema_type was not specified but it is required when building DatasetSummary",
-                )
-            })?,
+            schema_type: self.schema_type,
             example_count: self.example_count.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "example_count",
                     "example_count was not specified but it is required when building DatasetSummary",
                 )
             })?,
+            example_count_by_field: self.example_count_by_field,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",

@@ -513,6 +513,49 @@ impl From<crate::operation::delete_capacity_provider_session::DeleteCapacityProv
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_dataset_generation::DeleteDatasetGenerationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_dataset_generation::DeleteDatasetGenerationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_dataset_generation::DeleteDatasetGenerationError> for Error {
+    fn from(err: crate::operation::delete_dataset_generation::DeleteDatasetGenerationError) -> Self {
+        match err {
+            crate::operation::delete_dataset_generation::DeleteDatasetGenerationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_dataset_generation::DeleteDatasetGenerationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_dataset_generation::DeleteDatasetGenerationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_dataset_generation::DeleteDatasetGenerationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_dataset_generation::DeleteDatasetGenerationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_dataset_generation::DeleteDatasetGenerationError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::delete_dataset_generation::DeleteDatasetGenerationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_dataset_generation::DeleteDatasetGenerationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_event::DeleteEventError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -759,6 +802,32 @@ impl From<crate::operation::get_agent_card::GetAgentCardError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_agent_insight::GetAgentInsightError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_agent_insight::GetAgentInsightError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_agent_insight::GetAgentInsightError> for Error {
+    fn from(err: crate::operation::get_agent_insight::GetAgentInsightError) -> Self {
+        match err {
+            crate::operation::get_agent_insight::GetAgentInsightError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_agent_insight::GetAgentInsightError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_agent_insight::GetAgentInsightError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_agent_insight::GetAgentInsightError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_agent_insight::GetAgentInsightError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_agent_insight::GetAgentInsightError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_batch_evaluation::GetBatchEvaluationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -852,6 +921,37 @@ impl From<crate::operation::get_code_interpreter_session::GetCodeInterpreterSess
                 Error::ValidationException(inner)
             }
             crate::operation::get_code_interpreter_session::GetCodeInterpreterSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_dataset_generation::GetDatasetGenerationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_dataset_generation::GetDatasetGenerationError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_dataset_generation::GetDatasetGenerationError> for Error {
+    fn from(err: crate::operation::get_dataset_generation::GetDatasetGenerationError) -> Self {
+        match err {
+            crate::operation::get_dataset_generation::GetDatasetGenerationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_dataset_generation::GetDatasetGenerationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_dataset_generation::GetDatasetGenerationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_dataset_generation::GetDatasetGenerationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_dataset_generation::GetDatasetGenerationError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::get_dataset_generation::GetDatasetGenerationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_dataset_generation::GetDatasetGenerationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1572,6 +1672,31 @@ impl From<crate::operation::list_actors::ListActorsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_agent_insights::ListAgentInsightsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_agent_insights::ListAgentInsightsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_agent_insights::ListAgentInsightsError> for Error {
+    fn from(err: crate::operation::list_agent_insights::ListAgentInsightsError) -> Self {
+        match err {
+            crate::operation::list_agent_insights::ListAgentInsightsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_agent_insights::ListAgentInsightsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_agent_insights::ListAgentInsightsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_agent_insights::ListAgentInsightsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_agent_insights::ListAgentInsightsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_batch_evaluations::ListBatchEvaluationsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1670,6 +1795,43 @@ impl From<crate::operation::list_code_interpreter_sessions::ListCodeInterpreterS
                 Error::ValidationException(inner)
             }
             crate::operation::list_code_interpreter_sessions::ListCodeInterpreterSessionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_dataset_generations::ListDatasetGenerationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_dataset_generations::ListDatasetGenerationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_dataset_generations::ListDatasetGenerationsError> for Error {
+    fn from(err: crate::operation::list_dataset_generations::ListDatasetGenerationsError) -> Self {
+        match err {
+            crate::operation::list_dataset_generations::ListDatasetGenerationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_dataset_generations::ListDatasetGenerationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_dataset_generations::ListDatasetGenerationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_dataset_generations::ListDatasetGenerationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_dataset_generations::ListDatasetGenerationsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::list_dataset_generations::ListDatasetGenerationsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_dataset_generations::ListDatasetGenerationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2149,6 +2311,47 @@ impl From<crate::operation::start_code_interpreter_session::StartCodeInterpreter
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_dataset_generation::StartDatasetGenerationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_dataset_generation::StartDatasetGenerationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_dataset_generation::StartDatasetGenerationError> for Error {
+    fn from(err: crate::operation::start_dataset_generation::StartDatasetGenerationError) -> Self {
+        match err {
+            crate::operation::start_dataset_generation::StartDatasetGenerationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_dataset_generation::StartDatasetGenerationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_dataset_generation::StartDatasetGenerationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_dataset_generation::StartDatasetGenerationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_dataset_generation::StartDatasetGenerationError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_dataset_generation::StartDatasetGenerationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_dataset_generation::StartDatasetGenerationError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::start_dataset_generation::StartDatasetGenerationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_dataset_generation::StartDatasetGenerationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_memory_extraction_job::StartMemoryExtractionJobError, R>>
     for Error
 where
@@ -2390,6 +2593,35 @@ impl From<crate::operation::update_ab_test::UpdateABTestError> for Error {
             crate::operation::update_ab_test::UpdateABTestError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::update_ab_test::UpdateABTestError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_ab_test::UpdateABTestError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_agent_insight::UpdateAgentInsightError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_agent_insight::UpdateAgentInsightError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_agent_insight::UpdateAgentInsightError> for Error {
+    fn from(err: crate::operation::update_agent_insight::UpdateAgentInsightError) -> Self {
+        match err {
+            crate::operation::update_agent_insight::UpdateAgentInsightError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_agent_insight::UpdateAgentInsightError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_agent_insight::UpdateAgentInsightError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_agent_insight::UpdateAgentInsightError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_agent_insight::UpdateAgentInsightError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_agent_insight::UpdateAgentInsightError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_agent_insight::UpdateAgentInsightError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

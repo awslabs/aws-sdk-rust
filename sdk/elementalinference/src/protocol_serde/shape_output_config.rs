@@ -28,6 +28,12 @@ pub fn ser_output_config(
             crate::protocol_serde::shape_contextual_metadata_config::ser_contextual_metadata_config(&mut object_4, inner)?;
             object_4.finish();
         }
+        crate::types::OutputConfig::Function(inner) => {
+            #[allow(unused_mut)]
+            let mut object_5 = object_2.key("function").start_object();
+            crate::protocol_serde::shape_function_config::ser_function_config(&mut object_5, inner)?;
+            object_5.finish();
+        }
         crate::types::OutputConfig::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("OutputConfig")),
     }
     Ok(())
@@ -90,6 +96,11 @@ where
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'contextualMetadata' cannot be null")
                                 })?,
+                        )),
+                        "function" => Some(crate::types::OutputConfig::Function(
+                            crate::protocol_serde::shape_function_config::de_function_config(tokens, _value, depth + 1)?.ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'function' cannot be null")
+                            })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

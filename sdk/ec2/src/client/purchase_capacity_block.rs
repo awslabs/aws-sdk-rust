@@ -10,6 +10,7 @@ impl super::Client {
     /// - On success, responds with [`PurchaseCapacityBlockOutput`](crate::operation::purchase_capacity_block::PurchaseCapacityBlockOutput) with field(s):
     ///   - [`capacity_reservation(Option<CapacityReservation>)`](crate::operation::purchase_capacity_block::PurchaseCapacityBlockOutput::capacity_reservation): <p>The Capacity Reservation.</p>
     ///   - [`capacity_blocks(Option<Vec::<CapacityBlock>>)`](crate::operation::purchase_capacity_block::PurchaseCapacityBlockOutput::capacity_blocks): <p>The Capacity Block.</p>
+    ///   - [`capacity_reservations(Option<Vec::<CapacityReservation>>)`](crate::operation::purchase_capacity_block::PurchaseCapacityBlockOutput::capacity_reservations): <p>The Capacity Reservations created as a result of the Capacity Block purchase. When a Capacity Block offering contains multiple segments, a separate Capacity Reservation is created for each segment.</p>
     /// - On failure, responds with [`SdkError<PurchaseCapacityBlockError>`](crate::operation::purchase_capacity_block::PurchaseCapacityBlockError)
     pub fn purchase_capacity_block(&self) -> crate::operation::purchase_capacity_block::builders::PurchaseCapacityBlockFluentBuilder {
         crate::operation::purchase_capacity_block::builders::PurchaseCapacityBlockFluentBuilder::new(self.handle.clone())

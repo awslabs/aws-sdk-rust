@@ -10,6 +10,16 @@ pub struct PeeringConnectionOptionsRequest {
     pub allow_egress_from_local_classic_link_to_remote_vpc: ::std::option::Option<bool>,
     /// <p>Deprecated.</p>
     pub allow_egress_from_local_vpc_to_remote_classic_link: ::std::option::Option<bool>,
+    /// <p>Specifies whether you allow multipath resilience for this side of the VPC peering connection. Multipath resilience is supported only for inter-Region VPC peering connections between supported Regions. It takes effect only when both the requester and the accepter allow it. If you don't specify this parameter, the current setting doesn't change.</p>
+    pub allow_multipath_resilience: ::std::option::Option<bool>,
+    /// <p>The multipath resilience mode. You can specify this parameter only if <code>AllowMultipathResilience</code> is <code>true</code>.</p>
+    /// <p>The following value is valid:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>always-on</code> – Replicates traffic across multiple network paths while multipath resilience is in effect.</p></li>
+    /// </ul>
+    /// <p>If <code>AllowMultipathResilience</code> is <code>true</code> and you don't specify a mode, the default is <code>always-on</code>.</p>
+    pub multipath_resilience_mode: ::std::option::Option<crate::types::MultipathResilienceMode>,
 }
 impl PeeringConnectionOptionsRequest {
     /// <p>If true, enables a local VPC to resolve public DNS hostnames to private IP addresses when queried from instances in the peer VPC.</p>
@@ -23,6 +33,20 @@ impl PeeringConnectionOptionsRequest {
     /// <p>Deprecated.</p>
     pub fn allow_egress_from_local_vpc_to_remote_classic_link(&self) -> ::std::option::Option<bool> {
         self.allow_egress_from_local_vpc_to_remote_classic_link
+    }
+    /// <p>Specifies whether you allow multipath resilience for this side of the VPC peering connection. Multipath resilience is supported only for inter-Region VPC peering connections between supported Regions. It takes effect only when both the requester and the accepter allow it. If you don't specify this parameter, the current setting doesn't change.</p>
+    pub fn allow_multipath_resilience(&self) -> ::std::option::Option<bool> {
+        self.allow_multipath_resilience
+    }
+    /// <p>The multipath resilience mode. You can specify this parameter only if <code>AllowMultipathResilience</code> is <code>true</code>.</p>
+    /// <p>The following value is valid:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>always-on</code> – Replicates traffic across multiple network paths while multipath resilience is in effect.</p></li>
+    /// </ul>
+    /// <p>If <code>AllowMultipathResilience</code> is <code>true</code> and you don't specify a mode, the default is <code>always-on</code>.</p>
+    pub fn multipath_resilience_mode(&self) -> ::std::option::Option<&crate::types::MultipathResilienceMode> {
+        self.multipath_resilience_mode.as_ref()
     }
 }
 impl PeeringConnectionOptionsRequest {
@@ -39,6 +63,8 @@ pub struct PeeringConnectionOptionsRequestBuilder {
     pub(crate) allow_dns_resolution_from_remote_vpc: ::std::option::Option<bool>,
     pub(crate) allow_egress_from_local_classic_link_to_remote_vpc: ::std::option::Option<bool>,
     pub(crate) allow_egress_from_local_vpc_to_remote_classic_link: ::std::option::Option<bool>,
+    pub(crate) allow_multipath_resilience: ::std::option::Option<bool>,
+    pub(crate) multipath_resilience_mode: ::std::option::Option<crate::types::MultipathResilienceMode>,
 }
 impl PeeringConnectionOptionsRequestBuilder {
     /// <p>If true, enables a local VPC to resolve public DNS hostnames to private IP addresses when queried from instances in the peer VPC.</p>
@@ -83,12 +109,60 @@ impl PeeringConnectionOptionsRequestBuilder {
     pub fn get_allow_egress_from_local_vpc_to_remote_classic_link(&self) -> &::std::option::Option<bool> {
         &self.allow_egress_from_local_vpc_to_remote_classic_link
     }
+    /// <p>Specifies whether you allow multipath resilience for this side of the VPC peering connection. Multipath resilience is supported only for inter-Region VPC peering connections between supported Regions. It takes effect only when both the requester and the accepter allow it. If you don't specify this parameter, the current setting doesn't change.</p>
+    pub fn allow_multipath_resilience(mut self, input: bool) -> Self {
+        self.allow_multipath_resilience = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether you allow multipath resilience for this side of the VPC peering connection. Multipath resilience is supported only for inter-Region VPC peering connections between supported Regions. It takes effect only when both the requester and the accepter allow it. If you don't specify this parameter, the current setting doesn't change.</p>
+    pub fn set_allow_multipath_resilience(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.allow_multipath_resilience = input;
+        self
+    }
+    /// <p>Specifies whether you allow multipath resilience for this side of the VPC peering connection. Multipath resilience is supported only for inter-Region VPC peering connections between supported Regions. It takes effect only when both the requester and the accepter allow it. If you don't specify this parameter, the current setting doesn't change.</p>
+    pub fn get_allow_multipath_resilience(&self) -> &::std::option::Option<bool> {
+        &self.allow_multipath_resilience
+    }
+    /// <p>The multipath resilience mode. You can specify this parameter only if <code>AllowMultipathResilience</code> is <code>true</code>.</p>
+    /// <p>The following value is valid:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>always-on</code> – Replicates traffic across multiple network paths while multipath resilience is in effect.</p></li>
+    /// </ul>
+    /// <p>If <code>AllowMultipathResilience</code> is <code>true</code> and you don't specify a mode, the default is <code>always-on</code>.</p>
+    pub fn multipath_resilience_mode(mut self, input: crate::types::MultipathResilienceMode) -> Self {
+        self.multipath_resilience_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The multipath resilience mode. You can specify this parameter only if <code>AllowMultipathResilience</code> is <code>true</code>.</p>
+    /// <p>The following value is valid:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>always-on</code> – Replicates traffic across multiple network paths while multipath resilience is in effect.</p></li>
+    /// </ul>
+    /// <p>If <code>AllowMultipathResilience</code> is <code>true</code> and you don't specify a mode, the default is <code>always-on</code>.</p>
+    pub fn set_multipath_resilience_mode(mut self, input: ::std::option::Option<crate::types::MultipathResilienceMode>) -> Self {
+        self.multipath_resilience_mode = input;
+        self
+    }
+    /// <p>The multipath resilience mode. You can specify this parameter only if <code>AllowMultipathResilience</code> is <code>true</code>.</p>
+    /// <p>The following value is valid:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>always-on</code> – Replicates traffic across multiple network paths while multipath resilience is in effect.</p></li>
+    /// </ul>
+    /// <p>If <code>AllowMultipathResilience</code> is <code>true</code> and you don't specify a mode, the default is <code>always-on</code>.</p>
+    pub fn get_multipath_resilience_mode(&self) -> &::std::option::Option<crate::types::MultipathResilienceMode> {
+        &self.multipath_resilience_mode
+    }
     /// Consumes the builder and constructs a [`PeeringConnectionOptionsRequest`](crate::types::PeeringConnectionOptionsRequest).
     pub fn build(self) -> crate::types::PeeringConnectionOptionsRequest {
         crate::types::PeeringConnectionOptionsRequest {
             allow_dns_resolution_from_remote_vpc: self.allow_dns_resolution_from_remote_vpc,
             allow_egress_from_local_classic_link_to_remote_vpc: self.allow_egress_from_local_classic_link_to_remote_vpc,
             allow_egress_from_local_vpc_to_remote_classic_link: self.allow_egress_from_local_vpc_to_remote_classic_link,
+            allow_multipath_resilience: self.allow_multipath_resilience,
+            multipath_resilience_mode: self.multipath_resilience_mode,
         }
     }
 }

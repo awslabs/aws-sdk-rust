@@ -133,6 +133,13 @@ where
                             builder =
                                 builder.set_store_snapshot_on_local_zone(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
+                        "outpostSnapshotLocation" => {
+                            builder = builder.set_outpost_snapshot_location(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::OutpostSnapshotLocation::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "storageConfiguration" => {
                             builder = builder.set_storage_configuration(
                                 crate::protocol_serde::shape_storage_configuration::de_storage_configuration(tokens, _value, depth + 1)?,

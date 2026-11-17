@@ -10,6 +10,17 @@ static EVALUATIONFORMSINGLESELECTQUESTIONAUTOMATIONOPTION_MEMBER_RULECATEGORY: :
         "RuleCategory",
         0,
     );
+static EVALUATIONFORMSINGLESELECTQUESTIONAUTOMATIONOPTION_MEMBER_AUTOMATIONRULE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.connect#EvaluationFormSingleSelectQuestionAutomationOption$AutomationRule",
+            "com.amazonaws.connect",
+            "EvaluationFormSingleSelectQuestionAutomationOption",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "AutomationRule",
+        1,
+    );
 static EVALUATIONFORMSINGLESELECTQUESTIONAUTOMATIONOPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.connect#EvaluationFormSingleSelectQuestionAutomationOption",
@@ -17,7 +28,10 @@ static EVALUATIONFORMSINGLESELECTQUESTIONAUTOMATIONOPTION_SCHEMA: ::aws_smithy_s
         "EvaluationFormSingleSelectQuestionAutomationOption",
     ),
     ::aws_smithy_schema::ShapeType::Union,
-    &[&EVALUATIONFORMSINGLESELECTQUESTIONAUTOMATIONOPTION_MEMBER_RULECATEGORY],
+    &[
+        &EVALUATIONFORMSINGLESELECTQUESTIONAUTOMATIONOPTION_MEMBER_RULECATEGORY,
+        &EVALUATIONFORMSINGLESELECTQUESTIONAUTOMATIONOPTION_MEMBER_AUTOMATIONRULE,
+    ],
 );
 impl crate::types::EvaluationFormSingleSelectQuestionAutomationOption {
     /// The schema for this shape.
@@ -36,6 +50,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Evaluation
         match self {
             Self::RuleCategory(val) => {
                 ser.write_struct(&EVALUATIONFORMSINGLESELECTQUESTIONAUTOMATIONOPTION_MEMBER_RULECATEGORY, val)?;
+            }
+            Self::AutomationRule(val) => {
+                ser.write_struct(&EVALUATIONFORMSINGLESELECTQUESTIONAUTOMATIONOPTION_MEMBER_AUTOMATIONRULE, val)?;
             }
             Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
         }
@@ -59,6 +76,7 @@ impl crate::types::EvaluationFormSingleSelectQuestionAutomationOption {
             }
             result = ::std::option::Option::Some(match member.member_index() {
                 Some(0) => Self::RuleCategory(crate::types::SingleSelectQuestionRuleCategoryAutomation::deserialize(deser)?),
+                Some(1) => Self::AutomationRule(crate::types::SingleSelectQuestionAutomationRule::deserialize(deser)?),
                 _ => Self::Unknown,
             });
             Ok(())

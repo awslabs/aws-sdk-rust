@@ -2,7 +2,7 @@
 
 /// <p>Input to the <code>GetCredentialsForIdentity</code> action.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetCredentialsForIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub identity_id: ::std::option::Option<::std::string::String>,
@@ -29,6 +29,15 @@ impl GetCredentialsForIdentityInput {
         self.custom_role_arn.as_deref()
     }
 }
+impl ::std::fmt::Debug for GetCredentialsForIdentityInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GetCredentialsForIdentityInput");
+        formatter.field("identity_id", &self.identity_id);
+        formatter.field("logins", &"*** Sensitive Data Redacted ***");
+        formatter.field("custom_role_arn", &self.custom_role_arn);
+        formatter.finish()
+    }
+}
 impl GetCredentialsForIdentityInput {
     /// Creates a new builder-style object to manufacture [`GetCredentialsForIdentityInput`](crate::operation::get_credentials_for_identity::GetCredentialsForIdentityInput).
     pub fn builder() -> crate::operation::get_credentials_for_identity::builders::GetCredentialsForIdentityInputBuilder {
@@ -37,7 +46,7 @@ impl GetCredentialsForIdentityInput {
 }
 
 /// A builder for [`GetCredentialsForIdentityInput`](crate::operation::get_credentials_for_identity::GetCredentialsForIdentityInput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct GetCredentialsForIdentityInputBuilder {
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
@@ -112,5 +121,14 @@ impl GetCredentialsForIdentityInputBuilder {
             logins: self.logins,
             custom_role_arn: self.custom_role_arn,
         })
+    }
+}
+impl ::std::fmt::Debug for GetCredentialsForIdentityInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GetCredentialsForIdentityInputBuilder");
+        formatter.field("identity_id", &self.identity_id);
+        formatter.field("logins", &"*** Sensitive Data Redacted ***");
+        formatter.field("custom_role_arn", &self.custom_role_arn);
+        formatter.finish()
     }
 }

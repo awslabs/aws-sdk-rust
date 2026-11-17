@@ -103,6 +103,8 @@ pub use crate::types::_security_hub_policy::SecurityHubPolicyBuilder;
 
 pub use crate::types::_azure_provider_configuration::AzureProviderConfigurationBuilder;
 
+pub use crate::types::_gcp_provider_configuration::GcpProviderConfigurationBuilder;
+
 pub use crate::types::_jira_cloud_provider_configuration::JiraCloudProviderConfigurationBuilder;
 
 pub use crate::types::_service_now_provider_configuration::ServiceNowProviderConfigurationBuilder;
@@ -124,6 +126,8 @@ pub use crate::types::_standard::StandardBuilder;
 pub use crate::types::_standards_control::StandardsControlBuilder;
 
 pub use crate::types::_azure_detail::AzureDetailBuilder;
+
+pub use crate::types::_gcp_detail::GcpDetailBuilder;
 
 pub use crate::types::_jira_cloud_detail::JiraCloudDetailBuilder;
 
@@ -187,6 +191,8 @@ pub use crate::types::_standards_control_association_summary::StandardsControlAs
 
 pub use crate::types::_azure_update_configuration::AzureUpdateConfigurationBuilder;
 
+pub use crate::types::_gcp_update_configuration::GcpUpdateConfigurationBuilder;
+
 pub use crate::types::_jira_cloud_update_configuration::JiraCloudUpdateConfigurationBuilder;
 
 pub use crate::types::_service_now_update_configuration::ServiceNowUpdateConfigurationBuilder;
@@ -238,6 +244,8 @@ pub use crate::types::_automation_rules_resource_fields_update_v2::AutomationRul
 pub use crate::types::_security_controls_configuration::SecurityControlsConfigurationBuilder;
 
 pub use crate::types::_azure_scope_configuration::AzureScopeConfigurationBuilder;
+
+pub use crate::types::_gcp_scope_configuration::GcpScopeConfigurationBuilder;
 
 pub use crate::types::_ip_filter::IpFilterBuilder;
 

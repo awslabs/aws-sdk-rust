@@ -24,6 +24,7 @@ enum Inner {
     V2025_08_07,
     V2026_01_12,
     V2026_11_10,
+    V2026_11_17,
 }
 
 impl BehaviorVersion {
@@ -36,9 +37,35 @@ impl BehaviorVersion {
     /// If, however, you're writing a service that is very latency sensitive, or that has written
     /// code to tune Rust SDK behaviors, consider pinning to a specific major version.
     ///
-    /// The latest version is currently [`BehaviorVersion::v2026_11_10`]
+    /// The latest version is currently [`BehaviorVersion::v2026_11_17`]
     pub fn latest() -> Self {
-        Self::v2026_11_10()
+        Self::v2026_11_17()
+    }
+
+    /// Behavior version for November 17th, 2026.
+    ///
+    /// This version applies a default read timeout to AWS SDK clients. The read timeout bounds the
+    /// span from request dispatch until response headers arrive, which is where an unresponsive
+    /// peer would otherwise leave a request hanging until the operating system gives up.
+    ///
+    /// The value depends on the service: 5 minutes generally, 15 minutes for services that
+    /// legitimately hold a connection open before replying, and no timeout at all for services
+    /// where any bound would break normal usage — a large upload cannot produce response headers
+    /// until the whole body has been sent, for instance, so S3 applies none.
+    ///
+    /// This bounds only the wait for response headers. It does not bound a transfer that has
+    /// started and then stalls; stalled stream protection already covers that.
+    ///
+    /// A `read_timeout` you configure yourself always wins, whether it is longer, shorter, or
+    /// disabled, and whether you set it on the client or per operation. To keep the previous
+    /// behavior for every service, pin to an earlier behavior version.
+    ///
+    /// For more information about behavior versions and how they affect SDK behavior, see the
+    /// [AWS SDK for Rust Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/behavior-versions.html).
+    pub fn v2026_11_17() -> Self {
+        Self {
+            inner: Inner::V2026_11_17,
+        }
     }
 
     /// Behavior version for November 10th, 2026.
@@ -48,6 +75,10 @@ impl BehaviorVersion {
     /// - Token bucket costs: 14 for non-throttling, 5 for throttling (previously 5/10)
     /// - HTTP 5xx status codes no longer trigger connection poisoning
     /// - `x-amz-retry-after` header bounded between exponential backoff and 5s above it
+    #[deprecated(
+        since = "1.22.0",
+        note = "Superseded by v2026_11_17, which applies a default read timeout to AWS SDK clients."
+    )]
     pub fn v2026_11_10() -> Self {
         Self {
             inner: Inner::V2026_11_10,
@@ -163,12 +194,16 @@ mod tests {
         assert!(BehaviorVersion::latest().is_at_least(BehaviorVersion::v2025_01_17()));
         assert!(BehaviorVersion::latest().is_at_least(BehaviorVersion::v2025_08_07()));
         assert!(BehaviorVersion::latest().is_at_least(BehaviorVersion::v2026_01_12()));
+        assert!(BehaviorVersion::latest().is_at_least(BehaviorVersion::v2026_11_10()));
+        assert!(BehaviorVersion::latest().is_at_least(BehaviorVersion::v2026_11_17()));
         assert!(!BehaviorVersion::v2023_11_09().is_at_least(BehaviorVersion::v2024_03_28()));
+        assert!(!BehaviorVersion::v2026_11_10().is_at_least(BehaviorVersion::v2026_11_17()));
         assert!(Inner::V2024_03_28 > Inner::V2023_11_09);
         assert!(Inner::V2023_11_09 < Inner::V2024_03_28);
         assert!(Inner::V2024_03_28 < Inner::V2025_01_17);
         assert!(Inner::V2025_01_17 < Inner::V2025_08_07);
         assert!(Inner::V2025_08_07 < Inner::V2026_01_12);
         assert!(Inner::V2026_01_12 < Inner::V2026_11_10);
+        assert!(Inner::V2026_11_10 < Inner::V2026_11_17);
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>Input to the GetId action.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetIdInput {
     /// <p>A standard Amazon Web Services account ID (9+ digits).</p>
     pub account_id: ::std::option::Option<::std::string::String>,
@@ -59,6 +59,15 @@ impl GetIdInput {
         self.logins.as_ref()
     }
 }
+impl ::std::fmt::Debug for GetIdInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GetIdInput");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("identity_pool_id", &self.identity_pool_id);
+        formatter.field("logins", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl GetIdInput {
     /// Creates a new builder-style object to manufacture [`GetIdInput`](crate::operation::get_id::GetIdInput).
     pub fn builder() -> crate::operation::get_id::builders::GetIdInputBuilder {
@@ -67,7 +76,7 @@ impl GetIdInput {
 }
 
 /// A builder for [`GetIdInput`](crate::operation::get_id::GetIdInput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct GetIdInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
@@ -182,5 +191,14 @@ impl GetIdInputBuilder {
             identity_pool_id: self.identity_pool_id,
             logins: self.logins,
         })
+    }
+}
+impl ::std::fmt::Debug for GetIdInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GetIdInputBuilder");
+        formatter.field("account_id", &self.account_id);
+        formatter.field("identity_pool_id", &self.identity_pool_id);
+        formatter.field("logins", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

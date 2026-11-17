@@ -198,4 +198,18 @@ impl PutRumEventsFluentBuilder {
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_alias()
     }
+    /// <p>A JSON serialization of attributes that apply to every event in this batch, such as the browser, device, and operating system of the end user. CloudWatch RUM merges these attributes into each event in the batch, so you send them once for the batch instead of once for each event. If an attribute appears both here and in an individual event's <code>metadata</code>, CloudWatch RUM uses the value in the event's <code>metadata</code>.</p>
+    pub fn session_metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.session_metadata(input.into());
+        self
+    }
+    /// <p>A JSON serialization of attributes that apply to every event in this batch, such as the browser, device, and operating system of the end user. CloudWatch RUM merges these attributes into each event in the batch, so you send them once for the batch instead of once for each event. If an attribute appears both here and in an individual event's <code>metadata</code>, CloudWatch RUM uses the value in the event's <code>metadata</code>.</p>
+    pub fn set_session_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_session_metadata(input);
+        self
+    }
+    /// <p>A JSON serialization of attributes that apply to every event in this batch, such as the browser, device, and operating system of the end user. CloudWatch RUM merges these attributes into each event in the batch, so you send them once for the batch instead of once for each event. If an attribute appears both here and in an individual event's <code>metadata</code>, CloudWatch RUM uses the value in the event's <code>metadata</code>.</p>
+    pub fn get_session_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_session_metadata()
+    }
 }

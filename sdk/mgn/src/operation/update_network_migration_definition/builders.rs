@@ -263,4 +263,18 @@ impl UpdateNetworkMigrationDefinitionFluentBuilder {
     pub fn get_scope_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_scope_tags()
     }
+    /// <p>The updated type of the network migration definition.</p>
+    pub fn definition_type(mut self, input: crate::types::DefinitionType) -> Self {
+        self.inner = self.inner.definition_type(input);
+        self
+    }
+    /// <p>The updated type of the network migration definition.</p>
+    pub fn set_definition_type(mut self, input: ::std::option::Option<crate::types::DefinitionType>) -> Self {
+        self.inner = self.inner.set_definition_type(input);
+        self
+    }
+    /// <p>The updated type of the network migration definition.</p>
+    pub fn get_definition_type(&self) -> &::std::option::Option<crate::types::DefinitionType> {
+        self.inner.get_definition_type()
+    }
 }

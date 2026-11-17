@@ -32,6 +32,8 @@ pub struct CapacityBlockOffering {
     pub capacity_block_duration_minutes: ::std::option::Option<i32>,
     /// <p>The type of zone where the Capacity Block offering is available.</p>
     pub zone_type: ::std::option::Option<::std::string::String>,
+    /// <p>The individual segments that compose the Capacity Block offering. Each segment describes a distinct block of capacity with its own Availability Zone, instance type, schedule, and pricing.</p>
+    pub capacity_block_offering_segments: ::std::option::Option<::std::vec::Vec<crate::types::CapacityBlockOfferingSegment>>,
 }
 impl CapacityBlockOffering {
     /// <p>The ID of the Capacity Block offering.</p>
@@ -90,6 +92,12 @@ impl CapacityBlockOffering {
     pub fn zone_type(&self) -> ::std::option::Option<&str> {
         self.zone_type.as_deref()
     }
+    /// <p>The individual segments that compose the Capacity Block offering. Each segment describes a distinct block of capacity with its own Availability Zone, instance type, schedule, and pricing.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_block_offering_segments.is_none()`.
+    pub fn capacity_block_offering_segments(&self) -> &[crate::types::CapacityBlockOfferingSegment] {
+        self.capacity_block_offering_segments.as_deref().unwrap_or_default()
+    }
 }
 impl CapacityBlockOffering {
     /// Creates a new builder-style object to manufacture [`CapacityBlockOffering`](crate::types::CapacityBlockOffering).
@@ -116,6 +124,7 @@ pub struct CapacityBlockOfferingBuilder {
     pub(crate) ultraserver_count: ::std::option::Option<i32>,
     pub(crate) capacity_block_duration_minutes: ::std::option::Option<i32>,
     pub(crate) zone_type: ::std::option::Option<::std::string::String>,
+    pub(crate) capacity_block_offering_segments: ::std::option::Option<::std::vec::Vec<crate::types::CapacityBlockOfferingSegment>>,
 }
 impl CapacityBlockOfferingBuilder {
     /// <p>The ID of the Capacity Block offering.</p>
@@ -314,6 +323,29 @@ impl CapacityBlockOfferingBuilder {
     pub fn get_zone_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.zone_type
     }
+    /// Appends an item to `capacity_block_offering_segments`.
+    ///
+    /// To override the contents of this collection use [`set_capacity_block_offering_segments`](Self::set_capacity_block_offering_segments).
+    ///
+    /// <p>The individual segments that compose the Capacity Block offering. Each segment describes a distinct block of capacity with its own Availability Zone, instance type, schedule, and pricing.</p>
+    pub fn capacity_block_offering_segments(mut self, input: crate::types::CapacityBlockOfferingSegment) -> Self {
+        let mut v = self.capacity_block_offering_segments.unwrap_or_default();
+        v.push(input);
+        self.capacity_block_offering_segments = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The individual segments that compose the Capacity Block offering. Each segment describes a distinct block of capacity with its own Availability Zone, instance type, schedule, and pricing.</p>
+    pub fn set_capacity_block_offering_segments(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityBlockOfferingSegment>>,
+    ) -> Self {
+        self.capacity_block_offering_segments = input;
+        self
+    }
+    /// <p>The individual segments that compose the Capacity Block offering. Each segment describes a distinct block of capacity with its own Availability Zone, instance type, schedule, and pricing.</p>
+    pub fn get_capacity_block_offering_segments(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityBlockOfferingSegment>> {
+        &self.capacity_block_offering_segments
+    }
     /// Consumes the builder and constructs a [`CapacityBlockOffering`](crate::types::CapacityBlockOffering).
     pub fn build(self) -> crate::types::CapacityBlockOffering {
         crate::types::CapacityBlockOffering {
@@ -331,6 +363,7 @@ impl CapacityBlockOfferingBuilder {
             ultraserver_count: self.ultraserver_count,
             capacity_block_duration_minutes: self.capacity_block_duration_minutes,
             zone_type: self.zone_type,
+            capacity_block_offering_segments: self.capacity_block_offering_segments,
         }
     }
 }

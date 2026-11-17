@@ -49,6 +49,26 @@ static SELFSERVICEPERMISSIONS_MEMBER_REBUILD_WORKSPACE: ::aws_smithy_schema::Sch
     "RebuildWorkspace",
     4,
 );
+static SELFSERVICEPERMISSIONS_MEMBER_NESTED_VIRTUALIZATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#SelfservicePermissions$NestedVirtualization",
+        "com.amazonaws.workspaces",
+        "SelfservicePermissions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "NestedVirtualization",
+    5,
+);
+static SELFSERVICEPERMISSIONS_MEMBER_ENABLE_END_USER_ADVISOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.workspaces#SelfservicePermissions$EnableEndUserAdvisor",
+        "com.amazonaws.workspaces",
+        "SelfservicePermissions",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EnableEndUserAdvisor",
+    6,
+);
 static SELFSERVICEPERMISSIONS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.workspaces#SelfservicePermissions",
@@ -62,6 +82,8 @@ static SELFSERVICEPERMISSIONS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::a
         &SELFSERVICEPERMISSIONS_MEMBER_CHANGE_COMPUTE_TYPE,
         &SELFSERVICEPERMISSIONS_MEMBER_SWITCH_RUNNING_MODE,
         &SELFSERVICEPERMISSIONS_MEMBER_REBUILD_WORKSPACE,
+        &SELFSERVICEPERMISSIONS_MEMBER_NESTED_VIRTUALIZATION,
+        &SELFSERVICEPERMISSIONS_MEMBER_ENABLE_END_USER_ADVISOR,
     ],
 );
 impl crate::types::SelfservicePermissions {
@@ -92,6 +114,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Selfservic
         }
         if let Some(ref val) = self.rebuild_workspace {
             ser.write_string(&SELFSERVICEPERMISSIONS_MEMBER_REBUILD_WORKSPACE, val.as_str())?;
+        }
+        if let Some(ref val) = self.nested_virtualization {
+            ser.write_string(&SELFSERVICEPERMISSIONS_MEMBER_NESTED_VIRTUALIZATION, val.as_str())?;
+        }
+        if let Some(ref val) = self.enable_end_user_advisor {
+            ser.write_string(&SELFSERVICEPERMISSIONS_MEMBER_ENABLE_END_USER_ADVISOR, val.as_str())?;
         }
         Ok(())
     }
@@ -143,6 +171,20 @@ impl crate::types::builders::SelfservicePermissionsBuilder {
                         deser.read_null()?;
                     } else {
                         self.rebuild_workspace = Some(crate::types::ReconnectEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.nested_virtualization = Some(crate::types::ReconnectEnum::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enable_end_user_advisor = Some(crate::types::ReconnectEnum::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}

@@ -2,7 +2,7 @@
 
 /// <p>Contains the geometry details for each path between a pair of positions. Used in plotting a route leg on a map.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct LegGeometry {
     /// <p>An ordered list of positions used to plot a route on a map.</p>
     /// <p>The first position is closest to the start position for the leg, and the last position is the closest to the end position for the leg.</p>
@@ -25,6 +25,13 @@ impl LegGeometry {
         self.line_string.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for LegGeometry {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("LegGeometry");
+        formatter.field("line_string", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl LegGeometry {
     /// Creates a new builder-style object to manufacture [`LegGeometry`](crate::types::LegGeometry).
     pub fn builder() -> crate::types::builders::LegGeometryBuilder {
@@ -33,7 +40,7 @@ impl LegGeometry {
 }
 
 /// A builder for [`LegGeometry`](crate::types::LegGeometry).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct LegGeometryBuilder {
     pub(crate) line_string: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
@@ -79,5 +86,12 @@ impl LegGeometryBuilder {
         crate::types::LegGeometry {
             line_string: self.line_string,
         }
+    }
+}
+impl ::std::fmt::Debug for LegGeometryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("LegGeometryBuilder");
+        formatter.field("line_string", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

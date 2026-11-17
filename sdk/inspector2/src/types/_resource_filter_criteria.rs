@@ -8,7 +8,15 @@ pub struct ResourceFilterCriteria {
     pub account_id: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
     /// <p>The resource IDs used as resource filter criteria.</p>
     pub resource_id: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
-    /// <p>The resource types used as resource filter criteria.</p>
+    /// <p>The resource types used as resource filter criteria. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services – <code>AWS_EC2_INSTANCE</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_LAMBDA_FUNCTION</code>, or <code>MACHINE_IMAGE</code>.</p></li>
+    /// <li>
+    /// <p>Microsoft Azure – <code>Microsoft.Compute/virtualMachines</code>, <code>Microsoft.ContainerRegistry/registry/containerImage</code>, or <code>Microsoft.Web/sites</code>.</p></li>
+    /// <li>
+    /// <p>Google Cloud Platform (GCP) – <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p></li>
+    /// </ul>
     pub resource_type: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
     /// <p>The ECR repository names used as resource filter criteria.</p>
     pub ecr_repository_name: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
@@ -20,13 +28,45 @@ pub struct ResourceFilterCriteria {
     pub ec2_instance_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapFilter>>,
     /// <p>The Amazon Web Services Lambda function tags used as resource filter criteria.</p>
     pub lambda_function_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapFilter>>,
-    /// <p>The cloud providers used as resource filter criteria.</p>
+    /// <p>The cloud providers used as resource filter criteria. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub cloud_provider: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
-    /// <p>The cloud provider account IDs used as resource filter criteria.</p>
+    /// <p>The cloud provider account IDs used as resource filter criteria. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>An Azure subscription ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) project ID.</p></li>
+    /// </ul>
     pub cloud_provider_account_id: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
-    /// <p>The cloud provider organization IDs used as resource filter criteria.</p>
+    /// <p>The cloud provider organization IDs used as resource filter criteria. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Organizations organization ID.</p></li>
+    /// <li>
+    /// <p>An Azure tenant ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) organization ID.</p></li>
+    /// </ul>
     pub cloud_provider_org_id: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
-    /// <p>The cloud provider regions used as resource filter criteria.</p>
+    /// <p>The cloud provider regions used as resource filter criteria. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
+    /// </ul>
     pub cloud_provider_region: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>,
     /// <p>The cloud VM instance tags used as resource filter criteria.</p>
     pub cloud_vm_instance_tags: ::std::option::Option<::std::vec::Vec<crate::types::ResourceMapFilter>>,
@@ -56,7 +96,15 @@ impl ResourceFilterCriteria {
     pub fn resource_id(&self) -> &[crate::types::ResourceStringFilter] {
         self.resource_id.as_deref().unwrap_or_default()
     }
-    /// <p>The resource types used as resource filter criteria.</p>
+    /// <p>The resource types used as resource filter criteria. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services – <code>AWS_EC2_INSTANCE</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_LAMBDA_FUNCTION</code>, or <code>MACHINE_IMAGE</code>.</p></li>
+    /// <li>
+    /// <p>Microsoft Azure – <code>Microsoft.Compute/virtualMachines</code>, <code>Microsoft.ContainerRegistry/registry/containerImage</code>, or <code>Microsoft.Web/sites</code>.</p></li>
+    /// <li>
+    /// <p>Google Cloud Platform (GCP) – <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_type.is_none()`.
     pub fn resource_type(&self) -> &[crate::types::ResourceStringFilter] {
@@ -92,25 +140,57 @@ impl ResourceFilterCriteria {
     pub fn lambda_function_tags(&self) -> &[crate::types::ResourceMapFilter] {
         self.lambda_function_tags.as_deref().unwrap_or_default()
     }
-    /// <p>The cloud providers used as resource filter criteria.</p>
+    /// <p>The cloud providers used as resource filter criteria. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_provider.is_none()`.
     pub fn cloud_provider(&self) -> &[crate::types::ResourceStringFilter] {
         self.cloud_provider.as_deref().unwrap_or_default()
     }
-    /// <p>The cloud provider account IDs used as resource filter criteria.</p>
+    /// <p>The cloud provider account IDs used as resource filter criteria. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>An Azure subscription ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) project ID.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_provider_account_id.is_none()`.
     pub fn cloud_provider_account_id(&self) -> &[crate::types::ResourceStringFilter] {
         self.cloud_provider_account_id.as_deref().unwrap_or_default()
     }
-    /// <p>The cloud provider organization IDs used as resource filter criteria.</p>
+    /// <p>The cloud provider organization IDs used as resource filter criteria. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Organizations organization ID.</p></li>
+    /// <li>
+    /// <p>An Azure tenant ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) organization ID.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_provider_org_id.is_none()`.
     pub fn cloud_provider_org_id(&self) -> &[crate::types::ResourceStringFilter] {
         self.cloud_provider_org_id.as_deref().unwrap_or_default()
     }
-    /// <p>The cloud provider regions used as resource filter criteria.</p>
+    /// <p>The cloud provider regions used as resource filter criteria. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_provider_region.is_none()`.
     pub fn cloud_provider_region(&self) -> &[crate::types::ResourceStringFilter] {
@@ -235,19 +315,43 @@ impl ResourceFilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_type`](Self::set_resource_type).
     ///
-    /// <p>The resource types used as resource filter criteria.</p>
+    /// <p>The resource types used as resource filter criteria. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services – <code>AWS_EC2_INSTANCE</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_LAMBDA_FUNCTION</code>, or <code>MACHINE_IMAGE</code>.</p></li>
+    /// <li>
+    /// <p>Microsoft Azure – <code>Microsoft.Compute/virtualMachines</code>, <code>Microsoft.ContainerRegistry/registry/containerImage</code>, or <code>Microsoft.Web/sites</code>.</p></li>
+    /// <li>
+    /// <p>Google Cloud Platform (GCP) – <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p></li>
+    /// </ul>
     pub fn resource_type(mut self, input: crate::types::ResourceStringFilter) -> Self {
         let mut v = self.resource_type.unwrap_or_default();
         v.push(input);
         self.resource_type = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The resource types used as resource filter criteria.</p>
+    /// <p>The resource types used as resource filter criteria. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services – <code>AWS_EC2_INSTANCE</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_LAMBDA_FUNCTION</code>, or <code>MACHINE_IMAGE</code>.</p></li>
+    /// <li>
+    /// <p>Microsoft Azure – <code>Microsoft.Compute/virtualMachines</code>, <code>Microsoft.ContainerRegistry/registry/containerImage</code>, or <code>Microsoft.Web/sites</code>.</p></li>
+    /// <li>
+    /// <p>Google Cloud Platform (GCP) – <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p></li>
+    /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The resource types used as resource filter criteria.</p>
+    /// <p>The resource types used as resource filter criteria. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services – <code>AWS_EC2_INSTANCE</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_LAMBDA_FUNCTION</code>, or <code>MACHINE_IMAGE</code>.</p></li>
+    /// <li>
+    /// <p>Microsoft Azure – <code>Microsoft.Compute/virtualMachines</code>, <code>Microsoft.ContainerRegistry/registry/containerImage</code>, or <code>Microsoft.Web/sites</code>.</p></li>
+    /// <li>
+    /// <p>Google Cloud Platform (GCP) – <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p></li>
+    /// </ul>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>> {
         &self.resource_type
     }
@@ -355,19 +459,43 @@ impl ResourceFilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_cloud_provider`](Self::set_cloud_provider).
     ///
-    /// <p>The cloud providers used as resource filter criteria.</p>
+    /// <p>The cloud providers used as resource filter criteria. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn cloud_provider(mut self, input: crate::types::ResourceStringFilter) -> Self {
         let mut v = self.cloud_provider.unwrap_or_default();
         v.push(input);
         self.cloud_provider = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The cloud providers used as resource filter criteria.</p>
+    /// <p>The cloud providers used as resource filter criteria. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn set_cloud_provider(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>) -> Self {
         self.cloud_provider = input;
         self
     }
-    /// <p>The cloud providers used as resource filter criteria.</p>
+    /// <p>The cloud providers used as resource filter criteria. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn get_cloud_provider(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>> {
         &self.cloud_provider
     }
@@ -375,19 +503,43 @@ impl ResourceFilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_cloud_provider_account_id`](Self::set_cloud_provider_account_id).
     ///
-    /// <p>The cloud provider account IDs used as resource filter criteria.</p>
+    /// <p>The cloud provider account IDs used as resource filter criteria. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>An Azure subscription ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) project ID.</p></li>
+    /// </ul>
     pub fn cloud_provider_account_id(mut self, input: crate::types::ResourceStringFilter) -> Self {
         let mut v = self.cloud_provider_account_id.unwrap_or_default();
         v.push(input);
         self.cloud_provider_account_id = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The cloud provider account IDs used as resource filter criteria.</p>
+    /// <p>The cloud provider account IDs used as resource filter criteria. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>An Azure subscription ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) project ID.</p></li>
+    /// </ul>
     pub fn set_cloud_provider_account_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>) -> Self {
         self.cloud_provider_account_id = input;
         self
     }
-    /// <p>The cloud provider account IDs used as resource filter criteria.</p>
+    /// <p>The cloud provider account IDs used as resource filter criteria. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>An Azure subscription ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) project ID.</p></li>
+    /// </ul>
     pub fn get_cloud_provider_account_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>> {
         &self.cloud_provider_account_id
     }
@@ -395,19 +547,43 @@ impl ResourceFilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_cloud_provider_org_id`](Self::set_cloud_provider_org_id).
     ///
-    /// <p>The cloud provider organization IDs used as resource filter criteria.</p>
+    /// <p>The cloud provider organization IDs used as resource filter criteria. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Organizations organization ID.</p></li>
+    /// <li>
+    /// <p>An Azure tenant ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) organization ID.</p></li>
+    /// </ul>
     pub fn cloud_provider_org_id(mut self, input: crate::types::ResourceStringFilter) -> Self {
         let mut v = self.cloud_provider_org_id.unwrap_or_default();
         v.push(input);
         self.cloud_provider_org_id = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The cloud provider organization IDs used as resource filter criteria.</p>
+    /// <p>The cloud provider organization IDs used as resource filter criteria. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Organizations organization ID.</p></li>
+    /// <li>
+    /// <p>An Azure tenant ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) organization ID.</p></li>
+    /// </ul>
     pub fn set_cloud_provider_org_id(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>) -> Self {
         self.cloud_provider_org_id = input;
         self
     }
-    /// <p>The cloud provider organization IDs used as resource filter criteria.</p>
+    /// <p>The cloud provider organization IDs used as resource filter criteria. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Organizations organization ID.</p></li>
+    /// <li>
+    /// <p>An Azure tenant ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) organization ID.</p></li>
+    /// </ul>
     pub fn get_cloud_provider_org_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>> {
         &self.cloud_provider_org_id
     }
@@ -415,19 +591,43 @@ impl ResourceFilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_cloud_provider_region`](Self::set_cloud_provider_region).
     ///
-    /// <p>The cloud provider regions used as resource filter criteria.</p>
+    /// <p>The cloud provider regions used as resource filter criteria. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
+    /// </ul>
     pub fn cloud_provider_region(mut self, input: crate::types::ResourceStringFilter) -> Self {
         let mut v = self.cloud_provider_region.unwrap_or_default();
         v.push(input);
         self.cloud_provider_region = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The cloud provider regions used as resource filter criteria.</p>
+    /// <p>The cloud provider regions used as resource filter criteria. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
+    /// </ul>
     pub fn set_cloud_provider_region(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>>) -> Self {
         self.cloud_provider_region = input;
         self
     }
-    /// <p>The cloud provider regions used as resource filter criteria.</p>
+    /// <p>The cloud provider regions used as resource filter criteria. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
+    /// </ul>
     pub fn get_cloud_provider_region(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceStringFilter>> {
         &self.cloud_provider_region
     }

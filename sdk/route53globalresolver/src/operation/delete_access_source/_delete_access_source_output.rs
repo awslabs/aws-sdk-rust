@@ -7,11 +7,13 @@ pub struct DeleteAccessSourceOutput {
     pub arn: ::std::string::String,
     /// <p>The IP address or CIDR range of the deleted access source.</p>
     pub cidr: ::std::string::String,
+    /// <p>The ID of the core network endpoint associated with this access source.</p>
+    pub core_network_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the access source was originally created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The unique identifier of the deleted access source.</p>
     pub id: ::std::string::String,
-    /// <p>The IP address type of the deleted access source (IPv4 or IPv6).</p>
+    /// <p>The IP address type of the deleted access source. Valid values are IPV4, IPV6, and NONE.</p>
     pub ip_address_type: crate::types::IpAddressType,
     /// <p>The name of the deleted access source.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -19,6 +21,8 @@ pub struct DeleteAccessSourceOutput {
     pub dns_view_id: ::std::string::String,
     /// <p>The DNS protocol that was permitted for the deleted access source.</p>
     pub protocol: crate::types::DnsProtocol,
+    /// <p>The name of the segment associated with this access source.</p>
+    pub segment: ::std::option::Option<::std::string::String>,
     /// <p>The final status of the deleted access source.</p>
     pub status: crate::types::CrResourceStatus,
     /// <p>The date and time when the access source was last updated before deletion.</p>
@@ -36,6 +40,10 @@ impl DeleteAccessSourceOutput {
         use std::ops::Deref;
         self.cidr.deref()
     }
+    /// <p>The ID of the core network endpoint associated with this access source.</p>
+    pub fn core_network_endpoint_id(&self) -> ::std::option::Option<&str> {
+        self.core_network_endpoint_id.as_deref()
+    }
     /// <p>The date and time when the access source was originally created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
         &self.created_at
@@ -45,7 +53,7 @@ impl DeleteAccessSourceOutput {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p>The IP address type of the deleted access source (IPv4 or IPv6).</p>
+    /// <p>The IP address type of the deleted access source. Valid values are IPV4, IPV6, and NONE.</p>
     pub fn ip_address_type(&self) -> &crate::types::IpAddressType {
         &self.ip_address_type
     }
@@ -61,6 +69,10 @@ impl DeleteAccessSourceOutput {
     /// <p>The DNS protocol that was permitted for the deleted access source.</p>
     pub fn protocol(&self) -> &crate::types::DnsProtocol {
         &self.protocol
+    }
+    /// <p>The name of the segment associated with this access source.</p>
+    pub fn segment(&self) -> ::std::option::Option<&str> {
+        self.segment.as_deref()
     }
     /// <p>The final status of the deleted access source.</p>
     pub fn status(&self) -> &crate::types::CrResourceStatus {
@@ -89,12 +101,14 @@ impl DeleteAccessSourceOutput {
 pub struct DeleteAccessSourceOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
+    pub(crate) core_network_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) dns_view_id: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<crate::types::DnsProtocol>,
+    pub(crate) segment: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CrResourceStatus>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -116,7 +130,6 @@ impl DeleteAccessSourceOutputBuilder {
         &self.arn
     }
     /// <p>The IP address or CIDR range of the deleted access source.</p>
-    /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self
@@ -129,6 +142,20 @@ impl DeleteAccessSourceOutputBuilder {
     /// <p>The IP address or CIDR range of the deleted access source.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.cidr
+    }
+    /// <p>The ID of the core network endpoint associated with this access source.</p>
+    pub fn core_network_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.core_network_endpoint_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the core network endpoint associated with this access source.</p>
+    pub fn set_core_network_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.core_network_endpoint_id = input;
+        self
+    }
+    /// <p>The ID of the core network endpoint associated with this access source.</p>
+    pub fn get_core_network_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_endpoint_id
     }
     /// <p>The date and time when the access source was originally created.</p>
     /// This field is required.
@@ -160,18 +187,17 @@ impl DeleteAccessSourceOutputBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The IP address type of the deleted access source (IPv4 or IPv6).</p>
-    /// This field is required.
+    /// <p>The IP address type of the deleted access source. Valid values are IPV4, IPV6, and NONE.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The IP address type of the deleted access source (IPv4 or IPv6).</p>
+    /// <p>The IP address type of the deleted access source. Valid values are IPV4, IPV6, and NONE.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
-    /// <p>The IP address type of the deleted access source (IPv4 or IPv6).</p>
+    /// <p>The IP address type of the deleted access source. Valid values are IPV4, IPV6, and NONE.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         &self.ip_address_type
     }
@@ -219,6 +245,20 @@ impl DeleteAccessSourceOutputBuilder {
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::DnsProtocol> {
         &self.protocol
     }
+    /// <p>The name of the segment associated with this access source.</p>
+    pub fn segment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.segment = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the segment associated with this access source.</p>
+    pub fn set_segment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.segment = input;
+        self
+    }
+    /// <p>The name of the segment associated with this access source.</p>
+    pub fn get_segment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment
+    }
     /// <p>The final status of the deleted access source.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::CrResourceStatus) -> Self {
@@ -261,10 +301,8 @@ impl DeleteAccessSourceOutputBuilder {
     /// Consumes the builder and constructs a [`DeleteAccessSourceOutput`](crate::operation::delete_access_source::DeleteAccessSourceOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::operation::delete_access_source::builders::DeleteAccessSourceOutputBuilder::arn)
-    /// - [`cidr`](crate::operation::delete_access_source::builders::DeleteAccessSourceOutputBuilder::cidr)
     /// - [`created_at`](crate::operation::delete_access_source::builders::DeleteAccessSourceOutputBuilder::created_at)
     /// - [`id`](crate::operation::delete_access_source::builders::DeleteAccessSourceOutputBuilder::id)
-    /// - [`ip_address_type`](crate::operation::delete_access_source::builders::DeleteAccessSourceOutputBuilder::ip_address_type)
     /// - [`dns_view_id`](crate::operation::delete_access_source::builders::DeleteAccessSourceOutputBuilder::dns_view_id)
     /// - [`protocol`](crate::operation::delete_access_source::builders::DeleteAccessSourceOutputBuilder::protocol)
     /// - [`status`](crate::operation::delete_access_source::builders::DeleteAccessSourceOutputBuilder::status)
@@ -280,12 +318,8 @@ impl DeleteAccessSourceOutputBuilder {
                     "arn was not specified but it is required when building DeleteAccessSourceOutput",
                 )
             })?,
-            cidr: self.cidr.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cidr",
-                    "cidr was not specified but it is required when building DeleteAccessSourceOutput",
-                )
-            })?,
+            cidr: self.cidr.unwrap_or_default(),
+            core_network_endpoint_id: self.core_network_endpoint_id,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
@@ -298,12 +332,9 @@ impl DeleteAccessSourceOutputBuilder {
                     "id was not specified but it is required when building DeleteAccessSourceOutput",
                 )
             })?,
-            ip_address_type: self.ip_address_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ip_address_type",
-                    "ip_address_type was not specified but it is required when building DeleteAccessSourceOutput",
-                )
-            })?,
+            ip_address_type: self
+                .ip_address_type
+                .unwrap_or("NONE".parse::<crate::types::IpAddressType>().expect("static value validated to member")),
             name: self.name,
             dns_view_id: self.dns_view_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -317,6 +348,7 @@ impl DeleteAccessSourceOutputBuilder {
                     "protocol was not specified but it is required when building DeleteAccessSourceOutput",
                 )
             })?,
+            segment: self.segment,
             status: self.status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",

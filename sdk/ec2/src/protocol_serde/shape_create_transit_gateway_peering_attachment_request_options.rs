@@ -9,5 +9,15 @@ pub fn ser_create_transit_gateway_peering_attachment_request_options(
     if let Some(var_2) = &input.dynamic_routing {
         scope_1.string(var_2.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_3 = writer.prefix("AllowMultipathResilience");
+    if let Some(var_4) = &input.allow_multipath_resilience {
+        scope_3.boolean(*var_4);
+    }
+    #[allow(unused_mut)]
+    let mut scope_5 = writer.prefix("MultipathResilienceMode");
+    if let Some(var_6) = &input.multipath_resilience_mode {
+        scope_5.string(var_6.as_str());
+    }
     Ok(())
 }

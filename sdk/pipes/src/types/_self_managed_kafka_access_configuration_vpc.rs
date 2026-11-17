@@ -2,7 +2,7 @@
 
 /// <p>This structure specifies the VPC subnets and security groups for the stream, and whether a public IP address is to be used.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SelfManagedKafkaAccessConfigurationVpc {
     /// <p>Specifies the subnets associated with the stream. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
     pub subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -23,6 +23,14 @@ impl SelfManagedKafkaAccessConfigurationVpc {
         self.security_group.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for SelfManagedKafkaAccessConfigurationVpc {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SelfManagedKafkaAccessConfigurationVpc");
+        formatter.field("subnets", &"*** Sensitive Data Redacted ***");
+        formatter.field("security_group", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl SelfManagedKafkaAccessConfigurationVpc {
     /// Creates a new builder-style object to manufacture [`SelfManagedKafkaAccessConfigurationVpc`](crate::types::SelfManagedKafkaAccessConfigurationVpc).
     pub fn builder() -> crate::types::builders::SelfManagedKafkaAccessConfigurationVpcBuilder {
@@ -31,7 +39,7 @@ impl SelfManagedKafkaAccessConfigurationVpc {
 }
 
 /// A builder for [`SelfManagedKafkaAccessConfigurationVpc`](crate::types::SelfManagedKafkaAccessConfigurationVpc).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct SelfManagedKafkaAccessConfigurationVpcBuilder {
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -84,5 +92,13 @@ impl SelfManagedKafkaAccessConfigurationVpcBuilder {
             subnets: self.subnets,
             security_group: self.security_group,
         }
+    }
+}
+impl ::std::fmt::Debug for SelfManagedKafkaAccessConfigurationVpcBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SelfManagedKafkaAccessConfigurationVpcBuilder");
+        formatter.field("subnets", &"*** Sensitive Data Redacted ***");
+        formatter.field("security_group", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

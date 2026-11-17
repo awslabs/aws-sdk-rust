@@ -8,6 +8,8 @@ pub struct CreateVpcPeeringConnectionInput {
     pub peer_region: ::std::option::Option<::std::string::String>,
     /// <p>The tags to assign to the peering connection.</p>
     pub tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    /// <p>The VPC peering connection options to apply to the requester VPC.</p>
+    pub requester_peering_connection_options: ::std::option::Option<crate::types::CreatePeeringConnectionOptionsRequest>,
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub dry_run: ::std::option::Option<bool>,
     /// <p>The ID of the requester VPC. You must specify this parameter in the request.</p>
@@ -29,6 +31,10 @@ impl CreateVpcPeeringConnectionInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tag_specifications.is_none()`.
     pub fn tag_specifications(&self) -> &[crate::types::TagSpecification] {
         self.tag_specifications.as_deref().unwrap_or_default()
+    }
+    /// <p>The VPC peering connection options to apply to the requester VPC.</p>
+    pub fn requester_peering_connection_options(&self) -> ::std::option::Option<&crate::types::CreatePeeringConnectionOptionsRequest> {
+        self.requester_peering_connection_options.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(&self) -> ::std::option::Option<bool> {
@@ -61,6 +67,7 @@ impl CreateVpcPeeringConnectionInput {
 pub struct CreateVpcPeeringConnectionInputBuilder {
     pub(crate) peer_region: ::std::option::Option<::std::string::String>,
     pub(crate) tag_specifications: ::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) requester_peering_connection_options: ::std::option::Option<crate::types::CreatePeeringConnectionOptionsRequest>,
     pub(crate) dry_run: ::std::option::Option<bool>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) peer_vpc_id: ::std::option::Option<::std::string::String>,
@@ -103,6 +110,23 @@ impl CreateVpcPeeringConnectionInputBuilder {
     /// <p>The tags to assign to the peering connection.</p>
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         &self.tag_specifications
+    }
+    /// <p>The VPC peering connection options to apply to the requester VPC.</p>
+    pub fn requester_peering_connection_options(mut self, input: crate::types::CreatePeeringConnectionOptionsRequest) -> Self {
+        self.requester_peering_connection_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The VPC peering connection options to apply to the requester VPC.</p>
+    pub fn set_requester_peering_connection_options(
+        mut self,
+        input: ::std::option::Option<crate::types::CreatePeeringConnectionOptionsRequest>,
+    ) -> Self {
+        self.requester_peering_connection_options = input;
+        self
+    }
+    /// <p>The VPC peering connection options to apply to the requester VPC.</p>
+    pub fn get_requester_peering_connection_options(&self) -> &::std::option::Option<crate::types::CreatePeeringConnectionOptionsRequest> {
+        &self.requester_peering_connection_options
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -174,6 +198,7 @@ impl CreateVpcPeeringConnectionInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionInput {
             peer_region: self.peer_region,
             tag_specifications: self.tag_specifications,
+            requester_peering_connection_options: self.requester_peering_connection_options,
             dry_run: self.dry_run,
             vpc_id: self.vpc_id,
             peer_vpc_id: self.peer_vpc_id,

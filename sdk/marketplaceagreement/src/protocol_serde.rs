@@ -15,6 +15,8 @@ where
         .map_err(::std::convert::Into::into)
 }
 
+pub(crate) mod shape_accept_agreement_approval;
+
 pub(crate) mod shape_accept_agreement_cancellation_request;
 
 pub(crate) mod shape_accept_agreement_payment_request;
@@ -29,19 +31,33 @@ pub(crate) mod shape_cancel_agreement_cancellation_request;
 
 pub(crate) mod shape_cancel_agreement_payment_request;
 
+pub(crate) mod shape_cancel_agreement_request;
+
 pub(crate) mod shape_create_agreement_request;
 
 pub(crate) mod shape_describe_agreement;
 
+pub(crate) mod shape_get_agreement_approval;
+
 pub(crate) mod shape_get_agreement_cancellation_request;
+
+pub(crate) mod shape_get_agreement_contacts;
 
 pub(crate) mod shape_get_agreement_entitlements;
 
 pub(crate) mod shape_get_agreement_payment_request;
 
+pub(crate) mod shape_get_agreement_request;
+
+pub(crate) mod shape_get_agreement_request_approval_plans;
+
+pub(crate) mod shape_get_agreement_request_terms;
+
 pub(crate) mod shape_get_agreement_terms;
 
 pub(crate) mod shape_get_billing_adjustment_request;
+
+pub(crate) mod shape_list_agreement_approvals;
 
 pub(crate) mod shape_list_agreement_cancellation_requests;
 
@@ -51,7 +67,11 @@ pub(crate) mod shape_list_agreement_invoice_line_items;
 
 pub(crate) mod shape_list_agreement_payment_requests;
 
+pub(crate) mod shape_list_agreement_requests;
+
 pub(crate) mod shape_list_billing_adjustment_requests;
+
+pub(crate) mod shape_reject_agreement_approval;
 
 pub(crate) mod shape_reject_agreement_cancellation_request;
 
@@ -63,7 +83,11 @@ pub(crate) mod shape_send_agreement_cancellation_request;
 
 pub(crate) mod shape_send_agreement_payment_request;
 
+pub(crate) mod shape_start_agreement_approvals;
+
 pub(crate) mod shape_update_purchase_orders;
+
+pub(crate) mod shape_accept_agreement_approval_input;
 
 pub(crate) mod shape_accept_agreement_cancellation_request_input;
 
@@ -81,23 +105,37 @@ pub(crate) mod shape_cancel_agreement_input;
 
 pub(crate) mod shape_cancel_agreement_payment_request_input;
 
+pub(crate) mod shape_cancel_agreement_request_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_agreement_request_input;
 
 pub(crate) mod shape_describe_agreement_input;
 
+pub(crate) mod shape_get_agreement_approval_input;
+
 pub(crate) mod shape_get_agreement_cancellation_request_input;
+
+pub(crate) mod shape_get_agreement_contacts_input;
 
 pub(crate) mod shape_get_agreement_entitlements_input;
 
 pub(crate) mod shape_get_agreement_payment_request_input;
+
+pub(crate) mod shape_get_agreement_request_approval_plans_input;
+
+pub(crate) mod shape_get_agreement_request_input;
+
+pub(crate) mod shape_get_agreement_request_terms_input;
 
 pub(crate) mod shape_get_agreement_terms_input;
 
 pub(crate) mod shape_get_billing_adjustment_request_input;
 
 pub(crate) mod shape_internal_server_exception;
+
+pub(crate) mod shape_list_agreement_approvals_input;
 
 pub(crate) mod shape_list_agreement_cancellation_requests_input;
 
@@ -107,7 +145,11 @@ pub(crate) mod shape_list_agreement_invoice_line_items_input;
 
 pub(crate) mod shape_list_agreement_payment_requests_input;
 
+pub(crate) mod shape_list_agreement_requests_input;
+
 pub(crate) mod shape_list_billing_adjustment_requests_input;
+
+pub(crate) mod shape_reject_agreement_approval_input;
 
 pub(crate) mod shape_reject_agreement_cancellation_request_input;
 
@@ -123,6 +165,8 @@ pub(crate) mod shape_send_agreement_payment_request_input;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_start_agreement_approvals_input;
+
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_update_purchase_orders_input;
@@ -133,11 +177,25 @@ pub(crate) mod shape_accepted_term_list;
 
 pub(crate) mod shape_acceptor;
 
+pub(crate) mod shape_acceptor_contact;
+
+pub(crate) mod shape_agreement_approval_plan_input;
+
+pub(crate) mod shape_agreement_approval_plans;
+
+pub(crate) mod shape_agreement_approval_purchase_order;
+
+pub(crate) mod shape_agreement_approval_summaries;
+
 pub(crate) mod shape_agreement_cancellation_request_summary_list;
 
 pub(crate) mod shape_agreement_entitlement_list;
 
 pub(crate) mod shape_agreement_invoice_line_item_group_summaries;
+
+pub(crate) mod shape_agreement_request_summary_list;
+
+pub(crate) mod shape_agreement_request_term_list;
 
 pub(crate) mod shape_agreement_view_summary_list;
 
@@ -148,6 +206,12 @@ pub(crate) mod shape_batch_create_billing_adjustment_item_list;
 pub(crate) mod shape_batch_create_billing_adjustment_request_entry;
 
 pub(crate) mod shape_billing_adjustment_summary_list;
+
+pub(crate) mod shape_buyer_agreement_approval;
+
+pub(crate) mod shape_buyer_agreement_approval_approver_input;
+
+pub(crate) mod shape_buyer_agreement_approval_rejection_input;
 
 pub(crate) mod shape_charge_summary;
 
@@ -181,11 +245,25 @@ pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_accepted_term;
 
+pub(crate) mod shape_agreement_approval_plan;
+
+pub(crate) mod shape_agreement_approval_proposal_summary;
+
+pub(crate) mod shape_agreement_approval_proposer;
+
+pub(crate) mod shape_agreement_approval_requester;
+
+pub(crate) mod shape_agreement_approval_summary;
+
 pub(crate) mod shape_agreement_cancellation_request_summary;
 
 pub(crate) mod shape_agreement_entitlement;
 
 pub(crate) mod shape_agreement_invoice_line_item_group_summary;
+
+pub(crate) mod shape_agreement_request_summary;
+
+pub(crate) mod shape_agreement_request_term;
 
 pub(crate) mod shape_agreement_view_summary;
 
@@ -194,6 +272,10 @@ pub(crate) mod shape_batch_create_billing_adjustment_error;
 pub(crate) mod shape_batch_create_billing_adjustment_item;
 
 pub(crate) mod shape_billing_adjustment_summary;
+
+pub(crate) mod shape_buyer_agreement_approval_levels;
+
+pub(crate) mod shape_buyer_agreement_approval_plan_input;
 
 pub(crate) mod shape_charge;
 
@@ -215,11 +297,19 @@ pub(crate) mod shape_resources;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_agreement_approval_resources;
+
+pub(crate) mod shape_buyer_agreement_approval_level;
+
+pub(crate) mod shape_buyer_agreement_approval_plan;
+
 pub(crate) mod shape_byol_pricing_term;
 
 pub(crate) mod shape_configurable_upfront_pricing_term;
 
 pub(crate) mod shape_configurable_upfront_pricing_term_configuration;
+
+pub(crate) mod shape_contact_type_list;
 
 pub(crate) mod shape_entitlement_list;
 
@@ -259,6 +349,12 @@ pub(crate) mod shape_variable_payment_term;
 
 pub(crate) mod shape_variable_payment_term_configuration;
 
+pub(crate) mod shape_agreement_approval_resource;
+
+pub(crate) mod shape_buyer_agreement_approval_groups;
+
+pub(crate) mod shape_buyer_agreement_approval_plan_levels;
+
 pub(crate) mod shape_configurable_upfront_rate_card_list;
 
 pub(crate) mod shape_dimension;
@@ -279,6 +375,10 @@ pub(crate) mod shape_term_template_list;
 
 pub(crate) mod shape_usage_based_rate_card_list;
 
+pub(crate) mod shape_buyer_agreement_approval_group;
+
+pub(crate) mod shape_buyer_agreement_approval_plan_level;
+
 pub(crate) mod shape_configurable_upfront_rate_card_item;
 
 pub(crate) mod shape_dimension_list;
@@ -297,6 +397,12 @@ pub(crate) mod shape_term_template;
 
 pub(crate) mod shape_usage_based_rate_card_item;
 
+pub(crate) mod shape_buyer_agreement_approval_criteria;
+
+pub(crate) mod shape_buyer_agreement_approval_plan_groups;
+
+pub(crate) mod shape_buyer_approver_outcomes;
+
 pub(crate) mod shape_constraints;
 
 pub(crate) mod shape_payment_schedule_term_template;
@@ -305,8 +411,32 @@ pub(crate) mod shape_rate_card_list;
 
 pub(crate) mod shape_selector;
 
+pub(crate) mod shape_approver_outcome;
+
+pub(crate) mod shape_buyer_agreement_approval_plan_group;
+
 pub(crate) mod shape_payment_schedule_entry_list;
 
 pub(crate) mod shape_rate_card_item;
 
+pub(crate) mod shape_aws_organization_approver_outcome;
+
+pub(crate) mod shape_buyer_approvers;
+
+pub(crate) mod shape_email_approver_outcome;
+
 pub(crate) mod shape_payment_schedule_entry;
+
+pub(crate) mod shape_procurement_tool_approver_outcome;
+
+pub(crate) mod shape_agreement_approval_purchase_orders;
+
+pub(crate) mod shape_approver;
+
+pub(crate) mod shape_caller_identity;
+
+pub(crate) mod shape_aws_organization_admin_approver;
+
+pub(crate) mod shape_email_approver;
+
+pub(crate) mod shape_procurement_tool_approver;

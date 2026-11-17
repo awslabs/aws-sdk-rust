@@ -13,6 +13,8 @@ pub struct ListChatsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>Token for pagination</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>The archive status to filter by. Use this parameter to list only archived chat executions or only active ones.</p>
+    pub archive_status: ::std::option::Option<crate::types::ChatArchiveStatus>,
 }
 impl ListChatsInput {
     /// <p>The unique identifier for the agent space to list chats from.</p>
@@ -32,6 +34,10 @@ impl ListChatsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>The archive status to filter by. Use this parameter to list only archived chat executions or only active ones.</p>
+    pub fn archive_status(&self) -> ::std::option::Option<&crate::types::ChatArchiveStatus> {
+        self.archive_status.as_ref()
+    }
 }
 impl ListChatsInput {
     /// Creates a new builder-style object to manufacture [`ListChatsInput`](crate::operation::list_chats::ListChatsInput).
@@ -48,6 +54,7 @@ pub struct ListChatsInputBuilder {
     pub(crate) user_id: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) archive_status: ::std::option::Option<crate::types::ChatArchiveStatus>,
 }
 impl ListChatsInputBuilder {
     /// <p>The unique identifier for the agent space to list chats from.</p>
@@ -110,6 +117,20 @@ impl ListChatsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>The archive status to filter by. Use this parameter to list only archived chat executions or only active ones.</p>
+    pub fn archive_status(mut self, input: crate::types::ChatArchiveStatus) -> Self {
+        self.archive_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The archive status to filter by. Use this parameter to list only archived chat executions or only active ones.</p>
+    pub fn set_archive_status(mut self, input: ::std::option::Option<crate::types::ChatArchiveStatus>) -> Self {
+        self.archive_status = input;
+        self
+    }
+    /// <p>The archive status to filter by. Use this parameter to list only archived chat executions or only active ones.</p>
+    pub fn get_archive_status(&self) -> &::std::option::Option<crate::types::ChatArchiveStatus> {
+        &self.archive_status
+    }
     /// Consumes the builder and constructs a [`ListChatsInput`](crate::operation::list_chats::ListChatsInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::list_chats::ListChatsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_chats::ListChatsInput {
@@ -117,6 +138,7 @@ impl ListChatsInputBuilder {
             user_id: self.user_id,
             max_results: self.max_results,
             next_token: self.next_token,
+            archive_status: self.archive_status,
         })
     }
 }

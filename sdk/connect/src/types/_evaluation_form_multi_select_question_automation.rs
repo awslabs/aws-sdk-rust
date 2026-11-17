@@ -8,7 +8,7 @@ pub struct EvaluationFormMultiSelectQuestionAutomation {
     pub options: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormMultiSelectQuestionAutomationOption>>,
     /// <p>Reference IDs of default options.</p>
     pub default_option_ref_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A question automation answer.</p>
+    /// <p>Automation answer source.</p>
     pub answer_source: ::std::option::Option<crate::types::EvaluationFormQuestionAutomationAnswerSource>,
 }
 impl EvaluationFormMultiSelectQuestionAutomation {
@@ -24,7 +24,7 @@ impl EvaluationFormMultiSelectQuestionAutomation {
     pub fn default_option_ref_ids(&self) -> &[::std::string::String] {
         self.default_option_ref_ids.as_deref().unwrap_or_default()
     }
-    /// <p>A question automation answer.</p>
+    /// <p>Automation answer source.</p>
     pub fn answer_source(&self) -> ::std::option::Option<&crate::types::EvaluationFormQuestionAutomationAnswerSource> {
         self.answer_source.as_ref()
     }
@@ -88,17 +88,17 @@ impl EvaluationFormMultiSelectQuestionAutomationBuilder {
     pub fn get_default_option_ref_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.default_option_ref_ids
     }
-    /// <p>A question automation answer.</p>
+    /// <p>Automation answer source.</p>
     pub fn answer_source(mut self, input: crate::types::EvaluationFormQuestionAutomationAnswerSource) -> Self {
         self.answer_source = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A question automation answer.</p>
+    /// <p>Automation answer source.</p>
     pub fn set_answer_source(mut self, input: ::std::option::Option<crate::types::EvaluationFormQuestionAutomationAnswerSource>) -> Self {
         self.answer_source = input;
         self
     }
-    /// <p>A question automation answer.</p>
+    /// <p>Automation answer source.</p>
     pub fn get_answer_source(&self) -> &::std::option::Option<crate::types::EvaluationFormQuestionAutomationAnswerSource> {
         &self.answer_source
     }

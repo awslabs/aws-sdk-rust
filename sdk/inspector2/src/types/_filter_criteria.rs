@@ -24,7 +24,7 @@ pub struct FilterCriteria {
     pub title: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The Amazon Inspector score to filter on.</p>
     pub inspector_score: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
-    /// <p>Details on the resource types used to filter findings.</p>
+    /// <p>Details on the resource types used to filter findings. For Google Cloud Platform (GCP) resources, the resource type is <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p>
     pub resource_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>Details on the resource IDs used to filter findings.</p>
     pub resource_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
@@ -204,7 +204,7 @@ impl FilterCriteria {
     pub fn inspector_score(&self) -> &[crate::types::NumberFilter] {
         self.inspector_score.as_deref().unwrap_or_default()
     }
-    /// <p>Details on the resource types used to filter findings.</p>
+    /// <p>Details on the resource types used to filter findings. For Google Cloud Platform (GCP) resources, the resource type is <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_type.is_none()`.
     pub fn resource_type(&self) -> &[crate::types::StringFilter] {
@@ -845,19 +845,19 @@ impl FilterCriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_type`](Self::set_resource_type).
     ///
-    /// <p>Details on the resource types used to filter findings.</p>
+    /// <p>Details on the resource types used to filter findings. For Google Cloud Platform (GCP) resources, the resource type is <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p>
     pub fn resource_type(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.resource_type.unwrap_or_default();
         v.push(input);
         self.resource_type = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Details on the resource types used to filter findings.</p>
+    /// <p>Details on the resource types used to filter findings. For Google Cloud Platform (GCP) resources, the resource type is <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>Details on the resource types used to filter findings.</p>
+    /// <p>Details on the resource types used to filter findings. For Google Cloud Platform (GCP) resources, the resource type is <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_type
     }

@@ -24,24 +24,29 @@ pub fn ser_create_vpc_peering_connection_input_input_input(
         }
     }
     #[allow(unused_mut)]
-    let mut scope_8 = writer.prefix("DryRun");
-    if let Some(var_9) = &input.dry_run {
-        scope_8.boolean(*var_9);
+    let mut scope_8 = writer.prefix("RequesterPeeringConnectionOptions");
+    if let Some(var_9) = &input.requester_peering_connection_options {
+        crate::protocol_serde::shape_create_peering_connection_options_request::ser_create_peering_connection_options_request(scope_8, var_9)?;
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("VpcId");
-    if let Some(var_11) = &input.vpc_id {
-        scope_10.string(var_11);
+    let mut scope_10 = writer.prefix("DryRun");
+    if let Some(var_11) = &input.dry_run {
+        scope_10.boolean(*var_11);
     }
     #[allow(unused_mut)]
-    let mut scope_12 = writer.prefix("PeerVpcId");
-    if let Some(var_13) = &input.peer_vpc_id {
+    let mut scope_12 = writer.prefix("VpcId");
+    if let Some(var_13) = &input.vpc_id {
         scope_12.string(var_13);
     }
     #[allow(unused_mut)]
-    let mut scope_14 = writer.prefix("PeerOwnerId");
-    if let Some(var_15) = &input.peer_owner_id {
+    let mut scope_14 = writer.prefix("PeerVpcId");
+    if let Some(var_15) = &input.peer_vpc_id {
         scope_14.string(var_15);
+    }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("PeerOwnerId");
+    if let Some(var_17) = &input.peer_owner_id {
+        scope_16.string(var_17);
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

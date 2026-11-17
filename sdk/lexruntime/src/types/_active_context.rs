@@ -2,7 +2,7 @@
 
 /// <p>A context is a variable that contains information about the current state of the conversation between a user and Amazon Lex. Context can be set automatically by Amazon Lex when an intent is fulfilled, or it can be set at runtime using the <code>PutContent</code>, <code>PutText</code>, or <code>PutSession</code> operation.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ActiveContext {
     /// <p>The name of the context.</p>
     pub name: ::std::string::String,
@@ -26,6 +26,15 @@ impl ActiveContext {
         &self.parameters
     }
 }
+impl ::std::fmt::Debug for ActiveContext {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ActiveContext");
+        formatter.field("name", &self.name);
+        formatter.field("time_to_live", &self.time_to_live);
+        formatter.field("parameters", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ActiveContext {
     /// Creates a new builder-style object to manufacture [`ActiveContext`](crate::types::ActiveContext).
     pub fn builder() -> crate::types::builders::ActiveContextBuilder {
@@ -34,7 +43,7 @@ impl ActiveContext {
 }
 
 /// A builder for [`ActiveContext`](crate::types::ActiveContext).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ActiveContextBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -112,5 +121,14 @@ impl ActiveContextBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for ActiveContextBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ActiveContextBuilder");
+        formatter.field("name", &self.name);
+        formatter.field("time_to_live", &self.time_to_live);
+        formatter.field("parameters", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

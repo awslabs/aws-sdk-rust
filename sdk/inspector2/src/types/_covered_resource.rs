@@ -4,7 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CoveredResource {
-    /// <p>The type of the covered resource.</p>
+    /// <p>The type of the covered resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services – <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code>, <code>MACHINE_IMAGE</code>, <code>CODE_REPOSITORY</code>, or <code>AWS_ACCOUNT</code>.</p></li>
+    /// <li>
+    /// <p>Microsoft Azure – <code>Microsoft.Compute/virtualMachines</code>, <code>Microsoft.ContainerRegistry/registries</code>, <code>Microsoft.ContainerRegistry/registry/containerRepository</code>, <code>Microsoft.ContainerRegistry/registry/containerImage</code>, or <code>Microsoft.Web/sites</code>.</p></li>
+    /// <li>
+    /// <p>Google Cloud Platform (GCP) – <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, <code>artifactregistry.googleapis.com/Repository</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p></li>
+    /// </ul>
     pub resource_type: crate::types::CoverageResourceType,
     /// <p>The ID of the covered resource.</p>
     pub resource_id: ::std::string::String,
@@ -20,19 +28,59 @@ pub struct CoveredResource {
     pub last_scanned_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The scan method that is applied to the instance.</p>
     pub scan_mode: ::std::option::Option<crate::types::ScanMode>,
-    /// <p>The cloud provider of the covered resource.</p>
+    /// <p>The cloud provider of the covered resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub provider: ::std::option::Option<crate::types::Provider>,
-    /// <p>The cloud provider account ID of the covered resource.</p>
+    /// <p>The cloud provider account ID of the covered resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>An Azure subscription ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) project ID, such as <code>my-project</code>.</p></li>
+    /// </ul>
     pub provider_account_id: ::std::option::Option<::std::string::String>,
-    /// <p>The cloud provider organization ID of the covered resource.</p>
+    /// <p>The cloud provider organization ID of the covered resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Organizations organization ID.</p></li>
+    /// <li>
+    /// <p>An Azure tenant ID.</p></li>
+    /// <li>
+    /// <p>A numeric Google Cloud Platform (GCP) organization ID.</p></li>
+    /// </ul>
     pub provider_org_id: ::std::option::Option<::std::string::String>,
-    /// <p>The cloud provider region of the covered resource.</p>
+    /// <p>The cloud provider region of the covered resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
+    /// </ul>
     pub provider_region: ::std::option::Option<::std::string::String>,
     /// <p>The cloud provider partition of the covered resource.</p>
     pub provider_partition: ::std::option::Option<::std::string::String>,
 }
 impl CoveredResource {
-    /// <p>The type of the covered resource.</p>
+    /// <p>The type of the covered resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services – <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code>, <code>MACHINE_IMAGE</code>, <code>CODE_REPOSITORY</code>, or <code>AWS_ACCOUNT</code>.</p></li>
+    /// <li>
+    /// <p>Microsoft Azure – <code>Microsoft.Compute/virtualMachines</code>, <code>Microsoft.ContainerRegistry/registries</code>, <code>Microsoft.ContainerRegistry/registry/containerRepository</code>, <code>Microsoft.ContainerRegistry/registry/containerImage</code>, or <code>Microsoft.Web/sites</code>.</p></li>
+    /// <li>
+    /// <p>Google Cloud Platform (GCP) – <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, <code>artifactregistry.googleapis.com/Repository</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p></li>
+    /// </ul>
     pub fn resource_type(&self) -> &crate::types::CoverageResourceType {
         &self.resource_type
     }
@@ -66,19 +114,51 @@ impl CoveredResource {
     pub fn scan_mode(&self) -> ::std::option::Option<&crate::types::ScanMode> {
         self.scan_mode.as_ref()
     }
-    /// <p>The cloud provider of the covered resource.</p>
+    /// <p>The cloud provider of the covered resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn provider(&self) -> ::std::option::Option<&crate::types::Provider> {
         self.provider.as_ref()
     }
-    /// <p>The cloud provider account ID of the covered resource.</p>
+    /// <p>The cloud provider account ID of the covered resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>An Azure subscription ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) project ID, such as <code>my-project</code>.</p></li>
+    /// </ul>
     pub fn provider_account_id(&self) -> ::std::option::Option<&str> {
         self.provider_account_id.as_deref()
     }
-    /// <p>The cloud provider organization ID of the covered resource.</p>
+    /// <p>The cloud provider organization ID of the covered resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Organizations organization ID.</p></li>
+    /// <li>
+    /// <p>An Azure tenant ID.</p></li>
+    /// <li>
+    /// <p>A numeric Google Cloud Platform (GCP) organization ID.</p></li>
+    /// </ul>
     pub fn provider_org_id(&self) -> ::std::option::Option<&str> {
         self.provider_org_id.as_deref()
     }
-    /// <p>The cloud provider region of the covered resource.</p>
+    /// <p>The cloud provider region of the covered resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
+    /// </ul>
     pub fn provider_region(&self) -> ::std::option::Option<&str> {
         self.provider_region.as_deref()
     }
@@ -113,18 +193,42 @@ pub struct CoveredResourceBuilder {
     pub(crate) provider_partition: ::std::option::Option<::std::string::String>,
 }
 impl CoveredResourceBuilder {
-    /// <p>The type of the covered resource.</p>
+    /// <p>The type of the covered resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services – <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code>, <code>MACHINE_IMAGE</code>, <code>CODE_REPOSITORY</code>, or <code>AWS_ACCOUNT</code>.</p></li>
+    /// <li>
+    /// <p>Microsoft Azure – <code>Microsoft.Compute/virtualMachines</code>, <code>Microsoft.ContainerRegistry/registries</code>, <code>Microsoft.ContainerRegistry/registry/containerRepository</code>, <code>Microsoft.ContainerRegistry/registry/containerImage</code>, or <code>Microsoft.Web/sites</code>.</p></li>
+    /// <li>
+    /// <p>Google Cloud Platform (GCP) – <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, <code>artifactregistry.googleapis.com/Repository</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn resource_type(mut self, input: crate::types::CoverageResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of the covered resource.</p>
+    /// <p>The type of the covered resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services – <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code>, <code>MACHINE_IMAGE</code>, <code>CODE_REPOSITORY</code>, or <code>AWS_ACCOUNT</code>.</p></li>
+    /// <li>
+    /// <p>Microsoft Azure – <code>Microsoft.Compute/virtualMachines</code>, <code>Microsoft.ContainerRegistry/registries</code>, <code>Microsoft.ContainerRegistry/registry/containerRepository</code>, <code>Microsoft.ContainerRegistry/registry/containerImage</code>, or <code>Microsoft.Web/sites</code>.</p></li>
+    /// <li>
+    /// <p>Google Cloud Platform (GCP) – <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, <code>artifactregistry.googleapis.com/Repository</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p></li>
+    /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::CoverageResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The type of the covered resource.</p>
+    /// <p>The type of the covered resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services – <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>, <code>AWS_ECR_CONTAINER_IMAGE</code>, <code>AWS_ECR_REPOSITORY</code>, <code>MACHINE_IMAGE</code>, <code>CODE_REPOSITORY</code>, or <code>AWS_ACCOUNT</code>.</p></li>
+    /// <li>
+    /// <p>Microsoft Azure – <code>Microsoft.Compute/virtualMachines</code>, <code>Microsoft.ContainerRegistry/registries</code>, <code>Microsoft.ContainerRegistry/registry/containerRepository</code>, <code>Microsoft.ContainerRegistry/registry/containerImage</code>, or <code>Microsoft.Web/sites</code>.</p></li>
+    /// <li>
+    /// <p>Google Cloud Platform (GCP) – <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, <code>artifactregistry.googleapis.com/Repository</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p></li>
+    /// </ul>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::CoverageResourceType> {
         &self.resource_type
     }
@@ -229,59 +333,155 @@ impl CoveredResourceBuilder {
     pub fn get_scan_mode(&self) -> &::std::option::Option<crate::types::ScanMode> {
         &self.scan_mode
     }
-    /// <p>The cloud provider of the covered resource.</p>
+    /// <p>The cloud provider of the covered resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn provider(mut self, input: crate::types::Provider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The cloud provider of the covered resource.</p>
+    /// <p>The cloud provider of the covered resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::Provider>) -> Self {
         self.provider = input;
         self
     }
-    /// <p>The cloud provider of the covered resource.</p>
+    /// <p>The cloud provider of the covered resource. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::Provider> {
         &self.provider
     }
-    /// <p>The cloud provider account ID of the covered resource.</p>
+    /// <p>The cloud provider account ID of the covered resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>An Azure subscription ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) project ID, such as <code>my-project</code>.</p></li>
+    /// </ul>
     pub fn provider_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The cloud provider account ID of the covered resource.</p>
+    /// <p>The cloud provider account ID of the covered resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>An Azure subscription ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) project ID, such as <code>my-project</code>.</p></li>
+    /// </ul>
     pub fn set_provider_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_account_id = input;
         self
     }
-    /// <p>The cloud provider account ID of the covered resource.</p>
+    /// <p>The cloud provider account ID of the covered resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services account ID.</p></li>
+    /// <li>
+    /// <p>An Azure subscription ID.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) project ID, such as <code>my-project</code>.</p></li>
+    /// </ul>
     pub fn get_provider_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider_account_id
     }
-    /// <p>The cloud provider organization ID of the covered resource.</p>
+    /// <p>The cloud provider organization ID of the covered resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Organizations organization ID.</p></li>
+    /// <li>
+    /// <p>An Azure tenant ID.</p></li>
+    /// <li>
+    /// <p>A numeric Google Cloud Platform (GCP) organization ID.</p></li>
+    /// </ul>
     pub fn provider_org_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_org_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The cloud provider organization ID of the covered resource.</p>
+    /// <p>The cloud provider organization ID of the covered resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Organizations organization ID.</p></li>
+    /// <li>
+    /// <p>An Azure tenant ID.</p></li>
+    /// <li>
+    /// <p>A numeric Google Cloud Platform (GCP) organization ID.</p></li>
+    /// </ul>
     pub fn set_provider_org_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_org_id = input;
         self
     }
-    /// <p>The cloud provider organization ID of the covered resource.</p>
+    /// <p>The cloud provider organization ID of the covered resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Organizations organization ID.</p></li>
+    /// <li>
+    /// <p>An Azure tenant ID.</p></li>
+    /// <li>
+    /// <p>A numeric Google Cloud Platform (GCP) organization ID.</p></li>
+    /// </ul>
     pub fn get_provider_org_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider_org_id
     }
-    /// <p>The cloud provider region of the covered resource.</p>
+    /// <p>The cloud provider region of the covered resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
+    /// </ul>
     pub fn provider_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.provider_region = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The cloud provider region of the covered resource.</p>
+    /// <p>The cloud provider region of the covered resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
+    /// </ul>
     pub fn set_provider_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.provider_region = input;
         self
     }
-    /// <p>The cloud provider region of the covered resource.</p>
+    /// <p>The cloud provider region of the covered resource. The value format depends on the cloud provider:</p>
+    /// <ul>
+    /// <li>
+    /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
+    /// <li>
+    /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
+    /// </ul>
     pub fn get_provider_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider_region
     }

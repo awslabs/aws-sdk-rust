@@ -20,6 +20,8 @@ pub struct DataReplicationInfo {
     pub last_snapshot_date_time: ::std::option::Option<::std::string::String>,
     /// <p>Replication server instance ID.</p>
     pub replicator_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ARN of the AWS Outpost that hosts the staging area, when the staging area subnet is on an Outpost.</p>
+    pub staging_outpost_arn: ::std::option::Option<::std::string::String>,
 }
 impl DataReplicationInfo {
     /// <p>Request to query data replication lag duration.</p>
@@ -56,6 +58,10 @@ impl DataReplicationInfo {
     pub fn replicator_id(&self) -> ::std::option::Option<&str> {
         self.replicator_id.as_deref()
     }
+    /// <p>The ARN of the AWS Outpost that hosts the staging area, when the staging area subnet is on an Outpost.</p>
+    pub fn staging_outpost_arn(&self) -> ::std::option::Option<&str> {
+        self.staging_outpost_arn.as_deref()
+    }
 }
 impl DataReplicationInfo {
     /// Creates a new builder-style object to manufacture [`DataReplicationInfo`](crate::types::DataReplicationInfo).
@@ -76,6 +82,7 @@ pub struct DataReplicationInfoBuilder {
     pub(crate) data_replication_error: ::std::option::Option<crate::types::DataReplicationError>,
     pub(crate) last_snapshot_date_time: ::std::option::Option<::std::string::String>,
     pub(crate) replicator_id: ::std::option::Option<::std::string::String>,
+    pub(crate) staging_outpost_arn: ::std::option::Option<::std::string::String>,
 }
 impl DataReplicationInfoBuilder {
     /// <p>Request to query data replication lag duration.</p>
@@ -196,6 +203,20 @@ impl DataReplicationInfoBuilder {
     pub fn get_replicator_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.replicator_id
     }
+    /// <p>The ARN of the AWS Outpost that hosts the staging area, when the staging area subnet is on an Outpost.</p>
+    pub fn staging_outpost_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.staging_outpost_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ARN of the AWS Outpost that hosts the staging area, when the staging area subnet is on an Outpost.</p>
+    pub fn set_staging_outpost_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.staging_outpost_arn = input;
+        self
+    }
+    /// <p>The ARN of the AWS Outpost that hosts the staging area, when the staging area subnet is on an Outpost.</p>
+    pub fn get_staging_outpost_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.staging_outpost_arn
+    }
     /// Consumes the builder and constructs a [`DataReplicationInfo`](crate::types::DataReplicationInfo).
     pub fn build(self) -> crate::types::DataReplicationInfo {
         crate::types::DataReplicationInfo {
@@ -207,6 +228,7 @@ impl DataReplicationInfoBuilder {
             data_replication_error: self.data_replication_error,
             last_snapshot_date_time: self.last_snapshot_date_time,
             replicator_id: self.replicator_id,
+            staging_outpost_arn: self.staging_outpost_arn,
         }
     }
 }

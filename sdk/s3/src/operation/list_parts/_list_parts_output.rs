@@ -46,6 +46,11 @@ pub struct ListPartsOutput {
     pub checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
     /// <p>The checksum type, which determines how part-level checksums are combined to create an object-level checksum for multipart objects. You can use this header response to verify that the checksum type that is received is the same checksum type that was specified in <code>CreateMultipartUpload</code> request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
     pub checksum_type: ::std::option::Option<crate::types::ChecksumType>,
+    /// <p>Version ID of the object.</p>
+    /// <p>Returns the Version ID of the object for the listed parts, if bucket versioning is enabled.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub version_id: ::std::option::Option<::std::string::String>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -127,6 +132,13 @@ impl ListPartsOutput {
     pub fn checksum_type(&self) -> ::std::option::Option<&crate::types::ChecksumType> {
         self.checksum_type.as_ref()
     }
+    /// <p>Version ID of the object.</p>
+    /// <p>Returns the Version ID of the object for the listed parts, if bucket versioning is enabled.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub fn version_id(&self) -> ::std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
 }
 impl crate::s3_request_id::RequestIdExt for ListPartsOutput {
     fn extended_request_id(&self) -> Option<&str> {
@@ -165,6 +177,7 @@ pub struct ListPartsOutputBuilder {
     pub(crate) request_charged: ::std::option::Option<crate::types::RequestCharged>,
     pub(crate) checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
     pub(crate) checksum_type: ::std::option::Option<crate::types::ChecksumType>,
+    pub(crate) version_id: ::std::option::Option<::std::string::String>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -432,6 +445,29 @@ impl ListPartsOutputBuilder {
     pub fn get_checksum_type(&self) -> &::std::option::Option<crate::types::ChecksumType> {
         &self.checksum_type
     }
+    /// <p>Version ID of the object.</p>
+    /// <p>Returns the Version ID of the object for the listed parts, if bucket versioning is enabled.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Version ID of the object.</p>
+    /// <p>Returns the Version ID of the object for the listed parts, if bucket versioning is enabled.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_id = input;
+        self
+    }
+    /// <p>Version ID of the object.</p>
+    /// <p>Returns the Version ID of the object for the listed parts, if bucket versioning is enabled.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
+    }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());
         self
@@ -469,6 +505,7 @@ impl ListPartsOutputBuilder {
             request_charged: self.request_charged,
             checksum_algorithm: self.checksum_algorithm,
             checksum_type: self.checksum_type,
+            version_id: self.version_id,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }

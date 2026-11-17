@@ -6,7 +6,7 @@
 pub struct TelemetryConfiguration {
     /// <p>The account ID which contains the resource managed in telemetry configuration. An example of a valid account ID is <code>012345678901</code>.</p>
     pub account_identifier: ::std::option::Option<::std::string::String>,
-    /// <p>The configuration state for the resource, for example <code>{ Logs: NotApplicable; Metrics: Enabled; Traces: NotApplicable; }</code>.</p>
+    /// <p>The configuration state for the resource, for example <code>{ Logs: NotApplicable; Metrics: Enabled; Traces: NotApplicable; Insights: NotApplicable; }</code>.</p>
     pub telemetry_configuration_state: ::std::option::Option<::std::collections::HashMap<crate::types::TelemetryType, crate::types::TelemetryState>>,
     /// <p>The type of resource, for example <code>Amazon Web Services::EC2::Instance</code>, or <code>Amazon Web Services::EKS::Cluster</code>, etc.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
@@ -24,7 +24,7 @@ impl TelemetryConfiguration {
     pub fn account_identifier(&self) -> ::std::option::Option<&str> {
         self.account_identifier.as_deref()
     }
-    /// <p>The configuration state for the resource, for example <code>{ Logs: NotApplicable; Metrics: Enabled; Traces: NotApplicable; }</code>.</p>
+    /// <p>The configuration state for the resource, for example <code>{ Logs: NotApplicable; Metrics: Enabled; Traces: NotApplicable; Insights: NotApplicable; }</code>.</p>
     pub fn telemetry_configuration_state(
         &self,
     ) -> ::std::option::Option<&::std::collections::HashMap<crate::types::TelemetryType, crate::types::TelemetryState>> {
@@ -90,14 +90,14 @@ impl TelemetryConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_telemetry_configuration_state`](Self::set_telemetry_configuration_state).
     ///
-    /// <p>The configuration state for the resource, for example <code>{ Logs: NotApplicable; Metrics: Enabled; Traces: NotApplicable; }</code>.</p>
+    /// <p>The configuration state for the resource, for example <code>{ Logs: NotApplicable; Metrics: Enabled; Traces: NotApplicable; Insights: NotApplicable; }</code>.</p>
     pub fn telemetry_configuration_state(mut self, k: crate::types::TelemetryType, v: crate::types::TelemetryState) -> Self {
         let mut hash_map = self.telemetry_configuration_state.unwrap_or_default();
         hash_map.insert(k, v);
         self.telemetry_configuration_state = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>The configuration state for the resource, for example <code>{ Logs: NotApplicable; Metrics: Enabled; Traces: NotApplicable; }</code>.</p>
+    /// <p>The configuration state for the resource, for example <code>{ Logs: NotApplicable; Metrics: Enabled; Traces: NotApplicable; Insights: NotApplicable; }</code>.</p>
     pub fn set_telemetry_configuration_state(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<crate::types::TelemetryType, crate::types::TelemetryState>>,
@@ -105,7 +105,7 @@ impl TelemetryConfigurationBuilder {
         self.telemetry_configuration_state = input;
         self
     }
-    /// <p>The configuration state for the resource, for example <code>{ Logs: NotApplicable; Metrics: Enabled; Traces: NotApplicable; }</code>.</p>
+    /// <p>The configuration state for the resource, for example <code>{ Logs: NotApplicable; Metrics: Enabled; Traces: NotApplicable; Insights: NotApplicable; }</code>.</p>
     pub fn get_telemetry_configuration_state(
         &self,
     ) -> &::std::option::Option<::std::collections::HashMap<crate::types::TelemetryType, crate::types::TelemetryState>> {

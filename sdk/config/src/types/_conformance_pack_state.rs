@@ -17,6 +17,9 @@
 ///     ConformancePackState::CreateInProgress => { /* ... */ },
 ///     ConformancePackState::DeleteFailed => { /* ... */ },
 ///     ConformancePackState::DeleteInProgress => { /* ... */ },
+///     ConformancePackState::UpdateComplete => { /* ... */ },
+///     ConformancePackState::UpdateFailed => { /* ... */ },
+///     ConformancePackState::UpdateInProgress => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -55,6 +58,12 @@ pub enum ConformancePackState {
     DeleteFailed,
     #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateComplete,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    UpdateInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -67,6 +76,9 @@ impl ::std::convert::From<&str> for ConformancePackState {
             "CREATE_IN_PROGRESS" => ConformancePackState::CreateInProgress,
             "DELETE_FAILED" => ConformancePackState::DeleteFailed,
             "DELETE_IN_PROGRESS" => ConformancePackState::DeleteInProgress,
+            "UPDATE_COMPLETE" => ConformancePackState::UpdateComplete,
+            "UPDATE_FAILED" => ConformancePackState::UpdateFailed,
+            "UPDATE_IN_PROGRESS" => ConformancePackState::UpdateInProgress,
             other => ConformancePackState::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -87,6 +99,9 @@ impl ConformancePackState {
             ConformancePackState::CreateInProgress => "CREATE_IN_PROGRESS",
             ConformancePackState::DeleteFailed => "DELETE_FAILED",
             ConformancePackState::DeleteInProgress => "DELETE_IN_PROGRESS",
+            ConformancePackState::UpdateComplete => "UPDATE_COMPLETE",
+            ConformancePackState::UpdateFailed => "UPDATE_FAILED",
+            ConformancePackState::UpdateInProgress => "UPDATE_IN_PROGRESS",
             ConformancePackState::Unknown(value) => value.as_str(),
         }
     }
@@ -98,6 +113,9 @@ impl ConformancePackState {
             "CREATE_IN_PROGRESS",
             "DELETE_FAILED",
             "DELETE_IN_PROGRESS",
+            "UPDATE_COMPLETE",
+            "UPDATE_FAILED",
+            "UPDATE_IN_PROGRESS",
         ]
     }
 }
@@ -126,6 +144,9 @@ impl ::std::fmt::Display for ConformancePackState {
             ConformancePackState::CreateInProgress => write!(f, "CREATE_IN_PROGRESS"),
             ConformancePackState::DeleteFailed => write!(f, "DELETE_FAILED"),
             ConformancePackState::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
+            ConformancePackState::UpdateComplete => write!(f, "UPDATE_COMPLETE"),
+            ConformancePackState::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            ConformancePackState::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),
             ConformancePackState::Unknown(value) => write!(f, "{value}"),
         }
     }

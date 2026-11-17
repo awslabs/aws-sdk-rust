@@ -23,6 +23,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::get_batch_evaluation::GetBatchEvaluationOutput::description): <p>The description of the batch evaluation.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_batch_evaluation::GetBatchEvaluationOutput::updated_at): <p>The timestamp when the batch evaluation was last updated.</p>
     ///   - [`kms_key_arn(Option<String>)`](crate::operation::get_batch_evaluation::GetBatchEvaluationOutput::kms_key_arn): <p>The ARN of the KMS key used to encrypt evaluation data.</p>
+    ///   - [`dataset_execution_details(Option<DatasetExecutionDetails>)`](crate::operation::get_batch_evaluation::GetBatchEvaluationOutput::dataset_execution_details): <p>The details of the dataset and agent that the batch evaluation ran, including the dataset version and agent runtime version that the service resolved when the batch evaluation started. This field is present only if the batch evaluation was started with a <code>datasetExecutionConfig</code>.</p>
     /// - On failure, responds with [`SdkError<GetBatchEvaluationError>`](crate::operation::get_batch_evaluation::GetBatchEvaluationError)
     pub fn get_batch_evaluation(&self) -> crate::operation::get_batch_evaluation::builders::GetBatchEvaluationFluentBuilder {
         crate::operation::get_batch_evaluation::builders::GetBatchEvaluationFluentBuilder::new(self.handle.clone())

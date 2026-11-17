@@ -137,6 +137,33 @@ static CONNECTOR_MEMBER_AUTO_INSTALL_VM_SCANNER: ::aws_smithy_schema::Schema<'st
     "autoInstallVMScanner",
     13,
 );
+static CONNECTOR_MEMBER_GCP_REGIONS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.inspector2#GcpRegionList$member",
+        "com.amazonaws.inspector2",
+        "GcpRegionList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static CONNECTOR_MEMBER_GCP_REGIONS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.inspector2#Connector$gcpRegions", "com.amazonaws.inspector2", "Connector"),
+    ::aws_smithy_schema::ShapeType::List,
+    "gcpRegions",
+    14,
+)
+.with_list_member(&CONNECTOR_MEMBER_GCP_REGIONS_MEMBER);
+static CONNECTOR_MEMBER_GCP_SCOPE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.inspector2#Connector$gcpScopeConfiguration",
+        "com.amazonaws.inspector2",
+        "Connector",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "gcpScopeConfiguration",
+    15,
+);
 static CONNECTOR_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.inspector2#Connector", "com.amazonaws.inspector2", "Connector"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -155,6 +182,8 @@ static CONNECTOR_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_sch
         &CONNECTOR_MEMBER_SCOPE_CONFIGURATION,
         &CONNECTOR_MEMBER_TAGS,
         &CONNECTOR_MEMBER_AUTO_INSTALL_VM_SCANNER,
+        &CONNECTOR_MEMBER_GCP_REGIONS,
+        &CONNECTOR_MEMBER_GCP_SCOPE_CONFIGURATION,
     ],
 );
 impl crate::types::Connector {
@@ -230,6 +259,20 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Connector 
         }
         if let Some(ref val) = self.auto_install_vm_scanner {
             ser.write_boolean(&CONNECTOR_MEMBER_AUTO_INSTALL_VM_SCANNER, *val)?;
+        }
+        if let Some(ref val) = self.gcp_regions {
+            ser.write_list(
+                &CONNECTOR_MEMBER_GCP_REGIONS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.gcp_scope_configuration {
+            ser.write_struct(&CONNECTOR_MEMBER_GCP_SCOPE_CONFIGURATION, val)?;
         }
         Ok(())
     }
@@ -328,6 +371,20 @@ impl crate::types::builders::ConnectorBuilder {
                         deser.read_null()?;
                     } else {
                         self.auto_install_vm_scanner = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gcp_regions = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(15) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gcp_scope_configuration = Some(crate::types::GcpScopeConfiguration::deserialize(deser)?);
                     }
                 }
                 _ => {}

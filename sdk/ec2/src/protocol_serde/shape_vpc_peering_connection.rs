@@ -78,6 +78,20 @@ pub fn de_vpc_peering_connection(
                 builder = builder.set_vpc_peering_connection_id(var_6);
             }
             ,
+            s if s.matches("multipathResilienceStatus") /* MultipathResilienceStatus com.amazonaws.ec2#VpcPeeringConnection$MultipathResilienceStatus */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<crate::types::MultipathResilienceStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::MultipathResilienceStatus::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_multipath_resilience_status(var_7);
+            }
+            ,
             _ => {}
         }
     }

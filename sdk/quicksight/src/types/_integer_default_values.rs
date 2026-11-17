@@ -2,7 +2,7 @@
 
 /// <p>The default values of the <code>IntegerParameterDeclaration</code>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IntegerDefaultValues {
     /// <p>The dynamic value of the <code>IntegerDefaultValues</code>. Different defaults are displayed according to users, groups, and values mapping.</p>
     pub dynamic_value: ::std::option::Option<crate::types::DynamicDefaultValue>,
@@ -21,6 +21,14 @@ impl IntegerDefaultValues {
         self.static_values.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for IntegerDefaultValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IntegerDefaultValues");
+        formatter.field("dynamic_value", &self.dynamic_value);
+        formatter.field("static_values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl IntegerDefaultValues {
     /// Creates a new builder-style object to manufacture [`IntegerDefaultValues`](crate::types::IntegerDefaultValues).
     pub fn builder() -> crate::types::builders::IntegerDefaultValuesBuilder {
@@ -29,7 +37,7 @@ impl IntegerDefaultValues {
 }
 
 /// A builder for [`IntegerDefaultValues`](crate::types::IntegerDefaultValues).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct IntegerDefaultValuesBuilder {
     pub(crate) dynamic_value: ::std::option::Option<crate::types::DynamicDefaultValue>,
@@ -76,5 +84,13 @@ impl IntegerDefaultValuesBuilder {
             dynamic_value: self.dynamic_value,
             static_values: self.static_values,
         }
+    }
+}
+impl ::std::fmt::Debug for IntegerDefaultValuesBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IntegerDefaultValuesBuilder");
+        formatter.field("dynamic_value", &self.dynamic_value);
+        formatter.field("static_values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

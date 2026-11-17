@@ -22,12 +22,14 @@ impl crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInp
 }
 /// Fluent builder constructing a request to `DeleteResourcePolicy`.
 ///
-/// <p>Delete a policy for the specified data stream or consumer. Request patterns can be one of the following:</p>
+/// <p>Delete a policy for the specified data stream, consumer, or queue. Request patterns can be one of the following:</p>
 /// <ul>
 /// <li>
 /// <p>Data stream pattern: <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code></p></li>
 /// <li>
 /// <p>Consumer pattern: <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/\[a-zA-Z0-9_.-\]+\/consumer\/\[a-zA-Z0-9_.-\]+:\[0-9\]+</code></p></li>
+/// <li>
+/// <p>Queue pattern: <code>arn:aws.*:kinesis:.*:\d{12}:queue/\S+</code></p></li>
 /// </ul>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyFluentBuilder {
@@ -114,17 +116,17 @@ impl DeleteResourcePolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the data stream or consumer.</p>
+    /// <p>The Amazon Resource Name (ARN) of a data stream, a queue, or an enhanced fan-out consumer.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the data stream or consumer.</p>
+    /// <p>The Amazon Resource Name (ARN) of a data stream, a queue, or an enhanced fan-out consumer.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the data stream or consumer.</p>
+    /// <p>The Amazon Resource Name (ARN) of a data stream, a queue, or an enhanced fan-out consumer.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

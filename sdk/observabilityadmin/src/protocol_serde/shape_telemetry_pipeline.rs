@@ -77,6 +77,25 @@ where
                         "Tags" => {
                             builder = builder.set_tags(crate::protocol_serde::shape_tag_map_output::de_tag_map_output(tokens, _value, depth + 1)?);
                         }
+                        "LastRefreshTimeStamp" => {
+                            builder = builder.set_last_refresh_time_stamp(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "SourceProgress" => {
+                            builder = builder.set_source_progress(crate::protocol_serde::shape_source_progress::de_source_progress(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "ConfigurationSummary" => {
+                            builder = builder.set_configuration_summary(
+                                crate::protocol_serde::shape_configuration_summary::de_configuration_summary(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

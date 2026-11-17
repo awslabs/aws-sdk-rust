@@ -2,7 +2,7 @@
 
 /// <p>Configuration for authenticating to an MCP server with custom HTTP headers.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct McpServerCustomHeadersConfig {
     /// <p>Custom headers map.</p>
     pub headers: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
@@ -13,6 +13,13 @@ impl McpServerCustomHeadersConfig {
         &self.headers
     }
 }
+impl ::std::fmt::Debug for McpServerCustomHeadersConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("McpServerCustomHeadersConfig");
+        formatter.field("headers", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl McpServerCustomHeadersConfig {
     /// Creates a new builder-style object to manufacture [`McpServerCustomHeadersConfig`](crate::types::McpServerCustomHeadersConfig).
     pub fn builder() -> crate::types::builders::McpServerCustomHeadersConfigBuilder {
@@ -21,7 +28,7 @@ impl McpServerCustomHeadersConfig {
 }
 
 /// A builder for [`McpServerCustomHeadersConfig`](crate::types::McpServerCustomHeadersConfig).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct McpServerCustomHeadersConfigBuilder {
     pub(crate) headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -59,5 +66,12 @@ impl McpServerCustomHeadersConfigBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for McpServerCustomHeadersConfigBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("McpServerCustomHeadersConfigBuilder");
+        formatter.field("headers", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

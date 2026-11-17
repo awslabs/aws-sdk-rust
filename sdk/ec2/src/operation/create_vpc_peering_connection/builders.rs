@@ -26,6 +26,7 @@ impl crate::operation::create_vpc_peering_connection::builders::CreateVpcPeering
 /// <p>Limitations and rules apply to a VPC peering connection. For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations">VPC peering limitations</a> in the <i>VPC Peering Guide</i>.</p>
 /// </note>
 /// <p>The owner of the accepter VPC must accept the peering request to activate the peering connection. The VPC peering connection request expires after 7 days, after which it cannot be accepted or rejected.</p>
+/// <p>Multipath resilience replicates the traffic of an inter-Region VPC peering connection across multiple network paths.</p>
 /// <p>If you create a VPC peering connection request between VPCs with overlapping CIDR blocks, the VPC peering connection has a status of <code>failed</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateVpcPeeringConnectionFluentBuilder {
@@ -147,6 +148,23 @@ impl CreateVpcPeeringConnectionFluentBuilder {
     /// <p>The tags to assign to the peering connection.</p>
     pub fn get_tag_specifications(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagSpecification>> {
         self.inner.get_tag_specifications()
+    }
+    /// <p>The VPC peering connection options to apply to the requester VPC.</p>
+    pub fn requester_peering_connection_options(mut self, input: crate::types::CreatePeeringConnectionOptionsRequest) -> Self {
+        self.inner = self.inner.requester_peering_connection_options(input);
+        self
+    }
+    /// <p>The VPC peering connection options to apply to the requester VPC.</p>
+    pub fn set_requester_peering_connection_options(
+        mut self,
+        input: ::std::option::Option<crate::types::CreatePeeringConnectionOptionsRequest>,
+    ) -> Self {
+        self.inner = self.inner.set_requester_peering_connection_options(input);
+        self
+    }
+    /// <p>The VPC peering connection options to apply to the requester VPC.</p>
+    pub fn get_requester_peering_connection_options(&self) -> &::std::option::Option<crate::types::CreatePeeringConnectionOptionsRequest> {
+        self.inner.get_requester_peering_connection_options()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {

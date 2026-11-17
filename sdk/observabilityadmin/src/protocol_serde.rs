@@ -25,6 +25,8 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_create_centralization_rule_for_organization;
 
+pub(crate) mod shape_create_connector;
+
 pub(crate) mod shape_create_dataset_integration;
 
 pub(crate) mod shape_create_s3_table_integration;
@@ -37,6 +39,8 @@ pub(crate) mod shape_create_telemetry_rule_for_organization;
 
 pub(crate) mod shape_delete_centralization_rule_for_organization;
 
+pub(crate) mod shape_delete_connector;
+
 pub(crate) mod shape_delete_dataset_integration;
 
 pub(crate) mod shape_delete_s3_table_integration;
@@ -48,6 +52,12 @@ pub(crate) mod shape_delete_telemetry_rule;
 pub(crate) mod shape_delete_telemetry_rule_for_organization;
 
 pub(crate) mod shape_get_centralization_rule_for_organization;
+
+pub(crate) mod shape_get_connector;
+
+pub(crate) mod shape_get_connector_telemetry_manifest;
+
+pub(crate) mod shape_get_connector_telemetry_setup;
 
 pub(crate) mod shape_get_dataset_integration;
 
@@ -65,13 +75,19 @@ pub(crate) mod shape_get_telemetry_rule;
 
 pub(crate) mod shape_get_telemetry_rule_for_organization;
 
+pub(crate) mod shape_get_third_party_telemetry_enrichment;
+
 pub(crate) mod shape_list_centralization_rules_for_organization;
+
+pub(crate) mod shape_list_connectors;
 
 pub(crate) mod shape_list_dataset_integrations;
 
 pub(crate) mod shape_list_resource_telemetry;
 
 pub(crate) mod shape_list_resource_telemetry_for_organization;
+
+pub(crate) mod shape_list_resources_by_connector;
 
 pub(crate) mod shape_list_s3_table_integrations;
 
@@ -83,17 +99,27 @@ pub(crate) mod shape_list_telemetry_rules;
 
 pub(crate) mod shape_list_telemetry_rules_for_organization;
 
+pub(crate) mod shape_list_third_party_telemetry_enrichments;
+
+pub(crate) mod shape_put_connector_telemetry_manifest;
+
 pub(crate) mod shape_start_telemetry_enrichment;
 
 pub(crate) mod shape_start_telemetry_evaluation;
 
 pub(crate) mod shape_start_telemetry_evaluation_for_organization;
 
+pub(crate) mod shape_start_telemetry_pipeline_refresh;
+
+pub(crate) mod shape_start_third_party_telemetry_enrichment;
+
 pub(crate) mod shape_stop_telemetry_enrichment;
 
 pub(crate) mod shape_stop_telemetry_evaluation;
 
 pub(crate) mod shape_stop_telemetry_evaluation_for_organization;
+
+pub(crate) mod shape_stop_third_party_telemetry_enrichment;
 
 pub(crate) mod shape_tag_resource;
 
@@ -127,6 +153,8 @@ pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_centralization_rule_for_organization_input;
 
+pub(crate) mod shape_create_connector_input;
+
 pub(crate) mod shape_create_dataset_integration_input;
 
 pub(crate) mod shape_create_s3_table_integration_input;
@@ -138,6 +166,8 @@ pub(crate) mod shape_create_telemetry_rule_for_organization_input;
 pub(crate) mod shape_create_telemetry_rule_input;
 
 pub(crate) mod shape_delete_centralization_rule_for_organization_input;
+
+pub(crate) mod shape_delete_connector_input;
 
 pub(crate) mod shape_delete_dataset_integration_input;
 
@@ -151,6 +181,12 @@ pub(crate) mod shape_delete_telemetry_rule_input;
 
 pub(crate) mod shape_get_centralization_rule_for_organization_input;
 
+pub(crate) mod shape_get_connector_input;
+
+pub(crate) mod shape_get_connector_telemetry_manifest_input;
+
+pub(crate) mod shape_get_connector_telemetry_setup_input;
+
 pub(crate) mod shape_get_dataset_integration_input;
 
 pub(crate) mod shape_get_s3_table_integration_input;
@@ -161,17 +197,23 @@ pub(crate) mod shape_get_telemetry_rule_for_organization_input;
 
 pub(crate) mod shape_get_telemetry_rule_input;
 
+pub(crate) mod shape_get_third_party_telemetry_enrichment_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_invalid_state_exception;
 
 pub(crate) mod shape_list_centralization_rules_for_organization_input;
 
+pub(crate) mod shape_list_connectors_input;
+
 pub(crate) mod shape_list_dataset_integrations_input;
 
 pub(crate) mod shape_list_resource_telemetry_for_organization_input;
 
 pub(crate) mod shape_list_resource_telemetry_input;
+
+pub(crate) mod shape_list_resources_by_connector_input;
 
 pub(crate) mod shape_list_s3_table_integrations_input;
 
@@ -183,6 +225,10 @@ pub(crate) mod shape_list_telemetry_rules_for_organization_input;
 
 pub(crate) mod shape_list_telemetry_rules_input;
 
+pub(crate) mod shape_list_third_party_telemetry_enrichments_input;
+
+pub(crate) mod shape_put_connector_telemetry_manifest_input;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
@@ -190,6 +236,12 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 pub(crate) mod shape_start_telemetry_evaluation_for_organization_input;
 
 pub(crate) mod shape_start_telemetry_evaluation_input;
+
+pub(crate) mod shape_start_telemetry_pipeline_refresh_input;
+
+pub(crate) mod shape_start_third_party_telemetry_enrichment_input;
+
+pub(crate) mod shape_stop_third_party_telemetry_enrichment_input;
 
 pub(crate) mod shape_tag_resource_input;
 
@@ -217,11 +269,23 @@ pub(crate) mod shape_centralization_rule;
 
 pub(crate) mod shape_centralization_rule_summaries;
 
+pub(crate) mod shape_connector;
+
+pub(crate) mod shape_connector_configuration;
+
+pub(crate) mod shape_connector_query;
+
+pub(crate) mod shape_connector_query_results;
+
+pub(crate) mod shape_connector_summaries;
+
 pub(crate) mod shape_dataset_integration_summaries;
 
 pub(crate) mod shape_encryption;
 
 pub(crate) mod shape_integration_summaries;
+
+pub(crate) mod shape_permission_list;
 
 pub(crate) mod shape_pipeline_outputs;
 
@@ -229,9 +293,13 @@ pub(crate) mod shape_record;
 
 pub(crate) mod shape_region_statuses;
 
+pub(crate) mod shape_setup_artifact_list;
+
 pub(crate) mod shape_tag_map_output;
 
 pub(crate) mod shape_telemetry_configurations;
+
+pub(crate) mod shape_telemetry_manifest;
 
 pub(crate) mod shape_telemetry_pipeline;
 
@@ -243,13 +311,33 @@ pub(crate) mod shape_telemetry_rule;
 
 pub(crate) mod shape_telemetry_rule_summaries;
 
+pub(crate) mod shape_telemetry_source_configuration_input;
+
+pub(crate) mod shape_telemetry_source_configuration_output;
+
+pub(crate) mod shape_third_party_telemetry_enrichment_summaries;
+
 pub(crate) mod shape_validation_errors;
+
+pub(crate) mod shape_azure_connector_configuration;
+
+pub(crate) mod shape_azure_connector_query;
+
+pub(crate) mod shape_azure_connector_query_results;
+
+pub(crate) mod shape_azure_telemetry_source_configuration_input;
+
+pub(crate) mod shape_azure_telemetry_source_configuration_output;
 
 pub(crate) mod shape_centralization_rule_destination;
 
 pub(crate) mod shape_centralization_rule_source;
 
 pub(crate) mod shape_centralization_rule_summary;
+
+pub(crate) mod shape_configuration_summary;
+
+pub(crate) mod shape_connector_summary;
 
 pub(crate) mod shape_dataset_integration_summary;
 
@@ -261,9 +349,17 @@ pub(crate) mod shape_region_status;
 
 pub(crate) mod shape_regions;
 
+pub(crate) mod shape_setup_artifact;
+
+pub(crate) mod shape_source_progress;
+
 pub(crate) mod shape_telemetry_configuration;
 
 pub(crate) mod shape_telemetry_destination_configuration;
+
+pub(crate) mod shape_telemetry_manifest_infrastructure;
+
+pub(crate) mod shape_telemetry_manifest_source;
 
 pub(crate) mod shape_telemetry_pipeline_status_reason;
 
@@ -273,15 +369,49 @@ pub(crate) mod shape_telemetry_rule_summary;
 
 pub(crate) mod shape_telemetry_source_types;
 
+pub(crate) mod shape_third_party_telemetry_enrichment_summary;
+
 pub(crate) mod shape_validation_error;
+
+pub(crate) mod shape_azure_event_hub_summaries;
+
+pub(crate) mod shape_azure_event_hubs_query;
+
+pub(crate) mod shape_azure_infrastructure;
+
+pub(crate) mod shape_azure_management_group_summaries;
+
+pub(crate) mod shape_azure_management_groups_query;
+
+pub(crate) mod shape_azure_region_list;
+
+pub(crate) mod shape_azure_regions_query;
+
+pub(crate) mod shape_azure_resource_identifier_summaries;
+
+pub(crate) mod shape_azure_resource_ids_query;
+
+pub(crate) mod shape_azure_resource_type_list;
+
+pub(crate) mod shape_azure_resource_types_query;
+
+pub(crate) mod shape_azure_scope_item;
+
+pub(crate) mod shape_azure_sources;
+
+pub(crate) mod shape_azure_subscription_summaries;
+
+pub(crate) mod shape_azure_subscriptions_query;
 
 pub(crate) mod shape_cloudtrail_parameters;
 
-pub(crate) mod shape_configuration_summary;
+pub(crate) mod shape_data_sources;
 
 pub(crate) mod shape_destination_logs_configuration;
 
 pub(crate) mod shape_destination_metrics_configuration;
+
+pub(crate) mod shape_destination_profiles_configuration;
 
 pub(crate) mod shape_elb_load_balancer_logging_parameters;
 
@@ -293,11 +423,19 @@ pub(crate) mod shape_msk_monitoring_parameters;
 
 pub(crate) mod shape_pipeline_output_error;
 
+pub(crate) mod shape_processors;
+
+pub(crate) mod shape_sinks;
+
 pub(crate) mod shape_source_context_graph_configuration;
 
 pub(crate) mod shape_source_logs_configuration;
 
 pub(crate) mod shape_source_metrics_configuration;
+
+pub(crate) mod shape_source_profiles_configuration;
+
+pub(crate) mod shape_sources;
 
 pub(crate) mod shape_telemetry_configuration_state;
 
@@ -309,7 +447,25 @@ pub(crate) mod shape_advanced_event_selector;
 
 pub(crate) mod shape_advanced_event_selectors;
 
-pub(crate) mod shape_data_sources;
+pub(crate) mod shape_azure_event_hub_configuration;
+
+pub(crate) mod shape_azure_event_hub_configuration_list;
+
+pub(crate) mod shape_azure_event_hub_summary;
+
+pub(crate) mod shape_azure_flow_logs_infrastructure;
+
+pub(crate) mod shape_azure_management_group_summary;
+
+pub(crate) mod shape_azure_query_scope;
+
+pub(crate) mod shape_azure_resource_identifier_summary;
+
+pub(crate) mod shape_azure_scope;
+
+pub(crate) mod shape_azure_subscription_summary;
+
+pub(crate) mod shape_data_source;
 
 pub(crate) mod shape_field_to_match;
 
@@ -325,19 +481,29 @@ pub(crate) mod shape_logs_encryption_configuration;
 
 pub(crate) mod shape_metrics_backup_configuration;
 
-pub(crate) mod shape_processors;
+pub(crate) mod shape_profiles_backup_configuration;
 
 pub(crate) mod shape_redacted_fields;
 
-pub(crate) mod shape_sinks;
+pub(crate) mod shape_source;
 
-pub(crate) mod shape_sources;
+pub(crate) mod shape_tag_filter;
 
 pub(crate) mod shape_tag_propagation_configuration;
 
 pub(crate) mod shape_advanced_field_selector;
 
-pub(crate) mod shape_data_source;
+pub(crate) mod shape_azure_aws_managed_flow_logs;
+
+pub(crate) mod shape_azure_customer_managed_flow_logs;
+
+pub(crate) mod shape_azure_resource_id_scope;
+
+pub(crate) mod shape_azure_resource_tags;
+
+pub(crate) mod shape_azure_subscription_scope;
+
+pub(crate) mod shape_azure_telemetry_type_list;
 
 pub(crate) mod shape_filter;
 
@@ -345,16 +511,32 @@ pub(crate) mod shape_filters;
 
 pub(crate) mod shape_single_header;
 
-pub(crate) mod shape_source;
+pub(crate) mod shape_all_subscriptions;
+
+pub(crate) mod shape_azure_flow_log_storage_account_scope;
+
+pub(crate) mod shape_azure_flow_log_storage_account_scope_list;
+
+pub(crate) mod shape_azure_resource_id_scope_list;
 
 pub(crate) mod shape_condition;
 
 pub(crate) mod shape_field_selectors;
 
+pub(crate) mod shape_tag_filter_list;
+
 pub(crate) mod shape_action_condition;
+
+pub(crate) mod shape_azure_subscription_id_list;
 
 pub(crate) mod shape_conditions;
 
 pub(crate) mod shape_label_name_condition;
 
+pub(crate) mod shape_azure_resource_id_list;
+
+pub(crate) mod shape_azure_storage_account_id_list;
+
 pub(crate) mod shape_string_list;
+
+pub(crate) mod shape_tag_filter_values;

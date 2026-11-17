@@ -30,6 +30,15 @@ where
                                 )?,
                             );
                         }
+                        "source" => {
+                            builder = builder.set_source(
+                                crate::protocol_serde::shape_enabled_baseline_source_drift::de_enabled_baseline_source_drift(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

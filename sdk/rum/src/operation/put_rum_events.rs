@@ -197,6 +197,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutRumEventsT
                 captured.insert("Alias", value);
             }
         }
+        if requested.should_capture("SessionMetadata") {
+            if let ::std::option::Option::Some(value) = input.session_metadata.as_deref() {
+                captured.insert("SessionMetadata", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())

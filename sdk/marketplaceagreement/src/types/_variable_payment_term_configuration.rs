@@ -6,7 +6,7 @@
 pub struct VariablePaymentTermConfiguration {
     /// <p>Defines the strategy for approving payment requests. Values include <code>AUTO_APPROVE_ON_EXPIRATION</code> and <code>WAIT_FOR_APPROVAL</code></p>
     pub payment_request_approval_strategy: crate::types::PaymentRequestApprovalStrategy,
-    /// <p>Defines the duration after which a payment request is automatically approved if no further action is taken. This only applies when the payment request approval strategy is set to <code>AUTO_APPROVE_ON_EXPIRATION</code>. The duration is represented in the ISO_8601 format (e.g., P10D for 10 days).</p>
+    /// <p>Defines the duration after which a payment request is automatically approved if no further action is taken. This only applies when the payment request approval strategy is set to <code>AUTO_APPROVE_ON_EXPIRATION</code>. The duration is represented in the ISO_8601 format (for example, P10D for 10 days).</p>
     pub expiration_duration: ::std::option::Option<::std::string::String>,
 }
 impl VariablePaymentTermConfiguration {
@@ -14,7 +14,7 @@ impl VariablePaymentTermConfiguration {
     pub fn payment_request_approval_strategy(&self) -> &crate::types::PaymentRequestApprovalStrategy {
         &self.payment_request_approval_strategy
     }
-    /// <p>Defines the duration after which a payment request is automatically approved if no further action is taken. This only applies when the payment request approval strategy is set to <code>AUTO_APPROVE_ON_EXPIRATION</code>. The duration is represented in the ISO_8601 format (e.g., P10D for 10 days).</p>
+    /// <p>Defines the duration after which a payment request is automatically approved if no further action is taken. This only applies when the payment request approval strategy is set to <code>AUTO_APPROVE_ON_EXPIRATION</code>. The duration is represented in the ISO_8601 format (for example, P10D for 10 days).</p>
     pub fn expiration_duration(&self) -> ::std::option::Option<&str> {
         self.expiration_duration.as_deref()
     }
@@ -49,17 +49,17 @@ impl VariablePaymentTermConfigurationBuilder {
     pub fn get_payment_request_approval_strategy(&self) -> &::std::option::Option<crate::types::PaymentRequestApprovalStrategy> {
         &self.payment_request_approval_strategy
     }
-    /// <p>Defines the duration after which a payment request is automatically approved if no further action is taken. This only applies when the payment request approval strategy is set to <code>AUTO_APPROVE_ON_EXPIRATION</code>. The duration is represented in the ISO_8601 format (e.g., P10D for 10 days).</p>
+    /// <p>Defines the duration after which a payment request is automatically approved if no further action is taken. This only applies when the payment request approval strategy is set to <code>AUTO_APPROVE_ON_EXPIRATION</code>. The duration is represented in the ISO_8601 format (for example, P10D for 10 days).</p>
     pub fn expiration_duration(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expiration_duration = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Defines the duration after which a payment request is automatically approved if no further action is taken. This only applies when the payment request approval strategy is set to <code>AUTO_APPROVE_ON_EXPIRATION</code>. The duration is represented in the ISO_8601 format (e.g., P10D for 10 days).</p>
+    /// <p>Defines the duration after which a payment request is automatically approved if no further action is taken. This only applies when the payment request approval strategy is set to <code>AUTO_APPROVE_ON_EXPIRATION</code>. The duration is represented in the ISO_8601 format (for example, P10D for 10 days).</p>
     pub fn set_expiration_duration(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expiration_duration = input;
         self
     }
-    /// <p>Defines the duration after which a payment request is automatically approved if no further action is taken. This only applies when the payment request approval strategy is set to <code>AUTO_APPROVE_ON_EXPIRATION</code>. The duration is represented in the ISO_8601 format (e.g., P10D for 10 days).</p>
+    /// <p>Defines the duration after which a payment request is automatically approved if no further action is taken. This only applies when the payment request approval strategy is set to <code>AUTO_APPROVE_ON_EXPIRATION</code>. The duration is represented in the ISO_8601 format (for example, P10D for 10 days).</p>
     pub fn get_expiration_duration(&self) -> &::std::option::Option<::std::string::String> {
         &self.expiration_duration
     }

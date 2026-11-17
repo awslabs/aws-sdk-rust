@@ -2,7 +2,7 @@
 
 /// <p>A string parameter.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StringParameter {
     /// <p>A display name for a string parameter.</p>
     pub name: ::std::string::String,
@@ -21,6 +21,14 @@ impl StringParameter {
         self.values.deref()
     }
 }
+impl ::std::fmt::Debug for StringParameter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("StringParameter");
+        formatter.field("name", &self.name);
+        formatter.field("values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl StringParameter {
     /// Creates a new builder-style object to manufacture [`StringParameter`](crate::types::StringParameter).
     pub fn builder() -> crate::types::builders::StringParameterBuilder {
@@ -29,7 +37,7 @@ impl StringParameter {
 }
 
 /// A builder for [`StringParameter`](crate::types::StringParameter).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct StringParameterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -90,5 +98,13 @@ impl StringParameterBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for StringParameterBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("StringParameterBuilder");
+        formatter.field("name", &self.name);
+        formatter.field("values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

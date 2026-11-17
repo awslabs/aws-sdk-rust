@@ -2,7 +2,7 @@
 
 /// <p>A string expression is evaluated against strings or substrings of the email.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RuleStringExpression {
     /// <p>The string to evaluate in a string condition expression.</p>
     pub evaluate: ::std::option::Option<crate::types::RuleStringToEvaluate>,
@@ -26,6 +26,15 @@ impl RuleStringExpression {
         self.values.deref()
     }
 }
+impl ::std::fmt::Debug for RuleStringExpression {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RuleStringExpression");
+        formatter.field("evaluate", &self.evaluate);
+        formatter.field("operator", &self.operator);
+        formatter.field("values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RuleStringExpression {
     /// Creates a new builder-style object to manufacture [`RuleStringExpression`](crate::types::RuleStringExpression).
     pub fn builder() -> crate::types::builders::RuleStringExpressionBuilder {
@@ -34,7 +43,7 @@ impl RuleStringExpression {
 }
 
 /// A builder for [`RuleStringExpression`](crate::types::RuleStringExpression).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RuleStringExpressionBuilder {
     pub(crate) evaluate: ::std::option::Option<crate::types::RuleStringToEvaluate>,
@@ -112,5 +121,14 @@ impl RuleStringExpressionBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for RuleStringExpressionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RuleStringExpressionBuilder");
+        formatter.field("evaluate", &self.evaluate);
+        formatter.field("operator", &self.operator);
+        formatter.field("values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>A decimal parameter.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DecimalParameter {
     /// <p>A display name for the decimal parameter.</p>
     pub name: ::std::string::String,
@@ -21,6 +21,14 @@ impl DecimalParameter {
         self.values.deref()
     }
 }
+impl ::std::fmt::Debug for DecimalParameter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DecimalParameter");
+        formatter.field("name", &self.name);
+        formatter.field("values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl DecimalParameter {
     /// Creates a new builder-style object to manufacture [`DecimalParameter`](crate::types::DecimalParameter).
     pub fn builder() -> crate::types::builders::DecimalParameterBuilder {
@@ -29,7 +37,7 @@ impl DecimalParameter {
 }
 
 /// A builder for [`DecimalParameter`](crate::types::DecimalParameter).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct DecimalParameterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -90,5 +98,13 @@ impl DecimalParameterBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for DecimalParameterBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DecimalParameterBuilder");
+        formatter.field("name", &self.name);
+        formatter.field("values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

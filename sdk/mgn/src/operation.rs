@@ -28,6 +28,9 @@ pub mod create_launch_configuration_template;
 /// Types for the `CreateNetworkMigrationDefinition` operation.
 pub mod create_network_migration_definition;
 
+/// Types for the `CreateRemoteSourceAction` operation.
+pub mod create_remote_source_action;
+
 /// Types for the `CreateReplicationConfigurationTemplate` operation.
 pub mod create_replication_configuration_template;
 
@@ -48,6 +51,9 @@ pub mod delete_launch_configuration_template;
 
 /// Types for the `DeleteNetworkMigrationDefinition` operation.
 pub mod delete_network_migration_definition;
+
+/// Types for the `DeleteRemoteSourceAction` operation.
+pub mod delete_remote_source_action;
 
 /// Types for the `DeleteReplicationConfigurationTemplate` operation.
 pub mod delete_replication_configuration_template;
@@ -93,6 +99,9 @@ pub mod finalize_cutover;
 
 /// Types for the `GetLaunchConfiguration` operation.
 pub mod get_launch_configuration;
+
+/// Types for the `GetLaunchConfigurationDefaults` operation.
+pub mod get_launch_configuration_defaults;
 
 /// Types for the `GetNetworkMigrationDefinition` operation.
 pub mod get_network_migration_definition;
@@ -154,6 +163,9 @@ pub mod list_network_migration_deployments;
 /// Types for the `ListNetworkMigrationExecutions` operation.
 pub mod list_network_migration_executions;
 
+/// Types for the `ListNetworkMigrationInsights` operation.
+pub mod list_network_migration_insights;
+
 /// Types for the `ListNetworkMigrationMapperSegmentConstructs` operation.
 pub mod list_network_migration_mapper_segment_constructs;
 
@@ -165,6 +177,18 @@ pub mod list_network_migration_mapping_updates;
 
 /// Types for the `ListNetworkMigrationMappings` operation.
 pub mod list_network_migration_mappings;
+
+/// Types for the `ListRemoteSourceActionInvocationResults` operation.
+pub mod list_remote_source_action_invocation_results;
+
+/// Types for the `ListRemoteSourceActionInvocations` operation.
+pub mod list_remote_source_action_invocations;
+
+/// Types for the `ListRemoteSourceActionJobs` operation.
+pub mod list_remote_source_action_jobs;
+
+/// Types for the `ListRemoteSourceActions` operation.
+pub mod list_remote_source_actions;
 
 /// Types for the `ListSourceServerActions` operation.
 pub mod list_source_server_actions;
@@ -229,6 +253,9 @@ pub mod start_network_migration_mapping;
 /// Types for the `StartNetworkMigrationMappingUpdate` operation.
 pub mod start_network_migration_mapping_update;
 
+/// Types for the `StartRemoteSourceActionJob` operation.
+pub mod start_remote_source_action_job;
+
 /// Types for the `StartReplication` operation.
 pub mod start_replication;
 
@@ -262,6 +289,9 @@ pub mod update_connector;
 /// Types for the `UpdateLaunchConfiguration` operation.
 pub mod update_launch_configuration;
 
+/// Types for the `UpdateLaunchConfigurationDefaults` operation.
+pub mod update_launch_configuration_defaults;
+
 /// Types for the `UpdateLaunchConfigurationTemplate` operation.
 pub mod update_launch_configuration_template;
 
@@ -270,6 +300,9 @@ pub mod update_network_migration_definition;
 
 /// Types for the `UpdateNetworkMigrationMapperSegment` operation.
 pub mod update_network_migration_mapper_segment;
+
+/// Types for the `UpdateRemoteSourceAction` operation.
+pub mod update_remote_source_action;
 
 /// Types for the `UpdateReplicationConfiguration` operation.
 pub mod update_replication_configuration;

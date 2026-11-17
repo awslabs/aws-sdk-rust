@@ -49,6 +49,12 @@ pub use crate::types::_stripe_privy_configuration_output::StripePrivyConfigurati
 
 pub use crate::types::_agent_runtime_endpoint_status::AgentRuntimeEndpointStatus;
 
+pub use crate::types::_agent_insight_store_status::AgentInsightStoreStatus;
+
+pub use crate::types::_agent_insight_store_enablement_status::AgentInsightStoreEnablementStatus;
+
+pub use crate::types::_agent_insight_store_encryption_configuration::AgentInsightStoreEncryptionConfiguration;
+
 pub use crate::types::_agent_runtime_artifact::AgentRuntimeArtifact;
 
 pub use crate::types::_network_configuration::NetworkConfiguration;
@@ -107,6 +113,8 @@ pub use crate::types::_configuration_bundle_status::ConfigurationBundleStatus;
 
 pub use crate::types::_version_filter::VersionFilter;
 
+pub use crate::types::_list_datasets_filter::ListDatasetsFilter;
+
 pub use crate::types::_data_source_type::DataSourceType;
 
 pub use crate::types::_dataset_schema_type::DatasetSchemaType;
@@ -114,6 +122,12 @@ pub use crate::types::_dataset_schema_type::DatasetSchemaType;
 pub use crate::types::_dataset_status::DatasetStatus;
 
 pub use crate::types::_draft_status::DraftStatus;
+
+pub use crate::types::_example_count_by_field::ExampleCountByField;
+
+pub use crate::types::_list_dataset_examples_filter::ListDatasetExamplesFilter;
+
+pub use crate::types::_list_dataset_versions_filter::ListDatasetVersionsFilter;
 
 pub use crate::types::_evaluator_config::EvaluatorConfig;
 
@@ -276,6 +290,10 @@ pub use crate::types::_payment_connector_status::PaymentConnectorStatus;
 pub use crate::types::_credential_rotation_config::CredentialRotationConfig;
 
 pub use crate::types::_agent_runtime_endpoint::AgentRuntimeEndpoint;
+
+pub use crate::types::_agent_insight_store_summary::AgentInsightStoreSummary;
+
+pub use crate::types::_agent_insight_store_encryption_mode::AgentInsightStoreEncryptionMode;
 
 pub use crate::types::_agent_runtime::AgentRuntime;
 
@@ -577,6 +595,10 @@ pub use crate::types::_instance_lifecycle_configuration::InstanceLifecycleConfig
 
 pub use crate::types::_root_volume_configuration::RootVolumeConfiguration;
 
+pub use crate::types::_example_count_by_field_condition::ExampleCountByFieldCondition;
+
+pub use crate::types::_example_field_condition::ExampleFieldCondition;
+
 pub use crate::types::_rating_scale::RatingScale;
 
 pub use crate::types::_evaluator_model_config::EvaluatorModelConfig;
@@ -849,6 +871,8 @@ pub use crate::types::_capacity_reservation_specification::CapacityReservationSp
 
 pub use crate::types::_ebs_volume_configuration::EbsVolumeConfiguration;
 
+pub use crate::types::_example_field::ExampleField;
+
 pub use crate::types::_numerical_scale_definition::NumericalScaleDefinition;
 
 pub use crate::types::_categorical_scale_definition::CategoricalScaleDefinition;
@@ -1096,6 +1120,16 @@ mod _action;
 mod _actor_token_content_type;
 
 mod _agent_card_definition;
+
+mod _agent_insight_store_enablement_status;
+
+mod _agent_insight_store_encryption_configuration;
+
+mod _agent_insight_store_encryption_mode;
+
+mod _agent_insight_store_status;
+
+mod _agent_insight_store_summary;
 
 mod _agent_managed_runtime_type;
 
@@ -1403,6 +1437,14 @@ mod _evaluator_summary;
 
 mod _evaluator_type;
 
+mod _example_count_by_field;
+
+mod _example_count_by_field_condition;
+
+mod _example_field;
+
+mod _example_field_condition;
+
 mod _exception_level;
 
 mod _extraction_config;
@@ -1670,6 +1712,12 @@ mod _limit_entry;
 mod _linkedin_oauth2_provider_config_input;
 
 mod _linkedin_oauth2_provider_config_output;
+
+mod _list_dataset_examples_filter;
+
+mod _list_dataset_versions_filter;
+
+mod _list_datasets_filter;
 
 mod _listing_mode;
 

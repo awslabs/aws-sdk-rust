@@ -2,7 +2,7 @@
 
 /// <p>Steps of a leg that correspond to the travel portion of the leg.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteVehicleLegDetails {
     /// <p>Steps of a leg that must be performed after the travel portion of the leg.</p>
     pub after_travel_steps: ::std::vec::Vec<crate::types::RouteVehicleAfterTravelStep>,
@@ -99,6 +99,25 @@ impl RouteVehicleLegDetails {
         self.zones.deref()
     }
 }
+impl ::std::fmt::Debug for RouteVehicleLegDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteVehicleLegDetails");
+        formatter.field("after_travel_steps", &self.after_travel_steps);
+        formatter.field("arrival", &self.arrival);
+        formatter.field("departure", &self.departure);
+        formatter.field("incidents", &self.incidents);
+        formatter.field("notices", &self.notices);
+        formatter.field("pass_through_waypoints", &self.pass_through_waypoints);
+        formatter.field("spans", &self.spans);
+        formatter.field("summary", &self.summary);
+        formatter.field("tolls", &self.tolls);
+        formatter.field("toll_systems", &self.toll_systems);
+        formatter.field("travel_steps", &self.travel_steps);
+        formatter.field("truck_road_types", &"*** Sensitive Data Redacted ***");
+        formatter.field("zones", &self.zones);
+        formatter.finish()
+    }
+}
 impl RouteVehicleLegDetails {
     /// Creates a new builder-style object to manufacture [`RouteVehicleLegDetails`](crate::types::RouteVehicleLegDetails).
     pub fn builder() -> crate::types::builders::RouteVehicleLegDetailsBuilder {
@@ -107,7 +126,7 @@ impl RouteVehicleLegDetails {
 }
 
 /// A builder for [`RouteVehicleLegDetails`](crate::types::RouteVehicleLegDetails).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteVehicleLegDetailsBuilder {
     pub(crate) after_travel_steps: ::std::option::Option<::std::vec::Vec<crate::types::RouteVehicleAfterTravelStep>>,
@@ -447,5 +466,24 @@ impl RouteVehicleLegDetailsBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for RouteVehicleLegDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteVehicleLegDetailsBuilder");
+        formatter.field("after_travel_steps", &self.after_travel_steps);
+        formatter.field("arrival", &self.arrival);
+        formatter.field("departure", &self.departure);
+        formatter.field("incidents", &self.incidents);
+        formatter.field("notices", &self.notices);
+        formatter.field("pass_through_waypoints", &self.pass_through_waypoints);
+        formatter.field("spans", &self.spans);
+        formatter.field("summary", &self.summary);
+        formatter.field("tolls", &self.tolls);
+        formatter.field("toll_systems", &self.toll_systems);
+        formatter.field("travel_steps", &self.travel_steps);
+        formatter.field("truck_road_types", &"*** Sensitive Data Redacted ***");
+        formatter.field("zones", &self.zones);
+        formatter.finish()
     }
 }

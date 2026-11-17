@@ -15,6 +15,12 @@ pub use crate::types::_schedule_action_status::ScheduleActionStatus;
 
 pub use crate::types::_schedule_action_error::ScheduleActionError;
 
+pub use crate::types::_function_target::FunctionTarget;
+
+pub use crate::types::_event_bridge_delivery_mode::EventBridgeDeliveryMode;
+
+pub use crate::types::_function_status::FunctionStatus;
+
 pub use crate::types::_competitor::Competitor;
 
 pub use crate::types::_search_filter::SearchFilter;
@@ -39,6 +45,24 @@ pub use crate::types::_schedule_action_error_code::ScheduleActionErrorCode;
 
 pub use crate::types::_schedule_action::ScheduleAction;
 
+pub use crate::types::_function_summary::FunctionSummary;
+
+pub use crate::types::_bedrock_function_target::BedrockFunctionTarget;
+
+pub use crate::types::_passthrough_function_target::PassthroughFunctionTarget;
+
+pub use crate::types::_context_type::ContextType;
+
+pub use crate::types::_question_set_summary::QuestionSetSummary;
+
+pub use crate::types::_yes_no_question::YesNoQuestion;
+
+pub use crate::types::_yes_no_per_option_question::YesNoPerOptionQuestion;
+
+pub use crate::types::_choose_one_question::ChooseOneQuestion;
+
+pub use crate::types::_question_set_version_summary::QuestionSetVersionSummary;
+
 pub use crate::types::_filter_name::FilterName;
 
 pub use crate::types::_output_config::OutputConfig;
@@ -51,6 +75,8 @@ pub use crate::types::_update_clipping_data_source_configuration::UpdateClipping
 
 pub use crate::types::_remove_clipping_data_source_configuration::RemoveClippingDataSourceConfiguration;
 
+pub use crate::types::_bedrock_api::BedrockApi;
+
 pub use crate::types::_cropping_config::CroppingConfig;
 
 pub use crate::types::_clipping_config::ClippingConfig;
@@ -59,7 +85,11 @@ pub use crate::types::_subtitling_config::SubtitlingConfig;
 
 pub use crate::types::_contextual_metadata_config::ContextualMetadataConfig;
 
+pub use crate::types::_function_config::FunctionConfig;
+
 pub use crate::types::_data_source_configuration::DataSourceConfiguration;
+
+pub use crate::types::_question_option::QuestionOption;
 
 pub use crate::types::_transcription_language::TranscriptionLanguage;
 
@@ -71,19 +101,63 @@ pub use crate::types::_summary_generation_mode::SummaryGenerationMode;
 
 pub use crate::types::_extended_analysis_mode::ExtendedAnalysisMode;
 
+pub use crate::types::_custom_questions_config::CustomQuestionsConfig;
+
+pub use crate::types::_trigger::Trigger;
+
+pub use crate::types::_frame_settings::FrameSettings;
+
+pub use crate::types::_subtitling_settings::SubtitlingSettings;
+
+pub use crate::types::_contextual_metadata_settings::ContextualMetadataSettings;
+
+pub use crate::types::_clipping_settings::ClippingSettings;
+
 pub use crate::types::_template_group::TemplateGroup;
+
+pub use crate::types::_question_set_reference::QuestionSetReference;
+
+pub use crate::types::_fixed_interval_trigger::FixedIntervalTrigger;
+
+pub use crate::types::_shot_trigger::ShotTrigger;
+
+pub use crate::types::_scene_trigger::SceneTrigger;
+
+pub use crate::types::_clip_trigger::ClipTrigger;
+
+pub use crate::types::_frame_sampling_strategy::FrameSamplingStrategy;
+
+pub use crate::types::_frame_size::FrameSize;
+
+pub use crate::types::_frame_sampling_mode::FrameSamplingMode;
 
 mod _aspect_ratio;
 
+mod _bedrock_api;
+
+mod _bedrock_function_target;
+
+mod _choose_one_question;
+
+mod _clip_trigger;
+
 mod _clipping_config;
+
+mod _clipping_settings;
 
 mod _competitor;
 
+mod _context_type;
+
 mod _contextual_metadata_config;
+
+mod _contextual_metadata_settings;
 
 mod _create_output;
 
 mod _cropping_config;
+
+mod _custom_questions_config;
 
 mod _data_source_configuration;
 
@@ -95,6 +169,8 @@ mod _dictionary_status;
 
 mod _dictionary_summary;
 
+mod _event_bridge_delivery_mode;
+
 mod _extended_analysis_mode;
 
 mod _feed_association;
@@ -105,9 +181,27 @@ mod _feed_summary;
 
 mod _filter_name;
 
+mod _fixed_interval_trigger;
+
 mod _fixed_mode_schedule_action_start_settings;
 
 mod _fixture_summary;
+
+mod _frame_sampling_mode;
+
+mod _frame_sampling_strategy;
+
+mod _frame_settings;
+
+mod _frame_size;
+
+mod _function_config;
+
+mod _function_status;
+
+mod _function_summary;
+
+mod _function_target;
 
 mod _get_output;
 
@@ -115,9 +209,21 @@ mod _output_config;
 
 mod _output_status;
 
+mod _passthrough_function_target;
+
 mod _profanity_filter_mode;
 
+mod _question_option;
+
+mod _question_set_reference;
+
+mod _question_set_summary;
+
+mod _question_set_version_summary;
+
 mod _remove_clipping_data_source_configuration;
+
+mod _scene_trigger;
 
 mod _schedule_action;
 
@@ -133,7 +239,11 @@ mod _schedule_action_status;
 
 mod _search_filter;
 
+mod _shot_trigger;
+
 mod _subtitling_config;
+
+mod _subtitling_settings;
 
 mod _summary_generation_mode;
 
@@ -141,11 +251,17 @@ mod _template_group;
 
 mod _transcription_language;
 
+mod _trigger;
+
 mod _update_clipping_data_source_configuration;
 
 mod _update_output;
 
 mod _update_output_status;
+
+mod _yes_no_per_option_question;
+
+mod _yes_no_question;
 
 /// Builders
 pub mod builders;

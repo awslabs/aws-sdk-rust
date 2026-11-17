@@ -6,6 +6,8 @@
 pub enum ProviderDetail {
     /// <p>Details about a Microsoft Azure CSPM integration.</p>
     Azure(crate::types::AzureDetail),
+    /// <p>Details about a Google Cloud Platform (GCP) CSPM integration.</p>
+    Gcp(crate::types::GcpDetail),
     /// <p>Details about a Jira Cloud integration.</p>
     JiraCloud(crate::types::JiraCloudDetail),
     /// <p>Details about a ServiceNow ITSM integration.</p>
@@ -33,6 +35,19 @@ impl ProviderDetail {
     /// Returns true if this is a [`Azure`](crate::types::ProviderDetail::Azure).
     pub fn is_azure(&self) -> bool {
         self.as_azure().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Gcp`](crate::types::ProviderDetail::Gcp), extracting the inner [`GcpDetail`](crate::types::GcpDetail).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_gcp(&self) -> ::std::result::Result<&crate::types::GcpDetail, &Self> {
+        if let ProviderDetail::Gcp(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Gcp`](crate::types::ProviderDetail::Gcp).
+    pub fn is_gcp(&self) -> bool {
+        self.as_gcp().is_ok()
     }
     /// Tries to convert the enum instance into [`JiraCloud`](crate::types::ProviderDetail::JiraCloud), extracting the inner [`JiraCloudDetail`](crate::types::JiraCloudDetail).
     /// Returns `Err(&Self)` if it can't be converted.

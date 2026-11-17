@@ -19,6 +19,9 @@ pub mod create_access_source;
 /// Types for the `CreateAccessToken` operation.
 pub mod create_access_token;
 
+/// Types for the `CreateCoreNetworkEndpoint` operation.
+pub mod create_core_network_endpoint;
+
 /// Types for the `CreateDNSView` operation.
 pub mod create_dns_view;
 
@@ -36,6 +39,9 @@ pub mod delete_access_source;
 
 /// Types for the `DeleteAccessToken` operation.
 pub mod delete_access_token;
+
+/// Types for the `DeleteCoreNetworkEndpoint` operation.
+pub mod delete_core_network_endpoint;
 
 /// Types for the `DeleteDNSView` operation.
 pub mod delete_dns_view;
@@ -64,6 +70,9 @@ pub mod get_access_source;
 /// Types for the `GetAccessToken` operation.
 pub mod get_access_token;
 
+/// Types for the `GetCoreNetworkEndpoint` operation.
+pub mod get_core_network_endpoint;
+
 /// Types for the `GetDNSView` operation.
 pub mod get_dns_view;
 
@@ -90,6 +99,9 @@ pub mod list_access_sources;
 
 /// Types for the `ListAccessTokens` operation.
 pub mod list_access_tokens;
+
+/// Types for the `ListCoreNetworkEndpoints` operation.
+pub mod list_core_network_endpoints;
 
 /// Types for the `ListDNSViews` operation.
 pub mod list_dns_views;
@@ -129,6 +141,9 @@ pub mod update_access_source;
 
 /// Types for the `UpdateAccessToken` operation.
 pub mod update_access_token;
+
+/// Types for the `UpdateCoreNetworkEndpoint` operation.
+pub mod update_core_network_endpoint;
 
 /// Types for the `UpdateDNSView` operation.
 pub mod update_dns_view;

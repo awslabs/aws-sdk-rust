@@ -13,7 +13,7 @@ pub struct Standard {
     /// <p>Whether the standard is enabled by default. When Security Hub CSPM is enabled from the console, if a standard is enabled by default, the check box for that standard is selected by default.</p>
     /// <p>When Security Hub CSPM is enabled using the <code>EnableSecurityHub</code> API operation, the standard is enabled by default unless <code>EnableDefaultStandards</code> is set to <code>false</code>.</p>
     pub enabled_by_default: ::std::option::Option<bool>,
-    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
     pub provider: ::std::option::Option<crate::types::StandardsProvider>,
     /// <p>Provides details about the management of a standard.</p>
     pub standards_managed_by: ::std::option::Option<crate::types::StandardsManagedBy>,
@@ -36,7 +36,7 @@ impl Standard {
     pub fn enabled_by_default(&self) -> ::std::option::Option<bool> {
         self.enabled_by_default
     }
-    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
     pub fn provider(&self) -> ::std::option::Option<&crate::types::StandardsProvider> {
         self.provider.as_ref()
     }
@@ -123,17 +123,17 @@ impl StandardBuilder {
     pub fn get_enabled_by_default(&self) -> &::std::option::Option<bool> {
         &self.enabled_by_default
     }
-    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
     pub fn provider(mut self, input: crate::types::StandardsProvider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::StandardsProvider>) -> Self {
         self.provider = input;
         self
     }
-    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    /// <p>The cloud provider whose resources the standard evaluates. For example, <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::StandardsProvider> {
         &self.provider
     }

@@ -46,6 +46,11 @@ pub struct CreateMultipartUploadOutput {
     pub checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
     /// <p>Indicates the checksum type that you want Amazon S3 to use to calculate the object’s checksum value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking object integrity in the Amazon S3 User Guide</a>.</p>
     pub checksum_type: ::std::option::Option<crate::types::ChecksumType>,
+    /// <p>Version ID of the object.</p>
+    /// <p>Returns the Version ID of the object for the initiated multipart upload, if bucket versioning is enabled.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub version_id: ::std::option::Option<::std::string::String>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -121,6 +126,13 @@ impl CreateMultipartUploadOutput {
     pub fn checksum_type(&self) -> ::std::option::Option<&crate::types::ChecksumType> {
         self.checksum_type.as_ref()
     }
+    /// <p>Version ID of the object.</p>
+    /// <p>Returns the Version ID of the object for the initiated multipart upload, if bucket versioning is enabled.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub fn version_id(&self) -> ::std::option::Option<&str> {
+        self.version_id.as_deref()
+    }
 }
 impl ::std::fmt::Debug for CreateMultipartUploadOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -139,6 +151,7 @@ impl ::std::fmt::Debug for CreateMultipartUploadOutput {
         formatter.field("request_charged", &self.request_charged);
         formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field("checksum_type", &self.checksum_type);
+        formatter.field("version_id", &self.version_id);
         formatter.field("_extended_request_id", &self._extended_request_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -179,6 +192,7 @@ pub struct CreateMultipartUploadOutputBuilder {
     pub(crate) request_charged: ::std::option::Option<crate::types::RequestCharged>,
     pub(crate) checksum_algorithm: ::std::option::Option<crate::types::ChecksumAlgorithm>,
     pub(crate) checksum_type: ::std::option::Option<crate::types::ChecksumType>,
+    pub(crate) version_id: ::std::option::Option<::std::string::String>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -424,6 +438,29 @@ impl CreateMultipartUploadOutputBuilder {
     pub fn get_checksum_type(&self) -> &::std::option::Option<crate::types::ChecksumType> {
         &self.checksum_type
     }
+    /// <p>Version ID of the object.</p>
+    /// <p>Returns the Version ID of the object for the initiated multipart upload, if bucket versioning is enabled.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub fn version_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Version ID of the object.</p>
+    /// <p>Returns the Version ID of the object for the initiated multipart upload, if bucket versioning is enabled.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub fn set_version_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.version_id = input;
+        self
+    }
+    /// <p>Version ID of the object.</p>
+    /// <p>Returns the Version ID of the object for the initiated multipart upload, if bucket versioning is enabled.</p><note>
+    /// <p>This functionality is not supported for directory buckets.</p>
+    /// </note>
+    pub fn get_version_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.version_id
+    }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
         self._extended_request_id = Some(extended_request_id.into());
         self
@@ -459,6 +496,7 @@ impl CreateMultipartUploadOutputBuilder {
             request_charged: self.request_charged,
             checksum_algorithm: self.checksum_algorithm,
             checksum_type: self.checksum_type,
+            version_id: self.version_id,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
@@ -481,6 +519,7 @@ impl ::std::fmt::Debug for CreateMultipartUploadOutputBuilder {
         formatter.field("request_charged", &self.request_charged);
         formatter.field("checksum_algorithm", &self.checksum_algorithm);
         formatter.field("checksum_type", &self.checksum_type);
+        formatter.field("version_id", &self.version_id);
         formatter.field("_extended_request_id", &self._extended_request_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

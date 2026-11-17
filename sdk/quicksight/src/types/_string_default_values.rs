@@ -2,7 +2,7 @@
 
 /// <p>The default values of the <code>StringParameterDeclaration</code>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StringDefaultValues {
     /// <p>The dynamic value of the <code>StringDefaultValues</code>. Different defaults displayed according to users, groups, and values mapping.</p>
     pub dynamic_value: ::std::option::Option<crate::types::DynamicDefaultValue>,
@@ -21,6 +21,14 @@ impl StringDefaultValues {
         self.static_values.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for StringDefaultValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("StringDefaultValues");
+        formatter.field("dynamic_value", &self.dynamic_value);
+        formatter.field("static_values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl StringDefaultValues {
     /// Creates a new builder-style object to manufacture [`StringDefaultValues`](crate::types::StringDefaultValues).
     pub fn builder() -> crate::types::builders::StringDefaultValuesBuilder {
@@ -29,7 +37,7 @@ impl StringDefaultValues {
 }
 
 /// A builder for [`StringDefaultValues`](crate::types::StringDefaultValues).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct StringDefaultValuesBuilder {
     pub(crate) dynamic_value: ::std::option::Option<crate::types::DynamicDefaultValue>,
@@ -76,5 +84,13 @@ impl StringDefaultValuesBuilder {
             dynamic_value: self.dynamic_value,
             static_values: self.static_values,
         }
+    }
+}
+impl ::std::fmt::Debug for StringDefaultValuesBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("StringDefaultValuesBuilder");
+        formatter.field("dynamic_value", &self.dynamic_value);
+        formatter.field("static_values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -6,7 +6,15 @@
 pub struct ConflictException {
     /// <p>Detailed error message describing the conflict.</p>
     pub message: ::std::string::String,
+    /// <p>A machine-readable reason code that explains why the request conflicted with the current state of the resource. For example, <code>CHAT_ARCHIVED</code> indicates that the request acted on a chat that is archived. This field is absent when no specific reason applies.</p>
+    pub reason: ::std::option::Option<crate::types::ConflictExceptionReason>,
     pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
+}
+impl ConflictException {
+    /// <p>A machine-readable reason code that explains why the request conflicted with the current state of the resource. For example, <code>CHAT_ARCHIVED</code> indicates that the request acted on a chat that is archived. This field is absent when no specific reason applies.</p>
+    pub fn reason(&self) -> ::std::option::Option<&crate::types::ConflictExceptionReason> {
+        self.reason.as_ref()
+    }
 }
 impl ConflictException {
     /// Returns the error message.
@@ -47,6 +55,7 @@ impl ConflictException {
 #[non_exhaustive]
 pub struct ConflictExceptionBuilder {
     pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) reason: ::std::option::Option<crate::types::ConflictExceptionReason>,
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ConflictExceptionBuilder {
@@ -64,6 +73,20 @@ impl ConflictExceptionBuilder {
     /// <p>Detailed error message describing the conflict.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
+    }
+    /// <p>A machine-readable reason code that explains why the request conflicted with the current state of the resource. For example, <code>CHAT_ARCHIVED</code> indicates that the request acted on a chat that is archived. This field is absent when no specific reason applies.</p>
+    pub fn reason(mut self, input: crate::types::ConflictExceptionReason) -> Self {
+        self.reason = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A machine-readable reason code that explains why the request conflicted with the current state of the resource. For example, <code>CHAT_ARCHIVED</code> indicates that the request acted on a chat that is archived. This field is absent when no specific reason applies.</p>
+    pub fn set_reason(mut self, input: ::std::option::Option<crate::types::ConflictExceptionReason>) -> Self {
+        self.reason = input;
+        self
+    }
+    /// <p>A machine-readable reason code that explains why the request conflicted with the current state of the resource. For example, <code>CHAT_ARCHIVED</code> indicates that the request acted on a chat that is archived. This field is absent when no specific reason applies.</p>
+    pub fn get_reason(&self) -> &::std::option::Option<crate::types::ConflictExceptionReason> {
+        &self.reason
     }
     /// Sets error metadata
     pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
@@ -87,6 +110,7 @@ impl ConflictExceptionBuilder {
                     "message was not specified but it is required when building ConflictException",
                 )
             })?,
+            reason: self.reason,
             meta: self.meta.unwrap_or_default(),
         })
     }

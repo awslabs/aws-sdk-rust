@@ -13,18 +13,26 @@
 /// # let validationexceptionreason = unimplemented!();
 /// match validationexceptionreason {
 ///     ValidationExceptionReason::BillingAdjustmentsLimitExceeded => { /* ... */ },
+///     ValidationExceptionReason::ClosedAgreementApproval => { /* ... */ },
+///     ValidationExceptionReason::ClosedAgreementRequest => { /* ... */ },
 ///     ValidationExceptionReason::DuplicateAgreementInOrganization => { /* ... */ },
 ///     ValidationExceptionReason::DuplicateCharges => { /* ... */ },
+///     ValidationExceptionReason::DuplicatePlanReference => { /* ... */ },
 ///     ValidationExceptionReason::ExceededMaximumAdjustmentAmount => { /* ... */ },
 ///     ValidationExceptionReason::ExpiredAgreementProposal => { /* ... */ },
 ///     ValidationExceptionReason::InactiveAgreement => { /* ... */ },
+///     ValidationExceptionReason::IncompatibleAgreementRequest => { /* ... */ },
 ///     ValidationExceptionReason::IncompatibleTerms => { /* ... */ },
+///     ValidationExceptionReason::InvalidAcceptorContact => { /* ... */ },
 ///     ValidationExceptionReason::InvalidAdjustmentAmount => { /* ... */ },
+///     ValidationExceptionReason::InvalidAgreementApprovalId => { /* ... */ },
 ///     ValidationExceptionReason::InvalidAgreementCancellationRequestId => { /* ... */ },
 ///     ValidationExceptionReason::InvalidAgreementId => { /* ... */ },
 ///     ValidationExceptionReason::InvalidAgreementProposalIdentifier => { /* ... */ },
 ///     ValidationExceptionReason::InvalidAgreementRequestId => { /* ... */ },
 ///     ValidationExceptionReason::InvalidAgreementType => { /* ... */ },
+///     ValidationExceptionReason::InvalidApprovalType => { /* ... */ },
+///     ValidationExceptionReason::InvalidApproverOutcomeIdToOverride => { /* ... */ },
 ///     ValidationExceptionReason::InvalidCatalog => { /* ... */ },
 ///     ValidationExceptionReason::InvalidChargeAmount => { /* ... */ },
 ///     ValidationExceptionReason::InvalidChargeId => { /* ... */ },
@@ -41,9 +49,11 @@
 ///     ValidationExceptionReason::InvalidMaxResults => { /* ... */ },
 ///     ValidationExceptionReason::InvalidName => { /* ... */ },
 ///     ValidationExceptionReason::InvalidNextToken => { /* ... */ },
+///     ValidationExceptionReason::InvalidNote => { /* ... */ },
 ///     ValidationExceptionReason::InvalidPartyType => { /* ... */ },
 ///     ValidationExceptionReason::InvalidPaymentRequestId => { /* ... */ },
 ///     ValidationExceptionReason::InvalidPaymentRequestStatus => { /* ... */ },
+///     ValidationExceptionReason::InvalidPlanInputs => { /* ... */ },
 ///     ValidationExceptionReason::InvalidPurchaseOrders => { /* ... */ },
 ///     ValidationExceptionReason::InvalidPurchaseOrderReference => { /* ... */ },
 ///     ValidationExceptionReason::InvalidReason => { /* ... */ },
@@ -52,6 +62,7 @@
 ///     ValidationExceptionReason::InvalidRequestedTerms => { /* ... */ },
 ///     ValidationExceptionReason::InvalidRequestedTermConfiguration => { /* ... */ },
 ///     ValidationExceptionReason::InvalidRequestedTermId => { /* ... */ },
+///     ValidationExceptionReason::InvalidResourceId => { /* ... */ },
 ///     ValidationExceptionReason::InvalidSortBy => { /* ... */ },
 ///     ValidationExceptionReason::InvalidSortOrder => { /* ... */ },
 ///     ValidationExceptionReason::InvalidSourceAgreementIdentifier => { /* ... */ },
@@ -59,10 +70,12 @@
 ///     ValidationExceptionReason::InvalidTermId => { /* ... */ },
 ///     ValidationExceptionReason::MissingAccountAddress => { /* ... */ },
 ///     ValidationExceptionReason::MissingAdjustmentAmount => { /* ... */ },
+///     ValidationExceptionReason::MissingAgreementApprovalId => { /* ... */ },
 ///     ValidationExceptionReason::MissingAgreementCancellationRequestId => { /* ... */ },
 ///     ValidationExceptionReason::MissingAgreementId => { /* ... */ },
 ///     ValidationExceptionReason::MissingAgreementProposalIdentifier => { /* ... */ },
 ///     ValidationExceptionReason::MissingAgreementRequestId => { /* ... */ },
+///     ValidationExceptionReason::MissingAwsLicenseManagerUserSubscriptionsSlr => { /* ... */ },
 ///     ValidationExceptionReason::MissingBillingAdjustments => { /* ... */ },
 ///     ValidationExceptionReason::MissingBillingAdjustmentRequestEntry => { /* ... */ },
 ///     ValidationExceptionReason::MissingChargeAmount => { /* ... */ },
@@ -76,8 +89,10 @@
 ///     ValidationExceptionReason::MissingInvoiceId => { /* ... */ },
 ///     ValidationExceptionReason::MissingMandatoryTerms => { /* ... */ },
 ///     ValidationExceptionReason::MissingName => { /* ... */ },
+///     ValidationExceptionReason::MissingNote => { /* ... */ },
 ///     ValidationExceptionReason::MissingPartyType => { /* ... */ },
 ///     ValidationExceptionReason::MissingPaymentRequestId => { /* ... */ },
+///     ValidationExceptionReason::MissingPlanInputs => { /* ... */ },
 ///     ValidationExceptionReason::MissingPurchaseOrders => { /* ... */ },
 ///     ValidationExceptionReason::MissingPurchaseOrderReference => { /* ... */ },
 ///     ValidationExceptionReason::MissingReason => { /* ... */ },
@@ -85,11 +100,15 @@
 ///     ValidationExceptionReason::MissingRequestedTerms => { /* ... */ },
 ///     ValidationExceptionReason::MissingRequestedTermConfiguration => { /* ... */ },
 ///     ValidationExceptionReason::MissingRequestedTermId => { /* ... */ },
+///     ValidationExceptionReason::MissingSortBy => { /* ... */ },
 ///     ValidationExceptionReason::MissingSourceAgreementIdentifier => { /* ... */ },
 ///     ValidationExceptionReason::MissingTermId => { /* ... */ },
 ///     ValidationExceptionReason::MissingUsageAgreement => { /* ... */ },
 ///     ValidationExceptionReason::MultipleAgreementIds => { /* ... */ },
 ///     ValidationExceptionReason::Other => { /* ... */ },
+///     ValidationExceptionReason::PendingApprovalAgreementRequest => { /* ... */ },
+///     ValidationExceptionReason::QueuedAgreementApproval => { /* ... */ },
+///     ValidationExceptionReason::RejectedByAgreementApprovalPolicy => { /* ... */ },
 ///     ValidationExceptionReason::SupersededAgreementProposal => { /* ... */ },
 ///     ValidationExceptionReason::UnsupportedAccountPlan => { /* ... */ },
 ///     ValidationExceptionReason::UnsupportedAction => { /* ... */ },
@@ -125,9 +144,15 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     BillingAdjustmentsLimitExceeded,
     #[allow(missing_docs)] // documentation missing in model
+    ClosedAgreementApproval,
+    #[allow(missing_docs)] // documentation missing in model
+    ClosedAgreementRequest,
+    #[allow(missing_docs)] // documentation missing in model
     DuplicateAgreementInOrganization,
     #[allow(missing_docs)] // documentation missing in model
     DuplicateCharges,
+    #[allow(missing_docs)] // documentation missing in model
+    DuplicatePlanReference,
     #[allow(missing_docs)] // documentation missing in model
     ExceededMaximumAdjustmentAmount,
     #[allow(missing_docs)] // documentation missing in model
@@ -135,9 +160,15 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     InactiveAgreement,
     #[allow(missing_docs)] // documentation missing in model
+    IncompatibleAgreementRequest,
+    #[allow(missing_docs)] // documentation missing in model
     IncompatibleTerms,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidAcceptorContact,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidAdjustmentAmount,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidAgreementApprovalId,
     #[allow(missing_docs)] // documentation missing in model
     InvalidAgreementCancellationRequestId,
     #[allow(missing_docs)] // documentation missing in model
@@ -148,6 +179,10 @@ pub enum ValidationExceptionReason {
     InvalidAgreementRequestId,
     #[allow(missing_docs)] // documentation missing in model
     InvalidAgreementType,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidApprovalType,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidApproverOutcomeIdToOverride,
     #[allow(missing_docs)] // documentation missing in model
     InvalidCatalog,
     #[allow(missing_docs)] // documentation missing in model
@@ -181,11 +216,15 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     InvalidNextToken,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidNote,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidPartyType,
     #[allow(missing_docs)] // documentation missing in model
     InvalidPaymentRequestId,
     #[allow(missing_docs)] // documentation missing in model
     InvalidPaymentRequestStatus,
+    #[allow(missing_docs)] // documentation missing in model
+    InvalidPlanInputs,
     #[allow(missing_docs)] // documentation missing in model
     InvalidPurchaseOrders,
     #[allow(missing_docs)] // documentation missing in model
@@ -203,6 +242,8 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     InvalidRequestedTermId,
     #[allow(missing_docs)] // documentation missing in model
+    InvalidResourceId,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidSortBy,
     #[allow(missing_docs)] // documentation missing in model
     InvalidSortOrder,
@@ -217,6 +258,8 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     MissingAdjustmentAmount,
     #[allow(missing_docs)] // documentation missing in model
+    MissingAgreementApprovalId,
+    #[allow(missing_docs)] // documentation missing in model
     MissingAgreementCancellationRequestId,
     #[allow(missing_docs)] // documentation missing in model
     MissingAgreementId,
@@ -224,6 +267,8 @@ pub enum ValidationExceptionReason {
     MissingAgreementProposalIdentifier,
     #[allow(missing_docs)] // documentation missing in model
     MissingAgreementRequestId,
+    #[allow(missing_docs)] // documentation missing in model
+    MissingAwsLicenseManagerUserSubscriptionsSlr,
     #[allow(missing_docs)] // documentation missing in model
     MissingBillingAdjustments,
     #[allow(missing_docs)] // documentation missing in model
@@ -251,9 +296,13 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     MissingName,
     #[allow(missing_docs)] // documentation missing in model
+    MissingNote,
+    #[allow(missing_docs)] // documentation missing in model
     MissingPartyType,
     #[allow(missing_docs)] // documentation missing in model
     MissingPaymentRequestId,
+    #[allow(missing_docs)] // documentation missing in model
+    MissingPlanInputs,
     #[allow(missing_docs)] // documentation missing in model
     MissingPurchaseOrders,
     #[allow(missing_docs)] // documentation missing in model
@@ -269,6 +318,8 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     MissingRequestedTermId,
     #[allow(missing_docs)] // documentation missing in model
+    MissingSortBy,
+    #[allow(missing_docs)] // documentation missing in model
     MissingSourceAgreementIdentifier,
     #[allow(missing_docs)] // documentation missing in model
     MissingTermId,
@@ -278,6 +329,12 @@ pub enum ValidationExceptionReason {
     MultipleAgreementIds,
     #[allow(missing_docs)] // documentation missing in model
     Other,
+    #[allow(missing_docs)] // documentation missing in model
+    PendingApprovalAgreementRequest,
+    #[allow(missing_docs)] // documentation missing in model
+    QueuedAgreementApproval,
+    #[allow(missing_docs)] // documentation missing in model
+    RejectedByAgreementApprovalPolicy,
     #[allow(missing_docs)] // documentation missing in model
     SupersededAgreementProposal,
     #[allow(missing_docs)] // documentation missing in model
@@ -294,18 +351,26 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
     fn from(s: &str) -> Self {
         match s {
             "BILLING_ADJUSTMENTS_LIMIT_EXCEEDED" => ValidationExceptionReason::BillingAdjustmentsLimitExceeded,
+            "CLOSED_AGREEMENT_APPROVAL" => ValidationExceptionReason::ClosedAgreementApproval,
+            "CLOSED_AGREEMENT_REQUEST" => ValidationExceptionReason::ClosedAgreementRequest,
             "DUPLICATE_AGREEMENT_IN_ORGANIZATION" => ValidationExceptionReason::DuplicateAgreementInOrganization,
             "DUPLICATE_CHARGES" => ValidationExceptionReason::DuplicateCharges,
+            "DUPLICATE_PLAN_REFERENCE" => ValidationExceptionReason::DuplicatePlanReference,
             "EXCEEDED_MAXIMUM_ADJUSTMENT_AMOUNT" => ValidationExceptionReason::ExceededMaximumAdjustmentAmount,
             "EXPIRED_AGREEMENT_PROPOSAL" => ValidationExceptionReason::ExpiredAgreementProposal,
             "INACTIVE_AGREEMENT" => ValidationExceptionReason::InactiveAgreement,
+            "INCOMPATIBLE_AGREEMENT_REQUEST" => ValidationExceptionReason::IncompatibleAgreementRequest,
             "INCOMPATIBLE_TERMS" => ValidationExceptionReason::IncompatibleTerms,
+            "INVALID_ACCEPTOR_CONTACT" => ValidationExceptionReason::InvalidAcceptorContact,
             "INVALID_ADJUSTMENT_AMOUNT" => ValidationExceptionReason::InvalidAdjustmentAmount,
+            "INVALID_AGREEMENT_APPROVAL_ID" => ValidationExceptionReason::InvalidAgreementApprovalId,
             "INVALID_AGREEMENT_CANCELLATION_REQUEST_ID" => ValidationExceptionReason::InvalidAgreementCancellationRequestId,
             "INVALID_AGREEMENT_ID" => ValidationExceptionReason::InvalidAgreementId,
             "INVALID_AGREEMENT_PROPOSAL_IDENTIFIER" => ValidationExceptionReason::InvalidAgreementProposalIdentifier,
             "INVALID_AGREEMENT_REQUEST_ID" => ValidationExceptionReason::InvalidAgreementRequestId,
             "INVALID_AGREEMENT_TYPE" => ValidationExceptionReason::InvalidAgreementType,
+            "INVALID_APPROVAL_TYPE" => ValidationExceptionReason::InvalidApprovalType,
+            "INVALID_APPROVER_OUTCOME_ID_TO_OVERRIDE" => ValidationExceptionReason::InvalidApproverOutcomeIdToOverride,
             "INVALID_CATALOG" => ValidationExceptionReason::InvalidCatalog,
             "INVALID_CHARGE_AMOUNT" => ValidationExceptionReason::InvalidChargeAmount,
             "INVALID_CHARGE_ID" => ValidationExceptionReason::InvalidChargeId,
@@ -322,9 +387,11 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
             "INVALID_MAX_RESULTS" => ValidationExceptionReason::InvalidMaxResults,
             "INVALID_NAME" => ValidationExceptionReason::InvalidName,
             "INVALID_NEXT_TOKEN" => ValidationExceptionReason::InvalidNextToken,
+            "INVALID_NOTE" => ValidationExceptionReason::InvalidNote,
             "INVALID_PARTY_TYPE" => ValidationExceptionReason::InvalidPartyType,
             "INVALID_PAYMENT_REQUEST_ID" => ValidationExceptionReason::InvalidPaymentRequestId,
             "INVALID_PAYMENT_REQUEST_STATUS" => ValidationExceptionReason::InvalidPaymentRequestStatus,
+            "INVALID_PLAN_INPUTS" => ValidationExceptionReason::InvalidPlanInputs,
             "INVALID_PURCHASE_ORDERS" => ValidationExceptionReason::InvalidPurchaseOrders,
             "INVALID_PURCHASE_ORDER_REFERENCE" => ValidationExceptionReason::InvalidPurchaseOrderReference,
             "INVALID_REASON" => ValidationExceptionReason::InvalidReason,
@@ -333,6 +400,7 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
             "INVALID_REQUESTED_TERMS" => ValidationExceptionReason::InvalidRequestedTerms,
             "INVALID_REQUESTED_TERM_CONFIGURATION" => ValidationExceptionReason::InvalidRequestedTermConfiguration,
             "INVALID_REQUESTED_TERM_ID" => ValidationExceptionReason::InvalidRequestedTermId,
+            "INVALID_RESOURCE_ID" => ValidationExceptionReason::InvalidResourceId,
             "INVALID_SORT_BY" => ValidationExceptionReason::InvalidSortBy,
             "INVALID_SORT_ORDER" => ValidationExceptionReason::InvalidSortOrder,
             "INVALID_SOURCE_AGREEMENT_IDENTIFIER" => ValidationExceptionReason::InvalidSourceAgreementIdentifier,
@@ -340,10 +408,12 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
             "INVALID_TERM_ID" => ValidationExceptionReason::InvalidTermId,
             "MISSING_ACCOUNT_ADDRESS" => ValidationExceptionReason::MissingAccountAddress,
             "MISSING_ADJUSTMENT_AMOUNT" => ValidationExceptionReason::MissingAdjustmentAmount,
+            "MISSING_AGREEMENT_APPROVAL_ID" => ValidationExceptionReason::MissingAgreementApprovalId,
             "MISSING_AGREEMENT_CANCELLATION_REQUEST_ID" => ValidationExceptionReason::MissingAgreementCancellationRequestId,
             "MISSING_AGREEMENT_ID" => ValidationExceptionReason::MissingAgreementId,
             "MISSING_AGREEMENT_PROPOSAL_IDENTIFIER" => ValidationExceptionReason::MissingAgreementProposalIdentifier,
             "MISSING_AGREEMENT_REQUEST_ID" => ValidationExceptionReason::MissingAgreementRequestId,
+            "MISSING_AWS_LICENSE_MANAGER_USER_SUBSCRIPTIONS_SLR" => ValidationExceptionReason::MissingAwsLicenseManagerUserSubscriptionsSlr,
             "MISSING_BILLING_ADJUSTMENTS" => ValidationExceptionReason::MissingBillingAdjustments,
             "MISSING_BILLING_ADJUSTMENT_REQUEST_ENTRY" => ValidationExceptionReason::MissingBillingAdjustmentRequestEntry,
             "MISSING_CHARGE_AMOUNT" => ValidationExceptionReason::MissingChargeAmount,
@@ -357,8 +427,10 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
             "MISSING_INVOICE_ID" => ValidationExceptionReason::MissingInvoiceId,
             "MISSING_MANDATORY_TERMS" => ValidationExceptionReason::MissingMandatoryTerms,
             "MISSING_NAME" => ValidationExceptionReason::MissingName,
+            "MISSING_NOTE" => ValidationExceptionReason::MissingNote,
             "MISSING_PARTY_TYPE" => ValidationExceptionReason::MissingPartyType,
             "MISSING_PAYMENT_REQUEST_ID" => ValidationExceptionReason::MissingPaymentRequestId,
+            "MISSING_PLAN_INPUTS" => ValidationExceptionReason::MissingPlanInputs,
             "MISSING_PURCHASE_ORDERS" => ValidationExceptionReason::MissingPurchaseOrders,
             "MISSING_PURCHASE_ORDER_REFERENCE" => ValidationExceptionReason::MissingPurchaseOrderReference,
             "MISSING_REASON" => ValidationExceptionReason::MissingReason,
@@ -366,11 +438,15 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
             "MISSING_REQUESTED_TERMS" => ValidationExceptionReason::MissingRequestedTerms,
             "MISSING_REQUESTED_TERM_CONFIGURATION" => ValidationExceptionReason::MissingRequestedTermConfiguration,
             "MISSING_REQUESTED_TERM_ID" => ValidationExceptionReason::MissingRequestedTermId,
+            "MISSING_SORT_BY" => ValidationExceptionReason::MissingSortBy,
             "MISSING_SOURCE_AGREEMENT_IDENTIFIER" => ValidationExceptionReason::MissingSourceAgreementIdentifier,
             "MISSING_TERM_ID" => ValidationExceptionReason::MissingTermId,
             "MISSING_USAGE_AGREEMENT" => ValidationExceptionReason::MissingUsageAgreement,
             "MULTIPLE_AGREEMENT_IDS" => ValidationExceptionReason::MultipleAgreementIds,
             "OTHER" => ValidationExceptionReason::Other,
+            "PENDING_APPROVAL_AGREEMENT_REQUEST" => ValidationExceptionReason::PendingApprovalAgreementRequest,
+            "QUEUED_AGREEMENT_APPROVAL" => ValidationExceptionReason::QueuedAgreementApproval,
+            "REJECTED_BY_AGREEMENT_APPROVAL_POLICY" => ValidationExceptionReason::RejectedByAgreementApprovalPolicy,
             "SUPERSEDED_AGREEMENT_PROPOSAL" => ValidationExceptionReason::SupersededAgreementProposal,
             "UNSUPPORTED_ACCOUNT_PLAN" => ValidationExceptionReason::UnsupportedAccountPlan,
             "UNSUPPORTED_ACTION" => ValidationExceptionReason::UnsupportedAction,
@@ -391,18 +467,26 @@ impl ValidationExceptionReason {
     pub fn as_str(&self) -> &str {
         match self {
             ValidationExceptionReason::BillingAdjustmentsLimitExceeded => "BILLING_ADJUSTMENTS_LIMIT_EXCEEDED",
+            ValidationExceptionReason::ClosedAgreementApproval => "CLOSED_AGREEMENT_APPROVAL",
+            ValidationExceptionReason::ClosedAgreementRequest => "CLOSED_AGREEMENT_REQUEST",
             ValidationExceptionReason::DuplicateAgreementInOrganization => "DUPLICATE_AGREEMENT_IN_ORGANIZATION",
             ValidationExceptionReason::DuplicateCharges => "DUPLICATE_CHARGES",
+            ValidationExceptionReason::DuplicatePlanReference => "DUPLICATE_PLAN_REFERENCE",
             ValidationExceptionReason::ExceededMaximumAdjustmentAmount => "EXCEEDED_MAXIMUM_ADJUSTMENT_AMOUNT",
             ValidationExceptionReason::ExpiredAgreementProposal => "EXPIRED_AGREEMENT_PROPOSAL",
             ValidationExceptionReason::InactiveAgreement => "INACTIVE_AGREEMENT",
+            ValidationExceptionReason::IncompatibleAgreementRequest => "INCOMPATIBLE_AGREEMENT_REQUEST",
             ValidationExceptionReason::IncompatibleTerms => "INCOMPATIBLE_TERMS",
+            ValidationExceptionReason::InvalidAcceptorContact => "INVALID_ACCEPTOR_CONTACT",
             ValidationExceptionReason::InvalidAdjustmentAmount => "INVALID_ADJUSTMENT_AMOUNT",
+            ValidationExceptionReason::InvalidAgreementApprovalId => "INVALID_AGREEMENT_APPROVAL_ID",
             ValidationExceptionReason::InvalidAgreementCancellationRequestId => "INVALID_AGREEMENT_CANCELLATION_REQUEST_ID",
             ValidationExceptionReason::InvalidAgreementId => "INVALID_AGREEMENT_ID",
             ValidationExceptionReason::InvalidAgreementProposalIdentifier => "INVALID_AGREEMENT_PROPOSAL_IDENTIFIER",
             ValidationExceptionReason::InvalidAgreementRequestId => "INVALID_AGREEMENT_REQUEST_ID",
             ValidationExceptionReason::InvalidAgreementType => "INVALID_AGREEMENT_TYPE",
+            ValidationExceptionReason::InvalidApprovalType => "INVALID_APPROVAL_TYPE",
+            ValidationExceptionReason::InvalidApproverOutcomeIdToOverride => "INVALID_APPROVER_OUTCOME_ID_TO_OVERRIDE",
             ValidationExceptionReason::InvalidCatalog => "INVALID_CATALOG",
             ValidationExceptionReason::InvalidChargeAmount => "INVALID_CHARGE_AMOUNT",
             ValidationExceptionReason::InvalidChargeId => "INVALID_CHARGE_ID",
@@ -419,9 +503,11 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::InvalidMaxResults => "INVALID_MAX_RESULTS",
             ValidationExceptionReason::InvalidName => "INVALID_NAME",
             ValidationExceptionReason::InvalidNextToken => "INVALID_NEXT_TOKEN",
+            ValidationExceptionReason::InvalidNote => "INVALID_NOTE",
             ValidationExceptionReason::InvalidPartyType => "INVALID_PARTY_TYPE",
             ValidationExceptionReason::InvalidPaymentRequestId => "INVALID_PAYMENT_REQUEST_ID",
             ValidationExceptionReason::InvalidPaymentRequestStatus => "INVALID_PAYMENT_REQUEST_STATUS",
+            ValidationExceptionReason::InvalidPlanInputs => "INVALID_PLAN_INPUTS",
             ValidationExceptionReason::InvalidPurchaseOrders => "INVALID_PURCHASE_ORDERS",
             ValidationExceptionReason::InvalidPurchaseOrderReference => "INVALID_PURCHASE_ORDER_REFERENCE",
             ValidationExceptionReason::InvalidReason => "INVALID_REASON",
@@ -430,6 +516,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::InvalidRequestedTerms => "INVALID_REQUESTED_TERMS",
             ValidationExceptionReason::InvalidRequestedTermConfiguration => "INVALID_REQUESTED_TERM_CONFIGURATION",
             ValidationExceptionReason::InvalidRequestedTermId => "INVALID_REQUESTED_TERM_ID",
+            ValidationExceptionReason::InvalidResourceId => "INVALID_RESOURCE_ID",
             ValidationExceptionReason::InvalidSortBy => "INVALID_SORT_BY",
             ValidationExceptionReason::InvalidSortOrder => "INVALID_SORT_ORDER",
             ValidationExceptionReason::InvalidSourceAgreementIdentifier => "INVALID_SOURCE_AGREEMENT_IDENTIFIER",
@@ -437,10 +524,12 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::InvalidTermId => "INVALID_TERM_ID",
             ValidationExceptionReason::MissingAccountAddress => "MISSING_ACCOUNT_ADDRESS",
             ValidationExceptionReason::MissingAdjustmentAmount => "MISSING_ADJUSTMENT_AMOUNT",
+            ValidationExceptionReason::MissingAgreementApprovalId => "MISSING_AGREEMENT_APPROVAL_ID",
             ValidationExceptionReason::MissingAgreementCancellationRequestId => "MISSING_AGREEMENT_CANCELLATION_REQUEST_ID",
             ValidationExceptionReason::MissingAgreementId => "MISSING_AGREEMENT_ID",
             ValidationExceptionReason::MissingAgreementProposalIdentifier => "MISSING_AGREEMENT_PROPOSAL_IDENTIFIER",
             ValidationExceptionReason::MissingAgreementRequestId => "MISSING_AGREEMENT_REQUEST_ID",
+            ValidationExceptionReason::MissingAwsLicenseManagerUserSubscriptionsSlr => "MISSING_AWS_LICENSE_MANAGER_USER_SUBSCRIPTIONS_SLR",
             ValidationExceptionReason::MissingBillingAdjustments => "MISSING_BILLING_ADJUSTMENTS",
             ValidationExceptionReason::MissingBillingAdjustmentRequestEntry => "MISSING_BILLING_ADJUSTMENT_REQUEST_ENTRY",
             ValidationExceptionReason::MissingChargeAmount => "MISSING_CHARGE_AMOUNT",
@@ -454,8 +543,10 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::MissingInvoiceId => "MISSING_INVOICE_ID",
             ValidationExceptionReason::MissingMandatoryTerms => "MISSING_MANDATORY_TERMS",
             ValidationExceptionReason::MissingName => "MISSING_NAME",
+            ValidationExceptionReason::MissingNote => "MISSING_NOTE",
             ValidationExceptionReason::MissingPartyType => "MISSING_PARTY_TYPE",
             ValidationExceptionReason::MissingPaymentRequestId => "MISSING_PAYMENT_REQUEST_ID",
+            ValidationExceptionReason::MissingPlanInputs => "MISSING_PLAN_INPUTS",
             ValidationExceptionReason::MissingPurchaseOrders => "MISSING_PURCHASE_ORDERS",
             ValidationExceptionReason::MissingPurchaseOrderReference => "MISSING_PURCHASE_ORDER_REFERENCE",
             ValidationExceptionReason::MissingReason => "MISSING_REASON",
@@ -463,11 +554,15 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::MissingRequestedTerms => "MISSING_REQUESTED_TERMS",
             ValidationExceptionReason::MissingRequestedTermConfiguration => "MISSING_REQUESTED_TERM_CONFIGURATION",
             ValidationExceptionReason::MissingRequestedTermId => "MISSING_REQUESTED_TERM_ID",
+            ValidationExceptionReason::MissingSortBy => "MISSING_SORT_BY",
             ValidationExceptionReason::MissingSourceAgreementIdentifier => "MISSING_SOURCE_AGREEMENT_IDENTIFIER",
             ValidationExceptionReason::MissingTermId => "MISSING_TERM_ID",
             ValidationExceptionReason::MissingUsageAgreement => "MISSING_USAGE_AGREEMENT",
             ValidationExceptionReason::MultipleAgreementIds => "MULTIPLE_AGREEMENT_IDS",
             ValidationExceptionReason::Other => "OTHER",
+            ValidationExceptionReason::PendingApprovalAgreementRequest => "PENDING_APPROVAL_AGREEMENT_REQUEST",
+            ValidationExceptionReason::QueuedAgreementApproval => "QUEUED_AGREEMENT_APPROVAL",
+            ValidationExceptionReason::RejectedByAgreementApprovalPolicy => "REJECTED_BY_AGREEMENT_APPROVAL_POLICY",
             ValidationExceptionReason::SupersededAgreementProposal => "SUPERSEDED_AGREEMENT_PROPOSAL",
             ValidationExceptionReason::UnsupportedAccountPlan => "UNSUPPORTED_ACCOUNT_PLAN",
             ValidationExceptionReason::UnsupportedAction => "UNSUPPORTED_ACTION",
@@ -479,18 +574,26 @@ impl ValidationExceptionReason {
     pub const fn values() -> &'static [&'static str] {
         &[
             "BILLING_ADJUSTMENTS_LIMIT_EXCEEDED",
+            "CLOSED_AGREEMENT_APPROVAL",
+            "CLOSED_AGREEMENT_REQUEST",
             "DUPLICATE_AGREEMENT_IN_ORGANIZATION",
             "DUPLICATE_CHARGES",
+            "DUPLICATE_PLAN_REFERENCE",
             "EXCEEDED_MAXIMUM_ADJUSTMENT_AMOUNT",
             "EXPIRED_AGREEMENT_PROPOSAL",
             "INACTIVE_AGREEMENT",
+            "INCOMPATIBLE_AGREEMENT_REQUEST",
             "INCOMPATIBLE_TERMS",
+            "INVALID_ACCEPTOR_CONTACT",
             "INVALID_ADJUSTMENT_AMOUNT",
+            "INVALID_AGREEMENT_APPROVAL_ID",
             "INVALID_AGREEMENT_CANCELLATION_REQUEST_ID",
             "INVALID_AGREEMENT_ID",
             "INVALID_AGREEMENT_PROPOSAL_IDENTIFIER",
             "INVALID_AGREEMENT_REQUEST_ID",
             "INVALID_AGREEMENT_TYPE",
+            "INVALID_APPROVAL_TYPE",
+            "INVALID_APPROVER_OUTCOME_ID_TO_OVERRIDE",
             "INVALID_CATALOG",
             "INVALID_CHARGE_AMOUNT",
             "INVALID_CHARGE_ID",
@@ -507,9 +610,11 @@ impl ValidationExceptionReason {
             "INVALID_MAX_RESULTS",
             "INVALID_NAME",
             "INVALID_NEXT_TOKEN",
+            "INVALID_NOTE",
             "INVALID_PARTY_TYPE",
             "INVALID_PAYMENT_REQUEST_ID",
             "INVALID_PAYMENT_REQUEST_STATUS",
+            "INVALID_PLAN_INPUTS",
             "INVALID_PURCHASE_ORDERS",
             "INVALID_PURCHASE_ORDER_REFERENCE",
             "INVALID_REASON",
@@ -518,6 +623,7 @@ impl ValidationExceptionReason {
             "INVALID_REQUESTED_TERMS",
             "INVALID_REQUESTED_TERM_CONFIGURATION",
             "INVALID_REQUESTED_TERM_ID",
+            "INVALID_RESOURCE_ID",
             "INVALID_SORT_BY",
             "INVALID_SORT_ORDER",
             "INVALID_SOURCE_AGREEMENT_IDENTIFIER",
@@ -525,10 +631,12 @@ impl ValidationExceptionReason {
             "INVALID_TERM_ID",
             "MISSING_ACCOUNT_ADDRESS",
             "MISSING_ADJUSTMENT_AMOUNT",
+            "MISSING_AGREEMENT_APPROVAL_ID",
             "MISSING_AGREEMENT_CANCELLATION_REQUEST_ID",
             "MISSING_AGREEMENT_ID",
             "MISSING_AGREEMENT_PROPOSAL_IDENTIFIER",
             "MISSING_AGREEMENT_REQUEST_ID",
+            "MISSING_AWS_LICENSE_MANAGER_USER_SUBSCRIPTIONS_SLR",
             "MISSING_BILLING_ADJUSTMENTS",
             "MISSING_BILLING_ADJUSTMENT_REQUEST_ENTRY",
             "MISSING_CHARGE_AMOUNT",
@@ -542,8 +650,10 @@ impl ValidationExceptionReason {
             "MISSING_INVOICE_ID",
             "MISSING_MANDATORY_TERMS",
             "MISSING_NAME",
+            "MISSING_NOTE",
             "MISSING_PARTY_TYPE",
             "MISSING_PAYMENT_REQUEST_ID",
+            "MISSING_PLAN_INPUTS",
             "MISSING_PURCHASE_ORDERS",
             "MISSING_PURCHASE_ORDER_REFERENCE",
             "MISSING_REASON",
@@ -551,11 +661,15 @@ impl ValidationExceptionReason {
             "MISSING_REQUESTED_TERMS",
             "MISSING_REQUESTED_TERM_CONFIGURATION",
             "MISSING_REQUESTED_TERM_ID",
+            "MISSING_SORT_BY",
             "MISSING_SOURCE_AGREEMENT_IDENTIFIER",
             "MISSING_TERM_ID",
             "MISSING_USAGE_AGREEMENT",
             "MULTIPLE_AGREEMENT_IDS",
             "OTHER",
+            "PENDING_APPROVAL_AGREEMENT_REQUEST",
+            "QUEUED_AGREEMENT_APPROVAL",
+            "REJECTED_BY_AGREEMENT_APPROVAL_POLICY",
             "SUPERSEDED_AGREEMENT_PROPOSAL",
             "UNSUPPORTED_ACCOUNT_PLAN",
             "UNSUPPORTED_ACTION",
@@ -584,18 +698,26 @@ impl ::std::fmt::Display for ValidationExceptionReason {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ValidationExceptionReason::BillingAdjustmentsLimitExceeded => write!(f, "BILLING_ADJUSTMENTS_LIMIT_EXCEEDED"),
+            ValidationExceptionReason::ClosedAgreementApproval => write!(f, "CLOSED_AGREEMENT_APPROVAL"),
+            ValidationExceptionReason::ClosedAgreementRequest => write!(f, "CLOSED_AGREEMENT_REQUEST"),
             ValidationExceptionReason::DuplicateAgreementInOrganization => write!(f, "DUPLICATE_AGREEMENT_IN_ORGANIZATION"),
             ValidationExceptionReason::DuplicateCharges => write!(f, "DUPLICATE_CHARGES"),
+            ValidationExceptionReason::DuplicatePlanReference => write!(f, "DUPLICATE_PLAN_REFERENCE"),
             ValidationExceptionReason::ExceededMaximumAdjustmentAmount => write!(f, "EXCEEDED_MAXIMUM_ADJUSTMENT_AMOUNT"),
             ValidationExceptionReason::ExpiredAgreementProposal => write!(f, "EXPIRED_AGREEMENT_PROPOSAL"),
             ValidationExceptionReason::InactiveAgreement => write!(f, "INACTIVE_AGREEMENT"),
+            ValidationExceptionReason::IncompatibleAgreementRequest => write!(f, "INCOMPATIBLE_AGREEMENT_REQUEST"),
             ValidationExceptionReason::IncompatibleTerms => write!(f, "INCOMPATIBLE_TERMS"),
+            ValidationExceptionReason::InvalidAcceptorContact => write!(f, "INVALID_ACCEPTOR_CONTACT"),
             ValidationExceptionReason::InvalidAdjustmentAmount => write!(f, "INVALID_ADJUSTMENT_AMOUNT"),
+            ValidationExceptionReason::InvalidAgreementApprovalId => write!(f, "INVALID_AGREEMENT_APPROVAL_ID"),
             ValidationExceptionReason::InvalidAgreementCancellationRequestId => write!(f, "INVALID_AGREEMENT_CANCELLATION_REQUEST_ID"),
             ValidationExceptionReason::InvalidAgreementId => write!(f, "INVALID_AGREEMENT_ID"),
             ValidationExceptionReason::InvalidAgreementProposalIdentifier => write!(f, "INVALID_AGREEMENT_PROPOSAL_IDENTIFIER"),
             ValidationExceptionReason::InvalidAgreementRequestId => write!(f, "INVALID_AGREEMENT_REQUEST_ID"),
             ValidationExceptionReason::InvalidAgreementType => write!(f, "INVALID_AGREEMENT_TYPE"),
+            ValidationExceptionReason::InvalidApprovalType => write!(f, "INVALID_APPROVAL_TYPE"),
+            ValidationExceptionReason::InvalidApproverOutcomeIdToOverride => write!(f, "INVALID_APPROVER_OUTCOME_ID_TO_OVERRIDE"),
             ValidationExceptionReason::InvalidCatalog => write!(f, "INVALID_CATALOG"),
             ValidationExceptionReason::InvalidChargeAmount => write!(f, "INVALID_CHARGE_AMOUNT"),
             ValidationExceptionReason::InvalidChargeId => write!(f, "INVALID_CHARGE_ID"),
@@ -612,9 +734,11 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::InvalidMaxResults => write!(f, "INVALID_MAX_RESULTS"),
             ValidationExceptionReason::InvalidName => write!(f, "INVALID_NAME"),
             ValidationExceptionReason::InvalidNextToken => write!(f, "INVALID_NEXT_TOKEN"),
+            ValidationExceptionReason::InvalidNote => write!(f, "INVALID_NOTE"),
             ValidationExceptionReason::InvalidPartyType => write!(f, "INVALID_PARTY_TYPE"),
             ValidationExceptionReason::InvalidPaymentRequestId => write!(f, "INVALID_PAYMENT_REQUEST_ID"),
             ValidationExceptionReason::InvalidPaymentRequestStatus => write!(f, "INVALID_PAYMENT_REQUEST_STATUS"),
+            ValidationExceptionReason::InvalidPlanInputs => write!(f, "INVALID_PLAN_INPUTS"),
             ValidationExceptionReason::InvalidPurchaseOrders => write!(f, "INVALID_PURCHASE_ORDERS"),
             ValidationExceptionReason::InvalidPurchaseOrderReference => write!(f, "INVALID_PURCHASE_ORDER_REFERENCE"),
             ValidationExceptionReason::InvalidReason => write!(f, "INVALID_REASON"),
@@ -623,6 +747,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::InvalidRequestedTerms => write!(f, "INVALID_REQUESTED_TERMS"),
             ValidationExceptionReason::InvalidRequestedTermConfiguration => write!(f, "INVALID_REQUESTED_TERM_CONFIGURATION"),
             ValidationExceptionReason::InvalidRequestedTermId => write!(f, "INVALID_REQUESTED_TERM_ID"),
+            ValidationExceptionReason::InvalidResourceId => write!(f, "INVALID_RESOURCE_ID"),
             ValidationExceptionReason::InvalidSortBy => write!(f, "INVALID_SORT_BY"),
             ValidationExceptionReason::InvalidSortOrder => write!(f, "INVALID_SORT_ORDER"),
             ValidationExceptionReason::InvalidSourceAgreementIdentifier => write!(f, "INVALID_SOURCE_AGREEMENT_IDENTIFIER"),
@@ -630,10 +755,14 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::InvalidTermId => write!(f, "INVALID_TERM_ID"),
             ValidationExceptionReason::MissingAccountAddress => write!(f, "MISSING_ACCOUNT_ADDRESS"),
             ValidationExceptionReason::MissingAdjustmentAmount => write!(f, "MISSING_ADJUSTMENT_AMOUNT"),
+            ValidationExceptionReason::MissingAgreementApprovalId => write!(f, "MISSING_AGREEMENT_APPROVAL_ID"),
             ValidationExceptionReason::MissingAgreementCancellationRequestId => write!(f, "MISSING_AGREEMENT_CANCELLATION_REQUEST_ID"),
             ValidationExceptionReason::MissingAgreementId => write!(f, "MISSING_AGREEMENT_ID"),
             ValidationExceptionReason::MissingAgreementProposalIdentifier => write!(f, "MISSING_AGREEMENT_PROPOSAL_IDENTIFIER"),
             ValidationExceptionReason::MissingAgreementRequestId => write!(f, "MISSING_AGREEMENT_REQUEST_ID"),
+            ValidationExceptionReason::MissingAwsLicenseManagerUserSubscriptionsSlr => {
+                write!(f, "MISSING_AWS_LICENSE_MANAGER_USER_SUBSCRIPTIONS_SLR")
+            }
             ValidationExceptionReason::MissingBillingAdjustments => write!(f, "MISSING_BILLING_ADJUSTMENTS"),
             ValidationExceptionReason::MissingBillingAdjustmentRequestEntry => write!(f, "MISSING_BILLING_ADJUSTMENT_REQUEST_ENTRY"),
             ValidationExceptionReason::MissingChargeAmount => write!(f, "MISSING_CHARGE_AMOUNT"),
@@ -647,8 +776,10 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::MissingInvoiceId => write!(f, "MISSING_INVOICE_ID"),
             ValidationExceptionReason::MissingMandatoryTerms => write!(f, "MISSING_MANDATORY_TERMS"),
             ValidationExceptionReason::MissingName => write!(f, "MISSING_NAME"),
+            ValidationExceptionReason::MissingNote => write!(f, "MISSING_NOTE"),
             ValidationExceptionReason::MissingPartyType => write!(f, "MISSING_PARTY_TYPE"),
             ValidationExceptionReason::MissingPaymentRequestId => write!(f, "MISSING_PAYMENT_REQUEST_ID"),
+            ValidationExceptionReason::MissingPlanInputs => write!(f, "MISSING_PLAN_INPUTS"),
             ValidationExceptionReason::MissingPurchaseOrders => write!(f, "MISSING_PURCHASE_ORDERS"),
             ValidationExceptionReason::MissingPurchaseOrderReference => write!(f, "MISSING_PURCHASE_ORDER_REFERENCE"),
             ValidationExceptionReason::MissingReason => write!(f, "MISSING_REASON"),
@@ -656,11 +787,15 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::MissingRequestedTerms => write!(f, "MISSING_REQUESTED_TERMS"),
             ValidationExceptionReason::MissingRequestedTermConfiguration => write!(f, "MISSING_REQUESTED_TERM_CONFIGURATION"),
             ValidationExceptionReason::MissingRequestedTermId => write!(f, "MISSING_REQUESTED_TERM_ID"),
+            ValidationExceptionReason::MissingSortBy => write!(f, "MISSING_SORT_BY"),
             ValidationExceptionReason::MissingSourceAgreementIdentifier => write!(f, "MISSING_SOURCE_AGREEMENT_IDENTIFIER"),
             ValidationExceptionReason::MissingTermId => write!(f, "MISSING_TERM_ID"),
             ValidationExceptionReason::MissingUsageAgreement => write!(f, "MISSING_USAGE_AGREEMENT"),
             ValidationExceptionReason::MultipleAgreementIds => write!(f, "MULTIPLE_AGREEMENT_IDS"),
             ValidationExceptionReason::Other => write!(f, "OTHER"),
+            ValidationExceptionReason::PendingApprovalAgreementRequest => write!(f, "PENDING_APPROVAL_AGREEMENT_REQUEST"),
+            ValidationExceptionReason::QueuedAgreementApproval => write!(f, "QUEUED_AGREEMENT_APPROVAL"),
+            ValidationExceptionReason::RejectedByAgreementApprovalPolicy => write!(f, "REJECTED_BY_AGREEMENT_APPROVAL_POLICY"),
             ValidationExceptionReason::SupersededAgreementProposal => write!(f, "SUPERSEDED_AGREEMENT_PROPOSAL"),
             ValidationExceptionReason::UnsupportedAccountPlan => write!(f, "UNSUPPORTED_ACCOUNT_PLAN"),
             ValidationExceptionReason::UnsupportedAction => write!(f, "UNSUPPORTED_ACTION"),

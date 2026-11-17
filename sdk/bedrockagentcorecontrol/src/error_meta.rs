@@ -2273,6 +2273,38 @@ impl From<crate::operation::delete_workload_identity::DeleteWorkloadIdentityErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_agent_insight_store::GetAgentInsightStoreError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_agent_insight_store::GetAgentInsightStoreError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_agent_insight_store::GetAgentInsightStoreError> for Error {
+    fn from(err: crate::operation::get_agent_insight_store::GetAgentInsightStoreError) -> Self {
+        match err {
+            crate::operation::get_agent_insight_store::GetAgentInsightStoreError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_agent_insight_store::GetAgentInsightStoreError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_agent_insight_store::GetAgentInsightStoreError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_agent_insight_store::GetAgentInsightStoreError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_agent_insight_store::GetAgentInsightStoreError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_agent_insight_store::GetAgentInsightStoreError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_agent_runtime::GetAgentRuntimeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3362,6 +3394,38 @@ impl From<crate::operation::get_workload_identity::GetWorkloadIdentityError> for
             crate::operation::get_workload_identity::GetWorkloadIdentityError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
             crate::operation::get_workload_identity::GetWorkloadIdentityError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_workload_identity::GetWorkloadIdentityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_agent_insight_stores::ListAgentInsightStoresError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_agent_insight_stores::ListAgentInsightStoresError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_agent_insight_stores::ListAgentInsightStoresError> for Error {
+    fn from(err: crate::operation::list_agent_insight_stores::ListAgentInsightStoresError) -> Self {
+        match err {
+            crate::operation::list_agent_insight_stores::ListAgentInsightStoresError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_agent_insight_stores::ListAgentInsightStoresError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_agent_insight_stores::ListAgentInsightStoresError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_agent_insight_stores::ListAgentInsightStoresError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_agent_insight_stores::ListAgentInsightStoresError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4996,6 +5060,49 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_agent_insight_store::UpdateAgentInsightStoreError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_agent_insight_store::UpdateAgentInsightStoreError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_agent_insight_store::UpdateAgentInsightStoreError> for Error {
+    fn from(err: crate::operation::update_agent_insight_store::UpdateAgentInsightStoreError) -> Self {
+        match err {
+            crate::operation::update_agent_insight_store::UpdateAgentInsightStoreError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_agent_insight_store::UpdateAgentInsightStoreError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_agent_insight_store::UpdateAgentInsightStoreError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_agent_insight_store::UpdateAgentInsightStoreError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_agent_insight_store::UpdateAgentInsightStoreError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_agent_insight_store::UpdateAgentInsightStoreError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_agent_insight_store::UpdateAgentInsightStoreError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_agent_insight_store::UpdateAgentInsightStoreError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

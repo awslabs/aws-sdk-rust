@@ -213,6 +213,16 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateAccessS
                 captured.insert("name", value);
             }
         }
+        if requested.should_capture("coreNetworkEndpointId") {
+            if let ::std::option::Option::Some(value) = input.core_network_endpoint_id.as_deref() {
+                captured.insert("coreNetworkEndpointId", value);
+            }
+        }
+        if requested.should_capture("segment") {
+            if let ::std::option::Option::Some(value) = input.segment.as_deref() {
+                captured.insert("segment", value);
+            }
+        }
         if requested.should_capture("dnsViewId") {
             if let ::std::option::Option::Some(value) = input.dns_view_id.as_deref() {
                 captured.insert("dnsViewId", value);

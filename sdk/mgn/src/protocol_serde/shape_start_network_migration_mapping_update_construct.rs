@@ -3,20 +3,26 @@ pub fn ser_start_network_migration_mapping_update_construct(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StartNetworkMigrationMappingUpdateConstruct,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    {
-        object.key("segmentID").string(input.segment_id.as_str());
+    if let Some(var_1) = &input.segment_id {
+        object.key("segmentID").string(var_1.as_str());
     }
-    {
-        object.key("constructID").string(input.construct_id.as_str());
+    if let Some(var_2) = &input.segment_logical_id {
+        object.key("segmentLogicalID").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.construct_id {
+        object.key("constructID").string(var_3.as_str());
     }
     {
         object.key("constructType").string(input.construct_type.as_str());
     }
-    if let Some(var_1) = &input.operation {
+    if let Some(var_4) = &input.construct_logical_id {
+        object.key("constructLogicalID").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.operation {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("operation").start_object();
-        crate::protocol_serde::shape_operation_union::ser_operation_union(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_6 = object.key("operation").start_object();
+        crate::protocol_serde::shape_operation_union::ser_operation_union(&mut object_6, var_5)?;
+        object_6.finish();
     }
     Ok(())
 }

@@ -76,6 +76,9 @@ pub mod get_association;
 /// Types for the `GetBacklogTask` operation.
 pub mod get_backlog_task;
 
+/// Types for the `GetChat` operation.
+pub mod get_chat;
+
 /// Types for the `GetOperatorApp` operation.
 pub mod get_operator_app;
 
@@ -171,6 +174,9 @@ pub mod update_association;
 
 /// Types for the `UpdateBacklogTask` operation.
 pub mod update_backlog_task;
+
+/// Types for the `UpdateChat` operation.
+pub mod update_chat;
 
 /// Types for the `UpdateGoal` operation.
 pub mod update_goal;

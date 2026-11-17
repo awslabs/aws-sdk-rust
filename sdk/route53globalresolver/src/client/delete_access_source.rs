@@ -7,12 +7,14 @@ impl super::Client {
     /// - On success, responds with [`DeleteAccessSourceOutput`](crate::operation::delete_access_source::DeleteAccessSourceOutput) with field(s):
     ///   - [`arn(String)`](crate::operation::delete_access_source::DeleteAccessSourceOutput::arn): <p>The Amazon Resource Name (ARN) of the deleted access source.</p>
     ///   - [`cidr(String)`](crate::operation::delete_access_source::DeleteAccessSourceOutput::cidr): <p>The IP address or CIDR range of the deleted access source.</p>
+    ///   - [`core_network_endpoint_id(Option<String>)`](crate::operation::delete_access_source::DeleteAccessSourceOutput::core_network_endpoint_id): <p>The ID of the core network endpoint associated with this access source.</p>
     ///   - [`created_at(DateTime)`](crate::operation::delete_access_source::DeleteAccessSourceOutput::created_at): <p>The date and time when the access source was originally created.</p>
     ///   - [`id(String)`](crate::operation::delete_access_source::DeleteAccessSourceOutput::id): <p>The unique identifier of the deleted access source.</p>
-    ///   - [`ip_address_type(IpAddressType)`](crate::operation::delete_access_source::DeleteAccessSourceOutput::ip_address_type): <p>The IP address type of the deleted access source (IPv4 or IPv6).</p>
+    ///   - [`ip_address_type(IpAddressType)`](crate::operation::delete_access_source::DeleteAccessSourceOutput::ip_address_type): <p>The IP address type of the deleted access source. Valid values are IPV4, IPV6, and NONE.</p>
     ///   - [`name(Option<String>)`](crate::operation::delete_access_source::DeleteAccessSourceOutput::name): <p>The name of the deleted access source.</p>
     ///   - [`dns_view_id(String)`](crate::operation::delete_access_source::DeleteAccessSourceOutput::dns_view_id): <p>The ID of the DNS view that was associated with the deleted access source.</p>
     ///   - [`protocol(DnsProtocol)`](crate::operation::delete_access_source::DeleteAccessSourceOutput::protocol): <p>The DNS protocol that was permitted for the deleted access source.</p>
+    ///   - [`segment(Option<String>)`](crate::operation::delete_access_source::DeleteAccessSourceOutput::segment): <p>The name of the segment associated with this access source.</p>
     ///   - [`status(CrResourceStatus)`](crate::operation::delete_access_source::DeleteAccessSourceOutput::status): <p>The final status of the deleted access source.</p>
     ///   - [`updated_at(DateTime)`](crate::operation::delete_access_source::DeleteAccessSourceOutput::updated_at): <p>The date and time when the access source was last updated before deletion.</p>
     /// - On failure, responds with [`SdkError<DeleteAccessSourceError>`](crate::operation::delete_access_source::DeleteAccessSourceError)

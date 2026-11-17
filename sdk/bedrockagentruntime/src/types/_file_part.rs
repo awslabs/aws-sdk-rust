@@ -2,7 +2,7 @@
 
 /// <p>Contains intermediate response for code interpreter if any files have been generated.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct FilePart {
     /// <p>Files containing intermediate response for the user.</p>
     pub files: ::std::option::Option<::std::vec::Vec<crate::types::OutputFile>>,
@@ -15,6 +15,13 @@ impl FilePart {
         self.files.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for FilePart {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("FilePart");
+        formatter.field("files", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl FilePart {
     /// Creates a new builder-style object to manufacture [`FilePart`](crate::types::FilePart).
     pub fn builder() -> crate::types::builders::FilePartBuilder {
@@ -23,7 +30,7 @@ impl FilePart {
 }
 
 /// A builder for [`FilePart`](crate::types::FilePart).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct FilePartBuilder {
     pub(crate) files: ::std::option::Option<::std::vec::Vec<crate::types::OutputFile>>,
@@ -52,5 +59,12 @@ impl FilePartBuilder {
     /// Consumes the builder and constructs a [`FilePart`](crate::types::FilePart).
     pub fn build(self) -> crate::types::FilePart {
         crate::types::FilePart { files: self.files }
+    }
+}
+impl ::std::fmt::Debug for FilePartBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("FilePartBuilder");
+        formatter.field("files", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

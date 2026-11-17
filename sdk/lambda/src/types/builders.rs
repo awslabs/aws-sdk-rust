@@ -31,6 +31,8 @@ pub use crate::types::_trace_header::TraceHeaderBuilder;
 
 pub use crate::types::_durable_config::DurableConfigBuilder;
 
+pub use crate::types::_pause_details::PauseDetailsBuilder;
+
 pub use crate::types::_checkpoint_updated_execution_state::CheckpointUpdatedExecutionStateBuilder;
 
 pub use crate::types::_filter_criteria::FilterCriteriaBuilder;
@@ -223,6 +225,10 @@ pub use crate::types::_callback_timed_out_details::CallbackTimedOutDetailsBuilde
 
 pub use crate::types::_invocation_completed_details::InvocationCompletedDetailsBuilder;
 
+pub use crate::types::_execution_paused_details::ExecutionPausedDetailsBuilder;
+
+pub use crate::types::_execution_resumed_details::ExecutionResumedDetailsBuilder;
+
 pub use crate::types::_execution_details::ExecutionDetailsBuilder;
 
 pub use crate::types::_context_details::ContextDetailsBuilder;
@@ -246,6 +252,10 @@ pub use crate::types::_event_result::EventResultBuilder;
 pub use crate::types::_event_error::EventErrorBuilder;
 
 pub use crate::types::_retry_details::RetryDetailsBuilder;
+
+pub use crate::types::_event_pause_reason::EventPauseReasonBuilder;
+
+pub use crate::types::_event_resume_reason::EventResumeReasonBuilder;
 
 pub use crate::types::_kafka_schema_registry_access_config::KafkaSchemaRegistryAccessConfigBuilder;
 

@@ -2,7 +2,7 @@
 
 /// <p>Contains the environment variables that tasks in a workflow use during execution.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Environment {
     /// <p>A map of environment variable names to values. Your workflow tasks use these variables while they run. You can specify up to 50 environment variables. Each name must be between 1 and 128 characters, start with a letter, and contain only letters, numbers, and underscores. Each value can be up to 255 characters.</p>
     /// <p>Names that start with <code>AWS_</code> or <code>AIRFLOW__</code> are reserved. You can use the following Apache Airflow secrets backend settings, which are exceptions:</p>
@@ -33,6 +33,13 @@ impl Environment {
         self.variables.as_ref()
     }
 }
+impl ::std::fmt::Debug for Environment {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Environment");
+        formatter.field("variables", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Environment {
     /// Creates a new builder-style object to manufacture [`Environment`](crate::types::Environment).
     pub fn builder() -> crate::types::builders::EnvironmentBuilder {
@@ -41,7 +48,7 @@ impl Environment {
 }
 
 /// A builder for [`Environment`](crate::types::Environment).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct EnvironmentBuilder {
     pub(crate) variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -100,5 +107,12 @@ impl EnvironmentBuilder {
     /// Consumes the builder and constructs a [`Environment`](crate::types::Environment).
     pub fn build(self) -> crate::types::Environment {
         crate::types::Environment { variables: self.variables }
+    }
+}
+impl ::std::fmt::Debug for EnvironmentBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("EnvironmentBuilder");
+        formatter.field("variables", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -36,63 +36,66 @@ pub fn ser_update_replication_configuration_input_input(
     if let Some(var_10) = &input.name {
         object.key("name").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.replicated_disks {
-        let mut array_12 = object.key("replicatedDisks").start_array();
-        for item_13 in var_11 {
+    if let Some(var_11) = &input.outpost_snapshot_location {
+        object.key("outpostSnapshotLocation").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.replicated_disks {
+        let mut array_13 = object.key("replicatedDisks").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
+                let mut object_15 = array_13.value().start_object();
                 crate::protocol_serde::shape_replication_configuration_replicated_disk::ser_replication_configuration_replicated_disk(
-                    &mut object_14,
-                    item_13,
+                    &mut object_15,
+                    item_14,
                 )?;
-                object_14.finish();
+                object_15.finish();
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
-    if let Some(var_15) = &input.replication_server_instance_type {
-        object.key("replicationServerInstanceType").string(var_15.as_str());
+    if let Some(var_16) = &input.replication_server_instance_type {
+        object.key("replicationServerInstanceType").string(var_16.as_str());
     }
-    if let Some(var_16) = &input.replication_servers_security_groups_ids {
-        let mut array_17 = object.key("replicationServersSecurityGroupsIDs").start_array();
-        for item_18 in var_16 {
+    if let Some(var_17) = &input.replication_servers_security_groups_ids {
+        let mut array_18 = object.key("replicationServersSecurityGroupsIDs").start_array();
+        for item_19 in var_17 {
             {
-                array_17.value().string(item_18.as_str());
+                array_18.value().string(item_19.as_str());
             }
         }
-        array_17.finish();
+        array_18.finish();
     }
-    if let Some(var_19) = &input.source_server_id {
-        object.key("sourceServerID").string(var_19.as_str());
+    if let Some(var_20) = &input.source_server_id {
+        object.key("sourceServerID").string(var_20.as_str());
     }
-    if let Some(var_20) = &input.staging_area_subnet_id {
-        object.key("stagingAreaSubnetId").string(var_20.as_str());
+    if let Some(var_21) = &input.staging_area_subnet_id {
+        object.key("stagingAreaSubnetId").string(var_21.as_str());
     }
-    if let Some(var_21) = &input.staging_area_tags {
+    if let Some(var_22) = &input.staging_area_tags {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("stagingAreaTags").start_object();
-        for (key_23, value_24) in var_21 {
+        let mut object_23 = object.key("stagingAreaTags").start_object();
+        for (key_24, value_25) in var_22 {
             {
-                object_22.key(key_23.as_str()).string(value_24.as_str());
+                object_23.key(key_24.as_str()).string(value_25.as_str());
             }
         }
-        object_22.finish();
+        object_23.finish();
     }
-    if let Some(var_25) = &input.storage_configuration {
+    if let Some(var_26) = &input.storage_configuration {
         #[allow(unused_mut)]
-        let mut object_26 = object.key("storageConfiguration").start_object();
-        crate::protocol_serde::shape_storage_configuration::ser_storage_configuration(&mut object_26, var_25)?;
-        object_26.finish();
+        let mut object_27 = object.key("storageConfiguration").start_object();
+        crate::protocol_serde::shape_storage_configuration::ser_storage_configuration(&mut object_27, var_26)?;
+        object_27.finish();
     }
-    if let Some(var_27) = &input.store_snapshot_on_local_zone {
-        object.key("storeSnapshotOnLocalZone").boolean(*var_27);
+    if let Some(var_28) = &input.store_snapshot_on_local_zone {
+        object.key("storeSnapshotOnLocalZone").boolean(*var_28);
     }
-    if let Some(var_28) = &input.use_dedicated_replication_server {
-        object.key("useDedicatedReplicationServer").boolean(*var_28);
+    if let Some(var_29) = &input.use_dedicated_replication_server {
+        object.key("useDedicatedReplicationServer").boolean(*var_29);
     }
-    if let Some(var_29) = &input.use_fips_endpoint {
-        object.key("useFipsEndpoint").boolean(*var_29);
+    if let Some(var_30) = &input.use_fips_endpoint {
+        object.key("useFipsEndpoint").boolean(*var_30);
     }
     Ok(())
 }

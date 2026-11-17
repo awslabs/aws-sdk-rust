@@ -2,7 +2,7 @@
 
 /// <p>The configuration for a forward and backward pass through the model. This computes both loss values and gradients for use in subsequent optimizer steps.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ForwardBackwardConfig {
     /// <p>The name of the loss function to evaluate during the forward-backward pass.</p>
     pub loss_fn_name: crate::types::LossFnName,
@@ -26,6 +26,15 @@ impl ForwardBackwardConfig {
         self.loss_fn_config.as_ref()
     }
 }
+impl ::std::fmt::Debug for ForwardBackwardConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ForwardBackwardConfig");
+        formatter.field("loss_fn_name", &self.loss_fn_name);
+        formatter.field("datum_list", &"*** Sensitive Data Redacted ***");
+        formatter.field("loss_fn_config", &self.loss_fn_config);
+        formatter.finish()
+    }
+}
 impl ForwardBackwardConfig {
     /// Creates a new builder-style object to manufacture [`ForwardBackwardConfig`](crate::types::ForwardBackwardConfig).
     pub fn builder() -> crate::types::builders::ForwardBackwardConfigBuilder {
@@ -34,7 +43,7 @@ impl ForwardBackwardConfig {
 }
 
 /// A builder for [`ForwardBackwardConfig`](crate::types::ForwardBackwardConfig).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ForwardBackwardConfigBuilder {
     pub(crate) loss_fn_name: ::std::option::Option<crate::types::LossFnName>,
@@ -111,5 +120,14 @@ impl ForwardBackwardConfigBuilder {
             })?,
             loss_fn_config: self.loss_fn_config,
         })
+    }
+}
+impl ::std::fmt::Debug for ForwardBackwardConfigBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ForwardBackwardConfigBuilder");
+        formatter.field("loss_fn_name", &self.loss_fn_name);
+        formatter.field("datum_list", &"*** Sensitive Data Redacted ***");
+        formatter.field("loss_fn_config", &self.loss_fn_config);
+        formatter.finish()
     }
 }

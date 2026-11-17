@@ -33,48 +33,51 @@ pub fn ser_update_replication_configuration_template_input_input(
     if let Some(var_9) = &input.internet_protocol {
         object.key("internetProtocol").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.replication_configuration_template_id {
-        object.key("replicationConfigurationTemplateID").string(var_10.as_str());
+    if let Some(var_10) = &input.outpost_snapshot_location {
+        object.key("outpostSnapshotLocation").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.replication_server_instance_type {
-        object.key("replicationServerInstanceType").string(var_11.as_str());
+    if let Some(var_11) = &input.replication_configuration_template_id {
+        object.key("replicationConfigurationTemplateID").string(var_11.as_str());
     }
-    if let Some(var_12) = &input.replication_servers_security_groups_ids {
-        let mut array_13 = object.key("replicationServersSecurityGroupsIDs").start_array();
-        for item_14 in var_12 {
+    if let Some(var_12) = &input.replication_server_instance_type {
+        object.key("replicationServerInstanceType").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.replication_servers_security_groups_ids {
+        let mut array_14 = object.key("replicationServersSecurityGroupsIDs").start_array();
+        for item_15 in var_13 {
             {
-                array_13.value().string(item_14.as_str());
+                array_14.value().string(item_15.as_str());
             }
         }
-        array_13.finish();
+        array_14.finish();
     }
-    if let Some(var_15) = &input.staging_area_subnet_id {
-        object.key("stagingAreaSubnetId").string(var_15.as_str());
+    if let Some(var_16) = &input.staging_area_subnet_id {
+        object.key("stagingAreaSubnetId").string(var_16.as_str());
     }
-    if let Some(var_16) = &input.staging_area_tags {
+    if let Some(var_17) = &input.staging_area_tags {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("stagingAreaTags").start_object();
-        for (key_18, value_19) in var_16 {
+        let mut object_18 = object.key("stagingAreaTags").start_object();
+        for (key_19, value_20) in var_17 {
             {
-                object_17.key(key_18.as_str()).string(value_19.as_str());
+                object_18.key(key_19.as_str()).string(value_20.as_str());
             }
         }
-        object_17.finish();
+        object_18.finish();
     }
-    if let Some(var_20) = &input.storage_configuration {
+    if let Some(var_21) = &input.storage_configuration {
         #[allow(unused_mut)]
-        let mut object_21 = object.key("storageConfiguration").start_object();
-        crate::protocol_serde::shape_storage_configuration::ser_storage_configuration(&mut object_21, var_20)?;
-        object_21.finish();
+        let mut object_22 = object.key("storageConfiguration").start_object();
+        crate::protocol_serde::shape_storage_configuration::ser_storage_configuration(&mut object_22, var_21)?;
+        object_22.finish();
     }
-    if let Some(var_22) = &input.store_snapshot_on_local_zone {
-        object.key("storeSnapshotOnLocalZone").boolean(*var_22);
+    if let Some(var_23) = &input.store_snapshot_on_local_zone {
+        object.key("storeSnapshotOnLocalZone").boolean(*var_23);
     }
-    if let Some(var_23) = &input.use_dedicated_replication_server {
-        object.key("useDedicatedReplicationServer").boolean(*var_23);
+    if let Some(var_24) = &input.use_dedicated_replication_server {
+        object.key("useDedicatedReplicationServer").boolean(*var_24);
     }
-    if let Some(var_24) = &input.use_fips_endpoint {
-        object.key("useFipsEndpoint").boolean(*var_24);
+    if let Some(var_25) = &input.use_fips_endpoint {
+        object.key("useFipsEndpoint").boolean(*var_25);
     }
     Ok(())
 }

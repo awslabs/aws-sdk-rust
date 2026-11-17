@@ -7,10 +7,14 @@ pub struct CreateAccessSourceInput {
     pub cidr: ::std::option::Option<::std::string::String>,
     /// <p>A unique string that identifies the request and ensures idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The IP address type for this access source. Valid values are IPv4 and IPv6 (if the Route 53 Global Resolver supports dual-stack).</p>
+    /// <p>The IP address type for this access source. Valid values are IPV4, IPV6, and NONE. If you provide a CIDR range, this defaults to IPV4; otherwise it defaults to NONE.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>A descriptive name for the access source.</p>
     pub name: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the core network endpoint to associate with this access source.</p>
+    pub core_network_endpoint_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the segment to associate with this access source.</p>
+    pub segment: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the DNS view to associate with this access source.</p>
     pub dns_view_id: ::std::option::Option<::std::string::String>,
     /// <p>The DNS protocol that is permitted for this access source. Valid values are Do53 (DNS over port 53), DoT (DNS over TLS), and DoH (DNS over HTTPS).</p>
@@ -27,13 +31,21 @@ impl CreateAccessSourceInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The IP address type for this access source. Valid values are IPv4 and IPv6 (if the Route 53 Global Resolver supports dual-stack).</p>
+    /// <p>The IP address type for this access source. Valid values are IPV4, IPV6, and NONE. If you provide a CIDR range, this defaults to IPV4; otherwise it defaults to NONE.</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
     /// <p>A descriptive name for the access source.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
+    }
+    /// <p>The ID of the core network endpoint to associate with this access source.</p>
+    pub fn core_network_endpoint_id(&self) -> ::std::option::Option<&str> {
+        self.core_network_endpoint_id.as_deref()
+    }
+    /// <p>The name of the segment to associate with this access source.</p>
+    pub fn segment(&self) -> ::std::option::Option<&str> {
+        self.segment.as_deref()
     }
     /// <p>The ID of the DNS view to associate with this access source.</p>
     pub fn dns_view_id(&self) -> ::std::option::Option<&str> {
@@ -63,13 +75,14 @@ pub struct CreateAccessSourceInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) core_network_endpoint_id: ::std::option::Option<::std::string::String>,
+    pub(crate) segment: ::std::option::Option<::std::string::String>,
     pub(crate) dns_view_id: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<crate::types::DnsProtocol>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateAccessSourceInputBuilder {
     /// <p>The IP address or CIDR range that is allowed to send DNS queries to the Route 53 Global Resolver.</p>
-    /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self
@@ -97,17 +110,17 @@ impl CreateAccessSourceInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The IP address type for this access source. Valid values are IPv4 and IPv6 (if the Route 53 Global Resolver supports dual-stack).</p>
+    /// <p>The IP address type for this access source. Valid values are IPV4, IPV6, and NONE. If you provide a CIDR range, this defaults to IPV4; otherwise it defaults to NONE.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The IP address type for this access source. Valid values are IPv4 and IPv6 (if the Route 53 Global Resolver supports dual-stack).</p>
+    /// <p>The IP address type for this access source. Valid values are IPV4, IPV6, and NONE. If you provide a CIDR range, this defaults to IPV4; otherwise it defaults to NONE.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
-    /// <p>The IP address type for this access source. Valid values are IPv4 and IPv6 (if the Route 53 Global Resolver supports dual-stack).</p>
+    /// <p>The IP address type for this access source. Valid values are IPV4, IPV6, and NONE. If you provide a CIDR range, this defaults to IPV4; otherwise it defaults to NONE.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         &self.ip_address_type
     }
@@ -124,6 +137,34 @@ impl CreateAccessSourceInputBuilder {
     /// <p>A descriptive name for the access source.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
+    }
+    /// <p>The ID of the core network endpoint to associate with this access source.</p>
+    pub fn core_network_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.core_network_endpoint_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the core network endpoint to associate with this access source.</p>
+    pub fn set_core_network_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.core_network_endpoint_id = input;
+        self
+    }
+    /// <p>The ID of the core network endpoint to associate with this access source.</p>
+    pub fn get_core_network_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_endpoint_id
+    }
+    /// <p>The name of the segment to associate with this access source.</p>
+    pub fn segment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.segment = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the segment to associate with this access source.</p>
+    pub fn set_segment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.segment = input;
+        self
+    }
+    /// <p>The name of the segment to associate with this access source.</p>
+    pub fn get_segment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment
     }
     /// <p>The ID of the DNS view to associate with this access source.</p>
     /// This field is required.
@@ -185,6 +226,8 @@ impl CreateAccessSourceInputBuilder {
             client_token: self.client_token,
             ip_address_type: self.ip_address_type,
             name: self.name,
+            core_network_endpoint_id: self.core_network_endpoint_id,
+            segment: self.segment,
             dns_view_id: self.dns_view_id,
             protocol: self.protocol,
             tags: self.tags,

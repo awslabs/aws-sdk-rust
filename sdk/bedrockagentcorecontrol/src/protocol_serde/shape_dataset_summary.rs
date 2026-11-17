@@ -77,6 +77,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "exampleCountByField" => {
+                            builder = builder.set_example_count_by_field(
+                                crate::protocol_serde::shape_example_count_by_field::de_example_count_by_field(tokens, _value, depth + 1)?,
+                            );
+                        }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),

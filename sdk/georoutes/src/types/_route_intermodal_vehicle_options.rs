@@ -2,7 +2,7 @@
 
 /// <p>Options for the vehicle leg of the intermodal route.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteIntermodalVehicleOptions {
     /// <p>Allowed vehicle transport modes when calculating the route. By default, all transport modes are allowed. Cannot be used together with <code>ExcludedModes</code>.</p>
     pub allowed_modes: ::std::option::Option<::std::vec::Vec<crate::types::RouteVehicleMode>>,
@@ -51,6 +51,15 @@ impl RouteIntermodalVehicleOptions {
         self.excluded_modes.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for RouteIntermodalVehicleOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteIntermodalVehicleOptions");
+        formatter.field("allowed_modes", &"*** Sensitive Data Redacted ***");
+        formatter.field("enabled_for", &"*** Sensitive Data Redacted ***");
+        formatter.field("excluded_modes", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteIntermodalVehicleOptions {
     /// Creates a new builder-style object to manufacture [`RouteIntermodalVehicleOptions`](crate::types::RouteIntermodalVehicleOptions).
     pub fn builder() -> crate::types::builders::RouteIntermodalVehicleOptionsBuilder {
@@ -59,7 +68,7 @@ impl RouteIntermodalVehicleOptions {
 }
 
 /// A builder for [`RouteIntermodalVehicleOptions`](crate::types::RouteIntermodalVehicleOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteIntermodalVehicleOptionsBuilder {
     pub(crate) allowed_modes: ::std::option::Option<::std::vec::Vec<crate::types::RouteVehicleMode>>,
@@ -164,5 +173,14 @@ impl RouteIntermodalVehicleOptionsBuilder {
             enabled_for: self.enabled_for,
             excluded_modes: self.excluded_modes,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteIntermodalVehicleOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteIntermodalVehicleOptionsBuilder");
+        formatter.field("allowed_modes", &"*** Sensitive Data Redacted ***");
+        formatter.field("enabled_for", &"*** Sensitive Data Redacted ***");
+        formatter.field("excluded_modes", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

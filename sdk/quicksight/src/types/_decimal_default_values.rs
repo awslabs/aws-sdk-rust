@@ -2,7 +2,7 @@
 
 /// <p>The default values of the <code>DecimalParameterDeclaration</code>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DecimalDefaultValues {
     /// <p>The dynamic value of the <code>DecimalDefaultValues</code>. Different defaults are displayed according to users, groups, and values mapping.</p>
     pub dynamic_value: ::std::option::Option<crate::types::DynamicDefaultValue>,
@@ -21,6 +21,14 @@ impl DecimalDefaultValues {
         self.static_values.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for DecimalDefaultValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DecimalDefaultValues");
+        formatter.field("dynamic_value", &self.dynamic_value);
+        formatter.field("static_values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl DecimalDefaultValues {
     /// Creates a new builder-style object to manufacture [`DecimalDefaultValues`](crate::types::DecimalDefaultValues).
     pub fn builder() -> crate::types::builders::DecimalDefaultValuesBuilder {
@@ -29,7 +37,7 @@ impl DecimalDefaultValues {
 }
 
 /// A builder for [`DecimalDefaultValues`](crate::types::DecimalDefaultValues).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct DecimalDefaultValuesBuilder {
     pub(crate) dynamic_value: ::std::option::Option<crate::types::DynamicDefaultValue>,
@@ -76,5 +84,13 @@ impl DecimalDefaultValuesBuilder {
             dynamic_value: self.dynamic_value,
             static_values: self.static_values,
         }
+    }
+}
+impl ::std::fmt::Debug for DecimalDefaultValuesBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DecimalDefaultValuesBuilder");
+        formatter.field("dynamic_value", &self.dynamic_value);
+        formatter.field("static_values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

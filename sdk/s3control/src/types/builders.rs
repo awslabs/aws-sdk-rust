@@ -111,7 +111,11 @@ pub use crate::types::_storage_lens_data_export::StorageLensDataExportBuilder;
 
 pub use crate::types::_storage_lens_expanded_prefixes_data_export::StorageLensExpandedPrefixesDataExportBuilder;
 
+pub use crate::types::_storage_lens_cost_and_usage_reports_publish::StorageLensCostAndUsageReportsPublishBuilder;
+
 pub use crate::types::_storage_lens_aws_org::StorageLensAwsOrgBuilder;
+
+pub use crate::types::_int_access_tiers::IntAccessTiersBuilder;
 
 pub use crate::types::_storage_lens_tag::StorageLensTagBuilder;
 
@@ -203,6 +207,8 @@ pub use crate::types::_cloud_watch_metrics::CloudWatchMetricsBuilder;
 
 pub use crate::types::_storage_lens_table_destination::StorageLensTableDestinationBuilder;
 
+pub use crate::types::_storage_lens_cost_and_usage_reports_prefix_level::StorageLensCostAndUsageReportsPrefixLevelBuilder;
+
 pub use crate::types::_s3_grant::S3GrantBuilder;
 
 pub use crate::types::_s3_access_control_list::S3AccessControlListBuilder;
@@ -236,6 +242,8 @@ pub use crate::types::_prefix_level::PrefixLevelBuilder;
 pub use crate::types::_storage_lens_group_level_selection_criteria::StorageLensGroupLevelSelectionCriteriaBuilder;
 
 pub use crate::types::_storage_lens_data_export_encryption::StorageLensDataExportEncryptionBuilder;
+
+pub use crate::types::_storage_lens_cost_and_usage_reports_selection_criteria::StorageLensCostAndUsageReportsSelectionCriteriaBuilder;
 
 pub use crate::types::_aws_lambda_transformation::AwsLambdaTransformationBuilder;
 

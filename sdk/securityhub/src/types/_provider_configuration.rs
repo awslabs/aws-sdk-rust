@@ -6,6 +6,8 @@
 pub enum ProviderConfiguration {
     /// <p>The configuration settings required to establish a CSPM integration with Microsoft Azure.</p>
     Azure(crate::types::AzureProviderConfiguration),
+    /// <p>The configuration settings required to establish a CSPM integration with Google Cloud Platform (GCP).</p>
+    Gcp(crate::types::GcpProviderConfiguration),
     /// <p>The configuration settings required to establish an integration with Jira Cloud.</p>
     JiraCloud(crate::types::JiraCloudProviderConfiguration),
     /// <p>The configuration settings required to establish an integration with ServiceNow ITSM.</p>
@@ -33,6 +35,19 @@ impl ProviderConfiguration {
     /// Returns true if this is a [`Azure`](crate::types::ProviderConfiguration::Azure).
     pub fn is_azure(&self) -> bool {
         self.as_azure().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Gcp`](crate::types::ProviderConfiguration::Gcp), extracting the inner [`GcpProviderConfiguration`](crate::types::GcpProviderConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_gcp(&self) -> ::std::result::Result<&crate::types::GcpProviderConfiguration, &Self> {
+        if let ProviderConfiguration::Gcp(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Gcp`](crate::types::ProviderConfiguration::Gcp).
+    pub fn is_gcp(&self) -> bool {
+        self.as_gcp().is_ok()
     }
     /// Tries to convert the enum instance into [`JiraCloud`](crate::types::ProviderConfiguration::JiraCloud), extracting the inner [`JiraCloudProviderConfiguration`](crate::types::JiraCloudProviderConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

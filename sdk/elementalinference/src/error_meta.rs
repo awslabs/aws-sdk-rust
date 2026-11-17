@@ -162,6 +162,109 @@ impl From<crate::operation::create_feed::CreateFeedError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_function::CreateFunctionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_function::CreateFunctionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_function::CreateFunctionError> for Error {
+    fn from(err: crate::operation::create_function::CreateFunctionError) -> Self {
+        match err {
+            crate::operation::create_function::CreateFunctionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_function::CreateFunctionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_function::CreateFunctionError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::create_function::CreateFunctionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_function::CreateFunctionError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
+            crate::operation::create_function::CreateFunctionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_function::CreateFunctionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_question_set::CreateQuestionSetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_question_set::CreateQuestionSetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_question_set::CreateQuestionSetError> for Error {
+    fn from(err: crate::operation::create_question_set::CreateQuestionSetError) -> Self {
+        match err {
+            crate::operation::create_question_set::CreateQuestionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_question_set::CreateQuestionSetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_question_set::CreateQuestionSetError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::create_question_set::CreateQuestionSetError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_question_set::CreateQuestionSetError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
+            crate::operation::create_question_set::CreateQuestionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_question_set::CreateQuestionSetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_question_set_version::CreateQuestionSetVersionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_question_set_version::CreateQuestionSetVersionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_question_set_version::CreateQuestionSetVersionError> for Error {
+    fn from(err: crate::operation::create_question_set_version::CreateQuestionSetVersionError) -> Self {
+        match err {
+            crate::operation::create_question_set_version::CreateQuestionSetVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_question_set_version::CreateQuestionSetVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_question_set_version::CreateQuestionSetVersionError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::create_question_set_version::CreateQuestionSetVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_question_set_version::CreateQuestionSetVersionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_question_set_version::CreateQuestionSetVersionError::TooManyRequestException(inner) => {
+                Error::TooManyRequestException(inner)
+            }
+            crate::operation::create_question_set_version::CreateQuestionSetVersionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_question_set_version::CreateQuestionSetVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_schedule_action::CreateScheduleActionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -279,6 +382,104 @@ impl From<crate::operation::delete_feed_policy::DeleteFeedPolicyError> for Error
             crate::operation::delete_feed_policy::DeleteFeedPolicyError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
             crate::operation::delete_feed_policy::DeleteFeedPolicyError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_feed_policy::DeleteFeedPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_function::DeleteFunctionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_function::DeleteFunctionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_function::DeleteFunctionError> for Error {
+    fn from(err: crate::operation::delete_function::DeleteFunctionError) -> Self {
+        match err {
+            crate::operation::delete_function::DeleteFunctionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_function::DeleteFunctionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_function::DeleteFunctionError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::delete_function::DeleteFunctionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_function::DeleteFunctionError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
+            crate::operation::delete_function::DeleteFunctionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_function::DeleteFunctionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_question_set::DeleteQuestionSetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_question_set::DeleteQuestionSetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_question_set::DeleteQuestionSetError> for Error {
+    fn from(err: crate::operation::delete_question_set::DeleteQuestionSetError) -> Self {
+        match err {
+            crate::operation::delete_question_set::DeleteQuestionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_question_set::DeleteQuestionSetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_question_set::DeleteQuestionSetError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::delete_question_set::DeleteQuestionSetError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_question_set::DeleteQuestionSetError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
+            crate::operation::delete_question_set::DeleteQuestionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_question_set::DeleteQuestionSetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_question_set_version::DeleteQuestionSetVersionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_question_set_version::DeleteQuestionSetVersionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_question_set_version::DeleteQuestionSetVersionError> for Error {
+    fn from(err: crate::operation::delete_question_set_version::DeleteQuestionSetVersionError) -> Self {
+        match err {
+            crate::operation::delete_question_set_version::DeleteQuestionSetVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_question_set_version::DeleteQuestionSetVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_question_set_version::DeleteQuestionSetVersionError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::delete_question_set_version::DeleteQuestionSetVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_question_set_version::DeleteQuestionSetVersionError::TooManyRequestException(inner) => {
+                Error::TooManyRequestException(inner)
+            }
+            crate::operation::delete_question_set_version::DeleteQuestionSetVersionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_question_set_version::DeleteQuestionSetVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -488,6 +689,60 @@ impl From<crate::operation::get_fixture::GetFixtureError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_function::GetFunctionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_function::GetFunctionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_function::GetFunctionError> for Error {
+    fn from(err: crate::operation::get_function::GetFunctionError) -> Self {
+        match err {
+            crate::operation::get_function::GetFunctionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_function::GetFunctionError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::get_function::GetFunctionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_function::GetFunctionError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
+            crate::operation::get_function::GetFunctionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_function::GetFunctionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_question_set::GetQuestionSetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_question_set::GetQuestionSetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_question_set::GetQuestionSetError> for Error {
+    fn from(err: crate::operation::get_question_set::GetQuestionSetError) -> Self {
+        match err {
+            crate::operation::get_question_set::GetQuestionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_question_set::GetQuestionSetError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::get_question_set::GetQuestionSetError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_question_set::GetQuestionSetError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
+            crate::operation::get_question_set::GetQuestionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_question_set::GetQuestionSetError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_dictionaries::ListDictionariesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -538,6 +793,97 @@ impl From<crate::operation::list_feeds::ListFeedsError> for Error {
             crate::operation::list_feeds::ListFeedsError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
             crate::operation::list_feeds::ListFeedsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_feeds::ListFeedsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_functions::ListFunctionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_functions::ListFunctionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_functions::ListFunctionsError> for Error {
+    fn from(err: crate::operation::list_functions::ListFunctionsError) -> Self {
+        match err {
+            crate::operation::list_functions::ListFunctionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_functions::ListFunctionsError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::list_functions::ListFunctionsError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
+            crate::operation::list_functions::ListFunctionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_functions::ListFunctionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_question_sets::ListQuestionSetsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_question_sets::ListQuestionSetsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_question_sets::ListQuestionSetsError> for Error {
+    fn from(err: crate::operation::list_question_sets::ListQuestionSetsError) -> Self {
+        match err {
+            crate::operation::list_question_sets::ListQuestionSetsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_question_sets::ListQuestionSetsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_question_sets::ListQuestionSetsError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
+            crate::operation::list_question_sets::ListQuestionSetsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_question_sets::ListQuestionSetsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_question_set_versions::ListQuestionSetVersionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_question_set_versions::ListQuestionSetVersionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_question_set_versions::ListQuestionSetVersionsError> for Error {
+    fn from(err: crate::operation::list_question_set_versions::ListQuestionSetVersionsError) -> Self {
+        match err {
+            crate::operation::list_question_set_versions::ListQuestionSetVersionsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_question_set_versions::ListQuestionSetVersionsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_question_set_versions::ListQuestionSetVersionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_question_set_versions::ListQuestionSetVersionsError::TooManyRequestException(inner) => {
+                Error::TooManyRequestException(inner)
+            }
+            crate::operation::list_question_set_versions::ListQuestionSetVersionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_question_set_versions::ListQuestionSetVersionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -767,6 +1113,64 @@ impl From<crate::operation::update_feed::UpdateFeedError> for Error {
             crate::operation::update_feed::UpdateFeedError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
             crate::operation::update_feed::UpdateFeedError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_feed::UpdateFeedError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_function::UpdateFunctionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_function::UpdateFunctionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_function::UpdateFunctionError> for Error {
+    fn from(err: crate::operation::update_function::UpdateFunctionError) -> Self {
+        match err {
+            crate::operation::update_function::UpdateFunctionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_function::UpdateFunctionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_function::UpdateFunctionError::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
+            crate::operation::update_function::UpdateFunctionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_function::UpdateFunctionError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
+            crate::operation::update_function::UpdateFunctionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_function::UpdateFunctionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_question_set::UpdateQuestionSetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_question_set::UpdateQuestionSetError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_question_set::UpdateQuestionSetError> for Error {
+    fn from(err: crate::operation::update_question_set::UpdateQuestionSetError) -> Self {
+        match err {
+            crate::operation::update_question_set::UpdateQuestionSetError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_question_set::UpdateQuestionSetError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_question_set::UpdateQuestionSetError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::update_question_set::UpdateQuestionSetError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_question_set::UpdateQuestionSetError::TooManyRequestException(inner) => Error::TooManyRequestException(inner),
+            crate::operation::update_question_set::UpdateQuestionSetError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_question_set::UpdateQuestionSetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

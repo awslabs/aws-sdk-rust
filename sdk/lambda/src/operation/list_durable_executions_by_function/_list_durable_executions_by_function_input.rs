@@ -9,7 +9,25 @@ pub struct ListDurableExecutionsByFunctionInput {
     pub qualifier: ::std::option::Option<::std::string::String>,
     /// <p>Filter executions by name. Only executions with names that matches this string are returned.</p>
     pub durable_execution_name: ::std::option::Option<::std::string::String>,
-    /// <p>Filter executions by status. Valid values: RUNNING, SUCCEEDED, FAILED, TIMED_OUT, STOPPED.</p>
+    /// <p>Filters the executions by status. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RUNNING</code> – The execution is running or waiting for pending operations to complete.</p></li>
+    /// <li>
+    /// <p><code>PAUSING</code> – The execution is waiting for an in-progress invocation to reach its next checkpoint before it pauses.</p></li>
+    /// <li>
+    /// <p><code>PAUSED</code> – The execution is paused, and Lambda doesn't invoke your function.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> – The execution completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The execution completed with an error.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – The execution exceeded its execution timeout.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> – A <code>StopDurableExecution</code> request stopped the execution.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> – A <code>DeleteDurableExecution</code> request is deleting the execution and its data.</p></li>
+    /// </ul>
     pub statuses: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionStatus>>,
     /// <p>Filter executions that started after this timestamp (ISO 8601 format).</p>
     pub started_after: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -35,7 +53,25 @@ impl ListDurableExecutionsByFunctionInput {
     pub fn durable_execution_name(&self) -> ::std::option::Option<&str> {
         self.durable_execution_name.as_deref()
     }
-    /// <p>Filter executions by status. Valid values: RUNNING, SUCCEEDED, FAILED, TIMED_OUT, STOPPED.</p>
+    /// <p>Filters the executions by status. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RUNNING</code> – The execution is running or waiting for pending operations to complete.</p></li>
+    /// <li>
+    /// <p><code>PAUSING</code> – The execution is waiting for an in-progress invocation to reach its next checkpoint before it pauses.</p></li>
+    /// <li>
+    /// <p><code>PAUSED</code> – The execution is paused, and Lambda doesn't invoke your function.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> – The execution completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The execution completed with an error.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – The execution exceeded its execution timeout.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> – A <code>StopDurableExecution</code> request stopped the execution.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> – A <code>DeleteDurableExecution</code> request is deleting the execution and its data.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.statuses.is_none()`.
     pub fn statuses(&self) -> &[crate::types::ExecutionStatus] {
@@ -131,19 +167,73 @@ impl ListDurableExecutionsByFunctionInputBuilder {
     ///
     /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
     ///
-    /// <p>Filter executions by status. Valid values: RUNNING, SUCCEEDED, FAILED, TIMED_OUT, STOPPED.</p>
+    /// <p>Filters the executions by status. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RUNNING</code> – The execution is running or waiting for pending operations to complete.</p></li>
+    /// <li>
+    /// <p><code>PAUSING</code> – The execution is waiting for an in-progress invocation to reach its next checkpoint before it pauses.</p></li>
+    /// <li>
+    /// <p><code>PAUSED</code> – The execution is paused, and Lambda doesn't invoke your function.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> – The execution completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The execution completed with an error.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – The execution exceeded its execution timeout.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> – A <code>StopDurableExecution</code> request stopped the execution.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> – A <code>DeleteDurableExecution</code> request is deleting the execution and its data.</p></li>
+    /// </ul>
     pub fn statuses(mut self, input: crate::types::ExecutionStatus) -> Self {
         let mut v = self.statuses.unwrap_or_default();
         v.push(input);
         self.statuses = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filter executions by status. Valid values: RUNNING, SUCCEEDED, FAILED, TIMED_OUT, STOPPED.</p>
+    /// <p>Filters the executions by status. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RUNNING</code> – The execution is running or waiting for pending operations to complete.</p></li>
+    /// <li>
+    /// <p><code>PAUSING</code> – The execution is waiting for an in-progress invocation to reach its next checkpoint before it pauses.</p></li>
+    /// <li>
+    /// <p><code>PAUSED</code> – The execution is paused, and Lambda doesn't invoke your function.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> – The execution completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The execution completed with an error.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – The execution exceeded its execution timeout.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> – A <code>StopDurableExecution</code> request stopped the execution.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> – A <code>DeleteDurableExecution</code> request is deleting the execution and its data.</p></li>
+    /// </ul>
     pub fn set_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ExecutionStatus>>) -> Self {
         self.statuses = input;
         self
     }
-    /// <p>Filter executions by status. Valid values: RUNNING, SUCCEEDED, FAILED, TIMED_OUT, STOPPED.</p>
+    /// <p>Filters the executions by status. Specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RUNNING</code> – The execution is running or waiting for pending operations to complete.</p></li>
+    /// <li>
+    /// <p><code>PAUSING</code> – The execution is waiting for an in-progress invocation to reach its next checkpoint before it pauses.</p></li>
+    /// <li>
+    /// <p><code>PAUSED</code> – The execution is paused, and Lambda doesn't invoke your function.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> – The execution completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The execution completed with an error.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – The execution exceeded its execution timeout.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> – A <code>StopDurableExecution</code> request stopped the execution.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> – A <code>DeleteDurableExecution</code> request is deleting the execution and its data.</p></li>
+    /// </ul>
     pub fn get_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ExecutionStatus>> {
         &self.statuses
     }

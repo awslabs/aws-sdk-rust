@@ -97,6 +97,8 @@ pub use crate::types::_data_storage::DataStorage;
 
 pub use crate::types::_ecpu_per_second::EcpuPerSecond;
 
+pub use crate::types::_integration_request::IntegrationRequest;
+
 pub use crate::types::_input_authentication_type::InputAuthenticationType;
 
 pub use crate::types::_authentication_type::AuthenticationType;
@@ -153,6 +155,8 @@ pub use crate::types::_node_group::NodeGroup;
 
 pub use crate::types::_log_delivery_configuration::LogDeliveryConfiguration;
 
+pub use crate::types::_integration::Integration;
+
 pub use crate::types::_node_snapshot::NodeSnapshot;
 
 pub use crate::types::_log_type::LogType;
@@ -177,6 +181,8 @@ pub use crate::types::_global_node_group::GlobalNodeGroup;
 
 pub use crate::types::_data_storage_unit::DataStorageUnit;
 
+pub use crate::types::_integration_type::IntegrationType;
+
 pub use crate::types::_change_type::ChangeType;
 
 pub use crate::types::_service_update_severity::ServiceUpdateSeverity;
@@ -192,6 +198,8 @@ pub use crate::types::_slot_migration::SlotMigration;
 pub use crate::types::_pending_log_delivery_configuration::PendingLogDeliveryConfiguration;
 
 pub use crate::types::_log_delivery_configuration_status::LogDeliveryConfigurationStatus;
+
+pub use crate::types::_integration_status::IntegrationStatus;
 
 pub use crate::types::_cloud_watch_logs_destination_details::CloudWatchLogsDestinationDetails;
 
@@ -302,6 +310,14 @@ mod _global_replication_group_info;
 mod _global_replication_group_member;
 
 mod _input_authentication_type;
+
+mod _integration;
+
+mod _integration_request;
+
+mod _integration_status;
+
+mod _integration_type;
 
 mod _ip_discovery;
 

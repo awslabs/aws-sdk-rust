@@ -114,6 +114,20 @@ impl ListDatasetsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_datasets::paginator::ListDatasetsPaginator {
         crate::operation::list_datasets::paginator::ListDatasetsPaginator::new(self.handle, self.inner)
     }
+    /// <p>A filter to apply to the datasets.</p>
+    pub fn filter(mut self, input: crate::types::ListDatasetsFilter) -> Self {
+        self.inner = self.inner.filter(input);
+        self
+    }
+    /// <p>A filter to apply to the datasets.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListDatasetsFilter>) -> Self {
+        self.inner = self.inner.set_filter(input);
+        self
+    }
+    /// <p>A filter to apply to the datasets.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListDatasetsFilter> {
+        self.inner.get_filter()
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

@@ -2,7 +2,7 @@
 
 /// <p>Contains information on a promotion. A promotion defines additional business rules that apply to a configurable subset of recommended items.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Promotion {
     /// <p>The name of the promotion.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -35,6 +35,16 @@ impl Promotion {
         self.filter_values.as_ref()
     }
 }
+impl ::std::fmt::Debug for Promotion {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Promotion");
+        formatter.field("name", &self.name);
+        formatter.field("percent_promoted_items", &self.percent_promoted_items);
+        formatter.field("filter_arn", &self.filter_arn);
+        formatter.field("filter_values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Promotion {
     /// Creates a new builder-style object to manufacture [`Promotion`](crate::types::Promotion).
     pub fn builder() -> crate::types::builders::PromotionBuilder {
@@ -43,7 +53,7 @@ impl Promotion {
 }
 
 /// A builder for [`Promotion`](crate::types::Promotion).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct PromotionBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -131,5 +141,15 @@ impl PromotionBuilder {
             filter_arn: self.filter_arn,
             filter_values: self.filter_values,
         }
+    }
+}
+impl ::std::fmt::Debug for PromotionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PromotionBuilder");
+        formatter.field("name", &self.name);
+        formatter.field("percent_promoted_items", &self.percent_promoted_items);
+        formatter.field("filter_arn", &self.filter_arn);
+        formatter.field("filter_values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

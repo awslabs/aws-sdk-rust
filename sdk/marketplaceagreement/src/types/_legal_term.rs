@@ -6,7 +6,7 @@
 pub struct LegalTerm {
     /// <p>Category of the term being updated.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifer for the term.</p>
+    /// <p>The unique identifier for the term.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>List of references to legal resources proposed to the buyers. An example is the EULA.</p>
     pub documents: ::std::option::Option<::std::vec::Vec<crate::types::DocumentItem>>,
@@ -16,7 +16,7 @@ impl LegalTerm {
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
-    /// <p>The unique identifer for the term.</p>
+    /// <p>The unique identifier for the term.</p>
     pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
@@ -57,17 +57,17 @@ impl LegalTermBuilder {
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
-    /// <p>The unique identifer for the term.</p>
+    /// <p>The unique identifier for the term.</p>
     pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifer for the term.</p>
+    /// <p>The unique identifier for the term.</p>
     pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
-    /// <p>The unique identifer for the term.</p>
+    /// <p>The unique identifier for the term.</p>
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }

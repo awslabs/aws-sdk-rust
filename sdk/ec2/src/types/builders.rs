@@ -317,6 +317,8 @@ pub use crate::types::_connection_notification::ConnectionNotificationBuilder;
 
 pub use crate::types::_service_configuration::ServiceConfigurationBuilder;
 
+pub use crate::types::_create_peering_connection_options_request::CreatePeeringConnectionOptionsRequestBuilder;
+
 pub use crate::types::_vpn_concentrator::VpnConcentratorBuilder;
 
 pub use crate::types::_vpn_connection_options_specification::VpnConnectionOptionsSpecificationBuilder;
@@ -450,6 +452,8 @@ pub use crate::types::_network_interface_attachment_changes::NetworkInterfaceAtt
 pub use crate::types::_create_volume_permission_modifications::CreateVolumePermissionModificationsBuilder;
 
 pub use crate::types::_modify_transit_gateway_options::ModifyTransitGatewayOptionsBuilder;
+
+pub use crate::types::_modify_transit_gateway_peering_attachment_request_options::ModifyTransitGatewayPeeringAttachmentRequestOptionsBuilder;
 
 pub use crate::types::_modify_transit_gateway_vpc_attachment_request_options::ModifyTransitGatewayVpcAttachmentRequestOptionsBuilder;
 
@@ -836,6 +840,8 @@ pub use crate::types::_subscription::SubscriptionBuilder;
 pub use crate::types::_capacity_block_extension::CapacityBlockExtensionBuilder;
 
 pub use crate::types::_capacity_block_extension_offering::CapacityBlockExtensionOfferingBuilder;
+
+pub use crate::types::_capacity_block_instance_type_preference::CapacityBlockInstanceTypePreferenceBuilder;
 
 pub use crate::types::_capacity_block_offering::CapacityBlockOfferingBuilder;
 
@@ -1499,6 +1505,8 @@ pub use crate::types::_volume_status_info::VolumeStatusInfoBuilder;
 
 pub use crate::types::_initialization_status_details::InitializationStatusDetailsBuilder;
 
+pub use crate::types::_active_vpn_tunnel_additional_key_exchange::ActiveVpnTunnelAdditionalKeyExchangeBuilder;
+
 pub use crate::types::_deprecation_time_condition::DeprecationTimeConditionBuilder;
 
 pub use crate::types::_creation_date_condition::CreationDateConditionBuilder;
@@ -1592,6 +1600,8 @@ pub use crate::types::_phase2_dh_group_numbers_request_list_value::Phase2DhGroup
 pub use crate::types::_ike_versions_request_list_value::IkeVersionsRequestListValueBuilder;
 
 pub use crate::types::_cloud_watch_log_options_specification::CloudWatchLogOptionsSpecificationBuilder;
+
+pub use crate::types::_vpn_additional_key_exchange_request::VpnAdditionalKeyExchangeRequestBuilder;
 
 pub use crate::types::_monitoring::MonitoringBuilder;
 
@@ -1688,6 +1698,8 @@ pub use crate::types::_availability_zone_message::AvailabilityZoneMessageBuilder
 pub use crate::types::_availability_zone_geography::AvailabilityZoneGeographyBuilder;
 
 pub use crate::types::_availability_zone_sub_geography::AvailabilityZoneSubGeographyBuilder;
+
+pub use crate::types::_capacity_block_offering_segment::CapacityBlockOfferingSegmentBuilder;
 
 pub use crate::types::_capacity_reservation_status::CapacityReservationStatusBuilder;
 
@@ -1905,6 +1917,8 @@ pub use crate::types::_launch_template_ena_srd_udp_specification::LaunchTemplate
 
 pub use crate::types::_secondary_interface_private_ip_address_specification::SecondaryInterfacePrivateIpAddressSpecificationBuilder;
 
+pub use crate::types::_additional_key_exchange_methods_request_list_value::AdditionalKeyExchangeMethodsRequestListValueBuilder;
+
 pub use crate::types::_spot_fleet_tag_specification::SpotFleetTagSpecificationBuilder;
 
 pub use crate::types::_classic_load_balancer::ClassicLoadBalancerBuilder;
@@ -1944,6 +1958,8 @@ pub use crate::types::_phase2_dh_group_numbers_list_value::Phase2DhGroupNumbersL
 pub use crate::types::_ike_versions_list_value::IkeVersionsListValueBuilder;
 
 pub use crate::types::_cloud_watch_log_options::CloudWatchLogOptionsBuilder;
+
+pub use crate::types::_vpn_additional_key_exchange::VpnAdditionalKeyExchangeBuilder;
 
 pub use crate::types::_application_status_detail::ApplicationStatusDetailBuilder;
 
@@ -1986,3 +2002,5 @@ pub use crate::types::_rule_option::RuleOptionBuilder;
 pub use crate::types::_rule_group_type_pair::RuleGroupTypePairBuilder;
 
 pub use crate::types::_rule_group_rule_options_pair::RuleGroupRuleOptionsPairBuilder;
+
+pub use crate::types::_additional_key_exchange_methods_list_value::AdditionalKeyExchangeMethodsListValueBuilder;

@@ -1452,6 +1452,16 @@ impl ServiceRuntimePlugin {
             let mut cfg = ::aws_smithy_types::config_bag::Layer::new("DirectoryServiceData");
             cfg.store_put(crate::idempotency_token::default_provider());
             cfg.store_put(::aws_smithy_runtime::client::orchestrator::AuthSchemeAndEndpointOrchestrationV2);
+            if _service_config
+                .behavior_version
+                .is_some_and(|bv| bv.is_at_least(::aws_smithy_runtime_api::client::behavior_version::BehaviorVersion::v2026_11_17()))
+            {
+                cfg.store_put(
+                    ::aws_smithy_types::timeout::TimeoutConfig::builder()
+                        .read_timeout(::std::time::Duration::from_millis(300000))
+                        .build(),
+                );
+            }
             ::std::option::Option::Some(cfg.freeze())
         };
         let mut runtime_components = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ServiceRuntimePlugin");

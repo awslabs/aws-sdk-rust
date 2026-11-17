@@ -2,7 +2,7 @@
 
 /// <p>A structure that defines search criteria base on words or phrases, participants in the Contact Lens conversational analytics transcript.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct TranscriptCriteria {
     /// <p>The participant role in a transcript</p>
     pub participant_role: crate::types::ParticipantRole,
@@ -26,6 +26,15 @@ impl TranscriptCriteria {
         &self.match_type
     }
 }
+impl ::std::fmt::Debug for TranscriptCriteria {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TranscriptCriteria");
+        formatter.field("participant_role", &self.participant_role);
+        formatter.field("search_text", &"*** Sensitive Data Redacted ***");
+        formatter.field("match_type", &self.match_type);
+        formatter.finish()
+    }
+}
 impl TranscriptCriteria {
     /// Creates a new builder-style object to manufacture [`TranscriptCriteria`](crate::types::TranscriptCriteria).
     pub fn builder() -> crate::types::builders::TranscriptCriteriaBuilder {
@@ -34,7 +43,7 @@ impl TranscriptCriteria {
 }
 
 /// A builder for [`TranscriptCriteria`](crate::types::TranscriptCriteria).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct TranscriptCriteriaBuilder {
     pub(crate) participant_role: ::std::option::Option<crate::types::ParticipantRole>,
@@ -118,5 +127,14 @@ impl TranscriptCriteriaBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for TranscriptCriteriaBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("TranscriptCriteriaBuilder");
+        formatter.field("participant_role", &self.participant_role);
+        formatter.field("search_text", &"*** Sensitive Data Redacted ***");
+        formatter.field("match_type", &self.match_type);
+        formatter.finish()
     }
 }

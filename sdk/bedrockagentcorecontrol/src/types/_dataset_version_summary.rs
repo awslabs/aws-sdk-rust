@@ -8,6 +8,8 @@ pub struct DatasetVersionSummary {
     pub dataset_version: ::std::string::String,
     /// <p>The number of examples in this version.</p>
     pub example_count: i64,
+    /// <p>The number of examples that have each field, for this version. Absent when the counts are unknown.</p>
+    pub example_count_by_field: ::std::option::Option<crate::types::ExampleCountByField>,
     /// <p>The timestamp when this version was published.</p>
     pub created_at: ::aws_smithy_types::DateTime,
 }
@@ -20,6 +22,10 @@ impl DatasetVersionSummary {
     /// <p>The number of examples in this version.</p>
     pub fn example_count(&self) -> i64 {
         self.example_count
+    }
+    /// <p>The number of examples that have each field, for this version. Absent when the counts are unknown.</p>
+    pub fn example_count_by_field(&self) -> ::std::option::Option<&crate::types::ExampleCountByField> {
+        self.example_count_by_field.as_ref()
     }
     /// <p>The timestamp when this version was published.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
@@ -39,6 +45,7 @@ impl DatasetVersionSummary {
 pub struct DatasetVersionSummaryBuilder {
     pub(crate) dataset_version: ::std::option::Option<::std::string::String>,
     pub(crate) example_count: ::std::option::Option<i64>,
+    pub(crate) example_count_by_field: ::std::option::Option<crate::types::ExampleCountByField>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl DatasetVersionSummaryBuilder {
@@ -71,6 +78,20 @@ impl DatasetVersionSummaryBuilder {
     /// <p>The number of examples in this version.</p>
     pub fn get_example_count(&self) -> &::std::option::Option<i64> {
         &self.example_count
+    }
+    /// <p>The number of examples that have each field, for this version. Absent when the counts are unknown.</p>
+    pub fn example_count_by_field(mut self, input: crate::types::ExampleCountByField) -> Self {
+        self.example_count_by_field = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of examples that have each field, for this version. Absent when the counts are unknown.</p>
+    pub fn set_example_count_by_field(mut self, input: ::std::option::Option<crate::types::ExampleCountByField>) -> Self {
+        self.example_count_by_field = input;
+        self
+    }
+    /// <p>The number of examples that have each field, for this version. Absent when the counts are unknown.</p>
+    pub fn get_example_count_by_field(&self) -> &::std::option::Option<crate::types::ExampleCountByField> {
+        &self.example_count_by_field
     }
     /// <p>The timestamp when this version was published.</p>
     /// This field is required.
@@ -106,6 +127,7 @@ impl DatasetVersionSummaryBuilder {
                     "example_count was not specified but it is required when building DatasetVersionSummary",
                 )
             })?,
+            example_count_by_field: self.example_count_by_field,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",

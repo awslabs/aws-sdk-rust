@@ -2,7 +2,7 @@
 
 /// <p>The structure representing Polygon Geometry based on the <a href="https://www.rfc-editor.org/rfc/rfc7946#section-3.1.6">GeoJson spec</a>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct MultiPolygonGeometryInput {
     /// <p>The coordinates of the multipolygon geometry.</p>
     pub coordinates: ::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
@@ -14,6 +14,13 @@ impl MultiPolygonGeometryInput {
         self.coordinates.deref()
     }
 }
+impl ::std::fmt::Debug for MultiPolygonGeometryInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MultiPolygonGeometryInput");
+        formatter.field("coordinates", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl MultiPolygonGeometryInput {
     /// Creates a new builder-style object to manufacture [`MultiPolygonGeometryInput`](crate::types::MultiPolygonGeometryInput).
     pub fn builder() -> crate::types::builders::MultiPolygonGeometryInputBuilder {
@@ -22,7 +29,7 @@ impl MultiPolygonGeometryInput {
 }
 
 /// A builder for [`MultiPolygonGeometryInput`](crate::types::MultiPolygonGeometryInput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct MultiPolygonGeometryInputBuilder {
     pub(crate) coordinates: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>>,
@@ -60,5 +67,12 @@ impl MultiPolygonGeometryInputBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for MultiPolygonGeometryInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("MultiPolygonGeometryInputBuilder");
+        formatter.field("coordinates", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

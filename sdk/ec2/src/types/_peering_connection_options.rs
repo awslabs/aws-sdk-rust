@@ -10,6 +10,10 @@ pub struct PeeringConnectionOptions {
     pub allow_egress_from_local_classic_link_to_remote_vpc: ::std::option::Option<bool>,
     /// <p>Deprecated.</p>
     pub allow_egress_from_local_vpc_to_remote_classic_link: ::std::option::Option<bool>,
+    /// <p>Indicates whether this side of the VPC peering connection allows multipath resilience.</p>
+    pub allow_multipath_resilience: ::std::option::Option<bool>,
+    /// <p>The multipath resilience mode for this side of the VPC peering connection. This value is present only when this side allows multipath resilience.</p>
+    pub multipath_resilience_mode: ::std::option::Option<crate::types::MultipathResilienceMode>,
 }
 impl PeeringConnectionOptions {
     /// <p>If true, the public DNS hostnames of instances in the specified VPC resolve to private IP addresses when queried from instances in the peer VPC.</p>
@@ -23,6 +27,14 @@ impl PeeringConnectionOptions {
     /// <p>Deprecated.</p>
     pub fn allow_egress_from_local_vpc_to_remote_classic_link(&self) -> ::std::option::Option<bool> {
         self.allow_egress_from_local_vpc_to_remote_classic_link
+    }
+    /// <p>Indicates whether this side of the VPC peering connection allows multipath resilience.</p>
+    pub fn allow_multipath_resilience(&self) -> ::std::option::Option<bool> {
+        self.allow_multipath_resilience
+    }
+    /// <p>The multipath resilience mode for this side of the VPC peering connection. This value is present only when this side allows multipath resilience.</p>
+    pub fn multipath_resilience_mode(&self) -> ::std::option::Option<&crate::types::MultipathResilienceMode> {
+        self.multipath_resilience_mode.as_ref()
     }
 }
 impl PeeringConnectionOptions {
@@ -39,6 +51,8 @@ pub struct PeeringConnectionOptionsBuilder {
     pub(crate) allow_dns_resolution_from_remote_vpc: ::std::option::Option<bool>,
     pub(crate) allow_egress_from_local_classic_link_to_remote_vpc: ::std::option::Option<bool>,
     pub(crate) allow_egress_from_local_vpc_to_remote_classic_link: ::std::option::Option<bool>,
+    pub(crate) allow_multipath_resilience: ::std::option::Option<bool>,
+    pub(crate) multipath_resilience_mode: ::std::option::Option<crate::types::MultipathResilienceMode>,
 }
 impl PeeringConnectionOptionsBuilder {
     /// <p>If true, the public DNS hostnames of instances in the specified VPC resolve to private IP addresses when queried from instances in the peer VPC.</p>
@@ -83,12 +97,42 @@ impl PeeringConnectionOptionsBuilder {
     pub fn get_allow_egress_from_local_vpc_to_remote_classic_link(&self) -> &::std::option::Option<bool> {
         &self.allow_egress_from_local_vpc_to_remote_classic_link
     }
+    /// <p>Indicates whether this side of the VPC peering connection allows multipath resilience.</p>
+    pub fn allow_multipath_resilience(mut self, input: bool) -> Self {
+        self.allow_multipath_resilience = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether this side of the VPC peering connection allows multipath resilience.</p>
+    pub fn set_allow_multipath_resilience(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.allow_multipath_resilience = input;
+        self
+    }
+    /// <p>Indicates whether this side of the VPC peering connection allows multipath resilience.</p>
+    pub fn get_allow_multipath_resilience(&self) -> &::std::option::Option<bool> {
+        &self.allow_multipath_resilience
+    }
+    /// <p>The multipath resilience mode for this side of the VPC peering connection. This value is present only when this side allows multipath resilience.</p>
+    pub fn multipath_resilience_mode(mut self, input: crate::types::MultipathResilienceMode) -> Self {
+        self.multipath_resilience_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The multipath resilience mode for this side of the VPC peering connection. This value is present only when this side allows multipath resilience.</p>
+    pub fn set_multipath_resilience_mode(mut self, input: ::std::option::Option<crate::types::MultipathResilienceMode>) -> Self {
+        self.multipath_resilience_mode = input;
+        self
+    }
+    /// <p>The multipath resilience mode for this side of the VPC peering connection. This value is present only when this side allows multipath resilience.</p>
+    pub fn get_multipath_resilience_mode(&self) -> &::std::option::Option<crate::types::MultipathResilienceMode> {
+        &self.multipath_resilience_mode
+    }
     /// Consumes the builder and constructs a [`PeeringConnectionOptions`](crate::types::PeeringConnectionOptions).
     pub fn build(self) -> crate::types::PeeringConnectionOptions {
         crate::types::PeeringConnectionOptions {
             allow_dns_resolution_from_remote_vpc: self.allow_dns_resolution_from_remote_vpc,
             allow_egress_from_local_classic_link_to_remote_vpc: self.allow_egress_from_local_classic_link_to_remote_vpc,
             allow_egress_from_local_vpc_to_remote_classic_link: self.allow_egress_from_local_vpc_to_remote_classic_link,
+            allow_multipath_resilience: self.allow_multipath_resilience,
+            multipath_resilience_mode: self.multipath_resilience_mode,
         }
     }
 }

@@ -30,55 +30,58 @@ pub fn ser_create_replication_configuration_template_input_input(
     if let Some(var_8) = &input.internet_protocol {
         object.key("internetProtocol").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.replication_server_instance_type {
-        object.key("replicationServerInstanceType").string(var_9.as_str());
+    if let Some(var_9) = &input.outpost_snapshot_location {
+        object.key("outpostSnapshotLocation").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.replication_servers_security_groups_ids {
-        let mut array_11 = object.key("replicationServersSecurityGroupsIDs").start_array();
-        for item_12 in var_10 {
+    if let Some(var_10) = &input.replication_server_instance_type {
+        object.key("replicationServerInstanceType").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.replication_servers_security_groups_ids {
+        let mut array_12 = object.key("replicationServersSecurityGroupsIDs").start_array();
+        for item_13 in var_11 {
             {
-                array_11.value().string(item_12.as_str());
+                array_12.value().string(item_13.as_str());
             }
         }
-        array_11.finish();
+        array_12.finish();
     }
-    if let Some(var_13) = &input.staging_area_subnet_id {
-        object.key("stagingAreaSubnetId").string(var_13.as_str());
+    if let Some(var_14) = &input.staging_area_subnet_id {
+        object.key("stagingAreaSubnetId").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.staging_area_tags {
+    if let Some(var_15) = &input.staging_area_tags {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("stagingAreaTags").start_object();
-        for (key_16, value_17) in var_14 {
+        let mut object_16 = object.key("stagingAreaTags").start_object();
+        for (key_17, value_18) in var_15 {
             {
-                object_15.key(key_16.as_str()).string(value_17.as_str());
+                object_16.key(key_17.as_str()).string(value_18.as_str());
             }
         }
-        object_15.finish();
+        object_16.finish();
     }
-    if let Some(var_18) = &input.storage_configuration {
+    if let Some(var_19) = &input.storage_configuration {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("storageConfiguration").start_object();
-        crate::protocol_serde::shape_storage_configuration::ser_storage_configuration(&mut object_19, var_18)?;
-        object_19.finish();
+        let mut object_20 = object.key("storageConfiguration").start_object();
+        crate::protocol_serde::shape_storage_configuration::ser_storage_configuration(&mut object_20, var_19)?;
+        object_20.finish();
     }
-    if let Some(var_20) = &input.store_snapshot_on_local_zone {
-        object.key("storeSnapshotOnLocalZone").boolean(*var_20);
+    if let Some(var_21) = &input.store_snapshot_on_local_zone {
+        object.key("storeSnapshotOnLocalZone").boolean(*var_21);
     }
-    if let Some(var_21) = &input.tags {
+    if let Some(var_22) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_22 = object.key("tags").start_object();
-        for (key_23, value_24) in var_21 {
+        let mut object_23 = object.key("tags").start_object();
+        for (key_24, value_25) in var_22 {
             {
-                object_22.key(key_23.as_str()).string(value_24.as_str());
+                object_23.key(key_24.as_str()).string(value_25.as_str());
             }
         }
-        object_22.finish();
+        object_23.finish();
     }
-    if let Some(var_25) = &input.use_dedicated_replication_server {
-        object.key("useDedicatedReplicationServer").boolean(*var_25);
+    if let Some(var_26) = &input.use_dedicated_replication_server {
+        object.key("useDedicatedReplicationServer").boolean(*var_26);
     }
-    if let Some(var_26) = &input.use_fips_endpoint {
-        object.key("useFipsEndpoint").boolean(*var_26);
+    if let Some(var_27) = &input.use_fips_endpoint {
+        object.key("useFipsEndpoint").boolean(*var_27);
     }
     Ok(())
 }

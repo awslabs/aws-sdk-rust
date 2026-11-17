@@ -99,6 +99,26 @@ static PUTCONFORMANCEPACKINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static>
     7,
 )
 .with_list_member(&PUTCONFORMANCEPACKINPUT_MEMBER_TAGS_MEMBER);
+static PUTCONFORMANCEPACKINPUT_MEMBER_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutConformancePackInput$Source",
+        "com.amazonaws.configservice.synthetic",
+        "PutConformancePackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Source",
+    8,
+);
+static PUTCONFORMANCEPACKINPUT_MEMBER_SCOPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#PutConformancePackInput$Scope",
+        "com.amazonaws.configservice.synthetic",
+        "PutConformancePackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Scope",
+    9,
+);
 static PUTCONFORMANCEPACKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.configservice.synthetic#PutConformancePackInput",
@@ -115,6 +135,8 @@ static PUTCONFORMANCEPACKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::
         &PUTCONFORMANCEPACKINPUT_MEMBER_CONFORMANCE_PACK_INPUT_PARAMETERS,
         &PUTCONFORMANCEPACKINPUT_MEMBER_TEMPLATE_SSM_DOCUMENT_DETAILS,
         &PUTCONFORMANCEPACKINPUT_MEMBER_TAGS,
+        &PUTCONFORMANCEPACKINPUT_MEMBER_SOURCE,
+        &PUTCONFORMANCEPACKINPUT_MEMBER_SCOPE,
     ],
 )
 .with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
@@ -172,6 +194,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::put_co
                     Ok(())
                 },
             )?;
+        }
+        if let Some(ref val) = self.source {
+            ser.write_struct(&PUTCONFORMANCEPACKINPUT_MEMBER_SOURCE, val)?;
+        }
+        if let Some(ref val) = self.scope {
+            ser.write_struct(&PUTCONFORMANCEPACKINPUT_MEMBER_SCOPE, val)?;
         }
         Ok(())
     }
@@ -258,6 +286,20 @@ impl crate::operation::put_conformance_pack::builders::PutConformancePackInputBu
                             })?;
                             container
                         });
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.source = Some(crate::types::ConformancePackSource::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.scope = Some(crate::types::ConformancePackScope::deserialize(deser)?);
                     }
                 }
                 _ => {}

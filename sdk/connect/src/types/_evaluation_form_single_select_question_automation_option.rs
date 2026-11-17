@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum EvaluationFormSingleSelectQuestionAutomationOption {
+    /// <p>The automation option based on a condition for the single select question. Use with the <code>CONDITION</code> answer source type.</p>
+    AutomationRule(crate::types::SingleSelectQuestionAutomationRule),
     /// <p>The automation option based on a rule category for the single select question.</p>
     RuleCategory(crate::types::SingleSelectQuestionRuleCategoryAutomation),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum EvaluationFormSingleSelectQuestionAutomationOption {
     Unknown,
 }
 impl EvaluationFormSingleSelectQuestionAutomationOption {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`AutomationRule`](crate::types::EvaluationFormSingleSelectQuestionAutomationOption::AutomationRule), extracting the inner [`SingleSelectQuestionAutomationRule`](crate::types::SingleSelectQuestionAutomationRule).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_automation_rule(&self) -> ::std::result::Result<&crate::types::SingleSelectQuestionAutomationRule, &Self> {
+        if let EvaluationFormSingleSelectQuestionAutomationOption::AutomationRule(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`AutomationRule`](crate::types::EvaluationFormSingleSelectQuestionAutomationOption::AutomationRule).
+    pub fn is_automation_rule(&self) -> bool {
+        self.as_automation_rule().is_ok()
+    }
     /// Tries to convert the enum instance into [`RuleCategory`](crate::types::EvaluationFormSingleSelectQuestionAutomationOption::RuleCategory), extracting the inner [`SingleSelectQuestionRuleCategoryAutomation`](crate::types::SingleSelectQuestionRuleCategoryAutomation).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_rule_category(&self) -> ::std::result::Result<&crate::types::SingleSelectQuestionRuleCategoryAutomation, &Self> {

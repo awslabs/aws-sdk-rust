@@ -141,6 +141,13 @@ pub(crate) fn de_update_network_migration_definition(
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
                     )?);
                 }
+                "definitionType" => {
+                    builder = builder.set_definition_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::DefinitionType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "description" => {
                     builder = builder.set_description(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

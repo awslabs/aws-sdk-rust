@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`global_resolver_id(impl Into<String>)`](crate::operation::list_dns_views::builders::ListDNSViewsFluentBuilder::global_resolver_id) / [`set_global_resolver_id(Option<String>)`](crate::operation::list_dns_views::builders::ListDNSViewsFluentBuilder::set_global_resolver_id):<br>required: **true**<br><p>The Global Resolver ID.</p><br>
     /// - On success, responds with [`ListDnsViewsOutput`](crate::operation::list_dns_views::ListDnsViewsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_dns_views::ListDnsViewsOutput::next_token): <p>A pagination token used for large sets of results that can't be returned in a single response. Provide this token in the next call to get the results not returned in this call.</p>
-    ///   - [`dns_views(Vec::<DnsViewSummary>)`](crate::operation::list_dns_views::ListDnsViewsOutput::dns_views): <p>An array of information about the DNS views, such as whether DNSSEC is enabled, creation time, etc.</p>
+    ///   - [`dns_views(Vec::<DnsViewSummary>)`](crate::operation::list_dns_views::ListDnsViewsOutput::dns_views): <p>An array of information about the DNS views, such as whether DNSSEC is enabled and the creation time.</p>
     /// - On failure, responds with [`SdkError<ListDNSViewsError>`](crate::operation::list_dns_views::ListDNSViewsError)
     pub fn list_dns_views(&self) -> crate::operation::list_dns_views::builders::ListDNSViewsFluentBuilder {
         crate::operation::list_dns_views::builders::ListDNSViewsFluentBuilder::new(self.handle.clone())

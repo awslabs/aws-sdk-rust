@@ -2,7 +2,7 @@
 
 /// <p></p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SupportedEmailDomainsStatus {
     /// <p></p>
     pub enabled: ::std::option::Option<crate::types::FeatureEnableStatus>,
@@ -21,6 +21,14 @@ impl SupportedEmailDomainsStatus {
         self.allowed_domains.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for SupportedEmailDomainsStatus {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SupportedEmailDomainsStatus");
+        formatter.field("enabled", &self.enabled);
+        formatter.field("allowed_domains", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl SupportedEmailDomainsStatus {
     /// Creates a new builder-style object to manufacture [`SupportedEmailDomainsStatus`](crate::types::SupportedEmailDomainsStatus).
     pub fn builder() -> crate::types::builders::SupportedEmailDomainsStatusBuilder {
@@ -29,7 +37,7 @@ impl SupportedEmailDomainsStatus {
 }
 
 /// A builder for [`SupportedEmailDomainsStatus`](crate::types::SupportedEmailDomainsStatus).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct SupportedEmailDomainsStatusBuilder {
     pub(crate) enabled: ::std::option::Option<crate::types::FeatureEnableStatus>,
@@ -76,5 +84,13 @@ impl SupportedEmailDomainsStatusBuilder {
             enabled: self.enabled,
             allowed_domains: self.allowed_domains,
         }
+    }
+}
+impl ::std::fmt::Debug for SupportedEmailDomainsStatusBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SupportedEmailDomainsStatusBuilder");
+        formatter.field("enabled", &self.enabled);
+        formatter.field("allowed_domains", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -138,6 +138,8 @@ impl Client {
 
 mod create_centralization_rule_for_organization;
 
+mod create_connector;
+
 mod create_dataset_integration;
 
 mod create_s3_table_integration;
@@ -177,6 +179,8 @@ pub mod customize;
 
 mod delete_centralization_rule_for_organization;
 
+mod delete_connector;
+
 mod delete_dataset_integration;
 
 mod delete_s3_table_integration;
@@ -188,6 +192,12 @@ mod delete_telemetry_rule;
 mod delete_telemetry_rule_for_organization;
 
 mod get_centralization_rule_for_organization;
+
+mod get_connector;
+
+mod get_connector_telemetry_manifest;
+
+mod get_connector_telemetry_setup;
 
 mod get_dataset_integration;
 
@@ -205,13 +215,19 @@ mod get_telemetry_rule;
 
 mod get_telemetry_rule_for_organization;
 
+mod get_third_party_telemetry_enrichment;
+
 mod list_centralization_rules_for_organization;
+
+mod list_connectors;
 
 mod list_dataset_integrations;
 
 mod list_resource_telemetry;
 
 mod list_resource_telemetry_for_organization;
+
+mod list_resources_by_connector;
 
 mod list_s3_table_integrations;
 
@@ -223,17 +239,27 @@ mod list_telemetry_rules;
 
 mod list_telemetry_rules_for_organization;
 
+mod list_third_party_telemetry_enrichments;
+
+mod put_connector_telemetry_manifest;
+
 mod start_telemetry_enrichment;
 
 mod start_telemetry_evaluation;
 
 mod start_telemetry_evaluation_for_organization;
 
+mod start_telemetry_pipeline_refresh;
+
+mod start_third_party_telemetry_enrichment;
+
 mod stop_telemetry_enrichment;
 
 mod stop_telemetry_evaluation;
 
 mod stop_telemetry_evaluation_for_organization;
+
+mod stop_third_party_telemetry_enrichment;
 
 mod tag_resource;
 

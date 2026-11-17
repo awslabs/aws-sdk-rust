@@ -16,6 +16,16 @@ pub struct VpcPeeringConnection {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The ID of the VPC peering connection.</p>
     pub vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
+    /// <p>The multipath resilience status of the VPC peering connection. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>enabled</code> – Both the requester and the accepter allow multipath resilience.</p></li>
+    /// <li>
+    /// <p><code>pending</code> – Either the requester or the accepter allows multipath resilience, but not both.</p></li>
+    /// <li>
+    /// <p><code>disabled</code> – Neither the requester nor the accepter allows multipath resilience.</p></li>
+    /// </ul>
+    pub multipath_resilience_status: ::std::option::Option<crate::types::MultipathResilienceStatus>,
 }
 impl VpcPeeringConnection {
     /// <p>Information about the accepter VPC. CIDR block information is only returned when describing an active VPC peering connection.</p>
@@ -44,6 +54,18 @@ impl VpcPeeringConnection {
     pub fn vpc_peering_connection_id(&self) -> ::std::option::Option<&str> {
         self.vpc_peering_connection_id.as_deref()
     }
+    /// <p>The multipath resilience status of the VPC peering connection. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>enabled</code> – Both the requester and the accepter allow multipath resilience.</p></li>
+    /// <li>
+    /// <p><code>pending</code> – Either the requester or the accepter allows multipath resilience, but not both.</p></li>
+    /// <li>
+    /// <p><code>disabled</code> – Neither the requester nor the accepter allows multipath resilience.</p></li>
+    /// </ul>
+    pub fn multipath_resilience_status(&self) -> ::std::option::Option<&crate::types::MultipathResilienceStatus> {
+        self.multipath_resilience_status.as_ref()
+    }
 }
 impl VpcPeeringConnection {
     /// Creates a new builder-style object to manufacture [`VpcPeeringConnection`](crate::types::VpcPeeringConnection).
@@ -62,6 +84,7 @@ pub struct VpcPeeringConnectionBuilder {
     pub(crate) status: ::std::option::Option<crate::types::VpcPeeringConnectionStateReason>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) vpc_peering_connection_id: ::std::option::Option<::std::string::String>,
+    pub(crate) multipath_resilience_status: ::std::option::Option<crate::types::MultipathResilienceStatus>,
 }
 impl VpcPeeringConnectionBuilder {
     /// <p>Information about the accepter VPC. CIDR block information is only returned when describing an active VPC peering connection.</p>
@@ -154,6 +177,44 @@ impl VpcPeeringConnectionBuilder {
     pub fn get_vpc_peering_connection_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.vpc_peering_connection_id
     }
+    /// <p>The multipath resilience status of the VPC peering connection. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>enabled</code> – Both the requester and the accepter allow multipath resilience.</p></li>
+    /// <li>
+    /// <p><code>pending</code> – Either the requester or the accepter allows multipath resilience, but not both.</p></li>
+    /// <li>
+    /// <p><code>disabled</code> – Neither the requester nor the accepter allows multipath resilience.</p></li>
+    /// </ul>
+    pub fn multipath_resilience_status(mut self, input: crate::types::MultipathResilienceStatus) -> Self {
+        self.multipath_resilience_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The multipath resilience status of the VPC peering connection. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>enabled</code> – Both the requester and the accepter allow multipath resilience.</p></li>
+    /// <li>
+    /// <p><code>pending</code> – Either the requester or the accepter allows multipath resilience, but not both.</p></li>
+    /// <li>
+    /// <p><code>disabled</code> – Neither the requester nor the accepter allows multipath resilience.</p></li>
+    /// </ul>
+    pub fn set_multipath_resilience_status(mut self, input: ::std::option::Option<crate::types::MultipathResilienceStatus>) -> Self {
+        self.multipath_resilience_status = input;
+        self
+    }
+    /// <p>The multipath resilience status of the VPC peering connection. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>enabled</code> – Both the requester and the accepter allow multipath resilience.</p></li>
+    /// <li>
+    /// <p><code>pending</code> – Either the requester or the accepter allows multipath resilience, but not both.</p></li>
+    /// <li>
+    /// <p><code>disabled</code> – Neither the requester nor the accepter allows multipath resilience.</p></li>
+    /// </ul>
+    pub fn get_multipath_resilience_status(&self) -> &::std::option::Option<crate::types::MultipathResilienceStatus> {
+        &self.multipath_resilience_status
+    }
     /// Consumes the builder and constructs a [`VpcPeeringConnection`](crate::types::VpcPeeringConnection).
     pub fn build(self) -> crate::types::VpcPeeringConnection {
         crate::types::VpcPeeringConnection {
@@ -163,6 +224,7 @@ impl VpcPeeringConnectionBuilder {
             status: self.status,
             tags: self.tags,
             vpc_peering_connection_id: self.vpc_peering_connection_id,
+            multipath_resilience_status: self.multipath_resilience_status,
         }
     }
 }

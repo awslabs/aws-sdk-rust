@@ -12,6 +12,7 @@
 /// ```text
 /// # let tasktype = unimplemented!();
 /// match tasktype {
+///     TaskType::CodeChangeRiskAnalysis => { /* ... */ },
 ///     TaskType::Evaluation => { /* ... */ },
 ///     TaskType::Investigation => { /* ... */ },
 ///     TaskType::ReleaseReadinessReview => { /* ... */ },
@@ -44,6 +45,8 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TaskType {
+    #[allow(missing_docs)] // documentation missing in model
+    CodeChangeRiskAnalysis,
     /// <p>Task for evaluating options or solutions (not in use)</p>
     Evaluation,
     /// <p>Task for investigating issues or requirements</p>
@@ -59,6 +62,7 @@ pub enum TaskType {
 impl ::std::convert::From<&str> for TaskType {
     fn from(s: &str) -> Self {
         match s {
+            "CODE_CHANGE_RISK_ANALYSIS" => TaskType::CodeChangeRiskAnalysis,
             "EVALUATION" => TaskType::Evaluation,
             "INVESTIGATION" => TaskType::Investigation,
             "RELEASE_READINESS_REVIEW" => TaskType::ReleaseReadinessReview,
@@ -78,6 +82,7 @@ impl TaskType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            TaskType::CodeChangeRiskAnalysis => "CODE_CHANGE_RISK_ANALYSIS",
             TaskType::Evaluation => "EVALUATION",
             TaskType::Investigation => "INVESTIGATION",
             TaskType::ReleaseReadinessReview => "RELEASE_READINESS_REVIEW",
@@ -87,7 +92,13 @@ impl TaskType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["EVALUATION", "INVESTIGATION", "RELEASE_READINESS_REVIEW", "RELEASE_TESTING"]
+        &[
+            "CODE_CHANGE_RISK_ANALYSIS",
+            "EVALUATION",
+            "INVESTIGATION",
+            "RELEASE_READINESS_REVIEW",
+            "RELEASE_TESTING",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for TaskType {
@@ -110,6 +121,7 @@ impl TaskType {
 impl ::std::fmt::Display for TaskType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            TaskType::CodeChangeRiskAnalysis => write!(f, "CODE_CHANGE_RISK_ANALYSIS"),
             TaskType::Evaluation => write!(f, "EVALUATION"),
             TaskType::Investigation => write!(f, "INVESTIGATION"),
             TaskType::ReleaseReadinessReview => write!(f, "RELEASE_READINESS_REVIEW"),

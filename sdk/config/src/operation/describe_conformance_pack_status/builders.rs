@@ -135,6 +135,20 @@ impl DescribeConformancePackStatusFluentBuilder {
     pub fn get_conformance_pack_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_conformance_pack_names()
     }
+    /// <p>Returns a filtered list of custom or managed conformance pack statuses. By default, if the filter is not defined, Config returns details for all your conformance packs.</p>
+    pub fn filters(mut self, input: crate::types::DescribeConformancePacksFilters) -> Self {
+        self.inner = self.inner.filters(input);
+        self
+    }
+    /// <p>Returns a filtered list of custom or managed conformance pack statuses. By default, if the filter is not defined, Config returns details for all your conformance packs.</p>
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::DescribeConformancePacksFilters>) -> Self {
+        self.inner = self.inner.set_filters(input);
+        self
+    }
+    /// <p>Returns a filtered list of custom or managed conformance pack statuses. By default, if the filter is not defined, Config returns details for all your conformance packs.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::DescribeConformancePacksFilters> {
+        self.inner.get_filters()
+    }
     /// <p>The maximum number of conformance packs status returned on each page.</p>
     pub fn limit(mut self, input: i32) -> Self {
         self.inner = self.inner.limit(input);

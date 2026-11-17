@@ -3,17 +3,57 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateBillingPreferencesInput {
-    /// <p>The feature to update. Valid values: <code>BILLING_ALERTS</code>, <code>RI_SHARING</code>, <code>CREDIT_SHARING</code>, <code>CREDIT_LEVEL_SHARING</code>, <code>CREDIT_PREFERENCE_OPTIONS</code>. The history features (<code>RI_SHARING_HISTORY</code> and <code>CREDIT_SHARING_HISTORY</code>) are read-only and cannot be updated.</p>
+    /// <p>The feature to update. Valid values: <code>BILLING_ALERTS</code>, <code>RI_SHARING</code>, <code>CREDIT_SHARING</code>, <code>CREDIT_LEVEL_SHARING</code>, <code>CREDIT_PREFERENCE_OPTIONS</code>, <code>BENEFIT_LEVEL_SHARING</code>. The history features (<code>RI_SHARING_HISTORY</code> and <code>CREDIT_SHARING_HISTORY</code>) are read-only and cannot be updated.</p>
     pub feature: ::std::option::Option<crate::types::BillingFeature>,
     /// <p>Key/value pairs to apply. All keys in a single request must be valid for the specified <code>feature</code> and must not be duplicated. For <code>CREDIT_PREFERENCE_OPTIONS</code>, all keys must reference the same <code>creditId</code>.</p>
+    /// <p>For <code>BENEFIT_LEVEL_SHARING</code>, all keys must reference the same Reserved Instance or Savings Plan. To share it with the accounts in one Cost Category rule, send these three keys with the value <code>ENABLED</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>benefit/{ri|sp}/{benefitId}/sharing/costCategoryArn/{costCategoryArn}</code></p></li>
+    /// <li>
+    /// <p><code>benefit/{ri|sp}/{benefitId}/sharing/ruleName/{ruleName}</code></p></li>
+    /// <li>
+    /// <p><code>benefit/{ri|sp}/{benefitId}/sharing/mode/{prioritized|restricted}</code></p></li>
+    /// </ul>
+    /// <p>With <code>prioritized</code>, any benefit that the rule's accounts don't use goes to the rest of your consolidated billing family, following your family sharing settings. With <code>restricted</code>, only the owner and the rule's accounts receive it. The Cost Category must belong to your account. To stop sharing, send the same three keys with the value <code>DISABLED</code>.</p>
+    /// <p>For <code>RI_SHARING</code> and <code>CREDIT_SHARING</code>, you can share benefits by account group. Each rule in a Cost Category is one group. Send exactly one of these group keys with the value <code>ENABLED</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>open-sharing</code> - Share across the whole consolidated billing family, with no groups.</p></li>
+    /// <li>
+    /// <p><code>costcategory-prioritized/{costCategoryArn}</code> - Share within each group first, then with the rest of the family.</p></li>
+    /// <li>
+    /// <p><code>costcategory-restricted/{costCategoryArn}</code> - An account in a group shares only with accounts in the same group.</p></li>
+    /// </ul>
+    /// <p>For <code>RI_SHARING</code>, the <code>costcategory-</code> keys use a Cost Category that supports the <code>billing:rispgroupsharing</code> resource type. To use a Cost Category that supports the <code>billing:benefitgroupsharing</code> resource type, use the <code>benefitgroup-prioritized/</code> or <code>benefitgroup-restricted/</code> prefix instead. For <code>CREDIT_SHARING</code>, the Cost Category must support the <code>billing:benefitgroupsharing</code> resource type. The Cost Category must belong to your account. <code>GetBillingPreferences</code> returns the group key that is in effect.</p>
     pub billing_preferences_per_key: ::std::option::Option<::std::vec::Vec<crate::types::BillingPreferenceForKey>>,
 }
 impl UpdateBillingPreferencesInput {
-    /// <p>The feature to update. Valid values: <code>BILLING_ALERTS</code>, <code>RI_SHARING</code>, <code>CREDIT_SHARING</code>, <code>CREDIT_LEVEL_SHARING</code>, <code>CREDIT_PREFERENCE_OPTIONS</code>. The history features (<code>RI_SHARING_HISTORY</code> and <code>CREDIT_SHARING_HISTORY</code>) are read-only and cannot be updated.</p>
+    /// <p>The feature to update. Valid values: <code>BILLING_ALERTS</code>, <code>RI_SHARING</code>, <code>CREDIT_SHARING</code>, <code>CREDIT_LEVEL_SHARING</code>, <code>CREDIT_PREFERENCE_OPTIONS</code>, <code>BENEFIT_LEVEL_SHARING</code>. The history features (<code>RI_SHARING_HISTORY</code> and <code>CREDIT_SHARING_HISTORY</code>) are read-only and cannot be updated.</p>
     pub fn feature(&self) -> ::std::option::Option<&crate::types::BillingFeature> {
         self.feature.as_ref()
     }
     /// <p>Key/value pairs to apply. All keys in a single request must be valid for the specified <code>feature</code> and must not be duplicated. For <code>CREDIT_PREFERENCE_OPTIONS</code>, all keys must reference the same <code>creditId</code>.</p>
+    /// <p>For <code>BENEFIT_LEVEL_SHARING</code>, all keys must reference the same Reserved Instance or Savings Plan. To share it with the accounts in one Cost Category rule, send these three keys with the value <code>ENABLED</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>benefit/{ri|sp}/{benefitId}/sharing/costCategoryArn/{costCategoryArn}</code></p></li>
+    /// <li>
+    /// <p><code>benefit/{ri|sp}/{benefitId}/sharing/ruleName/{ruleName}</code></p></li>
+    /// <li>
+    /// <p><code>benefit/{ri|sp}/{benefitId}/sharing/mode/{prioritized|restricted}</code></p></li>
+    /// </ul>
+    /// <p>With <code>prioritized</code>, any benefit that the rule's accounts don't use goes to the rest of your consolidated billing family, following your family sharing settings. With <code>restricted</code>, only the owner and the rule's accounts receive it. The Cost Category must belong to your account. To stop sharing, send the same three keys with the value <code>DISABLED</code>.</p>
+    /// <p>For <code>RI_SHARING</code> and <code>CREDIT_SHARING</code>, you can share benefits by account group. Each rule in a Cost Category is one group. Send exactly one of these group keys with the value <code>ENABLED</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>open-sharing</code> - Share across the whole consolidated billing family, with no groups.</p></li>
+    /// <li>
+    /// <p><code>costcategory-prioritized/{costCategoryArn}</code> - Share within each group first, then with the rest of the family.</p></li>
+    /// <li>
+    /// <p><code>costcategory-restricted/{costCategoryArn}</code> - An account in a group shares only with accounts in the same group.</p></li>
+    /// </ul>
+    /// <p>For <code>RI_SHARING</code>, the <code>costcategory-</code> keys use a Cost Category that supports the <code>billing:rispgroupsharing</code> resource type. To use a Cost Category that supports the <code>billing:benefitgroupsharing</code> resource type, use the <code>benefitgroup-prioritized/</code> or <code>benefitgroup-restricted/</code> prefix instead. For <code>CREDIT_SHARING</code>, the Cost Category must support the <code>billing:benefitgroupsharing</code> resource type. The Cost Category must belong to your account. <code>GetBillingPreferences</code> returns the group key that is in effect.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.billing_preferences_per_key.is_none()`.
     pub fn billing_preferences_per_key(&self) -> &[crate::types::BillingPreferenceForKey] {
@@ -35,18 +75,18 @@ pub struct UpdateBillingPreferencesInputBuilder {
     pub(crate) billing_preferences_per_key: ::std::option::Option<::std::vec::Vec<crate::types::BillingPreferenceForKey>>,
 }
 impl UpdateBillingPreferencesInputBuilder {
-    /// <p>The feature to update. Valid values: <code>BILLING_ALERTS</code>, <code>RI_SHARING</code>, <code>CREDIT_SHARING</code>, <code>CREDIT_LEVEL_SHARING</code>, <code>CREDIT_PREFERENCE_OPTIONS</code>. The history features (<code>RI_SHARING_HISTORY</code> and <code>CREDIT_SHARING_HISTORY</code>) are read-only and cannot be updated.</p>
+    /// <p>The feature to update. Valid values: <code>BILLING_ALERTS</code>, <code>RI_SHARING</code>, <code>CREDIT_SHARING</code>, <code>CREDIT_LEVEL_SHARING</code>, <code>CREDIT_PREFERENCE_OPTIONS</code>, <code>BENEFIT_LEVEL_SHARING</code>. The history features (<code>RI_SHARING_HISTORY</code> and <code>CREDIT_SHARING_HISTORY</code>) are read-only and cannot be updated.</p>
     /// This field is required.
     pub fn feature(mut self, input: crate::types::BillingFeature) -> Self {
         self.feature = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The feature to update. Valid values: <code>BILLING_ALERTS</code>, <code>RI_SHARING</code>, <code>CREDIT_SHARING</code>, <code>CREDIT_LEVEL_SHARING</code>, <code>CREDIT_PREFERENCE_OPTIONS</code>. The history features (<code>RI_SHARING_HISTORY</code> and <code>CREDIT_SHARING_HISTORY</code>) are read-only and cannot be updated.</p>
+    /// <p>The feature to update. Valid values: <code>BILLING_ALERTS</code>, <code>RI_SHARING</code>, <code>CREDIT_SHARING</code>, <code>CREDIT_LEVEL_SHARING</code>, <code>CREDIT_PREFERENCE_OPTIONS</code>, <code>BENEFIT_LEVEL_SHARING</code>. The history features (<code>RI_SHARING_HISTORY</code> and <code>CREDIT_SHARING_HISTORY</code>) are read-only and cannot be updated.</p>
     pub fn set_feature(mut self, input: ::std::option::Option<crate::types::BillingFeature>) -> Self {
         self.feature = input;
         self
     }
-    /// <p>The feature to update. Valid values: <code>BILLING_ALERTS</code>, <code>RI_SHARING</code>, <code>CREDIT_SHARING</code>, <code>CREDIT_LEVEL_SHARING</code>, <code>CREDIT_PREFERENCE_OPTIONS</code>. The history features (<code>RI_SHARING_HISTORY</code> and <code>CREDIT_SHARING_HISTORY</code>) are read-only and cannot be updated.</p>
+    /// <p>The feature to update. Valid values: <code>BILLING_ALERTS</code>, <code>RI_SHARING</code>, <code>CREDIT_SHARING</code>, <code>CREDIT_LEVEL_SHARING</code>, <code>CREDIT_PREFERENCE_OPTIONS</code>, <code>BENEFIT_LEVEL_SHARING</code>. The history features (<code>RI_SHARING_HISTORY</code> and <code>CREDIT_SHARING_HISTORY</code>) are read-only and cannot be updated.</p>
     pub fn get_feature(&self) -> &::std::option::Option<crate::types::BillingFeature> {
         &self.feature
     }
@@ -55,6 +95,26 @@ impl UpdateBillingPreferencesInputBuilder {
     /// To override the contents of this collection use [`set_billing_preferences_per_key`](Self::set_billing_preferences_per_key).
     ///
     /// <p>Key/value pairs to apply. All keys in a single request must be valid for the specified <code>feature</code> and must not be duplicated. For <code>CREDIT_PREFERENCE_OPTIONS</code>, all keys must reference the same <code>creditId</code>.</p>
+    /// <p>For <code>BENEFIT_LEVEL_SHARING</code>, all keys must reference the same Reserved Instance or Savings Plan. To share it with the accounts in one Cost Category rule, send these three keys with the value <code>ENABLED</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>benefit/{ri|sp}/{benefitId}/sharing/costCategoryArn/{costCategoryArn}</code></p></li>
+    /// <li>
+    /// <p><code>benefit/{ri|sp}/{benefitId}/sharing/ruleName/{ruleName}</code></p></li>
+    /// <li>
+    /// <p><code>benefit/{ri|sp}/{benefitId}/sharing/mode/{prioritized|restricted}</code></p></li>
+    /// </ul>
+    /// <p>With <code>prioritized</code>, any benefit that the rule's accounts don't use goes to the rest of your consolidated billing family, following your family sharing settings. With <code>restricted</code>, only the owner and the rule's accounts receive it. The Cost Category must belong to your account. To stop sharing, send the same three keys with the value <code>DISABLED</code>.</p>
+    /// <p>For <code>RI_SHARING</code> and <code>CREDIT_SHARING</code>, you can share benefits by account group. Each rule in a Cost Category is one group. Send exactly one of these group keys with the value <code>ENABLED</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>open-sharing</code> - Share across the whole consolidated billing family, with no groups.</p></li>
+    /// <li>
+    /// <p><code>costcategory-prioritized/{costCategoryArn}</code> - Share within each group first, then with the rest of the family.</p></li>
+    /// <li>
+    /// <p><code>costcategory-restricted/{costCategoryArn}</code> - An account in a group shares only with accounts in the same group.</p></li>
+    /// </ul>
+    /// <p>For <code>RI_SHARING</code>, the <code>costcategory-</code> keys use a Cost Category that supports the <code>billing:rispgroupsharing</code> resource type. To use a Cost Category that supports the <code>billing:benefitgroupsharing</code> resource type, use the <code>benefitgroup-prioritized/</code> or <code>benefitgroup-restricted/</code> prefix instead. For <code>CREDIT_SHARING</code>, the Cost Category must support the <code>billing:benefitgroupsharing</code> resource type. The Cost Category must belong to your account. <code>GetBillingPreferences</code> returns the group key that is in effect.</p>
     pub fn billing_preferences_per_key(mut self, input: crate::types::BillingPreferenceForKey) -> Self {
         let mut v = self.billing_preferences_per_key.unwrap_or_default();
         v.push(input);
@@ -62,11 +122,51 @@ impl UpdateBillingPreferencesInputBuilder {
         self
     }
     /// <p>Key/value pairs to apply. All keys in a single request must be valid for the specified <code>feature</code> and must not be duplicated. For <code>CREDIT_PREFERENCE_OPTIONS</code>, all keys must reference the same <code>creditId</code>.</p>
+    /// <p>For <code>BENEFIT_LEVEL_SHARING</code>, all keys must reference the same Reserved Instance or Savings Plan. To share it with the accounts in one Cost Category rule, send these three keys with the value <code>ENABLED</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>benefit/{ri|sp}/{benefitId}/sharing/costCategoryArn/{costCategoryArn}</code></p></li>
+    /// <li>
+    /// <p><code>benefit/{ri|sp}/{benefitId}/sharing/ruleName/{ruleName}</code></p></li>
+    /// <li>
+    /// <p><code>benefit/{ri|sp}/{benefitId}/sharing/mode/{prioritized|restricted}</code></p></li>
+    /// </ul>
+    /// <p>With <code>prioritized</code>, any benefit that the rule's accounts don't use goes to the rest of your consolidated billing family, following your family sharing settings. With <code>restricted</code>, only the owner and the rule's accounts receive it. The Cost Category must belong to your account. To stop sharing, send the same three keys with the value <code>DISABLED</code>.</p>
+    /// <p>For <code>RI_SHARING</code> and <code>CREDIT_SHARING</code>, you can share benefits by account group. Each rule in a Cost Category is one group. Send exactly one of these group keys with the value <code>ENABLED</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>open-sharing</code> - Share across the whole consolidated billing family, with no groups.</p></li>
+    /// <li>
+    /// <p><code>costcategory-prioritized/{costCategoryArn}</code> - Share within each group first, then with the rest of the family.</p></li>
+    /// <li>
+    /// <p><code>costcategory-restricted/{costCategoryArn}</code> - An account in a group shares only with accounts in the same group.</p></li>
+    /// </ul>
+    /// <p>For <code>RI_SHARING</code>, the <code>costcategory-</code> keys use a Cost Category that supports the <code>billing:rispgroupsharing</code> resource type. To use a Cost Category that supports the <code>billing:benefitgroupsharing</code> resource type, use the <code>benefitgroup-prioritized/</code> or <code>benefitgroup-restricted/</code> prefix instead. For <code>CREDIT_SHARING</code>, the Cost Category must support the <code>billing:benefitgroupsharing</code> resource type. The Cost Category must belong to your account. <code>GetBillingPreferences</code> returns the group key that is in effect.</p>
     pub fn set_billing_preferences_per_key(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BillingPreferenceForKey>>) -> Self {
         self.billing_preferences_per_key = input;
         self
     }
     /// <p>Key/value pairs to apply. All keys in a single request must be valid for the specified <code>feature</code> and must not be duplicated. For <code>CREDIT_PREFERENCE_OPTIONS</code>, all keys must reference the same <code>creditId</code>.</p>
+    /// <p>For <code>BENEFIT_LEVEL_SHARING</code>, all keys must reference the same Reserved Instance or Savings Plan. To share it with the accounts in one Cost Category rule, send these three keys with the value <code>ENABLED</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>benefit/{ri|sp}/{benefitId}/sharing/costCategoryArn/{costCategoryArn}</code></p></li>
+    /// <li>
+    /// <p><code>benefit/{ri|sp}/{benefitId}/sharing/ruleName/{ruleName}</code></p></li>
+    /// <li>
+    /// <p><code>benefit/{ri|sp}/{benefitId}/sharing/mode/{prioritized|restricted}</code></p></li>
+    /// </ul>
+    /// <p>With <code>prioritized</code>, any benefit that the rule's accounts don't use goes to the rest of your consolidated billing family, following your family sharing settings. With <code>restricted</code>, only the owner and the rule's accounts receive it. The Cost Category must belong to your account. To stop sharing, send the same three keys with the value <code>DISABLED</code>.</p>
+    /// <p>For <code>RI_SHARING</code> and <code>CREDIT_SHARING</code>, you can share benefits by account group. Each rule in a Cost Category is one group. Send exactly one of these group keys with the value <code>ENABLED</code>:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>open-sharing</code> - Share across the whole consolidated billing family, with no groups.</p></li>
+    /// <li>
+    /// <p><code>costcategory-prioritized/{costCategoryArn}</code> - Share within each group first, then with the rest of the family.</p></li>
+    /// <li>
+    /// <p><code>costcategory-restricted/{costCategoryArn}</code> - An account in a group shares only with accounts in the same group.</p></li>
+    /// </ul>
+    /// <p>For <code>RI_SHARING</code>, the <code>costcategory-</code> keys use a Cost Category that supports the <code>billing:rispgroupsharing</code> resource type. To use a Cost Category that supports the <code>billing:benefitgroupsharing</code> resource type, use the <code>benefitgroup-prioritized/</code> or <code>benefitgroup-restricted/</code> prefix instead. For <code>CREDIT_SHARING</code>, the Cost Category must support the <code>billing:benefitgroupsharing</code> resource type. The Cost Category must belong to your account. <code>GetBillingPreferences</code> returns the group key that is in effect.</p>
     pub fn get_billing_preferences_per_key(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BillingPreferenceForKey>> {
         &self.billing_preferences_per_key
     }

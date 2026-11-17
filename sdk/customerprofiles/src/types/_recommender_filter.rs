@@ -2,7 +2,7 @@
 
 /// <p>A filter that specifies criteria for including or excluding items from recommendations.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RecommenderFilter {
     /// <p>The name of the recommender filter to apply.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl RecommenderFilter {
         self.values.as_ref()
     }
 }
+impl ::std::fmt::Debug for RecommenderFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RecommenderFilter");
+        formatter.field("name", &self.name);
+        formatter.field("values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RecommenderFilter {
     /// Creates a new builder-style object to manufacture [`RecommenderFilter`](crate::types::RecommenderFilter).
     pub fn builder() -> crate::types::builders::RecommenderFilterBuilder {
@@ -27,7 +35,7 @@ impl RecommenderFilter {
 }
 
 /// A builder for [`RecommenderFilter`](crate::types::RecommenderFilter).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RecommenderFilterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -74,5 +82,13 @@ impl RecommenderFilterBuilder {
             name: self.name,
             values: self.values,
         }
+    }
+}
+impl ::std::fmt::Debug for RecommenderFilterBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RecommenderFilterBuilder");
+        formatter.field("name", &self.name);
+        formatter.field("values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

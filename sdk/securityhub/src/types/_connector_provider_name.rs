@@ -13,6 +13,7 @@
 /// # let connectorprovidername = unimplemented!();
 /// match connectorprovidername {
 ///     ConnectorProviderName::Azure => { /* ... */ },
+///     ConnectorProviderName::Gcp => { /* ... */ },
 ///     ConnectorProviderName::JiraCloud => { /* ... */ },
 ///     ConnectorProviderName::Servicenow => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum ConnectorProviderName {
     #[allow(missing_docs)] // documentation missing in model
     Azure,
     #[allow(missing_docs)] // documentation missing in model
+    Gcp,
+    #[allow(missing_docs)] // documentation missing in model
     JiraCloud,
     #[allow(missing_docs)] // documentation missing in model
     Servicenow,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for ConnectorProviderName {
     fn from(s: &str) -> Self {
         match s {
             "AZURE" => ConnectorProviderName::Azure,
+            "GCP" => ConnectorProviderName::Gcp,
             "JIRA_CLOUD" => ConnectorProviderName::JiraCloud,
             "SERVICENOW" => ConnectorProviderName::Servicenow,
             other => ConnectorProviderName::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl ConnectorProviderName {
     pub fn as_str(&self) -> &str {
         match self {
             ConnectorProviderName::Azure => "AZURE",
+            ConnectorProviderName::Gcp => "GCP",
             ConnectorProviderName::JiraCloud => "JIRA_CLOUD",
             ConnectorProviderName::Servicenow => "SERVICENOW",
             ConnectorProviderName::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl ConnectorProviderName {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AZURE", "JIRA_CLOUD", "SERVICENOW"]
+        &["AZURE", "GCP", "JIRA_CLOUD", "SERVICENOW"]
     }
 }
 impl ::std::convert::AsRef<str> for ConnectorProviderName {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for ConnectorProviderName {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ConnectorProviderName::Azure => write!(f, "AZURE"),
+            ConnectorProviderName::Gcp => write!(f, "GCP"),
             ConnectorProviderName::JiraCloud => write!(f, "JIRA_CLOUD"),
             ConnectorProviderName::Servicenow => write!(f, "SERVICENOW"),
             ConnectorProviderName::Unknown(value) => write!(f, "{value}"),

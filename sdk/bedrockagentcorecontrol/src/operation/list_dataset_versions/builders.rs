@@ -128,6 +128,20 @@ impl ListDatasetVersionsFluentBuilder {
     pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataset_id()
     }
+    /// <p>A filter to apply to the dataset versions.</p>
+    pub fn filter(mut self, input: crate::types::ListDatasetVersionsFilter) -> Self {
+        self.inner = self.inner.filter(input);
+        self
+    }
+    /// <p>A filter to apply to the dataset versions.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListDatasetVersionsFilter>) -> Self {
+        self.inner = self.inner.set_filter(input);
+        self
+    }
+    /// <p>A filter to apply to the dataset versions.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListDatasetVersionsFilter> {
+        self.inner.get_filter()
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());

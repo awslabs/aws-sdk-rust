@@ -2,7 +2,7 @@
 
 /// <p>Represents the shape of a reachable area. The geometry can be provided either as coordinate pairs (<code>Polygon</code>) or in encoded format (<code>PolylinePolygon</code>), matching the format specified in the request.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IsolineShapeGeometry {
     /// <p>A series of coordinate rings defining the reachable area when Simple geometry format is requested. Each ring is a list of <code>\[longitude, latitude\]</code> coordinate pairs. The first ring defines the outer boundary; subsequent rings define holes representing unreachable areas.</p><note>
     /// <p>Polygon and PolylinePolygon are mutually exclusive properties.</p>
@@ -31,6 +31,14 @@ impl IsolineShapeGeometry {
         self.polyline_polygon.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for IsolineShapeGeometry {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IsolineShapeGeometry");
+        formatter.field("polygon", &"*** Sensitive Data Redacted ***");
+        formatter.field("polyline_polygon", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl IsolineShapeGeometry {
     /// Creates a new builder-style object to manufacture [`IsolineShapeGeometry`](crate::types::IsolineShapeGeometry).
     pub fn builder() -> crate::types::builders::IsolineShapeGeometryBuilder {
@@ -39,7 +47,7 @@ impl IsolineShapeGeometry {
 }
 
 /// A builder for [`IsolineShapeGeometry`](crate::types::IsolineShapeGeometry).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct IsolineShapeGeometryBuilder {
     pub(crate) polygon: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
@@ -104,5 +112,13 @@ impl IsolineShapeGeometryBuilder {
             polygon: self.polygon,
             polyline_polygon: self.polyline_polygon,
         }
+    }
+}
+impl ::std::fmt::Debug for IsolineShapeGeometryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IsolineShapeGeometryBuilder");
+        formatter.field("polygon", &"*** Sensitive Data Redacted ***");
+        formatter.field("polyline_polygon", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

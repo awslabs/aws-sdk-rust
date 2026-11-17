@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AddTagsToStream`](crate::operation::add_tags_to_stream) operation has
-/// a [`Client::add_tags_to_stream`], function which returns a builder for that operation.
+/// For example, the [`AcknowledgeDeadLetterQueueRecords`](crate::operation::acknowledge_dead_letter_queue_records) operation has
+/// a [`Client::acknowledge_dead_letter_queue_records`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.add_tags_to_stream()
-///     .stream_name("example")
+/// let result = client.acknowledge_dead_letter_queue_records()
+///     .queue_arn("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -216,9 +216,15 @@ impl Client {
     }
 }
 
+mod acknowledge_dead_letter_queue_records;
+
+mod acknowledge_queue_records;
+
 mod add_tags_to_stream;
 
 mod create_channel;
+
+mod create_queue;
 
 mod create_stream;
 
@@ -233,7 +239,7 @@ mod create_stream;
 /// # let client: aws_sdk_kinesis::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.add_tags_to_stream()
+/// let result = client.acknowledge_dead_letter_queue_records()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -253,6 +259,8 @@ mod decrease_stream_retention_period;
 
 mod delete_channel;
 
+mod delete_queue;
+
 mod delete_resource_policy;
 
 mod delete_stream;
@@ -264,6 +272,8 @@ mod describe_account_settings;
 mod describe_channel;
 
 mod describe_limits;
+
+mod describe_queue;
 
 mod describe_stream;
 
@@ -285,6 +295,8 @@ mod increase_stream_retention_period;
 
 mod list_channels;
 
+mod list_queues;
+
 mod list_shards;
 
 mod list_stream_consumers;
@@ -303,9 +315,15 @@ mod put_records;
 
 mod put_resource_policy;
 
+mod receive_dead_letter_queue_records;
+
+mod receive_queue_records;
+
 mod register_stream_consumer;
 
 mod remove_tags_from_stream;
+
+mod restore_dead_letter_queue_records;
 
 mod split_shard;
 
@@ -323,7 +341,13 @@ mod update_account_settings;
 
 mod update_channel;
 
+mod update_dead_letter_queue_records_visibility;
+
 mod update_max_record_size;
+
+mod update_queue;
+
+mod update_queue_records_visibility;
 
 mod update_shard_count;
 

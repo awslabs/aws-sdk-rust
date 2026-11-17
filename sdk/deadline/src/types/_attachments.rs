@@ -2,7 +2,7 @@
 
 /// The job attachments.
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Attachments {
     /// The manifest properties for the attachments.
     pub manifests: ::std::vec::Vec<crate::types::ManifestProperties>,
@@ -20,6 +20,14 @@ impl Attachments {
         &self.file_system
     }
 }
+impl ::std::fmt::Debug for Attachments {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Attachments");
+        formatter.field("manifests", &"*** Sensitive Data Redacted ***");
+        formatter.field("file_system", &self.file_system);
+        formatter.finish()
+    }
+}
 impl Attachments {
     /// Creates a new builder-style object to manufacture [`Attachments`](crate::types::Attachments).
     pub fn builder() -> crate::types::builders::AttachmentsBuilder {
@@ -28,7 +36,7 @@ impl Attachments {
 }
 
 /// A builder for [`Attachments`](crate::types::Attachments).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct AttachmentsBuilder {
     pub(crate) manifests: ::std::option::Option<::std::vec::Vec<crate::types::ManifestProperties>>,
@@ -86,5 +94,13 @@ impl AttachmentsBuilder {
                     .expect("static value validated to member"),
             ),
         })
+    }
+}
+impl ::std::fmt::Debug for AttachmentsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AttachmentsBuilder");
+        formatter.field("manifests", &"*** Sensitive Data Redacted ***");
+        formatter.field("file_system", &self.file_system);
+        formatter.finish()
     }
 }

@@ -9,6 +9,8 @@ pub use crate::types::_describe_config_rules_filters::DescribeConfigRulesFilters
 
 pub use crate::types::_conformance_pack_compliance_filters::ConformancePackComplianceFiltersBuilder;
 
+pub use crate::types::_describe_conformance_packs_filters::DescribeConformancePacksFiltersBuilder;
+
 pub use crate::types::_config_rule_compliance_summary_filters::ConfigRuleComplianceSummaryFiltersBuilder;
 
 pub use crate::types::_aggregate_conformance_pack_compliance_summary_filters::AggregateConformancePackComplianceSummaryFiltersBuilder;
@@ -54,6 +56,10 @@ pub use crate::types::_aggregator_filters::AggregatorFiltersBuilder;
 pub use crate::types::_configuration_aggregator::ConfigurationAggregatorBuilder;
 
 pub use crate::types::_template_ssm_document_details::TemplateSsmDocumentDetailsBuilder;
+
+pub use crate::types::_conformance_pack_source::ConformancePackSourceBuilder;
+
+pub use crate::types::_conformance_pack_scope::ConformancePackScopeBuilder;
 
 pub use crate::types::_connector_configuration::ConnectorConfigurationBuilder;
 

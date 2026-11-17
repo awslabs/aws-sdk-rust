@@ -39,6 +39,8 @@ pub struct GetBatchEvaluationOutput {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ARN of the KMS key used to encrypt evaluation data.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The details of the dataset and agent that the batch evaluation ran, including the dataset version and agent runtime version that the service resolved when the batch evaluation started. This field is present only if the batch evaluation was started with a <code>datasetExecutionConfig</code>.</p>
+    pub dataset_execution_details: ::std::option::Option<crate::types::DatasetExecutionDetails>,
     _request_id: Option<String>,
 }
 impl GetBatchEvaluationOutput {
@@ -125,6 +127,10 @@ impl GetBatchEvaluationOutput {
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
+    /// <p>The details of the dataset and agent that the batch evaluation ran, including the dataset version and agent runtime version that the service resolved when the batch evaluation started. This field is present only if the batch evaluation was started with a <code>datasetExecutionConfig</code>.</p>
+    pub fn dataset_execution_details(&self) -> ::std::option::Option<&crate::types::DatasetExecutionDetails> {
+        self.dataset_execution_details.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetBatchEvaluationOutput {
     fn request_id(&self) -> Option<&str> {
@@ -160,6 +166,7 @@ pub struct GetBatchEvaluationOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) dataset_execution_details: ::std::option::Option<crate::types::DatasetExecutionDetails>,
     _request_id: Option<String>,
 }
 impl GetBatchEvaluationOutputBuilder {
@@ -444,6 +451,20 @@ impl GetBatchEvaluationOutputBuilder {
     pub fn get_kms_key_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.kms_key_arn
     }
+    /// <p>The details of the dataset and agent that the batch evaluation ran, including the dataset version and agent runtime version that the service resolved when the batch evaluation started. This field is present only if the batch evaluation was started with a <code>datasetExecutionConfig</code>.</p>
+    pub fn dataset_execution_details(mut self, input: crate::types::DatasetExecutionDetails) -> Self {
+        self.dataset_execution_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The details of the dataset and agent that the batch evaluation ran, including the dataset version and agent runtime version that the service resolved when the batch evaluation started. This field is present only if the batch evaluation was started with a <code>datasetExecutionConfig</code>.</p>
+    pub fn set_dataset_execution_details(mut self, input: ::std::option::Option<crate::types::DatasetExecutionDetails>) -> Self {
+        self.dataset_execution_details = input;
+        self
+    }
+    /// <p>The details of the dataset and agent that the batch evaluation ran, including the dataset version and agent runtime version that the service resolved when the batch evaluation started. This field is present only if the batch evaluation was started with a <code>datasetExecutionConfig</code>.</p>
+    pub fn get_dataset_execution_details(&self) -> &::std::option::Option<crate::types::DatasetExecutionDetails> {
+        &self.dataset_execution_details
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -508,6 +529,7 @@ impl GetBatchEvaluationOutputBuilder {
             description: self.description,
             updated_at: self.updated_at,
             kms_key_arn: self.kms_key_arn,
+            dataset_execution_details: self.dataset_execution_details,
             _request_id: self._request_id,
         })
     }

@@ -63,6 +63,10 @@ pub use crate::types::_investment_summary::InvestmentSummaryBuilder;
 
 pub use crate::types::_linked_account_charge::LinkedAccountChargeBuilder;
 
+pub use crate::types::_split_portion::SplitPortionBuilder;
+
+pub use crate::types::_child_credit::ChildCreditBuilder;
+
 pub use crate::types::_billing_preference_for_key::BillingPreferenceForKeyBuilder;
 
 pub use crate::types::_amount::AmountBuilder;

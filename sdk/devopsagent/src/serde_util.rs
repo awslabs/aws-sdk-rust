@@ -311,6 +311,24 @@ pub(crate) fn get_backlog_task_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_chat_output_output_correct_errors(
+    mut builder: crate::operation::get_chat::builders::GetChatOutputBuilder,
+) -> crate::operation::get_chat::builders::GetChatOutputBuilder {
+    if builder.execution_id.is_none() {
+        builder.execution_id = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.archive_status.is_none() {
+        builder.archive_status = "no value was set".parse::<crate::types::ChatArchiveStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn get_recommendation_output_output_correct_errors(
     mut builder: crate::operation::get_recommendation::builders::GetRecommendationOutputBuilder,
 ) -> crate::operation::get_recommendation::builders::GetRecommendationOutputBuilder {
@@ -586,6 +604,21 @@ pub(crate) fn update_backlog_task_output_output_correct_errors(
             let builder = crate::types::builders::TaskBuilder::default();
             crate::serde_util::task_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn update_chat_output_output_correct_errors(
+    mut builder: crate::operation::update_chat::builders::UpdateChatOutputBuilder,
+) -> crate::operation::update_chat::builders::UpdateChatOutputBuilder {
+    if builder.execution_id.is_none() {
+        builder.execution_id = Some(Default::default())
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.archive_status.is_none() {
+        builder.archive_status = "no value was set".parse::<crate::types::ChatArchiveStatus>().ok()
     }
     builder
 }

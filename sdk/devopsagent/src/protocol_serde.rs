@@ -73,6 +73,8 @@ pub(crate) mod shape_get_association;
 
 pub(crate) mod shape_get_backlog_task;
 
+pub(crate) mod shape_get_chat;
+
 pub(crate) mod shape_get_operator_app;
 
 pub(crate) mod shape_get_recommendation;
@@ -136,6 +138,8 @@ pub(crate) mod shape_update_asset_file;
 pub(crate) mod shape_update_association;
 
 pub(crate) mod shape_update_backlog_task;
+
+pub(crate) mod shape_update_chat;
 
 pub(crate) mod shape_update_goal;
 
@@ -222,6 +226,8 @@ pub(crate) mod shape_update_asset_input;
 pub(crate) mod shape_update_association_input;
 
 pub(crate) mod shape_update_backlog_task_input;
+
+pub(crate) mod shape_update_chat_input;
 
 pub(crate) mod shape_update_goal_input;
 

@@ -2,7 +2,7 @@
 
 /// <p>The default values of the <code>DateTimeParameterDeclaration</code>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DateTimeDefaultValues {
     /// <p>The dynamic value of the <code>DataTimeDefaultValues</code>. Different defaults are displayed according to users, groups, and values mapping.</p>
     pub dynamic_value: ::std::option::Option<crate::types::DynamicDefaultValue>,
@@ -27,6 +27,15 @@ impl DateTimeDefaultValues {
         self.rolling_date.as_ref()
     }
 }
+impl ::std::fmt::Debug for DateTimeDefaultValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DateTimeDefaultValues");
+        formatter.field("dynamic_value", &self.dynamic_value);
+        formatter.field("static_values", &"*** Sensitive Data Redacted ***");
+        formatter.field("rolling_date", &self.rolling_date);
+        formatter.finish()
+    }
+}
 impl DateTimeDefaultValues {
     /// Creates a new builder-style object to manufacture [`DateTimeDefaultValues`](crate::types::DateTimeDefaultValues).
     pub fn builder() -> crate::types::builders::DateTimeDefaultValuesBuilder {
@@ -35,7 +44,7 @@ impl DateTimeDefaultValues {
 }
 
 /// A builder for [`DateTimeDefaultValues`](crate::types::DateTimeDefaultValues).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct DateTimeDefaultValuesBuilder {
     pub(crate) dynamic_value: ::std::option::Option<crate::types::DynamicDefaultValue>,
@@ -98,5 +107,14 @@ impl DateTimeDefaultValuesBuilder {
             static_values: self.static_values,
             rolling_date: self.rolling_date,
         }
+    }
+}
+impl ::std::fmt::Debug for DateTimeDefaultValuesBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("DateTimeDefaultValuesBuilder");
+        formatter.field("dynamic_value", &self.dynamic_value);
+        formatter.field("static_values", &"*** Sensitive Data Redacted ***");
+        formatter.field("rolling_date", &self.rolling_date);
+        formatter.finish()
     }
 }

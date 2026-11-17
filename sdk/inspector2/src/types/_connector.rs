@@ -32,6 +32,10 @@ pub struct Connector {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Specifies whether the VM scanner is automatically installed on connected resources.</p>
     pub auto_install_vm_scanner: ::std::option::Option<bool>,
+    /// <p>The Google Cloud Platform (GCP) locations configured for the connector.</p>
+    pub gcp_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The Google Cloud Platform (GCP) scope configuration for the connector.</p>
+    pub gcp_scope_configuration: ::std::option::Option<crate::types::GcpScopeConfiguration>,
 }
 impl Connector {
     /// <p>The Amazon Resource Name (ARN) of the connector.</p>
@@ -93,6 +97,16 @@ impl Connector {
     pub fn auto_install_vm_scanner(&self) -> ::std::option::Option<bool> {
         self.auto_install_vm_scanner
     }
+    /// <p>The Google Cloud Platform (GCP) locations configured for the connector.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.gcp_regions.is_none()`.
+    pub fn gcp_regions(&self) -> &[::std::string::String] {
+        self.gcp_regions.as_deref().unwrap_or_default()
+    }
+    /// <p>The Google Cloud Platform (GCP) scope configuration for the connector.</p>
+    pub fn gcp_scope_configuration(&self) -> ::std::option::Option<&crate::types::GcpScopeConfiguration> {
+        self.gcp_scope_configuration.as_ref()
+    }
 }
 impl Connector {
     /// Creates a new builder-style object to manufacture [`Connector`](crate::types::Connector).
@@ -119,6 +133,8 @@ pub struct ConnectorBuilder {
     pub(crate) scope_configuration: ::std::option::Option<crate::types::AzureScopeConfiguration>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) auto_install_vm_scanner: ::std::option::Option<bool>,
+    pub(crate) gcp_regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) gcp_scope_configuration: ::std::option::Option<crate::types::GcpScopeConfiguration>,
 }
 impl ConnectorBuilder {
     /// <p>The Amazon Resource Name (ARN) of the connector.</p>
@@ -333,6 +349,40 @@ impl ConnectorBuilder {
     pub fn get_auto_install_vm_scanner(&self) -> &::std::option::Option<bool> {
         &self.auto_install_vm_scanner
     }
+    /// Appends an item to `gcp_regions`.
+    ///
+    /// To override the contents of this collection use [`set_gcp_regions`](Self::set_gcp_regions).
+    ///
+    /// <p>The Google Cloud Platform (GCP) locations configured for the connector.</p>
+    pub fn gcp_regions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.gcp_regions.unwrap_or_default();
+        v.push(input.into());
+        self.gcp_regions = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Google Cloud Platform (GCP) locations configured for the connector.</p>
+    pub fn set_gcp_regions(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.gcp_regions = input;
+        self
+    }
+    /// <p>The Google Cloud Platform (GCP) locations configured for the connector.</p>
+    pub fn get_gcp_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.gcp_regions
+    }
+    /// <p>The Google Cloud Platform (GCP) scope configuration for the connector.</p>
+    pub fn gcp_scope_configuration(mut self, input: crate::types::GcpScopeConfiguration) -> Self {
+        self.gcp_scope_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Google Cloud Platform (GCP) scope configuration for the connector.</p>
+    pub fn set_gcp_scope_configuration(mut self, input: ::std::option::Option<crate::types::GcpScopeConfiguration>) -> Self {
+        self.gcp_scope_configuration = input;
+        self
+    }
+    /// <p>The Google Cloud Platform (GCP) scope configuration for the connector.</p>
+    pub fn get_gcp_scope_configuration(&self) -> &::std::option::Option<crate::types::GcpScopeConfiguration> {
+        &self.gcp_scope_configuration
+    }
     /// Consumes the builder and constructs a [`Connector`](crate::types::Connector).
     /// This method will fail if any of the following fields are not set:
     /// - [`connector_arn`](crate::types::builders::ConnectorBuilder::connector_arn)
@@ -375,6 +425,8 @@ impl ConnectorBuilder {
             scope_configuration: self.scope_configuration,
             tags: self.tags,
             auto_install_vm_scanner: self.auto_install_vm_scanner,
+            gcp_regions: self.gcp_regions,
+            gcp_scope_configuration: self.gcp_scope_configuration,
         })
     }
 }

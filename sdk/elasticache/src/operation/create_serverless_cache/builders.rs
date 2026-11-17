@@ -338,4 +338,38 @@ impl CreateServerlessCacheFluentBuilder {
     pub fn get_connection_type(&self) -> &::std::option::Option<crate::types::ConnectionType> {
         self.inner.get_connection_type()
     }
+    ///
+    /// Appends an item to `Integrations`.
+    ///
+    /// To override the contents of this collection use [`set_integrations`](Self::set_integrations).
+    ///
+    /// <p>Which serverless cache integrations to enable. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>dynamodb</code> – DynamoDB integration.</p></li>
+    /// </ul>
+    /// <p>DynamoDB integration requires the Valkey engine with a major engine version of 9 or above. If not specified, no integrations are enabled.</p>
+    pub fn integrations(mut self, input: crate::types::IntegrationRequest) -> Self {
+        self.inner = self.inner.integrations(input);
+        self
+    }
+    /// <p>Which serverless cache integrations to enable. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>dynamodb</code> – DynamoDB integration.</p></li>
+    /// </ul>
+    /// <p>DynamoDB integration requires the Valkey engine with a major engine version of 9 or above. If not specified, no integrations are enabled.</p>
+    pub fn set_integrations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IntegrationRequest>>) -> Self {
+        self.inner = self.inner.set_integrations(input);
+        self
+    }
+    /// <p>Which serverless cache integrations to enable. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>dynamodb</code> – DynamoDB integration.</p></li>
+    /// </ul>
+    /// <p>DynamoDB integration requires the Valkey engine with a major engine version of 9 or above. If not specified, no integrations are enabled.</p>
+    pub fn get_integrations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IntegrationRequest>> {
+        self.inner.get_integrations()
+    }
 }

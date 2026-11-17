@@ -2,7 +2,7 @@
 
 /// <p>Information about agents associated with the user’s Amazon Web Services account. Information includes agent IDs, IP addresses, media access control (MAC) addresses, agent or collector status, hostname where the agent resides, and agent version for each agent.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AgentInfo {
     /// <p>The agent or collector ID.</p>
     pub agent_id: ::std::option::Option<::std::string::String>,
@@ -69,6 +69,22 @@ impl AgentInfo {
         self.registered_time.as_deref()
     }
 }
+impl ::std::fmt::Debug for AgentInfo {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AgentInfo");
+        formatter.field("agent_id", &self.agent_id);
+        formatter.field("host_name", &self.host_name);
+        formatter.field("agent_network_info_list", &"*** Sensitive Data Redacted ***");
+        formatter.field("connector_id", &self.connector_id);
+        formatter.field("version", &self.version);
+        formatter.field("health", &self.health);
+        formatter.field("last_health_ping_time", &self.last_health_ping_time);
+        formatter.field("collection_status", &self.collection_status);
+        formatter.field("agent_type", &self.agent_type);
+        formatter.field("registered_time", &self.registered_time);
+        formatter.finish()
+    }
+}
 impl AgentInfo {
     /// Creates a new builder-style object to manufacture [`AgentInfo`](crate::types::AgentInfo).
     pub fn builder() -> crate::types::builders::AgentInfoBuilder {
@@ -77,7 +93,7 @@ impl AgentInfo {
 }
 
 /// A builder for [`AgentInfo`](crate::types::AgentInfo).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct AgentInfoBuilder {
     pub(crate) agent_id: ::std::option::Option<::std::string::String>,
@@ -252,5 +268,21 @@ impl AgentInfoBuilder {
             agent_type: self.agent_type,
             registered_time: self.registered_time,
         }
+    }
+}
+impl ::std::fmt::Debug for AgentInfoBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AgentInfoBuilder");
+        formatter.field("agent_id", &self.agent_id);
+        formatter.field("host_name", &self.host_name);
+        formatter.field("agent_network_info_list", &"*** Sensitive Data Redacted ***");
+        formatter.field("connector_id", &self.connector_id);
+        formatter.field("version", &self.version);
+        formatter.field("health", &self.health);
+        formatter.field("last_health_ping_time", &self.last_health_ping_time);
+        formatter.field("collection_status", &self.collection_status);
+        formatter.field("agent_type", &self.agent_type);
+        formatter.field("registered_time", &self.registered_time);
+        formatter.finish()
     }
 }

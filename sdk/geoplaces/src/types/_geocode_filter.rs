@@ -2,7 +2,7 @@
 
 /// <p>Geocode structure which contains a set of inclusion/exclusion properties that results must possess in order to be returned as a result.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GeocodeFilter {
     /// <p>A list of countries that all results must be in. Countries are represented by either their alpha-2 or alpha-3 character codes.</p>
     pub include_countries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -23,6 +23,14 @@ impl GeocodeFilter {
         self.include_place_types.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for GeocodeFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GeocodeFilter");
+        formatter.field("include_countries", &"*** Sensitive Data Redacted ***");
+        formatter.field("include_place_types", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl GeocodeFilter {
     /// Creates a new builder-style object to manufacture [`GeocodeFilter`](crate::types::GeocodeFilter).
     pub fn builder() -> crate::types::builders::GeocodeFilterBuilder {
@@ -31,7 +39,7 @@ impl GeocodeFilter {
 }
 
 /// A builder for [`GeocodeFilter`](crate::types::GeocodeFilter).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct GeocodeFilterBuilder {
     pub(crate) include_countries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -84,5 +92,13 @@ impl GeocodeFilterBuilder {
             include_countries: self.include_countries,
             include_place_types: self.include_place_types,
         }
+    }
+}
+impl ::std::fmt::Debug for GeocodeFilterBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GeocodeFilterBuilder");
+        formatter.field("include_countries", &"*** Sensitive Data Redacted ***");
+        formatter.field("include_place_types", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

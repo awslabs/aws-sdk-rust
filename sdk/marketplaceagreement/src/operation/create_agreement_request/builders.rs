@@ -233,4 +233,24 @@ impl CreateAgreementRequestFluentBuilder {
     pub fn get_tax_configuration(&self) -> &::std::option::Option<crate::types::TaxConfiguration> {
         self.inner.get_tax_configuration()
     }
+    /// <p>The contact information of the acceptor.</p><important>
+    /// <p>Don't provide this parameter if the intent is <code>AMEND</code>.</p>
+    /// </important>
+    pub fn acceptor_contact(mut self, input: crate::types::AcceptorContact) -> Self {
+        self.inner = self.inner.acceptor_contact(input);
+        self
+    }
+    /// <p>The contact information of the acceptor.</p><important>
+    /// <p>Don't provide this parameter if the intent is <code>AMEND</code>.</p>
+    /// </important>
+    pub fn set_acceptor_contact(mut self, input: ::std::option::Option<crate::types::AcceptorContact>) -> Self {
+        self.inner = self.inner.set_acceptor_contact(input);
+        self
+    }
+    /// <p>The contact information of the acceptor.</p><important>
+    /// <p>Don't provide this parameter if the intent is <code>AMEND</code>.</p>
+    /// </important>
+    pub fn get_acceptor_contact(&self) -> &::std::option::Option<crate::types::AcceptorContact> {
+        self.inner.get_acceptor_contact()
+    }
 }

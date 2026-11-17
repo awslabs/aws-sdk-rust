@@ -6,7 +6,9 @@
 pub struct DeleteStreamInput {
     /// <p>The name of the stream to delete.</p>
     pub stream_name: ::std::option::Option<::std::string::String>,
-    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.</p>
+    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered enhanced fan-out consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.</p>
+    /// <p>If you set it to <code>true</code>, <code>DeleteStream</code> deletes the stream and every consumer registered with it.</p>
+    /// <p>This parameter does not apply to queues. A stream that has queues cannot be deleted until every queue on it is deleted with <code>DeleteQueue</code>, whatever this parameter is set to.</p>
     pub enforce_consumer_deletion: ::std::option::Option<bool>,
     /// <p>The ARN of the stream.</p>
     pub stream_arn: ::std::option::Option<::std::string::String>,
@@ -18,7 +20,9 @@ impl DeleteStreamInput {
     pub fn stream_name(&self) -> ::std::option::Option<&str> {
         self.stream_name.as_deref()
     }
-    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.</p>
+    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered enhanced fan-out consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.</p>
+    /// <p>If you set it to <code>true</code>, <code>DeleteStream</code> deletes the stream and every consumer registered with it.</p>
+    /// <p>This parameter does not apply to queues. A stream that has queues cannot be deleted until every queue on it is deleted with <code>DeleteQueue</code>, whatever this parameter is set to.</p>
     pub fn enforce_consumer_deletion(&self) -> ::std::option::Option<bool> {
         self.enforce_consumer_deletion
     }
@@ -62,17 +66,23 @@ impl DeleteStreamInputBuilder {
     pub fn get_stream_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.stream_name
     }
-    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.</p>
+    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered enhanced fan-out consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.</p>
+    /// <p>If you set it to <code>true</code>, <code>DeleteStream</code> deletes the stream and every consumer registered with it.</p>
+    /// <p>This parameter does not apply to queues. A stream that has queues cannot be deleted until every queue on it is deleted with <code>DeleteQueue</code>, whatever this parameter is set to.</p>
     pub fn enforce_consumer_deletion(mut self, input: bool) -> Self {
         self.enforce_consumer_deletion = ::std::option::Option::Some(input);
         self
     }
-    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.</p>
+    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered enhanced fan-out consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.</p>
+    /// <p>If you set it to <code>true</code>, <code>DeleteStream</code> deletes the stream and every consumer registered with it.</p>
+    /// <p>This parameter does not apply to queues. A stream that has queues cannot be deleted until every queue on it is deleted with <code>DeleteQueue</code>, whatever this parameter is set to.</p>
     pub fn set_enforce_consumer_deletion(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enforce_consumer_deletion = input;
         self
     }
-    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.</p>
+    /// <p>If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>, and the stream has registered enhanced fan-out consumers, the call to <code>DeleteStream</code> fails with a <code>ResourceInUseException</code>.</p>
+    /// <p>If you set it to <code>true</code>, <code>DeleteStream</code> deletes the stream and every consumer registered with it.</p>
+    /// <p>This parameter does not apply to queues. A stream that has queues cannot be deleted until every queue on it is deleted with <code>DeleteQueue</code>, whatever this parameter is set to.</p>
     pub fn get_enforce_consumer_deletion(&self) -> &::std::option::Option<bool> {
         &self.enforce_consumer_deletion
     }

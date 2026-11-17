@@ -290,6 +290,13 @@ pub(crate) fn de_update_global_resolver(
                             .transpose()?,
                     );
                 }
+                "publicIpStatus" => {
+                    builder = builder.set_public_ip_status(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::PublicIpStatus::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "regions" => {
                     builder = builder.set_regions(crate::protocol_serde::shape_regions::de_regions(tokens, _value, depth + 1)?);
                 }

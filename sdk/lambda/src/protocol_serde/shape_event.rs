@@ -219,6 +219,16 @@ where
                                 )?,
                             );
                         }
+                        "ExecutionPausedDetails" => {
+                            builder = builder.set_execution_paused_details(
+                                crate::protocol_serde::shape_execution_paused_details::de_execution_paused_details(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "ExecutionResumedDetails" => {
+                            builder = builder.set_execution_resumed_details(
+                                crate::protocol_serde::shape_execution_resumed_details::de_execution_resumed_details(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

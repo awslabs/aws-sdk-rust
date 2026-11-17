@@ -22,7 +22,7 @@ impl crate::operation::stop_durable_execution::builders::StopDurableExecutionInp
 }
 /// Fluent builder constructing a request to `StopDurableExecution`.
 ///
-/// <p>Stops a running <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable execution</a>. The execution transitions to STOPPED status and cannot be resumed. Any in-progress operations are terminated.</p>
+/// <p>Stops a running or paused <a href="https://docs.aws.amazon.com/lambda/latest/dg/durable-functions.html">durable execution</a>. The execution transitions to STOPPED status and cannot be resumed. Any in-progress operations are terminated.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StopDurableExecutionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -209,4 +209,32 @@ impl ListNetworkMigrationMapperSegmentConstructsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    /// <p>Whether to return construct properties using their native value types.</p>
+    pub fn include_enriched_properties(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_enriched_properties(input);
+        self
+    }
+    /// <p>Whether to return construct properties using their native value types.</p>
+    pub fn set_include_enriched_properties(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_enriched_properties(input);
+        self
+    }
+    /// <p>Whether to return construct properties using their native value types.</p>
+    pub fn get_include_enriched_properties(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_enriched_properties()
+    }
+    /// <p>Whether to return construct-type-specific behavioral configuration.</p>
+    pub fn include_configuration(mut self, input: bool) -> Self {
+        self.inner = self.inner.include_configuration(input);
+        self
+    }
+    /// <p>Whether to return construct-type-specific behavioral configuration.</p>
+    pub fn set_include_configuration(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_include_configuration(input);
+        self
+    }
+    /// <p>Whether to return construct-type-specific behavioral configuration.</p>
+    pub fn get_include_configuration(&self) -> &::std::option::Option<bool> {
+        self.inner.get_include_configuration()
+    }
 }

@@ -57,6 +57,8 @@ pub use crate::types::_list_network_migration_deployer_job_filters::ListNetworkM
 
 pub use crate::types::_list_network_migration_execution_request_filters::ListNetworkMigrationExecutionRequestFiltersBuilder;
 
+pub use crate::types::_list_network_migration_insights_filters::ListNetworkMigrationInsightsFiltersBuilder;
+
 pub use crate::types::_list_network_migration_mapper_segment_constructs_filters::ListNetworkMigrationMapperSegmentConstructsFiltersBuilder;
 
 pub use crate::types::_list_network_migration_mapper_segments_filters::ListNetworkMigrationMapperSegmentsFiltersBuilder;
@@ -68,6 +70,14 @@ pub use crate::types::_list_network_migration_mapping_updates_filters::ListNetwo
 pub use crate::types::_checksum::ChecksumBuilder;
 
 pub use crate::types::_s3_configuration::S3ConfigurationBuilder;
+
+pub use crate::types::_list_remote_source_action_jobs_request_filters::ListRemoteSourceActionJobsRequestFiltersBuilder;
+
+pub use crate::types::_remote_source_action_job::RemoteSourceActionJobBuilder;
+
+pub use crate::types::_list_remote_source_action_invocations_request_filters::ListRemoteSourceActionInvocationsRequestFiltersBuilder;
+
+pub use crate::types::_list_remote_source_actions_request_filters::ListRemoteSourceActionsRequestFiltersBuilder;
 
 pub use crate::types::_storage_configuration::StorageConfigurationBuilder;
 
@@ -84,6 +94,8 @@ pub use crate::types::_life_cycle::LifeCycleBuilder;
 pub use crate::types::_source_properties::SourcePropertiesBuilder;
 
 pub use crate::types::_change_server_life_cycle_state_source_server_lifecycle::ChangeServerLifeCycleStateSourceServerLifecycleBuilder;
+
+pub use crate::types::_source_server_volume_configuration::SourceServerVolumeConfigurationBuilder;
 
 pub use crate::types::_source_server_actions_request_filters::SourceServerActionsRequestFiltersBuilder;
 
@@ -139,6 +151,8 @@ pub use crate::types::_network_migration_deployer_job_details::NetworkMigrationD
 
 pub use crate::types::_network_migration_execution::NetworkMigrationExecutionBuilder;
 
+pub use crate::types::_network_migration_insight::NetworkMigrationInsightBuilder;
+
 pub use crate::types::_network_migration_mapper_segment::NetworkMigrationMapperSegmentBuilder;
 
 pub use crate::types::_network_migration_mapping_job_details::NetworkMigrationMappingJobDetailsBuilder;
@@ -148,6 +162,10 @@ pub use crate::types::_network_migration_mapping_update_job_details::NetworkMigr
 pub use crate::types::_start_network_migration_mapping_update_construct::StartNetworkMigrationMappingUpdateConstructBuilder;
 
 pub use crate::types::_start_network_migration_mapping_update_segment::StartNetworkMigrationMappingUpdateSegmentBuilder;
+
+pub use crate::types::_remote_source_action_invocation::RemoteSourceActionInvocationBuilder;
+
+pub use crate::types::_remote_source_action::RemoteSourceActionBuilder;
 
 pub use crate::types::_replication_configuration_template::ReplicationConfigurationTemplateBuilder;
 
@@ -168,6 +186,8 @@ pub use crate::types::_identification_hints::IdentificationHintsBuilder;
 pub use crate::types::_os::OsBuilder;
 
 pub use crate::types::_replication_configuration_replicated_disk::ReplicationConfigurationReplicatedDiskBuilder;
+
+pub use crate::types::_remote_source_action_invocation_result::RemoteSourceActionInvocationResultBuilder;
 
 pub use crate::types::_source_server_action_document::SourceServerActionDocumentBuilder;
 
@@ -193,9 +213,15 @@ pub use crate::types::_ssm_parameter_store_parameter::SsmParameterStoreParameter
 
 pub use crate::types::_source_s3_configuration::SourceS3ConfigurationBuilder;
 
+pub use crate::types::_security_group_configuration::SecurityGroupConfigurationBuilder;
+
+pub use crate::types::_security_group_rule_configuration::SecurityGroupRuleConfigurationBuilder;
+
 pub use crate::types::_network_migration_analysis_result_source::NetworkMigrationAnalysisResultSourceBuilder;
 
 pub use crate::types::_network_migration_analysis_result_target::NetworkMigrationAnalysisResultTargetBuilder;
+
+pub use crate::types::_insight_message::InsightMessageBuilder;
 
 pub use crate::types::_last_known_check::LastKnownCheckBuilder;
 
@@ -221,6 +247,8 @@ pub use crate::types::_cpu::CpuBuilder;
 
 pub use crate::types::_participating_server::ParticipatingServerBuilder;
 
+pub use crate::types::_security_group_associations::SecurityGroupAssociationsBuilder;
+
 pub use crate::types::_code_generation_output_format_status_details::CodeGenerationOutputFormatStatusDetailsBuilder;
 
 pub use crate::types::_network_migration_code_generation_artifact::NetworkMigrationCodeGenerationArtifactBuilder;
@@ -234,6 +262,16 @@ pub use crate::types::_split_operation::SplitOperationBuilder;
 pub use crate::types::_delete_operation::DeleteOperationBuilder;
 
 pub use crate::types::_update_operation::UpdateOperationBuilder;
+
+pub use crate::types::_update_operation_v2::UpdateOperationV2Builder;
+
+pub use crate::types::_create_operation::CreateOperationBuilder;
+
+pub use crate::types::_segment_create_operation::SegmentCreateOperationBuilder;
+
+pub use crate::types::_segment_update_operation::SegmentUpdateOperationBuilder;
+
+pub use crate::types::_segment_delete_operation::SegmentDeleteOperationBuilder;
 
 pub use crate::types::_data_replication_initiation_step::DataReplicationInitiationStepBuilder;
 

@@ -68,6 +68,13 @@ pub(crate) fn de_server_side_encryption_header(
     ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
 
+pub(crate) fn de_version_id_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all_bytes("x-amz-version-id");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
+}
+
 pub fn de_copy_part_result(inp: &[u8]) -> std::result::Result<crate::types::CopyPartResult, ::aws_smithy_xml::decode::XmlDecodeError> {
     let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
     #[allow(unused_mut)]

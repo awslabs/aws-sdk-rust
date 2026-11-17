@@ -24,6 +24,7 @@ impl super::Client {
     ///   - [`use_fips_endpoint(Option<bool>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::use_fips_endpoint): <p>Replication Configuration use Fips Endpoint.</p>
     ///   - [`internet_protocol(Option<InternetProtocol>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::internet_protocol): <p>Replication Configuration internet protocol.</p>
     ///   - [`store_snapshot_on_local_zone(Option<bool>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::store_snapshot_on_local_zone): <p>Replication Configuration store snapshot on local zone.</p>
+    ///   - [`outpost_snapshot_location(Option<OutpostSnapshotLocation>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::outpost_snapshot_location): <p>Indicates the location of replication snapshots when the staging area subnet is on an AWS Outpost. <code>OUTPOST</code> keeps replication snapshots on the Outpost, and <code>REGION</code> stores them in the AWS Region.</p>
     ///   - [`storage_configuration(Option<StorageConfiguration>)`](crate::operation::get_replication_configuration::GetReplicationConfigurationOutput::storage_configuration): <p>Replication Configuration storage configuration.</p>
     /// - On failure, responds with [`SdkError<GetReplicationConfigurationError>`](crate::operation::get_replication_configuration::GetReplicationConfigurationError)
     pub fn get_replication_configuration(

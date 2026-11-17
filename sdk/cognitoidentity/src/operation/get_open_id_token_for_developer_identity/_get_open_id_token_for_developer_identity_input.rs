@@ -2,7 +2,7 @@
 
 /// <p>Input to the <code>GetOpenIdTokenForDeveloperIdentity</code> action.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetOpenIdTokenForDeveloperIdentityInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub identity_pool_id: ::std::option::Option<::std::string::String>,
@@ -41,6 +41,17 @@ impl GetOpenIdTokenForDeveloperIdentityInput {
         self.token_duration
     }
 }
+impl ::std::fmt::Debug for GetOpenIdTokenForDeveloperIdentityInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GetOpenIdTokenForDeveloperIdentityInput");
+        formatter.field("identity_pool_id", &self.identity_pool_id);
+        formatter.field("identity_id", &self.identity_id);
+        formatter.field("logins", &"*** Sensitive Data Redacted ***");
+        formatter.field("principal_tags", &self.principal_tags);
+        formatter.field("token_duration", &self.token_duration);
+        formatter.finish()
+    }
+}
 impl GetOpenIdTokenForDeveloperIdentityInput {
     /// Creates a new builder-style object to manufacture [`GetOpenIdTokenForDeveloperIdentityInput`](crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityInput).
     pub fn builder() -> crate::operation::get_open_id_token_for_developer_identity::builders::GetOpenIdTokenForDeveloperIdentityInputBuilder {
@@ -49,7 +60,7 @@ impl GetOpenIdTokenForDeveloperIdentityInput {
 }
 
 /// A builder for [`GetOpenIdTokenForDeveloperIdentityInput`](crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityInput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct GetOpenIdTokenForDeveloperIdentityInputBuilder {
     pub(crate) identity_pool_id: ::std::option::Option<::std::string::String>,
@@ -171,5 +182,16 @@ impl GetOpenIdTokenForDeveloperIdentityInputBuilder {
                 token_duration: self.token_duration,
             },
         )
+    }
+}
+impl ::std::fmt::Debug for GetOpenIdTokenForDeveloperIdentityInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GetOpenIdTokenForDeveloperIdentityInputBuilder");
+        formatter.field("identity_pool_id", &self.identity_pool_id);
+        formatter.field("identity_id", &self.identity_id);
+        formatter.field("logins", &"*** Sensitive Data Redacted ***");
+        formatter.field("principal_tags", &self.principal_tags);
+        formatter.field("token_duration", &self.token_duration);
+        formatter.finish()
     }
 }

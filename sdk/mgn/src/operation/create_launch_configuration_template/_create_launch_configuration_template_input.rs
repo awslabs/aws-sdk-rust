@@ -9,6 +9,8 @@ pub struct CreateLaunchConfigurationTemplateInput {
     pub enable_map_auto_tagging: ::std::option::Option<bool>,
     /// <p>Launch configuration template map auto tagging MPE ID.</p>
     pub map_auto_tagging_mpe_id: ::std::option::Option<::std::string::String>,
+    /// <p>Launch configuration template map auto tagging key.</p>
+    pub map_auto_tagging_key: ::std::option::Option<::std::string::String>,
     /// <p>Request to associate tags during creation of a Launch Configuration Template.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Launch disposition.</p>
@@ -48,6 +50,10 @@ impl CreateLaunchConfigurationTemplateInput {
     /// <p>Launch configuration template map auto tagging MPE ID.</p>
     pub fn map_auto_tagging_mpe_id(&self) -> ::std::option::Option<&str> {
         self.map_auto_tagging_mpe_id.as_deref()
+    }
+    /// <p>Launch configuration template map auto tagging key.</p>
+    pub fn map_auto_tagging_key(&self) -> ::std::option::Option<&str> {
+        self.map_auto_tagging_key.as_deref()
     }
     /// <p>Request to associate tags during creation of a Launch Configuration Template.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -108,6 +114,7 @@ impl ::std::fmt::Debug for CreateLaunchConfigurationTemplateInput {
         formatter.field("post_launch_actions", &self.post_launch_actions);
         formatter.field("enable_map_auto_tagging", &self.enable_map_auto_tagging);
         formatter.field("map_auto_tagging_mpe_id", &self.map_auto_tagging_mpe_id);
+        formatter.field("map_auto_tagging_key", &self.map_auto_tagging_key);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("launch_disposition", &self.launch_disposition);
         formatter.field("target_instance_type_right_sizing_method", &self.target_instance_type_right_sizing_method);
@@ -138,6 +145,7 @@ pub struct CreateLaunchConfigurationTemplateInputBuilder {
     pub(crate) post_launch_actions: ::std::option::Option<crate::types::PostLaunchActions>,
     pub(crate) enable_map_auto_tagging: ::std::option::Option<bool>,
     pub(crate) map_auto_tagging_mpe_id: ::std::option::Option<::std::string::String>,
+    pub(crate) map_auto_tagging_key: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) launch_disposition: ::std::option::Option<crate::types::LaunchDisposition>,
     pub(crate) target_instance_type_right_sizing_method: ::std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
@@ -194,6 +202,20 @@ impl CreateLaunchConfigurationTemplateInputBuilder {
     /// <p>Launch configuration template map auto tagging MPE ID.</p>
     pub fn get_map_auto_tagging_mpe_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.map_auto_tagging_mpe_id
+    }
+    /// <p>Launch configuration template map auto tagging key.</p>
+    pub fn map_auto_tagging_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.map_auto_tagging_key = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Launch configuration template map auto tagging key.</p>
+    pub fn set_map_auto_tagging_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.map_auto_tagging_key = input;
+        self
+    }
+    /// <p>Launch configuration template map auto tagging key.</p>
+    pub fn get_map_auto_tagging_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.map_auto_tagging_key
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -398,6 +420,7 @@ impl CreateLaunchConfigurationTemplateInputBuilder {
                 post_launch_actions: self.post_launch_actions,
                 enable_map_auto_tagging: self.enable_map_auto_tagging,
                 map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id,
+                map_auto_tagging_key: self.map_auto_tagging_key,
                 tags: self.tags,
                 launch_disposition: self.launch_disposition,
                 target_instance_type_right_sizing_method: self.target_instance_type_right_sizing_method,
@@ -421,6 +444,7 @@ impl ::std::fmt::Debug for CreateLaunchConfigurationTemplateInputBuilder {
         formatter.field("post_launch_actions", &self.post_launch_actions);
         formatter.field("enable_map_auto_tagging", &self.enable_map_auto_tagging);
         formatter.field("map_auto_tagging_mpe_id", &self.map_auto_tagging_mpe_id);
+        formatter.field("map_auto_tagging_key", &self.map_auto_tagging_key);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("launch_disposition", &self.launch_disposition);
         formatter.field("target_instance_type_right_sizing_method", &self.target_instance_type_right_sizing_method);

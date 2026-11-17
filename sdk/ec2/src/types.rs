@@ -475,6 +475,8 @@ pub use crate::types::_connection_notification::ConnectionNotification;
 
 pub use crate::types::_service_configuration::ServiceConfiguration;
 
+pub use crate::types::_create_peering_connection_options_request::CreatePeeringConnectionOptionsRequest;
+
 pub use crate::types::_vpn_concentrator_type::VpnConcentratorType;
 
 pub use crate::types::_vpn_concentrator::VpnConcentrator;
@@ -763,6 +765,8 @@ pub use crate::types::_modify_transit_gateway_options::ModifyTransitGatewayOptio
 
 pub use crate::types::_transit_gateway_attachment_nat_gateway_support_value::TransitGatewayAttachmentNatGatewaySupportValue;
 
+pub use crate::types::_modify_transit_gateway_peering_attachment_request_options::ModifyTransitGatewayPeeringAttachmentRequestOptions;
+
 pub use crate::types::_modify_transit_gateway_vpc_attachment_request_options::ModifyTransitGatewayVpcAttachmentRequestOptions;
 
 pub use crate::types::_modify_verified_access_endpoint_load_balancer_options::ModifyVerifiedAccessEndpointLoadBalancerOptions;
@@ -904,6 +908,8 @@ pub use crate::types::_unsuccessful_item::UnsuccessfulItem;
 pub use crate::types::_vpc_peering_connection_vpc_info::VpcPeeringConnectionVpcInfo;
 
 pub use crate::types::_vpc_peering_connection_state_reason::VpcPeeringConnectionStateReason;
+
+pub use crate::types::_multipath_resilience_status::MultipathResilienceStatus;
 
 pub use crate::types::_byoip_cidr_state::ByoipCidrState;
 
@@ -1317,6 +1323,8 @@ pub use crate::types::_transit_gateway_multicast_domain_state::TransitGatewayMul
 
 pub use crate::types::_dynamic_routing_value::DynamicRoutingValue;
 
+pub use crate::types::_transit_gateway_peering_attachment_multipath_resilience_mode::TransitGatewayPeeringAttachmentMultipathResilienceMode;
+
 pub use crate::types::_transit_gateway_policy_table_state::TransitGatewayPolicyTableState;
 
 pub use crate::types::_transit_gateway_request_policy_rule_meta_data::TransitGatewayRequestPolicyRuleMetaData;
@@ -1381,6 +1389,8 @@ pub use crate::types::_service_state::ServiceState;
 
 pub use crate::types::_private_dns_name_configuration::PrivateDnsNameConfiguration;
 
+pub use crate::types::_multipath_resilience_mode::MultipathResilienceMode;
+
 pub use crate::types::_tunnel_inside_ip_version::TunnelInsideIpVersion;
 
 pub use crate::types::_gateway_association_state::GatewayAssociationState;
@@ -1432,6 +1442,8 @@ pub use crate::types::_subscription::Subscription;
 pub use crate::types::_capacity_block_extension::CapacityBlockExtension;
 
 pub use crate::types::_capacity_block_extension_offering::CapacityBlockExtensionOffering;
+
+pub use crate::types::_capacity_block_instance_type_preference::CapacityBlockInstanceTypePreference;
 
 pub use crate::types::_capacity_block_offering::CapacityBlockOffering;
 
@@ -1919,6 +1931,8 @@ pub use crate::types::_resource_type::ResourceType;
 
 pub use crate::types::_subnet_association::SubnetAssociation;
 
+pub use crate::types::_transit_gateway_peering_attachment_multipath_resilience_status::TransitGatewayPeeringAttachmentMultipathResilienceStatus;
+
 pub use crate::types::_unsuccessful_item_error::UnsuccessfulItemError;
 
 pub use crate::types::_vpc_peering_connection_options_description::VpcPeeringConnectionOptionsDescription;
@@ -2321,6 +2335,8 @@ pub use crate::types::_initialization_status_details::InitializationStatusDetail
 
 pub use crate::types::_principal_type::PrincipalType;
 
+pub use crate::types::_active_vpn_tunnel_additional_key_exchange::ActiveVpnTunnelAdditionalKeyExchange;
+
 pub use crate::types::_deprecation_time_condition::DeprecationTimeCondition;
 
 pub use crate::types::_creation_date_condition::CreationDateCondition;
@@ -2452,6 +2468,8 @@ pub use crate::types::_phase2_dh_group_numbers_request_list_value::Phase2DhGroup
 pub use crate::types::_ike_versions_request_list_value::IkeVersionsRequestListValue;
 
 pub use crate::types::_cloud_watch_log_options_specification::CloudWatchLogOptionsSpecification;
+
+pub use crate::types::_vpn_additional_key_exchange_request::VpnAdditionalKeyExchangeRequest;
 
 pub use crate::types::_monitoring::Monitoring;
 
@@ -2594,6 +2612,8 @@ pub use crate::types::_availability_zone_message::AvailabilityZoneMessage;
 pub use crate::types::_availability_zone_geography::AvailabilityZoneGeography;
 
 pub use crate::types::_availability_zone_sub_geography::AvailabilityZoneSubGeography;
+
+pub use crate::types::_capacity_block_offering_segment::CapacityBlockOfferingSegment;
 
 pub use crate::types::_capacity_reservation_status::CapacityReservationStatus;
 
@@ -2741,6 +2761,8 @@ pub use crate::types::_launch_template_overrides::LaunchTemplateOverrides;
 
 pub use crate::types::_verified_access_log_delivery_status::VerifiedAccessLogDeliveryStatus;
 
+pub use crate::types::_additional_key_exchange_requirement::AdditionalKeyExchangeRequirement;
+
 pub use crate::types::_monitoring_state::MonitoringState;
 
 pub use crate::types::_image_watermark_filter_request::ImageWatermarkFilterRequest;
@@ -2887,6 +2909,8 @@ pub use crate::types::_route_server_route_installation_status::RouteServerRouteI
 
 pub use crate::types::_verified_access_log_delivery_status_code::VerifiedAccessLogDeliveryStatusCode;
 
+pub use crate::types::_additional_key_exchange_methods_request_list_value::AdditionalKeyExchangeMethodsRequestListValue;
+
 pub use crate::types::_spot_fleet_tag_specification::SpotFleetTagSpecification;
 
 pub use crate::types::_classic_load_balancer::ClassicLoadBalancer;
@@ -2930,6 +2954,8 @@ pub use crate::types::_phase2_dh_group_numbers_list_value::Phase2DhGroupNumbersL
 pub use crate::types::_ike_versions_list_value::IkeVersionsListValue;
 
 pub use crate::types::_cloud_watch_log_options::CloudWatchLogOptions;
+
+pub use crate::types::_vpn_additional_key_exchange::VpnAdditionalKeyExchange;
 
 pub use crate::types::_application_status_detail::ApplicationStatusDetail;
 
@@ -2985,6 +3011,8 @@ pub use crate::types::_rule_group_type_pair::RuleGroupTypePair;
 
 pub use crate::types::_rule_group_rule_options_pair::RuleGroupRuleOptionsPair;
 
+pub use crate::types::_additional_key_exchange_methods_list_value::AdditionalKeyExchangeMethodsListValue;
+
 mod _accelerator_count;
 
 mod _accelerator_count_request;
@@ -3021,6 +3049,8 @@ mod _account_vpc_encryption_control_state;
 
 mod _active_instance;
 
+mod _active_vpn_tunnel_additional_key_exchange;
+
 mod _active_vpn_tunnel_status;
 
 mod _activity_status;
@@ -3034,6 +3064,12 @@ mod _add_prefix_list_entry;
 mod _added_principal;
 
 mod _additional_detail;
+
+mod _additional_key_exchange_methods_list_value;
+
+mod _additional_key_exchange_methods_request_list_value;
+
+mod _additional_key_exchange_requirement;
 
 mod _address;
 
@@ -3259,9 +3295,13 @@ mod _capacity_block_extension_offering;
 
 mod _capacity_block_extension_status;
 
+mod _capacity_block_instance_type_preference;
+
 mod _capacity_block_interconnect_status;
 
 mod _capacity_block_offering;
+
+mod _capacity_block_offering_segment;
 
 mod _capacity_block_resource_state;
 
@@ -3486,6 +3526,8 @@ mod _cpu_performance_factor_request;
 mod _create_fleet_error;
 
 mod _create_fleet_instance;
+
+mod _create_peering_connection_options_request;
 
 mod _create_transit_gateway_connect_request_options;
 
@@ -4727,6 +4769,8 @@ mod _modify_availability_zone_opt_in_status;
 
 mod _modify_transit_gateway_options;
 
+mod _modify_transit_gateway_peering_attachment_request_options;
+
 mod _modify_transit_gateway_vpc_attachment_request_options;
 
 mod _modify_verified_access_endpoint_cidr_options;
@@ -4756,6 +4800,10 @@ mod _move_status;
 mod _moving_address_status;
 
 mod _multicast_support_value;
+
+mod _multipath_resilience_mode;
+
+mod _multipath_resilience_status;
 
 mod _nat_flex_cost_allocation_policy_document;
 
@@ -5649,6 +5697,10 @@ mod _transit_gateway_options;
 
 mod _transit_gateway_peering_attachment;
 
+mod _transit_gateway_peering_attachment_multipath_resilience_mode;
+
+mod _transit_gateway_peering_attachment_multipath_resilience_status;
+
 mod _transit_gateway_peering_attachment_options;
 
 mod _transit_gateway_policy_rule;
@@ -5932,6 +5984,10 @@ mod _vpc_peering_connection_vpc_info;
 mod _vpc_state;
 
 mod _vpc_tenancy;
+
+mod _vpn_additional_key_exchange;
+
+mod _vpn_additional_key_exchange_request;
 
 mod _vpn_concentrator;
 

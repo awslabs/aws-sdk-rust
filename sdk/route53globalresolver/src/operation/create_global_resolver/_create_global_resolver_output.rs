@@ -17,6 +17,16 @@ pub struct CreateGlobalResolverOutput {
     pub dns_name: ::std::string::String,
     /// <p>The IP address type configured for the Route 53 Global Resolver (IPV4 or DUAL_STACK).</p>
     pub ip_address_type: ::std::option::Option<crate::types::GlobalResolverIpAddressType>,
+    /// <p>The public IP connectivity configured for the Route 53 Global Resolver. Public IP addresses let DNS clients send queries to the resolver over the internet. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED_RESERVED</code> - Public IP connectivity is enabled, and the global anycast public IP addresses are reserved for the Route 53 Global Resolver.</p></li>
+    /// <li>
+    /// <p><code>DISABLED_RESERVED</code> - Public IP connectivity is disabled, and the global anycast public IP addresses remain reserved for the Route 53 Global Resolver.</p></li>
+    /// <li>
+    /// <p><code>DISABLED_RELEASED</code> - Public IP connectivity is disabled, and the global anycast public IP addresses are released.</p></li>
+    /// </ul>
+    pub public_ip_status: ::std::option::Option<crate::types::PublicIpStatus>,
     /// <p>The global anycast IPv4 addresses associated with the Route 53 Global Resolver. DNS clients can send queries to these addresses from anywhere on the internet.</p>
     pub ipv4_addresses: ::std::vec::Vec<::std::string::String>,
     /// <p>The global anycast IPv6 addresses associated with the Route 53 Global Resolver. This field is only populated when ipAddressType is DUAL_STACK. DNS clients can send queries to these addresses from anywhere on the internet.</p>
@@ -65,6 +75,18 @@ impl CreateGlobalResolverOutput {
     /// <p>The IP address type configured for the Route 53 Global Resolver (IPV4 or DUAL_STACK).</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::GlobalResolverIpAddressType> {
         self.ip_address_type.as_ref()
+    }
+    /// <p>The public IP connectivity configured for the Route 53 Global Resolver. Public IP addresses let DNS clients send queries to the resolver over the internet. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED_RESERVED</code> - Public IP connectivity is enabled, and the global anycast public IP addresses are reserved for the Route 53 Global Resolver.</p></li>
+    /// <li>
+    /// <p><code>DISABLED_RESERVED</code> - Public IP connectivity is disabled, and the global anycast public IP addresses remain reserved for the Route 53 Global Resolver.</p></li>
+    /// <li>
+    /// <p><code>DISABLED_RELEASED</code> - Public IP connectivity is disabled, and the global anycast public IP addresses are released.</p></li>
+    /// </ul>
+    pub fn public_ip_status(&self) -> ::std::option::Option<&crate::types::PublicIpStatus> {
+        self.public_ip_status.as_ref()
     }
     /// <p>The global anycast IPv4 addresses associated with the Route 53 Global Resolver. DNS clients can send queries to these addresses from anywhere on the internet.</p>
     pub fn ipv4_addresses(&self) -> &[::std::string::String] {
@@ -123,6 +145,7 @@ pub struct CreateGlobalResolverOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) dns_name: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::GlobalResolverIpAddressType>,
+    pub(crate) public_ip_status: ::std::option::Option<crate::types::PublicIpStatus>,
     pub(crate) ipv4_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -235,6 +258,44 @@ impl CreateGlobalResolverOutputBuilder {
     /// <p>The IP address type configured for the Route 53 Global Resolver (IPV4 or DUAL_STACK).</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::GlobalResolverIpAddressType> {
         &self.ip_address_type
+    }
+    /// <p>The public IP connectivity configured for the Route 53 Global Resolver. Public IP addresses let DNS clients send queries to the resolver over the internet. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED_RESERVED</code> - Public IP connectivity is enabled, and the global anycast public IP addresses are reserved for the Route 53 Global Resolver.</p></li>
+    /// <li>
+    /// <p><code>DISABLED_RESERVED</code> - Public IP connectivity is disabled, and the global anycast public IP addresses remain reserved for the Route 53 Global Resolver.</p></li>
+    /// <li>
+    /// <p><code>DISABLED_RELEASED</code> - Public IP connectivity is disabled, and the global anycast public IP addresses are released.</p></li>
+    /// </ul>
+    pub fn public_ip_status(mut self, input: crate::types::PublicIpStatus) -> Self {
+        self.public_ip_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The public IP connectivity configured for the Route 53 Global Resolver. Public IP addresses let DNS clients send queries to the resolver over the internet. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED_RESERVED</code> - Public IP connectivity is enabled, and the global anycast public IP addresses are reserved for the Route 53 Global Resolver.</p></li>
+    /// <li>
+    /// <p><code>DISABLED_RESERVED</code> - Public IP connectivity is disabled, and the global anycast public IP addresses remain reserved for the Route 53 Global Resolver.</p></li>
+    /// <li>
+    /// <p><code>DISABLED_RELEASED</code> - Public IP connectivity is disabled, and the global anycast public IP addresses are released.</p></li>
+    /// </ul>
+    pub fn set_public_ip_status(mut self, input: ::std::option::Option<crate::types::PublicIpStatus>) -> Self {
+        self.public_ip_status = input;
+        self
+    }
+    /// <p>The public IP connectivity configured for the Route 53 Global Resolver. Public IP addresses let DNS clients send queries to the resolver over the internet. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED_RESERVED</code> - Public IP connectivity is enabled, and the global anycast public IP addresses are reserved for the Route 53 Global Resolver.</p></li>
+    /// <li>
+    /// <p><code>DISABLED_RESERVED</code> - Public IP connectivity is disabled, and the global anycast public IP addresses remain reserved for the Route 53 Global Resolver.</p></li>
+    /// <li>
+    /// <p><code>DISABLED_RELEASED</code> - Public IP connectivity is disabled, and the global anycast public IP addresses are released.</p></li>
+    /// </ul>
+    pub fn get_public_ip_status(&self) -> &::std::option::Option<crate::types::PublicIpStatus> {
+        &self.public_ip_status
     }
     /// Appends an item to `ipv4_addresses`.
     ///
@@ -413,6 +474,7 @@ impl CreateGlobalResolverOutputBuilder {
                 )
             })?,
             ip_address_type: self.ip_address_type,
+            public_ip_status: self.public_ip_status,
             ipv4_addresses: self.ipv4_addresses.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "ipv4_addresses",

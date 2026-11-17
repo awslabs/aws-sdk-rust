@@ -219,6 +219,13 @@ pub(crate) fn de_update_replication_configuration(
                             .transpose()?,
                     );
                 }
+                "outpostSnapshotLocation" => {
+                    builder = builder.set_outpost_snapshot_location(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::OutpostSnapshotLocation::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "replicatedDisks" => {
                     builder = builder.set_replicated_disks(
                         crate::protocol_serde::shape_replication_configuration_replicated_disks::de_replication_configuration_replicated_disks(

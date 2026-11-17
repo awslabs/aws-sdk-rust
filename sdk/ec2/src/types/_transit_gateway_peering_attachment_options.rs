@@ -6,11 +6,59 @@
 pub struct TransitGatewayPeeringAttachmentOptions {
     /// <p>Describes whether dynamic routing is enabled or disabled for the transit gateway peering attachment.</p>
     pub dynamic_routing: ::std::option::Option<crate::types::DynamicRoutingValue>,
+    /// <p>Indicates whether the requester allows multipath resilience for the transit gateway peering attachment.</p>
+    pub requester_allow_multipath_resilience: ::std::option::Option<bool>,
+    /// <p>The multipath resilience mode for the requester. This value is present only when the requester allows multipath resilience.</p>
+    pub requester_multipath_resilience_mode: ::std::option::Option<crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode>,
+    /// <p>Indicates whether the accepter allows multipath resilience for the transit gateway peering attachment.</p>
+    pub accepter_allow_multipath_resilience: ::std::option::Option<bool>,
+    /// <p>The multipath resilience mode for the accepter. This value is present only when the accepter allows multipath resilience.</p>
+    pub accepter_multipath_resilience_mode: ::std::option::Option<crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode>,
+    /// <p>The multipath resilience status of the transit gateway peering attachment. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>enabled</code> – Both the requester and the accepter allow multipath resilience.</p></li>
+    /// <li>
+    /// <p><code>pending</code> – Either the requester or the accepter allows multipath resilience, but not both.</p></li>
+    /// <li>
+    /// <p><code>disabled</code> – Neither the requester nor the accepter allows multipath resilience.</p></li>
+    /// </ul>
+    pub multipath_resilience_status: ::std::option::Option<crate::types::TransitGatewayPeeringAttachmentMultipathResilienceStatus>,
 }
 impl TransitGatewayPeeringAttachmentOptions {
     /// <p>Describes whether dynamic routing is enabled or disabled for the transit gateway peering attachment.</p>
     pub fn dynamic_routing(&self) -> ::std::option::Option<&crate::types::DynamicRoutingValue> {
         self.dynamic_routing.as_ref()
+    }
+    /// <p>Indicates whether the requester allows multipath resilience for the transit gateway peering attachment.</p>
+    pub fn requester_allow_multipath_resilience(&self) -> ::std::option::Option<bool> {
+        self.requester_allow_multipath_resilience
+    }
+    /// <p>The multipath resilience mode for the requester. This value is present only when the requester allows multipath resilience.</p>
+    pub fn requester_multipath_resilience_mode(
+        &self,
+    ) -> ::std::option::Option<&crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode> {
+        self.requester_multipath_resilience_mode.as_ref()
+    }
+    /// <p>Indicates whether the accepter allows multipath resilience for the transit gateway peering attachment.</p>
+    pub fn accepter_allow_multipath_resilience(&self) -> ::std::option::Option<bool> {
+        self.accepter_allow_multipath_resilience
+    }
+    /// <p>The multipath resilience mode for the accepter. This value is present only when the accepter allows multipath resilience.</p>
+    pub fn accepter_multipath_resilience_mode(&self) -> ::std::option::Option<&crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode> {
+        self.accepter_multipath_resilience_mode.as_ref()
+    }
+    /// <p>The multipath resilience status of the transit gateway peering attachment. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>enabled</code> – Both the requester and the accepter allow multipath resilience.</p></li>
+    /// <li>
+    /// <p><code>pending</code> – Either the requester or the accepter allows multipath resilience, but not both.</p></li>
+    /// <li>
+    /// <p><code>disabled</code> – Neither the requester nor the accepter allows multipath resilience.</p></li>
+    /// </ul>
+    pub fn multipath_resilience_status(&self) -> ::std::option::Option<&crate::types::TransitGatewayPeeringAttachmentMultipathResilienceStatus> {
+        self.multipath_resilience_status.as_ref()
     }
 }
 impl TransitGatewayPeeringAttachmentOptions {
@@ -25,6 +73,11 @@ impl TransitGatewayPeeringAttachmentOptions {
 #[non_exhaustive]
 pub struct TransitGatewayPeeringAttachmentOptionsBuilder {
     pub(crate) dynamic_routing: ::std::option::Option<crate::types::DynamicRoutingValue>,
+    pub(crate) requester_allow_multipath_resilience: ::std::option::Option<bool>,
+    pub(crate) requester_multipath_resilience_mode: ::std::option::Option<crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode>,
+    pub(crate) accepter_allow_multipath_resilience: ::std::option::Option<bool>,
+    pub(crate) accepter_multipath_resilience_mode: ::std::option::Option<crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode>,
+    pub(crate) multipath_resilience_status: ::std::option::Option<crate::types::TransitGatewayPeeringAttachmentMultipathResilienceStatus>,
 }
 impl TransitGatewayPeeringAttachmentOptionsBuilder {
     /// <p>Describes whether dynamic routing is enabled or disabled for the transit gateway peering attachment.</p>
@@ -41,10 +94,122 @@ impl TransitGatewayPeeringAttachmentOptionsBuilder {
     pub fn get_dynamic_routing(&self) -> &::std::option::Option<crate::types::DynamicRoutingValue> {
         &self.dynamic_routing
     }
+    /// <p>Indicates whether the requester allows multipath resilience for the transit gateway peering attachment.</p>
+    pub fn requester_allow_multipath_resilience(mut self, input: bool) -> Self {
+        self.requester_allow_multipath_resilience = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the requester allows multipath resilience for the transit gateway peering attachment.</p>
+    pub fn set_requester_allow_multipath_resilience(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.requester_allow_multipath_resilience = input;
+        self
+    }
+    /// <p>Indicates whether the requester allows multipath resilience for the transit gateway peering attachment.</p>
+    pub fn get_requester_allow_multipath_resilience(&self) -> &::std::option::Option<bool> {
+        &self.requester_allow_multipath_resilience
+    }
+    /// <p>The multipath resilience mode for the requester. This value is present only when the requester allows multipath resilience.</p>
+    pub fn requester_multipath_resilience_mode(mut self, input: crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode) -> Self {
+        self.requester_multipath_resilience_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The multipath resilience mode for the requester. This value is present only when the requester allows multipath resilience.</p>
+    pub fn set_requester_multipath_resilience_mode(
+        mut self,
+        input: ::std::option::Option<crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode>,
+    ) -> Self {
+        self.requester_multipath_resilience_mode = input;
+        self
+    }
+    /// <p>The multipath resilience mode for the requester. This value is present only when the requester allows multipath resilience.</p>
+    pub fn get_requester_multipath_resilience_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode> {
+        &self.requester_multipath_resilience_mode
+    }
+    /// <p>Indicates whether the accepter allows multipath resilience for the transit gateway peering attachment.</p>
+    pub fn accepter_allow_multipath_resilience(mut self, input: bool) -> Self {
+        self.accepter_allow_multipath_resilience = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the accepter allows multipath resilience for the transit gateway peering attachment.</p>
+    pub fn set_accepter_allow_multipath_resilience(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.accepter_allow_multipath_resilience = input;
+        self
+    }
+    /// <p>Indicates whether the accepter allows multipath resilience for the transit gateway peering attachment.</p>
+    pub fn get_accepter_allow_multipath_resilience(&self) -> &::std::option::Option<bool> {
+        &self.accepter_allow_multipath_resilience
+    }
+    /// <p>The multipath resilience mode for the accepter. This value is present only when the accepter allows multipath resilience.</p>
+    pub fn accepter_multipath_resilience_mode(mut self, input: crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode) -> Self {
+        self.accepter_multipath_resilience_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The multipath resilience mode for the accepter. This value is present only when the accepter allows multipath resilience.</p>
+    pub fn set_accepter_multipath_resilience_mode(
+        mut self,
+        input: ::std::option::Option<crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode>,
+    ) -> Self {
+        self.accepter_multipath_resilience_mode = input;
+        self
+    }
+    /// <p>The multipath resilience mode for the accepter. This value is present only when the accepter allows multipath resilience.</p>
+    pub fn get_accepter_multipath_resilience_mode(
+        &self,
+    ) -> &::std::option::Option<crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode> {
+        &self.accepter_multipath_resilience_mode
+    }
+    /// <p>The multipath resilience status of the transit gateway peering attachment. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>enabled</code> – Both the requester and the accepter allow multipath resilience.</p></li>
+    /// <li>
+    /// <p><code>pending</code> – Either the requester or the accepter allows multipath resilience, but not both.</p></li>
+    /// <li>
+    /// <p><code>disabled</code> – Neither the requester nor the accepter allows multipath resilience.</p></li>
+    /// </ul>
+    pub fn multipath_resilience_status(mut self, input: crate::types::TransitGatewayPeeringAttachmentMultipathResilienceStatus) -> Self {
+        self.multipath_resilience_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The multipath resilience status of the transit gateway peering attachment. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>enabled</code> – Both the requester and the accepter allow multipath resilience.</p></li>
+    /// <li>
+    /// <p><code>pending</code> – Either the requester or the accepter allows multipath resilience, but not both.</p></li>
+    /// <li>
+    /// <p><code>disabled</code> – Neither the requester nor the accepter allows multipath resilience.</p></li>
+    /// </ul>
+    pub fn set_multipath_resilience_status(
+        mut self,
+        input: ::std::option::Option<crate::types::TransitGatewayPeeringAttachmentMultipathResilienceStatus>,
+    ) -> Self {
+        self.multipath_resilience_status = input;
+        self
+    }
+    /// <p>The multipath resilience status of the transit gateway peering attachment. The possible values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>enabled</code> – Both the requester and the accepter allow multipath resilience.</p></li>
+    /// <li>
+    /// <p><code>pending</code> – Either the requester or the accepter allows multipath resilience, but not both.</p></li>
+    /// <li>
+    /// <p><code>disabled</code> – Neither the requester nor the accepter allows multipath resilience.</p></li>
+    /// </ul>
+    pub fn get_multipath_resilience_status(&self) -> &::std::option::Option<crate::types::TransitGatewayPeeringAttachmentMultipathResilienceStatus> {
+        &self.multipath_resilience_status
+    }
     /// Consumes the builder and constructs a [`TransitGatewayPeeringAttachmentOptions`](crate::types::TransitGatewayPeeringAttachmentOptions).
     pub fn build(self) -> crate::types::TransitGatewayPeeringAttachmentOptions {
         crate::types::TransitGatewayPeeringAttachmentOptions {
             dynamic_routing: self.dynamic_routing,
+            requester_allow_multipath_resilience: self.requester_allow_multipath_resilience,
+            requester_multipath_resilience_mode: self.requester_multipath_resilience_mode,
+            accepter_allow_multipath_resilience: self.accepter_allow_multipath_resilience,
+            accepter_multipath_resilience_mode: self.accepter_multipath_resilience_mode,
+            multipath_resilience_status: self.multipath_resilience_status,
         }
     }
 }

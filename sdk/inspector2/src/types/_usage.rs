@@ -4,7 +4,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Usage {
-    /// <p>The type scan.</p>
+    /// <p>The type of scan. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services – <code>EC2_INSTANCE_HOURS</code>, <code>EC2_AGENTLESS_INSTANCE_HOURS</code>, <code>EC2_AMI_HOURS</code>, <code>EC2_AMI_ONE_SHOT_SCAN</code>, <code>ECR_INITIAL_SCAN</code>, <code>ECR_RESCAN</code>, <code>LAMBDA_FUNCTION_HOURS</code>, <code>LAMBDA_FUNCTION_CODE_HOURS</code>, <code>CODE_REPOSITORY_SAST</code>, <code>CODE_REPOSITORY_IAC</code>, or <code>CODE_REPOSITORY_SCA</code>.</p></li>
+    /// <li>
+    /// <p>Microsoft Azure – <code>AZURE_VM_AGENT_BASED_INSTANCE_HOURS</code>, <code>AZURE_CONTAINER_IMAGE_INITIAL_SCAN</code>, <code>AZURE_CONTAINER_IMAGE_RESCAN</code>, or <code>AZURE_SERVERLESS_FUNCTION_HOURS</code>.</p></li>
+    /// <li>
+    /// <p>Google Cloud Platform (GCP) – <code>GCP_VM_AGENT_BASED_INSTANCE_HOURS</code>, <code>GCP_CONTAINER_IMAGE_INITIAL_SCAN</code>, <code>GCP_CONTAINER_IMAGE_RESCAN</code>, or <code>GCP_CLOUD_RUN_HOURS</code> (Cloud Run functions).</p></li>
+    /// </ul>
     pub r#type: ::std::option::Option<crate::types::UsageType>,
     /// <p>The total of usage.</p>
     pub total: f64,
@@ -12,11 +20,27 @@ pub struct Usage {
     pub estimated_monthly_cost: f64,
     /// <p>The currency type used when calculating usage data.</p>
     pub currency: ::std::option::Option<crate::types::Currency>,
-    /// <p>The cloud provider associated with the usage information.</p>
+    /// <p>The cloud provider associated with the usage information. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub cloud_provider: ::std::option::Option<crate::types::CloudProvider>,
 }
 impl Usage {
-    /// <p>The type scan.</p>
+    /// <p>The type of scan. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services – <code>EC2_INSTANCE_HOURS</code>, <code>EC2_AGENTLESS_INSTANCE_HOURS</code>, <code>EC2_AMI_HOURS</code>, <code>EC2_AMI_ONE_SHOT_SCAN</code>, <code>ECR_INITIAL_SCAN</code>, <code>ECR_RESCAN</code>, <code>LAMBDA_FUNCTION_HOURS</code>, <code>LAMBDA_FUNCTION_CODE_HOURS</code>, <code>CODE_REPOSITORY_SAST</code>, <code>CODE_REPOSITORY_IAC</code>, or <code>CODE_REPOSITORY_SCA</code>.</p></li>
+    /// <li>
+    /// <p>Microsoft Azure – <code>AZURE_VM_AGENT_BASED_INSTANCE_HOURS</code>, <code>AZURE_CONTAINER_IMAGE_INITIAL_SCAN</code>, <code>AZURE_CONTAINER_IMAGE_RESCAN</code>, or <code>AZURE_SERVERLESS_FUNCTION_HOURS</code>.</p></li>
+    /// <li>
+    /// <p>Google Cloud Platform (GCP) – <code>GCP_VM_AGENT_BASED_INSTANCE_HOURS</code>, <code>GCP_CONTAINER_IMAGE_INITIAL_SCAN</code>, <code>GCP_CONTAINER_IMAGE_RESCAN</code>, or <code>GCP_CLOUD_RUN_HOURS</code> (Cloud Run functions).</p></li>
+    /// </ul>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::UsageType> {
         self.r#type.as_ref()
     }
@@ -32,7 +56,15 @@ impl Usage {
     pub fn currency(&self) -> ::std::option::Option<&crate::types::Currency> {
         self.currency.as_ref()
     }
-    /// <p>The cloud provider associated with the usage information.</p>
+    /// <p>The cloud provider associated with the usage information. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn cloud_provider(&self) -> ::std::option::Option<&crate::types::CloudProvider> {
         self.cloud_provider.as_ref()
     }
@@ -55,17 +87,41 @@ pub struct UsageBuilder {
     pub(crate) cloud_provider: ::std::option::Option<crate::types::CloudProvider>,
 }
 impl UsageBuilder {
-    /// <p>The type scan.</p>
+    /// <p>The type of scan. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services – <code>EC2_INSTANCE_HOURS</code>, <code>EC2_AGENTLESS_INSTANCE_HOURS</code>, <code>EC2_AMI_HOURS</code>, <code>EC2_AMI_ONE_SHOT_SCAN</code>, <code>ECR_INITIAL_SCAN</code>, <code>ECR_RESCAN</code>, <code>LAMBDA_FUNCTION_HOURS</code>, <code>LAMBDA_FUNCTION_CODE_HOURS</code>, <code>CODE_REPOSITORY_SAST</code>, <code>CODE_REPOSITORY_IAC</code>, or <code>CODE_REPOSITORY_SCA</code>.</p></li>
+    /// <li>
+    /// <p>Microsoft Azure – <code>AZURE_VM_AGENT_BASED_INSTANCE_HOURS</code>, <code>AZURE_CONTAINER_IMAGE_INITIAL_SCAN</code>, <code>AZURE_CONTAINER_IMAGE_RESCAN</code>, or <code>AZURE_SERVERLESS_FUNCTION_HOURS</code>.</p></li>
+    /// <li>
+    /// <p>Google Cloud Platform (GCP) – <code>GCP_VM_AGENT_BASED_INSTANCE_HOURS</code>, <code>GCP_CONTAINER_IMAGE_INITIAL_SCAN</code>, <code>GCP_CONTAINER_IMAGE_RESCAN</code>, or <code>GCP_CLOUD_RUN_HOURS</code> (Cloud Run functions).</p></li>
+    /// </ul>
     pub fn r#type(mut self, input: crate::types::UsageType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type scan.</p>
+    /// <p>The type of scan. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services – <code>EC2_INSTANCE_HOURS</code>, <code>EC2_AGENTLESS_INSTANCE_HOURS</code>, <code>EC2_AMI_HOURS</code>, <code>EC2_AMI_ONE_SHOT_SCAN</code>, <code>ECR_INITIAL_SCAN</code>, <code>ECR_RESCAN</code>, <code>LAMBDA_FUNCTION_HOURS</code>, <code>LAMBDA_FUNCTION_CODE_HOURS</code>, <code>CODE_REPOSITORY_SAST</code>, <code>CODE_REPOSITORY_IAC</code>, or <code>CODE_REPOSITORY_SCA</code>.</p></li>
+    /// <li>
+    /// <p>Microsoft Azure – <code>AZURE_VM_AGENT_BASED_INSTANCE_HOURS</code>, <code>AZURE_CONTAINER_IMAGE_INITIAL_SCAN</code>, <code>AZURE_CONTAINER_IMAGE_RESCAN</code>, or <code>AZURE_SERVERLESS_FUNCTION_HOURS</code>.</p></li>
+    /// <li>
+    /// <p>Google Cloud Platform (GCP) – <code>GCP_VM_AGENT_BASED_INSTANCE_HOURS</code>, <code>GCP_CONTAINER_IMAGE_INITIAL_SCAN</code>, <code>GCP_CONTAINER_IMAGE_RESCAN</code>, or <code>GCP_CLOUD_RUN_HOURS</code> (Cloud Run functions).</p></li>
+    /// </ul>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::UsageType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type scan.</p>
+    /// <p>The type of scan. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Amazon Web Services – <code>EC2_INSTANCE_HOURS</code>, <code>EC2_AGENTLESS_INSTANCE_HOURS</code>, <code>EC2_AMI_HOURS</code>, <code>EC2_AMI_ONE_SHOT_SCAN</code>, <code>ECR_INITIAL_SCAN</code>, <code>ECR_RESCAN</code>, <code>LAMBDA_FUNCTION_HOURS</code>, <code>LAMBDA_FUNCTION_CODE_HOURS</code>, <code>CODE_REPOSITORY_SAST</code>, <code>CODE_REPOSITORY_IAC</code>, or <code>CODE_REPOSITORY_SCA</code>.</p></li>
+    /// <li>
+    /// <p>Microsoft Azure – <code>AZURE_VM_AGENT_BASED_INSTANCE_HOURS</code>, <code>AZURE_CONTAINER_IMAGE_INITIAL_SCAN</code>, <code>AZURE_CONTAINER_IMAGE_RESCAN</code>, or <code>AZURE_SERVERLESS_FUNCTION_HOURS</code>.</p></li>
+    /// <li>
+    /// <p>Google Cloud Platform (GCP) – <code>GCP_VM_AGENT_BASED_INSTANCE_HOURS</code>, <code>GCP_CONTAINER_IMAGE_INITIAL_SCAN</code>, <code>GCP_CONTAINER_IMAGE_RESCAN</code>, or <code>GCP_CLOUD_RUN_HOURS</code> (Cloud Run functions).</p></li>
+    /// </ul>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::UsageType> {
         &self.r#type
     }
@@ -111,17 +167,41 @@ impl UsageBuilder {
     pub fn get_currency(&self) -> &::std::option::Option<crate::types::Currency> {
         &self.currency
     }
-    /// <p>The cloud provider associated with the usage information.</p>
+    /// <p>The cloud provider associated with the usage information. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn cloud_provider(mut self, input: crate::types::CloudProvider) -> Self {
         self.cloud_provider = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The cloud provider associated with the usage information.</p>
+    /// <p>The cloud provider associated with the usage information. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn set_cloud_provider(mut self, input: ::std::option::Option<crate::types::CloudProvider>) -> Self {
         self.cloud_provider = input;
         self
     }
-    /// <p>The cloud provider associated with the usage information.</p>
+    /// <p>The cloud provider associated with the usage information. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn get_cloud_provider(&self) -> &::std::option::Option<crate::types::CloudProvider> {
         &self.cloud_provider
     }

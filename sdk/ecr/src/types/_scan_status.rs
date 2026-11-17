@@ -17,6 +17,7 @@
 ///     ScanStatus::Failed => { /* ... */ },
 ///     ScanStatus::FindingsUnavailable => { /* ... */ },
 ///     ScanStatus::ImageArchived => { /* ... */ },
+///     ScanStatus::ImageSizeExceeded => { /* ... */ },
 ///     ScanStatus::InProgress => { /* ... */ },
 ///     ScanStatus::LimitExceeded => { /* ... */ },
 ///     ScanStatus::Pending => { /* ... */ },
@@ -61,6 +62,8 @@ pub enum ScanStatus {
     #[allow(missing_docs)] // documentation missing in model
     ImageArchived,
     #[allow(missing_docs)] // documentation missing in model
+    ImageSizeExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
     LimitExceeded,
@@ -82,6 +85,7 @@ impl ::std::convert::From<&str> for ScanStatus {
             "FAILED" => ScanStatus::Failed,
             "FINDINGS_UNAVAILABLE" => ScanStatus::FindingsUnavailable,
             "IMAGE_ARCHIVED" => ScanStatus::ImageArchived,
+            "IMAGE_SIZE_EXCEEDED" => ScanStatus::ImageSizeExceeded,
             "IN_PROGRESS" => ScanStatus::InProgress,
             "LIMIT_EXCEEDED" => ScanStatus::LimitExceeded,
             "PENDING" => ScanStatus::Pending,
@@ -107,6 +111,7 @@ impl ScanStatus {
             ScanStatus::Failed => "FAILED",
             ScanStatus::FindingsUnavailable => "FINDINGS_UNAVAILABLE",
             ScanStatus::ImageArchived => "IMAGE_ARCHIVED",
+            ScanStatus::ImageSizeExceeded => "IMAGE_SIZE_EXCEEDED",
             ScanStatus::InProgress => "IN_PROGRESS",
             ScanStatus::LimitExceeded => "LIMIT_EXCEEDED",
             ScanStatus::Pending => "PENDING",
@@ -123,6 +128,7 @@ impl ScanStatus {
             "FAILED",
             "FINDINGS_UNAVAILABLE",
             "IMAGE_ARCHIVED",
+            "IMAGE_SIZE_EXCEEDED",
             "IN_PROGRESS",
             "LIMIT_EXCEEDED",
             "PENDING",
@@ -156,6 +162,7 @@ impl ::std::fmt::Display for ScanStatus {
             ScanStatus::Failed => write!(f, "FAILED"),
             ScanStatus::FindingsUnavailable => write!(f, "FINDINGS_UNAVAILABLE"),
             ScanStatus::ImageArchived => write!(f, "IMAGE_ARCHIVED"),
+            ScanStatus::ImageSizeExceeded => write!(f, "IMAGE_SIZE_EXCEEDED"),
             ScanStatus::InProgress => write!(f, "IN_PROGRESS"),
             ScanStatus::LimitExceeded => write!(f, "LIMIT_EXCEEDED"),
             ScanStatus::Pending => write!(f, "PENDING"),

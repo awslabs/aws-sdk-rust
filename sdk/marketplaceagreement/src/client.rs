@@ -136,6 +136,8 @@ impl Client {
     }
 }
 
+mod accept_agreement_approval;
+
 mod accept_agreement_cancellation_request;
 
 mod accept_agreement_payment_request;
@@ -150,6 +152,8 @@ mod cancel_agreement_cancellation_request;
 
 mod cancel_agreement_payment_request;
 
+mod cancel_agreement_request;
+
 mod create_agreement_request;
 
 /// Operation customization and supporting types.
@@ -163,7 +167,7 @@ mod create_agreement_request;
 /// # let client: aws_sdk_marketplaceagreement::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.accept_agreement_cancellation_request()
+/// let result = client.accept_agreement_approval()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -181,15 +185,27 @@ pub mod customize;
 
 mod describe_agreement;
 
+mod get_agreement_approval;
+
 mod get_agreement_cancellation_request;
+
+mod get_agreement_contacts;
 
 mod get_agreement_entitlements;
 
 mod get_agreement_payment_request;
 
+mod get_agreement_request;
+
+mod get_agreement_request_approval_plans;
+
+mod get_agreement_request_terms;
+
 mod get_agreement_terms;
 
 mod get_billing_adjustment_request;
+
+mod list_agreement_approvals;
 
 mod list_agreement_cancellation_requests;
 
@@ -199,7 +215,11 @@ mod list_agreement_invoice_line_items;
 
 mod list_agreement_payment_requests;
 
+mod list_agreement_requests;
+
 mod list_billing_adjustment_requests;
+
+mod reject_agreement_approval;
 
 mod reject_agreement_cancellation_request;
 
@@ -210,5 +230,7 @@ mod search_agreements;
 mod send_agreement_cancellation_request;
 
 mod send_agreement_payment_request;
+
+mod start_agreement_approvals;
 
 mod update_purchase_orders;

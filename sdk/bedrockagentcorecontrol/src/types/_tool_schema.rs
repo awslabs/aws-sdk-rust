@@ -2,7 +2,7 @@
 
 /// <p>A tool schema for a gateway target. This structure defines the schema for a tool that the target exposes through the Model Context Protocol.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum ToolSchema {
     /// <p>The inline payload of the tool schema. This payload contains the schema definition directly in the request.</p>
     InlinePayload(::std::vec::Vec<crate::types::ToolDefinition>),
@@ -48,5 +48,14 @@ impl ToolSchema {
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {
         matches!(self, Self::Unknown)
+    }
+}
+impl ::std::fmt::Debug for ToolSchema {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            ToolSchema::InlinePayload(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            ToolSchema::S3(val) => f.debug_tuple("S3").field(&val).finish(),
+            ToolSchema::Unknown => f.debug_tuple("Unknown").finish(),
+        }
     }
 }

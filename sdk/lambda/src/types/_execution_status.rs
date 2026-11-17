@@ -12,7 +12,10 @@
 /// ```text
 /// # let executionstatus = unimplemented!();
 /// match executionstatus {
+///     ExecutionStatus::Deleting => { /* ... */ },
 ///     ExecutionStatus::Failed => { /* ... */ },
+///     ExecutionStatus::Paused => { /* ... */ },
+///     ExecutionStatus::Pausing => { /* ... */ },
 ///     ExecutionStatus::Running => { /* ... */ },
 ///     ExecutionStatus::Stopped => { /* ... */ },
 ///     ExecutionStatus::Succeeded => { /* ... */ },
@@ -46,7 +49,13 @@
 )]
 pub enum ExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
+    Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
+    Paused,
+    #[allow(missing_docs)] // documentation missing in model
+    Pausing,
     #[allow(missing_docs)] // documentation missing in model
     Running,
     #[allow(missing_docs)] // documentation missing in model
@@ -62,7 +71,10 @@ pub enum ExecutionStatus {
 impl ::std::convert::From<&str> for ExecutionStatus {
     fn from(s: &str) -> Self {
         match s {
+            "DELETING" => ExecutionStatus::Deleting,
             "FAILED" => ExecutionStatus::Failed,
+            "PAUSED" => ExecutionStatus::Paused,
+            "PAUSING" => ExecutionStatus::Pausing,
             "RUNNING" => ExecutionStatus::Running,
             "STOPPED" => ExecutionStatus::Stopped,
             "SUCCEEDED" => ExecutionStatus::Succeeded,
@@ -82,7 +94,10 @@ impl ExecutionStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ExecutionStatus::Deleting => "DELETING",
             ExecutionStatus::Failed => "FAILED",
+            ExecutionStatus::Paused => "PAUSED",
+            ExecutionStatus::Pausing => "PAUSING",
             ExecutionStatus::Running => "RUNNING",
             ExecutionStatus::Stopped => "STOPPED",
             ExecutionStatus::Succeeded => "SUCCEEDED",
@@ -92,7 +107,7 @@ impl ExecutionStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["FAILED", "RUNNING", "STOPPED", "SUCCEEDED", "TIMED_OUT"]
+        &["DELETING", "FAILED", "PAUSED", "PAUSING", "RUNNING", "STOPPED", "SUCCEEDED", "TIMED_OUT"]
     }
 }
 impl ::std::convert::AsRef<str> for ExecutionStatus {
@@ -115,7 +130,10 @@ impl ExecutionStatus {
 impl ::std::fmt::Display for ExecutionStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ExecutionStatus::Deleting => write!(f, "DELETING"),
             ExecutionStatus::Failed => write!(f, "FAILED"),
+            ExecutionStatus::Paused => write!(f, "PAUSED"),
+            ExecutionStatus::Pausing => write!(f, "PAUSING"),
             ExecutionStatus::Running => write!(f, "RUNNING"),
             ExecutionStatus::Stopped => write!(f, "STOPPED"),
             ExecutionStatus::Succeeded => write!(f, "SUCCEEDED"),

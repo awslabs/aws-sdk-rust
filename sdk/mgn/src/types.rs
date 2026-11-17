@@ -47,6 +47,8 @@ pub use crate::types::_action_category::ActionCategory;
 
 pub use crate::types::_list_network_migration_definitions_request_filters::ListNetworkMigrationDefinitionsRequestFilters;
 
+pub use crate::types::_definition_type::DefinitionType;
+
 pub use crate::types::_target_s3_configuration::TargetS3Configuration;
 
 pub use crate::types::_target_network::TargetNetwork;
@@ -73,6 +75,8 @@ pub use crate::types::_list_network_migration_deployer_job_filters::ListNetworkM
 
 pub use crate::types::_list_network_migration_execution_request_filters::ListNetworkMigrationExecutionRequestFilters;
 
+pub use crate::types::_list_network_migration_insights_filters::ListNetworkMigrationInsightsFilters;
+
 pub use crate::types::_list_network_migration_mapper_segment_constructs_filters::ListNetworkMigrationMapperSegmentConstructsFilters;
 
 pub use crate::types::_list_network_migration_mapper_segments_filters::ListNetworkMigrationMapperSegmentsFilters;
@@ -89,6 +93,14 @@ pub use crate::types::_checksum::Checksum;
 
 pub use crate::types::_s3_configuration::S3Configuration;
 
+pub use crate::types::_list_remote_source_action_jobs_request_filters::ListRemoteSourceActionJobsRequestFilters;
+
+pub use crate::types::_remote_source_action_job::RemoteSourceActionJob;
+
+pub use crate::types::_list_remote_source_action_invocations_request_filters::ListRemoteSourceActionInvocationsRequestFilters;
+
+pub use crate::types::_list_remote_source_actions_request_filters::ListRemoteSourceActionsRequestFilters;
+
 pub use crate::types::_replication_configuration_default_large_staging_disk_type::ReplicationConfigurationDefaultLargeStagingDiskType;
 
 pub use crate::types::_replication_configuration_ebs_encryption::ReplicationConfigurationEbsEncryption;
@@ -96,6 +108,8 @@ pub use crate::types::_replication_configuration_ebs_encryption::ReplicationConf
 pub use crate::types::_replication_configuration_data_plane_routing::ReplicationConfigurationDataPlaneRouting;
 
 pub use crate::types::_internet_protocol::InternetProtocol;
+
+pub use crate::types::_outpost_snapshot_location::OutpostSnapshotLocation;
 
 pub use crate::types::_storage_configuration::StorageConfiguration;
 
@@ -114,6 +128,8 @@ pub use crate::types::_source_properties::SourceProperties;
 pub use crate::types::_replication_type::ReplicationType;
 
 pub use crate::types::_change_server_life_cycle_state_source_server_lifecycle::ChangeServerLifeCycleStateSourceServerLifecycle;
+
+pub use crate::types::_source_server_volume_configuration::SourceServerVolumeConfiguration;
 
 pub use crate::types::_source_server_actions_request_filters::SourceServerActionsRequestFilters;
 
@@ -171,6 +187,8 @@ pub use crate::types::_target_network_topology::TargetNetworkTopology;
 
 pub use crate::types::_cidr_mapping::CidrMapping;
 
+pub use crate::types::_operation_configuration_union::OperationConfigurationUnion;
+
 pub use crate::types::_network_migration_analysis_job_details::NetworkMigrationAnalysisJobDetails;
 
 pub use crate::types::_network_migration_analysis_result::NetworkMigrationAnalysisResult;
@@ -185,6 +203,8 @@ pub use crate::types::_network_migration_deployer_job_details::NetworkMigrationD
 
 pub use crate::types::_network_migration_execution::NetworkMigrationExecution;
 
+pub use crate::types::_network_migration_insight::NetworkMigrationInsight;
+
 pub use crate::types::_network_migration_mapper_segment::NetworkMigrationMapperSegment;
 
 pub use crate::types::_network_migration_mapping_job_details::NetworkMigrationMappingJobDetails;
@@ -198,6 +218,12 @@ pub use crate::types::_start_network_migration_mapping_update_construct::StartNe
 pub use crate::types::_start_network_migration_mapping_update_segment::StartNetworkMigrationMappingUpdateSegment;
 
 pub use crate::types::_encryption_algorithm::EncryptionAlgorithm;
+
+pub use crate::types::_remote_source_action_job_status::RemoteSourceActionJobStatus;
+
+pub use crate::types::_remote_source_action_invocation::RemoteSourceActionInvocation;
+
+pub use crate::types::_remote_source_action::RemoteSourceAction;
 
 pub use crate::types::_replication_configuration_template::ReplicationConfigurationTemplate;
 
@@ -229,7 +255,11 @@ pub use crate::types::_os::Os;
 
 pub use crate::types::_change_server_life_cycle_state_source_server_lifecycle_state::ChangeServerLifeCycleStateSourceServerLifecycleState;
 
+pub use crate::types::_delete_on_termination::DeleteOnTermination;
+
 pub use crate::types::_replication_configuration_replicated_disk::ReplicationConfigurationReplicatedDisk;
+
+pub use crate::types::_remote_source_action_invocation_result::RemoteSourceActionInvocationResult;
 
 pub use crate::types::_source_server_action_document::SourceServerActionDocument;
 
@@ -273,6 +303,10 @@ pub use crate::types::_source_environment::SourceEnvironment;
 
 pub use crate::types::_source_s3_configuration::SourceS3Configuration;
 
+pub use crate::types::_security_group_configuration::SecurityGroupConfiguration;
+
+pub use crate::types::_security_group_rule_configuration::SecurityGroupRuleConfiguration;
+
 pub use crate::types::_network_migration_job_status::NetworkMigrationJobStatus;
 
 pub use crate::types::_analyzer_type::AnalyzerType;
@@ -293,7 +327,21 @@ pub use crate::types::_execution_stage::ExecutionStage;
 
 pub use crate::types::_execution_stage_activity::ExecutionStageActivity;
 
+pub use crate::types::_insight_type::InsightType;
+
+pub use crate::types::_insight_producer_type::InsightProducerType;
+
+pub use crate::types::_insight_producer_name::InsightProducerName;
+
+pub use crate::types::_insight_level::InsightLevel;
+
+pub use crate::types::_insight_message::InsightMessage;
+
 pub use crate::types::_operation_union::OperationUnion;
+
+pub use crate::types::_segment_operation::SegmentOperation;
+
+pub use crate::types::_remote_source_action_invocation_status::RemoteSourceActionInvocationStatus;
 
 pub use crate::types::_last_known_check::LastKnownCheck;
 
@@ -325,6 +373,8 @@ pub use crate::types::_participating_server::ParticipatingServer;
 
 pub use crate::types::_ssm_parameter_store_parameter_type::SsmParameterStoreParameterType;
 
+pub use crate::types::_security_group_associations::SecurityGroupAssociations;
+
 pub use crate::types::_code_generation_output_format_status_details::CodeGenerationOutputFormatStatusDetails;
 
 pub use crate::types::_network_migration_code_generation_artifact::NetworkMigrationCodeGenerationArtifact;
@@ -338,6 +388,16 @@ pub use crate::types::_split_operation::SplitOperation;
 pub use crate::types::_delete_operation::DeleteOperation;
 
 pub use crate::types::_update_operation::UpdateOperation;
+
+pub use crate::types::_update_operation_v2::UpdateOperationV2;
+
+pub use crate::types::_create_operation::CreateOperation;
+
+pub use crate::types::_segment_create_operation::SegmentCreateOperation;
+
+pub use crate::types::_segment_update_operation::SegmentUpdateOperation;
+
+pub use crate::types::_segment_delete_operation::SegmentDeleteOperation;
 
 pub use crate::types::_last_known_check_type::LastKnownCheckType;
 
@@ -403,6 +463,8 @@ mod _connector_ssm_command_config;
 
 mod _cpu;
 
+mod _create_operation;
+
 mod _data_replication_error;
 
 mod _data_replication_error_string;
@@ -420,6 +482,10 @@ mod _data_replication_initiation_step_name;
 mod _data_replication_initiation_step_status;
 
 mod _data_replication_state;
+
+mod _definition_type;
+
+mod _delete_on_termination;
 
 mod _delete_operation;
 
@@ -482,6 +548,16 @@ mod _import_task_summary_servers;
 mod _import_task_summary_waves;
 
 mod _initiated_by;
+
+mod _insight_level;
+
+mod _insight_message;
+
+mod _insight_producer_name;
+
+mod _insight_producer_type;
+
+mod _insight_type;
 
 mod _internet_protocol;
 
@@ -563,6 +639,8 @@ mod _list_network_migration_deployer_job_filters;
 
 mod _list_network_migration_execution_request_filters;
 
+mod _list_network_migration_insights_filters;
+
 mod _list_network_migration_mapper_segment_constructs_filters;
 
 mod _list_network_migration_mapper_segments_filters;
@@ -570,6 +648,12 @@ mod _list_network_migration_mapper_segments_filters;
 mod _list_network_migration_mapping_updates_filters;
 
 mod _list_network_migration_mappings_filters;
+
+mod _list_remote_source_action_invocations_request_filters;
+
+mod _list_remote_source_action_jobs_request_filters;
+
+mod _list_remote_source_actions_request_filters;
 
 mod _list_waves_request_filters;
 
@@ -617,6 +701,8 @@ mod _network_migration_failed_resource_details;
 
 mod _network_migration_failed_resource_status;
 
+mod _network_migration_insight;
+
 mod _network_migration_job_status;
 
 mod _network_migration_mapper_segment;
@@ -629,9 +715,13 @@ mod _network_migration_mapping_job_details;
 
 mod _network_migration_mapping_update_job_details;
 
+mod _operation_configuration_union;
+
 mod _operation_union;
 
 mod _os;
+
+mod _outpost_snapshot_location;
 
 mod _participating_server;
 
@@ -642,6 +732,18 @@ mod _post_launch_actions;
 mod _post_launch_actions_deployment_type;
 
 mod _post_launch_actions_status;
+
+mod _remote_source_action;
+
+mod _remote_source_action_invocation;
+
+mod _remote_source_action_invocation_result;
+
+mod _remote_source_action_invocation_status;
+
+mod _remote_source_action_job;
+
+mod _remote_source_action_job_status;
 
 mod _replication_configuration_data_plane_routing;
 
@@ -661,7 +763,21 @@ mod _s3_bucket_source;
 
 mod _s3_configuration;
 
+mod _security_group_associations;
+
+mod _security_group_configuration;
+
 mod _security_group_mapping_strategy;
+
+mod _security_group_rule_configuration;
+
+mod _segment_create_operation;
+
+mod _segment_delete_operation;
+
+mod _segment_operation;
+
+mod _segment_update_operation;
 
 mod _source_configuration;
 
@@ -678,6 +794,8 @@ mod _source_server_action_document;
 mod _source_server_actions_request_filters;
 
 mod _source_server_connector_action;
+
+mod _source_server_volume_configuration;
 
 mod _split_construct;
 
@@ -720,6 +838,8 @@ mod _template_action_document;
 mod _template_actions_request_filters;
 
 mod _update_operation;
+
+mod _update_operation_v2;
 
 mod _validation_exception_field;
 

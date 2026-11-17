@@ -79,6 +79,8 @@ pub use crate::types::_landing_zone_drift_status::LandingZoneDriftStatus;
 
 pub use crate::types::_enabled_baseline_inheritance_drift::EnabledBaselineInheritanceDrift;
 
+pub use crate::types::_enabled_baseline_source_drift::EnabledBaselineSourceDrift;
+
 pub use crate::types::_enabled_control_inheritance_drift::EnabledControlInheritanceDrift;
 
 pub use crate::types::_enabled_control_resource_drift::EnabledControlResourceDrift;
@@ -120,6 +122,8 @@ mod _enabled_baseline_inheritance_drift;
 mod _enabled_baseline_parameter;
 
 mod _enabled_baseline_parameter_summary;
+
+mod _enabled_baseline_source_drift;
 
 mod _enabled_baseline_summary;
 

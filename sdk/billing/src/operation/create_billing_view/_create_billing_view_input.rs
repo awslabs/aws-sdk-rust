@@ -7,7 +7,19 @@ pub struct CreateBillingViewInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the billing view.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>A list of billing views used as the data source for the custom billing view.</p>
+    /// <p>A list of billing views used as the data source for the custom billing view. Source views can be of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PRIMARY</code> - The billing view that contains all cost management data associated with an account.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code> - A billing view that a customer creates from one or more source views.</p></li>
+    /// <li>
+    /// <p><code>BILLING_GROUP</code> - The billing view for an Billing Conductor billing group.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER</code> - The billing view for the billing data that a bill transfer account is financially responsible for.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER_SHOWBACK</code> - The billing view for billing data configured for showback or chargeback purposes.</p></li>
+    /// </ul>
     pub source_views: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_billing_Expression.html">Expression</a>. Billing view only supports <code>LINKED_ACCOUNT</code>, <code>Tags</code>, and <code>CostCategories</code>.</p>
     pub data_filter_expression: ::std::option::Option<crate::types::Expression>,
@@ -25,7 +37,19 @@ impl CreateBillingViewInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>A list of billing views used as the data source for the custom billing view.</p>
+    /// <p>A list of billing views used as the data source for the custom billing view. Source views can be of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PRIMARY</code> - The billing view that contains all cost management data associated with an account.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code> - A billing view that a customer creates from one or more source views.</p></li>
+    /// <li>
+    /// <p><code>BILLING_GROUP</code> - The billing view for an Billing Conductor billing group.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER</code> - The billing view for the billing data that a bill transfer account is financially responsible for.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER_SHOWBACK</code> - The billing view for billing data configured for showback or chargeback purposes.</p></li>
+    /// </ul>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_views.is_none()`.
     pub fn source_views(&self) -> &[::std::string::String] {
@@ -110,19 +134,55 @@ impl CreateBillingViewInputBuilder {
     ///
     /// To override the contents of this collection use [`set_source_views`](Self::set_source_views).
     ///
-    /// <p>A list of billing views used as the data source for the custom billing view.</p>
+    /// <p>A list of billing views used as the data source for the custom billing view. Source views can be of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PRIMARY</code> - The billing view that contains all cost management data associated with an account.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code> - A billing view that a customer creates from one or more source views.</p></li>
+    /// <li>
+    /// <p><code>BILLING_GROUP</code> - The billing view for an Billing Conductor billing group.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER</code> - The billing view for the billing data that a bill transfer account is financially responsible for.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER_SHOWBACK</code> - The billing view for billing data configured for showback or chargeback purposes.</p></li>
+    /// </ul>
     pub fn source_views(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.source_views.unwrap_or_default();
         v.push(input.into());
         self.source_views = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of billing views used as the data source for the custom billing view.</p>
+    /// <p>A list of billing views used as the data source for the custom billing view. Source views can be of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PRIMARY</code> - The billing view that contains all cost management data associated with an account.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code> - A billing view that a customer creates from one or more source views.</p></li>
+    /// <li>
+    /// <p><code>BILLING_GROUP</code> - The billing view for an Billing Conductor billing group.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER</code> - The billing view for the billing data that a bill transfer account is financially responsible for.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER_SHOWBACK</code> - The billing view for billing data configured for showback or chargeback purposes.</p></li>
+    /// </ul>
     pub fn set_source_views(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.source_views = input;
         self
     }
-    /// <p>A list of billing views used as the data source for the custom billing view.</p>
+    /// <p>A list of billing views used as the data source for the custom billing view. Source views can be of the following types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PRIMARY</code> - The billing view that contains all cost management data associated with an account.</p></li>
+    /// <li>
+    /// <p><code>CUSTOM</code> - A billing view that a customer creates from one or more source views.</p></li>
+    /// <li>
+    /// <p><code>BILLING_GROUP</code> - The billing view for an Billing Conductor billing group.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER</code> - The billing view for the billing data that a bill transfer account is financially responsible for.</p></li>
+    /// <li>
+    /// <p><code>BILLING_TRANSFER_SHOWBACK</code> - The billing view for billing data configured for showback or chargeback purposes.</p></li>
+    /// </ul>
     pub fn get_source_views(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.source_views
     }

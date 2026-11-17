@@ -13,7 +13,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChargeSummary {
-    /// <p>The three-letter currency code for all charges (e.g., USD).</p>
+    /// <p>The three-letter currency code for all charges (for example, USD).</p>
     pub currency_code: ::std::option::Option<::std::string::String>,
     /// <p>The total value of the agreement, which includes any amendments.</p>
     pub new_agreement_value: ::std::option::Option<::std::string::String>,
@@ -29,7 +29,7 @@ pub struct ChargeSummary {
     pub invoicing_entity: ::std::option::Option<crate::types::InvoicingEntity>,
 }
 impl ChargeSummary {
-    /// <p>The three-letter currency code for all charges (e.g., USD).</p>
+    /// <p>The three-letter currency code for all charges (for example, USD).</p>
     pub fn currency_code(&self) -> ::std::option::Option<&str> {
         self.currency_code.as_deref()
     }
@@ -82,17 +82,17 @@ pub struct ChargeSummaryBuilder {
     pub(crate) invoicing_entity: ::std::option::Option<crate::types::InvoicingEntity>,
 }
 impl ChargeSummaryBuilder {
-    /// <p>The three-letter currency code for all charges (e.g., USD).</p>
+    /// <p>The three-letter currency code for all charges (for example, USD).</p>
     pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The three-letter currency code for all charges (e.g., USD).</p>
+    /// <p>The three-letter currency code for all charges (for example, USD).</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency_code = input;
         self
     }
-    /// <p>The three-letter currency code for all charges (e.g., USD).</p>
+    /// <p>The three-letter currency code for all charges (for example, USD).</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.currency_code
     }

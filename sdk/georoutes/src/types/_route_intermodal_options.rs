@@ -4,7 +4,7 @@
 /// <p>Not supported in <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a> customers.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteIntermodalOptions {
     /// <p>Accessibility attributes to consider when calculating the route.</p>
     pub accessibility_attributes: ::std::option::Option<::std::vec::Vec<crate::types::RouteAccessibilityAttribute>>,
@@ -53,6 +53,19 @@ impl RouteIntermodalOptions {
         self.vehicle.as_ref()
     }
 }
+impl ::std::fmt::Debug for RouteIntermodalOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteIntermodalOptions");
+        formatter.field("accessibility_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_transfers", &self.max_transfers);
+        formatter.field("pedestrian", &self.pedestrian);
+        formatter.field("rental", &self.rental);
+        formatter.field("taxi", &self.taxi);
+        formatter.field("transit", &self.transit);
+        formatter.field("vehicle", &self.vehicle);
+        formatter.finish()
+    }
+}
 impl RouteIntermodalOptions {
     /// Creates a new builder-style object to manufacture [`RouteIntermodalOptions`](crate::types::RouteIntermodalOptions).
     pub fn builder() -> crate::types::builders::RouteIntermodalOptionsBuilder {
@@ -61,7 +74,7 @@ impl RouteIntermodalOptions {
 }
 
 /// A builder for [`RouteIntermodalOptions`](crate::types::RouteIntermodalOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteIntermodalOptionsBuilder {
     pub(crate) accessibility_attributes: ::std::option::Option<::std::vec::Vec<crate::types::RouteAccessibilityAttribute>>,
@@ -188,5 +201,18 @@ impl RouteIntermodalOptionsBuilder {
             transit: self.transit,
             vehicle: self.vehicle,
         }
+    }
+}
+impl ::std::fmt::Debug for RouteIntermodalOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteIntermodalOptionsBuilder");
+        formatter.field("accessibility_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("max_transfers", &self.max_transfers);
+        formatter.field("pedestrian", &self.pedestrian);
+        formatter.field("rental", &self.rental);
+        formatter.field("taxi", &self.taxi);
+        formatter.field("transit", &self.transit);
+        formatter.field("vehicle", &self.vehicle);
+        formatter.finish()
     }
 }

@@ -19,6 +19,36 @@ pub(crate) fn reflens_list_feeds_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_functions_output_output_next_token(
+    input: &crate::operation::list_functions::ListFunctionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_question_set_versions_output_output_next_token(
+    input: &crate::operation::list_question_set_versions::ListQuestionSetVersionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_question_sets_output_output_next_token(
+    input: &crate::operation::list_question_sets::ListQuestionSetsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_schedule_actions_output_output_next_token(
     input: &crate::operation::list_schedule_actions::ListScheduleActionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -50,6 +80,27 @@ pub(crate) fn lens_list_feeds_output_output_feeds(
     input: crate::operation::list_feeds::ListFeedsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FeedSummary>> {
     let input = input.feeds;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_functions_output_output_functions(
+    input: crate::operation::list_functions::ListFunctionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::FunctionSummary>> {
+    let input = input.functions;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_question_set_versions_output_output_versions(
+    input: crate::operation::list_question_set_versions::ListQuestionSetVersionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::QuestionSetVersionSummary>> {
+    let input = input.versions;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_question_sets_output_output_question_sets(
+    input: crate::operation::list_question_sets::ListQuestionSetsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::QuestionSetSummary>> {
+    let input = input.question_sets;
     ::std::option::Option::Some(input)
 }
 

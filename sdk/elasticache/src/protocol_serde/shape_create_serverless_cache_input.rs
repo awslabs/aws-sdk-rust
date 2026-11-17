@@ -107,6 +107,17 @@ pub fn ser_create_serverless_cache_input_input_input(
     if let Some(var_42) = &input.connection_type {
         scope_41.string(var_42.as_str());
     }
+    #[allow(unused_mut)]
+    let mut scope_43 = writer.prefix("Integrations");
+    if let Some(var_44) = &input.integrations {
+        let mut list_46 = scope_43.start_list(false, Some("IntegrationRequest"));
+        for item_45 in var_44 {
+            #[allow(unused_mut)]
+            let mut entry_47 = list_46.entry();
+            crate::protocol_serde::shape_integration_request::ser_integration_request(entry_47, item_45)?;
+        }
+        list_46.finish();
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -23,7 +23,7 @@ impl crate::operation::reject_domain_name_access_association::builders::RejectDo
 /// Fluent builder constructing a request to `RejectDomainNameAccessAssociation`.
 ///
 /// <p>Rejects a domain name access association with a private custom domain name.</p>
-/// <p>To reject a domain name access association with an access association source in another AWS account, use this operation. To remove a domain name access association with an access association source in your own account, use the DeleteDomainNameAccessAssociation operation.</p>
+/// <p>To reject a domain name access association with an access association source in another Amazon Web Services account, use this operation. To remove a domain name access association with an access association source in your own account, use the DeleteDomainNameAccessAssociation operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RejectDomainNameAccessAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

@@ -5,6 +5,8 @@
 pub struct DescribeConformancePacksInput {
     /// <p>Comma-separated list of conformance pack names for which you want details. If you do not specify any names, Config returns details for all your conformance packs.</p>
     pub conformance_pack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Returns a filtered list of custom or managed conformance packs. By default, if the filter is not defined, Config returns details for all your conformance packs.</p>
+    pub filters: ::std::option::Option<crate::types::DescribeConformancePacksFilters>,
     /// <p>The maximum number of conformance packs returned on each page.</p>
     pub limit: ::std::option::Option<i32>,
     /// <p>The <code>nextToken</code> string returned in a previous request that you use to request the next page of results in a paginated response.</p>
@@ -16,6 +18,10 @@ impl DescribeConformancePacksInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.conformance_pack_names.is_none()`.
     pub fn conformance_pack_names(&self) -> &[::std::string::String] {
         self.conformance_pack_names.as_deref().unwrap_or_default()
+    }
+    /// <p>Returns a filtered list of custom or managed conformance packs. By default, if the filter is not defined, Config returns details for all your conformance packs.</p>
+    pub fn filters(&self) -> ::std::option::Option<&crate::types::DescribeConformancePacksFilters> {
+        self.filters.as_ref()
     }
     /// <p>The maximum number of conformance packs returned on each page.</p>
     pub fn limit(&self) -> ::std::option::Option<i32> {
@@ -38,6 +44,7 @@ impl DescribeConformancePacksInput {
 #[non_exhaustive]
 pub struct DescribeConformancePacksInputBuilder {
     pub(crate) conformance_pack_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) filters: ::std::option::Option<crate::types::DescribeConformancePacksFilters>,
     pub(crate) limit: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -61,6 +68,20 @@ impl DescribeConformancePacksInputBuilder {
     /// <p>Comma-separated list of conformance pack names for which you want details. If you do not specify any names, Config returns details for all your conformance packs.</p>
     pub fn get_conformance_pack_names(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.conformance_pack_names
+    }
+    /// <p>Returns a filtered list of custom or managed conformance packs. By default, if the filter is not defined, Config returns details for all your conformance packs.</p>
+    pub fn filters(mut self, input: crate::types::DescribeConformancePacksFilters) -> Self {
+        self.filters = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Returns a filtered list of custom or managed conformance packs. By default, if the filter is not defined, Config returns details for all your conformance packs.</p>
+    pub fn set_filters(mut self, input: ::std::option::Option<crate::types::DescribeConformancePacksFilters>) -> Self {
+        self.filters = input;
+        self
+    }
+    /// <p>Returns a filtered list of custom or managed conformance packs. By default, if the filter is not defined, Config returns details for all your conformance packs.</p>
+    pub fn get_filters(&self) -> &::std::option::Option<crate::types::DescribeConformancePacksFilters> {
+        &self.filters
     }
     /// <p>The maximum number of conformance packs returned on each page.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -99,6 +120,7 @@ impl DescribeConformancePacksInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::describe_conformance_packs::DescribeConformancePacksInput {
             conformance_pack_names: self.conformance_pack_names,
+            filters: self.filters,
             limit: self.limit,
             next_token: self.next_token,
         })

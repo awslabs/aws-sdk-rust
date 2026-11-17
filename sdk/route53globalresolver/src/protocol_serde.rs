@@ -35,6 +35,8 @@ pub(crate) mod shape_create_access_source;
 
 pub(crate) mod shape_create_access_token;
 
+pub(crate) mod shape_create_core_network_endpoint;
+
 pub(crate) mod shape_create_dns_view;
 
 pub(crate) mod shape_create_firewall_domain_list;
@@ -46,6 +48,8 @@ pub(crate) mod shape_create_global_resolver;
 pub(crate) mod shape_delete_access_source;
 
 pub(crate) mod shape_delete_access_token;
+
+pub(crate) mod shape_delete_core_network_endpoint;
 
 pub(crate) mod shape_delete_dns_view;
 
@@ -65,6 +69,8 @@ pub(crate) mod shape_get_access_source;
 
 pub(crate) mod shape_get_access_token;
 
+pub(crate) mod shape_get_core_network_endpoint;
+
 pub(crate) mod shape_get_dns_view;
 
 pub(crate) mod shape_get_firewall_domain_list;
@@ -82,6 +88,8 @@ pub(crate) mod shape_import_firewall_domains;
 pub(crate) mod shape_list_access_sources;
 
 pub(crate) mod shape_list_access_tokens;
+
+pub(crate) mod shape_list_core_network_endpoints;
 
 pub(crate) mod shape_list_dns_views;
 
@@ -108,6 +116,8 @@ pub(crate) mod shape_untag_resource;
 pub(crate) mod shape_update_access_source;
 
 pub(crate) mod shape_update_access_token;
+
+pub(crate) mod shape_update_core_network_endpoint;
 
 pub(crate) mod shape_update_dns_view;
 
@@ -143,6 +153,8 @@ pub(crate) mod shape_create_access_source_input;
 
 pub(crate) mod shape_create_access_token_input;
 
+pub(crate) mod shape_create_core_network_endpoint_input;
+
 pub(crate) mod shape_create_dns_view_input;
 
 pub(crate) mod shape_create_firewall_domain_list_input;
@@ -170,6 +182,8 @@ pub(crate) mod shape_untag_resource_input;
 pub(crate) mod shape_update_access_source_input;
 
 pub(crate) mod shape_update_access_token_input;
+
+pub(crate) mod shape_update_core_network_endpoint_input;
 
 pub(crate) mod shape_update_dns_view_input;
 
@@ -199,6 +213,12 @@ pub(crate) mod shape_batch_update_firewall_rule_input_item;
 
 pub(crate) mod shape_batch_update_firewall_rule_output_items;
 
+pub(crate) mod shape_core_network_endpoint_dns_ip_input_item;
+
+pub(crate) mod shape_core_network_endpoint_dns_ip_items;
+
+pub(crate) mod shape_core_network_endpoints;
+
 pub(crate) mod shape_dns_views;
 
 pub(crate) mod shape_domains;
@@ -223,6 +243,8 @@ pub(crate) mod shape_shared_dns_views;
 
 pub(crate) mod shape_tags;
 
+pub(crate) mod shape_update_ip_address_entry;
+
 pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_access_sources_item;
@@ -234,6 +256,10 @@ pub(crate) mod shape_batch_create_firewall_rule_output_item;
 pub(crate) mod shape_batch_delete_firewall_rule_output_item;
 
 pub(crate) mod shape_batch_update_firewall_rule_output_item;
+
+pub(crate) mod shape_core_network_endpoint_dns_ip_item;
+
+pub(crate) mod shape_core_network_endpoints_item;
 
 pub(crate) mod shape_dns_view_summary;
 

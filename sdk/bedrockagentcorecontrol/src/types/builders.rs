@@ -31,6 +31,8 @@ pub use crate::types::_coinbase_cdp_configuration_output::CoinbaseCdpConfigurati
 
 pub use crate::types::_stripe_privy_configuration_output::StripePrivyConfigurationOutputBuilder;
 
+pub use crate::types::_agent_insight_store_encryption_configuration::AgentInsightStoreEncryptionConfigurationBuilder;
+
 pub use crate::types::_network_configuration::NetworkConfigurationBuilder;
 
 pub use crate::types::_protocol_configuration::ProtocolConfigurationBuilder;
@@ -64,6 +66,14 @@ pub use crate::types::_version_created_by_source::VersionCreatedBySourceBuilder;
 pub use crate::types::_version_lineage_metadata::VersionLineageMetadataBuilder;
 
 pub use crate::types::_version_filter::VersionFilterBuilder;
+
+pub use crate::types::_list_datasets_filter::ListDatasetsFilterBuilder;
+
+pub use crate::types::_example_count_by_field::ExampleCountByFieldBuilder;
+
+pub use crate::types::_list_dataset_examples_filter::ListDatasetExamplesFilterBuilder;
+
+pub use crate::types::_list_dataset_versions_filter::ListDatasetVersionsFilterBuilder;
 
 pub use crate::types::_gateway_policy_engine_configuration::GatewayPolicyEngineConfigurationBuilder;
 
@@ -122,6 +132,8 @@ pub use crate::types::_on_behalf_of_token_exchange_config_type::OnBehalfOfTokenE
 pub use crate::types::_private_key_jwt_config::PrivateKeyJwtConfigBuilder;
 
 pub use crate::types::_agent_runtime_endpoint::AgentRuntimeEndpointBuilder;
+
+pub use crate::types::_agent_insight_store_summary::AgentInsightStoreSummaryBuilder;
 
 pub use crate::types::_agent_runtime::AgentRuntimeBuilder;
 
@@ -348,6 +360,10 @@ pub use crate::types::_vpc_configuration::VpcConfigurationBuilder;
 pub use crate::types::_instance_lifecycle_configuration::InstanceLifecycleConfigurationBuilder;
 
 pub use crate::types::_root_volume_configuration::RootVolumeConfigurationBuilder;
+
+pub use crate::types::_example_count_by_field_condition::ExampleCountByFieldConditionBuilder;
+
+pub use crate::types::_example_field_condition::ExampleFieldConditionBuilder;
 
 pub use crate::types::_lambda_evaluator_config::LambdaEvaluatorConfigBuilder;
 

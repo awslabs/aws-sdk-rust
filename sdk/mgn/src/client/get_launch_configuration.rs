@@ -18,6 +18,7 @@ impl super::Client {
     ///   - [`post_launch_actions(Option<PostLaunchActions>)`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput::post_launch_actions): <p>Post Launch Actions to be executed on the Test or Cutover instance.</p>
     ///   - [`enable_map_auto_tagging(Option<bool>)`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput::enable_map_auto_tagging): <p>Enable map auto tagging.</p>
     ///   - [`map_auto_tagging_mpe_id(Option<String>)`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput::map_auto_tagging_mpe_id): <p>Map auto tagging MPE ID.</p>
+    ///   - [`map_auto_tagging_key(Option<String>)`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput::map_auto_tagging_key): <p>Map auto tagging key.</p>
     /// - On failure, responds with [`SdkError<GetLaunchConfigurationError>`](crate::operation::get_launch_configuration::GetLaunchConfigurationError)
     pub fn get_launch_configuration(&self) -> crate::operation::get_launch_configuration::builders::GetLaunchConfigurationFluentBuilder {
         crate::operation::get_launch_configuration::builders::GetLaunchConfigurationFluentBuilder::new(self.handle.clone())

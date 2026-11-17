@@ -21,7 +21,7 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
-//! Amazon Kinesis Data Streams is a managed service that scales elastically for real-time processing of streaming big data.
+//! Amazon Kinesis Data Streams is a serverless data streaming service that ingests data once and fans it out to multiple consumer applications for real-time processing.
 //!
 //! ## Getting Started
 //!
@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-kinesis = "1.132.0"
+//! aws-sdk-kinesis = "1.133.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -152,14 +152,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`AddTagsToStream`](crate::operation::add_tags_to_stream) operation has
-/// a [`Client::add_tags_to_stream`], function which returns a builder for that operation.
+/// For example, the [`AcknowledgeDeadLetterQueueRecords`](crate::operation::acknowledge_dead_letter_queue_records) operation has
+/// a [`Client::acknowledge_dead_letter_queue_records`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.add_tags_to_stream()
-///     .stream_name("example")
+/// let result = client.acknowledge_dead_letter_queue_records()
+///     .queue_arn("example")
 ///     .send()
 ///     .await;
 /// ```

@@ -201,6 +201,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateAccessS
                 captured.insert("cidr", value);
             }
         }
+        if requested.should_capture("dnsViewId") {
+            if let ::std::option::Option::Some(value) = input.dns_view_id.as_deref() {
+                captured.insert("dnsViewId", value);
+            }
+        }
         if requested.should_capture("name") {
             if let ::std::option::Option::Some(value) = input.name.as_deref() {
                 captured.insert("name", value);

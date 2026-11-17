@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum OperationUnion {
+    /// <p>A create operation that adds a new construct to the segment, identified by the constructLogicalID on the parent construct entry.</p>
+    Create(crate::types::CreateOperation),
     /// <p>A delete operation to remove a construct from the mapping.</p>
     Delete(crate::types::DeleteOperation),
     /// <p>A merge operation to combine constructs from different segments.</p>
@@ -12,6 +14,8 @@ pub enum OperationUnion {
     Split(crate::types::SplitOperation),
     /// <p>An update operation to modify construct properties.</p>
     Update(crate::types::UpdateOperation),
+    /// <p>An update operation that modifies a construct using native property value types and behavioral configuration, with partial updates and property removal.</p>
+    UpdateV2(crate::types::UpdateOperationV2),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -23,6 +27,19 @@ pub enum OperationUnion {
     Unknown,
 }
 impl OperationUnion {
+    /// Tries to convert the enum instance into [`Create`](crate::types::OperationUnion::Create), extracting the inner [`CreateOperation`](crate::types::CreateOperation).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_create(&self) -> ::std::result::Result<&crate::types::CreateOperation, &Self> {
+        if let OperationUnion::Create(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Create`](crate::types::OperationUnion::Create).
+    pub fn is_create(&self) -> bool {
+        self.as_create().is_ok()
+    }
     /// Tries to convert the enum instance into [`Delete`](crate::types::OperationUnion::Delete), extracting the inner [`DeleteOperation`](crate::types::DeleteOperation).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_delete(&self) -> ::std::result::Result<&crate::types::DeleteOperation, &Self> {
@@ -74,6 +91,19 @@ impl OperationUnion {
     /// Returns true if this is a [`Update`](crate::types::OperationUnion::Update).
     pub fn is_update(&self) -> bool {
         self.as_update().is_ok()
+    }
+    /// Tries to convert the enum instance into [`UpdateV2`](crate::types::OperationUnion::UpdateV2), extracting the inner [`UpdateOperationV2`](crate::types::UpdateOperationV2).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_update_v2(&self) -> ::std::result::Result<&crate::types::UpdateOperationV2, &Self> {
+        if let OperationUnion::UpdateV2(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`UpdateV2`](crate::types::OperationUnion::UpdateV2).
+    pub fn is_update_v2(&self) -> bool {
+        self.as_update_v2().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

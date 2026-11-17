@@ -2,7 +2,7 @@
 
 /// <p>The collection of assets used in a pentest configuration, including endpoints, actors, documents, source code repositories, and integrated repositories.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Assets {
     /// <p>The list of endpoints to test during the pentest.</p>
     pub endpoints: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>,
@@ -63,6 +63,19 @@ impl Assets {
         self.client_certificates.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for Assets {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Assets");
+        formatter.field("endpoints", &self.endpoints);
+        formatter.field("actors", &self.actors);
+        formatter.field("documents", &self.documents);
+        formatter.field("source_code", &self.source_code);
+        formatter.field("integrated_repositories", &self.integrated_repositories);
+        formatter.field("trusted_ca_certificates", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_certificates", &self.client_certificates);
+        formatter.finish()
+    }
+}
 impl Assets {
     /// Creates a new builder-style object to manufacture [`Assets`](crate::types::Assets).
     pub fn builder() -> crate::types::builders::AssetsBuilder {
@@ -71,7 +84,7 @@ impl Assets {
 }
 
 /// A builder for [`Assets`](crate::types::Assets).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct AssetsBuilder {
     pub(crate) endpoints: ::std::option::Option<::std::vec::Vec<crate::types::Endpoint>>,
@@ -234,5 +247,18 @@ impl AssetsBuilder {
             trusted_ca_certificates: self.trusted_ca_certificates,
             client_certificates: self.client_certificates,
         }
+    }
+}
+impl ::std::fmt::Debug for AssetsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AssetsBuilder");
+        formatter.field("endpoints", &self.endpoints);
+        formatter.field("actors", &self.actors);
+        formatter.field("documents", &self.documents);
+        formatter.field("source_code", &self.source_code);
+        formatter.field("integrated_repositories", &self.integrated_repositories);
+        formatter.field("trusted_ca_certificates", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_certificates", &self.client_certificates);
+        formatter.finish()
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>The video streams for a specified media pipeline. The total number of video streams can't exceed 25.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SelectedVideoStreams {
     /// <p>The attendee IDs of the streams selected for a media pipeline.</p>
     pub attendee_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -23,6 +23,14 @@ impl SelectedVideoStreams {
         self.external_user_ids.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for SelectedVideoStreams {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SelectedVideoStreams");
+        formatter.field("attendee_ids", &self.attendee_ids);
+        formatter.field("external_user_ids", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl SelectedVideoStreams {
     /// Creates a new builder-style object to manufacture [`SelectedVideoStreams`](crate::types::SelectedVideoStreams).
     pub fn builder() -> crate::types::builders::SelectedVideoStreamsBuilder {
@@ -31,7 +39,7 @@ impl SelectedVideoStreams {
 }
 
 /// A builder for [`SelectedVideoStreams`](crate::types::SelectedVideoStreams).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct SelectedVideoStreamsBuilder {
     pub(crate) attendee_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -84,5 +92,13 @@ impl SelectedVideoStreamsBuilder {
             attendee_ids: self.attendee_ids,
             external_user_ids: self.external_user_ids,
         }
+    }
+}
+impl ::std::fmt::Debug for SelectedVideoStreamsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("SelectedVideoStreamsBuilder");
+        formatter.field("attendee_ids", &self.attendee_ids);
+        formatter.field("external_user_ids", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

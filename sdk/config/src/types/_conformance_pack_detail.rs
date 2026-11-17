@@ -26,6 +26,22 @@ pub struct ConformancePackDetail {
     pub created_by: ::std::option::Option<::std::string::String>,
     /// <p>An object that contains the name or Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager document (SSM document) and the version of the SSM document that is used to create a conformance pack.</p>
     pub template_ssm_document_details: ::std::option::Option<crate::types::TemplateSsmDocumentDetails>,
+    /// <p>The type of the conformance pack. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM</code> – A custom conformance pack.</p></li>
+    /// <li>
+    /// <p><code>MANAGED</code> – A managed conformance pack.</p></li>
+    /// </ul>
+    pub r#type: ::std::option::Option<crate::types::ConformancePackType>,
+    /// <p>Contains the identifier of the managed conformance pack that Config deploys in your account.</p><note>
+    /// <p>This field applies only to managed conformance packs. Custom conformance packs leave it empty.</p>
+    /// </note>
+    pub source: ::std::option::Option<crate::types::ConformancePackSource>,
+    /// <p>An object of type <code>ConformancePackScope</code>, which contains the tag key and optional tag value that defines which resources trigger an evaluation for the Config rules in the managed conformance pack.</p><note>
+    /// <p>Managed conformance packs with a scope populate this field. Custom conformance packs leave it empty.</p>
+    /// </note>
+    pub scope: ::std::option::Option<crate::types::ConformancePackScope>,
 }
 impl ConformancePackDetail {
     /// <p>Name of the conformance pack.</p>
@@ -73,6 +89,28 @@ impl ConformancePackDetail {
     pub fn template_ssm_document_details(&self) -> ::std::option::Option<&crate::types::TemplateSsmDocumentDetails> {
         self.template_ssm_document_details.as_ref()
     }
+    /// <p>The type of the conformance pack. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM</code> – A custom conformance pack.</p></li>
+    /// <li>
+    /// <p><code>MANAGED</code> – A managed conformance pack.</p></li>
+    /// </ul>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ConformancePackType> {
+        self.r#type.as_ref()
+    }
+    /// <p>Contains the identifier of the managed conformance pack that Config deploys in your account.</p><note>
+    /// <p>This field applies only to managed conformance packs. Custom conformance packs leave it empty.</p>
+    /// </note>
+    pub fn source(&self) -> ::std::option::Option<&crate::types::ConformancePackSource> {
+        self.source.as_ref()
+    }
+    /// <p>An object of type <code>ConformancePackScope</code>, which contains the tag key and optional tag value that defines which resources trigger an evaluation for the Config rules in the managed conformance pack.</p><note>
+    /// <p>Managed conformance packs with a scope populate this field. Custom conformance packs leave it empty.</p>
+    /// </note>
+    pub fn scope(&self) -> ::std::option::Option<&crate::types::ConformancePackScope> {
+        self.scope.as_ref()
+    }
 }
 impl ConformancePackDetail {
     /// Creates a new builder-style object to manufacture [`ConformancePackDetail`](crate::types::ConformancePackDetail).
@@ -94,6 +132,9 @@ pub struct ConformancePackDetailBuilder {
     pub(crate) last_update_requested_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) template_ssm_document_details: ::std::option::Option<crate::types::TemplateSsmDocumentDetails>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ConformancePackType>,
+    pub(crate) source: ::std::option::Option<crate::types::ConformancePackSource>,
+    pub(crate) scope: ::std::option::Option<crate::types::ConformancePackScope>,
 }
 impl ConformancePackDetailBuilder {
     /// <p>Name of the conformance pack.</p>
@@ -246,6 +287,78 @@ impl ConformancePackDetailBuilder {
     pub fn get_template_ssm_document_details(&self) -> &::std::option::Option<crate::types::TemplateSsmDocumentDetails> {
         &self.template_ssm_document_details
     }
+    /// <p>The type of the conformance pack. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM</code> – A custom conformance pack.</p></li>
+    /// <li>
+    /// <p><code>MANAGED</code> – A managed conformance pack.</p></li>
+    /// </ul>
+    pub fn r#type(mut self, input: crate::types::ConformancePackType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the conformance pack. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM</code> – A custom conformance pack.</p></li>
+    /// <li>
+    /// <p><code>MANAGED</code> – A managed conformance pack.</p></li>
+    /// </ul>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ConformancePackType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of the conformance pack. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOM</code> – A custom conformance pack.</p></li>
+    /// <li>
+    /// <p><code>MANAGED</code> – A managed conformance pack.</p></li>
+    /// </ul>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ConformancePackType> {
+        &self.r#type
+    }
+    /// <p>Contains the identifier of the managed conformance pack that Config deploys in your account.</p><note>
+    /// <p>This field applies only to managed conformance packs. Custom conformance packs leave it empty.</p>
+    /// </note>
+    pub fn source(mut self, input: crate::types::ConformancePackSource) -> Self {
+        self.source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the identifier of the managed conformance pack that Config deploys in your account.</p><note>
+    /// <p>This field applies only to managed conformance packs. Custom conformance packs leave it empty.</p>
+    /// </note>
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::ConformancePackSource>) -> Self {
+        self.source = input;
+        self
+    }
+    /// <p>Contains the identifier of the managed conformance pack that Config deploys in your account.</p><note>
+    /// <p>This field applies only to managed conformance packs. Custom conformance packs leave it empty.</p>
+    /// </note>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::ConformancePackSource> {
+        &self.source
+    }
+    /// <p>An object of type <code>ConformancePackScope</code>, which contains the tag key and optional tag value that defines which resources trigger an evaluation for the Config rules in the managed conformance pack.</p><note>
+    /// <p>Managed conformance packs with a scope populate this field. Custom conformance packs leave it empty.</p>
+    /// </note>
+    pub fn scope(mut self, input: crate::types::ConformancePackScope) -> Self {
+        self.scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object of type <code>ConformancePackScope</code>, which contains the tag key and optional tag value that defines which resources trigger an evaluation for the Config rules in the managed conformance pack.</p><note>
+    /// <p>Managed conformance packs with a scope populate this field. Custom conformance packs leave it empty.</p>
+    /// </note>
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::ConformancePackScope>) -> Self {
+        self.scope = input;
+        self
+    }
+    /// <p>An object of type <code>ConformancePackScope</code>, which contains the tag key and optional tag value that defines which resources trigger an evaluation for the Config rules in the managed conformance pack.</p><note>
+    /// <p>Managed conformance packs with a scope populate this field. Custom conformance packs leave it empty.</p>
+    /// </note>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::ConformancePackScope> {
+        &self.scope
+    }
     /// Consumes the builder and constructs a [`ConformancePackDetail`](crate::types::ConformancePackDetail).
     /// This method will fail if any of the following fields are not set:
     /// - [`conformance_pack_name`](crate::types::builders::ConformancePackDetailBuilder::conformance_pack_name)
@@ -277,6 +390,9 @@ impl ConformancePackDetailBuilder {
             last_update_requested_time: self.last_update_requested_time,
             created_by: self.created_by,
             template_ssm_document_details: self.template_ssm_document_details,
+            r#type: self.r#type,
+            source: self.source,
+            scope: self.scope,
         })
     }
 }

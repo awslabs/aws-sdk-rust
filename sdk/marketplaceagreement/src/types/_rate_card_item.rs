@@ -6,7 +6,7 @@
 pub struct RateCardItem {
     /// <p>Dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>
     pub dimension_key: ::std::option::Option<::std::string::String>,
-    /// <p>Per unit price for the product dimension that’s used for calculating the amount to be charged.</p>
+    /// <p>Per unit price for the product dimension that's used for calculating the amount to be charged.</p>
     pub price: ::std::option::Option<::std::string::String>,
 }
 impl RateCardItem {
@@ -14,7 +14,7 @@ impl RateCardItem {
     pub fn dimension_key(&self) -> ::std::option::Option<&str> {
         self.dimension_key.as_deref()
     }
-    /// <p>Per unit price for the product dimension that’s used for calculating the amount to be charged.</p>
+    /// <p>Per unit price for the product dimension that's used for calculating the amount to be charged.</p>
     pub fn price(&self) -> ::std::option::Option<&str> {
         self.price.as_deref()
     }
@@ -48,17 +48,17 @@ impl RateCardItemBuilder {
     pub fn get_dimension_key(&self) -> &::std::option::Option<::std::string::String> {
         &self.dimension_key
     }
-    /// <p>Per unit price for the product dimension that’s used for calculating the amount to be charged.</p>
+    /// <p>Per unit price for the product dimension that's used for calculating the amount to be charged.</p>
     pub fn price(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.price = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Per unit price for the product dimension that’s used for calculating the amount to be charged.</p>
+    /// <p>Per unit price for the product dimension that's used for calculating the amount to be charged.</p>
     pub fn set_price(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.price = input;
         self
     }
-    /// <p>Per unit price for the product dimension that’s used for calculating the amount to be charged.</p>
+    /// <p>Per unit price for the product dimension that's used for calculating the amount to be charged.</p>
     pub fn get_price(&self) -> &::std::option::Option<::std::string::String> {
         &self.price
     }

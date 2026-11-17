@@ -2,7 +2,7 @@
 
 /// <p>The search criteria based on the contact name</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct NameCriteria {
     /// <p>The words or phrases used to match the contact name.</p>
     pub search_text: ::std::vec::Vec<::std::string::String>,
@@ -20,6 +20,14 @@ impl NameCriteria {
         &self.match_type
     }
 }
+impl ::std::fmt::Debug for NameCriteria {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("NameCriteria");
+        formatter.field("search_text", &"*** Sensitive Data Redacted ***");
+        formatter.field("match_type", &self.match_type);
+        formatter.finish()
+    }
+}
 impl NameCriteria {
     /// Creates a new builder-style object to manufacture [`NameCriteria`](crate::types::NameCriteria).
     pub fn builder() -> crate::types::builders::NameCriteriaBuilder {
@@ -28,7 +36,7 @@ impl NameCriteria {
 }
 
 /// A builder for [`NameCriteria`](crate::types::NameCriteria).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct NameCriteriaBuilder {
     pub(crate) search_text: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -89,5 +97,13 @@ impl NameCriteriaBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for NameCriteriaBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("NameCriteriaBuilder");
+        formatter.field("search_text", &"*** Sensitive Data Redacted ***");
+        formatter.field("match_type", &self.match_type);
+        formatter.finish()
     }
 }

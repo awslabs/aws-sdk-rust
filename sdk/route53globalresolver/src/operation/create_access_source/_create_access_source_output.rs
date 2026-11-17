@@ -11,8 +11,12 @@ pub struct CreateAccessSourceOutput {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The unique identifier for the access source.</p>
     pub id: ::std::string::String,
-    /// <p>The IP address type for this access source (IPv4 or IPv6).</p>
+    /// <p>The IP address type for this access source. Valid values are IPV4, IPV6, and NONE.</p>
     pub ip_address_type: crate::types::IpAddressType,
+    /// <p>The ID of the core network endpoint associated with this access source.</p>
+    pub core_network_endpoint_id: ::std::option::Option<::std::string::String>,
+    /// <p>The name of the segment associated with this access source.</p>
+    pub segment: ::std::option::Option<::std::string::String>,
     /// <p>The descriptive name of the access source.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the DNS view associated with this access source.</p>
@@ -45,9 +49,17 @@ impl CreateAccessSourceOutput {
         use std::ops::Deref;
         self.id.deref()
     }
-    /// <p>The IP address type for this access source (IPv4 or IPv6).</p>
+    /// <p>The IP address type for this access source. Valid values are IPV4, IPV6, and NONE.</p>
     pub fn ip_address_type(&self) -> &crate::types::IpAddressType {
         &self.ip_address_type
+    }
+    /// <p>The ID of the core network endpoint associated with this access source.</p>
+    pub fn core_network_endpoint_id(&self) -> ::std::option::Option<&str> {
+        self.core_network_endpoint_id.as_deref()
+    }
+    /// <p>The name of the segment associated with this access source.</p>
+    pub fn segment(&self) -> ::std::option::Option<&str> {
+        self.segment.as_deref()
     }
     /// <p>The descriptive name of the access source.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -92,6 +104,8 @@ pub struct CreateAccessSourceOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
+    pub(crate) core_network_endpoint_id: ::std::option::Option<::std::string::String>,
+    pub(crate) segment: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) dns_view_id: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<crate::types::DnsProtocol>,
@@ -116,7 +130,6 @@ impl CreateAccessSourceOutputBuilder {
         &self.arn
     }
     /// <p>The IP address or CIDR range that is allowed to send DNS queries to the Route 53 Global Resolver.</p>
-    /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self
@@ -160,20 +173,47 @@ impl CreateAccessSourceOutputBuilder {
     pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.id
     }
-    /// <p>The IP address type for this access source (IPv4 or IPv6).</p>
-    /// This field is required.
+    /// <p>The IP address type for this access source. Valid values are IPV4, IPV6, and NONE.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The IP address type for this access source (IPv4 or IPv6).</p>
+    /// <p>The IP address type for this access source. Valid values are IPV4, IPV6, and NONE.</p>
     pub fn set_ip_address_type(mut self, input: ::std::option::Option<crate::types::IpAddressType>) -> Self {
         self.ip_address_type = input;
         self
     }
-    /// <p>The IP address type for this access source (IPv4 or IPv6).</p>
+    /// <p>The IP address type for this access source. Valid values are IPV4, IPV6, and NONE.</p>
     pub fn get_ip_address_type(&self) -> &::std::option::Option<crate::types::IpAddressType> {
         &self.ip_address_type
+    }
+    /// <p>The ID of the core network endpoint associated with this access source.</p>
+    pub fn core_network_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.core_network_endpoint_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the core network endpoint associated with this access source.</p>
+    pub fn set_core_network_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.core_network_endpoint_id = input;
+        self
+    }
+    /// <p>The ID of the core network endpoint associated with this access source.</p>
+    pub fn get_core_network_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_endpoint_id
+    }
+    /// <p>The name of the segment associated with this access source.</p>
+    pub fn segment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.segment = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the segment associated with this access source.</p>
+    pub fn set_segment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.segment = input;
+        self
+    }
+    /// <p>The name of the segment associated with this access source.</p>
+    pub fn get_segment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment
     }
     /// <p>The descriptive name of the access source.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -261,10 +301,8 @@ impl CreateAccessSourceOutputBuilder {
     /// Consumes the builder and constructs a [`CreateAccessSourceOutput`](crate::operation::create_access_source::CreateAccessSourceOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::operation::create_access_source::builders::CreateAccessSourceOutputBuilder::arn)
-    /// - [`cidr`](crate::operation::create_access_source::builders::CreateAccessSourceOutputBuilder::cidr)
     /// - [`created_at`](crate::operation::create_access_source::builders::CreateAccessSourceOutputBuilder::created_at)
     /// - [`id`](crate::operation::create_access_source::builders::CreateAccessSourceOutputBuilder::id)
-    /// - [`ip_address_type`](crate::operation::create_access_source::builders::CreateAccessSourceOutputBuilder::ip_address_type)
     /// - [`dns_view_id`](crate::operation::create_access_source::builders::CreateAccessSourceOutputBuilder::dns_view_id)
     /// - [`protocol`](crate::operation::create_access_source::builders::CreateAccessSourceOutputBuilder::protocol)
     /// - [`status`](crate::operation::create_access_source::builders::CreateAccessSourceOutputBuilder::status)
@@ -280,12 +318,7 @@ impl CreateAccessSourceOutputBuilder {
                     "arn was not specified but it is required when building CreateAccessSourceOutput",
                 )
             })?,
-            cidr: self.cidr.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cidr",
-                    "cidr was not specified but it is required when building CreateAccessSourceOutput",
-                )
-            })?,
+            cidr: self.cidr.unwrap_or_default(),
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
@@ -298,12 +331,11 @@ impl CreateAccessSourceOutputBuilder {
                     "id was not specified but it is required when building CreateAccessSourceOutput",
                 )
             })?,
-            ip_address_type: self.ip_address_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ip_address_type",
-                    "ip_address_type was not specified but it is required when building CreateAccessSourceOutput",
-                )
-            })?,
+            ip_address_type: self
+                .ip_address_type
+                .unwrap_or("NONE".parse::<crate::types::IpAddressType>().expect("static value validated to member")),
+            core_network_endpoint_id: self.core_network_endpoint_id,
+            segment: self.segment,
             name: self.name,
             dns_view_id: self.dns_view_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

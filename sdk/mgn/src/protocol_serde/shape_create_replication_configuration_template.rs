@@ -204,6 +204,13 @@ pub(crate) fn de_create_replication_configuration_template(
                             .transpose()?,
                     );
                 }
+                "outpostSnapshotLocation" => {
+                    builder = builder.set_outpost_snapshot_location(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::OutpostSnapshotLocation::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "replicationConfigurationTemplateID" => {
                     builder = builder.set_replication_configuration_template_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigurableUpfrontPricingTerm {
-    /// <p>Category of selector.</p>
+    /// <p>Category of the term.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the term.</p>
     pub id: ::std::option::Option<::std::string::String>,
@@ -16,7 +16,7 @@ pub struct ConfigurableUpfrontPricingTerm {
     pub configuration: ::std::option::Option<crate::types::ConfigurableUpfrontPricingTermConfiguration>,
 }
 impl ConfigurableUpfrontPricingTerm {
-    /// <p>Category of selector.</p>
+    /// <p>Category of the term.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
@@ -57,17 +57,17 @@ pub struct ConfigurableUpfrontPricingTermBuilder {
     pub(crate) configuration: ::std::option::Option<crate::types::ConfigurableUpfrontPricingTermConfiguration>,
 }
 impl ConfigurableUpfrontPricingTermBuilder {
-    /// <p>Category of selector.</p>
+    /// <p>Category of the term.</p>
     pub fn r#type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.r#type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Category of selector.</p>
+    /// <p>Category of the term.</p>
     pub fn set_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>Category of selector.</p>
+    /// <p>Category of the term.</p>
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }

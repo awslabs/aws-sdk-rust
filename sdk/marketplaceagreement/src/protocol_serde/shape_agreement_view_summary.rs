@@ -76,6 +76,14 @@ pub(crate) fn de_agreement_view_summary(
             "freeTrialEndTime" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_free_trial_end_time(Some(decoder.timestamp()?)))
             })?,
+            "includesContactOfType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(
+                    builder.set_includes_contact_of_type(Some(crate::protocol_serde::shape_contact_type_list::de_contact_type_list(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
+            })?,
             _ => {
                 decoder.skip()?;
                 builder

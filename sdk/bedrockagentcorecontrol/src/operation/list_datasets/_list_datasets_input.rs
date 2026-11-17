@@ -3,12 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDatasetsInput {
+    /// <p>A filter to apply to the datasets.</p>
+    pub filter: ::std::option::Option<crate::types::ListDatasetsFilter>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of datasets to return per page.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListDatasetsInput {
+    /// <p>A filter to apply to the datasets.</p>
+    pub fn filter(&self) -> ::std::option::Option<&crate::types::ListDatasetsFilter> {
+        self.filter.as_ref()
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
@@ -29,10 +35,25 @@ impl ListDatasetsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ListDatasetsInputBuilder {
+    pub(crate) filter: ::std::option::Option<crate::types::ListDatasetsFilter>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListDatasetsInputBuilder {
+    /// <p>A filter to apply to the datasets.</p>
+    pub fn filter(mut self, input: crate::types::ListDatasetsFilter) -> Self {
+        self.filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A filter to apply to the datasets.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListDatasetsFilter>) -> Self {
+        self.filter = input;
+        self
+    }
+    /// <p>A filter to apply to the datasets.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListDatasetsFilter> {
+        &self.filter
+    }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
@@ -66,6 +87,7 @@ impl ListDatasetsInputBuilder {
         self,
     ) -> ::std::result::Result<crate::operation::list_datasets::ListDatasetsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_datasets::ListDatasetsInput {
+            filter: self.filter,
             next_token: self.next_token,
             max_results: self.max_results,
         })

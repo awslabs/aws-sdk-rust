@@ -6,7 +6,7 @@
 pub struct EvaluationFormItemEnablementCondition {
     /// <p>Operands of the enablement condition.</p>
     pub operands: ::std::vec::Vec<crate::types::EvaluationFormItemEnablementConditionOperand>,
-    /// <p>The operator to be used to be applied to operands if more than one provided.</p>
+    /// <p>The operator to apply to the operands when more than one operand is provided.</p>
     pub operator: ::std::option::Option<crate::types::EvaluationFormItemEnablementOperator>,
 }
 impl EvaluationFormItemEnablementCondition {
@@ -15,7 +15,7 @@ impl EvaluationFormItemEnablementCondition {
         use std::ops::Deref;
         self.operands.deref()
     }
-    /// <p>The operator to be used to be applied to operands if more than one provided.</p>
+    /// <p>The operator to apply to the operands when more than one operand is provided.</p>
     pub fn operator(&self) -> ::std::option::Option<&crate::types::EvaluationFormItemEnablementOperator> {
         self.operator.as_ref()
     }
@@ -55,17 +55,17 @@ impl EvaluationFormItemEnablementConditionBuilder {
     pub fn get_operands(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItemEnablementConditionOperand>> {
         &self.operands
     }
-    /// <p>The operator to be used to be applied to operands if more than one provided.</p>
+    /// <p>The operator to apply to the operands when more than one operand is provided.</p>
     pub fn operator(mut self, input: crate::types::EvaluationFormItemEnablementOperator) -> Self {
         self.operator = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The operator to be used to be applied to operands if more than one provided.</p>
+    /// <p>The operator to apply to the operands when more than one operand is provided.</p>
     pub fn set_operator(mut self, input: ::std::option::Option<crate::types::EvaluationFormItemEnablementOperator>) -> Self {
         self.operator = input;
         self
     }
-    /// <p>The operator to be used to be applied to operands if more than one provided.</p>
+    /// <p>The operator to apply to the operands when more than one operand is provided.</p>
     pub fn get_operator(&self) -> &::std::option::Option<crate::types::EvaluationFormItemEnablementOperator> {
         &self.operator
     }

@@ -173,6 +173,13 @@ pub(crate) fn de_update_launch_configuration(
                 "licensing" => {
                     builder = builder.set_licensing(crate::protocol_serde::shape_licensing::de_licensing(tokens, _value, depth + 1)?);
                 }
+                "mapAutoTaggingKey" => {
+                    builder = builder.set_map_auto_tagging_key(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "mapAutoTaggingMpeID" => {
                     builder = builder.set_map_auto_tagging_mpe_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

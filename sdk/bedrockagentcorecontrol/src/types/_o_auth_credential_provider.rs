@@ -2,7 +2,7 @@
 
 /// <p>An OAuth credential provider for gateway authentication. This structure contains the configuration for authenticating with the target endpoint using OAuth.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct OAuthCredentialProvider {
     /// <p>The Amazon Resource Name (ARN) of the OAuth credential provider. This ARN identifies the provider in Amazon Web Services.</p>
     pub provider_arn: ::std::string::String,
@@ -55,6 +55,17 @@ impl OAuthCredentialProvider {
         self.default_return_url.as_deref()
     }
 }
+impl ::std::fmt::Debug for OAuthCredentialProvider {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("OAuthCredentialProvider");
+        formatter.field("provider_arn", &self.provider_arn);
+        formatter.field("scopes", &self.scopes);
+        formatter.field("custom_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("grant_type", &self.grant_type);
+        formatter.field("default_return_url", &self.default_return_url);
+        formatter.finish()
+    }
+}
 impl OAuthCredentialProvider {
     /// Creates a new builder-style object to manufacture [`OAuthCredentialProvider`](crate::types::OAuthCredentialProvider).
     pub fn builder() -> crate::types::builders::OAuthCredentialProviderBuilder {
@@ -63,7 +74,7 @@ impl OAuthCredentialProvider {
 }
 
 /// A builder for [`OAuthCredentialProvider`](crate::types::OAuthCredentialProvider).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct OAuthCredentialProviderBuilder {
     pub(crate) provider_arn: ::std::option::Option<::std::string::String>,
@@ -213,5 +224,16 @@ impl OAuthCredentialProviderBuilder {
             ),
             default_return_url: self.default_return_url,
         })
+    }
+}
+impl ::std::fmt::Debug for OAuthCredentialProviderBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("OAuthCredentialProviderBuilder");
+        formatter.field("provider_arn", &self.provider_arn);
+        formatter.field("scopes", &self.scopes);
+        formatter.field("custom_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("grant_type", &self.grant_type);
+        formatter.field("default_return_url", &self.default_return_url);
+        formatter.finish()
     }
 }

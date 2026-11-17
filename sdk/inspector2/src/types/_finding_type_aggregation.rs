@@ -6,7 +6,7 @@
 pub struct FindingTypeAggregation {
     /// <p>The finding type to aggregate.</p>
     pub finding_type: ::std::option::Option<crate::types::AggregationFindingType>,
-    /// <p>The resource type to aggregate.</p>
+    /// <p>The resource type to aggregate. For Google Cloud Platform (GCP) resources, the resource type is <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p>
     pub resource_type: ::std::option::Option<crate::types::AggregationResourceType>,
     /// <p>The order to sort results by.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
@@ -18,7 +18,7 @@ impl FindingTypeAggregation {
     pub fn finding_type(&self) -> ::std::option::Option<&crate::types::AggregationFindingType> {
         self.finding_type.as_ref()
     }
-    /// <p>The resource type to aggregate.</p>
+    /// <p>The resource type to aggregate. For Google Cloud Platform (GCP) resources, the resource type is <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::AggregationResourceType> {
         self.resource_type.as_ref()
     }
@@ -62,17 +62,17 @@ impl FindingTypeAggregationBuilder {
     pub fn get_finding_type(&self) -> &::std::option::Option<crate::types::AggregationFindingType> {
         &self.finding_type
     }
-    /// <p>The resource type to aggregate.</p>
+    /// <p>The resource type to aggregate. For Google Cloud Platform (GCP) resources, the resource type is <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p>
     pub fn resource_type(mut self, input: crate::types::AggregationResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The resource type to aggregate.</p>
+    /// <p>The resource type to aggregate. For Google Cloud Platform (GCP) resources, the resource type is <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::AggregationResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The resource type to aggregate.</p>
+    /// <p>The resource type to aggregate. For Google Cloud Platform (GCP) resources, the resource type is <code>compute.googleapis.com/Instance</code>, <code>cloudfunctions.googleapis.com/Function</code>, or <code>artifactregistry.googleapis.com/DockerImage</code>.</p>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::AggregationResourceType> {
         &self.resource_type
     }

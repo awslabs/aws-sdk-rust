@@ -2,7 +2,7 @@
 
 /// <p>The configuration information to connect to Amazon S3 as your data source for self-managed knowledge bases. To configure this data source for managed knowledge bases, use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct S3DataSourceConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket that contains your data.</p>
     pub bucket_arn: ::std::string::String,
@@ -28,6 +28,15 @@ impl S3DataSourceConfiguration {
         self.bucket_owner_account_id.as_deref()
     }
 }
+impl ::std::fmt::Debug for S3DataSourceConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("S3DataSourceConfiguration");
+        formatter.field("bucket_arn", &self.bucket_arn);
+        formatter.field("inclusion_prefixes", &"*** Sensitive Data Redacted ***");
+        formatter.field("bucket_owner_account_id", &self.bucket_owner_account_id);
+        formatter.finish()
+    }
+}
 impl S3DataSourceConfiguration {
     /// Creates a new builder-style object to manufacture [`S3DataSourceConfiguration`](crate::types::S3DataSourceConfiguration).
     pub fn builder() -> crate::types::builders::S3DataSourceConfigurationBuilder {
@@ -36,7 +45,7 @@ impl S3DataSourceConfiguration {
 }
 
 /// A builder for [`S3DataSourceConfiguration`](crate::types::S3DataSourceConfiguration).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct S3DataSourceConfigurationBuilder {
     pub(crate) bucket_arn: ::std::option::Option<::std::string::String>,
@@ -107,5 +116,14 @@ impl S3DataSourceConfigurationBuilder {
             inclusion_prefixes: self.inclusion_prefixes,
             bucket_owner_account_id: self.bucket_owner_account_id,
         })
+    }
+}
+impl ::std::fmt::Debug for S3DataSourceConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("S3DataSourceConfigurationBuilder");
+        formatter.field("bucket_arn", &self.bucket_arn);
+        formatter.field("inclusion_prefixes", &"*** Sensitive Data Redacted ***");
+        formatter.field("bucket_owner_account_id", &self.bucket_owner_account_id);
+        formatter.finish()
     }
 }

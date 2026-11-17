@@ -2,7 +2,7 @@
 
 /// <p>Settings for implicit filtering, where a model generates a metadata filter based on the prompt.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ImplicitFilterConfiguration {
     /// <p>Metadata that can be used in a filter.</p>
     pub metadata_attributes: ::std::vec::Vec<crate::types::MetadataAttributeSchema>,
@@ -21,6 +21,14 @@ impl ImplicitFilterConfiguration {
         self.model_arn.deref()
     }
 }
+impl ::std::fmt::Debug for ImplicitFilterConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ImplicitFilterConfiguration");
+        formatter.field("metadata_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("model_arn", &self.model_arn);
+        formatter.finish()
+    }
+}
 impl ImplicitFilterConfiguration {
     /// Creates a new builder-style object to manufacture [`ImplicitFilterConfiguration`](crate::types::ImplicitFilterConfiguration).
     pub fn builder() -> crate::types::builders::ImplicitFilterConfigurationBuilder {
@@ -29,7 +37,7 @@ impl ImplicitFilterConfiguration {
 }
 
 /// A builder for [`ImplicitFilterConfiguration`](crate::types::ImplicitFilterConfiguration).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ImplicitFilterConfigurationBuilder {
     pub(crate) metadata_attributes: ::std::option::Option<::std::vec::Vec<crate::types::MetadataAttributeSchema>>,
@@ -90,5 +98,13 @@ impl ImplicitFilterConfigurationBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for ImplicitFilterConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ImplicitFilterConfigurationBuilder");
+        formatter.field("metadata_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("model_arn", &self.model_arn);
+        formatter.finish()
     }
 }

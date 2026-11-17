@@ -197,6 +197,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateLaunchC
                 captured.insert("mapAutoTaggingMpeID", value);
             }
         }
+        if requested.should_capture("mapAutoTaggingKey") {
+            if let ::std::option::Option::Some(value) = input.map_auto_tagging_key.as_deref() {
+                captured.insert("mapAutoTaggingKey", value);
+            }
+        }
         if requested.should_capture("parametersEncryptionKey") {
             if let ::std::option::Option::Some(value) = input.parameters_encryption_key.as_deref() {
                 captured.insert("parametersEncryptionKey", value);

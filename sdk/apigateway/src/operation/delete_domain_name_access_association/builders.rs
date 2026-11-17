@@ -23,7 +23,7 @@ impl crate::operation::delete_domain_name_access_association::builders::DeleteDo
 /// Fluent builder constructing a request to `DeleteDomainNameAccessAssociation`.
 ///
 /// <p>Deletes the DomainNameAccessAssociation resource.</p>
-/// <p>Only the AWS account that created the DomainNameAccessAssociation resource can delete it. To stop an access association source in another AWS account from accessing your private custom domain name, use the RejectDomainNameAccessAssociation operation.</p>
+/// <p>Only the Amazon Web Services account that created the DomainNameAccessAssociation resource can delete it. To stop an access association source in another Amazon Web Services account from accessing your private custom domain name, use the RejectDomainNameAccessAssociation operation.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteDomainNameAccessAssociationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

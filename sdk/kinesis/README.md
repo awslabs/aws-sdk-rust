@@ -1,6 +1,6 @@
 # aws-sdk-kinesis
 
-Amazon Kinesis Data Streams is a managed service that scales elastically for real-time processing of streaming big data.
+Amazon Kinesis Data Streams is a serverless data streaming service that ingests data once and fans it out to multiple consumer applications for real-time processing.
 
 ## Getting Started
 
@@ -14,7 +14,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-kinesis = "1.132.0"
+aws-sdk-kinesis = "1.133.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

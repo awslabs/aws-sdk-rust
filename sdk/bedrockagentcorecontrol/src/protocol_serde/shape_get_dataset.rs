@@ -212,6 +212,13 @@ pub(crate) fn de_get_dataset(
                             .transpose()?,
                     );
                 }
+                "exampleCountByField" => {
+                    builder = builder.set_example_count_by_field(crate::protocol_serde::shape_example_count_by_field::de_example_count_by_field(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "failureReason" => {
                     builder = builder.set_failure_reason(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

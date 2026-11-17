@@ -67,6 +67,8 @@ pub use crate::types::_data_storage::DataStorageBuilder;
 
 pub use crate::types::_ecpu_per_second::EcpuPerSecondBuilder;
 
+pub use crate::types::_integration_request::IntegrationRequestBuilder;
+
 pub use crate::types::_configure_shard::ConfigureShardBuilder;
 
 pub use crate::types::_cache_engine_version::CacheEngineVersionBuilder;
@@ -108,6 +110,8 @@ pub use crate::types::_user_groups_update_status::UserGroupsUpdateStatusBuilder;
 pub use crate::types::_node_group::NodeGroupBuilder;
 
 pub use crate::types::_log_delivery_configuration::LogDeliveryConfigurationBuilder;
+
+pub use crate::types::_integration::IntegrationBuilder;
 
 pub use crate::types::_node_snapshot::NodeSnapshotBuilder;
 

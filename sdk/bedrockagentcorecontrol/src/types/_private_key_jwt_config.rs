@@ -2,7 +2,7 @@
 
 /// <p>The private key configuration for private_key_jwt client authentication.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PrivateKeyJwtConfig {
     /// <p>The private key source for the JWT client assertion.</p>
     pub private_key_source: ::std::option::Option<crate::types::PrivateKeySource>,
@@ -31,6 +31,16 @@ impl PrivateKeyJwtConfig {
         self.additional_payload_claims.as_ref()
     }
 }
+impl ::std::fmt::Debug for PrivateKeyJwtConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PrivateKeyJwtConfig");
+        formatter.field("private_key_source", &self.private_key_source);
+        formatter.field("signing_algorithm", &self.signing_algorithm);
+        formatter.field("additional_header_claims", &"*** Sensitive Data Redacted ***");
+        formatter.field("additional_payload_claims", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl PrivateKeyJwtConfig {
     /// Creates a new builder-style object to manufacture [`PrivateKeyJwtConfig`](crate::types::PrivateKeyJwtConfig).
     pub fn builder() -> crate::types::builders::PrivateKeyJwtConfigBuilder {
@@ -39,7 +49,7 @@ impl PrivateKeyJwtConfig {
 }
 
 /// A builder for [`PrivateKeyJwtConfig`](crate::types::PrivateKeyJwtConfig).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct PrivateKeyJwtConfigBuilder {
     pub(crate) private_key_source: ::std::option::Option<crate::types::PrivateKeySource>,
@@ -138,5 +148,15 @@ impl PrivateKeyJwtConfigBuilder {
             additional_header_claims: self.additional_header_claims,
             additional_payload_claims: self.additional_payload_claims,
         }
+    }
+}
+impl ::std::fmt::Debug for PrivateKeyJwtConfigBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PrivateKeyJwtConfigBuilder");
+        formatter.field("private_key_source", &self.private_key_source);
+        formatter.field("signing_algorithm", &self.signing_algorithm);
+        formatter.field("additional_header_claims", &"*** Sensitive Data Redacted ***");
+        formatter.field("additional_payload_claims", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

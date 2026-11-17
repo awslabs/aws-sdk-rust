@@ -2,7 +2,7 @@
 
 /// <p>Embedded crypto wallet instrument details.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct EmbeddedCryptoWallet {
     /// <p>The blockchain network for this embedded crypto wallet. Supported networks: ETHEREUM, SOLANA.</p>
     pub network: crate::types::CryptoWalletNetwork,
@@ -32,6 +32,16 @@ impl EmbeddedCryptoWallet {
         self.redirect_url.as_deref()
     }
 }
+impl ::std::fmt::Debug for EmbeddedCryptoWallet {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("EmbeddedCryptoWallet");
+        formatter.field("network", &self.network);
+        formatter.field("linked_accounts", &"*** Sensitive Data Redacted ***");
+        formatter.field("wallet_address", &self.wallet_address);
+        formatter.field("redirect_url", &self.redirect_url);
+        formatter.finish()
+    }
+}
 impl EmbeddedCryptoWallet {
     /// Creates a new builder-style object to manufacture [`EmbeddedCryptoWallet`](crate::types::EmbeddedCryptoWallet).
     pub fn builder() -> crate::types::builders::EmbeddedCryptoWalletBuilder {
@@ -40,7 +50,7 @@ impl EmbeddedCryptoWallet {
 }
 
 /// A builder for [`EmbeddedCryptoWallet`](crate::types::EmbeddedCryptoWallet).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct EmbeddedCryptoWalletBuilder {
     pub(crate) network: ::std::option::Option<crate::types::CryptoWalletNetwork>,
@@ -133,5 +143,15 @@ impl EmbeddedCryptoWalletBuilder {
             wallet_address: self.wallet_address,
             redirect_url: self.redirect_url,
         })
+    }
+}
+impl ::std::fmt::Debug for EmbeddedCryptoWalletBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("EmbeddedCryptoWalletBuilder");
+        formatter.field("network", &self.network);
+        formatter.field("linked_accounts", &"*** Sensitive Data Redacted ***");
+        formatter.field("wallet_address", &self.wallet_address);
+        formatter.field("redirect_url", &self.redirect_url);
+        formatter.finish()
     }
 }

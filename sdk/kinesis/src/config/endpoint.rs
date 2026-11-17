@@ -2233,10 +2233,10 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid ARN: Unsupported resource type `accesspoint`. Expected: stream or channel [ResourceARN as StreamARN test: Invalid ARN: Kinesis ARNs only support stream arn types]");
+        let error = endpoint.expect_err("expected error: Invalid ARN: Unsupported resource type `accesspoint`. Expected: stream, channel, or queue. [ResourceARN as StreamARN test: Invalid ARN: Kinesis ARNs only support stream arn types]");
         assert_eq!(
             format!("{}", error),
-            "Invalid ARN: Unsupported resource type `accesspoint`. Expected: stream or channel"
+            "Invalid ARN: Unsupported resource type `accesspoint`. Expected: stream, channel, or queue."
         )
     }
 
@@ -2745,10 +2745,10 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid ARN: Unsupported resource type `accesspoint`. Expected: stream or channel [ResourceARN as ConsumerARN test: Invalid ARN: Kinesis ARNs only support stream arn/consumer arn types]");
+        let error = endpoint.expect_err("expected error: Invalid ARN: Unsupported resource type `accesspoint`. Expected: stream, channel, or queue. [ResourceARN as ConsumerARN test: Invalid ARN: Kinesis ARNs only support stream arn/consumer arn types]");
         assert_eq!(
             format!("{}", error),
-            "Invalid ARN: Unsupported resource type `accesspoint`. Expected: stream or channel"
+            "Invalid ARN: Unsupported resource type `accesspoint`. Expected: stream, channel, or queue."
         )
     }
 
@@ -3135,10 +3135,10 @@ mod test {
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let error = endpoint.expect_err("expected error: Invalid ARN: Unsupported resource type `accesspoint`. Expected: stream or channel [ResourceARN as ChannelARN test: Invalid ARN: unsupported resource type]");
+        let error = endpoint.expect_err("expected error: Invalid ARN: Unsupported resource type `accesspoint`. Expected: stream, channel, or queue. [ResourceARN as ChannelARN test: Invalid ARN: unsupported resource type]");
         assert_eq!(
             format!("{}", error),
-            "Invalid ARN: Unsupported resource type `accesspoint`. Expected: stream or channel"
+            "Invalid ARN: Unsupported resource type `accesspoint`. Expected: stream, channel, or queue."
         )
     }
 
@@ -4796,9 +4796,97 @@ mod test {
         );
     }
 
-    /// Account Id with account id endpoint mode disabled
+    /// ResourceARN with queue type: basic control endpoint
     #[test]
     fn test_231() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://myQueueId.control-kinesis-queues.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://myQueueId.control-kinesis-queues.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// ResourceARN with queue type: FIPS
+    #[test]
+    fn test_232() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://myQueueId.control-kinesis-queues-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://myQueueId.control-kinesis-queues-fips.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// ResourceARN with queue type: DualStack
+    #[test]
+    fn test_233() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws:kinesis:us-west-2:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://myQueueId.control-kinesis-queues.us-west-2.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://myQueueId.control-kinesis-queues.us-west-2.api.aws")
+                .build()
+        );
+    }
+
+    /// ResourceARN with channel type: basic control endpoint
+    #[test]
+    fn test_234() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://apu0zt8ge6utbndxe.control-kinesis.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://apu0zt8ge6utbndxe.control-kinesis.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// Account Id with account id endpoint mode disabled
+    #[test]
+    fn test_235() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -4821,7 +4909,7 @@ mod test {
 
     /// Account Id and StreamArn with account id endpoint mode disabled
     #[test]
-    fn test_232() {
+    fn test_236() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -4845,7 +4933,7 @@ mod test {
 
     /// Account Id missing with account id endpoint mode required
     #[test]
-    fn test_233() {
+    fn test_237() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -4865,7 +4953,7 @@ mod test {
 
     /// Account Id missing with account id endpoint mode required, fips and dual stack enabled
     #[test]
-    fn test_234() {
+    fn test_238() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(true)
@@ -4885,7 +4973,7 @@ mod test {
 
     /// Account Id missing with account id endpoint mode required in ADC region
     #[test]
-    fn test_235() {
+    fn test_239() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(false)
@@ -4905,7 +4993,7 @@ mod test {
 
     /// Account Id present with account id endpoint mode required in ADC region
     #[test]
-    fn test_236() {
+    fn test_240() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(false)
@@ -4926,7 +5014,7 @@ mod test {
 
     /// Account Id present with account id endpoint mode preferred in ADC region
     #[test]
-    fn test_237() {
+    fn test_241() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-iso-east-1".to_string())
             .use_fips(false)
@@ -4949,7 +5037,7 @@ mod test {
 
     /// Account Id missing with account id endpoint mode required and endpoint override
     #[test]
-    fn test_238() {
+    fn test_242() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -4972,7 +5060,7 @@ mod test {
 
     /// Account Id missing with StreamArn and account id endpoint mode required
     #[test]
-    fn test_239() {
+    fn test_243() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -4995,7 +5083,7 @@ mod test {
 
     /// Account Id missing with StreamId and account id endpoint mode required
     #[test]
-    fn test_240() {
+    fn test_244() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -5018,7 +5106,7 @@ mod test {
 
     /// Account Id missing with account id endpoint mode preferred
     #[test]
-    fn test_241() {
+    fn test_245() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -5040,7 +5128,7 @@ mod test {
 
     /// Account Id missing with account id endpoint mode disabled
     #[test]
-    fn test_242() {
+    fn test_246() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -5061,102 +5149,6 @@ mod test {
     }
 
     /// CreateStream: control operation type with AccountId
-    #[test]
-    fn test_243() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .operation_type("control".to_string())
-            .account_id("123456789012".to_string())
-            .account_id_endpoint_mode("preferred".to_string())
-            .build_without_validators()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.control-kinesis.us-east-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://123456789012.control-kinesis.us-east-1.amazonaws.com")
-                .property("metricValues", vec!["O".to_string().into()])
-                .build()
-        );
-    }
-
-    /// CreateStream: control operation type with FIPS and AccountId
-    #[test]
-    fn test_244() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-east-1".to_string())
-            .use_fips(true)
-            .use_dual_stack(false)
-            .operation_type("control".to_string())
-            .account_id("123456789012".to_string())
-            .account_id_endpoint_mode("preferred".to_string())
-            .build_without_validators()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.control-kinesis-fips.us-east-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://123456789012.control-kinesis-fips.us-east-1.amazonaws.com")
-                .property("metricValues", vec!["O".to_string().into()])
-                .build()
-        );
-    }
-
-    /// ListStreams: control operation type with AccountId
-    #[test]
-    fn test_245() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-west-2".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .operation_type("control".to_string())
-            .account_id("123456789012".to_string())
-            .account_id_endpoint_mode("preferred".to_string())
-            .build_without_validators()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.control-kinesis.us-west-2.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://123456789012.control-kinesis.us-west-2.amazonaws.com")
-                .property("metricValues", vec!["O".to_string().into()])
-                .build()
-        );
-    }
-
-    /// ListStreams: control operation type with FIPS and DualStack
-    #[test]
-    fn test_246() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-west-2".to_string())
-            .use_fips(true)
-            .use_dual_stack(true)
-            .operation_type("control".to_string())
-            .account_id("123456789012".to_string())
-            .account_id_endpoint_mode("preferred".to_string())
-            .build_without_validators()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.control-kinesis-fips.us-west-2.api.aws");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://123456789012.control-kinesis-fips.us-west-2.api.aws")
-                .property("metricValues", vec!["O".to_string().into()])
-                .build()
-        );
-    }
-
-    /// DescribeLimits: control operation type with AccountId
     #[test]
     fn test_247() {
         let params = crate::config::endpoint::Params::builder()
@@ -5180,7 +5172,7 @@ mod test {
         );
     }
 
-    /// DescribeLimits: control operation type with FIPS
+    /// CreateStream: control operation type with FIPS and AccountId
     #[test]
     fn test_248() {
         let params = crate::config::endpoint::Params::builder()
@@ -5204,7 +5196,7 @@ mod test {
         );
     }
 
-    /// DescribeAccountSettings: control operation type with AccountId
+    /// ListStreams: control operation type with AccountId
     #[test]
     fn test_249() {
         let params = crate::config::endpoint::Params::builder()
@@ -5228,7 +5220,7 @@ mod test {
         );
     }
 
-    /// DescribeAccountSettings: control operation type with FIPS and DualStack
+    /// ListStreams: control operation type with FIPS and DualStack
     #[test]
     fn test_250() {
         let params = crate::config::endpoint::Params::builder()
@@ -5252,7 +5244,7 @@ mod test {
         );
     }
 
-    /// UpdateAccountSettings: control operation type with AccountId
+    /// DescribeLimits: control operation type with AccountId
     #[test]
     fn test_251() {
         let params = crate::config::endpoint::Params::builder()
@@ -5276,7 +5268,7 @@ mod test {
         );
     }
 
-    /// UpdateAccountSettings: control operation type with FIPS
+    /// DescribeLimits: control operation type with FIPS
     #[test]
     fn test_252() {
         let params = crate::config::endpoint::Params::builder()
@@ -5300,53 +5292,55 @@ mod test {
         );
     }
 
-    /// CreateStream: account id endpoint mode disabled falls back to regional endpoint
+    /// DescribeAccountSettings: control operation type with AccountId
     #[test]
     fn test_253() {
-        let params = crate::config::endpoint::Params::builder()
-            .region("us-east-1".to_string())
-            .use_fips(false)
-            .use_dual_stack(false)
-            .operation_type("control".to_string())
-            .account_id("123456789012".to_string())
-            .account_id_endpoint_mode("disabled".to_string())
-            .build_without_validators()
-            .expect("invalid params");
-        let resolver = crate::config::endpoint::DefaultResolver::new();
-        let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-east-1.amazonaws.com");
-        assert_eq!(
-            endpoint,
-            ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://kinesis.us-east-1.amazonaws.com")
-                .build()
-        );
-    }
-
-    /// ListStreams: account id endpoint mode disabled falls back to regional endpoint
-    #[test]
-    fn test_254() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
-            .account_id_endpoint_mode("disabled".to_string())
+            .account_id_endpoint_mode("preferred".to_string())
             .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-west-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.control-kinesis.us-west-2.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://kinesis.us-west-2.amazonaws.com")
+                .url("https://123456789012.control-kinesis.us-west-2.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
 
-    /// DescribeLimits: account id endpoint mode disabled falls back to regional endpoint
+    /// DescribeAccountSettings: control operation type with FIPS and DualStack
+    #[test]
+    fn test_254() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .account_id("123456789012".to_string())
+            .account_id_endpoint_mode("preferred".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.control-kinesis-fips.us-west-2.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123456789012.control-kinesis-fips.us-west-2.api.aws")
+                .property("metricValues", vec!["O".to_string().into()])
+                .build()
+        );
+    }
+
+    /// UpdateAccountSettings: control operation type with AccountId
     #[test]
     fn test_255() {
         let params = crate::config::endpoint::Params::builder()
@@ -5355,44 +5349,46 @@ mod test {
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
-            .account_id_endpoint_mode("disabled".to_string())
+            .account_id_endpoint_mode("preferred".to_string())
             .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-east-1.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.control-kinesis.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://kinesis.us-east-1.amazonaws.com")
+                .url("https://123456789012.control-kinesis.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
 
-    /// DescribeAccountSettings: account id endpoint mode disabled falls back to regional endpoint
+    /// UpdateAccountSettings: control operation type with FIPS
     #[test]
     fn test_256() {
         let params = crate::config::endpoint::Params::builder()
-            .region("us-west-2".to_string())
-            .use_fips(false)
+            .region("us-east-1".to_string())
+            .use_fips(true)
             .use_dual_stack(false)
             .operation_type("control".to_string())
             .account_id("123456789012".to_string())
-            .account_id_endpoint_mode("disabled".to_string())
+            .account_id_endpoint_mode("preferred".to_string())
             .build_without_validators()
             .expect("invalid params");
         let resolver = crate::config::endpoint::DefaultResolver::new();
         let endpoint = resolver.resolve_endpoint(&params);
-        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-west-2.amazonaws.com");
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.control-kinesis-fips.us-east-1.amazonaws.com");
         assert_eq!(
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
-                .url("https://kinesis.us-west-2.amazonaws.com")
+                .url("https://123456789012.control-kinesis-fips.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
                 .build()
         );
     }
 
-    /// UpdateAccountSettings: account id endpoint mode disabled falls back to regional endpoint
+    /// CreateStream: account id endpoint mode disabled falls back to regional endpoint
     #[test]
     fn test_257() {
         let params = crate::config::endpoint::Params::builder()
@@ -5415,9 +5411,101 @@ mod test {
         );
     }
 
-    /// CreateStream: account id endpoint mode disabled with FIPS falls back to regional FIPS endpoint
+    /// ListStreams: account id endpoint mode disabled falls back to regional endpoint
     #[test]
     fn test_258() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .account_id("123456789012".to_string())
+            .account_id_endpoint_mode("disabled".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-west-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis.us-west-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// DescribeLimits: account id endpoint mode disabled falls back to regional endpoint
+    #[test]
+    fn test_259() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .account_id("123456789012".to_string())
+            .account_id_endpoint_mode("disabled".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// DescribeAccountSettings: account id endpoint mode disabled falls back to regional endpoint
+    #[test]
+    fn test_260() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .account_id("123456789012".to_string())
+            .account_id_endpoint_mode("disabled".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-west-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis.us-west-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// UpdateAccountSettings: account id endpoint mode disabled falls back to regional endpoint
+    #[test]
+    fn test_261() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .account_id("123456789012".to_string())
+            .account_id_endpoint_mode("disabled".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// CreateStream: account id endpoint mode disabled with FIPS falls back to regional FIPS endpoint
+    #[test]
+    fn test_262() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -5440,7 +5528,7 @@ mod test {
 
     /// CreateStream: account id endpoint mode disabled with DualStack falls back to regional DualStack endpoint
     #[test]
-    fn test_259() {
+    fn test_263() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -5463,7 +5551,7 @@ mod test {
 
     /// CreateStream: account id endpoint mode disabled with FIPS and DualStack falls back to regional FIPS DualStack endpoint
     #[test]
-    fn test_260() {
+    fn test_264() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -5486,7 +5574,7 @@ mod test {
 
     /// CreateChannel: control operation type with AccountId
     #[test]
-    fn test_261() {
+    fn test_265() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -5510,7 +5598,7 @@ mod test {
 
     /// CreateChannel: control operation type with FIPS and AccountId
     #[test]
-    fn test_262() {
+    fn test_266() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -5534,7 +5622,7 @@ mod test {
 
     /// CreateChannel: control operation type with DualStack and AccountId
     #[test]
-    fn test_263() {
+    fn test_267() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -5558,7 +5646,7 @@ mod test {
 
     /// CreateChannel: control operation type with FIPS and DualStack and AccountId
     #[test]
-    fn test_264() {
+    fn test_268() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -5582,7 +5670,7 @@ mod test {
 
     /// CreateChannel: account id endpoint mode disabled falls back to regional endpoint
     #[test]
-    fn test_265() {
+    fn test_269() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -5605,7 +5693,7 @@ mod test {
 
     /// CreateChannel: account id endpoint mode disabled with FIPS falls back to regional FIPS endpoint
     #[test]
-    fn test_266() {
+    fn test_270() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -5628,7 +5716,7 @@ mod test {
 
     /// CreateChannel: account id endpoint mode disabled with DualStack falls back to regional DualStack endpoint
     #[test]
-    fn test_267() {
+    fn test_271() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(false)
@@ -5651,7 +5739,7 @@ mod test {
 
     /// CreateChannel: account id endpoint mode disabled with FIPS and DualStack falls back to regional FIPS DualStack endpoint
     #[test]
-    fn test_268() {
+    fn test_272() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-east-1".to_string())
             .use_fips(true)
@@ -5674,7 +5762,7 @@ mod test {
 
     /// ListChannels: control operation type with AccountId
     #[test]
-    fn test_269() {
+    fn test_273() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -5698,7 +5786,7 @@ mod test {
 
     /// ListChannels: control operation type with FIPS and DualStack
     #[test]
-    fn test_270() {
+    fn test_274() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(true)
@@ -5722,7 +5810,7 @@ mod test {
 
     /// ListChannels: account id endpoint mode disabled falls back to regional endpoint
     #[test]
-    fn test_271() {
+    fn test_275() {
         let params = crate::config::endpoint::Params::builder()
             .region("us-west-2".to_string())
             .use_fips(false)
@@ -5739,6 +5827,1305 @@ mod test {
             endpoint,
             ::aws_smithy_types::endpoint::Endpoint::builder()
                 .url("https://kinesis.us-west-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// QueueARN: basic endpoint resolution with control operation type
+    #[test]
+    fn test_276() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_type("queue".to_string())
+            .queue_arn("arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://myQueueId.control-kinesis-queues.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://myQueueId.control-kinesis-queues.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// QueueARN: endpoint with FIPS
+    #[test]
+    fn test_277() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_type("queue".to_string())
+            .queue_arn("arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://myQueueId.control-kinesis-queues-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://myQueueId.control-kinesis-queues-fips.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// QueueARN: endpoint with DualStack
+    #[test]
+    fn test_278() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .resource_type("queue".to_string())
+            .queue_arn("arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://myQueueId.control-kinesis-queues.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://myQueueId.control-kinesis-queues.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// QueueARN: endpoint with FIPS and DualStack
+    #[test]
+    fn test_279() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .resource_type("queue".to_string())
+            .queue_arn("arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://myQueueId.control-kinesis-queues-fips.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://myQueueId.control-kinesis-queues-fips.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// QueueARN: data operation type
+    #[test]
+    fn test_280() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .resource_type("queue".to_string())
+            .queue_arn("arn:aws:kinesis:us-west-2:123456789012:queue/abc123def456".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://abc123def456.data-kinesis-queues.us-west-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://abc123def456.data-kinesis-queues.us-west-2.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// QueueARN: data operation type with FIPS
+    #[test]
+    fn test_281() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .resource_type("queue".to_string())
+            .queue_arn("arn:aws:kinesis:us-east-1:123456789012:queue/abc123def456".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://abc123def456.data-kinesis-queues-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://abc123def456.data-kinesis-queues-fips.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// QueueARN: data operation type with DualStack
+    #[test]
+    fn test_282() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .operation_type("data".to_string())
+            .resource_type("queue".to_string())
+            .queue_arn("arn:aws:kinesis:us-west-2:123456789012:queue/abc123def456".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://abc123def456.data-kinesis-queues.us-west-2.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://abc123def456.data-kinesis-queues.us-west-2.api.aws")
+                .build()
+        );
+    }
+
+    /// QueueARN: VPCE endpoint override is respected as-is
+    #[test]
+    fn test_283() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_type("queue".to_string())
+            .queue_arn("arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId".to_string())
+            .endpoint("https://my-vpce-xyz.vpce.amazonaws.com".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://my-vpce-xyz.vpce.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://my-vpce-xyz.vpce.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// Invalid QueueARN: wrong arn type
+    #[test]
+    fn test_284() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_type("queue".to_string())
+            .queue_arn("arn:aws:kinesis:us-east-1:123456789012:stream/test-stream".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint
+            .expect_err("expected error: Invalid ARN: QueueARN only supports `queue` ARN types, found: `stream`. [Invalid QueueARN: wrong arn type]");
+        assert_eq!(
+            format!("{}", error),
+            "Invalid ARN: QueueARN only supports `queue` ARN types, found: `stream`."
+        )
+    }
+
+    /// Invalid QueueARN: missing queue id
+    #[test]
+    fn test_285() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_type("queue".to_string())
+            .queue_arn("arn:aws:kinesis:us-east-1:123456789012:queue".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid ARN: Missing queue id. [Invalid QueueARN: missing queue id]");
+        assert_eq!(format!("{}", error), "Invalid ARN: Missing queue id.")
+    }
+
+    /// Invalid QueueARN: non-kinesis service
+    #[test]
+    fn test_286() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_type("queue".to_string())
+            .queue_arn("arn:aws:sqs:us-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint
+            .expect_err("expected error: Invalid ARN: The ARN was not for the Kinesis service, found: sqs. [Invalid QueueARN: non-kinesis service]");
+        assert_eq!(format!("{}", error), "Invalid ARN: The ARN was not for the Kinesis service, found: sqs.")
+    }
+
+    /// Queue AccountId: basic endpoint with AccountId
+    #[test]
+    fn test_287() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .account_id("123456789012".to_string())
+            .account_id_endpoint_mode("preferred".to_string())
+            .resource_type("queue".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.control-kinesis-queues.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123456789012.control-kinesis-queues.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
+                .build()
+        );
+    }
+
+    /// Queue AccountId: endpoint with FIPS
+    #[test]
+    fn test_288() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .account_id("123456789012".to_string())
+            .account_id_endpoint_mode("preferred".to_string())
+            .resource_type("queue".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.control-kinesis-queues-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123456789012.control-kinesis-queues-fips.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
+                .build()
+        );
+    }
+
+    /// Queue AccountId: endpoint with DualStack
+    #[test]
+    fn test_289() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .account_id("123456789012".to_string())
+            .account_id_endpoint_mode("preferred".to_string())
+            .resource_type("queue".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.control-kinesis-queues.us-west-2.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123456789012.control-kinesis-queues.us-west-2.api.aws")
+                .property("metricValues", vec!["O".to_string().into()])
+                .build()
+        );
+    }
+
+    /// Queue AccountId: endpoint with FIPS and DualStack
+    #[test]
+    fn test_290() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .account_id("123456789012".to_string())
+            .account_id_endpoint_mode("preferred".to_string())
+            .resource_type("queue".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.control-kinesis-queues-fips.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123456789012.control-kinesis-queues-fips.us-east-1.api.aws")
+                .property("metricValues", vec!["O".to_string().into()])
+                .build()
+        );
+    }
+
+    /// QueueARN: regular endpoint override is respected as-is
+    #[test]
+    fn test_291() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_type("queue".to_string())
+            .queue_arn("arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId".to_string())
+            .endpoint("https://kinesis-queues.us-east-1.amazonaws.com".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-queues.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-queues.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// Queue AccountId: disabled mode falls back to regional queue endpoint
+    #[test]
+    fn test_292() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .account_id("123456789012".to_string())
+            .account_id_endpoint_mode("disabled".to_string())
+            .resource_type("queue".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-queues.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-queues.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// Queue AccountId: disabled mode with FIPS falls back to regional queue FIPS endpoint
+    #[test]
+    fn test_293() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .account_id("123456789012".to_string())
+            .account_id_endpoint_mode("disabled".to_string())
+            .resource_type("queue".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-queues-fips.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-queues-fips.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// Queue AccountId: disabled mode with DualStack falls back to regional queue DualStack endpoint
+    #[test]
+    fn test_294() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .account_id("123456789012".to_string())
+            .account_id_endpoint_mode("disabled".to_string())
+            .resource_type("queue".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-queues.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-queues.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// Queue AccountId: disabled mode with FIPS and DualStack falls back to regional queue FIPS DualStack endpoint
+    #[test]
+    fn test_295() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .account_id("123456789012".to_string())
+            .account_id_endpoint_mode("disabled".to_string())
+            .resource_type("queue".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-queues-fips.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-queues-fips.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// ResourceARN with queue type: missing queue id errors
+    #[test]
+    fn test_296() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123456789012:queue".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid ARN: Missing queue id. [ResourceARN with queue type: missing queue id errors]");
+        assert_eq!(format!("{}", error), "Invalid ARN: Missing queue id.")
+    }
+
+    /// ResourceARN with channel type: missing channel id errors
+    #[test]
+    fn test_297() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123456789012:channel".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error =
+            endpoint.expect_err("expected error: Invalid ARN: Missing channel id. [ResourceARN with channel type: missing channel id errors]");
+        assert_eq!(format!("{}", error), "Invalid ARN: Missing channel id.")
+    }
+
+    /// ResourceARN with unsupported type: consumer type is rejected
+    #[test]
+    fn test_298() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123456789012:consumer/test-consumer".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid ARN: Unsupported resource type `consumer`. Expected: stream, channel, or queue. [ResourceARN with unsupported type: consumer type is rejected]");
+        assert_eq!(
+            format!("{}", error),
+            "Invalid ARN: Unsupported resource type `consumer`. Expected: stream, channel, or queue."
+        )
+    }
+
+    /// QueueARN and StreamARN both set: StreamARN wins by rule ordering today (ResourceType is not yet authoritative on the stream path; revisit if a both-ARN API is introduced)
+    #[test]
+    fn test_299() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .stream_arn("arn:aws:kinesis:us-east-1:123:stream/test-stream".to_string())
+            .resource_type("queue".to_string())
+            .queue_arn("arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123.control-kinesis.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123.control-kinesis.us-east-1.amazonaws.com")
+                .build()
+        );
+    }
+
+    /// QueueARN set but ResourceType absent: errors instead of misrouting to the default kinesis endpoint
+    #[test]
+    fn test_300() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .queue_arn("arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid Configuration: ResourceType must be \"queue\" when QueueARN is set. [QueueARN set but ResourceType absent: errors instead of misrouting to the default kinesis endpoint]");
+        assert_eq!(
+            format!("{}", error),
+            "Invalid Configuration: ResourceType must be \"queue\" when QueueARN is set."
+        )
+    }
+
+    /// QueueARN set but ResourceType is not queue:  errors instead of misrouting to the default kinesis endpoint
+    #[test]
+    fn test_301() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_type("stream".to_string())
+            .queue_arn("arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid Configuration: ResourceType must be \"queue\" when QueueARN is set. [QueueARN set but ResourceType is not queue:  errors instead of misrouting to the default kinesis endpoint]");
+        assert_eq!(
+            format!("{}", error),
+            "Invalid Configuration: ResourceType must be \"queue\" when QueueARN is set."
+        )
+    }
+
+    /// AccountId without ResourceType: non-queue account endpoint is unchanged (no -queues suffix)
+    #[test]
+    fn test_302() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .account_id("123456789012".to_string())
+            .account_id_endpoint_mode("preferred".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://123456789012.control-kinesis.us-east-1.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://123456789012.control-kinesis.us-east-1.amazonaws.com")
+                .property("metricValues", vec!["O".to_string().into()])
+                .build()
+        );
+    }
+
+    /// Queue AccountId: required mode with no AccountId errors
+    #[test]
+    fn test_303() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .account_id_endpoint_mode("required".to_string())
+            .resource_type("queue".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: AccountIdEndpointMode is required but no AccountID was provided or able to be loaded [Queue AccountId: required mode with no AccountId errors]");
+        assert_eq!(
+            format!("{}", error),
+            "AccountIdEndpointMode is required but no AccountID was provided or able to be loaded"
+        )
+    }
+
+    /// QueueARN: OperationType not set errors
+    #[test]
+    fn test_304() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .resource_type("queue".to_string())
+            .queue_arn("arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err(
+            "expected error: Operation Type is not set. Please contact service team for resolution. [QueueARN: OperationType not set errors]",
+        );
+        assert_eq!(
+            format!("{}", error),
+            "Operation Type is not set. Please contact service team for resolution."
+        )
+    }
+
+    /// QueueARN: aws-iso region falls back to regional queue endpoint
+    #[test]
+    fn test_305() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_type("queue".to_string())
+            .queue_arn("arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-queues.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-queues.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// QueueARN: aws-iso-b region falls back to regional queue endpoint
+    #[test]
+    fn test_306() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-isob-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_type("queue".to_string())
+            .queue_arn("arn:aws-iso-b:kinesis:us-isob-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-queues.us-isob-east-1.sc2s.sgov.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-queues.us-isob-east-1.sc2s.sgov.gov")
+                .build()
+        );
+    }
+
+    /// Queue AccountId in aws-iso: disabled mode falls back to regional queue endpoint
+    #[test]
+    fn test_307() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .account_id("123456789012".to_string())
+            .account_id_endpoint_mode("disabled".to_string())
+            .resource_type("queue".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-queues.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-queues.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// ResourceARN with queue type in aws-iso: falls back to regional queue endpoint
+    #[test]
+    fn test_308() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-queues.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-queues.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// ResourceARN with queue type in aws-iso-b: falls back to regional queue endpoint
+    #[test]
+    fn test_309() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-isob-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws-iso-b:kinesis:us-isob-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-queues.us-isob-east-1.sc2s.sgov.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-queues.us-isob-east-1.sc2s.sgov.gov")
+                .build()
+        );
+    }
+
+    /// Queue AccountId in aws-iso: preferred mode falls back to regional queue endpoint
+    #[test]
+    fn test_310() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .account_id("123456789012".to_string())
+            .account_id_endpoint_mode("preferred".to_string())
+            .resource_type("queue".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-queues.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-queues.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// QueueARN: aws-iso region with FIPS falls back to regional queue FIPS endpoint
+    #[test]
+    fn test_311() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_type("queue".to_string())
+            .queue_arn("arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-queues-fips.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-queues-fips.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// ResourceARN with queue type in aws-iso with FIPS: falls back to regional queue FIPS endpoint
+    #[test]
+    fn test_312() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-queues-fips.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-queues-fips.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// QueueARN: aws-iso region with DualStack falls back to regional queue DualStack endpoint
+    #[test]
+    fn test_313() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .resource_type("queue".to_string())
+            .queue_arn("arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-queues.us-iso-east-1.api.aws.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-queues.us-iso-east-1.api.aws.ic.gov")
+                .build()
+        );
+    }
+
+    /// QueueARN: aws-iso region with FIPS and DualStack falls back to regional queue FIPS DualStack endpoint
+    #[test]
+    fn test_314() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .resource_type("queue".to_string())
+            .queue_arn("arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-queues-fips.us-iso-east-1.api.aws.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-queues-fips.us-iso-east-1.api.aws.ic.gov")
+                .build()
+        );
+    }
+
+    /// ResourceARN with queue type in aws-iso with DualStack: falls back to regional queue DualStack endpoint
+    #[test]
+    fn test_315() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-queues.us-iso-east-1.api.aws.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-queues.us-iso-east-1.api.aws.ic.gov")
+                .build()
+        );
+    }
+
+    /// ResourceARN with queue type in aws-iso with FIPS and DualStack: falls back to regional queue FIPS DualStack endpoint
+    #[test]
+    fn test_316() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-queues-fips.us-iso-east-1.api.aws.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-queues-fips.us-iso-east-1.api.aws.ic.gov")
+                .build()
+        );
+    }
+
+    /// Queue AccountId in aws-iso: preferred mode with FIPS falls back to regional queue FIPS endpoint
+    #[test]
+    fn test_317() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .account_id("123456789012".to_string())
+            .account_id_endpoint_mode("preferred".to_string())
+            .resource_type("queue".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-queues-fips.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-queues-fips.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// Queue AccountId in aws-iso: disabled mode with FIPS falls back to regional queue FIPS endpoint
+    #[test]
+    fn test_318() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .account_id("123456789012".to_string())
+            .account_id_endpoint_mode("disabled".to_string())
+            .resource_type("queue".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-queues-fips.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-queues-fips.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// ResourceARN with channel type in aws-iso: falls back to default kinesis endpoint
+    #[test]
+    fn test_319() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws-iso:kinesis:us-iso-east-1:123456789012:channel/myChannelId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// ResourceARN with channel type in aws-iso with FIPS: falls back to default kinesis FIPS endpoint
+    #[test]
+    fn test_320() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws-iso:kinesis:us-iso-east-1:123456789012:channel/myChannelId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-fips.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-fips.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// ChannelARN in aws-iso: falls back to default kinesis endpoint
+    #[test]
+    fn test_321() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .channel_arn("arn:aws-iso:kinesis:us-iso-east-1:123456789012:channel/myChannelId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// ChannelARN in aws-iso with FIPS: falls back to default kinesis FIPS endpoint
+    #[test]
+    fn test_322() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .channel_arn("arn:aws-iso:kinesis:us-iso-east-1:123456789012:channel/myChannelId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-fips.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-fips.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// ResourceARN queue in aws-iso: non-kinesis service should error
+    #[test]
+    fn test_323() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws-iso:sqs:us-iso-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Invalid ARN: The ARN was not for the Kinesis service, found: sqs. [ResourceARN queue in aws-iso: non-kinesis service should error]");
+        assert_eq!(format!("{}", error), "Invalid ARN: The ARN was not for the Kinesis service, found: sqs.")
+    }
+
+    /// ResourceARN queue in aws-iso: partition mismatch should error
+    #[test]
+    fn test_324() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Partition: aws from ARN doesn't match with partition name: aws-iso. [ResourceARN queue in aws-iso: partition mismatch should error]");
+        assert_eq!(
+            format!("{}", error),
+            "Partition: aws from ARN doesn't match with partition name: aws-iso."
+        )
+    }
+
+    /// ResourceARN queue in aws-iso: missing queue id should error
+    #[test]
+    fn test_325() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error =
+            endpoint.expect_err("expected error: Invalid ARN: Missing queue id. [ResourceARN queue in aws-iso: missing queue id should error]");
+        assert_eq!(format!("{}", error), "Invalid ARN: Missing queue id.")
+    }
+
+    /// ResourceARN queue in aws-iso: invalid account id should error
+    #[test]
+    fn test_326() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws-iso:kinesis:us-iso-east-1:invalid..account:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error =
+            endpoint.expect_err("expected error: Invalid ARN: Invalid account id. [ResourceARN queue in aws-iso: invalid account id should error]");
+        assert_eq!(format!("{}", error), "Invalid ARN: Invalid account id.")
+    }
+
+    /// ResourceARN queue in aws-iso: OperationType not set should error
+    #[test]
+    fn test_327() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .resource_arn("arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint.expect_err("expected error: Operation Type is not set. Please contact service team for resolution. [ResourceARN queue in aws-iso: OperationType not set should error]");
+        assert_eq!(
+            format!("{}", error),
+            "Operation Type is not set. Please contact service team for resolution."
+        )
+    }
+
+    /// ResourceARN queue in aws-iso: invalid queue id should error
+    #[test]
+    fn test_328() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws-iso:kinesis:us-iso-east-1:123456789012:queue/invalid.queue.id".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error =
+            endpoint.expect_err("expected error: Invalid ARN: Invalid queue id. [ResourceARN queue in aws-iso: invalid queue id should error]");
+        assert_eq!(format!("{}", error), "Invalid ARN: Invalid queue id.")
+    }
+
+    /// StreamARN in aws-iso with DualStack: falls back to default kinesis DualStack endpoint
+    #[test]
+    fn test_329() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .stream_arn("arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-iso-east-1.api.aws.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis.us-iso-east-1.api.aws.ic.gov")
+                .build()
+        );
+    }
+
+    /// StreamARN in aws-iso with FIPS and DualStack: falls back to default kinesis FIPS DualStack endpoint
+    #[test]
+    fn test_330() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .stream_arn("arn:aws-iso:kinesis:us-iso-east-1:123:stream/test-stream".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis-fips.us-iso-east-1.api.aws.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis-fips.us-iso-east-1.api.aws.ic.gov")
+                .build()
+        );
+    }
+
+    /// StreamARN in aws-iso: missing ARN type falls back to default kinesis endpoint
+    #[test]
+    fn test_331() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-iso-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .stream_arn("arn:aws-iso:kinesis:us-iso-east-1:123456789012:".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://kinesis.us-iso-east-1.c2s.ic.gov");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://kinesis.us-iso-east-1.c2s.ic.gov")
+                .build()
+        );
+    }
+
+    /// QueueARN: partition mismatch errors
+    #[test]
+    fn test_332() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("control".to_string())
+            .resource_type("queue".to_string())
+            .queue_arn("arn:aws-cn:kinesis:cn-north-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let error = endpoint
+            .expect_err("expected error: Partition: aws-cn from ARN doesn't match with partition name: aws. [QueueARN: partition mismatch errors]");
+        assert_eq!(format!("{}", error), "Partition: aws-cn from ARN doesn't match with partition name: aws.")
+    }
+
+    /// ResourceARN with queue type: FIPS and DualStack
+    #[test]
+    fn test_333() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-east-1".to_string())
+            .use_fips(true)
+            .use_dual_stack(true)
+            .operation_type("control".to_string())
+            .resource_arn("arn:aws:kinesis:us-east-1:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://myQueueId.control-kinesis-queues-fips.us-east-1.api.aws");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://myQueueId.control-kinesis-queues-fips.us-east-1.api.aws")
+                .build()
+        );
+    }
+
+    /// ResourceARN with queue type: data operation type
+    #[test]
+    fn test_334() {
+        let params = crate::config::endpoint::Params::builder()
+            .region("us-west-2".to_string())
+            .use_fips(false)
+            .use_dual_stack(false)
+            .operation_type("data".to_string())
+            .resource_arn("arn:aws:kinesis:us-west-2:123456789012:queue/myQueueId".to_string())
+            .build_without_validators()
+            .expect("invalid params");
+        let resolver = crate::config::endpoint::DefaultResolver::new();
+        let endpoint = resolver.resolve_endpoint(&params);
+        let endpoint = endpoint.expect("Expected valid endpoint: https://myQueueId.data-kinesis-queues.us-west-2.amazonaws.com");
+        assert_eq!(
+            endpoint,
+            ::aws_smithy_types::endpoint::Endpoint::builder()
+                .url("https://myQueueId.data-kinesis-queues.us-west-2.amazonaws.com")
                 .build()
         );
     }
@@ -5866,6 +7253,8 @@ impl DefaultResolver {
         let consumer_arn = &params.consumer_arn;
         let resource_arn = &params.resource_arn;
         let channel_arn = &params.channel_arn;
+        let queue_arn = &params.queue_arn;
+        let resource_type = &params.resource_type;
         let account_id = &params.account_id;
         let account_id_endpoint_mode = &params.account_id_endpoint_mode;
 
@@ -6384,14 +7773,14 @@ impl DefaultResolver {
                             let region = params.region.as_deref().unwrap_or_default();
                             let operation_type = params.operation_type.as_deref().unwrap_or_default();
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
-                            let arn_ssa_4 = context.arn_ssa_4.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_5 = context.arn_ssa_5.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
                                 ::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url({
                                         let mut out = String::new();
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
-                                        out.push_str(&arn_ssa_4.account_id());
+                                        out.push_str(&arn_ssa_5.account_id());
                                         out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
@@ -6410,14 +7799,14 @@ impl DefaultResolver {
                             let region = params.region.as_deref().unwrap_or_default();
                             let operation_type = params.operation_type.as_deref().unwrap_or_default();
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
-                            let arn_ssa_4 = context.arn_ssa_4.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_5 = context.arn_ssa_5.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
                                 ::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url({
                                         let mut out = String::new();
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
-                                        out.push_str(&arn_ssa_4.account_id());
+                                        out.push_str(&arn_ssa_5.account_id());
                                         out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
@@ -6436,14 +7825,14 @@ impl DefaultResolver {
                             let region = params.region.as_deref().unwrap_or_default();
                             let operation_type = params.operation_type.as_deref().unwrap_or_default();
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
-                            let arn_ssa_4 = context.arn_ssa_4.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_5 = context.arn_ssa_5.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
                                 ::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url({
                                         let mut out = String::new();
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
-                                        out.push_str(&arn_ssa_4.account_id());
+                                        out.push_str(&arn_ssa_5.account_id());
                                         out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
@@ -6462,14 +7851,14 @@ impl DefaultResolver {
                             let region = params.region.as_deref().unwrap_or_default();
                             let operation_type = params.operation_type.as_deref().unwrap_or_default();
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
-                            let arn_ssa_4 = context.arn_ssa_4.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_5 = context.arn_ssa_5.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
                                 ::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url({
                                         let mut out = String::new();
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
-                                        out.push_str(&arn_ssa_4.account_id());
+                                        out.push_str(&arn_ssa_5.account_id());
                                         out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
@@ -6486,12 +7875,12 @@ impl DefaultResolver {
                         }
                         22 => {
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
-                            let arn_ssa_4 = context.arn_ssa_4.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_5 = context.arn_ssa_5.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
                                 let mut out = String::new();
                                 out.push_str("Partition: ");
                                 #[allow(clippy::needless_borrow)]
-                                out.push_str(&arn_ssa_4.partition());
+                                out.push_str(&arn_ssa_5.partition());
                                 out.push_str(" from ARN doesn't match with partition name: ");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&partition_result.name());
@@ -6514,12 +7903,12 @@ impl DefaultResolver {
                             "Invalid ARN: No ARN type specified".to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
                         25 => {
-                            let arn_ssa_4 = context.arn_ssa_4.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_5 = context.arn_ssa_5.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
                                 let mut out = String::new();
                                 out.push_str("Invalid ARN: The ARN was not for the Kinesis service, found: ");
                                 #[allow(clippy::needless_borrow)]
-                                out.push_str(&arn_ssa_4.service());
+                                out.push_str(&arn_ssa_5.service());
                                 out.push_str(".");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
@@ -6681,7 +8070,7 @@ impl DefaultResolver {
                                 out.push_str("Invalid ARN: Unsupported resource type `");
                                 #[allow(clippy::needless_borrow)]
                                 out.push_str(&arn_type_ssa_3.as_ref());
-                                out.push_str("`. Expected: stream or channel");
+                                out.push_str("`. Expected: stream, channel, or queue.");
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
@@ -6689,14 +8078,14 @@ impl DefaultResolver {
                             let region = params.region.as_deref().unwrap_or_default();
                             let operation_type = params.operation_type.as_deref().unwrap_or_default();
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
-                            let arn_ssa_3 = context.arn_ssa_3.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_4 = context.arn_ssa_4.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
                                 ::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url({
                                         let mut out = String::new();
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
-                                        out.push_str(&arn_ssa_3.account_id());
+                                        out.push_str(&arn_ssa_4.account_id());
                                         out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
@@ -6715,14 +8104,14 @@ impl DefaultResolver {
                             let region = params.region.as_deref().unwrap_or_default();
                             let operation_type = params.operation_type.as_deref().unwrap_or_default();
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
-                            let arn_ssa_3 = context.arn_ssa_3.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_4 = context.arn_ssa_4.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
                                 ::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url({
                                         let mut out = String::new();
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
-                                        out.push_str(&arn_ssa_3.account_id());
+                                        out.push_str(&arn_ssa_4.account_id());
                                         out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
@@ -6741,14 +8130,14 @@ impl DefaultResolver {
                             let region = params.region.as_deref().unwrap_or_default();
                             let operation_type = params.operation_type.as_deref().unwrap_or_default();
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
-                            let arn_ssa_3 = context.arn_ssa_3.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_4 = context.arn_ssa_4.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
                                 ::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url({
                                         let mut out = String::new();
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
-                                        out.push_str(&arn_ssa_3.account_id());
+                                        out.push_str(&arn_ssa_4.account_id());
                                         out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
@@ -6767,14 +8156,14 @@ impl DefaultResolver {
                             let region = params.region.as_deref().unwrap_or_default();
                             let operation_type = params.operation_type.as_deref().unwrap_or_default();
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
-                            let arn_ssa_3 = context.arn_ssa_3.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_4 = context.arn_ssa_4.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
                                 ::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url({
                                         let mut out = String::new();
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
-                                        out.push_str(&arn_ssa_3.account_id());
+                                        out.push_str(&arn_ssa_4.account_id());
                                         out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
@@ -6900,47 +8289,73 @@ impl DefaultResolver {
                             "Invalid ARN: Missing channel id.".to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
                         47 => {
-                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
-                            let arn_ssa_3 = context.arn_ssa_3.as_ref().expect("Guaranteed to have a value by earlier checks.");
-                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
-                                let mut out = String::new();
-                                out.push_str("Partition: ");
-                                #[allow(clippy::needless_borrow)]
-                                out.push_str(&arn_ssa_3.partition());
-                                out.push_str(" from ARN doesn't match with partition name: ");
-                                #[allow(clippy::needless_borrow)]
-                                out.push_str(&partition_result.name());
-                                out.push_str(".");
-                                out
-                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
-                        }
-                        48 => {
-                            let arn_ssa_3 = context.arn_ssa_3.as_ref().expect("Guaranteed to have a value by earlier checks.");
-                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
-                                let mut out = String::new();
-                                out.push_str("Invalid ARN: The ARN was not for the Kinesis service, found: ");
-                                #[allow(clippy::needless_borrow)]
-                                out.push_str(&arn_ssa_3.service());
-                                out.push_str(".");
-                                out
-                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
-                        }
-                        49 => {
                             let region = params.region.as_deref().unwrap_or_default();
                             let operation_type = params.operation_type.as_deref().unwrap_or_default();
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
-                            let resource_id_ssa_2 = context.resource_id_ssa_2.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let resource_id_ssa_1 = context.resource_id_ssa_1.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
                                 ::aws_smithy_types::endpoint::Endpoint::builder()
                                     .url({
                                         let mut out = String::new();
                                         out.push_str("https://");
                                         #[allow(clippy::needless_borrow)]
-                                        out.push_str(&resource_id_ssa_2.as_ref());
+                                        out.push_str(&resource_id_ssa_1.as_ref());
                                         out.push_str(".");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&operation_type.as_ref());
-                                        out.push_str("-kinesis-fips.");
+                                        out.push_str("-kinesis-queues-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        48 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let resource_id_ssa_1 = context.resource_id_ssa_1.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&resource_id_ssa_1.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis-queues-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        49 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let resource_id_ssa_1 = context.resource_id_ssa_1.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&resource_id_ssa_1.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis-queues.");
                                         #[allow(clippy::needless_borrow)]
                                         out.push_str(&region.as_ref());
                                         out.push_str(".");
@@ -6955,6 +8370,162 @@ impl DefaultResolver {
                             let region = params.region.as_deref().unwrap_or_default();
                             let operation_type = params.operation_type.as_deref().unwrap_or_default();
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let resource_id_ssa_1 = context.resource_id_ssa_1.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&resource_id_ssa_1.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis-queues.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        51 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid ARN: Invalid queue id.".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        52 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid ARN: Missing queue id.".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        53 => {
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_4 = context.arn_ssa_4.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Partition: ");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&arn_ssa_4.partition());
+                                out.push_str(" from ARN doesn't match with partition name: ");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&partition_result.name());
+                                out.push_str(".");
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        54 => {
+                            let arn_ssa_4 = context.arn_ssa_4.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Invalid ARN: The ARN was not for the Kinesis service, found: ");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&arn_ssa_4.service());
+                                out.push_str(".");
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        55 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://kinesis-queues-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        56 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://kinesis-queues-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        57 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://kinesis-queues.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        58 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://kinesis-queues.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        59 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let resource_id_ssa_2 = context.resource_id_ssa_2.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&resource_id_ssa_2.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        60 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             let resource_id_ssa_2 = context.resource_id_ssa_2.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
                                 ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -6977,7 +8548,7 @@ impl DefaultResolver {
                                     .build(),
                             )
                         }
-                        51 => {
+                        61 => {
                             let region = params.region.as_deref().unwrap_or_default();
                             let operation_type = params.operation_type.as_deref().unwrap_or_default();
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
@@ -7003,7 +8574,7 @@ impl DefaultResolver {
                                     .build(),
                             )
                         }
-                        52 => {
+                        62 => {
                             let region = params.region.as_deref().unwrap_or_default();
                             let operation_type = params.operation_type.as_deref().unwrap_or_default();
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
@@ -7029,10 +8600,10 @@ impl DefaultResolver {
                                     .build(),
                             )
                         }
-                        53 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        63 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "ChannelARN does not support the `data` operation type.".to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
-                        54 => {
+                        64 => {
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             let arn_ssa_1 = context.arn_ssa_1.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
@@ -7047,7 +8618,7 @@ impl DefaultResolver {
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
-                        55 => {
+                        65 => {
                             let arn_type_ssa_4 = context.arn_type_ssa_4.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
                                 let mut out = String::new();
@@ -7058,7 +8629,7 @@ impl DefaultResolver {
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
-                        56 => {
+                        66 => {
                             let arn_ssa_1 = context.arn_ssa_1.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
                                 let mut out = String::new();
@@ -7069,7 +8640,259 @@ impl DefaultResolver {
                                 out
                             })) as ::aws_smithy_runtime_api::box_error::BoxError)
                         }
-                        57 => {
+                        67 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let resource_id_ssa_3 = context.resource_id_ssa_3.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&resource_id_ssa_3.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis-queues-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        68 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let resource_id_ssa_3 = context.resource_id_ssa_3.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&resource_id_ssa_3.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis-queues-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        69 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let resource_id_ssa_3 = context.resource_id_ssa_3.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&resource_id_ssa_3.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis-queues.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        70 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let resource_id_ssa_3 = context.resource_id_ssa_3.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&resource_id_ssa_3.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis-queues.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .build(),
+                            )
+                        }
+                        71 => {
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            let arn_ssa_3 = context.arn_ssa_3.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Partition: ");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&arn_ssa_3.partition());
+                                out.push_str(" from ARN doesn't match with partition name: ");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&partition_result.name());
+                                out.push_str(".");
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        72 => {
+                            let arn_type_ssa_5 = context.arn_type_ssa_5.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Invalid ARN: QueueARN only supports `queue` ARN types, found: `");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&arn_type_ssa_5.as_ref());
+                                out.push_str("`.");
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        73 => {
+                            let arn_ssa_3 = context.arn_ssa_3.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message({
+                                let mut out = String::new();
+                                out.push_str("Invalid ARN: The ARN was not for the Kinesis service, found: ");
+                                #[allow(clippy::needless_borrow)]
+                                out.push_str(&arn_ssa_3.service());
+                                out.push_str(".");
+                                out
+                            })) as ::aws_smithy_runtime_api::box_error::BoxError)
+                        }
+                        74 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                            "Invalid Configuration: ResourceType must be \"queue\" when QueueARN is set.".to_string(),
+                        )) as ::aws_smithy_runtime_api::box_error::BoxError),
+                        75 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let account_id = params.account_id.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&account_id.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis-queues-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .property("metricValues", vec![::aws_smithy_types::Document::from("O".to_string())])
+                                    .build(),
+                            )
+                        }
+                        76 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let account_id = params.account_id.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&account_id.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis-queues-fips.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .property("metricValues", vec![::aws_smithy_types::Document::from("O".to_string())])
+                                    .build(),
+                            )
+                        }
+                        77 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let account_id = params.account_id.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&account_id.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis-queues.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dual_stack_dns_suffix());
+                                        out
+                                    })
+                                    .property("metricValues", vec![::aws_smithy_types::Document::from("O".to_string())])
+                                    .build(),
+                            )
+                        }
+                        78 => {
+                            let region = params.region.as_deref().unwrap_or_default();
+                            let operation_type = params.operation_type.as_deref().unwrap_or_default();
+                            let account_id = params.account_id.as_deref().unwrap_or_default();
+                            let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
+                            ::std::result::Result::Ok(
+                                ::aws_smithy_types::endpoint::Endpoint::builder()
+                                    .url({
+                                        let mut out = String::new();
+                                        out.push_str("https://");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&account_id.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&operation_type.as_ref());
+                                        out.push_str("-kinesis-queues.");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&region.as_ref());
+                                        out.push_str(".");
+                                        #[allow(clippy::needless_borrow)]
+                                        out.push_str(&partition_result.dns_suffix());
+                                        out
+                                    })
+                                    .property("metricValues", vec![::aws_smithy_types::Document::from("O".to_string())])
+                                    .build(),
+                            )
+                        }
+                        79 => {
                             let region = params.region.as_deref().unwrap_or_default();
                             let operation_type = params.operation_type.as_deref().unwrap_or_default();
                             let account_id = params.account_id.as_deref().unwrap_or_default();
@@ -7096,7 +8919,7 @@ impl DefaultResolver {
                                     .build(),
                             )
                         }
-                        58 => {
+                        80 => {
                             let region = params.region.as_deref().unwrap_or_default();
                             let operation_type = params.operation_type.as_deref().unwrap_or_default();
                             let account_id = params.account_id.as_deref().unwrap_or_default();
@@ -7123,7 +8946,7 @@ impl DefaultResolver {
                                     .build(),
                             )
                         }
-                        59 => {
+                        81 => {
                             let region = params.region.as_deref().unwrap_or_default();
                             let operation_type = params.operation_type.as_deref().unwrap_or_default();
                             let account_id = params.account_id.as_deref().unwrap_or_default();
@@ -7150,7 +8973,7 @@ impl DefaultResolver {
                                     .build(),
                             )
                         }
-                        60 => {
+                        82 => {
                             let region = params.region.as_deref().unwrap_or_default();
                             let operation_type = params.operation_type.as_deref().unwrap_or_default();
                             let account_id = params.account_id.as_deref().unwrap_or_default();
@@ -7177,27 +9000,27 @@ impl DefaultResolver {
                                     .build(),
                             )
                         }
-                        61 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        83 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "Invalid account id.".to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
-                        62 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        84 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "AccountIdEndpointMode is required but no AccountID was provided or able to be loaded".to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
-                        63 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        85 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition"
                                 .to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
-                        64 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        86 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "Invalid Configuration: FIPS and custom endpoint are not supported".to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
-                        65 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        87 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "Invalid Configuration: Dualstack and custom endpoint are not supported".to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
-                        66 => {
+                        88 => {
                             let endpoint = params.endpoint.as_deref().unwrap_or_default();
                             ::std::result::Result::Ok(::aws_smithy_types::endpoint::Endpoint::builder().url(endpoint.to_owned()).build())
                         }
-                        67 => {
+                        89 => {
                             let region = params.region.as_deref().unwrap_or_default();
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
@@ -7215,10 +9038,10 @@ impl DefaultResolver {
                                     .build(),
                             )
                         }
-                        68 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        90 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "FIPS and DualStack are enabled, but this partition does not support one or both".to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
-                        69 => {
+                        91 => {
                             let region = params.region.as_deref().unwrap_or_default();
                             ::std::result::Result::Ok(
                                 ::aws_smithy_types::endpoint::Endpoint::builder()
@@ -7233,7 +9056,7 @@ impl DefaultResolver {
                                     .build(),
                             )
                         }
-                        70 => {
+                        92 => {
                             let region = params.region.as_deref().unwrap_or_default();
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
@@ -7251,7 +9074,7 @@ impl DefaultResolver {
                                     .build(),
                             )
                         }
-                        71 => {
+                        93 => {
                             let region = params.region.as_deref().unwrap_or_default();
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
@@ -7269,7 +9092,7 @@ impl DefaultResolver {
                                     .build(),
                             )
                         }
-                        72 => {
+                        94 => {
                             let region = params.region.as_deref().unwrap_or_default();
                             let partition_result = context.partition_result.as_ref().expect("Guaranteed to have a value by earlier checks.");
                             ::std::result::Result::Ok(
@@ -7287,7 +9110,7 @@ impl DefaultResolver {
                                     .build(),
                             )
                         }
-                        73 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
+                        95 => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
                             "Invalid Configuration: Missing Region".to_string(),
                         )) as ::aws_smithy_runtime_api::box_error::BoxError),
                         _ => ::std::result::Result::Err(Box::new(::aws_smithy_http::endpoint::ResolveEndpointError::message(
@@ -7402,7 +9225,8 @@ impl DefaultResolver {
                         9 => endpoint.is_some(),
                         10 => stream_arn.is_some(),
                         11 => consumer_arn.is_some(),
-                        12 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        12 => resource_arn.is_some(),
+                        13 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let arn_ssa_2 = &mut context.arn_ssa_2;
                             let partition_resolver = &self.partition_resolver;
                             {
@@ -7414,7 +9238,75 @@ impl DefaultResolver {
                                 arn_ssa_2.is_some()
                             }
                         })(&mut _diagnostic_collector),
-                        13 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        14 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_4 = &mut context.arn_ssa_4;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *arn_ssa_4 = crate::endpoint_lib::arn::parse_arn(
+                                    if let Some(param) = resource_arn { param } else { return false },
+                                    _diagnostic_collector,
+                                )
+                                .map(|inner| inner.into());
+                                arn_ssa_4.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        15 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_4 = &context.arn_ssa_4;
+                            let iso_arn_type = &mut context.iso_arn_type;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *iso_arn_type = if let Some(inner) = arn_ssa_4 {
+                                    inner.resource_id().first().cloned()
+                                } else {
+                                    return false;
+                                }
+                                .map(|inner| inner.into());
+                                iso_arn_type.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        16 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_2 = &context.arn_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(inner) = arn_ssa_2 { inner.account_id() } else { return false },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        17 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_2 = &context.arn_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(inner) = arn_ssa_2 { inner.region() } else { return false },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        18 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_2 = &context.arn_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = arn_ssa_2 { inner.service() } else { return false }) == ("kinesis")
+                        })(&mut _diagnostic_collector),
+                        19 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_2 = &context.arn_ssa_2;
+                            let arn_type_ssa_2 = &mut context.arn_type_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *arn_type_ssa_2 = if let Some(inner) = arn_ssa_2 {
+                                    inner.resource_id().first().cloned()
+                                } else {
+                                    return false;
+                                }
+                                .map(|inner| inner.into());
+                                arn_type_ssa_2.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        20 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_type_ssa_2 = &context.arn_type_ssa_2;
+                            let partition_resolver = &self.partition_resolver;
+                            (arn_type_ssa_2) == &mut Some(("".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        21 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let https_custom_endpoint_suffix_value = &mut context.https_custom_endpoint_suffix_value;
                             let partition_resolver = &self.partition_resolver;
                             {
@@ -7429,24 +9321,7 @@ impl DefaultResolver {
                                 https_custom_endpoint_suffix_value.is_some()
                             }
                         })(&mut _diagnostic_collector),
-                        14 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let partition_resolver = &self.partition_resolver;
-                            (crate::endpoint_lib::coalesce::coalesce!(
-                                if let Some(inner) = crate::endpoint_lib::substring::substring(
-                                    if let Some(param) = endpoint { param } else { return false },
-                                    15,
-                                    16,
-                                    false,
-                                    _diagnostic_collector
-                                ) {
-                                    inner
-                                } else {
-                                    return false;
-                                },
-                                "".to_string()
-                            )) == ("-")
-                        })(&mut _diagnostic_collector),
-                        15 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        22 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let partition_resolver = &self.partition_resolver;
                             (crate::endpoint_lib::coalesce::coalesce!(
                                 if let Some(inner) = crate::endpoint_lib::substring::substring(
@@ -7463,7 +9338,24 @@ impl DefaultResolver {
                                 "".to_string()
                             )) == (".")
                         })(&mut _diagnostic_collector),
-                        16 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        23 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::coalesce::coalesce!(
+                                if let Some(inner) = crate::endpoint_lib::substring::substring(
+                                    if let Some(param) = endpoint { param } else { return false },
+                                    15,
+                                    16,
+                                    false,
+                                    _diagnostic_collector
+                                ) {
+                                    inner
+                                } else {
+                                    return false;
+                                },
+                                "".to_string()
+                            )) == ("-")
+                        })(&mut _diagnostic_collector),
+                        24 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let plain_custom_endpoint_suffix_value = &mut context.plain_custom_endpoint_suffix_value;
                             let partition_resolver = &self.partition_resolver;
                             {
@@ -7478,82 +9370,10 @@ impl DefaultResolver {
                                 plain_custom_endpoint_suffix_value.is_some()
                             }
                         })(&mut _diagnostic_collector),
-                        17 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let arn_ssa_2 = &context.arn_ssa_2;
-                            let partition_resolver = &self.partition_resolver;
-                            crate::endpoint_lib::host::is_valid_host_label(
-                                if let Some(inner) = arn_ssa_2 { inner.account_id() } else { return false },
-                                false,
-                                _diagnostic_collector,
-                            )
-                        })(&mut _diagnostic_collector),
-                        18 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let arn_ssa_2 = &context.arn_ssa_2;
-                            let partition_resolver = &self.partition_resolver;
-                            crate::endpoint_lib::host::is_valid_host_label(
-                                if let Some(inner) = arn_ssa_2 { inner.region() } else { return false },
-                                false,
-                                _diagnostic_collector,
-                            )
-                        })(&mut _diagnostic_collector),
-                        19 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let arn_ssa_2 = &context.arn_ssa_2;
-                            let partition_resolver = &self.partition_resolver;
-                            (if let Some(inner) = arn_ssa_2 { inner.service() } else { return false }) == ("kinesis")
-                        })(&mut _diagnostic_collector),
-                        20 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let arn_ssa_2 = &context.arn_ssa_2;
-                            let arn_type_ssa_2 = &mut context.arn_type_ssa_2;
-                            let partition_resolver = &self.partition_resolver;
-                            {
-                                *arn_type_ssa_2 = if let Some(inner) = arn_ssa_2 {
-                                    inner.resource_id().first().cloned()
-                                } else {
-                                    return false;
-                                }
-                                .map(|inner| inner.into());
-                                arn_type_ssa_2.is_some()
-                            }
-                        })(&mut _diagnostic_collector),
-                        21 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let arn_type_ssa_2 = &context.arn_type_ssa_2;
-                            let partition_resolver = &self.partition_resolver;
-                            (arn_type_ssa_2) == &mut Some(("".to_string().into()))
-                        })(&mut _diagnostic_collector),
-                        22 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let arn_ssa_4 = &mut context.arn_ssa_4;
-                            let partition_resolver = &self.partition_resolver;
-                            {
-                                *arn_ssa_4 = crate::endpoint_lib::arn::parse_arn(
-                                    if let Some(param) = stream_arn { param } else { return false },
-                                    _diagnostic_collector,
-                                )
-                                .map(|inner| inner.into());
-                                arn_ssa_4.is_some()
-                            }
-                        })(&mut _diagnostic_collector),
-                        23 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let arn_ssa_4 = &context.arn_ssa_4;
-                            let partition_resolver = &self.partition_resolver;
-                            crate::endpoint_lib::host::is_valid_host_label(
-                                if let Some(inner) = arn_ssa_4 { inner.account_id() } else { return false },
-                                false,
-                                _diagnostic_collector,
-                            )
-                        })(&mut _diagnostic_collector),
-                        24 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        25 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let arn_type_ssa_2 = &context.arn_type_ssa_2;
                             let partition_resolver = &self.partition_resolver;
                             (arn_type_ssa_2) == &mut Some(("stream".to_string().into()))
-                        })(&mut _diagnostic_collector),
-                        25 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let arn_ssa_4 = &context.arn_ssa_4;
-                            let partition_resolver = &self.partition_resolver;
-                            crate::endpoint_lib::host::is_valid_host_label(
-                                if let Some(inner) = arn_ssa_4 { inner.region() } else { return false },
-                                false,
-                                _diagnostic_collector,
-                            )
                         })(&mut _diagnostic_collector),
                         26 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let partition_result = &context.partition_result;
@@ -7566,16 +9386,46 @@ impl DefaultResolver {
                             }) == (if let Some(inner) = arn_ssa_2 { inner.partition() } else { return false })
                         })(&mut _diagnostic_collector),
                         27 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let arn_ssa_4 = &context.arn_ssa_4;
+                            let arn_ssa_5 = &mut context.arn_ssa_5;
                             let partition_resolver = &self.partition_resolver;
-                            (if let Some(inner) = arn_ssa_4 { inner.service() } else { return false }) == ("kinesis")
+                            {
+                                *arn_ssa_5 = crate::endpoint_lib::arn::parse_arn(
+                                    if let Some(param) = stream_arn { param } else { return false },
+                                    _diagnostic_collector,
+                                )
+                                .map(|inner| inner.into());
+                                arn_ssa_5.is_some()
+                            }
                         })(&mut _diagnostic_collector),
                         28 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let arn_ssa_4 = &context.arn_ssa_4;
+                            let arn_ssa_5 = &context.arn_ssa_5;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(inner) = arn_ssa_5 { inner.account_id() } else { return false },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        29 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_5 = &context.arn_ssa_5;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(inner) = arn_ssa_5 { inner.region() } else { return false },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        30 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_5 = &context.arn_ssa_5;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = arn_ssa_5 { inner.service() } else { return false }) == ("kinesis")
+                        })(&mut _diagnostic_collector),
+                        31 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_5 = &context.arn_ssa_5;
                             let arn_type_ssa_1 = &mut context.arn_type_ssa_1;
                             let partition_resolver = &self.partition_resolver;
                             {
-                                *arn_type_ssa_1 = if let Some(inner) = arn_ssa_4 {
+                                *arn_type_ssa_1 = if let Some(inner) = arn_ssa_5 {
                                     inner.resource_id().first().cloned()
                                 } else {
                                     return false;
@@ -7584,16 +9434,115 @@ impl DefaultResolver {
                                 arn_type_ssa_1.is_some()
                             }
                         })(&mut _diagnostic_collector),
-                        29 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        32 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let arn_type_ssa_1 = &context.arn_type_ssa_1;
                             let partition_resolver = &self.partition_resolver;
                             (arn_type_ssa_1) == &mut Some(("".to_string().into()))
                         })(&mut _diagnostic_collector),
-                        30 => resource_arn.is_some(),
-                        31 => channel_arn.is_some(),
-                        32 => account_id_endpoint_mode.is_some(),
-                        33 => account_id.is_some(),
+                        33 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let iso_arn_type = &context.iso_arn_type;
+                            let partition_resolver = &self.partition_resolver;
+                            (iso_arn_type) == &mut Some(("queue".to_string().into()))
+                        })(&mut _diagnostic_collector),
                         34 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_4 = &context.arn_ssa_4;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(inner) = arn_ssa_4 { inner.account_id() } else { return false },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        35 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_type_ssa_1 = &context.arn_type_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            (arn_type_ssa_1) == &mut Some(("stream".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        36 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_4 = &context.arn_ssa_4;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(inner) = arn_ssa_4 { inner.region() } else { return false },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        37 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let arn_ssa_5 = &context.arn_ssa_5;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == (if let Some(inner) = arn_ssa_5 { inner.partition() } else { return false })
+                        })(&mut _diagnostic_collector),
+                        38 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_4 = &context.arn_ssa_4;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = arn_ssa_4 { inner.service() } else { return false }) == ("kinesis")
+                        })(&mut _diagnostic_collector),
+                        39 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_4 = &context.arn_ssa_4;
+                            let arn_type_ssa_3 = &mut context.arn_type_ssa_3;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *arn_type_ssa_3 = if let Some(inner) = arn_ssa_4 {
+                                    inner.resource_id().first().cloned()
+                                } else {
+                                    return false;
+                                }
+                                .map(|inner| inner.into());
+                                arn_type_ssa_3.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        40 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_type_ssa_3 = &context.arn_type_ssa_3;
+                            let partition_resolver = &self.partition_resolver;
+                            (arn_type_ssa_3) == &mut Some(("".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        41 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_type_ssa_3 = &context.arn_type_ssa_3;
+                            let partition_resolver = &self.partition_resolver;
+                            (arn_type_ssa_3) == &mut Some(("stream".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        42 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_type_ssa_3 = &context.arn_type_ssa_3;
+                            let partition_resolver = &self.partition_resolver;
+                            (arn_type_ssa_3) == &mut Some(("channel".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        43 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_type_ssa_3 = &context.arn_type_ssa_3;
+                            let partition_resolver = &self.partition_resolver;
+                            (arn_type_ssa_3) == &mut Some(("queue".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        44 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let arn_ssa_4 = &context.arn_ssa_4;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == (if let Some(inner) = arn_ssa_4 { inner.partition() } else { return false })
+                        })(&mut _diagnostic_collector),
+                        45 => channel_arn.is_some(),
+                        46 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_4 = &context.arn_ssa_4;
+                            let resource_id_ssa_1 = &mut context.resource_id_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *resource_id_ssa_1 = if let Some(inner) = arn_ssa_4 {
+                                    inner.resource_id().get(1).cloned()
+                                } else {
+                                    return false;
+                                }
+                                .map(|inner| inner.into());
+                                resource_id_ssa_1.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        47 => queue_arn.is_some(),
+                        48 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let arn_ssa_1 = &mut context.arn_ssa_1;
                             let partition_resolver = &self.partition_resolver;
                             {
@@ -7605,19 +9554,8 @@ impl DefaultResolver {
                                 arn_ssa_1.is_some()
                             }
                         })(&mut _diagnostic_collector),
-                        35 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let partition_resolver = &self.partition_resolver;
-                            (account_id_endpoint_mode) == &mut Some(("disabled".to_string().into()))
-                        })(&mut _diagnostic_collector),
-                        36 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let partition_resolver = &self.partition_resolver;
-                            crate::endpoint_lib::host::is_valid_host_label(
-                                if let Some(param) = account_id { param } else { return false },
-                                false,
-                                _diagnostic_collector,
-                            )
-                        })(&mut _diagnostic_collector),
-                        37 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        49 => account_id_endpoint_mode.is_some(),
+                        50 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let arn_ssa_1 = &context.arn_ssa_1;
                             let partition_resolver = &self.partition_resolver;
                             crate::endpoint_lib::host::is_valid_host_label(
@@ -7626,7 +9564,7 @@ impl DefaultResolver {
                                 _diagnostic_collector,
                             )
                         })(&mut _diagnostic_collector),
-                        38 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        51 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let arn_ssa_1 = &context.arn_ssa_1;
                             let partition_resolver = &self.partition_resolver;
                             crate::endpoint_lib::host::is_valid_host_label(
@@ -7635,12 +9573,29 @@ impl DefaultResolver {
                                 _diagnostic_collector,
                             )
                         })(&mut _diagnostic_collector),
-                        39 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        52 => account_id.is_some(),
+                        53 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (account_id_endpoint_mode) == &mut Some(("disabled".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        54 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (account_id_endpoint_mode) == &mut Some(("required".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        55 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(param) = account_id { param } else { return false },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        56 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let arn_ssa_1 = &context.arn_ssa_1;
                             let partition_resolver = &self.partition_resolver;
                             (if let Some(inner) = arn_ssa_1 { inner.service() } else { return false }) == ("kinesis")
                         })(&mut _diagnostic_collector),
-                        40 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        57 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let arn_ssa_1 = &context.arn_ssa_1;
                             let arn_type_ssa_4 = &mut context.arn_type_ssa_4;
                             let partition_resolver = &self.partition_resolver;
@@ -7654,39 +9609,28 @@ impl DefaultResolver {
                                 arn_type_ssa_4.is_some()
                             }
                         })(&mut _diagnostic_collector),
-                        41 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        58 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let arn_type_ssa_4 = &context.arn_type_ssa_4;
                             let partition_resolver = &self.partition_resolver;
                             (arn_type_ssa_4) == &mut Some(("".to_string().into()))
                         })(&mut _diagnostic_collector),
-                        42 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let arn_type_ssa_4 = &context.arn_type_ssa_4;
+                        59 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let partition_resolver = &self.partition_resolver;
-                            (arn_type_ssa_4) == &mut Some(("channel".to_string().into()))
+                            (resource_type) == ("queue")
                         })(&mut _diagnostic_collector),
-                        43 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let partition_result = &context.partition_result;
-                            let arn_ssa_1 = &context.arn_ssa_1;
-                            let partition_resolver = &self.partition_resolver;
-                            (if let Some(inner) = partition_result {
-                                inner.name()
-                            } else {
-                                return false;
-                            }) == (if let Some(inner) = arn_ssa_1 { inner.partition() } else { return false })
-                        })(&mut _diagnostic_collector),
-                        44 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        60 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let arn_ssa_3 = &mut context.arn_ssa_3;
                             let partition_resolver = &self.partition_resolver;
                             {
                                 *arn_ssa_3 = crate::endpoint_lib::arn::parse_arn(
-                                    if let Some(param) = resource_arn { param } else { return false },
+                                    if let Some(param) = queue_arn { param } else { return false },
                                     _diagnostic_collector,
                                 )
                                 .map(|inner| inner.into());
                                 arn_ssa_3.is_some()
                             }
                         })(&mut _diagnostic_collector),
-                        45 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        61 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let arn_ssa_3 = &context.arn_ssa_3;
                             let partition_resolver = &self.partition_resolver;
                             crate::endpoint_lib::host::is_valid_host_label(
@@ -7695,7 +9639,7 @@ impl DefaultResolver {
                                 _diagnostic_collector,
                             )
                         })(&mut _diagnostic_collector),
-                        46 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        62 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let arn_ssa_3 = &context.arn_ssa_3;
                             let partition_resolver = &self.partition_resolver;
                             crate::endpoint_lib::host::is_valid_host_label(
@@ -7704,41 +9648,36 @@ impl DefaultResolver {
                                 _diagnostic_collector,
                             )
                         })(&mut _diagnostic_collector),
-                        47 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        63 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let arn_ssa_3 = &context.arn_ssa_3;
                             let partition_resolver = &self.partition_resolver;
                             (if let Some(inner) = arn_ssa_3 { inner.service() } else { return false }) == ("kinesis")
                         })(&mut _diagnostic_collector),
-                        48 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        64 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let arn_ssa_3 = &context.arn_ssa_3;
-                            let arn_type_ssa_3 = &mut context.arn_type_ssa_3;
+                            let arn_type_ssa_5 = &mut context.arn_type_ssa_5;
                             let partition_resolver = &self.partition_resolver;
                             {
-                                *arn_type_ssa_3 = if let Some(inner) = arn_ssa_3 {
+                                *arn_type_ssa_5 = if let Some(inner) = arn_ssa_3 {
                                     inner.resource_id().first().cloned()
                                 } else {
                                     return false;
                                 }
                                 .map(|inner| inner.into());
-                                arn_type_ssa_3.is_some()
+                                arn_type_ssa_5.is_some()
                             }
                         })(&mut _diagnostic_collector),
-                        49 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let arn_type_ssa_3 = &context.arn_type_ssa_3;
+                        65 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_type_ssa_5 = &context.arn_type_ssa_5;
                             let partition_resolver = &self.partition_resolver;
-                            (arn_type_ssa_3) == &mut Some(("".to_string().into()))
+                            (arn_type_ssa_5) == &mut Some(("".to_string().into()))
                         })(&mut _diagnostic_collector),
-                        50 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let arn_type_ssa_3 = &context.arn_type_ssa_3;
+                        66 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_type_ssa_5 = &context.arn_type_ssa_5;
                             let partition_resolver = &self.partition_resolver;
-                            (arn_type_ssa_3) == &mut Some(("stream".to_string().into()))
+                            (arn_type_ssa_5) == &mut Some(("queue".to_string().into()))
                         })(&mut _diagnostic_collector),
-                        51 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let arn_type_ssa_3 = &context.arn_type_ssa_3;
-                            let partition_resolver = &self.partition_resolver;
-                            (arn_type_ssa_3) == &mut Some(("channel".to_string().into()))
-                        })(&mut _diagnostic_collector),
-                        52 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        67 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let partition_result = &context.partition_result;
                             let arn_ssa_3 = &context.arn_ssa_3;
                             let partition_resolver = &self.partition_resolver;
@@ -7748,41 +9687,7 @@ impl DefaultResolver {
                                 return false;
                             }) == (if let Some(inner) = arn_ssa_3 { inner.partition() } else { return false })
                         })(&mut _diagnostic_collector),
-                        53 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let arn_type_ssa_1 = &context.arn_type_ssa_1;
-                            let partition_resolver = &self.partition_resolver;
-                            (arn_type_ssa_1) == &mut Some(("stream".to_string().into()))
-                        })(&mut _diagnostic_collector),
-                        54 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let partition_result = &context.partition_result;
-                            let arn_ssa_4 = &context.arn_ssa_4;
-                            let partition_resolver = &self.partition_resolver;
-                            (if let Some(inner) = partition_result {
-                                inner.name()
-                            } else {
-                                return false;
-                            }) == (if let Some(inner) = arn_ssa_4 { inner.partition() } else { return false })
-                        })(&mut _diagnostic_collector),
-                        55 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let partition_resolver = &self.partition_resolver;
-                            (account_id_endpoint_mode) == &mut Some(("required".to_string().into()))
-                        })(&mut _diagnostic_collector),
-                        56 => operation_type.is_some(),
-                        57 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let arn_ssa_3 = &context.arn_ssa_3;
-                            let resource_id_ssa_1 = &mut context.resource_id_ssa_1;
-                            let partition_resolver = &self.partition_resolver;
-                            {
-                                *resource_id_ssa_1 = if let Some(inner) = arn_ssa_3 {
-                                    inner.resource_id().get(1).cloned()
-                                } else {
-                                    return false;
-                                }
-                                .map(|inner| inner.into());
-                                resource_id_ssa_1.is_some()
-                            }
-                        })(&mut _diagnostic_collector),
-                        58 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        68 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let resource_id_ssa_1 = &context.resource_id_ssa_1;
                             let partition_resolver = &self.partition_resolver;
                             crate::endpoint_lib::host::is_valid_host_label(
@@ -7791,7 +9696,23 @@ impl DefaultResolver {
                                 _diagnostic_collector,
                             )
                         })(&mut _diagnostic_collector),
-                        59 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        69 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_type_ssa_4 = &context.arn_type_ssa_4;
+                            let partition_resolver = &self.partition_resolver;
+                            (arn_type_ssa_4) == &mut Some(("channel".to_string().into()))
+                        })(&mut _diagnostic_collector),
+                        70 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_result = &context.partition_result;
+                            let arn_ssa_1 = &context.arn_ssa_1;
+                            let partition_resolver = &self.partition_resolver;
+                            (if let Some(inner) = partition_result {
+                                inner.name()
+                            } else {
+                                return false;
+                            }) == (if let Some(inner) = arn_ssa_1 { inner.partition() } else { return false })
+                        })(&mut _diagnostic_collector),
+                        71 => operation_type.is_some(),
+                        72 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let arn_ssa_1 = &context.arn_ssa_1;
                             let resource_id_ssa_2 = &mut context.resource_id_ssa_2;
                             let partition_resolver = &self.partition_resolver;
@@ -7805,7 +9726,30 @@ impl DefaultResolver {
                                 resource_id_ssa_2.is_some()
                             }
                         })(&mut _diagnostic_collector),
-                        60 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        73 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_3 = &context.arn_ssa_3;
+                            let resource_id_ssa_3 = &mut context.resource_id_ssa_3;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *resource_id_ssa_3 = if let Some(inner) = arn_ssa_3 {
+                                    inner.resource_id().get(1).cloned()
+                                } else {
+                                    return false;
+                                }
+                                .map(|inner| inner.into());
+                                resource_id_ssa_3.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        74 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let resource_id_ssa_3 = &context.resource_id_ssa_3;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(param) = resource_id_ssa_3 { param } else { return false },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        75 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let resource_id_ssa_2 = &context.resource_id_ssa_2;
                             let partition_resolver = &self.partition_resolver;
                             crate::endpoint_lib::host::is_valid_host_label(
@@ -7814,30 +9758,36 @@ impl DefaultResolver {
                                 _diagnostic_collector,
                             )
                         })(&mut _diagnostic_collector),
-                        61 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        76 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let arn_ssa_4 = &context.arn_ssa_4;
+                            let iso_resource_id = &mut context.iso_resource_id;
+                            let partition_resolver = &self.partition_resolver;
+                            {
+                                *iso_resource_id = if let Some(inner) = arn_ssa_4 {
+                                    inner.resource_id().get(1).cloned()
+                                } else {
+                                    return false;
+                                }
+                                .map(|inner| inner.into());
+                                iso_resource_id.is_some()
+                            }
+                        })(&mut _diagnostic_collector),
+                        77 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let iso_resource_id = &context.iso_resource_id;
+                            let partition_resolver = &self.partition_resolver;
+                            crate::endpoint_lib::host::is_valid_host_label(
+                                if let Some(param) = iso_resource_id { param } else { return false },
+                                false,
+                                _diagnostic_collector,
+                            )
+                        })(&mut _diagnostic_collector),
+                        78 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let partition_resolver = &self.partition_resolver;
                             (operation_type) == &mut Some(("data".to_string().into()))
                         })(&mut _diagnostic_collector),
-                        62 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
-                            let partition_resolver = &self.partition_resolver;
-                            (crate::endpoint_lib::coalesce::coalesce!(
-                                if let Some(inner) = crate::endpoint_lib::substring::substring(
-                                    if let Some(param) = endpoint { param } else { return false },
-                                    7,
-                                    8,
-                                    false,
-                                    _diagnostic_collector
-                                ) {
-                                    inner
-                                } else {
-                                    return false;
-                                },
-                                "".to_string()
-                            )) == ("-")
-                        })(&mut _diagnostic_collector),
-                        63 => (use_fips) == (&true),
-                        64 => (use_dual_stack) == (&true),
-                        65 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        79 => (use_fips) == (&true),
+                        80 => (use_dual_stack) == (&true),
+                        81 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let partition_result = &context.partition_result;
                             let partition_resolver = &self.partition_resolver;
                             (if let Some(inner) = partition_result {
@@ -7846,7 +9796,7 @@ impl DefaultResolver {
                                 return false;
                             }) == (true)
                         })(&mut _diagnostic_collector),
-                        66 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        82 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let partition_result = &context.partition_result;
                             let partition_resolver = &self.partition_resolver;
                             (if let Some(inner) = partition_result {
@@ -7855,7 +9805,7 @@ impl DefaultResolver {
                                 return false;
                             }) == (true)
                         })(&mut _diagnostic_collector),
-                        67 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        83 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let partition_result = &context.partition_result;
                             let partition_resolver = &self.partition_resolver;
                             (if let Some(inner) = partition_result {
@@ -7864,7 +9814,7 @@ impl DefaultResolver {
                                 return false;
                             }) == ("aws-us-gov")
                         })(&mut _diagnostic_collector),
-                        68 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                        84 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
                             let partition_resolver = &self.partition_resolver;
                             (crate::endpoint_lib::coalesce::coalesce!(
                                 if let Some(inner) = crate::endpoint_lib::substring::substring(
@@ -7880,6 +9830,23 @@ impl DefaultResolver {
                                 },
                                 "".to_string()
                             )) == (".")
+                        })(&mut _diagnostic_collector),
+                        85 => (|_diagnostic_collector: &mut crate::endpoint_lib::diagnostic::DiagnosticCollector| -> bool {
+                            let partition_resolver = &self.partition_resolver;
+                            (crate::endpoint_lib::coalesce::coalesce!(
+                                if let Some(inner) = crate::endpoint_lib::substring::substring(
+                                    if let Some(param) = endpoint { param } else { return false },
+                                    7,
+                                    8,
+                                    false,
+                                    _diagnostic_collector
+                                ) {
+                                    inner
+                                } else {
+                                    return false;
+                                },
+                                "".to_string()
+                            )) == ("-")
                         })(&mut _diagnostic_collector),
                         _ => unreachable!("Invalid condition index"),
                     };
@@ -7907,7 +9874,7 @@ impl crate::config::endpoint::ResolveEndpoint for DefaultResolver {
         ::aws_smithy_runtime_api::client::endpoint::EndpointFuture::ready(result)
     }
 }
-const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 155] = [
+const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 237] = [
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: -1,
         high_ref: 1,
@@ -7920,768 +9887,1178 @@ const NODES: [crate::endpoint_lib::bdd_interpreter::BddNode; 155] = [
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 1,
-        high_ref: 5,
+        high_ref: 7,
         low_ref: 4,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 9,
-        high_ref: 154,
-        low_ref: 100000073,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 2,
-        high_ref: 143,
-        low_ref: 6,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 3,
-        high_ref: 143,
-        low_ref: 7,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 4,
-        high_ref: 8,
-        low_ref: 12,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 5,
-        high_ref: 9,
-        low_ref: 12,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 6,
-        high_ref: 10,
-        low_ref: 12,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 7,
-        high_ref: 11,
-        low_ref: 12,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 8,
-        high_ref: 109,
-        low_ref: 12,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 9,
-        high_ref: 154,
-        low_ref: 13,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 10,
-        high_ref: 93,
-        low_ref: 14,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 11,
-        high_ref: 77,
-        low_ref: 15,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 30,
-        high_ref: 49,
-        low_ref: 16,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 31,
-        high_ref: 30,
-        low_ref: 17,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 32,
-        high_ref: 18,
-        low_ref: 146,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 33,
-        high_ref: 19,
-        low_ref: 29,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 35,
-        high_ref: 29,
-        low_ref: 20,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 36,
-        high_ref: 21,
-        low_ref: 100000061,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 56,
-        high_ref: 22,
-        low_ref: 100000017,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 63,
-        high_ref: 25,
-        low_ref: 23,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 64,
-        high_ref: 24,
-        low_ref: 100000060,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 66,
-        high_ref: 100000059,
-        low_ref: 100000007,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 64,
-        high_ref: 27,
-        low_ref: 26,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 65,
-        high_ref: 100000058,
-        low_ref: 100000005,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 65,
-        high_ref: 28,
-        low_ref: 100000003,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 66,
-        high_ref: 100000057,
-        low_ref: 100000002,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 55,
-        high_ref: 100000062,
-        low_ref: 146,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 34,
-        high_ref: 31,
-        low_ref: 100000028,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 37,
-        high_ref: 32,
-        low_ref: 100000027,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 38,
-        high_ref: 33,
-        low_ref: 100000026,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 39,
-        high_ref: 34,
-        low_ref: 100000056,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 40,
-        high_ref: 35,
-        low_ref: 100000024,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 41,
-        high_ref: 100000024,
-        low_ref: 36,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 42,
-        high_ref: 37,
-        low_ref: 100000055,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 43,
-        high_ref: 38,
-        low_ref: 100000054,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 56,
-        high_ref: 39,
-        low_ref: 100000017,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 59,
-        high_ref: 40,
-        low_ref: 100000046,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 60,
-        high_ref: 41,
-        low_ref: 100000045,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 61,
-        high_ref: 100000053,
-        low_ref: 42,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 63,
-        high_ref: 45,
-        low_ref: 43,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 64,
-        high_ref: 44,
-        low_ref: 100000052,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 66,
-        high_ref: 100000051,
-        low_ref: 100000007,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 64,
-        high_ref: 47,
-        low_ref: 46,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 65,
-        high_ref: 100000050,
-        low_ref: 100000005,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 65,
-        high_ref: 48,
-        low_ref: 100000003,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 66,
-        high_ref: 100000049,
-        low_ref: 100000002,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 44,
-        high_ref: 50,
-        low_ref: 100000028,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 45,
-        high_ref: 51,
-        low_ref: 100000027,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 46,
-        high_ref: 52,
-        low_ref: 100000026,
+        high_ref: 236,
+        low_ref: 5,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 47,
-        high_ref: 53,
-        low_ref: 100000048,
+        high_ref: 6,
+        low_ref: 100000095,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 48,
-        high_ref: 54,
-        low_ref: 100000024,
+        condition_index: 59,
+        high_ref: 100000095,
+        low_ref: 100000074,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 2,
+        high_ref: 193,
+        low_ref: 8,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 3,
+        high_ref: 193,
+        low_ref: 9,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 4,
+        high_ref: 10,
+        low_ref: 14,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 5,
+        high_ref: 11,
+        low_ref: 14,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 6,
+        high_ref: 12,
+        low_ref: 14,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 7,
+        high_ref: 13,
+        low_ref: 14,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 8,
+        high_ref: 156,
+        low_ref: 14,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 9,
+        high_ref: 236,
+        low_ref: 15,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 10,
+        high_ref: 140,
+        low_ref: 16,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 11,
+        high_ref: 124,
+        low_ref: 17,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 12,
+        high_ref: 80,
+        low_ref: 18,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 45,
+        high_ref: 61,
+        low_ref: 19,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 47,
+        high_ref: 42,
+        low_ref: 20,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 49,
-        high_ref: 100000024,
-        low_ref: 55,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 50,
-        high_ref: 68,
-        low_ref: 56,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 51,
-        high_ref: 57,
-        low_ref: 100000036,
+        high_ref: 21,
+        low_ref: 201,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 52,
-        high_ref: 58,
-        low_ref: 100000047,
+        high_ref: 22,
+        low_ref: 41,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 56,
-        high_ref: 59,
+        condition_index: 53,
+        high_ref: 41,
+        low_ref: 23,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 55,
+        high_ref: 24,
+        low_ref: 100000083,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 59,
+        high_ref: 33,
+        low_ref: 25,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 71,
+        high_ref: 26,
         low_ref: 100000017,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 57,
-        high_ref: 60,
-        low_ref: 100000046,
+        condition_index: 79,
+        high_ref: 29,
+        low_ref: 27,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 58,
-        high_ref: 61,
-        low_ref: 100000045,
+        condition_index: 80,
+        high_ref: 28,
+        low_ref: 100000082,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 63,
-        high_ref: 64,
-        low_ref: 62,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 64,
-        high_ref: 63,
-        low_ref: 100000044,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 66,
-        high_ref: 100000043,
+        condition_index: 82,
+        high_ref: 100000081,
         low_ref: 100000007,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 64,
-        high_ref: 66,
-        low_ref: 65,
+        condition_index: 80,
+        high_ref: 31,
+        low_ref: 30,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 65,
-        high_ref: 100000042,
+        condition_index: 81,
+        high_ref: 100000080,
         low_ref: 100000005,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 65,
-        high_ref: 67,
+        condition_index: 81,
+        high_ref: 32,
         low_ref: 100000003,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 66,
-        high_ref: 100000041,
+        condition_index: 82,
+        high_ref: 100000079,
         low_ref: 100000002,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 52,
-        high_ref: 69,
-        low_ref: 100000047,
+        condition_index: 71,
+        high_ref: 34,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 79,
+        high_ref: 37,
+        low_ref: 35,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 80,
+        high_ref: 36,
+        low_ref: 100000078,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 82,
+        high_ref: 100000077,
+        low_ref: 100000007,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 80,
+        high_ref: 39,
+        low_ref: 38,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 81,
+        high_ref: 100000076,
+        low_ref: 100000005,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 81,
+        high_ref: 40,
+        low_ref: 100000003,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 82,
+        high_ref: 100000075,
+        low_ref: 100000002,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 54,
+        high_ref: 100000084,
+        low_ref: 201,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 59,
+        high_ref: 43,
+        low_ref: 100000074,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 60,
+        high_ref: 44,
+        low_ref: 100000028,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 61,
+        high_ref: 45,
+        low_ref: 100000027,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 62,
+        high_ref: 46,
+        low_ref: 100000026,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 63,
+        high_ref: 47,
+        low_ref: 100000073,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 64,
+        high_ref: 48,
+        low_ref: 100000024,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 65,
+        high_ref: 100000024,
+        low_ref: 49,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 66,
+        high_ref: 50,
+        low_ref: 100000072,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 67,
+        high_ref: 51,
+        low_ref: 100000071,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 71,
+        high_ref: 52,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 73,
+        high_ref: 53,
+        low_ref: 100000052,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 74,
+        high_ref: 54,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 79,
+        high_ref: 57,
+        low_ref: 55,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 80,
+        high_ref: 56,
+        low_ref: 100000070,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 82,
+        high_ref: 100000069,
+        low_ref: 100000007,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 80,
+        high_ref: 59,
+        low_ref: 58,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 81,
+        high_ref: 100000068,
+        low_ref: 100000005,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 81,
+        high_ref: 60,
+        low_ref: 100000003,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 82,
+        high_ref: 100000067,
+        low_ref: 100000002,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 48,
+        high_ref: 62,
+        low_ref: 100000028,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 50,
+        high_ref: 63,
+        low_ref: 100000027,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 51,
+        high_ref: 64,
+        low_ref: 100000026,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 56,
+        high_ref: 65,
+        low_ref: 100000066,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 57,
+        high_ref: 66,
+        low_ref: 100000024,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 58,
+        high_ref: 100000024,
+        low_ref: 67,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 69,
+        high_ref: 68,
+        low_ref: 100000065,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 70,
+        high_ref: 69,
+        low_ref: 100000064,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 71,
         high_ref: 70,
         low_ref: 100000017,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 63,
-        high_ref: 73,
-        low_ref: 71,
+        condition_index: 72,
+        high_ref: 71,
+        low_ref: 100000046,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 64,
+        condition_index: 75,
         high_ref: 72,
-        low_ref: 100000040,
+        low_ref: 100000045,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 66,
-        high_ref: 100000039,
-        low_ref: 100000007,
+        condition_index: 78,
+        high_ref: 100000063,
+        low_ref: 73,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 64,
-        high_ref: 75,
+        condition_index: 79,
+        high_ref: 76,
         low_ref: 74,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 65,
-        high_ref: 100000038,
+        condition_index: 80,
+        high_ref: 75,
+        low_ref: 100000062,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 82,
+        high_ref: 100000061,
+        low_ref: 100000007,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 80,
+        high_ref: 78,
+        low_ref: 77,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 81,
+        high_ref: 100000060,
         low_ref: 100000005,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 65,
-        high_ref: 76,
+        condition_index: 81,
+        high_ref: 79,
         low_ref: 100000003,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 66,
-        high_ref: 100000037,
+        condition_index: 82,
+        high_ref: 100000059,
         low_ref: 100000002,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 12,
-        high_ref: 78,
+        condition_index: 14,
+        high_ref: 81,
         low_ref: 100000028,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 17,
-        high_ref: 79,
+        condition_index: 34,
+        high_ref: 82,
         low_ref: 100000027,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 18,
-        high_ref: 80,
+        condition_index: 36,
+        high_ref: 83,
         low_ref: 100000026,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 19,
-        high_ref: 81,
-        low_ref: 100000035,
+        condition_index: 38,
+        high_ref: 84,
+        low_ref: 100000054,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 20,
-        high_ref: 82,
+        condition_index: 39,
+        high_ref: 85,
         low_ref: 100000024,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 21,
+        condition_index: 40,
         high_ref: 100000024,
-        low_ref: 83,
+        low_ref: 86,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 24,
-        high_ref: 84,
-        low_ref: 100000034,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 26,
-        high_ref: 85,
-        low_ref: 100000033,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 56,
-        high_ref: 86,
-        low_ref: 100000017,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 63,
-        high_ref: 89,
+        condition_index: 41,
+        high_ref: 115,
         low_ref: 87,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 64,
-        high_ref: 88,
-        low_ref: 100000032,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 66,
-        high_ref: 100000031,
-        low_ref: 100000007,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 64,
-        high_ref: 91,
-        low_ref: 90,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 65,
-        high_ref: 100000030,
-        low_ref: 100000005,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 65,
-        high_ref: 92,
-        low_ref: 100000003,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 66,
-        high_ref: 100000029,
-        low_ref: 100000002,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 22,
-        high_ref: 94,
-        low_ref: 100000028,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 23,
-        high_ref: 95,
-        low_ref: 100000027,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 25,
-        high_ref: 96,
-        low_ref: 100000026,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 27,
-        high_ref: 97,
-        low_ref: 100000025,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 28,
-        high_ref: 98,
-        low_ref: 100000024,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 29,
-        high_ref: 100000024,
-        low_ref: 99,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 53,
-        high_ref: 100,
-        low_ref: 100000023,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 54,
-        high_ref: 101,
-        low_ref: 100000022,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 56,
+        condition_index: 42,
         high_ref: 102,
+        low_ref: 88,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 43,
+        high_ref: 89,
+        low_ref: 100000036,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 90,
+        low_ref: 100000053,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 46,
+        high_ref: 92,
+        low_ref: 91,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 71,
+        high_ref: 100000052,
         low_ref: 100000017,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 63,
-        high_ref: 105,
-        low_ref: 103,
+        condition_index: 68,
+        high_ref: 94,
+        low_ref: 93,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 64,
-        high_ref: 104,
-        low_ref: 100000021,
+        condition_index: 71,
+        high_ref: 100000051,
+        low_ref: 100000017,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 66,
-        high_ref: 100000020,
+        condition_index: 71,
+        high_ref: 95,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 79,
+        high_ref: 98,
+        low_ref: 96,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 80,
+        high_ref: 97,
+        low_ref: 100000050,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 82,
+        high_ref: 100000049,
         low_ref: 100000007,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 64,
+        condition_index: 80,
+        high_ref: 100,
+        low_ref: 99,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 81,
+        high_ref: 100000048,
+        low_ref: 100000005,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 81,
+        high_ref: 101,
+        low_ref: 100000003,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 82,
+        high_ref: 100000047,
+        low_ref: 100000002,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 103,
+        low_ref: 100000053,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 46,
+        high_ref: 105,
+        low_ref: 104,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 71,
+        high_ref: 100000046,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 68,
         high_ref: 107,
         low_ref: 106,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 65,
+        condition_index: 71,
+        high_ref: 100000045,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 71,
+        high_ref: 108,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 79,
+        high_ref: 111,
+        low_ref: 109,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 80,
+        high_ref: 110,
+        low_ref: 100000044,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 82,
+        high_ref: 100000043,
+        low_ref: 100000007,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 80,
+        high_ref: 113,
+        low_ref: 112,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 81,
+        high_ref: 100000042,
+        low_ref: 100000005,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 81,
+        high_ref: 114,
+        low_ref: 100000003,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 82,
+        high_ref: 100000041,
+        low_ref: 100000002,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 116,
+        low_ref: 100000053,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 71,
+        high_ref: 117,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 79,
+        high_ref: 120,
+        low_ref: 118,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 80,
+        high_ref: 119,
+        low_ref: 100000040,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 82,
+        high_ref: 100000039,
+        low_ref: 100000007,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 80,
+        high_ref: 122,
+        low_ref: 121,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 81,
+        high_ref: 100000038,
+        low_ref: 100000005,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 81,
+        high_ref: 123,
+        low_ref: 100000003,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 82,
+        high_ref: 100000037,
+        low_ref: 100000002,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 13,
+        high_ref: 125,
+        low_ref: 100000028,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 16,
+        high_ref: 126,
+        low_ref: 100000027,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 17,
+        high_ref: 127,
+        low_ref: 100000026,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 18,
+        high_ref: 128,
+        low_ref: 100000035,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 19,
+        high_ref: 129,
+        low_ref: 100000024,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 20,
+        high_ref: 100000024,
+        low_ref: 130,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 25,
+        high_ref: 131,
+        low_ref: 100000034,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 26,
+        high_ref: 132,
+        low_ref: 100000033,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 71,
+        high_ref: 133,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 79,
+        high_ref: 136,
+        low_ref: 134,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 80,
+        high_ref: 135,
+        low_ref: 100000032,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 82,
+        high_ref: 100000031,
+        low_ref: 100000007,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 80,
+        high_ref: 138,
+        low_ref: 137,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 81,
+        high_ref: 100000030,
+        low_ref: 100000005,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 81,
+        high_ref: 139,
+        low_ref: 100000003,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 82,
+        high_ref: 100000029,
+        low_ref: 100000002,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 27,
+        high_ref: 141,
+        low_ref: 100000028,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 28,
+        high_ref: 142,
+        low_ref: 100000027,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 29,
+        high_ref: 143,
+        low_ref: 100000026,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 30,
+        high_ref: 144,
+        low_ref: 100000025,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 31,
+        high_ref: 145,
+        low_ref: 100000024,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 32,
+        high_ref: 100000024,
+        low_ref: 146,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 35,
+        high_ref: 147,
+        low_ref: 100000023,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 37,
+        high_ref: 148,
+        low_ref: 100000022,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 71,
+        high_ref: 149,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 79,
+        high_ref: 152,
+        low_ref: 150,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 80,
+        high_ref: 151,
+        low_ref: 100000021,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 82,
+        high_ref: 100000020,
+        low_ref: 100000007,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 80,
+        high_ref: 154,
+        low_ref: 153,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 81,
         high_ref: 100000019,
         low_ref: 100000005,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 65,
-        high_ref: 108,
+        condition_index: 81,
+        high_ref: 155,
         low_ref: 100000003,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 66,
+        condition_index: 82,
         high_ref: 100000018,
         low_ref: 100000002,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 9,
-        high_ref: 110,
-        low_ref: 114,
+        high_ref: 157,
+        low_ref: 161,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 13,
-        high_ref: 111,
-        low_ref: 113,
+        condition_index: 21,
+        high_ref: 158,
+        low_ref: 160,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 14,
-        high_ref: 112,
-        low_ref: 113,
+        condition_index: 22,
+        high_ref: 159,
+        low_ref: 160,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 15,
-        high_ref: 135,
-        low_ref: 113,
+        condition_index: 23,
+        high_ref: 185,
+        low_ref: 160,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 16,
-        high_ref: 115,
-        low_ref: 114,
+        condition_index: 24,
+        high_ref: 169,
+        low_ref: 161,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 56,
-        high_ref: 117,
+        condition_index: 71,
+        high_ref: 162,
         low_ref: 100000017,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 56,
-        high_ref: 116,
-        low_ref: 100000017,
+        condition_index: 79,
+        high_ref: 165,
+        low_ref: 163,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 62,
-        high_ref: 124,
-        low_ref: 117,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 63,
-        high_ref: 120,
-        low_ref: 118,
-    },
-    crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 64,
-        high_ref: 119,
+        condition_index: 80,
+        high_ref: 164,
         low_ref: 100000016,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 66,
+        condition_index: 82,
         high_ref: 100000015,
         low_ref: 100000007,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 64,
-        high_ref: 122,
-        low_ref: 121,
+        condition_index: 80,
+        high_ref: 167,
+        low_ref: 166,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 65,
+        condition_index: 81,
         high_ref: 100000014,
         low_ref: 100000005,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 65,
-        high_ref: 123,
+        condition_index: 81,
+        high_ref: 168,
         low_ref: 100000003,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 66,
+        condition_index: 82,
         high_ref: 100000013,
         low_ref: 100000002,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 63,
-        high_ref: 129,
-        low_ref: 125,
+        condition_index: 71,
+        high_ref: 170,
+        low_ref: 100000017,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 64,
-        high_ref: 127,
-        low_ref: 126,
+        condition_index: 79,
+        high_ref: 177,
+        low_ref: 171,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 68,
+        condition_index: 80,
+        high_ref: 174,
+        low_ref: 172,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 84,
+        high_ref: 173,
+        low_ref: 100000016,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 85,
         high_ref: 100000012,
         low_ref: 100000016,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 66,
-        high_ref: 128,
+        condition_index: 82,
+        high_ref: 175,
         low_ref: 100000007,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 68,
+        condition_index: 84,
+        high_ref: 176,
+        low_ref: 100000015,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 85,
         high_ref: 100000011,
         low_ref: 100000015,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 64,
-        high_ref: 132,
-        low_ref: 130,
+        condition_index: 80,
+        high_ref: 181,
+        low_ref: 178,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 65,
-        high_ref: 131,
+        condition_index: 81,
+        high_ref: 179,
         low_ref: 100000005,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 68,
+        condition_index: 84,
+        high_ref: 180,
+        low_ref: 100000014,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 85,
         high_ref: 100000010,
         low_ref: 100000014,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 65,
-        high_ref: 133,
+        condition_index: 81,
+        high_ref: 182,
         low_ref: 100000003,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 66,
-        high_ref: 134,
+        condition_index: 82,
+        high_ref: 183,
         low_ref: 100000002,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 68,
+        condition_index: 84,
+        high_ref: 184,
+        low_ref: 100000013,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 85,
         high_ref: 100000009,
         low_ref: 100000013,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 56,
-        high_ref: 136,
+        condition_index: 71,
+        high_ref: 186,
         low_ref: 100000017,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 63,
-        high_ref: 139,
-        low_ref: 137,
+        condition_index: 79,
+        high_ref: 189,
+        low_ref: 187,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 64,
-        high_ref: 138,
+        condition_index: 80,
+        high_ref: 188,
         low_ref: 100000008,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 66,
+        condition_index: 82,
         high_ref: 100000006,
         low_ref: 100000007,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 64,
-        high_ref: 141,
-        low_ref: 140,
+        condition_index: 80,
+        high_ref: 191,
+        low_ref: 190,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 65,
+        condition_index: 81,
         high_ref: 100000004,
         low_ref: 100000005,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 65,
-        high_ref: 142,
+        condition_index: 81,
+        high_ref: 192,
         low_ref: 100000003,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 66,
+        condition_index: 82,
         high_ref: 100000001,
         low_ref: 100000002,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 9,
-        high_ref: 154,
-        low_ref: 144,
+        high_ref: 236,
+        low_ref: 194,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 32,
-        high_ref: 145,
-        low_ref: 146,
+        condition_index: 12,
+        high_ref: 195,
+        low_ref: 198,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 55,
-        high_ref: 100000063,
-        low_ref: 146,
+        condition_index: 14,
+        high_ref: 196,
+        low_ref: 198,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 63,
-        high_ref: 149,
-        low_ref: 147,
+        condition_index: 15,
+        high_ref: 197,
+        low_ref: 198,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 64,
-        high_ref: 148,
-        low_ref: 100000072,
+        condition_index: 33,
+        high_ref: 222,
+        low_ref: 198,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 66,
-        high_ref: 100000071,
+        condition_index: 47,
+        high_ref: 210,
+        low_ref: 199,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 49,
+        high_ref: 200,
+        low_ref: 201,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 54,
+        high_ref: 100000085,
+        low_ref: 201,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 59,
+        high_ref: 229,
+        low_ref: 202,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 79,
+        high_ref: 205,
+        low_ref: 203,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 80,
+        high_ref: 204,
+        low_ref: 100000094,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 82,
+        high_ref: 100000093,
         low_ref: 100000007,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 64,
-        high_ref: 152,
-        low_ref: 150,
+        condition_index: 80,
+        high_ref: 208,
+        low_ref: 206,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 65,
-        high_ref: 151,
+        condition_index: 81,
+        high_ref: 207,
         low_ref: 100000005,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 67,
-        high_ref: 100000069,
-        low_ref: 100000070,
+        condition_index: 83,
+        high_ref: 100000091,
+        low_ref: 100000092,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 65,
-        high_ref: 153,
-        low_ref: 100000068,
+        condition_index: 81,
+        high_ref: 209,
+        low_ref: 100000090,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
-        condition_index: 66,
-        high_ref: 100000067,
-        low_ref: 100000068,
+        condition_index: 82,
+        high_ref: 100000089,
+        low_ref: 100000090,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 59,
+        high_ref: 211,
+        low_ref: 100000074,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 60,
+        high_ref: 212,
+        low_ref: 100000028,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 61,
+        high_ref: 213,
+        low_ref: 100000027,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 62,
+        high_ref: 214,
+        low_ref: 100000026,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 63,
-        high_ref: 100000064,
-        low_ref: 155,
+        high_ref: 215,
+        low_ref: 100000073,
     },
     crate::endpoint_lib::bdd_interpreter::BddNode {
         condition_index: 64,
-        high_ref: 100000065,
-        low_ref: 100000066,
+        high_ref: 216,
+        low_ref: 100000024,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 65,
+        high_ref: 100000024,
+        low_ref: 217,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 66,
+        high_ref: 218,
+        low_ref: 100000072,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 67,
+        high_ref: 219,
+        low_ref: 100000071,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 71,
+        high_ref: 220,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 73,
+        high_ref: 221,
+        low_ref: 100000052,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 74,
+        high_ref: 229,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 34,
+        high_ref: 223,
+        low_ref: 100000027,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 36,
+        high_ref: 224,
+        low_ref: 100000026,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 38,
+        high_ref: 225,
+        low_ref: 100000054,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 44,
+        high_ref: 226,
+        low_ref: 100000053,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 71,
+        high_ref: 227,
+        low_ref: 100000017,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 76,
+        high_ref: 228,
+        low_ref: 100000052,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 77,
+        high_ref: 229,
+        low_ref: 100000051,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 79,
+        high_ref: 232,
+        low_ref: 230,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 80,
+        high_ref: 231,
+        low_ref: 100000058,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 82,
+        high_ref: 100000057,
+        low_ref: 100000007,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 80,
+        high_ref: 234,
+        low_ref: 233,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 81,
+        high_ref: 100000056,
+        low_ref: 100000005,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 81,
+        high_ref: 235,
+        low_ref: 100000003,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 82,
+        high_ref: 100000055,
+        low_ref: 100000002,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 79,
+        high_ref: 100000086,
+        low_ref: 237,
+    },
+    crate::endpoint_lib::bdd_interpreter::BddNode {
+        condition_index: 80,
+        high_ref: 100000087,
+        low_ref: 100000088,
     },
 ];
 // These are all optional since they are set by conditions and will
@@ -8693,17 +11070,22 @@ pub(crate) struct ConditionContext<'a> {
     pub(crate) stream_id_suffix_value: Option<::std::string::String>,
     pub(crate) stream_id_prefix_value: Option<::std::string::String>,
     pub(crate) arn_ssa_2: Option<crate::endpoint_lib::arn::Arn<'a>>,
+    pub(crate) arn_ssa_4: Option<crate::endpoint_lib::arn::Arn<'a>>,
+    pub(crate) iso_arn_type: ::std::option::Option<::std::string::String>,
+    pub(crate) arn_type_ssa_2: ::std::option::Option<::std::string::String>,
     pub(crate) https_custom_endpoint_suffix_value: Option<::std::string::String>,
     pub(crate) plain_custom_endpoint_suffix_value: Option<::std::string::String>,
-    pub(crate) arn_type_ssa_2: ::std::option::Option<::std::string::String>,
-    pub(crate) arn_ssa_4: Option<crate::endpoint_lib::arn::Arn<'a>>,
+    pub(crate) arn_ssa_5: Option<crate::endpoint_lib::arn::Arn<'a>>,
     pub(crate) arn_type_ssa_1: ::std::option::Option<::std::string::String>,
+    pub(crate) arn_type_ssa_3: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_id_ssa_1: ::std::option::Option<::std::string::String>,
     pub(crate) arn_ssa_1: Option<crate::endpoint_lib::arn::Arn<'a>>,
     pub(crate) arn_type_ssa_4: ::std::option::Option<::std::string::String>,
     pub(crate) arn_ssa_3: Option<crate::endpoint_lib::arn::Arn<'a>>,
-    pub(crate) arn_type_ssa_3: ::std::option::Option<::std::string::String>,
-    pub(crate) resource_id_ssa_1: ::std::option::Option<::std::string::String>,
+    pub(crate) arn_type_ssa_5: ::std::option::Option<::std::string::String>,
     pub(crate) resource_id_ssa_2: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_id_ssa_3: ::std::option::Option<::std::string::String>,
+    pub(crate) iso_resource_id: ::std::option::Option<::std::string::String>,
     // Sometimes none of the members reference the lifetime, this makes it still valid
     phantom: std::marker::PhantomData<&'a ()>,
 }
@@ -8732,6 +11114,10 @@ pub struct Params {
     pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
     /// The ARN of the Kinesis data channel
     pub(crate) channel_arn: ::std::option::Option<::std::string::String>,
+    /// The ARN of the Kinesis queue
+    pub(crate) queue_arn: ::std::option::Option<::std::string::String>,
+    /// The type of Kinesis resource targeted by the operation (e.g., queue). Used for endpoint routing.
+    pub(crate) resource_type: ::std::string::String,
     /// The AWS AccountId used for the request.
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     /// The AccountId Endpoint Mode.
@@ -8782,6 +11168,14 @@ impl Params {
     pub fn channel_arn(&self) -> ::std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
+    /// The ARN of the Kinesis queue
+    pub fn queue_arn(&self) -> ::std::option::Option<&str> {
+        self.queue_arn.as_deref()
+    }
+    /// The type of Kinesis resource targeted by the operation (e.g., queue). Used for endpoint routing.
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+        Some(&self.resource_type)
+    }
     /// The AWS AccountId used for the request.
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
@@ -8805,6 +11199,8 @@ pub struct ParamsBuilder {
     consumer_arn: ::std::option::Option<::std::string::String>,
     resource_arn: ::std::option::Option<::std::string::String>,
     channel_arn: ::std::option::Option<::std::string::String>,
+    queue_arn: ::std::option::Option<::std::string::String>,
+    resource_type: ::std::option::Option<::std::string::String>,
     account_id: ::std::option::Option<::std::string::String>,
     account_id_endpoint_mode: ::std::option::Option<::std::string::String>,
 }
@@ -8848,6 +11244,11 @@ impl ParamsBuilder {
                 consumer_arn: self.consumer_arn,
                 resource_arn: self.resource_arn,
                 channel_arn: self.channel_arn,
+                queue_arn: self.queue_arn,
+                resource_type: self
+                    .resource_type
+                    .or_else(|| Some("".to_string()))
+                    .ok_or_else(|| crate::config::endpoint::InvalidParams::missing("resource_type"))?,
                 account_id: self.account_id,
                 account_id_endpoint_mode: self.account_id_endpoint_mode,
             },
@@ -9005,6 +11406,38 @@ impl ParamsBuilder {
     /// The ARN of the Kinesis data channel
     pub fn set_channel_arn(mut self, param: Option<::std::string::String>) -> Self {
         self.channel_arn = param;
+        self
+    }
+    /// Sets the value for queue_arn
+    ///
+    /// The ARN of the Kinesis queue
+    pub fn queue_arn(mut self, value: impl Into<::std::string::String>) -> Self {
+        self.queue_arn = Some(value.into());
+        self
+    }
+
+    /// Sets the value for queue_arn
+    ///
+    /// The ARN of the Kinesis queue
+    pub fn set_queue_arn(mut self, param: Option<::std::string::String>) -> Self {
+        self.queue_arn = param;
+        self
+    }
+    /// Sets the value for resource_type
+    ///
+    /// When unset, this parameter has a default value of ``.
+    /// The type of Kinesis resource targeted by the operation (e.g., queue). Used for endpoint routing.
+    pub fn resource_type(mut self, value: impl Into<::std::string::String>) -> Self {
+        self.resource_type = Some(value.into());
+        self
+    }
+
+    /// Sets the value for resource_type
+    ///
+    /// When unset, this parameter has a default value of ``.
+    /// The type of Kinesis resource targeted by the operation (e.g., queue). Used for endpoint routing.
+    pub fn set_resource_type(mut self, param: Option<::std::string::String>) -> Self {
+        self.resource_type = param;
         self
     }
     /// Sets the value for account_id

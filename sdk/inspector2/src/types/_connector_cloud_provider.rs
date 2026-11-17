@@ -13,6 +13,7 @@
 /// # let connectorcloudprovider = unimplemented!();
 /// match connectorcloudprovider {
 ///     ConnectorCloudProvider::Azure => { /* ... */ },
+///     ConnectorCloudProvider::Gcp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum ConnectorCloudProvider {
     #[allow(missing_docs)] // documentation missing in model
     Azure,
+    #[allow(missing_docs)] // documentation missing in model
+    Gcp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for ConnectorCloudProvider {
     fn from(s: &str) -> Self {
         match s {
             "AZURE" => ConnectorCloudProvider::Azure,
+            "GCP" => ConnectorCloudProvider::Gcp,
             other => ConnectorCloudProvider::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl ConnectorCloudProvider {
     pub fn as_str(&self) -> &str {
         match self {
             ConnectorCloudProvider::Azure => "AZURE",
+            ConnectorCloudProvider::Gcp => "GCP",
             ConnectorCloudProvider::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AZURE"]
+        &["AZURE", "GCP"]
     }
 }
 impl ::std::convert::AsRef<str> for ConnectorCloudProvider {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for ConnectorCloudProvider {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ConnectorCloudProvider::Azure => write!(f, "AZURE"),
+            ConnectorCloudProvider::Gcp => write!(f, "GCP"),
             ConnectorCloudProvider::Unknown(value) => write!(f, "{value}"),
         }
     }

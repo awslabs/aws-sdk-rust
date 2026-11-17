@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ScopeConfigurationInput {
-    /// <p>The type of scope. Valid values are <code>TENANT</code>, which scans all resources in the Azure tenant, and <code>SUBSCRIPTION</code>, which scans only the resources in the specified Azure subscriptions.</p>
+    /// <p>The type of scope: <code>TENANT</code>, which scans all resources in the Azure tenant, or <code>SUBSCRIPTION</code>, which scans only the resources in the specified Azure subscriptions.</p>
     pub scope_type: crate::types::ScopeType,
     /// <p>The list of scope values. For subscription-level scope, these are Azure subscription IDs.</p>
     pub scope_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ScopeConfigurationInput {
-    /// <p>The type of scope. Valid values are <code>TENANT</code>, which scans all resources in the Azure tenant, and <code>SUBSCRIPTION</code>, which scans only the resources in the specified Azure subscriptions.</p>
+    /// <p>The type of scope: <code>TENANT</code>, which scans all resources in the Azure tenant, or <code>SUBSCRIPTION</code>, which scans only the resources in the specified Azure subscriptions.</p>
     pub fn scope_type(&self) -> &crate::types::ScopeType {
         &self.scope_type
     }
@@ -36,18 +36,18 @@ pub struct ScopeConfigurationInputBuilder {
     pub(crate) scope_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ScopeConfigurationInputBuilder {
-    /// <p>The type of scope. Valid values are <code>TENANT</code>, which scans all resources in the Azure tenant, and <code>SUBSCRIPTION</code>, which scans only the resources in the specified Azure subscriptions.</p>
+    /// <p>The type of scope: <code>TENANT</code>, which scans all resources in the Azure tenant, or <code>SUBSCRIPTION</code>, which scans only the resources in the specified Azure subscriptions.</p>
     /// This field is required.
     pub fn scope_type(mut self, input: crate::types::ScopeType) -> Self {
         self.scope_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of scope. Valid values are <code>TENANT</code>, which scans all resources in the Azure tenant, and <code>SUBSCRIPTION</code>, which scans only the resources in the specified Azure subscriptions.</p>
+    /// <p>The type of scope: <code>TENANT</code>, which scans all resources in the Azure tenant, or <code>SUBSCRIPTION</code>, which scans only the resources in the specified Azure subscriptions.</p>
     pub fn set_scope_type(mut self, input: ::std::option::Option<crate::types::ScopeType>) -> Self {
         self.scope_type = input;
         self
     }
-    /// <p>The type of scope. Valid values are <code>TENANT</code>, which scans all resources in the Azure tenant, and <code>SUBSCRIPTION</code>, which scans only the resources in the specified Azure subscriptions.</p>
+    /// <p>The type of scope: <code>TENANT</code>, which scans all resources in the Azure tenant, or <code>SUBSCRIPTION</code>, which scans only the resources in the specified Azure subscriptions.</p>
     pub fn get_scope_type(&self) -> &::std::option::Option<crate::types::ScopeType> {
         &self.scope_type
     }

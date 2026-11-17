@@ -2,7 +2,7 @@
 
 /// <p>The configuration for AI Agents of type <code>ORCHESTRATION</code>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct OrchestrationAiAgentConfiguration {
     /// <p>The AI Prompt identifier used by the Orchestration AI Agent.</p>
     pub orchestration_ai_prompt_id: ::std::option::Option<::std::string::String>,
@@ -63,6 +63,20 @@ impl OrchestrationAiAgentConfiguration {
         self.output_schemas.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for OrchestrationAiAgentConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("OrchestrationAiAgentConfiguration");
+        formatter.field("orchestration_ai_prompt_id", &self.orchestration_ai_prompt_id);
+        formatter.field("orchestration_ai_guardrail_id", &self.orchestration_ai_guardrail_id);
+        formatter.field("tool_configurations", &self.tool_configurations);
+        formatter.field("multi_agent_configurations", &self.multi_agent_configurations);
+        formatter.field("connect_instance_arn", &self.connect_instance_arn);
+        formatter.field("locale", &self.locale);
+        formatter.field("input_schemas", &"*** Sensitive Data Redacted ***");
+        formatter.field("output_schemas", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl OrchestrationAiAgentConfiguration {
     /// Creates a new builder-style object to manufacture [`OrchestrationAiAgentConfiguration`](crate::types::OrchestrationAiAgentConfiguration).
     pub fn builder() -> crate::types::builders::OrchestrationAiAgentConfigurationBuilder {
@@ -71,7 +85,7 @@ impl OrchestrationAiAgentConfiguration {
 }
 
 /// A builder for [`OrchestrationAiAgentConfiguration`](crate::types::OrchestrationAiAgentConfiguration).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct OrchestrationAiAgentConfigurationBuilder {
     pub(crate) orchestration_ai_prompt_id: ::std::option::Option<::std::string::String>,
@@ -232,5 +246,19 @@ impl OrchestrationAiAgentConfigurationBuilder {
             input_schemas: self.input_schemas,
             output_schemas: self.output_schemas,
         }
+    }
+}
+impl ::std::fmt::Debug for OrchestrationAiAgentConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("OrchestrationAiAgentConfigurationBuilder");
+        formatter.field("orchestration_ai_prompt_id", &self.orchestration_ai_prompt_id);
+        formatter.field("orchestration_ai_guardrail_id", &self.orchestration_ai_guardrail_id);
+        formatter.field("tool_configurations", &self.tool_configurations);
+        formatter.field("multi_agent_configurations", &self.multi_agent_configurations);
+        formatter.field("connect_instance_arn", &self.connect_instance_arn);
+        formatter.field("locale", &self.locale);
+        formatter.field("input_schemas", &"*** Sensitive Data Redacted ***");
+        formatter.field("output_schemas", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

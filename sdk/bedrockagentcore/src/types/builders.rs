@@ -25,6 +25,14 @@ pub use crate::types::_user_intent_clustering_result_content::UserIntentClusteri
 
 pub use crate::types::_execution_summary_clustering_result_content::ExecutionSummaryClusteringResultContentBuilder;
 
+pub use crate::types::_dataset_execution_details::DatasetExecutionDetailsBuilder;
+
+pub use crate::types::_generation_results::GenerationResultsBuilder;
+
+pub use crate::types::_redaction_summary::RedactionSummaryBuilder;
+
+pub use crate::types::_dataset_execution_config::DatasetExecutionConfigBuilder;
+
 pub use crate::types::_branch::BranchBuilder;
 
 pub use crate::types::_extraction_config::ExtractionConfigBuilder;
@@ -153,6 +161,10 @@ pub use crate::types::_evaluation_reference_input::EvaluationReferenceInputBuild
 
 pub use crate::types::_evaluation_result_content::EvaluationResultContentBuilder;
 
+pub use crate::types::_sample_session::SampleSessionBuilder;
+
+pub use crate::types::_insight_root_cause::InsightRootCauseBuilder;
+
 pub use crate::types::_evaluator::EvaluatorBuilder;
 
 pub use crate::types::_insight::InsightBuilder;
@@ -165,6 +177,12 @@ pub use crate::types::_cloud_watch_output_config::CloudWatchOutputConfigBuilder;
 
 pub use crate::types::_insight_result::InsightResultBuilder;
 
+pub use crate::types::_dataset_details::DatasetDetailsBuilder;
+
+pub use crate::types::_trace_generation_record::TraceGenerationRecordBuilder;
+
+pub use crate::types::_generation_error_detail::GenerationErrorDetailBuilder;
+
 pub use crate::types::_system_prompt_recommendation_config::SystemPromptRecommendationConfigBuilder;
 
 pub use crate::types::_tool_description_recommendation_config::ToolDescriptionRecommendationConfigBuilder;
@@ -175,9 +193,17 @@ pub use crate::types::_tool_description_recommendation_result::ToolDescriptionRe
 
 pub use crate::types::_ab_test_summary::AbTestSummaryBuilder;
 
+pub use crate::types::_agent_insight_summary::AgentInsightSummaryBuilder;
+
 pub use crate::types::_batch_evaluation_summary::BatchEvaluationSummaryBuilder;
 
+pub use crate::types::_dataset_generation_summary::DatasetGenerationSummaryBuilder;
+
 pub use crate::types::_recommendation_summary::RecommendationSummaryBuilder;
+
+pub use crate::types::_dataset_source::DatasetSourceBuilder;
+
+pub use crate::types::_trace_generation_source::TraceGenerationSourceBuilder;
 
 pub use crate::types::_memory_record_create_input::MemoryRecordCreateInputBuilder;
 
@@ -267,11 +293,21 @@ pub use crate::types::_user_intent_cluster::UserIntentClusterBuilder;
 
 pub use crate::types::_execution_summary_cluster::ExecutionSummaryClusterBuilder;
 
+pub use crate::types::_agent_core_runtime_invocation_details::AgentCoreRuntimeInvocationDetailsBuilder;
+
+pub use crate::types::_generation_sampling_config::GenerationSamplingConfigBuilder;
+
+pub use crate::types::_ground_truth_config::GroundTruthConfigBuilder;
+
+pub use crate::types::_redaction_configuration::RedactionConfigurationBuilder;
+
 pub use crate::types::_recommendation_evaluation_config::RecommendationEvaluationConfigBuilder;
 
 pub use crate::types::_recommendation_result_configuration_bundle::RecommendationResultConfigurationBundleBuilder;
 
 pub use crate::types::_session_metadata_shape::SessionMetadataShapeBuilder;
+
+pub use crate::types::_agent_core_runtime_invocation::AgentCoreRuntimeInvocationBuilder;
 
 pub use crate::types::_conversational::ConversationalBuilder;
 
@@ -317,11 +353,19 @@ pub use crate::types::_span_context::SpanContextBuilder;
 
 pub use crate::types::_control_stats::ControlStatsBuilder;
 
+pub use crate::types::_session_finding::SessionFindingBuilder;
+
 pub use crate::types::_evaluator_statistics::EvaluatorStatisticsBuilder;
 
-pub use crate::types::_sample_session::SampleSessionBuilder;
+pub use crate::types::_cloud_watch_logs_source_config::CloudWatchLogsSourceConfigBuilder;
 
-pub use crate::types::_insight_root_cause::InsightRootCauseBuilder;
+pub use crate::types::_online_evaluation_source_config::OnlineEvaluationSourceConfigBuilder;
+
+pub use crate::types::_batch_evaluation_source_config::BatchEvaluationSourceConfigBuilder;
+
+pub use crate::types::_generation_filters::GenerationFiltersBuilder;
+
+pub use crate::types::_generation_identifier_counts::GenerationIdentifierCountsBuilder;
 
 pub use crate::types::_system_prompt_configuration_bundle::SystemPromptConfigurationBundleBuilder;
 
@@ -336,6 +380,8 @@ pub use crate::types::_tool_description_text_input::ToolDescriptionTextInputBuil
 pub use crate::types::_tool_description_configuration_bundle::ToolDescriptionConfigurationBundleBuilder;
 
 pub use crate::types::_tool_description_output::ToolDescriptionOutputBuilder;
+
+pub use crate::types::_generation_identifiers::GenerationIdentifiersBuilder;
 
 pub use crate::types::_mcp_descriptor::McpDescriptorBuilder;
 
@@ -360,6 +406,12 @@ pub use crate::types::_failure_sub_category_cluster::FailureSubCategoryClusterBu
 pub use crate::types::_user_intent_affected_session::UserIntentAffectedSessionBuilder;
 
 pub use crate::types::_execution_summary_affected_session::ExecutionSummaryAffectedSessionBuilder;
+
+pub use crate::types::_turn_count_range::TurnCountRangeBuilder;
+
+pub use crate::types::_evaluator_filter::EvaluatorFilterBuilder;
+
+pub use crate::types::_custom_data_identifier::CustomDataIdentifierBuilder;
 
 pub use crate::types::_cloud_watch_logs_rule::CloudWatchLogsRuleBuilder;
 
@@ -397,7 +449,7 @@ pub use crate::types::_basic_auth::BasicAuthBuilder;
 
 pub use crate::types::_confidence_interval::ConfidenceIntervalBuilder;
 
-pub use crate::types::_session_finding::SessionFindingBuilder;
+pub use crate::types::_generation_attribute_filter::GenerationAttributeFilterBuilder;
 
 pub use crate::types::_tool_description_input::ToolDescriptionInputBuilder;
 

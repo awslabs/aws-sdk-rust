@@ -2,7 +2,7 @@
 
 /// <p>Input to the UnlinkIdentity action.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UnlinkIdentityInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub identity_id: ::std::option::Option<::std::string::String>,
@@ -27,6 +27,15 @@ impl UnlinkIdentityInput {
         self.logins_to_remove.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for UnlinkIdentityInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UnlinkIdentityInput");
+        formatter.field("identity_id", &self.identity_id);
+        formatter.field("logins", &"*** Sensitive Data Redacted ***");
+        formatter.field("logins_to_remove", &self.logins_to_remove);
+        formatter.finish()
+    }
+}
 impl UnlinkIdentityInput {
     /// Creates a new builder-style object to manufacture [`UnlinkIdentityInput`](crate::operation::unlink_identity::UnlinkIdentityInput).
     pub fn builder() -> crate::operation::unlink_identity::builders::UnlinkIdentityInputBuilder {
@@ -35,7 +44,7 @@ impl UnlinkIdentityInput {
 }
 
 /// A builder for [`UnlinkIdentityInput`](crate::operation::unlink_identity::UnlinkIdentityInput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct UnlinkIdentityInputBuilder {
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
@@ -107,5 +116,14 @@ impl UnlinkIdentityInputBuilder {
             logins: self.logins,
             logins_to_remove: self.logins_to_remove,
         })
+    }
+}
+impl ::std::fmt::Debug for UnlinkIdentityInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("UnlinkIdentityInputBuilder");
+        formatter.field("identity_id", &self.identity_id);
+        formatter.field("logins", &"*** Sensitive Data Redacted ***");
+        formatter.field("logins_to_remove", &self.logins_to_remove);
+        formatter.finish()
     }
 }

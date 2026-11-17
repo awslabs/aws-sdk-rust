@@ -2,7 +2,7 @@
 
 /// <p>Object to hold the dimension of a profile type field to segment on.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ProfileTypeDimension {
     /// <p>The action to segment on.</p>
     pub dimension_type: crate::types::ProfileTypeDimensionType,
@@ -20,6 +20,14 @@ impl ProfileTypeDimension {
         self.values.deref()
     }
 }
+impl ::std::fmt::Debug for ProfileTypeDimension {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ProfileTypeDimension");
+        formatter.field("dimension_type", &self.dimension_type);
+        formatter.field("values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ProfileTypeDimension {
     /// Creates a new builder-style object to manufacture [`ProfileTypeDimension`](crate::types::ProfileTypeDimension).
     pub fn builder() -> crate::types::builders::ProfileTypeDimensionBuilder {
@@ -28,7 +36,7 @@ impl ProfileTypeDimension {
 }
 
 /// A builder for [`ProfileTypeDimension`](crate::types::ProfileTypeDimension).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ProfileTypeDimensionBuilder {
     pub(crate) dimension_type: ::std::option::Option<crate::types::ProfileTypeDimensionType>,
@@ -89,5 +97,13 @@ impl ProfileTypeDimensionBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for ProfileTypeDimensionBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ProfileTypeDimensionBuilder");
+        formatter.field("dimension_type", &self.dimension_type);
+        formatter.field("values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

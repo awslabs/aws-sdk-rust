@@ -39,32 +39,35 @@ pub fn ser_update_launch_configuration_template_input_input(
         crate::protocol_serde::shape_licensing::ser_licensing(&mut object_12, var_11)?;
         object_12.finish();
     }
-    if let Some(var_13) = &input.map_auto_tagging_mpe_id {
-        object.key("mapAutoTaggingMpeID").string(var_13.as_str());
+    if let Some(var_13) = &input.map_auto_tagging_key {
+        object.key("mapAutoTaggingKey").string(var_13.as_str());
     }
-    if let Some(var_14) = &input.parameters_encryption_key {
-        object.key("parametersEncryptionKey").string(var_14.as_str());
+    if let Some(var_14) = &input.map_auto_tagging_mpe_id {
+        object.key("mapAutoTaggingMpeID").string(var_14.as_str());
     }
-    if let Some(var_15) = &input.post_launch_actions {
+    if let Some(var_15) = &input.parameters_encryption_key {
+        object.key("parametersEncryptionKey").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.post_launch_actions {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("postLaunchActions").start_object();
-        crate::protocol_serde::shape_post_launch_actions::ser_post_launch_actions(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_17 = object.key("postLaunchActions").start_object();
+        crate::protocol_serde::shape_post_launch_actions::ser_post_launch_actions(&mut object_17, var_16)?;
+        object_17.finish();
     }
-    if let Some(var_17) = &input.small_volume_conf {
+    if let Some(var_18) = &input.small_volume_conf {
         #[allow(unused_mut)]
-        let mut object_18 = object.key("smallVolumeConf").start_object();
-        crate::protocol_serde::shape_launch_template_disk_conf::ser_launch_template_disk_conf(&mut object_18, var_17)?;
-        object_18.finish();
+        let mut object_19 = object.key("smallVolumeConf").start_object();
+        crate::protocol_serde::shape_launch_template_disk_conf::ser_launch_template_disk_conf(&mut object_19, var_18)?;
+        object_19.finish();
     }
-    if let Some(var_19) = &input.small_volume_max_size {
+    if let Some(var_20) = &input.small_volume_max_size {
         object.key("smallVolumeMaxSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_19).into()),
+            ::aws_smithy_types::Number::NegInt((*var_20).into()),
         );
     }
-    if let Some(var_20) = &input.target_instance_type_right_sizing_method {
-        object.key("targetInstanceTypeRightSizingMethod").string(var_20.as_str());
+    if let Some(var_21) = &input.target_instance_type_right_sizing_method {
+        object.key("targetInstanceTypeRightSizingMethod").string(var_21.as_str());
     }
     Ok(())
 }

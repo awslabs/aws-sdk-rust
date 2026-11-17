@@ -3,21 +3,30 @@ pub fn ser_start_network_migration_mapping_update_segment(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::StartNetworkMigrationMappingUpdateSegment,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    {
-        object.key("segmentID").string(input.segment_id.as_str());
+    if let Some(var_1) = &input.segment_id {
+        object.key("segmentID").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.target_account {
-        object.key("targetAccount").string(var_1.as_str());
+    if let Some(var_2) = &input.segment_logical_id {
+        object.key("segmentLogicalID").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.scope_tags {
+    if let Some(var_3) = &input.operation {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("scopeTags").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_4 = object.key("operation").start_object();
+        crate::protocol_serde::shape_segment_operation::ser_segment_operation(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.target_account {
+        object.key("targetAccount").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.scope_tags {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("scopeTags").start_object();
+        for (key_8, value_9) in var_6 {
             {
-                object_3.key(key_4.as_str()).string(value_5.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
-        object_3.finish();
+        object_7.finish();
     }
     Ok(())
 }

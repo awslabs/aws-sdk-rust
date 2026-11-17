@@ -48,5 +48,14 @@ pub fn ser_enabled_baseline_filter(
         }
         array_14.finish();
     }
+    if let Some(var_16) = &input.source_drift_statuses {
+        let mut array_17 = object.key("sourceDriftStatuses").start_array();
+        for item_18 in var_16 {
+            {
+                array_17.value().string(item_18.as_str());
+            }
+        }
+        array_17.finish();
+    }
     Ok(())
 }

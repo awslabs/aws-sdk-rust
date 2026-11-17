@@ -2,7 +2,7 @@
 
 /// <p>These are custom parameter to be used when the target is an API Gateway REST APIs or EventBridge ApiDestinations. In the latter case, these are merged with any InvocationParameters specified on the Connection, with any values from the Connection taking precedence.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PipeEnrichmentHttpParameters {
     /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
     pub path_parameter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -27,6 +27,15 @@ impl PipeEnrichmentHttpParameters {
         self.query_string_parameters.as_ref()
     }
 }
+impl ::std::fmt::Debug for PipeEnrichmentHttpParameters {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PipeEnrichmentHttpParameters");
+        formatter.field("path_parameter_values", &"*** Sensitive Data Redacted ***");
+        formatter.field("header_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("query_string_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl PipeEnrichmentHttpParameters {
     /// Creates a new builder-style object to manufacture [`PipeEnrichmentHttpParameters`](crate::types::PipeEnrichmentHttpParameters).
     pub fn builder() -> crate::types::builders::PipeEnrichmentHttpParametersBuilder {
@@ -35,7 +44,7 @@ impl PipeEnrichmentHttpParameters {
 }
 
 /// A builder for [`PipeEnrichmentHttpParameters`](crate::types::PipeEnrichmentHttpParameters).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct PipeEnrichmentHttpParametersBuilder {
     pub(crate) path_parameter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -124,5 +133,14 @@ impl PipeEnrichmentHttpParametersBuilder {
             header_parameters: self.header_parameters,
             query_string_parameters: self.query_string_parameters,
         }
+    }
+}
+impl ::std::fmt::Debug for PipeEnrichmentHttpParametersBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PipeEnrichmentHttpParametersBuilder");
+        formatter.field("path_parameter_values", &"*** Sensitive Data Redacted ***");
+        formatter.field("header_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("query_string_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -9,6 +9,8 @@ pub use crate::types::_describe_config_rules_filters::DescribeConfigRulesFilters
 
 pub use crate::types::_conformance_pack_compliance_filters::ConformancePackComplianceFilters;
 
+pub use crate::types::_describe_conformance_packs_filters::DescribeConformancePacksFilters;
+
 pub use crate::types::_compliance_type::ComplianceType;
 
 pub use crate::types::_config_rule_compliance_summary_filters::ConfigRuleComplianceSummaryFilters;
@@ -72,6 +74,10 @@ pub use crate::types::_aggregator_filters::AggregatorFilters;
 pub use crate::types::_configuration_aggregator::ConfigurationAggregator;
 
 pub use crate::types::_template_ssm_document_details::TemplateSsmDocumentDetails;
+
+pub use crate::types::_conformance_pack_source::ConformancePackSource;
+
+pub use crate::types::_conformance_pack_scope::ConformancePackScope;
 
 pub use crate::types::_connector_configuration::ConnectorConfiguration;
 
@@ -244,6 +250,8 @@ pub use crate::types::_aggregate_conformance_pack_compliance::AggregateConforman
 pub use crate::types::_aggregated_source_type::AggregatedSourceType;
 
 pub use crate::types::_recorder_status::RecorderStatus;
+
+pub use crate::types::_conformance_pack_type::ConformancePackType;
 
 pub use crate::types::_conformance_pack_state::ConformancePackState;
 
@@ -431,9 +439,15 @@ mod _conformance_pack_input_parameter;
 
 mod _conformance_pack_rule_compliance;
 
+mod _conformance_pack_scope;
+
+mod _conformance_pack_source;
+
 mod _conformance_pack_state;
 
 mod _conformance_pack_status_detail;
+
+mod _conformance_pack_type;
 
 mod _connector;
 
@@ -454,6 +468,8 @@ mod _delivery_channel_status;
 mod _delivery_status;
 
 mod _describe_config_rules_filters;
+
+mod _describe_conformance_packs_filters;
 
 mod _evaluation;
 

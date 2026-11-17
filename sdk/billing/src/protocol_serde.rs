@@ -79,7 +79,11 @@ pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_redeem_credits;
 
+pub(crate) mod shape_split_credit;
+
 pub(crate) mod shape_tag_resource;
+
+pub(crate) mod shape_transfer_credit;
 
 pub(crate) mod shape_untag_resource;
 
@@ -163,9 +167,13 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_split_credit_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
+
+pub(crate) mod shape_transfer_credit_input;
 
 pub(crate) mod shape_untag_resource_input;
 
@@ -207,6 +215,8 @@ pub(crate) mod shape_business_support_subscription_contract_list;
 
 pub(crate) mod shape_charge_account_list;
 
+pub(crate) mod shape_child_credits;
+
 pub(crate) mod shape_contract_account_list;
 
 pub(crate) mod shape_contract_details;
@@ -237,6 +247,8 @@ pub(crate) mod shape_resource_tag;
 
 pub(crate) mod shape_resource_tag_list;
 
+pub(crate) mod shape_split_portion;
+
 pub(crate) mod shape_string_search;
 
 pub(crate) mod shape_validation_exception_field_list;
@@ -258,6 +270,8 @@ pub(crate) mod shape_business_support_account_charge;
 pub(crate) mod shape_business_support_subscription_contract;
 
 pub(crate) mod shape_charge_account;
+
+pub(crate) mod shape_child_credit;
 
 pub(crate) mod shape_contract_account;
 

@@ -263,4 +263,18 @@ impl StartBatchEvaluationFluentBuilder {
     pub fn get_output_config(&self) -> &::std::option::Option<crate::types::OutputConfig> {
         self.inner.get_output_config()
     }
+    /// <p>The configuration for running the scenarios in a dataset against an agent before evaluating the resulting sessions. When you specify this field, the batch evaluation runs each scenario in the dataset against the agent. It then evaluates the sessions that the agent produces. You must also specify <code>evaluators</code> and a <code>dataSourceConfig</code> that uses <code>cloudWatchLogs</code>. Configure <code>cloudWatchLogs</code> with the service name and log groups that the agent uses for its traces. You can't specify <code>insights</code> or an <code>onlineEvaluationConfigSource</code> data source with this field.</p>
+    pub fn dataset_execution_config(mut self, input: crate::types::DatasetExecutionConfig) -> Self {
+        self.inner = self.inner.dataset_execution_config(input);
+        self
+    }
+    /// <p>The configuration for running the scenarios in a dataset against an agent before evaluating the resulting sessions. When you specify this field, the batch evaluation runs each scenario in the dataset against the agent. It then evaluates the sessions that the agent produces. You must also specify <code>evaluators</code> and a <code>dataSourceConfig</code> that uses <code>cloudWatchLogs</code>. Configure <code>cloudWatchLogs</code> with the service name and log groups that the agent uses for its traces. You can't specify <code>insights</code> or an <code>onlineEvaluationConfigSource</code> data source with this field.</p>
+    pub fn set_dataset_execution_config(mut self, input: ::std::option::Option<crate::types::DatasetExecutionConfig>) -> Self {
+        self.inner = self.inner.set_dataset_execution_config(input);
+        self
+    }
+    /// <p>The configuration for running the scenarios in a dataset against an agent before evaluating the resulting sessions. When you specify this field, the batch evaluation runs each scenario in the dataset against the agent. It then evaluates the sessions that the agent produces. You must also specify <code>evaluators</code> and a <code>dataSourceConfig</code> that uses <code>cloudWatchLogs</code>. Configure <code>cloudWatchLogs</code> with the service name and log groups that the agent uses for its traces. You can't specify <code>insights</code> or an <code>onlineEvaluationConfigSource</code> data source with this field.</p>
+    pub fn get_dataset_execution_config(&self) -> &::std::option::Option<crate::types::DatasetExecutionConfig> {
+        self.inner.get_dataset_execution_config()
+    }
 }

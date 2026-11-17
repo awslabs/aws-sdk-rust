@@ -14,6 +14,7 @@
 /// match cloudprovider {
 ///     CloudProvider::Aws => { /* ... */ },
 ///     CloudProvider::Azure => { /* ... */ },
+///     CloudProvider::Gcp => { /* ... */ },
 ///     CloudProvider::NotApplicable => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum CloudProvider {
     #[allow(missing_docs)] // documentation missing in model
     Azure,
     #[allow(missing_docs)] // documentation missing in model
+    Gcp,
+    #[allow(missing_docs)] // documentation missing in model
     NotApplicable,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for CloudProvider {
         match s {
             "AWS" => CloudProvider::Aws,
             "AZURE" => CloudProvider::Azure,
+            "GCP" => CloudProvider::Gcp,
             "NOT_APPLICABLE" => CloudProvider::NotApplicable,
             other => CloudProvider::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -76,13 +80,14 @@ impl CloudProvider {
         match self {
             CloudProvider::Aws => "AWS",
             CloudProvider::Azure => "AZURE",
+            CloudProvider::Gcp => "GCP",
             CloudProvider::NotApplicable => "NOT_APPLICABLE",
             CloudProvider::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS", "AZURE", "NOT_APPLICABLE"]
+        &["AWS", "AZURE", "GCP", "NOT_APPLICABLE"]
     }
 }
 impl ::std::convert::AsRef<str> for CloudProvider {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for CloudProvider {
         match self {
             CloudProvider::Aws => write!(f, "AWS"),
             CloudProvider::Azure => write!(f, "AZURE"),
+            CloudProvider::Gcp => write!(f, "GCP"),
             CloudProvider::NotApplicable => write!(f, "NOT_APPLICABLE"),
             CloudProvider::Unknown(value) => write!(f, "{value}"),
         }

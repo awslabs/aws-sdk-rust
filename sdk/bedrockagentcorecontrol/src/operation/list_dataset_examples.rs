@@ -268,29 +268,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDatasetE
                         "cannot be empty or unset",
                     ));
                 }
-                ::std::write!(output, "/datasets/{datasetId}/examples", datasetId = dataset_id).expect("formatting should succeed");
-                ::std::result::Result::Ok(())
-            }
-            fn uri_query(
-                _input: &crate::operation::list_dataset_examples::ListDatasetExamplesInput,
-                mut output: &mut ::std::string::String,
-            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
-                let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if let ::std::option::Option::Some(inner_2) = &_input.dataset_version {
-                    {
-                        query.push_kv("datasetVersion", &::aws_smithy_http::query::fmt_string(inner_2));
-                    }
-                }
-                if let ::std::option::Option::Some(inner_3) = &_input.max_results {
-                    {
-                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_3).encode());
-                    }
-                }
-                if let ::std::option::Option::Some(inner_4) = &_input.next_token {
-                    {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_4));
-                    }
-                }
+                ::std::write!(output, "/datasets/{datasetId}/examples/list", datasetId = dataset_id).expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -300,14 +278,19 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDatasetE
             ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
-                uri_query(input, &mut uri)?;
-                ::std::result::Result::Ok(builder.method("GET").uri(uri))
+                ::std::result::Result::Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
+            builder = _header_serialization_settings.set_default_header(builder, ::http_1x::header::CONTENT_TYPE, "application/json");
             builder
         };
-        let body = ::aws_smithy_types::body::SdkBody::from("");
-
+        let body = ::aws_smithy_types::body::SdkBody::from(crate::protocol_serde::shape_list_dataset_examples::ser_list_dataset_examples_input(
+            &input,
+        )?);
+        if let Some(content_length) = body.content_length() {
+            let content_length = content_length.to_string();
+            request_builder = _header_serialization_settings.set_default_header(request_builder, ::http_1x::header::CONTENT_LENGTH, &content_length);
+        }
         ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }

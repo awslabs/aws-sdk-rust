@@ -2,7 +2,7 @@
 
 /// <p>The result returned from executing a tool call.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CallResult {
     /// <p>The identifier of the tool call that this result corresponds to.</p>
     pub call_id: ::std::option::Option<::std::string::String>,
@@ -20,6 +20,14 @@ impl CallResult {
         self.content.deref()
     }
 }
+impl ::std::fmt::Debug for CallResult {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CallResult");
+        formatter.field("call_id", &self.call_id);
+        formatter.field("content", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl CallResult {
     /// Creates a new builder-style object to manufacture [`CallResult`](crate::types::CallResult).
     pub fn builder() -> crate::types::builders::CallResultBuilder {
@@ -28,7 +36,7 @@ impl CallResult {
 }
 
 /// A builder for [`CallResult`](crate::types::CallResult).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CallResultBuilder {
     pub(crate) call_id: ::std::option::Option<::std::string::String>,
@@ -82,5 +90,13 @@ impl CallResultBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for CallResultBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CallResultBuilder");
+        formatter.field("call_id", &self.call_id);
+        formatter.field("content", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

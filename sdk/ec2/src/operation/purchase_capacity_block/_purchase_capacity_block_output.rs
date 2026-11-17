@@ -7,6 +7,8 @@ pub struct PurchaseCapacityBlockOutput {
     pub capacity_reservation: ::std::option::Option<crate::types::CapacityReservation>,
     /// <p>The Capacity Block.</p>
     pub capacity_blocks: ::std::option::Option<::std::vec::Vec<crate::types::CapacityBlock>>,
+    /// <p>The Capacity Reservations created as a result of the Capacity Block purchase. When a Capacity Block offering contains multiple segments, a separate Capacity Reservation is created for each segment.</p>
+    pub capacity_reservations: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>>,
     _request_id: Option<String>,
 }
 impl PurchaseCapacityBlockOutput {
@@ -19,6 +21,12 @@ impl PurchaseCapacityBlockOutput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_blocks.is_none()`.
     pub fn capacity_blocks(&self) -> &[crate::types::CapacityBlock] {
         self.capacity_blocks.as_deref().unwrap_or_default()
+    }
+    /// <p>The Capacity Reservations created as a result of the Capacity Block purchase. When a Capacity Block offering contains multiple segments, a separate Capacity Reservation is created for each segment.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.capacity_reservations.is_none()`.
+    pub fn capacity_reservations(&self) -> &[crate::types::CapacityReservation] {
+        self.capacity_reservations.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for PurchaseCapacityBlockOutput {
@@ -39,6 +47,7 @@ impl PurchaseCapacityBlockOutput {
 pub struct PurchaseCapacityBlockOutputBuilder {
     pub(crate) capacity_reservation: ::std::option::Option<crate::types::CapacityReservation>,
     pub(crate) capacity_blocks: ::std::option::Option<::std::vec::Vec<crate::types::CapacityBlock>>,
+    pub(crate) capacity_reservations: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>>,
     _request_id: Option<String>,
 }
 impl PurchaseCapacityBlockOutputBuilder {
@@ -76,6 +85,26 @@ impl PurchaseCapacityBlockOutputBuilder {
     pub fn get_capacity_blocks(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityBlock>> {
         &self.capacity_blocks
     }
+    /// Appends an item to `capacity_reservations`.
+    ///
+    /// To override the contents of this collection use [`set_capacity_reservations`](Self::set_capacity_reservations).
+    ///
+    /// <p>The Capacity Reservations created as a result of the Capacity Block purchase. When a Capacity Block offering contains multiple segments, a separate Capacity Reservation is created for each segment.</p>
+    pub fn capacity_reservations(mut self, input: crate::types::CapacityReservation) -> Self {
+        let mut v = self.capacity_reservations.unwrap_or_default();
+        v.push(input);
+        self.capacity_reservations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Capacity Reservations created as a result of the Capacity Block purchase. When a Capacity Block offering contains multiple segments, a separate Capacity Reservation is created for each segment.</p>
+    pub fn set_capacity_reservations(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>>) -> Self {
+        self.capacity_reservations = input;
+        self
+    }
+    /// <p>The Capacity Reservations created as a result of the Capacity Block purchase. When a Capacity Block offering contains multiple segments, a separate Capacity Reservation is created for each segment.</p>
+    pub fn get_capacity_reservations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityReservation>> {
+        &self.capacity_reservations
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -90,6 +119,7 @@ impl PurchaseCapacityBlockOutputBuilder {
         crate::operation::purchase_capacity_block::PurchaseCapacityBlockOutput {
             capacity_reservation: self.capacity_reservation,
             capacity_blocks: self.capacity_blocks,
+            capacity_reservations: self.capacity_reservations,
             _request_id: self._request_id,
         }
     }

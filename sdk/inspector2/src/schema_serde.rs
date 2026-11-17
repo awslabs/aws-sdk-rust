@@ -387,6 +387,18 @@ pub(crate) mod shape_free_trial_info;
 
 pub(crate) mod shape_free_trial_info_error;
 
+pub(crate) mod shape_gcp_capability_scope;
+
+pub(crate) mod shape_gcp_capability_scope_input;
+
+pub(crate) mod shape_gcp_provider_detail_create;
+
+pub(crate) mod shape_gcp_provider_detail_update;
+
+pub(crate) mod shape_gcp_scope_configuration;
+
+pub(crate) mod shape_gcp_scope_configuration_input;
+
 pub(crate) mod shape_get_cis_scan_report_input_input;
 
 pub(crate) mod shape_get_cis_scan_report_output_output;

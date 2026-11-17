@@ -16,6 +16,8 @@ pub struct NetworkMigrationDefinitionSummary {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Scope tags for the network migration definition.</p>
     pub scope_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The type of the network migration definition.</p>
+    pub definition_type: ::std::option::Option<crate::types::DefinitionType>,
 }
 impl NetworkMigrationDefinitionSummary {
     /// <p>The unique identifier of the network migration definition.</p>
@@ -42,6 +44,10 @@ impl NetworkMigrationDefinitionSummary {
     pub fn scope_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.scope_tags.as_ref()
     }
+    /// <p>The type of the network migration definition.</p>
+    pub fn definition_type(&self) -> ::std::option::Option<&crate::types::DefinitionType> {
+        self.definition_type.as_ref()
+    }
 }
 impl ::std::fmt::Debug for NetworkMigrationDefinitionSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -52,6 +58,7 @@ impl ::std::fmt::Debug for NetworkMigrationDefinitionSummary {
         formatter.field("arn", &self.arn);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("scope_tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("definition_type", &self.definition_type);
         formatter.finish()
     }
 }
@@ -72,6 +79,7 @@ pub struct NetworkMigrationDefinitionSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) scope_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) definition_type: ::std::option::Option<crate::types::DefinitionType>,
 }
 impl NetworkMigrationDefinitionSummaryBuilder {
     /// <p>The unique identifier of the network migration definition.</p>
@@ -170,6 +178,20 @@ impl NetworkMigrationDefinitionSummaryBuilder {
     pub fn get_scope_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.scope_tags
     }
+    /// <p>The type of the network migration definition.</p>
+    pub fn definition_type(mut self, input: crate::types::DefinitionType) -> Self {
+        self.definition_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the network migration definition.</p>
+    pub fn set_definition_type(mut self, input: ::std::option::Option<crate::types::DefinitionType>) -> Self {
+        self.definition_type = input;
+        self
+    }
+    /// <p>The type of the network migration definition.</p>
+    pub fn get_definition_type(&self) -> &::std::option::Option<crate::types::DefinitionType> {
+        &self.definition_type
+    }
     /// Consumes the builder and constructs a [`NetworkMigrationDefinitionSummary`](crate::types::NetworkMigrationDefinitionSummary).
     pub fn build(self) -> crate::types::NetworkMigrationDefinitionSummary {
         crate::types::NetworkMigrationDefinitionSummary {
@@ -179,6 +201,7 @@ impl NetworkMigrationDefinitionSummaryBuilder {
             arn: self.arn,
             tags: self.tags,
             scope_tags: self.scope_tags,
+            definition_type: self.definition_type,
         }
     }
 }
@@ -191,6 +214,7 @@ impl ::std::fmt::Debug for NetworkMigrationDefinitionSummaryBuilder {
         formatter.field("arn", &self.arn);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("scope_tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("definition_type", &self.definition_type);
         formatter.finish()
     }
 }

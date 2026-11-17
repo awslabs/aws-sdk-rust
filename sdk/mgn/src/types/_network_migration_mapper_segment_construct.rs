@@ -22,6 +22,10 @@ pub struct NetworkMigrationMapperSegmentConstruct {
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The properties and configuration of the construct.</p>
     pub properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The construct properties using their native value types. Returned by Get, and by List when includeEnrichedProperties is true.</p>
+    pub enriched_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
+    /// <p>The construct-type-specific behavioral configuration. Returned by Get, and by List when includeConfiguration is true.</p>
+    pub configuration: ::std::option::Option<crate::types::OperationConfigurationUnion>,
 }
 impl NetworkMigrationMapperSegmentConstruct {
     /// <p>The unique identifier of the construct.</p>
@@ -60,6 +64,14 @@ impl NetworkMigrationMapperSegmentConstruct {
     pub fn properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.properties.as_ref()
     }
+    /// <p>The construct properties using their native value types. Returned by Get, and by List when includeEnrichedProperties is true.</p>
+    pub fn enriched_properties(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
+        self.enriched_properties.as_ref()
+    }
+    /// <p>The construct-type-specific behavioral configuration. Returned by Get, and by List when includeConfiguration is true.</p>
+    pub fn configuration(&self) -> ::std::option::Option<&crate::types::OperationConfigurationUnion> {
+        self.configuration.as_ref()
+    }
 }
 impl NetworkMigrationMapperSegmentConstruct {
     /// Creates a new builder-style object to manufacture [`NetworkMigrationMapperSegmentConstruct`](crate::types::NetworkMigrationMapperSegmentConstruct).
@@ -81,6 +93,8 @@ pub struct NetworkMigrationMapperSegmentConstructBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) enriched_properties: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
+    pub(crate) configuration: ::std::option::Option<crate::types::OperationConfigurationUnion>,
 }
 impl NetworkMigrationMapperSegmentConstructBuilder {
     /// <p>The unique identifier of the construct.</p>
@@ -215,6 +229,45 @@ impl NetworkMigrationMapperSegmentConstructBuilder {
     pub fn get_properties(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.properties
     }
+    /// Adds a key-value pair to `enriched_properties`.
+    ///
+    /// To override the contents of this collection use [`set_enriched_properties`](Self::set_enriched_properties).
+    ///
+    /// <p>The construct properties using their native value types. Returned by Get, and by List when includeEnrichedProperties is true.</p>
+    pub fn enriched_properties(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::aws_smithy_types::Document) -> Self {
+        let mut hash_map = self.enriched_properties.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.enriched_properties = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The construct properties using their native value types. Returned by Get, and by List when includeEnrichedProperties is true.</p>
+    pub fn set_enriched_properties(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>>,
+    ) -> Self {
+        self.enriched_properties = input;
+        self
+    }
+    /// <p>The construct properties using their native value types. Returned by Get, and by List when includeEnrichedProperties is true.</p>
+    pub fn get_enriched_properties(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::aws_smithy_types::Document>> {
+        &self.enriched_properties
+    }
+    /// <p>The construct-type-specific behavioral configuration. Returned by Get, and by List when includeConfiguration is true.</p>
+    pub fn configuration(mut self, input: crate::types::OperationConfigurationUnion) -> Self {
+        self.configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The construct-type-specific behavioral configuration. Returned by Get, and by List when includeConfiguration is true.</p>
+    pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::OperationConfigurationUnion>) -> Self {
+        self.configuration = input;
+        self
+    }
+    /// <p>The construct-type-specific behavioral configuration. Returned by Get, and by List when includeConfiguration is true.</p>
+    pub fn get_configuration(&self) -> &::std::option::Option<crate::types::OperationConfigurationUnion> {
+        &self.configuration
+    }
     /// Consumes the builder and constructs a [`NetworkMigrationMapperSegmentConstruct`](crate::types::NetworkMigrationMapperSegmentConstruct).
     pub fn build(self) -> crate::types::NetworkMigrationMapperSegmentConstruct {
         crate::types::NetworkMigrationMapperSegmentConstruct {
@@ -227,6 +280,8 @@ impl NetworkMigrationMapperSegmentConstructBuilder {
             created_at: self.created_at,
             updated_at: self.updated_at,
             properties: self.properties,
+            enriched_properties: self.enriched_properties,
+            configuration: self.configuration,
         }
     }
 }

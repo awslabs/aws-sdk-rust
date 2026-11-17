@@ -14,6 +14,10 @@ pub struct SelfservicePermissions {
     pub switch_running_mode: ::std::option::Option<crate::types::ReconnectEnum>,
     /// <p>Specifies whether users can rebuild the operating system of a WorkSpace to its original state.</p>
     pub rebuild_workspace: ::std::option::Option<crate::types::ReconnectEnum>,
+    /// <p>Specifies whether users can enable or disable nested virtualization on their WorkSpace. The default value is <code>DISABLED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/nested-virtualization.html">Nested virtualization for Amazon WorkSpaces</a>.</p>
+    pub nested_virtualization: ::std::option::Option<crate::types::ReconnectEnum>,
+    /// <p>Specifies whether users can use End User Advisor in the WorkSpaces client for Windows to see their session health and get recommended actions for common issues. The default value is <code>ENABLED</code>. For more information, see Proactive troubleshooting for your WorkSpaces users.</p>
+    pub enable_end_user_advisor: ::std::option::Option<crate::types::ReconnectEnum>,
 }
 impl SelfservicePermissions {
     /// <p>Specifies whether users can restart their WorkSpace.</p>
@@ -36,6 +40,14 @@ impl SelfservicePermissions {
     pub fn rebuild_workspace(&self) -> ::std::option::Option<&crate::types::ReconnectEnum> {
         self.rebuild_workspace.as_ref()
     }
+    /// <p>Specifies whether users can enable or disable nested virtualization on their WorkSpace. The default value is <code>DISABLED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/nested-virtualization.html">Nested virtualization for Amazon WorkSpaces</a>.</p>
+    pub fn nested_virtualization(&self) -> ::std::option::Option<&crate::types::ReconnectEnum> {
+        self.nested_virtualization.as_ref()
+    }
+    /// <p>Specifies whether users can use End User Advisor in the WorkSpaces client for Windows to see their session health and get recommended actions for common issues. The default value is <code>ENABLED</code>. For more information, see Proactive troubleshooting for your WorkSpaces users.</p>
+    pub fn enable_end_user_advisor(&self) -> ::std::option::Option<&crate::types::ReconnectEnum> {
+        self.enable_end_user_advisor.as_ref()
+    }
 }
 impl SelfservicePermissions {
     /// Creates a new builder-style object to manufacture [`SelfservicePermissions`](crate::types::SelfservicePermissions).
@@ -53,6 +65,8 @@ pub struct SelfservicePermissionsBuilder {
     pub(crate) change_compute_type: ::std::option::Option<crate::types::ReconnectEnum>,
     pub(crate) switch_running_mode: ::std::option::Option<crate::types::ReconnectEnum>,
     pub(crate) rebuild_workspace: ::std::option::Option<crate::types::ReconnectEnum>,
+    pub(crate) nested_virtualization: ::std::option::Option<crate::types::ReconnectEnum>,
+    pub(crate) enable_end_user_advisor: ::std::option::Option<crate::types::ReconnectEnum>,
 }
 impl SelfservicePermissionsBuilder {
     /// <p>Specifies whether users can restart their WorkSpace.</p>
@@ -125,6 +139,34 @@ impl SelfservicePermissionsBuilder {
     pub fn get_rebuild_workspace(&self) -> &::std::option::Option<crate::types::ReconnectEnum> {
         &self.rebuild_workspace
     }
+    /// <p>Specifies whether users can enable or disable nested virtualization on their WorkSpace. The default value is <code>DISABLED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/nested-virtualization.html">Nested virtualization for Amazon WorkSpaces</a>.</p>
+    pub fn nested_virtualization(mut self, input: crate::types::ReconnectEnum) -> Self {
+        self.nested_virtualization = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether users can enable or disable nested virtualization on their WorkSpace. The default value is <code>DISABLED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/nested-virtualization.html">Nested virtualization for Amazon WorkSpaces</a>.</p>
+    pub fn set_nested_virtualization(mut self, input: ::std::option::Option<crate::types::ReconnectEnum>) -> Self {
+        self.nested_virtualization = input;
+        self
+    }
+    /// <p>Specifies whether users can enable or disable nested virtualization on their WorkSpace. The default value is <code>DISABLED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/nested-virtualization.html">Nested virtualization for Amazon WorkSpaces</a>.</p>
+    pub fn get_nested_virtualization(&self) -> &::std::option::Option<crate::types::ReconnectEnum> {
+        &self.nested_virtualization
+    }
+    /// <p>Specifies whether users can use End User Advisor in the WorkSpaces client for Windows to see their session health and get recommended actions for common issues. The default value is <code>ENABLED</code>. For more information, see Proactive troubleshooting for your WorkSpaces users.</p>
+    pub fn enable_end_user_advisor(mut self, input: crate::types::ReconnectEnum) -> Self {
+        self.enable_end_user_advisor = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether users can use End User Advisor in the WorkSpaces client for Windows to see their session health and get recommended actions for common issues. The default value is <code>ENABLED</code>. For more information, see Proactive troubleshooting for your WorkSpaces users.</p>
+    pub fn set_enable_end_user_advisor(mut self, input: ::std::option::Option<crate::types::ReconnectEnum>) -> Self {
+        self.enable_end_user_advisor = input;
+        self
+    }
+    /// <p>Specifies whether users can use End User Advisor in the WorkSpaces client for Windows to see their session health and get recommended actions for common issues. The default value is <code>ENABLED</code>. For more information, see Proactive troubleshooting for your WorkSpaces users.</p>
+    pub fn get_enable_end_user_advisor(&self) -> &::std::option::Option<crate::types::ReconnectEnum> {
+        &self.enable_end_user_advisor
+    }
     /// Consumes the builder and constructs a [`SelfservicePermissions`](crate::types::SelfservicePermissions).
     pub fn build(self) -> crate::types::SelfservicePermissions {
         crate::types::SelfservicePermissions {
@@ -133,6 +175,8 @@ impl SelfservicePermissionsBuilder {
             change_compute_type: self.change_compute_type,
             switch_running_mode: self.switch_running_mode,
             rebuild_workspace: self.rebuild_workspace,
+            nested_virtualization: self.nested_virtualization,
+            enable_end_user_advisor: self.enable_end_user_advisor,
         }
     }
 }

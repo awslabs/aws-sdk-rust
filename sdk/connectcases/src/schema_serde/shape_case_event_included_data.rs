@@ -20,6 +20,16 @@ static CASEEVENTINCLUDEDDATA_MEMBER_FIELDS: ::aws_smithy_schema::Schema<'static>
     0,
 )
 .with_list_member(&CASEEVENTINCLUDEDDATA_MEMBER_FIELDS_MEMBER);
+static CASEEVENTINCLUDEDDATA_MEMBER_AUTO_INCLUDE_FIELDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.connectcases#CaseEventIncludedData$autoIncludeFields",
+        "com.amazonaws.connectcases",
+        "CaseEventIncludedData",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "autoIncludeFields",
+    1,
+);
 static CASEEVENTINCLUDEDDATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.connectcases#CaseEventIncludedData",
@@ -27,7 +37,7 @@ static CASEEVENTINCLUDEDDATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aw
         "CaseEventIncludedData",
     ),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&CASEEVENTINCLUDEDDATA_MEMBER_FIELDS],
+    &[&CASEEVENTINCLUDEDDATA_MEMBER_FIELDS, &CASEEVENTINCLUDEDDATA_MEMBER_AUTO_INCLUDE_FIELDS],
 );
 impl crate::types::CaseEventIncludedData {
     /// The schema for this shape.
@@ -56,6 +66,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::CaseEventI
                 },
             )?;
         }
+        if let Some(ref val) = self.auto_include_fields {
+            ser.write_string(&CASEEVENTINCLUDEDDATA_MEMBER_AUTO_INCLUDE_FIELDS, val.as_str())?;
+        }
         Ok(())
     }
 }
@@ -82,6 +95,13 @@ impl crate::types::builders::CaseEventIncludedDataBuilder {
                         })?;
                         container
                     });
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_include_fields = Some(crate::types::AutoIncludeFields::from(deser.read_string(member)?.as_str()));
+                    }
                 }
                 _ => {}
             }

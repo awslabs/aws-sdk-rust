@@ -29,6 +29,12 @@ pub(crate) mod shape_create_dictionary;
 
 pub(crate) mod shape_create_feed;
 
+pub(crate) mod shape_create_function;
+
+pub(crate) mod shape_create_question_set;
+
+pub(crate) mod shape_create_question_set_version;
+
 pub(crate) mod shape_create_schedule_action;
 
 pub(crate) mod shape_delete_dictionary;
@@ -36,6 +42,12 @@ pub(crate) mod shape_delete_dictionary;
 pub(crate) mod shape_delete_feed;
 
 pub(crate) mod shape_delete_feed_policy;
+
+pub(crate) mod shape_delete_function;
+
+pub(crate) mod shape_delete_question_set;
+
+pub(crate) mod shape_delete_question_set_version;
 
 pub(crate) mod shape_delete_schedule_action;
 
@@ -51,9 +63,19 @@ pub(crate) mod shape_get_feed_policy;
 
 pub(crate) mod shape_get_fixture;
 
+pub(crate) mod shape_get_function;
+
+pub(crate) mod shape_get_question_set;
+
 pub(crate) mod shape_list_dictionaries;
 
 pub(crate) mod shape_list_feeds;
+
+pub(crate) mod shape_list_functions;
+
+pub(crate) mod shape_list_question_set_versions;
+
+pub(crate) mod shape_list_question_sets;
 
 pub(crate) mod shape_list_schedule_actions;
 
@@ -70,6 +92,10 @@ pub(crate) mod shape_untag_resource;
 pub(crate) mod shape_update_dictionary;
 
 pub(crate) mod shape_update_feed;
+
+pub(crate) mod shape_update_function;
+
+pub(crate) mod shape_update_question_set;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -88,6 +114,12 @@ pub(crate) mod shape_conflict_exception;
 pub(crate) mod shape_create_dictionary_input;
 
 pub(crate) mod shape_create_feed_input;
+
+pub(crate) mod shape_create_function_input;
+
+pub(crate) mod shape_create_question_set_input;
+
+pub(crate) mod shape_create_question_set_version_input;
 
 pub(crate) mod shape_create_schedule_action_input;
 
@@ -115,9 +147,19 @@ pub(crate) mod shape_update_dictionary_input;
 
 pub(crate) mod shape_update_feed_input;
 
+pub(crate) mod shape_update_function_input;
+
+pub(crate) mod shape_update_question_set_input;
+
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_choose_one_question;
+
+pub(crate) mod shape_choose_one_question_list;
+
 pub(crate) mod shape_competitor_list;
+
+pub(crate) mod shape_context_type_list;
 
 pub(crate) mod shape_create_output;
 
@@ -131,7 +173,15 @@ pub(crate) mod shape_feed_summary_list;
 
 pub(crate) mod shape_fixture_summary_list;
 
+pub(crate) mod shape_function_summary_list;
+
+pub(crate) mod shape_function_target;
+
 pub(crate) mod shape_get_output_list;
+
+pub(crate) mod shape_question_set_summary_list;
+
+pub(crate) mod shape_question_set_version_summary_list;
 
 pub(crate) mod shape_schedule_action_error;
 
@@ -151,6 +201,16 @@ pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_update_output;
 
+pub(crate) mod shape_yes_no_per_option_question;
+
+pub(crate) mod shape_yes_no_per_option_question_list;
+
+pub(crate) mod shape_yes_no_question;
+
+pub(crate) mod shape_yes_no_question_list;
+
+pub(crate) mod shape_bedrock_function_target;
+
 pub(crate) mod shape_competitor;
 
 pub(crate) mod shape_dictionary_summary;
@@ -161,9 +221,19 @@ pub(crate) mod shape_fixed_mode_schedule_action_start_settings;
 
 pub(crate) mod shape_fixture_summary;
 
+pub(crate) mod shape_function_summary;
+
 pub(crate) mod shape_get_output;
 
 pub(crate) mod shape_output_config;
+
+pub(crate) mod shape_passthrough_function_target;
+
+pub(crate) mod shape_question_option;
+
+pub(crate) mod shape_question_set_summary;
+
+pub(crate) mod shape_question_set_version_summary;
 
 pub(crate) mod shape_remove_clipping_data_source_configuration;
 
@@ -173,6 +243,8 @@ pub(crate) mod shape_update_clipping_data_source_configuration;
 
 pub(crate) mod shape_update_output_status;
 
+pub(crate) mod shape_choose_one_option_list;
+
 pub(crate) mod shape_clipping_config;
 
 pub(crate) mod shape_contextual_metadata_config;
@@ -181,11 +253,41 @@ pub(crate) mod shape_cropping_config;
 
 pub(crate) mod shape_data_source_configuration;
 
+pub(crate) mod shape_function_config;
+
 pub(crate) mod shape_subtitling_config;
+
+pub(crate) mod shape_yes_no_per_option_option_list;
 
 pub(crate) mod shape_aspect_ratio;
 
+pub(crate) mod shape_clipping_settings;
+
+pub(crate) mod shape_contextual_metadata_settings;
+
+pub(crate) mod shape_custom_questions_config;
+
+pub(crate) mod shape_frame_settings;
+
+pub(crate) mod shape_subtitling_settings;
+
 pub(crate) mod shape_template_group;
+
+pub(crate) mod shape_trigger;
+
+pub(crate) mod shape_clip_trigger;
+
+pub(crate) mod shape_fixed_interval_trigger;
+
+pub(crate) mod shape_frame_sampling_strategy;
+
+pub(crate) mod shape_frame_size;
+
+pub(crate) mod shape_question_set_reference;
+
+pub(crate) mod shape_scene_trigger;
+
+pub(crate) mod shape_shot_trigger;
 
 pub(crate) mod shape_template_group_list;
 

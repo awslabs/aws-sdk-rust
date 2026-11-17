@@ -9,6 +9,10 @@ pub use crate::types::_channel_logging_configuration::ChannelLoggingConfiguratio
 
 pub use crate::types::_channel_description::ChannelDescription;
 
+pub use crate::types::_queue_attributes::QueueAttributes;
+
+pub use crate::types::_queue_description::QueueDescription;
+
 pub use crate::types::_stream_mode_details::StreamModeDetails;
 
 pub use crate::types::_record_distribution_strategy::RecordDistributionStrategy;
@@ -45,6 +49,18 @@ pub use crate::types::_scaling_type::ScalingType;
 
 pub use crate::types::_warm_throughput_object::WarmThroughputObject;
 
+pub use crate::types::_acknowledge_dead_letter_queue_records_request_entry::AcknowledgeDeadLetterQueueRecordsRequestEntry;
+
+pub use crate::types::_acknowledge_dead_letter_queue_records_result_entry::AcknowledgeDeadLetterQueueRecordsResultEntry;
+
+pub use crate::types::_acknowledge_dead_letter_queue_records_error_entry::AcknowledgeDeadLetterQueueRecordsErrorEntry;
+
+pub use crate::types::_acknowledge_queue_records_request_entry::AcknowledgeQueueRecordsRequestEntry;
+
+pub use crate::types::_acknowledge_queue_records_result_entry::AcknowledgeQueueRecordsResultEntry;
+
+pub use crate::types::_acknowledge_queue_records_error_entry::AcknowledgeQueueRecordsErrorEntry;
+
 pub use crate::types::_channel_stream_configuration::ChannelStreamConfiguration;
 
 pub use crate::types::_dead_letter_queue_s3_configuration::DeadLetterQueueS3Configuration;
@@ -60,6 +76,12 @@ pub use crate::types::_channel_status::ChannelStatus;
 pub use crate::types::_s3_destination_description::S3DestinationDescription;
 
 pub use crate::types::_s3_tables_destination_description::S3TablesDestinationDescription;
+
+pub use crate::types::_queue_stream_configuration::QueueStreamConfiguration;
+
+pub use crate::types::_dead_letter_configuration::DeadLetterConfiguration;
+
+pub use crate::types::_queue_status::QueueStatus;
 
 pub use crate::types::_stream_mode::StreamMode;
 
@@ -79,6 +101,10 @@ pub use crate::types::_stream_filter::StreamFilter;
 
 pub use crate::types::_channel_summary::ChannelSummary;
 
+pub use crate::types::_queue_stream_filter::QueueStreamFilter;
+
+pub use crate::types::_queue_summary::QueueSummary;
+
 pub use crate::types::_shard_filter_type::ShardFilterType;
 
 pub use crate::types::_shard::Shard;
@@ -91,11 +117,31 @@ pub use crate::types::_put_records_request_entry::PutRecordsRequestEntry;
 
 pub use crate::types::_put_records_result_entry::PutRecordsResultEntry;
 
+pub use crate::types::_queue_record::QueueRecord;
+
+pub use crate::types::_restore_dead_letter_queue_records_request_entry::RestoreDeadLetterQueueRecordsRequestEntry;
+
+pub use crate::types::_restore_dead_letter_queue_records_result_entry::RestoreDeadLetterQueueRecordsResultEntry;
+
+pub use crate::types::_restore_dead_letter_queue_records_error_entry::RestoreDeadLetterQueueRecordsErrorEntry;
+
 pub use crate::types::_subscribe_to_shard_event::SubscribeToShardEvent;
 
 pub use crate::types::_minimum_throughput_billing_commitment_input_status::MinimumThroughputBillingCommitmentInputStatus;
 
 pub use crate::types::_cloud_watch_logs_update_input::CloudWatchLogsUpdateInput;
+
+pub use crate::types::_update_dead_letter_queue_records_visibility_request_entry::UpdateDeadLetterQueueRecordsVisibilityRequestEntry;
+
+pub use crate::types::_update_dead_letter_queue_records_visibility_result_entry::UpdateDeadLetterQueueRecordsVisibilityResultEntry;
+
+pub use crate::types::_update_dead_letter_queue_records_visibility_error_entry::UpdateDeadLetterQueueRecordsVisibilityErrorEntry;
+
+pub use crate::types::_update_queue_records_visibility_request_entry::UpdateQueueRecordsVisibilityRequestEntry;
+
+pub use crate::types::_update_queue_records_visibility_result_entry::UpdateQueueRecordsVisibilityResultEntry;
+
+pub use crate::types::_update_queue_records_visibility_error_entry::UpdateQueueRecordsVisibilityErrorEntry;
 
 pub use crate::types::_record_configuration::RecordConfiguration;
 
@@ -106,6 +152,10 @@ pub use crate::types::_s3_compression_type::S3CompressionType;
 pub use crate::types::_s3_tables_configuration::S3TablesConfiguration;
 
 pub use crate::types::_channel_stream_description::ChannelStreamDescription;
+
+pub use crate::types::_queue_starting_position::QueueStartingPosition;
+
+pub use crate::types::_target_type::TargetType;
 
 pub use crate::types::_enhanced_metrics::EnhancedMetrics;
 
@@ -121,11 +171,27 @@ pub use crate::types::_s3_tables_compression_type::S3TablesCompressionType;
 
 pub use crate::types::_partition_spec::PartitionSpec;
 
+pub use crate::types::_queue_starting_position_type::QueueStartingPositionType;
+
 pub use crate::types::_channel_stream_identifier::ChannelStreamIdentifier;
+
+pub use crate::types::_queue_stream_identifier::QueueStreamIdentifier;
 
 pub use crate::types::_partition_field::PartitionField;
 
 pub use crate::types::_partition_transform::PartitionTransform;
+
+mod _acknowledge_dead_letter_queue_records_error_entry;
+
+mod _acknowledge_dead_letter_queue_records_request_entry;
+
+mod _acknowledge_dead_letter_queue_records_result_entry;
+
+mod _acknowledge_queue_records_error_entry;
+
+mod _acknowledge_queue_records_request_entry;
+
+mod _acknowledge_queue_records_result_entry;
 
 mod _channel_description;
 
@@ -161,6 +227,8 @@ mod _consumer_description;
 
 mod _consumer_status;
 
+mod _dead_letter_configuration;
+
 mod _dead_letter_queue_s3_configuration;
 
 mod _encryption_type;
@@ -189,6 +257,26 @@ mod _put_records_request_entry;
 
 mod _put_records_result_entry;
 
+mod _queue_attributes;
+
+mod _queue_description;
+
+mod _queue_record;
+
+mod _queue_starting_position;
+
+mod _queue_starting_position_type;
+
+mod _queue_status;
+
+mod _queue_stream_configuration;
+
+mod _queue_stream_filter;
+
+mod _queue_stream_identifier;
+
+mod _queue_summary;
+
 mod _record;
 
 mod _record_configuration;
@@ -196,6 +284,12 @@ mod _record_configuration;
 mod _record_distribution_strategy;
 
 mod _record_format_type;
+
+mod _restore_dead_letter_queue_records_error_entry;
+
+mod _restore_dead_letter_queue_records_request_entry;
+
+mod _restore_dead_letter_queue_records_result_entry;
 
 mod _s3_compression_type;
 
@@ -252,6 +346,20 @@ mod _subscribe_to_shard_event;
 mod _subscribe_to_shard_event_stream;
 
 mod _tag;
+
+mod _target_type;
+
+mod _update_dead_letter_queue_records_visibility_error_entry;
+
+mod _update_dead_letter_queue_records_visibility_request_entry;
+
+mod _update_dead_letter_queue_records_visibility_result_entry;
+
+mod _update_queue_records_visibility_error_entry;
+
+mod _update_queue_records_visibility_request_entry;
+
+mod _update_queue_records_visibility_result_entry;
 
 mod _warm_throughput_object;
 

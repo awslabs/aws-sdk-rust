@@ -330,6 +330,8 @@ pub struct Builder {
     operation_attempt_timeout: Option<Duration>,
     config: Option<ProviderConfig>,
     retry_classifier: Option<SharedRetryClassifier>,
+    #[cfg(test)]
+    use_static_exponential_base: bool,
 }
 
 impl Builder {
@@ -431,6 +433,13 @@ impl Builder {
         self
     }
 
+    /// Remove the random jitter from retry backoff so tests can assert exact delays
+    #[cfg(test)]
+    fn use_static_exponential_base(mut self) -> Self {
+        self.use_static_exponential_base = true;
+        self
+    }
+
     /* TODO(https://github.com/awslabs/aws-sdk-rust/issues/339): Support customizing the port explicitly */
     /*
     pub fn port(mut self, port: u32) -> Self {
@@ -459,6 +468,9 @@ impl Builder {
         };
         let retry_config = RetryConfig::standard()
             .with_max_attempts(self.max_attempts.unwrap_or(DEFAULT_ATTEMPTS));
+        #[cfg(test)]
+        let retry_config =
+            retry_config.with_use_static_exponential_base(self.use_static_exponential_base);
         let retry_classifier = self.retry_classifier.unwrap_or(SharedRetryClassifier::new(
             ImdsResponseRetryClassifier::default(),
         ));
@@ -476,6 +488,7 @@ impl Builder {
             .runtime_plugin(TokenRuntimePlugin::new(
                 common_plugin,
                 self.token_ttl.unwrap_or(DEFAULT_TOKEN_TTL),
+                config.behavior_version(),
             ))
             .runtime_plugin(
                 MetricsRuntimePlugin::builder()
@@ -653,6 +666,10 @@ pub(crate) mod test {
     use aws_smithy_async::test_util::{instant_time_and_sleep, InstantSleep};
     use aws_smithy_http_client::test_util::{capture_request, ReplayEvent, StaticReplayClient};
     use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
+    use aws_smithy_runtime_api::client::behavior_version::BehaviorVersion;
+    use aws_smithy_runtime_api::client::http::{
+        HttpClient, HttpConnector, HttpConnectorFuture, HttpConnectorSettings, SharedHttpConnector,
+    };
     use aws_smithy_runtime_api::client::interceptors::context::{
         Input, InterceptorContext, Output,
     };
@@ -662,6 +679,8 @@ pub(crate) mod test {
     use aws_smithy_runtime_api::client::retries::classifiers::{
         ClassifyRetry, RetryAction, SharedRetryClassifier,
     };
+    use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
+    use aws_smithy_runtime_api::shared::IntoShared;
     use aws_smithy_types::body::SdkBody;
     use aws_smithy_types::error::display::DisplayErrorContext;
     use aws_types::os_shim_internal::{Env, Fs};
@@ -671,6 +690,8 @@ pub(crate) mod test {
     use std::collections::HashMap;
     use std::error::Error;
     use std::io;
+    use std::sync::atomic::{AtomicUsize, Ordering};
+    use std::sync::Arc;
     use std::time::{Duration, UNIX_EPOCH};
     use tracing_test::traced_test;
 
@@ -1153,64 +1174,92 @@ pub(crate) mod test {
         );
     }
 
-    async fn retry_connect_timeouts_for_bv(
-        behavior_version: aws_smithy_runtime_api::client::behavior_version::BehaviorVersion,
-        min_elapsed: Duration,
-        max_elapsed: Duration,
-    ) {
-        use std::time::SystemTime;
-        let http_client = StaticReplayClient::new(vec![]);
-        let imds_client = super::Client::builder()
-            .retry_classifier(SharedRetryClassifier::new(
-                ImdsResponseRetryClassifier::default().with_retry_connect_timeouts(true),
-            ))
+    /// HTTP client whose connection attempts all time out. It counts the attempts.
+    #[derive(Clone, Debug, Default)]
+    struct ConnectTimeoutClient {
+        attempts: Arc<AtomicUsize>,
+    }
+
+    impl HttpConnector for ConnectTimeoutClient {
+        fn call(&self, _request: HttpRequest) -> HttpConnectorFuture {
+            self.attempts.fetch_add(1, Ordering::SeqCst);
+            HttpConnectorFuture::ready(Err(ConnectorError::timeout("connect timed out".into())))
+        }
+    }
+
+    impl HttpClient for ConnectTimeoutClient {
+        fn http_connector(
+            &self,
+            _: &HttpConnectorSettings,
+            _: &RuntimeComponents,
+        ) -> SharedHttpConnector {
+            self.clone().into_shared()
+        }
+    }
+
+    /// Make one IMDS request whose connections all time out, with 2 attempts per request and no
+    /// backoff jitter. Returns the number of connection attempts and each backoff delay, in order.
+    ///
+    /// Sleeps return immediately and are only recorded, so this neither depends on nor spends
+    /// wall-clock time.
+    async fn connection_attempts_and_backoffs(
+        retry_classifier: Option<ImdsResponseRetryClassifier>,
+        behavior_version: BehaviorVersion,
+    ) -> (usize, Vec<Duration>) {
+        let http_client = ConnectTimeoutClient::default();
+        let sleep = InstantSleep::unlogged();
+        let mut builder = super::Client::builder()
+            .max_attempts(2)
+            .use_static_exponential_base()
             .configure(
                 &ProviderConfig::no_configuration()
                     .with_http_client(http_client.clone())
+                    .with_sleep_impl(sleep.clone())
                     .with_behavior_version(Some(behavior_version)),
-            )
-            .operation_timeout(Duration::from_secs(1))
-            .endpoint("http://240.0.0.0")
-            .expect("valid uri")
-            .build();
-
-        let now = SystemTime::now();
-        let _res = imds_client
+            );
+        if let Some(retry_classifier) = retry_classifier {
+            builder = builder.retry_classifier(SharedRetryClassifier::new(retry_classifier));
+        }
+        let err = builder
+            .build()
             .get("/latest/metadata")
             .await
-            .expect_err("240.0.0.0 will never resolve");
-        let time_elapsed = now.elapsed().unwrap();
+            .expect_err("every connection attempt times out");
+        assert_full_error_contains!(err, "connect timed out");
+        (http_client.attempts.load(Ordering::SeqCst), sleep.logs())
+    }
 
-        assert!(
-            time_elapsed > min_elapsed,
-            "time_elapsed should be greater than {min_elapsed:?} but was {time_elapsed:?}",
+    /// Retry classifier properly retries connect timeouts when configured to, using the backoff of
+    /// the caller's behavior version for both the token request and the metadata request
+    #[tokio::test]
+    async fn retry_connect_timeouts() {
+        let retry_connect_timeouts =
+            || Some(ImdsResponseRetryClassifier::default().with_retry_connect_timeouts(true));
+        // Each metadata attempt first loads a token, and each token load makes 2 attempts, so
+        // there are 4 connection attempts. The backoffs are, in order: the first token load's,
+        // the one between metadata attempts, and the second token load's.
+        #[allow(deprecated)]
+        let legacy = BehaviorVersion::v2024_03_28();
+        assert_eq!(
+            connection_attempts_and_backoffs(retry_connect_timeouts(), legacy).await,
+            (4, vec![Duration::from_secs(1); 3]),
         );
-        assert!(
-            time_elapsed < max_elapsed,
-            "time_elapsed should be less than {max_elapsed:?} but was {time_elapsed:?}",
+        // Retry Behavior 2.1 lowers the base backoff for non-throttling errors to 50ms
+        #[allow(deprecated)]
+        let retry_2_1 = BehaviorVersion::v2026_11_10();
+        assert_eq!(
+            connection_attempts_and_backoffs(retry_connect_timeouts(), retry_2_1).await,
+            (4, vec![Duration::from_millis(50); 3]),
         );
     }
 
-    /// Retry classifier properly retries timeouts when configured to
+    /// The default retry classifier doesn't retry connect timeouts
     #[tokio::test]
-    async fn retry_connect_timeouts() {
-        use aws_smithy_runtime_api::client::behavior_version::BehaviorVersion;
-        // Legacy: 1s backoff, total > 1s
-        #[allow(deprecated)]
-        retry_connect_timeouts_for_bv(
-            BehaviorVersion::v2024_03_28(),
-            Duration::from_secs(1),
-            Duration::from_secs(2),
-        )
-        .await;
-
-        // Latest: 50ms backoff, total > 500ms (dominated by operation_timeout)
-        retry_connect_timeouts_for_bv(
-            BehaviorVersion::latest(),
-            Duration::from_millis(500),
-            Duration::from_secs(2),
-        )
-        .await;
+    async fn connect_timeouts_not_retried_by_default() {
+        assert_eq!(
+            connection_attempts_and_backoffs(None, BehaviorVersion::latest()).await,
+            (1, vec![]),
+        );
     }
 
     #[derive(Debug, Deserialize)]

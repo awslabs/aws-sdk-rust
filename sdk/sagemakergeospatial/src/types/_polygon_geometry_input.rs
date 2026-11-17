@@ -2,7 +2,7 @@
 
 /// <p>The structure representing Polygon Geometry based on the <a href="https://www.rfc-editor.org/rfc/rfc7946#section-3.1.6">GeoJson spec</a>.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PolygonGeometryInput {
     /// <p>Coordinates representing a Polygon based on the <a href="https://www.rfc-editor.org/rfc/rfc7946#section-3.1.6">GeoJson spec</a>.</p>
     pub coordinates: ::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>,
@@ -14,6 +14,13 @@ impl PolygonGeometryInput {
         self.coordinates.deref()
     }
 }
+impl ::std::fmt::Debug for PolygonGeometryInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PolygonGeometryInput");
+        formatter.field("coordinates", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl PolygonGeometryInput {
     /// Creates a new builder-style object to manufacture [`PolygonGeometryInput`](crate::types::PolygonGeometryInput).
     pub fn builder() -> crate::types::builders::PolygonGeometryInputBuilder {
@@ -22,7 +29,7 @@ impl PolygonGeometryInput {
 }
 
 /// A builder for [`PolygonGeometryInput`](crate::types::PolygonGeometryInput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct PolygonGeometryInputBuilder {
     pub(crate) coordinates: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::vec::Vec<f64>>>>,
@@ -60,5 +67,12 @@ impl PolygonGeometryInputBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for PolygonGeometryInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PolygonGeometryInputBuilder");
+        formatter.field("coordinates", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

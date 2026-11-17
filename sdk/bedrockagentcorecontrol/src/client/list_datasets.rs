@@ -4,6 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
+    ///   - [`filter(ListDatasetsFilter)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::filter) / [`set_filter(Option<ListDatasetsFilter>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_filter):<br>required: **false**<br><p>A filter to apply to the datasets.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_next_token):<br>required: **false**<br><p>The token for the next page of results.</p><br>
     ///   - [`max_results(i32)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_datasets::builders::ListDatasetsFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of datasets to return per page.</p><br>
     /// - On success, responds with [`ListDatasetsOutput`](crate::operation::list_datasets::ListDatasetsOutput) with field(s):

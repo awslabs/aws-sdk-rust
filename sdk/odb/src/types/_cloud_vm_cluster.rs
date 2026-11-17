@@ -2,7 +2,7 @@
 
 /// <p>Information about a VM cluster.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CloudVmCluster {
     /// <p>The unique identifier of the VM cluster.</p>
     pub cloud_vm_cluster_id: ::std::string::String,
@@ -314,6 +314,61 @@ impl CloudVmCluster {
         self.iam_roles.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for CloudVmCluster {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CloudVmCluster");
+        formatter.field("cloud_vm_cluster_id", &self.cloud_vm_cluster_id);
+        formatter.field("display_name", &self.display_name);
+        formatter.field("status", &self.status);
+        formatter.field("status_reason", &self.status_reason);
+        formatter.field("cloud_vm_cluster_arn", &self.cloud_vm_cluster_arn);
+        formatter.field("cloud_exadata_infrastructure_id", &self.cloud_exadata_infrastructure_id);
+        formatter.field("cloud_exadata_infrastructure_arn", &self.cloud_exadata_infrastructure_arn);
+        formatter.field("exascale_db_storage_vault_id", &self.exascale_db_storage_vault_id);
+        formatter.field("exascale_db_storage_vault_arn", &self.exascale_db_storage_vault_arn);
+        formatter.field("storage_management_type", &self.storage_management_type);
+        formatter.field("vm_file_system_storage_type", &self.vm_file_system_storage_type);
+        formatter.field("vm_backup_storage_type", &self.vm_backup_storage_type);
+        formatter.field("file_system_configuration_details", &self.file_system_configuration_details);
+        formatter.field("cluster_name", &self.cluster_name);
+        formatter.field("cpu_core_count", &self.cpu_core_count);
+        formatter.field("data_collection_options", &self.data_collection_options);
+        formatter.field("data_storage_size_in_tbs", &self.data_storage_size_in_tbs);
+        formatter.field("db_node_storage_size_in_gbs", &self.db_node_storage_size_in_gbs);
+        formatter.field("db_servers", &self.db_servers);
+        formatter.field("disk_redundancy", &self.disk_redundancy);
+        formatter.field("gi_version", &self.gi_version);
+        formatter.field("hostname", &self.hostname);
+        formatter.field("iorm_config_cache", &self.iorm_config_cache);
+        formatter.field("is_local_backup_enabled", &self.is_local_backup_enabled);
+        formatter.field("is_sparse_diskgroup_enabled", &self.is_sparse_diskgroup_enabled);
+        formatter.field("last_update_history_entry_id", &self.last_update_history_entry_id);
+        formatter.field("license_model", &self.license_model);
+        formatter.field("listener_port", &self.listener_port);
+        formatter.field("memory_size_in_gbs", &self.memory_size_in_gbs);
+        formatter.field("node_count", &self.node_count);
+        formatter.field("ocid", &self.ocid);
+        formatter.field("oci_resource_anchor_name", &self.oci_resource_anchor_name);
+        formatter.field("oci_url", &self.oci_url);
+        formatter.field("domain", &self.domain);
+        formatter.field("scan_dns_name", &self.scan_dns_name);
+        formatter.field("scan_dns_record_id", &self.scan_dns_record_id);
+        formatter.field("scan_ip_ids", &self.scan_ip_ids);
+        formatter.field("shape", &self.shape);
+        formatter.field("ssh_public_keys", &"*** Sensitive Data Redacted ***");
+        formatter.field("storage_size_in_gbs", &self.storage_size_in_gbs);
+        formatter.field("system_version", &self.system_version);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("time_zone", &self.time_zone);
+        formatter.field("vip_ids", &self.vip_ids);
+        formatter.field("odb_network_id", &self.odb_network_id);
+        formatter.field("odb_network_arn", &self.odb_network_arn);
+        formatter.field("percent_progress", &self.percent_progress);
+        formatter.field("compute_model", &self.compute_model);
+        formatter.field("iam_roles", &self.iam_roles);
+        formatter.finish()
+    }
+}
 impl CloudVmCluster {
     /// Creates a new builder-style object to manufacture [`CloudVmCluster`](crate::types::CloudVmCluster).
     pub fn builder() -> crate::types::builders::CloudVmClusterBuilder {
@@ -322,7 +377,7 @@ impl CloudVmCluster {
 }
 
 /// A builder for [`CloudVmCluster`](crate::types::CloudVmCluster).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CloudVmClusterBuilder {
     pub(crate) cloud_vm_cluster_id: ::std::option::Option<::std::string::String>,
@@ -1162,5 +1217,60 @@ impl CloudVmClusterBuilder {
             compute_model: self.compute_model,
             iam_roles: self.iam_roles,
         })
+    }
+}
+impl ::std::fmt::Debug for CloudVmClusterBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CloudVmClusterBuilder");
+        formatter.field("cloud_vm_cluster_id", &self.cloud_vm_cluster_id);
+        formatter.field("display_name", &self.display_name);
+        formatter.field("status", &self.status);
+        formatter.field("status_reason", &self.status_reason);
+        formatter.field("cloud_vm_cluster_arn", &self.cloud_vm_cluster_arn);
+        formatter.field("cloud_exadata_infrastructure_id", &self.cloud_exadata_infrastructure_id);
+        formatter.field("cloud_exadata_infrastructure_arn", &self.cloud_exadata_infrastructure_arn);
+        formatter.field("exascale_db_storage_vault_id", &self.exascale_db_storage_vault_id);
+        formatter.field("exascale_db_storage_vault_arn", &self.exascale_db_storage_vault_arn);
+        formatter.field("storage_management_type", &self.storage_management_type);
+        formatter.field("vm_file_system_storage_type", &self.vm_file_system_storage_type);
+        formatter.field("vm_backup_storage_type", &self.vm_backup_storage_type);
+        formatter.field("file_system_configuration_details", &self.file_system_configuration_details);
+        formatter.field("cluster_name", &self.cluster_name);
+        formatter.field("cpu_core_count", &self.cpu_core_count);
+        formatter.field("data_collection_options", &self.data_collection_options);
+        formatter.field("data_storage_size_in_tbs", &self.data_storage_size_in_tbs);
+        formatter.field("db_node_storage_size_in_gbs", &self.db_node_storage_size_in_gbs);
+        formatter.field("db_servers", &self.db_servers);
+        formatter.field("disk_redundancy", &self.disk_redundancy);
+        formatter.field("gi_version", &self.gi_version);
+        formatter.field("hostname", &self.hostname);
+        formatter.field("iorm_config_cache", &self.iorm_config_cache);
+        formatter.field("is_local_backup_enabled", &self.is_local_backup_enabled);
+        formatter.field("is_sparse_diskgroup_enabled", &self.is_sparse_diskgroup_enabled);
+        formatter.field("last_update_history_entry_id", &self.last_update_history_entry_id);
+        formatter.field("license_model", &self.license_model);
+        formatter.field("listener_port", &self.listener_port);
+        formatter.field("memory_size_in_gbs", &self.memory_size_in_gbs);
+        formatter.field("node_count", &self.node_count);
+        formatter.field("ocid", &self.ocid);
+        formatter.field("oci_resource_anchor_name", &self.oci_resource_anchor_name);
+        formatter.field("oci_url", &self.oci_url);
+        formatter.field("domain", &self.domain);
+        formatter.field("scan_dns_name", &self.scan_dns_name);
+        formatter.field("scan_dns_record_id", &self.scan_dns_record_id);
+        formatter.field("scan_ip_ids", &self.scan_ip_ids);
+        formatter.field("shape", &self.shape);
+        formatter.field("ssh_public_keys", &"*** Sensitive Data Redacted ***");
+        formatter.field("storage_size_in_gbs", &self.storage_size_in_gbs);
+        formatter.field("system_version", &self.system_version);
+        formatter.field("created_at", &self.created_at);
+        formatter.field("time_zone", &self.time_zone);
+        formatter.field("vip_ids", &self.vip_ids);
+        formatter.field("odb_network_id", &self.odb_network_id);
+        formatter.field("odb_network_arn", &self.odb_network_arn);
+        formatter.field("percent_progress", &self.percent_progress);
+        formatter.field("compute_model", &self.compute_model);
+        formatter.field("iam_roles", &self.iam_roles);
+        formatter.finish()
     }
 }

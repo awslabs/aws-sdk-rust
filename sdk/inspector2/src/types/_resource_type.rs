@@ -21,6 +21,9 @@
 ///     ResourceType::MicrosoftComputeVirtualMachines => { /* ... */ },
 ///     ResourceType::MicrosoftContainerRegistryRegistryContainerImage => { /* ... */ },
 ///     ResourceType::MicrosoftWebSites => { /* ... */ },
+///     ResourceType::ArtifactregistryGoogleapisComDockerImage => { /* ... */ },
+///     ResourceType::CloudfunctionsGoogleapisComFunction => { /* ... */ },
+///     ResourceType::ComputeGoogleapisComInstance => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -67,6 +70,12 @@ pub enum ResourceType {
     MicrosoftContainerRegistryRegistryContainerImage,
     #[allow(missing_docs)] // documentation missing in model
     MicrosoftWebSites,
+    #[allow(missing_docs)] // documentation missing in model
+    ArtifactregistryGoogleapisComDockerImage,
+    #[allow(missing_docs)] // documentation missing in model
+    CloudfunctionsGoogleapisComFunction,
+    #[allow(missing_docs)] // documentation missing in model
+    ComputeGoogleapisComInstance,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -83,6 +92,9 @@ impl ::std::convert::From<&str> for ResourceType {
             "Microsoft.Compute/virtualMachines" => ResourceType::MicrosoftComputeVirtualMachines,
             "Microsoft.ContainerRegistry/registry/containerImage" => ResourceType::MicrosoftContainerRegistryRegistryContainerImage,
             "Microsoft.Web/sites" => ResourceType::MicrosoftWebSites,
+            "artifactregistry.googleapis.com/DockerImage" => ResourceType::ArtifactregistryGoogleapisComDockerImage,
+            "cloudfunctions.googleapis.com/Function" => ResourceType::CloudfunctionsGoogleapisComFunction,
+            "compute.googleapis.com/Instance" => ResourceType::ComputeGoogleapisComInstance,
             other => ResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -107,6 +119,9 @@ impl ResourceType {
             ResourceType::MicrosoftComputeVirtualMachines => "Microsoft.Compute/virtualMachines",
             ResourceType::MicrosoftContainerRegistryRegistryContainerImage => "Microsoft.ContainerRegistry/registry/containerImage",
             ResourceType::MicrosoftWebSites => "Microsoft.Web/sites",
+            ResourceType::ArtifactregistryGoogleapisComDockerImage => "artifactregistry.googleapis.com/DockerImage",
+            ResourceType::CloudfunctionsGoogleapisComFunction => "cloudfunctions.googleapis.com/Function",
+            ResourceType::ComputeGoogleapisComInstance => "compute.googleapis.com/Instance",
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
@@ -122,6 +137,9 @@ impl ResourceType {
             "Microsoft.Compute/virtualMachines",
             "Microsoft.ContainerRegistry/registry/containerImage",
             "Microsoft.Web/sites",
+            "artifactregistry.googleapis.com/DockerImage",
+            "cloudfunctions.googleapis.com/Function",
+            "compute.googleapis.com/Instance",
         ]
     }
 }
@@ -154,6 +172,9 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::MicrosoftComputeVirtualMachines => write!(f, "Microsoft.Compute/virtualMachines"),
             ResourceType::MicrosoftContainerRegistryRegistryContainerImage => write!(f, "Microsoft.ContainerRegistry/registry/containerImage"),
             ResourceType::MicrosoftWebSites => write!(f, "Microsoft.Web/sites"),
+            ResourceType::ArtifactregistryGoogleapisComDockerImage => write!(f, "artifactregistry.googleapis.com/DockerImage"),
+            ResourceType::CloudfunctionsGoogleapisComFunction => write!(f, "cloudfunctions.googleapis.com/Function"),
+            ResourceType::ComputeGoogleapisComInstance => write!(f, "compute.googleapis.com/Instance"),
             ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

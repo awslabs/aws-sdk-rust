@@ -7,6 +7,8 @@ pub struct UpdateAccessSourceInput {
     pub access_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The CIDR block for the access source.</p>
     pub cidr: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the DNS view to associate with this access source.</p>
+    pub dns_view_id: ::std::option::Option<::std::string::String>,
     /// <p>The IP address type for the access source.</p>
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>The name of the access source.</p>
@@ -22,6 +24,10 @@ impl UpdateAccessSourceInput {
     /// <p>The CIDR block for the access source.</p>
     pub fn cidr(&self) -> ::std::option::Option<&str> {
         self.cidr.as_deref()
+    }
+    /// <p>The ID of the DNS view to associate with this access source.</p>
+    pub fn dns_view_id(&self) -> ::std::option::Option<&str> {
+        self.dns_view_id.as_deref()
     }
     /// <p>The IP address type for the access source.</p>
     pub fn ip_address_type(&self) -> ::std::option::Option<&crate::types::IpAddressType> {
@@ -49,6 +55,7 @@ impl UpdateAccessSourceInput {
 pub struct UpdateAccessSourceInputBuilder {
     pub(crate) access_source_id: ::std::option::Option<::std::string::String>,
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
+    pub(crate) dns_view_id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<crate::types::DnsProtocol>,
@@ -82,6 +89,20 @@ impl UpdateAccessSourceInputBuilder {
     /// <p>The CIDR block for the access source.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.cidr
+    }
+    /// <p>The ID of the DNS view to associate with this access source.</p>
+    pub fn dns_view_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dns_view_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the DNS view to associate with this access source.</p>
+    pub fn set_dns_view_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.dns_view_id = input;
+        self
+    }
+    /// <p>The ID of the DNS view to associate with this access source.</p>
+    pub fn get_dns_view_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.dns_view_id
     }
     /// <p>The IP address type for the access source.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
@@ -133,6 +154,7 @@ impl UpdateAccessSourceInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_access_source::UpdateAccessSourceInput {
             access_source_id: self.access_source_id,
             cidr: self.cidr,
+            dns_view_id: self.dns_view_id,
             ip_address_type: self.ip_address_type,
             name: self.name,
             protocol: self.protocol,

@@ -22,6 +22,16 @@ static DESCRIBECONFORMANCEPACKSTATUSINPUT_MEMBER_CONFORMANCE_PACK_NAMES: ::aws_s
         0,
     )
     .with_list_member(&DESCRIBECONFORMANCEPACKSTATUSINPUT_MEMBER_CONFORMANCE_PACK_NAMES_MEMBER);
+static DESCRIBECONFORMANCEPACKSTATUSINPUT_MEMBER_FILTERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.configservice.synthetic#DescribeConformancePackStatusInput$Filters",
+        "com.amazonaws.configservice.synthetic",
+        "DescribeConformancePackStatusInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Filters",
+    1,
+);
 static DESCRIBECONFORMANCEPACKSTATUSINPUT_MEMBER_LIMIT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.configservice.synthetic#DescribeConformancePackStatusInput$Limit",
@@ -30,7 +40,7 @@ static DESCRIBECONFORMANCEPACKSTATUSINPUT_MEMBER_LIMIT: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "Limit",
-    1,
+    2,
 );
 static DESCRIBECONFORMANCEPACKSTATUSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -40,7 +50,7 @@ static DESCRIBECONFORMANCEPACKSTATUSINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema
     ),
     ::aws_smithy_schema::ShapeType::String,
     "NextToken",
-    2,
+    3,
 );
 static DESCRIBECONFORMANCEPACKSTATUSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -51,6 +61,7 @@ static DESCRIBECONFORMANCEPACKSTATUSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'s
     ::aws_smithy_schema::ShapeType::Structure,
     &[
         &DESCRIBECONFORMANCEPACKSTATUSINPUT_MEMBER_CONFORMANCE_PACK_NAMES,
+        &DESCRIBECONFORMANCEPACKSTATUSINPUT_MEMBER_FILTERS,
         &DESCRIBECONFORMANCEPACKSTATUSINPUT_MEMBER_LIMIT,
         &DESCRIBECONFORMANCEPACKSTATUSINPUT_MEMBER_NEXT_TOKEN,
     ],
@@ -81,6 +92,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::descri
                     Ok(())
                 },
             )?;
+        }
+        if let Some(ref val) = self.filters {
+            ser.write_struct(&DESCRIBECONFORMANCEPACKSTATUSINPUT_MEMBER_FILTERS, val)?;
         }
         if let Some(ref val) = self.limit {
             ser.write_integer(&DESCRIBECONFORMANCEPACKSTATUSINPUT_MEMBER_LIMIT, *val)?;
@@ -116,10 +130,17 @@ impl crate::operation::describe_conformance_pack_status::builders::DescribeConfo
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.limit = Some(deser.read_integer(member)?);
+                        self.filters = Some(crate::types::DescribeConformancePacksFilters::deserialize(deser)?);
                     }
                 }
                 Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.limit = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

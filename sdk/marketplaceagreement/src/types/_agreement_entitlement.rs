@@ -2,7 +2,7 @@
 
 /// <p>Represents an entitlement associated with an agreement, including the provisioning status, resource, and type.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AgreementEntitlement {
     /// <p>The resource that the entitlement is provisioned to, such as a product.</p>
     pub resource: ::std::option::Option<crate::types::Resource>,
@@ -43,6 +43,18 @@ impl AgreementEntitlement {
         self.license_arn.as_deref()
     }
 }
+impl ::std::fmt::Debug for AgreementEntitlement {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AgreementEntitlement");
+        formatter.field("resource", &self.resource);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("registration_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("status", &self.status);
+        formatter.field("status_reason_code", &self.status_reason_code);
+        formatter.field("license_arn", &self.license_arn);
+        formatter.finish()
+    }
+}
 impl AgreementEntitlement {
     /// Creates a new builder-style object to manufacture [`AgreementEntitlement`](crate::types::AgreementEntitlement).
     pub fn builder() -> crate::types::builders::AgreementEntitlementBuilder {
@@ -51,7 +63,7 @@ impl AgreementEntitlement {
 }
 
 /// A builder for [`AgreementEntitlement`](crate::types::AgreementEntitlement).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct AgreementEntitlementBuilder {
     pub(crate) resource: ::std::option::Option<crate::types::Resource>,
@@ -156,5 +168,17 @@ impl AgreementEntitlementBuilder {
             status_reason_code: self.status_reason_code,
             license_arn: self.license_arn,
         }
+    }
+}
+impl ::std::fmt::Debug for AgreementEntitlementBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AgreementEntitlementBuilder");
+        formatter.field("resource", &self.resource);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("registration_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("status", &self.status);
+        formatter.field("status_reason_code", &self.status_reason_code);
+        formatter.field("license_arn", &self.license_arn);
+        formatter.finish()
     }
 }

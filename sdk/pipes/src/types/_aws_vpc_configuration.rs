@@ -2,7 +2,7 @@
 
 /// <p>This structure specifies the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the <code>awsvpc</code> network mode.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AwsVpcConfiguration {
     /// <p>Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.</p>
     pub subnets: ::std::vec::Vec<::std::string::String>,
@@ -28,6 +28,15 @@ impl AwsVpcConfiguration {
         self.assign_public_ip.as_ref()
     }
 }
+impl ::std::fmt::Debug for AwsVpcConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsVpcConfiguration");
+        formatter.field("subnets", &"*** Sensitive Data Redacted ***");
+        formatter.field("security_groups", &"*** Sensitive Data Redacted ***");
+        formatter.field("assign_public_ip", &self.assign_public_ip);
+        formatter.finish()
+    }
+}
 impl AwsVpcConfiguration {
     /// Creates a new builder-style object to manufacture [`AwsVpcConfiguration`](crate::types::AwsVpcConfiguration).
     pub fn builder() -> crate::types::builders::AwsVpcConfigurationBuilder {
@@ -36,7 +45,7 @@ impl AwsVpcConfiguration {
 }
 
 /// A builder for [`AwsVpcConfiguration`](crate::types::AwsVpcConfiguration).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct AwsVpcConfigurationBuilder {
     pub(crate) subnets: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -112,5 +121,14 @@ impl AwsVpcConfigurationBuilder {
             security_groups: self.security_groups,
             assign_public_ip: self.assign_public_ip,
         })
+    }
+}
+impl ::std::fmt::Debug for AwsVpcConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsVpcConfigurationBuilder");
+        formatter.field("subnets", &"*** Sensitive Data Redacted ***");
+        formatter.field("security_groups", &"*** Sensitive Data Redacted ***");
+        formatter.field("assign_public_ip", &self.assign_public_ip);
+        formatter.finish()
     }
 }

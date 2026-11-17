@@ -9,8 +9,38 @@ pub(crate) fn reflens_get_agreement_entitlements_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_get_agreement_request_approval_plans_output_output_next_token(
+    input: &crate::operation::get_agreement_request_approval_plans::GetAgreementRequestApprovalPlansOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_get_agreement_request_terms_output_output_next_token(
+    input: &crate::operation::get_agreement_request_terms::GetAgreementRequestTermsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_get_agreement_terms_output_output_next_token(
     input: &crate::operation::get_agreement_terms::GetAgreementTermsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_agreement_approvals_output_output_next_token(
+    input: &crate::operation::list_agreement_approvals::ListAgreementApprovalsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -59,6 +89,16 @@ pub(crate) fn reflens_list_agreement_payment_requests_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_agreement_requests_output_output_next_token(
+    input: &crate::operation::list_agreement_requests::ListAgreementRequestsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_billing_adjustment_requests_output_output_next_token(
     input: &crate::operation::list_billing_adjustment_requests::ListBillingAdjustmentRequestsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -86,10 +126,31 @@ pub(crate) fn lens_get_agreement_entitlements_output_output_agreement_entitlemen
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_get_agreement_request_approval_plans_output_output_items(
+    input: crate::operation::get_agreement_request_approval_plans::GetAgreementRequestApprovalPlansOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AgreementApprovalPlan>> {
+    let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_get_agreement_request_terms_output_output_terms(
+    input: crate::operation::get_agreement_request_terms::GetAgreementRequestTermsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AgreementRequestTerm>> {
+    let input = input.terms;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_get_agreement_terms_output_output_accepted_terms(
     input: crate::operation::get_agreement_terms::GetAgreementTermsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AcceptedTerm>> {
     let input = input.accepted_terms?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_agreement_approvals_output_output_items(
+    input: crate::operation::list_agreement_approvals::ListAgreementApprovalsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AgreementApprovalSummary>> {
+    let input = input.items;
     ::std::option::Option::Some(input)
 }
 
@@ -118,6 +179,13 @@ pub(crate) fn lens_list_agreement_payment_requests_output_output_items(
     input: crate::operation::list_agreement_payment_requests::ListAgreementPaymentRequestsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PaymentRequestSummary>> {
     let input = input.items;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_agreement_requests_output_output_items(
+    input: crate::operation::list_agreement_requests::ListAgreementRequestsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AgreementRequestSummary>> {
+    let input = input.items?;
     ::std::option::Option::Some(input)
 }
 

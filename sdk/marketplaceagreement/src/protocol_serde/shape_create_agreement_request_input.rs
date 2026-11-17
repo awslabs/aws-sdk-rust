@@ -29,6 +29,10 @@ pub fn ser_create_agreement_request_input_input(
         encoder.str("taxConfiguration");
         crate::protocol_serde::shape_tax_configuration::ser_tax_configuration(encoder, var_7)?;
     }
+    if let Some(var_8) = &input.acceptor_contact {
+        encoder.str("acceptorContact");
+        crate::protocol_serde::shape_acceptor_contact::ser_acceptor_contact(encoder, var_8)?;
+    }
     encoder.end();
     Ok(())
 }

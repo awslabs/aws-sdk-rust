@@ -91,8 +91,6 @@ impl crate::operation::upload_part::builders::UploadPartInputBuilder {
 /// <p>Description: The specified multipart upload does not exist. The upload ID might be invalid, or the multipart upload might have been aborted or completed.</p></li>
 /// <li>
 /// <p>HTTP Status Code: 404 Not Found</p></li>
-/// <li>
-/// <p>SOAP Fault Code Prefix: Client</p></li>
 /// </ul></li>
 /// </ul>
 /// </dd>

@@ -12,6 +12,7 @@
 /// ```text
 /// # let evaluationformquestionautomationanswersourcetype = unimplemented!();
 /// match evaluationformquestionautomationanswersourcetype {
+///     EvaluationFormQuestionAutomationAnswerSourceType::Condition => { /* ... */ },
 ///     EvaluationFormQuestionAutomationAnswerSourceType::ContactLensData => { /* ... */ },
 ///     EvaluationFormQuestionAutomationAnswerSourceType::GenAi => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum EvaluationFormQuestionAutomationAnswerSourceType {
     #[allow(missing_docs)] // documentation missing in model
+    Condition,
+    #[allow(missing_docs)] // documentation missing in model
     ContactLensData,
     #[allow(missing_docs)] // documentation missing in model
     GenAi,
@@ -53,6 +56,7 @@ pub enum EvaluationFormQuestionAutomationAnswerSourceType {
 impl ::std::convert::From<&str> for EvaluationFormQuestionAutomationAnswerSourceType {
     fn from(s: &str) -> Self {
         match s {
+            "CONDITION" => EvaluationFormQuestionAutomationAnswerSourceType::Condition,
             "CONTACT_LENS_DATA" => EvaluationFormQuestionAutomationAnswerSourceType::ContactLensData,
             "GEN_AI" => EvaluationFormQuestionAutomationAnswerSourceType::GenAi,
             other => EvaluationFormQuestionAutomationAnswerSourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(
@@ -72,6 +76,7 @@ impl EvaluationFormQuestionAutomationAnswerSourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EvaluationFormQuestionAutomationAnswerSourceType::Condition => "CONDITION",
             EvaluationFormQuestionAutomationAnswerSourceType::ContactLensData => "CONTACT_LENS_DATA",
             EvaluationFormQuestionAutomationAnswerSourceType::GenAi => "GEN_AI",
             EvaluationFormQuestionAutomationAnswerSourceType::Unknown(value) => value.as_str(),
@@ -79,7 +84,7 @@ impl EvaluationFormQuestionAutomationAnswerSourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONTACT_LENS_DATA", "GEN_AI"]
+        &["CONDITION", "CONTACT_LENS_DATA", "GEN_AI"]
     }
 }
 impl ::std::convert::AsRef<str> for EvaluationFormQuestionAutomationAnswerSourceType {
@@ -102,6 +107,7 @@ impl EvaluationFormQuestionAutomationAnswerSourceType {
 impl ::std::fmt::Display for EvaluationFormQuestionAutomationAnswerSourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            EvaluationFormQuestionAutomationAnswerSourceType::Condition => write!(f, "CONDITION"),
             EvaluationFormQuestionAutomationAnswerSourceType::ContactLensData => write!(f, "CONTACT_LENS_DATA"),
             EvaluationFormQuestionAutomationAnswerSourceType::GenAi => write!(f, "GEN_AI"),
             EvaluationFormQuestionAutomationAnswerSourceType::Unknown(value) => write!(f, "{value}"),

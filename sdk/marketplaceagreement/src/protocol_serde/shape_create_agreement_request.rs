@@ -184,18 +184,31 @@ pub(crate) fn de_create_agreement_request(
         crate::operation::create_agreement_request::builders::CreateAgreementRequestOutputBuilder,
         ::aws_smithy_cbor::decode::DeserializeError,
     > {
-        builder = match decoder.str()?.as_ref() {
-            "agreementRequestId" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_agreement_request_id(Some(decoder.string()?)))
-            })?,
-            "chargeSummary" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_charge_summary(Some(crate::protocol_serde::shape_charge_summary::de_charge_summary(decoder, depth + 1)?)))
-            })?,
-            _ => {
-                decoder.skip()?;
-                builder
-            }
-        };
+        builder =
+            match decoder.str()?.as_ref() {
+                "agreementRequestId" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_agreement_request_id(Some(decoder.string()?)))
+                })?,
+                "agreementType" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_agreement_type(Some(decoder.string()?)))
+                })?,
+                "chargeSummary" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_charge_summary(Some(crate::protocol_serde::shape_charge_summary::de_charge_summary(decoder, depth + 1)?)))
+                })?,
+                "status" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_status(Some(decoder.string().map(|s| crate::types::AgreementRequestStatus::from(s.as_str()))?)))
+                })?,
+                "approvalRequirement" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_approval_requirement(Some(decoder.string().map(|s| crate::types::ApprovalRequirement::from(s.as_str()))?)))
+                })?,
+                "createdAt" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_created_at(Some(decoder.timestamp()?)))
+                })?,
+                _ => {
+                    decoder.skip()?;
+                    builder
+                }
+            };
         Ok(builder)
     }
 

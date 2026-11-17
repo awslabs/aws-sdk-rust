@@ -183,6 +183,8 @@ pub use crate::types::_project_selection_scope::ProjectSelectionScope;
 
 pub use crate::types::_azure_provider_detail_create::AzureProviderDetailCreate;
 
+pub use crate::types::_gcp_provider_detail_create::GcpProviderDetailCreate;
+
 pub use crate::types::_resource_scan_type::ResourceScanType;
 
 pub use crate::types::_account::Account;
@@ -303,6 +305,8 @@ pub use crate::types::_inheritance_mode::InheritanceMode;
 
 pub use crate::types::_azure_provider_detail_update::AzureProviderDetailUpdate;
 
+pub use crate::types::_gcp_provider_detail_update::GcpProviderDetailUpdate;
+
 pub use crate::types::_connector_container_image_scan_configuration::ConnectorContainerImageScanConfiguration;
 
 pub use crate::types::_association_result_status_code::AssociationResultStatusCode;
@@ -336,6 +340,8 @@ pub use crate::types::_periodic_scan_frequency::PeriodicScanFrequency;
 pub use crate::types::_rule_set_category::RuleSetCategory;
 
 pub use crate::types::_azure_scope_configuration_input::AzureScopeConfigurationInput;
+
+pub use crate::types::_gcp_scope_configuration_input::GcpScopeConfigurationInput;
 
 pub use crate::types::_date_filter::DateFilter;
 
@@ -406,6 +412,8 @@ pub use crate::types::_enablement_status::EnablementStatus;
 pub use crate::types::_connector_health::ConnectorHealth;
 
 pub use crate::types::_azure_scope_configuration::AzureScopeConfiguration;
+
+pub use crate::types::_gcp_scope_configuration::GcpScopeConfiguration;
 
 pub use crate::types::_coverage_string_filter::CoverageStringFilter;
 
@@ -547,6 +555,8 @@ pub use crate::types::_continuous_integration_scan_event::ContinuousIntegrationS
 
 pub use crate::types::_scope_configuration_input::ScopeConfigurationInput;
 
+pub use crate::types::_gcp_capability_scope_input::GcpCapabilityScopeInput;
+
 pub use crate::types::_map_comparison::MapComparison;
 
 pub use crate::types::_resource_string_comparison::ResourceStringComparison;
@@ -586,6 +596,8 @@ pub use crate::types::_provider_comparison::ProviderComparison;
 pub use crate::types::_connector_health_status::ConnectorHealthStatus;
 
 pub use crate::types::_scope_configuration::ScopeConfiguration;
+
+pub use crate::types::_gcp_capability_scope::GcpCapabilityScope;
 
 pub use crate::types::_coverage_string_comparison::CoverageStringComparison;
 
@@ -1130,6 +1142,18 @@ mod _free_trial_info_error_code;
 mod _free_trial_status;
 
 mod _free_trial_type;
+
+mod _gcp_capability_scope;
+
+mod _gcp_capability_scope_input;
+
+mod _gcp_provider_detail_create;
+
+mod _gcp_provider_detail_update;
+
+mod _gcp_scope_configuration;
+
+mod _gcp_scope_configuration_input;
 
 mod _group_key;
 

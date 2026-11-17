@@ -14,6 +14,7 @@
 /// match ipaddresstype {
 ///     IpAddressType::Ipv4 => { /* ... */ },
 ///     IpAddressType::Ipv6 => { /* ... */ },
+///     IpAddressType::None => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -46,6 +47,8 @@ pub enum IpAddressType {
     Ipv4,
     #[allow(missing_docs)] // documentation missing in model
     Ipv6,
+    #[allow(missing_docs)] // documentation missing in model
+    None,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -55,6 +58,7 @@ impl ::std::convert::From<&str> for IpAddressType {
         match s {
             "IPV4" => IpAddressType::Ipv4,
             "IPV6" => IpAddressType::Ipv6,
+            "NONE" => IpAddressType::None,
             other => IpAddressType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -72,12 +76,13 @@ impl IpAddressType {
         match self {
             IpAddressType::Ipv4 => "IPV4",
             IpAddressType::Ipv6 => "IPV6",
+            IpAddressType::None => "NONE",
             IpAddressType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["IPV4", "IPV6"]
+        &["IPV4", "IPV6", "NONE"]
     }
 }
 impl ::std::convert::AsRef<str> for IpAddressType {
@@ -102,6 +107,7 @@ impl ::std::fmt::Display for IpAddressType {
         match self {
             IpAddressType::Ipv4 => write!(f, "IPV4"),
             IpAddressType::Ipv6 => write!(f, "IPV6"),
+            IpAddressType::None => write!(f, "NONE"),
             IpAddressType::Unknown(value) => write!(f, "{value}"),
         }
     }

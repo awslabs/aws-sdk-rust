@@ -14,9 +14,10 @@ impl super::Client {
     ///   - [`status(DatasetStatus)`](crate::operation::get_dataset::GetDatasetOutput::status): <p>The current status of the dataset.</p>
     ///   - [`draft_status(Option<DraftStatus>)`](crate::operation::get_dataset::GetDatasetOutput::draft_status): <p>Publish synchronization state. Only authoritative when status is ACTIVE. MODIFIED indicates DRAFT has unpublished changes. UNMODIFIED indicates DRAFT matches the latest published version.</p>
     ///   - [`failure_reason(Option<String>)`](crate::operation::get_dataset::GetDatasetOutput::failure_reason): <p>Populated when status is CREATE_FAILED, UPDATE_FAILED, or DELETE_FAILED. Describes the reason for the failure.</p>
-    ///   - [`schema_type(DatasetSchemaType)`](crate::operation::get_dataset::GetDatasetOutput::schema_type): <p>The schema type declared at create time. Immutable after creation.</p>
+    ///   - [`schema_type(Option<DatasetSchemaType>)`](crate::operation::get_dataset::GetDatasetOutput::schema_type): <p>The schema type declared at create time. Immutable after creation.</p>
     ///   - [`kms_key_arn(Option<String>)`](crate::operation::get_dataset::GetDatasetOutput::kms_key_arn): <p>KMS key ARN used for server-side encryption on service Amazon S3 writes, if configured.</p>
     ///   - [`example_count(i64)`](crate::operation::get_dataset::GetDatasetOutput::example_count): <p>The number of examples in the DRAFT.</p>
+    ///   - [`example_count_by_field(Option<ExampleCountByField>)`](crate::operation::get_dataset::GetDatasetOutput::example_count_by_field): <p>The number of examples that have each field, for the resolved version. Absent when the counts are unknown.</p>
     ///   - [`download_url(Option<String>)`](crate::operation::get_dataset::GetDatasetOutput::download_url): <p>Presigned Amazon S3 URL to download the consolidated dataset file for the resolved version. Expires after 5 minutes. Omitted if the file does not yet exist.</p>
     ///   - [`download_url_expires_at(Option<DateTime>)`](crate::operation::get_dataset::GetDatasetOutput::download_url_expires_at): <p>Expiry timestamp for the download URL.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_dataset::GetDatasetOutput::created_at): <p>The timestamp when the dataset was created.</p>

@@ -2,7 +2,7 @@
 
 /// <p>Represents a set of rules that operate on completely separate variables, indicating they address different concerns or domains within the policy.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AutomatedReasoningPolicyDisjointRuleSet {
     /// <p>The set of variables that are used by the rules in this disjoint set.</p>
     pub variables: ::std::vec::Vec<::std::string::String>,
@@ -21,6 +21,14 @@ impl AutomatedReasoningPolicyDisjointRuleSet {
         self.rules.deref()
     }
 }
+impl ::std::fmt::Debug for AutomatedReasoningPolicyDisjointRuleSet {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AutomatedReasoningPolicyDisjointRuleSet");
+        formatter.field("variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("rules", &self.rules);
+        formatter.finish()
+    }
+}
 impl AutomatedReasoningPolicyDisjointRuleSet {
     /// Creates a new builder-style object to manufacture [`AutomatedReasoningPolicyDisjointRuleSet`](crate::types::AutomatedReasoningPolicyDisjointRuleSet).
     pub fn builder() -> crate::types::builders::AutomatedReasoningPolicyDisjointRuleSetBuilder {
@@ -29,7 +37,7 @@ impl AutomatedReasoningPolicyDisjointRuleSet {
 }
 
 /// A builder for [`AutomatedReasoningPolicyDisjointRuleSet`](crate::types::AutomatedReasoningPolicyDisjointRuleSet).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct AutomatedReasoningPolicyDisjointRuleSetBuilder {
     pub(crate) variables: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -97,5 +105,13 @@ impl AutomatedReasoningPolicyDisjointRuleSetBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for AutomatedReasoningPolicyDisjointRuleSetBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AutomatedReasoningPolicyDisjointRuleSetBuilder");
+        formatter.field("variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("rules", &self.rules);
+        formatter.finish()
     }
 }

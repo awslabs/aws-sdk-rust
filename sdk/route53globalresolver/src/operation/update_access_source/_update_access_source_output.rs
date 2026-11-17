@@ -7,6 +7,8 @@ pub struct UpdateAccessSourceOutput {
     pub arn: ::std::string::String,
     /// <p>The CIDR block of the updated access source.</p>
     pub cidr: ::std::string::String,
+    /// <p>The ID of the core network endpoint associated with this access source.</p>
+    pub core_network_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the access source was originally created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The unique identifier of the updated access source.</p>
@@ -19,6 +21,8 @@ pub struct UpdateAccessSourceOutput {
     pub dns_view_id: ::std::string::String,
     /// <p>The protocol of the updated access source.</p>
     pub protocol: crate::types::DnsProtocol,
+    /// <p>The name of the segment associated with this access source.</p>
+    pub segment: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the updated access source.</p>
     pub status: crate::types::CrResourceStatus,
     /// <p>The date and time when the access source was last updated.</p>
@@ -35,6 +39,10 @@ impl UpdateAccessSourceOutput {
     pub fn cidr(&self) -> &str {
         use std::ops::Deref;
         self.cidr.deref()
+    }
+    /// <p>The ID of the core network endpoint associated with this access source.</p>
+    pub fn core_network_endpoint_id(&self) -> ::std::option::Option<&str> {
+        self.core_network_endpoint_id.as_deref()
     }
     /// <p>The date and time when the access source was originally created.</p>
     pub fn created_at(&self) -> &::aws_smithy_types::DateTime {
@@ -61,6 +69,10 @@ impl UpdateAccessSourceOutput {
     /// <p>The protocol of the updated access source.</p>
     pub fn protocol(&self) -> &crate::types::DnsProtocol {
         &self.protocol
+    }
+    /// <p>The name of the segment associated with this access source.</p>
+    pub fn segment(&self) -> ::std::option::Option<&str> {
+        self.segment.as_deref()
     }
     /// <p>The current status of the updated access source.</p>
     pub fn status(&self) -> &crate::types::CrResourceStatus {
@@ -89,12 +101,14 @@ impl UpdateAccessSourceOutput {
 pub struct UpdateAccessSourceOutputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) cidr: ::std::option::Option<::std::string::String>,
+    pub(crate) core_network_endpoint_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) dns_view_id: ::std::option::Option<::std::string::String>,
     pub(crate) protocol: ::std::option::Option<crate::types::DnsProtocol>,
+    pub(crate) segment: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::CrResourceStatus>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -116,7 +130,6 @@ impl UpdateAccessSourceOutputBuilder {
         &self.arn
     }
     /// <p>The CIDR block of the updated access source.</p>
-    /// This field is required.
     pub fn cidr(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cidr = ::std::option::Option::Some(input.into());
         self
@@ -129,6 +142,20 @@ impl UpdateAccessSourceOutputBuilder {
     /// <p>The CIDR block of the updated access source.</p>
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         &self.cidr
+    }
+    /// <p>The ID of the core network endpoint associated with this access source.</p>
+    pub fn core_network_endpoint_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.core_network_endpoint_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the core network endpoint associated with this access source.</p>
+    pub fn set_core_network_endpoint_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.core_network_endpoint_id = input;
+        self
+    }
+    /// <p>The ID of the core network endpoint associated with this access source.</p>
+    pub fn get_core_network_endpoint_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.core_network_endpoint_id
     }
     /// <p>The date and time when the access source was originally created.</p>
     /// This field is required.
@@ -161,7 +188,6 @@ impl UpdateAccessSourceOutputBuilder {
         &self.id
     }
     /// <p>The IP address type of the updated access source.</p>
-    /// This field is required.
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.ip_address_type = ::std::option::Option::Some(input);
         self
@@ -219,6 +245,20 @@ impl UpdateAccessSourceOutputBuilder {
     pub fn get_protocol(&self) -> &::std::option::Option<crate::types::DnsProtocol> {
         &self.protocol
     }
+    /// <p>The name of the segment associated with this access source.</p>
+    pub fn segment(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.segment = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the segment associated with this access source.</p>
+    pub fn set_segment(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.segment = input;
+        self
+    }
+    /// <p>The name of the segment associated with this access source.</p>
+    pub fn get_segment(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment
+    }
     /// <p>The current status of the updated access source.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::CrResourceStatus) -> Self {
@@ -261,10 +301,8 @@ impl UpdateAccessSourceOutputBuilder {
     /// Consumes the builder and constructs a [`UpdateAccessSourceOutput`](crate::operation::update_access_source::UpdateAccessSourceOutput).
     /// This method will fail if any of the following fields are not set:
     /// - [`arn`](crate::operation::update_access_source::builders::UpdateAccessSourceOutputBuilder::arn)
-    /// - [`cidr`](crate::operation::update_access_source::builders::UpdateAccessSourceOutputBuilder::cidr)
     /// - [`created_at`](crate::operation::update_access_source::builders::UpdateAccessSourceOutputBuilder::created_at)
     /// - [`id`](crate::operation::update_access_source::builders::UpdateAccessSourceOutputBuilder::id)
-    /// - [`ip_address_type`](crate::operation::update_access_source::builders::UpdateAccessSourceOutputBuilder::ip_address_type)
     /// - [`dns_view_id`](crate::operation::update_access_source::builders::UpdateAccessSourceOutputBuilder::dns_view_id)
     /// - [`protocol`](crate::operation::update_access_source::builders::UpdateAccessSourceOutputBuilder::protocol)
     /// - [`status`](crate::operation::update_access_source::builders::UpdateAccessSourceOutputBuilder::status)
@@ -280,12 +318,8 @@ impl UpdateAccessSourceOutputBuilder {
                     "arn was not specified but it is required when building UpdateAccessSourceOutput",
                 )
             })?,
-            cidr: self.cidr.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "cidr",
-                    "cidr was not specified but it is required when building UpdateAccessSourceOutput",
-                )
-            })?,
+            cidr: self.cidr.unwrap_or_default(),
+            core_network_endpoint_id: self.core_network_endpoint_id,
             created_at: self.created_at.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "created_at",
@@ -298,12 +332,9 @@ impl UpdateAccessSourceOutputBuilder {
                     "id was not specified but it is required when building UpdateAccessSourceOutput",
                 )
             })?,
-            ip_address_type: self.ip_address_type.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "ip_address_type",
-                    "ip_address_type was not specified but it is required when building UpdateAccessSourceOutput",
-                )
-            })?,
+            ip_address_type: self
+                .ip_address_type
+                .unwrap_or("NONE".parse::<crate::types::IpAddressType>().expect("static value validated to member")),
             name: self.name,
             dns_view_id: self.dns_view_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
@@ -317,6 +348,7 @@ impl UpdateAccessSourceOutputBuilder {
                     "protocol was not specified but it is required when building UpdateAccessSourceOutput",
                 )
             })?,
+            segment: self.segment,
             status: self.status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",

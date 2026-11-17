@@ -280,6 +280,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListChatsReq
                         query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_4));
                     }
                 }
+                if let ::std::option::Option::Some(inner_5) = &_input.archive_status {
+                    {
+                        query.push_kv("archiveStatus", &::aws_smithy_http::query::fmt_string(inner_5.as_str()));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
@@ -350,6 +355,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListChatsEndp
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListChatsError {
+    /// <p>Access to the requested resource is denied due to insufficient permissions.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>This exception is thrown when an unexpected error occurs in the processing of a request.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The requested resource could not be found.</p>
@@ -358,8 +365,6 @@ pub enum ListChatsError {
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The input fails to satisfy the constraints specified by the service.</p>
     ValidationException(crate::types::error::ValidationException),
-    /// <p>Access to the requested resource is denied due to insufficient permissions.</p>
-    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request conflicts with the current state of the resource.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>This exception is thrown when the content size exceeds the allowed limit.</p>
@@ -401,17 +406,21 @@ impl ListChatsError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
-            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ContentSizeExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceQuotaExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `ListChatsError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListChatsError::InternalServerException`.
     pub fn is_internal_server_exception(&self) -> bool {
@@ -428,10 +437,6 @@ impl ListChatsError {
     /// Returns `true` if the error kind is `ListChatsError::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(self, Self::ValidationException(_))
-    }
-    /// Returns `true` if the error kind is `ListChatsError::AccessDeniedException`.
-    pub fn is_access_denied_exception(&self) -> bool {
-        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListChatsError::ConflictException`.
     pub fn is_conflict_exception(&self) -> bool {
@@ -453,11 +458,11 @@ impl ListChatsError {
 impl ::std::error::Error for ListChatsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
-            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::ContentSizeExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
@@ -469,11 +474,11 @@ impl ::std::error::Error for ListChatsError {
 impl ::std::fmt::Display for ListChatsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
-            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::ContentSizeExceededException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
@@ -503,11 +508,11 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ListChatsError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListChatsError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
-            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ContentSizeExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

@@ -387,6 +387,8 @@ pub(crate) mod shape_global_replication_group_not_found_fault;
 
 pub(crate) mod shape_insufficient_cache_cluster_capacity_fault;
 
+pub(crate) mod shape_integration_request;
+
 pub(crate) mod shape_invalid_arn_fault;
 
 pub(crate) mod shape_invalid_cache_cluster_state_fault;
@@ -633,6 +635,8 @@ pub(crate) mod shape_global_replication_group_info;
 
 pub(crate) mod shape_global_replication_group_member_list;
 
+pub(crate) mod shape_integration_list;
+
 pub(crate) mod shape_kinesis_firehose_destination_details;
 
 pub(crate) mod shape_log_delivery_configuration_list;
@@ -696,6 +700,8 @@ pub(crate) mod shape_ec2_security_group;
 pub(crate) mod shape_global_node_group;
 
 pub(crate) mod shape_global_replication_group_member;
+
+pub(crate) mod shape_integration;
 
 pub(crate) mod shape_log_delivery_configuration;
 

@@ -239,6 +239,12 @@ pub(crate) fn de_get_durable_execution(
                 "ExecutionDataIncluded" => {
                     builder = builder.set_execution_data_included(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "ExpectedExecutionTimeoutTimestamp" => {
+                    builder = builder.set_expected_execution_timeout_timestamp(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                        tokens.next(),
+                        ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
                 "FunctionArn" => {
                     builder = builder.set_function_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -252,6 +258,9 @@ pub(crate) fn de_get_durable_execution(
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
+                }
+                "PauseDetails" => {
+                    builder = builder.set_pause_details(crate::protocol_serde::shape_pause_details::de_pause_details(tokens, _value, depth + 1)?);
                 }
                 "Result" => {
                     builder = builder.set_result(

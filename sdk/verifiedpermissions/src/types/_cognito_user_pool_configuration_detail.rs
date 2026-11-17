@@ -4,7 +4,7 @@
 /// <p>This data type is used as a field that is part of an <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ConfigurationDetail.html">ConfigurationDetail</a> structure that is part of the response to <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_GetIdentitySource.html">GetIdentitySource</a>.</p>
 /// <p>Example:<code>"CognitoUserPoolConfiguration":{"UserPoolArn":"arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5","ClientIds": \["a1b2c3d4e5f6g7h8i9j0kalbmc"\],"groupConfiguration": {"groupEntityType": "MyCorp::Group"}}</code></p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CognitoUserPoolConfigurationDetail {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the Amazon Cognito user pool that contains the identities to be authorized.</p>
     /// <p>Example: <code>"userPoolArn": "arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5"</code></p>
@@ -42,6 +42,16 @@ impl CognitoUserPoolConfigurationDetail {
         self.group_configuration.as_ref()
     }
 }
+impl ::std::fmt::Debug for CognitoUserPoolConfigurationDetail {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CognitoUserPoolConfigurationDetail");
+        formatter.field("user_pool_arn", &self.user_pool_arn);
+        formatter.field("client_ids", &"*** Sensitive Data Redacted ***");
+        formatter.field("issuer", &self.issuer);
+        formatter.field("group_configuration", &self.group_configuration);
+        formatter.finish()
+    }
+}
 impl CognitoUserPoolConfigurationDetail {
     /// Creates a new builder-style object to manufacture [`CognitoUserPoolConfigurationDetail`](crate::types::CognitoUserPoolConfigurationDetail).
     pub fn builder() -> crate::types::builders::CognitoUserPoolConfigurationDetailBuilder {
@@ -50,7 +60,7 @@ impl CognitoUserPoolConfigurationDetail {
 }
 
 /// A builder for [`CognitoUserPoolConfigurationDetail`](crate::types::CognitoUserPoolConfigurationDetail).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CognitoUserPoolConfigurationDetailBuilder {
     pub(crate) user_pool_arn: ::std::option::Option<::std::string::String>,
@@ -159,5 +169,15 @@ impl CognitoUserPoolConfigurationDetailBuilder {
             })?,
             group_configuration: self.group_configuration,
         })
+    }
+}
+impl ::std::fmt::Debug for CognitoUserPoolConfigurationDetailBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CognitoUserPoolConfigurationDetailBuilder");
+        formatter.field("user_pool_arn", &self.user_pool_arn);
+        formatter.field("client_ids", &"*** Sensitive Data Redacted ***");
+        formatter.field("issuer", &self.issuer);
+        formatter.field("group_configuration", &self.group_configuration);
+        formatter.finish()
     }
 }

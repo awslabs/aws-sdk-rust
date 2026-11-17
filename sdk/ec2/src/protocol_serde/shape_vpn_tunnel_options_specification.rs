@@ -190,5 +190,31 @@ pub fn ser_vpn_tunnel_options_specification(
     if let Some(var_61) = &input.enable_tunnel_lifecycle_control {
         scope_60.boolean(*var_61);
     }
+    #[allow(unused_mut)]
+    let mut scope_62 = writer.prefix("Phase1AdditionalKeyExchange");
+    if let Some(var_63) = &input.phase1_additional_key_exchanges {
+        if !var_63.is_empty() {
+            let mut list_65 = scope_62.start_list(true, Some("item"));
+            for item_64 in var_63 {
+                #[allow(unused_mut)]
+                let mut entry_66 = list_65.entry();
+                crate::protocol_serde::shape_vpn_additional_key_exchange_request::ser_vpn_additional_key_exchange_request(entry_66, item_64)?;
+            }
+            list_65.finish();
+        }
+    }
+    #[allow(unused_mut)]
+    let mut scope_67 = writer.prefix("Phase2AdditionalKeyExchange");
+    if let Some(var_68) = &input.phase2_additional_key_exchanges {
+        if !var_68.is_empty() {
+            let mut list_70 = scope_67.start_list(true, Some("item"));
+            for item_69 in var_68 {
+                #[allow(unused_mut)]
+                let mut entry_71 = list_70.entry();
+                crate::protocol_serde::shape_vpn_additional_key_exchange_request::ser_vpn_additional_key_exchange_request(entry_71, item_69)?;
+            }
+            list_70.finish();
+        }
+    }
     Ok(())
 }

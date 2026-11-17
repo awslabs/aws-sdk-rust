@@ -8,7 +8,7 @@ pub struct EvaluationFormItemEnablementExpression {
     pub source: ::std::option::Option<crate::types::EvaluationFormItemEnablementSource>,
     /// <p>A list of values from source item.</p>
     pub values: ::std::vec::Vec<crate::types::EvaluationFormItemEnablementSourceValue>,
-    /// <p>A comparator to be used against list of values.</p>
+    /// <p>A comparator to be used against a list of values. <code>IN</code>, <code>NOT_IN</code>, <code>ALL_IN</code>, and <code>EXACT</code> compare sets of values. <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>GREATER_THAN_OR_EQUAL_TO</code>, and <code>LESS_THAN_OR_EQUAL_TO</code> compare a single numeric or date and time value. <code>EQUAL_TO</code> and <code>NOT_EQUAL_TO</code> compare a single value.</p>
     pub comparator: crate::types::EvaluationFormItemSourceValuesComparator,
 }
 impl EvaluationFormItemEnablementExpression {
@@ -21,7 +21,7 @@ impl EvaluationFormItemEnablementExpression {
         use std::ops::Deref;
         self.values.deref()
     }
-    /// <p>A comparator to be used against list of values.</p>
+    /// <p>A comparator to be used against a list of values. <code>IN</code>, <code>NOT_IN</code>, <code>ALL_IN</code>, and <code>EXACT</code> compare sets of values. <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>GREATER_THAN_OR_EQUAL_TO</code>, and <code>LESS_THAN_OR_EQUAL_TO</code> compare a single numeric or date and time value. <code>EQUAL_TO</code> and <code>NOT_EQUAL_TO</code> compare a single value.</p>
     pub fn comparator(&self) -> &crate::types::EvaluationFormItemSourceValuesComparator {
         &self.comparator
     }
@@ -77,18 +77,18 @@ impl EvaluationFormItemEnablementExpressionBuilder {
     pub fn get_values(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormItemEnablementSourceValue>> {
         &self.values
     }
-    /// <p>A comparator to be used against list of values.</p>
+    /// <p>A comparator to be used against a list of values. <code>IN</code>, <code>NOT_IN</code>, <code>ALL_IN</code>, and <code>EXACT</code> compare sets of values. <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>GREATER_THAN_OR_EQUAL_TO</code>, and <code>LESS_THAN_OR_EQUAL_TO</code> compare a single numeric or date and time value. <code>EQUAL_TO</code> and <code>NOT_EQUAL_TO</code> compare a single value.</p>
     /// This field is required.
     pub fn comparator(mut self, input: crate::types::EvaluationFormItemSourceValuesComparator) -> Self {
         self.comparator = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A comparator to be used against list of values.</p>
+    /// <p>A comparator to be used against a list of values. <code>IN</code>, <code>NOT_IN</code>, <code>ALL_IN</code>, and <code>EXACT</code> compare sets of values. <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>GREATER_THAN_OR_EQUAL_TO</code>, and <code>LESS_THAN_OR_EQUAL_TO</code> compare a single numeric or date and time value. <code>EQUAL_TO</code> and <code>NOT_EQUAL_TO</code> compare a single value.</p>
     pub fn set_comparator(mut self, input: ::std::option::Option<crate::types::EvaluationFormItemSourceValuesComparator>) -> Self {
         self.comparator = input;
         self
     }
-    /// <p>A comparator to be used against list of values.</p>
+    /// <p>A comparator to be used against a list of values. <code>IN</code>, <code>NOT_IN</code>, <code>ALL_IN</code>, and <code>EXACT</code> compare sets of values. <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>GREATER_THAN_OR_EQUAL_TO</code>, and <code>LESS_THAN_OR_EQUAL_TO</code> compare a single numeric or date and time value. <code>EQUAL_TO</code> and <code>NOT_EQUAL_TO</code> compare a single value.</p>
     pub fn get_comparator(&self) -> &::std::option::Option<crate::types::EvaluationFormItemSourceValuesComparator> {
         &self.comparator
     }

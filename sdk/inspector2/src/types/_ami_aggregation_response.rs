@@ -14,6 +14,8 @@ pub struct AmiAggregationResponse {
     /// <p><code>AWS</code> – Findings from Amazon Web Services resources.</p></li>
     /// <li>
     /// <p><code>AZURE</code> – Findings from Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Findings from Google Cloud Platform (GCP) resources.</p></li>
     /// </ul>
     pub cloud_provider: ::std::option::Option<crate::types::Provider>,
     /// <p>The cloud infrastructure partition associated with this AMI aggregation. Valid values:</p>
@@ -34,6 +36,8 @@ pub struct AmiAggregationResponse {
     /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
     /// <li>
     /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
     /// </ul>
     pub cloud_region: ::std::option::Option<::std::string::String>,
     /// <p>The cloud organization ID for the AMI aggregation.</p>
@@ -63,6 +67,8 @@ impl AmiAggregationResponse {
     /// <p><code>AWS</code> – Findings from Amazon Web Services resources.</p></li>
     /// <li>
     /// <p><code>AZURE</code> – Findings from Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Findings from Google Cloud Platform (GCP) resources.</p></li>
     /// </ul>
     pub fn cloud_provider(&self) -> ::std::option::Option<&crate::types::Provider> {
         self.cloud_provider.as_ref()
@@ -87,6 +93,8 @@ impl AmiAggregationResponse {
     /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
     /// <li>
     /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
     /// </ul>
     pub fn cloud_region(&self) -> ::std::option::Option<&str> {
         self.cloud_region.as_deref()
@@ -170,6 +178,8 @@ impl AmiAggregationResponseBuilder {
     /// <p><code>AWS</code> – Findings from Amazon Web Services resources.</p></li>
     /// <li>
     /// <p><code>AZURE</code> – Findings from Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Findings from Google Cloud Platform (GCP) resources.</p></li>
     /// </ul>
     pub fn cloud_provider(mut self, input: crate::types::Provider) -> Self {
         self.cloud_provider = ::std::option::Option::Some(input);
@@ -181,6 +191,8 @@ impl AmiAggregationResponseBuilder {
     /// <p><code>AWS</code> – Findings from Amazon Web Services resources.</p></li>
     /// <li>
     /// <p><code>AZURE</code> – Findings from Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Findings from Google Cloud Platform (GCP) resources.</p></li>
     /// </ul>
     pub fn set_cloud_provider(mut self, input: ::std::option::Option<crate::types::Provider>) -> Self {
         self.cloud_provider = input;
@@ -192,6 +204,8 @@ impl AmiAggregationResponseBuilder {
     /// <p><code>AWS</code> – Findings from Amazon Web Services resources.</p></li>
     /// <li>
     /// <p><code>AZURE</code> – Findings from Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Findings from Google Cloud Platform (GCP) resources.</p></li>
     /// </ul>
     pub fn get_cloud_provider(&self) -> &::std::option::Option<crate::types::Provider> {
         &self.cloud_provider
@@ -246,6 +260,8 @@ impl AmiAggregationResponseBuilder {
     /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
     /// <li>
     /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
     /// </ul>
     pub fn cloud_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.cloud_region = ::std::option::Option::Some(input.into());
@@ -257,6 +273,8 @@ impl AmiAggregationResponseBuilder {
     /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
     /// <li>
     /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
     /// </ul>
     pub fn set_cloud_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cloud_region = input;
@@ -268,6 +286,8 @@ impl AmiAggregationResponseBuilder {
     /// <p>An Amazon Web Services Region, such as <code>us-east-1</code>.</p></li>
     /// <li>
     /// <p>An Azure region, such as <code>eastus</code>.</p></li>
+    /// <li>
+    /// <p>A Google Cloud Platform (GCP) location, such as the region <code>us-central1</code> or the zone <code>us-central1-a</code>.</p></li>
     /// </ul>
     pub fn get_cloud_region(&self) -> &::std::option::Option<::std::string::String> {
         &self.cloud_region

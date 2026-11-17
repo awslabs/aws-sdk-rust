@@ -19,6 +19,9 @@
 ///     AggregationResourceType::MicrosoftComputeVirtualMachines => { /* ... */ },
 ///     AggregationResourceType::MicrosoftContainerRegistryRegistryContainerImage => { /* ... */ },
 ///     AggregationResourceType::MicrosoftWebSites => { /* ... */ },
+///     AggregationResourceType::ArtifactregistryGoogleapisComDockerImage => { /* ... */ },
+///     AggregationResourceType::CloudfunctionsGoogleapisComFunction => { /* ... */ },
+///     AggregationResourceType::ComputeGoogleapisComInstance => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -61,6 +64,12 @@ pub enum AggregationResourceType {
     MicrosoftContainerRegistryRegistryContainerImage,
     #[allow(missing_docs)] // documentation missing in model
     MicrosoftWebSites,
+    #[allow(missing_docs)] // documentation missing in model
+    ArtifactregistryGoogleapisComDockerImage,
+    #[allow(missing_docs)] // documentation missing in model
+    CloudfunctionsGoogleapisComFunction,
+    #[allow(missing_docs)] // documentation missing in model
+    ComputeGoogleapisComInstance,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -75,6 +84,9 @@ impl ::std::convert::From<&str> for AggregationResourceType {
             "Microsoft.Compute/virtualMachines" => AggregationResourceType::MicrosoftComputeVirtualMachines,
             "Microsoft.ContainerRegistry/registry/containerImage" => AggregationResourceType::MicrosoftContainerRegistryRegistryContainerImage,
             "Microsoft.Web/sites" => AggregationResourceType::MicrosoftWebSites,
+            "artifactregistry.googleapis.com/DockerImage" => AggregationResourceType::ArtifactregistryGoogleapisComDockerImage,
+            "cloudfunctions.googleapis.com/Function" => AggregationResourceType::CloudfunctionsGoogleapisComFunction,
+            "compute.googleapis.com/Instance" => AggregationResourceType::ComputeGoogleapisComInstance,
             other => AggregationResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -97,6 +109,9 @@ impl AggregationResourceType {
             AggregationResourceType::MicrosoftComputeVirtualMachines => "Microsoft.Compute/virtualMachines",
             AggregationResourceType::MicrosoftContainerRegistryRegistryContainerImage => "Microsoft.ContainerRegistry/registry/containerImage",
             AggregationResourceType::MicrosoftWebSites => "Microsoft.Web/sites",
+            AggregationResourceType::ArtifactregistryGoogleapisComDockerImage => "artifactregistry.googleapis.com/DockerImage",
+            AggregationResourceType::CloudfunctionsGoogleapisComFunction => "cloudfunctions.googleapis.com/Function",
+            AggregationResourceType::ComputeGoogleapisComInstance => "compute.googleapis.com/Instance",
             AggregationResourceType::Unknown(value) => value.as_str(),
         }
     }
@@ -110,6 +125,9 @@ impl AggregationResourceType {
             "Microsoft.Compute/virtualMachines",
             "Microsoft.ContainerRegistry/registry/containerImage",
             "Microsoft.Web/sites",
+            "artifactregistry.googleapis.com/DockerImage",
+            "cloudfunctions.googleapis.com/Function",
+            "compute.googleapis.com/Instance",
         ]
     }
 }
@@ -142,6 +160,9 @@ impl ::std::fmt::Display for AggregationResourceType {
                 write!(f, "Microsoft.ContainerRegistry/registry/containerImage")
             }
             AggregationResourceType::MicrosoftWebSites => write!(f, "Microsoft.Web/sites"),
+            AggregationResourceType::ArtifactregistryGoogleapisComDockerImage => write!(f, "artifactregistry.googleapis.com/DockerImage"),
+            AggregationResourceType::CloudfunctionsGoogleapisComFunction => write!(f, "cloudfunctions.googleapis.com/Function"),
+            AggregationResourceType::ComputeGoogleapisComInstance => write!(f, "compute.googleapis.com/Instance"),
             AggregationResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

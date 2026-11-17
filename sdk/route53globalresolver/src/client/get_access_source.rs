@@ -7,12 +7,14 @@ impl super::Client {
     /// - On success, responds with [`GetAccessSourceOutput`](crate::operation::get_access_source::GetAccessSourceOutput) with field(s):
     ///   - [`arn(String)`](crate::operation::get_access_source::GetAccessSourceOutput::arn): <p>The Amazon Resource Name (ARN) of the access source.</p>
     ///   - [`cidr(String)`](crate::operation::get_access_source::GetAccessSourceOutput::cidr): <p>The IP range for the rule's parameters in CIDR notation.</p>
+    ///   - [`core_network_endpoint_id(Option<String>)`](crate::operation::get_access_source::GetAccessSourceOutput::core_network_endpoint_id): <p>The ID of the core network endpoint associated with this access source.</p>
     ///   - [`created_at(DateTime)`](crate::operation::get_access_source::GetAccessSourceOutput::created_at): <p>The time and date the rule was created.</p>
     ///   - [`id(String)`](crate::operation::get_access_source::GetAccessSourceOutput::id): <p>ID for the rule.</p>
     ///   - [`ip_address_type(IpAddressType)`](crate::operation::get_access_source::GetAccessSourceOutput::ip_address_type): <p>The IP address type.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_access_source::GetAccessSourceOutput::name): <p>Name for the access source.</p>
     ///   - [`dns_view_id(String)`](crate::operation::get_access_source::GetAccessSourceOutput::dns_view_id): <p>ID for the DNS view that the rule is associated to.</p>
     ///   - [`protocol(DnsProtocol)`](crate::operation::get_access_source::GetAccessSourceOutput::protocol): <p>The protocol determines how data is transmitted to a Global Resolver instance.</p>
+    ///   - [`segment(Option<String>)`](crate::operation::get_access_source::GetAccessSourceOutput::segment): <p>The name of the segment associated with this access source.</p>
     ///   - [`status(CrResourceStatus)`](crate::operation::get_access_source::GetAccessSourceOutput::status): <p>Information about the status of the rule.</p>
     ///   - [`updated_at(DateTime)`](crate::operation::get_access_source::GetAccessSourceOutput::updated_at): <p>The time and date the access source was updated.</p>
     /// - On failure, responds with [`SdkError<GetAccessSourceError>`](crate::operation::get_access_source::GetAccessSourceError)

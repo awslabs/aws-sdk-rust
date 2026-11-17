@@ -2,7 +2,7 @@
 
 /// <p>The configuration for a forward-only pass through the model. This computes loss values without computing gradients.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ForwardConfig {
     /// <p>The name of the loss function to evaluate during the forward pass.</p>
     pub loss_fn_name: crate::types::LossFnName,
@@ -26,6 +26,15 @@ impl ForwardConfig {
         self.loss_fn_config.as_ref()
     }
 }
+impl ::std::fmt::Debug for ForwardConfig {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ForwardConfig");
+        formatter.field("loss_fn_name", &self.loss_fn_name);
+        formatter.field("datum_list", &"*** Sensitive Data Redacted ***");
+        formatter.field("loss_fn_config", &self.loss_fn_config);
+        formatter.finish()
+    }
+}
 impl ForwardConfig {
     /// Creates a new builder-style object to manufacture [`ForwardConfig`](crate::types::ForwardConfig).
     pub fn builder() -> crate::types::builders::ForwardConfigBuilder {
@@ -34,7 +43,7 @@ impl ForwardConfig {
 }
 
 /// A builder for [`ForwardConfig`](crate::types::ForwardConfig).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ForwardConfigBuilder {
     pub(crate) loss_fn_name: ::std::option::Option<crate::types::LossFnName>,
@@ -111,5 +120,14 @@ impl ForwardConfigBuilder {
             })?,
             loss_fn_config: self.loss_fn_config,
         })
+    }
+}
+impl ::std::fmt::Debug for ForwardConfigBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ForwardConfigBuilder");
+        formatter.field("loss_fn_name", &self.loss_fn_name);
+        formatter.field("datum_list", &"*** Sensitive Data Redacted ***");
+        formatter.field("loss_fn_config", &self.loss_fn_config);
+        formatter.finish()
     }
 }

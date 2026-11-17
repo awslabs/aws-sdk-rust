@@ -2,7 +2,7 @@
 
 /// <p>Specifies the time or distance limits used to calculate reachable areas. You can provide up to five thresholds for a single type to generate multiple isolines in a single request. For example, you might request areas reachable within 5, 10, and 15 minutes, or within 1, 2, and 5 kilometers.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IsolineThresholds {
     /// <p>List of travel distances in meters. For example, \[1000, 2000, 5000\] would calculate areas reachable within 1, 2, and 5 kilometers.</p>
     pub distance: ::std::option::Option<::std::vec::Vec<i64>>,
@@ -23,6 +23,14 @@ impl IsolineThresholds {
         self.time.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for IsolineThresholds {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IsolineThresholds");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("time", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl IsolineThresholds {
     /// Creates a new builder-style object to manufacture [`IsolineThresholds`](crate::types::IsolineThresholds).
     pub fn builder() -> crate::types::builders::IsolineThresholdsBuilder {
@@ -31,7 +39,7 @@ impl IsolineThresholds {
 }
 
 /// A builder for [`IsolineThresholds`](crate::types::IsolineThresholds).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct IsolineThresholdsBuilder {
     pub(crate) distance: ::std::option::Option<::std::vec::Vec<i64>>,
@@ -84,5 +92,13 @@ impl IsolineThresholdsBuilder {
             distance: self.distance,
             time: self.time,
         }
+    }
+}
+impl ::std::fmt::Debug for IsolineThresholdsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IsolineThresholdsBuilder");
+        formatter.field("distance", &"*** Sensitive Data Redacted ***");
+        formatter.field("time", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -14,7 +14,7 @@ pub struct TelemetryRuleSummary {
     pub last_update_time_stamp: ::std::option::Option<i64>,
     /// <p>The type of Amazon Web Services resource the rule applies to.</p>
     pub resource_type: ::std::option::Option<crate::types::ResourceType>,
-    /// <p>The type of telemetry (Logs, Metrics, or Traces) the rule configures.</p>
+    /// <p>The type of telemetry (Logs, Metrics, Traces, or Insights) the rule configures.</p>
     pub telemetry_type: ::std::option::Option<crate::types::TelemetryType>,
     /// <p>The types of telemetry sources configured for this rule, such as VPC Flow Logs or EKS audit logs. TelemetrySourceTypes must be correlated with the specific resource type.</p>
     pub telemetry_source_types: ::std::option::Option<::std::vec::Vec<crate::types::TelemetrySourceType>>,
@@ -40,7 +40,7 @@ impl TelemetryRuleSummary {
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
-    /// <p>The type of telemetry (Logs, Metrics, or Traces) the rule configures.</p>
+    /// <p>The type of telemetry (Logs, Metrics, Traces, or Insights) the rule configures.</p>
     pub fn telemetry_type(&self) -> ::std::option::Option<&crate::types::TelemetryType> {
         self.telemetry_type.as_ref()
     }
@@ -141,17 +141,17 @@ impl TelemetryRuleSummaryBuilder {
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }
-    /// <p>The type of telemetry (Logs, Metrics, or Traces) the rule configures.</p>
+    /// <p>The type of telemetry (Logs, Metrics, Traces, or Insights) the rule configures.</p>
     pub fn telemetry_type(mut self, input: crate::types::TelemetryType) -> Self {
         self.telemetry_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of telemetry (Logs, Metrics, or Traces) the rule configures.</p>
+    /// <p>The type of telemetry (Logs, Metrics, Traces, or Insights) the rule configures.</p>
     pub fn set_telemetry_type(mut self, input: ::std::option::Option<crate::types::TelemetryType>) -> Self {
         self.telemetry_type = input;
         self
     }
-    /// <p>The type of telemetry (Logs, Metrics, or Traces) the rule configures.</p>
+    /// <p>The type of telemetry (Logs, Metrics, Traces, or Insights) the rule configures.</p>
     pub fn get_telemetry_type(&self) -> &::std::option::Option<crate::types::TelemetryType> {
         &self.telemetry_type
     }

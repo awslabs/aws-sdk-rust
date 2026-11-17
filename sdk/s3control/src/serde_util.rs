@@ -438,6 +438,15 @@ pub(crate) fn s3_object_lock_legal_hold_correct_errors(
     builder
 }
 
+pub(crate) fn storage_lens_cost_and_usage_reports_prefix_level_correct_errors(
+    mut builder: crate::types::builders::StorageLensCostAndUsageReportsPrefixLevelBuilder,
+) -> crate::types::builders::StorageLensCostAndUsageReportsPrefixLevelBuilder {
+    if builder.is_enabled.is_none() {
+        builder.is_enabled = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn storage_lens_table_destination_correct_errors(
     mut builder: crate::types::builders::StorageLensTableDestinationBuilder,
 ) -> crate::types::builders::StorageLensTableDestinationBuilder {

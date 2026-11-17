@@ -219,6 +219,16 @@ pub(crate) fn reflens_list_network_migration_executions_output_output_next_token
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_network_migration_insights_output_output_next_token(
+    input: &crate::operation::list_network_migration_insights::ListNetworkMigrationInsightsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_network_migration_mapper_segment_constructs_output_output_next_token(
     input: &crate::operation::list_network_migration_mapper_segment_constructs::ListNetworkMigrationMapperSegmentConstructsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -251,6 +261,46 @@ pub(crate) fn reflens_list_network_migration_mapping_updates_output_output_next_
 
 pub(crate) fn reflens_list_network_migration_mappings_output_output_next_token(
     input: &crate::operation::list_network_migration_mappings::ListNetworkMigrationMappingsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_remote_source_action_invocation_results_output_output_next_token(
+    input: &crate::operation::list_remote_source_action_invocation_results::ListRemoteSourceActionInvocationResultsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_remote_source_action_invocations_output_output_next_token(
+    input: &crate::operation::list_remote_source_action_invocations::ListRemoteSourceActionInvocationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_remote_source_action_jobs_output_output_next_token(
+    input: &crate::operation::list_remote_source_action_jobs::ListRemoteSourceActionJobsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_remote_source_actions_output_output_next_token(
+    input: &crate::operation::list_remote_source_actions::ListRemoteSourceActionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -443,6 +493,13 @@ pub(crate) fn lens_list_network_migration_executions_output_output_items(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_network_migration_insights_output_output_items(
+    input: crate::operation::list_network_migration_insights::ListNetworkMigrationInsightsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::NetworkMigrationInsight>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_network_migration_mapper_segment_constructs_output_output_items(
     input: crate::operation::list_network_migration_mapper_segment_constructs::ListNetworkMigrationMapperSegmentConstructsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::NetworkMigrationMapperSegmentConstruct>> {
@@ -467,6 +524,34 @@ pub(crate) fn lens_list_network_migration_mapping_updates_output_output_items(
 pub(crate) fn lens_list_network_migration_mappings_output_output_items(
     input: crate::operation::list_network_migration_mappings::ListNetworkMigrationMappingsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::NetworkMigrationMappingJobDetails>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_remote_source_action_invocation_results_output_output_items(
+    input: crate::operation::list_remote_source_action_invocation_results::ListRemoteSourceActionInvocationResultsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RemoteSourceActionInvocationResult>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_remote_source_action_invocations_output_output_items(
+    input: crate::operation::list_remote_source_action_invocations::ListRemoteSourceActionInvocationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RemoteSourceActionInvocation>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_remote_source_action_jobs_output_output_items(
+    input: crate::operation::list_remote_source_action_jobs::ListRemoteSourceActionJobsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RemoteSourceActionJob>> {
+    let input = input.items?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_remote_source_actions_output_output_items(
+    input: crate::operation::list_remote_source_actions::ListRemoteSourceActionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RemoteSourceAction>> {
     let input = input.items?;
     ::std::option::Option::Some(input)
 }

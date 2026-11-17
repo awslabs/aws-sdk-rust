@@ -5,7 +5,7 @@
 pub struct ListDnsViewsOutput {
     /// <p>A pagination token used for large sets of results that can't be returned in a single response. Provide this token in the next call to get the results not returned in this call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// <p>An array of information about the DNS views, such as whether DNSSEC is enabled, creation time, etc.</p>
+    /// <p>An array of information about the DNS views, such as whether DNSSEC is enabled and the creation time.</p>
     pub dns_views: ::std::vec::Vec<crate::types::DnsViewSummary>,
     _request_id: Option<String>,
 }
@@ -14,7 +14,7 @@ impl ListDnsViewsOutput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>An array of information about the DNS views, such as whether DNSSEC is enabled, creation time, etc.</p>
+    /// <p>An array of information about the DNS views, such as whether DNSSEC is enabled and the creation time.</p>
     pub fn dns_views(&self) -> &[crate::types::DnsViewSummary] {
         use std::ops::Deref;
         self.dns_views.deref()
@@ -59,19 +59,19 @@ impl ListDnsViewsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_dns_views`](Self::set_dns_views).
     ///
-    /// <p>An array of information about the DNS views, such as whether DNSSEC is enabled, creation time, etc.</p>
+    /// <p>An array of information about the DNS views, such as whether DNSSEC is enabled and the creation time.</p>
     pub fn dns_views(mut self, input: crate::types::DnsViewSummary) -> Self {
         let mut v = self.dns_views.unwrap_or_default();
         v.push(input);
         self.dns_views = ::std::option::Option::Some(v);
         self
     }
-    /// <p>An array of information about the DNS views, such as whether DNSSEC is enabled, creation time, etc.</p>
+    /// <p>An array of information about the DNS views, such as whether DNSSEC is enabled and the creation time.</p>
     pub fn set_dns_views(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DnsViewSummary>>) -> Self {
         self.dns_views = input;
         self
     }
-    /// <p>An array of information about the DNS views, such as whether DNSSEC is enabled, creation time, etc.</p>
+    /// <p>An array of information about the DNS views, such as whether DNSSEC is enabled and the creation time.</p>
     pub fn get_dns_views(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DnsViewSummary>> {
         &self.dns_views
     }

@@ -2,7 +2,7 @@
 
 /// <p>Returns the result of the route matrix calculation.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CalculateRouteMatrixOutput {
     /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>.</p>
     pub route_matrix: ::std::vec::Vec<::std::vec::Vec<crate::types::RouteMatrixEntry>>,
@@ -37,6 +37,17 @@ impl CalculateRouteMatrixOutput {
         self.summary.as_ref()
     }
 }
+impl ::std::fmt::Debug for CalculateRouteMatrixOutput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CalculateRouteMatrixOutput");
+        formatter.field("route_matrix", &self.route_matrix);
+        formatter.field("snapped_departure_positions", &"*** Sensitive Data Redacted ***");
+        formatter.field("snapped_destination_positions", &"*** Sensitive Data Redacted ***");
+        formatter.field("summary", &self.summary);
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
+    }
+}
 impl ::aws_types::request_id::RequestId for CalculateRouteMatrixOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
@@ -50,7 +61,7 @@ impl CalculateRouteMatrixOutput {
 }
 
 /// A builder for [`CalculateRouteMatrixOutput`](crate::operation::calculate_route_matrix::CalculateRouteMatrixOutput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CalculateRouteMatrixOutputBuilder {
     pub(crate) route_matrix: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<crate::types::RouteMatrixEntry>>>,
@@ -163,5 +174,16 @@ impl CalculateRouteMatrixOutputBuilder {
             summary: self.summary,
             _request_id: self._request_id,
         })
+    }
+}
+impl ::std::fmt::Debug for CalculateRouteMatrixOutputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CalculateRouteMatrixOutputBuilder");
+        formatter.field("route_matrix", &self.route_matrix);
+        formatter.field("snapped_departure_positions", &"*** Sensitive Data Redacted ***");
+        formatter.field("snapped_destination_positions", &"*** Sensitive Data Redacted ***");
+        formatter.field("summary", &self.summary);
+        formatter.field("_request_id", &self._request_id);
+        formatter.finish()
     }
 }

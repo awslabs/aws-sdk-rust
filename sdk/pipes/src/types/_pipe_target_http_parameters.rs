@@ -2,7 +2,7 @@
 
 /// <p>These are custom parameter to be used when the target is an API Gateway REST APIs or EventBridge ApiDestinations.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PipeTargetHttpParameters {
     /// <p>The path parameter values to be used to populate API Gateway REST API or EventBridge ApiDestination path wildcards ("*").</p>
     pub path_parameter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -27,6 +27,15 @@ impl PipeTargetHttpParameters {
         self.query_string_parameters.as_ref()
     }
 }
+impl ::std::fmt::Debug for PipeTargetHttpParameters {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PipeTargetHttpParameters");
+        formatter.field("path_parameter_values", &"*** Sensitive Data Redacted ***");
+        formatter.field("header_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("query_string_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl PipeTargetHttpParameters {
     /// Creates a new builder-style object to manufacture [`PipeTargetHttpParameters`](crate::types::PipeTargetHttpParameters).
     pub fn builder() -> crate::types::builders::PipeTargetHttpParametersBuilder {
@@ -35,7 +44,7 @@ impl PipeTargetHttpParameters {
 }
 
 /// A builder for [`PipeTargetHttpParameters`](crate::types::PipeTargetHttpParameters).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct PipeTargetHttpParametersBuilder {
     pub(crate) path_parameter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -124,5 +133,14 @@ impl PipeTargetHttpParametersBuilder {
             header_parameters: self.header_parameters,
             query_string_parameters: self.query_string_parameters,
         }
+    }
+}
+impl ::std::fmt::Debug for PipeTargetHttpParametersBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PipeTargetHttpParametersBuilder");
+        formatter.field("path_parameter_values", &"*** Sensitive Data Redacted ***");
+        formatter.field("header_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("query_string_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

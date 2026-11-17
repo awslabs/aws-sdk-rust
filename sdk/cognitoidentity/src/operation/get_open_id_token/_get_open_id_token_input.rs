@@ -2,7 +2,7 @@
 
 /// <p>Input to the GetOpenIdToken action.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetOpenIdTokenInput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub identity_id: ::std::option::Option<::std::string::String>,
@@ -19,6 +19,14 @@ impl GetOpenIdTokenInput {
         self.logins.as_ref()
     }
 }
+impl ::std::fmt::Debug for GetOpenIdTokenInput {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GetOpenIdTokenInput");
+        formatter.field("identity_id", &self.identity_id);
+        formatter.field("logins", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl GetOpenIdTokenInput {
     /// Creates a new builder-style object to manufacture [`GetOpenIdTokenInput`](crate::operation::get_open_id_token::GetOpenIdTokenInput).
     pub fn builder() -> crate::operation::get_open_id_token::builders::GetOpenIdTokenInputBuilder {
@@ -27,7 +35,7 @@ impl GetOpenIdTokenInput {
 }
 
 /// A builder for [`GetOpenIdTokenInput`](crate::operation::get_open_id_token::GetOpenIdTokenInput).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct GetOpenIdTokenInputBuilder {
     pub(crate) identity_id: ::std::option::Option<::std::string::String>,
@@ -77,5 +85,13 @@ impl GetOpenIdTokenInputBuilder {
             identity_id: self.identity_id,
             logins: self.logins,
         })
+    }
+}
+impl ::std::fmt::Debug for GetOpenIdTokenInputBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GetOpenIdTokenInputBuilder");
+        formatter.field("identity_id", &self.identity_id);
+        formatter.field("logins", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

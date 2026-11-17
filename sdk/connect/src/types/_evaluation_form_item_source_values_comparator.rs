@@ -13,8 +13,14 @@
 /// # let evaluationformitemsourcevaluescomparator = unimplemented!();
 /// match evaluationformitemsourcevaluescomparator {
 ///     EvaluationFormItemSourceValuesComparator::AllIn => { /* ... */ },
+///     EvaluationFormItemSourceValuesComparator::EqualTo => { /* ... */ },
 ///     EvaluationFormItemSourceValuesComparator::Exact => { /* ... */ },
+///     EvaluationFormItemSourceValuesComparator::GreaterThan => { /* ... */ },
+///     EvaluationFormItemSourceValuesComparator::GreaterThanOrEqualTo => { /* ... */ },
 ///     EvaluationFormItemSourceValuesComparator::In => { /* ... */ },
+///     EvaluationFormItemSourceValuesComparator::LessThan => { /* ... */ },
+///     EvaluationFormItemSourceValuesComparator::LessThanOrEqualTo => { /* ... */ },
+///     EvaluationFormItemSourceValuesComparator::NotEqualTo => { /* ... */ },
 ///     EvaluationFormItemSourceValuesComparator::NotIn => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,9 +53,21 @@ pub enum EvaluationFormItemSourceValuesComparator {
     #[allow(missing_docs)] // documentation missing in model
     AllIn,
     #[allow(missing_docs)] // documentation missing in model
+    EqualTo,
+    #[allow(missing_docs)] // documentation missing in model
     Exact,
     #[allow(missing_docs)] // documentation missing in model
+    GreaterThan,
+    #[allow(missing_docs)] // documentation missing in model
+    GreaterThanOrEqualTo,
+    #[allow(missing_docs)] // documentation missing in model
     In,
+    #[allow(missing_docs)] // documentation missing in model
+    LessThan,
+    #[allow(missing_docs)] // documentation missing in model
+    LessThanOrEqualTo,
+    #[allow(missing_docs)] // documentation missing in model
+    NotEqualTo,
     #[allow(missing_docs)] // documentation missing in model
     NotIn,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -60,8 +78,14 @@ impl ::std::convert::From<&str> for EvaluationFormItemSourceValuesComparator {
     fn from(s: &str) -> Self {
         match s {
             "ALL_IN" => EvaluationFormItemSourceValuesComparator::AllIn,
+            "EQUAL_TO" => EvaluationFormItemSourceValuesComparator::EqualTo,
             "EXACT" => EvaluationFormItemSourceValuesComparator::Exact,
+            "GREATER_THAN" => EvaluationFormItemSourceValuesComparator::GreaterThan,
+            "GREATER_THAN_OR_EQUAL_TO" => EvaluationFormItemSourceValuesComparator::GreaterThanOrEqualTo,
             "IN" => EvaluationFormItemSourceValuesComparator::In,
+            "LESS_THAN" => EvaluationFormItemSourceValuesComparator::LessThan,
+            "LESS_THAN_OR_EQUAL_TO" => EvaluationFormItemSourceValuesComparator::LessThanOrEqualTo,
+            "NOT_EQUAL_TO" => EvaluationFormItemSourceValuesComparator::NotEqualTo,
             "NOT_IN" => EvaluationFormItemSourceValuesComparator::NotIn,
             other => EvaluationFormItemSourceValuesComparator::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -79,15 +103,32 @@ impl EvaluationFormItemSourceValuesComparator {
     pub fn as_str(&self) -> &str {
         match self {
             EvaluationFormItemSourceValuesComparator::AllIn => "ALL_IN",
+            EvaluationFormItemSourceValuesComparator::EqualTo => "EQUAL_TO",
             EvaluationFormItemSourceValuesComparator::Exact => "EXACT",
+            EvaluationFormItemSourceValuesComparator::GreaterThan => "GREATER_THAN",
+            EvaluationFormItemSourceValuesComparator::GreaterThanOrEqualTo => "GREATER_THAN_OR_EQUAL_TO",
             EvaluationFormItemSourceValuesComparator::In => "IN",
+            EvaluationFormItemSourceValuesComparator::LessThan => "LESS_THAN",
+            EvaluationFormItemSourceValuesComparator::LessThanOrEqualTo => "LESS_THAN_OR_EQUAL_TO",
+            EvaluationFormItemSourceValuesComparator::NotEqualTo => "NOT_EQUAL_TO",
             EvaluationFormItemSourceValuesComparator::NotIn => "NOT_IN",
             EvaluationFormItemSourceValuesComparator::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ALL_IN", "EXACT", "IN", "NOT_IN"]
+        &[
+            "ALL_IN",
+            "EQUAL_TO",
+            "EXACT",
+            "GREATER_THAN",
+            "GREATER_THAN_OR_EQUAL_TO",
+            "IN",
+            "LESS_THAN",
+            "LESS_THAN_OR_EQUAL_TO",
+            "NOT_EQUAL_TO",
+            "NOT_IN",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for EvaluationFormItemSourceValuesComparator {
@@ -111,8 +152,14 @@ impl ::std::fmt::Display for EvaluationFormItemSourceValuesComparator {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             EvaluationFormItemSourceValuesComparator::AllIn => write!(f, "ALL_IN"),
+            EvaluationFormItemSourceValuesComparator::EqualTo => write!(f, "EQUAL_TO"),
             EvaluationFormItemSourceValuesComparator::Exact => write!(f, "EXACT"),
+            EvaluationFormItemSourceValuesComparator::GreaterThan => write!(f, "GREATER_THAN"),
+            EvaluationFormItemSourceValuesComparator::GreaterThanOrEqualTo => write!(f, "GREATER_THAN_OR_EQUAL_TO"),
             EvaluationFormItemSourceValuesComparator::In => write!(f, "IN"),
+            EvaluationFormItemSourceValuesComparator::LessThan => write!(f, "LESS_THAN"),
+            EvaluationFormItemSourceValuesComparator::LessThanOrEqualTo => write!(f, "LESS_THAN_OR_EQUAL_TO"),
+            EvaluationFormItemSourceValuesComparator::NotEqualTo => write!(f, "NOT_EQUAL_TO"),
             EvaluationFormItemSourceValuesComparator::NotIn => write!(f, "NOT_IN"),
             EvaluationFormItemSourceValuesComparator::Unknown(value) => write!(f, "{value}"),
         }

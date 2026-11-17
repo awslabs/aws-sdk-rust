@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SecretManagerAuthConfig {
-    /// <p>The ARN of the secret in AWS Secrets Manager that contains the credentials for authenticating with the source.</p>
+    /// <p>The ARN of the secret in Secrets Manager that contains the credentials for authenticating with the source.</p>
     pub secret_arn: ::std::option::Option<::std::string::String>,
 }
 impl SecretManagerAuthConfig {
-    /// <p>The ARN of the secret in AWS Secrets Manager that contains the credentials for authenticating with the source.</p>
+    /// <p>The ARN of the secret in Secrets Manager that contains the credentials for authenticating with the source.</p>
     pub fn secret_arn(&self) -> ::std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct SecretManagerAuthConfigBuilder {
     pub(crate) secret_arn: ::std::option::Option<::std::string::String>,
 }
 impl SecretManagerAuthConfigBuilder {
-    /// <p>The ARN of the secret in AWS Secrets Manager that contains the credentials for authenticating with the source.</p>
+    /// <p>The ARN of the secret in Secrets Manager that contains the credentials for authenticating with the source.</p>
     pub fn secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.secret_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ARN of the secret in AWS Secrets Manager that contains the credentials for authenticating with the source.</p>
+    /// <p>The ARN of the secret in Secrets Manager that contains the credentials for authenticating with the source.</p>
     pub fn set_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.secret_arn = input;
         self
     }
-    /// <p>The ARN of the secret in AWS Secrets Manager that contains the credentials for authenticating with the source.</p>
+    /// <p>The ARN of the secret in Secrets Manager that contains the credentials for authenticating with the source.</p>
     pub fn get_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.secret_arn
     }

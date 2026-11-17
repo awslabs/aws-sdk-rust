@@ -24,6 +24,7 @@ impl crate::operation::update_stream_mode::builders::UpdateStreamModeInputBuilde
 ///
 /// <p>Updates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data stream.</p>
 /// <p>If you'd still like to proactively scale your on-demand data stream’s capacity, you can unlock the warm throughput feature for on-demand data streams by enabling <code>MinimumThroughputBillingCommitment</code> for your account. Once your account has <code>MinimumThroughputBillingCommitment</code> enabled, you can specify the warm throughput in MiB per second that your stream can support in writes.</p>
+/// <p>You can't switch a data stream from on-demand to provisioned capacity mode while the stream has one or more queues. Delete the queues with <code>DeleteQueue</code> before you change the capacity mode.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateStreamModeFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

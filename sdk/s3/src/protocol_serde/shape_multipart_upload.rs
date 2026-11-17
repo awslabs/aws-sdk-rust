@@ -113,6 +113,19 @@ pub fn de_multipart_upload(
                 builder = builder.set_checksum_type(var_8);
             }
             ,
+            s if s.matches("VersionId") /* VersionId com.amazonaws.s3#MultipartUpload$VersionId */ =>  {
+                let var_9 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_version_id(var_9);
+            }
+            ,
             _ => {}
         }
     }

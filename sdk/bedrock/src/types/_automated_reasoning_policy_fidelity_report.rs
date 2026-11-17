@@ -2,7 +2,7 @@
 
 /// <p>A comprehensive analysis report that measures how accurately a generated policy represents the source documents. The report includes coverage and accuracy scores, detailed grounding information linking policy elements to source statements, and annotated document content.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AutomatedReasoningPolicyFidelityReport {
     /// <p>A score from 0.0 to 1.0 indicating how well the policy covers the statements in the source documents. A higher score means more of the source content is represented in the policy.</p>
     pub coverage_score: f64,
@@ -38,6 +38,17 @@ impl AutomatedReasoningPolicyFidelityReport {
         self.document_sources.deref()
     }
 }
+impl ::std::fmt::Debug for AutomatedReasoningPolicyFidelityReport {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AutomatedReasoningPolicyFidelityReport");
+        formatter.field("coverage_score", &self.coverage_score);
+        formatter.field("accuracy_score", &self.accuracy_score);
+        formatter.field("rule_reports", &self.rule_reports);
+        formatter.field("variable_reports", &"*** Sensitive Data Redacted ***");
+        formatter.field("document_sources", &self.document_sources);
+        formatter.finish()
+    }
+}
 impl AutomatedReasoningPolicyFidelityReport {
     /// Creates a new builder-style object to manufacture [`AutomatedReasoningPolicyFidelityReport`](crate::types::AutomatedReasoningPolicyFidelityReport).
     pub fn builder() -> crate::types::builders::AutomatedReasoningPolicyFidelityReportBuilder {
@@ -46,7 +57,7 @@ impl AutomatedReasoningPolicyFidelityReport {
 }
 
 /// A builder for [`AutomatedReasoningPolicyFidelityReport`](crate::types::AutomatedReasoningPolicyFidelityReport).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct AutomatedReasoningPolicyFidelityReportBuilder {
     pub(crate) coverage_score: ::std::option::Option<f64>,
@@ -207,5 +218,16 @@ impl AutomatedReasoningPolicyFidelityReportBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for AutomatedReasoningPolicyFidelityReportBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AutomatedReasoningPolicyFidelityReportBuilder");
+        formatter.field("coverage_score", &self.coverage_score);
+        formatter.field("accuracy_score", &self.accuracy_score);
+        formatter.field("rule_reports", &self.rule_reports);
+        formatter.field("variable_reports", &"*** Sensitive Data Redacted ***");
+        formatter.field("document_sources", &self.document_sources);
+        formatter.finish()
     }
 }

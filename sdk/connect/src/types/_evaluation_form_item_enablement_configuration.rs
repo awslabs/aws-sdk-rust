@@ -6,9 +6,9 @@
 pub struct EvaluationFormItemEnablementConfiguration {
     /// <p>A condition for item enablement configuration.</p>
     pub condition: ::std::option::Option<crate::types::EvaluationFormItemEnablementCondition>,
-    /// <p>An enablement action that if condition is satisfied.</p>
+    /// <p>The enablement action to apply if the condition is satisfied.</p>
     pub action: crate::types::EvaluationFormItemEnablementAction,
-    /// <p>An enablement action that if condition is not satisfied.</p>
+    /// <p>The enablement action to apply if the condition is not satisfied. This action is also applied when the condition depends on an external source that is still pending or could not be resolved.</p>
     pub default_action: ::std::option::Option<crate::types::EvaluationFormItemEnablementAction>,
 }
 impl EvaluationFormItemEnablementConfiguration {
@@ -16,11 +16,11 @@ impl EvaluationFormItemEnablementConfiguration {
     pub fn condition(&self) -> ::std::option::Option<&crate::types::EvaluationFormItemEnablementCondition> {
         self.condition.as_ref()
     }
-    /// <p>An enablement action that if condition is satisfied.</p>
+    /// <p>The enablement action to apply if the condition is satisfied.</p>
     pub fn action(&self) -> &crate::types::EvaluationFormItemEnablementAction {
         &self.action
     }
-    /// <p>An enablement action that if condition is not satisfied.</p>
+    /// <p>The enablement action to apply if the condition is not satisfied. This action is also applied when the condition depends on an external source that is still pending or could not be resolved.</p>
     pub fn default_action(&self) -> ::std::option::Option<&crate::types::EvaluationFormItemEnablementAction> {
         self.default_action.as_ref()
     }
@@ -56,32 +56,32 @@ impl EvaluationFormItemEnablementConfigurationBuilder {
     pub fn get_condition(&self) -> &::std::option::Option<crate::types::EvaluationFormItemEnablementCondition> {
         &self.condition
     }
-    /// <p>An enablement action that if condition is satisfied.</p>
+    /// <p>The enablement action to apply if the condition is satisfied.</p>
     /// This field is required.
     pub fn action(mut self, input: crate::types::EvaluationFormItemEnablementAction) -> Self {
         self.action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An enablement action that if condition is satisfied.</p>
+    /// <p>The enablement action to apply if the condition is satisfied.</p>
     pub fn set_action(mut self, input: ::std::option::Option<crate::types::EvaluationFormItemEnablementAction>) -> Self {
         self.action = input;
         self
     }
-    /// <p>An enablement action that if condition is satisfied.</p>
+    /// <p>The enablement action to apply if the condition is satisfied.</p>
     pub fn get_action(&self) -> &::std::option::Option<crate::types::EvaluationFormItemEnablementAction> {
         &self.action
     }
-    /// <p>An enablement action that if condition is not satisfied.</p>
+    /// <p>The enablement action to apply if the condition is not satisfied. This action is also applied when the condition depends on an external source that is still pending or could not be resolved.</p>
     pub fn default_action(mut self, input: crate::types::EvaluationFormItemEnablementAction) -> Self {
         self.default_action = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An enablement action that if condition is not satisfied.</p>
+    /// <p>The enablement action to apply if the condition is not satisfied. This action is also applied when the condition depends on an external source that is still pending or could not be resolved.</p>
     pub fn set_default_action(mut self, input: ::std::option::Option<crate::types::EvaluationFormItemEnablementAction>) -> Self {
         self.default_action = input;
         self
     }
-    /// <p>An enablement action that if condition is not satisfied.</p>
+    /// <p>The enablement action to apply if the condition is not satisfied. This action is also applied when the condition depends on an external source that is still pending or could not be resolved.</p>
     pub fn get_default_action(&self) -> &::std::option::Option<crate::types::EvaluationFormItemEnablementAction> {
         &self.default_action
     }

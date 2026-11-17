@@ -2,7 +2,7 @@
 
 /// <p>A filter that specifies the custom line items and billing groups to retrieve FFLI information.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListCustomLineItemsFilter {
     /// <p>A list of custom line items to retrieve information.</p>
     pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -39,6 +39,16 @@ impl ListCustomLineItemsFilter {
         self.account_ids.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for ListCustomLineItemsFilter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCustomLineItemsFilter");
+        formatter.field("names", &"*** Sensitive Data Redacted ***");
+        formatter.field("billing_groups", &self.billing_groups);
+        formatter.field("arns", &self.arns);
+        formatter.field("account_ids", &self.account_ids);
+        formatter.finish()
+    }
+}
 impl ListCustomLineItemsFilter {
     /// Creates a new builder-style object to manufacture [`ListCustomLineItemsFilter`](crate::types::ListCustomLineItemsFilter).
     pub fn builder() -> crate::types::builders::ListCustomLineItemsFilterBuilder {
@@ -47,7 +57,7 @@ impl ListCustomLineItemsFilter {
 }
 
 /// A builder for [`ListCustomLineItemsFilter`](crate::types::ListCustomLineItemsFilter).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ListCustomLineItemsFilterBuilder {
     pub(crate) names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -144,5 +154,15 @@ impl ListCustomLineItemsFilterBuilder {
             arns: self.arns,
             account_ids: self.account_ids,
         }
+    }
+}
+impl ::std::fmt::Debug for ListCustomLineItemsFilterBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCustomLineItemsFilterBuilder");
+        formatter.field("names", &"*** Sensitive Data Redacted ***");
+        formatter.field("billing_groups", &self.billing_groups);
+        formatter.field("arns", &self.arns);
+        formatter.field("account_ids", &self.account_ids);
+        formatter.finish()
     }
 }

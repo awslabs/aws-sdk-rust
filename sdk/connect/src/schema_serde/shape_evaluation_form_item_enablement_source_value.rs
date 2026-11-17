@@ -19,6 +19,46 @@ static EVALUATIONFORMITEMENABLEMENTSOURCEVALUE_MEMBER_REF_ID: ::aws_smithy_schem
     "RefId",
     1,
 );
+static EVALUATIONFORMITEMENABLEMENTSOURCEVALUE_MEMBER_STRING_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.connect#EvaluationFormItemEnablementSourceValue$StringValue",
+        "com.amazonaws.connect",
+        "EvaluationFormItemEnablementSourceValue",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "StringValue",
+    2,
+);
+static EVALUATIONFORMITEMENABLEMENTSOURCEVALUE_MEMBER_NUMERIC_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.connect#EvaluationFormItemEnablementSourceValue$NumericValue",
+        "com.amazonaws.connect",
+        "EvaluationFormItemEnablementSourceValue",
+    ),
+    ::aws_smithy_schema::ShapeType::Double,
+    "NumericValue",
+    3,
+);
+static EVALUATIONFORMITEMENABLEMENTSOURCEVALUE_MEMBER_BOOLEAN_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.connect#EvaluationFormItemEnablementSourceValue$BooleanValue",
+        "com.amazonaws.connect",
+        "EvaluationFormItemEnablementSourceValue",
+    ),
+    ::aws_smithy_schema::ShapeType::Boolean,
+    "BooleanValue",
+    4,
+);
+static EVALUATIONFORMITEMENABLEMENTSOURCEVALUE_MEMBER_DATE_TIME_VALUE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.connect#EvaluationFormItemEnablementSourceValue$DateTimeValue",
+        "com.amazonaws.connect",
+        "EvaluationFormItemEnablementSourceValue",
+    ),
+    ::aws_smithy_schema::ShapeType::Timestamp,
+    "DateTimeValue",
+    5,
+);
 static EVALUATIONFORMITEMENABLEMENTSOURCEVALUE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.connect#EvaluationFormItemEnablementSourceValue",
@@ -29,6 +69,10 @@ static EVALUATIONFORMITEMENABLEMENTSOURCEVALUE_SCHEMA: ::aws_smithy_schema::Sche
     &[
         &EVALUATIONFORMITEMENABLEMENTSOURCEVALUE_MEMBER_TYPE,
         &EVALUATIONFORMITEMENABLEMENTSOURCEVALUE_MEMBER_REF_ID,
+        &EVALUATIONFORMITEMENABLEMENTSOURCEVALUE_MEMBER_STRING_VALUE,
+        &EVALUATIONFORMITEMENABLEMENTSOURCEVALUE_MEMBER_NUMERIC_VALUE,
+        &EVALUATIONFORMITEMENABLEMENTSOURCEVALUE_MEMBER_BOOLEAN_VALUE,
+        &EVALUATIONFORMITEMENABLEMENTSOURCEVALUE_MEMBER_DATE_TIME_VALUE,
     ],
 );
 impl crate::types::EvaluationFormItemEnablementSourceValue {
@@ -51,6 +95,18 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Evaluation
         }
         if let Some(ref val) = self.ref_id {
             ser.write_string(&EVALUATIONFORMITEMENABLEMENTSOURCEVALUE_MEMBER_REF_ID, val)?;
+        }
+        if let Some(ref val) = self.string_value {
+            ser.write_string(&EVALUATIONFORMITEMENABLEMENTSOURCEVALUE_MEMBER_STRING_VALUE, val)?;
+        }
+        if let Some(ref val) = self.numeric_value {
+            ser.write_double(&EVALUATIONFORMITEMENABLEMENTSOURCEVALUE_MEMBER_NUMERIC_VALUE, *val)?;
+        }
+        if let Some(ref val) = self.boolean_value {
+            ser.write_boolean(&EVALUATIONFORMITEMENABLEMENTSOURCEVALUE_MEMBER_BOOLEAN_VALUE, *val)?;
+        }
+        if let Some(ref val) = self.date_time_value {
+            ser.write_timestamp(&EVALUATIONFORMITEMENABLEMENTSOURCEVALUE_MEMBER_DATE_TIME_VALUE, val)?;
         }
         Ok(())
     }
@@ -79,6 +135,34 @@ impl crate::types::builders::EvaluationFormItemEnablementSourceValueBuilder {
                         deser.read_null()?;
                     } else {
                         self.ref_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.string_value = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.numeric_value = Some(deser.read_double(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.boolean_value = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.date_time_value = Some(deser.read_timestamp(member)?);
                     }
                 }
                 _ => {}

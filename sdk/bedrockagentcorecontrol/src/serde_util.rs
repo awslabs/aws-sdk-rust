@@ -983,6 +983,38 @@ pub(crate) fn delete_registry_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_agent_insight_store_output_output_correct_errors(
+    mut builder: crate::operation::get_agent_insight_store::builders::GetAgentInsightStoreOutputBuilder,
+) -> crate::operation::get_agent_insight_store::builders::GetAgentInsightStoreOutputBuilder {
+    if builder.agent_insight_store_arn.is_none() {
+        builder.agent_insight_store_arn = Some(Default::default())
+    }
+    if builder.agent_insight_store_id.is_none() {
+        builder.agent_insight_store_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::AgentInsightStoreStatus>().ok()
+    }
+    if builder.enablement_status.is_none() {
+        builder.enablement_status = "no value was set".parse::<crate::types::AgentInsightStoreEnablementStatus>().ok()
+    }
+    if builder.encryption_configuration.is_none() {
+        builder.encryption_configuration = {
+            let builder = crate::types::builders::AgentInsightStoreEncryptionConfigurationBuilder::default();
+            crate::serde_util::agent_insight_store_encryption_configuration_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn get_agent_runtime_output_output_correct_errors(
     mut builder: crate::operation::get_agent_runtime::builders::GetAgentRuntimeOutputBuilder,
 ) -> crate::operation::get_agent_runtime::builders::GetAgentRuntimeOutputBuilder {
@@ -1294,9 +1326,6 @@ pub(crate) fn get_dataset_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::DatasetStatus>().ok()
-    }
-    if builder.schema_type.is_none() {
-        builder.schema_type = "no value was set".parse::<crate::types::DatasetSchemaType>().ok()
     }
     if builder.example_count.is_none() {
         builder.example_count = Some(Default::default())
@@ -1901,6 +1930,15 @@ pub(crate) fn get_workload_identity_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_agent_insight_stores_output_output_correct_errors(
+    mut builder: crate::operation::list_agent_insight_stores::builders::ListAgentInsightStoresOutputBuilder,
+) -> crate::operation::list_agent_insight_stores::builders::ListAgentInsightStoresOutputBuilder {
+    if builder.agent_insight_stores.is_none() {
+        builder.agent_insight_stores = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_agent_runtime_endpoints_output_output_correct_errors(
     mut builder: crate::operation::list_agent_runtime_endpoints::builders::ListAgentRuntimeEndpointsOutputBuilder,
 ) -> crate::operation::list_agent_runtime_endpoints::builders::ListAgentRuntimeEndpointsOutputBuilder {
@@ -2371,6 +2409,27 @@ pub(crate) fn submit_registry_record_for_approval_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::RegistryRecordStatus>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn update_agent_insight_store_output_output_correct_errors(
+    mut builder: crate::operation::update_agent_insight_store::builders::UpdateAgentInsightStoreOutputBuilder,
+) -> crate::operation::update_agent_insight_store::builders::UpdateAgentInsightStoreOutputBuilder {
+    if builder.agent_insight_store_arn.is_none() {
+        builder.agent_insight_store_arn = Some(Default::default())
+    }
+    if builder.agent_insight_store_id.is_none() {
+        builder.agent_insight_store_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::AgentInsightStoreStatus>().ok()
+    }
+    if builder.enablement_status.is_none() {
+        builder.enablement_status = "no value was set".parse::<crate::types::AgentInsightStoreEnablementStatus>().ok()
     }
     if builder.updated_at.is_none() {
         builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
@@ -3097,6 +3156,15 @@ pub(crate) fn harness_endpoint_correct_errors(
     builder
 }
 
+pub(crate) fn agent_insight_store_encryption_configuration_correct_errors(
+    mut builder: crate::types::builders::AgentInsightStoreEncryptionConfigurationBuilder,
+) -> crate::types::builders::AgentInsightStoreEncryptionConfigurationBuilder {
+    if builder.mode.is_none() {
+        builder.mode = "no value was set".parse::<crate::types::AgentInsightStoreEncryptionMode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn browser_network_configuration_correct_errors(
     mut builder: crate::types::builders::BrowserNetworkConfigurationBuilder,
 ) -> crate::types::builders::BrowserNetworkConfigurationBuilder {
@@ -3204,6 +3272,21 @@ pub(crate) fn domain_override_correct_errors(
     builder
 }
 
+pub(crate) fn example_count_by_field_correct_errors(
+    mut builder: crate::types::builders::ExampleCountByFieldBuilder,
+) -> crate::types::builders::ExampleCountByFieldBuilder {
+    if builder.turns.is_none() {
+        builder.turns = Some(Default::default())
+    }
+    if builder.input.is_none() {
+        builder.input = Some(Default::default())
+    }
+    if builder.actor_profile.is_none() {
+        builder.actor_profile = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn gateway_policy_engine_configuration_correct_errors(
     mut builder: crate::types::builders::GatewayPolicyEngineConfigurationBuilder,
 ) -> crate::types::builders::GatewayPolicyEngineConfigurationBuilder {
@@ -3285,6 +3368,38 @@ pub(crate) fn sampling_config_correct_errors(
 ) -> crate::types::builders::SamplingConfigBuilder {
     if builder.sampling_percentage.is_none() {
         builder.sampling_percentage = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn agent_insight_store_summary_correct_errors(
+    mut builder: crate::types::builders::AgentInsightStoreSummaryBuilder,
+) -> crate::types::builders::AgentInsightStoreSummaryBuilder {
+    if builder.agent_insight_store_arn.is_none() {
+        builder.agent_insight_store_arn = Some(Default::default())
+    }
+    if builder.agent_insight_store_id.is_none() {
+        builder.agent_insight_store_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::AgentInsightStoreStatus>().ok()
+    }
+    if builder.enablement_status.is_none() {
+        builder.enablement_status = "no value was set".parse::<crate::types::AgentInsightStoreEnablementStatus>().ok()
+    }
+    if builder.encryption_configuration.is_none() {
+        builder.encryption_configuration = {
+            let builder = crate::types::builders::AgentInsightStoreEncryptionConfigurationBuilder::default();
+            crate::serde_util::agent_insight_store_encryption_configuration_correct_errors(builder)
+                .build()
+                .ok()
+        }
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -3663,9 +3778,6 @@ pub(crate) fn dataset_summary_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::DatasetStatus>().ok()
-    }
-    if builder.schema_type.is_none() {
-        builder.schema_type = "no value was set".parse::<crate::types::DatasetSchemaType>().ok()
     }
     if builder.example_count.is_none() {
         builder.example_count = Some(Default::default())

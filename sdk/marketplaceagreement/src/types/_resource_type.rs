@@ -13,9 +13,11 @@
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
 ///     ResourceType::Agreement => { /* ... */ },
+///     ResourceType::AgreementApproval => { /* ... */ },
 ///     ResourceType::AgreementCancellationRequest => { /* ... */ },
 ///     ResourceType::AgreementProposal => { /* ... */ },
 ///     ResourceType::AgreementRequest => { /* ... */ },
+///     ResourceType::AgreementRequestApprovalPlan => { /* ... */ },
 ///     ResourceType::BillingAdjustmentRequest => { /* ... */ },
 ///     ResourceType::Charge => { /* ... */ },
 ///     ResourceType::Invoice => { /* ... */ },
@@ -51,11 +53,15 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Agreement,
     #[allow(missing_docs)] // documentation missing in model
+    AgreementApproval,
+    #[allow(missing_docs)] // documentation missing in model
     AgreementCancellationRequest,
     #[allow(missing_docs)] // documentation missing in model
     AgreementProposal,
     #[allow(missing_docs)] // documentation missing in model
     AgreementRequest,
+    #[allow(missing_docs)] // documentation missing in model
+    AgreementRequestApprovalPlan,
     #[allow(missing_docs)] // documentation missing in model
     BillingAdjustmentRequest,
     #[allow(missing_docs)] // documentation missing in model
@@ -72,9 +78,11 @@ impl ::std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "Agreement" => ResourceType::Agreement,
+            "AgreementApproval" => ResourceType::AgreementApproval,
             "AgreementCancellationRequest" => ResourceType::AgreementCancellationRequest,
             "AgreementProposal" => ResourceType::AgreementProposal,
             "AgreementRequest" => ResourceType::AgreementRequest,
+            "AgreementRequestApprovalPlan" => ResourceType::AgreementRequestApprovalPlan,
             "BillingAdjustmentRequest" => ResourceType::BillingAdjustmentRequest,
             "Charge" => ResourceType::Charge,
             "Invoice" => ResourceType::Invoice,
@@ -95,9 +103,11 @@ impl ResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Agreement => "Agreement",
+            ResourceType::AgreementApproval => "AgreementApproval",
             ResourceType::AgreementCancellationRequest => "AgreementCancellationRequest",
             ResourceType::AgreementProposal => "AgreementProposal",
             ResourceType::AgreementRequest => "AgreementRequest",
+            ResourceType::AgreementRequestApprovalPlan => "AgreementRequestApprovalPlan",
             ResourceType::BillingAdjustmentRequest => "BillingAdjustmentRequest",
             ResourceType::Charge => "Charge",
             ResourceType::Invoice => "Invoice",
@@ -109,9 +119,11 @@ impl ResourceType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "Agreement",
+            "AgreementApproval",
             "AgreementCancellationRequest",
             "AgreementProposal",
             "AgreementRequest",
+            "AgreementRequestApprovalPlan",
             "BillingAdjustmentRequest",
             "Charge",
             "Invoice",
@@ -140,9 +152,11 @@ impl ::std::fmt::Display for ResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResourceType::Agreement => write!(f, "Agreement"),
+            ResourceType::AgreementApproval => write!(f, "AgreementApproval"),
             ResourceType::AgreementCancellationRequest => write!(f, "AgreementCancellationRequest"),
             ResourceType::AgreementProposal => write!(f, "AgreementProposal"),
             ResourceType::AgreementRequest => write!(f, "AgreementRequest"),
+            ResourceType::AgreementRequestApprovalPlan => write!(f, "AgreementRequestApprovalPlan"),
             ResourceType::BillingAdjustmentRequest => write!(f, "BillingAdjustmentRequest"),
             ResourceType::Charge => write!(f, "Charge"),
             ResourceType::Invoice => write!(f, "Invoice"),

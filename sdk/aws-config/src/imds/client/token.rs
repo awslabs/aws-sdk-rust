@@ -24,6 +24,7 @@ use aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptio
 use aws_smithy_runtime_api::client::auth::{
     AuthScheme, AuthSchemeEndpointConfig, AuthSchemeId, Sign,
 };
+use aws_smithy_runtime_api::client::behavior_version::BehaviorVersion;
 use aws_smithy_runtime_api::client::identity::{
     Identity, IdentityFuture, ResolveIdentity, SharedIdentityResolver,
 };
@@ -83,7 +84,11 @@ pub(super) struct TokenRuntimePlugin {
 }
 
 impl TokenRuntimePlugin {
-    pub(super) fn new(common_plugin: SharedRuntimePlugin, token_ttl: Duration) -> Self {
+    pub(super) fn new(
+        common_plugin: SharedRuntimePlugin,
+        token_ttl: Duration,
+        behavior_version: Option<BehaviorVersion>,
+    ) -> Self {
         Self {
             components: RuntimeComponentsBuilder::new("TokenRuntimePlugin")
                 .with_auth_scheme(TokenAuthScheme::new())
@@ -94,7 +99,7 @@ impl TokenRuntimePlugin {
                 .with_identity_cache(Some(IdentityCache::no_cache()))
                 .with_identity_resolver(
                     IMDS_TOKEN_AUTH_SCHEME,
-                    TokenResolver::new(common_plugin, token_ttl),
+                    TokenResolver::new(common_plugin, token_ttl, behavior_version),
                 ),
         }
     }
@@ -121,30 +126,41 @@ struct TokenResolver {
 }
 
 impl TokenResolver {
-    fn new(common_plugin: SharedRuntimePlugin, token_ttl: Duration) -> Self {
+    fn new(
+        common_plugin: SharedRuntimePlugin,
+        token_ttl: Duration,
+        behavior_version: Option<BehaviorVersion>,
+    ) -> Self {
+        let refresh = Operation::builder()
+            .service_name("imds")
+            .operation_name("get-token")
+            .runtime_plugin(common_plugin)
+            .no_auth()
+            .with_connection_poisoning()
+            .serializer(move |_| {
+                Ok(http::Request::builder()
+                    .method("PUT")
+                    .uri(Uri::from_static("/latest/api/token"))
+                    .header(X_AWS_EC2_METADATA_TOKEN_TTL_SECONDS, token_ttl.as_secs())
+                    .body(SdkBody::empty())
+                    .expect("valid HTTP request")
+                    .try_into()
+                    .unwrap())
+            })
+            .deserializer(move |response| {
+                parse_token_response(response).map_err(OrchestratorError::operation)
+            });
+        // Token requests must follow the same behavior version (e.g. retry behavior) as the
+        // metadata requests that need them.
+        let refresh = if let Some(bv) = behavior_version {
+            refresh.behavior_version(bv).build()
+        } else {
+            refresh.build()
+        };
         Self {
             inner: Arc::new(TokenResolverInner {
                 cache: ExpiringCache::new(TOKEN_REFRESH_BUFFER),
-                refresh: Operation::builder()
-                    .service_name("imds")
-                    .operation_name("get-token")
-                    .runtime_plugin(common_plugin)
-                    .no_auth()
-                    .with_connection_poisoning()
-                    .serializer(move |_| {
-                        Ok(http::Request::builder()
-                            .method("PUT")
-                            .uri(Uri::from_static("/latest/api/token"))
-                            .header(X_AWS_EC2_METADATA_TOKEN_TTL_SECONDS, token_ttl.as_secs())
-                            .body(SdkBody::empty())
-                            .expect("valid HTTP request")
-                            .try_into()
-                            .unwrap())
-                    })
-                    .deserializer(move |response| {
-                        parse_token_response(response).map_err(OrchestratorError::operation)
-                    })
-                    .build(),
+                refresh,
             }),
         }
     }

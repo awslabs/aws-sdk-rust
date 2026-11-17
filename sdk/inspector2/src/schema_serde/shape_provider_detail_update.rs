@@ -9,6 +9,16 @@ static PROVIDERDETAILUPDATE_MEMBER_AZURE: ::aws_smithy_schema::Schema<'static> =
     "azure",
     0,
 );
+static PROVIDERDETAILUPDATE_MEMBER_GCP: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.inspector2#ProviderDetailUpdate$gcp",
+        "com.amazonaws.inspector2",
+        "ProviderDetailUpdate",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "gcp",
+    1,
+);
 static PROVIDERDETAILUPDATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.inspector2#ProviderDetailUpdate",
@@ -16,7 +26,7 @@ static PROVIDERDETAILUPDATE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws
         "ProviderDetailUpdate",
     ),
     ::aws_smithy_schema::ShapeType::Union,
-    &[&PROVIDERDETAILUPDATE_MEMBER_AZURE],
+    &[&PROVIDERDETAILUPDATE_MEMBER_AZURE, &PROVIDERDETAILUPDATE_MEMBER_GCP],
 );
 impl crate::types::ProviderDetailUpdate {
     /// The schema for this shape.
@@ -35,6 +45,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::ProviderDe
         match self {
             Self::Azure(val) => {
                 ser.write_struct(&PROVIDERDETAILUPDATE_MEMBER_AZURE, val)?;
+            }
+            Self::Gcp(val) => {
+                ser.write_struct(&PROVIDERDETAILUPDATE_MEMBER_GCP, val)?;
             }
             Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
         }
@@ -58,6 +71,7 @@ impl crate::types::ProviderDetailUpdate {
             }
             result = ::std::option::Option::Some(match member.member_index() {
                 Some(0) => Self::Azure(crate::types::AzureProviderDetailUpdate::deserialize(deser)?),
+                Some(1) => Self::Gcp(crate::types::GcpProviderDetailUpdate::deserialize(deser)?),
                 _ => Self::Unknown,
             });
             Ok(())

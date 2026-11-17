@@ -9,7 +9,7 @@ impl super::Client {
     ///   - [`filters(impl Into<String>, Vec::<String>)`](crate::operation::list_access_sources::builders::ListAccessSourcesFluentBuilder::filters) / [`set_filters(Option<HashMap::<String, Vec::<String>>>)`](crate::operation::list_access_sources::builders::ListAccessSourcesFluentBuilder::set_filters):<br>required: **false**<br><p>Values to filter the results.</p><br>
     /// - On success, responds with [`ListAccessSourcesOutput`](crate::operation::list_access_sources::ListAccessSourcesOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_access_sources::ListAccessSourcesOutput::next_token): <p>A pagination token used for large sets of results that can't be returned in a single response. Provide this token in the next call to get the results not returned in this call.</p>
-    ///   - [`access_sources(Vec::<AccessSourcesItem>)`](crate::operation::list_access_sources::ListAccessSourcesOutput::access_sources): <p>An array containing information about the access sources, such as the ID, CIDR etc.</p>
+    ///   - [`access_sources(Vec::<AccessSourcesItem>)`](crate::operation::list_access_sources::ListAccessSourcesOutput::access_sources): <p>An array containing information about the access sources, such as the ID and CIDR.</p>
     /// - On failure, responds with [`SdkError<ListAccessSourcesError>`](crate::operation::list_access_sources::ListAccessSourcesError)
     pub fn list_access_sources(&self) -> crate::operation::list_access_sources::builders::ListAccessSourcesFluentBuilder {
         crate::operation::list_access_sources::builders::ListAccessSourcesFluentBuilder::new(self.handle.clone())

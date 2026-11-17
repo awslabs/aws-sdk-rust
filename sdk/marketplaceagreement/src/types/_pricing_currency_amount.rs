@@ -8,7 +8,7 @@ pub struct PricingCurrencyAmount {
     pub amount: ::std::option::Option<::std::string::String>,
     /// <p>The maximum refundable amount as a string representation of a decimal number.</p>
     pub max_adjustment_amount: ::std::option::Option<::std::string::String>,
-    /// <p>The 3-letter ISO 4217 currency code (e.g., <code>USD</code>, <code>EUR</code>, <code>JPY</code>).</p>
+    /// <p>The 3-letter ISO 4217 currency code (for example, <code>USD</code>, <code>EUR</code>, <code>JPY</code>).</p>
     pub currency_code: ::std::option::Option<::std::string::String>,
 }
 impl PricingCurrencyAmount {
@@ -20,7 +20,7 @@ impl PricingCurrencyAmount {
     pub fn max_adjustment_amount(&self) -> ::std::option::Option<&str> {
         self.max_adjustment_amount.as_deref()
     }
-    /// <p>The 3-letter ISO 4217 currency code (e.g., <code>USD</code>, <code>EUR</code>, <code>JPY</code>).</p>
+    /// <p>The 3-letter ISO 4217 currency code (for example, <code>USD</code>, <code>EUR</code>, <code>JPY</code>).</p>
     pub fn currency_code(&self) -> ::std::option::Option<&str> {
         self.currency_code.as_deref()
     }
@@ -69,17 +69,17 @@ impl PricingCurrencyAmountBuilder {
     pub fn get_max_adjustment_amount(&self) -> &::std::option::Option<::std::string::String> {
         &self.max_adjustment_amount
     }
-    /// <p>The 3-letter ISO 4217 currency code (e.g., <code>USD</code>, <code>EUR</code>, <code>JPY</code>).</p>
+    /// <p>The 3-letter ISO 4217 currency code (for example, <code>USD</code>, <code>EUR</code>, <code>JPY</code>).</p>
     pub fn currency_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.currency_code = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The 3-letter ISO 4217 currency code (e.g., <code>USD</code>, <code>EUR</code>, <code>JPY</code>).</p>
+    /// <p>The 3-letter ISO 4217 currency code (for example, <code>USD</code>, <code>EUR</code>, <code>JPY</code>).</p>
     pub fn set_currency_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.currency_code = input;
         self
     }
-    /// <p>The 3-letter ISO 4217 currency code (e.g., <code>USD</code>, <code>EUR</code>, <code>JPY</code>).</p>
+    /// <p>The 3-letter ISO 4217 currency code (for example, <code>USD</code>, <code>EUR</code>, <code>JPY</code>).</p>
     pub fn get_currency_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.currency_code
     }

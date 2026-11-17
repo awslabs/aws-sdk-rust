@@ -2,7 +2,7 @@
 
 /// <p>An integer parameter.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IntegerParameter {
     /// <p>The name of the integer parameter.</p>
     pub name: ::std::string::String,
@@ -21,6 +21,14 @@ impl IntegerParameter {
         self.values.deref()
     }
 }
+impl ::std::fmt::Debug for IntegerParameter {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IntegerParameter");
+        formatter.field("name", &self.name);
+        formatter.field("values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl IntegerParameter {
     /// Creates a new builder-style object to manufacture [`IntegerParameter`](crate::types::IntegerParameter).
     pub fn builder() -> crate::types::builders::IntegerParameterBuilder {
@@ -29,7 +37,7 @@ impl IntegerParameter {
 }
 
 /// A builder for [`IntegerParameter`](crate::types::IntegerParameter).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct IntegerParameterBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -90,5 +98,13 @@ impl IntegerParameterBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for IntegerParameterBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IntegerParameterBuilder");
+        formatter.field("name", &self.name);
+        formatter.field("values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

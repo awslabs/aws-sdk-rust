@@ -107,6 +107,8 @@ pub use crate::types::_continuous_integration_scan_configuration::ContinuousInte
 
 pub use crate::types::_azure_provider_detail_create::AzureProviderDetailCreateBuilder;
 
+pub use crate::types::_gcp_provider_detail_create::GcpProviderDetailCreateBuilder;
+
 pub use crate::types::_account::AccountBuilder;
 
 pub use crate::types::_cis_scan_result_details::CisScanResultDetailsBuilder;
@@ -201,6 +203,8 @@ pub use crate::types::_update_git_hub_integration_detail::UpdateGitHubIntegratio
 
 pub use crate::types::_azure_provider_detail_update::AzureProviderDetailUpdateBuilder;
 
+pub use crate::types::_gcp_provider_detail_update::GcpProviderDetailUpdateBuilder;
+
 pub use crate::types::_connector_container_image_scan_configuration::ConnectorContainerImageScanConfigurationBuilder;
 
 pub use crate::types::_state::StateBuilder;
@@ -216,6 +220,8 @@ pub use crate::types::_exploit_observed::ExploitObservedBuilder;
 pub use crate::types::_time::TimeBuilder;
 
 pub use crate::types::_azure_scope_configuration_input::AzureScopeConfigurationInputBuilder;
+
+pub use crate::types::_gcp_scope_configuration_input::GcpScopeConfigurationInputBuilder;
 
 pub use crate::types::_date_filter::DateFilterBuilder;
 
@@ -266,6 +272,8 @@ pub use crate::types::_provider_filter::ProviderFilterBuilder;
 pub use crate::types::_connector_health::ConnectorHealthBuilder;
 
 pub use crate::types::_azure_scope_configuration::AzureScopeConfigurationBuilder;
+
+pub use crate::types::_gcp_scope_configuration::GcpScopeConfigurationBuilder;
 
 pub use crate::types::_coverage_string_filter::CoverageStringFilterBuilder;
 
@@ -343,11 +351,15 @@ pub use crate::types::_free_trial_info::FreeTrialInfoBuilder;
 
 pub use crate::types::_scope_configuration_input::ScopeConfigurationInputBuilder;
 
+pub use crate::types::_gcp_capability_scope_input::GcpCapabilityScopeInputBuilder;
+
 pub use crate::types::_cluster_details::ClusterDetailsBuilder;
 
 pub use crate::types::_ami_tag_filter::AmiTagFilterBuilder;
 
 pub use crate::types::_scope_configuration::ScopeConfigurationBuilder;
+
+pub use crate::types::_gcp_capability_scope::GcpCapabilityScopeBuilder;
 
 pub use crate::types::_ecr_repository_metadata::EcrRepositoryMetadataBuilder;
 

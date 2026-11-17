@@ -31,6 +31,8 @@ pub use crate::types::_hosted_zone_association_status::HostedZoneAssociationStat
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
+pub use crate::types::_public_ip_status::PublicIpStatus;
+
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
 pub use crate::types::_shared_dns_view_summary::SharedDnsViewSummary;
@@ -38,6 +40,14 @@ pub use crate::types::_shared_dns_view_summary::SharedDnsViewSummary;
 pub use crate::types::_access_sources_item::AccessSourcesItem;
 
 pub use crate::types::_access_token_item::AccessTokenItem;
+
+pub use crate::types::_core_network_endpoints_item::CoreNetworkEndpointsItem;
+
+pub use crate::types::_core_network_endpoint_dns_ip_input_item::CoreNetworkEndpointDnsIpInputItem;
+
+pub use crate::types::_core_network_endpoint_dns_ip_item::CoreNetworkEndpointDnsIpItem;
+
+pub use crate::types::_update_ip_address_entry::UpdateIpAddressEntry;
 
 pub use crate::types::_dns_view_summary::DnsViewSummary;
 
@@ -62,6 +72,10 @@ pub use crate::types::_global_resolvers_item::GlobalResolversItem;
 pub use crate::types::_hosted_zone_association_summary::HostedZoneAssociationSummary;
 
 pub use crate::types::_managed_firewall_domain_lists_item::ManagedFirewallDomainListsItem;
+
+pub use crate::types::_region_scope_type::RegionScopeType;
+
+pub use crate::types::_update_ip_address_operation::UpdateIpAddressOperation;
 
 pub use crate::types::_batch_create_firewall_rule_result::BatchCreateFirewallRuleResult;
 
@@ -94,6 +108,12 @@ mod _batch_update_firewall_rule_result;
 mod _block_override_dns_query_type;
 
 mod _confidence_threshold;
+
+mod _core_network_endpoint_dns_ip_input_item;
+
+mod _core_network_endpoint_dns_ip_item;
+
+mod _core_network_endpoints_item;
 
 mod _cr_resource_status;
 
@@ -131,9 +151,17 @@ mod _managed_firewall_domain_lists_item;
 
 mod _profile_resource_status;
 
+mod _public_ip_status;
+
+mod _region_scope_type;
+
 mod _shared_dns_view_summary;
 
 mod _token_status;
+
+mod _update_ip_address_entry;
+
+mod _update_ip_address_operation;
 
 mod _validation_exception_field;
 

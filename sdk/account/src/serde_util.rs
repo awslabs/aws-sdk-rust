@@ -82,39 +82,3 @@ pub(crate) fn get_primary_email_update_status_output_output_correct_errors(
     }
     builder
 }
-
-pub(crate) fn contact_information_correct_errors(
-    mut builder: crate::types::builders::ContactInformationBuilder,
-) -> crate::types::builders::ContactInformationBuilder {
-    if builder.full_name.is_none() {
-        builder.full_name = Some(Default::default())
-    }
-    if builder.address_line1.is_none() {
-        builder.address_line1 = Some(Default::default())
-    }
-    if builder.city.is_none() {
-        builder.city = Some(Default::default())
-    }
-    if builder.postal_code.is_none() {
-        builder.postal_code = Some(Default::default())
-    }
-    if builder.country_code.is_none() {
-        builder.country_code = Some(Default::default())
-    }
-    if builder.phone_number.is_none() {
-        builder.phone_number = Some(Default::default())
-    }
-    builder
-}
-
-pub(crate) fn validation_exception_field_correct_errors(
-    mut builder: crate::types::builders::ValidationExceptionFieldBuilder,
-) -> crate::types::builders::ValidationExceptionFieldBuilder {
-    if builder.name.is_none() {
-        builder.name = Some(Default::default())
-    }
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}

@@ -2,7 +2,7 @@
 
 /// <p>Payload content, such as text and images, for the invocation step.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum InvocationStepPayload {
     /// <p>The content for the invocation step.</p>
     ContentBlocks(::std::vec::Vec<crate::types::BedrockSessionContentBlock>),
@@ -34,5 +34,13 @@ impl InvocationStepPayload {
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {
         matches!(self, Self::Unknown)
+    }
+}
+impl ::std::fmt::Debug for InvocationStepPayload {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        match self {
+            InvocationStepPayload::ContentBlocks(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            InvocationStepPayload::Unknown => f.debug_tuple("Unknown").finish(),
+        }
     }
 }

@@ -274,6 +274,51 @@ impl From<crate::operation::create_access_token::CreateAccessTokenError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_core_network_endpoint::CreateCoreNetworkEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_core_network_endpoint::CreateCoreNetworkEndpointError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_core_network_endpoint::CreateCoreNetworkEndpointError> for Error {
+    fn from(err: crate::operation::create_core_network_endpoint::CreateCoreNetworkEndpointError) -> Self {
+        match err {
+            crate::operation::create_core_network_endpoint::CreateCoreNetworkEndpointError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_core_network_endpoint::CreateCoreNetworkEndpointError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::create_core_network_endpoint::CreateCoreNetworkEndpointError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_core_network_endpoint::CreateCoreNetworkEndpointError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_core_network_endpoint::CreateCoreNetworkEndpointError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_core_network_endpoint::CreateCoreNetworkEndpointError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::create_core_network_endpoint::CreateCoreNetworkEndpointError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_core_network_endpoint::CreateCoreNetworkEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_dns_view::CreateDNSViewError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -465,6 +510,48 @@ impl From<crate::operation::delete_access_token::DeleteAccessTokenError> for Err
             crate::operation::delete_access_token::DeleteAccessTokenError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_access_token::DeleteAccessTokenError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_access_token::DeleteAccessTokenError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_core_network_endpoint::DeleteCoreNetworkEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_core_network_endpoint::DeleteCoreNetworkEndpointError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_core_network_endpoint::DeleteCoreNetworkEndpointError> for Error {
+    fn from(err: crate::operation::delete_core_network_endpoint::DeleteCoreNetworkEndpointError) -> Self {
+        match err {
+            crate::operation::delete_core_network_endpoint::DeleteCoreNetworkEndpointError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_core_network_endpoint::DeleteCoreNetworkEndpointError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_core_network_endpoint::DeleteCoreNetworkEndpointError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_core_network_endpoint::DeleteCoreNetworkEndpointError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_core_network_endpoint::DeleteCoreNetworkEndpointError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_core_network_endpoint::DeleteCoreNetworkEndpointError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_core_network_endpoint::DeleteCoreNetworkEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -739,6 +826,41 @@ impl From<crate::operation::get_access_token::GetAccessTokenError> for Error {
             crate::operation::get_access_token::GetAccessTokenError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_access_token::GetAccessTokenError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_access_token::GetAccessTokenError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_core_network_endpoint::GetCoreNetworkEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_core_network_endpoint::GetCoreNetworkEndpointError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_core_network_endpoint::GetCoreNetworkEndpointError> for Error {
+    fn from(err: crate::operation::get_core_network_endpoint::GetCoreNetworkEndpointError) -> Self {
+        match err {
+            crate::operation::get_core_network_endpoint::GetCoreNetworkEndpointError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_core_network_endpoint::GetCoreNetworkEndpointError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_core_network_endpoint::GetCoreNetworkEndpointError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_core_network_endpoint::GetCoreNetworkEndpointError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_core_network_endpoint::GetCoreNetworkEndpointError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_core_network_endpoint::GetCoreNetworkEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1027,6 +1149,42 @@ impl From<crate::operation::list_access_tokens::ListAccessTokensError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_core_network_endpoints::ListCoreNetworkEndpointsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_core_network_endpoints::ListCoreNetworkEndpointsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_core_network_endpoints::ListCoreNetworkEndpointsError> for Error {
+    fn from(err: crate::operation::list_core_network_endpoints::ListCoreNetworkEndpointsError) -> Self {
+        match err {
+            crate::operation::list_core_network_endpoints::ListCoreNetworkEndpointsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_core_network_endpoints::ListCoreNetworkEndpointsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_core_network_endpoints::ListCoreNetworkEndpointsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_core_network_endpoints::ListCoreNetworkEndpointsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_core_network_endpoints::ListCoreNetworkEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_dns_views::ListDNSViewsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1302,9 +1460,14 @@ where
 impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
@@ -1326,8 +1489,11 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
+            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::tag_resource::TagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::tag_resource::TagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::tag_resource::TagResourceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1350,7 +1516,10 @@ where
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
+            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::untag_resource::UntagResourceError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::untag_resource::UntagResourceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1417,6 +1586,51 @@ impl From<crate::operation::update_access_token::UpdateAccessTokenError> for Err
             crate::operation::update_access_token::UpdateAccessTokenError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_access_token::UpdateAccessTokenError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_access_token::UpdateAccessTokenError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_core_network_endpoint::UpdateCoreNetworkEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_core_network_endpoint::UpdateCoreNetworkEndpointError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_core_network_endpoint::UpdateCoreNetworkEndpointError> for Error {
+    fn from(err: crate::operation::update_core_network_endpoint::UpdateCoreNetworkEndpointError) -> Self {
+        match err {
+            crate::operation::update_core_network_endpoint::UpdateCoreNetworkEndpointError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_core_network_endpoint::UpdateCoreNetworkEndpointError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_core_network_endpoint::UpdateCoreNetworkEndpointError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_core_network_endpoint::UpdateCoreNetworkEndpointError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_core_network_endpoint::UpdateCoreNetworkEndpointError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_core_network_endpoint::UpdateCoreNetworkEndpointError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_core_network_endpoint::UpdateCoreNetworkEndpointError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_core_network_endpoint::UpdateCoreNetworkEndpointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -2,7 +2,7 @@
 
 /// <p>The analysis template within a collaboration.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CollaborationAnalysisTemplate {
     /// <p>The identifier of the analysis template.</p>
     pub id: ::std::string::String,
@@ -119,6 +119,29 @@ impl CollaborationAnalysisTemplate {
         self.synthetic_data_parameters.as_ref()
     }
 }
+impl ::std::fmt::Debug for CollaborationAnalysisTemplate {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CollaborationAnalysisTemplate");
+        formatter.field("id", &self.id);
+        formatter.field("arn", &self.arn);
+        formatter.field("collaboration_id", &self.collaboration_id);
+        formatter.field("collaboration_arn", &self.collaboration_arn);
+        formatter.field("description", &self.description);
+        formatter.field("creator_account_id", &self.creator_account_id);
+        formatter.field("name", &self.name);
+        formatter.field("create_time", &self.create_time);
+        formatter.field("update_time", &self.update_time);
+        formatter.field("schema", &self.schema);
+        formatter.field("format", &self.format);
+        formatter.field("source", &self.source);
+        formatter.field("source_metadata", &self.source_metadata);
+        formatter.field("analysis_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("validations", &self.validations);
+        formatter.field("error_message_configuration", &self.error_message_configuration);
+        formatter.field("synthetic_data_parameters", &self.synthetic_data_parameters);
+        formatter.finish()
+    }
+}
 impl CollaborationAnalysisTemplate {
     /// Creates a new builder-style object to manufacture [`CollaborationAnalysisTemplate`](crate::types::CollaborationAnalysisTemplate).
     pub fn builder() -> crate::types::builders::CollaborationAnalysisTemplateBuilder {
@@ -127,7 +150,7 @@ impl CollaborationAnalysisTemplate {
 }
 
 /// A builder for [`CollaborationAnalysisTemplate`](crate::types::CollaborationAnalysisTemplate).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CollaborationAnalysisTemplateBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -485,5 +508,28 @@ impl CollaborationAnalysisTemplateBuilder {
             error_message_configuration: self.error_message_configuration,
             synthetic_data_parameters: self.synthetic_data_parameters,
         })
+    }
+}
+impl ::std::fmt::Debug for CollaborationAnalysisTemplateBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CollaborationAnalysisTemplateBuilder");
+        formatter.field("id", &self.id);
+        formatter.field("arn", &self.arn);
+        formatter.field("collaboration_id", &self.collaboration_id);
+        formatter.field("collaboration_arn", &self.collaboration_arn);
+        formatter.field("description", &self.description);
+        formatter.field("creator_account_id", &self.creator_account_id);
+        formatter.field("name", &self.name);
+        formatter.field("create_time", &self.create_time);
+        formatter.field("update_time", &self.update_time);
+        formatter.field("schema", &self.schema);
+        formatter.field("format", &self.format);
+        formatter.field("source", &self.source);
+        formatter.field("source_metadata", &self.source_metadata);
+        formatter.field("analysis_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("validations", &self.validations);
+        formatter.field("error_message_configuration", &self.error_message_configuration);
+        formatter.field("synthetic_data_parameters", &self.synthetic_data_parameters);
+        formatter.finish()
     }
 }

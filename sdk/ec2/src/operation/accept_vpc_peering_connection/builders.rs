@@ -24,6 +24,7 @@ impl crate::operation::accept_vpc_peering_connection::builders::AcceptVpcPeering
 ///
 /// <p>Accept a VPC peering connection request. To accept a request, the VPC peering connection must be in the <code>pending-acceptance</code> state, and you must be the owner of the peer VPC. Use <code>DescribeVpcPeeringConnections</code> to view your outstanding VPC peering connection requests.</p>
 /// <p>For an inter-Region VPC peering connection request, you must accept the VPC peering connection in the Region of the accepter VPC.</p>
+/// <p>If the requester allows multipath resilience, accepting the request also allows multipath resilience for the accepter VPC, and the <code>multipathResilienceStatus</code> of the VPC peering connection becomes <code>enabled</code>. Additional charges apply. For more information, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing</a>. To stop allowing multipath resilience for the accepter VPC, use <code>ModifyVpcPeeringConnectionOptions</code> and set <code>AllowMultipathResilience</code> to <code>false</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct AcceptVpcPeeringConnectionFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

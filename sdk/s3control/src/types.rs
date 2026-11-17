@@ -147,7 +147,11 @@ pub use crate::types::_storage_lens_data_export::StorageLensDataExport;
 
 pub use crate::types::_storage_lens_expanded_prefixes_data_export::StorageLensExpandedPrefixesDataExport;
 
+pub use crate::types::_storage_lens_cost_and_usage_reports_publish::StorageLensCostAndUsageReportsPublish;
+
 pub use crate::types::_storage_lens_aws_org::StorageLensAwsOrg;
+
+pub use crate::types::_int_access_tiers::IntAccessTiers;
 
 pub use crate::types::_storage_lens_tag::StorageLensTag;
 
@@ -273,6 +277,8 @@ pub use crate::types::_cloud_watch_metrics::CloudWatchMetrics;
 
 pub use crate::types::_storage_lens_table_destination::StorageLensTableDestination;
 
+pub use crate::types::_storage_lens_cost_and_usage_reports_prefix_level::StorageLensCostAndUsageReportsPrefixLevel;
+
 pub use crate::types::_operation_name::OperationName;
 
 pub use crate::types::_object_lambda_content_transformation::ObjectLambdaContentTransformation;
@@ -324,6 +330,8 @@ pub use crate::types::_format::Format;
 pub use crate::types::_output_schema_version::OutputSchemaVersion;
 
 pub use crate::types::_storage_lens_data_export_encryption::StorageLensDataExportEncryption;
+
+pub use crate::types::_storage_lens_cost_and_usage_reports_selection_criteria::StorageLensCostAndUsageReportsSelectionCriteria;
 
 pub use crate::types::_object_lambda_transformation_configuration_action::ObjectLambdaTransformationConfigurationAction;
 
@@ -486,6 +494,8 @@ mod _grantee_type;
 mod _include;
 
 mod _instance_scope;
+
+mod _int_access_tiers;
 
 mod _job_descriptor;
 
@@ -764,6 +774,12 @@ mod _sses3_filter;
 mod _storage_lens_aws_org;
 
 mod _storage_lens_configuration;
+
+mod _storage_lens_cost_and_usage_reports_prefix_level;
+
+mod _storage_lens_cost_and_usage_reports_publish;
+
+mod _storage_lens_cost_and_usage_reports_selection_criteria;
 
 mod _storage_lens_data_export;
 

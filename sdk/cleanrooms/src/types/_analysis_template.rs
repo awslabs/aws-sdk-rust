@@ -2,7 +2,7 @@
 
 /// <p>The analysis template.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct AnalysisTemplate {
     /// <p>The identifier for the analysis template.</p>
     pub id: ::std::string::String,
@@ -126,6 +126,30 @@ impl AnalysisTemplate {
         self.synthetic_data_parameters.as_ref()
     }
 }
+impl ::std::fmt::Debug for AnalysisTemplate {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AnalysisTemplate");
+        formatter.field("id", &self.id);
+        formatter.field("arn", &self.arn);
+        formatter.field("collaboration_id", &self.collaboration_id);
+        formatter.field("collaboration_arn", &self.collaboration_arn);
+        formatter.field("membership_id", &self.membership_id);
+        formatter.field("membership_arn", &self.membership_arn);
+        formatter.field("description", &self.description);
+        formatter.field("name", &self.name);
+        formatter.field("create_time", &self.create_time);
+        formatter.field("update_time", &self.update_time);
+        formatter.field("schema", &self.schema);
+        formatter.field("format", &self.format);
+        formatter.field("source", &self.source);
+        formatter.field("source_metadata", &self.source_metadata);
+        formatter.field("analysis_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("validations", &self.validations);
+        formatter.field("error_message_configuration", &self.error_message_configuration);
+        formatter.field("synthetic_data_parameters", &self.synthetic_data_parameters);
+        formatter.finish()
+    }
+}
 impl AnalysisTemplate {
     /// Creates a new builder-style object to manufacture [`AnalysisTemplate`](crate::types::AnalysisTemplate).
     pub fn builder() -> crate::types::builders::AnalysisTemplateBuilder {
@@ -134,7 +158,7 @@ impl AnalysisTemplate {
 }
 
 /// A builder for [`AnalysisTemplate`](crate::types::AnalysisTemplate).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct AnalysisTemplateBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
@@ -516,5 +540,29 @@ impl AnalysisTemplateBuilder {
             error_message_configuration: self.error_message_configuration,
             synthetic_data_parameters: self.synthetic_data_parameters,
         })
+    }
+}
+impl ::std::fmt::Debug for AnalysisTemplateBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("AnalysisTemplateBuilder");
+        formatter.field("id", &self.id);
+        formatter.field("arn", &self.arn);
+        formatter.field("collaboration_id", &self.collaboration_id);
+        formatter.field("collaboration_arn", &self.collaboration_arn);
+        formatter.field("membership_id", &self.membership_id);
+        formatter.field("membership_arn", &self.membership_arn);
+        formatter.field("description", &self.description);
+        formatter.field("name", &self.name);
+        formatter.field("create_time", &self.create_time);
+        formatter.field("update_time", &self.update_time);
+        formatter.field("schema", &self.schema);
+        formatter.field("format", &self.format);
+        formatter.field("source", &self.source);
+        formatter.field("source_metadata", &self.source_metadata);
+        formatter.field("analysis_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("validations", &self.validations);
+        formatter.field("error_message_configuration", &self.error_message_configuration);
+        formatter.field("synthetic_data_parameters", &self.synthetic_data_parameters);
+        formatter.finish()
     }
 }

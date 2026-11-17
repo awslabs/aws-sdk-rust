@@ -269,4 +269,26 @@ impl DescribeCapacityBlockOfferingsFluentBuilder {
     pub fn get_all_availability_zones(&self) -> &::std::option::Option<bool> {
         self.inner.get_all_availability_zones()
     }
+    ///
+    /// Appends an item to `InstanceTypePreferences`.
+    ///
+    /// To override the contents of this collection use [`set_instance_type_preferences`](Self::set_instance_type_preferences).
+    ///
+    /// <p>List of instance type preferences for the Capacity Block offering search. Accepts one or more instance type names. Either this or the legacy <code>InstanceType</code> parameter is required.</p>
+    pub fn instance_type_preferences(mut self, input: crate::types::CapacityBlockInstanceTypePreference) -> Self {
+        self.inner = self.inner.instance_type_preferences(input);
+        self
+    }
+    /// <p>List of instance type preferences for the Capacity Block offering search. Accepts one or more instance type names. Either this or the legacy <code>InstanceType</code> parameter is required.</p>
+    pub fn set_instance_type_preferences(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CapacityBlockInstanceTypePreference>>,
+    ) -> Self {
+        self.inner = self.inner.set_instance_type_preferences(input);
+        self
+    }
+    /// <p>List of instance type preferences for the Capacity Block offering search. Accepts one or more instance type names. Either this or the legacy <code>InstanceType</code> parameter is required.</p>
+    pub fn get_instance_type_preferences(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CapacityBlockInstanceTypePreference>> {
+        self.inner.get_instance_type_preferences()
+    }
 }

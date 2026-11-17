@@ -3,7 +3,7 @@
 /// <p>Contains information about the contexts that a user is using in a session. You can configure Amazon Lex V2 to set a context when an intent is fulfilled, or you can set a context using the , , or operations.</p>
 /// <p>Use a context to indicate to Amazon Lex V2 intents that should be used as follow-up intents. For example, if the active context is <code>order-fulfilled</code>, only intents that have <code>order-fulfilled</code> configured as a trigger are considered for follow up.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ActiveContext {
     /// <p>The name of the context.</p>
     pub name: ::std::string::String,
@@ -29,6 +29,15 @@ impl ActiveContext {
         &self.context_attributes
     }
 }
+impl ::std::fmt::Debug for ActiveContext {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ActiveContext");
+        formatter.field("name", &self.name);
+        formatter.field("time_to_live", &self.time_to_live);
+        formatter.field("context_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl ActiveContext {
     /// Creates a new builder-style object to manufacture [`ActiveContext`](crate::types::ActiveContext).
     pub fn builder() -> crate::types::builders::ActiveContextBuilder {
@@ -37,7 +46,7 @@ impl ActiveContext {
 }
 
 /// A builder for [`ActiveContext`](crate::types::ActiveContext).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ActiveContextBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
@@ -125,5 +134,14 @@ impl ActiveContextBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for ActiveContextBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ActiveContextBuilder");
+        formatter.field("name", &self.name);
+        formatter.field("time_to_live", &self.time_to_live);
+        formatter.field("context_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

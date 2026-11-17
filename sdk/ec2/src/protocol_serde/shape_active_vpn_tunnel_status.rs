@@ -133,6 +133,26 @@ pub fn de_active_vpn_tunnel_status(
                 builder = builder.set_provisioning_status_reason(var_9);
             }
             ,
+            s if s.matches("phase1AdditionalKeyExchangeSet") /* Phase1AdditionalKeyExchanges com.amazonaws.ec2#ActiveVpnTunnelStatus$Phase1AdditionalKeyExchanges */ =>  {
+                let var_10 =
+                    Some(
+                        crate::protocol_serde::shape_active_additional_key_exchanges_list::de_active_additional_key_exchanges_list(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_phase1_additional_key_exchanges(var_10);
+            }
+            ,
+            s if s.matches("phase2AdditionalKeyExchangeSet") /* Phase2AdditionalKeyExchanges com.amazonaws.ec2#ActiveVpnTunnelStatus$Phase2AdditionalKeyExchanges */ =>  {
+                let var_11 =
+                    Some(
+                        crate::protocol_serde::shape_active_additional_key_exchanges_list::de_active_additional_key_exchanges_list(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_phase2_additional_key_exchanges(var_11);
+            }
+            ,
             _ => {}
         }
     }

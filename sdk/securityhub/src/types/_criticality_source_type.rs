@@ -13,6 +13,8 @@
 /// # let criticalitysourcetype = unimplemented!();
 /// match criticalitysourcetype {
 ///     CriticalitySourceType::AutomationRule => { /* ... */ },
+///     CriticalitySourceType::CloudwatchTelemetryInference => { /* ... */ },
+///     CriticalitySourceType::InstalledSoftwareAndPackageInference => { /* ... */ },
 ///     CriticalitySourceType::ResourceName => { /* ... */ },
 ///     CriticalitySourceType::TagInference => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +48,10 @@ pub enum CriticalitySourceType {
     #[allow(missing_docs)] // documentation missing in model
     AutomationRule,
     #[allow(missing_docs)] // documentation missing in model
+    CloudwatchTelemetryInference,
+    #[allow(missing_docs)] // documentation missing in model
+    InstalledSoftwareAndPackageInference,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceName,
     #[allow(missing_docs)] // documentation missing in model
     TagInference,
@@ -57,6 +63,8 @@ impl ::std::convert::From<&str> for CriticalitySourceType {
     fn from(s: &str) -> Self {
         match s {
             "AutomationRule" => CriticalitySourceType::AutomationRule,
+            "CloudWatchTelemetryInference" => CriticalitySourceType::CloudwatchTelemetryInference,
+            "InstalledSoftwareAndPackageInference" => CriticalitySourceType::InstalledSoftwareAndPackageInference,
             "ResourceName" => CriticalitySourceType::ResourceName,
             "TagInference" => CriticalitySourceType::TagInference,
             other => CriticalitySourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +83,8 @@ impl CriticalitySourceType {
     pub fn as_str(&self) -> &str {
         match self {
             CriticalitySourceType::AutomationRule => "AutomationRule",
+            CriticalitySourceType::CloudwatchTelemetryInference => "CloudWatchTelemetryInference",
+            CriticalitySourceType::InstalledSoftwareAndPackageInference => "InstalledSoftwareAndPackageInference",
             CriticalitySourceType::ResourceName => "ResourceName",
             CriticalitySourceType::TagInference => "TagInference",
             CriticalitySourceType::Unknown(value) => value.as_str(),
@@ -82,7 +92,13 @@ impl CriticalitySourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AutomationRule", "ResourceName", "TagInference"]
+        &[
+            "AutomationRule",
+            "CloudWatchTelemetryInference",
+            "InstalledSoftwareAndPackageInference",
+            "ResourceName",
+            "TagInference",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for CriticalitySourceType {
@@ -106,6 +122,8 @@ impl ::std::fmt::Display for CriticalitySourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             CriticalitySourceType::AutomationRule => write!(f, "AutomationRule"),
+            CriticalitySourceType::CloudwatchTelemetryInference => write!(f, "CloudWatchTelemetryInference"),
+            CriticalitySourceType::InstalledSoftwareAndPackageInference => write!(f, "InstalledSoftwareAndPackageInference"),
             CriticalitySourceType::ResourceName => write!(f, "ResourceName"),
             CriticalitySourceType::TagInference => write!(f, "TagInference"),
             CriticalitySourceType::Unknown(value) => write!(f, "{value}"),

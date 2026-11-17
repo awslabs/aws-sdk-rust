@@ -138,6 +138,20 @@ impl UpdateAccessSourceFluentBuilder {
     pub fn get_cidr(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_cidr()
     }
+    /// <p>The ID of the DNS view to associate with this access source.</p>
+    pub fn dns_view_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.dns_view_id(input.into());
+        self
+    }
+    /// <p>The ID of the DNS view to associate with this access source.</p>
+    pub fn set_dns_view_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_dns_view_id(input);
+        self
+    }
+    /// <p>The ID of the DNS view to associate with this access source.</p>
+    pub fn get_dns_view_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_dns_view_id()
+    }
     /// <p>The IP address type for the access source.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
         self.inner = self.inner.ip_address_type(input);

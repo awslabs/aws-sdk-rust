@@ -27,11 +27,14 @@ pub fn ser_put_rum_events_input_input(
         }
         array_6.finish();
     }
-    if let Some(var_9) = &input.user_details {
+    if let Some(var_9) = &input.session_metadata {
+        object.key("SessionMetadata").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.user_details {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("UserDetails").start_object();
-        crate::protocol_serde::shape_user_details::ser_user_details(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_11 = object.key("UserDetails").start_object();
+        crate::protocol_serde::shape_user_details::ser_user_details(&mut object_11, var_10)?;
+        object_11.finish();
     }
     Ok(())
 }

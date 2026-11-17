@@ -2,7 +2,7 @@
 
 /// <p>The event details.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Event {
     /// <p>The event ID.</p>
     pub event_id: ::std::option::Option<::std::string::String>,
@@ -51,6 +51,19 @@ impl Event {
         self.entities.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for Event {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Event");
+        formatter.field("event_id", &self.event_id);
+        formatter.field("event_type_name", &self.event_type_name);
+        formatter.field("event_timestamp", &self.event_timestamp);
+        formatter.field("event_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("current_label", &self.current_label);
+        formatter.field("label_timestamp", &self.label_timestamp);
+        formatter.field("entities", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Event {
     /// Creates a new builder-style object to manufacture [`Event`](crate::types::Event).
     pub fn builder() -> crate::types::builders::EventBuilder {
@@ -59,7 +72,7 @@ impl Event {
 }
 
 /// A builder for [`Event`](crate::types::Event).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct EventBuilder {
     pub(crate) event_id: ::std::option::Option<::std::string::String>,
@@ -199,5 +212,18 @@ impl EventBuilder {
             label_timestamp: self.label_timestamp,
             entities: self.entities,
         }
+    }
+}
+impl ::std::fmt::Debug for EventBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("EventBuilder");
+        formatter.field("event_id", &self.event_id);
+        formatter.field("event_type_name", &self.event_type_name);
+        formatter.field("event_timestamp", &self.event_timestamp);
+        formatter.field("event_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("current_label", &self.current_label);
+        formatter.field("label_timestamp", &self.label_timestamp);
+        formatter.field("entities", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

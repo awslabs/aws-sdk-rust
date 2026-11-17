@@ -2,7 +2,7 @@
 
 /// <p>Specifies strict exclusion options for the route calculation. This setting mandates that the router will avoid any routes that include the specified options, rather than merely attempting to minimize them.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RouteExclusionOptions {
     /// <p>List of countries to be avoided defined by two-letter or three-letter country codes.</p>
     pub countries: ::std::vec::Vec<::std::string::String>,
@@ -14,6 +14,13 @@ impl RouteExclusionOptions {
         self.countries.deref()
     }
 }
+impl ::std::fmt::Debug for RouteExclusionOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteExclusionOptions");
+        formatter.field("countries", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl RouteExclusionOptions {
     /// Creates a new builder-style object to manufacture [`RouteExclusionOptions`](crate::types::RouteExclusionOptions).
     pub fn builder() -> crate::types::builders::RouteExclusionOptionsBuilder {
@@ -22,7 +29,7 @@ impl RouteExclusionOptions {
 }
 
 /// A builder for [`RouteExclusionOptions`](crate::types::RouteExclusionOptions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RouteExclusionOptionsBuilder {
     pub(crate) countries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -60,5 +67,12 @@ impl RouteExclusionOptionsBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for RouteExclusionOptionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RouteExclusionOptionsBuilder");
+        formatter.field("countries", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

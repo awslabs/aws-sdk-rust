@@ -22,7 +22,7 @@ impl crate::operation::list_dataset_examples::builders::ListDatasetExamplesInput
 }
 /// Fluent builder constructing a request to `ListDatasetExamples`.
 ///
-/// <p>Returns paginated examples from the dataset. The server embeds the resolved version in the pagination token. Once pagination begins, all subsequent pages are pinned to that version regardless of concurrent mutations.</p>
+/// <p>Returns paginated examples from the dataset. The server embeds the resolved version in the pagination token. Once pagination begins, all subsequent pages are pinned to that version regardless of concurrent mutations. A request with a pagination token can omit <code>datasetVersion</code>. If it sets a version that differs from the token's version, the request fails with a <code>ValidationException</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListDatasetExamplesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -128,19 +128,33 @@ impl ListDatasetExamplesFluentBuilder {
     pub fn get_dataset_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataset_id()
     }
-    /// <p>Version to paginate: "DRAFT" or a version number. Defaults to DRAFT if absent. Only used on the first request; for subsequent pages, the version is extracted from the pagination token.</p>
+    /// <p>Version to paginate: "DRAFT" or a version number. Defaults to DRAFT if absent on the first request. With a pagination token, the version comes from the token: you can omit this member, and a value that differs from the token's version is rejected with a <code>ValidationException</code>.</p>
     pub fn dataset_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.dataset_version(input.into());
         self
     }
-    /// <p>Version to paginate: "DRAFT" or a version number. Defaults to DRAFT if absent. Only used on the first request; for subsequent pages, the version is extracted from the pagination token.</p>
+    /// <p>Version to paginate: "DRAFT" or a version number. Defaults to DRAFT if absent on the first request. With a pagination token, the version comes from the token: you can omit this member, and a value that differs from the token's version is rejected with a <code>ValidationException</code>.</p>
     pub fn set_dataset_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_dataset_version(input);
         self
     }
-    /// <p>Version to paginate: "DRAFT" or a version number. Defaults to DRAFT if absent. Only used on the first request; for subsequent pages, the version is extracted from the pagination token.</p>
+    /// <p>Version to paginate: "DRAFT" or a version number. Defaults to DRAFT if absent on the first request. With a pagination token, the version comes from the token: you can omit this member, and a value that differs from the token's version is rejected with a <code>ValidationException</code>.</p>
     pub fn get_dataset_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_dataset_version()
+    }
+    /// <p>A filter to apply to the examples.</p>
+    pub fn filter(mut self, input: crate::types::ListDatasetExamplesFilter) -> Self {
+        self.inner = self.inner.filter(input);
+        self
+    }
+    /// <p>A filter to apply to the examples.</p>
+    pub fn set_filter(mut self, input: ::std::option::Option<crate::types::ListDatasetExamplesFilter>) -> Self {
+        self.inner = self.inner.set_filter(input);
+        self
+    }
+    /// <p>A filter to apply to the examples.</p>
+    pub fn get_filter(&self) -> &::std::option::Option<crate::types::ListDatasetExamplesFilter> {
+        self.inner.get_filter()
     }
     /// <p>Maximum number of examples to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {

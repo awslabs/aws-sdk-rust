@@ -65,6 +65,15 @@ pub(crate) fn delete_capacity_provider_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_durable_execution_output_output_correct_errors(
+    mut builder: crate::operation::delete_durable_execution::builders::DeleteDurableExecutionOutputBuilder,
+) -> crate::operation::delete_durable_execution::builders::DeleteDurableExecutionOutputBuilder {
+    if builder.deletion_request_timestamp.is_none() {
+        builder.deletion_request_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn get_capacity_provider_output_output_correct_errors(
     mut builder: crate::operation::get_capacity_provider::builders::GetCapacityProviderOutputBuilder,
 ) -> crate::operation::get_capacity_provider::builders::GetCapacityProviderOutputBuilder {
@@ -366,6 +375,16 @@ pub(crate) fn function_runtime_config_correct_errors(
     builder
 }
 
+pub(crate) fn pause_details_correct_errors(mut builder: crate::types::builders::PauseDetailsBuilder) -> crate::types::builders::PauseDetailsBuilder {
+    if builder.pause_request_timestamp.is_none() {
+        builder.pause_request_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.execution_timeout_paused.is_none() {
+        builder.execution_timeout_paused = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn tags_error_correct_errors(mut builder: crate::types::builders::TagsErrorBuilder) -> crate::types::builders::TagsErrorBuilder {
     if builder.error_code.is_none() {
         builder.error_code = Some(Default::default())
@@ -638,6 +657,27 @@ pub(crate) fn execution_failed_details_correct_errors(
             let builder = crate::types::builders::EventErrorBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn execution_paused_details_correct_errors(
+    mut builder: crate::types::builders::ExecutionPausedDetailsBuilder,
+) -> crate::types::builders::ExecutionPausedDetailsBuilder {
+    if builder.pause_request_timestamp.is_none() {
+        builder.pause_request_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.execution_timeout_paused.is_none() {
+        builder.execution_timeout_paused = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn execution_resumed_details_correct_errors(
+    mut builder: crate::types::builders::ExecutionResumedDetailsBuilder,
+) -> crate::types::builders::ExecutionResumedDetailsBuilder {
+    if builder.resume_request_timestamp.is_none() {
+        builder.resume_request_timestamp = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

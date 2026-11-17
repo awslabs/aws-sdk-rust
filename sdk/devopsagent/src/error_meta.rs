@@ -967,6 +967,36 @@ impl From<crate::operation::get_backlog_task::GetBacklogTaskError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_chat::GetChatError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_chat::GetChatError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_chat::GetChatError> for Error {
+    fn from(err: crate::operation::get_chat::GetChatError) -> Self {
+        match err {
+            crate::operation::get_chat::GetChatError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_chat::GetChatError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_chat::GetChatError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_chat::GetChatError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_chat::GetChatError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_chat::GetChatError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::get_chat::GetChatError::ContentSizeExceededException(inner) => Error::ContentSizeExceededException(inner),
+            crate::operation::get_chat::GetChatError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_chat::GetChatError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::get_chat::GetChatError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_operator_app::GetOperatorAppError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1350,11 +1380,11 @@ where
 impl From<crate::operation::list_chats::ListChatsError> for Error {
     fn from(err: crate::operation::list_chats::ListChatsError) -> Self {
         match err {
+            crate::operation::list_chats::ListChatsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_chats::ListChatsError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::list_chats::ListChatsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::list_chats::ListChatsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_chats::ListChatsError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::list_chats::ListChatsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_chats::ListChatsError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::list_chats::ListChatsError::ContentSizeExceededException(inner) => Error::ContentSizeExceededException(inner),
             crate::operation::list_chats::ListChatsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
@@ -1767,12 +1797,12 @@ impl From<crate::operation::send_message::SendMessageError> for Error {
     fn from(err: crate::operation::send_message::SendMessageError) -> Self {
         match err {
             crate::operation::send_message::SendMessageError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::send_message::SendMessageError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::send_message::SendMessageError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::send_message::SendMessageError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::send_message::SendMessageError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::send_message::SendMessageError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::send_message::SendMessageError::ValidationException(inner) => Error::ValidationException(inner),
-            crate::operation::send_message::SendMessageError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::send_message::SendMessageError::ContentSizeExceededException(inner) => Error::ContentSizeExceededException(inner),
             crate::operation::send_message::SendMessageError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::send_message::SendMessageError::Unhandled(inner) => Error::Unhandled(inner),
@@ -2046,6 +2076,36 @@ impl From<crate::operation::update_backlog_task::UpdateBacklogTaskError> for Err
                 Error::ServiceQuotaExceededException(inner)
             }
             crate::operation::update_backlog_task::UpdateBacklogTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_chat::UpdateChatError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_chat::UpdateChatError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_chat::UpdateChatError> for Error {
+    fn from(err: crate::operation::update_chat::UpdateChatError) -> Self {
+        match err {
+            crate::operation::update_chat::UpdateChatError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_chat::UpdateChatError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_chat::UpdateChatError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_chat::UpdateChatError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_chat::UpdateChatError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_chat::UpdateChatError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_chat::UpdateChatError::ContentSizeExceededException(inner) => Error::ContentSizeExceededException(inner),
+            crate::operation::update_chat::UpdateChatError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_chat::UpdateChatError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::update_chat::UpdateChatError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

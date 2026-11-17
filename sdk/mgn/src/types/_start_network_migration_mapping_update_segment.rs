@@ -5,7 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartNetworkMigrationMappingUpdateSegment {
     /// <p>The ID of the segment to update.</p>
-    pub segment_id: ::std::string::String,
+    pub segment_id: ::std::option::Option<::std::string::String>,
+    /// <p>An identifier that you choose for a segment created by this request. You can use it in other constructs in the same request to refer to the new segment.</p>
+    pub segment_logical_id: ::std::option::Option<::std::string::String>,
+    /// <p>The operation to perform on the segment.</p>
+    pub operation: ::std::option::Option<crate::types::SegmentOperation>,
     /// <p>The updated target AWS account for the segment.</p>
     pub target_account: ::std::option::Option<::std::string::String>,
     /// <p>The updated scope tags for the segment.</p>
@@ -13,9 +17,16 @@ pub struct StartNetworkMigrationMappingUpdateSegment {
 }
 impl StartNetworkMigrationMappingUpdateSegment {
     /// <p>The ID of the segment to update.</p>
-    pub fn segment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.segment_id.deref()
+    pub fn segment_id(&self) -> ::std::option::Option<&str> {
+        self.segment_id.as_deref()
+    }
+    /// <p>An identifier that you choose for a segment created by this request. You can use it in other constructs in the same request to refer to the new segment.</p>
+    pub fn segment_logical_id(&self) -> ::std::option::Option<&str> {
+        self.segment_logical_id.as_deref()
+    }
+    /// <p>The operation to perform on the segment.</p>
+    pub fn operation(&self) -> ::std::option::Option<&crate::types::SegmentOperation> {
+        self.operation.as_ref()
     }
     /// <p>The updated target AWS account for the segment.</p>
     pub fn target_account(&self) -> ::std::option::Option<&str> {
@@ -30,6 +41,8 @@ impl ::std::fmt::Debug for StartNetworkMigrationMappingUpdateSegment {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartNetworkMigrationMappingUpdateSegment");
         formatter.field("segment_id", &self.segment_id);
+        formatter.field("segment_logical_id", &self.segment_logical_id);
+        formatter.field("operation", &self.operation);
         formatter.field("target_account", &self.target_account);
         formatter.field("scope_tags", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -47,12 +60,13 @@ impl StartNetworkMigrationMappingUpdateSegment {
 #[non_exhaustive]
 pub struct StartNetworkMigrationMappingUpdateSegmentBuilder {
     pub(crate) segment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) segment_logical_id: ::std::option::Option<::std::string::String>,
+    pub(crate) operation: ::std::option::Option<crate::types::SegmentOperation>,
     pub(crate) target_account: ::std::option::Option<::std::string::String>,
     pub(crate) scope_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartNetworkMigrationMappingUpdateSegmentBuilder {
     /// <p>The ID of the segment to update.</p>
-    /// This field is required.
     pub fn segment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment_id = ::std::option::Option::Some(input.into());
         self
@@ -65,6 +79,34 @@ impl StartNetworkMigrationMappingUpdateSegmentBuilder {
     /// <p>The ID of the segment to update.</p>
     pub fn get_segment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.segment_id
+    }
+    /// <p>An identifier that you choose for a segment created by this request. You can use it in other constructs in the same request to refer to the new segment.</p>
+    pub fn segment_logical_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.segment_logical_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>An identifier that you choose for a segment created by this request. You can use it in other constructs in the same request to refer to the new segment.</p>
+    pub fn set_segment_logical_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.segment_logical_id = input;
+        self
+    }
+    /// <p>An identifier that you choose for a segment created by this request. You can use it in other constructs in the same request to refer to the new segment.</p>
+    pub fn get_segment_logical_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment_logical_id
+    }
+    /// <p>The operation to perform on the segment.</p>
+    pub fn operation(mut self, input: crate::types::SegmentOperation) -> Self {
+        self.operation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The operation to perform on the segment.</p>
+    pub fn set_operation(mut self, input: ::std::option::Option<crate::types::SegmentOperation>) -> Self {
+        self.operation = input;
+        self
+    }
+    /// <p>The operation to perform on the segment.</p>
+    pub fn get_operation(&self) -> &::std::option::Option<crate::types::SegmentOperation> {
+        &self.operation
     }
     /// <p>The updated target AWS account for the segment.</p>
     pub fn target_account(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -101,27 +143,22 @@ impl StartNetworkMigrationMappingUpdateSegmentBuilder {
         &self.scope_tags
     }
     /// Consumes the builder and constructs a [`StartNetworkMigrationMappingUpdateSegment`](crate::types::StartNetworkMigrationMappingUpdateSegment).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`segment_id`](crate::types::builders::StartNetworkMigrationMappingUpdateSegmentBuilder::segment_id)
-    pub fn build(
-        self,
-    ) -> ::std::result::Result<crate::types::StartNetworkMigrationMappingUpdateSegment, ::aws_smithy_types::error::operation::BuildError> {
-        ::std::result::Result::Ok(crate::types::StartNetworkMigrationMappingUpdateSegment {
-            segment_id: self.segment_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "segment_id",
-                    "segment_id was not specified but it is required when building StartNetworkMigrationMappingUpdateSegment",
-                )
-            })?,
+    pub fn build(self) -> crate::types::StartNetworkMigrationMappingUpdateSegment {
+        crate::types::StartNetworkMigrationMappingUpdateSegment {
+            segment_id: self.segment_id,
+            segment_logical_id: self.segment_logical_id,
+            operation: self.operation,
             target_account: self.target_account,
             scope_tags: self.scope_tags,
-        })
+        }
     }
 }
 impl ::std::fmt::Debug for StartNetworkMigrationMappingUpdateSegmentBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartNetworkMigrationMappingUpdateSegmentBuilder");
         formatter.field("segment_id", &self.segment_id);
+        formatter.field("segment_logical_id", &self.segment_logical_id);
+        formatter.field("operation", &self.operation);
         formatter.field("target_account", &self.target_account);
         formatter.field("scope_tags", &"*** Sensitive Data Redacted ***");
         formatter.finish()

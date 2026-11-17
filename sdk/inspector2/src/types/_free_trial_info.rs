@@ -12,7 +12,15 @@ pub struct FreeTrialInfo {
     pub end: ::aws_smithy_types::DateTime,
     /// <p>The order to sort results by.</p>
     pub status: crate::types::FreeTrialStatus,
-    /// <p>The cloud provider associated with the free trial information.</p>
+    /// <p>The cloud provider associated with the free trial information. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub cloud_provider: ::std::option::Option<crate::types::CloudProvider>,
 }
 impl FreeTrialInfo {
@@ -32,7 +40,15 @@ impl FreeTrialInfo {
     pub fn status(&self) -> &crate::types::FreeTrialStatus {
         &self.status
     }
-    /// <p>The cloud provider associated with the free trial information.</p>
+    /// <p>The cloud provider associated with the free trial information. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn cloud_provider(&self) -> ::std::option::Option<&crate::types::CloudProvider> {
         self.cloud_provider.as_ref()
     }
@@ -115,17 +131,41 @@ impl FreeTrialInfoBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FreeTrialStatus> {
         &self.status
     }
-    /// <p>The cloud provider associated with the free trial information.</p>
+    /// <p>The cloud provider associated with the free trial information. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn cloud_provider(mut self, input: crate::types::CloudProvider) -> Self {
         self.cloud_provider = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The cloud provider associated with the free trial information.</p>
+    /// <p>The cloud provider associated with the free trial information. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn set_cloud_provider(mut self, input: ::std::option::Option<crate::types::CloudProvider>) -> Self {
         self.cloud_provider = input;
         self
     }
-    /// <p>The cloud provider associated with the free trial information.</p>
+    /// <p>The cloud provider associated with the free trial information. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> – Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>AZURE</code> – Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> – Google Cloud Platform (GCP) resources.</p></li>
+    /// </ul>
     pub fn get_cloud_provider(&self) -> &::std::option::Option<crate::types::CloudProvider> {
         &self.cloud_provider
     }

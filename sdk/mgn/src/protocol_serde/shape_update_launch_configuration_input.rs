@@ -27,23 +27,26 @@ pub fn ser_update_launch_configuration_input_input(
         crate::protocol_serde::shape_licensing::ser_licensing(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.map_auto_tagging_mpe_id {
-        object.key("mapAutoTaggingMpeID").string(var_9.as_str());
+    if let Some(var_9) = &input.map_auto_tagging_key {
+        object.key("mapAutoTaggingKey").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.name {
-        object.key("name").string(var_10.as_str());
+    if let Some(var_10) = &input.map_auto_tagging_mpe_id {
+        object.key("mapAutoTaggingMpeID").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.post_launch_actions {
+    if let Some(var_11) = &input.name {
+        object.key("name").string(var_11.as_str());
+    }
+    if let Some(var_12) = &input.post_launch_actions {
         #[allow(unused_mut)]
-        let mut object_12 = object.key("postLaunchActions").start_object();
-        crate::protocol_serde::shape_post_launch_actions::ser_post_launch_actions(&mut object_12, var_11)?;
-        object_12.finish();
+        let mut object_13 = object.key("postLaunchActions").start_object();
+        crate::protocol_serde::shape_post_launch_actions::ser_post_launch_actions(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    if let Some(var_13) = &input.source_server_id {
-        object.key("sourceServerID").string(var_13.as_str());
+    if let Some(var_14) = &input.source_server_id {
+        object.key("sourceServerID").string(var_14.as_str());
     }
-    if let Some(var_14) = &input.target_instance_type_right_sizing_method {
-        object.key("targetInstanceTypeRightSizingMethod").string(var_14.as_str());
+    if let Some(var_15) = &input.target_instance_type_right_sizing_method {
+        object.key("targetInstanceTypeRightSizingMethod").string(var_15.as_str());
     }
     Ok(())
 }

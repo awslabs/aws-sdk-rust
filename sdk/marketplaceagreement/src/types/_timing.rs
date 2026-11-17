@@ -13,6 +13,7 @@
 /// # let timing = unimplemented!();
 /// match timing {
 ///     Timing::BillingPeriod => { /* ... */ },
+///     Timing::NotApplicable => { /* ... */ },
 ///     Timing::OnAcceptance => { /* ... */ },
 ///     Timing::Scheduled => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum Timing {
     #[allow(missing_docs)] // documentation missing in model
     BillingPeriod,
     #[allow(missing_docs)] // documentation missing in model
+    NotApplicable,
+    #[allow(missing_docs)] // documentation missing in model
     OnAcceptance,
     #[allow(missing_docs)] // documentation missing in model
     Scheduled,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for Timing {
     fn from(s: &str) -> Self {
         match s {
             "BILLING_PERIOD" => Timing::BillingPeriod,
+            "NOT_APPLICABLE" => Timing::NotApplicable,
             "ON_ACCEPTANCE" => Timing::OnAcceptance,
             "SCHEDULED" => Timing::Scheduled,
             other => Timing::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl Timing {
     pub fn as_str(&self) -> &str {
         match self {
             Timing::BillingPeriod => "BILLING_PERIOD",
+            Timing::NotApplicable => "NOT_APPLICABLE",
             Timing::OnAcceptance => "ON_ACCEPTANCE",
             Timing::Scheduled => "SCHEDULED",
             Timing::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl Timing {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["BILLING_PERIOD", "ON_ACCEPTANCE", "SCHEDULED"]
+        &["BILLING_PERIOD", "NOT_APPLICABLE", "ON_ACCEPTANCE", "SCHEDULED"]
     }
 }
 impl ::std::convert::AsRef<str> for Timing {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for Timing {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Timing::BillingPeriod => write!(f, "BILLING_PERIOD"),
+            Timing::NotApplicable => write!(f, "NOT_APPLICABLE"),
             Timing::OnAcceptance => write!(f, "ON_ACCEPTANCE"),
             Timing::Scheduled => write!(f, "SCHEDULED"),
             Timing::Unknown(value) => write!(f, "{value}"),

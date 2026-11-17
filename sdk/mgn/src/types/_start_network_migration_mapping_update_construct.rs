@@ -5,29 +5,39 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartNetworkMigrationMappingUpdateConstruct {
     /// <p>The ID of the segment containing the construct.</p>
-    pub segment_id: ::std::string::String,
+    pub segment_id: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of a segment created in the same request that this construct belongs to. Use it instead of <code>segmentID</code> for a new segment.</p>
+    pub segment_logical_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the construct to update.</p>
-    pub construct_id: ::std::string::String,
+    pub construct_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of the construct.</p>
     pub construct_type: ::std::string::String,
+    /// <p>The logical identifier for a construct created by a create operation; other operations identify the construct by constructID. Other entries in the same request can reference the new construct as {"Ref": "&lt;constructLogicalID&gt;"}.</p>
+    pub construct_logical_id: ::std::option::Option<::std::string::String>,
     /// <p>The operation to perform on the construct.</p>
     pub operation: ::std::option::Option<crate::types::OperationUnion>,
 }
 impl StartNetworkMigrationMappingUpdateConstruct {
     /// <p>The ID of the segment containing the construct.</p>
-    pub fn segment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.segment_id.deref()
+    pub fn segment_id(&self) -> ::std::option::Option<&str> {
+        self.segment_id.as_deref()
+    }
+    /// <p>The identifier of a segment created in the same request that this construct belongs to. Use it instead of <code>segmentID</code> for a new segment.</p>
+    pub fn segment_logical_id(&self) -> ::std::option::Option<&str> {
+        self.segment_logical_id.as_deref()
     }
     /// <p>The ID of the construct to update.</p>
-    pub fn construct_id(&self) -> &str {
-        use std::ops::Deref;
-        self.construct_id.deref()
+    pub fn construct_id(&self) -> ::std::option::Option<&str> {
+        self.construct_id.as_deref()
     }
     /// <p>The type of the construct.</p>
     pub fn construct_type(&self) -> &str {
         use std::ops::Deref;
         self.construct_type.deref()
+    }
+    /// <p>The logical identifier for a construct created by a create operation; other operations identify the construct by constructID. Other entries in the same request can reference the new construct as {"Ref": "&lt;constructLogicalID&gt;"}.</p>
+    pub fn construct_logical_id(&self) -> ::std::option::Option<&str> {
+        self.construct_logical_id.as_deref()
     }
     /// <p>The operation to perform on the construct.</p>
     pub fn operation(&self) -> ::std::option::Option<&crate::types::OperationUnion> {
@@ -46,13 +56,14 @@ impl StartNetworkMigrationMappingUpdateConstruct {
 #[non_exhaustive]
 pub struct StartNetworkMigrationMappingUpdateConstructBuilder {
     pub(crate) segment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) segment_logical_id: ::std::option::Option<::std::string::String>,
     pub(crate) construct_id: ::std::option::Option<::std::string::String>,
     pub(crate) construct_type: ::std::option::Option<::std::string::String>,
+    pub(crate) construct_logical_id: ::std::option::Option<::std::string::String>,
     pub(crate) operation: ::std::option::Option<crate::types::OperationUnion>,
 }
 impl StartNetworkMigrationMappingUpdateConstructBuilder {
     /// <p>The ID of the segment containing the construct.</p>
-    /// This field is required.
     pub fn segment_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.segment_id = ::std::option::Option::Some(input.into());
         self
@@ -66,8 +77,21 @@ impl StartNetworkMigrationMappingUpdateConstructBuilder {
     pub fn get_segment_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.segment_id
     }
+    /// <p>The identifier of a segment created in the same request that this construct belongs to. Use it instead of <code>segmentID</code> for a new segment.</p>
+    pub fn segment_logical_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.segment_logical_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of a segment created in the same request that this construct belongs to. Use it instead of <code>segmentID</code> for a new segment.</p>
+    pub fn set_segment_logical_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.segment_logical_id = input;
+        self
+    }
+    /// <p>The identifier of a segment created in the same request that this construct belongs to. Use it instead of <code>segmentID</code> for a new segment.</p>
+    pub fn get_segment_logical_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.segment_logical_id
+    }
     /// <p>The ID of the construct to update.</p>
-    /// This field is required.
     pub fn construct_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.construct_id = ::std::option::Option::Some(input.into());
         self
@@ -96,6 +120,20 @@ impl StartNetworkMigrationMappingUpdateConstructBuilder {
     pub fn get_construct_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.construct_type
     }
+    /// <p>The logical identifier for a construct created by a create operation; other operations identify the construct by constructID. Other entries in the same request can reference the new construct as {"Ref": "&lt;constructLogicalID&gt;"}.</p>
+    pub fn construct_logical_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.construct_logical_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The logical identifier for a construct created by a create operation; other operations identify the construct by constructID. Other entries in the same request can reference the new construct as {"Ref": "&lt;constructLogicalID&gt;"}.</p>
+    pub fn set_construct_logical_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.construct_logical_id = input;
+        self
+    }
+    /// <p>The logical identifier for a construct created by a create operation; other operations identify the construct by constructID. Other entries in the same request can reference the new construct as {"Ref": "&lt;constructLogicalID&gt;"}.</p>
+    pub fn get_construct_logical_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.construct_logical_id
+    }
     /// <p>The operation to perform on the construct.</p>
     pub fn operation(mut self, input: crate::types::OperationUnion) -> Self {
         self.operation = ::std::option::Option::Some(input);
@@ -112,31 +150,21 @@ impl StartNetworkMigrationMappingUpdateConstructBuilder {
     }
     /// Consumes the builder and constructs a [`StartNetworkMigrationMappingUpdateConstruct`](crate::types::StartNetworkMigrationMappingUpdateConstruct).
     /// This method will fail if any of the following fields are not set:
-    /// - [`segment_id`](crate::types::builders::StartNetworkMigrationMappingUpdateConstructBuilder::segment_id)
-    /// - [`construct_id`](crate::types::builders::StartNetworkMigrationMappingUpdateConstructBuilder::construct_id)
     /// - [`construct_type`](crate::types::builders::StartNetworkMigrationMappingUpdateConstructBuilder::construct_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::types::StartNetworkMigrationMappingUpdateConstruct, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::StartNetworkMigrationMappingUpdateConstruct {
-            segment_id: self.segment_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "segment_id",
-                    "segment_id was not specified but it is required when building StartNetworkMigrationMappingUpdateConstruct",
-                )
-            })?,
-            construct_id: self.construct_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "construct_id",
-                    "construct_id was not specified but it is required when building StartNetworkMigrationMappingUpdateConstruct",
-                )
-            })?,
+            segment_id: self.segment_id,
+            segment_logical_id: self.segment_logical_id,
+            construct_id: self.construct_id,
             construct_type: self.construct_type.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "construct_type",
                     "construct_type was not specified but it is required when building StartNetworkMigrationMappingUpdateConstruct",
                 )
             })?,
+            construct_logical_id: self.construct_logical_id,
             operation: self.operation,
         })
     }

@@ -37,6 +37,9 @@ pub mod delete_capacity_provider;
 /// Types for the `DeleteCodeSigningConfig` operation.
 pub mod delete_code_signing_config;
 
+/// Types for the `DeleteDurableExecution` operation.
+pub mod delete_durable_execution;
+
 /// Types for the `DeleteEventSourceMapping` operation.
 pub mod delete_event_source_mapping;
 
@@ -187,6 +190,9 @@ pub mod list_tags;
 /// Types for the `ListVersionsByFunction` operation.
 pub mod list_versions_by_function;
 
+/// Types for the `PauseDurableExecution` operation.
+pub mod pause_durable_execution;
+
 /// Types for the `PublishLayerVersion` operation.
 pub mod publish_layer_version;
 
@@ -222,6 +228,9 @@ pub mod remove_layer_version_permission;
 
 /// Types for the `RemovePermission` operation.
 pub mod remove_permission;
+
+/// Types for the `ResumeDurableExecution` operation.
+pub mod resume_durable_execution;
 
 /// Types for the `SendDurableExecutionCallbackFailure` operation.
 pub mod send_durable_execution_callback_failure;

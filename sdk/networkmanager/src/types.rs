@@ -227,6 +227,8 @@ pub use crate::types::_permissions_error_context::PermissionsErrorContext;
 
 pub use crate::types::_routing_policy_direction::RoutingPolicyDirection;
 
+pub use crate::types::_multipath_resilience_change_values::MultipathResilienceChangeValues;
+
 pub use crate::types::_network_route_destination::NetworkRouteDestination;
 
 pub use crate::types::_connection_type::ConnectionType;
@@ -242,6 +244,8 @@ pub use crate::types::_path_component::PathComponent;
 pub use crate::types::_routing_policy_association_detail::RoutingPolicyAssociationDetail;
 
 pub use crate::types::_service_insertion_action::ServiceInsertionAction;
+
+pub use crate::types::_multipath_resilience_mode::MultipathResilienceMode;
 
 pub use crate::types::_network_resource_summary::NetworkResourceSummary;
 
@@ -392,6 +396,10 @@ mod _link_association_state;
 mod _link_state;
 
 mod _location;
+
+mod _multipath_resilience_change_values;
+
+mod _multipath_resilience_mode;
 
 mod _nat_gateway_support_state;
 

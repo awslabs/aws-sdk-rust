@@ -249,17 +249,17 @@ impl ModifyAccountVpcEncryptionControlFluentBuilder {
     pub fn get_elastic_file_system(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput> {
         self.inner.get_elastic_file_system()
     }
-    /// <p>Specifies whether to exclude AWS Global Accelerator from account-level encryption enforcement.</p>
+    /// <p>Specifies whether to exclude Amazon Web Services Global Accelerator from account-level encryption enforcement.</p>
     pub fn global_accelerator(mut self, input: crate::types::VpcEncryptionControlExclusionStateInput) -> Self {
         self.inner = self.inner.global_accelerator(input);
         self
     }
-    /// <p>Specifies whether to exclude AWS Global Accelerator from account-level encryption enforcement.</p>
+    /// <p>Specifies whether to exclude Amazon Web Services Global Accelerator from account-level encryption enforcement.</p>
     pub fn set_global_accelerator(mut self, input: ::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput>) -> Self {
         self.inner = self.inner.set_global_accelerator(input);
         self
     }
-    /// <p>Specifies whether to exclude AWS Global Accelerator from account-level encryption enforcement.</p>
+    /// <p>Specifies whether to exclude Amazon Web Services Global Accelerator from account-level encryption enforcement.</p>
     pub fn get_global_accelerator(&self) -> &::std::option::Option<crate::types::VpcEncryptionControlExclusionStateInput> {
         self.inner.get_global_accelerator()
     }

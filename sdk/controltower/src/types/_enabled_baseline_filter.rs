@@ -14,6 +14,8 @@ pub struct EnabledBaselineFilter {
     pub statuses: ::std::option::Option<::std::vec::Vec<crate::types::EnablementStatus>>,
     /// <p>A list of <code>EnabledBaselineDriftStatus</code> items for enabled baselines.</p>
     pub inheritance_drift_statuses: ::std::option::Option<::std::vec::Vec<crate::types::EnabledBaselineDriftStatus>>,
+    /// <p>A list of <code>EnabledBaselineDriftStatus</code> items for enabled baselines.</p>
+    pub source_drift_statuses: ::std::option::Option<::std::vec::Vec<crate::types::EnabledBaselineDriftStatus>>,
 }
 impl EnabledBaselineFilter {
     /// <p>Identifiers for the targets of the <code>Baseline</code> filter operation.</p>
@@ -46,6 +48,12 @@ impl EnabledBaselineFilter {
     pub fn inheritance_drift_statuses(&self) -> &[crate::types::EnabledBaselineDriftStatus] {
         self.inheritance_drift_statuses.as_deref().unwrap_or_default()
     }
+    /// <p>A list of <code>EnabledBaselineDriftStatus</code> items for enabled baselines.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_drift_statuses.is_none()`.
+    pub fn source_drift_statuses(&self) -> &[crate::types::EnabledBaselineDriftStatus] {
+        self.source_drift_statuses.as_deref().unwrap_or_default()
+    }
 }
 impl EnabledBaselineFilter {
     /// Creates a new builder-style object to manufacture [`EnabledBaselineFilter`](crate::types::EnabledBaselineFilter).
@@ -63,6 +71,7 @@ pub struct EnabledBaselineFilterBuilder {
     pub(crate) parent_identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) statuses: ::std::option::Option<::std::vec::Vec<crate::types::EnablementStatus>>,
     pub(crate) inheritance_drift_statuses: ::std::option::Option<::std::vec::Vec<crate::types::EnabledBaselineDriftStatus>>,
+    pub(crate) source_drift_statuses: ::std::option::Option<::std::vec::Vec<crate::types::EnabledBaselineDriftStatus>>,
 }
 impl EnabledBaselineFilterBuilder {
     /// Appends an item to `target_identifiers`.
@@ -165,6 +174,26 @@ impl EnabledBaselineFilterBuilder {
     pub fn get_inheritance_drift_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledBaselineDriftStatus>> {
         &self.inheritance_drift_statuses
     }
+    /// Appends an item to `source_drift_statuses`.
+    ///
+    /// To override the contents of this collection use [`set_source_drift_statuses`](Self::set_source_drift_statuses).
+    ///
+    /// <p>A list of <code>EnabledBaselineDriftStatus</code> items for enabled baselines.</p>
+    pub fn source_drift_statuses(mut self, input: crate::types::EnabledBaselineDriftStatus) -> Self {
+        let mut v = self.source_drift_statuses.unwrap_or_default();
+        v.push(input);
+        self.source_drift_statuses = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of <code>EnabledBaselineDriftStatus</code> items for enabled baselines.</p>
+    pub fn set_source_drift_statuses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EnabledBaselineDriftStatus>>) -> Self {
+        self.source_drift_statuses = input;
+        self
+    }
+    /// <p>A list of <code>EnabledBaselineDriftStatus</code> items for enabled baselines.</p>
+    pub fn get_source_drift_statuses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EnabledBaselineDriftStatus>> {
+        &self.source_drift_statuses
+    }
     /// Consumes the builder and constructs a [`EnabledBaselineFilter`](crate::types::EnabledBaselineFilter).
     pub fn build(self) -> crate::types::EnabledBaselineFilter {
         crate::types::EnabledBaselineFilter {
@@ -173,6 +202,7 @@ impl EnabledBaselineFilterBuilder {
             parent_identifiers: self.parent_identifiers,
             statuses: self.statuses,
             inheritance_drift_statuses: self.inheritance_drift_statuses,
+            source_drift_statuses: self.source_drift_statuses,
         }
     }
 }

@@ -10,7 +10,7 @@ pub struct EvaluationSuggestedAnswer {
     pub status: crate::types::EvaluationSuggestedAnswerStatus,
     /// <p>Details about the input used to question automation.</p>
     pub input: ::std::option::Option<crate::types::EvaluationQuestionInputDetails>,
-    /// <p>Type of analysis used to provide suggested answer.</p>
+    /// <p>Type of analysis used to provide suggested answer. Valid values: <code>CONTACT_LENS_DATA</code> | <code>GEN_AI</code> | <code>CONDITION</code>.</p>
     pub analysis_type: crate::types::EvaluationQuestionAnswerAnalysisType,
     /// <p>Detailed analysis results.</p>
     pub analysis_details: ::std::option::Option<crate::types::EvaluationQuestionAnswerAnalysisDetails>,
@@ -28,7 +28,7 @@ impl EvaluationSuggestedAnswer {
     pub fn input(&self) -> ::std::option::Option<&crate::types::EvaluationQuestionInputDetails> {
         self.input.as_ref()
     }
-    /// <p>Type of analysis used to provide suggested answer.</p>
+    /// <p>Type of analysis used to provide suggested answer. Valid values: <code>CONTACT_LENS_DATA</code> | <code>GEN_AI</code> | <code>CONDITION</code>.</p>
     pub fn analysis_type(&self) -> &crate::types::EvaluationQuestionAnswerAnalysisType {
         &self.analysis_type
     }
@@ -98,18 +98,18 @@ impl EvaluationSuggestedAnswerBuilder {
     pub fn get_input(&self) -> &::std::option::Option<crate::types::EvaluationQuestionInputDetails> {
         &self.input
     }
-    /// <p>Type of analysis used to provide suggested answer.</p>
+    /// <p>Type of analysis used to provide suggested answer. Valid values: <code>CONTACT_LENS_DATA</code> | <code>GEN_AI</code> | <code>CONDITION</code>.</p>
     /// This field is required.
     pub fn analysis_type(mut self, input: crate::types::EvaluationQuestionAnswerAnalysisType) -> Self {
         self.analysis_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Type of analysis used to provide suggested answer.</p>
+    /// <p>Type of analysis used to provide suggested answer. Valid values: <code>CONTACT_LENS_DATA</code> | <code>GEN_AI</code> | <code>CONDITION</code>.</p>
     pub fn set_analysis_type(mut self, input: ::std::option::Option<crate::types::EvaluationQuestionAnswerAnalysisType>) -> Self {
         self.analysis_type = input;
         self
     }
-    /// <p>Type of analysis used to provide suggested answer.</p>
+    /// <p>Type of analysis used to provide suggested answer. Valid values: <code>CONTACT_LENS_DATA</code> | <code>GEN_AI</code> | <code>CONDITION</code>.</p>
     pub fn get_analysis_type(&self) -> &::std::option::Option<crate::types::EvaluationQuestionAnswerAnalysisType> {
         &self.analysis_type
     }

@@ -2,7 +2,7 @@
 
 /// <p>The configuration for an HTTP passthrough target. A passthrough target forwards requests directly to an external HTTP endpoint.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PassthroughTargetConfiguration {
     /// <p>The HTTPS endpoint that the gateway forwards requests to for this passthrough target.</p>
     pub endpoint: ::std::string::String,
@@ -76,6 +76,21 @@ impl PassthroughTargetConfiguration {
         self.static_query_parameter_conflict_resolution.as_ref()
     }
 }
+impl ::std::fmt::Debug for PassthroughTargetConfiguration {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PassthroughTargetConfiguration");
+        formatter.field("endpoint", &self.endpoint);
+        formatter.field("protocol_type", &self.protocol_type);
+        formatter.field("schema", &self.schema);
+        formatter.field("stickiness_configuration", &self.stickiness_configuration);
+        formatter.field("static_query_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "static_query_parameter_conflict_resolution",
+            &self.static_query_parameter_conflict_resolution,
+        );
+        formatter.finish()
+    }
+}
 impl PassthroughTargetConfiguration {
     /// Creates a new builder-style object to manufacture [`PassthroughTargetConfiguration`](crate::types::PassthroughTargetConfiguration).
     pub fn builder() -> crate::types::builders::PassthroughTargetConfigurationBuilder {
@@ -84,7 +99,7 @@ impl PassthroughTargetConfiguration {
 }
 
 /// A builder for [`PassthroughTargetConfiguration`](crate::types::PassthroughTargetConfiguration).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct PassthroughTargetConfigurationBuilder {
     pub(crate) endpoint: ::std::option::Option<::std::string::String>,
@@ -268,5 +283,20 @@ impl PassthroughTargetConfigurationBuilder {
             static_query_parameters: self.static_query_parameters,
             static_query_parameter_conflict_resolution: self.static_query_parameter_conflict_resolution,
         })
+    }
+}
+impl ::std::fmt::Debug for PassthroughTargetConfigurationBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("PassthroughTargetConfigurationBuilder");
+        formatter.field("endpoint", &self.endpoint);
+        formatter.field("protocol_type", &self.protocol_type);
+        formatter.field("schema", &self.schema);
+        formatter.field("stickiness_configuration", &self.stickiness_configuration);
+        formatter.field("static_query_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "static_query_parameter_conflict_resolution",
+            &self.static_query_parameter_conflict_resolution,
+        );
+        formatter.finish()
     }
 }

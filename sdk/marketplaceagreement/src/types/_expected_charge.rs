@@ -16,6 +16,8 @@ pub struct ExpectedCharge {
     pub timing: ::std::option::Option<crate::types::Timing>,
     /// <p>Provides an aggregated view of estimated tax information for this specific charge.</p>
     pub estimated_taxes: ::std::option::Option<crate::types::EstimatedTaxes>,
+    /// <p>The purchase order reference associated with the charge, if any.</p>
+    pub purchase_order_reference: ::std::option::Option<::std::string::String>,
 }
 impl ExpectedCharge {
     /// <p>Unique identifier of the charge for a given agreement.</p>
@@ -42,6 +44,10 @@ impl ExpectedCharge {
     pub fn estimated_taxes(&self) -> ::std::option::Option<&crate::types::EstimatedTaxes> {
         self.estimated_taxes.as_ref()
     }
+    /// <p>The purchase order reference associated with the charge, if any.</p>
+    pub fn purchase_order_reference(&self) -> ::std::option::Option<&str> {
+        self.purchase_order_reference.as_deref()
+    }
 }
 impl ExpectedCharge {
     /// Creates a new builder-style object to manufacture [`ExpectedCharge`](crate::types::ExpectedCharge).
@@ -60,6 +66,7 @@ pub struct ExpectedChargeBuilder {
     pub(crate) amount_after_tax: ::std::option::Option<::std::string::String>,
     pub(crate) timing: ::std::option::Option<crate::types::Timing>,
     pub(crate) estimated_taxes: ::std::option::Option<crate::types::EstimatedTaxes>,
+    pub(crate) purchase_order_reference: ::std::option::Option<::std::string::String>,
 }
 impl ExpectedChargeBuilder {
     /// <p>Unique identifier of the charge for a given agreement.</p>
@@ -146,6 +153,20 @@ impl ExpectedChargeBuilder {
     pub fn get_estimated_taxes(&self) -> &::std::option::Option<crate::types::EstimatedTaxes> {
         &self.estimated_taxes
     }
+    /// <p>The purchase order reference associated with the charge, if any.</p>
+    pub fn purchase_order_reference(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.purchase_order_reference = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The purchase order reference associated with the charge, if any.</p>
+    pub fn set_purchase_order_reference(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.purchase_order_reference = input;
+        self
+    }
+    /// <p>The purchase order reference associated with the charge, if any.</p>
+    pub fn get_purchase_order_reference(&self) -> &::std::option::Option<::std::string::String> {
+        &self.purchase_order_reference
+    }
     /// Consumes the builder and constructs a [`ExpectedCharge`](crate::types::ExpectedCharge).
     pub fn build(self) -> crate::types::ExpectedCharge {
         crate::types::ExpectedCharge {
@@ -155,6 +176,7 @@ impl ExpectedChargeBuilder {
             amount_after_tax: self.amount_after_tax,
             timing: self.timing,
             estimated_taxes: self.estimated_taxes,
+            purchase_order_reference: self.purchase_order_reference,
         }
     }
 }

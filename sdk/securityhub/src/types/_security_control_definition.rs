@@ -20,7 +20,7 @@ pub struct SecurityControlDefinition {
     pub customizable_properties: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlProperty>>,
     /// <p>An object that provides a security control parameter name, description, and the options for customizing it. This object is excluded for a control that doesn't support custom parameters.</p>
     pub parameter_definitions: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterDefinition>>,
-    /// <p>The cloud provider whose resources the security control evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    /// <p>The cloud provider whose resources the security control evaluates. For example, <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
     pub provider: ::std::option::Option<crate::types::SecurityControlsProvider>,
 }
 impl SecurityControlDefinition {
@@ -60,7 +60,7 @@ impl SecurityControlDefinition {
     ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::ParameterDefinition>> {
         self.parameter_definitions.as_ref()
     }
-    /// <p>The cloud provider whose resources the security control evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    /// <p>The cloud provider whose resources the security control evaluates. For example, <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
     pub fn provider(&self) -> ::std::option::Option<&crate::types::SecurityControlsProvider> {
         self.provider.as_ref()
     }
@@ -222,17 +222,17 @@ impl SecurityControlDefinitionBuilder {
     ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::ParameterDefinition>> {
         &self.parameter_definitions
     }
-    /// <p>The cloud provider whose resources the security control evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    /// <p>The cloud provider whose resources the security control evaluates. For example, <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
     pub fn provider(mut self, input: crate::types::SecurityControlsProvider) -> Self {
         self.provider = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The cloud provider whose resources the security control evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    /// <p>The cloud provider whose resources the security control evaluates. For example, <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
     pub fn set_provider(mut self, input: ::std::option::Option<crate::types::SecurityControlsProvider>) -> Self {
         self.provider = input;
         self
     }
-    /// <p>The cloud provider whose resources the security control evaluates. For example, <code>AWS</code> or <code>Azure</code>.</p>
+    /// <p>The cloud provider whose resources the security control evaluates. For example, <code>AWS</code>, <code>Azure</code>, or <code>GCP</code>.</p>
     pub fn get_provider(&self) -> &::std::option::Option<crate::types::SecurityControlsProvider> {
         &self.provider
     }

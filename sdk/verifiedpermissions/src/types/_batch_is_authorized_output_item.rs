@@ -2,7 +2,7 @@
 
 /// <p>The decision, based on policy evaluation, from an individual authorization request in a <code>BatchIsAuthorized</code> API request.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BatchIsAuthorizedOutputItem {
     /// <p>The authorization request that initiated the decision.</p>
     pub request: ::std::option::Option<crate::types::BatchIsAuthorizedInputItem>,
@@ -33,6 +33,16 @@ impl BatchIsAuthorizedOutputItem {
         self.errors.deref()
     }
 }
+impl ::std::fmt::Debug for BatchIsAuthorizedOutputItem {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchIsAuthorizedOutputItem");
+        formatter.field("request", &self.request);
+        formatter.field("decision", &self.decision);
+        formatter.field("determining_policies", &self.determining_policies);
+        formatter.field("errors", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl BatchIsAuthorizedOutputItem {
     /// Creates a new builder-style object to manufacture [`BatchIsAuthorizedOutputItem`](crate::types::BatchIsAuthorizedOutputItem).
     pub fn builder() -> crate::types::builders::BatchIsAuthorizedOutputItemBuilder {
@@ -41,7 +51,7 @@ impl BatchIsAuthorizedOutputItem {
 }
 
 /// A builder for [`BatchIsAuthorizedOutputItem`](crate::types::BatchIsAuthorizedOutputItem).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct BatchIsAuthorizedOutputItemBuilder {
     pub(crate) request: ::std::option::Option<crate::types::BatchIsAuthorizedInputItem>,
@@ -147,5 +157,15 @@ impl BatchIsAuthorizedOutputItemBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for BatchIsAuthorizedOutputItemBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchIsAuthorizedOutputItemBuilder");
+        formatter.field("request", &self.request);
+        formatter.field("decision", &self.decision);
+        formatter.field("determining_policies", &self.determining_policies);
+        formatter.field("errors", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

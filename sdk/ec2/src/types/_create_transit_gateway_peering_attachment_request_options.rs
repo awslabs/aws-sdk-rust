@@ -6,11 +6,35 @@
 pub struct CreateTransitGatewayPeeringAttachmentRequestOptions {
     /// <p>Indicates whether dynamic routing is enabled or disabled.</p>
     pub dynamic_routing: ::std::option::Option<crate::types::DynamicRoutingValue>,
+    /// <p>Specifies whether you allow multipath resilience for the requester side of the transit gateway peering attachment. Multipath resilience is supported only for inter-Region transit gateway peering attachments between supported Regions. It takes effect only when both the requester and the accepter allow it. If you don't specify this parameter, the default is <code>false</code>.</p>
+    pub allow_multipath_resilience: ::std::option::Option<bool>,
+    /// <p>The multipath resilience mode. You can specify this parameter only if <code>AllowMultipathResilience</code> is <code>true</code>.</p>
+    /// <p>The following value is valid:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>always-on</code> – Replicates traffic across multiple network paths while multipath resilience is in effect.</p></li>
+    /// </ul>
+    /// <p>If <code>AllowMultipathResilience</code> is <code>true</code> and you don't specify a mode, the default is <code>always-on</code>.</p>
+    pub multipath_resilience_mode: ::std::option::Option<crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode>,
 }
 impl CreateTransitGatewayPeeringAttachmentRequestOptions {
     /// <p>Indicates whether dynamic routing is enabled or disabled.</p>
     pub fn dynamic_routing(&self) -> ::std::option::Option<&crate::types::DynamicRoutingValue> {
         self.dynamic_routing.as_ref()
+    }
+    /// <p>Specifies whether you allow multipath resilience for the requester side of the transit gateway peering attachment. Multipath resilience is supported only for inter-Region transit gateway peering attachments between supported Regions. It takes effect only when both the requester and the accepter allow it. If you don't specify this parameter, the default is <code>false</code>.</p>
+    pub fn allow_multipath_resilience(&self) -> ::std::option::Option<bool> {
+        self.allow_multipath_resilience
+    }
+    /// <p>The multipath resilience mode. You can specify this parameter only if <code>AllowMultipathResilience</code> is <code>true</code>.</p>
+    /// <p>The following value is valid:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>always-on</code> – Replicates traffic across multiple network paths while multipath resilience is in effect.</p></li>
+    /// </ul>
+    /// <p>If <code>AllowMultipathResilience</code> is <code>true</code> and you don't specify a mode, the default is <code>always-on</code>.</p>
+    pub fn multipath_resilience_mode(&self) -> ::std::option::Option<&crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode> {
+        self.multipath_resilience_mode.as_ref()
     }
 }
 impl CreateTransitGatewayPeeringAttachmentRequestOptions {
@@ -25,6 +49,8 @@ impl CreateTransitGatewayPeeringAttachmentRequestOptions {
 #[non_exhaustive]
 pub struct CreateTransitGatewayPeeringAttachmentRequestOptionsBuilder {
     pub(crate) dynamic_routing: ::std::option::Option<crate::types::DynamicRoutingValue>,
+    pub(crate) allow_multipath_resilience: ::std::option::Option<bool>,
+    pub(crate) multipath_resilience_mode: ::std::option::Option<crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode>,
 }
 impl CreateTransitGatewayPeeringAttachmentRequestOptionsBuilder {
     /// <p>Indicates whether dynamic routing is enabled or disabled.</p>
@@ -41,10 +67,61 @@ impl CreateTransitGatewayPeeringAttachmentRequestOptionsBuilder {
     pub fn get_dynamic_routing(&self) -> &::std::option::Option<crate::types::DynamicRoutingValue> {
         &self.dynamic_routing
     }
+    /// <p>Specifies whether you allow multipath resilience for the requester side of the transit gateway peering attachment. Multipath resilience is supported only for inter-Region transit gateway peering attachments between supported Regions. It takes effect only when both the requester and the accepter allow it. If you don't specify this parameter, the default is <code>false</code>.</p>
+    pub fn allow_multipath_resilience(mut self, input: bool) -> Self {
+        self.allow_multipath_resilience = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether you allow multipath resilience for the requester side of the transit gateway peering attachment. Multipath resilience is supported only for inter-Region transit gateway peering attachments between supported Regions. It takes effect only when both the requester and the accepter allow it. If you don't specify this parameter, the default is <code>false</code>.</p>
+    pub fn set_allow_multipath_resilience(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.allow_multipath_resilience = input;
+        self
+    }
+    /// <p>Specifies whether you allow multipath resilience for the requester side of the transit gateway peering attachment. Multipath resilience is supported only for inter-Region transit gateway peering attachments between supported Regions. It takes effect only when both the requester and the accepter allow it. If you don't specify this parameter, the default is <code>false</code>.</p>
+    pub fn get_allow_multipath_resilience(&self) -> &::std::option::Option<bool> {
+        &self.allow_multipath_resilience
+    }
+    /// <p>The multipath resilience mode. You can specify this parameter only if <code>AllowMultipathResilience</code> is <code>true</code>.</p>
+    /// <p>The following value is valid:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>always-on</code> – Replicates traffic across multiple network paths while multipath resilience is in effect.</p></li>
+    /// </ul>
+    /// <p>If <code>AllowMultipathResilience</code> is <code>true</code> and you don't specify a mode, the default is <code>always-on</code>.</p>
+    pub fn multipath_resilience_mode(mut self, input: crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode) -> Self {
+        self.multipath_resilience_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The multipath resilience mode. You can specify this parameter only if <code>AllowMultipathResilience</code> is <code>true</code>.</p>
+    /// <p>The following value is valid:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>always-on</code> – Replicates traffic across multiple network paths while multipath resilience is in effect.</p></li>
+    /// </ul>
+    /// <p>If <code>AllowMultipathResilience</code> is <code>true</code> and you don't specify a mode, the default is <code>always-on</code>.</p>
+    pub fn set_multipath_resilience_mode(
+        mut self,
+        input: ::std::option::Option<crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode>,
+    ) -> Self {
+        self.multipath_resilience_mode = input;
+        self
+    }
+    /// <p>The multipath resilience mode. You can specify this parameter only if <code>AllowMultipathResilience</code> is <code>true</code>.</p>
+    /// <p>The following value is valid:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>always-on</code> – Replicates traffic across multiple network paths while multipath resilience is in effect.</p></li>
+    /// </ul>
+    /// <p>If <code>AllowMultipathResilience</code> is <code>true</code> and you don't specify a mode, the default is <code>always-on</code>.</p>
+    pub fn get_multipath_resilience_mode(&self) -> &::std::option::Option<crate::types::TransitGatewayPeeringAttachmentMultipathResilienceMode> {
+        &self.multipath_resilience_mode
+    }
     /// Consumes the builder and constructs a [`CreateTransitGatewayPeeringAttachmentRequestOptions`](crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions).
     pub fn build(self) -> crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions {
         crate::types::CreateTransitGatewayPeeringAttachmentRequestOptions {
             dynamic_routing: self.dynamic_routing,
+            allow_multipath_resilience: self.allow_multipath_resilience,
+            multipath_resilience_mode: self.multipath_resilience_mode,
         }
     }
 }

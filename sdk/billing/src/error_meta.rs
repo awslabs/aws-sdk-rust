@@ -1118,6 +1118,34 @@ impl From<crate::operation::redeem_credits::RedeemCreditsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::split_credit::SplitCreditError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::split_credit::SplitCreditError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::split_credit::SplitCreditError> for Error {
+    fn from(err: crate::operation::split_credit::SplitCreditError) -> Self {
+        match err {
+            crate::operation::split_credit::SplitCreditError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::split_credit::SplitCreditError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::split_credit::SplitCreditError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::split_credit::SplitCreditError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::split_credit::SplitCreditError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::split_credit::SplitCreditError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::split_credit::SplitCreditError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::split_credit::SplitCreditError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1141,6 +1169,36 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
             crate::operation::tag_resource::TagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::tag_resource::TagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::transfer_credit::TransferCreditError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::transfer_credit::TransferCreditError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::transfer_credit::TransferCreditError> for Error {
+    fn from(err: crate::operation::transfer_credit::TransferCreditError) -> Self {
+        match err {
+            crate::operation::transfer_credit::TransferCreditError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::transfer_credit::TransferCreditError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::transfer_credit::TransferCreditError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::transfer_credit::TransferCreditError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::transfer_credit::TransferCreditError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::transfer_credit::TransferCreditError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::transfer_credit::TransferCreditError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::transfer_credit::TransferCreditError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

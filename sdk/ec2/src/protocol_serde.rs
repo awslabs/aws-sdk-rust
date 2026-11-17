@@ -2899,6 +2899,10 @@ pub(crate) mod shape_modify_transit_gateway_network_function_attachment;
 
 pub(crate) mod shape_modify_transit_gateway_network_function_attachment_input;
 
+pub(crate) mod shape_modify_transit_gateway_peering_attachment;
+
+pub(crate) mod shape_modify_transit_gateway_peering_attachment_input;
+
 pub(crate) mod shape_modify_transit_gateway_policy_table_entry;
 
 pub(crate) mod shape_modify_transit_gateway_policy_table_entry_input;
@@ -3357,6 +3361,8 @@ pub(crate) mod shape_availability_zone_address;
 
 pub(crate) mod shape_block_device_mapping;
 
+pub(crate) mod shape_capacity_block_instance_type_preference;
+
 pub(crate) mod shape_capacity_manager_condition;
 
 pub(crate) mod shape_capacity_reservation_specification;
@@ -3378,6 +3384,8 @@ pub(crate) mod shape_connection_log_options;
 pub(crate) mod shape_connection_tracking_specification_request;
 
 pub(crate) mod shape_cpu_options_request;
+
+pub(crate) mod shape_create_peering_connection_options_request;
 
 pub(crate) mod shape_create_transit_gateway_connect_request_options;
 
@@ -3530,6 +3538,8 @@ pub(crate) mod shape_load_permission_modifications;
 pub(crate) mod shape_mac_system_integrity_protection_configuration_request;
 
 pub(crate) mod shape_modify_transit_gateway_options;
+
+pub(crate) mod shape_modify_transit_gateway_peering_attachment_request_options;
 
 pub(crate) mod shape_modify_transit_gateway_vpc_attachment_request_options;
 
@@ -4767,6 +4777,8 @@ pub(crate) mod shape_vpc_peering_connection;
 
 pub(crate) mod shape_vpc_peering_connection_list;
 
+pub(crate) mod shape_vpn_additional_key_exchange_request;
+
 pub(crate) mod shape_vpn_concentrator;
 
 pub(crate) mod shape_vpn_concentrator_list;
@@ -4793,9 +4805,13 @@ pub(crate) mod shape_account_attribute;
 
 pub(crate) mod shape_account_vpc_encryption_control_exclusions;
 
+pub(crate) mod shape_active_additional_key_exchanges_list;
+
 pub(crate) mod shape_active_instance;
 
 pub(crate) mod shape_added_principal;
+
+pub(crate) mod shape_additional_key_exchange_methods_request_list_value;
 
 pub(crate) mod shape_address;
 
@@ -5499,6 +5515,8 @@ pub(crate) mod shape_access_scope_path;
 
 pub(crate) mod shape_account_attribute_value_list;
 
+pub(crate) mod shape_active_vpn_tunnel_additional_key_exchange;
+
 pub(crate) mod shape_allowed_instance_type_set;
 
 pub(crate) mod shape_alternate_path_hint;
@@ -5534,6 +5552,8 @@ pub(crate) mod shape_cancel_spot_fleet_requests_error;
 pub(crate) mod shape_cancellation_terms;
 
 pub(crate) mod shape_capacity_allocation;
+
+pub(crate) mod shape_capacity_block_offering_segment_set;
 
 pub(crate) mod shape_capacity_manager_tag_dimension_set;
 
@@ -6003,6 +6023,8 @@ pub(crate) mod shape_bandwidth_weighting_type_list;
 
 pub(crate) mod shape_capacity_allocation_metadata_list;
 
+pub(crate) mod shape_capacity_block_offering_segment;
+
 pub(crate) mod shape_capacity_manager_tag_dimension;
 
 pub(crate) mod shape_capacity_reservation_options;
@@ -6215,6 +6237,8 @@ pub(crate) mod shape_volume_status_event;
 
 pub(crate) mod shape_additional_detail;
 
+pub(crate) mod shape_additional_key_exchanges_list;
+
 pub(crate) mod shape_application_status_detail_set;
 
 pub(crate) mod shape_block_device_mapping_response_list;
@@ -6405,7 +6429,11 @@ pub(crate) mod shape_spot_fleet_tag_specification_list;
 
 pub(crate) mod shape_target_groups;
 
+pub(crate) mod shape_vpn_additional_key_exchange;
+
 pub(crate) mod shape_workloads_list;
+
+pub(crate) mod shape_additional_key_exchange_methods_list;
 
 pub(crate) mod shape_application_status_reason;
 
@@ -6420,3 +6448,5 @@ pub(crate) mod shape_rule_group_rule_options_pair;
 pub(crate) mod shape_rule_group_type_pair;
 
 pub(crate) mod shape_rule_option;
+
+pub(crate) mod shape_additional_key_exchange_methods_list_value;

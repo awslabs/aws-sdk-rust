@@ -20,6 +20,8 @@ pub struct Transcript {
     pub sentiment: ::std::option::Option<crate::types::SentimentValue>,
     /// <p>List of positions where issues were detected on the transcript.</p>
     pub issues_detected: ::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>>,
+    /// <p>The language code detected for this piece of transcript, for example, <code>en-US</code>.</p>
+    pub language_code: ::std::option::Option<::std::string::String>,
 }
 impl Transcript {
     /// <p>The identifier of the transcript.</p>
@@ -56,6 +58,10 @@ impl Transcript {
     pub fn issues_detected(&self) -> &[crate::types::IssueDetected] {
         self.issues_detected.as_deref().unwrap_or_default()
     }
+    /// <p>The language code detected for this piece of transcript, for example, <code>en-US</code>.</p>
+    pub fn language_code(&self) -> ::std::option::Option<&str> {
+        self.language_code.as_deref()
+    }
 }
 impl Transcript {
     /// Creates a new builder-style object to manufacture [`Transcript`](crate::types::Transcript).
@@ -76,6 +82,7 @@ pub struct TranscriptBuilder {
     pub(crate) end_offset_millis: ::std::option::Option<i32>,
     pub(crate) sentiment: ::std::option::Option<crate::types::SentimentValue>,
     pub(crate) issues_detected: ::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>>,
+    pub(crate) language_code: ::std::option::Option<::std::string::String>,
 }
 impl TranscriptBuilder {
     /// <p>The identifier of the transcript.</p>
@@ -202,6 +209,20 @@ impl TranscriptBuilder {
     pub fn get_issues_detected(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IssueDetected>> {
         &self.issues_detected
     }
+    /// <p>The language code detected for this piece of transcript, for example, <code>en-US</code>.</p>
+    pub fn language_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.language_code = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The language code detected for this piece of transcript, for example, <code>en-US</code>.</p>
+    pub fn set_language_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.language_code = input;
+        self
+    }
+    /// <p>The language code detected for this piece of transcript, for example, <code>en-US</code>.</p>
+    pub fn get_language_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.language_code
+    }
     /// Consumes the builder and constructs a [`Transcript`](crate::types::Transcript).
     pub fn build(self) -> crate::types::Transcript {
         crate::types::Transcript {
@@ -213,6 +234,7 @@ impl TranscriptBuilder {
             end_offset_millis: self.end_offset_millis,
             sentiment: self.sentiment,
             issues_detected: self.issues_detected,
+            language_code: self.language_code,
         }
     }
 }

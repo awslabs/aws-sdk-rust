@@ -14,6 +14,15 @@
 /// match numericquestionpropertyautomationlabel {
 ///     NumericQuestionPropertyAutomationLabel::AgentInteractionAndHoldDuration => { /* ... */ },
 ///     NumericQuestionPropertyAutomationLabel::AgentInteractionDuration => { /* ... */ },
+///     NumericQuestionPropertyAutomationLabel::AiAgentMaxPromptLatency => { /* ... */ },
+///     NumericQuestionPropertyAutomationLabel::AiSessionCompletenessScore => { /* ... */ },
+///     NumericQuestionPropertyAutomationLabel::AiSessionFaithfulnessScore => { /* ... */ },
+///     NumericQuestionPropertyAutomationLabel::AiSessionGoalSuccessRate => { /* ... */ },
+///     NumericQuestionPropertyAutomationLabel::AiSessionSelfServiceDuration => { /* ... */ },
+///     NumericQuestionPropertyAutomationLabel::AiToolMaxLatency => { /* ... */ },
+///     NumericQuestionPropertyAutomationLabel::AiToolParameterAccuracy => { /* ... */ },
+///     NumericQuestionPropertyAutomationLabel::AiToolSelectionAccuracy => { /* ... */ },
+///     NumericQuestionPropertyAutomationLabel::AiToolUtilizationAccuracy => { /* ... */ },
 ///     NumericQuestionPropertyAutomationLabel::ContactDuration => { /* ... */ },
 ///     NumericQuestionPropertyAutomationLabel::CustomerHoldTime => { /* ... */ },
 ///     NumericQuestionPropertyAutomationLabel::CustomerSentimentScoreWithoutAgent => { /* ... */ },
@@ -58,6 +67,24 @@ pub enum NumericQuestionPropertyAutomationLabel {
     #[allow(missing_docs)] // documentation missing in model
     AgentInteractionDuration,
     #[allow(missing_docs)] // documentation missing in model
+    AiAgentMaxPromptLatency,
+    #[allow(missing_docs)] // documentation missing in model
+    AiSessionCompletenessScore,
+    #[allow(missing_docs)] // documentation missing in model
+    AiSessionFaithfulnessScore,
+    #[allow(missing_docs)] // documentation missing in model
+    AiSessionGoalSuccessRate,
+    #[allow(missing_docs)] // documentation missing in model
+    AiSessionSelfServiceDuration,
+    #[allow(missing_docs)] // documentation missing in model
+    AiToolMaxLatency,
+    #[allow(missing_docs)] // documentation missing in model
+    AiToolParameterAccuracy,
+    #[allow(missing_docs)] // documentation missing in model
+    AiToolSelectionAccuracy,
+    #[allow(missing_docs)] // documentation missing in model
+    AiToolUtilizationAccuracy,
+    #[allow(missing_docs)] // documentation missing in model
     ContactDuration,
     #[allow(missing_docs)] // documentation missing in model
     CustomerHoldTime,
@@ -88,6 +115,15 @@ impl ::std::convert::From<&str> for NumericQuestionPropertyAutomationLabel {
         match s {
             "AGENT_INTERACTION_AND_HOLD_DURATION" => NumericQuestionPropertyAutomationLabel::AgentInteractionAndHoldDuration,
             "AGENT_INTERACTION_DURATION" => NumericQuestionPropertyAutomationLabel::AgentInteractionDuration,
+            "AI_AGENT_MAX_PROMPT_LATENCY" => NumericQuestionPropertyAutomationLabel::AiAgentMaxPromptLatency,
+            "AI_SESSION_COMPLETENESS_SCORE" => NumericQuestionPropertyAutomationLabel::AiSessionCompletenessScore,
+            "AI_SESSION_FAITHFULNESS_SCORE" => NumericQuestionPropertyAutomationLabel::AiSessionFaithfulnessScore,
+            "AI_SESSION_GOAL_SUCCESS_RATE" => NumericQuestionPropertyAutomationLabel::AiSessionGoalSuccessRate,
+            "AI_SESSION_SELF_SERVICE_DURATION" => NumericQuestionPropertyAutomationLabel::AiSessionSelfServiceDuration,
+            "AI_TOOL_MAX_LATENCY" => NumericQuestionPropertyAutomationLabel::AiToolMaxLatency,
+            "AI_TOOL_PARAMETER_ACCURACY" => NumericQuestionPropertyAutomationLabel::AiToolParameterAccuracy,
+            "AI_TOOL_SELECTION_ACCURACY" => NumericQuestionPropertyAutomationLabel::AiToolSelectionAccuracy,
+            "AI_TOOL_UTILIZATION_ACCURACY" => NumericQuestionPropertyAutomationLabel::AiToolUtilizationAccuracy,
             "CONTACT_DURATION" => NumericQuestionPropertyAutomationLabel::ContactDuration,
             "CUSTOMER_HOLD_TIME" => NumericQuestionPropertyAutomationLabel::CustomerHoldTime,
             "CUSTOMER_SENTIMENT_SCORE_WITHOUT_AGENT" => NumericQuestionPropertyAutomationLabel::CustomerSentimentScoreWithoutAgent,
@@ -116,6 +152,15 @@ impl NumericQuestionPropertyAutomationLabel {
         match self {
             NumericQuestionPropertyAutomationLabel::AgentInteractionAndHoldDuration => "AGENT_INTERACTION_AND_HOLD_DURATION",
             NumericQuestionPropertyAutomationLabel::AgentInteractionDuration => "AGENT_INTERACTION_DURATION",
+            NumericQuestionPropertyAutomationLabel::AiAgentMaxPromptLatency => "AI_AGENT_MAX_PROMPT_LATENCY",
+            NumericQuestionPropertyAutomationLabel::AiSessionCompletenessScore => "AI_SESSION_COMPLETENESS_SCORE",
+            NumericQuestionPropertyAutomationLabel::AiSessionFaithfulnessScore => "AI_SESSION_FAITHFULNESS_SCORE",
+            NumericQuestionPropertyAutomationLabel::AiSessionGoalSuccessRate => "AI_SESSION_GOAL_SUCCESS_RATE",
+            NumericQuestionPropertyAutomationLabel::AiSessionSelfServiceDuration => "AI_SESSION_SELF_SERVICE_DURATION",
+            NumericQuestionPropertyAutomationLabel::AiToolMaxLatency => "AI_TOOL_MAX_LATENCY",
+            NumericQuestionPropertyAutomationLabel::AiToolParameterAccuracy => "AI_TOOL_PARAMETER_ACCURACY",
+            NumericQuestionPropertyAutomationLabel::AiToolSelectionAccuracy => "AI_TOOL_SELECTION_ACCURACY",
+            NumericQuestionPropertyAutomationLabel::AiToolUtilizationAccuracy => "AI_TOOL_UTILIZATION_ACCURACY",
             NumericQuestionPropertyAutomationLabel::ContactDuration => "CONTACT_DURATION",
             NumericQuestionPropertyAutomationLabel::CustomerHoldTime => "CUSTOMER_HOLD_TIME",
             NumericQuestionPropertyAutomationLabel::CustomerSentimentScoreWithoutAgent => "CUSTOMER_SENTIMENT_SCORE_WITHOUT_AGENT",
@@ -135,6 +180,15 @@ impl NumericQuestionPropertyAutomationLabel {
         &[
             "AGENT_INTERACTION_AND_HOLD_DURATION",
             "AGENT_INTERACTION_DURATION",
+            "AI_AGENT_MAX_PROMPT_LATENCY",
+            "AI_SESSION_COMPLETENESS_SCORE",
+            "AI_SESSION_FAITHFULNESS_SCORE",
+            "AI_SESSION_GOAL_SUCCESS_RATE",
+            "AI_SESSION_SELF_SERVICE_DURATION",
+            "AI_TOOL_MAX_LATENCY",
+            "AI_TOOL_PARAMETER_ACCURACY",
+            "AI_TOOL_SELECTION_ACCURACY",
+            "AI_TOOL_UTILIZATION_ACCURACY",
             "CONTACT_DURATION",
             "CUSTOMER_HOLD_TIME",
             "CUSTOMER_SENTIMENT_SCORE_WITHOUT_AGENT",
@@ -171,6 +225,15 @@ impl ::std::fmt::Display for NumericQuestionPropertyAutomationLabel {
         match self {
             NumericQuestionPropertyAutomationLabel::AgentInteractionAndHoldDuration => write!(f, "AGENT_INTERACTION_AND_HOLD_DURATION"),
             NumericQuestionPropertyAutomationLabel::AgentInteractionDuration => write!(f, "AGENT_INTERACTION_DURATION"),
+            NumericQuestionPropertyAutomationLabel::AiAgentMaxPromptLatency => write!(f, "AI_AGENT_MAX_PROMPT_LATENCY"),
+            NumericQuestionPropertyAutomationLabel::AiSessionCompletenessScore => write!(f, "AI_SESSION_COMPLETENESS_SCORE"),
+            NumericQuestionPropertyAutomationLabel::AiSessionFaithfulnessScore => write!(f, "AI_SESSION_FAITHFULNESS_SCORE"),
+            NumericQuestionPropertyAutomationLabel::AiSessionGoalSuccessRate => write!(f, "AI_SESSION_GOAL_SUCCESS_RATE"),
+            NumericQuestionPropertyAutomationLabel::AiSessionSelfServiceDuration => write!(f, "AI_SESSION_SELF_SERVICE_DURATION"),
+            NumericQuestionPropertyAutomationLabel::AiToolMaxLatency => write!(f, "AI_TOOL_MAX_LATENCY"),
+            NumericQuestionPropertyAutomationLabel::AiToolParameterAccuracy => write!(f, "AI_TOOL_PARAMETER_ACCURACY"),
+            NumericQuestionPropertyAutomationLabel::AiToolSelectionAccuracy => write!(f, "AI_TOOL_SELECTION_ACCURACY"),
+            NumericQuestionPropertyAutomationLabel::AiToolUtilizationAccuracy => write!(f, "AI_TOOL_UTILIZATION_ACCURACY"),
             NumericQuestionPropertyAutomationLabel::ContactDuration => write!(f, "CONTACT_DURATION"),
             NumericQuestionPropertyAutomationLabel::CustomerHoldTime => write!(f, "CUSTOMER_HOLD_TIME"),
             NumericQuestionPropertyAutomationLabel::CustomerSentimentScoreWithoutAgent => write!(f, "CUSTOMER_SENTIMENT_SCORE_WITHOUT_AGENT"),

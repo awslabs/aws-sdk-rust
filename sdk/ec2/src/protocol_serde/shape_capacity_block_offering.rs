@@ -204,6 +204,16 @@ pub fn de_capacity_block_offering(
                 builder = builder.set_zone_type(var_14);
             }
             ,
+            s if s.matches("capacityBlockOfferingSegmentSet") /* CapacityBlockOfferingSegments com.amazonaws.ec2#CapacityBlockOffering$CapacityBlockOfferingSegments */ =>  {
+                let var_15 =
+                    Some(
+                        crate::protocol_serde::shape_capacity_block_offering_segment_set::de_capacity_block_offering_segment_set(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_capacity_block_offering_segments(var_15);
+            }
+            ,
             _ => {}
         }
     }

@@ -91,6 +91,16 @@ static EVALUATIONFORMSECTION_MEMBER_SCORE_THRESHOLDS: ::aws_smithy_schema::Schem
     6,
 )
 .with_list_member(&EVALUATIONFORMSECTION_MEMBER_SCORE_THRESHOLDS_MEMBER);
+static EVALUATIONFORMSECTION_MEMBER_ENABLEMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.connect#EvaluationFormSection$Enablement",
+        "com.amazonaws.connect",
+        "EvaluationFormSection",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "Enablement",
+    7,
+);
 static EVALUATIONFORMSECTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.connect#EvaluationFormSection",
@@ -106,6 +116,7 @@ static EVALUATIONFORMSECTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aw
         &EVALUATIONFORMSECTION_MEMBER_WEIGHT,
         &EVALUATIONFORMSECTION_MEMBER_IS_EXCLUDED_FROM_SCORING,
         &EVALUATIONFORMSECTION_MEMBER_SCORE_THRESHOLDS,
+        &EVALUATIONFORMSECTION_MEMBER_ENABLEMENT,
     ],
 );
 impl crate::types::EvaluationFormSection {
@@ -165,6 +176,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Evaluation
                 },
             )?;
         }
+        if let Some(ref val) = self.enablement {
+            ser.write_struct(&EVALUATIONFORMSECTION_MEMBER_ENABLEMENT, val)?;
+        }
         Ok(())
     }
 }
@@ -223,6 +237,13 @@ impl crate::types::builders::EvaluationFormSectionBuilder {
                             })?;
                             container
                         });
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.enablement = Some(crate::types::EvaluationFormItemEnablementConfiguration::deserialize(deser)?);
                     }
                 }
                 _ => {}

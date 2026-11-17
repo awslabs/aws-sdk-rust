@@ -4,7 +4,7 @@
 /// <p>This data type was a response parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListIdentitySources.html">ListIdentitySources</a> operation. Replaced by <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ConfigurationItem.html">ConfigurationItem</a>.</p>
 #[deprecated(note = "This shape has been replaced by ConfigurationItem")]
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct IdentitySourceItemDetails {
     /// <p>The application client IDs associated with the specified Amazon Cognito user pool that are enabled for this identity source.</p>
     #[deprecated(note = "This attribute has been replaced by configuration.cognitoUserPoolConfiguration.clientIds")]
@@ -47,6 +47,16 @@ impl IdentitySourceItemDetails {
         self.open_id_issuer.as_ref()
     }
 }
+impl ::std::fmt::Debug for IdentitySourceItemDetails {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IdentitySourceItemDetails");
+        formatter.field("client_ids", &"*** Sensitive Data Redacted ***");
+        formatter.field("user_pool_arn", &self.user_pool_arn);
+        formatter.field("discovery_url", &self.discovery_url);
+        formatter.field("open_id_issuer", &self.open_id_issuer);
+        formatter.finish()
+    }
+}
 impl IdentitySourceItemDetails {
     /// Creates a new builder-style object to manufacture [`IdentitySourceItemDetails`](crate::types::IdentitySourceItemDetails).
     pub fn builder() -> crate::types::builders::IdentitySourceItemDetailsBuilder {
@@ -55,7 +65,7 @@ impl IdentitySourceItemDetails {
 }
 
 /// A builder for [`IdentitySourceItemDetails`](crate::types::IdentitySourceItemDetails).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct IdentitySourceItemDetailsBuilder {
     pub(crate) client_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -152,5 +162,15 @@ impl IdentitySourceItemDetailsBuilder {
             discovery_url: self.discovery_url,
             open_id_issuer: self.open_id_issuer,
         }
+    }
+}
+impl ::std::fmt::Debug for IdentitySourceItemDetailsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("IdentitySourceItemDetailsBuilder");
+        formatter.field("client_ids", &"*** Sensitive Data Redacted ***");
+        formatter.field("user_pool_arn", &self.user_pool_arn);
+        formatter.field("discovery_url", &self.discovery_url);
+        formatter.field("open_id_issuer", &self.open_id_issuer);
+        formatter.finish()
     }
 }

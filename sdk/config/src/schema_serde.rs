@@ -105,6 +105,10 @@ pub(crate) mod shape_conformance_pack_input_parameter;
 
 pub(crate) mod shape_conformance_pack_rule_compliance;
 
+pub(crate) mod shape_conformance_pack_scope;
+
+pub(crate) mod shape_conformance_pack_source;
+
 pub(crate) mod shape_conformance_pack_status_detail;
 
 pub(crate) mod shape_conformance_pack_template_validation_exception;
@@ -248,6 +252,8 @@ pub(crate) mod shape_describe_conformance_pack_compliance_output_output;
 pub(crate) mod shape_describe_conformance_pack_status_input_input;
 
 pub(crate) mod shape_describe_conformance_pack_status_output_output;
+
+pub(crate) mod shape_describe_conformance_packs_filters;
 
 pub(crate) mod shape_describe_conformance_packs_input_input;
 

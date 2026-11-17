@@ -18,7 +18,25 @@ pub struct GetDurableExecutionOutput {
     pub error: ::std::option::Option<crate::types::ErrorObject>,
     /// <p>The date and time when the durable execution started, in Unix timestamp format.</p>
     pub start_timestamp: ::aws_smithy_types::DateTime,
-    /// <p>The current status of the durable execution. Valid values are <code>RUNNING</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, and <code>STOPPED</code>.</p>
+    /// <p>The durable execution has one of the following statuses:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RUNNING</code> – The execution is running or waiting for pending operations to complete.</p></li>
+    /// <li>
+    /// <p><code>PAUSING</code> – The execution is waiting for an in-progress invocation to reach its next checkpoint before it pauses.</p></li>
+    /// <li>
+    /// <p><code>PAUSED</code> – The execution is paused, and Lambda doesn't invoke your function.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> – The execution completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The execution completed with an error.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – The execution exceeded its execution timeout.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> – A <code>StopDurableExecution</code> request stopped the execution.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> – A <code>DeleteDurableExecution</code> request is deleting the execution and its data.</p></li>
+    /// </ul>
     pub status: crate::types::ExecutionStatus,
     /// <p>The date and time when the durable execution ended, in Unix timestamp format. This field is only present if the execution has completed (status is <code>SUCCEEDED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>STOPPED</code>).</p>
     pub end_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -30,6 +48,10 @@ pub struct GetDurableExecutionOutput {
     pub execution_data_included: ::std::option::Option<bool>,
     /// <p>Configuration settings for the durable execution, including execution timeout, retention period for execution history, and an optional ARN of the Key Management Service (KMS) customer managed key that is used to encrypt your durable execution's payload data, including input, output, and error payloads.</p>
     pub durable_config: ::std::option::Option<crate::types::DurableConfig>,
+    /// <p>The details of the pause, including when you requested it and whether it pauses the execution timeout. This field is only present when the execution status is <code>PAUSING</code> or <code>PAUSED</code>.</p>
+    pub pause_details: ::std::option::Option<crate::types::PauseDetails>,
+    /// <p>The date and time when the durable execution will time out, in Unix timestamp format. This value includes any extension from time the execution spent paused. While the execution is paused with its execution timeout paused, this value is 366 days after the start time. This field isn't present for completed executions.</p>
+    pub expected_execution_timeout_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetDurableExecutionOutput {
@@ -64,7 +86,25 @@ impl GetDurableExecutionOutput {
     pub fn start_timestamp(&self) -> &::aws_smithy_types::DateTime {
         &self.start_timestamp
     }
-    /// <p>The current status of the durable execution. Valid values are <code>RUNNING</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, and <code>STOPPED</code>.</p>
+    /// <p>The durable execution has one of the following statuses:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RUNNING</code> – The execution is running or waiting for pending operations to complete.</p></li>
+    /// <li>
+    /// <p><code>PAUSING</code> – The execution is waiting for an in-progress invocation to reach its next checkpoint before it pauses.</p></li>
+    /// <li>
+    /// <p><code>PAUSED</code> – The execution is paused, and Lambda doesn't invoke your function.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> – The execution completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The execution completed with an error.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – The execution exceeded its execution timeout.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> – A <code>StopDurableExecution</code> request stopped the execution.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> – A <code>DeleteDurableExecution</code> request is deleting the execution and its data.</p></li>
+    /// </ul>
     pub fn status(&self) -> &crate::types::ExecutionStatus {
         &self.status
     }
@@ -88,6 +128,14 @@ impl GetDurableExecutionOutput {
     pub fn durable_config(&self) -> ::std::option::Option<&crate::types::DurableConfig> {
         self.durable_config.as_ref()
     }
+    /// <p>The details of the pause, including when you requested it and whether it pauses the execution timeout. This field is only present when the execution status is <code>PAUSING</code> or <code>PAUSED</code>.</p>
+    pub fn pause_details(&self) -> ::std::option::Option<&crate::types::PauseDetails> {
+        self.pause_details.as_ref()
+    }
+    /// <p>The date and time when the durable execution will time out, in Unix timestamp format. This value includes any extension from time the execution spent paused. While the execution is paused with its execution timeout paused, this value is 366 days after the start time. This field isn't present for completed executions.</p>
+    pub fn expected_execution_timeout_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.expected_execution_timeout_timestamp.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetDurableExecutionOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -105,6 +153,8 @@ impl ::std::fmt::Debug for GetDurableExecutionOutput {
         formatter.field("trace_header", &self.trace_header);
         formatter.field("execution_data_included", &self.execution_data_included);
         formatter.field("durable_config", &self.durable_config);
+        formatter.field("pause_details", &self.pause_details);
+        formatter.field("expected_execution_timeout_timestamp", &self.expected_execution_timeout_timestamp);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -138,6 +188,8 @@ pub struct GetDurableExecutionOutputBuilder {
     pub(crate) trace_header: ::std::option::Option<crate::types::TraceHeader>,
     pub(crate) execution_data_included: ::std::option::Option<bool>,
     pub(crate) durable_config: ::std::option::Option<crate::types::DurableConfig>,
+    pub(crate) pause_details: ::std::option::Option<crate::types::PauseDetails>,
+    pub(crate) expected_execution_timeout_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl GetDurableExecutionOutputBuilder {
@@ -243,18 +295,72 @@ impl GetDurableExecutionOutputBuilder {
     pub fn get_start_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_timestamp
     }
-    /// <p>The current status of the durable execution. Valid values are <code>RUNNING</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, and <code>STOPPED</code>.</p>
+    /// <p>The durable execution has one of the following statuses:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RUNNING</code> – The execution is running or waiting for pending operations to complete.</p></li>
+    /// <li>
+    /// <p><code>PAUSING</code> – The execution is waiting for an in-progress invocation to reach its next checkpoint before it pauses.</p></li>
+    /// <li>
+    /// <p><code>PAUSED</code> – The execution is paused, and Lambda doesn't invoke your function.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> – The execution completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The execution completed with an error.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – The execution exceeded its execution timeout.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> – A <code>StopDurableExecution</code> request stopped the execution.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> – A <code>DeleteDurableExecution</code> request is deleting the execution and its data.</p></li>
+    /// </ul>
     /// This field is required.
     pub fn status(mut self, input: crate::types::ExecutionStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the durable execution. Valid values are <code>RUNNING</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, and <code>STOPPED</code>.</p>
+    /// <p>The durable execution has one of the following statuses:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RUNNING</code> – The execution is running or waiting for pending operations to complete.</p></li>
+    /// <li>
+    /// <p><code>PAUSING</code> – The execution is waiting for an in-progress invocation to reach its next checkpoint before it pauses.</p></li>
+    /// <li>
+    /// <p><code>PAUSED</code> – The execution is paused, and Lambda doesn't invoke your function.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> – The execution completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The execution completed with an error.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – The execution exceeded its execution timeout.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> – A <code>StopDurableExecution</code> request stopped the execution.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> – A <code>DeleteDurableExecution</code> request is deleting the execution and its data.</p></li>
+    /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExecutionStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the durable execution. Valid values are <code>RUNNING</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, and <code>STOPPED</code>.</p>
+    /// <p>The durable execution has one of the following statuses:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RUNNING</code> – The execution is running or waiting for pending operations to complete.</p></li>
+    /// <li>
+    /// <p><code>PAUSING</code> – The execution is waiting for an in-progress invocation to reach its next checkpoint before it pauses.</p></li>
+    /// <li>
+    /// <p><code>PAUSED</code> – The execution is paused, and Lambda doesn't invoke your function.</p></li>
+    /// <li>
+    /// <p><code>SUCCEEDED</code> – The execution completed successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – The execution completed with an error.</p></li>
+    /// <li>
+    /// <p><code>TIMED_OUT</code> – The execution exceeded its execution timeout.</p></li>
+    /// <li>
+    /// <p><code>STOPPED</code> – A <code>StopDurableExecution</code> request stopped the execution.</p></li>
+    /// <li>
+    /// <p><code>DELETING</code> – A <code>DeleteDurableExecution</code> request is deleting the execution and its data.</p></li>
+    /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ExecutionStatus> {
         &self.status
     }
@@ -328,6 +434,34 @@ impl GetDurableExecutionOutputBuilder {
     pub fn get_durable_config(&self) -> &::std::option::Option<crate::types::DurableConfig> {
         &self.durable_config
     }
+    /// <p>The details of the pause, including when you requested it and whether it pauses the execution timeout. This field is only present when the execution status is <code>PAUSING</code> or <code>PAUSED</code>.</p>
+    pub fn pause_details(mut self, input: crate::types::PauseDetails) -> Self {
+        self.pause_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The details of the pause, including when you requested it and whether it pauses the execution timeout. This field is only present when the execution status is <code>PAUSING</code> or <code>PAUSED</code>.</p>
+    pub fn set_pause_details(mut self, input: ::std::option::Option<crate::types::PauseDetails>) -> Self {
+        self.pause_details = input;
+        self
+    }
+    /// <p>The details of the pause, including when you requested it and whether it pauses the execution timeout. This field is only present when the execution status is <code>PAUSING</code> or <code>PAUSED</code>.</p>
+    pub fn get_pause_details(&self) -> &::std::option::Option<crate::types::PauseDetails> {
+        &self.pause_details
+    }
+    /// <p>The date and time when the durable execution will time out, in Unix timestamp format. This value includes any extension from time the execution spent paused. While the execution is paused with its execution timeout paused, this value is 366 days after the start time. This field isn't present for completed executions.</p>
+    pub fn expected_execution_timeout_timestamp(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.expected_execution_timeout_timestamp = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time when the durable execution will time out, in Unix timestamp format. This value includes any extension from time the execution spent paused. While the execution is paused with its execution timeout paused, this value is 366 days after the start time. This field isn't present for completed executions.</p>
+    pub fn set_expected_execution_timeout_timestamp(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.expected_execution_timeout_timestamp = input;
+        self
+    }
+    /// <p>The date and time when the durable execution will time out, in Unix timestamp format. This value includes any extension from time the execution spent paused. While the execution is paused with its execution timeout paused, this value is 366 days after the start time. This field isn't present for completed executions.</p>
+    pub fn get_expected_execution_timeout_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.expected_execution_timeout_timestamp
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -387,6 +521,8 @@ impl GetDurableExecutionOutputBuilder {
             trace_header: self.trace_header,
             execution_data_included: self.execution_data_included,
             durable_config: self.durable_config,
+            pause_details: self.pause_details,
+            expected_execution_timeout_timestamp: self.expected_execution_timeout_timestamp,
             _request_id: self._request_id,
         })
     }
@@ -407,6 +543,8 @@ impl ::std::fmt::Debug for GetDurableExecutionOutputBuilder {
         formatter.field("trace_header", &self.trace_header);
         formatter.field("execution_data_included", &self.execution_data_included);
         formatter.field("durable_config", &self.durable_config);
+        formatter.field("pause_details", &self.pause_details);
+        formatter.field("expected_execution_timeout_timestamp", &self.expected_execution_timeout_timestamp);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

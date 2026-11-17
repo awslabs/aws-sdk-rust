@@ -27,7 +27,8 @@ impl crate::operation::put_conformance_pack::builders::PutConformancePackInputBu
 /// <p>This API uses the <code>AWSServiceRoleForConfigConforms</code> service-linked role in your account to create conformance pack resources. This service-linked role includes the permissions to create Config rules and remediation configurations, even if your account IAM policies explicitly deny these actions.</p>
 /// </important>
 /// <p>This API creates a service-linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The service-linked role is created only when the role does not exist in your account.</p><note>
-/// <p>You must specify only one of the follow parameters: <code>TemplateS3Uri</code>, <code>TemplateBody</code> or <code>TemplateSSMDocumentDetails</code>.</p>
+/// <p>For custom conformance packs, you must specify only one of <code>TemplateS3Uri</code>, <code>TemplateBody</code>, <code>TemplateSSMDocumentDetails</code>.</p>
+/// <p>For managed conformance packs, you must specify <code>Source</code>. Do not specify <code>TemplateS3Uri</code>, <code>TemplateBody</code>, <code>TemplateSSMDocumentDetails</code>, <code>DeliveryS3Bucket</code>, or <code>DeliveryS3KeyPrefix</code>.</p>
 /// </note> <note>
 /// <p><b>Tags are added at creation and cannot be updated with this operation</b></p>
 /// <p><code>PutConformancePack</code> is an idempotent API. Subsequent requests won't create a duplicate resource if one was already created. If a following request has different <code>tags</code> values, Config will ignore these differences and treat it as an idempotent request of the previous. In this case, <code>tags</code> will not be updated, even if they are different.</p>
@@ -217,12 +218,12 @@ impl PutConformancePackFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_conformance_pack_input_parameters`](Self::set_conformance_pack_input_parameters).
     ///
-    /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
+    /// <p>A list of <code>ConformancePackInputParameter</code> objects. Custom conformance packs can have at most 60 input parameters. Managed conformance packs can have at most 330 input parameters.</p>
     pub fn conformance_pack_input_parameters(mut self, input: crate::types::ConformancePackInputParameter) -> Self {
         self.inner = self.inner.conformance_pack_input_parameters(input);
         self
     }
-    /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
+    /// <p>A list of <code>ConformancePackInputParameter</code> objects. Custom conformance packs can have at most 60 input parameters. Managed conformance packs can have at most 330 input parameters.</p>
     pub fn set_conformance_pack_input_parameters(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>>,
@@ -230,7 +231,7 @@ impl PutConformancePackFluentBuilder {
         self.inner = self.inner.set_conformance_pack_input_parameters(input);
         self
     }
-    /// <p>A list of <code>ConformancePackInputParameter</code> objects.</p>
+    /// <p>A list of <code>ConformancePackInputParameter</code> objects. Custom conformance packs can have at most 60 input parameters. Managed conformance packs can have at most 330 input parameters.</p>
     pub fn get_conformance_pack_input_parameters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConformancePackInputParameter>> {
         self.inner.get_conformance_pack_input_parameters()
     }
@@ -266,5 +267,45 @@ impl PutConformancePackFluentBuilder {
     /// <p>The tags for the conformance pack. Each tag consists of a key and an optional value, both of which you define.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
+    }
+    /// <p>An object of type <code>ConformancePackSource</code>, which contains the identifier of the managed conformance pack that you want to deploy. If you specify a source, Config creates a managed conformance pack. Managed conformance packs are predefined collections of Config rules that are created and maintained by Amazon Web Services.</p><note>
+    /// <p>If you specify a source, you cannot specify <code>TemplateS3Uri</code>, <code>TemplateBody</code>, <code>TemplateSSMDocumentDetails</code>, <code>DeliveryS3Bucket</code>, or <code>DeliveryS3KeyPrefix</code>. You cannot convert an existing conformance pack between a managed conformance pack and a custom conformance pack. You also cannot change the source of an existing managed conformance pack.</p>
+    /// </note>
+    pub fn source(mut self, input: crate::types::ConformancePackSource) -> Self {
+        self.inner = self.inner.source(input);
+        self
+    }
+    /// <p>An object of type <code>ConformancePackSource</code>, which contains the identifier of the managed conformance pack that you want to deploy. If you specify a source, Config creates a managed conformance pack. Managed conformance packs are predefined collections of Config rules that are created and maintained by Amazon Web Services.</p><note>
+    /// <p>If you specify a source, you cannot specify <code>TemplateS3Uri</code>, <code>TemplateBody</code>, <code>TemplateSSMDocumentDetails</code>, <code>DeliveryS3Bucket</code>, or <code>DeliveryS3KeyPrefix</code>. You cannot convert an existing conformance pack between a managed conformance pack and a custom conformance pack. You also cannot change the source of an existing managed conformance pack.</p>
+    /// </note>
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::ConformancePackSource>) -> Self {
+        self.inner = self.inner.set_source(input);
+        self
+    }
+    /// <p>An object of type <code>ConformancePackSource</code>, which contains the identifier of the managed conformance pack that you want to deploy. If you specify a source, Config creates a managed conformance pack. Managed conformance packs are predefined collections of Config rules that are created and maintained by Amazon Web Services.</p><note>
+    /// <p>If you specify a source, you cannot specify <code>TemplateS3Uri</code>, <code>TemplateBody</code>, <code>TemplateSSMDocumentDetails</code>, <code>DeliveryS3Bucket</code>, or <code>DeliveryS3KeyPrefix</code>. You cannot convert an existing conformance pack between a managed conformance pack and a custom conformance pack. You also cannot change the source of an existing managed conformance pack.</p>
+    /// </note>
+    pub fn get_source(&self) -> &::std::option::Option<crate::types::ConformancePackSource> {
+        self.inner.get_source()
+    }
+    /// <p>An object of type <code>ConformancePackScope</code> that defines which resources can trigger an evaluation for Config rules in the conformance pack. The scope can include a tag key and optional tag value. Specify a scope to constrain the resources that can trigger an evaluation for rules in the conformance pack. If you do not specify a scope, all rules in the conformance pack are unscoped.</p><note>
+    /// <p>This field is optional and is supported only for managed conformance packs. If you specify a scope, you must also specify <code>Source</code>.</p>
+    /// </note>
+    pub fn scope(mut self, input: crate::types::ConformancePackScope) -> Self {
+        self.inner = self.inner.scope(input);
+        self
+    }
+    /// <p>An object of type <code>ConformancePackScope</code> that defines which resources can trigger an evaluation for Config rules in the conformance pack. The scope can include a tag key and optional tag value. Specify a scope to constrain the resources that can trigger an evaluation for rules in the conformance pack. If you do not specify a scope, all rules in the conformance pack are unscoped.</p><note>
+    /// <p>This field is optional and is supported only for managed conformance packs. If you specify a scope, you must also specify <code>Source</code>.</p>
+    /// </note>
+    pub fn set_scope(mut self, input: ::std::option::Option<crate::types::ConformancePackScope>) -> Self {
+        self.inner = self.inner.set_scope(input);
+        self
+    }
+    /// <p>An object of type <code>ConformancePackScope</code> that defines which resources can trigger an evaluation for Config rules in the conformance pack. The scope can include a tag key and optional tag value. Specify a scope to constrain the resources that can trigger an evaluation for rules in the conformance pack. If you do not specify a scope, all rules in the conformance pack are unscoped.</p><note>
+    /// <p>This field is optional and is supported only for managed conformance packs. If you specify a scope, you must also specify <code>Source</code>.</p>
+    /// </note>
+    pub fn get_scope(&self) -> &::std::option::Option<crate::types::ConformancePackScope> {
+        self.inner.get_scope()
     }
 }

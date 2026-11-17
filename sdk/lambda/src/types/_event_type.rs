@@ -25,6 +25,8 @@
 ///     EventType::ContextStarted => { /* ... */ },
 ///     EventType::ContextSucceeded => { /* ... */ },
 ///     EventType::ExecutionFailed => { /* ... */ },
+///     EventType::ExecutionPaused => { /* ... */ },
+///     EventType::ExecutionResumed => { /* ... */ },
 ///     EventType::ExecutionStarted => { /* ... */ },
 ///     EventType::ExecutionStopped => { /* ... */ },
 ///     EventType::ExecutionSucceeded => { /* ... */ },
@@ -91,6 +93,10 @@ pub enum EventType {
     #[allow(missing_docs)] // documentation missing in model
     ExecutionFailed,
     #[allow(missing_docs)] // documentation missing in model
+    ExecutionPaused,
+    #[allow(missing_docs)] // documentation missing in model
+    ExecutionResumed,
+    #[allow(missing_docs)] // documentation missing in model
     ExecutionStarted,
     #[allow(missing_docs)] // documentation missing in model
     ExecutionStopped,
@@ -132,6 +138,8 @@ impl ::std::convert::From<&str> for EventType {
             "ContextStarted" => EventType::ContextStarted,
             "ContextSucceeded" => EventType::ContextSucceeded,
             "ExecutionFailed" => EventType::ExecutionFailed,
+            "ExecutionPaused" => EventType::ExecutionPaused,
+            "ExecutionResumed" => EventType::ExecutionResumed,
             "ExecutionStarted" => EventType::ExecutionStarted,
             "ExecutionStopped" => EventType::ExecutionStopped,
             "ExecutionSucceeded" => EventType::ExecutionSucceeded,
@@ -171,6 +179,8 @@ impl EventType {
             EventType::ContextStarted => "ContextStarted",
             EventType::ContextSucceeded => "ContextSucceeded",
             EventType::ExecutionFailed => "ExecutionFailed",
+            EventType::ExecutionPaused => "ExecutionPaused",
+            EventType::ExecutionResumed => "ExecutionResumed",
             EventType::ExecutionStarted => "ExecutionStarted",
             EventType::ExecutionStopped => "ExecutionStopped",
             EventType::ExecutionSucceeded => "ExecutionSucceeded",
@@ -201,6 +211,8 @@ impl EventType {
             "ContextStarted",
             "ContextSucceeded",
             "ExecutionFailed",
+            "ExecutionPaused",
+            "ExecutionResumed",
             "ExecutionStarted",
             "ExecutionStopped",
             "ExecutionSucceeded",
@@ -248,6 +260,8 @@ impl ::std::fmt::Display for EventType {
             EventType::ContextStarted => write!(f, "ContextStarted"),
             EventType::ContextSucceeded => write!(f, "ContextSucceeded"),
             EventType::ExecutionFailed => write!(f, "ExecutionFailed"),
+            EventType::ExecutionPaused => write!(f, "ExecutionPaused"),
+            EventType::ExecutionResumed => write!(f, "ExecutionResumed"),
             EventType::ExecutionStarted => write!(f, "ExecutionStarted"),
             EventType::ExecutionStopped => write!(f, "ExecutionStopped"),
             EventType::ExecutionSucceeded => write!(f, "ExecutionSucceeded"),

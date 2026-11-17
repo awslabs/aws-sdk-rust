@@ -2,7 +2,7 @@
 
 /// <p>API Restrictions on the allowed actions, resources, and referers for an API key resource.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ApiKeyRestrictions {
     /// <p>A list of allowed actions that an API key resource grants permissions to perform. You must have at least one action for each type of resource. For example, if you have a place resource, you must include at least one place action.</p>
     /// <p>The following are valid values for the actions.</p>
@@ -223,6 +223,17 @@ impl ApiKeyRestrictions {
         self.allow_apple_apps.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for ApiKeyRestrictions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ApiKeyRestrictions");
+        formatter.field("allow_actions", &self.allow_actions);
+        formatter.field("allow_resources", &self.allow_resources);
+        formatter.field("allow_referers", &"*** Sensitive Data Redacted ***");
+        formatter.field("allow_android_apps", &self.allow_android_apps);
+        formatter.field("allow_apple_apps", &self.allow_apple_apps);
+        formatter.finish()
+    }
+}
 impl ApiKeyRestrictions {
     /// Creates a new builder-style object to manufacture [`ApiKeyRestrictions`](crate::types::ApiKeyRestrictions).
     pub fn builder() -> crate::types::builders::ApiKeyRestrictionsBuilder {
@@ -231,7 +242,7 @@ impl ApiKeyRestrictions {
 }
 
 /// A builder for [`ApiKeyRestrictions`](crate::types::ApiKeyRestrictions).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct ApiKeyRestrictionsBuilder {
     pub(crate) allow_actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -630,5 +641,16 @@ impl ApiKeyRestrictionsBuilder {
             allow_android_apps: self.allow_android_apps,
             allow_apple_apps: self.allow_apple_apps,
         })
+    }
+}
+impl ::std::fmt::Debug for ApiKeyRestrictionsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("ApiKeyRestrictionsBuilder");
+        formatter.field("allow_actions", &self.allow_actions);
+        formatter.field("allow_resources", &self.allow_resources);
+        formatter.field("allow_referers", &"*** Sensitive Data Redacted ***");
+        formatter.field("allow_android_apps", &self.allow_android_apps);
+        formatter.field("allow_apple_apps", &self.allow_apple_apps);
+        formatter.finish()
     }
 }

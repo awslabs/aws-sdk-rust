@@ -170,6 +170,16 @@ static STREAMDESCRIPTIONSUMMARY_MEMBER_RECORD_DISTRIBUTION_STRATEGY: ::aws_smith
     "RecordDistributionStrategy",
     15,
 );
+static STREAMDESCRIPTIONSUMMARY_MEMBER_QUEUE_COUNT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kinesis#StreamDescriptionSummary$QueueCount",
+        "com.amazonaws.kinesis",
+        "StreamDescriptionSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "QueueCount",
+    16,
+);
 static STREAMDESCRIPTIONSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.kinesis#StreamDescriptionSummary",
@@ -194,6 +204,7 @@ static STREAMDESCRIPTIONSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = :
         &STREAMDESCRIPTIONSUMMARY_MEMBER_MAX_RECORD_SIZE_IN_KIB,
         &STREAMDESCRIPTIONSUMMARY_MEMBER_CHANNEL_COUNT,
         &STREAMDESCRIPTIONSUMMARY_MEMBER_RECORD_DISTRIBUTION_STRATEGY,
+        &STREAMDESCRIPTIONSUMMARY_MEMBER_QUEUE_COUNT,
     ],
 );
 impl crate::types::StreamDescriptionSummary {
@@ -273,6 +284,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::StreamDesc
         }
         if let Some(ref val) = self.record_distribution_strategy {
             ser.write_string(&STREAMDESCRIPTIONSUMMARY_MEMBER_RECORD_DISTRIBUTION_STRATEGY, val.as_str())?;
+        }
+        if let Some(ref val) = self.queue_count {
+            ser.write_integer(&STREAMDESCRIPTIONSUMMARY_MEMBER_QUEUE_COUNT, *val)?;
         }
         Ok(())
     }
@@ -380,6 +394,13 @@ impl crate::types::builders::StreamDescriptionSummaryBuilder {
                         deser.read_null()?;
                     } else {
                         self.record_distribution_strategy = Some(crate::types::RecordDistributionStrategy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.queue_count = Some(deser.read_integer(member)?);
                     }
                 }
                 _ => {}

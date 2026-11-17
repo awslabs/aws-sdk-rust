@@ -161,17 +161,17 @@ impl ListSecurityControlDefinitionsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_providers`](Self::set_providers).
     ///
-    /// <p>A list of cloud providers to filter the security control definitions by. For example, specify <code>Azure</code> to return only controls that evaluate Azure resources.</p>
+    /// <p>A list of cloud providers to filter the security control definitions by. For example, specify <code>Azure</code> to return only controls that evaluate Azure resources, or <code>GCP</code> to return only controls that evaluate GCP resources.</p>
     pub fn providers(mut self, input: crate::types::SecurityControlsProvider) -> Self {
         self.inner = self.inner.providers(input);
         self
     }
-    /// <p>A list of cloud providers to filter the security control definitions by. For example, specify <code>Azure</code> to return only controls that evaluate Azure resources.</p>
+    /// <p>A list of cloud providers to filter the security control definitions by. For example, specify <code>Azure</code> to return only controls that evaluate Azure resources, or <code>GCP</code> to return only controls that evaluate GCP resources.</p>
     pub fn set_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityControlsProvider>>) -> Self {
         self.inner = self.inner.set_providers(input);
         self
     }
-    /// <p>A list of cloud providers to filter the security control definitions by. For example, specify <code>Azure</code> to return only controls that evaluate Azure resources.</p>
+    /// <p>A list of cloud providers to filter the security control definitions by. For example, specify <code>Azure</code> to return only controls that evaluate Azure resources, or <code>GCP</code> to return only controls that evaluate GCP resources.</p>
     pub fn get_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SecurityControlsProvider>> {
         self.inner.get_providers()
     }

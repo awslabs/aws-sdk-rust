@@ -659,6 +659,8 @@ pub use crate::types::_evaluation_status::EvaluationStatus;
 
 pub use crate::types::_evaluation_type::EvaluationType;
 
+pub use crate::types::_evaluation_item_resolution_status::EvaluationItemResolutionStatus;
+
 pub use crate::types::_contact_flow_module_status::ContactFlowModuleStatus;
 
 pub use crate::types::_evaluation_form_version_status::EvaluationFormVersionStatus;
@@ -1129,6 +1131,10 @@ pub use crate::types::_evaluation_contact_participant::EvaluationContactParticip
 
 pub use crate::types::_evaluation_answer_output::EvaluationAnswerOutput;
 
+pub use crate::types::_evaluation_enablement_status::EvaluationEnablementStatus;
+
+pub use crate::types::_evaluation_resolved_source::EvaluationResolvedSource;
+
 pub use crate::types::_replication_status_summary::ReplicationStatusSummary;
 
 pub use crate::types::_available_filter::AvailableFilter;
@@ -1281,11 +1287,11 @@ pub use crate::types::_encryption_type::EncryptionType;
 
 pub use crate::types::_primary_value_response::PrimaryValueResponse;
 
+pub use crate::types::_evaluation_form_item_enablement_configuration::EvaluationFormItemEnablementConfiguration;
+
 pub use crate::types::_evaluation_form_question_type::EvaluationFormQuestionType;
 
 pub use crate::types::_evaluation_form_question_type_properties::EvaluationFormQuestionTypeProperties;
-
-pub use crate::types::_evaluation_form_item_enablement_configuration::EvaluationFormItemEnablementConfiguration;
 
 pub use crate::types::_evaluation_form_question_scoring_configuration::EvaluationFormQuestionScoringConfiguration;
 
@@ -1358,6 +1364,8 @@ pub use crate::types::_conversational_analytics_configuration::ConversationalAna
 pub use crate::types::_contact_analysis_reference_state::ContactAnalysisReferenceState;
 
 pub use crate::types::_contact_participant_role::ContactParticipantRole;
+
+pub use crate::types::_evaluation_form_item_enablement_source::EvaluationFormItemEnablementSource;
 
 pub use crate::types::_instance_replication_status::InstanceReplicationStatus;
 
@@ -1445,6 +1453,10 @@ pub use crate::types::_expression::Expression;
 
 pub use crate::types::_participant_timer_configuration::ParticipantTimerConfiguration;
 
+pub use crate::types::_evaluation_form_item_enablement_condition::EvaluationFormItemEnablementCondition;
+
+pub use crate::types::_evaluation_form_item_enablement_action::EvaluationFormItemEnablementAction;
+
 pub use crate::types::_evaluation_form_numeric_question_properties::EvaluationFormNumericQuestionProperties;
 
 pub use crate::types::_evaluation_form_single_select_question_properties::EvaluationFormSingleSelectQuestionProperties;
@@ -1452,10 +1464,6 @@ pub use crate::types::_evaluation_form_single_select_question_properties::Evalua
 pub use crate::types::_evaluation_form_text_question_properties::EvaluationFormTextQuestionProperties;
 
 pub use crate::types::_evaluation_form_multi_select_question_properties::EvaluationFormMultiSelectQuestionProperties;
-
-pub use crate::types::_evaluation_form_item_enablement_condition::EvaluationFormItemEnablementCondition;
-
-pub use crate::types::_evaluation_form_item_enablement_action::EvaluationFormItemEnablementAction;
 
 pub use crate::types::_question_points_configuration::QuestionPointsConfiguration;
 
@@ -1497,6 +1505,16 @@ pub use crate::types::_evaluation_review_request_comment::EvaluationReviewReques
 
 pub use crate::types::_evaluation_suggested_answer::EvaluationSuggestedAnswer;
 
+pub use crate::types::_evaluation_form_item_enablement_source_type::EvaluationFormItemEnablementSourceType;
+
+pub use crate::types::_evaluation_form_contact_field::EvaluationFormContactField;
+
+pub use crate::types::_evaluation_form_evaluation_metadata_field::EvaluationFormEvaluationMetadataField;
+
+pub use crate::types::_evaluation_form_ai_metrics_field::EvaluationFormAiMetricsField;
+
+pub use crate::types::_evaluation_form_item_enablement_source_value::EvaluationFormItemEnablementSourceValue;
+
 pub use crate::types::_operational_status::OperationalStatus;
 
 pub use crate::types::_real_time_contact_analysis_category_details::RealTimeContactAnalysisCategoryDetails;
@@ -1525,6 +1543,8 @@ pub use crate::types::_participant_timer_type::ParticipantTimerType;
 
 pub use crate::types::_participant_timer_value::ParticipantTimerValue;
 
+pub use crate::types::_evaluation_form_item_enablement_operator::EvaluationFormItemEnablementOperator;
+
 pub use crate::types::_evaluation_form_numeric_question_automation::EvaluationFormNumericQuestionAutomation;
 
 pub use crate::types::_evaluation_form_single_select_question_display_mode::EvaluationFormSingleSelectQuestionDisplayMode;
@@ -1536,8 +1556,6 @@ pub use crate::types::_evaluation_form_text_question_automation::EvaluationFormT
 pub use crate::types::_evaluation_form_multi_select_question_display_mode::EvaluationFormMultiSelectQuestionDisplayMode;
 
 pub use crate::types::_evaluation_form_multi_select_question_automation::EvaluationFormMultiSelectQuestionAutomation;
-
-pub use crate::types::_evaluation_form_item_enablement_operator::EvaluationFormItemEnablementOperator;
 
 pub use crate::types::_metric_filter_number_condition::MetricFilterNumberCondition;
 
@@ -1559,6 +1577,8 @@ pub use crate::types::_evaluation_question_answer_analysis_type::EvaluationQuest
 
 pub use crate::types::_evaluation_question_answer_analysis_details::EvaluationQuestionAnswerAnalysisDetails;
 
+pub use crate::types::_evaluation_form_item_enablement_source_value_type::EvaluationFormItemEnablementSourceValueType;
+
 pub use crate::types::_real_time_contact_analysis_character_interval::RealTimeContactAnalysisCharacterInterval;
 
 pub use crate::types::_artifact_status::ArtifactStatus;
@@ -1573,6 +1593,8 @@ pub use crate::types::_match_criteria::MatchCriteria;
 
 pub use crate::types::_participant_timer_action::ParticipantTimerAction;
 
+pub use crate::types::_evaluation_form_item_enablement_condition_operand::EvaluationFormItemEnablementConditionOperand;
+
 pub use crate::types::_evaluation_form_numeric_question_option::EvaluationFormNumericQuestionOption;
 
 pub use crate::types::_numeric_question_property_value_automation::NumericQuestionPropertyValueAutomation;
@@ -1582,8 +1604,6 @@ pub use crate::types::_evaluation_form_question_automation_answer_source::Evalua
 pub use crate::types::_evaluation_form_single_select_question_option::EvaluationFormSingleSelectQuestionOption;
 
 pub use crate::types::_evaluation_form_multi_select_question_option::EvaluationFormMultiSelectQuestionOption;
-
-pub use crate::types::_evaluation_form_item_enablement_condition_operand::EvaluationFormItemEnablementConditionOperand;
 
 pub use crate::types::_metric_filter_number_condition_comparison::MetricFilterNumberConditionComparison;
 
@@ -1607,6 +1627,8 @@ pub use crate::types::_real_time_contact_analysis_transcript_item_with_character
 
 pub use crate::types::_agents_criteria::AgentsCriteria;
 
+pub use crate::types::_evaluation_form_item_enablement_expression::EvaluationFormItemEnablementExpression;
+
 pub use crate::types::_automatic_fail_configuration::AutomaticFailConfiguration;
 
 pub use crate::types::_question_option_points_configuration::QuestionOptionPointsConfiguration;
@@ -1619,15 +1641,13 @@ pub use crate::types::_evaluation_form_single_select_question_automation_option:
 
 pub use crate::types::_evaluation_form_multi_select_question_automation_option::EvaluationFormMultiSelectQuestionAutomationOption;
 
-pub use crate::types::_evaluation_form_item_enablement_expression::EvaluationFormItemEnablementExpression;
+pub use crate::types::_evaluation_form_item_source_values_comparator::EvaluationFormItemSourceValuesComparator;
 
 pub use crate::types::_single_select_question_rule_category_automation::SingleSelectQuestionRuleCategoryAutomation;
 
+pub use crate::types::_single_select_question_automation_rule::SingleSelectQuestionAutomationRule;
+
 pub use crate::types::_multi_select_question_rule_category_automation::MultiSelectQuestionRuleCategoryAutomation;
-
-pub use crate::types::_evaluation_form_item_enablement_source::EvaluationFormItemEnablementSource;
-
-pub use crate::types::_evaluation_form_item_source_values_comparator::EvaluationFormItemSourceValuesComparator;
 
 pub use crate::types::_evaluation_transcript_point_of_interest::EvaluationTranscriptPointOfInterest;
 
@@ -1637,15 +1657,9 @@ pub use crate::types::_single_select_question_rule_category_automation_condition
 
 pub use crate::types::_multi_select_question_rule_category_automation_condition::MultiSelectQuestionRuleCategoryAutomationCondition;
 
-pub use crate::types::_evaluation_form_item_enablement_source_type::EvaluationFormItemEnablementSourceType;
-
-pub use crate::types::_evaluation_form_item_enablement_source_value::EvaluationFormItemEnablementSourceValue;
-
 pub use crate::types::_evaluation_suggested_answer_transcript_millisecond_offsets::EvaluationSuggestedAnswerTranscriptMillisecondOffsets;
 
 pub use crate::types::_question_rule_category_automation_condition::QuestionRuleCategoryAutomationCondition;
-
-pub use crate::types::_evaluation_form_item_enablement_source_value_type::EvaluationFormItemEnablementSourceValueType;
 
 mod _access_type;
 
@@ -2151,7 +2165,11 @@ mod _evaluation_contact_lens_answer_analysis_details;
 
 mod _evaluation_contact_participant;
 
+mod _evaluation_enablement_status;
+
 mod _evaluation_form;
+
+mod _evaluation_form_ai_metrics_field;
 
 mod _evaluation_form_ai_version_lifecycle;
 
@@ -2161,7 +2179,11 @@ mod _evaluation_form_ai_version_summary;
 
 mod _evaluation_form_auto_evaluation_configuration;
 
+mod _evaluation_form_contact_field;
+
 mod _evaluation_form_content;
+
+mod _evaluation_form_evaluation_metadata_field;
 
 mod _evaluation_form_item;
 
@@ -2271,6 +2293,8 @@ mod _evaluation_form_version_summary;
 
 mod _evaluation_gen_ai_answer_analysis_details;
 
+mod _evaluation_item_resolution_status;
+
 mod _evaluation_metadata;
 
 mod _evaluation_note;
@@ -2280,6 +2304,8 @@ mod _evaluation_question_answer_analysis_details;
 mod _evaluation_question_answer_analysis_type;
 
 mod _evaluation_question_input_details;
+
+mod _evaluation_resolved_source;
 
 mod _evaluation_review_configuration;
 
@@ -3030,6 +3056,8 @@ mod _session_entity_type;
 mod _sign_in_config;
 
 mod _sign_in_distribution;
+
+mod _single_select_question_automation_rule;
 
 mod _single_select_question_rule_category_automation;
 

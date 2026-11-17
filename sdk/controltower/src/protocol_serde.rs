@@ -231,6 +231,8 @@ pub(crate) mod shape_region;
 
 pub(crate) mod shape_enabled_baseline_inheritance_drift;
 
+pub(crate) mod shape_enabled_baseline_source_drift;
+
 pub(crate) mod shape_enabled_control_inheritance_drift;
 
 pub(crate) mod shape_enabled_control_resource_drift;

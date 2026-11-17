@@ -5,8 +5,30 @@
 pub struct CreateAgreementRequestOutput {
     /// <p>The unique identifier of the agreement request created. Use this identifier with <code>AcceptAgreementRequest</code> to accept the agreement.</p>
     pub agreement_request_id: ::std::option::Option<::std::string::String>,
+    /// <p>The type of agreement (for example, <code>PurchaseAgreement</code>).</p>
+    pub agreement_type: ::std::option::Option<::std::string::String>,
     /// <p>Provides details of the charges associated with the agreement request. This is only applicable when a request is created for <code>PurchaseAgreement</code>.</p>
     pub charge_summary: ::std::option::Option<crate::types::ChargeSummary>,
+    /// <p>The current status of the agreement request. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DRAFT</code> – The agreement request has been created but not yet submitted for approval.</p></li>
+    /// <li>
+    /// <p><code>PENDING_APPROVAL</code> – The agreement request is waiting for one or more approvers to decide.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code> – All required approvals have been granted, but the agreement request wasn't accepted automatically. Call <code>AcceptAgreementRequest</code> to accept it. If the call fails, its error explains why.</p></li>
+    /// <li>
+    /// <p><code>ACCEPTED</code> – The agreement request has been accepted and the resulting agreement has been created.</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> – At least one approver rejected the agreement request. It won't proceed.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> – The agreement request was cancelled before completion, by the acceptor or because the acceptor's account left its AWS organization.</p></li>
+    /// </ul>
+    pub status: ::std::option::Option<crate::types::AgreementRequestStatus>,
+    /// <p>Indicates whether the agreement request requires approval before it can be accepted. Values are <code>REQUIRED</code> and <code>NOT_REQUIRED</code>.</p>
+    pub approval_requirement: ::std::option::Option<crate::types::ApprovalRequirement>,
+    /// <p>The date and time when the agreement request was created.</p>
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl CreateAgreementRequestOutput {
@@ -14,9 +36,39 @@ impl CreateAgreementRequestOutput {
     pub fn agreement_request_id(&self) -> ::std::option::Option<&str> {
         self.agreement_request_id.as_deref()
     }
+    /// <p>The type of agreement (for example, <code>PurchaseAgreement</code>).</p>
+    pub fn agreement_type(&self) -> ::std::option::Option<&str> {
+        self.agreement_type.as_deref()
+    }
     /// <p>Provides details of the charges associated with the agreement request. This is only applicable when a request is created for <code>PurchaseAgreement</code>.</p>
     pub fn charge_summary(&self) -> ::std::option::Option<&crate::types::ChargeSummary> {
         self.charge_summary.as_ref()
+    }
+    /// <p>The current status of the agreement request. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DRAFT</code> – The agreement request has been created but not yet submitted for approval.</p></li>
+    /// <li>
+    /// <p><code>PENDING_APPROVAL</code> – The agreement request is waiting for one or more approvers to decide.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code> – All required approvals have been granted, but the agreement request wasn't accepted automatically. Call <code>AcceptAgreementRequest</code> to accept it. If the call fails, its error explains why.</p></li>
+    /// <li>
+    /// <p><code>ACCEPTED</code> – The agreement request has been accepted and the resulting agreement has been created.</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> – At least one approver rejected the agreement request. It won't proceed.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> – The agreement request was cancelled before completion, by the acceptor or because the acceptor's account left its AWS organization.</p></li>
+    /// </ul>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::AgreementRequestStatus> {
+        self.status.as_ref()
+    }
+    /// <p>Indicates whether the agreement request requires approval before it can be accepted. Values are <code>REQUIRED</code> and <code>NOT_REQUIRED</code>.</p>
+    pub fn approval_requirement(&self) -> ::std::option::Option<&crate::types::ApprovalRequirement> {
+        self.approval_requirement.as_ref()
+    }
+    /// <p>The date and time when the agreement request was created.</p>
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateAgreementRequestOutput {
@@ -36,7 +88,11 @@ impl CreateAgreementRequestOutput {
 #[non_exhaustive]
 pub struct CreateAgreementRequestOutputBuilder {
     pub(crate) agreement_request_id: ::std::option::Option<::std::string::String>,
+    pub(crate) agreement_type: ::std::option::Option<::std::string::String>,
     pub(crate) charge_summary: ::std::option::Option<crate::types::ChargeSummary>,
+    pub(crate) status: ::std::option::Option<crate::types::AgreementRequestStatus>,
+    pub(crate) approval_requirement: ::std::option::Option<crate::types::ApprovalRequirement>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     _request_id: Option<String>,
 }
 impl CreateAgreementRequestOutputBuilder {
@@ -54,6 +110,20 @@ impl CreateAgreementRequestOutputBuilder {
     pub fn get_agreement_request_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agreement_request_id
     }
+    /// <p>The type of agreement (for example, <code>PurchaseAgreement</code>).</p>
+    pub fn agreement_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.agreement_type = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The type of agreement (for example, <code>PurchaseAgreement</code>).</p>
+    pub fn set_agreement_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.agreement_type = input;
+        self
+    }
+    /// <p>The type of agreement (for example, <code>PurchaseAgreement</code>).</p>
+    pub fn get_agreement_type(&self) -> &::std::option::Option<::std::string::String> {
+        &self.agreement_type
+    }
     /// <p>Provides details of the charges associated with the agreement request. This is only applicable when a request is created for <code>PurchaseAgreement</code>.</p>
     pub fn charge_summary(mut self, input: crate::types::ChargeSummary) -> Self {
         self.charge_summary = ::std::option::Option::Some(input);
@@ -68,6 +138,90 @@ impl CreateAgreementRequestOutputBuilder {
     pub fn get_charge_summary(&self) -> &::std::option::Option<crate::types::ChargeSummary> {
         &self.charge_summary
     }
+    /// <p>The current status of the agreement request. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DRAFT</code> – The agreement request has been created but not yet submitted for approval.</p></li>
+    /// <li>
+    /// <p><code>PENDING_APPROVAL</code> – The agreement request is waiting for one or more approvers to decide.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code> – All required approvals have been granted, but the agreement request wasn't accepted automatically. Call <code>AcceptAgreementRequest</code> to accept it. If the call fails, its error explains why.</p></li>
+    /// <li>
+    /// <p><code>ACCEPTED</code> – The agreement request has been accepted and the resulting agreement has been created.</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> – At least one approver rejected the agreement request. It won't proceed.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> – The agreement request was cancelled before completion, by the acceptor or because the acceptor's account left its AWS organization.</p></li>
+    /// </ul>
+    pub fn status(mut self, input: crate::types::AgreementRequestStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of the agreement request. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DRAFT</code> – The agreement request has been created but not yet submitted for approval.</p></li>
+    /// <li>
+    /// <p><code>PENDING_APPROVAL</code> – The agreement request is waiting for one or more approvers to decide.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code> – All required approvals have been granted, but the agreement request wasn't accepted automatically. Call <code>AcceptAgreementRequest</code> to accept it. If the call fails, its error explains why.</p></li>
+    /// <li>
+    /// <p><code>ACCEPTED</code> – The agreement request has been accepted and the resulting agreement has been created.</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> – At least one approver rejected the agreement request. It won't proceed.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> – The agreement request was cancelled before completion, by the acceptor or because the acceptor's account left its AWS organization.</p></li>
+    /// </ul>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AgreementRequestStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The current status of the agreement request. Possible values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>DRAFT</code> – The agreement request has been created but not yet submitted for approval.</p></li>
+    /// <li>
+    /// <p><code>PENDING_APPROVAL</code> – The agreement request is waiting for one or more approvers to decide.</p></li>
+    /// <li>
+    /// <p><code>APPROVED</code> – All required approvals have been granted, but the agreement request wasn't accepted automatically. Call <code>AcceptAgreementRequest</code> to accept it. If the call fails, its error explains why.</p></li>
+    /// <li>
+    /// <p><code>ACCEPTED</code> – The agreement request has been accepted and the resulting agreement has been created.</p></li>
+    /// <li>
+    /// <p><code>REJECTED</code> – At least one approver rejected the agreement request. It won't proceed.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> – The agreement request was cancelled before completion, by the acceptor or because the acceptor's account left its AWS organization.</p></li>
+    /// </ul>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::AgreementRequestStatus> {
+        &self.status
+    }
+    /// <p>Indicates whether the agreement request requires approval before it can be accepted. Values are <code>REQUIRED</code> and <code>NOT_REQUIRED</code>.</p>
+    pub fn approval_requirement(mut self, input: crate::types::ApprovalRequirement) -> Self {
+        self.approval_requirement = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the agreement request requires approval before it can be accepted. Values are <code>REQUIRED</code> and <code>NOT_REQUIRED</code>.</p>
+    pub fn set_approval_requirement(mut self, input: ::std::option::Option<crate::types::ApprovalRequirement>) -> Self {
+        self.approval_requirement = input;
+        self
+    }
+    /// <p>Indicates whether the agreement request requires approval before it can be accepted. Values are <code>REQUIRED</code> and <code>NOT_REQUIRED</code>.</p>
+    pub fn get_approval_requirement(&self) -> &::std::option::Option<crate::types::ApprovalRequirement> {
+        &self.approval_requirement
+    }
+    /// <p>The date and time when the agreement request was created.</p>
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The date and time when the agreement request was created.</p>
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input;
+        self
+    }
+    /// <p>The date and time when the agreement request was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -81,7 +235,11 @@ impl CreateAgreementRequestOutputBuilder {
     pub fn build(self) -> crate::operation::create_agreement_request::CreateAgreementRequestOutput {
         crate::operation::create_agreement_request::CreateAgreementRequestOutput {
             agreement_request_id: self.agreement_request_id,
+            agreement_type: self.agreement_type,
             charge_summary: self.charge_summary,
+            status: self.status,
+            approval_requirement: self.approval_requirement,
+            created_at: self.created_at,
             _request_id: self._request_id,
         }
     }

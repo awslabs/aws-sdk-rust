@@ -19,5 +19,15 @@ pub fn ser_peering_connection_options_request(
     if let Some(var_6) = &input.allow_egress_from_local_vpc_to_remote_classic_link {
         scope_5.boolean(*var_6);
     }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("AllowMultipathResilience");
+    if let Some(var_8) = &input.allow_multipath_resilience {
+        scope_7.boolean(*var_8);
+    }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("MultipathResilienceMode");
+    if let Some(var_10) = &input.multipath_resilience_mode {
+        scope_9.string(var_10.as_str());
+    }
     Ok(())
 }

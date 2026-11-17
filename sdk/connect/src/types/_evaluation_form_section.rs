@@ -18,6 +18,8 @@ pub struct EvaluationFormSection {
     pub is_excluded_from_scoring: bool,
     /// <p>The score thresholds for performance categories.</p>
     pub score_thresholds: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormScoreThreshold>>,
+    /// <p>The conditional enablement configuration of the section. Sections use the same enablement model as questions.</p>
+    pub enablement: ::std::option::Option<crate::types::EvaluationFormItemEnablementConfiguration>,
 }
 impl EvaluationFormSection {
     /// <p>The title of the section.</p>
@@ -53,6 +55,10 @@ impl EvaluationFormSection {
     pub fn score_thresholds(&self) -> &[crate::types::EvaluationFormScoreThreshold] {
         self.score_thresholds.as_deref().unwrap_or_default()
     }
+    /// <p>The conditional enablement configuration of the section. Sections use the same enablement model as questions.</p>
+    pub fn enablement(&self) -> ::std::option::Option<&crate::types::EvaluationFormItemEnablementConfiguration> {
+        self.enablement.as_ref()
+    }
 }
 impl EvaluationFormSection {
     /// Creates a new builder-style object to manufacture [`EvaluationFormSection`](crate::types::EvaluationFormSection).
@@ -72,6 +78,7 @@ pub struct EvaluationFormSectionBuilder {
     pub(crate) weight: ::std::option::Option<f64>,
     pub(crate) is_excluded_from_scoring: ::std::option::Option<bool>,
     pub(crate) score_thresholds: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormScoreThreshold>>,
+    pub(crate) enablement: ::std::option::Option<crate::types::EvaluationFormItemEnablementConfiguration>,
 }
 impl EvaluationFormSectionBuilder {
     /// <p>The title of the section.</p>
@@ -186,6 +193,20 @@ impl EvaluationFormSectionBuilder {
     pub fn get_score_thresholds(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EvaluationFormScoreThreshold>> {
         &self.score_thresholds
     }
+    /// <p>The conditional enablement configuration of the section. Sections use the same enablement model as questions.</p>
+    pub fn enablement(mut self, input: crate::types::EvaluationFormItemEnablementConfiguration) -> Self {
+        self.enablement = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The conditional enablement configuration of the section. Sections use the same enablement model as questions.</p>
+    pub fn set_enablement(mut self, input: ::std::option::Option<crate::types::EvaluationFormItemEnablementConfiguration>) -> Self {
+        self.enablement = input;
+        self
+    }
+    /// <p>The conditional enablement configuration of the section. Sections use the same enablement model as questions.</p>
+    pub fn get_enablement(&self) -> &::std::option::Option<crate::types::EvaluationFormItemEnablementConfiguration> {
+        &self.enablement
+    }
     /// Consumes the builder and constructs a [`EvaluationFormSection`](crate::types::EvaluationFormSection).
     /// This method will fail if any of the following fields are not set:
     /// - [`title`](crate::types::builders::EvaluationFormSectionBuilder::title)
@@ -215,6 +236,7 @@ impl EvaluationFormSectionBuilder {
             weight: self.weight.unwrap_or_default(),
             is_excluded_from_scoring: self.is_excluded_from_scoring.unwrap_or_default(),
             score_thresholds: self.score_thresholds,
+            enablement: self.enablement,
         })
     }
 }

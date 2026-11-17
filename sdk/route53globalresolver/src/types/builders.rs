@@ -7,6 +7,14 @@ pub use crate::types::_access_sources_item::AccessSourcesItemBuilder;
 
 pub use crate::types::_access_token_item::AccessTokenItemBuilder;
 
+pub use crate::types::_core_network_endpoints_item::CoreNetworkEndpointsItemBuilder;
+
+pub use crate::types::_core_network_endpoint_dns_ip_input_item::CoreNetworkEndpointDnsIpInputItemBuilder;
+
+pub use crate::types::_core_network_endpoint_dns_ip_item::CoreNetworkEndpointDnsIpItemBuilder;
+
+pub use crate::types::_update_ip_address_entry::UpdateIpAddressEntryBuilder;
+
 pub use crate::types::_dns_view_summary::DnsViewSummaryBuilder;
 
 pub use crate::types::_firewall_domain_lists_item::FirewallDomainListsItemBuilder;

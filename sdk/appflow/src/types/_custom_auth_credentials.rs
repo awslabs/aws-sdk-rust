@@ -2,7 +2,7 @@
 
 /// <p>The custom credentials required for custom authentication.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CustomAuthCredentials {
     /// <p>The custom authentication type that the connector uses.</p>
     pub custom_authentication_type: ::std::string::String,
@@ -20,6 +20,14 @@ impl CustomAuthCredentials {
         self.credentials_map.as_ref()
     }
 }
+impl ::std::fmt::Debug for CustomAuthCredentials {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomAuthCredentials");
+        formatter.field("custom_authentication_type", &self.custom_authentication_type);
+        formatter.field("credentials_map", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl CustomAuthCredentials {
     /// Creates a new builder-style object to manufacture [`CustomAuthCredentials`](crate::types::CustomAuthCredentials).
     pub fn builder() -> crate::types::builders::CustomAuthCredentialsBuilder {
@@ -28,7 +36,7 @@ impl CustomAuthCredentials {
 }
 
 /// A builder for [`CustomAuthCredentials`](crate::types::CustomAuthCredentials).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CustomAuthCredentialsBuilder {
     pub(crate) custom_authentication_type: ::std::option::Option<::std::string::String>,
@@ -90,5 +98,13 @@ impl CustomAuthCredentialsBuilder {
             })?,
             credentials_map: self.credentials_map,
         })
+    }
+}
+impl ::std::fmt::Debug for CustomAuthCredentialsBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomAuthCredentialsBuilder");
+        formatter.field("custom_authentication_type", &self.custom_authentication_type);
+        formatter.field("credentials_map", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

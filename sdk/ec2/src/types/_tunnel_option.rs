@@ -46,6 +46,10 @@ pub struct TunnelOption {
     pub log_options: ::std::option::Option<crate::types::VpnTunnelLogOptions>,
     /// <p>Status of tunnel endpoint lifecycle control feature.</p>
     pub enable_tunnel_lifecycle_control: ::std::option::Option<bool>,
+    /// <p>The permitted additional key exchange rounds for the VPN tunnel for phase 1 IKE negotiations.</p>
+    pub phase1_additional_key_exchanges: ::std::option::Option<::std::vec::Vec<crate::types::VpnAdditionalKeyExchange>>,
+    /// <p>The permitted additional key exchange rounds for the VPN tunnel for phase 2 IKE negotiations.</p>
+    pub phase2_additional_key_exchanges: ::std::option::Option<::std::vec::Vec<crate::types::VpnAdditionalKeyExchange>>,
 }
 impl TunnelOption {
     /// <p>The external IP address of the VPN tunnel.</p>
@@ -146,6 +150,18 @@ impl TunnelOption {
     pub fn enable_tunnel_lifecycle_control(&self) -> ::std::option::Option<bool> {
         self.enable_tunnel_lifecycle_control
     }
+    /// <p>The permitted additional key exchange rounds for the VPN tunnel for phase 1 IKE negotiations.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase1_additional_key_exchanges.is_none()`.
+    pub fn phase1_additional_key_exchanges(&self) -> &[crate::types::VpnAdditionalKeyExchange] {
+        self.phase1_additional_key_exchanges.as_deref().unwrap_or_default()
+    }
+    /// <p>The permitted additional key exchange rounds for the VPN tunnel for phase 2 IKE negotiations.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase2_additional_key_exchanges.is_none()`.
+    pub fn phase2_additional_key_exchanges(&self) -> &[crate::types::VpnAdditionalKeyExchange] {
+        self.phase2_additional_key_exchanges.as_deref().unwrap_or_default()
+    }
 }
 impl ::std::fmt::Debug for TunnelOption {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -171,6 +187,8 @@ impl ::std::fmt::Debug for TunnelOption {
         formatter.field("startup_action", &self.startup_action);
         formatter.field("log_options", &self.log_options);
         formatter.field("enable_tunnel_lifecycle_control", &self.enable_tunnel_lifecycle_control);
+        formatter.field("phase1_additional_key_exchanges", &self.phase1_additional_key_exchanges);
+        formatter.field("phase2_additional_key_exchanges", &self.phase2_additional_key_exchanges);
         formatter.finish()
     }
 }
@@ -206,6 +224,8 @@ pub struct TunnelOptionBuilder {
     pub(crate) startup_action: ::std::option::Option<::std::string::String>,
     pub(crate) log_options: ::std::option::Option<crate::types::VpnTunnelLogOptions>,
     pub(crate) enable_tunnel_lifecycle_control: ::std::option::Option<bool>,
+    pub(crate) phase1_additional_key_exchanges: ::std::option::Option<::std::vec::Vec<crate::types::VpnAdditionalKeyExchange>>,
+    pub(crate) phase2_additional_key_exchanges: ::std::option::Option<::std::vec::Vec<crate::types::VpnAdditionalKeyExchange>>,
 }
 impl TunnelOptionBuilder {
     /// <p>The external IP address of the VPN tunnel.</p>
@@ -556,6 +576,52 @@ impl TunnelOptionBuilder {
     pub fn get_enable_tunnel_lifecycle_control(&self) -> &::std::option::Option<bool> {
         &self.enable_tunnel_lifecycle_control
     }
+    /// Appends an item to `phase1_additional_key_exchanges`.
+    ///
+    /// To override the contents of this collection use [`set_phase1_additional_key_exchanges`](Self::set_phase1_additional_key_exchanges).
+    ///
+    /// <p>The permitted additional key exchange rounds for the VPN tunnel for phase 1 IKE negotiations.</p>
+    pub fn phase1_additional_key_exchanges(mut self, input: crate::types::VpnAdditionalKeyExchange) -> Self {
+        let mut v = self.phase1_additional_key_exchanges.unwrap_or_default();
+        v.push(input);
+        self.phase1_additional_key_exchanges = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The permitted additional key exchange rounds for the VPN tunnel for phase 1 IKE negotiations.</p>
+    pub fn set_phase1_additional_key_exchanges(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VpnAdditionalKeyExchange>>,
+    ) -> Self {
+        self.phase1_additional_key_exchanges = input;
+        self
+    }
+    /// <p>The permitted additional key exchange rounds for the VPN tunnel for phase 1 IKE negotiations.</p>
+    pub fn get_phase1_additional_key_exchanges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpnAdditionalKeyExchange>> {
+        &self.phase1_additional_key_exchanges
+    }
+    /// Appends an item to `phase2_additional_key_exchanges`.
+    ///
+    /// To override the contents of this collection use [`set_phase2_additional_key_exchanges`](Self::set_phase2_additional_key_exchanges).
+    ///
+    /// <p>The permitted additional key exchange rounds for the VPN tunnel for phase 2 IKE negotiations.</p>
+    pub fn phase2_additional_key_exchanges(mut self, input: crate::types::VpnAdditionalKeyExchange) -> Self {
+        let mut v = self.phase2_additional_key_exchanges.unwrap_or_default();
+        v.push(input);
+        self.phase2_additional_key_exchanges = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The permitted additional key exchange rounds for the VPN tunnel for phase 2 IKE negotiations.</p>
+    pub fn set_phase2_additional_key_exchanges(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::VpnAdditionalKeyExchange>>,
+    ) -> Self {
+        self.phase2_additional_key_exchanges = input;
+        self
+    }
+    /// <p>The permitted additional key exchange rounds for the VPN tunnel for phase 2 IKE negotiations.</p>
+    pub fn get_phase2_additional_key_exchanges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::VpnAdditionalKeyExchange>> {
+        &self.phase2_additional_key_exchanges
+    }
     /// Consumes the builder and constructs a [`TunnelOption`](crate::types::TunnelOption).
     pub fn build(self) -> crate::types::TunnelOption {
         crate::types::TunnelOption {
@@ -580,6 +646,8 @@ impl TunnelOptionBuilder {
             startup_action: self.startup_action,
             log_options: self.log_options,
             enable_tunnel_lifecycle_control: self.enable_tunnel_lifecycle_control,
+            phase1_additional_key_exchanges: self.phase1_additional_key_exchanges,
+            phase2_additional_key_exchanges: self.phase2_additional_key_exchanges,
         }
     }
 }
@@ -607,6 +675,8 @@ impl ::std::fmt::Debug for TunnelOptionBuilder {
         formatter.field("startup_action", &self.startup_action);
         formatter.field("log_options", &self.log_options);
         formatter.field("enable_tunnel_lifecycle_control", &self.enable_tunnel_lifecycle_control);
+        formatter.field("phase1_additional_key_exchanges", &self.phase1_additional_key_exchanges);
+        formatter.field("phase2_additional_key_exchanges", &self.phase2_additional_key_exchanges);
         formatter.finish()
     }
 }

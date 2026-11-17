@@ -364,6 +364,40 @@ impl From<crate::operation::create_network_migration_definition::CreateNetworkMi
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_remote_source_action::CreateRemoteSourceActionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_remote_source_action::CreateRemoteSourceActionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_remote_source_action::CreateRemoteSourceActionError> for Error {
+    fn from(err: crate::operation::create_remote_source_action::CreateRemoteSourceActionError) -> Self {
+        match err {
+            crate::operation::create_remote_source_action::CreateRemoteSourceActionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_remote_source_action::CreateRemoteSourceActionError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_remote_source_action::CreateRemoteSourceActionError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::create_remote_source_action::CreateRemoteSourceActionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::create_remote_source_action::CreateRemoteSourceActionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -580,6 +614,40 @@ impl From<crate::operation::delete_network_migration_definition::DeleteNetworkMi
                 Error::ResourceNotFoundException(inner)
             }
             crate::operation::delete_network_migration_definition::DeleteNetworkMigrationDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_remote_source_action::DeleteRemoteSourceActionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_remote_source_action::DeleteRemoteSourceActionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_remote_source_action::DeleteRemoteSourceActionError> for Error {
+    fn from(err: crate::operation::delete_remote_source_action::DeleteRemoteSourceActionError) -> Self {
+        match err {
+            crate::operation::delete_remote_source_action::DeleteRemoteSourceActionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_remote_source_action::DeleteRemoteSourceActionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_remote_source_action::DeleteRemoteSourceActionError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::delete_remote_source_action::DeleteRemoteSourceActionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_remote_source_action::DeleteRemoteSourceActionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1028,6 +1096,47 @@ impl From<crate::operation::get_launch_configuration::GetLaunchConfigurationErro
                 Error::UninitializedAccountException(inner)
             }
             crate::operation::get_launch_configuration::GetLaunchConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_launch_configuration_defaults::GetLaunchConfigurationDefaultsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_launch_configuration_defaults::GetLaunchConfigurationDefaultsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_launch_configuration_defaults::GetLaunchConfigurationDefaultsError> for Error {
+    fn from(err: crate::operation::get_launch_configuration_defaults::GetLaunchConfigurationDefaultsError) -> Self {
+        match err {
+            crate::operation::get_launch_configuration_defaults::GetLaunchConfigurationDefaultsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_launch_configuration_defaults::GetLaunchConfigurationDefaultsError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::get_launch_configuration_defaults::GetLaunchConfigurationDefaultsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_launch_configuration_defaults::GetLaunchConfigurationDefaultsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1682,6 +1791,46 @@ impl From<crate::operation::list_network_migration_executions::ListNetworkMigrat
     }
 }
 impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_network_migration_insights::ListNetworkMigrationInsightsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_network_migration_insights::ListNetworkMigrationInsightsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_network_migration_insights::ListNetworkMigrationInsightsError> for Error {
+    fn from(err: crate::operation::list_network_migration_insights::ListNetworkMigrationInsightsError) -> Self {
+        match err {
+            crate::operation::list_network_migration_insights::ListNetworkMigrationInsightsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_network_migration_insights::ListNetworkMigrationInsightsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_network_migration_insights::ListNetworkMigrationInsightsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_network_migration_insights::ListNetworkMigrationInsightsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_network_migration_insights::ListNetworkMigrationInsightsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_network_migration_mapper_segment_constructs::ListNetworkMigrationMapperSegmentConstructsError,
@@ -1846,6 +1995,144 @@ impl From<crate::operation::list_network_migration_mapping_updates::ListNetworkM
             crate::operation::list_network_migration_mapping_updates::ListNetworkMigrationMappingUpdatesError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_remote_source_action_invocation_results::ListRemoteSourceActionInvocationResultsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_remote_source_action_invocation_results::ListRemoteSourceActionInvocationResultsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_remote_source_action_invocation_results::ListRemoteSourceActionInvocationResultsError> for Error {
+    fn from(err: crate::operation::list_remote_source_action_invocation_results::ListRemoteSourceActionInvocationResultsError) -> Self {
+        match err {
+            crate::operation::list_remote_source_action_invocation_results::ListRemoteSourceActionInvocationResultsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_remote_source_action_invocation_results::ListRemoteSourceActionInvocationResultsError::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
+            crate::operation::list_remote_source_action_invocation_results::ListRemoteSourceActionInvocationResultsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_remote_source_action_invocation_results::ListRemoteSourceActionInvocationResultsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_remote_source_action_invocations::ListRemoteSourceActionInvocationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_remote_source_action_invocations::ListRemoteSourceActionInvocationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_remote_source_action_invocations::ListRemoteSourceActionInvocationsError> for Error {
+    fn from(err: crate::operation::list_remote_source_action_invocations::ListRemoteSourceActionInvocationsError) -> Self {
+        match err {
+            crate::operation::list_remote_source_action_invocations::ListRemoteSourceActionInvocationsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_remote_source_action_invocations::ListRemoteSourceActionInvocationsError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::list_remote_source_action_invocations::ListRemoteSourceActionInvocationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_remote_source_action_invocations::ListRemoteSourceActionInvocationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_remote_source_action_jobs::ListRemoteSourceActionJobsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_remote_source_action_jobs::ListRemoteSourceActionJobsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_remote_source_action_jobs::ListRemoteSourceActionJobsError> for Error {
+    fn from(err: crate::operation::list_remote_source_action_jobs::ListRemoteSourceActionJobsError) -> Self {
+        match err {
+            crate::operation::list_remote_source_action_jobs::ListRemoteSourceActionJobsError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::list_remote_source_action_jobs::ListRemoteSourceActionJobsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_remote_source_action_jobs::ListRemoteSourceActionJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_remote_source_actions::ListRemoteSourceActionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_remote_source_actions::ListRemoteSourceActionsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_remote_source_actions::ListRemoteSourceActionsError> for Error {
+    fn from(err: crate::operation::list_remote_source_actions::ListRemoteSourceActionsError) -> Self {
+        match err {
+            crate::operation::list_remote_source_actions::ListRemoteSourceActionsError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::list_remote_source_actions::ListRemoteSourceActionsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_remote_source_actions::ListRemoteSourceActionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2553,6 +2840,45 @@ impl From<crate::operation::start_network_migration_mapping_update::StartNetwork
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_remote_source_action_job::StartRemoteSourceActionJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_remote_source_action_job::StartRemoteSourceActionJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_remote_source_action_job::StartRemoteSourceActionJobError> for Error {
+    fn from(err: crate::operation::start_remote_source_action_job::StartRemoteSourceActionJobError) -> Self {
+        match err {
+            crate::operation::start_remote_source_action_job::StartRemoteSourceActionJobError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_remote_source_action_job::StartRemoteSourceActionJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_remote_source_action_job::StartRemoteSourceActionJobError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_remote_source_action_job::StartRemoteSourceActionJobError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::start_remote_source_action_job::StartRemoteSourceActionJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_remote_source_action_job::StartRemoteSourceActionJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_replication::StartReplicationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2865,6 +3191,49 @@ impl From<crate::operation::update_launch_configuration::UpdateLaunchConfigurati
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_launch_configuration_defaults::UpdateLaunchConfigurationDefaultsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_launch_configuration_defaults::UpdateLaunchConfigurationDefaultsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_launch_configuration_defaults::UpdateLaunchConfigurationDefaultsError> for Error {
+    fn from(err: crate::operation::update_launch_configuration_defaults::UpdateLaunchConfigurationDefaultsError) -> Self {
+        match err {
+            crate::operation::update_launch_configuration_defaults::UpdateLaunchConfigurationDefaultsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_launch_configuration_defaults::UpdateLaunchConfigurationDefaultsError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::update_launch_configuration_defaults::UpdateLaunchConfigurationDefaultsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_launch_configuration_defaults::UpdateLaunchConfigurationDefaultsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateError,
             R,
         >,
@@ -2989,6 +3358,40 @@ impl From<crate::operation::update_network_migration_mapper_segment::UpdateNetwo
             crate::operation::update_network_migration_mapper_segment::UpdateNetworkMigrationMapperSegmentError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_remote_source_action::UpdateRemoteSourceActionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_remote_source_action::UpdateRemoteSourceActionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_remote_source_action::UpdateRemoteSourceActionError> for Error {
+    fn from(err: crate::operation::update_remote_source_action::UpdateRemoteSourceActionError) -> Self {
+        match err {
+            crate::operation::update_remote_source_action::UpdateRemoteSourceActionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_remote_source_action::UpdateRemoteSourceActionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_remote_source_action::UpdateRemoteSourceActionError::UninitializedAccountException(inner) => {
+                Error::UninitializedAccountException(inner)
+            }
+            crate::operation::update_remote_source_action::UpdateRemoteSourceActionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_remote_source_action::UpdateRemoteSourceActionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

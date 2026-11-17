@@ -3,7 +3,7 @@
 /// <p>The customized parameter values.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CustomParameterValues {
     /// <p>A list of string-type parameter values.</p>
     pub string_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -40,6 +40,16 @@ impl CustomParameterValues {
         self.date_time_values.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for CustomParameterValues {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomParameterValues");
+        formatter.field("string_values", &"*** Sensitive Data Redacted ***");
+        formatter.field("integer_values", &"*** Sensitive Data Redacted ***");
+        formatter.field("decimal_values", &"*** Sensitive Data Redacted ***");
+        formatter.field("date_time_values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl CustomParameterValues {
     /// Creates a new builder-style object to manufacture [`CustomParameterValues`](crate::types::CustomParameterValues).
     pub fn builder() -> crate::types::builders::CustomParameterValuesBuilder {
@@ -48,7 +58,7 @@ impl CustomParameterValues {
 }
 
 /// A builder for [`CustomParameterValues`](crate::types::CustomParameterValues).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct CustomParameterValuesBuilder {
     pub(crate) string_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -145,5 +155,15 @@ impl CustomParameterValuesBuilder {
             decimal_values: self.decimal_values,
             date_time_values: self.date_time_values,
         }
+    }
+}
+impl ::std::fmt::Debug for CustomParameterValuesBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("CustomParameterValuesBuilder");
+        formatter.field("string_values", &"*** Sensitive Data Redacted ***");
+        formatter.field("integer_values", &"*** Sensitive Data Redacted ***");
+        formatter.field("decimal_values", &"*** Sensitive Data Redacted ***");
+        formatter.field("date_time_values", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

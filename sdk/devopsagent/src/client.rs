@@ -213,6 +213,8 @@ mod get_association;
 
 mod get_backlog_task;
 
+mod get_chat;
+
 mod get_operator_app;
 
 mod get_recommendation;
@@ -276,6 +278,8 @@ mod update_asset_file;
 mod update_association;
 
 mod update_backlog_task;
+
+mod update_chat;
 
 mod update_goal;
 

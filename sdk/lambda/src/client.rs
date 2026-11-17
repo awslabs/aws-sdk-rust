@@ -241,6 +241,8 @@ mod delete_capacity_provider;
 
 mod delete_code_signing_config;
 
+mod delete_durable_execution;
+
 mod delete_event_source_mapping;
 
 mod delete_function;
@@ -341,6 +343,8 @@ mod list_tags;
 
 mod list_versions_by_function;
 
+mod pause_durable_execution;
+
 mod publish_layer_version;
 
 mod publish_version;
@@ -364,6 +368,8 @@ mod put_runtime_management_config;
 mod remove_layer_version_permission;
 
 mod remove_permission;
+
+mod resume_durable_execution;
 
 mod send_durable_execution_callback_failure;
 

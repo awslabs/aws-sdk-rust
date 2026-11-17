@@ -22,7 +22,7 @@ pub struct StreamDescriptionSummary {
     /// <p><code>UPDATING</code> - Shards in the stream are being merged or split. Read and write operations continue to work while the stream is in the <code>UPDATING</code> state.</p></li>
     /// </ul>
     pub stream_status: crate::types::StreamStatus,
-    /// <p>Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> ycapacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
+    /// <p>Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
     pub stream_mode_details: ::std::option::Option<crate::types::StreamModeDetails>,
     /// <p>The current retention period, in hours.</p>
     pub retention_period_hours: i32,
@@ -54,7 +54,7 @@ pub struct StreamDescriptionSummary {
     pub key_id: ::std::option::Option<::std::string::String>,
     /// <p>The number of open shards in the stream.</p>
     pub open_shard_count: i32,
-    /// <p>The number of enhanced fan-out consumers registered with the stream.</p>
+    /// <p>The number of enhanced fan-out consumers registered with the stream. Queues are not included in this count, even though they share the stream's registered consumer limit with enhanced fan-out consumers. <code>QueueCount</code> reports the number of queues.</p>
     pub consumer_count: ::std::option::Option<i32>,
     /// <p>The warm throughput in MB/s for the stream. This represents the throughput capacity that will be immediately available for write operations.</p>
     pub warm_throughput: ::std::option::Option<crate::types::WarmThroughputObject>,
@@ -64,6 +64,8 @@ pub struct StreamDescriptionSummary {
     pub channel_count: ::std::option::Option<i32>,
     /// <p>The record distribution strategy that the stream currently uses. A value of <code>AUTO</code> indicates that Amazon Kinesis Data Streams distributes records across shards using service-managed algorithms. A value of <code>USER_PARTITION_KEY</code> indicates that shard placement is determined by the partition key that producers supply. This field is only present for streams that use the on-demand capacity mode.</p>
     pub record_distribution_strategy: ::std::option::Option<crate::types::RecordDistributionStrategy>,
+    /// <p>The number of queues created on the data stream.</p>
+    pub queue_count: ::std::option::Option<i32>,
 }
 impl StreamDescriptionSummary {
     /// <p>The name of the stream being described.</p>
@@ -94,7 +96,7 @@ impl StreamDescriptionSummary {
     pub fn stream_status(&self) -> &crate::types::StreamStatus {
         &self.stream_status
     }
-    /// <p>Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> ycapacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
+    /// <p>Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
     pub fn stream_mode_details(&self) -> ::std::option::Option<&crate::types::StreamModeDetails> {
         self.stream_mode_details.as_ref()
     }
@@ -141,7 +143,7 @@ impl StreamDescriptionSummary {
     pub fn open_shard_count(&self) -> i32 {
         self.open_shard_count
     }
-    /// <p>The number of enhanced fan-out consumers registered with the stream.</p>
+    /// <p>The number of enhanced fan-out consumers registered with the stream. Queues are not included in this count, even though they share the stream's registered consumer limit with enhanced fan-out consumers. <code>QueueCount</code> reports the number of queues.</p>
     pub fn consumer_count(&self) -> ::std::option::Option<i32> {
         self.consumer_count
     }
@@ -160,6 +162,10 @@ impl StreamDescriptionSummary {
     /// <p>The record distribution strategy that the stream currently uses. A value of <code>AUTO</code> indicates that Amazon Kinesis Data Streams distributes records across shards using service-managed algorithms. A value of <code>USER_PARTITION_KEY</code> indicates that shard placement is determined by the partition key that producers supply. This field is only present for streams that use the on-demand capacity mode.</p>
     pub fn record_distribution_strategy(&self) -> ::std::option::Option<&crate::types::RecordDistributionStrategy> {
         self.record_distribution_strategy.as_ref()
+    }
+    /// <p>The number of queues created on the data stream.</p>
+    pub fn queue_count(&self) -> ::std::option::Option<i32> {
+        self.queue_count
     }
 }
 impl StreamDescriptionSummary {
@@ -189,6 +195,7 @@ pub struct StreamDescriptionSummaryBuilder {
     pub(crate) max_record_size_in_kib: ::std::option::Option<i32>,
     pub(crate) channel_count: ::std::option::Option<i32>,
     pub(crate) record_distribution_strategy: ::std::option::Option<crate::types::RecordDistributionStrategy>,
+    pub(crate) queue_count: ::std::option::Option<i32>,
 }
 impl StreamDescriptionSummaryBuilder {
     /// <p>The name of the stream being described.</p>
@@ -280,17 +287,17 @@ impl StreamDescriptionSummaryBuilder {
     pub fn get_stream_status(&self) -> &::std::option::Option<crate::types::StreamStatus> {
         &self.stream_status
     }
-    /// <p>Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> ycapacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
+    /// <p>Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
     pub fn stream_mode_details(mut self, input: crate::types::StreamModeDetails) -> Self {
         self.stream_mode_details = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> ycapacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
+    /// <p>Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
     pub fn set_stream_mode_details(mut self, input: ::std::option::Option<crate::types::StreamModeDetails>) -> Self {
         self.stream_mode_details = input;
         self
     }
-    /// <p>Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> ycapacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
+    /// <p>Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data streams.</p>
     pub fn get_stream_mode_details(&self) -> &::std::option::Option<crate::types::StreamModeDetails> {
         &self.stream_mode_details
     }
@@ -441,17 +448,17 @@ impl StreamDescriptionSummaryBuilder {
     pub fn get_open_shard_count(&self) -> &::std::option::Option<i32> {
         &self.open_shard_count
     }
-    /// <p>The number of enhanced fan-out consumers registered with the stream.</p>
+    /// <p>The number of enhanced fan-out consumers registered with the stream. Queues are not included in this count, even though they share the stream's registered consumer limit with enhanced fan-out consumers. <code>QueueCount</code> reports the number of queues.</p>
     pub fn consumer_count(mut self, input: i32) -> Self {
         self.consumer_count = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of enhanced fan-out consumers registered with the stream.</p>
+    /// <p>The number of enhanced fan-out consumers registered with the stream. Queues are not included in this count, even though they share the stream's registered consumer limit with enhanced fan-out consumers. <code>QueueCount</code> reports the number of queues.</p>
     pub fn set_consumer_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.consumer_count = input;
         self
     }
-    /// <p>The number of enhanced fan-out consumers registered with the stream.</p>
+    /// <p>The number of enhanced fan-out consumers registered with the stream. Queues are not included in this count, even though they share the stream's registered consumer limit with enhanced fan-out consumers. <code>QueueCount</code> reports the number of queues.</p>
     pub fn get_consumer_count(&self) -> &::std::option::Option<i32> {
         &self.consumer_count
     }
@@ -510,6 +517,20 @@ impl StreamDescriptionSummaryBuilder {
     /// <p>The record distribution strategy that the stream currently uses. A value of <code>AUTO</code> indicates that Amazon Kinesis Data Streams distributes records across shards using service-managed algorithms. A value of <code>USER_PARTITION_KEY</code> indicates that shard placement is determined by the partition key that producers supply. This field is only present for streams that use the on-demand capacity mode.</p>
     pub fn get_record_distribution_strategy(&self) -> &::std::option::Option<crate::types::RecordDistributionStrategy> {
         &self.record_distribution_strategy
+    }
+    /// <p>The number of queues created on the data stream.</p>
+    pub fn queue_count(mut self, input: i32) -> Self {
+        self.queue_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The number of queues created on the data stream.</p>
+    pub fn set_queue_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.queue_count = input;
+        self
+    }
+    /// <p>The number of queues created on the data stream.</p>
+    pub fn get_queue_count(&self) -> &::std::option::Option<i32> {
+        &self.queue_count
     }
     /// Consumes the builder and constructs a [`StreamDescriptionSummary`](crate::types::StreamDescriptionSummary).
     /// This method will fail if any of the following fields are not set:
@@ -573,6 +594,7 @@ impl StreamDescriptionSummaryBuilder {
             max_record_size_in_kib: self.max_record_size_in_kib,
             channel_count: self.channel_count,
             record_distribution_strategy: self.record_distribution_strategy,
+            queue_count: self.queue_count,
         })
     }
 }

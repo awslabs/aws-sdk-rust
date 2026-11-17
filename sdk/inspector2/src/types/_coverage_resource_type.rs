@@ -23,6 +23,10 @@
 ///     CoverageResourceType::MicrosoftContainerRegistryRegistryContainerImage => { /* ... */ },
 ///     CoverageResourceType::MicrosoftContainerRegistryRegistryContainerRepository => { /* ... */ },
 ///     CoverageResourceType::MicrosoftWebSites => { /* ... */ },
+///     CoverageResourceType::ArtifactregistryGoogleapisComDockerImage => { /* ... */ },
+///     CoverageResourceType::ArtifactregistryGoogleapisComRepository => { /* ... */ },
+///     CoverageResourceType::CloudfunctionsGoogleapisComFunction => { /* ... */ },
+///     CoverageResourceType::ComputeGoogleapisComInstance => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -73,6 +77,14 @@ pub enum CoverageResourceType {
     MicrosoftContainerRegistryRegistryContainerRepository,
     #[allow(missing_docs)] // documentation missing in model
     MicrosoftWebSites,
+    #[allow(missing_docs)] // documentation missing in model
+    ArtifactregistryGoogleapisComDockerImage,
+    #[allow(missing_docs)] // documentation missing in model
+    ArtifactregistryGoogleapisComRepository,
+    #[allow(missing_docs)] // documentation missing in model
+    CloudfunctionsGoogleapisComFunction,
+    #[allow(missing_docs)] // documentation missing in model
+    ComputeGoogleapisComInstance,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -91,6 +103,10 @@ impl ::std::convert::From<&str> for CoverageResourceType {
             "Microsoft.ContainerRegistry/registry/containerImage" => CoverageResourceType::MicrosoftContainerRegistryRegistryContainerImage,
             "Microsoft.ContainerRegistry/registry/containerRepository" => CoverageResourceType::MicrosoftContainerRegistryRegistryContainerRepository,
             "Microsoft.Web/sites" => CoverageResourceType::MicrosoftWebSites,
+            "artifactregistry.googleapis.com/DockerImage" => CoverageResourceType::ArtifactregistryGoogleapisComDockerImage,
+            "artifactregistry.googleapis.com/Repository" => CoverageResourceType::ArtifactregistryGoogleapisComRepository,
+            "cloudfunctions.googleapis.com/Function" => CoverageResourceType::CloudfunctionsGoogleapisComFunction,
+            "compute.googleapis.com/Instance" => CoverageResourceType::ComputeGoogleapisComInstance,
             other => CoverageResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -117,6 +133,10 @@ impl CoverageResourceType {
             CoverageResourceType::MicrosoftContainerRegistryRegistryContainerImage => "Microsoft.ContainerRegistry/registry/containerImage",
             CoverageResourceType::MicrosoftContainerRegistryRegistryContainerRepository => "Microsoft.ContainerRegistry/registry/containerRepository",
             CoverageResourceType::MicrosoftWebSites => "Microsoft.Web/sites",
+            CoverageResourceType::ArtifactregistryGoogleapisComDockerImage => "artifactregistry.googleapis.com/DockerImage",
+            CoverageResourceType::ArtifactregistryGoogleapisComRepository => "artifactregistry.googleapis.com/Repository",
+            CoverageResourceType::CloudfunctionsGoogleapisComFunction => "cloudfunctions.googleapis.com/Function",
+            CoverageResourceType::ComputeGoogleapisComInstance => "compute.googleapis.com/Instance",
             CoverageResourceType::Unknown(value) => value.as_str(),
         }
     }
@@ -134,6 +154,10 @@ impl CoverageResourceType {
             "Microsoft.ContainerRegistry/registry/containerImage",
             "Microsoft.ContainerRegistry/registry/containerRepository",
             "Microsoft.Web/sites",
+            "artifactregistry.googleapis.com/DockerImage",
+            "artifactregistry.googleapis.com/Repository",
+            "cloudfunctions.googleapis.com/Function",
+            "compute.googleapis.com/Instance",
         ]
     }
 }
@@ -172,6 +196,10 @@ impl ::std::fmt::Display for CoverageResourceType {
                 write!(f, "Microsoft.ContainerRegistry/registry/containerRepository")
             }
             CoverageResourceType::MicrosoftWebSites => write!(f, "Microsoft.Web/sites"),
+            CoverageResourceType::ArtifactregistryGoogleapisComDockerImage => write!(f, "artifactregistry.googleapis.com/DockerImage"),
+            CoverageResourceType::ArtifactregistryGoogleapisComRepository => write!(f, "artifactregistry.googleapis.com/Repository"),
+            CoverageResourceType::CloudfunctionsGoogleapisComFunction => write!(f, "cloudfunctions.googleapis.com/Function"),
+            CoverageResourceType::ComputeGoogleapisComInstance => write!(f, "compute.googleapis.com/Instance"),
             CoverageResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

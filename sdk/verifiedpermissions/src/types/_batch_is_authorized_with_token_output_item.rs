@@ -2,7 +2,7 @@
 
 /// <p>The decision, based on policy evaluation, from an individual authorization request in a <code>BatchIsAuthorizedWithToken</code> API request.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct BatchIsAuthorizedWithTokenOutputItem {
     /// <p>The authorization request that initiated the decision.</p>
     pub request: ::std::option::Option<crate::types::BatchIsAuthorizedWithTokenInputItem>,
@@ -33,6 +33,16 @@ impl BatchIsAuthorizedWithTokenOutputItem {
         self.errors.deref()
     }
 }
+impl ::std::fmt::Debug for BatchIsAuthorizedWithTokenOutputItem {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchIsAuthorizedWithTokenOutputItem");
+        formatter.field("request", &self.request);
+        formatter.field("decision", &self.decision);
+        formatter.field("determining_policies", &self.determining_policies);
+        formatter.field("errors", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl BatchIsAuthorizedWithTokenOutputItem {
     /// Creates a new builder-style object to manufacture [`BatchIsAuthorizedWithTokenOutputItem`](crate::types::BatchIsAuthorizedWithTokenOutputItem).
     pub fn builder() -> crate::types::builders::BatchIsAuthorizedWithTokenOutputItemBuilder {
@@ -41,7 +51,7 @@ impl BatchIsAuthorizedWithTokenOutputItem {
 }
 
 /// A builder for [`BatchIsAuthorizedWithTokenOutputItem`](crate::types::BatchIsAuthorizedWithTokenOutputItem).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct BatchIsAuthorizedWithTokenOutputItemBuilder {
     pub(crate) request: ::std::option::Option<crate::types::BatchIsAuthorizedWithTokenInputItem>,
@@ -149,5 +159,15 @@ impl BatchIsAuthorizedWithTokenOutputItemBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for BatchIsAuthorizedWithTokenOutputItemBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("BatchIsAuthorizedWithTokenOutputItemBuilder");
+        formatter.field("request", &self.request);
+        formatter.field("decision", &self.decision);
+        formatter.field("determining_policies", &self.determining_policies);
+        formatter.field("errors", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

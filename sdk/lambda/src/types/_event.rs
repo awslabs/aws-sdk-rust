@@ -66,6 +66,10 @@ pub struct Event {
     pub callback_timed_out_details: ::std::option::Option<crate::types::CallbackTimedOutDetails>,
     /// <p>Details about a function invocation that completed.</p>
     pub invocation_completed_details: ::std::option::Option<crate::types::InvocationCompletedDetails>,
+    /// <p>The details of an <code>ExecutionPaused</code> event.</p>
+    pub execution_paused_details: ::std::option::Option<crate::types::ExecutionPausedDetails>,
+    /// <p>The details of an <code>ExecutionResumed</code> event.</p>
+    pub execution_resumed_details: ::std::option::Option<crate::types::ExecutionResumedDetails>,
 }
 impl Event {
     /// <p>The type of event that occurred.</p>
@@ -192,6 +196,14 @@ impl Event {
     pub fn invocation_completed_details(&self) -> ::std::option::Option<&crate::types::InvocationCompletedDetails> {
         self.invocation_completed_details.as_ref()
     }
+    /// <p>The details of an <code>ExecutionPaused</code> event.</p>
+    pub fn execution_paused_details(&self) -> ::std::option::Option<&crate::types::ExecutionPausedDetails> {
+        self.execution_paused_details.as_ref()
+    }
+    /// <p>The details of an <code>ExecutionResumed</code> event.</p>
+    pub fn execution_resumed_details(&self) -> ::std::option::Option<&crate::types::ExecutionResumedDetails> {
+        self.execution_resumed_details.as_ref()
+    }
 }
 impl Event {
     /// Creates a new builder-style object to manufacture [`Event`](crate::types::Event).
@@ -235,6 +247,8 @@ pub struct EventBuilder {
     pub(crate) callback_failed_details: ::std::option::Option<crate::types::CallbackFailedDetails>,
     pub(crate) callback_timed_out_details: ::std::option::Option<crate::types::CallbackTimedOutDetails>,
     pub(crate) invocation_completed_details: ::std::option::Option<crate::types::InvocationCompletedDetails>,
+    pub(crate) execution_paused_details: ::std::option::Option<crate::types::ExecutionPausedDetails>,
+    pub(crate) execution_resumed_details: ::std::option::Option<crate::types::ExecutionResumedDetails>,
 }
 impl EventBuilder {
     /// <p>The type of event that occurred.</p>
@@ -671,6 +685,34 @@ impl EventBuilder {
     pub fn get_invocation_completed_details(&self) -> &::std::option::Option<crate::types::InvocationCompletedDetails> {
         &self.invocation_completed_details
     }
+    /// <p>The details of an <code>ExecutionPaused</code> event.</p>
+    pub fn execution_paused_details(mut self, input: crate::types::ExecutionPausedDetails) -> Self {
+        self.execution_paused_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The details of an <code>ExecutionPaused</code> event.</p>
+    pub fn set_execution_paused_details(mut self, input: ::std::option::Option<crate::types::ExecutionPausedDetails>) -> Self {
+        self.execution_paused_details = input;
+        self
+    }
+    /// <p>The details of an <code>ExecutionPaused</code> event.</p>
+    pub fn get_execution_paused_details(&self) -> &::std::option::Option<crate::types::ExecutionPausedDetails> {
+        &self.execution_paused_details
+    }
+    /// <p>The details of an <code>ExecutionResumed</code> event.</p>
+    pub fn execution_resumed_details(mut self, input: crate::types::ExecutionResumedDetails) -> Self {
+        self.execution_resumed_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The details of an <code>ExecutionResumed</code> event.</p>
+    pub fn set_execution_resumed_details(mut self, input: ::std::option::Option<crate::types::ExecutionResumedDetails>) -> Self {
+        self.execution_resumed_details = input;
+        self
+    }
+    /// <p>The details of an <code>ExecutionResumed</code> event.</p>
+    pub fn get_execution_resumed_details(&self) -> &::std::option::Option<crate::types::ExecutionResumedDetails> {
+        &self.execution_resumed_details
+    }
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {
         crate::types::Event {
@@ -705,6 +747,8 @@ impl EventBuilder {
             callback_failed_details: self.callback_failed_details,
             callback_timed_out_details: self.callback_timed_out_details,
             invocation_completed_details: self.invocation_completed_details,
+            execution_paused_details: self.execution_paused_details,
+            execution_resumed_details: self.execution_resumed_details,
         }
     }
 }

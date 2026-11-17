@@ -12,7 +12,11 @@
 /// ```text
 /// # let evaluationformitemenablementsourcevaluetype = unimplemented!();
 /// match evaluationformitemenablementsourcevaluetype {
+///     EvaluationFormItemEnablementSourceValueType::BooleanValue => { /* ... */ },
+///     EvaluationFormItemEnablementSourceValueType::DatetimeValue => { /* ... */ },
+///     EvaluationFormItemEnablementSourceValueType::NumericValue => { /* ... */ },
 ///     EvaluationFormItemEnablementSourceValueType::OptionRefId => { /* ... */ },
+///     EvaluationFormItemEnablementSourceValueType::StringValue => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -42,7 +46,15 @@
 )]
 pub enum EvaluationFormItemEnablementSourceValueType {
     #[allow(missing_docs)] // documentation missing in model
+    BooleanValue,
+    #[allow(missing_docs)] // documentation missing in model
+    DatetimeValue,
+    #[allow(missing_docs)] // documentation missing in model
+    NumericValue,
+    #[allow(missing_docs)] // documentation missing in model
     OptionRefId,
+    #[allow(missing_docs)] // documentation missing in model
+    StringValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -50,7 +62,11 @@ pub enum EvaluationFormItemEnablementSourceValueType {
 impl ::std::convert::From<&str> for EvaluationFormItemEnablementSourceValueType {
     fn from(s: &str) -> Self {
         match s {
+            "BOOLEAN_VALUE" => EvaluationFormItemEnablementSourceValueType::BooleanValue,
+            "DATETIME_VALUE" => EvaluationFormItemEnablementSourceValueType::DatetimeValue,
+            "NUMERIC_VALUE" => EvaluationFormItemEnablementSourceValueType::NumericValue,
             "OPTION_REF_ID" => EvaluationFormItemEnablementSourceValueType::OptionRefId,
+            "STRING_VALUE" => EvaluationFormItemEnablementSourceValueType::StringValue,
             other => {
                 EvaluationFormItemEnablementSourceValueType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned()))
             }
@@ -68,13 +84,17 @@ impl EvaluationFormItemEnablementSourceValueType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EvaluationFormItemEnablementSourceValueType::BooleanValue => "BOOLEAN_VALUE",
+            EvaluationFormItemEnablementSourceValueType::DatetimeValue => "DATETIME_VALUE",
+            EvaluationFormItemEnablementSourceValueType::NumericValue => "NUMERIC_VALUE",
             EvaluationFormItemEnablementSourceValueType::OptionRefId => "OPTION_REF_ID",
+            EvaluationFormItemEnablementSourceValueType::StringValue => "STRING_VALUE",
             EvaluationFormItemEnablementSourceValueType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OPTION_REF_ID"]
+        &["BOOLEAN_VALUE", "DATETIME_VALUE", "NUMERIC_VALUE", "OPTION_REF_ID", "STRING_VALUE"]
     }
 }
 impl ::std::convert::AsRef<str> for EvaluationFormItemEnablementSourceValueType {
@@ -97,7 +117,11 @@ impl EvaluationFormItemEnablementSourceValueType {
 impl ::std::fmt::Display for EvaluationFormItemEnablementSourceValueType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            EvaluationFormItemEnablementSourceValueType::BooleanValue => write!(f, "BOOLEAN_VALUE"),
+            EvaluationFormItemEnablementSourceValueType::DatetimeValue => write!(f, "DATETIME_VALUE"),
+            EvaluationFormItemEnablementSourceValueType::NumericValue => write!(f, "NUMERIC_VALUE"),
             EvaluationFormItemEnablementSourceValueType::OptionRefId => write!(f, "OPTION_REF_ID"),
+            EvaluationFormItemEnablementSourceValueType::StringValue => write!(f, "STRING_VALUE"),
             EvaluationFormItemEnablementSourceValueType::Unknown(value) => write!(f, "{value}"),
         }
     }

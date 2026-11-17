@@ -12,6 +12,10 @@
 /// ```text
 /// # let evaluationformitemenablementsourcetype = unimplemented!();
 /// match evaluationformitemenablementsourcetype {
+///     EvaluationFormItemEnablementSourceType::AiMetrics => { /* ... */ },
+///     EvaluationFormItemEnablementSourceType::Contact => { /* ... */ },
+///     EvaluationFormItemEnablementSourceType::EvaluationMetadata => { /* ... */ },
+///     EvaluationFormItemEnablementSourceType::FormMetadata => { /* ... */ },
 ///     EvaluationFormItemEnablementSourceType::QuestionRefId => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -42,6 +46,14 @@
 )]
 pub enum EvaluationFormItemEnablementSourceType {
     #[allow(missing_docs)] // documentation missing in model
+    AiMetrics,
+    #[allow(missing_docs)] // documentation missing in model
+    Contact,
+    #[allow(missing_docs)] // documentation missing in model
+    EvaluationMetadata,
+    #[allow(missing_docs)] // documentation missing in model
+    FormMetadata,
+    #[allow(missing_docs)] // documentation missing in model
     QuestionRefId,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -50,6 +62,10 @@ pub enum EvaluationFormItemEnablementSourceType {
 impl ::std::convert::From<&str> for EvaluationFormItemEnablementSourceType {
     fn from(s: &str) -> Self {
         match s {
+            "AI_METRICS" => EvaluationFormItemEnablementSourceType::AiMetrics,
+            "CONTACT" => EvaluationFormItemEnablementSourceType::Contact,
+            "EVALUATION_METADATA" => EvaluationFormItemEnablementSourceType::EvaluationMetadata,
+            "FORM_METADATA" => EvaluationFormItemEnablementSourceType::FormMetadata,
             "QUESTION_REF_ID" => EvaluationFormItemEnablementSourceType::QuestionRefId,
             other => EvaluationFormItemEnablementSourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +82,17 @@ impl EvaluationFormItemEnablementSourceType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EvaluationFormItemEnablementSourceType::AiMetrics => "AI_METRICS",
+            EvaluationFormItemEnablementSourceType::Contact => "CONTACT",
+            EvaluationFormItemEnablementSourceType::EvaluationMetadata => "EVALUATION_METADATA",
+            EvaluationFormItemEnablementSourceType::FormMetadata => "FORM_METADATA",
             EvaluationFormItemEnablementSourceType::QuestionRefId => "QUESTION_REF_ID",
             EvaluationFormItemEnablementSourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["QUESTION_REF_ID"]
+        &["AI_METRICS", "CONTACT", "EVALUATION_METADATA", "FORM_METADATA", "QUESTION_REF_ID"]
     }
 }
 impl ::std::convert::AsRef<str> for EvaluationFormItemEnablementSourceType {
@@ -95,6 +115,10 @@ impl EvaluationFormItemEnablementSourceType {
 impl ::std::fmt::Display for EvaluationFormItemEnablementSourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            EvaluationFormItemEnablementSourceType::AiMetrics => write!(f, "AI_METRICS"),
+            EvaluationFormItemEnablementSourceType::Contact => write!(f, "CONTACT"),
+            EvaluationFormItemEnablementSourceType::EvaluationMetadata => write!(f, "EVALUATION_METADATA"),
+            EvaluationFormItemEnablementSourceType::FormMetadata => write!(f, "FORM_METADATA"),
             EvaluationFormItemEnablementSourceType::QuestionRefId => write!(f, "QUESTION_REF_ID"),
             EvaluationFormItemEnablementSourceType::Unknown(value) => write!(f, "{value}"),
         }

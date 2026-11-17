@@ -15,6 +15,8 @@ pub struct PutRumEventsInput {
     pub rum_events: ::std::option::Option<::std::vec::Vec<crate::types::RumEvent>>,
     /// <p>If the app monitor uses a resource-based policy that requires <code>PutRumEvents</code> requests to specify a certain alias, specify that alias here. This alias will be compared to the <code>rum:alias</code> context key in the resource-based policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-resource-policies.html">Using resource-based policies with CloudWatch RUM</a>.</p>
     pub alias: ::std::option::Option<::std::string::String>,
+    /// <p>A JSON serialization of attributes that apply to every event in this batch, such as the browser, device, and operating system of the end user. CloudWatch RUM merges these attributes into each event in the batch, so you send them once for the batch instead of once for each event. If an attribute appears both here and in an individual event's <code>metadata</code>, CloudWatch RUM uses the value in the event's <code>metadata</code>.</p>
+    pub session_metadata: ::std::option::Option<::std::string::String>,
 }
 impl PutRumEventsInput {
     /// <p>The ID of the app monitor that is sending this data.</p>
@@ -43,6 +45,10 @@ impl PutRumEventsInput {
     pub fn alias(&self) -> ::std::option::Option<&str> {
         self.alias.as_deref()
     }
+    /// <p>A JSON serialization of attributes that apply to every event in this batch, such as the browser, device, and operating system of the end user. CloudWatch RUM merges these attributes into each event in the batch, so you send them once for the batch instead of once for each event. If an attribute appears both here and in an individual event's <code>metadata</code>, CloudWatch RUM uses the value in the event's <code>metadata</code>.</p>
+    pub fn session_metadata(&self) -> ::std::option::Option<&str> {
+        self.session_metadata.as_deref()
+    }
 }
 impl PutRumEventsInput {
     /// Creates a new builder-style object to manufacture [`PutRumEventsInput`](crate::operation::put_rum_events::PutRumEventsInput).
@@ -61,6 +67,7 @@ pub struct PutRumEventsInputBuilder {
     pub(crate) user_details: ::std::option::Option<crate::types::UserDetails>,
     pub(crate) rum_events: ::std::option::Option<::std::vec::Vec<crate::types::RumEvent>>,
     pub(crate) alias: ::std::option::Option<::std::string::String>,
+    pub(crate) session_metadata: ::std::option::Option<::std::string::String>,
 }
 impl PutRumEventsInputBuilder {
     /// <p>The ID of the app monitor that is sending this data.</p>
@@ -157,6 +164,20 @@ impl PutRumEventsInputBuilder {
     pub fn get_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias
     }
+    /// <p>A JSON serialization of attributes that apply to every event in this batch, such as the browser, device, and operating system of the end user. CloudWatch RUM merges these attributes into each event in the batch, so you send them once for the batch instead of once for each event. If an attribute appears both here and in an individual event's <code>metadata</code>, CloudWatch RUM uses the value in the event's <code>metadata</code>.</p>
+    pub fn session_metadata(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.session_metadata = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A JSON serialization of attributes that apply to every event in this batch, such as the browser, device, and operating system of the end user. CloudWatch RUM merges these attributes into each event in the batch, so you send them once for the batch instead of once for each event. If an attribute appears both here and in an individual event's <code>metadata</code>, CloudWatch RUM uses the value in the event's <code>metadata</code>.</p>
+    pub fn set_session_metadata(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.session_metadata = input;
+        self
+    }
+    /// <p>A JSON serialization of attributes that apply to every event in this batch, such as the browser, device, and operating system of the end user. CloudWatch RUM merges these attributes into each event in the batch, so you send them once for the batch instead of once for each event. If an attribute appears both here and in an individual event's <code>metadata</code>, CloudWatch RUM uses the value in the event's <code>metadata</code>.</p>
+    pub fn get_session_metadata(&self) -> &::std::option::Option<::std::string::String> {
+        &self.session_metadata
+    }
     /// Consumes the builder and constructs a [`PutRumEventsInput`](crate::operation::put_rum_events::PutRumEventsInput).
     pub fn build(
         self,
@@ -168,6 +189,7 @@ impl PutRumEventsInputBuilder {
             user_details: self.user_details,
             rum_events: self.rum_events,
             alias: self.alias,
+            session_metadata: self.session_metadata,
         })
     }
 }

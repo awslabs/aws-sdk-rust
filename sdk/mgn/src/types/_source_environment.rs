@@ -14,6 +14,7 @@
 /// match sourceenvironment {
 ///     SourceEnvironment::AwsDiscoveryCollector => { /* ... */ },
 ///     SourceEnvironment::CiscoAci => { /* ... */ },
+///     SourceEnvironment::F5Bigip => { /* ... */ },
 ///     SourceEnvironment::FortigateFirewall => { /* ... */ },
 ///     SourceEnvironment::LogicalModel => { /* ... */ },
 ///     SourceEnvironment::MigrationPlanningArtifacts => { /* ... */ },
@@ -54,6 +55,8 @@ pub enum SourceEnvironment {
     #[allow(missing_docs)] // documentation missing in model
     CiscoAci,
     #[allow(missing_docs)] // documentation missing in model
+    F5Bigip,
+    #[allow(missing_docs)] // documentation missing in model
     FortigateFirewall,
     #[allow(missing_docs)] // documentation missing in model
     LogicalModel,
@@ -76,6 +79,7 @@ impl ::std::convert::From<&str> for SourceEnvironment {
         match s {
             "AWS_DISCOVERY_COLLECTOR" => SourceEnvironment::AwsDiscoveryCollector,
             "CISCO_ACI" => SourceEnvironment::CiscoAci,
+            "F5_BIGIP" => SourceEnvironment::F5Bigip,
             "FORTIGATE_FIREWALL" => SourceEnvironment::FortigateFirewall,
             "LOGICAL_MODEL" => SourceEnvironment::LogicalModel,
             "MIGRATION_PLANNING_ARTIFACTS" => SourceEnvironment::MigrationPlanningArtifacts,
@@ -100,6 +104,7 @@ impl SourceEnvironment {
         match self {
             SourceEnvironment::AwsDiscoveryCollector => "AWS_DISCOVERY_COLLECTOR",
             SourceEnvironment::CiscoAci => "CISCO_ACI",
+            SourceEnvironment::F5Bigip => "F5_BIGIP",
             SourceEnvironment::FortigateFirewall => "FORTIGATE_FIREWALL",
             SourceEnvironment::LogicalModel => "LOGICAL_MODEL",
             SourceEnvironment::MigrationPlanningArtifacts => "MIGRATION_PLANNING_ARTIFACTS",
@@ -115,6 +120,7 @@ impl SourceEnvironment {
         &[
             "AWS_DISCOVERY_COLLECTOR",
             "CISCO_ACI",
+            "F5_BIGIP",
             "FORTIGATE_FIREWALL",
             "LOGICAL_MODEL",
             "MIGRATION_PLANNING_ARTIFACTS",
@@ -147,6 +153,7 @@ impl ::std::fmt::Display for SourceEnvironment {
         match self {
             SourceEnvironment::AwsDiscoveryCollector => write!(f, "AWS_DISCOVERY_COLLECTOR"),
             SourceEnvironment::CiscoAci => write!(f, "CISCO_ACI"),
+            SourceEnvironment::F5Bigip => write!(f, "F5_BIGIP"),
             SourceEnvironment::FortigateFirewall => write!(f, "FORTIGATE_FIREWALL"),
             SourceEnvironment::LogicalModel => write!(f, "LOGICAL_MODEL"),
             SourceEnvironment::MigrationPlanningArtifacts => write!(f, "MIGRATION_PLANNING_ARTIFACTS"),

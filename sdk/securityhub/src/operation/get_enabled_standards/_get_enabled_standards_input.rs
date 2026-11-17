@@ -10,7 +10,7 @@ pub struct GetEnabledStandardsInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>A list of cloud providers to filter the enabled standards by. For example, specify <code>Azure</code> to return only enabled standards that evaluate Azure resources.</p>
+    /// <p>A list of cloud providers to filter the enabled standards by. For example, specify <code>Azure</code> to return only enabled standards that evaluate Azure resources, or <code>GCP</code> to return only enabled standards that evaluate GCP resources.</p>
     pub providers: ::std::option::Option<::std::vec::Vec<crate::types::StandardsProvider>>,
 }
 impl GetEnabledStandardsInput {
@@ -29,7 +29,7 @@ impl GetEnabledStandardsInput {
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>A list of cloud providers to filter the enabled standards by. For example, specify <code>Azure</code> to return only enabled standards that evaluate Azure resources.</p>
+    /// <p>A list of cloud providers to filter the enabled standards by. For example, specify <code>Azure</code> to return only enabled standards that evaluate Azure resources, or <code>GCP</code> to return only enabled standards that evaluate GCP resources.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.providers.is_none()`.
     pub fn providers(&self) -> &[crate::types::StandardsProvider] {
@@ -108,19 +108,19 @@ impl GetEnabledStandardsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_providers`](Self::set_providers).
     ///
-    /// <p>A list of cloud providers to filter the enabled standards by. For example, specify <code>Azure</code> to return only enabled standards that evaluate Azure resources.</p>
+    /// <p>A list of cloud providers to filter the enabled standards by. For example, specify <code>Azure</code> to return only enabled standards that evaluate Azure resources, or <code>GCP</code> to return only enabled standards that evaluate GCP resources.</p>
     pub fn providers(mut self, input: crate::types::StandardsProvider) -> Self {
         let mut v = self.providers.unwrap_or_default();
         v.push(input);
         self.providers = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of cloud providers to filter the enabled standards by. For example, specify <code>Azure</code> to return only enabled standards that evaluate Azure resources.</p>
+    /// <p>A list of cloud providers to filter the enabled standards by. For example, specify <code>Azure</code> to return only enabled standards that evaluate Azure resources, or <code>GCP</code> to return only enabled standards that evaluate GCP resources.</p>
     pub fn set_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StandardsProvider>>) -> Self {
         self.providers = input;
         self
     }
-    /// <p>A list of cloud providers to filter the enabled standards by. For example, specify <code>Azure</code> to return only enabled standards that evaluate Azure resources.</p>
+    /// <p>A list of cloud providers to filter the enabled standards by. For example, specify <code>Azure</code> to return only enabled standards that evaluate Azure resources, or <code>GCP</code> to return only enabled standards that evaluate GCP resources.</p>
     pub fn get_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StandardsProvider>> {
         &self.providers
     }

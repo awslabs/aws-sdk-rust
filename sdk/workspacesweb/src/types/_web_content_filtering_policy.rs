@@ -2,7 +2,7 @@
 
 /// <p>The policy that specifies which URLs end users are allowed to access or which URLs or domain categories they are restricted from accessing for enhanced security.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct WebContentFilteringPolicy {
     /// <p>Categories of websites that are blocked on the end user’s browsers.</p>
     pub blocked_categories: ::std::option::Option<::std::vec::Vec<crate::types::Category>>,
@@ -31,6 +31,15 @@ impl WebContentFilteringPolicy {
         self.blocked_urls.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for WebContentFilteringPolicy {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WebContentFilteringPolicy");
+        formatter.field("blocked_categories", &self.blocked_categories);
+        formatter.field("allowed_urls", &"*** Sensitive Data Redacted ***");
+        formatter.field("blocked_urls", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl WebContentFilteringPolicy {
     /// Creates a new builder-style object to manufacture [`WebContentFilteringPolicy`](crate::types::WebContentFilteringPolicy).
     pub fn builder() -> crate::types::builders::WebContentFilteringPolicyBuilder {
@@ -39,7 +48,7 @@ impl WebContentFilteringPolicy {
 }
 
 /// A builder for [`WebContentFilteringPolicy`](crate::types::WebContentFilteringPolicy).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct WebContentFilteringPolicyBuilder {
     pub(crate) blocked_categories: ::std::option::Option<::std::vec::Vec<crate::types::Category>>,
@@ -114,5 +123,14 @@ impl WebContentFilteringPolicyBuilder {
             allowed_urls: self.allowed_urls,
             blocked_urls: self.blocked_urls,
         }
+    }
+}
+impl ::std::fmt::Debug for WebContentFilteringPolicyBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("WebContentFilteringPolicyBuilder");
+        formatter.field("blocked_categories", &self.blocked_categories);
+        formatter.field("allowed_urls", &"*** Sensitive Data Redacted ***");
+        formatter.field("blocked_urls", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

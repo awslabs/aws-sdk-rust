@@ -29,3 +29,10 @@ pub(crate) fn de_request_charged_header(
     let headers = header_map.get_all_bytes("x-amz-request-charged");
     ::aws_smithy_http::header::one_or_none_bytes(headers)
 }
+
+pub(crate) fn de_version_id_header(
+    header_map: &::aws_smithy_runtime_api::http::Headers,
+) -> ::std::result::Result<::std::option::Option<::std::string::String>, ::aws_smithy_http::header::ParseError> {
+    let headers = header_map.get_all_bytes("x-amz-version-id");
+    ::aws_smithy_http::header::one_or_none_bytes(headers)
+}

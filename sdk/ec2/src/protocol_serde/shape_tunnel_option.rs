@@ -274,6 +274,26 @@ pub fn de_tunnel_option(
                 builder = builder.set_enable_tunnel_lifecycle_control(var_21);
             }
             ,
+            s if s.matches("phase1AdditionalKeyExchangeSet") /* Phase1AdditionalKeyExchanges com.amazonaws.ec2#TunnelOption$Phase1AdditionalKeyExchanges */ =>  {
+                let var_22 =
+                    Some(
+                        crate::protocol_serde::shape_additional_key_exchanges_list::de_additional_key_exchanges_list(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_phase1_additional_key_exchanges(var_22);
+            }
+            ,
+            s if s.matches("phase2AdditionalKeyExchangeSet") /* Phase2AdditionalKeyExchanges com.amazonaws.ec2#TunnelOption$Phase2AdditionalKeyExchanges */ =>  {
+                let var_23 =
+                    Some(
+                        crate::protocol_serde::shape_additional_key_exchanges_list::de_additional_key_exchanges_list(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_phase2_additional_key_exchanges(var_23);
+            }
+            ,
             _ => {}
         }
     }

@@ -197,6 +197,8 @@ pub use crate::types::_boolean_condition::BooleanCondition;
 
 pub use crate::types::_parent_child_field_options_mapping::ParentChildFieldOptionsMapping;
 
+pub use crate::types::_auto_include_fields::AutoIncludeFields;
+
 pub use crate::types::_sla_status::SlaStatus;
 
 pub use crate::types::_custom_fields_filter::CustomFieldsFilter;
@@ -230,6 +232,8 @@ mod _audit_event_performed_by;
 mod _audit_event_type;
 
 mod _audit_merge_metadata;
+
+mod _auto_include_fields;
 
 mod _basic_layout;
 

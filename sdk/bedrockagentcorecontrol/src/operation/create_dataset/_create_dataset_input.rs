@@ -112,7 +112,6 @@ impl CreateDatasetInputBuilder {
         &self.description
     }
     /// <p>Source of initial examples. Provide either inline examples or an S3 URI pointing to a JSONL file.</p>
-    /// This field is required.
     pub fn source(mut self, input: crate::types::DataSourceType) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
@@ -127,7 +126,6 @@ impl CreateDatasetInputBuilder {
         &self.source
     }
     /// <p>Versioned schema type governing the structure of examples. Immutable after creation.</p>
-    /// This field is required.
     pub fn schema_type(mut self, input: crate::types::DatasetSchemaType) -> Self {
         self.schema_type = ::std::option::Option::Some(input);
         self

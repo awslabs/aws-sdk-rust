@@ -10,6 +10,8 @@ pub enum OutputConfig {
     ContextualMetadata(crate::types::ContextualMetadataConfig),
     /// <p>The output config type that applies to the cropping feature.</p>
     Cropping(crate::types::CroppingConfig),
+    /// <p>The output config type that applies to a function.</p>
+    Function(crate::types::FunctionConfig),
     /// <p>The output config type that applies to the smart subtitling feature.</p>
     Subtitling(crate::types::SubtitlingConfig),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -61,6 +63,19 @@ impl OutputConfig {
     /// Returns true if this is a [`Cropping`](crate::types::OutputConfig::Cropping).
     pub fn is_cropping(&self) -> bool {
         self.as_cropping().is_ok()
+    }
+    /// Tries to convert the enum instance into [`Function`](crate::types::OutputConfig::Function), extracting the inner [`FunctionConfig`](crate::types::FunctionConfig).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_function(&self) -> ::std::result::Result<&crate::types::FunctionConfig, &Self> {
+        if let OutputConfig::Function(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`Function`](crate::types::OutputConfig::Function).
+    pub fn is_function(&self) -> bool {
+        self.as_function().is_ok()
     }
     /// Tries to convert the enum instance into [`Subtitling`](crate::types::OutputConfig::Subtitling), extracting the inner [`SubtitlingConfig`](crate::types::SubtitlingConfig).
     /// Returns `Err(&Self)` if it can't be converted.

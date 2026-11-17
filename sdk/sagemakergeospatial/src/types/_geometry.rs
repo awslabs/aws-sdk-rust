@@ -2,7 +2,7 @@
 
 /// <p>The structure representing a Geometry in terms of Type and Coordinates as per GeoJson spec.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct Geometry {
     /// <p>GeoJson Geometry types like Polygon and MultiPolygon.</p>
     pub r#type: ::std::string::String,
@@ -21,6 +21,14 @@ impl Geometry {
         self.coordinates.deref()
     }
 }
+impl ::std::fmt::Debug for Geometry {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("Geometry");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("coordinates", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl Geometry {
     /// Creates a new builder-style object to manufacture [`Geometry`](crate::types::Geometry).
     pub fn builder() -> crate::types::builders::GeometryBuilder {
@@ -29,7 +37,7 @@ impl Geometry {
 }
 
 /// A builder for [`Geometry`](crate::types::Geometry).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct GeometryBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
@@ -90,5 +98,13 @@ impl GeometryBuilder {
                 )
             })?,
         })
+    }
+}
+impl ::std::fmt::Debug for GeometryBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("GeometryBuilder");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("coordinates", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

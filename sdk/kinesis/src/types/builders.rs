@@ -9,6 +9,10 @@ pub use crate::types::_channel_logging_configuration::ChannelLoggingConfiguratio
 
 pub use crate::types::_channel_description::ChannelDescriptionBuilder;
 
+pub use crate::types::_queue_attributes::QueueAttributesBuilder;
+
+pub use crate::types::_queue_description::QueueDescriptionBuilder;
+
 pub use crate::types::_stream_mode_details::StreamModeDetailsBuilder;
 
 pub use crate::types::_minimum_throughput_billing_commitment_output::MinimumThroughputBillingCommitmentOutputBuilder;
@@ -35,6 +39,18 @@ pub use crate::types::_channel_logging_update_input::ChannelLoggingUpdateInputBu
 
 pub use crate::types::_warm_throughput_object::WarmThroughputObjectBuilder;
 
+pub use crate::types::_acknowledge_dead_letter_queue_records_request_entry::AcknowledgeDeadLetterQueueRecordsRequestEntryBuilder;
+
+pub use crate::types::_acknowledge_dead_letter_queue_records_result_entry::AcknowledgeDeadLetterQueueRecordsResultEntryBuilder;
+
+pub use crate::types::_acknowledge_dead_letter_queue_records_error_entry::AcknowledgeDeadLetterQueueRecordsErrorEntryBuilder;
+
+pub use crate::types::_acknowledge_queue_records_request_entry::AcknowledgeQueueRecordsRequestEntryBuilder;
+
+pub use crate::types::_acknowledge_queue_records_result_entry::AcknowledgeQueueRecordsResultEntryBuilder;
+
+pub use crate::types::_acknowledge_queue_records_error_entry::AcknowledgeQueueRecordsErrorEntryBuilder;
+
 pub use crate::types::_channel_stream_configuration::ChannelStreamConfigurationBuilder;
 
 pub use crate::types::_dead_letter_queue_s3_configuration::DeadLetterQueueS3ConfigurationBuilder;
@@ -47,6 +63,10 @@ pub use crate::types::_s3_destination_description::S3DestinationDescriptionBuild
 
 pub use crate::types::_s3_tables_destination_description::S3TablesDestinationDescriptionBuilder;
 
+pub use crate::types::_queue_stream_configuration::QueueStreamConfigurationBuilder;
+
+pub use crate::types::_dead_letter_configuration::DeadLetterConfigurationBuilder;
+
 pub use crate::types::_record::RecordBuilder;
 
 pub use crate::types::_child_shard::ChildShardBuilder;
@@ -54,6 +74,10 @@ pub use crate::types::_child_shard::ChildShardBuilder;
 pub use crate::types::_stream_filter::StreamFilterBuilder;
 
 pub use crate::types::_channel_summary::ChannelSummaryBuilder;
+
+pub use crate::types::_queue_stream_filter::QueueStreamFilterBuilder;
+
+pub use crate::types::_queue_summary::QueueSummaryBuilder;
 
 pub use crate::types::_shard::ShardBuilder;
 
@@ -65,15 +89,37 @@ pub use crate::types::_put_records_request_entry::PutRecordsRequestEntryBuilder;
 
 pub use crate::types::_put_records_result_entry::PutRecordsResultEntryBuilder;
 
+pub use crate::types::_queue_record::QueueRecordBuilder;
+
+pub use crate::types::_restore_dead_letter_queue_records_request_entry::RestoreDeadLetterQueueRecordsRequestEntryBuilder;
+
+pub use crate::types::_restore_dead_letter_queue_records_result_entry::RestoreDeadLetterQueueRecordsResultEntryBuilder;
+
+pub use crate::types::_restore_dead_letter_queue_records_error_entry::RestoreDeadLetterQueueRecordsErrorEntryBuilder;
+
 pub use crate::types::_subscribe_to_shard_event::SubscribeToShardEventBuilder;
 
 pub use crate::types::_cloud_watch_logs_update_input::CloudWatchLogsUpdateInputBuilder;
+
+pub use crate::types::_update_dead_letter_queue_records_visibility_request_entry::UpdateDeadLetterQueueRecordsVisibilityRequestEntryBuilder;
+
+pub use crate::types::_update_dead_letter_queue_records_visibility_result_entry::UpdateDeadLetterQueueRecordsVisibilityResultEntryBuilder;
+
+pub use crate::types::_update_dead_letter_queue_records_visibility_error_entry::UpdateDeadLetterQueueRecordsVisibilityErrorEntryBuilder;
+
+pub use crate::types::_update_queue_records_visibility_request_entry::UpdateQueueRecordsVisibilityRequestEntryBuilder;
+
+pub use crate::types::_update_queue_records_visibility_result_entry::UpdateQueueRecordsVisibilityResultEntryBuilder;
+
+pub use crate::types::_update_queue_records_visibility_error_entry::UpdateQueueRecordsVisibilityErrorEntryBuilder;
 
 pub use crate::types::_record_configuration::RecordConfigurationBuilder;
 
 pub use crate::types::_s3_tables_configuration::S3TablesConfigurationBuilder;
 
 pub use crate::types::_channel_stream_description::ChannelStreamDescriptionBuilder;
+
+pub use crate::types::_queue_starting_position::QueueStartingPositionBuilder;
 
 pub use crate::types::_enhanced_metrics::EnhancedMetricsBuilder;
 
@@ -84,5 +130,7 @@ pub use crate::types::_sequence_number_range::SequenceNumberRangeBuilder;
 pub use crate::types::_partition_spec::PartitionSpecBuilder;
 
 pub use crate::types::_channel_stream_identifier::ChannelStreamIdentifierBuilder;
+
+pub use crate::types::_queue_stream_identifier::QueueStreamIdentifierBuilder;
 
 pub use crate::types::_partition_field::PartitionFieldBuilder;

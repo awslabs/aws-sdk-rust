@@ -18,24 +18,27 @@ pub fn ser_create_global_resolver_input_input(
     if let Some(var_5) = &input.observability_region {
         object.key("observabilityRegion").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.regions {
-        let mut array_7 = object.key("regions").start_array();
-        for item_8 in var_6 {
-            {
-                array_7.value().string(item_8.as_str());
-            }
-        }
-        array_7.finish();
+    if let Some(var_6) = &input.public_ip_status {
+        object.key("publicIpStatus").string(var_6.as_str());
     }
-    if let Some(var_9) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_10 = object.key("tags").start_object();
-        for (key_11, value_12) in var_9 {
+    if let Some(var_7) = &input.regions {
+        let mut array_8 = object.key("regions").start_array();
+        for item_9 in var_7 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        object_10.finish();
+        array_8.finish();
+    }
+    if let Some(var_10) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("tags").start_object();
+        for (key_12, value_13) in var_10 {
+            {
+                object_11.key(key_12.as_str()).string(value_13.as_str());
+            }
+        }
+        object_11.finish();
     }
     Ok(())
 }

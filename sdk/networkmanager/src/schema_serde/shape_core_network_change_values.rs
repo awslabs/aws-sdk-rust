@@ -239,6 +239,16 @@ static CORENETWORKCHANGEVALUES_MEMBER_ROUTING_POLICY_ASSOCIATION_DETAILS: ::aws_
         16,
     )
     .with_list_member(&CORENETWORKCHANGEVALUES_MEMBER_ROUTING_POLICY_ASSOCIATION_DETAILS_MEMBER);
+static CORENETWORKCHANGEVALUES_MEMBER_MULTIPATH_RESILIENCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.networkmanager#CoreNetworkChangeValues$MultipathResilience",
+        "com.amazonaws.networkmanager",
+        "CoreNetworkChangeValues",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "MultipathResilience",
+    17,
+);
 static CORENETWORKCHANGEVALUES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.networkmanager#CoreNetworkChangeValues",
@@ -264,6 +274,7 @@ static CORENETWORKCHANGEVALUES_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::
         &CORENETWORKCHANGEVALUES_MEMBER_PEER_EDGE_LOCATIONS,
         &CORENETWORKCHANGEVALUES_MEMBER_ATTACHMENT_ID,
         &CORENETWORKCHANGEVALUES_MEMBER_ROUTING_POLICY_ASSOCIATION_DETAILS,
+        &CORENETWORKCHANGEVALUES_MEMBER_MULTIPATH_RESILIENCE,
     ],
 );
 impl crate::types::CoreNetworkChangeValues {
@@ -381,6 +392,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::CoreNetwor
                     Ok(())
                 },
             )?;
+        }
+        if let Some(ref val) = self.multipath_resilience {
+            ser.write_struct(&CORENETWORKCHANGEVALUES_MEMBER_MULTIPATH_RESILIENCE, val)?;
         }
         Ok(())
     }
@@ -518,6 +532,13 @@ impl crate::types::builders::CoreNetworkChangeValuesBuilder {
                             })?;
                             container
                         });
+                    }
+                }
+                Some(17) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.multipath_resilience = Some(crate::types::MultipathResilienceChangeValues::deserialize(deser)?);
                     }
                 }
                 _ => {}

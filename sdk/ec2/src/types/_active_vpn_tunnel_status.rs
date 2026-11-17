@@ -22,6 +22,10 @@ pub struct ActiveVpnTunnelStatus {
     pub provisioning_status: ::std::option::Option<crate::types::VpnTunnelProvisioningStatus>,
     /// <p>The reason for the current provisioning status.</p>
     pub provisioning_status_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The additional key exchanges negotiated in Phase 1 IKE negotiations.</p>
+    pub phase1_additional_key_exchanges: ::std::option::Option<::std::vec::Vec<crate::types::ActiveVpnTunnelAdditionalKeyExchange>>,
+    /// <p>The additional key exchanges negotiated in Phase 2 IKE negotiations.</p>
+    pub phase2_additional_key_exchanges: ::std::option::Option<::std::vec::Vec<crate::types::ActiveVpnTunnelAdditionalKeyExchange>>,
 }
 impl ActiveVpnTunnelStatus {
     /// <p>The encryption algorithm negotiated in Phase 1 IKE negotiations.</p>
@@ -60,6 +64,18 @@ impl ActiveVpnTunnelStatus {
     pub fn provisioning_status_reason(&self) -> ::std::option::Option<&str> {
         self.provisioning_status_reason.as_deref()
     }
+    /// <p>The additional key exchanges negotiated in Phase 1 IKE negotiations.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase1_additional_key_exchanges.is_none()`.
+    pub fn phase1_additional_key_exchanges(&self) -> &[crate::types::ActiveVpnTunnelAdditionalKeyExchange] {
+        self.phase1_additional_key_exchanges.as_deref().unwrap_or_default()
+    }
+    /// <p>The additional key exchanges negotiated in Phase 2 IKE negotiations.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.phase2_additional_key_exchanges.is_none()`.
+    pub fn phase2_additional_key_exchanges(&self) -> &[crate::types::ActiveVpnTunnelAdditionalKeyExchange] {
+        self.phase2_additional_key_exchanges.as_deref().unwrap_or_default()
+    }
 }
 impl ActiveVpnTunnelStatus {
     /// Creates a new builder-style object to manufacture [`ActiveVpnTunnelStatus`](crate::types::ActiveVpnTunnelStatus).
@@ -81,6 +97,8 @@ pub struct ActiveVpnTunnelStatusBuilder {
     pub(crate) ike_version: ::std::option::Option<::std::string::String>,
     pub(crate) provisioning_status: ::std::option::Option<crate::types::VpnTunnelProvisioningStatus>,
     pub(crate) provisioning_status_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) phase1_additional_key_exchanges: ::std::option::Option<::std::vec::Vec<crate::types::ActiveVpnTunnelAdditionalKeyExchange>>,
+    pub(crate) phase2_additional_key_exchanges: ::std::option::Option<::std::vec::Vec<crate::types::ActiveVpnTunnelAdditionalKeyExchange>>,
 }
 impl ActiveVpnTunnelStatusBuilder {
     /// <p>The encryption algorithm negotiated in Phase 1 IKE negotiations.</p>
@@ -209,6 +227,52 @@ impl ActiveVpnTunnelStatusBuilder {
     pub fn get_provisioning_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.provisioning_status_reason
     }
+    /// Appends an item to `phase1_additional_key_exchanges`.
+    ///
+    /// To override the contents of this collection use [`set_phase1_additional_key_exchanges`](Self::set_phase1_additional_key_exchanges).
+    ///
+    /// <p>The additional key exchanges negotiated in Phase 1 IKE negotiations.</p>
+    pub fn phase1_additional_key_exchanges(mut self, input: crate::types::ActiveVpnTunnelAdditionalKeyExchange) -> Self {
+        let mut v = self.phase1_additional_key_exchanges.unwrap_or_default();
+        v.push(input);
+        self.phase1_additional_key_exchanges = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The additional key exchanges negotiated in Phase 1 IKE negotiations.</p>
+    pub fn set_phase1_additional_key_exchanges(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveVpnTunnelAdditionalKeyExchange>>,
+    ) -> Self {
+        self.phase1_additional_key_exchanges = input;
+        self
+    }
+    /// <p>The additional key exchanges negotiated in Phase 1 IKE negotiations.</p>
+    pub fn get_phase1_additional_key_exchanges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveVpnTunnelAdditionalKeyExchange>> {
+        &self.phase1_additional_key_exchanges
+    }
+    /// Appends an item to `phase2_additional_key_exchanges`.
+    ///
+    /// To override the contents of this collection use [`set_phase2_additional_key_exchanges`](Self::set_phase2_additional_key_exchanges).
+    ///
+    /// <p>The additional key exchanges negotiated in Phase 2 IKE negotiations.</p>
+    pub fn phase2_additional_key_exchanges(mut self, input: crate::types::ActiveVpnTunnelAdditionalKeyExchange) -> Self {
+        let mut v = self.phase2_additional_key_exchanges.unwrap_or_default();
+        v.push(input);
+        self.phase2_additional_key_exchanges = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The additional key exchanges negotiated in Phase 2 IKE negotiations.</p>
+    pub fn set_phase2_additional_key_exchanges(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ActiveVpnTunnelAdditionalKeyExchange>>,
+    ) -> Self {
+        self.phase2_additional_key_exchanges = input;
+        self
+    }
+    /// <p>The additional key exchanges negotiated in Phase 2 IKE negotiations.</p>
+    pub fn get_phase2_additional_key_exchanges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ActiveVpnTunnelAdditionalKeyExchange>> {
+        &self.phase2_additional_key_exchanges
+    }
     /// Consumes the builder and constructs a [`ActiveVpnTunnelStatus`](crate::types::ActiveVpnTunnelStatus).
     pub fn build(self) -> crate::types::ActiveVpnTunnelStatus {
         crate::types::ActiveVpnTunnelStatus {
@@ -221,6 +285,8 @@ impl ActiveVpnTunnelStatusBuilder {
             ike_version: self.ike_version,
             provisioning_status: self.provisioning_status,
             provisioning_status_reason: self.provisioning_status_reason,
+            phase1_additional_key_exchanges: self.phase1_additional_key_exchanges,
+            phase2_additional_key_exchanges: self.phase2_additional_key_exchanges,
         }
     }
 }

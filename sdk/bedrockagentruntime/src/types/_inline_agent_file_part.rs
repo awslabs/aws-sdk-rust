@@ -2,7 +2,7 @@
 
 /// <p>Contains intermediate response for code interpreter if any files have been generated.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct InlineAgentFilePart {
     /// <p>Files containing intermediate response for the user.</p>
     pub files: ::std::option::Option<::std::vec::Vec<crate::types::OutputFile>>,
@@ -15,6 +15,13 @@ impl InlineAgentFilePart {
         self.files.as_deref().unwrap_or_default()
     }
 }
+impl ::std::fmt::Debug for InlineAgentFilePart {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("InlineAgentFilePart");
+        formatter.field("files", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
+    }
+}
 impl InlineAgentFilePart {
     /// Creates a new builder-style object to manufacture [`InlineAgentFilePart`](crate::types::InlineAgentFilePart).
     pub fn builder() -> crate::types::builders::InlineAgentFilePartBuilder {
@@ -23,7 +30,7 @@ impl InlineAgentFilePart {
 }
 
 /// A builder for [`InlineAgentFilePart`](crate::types::InlineAgentFilePart).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct InlineAgentFilePartBuilder {
     pub(crate) files: ::std::option::Option<::std::vec::Vec<crate::types::OutputFile>>,
@@ -52,5 +59,12 @@ impl InlineAgentFilePartBuilder {
     /// Consumes the builder and constructs a [`InlineAgentFilePart`](crate::types::InlineAgentFilePart).
     pub fn build(self) -> crate::types::InlineAgentFilePart {
         crate::types::InlineAgentFilePart { files: self.files }
+    }
+}
+impl ::std::fmt::Debug for InlineAgentFilePartBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("InlineAgentFilePartBuilder");
+        formatter.field("files", &"*** Sensitive Data Redacted ***");
+        formatter.finish()
     }
 }

@@ -169,6 +169,20 @@ impl CreateNetworkMigrationDefinitionFluentBuilder {
     pub fn get_source_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SourceConfiguration>> {
         self.inner.get_source_configurations()
     }
+    /// <p>Specifies the type of the definition. <code>MIGRATION</code> migrates an existing network. <code>NEW_NETWORK</code> designs a new network. If you omit this value, the definition type is <code>MIGRATION</code>.</p>
+    pub fn definition_type(mut self, input: crate::types::DefinitionType) -> Self {
+        self.inner = self.inner.definition_type(input);
+        self
+    }
+    /// <p>Specifies the type of the definition. <code>MIGRATION</code> migrates an existing network. <code>NEW_NETWORK</code> designs a new network. If you omit this value, the definition type is <code>MIGRATION</code>.</p>
+    pub fn set_definition_type(mut self, input: ::std::option::Option<crate::types::DefinitionType>) -> Self {
+        self.inner = self.inner.set_definition_type(input);
+        self
+    }
+    /// <p>Specifies the type of the definition. <code>MIGRATION</code> migrates an existing network. <code>NEW_NETWORK</code> designs a new network. If you omit this value, the definition type is <code>MIGRATION</code>.</p>
+    pub fn get_definition_type(&self) -> &::std::option::Option<crate::types::DefinitionType> {
+        self.inner.get_definition_type()
+    }
     /// <p>The S3 configuration for storing the target network artifacts.</p>
     pub fn target_s3_configuration(mut self, input: crate::types::TargetS3Configuration) -> Self {
         self.inner = self.inner.target_s3_configuration(input);

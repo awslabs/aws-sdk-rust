@@ -47,6 +47,8 @@ pub(crate) mod shape_delete_capacity_provider;
 
 pub(crate) mod shape_delete_code_signing_config;
 
+pub(crate) mod shape_delete_durable_execution;
+
 pub(crate) mod shape_delete_event_source_mapping;
 
 pub(crate) mod shape_delete_function;
@@ -153,6 +155,8 @@ pub(crate) mod shape_list_tags;
 
 pub(crate) mod shape_list_versions_by_function;
 
+pub(crate) mod shape_pause_durable_execution;
+
 pub(crate) mod shape_publish_layer_version;
 
 pub(crate) mod shape_publish_version;
@@ -176,6 +180,8 @@ pub(crate) mod shape_put_runtime_management_config;
 pub(crate) mod shape_remove_layer_version_permission;
 
 pub(crate) mod shape_remove_permission;
+
+pub(crate) mod shape_resume_durable_execution;
 
 pub(crate) mod shape_send_durable_execution_callback_failure;
 
@@ -311,6 +317,8 @@ pub(crate) mod shape_mode_not_supported_exception;
 
 pub(crate) mod shape_no_published_version_exception;
 
+pub(crate) mod shape_pause_durable_execution_input;
+
 pub(crate) mod shape_policy_length_exceeded_exception;
 
 pub(crate) mod shape_precondition_failed_exception;
@@ -350,6 +358,8 @@ pub(crate) mod shape_resource_in_use_exception;
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_resource_not_ready_exception;
+
+pub(crate) mod shape_resume_durable_execution_input;
 
 pub(crate) mod shape_runtime_alias_deleted_exception;
 
@@ -529,6 +539,8 @@ pub(crate) mod shape_operation_update;
 
 pub(crate) mod shape_operations;
 
+pub(crate) mod shape_pause_details;
+
 pub(crate) mod shape_propagate_tags;
 
 pub(crate) mod shape_provisioned_concurrency_config_list;
@@ -697,6 +709,10 @@ pub(crate) mod shape_execution_details;
 
 pub(crate) mod shape_execution_failed_details;
 
+pub(crate) mod shape_execution_paused_details;
+
+pub(crate) mod shape_execution_resumed_details;
+
 pub(crate) mod shape_execution_started_details;
 
 pub(crate) mod shape_execution_stopped_details;
@@ -741,6 +757,10 @@ pub(crate) mod shape_event_error;
 
 pub(crate) mod shape_event_input;
 
+pub(crate) mod shape_event_pause_reason;
+
 pub(crate) mod shape_event_result;
+
+pub(crate) mod shape_event_resume_reason;
 
 pub(crate) mod shape_retry_details;
