@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`provider_name(String)`](crate::operation::get_device::GetDeviceOutput::provider_name): <p>The name of the partner company for the device.</p>
     ///   - [`device_type(DeviceType)`](crate::operation::get_device::GetDeviceOutput::device_type): <p>The type of the device.</p>
     ///   - [`device_status(DeviceStatus)`](crate::operation::get_device::GetDeviceOutput::device_status): <p>The status of the device.</p>
+    ///   - [`device_status_reason(Option<DeviceStatusReason>)`](crate::operation::get_device::GetDeviceOutput::device_status_reason): <p>The reason for the current status of the device, including status reason codes and timestamps.</p>
     ///   - [`device_capabilities(String)`](crate::operation::get_device::GetDeviceOutput::device_capabilities): <p>Details about the capabilities of the device.</p>
     ///   - [`device_queue_info(Option<Vec::<DeviceQueueInfo>>)`](crate::operation::get_device::GetDeviceOutput::device_queue_info): <p>The number of quantum tasks and hybrid jobs currently queued on the device.</p>
     /// - On failure, responds with [`SdkError<GetDeviceError>`](crate::operation::get_device::GetDeviceError)

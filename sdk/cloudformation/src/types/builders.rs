@@ -145,6 +145,10 @@ pub use crate::types::_change_set_hook_target_details::ChangeSetHookTargetDetail
 
 pub use crate::types::_stack_drift_information::StackDriftInformationBuilder;
 
+pub use crate::types::_stages::StagesBuilder;
+
+pub use crate::types::_regional_status_detail::RegionalStatusDetailBuilder;
+
 pub use crate::types::_physical_resource_id_context_key_value_pair::PhysicalResourceIdContextKeyValuePairBuilder;
 
 pub use crate::types::_property_difference::PropertyDifferenceBuilder;
@@ -165,9 +169,17 @@ pub use crate::types::_output::OutputBuilder;
 
 pub use crate::types::_operation_entry::OperationEntryBuilder;
 
+pub use crate::types::_role_provisioning::RoleProvisioningBuilder;
+
+pub use crate::types::_stack_instances_deployment::StackInstancesDeploymentBuilder;
+
+pub use crate::types::_regional_stages::RegionalStagesBuilder;
+
 pub use crate::types::_resource_drift_ignored_attribute::ResourceDriftIgnoredAttributeBuilder;
 
 pub use crate::types::_resource_change_detail::ResourceChangeDetailBuilder;
+
+pub use crate::types::_regional_stack_instances_deployment::RegionalStackInstancesDeploymentBuilder;
 
 pub use crate::types::_resource_target_definition::ResourceTargetDefinitionBuilder;
 

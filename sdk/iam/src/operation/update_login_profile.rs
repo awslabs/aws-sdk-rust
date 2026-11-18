@@ -312,6 +312,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateLoginPr
 pub enum UpdateLoginProfileError {
     /// <p>The request was rejected because it referenced an entity that is temporarily unmodifiable, such as a user name that was deleted and then recreated. The error indicates that the request is likely to succeed if you try again after waiting several minutes. The error message describes the entity.</p>
     EntityTemporarilyUnmodifiableException(crate::types::error::EntityTemporarilyUnmodifiableException),
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
+    InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services account limits. The error message describes the limit exceeded.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
@@ -354,6 +356,7 @@ impl UpdateLoginProfileError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::EntityTemporarilyUnmodifiableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidInputException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NoSuchEntityException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::PasswordPolicyViolationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -364,6 +367,10 @@ impl UpdateLoginProfileError {
     /// Returns `true` if the error kind is `UpdateLoginProfileError::EntityTemporarilyUnmodifiableException`.
     pub fn is_entity_temporarily_unmodifiable_exception(&self) -> bool {
         matches!(self, Self::EntityTemporarilyUnmodifiableException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateLoginProfileError::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(self, Self::InvalidInputException(_))
     }
     /// Returns `true` if the error kind is `UpdateLoginProfileError::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -386,6 +393,7 @@ impl ::std::error::Error for UpdateLoginProfileError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::EntityTemporarilyUnmodifiableException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidInputException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::NoSuchEntityException(_inner) => ::std::option::Option::Some(_inner),
             Self::PasswordPolicyViolationException(_inner) => ::std::option::Option::Some(_inner),
@@ -398,6 +406,7 @@ impl ::std::fmt::Display for UpdateLoginProfileError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::EntityTemporarilyUnmodifiableException(_inner) => _inner.fmt(f),
+            Self::InvalidInputException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::NoSuchEntityException(_inner) => _inner.fmt(f),
             Self::PasswordPolicyViolationException(_inner) => _inner.fmt(f),
@@ -424,6 +433,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateLoginPr
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::EntityTemporarilyUnmodifiableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidInputException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NoSuchEntityException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PasswordPolicyViolationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

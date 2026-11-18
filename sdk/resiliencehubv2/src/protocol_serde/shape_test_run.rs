@@ -131,6 +131,15 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "effectivePolicyValues" => {
+                            builder = builder.set_effective_policy_values(
+                                crate::protocol_serde::shape_test_run_effective_policy_values::de_test_run_effective_policy_values(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         "reportOutput" => {
                             builder = builder.set_report_output(crate::protocol_serde::shape_report_generation_result::de_report_generation_result(
                                 tokens,

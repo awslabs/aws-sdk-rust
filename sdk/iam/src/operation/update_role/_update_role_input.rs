@@ -12,6 +12,17 @@ pub struct UpdateRoleInput {
     /// <p>IAM role credentials provided by Amazon EC2 instances assigned to the role are not subject to the specified maximum session duration.</p>
     /// </note>
     pub max_session_duration: ::std::option::Option<i32>,
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for users who sign in with the specified role. This setting can have a value from 1 hour (3600 seconds) to 90 days (7776000 seconds), inclusive, and replaces any value currently configured for the role. This setting is independent of <code>MaxSessionDuration</code>.</p>
+    /// <p>If you omit both this parameter and <code>ResetMaxSigninSessionDuration</code>, the current setting is unchanged. You cannot specify this parameter and set <code>ResetMaxSigninSessionDuration</code> to <code>true</code> in the same request.</p>
+    /// <p>Changes to this setting apply to new sign-in sessions. Sessions that are already established are not affected.</p><note>
+    /// <p>You cannot set this value on a service-linked role.</p>
+    /// </note>
+    pub max_signin_session_duration: ::std::option::Option<i32>,
+    /// <p>Specifies whether to clear the role's maximum sign-in session duration. Set this value to <code>true</code> to return the setting to its unset state, so that the existing sign-in session behavior applies. When the setting is unset, the role's <code>MaxSigninSessionDuration</code> is omitted from responses.</p>
+    /// <p>If you set this value to <code>false</code> or omit it, the current setting is not cleared. You cannot set this value to <code>true</code> and specify <code>MaxSigninSessionDuration</code> in the same request. Clearing a setting that is already unset has no effect.</p><note>
+    /// <p>You cannot reset this value on a service-linked role.</p>
+    /// </note>
+    pub reset_max_signin_session_duration: ::std::option::Option<bool>,
 }
 impl UpdateRoleInput {
     /// <p>The name of the role that you want to modify.</p>
@@ -29,6 +40,21 @@ impl UpdateRoleInput {
     pub fn max_session_duration(&self) -> ::std::option::Option<i32> {
         self.max_session_duration
     }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for users who sign in with the specified role. This setting can have a value from 1 hour (3600 seconds) to 90 days (7776000 seconds), inclusive, and replaces any value currently configured for the role. This setting is independent of <code>MaxSessionDuration</code>.</p>
+    /// <p>If you omit both this parameter and <code>ResetMaxSigninSessionDuration</code>, the current setting is unchanged. You cannot specify this parameter and set <code>ResetMaxSigninSessionDuration</code> to <code>true</code> in the same request.</p>
+    /// <p>Changes to this setting apply to new sign-in sessions. Sessions that are already established are not affected.</p><note>
+    /// <p>You cannot set this value on a service-linked role.</p>
+    /// </note>
+    pub fn max_signin_session_duration(&self) -> ::std::option::Option<i32> {
+        self.max_signin_session_duration
+    }
+    /// <p>Specifies whether to clear the role's maximum sign-in session duration. Set this value to <code>true</code> to return the setting to its unset state, so that the existing sign-in session behavior applies. When the setting is unset, the role's <code>MaxSigninSessionDuration</code> is omitted from responses.</p>
+    /// <p>If you set this value to <code>false</code> or omit it, the current setting is not cleared. You cannot set this value to <code>true</code> and specify <code>MaxSigninSessionDuration</code> in the same request. Clearing a setting that is already unset has no effect.</p><note>
+    /// <p>You cannot reset this value on a service-linked role.</p>
+    /// </note>
+    pub fn reset_max_signin_session_duration(&self) -> ::std::option::Option<bool> {
+        self.reset_max_signin_session_duration
+    }
 }
 impl UpdateRoleInput {
     /// Creates a new builder-style object to manufacture [`UpdateRoleInput`](crate::operation::update_role::UpdateRoleInput).
@@ -44,6 +70,8 @@ pub struct UpdateRoleInputBuilder {
     pub(crate) role_name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) max_session_duration: ::std::option::Option<i32>,
+    pub(crate) max_signin_session_duration: ::std::option::Option<i32>,
+    pub(crate) reset_max_signin_session_duration: ::std::option::Option<bool>,
 }
 impl UpdateRoleInputBuilder {
     /// <p>The name of the role that you want to modify.</p>
@@ -98,12 +126,63 @@ impl UpdateRoleInputBuilder {
     pub fn get_max_session_duration(&self) -> &::std::option::Option<i32> {
         &self.max_session_duration
     }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for users who sign in with the specified role. This setting can have a value from 1 hour (3600 seconds) to 90 days (7776000 seconds), inclusive, and replaces any value currently configured for the role. This setting is independent of <code>MaxSessionDuration</code>.</p>
+    /// <p>If you omit both this parameter and <code>ResetMaxSigninSessionDuration</code>, the current setting is unchanged. You cannot specify this parameter and set <code>ResetMaxSigninSessionDuration</code> to <code>true</code> in the same request.</p>
+    /// <p>Changes to this setting apply to new sign-in sessions. Sessions that are already established are not affected.</p><note>
+    /// <p>You cannot set this value on a service-linked role.</p>
+    /// </note>
+    pub fn max_signin_session_duration(mut self, input: i32) -> Self {
+        self.max_signin_session_duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for users who sign in with the specified role. This setting can have a value from 1 hour (3600 seconds) to 90 days (7776000 seconds), inclusive, and replaces any value currently configured for the role. This setting is independent of <code>MaxSessionDuration</code>.</p>
+    /// <p>If you omit both this parameter and <code>ResetMaxSigninSessionDuration</code>, the current setting is unchanged. You cannot specify this parameter and set <code>ResetMaxSigninSessionDuration</code> to <code>true</code> in the same request.</p>
+    /// <p>Changes to this setting apply to new sign-in sessions. Sessions that are already established are not affected.</p><note>
+    /// <p>You cannot set this value on a service-linked role.</p>
+    /// </note>
+    pub fn set_max_signin_session_duration(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_signin_session_duration = input;
+        self
+    }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for users who sign in with the specified role. This setting can have a value from 1 hour (3600 seconds) to 90 days (7776000 seconds), inclusive, and replaces any value currently configured for the role. This setting is independent of <code>MaxSessionDuration</code>.</p>
+    /// <p>If you omit both this parameter and <code>ResetMaxSigninSessionDuration</code>, the current setting is unchanged. You cannot specify this parameter and set <code>ResetMaxSigninSessionDuration</code> to <code>true</code> in the same request.</p>
+    /// <p>Changes to this setting apply to new sign-in sessions. Sessions that are already established are not affected.</p><note>
+    /// <p>You cannot set this value on a service-linked role.</p>
+    /// </note>
+    pub fn get_max_signin_session_duration(&self) -> &::std::option::Option<i32> {
+        &self.max_signin_session_duration
+    }
+    /// <p>Specifies whether to clear the role's maximum sign-in session duration. Set this value to <code>true</code> to return the setting to its unset state, so that the existing sign-in session behavior applies. When the setting is unset, the role's <code>MaxSigninSessionDuration</code> is omitted from responses.</p>
+    /// <p>If you set this value to <code>false</code> or omit it, the current setting is not cleared. You cannot set this value to <code>true</code> and specify <code>MaxSigninSessionDuration</code> in the same request. Clearing a setting that is already unset has no effect.</p><note>
+    /// <p>You cannot reset this value on a service-linked role.</p>
+    /// </note>
+    pub fn reset_max_signin_session_duration(mut self, input: bool) -> Self {
+        self.reset_max_signin_session_duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to clear the role's maximum sign-in session duration. Set this value to <code>true</code> to return the setting to its unset state, so that the existing sign-in session behavior applies. When the setting is unset, the role's <code>MaxSigninSessionDuration</code> is omitted from responses.</p>
+    /// <p>If you set this value to <code>false</code> or omit it, the current setting is not cleared. You cannot set this value to <code>true</code> and specify <code>MaxSigninSessionDuration</code> in the same request. Clearing a setting that is already unset has no effect.</p><note>
+    /// <p>You cannot reset this value on a service-linked role.</p>
+    /// </note>
+    pub fn set_reset_max_signin_session_duration(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.reset_max_signin_session_duration = input;
+        self
+    }
+    /// <p>Specifies whether to clear the role's maximum sign-in session duration. Set this value to <code>true</code> to return the setting to its unset state, so that the existing sign-in session behavior applies. When the setting is unset, the role's <code>MaxSigninSessionDuration</code> is omitted from responses.</p>
+    /// <p>If you set this value to <code>false</code> or omit it, the current setting is not cleared. You cannot set this value to <code>true</code> and specify <code>MaxSigninSessionDuration</code> in the same request. Clearing a setting that is already unset has no effect.</p><note>
+    /// <p>You cannot reset this value on a service-linked role.</p>
+    /// </note>
+    pub fn get_reset_max_signin_session_duration(&self) -> &::std::option::Option<bool> {
+        &self.reset_max_signin_session_duration
+    }
     /// Consumes the builder and constructs a [`UpdateRoleInput`](crate::operation::update_role::UpdateRoleInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_role::UpdateRoleInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_role::UpdateRoleInput {
             role_name: self.role_name,
             description: self.description,
             max_session_duration: self.max_session_duration,
+            max_signin_session_duration: self.max_signin_session_duration,
+            reset_max_signin_session_duration: self.reset_max_signin_session_duration,
         })
     }
 }

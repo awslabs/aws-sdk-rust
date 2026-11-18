@@ -285,6 +285,8 @@ mod describe_orderable_db_instance_options;
 
 mod describe_pending_maintenance_actions;
 
+mod describe_serverless_v2_platform_versions;
+
 mod describe_valid_db_instance_modifications;
 
 mod failover_db_cluster;

@@ -23,6 +23,18 @@ pub(crate) fn internal_server_exception_correct_errors(
     builder
 }
 
+pub(crate) fn resource_not_found_exception_correct_errors(
+    mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
+) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
+    if builder.error.is_none() {
+        builder.error = "no value was set".parse::<crate::types::OAuth2ErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn too_many_requests_error_correct_errors(
     mut builder: crate::types::error::builders::TooManyRequestsErrorBuilder,
 ) -> crate::types::error::builders::TooManyRequestsErrorBuilder {
@@ -43,6 +55,18 @@ pub(crate) fn validation_exception_correct_errors(
     }
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn batch_revoke_sessions_output_output_correct_errors(
+    mut builder: crate::operation::batch_revoke_sessions::builders::BatchRevokeSessionsOutputBuilder,
+) -> crate::operation::batch_revoke_sessions::builders::BatchRevokeSessionsOutputBuilder {
+    if builder.revoked_sessions.is_none() {
+        builder.revoked_sessions = Some(Default::default())
+    }
+    if builder.errors.is_none() {
+        builder.errors = Some(Default::default())
     }
     builder
 }
@@ -140,18 +164,6 @@ pub(crate) fn create_o_auth2_token_with_token_exchange_output_output_correct_err
     builder
 }
 
-pub(crate) fn resource_not_found_exception_correct_errors(
-    mut builder: crate::types::error::builders::ResourceNotFoundExceptionBuilder,
-) -> crate::types::error::builders::ResourceNotFoundExceptionBuilder {
-    if builder.error.is_none() {
-        builder.error = "no value was set".parse::<crate::types::OAuth2ErrorCode>().ok()
-    }
-    if builder.message.is_none() {
-        builder.message = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn delete_console_authorization_configuration_output_output_correct_errors(
     mut builder: crate::operation::delete_console_authorization_configuration::builders::DeleteConsoleAuthorizationConfigurationOutputBuilder,
 ) -> crate::operation::delete_console_authorization_configuration::builders::DeleteConsoleAuthorizationConfigurationOutputBuilder {
@@ -194,6 +206,24 @@ pub(crate) fn get_resource_policy_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_session_output_output_correct_errors(
+    mut builder: crate::operation::get_session::builders::GetSessionOutputBuilder,
+) -> crate::operation::get_session::builders::GetSessionOutputBuilder {
+    if builder.session_arn.is_none() {
+        builder.session_arn = Some(Default::default())
+    }
+    if builder.principal_arn.is_none() {
+        builder.principal_arn = Some(Default::default())
+    }
+    if builder.issued_at.is_none() {
+        builder.issued_at = Some(Default::default())
+    }
+    if builder.expires_at.is_none() {
+        builder.expires_at = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn introspect_o_auth2_token_with_iam_output_output_correct_errors(
     mut builder: crate::operation::introspect_o_auth2_token_with_iam::builders::IntrospectOAuth2TokenWithIamOutputBuilder,
 ) -> crate::operation::introspect_o_auth2_token_with_iam::builders::IntrospectOAuth2TokenWithIamOutputBuilder {
@@ -208,6 +238,15 @@ pub(crate) fn list_resource_permission_statements_output_output_correct_errors(
 ) -> crate::operation::list_resource_permission_statements::builders::ListResourcePermissionStatementsOutputBuilder {
     if builder.permission_statements.is_none() {
         builder.permission_statements = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_sessions_output_output_correct_errors(
+    mut builder: crate::operation::list_sessions::builders::ListSessionsOutputBuilder,
+) -> crate::operation::list_sessions::builders::ListSessionsOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
     }
     builder
 }
@@ -294,11 +333,51 @@ pub(crate) fn access_token_correct_errors(mut builder: crate::types::builders::A
     builder
 }
 
+pub(crate) fn batch_revoke_session_error_correct_errors(
+    mut builder: crate::types::builders::BatchRevokeSessionErrorBuilder,
+) -> crate::types::builders::BatchRevokeSessionErrorBuilder {
+    if builder.session_arn.is_none() {
+        builder.session_arn = Some(Default::default())
+    }
+    if builder.code.is_none() {
+        builder.code = Some(Default::default())
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn permission_statement_summary_correct_errors(
     mut builder: crate::types::builders::PermissionStatementSummaryBuilder,
 ) -> crate::types::builders::PermissionStatementSummaryBuilder {
     if builder.sid.is_none() {
         builder.sid = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn revoked_session_correct_errors(
+    mut builder: crate::types::builders::RevokedSessionBuilder,
+) -> crate::types::builders::RevokedSessionBuilder {
+    if builder.session_arn.is_none() {
+        builder.session_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn session_correct_errors(mut builder: crate::types::builders::SessionBuilder) -> crate::types::builders::SessionBuilder {
+    if builder.session_arn.is_none() {
+        builder.session_arn = Some(Default::default())
+    }
+    if builder.principal_arn.is_none() {
+        builder.principal_arn = Some(Default::default())
+    }
+    if builder.issued_at.is_none() {
+        builder.issued_at = Some(Default::default())
+    }
+    if builder.expires_at.is_none() {
+        builder.expires_at = Some(Default::default())
     }
     builder
 }

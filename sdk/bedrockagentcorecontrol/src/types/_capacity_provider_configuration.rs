@@ -6,11 +6,17 @@
 pub struct CapacityProviderConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the capacity provider to use for the AgentCore Runtime.</p>
     pub capacity_provider_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The operating system configuration of the agents that Amazon Bedrock AgentCore Runtime runs on the capacity provider.</p>
+    pub operating_system_configuration: ::std::option::Option<crate::types::OperatingSystemConfiguration>,
 }
 impl CapacityProviderConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the capacity provider to use for the AgentCore Runtime.</p>
     pub fn capacity_provider_arn(&self) -> ::std::option::Option<&str> {
         self.capacity_provider_arn.as_deref()
+    }
+    /// <p>The operating system configuration of the agents that Amazon Bedrock AgentCore Runtime runs on the capacity provider.</p>
+    pub fn operating_system_configuration(&self) -> ::std::option::Option<&crate::types::OperatingSystemConfiguration> {
+        self.operating_system_configuration.as_ref()
     }
 }
 impl CapacityProviderConfiguration {
@@ -25,6 +31,7 @@ impl CapacityProviderConfiguration {
 #[non_exhaustive]
 pub struct CapacityProviderConfigurationBuilder {
     pub(crate) capacity_provider_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) operating_system_configuration: ::std::option::Option<crate::types::OperatingSystemConfiguration>,
 }
 impl CapacityProviderConfigurationBuilder {
     /// <p>The Amazon Resource Name (ARN) of the capacity provider to use for the AgentCore Runtime.</p>
@@ -42,10 +49,25 @@ impl CapacityProviderConfigurationBuilder {
     pub fn get_capacity_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.capacity_provider_arn
     }
+    /// <p>The operating system configuration of the agents that Amazon Bedrock AgentCore Runtime runs on the capacity provider.</p>
+    pub fn operating_system_configuration(mut self, input: crate::types::OperatingSystemConfiguration) -> Self {
+        self.operating_system_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The operating system configuration of the agents that Amazon Bedrock AgentCore Runtime runs on the capacity provider.</p>
+    pub fn set_operating_system_configuration(mut self, input: ::std::option::Option<crate::types::OperatingSystemConfiguration>) -> Self {
+        self.operating_system_configuration = input;
+        self
+    }
+    /// <p>The operating system configuration of the agents that Amazon Bedrock AgentCore Runtime runs on the capacity provider.</p>
+    pub fn get_operating_system_configuration(&self) -> &::std::option::Option<crate::types::OperatingSystemConfiguration> {
+        &self.operating_system_configuration
+    }
     /// Consumes the builder and constructs a [`CapacityProviderConfiguration`](crate::types::CapacityProviderConfiguration).
     pub fn build(self) -> crate::types::CapacityProviderConfiguration {
         crate::types::CapacityProviderConfiguration {
             capacity_provider_arn: self.capacity_provider_arn,
+            operating_system_configuration: self.operating_system_configuration,
         }
     }
 }

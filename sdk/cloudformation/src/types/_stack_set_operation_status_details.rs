@@ -4,10 +4,28 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StackSetOperationStatusDetails {
+    /// <p>The detailed progress information for the individual stages of the StackSet operation: the role provisioning stage and the stack instances deployment stage.</p>
+    pub stages: ::std::option::Option<crate::types::Stages>,
+    /// <p>The total number of accounts targeted by this StackSet operation. Self-managed operations and service-managed operations that do not provision roles also report this value when it is known. CloudFormation populates this value after it resolves the target accounts. Until then, this field is not present.</p>
+    pub total_accounts_count: ::std::option::Option<i32>,
+    /// <p>The total number of stack instances targeted by this StackSet operation. CloudFormation populates this value after it resolves the target stack instances. Until then, this field is not present.</p>
+    pub total_stack_instances_count: ::std::option::Option<i32>,
     /// <p>The number of stack instances for which the StackSet operation failed.</p>
     pub failed_stack_instances_count: ::std::option::Option<i32>,
 }
 impl StackSetOperationStatusDetails {
+    /// <p>The detailed progress information for the individual stages of the StackSet operation: the role provisioning stage and the stack instances deployment stage.</p>
+    pub fn stages(&self) -> ::std::option::Option<&crate::types::Stages> {
+        self.stages.as_ref()
+    }
+    /// <p>The total number of accounts targeted by this StackSet operation. Self-managed operations and service-managed operations that do not provision roles also report this value when it is known. CloudFormation populates this value after it resolves the target accounts. Until then, this field is not present.</p>
+    pub fn total_accounts_count(&self) -> ::std::option::Option<i32> {
+        self.total_accounts_count
+    }
+    /// <p>The total number of stack instances targeted by this StackSet operation. CloudFormation populates this value after it resolves the target stack instances. Until then, this field is not present.</p>
+    pub fn total_stack_instances_count(&self) -> ::std::option::Option<i32> {
+        self.total_stack_instances_count
+    }
     /// <p>The number of stack instances for which the StackSet operation failed.</p>
     pub fn failed_stack_instances_count(&self) -> ::std::option::Option<i32> {
         self.failed_stack_instances_count
@@ -24,9 +42,54 @@ impl StackSetOperationStatusDetails {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct StackSetOperationStatusDetailsBuilder {
+    pub(crate) stages: ::std::option::Option<crate::types::Stages>,
+    pub(crate) total_accounts_count: ::std::option::Option<i32>,
+    pub(crate) total_stack_instances_count: ::std::option::Option<i32>,
     pub(crate) failed_stack_instances_count: ::std::option::Option<i32>,
 }
 impl StackSetOperationStatusDetailsBuilder {
+    /// <p>The detailed progress information for the individual stages of the StackSet operation: the role provisioning stage and the stack instances deployment stage.</p>
+    pub fn stages(mut self, input: crate::types::Stages) -> Self {
+        self.stages = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The detailed progress information for the individual stages of the StackSet operation: the role provisioning stage and the stack instances deployment stage.</p>
+    pub fn set_stages(mut self, input: ::std::option::Option<crate::types::Stages>) -> Self {
+        self.stages = input;
+        self
+    }
+    /// <p>The detailed progress information for the individual stages of the StackSet operation: the role provisioning stage and the stack instances deployment stage.</p>
+    pub fn get_stages(&self) -> &::std::option::Option<crate::types::Stages> {
+        &self.stages
+    }
+    /// <p>The total number of accounts targeted by this StackSet operation. Self-managed operations and service-managed operations that do not provision roles also report this value when it is known. CloudFormation populates this value after it resolves the target accounts. Until then, this field is not present.</p>
+    pub fn total_accounts_count(mut self, input: i32) -> Self {
+        self.total_accounts_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of accounts targeted by this StackSet operation. Self-managed operations and service-managed operations that do not provision roles also report this value when it is known. CloudFormation populates this value after it resolves the target accounts. Until then, this field is not present.</p>
+    pub fn set_total_accounts_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.total_accounts_count = input;
+        self
+    }
+    /// <p>The total number of accounts targeted by this StackSet operation. Self-managed operations and service-managed operations that do not provision roles also report this value when it is known. CloudFormation populates this value after it resolves the target accounts. Until then, this field is not present.</p>
+    pub fn get_total_accounts_count(&self) -> &::std::option::Option<i32> {
+        &self.total_accounts_count
+    }
+    /// <p>The total number of stack instances targeted by this StackSet operation. CloudFormation populates this value after it resolves the target stack instances. Until then, this field is not present.</p>
+    pub fn total_stack_instances_count(mut self, input: i32) -> Self {
+        self.total_stack_instances_count = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The total number of stack instances targeted by this StackSet operation. CloudFormation populates this value after it resolves the target stack instances. Until then, this field is not present.</p>
+    pub fn set_total_stack_instances_count(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.total_stack_instances_count = input;
+        self
+    }
+    /// <p>The total number of stack instances targeted by this StackSet operation. CloudFormation populates this value after it resolves the target stack instances. Until then, this field is not present.</p>
+    pub fn get_total_stack_instances_count(&self) -> &::std::option::Option<i32> {
+        &self.total_stack_instances_count
+    }
     /// <p>The number of stack instances for which the StackSet operation failed.</p>
     pub fn failed_stack_instances_count(mut self, input: i32) -> Self {
         self.failed_stack_instances_count = ::std::option::Option::Some(input);
@@ -44,6 +107,9 @@ impl StackSetOperationStatusDetailsBuilder {
     /// Consumes the builder and constructs a [`StackSetOperationStatusDetails`](crate::types::StackSetOperationStatusDetails).
     pub fn build(self) -> crate::types::StackSetOperationStatusDetails {
         crate::types::StackSetOperationStatusDetails {
+            stages: self.stages,
+            total_accounts_count: self.total_accounts_count,
+            total_stack_instances_count: self.total_stack_instances_count,
             failed_stack_instances_count: self.failed_stack_instances_count,
         }
     }

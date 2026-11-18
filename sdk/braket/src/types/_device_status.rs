@@ -14,6 +14,7 @@
 /// match devicestatus {
 ///     DeviceStatus::Offline => { /* ... */ },
 ///     DeviceStatus::Online => { /* ... */ },
+///     DeviceStatus::Paused => { /* ... */ },
 ///     DeviceStatus::Retired => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum DeviceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Online,
     #[allow(missing_docs)] // documentation missing in model
+    Paused,
+    #[allow(missing_docs)] // documentation missing in model
     Retired,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for DeviceStatus {
         match s {
             "OFFLINE" => DeviceStatus::Offline,
             "ONLINE" => DeviceStatus::Online,
+            "PAUSED" => DeviceStatus::Paused,
             "RETIRED" => DeviceStatus::Retired,
             other => DeviceStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -76,13 +80,14 @@ impl DeviceStatus {
         match self {
             DeviceStatus::Offline => "OFFLINE",
             DeviceStatus::Online => "ONLINE",
+            DeviceStatus::Paused => "PAUSED",
             DeviceStatus::Retired => "RETIRED",
             DeviceStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["OFFLINE", "ONLINE", "RETIRED"]
+        &["OFFLINE", "ONLINE", "PAUSED", "RETIRED"]
     }
 }
 impl ::std::convert::AsRef<str> for DeviceStatus {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for DeviceStatus {
         match self {
             DeviceStatus::Offline => write!(f, "OFFLINE"),
             DeviceStatus::Online => write!(f, "ONLINE"),
+            DeviceStatus::Paused => write!(f, "PAUSED"),
             DeviceStatus::Retired => write!(f, "RETIRED"),
             DeviceStatus::Unknown(value) => write!(f, "{value}"),
         }

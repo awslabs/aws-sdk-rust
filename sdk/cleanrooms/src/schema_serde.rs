@@ -657,6 +657,8 @@ pub(crate) mod shape_populate_intermediate_table_output_output;
 
 pub(crate) mod shape_population_analysis_configuration;
 
+pub(crate) mod shape_population_analysis_job_parameters;
+
 pub(crate) mod shape_population_analysis_sql_parameters;
 
 pub(crate) mod shape_preview_privacy_impact_input_input;

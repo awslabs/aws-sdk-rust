@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub enum PopulationAnalysisConfiguration {
+    /// <p>Specifies the PySpark job parameters for the population analysis. Use <code>jobParameters</code> instead of <code>sqlParameters</code> when you populate the intermediate table with results from a PySpark job.</p>
+    JobParameters(crate::types::PopulationAnalysisJobParameters),
     /// <p>The SQL parameters for the population analysis, including the query string or analysis template ARN.</p>
     SqlParameters(crate::types::PopulationAnalysisSqlParameters),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum PopulationAnalysisConfiguration {
     Unknown,
 }
 impl PopulationAnalysisConfiguration {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`JobParameters`](crate::types::PopulationAnalysisConfiguration::JobParameters), extracting the inner [`PopulationAnalysisJobParameters`](crate::types::PopulationAnalysisJobParameters).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_job_parameters(&self) -> ::std::result::Result<&crate::types::PopulationAnalysisJobParameters, &Self> {
+        if let PopulationAnalysisConfiguration::JobParameters(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`JobParameters`](crate::types::PopulationAnalysisConfiguration::JobParameters).
+    pub fn is_job_parameters(&self) -> bool {
+        self.as_job_parameters().is_ok()
+    }
     /// Tries to convert the enum instance into [`SqlParameters`](crate::types::PopulationAnalysisConfiguration::SqlParameters), extracting the inner [`PopulationAnalysisSqlParameters`](crate::types::PopulationAnalysisSqlParameters).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sql_parameters(&self) -> ::std::result::Result<&crate::types::PopulationAnalysisSqlParameters, &Self> {
@@ -39,6 +53,7 @@ impl PopulationAnalysisConfiguration {
 impl ::std::fmt::Debug for PopulationAnalysisConfiguration {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            PopulationAnalysisConfiguration::JobParameters(val) => f.debug_tuple("JobParameters").field(&val).finish(),
             PopulationAnalysisConfiguration::SqlParameters(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
             PopulationAnalysisConfiguration::Unknown => f.debug_tuple("Unknown").finish(),
         }

@@ -75,9 +75,9 @@ pub use crate::types::_membership_type_filter::MembershipTypeFilter;
 
 pub use crate::types::_job_type::JobType;
 
-pub use crate::types::_diff_source::DiffSource;
-
 pub use crate::types::_job_status::JobStatus;
+
+pub use crate::types::_diff_source::DiffSource;
 
 pub use crate::types::_domain_verification_method::DomainVerificationMethod;
 
@@ -197,6 +197,8 @@ pub use crate::types::_threat_model_summary::ThreatModelSummary;
 
 pub use crate::types::_threat_summary::ThreatSummary;
 
+pub use crate::types::_actor::Actor;
+
 pub use crate::types::_scope_change::ScopeChange;
 
 pub use crate::types::_integrated_resource_input_item::IntegratedResourceInputItem;
@@ -257,8 +259,6 @@ pub use crate::types::_scope_result::ScopeResult;
 
 pub use crate::types::_endpoint::Endpoint;
 
-pub use crate::types::_actor::Actor;
-
 pub use crate::types::_source_code_repository::SourceCodeRepository;
 
 pub use crate::types::_integrated_repository::IntegratedRepository;
@@ -283,6 +283,8 @@ pub use crate::types::_provider_resource_capabilities::ProviderResourceCapabilit
 
 pub use crate::types::_member_metadata::MemberMetadata;
 
+pub use crate::types::_authentication::Authentication;
+
 pub use crate::types::_integrated_resource::IntegratedResource;
 
 pub use crate::types::_git_lab_token_type::GitLabTokenType;
@@ -302,8 +304,6 @@ pub use crate::types::_code_remediation_task_status::CodeRemediationTaskStatus;
 pub use crate::types::_code_location::CodeLocation;
 
 pub use crate::types::_scope_decision::ScopeDecision;
-
-pub use crate::types::_authentication::Authentication;
 
 pub use crate::types::_ca_certificate_source::CaCertificateSource;
 
@@ -341,6 +341,8 @@ pub use crate::types::_user_metadata::UserMetadata;
 
 pub use crate::types::_group_metadata::GroupMetadata;
 
+pub use crate::types::_authentication_provider_type::AuthenticationProviderType;
+
 pub use crate::types::_git_hub_repository_resource::GitHubRepositoryResource;
 
 pub use crate::types::_git_lab_repository_resource::GitLabRepositoryResource;
@@ -360,8 +362,6 @@ pub use crate::types::_context_type::ContextType;
 pub use crate::types::_code_remediation_task_details::CodeRemediationTaskDetails;
 
 pub use crate::types::_verification_script_env_var::VerificationScriptEnvVar;
-
-pub use crate::types::_authentication_provider_type::AuthenticationProviderType;
 
 pub use crate::types::_access_type::AccessType;
 

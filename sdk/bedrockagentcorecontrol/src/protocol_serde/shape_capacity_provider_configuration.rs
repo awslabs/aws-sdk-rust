@@ -6,6 +6,12 @@ pub fn ser_capacity_provider_configuration(
     if let Some(var_1) = &input.capacity_provider_arn {
         object.key("capacityProviderArn").string(var_1.as_str());
     }
+    if let Some(var_2) = &input.operating_system_configuration {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("operatingSystemConfiguration").start_object();
+        crate::protocol_serde::shape_operating_system_configuration::ser_operating_system_configuration(&mut object_3, var_2)?;
+        object_3.finish();
+    }
     Ok(())
 }
 
@@ -36,6 +42,15 @@ where
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                            );
+                        }
+                        "operatingSystemConfiguration" => {
+                            builder = builder.set_operating_system_configuration(
+                                crate::protocol_serde::shape_operating_system_configuration::de_operating_system_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

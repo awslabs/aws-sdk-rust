@@ -313,6 +313,8 @@ pub use crate::types::_build_lifecycle_hooks::BuildLifecycleHooks;
 
 pub use crate::types::_filesystem_configuration::FilesystemConfiguration;
 
+pub use crate::types::_operating_system_configuration::OperatingSystemConfiguration;
+
 pub use crate::types::_allowed_port::AllowedPort;
 
 pub use crate::types::_resource_configuration::ResourceConfiguration;
@@ -575,6 +577,10 @@ pub use crate::types::_efs_access_point_configuration::EfsAccessPointConfigurati
 
 pub use crate::types::_capacity_provider_volume_configuration::CapacityProviderVolumeConfiguration;
 
+pub use crate::types::_s3_bucket_mount_configuration::S3BucketMountConfiguration;
+
+pub use crate::types::_linux_operating_system_configuration::LinuxOperatingSystemConfiguration;
+
 pub use crate::types::_port_range::PortRange;
 
 pub use crate::types::_resource_location::ResourceLocation;
@@ -744,6 +750,8 @@ pub use crate::types::_payment_credential_provider_configuration::PaymentCredent
 pub use crate::types::_custom_claim_validation_type::CustomClaimValidationType;
 
 pub use crate::types::_lifecycle_hook_action::LifecycleHookAction;
+
+pub use crate::types::_privilege_mode::PrivilegeMode;
 
 pub use crate::types::_secrets_manager_location::SecretsManagerLocation;
 
@@ -1713,6 +1721,8 @@ mod _linkedin_oauth2_provider_config_input;
 
 mod _linkedin_oauth2_provider_config_output;
 
+mod _linux_operating_system_configuration;
+
 mod _list_dataset_examples_filter;
 
 mod _list_dataset_versions_filter;
@@ -1853,6 +1863,8 @@ mod _open_responses_evaluator_model_config;
 
 mod _operating_system;
 
+mod _operating_system_configuration;
+
 mod _output_config;
 
 mod _override_type;
@@ -1929,6 +1941,8 @@ mod _private_key_jwt_config;
 
 mod _private_key_source;
 
+mod _privilege_mode;
+
 mod _protocol_configuration;
 
 mod _provider;
@@ -1996,6 +2010,8 @@ mod _runtime_hooks_configuration;
 mod _runtime_metadata_configuration;
 
 mod _runtime_target_configuration;
+
+mod _s3_bucket_mount_configuration;
 
 mod _s3_certificate_configuration;
 

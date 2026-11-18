@@ -135,7 +135,7 @@ optional = true
 path = "../signin"
 default-features = false
 optional = true
-version = "1.36.0"
+version = "1.37.0"
 
 [dependencies.base64-simd]
 version = "0.8.0"

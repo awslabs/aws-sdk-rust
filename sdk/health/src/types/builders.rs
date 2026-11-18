@@ -17,9 +17,13 @@ pub use crate::types::_service_lifecycle_filter::ServiceLifecycleFilterBuilder;
 
 pub use crate::types::_describe_tags_for_organization_filter::DescribeTagsForOrganizationFilterBuilder;
 
+pub use crate::types::_configure_tags_tag_key::ConfigureTagsTagKeyBuilder;
+
 pub use crate::types::_resource_tag_key::ResourceTagKeyBuilder;
 
 pub use crate::types::_tag_key_for_organization::TagKeyForOrganizationBuilder;
+
+pub use crate::types::_organization_tag_key::OrganizationTagKeyBuilder;
 
 pub use crate::types::_account_entity::AccountEntityBuilder;
 
@@ -54,8 +58,6 @@ pub use crate::types::_organization_event::OrganizationEventBuilder;
 pub use crate::types::_event_type::EventTypeBuilder;
 
 pub use crate::types::_service_lifecycle::ServiceLifecycleBuilder;
-
-pub use crate::types::_organization_tag_key::OrganizationTagKeyBuilder;
 
 pub use crate::types::_account_tag::AccountTagBuilder;
 

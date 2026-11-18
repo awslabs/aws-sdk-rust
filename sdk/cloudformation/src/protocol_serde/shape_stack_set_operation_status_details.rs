@@ -11,8 +11,48 @@ pub fn de_stack_set_operation_status_details(
     let mut builder = crate::types::StackSetOperationStatusDetails::builder();
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
-            s if s.matches("FailedStackInstancesCount") /* FailedStackInstancesCount com.amazonaws.cloudformation#StackSetOperationStatusDetails$FailedStackInstancesCount */ =>  {
+            s if s.matches("Stages") /* Stages com.amazonaws.cloudformation#StackSetOperationStatusDetails$Stages */ =>  {
                 let var_1 =
+                    Some(
+                        crate::protocol_serde::shape_stages::de_stages(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_stages(var_1);
+            }
+            ,
+            s if s.matches("TotalAccountsCount") /* TotalAccountsCount com.amazonaws.cloudformation#StackSetOperationStatusDetails$TotalAccountsCount */ =>  {
+                let var_2 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.cloudformation#TotalAccountsCount`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_total_accounts_count(var_2);
+            }
+            ,
+            s if s.matches("TotalStackInstancesCount") /* TotalStackInstancesCount com.amazonaws.cloudformation#StackSetOperationStatusDetails$TotalStackInstancesCount */ =>  {
+                let var_3 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.cloudformation#StackSetOperationTotalStackInstancesCount`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_total_stack_instances_count(var_3);
+            }
+            ,
+            s if s.matches("FailedStackInstancesCount") /* FailedStackInstancesCount com.amazonaws.cloudformation#StackSetOperationStatusDetails$FailedStackInstancesCount */ =>  {
+                let var_4 =
                     Some(
                          {
                             <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -23,7 +63,7 @@ pub fn de_stack_set_operation_status_details(
                         ?
                     )
                 ;
-                builder = builder.set_failed_stack_instances_count(var_1);
+                builder = builder.set_failed_stack_instances_count(var_4);
             }
             ,
             _ => {}

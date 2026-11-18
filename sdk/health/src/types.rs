@@ -25,9 +25,13 @@ pub use crate::types::_tags_onboarding_status::TagsOnboardingStatus;
 
 pub use crate::types::_tags_onboarding_status_for_organization::TagsOnboardingStatusForOrganization;
 
+pub use crate::types::_configure_tags_tag_key::ConfigureTagsTagKey;
+
 pub use crate::types::_resource_tag_key::ResourceTagKey;
 
 pub use crate::types::_tag_key_for_organization::TagKeyForOrganization;
+
+pub use crate::types::_organization_tag_key::OrganizationTagKey;
 
 pub use crate::types::_account_entity::AccountEntity;
 
@@ -62,8 +66,6 @@ pub use crate::types::_organization_event::OrganizationEvent;
 pub use crate::types::_event_type::EventType;
 
 pub use crate::types::_service_lifecycle::ServiceLifecycle;
-
-pub use crate::types::_organization_tag_key::OrganizationTagKey;
 
 pub use crate::types::_account_tag::AccountTag;
 
@@ -106,6 +108,8 @@ mod _account_tag_type;
 mod _affected_account_filter;
 
 mod _affected_entity;
+
+mod _configure_tags_tag_key;
 
 mod _date_time_range;
 

@@ -187,6 +187,16 @@ pub fn de_stack_set_operation(
                 builder = builder.set_status_details(var_14);
             }
             ,
+            s if s.matches("RegionalStatusDetails") /* RegionalStatusDetails com.amazonaws.cloudformation#StackSetOperation$RegionalStatusDetails */ =>  {
+                let var_15 =
+                    Some(
+                        crate::protocol_serde::shape_regional_status_details::de_regional_status_details(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_regional_status_details(var_15);
+            }
+            ,
             _ => {}
         }
     }

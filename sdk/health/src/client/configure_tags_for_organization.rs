@@ -5,7 +5,7 @@ impl super::Client {
     /// - The fluent builder is configurable:
     ///   - [`tag_keys(TagKeyForOrganization)`](crate::operation::configure_tags_for_organization::builders::ConfigureTagsForOrganizationFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec::<TagKeyForOrganization>>)`](crate::operation::configure_tags_for_organization::builders::ConfigureTagsForOrganizationFluentBuilder::set_tag_keys):<br>required: **true**<br><p>The list of tag keys to configure for Health event tracking across the organization.</p><br>
     /// - On success, responds with [`ConfigureTagsForOrganizationOutput`](crate::operation::configure_tags_for_organization::ConfigureTagsForOrganizationOutput) with field(s):
-    ///   - [`configured_tag_keys(Option<Vec::<TagKeyForOrganization>>)`](crate::operation::configure_tags_for_organization::ConfigureTagsForOrganizationOutput::configured_tag_keys): <p>The list of tag keys that were successfully configured for the organization.</p>
+    ///   - [`configured_tag_keys(Option<Vec::<OrganizationTagKey>>)`](crate::operation::configure_tags_for_organization::ConfigureTagsForOrganizationOutput::configured_tag_keys): <p>The list of tag keys that were successfully configured for the organization, with the current status of each tag key.</p>
     /// - On failure, responds with [`SdkError<ConfigureTagsForOrganizationError>`](crate::operation::configure_tags_for_organization::ConfigureTagsForOrganizationError)
     pub fn configure_tags_for_organization(
         &self,

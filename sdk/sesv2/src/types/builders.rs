@@ -47,6 +47,8 @@ pub use crate::types::_vdm_attributes::VdmAttributesBuilder;
 
 pub use crate::types::_pricing_attributes::PricingAttributesBuilder;
 
+pub use crate::types::_delivery_attributes::DeliveryAttributesBuilder;
+
 pub use crate::types::_dedicated_ip::DedicatedIpBuilder;
 
 pub use crate::types::_dedicated_ip_pool::DedicatedIpPoolBuilder;

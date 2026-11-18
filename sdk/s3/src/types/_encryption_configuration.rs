@@ -8,11 +8,17 @@
 pub struct EncryptionConfiguration {
     /// <p>Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key stored in Amazon Web Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt replica objects. Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub replica_kms_key_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether Amazon S3 uses the related multi-Region KMS key in the destination Amazon Web Services Region to encrypt the replica.</p>
+    pub use_source_multi_region_key: ::std::option::Option<crate::types::UseSourceMultiRegionKey>,
 }
 impl EncryptionConfiguration {
     /// <p>Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key stored in Amazon Web Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt replica objects. Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub fn replica_kms_key_id(&self) -> ::std::option::Option<&str> {
         self.replica_kms_key_id.as_deref()
+    }
+    /// <p>Specifies whether Amazon S3 uses the related multi-Region KMS key in the destination Amazon Web Services Region to encrypt the replica.</p>
+    pub fn use_source_multi_region_key(&self) -> ::std::option::Option<&crate::types::UseSourceMultiRegionKey> {
+        self.use_source_multi_region_key.as_ref()
     }
 }
 impl EncryptionConfiguration {
@@ -27,6 +33,7 @@ impl EncryptionConfiguration {
 #[non_exhaustive]
 pub struct EncryptionConfigurationBuilder {
     pub(crate) replica_kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) use_source_multi_region_key: ::std::option::Option<crate::types::UseSourceMultiRegionKey>,
 }
 impl EncryptionConfigurationBuilder {
     /// <p>Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key stored in Amazon Web Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt replica objects. Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
@@ -43,10 +50,25 @@ impl EncryptionConfigurationBuilder {
     pub fn get_replica_kms_key_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.replica_kms_key_id
     }
+    /// <p>Specifies whether Amazon S3 uses the related multi-Region KMS key in the destination Amazon Web Services Region to encrypt the replica.</p>
+    pub fn use_source_multi_region_key(mut self, input: crate::types::UseSourceMultiRegionKey) -> Self {
+        self.use_source_multi_region_key = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether Amazon S3 uses the related multi-Region KMS key in the destination Amazon Web Services Region to encrypt the replica.</p>
+    pub fn set_use_source_multi_region_key(mut self, input: ::std::option::Option<crate::types::UseSourceMultiRegionKey>) -> Self {
+        self.use_source_multi_region_key = input;
+        self
+    }
+    /// <p>Specifies whether Amazon S3 uses the related multi-Region KMS key in the destination Amazon Web Services Region to encrypt the replica.</p>
+    pub fn get_use_source_multi_region_key(&self) -> &::std::option::Option<crate::types::UseSourceMultiRegionKey> {
+        &self.use_source_multi_region_key
+    }
     /// Consumes the builder and constructs a [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
     pub fn build(self) -> crate::types::EncryptionConfiguration {
         crate::types::EncryptionConfiguration {
             replica_kms_key_id: self.replica_kms_key_id,
+            use_source_multi_region_key: self.use_source_multi_region_key,
         }
     }
 }

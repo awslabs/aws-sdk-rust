@@ -200,6 +200,20 @@ pub(crate) fn de_create_o_auth2_token_with_token_exchange(
                             .transpose()?,
                     );
                 }
+                "resource" => {
+                    builder = builder.set_resource(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "scope" => {
+                    builder = builder.set_scope(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "token_type" => {
                     builder = builder.set_token_type(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

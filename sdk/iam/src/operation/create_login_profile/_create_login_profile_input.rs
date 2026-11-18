@@ -13,6 +13,10 @@ pub struct CreateLoginProfileInput {
     pub password: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
     pub password_reset_required: ::std::option::Option<bool>,
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for this IAM user. This setting can have a value from 1 hour (3600 seconds) to 90 days (7776000 seconds), inclusive. If you do not specify a value, the setting remains unset and the existing sign-in session behavior applies.</p><note>
+    /// <p>This setting is not supported for the root user.</p>
+    /// </note>
+    pub max_signin_session_duration: ::std::option::Option<i32>,
 }
 impl CreateLoginProfileInput {
     /// <p>The name of the IAM user to create a password for. The user must already exist.</p>
@@ -31,6 +35,12 @@ impl CreateLoginProfileInput {
     pub fn password_reset_required(&self) -> ::std::option::Option<bool> {
         self.password_reset_required
     }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for this IAM user. This setting can have a value from 1 hour (3600 seconds) to 90 days (7776000 seconds), inclusive. If you do not specify a value, the setting remains unset and the existing sign-in session behavior applies.</p><note>
+    /// <p>This setting is not supported for the root user.</p>
+    /// </note>
+    pub fn max_signin_session_duration(&self) -> ::std::option::Option<i32> {
+        self.max_signin_session_duration
+    }
 }
 impl ::std::fmt::Debug for CreateLoginProfileInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -38,6 +48,7 @@ impl ::std::fmt::Debug for CreateLoginProfileInput {
         formatter.field("user_name", &self.user_name);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
         formatter.field("password_reset_required", &self.password_reset_required);
+        formatter.field("max_signin_session_duration", &self.max_signin_session_duration);
         formatter.finish()
     }
 }
@@ -55,6 +66,7 @@ pub struct CreateLoginProfileInputBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) password: ::std::option::Option<::std::string::String>,
     pub(crate) password_reset_required: ::std::option::Option<bool>,
+    pub(crate) max_signin_session_duration: ::std::option::Option<i32>,
 }
 impl CreateLoginProfileInputBuilder {
     /// <p>The name of the IAM user to create a password for. The user must already exist.</p>
@@ -111,6 +123,26 @@ impl CreateLoginProfileInputBuilder {
     pub fn get_password_reset_required(&self) -> &::std::option::Option<bool> {
         &self.password_reset_required
     }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for this IAM user. This setting can have a value from 1 hour (3600 seconds) to 90 days (7776000 seconds), inclusive. If you do not specify a value, the setting remains unset and the existing sign-in session behavior applies.</p><note>
+    /// <p>This setting is not supported for the root user.</p>
+    /// </note>
+    pub fn max_signin_session_duration(mut self, input: i32) -> Self {
+        self.max_signin_session_duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for this IAM user. This setting can have a value from 1 hour (3600 seconds) to 90 days (7776000 seconds), inclusive. If you do not specify a value, the setting remains unset and the existing sign-in session behavior applies.</p><note>
+    /// <p>This setting is not supported for the root user.</p>
+    /// </note>
+    pub fn set_max_signin_session_duration(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_signin_session_duration = input;
+        self
+    }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for this IAM user. This setting can have a value from 1 hour (3600 seconds) to 90 days (7776000 seconds), inclusive. If you do not specify a value, the setting remains unset and the existing sign-in session behavior applies.</p><note>
+    /// <p>This setting is not supported for the root user.</p>
+    /// </note>
+    pub fn get_max_signin_session_duration(&self) -> &::std::option::Option<i32> {
+        &self.max_signin_session_duration
+    }
     /// Consumes the builder and constructs a [`CreateLoginProfileInput`](crate::operation::create_login_profile::CreateLoginProfileInput).
     pub fn build(
         self,
@@ -120,6 +152,7 @@ impl CreateLoginProfileInputBuilder {
             user_name: self.user_name,
             password: self.password,
             password_reset_required: self.password_reset_required,
+            max_signin_session_duration: self.max_signin_session_duration,
         })
     }
 }
@@ -129,6 +162,7 @@ impl ::std::fmt::Debug for CreateLoginProfileInputBuilder {
         formatter.field("user_name", &self.user_name);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
         formatter.field("password_reset_required", &self.password_reset_required);
+        formatter.field("max_signin_session_duration", &self.max_signin_session_duration);
         formatter.finish()
     }
 }

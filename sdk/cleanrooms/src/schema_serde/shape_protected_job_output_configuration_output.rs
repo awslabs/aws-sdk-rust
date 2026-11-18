@@ -19,6 +19,16 @@ static PROTECTEDJOBOUTPUTCONFIGURATIONOUTPUT_MEMBER_MEMBER: ::aws_smithy_schema:
     "member",
     1,
 );
+static PROTECTEDJOBOUTPUTCONFIGURATIONOUTPUT_MEMBER_INTERMEDIATETABLE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cleanrooms#ProtectedJobOutputConfigurationOutput$intermediateTable",
+        "com.amazonaws.cleanrooms",
+        "ProtectedJobOutputConfigurationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "intermediateTable",
+    2,
+);
 static PROTECTEDJOBOUTPUTCONFIGURATIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.cleanrooms#ProtectedJobOutputConfigurationOutput",
@@ -29,6 +39,7 @@ static PROTECTEDJOBOUTPUTCONFIGURATIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema
     &[
         &PROTECTEDJOBOUTPUTCONFIGURATIONOUTPUT_MEMBER_S3,
         &PROTECTEDJOBOUTPUTCONFIGURATIONOUTPUT_MEMBER_MEMBER,
+        &PROTECTEDJOBOUTPUTCONFIGURATIONOUTPUT_MEMBER_INTERMEDIATETABLE,
     ],
 );
 impl crate::types::ProtectedJobOutputConfigurationOutput {
@@ -51,6 +62,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::ProtectedJ
             }
             Self::Member(val) => {
                 ser.write_struct(&PROTECTEDJOBOUTPUTCONFIGURATIONOUTPUT_MEMBER_MEMBER, val)?;
+            }
+            Self::IntermediateTable(val) => {
+                ser.write_struct(&PROTECTEDJOBOUTPUTCONFIGURATIONOUTPUT_MEMBER_INTERMEDIATETABLE, val)?;
             }
             Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
         }
@@ -75,6 +89,7 @@ impl crate::types::ProtectedJobOutputConfigurationOutput {
             result = ::std::option::Option::Some(match member.member_index() {
                 Some(0) => Self::S3(crate::types::ProtectedJobS3OutputConfigurationOutput::deserialize(deser)?),
                 Some(1) => Self::Member(crate::types::ProtectedJobMemberOutputConfigurationOutput::deserialize(deser)?),
+                Some(2) => Self::IntermediateTable(crate::types::IntermediateTableOutputConfiguration::deserialize(deser)?),
                 _ => Self::Unknown,
             });
             Ok(())

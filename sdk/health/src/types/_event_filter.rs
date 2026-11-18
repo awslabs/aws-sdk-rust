@@ -28,9 +28,7 @@ pub struct EventFilter {
     pub entity_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>, or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't supported at this time.</p>
     pub event_type_categories: ::std::option::Option<::std::vec::Vec<crate::types::EventTypeCategory>>,
-    /// <p>A map of resource tag key-value pairs to filter affected entities.</p><note>
-    /// <p>Currently, the <code>tags</code> property isn't supported.</p>
-    /// </note>
+    /// <p>A map of tag keys to lists of tag values. A tag matches when its key is in the map and its value is one of the values listed for that key. The filter matches when at least one key in the map matches.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>A list of event status codes.</p>
     pub event_status_codes: ::std::option::Option<::std::vec::Vec<crate::types::EventStatusCode>>,
@@ -110,9 +108,7 @@ impl EventFilter {
     pub fn event_type_categories(&self) -> &[crate::types::EventTypeCategory] {
         self.event_type_categories.as_deref().unwrap_or_default()
     }
-    /// <p>A map of resource tag key-value pairs to filter affected entities.</p><note>
-    /// <p>Currently, the <code>tags</code> property isn't supported.</p>
-    /// </note>
+    /// <p>A map of tag keys to lists of tag values. A tag matches when its key is in the map and its value is one of the values listed for that key. The filter matches when at least one key in the map matches.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.tags.as_ref()
     }
@@ -401,18 +397,14 @@ impl EventFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A map of resource tag key-value pairs to filter affected entities.</p><note>
-    /// <p>Currently, the <code>tags</code> property isn't supported.</p>
-    /// </note>
+    /// <p>A map of tag keys to lists of tag values. A tag matches when its key is in the map and its value is one of the values listed for that key. The filter matches when at least one key in the map matches.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A map of resource tag key-value pairs to filter affected entities.</p><note>
-    /// <p>Currently, the <code>tags</code> property isn't supported.</p>
-    /// </note>
+    /// <p>A map of tag keys to lists of tag values. A tag matches when its key is in the map and its value is one of the values listed for that key. The filter matches when at least one key in the map matches.</p>
     pub fn set_tags(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -420,9 +412,7 @@ impl EventFilterBuilder {
         self.tags = input;
         self
     }
-    /// <p>A map of resource tag key-value pairs to filter affected entities.</p><note>
-    /// <p>Currently, the <code>tags</code> property isn't supported.</p>
-    /// </note>
+    /// <p>A map of tag keys to lists of tag values. A tag matches when its key is in the map and its value is one of the values listed for that key. The filter matches when at least one key in the map matches.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.tags
     }

@@ -10,6 +10,17 @@ static INTERMEDIATETABLECOMPUTECONFIGURATION_MEMBER_QUERYCOMPUTECONFIGURATION: :
         "queryComputeConfiguration",
         0,
     );
+static INTERMEDIATETABLECOMPUTECONFIGURATION_MEMBER_JOBCOMPUTECONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.cleanrooms#IntermediateTableComputeConfiguration$jobComputeConfiguration",
+            "com.amazonaws.cleanrooms",
+            "IntermediateTableComputeConfiguration",
+        ),
+        ::aws_smithy_schema::ShapeType::Union,
+        "jobComputeConfiguration",
+        1,
+    );
 static INTERMEDIATETABLECOMPUTECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.cleanrooms#IntermediateTableComputeConfiguration",
@@ -17,7 +28,10 @@ static INTERMEDIATETABLECOMPUTECONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema
         "IntermediateTableComputeConfiguration",
     ),
     ::aws_smithy_schema::ShapeType::Union,
-    &[&INTERMEDIATETABLECOMPUTECONFIGURATION_MEMBER_QUERYCOMPUTECONFIGURATION],
+    &[
+        &INTERMEDIATETABLECOMPUTECONFIGURATION_MEMBER_QUERYCOMPUTECONFIGURATION,
+        &INTERMEDIATETABLECOMPUTECONFIGURATION_MEMBER_JOBCOMPUTECONFIGURATION,
+    ],
 );
 impl crate::types::IntermediateTableComputeConfiguration {
     /// The schema for this shape.
@@ -36,6 +50,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Intermedia
         match self {
             Self::QueryComputeConfiguration(val) => {
                 ser.write_struct(&INTERMEDIATETABLECOMPUTECONFIGURATION_MEMBER_QUERYCOMPUTECONFIGURATION, val)?;
+            }
+            Self::JobComputeConfiguration(val) => {
+                ser.write_struct(&INTERMEDIATETABLECOMPUTECONFIGURATION_MEMBER_JOBCOMPUTECONFIGURATION, val)?;
             }
             Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
         }
@@ -59,6 +76,7 @@ impl crate::types::IntermediateTableComputeConfiguration {
             }
             result = ::std::option::Option::Some(match member.member_index() {
                 Some(0) => Self::QueryComputeConfiguration(crate::types::WorkerComputeConfiguration::deserialize(deser)?),
+                Some(1) => Self::JobComputeConfiguration(crate::types::ProtectedJobComputeConfiguration::deserialize(deser)?),
                 _ => Self::Unknown,
             });
             Ok(())

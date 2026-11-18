@@ -47,6 +47,20 @@ pub fn de_list_test_templates_http_error(
             };
             tmp
         }),
+        "ThrottlingException" => crate::operation::list_test_templates::ListTestTemplatesError::ThrottlingException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ThrottlingExceptionBuilder::default();
+                output = crate::protocol_serde::shape_throttling_exception::de_throttling_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::list_test_templates::ListTestTemplatesError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::throttling_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::list_test_templates::ListTestTemplatesError::unhandled)?
+            };
+            tmp
+        }),
         "ValidationException" => crate::operation::list_test_templates::ListTestTemplatesError::ValidationException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -101,6 +115,13 @@ pub(crate) fn de_list_test_templates(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "nextToken" => {
+                    builder = builder.set_next_token(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "testTemplates" => {
                     builder = builder.set_test_templates(crate::protocol_serde::shape_test_template_summary_list::de_test_template_summary_list(
                         tokens,

@@ -63,6 +63,8 @@ pub use crate::types::_test_run_report_configuration::TestRunReportConfiguration
 
 pub use crate::types::_test_run_policy_snapshot::TestRunPolicySnapshotBuilder;
 
+pub use crate::types::_test_run_effective_policy_values::TestRunEffectivePolicyValuesBuilder;
+
 pub use crate::types::_dev_ops_agent_investigation::DevOpsAgentInvestigationBuilder;
 
 pub use crate::types::_dependency_summary::DependencySummaryBuilder;

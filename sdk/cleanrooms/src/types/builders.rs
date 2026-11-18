@@ -151,6 +151,8 @@ pub use crate::types::_intermediate_table_summary::IntermediateTableSummaryBuild
 
 pub use crate::types::_population_analysis_sql_parameters::PopulationAnalysisSqlParametersBuilder;
 
+pub use crate::types::_population_analysis_job_parameters::PopulationAnalysisJobParametersBuilder;
+
 pub use crate::types::_intermediate_table_active_version::IntermediateTableActiveVersionBuilder;
 
 pub use crate::types::_intermediate_table_schema::IntermediateTableSchemaBuilder;

@@ -307,6 +307,8 @@ pub(crate) mod shape_waf_unavailable_entity_exception;
 
 pub(crate) mod shape_waf_unsupported_aggregate_key_type_exception;
 
+pub(crate) mod shape_analytics_config;
+
 pub(crate) mod shape_api_key_summaries;
 
 pub(crate) mod shape_application_config;

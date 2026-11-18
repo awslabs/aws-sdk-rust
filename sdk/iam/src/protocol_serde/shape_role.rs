@@ -118,44 +118,59 @@ pub fn de_role(
                 builder = builder.set_max_session_duration(var_8);
             }
             ,
-            s if s.matches("PermissionsBoundary") /* PermissionsBoundary com.amazonaws.iam#Role$PermissionsBoundary */ =>  {
+            s if s.matches("MaxSigninSessionDuration") /* MaxSigninSessionDuration com.amazonaws.iam#Role$MaxSigninSessionDuration */ =>  {
                 let var_9 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.iam#maxSigninSessionDurationType`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max_signin_session_duration(var_9);
+            }
+            ,
+            s if s.matches("PermissionsBoundary") /* PermissionsBoundary com.amazonaws.iam#Role$PermissionsBoundary */ =>  {
+                let var_10 =
                     Some(
                         crate::protocol_serde::shape_attached_permissions_boundary::de_attached_permissions_boundary(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_permissions_boundary(var_9);
+                builder = builder.set_permissions_boundary(var_10);
             }
             ,
             s if s.matches("Tags") /* Tags com.amazonaws.iam#Role$Tags */ =>  {
-                let var_10 =
+                let var_11 =
                     Some(
                         crate::protocol_serde::shape_tag_list_type::de_tag_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_10);
+                builder = builder.set_tags(var_11);
             }
             ,
             s if s.matches("RoleLastUsed") /* RoleLastUsed com.amazonaws.iam#Role$RoleLastUsed */ =>  {
-                let var_11 =
+                let var_12 =
                     Some(
                         crate::protocol_serde::shape_role_last_used::de_role_last_used(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_role_last_used(var_11);
+                builder = builder.set_role_last_used(var_12);
             }
             ,
             s if s.matches("SourceRoleTemplate") /* SourceRoleTemplate com.amazonaws.iam#Role$SourceRoleTemplate */ =>  {
-                let var_12 =
+                let var_13 =
                     Some(
                         crate::protocol_serde::shape_source_role_template::de_source_role_template(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_source_role_template(var_12);
+                builder = builder.set_source_role_template(var_13);
             }
             ,
             _ => {}

@@ -15,9 +15,11 @@ pub struct ImportJobSummary {
     /// <li>
     /// <p><code>PROCESSING</code> – Job is processing.</p></li>
     /// <li>
-    /// <p><code>ERROR</code> – An error occurred during processing.</p></li>
-    /// <li>
     /// <p><code>COMPLETED</code> – Job has completed processing successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – An error occurred during processing.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> – Job has been canceled.</p></li>
     /// </ul>
     pub job_status: ::std::option::Option<crate::types::JobStatus>,
     /// <p>The date and time when the import job was created.</p>
@@ -43,9 +45,11 @@ impl ImportJobSummary {
     /// <li>
     /// <p><code>PROCESSING</code> – Job is processing.</p></li>
     /// <li>
-    /// <p><code>ERROR</code> – An error occurred during processing.</p></li>
-    /// <li>
     /// <p><code>COMPLETED</code> – Job has completed processing successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – An error occurred during processing.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> – Job has been canceled.</p></li>
     /// </ul>
     pub fn job_status(&self) -> ::std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
@@ -117,9 +121,11 @@ impl ImportJobSummaryBuilder {
     /// <li>
     /// <p><code>PROCESSING</code> – Job is processing.</p></li>
     /// <li>
-    /// <p><code>ERROR</code> – An error occurred during processing.</p></li>
-    /// <li>
     /// <p><code>COMPLETED</code> – Job has completed processing successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – An error occurred during processing.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> – Job has been canceled.</p></li>
     /// </ul>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
         self.job_status = ::std::option::Option::Some(input);
@@ -132,9 +138,11 @@ impl ImportJobSummaryBuilder {
     /// <li>
     /// <p><code>PROCESSING</code> – Job is processing.</p></li>
     /// <li>
-    /// <p><code>ERROR</code> – An error occurred during processing.</p></li>
-    /// <li>
     /// <p><code>COMPLETED</code> – Job has completed processing successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – An error occurred during processing.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> – Job has been canceled.</p></li>
     /// </ul>
     pub fn set_job_status(mut self, input: ::std::option::Option<crate::types::JobStatus>) -> Self {
         self.job_status = input;
@@ -147,9 +155,11 @@ impl ImportJobSummaryBuilder {
     /// <li>
     /// <p><code>PROCESSING</code> – Job is processing.</p></li>
     /// <li>
-    /// <p><code>ERROR</code> – An error occurred during processing.</p></li>
-    /// <li>
     /// <p><code>COMPLETED</code> – Job has completed processing successfully.</p></li>
+    /// <li>
+    /// <p><code>FAILED</code> – An error occurred during processing.</p></li>
+    /// <li>
+    /// <p><code>CANCELLED</code> – Job has been canceled.</p></li>
     /// </ul>
     pub fn get_job_status(&self) -> &::std::option::Option<crate::types::JobStatus> {
         &self.job_status

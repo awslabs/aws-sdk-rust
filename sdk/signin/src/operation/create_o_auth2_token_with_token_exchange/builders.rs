@@ -109,17 +109,17 @@ impl CreateOAuth2TokenWithTokenExchangeFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The OAuth 2.0 grant type. Currently only supports "urn:ietf:params:oauth:grant-type:token-exchange".
+    /// The OAuth 2.0 grant type. Currently supports "urn:ietf:params:oauth:grant-type:token-exchange" and "urn:ietf:params:oauth:grant-type:jwt-bearer".
     pub fn grant_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.grant_type(input.into());
         self
     }
-    /// The OAuth 2.0 grant type. Currently only supports "urn:ietf:params:oauth:grant-type:token-exchange".
+    /// The OAuth 2.0 grant type. Currently supports "urn:ietf:params:oauth:grant-type:token-exchange" and "urn:ietf:params:oauth:grant-type:jwt-bearer".
     pub fn set_grant_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_grant_type(input);
         self
     }
-    /// The OAuth 2.0 grant type. Currently only supports "urn:ietf:params:oauth:grant-type:token-exchange".
+    /// The OAuth 2.0 grant type. Currently supports "urn:ietf:params:oauth:grant-type:token-exchange" and "urn:ietf:params:oauth:grant-type:jwt-bearer".
     pub fn get_grant_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_grant_type()
     }
@@ -151,31 +151,59 @@ impl CreateOAuth2TokenWithTokenExchangeFluentBuilder {
     pub fn get_subject_token_type(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subject_token_type()
     }
-    /// The OAuth resource for which the access token is requested. Required when "grant_type=urn:ietf:params:oauth:grant-type:token-exchange". Example: "glue.amazonaws.com".
+    /// The JWT authorization grant, as defined in RFC 7523. Required when "grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer".
+    pub fn assertion(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.assertion(input.into());
+        self
+    }
+    /// The JWT authorization grant, as defined in RFC 7523. Required when "grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer".
+    pub fn set_assertion(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_assertion(input);
+        self
+    }
+    /// The JWT authorization grant, as defined in RFC 7523. Required when "grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer".
+    pub fn get_assertion(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_assertion()
+    }
+    /// The OAuth 2.0 client identifier. If provided with "grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer", must match the assertion's "client_id" claim.
+    pub fn client_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.client_id(input.into());
+        self
+    }
+    /// The OAuth 2.0 client identifier. If provided with "grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer", must match the assertion's "client_id" claim.
+    pub fn set_client_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_client_id(input);
+        self
+    }
+    /// The OAuth 2.0 client identifier. If provided with "grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer", must match the assertion's "client_id" claim.
+    pub fn get_client_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_id()
+    }
+    /// The OAuth resource for which the access token is requested: - "grant_type=urn:ietf:params:oauth:grant-type:token-exchange": Required. Must be a service principal. Example: "glue.amazonaws.com". - "grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer": Required when the assertion has no "resource" claim, otherwise must match it. Must be a URI. Example: "https://aws-mcp.us-east-1.api.aws/mcp".
     pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource(input.into());
         self
     }
-    /// The OAuth resource for which the access token is requested. Required when "grant_type=urn:ietf:params:oauth:grant-type:token-exchange". Example: "glue.amazonaws.com".
+    /// The OAuth resource for which the access token is requested: - "grant_type=urn:ietf:params:oauth:grant-type:token-exchange": Required. Must be a service principal. Example: "glue.amazonaws.com". - "grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer": Required when the assertion has no "resource" claim, otherwise must match it. Must be a URI. Example: "https://aws-mcp.us-east-1.api.aws/mcp".
     pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource(input);
         self
     }
-    /// The OAuth resource for which the access token is requested. Required when "grant_type=urn:ietf:params:oauth:grant-type:token-exchange". Example: "glue.amazonaws.com".
+    /// The OAuth resource for which the access token is requested: - "grant_type=urn:ietf:params:oauth:grant-type:token-exchange": Required. Must be a service principal. Example: "glue.amazonaws.com". - "grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer": Required when the assertion has no "resource" claim, otherwise must match it. Must be a URI. Example: "https://aws-mcp.us-east-1.api.aws/mcp".
     pub fn get_resource(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource()
     }
-    /// IAM managed policy Amazon Resource Names (ARNs) to apply as session policies that further scope down the permissions of the issued access token, provided as a space-delimited list. Example: "arn:aws:iam::444455556666:policy/MyPolicy".
+    /// The IAM managed policy Amazon Resource Names (ARNs) to apply as session policies that further scope down the permissions of the issued access token, provided as a space-delimited list. Example: "arn:aws:iam::444455556666:policy/MyPolicy". If provided with "grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer", must match the assertion's "scope" claim.
     pub fn scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.scope(input.into());
         self
     }
-    /// IAM managed policy Amazon Resource Names (ARNs) to apply as session policies that further scope down the permissions of the issued access token, provided as a space-delimited list. Example: "arn:aws:iam::444455556666:policy/MyPolicy".
+    /// The IAM managed policy Amazon Resource Names (ARNs) to apply as session policies that further scope down the permissions of the issued access token, provided as a space-delimited list. Example: "arn:aws:iam::444455556666:policy/MyPolicy". If provided with "grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer", must match the assertion's "scope" claim.
     pub fn set_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_scope(input);
         self
     }
-    /// IAM managed policy Amazon Resource Names (ARNs) to apply as session policies that further scope down the permissions of the issued access token, provided as a space-delimited list. Example: "arn:aws:iam::444455556666:policy/MyPolicy".
+    /// The IAM managed policy Amazon Resource Names (ARNs) to apply as session policies that further scope down the permissions of the issued access token, provided as a space-delimited list. Example: "arn:aws:iam::444455556666:policy/MyPolicy". If provided with "grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer", must match the assertion's "scope" claim.
     pub fn get_scope(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_scope()
     }

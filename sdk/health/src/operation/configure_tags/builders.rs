@@ -114,17 +114,17 @@ impl ConfigureTagsFluentBuilder {
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
     ///
     /// <p>The list of resource tag keys to configure for Health event tracking.</p>
-    pub fn tag_keys(mut self, input: crate::types::ResourceTagKey) -> Self {
+    pub fn tag_keys(mut self, input: crate::types::ConfigureTagsTagKey) -> Self {
         self.inner = self.inner.tag_keys(input);
         self
     }
     /// <p>The list of resource tag keys to configure for Health event tracking.</p>
-    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTagKey>>) -> Self {
+    pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ConfigureTagsTagKey>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
     /// <p>The list of resource tag keys to configure for Health event tracking.</p>
-    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResourceTagKey>> {
+    pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ConfigureTagsTagKey>> {
         self.inner.get_tag_keys()
     }
 }

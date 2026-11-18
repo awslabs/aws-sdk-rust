@@ -20,6 +20,7 @@
 ///     OAuth2ErrorCode::ServiceQuotaExceeded => { /* ... */ },
 ///     OAuth2ErrorCode::TokenExpired => { /* ... */ },
 ///     OAuth2ErrorCode::UserCredentialsChanged => { /* ... */ },
+///     OAuth2ErrorCode::OauthInvalidClient => { /* ... */ },
 ///     OAuth2ErrorCode::OauthInvalidGrant => { /* ... */ },
 ///     OAuth2ErrorCode::OauthInvalidRequest => { /* ... */ },
 ///     OAuth2ErrorCode::OauthInvalidScope => { /* ... */ },
@@ -76,6 +77,8 @@ pub enum OAuth2ErrorCode {
     /// User credentials have been changed.
     UserCredentialsChanged,
     #[allow(missing_docs)] // documentation missing in model
+    OauthInvalidClient,
+    #[allow(missing_docs)] // documentation missing in model
     OauthInvalidGrant,
     #[allow(missing_docs)] // documentation missing in model
     OauthInvalidRequest,
@@ -106,6 +109,7 @@ impl ::std::convert::From<&str> for OAuth2ErrorCode {
             "SERVICE_QUOTA_EXCEEDED" => OAuth2ErrorCode::ServiceQuotaExceeded,
             "TOKEN_EXPIRED" => OAuth2ErrorCode::TokenExpired,
             "USER_CREDENTIALS_CHANGED" => OAuth2ErrorCode::UserCredentialsChanged,
+            "invalid_client" => OAuth2ErrorCode::OauthInvalidClient,
             "invalid_grant" => OAuth2ErrorCode::OauthInvalidGrant,
             "invalid_request" => OAuth2ErrorCode::OauthInvalidRequest,
             "invalid_scope" => OAuth2ErrorCode::OauthInvalidScope,
@@ -137,6 +141,7 @@ impl OAuth2ErrorCode {
             OAuth2ErrorCode::ServiceQuotaExceeded => "SERVICE_QUOTA_EXCEEDED",
             OAuth2ErrorCode::TokenExpired => "TOKEN_EXPIRED",
             OAuth2ErrorCode::UserCredentialsChanged => "USER_CREDENTIALS_CHANGED",
+            OAuth2ErrorCode::OauthInvalidClient => "invalid_client",
             OAuth2ErrorCode::OauthInvalidGrant => "invalid_grant",
             OAuth2ErrorCode::OauthInvalidRequest => "invalid_request",
             OAuth2ErrorCode::OauthInvalidScope => "invalid_scope",
@@ -159,6 +164,7 @@ impl OAuth2ErrorCode {
             "SERVICE_QUOTA_EXCEEDED",
             "TOKEN_EXPIRED",
             "USER_CREDENTIALS_CHANGED",
+            "invalid_client",
             "invalid_grant",
             "invalid_request",
             "invalid_scope",
@@ -198,6 +204,7 @@ impl ::std::fmt::Display for OAuth2ErrorCode {
             OAuth2ErrorCode::ServiceQuotaExceeded => write!(f, "SERVICE_QUOTA_EXCEEDED"),
             OAuth2ErrorCode::TokenExpired => write!(f, "TOKEN_EXPIRED"),
             OAuth2ErrorCode::UserCredentialsChanged => write!(f, "USER_CREDENTIALS_CHANGED"),
+            OAuth2ErrorCode::OauthInvalidClient => write!(f, "invalid_client"),
             OAuth2ErrorCode::OauthInvalidGrant => write!(f, "invalid_grant"),
             OAuth2ErrorCode::OauthInvalidRequest => write!(f, "invalid_request"),
             OAuth2ErrorCode::OauthInvalidScope => write!(f, "invalid_scope"),

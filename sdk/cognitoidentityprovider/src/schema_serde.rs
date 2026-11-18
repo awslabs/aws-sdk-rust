@@ -161,6 +161,10 @@ pub(crate) mod shape_auth_event_type;
 
 pub(crate) mod shape_authentication_result_type;
 
+pub(crate) mod shape_cancel_point_in_time_recovery_input_input;
+
+pub(crate) mod shape_cancel_point_in_time_recovery_output_output;
+
 pub(crate) mod shape_challenge_response_type;
 
 pub(crate) mod shape_change_password_input_input;
@@ -316,6 +320,10 @@ pub(crate) mod shape_describe_managed_login_branding_by_client_output_output;
 pub(crate) mod shape_describe_managed_login_branding_input_input;
 
 pub(crate) mod shape_describe_managed_login_branding_output_output;
+
+pub(crate) mod shape_describe_point_in_time_recovery_input_input;
+
+pub(crate) mod shape_describe_point_in_time_recovery_output_output;
 
 pub(crate) mod shape_describe_resource_server_input_input;
 
@@ -481,6 +489,10 @@ pub(crate) mod shape_initiate_auth_input_input;
 
 pub(crate) mod shape_initiate_auth_output_output;
 
+pub(crate) mod shape_initiate_point_in_time_recovery_input_input;
+
+pub(crate) mod shape_initiate_point_in_time_recovery_output_output;
+
 pub(crate) mod shape_internal_error_exception;
 
 pub(crate) mod shape_internal_server_exception;
@@ -524,6 +536,10 @@ pub(crate) mod shape_list_groups_output_output;
 pub(crate) mod shape_list_identity_providers_input_input;
 
 pub(crate) mod shape_list_identity_providers_output_output;
+
+pub(crate) mod shape_list_point_in_time_recoveries_input_input;
+
+pub(crate) mod shape_list_point_in_time_recoveries_output_output;
 
 pub(crate) mod shape_list_resource_servers_input_input;
 
@@ -633,6 +649,12 @@ pub(crate) mod shape_respond_to_auth_challenge_input_input;
 
 pub(crate) mod shape_respond_to_auth_challenge_output_output;
 
+pub(crate) mod shape_restoration_description_type;
+
+pub(crate) mod shape_restoration_type;
+
+pub(crate) mod shape_restore_preview_type;
+
 pub(crate) mod shape_revoke_token_input_input;
 
 pub(crate) mod shape_revoke_token_output_output;
@@ -708,6 +730,10 @@ pub(crate) mod shape_software_token_mfa_config_type;
 pub(crate) mod shape_software_token_mfa_not_found_exception;
 
 pub(crate) mod shape_software_token_mfa_settings_type;
+
+pub(crate) mod shape_start_point_in_time_recovery_input_input;
+
+pub(crate) mod shape_start_point_in_time_recovery_output_output;
 
 pub(crate) mod shape_start_user_import_job_input_input;
 

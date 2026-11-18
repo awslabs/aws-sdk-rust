@@ -171,6 +171,8 @@ pub(crate) mod shape_list_threat_models;
 
 pub(crate) mod shape_list_threats;
 
+pub(crate) mod shape_resume_pentest_job;
+
 pub(crate) mod shape_start_code_remediation;
 
 pub(crate) mod shape_start_code_review_job;
@@ -377,6 +379,8 @@ pub(crate) mod shape_list_threats_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
+pub(crate) mod shape_resume_pentest_job_input;
+
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_code_remediation_input;
@@ -424,6 +428,8 @@ pub(crate) mod shape_update_threat_model_input;
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_verify_target_domain_input;
+
+pub(crate) mod shape_actor;
 
 pub(crate) mod shape_actor_message_list;
 
@@ -611,8 +617,6 @@ pub(crate) mod shape_verification_details;
 
 pub(crate) mod shape_vpc_config;
 
-pub(crate) mod shape_actor;
-
 pub(crate) mod shape_actor_list;
 
 pub(crate) mod shape_actor_message;
@@ -626,6 +630,8 @@ pub(crate) mod shape_application_summary;
 pub(crate) mod shape_artifact_metadata_item;
 
 pub(crate) mod shape_artifact_summary;
+
+pub(crate) mod shape_authentication;
 
 pub(crate) mod shape_azure_dev_ops_integration_input;
 
@@ -788,8 +794,6 @@ pub(crate) mod shape_user_config;
 pub(crate) mod shape_validation_exception_field;
 
 pub(crate) mod shape_vpc_configs;
-
-pub(crate) mod shape_authentication;
 
 pub(crate) mod shape_azure_dev_ops_repository_resource;
 

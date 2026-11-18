@@ -227,6 +227,23 @@ impl CreateRoleFluentBuilder {
     pub fn get_max_session_duration(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_session_duration()
     }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for users who sign in with this role. This setting can have a value from 1 hour (3600 seconds) to 90 days (7776000 seconds), inclusive. If you do not specify a value, the setting remains unset and the existing sign-in session behavior applies.</p>
+    /// <p>This setting is independent of <code>MaxSessionDuration</code>.</p>
+    pub fn max_signin_session_duration(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_signin_session_duration(input);
+        self
+    }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for users who sign in with this role. This setting can have a value from 1 hour (3600 seconds) to 90 days (7776000 seconds), inclusive. If you do not specify a value, the setting remains unset and the existing sign-in session behavior applies.</p>
+    /// <p>This setting is independent of <code>MaxSessionDuration</code>.</p>
+    pub fn set_max_signin_session_duration(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_signin_session_duration(input);
+        self
+    }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for users who sign in with this role. This setting can have a value from 1 hour (3600 seconds) to 90 days (7776000 seconds), inclusive. If you do not specify a value, the setting remains unset and the existing sign-in session behavior applies.</p>
+    /// <p>This setting is independent of <code>MaxSessionDuration</code>.</p>
+    pub fn get_max_signin_session_duration(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_signin_session_duration()
+    }
     /// <p>The ARN of the managed policy that is used to set the permissions boundary for the role.</p>
     /// <p>A permissions boundary policy defines the maximum permissions that identity-based policies can grant to an entity, but does not grant permissions. Permissions boundaries do not define the maximum permissions that a resource-based policy can grant to an entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM entities</a> in the <i>IAM User Guide</i>.</p>
     /// <p>For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy types </a> in the <i>IAM User Guide</i>.</p>

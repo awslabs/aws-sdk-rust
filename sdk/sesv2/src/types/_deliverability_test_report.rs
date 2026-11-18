@@ -14,7 +14,7 @@ pub struct DeliverabilityTestReport {
     pub from_email_address: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the predictive inbox placement test was created.</p>
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
+    /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETED</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.</p>
     pub deliverability_test_status: ::std::option::Option<crate::types::DeliverabilityTestStatus>,
 }
 impl DeliverabilityTestReport {
@@ -38,7 +38,7 @@ impl DeliverabilityTestReport {
     pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
-    /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
+    /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETED</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.</p>
     pub fn deliverability_test_status(&self) -> ::std::option::Option<&crate::types::DeliverabilityTestStatus> {
         self.deliverability_test_status.as_ref()
     }
@@ -132,17 +132,17 @@ impl DeliverabilityTestReportBuilder {
     pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_date
     }
-    /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
+    /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETED</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.</p>
     pub fn deliverability_test_status(mut self, input: crate::types::DeliverabilityTestStatus) -> Self {
         self.deliverability_test_status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
+    /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETED</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.</p>
     pub fn set_deliverability_test_status(mut self, input: ::std::option::Option<crate::types::DeliverabilityTestStatus>) -> Self {
         self.deliverability_test_status = input;
         self
     }
-    /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
+    /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETED</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.</p>
     pub fn get_deliverability_test_status(&self) -> &::std::option::Option<crate::types::DeliverabilityTestStatus> {
         &self.deliverability_test_status
     }

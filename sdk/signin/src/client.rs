@@ -13,14 +13,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateBearerToken`](crate::operation::create_bearer_token) operation has
-/// a [`Client::create_bearer_token`], function which returns a builder for that operation.
+/// For example, the [`BatchRevokeSessions`](crate::operation::batch_revoke_sessions) operation has
+/// a [`Client::batch_revoke_sessions`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_bearer_token()
-///     .grant_type("example")
+/// let result = client.batch_revoke_sessions()
+///     .principal_arn("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -90,6 +90,8 @@ impl Client {
     }
 }
 
+mod batch_revoke_sessions;
+
 mod create_bearer_token;
 
 mod create_o_auth2_token;
@@ -109,7 +111,7 @@ mod create_o_auth2_token_with_token_exchange;
 /// # let client: aws_sdk_signin::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_bearer_token()
+/// let result = client.batch_revoke_sessions()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -133,9 +135,13 @@ mod get_console_authorization_configuration;
 
 mod get_resource_policy;
 
+mod get_session;
+
 mod introspect_o_auth2_token_with_iam;
 
 mod list_resource_permission_statements;
+
+mod list_sessions;
 
 mod put_console_authorization_configuration;
 

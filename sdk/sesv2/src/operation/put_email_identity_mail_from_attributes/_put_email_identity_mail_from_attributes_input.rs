@@ -16,8 +16,8 @@ pub struct PutEmailIdentityMailFromAttributesInput {
     /// <p>It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.</p></li>
     /// </ul>
     pub mail_from_domain: ::std::option::Option<::std::string::String>,
-    /// <p>The action to take if the required MX record isn't found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
-    /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
+    /// <p>The action to take if the required MX record isn't found when you send an email. When you set this value to <code>USE_DEFAULT_VALUE</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>REJECT_MESSAGE</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerifiedException</code> error, and doesn't attempt to deliver the email.</p>
+    /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>PENDING</code>, <code>FAILED</code>, and <code>TEMPORARY_FAILURE</code> states.</p>
     pub behavior_on_mx_failure: ::std::option::Option<crate::types::BehaviorOnMxFailure>,
 }
 impl PutEmailIdentityMailFromAttributesInput {
@@ -37,8 +37,8 @@ impl PutEmailIdentityMailFromAttributesInput {
     pub fn mail_from_domain(&self) -> ::std::option::Option<&str> {
         self.mail_from_domain.as_deref()
     }
-    /// <p>The action to take if the required MX record isn't found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
-    /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
+    /// <p>The action to take if the required MX record isn't found when you send an email. When you set this value to <code>USE_DEFAULT_VALUE</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>REJECT_MESSAGE</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerifiedException</code> error, and doesn't attempt to deliver the email.</p>
+    /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>PENDING</code>, <code>FAILED</code>, and <code>TEMPORARY_FAILURE</code> states.</p>
     pub fn behavior_on_mx_failure(&self) -> ::std::option::Option<&crate::types::BehaviorOnMxFailure> {
         self.behavior_on_mx_failure.as_ref()
     }
@@ -112,20 +112,20 @@ impl PutEmailIdentityMailFromAttributesInputBuilder {
     pub fn get_mail_from_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.mail_from_domain
     }
-    /// <p>The action to take if the required MX record isn't found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
-    /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
+    /// <p>The action to take if the required MX record isn't found when you send an email. When you set this value to <code>USE_DEFAULT_VALUE</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>REJECT_MESSAGE</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerifiedException</code> error, and doesn't attempt to deliver the email.</p>
+    /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>PENDING</code>, <code>FAILED</code>, and <code>TEMPORARY_FAILURE</code> states.</p>
     pub fn behavior_on_mx_failure(mut self, input: crate::types::BehaviorOnMxFailure) -> Self {
         self.behavior_on_mx_failure = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The action to take if the required MX record isn't found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
-    /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
+    /// <p>The action to take if the required MX record isn't found when you send an email. When you set this value to <code>USE_DEFAULT_VALUE</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>REJECT_MESSAGE</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerifiedException</code> error, and doesn't attempt to deliver the email.</p>
+    /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>PENDING</code>, <code>FAILED</code>, and <code>TEMPORARY_FAILURE</code> states.</p>
     pub fn set_behavior_on_mx_failure(mut self, input: ::std::option::Option<crate::types::BehaviorOnMxFailure>) -> Self {
         self.behavior_on_mx_failure = input;
         self
     }
-    /// <p>The action to take if the required MX record isn't found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.</p>
-    /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
+    /// <p>The action to take if the required MX record isn't found when you send an email. When you set this value to <code>USE_DEFAULT_VALUE</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>REJECT_MESSAGE</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerifiedException</code> error, and doesn't attempt to deliver the email.</p>
+    /// <p>These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>PENDING</code>, <code>FAILED</code>, and <code>TEMPORARY_FAILURE</code> states.</p>
     pub fn get_behavior_on_mx_failure(&self) -> &::std::option::Option<crate::types::BehaviorOnMxFailure> {
         &self.behavior_on_mx_failure
     }

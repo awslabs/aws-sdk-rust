@@ -115,6 +115,8 @@ pub(crate) mod shape_device_config;
 
 pub(crate) mod shape_device_queue_info_list;
 
+pub(crate) mod shape_device_status_reason;
+
 pub(crate) mod shape_device_summary_list;
 
 pub(crate) mod shape_experimental_capabilities;

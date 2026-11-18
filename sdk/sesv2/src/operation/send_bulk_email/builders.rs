@@ -200,17 +200,17 @@ impl SendBulkEmailFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_default_email_tags`](Self::set_default_email_tags).
     ///
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendBulkEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub fn default_email_tags(mut self, input: crate::types::MessageTag) -> Self {
         self.inner = self.inner.default_email_tags(input);
         self
     }
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendBulkEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub fn set_default_email_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>) -> Self {
         self.inner = self.inner.set_default_email_tags(input);
         self
     }
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendBulkEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub fn get_default_email_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageTag>> {
         self.inner.get_default_email_tags()
     }

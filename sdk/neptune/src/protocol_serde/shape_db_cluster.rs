@@ -552,7 +552,7 @@ pub fn de_db_cluster(
                 builder = builder.set_serverless_v2_scaling_configuration(var_42);
             }
             ,
-            s if s.matches("GlobalClusterIdentifier") /* GlobalClusterIdentifier com.amazonaws.neptune#DBCluster$GlobalClusterIdentifier */ =>  {
+            s if s.matches("ServerlessV2PlatformVersion") /* ServerlessV2PlatformVersion com.amazonaws.neptune#DBCluster$ServerlessV2PlatformVersion */ =>  {
                 let var_43 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -562,11 +562,24 @@ pub fn de_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_global_cluster_identifier(var_43);
+                builder = builder.set_serverless_v2_platform_version(var_43);
+            }
+            ,
+            s if s.matches("GlobalClusterIdentifier") /* GlobalClusterIdentifier com.amazonaws.neptune#DBCluster$GlobalClusterIdentifier */ =>  {
+                let var_44 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_global_cluster_identifier(var_44);
             }
             ,
             s if s.matches("IOOptimizedNextAllowedModificationTime") /* IOOptimizedNextAllowedModificationTime com.amazonaws.neptune#DBCluster$IOOptimizedNextAllowedModificationTime */ =>  {
-                let var_44 =
+                let var_45 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -576,23 +589,10 @@ pub fn de_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_io_optimized_next_allowed_modification_time(var_44);
+                builder = builder.set_io_optimized_next_allowed_modification_time(var_45);
             }
             ,
             s if s.matches("StorageType") /* StorageType com.amazonaws.neptune#DBCluster$StorageType */ =>  {
-                let var_45 =
-                    Some(
-                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            .into()
-                        )
-                        ?
-                    )
-                ;
-                builder = builder.set_storage_type(var_45);
-            }
-            ,
-            s if s.matches("NetworkType") /* NetworkType com.amazonaws.neptune#DBCluster$NetworkType */ =>  {
                 let var_46 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
@@ -602,7 +602,20 @@ pub fn de_db_cluster(
                         ?
                     )
                 ;
-                builder = builder.set_network_type(var_46);
+                builder = builder.set_storage_type(var_46);
+            }
+            ,
+            s if s.matches("NetworkType") /* NetworkType com.amazonaws.neptune#DBCluster$NetworkType */ =>  {
+                let var_47 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_network_type(var_47);
             }
             ,
             _ => {}

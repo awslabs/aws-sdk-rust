@@ -164,6 +164,13 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "AnalyticsConfig" => {
+                            builder = builder.set_analytics_config(crate::protocol_serde::shape_analytics_config::de_analytics_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

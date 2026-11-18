@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ConfigureTags`](crate::operation::configure_tags::builders::ConfigureTagsFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`tag_keys(ResourceTagKey)`](crate::operation::configure_tags::builders::ConfigureTagsFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec::<ResourceTagKey>>)`](crate::operation::configure_tags::builders::ConfigureTagsFluentBuilder::set_tag_keys):<br>required: **true**<br><p>The list of resource tag keys to configure for Health event tracking.</p><br>
+    ///   - [`tag_keys(ConfigureTagsTagKey)`](crate::operation::configure_tags::builders::ConfigureTagsFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec::<ConfigureTagsTagKey>>)`](crate::operation::configure_tags::builders::ConfigureTagsFluentBuilder::set_tag_keys):<br>required: **true**<br><p>The list of resource tag keys to configure for Health event tracking.</p><br>
     /// - On success, responds with [`ConfigureTagsOutput`](crate::operation::configure_tags::ConfigureTagsOutput) with field(s):
     ///   - [`configured_tag_keys(Option<Vec::<ResourceTagKey>>)`](crate::operation::configure_tags::ConfigureTagsOutput::configured_tag_keys): <p>The list of resource tag keys that were successfully configured.</p>
     /// - On failure, responds with [`SdkError<ConfigureTagsError>`](crate::operation::configure_tags::ConfigureTagsError)

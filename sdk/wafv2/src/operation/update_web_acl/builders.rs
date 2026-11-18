@@ -463,4 +463,18 @@ impl UpdateWebACLFluentBuilder {
     pub fn get_monetization_config(&self) -> &::std::option::Option<crate::types::MonetizationConfig> {
         self.inner.get_monetization_config()
     }
+    /// <p>Specifies the security analytics configuration for the web ACL. For more information, see <code>AnalyticsConfig</code>.</p>
+    pub fn analytics_config(mut self, input: crate::types::AnalyticsConfig) -> Self {
+        self.inner = self.inner.analytics_config(input);
+        self
+    }
+    /// <p>Specifies the security analytics configuration for the web ACL. For more information, see <code>AnalyticsConfig</code>.</p>
+    pub fn set_analytics_config(mut self, input: ::std::option::Option<crate::types::AnalyticsConfig>) -> Self {
+        self.inner = self.inner.set_analytics_config(input);
+        self
+    }
+    /// <p>Specifies the security analytics configuration for the web ACL. For more information, see <code>AnalyticsConfig</code>.</p>
+    pub fn get_analytics_config(&self) -> &::std::option::Option<crate::types::AnalyticsConfig> {
+        self.inner.get_analytics_config()
+    }
 }

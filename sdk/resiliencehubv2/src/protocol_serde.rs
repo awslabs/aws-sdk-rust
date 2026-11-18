@@ -447,6 +447,8 @@ pub(crate) mod shape_test_parameters;
 
 pub(crate) mod shape_test_run_dependency_summary;
 
+pub(crate) mod shape_test_run_effective_policy_values;
+
 pub(crate) mod shape_test_run_event;
 
 pub(crate) mod shape_test_run_policy_snapshot;

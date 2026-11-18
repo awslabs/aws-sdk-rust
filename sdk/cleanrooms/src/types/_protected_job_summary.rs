@@ -18,6 +18,8 @@ pub struct ProtectedJobSummary {
     pub receiver_configurations: ::std::vec::Vec<crate::types::ProtectedJobReceiverConfiguration>,
     /// <p>The account ID of the member that pays for the job compute costs.</p>
     pub job_compute_payer_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The intermediate table that the protected job populated. This field is present when the protected job was triggered by a <code>PopulateIntermediateTable</code> operation.</p>
+    pub intermediate_table_configuration: ::std::option::Option<crate::types::IntermediateTableOutputConfiguration>,
 }
 impl ProtectedJobSummary {
     /// <p>The ID of the protected job.</p>
@@ -52,6 +54,10 @@ impl ProtectedJobSummary {
     pub fn job_compute_payer_account_id(&self) -> ::std::option::Option<&str> {
         self.job_compute_payer_account_id.as_deref()
     }
+    /// <p>The intermediate table that the protected job populated. This field is present when the protected job was triggered by a <code>PopulateIntermediateTable</code> operation.</p>
+    pub fn intermediate_table_configuration(&self) -> ::std::option::Option<&crate::types::IntermediateTableOutputConfiguration> {
+        self.intermediate_table_configuration.as_ref()
+    }
 }
 impl ProtectedJobSummary {
     /// Creates a new builder-style object to manufacture [`ProtectedJobSummary`](crate::types::ProtectedJobSummary).
@@ -71,6 +77,7 @@ pub struct ProtectedJobSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::ProtectedJobStatus>,
     pub(crate) receiver_configurations: ::std::option::Option<::std::vec::Vec<crate::types::ProtectedJobReceiverConfiguration>>,
     pub(crate) job_compute_payer_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) intermediate_table_configuration: ::std::option::Option<crate::types::IntermediateTableOutputConfiguration>,
 }
 impl ProtectedJobSummaryBuilder {
     /// <p>The ID of the protected job.</p>
@@ -185,6 +192,20 @@ impl ProtectedJobSummaryBuilder {
     pub fn get_job_compute_payer_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.job_compute_payer_account_id
     }
+    /// <p>The intermediate table that the protected job populated. This field is present when the protected job was triggered by a <code>PopulateIntermediateTable</code> operation.</p>
+    pub fn intermediate_table_configuration(mut self, input: crate::types::IntermediateTableOutputConfiguration) -> Self {
+        self.intermediate_table_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The intermediate table that the protected job populated. This field is present when the protected job was triggered by a <code>PopulateIntermediateTable</code> operation.</p>
+    pub fn set_intermediate_table_configuration(mut self, input: ::std::option::Option<crate::types::IntermediateTableOutputConfiguration>) -> Self {
+        self.intermediate_table_configuration = input;
+        self
+    }
+    /// <p>The intermediate table that the protected job populated. This field is present when the protected job was triggered by a <code>PopulateIntermediateTable</code> operation.</p>
+    pub fn get_intermediate_table_configuration(&self) -> &::std::option::Option<crate::types::IntermediateTableOutputConfiguration> {
+        &self.intermediate_table_configuration
+    }
     /// Consumes the builder and constructs a [`ProtectedJobSummary`](crate::types::ProtectedJobSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::ProtectedJobSummaryBuilder::id)
@@ -226,6 +247,7 @@ impl ProtectedJobSummaryBuilder {
             })?,
             receiver_configurations: self.receiver_configurations.unwrap_or_default(),
             job_compute_payer_account_id: self.job_compute_payer_account_id,
+            intermediate_table_configuration: self.intermediate_table_configuration,
         })
     }
 }

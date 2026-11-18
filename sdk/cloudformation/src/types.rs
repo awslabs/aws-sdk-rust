@@ -273,6 +273,10 @@ pub use crate::types::_stack_set_drift_status::StackSetDriftStatus;
 
 pub use crate::types::_stack_set_drift_detection_status::StackSetDriftDetectionStatus;
 
+pub use crate::types::_stages::Stages;
+
+pub use crate::types::_regional_status_detail::RegionalStatusDetail;
+
 pub use crate::types::_physical_resource_id_context_key_value_pair::PhysicalResourceIdContextKeyValuePair;
 
 pub use crate::types::_property_difference::PropertyDifference;
@@ -315,6 +319,12 @@ pub use crate::types::_output::Output;
 
 pub use crate::types::_operation_entry::OperationEntry;
 
+pub use crate::types::_role_provisioning::RoleProvisioning;
+
+pub use crate::types::_stack_instances_deployment::StackInstancesDeployment;
+
+pub use crate::types::_regional_stages::RegionalStages;
+
 pub use crate::types::_difference_type::DifferenceType;
 
 pub use crate::types::_account_gate_status::AccountGateStatus;
@@ -326,6 +336,10 @@ pub use crate::types::_resource_drift_ignored_attribute::ResourceDriftIgnoredAtt
 pub use crate::types::_resource_change_detail::ResourceChangeDetail;
 
 pub use crate::types::_warning_type::WarningType;
+
+pub use crate::types::_stage_status::StageStatus;
+
+pub use crate::types::_regional_stack_instances_deployment::RegionalStackInstancesDeployment;
 
 pub use crate::types::_drift_ignored_reason::DriftIgnoredReason;
 
@@ -507,6 +521,12 @@ mod _publisher_status;
 
 mod _region_concurrency_type;
 
+mod _regional_stack_instances_deployment;
+
+mod _regional_stages;
+
+mod _regional_status_detail;
+
 mod _registration_status;
 
 mod _registry_type;
@@ -546,6 +566,8 @@ mod _resource_status;
 mod _resource_target_definition;
 
 mod _resource_to_import;
+
+mod _role_provisioning;
 
 mod _rollback_configuration;
 
@@ -588,6 +610,8 @@ mod _stack_instance_resource_drifts_summary;
 mod _stack_instance_status;
 
 mod _stack_instance_summary;
+
+mod _stack_instances_deployment;
 
 mod _stack_refactor_action;
 
@@ -650,6 +674,10 @@ mod _stack_set_summary;
 mod _stack_status;
 
 mod _stack_summary;
+
+mod _stage_status;
+
+mod _stages;
 
 mod _tag;
 

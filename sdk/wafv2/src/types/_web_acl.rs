@@ -72,6 +72,8 @@ pub struct WebAcl {
     pub application_config: ::std::option::Option<crate::types::ApplicationConfig>,
     /// <p>The monetization configuration for the web ACL. Required when any rule in the web ACL uses the <code>Monetize</code> action. Specifies the payment settlement options and currency mode for AI bot monetization.</p>
     pub monetization_config: ::std::option::Option<crate::types::MonetizationConfig>,
+    /// <p>The security analytics configuration for the web ACL. For more information, see <code>AnalyticsConfig</code>.</p>
+    pub analytics_config: ::std::option::Option<crate::types::AnalyticsConfig>,
 }
 impl WebAcl {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -199,6 +201,10 @@ impl WebAcl {
     pub fn monetization_config(&self) -> ::std::option::Option<&crate::types::MonetizationConfig> {
         self.monetization_config.as_ref()
     }
+    /// <p>The security analytics configuration for the web ACL. For more information, see <code>AnalyticsConfig</code>.</p>
+    pub fn analytics_config(&self) -> ::std::option::Option<&crate::types::AnalyticsConfig> {
+        self.analytics_config.as_ref()
+    }
 }
 impl WebAcl {
     /// Creates a new builder-style object to manufacture [`WebAcl`](crate::types::WebAcl).
@@ -233,6 +239,7 @@ pub struct WebAclBuilder {
     pub(crate) on_source_d_do_s_protection_config: ::std::option::Option<crate::types::OnSourceDDoSProtectionConfig>,
     pub(crate) application_config: ::std::option::Option<crate::types::ApplicationConfig>,
     pub(crate) monetization_config: ::std::option::Option<crate::types::MonetizationConfig>,
+    pub(crate) analytics_config: ::std::option::Option<crate::types::AnalyticsConfig>,
 }
 impl WebAclBuilder {
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
@@ -661,6 +668,20 @@ impl WebAclBuilder {
     pub fn get_monetization_config(&self) -> &::std::option::Option<crate::types::MonetizationConfig> {
         &self.monetization_config
     }
+    /// <p>The security analytics configuration for the web ACL. For more information, see <code>AnalyticsConfig</code>.</p>
+    pub fn analytics_config(mut self, input: crate::types::AnalyticsConfig) -> Self {
+        self.analytics_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The security analytics configuration for the web ACL. For more information, see <code>AnalyticsConfig</code>.</p>
+    pub fn set_analytics_config(mut self, input: ::std::option::Option<crate::types::AnalyticsConfig>) -> Self {
+        self.analytics_config = input;
+        self
+    }
+    /// <p>The security analytics configuration for the web ACL. For more information, see <code>AnalyticsConfig</code>.</p>
+    pub fn get_analytics_config(&self) -> &::std::option::Option<crate::types::AnalyticsConfig> {
+        &self.analytics_config
+    }
     /// Consumes the builder and constructs a [`WebAcl`](crate::types::WebAcl).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::WebAclBuilder::name)
@@ -702,6 +723,7 @@ impl WebAclBuilder {
             on_source_d_do_s_protection_config: self.on_source_d_do_s_protection_config,
             application_config: self.application_config,
             monetization_config: self.monetization_config,
+            analytics_config: self.analytics_config,
         })
     }
 }

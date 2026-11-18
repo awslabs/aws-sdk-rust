@@ -8,6 +8,8 @@ pub enum FilesystemConfiguration {
     CapacityProviderVolume(crate::types::CapacityProviderVolumeConfiguration),
     /// <p>Configuration for an Amazon EFS access point to mount into the AgentCore Runtime.</p>
     EfsAccessPoint(crate::types::EfsAccessPointConfiguration),
+    /// <p>Mounts an Amazon S3 bucket as a file system in the AgentCore Runtime.</p>
+    S3BucketMount(crate::types::S3BucketMountConfiguration),
     /// <p>Configuration for an Amazon S3 Files access point to mount into the AgentCore Runtime.</p>
     S3FilesAccessPoint(crate::types::S3FilesAccessPointConfiguration),
     /// <p>Configuration for session storage. Session storage provides persistent storage that is preserved across AgentCore Runtime session invocations.</p>
@@ -48,6 +50,19 @@ impl FilesystemConfiguration {
     /// Returns true if this is a [`EfsAccessPoint`](crate::types::FilesystemConfiguration::EfsAccessPoint).
     pub fn is_efs_access_point(&self) -> bool {
         self.as_efs_access_point().is_ok()
+    }
+    /// Tries to convert the enum instance into [`S3BucketMount`](crate::types::FilesystemConfiguration::S3BucketMount), extracting the inner [`S3BucketMountConfiguration`](crate::types::S3BucketMountConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_s3_bucket_mount(&self) -> ::std::result::Result<&crate::types::S3BucketMountConfiguration, &Self> {
+        if let FilesystemConfiguration::S3BucketMount(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`S3BucketMount`](crate::types::FilesystemConfiguration::S3BucketMount).
+    pub fn is_s3_bucket_mount(&self) -> bool {
+        self.as_s3_bucket_mount().is_ok()
     }
     /// Tries to convert the enum instance into [`S3FilesAccessPoint`](crate::types::FilesystemConfiguration::S3FilesAccessPoint), extracting the inner [`S3FilesAccessPointConfiguration`](crate::types::S3FilesAccessPointConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.

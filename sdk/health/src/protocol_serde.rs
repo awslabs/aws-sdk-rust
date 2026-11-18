@@ -115,9 +115,11 @@ pub(crate) mod shape_affected_account_filter;
 
 pub(crate) mod shape_affected_accounts_list;
 
-pub(crate) mod shape_configure_tags_for_organization_tag_key_list;
+pub(crate) mod shape_configure_tags_for_organization_response_tag_key_list;
 
 pub(crate) mod shape_configure_tags_resource_tag_key_list;
+
+pub(crate) mod shape_configure_tags_tag_key;
 
 pub(crate) mod shape_describe_affected_entities_for_organization_failed_set;
 
@@ -165,8 +167,6 @@ pub(crate) mod shape_organization_tag_key_list;
 
 pub(crate) mod shape_organization_tag_list;
 
-pub(crate) mod shape_resource_tag_key;
-
 pub(crate) mod shape_resource_tag_key_list;
 
 pub(crate) mod shape_service_lifecycle_filter;
@@ -209,6 +209,8 @@ pub(crate) mod shape_organization_tag;
 
 pub(crate) mod shape_organization_tag_key;
 
+pub(crate) mod shape_resource_tag_key;
+
 pub(crate) mod shape_service_lifecycle;
 
 pub(crate) mod shape_account_entity_aggregates_list;
@@ -230,8 +232,6 @@ pub(crate) mod shape_event_type_persona_list;
 pub(crate) mod shape_lifecycle_event_list;
 
 pub(crate) mod shape_resource_tag_set;
-
-pub(crate) mod shape_tag_set;
 
 pub(crate) mod shape_account_entity_aggregate;
 

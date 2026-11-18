@@ -23,6 +23,19 @@ pub fn ser_update_role_input_input_input(
             ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
+    #[allow(unused_mut)]
+    let mut scope_7 = writer.prefix("MaxSigninSessionDuration");
+    if let Some(var_8) = &input.max_signin_session_duration {
+        scope_7.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_9 = writer.prefix("ResetMaxSigninSessionDuration");
+    if let Some(var_10) = &input.reset_max_signin_session_duration {
+        scope_9.boolean(*var_10);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

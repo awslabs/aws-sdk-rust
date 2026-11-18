@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchSpendingLimitsFilter {
-    /// <p>The name of the field to filter on. Currently only supports <code>deviceArn</code>.</p>
+    /// <p>The name of the field to filter on. Currently supports <code>deviceArn</code> and <code>spendingLimitArn</code>.</p>
     pub name: ::std::string::String,
     /// <p>An array of values to match against the specified field.</p>
     pub values: ::std::vec::Vec<::std::string::String>,
@@ -12,7 +12,7 @@ pub struct SearchSpendingLimitsFilter {
     pub operator: crate::types::SearchSpendingLimitsFilterOperator,
 }
 impl SearchSpendingLimitsFilter {
-    /// <p>The name of the field to filter on. Currently only supports <code>deviceArn</code>.</p>
+    /// <p>The name of the field to filter on. Currently supports <code>deviceArn</code> and <code>spendingLimitArn</code>.</p>
     pub fn name(&self) -> &str {
         use std::ops::Deref;
         self.name.deref()
@@ -43,18 +43,18 @@ pub struct SearchSpendingLimitsFilterBuilder {
     pub(crate) operator: ::std::option::Option<crate::types::SearchSpendingLimitsFilterOperator>,
 }
 impl SearchSpendingLimitsFilterBuilder {
-    /// <p>The name of the field to filter on. Currently only supports <code>deviceArn</code>.</p>
+    /// <p>The name of the field to filter on. Currently supports <code>deviceArn</code> and <code>spendingLimitArn</code>.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the field to filter on. Currently only supports <code>deviceArn</code>.</p>
+    /// <p>The name of the field to filter on. Currently supports <code>deviceArn</code> and <code>spendingLimitArn</code>.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// <p>The name of the field to filter on. Currently only supports <code>deviceArn</code>.</p>
+    /// <p>The name of the field to filter on. Currently supports <code>deviceArn</code> and <code>spendingLimitArn</code>.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }

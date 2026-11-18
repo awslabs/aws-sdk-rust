@@ -5,8 +5,14 @@ pub use crate::types::_create_o_auth2_token_response_body::CreateOAuth2TokenResp
 
 pub use crate::types::_signin_resource_based_policy::SigninResourceBasedPolicyBuilder;
 
+pub use crate::types::_revoked_session::RevokedSessionBuilder;
+
+pub use crate::types::_batch_revoke_session_error::BatchRevokeSessionErrorBuilder;
+
 pub use crate::types::_access_token::AccessTokenBuilder;
 
 pub use crate::types::_permission_statement_summary::PermissionStatementSummaryBuilder;
+
+pub use crate::types::_session::SessionBuilder;
 
 pub use crate::types::_policy_statement::PolicyStatementBuilder;

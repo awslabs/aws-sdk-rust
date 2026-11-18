@@ -14,6 +14,7 @@
 /// match errorcode {
 ///     ErrorCode::ClientError => { /* ... */ },
 ///     ErrorCode::InternalError => { /* ... */ },
+///     ErrorCode::PausedByUser => { /* ... */ },
 ///     ErrorCode::StoppedByUser => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -47,6 +48,8 @@ pub enum ErrorCode {
     ClientError,
     /// <p>Failure caused by an internal error.</p>
     InternalError,
+    /// <p>Pentest job was paused by the user.</p>
+    PausedByUser,
     /// <p>Pentest job was stopped by the user.</p>
     StoppedByUser,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for ErrorCode {
         match s {
             "CLIENT_ERROR" => ErrorCode::ClientError,
             "INTERNAL_ERROR" => ErrorCode::InternalError,
+            "PAUSED_BY_USER" => ErrorCode::PausedByUser,
             "STOPPED_BY_USER" => ErrorCode::StoppedByUser,
             other => ErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -76,13 +80,14 @@ impl ErrorCode {
         match self {
             ErrorCode::ClientError => "CLIENT_ERROR",
             ErrorCode::InternalError => "INTERNAL_ERROR",
+            ErrorCode::PausedByUser => "PAUSED_BY_USER",
             ErrorCode::StoppedByUser => "STOPPED_BY_USER",
             ErrorCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLIENT_ERROR", "INTERNAL_ERROR", "STOPPED_BY_USER"]
+        &["CLIENT_ERROR", "INTERNAL_ERROR", "PAUSED_BY_USER", "STOPPED_BY_USER"]
     }
 }
 impl ::std::convert::AsRef<str> for ErrorCode {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for ErrorCode {
         match self {
             ErrorCode::ClientError => write!(f, "CLIENT_ERROR"),
             ErrorCode::InternalError => write!(f, "INTERNAL_ERROR"),
+            ErrorCode::PausedByUser => write!(f, "PAUSED_BY_USER"),
             ErrorCode::StoppedByUser => write!(f, "STOPPED_BY_USER"),
             ErrorCode::Unknown(value) => write!(f, "{value}"),
         }

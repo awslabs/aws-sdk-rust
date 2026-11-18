@@ -223,6 +223,9 @@ pub mod list_threat_models;
 /// Types for the `ListThreats` operation.
 pub mod list_threats;
 
+/// Types for the `ResumePentestJob` operation.
+pub mod resume_pentest_job;
+
 /// Types for the `StartCodeRemediation` operation.
 pub mod start_code_remediation;
 

@@ -123,6 +123,8 @@ pub use crate::types::_threat_model_summary::ThreatModelSummaryBuilder;
 
 pub use crate::types::_threat_summary::ThreatSummaryBuilder;
 
+pub use crate::types::_actor::ActorBuilder;
+
 pub use crate::types::_scope_change::ScopeChangeBuilder;
 
 pub use crate::types::_integrated_resource_input_item::IntegratedResourceInputItemBuilder;
@@ -175,8 +177,6 @@ pub use crate::types::_scope_result::ScopeResultBuilder;
 
 pub use crate::types::_endpoint::EndpointBuilder;
 
-pub use crate::types::_actor::ActorBuilder;
-
 pub use crate::types::_source_code_repository::SourceCodeRepositoryBuilder;
 
 pub use crate::types::_integrated_repository::IntegratedRepositoryBuilder;
@@ -193,6 +193,8 @@ pub use crate::types::_integrated_document::IntegratedDocumentBuilder;
 
 pub use crate::types::_security_requirement_artifact::SecurityRequirementArtifactBuilder;
 
+pub use crate::types::_authentication::AuthenticationBuilder;
+
 pub use crate::types::_step::StepBuilder;
 
 pub use crate::types::_execution_context::ExecutionContextBuilder;
@@ -200,8 +202,6 @@ pub use crate::types::_execution_context::ExecutionContextBuilder;
 pub use crate::types::_category::CategoryBuilder;
 
 pub use crate::types::_code_location::CodeLocationBuilder;
-
-pub use crate::types::_authentication::AuthenticationBuilder;
 
 pub use crate::types::_git_hub_repository_metadata::GitHubRepositoryMetadataBuilder;
 

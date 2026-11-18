@@ -311,6 +311,8 @@ mod list_threat_models;
 
 mod list_threats;
 
+mod resume_pentest_job;
+
 mod start_code_remediation;
 
 mod start_code_review_job;

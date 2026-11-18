@@ -312,6 +312,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateRoleEnd
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateRoleError {
+    /// <p>The request was rejected because an invalid or out-of-range value was supplied for an input parameter.</p>
+    InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>The request was rejected because it referenced a resource entity that does not exist. The error message describes the resource.</p>
     NoSuchEntityException(crate::types::error::NoSuchEntityException),
     /// <p>The request processing has failed because of an unknown error, exception or failure.</p>
@@ -351,11 +353,16 @@ impl UpdateRoleError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidInputException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NoSuchEntityException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::UnmodifiableEntityException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `UpdateRoleError::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(self, Self::InvalidInputException(_))
     }
     /// Returns `true` if the error kind is `UpdateRoleError::NoSuchEntityException`.
     pub fn is_no_such_entity_exception(&self) -> bool {
@@ -373,6 +380,7 @@ impl UpdateRoleError {
 impl ::std::error::Error for UpdateRoleError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::InvalidInputException(_inner) => ::std::option::Option::Some(_inner),
             Self::NoSuchEntityException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::UnmodifiableEntityException(_inner) => ::std::option::Option::Some(_inner),
@@ -383,6 +391,7 @@ impl ::std::error::Error for UpdateRoleError {
 impl ::std::fmt::Display for UpdateRoleError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::InvalidInputException(_inner) => _inner.fmt(f),
             Self::NoSuchEntityException(_inner) => _inner.fmt(f),
             Self::ServiceFailureException(_inner) => _inner.fmt(f),
             Self::UnmodifiableEntityException(_inner) => _inner.fmt(f),
@@ -407,6 +416,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for UpdateRoleError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateRoleError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidInputException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NoSuchEntityException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::UnmodifiableEntityException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

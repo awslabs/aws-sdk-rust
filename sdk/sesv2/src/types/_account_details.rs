@@ -14,7 +14,7 @@ pub struct AccountDetails {
     pub mail_type: ::std::option::Option<crate::types::MailType>,
     /// <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
     pub website_url: ::std::option::Option<::std::string::String>,
-    /// <p>The language you would prefer for the case. The contact language can be one of <code>ENGLISH</code> or <code>JAPANESE</code>.</p>
+    /// <p>The language you would prefer for the case. The contact language can be one of <code>EN</code> or <code>JA</code>.</p>
     pub contact_language: ::std::option::Option<crate::types::ContactLanguage>,
     /// <p>A description of the types of email that you plan to send.</p>
     pub use_case_description: ::std::option::Option<::std::string::String>,
@@ -38,7 +38,7 @@ impl AccountDetails {
     pub fn website_url(&self) -> ::std::option::Option<&str> {
         self.website_url.as_deref()
     }
-    /// <p>The language you would prefer for the case. The contact language can be one of <code>ENGLISH</code> or <code>JAPANESE</code>.</p>
+    /// <p>The language you would prefer for the case. The contact language can be one of <code>EN</code> or <code>JA</code>.</p>
     pub fn contact_language(&self) -> ::std::option::Option<&crate::types::ContactLanguage> {
         self.contact_language.as_ref()
     }
@@ -134,17 +134,17 @@ impl AccountDetailsBuilder {
     pub fn get_website_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.website_url
     }
-    /// <p>The language you would prefer for the case. The contact language can be one of <code>ENGLISH</code> or <code>JAPANESE</code>.</p>
+    /// <p>The language you would prefer for the case. The contact language can be one of <code>EN</code> or <code>JA</code>.</p>
     pub fn contact_language(mut self, input: crate::types::ContactLanguage) -> Self {
         self.contact_language = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The language you would prefer for the case. The contact language can be one of <code>ENGLISH</code> or <code>JAPANESE</code>.</p>
+    /// <p>The language you would prefer for the case. The contact language can be one of <code>EN</code> or <code>JA</code>.</p>
     pub fn set_contact_language(mut self, input: ::std::option::Option<crate::types::ContactLanguage>) -> Self {
         self.contact_language = input;
         self
     }
-    /// <p>The language you would prefer for the case. The contact language can be one of <code>ENGLISH</code> or <code>JAPANESE</code>.</p>
+    /// <p>The language you would prefer for the case. The contact language can be one of <code>EN</code> or <code>JA</code>.</p>
     pub fn get_contact_language(&self) -> &::std::option::Option<crate::types::ContactLanguage> {
         &self.contact_language
     }

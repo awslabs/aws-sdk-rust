@@ -50,6 +50,8 @@ pub struct StackSetOperation {
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>Detailed information about the StackSet operation.</p>
     pub status_details: ::std::option::Option<crate::types::StackSetOperationStatusDetails>,
+    /// <p>The progress detail for each Region of the operation, keyed by Region. Each entry reports the stack instances deployment progress for that Region. This field is returned only by <code>DescribeStackSetOperation</code>. It is not included in the <code>ListStackSetOperations</code> summary.</p>
+    pub regional_status_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RegionalStatusDetail>>,
 }
 impl StackSetOperation {
     /// <p>The unique ID of a StackSet operation.</p>
@@ -126,6 +128,12 @@ impl StackSetOperation {
     pub fn status_details(&self) -> ::std::option::Option<&crate::types::StackSetOperationStatusDetails> {
         self.status_details.as_ref()
     }
+    /// <p>The progress detail for each Region of the operation, keyed by Region. Each entry reports the stack instances deployment progress for that Region. This field is returned only by <code>DescribeStackSetOperation</code>. It is not included in the <code>ListStackSetOperations</code> summary.</p>
+    pub fn regional_status_details(
+        &self,
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::RegionalStatusDetail>> {
+        self.regional_status_details.as_ref()
+    }
 }
 impl StackSetOperation {
     /// Creates a new builder-style object to manufacture [`StackSetOperation`](crate::types::StackSetOperation).
@@ -152,6 +160,7 @@ pub struct StackSetOperationBuilder {
     pub(crate) stack_set_drift_detection_details: ::std::option::Option<crate::types::StackSetDriftDetectionDetails>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) status_details: ::std::option::Option<crate::types::StackSetOperationStatusDetails>,
+    pub(crate) regional_status_details: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RegionalStatusDetail>>,
 }
 impl StackSetOperationBuilder {
     /// <p>The unique ID of a StackSet operation.</p>
@@ -404,6 +413,31 @@ impl StackSetOperationBuilder {
     pub fn get_status_details(&self) -> &::std::option::Option<crate::types::StackSetOperationStatusDetails> {
         &self.status_details
     }
+    /// Adds a key-value pair to `regional_status_details`.
+    ///
+    /// To override the contents of this collection use [`set_regional_status_details`](Self::set_regional_status_details).
+    ///
+    /// <p>The progress detail for each Region of the operation, keyed by Region. Each entry reports the stack instances deployment progress for that Region. This field is returned only by <code>DescribeStackSetOperation</code>. It is not included in the <code>ListStackSetOperations</code> summary.</p>
+    pub fn regional_status_details(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::RegionalStatusDetail) -> Self {
+        let mut hash_map = self.regional_status_details.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.regional_status_details = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The progress detail for each Region of the operation, keyed by Region. Each entry reports the stack instances deployment progress for that Region. This field is returned only by <code>DescribeStackSetOperation</code>. It is not included in the <code>ListStackSetOperations</code> summary.</p>
+    pub fn set_regional_status_details(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RegionalStatusDetail>>,
+    ) -> Self {
+        self.regional_status_details = input;
+        self
+    }
+    /// <p>The progress detail for each Region of the operation, keyed by Region. Each entry reports the stack instances deployment progress for that Region. This field is returned only by <code>DescribeStackSetOperation</code>. It is not included in the <code>ListStackSetOperations</code> summary.</p>
+    pub fn get_regional_status_details(
+        &self,
+    ) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::RegionalStatusDetail>> {
+        &self.regional_status_details
+    }
     /// Consumes the builder and constructs a [`StackSetOperation`](crate::types::StackSetOperation).
     pub fn build(self) -> crate::types::StackSetOperation {
         crate::types::StackSetOperation {
@@ -421,6 +455,7 @@ impl StackSetOperationBuilder {
             stack_set_drift_detection_details: self.stack_set_drift_detection_details,
             status_reason: self.status_reason,
             status_details: self.status_details,
+            regional_status_details: self.regional_status_details,
         }
     }
 }

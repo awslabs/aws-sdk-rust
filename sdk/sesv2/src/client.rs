@@ -319,6 +319,8 @@ mod list_tenants;
 
 mod put_account_dedicated_ip_warmup_attributes;
 
+mod put_account_delivery_attributes;
+
 mod put_account_details;
 
 mod put_account_pricing_attributes;

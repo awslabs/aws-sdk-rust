@@ -114,6 +114,15 @@ pub(crate) fn web_acl_correct_errors(mut builder: crate::types::builders::WebAcl
     builder
 }
 
+pub(crate) fn analytics_config_correct_errors(
+    mut builder: crate::types::builders::AnalyticsConfigBuilder,
+) -> crate::types::builders::AnalyticsConfigBuilder {
+    if builder.mode.is_none() {
+        builder.mode = "no value was set".parse::<crate::types::AnalyticsMode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn data_protection_config_correct_errors(
     mut builder: crate::types::builders::DataProtectionConfigBuilder,
 ) -> crate::types::builders::DataProtectionConfigBuilder {

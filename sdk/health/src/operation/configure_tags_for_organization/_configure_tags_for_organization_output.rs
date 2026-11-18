@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigureTagsForOrganizationOutput {
-    /// <p>The list of tag keys that were successfully configured for the organization.</p>
-    pub configured_tag_keys: ::std::option::Option<::std::vec::Vec<crate::types::TagKeyForOrganization>>,
+    /// <p>The list of tag keys that were successfully configured for the organization, with the current status of each tag key.</p>
+    pub configured_tag_keys: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationTagKey>>,
     _request_id: Option<String>,
 }
 impl ConfigureTagsForOrganizationOutput {
-    /// <p>The list of tag keys that were successfully configured for the organization.</p>
+    /// <p>The list of tag keys that were successfully configured for the organization, with the current status of each tag key.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.configured_tag_keys.is_none()`.
-    pub fn configured_tag_keys(&self) -> &[crate::types::TagKeyForOrganization] {
+    pub fn configured_tag_keys(&self) -> &[crate::types::OrganizationTagKey] {
         self.configured_tag_keys.as_deref().unwrap_or_default()
     }
 }
@@ -31,7 +31,7 @@ impl ConfigureTagsForOrganizationOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ConfigureTagsForOrganizationOutputBuilder {
-    pub(crate) configured_tag_keys: ::std::option::Option<::std::vec::Vec<crate::types::TagKeyForOrganization>>,
+    pub(crate) configured_tag_keys: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationTagKey>>,
     _request_id: Option<String>,
 }
 impl ConfigureTagsForOrganizationOutputBuilder {
@@ -39,20 +39,20 @@ impl ConfigureTagsForOrganizationOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_configured_tag_keys`](Self::set_configured_tag_keys).
     ///
-    /// <p>The list of tag keys that were successfully configured for the organization.</p>
-    pub fn configured_tag_keys(mut self, input: crate::types::TagKeyForOrganization) -> Self {
+    /// <p>The list of tag keys that were successfully configured for the organization, with the current status of each tag key.</p>
+    pub fn configured_tag_keys(mut self, input: crate::types::OrganizationTagKey) -> Self {
         let mut v = self.configured_tag_keys.unwrap_or_default();
         v.push(input);
         self.configured_tag_keys = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of tag keys that were successfully configured for the organization.</p>
-    pub fn set_configured_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::TagKeyForOrganization>>) -> Self {
+    /// <p>The list of tag keys that were successfully configured for the organization, with the current status of each tag key.</p>
+    pub fn set_configured_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::OrganizationTagKey>>) -> Self {
         self.configured_tag_keys = input;
         self
     }
-    /// <p>The list of tag keys that were successfully configured for the organization.</p>
-    pub fn get_configured_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TagKeyForOrganization>> {
+    /// <p>The list of tag keys that were successfully configured for the organization, with the current status of each tag key.</p>
+    pub fn get_configured_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OrganizationTagKey>> {
         &self.configured_tag_keys
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

@@ -5236,6 +5236,7 @@ impl From<crate::operation::update_login_profile::UpdateLoginProfileError> for E
             crate::operation::update_login_profile::UpdateLoginProfileError::EntityTemporarilyUnmodifiableException(inner) => {
                 Error::EntityTemporarilyUnmodifiableException(inner)
             }
+            crate::operation::update_login_profile::UpdateLoginProfileError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::update_login_profile::UpdateLoginProfileError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::update_login_profile::UpdateLoginProfileError::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
             crate::operation::update_login_profile::UpdateLoginProfileError::PasswordPolicyViolationException(inner) => {
@@ -5299,6 +5300,7 @@ where
 impl From<crate::operation::update_role::UpdateRoleError> for Error {
     fn from(err: crate::operation::update_role::UpdateRoleError) -> Self {
         match err {
+            crate::operation::update_role::UpdateRoleError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::update_role::UpdateRoleError::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
             crate::operation::update_role::UpdateRoleError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
             crate::operation::update_role::UpdateRoleError::UnmodifiableEntityException(inner) => Error::UnmodifiableEntityException(inner),

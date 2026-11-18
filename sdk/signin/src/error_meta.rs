@@ -80,6 +80,36 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_revoke_sessions::BatchRevokeSessionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_revoke_sessions::BatchRevokeSessionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::batch_revoke_sessions::BatchRevokeSessionsError> for Error {
+    fn from(err: crate::operation::batch_revoke_sessions::BatchRevokeSessionsError) -> Self {
+        match err {
+            crate::operation::batch_revoke_sessions::BatchRevokeSessionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::batch_revoke_sessions::BatchRevokeSessionsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::batch_revoke_sessions::BatchRevokeSessionsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::batch_revoke_sessions::BatchRevokeSessionsError::TooManyRequestsError(inner) => Error::TooManyRequestsError(inner),
+            crate::operation::batch_revoke_sessions::BatchRevokeSessionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::batch_revoke_sessions::BatchRevokeSessionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_bearer_token::CreateBearerTokenError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -392,6 +422,32 @@ impl From<crate::operation::get_resource_policy::GetResourcePolicyError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_session::GetSessionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_session::GetSessionError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_session::GetSessionError> for Error {
+    fn from(err: crate::operation::get_session::GetSessionError) -> Self {
+        match err {
+            crate::operation::get_session::GetSessionError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_session::GetSessionError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_session::GetSessionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_session::GetSessionError::TooManyRequestsError(inner) => Error::TooManyRequestsError(inner),
+            crate::operation::get_session::GetSessionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_session::GetSessionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::introspect_o_auth2_token_with_iam::IntrospectOAuth2TokenWithIAMError, R>,
@@ -477,6 +533,31 @@ impl From<crate::operation::list_resource_permission_statements::ListResourcePer
                 Error::ValidationException(inner)
             }
             crate::operation::list_resource_permission_statements::ListResourcePermissionStatementsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sessions::ListSessionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_sessions::ListSessionsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_sessions::ListSessionsError> for Error {
+    fn from(err: crate::operation::list_sessions::ListSessionsError) -> Self {
+        match err {
+            crate::operation::list_sessions::ListSessionsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_sessions::ListSessionsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_sessions::ListSessionsError::TooManyRequestsError(inner) => Error::TooManyRequestsError(inner),
+            crate::operation::list_sessions::ListSessionsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_sessions::ListSessionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

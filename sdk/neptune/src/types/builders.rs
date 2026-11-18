@@ -53,6 +53,8 @@ pub use crate::types::_event::EventBuilder;
 
 pub use crate::types::_orderable_db_instance_option::OrderableDbInstanceOptionBuilder;
 
+pub use crate::types::_serverless_v2_platform_version_info::ServerlessV2PlatformVersionInfoBuilder;
+
 pub use crate::types::_pending_maintenance_action::PendingMaintenanceActionBuilder;
 
 pub use crate::types::_db_cluster_option_group_status::DbClusterOptionGroupStatusBuilder;
@@ -82,6 +84,8 @@ pub use crate::types::_global_cluster_member::GlobalClusterMemberBuilder;
 pub use crate::types::_db_cluster_snapshot_attribute::DbClusterSnapshotAttributeBuilder;
 
 pub use crate::types::_character_set::CharacterSetBuilder;
+
+pub use crate::types::_serverless_v2_features_support::ServerlessV2FeaturesSupportBuilder;
 
 pub use crate::types::_valid_storage_options::ValidStorageOptionsBuilder;
 

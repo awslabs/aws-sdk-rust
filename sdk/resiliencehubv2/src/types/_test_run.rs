@@ -36,6 +36,8 @@ pub struct TestRun {
     pub report_configuration: ::std::option::Option<crate::types::TestRunReportConfiguration>,
     /// <p>The resilience policy snapshotted from the service when the run was started.</p>
     pub policy: ::std::option::Option<crate::types::TestRunPolicySnapshot>,
+    /// <p>The effective resilience policy values snapshotted from the service when the run was started. The test run is evaluated against these values.</p>
+    pub effective_policy_values: ::std::option::Option<crate::types::TestRunEffectivePolicyValues>,
     /// <p>The report generation result for the test run. Present after report generation completes or fails.</p>
     pub report_output: ::std::option::Option<crate::types::ReportGenerationResult>,
     /// <p>The ARN of the ARC Region switch plan associated with the test run.</p>
@@ -123,6 +125,10 @@ impl TestRun {
     pub fn policy(&self) -> ::std::option::Option<&crate::types::TestRunPolicySnapshot> {
         self.policy.as_ref()
     }
+    /// <p>The effective resilience policy values snapshotted from the service when the run was started. The test run is evaluated against these values.</p>
+    pub fn effective_policy_values(&self) -> ::std::option::Option<&crate::types::TestRunEffectivePolicyValues> {
+        self.effective_policy_values.as_ref()
+    }
     /// <p>The report generation result for the test run. Present after report generation completes or fails.</p>
     pub fn report_output(&self) -> ::std::option::Option<&crate::types::ReportGenerationResult> {
         self.report_output.as_ref()
@@ -181,6 +187,7 @@ pub struct TestRunBuilder {
     pub(crate) test_template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) report_configuration: ::std::option::Option<crate::types::TestRunReportConfiguration>,
     pub(crate) policy: ::std::option::Option<crate::types::TestRunPolicySnapshot>,
+    pub(crate) effective_policy_values: ::std::option::Option<crate::types::TestRunEffectivePolicyValues>,
     pub(crate) report_output: ::std::option::Option<crate::types::ReportGenerationResult>,
     pub(crate) region_switch_plan_arn: ::std::option::Option<::std::string::String>,
     pub(crate) region_switch_execution_id: ::std::option::Option<::std::string::String>,
@@ -442,6 +449,20 @@ impl TestRunBuilder {
     pub fn get_policy(&self) -> &::std::option::Option<crate::types::TestRunPolicySnapshot> {
         &self.policy
     }
+    /// <p>The effective resilience policy values snapshotted from the service when the run was started. The test run is evaluated against these values.</p>
+    pub fn effective_policy_values(mut self, input: crate::types::TestRunEffectivePolicyValues) -> Self {
+        self.effective_policy_values = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The effective resilience policy values snapshotted from the service when the run was started. The test run is evaluated against these values.</p>
+    pub fn set_effective_policy_values(mut self, input: ::std::option::Option<crate::types::TestRunEffectivePolicyValues>) -> Self {
+        self.effective_policy_values = input;
+        self
+    }
+    /// <p>The effective resilience policy values snapshotted from the service when the run was started. The test run is evaluated against these values.</p>
+    pub fn get_effective_policy_values(&self) -> &::std::option::Option<crate::types::TestRunEffectivePolicyValues> {
+        &self.effective_policy_values
+    }
     /// <p>The report generation result for the test run. Present after report generation completes or fails.</p>
     pub fn report_output(mut self, input: crate::types::ReportGenerationResult) -> Self {
         self.report_output = ::std::option::Option::Some(input);
@@ -596,6 +617,7 @@ impl TestRunBuilder {
             })?,
             report_configuration: self.report_configuration,
             policy: self.policy,
+            effective_policy_values: self.effective_policy_values,
             report_output: self.report_output,
             region_switch_plan_arn: self.region_switch_plan_arn,
             region_switch_execution_id: self.region_switch_execution_id,

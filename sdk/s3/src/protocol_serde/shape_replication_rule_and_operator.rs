@@ -17,6 +17,10 @@ pub fn ser_replication_rule_and_operator(
             }
         }
     }
+    if let Some(var_4) = &input.not {
+        let inner_writer = scope.start_el("Not");
+        crate::protocol_serde::shape_replication_rule_not_operator::ser_replication_rule_not_operator(var_4, inner_writer)?
+    }
     scope.finish();
     Ok(())
 }
@@ -34,7 +38,7 @@ pub fn de_replication_rule_and_operator(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Prefix") /* Prefix com.amazonaws.s3#ReplicationRuleAndOperator$Prefix */ =>  {
-                let var_4 =
+                let var_5 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -43,24 +47,34 @@ pub fn de_replication_rule_and_operator(
                         ?
                     )
                 ;
-                builder = builder.set_prefix(var_4);
+                builder = builder.set_prefix(var_5);
             }
             ,
             s if s.matches("Tag") /* Tags com.amazonaws.s3#ReplicationRuleAndOperator$Tags */ =>  {
-                let var_5 =
+                let var_6 =
                     Some(
                         Result::<::std::vec::Vec::<crate::types::Tag>, ::aws_smithy_xml::decode::XmlDecodeError>::Ok({
-                            let mut list_6 = builder.tags.take().unwrap_or_default();
-                            list_6.push(
+                            let mut list_7 = builder.tags.take().unwrap_or_default();
+                            list_7.push(
                                 crate::protocol_serde::shape_tag::de_tag(&mut tag, depth + 1)
                                 ?
                             );
-                            list_6
+                            list_7
                         })
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_5);
+                builder = builder.set_tags(var_6);
+            }
+            ,
+            s if s.matches("Not") /* Not com.amazonaws.s3#ReplicationRuleAndOperator$Not */ =>  {
+                let var_8 =
+                    Some(
+                        crate::protocol_serde::shape_replication_rule_not_operator::de_replication_rule_not_operator(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_not(var_8);
             }
             ,
             _ => {}

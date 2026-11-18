@@ -443,6 +443,8 @@ pub use crate::types::_transition_storage_class::TransitionStorageClass;
 
 pub use crate::types::_replication_rule_and_operator::ReplicationRuleAndOperator;
 
+pub use crate::types::_replication_rule_not_operator::ReplicationRuleNotOperator;
+
 pub use crate::types::_sse_kms_encrypted_objects::SseKmsEncryptedObjects;
 
 pub use crate::types::_replica_modifications::ReplicaModifications;
@@ -467,11 +469,15 @@ pub use crate::types::_encryption_type::EncryptionType;
 
 pub use crate::types::_filter_rule::FilterRule;
 
+pub use crate::types::_replication_rule_or_operator::ReplicationRuleOrOperator;
+
 pub use crate::types::_sse_kms_encrypted_objects_status::SseKmsEncryptedObjectsStatus;
 
 pub use crate::types::_replica_modifications_status::ReplicaModificationsStatus;
 
 pub use crate::types::_owner_override::OwnerOverride;
+
+pub use crate::types::_use_source_multi_region_key::UseSourceMultiRegionKey;
 
 pub use crate::types::_replication_time_status::ReplicationTimeStatus;
 
@@ -480,6 +486,8 @@ pub use crate::types::_replication_time_value::ReplicationTimeValue;
 pub use crate::types::_metrics_status::MetricsStatus;
 
 pub use crate::types::_filter_rule_name::FilterRuleName;
+
+pub use crate::types::_use_source_multi_region_key_status::UseSourceMultiRegionKeyStatus;
 
 mod _abac_status;
 
@@ -853,6 +861,10 @@ mod _replication_rule_and_operator;
 
 mod _replication_rule_filter;
 
+mod _replication_rule_not_operator;
+
+mod _replication_rule_or_operator;
+
 mod _replication_rule_status;
 
 mod _replication_status;
@@ -958,6 +970,10 @@ mod _transition_default_minimum_object_size;
 mod _transition_storage_class;
 
 mod _type_;
+
+mod _use_source_multi_region_key;
+
+mod _use_source_multi_region_key_status;
 
 mod _versioning_configuration;
 

@@ -53,9 +53,6 @@ pub(crate) fn de_affected_entity(
                     )?)),
                 )
             })?,
-            "tags" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_tags(Some(crate::protocol_serde::shape_tag_set::de_tag_set(decoder, depth + 1)?)))
-            })?,
             "entityMetadata" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(
                     builder.set_entity_metadata(Some(crate::protocol_serde::shape_entity_metadata::de_entity_metadata(

@@ -5030,6 +5030,18 @@ pub(crate) fn runtime_target_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn s3_bucket_mount_configuration_correct_errors(
+    mut builder: crate::types::builders::S3BucketMountConfigurationBuilder,
+) -> crate::types::builders::S3BucketMountConfigurationBuilder {
+    if builder.bucket.is_none() {
+        builder.bucket = Some(Default::default())
+    }
+    if builder.mount_path.is_none() {
+        builder.mount_path = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn s3_certificate_configuration_correct_errors(
     mut builder: crate::types::builders::S3CertificateConfigurationBuilder,
 ) -> crate::types::builders::S3CertificateConfigurationBuilder {

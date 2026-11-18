@@ -22,7 +22,7 @@ impl crate::operation::update_login_profile::builders::UpdateLoginProfileInputBu
 }
 /// Fluent builder constructing a request to `UpdateLoginProfile`.
 ///
-/// <p>Changes the password for the specified IAM user. You can use the CLI, the Amazon Web Services API, or the <b>Users</b> page in the IAM console to change the password for any IAM user. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html">ChangePassword</a> to change your own password in the <b>My Security Credentials</b> page in the Amazon Web Services Management Console.</p>
+/// <p>Changes the password or the maximum sign-in session duration for the specified IAM user. You can use the CLI, the Amazon Web Services API, or the <b>Users</b> page in the IAM console to change the password for any IAM user. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html">ChangePassword</a> to change your own password in the <b>My Security Credentials</b> page in the Amazon Web Services Management Console.</p>
 /// <p>For more information about modifying passwords, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingLogins.html">Managing passwords</a> in the <i>IAM User Guide</i>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateLoginProfileFluentBuilder {
@@ -183,5 +183,48 @@ impl UpdateLoginProfileFluentBuilder {
     /// <p>Allows this new password to be used only once by requiring the specified IAM user to set a new password on next sign-in.</p>
     pub fn get_password_reset_required(&self) -> &::std::option::Option<bool> {
         self.inner.get_password_reset_required()
+    }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for the specified IAM user. This setting can have a value from 1 hour (3600 seconds) to 90 days (7776000 seconds), inclusive, and replaces any value currently configured for the user.</p>
+    /// <p>If you omit both this parameter and <code>ResetMaxSigninSessionDuration</code>, the current setting is unchanged. You cannot specify this parameter and set <code>ResetMaxSigninSessionDuration</code> to <code>true</code> in the same request. If you update only the sign-in session duration, the user's password and <code>PasswordResetRequired</code> setting do not change.</p>
+    /// <p>Changes to this setting apply to new sign-in sessions. Sessions that are already established are not affected.</p><note>
+    /// <p>This setting is not supported for the root user.</p>
+    /// </note>
+    pub fn max_signin_session_duration(mut self, input: i32) -> Self {
+        self.inner = self.inner.max_signin_session_duration(input);
+        self
+    }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for the specified IAM user. This setting can have a value from 1 hour (3600 seconds) to 90 days (7776000 seconds), inclusive, and replaces any value currently configured for the user.</p>
+    /// <p>If you omit both this parameter and <code>ResetMaxSigninSessionDuration</code>, the current setting is unchanged. You cannot specify this parameter and set <code>ResetMaxSigninSessionDuration</code> to <code>true</code> in the same request. If you update only the sign-in session duration, the user's password and <code>PasswordResetRequired</code> setting do not change.</p>
+    /// <p>Changes to this setting apply to new sign-in sessions. Sessions that are already established are not affected.</p><note>
+    /// <p>This setting is not supported for the root user.</p>
+    /// </note>
+    pub fn set_max_signin_session_duration(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.inner = self.inner.set_max_signin_session_duration(input);
+        self
+    }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for the specified IAM user. This setting can have a value from 1 hour (3600 seconds) to 90 days (7776000 seconds), inclusive, and replaces any value currently configured for the user.</p>
+    /// <p>If you omit both this parameter and <code>ResetMaxSigninSessionDuration</code>, the current setting is unchanged. You cannot specify this parameter and set <code>ResetMaxSigninSessionDuration</code> to <code>true</code> in the same request. If you update only the sign-in session duration, the user's password and <code>PasswordResetRequired</code> setting do not change.</p>
+    /// <p>Changes to this setting apply to new sign-in sessions. Sessions that are already established are not affected.</p><note>
+    /// <p>This setting is not supported for the root user.</p>
+    /// </note>
+    pub fn get_max_signin_session_duration(&self) -> &::std::option::Option<i32> {
+        self.inner.get_max_signin_session_duration()
+    }
+    /// <p>Specifies whether to clear the maximum sign-in session duration for the specified IAM user. Set this value to <code>true</code> to return the setting to its unset state, so that the existing sign-in session behavior applies. When the setting is unset, the user's <code>MaxSigninSessionDuration</code> is omitted from responses.</p>
+    /// <p>If you set this value to <code>false</code> or omit it, the current setting is not cleared. You cannot set this value to <code>true</code> and specify <code>MaxSigninSessionDuration</code> in the same request. Clearing a setting that is already unset has no effect.</p>
+    pub fn reset_max_signin_session_duration(mut self, input: bool) -> Self {
+        self.inner = self.inner.reset_max_signin_session_duration(input);
+        self
+    }
+    /// <p>Specifies whether to clear the maximum sign-in session duration for the specified IAM user. Set this value to <code>true</code> to return the setting to its unset state, so that the existing sign-in session behavior applies. When the setting is unset, the user's <code>MaxSigninSessionDuration</code> is omitted from responses.</p>
+    /// <p>If you set this value to <code>false</code> or omit it, the current setting is not cleared. You cannot set this value to <code>true</code> and specify <code>MaxSigninSessionDuration</code> in the same request. Clearing a setting that is already unset has no effect.</p>
+    pub fn set_reset_max_signin_session_duration(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_reset_max_signin_session_duration(input);
+        self
+    }
+    /// <p>Specifies whether to clear the maximum sign-in session duration for the specified IAM user. Set this value to <code>true</code> to return the setting to its unset state, so that the existing sign-in session behavior applies. When the setting is unset, the user's <code>MaxSigninSessionDuration</code> is omitted from responses.</p>
+    /// <p>If you set this value to <code>false</code> or omit it, the current setting is not cleared. You cannot set this value to <code>true</code> and specify <code>MaxSigninSessionDuration</code> in the same request. Clearing a setting that is already unset has no effect.</p>
+    pub fn get_reset_max_signin_session_duration(&self) -> &::std::option::Option<bool> {
+        self.inner.get_reset_max_signin_session_duration()
     }
 }

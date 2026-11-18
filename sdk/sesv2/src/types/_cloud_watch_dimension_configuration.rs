@@ -12,7 +12,7 @@ pub struct CloudWatchDimensionConfiguration {
     /// <p>It can contain no more than 255 characters.</p></li>
     /// </ul>
     pub dimension_name: ::std::string::String,
-    /// <p>The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. To use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code> or <code>SendRawEmail</code> API, choose <code>messageTag</code>. To use your own email headers, choose <code>emailHeader</code>. To use link tags, choose <code>linkTags</code>.</p>
+    /// <p>The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. To use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code> or <code>SendBulkEmail</code> operation, choose <code>MESSAGE_TAG</code>. To use your own email headers, choose <code>EMAIL_HEADER</code>. To use link tags, choose <code>LINK_TAG</code>.</p>
     pub dimension_value_source: crate::types::DimensionValueSource,
     /// <p>The default value of the dimension that is published to Amazon CloudWatch if you don't provide the value of the dimension when you send an email. This value has to meet the following criteria:</p>
     /// <ul>
@@ -35,7 +35,7 @@ impl CloudWatchDimensionConfiguration {
         use std::ops::Deref;
         self.dimension_name.deref()
     }
-    /// <p>The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. To use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code> or <code>SendRawEmail</code> API, choose <code>messageTag</code>. To use your own email headers, choose <code>emailHeader</code>. To use link tags, choose <code>linkTags</code>.</p>
+    /// <p>The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. To use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code> or <code>SendBulkEmail</code> operation, choose <code>MESSAGE_TAG</code>. To use your own email headers, choose <code>EMAIL_HEADER</code>. To use link tags, choose <code>LINK_TAG</code>.</p>
     pub fn dimension_value_source(&self) -> &crate::types::DimensionValueSource {
         &self.dimension_value_source
     }
@@ -100,18 +100,18 @@ impl CloudWatchDimensionConfigurationBuilder {
     pub fn get_dimension_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dimension_name
     }
-    /// <p>The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. To use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code> or <code>SendRawEmail</code> API, choose <code>messageTag</code>. To use your own email headers, choose <code>emailHeader</code>. To use link tags, choose <code>linkTags</code>.</p>
+    /// <p>The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. To use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code> or <code>SendBulkEmail</code> operation, choose <code>MESSAGE_TAG</code>. To use your own email headers, choose <code>EMAIL_HEADER</code>. To use link tags, choose <code>LINK_TAG</code>.</p>
     /// This field is required.
     pub fn dimension_value_source(mut self, input: crate::types::DimensionValueSource) -> Self {
         self.dimension_value_source = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. To use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code> or <code>SendRawEmail</code> API, choose <code>messageTag</code>. To use your own email headers, choose <code>emailHeader</code>. To use link tags, choose <code>linkTags</code>.</p>
+    /// <p>The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. To use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code> or <code>SendBulkEmail</code> operation, choose <code>MESSAGE_TAG</code>. To use your own email headers, choose <code>EMAIL_HEADER</code>. To use link tags, choose <code>LINK_TAG</code>.</p>
     pub fn set_dimension_value_source(mut self, input: ::std::option::Option<crate::types::DimensionValueSource>) -> Self {
         self.dimension_value_source = input;
         self
     }
-    /// <p>The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. To use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code> or <code>SendRawEmail</code> API, choose <code>messageTag</code>. To use your own email headers, choose <code>emailHeader</code>. To use link tags, choose <code>linkTags</code>.</p>
+    /// <p>The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. To use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code> or <code>SendBulkEmail</code> operation, choose <code>MESSAGE_TAG</code>. To use your own email headers, choose <code>EMAIL_HEADER</code>. To use link tags, choose <code>LINK_TAG</code>.</p>
     pub fn get_dimension_value_source(&self) -> &::std::option::Option<crate::types::DimensionValueSource> {
         &self.dimension_value_source
     }

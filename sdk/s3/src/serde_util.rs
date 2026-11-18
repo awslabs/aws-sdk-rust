@@ -588,3 +588,12 @@ pub(crate) fn ssekms_correct_errors(mut builder: crate::types::builders::SsekmsB
     }
     builder
 }
+
+pub(crate) fn use_source_multi_region_key_correct_errors(
+    mut builder: crate::types::builders::UseSourceMultiRegionKeyBuilder,
+) -> crate::types::builders::UseSourceMultiRegionKeyBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::UseSourceMultiRegionKeyStatus>().ok()
+    }
+    builder
+}

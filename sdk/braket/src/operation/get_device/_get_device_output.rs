@@ -13,6 +13,8 @@ pub struct GetDeviceOutput {
     pub device_type: crate::types::DeviceType,
     /// <p>The status of the device.</p>
     pub device_status: crate::types::DeviceStatus,
+    /// <p>The reason for the current status of the device, including status reason codes and timestamps.</p>
+    pub device_status_reason: ::std::option::Option<crate::types::DeviceStatusReason>,
     /// <p>Details about the capabilities of the device.</p>
     pub device_capabilities: ::std::string::String,
     /// <p>The number of quantum tasks and hybrid jobs currently queued on the device.</p>
@@ -42,6 +44,10 @@ impl GetDeviceOutput {
     /// <p>The status of the device.</p>
     pub fn device_status(&self) -> &crate::types::DeviceStatus {
         &self.device_status
+    }
+    /// <p>The reason for the current status of the device, including status reason codes and timestamps.</p>
+    pub fn device_status_reason(&self) -> ::std::option::Option<&crate::types::DeviceStatusReason> {
+        self.device_status_reason.as_ref()
     }
     /// <p>Details about the capabilities of the device.</p>
     pub fn device_capabilities(&self) -> &str {
@@ -76,6 +82,7 @@ pub struct GetDeviceOutputBuilder {
     pub(crate) provider_name: ::std::option::Option<::std::string::String>,
     pub(crate) device_type: ::std::option::Option<crate::types::DeviceType>,
     pub(crate) device_status: ::std::option::Option<crate::types::DeviceStatus>,
+    pub(crate) device_status_reason: ::std::option::Option<crate::types::DeviceStatusReason>,
     pub(crate) device_capabilities: ::std::option::Option<::std::string::String>,
     pub(crate) device_queue_info: ::std::option::Option<::std::vec::Vec<crate::types::DeviceQueueInfo>>,
     _request_id: Option<String>,
@@ -155,6 +162,20 @@ impl GetDeviceOutputBuilder {
     /// <p>The status of the device.</p>
     pub fn get_device_status(&self) -> &::std::option::Option<crate::types::DeviceStatus> {
         &self.device_status
+    }
+    /// <p>The reason for the current status of the device, including status reason codes and timestamps.</p>
+    pub fn device_status_reason(mut self, input: crate::types::DeviceStatusReason) -> Self {
+        self.device_status_reason = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The reason for the current status of the device, including status reason codes and timestamps.</p>
+    pub fn set_device_status_reason(mut self, input: ::std::option::Option<crate::types::DeviceStatusReason>) -> Self {
+        self.device_status_reason = input;
+        self
+    }
+    /// <p>The reason for the current status of the device, including status reason codes and timestamps.</p>
+    pub fn get_device_status_reason(&self) -> &::std::option::Option<crate::types::DeviceStatusReason> {
+        &self.device_status_reason
     }
     /// <p>Details about the capabilities of the device.</p>
     /// This field is required.
@@ -240,6 +261,7 @@ impl GetDeviceOutputBuilder {
                     "device_status was not specified but it is required when building GetDeviceOutput",
                 )
             })?,
+            device_status_reason: self.device_status_reason,
             device_capabilities: self.device_capabilities.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "device_capabilities",

@@ -179,6 +179,8 @@ pub(crate) mod shape_list_tenants;
 
 pub(crate) mod shape_put_account_dedicated_ip_warmup_attributes;
 
+pub(crate) mod shape_put_account_delivery_attributes;
+
 pub(crate) mod shape_put_account_details;
 
 pub(crate) mod shape_put_account_pricing_attributes;
@@ -353,6 +355,8 @@ pub(crate) mod shape_not_found_exception;
 
 pub(crate) mod shape_put_account_dedicated_ip_warmup_attributes_input;
 
+pub(crate) mod shape_put_account_delivery_attributes_input;
+
 pub(crate) mod shape_put_account_details_input;
 
 pub(crate) mod shape_put_account_pricing_attributes_input;
@@ -462,6 +466,8 @@ pub(crate) mod shape_dedicated_ip_pool;
 pub(crate) mod shape_deliverability_test_report;
 
 pub(crate) mod shape_deliverability_test_reports;
+
+pub(crate) mod shape_delivery_attributes;
 
 pub(crate) mod shape_delivery_options;
 

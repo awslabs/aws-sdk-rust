@@ -303,6 +303,8 @@ pub use crate::types::_ssekms::SsekmsBuilder;
 
 pub use crate::types::_replication_rule_and_operator::ReplicationRuleAndOperatorBuilder;
 
+pub use crate::types::_replication_rule_not_operator::ReplicationRuleNotOperatorBuilder;
+
 pub use crate::types::_sse_kms_encrypted_objects::SseKmsEncryptedObjectsBuilder;
 
 pub use crate::types::_replica_modifications::ReplicaModificationsBuilder;
@@ -318,5 +320,9 @@ pub use crate::types::_metrics::MetricsBuilder;
 pub use crate::types::_metadata_entry::MetadataEntryBuilder;
 
 pub use crate::types::_filter_rule::FilterRuleBuilder;
+
+pub use crate::types::_replication_rule_or_operator::ReplicationRuleOrOperatorBuilder;
+
+pub use crate::types::_use_source_multi_region_key::UseSourceMultiRegionKeyBuilder;
 
 pub use crate::types::_replication_time_value::ReplicationTimeValueBuilder;

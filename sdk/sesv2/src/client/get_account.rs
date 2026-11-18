@@ -13,6 +13,7 @@ impl super::Client {
     ///   - [`details(Option<AccountDetails>)`](crate::operation::get_account::GetAccountOutput::details): <p>An object that defines your account details.</p>
     ///   - [`vdm_attributes(Option<VdmAttributes>)`](crate::operation::get_account::GetAccountOutput::vdm_attributes): <p>The VDM attributes that apply to your Amazon SES account.</p>
     ///   - [`pricing_attributes(Option<PricingAttributes>)`](crate::operation::get_account::GetAccountOutput::pricing_attributes): <p>The pricing attributes that apply to your Amazon SES account, including the currently active pricing plan and any scheduled change.</p>
+    ///   - [`delivery_attributes(Option<DeliveryAttributes>)`](crate::operation::get_account::GetAccountOutput::delivery_attributes): <p>The delivery attributes that apply to your Amazon SES account in the current Amazon Web Services Region.</p>
     /// - On failure, responds with [`SdkError<GetAccountError>`](crate::operation::get_account::GetAccountError)
     pub fn get_account(&self) -> crate::operation::get_account::builders::GetAccountFluentBuilder {
         crate::operation::get_account::builders::GetAccountFluentBuilder::new(self.handle.clone())

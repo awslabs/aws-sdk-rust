@@ -15,6 +15,8 @@ pub struct ReplicationRuleAndOperator {
     pub prefix: ::std::option::Option<::std::string::String>,
     /// <p>An array of tags containing key and value pairs.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>A container for specifying filters that exclude matching objects from the replication rule.</p>
+    pub not: ::std::option::Option<crate::types::ReplicationRuleNotOperator>,
 }
 impl ReplicationRuleAndOperator {
     /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p>
@@ -26,6 +28,10 @@ impl ReplicationRuleAndOperator {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.tags.is_none()`.
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
+    }
+    /// <p>A container for specifying filters that exclude matching objects from the replication rule.</p>
+    pub fn not(&self) -> ::std::option::Option<&crate::types::ReplicationRuleNotOperator> {
+        self.not.as_ref()
     }
 }
 impl ReplicationRuleAndOperator {
@@ -41,6 +47,7 @@ impl ReplicationRuleAndOperator {
 pub struct ReplicationRuleAndOperatorBuilder {
     pub(crate) prefix: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) not: ::std::option::Option<crate::types::ReplicationRuleNotOperator>,
 }
 impl ReplicationRuleAndOperatorBuilder {
     /// <p>An object key name prefix that identifies the subset of objects to which the rule applies.</p>
@@ -77,11 +84,26 @@ impl ReplicationRuleAndOperatorBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>A container for specifying filters that exclude matching objects from the replication rule.</p>
+    pub fn not(mut self, input: crate::types::ReplicationRuleNotOperator) -> Self {
+        self.not = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A container for specifying filters that exclude matching objects from the replication rule.</p>
+    pub fn set_not(mut self, input: ::std::option::Option<crate::types::ReplicationRuleNotOperator>) -> Self {
+        self.not = input;
+        self
+    }
+    /// <p>A container for specifying filters that exclude matching objects from the replication rule.</p>
+    pub fn get_not(&self) -> &::std::option::Option<crate::types::ReplicationRuleNotOperator> {
+        &self.not
+    }
     /// Consumes the builder and constructs a [`ReplicationRuleAndOperator`](crate::types::ReplicationRuleAndOperator).
     pub fn build(self) -> crate::types::ReplicationRuleAndOperator {
         crate::types::ReplicationRuleAndOperator {
             prefix: self.prefix,
             tags: self.tags,
+            not: self.not,
         }
     }
 }

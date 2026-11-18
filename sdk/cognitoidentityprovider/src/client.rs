@@ -243,6 +243,8 @@ mod admin_user_global_sign_out;
 
 mod associate_software_token;
 
+mod cancel_point_in_time_recovery;
+
 mod change_password;
 
 mod complete_web_authn_registration;
@@ -332,6 +334,8 @@ mod describe_managed_login_branding;
 
 mod describe_managed_login_branding_by_client;
 
+mod describe_point_in_time_recovery;
+
 mod describe_resource_server;
 
 mod describe_risk_configuration;
@@ -390,11 +394,15 @@ mod global_sign_out;
 
 mod initiate_auth;
 
+mod initiate_point_in_time_recovery;
+
 mod list_devices;
 
 mod list_groups;
 
 mod list_identity_providers;
+
+mod list_point_in_time_recoveries;
 
 mod list_resource_servers;
 
@@ -445,6 +453,8 @@ mod set_user_pool_session_configuration;
 mod set_user_settings;
 
 mod sign_up;
+
+mod start_point_in_time_recovery;
 
 mod start_user_import_job;
 

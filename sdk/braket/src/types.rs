@@ -5,6 +5,8 @@ pub use crate::types::_device_type::DeviceType;
 
 pub use crate::types::_device_status::DeviceStatus;
 
+pub use crate::types::_device_status_reason::DeviceStatusReason;
+
 pub use crate::types::_algorithm_specification::AlgorithmSpecification;
 
 pub use crate::types::_job_output_data_config::JobOutputDataConfig;
@@ -38,6 +40,8 @@ pub use crate::types::_program_set_validation_failure::ProgramSetValidationFailu
 pub use crate::types::_search_devices_filter::SearchDevicesFilter;
 
 pub use crate::types::_device_summary::DeviceSummary;
+
+pub use crate::types::_device_status_reason_code::DeviceStatusReasonCode;
 
 pub use crate::types::_device_queue_info::DeviceQueueInfo;
 
@@ -112,6 +116,10 @@ mod _device_config;
 mod _device_queue_info;
 
 mod _device_status;
+
+mod _device_status_reason;
+
+mod _device_status_reason_code;
 
 mod _device_summary;
 

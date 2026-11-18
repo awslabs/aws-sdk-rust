@@ -882,6 +882,7 @@ impl From<crate::operation::get_test_template::GetTestTemplateError> for Error {
             crate::operation::get_test_template::GetTestTemplateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_test_template::GetTestTemplateError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::get_test_template::GetTestTemplateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_test_template::GetTestTemplateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_test_template::GetTestTemplateError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_test_template::GetTestTemplateError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -1671,6 +1672,7 @@ impl From<crate::operation::list_test_templates::ListTestTemplatesError> for Err
         match err {
             crate::operation::list_test_templates::ListTestTemplatesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_test_templates::ListTestTemplatesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_test_templates::ListTestTemplatesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_test_templates::ListTestTemplatesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_test_templates::ListTestTemplatesError::Unhandled(inner) => Error::Unhandled(inner),
         }

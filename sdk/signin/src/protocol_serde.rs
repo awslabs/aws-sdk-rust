@@ -23,6 +23,8 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_batch_revoke_sessions;
+
 pub(crate) mod shape_create_bearer_token;
 
 pub(crate) mod shape_create_o_auth2_token;
@@ -45,9 +47,13 @@ pub(crate) mod shape_get_console_authorization_configuration;
 
 pub(crate) mod shape_get_resource_policy;
 
+pub(crate) mod shape_get_session;
+
 pub(crate) mod shape_introspect_o_auth2_token_with_iam;
 
 pub(crate) mod shape_list_resource_permission_statements;
+
+pub(crate) mod shape_list_sessions;
 
 pub(crate) mod shape_put_console_authorization_configuration;
 
@@ -65,6 +71,8 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_batch_revoke_sessions_input;
+
 pub(crate) mod shape_conflict_exception;
 
 pub(crate) mod shape_create_bearer_token_input;
@@ -81,6 +89,8 @@ pub(crate) mod shape_delete_resource_permission_statement_input;
 
 pub(crate) mod shape_get_console_authorization_configuration_input;
 
+pub(crate) mod shape_get_session_input;
+
 pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_introspect_o_auth2_token_with_iam_input;
@@ -90,6 +100,8 @@ pub(crate) mod shape_invalid_grant_exception;
 pub(crate) mod shape_invalid_scope_exception;
 
 pub(crate) mod shape_list_resource_permission_statements_input;
+
+pub(crate) mod shape_list_sessions_input;
 
 pub(crate) mod shape_put_console_authorization_configuration_input;
 
@@ -107,17 +119,29 @@ pub(crate) mod shape_too_many_requests_error;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_batch_revoke_session_error_list;
+
 pub(crate) mod shape_create_o_auth2_token_request_body;
 
 pub(crate) mod shape_create_o_auth2_token_response_body;
 
 pub(crate) mod shape_permission_statement_summaries;
 
+pub(crate) mod shape_revoked_session_list;
+
+pub(crate) mod shape_session_summary_list;
+
 pub(crate) mod shape_signin_resource_based_policy;
+
+pub(crate) mod shape_batch_revoke_session_error;
 
 pub(crate) mod shape_permission_statement_summary;
 
 pub(crate) mod shape_policy_statements;
+
+pub(crate) mod shape_revoked_session;
+
+pub(crate) mod shape_session;
 
 pub(crate) mod shape_access_token;
 

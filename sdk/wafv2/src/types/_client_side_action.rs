@@ -10,7 +10,7 @@ pub struct ClientSideAction {
     /// <p>If usage is enabled:</p>
     /// <ul>
     /// <li>
-    /// <p>The managed rule group adds the label <code>awswaf:managed:aws:anti-ddos:challengeable-request</code> to any web request whose URL does <i>NOT</i> match the regular expressions provided in the <code>ClientSideAction</code> setting <code>ExemptUriRegularExpressions</code>.</p></li>
+    /// <p>The managed rule group adds the label <code>awswaf:managed:aws:anti-ddos:challengeable-request</code> to any web request that does not match the regular expressions provided in the <code>ClientSideAction</code> setting <code>ExemptUriRegularExpressions</code>.</p></li>
     /// <li>
     /// <p>The two rules are evaluated against web requests for protected resources that are experiencing a DDoS attack. The two rules only apply their action to matching requests that have the label <code>awswaf:managed:aws:anti-ddos:challengeable-request</code>.</p></li>
     /// </ul></li>
@@ -41,12 +41,13 @@ pub struct ClientSideAction {
     /// </ul>
     /// <p>Default: <code>HIGH</code></p>
     pub sensitivity: ::std::option::Option<crate::types::SensitivityToAct>,
-    /// <p>The regular expression to match against the web request URI, used to identify requests that can't handle a silent browser challenge. When the <code>ClientSideAction</code> setting <code>UsageOfAction</code> is enabled, the managed rule group uses this setting to determine which requests to label with <code>awswaf:managed:aws:anti-ddos:challengeable-request</code>. If <code>UsageOfAction</code> is disabled, this setting has no effect and the managed rule group doesn't add the label to any requests.</p>
-    /// <p>The anti-DDoS managed rule group doesn't evaluate the rules <code>ChallengeDDoSRequests</code> or <code>ChallengeAllDuringEvent</code> for web requests whose URIs match this regex. This is true regardless of whether you override the rule action for either of the rules in your web ACL configuration.</p>
+    /// <p>The regular expression to match against the request's host followed by its normalized URI path, used to identify requests that can't handle a silent browser challenge. When the <code>ClientSideAction</code> setting <code>UsageOfAction</code> is enabled, the managed rule group uses this setting to determine which requests to label with <code>awswaf:managed:aws:anti-ddos:challengeable-request</code>. If <code>UsageOfAction</code> is disabled, this setting has no effect and the managed rule group doesn't add the label to any requests.</p>
+    /// <p>WAF matches against the host immediately followed by the normalized URI path and doesn't include the scheme, the query string, or the fragment. For example, <code>www.example.com/api/orders</code>. Because the match begins with the host, a pattern anchored to the start of the path, such as <code>^/api/</code>, never matches. WAF normalizes the path first, removing empty segments (including a trailing slash) and single-dot (<code>.</code>) segments and resolving double-dot (<code>..</code>) segments, so <code>/api/</code> is evaluated as <code>/api</code>. Only <code>GET</code> requests are challengeable.</p>
+    /// <p>The anti-DDoS managed rule group doesn't evaluate the rules <code>ChallengeDDoSRequests</code> or <code>ChallengeAllDuringEvent</code> for web requests that match this regex. This is true regardless of whether you override the rule action for either of the rules in your web ACL configuration.</p>
     /// <p>Amazon Web Services recommends using a regular expression.</p>
     /// <p>This setting is required if <code>UsageOfAction</code> is set to <code>ENABLED</code>. If required, you can provide between 1 and 5 regex objects in the array of settings.</p>
     /// <p>Amazon Web Services recommends starting with the following setting. Review and update it for your application's needs:</p>
-    /// <p><code>\/api\/|\.(acc|avi|css|gif|jpe?g|js|mp\[34\]|ogg|otf|pdf|png|tiff?|ttf|webm|webp|woff2?)$</code></p>
+    /// <p><code>\/api(\/|$)|\.(acc|avi|css|gif|jpe?g|js|mp\[34\]|ogg|otf|pdf|png|tiff?|ttf|webm|webp|woff2?)$</code></p>
     pub exempt_uri_regular_expressions: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>,
 }
 impl ClientSideAction {
@@ -56,7 +57,7 @@ impl ClientSideAction {
     /// <p>If usage is enabled:</p>
     /// <ul>
     /// <li>
-    /// <p>The managed rule group adds the label <code>awswaf:managed:aws:anti-ddos:challengeable-request</code> to any web request whose URL does <i>NOT</i> match the regular expressions provided in the <code>ClientSideAction</code> setting <code>ExemptUriRegularExpressions</code>.</p></li>
+    /// <p>The managed rule group adds the label <code>awswaf:managed:aws:anti-ddos:challengeable-request</code> to any web request that does not match the regular expressions provided in the <code>ClientSideAction</code> setting <code>ExemptUriRegularExpressions</code>.</p></li>
     /// <li>
     /// <p>The two rules are evaluated against web requests for protected resources that are experiencing a DDoS attack. The two rules only apply their action to matching requests that have the label <code>awswaf:managed:aws:anti-ddos:challengeable-request</code>.</p></li>
     /// </ul></li>
@@ -91,12 +92,13 @@ impl ClientSideAction {
     pub fn sensitivity(&self) -> ::std::option::Option<&crate::types::SensitivityToAct> {
         self.sensitivity.as_ref()
     }
-    /// <p>The regular expression to match against the web request URI, used to identify requests that can't handle a silent browser challenge. When the <code>ClientSideAction</code> setting <code>UsageOfAction</code> is enabled, the managed rule group uses this setting to determine which requests to label with <code>awswaf:managed:aws:anti-ddos:challengeable-request</code>. If <code>UsageOfAction</code> is disabled, this setting has no effect and the managed rule group doesn't add the label to any requests.</p>
-    /// <p>The anti-DDoS managed rule group doesn't evaluate the rules <code>ChallengeDDoSRequests</code> or <code>ChallengeAllDuringEvent</code> for web requests whose URIs match this regex. This is true regardless of whether you override the rule action for either of the rules in your web ACL configuration.</p>
+    /// <p>The regular expression to match against the request's host followed by its normalized URI path, used to identify requests that can't handle a silent browser challenge. When the <code>ClientSideAction</code> setting <code>UsageOfAction</code> is enabled, the managed rule group uses this setting to determine which requests to label with <code>awswaf:managed:aws:anti-ddos:challengeable-request</code>. If <code>UsageOfAction</code> is disabled, this setting has no effect and the managed rule group doesn't add the label to any requests.</p>
+    /// <p>WAF matches against the host immediately followed by the normalized URI path and doesn't include the scheme, the query string, or the fragment. For example, <code>www.example.com/api/orders</code>. Because the match begins with the host, a pattern anchored to the start of the path, such as <code>^/api/</code>, never matches. WAF normalizes the path first, removing empty segments (including a trailing slash) and single-dot (<code>.</code>) segments and resolving double-dot (<code>..</code>) segments, so <code>/api/</code> is evaluated as <code>/api</code>. Only <code>GET</code> requests are challengeable.</p>
+    /// <p>The anti-DDoS managed rule group doesn't evaluate the rules <code>ChallengeDDoSRequests</code> or <code>ChallengeAllDuringEvent</code> for web requests that match this regex. This is true regardless of whether you override the rule action for either of the rules in your web ACL configuration.</p>
     /// <p>Amazon Web Services recommends using a regular expression.</p>
     /// <p>This setting is required if <code>UsageOfAction</code> is set to <code>ENABLED</code>. If required, you can provide between 1 and 5 regex objects in the array of settings.</p>
     /// <p>Amazon Web Services recommends starting with the following setting. Review and update it for your application's needs:</p>
-    /// <p><code>\/api\/|\.(acc|avi|css|gif|jpe?g|js|mp\[34\]|ogg|otf|pdf|png|tiff?|ttf|webm|webp|woff2?)$</code></p>
+    /// <p><code>\/api(\/|$)|\.(acc|avi|css|gif|jpe?g|js|mp\[34\]|ogg|otf|pdf|png|tiff?|ttf|webm|webp|woff2?)$</code></p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.exempt_uri_regular_expressions.is_none()`.
     pub fn exempt_uri_regular_expressions(&self) -> &[crate::types::Regex] {
@@ -125,7 +127,7 @@ impl ClientSideActionBuilder {
     /// <p>If usage is enabled:</p>
     /// <ul>
     /// <li>
-    /// <p>The managed rule group adds the label <code>awswaf:managed:aws:anti-ddos:challengeable-request</code> to any web request whose URL does <i>NOT</i> match the regular expressions provided in the <code>ClientSideAction</code> setting <code>ExemptUriRegularExpressions</code>.</p></li>
+    /// <p>The managed rule group adds the label <code>awswaf:managed:aws:anti-ddos:challengeable-request</code> to any web request that does not match the regular expressions provided in the <code>ClientSideAction</code> setting <code>ExemptUriRegularExpressions</code>.</p></li>
     /// <li>
     /// <p>The two rules are evaluated against web requests for protected resources that are experiencing a DDoS attack. The two rules only apply their action to matching requests that have the label <code>awswaf:managed:aws:anti-ddos:challengeable-request</code>.</p></li>
     /// </ul></li>
@@ -154,7 +156,7 @@ impl ClientSideActionBuilder {
     /// <p>If usage is enabled:</p>
     /// <ul>
     /// <li>
-    /// <p>The managed rule group adds the label <code>awswaf:managed:aws:anti-ddos:challengeable-request</code> to any web request whose URL does <i>NOT</i> match the regular expressions provided in the <code>ClientSideAction</code> setting <code>ExemptUriRegularExpressions</code>.</p></li>
+    /// <p>The managed rule group adds the label <code>awswaf:managed:aws:anti-ddos:challengeable-request</code> to any web request that does not match the regular expressions provided in the <code>ClientSideAction</code> setting <code>ExemptUriRegularExpressions</code>.</p></li>
     /// <li>
     /// <p>The two rules are evaluated against web requests for protected resources that are experiencing a DDoS attack. The two rules only apply their action to matching requests that have the label <code>awswaf:managed:aws:anti-ddos:challengeable-request</code>.</p></li>
     /// </ul></li>
@@ -182,7 +184,7 @@ impl ClientSideActionBuilder {
     /// <p>If usage is enabled:</p>
     /// <ul>
     /// <li>
-    /// <p>The managed rule group adds the label <code>awswaf:managed:aws:anti-ddos:challengeable-request</code> to any web request whose URL does <i>NOT</i> match the regular expressions provided in the <code>ClientSideAction</code> setting <code>ExemptUriRegularExpressions</code>.</p></li>
+    /// <p>The managed rule group adds the label <code>awswaf:managed:aws:anti-ddos:challengeable-request</code> to any web request that does not match the regular expressions provided in the <code>ClientSideAction</code> setting <code>ExemptUriRegularExpressions</code>.</p></li>
     /// <li>
     /// <p>The two rules are evaluated against web requests for protected resources that are experiencing a DDoS attack. The two rules only apply their action to matching requests that have the label <code>awswaf:managed:aws:anti-ddos:challengeable-request</code>.</p></li>
     /// </ul></li>
@@ -251,34 +253,37 @@ impl ClientSideActionBuilder {
     ///
     /// To override the contents of this collection use [`set_exempt_uri_regular_expressions`](Self::set_exempt_uri_regular_expressions).
     ///
-    /// <p>The regular expression to match against the web request URI, used to identify requests that can't handle a silent browser challenge. When the <code>ClientSideAction</code> setting <code>UsageOfAction</code> is enabled, the managed rule group uses this setting to determine which requests to label with <code>awswaf:managed:aws:anti-ddos:challengeable-request</code>. If <code>UsageOfAction</code> is disabled, this setting has no effect and the managed rule group doesn't add the label to any requests.</p>
-    /// <p>The anti-DDoS managed rule group doesn't evaluate the rules <code>ChallengeDDoSRequests</code> or <code>ChallengeAllDuringEvent</code> for web requests whose URIs match this regex. This is true regardless of whether you override the rule action for either of the rules in your web ACL configuration.</p>
+    /// <p>The regular expression to match against the request's host followed by its normalized URI path, used to identify requests that can't handle a silent browser challenge. When the <code>ClientSideAction</code> setting <code>UsageOfAction</code> is enabled, the managed rule group uses this setting to determine which requests to label with <code>awswaf:managed:aws:anti-ddos:challengeable-request</code>. If <code>UsageOfAction</code> is disabled, this setting has no effect and the managed rule group doesn't add the label to any requests.</p>
+    /// <p>WAF matches against the host immediately followed by the normalized URI path and doesn't include the scheme, the query string, or the fragment. For example, <code>www.example.com/api/orders</code>. Because the match begins with the host, a pattern anchored to the start of the path, such as <code>^/api/</code>, never matches. WAF normalizes the path first, removing empty segments (including a trailing slash) and single-dot (<code>.</code>) segments and resolving double-dot (<code>..</code>) segments, so <code>/api/</code> is evaluated as <code>/api</code>. Only <code>GET</code> requests are challengeable.</p>
+    /// <p>The anti-DDoS managed rule group doesn't evaluate the rules <code>ChallengeDDoSRequests</code> or <code>ChallengeAllDuringEvent</code> for web requests that match this regex. This is true regardless of whether you override the rule action for either of the rules in your web ACL configuration.</p>
     /// <p>Amazon Web Services recommends using a regular expression.</p>
     /// <p>This setting is required if <code>UsageOfAction</code> is set to <code>ENABLED</code>. If required, you can provide between 1 and 5 regex objects in the array of settings.</p>
     /// <p>Amazon Web Services recommends starting with the following setting. Review and update it for your application's needs:</p>
-    /// <p><code>\/api\/|\.(acc|avi|css|gif|jpe?g|js|mp\[34\]|ogg|otf|pdf|png|tiff?|ttf|webm|webp|woff2?)$</code></p>
+    /// <p><code>\/api(\/|$)|\.(acc|avi|css|gif|jpe?g|js|mp\[34\]|ogg|otf|pdf|png|tiff?|ttf|webm|webp|woff2?)$</code></p>
     pub fn exempt_uri_regular_expressions(mut self, input: crate::types::Regex) -> Self {
         let mut v = self.exempt_uri_regular_expressions.unwrap_or_default();
         v.push(input);
         self.exempt_uri_regular_expressions = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The regular expression to match against the web request URI, used to identify requests that can't handle a silent browser challenge. When the <code>ClientSideAction</code> setting <code>UsageOfAction</code> is enabled, the managed rule group uses this setting to determine which requests to label with <code>awswaf:managed:aws:anti-ddos:challengeable-request</code>. If <code>UsageOfAction</code> is disabled, this setting has no effect and the managed rule group doesn't add the label to any requests.</p>
-    /// <p>The anti-DDoS managed rule group doesn't evaluate the rules <code>ChallengeDDoSRequests</code> or <code>ChallengeAllDuringEvent</code> for web requests whose URIs match this regex. This is true regardless of whether you override the rule action for either of the rules in your web ACL configuration.</p>
+    /// <p>The regular expression to match against the request's host followed by its normalized URI path, used to identify requests that can't handle a silent browser challenge. When the <code>ClientSideAction</code> setting <code>UsageOfAction</code> is enabled, the managed rule group uses this setting to determine which requests to label with <code>awswaf:managed:aws:anti-ddos:challengeable-request</code>. If <code>UsageOfAction</code> is disabled, this setting has no effect and the managed rule group doesn't add the label to any requests.</p>
+    /// <p>WAF matches against the host immediately followed by the normalized URI path and doesn't include the scheme, the query string, or the fragment. For example, <code>www.example.com/api/orders</code>. Because the match begins with the host, a pattern anchored to the start of the path, such as <code>^/api/</code>, never matches. WAF normalizes the path first, removing empty segments (including a trailing slash) and single-dot (<code>.</code>) segments and resolving double-dot (<code>..</code>) segments, so <code>/api/</code> is evaluated as <code>/api</code>. Only <code>GET</code> requests are challengeable.</p>
+    /// <p>The anti-DDoS managed rule group doesn't evaluate the rules <code>ChallengeDDoSRequests</code> or <code>ChallengeAllDuringEvent</code> for web requests that match this regex. This is true regardless of whether you override the rule action for either of the rules in your web ACL configuration.</p>
     /// <p>Amazon Web Services recommends using a regular expression.</p>
     /// <p>This setting is required if <code>UsageOfAction</code> is set to <code>ENABLED</code>. If required, you can provide between 1 and 5 regex objects in the array of settings.</p>
     /// <p>Amazon Web Services recommends starting with the following setting. Review and update it for your application's needs:</p>
-    /// <p><code>\/api\/|\.(acc|avi|css|gif|jpe?g|js|mp\[34\]|ogg|otf|pdf|png|tiff?|ttf|webm|webp|woff2?)$</code></p>
+    /// <p><code>\/api(\/|$)|\.(acc|avi|css|gif|jpe?g|js|mp\[34\]|ogg|otf|pdf|png|tiff?|ttf|webm|webp|woff2?)$</code></p>
     pub fn set_exempt_uri_regular_expressions(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Regex>>) -> Self {
         self.exempt_uri_regular_expressions = input;
         self
     }
-    /// <p>The regular expression to match against the web request URI, used to identify requests that can't handle a silent browser challenge. When the <code>ClientSideAction</code> setting <code>UsageOfAction</code> is enabled, the managed rule group uses this setting to determine which requests to label with <code>awswaf:managed:aws:anti-ddos:challengeable-request</code>. If <code>UsageOfAction</code> is disabled, this setting has no effect and the managed rule group doesn't add the label to any requests.</p>
-    /// <p>The anti-DDoS managed rule group doesn't evaluate the rules <code>ChallengeDDoSRequests</code> or <code>ChallengeAllDuringEvent</code> for web requests whose URIs match this regex. This is true regardless of whether you override the rule action for either of the rules in your web ACL configuration.</p>
+    /// <p>The regular expression to match against the request's host followed by its normalized URI path, used to identify requests that can't handle a silent browser challenge. When the <code>ClientSideAction</code> setting <code>UsageOfAction</code> is enabled, the managed rule group uses this setting to determine which requests to label with <code>awswaf:managed:aws:anti-ddos:challengeable-request</code>. If <code>UsageOfAction</code> is disabled, this setting has no effect and the managed rule group doesn't add the label to any requests.</p>
+    /// <p>WAF matches against the host immediately followed by the normalized URI path and doesn't include the scheme, the query string, or the fragment. For example, <code>www.example.com/api/orders</code>. Because the match begins with the host, a pattern anchored to the start of the path, such as <code>^/api/</code>, never matches. WAF normalizes the path first, removing empty segments (including a trailing slash) and single-dot (<code>.</code>) segments and resolving double-dot (<code>..</code>) segments, so <code>/api/</code> is evaluated as <code>/api</code>. Only <code>GET</code> requests are challengeable.</p>
+    /// <p>The anti-DDoS managed rule group doesn't evaluate the rules <code>ChallengeDDoSRequests</code> or <code>ChallengeAllDuringEvent</code> for web requests that match this regex. This is true regardless of whether you override the rule action for either of the rules in your web ACL configuration.</p>
     /// <p>Amazon Web Services recommends using a regular expression.</p>
     /// <p>This setting is required if <code>UsageOfAction</code> is set to <code>ENABLED</code>. If required, you can provide between 1 and 5 regex objects in the array of settings.</p>
     /// <p>Amazon Web Services recommends starting with the following setting. Review and update it for your application's needs:</p>
-    /// <p><code>\/api\/|\.(acc|avi|css|gif|jpe?g|js|mp\[34\]|ogg|otf|pdf|png|tiff?|ttf|webm|webp|woff2?)$</code></p>
+    /// <p><code>\/api(\/|$)|\.(acc|avi|css|gif|jpe?g|js|mp\[34\]|ogg|otf|pdf|png|tiff?|ttf|webm|webp|woff2?)$</code></p>
     pub fn get_exempt_uri_regular_expressions(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Regex>> {
         &self.exempt_uri_regular_expressions
     }

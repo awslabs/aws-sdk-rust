@@ -15,7 +15,7 @@ pub struct DependencyInsight {
     /// <li>
     /// <p>UNEVEN_USAGE - The insight relates to a dependency with uneven usage across the service.</p></li>
     /// <li>
-    /// <p>AWS_SERVICE - The insight relates to a dependency on an Amazon Web Services service.</p></li>
+    /// <p>AWS_SERVICE - The insight relates to a dependency on an Amazon Web Services service. Resilience Hub doesn't currently return this value.</p></li>
     /// </ul>
     pub category: crate::types::InsightsCategory,
     /// <p>A human-readable explanation of the insight, describing the dependency behavior or condition that was detected.</p>
@@ -33,7 +33,7 @@ impl DependencyInsight {
     /// <li>
     /// <p>UNEVEN_USAGE - The insight relates to a dependency with uneven usage across the service.</p></li>
     /// <li>
-    /// <p>AWS_SERVICE - The insight relates to a dependency on an Amazon Web Services service.</p></li>
+    /// <p>AWS_SERVICE - The insight relates to a dependency on an Amazon Web Services service. Resilience Hub doesn't currently return this value.</p></li>
     /// </ul>
     pub fn category(&self) -> &crate::types::InsightsCategory {
         &self.category
@@ -70,7 +70,7 @@ impl DependencyInsightBuilder {
     /// <li>
     /// <p>UNEVEN_USAGE - The insight relates to a dependency with uneven usage across the service.</p></li>
     /// <li>
-    /// <p>AWS_SERVICE - The insight relates to a dependency on an Amazon Web Services service.</p></li>
+    /// <p>AWS_SERVICE - The insight relates to a dependency on an Amazon Web Services service. Resilience Hub doesn't currently return this value.</p></li>
     /// </ul>
     /// This field is required.
     pub fn category(mut self, input: crate::types::InsightsCategory) -> Self {
@@ -88,7 +88,7 @@ impl DependencyInsightBuilder {
     /// <li>
     /// <p>UNEVEN_USAGE - The insight relates to a dependency with uneven usage across the service.</p></li>
     /// <li>
-    /// <p>AWS_SERVICE - The insight relates to a dependency on an Amazon Web Services service.</p></li>
+    /// <p>AWS_SERVICE - The insight relates to a dependency on an Amazon Web Services service. Resilience Hub doesn't currently return this value.</p></li>
     /// </ul>
     pub fn set_category(mut self, input: ::std::option::Option<crate::types::InsightsCategory>) -> Self {
         self.category = input;
@@ -105,7 +105,7 @@ impl DependencyInsightBuilder {
     /// <li>
     /// <p>UNEVEN_USAGE - The insight relates to a dependency with uneven usage across the service.</p></li>
     /// <li>
-    /// <p>AWS_SERVICE - The insight relates to a dependency on an Amazon Web Services service.</p></li>
+    /// <p>AWS_SERVICE - The insight relates to a dependency on an Amazon Web Services service. Resilience Hub doesn't currently return this value.</p></li>
     /// </ul>
     pub fn get_category(&self) -> &::std::option::Option<crate::types::InsightsCategory> {
         &self.category

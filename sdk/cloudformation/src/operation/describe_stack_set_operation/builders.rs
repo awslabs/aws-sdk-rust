@@ -22,7 +22,8 @@ impl crate::operation::describe_stack_set_operation::builders::DescribeStackSetO
 }
 /// Fluent builder constructing a request to `DescribeStackSetOperation`.
 ///
-/// <p>Returns the description of the specified StackSet operation.</p><note>
+/// <p>Returns the description of the specified StackSet operation.</p>
+/// <p>Reports role provisioning and stack instances deployment progress in <code>StatusDetails.Stages</code>. A breakdown for each Amazon Web Services Region is available in <code>RegionalStatusDetails</code>.</p><note>
 /// <p>This API provides <i>strongly consistent</i> reads meaning it will always return the most up-to-date data.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

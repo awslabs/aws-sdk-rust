@@ -637,6 +637,8 @@ pub(crate) mod shape_property_differences;
 
 pub(crate) mod shape_region_list;
 
+pub(crate) mod shape_regional_status_details;
+
 pub(crate) mod shape_required_activated_type;
 
 pub(crate) mod shape_resource_detail;
@@ -733,6 +735,8 @@ pub(crate) mod shape_stack_resource_drift_information_summary;
 
 pub(crate) mod shape_stack_set_arn_list;
 
+pub(crate) mod shape_stages;
+
 pub(crate) mod shape_supported_major_versions;
 
 pub(crate) mod shape_warning_details;
@@ -745,19 +749,29 @@ pub(crate) mod shape_operation_entry;
 
 pub(crate) mod shape_output;
 
+pub(crate) mod shape_regional_status_detail;
+
 pub(crate) mod shape_resource_change_details;
 
 pub(crate) mod shape_resource_drift_ignored_attributes;
 
+pub(crate) mod shape_role_provisioning;
+
 pub(crate) mod shape_scope;
 
+pub(crate) mod shape_stack_instances_deployment;
+
 pub(crate) mod shape_warning_detail;
+
+pub(crate) mod shape_regional_stages;
 
 pub(crate) mod shape_resource_change_detail;
 
 pub(crate) mod shape_resource_drift_ignored_attribute;
 
 pub(crate) mod shape_warning_properties;
+
+pub(crate) mod shape_regional_stack_instances_deployment;
 
 pub(crate) mod shape_resource_target_definition;
 

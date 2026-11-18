@@ -2134,6 +2134,27 @@ impl From<crate::operation::list_threats::ListThreatsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::resume_pentest_job::ResumePentestJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::resume_pentest_job::ResumePentestJobError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::resume_pentest_job::ResumePentestJobError> for Error {
+    fn from(err: crate::operation::resume_pentest_job::ResumePentestJobError) -> Self {
+        match err {
+            crate::operation::resume_pentest_job::ResumePentestJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_code_remediation::StartCodeRemediationError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

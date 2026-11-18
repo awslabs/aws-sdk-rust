@@ -9,9 +9,26 @@ pub(crate) fn reflens_list_resource_permission_statements_output_output_next_tok
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_sessions_output_output_next_token(
+    input: &crate::operation::list_sessions::ListSessionsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_resource_permission_statements_output_output_permission_statements(
     input: crate::operation::list_resource_permission_statements::ListResourcePermissionStatementsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PermissionStatementSummary>> {
     let input = input.permission_statements;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_sessions_output_output_items(
+    input: crate::operation::list_sessions::ListSessionsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::Session>> {
+    let input = input.items;
     ::std::option::Option::Some(input)
 }

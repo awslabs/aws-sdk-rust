@@ -57,6 +57,8 @@ pub use crate::types::_vdm_attributes::VdmAttributes;
 
 pub use crate::types::_pricing_attributes::PricingAttributes;
 
+pub use crate::types::_delivery_attributes::DeliveryAttributes;
+
 pub use crate::types::_dedicated_ip::DedicatedIp;
 
 pub use crate::types::_dedicated_ip_pool::DedicatedIpPool;
@@ -99,6 +101,8 @@ pub use crate::types::_list_contacts_filter::ListContactsFilter;
 
 pub use crate::types::_import_destination_type::ImportDestinationType;
 
+pub use crate::types::_account_shared_pool_delivery_mode::AccountSharedPoolDeliveryMode;
+
 pub use crate::types::_mail_type::MailType;
 
 pub use crate::types::_contact_language::ContactLanguage;
@@ -108,6 +112,8 @@ pub use crate::types::_pricing_plan::PricingPlan;
 pub use crate::types::_suppression_validation_attributes::SuppressionValidationAttributes;
 
 pub use crate::types::_tls_policy::TlsPolicy;
+
+pub use crate::types::_shared_pool_delivery_mode::SharedPoolDeliveryMode;
 
 pub use crate::types::_suppression_list_scope::SuppressionListScope;
 
@@ -359,6 +365,8 @@ pub use crate::types::_bounce_type::BounceType;
 
 mod _account_details;
 
+mod _account_shared_pool_delivery_mode;
+
 mod _archiving_options;
 
 mod _attachment;
@@ -430,6 +438,8 @@ mod _deliverability_dashboard_account_status;
 mod _deliverability_test_report;
 
 mod _deliverability_test_status;
+
+mod _delivery_attributes;
 
 mod _delivery_event_type;
 
@@ -632,6 +642,8 @@ mod _send_quota;
 mod _sending_options;
 
 mod _sending_status;
+
+mod _shared_pool_delivery_mode;
 
 mod _signature_format;
 

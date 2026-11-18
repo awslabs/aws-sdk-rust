@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ProtectedJobOutputConfigurationOutput {
+    /// <p>Specifies the intermediate table that the protected job populated, identified by its ID, Amazon Resource Name (ARN), and name. This field is present when the protected job was triggered by a <code>PopulateIntermediateTable</code> operation.</p>
+    IntermediateTable(crate::types::IntermediateTableOutputConfiguration),
     /// <p>The member output configuration for a protected job.</p>
     Member(crate::types::ProtectedJobMemberOutputConfigurationOutput),
     /// <p>If present, the output for a protected job with an `S3` output type.</p>
@@ -19,6 +21,19 @@ pub enum ProtectedJobOutputConfigurationOutput {
     Unknown,
 }
 impl ProtectedJobOutputConfigurationOutput {
+    /// Tries to convert the enum instance into [`IntermediateTable`](crate::types::ProtectedJobOutputConfigurationOutput::IntermediateTable), extracting the inner [`IntermediateTableOutputConfiguration`](crate::types::IntermediateTableOutputConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_intermediate_table(&self) -> ::std::result::Result<&crate::types::IntermediateTableOutputConfiguration, &Self> {
+        if let ProtectedJobOutputConfigurationOutput::IntermediateTable(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`IntermediateTable`](crate::types::ProtectedJobOutputConfigurationOutput::IntermediateTable).
+    pub fn is_intermediate_table(&self) -> bool {
+        self.as_intermediate_table().is_ok()
+    }
     /// Tries to convert the enum instance into [`Member`](crate::types::ProtectedJobOutputConfigurationOutput::Member), extracting the inner [`ProtectedJobMemberOutputConfigurationOutput`](crate::types::ProtectedJobMemberOutputConfigurationOutput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_member(&self) -> ::std::result::Result<&crate::types::ProtectedJobMemberOutputConfigurationOutput, &Self> {

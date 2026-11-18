@@ -1817,6 +1817,54 @@ impl From<crate::operation::associate_software_token::AssociateSoftwareTokenErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_point_in_time_recovery::CancelPointInTimeRecoveryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_point_in_time_recovery::CancelPointInTimeRecoveryError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_point_in_time_recovery::CancelPointInTimeRecoveryError> for Error {
+    fn from(err: crate::operation::cancel_point_in_time_recovery::CancelPointInTimeRecoveryError) -> Self {
+        match err {
+            crate::operation::cancel_point_in_time_recovery::CancelPointInTimeRecoveryError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::cancel_point_in_time_recovery::CancelPointInTimeRecoveryError::FeatureUnavailableInTierException(inner) => {
+                Error::FeatureUnavailableInTierException(inner)
+            }
+            crate::operation::cancel_point_in_time_recovery::CancelPointInTimeRecoveryError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::cancel_point_in_time_recovery::CancelPointInTimeRecoveryError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::cancel_point_in_time_recovery::CancelPointInTimeRecoveryError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::cancel_point_in_time_recovery::CancelPointInTimeRecoveryError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::cancel_point_in_time_recovery::CancelPointInTimeRecoveryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::cancel_point_in_time_recovery::CancelPointInTimeRecoveryError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::cancel_point_in_time_recovery::CancelPointInTimeRecoveryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::change_password::ChangePasswordError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3156,6 +3204,55 @@ impl From<crate::operation::describe_managed_login_branding_by_client::DescribeM
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_point_in_time_recovery::DescribePointInTimeRecoveryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_point_in_time_recovery::DescribePointInTimeRecoveryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_point_in_time_recovery::DescribePointInTimeRecoveryError> for Error {
+    fn from(err: crate::operation::describe_point_in_time_recovery::DescribePointInTimeRecoveryError) -> Self {
+        match err {
+            crate::operation::describe_point_in_time_recovery::DescribePointInTimeRecoveryError::FeatureUnavailableInTierException(inner) => {
+                Error::FeatureUnavailableInTierException(inner)
+            }
+            crate::operation::describe_point_in_time_recovery::DescribePointInTimeRecoveryError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::describe_point_in_time_recovery::DescribePointInTimeRecoveryError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_point_in_time_recovery::DescribePointInTimeRecoveryError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::describe_point_in_time_recovery::DescribePointInTimeRecoveryError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::describe_point_in_time_recovery::DescribePointInTimeRecoveryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_point_in_time_recovery::DescribePointInTimeRecoveryError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::describe_point_in_time_recovery::DescribePointInTimeRecoveryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_resource_server::DescribeResourceServerError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4283,6 +4380,61 @@ impl From<crate::operation::initiate_auth::InitiateAuthError> for Error {
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::initiate_point_in_time_recovery::InitiatePointInTimeRecoveryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::initiate_point_in_time_recovery::InitiatePointInTimeRecoveryError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::initiate_point_in_time_recovery::InitiatePointInTimeRecoveryError> for Error {
+    fn from(err: crate::operation::initiate_point_in_time_recovery::InitiatePointInTimeRecoveryError) -> Self {
+        match err {
+            crate::operation::initiate_point_in_time_recovery::InitiatePointInTimeRecoveryError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::initiate_point_in_time_recovery::InitiatePointInTimeRecoveryError::FeatureUnavailableInTierException(inner) => {
+                Error::FeatureUnavailableInTierException(inner)
+            }
+            crate::operation::initiate_point_in_time_recovery::InitiatePointInTimeRecoveryError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::initiate_point_in_time_recovery::InitiatePointInTimeRecoveryError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::initiate_point_in_time_recovery::InitiatePointInTimeRecoveryError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::initiate_point_in_time_recovery::InitiatePointInTimeRecoveryError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::initiate_point_in_time_recovery::InitiatePointInTimeRecoveryError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::initiate_point_in_time_recovery::InitiatePointInTimeRecoveryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::initiate_point_in_time_recovery::InitiatePointInTimeRecoveryError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::initiate_point_in_time_recovery::InitiatePointInTimeRecoveryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_devices::ListDevicesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4379,6 +4531,51 @@ impl From<crate::operation::list_identity_providers::ListIdentityProvidersError>
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::list_identity_providers::ListIdentityProvidersError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_point_in_time_recoveries::ListPointInTimeRecoveriesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_point_in_time_recoveries::ListPointInTimeRecoveriesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_point_in_time_recoveries::ListPointInTimeRecoveriesError> for Error {
+    fn from(err: crate::operation::list_point_in_time_recoveries::ListPointInTimeRecoveriesError) -> Self {
+        match err {
+            crate::operation::list_point_in_time_recoveries::ListPointInTimeRecoveriesError::FeatureUnavailableInTierException(inner) => {
+                Error::FeatureUnavailableInTierException(inner)
+            }
+            crate::operation::list_point_in_time_recoveries::ListPointInTimeRecoveriesError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::list_point_in_time_recoveries::ListPointInTimeRecoveriesError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_point_in_time_recoveries::ListPointInTimeRecoveriesError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::list_point_in_time_recoveries::ListPointInTimeRecoveriesError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::list_point_in_time_recoveries::ListPointInTimeRecoveriesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_point_in_time_recoveries::ListPointInTimeRecoveriesError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_point_in_time_recoveries::ListPointInTimeRecoveriesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5421,6 +5618,54 @@ impl From<crate::operation::sign_up::SignUpError> for Error {
             crate::operation::sign_up::SignUpError::UserLambdaValidationException(inner) => Error::UserLambdaValidationException(inner),
             crate::operation::sign_up::SignUpError::UsernameExistsException(inner) => Error::UsernameExistsException(inner),
             crate::operation::sign_up::SignUpError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_point_in_time_recovery::StartPointInTimeRecoveryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_point_in_time_recovery::StartPointInTimeRecoveryError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_point_in_time_recovery::StartPointInTimeRecoveryError> for Error {
+    fn from(err: crate::operation::start_point_in_time_recovery::StartPointInTimeRecoveryError) -> Self {
+        match err {
+            crate::operation::start_point_in_time_recovery::StartPointInTimeRecoveryError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::start_point_in_time_recovery::StartPointInTimeRecoveryError::FeatureUnavailableInTierException(inner) => {
+                Error::FeatureUnavailableInTierException(inner)
+            }
+            crate::operation::start_point_in_time_recovery::StartPointInTimeRecoveryError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::start_point_in_time_recovery::StartPointInTimeRecoveryError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::start_point_in_time_recovery::StartPointInTimeRecoveryError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::start_point_in_time_recovery::StartPointInTimeRecoveryError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::start_point_in_time_recovery::StartPointInTimeRecoveryError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_point_in_time_recovery::StartPointInTimeRecoveryError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::start_point_in_time_recovery::StartPointInTimeRecoveryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

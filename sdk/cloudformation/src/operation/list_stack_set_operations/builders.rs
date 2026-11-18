@@ -22,7 +22,8 @@ impl crate::operation::list_stack_set_operations::builders::ListStackSetOperatio
 }
 /// Fluent builder constructing a request to `ListStackSetOperations`.
 ///
-/// <p>Returns summary information about operations performed on a StackSet.</p><note>
+/// <p>Returns summary information about operations performed on a StackSet.</p>
+/// <p>Reports role provisioning and stack instances deployment progress in <code>StatusDetails.Stages</code>. The breakdown for each Amazon Web Services Region is available only from <code>DescribeStackSetOperation</code>.</p><note>
 /// <p>This API provides <i>eventually consistent</i> reads meaning it may take some time but will eventually return the most up-to-date data.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

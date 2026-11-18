@@ -35,6 +35,8 @@ pub use crate::types::_feedback_value_type::FeedbackValueType;
 
 pub use crate::types::_device_remembered_status_type::DeviceRememberedStatusType;
 
+pub use crate::types::_restoration_type::RestorationType;
+
 pub use crate::types::_device_secret_verifier_config_type::DeviceSecretVerifierConfigType;
 
 pub use crate::types::_user_context_data_type::UserContextDataType;
@@ -175,6 +177,8 @@ pub use crate::types::_auth_event_type::AuthEventType;
 
 pub use crate::types::_session_description_type::SessionDescriptionType;
 
+pub use crate::types::_restore_status_type::RestoreStatusType;
+
 pub use crate::types::_asset_type::AssetType;
 
 pub use crate::types::_resource_server_scope_type::ResourceServerScopeType;
@@ -247,6 +251,8 @@ pub use crate::types::_web_authn_factor_configuration_type::WebAuthnFactorConfig
 
 pub use crate::types::_provider_description::ProviderDescription;
 
+pub use crate::types::_restoration_description_type::RestorationDescriptionType;
+
 pub use crate::types::_terms_description_type::TermsDescriptionType;
 
 pub use crate::types::_user_pool_client_description::UserPoolClientDescription;
@@ -284,6 +290,8 @@ pub use crate::types::_event_feedback_type::EventFeedbackType;
 pub use crate::types::_session_type_type::SessionTypeType;
 
 pub use crate::types::_session_location_type::SessionLocationType;
+
+pub use crate::types::_restore_preview_type::RestorePreviewType;
 
 pub use crate::types::_asset_category_type::AssetCategoryType;
 
@@ -558,6 +566,14 @@ mod _resource_server_managed_by_type;
 mod _resource_server_scope_type;
 
 mod _resource_server_type;
+
+mod _restoration_description_type;
+
+mod _restoration_type;
+
+mod _restore_preview_type;
+
+mod _restore_status_type;
 
 mod _revoke_associated_sessions_type;
 

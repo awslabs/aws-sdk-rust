@@ -15,6 +15,8 @@
 ///     JobStatus::Completed => { /* ... */ },
 ///     JobStatus::Failed => { /* ... */ },
 ///     JobStatus::InProgress => { /* ... */ },
+///     JobStatus::Paused => { /* ... */ },
+///     JobStatus::Pausing => { /* ... */ },
 ///     JobStatus::Stopped => { /* ... */ },
 ///     JobStatus::Stopping => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -51,6 +53,10 @@ pub enum JobStatus {
     Failed,
     /// <p>Pentest job is currently running.</p>
     InProgress,
+    /// <p>Pentest job is paused. A paused job can be resumed from its last saved checkpoint within 7 days of the job's creation.</p>
+    Paused,
+    /// <p>Pentest job is being paused.</p>
+    Pausing,
     /// <p>Pentest job was stopped by the user.</p>
     Stopped,
     /// <p>Pentest job is being stopped.</p>
@@ -65,6 +71,8 @@ impl ::std::convert::From<&str> for JobStatus {
             "COMPLETED" => JobStatus::Completed,
             "FAILED" => JobStatus::Failed,
             "IN_PROGRESS" => JobStatus::InProgress,
+            "PAUSED" => JobStatus::Paused,
+            "PAUSING" => JobStatus::Pausing,
             "STOPPED" => JobStatus::Stopped,
             "STOPPING" => JobStatus::Stopping,
             other => JobStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -85,6 +93,8 @@ impl JobStatus {
             JobStatus::Completed => "COMPLETED",
             JobStatus::Failed => "FAILED",
             JobStatus::InProgress => "IN_PROGRESS",
+            JobStatus::Paused => "PAUSED",
+            JobStatus::Pausing => "PAUSING",
             JobStatus::Stopped => "STOPPED",
             JobStatus::Stopping => "STOPPING",
             JobStatus::Unknown(value) => value.as_str(),
@@ -92,7 +102,7 @@ impl JobStatus {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["COMPLETED", "FAILED", "IN_PROGRESS", "STOPPED", "STOPPING"]
+        &["COMPLETED", "FAILED", "IN_PROGRESS", "PAUSED", "PAUSING", "STOPPED", "STOPPING"]
     }
 }
 impl ::std::convert::AsRef<str> for JobStatus {
@@ -118,6 +128,8 @@ impl ::std::fmt::Display for JobStatus {
             JobStatus::Completed => write!(f, "COMPLETED"),
             JobStatus::Failed => write!(f, "FAILED"),
             JobStatus::InProgress => write!(f, "IN_PROGRESS"),
+            JobStatus::Paused => write!(f, "PAUSED"),
+            JobStatus::Pausing => write!(f, "PAUSING"),
             JobStatus::Stopped => write!(f, "STOPPED"),
             JobStatus::Stopping => write!(f, "STOPPING"),
             JobStatus::Unknown(value) => write!(f, "{value}"),

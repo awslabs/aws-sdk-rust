@@ -20,6 +20,9 @@ pub struct Role {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The maximum session duration (in seconds) for the specified role. Anyone who uses the CLI, or API to assume the role can specify the duration using the optional <code>DurationSeconds</code> API parameter or <code>duration-seconds</code> CLI parameter.</p>
     pub max_session_duration: ::std::option::Option<i32>,
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for users who sign in with this role. This value is independent of <code>MaxSessionDuration</code>.</p>
+    /// <p>This member is omitted when the setting is unset. In that case, no default value is returned and the existing sign-in session behavior applies.</p>
+    pub max_signin_session_duration: ::std::option::Option<i32>,
     /// <p>The ARN of the policy used to set the permissions boundary for the role.</p>
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
     pub permissions_boundary: ::std::option::Option<crate::types::AttachedPermissionsBoundary>,
@@ -67,6 +70,11 @@ impl Role {
     pub fn max_session_duration(&self) -> ::std::option::Option<i32> {
         self.max_session_duration
     }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for users who sign in with this role. This value is independent of <code>MaxSessionDuration</code>.</p>
+    /// <p>This member is omitted when the setting is unset. In that case, no default value is returned and the existing sign-in session behavior applies.</p>
+    pub fn max_signin_session_duration(&self) -> ::std::option::Option<i32> {
+        self.max_signin_session_duration
+    }
     /// <p>The ARN of the policy used to set the permissions boundary for the role.</p>
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
     pub fn permissions_boundary(&self) -> ::std::option::Option<&crate::types::AttachedPermissionsBoundary> {
@@ -106,6 +114,7 @@ pub struct RoleBuilder {
     pub(crate) assume_role_policy_document: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) max_session_duration: ::std::option::Option<i32>,
+    pub(crate) max_signin_session_duration: ::std::option::Option<i32>,
     pub(crate) permissions_boundary: ::std::option::Option<crate::types::AttachedPermissionsBoundary>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) role_last_used: ::std::option::Option<crate::types::RoleLastUsed>,
@@ -229,6 +238,23 @@ impl RoleBuilder {
     pub fn get_max_session_duration(&self) -> &::std::option::Option<i32> {
         &self.max_session_duration
     }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for users who sign in with this role. This value is independent of <code>MaxSessionDuration</code>.</p>
+    /// <p>This member is omitted when the setting is unset. In that case, no default value is returned and the existing sign-in session behavior applies.</p>
+    pub fn max_signin_session_duration(mut self, input: i32) -> Self {
+        self.max_signin_session_duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for users who sign in with this role. This value is independent of <code>MaxSessionDuration</code>.</p>
+    /// <p>This member is omitted when the setting is unset. In that case, no default value is returned and the existing sign-in session behavior applies.</p>
+    pub fn set_max_signin_session_duration(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_signin_session_duration = input;
+        self
+    }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for users who sign in with this role. This value is independent of <code>MaxSessionDuration</code>.</p>
+    /// <p>This member is omitted when the setting is unset. In that case, no default value is returned and the existing sign-in session behavior applies.</p>
+    pub fn get_max_signin_session_duration(&self) -> &::std::option::Option<i32> {
+        &self.max_signin_session_duration
+    }
     /// <p>The ARN of the policy used to set the permissions boundary for the role.</p>
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM identities </a> in the <i>IAM User Guide</i>.</p>
     pub fn permissions_boundary(mut self, input: crate::types::AttachedPermissionsBoundary) -> Self {
@@ -333,6 +359,7 @@ impl RoleBuilder {
             assume_role_policy_document: self.assume_role_policy_document,
             description: self.description,
             max_session_duration: self.max_session_duration,
+            max_signin_session_duration: self.max_signin_session_duration,
             permissions_boundary: self.permissions_boundary,
             tags: self.tags,
             role_last_used: self.role_last_used,

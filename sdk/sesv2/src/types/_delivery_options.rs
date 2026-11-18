@@ -4,15 +4,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeliveryOptions {
-    /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
+    /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>REQUIRE</code>, messages are only delivered if a TLS connection can be established. If the value is <code>OPTIONAL</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
     pub tls_policy: ::std::option::Option<crate::types::TlsPolicy>,
     /// <p>The name of the dedicated IP pool to associate with the configuration set.</p>
     pub sending_pool_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum amount of time, in seconds, that Amazon SES API v2 will attempt delivery of email. If specified, the value must greater than or equal to 300 seconds (5 minutes) and less than or equal to 50400 seconds (840 minutes).</p>
     pub max_delivery_seconds: ::std::option::Option<i64>,
+    /// <p>The shared pool delivery mode for email that you send with the configuration set from shared IP addresses. This setting overrides the shared pool delivery mode of your account. Can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>GLOBAL</code> – Amazon SES delivers from your sending Region first and, when it improves your deliverability, also uses Amazon SES shared IP addresses with established sending history in other Amazon Web Services Regions within the same Amazon Web Services partition.</p></li>
+    /// <li>
+    /// <p><code>REGIONAL</code> – Amazon SES delivers your email only from shared IP addresses in your sending Region.</p></li>
+    /// <li>
+    /// <p><code>ACCOUNT</code> – The configuration set uses the shared pool delivery mode of your account.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, the configuration set uses the shared pool delivery mode of your account.</p>
+    pub shared_pool_delivery_mode: ::std::option::Option<crate::types::SharedPoolDeliveryMode>,
 }
 impl DeliveryOptions {
-    /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
+    /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>REQUIRE</code>, messages are only delivered if a TLS connection can be established. If the value is <code>OPTIONAL</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
     pub fn tls_policy(&self) -> ::std::option::Option<&crate::types::TlsPolicy> {
         self.tls_policy.as_ref()
     }
@@ -23,6 +34,19 @@ impl DeliveryOptions {
     /// <p>The maximum amount of time, in seconds, that Amazon SES API v2 will attempt delivery of email. If specified, the value must greater than or equal to 300 seconds (5 minutes) and less than or equal to 50400 seconds (840 minutes).</p>
     pub fn max_delivery_seconds(&self) -> ::std::option::Option<i64> {
         self.max_delivery_seconds
+    }
+    /// <p>The shared pool delivery mode for email that you send with the configuration set from shared IP addresses. This setting overrides the shared pool delivery mode of your account. Can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>GLOBAL</code> – Amazon SES delivers from your sending Region first and, when it improves your deliverability, also uses Amazon SES shared IP addresses with established sending history in other Amazon Web Services Regions within the same Amazon Web Services partition.</p></li>
+    /// <li>
+    /// <p><code>REGIONAL</code> – Amazon SES delivers your email only from shared IP addresses in your sending Region.</p></li>
+    /// <li>
+    /// <p><code>ACCOUNT</code> – The configuration set uses the shared pool delivery mode of your account.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, the configuration set uses the shared pool delivery mode of your account.</p>
+    pub fn shared_pool_delivery_mode(&self) -> ::std::option::Option<&crate::types::SharedPoolDeliveryMode> {
+        self.shared_pool_delivery_mode.as_ref()
     }
 }
 impl DeliveryOptions {
@@ -39,19 +63,20 @@ pub struct DeliveryOptionsBuilder {
     pub(crate) tls_policy: ::std::option::Option<crate::types::TlsPolicy>,
     pub(crate) sending_pool_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_delivery_seconds: ::std::option::Option<i64>,
+    pub(crate) shared_pool_delivery_mode: ::std::option::Option<crate::types::SharedPoolDeliveryMode>,
 }
 impl DeliveryOptionsBuilder {
-    /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
+    /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>REQUIRE</code>, messages are only delivered if a TLS connection can be established. If the value is <code>OPTIONAL</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
     pub fn tls_policy(mut self, input: crate::types::TlsPolicy) -> Self {
         self.tls_policy = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
+    /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>REQUIRE</code>, messages are only delivered if a TLS connection can be established. If the value is <code>OPTIONAL</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
     pub fn set_tls_policy(mut self, input: ::std::option::Option<crate::types::TlsPolicy>) -> Self {
         self.tls_policy = input;
         self
     }
-    /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
+    /// <p>Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>REQUIRE</code>, messages are only delivered if a TLS connection can be established. If the value is <code>OPTIONAL</code>, messages can be delivered in plain text if a TLS connection can't be established.</p>
     pub fn get_tls_policy(&self) -> &::std::option::Option<crate::types::TlsPolicy> {
         &self.tls_policy
     }
@@ -83,12 +108,54 @@ impl DeliveryOptionsBuilder {
     pub fn get_max_delivery_seconds(&self) -> &::std::option::Option<i64> {
         &self.max_delivery_seconds
     }
+    /// <p>The shared pool delivery mode for email that you send with the configuration set from shared IP addresses. This setting overrides the shared pool delivery mode of your account. Can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>GLOBAL</code> – Amazon SES delivers from your sending Region first and, when it improves your deliverability, also uses Amazon SES shared IP addresses with established sending history in other Amazon Web Services Regions within the same Amazon Web Services partition.</p></li>
+    /// <li>
+    /// <p><code>REGIONAL</code> – Amazon SES delivers your email only from shared IP addresses in your sending Region.</p></li>
+    /// <li>
+    /// <p><code>ACCOUNT</code> – The configuration set uses the shared pool delivery mode of your account.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, the configuration set uses the shared pool delivery mode of your account.</p>
+    pub fn shared_pool_delivery_mode(mut self, input: crate::types::SharedPoolDeliveryMode) -> Self {
+        self.shared_pool_delivery_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The shared pool delivery mode for email that you send with the configuration set from shared IP addresses. This setting overrides the shared pool delivery mode of your account. Can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>GLOBAL</code> – Amazon SES delivers from your sending Region first and, when it improves your deliverability, also uses Amazon SES shared IP addresses with established sending history in other Amazon Web Services Regions within the same Amazon Web Services partition.</p></li>
+    /// <li>
+    /// <p><code>REGIONAL</code> – Amazon SES delivers your email only from shared IP addresses in your sending Region.</p></li>
+    /// <li>
+    /// <p><code>ACCOUNT</code> – The configuration set uses the shared pool delivery mode of your account.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, the configuration set uses the shared pool delivery mode of your account.</p>
+    pub fn set_shared_pool_delivery_mode(mut self, input: ::std::option::Option<crate::types::SharedPoolDeliveryMode>) -> Self {
+        self.shared_pool_delivery_mode = input;
+        self
+    }
+    /// <p>The shared pool delivery mode for email that you send with the configuration set from shared IP addresses. This setting overrides the shared pool delivery mode of your account. Can be one of the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>GLOBAL</code> – Amazon SES delivers from your sending Region first and, when it improves your deliverability, also uses Amazon SES shared IP addresses with established sending history in other Amazon Web Services Regions within the same Amazon Web Services partition.</p></li>
+    /// <li>
+    /// <p><code>REGIONAL</code> – Amazon SES delivers your email only from shared IP addresses in your sending Region.</p></li>
+    /// <li>
+    /// <p><code>ACCOUNT</code> – The configuration set uses the shared pool delivery mode of your account.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, the configuration set uses the shared pool delivery mode of your account.</p>
+    pub fn get_shared_pool_delivery_mode(&self) -> &::std::option::Option<crate::types::SharedPoolDeliveryMode> {
+        &self.shared_pool_delivery_mode
+    }
     /// Consumes the builder and constructs a [`DeliveryOptions`](crate::types::DeliveryOptions).
     pub fn build(self) -> crate::types::DeliveryOptions {
         crate::types::DeliveryOptions {
             tls_policy: self.tls_policy,
             sending_pool_name: self.sending_pool_name,
             max_delivery_seconds: self.max_delivery_seconds,
+            shared_pool_delivery_mode: self.shared_pool_delivery_mode,
         }
     }
 }

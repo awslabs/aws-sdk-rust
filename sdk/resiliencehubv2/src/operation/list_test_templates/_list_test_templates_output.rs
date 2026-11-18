@@ -5,6 +5,8 @@
 pub struct ListTestTemplatesOutput {
     /// <p>The list of test template summaries.</p>
     pub test_templates: ::std::vec::Vec<crate::types::TestTemplateSummary>,
+    /// <p>Pagination token.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTestTemplatesOutput {
@@ -12,6 +14,10 @@ impl ListTestTemplatesOutput {
     pub fn test_templates(&self) -> &[crate::types::TestTemplateSummary] {
         use std::ops::Deref;
         self.test_templates.deref()
+    }
+    /// <p>Pagination token.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for ListTestTemplatesOutput {
@@ -31,6 +37,7 @@ impl ListTestTemplatesOutput {
 #[non_exhaustive]
 pub struct ListTestTemplatesOutputBuilder {
     pub(crate) test_templates: ::std::option::Option<::std::vec::Vec<crate::types::TestTemplateSummary>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListTestTemplatesOutputBuilder {
@@ -54,6 +61,20 @@ impl ListTestTemplatesOutputBuilder {
     pub fn get_test_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::TestTemplateSummary>> {
         &self.test_templates
     }
+    /// <p>Pagination token.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Pagination token.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>Pagination token.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -76,6 +97,7 @@ impl ListTestTemplatesOutputBuilder {
                     "test_templates was not specified but it is required when building ListTestTemplatesOutput",
                 )
             })?,
+            next_token: self.next_token,
             _request_id: self._request_id,
         })
     }

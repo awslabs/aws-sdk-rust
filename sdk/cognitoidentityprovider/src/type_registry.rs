@@ -584,6 +584,24 @@ pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry:
                         },
                     )
 .insert_shape(
+                        crate::types::RestorationDescriptionType::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::RestorationDescriptionType::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::RestorationType::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::RestorationType::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
+                        crate::types::RestorePreviewType::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::RestorePreviewType::deserialize(d)?))
+                        },
+                    )
+.insert_shape(
                         crate::types::RiskConfigurationType::SCHEMA,
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::RiskConfigurationType::deserialize(d)?))

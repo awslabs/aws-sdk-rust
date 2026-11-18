@@ -21,6 +21,8 @@ pub use crate::types::_email_mfa_settings_type::EmailMfaSettingsTypeBuilder;
 
 pub use crate::types::_web_authn_mfa_settings_type::WebAuthnMfaSettingsTypeBuilder;
 
+pub use crate::types::_restoration_type::RestorationTypeBuilder;
+
 pub use crate::types::_device_secret_verifier_config_type::DeviceSecretVerifierConfigTypeBuilder;
 
 pub use crate::types::_user_context_data_type::UserContextDataTypeBuilder;
@@ -155,6 +157,8 @@ pub use crate::types::_failover_type::FailoverTypeBuilder;
 
 pub use crate::types::_provider_description::ProviderDescriptionBuilder;
 
+pub use crate::types::_restoration_description_type::RestorationDescriptionTypeBuilder;
+
 pub use crate::types::_terms_description_type::TermsDescriptionTypeBuilder;
 
 pub use crate::types::_user_pool_client_description::UserPoolClientDescriptionBuilder;
@@ -184,6 +188,8 @@ pub use crate::types::_event_context_data_type::EventContextDataTypeBuilder;
 pub use crate::types::_event_feedback_type::EventFeedbackTypeBuilder;
 
 pub use crate::types::_session_location_type::SessionLocationTypeBuilder;
+
+pub use crate::types::_restore_preview_type::RestorePreviewTypeBuilder;
 
 pub use crate::types::_recovery_option_type::RecoveryOptionTypeBuilder;
 

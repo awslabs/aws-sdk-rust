@@ -34,20 +34,28 @@ pub fn ser_create_role_input_input_input(
         );
     }
     #[allow(unused_mut)]
-    let mut scope_11 = writer.prefix("PermissionsBoundary");
-    if let Some(var_12) = &input.permissions_boundary {
-        scope_11.string(var_12);
+    let mut scope_11 = writer.prefix("MaxSigninSessionDuration");
+    if let Some(var_12) = &input.max_signin_session_duration {
+        scope_11.number(
+            #[allow(clippy::useless_conversion)]
+            ::aws_smithy_types::Number::NegInt((*var_12).into()),
+        );
     }
     #[allow(unused_mut)]
-    let mut scope_13 = writer.prefix("Tags");
-    if let Some(var_14) = &input.tags {
-        let mut list_16 = scope_13.start_list(false, None);
-        for item_15 in var_14 {
+    let mut scope_13 = writer.prefix("PermissionsBoundary");
+    if let Some(var_14) = &input.permissions_boundary {
+        scope_13.string(var_14);
+    }
+    #[allow(unused_mut)]
+    let mut scope_15 = writer.prefix("Tags");
+    if let Some(var_16) = &input.tags {
+        let mut list_18 = scope_15.start_list(false, None);
+        for item_17 in var_16 {
             #[allow(unused_mut)]
-            let mut entry_17 = list_16.entry();
-            crate::protocol_serde::shape_tag::ser_tag(entry_17, item_15)?;
+            let mut entry_19 = list_18.entry();
+            crate::protocol_serde::shape_tag::ser_tag(entry_19, item_17)?;
         }
-        list_16.finish();
+        list_18.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

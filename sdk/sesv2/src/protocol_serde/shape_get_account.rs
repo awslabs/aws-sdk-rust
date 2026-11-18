@@ -87,6 +87,13 @@ pub(crate) fn de_get_account(
                     builder =
                         builder.set_dedicated_ip_auto_warmup_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
+                "DeliveryAttributes" => {
+                    builder = builder.set_delivery_attributes(crate::protocol_serde::shape_delivery_attributes::de_delivery_attributes(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "Details" => {
                     builder = builder.set_details(crate::protocol_serde::shape_account_details::de_account_details(
                         tokens,

@@ -164,6 +164,13 @@ pub(crate) fn de_get_device(
                             .transpose()?,
                     );
                 }
+                "deviceStatusReason" => {
+                    builder = builder.set_device_status_reason(crate::protocol_serde::shape_device_status_reason::de_device_status_reason(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "deviceType" => {
                     builder = builder.set_device_type(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

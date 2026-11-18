@@ -23,6 +23,8 @@ pub use crate::types::_on_source_d_do_s_protection_config::OnSourceDDoSProtectio
 
 pub use crate::types::_application_config::ApplicationConfigBuilder;
 
+pub use crate::types::_analytics_config::AnalyticsConfigBuilder;
+
 pub use crate::types::_web_acl_summary::WebAclSummaryBuilder;
 
 pub use crate::types::_ip_set::IpSetBuilder;

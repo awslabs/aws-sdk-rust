@@ -9,6 +9,16 @@ static POPULATIONANALYSISCONFIGURATION_MEMBER_SQLPARAMETERS: ::aws_smithy_schema
     "sqlParameters",
     0,
 );
+static POPULATIONANALYSISCONFIGURATION_MEMBER_JOBPARAMETERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cleanrooms#PopulationAnalysisConfiguration$jobParameters",
+        "com.amazonaws.cleanrooms",
+        "PopulationAnalysisConfiguration",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "jobParameters",
+    1,
+);
 static POPULATIONANALYSISCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.cleanrooms#PopulationAnalysisConfiguration",
@@ -16,7 +26,10 @@ static POPULATIONANALYSISCONFIGURATION_SCHEMA: ::aws_smithy_schema::Schema<'stat
         "PopulationAnalysisConfiguration",
     ),
     ::aws_smithy_schema::ShapeType::Union,
-    &[&POPULATIONANALYSISCONFIGURATION_MEMBER_SQLPARAMETERS],
+    &[
+        &POPULATIONANALYSISCONFIGURATION_MEMBER_SQLPARAMETERS,
+        &POPULATIONANALYSISCONFIGURATION_MEMBER_JOBPARAMETERS,
+    ],
 );
 impl crate::types::PopulationAnalysisConfiguration {
     /// The schema for this shape.
@@ -35,6 +48,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Population
         match self {
             Self::SqlParameters(val) => {
                 ser.write_struct(&POPULATIONANALYSISCONFIGURATION_MEMBER_SQLPARAMETERS, val)?;
+            }
+            Self::JobParameters(val) => {
+                ser.write_struct(&POPULATIONANALYSISCONFIGURATION_MEMBER_JOBPARAMETERS, val)?;
             }
             Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
         }
@@ -58,6 +74,7 @@ impl crate::types::PopulationAnalysisConfiguration {
             }
             result = ::std::option::Option::Some(match member.member_index() {
                 Some(0) => Self::SqlParameters(crate::types::PopulationAnalysisSqlParameters::deserialize(deser)?),
+                Some(1) => Self::JobParameters(crate::types::PopulationAnalysisJobParameters::deserialize(deser)?),
                 _ => Self::Unknown,
             });
             Ok(())

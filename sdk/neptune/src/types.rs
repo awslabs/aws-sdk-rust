@@ -55,6 +55,8 @@ pub use crate::types::_event::Event;
 
 pub use crate::types::_orderable_db_instance_option::OrderableDbInstanceOption;
 
+pub use crate::types::_serverless_v2_platform_version_info::ServerlessV2PlatformVersionInfo;
+
 pub use crate::types::_pending_maintenance_action::PendingMaintenanceAction;
 
 pub use crate::types::_db_cluster_option_group_status::DbClusterOptionGroupStatus;
@@ -88,6 +90,8 @@ pub use crate::types::_apply_method::ApplyMethod;
 pub use crate::types::_db_cluster_snapshot_attribute::DbClusterSnapshotAttribute;
 
 pub use crate::types::_character_set::CharacterSet;
+
+pub use crate::types::_serverless_v2_features_support::ServerlessV2FeaturesSupport;
 
 pub use crate::types::_valid_storage_options::ValidStorageOptions;
 
@@ -182,6 +186,10 @@ mod _pending_modified_values;
 mod _range;
 
 mod _resource_pending_maintenance_actions;
+
+mod _serverless_v2_features_support;
+
+mod _serverless_v2_platform_version_info;
 
 mod _serverless_v2_scaling_configuration;
 

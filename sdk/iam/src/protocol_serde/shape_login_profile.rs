@@ -53,6 +53,21 @@ pub fn de_login_profile(
                 builder = builder.set_password_reset_required(var_3);
             }
             ,
+            s if s.matches("MaxSigninSessionDuration") /* MaxSigninSessionDuration com.amazonaws.iam#LoginProfile$MaxSigninSessionDuration */ =>  {
+                let var_4 =
+                    Some(
+                         {
+                            <i32 as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (integer: `com.amazonaws.iam#maxSigninSessionDurationType`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_max_signin_session_duration(var_4);
+            }
+            ,
             _ => {}
         }
     }

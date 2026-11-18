@@ -11,6 +11,9 @@ pub struct LoginProfile {
     pub create_date: ::aws_smithy_types::DateTime,
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
     pub password_reset_required: bool,
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for the user.</p>
+    /// <p>This member is omitted when the setting is unset. In that case, no default value is returned and the existing sign-in session behavior applies.</p>
+    pub max_signin_session_duration: ::std::option::Option<i32>,
 }
 impl LoginProfile {
     /// <p>The name of the user, which can be used for signing in to the Amazon Web Services Management Console.</p>
@@ -25,6 +28,11 @@ impl LoginProfile {
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
     pub fn password_reset_required(&self) -> bool {
         self.password_reset_required
+    }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for the user.</p>
+    /// <p>This member is omitted when the setting is unset. In that case, no default value is returned and the existing sign-in session behavior applies.</p>
+    pub fn max_signin_session_duration(&self) -> ::std::option::Option<i32> {
+        self.max_signin_session_duration
     }
 }
 impl LoginProfile {
@@ -41,6 +49,7 @@ pub struct LoginProfileBuilder {
     pub(crate) user_name: ::std::option::Option<::std::string::String>,
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) password_reset_required: ::std::option::Option<bool>,
+    pub(crate) max_signin_session_duration: ::std::option::Option<i32>,
 }
 impl LoginProfileBuilder {
     /// <p>The name of the user, which can be used for signing in to the Amazon Web Services Management Console.</p>
@@ -87,6 +96,23 @@ impl LoginProfileBuilder {
     pub fn get_password_reset_required(&self) -> &::std::option::Option<bool> {
         &self.password_reset_required
     }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for the user.</p>
+    /// <p>This member is omitted when the setting is unset. In that case, no default value is returned and the existing sign-in session behavior applies.</p>
+    pub fn max_signin_session_duration(mut self, input: i32) -> Self {
+        self.max_signin_session_duration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for the user.</p>
+    /// <p>This member is omitted when the setting is unset. In that case, no default value is returned and the existing sign-in session behavior applies.</p>
+    pub fn set_max_signin_session_duration(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.max_signin_session_duration = input;
+        self
+    }
+    /// <p>The maximum duration (in seconds) of an Amazon Web Services Sign-In session for the user.</p>
+    /// <p>This member is omitted when the setting is unset. In that case, no default value is returned and the existing sign-in session behavior applies.</p>
+    pub fn get_max_signin_session_duration(&self) -> &::std::option::Option<i32> {
+        &self.max_signin_session_duration
+    }
     /// Consumes the builder and constructs a [`LoginProfile`](crate::types::LoginProfile).
     /// This method will fail if any of the following fields are not set:
     /// - [`user_name`](crate::types::builders::LoginProfileBuilder::user_name)
@@ -106,6 +132,7 @@ impl LoginProfileBuilder {
                 )
             })?,
             password_reset_required: self.password_reset_required.unwrap_or_default(),
+            max_signin_session_duration: self.max_signin_session_duration,
         })
     }
 }

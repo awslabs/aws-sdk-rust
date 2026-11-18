@@ -70,16 +70,16 @@ pub struct FieldToMatch {
     /// <p>Inspect a string containing the list of the request's header names, ordered as they appear in the web request that WAF receives for inspection. WAF generates the string and then uses that as the field to match component in its inspection. WAF separates the header names in the string using colons and no added spaces, for example <code>host:user-agent:accept:authorization:referer</code>.</p>
     pub header_order: ::std::option::Option<crate::types::HeaderOrder>,
     /// <p>Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello information for the calculation. Almost all web requests include this information.</p><note>
-    /// <p>You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p>
+    /// <p>You can use this choice with a <code>ByteMatchStatement</code>, <code>RegexMatchStatement</code>, <code>RegexPatternSetReferenceStatement</code>, or <code>SizeConstraintStatement</code>. You can't use it with <code>SqliMatchStatement</code> or <code>XssMatchStatement</code>.</p>
     /// </note>
     /// <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p>
-    /// <p>Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration.</p>
+    /// <p>Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration. To match a group of TLS configurations with a single pattern, use a regex statement.</p>
     pub ja3_fingerprint: ::std::option::Option<crate::types::Ja3Fingerprint>,
     /// <p>Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the request's JA4 fingerprint. The JA4 fingerprint is a 36-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello information for the calculation. Almost all web requests include this information.</p><note>
-    /// <p>You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p>
+    /// <p>You can use this choice with a <code>ByteMatchStatement</code>, <code>RegexMatchStatement</code>, <code>RegexPatternSetReferenceStatement</code>, or <code>SizeConstraintStatement</code>. You can't use it with <code>SqliMatchStatement</code> or <code>XssMatchStatement</code>.</p>
     /// </note>
     /// <p>You can obtain the JA4 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p>
-    /// <p>Provide the JA4 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration.</p>
+    /// <p>Provide the JA4 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration. To match a group of TLS configurations with a single pattern, use a regex statement.</p>
     pub ja4_fingerprint: ::std::option::Option<crate::types::Ja4Fingerprint>,
     /// <p>Inspect fragments of the request URI. You must configure scope and pattern matching filters in the <code>UriFragment</code> object, to define the fragment of a URI that WAF inspects.</p>
     /// <p>Only the first 8 KB (8192 bytes) of a request's URI fragments and only the first 200 URI fragments are forwarded to WAF for inspection by the underlying host service. You must configure how to handle any oversize URI fragment content in the <code>UriFragment</code> object. WAF applies the pattern matching filters to the cookies that it receives from the underlying host service.</p>
@@ -156,18 +156,18 @@ impl FieldToMatch {
         self.header_order.as_ref()
     }
     /// <p>Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello information for the calculation. Almost all web requests include this information.</p><note>
-    /// <p>You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p>
+    /// <p>You can use this choice with a <code>ByteMatchStatement</code>, <code>RegexMatchStatement</code>, <code>RegexPatternSetReferenceStatement</code>, or <code>SizeConstraintStatement</code>. You can't use it with <code>SqliMatchStatement</code> or <code>XssMatchStatement</code>.</p>
     /// </note>
     /// <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p>
-    /// <p>Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration.</p>
+    /// <p>Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration. To match a group of TLS configurations with a single pattern, use a regex statement.</p>
     pub fn ja3_fingerprint(&self) -> ::std::option::Option<&crate::types::Ja3Fingerprint> {
         self.ja3_fingerprint.as_ref()
     }
     /// <p>Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the request's JA4 fingerprint. The JA4 fingerprint is a 36-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello information for the calculation. Almost all web requests include this information.</p><note>
-    /// <p>You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p>
+    /// <p>You can use this choice with a <code>ByteMatchStatement</code>, <code>RegexMatchStatement</code>, <code>RegexPatternSetReferenceStatement</code>, or <code>SizeConstraintStatement</code>. You can't use it with <code>SqliMatchStatement</code> or <code>XssMatchStatement</code>.</p>
     /// </note>
     /// <p>You can obtain the JA4 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p>
-    /// <p>Provide the JA4 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration.</p>
+    /// <p>Provide the JA4 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration. To match a group of TLS configurations with a single pattern, use a regex statement.</p>
     pub fn ja4_fingerprint(&self) -> ::std::option::Option<&crate::types::Ja4Fingerprint> {
         self.ja4_fingerprint.as_ref()
     }
@@ -434,54 +434,54 @@ impl FieldToMatchBuilder {
         &self.header_order
     }
     /// <p>Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello information for the calculation. Almost all web requests include this information.</p><note>
-    /// <p>You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p>
+    /// <p>You can use this choice with a <code>ByteMatchStatement</code>, <code>RegexMatchStatement</code>, <code>RegexPatternSetReferenceStatement</code>, or <code>SizeConstraintStatement</code>. You can't use it with <code>SqliMatchStatement</code> or <code>XssMatchStatement</code>.</p>
     /// </note>
     /// <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p>
-    /// <p>Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration.</p>
+    /// <p>Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration. To match a group of TLS configurations with a single pattern, use a regex statement.</p>
     pub fn ja3_fingerprint(mut self, input: crate::types::Ja3Fingerprint) -> Self {
         self.ja3_fingerprint = ::std::option::Option::Some(input);
         self
     }
     /// <p>Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello information for the calculation. Almost all web requests include this information.</p><note>
-    /// <p>You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p>
+    /// <p>You can use this choice with a <code>ByteMatchStatement</code>, <code>RegexMatchStatement</code>, <code>RegexPatternSetReferenceStatement</code>, or <code>SizeConstraintStatement</code>. You can't use it with <code>SqliMatchStatement</code> or <code>XssMatchStatement</code>.</p>
     /// </note>
     /// <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p>
-    /// <p>Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration.</p>
+    /// <p>Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration. To match a group of TLS configurations with a single pattern, use a regex statement.</p>
     pub fn set_ja3_fingerprint(mut self, input: ::std::option::Option<crate::types::Ja3Fingerprint>) -> Self {
         self.ja3_fingerprint = input;
         self
     }
     /// <p>Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the request's JA3 fingerprint. The JA3 fingerprint is a 32-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello information for the calculation. Almost all web requests include this information.</p><note>
-    /// <p>You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p>
+    /// <p>You can use this choice with a <code>ByteMatchStatement</code>, <code>RegexMatchStatement</code>, <code>RegexPatternSetReferenceStatement</code>, or <code>SizeConstraintStatement</code>. You can't use it with <code>SqliMatchStatement</code> or <code>XssMatchStatement</code>.</p>
     /// </note>
     /// <p>You can obtain the JA3 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p>
-    /// <p>Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration.</p>
+    /// <p>Provide the JA3 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration. To match a group of TLS configurations with a single pattern, use a regex statement.</p>
     pub fn get_ja3_fingerprint(&self) -> &::std::option::Option<crate::types::Ja3Fingerprint> {
         &self.ja3_fingerprint
     }
     /// <p>Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the request's JA4 fingerprint. The JA4 fingerprint is a 36-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello information for the calculation. Almost all web requests include this information.</p><note>
-    /// <p>You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p>
+    /// <p>You can use this choice with a <code>ByteMatchStatement</code>, <code>RegexMatchStatement</code>, <code>RegexPatternSetReferenceStatement</code>, or <code>SizeConstraintStatement</code>. You can't use it with <code>SqliMatchStatement</code> or <code>XssMatchStatement</code>.</p>
     /// </note>
     /// <p>You can obtain the JA4 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p>
-    /// <p>Provide the JA4 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration.</p>
+    /// <p>Provide the JA4 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration. To match a group of TLS configurations with a single pattern, use a regex statement.</p>
     pub fn ja4_fingerprint(mut self, input: crate::types::Ja4Fingerprint) -> Self {
         self.ja4_fingerprint = ::std::option::Option::Some(input);
         self
     }
     /// <p>Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the request's JA4 fingerprint. The JA4 fingerprint is a 36-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello information for the calculation. Almost all web requests include this information.</p><note>
-    /// <p>You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p>
+    /// <p>You can use this choice with a <code>ByteMatchStatement</code>, <code>RegexMatchStatement</code>, <code>RegexPatternSetReferenceStatement</code>, or <code>SizeConstraintStatement</code>. You can't use it with <code>SqliMatchStatement</code> or <code>XssMatchStatement</code>.</p>
     /// </note>
     /// <p>You can obtain the JA4 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p>
-    /// <p>Provide the JA4 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration.</p>
+    /// <p>Provide the JA4 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration. To match a group of TLS configurations with a single pattern, use a regex statement.</p>
     pub fn set_ja4_fingerprint(mut self, input: ::std::option::Option<crate::types::Ja4Fingerprint>) -> Self {
         self.ja4_fingerprint = input;
         self
     }
     /// <p>Available for use with Amazon CloudFront distributions and Application Load Balancers. Match against the request's JA4 fingerprint. The JA4 fingerprint is a 36-character hash derived from the TLS Client Hello of an incoming request. This fingerprint serves as a unique identifier for the client's TLS configuration. WAF calculates and logs this fingerprint for each request that has enough TLS Client Hello information for the calculation. Almost all web requests include this information.</p><note>
-    /// <p>You can use this choice only with a string match <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set to <code>EXACTLY</code>.</p>
+    /// <p>You can use this choice with a <code>ByteMatchStatement</code>, <code>RegexMatchStatement</code>, <code>RegexPatternSetReferenceStatement</code>, or <code>SizeConstraintStatement</code>. You can't use it with <code>SqliMatchStatement</code> or <code>XssMatchStatement</code>.</p>
     /// </note>
     /// <p>You can obtain the JA4 fingerprint for client requests from the web ACL logs. If WAF is able to calculate the fingerprint, it includes it in the logs. For information about the logging fields, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log fields</a> in the <i>WAF Developer Guide</i>.</p>
-    /// <p>Provide the JA4 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration.</p>
+    /// <p>Provide the JA4 fingerprint string from the logs in your string match statement specification, to match with any future requests that have the same TLS configuration. To match a group of TLS configurations with a single pattern, use a regex statement.</p>
     pub fn get_ja4_fingerprint(&self) -> &::std::option::Option<crate::types::Ja4Fingerprint> {
         &self.ja4_fingerprint
     }

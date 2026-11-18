@@ -117,6 +117,8 @@ pub use crate::types::_test_run_report_configuration::TestRunReportConfiguration
 
 pub use crate::types::_test_run_policy_snapshot::TestRunPolicySnapshot;
 
+pub use crate::types::_test_run_effective_policy_values::TestRunEffectivePolicyValues;
+
 pub use crate::types::_account_targeting::AccountTargeting;
 
 pub use crate::types::_dev_ops_agent_investigation::DevOpsAgentInvestigation;
@@ -680,6 +682,8 @@ mod _test_run;
 mod _test_run_dependency_source;
 
 mod _test_run_dependency_summary;
+
+mod _test_run_effective_policy_values;
 
 mod _test_run_event;
 

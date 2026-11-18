@@ -127,6 +127,9 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListTes
         #[allow(unused_mut)]
         let mut rcb = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListTestTemplates")
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
+                ListTestTemplatesTelemetryInputCaptureInterceptor,
+            ))
+            .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
                 ::aws_smithy_runtime::client::stalled_stream_protection::StalledStreamProtectionInterceptor::default(),
             ))
             .with_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::permanent(
@@ -149,6 +152,49 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListTes
     }
 }
 
+#[derive(Debug)]
+struct ListTestTemplatesTelemetryInputCaptureInterceptor;
+
+#[::aws_smithy_runtime_api::client::interceptors::dyn_dispatch_hint]
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTestTemplatesTelemetryInputCaptureInterceptor {
+    fn name(&self) -> &'static str {
+        "ListTestTemplatesTelemetryInputCaptureInterceptor"
+    }
+
+    fn read_before_execution(
+        &self,
+        context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<
+            '_,
+            ::aws_smithy_runtime_api::client::interceptors::context::Input,
+            ::aws_smithy_runtime_api::client::interceptors::context::Output,
+            ::aws_smithy_runtime_api::client::interceptors::context::Error,
+        >,
+        cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
+    ) -> ::std::result::Result<(), ::aws_smithy_runtime_api::box_error::BoxError> {
+        // Nothing to do unless the customer opted in by naming members to record.
+        let ::std::option::Option::Some(requested) = cfg
+            .load::<::aws_smithy_types::telemetry::RequestedTelemetryAttributes>()
+            .filter(|r| !r.is_empty())
+        else {
+            return ::std::result::Result::Ok(());
+        };
+
+        let ::std::option::Option::Some(input) = context.input().downcast_ref::<ListTestTemplatesInput>() else {
+            // A mismatched input is not this interceptor's concern; skip quietly.
+            return ::std::result::Result::Ok(());
+        };
+
+        let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
+        if requested.should_capture("nextToken") {
+            if let ::std::option::Option::Some(value) = input.next_token.as_deref() {
+                captured.insert("nextToken", value);
+            }
+        }
+
+        cfg.interceptor_state().store_put(captured);
+        ::std::result::Result::Ok(())
+    }
+}
 #[derive(Debug)]
 struct ListTestTemplatesResponseDeserializer;
 impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListTestTemplatesResponseDeserializer {
@@ -197,6 +243,23 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTestTemp
                 ::std::write!(output, "/v2/list-test-templates").expect("formatting should succeed");
                 ::std::result::Result::Ok(())
             }
+            fn uri_query(
+                _input: &crate::operation::list_test_templates::ListTestTemplatesInput,
+                mut output: &mut ::std::string::String,
+            ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::BuildError> {
+                let mut query = ::aws_smithy_http::query::Writer::new(output);
+                if let ::std::option::Option::Some(inner_1) = &_input.max_results {
+                    {
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_1).encode());
+                    }
+                }
+                if let ::std::option::Option::Some(inner_2) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(inner_2));
+                    }
+                }
+                ::std::result::Result::Ok(())
+            }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
                 input: &crate::operation::list_test_templates::ListTestTemplatesInput,
@@ -204,6 +267,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTestTemp
             ) -> ::std::result::Result<::http_1x::request::Builder, ::aws_smithy_types::error::operation::BuildError> {
                 let mut uri = ::std::string::String::new();
                 uri_base(input, &mut uri)?;
+                uri_query(input, &mut uri)?;
                 ::std::result::Result::Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&input, ::http_1x::request::Builder::new())?;
@@ -264,6 +328,8 @@ pub enum ListTestTemplatesError {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Internal service error.</p>
     InternalServerException(crate::types::error::InternalServerException),
+    /// <p>Too many requests — rate limit exceeded.</p>
+    ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>Validation error — invalid input parameters.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
@@ -301,6 +367,7 @@ impl ListTestTemplatesError {
         match self {
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
@@ -313,6 +380,10 @@ impl ListTestTemplatesError {
     pub fn is_internal_server_exception(&self) -> bool {
         matches!(self, Self::InternalServerException(_))
     }
+    /// Returns `true` if the error kind is `ListTestTemplatesError::ThrottlingException`.
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(self, Self::ThrottlingException(_))
+    }
     /// Returns `true` if the error kind is `ListTestTemplatesError::ValidationException`.
     pub fn is_validation_exception(&self) -> bool {
         matches!(self, Self::ValidationException(_))
@@ -323,6 +394,7 @@ impl ::std::error::Error for ListTestTemplatesError {
         match self {
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
@@ -333,6 +405,7 @@ impl ::std::fmt::Display for ListTestTemplatesError {
         match self {
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
+            Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
@@ -357,6 +430,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListTestTempl
         match self {
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
@@ -389,3 +463,6 @@ mod _list_test_templates_output;
 
 /// Builders
 pub mod builders;
+
+/// Paginator for this operation
+pub mod paginator;

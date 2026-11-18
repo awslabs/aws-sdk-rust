@@ -9,7 +9,7 @@ pub fn ser_configure_tags_input_input(
         encoder.array((*var_1).len());
         for item_2 in var_1 {
             {
-                crate::protocol_serde::shape_resource_tag_key::ser_resource_tag_key(encoder, item_2)?;
+                crate::protocol_serde::shape_configure_tags_tag_key::ser_configure_tags_tag_key(encoder, item_2)?;
             }
         }
     }

@@ -32,6 +32,8 @@ pub struct GetAccountOutput {
     pub vdm_attributes: ::std::option::Option<crate::types::VdmAttributes>,
     /// <p>The pricing attributes that apply to your Amazon SES account, including the currently active pricing plan and any scheduled change.</p>
     pub pricing_attributes: ::std::option::Option<crate::types::PricingAttributes>,
+    /// <p>The delivery attributes that apply to your Amazon SES account in the current Amazon Web Services Region.</p>
+    pub delivery_attributes: ::std::option::Option<crate::types::DeliveryAttributes>,
     _request_id: Option<String>,
 }
 impl GetAccountOutput {
@@ -81,6 +83,10 @@ impl GetAccountOutput {
     pub fn pricing_attributes(&self) -> ::std::option::Option<&crate::types::PricingAttributes> {
         self.pricing_attributes.as_ref()
     }
+    /// <p>The delivery attributes that apply to your Amazon SES account in the current Amazon Web Services Region.</p>
+    pub fn delivery_attributes(&self) -> ::std::option::Option<&crate::types::DeliveryAttributes> {
+        self.delivery_attributes.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetAccountOutput {
     fn request_id(&self) -> Option<&str> {
@@ -107,6 +113,7 @@ pub struct GetAccountOutputBuilder {
     pub(crate) details: ::std::option::Option<crate::types::AccountDetails>,
     pub(crate) vdm_attributes: ::std::option::Option<crate::types::VdmAttributes>,
     pub(crate) pricing_attributes: ::std::option::Option<crate::types::PricingAttributes>,
+    pub(crate) delivery_attributes: ::std::option::Option<crate::types::DeliveryAttributes>,
     _request_id: Option<String>,
 }
 impl GetAccountOutputBuilder {
@@ -266,6 +273,20 @@ impl GetAccountOutputBuilder {
     pub fn get_pricing_attributes(&self) -> &::std::option::Option<crate::types::PricingAttributes> {
         &self.pricing_attributes
     }
+    /// <p>The delivery attributes that apply to your Amazon SES account in the current Amazon Web Services Region.</p>
+    pub fn delivery_attributes(mut self, input: crate::types::DeliveryAttributes) -> Self {
+        self.delivery_attributes = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The delivery attributes that apply to your Amazon SES account in the current Amazon Web Services Region.</p>
+    pub fn set_delivery_attributes(mut self, input: ::std::option::Option<crate::types::DeliveryAttributes>) -> Self {
+        self.delivery_attributes = input;
+        self
+    }
+    /// <p>The delivery attributes that apply to your Amazon SES account in the current Amazon Web Services Region.</p>
+    pub fn get_delivery_attributes(&self) -> &::std::option::Option<crate::types::DeliveryAttributes> {
+        &self.delivery_attributes
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -287,6 +308,7 @@ impl GetAccountOutputBuilder {
             details: self.details,
             vdm_attributes: self.vdm_attributes,
             pricing_attributes: self.pricing_attributes,
+            delivery_attributes: self.delivery_attributes,
             _request_id: self._request_id,
         }
     }

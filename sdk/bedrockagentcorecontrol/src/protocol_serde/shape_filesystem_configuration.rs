@@ -28,6 +28,12 @@ pub fn ser_filesystem_configuration(
             crate::protocol_serde::shape_capacity_provider_volume_configuration::ser_capacity_provider_volume_configuration(&mut object_4, inner)?;
             object_4.finish();
         }
+        crate::types::FilesystemConfiguration::S3BucketMount(inner) => {
+            #[allow(unused_mut)]
+            let mut object_5 = object_21.key("s3BucketMount").start_object();
+            crate::protocol_serde::shape_s3_bucket_mount_configuration::ser_s3_bucket_mount_configuration(&mut object_5, inner)?;
+            object_5.finish();
+        }
         crate::types::FilesystemConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "FilesystemConfiguration",
@@ -109,6 +115,12 @@ where
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'capacityProviderVolume' cannot be null")
                             })?,
+                        )),
+                        "s3BucketMount" => Some(crate::types::FilesystemConfiguration::S3BucketMount(
+                            crate::protocol_serde::shape_s3_bucket_mount_configuration::de_s3_bucket_mount_configuration(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 's3BucketMount' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

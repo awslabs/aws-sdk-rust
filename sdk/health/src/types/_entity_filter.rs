@@ -12,9 +12,7 @@ pub struct EntityFilter {
     pub entity_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A list of the most recent dates and times that the entity was updated.</p>
     pub last_updated_times: ::std::option::Option<::std::vec::Vec<crate::types::DateTimeRange>>,
-    /// <p>A map of resource tag key-value pairs to filter affected entities.</p><note>
-    /// <p>Currently, the <code>tags</code> property isn't supported.</p>
-    /// </note>
+    /// <p>A map of tag keys to lists of tag values. A tag matches when its key is in the map and its value is one of the values listed for that key. The filter matches when at least one key in the map matches.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or <code>UNKNOWN</code>).</p>
     pub status_codes: ::std::option::Option<::std::vec::Vec<crate::types::EntityStatusCode>>,
@@ -43,9 +41,7 @@ impl EntityFilter {
     pub fn last_updated_times(&self) -> &[crate::types::DateTimeRange] {
         self.last_updated_times.as_deref().unwrap_or_default()
     }
-    /// <p>A map of resource tag key-value pairs to filter affected entities.</p><note>
-    /// <p>Currently, the <code>tags</code> property isn't supported.</p>
-    /// </note>
+    /// <p>A map of tag keys to lists of tag values. A tag matches when its key is in the map and its value is one of the values listed for that key. The filter matches when at least one key in the map matches.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         self.tags.as_ref()
     }
@@ -159,18 +155,14 @@ impl EntityFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>A map of resource tag key-value pairs to filter affected entities.</p><note>
-    /// <p>Currently, the <code>tags</code> property isn't supported.</p>
-    /// </note>
+    /// <p>A map of tag keys to lists of tag values. A tag matches when its key is in the map and its value is one of the values listed for that key. The filter matches when at least one key in the map matches.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: ::std::vec::Vec<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// <p>A map of resource tag key-value pairs to filter affected entities.</p><note>
-    /// <p>Currently, the <code>tags</code> property isn't supported.</p>
-    /// </note>
+    /// <p>A map of tag keys to lists of tag values. A tag matches when its key is in the map and its value is one of the values listed for that key. The filter matches when at least one key in the map matches.</p>
     pub fn set_tags(
         mut self,
         input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
@@ -178,9 +170,7 @@ impl EntityFilterBuilder {
         self.tags = input;
         self
     }
-    /// <p>A map of resource tag key-value pairs to filter affected entities.</p><note>
-    /// <p>Currently, the <code>tags</code> property isn't supported.</p>
-    /// </note>
+    /// <p>A map of tag keys to lists of tag values. A tag matches when its key is in the map and its value is one of the values listed for that key. The filter matches when at least one key in the map matches.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>> {
         &self.tags
     }

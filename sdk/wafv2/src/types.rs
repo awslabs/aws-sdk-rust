@@ -29,6 +29,8 @@ pub use crate::types::_on_source_d_do_s_protection_config::OnSourceDDoSProtectio
 
 pub use crate::types::_application_config::ApplicationConfig;
 
+pub use crate::types::_analytics_config::AnalyticsConfig;
+
 pub use crate::types::_web_acl_summary::WebAclSummary;
 
 pub use crate::types::_log_type::LogType;
@@ -98,6 +100,8 @@ pub use crate::types::_allow_action::AllowAction;
 pub use crate::types::_immunity_time_property::ImmunityTimeProperty;
 
 pub use crate::types::_low_reputation_mode::LowReputationMode;
+
+pub use crate::types::_analytics_mode::AnalyticsMode;
 
 pub use crate::types::_managed_product_descriptor::ManagedProductDescriptor;
 
@@ -422,6 +426,10 @@ mod _all;
 mod _all_query_arguments;
 
 mod _allow_action;
+
+mod _analytics_config;
+
+mod _analytics_mode;
 
 mod _and_statement;
 

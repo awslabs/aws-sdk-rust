@@ -3,20 +3,26 @@ pub fn ser_create_o_auth2_token_with_token_exchange_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_o_auth2_token_with_token_exchange::CreateOAuth2TokenWithTokenExchangeInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.grant_type {
-        object.key("grant_type").string(var_1.as_str());
+    if let Some(var_1) = &input.assertion {
+        object.key("assertion").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.resource {
-        object.key("resource").string(var_2.as_str());
+    if let Some(var_2) = &input.client_id {
+        object.key("client_id").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.scope {
-        object.key("scope").string(var_3.as_str());
+    if let Some(var_3) = &input.grant_type {
+        object.key("grant_type").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.subject_token {
-        object.key("subject_token").string(var_4.as_str());
+    if let Some(var_4) = &input.resource {
+        object.key("resource").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.subject_token_type {
-        object.key("subject_token_type").string(var_5.as_str());
+    if let Some(var_5) = &input.scope {
+        object.key("scope").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.subject_token {
+        object.key("subject_token").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.subject_token_type {
+        object.key("subject_token_type").string(var_7.as_str());
     }
     Ok(())
 }

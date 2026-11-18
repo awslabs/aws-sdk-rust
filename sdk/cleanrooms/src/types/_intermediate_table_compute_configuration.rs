@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum IntermediateTableComputeConfiguration {
+    /// <p>Specifies the compute configuration for the PySpark job that populates the intermediate table.</p>
+    JobComputeConfiguration(crate::types::ProtectedJobComputeConfiguration),
     /// <p>The configuration of the compute resources for workers running an analysis with the Clean Rooms SQL analytics engine.</p>
     QueryComputeConfiguration(crate::types::WorkerComputeConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum IntermediateTableComputeConfiguration {
     Unknown,
 }
 impl IntermediateTableComputeConfiguration {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`JobComputeConfiguration`](crate::types::IntermediateTableComputeConfiguration::JobComputeConfiguration), extracting the inner [`ProtectedJobComputeConfiguration`](crate::types::ProtectedJobComputeConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_job_compute_configuration(&self) -> ::std::result::Result<&crate::types::ProtectedJobComputeConfiguration, &Self> {
+        if let IntermediateTableComputeConfiguration::JobComputeConfiguration(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`JobComputeConfiguration`](crate::types::IntermediateTableComputeConfiguration::JobComputeConfiguration).
+    pub fn is_job_compute_configuration(&self) -> bool {
+        self.as_job_compute_configuration().is_ok()
+    }
     /// Tries to convert the enum instance into [`QueryComputeConfiguration`](crate::types::IntermediateTableComputeConfiguration::QueryComputeConfiguration), extracting the inner [`WorkerComputeConfiguration`](crate::types::WorkerComputeConfiguration).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_query_compute_configuration(&self) -> ::std::result::Result<&crate::types::WorkerComputeConfiguration, &Self> {

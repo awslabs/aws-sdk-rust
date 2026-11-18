@@ -4,16 +4,16 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateOAuth2TokenWithIamOutput {
-    /// Access token containing principal identity, resource scope, and session metadata.
+    /// The access token containing principal identity, resource scope, and session metadata.
     pub access_token: ::std::string::String,
     /// The token type. Always "Bearer" as defined in RFC 6749.
     pub token_type: ::std::string::String,
-    /// Token lifetime in seconds. Value is the minimum of the caller's session validity and 1 hour (3600 seconds).
+    /// The token lifetime in seconds. Value is the minimum of the caller's session validity and 1 hour (3600 seconds).
     pub expires_in: i32,
     _request_id: Option<String>,
 }
 impl CreateOAuth2TokenWithIamOutput {
-    /// Access token containing principal identity, resource scope, and session metadata.
+    /// The access token containing principal identity, resource scope, and session metadata.
     pub fn access_token(&self) -> &str {
         use std::ops::Deref;
         self.access_token.deref()
@@ -23,7 +23,7 @@ impl CreateOAuth2TokenWithIamOutput {
         use std::ops::Deref;
         self.token_type.deref()
     }
-    /// Token lifetime in seconds. Value is the minimum of the caller's session validity and 1 hour (3600 seconds).
+    /// The token lifetime in seconds. Value is the minimum of the caller's session validity and 1 hour (3600 seconds).
     pub fn expires_in(&self) -> i32 {
         self.expires_in
     }
@@ -60,18 +60,18 @@ pub struct CreateOAuth2TokenWithIamOutputBuilder {
     _request_id: Option<String>,
 }
 impl CreateOAuth2TokenWithIamOutputBuilder {
-    /// Access token containing principal identity, resource scope, and session metadata.
+    /// The access token containing principal identity, resource scope, and session metadata.
     /// This field is required.
     pub fn access_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.access_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Access token containing principal identity, resource scope, and session metadata.
+    /// The access token containing principal identity, resource scope, and session metadata.
     pub fn set_access_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.access_token = input;
         self
     }
-    /// Access token containing principal identity, resource scope, and session metadata.
+    /// The access token containing principal identity, resource scope, and session metadata.
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_token
     }
@@ -90,18 +90,18 @@ impl CreateOAuth2TokenWithIamOutputBuilder {
     pub fn get_token_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.token_type
     }
-    /// Token lifetime in seconds. Value is the minimum of the caller's session validity and 1 hour (3600 seconds).
+    /// The token lifetime in seconds. Value is the minimum of the caller's session validity and 1 hour (3600 seconds).
     /// This field is required.
     pub fn expires_in(mut self, input: i32) -> Self {
         self.expires_in = ::std::option::Option::Some(input);
         self
     }
-    /// Token lifetime in seconds. Value is the minimum of the caller's session validity and 1 hour (3600 seconds).
+    /// The token lifetime in seconds. Value is the minimum of the caller's session validity and 1 hour (3600 seconds).
     pub fn set_expires_in(mut self, input: ::std::option::Option<i32>) -> Self {
         self.expires_in = input;
         self
     }
-    /// Token lifetime in seconds. Value is the minimum of the caller's session validity and 1 hour (3600 seconds).
+    /// The token lifetime in seconds. Value is the minimum of the caller's session validity and 1 hour (3600 seconds).
     pub fn get_expires_in(&self) -> &::std::option::Option<i32> {
         &self.expires_in
     }

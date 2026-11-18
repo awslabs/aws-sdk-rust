@@ -136,17 +136,17 @@ impl PutAccountDetailsFluentBuilder {
     pub fn get_website_url(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_website_url()
     }
-    /// <p>The language you would prefer to be contacted with.</p>
+    /// <p>The language you would prefer to be contacted with. The contact language can be one of <code>EN</code> or <code>JA</code>.</p>
     pub fn contact_language(mut self, input: crate::types::ContactLanguage) -> Self {
         self.inner = self.inner.contact_language(input);
         self
     }
-    /// <p>The language you would prefer to be contacted with.</p>
+    /// <p>The language you would prefer to be contacted with. The contact language can be one of <code>EN</code> or <code>JA</code>.</p>
     pub fn set_contact_language(mut self, input: ::std::option::Option<crate::types::ContactLanguage>) -> Self {
         self.inner = self.inner.set_contact_language(input);
         self
     }
-    /// <p>The language you would prefer to be contacted with.</p>
+    /// <p>The language you would prefer to be contacted with. The contact language can be one of <code>EN</code> or <code>JA</code>.</p>
     pub fn get_contact_language(&self) -> &::std::option::Option<crate::types::ContactLanguage> {
         self.inner.get_contact_language()
     }

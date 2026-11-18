@@ -12,8 +12,11 @@ pub fn ser_put_configuration_set_delivery_options_input_input(
     if let Some(var_2) = &input.sending_pool_name {
         object.key("SendingPoolName").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.tls_policy {
-        object.key("TlsPolicy").string(var_3.as_str());
+    if let Some(var_3) = &input.shared_pool_delivery_mode {
+        object.key("SharedPoolDeliveryMode").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.tls_policy {
+        object.key("TlsPolicy").string(var_4.as_str());
     }
     Ok(())
 }

@@ -219,6 +219,16 @@ pub(crate) fn reflens_list_test_sources_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_test_templates_output_output_next_token(
+    input: &crate::operation::list_test_templates::ListTestTemplatesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_tests_output_output_next_token(
     input: &crate::operation::list_tests::ListTestsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -390,6 +400,13 @@ pub(crate) fn lens_list_test_sources_output_output_test_sources(
     input: crate::operation::list_test_sources::ListTestSourcesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TestSourceSummary>> {
     let input = input.test_sources;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_test_templates_output_output_test_templates(
+    input: crate::operation::list_test_templates::ListTestTemplatesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TestTemplateSummary>> {
+    let input = input.test_templates;
     ::std::option::Option::Some(input)
 }
 

@@ -235,6 +235,9 @@ pub mod list_tenants;
 /// Types for the `PutAccountDedicatedIpWarmupAttributes` operation.
 pub mod put_account_dedicated_ip_warmup_attributes;
 
+/// Types for the `PutAccountDeliveryAttributes` operation.
+pub mod put_account_delivery_attributes;
+
 /// Types for the `PutAccountDetails` operation.
 pub mod put_account_details;
 

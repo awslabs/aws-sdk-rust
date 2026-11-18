@@ -216,6 +216,18 @@ pub(crate) fn device_config_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn device_status_reason_correct_errors(
+    mut builder: crate::types::builders::DeviceStatusReasonBuilder,
+) -> crate::types::builders::DeviceStatusReasonBuilder {
+    if builder.reason.is_none() {
+        builder.reason = "no value was set".parse::<crate::types::DeviceStatusReasonCode>().ok()
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn hybrid_job_queue_info_correct_errors(
     mut builder: crate::types::builders::HybridJobQueueInfoBuilder,
 ) -> crate::types::builders::HybridJobQueueInfoBuilder {

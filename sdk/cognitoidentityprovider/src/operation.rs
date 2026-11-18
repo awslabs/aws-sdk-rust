@@ -100,6 +100,9 @@ pub mod admin_user_global_sign_out;
 /// Types for the `AssociateSoftwareToken` operation.
 pub mod associate_software_token;
 
+/// Types for the `CancelPointInTimeRecovery` operation.
+pub mod cancel_point_in_time_recovery;
+
 /// Types for the `ChangePassword` operation.
 pub mod change_password;
 
@@ -193,6 +196,9 @@ pub mod describe_managed_login_branding;
 /// Types for the `DescribeManagedLoginBrandingByClient` operation.
 pub mod describe_managed_login_branding_by_client;
 
+/// Types for the `DescribePointInTimeRecovery` operation.
+pub mod describe_point_in_time_recovery;
+
 /// Types for the `DescribeResourceServer` operation.
 pub mod describe_resource_server;
 
@@ -280,6 +286,9 @@ pub mod global_sign_out;
 /// Types for the `InitiateAuth` operation.
 pub mod initiate_auth;
 
+/// Types for the `InitiatePointInTimeRecovery` operation.
+pub mod initiate_point_in_time_recovery;
+
 /// Types for the `ListDevices` operation.
 pub mod list_devices;
 
@@ -288,6 +297,9 @@ pub mod list_groups;
 
 /// Types for the `ListIdentityProviders` operation.
 pub mod list_identity_providers;
+
+/// Types for the `ListPointInTimeRecoveries` operation.
+pub mod list_point_in_time_recoveries;
 
 /// Types for the `ListResourceServers` operation.
 pub mod list_resource_servers;
@@ -363,6 +375,9 @@ pub mod set_user_settings;
 
 /// Types for the `SignUp` operation.
 pub mod sign_up;
+
+/// Types for the `StartPointInTimeRecovery` operation.
+pub mod start_point_in_time_recovery;
 
 /// Types for the `StartUserImportJob` operation.
 pub mod start_user_import_job;

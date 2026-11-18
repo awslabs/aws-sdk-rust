@@ -178,17 +178,95 @@ impl CreateQuantumTaskFluentBuilder {
     pub fn get_output_s3_bucket(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_output_s3_bucket()
     }
-    /// <p>The key prefix for the location in the S3 bucket to store quantum task results in.</p>
+    /// <p>The key prefix for the location in the S3 bucket to store quantum task results in. For example, <code>results/</code>. Must not contain path traversal sequences such as <code>../</code> or <code>./</code>. The following characters are not valid in the key prefix:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Braces (<code>{</code> or <code>}</code>)</p></li>
+    /// <li>
+    /// <p>Brackets (<code>\[</code> or <code>\]</code>)</p></li>
+    /// <li>
+    /// <p>Less than or greater than sign (<code>&lt;</code> or <code>&gt;</code>)</p></li>
+    /// <li>
+    /// <p>Backslash (<code>\</code>)</p></li>
+    /// <li>
+    /// <p>Vertical bar or pipe (<code>|</code>)</p></li>
+    /// <li>
+    /// <p>Caret or circumflex (<code>^</code>)</p></li>
+    /// <li>
+    /// <p>Tilde (<code>~</code>)</p></li>
+    /// <li>
+    /// <p>Grave accent or backtick (<code>`</code>)</p></li>
+    /// <li>
+    /// <p>Percent character (<code>%</code>)</p></li>
+    /// <li>
+    /// <p>Pound sign (<code>#</code>)</p></li>
+    /// <li>
+    /// <p>Quotation mark (<code>"</code>)</p></li>
+    /// <li>
+    /// <p>Non-printable ASCII characters (128–255 decimal characters)</p></li>
+    /// </ul>
     pub fn output_s3_key_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.output_s3_key_prefix(input.into());
         self
     }
-    /// <p>The key prefix for the location in the S3 bucket to store quantum task results in.</p>
+    /// <p>The key prefix for the location in the S3 bucket to store quantum task results in. For example, <code>results/</code>. Must not contain path traversal sequences such as <code>../</code> or <code>./</code>. The following characters are not valid in the key prefix:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Braces (<code>{</code> or <code>}</code>)</p></li>
+    /// <li>
+    /// <p>Brackets (<code>\[</code> or <code>\]</code>)</p></li>
+    /// <li>
+    /// <p>Less than or greater than sign (<code>&lt;</code> or <code>&gt;</code>)</p></li>
+    /// <li>
+    /// <p>Backslash (<code>\</code>)</p></li>
+    /// <li>
+    /// <p>Vertical bar or pipe (<code>|</code>)</p></li>
+    /// <li>
+    /// <p>Caret or circumflex (<code>^</code>)</p></li>
+    /// <li>
+    /// <p>Tilde (<code>~</code>)</p></li>
+    /// <li>
+    /// <p>Grave accent or backtick (<code>`</code>)</p></li>
+    /// <li>
+    /// <p>Percent character (<code>%</code>)</p></li>
+    /// <li>
+    /// <p>Pound sign (<code>#</code>)</p></li>
+    /// <li>
+    /// <p>Quotation mark (<code>"</code>)</p></li>
+    /// <li>
+    /// <p>Non-printable ASCII characters (128–255 decimal characters)</p></li>
+    /// </ul>
     pub fn set_output_s3_key_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_output_s3_key_prefix(input);
         self
     }
-    /// <p>The key prefix for the location in the S3 bucket to store quantum task results in.</p>
+    /// <p>The key prefix for the location in the S3 bucket to store quantum task results in. For example, <code>results/</code>. Must not contain path traversal sequences such as <code>../</code> or <code>./</code>. The following characters are not valid in the key prefix:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Braces (<code>{</code> or <code>}</code>)</p></li>
+    /// <li>
+    /// <p>Brackets (<code>\[</code> or <code>\]</code>)</p></li>
+    /// <li>
+    /// <p>Less than or greater than sign (<code>&lt;</code> or <code>&gt;</code>)</p></li>
+    /// <li>
+    /// <p>Backslash (<code>\</code>)</p></li>
+    /// <li>
+    /// <p>Vertical bar or pipe (<code>|</code>)</p></li>
+    /// <li>
+    /// <p>Caret or circumflex (<code>^</code>)</p></li>
+    /// <li>
+    /// <p>Tilde (<code>~</code>)</p></li>
+    /// <li>
+    /// <p>Grave accent or backtick (<code>`</code>)</p></li>
+    /// <li>
+    /// <p>Percent character (<code>%</code>)</p></li>
+    /// <li>
+    /// <p>Pound sign (<code>#</code>)</p></li>
+    /// <li>
+    /// <p>Quotation mark (<code>"</code>)</p></li>
+    /// <li>
+    /// <p>Non-printable ASCII characters (128–255 decimal characters)</p></li>
+    /// </ul>
     pub fn get_output_s3_key_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_output_s3_key_prefix()
     }

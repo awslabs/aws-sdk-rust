@@ -80,6 +80,16 @@ static PROTECTEDJOBSUMMARY_MEMBER_JOB_COMPUTE_PAYER_ACCOUNT_ID: ::aws_smithy_sch
     "jobComputePayerAccountId",
     6,
 );
+static PROTECTEDJOBSUMMARY_MEMBER_INTERMEDIATE_TABLE_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cleanrooms#ProtectedJobSummary$intermediateTableConfiguration",
+        "com.amazonaws.cleanrooms",
+        "ProtectedJobSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "intermediateTableConfiguration",
+    7,
+);
 static PROTECTEDJOBSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.cleanrooms#ProtectedJobSummary",
@@ -95,6 +105,7 @@ static PROTECTEDJOBSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_
         &PROTECTEDJOBSUMMARY_MEMBER_STATUS,
         &PROTECTEDJOBSUMMARY_MEMBER_RECEIVER_CONFIGURATIONS,
         &PROTECTEDJOBSUMMARY_MEMBER_JOB_COMPUTE_PAYER_ACCOUNT_ID,
+        &PROTECTEDJOBSUMMARY_MEMBER_INTERMEDIATE_TABLE_CONFIGURATION,
     ],
 );
 impl crate::types::ProtectedJobSummary {
@@ -147,6 +158,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::ProtectedJ
         if let Some(ref val) = self.job_compute_payer_account_id {
             ser.write_string(&PROTECTEDJOBSUMMARY_MEMBER_JOB_COMPUTE_PAYER_ACCOUNT_ID, val)?;
         }
+        if let Some(ref val) = self.intermediate_table_configuration {
+            ser.write_struct(&PROTECTEDJOBSUMMARY_MEMBER_INTERMEDIATE_TABLE_CONFIGURATION, val)?;
+        }
         Ok(())
     }
 }
@@ -194,6 +208,13 @@ impl crate::types::builders::ProtectedJobSummaryBuilder {
                         deser.read_null()?;
                     } else {
                         self.job_compute_payer_account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.intermediate_table_configuration = Some(crate::types::IntermediateTableOutputConfiguration::deserialize(deser)?);
                     }
                 }
                 _ => {}

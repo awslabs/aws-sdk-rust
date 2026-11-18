@@ -91,6 +91,9 @@ pub struct DbCluster {
     /// <p>Shows the scaling configuration for a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
     pub serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
+    /// <p>The serverless platform version used by the Neptune Serverless DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+    pub serverless_v2_platform_version: ::std::option::Option<::std::string::String>,
     /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
     pub global_cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The next time you can modify the DB cluster to use the <code>iopt1</code> storage type.</p>
@@ -300,6 +303,11 @@ impl DbCluster {
     pub fn serverless_v2_scaling_configuration(&self) -> ::std::option::Option<&crate::types::ServerlessV2ScalingConfigurationInfo> {
         self.serverless_v2_scaling_configuration.as_ref()
     }
+    /// <p>The serverless platform version used by the Neptune Serverless DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+    pub fn serverless_v2_platform_version(&self) -> ::std::option::Option<&str> {
+        self.serverless_v2_platform_version.as_deref()
+    }
     /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
     pub fn global_cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.global_cluster_identifier.as_deref()
@@ -385,6 +393,7 @@ pub struct DbClusterBuilder {
     pub(crate) cross_account_clone: ::std::option::Option<bool>,
     pub(crate) automatic_restart_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) serverless_v2_scaling_configuration: ::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo>,
+    pub(crate) serverless_v2_platform_version: ::std::option::Option<::std::string::String>,
     pub(crate) global_cluster_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) io_optimized_next_allowed_modification_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) storage_type: ::std::option::Option<::std::string::String>,
@@ -1033,6 +1042,23 @@ impl DbClusterBuilder {
     pub fn get_serverless_v2_scaling_configuration(&self) -> &::std::option::Option<crate::types::ServerlessV2ScalingConfigurationInfo> {
         &self.serverless_v2_scaling_configuration
     }
+    /// <p>The serverless platform version used by the Neptune Serverless DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+    pub fn serverless_v2_platform_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.serverless_v2_platform_version = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The serverless platform version used by the Neptune Serverless DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+    pub fn set_serverless_v2_platform_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.serverless_v2_platform_version = input;
+        self
+    }
+    /// <p>The serverless platform version used by the Neptune Serverless DB cluster.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
+    pub fn get_serverless_v2_platform_version(&self) -> &::std::option::Option<::std::string::String> {
+        &self.serverless_v2_platform_version
+    }
     /// <p>Contains a user-supplied global database cluster identifier. This identifier is the unique key that identifies a global database.</p>
     pub fn global_cluster_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.global_cluster_identifier = ::std::option::Option::Some(input.into());
@@ -1179,6 +1205,7 @@ impl DbClusterBuilder {
             cross_account_clone: self.cross_account_clone,
             automatic_restart_time: self.automatic_restart_time,
             serverless_v2_scaling_configuration: self.serverless_v2_scaling_configuration,
+            serverless_v2_platform_version: self.serverless_v2_platform_version,
             global_cluster_identifier: self.global_cluster_identifier,
             io_optimized_next_allowed_modification_time: self.io_optimized_next_allowed_modification_time,
             storage_type: self.storage_type,

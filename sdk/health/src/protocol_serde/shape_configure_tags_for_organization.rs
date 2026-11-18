@@ -66,12 +66,11 @@ pub(crate) fn de_configure_tags_for_organization(
     > {
         builder = match decoder.str()?.as_ref() {
             "configuredTagKeys" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_configured_tag_keys(Some(
-                    crate::protocol_serde::shape_configure_tags_for_organization_tag_key_list::de_configure_tags_for_organization_tag_key_list(
-                        decoder,
-                        depth + 1,
-                    )?,
-                )))
+                Ok(builder.set_configured_tag_keys(
+                Some(
+                    crate::protocol_serde::shape_configure_tags_for_organization_response_tag_key_list::de_configure_tags_for_organization_response_tag_key_list(decoder, depth + 1)?
+                )
+            ))
             })?,
             _ => {
                 decoder.skip()?;

@@ -15,6 +15,9 @@ pub fn ser_delivery_options(
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
+    if let Some(var_4) = &input.shared_pool_delivery_mode {
+        object.key("SharedPoolDeliveryMode").string(var_4.as_str());
+    }
     Ok(())
 }
 
@@ -58,6 +61,13 @@ where
                             builder = builder.set_max_delivery_seconds(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "SharedPoolDeliveryMode" => {
+                            builder = builder.set_shared_pool_delivery_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::SharedPoolDeliveryMode::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

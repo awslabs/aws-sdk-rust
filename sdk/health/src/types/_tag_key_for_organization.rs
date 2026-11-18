@@ -5,14 +5,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagKeyForOrganization {
     /// <p>The tag key name.</p>
-    pub key: ::std::option::Option<::std::string::String>,
+    pub key: ::std::string::String,
     /// <p>Whether this tag key is enabled for EventBridge notifications.</p>
     pub enabled_for_event_bridge: bool,
 }
 impl TagKeyForOrganization {
     /// <p>The tag key name.</p>
-    pub fn key(&self) -> ::std::option::Option<&str> {
-        self.key.as_deref()
+    pub fn key(&self) -> &str {
+        use std::ops::Deref;
+        self.key.deref()
     }
     /// <p>Whether this tag key is enabled for EventBridge notifications.</p>
     pub fn enabled_for_event_bridge(&self) -> bool {
@@ -35,6 +36,7 @@ pub struct TagKeyForOrganizationBuilder {
 }
 impl TagKeyForOrganizationBuilder {
     /// <p>The tag key name.</p>
+    /// This field is required.
     pub fn key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.key = ::std::option::Option::Some(input.into());
         self
@@ -63,10 +65,17 @@ impl TagKeyForOrganizationBuilder {
         &self.enabled_for_event_bridge
     }
     /// Consumes the builder and constructs a [`TagKeyForOrganization`](crate::types::TagKeyForOrganization).
-    pub fn build(self) -> crate::types::TagKeyForOrganization {
-        crate::types::TagKeyForOrganization {
-            key: self.key,
+    /// This method will fail if any of the following fields are not set:
+    /// - [`key`](crate::types::builders::TagKeyForOrganizationBuilder::key)
+    pub fn build(self) -> ::std::result::Result<crate::types::TagKeyForOrganization, ::aws_smithy_types::error::operation::BuildError> {
+        ::std::result::Result::Ok(crate::types::TagKeyForOrganization {
+            key: self.key.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "key",
+                    "key was not specified but it is required when building TagKeyForOrganization",
+                )
+            })?,
             enabled_for_event_bridge: self.enabled_for_event_bridge.unwrap_or_default(),
-        }
+        })
     }
 }

@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-signin = "1.36.0"
+//! aws-sdk-signin = "1.37.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -106,14 +106,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateBearerToken`](crate::operation::create_bearer_token) operation has
-/// a [`Client::create_bearer_token`], function which returns a builder for that operation.
+/// For example, the [`BatchRevokeSessions`](crate::operation::batch_revoke_sessions) operation has
+/// a [`Client::batch_revoke_sessions`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_bearer_token()
-///     .grant_type("example")
+/// let result = client.batch_revoke_sessions()
+///     .principal_arn("example")
 ///     .send()
 ///     .await;
 /// ```

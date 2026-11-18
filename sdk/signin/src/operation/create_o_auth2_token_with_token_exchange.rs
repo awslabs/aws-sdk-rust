@@ -192,6 +192,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateOAuth2T
                 captured.insert("subjectTokenType", value);
             }
         }
+        if requested.should_capture("clientId") {
+            if let ::std::option::Option::Some(value) = input.client_id.as_deref() {
+                captured.insert("clientId", value);
+            }
+        }
         if requested.should_capture("resource") {
             if let ::std::option::Option::Some(value) = input.resource.as_deref() {
                 captured.insert("resource", value);

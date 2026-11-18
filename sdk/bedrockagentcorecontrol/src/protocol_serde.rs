@@ -1157,6 +1157,8 @@ pub(crate) mod shape_oauth2_credential_provider_item;
 
 pub(crate) mod shape_online_evaluation_config_summary;
 
+pub(crate) mod shape_operating_system_configuration;
+
 pub(crate) mod shape_payment_connector_summary;
 
 pub(crate) mod shape_payment_credential_provider_configuration;
@@ -1198,6 +1200,8 @@ pub(crate) mod shape_request_header_allowlist;
 pub(crate) mod shape_resource_location;
 
 pub(crate) mod shape_route_to_target_action;
+
+pub(crate) mod shape_s3_bucket_mount_configuration;
 
 pub(crate) mod shape_s3_certificate_configuration;
 
@@ -1332,6 +1336,8 @@ pub(crate) mod shape_lambda_interceptor_configuration;
 pub(crate) mod shape_launch_template_source;
 
 pub(crate) mod shape_lifecycle_hook;
+
+pub(crate) mod shape_linux_operating_system_configuration;
 
 pub(crate) mod shape_log_group_name_prefix_list;
 

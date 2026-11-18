@@ -271,6 +271,8 @@ pub use crate::types::_intermediate_table_summary::IntermediateTableSummary;
 
 pub use crate::types::_population_analysis_sql_parameters::PopulationAnalysisSqlParameters;
 
+pub use crate::types::_population_analysis_job_parameters::PopulationAnalysisJobParameters;
+
 pub use crate::types::_intermediate_table_status::IntermediateTableStatus;
 
 pub use crate::types::_intermediate_table_active_version::IntermediateTableActiveVersion;
@@ -1044,6 +1046,8 @@ mod _payment_configuration;
 mod _populate_intermediate_table_analysis_type;
 
 mod _population_analysis_configuration;
+
+mod _population_analysis_job_parameters;
 
 mod _population_analysis_sql_parameters;
 

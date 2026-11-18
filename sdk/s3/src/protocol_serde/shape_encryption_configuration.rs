@@ -9,6 +9,10 @@ pub fn ser_encryption_configuration(
         let mut inner_writer = scope.start_el("ReplicaKmsKeyID").finish();
         inner_writer.data(var_1.as_str());
     }
+    if let Some(var_2) = &input.use_source_multi_region_key {
+        let inner_writer = scope.start_el("UseSourceMultiRegionKey");
+        crate::protocol_serde::shape_use_source_multi_region_key::ser_use_source_multi_region_key(var_2, inner_writer)?
+    }
     scope.finish();
     Ok(())
 }
@@ -26,7 +30,7 @@ pub fn de_encryption_configuration(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("ReplicaKmsKeyID") /* ReplicaKmsKeyID com.amazonaws.s3#EncryptionConfiguration$ReplicaKmsKeyID */ =>  {
-                let var_2 =
+                let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -35,7 +39,17 @@ pub fn de_encryption_configuration(
                         ?
                     )
                 ;
-                builder = builder.set_replica_kms_key_id(var_2);
+                builder = builder.set_replica_kms_key_id(var_3);
+            }
+            ,
+            s if s.matches("UseSourceMultiRegionKey") /* UseSourceMultiRegionKey com.amazonaws.s3#EncryptionConfiguration$UseSourceMultiRegionKey */ =>  {
+                let var_4 =
+                    Some(
+                        crate::protocol_serde::shape_use_source_multi_region_key::de_use_source_multi_region_key(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_use_source_multi_region_key(var_4);
             }
             ,
             _ => {}

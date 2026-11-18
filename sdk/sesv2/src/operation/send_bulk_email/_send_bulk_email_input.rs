@@ -18,7 +18,7 @@ pub struct SendBulkEmailInput {
     /// <p>For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.</p>
     /// <p>For more information about sending authorization, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer Guide</a>.</p>
     pub feedback_forwarding_email_address_identity_arn: ::std::option::Option<::std::string::String>,
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendBulkEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub default_email_tags: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>,
     /// <p>An object that contains the body of the message. You can specify a template message.</p>
     pub default_content: ::std::option::Option<crate::types::BulkEmailContent>,
@@ -62,7 +62,7 @@ impl SendBulkEmailInput {
     pub fn feedback_forwarding_email_address_identity_arn(&self) -> ::std::option::Option<&str> {
         self.feedback_forwarding_email_address_identity_arn.as_deref()
     }
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendBulkEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.default_email_tags.is_none()`.
     pub fn default_email_tags(&self) -> &[crate::types::MessageTag] {
@@ -214,19 +214,19 @@ impl SendBulkEmailInputBuilder {
     ///
     /// To override the contents of this collection use [`set_default_email_tags`](Self::set_default_email_tags).
     ///
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendBulkEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub fn default_email_tags(mut self, input: crate::types::MessageTag) -> Self {
         let mut v = self.default_email_tags.unwrap_or_default();
         v.push(input);
         self.default_email_tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendBulkEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub fn set_default_email_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MessageTag>>) -> Self {
         self.default_email_tags = input;
         self
     }
-    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
+    /// <p>A list of tags, in the form of name/value pairs, to apply to an email that you send using the <code>SendBulkEmail</code> operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.</p>
     pub fn get_default_email_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MessageTag>> {
         &self.default_email_tags
     }

@@ -7,6 +7,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | ARC - Region switch | [aws-sdk-arcregionswitch](https://crates.io/crates/aws-sdk-arcregionswitch) ([docs](https://docs.rs/aws-sdk-arcregionswitch)) |
 | AWS AI Ops | [aws-sdk-aiops](https://crates.io/crates/aws-sdk-aiops) ([docs](https://docs.rs/aws-sdk-aiops)) |
 | AWS ARC - Zonal Shift | [aws-sdk-arczonalshift](https://crates.io/crates/aws-sdk-arczonalshift) ([docs](https://docs.rs/aws-sdk-arczonalshift)) |
+| AWS Abuse Signal API | [aws-sdk-abusesignal](https://crates.io/crates/aws-sdk-abusesignal) ([docs](https://docs.rs/aws-sdk-abusesignal)) |
 | AWS Account | [aws-sdk-account](https://crates.io/crates/aws-sdk-account) ([docs](https://docs.rs/aws-sdk-account)) |
 | AWS Amplify | [aws-sdk-amplify](https://crates.io/crates/aws-sdk-amplify) ([docs](https://docs.rs/aws-sdk-amplify)) |
 | AWS Amplify UI Builder | [aws-sdk-amplifyuibuilder](https://crates.io/crates/aws-sdk-amplifyuibuilder) ([docs](https://docs.rs/aws-sdk-amplifyuibuilder)) |

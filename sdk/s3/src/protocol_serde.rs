@@ -823,6 +823,8 @@ pub(crate) mod shape_replica_modifications;
 
 pub(crate) mod shape_replication_rule_and_operator;
 
+pub(crate) mod shape_replication_rule_not_operator;
+
 pub(crate) mod shape_replication_time;
 
 pub(crate) mod shape_s3_tables_destination_result;
@@ -831,8 +833,12 @@ pub(crate) mod shape_sse_kms_encrypted_objects;
 
 pub(crate) mod shape_analytics_s3_bucket_destination;
 
+pub(crate) mod shape_replication_rule_or_operator;
+
 pub(crate) mod shape_replication_time_value;
 
 pub(crate) mod shape_ssekms;
 
 pub(crate) mod shape_sses3;
+
+pub(crate) mod shape_use_source_multi_region_key;

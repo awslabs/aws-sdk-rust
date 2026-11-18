@@ -349,6 +349,10 @@ pub use crate::types::_efs_access_point_configuration::EfsAccessPointConfigurati
 
 pub use crate::types::_capacity_provider_volume_configuration::CapacityProviderVolumeConfigurationBuilder;
 
+pub use crate::types::_s3_bucket_mount_configuration::S3BucketMountConfigurationBuilder;
+
+pub use crate::types::_linux_operating_system_configuration::LinuxOperatingSystemConfigurationBuilder;
+
 pub use crate::types::_port_range::PortRangeBuilder;
 
 pub use crate::types::_s3_files_configuration::S3FilesConfigurationBuilder;
