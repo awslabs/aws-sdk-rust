@@ -29,9 +29,9 @@ impl crate::operation::create_firewall_rule::builders::CreateFirewallRuleInputBu
 /// <li>
 /// <p><code>DnsThreatProtection</code> — match a built-in DNS Firewall Advanced threat detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p></li>
 /// <li>
-/// <p><code>FirewallRuleType</code> — match one of the rule-type variants returned by <code>ListFirewallRuleTypes</code>: <code>FirewallAdvancedContentCategory</code>, <code>FirewallAdvancedThreatCategory</code>, <code>DnsThreatProtection</code>, or <code>PartnerThreatProtection</code>. The <code>PartnerThreatProtection</code> variant requires an active Amazon Web Services Marketplace subscription to the named partner product.</p></li>
+/// <p><code>FirewallRuleType</code> — match one of the rule-type variants: <code>FirewallAdvancedContentCategory</code>, <code>FirewallAdvancedThreatCategory</code>, <code>DnsThreatProtection</code>, <code>PartnerThreatProtection</code>, or <code>AutoAllowlist</code>. <code>ListFirewallRuleTypes</code> returns the first four. The <code>PartnerThreatProtection</code> variant requires an active Amazon Web Services Marketplace subscription to the named partner product.</p></li>
 /// </ul>
-/// <p>For rules that require asynchronous provisioning (today, the <code>PartnerThreatProtection</code> rule type), the rule's <code>Status</code> begins at <code>CREATING</code> and transitions to <code>COMPLETE</code> once the rule is provisioned and the marketplace entitlement is verified. If provisioning fails, <code>Status</code> becomes <code>CREATION_FAILED</code> and <code>StatusMessage</code> contains a human-readable reason; the rule is then immutable and must be removed with <code>DeleteFirewallRule</code>.</p>
+/// <p>For rules that require asynchronous provisioning (the <code>PartnerThreatProtection</code> and <code>AutoAllowlist</code> rule types), the rule's <code>Status</code> begins at <code>CREATING</code> and transitions to <code>COMPLETE</code> once the rule is provisioned: for <code>PartnerThreatProtection</code>, when the marketplace entitlement is verified, and for <code>AutoAllowlist</code>, when DNS Firewall has read the look-back window of every VPC that uses the rule group, which can take hours for a rule group that many VPCs use. If provisioning fails, <code>Status</code> becomes <code>CREATION_FAILED</code> and <code>StatusMessage</code> contains a human-readable reason; the rule is then immutable and must be removed with <code>DeleteFirewallRule</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateFirewallRuleFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -323,6 +323,7 @@ impl CreateFirewallRuleFluentBuilder {
     /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.</p>
     /// <p><code>INSPECT_REDIRECTION_DOMAIN</code>: (Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the domain list.</p>
     /// <p><code>TRUST_REDIRECTION_DOMAIN</code>: Inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain list.</p>
+    /// <p>You can't set this value on an AutoAllowlist rule, which always inspects the redirection chain.</p>
     pub fn firewall_domain_redirection_action(mut self, input: crate::types::FirewallDomainRedirectionAction) -> Self {
         self.inner = self.inner.firewall_domain_redirection_action(input);
         self
@@ -330,6 +331,7 @@ impl CreateFirewallRuleFluentBuilder {
     /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.</p>
     /// <p><code>INSPECT_REDIRECTION_DOMAIN</code>: (Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the domain list.</p>
     /// <p><code>TRUST_REDIRECTION_DOMAIN</code>: Inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain list.</p>
+    /// <p>You can't set this value on an AutoAllowlist rule, which always inspects the redirection chain.</p>
     pub fn set_firewall_domain_redirection_action(mut self, input: ::std::option::Option<crate::types::FirewallDomainRedirectionAction>) -> Self {
         self.inner = self.inner.set_firewall_domain_redirection_action(input);
         self
@@ -337,6 +339,7 @@ impl CreateFirewallRuleFluentBuilder {
     /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.</p>
     /// <p><code>INSPECT_REDIRECTION_DOMAIN</code>: (Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the domain list.</p>
     /// <p><code>TRUST_REDIRECTION_DOMAIN</code>: Inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain list.</p>
+    /// <p>You can't set this value on an AutoAllowlist rule, which always inspects the redirection chain.</p>
     pub fn get_firewall_domain_redirection_action(&self) -> &::std::option::Option<crate::types::FirewallDomainRedirectionAction> {
         self.inner.get_firewall_domain_redirection_action()
     }
@@ -371,6 +374,7 @@ impl CreateFirewallRuleFluentBuilder {
     /// <li>
     /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65534, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
     /// </ul>
+    /// <p>You can't set <code>Qtype</code> on an AutoAllowlist rule, because the rule applies to all query types.</p>
     pub fn qtype(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.qtype(input.into());
         self
@@ -406,6 +410,7 @@ impl CreateFirewallRuleFluentBuilder {
     /// <li>
     /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65534, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
     /// </ul>
+    /// <p>You can't set <code>Qtype</code> on an AutoAllowlist rule, because the rule applies to all query types.</p>
     pub fn set_qtype(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_qtype(input);
         self
@@ -441,6 +446,7 @@ impl CreateFirewallRuleFluentBuilder {
     /// <li>
     /// <p>A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65534, for example, TYPE28. For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List of DNS record types</a>.</p></li>
     /// </ul>
+    /// <p>You can't set <code>Qtype</code> on an AutoAllowlist rule, because the rule applies to all query types.</p>
     pub fn get_qtype(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_qtype()
     }
@@ -530,8 +536,10 @@ impl CreateFirewallRuleFluentBuilder {
     /// <p><code>DnsThreatProtection</code> — match a built-in DNS Firewall Advanced threat detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p></li>
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — match a third-party threat feed delivered through Amazon Web Services Marketplace. The selected partner must be an active subscription on the calling account.</p></li>
+    /// <li>
+    /// <p><code>AutoAllowlist</code> — automatically observe the domains that the VPCs associated with the rule group resolve, and allow the ones that you approve. See <code>AutoAllowlistConfig</code>.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
     pub fn firewall_rule_type(mut self, input: crate::types::FirewallRuleType) -> Self {
         self.inner = self.inner.firewall_rule_type(input);
         self
@@ -546,8 +554,10 @@ impl CreateFirewallRuleFluentBuilder {
     /// <p><code>DnsThreatProtection</code> — match a built-in DNS Firewall Advanced threat detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p></li>
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — match a third-party threat feed delivered through Amazon Web Services Marketplace. The selected partner must be an active subscription on the calling account.</p></li>
+    /// <li>
+    /// <p><code>AutoAllowlist</code> — automatically observe the domains that the VPCs associated with the rule group resolve, and allow the ones that you approve. See <code>AutoAllowlistConfig</code>.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
     pub fn set_firewall_rule_type(mut self, input: ::std::option::Option<crate::types::FirewallRuleType>) -> Self {
         self.inner = self.inner.set_firewall_rule_type(input);
         self
@@ -562,8 +572,10 @@ impl CreateFirewallRuleFluentBuilder {
     /// <p><code>DnsThreatProtection</code> — match a built-in DNS Firewall Advanced threat detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p></li>
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — match a third-party threat feed delivered through Amazon Web Services Marketplace. The selected partner must be an active subscription on the calling account.</p></li>
+    /// <li>
+    /// <p><code>AutoAllowlist</code> — automatically observe the domains that the VPCs associated with the rule group resolve, and allow the ones that you approve. See <code>AutoAllowlistConfig</code>.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
     pub fn get_firewall_rule_type(&self) -> &::std::option::Option<crate::types::FirewallRuleType> {
         self.inner.get_firewall_rule_type()
     }

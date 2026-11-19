@@ -22,7 +22,8 @@ impl crate::operation::get_web_identity_token::builders::GetWebIdentityTokenInpu
 }
 /// Fluent builder constructing a request to `GetWebIdentityToken`.
 ///
-/// <p>Returns a signed JSON Web Token (JWT) that represents the calling Amazon Web Services identity. The returned JWT can be used to authenticate with external services that support OIDC discovery. The token is signed by Amazon Web Services STS and can be publicly verified using the verification keys published at the issuer's JWKS endpoint.</p><note>
+/// <p>Returns a signed JSON Web Token (JWT) that represents the calling Amazon Web Services identity or, if you set <code>SubjectMode</code> to <code>OriginIdentity</code>, the human user or workload on whose behalf the calling session acts. The returned JWT can be used to authenticate with external services that support OIDC discovery. The token is signed by Amazon Web Services STS and can be publicly verified using the verification keys published at the issuer's JWKS endpoint.</p>
+/// <p>The <code>sub</code> (subject) claim contains the identity that <code>SubjectMode</code> selects. Whichever subject mode you use, the <code>principal_id</code> claim under the <code>https://sts.amazonaws.com/</code> namespace contains the ARN of the principal that requested the token, when that principal has an ARN. For a role session, this is the ARN of the role.</p><note>
 /// <p>The <code>GetWebIdentityToken</code> API is not available on the STS Global endpoint.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -156,6 +157,70 @@ impl GetWebIdentityTokenFluentBuilder {
     /// <p>The cryptographic algorithm to use for signing the JSON Web Token (JWT). Valid values are RS256 (RSA with SHA-256) and ES384 (ECDSA using P-384 curve with SHA-384).</p>
     pub fn get_signing_algorithm(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_signing_algorithm()
+    }
+    /// <p>One or more OAuth 2.0 scope values to include in the JSON Web Token (JWT). Amazon Web Services STS copies the value exactly as you send it into the top-level <code>scope</code> claim of the token. If you don't specify <code>Scope</code>, the token doesn't include a <code>scope</code> claim.</p>
+    /// <p>Separate multiple values with a single space, as defined in <a href="https://www.rfc-editor.org/rfc/rfc6749#section-3.3">RFC 6749, section 3.3</a> on the IETF website. Don't begin or end <code>Scope</code> with a space. Each scope value can contain printable ASCII characters except spaces, double quotation marks (<code>"</code>), commas (<code>,</code>), and backslashes (<code>\</code>).</p>
+    /// <p>You can't repeat a scope value. Scope values are case sensitive. This means that <code>read</code> and <code>READ</code> are separate values.</p>
+    /// <p>You can specify <code>Scope</code> only when <code>SubjectMode</code> is <code>OriginIdentity</code> and you request exactly one audience. To specify <code>Scope</code>, the calling principal must have permission for the <code>sts:SetWebIdentityTokenScope</code> action in addition to <code>sts:GetWebIdentityToken</code>. You can use the multivalued <code>sts:IdentityTokenScope</code> condition key in a policy to control which scope values a principal can request.</p>
+    pub fn scope(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.scope(input.into());
+        self
+    }
+    /// <p>One or more OAuth 2.0 scope values to include in the JSON Web Token (JWT). Amazon Web Services STS copies the value exactly as you send it into the top-level <code>scope</code> claim of the token. If you don't specify <code>Scope</code>, the token doesn't include a <code>scope</code> claim.</p>
+    /// <p>Separate multiple values with a single space, as defined in <a href="https://www.rfc-editor.org/rfc/rfc6749#section-3.3">RFC 6749, section 3.3</a> on the IETF website. Don't begin or end <code>Scope</code> with a space. Each scope value can contain printable ASCII characters except spaces, double quotation marks (<code>"</code>), commas (<code>,</code>), and backslashes (<code>\</code>).</p>
+    /// <p>You can't repeat a scope value. Scope values are case sensitive. This means that <code>read</code> and <code>READ</code> are separate values.</p>
+    /// <p>You can specify <code>Scope</code> only when <code>SubjectMode</code> is <code>OriginIdentity</code> and you request exactly one audience. To specify <code>Scope</code>, the calling principal must have permission for the <code>sts:SetWebIdentityTokenScope</code> action in addition to <code>sts:GetWebIdentityToken</code>. You can use the multivalued <code>sts:IdentityTokenScope</code> condition key in a policy to control which scope values a principal can request.</p>
+    pub fn set_scope(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_scope(input);
+        self
+    }
+    /// <p>One or more OAuth 2.0 scope values to include in the JSON Web Token (JWT). Amazon Web Services STS copies the value exactly as you send it into the top-level <code>scope</code> claim of the token. If you don't specify <code>Scope</code>, the token doesn't include a <code>scope</code> claim.</p>
+    /// <p>Separate multiple values with a single space, as defined in <a href="https://www.rfc-editor.org/rfc/rfc6749#section-3.3">RFC 6749, section 3.3</a> on the IETF website. Don't begin or end <code>Scope</code> with a space. Each scope value can contain printable ASCII characters except spaces, double quotation marks (<code>"</code>), commas (<code>,</code>), and backslashes (<code>\</code>).</p>
+    /// <p>You can't repeat a scope value. Scope values are case sensitive. This means that <code>read</code> and <code>READ</code> are separate values.</p>
+    /// <p>You can specify <code>Scope</code> only when <code>SubjectMode</code> is <code>OriginIdentity</code> and you request exactly one audience. To specify <code>Scope</code>, the calling principal must have permission for the <code>sts:SetWebIdentityTokenScope</code> action in addition to <code>sts:GetWebIdentityToken</code>. You can use the multivalued <code>sts:IdentityTokenScope</code> condition key in a policy to control which scope values a principal can request.</p>
+    pub fn get_scope(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_scope()
+    }
+    /// <p>Specifies which identity STS puts in the <code>sub</code> (subject) claim of the JSON Web Token (JWT). Valid values are <code>AWSIdentity</code> and <code>OriginIdentity</code>. If you don't specify a value, Amazon Web Services STS uses <code>AWSIdentity</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWSIdentity</code> – The <code>sub</code> claim contains the ARN of the calling Amazon Web Services principal.</p></li>
+    /// <li>
+    /// <p><code>OriginIdentity</code> – The <code>sub</code> claim contains the value of the <code>aws:OriginIdentity/Subject</code> key in the trusted identity propagation context of the calling session. For example, this can identify the human user or workload on whose behalf the calling session acts. Amazon Web Services STS also adds a <code>subject_mode</code> claim to the token.</p>
+    /// <p>To use <code>OriginIdentity</code>, the trusted identity propagation context of the calling session must contain the <code>aws:OriginIdentity/Subject</code> key and either the <code>aws:OriginIdentity/Issuer</code> key or the <code>aws:OriginIdentity/FederatedProviderArn</code> key. If it doesn't, or if the subject is blank, Amazon Web Services STS rejects the request with a validation error.</p>
+    /// <p>Amazon Web Services STS denies the request if the subject begins with the text <code>arn:</code>, in any combination of uppercase and lowercase letters. Amazon Web Services STS also denies the request if the subject begins or ends with a space, or contains a control, format, or separator character other than a space.</p></li>
+    /// </ul>
+    /// <p>You can use the <code>sts:SubjectMode</code> condition key in a policy to control which subject modes a principal can request.</p>
+    pub fn subject_mode(mut self, input: crate::types::WebIdentityTokenSubjectModeType) -> Self {
+        self.inner = self.inner.subject_mode(input);
+        self
+    }
+    /// <p>Specifies which identity STS puts in the <code>sub</code> (subject) claim of the JSON Web Token (JWT). Valid values are <code>AWSIdentity</code> and <code>OriginIdentity</code>. If you don't specify a value, Amazon Web Services STS uses <code>AWSIdentity</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWSIdentity</code> – The <code>sub</code> claim contains the ARN of the calling Amazon Web Services principal.</p></li>
+    /// <li>
+    /// <p><code>OriginIdentity</code> – The <code>sub</code> claim contains the value of the <code>aws:OriginIdentity/Subject</code> key in the trusted identity propagation context of the calling session. For example, this can identify the human user or workload on whose behalf the calling session acts. Amazon Web Services STS also adds a <code>subject_mode</code> claim to the token.</p>
+    /// <p>To use <code>OriginIdentity</code>, the trusted identity propagation context of the calling session must contain the <code>aws:OriginIdentity/Subject</code> key and either the <code>aws:OriginIdentity/Issuer</code> key or the <code>aws:OriginIdentity/FederatedProviderArn</code> key. If it doesn't, or if the subject is blank, Amazon Web Services STS rejects the request with a validation error.</p>
+    /// <p>Amazon Web Services STS denies the request if the subject begins with the text <code>arn:</code>, in any combination of uppercase and lowercase letters. Amazon Web Services STS also denies the request if the subject begins or ends with a space, or contains a control, format, or separator character other than a space.</p></li>
+    /// </ul>
+    /// <p>You can use the <code>sts:SubjectMode</code> condition key in a policy to control which subject modes a principal can request.</p>
+    pub fn set_subject_mode(mut self, input: ::std::option::Option<crate::types::WebIdentityTokenSubjectModeType>) -> Self {
+        self.inner = self.inner.set_subject_mode(input);
+        self
+    }
+    /// <p>Specifies which identity STS puts in the <code>sub</code> (subject) claim of the JSON Web Token (JWT). Valid values are <code>AWSIdentity</code> and <code>OriginIdentity</code>. If you don't specify a value, Amazon Web Services STS uses <code>AWSIdentity</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWSIdentity</code> – The <code>sub</code> claim contains the ARN of the calling Amazon Web Services principal.</p></li>
+    /// <li>
+    /// <p><code>OriginIdentity</code> – The <code>sub</code> claim contains the value of the <code>aws:OriginIdentity/Subject</code> key in the trusted identity propagation context of the calling session. For example, this can identify the human user or workload on whose behalf the calling session acts. Amazon Web Services STS also adds a <code>subject_mode</code> claim to the token.</p>
+    /// <p>To use <code>OriginIdentity</code>, the trusted identity propagation context of the calling session must contain the <code>aws:OriginIdentity/Subject</code> key and either the <code>aws:OriginIdentity/Issuer</code> key or the <code>aws:OriginIdentity/FederatedProviderArn</code> key. If it doesn't, or if the subject is blank, Amazon Web Services STS rejects the request with a validation error.</p>
+    /// <p>Amazon Web Services STS denies the request if the subject begins with the text <code>arn:</code>, in any combination of uppercase and lowercase letters. Amazon Web Services STS also denies the request if the subject begins or ends with a space, or contains a control, format, or separator character other than a space.</p></li>
+    /// </ul>
+    /// <p>You can use the <code>sts:SubjectMode</code> condition key in a policy to control which subject modes a principal can request.</p>
+    pub fn get_subject_mode(&self) -> &::std::option::Option<crate::types::WebIdentityTokenSubjectModeType> {
+        self.inner.get_subject_mode()
     }
     ///
     /// Appends an item to `Tags`.

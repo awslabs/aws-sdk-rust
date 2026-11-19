@@ -38,7 +38,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The status of an engagement invitation. <code>PENDING</code> means the receiver hasn't responded yet. <code>ACCEPTED</code> and <code>REJECTED</code> mean the receiver accepted or rejected the invitation. <code>EXPIRED</code> means the invitation expired before the receiver responded.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

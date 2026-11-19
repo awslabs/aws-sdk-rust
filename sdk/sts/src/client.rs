@@ -135,6 +135,8 @@ mod get_delegated_access_token;
 
 mod get_federation_token;
 
+mod get_scoped_credentials;
+
 mod get_session_token;
 
 mod get_web_identity_token;

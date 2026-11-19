@@ -3,29 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
-    /// A resource policy document, as a JSON string. The "default" policy can be up to 20 KB (20,480 bytes of UTF-8) by default. This quota is adjustable in Service Quotas. A "default" policy that exceeds the quota is rejected with PolicyLengthExceededException. No policy document can exceed 389,120 bytes of UTF-8, regardless of the quota.
+    /// <p>A resource policy document, as a JSON string. The maximum size is 389,120 bytes of UTF-8; the byte limit is enforced by the service.</p>
     pub policy_document: ::std::option::Option<::std::string::String>,
-    /// Which named policy to write. Defaults to "default", the customer-managed policy, when omitted (a write AWS Resource Access Manager makes on the owner's behalf resolves to "AWS_RAM" instead). The two writers are exclusive in both directions — only Resource Access Manager can write "AWS_RAM", and only the bus owner can write "default" — so naming the other party's policy fails with AccessDeniedException. A well-formed name that is neither of the two fails with InvalidInputException.
+    /// <p>Which named policy to write. Defaults to "default", the customer-managed policy, when omitted (a write AWS Resource Access Manager makes on the owner's behalf resolves to "AWS_RAM" instead). The two writers are exclusive in both directions — only Resource Access Manager can write "AWS_RAM", and only the bus owner can write "default" — so naming the other party's policy fails with AccessDeniedException. A well-formed name that is neither of the two fails with InvalidInputException.</p>
     pub policy_name: ::std::option::Option<::std::string::String>,
-    /// The write succeeds only if the named policy's current revision ID matches this value; a policy that does not exist yet matches only the sentinel "NO_POLICY" (create-only). On mismatch the operation fails with ConflictException. When omitted, the write is unconditional. Every attempt stores a newly generated revision ID, so retrying an unanswered request can conflict with the caller's own earlier attempt; read the policy back and compare it with the one you intended before treating a conflict as another writer's change.
+    /// <p>The write succeeds only if the named policy's current revision ID matches this value; a policy that does not exist yet matches only the sentinel "NO_POLICY" (create-only). On mismatch the operation fails with ConflictException. When omitted, the write is unconditional. Every attempt stores a newly generated revision ID, so retrying an unanswered request can conflict with the caller's own earlier attempt; read the policy back and compare it with the one you intended before treating a conflict as another writer's change.</p>
     pub expected_revision_id: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePolicyInput {
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// A resource policy document, as a JSON string. The "default" policy can be up to 20 KB (20,480 bytes of UTF-8) by default. This quota is adjustable in Service Quotas. A "default" policy that exceeds the quota is rejected with PolicyLengthExceededException. No policy document can exceed 389,120 bytes of UTF-8, regardless of the quota.
+    /// <p>A resource policy document, as a JSON string. The maximum size is 389,120 bytes of UTF-8; the byte limit is enforced by the service.</p>
     pub fn policy_document(&self) -> ::std::option::Option<&str> {
         self.policy_document.as_deref()
     }
-    /// Which named policy to write. Defaults to "default", the customer-managed policy, when omitted (a write AWS Resource Access Manager makes on the owner's behalf resolves to "AWS_RAM" instead). The two writers are exclusive in both directions — only Resource Access Manager can write "AWS_RAM", and only the bus owner can write "default" — so naming the other party's policy fails with AccessDeniedException. A well-formed name that is neither of the two fails with InvalidInputException.
+    /// <p>Which named policy to write. Defaults to "default", the customer-managed policy, when omitted (a write AWS Resource Access Manager makes on the owner's behalf resolves to "AWS_RAM" instead). The two writers are exclusive in both directions — only Resource Access Manager can write "AWS_RAM", and only the bus owner can write "default" — so naming the other party's policy fails with AccessDeniedException. A well-formed name that is neither of the two fails with InvalidInputException.</p>
     pub fn policy_name(&self) -> ::std::option::Option<&str> {
         self.policy_name.as_deref()
     }
-    /// The write succeeds only if the named policy's current revision ID matches this value; a policy that does not exist yet matches only the sentinel "NO_POLICY" (create-only). On mismatch the operation fails with ConflictException. When omitted, the write is unconditional. Every attempt stores a newly generated revision ID, so retrying an unanswered request can conflict with the caller's own earlier attempt; read the policy back and compare it with the one you intended before treating a conflict as another writer's change.
+    /// <p>The write succeeds only if the named policy's current revision ID matches this value; a policy that does not exist yet matches only the sentinel "NO_POLICY" (create-only). On mismatch the operation fails with ConflictException. When omitted, the write is unconditional. Every attempt stores a newly generated revision ID, so retrying an unanswered request can conflict with the caller's own earlier attempt; read the policy back and compare it with the one you intended before treating a conflict as another writer's change.</p>
     pub fn expected_revision_id(&self) -> ::std::option::Option<&str> {
         self.expected_revision_id.as_deref()
     }
@@ -47,61 +47,61 @@ pub struct PutResourcePolicyInputBuilder {
     pub(crate) expected_revision_id: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePolicyInputBuilder {
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
-    /// A resource policy document, as a JSON string. The "default" policy can be up to 20 KB (20,480 bytes of UTF-8) by default. This quota is adjustable in Service Quotas. A "default" policy that exceeds the quota is rejected with PolicyLengthExceededException. No policy document can exceed 389,120 bytes of UTF-8, regardless of the quota.
+    /// <p>A resource policy document, as a JSON string. The maximum size is 389,120 bytes of UTF-8; the byte limit is enforced by the service.</p>
     /// This field is required.
     pub fn policy_document(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_document = ::std::option::Option::Some(input.into());
         self
     }
-    /// A resource policy document, as a JSON string. The "default" policy can be up to 20 KB (20,480 bytes of UTF-8) by default. This quota is adjustable in Service Quotas. A "default" policy that exceeds the quota is rejected with PolicyLengthExceededException. No policy document can exceed 389,120 bytes of UTF-8, regardless of the quota.
+    /// <p>A resource policy document, as a JSON string. The maximum size is 389,120 bytes of UTF-8; the byte limit is enforced by the service.</p>
     pub fn set_policy_document(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_document = input;
         self
     }
-    /// A resource policy document, as a JSON string. The "default" policy can be up to 20 KB (20,480 bytes of UTF-8) by default. This quota is adjustable in Service Quotas. A "default" policy that exceeds the quota is rejected with PolicyLengthExceededException. No policy document can exceed 389,120 bytes of UTF-8, regardless of the quota.
+    /// <p>A resource policy document, as a JSON string. The maximum size is 389,120 bytes of UTF-8; the byte limit is enforced by the service.</p>
     pub fn get_policy_document(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_document
     }
-    /// Which named policy to write. Defaults to "default", the customer-managed policy, when omitted (a write AWS Resource Access Manager makes on the owner's behalf resolves to "AWS_RAM" instead). The two writers are exclusive in both directions — only Resource Access Manager can write "AWS_RAM", and only the bus owner can write "default" — so naming the other party's policy fails with AccessDeniedException. A well-formed name that is neither of the two fails with InvalidInputException.
+    /// <p>Which named policy to write. Defaults to "default", the customer-managed policy, when omitted (a write AWS Resource Access Manager makes on the owner's behalf resolves to "AWS_RAM" instead). The two writers are exclusive in both directions — only Resource Access Manager can write "AWS_RAM", and only the bus owner can write "default" — so naming the other party's policy fails with AccessDeniedException. A well-formed name that is neither of the two fails with InvalidInputException.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// Which named policy to write. Defaults to "default", the customer-managed policy, when omitted (a write AWS Resource Access Manager makes on the owner's behalf resolves to "AWS_RAM" instead). The two writers are exclusive in both directions — only Resource Access Manager can write "AWS_RAM", and only the bus owner can write "default" — so naming the other party's policy fails with AccessDeniedException. A well-formed name that is neither of the two fails with InvalidInputException.
+    /// <p>Which named policy to write. Defaults to "default", the customer-managed policy, when omitted (a write AWS Resource Access Manager makes on the owner's behalf resolves to "AWS_RAM" instead). The two writers are exclusive in both directions — only Resource Access Manager can write "AWS_RAM", and only the bus owner can write "default" — so naming the other party's policy fails with AccessDeniedException. A well-formed name that is neither of the two fails with InvalidInputException.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
     }
-    /// Which named policy to write. Defaults to "default", the customer-managed policy, when omitted (a write AWS Resource Access Manager makes on the owner's behalf resolves to "AWS_RAM" instead). The two writers are exclusive in both directions — only Resource Access Manager can write "AWS_RAM", and only the bus owner can write "default" — so naming the other party's policy fails with AccessDeniedException. A well-formed name that is neither of the two fails with InvalidInputException.
+    /// <p>Which named policy to write. Defaults to "default", the customer-managed policy, when omitted (a write AWS Resource Access Manager makes on the owner's behalf resolves to "AWS_RAM" instead). The two writers are exclusive in both directions — only Resource Access Manager can write "AWS_RAM", and only the bus owner can write "default" — so naming the other party's policy fails with AccessDeniedException. A well-formed name that is neither of the two fails with InvalidInputException.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_name
     }
-    /// The write succeeds only if the named policy's current revision ID matches this value; a policy that does not exist yet matches only the sentinel "NO_POLICY" (create-only). On mismatch the operation fails with ConflictException. When omitted, the write is unconditional. Every attempt stores a newly generated revision ID, so retrying an unanswered request can conflict with the caller's own earlier attempt; read the policy back and compare it with the one you intended before treating a conflict as another writer's change.
+    /// <p>The write succeeds only if the named policy's current revision ID matches this value; a policy that does not exist yet matches only the sentinel "NO_POLICY" (create-only). On mismatch the operation fails with ConflictException. When omitted, the write is unconditional. Every attempt stores a newly generated revision ID, so retrying an unanswered request can conflict with the caller's own earlier attempt; read the policy back and compare it with the one you intended before treating a conflict as another writer's change.</p>
     pub fn expected_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.expected_revision_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// The write succeeds only if the named policy's current revision ID matches this value; a policy that does not exist yet matches only the sentinel "NO_POLICY" (create-only). On mismatch the operation fails with ConflictException. When omitted, the write is unconditional. Every attempt stores a newly generated revision ID, so retrying an unanswered request can conflict with the caller's own earlier attempt; read the policy back and compare it with the one you intended before treating a conflict as another writer's change.
+    /// <p>The write succeeds only if the named policy's current revision ID matches this value; a policy that does not exist yet matches only the sentinel "NO_POLICY" (create-only). On mismatch the operation fails with ConflictException. When omitted, the write is unconditional. Every attempt stores a newly generated revision ID, so retrying an unanswered request can conflict with the caller's own earlier attempt; read the policy back and compare it with the one you intended before treating a conflict as another writer's change.</p>
     pub fn set_expected_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.expected_revision_id = input;
         self
     }
-    /// The write succeeds only if the named policy's current revision ID matches this value; a policy that does not exist yet matches only the sentinel "NO_POLICY" (create-only). On mismatch the operation fails with ConflictException. When omitted, the write is unconditional. Every attempt stores a newly generated revision ID, so retrying an unanswered request can conflict with the caller's own earlier attempt; read the policy back and compare it with the one you intended before treating a conflict as another writer's change.
+    /// <p>The write succeeds only if the named policy's current revision ID matches this value; a policy that does not exist yet matches only the sentinel "NO_POLICY" (create-only). On mismatch the operation fails with ConflictException. When omitted, the write is unconditional. Every attempt stores a newly generated revision ID, so retrying an unanswered request can conflict with the caller's own earlier attempt; read the policy back and compare it with the one you intended before treating a conflict as another writer's change.</p>
     pub fn get_expected_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.expected_revision_id
     }

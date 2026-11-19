@@ -243,11 +243,11 @@ pub struct DbCluster {
     /// <p>The lifecycle type for the DB cluster.</p>
     /// <p>For more information, see CreateDBCluster.</p>
     pub engine_lifecycle_support: ::std::option::Option<::std::string::String>,
-    /// <p>Indicates whether the DB cluster uses VPC-based networking.</p>
-    /// <p>This setting is applicable only for Aurora PostgreSQL clusters created through express configuration.</p>
+    /// <p>Indicates whether the DB cluster uses VPC-based networking. The value is <code>false</code> only for an Aurora PostgreSQL DB cluster without VPC networking.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub vpc_networking_enabled: ::std::option::Option<bool>,
     /// <p>Indicates whether the DB cluster has internet-based connectivity enabled through an internet access gateway.</p>
-    /// <p>This setting is applicable only for Aurora PostgreSQL clusters created through express configuration.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL DB clusters only</p>
     pub internet_access_gateway_enabled: ::std::option::Option<bool>,
 }
 impl DbCluster {
@@ -680,13 +680,13 @@ impl DbCluster {
     pub fn engine_lifecycle_support(&self) -> ::std::option::Option<&str> {
         self.engine_lifecycle_support.as_deref()
     }
-    /// <p>Indicates whether the DB cluster uses VPC-based networking.</p>
-    /// <p>This setting is applicable only for Aurora PostgreSQL clusters created through express configuration.</p>
+    /// <p>Indicates whether the DB cluster uses VPC-based networking. The value is <code>false</code> only for an Aurora PostgreSQL DB cluster without VPC networking.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn vpc_networking_enabled(&self) -> ::std::option::Option<bool> {
         self.vpc_networking_enabled
     }
     /// <p>Indicates whether the DB cluster has internet-based connectivity enabled through an internet access gateway.</p>
-    /// <p>This setting is applicable only for Aurora PostgreSQL clusters created through express configuration.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL DB clusters only</p>
     pub fn internet_access_gateway_enabled(&self) -> ::std::option::Option<bool> {
         self.internet_access_gateway_enabled
     }
@@ -2257,37 +2257,37 @@ impl DbClusterBuilder {
     pub fn get_engine_lifecycle_support(&self) -> &::std::option::Option<::std::string::String> {
         &self.engine_lifecycle_support
     }
-    /// <p>Indicates whether the DB cluster uses VPC-based networking.</p>
-    /// <p>This setting is applicable only for Aurora PostgreSQL clusters created through express configuration.</p>
+    /// <p>Indicates whether the DB cluster uses VPC-based networking. The value is <code>false</code> only for an Aurora PostgreSQL DB cluster without VPC networking.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn vpc_networking_enabled(mut self, input: bool) -> Self {
         self.vpc_networking_enabled = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the DB cluster uses VPC-based networking.</p>
-    /// <p>This setting is applicable only for Aurora PostgreSQL clusters created through express configuration.</p>
+    /// <p>Indicates whether the DB cluster uses VPC-based networking. The value is <code>false</code> only for an Aurora PostgreSQL DB cluster without VPC networking.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_vpc_networking_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.vpc_networking_enabled = input;
         self
     }
-    /// <p>Indicates whether the DB cluster uses VPC-based networking.</p>
-    /// <p>This setting is applicable only for Aurora PostgreSQL clusters created through express configuration.</p>
+    /// <p>Indicates whether the DB cluster uses VPC-based networking. The value is <code>false</code> only for an Aurora PostgreSQL DB cluster without VPC networking.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_vpc_networking_enabled(&self) -> &::std::option::Option<bool> {
         &self.vpc_networking_enabled
     }
     /// <p>Indicates whether the DB cluster has internet-based connectivity enabled through an internet access gateway.</p>
-    /// <p>This setting is applicable only for Aurora PostgreSQL clusters created through express configuration.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL DB clusters only</p>
     pub fn internet_access_gateway_enabled(mut self, input: bool) -> Self {
         self.internet_access_gateway_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the DB cluster has internet-based connectivity enabled through an internet access gateway.</p>
-    /// <p>This setting is applicable only for Aurora PostgreSQL clusters created through express configuration.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL DB clusters only</p>
     pub fn set_internet_access_gateway_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.internet_access_gateway_enabled = input;
         self
     }
     /// <p>Indicates whether the DB cluster has internet-based connectivity enabled through an internet access gateway.</p>
-    /// <p>This setting is applicable only for Aurora PostgreSQL clusters created through express configuration.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL DB clusters only</p>
     pub fn get_internet_access_gateway_enabled(&self) -> &::std::option::Option<bool> {
         &self.internet_access_gateway_enabled
     }

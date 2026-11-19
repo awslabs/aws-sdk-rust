@@ -17,6 +17,8 @@ pub use crate::types::_function_config::FunctionConfigBuilder;
 
 pub use crate::types::_connection_function_summary::ConnectionFunctionSummaryBuilder;
 
+pub use crate::types::_viewer_fallback::ViewerFallbackBuilder;
+
 pub use crate::types::_connection_group::ConnectionGroupBuilder;
 
 pub use crate::types::_continuous_deployment_policy_config::ContinuousDeploymentPolicyConfigBuilder;

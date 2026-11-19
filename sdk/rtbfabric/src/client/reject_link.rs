@@ -17,6 +17,7 @@ impl super::Client {
     ///   - [`attributes(Option<LinkAttributes>)`](crate::operation::reject_link::RejectLinkOutput::attributes): <p>Attributes of the link.</p>
     ///   - [`log_settings(Option<LinkLogSettings>)`](crate::operation::reject_link::RejectLinkOutput::log_settings): <p>Describes the settings for a link log.</p>
     ///   - [`connectivity_type(Option<ConnectivityType>)`](crate::operation::reject_link::RejectLinkOutput::connectivity_type): <p>The connectivity type of the link.</p>
+    ///   - [`error_details(Option<Vec::<ErrorDetail>>)`](crate::operation::reject_link::RejectLinkOutput::error_details): <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
     ///   - [`link_id(String)`](crate::operation::reject_link::RejectLinkOutput::link_id): <p>The unique identifier of the link.</p>
     /// - On failure, responds with [`SdkError<RejectLinkError>`](crate::operation::reject_link::RejectLinkError)
     pub fn reject_link(&self) -> crate::operation::reject_link::builders::RejectLinkFluentBuilder {

@@ -22,6 +22,11 @@ pub struct CreateOpenIdConnectProviderInput {
     /// <p>If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request fails and the resource is not created.</p>
     /// </note>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The trusted identity propagation context provider configuration to associate with the OpenID Connect (OIDC) provider. The context provider defines how the subject is derived and how keys from the provider's token are mapped into trusted context keys. Specifying a context provider enables trusted identity propagation for the provider. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+    pub context_provider: ::std::option::Option<crate::types::ContextProvider>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance to associate with the OpenID Connect (OIDC) provider. If you specify this parameter, you must also specify <code>ContextProvider</code>.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    pub identity_center_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateOpenIdConnectProviderInput {
     /// <p>The URL of the identity provider. The URL must begin with <code>https://</code> and should correspond to the <code>iss</code> claim in the provider's OpenID Connect ID tokens. Per the OIDC standard, path components are allowed but query parameters are not. Typically the URL consists of only a hostname, like <code>https://server.example.org</code> or <code>https://example.com</code>. The URL should not contain a port number.</p>
@@ -57,6 +62,15 @@ impl CreateOpenIdConnectProviderInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The trusted identity propagation context provider configuration to associate with the OpenID Connect (OIDC) provider. The context provider defines how the subject is derived and how keys from the provider's token are mapped into trusted context keys. Specifying a context provider enables trusted identity propagation for the provider. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+    pub fn context_provider(&self) -> ::std::option::Option<&crate::types::ContextProvider> {
+        self.context_provider.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance to associate with the OpenID Connect (OIDC) provider. If you specify this parameter, you must also specify <code>ContextProvider</code>.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    pub fn identity_center_instance_arn(&self) -> ::std::option::Option<&str> {
+        self.identity_center_instance_arn.as_deref()
+    }
 }
 impl CreateOpenIdConnectProviderInput {
     /// Creates a new builder-style object to manufacture [`CreateOpenIdConnectProviderInput`](crate::operation::create_open_id_connect_provider::CreateOpenIdConnectProviderInput).
@@ -73,6 +87,8 @@ pub struct CreateOpenIdConnectProviderInputBuilder {
     pub(crate) client_id_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) thumbprint_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) context_provider: ::std::option::Option<crate::types::ContextProvider>,
+    pub(crate) identity_center_instance_arn: ::std::option::Option<::std::string::String>,
 }
 impl CreateOpenIdConnectProviderInputBuilder {
     /// <p>The URL of the identity provider. The URL must begin with <code>https://</code> and should correspond to the <code>iss</code> claim in the provider's OpenID Connect ID tokens. Per the OIDC standard, path components are allowed but query parameters are not. Typically the URL consists of only a hostname, like <code>https://server.example.org</code> or <code>https://example.com</code>. The URL should not contain a port number.</p>
@@ -183,6 +199,37 @@ impl CreateOpenIdConnectProviderInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The trusted identity propagation context provider configuration to associate with the OpenID Connect (OIDC) provider. The context provider defines how the subject is derived and how keys from the provider's token are mapped into trusted context keys. Specifying a context provider enables trusted identity propagation for the provider. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+    pub fn context_provider(mut self, input: crate::types::ContextProvider) -> Self {
+        self.context_provider = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The trusted identity propagation context provider configuration to associate with the OpenID Connect (OIDC) provider. The context provider defines how the subject is derived and how keys from the provider's token are mapped into trusted context keys. Specifying a context provider enables trusted identity propagation for the provider. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+    pub fn set_context_provider(mut self, input: ::std::option::Option<crate::types::ContextProvider>) -> Self {
+        self.context_provider = input;
+        self
+    }
+    /// <p>The trusted identity propagation context provider configuration to associate with the OpenID Connect (OIDC) provider. The context provider defines how the subject is derived and how keys from the provider's token are mapped into trusted context keys. Specifying a context provider enables trusted identity propagation for the provider. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+    pub fn get_context_provider(&self) -> &::std::option::Option<crate::types::ContextProvider> {
+        &self.context_provider
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance to associate with the OpenID Connect (OIDC) provider. If you specify this parameter, you must also specify <code>ContextProvider</code>.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    pub fn identity_center_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_center_instance_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance to associate with the OpenID Connect (OIDC) provider. If you specify this parameter, you must also specify <code>ContextProvider</code>.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    pub fn set_identity_center_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_center_instance_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance to associate with the OpenID Connect (OIDC) provider. If you specify this parameter, you must also specify <code>ContextProvider</code>.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    pub fn get_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_center_instance_arn
+    }
     /// Consumes the builder and constructs a [`CreateOpenIdConnectProviderInput`](crate::operation::create_open_id_connect_provider::CreateOpenIdConnectProviderInput).
     pub fn build(
         self,
@@ -195,6 +242,8 @@ impl CreateOpenIdConnectProviderInputBuilder {
             client_id_list: self.client_id_list,
             thumbprint_list: self.thumbprint_list,
             tags: self.tags,
+            context_provider: self.context_provider,
+            identity_center_instance_arn: self.identity_center_instance_arn,
         })
     }
 }

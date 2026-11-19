@@ -3,35 +3,36 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// The caller does not have the permissions required to perform the operation. This error is also returned when the operation cannot use the AWS KMS key for the event bus.
+    /// <p>The caller does not have the permissions required to perform the operation. This error is also returned when the operation cannot use the AWS KMS key for the event bus.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// Another change to the resource is already in progress. Retry the request.
+    /// <p>Another change to the resource is already in progress. Retry the request.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
-    /// A client-supplied precondition (e.g. ExpectedRevisionId on a resource-policy write) did not match the current state of the resource. Retrying the same request will fail again; re-read the resource and re-evaluate before retrying. A conditional request is not retry-safe on its own. If an earlier attempt committed but its response never reached the caller, retrying fails with this error, which is indistinguishable from another writer having won. Compare the resource's current contents with what the request intended: a successful attempt stores a revision ID the caller never saw, so the revision alone cannot tell the two apart, but matching contents mean the change took effect.
+    /// <p>A client-supplied precondition (e.g. ExpectedRevisionId on a resource-policy write) did not match the current state of the resource. Retrying the same request will fail again; re-read the resource and re-evaluate before retrying.</p>
+    /// <p>A conditional request is not retry-safe on its own. If an earlier attempt committed but its response never reached the caller, retrying fails with this error, which is indistinguishable from another writer having won. Compare the resource's current contents with what the request intended: a successful attempt stores a revision ID the caller never saw, so the revision alone cannot tell the two apart, but matching contents mean the change took effect.</p>
     ConflictException(crate::types::error::ConflictException),
-    /// The request reuses the client token of an earlier request with different parameters. Use a new client token, or resend the earlier request unchanged.
+    /// <p>The request reuses the client token of an earlier request with different parameters. Use a new client token, or resend the earlier request unchanged.</p>
     IdempotentParameterMismatchException(crate::types::error::IdempotentParameterMismatchException),
-    /// The request failed because of an internal service error. Retry the request.
+    /// <p>The request failed because of an internal service error. Retry the request.</p>
     InternalException(crate::types::error::InternalException),
-    /// A request parameter is missing or not valid.
+    /// <p>A request parameter is missing or not valid.</p>
     InvalidInputException(crate::types::error::InvalidInputException),
-    /// The resource is not in a state that allows the operation. For example, an event bus that is still being created cannot accept events.
+    /// <p>The resource is not in a state that allows the operation. For example, an event bus that is still being created cannot accept events.</p>
     InvalidStateException(crate::types::error::InvalidStateException),
-    /// The request would exceed a service quota for the account.
+    /// <p>The request would exceed a service quota for the account.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// The policy document is larger than the account's resource policy size quota, or larger than the service maximum.
+    /// <p>The policy document exceeds the maximum allowed size.</p>
     PolicyLengthExceededException(crate::types::error::PolicyLengthExceededException),
-    /// The policy was rejected because it would grant public access to the event bus. A statement grants public access when its principal is a wildcard and no condition limits the callers to specific AWS accounts or principals. To fix it, replace the wildcard principal with specific principals, or add a condition that limits the callers to specific AWS accounts. Conditions on event content (events:source, events:detail-type, events:Metadata/*) do not identify the caller and do not make a wildcard principal non-public. Returned only for the "default" policy; the "AWS_RAM" policy is composed by AWS Resource Access Manager and never grants public access.
+    /// <p>The policy was rejected because it would grant public access to the event bus. A statement grants public access when its principal is a wildcard and no condition limits the callers to specific AWS accounts or principals. To fix it, replace the wildcard principal with specific principals, or add a condition that limits the callers to specific AWS accounts. Conditions on event content (events:source, events:detail-type, events:Metadata/*) do not identify the caller and do not make a wildcard principal non-public. Returned only for the "default" policy; the "AWS_RAM" policy is composed by AWS Resource Access Manager and never grants public access.</p>
     PublicPolicyException(crate::types::error::PublicPolicyException),
-    /// A resource with the same name already exists.
+    /// <p>A resource with the same name already exists.</p>
     ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
-    /// The resource is in use and cannot be deleted. For example, an event bus with subscribers or event sources cannot be deleted until they are deleted.
+    /// <p>The resource is in use and cannot be deleted. For example, an event bus with subscribers or event sources cannot be deleted until they are deleted.</p>
     ResourceInUseException(crate::types::error::ResourceInUseException),
-    /// The resource does not exist.
+    /// <p>The resource does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// The configured schema registry could not be reached. Retry the request.
+    /// <p>The configured schema registry could not be reached. Retry the request.</p>
     SchemaRegistryUnavailableException(crate::types::error::SchemaRegistryUnavailableException),
-    /// The request was throttled because it exceeds a request rate limit. Retry the request with backoff.
+    /// <p>The request was throttled because it exceeds a request rate limit. Retry the request with backoff.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -702,6 +703,55 @@ impl From<crate::operation::revoke_resource::RevokeResourceError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::rotate_webhook_credentials::RotateWebhookCredentialsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::rotate_webhook_credentials::RotateWebhookCredentialsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::rotate_webhook_credentials::RotateWebhookCredentialsError> for Error {
+    fn from(err: crate::operation::rotate_webhook_credentials::RotateWebhookCredentialsError) -> Self {
+        match err {
+            crate::operation::rotate_webhook_credentials::RotateWebhookCredentialsError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::rotate_webhook_credentials::RotateWebhookCredentialsError::IdempotentParameterMismatchException(inner) => {
+                Error::IdempotentParameterMismatchException(inner)
+            }
+            crate::operation::rotate_webhook_credentials::RotateWebhookCredentialsError::InvalidStateException(inner) => {
+                Error::InvalidStateException(inner)
+            }
+            crate::operation::rotate_webhook_credentials::RotateWebhookCredentialsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::rotate_webhook_credentials::RotateWebhookCredentialsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::rotate_webhook_credentials::RotateWebhookCredentialsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::rotate_webhook_credentials::RotateWebhookCredentialsError::InternalException(inner) => Error::InternalException(inner),
+            crate::operation::rotate_webhook_credentials::RotateWebhookCredentialsError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::rotate_webhook_credentials::RotateWebhookCredentialsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::rotate_webhook_credentials::RotateWebhookCredentialsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::tag_resource::TagResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -812,6 +862,7 @@ impl From<crate::operation::update_event_source::UpdateEventSourceError> for Err
                 Error::ConcurrentModificationException(inner)
             }
             crate::operation::update_event_source::UpdateEventSourceError::InvalidStateException(inner) => Error::InvalidStateException(inner),
+            crate::operation::update_event_source::UpdateEventSourceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::update_event_source::UpdateEventSourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }

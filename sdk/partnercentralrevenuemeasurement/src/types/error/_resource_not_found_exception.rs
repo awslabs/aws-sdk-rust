@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceNotFoundException {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A human-readable message describing which resource was not found.</p>
     pub message: ::std::string::String,
     /// <p>The reason the resource was not found.</p>
     pub reason: crate::types::ResourceNotFoundExceptionReason,
@@ -59,18 +59,18 @@ pub struct ResourceNotFoundExceptionBuilder {
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ResourceNotFoundExceptionBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A human-readable message describing which resource was not found.</p>
     /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A human-readable message describing which resource was not found.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A human-readable message describing which resource was not found.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }

@@ -80,11 +80,26 @@ pub(crate) fn validation_exception_correct_errors(
 pub(crate) fn create_marketplace_revenue_share_output_output_correct_errors(
     mut builder: crate::operation::create_marketplace_revenue_share::builders::CreateMarketplaceRevenueShareOutputBuilder,
 ) -> crate::operation::create_marketplace_revenue_share::builders::CreateMarketplaceRevenueShareOutputBuilder {
-    if builder.product_id.is_none() {
-        builder.product_id = Some(Default::default())
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
     }
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
+    }
+    if builder.catalog.is_none() {
+        builder.catalog = "no value was set".parse::<crate::types::CatalogName>().ok()
+    }
+    if builder.products.is_none() {
+        builder.products = Some(Default::default())
+    }
+    if builder.created_date.is_none() {
+        builder.created_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_date.is_none() {
+        builder.last_modified_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.revision.is_none() {
+        builder.revision = Some(Default::default())
     }
     builder
 }
@@ -95,20 +110,32 @@ pub(crate) fn create_marketplace_revenue_share_allocation_output_output_correct_
     if builder.marketplace_revenue_share_allocation_id.is_none() {
         builder.marketplace_revenue_share_allocation_id = Some(Default::default())
     }
-    if builder.product_id.is_none() {
-        builder.product_id = Some(Default::default())
-    }
-    if builder.arn.is_none() {
-        builder.arn = Some(Default::default())
+    if builder.marketplace_revenue_share_identifier.is_none() {
+        builder.marketplace_revenue_share_identifier = Some(Default::default())
     }
     if builder.effective_from.is_none() {
         builder.effective_from = Some(Default::default())
+    }
+    if builder.effective_until.is_none() {
+        builder.effective_until = Some(Default::default())
     }
     if builder.revenue_share_percent.is_none() {
         builder.revenue_share_percent = Some(Default::default())
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::AllocationStatus>().ok()
+    }
+    if builder.created_date.is_none() {
+        builder.created_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_date.is_none() {
+        builder.last_modified_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.marketplace_revenue_share_revision.is_none() {
+        builder.marketplace_revenue_share_revision = Some(Default::default())
+    }
+    if builder.marketplace_revenue_share_latest_revision.is_none() {
+        builder.marketplace_revenue_share_latest_revision = Some(Default::default())
     }
     builder
 }
@@ -131,14 +158,35 @@ pub(crate) fn create_revenue_attribution_output_output_correct_errors(
 pub(crate) fn get_marketplace_revenue_share_output_output_correct_errors(
     mut builder: crate::operation::get_marketplace_revenue_share::builders::GetMarketplaceRevenueShareOutputBuilder,
 ) -> crate::operation::get_marketplace_revenue_share::builders::GetMarketplaceRevenueShareOutputBuilder {
-    if builder.product_id.is_none() {
-        builder.product_id = Some(Default::default())
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
     }
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
     }
     if builder.catalog.is_none() {
         builder.catalog = "no value was set".parse::<crate::types::CatalogName>().ok()
+    }
+    if builder.products.is_none() {
+        builder.products = Some(Default::default())
+    }
+    if builder.created_date.is_none() {
+        builder.created_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_date.is_none() {
+        builder.last_modified_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.revision.is_none() {
+        builder.revision = Some(Default::default())
+    }
+    if builder.latest_revision.is_none() {
+        builder.latest_revision = Some(Default::default())
+    }
+    if builder.total_active_marketplace_revenue_share_allocation_count.is_none() {
+        builder.total_active_marketplace_revenue_share_allocation_count = Some(Default::default())
+    }
+    if builder.total_marketplace_revenue_share_allocation_count.is_none() {
+        builder.total_marketplace_revenue_share_allocation_count = Some(Default::default())
     }
     builder
 }
@@ -149,20 +197,32 @@ pub(crate) fn get_marketplace_revenue_share_allocation_output_output_correct_err
     if builder.marketplace_revenue_share_allocation_id.is_none() {
         builder.marketplace_revenue_share_allocation_id = Some(Default::default())
     }
-    if builder.product_id.is_none() {
-        builder.product_id = Some(Default::default())
-    }
-    if builder.arn.is_none() {
-        builder.arn = Some(Default::default())
+    if builder.marketplace_revenue_share_identifier.is_none() {
+        builder.marketplace_revenue_share_identifier = Some(Default::default())
     }
     if builder.effective_from.is_none() {
         builder.effective_from = Some(Default::default())
+    }
+    if builder.effective_until.is_none() {
+        builder.effective_until = Some(Default::default())
     }
     if builder.revenue_share_percent.is_none() {
         builder.revenue_share_percent = Some(Default::default())
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::AllocationStatus>().ok()
+    }
+    if builder.created_date.is_none() {
+        builder.created_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_date.is_none() {
+        builder.last_modified_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.marketplace_revenue_share_revision.is_none() {
+        builder.marketplace_revenue_share_revision = Some(Default::default())
+    }
+    if builder.marketplace_revenue_share_latest_revision.is_none() {
+        builder.marketplace_revenue_share_latest_revision = Some(Default::default())
     }
     builder
 }
@@ -305,26 +365,59 @@ pub(crate) fn start_revenue_attribution_allocations_task_output_output_correct_e
     builder
 }
 
+pub(crate) fn update_marketplace_revenue_share_output_output_correct_errors(
+    mut builder: crate::operation::update_marketplace_revenue_share::builders::UpdateMarketplaceRevenueShareOutputBuilder,
+) -> crate::operation::update_marketplace_revenue_share::builders::UpdateMarketplaceRevenueShareOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.products.is_none() {
+        builder.products = Some(Default::default())
+    }
+    if builder.last_modified_date.is_none() {
+        builder.last_modified_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.latest_revision.is_none() {
+        builder.latest_revision = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_marketplace_revenue_share_allocation_output_output_correct_errors(
     mut builder: crate::operation::update_marketplace_revenue_share_allocation::builders::UpdateMarketplaceRevenueShareAllocationOutputBuilder,
 ) -> crate::operation::update_marketplace_revenue_share_allocation::builders::UpdateMarketplaceRevenueShareAllocationOutputBuilder {
     if builder.marketplace_revenue_share_allocation_id.is_none() {
         builder.marketplace_revenue_share_allocation_id = Some(Default::default())
     }
-    if builder.product_id.is_none() {
-        builder.product_id = Some(Default::default())
-    }
-    if builder.arn.is_none() {
-        builder.arn = Some(Default::default())
+    if builder.marketplace_revenue_share_identifier.is_none() {
+        builder.marketplace_revenue_share_identifier = Some(Default::default())
     }
     if builder.effective_from.is_none() {
         builder.effective_from = Some(Default::default())
+    }
+    if builder.effective_until.is_none() {
+        builder.effective_until = Some(Default::default())
     }
     if builder.revenue_share_percent.is_none() {
         builder.revenue_share_percent = Some(Default::default())
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::AllocationStatus>().ok()
+    }
+    if builder.created_date.is_none() {
+        builder.created_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_date.is_none() {
+        builder.last_modified_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.marketplace_revenue_share_revision.is_none() {
+        builder.marketplace_revenue_share_revision = Some(Default::default())
+    }
+    if builder.marketplace_revenue_share_latest_revision.is_none() {
+        builder.marketplace_revenue_share_latest_revision = Some(Default::default())
     }
     builder
 }
@@ -359,14 +452,14 @@ pub(crate) fn marketplace_revenue_share_allocation_summary_correct_errors(
     if builder.marketplace_revenue_share_allocation_id.is_none() {
         builder.marketplace_revenue_share_allocation_id = Some(Default::default())
     }
-    if builder.product_id.is_none() {
-        builder.product_id = Some(Default::default())
-    }
-    if builder.arn.is_none() {
-        builder.arn = Some(Default::default())
+    if builder.marketplace_revenue_share_identifier.is_none() {
+        builder.marketplace_revenue_share_identifier = Some(Default::default())
     }
     if builder.effective_from.is_none() {
         builder.effective_from = Some(Default::default())
+    }
+    if builder.effective_until.is_none() {
+        builder.effective_until = Some(Default::default())
     }
     if builder.revenue_share_percent.is_none() {
         builder.revenue_share_percent = Some(Default::default())
@@ -374,17 +467,62 @@ pub(crate) fn marketplace_revenue_share_allocation_summary_correct_errors(
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::AllocationStatus>().ok()
     }
+    if builder.created_date.is_none() {
+        builder.created_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_date.is_none() {
+        builder.last_modified_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn marketplace_revenue_share_product_detail_correct_errors(
+    mut builder: crate::types::builders::MarketplaceRevenueShareProductDetailBuilder,
+) -> crate::types::builders::MarketplaceRevenueShareProductDetailBuilder {
+    if builder.product_id.is_none() {
+        builder.product_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn marketplace_revenue_share_product_summary_correct_errors(
+    mut builder: crate::types::builders::MarketplaceRevenueShareProductSummaryBuilder,
+) -> crate::types::builders::MarketplaceRevenueShareProductSummaryBuilder {
+    if builder.product_id.is_none() {
+        builder.product_id = Some(Default::default())
+    }
     builder
 }
 
 pub(crate) fn marketplace_revenue_share_summary_correct_errors(
     mut builder: crate::types::builders::MarketplaceRevenueShareSummaryBuilder,
 ) -> crate::types::builders::MarketplaceRevenueShareSummaryBuilder {
-    if builder.product_id.is_none() {
-        builder.product_id = Some(Default::default())
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
     }
     if builder.arn.is_none() {
         builder.arn = Some(Default::default())
+    }
+    if builder.catalog.is_none() {
+        builder.catalog = "no value was set".parse::<crate::types::CatalogName>().ok()
+    }
+    if builder.products.is_none() {
+        builder.products = Some(Default::default())
+    }
+    if builder.created_date.is_none() {
+        builder.created_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_date.is_none() {
+        builder.last_modified_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.latest_revision.is_none() {
+        builder.latest_revision = Some(Default::default())
+    }
+    if builder.total_active_marketplace_revenue_share_allocation_count.is_none() {
+        builder.total_active_marketplace_revenue_share_allocation_count = Some(Default::default())
+    }
+    if builder.total_marketplace_revenue_share_allocation_count.is_none() {
+        builder.total_marketplace_revenue_share_allocation_count = Some(Default::default())
     }
     builder
 }
@@ -473,6 +611,33 @@ pub(crate) fn validation_exception_field_correct_errors(
     }
     if builder.code.is_none() {
         builder.code = "no value was set".parse::<crate::types::FieldValidationCode>().ok()
+    }
+    builder
+}
+
+pub(crate) fn revenue_share_product_account_detail_correct_errors(
+    mut builder: crate::types::builders::RevenueShareProductAccountDetailBuilder,
+) -> crate::types::builders::RevenueShareProductAccountDetailBuilder {
+    if builder.account_type.is_none() {
+        builder.account_type = "no value was set".parse::<crate::types::RevenueShareProductAccountType>().ok()
+    }
+    if builder.count.is_none() {
+        builder.count = Some(Default::default())
+    }
+    if builder.account_ids.is_none() {
+        builder.account_ids = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn revenue_share_product_account_summary_correct_errors(
+    mut builder: crate::types::builders::RevenueShareProductAccountSummaryBuilder,
+) -> crate::types::builders::RevenueShareProductAccountSummaryBuilder {
+    if builder.account_type.is_none() {
+        builder.account_type = "no value was set".parse::<crate::types::RevenueShareProductAccountType>().ok()
+    }
+    if builder.count.is_none() {
+        builder.count = Some(Default::default())
     }
     builder
 }

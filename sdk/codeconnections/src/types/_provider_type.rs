@@ -15,6 +15,7 @@
 ///     ProviderType::AzureDevOps => { /* ... */ },
 ///     ProviderType::Bitbucket => { /* ... */ },
 ///     ProviderType::Github => { /* ... */ },
+///     ProviderType::GithubEnterpriseCloudDataResidency => { /* ... */ },
 ///     ProviderType::GithubEnterpriseServer => { /* ... */ },
 ///     ProviderType::Gitlab => { /* ... */ },
 ///     ProviderType::GitlabSelfManaged => { /* ... */ },
@@ -53,6 +54,8 @@ pub enum ProviderType {
     #[allow(missing_docs)] // documentation missing in model
     Github,
     #[allow(missing_docs)] // documentation missing in model
+    GithubEnterpriseCloudDataResidency,
+    #[allow(missing_docs)] // documentation missing in model
     GithubEnterpriseServer,
     #[allow(missing_docs)] // documentation missing in model
     Gitlab,
@@ -68,6 +71,7 @@ impl ::std::convert::From<&str> for ProviderType {
             "AzureDevOps" => ProviderType::AzureDevOps,
             "Bitbucket" => ProviderType::Bitbucket,
             "GitHub" => ProviderType::Github,
+            "GitHubEnterpriseCloudDataResidency" => ProviderType::GithubEnterpriseCloudDataResidency,
             "GitHubEnterpriseServer" => ProviderType::GithubEnterpriseServer,
             "GitLab" => ProviderType::Gitlab,
             "GitLabSelfManaged" => ProviderType::GitlabSelfManaged,
@@ -89,6 +93,7 @@ impl ProviderType {
             ProviderType::AzureDevOps => "AzureDevOps",
             ProviderType::Bitbucket => "Bitbucket",
             ProviderType::Github => "GitHub",
+            ProviderType::GithubEnterpriseCloudDataResidency => "GitHubEnterpriseCloudDataResidency",
             ProviderType::GithubEnterpriseServer => "GitHubEnterpriseServer",
             ProviderType::Gitlab => "GitLab",
             ProviderType::GitlabSelfManaged => "GitLabSelfManaged",
@@ -101,6 +106,7 @@ impl ProviderType {
             "AzureDevOps",
             "Bitbucket",
             "GitHub",
+            "GitHubEnterpriseCloudDataResidency",
             "GitHubEnterpriseServer",
             "GitLab",
             "GitLabSelfManaged",
@@ -130,6 +136,7 @@ impl ::std::fmt::Display for ProviderType {
             ProviderType::AzureDevOps => write!(f, "AzureDevOps"),
             ProviderType::Bitbucket => write!(f, "Bitbucket"),
             ProviderType::Github => write!(f, "GitHub"),
+            ProviderType::GithubEnterpriseCloudDataResidency => write!(f, "GitHubEnterpriseCloudDataResidency"),
             ProviderType::GithubEnterpriseServer => write!(f, "GitHubEnterpriseServer"),
             ProviderType::Gitlab => write!(f, "GitLab"),
             ProviderType::GitlabSelfManaged => write!(f, "GitLabSelfManaged"),

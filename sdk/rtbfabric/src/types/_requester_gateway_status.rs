@@ -13,7 +13,9 @@
 /// # let requestergatewaystatus = unimplemented!();
 /// match requestergatewaystatus {
 ///     RequesterGatewayStatus::Active => { /* ... */ },
+///     RequesterGatewayStatus::CreateFailed => { /* ... */ },
 ///     RequesterGatewayStatus::Deleted => { /* ... */ },
+///     RequesterGatewayStatus::DeleteFailed => { /* ... */ },
 ///     RequesterGatewayStatus::Error => { /* ... */ },
 ///     RequesterGatewayStatus::Isolated => { /* ... */ },
 ///     RequesterGatewayStatus::PendingCreation => { /* ... */ },
@@ -52,7 +54,11 @@ pub enum RequesterGatewayStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
+    CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
+    DeleteFailed,
     #[allow(missing_docs)] // documentation missing in model
     Error,
     #[allow(missing_docs)] // documentation missing in model
@@ -75,7 +81,9 @@ impl ::std::convert::From<&str> for RequesterGatewayStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => RequesterGatewayStatus::Active,
+            "CREATE_FAILED" => RequesterGatewayStatus::CreateFailed,
             "DELETED" => RequesterGatewayStatus::Deleted,
+            "DELETE_FAILED" => RequesterGatewayStatus::DeleteFailed,
             "ERROR" => RequesterGatewayStatus::Error,
             "ISOLATED" => RequesterGatewayStatus::Isolated,
             "PENDING_CREATION" => RequesterGatewayStatus::PendingCreation,
@@ -99,7 +107,9 @@ impl RequesterGatewayStatus {
     pub fn as_str(&self) -> &str {
         match self {
             RequesterGatewayStatus::Active => "ACTIVE",
+            RequesterGatewayStatus::CreateFailed => "CREATE_FAILED",
             RequesterGatewayStatus::Deleted => "DELETED",
+            RequesterGatewayStatus::DeleteFailed => "DELETE_FAILED",
             RequesterGatewayStatus::Error => "ERROR",
             RequesterGatewayStatus::Isolated => "ISOLATED",
             RequesterGatewayStatus::PendingCreation => "PENDING_CREATION",
@@ -114,7 +124,9 @@ impl RequesterGatewayStatus {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
+            "CREATE_FAILED",
             "DELETED",
+            "DELETE_FAILED",
             "ERROR",
             "ISOLATED",
             "PENDING_CREATION",
@@ -146,7 +158,9 @@ impl ::std::fmt::Display for RequesterGatewayStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RequesterGatewayStatus::Active => write!(f, "ACTIVE"),
+            RequesterGatewayStatus::CreateFailed => write!(f, "CREATE_FAILED"),
             RequesterGatewayStatus::Deleted => write!(f, "DELETED"),
+            RequesterGatewayStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             RequesterGatewayStatus::Error => write!(f, "ERROR"),
             RequesterGatewayStatus::Isolated => write!(f, "ISOLATED"),
             RequesterGatewayStatus::PendingCreation => write!(f, "PENDING_CREATION"),

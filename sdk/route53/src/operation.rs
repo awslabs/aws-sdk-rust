@@ -22,6 +22,9 @@ pub mod create_cidr_collection;
 /// Types for the `CreateHealthCheck` operation.
 pub mod create_health_check;
 
+/// Types for the `CreateHealthCheckSource` operation.
+pub mod create_health_check_source;
+
 /// Types for the `CreateHostedZone` operation.
 pub mod create_hosted_zone;
 
@@ -57,6 +60,9 @@ pub mod delete_cidr_collection;
 
 /// Types for the `DeleteHealthCheck` operation.
 pub mod delete_health_check;
+
+/// Types for the `DeleteHealthCheckSource` operation.
+pub mod delete_health_check_source;
 
 /// Types for the `DeleteHostedZone` operation.
 pub mod delete_hosted_zone;
@@ -115,6 +121,9 @@ pub mod get_health_check_count;
 /// Types for the `GetHealthCheckLastFailureReason` operation.
 pub mod get_health_check_last_failure_reason;
 
+/// Types for the `GetHealthCheckSource` operation.
+pub mod get_health_check_source;
+
 /// Types for the `GetHealthCheckStatus` operation.
 pub mod get_health_check_status;
 
@@ -157,8 +166,14 @@ pub mod list_cidr_locations;
 /// Types for the `ListGeoLocations` operation.
 pub mod list_geo_locations;
 
+/// Types for the `ListHealthCheckSources` operation.
+pub mod list_health_check_sources;
+
 /// Types for the `ListHealthChecks` operation.
 pub mod list_health_checks;
+
+/// Types for the `ListHealthChecksBySource` operation.
+pub mod list_health_checks_by_source;
 
 /// Types for the `ListHostedZones` operation.
 pub mod list_hosted_zones;

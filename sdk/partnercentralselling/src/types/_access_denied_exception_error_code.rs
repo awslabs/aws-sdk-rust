@@ -13,6 +13,9 @@
 /// # let accessdeniedexceptionerrorcode = unimplemented!();
 /// match accessdeniedexceptionerrorcode {
 ///     AccessDeniedExceptionErrorCode::IncompatibleBenefitAwsPartnerState => { /* ... */ },
+///     AccessDeniedExceptionErrorCode::OpportunityBulkJobNotEnabled => { /* ... */ },
+///     AccessDeniedExceptionErrorCode::SearchOpportunitiesDataNotRoutedToDdb => { /* ... */ },
+///     AccessDeniedExceptionErrorCode::SearchOpportunitiesNotEnabled => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -35,7 +38,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The code that identifies why AWS Partner Central denied access to the requested operation.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -43,6 +46,12 @@
 pub enum AccessDeniedExceptionErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     IncompatibleBenefitAwsPartnerState,
+    #[allow(missing_docs)] // documentation missing in model
+    OpportunityBulkJobNotEnabled,
+    #[allow(missing_docs)] // documentation missing in model
+    SearchOpportunitiesDataNotRoutedToDdb,
+    #[allow(missing_docs)] // documentation missing in model
+    SearchOpportunitiesNotEnabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +60,9 @@ impl ::std::convert::From<&str> for AccessDeniedExceptionErrorCode {
     fn from(s: &str) -> Self {
         match s {
             "INCOMPATIBLE_BENEFIT_AWS_PARTNER_STATE" => AccessDeniedExceptionErrorCode::IncompatibleBenefitAwsPartnerState,
+            "OPPORTUNITY_BULK_JOB_NOT_ENABLED" => AccessDeniedExceptionErrorCode::OpportunityBulkJobNotEnabled,
+            "SEARCH_OPPORTUNITIES_DATA_NOT_ROUTED_TO_DDB" => AccessDeniedExceptionErrorCode::SearchOpportunitiesDataNotRoutedToDdb,
+            "SEARCH_OPPORTUNITIES_NOT_ENABLED" => AccessDeniedExceptionErrorCode::SearchOpportunitiesNotEnabled,
             other => AccessDeniedExceptionErrorCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +79,20 @@ impl AccessDeniedExceptionErrorCode {
     pub fn as_str(&self) -> &str {
         match self {
             AccessDeniedExceptionErrorCode::IncompatibleBenefitAwsPartnerState => "INCOMPATIBLE_BENEFIT_AWS_PARTNER_STATE",
+            AccessDeniedExceptionErrorCode::OpportunityBulkJobNotEnabled => "OPPORTUNITY_BULK_JOB_NOT_ENABLED",
+            AccessDeniedExceptionErrorCode::SearchOpportunitiesDataNotRoutedToDdb => "SEARCH_OPPORTUNITIES_DATA_NOT_ROUTED_TO_DDB",
+            AccessDeniedExceptionErrorCode::SearchOpportunitiesNotEnabled => "SEARCH_OPPORTUNITIES_NOT_ENABLED",
             AccessDeniedExceptionErrorCode::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["INCOMPATIBLE_BENEFIT_AWS_PARTNER_STATE"]
+        &[
+            "INCOMPATIBLE_BENEFIT_AWS_PARTNER_STATE",
+            "OPPORTUNITY_BULK_JOB_NOT_ENABLED",
+            "SEARCH_OPPORTUNITIES_DATA_NOT_ROUTED_TO_DDB",
+            "SEARCH_OPPORTUNITIES_NOT_ENABLED",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for AccessDeniedExceptionErrorCode {
@@ -96,6 +116,9 @@ impl ::std::fmt::Display for AccessDeniedExceptionErrorCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AccessDeniedExceptionErrorCode::IncompatibleBenefitAwsPartnerState => write!(f, "INCOMPATIBLE_BENEFIT_AWS_PARTNER_STATE"),
+            AccessDeniedExceptionErrorCode::OpportunityBulkJobNotEnabled => write!(f, "OPPORTUNITY_BULK_JOB_NOT_ENABLED"),
+            AccessDeniedExceptionErrorCode::SearchOpportunitiesDataNotRoutedToDdb => write!(f, "SEARCH_OPPORTUNITIES_DATA_NOT_ROUTED_TO_DDB"),
+            AccessDeniedExceptionErrorCode::SearchOpportunitiesNotEnabled => write!(f, "SEARCH_OPPORTUNITIES_NOT_ENABLED"),
             AccessDeniedExceptionErrorCode::Unknown(value) => write!(f, "{value}"),
         }
     }

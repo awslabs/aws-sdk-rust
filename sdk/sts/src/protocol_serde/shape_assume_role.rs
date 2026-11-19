@@ -33,6 +33,24 @@ pub fn de_assume_role_http_error(
             }
             tmp
         }),
+        "InvalidContextAssertion" => crate::operation::assume_role::AssumeRoleError::InvalidContextAssertionException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidContextAssertionExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_context_assertion_exception::de_invalid_context_assertion_exception_xml_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::assume_role::AssumeRoleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "MalformedPolicyDocument" => crate::operation::assume_role::AssumeRoleError::MalformedPolicyDocumentException({
             #[allow(unused_mut)]
             let mut tmp = {

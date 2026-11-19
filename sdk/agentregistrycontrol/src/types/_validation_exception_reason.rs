@@ -17,6 +17,7 @@
 ///     ValidationExceptionReason::FieldValidationFailed => { /* ... */ },
 ///     ValidationExceptionReason::IdempotentParameterMismatchException => { /* ... */ },
 ///     ValidationExceptionReason::ResourceConflict => { /* ... */ },
+///     ValidationExceptionReason::UnsupportedInRegion => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -55,6 +56,8 @@ pub enum ValidationExceptionReason {
     IdempotentParameterMismatchException,
     #[allow(missing_docs)] // documentation missing in model
     ResourceConflict,
+    #[allow(missing_docs)] // documentation missing in model
+    UnsupportedInRegion,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
             "FieldValidationFailed" => ValidationExceptionReason::FieldValidationFailed,
             "IdempotentParameterMismatchException" => ValidationExceptionReason::IdempotentParameterMismatchException,
             "ResourceConflict" => ValidationExceptionReason::ResourceConflict,
+            "UnsupportedInRegion" => ValidationExceptionReason::UnsupportedInRegion,
             other => ValidationExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -87,6 +91,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::FieldValidationFailed => "FieldValidationFailed",
             ValidationExceptionReason::IdempotentParameterMismatchException => "IdempotentParameterMismatchException",
             ValidationExceptionReason::ResourceConflict => "ResourceConflict",
+            ValidationExceptionReason::UnsupportedInRegion => "UnsupportedInRegion",
             ValidationExceptionReason::Unknown(value) => value.as_str(),
         }
     }
@@ -98,6 +103,7 @@ impl ValidationExceptionReason {
             "FieldValidationFailed",
             "IdempotentParameterMismatchException",
             "ResourceConflict",
+            "UnsupportedInRegion",
         ]
     }
 }
@@ -126,6 +132,7 @@ impl ::std::fmt::Display for ValidationExceptionReason {
             ValidationExceptionReason::FieldValidationFailed => write!(f, "FieldValidationFailed"),
             ValidationExceptionReason::IdempotentParameterMismatchException => write!(f, "IdempotentParameterMismatchException"),
             ValidationExceptionReason::ResourceConflict => write!(f, "ResourceConflict"),
+            ValidationExceptionReason::UnsupportedInRegion => write!(f, "UnsupportedInRegion"),
             ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),
         }
     }

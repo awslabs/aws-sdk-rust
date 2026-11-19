@@ -106,6 +106,16 @@ static UPDATEDISTRIBUTIONTENANTINPUT_MEMBER_ENABLED: ::aws_smithy_schema::Schema
     "Enabled",
     8,
 );
+static UPDATEDISTRIBUTIONTENANTINPUT_MEMBER_ON_DOMAIN_TAKEOVER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudfront.synthetic#UpdateDistributionTenantInput$OnDomainTakeover",
+        "com.amazonaws.cloudfront.synthetic",
+        "UpdateDistributionTenantInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OnDomainTakeover",
+    9,
+);
 static UPDATEDISTRIBUTIONTENANTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.cloudfront.synthetic#UpdateDistributionTenantInput",
@@ -123,6 +133,7 @@ static UPDATEDISTRIBUTIONTENANTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static
         &UPDATEDISTRIBUTIONTENANTINPUT_MEMBER_IF_MATCH,
         &UPDATEDISTRIBUTIONTENANTINPUT_MEMBER_MANAGED_CERTIFICATE_REQUEST,
         &UPDATEDISTRIBUTIONTENANTINPUT_MEMBER_ENABLED,
+        &UPDATEDISTRIBUTIONTENANTINPUT_MEMBER_ON_DOMAIN_TAKEOVER,
     ],
 )
 .with_http(aws_smithy_schema::traits::HttpTrait::new(
@@ -188,6 +199,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::update
         }
         if let Some(ref val) = self.enabled {
             ser.write_boolean(&UPDATEDISTRIBUTIONTENANTINPUT_MEMBER_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.on_domain_takeover {
+            ser.write_string(&UPDATEDISTRIBUTIONTENANTINPUT_MEMBER_ON_DOMAIN_TAKEOVER, val.as_str())?;
         }
         Ok(())
     }
@@ -281,6 +295,13 @@ impl crate::operation::update_distribution_tenant::builders::UpdateDistributionT
                         deser.read_null()?;
                     } else {
                         self.enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.on_domain_takeover = Some(crate::types::OnDomainTakeover::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}

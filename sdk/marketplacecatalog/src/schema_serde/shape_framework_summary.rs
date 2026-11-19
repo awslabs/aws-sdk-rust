@@ -19,6 +19,26 @@ static FRAMEWORKSUMMARY_MEMBER_CONTAINERSECURITYSUMMARY: ::aws_smithy_schema::Sc
     "ContainerSecuritySummary",
     1,
 );
+static FRAMEWORKSUMMARY_MEMBER_LISTINGQUALITYSUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacecatalog#FrameworkSummary$ListingQualitySummary",
+        "com.amazonaws.marketplacecatalog",
+        "FrameworkSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ListingQualitySummary",
+    2,
+);
+static FRAMEWORKSUMMARY_MEMBER_LISTINGRECOMMENDATIONSSUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacecatalog#FrameworkSummary$ListingRecommendationsSummary",
+        "com.amazonaws.marketplacecatalog",
+        "FrameworkSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ListingRecommendationsSummary",
+    3,
+);
 static FRAMEWORKSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.marketplacecatalog#FrameworkSummary",
@@ -29,6 +49,8 @@ static FRAMEWORKSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smi
     &[
         &FRAMEWORKSUMMARY_MEMBER_AMISECURITYSUMMARY,
         &FRAMEWORKSUMMARY_MEMBER_CONTAINERSECURITYSUMMARY,
+        &FRAMEWORKSUMMARY_MEMBER_LISTINGQUALITYSUMMARY,
+        &FRAMEWORKSUMMARY_MEMBER_LISTINGRECOMMENDATIONSSUMMARY,
     ],
 );
 impl crate::types::FrameworkSummary {
@@ -51,6 +73,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::FrameworkS
             }
             Self::ContainerSecuritySummary(val) => {
                 ser.write_struct(&FRAMEWORKSUMMARY_MEMBER_CONTAINERSECURITYSUMMARY, val)?;
+            }
+            Self::ListingQualitySummary(val) => {
+                ser.write_struct(&FRAMEWORKSUMMARY_MEMBER_LISTINGQUALITYSUMMARY, val)?;
+            }
+            Self::ListingRecommendationsSummary(val) => {
+                ser.write_struct(&FRAMEWORKSUMMARY_MEMBER_LISTINGRECOMMENDATIONSSUMMARY, val)?;
             }
             Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
         }
@@ -75,6 +103,8 @@ impl crate::types::FrameworkSummary {
             result = ::std::option::Option::Some(match member.member_index() {
                 Some(0) => Self::AmiSecuritySummary(crate::types::AmiSecuritySummary::deserialize(deser)?),
                 Some(1) => Self::ContainerSecuritySummary(crate::types::ContainerSecuritySummary::deserialize(deser)?),
+                Some(2) => Self::ListingQualitySummary(crate::types::ListingQualitySummary::deserialize(deser)?),
+                Some(3) => Self::ListingRecommendationsSummary(crate::types::ListingRecommendationsSummary::deserialize(deser)?),
                 _ => Self::Unknown,
             });
             Ok(())

@@ -55,10 +55,16 @@ pub struct DefaultAuthSchemeResolver {
 impl Default for DefaultAuthSchemeResolver {
     fn default() -> Self {
         Self {
-            service_defaults: vec![::aws_smithy_runtime_api::client::auth::AuthSchemeOption::builder()
-                .scheme_id(::aws_runtime::auth::sigv4::SCHEME_ID)
-                .build()
-                .expect("required fields set")],
+            service_defaults: vec![
+                ::aws_smithy_runtime_api::client::auth::AuthSchemeOption::builder()
+                    .scheme_id(::aws_runtime::auth::sigv4::SCHEME_ID)
+                    .build()
+                    .expect("required fields set"),
+                ::aws_smithy_runtime_api::client::auth::AuthSchemeOption::builder()
+                    .scheme_id(::aws_smithy_runtime_api::client::auth::http::HTTP_BEARER_AUTH_SCHEME_ID)
+                    .build()
+                    .expect("required fields set"),
+            ],
             operation_overrides: ::std::collections::HashMap::new(),
         }
     }

@@ -291,4 +291,18 @@ impl UpdateProfileFluentBuilder {
     pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_alias_name()
     }
+    /// <p>The trusted identity propagation (TIP) settings for the profile. The settings that you specify replace the current settings, and a field that you omit returns to its default. If you omit this parameter, the TIP settings don't change.</p>
+    pub fn tip_configuration(mut self, input: crate::types::TipConfiguration) -> Self {
+        self.inner = self.inner.tip_configuration(input);
+        self
+    }
+    /// <p>The trusted identity propagation (TIP) settings for the profile. The settings that you specify replace the current settings, and a field that you omit returns to its default. If you omit this parameter, the TIP settings don't change.</p>
+    pub fn set_tip_configuration(mut self, input: ::std::option::Option<crate::types::TipConfiguration>) -> Self {
+        self.inner = self.inner.set_tip_configuration(input);
+        self
+    }
+    /// <p>The trusted identity propagation (TIP) settings for the profile. The settings that you specify replace the current settings, and a field that you omit returns to its default. If you omit this parameter, the TIP settings don't change.</p>
+    pub fn get_tip_configuration(&self) -> &::std::option::Option<crate::types::TipConfiguration> {
+        self.inner.get_tip_configuration()
+    }
 }

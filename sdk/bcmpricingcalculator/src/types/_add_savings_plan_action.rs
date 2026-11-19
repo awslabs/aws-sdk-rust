@@ -6,7 +6,7 @@
 pub struct AddSavingsPlanAction {
     /// <p>The ID of the Savings Plan offering to add. For more information, see <a href="https://docs.aws.amazon.com/savingsplans/latest/APIReference/API_DescribeSavingsPlansOfferings.html"> DescribeSavingsPlansOfferings</a>.</p>
     pub savings_plan_offering_id: ::std::option::Option<::std::string::String>,
-    /// <p>The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
+    /// <p>The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million. You can't specify more than five digits after the decimal point.</p>
     pub commitment: ::std::option::Option<f64>,
 }
 impl AddSavingsPlanAction {
@@ -14,7 +14,7 @@ impl AddSavingsPlanAction {
     pub fn savings_plan_offering_id(&self) -> ::std::option::Option<&str> {
         self.savings_plan_offering_id.as_deref()
     }
-    /// <p>The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
+    /// <p>The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million. You can't specify more than five digits after the decimal point.</p>
     pub fn commitment(&self) -> ::std::option::Option<f64> {
         self.commitment
     }
@@ -48,17 +48,17 @@ impl AddSavingsPlanActionBuilder {
     pub fn get_savings_plan_offering_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.savings_plan_offering_id
     }
-    /// <p>The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
+    /// <p>The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million. You can't specify more than five digits after the decimal point.</p>
     pub fn commitment(mut self, input: f64) -> Self {
         self.commitment = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
+    /// <p>The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million. You can't specify more than five digits after the decimal point.</p>
     pub fn set_commitment(mut self, input: ::std::option::Option<f64>) -> Self {
         self.commitment = input;
         self
     }
-    /// <p>The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million. You cannot specify more than five digits after the decimal point.</p>
+    /// <p>The hourly commitment, in the same currency of the <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million. You can't specify more than five digits after the decimal point.</p>
     pub fn get_commitment(&self) -> &::std::option::Option<f64> {
         &self.commitment
     }

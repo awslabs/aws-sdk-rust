@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescriptorSourceFromUrl {
-    /// <p>The URL from which the descriptor content is retrieved.</p>
+    /// <p>The URL from which the descriptor content is retrieved. For an agent skill that synchronizes its SKILL.md from GitHub, this is the GitHub folder URL. The data plane doesn't return Amazon S3 (<code>s3://</code>) source URLs.</p>
     pub url: ::std::string::String,
 }
 impl DescriptorSourceFromUrl {
-    /// <p>The URL from which the descriptor content is retrieved.</p>
+    /// <p>The URL from which the descriptor content is retrieved. For an agent skill that synchronizes its SKILL.md from GitHub, this is the GitHub folder URL. The data plane doesn't return Amazon S3 (<code>s3://</code>) source URLs.</p>
     pub fn url(&self) -> &str {
         use std::ops::Deref;
         self.url.deref()
@@ -28,18 +28,18 @@ pub struct DescriptorSourceFromUrlBuilder {
     pub(crate) url: ::std::option::Option<::std::string::String>,
 }
 impl DescriptorSourceFromUrlBuilder {
-    /// <p>The URL from which the descriptor content is retrieved.</p>
+    /// <p>The URL from which the descriptor content is retrieved. For an agent skill that synchronizes its SKILL.md from GitHub, this is the GitHub folder URL. The data plane doesn't return Amazon S3 (<code>s3://</code>) source URLs.</p>
     /// This field is required.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL from which the descriptor content is retrieved.</p>
+    /// <p>The URL from which the descriptor content is retrieved. For an agent skill that synchronizes its SKILL.md from GitHub, this is the GitHub folder URL. The data plane doesn't return Amazon S3 (<code>s3://</code>) source URLs.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
-    /// <p>The URL from which the descriptor content is retrieved.</p>
+    /// <p>The URL from which the descriptor content is retrieved. For an agent skill that synchronizes its SKILL.md from GitHub, this is the GitHub folder URL. The data plane doesn't return Amazon S3 (<code>s3://</code>) source URLs.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }

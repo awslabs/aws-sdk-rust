@@ -21,6 +21,8 @@ pub struct GetLinkRoutingRuleOutput {
     pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>A map of the key-value pairs for the tag or tags assigned to the specified resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    pub error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     _request_id: Option<String>,
 }
 impl GetLinkRoutingRuleOutput {
@@ -63,6 +65,12 @@ impl GetLinkRoutingRuleOutput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_details.is_none()`.
+    pub fn error_details(&self) -> &[crate::types::ErrorDetail] {
+        self.error_details.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetLinkRoutingRuleOutput {
     fn request_id(&self) -> Option<&str> {
@@ -89,6 +97,7 @@ pub struct GetLinkRoutingRuleOutputBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     _request_id: Option<String>,
 }
 impl GetLinkRoutingRuleOutputBuilder {
@@ -232,6 +241,26 @@ impl GetLinkRoutingRuleOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
+    /// Appends an item to `error_details`.
+    ///
+    /// To override the contents of this collection use [`set_error_details`](Self::set_error_details).
+    ///
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    pub fn error_details(mut self, input: crate::types::ErrorDetail) -> Self {
+        let mut v = self.error_details.unwrap_or_default();
+        v.push(input);
+        self.error_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    pub fn set_error_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>) -> Self {
+        self.error_details = input;
+        self
+    }
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    pub fn get_error_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
+        &self.error_details
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -299,6 +328,7 @@ impl GetLinkRoutingRuleOutputBuilder {
                 )
             })?,
             tags: self.tags,
+            error_details: self.error_details,
             _request_id: self._request_id,
         })
     }

@@ -13,10 +13,15 @@
 /// # let metric = unimplemented!();
 /// match metric {
 ///     Metric::AmortizedCost => { /* ... */ },
+///     Metric::BilledCost => { /* ... */ },
 ///     Metric::BlendedCost => { /* ... */ },
+///     Metric::ContractedCost => { /* ... */ },
+///     Metric::ListCost => { /* ... */ },
 ///     Metric::NetAmortizedCost => { /* ... */ },
 ///     Metric::NetUnblendedCost => { /* ... */ },
 ///     Metric::NormalizedUsageAmount => { /* ... */ },
+///     Metric::PublicEquivalentBilledCost => { /* ... */ },
+///     Metric::PublicOnDemandCost => { /* ... */ },
 ///     Metric::UnblendedCost => { /* ... */ },
 ///     Metric::UsageQuantity => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -50,13 +55,23 @@ pub enum Metric {
     #[allow(missing_docs)] // documentation missing in model
     AmortizedCost,
     #[allow(missing_docs)] // documentation missing in model
+    BilledCost,
+    #[allow(missing_docs)] // documentation missing in model
     BlendedCost,
+    #[allow(missing_docs)] // documentation missing in model
+    ContractedCost,
+    #[allow(missing_docs)] // documentation missing in model
+    ListCost,
     #[allow(missing_docs)] // documentation missing in model
     NetAmortizedCost,
     #[allow(missing_docs)] // documentation missing in model
     NetUnblendedCost,
     #[allow(missing_docs)] // documentation missing in model
     NormalizedUsageAmount,
+    #[allow(missing_docs)] // documentation missing in model
+    PublicEquivalentBilledCost,
+    #[allow(missing_docs)] // documentation missing in model
+    PublicOnDemandCost,
     #[allow(missing_docs)] // documentation missing in model
     UnblendedCost,
     #[allow(missing_docs)] // documentation missing in model
@@ -69,10 +84,15 @@ impl ::std::convert::From<&str> for Metric {
     fn from(s: &str) -> Self {
         match s {
             "AMORTIZED_COST" => Metric::AmortizedCost,
+            "BILLED_COST" => Metric::BilledCost,
             "BLENDED_COST" => Metric::BlendedCost,
+            "CONTRACTED_COST" => Metric::ContractedCost,
+            "LIST_COST" => Metric::ListCost,
             "NET_AMORTIZED_COST" => Metric::NetAmortizedCost,
             "NET_UNBLENDED_COST" => Metric::NetUnblendedCost,
             "NORMALIZED_USAGE_AMOUNT" => Metric::NormalizedUsageAmount,
+            "PUBLIC_EQUIVALENT_BILLED_COST" => Metric::PublicEquivalentBilledCost,
+            "PUBLIC_ON_DEMAND_COST" => Metric::PublicOnDemandCost,
             "UNBLENDED_COST" => Metric::UnblendedCost,
             "USAGE_QUANTITY" => Metric::UsageQuantity,
             other => Metric::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -91,10 +111,15 @@ impl Metric {
     pub fn as_str(&self) -> &str {
         match self {
             Metric::AmortizedCost => "AMORTIZED_COST",
+            Metric::BilledCost => "BILLED_COST",
             Metric::BlendedCost => "BLENDED_COST",
+            Metric::ContractedCost => "CONTRACTED_COST",
+            Metric::ListCost => "LIST_COST",
             Metric::NetAmortizedCost => "NET_AMORTIZED_COST",
             Metric::NetUnblendedCost => "NET_UNBLENDED_COST",
             Metric::NormalizedUsageAmount => "NORMALIZED_USAGE_AMOUNT",
+            Metric::PublicEquivalentBilledCost => "PUBLIC_EQUIVALENT_BILLED_COST",
+            Metric::PublicOnDemandCost => "PUBLIC_ON_DEMAND_COST",
             Metric::UnblendedCost => "UNBLENDED_COST",
             Metric::UsageQuantity => "USAGE_QUANTITY",
             Metric::Unknown(value) => value.as_str(),
@@ -104,10 +129,15 @@ impl Metric {
     pub const fn values() -> &'static [&'static str] {
         &[
             "AMORTIZED_COST",
+            "BILLED_COST",
             "BLENDED_COST",
+            "CONTRACTED_COST",
+            "LIST_COST",
             "NET_AMORTIZED_COST",
             "NET_UNBLENDED_COST",
             "NORMALIZED_USAGE_AMOUNT",
+            "PUBLIC_EQUIVALENT_BILLED_COST",
+            "PUBLIC_ON_DEMAND_COST",
             "UNBLENDED_COST",
             "USAGE_QUANTITY",
         ]
@@ -134,10 +164,15 @@ impl ::std::fmt::Display for Metric {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             Metric::AmortizedCost => write!(f, "AMORTIZED_COST"),
+            Metric::BilledCost => write!(f, "BILLED_COST"),
             Metric::BlendedCost => write!(f, "BLENDED_COST"),
+            Metric::ContractedCost => write!(f, "CONTRACTED_COST"),
+            Metric::ListCost => write!(f, "LIST_COST"),
             Metric::NetAmortizedCost => write!(f, "NET_AMORTIZED_COST"),
             Metric::NetUnblendedCost => write!(f, "NET_UNBLENDED_COST"),
             Metric::NormalizedUsageAmount => write!(f, "NORMALIZED_USAGE_AMOUNT"),
+            Metric::PublicEquivalentBilledCost => write!(f, "PUBLIC_EQUIVALENT_BILLED_COST"),
+            Metric::PublicOnDemandCost => write!(f, "PUBLIC_ON_DEMAND_COST"),
             Metric::UnblendedCost => write!(f, "UNBLENDED_COST"),
             Metric::UsageQuantity => write!(f, "USAGE_QUANTITY"),
             Metric::Unknown(value) => write!(f, "{value}"),

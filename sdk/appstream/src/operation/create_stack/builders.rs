@@ -327,6 +327,20 @@ impl CreateStackFluentBuilder {
     pub fn get_content_redirection(&self) -> &::std::option::Option<crate::types::ContentRedirection> {
         self.inner.get_content_redirection()
     }
+    /// <p>Configuration for WebAuthn redirection between the streaming session and the user's local device. Use ProcessCompatibilityList to specify which processes can use WebAuthn redirection on Windows fleets.</p>
+    pub fn web_authn_redirection(mut self, input: crate::types::WebAuthnRedirection) -> Self {
+        self.inner = self.inner.web_authn_redirection(input);
+        self
+    }
+    /// <p>Configuration for WebAuthn redirection between the streaming session and the user's local device. Use ProcessCompatibilityList to specify which processes can use WebAuthn redirection on Windows fleets.</p>
+    pub fn set_web_authn_redirection(mut self, input: ::std::option::Option<crate::types::WebAuthnRedirection>) -> Self {
+        self.inner = self.inner.set_web_authn_redirection(input);
+        self
+    }
+    /// <p>Configuration for WebAuthn redirection between the streaming session and the user's local device. Use ProcessCompatibilityList to specify which processes can use WebAuthn redirection on Windows fleets.</p>
+    pub fn get_web_authn_redirection(&self) -> &::std::option::Option<crate::types::WebAuthnRedirection> {
+        self.inner.get_web_authn_redirection()
+    }
     /// <p>The configuration for agent access on the stack. If specified, agent access is enabled for the stack.</p>
     pub fn agent_access_config(mut self, input: crate::types::AgentAccessConfig) -> Self {
         self.inner = self.inner.agent_access_config(input);

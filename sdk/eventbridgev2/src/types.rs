@@ -11,6 +11,8 @@ pub use crate::types::_event_source_configuration::EventSourceConfiguration;
 
 pub use crate::types::_event_source_state::EventSourceState;
 
+pub use crate::types::_event_source_details::EventSourceDetails;
+
 pub use crate::types::_invoke_configuration::InvokeConfiguration;
 
 pub use crate::types::_filter_configuration::FilterConfiguration;
@@ -33,9 +35,13 @@ pub use crate::types::_log_configuration::LogConfiguration;
 
 pub use crate::types::_subscriber_state::SubscriberState;
 
+pub use crate::types::_subscriber_details::SubscriberDetails;
+
 pub use crate::types::_deduplication_configuration::DeduplicationConfiguration;
 
 pub use crate::types::_schema_registry_configuration::SchemaRegistryConfiguration;
+
+pub use crate::types::_webhook_credential::WebhookCredential;
 
 pub use crate::types::_resume_position::ResumePosition;
 
@@ -44,6 +50,10 @@ pub use crate::types::_update_invoke_configuration::UpdateInvokeConfiguration;
 pub use crate::types::_aws_service_events_source_configuration::AwsServiceEventsSourceConfiguration;
 
 pub use crate::types::_partner_events_source_configuration::PartnerEventsSourceConfiguration;
+
+pub use crate::types::_webhook_events_source_configuration::WebhookEventsSourceConfiguration;
+
+pub use crate::types::_webhook_details::WebhookDetails;
 
 pub use crate::types::_lambda_parameters::LambdaParameters;
 
@@ -61,6 +71,8 @@ pub use crate::types::_universal_target_parameters::UniversalTargetParameters;
 
 pub use crate::types::_event_bus_v2_parameters::EventBusV2Parameters;
 
+pub use crate::types::_msk_parameters::MskParameters;
+
 pub use crate::types::_filter_language::FilterLanguage;
 
 pub use crate::types::_point_type::PointType;
@@ -74,6 +86,8 @@ pub use crate::types::_retry_strategy::RetryStrategy;
 pub use crate::types::_log_level::LogLevel;
 
 pub use crate::types::_include_payload::IncludePayload;
+
+pub use crate::types::_msk_details::MskDetails;
 
 pub use crate::types::_event_bus_summary::EventBusSummary;
 
@@ -95,11 +109,23 @@ pub use crate::types::_confluent_public_registry_configuration::ConfluentPublicR
 
 pub use crate::types::_put_raw_events_result_entry::PutRawEventsResultEntry;
 
+pub use crate::types::_webhook_auth_configuration::WebhookAuthConfiguration;
+
+pub use crate::types::_webhook_deduplication_configuration::WebhookDeduplicationConfiguration;
+
 pub use crate::types::_invocation_type::InvocationType;
 
 pub use crate::types::_event_bus_v2_system_metadata::EventBusV2SystemMetadata;
 
+pub use crate::types::_msk_compression::MskCompression;
+
+pub use crate::types::_msk_acks::MskAcks;
+
+pub use crate::types::_msk_connectivity::MskConnectivity;
+
 pub use crate::types::_filter::Filter;
+
+pub use crate::types::_connectivity_state::ConnectivityState;
 
 pub use crate::types::_event_source_type::EventSourceType;
 
@@ -109,11 +135,29 @@ pub use crate::types::_success_code::SuccessCode;
 
 pub use crate::types::_put_raw_events_system_metadata::PutRawEventsSystemMetadata;
 
+pub use crate::types::_webhook_static_token_auth_configuration::WebhookStaticTokenAuthConfiguration;
+
+pub use crate::types::_webhook_basic_http_auth_configuration::WebhookBasicHttpAuthConfiguration;
+
+pub use crate::types::_webhook_hmac_auth_configuration::WebhookHmacAuthConfiguration;
+
+pub use crate::types::_webhook_deduplication_type::WebhookDeduplicationType;
+
 pub use crate::types::_sqs_message_attribute_value::SqsMessageAttributeValue;
 
 pub use crate::types::_sns_message_attribute_value::SnsMessageAttributeValue;
 
+pub use crate::types::_msk_header::MskHeader;
+
 pub use crate::types::_filter_scope::FilterScope;
+
+pub use crate::types::_webhook_hmac_algorithm::WebhookHmacAlgorithm;
+
+pub use crate::types::_webhook_hmac_encoding::WebhookHmacEncoding;
+
+pub use crate::types::_webhook_signed_message_composition::WebhookSignedMessageComposition;
+
+pub use crate::types::_webhook_secret_encoding::WebhookSecretEncoding;
 
 mod _aws_service_events_source_configuration;
 
@@ -122,6 +166,8 @@ mod _batch_configuration;
 mod _bus_state;
 
 mod _confluent_public_registry_configuration;
+
+mod _connectivity_state;
 
 mod _deduplication_configuration;
 
@@ -136,6 +182,8 @@ mod _event_bus_v2_parameters;
 mod _event_bus_v2_system_metadata;
 
 mod _event_source_configuration;
+
+mod _event_source_details;
 
 mod _event_source_state;
 
@@ -168,6 +216,18 @@ mod _lambda_parameters;
 mod _log_configuration;
 
 mod _log_level;
+
+mod _msk_acks;
+
+mod _msk_compression;
+
+mod _msk_connectivity;
+
+mod _msk_details;
+
+mod _msk_header;
+
+mod _msk_parameters;
 
 mod _on_failure_configuration;
 
@@ -217,6 +277,8 @@ mod _storage_configuration;
 
 mod _storage_configuration_output;
 
+mod _subscriber_details;
+
 mod _subscriber_state;
 
 mod _subscriber_summary;
@@ -230,6 +292,32 @@ mod _transformer_type;
 mod _universal_target_parameters;
 
 mod _update_invoke_configuration;
+
+mod _webhook_auth_configuration;
+
+mod _webhook_basic_http_auth_configuration;
+
+mod _webhook_credential;
+
+mod _webhook_deduplication_configuration;
+
+mod _webhook_deduplication_type;
+
+mod _webhook_details;
+
+mod _webhook_events_source_configuration;
+
+mod _webhook_hmac_algorithm;
+
+mod _webhook_hmac_auth_configuration;
+
+mod _webhook_hmac_encoding;
+
+mod _webhook_secret_encoding;
+
+mod _webhook_signed_message_composition;
+
+mod _webhook_static_token_auth_configuration;
 
 /// Builders
 pub mod builders;

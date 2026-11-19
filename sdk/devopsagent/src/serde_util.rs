@@ -1547,6 +1547,21 @@ pub(crate) fn source_aws_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn source_aws_org_configuration_correct_errors(
+    mut builder: crate::types::builders::SourceAwsOrgConfigurationBuilder,
+) -> crate::types::builders::SourceAwsOrgConfigurationBuilder {
+    if builder.account_type.is_none() {
+        builder.account_type = "no value was set".parse::<crate::types::SourceAccountType>().ok()
+    }
+    if builder.organizational_unit.is_none() {
+        builder.organizational_unit = {
+            let builder = crate::types::builders::SourceAwsOrgUnitBuilder::default();
+            crate::serde_util::source_aws_org_unit_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn user_reference_correct_errors(
     mut builder: crate::types::builders::UserReferenceBuilder,
 ) -> crate::types::builders::UserReferenceBuilder {
@@ -1585,6 +1600,15 @@ pub(crate) fn slack_transmission_target_correct_errors(
             let builder = crate::types::builders::SlackChannelBuilder::default();
             crate::serde_util::slack_channel_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn source_aws_org_unit_correct_errors(
+    mut builder: crate::types::builders::SourceAwsOrgUnitBuilder,
+) -> crate::types::builders::SourceAwsOrgUnitBuilder {
+    if builder.organizational_unit_id.is_none() {
+        builder.organizational_unit_id = Some(Default::default())
     }
     builder
 }
@@ -1647,6 +1671,21 @@ pub(crate) fn time_range_schedule_correct_errors(
     }
     if builder.recurrence.is_none() {
         builder.recurrence = Some(crate::types::Recurrence::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn org_source_issue_correct_errors(
+    mut builder: crate::types::builders::OrgSourceIssueBuilder,
+) -> crate::types::builders::OrgSourceIssueBuilder {
+    if builder.reason_code.is_none() {
+        builder.reason_code = "no value was set".parse::<crate::types::OrgSourceAccountReasonCode>().ok()
+    }
+    if builder.account_count.is_none() {
+        builder.account_count = Some(Default::default())
+    }
+    if builder.account_ids.is_none() {
+        builder.account_ids = Some(Default::default())
     }
     builder
 }

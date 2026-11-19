@@ -49,6 +49,23 @@ pub fn de_list_marketplace_revenue_shares_http_error(
             };
             tmp
         }),
+        "ResourceNotFoundException" => {
+            crate::operation::list_marketplace_revenue_shares::ListMarketplaceRevenueSharesError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                    output =
+                        crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_cbor_err(_response_body, output)
+                            .map_err(crate::operation::list_marketplace_revenue_shares::ListMarketplaceRevenueSharesError::unhandled)?;
+                    let output = output.meta(generic);
+                    crate::serde_util::resource_not_found_exception_correct_errors(output)
+                        .build()
+                        .map_err(crate::operation::list_marketplace_revenue_shares::ListMarketplaceRevenueSharesError::unhandled)?
+                };
+                tmp
+            })
+        }
         "ThrottlingException" => crate::operation::list_marketplace_revenue_shares::ListMarketplaceRevenueSharesError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {

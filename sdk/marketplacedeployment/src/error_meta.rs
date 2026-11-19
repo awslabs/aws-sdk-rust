@@ -68,6 +68,133 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_deployment_configuration::GetDeploymentConfigurationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_deployment_configuration::GetDeploymentConfigurationError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_deployment_configuration::GetDeploymentConfigurationError> for Error {
+    fn from(err: crate::operation::get_deployment_configuration::GetDeploymentConfigurationError) -> Self {
+        match err {
+            crate::operation::get_deployment_configuration::GetDeploymentConfigurationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_deployment_configuration::GetDeploymentConfigurationError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_deployment_configuration::GetDeploymentConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_deployment_configuration::GetDeploymentConfigurationError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_deployment_configuration::GetDeploymentConfigurationError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_deployment_configuration::GetDeploymentConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_deployment_configuration_job::GetDeploymentConfigurationJobError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_deployment_configuration_job::GetDeploymentConfigurationJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_deployment_configuration_job::GetDeploymentConfigurationJobError> for Error {
+    fn from(err: crate::operation::get_deployment_configuration_job::GetDeploymentConfigurationJobError) -> Self {
+        match err {
+            crate::operation::get_deployment_configuration_job::GetDeploymentConfigurationJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_deployment_configuration_job::GetDeploymentConfigurationJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_deployment_configuration_job::GetDeploymentConfigurationJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_deployment_configuration_job::GetDeploymentConfigurationJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_deployment_configuration_job::GetDeploymentConfigurationJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_deployment_configuration_job::GetDeploymentConfigurationJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_deployment_configuration_jobs::ListDeploymentConfigurationJobsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_deployment_configuration_jobs::ListDeploymentConfigurationJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_deployment_configuration_jobs::ListDeploymentConfigurationJobsError> for Error {
+    fn from(err: crate::operation::list_deployment_configuration_jobs::ListDeploymentConfigurationJobsError) -> Self {
+        match err {
+            crate::operation::list_deployment_configuration_jobs::ListDeploymentConfigurationJobsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_deployment_configuration_jobs::ListDeploymentConfigurationJobsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_deployment_configuration_jobs::ListDeploymentConfigurationJobsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_deployment_configuration_jobs::ListDeploymentConfigurationJobsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_deployment_configuration_jobs::ListDeploymentConfigurationJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_tags_for_resource::ListTagsForResourceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -133,6 +260,56 @@ impl From<crate::operation::put_deployment_parameter::PutDeploymentParameterErro
             crate::operation::put_deployment_parameter::PutDeploymentParameterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::put_deployment_parameter::PutDeploymentParameterError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::put_deployment_parameter::PutDeploymentParameterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_deployment_configuration_job::StartDeploymentConfigurationJobError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_deployment_configuration_job::StartDeploymentConfigurationJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_deployment_configuration_job::StartDeploymentConfigurationJobError> for Error {
+    fn from(err: crate::operation::start_deployment_configuration_job::StartDeploymentConfigurationJobError) -> Self {
+        match err {
+            crate::operation::start_deployment_configuration_job::StartDeploymentConfigurationJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_deployment_configuration_job::StartDeploymentConfigurationJobError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_deployment_configuration_job::StartDeploymentConfigurationJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_deployment_configuration_job::StartDeploymentConfigurationJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_deployment_configuration_job::StartDeploymentConfigurationJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_deployment_configuration_job::StartDeploymentConfigurationJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_deployment_configuration_job::StartDeploymentConfigurationJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

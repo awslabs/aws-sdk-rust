@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevokeResourceInput {
-    /// ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The pattern is the revocable subset of TaggableResourceArn; buses are not revocable.
+    /// <p>ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The pattern is the revocable subset of TaggableResourceArn; buses are not revocable.</p>
     pub arn: ::std::option::Option<::std::string::String>,
 }
 impl RevokeResourceInput {
-    /// ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The pattern is the revocable subset of TaggableResourceArn; buses are not revocable.
+    /// <p>ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The pattern is the revocable subset of TaggableResourceArn; buses are not revocable.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct RevokeResourceInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl RevokeResourceInputBuilder {
-    /// ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The pattern is the revocable subset of TaggableResourceArn; buses are not revocable.
+    /// <p>ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The pattern is the revocable subset of TaggableResourceArn; buses are not revocable.</p>
     /// This field is required.
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The pattern is the revocable subset of TaggableResourceArn; buses are not revocable.
+    /// <p>ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The pattern is the revocable subset of TaggableResourceArn; buses are not revocable.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
-    /// ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The pattern is the revocable subset of TaggableResourceArn; buses are not revocable.
+    /// <p>ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The pattern is the revocable subset of TaggableResourceArn; buses are not revocable.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }

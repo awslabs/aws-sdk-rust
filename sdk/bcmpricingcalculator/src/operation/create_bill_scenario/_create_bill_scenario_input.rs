@@ -9,7 +9,7 @@ pub struct CreateBillScenarioInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The tags to apply to the bill scenario.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    /// <p>The setting for the reserved instance and savings plans group sharing used in this estimate.</p>
     pub group_sharing_preference: ::std::option::Option<crate::types::GroupSharingPreferenceEnum>,
     /// <p>The arn of the cost category used in the reserved and prioritized group sharing.</p>
     pub cost_category_group_sharing_preference_arn: ::std::option::Option<::std::string::String>,
@@ -27,7 +27,7 @@ impl CreateBillScenarioInput {
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    /// <p>The setting for the reserved instance and savings plans group sharing used in this estimate.</p>
     pub fn group_sharing_preference(&self) -> ::std::option::Option<&crate::types::GroupSharingPreferenceEnum> {
         self.group_sharing_preference.as_ref()
     }
@@ -103,17 +103,17 @@ impl CreateBillScenarioInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    /// <p>The setting for the reserved instance and savings plans group sharing used in this estimate.</p>
     pub fn group_sharing_preference(mut self, input: crate::types::GroupSharingPreferenceEnum) -> Self {
         self.group_sharing_preference = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    /// <p>The setting for the reserved instance and savings plans group sharing used in this estimate.</p>
     pub fn set_group_sharing_preference(mut self, input: ::std::option::Option<crate::types::GroupSharingPreferenceEnum>) -> Self {
         self.group_sharing_preference = input;
         self
     }
-    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    /// <p>The setting for the reserved instance and savings plans group sharing used in this estimate.</p>
     pub fn get_group_sharing_preference(&self) -> &::std::option::Option<crate::types::GroupSharingPreferenceEnum> {
         &self.group_sharing_preference
     }

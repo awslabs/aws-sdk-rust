@@ -13,6 +13,8 @@ pub struct UpdateLinkRoutingRuleInput {
     pub priority: ::std::option::Option<i32>,
     /// <p>The updated conditions for the routing rule. All specified fields must match for the rule to apply. At least one condition field must be set.</p>
     pub conditions: ::std::option::Option<crate::types::RuleCondition>,
+    /// <p>A unique, case-sensitive identifier for the request. The SDK generates one when you don't.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLinkRoutingRuleInput {
     /// <p>The unique identifier of the gateway.</p>
@@ -35,6 +37,10 @@ impl UpdateLinkRoutingRuleInput {
     pub fn conditions(&self) -> ::std::option::Option<&crate::types::RuleCondition> {
         self.conditions.as_ref()
     }
+    /// <p>A unique, case-sensitive identifier for the request. The SDK generates one when you don't.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl UpdateLinkRoutingRuleInput {
     /// Creates a new builder-style object to manufacture [`UpdateLinkRoutingRuleInput`](crate::operation::update_link_routing_rule::UpdateLinkRoutingRuleInput).
@@ -52,6 +58,7 @@ pub struct UpdateLinkRoutingRuleInputBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) priority: ::std::option::Option<i32>,
     pub(crate) conditions: ::std::option::Option<crate::types::RuleCondition>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLinkRoutingRuleInputBuilder {
     /// <p>The unique identifier of the gateway.</p>
@@ -129,6 +136,20 @@ impl UpdateLinkRoutingRuleInputBuilder {
     pub fn get_conditions(&self) -> &::std::option::Option<crate::types::RuleCondition> {
         &self.conditions
     }
+    /// <p>A unique, case-sensitive identifier for the request. The SDK generates one when you don't.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique, case-sensitive identifier for the request. The SDK generates one when you don't.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>A unique, case-sensitive identifier for the request. The SDK generates one when you don't.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Consumes the builder and constructs a [`UpdateLinkRoutingRuleInput`](crate::operation::update_link_routing_rule::UpdateLinkRoutingRuleInput).
     pub fn build(
         self,
@@ -140,6 +161,7 @@ impl UpdateLinkRoutingRuleInputBuilder {
             rule_id: self.rule_id,
             priority: self.priority,
             conditions: self.conditions,
+            client_token: self.client_token,
         })
     }
 }

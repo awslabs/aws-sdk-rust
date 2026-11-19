@@ -133,6 +133,9 @@ pub mod list_firewall_domain_lists;
 /// Types for the `ListFirewallDomains` operation.
 pub mod list_firewall_domains;
 
+/// Types for the `ListFirewallRuleDomains` operation.
+pub mod list_firewall_rule_domains;
+
 /// Types for the `ListFirewallRuleGroupAssociations` operation.
 pub mod list_firewall_rule_group_associations;
 

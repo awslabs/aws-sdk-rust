@@ -3,13 +3,23 @@ pub use crate::types::_credentials::Credentials;
 
 pub use crate::types::_assumed_role_user::AssumedRoleUser;
 
+pub use crate::types::_trusted_identity_propagation_context::TrustedIdentityPropagationContext;
+
 pub use crate::types::_policy_descriptor_type::PolicyDescriptorType;
 
 pub use crate::types::_federated_user::FederatedUser;
 
+pub use crate::types::_scoped_session::ScopedSession;
+
+pub use crate::types::_web_identity_token_subject_mode_type::WebIdentityTokenSubjectModeType;
+
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_provided_context::ProvidedContext;
+
+pub use crate::types::_origin_identity::OriginIdentity;
+
+pub use crate::types::_transaction_context::TransactionContext;
 
 mod _assumed_role_user;
 
@@ -17,11 +27,21 @@ mod _credentials;
 
 mod _federated_user;
 
+mod _origin_identity;
+
 mod _policy_descriptor_type;
 
 mod _provided_context;
 
+mod _scoped_session;
+
 mod _tag;
+
+mod _transaction_context;
+
+mod _trusted_identity_propagation_context;
+
+mod _web_identity_token_subject_mode_type;
 
 /// Builders
 pub mod builders;

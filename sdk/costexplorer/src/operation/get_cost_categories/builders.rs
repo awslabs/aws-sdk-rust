@@ -353,6 +353,16 @@ impl GetCostCategoriesFluentBuilder {
     /// <p><code>UsageQuantity</code></p></li>
     /// <li>
     /// <p><code>NormalizedUsageAmount</code></p></li>
+    /// <li>
+    /// <p><code>BilledCost</code></p></li>
+    /// <li>
+    /// <p><code>ContractedCost</code></p></li>
+    /// <li>
+    /// <p><code>ListCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicEquivalentBilledCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicOnDemandCost</code></p></li>
     /// </ul>
     /// <p>The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key values aren't supported.</p>
@@ -377,6 +387,16 @@ impl GetCostCategoriesFluentBuilder {
     /// <p><code>UsageQuantity</code></p></li>
     /// <li>
     /// <p><code>NormalizedUsageAmount</code></p></li>
+    /// <li>
+    /// <p><code>BilledCost</code></p></li>
+    /// <li>
+    /// <p><code>ContractedCost</code></p></li>
+    /// <li>
+    /// <p><code>ListCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicEquivalentBilledCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicOnDemandCost</code></p></li>
     /// </ul>
     /// <p>The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key values aren't supported.</p>
@@ -401,6 +421,16 @@ impl GetCostCategoriesFluentBuilder {
     /// <p><code>UsageQuantity</code></p></li>
     /// <li>
     /// <p><code>NormalizedUsageAmount</code></p></li>
+    /// <li>
+    /// <p><code>BilledCost</code></p></li>
+    /// <li>
+    /// <p><code>ContractedCost</code></p></li>
+    /// <li>
+    /// <p><code>ListCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicEquivalentBilledCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicOnDemandCost</code></p></li>
     /// </ul>
     /// <p>The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code> key values aren't supported.</p>

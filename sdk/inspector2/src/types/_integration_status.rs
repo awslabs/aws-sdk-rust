@@ -13,10 +13,16 @@
 /// # let integrationstatus = unimplemented!();
 /// match integrationstatus {
 ///     IntegrationStatus::Active => { /* ... */ },
+///     IntegrationStatus::DeleteFailed => { /* ... */ },
+///     IntegrationStatus::DeleteInProgress => { /* ... */ },
 ///     IntegrationStatus::Disabling => { /* ... */ },
+///     IntegrationStatus::EstablishingConnectionCompleted => { /* ... */ },
+///     IntegrationStatus::EstablishingConnectionFailed => { /* ... */ },
+///     IntegrationStatus::EstablishingConnectionInProgress => { /* ... */ },
 ///     IntegrationStatus::Inactive => { /* ... */ },
 ///     IntegrationStatus::InProgress => { /* ... */ },
 ///     IntegrationStatus::Pending => { /* ... */ },
+///     IntegrationStatus::PendingManifestCode => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -48,13 +54,25 @@ pub enum IntegrationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
+    DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    DeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Disabling,
+    #[allow(missing_docs)] // documentation missing in model
+    EstablishingConnectionCompleted,
+    #[allow(missing_docs)] // documentation missing in model
+    EstablishingConnectionFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    EstablishingConnectionInProgress,
     #[allow(missing_docs)] // documentation missing in model
     Inactive,
     #[allow(missing_docs)] // documentation missing in model
     InProgress,
     #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
+    PendingManifestCode,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,10 +81,16 @@ impl ::std::convert::From<&str> for IntegrationStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => IntegrationStatus::Active,
+            "DELETE_FAILED" => IntegrationStatus::DeleteFailed,
+            "DELETE_IN_PROGRESS" => IntegrationStatus::DeleteInProgress,
             "DISABLING" => IntegrationStatus::Disabling,
+            "ESTABLISHING_CONNECTION_COMPLETED" => IntegrationStatus::EstablishingConnectionCompleted,
+            "ESTABLISHING_CONNECTION_FAILED" => IntegrationStatus::EstablishingConnectionFailed,
+            "ESTABLISHING_CONNECTION_IN_PROGRESS" => IntegrationStatus::EstablishingConnectionInProgress,
             "INACTIVE" => IntegrationStatus::Inactive,
             "IN_PROGRESS" => IntegrationStatus::InProgress,
             "PENDING" => IntegrationStatus::Pending,
+            "PENDING_MANIFEST_CODE" => IntegrationStatus::PendingManifestCode,
             other => IntegrationStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -83,16 +107,34 @@ impl IntegrationStatus {
     pub fn as_str(&self) -> &str {
         match self {
             IntegrationStatus::Active => "ACTIVE",
+            IntegrationStatus::DeleteFailed => "DELETE_FAILED",
+            IntegrationStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
             IntegrationStatus::Disabling => "DISABLING",
+            IntegrationStatus::EstablishingConnectionCompleted => "ESTABLISHING_CONNECTION_COMPLETED",
+            IntegrationStatus::EstablishingConnectionFailed => "ESTABLISHING_CONNECTION_FAILED",
+            IntegrationStatus::EstablishingConnectionInProgress => "ESTABLISHING_CONNECTION_IN_PROGRESS",
             IntegrationStatus::Inactive => "INACTIVE",
             IntegrationStatus::InProgress => "IN_PROGRESS",
             IntegrationStatus::Pending => "PENDING",
+            IntegrationStatus::PendingManifestCode => "PENDING_MANIFEST_CODE",
             IntegrationStatus::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ACTIVE", "DISABLING", "INACTIVE", "IN_PROGRESS", "PENDING"]
+        &[
+            "ACTIVE",
+            "DELETE_FAILED",
+            "DELETE_IN_PROGRESS",
+            "DISABLING",
+            "ESTABLISHING_CONNECTION_COMPLETED",
+            "ESTABLISHING_CONNECTION_FAILED",
+            "ESTABLISHING_CONNECTION_IN_PROGRESS",
+            "INACTIVE",
+            "IN_PROGRESS",
+            "PENDING",
+            "PENDING_MANIFEST_CODE",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for IntegrationStatus {
@@ -116,10 +158,16 @@ impl ::std::fmt::Display for IntegrationStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IntegrationStatus::Active => write!(f, "ACTIVE"),
+            IntegrationStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
+            IntegrationStatus::DeleteInProgress => write!(f, "DELETE_IN_PROGRESS"),
             IntegrationStatus::Disabling => write!(f, "DISABLING"),
+            IntegrationStatus::EstablishingConnectionCompleted => write!(f, "ESTABLISHING_CONNECTION_COMPLETED"),
+            IntegrationStatus::EstablishingConnectionFailed => write!(f, "ESTABLISHING_CONNECTION_FAILED"),
+            IntegrationStatus::EstablishingConnectionInProgress => write!(f, "ESTABLISHING_CONNECTION_IN_PROGRESS"),
             IntegrationStatus::Inactive => write!(f, "INACTIVE"),
             IntegrationStatus::InProgress => write!(f, "IN_PROGRESS"),
             IntegrationStatus::Pending => write!(f, "PENDING"),
+            IntegrationStatus::PendingManifestCode => write!(f, "PENDING_MANIFEST_CODE"),
             IntegrationStatus::Unknown(value) => write!(f, "{value}"),
         }
     }

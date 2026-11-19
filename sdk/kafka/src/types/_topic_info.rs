@@ -14,6 +14,8 @@ pub struct TopicInfo {
     pub partition_count: ::std::option::Option<i32>,
     /// <p>Number of out-of-sync replicas for a topic.</p>
     pub out_of_sync_replica_count: ::std::option::Option<i32>,
+    /// <p>The broker IDs hosting replicas of this topic's partitions.</p>
+    pub replica_ids: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl TopicInfo {
     /// <p>The Amazon Resource Name (ARN) of the topic.</p>
@@ -36,6 +38,12 @@ impl TopicInfo {
     pub fn out_of_sync_replica_count(&self) -> ::std::option::Option<i32> {
         self.out_of_sync_replica_count
     }
+    /// <p>The broker IDs hosting replicas of this topic's partitions.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_ids.is_none()`.
+    pub fn replica_ids(&self) -> &[i32] {
+        self.replica_ids.as_deref().unwrap_or_default()
+    }
 }
 impl TopicInfo {
     /// Creates a new builder-style object to manufacture [`TopicInfo`](crate::types::TopicInfo).
@@ -53,6 +61,7 @@ pub struct TopicInfoBuilder {
     pub(crate) replication_factor: ::std::option::Option<i32>,
     pub(crate) partition_count: ::std::option::Option<i32>,
     pub(crate) out_of_sync_replica_count: ::std::option::Option<i32>,
+    pub(crate) replica_ids: ::std::option::Option<::std::vec::Vec<i32>>,
 }
 impl TopicInfoBuilder {
     /// <p>The Amazon Resource Name (ARN) of the topic.</p>
@@ -125,6 +134,26 @@ impl TopicInfoBuilder {
     pub fn get_out_of_sync_replica_count(&self) -> &::std::option::Option<i32> {
         &self.out_of_sync_replica_count
     }
+    /// Appends an item to `replica_ids`.
+    ///
+    /// To override the contents of this collection use [`set_replica_ids`](Self::set_replica_ids).
+    ///
+    /// <p>The broker IDs hosting replicas of this topic's partitions.</p>
+    pub fn replica_ids(mut self, input: i32) -> Self {
+        let mut v = self.replica_ids.unwrap_or_default();
+        v.push(input);
+        self.replica_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The broker IDs hosting replicas of this topic's partitions.</p>
+    pub fn set_replica_ids(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
+        self.replica_ids = input;
+        self
+    }
+    /// <p>The broker IDs hosting replicas of this topic's partitions.</p>
+    pub fn get_replica_ids(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.replica_ids
+    }
     /// Consumes the builder and constructs a [`TopicInfo`](crate::types::TopicInfo).
     pub fn build(self) -> crate::types::TopicInfo {
         crate::types::TopicInfo {
@@ -133,6 +162,7 @@ impl TopicInfoBuilder {
             replication_factor: self.replication_factor,
             partition_count: self.partition_count,
             out_of_sync_replica_count: self.out_of_sync_replica_count,
+            replica_ids: self.replica_ids,
         }
     }
 }

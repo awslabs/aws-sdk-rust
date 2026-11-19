@@ -322,9 +322,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetBillEstima
 pub enum GetBillEstimateError {
     /// <p>The requested data is currently unavailable.</p>
     DataUnavailableException(crate::types::error::DataUnavailableException),
-    /// <p>The specified resource was not found.</p>
+    /// <p>The specified resource wasn't found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>You do not have sufficient access to perform this action.</p>
+    /// <p>The request is denied because you don't have sufficient permissions to perform this operation. Verify that you have the required permissions and try again.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An internal error has occurred. Retry your request, but if the problem persists, contact Amazon Web Services support.</p>
     InternalServerException(crate::types::error::InternalServerException),

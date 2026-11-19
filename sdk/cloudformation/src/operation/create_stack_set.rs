@@ -232,6 +232,21 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateStackSe
                 captured.insert("ClientRequestToken", value);
             }
         }
+        if requested.should_capture("ExecutionRoleTemplateBody") {
+            if let ::std::option::Option::Some(value) = input.execution_role_template_body.as_deref() {
+                captured.insert("ExecutionRoleTemplateBody", value);
+            }
+        }
+        if requested.should_capture("ExecutionRoleTemplateUrl") {
+            if let ::std::option::Option::Some(value) = input.execution_role_template_url.as_deref() {
+                captured.insert("ExecutionRoleTemplateUrl", value);
+            }
+        }
+        if requested.should_capture("StackSetOutputBucket") {
+            if let ::std::option::Option::Some(value) = input.stack_set_output_bucket.as_deref() {
+                captured.insert("StackSetOutputBucket", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())

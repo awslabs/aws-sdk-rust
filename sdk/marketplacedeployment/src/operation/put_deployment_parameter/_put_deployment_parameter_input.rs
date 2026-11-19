@@ -9,7 +9,7 @@ pub struct PutDeploymentParameterInput {
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the agreement.</p>
     pub agreement_id: ::std::option::Option<::std::string::String>,
-    /// <p>The deployment parameter targeted to the acceptor of an agreement for which to create the AWS Secret Manager resource.</p>
+    /// <p>The deployment parameter targeted to the acceptor of an agreement for which to create the AWS Secrets Manager resource.</p>
     pub deployment_parameter: ::std::option::Option<crate::types::DeploymentParameterInput>,
     /// <p>A map of key-value pairs, where each pair represents a tag saved to the resource. Tags will only be applied for create operations, and they'll be ignored if the resource already exists.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -33,7 +33,7 @@ impl PutDeploymentParameterInput {
     pub fn agreement_id(&self) -> ::std::option::Option<&str> {
         self.agreement_id.as_deref()
     }
-    /// <p>The deployment parameter targeted to the acceptor of an agreement for which to create the AWS Secret Manager resource.</p>
+    /// <p>The deployment parameter targeted to the acceptor of an agreement for which to create the AWS Secrets Manager resource.</p>
     pub fn deployment_parameter(&self) -> ::std::option::Option<&crate::types::DeploymentParameterInput> {
         self.deployment_parameter.as_ref()
     }
@@ -117,18 +117,18 @@ impl PutDeploymentParameterInputBuilder {
     pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agreement_id
     }
-    /// <p>The deployment parameter targeted to the acceptor of an agreement for which to create the AWS Secret Manager resource.</p>
+    /// <p>The deployment parameter targeted to the acceptor of an agreement for which to create the AWS Secrets Manager resource.</p>
     /// This field is required.
     pub fn deployment_parameter(mut self, input: crate::types::DeploymentParameterInput) -> Self {
         self.deployment_parameter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The deployment parameter targeted to the acceptor of an agreement for which to create the AWS Secret Manager resource.</p>
+    /// <p>The deployment parameter targeted to the acceptor of an agreement for which to create the AWS Secrets Manager resource.</p>
     pub fn set_deployment_parameter(mut self, input: ::std::option::Option<crate::types::DeploymentParameterInput>) -> Self {
         self.deployment_parameter = input;
         self
     }
-    /// <p>The deployment parameter targeted to the acceptor of an agreement for which to create the AWS Secret Manager resource.</p>
+    /// <p>The deployment parameter targeted to the acceptor of an agreement for which to create the AWS Secrets Manager resource.</p>
     pub fn get_deployment_parameter(&self) -> &::std::option::Option<crate::types::DeploymentParameterInput> {
         &self.deployment_parameter
     }

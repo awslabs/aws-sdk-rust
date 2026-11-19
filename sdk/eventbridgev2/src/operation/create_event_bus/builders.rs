@@ -22,7 +22,7 @@ impl crate::operation::create_event_bus::builders::CreateEventBusInputBuilder {
 }
 /// Fluent builder constructing a request to `CreateEventBus`.
 ///
-/// Creates an event bus. Provisioning is asynchronous: the bus is returned in the CREATING state and transitions to ACTIVE when ready (see the EventBusActive waiter). Retries carrying the same ClientToken are idempotent.
+/// <p>Creates an event bus. Provisioning is asynchronous: the bus is returned in the CREATING state and transitions to ACTIVE when ready (see the EventBusActive waiter). Retries carrying the same ClientToken are idempotent.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateEventBusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,74 +108,59 @@ impl CreateEventBusFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/<name>
-    /// /
-    /// <id>
-    /// ), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.
-    /// </id>
-    /// </name>
+    /// <p>Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/<name>
-    /// /
-    /// <id>
-    /// ), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.
-    /// </id>
-    /// </name>
+    /// <p>Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/<name>
-    /// /
-    /// <id>
-    /// ), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.
-    /// </id>
-    /// </name>
+    /// <p>Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.
+    /// <p>Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.
+    /// <p>Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.
+    /// <p>Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// Encryption configuration for an event bus.
+    /// <p>Encryption configuration for an event bus.</p>
     pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.inner = self.inner.encryption_configuration(input);
         self
     }
-    /// Encryption configuration for an event bus.
+    /// <p>Encryption configuration for an event bus.</p>
     pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.inner = self.inner.set_encryption_configuration(input);
         self
     }
-    /// Encryption configuration for an event bus.
+    /// <p>Encryption configuration for an event bus.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         self.inner.get_encryption_configuration()
     }
-    /// Event storage configuration for an event bus.
+    /// <p>Event storage configuration for an event bus.</p>
     pub fn storage_configuration(mut self, input: crate::types::StorageConfiguration) -> Self {
         self.inner = self.inner.storage_configuration(input);
         self
     }
-    /// Event storage configuration for an event bus.
+    /// <p>Event storage configuration for an event bus.</p>
     pub fn set_storage_configuration(mut self, input: ::std::option::Option<crate::types::StorageConfiguration>) -> Self {
         self.inner = self.inner.set_storage_configuration(input);
         self
     }
-    /// Event storage configuration for an event bus.
+    /// <p>Event storage configuration for an event bus.</p>
     pub fn get_storage_configuration(&self) -> &::std::option::Option<crate::types::StorageConfiguration> {
         self.inner.get_storage_configuration()
     }
@@ -184,31 +169,31 @@ impl CreateEventBusFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// Tags attached to a resource, as key-value pairs.
+    /// <p>Tags attached to a resource, as key-value pairs.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// Tags attached to a resource, as key-value pairs.
+    /// <p>Tags attached to a resource, as key-value pairs.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// Tags attached to a resource, as key-value pairs.
+    /// <p>Tags attached to a resource, as key-value pairs.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.
+    /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.
+    /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.
+    /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

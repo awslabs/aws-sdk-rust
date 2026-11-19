@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchDeleteBillScenarioCommitmentModificationOutput {
-    /// <p>Returns the list of errors reason and the commitment item keys that cannot be deleted from the Bill Scenario.</p>
+    /// <p>Returns the list of errors reason and the commitment item keys that can't be deleted from the Bill Scenario.</p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteBillScenarioCommitmentModificationError>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteBillScenarioCommitmentModificationOutput {
-    /// <p>Returns the list of errors reason and the commitment item keys that cannot be deleted from the Bill Scenario.</p>
+    /// <p>Returns the list of errors reason and the commitment item keys that can't be deleted from the Bill Scenario.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
     pub fn errors(&self) -> &[crate::types::BatchDeleteBillScenarioCommitmentModificationError] {
@@ -41,14 +41,14 @@ impl BatchDeleteBillScenarioCommitmentModificationOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>Returns the list of errors reason and the commitment item keys that cannot be deleted from the Bill Scenario.</p>
+    /// <p>Returns the list of errors reason and the commitment item keys that can't be deleted from the Bill Scenario.</p>
     pub fn errors(mut self, input: crate::types::BatchDeleteBillScenarioCommitmentModificationError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Returns the list of errors reason and the commitment item keys that cannot be deleted from the Bill Scenario.</p>
+    /// <p>Returns the list of errors reason and the commitment item keys that can't be deleted from the Bill Scenario.</p>
     pub fn set_errors(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteBillScenarioCommitmentModificationError>>,
@@ -56,7 +56,7 @@ impl BatchDeleteBillScenarioCommitmentModificationOutputBuilder {
         self.errors = input;
         self
     }
-    /// <p>Returns the list of errors reason and the commitment item keys that cannot be deleted from the Bill Scenario.</p>
+    /// <p>Returns the list of errors reason and the commitment item keys that can't be deleted from the Bill Scenario.</p>
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchDeleteBillScenarioCommitmentModificationError>> {
         &self.errors
     }

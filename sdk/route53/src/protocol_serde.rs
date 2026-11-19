@@ -37,6 +37,8 @@ pub(crate) mod shape_create_cidr_collection;
 
 pub(crate) mod shape_create_health_check;
 
+pub(crate) mod shape_create_health_check_source;
+
 pub(crate) mod shape_create_hosted_zone;
 
 pub(crate) mod shape_create_key_signing_key;
@@ -60,6 +62,8 @@ pub(crate) mod shape_deactivate_key_signing_key;
 pub(crate) mod shape_delete_cidr_collection;
 
 pub(crate) mod shape_delete_health_check;
+
+pub(crate) mod shape_delete_health_check_source;
 
 pub(crate) mod shape_delete_hosted_zone;
 
@@ -99,6 +103,8 @@ pub(crate) mod shape_get_health_check_count;
 
 pub(crate) mod shape_get_health_check_last_failure_reason;
 
+pub(crate) mod shape_get_health_check_source;
+
 pub(crate) mod shape_get_health_check_status;
 
 pub(crate) mod shape_get_hosted_zone;
@@ -127,7 +133,11 @@ pub(crate) mod shape_list_cidr_locations;
 
 pub(crate) mod shape_list_geo_locations;
 
+pub(crate) mod shape_list_health_check_sources;
+
 pub(crate) mod shape_list_health_checks;
+
+pub(crate) mod shape_list_health_checks_by_source;
 
 pub(crate) mod shape_list_hosted_zones;
 
@@ -201,6 +211,10 @@ pub(crate) mod shape_create_health_check_input;
 
 pub(crate) mod shape_create_health_check_output;
 
+pub(crate) mod shape_create_health_check_source_input;
+
+pub(crate) mod shape_create_health_check_source_output;
+
 pub(crate) mod shape_create_hosted_zone_input;
 
 pub(crate) mod shape_create_hosted_zone_output;
@@ -254,6 +268,8 @@ pub(crate) mod shape_dnssec_not_found;
 pub(crate) mod shape_health_check_already_exists;
 
 pub(crate) mod shape_health_check_in_use;
+
+pub(crate) mod shape_health_check_source_already_exists;
 
 pub(crate) mod shape_health_check_version_mismatch;
 
@@ -323,6 +339,8 @@ pub(crate) mod shape_no_such_geo_location;
 
 pub(crate) mod shape_no_such_health_check;
 
+pub(crate) mod shape_no_such_health_check_source;
+
 pub(crate) mod shape_no_such_hosted_zone;
 
 pub(crate) mod shape_no_such_key_signing_key;
@@ -344,6 +362,8 @@ pub(crate) mod shape_public_zone_vpc_association;
 pub(crate) mod shape_query_logging_config_already_exists;
 
 pub(crate) mod shape_throttling_exception;
+
+pub(crate) mod shape_too_many_health_check_sources;
 
 pub(crate) mod shape_too_many_health_checks;
 
@@ -414,6 +434,12 @@ pub(crate) mod shape_health_check;
 pub(crate) mod shape_health_check_config;
 
 pub(crate) mod shape_health_check_observations;
+
+pub(crate) mod shape_health_check_source;
+
+pub(crate) mod shape_health_check_source_config;
+
+pub(crate) mod shape_health_check_sources;
 
 pub(crate) mod shape_health_checks;
 
@@ -497,6 +523,8 @@ pub(crate) mod shape_resource_record_set;
 
 pub(crate) mod shape_resource_record_set_protection;
 
+pub(crate) mod shape_subnet_configuration;
+
 pub(crate) mod shape_tag_list;
 
 pub(crate) mod shape_traffic_policy_summary;
@@ -523,8 +551,12 @@ pub(crate) mod shape_resource_records;
 
 pub(crate) mod shape_status_report;
 
+pub(crate) mod shape_subnet_configuration_list;
+
 pub(crate) mod shape_coordinates;
 
 pub(crate) mod shape_dimension;
 
 pub(crate) mod shape_resource_record;
+
+pub(crate) mod shape_security_group_id_list;

@@ -292,6 +292,8 @@ mod list_firewall_domain_lists;
 
 mod list_firewall_domains;
 
+mod list_firewall_rule_domains;
+
 mod list_firewall_rule_group_associations;
 
 mod list_firewall_rule_groups;

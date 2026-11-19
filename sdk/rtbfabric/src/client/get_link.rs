@@ -17,10 +17,13 @@ impl super::Client {
     ///   - [`attributes(Option<LinkAttributes>)`](crate::operation::get_link::GetLinkOutput::attributes): <p>Attributes of the link.</p>
     ///   - [`log_settings(Option<LinkLogSettings>)`](crate::operation::get_link::GetLinkOutput::log_settings): <p>Settings for the application logs.</p>
     ///   - [`connectivity_type(Option<ConnectivityType>)`](crate::operation::get_link::GetLinkOutput::connectivity_type): <p>The connectivity type of the link.</p>
+    ///   - [`error_details(Option<Vec::<ErrorDetail>>)`](crate::operation::get_link::GetLinkOutput::error_details): <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
     ///   - [`link_id(String)`](crate::operation::get_link::GetLinkOutput::link_id): <p>The unique identifier of the link.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_link::GetLinkOutput::tags): <p>A map of the key-value pairs for the tag or tags assigned to the specified resource.</p>
     ///   - [`http_responder_allowed(Option<bool>)`](crate::operation::get_link::GetLinkOutput::http_responder_allowed): <p>Boolean to specify if an HTTP responder is allowed.</p>
     ///   - [`timeout_in_millis(Option<i64>)`](crate::operation::get_link::GetLinkOutput::timeout_in_millis): <p>The timeout value in milliseconds.</p>
+    ///   - [`lock_token(Option<String>)`](crate::operation::get_link::GetLinkOutput::lock_token): <p>The link's concurrency token. Pass it to PutLinkFlows unchanged; it changes whenever the link does.</p>
+    ///   - [`flows(Option<Vec::<Flow>>)`](crate::operation::get_link::GetLinkOutput::flows): <p>The link's active flows, in the form PutLinkFlows takes. Empty when the link has no modules, and absent when its modules were set with UpdateLinkModuleFlow.</p>
     /// - On failure, responds with [`SdkError<GetLinkError>`](crate::operation::get_link::GetLinkError)
     pub fn get_link(&self) -> crate::operation::get_link::builders::GetLinkFluentBuilder {
         crate::operation::get_link::builders::GetLinkFluentBuilder::new(self.handle.clone())

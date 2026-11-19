@@ -34,6 +34,20 @@ static TOPICINFO_MEMBER_OUT_OF_SYNC_REPLICA_COUNT: ::aws_smithy_schema::Schema<'
     4,
 )
 .with_json_name("outOfSyncReplicaCount");
+static TOPICINFO_MEMBER_REPLICA_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kafka#__listOf__integer$member", "com.amazonaws.kafka", "__listOf__integer"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "member",
+    0,
+);
+static TOPICINFO_MEMBER_REPLICA_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kafka#TopicInfo$ReplicaIds", "com.amazonaws.kafka", "TopicInfo"),
+    ::aws_smithy_schema::ShapeType::List,
+    "ReplicaIds",
+    5,
+)
+.with_json_name("replicaIds")
+.with_list_member(&TOPICINFO_MEMBER_REPLICA_IDS_MEMBER);
 static TOPICINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kafka#TopicInfo", "com.amazonaws.kafka", "TopicInfo"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -43,6 +57,7 @@ static TOPICINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_sch
         &TOPICINFO_MEMBER_REPLICATION_FACTOR,
         &TOPICINFO_MEMBER_PARTITION_COUNT,
         &TOPICINFO_MEMBER_OUT_OF_SYNC_REPLICA_COUNT,
+        &TOPICINFO_MEMBER_REPLICA_IDS,
     ],
 );
 impl crate::types::TopicInfo {
@@ -73,6 +88,17 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::TopicInfo 
         }
         if let Some(ref val) = self.out_of_sync_replica_count {
             ser.write_integer(&TOPICINFO_MEMBER_OUT_OF_SYNC_REPLICA_COUNT, *val)?;
+        }
+        if let Some(ref val) = self.replica_ids {
+            ser.write_list(
+                &TOPICINFO_MEMBER_REPLICA_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_integer(&aws_smithy_schema::prelude::INTEGER, *item)?;
+                    }
+                    Ok(())
+                },
+            )?;
         }
         Ok(())
     }
@@ -124,6 +150,13 @@ impl crate::types::builders::TopicInfoBuilder {
                         deser.read_null()?;
                     } else {
                         self.out_of_sync_replica_count = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.replica_ids = Some(deser.read_integer_list(member)?);
                     }
                 }
                 _ => {}

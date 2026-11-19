@@ -199,14 +199,19 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateMarketp
         };
 
         let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
-        if requested.should_capture("ProductId") {
-            if let ::std::option::Option::Some(value) = input.product_id.as_deref() {
-                captured.insert("ProductId", value);
+        if requested.should_capture("MarketplaceRevenueShareIdentifier") {
+            if let ::std::option::Option::Some(value) = input.marketplace_revenue_share_identifier.as_deref() {
+                captured.insert("MarketplaceRevenueShareIdentifier", value);
             }
         }
         if requested.should_capture("ClientToken") {
             if let ::std::option::Option::Some(value) = input.client_token.as_deref() {
                 captured.insert("ClientToken", value);
+            }
+        }
+        if requested.should_capture("MarketplaceRevenueShareRevision") {
+            if let ::std::option::Option::Some(value) = input.marketplace_revenue_share_revision.as_deref() {
+                captured.insert("MarketplaceRevenueShareRevision", value);
             }
         }
         if requested.should_capture("EffectiveFrom") {
@@ -368,6 +373,8 @@ pub enum CreateMarketplaceRevenueShareAllocationError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The specified resource was not found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
+    /// <p>The request would exceed a service quota limit.</p>
+    ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
     /// <p>The request was throttled due to too many requests. Retry your request.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// <p>The request failed validation due to invalid input parameters.</p>
@@ -409,6 +416,7 @@ impl CreateMarketplaceRevenueShareAllocationError {
             Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServerException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ServiceQuotaExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -430,6 +438,10 @@ impl CreateMarketplaceRevenueShareAllocationError {
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(self, Self::ResourceNotFoundException(_))
     }
+    /// Returns `true` if the error kind is `CreateMarketplaceRevenueShareAllocationError::ServiceQuotaExceededException`.
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(self, Self::ServiceQuotaExceededException(_))
+    }
     /// Returns `true` if the error kind is `CreateMarketplaceRevenueShareAllocationError::ThrottlingException`.
     pub fn is_throttling_exception(&self) -> bool {
         matches!(self, Self::ThrottlingException(_))
@@ -446,6 +458,7 @@ impl ::std::error::Error for CreateMarketplaceRevenueShareAllocationError {
             Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServerException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
             Self::ValidationException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -459,6 +472,7 @@ impl ::std::fmt::Display for CreateMarketplaceRevenueShareAllocationError {
             Self::ConflictException(_inner) => _inner.fmt(f),
             Self::InternalServerException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
             Self::ValidationException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -490,6 +504,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateMarketp
             Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServerException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ValidationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

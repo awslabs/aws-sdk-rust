@@ -332,6 +332,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartSpeechSy
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StartSpeechSynthesisTaskError {
+    /// <p>The request conflicts with the current state of the resource. For a custom voice, the voice isn't in the status that the operation requires. Check the status with <code>GetVoice</code>, and then try again.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>This engine is not compatible with the voice that you have designated. Choose a new voice that is compatible with the engine or change the engine and restart the operation.</p>
     EngineNotSupportedException(crate::types::error::EngineNotSupportedException),
     /// <p>The provided Amazon S3 bucket name is invalid. Please check your input with S3 bucket naming requirements and try again.</p>
@@ -351,6 +353,8 @@ pub enum StartSpeechSynthesisTaskError {
     LexiconNotFoundException(crate::types::error::LexiconNotFoundException),
     /// <p>Speech marks are not supported for the <code>OutputFormat</code> selected. Speech marks are only available for content in <code>json</code> format.</p>
     MarksNotSupportedForFormatException(crate::types::error::MarksNotSupportedForFormatException),
+    /// <p>Amazon Polly can't find the specified resource. Verify that the resource exists in the Amazon Web Services account and Region of the request and that its ARN or ID is spelled correctly, and then try again.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::types::error::ServiceFailureException),
     /// <p>SSML speech marks are not supported for plain text-type input.</p>
@@ -390,6 +394,7 @@ impl StartSpeechSynthesisTaskError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EngineNotSupportedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidS3BucketException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidS3KeyException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -399,11 +404,16 @@ impl StartSpeechSynthesisTaskError {
             Self::LanguageNotSupportedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LexiconNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::MarksNotSupportedForFormatException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SsmlMarksNotSupportedForTextTypeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TextLengthExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `StartSpeechSynthesisTaskError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `StartSpeechSynthesisTaskError::EngineNotSupportedException`.
     pub fn is_engine_not_supported_exception(&self) -> bool {
@@ -441,6 +451,10 @@ impl StartSpeechSynthesisTaskError {
     pub fn is_marks_not_supported_for_format_exception(&self) -> bool {
         matches!(self, Self::MarksNotSupportedForFormatException(_))
     }
+    /// Returns `true` if the error kind is `StartSpeechSynthesisTaskError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
+    }
     /// Returns `true` if the error kind is `StartSpeechSynthesisTaskError::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(self, Self::ServiceFailureException(_))
@@ -457,6 +471,7 @@ impl StartSpeechSynthesisTaskError {
 impl ::std::error::Error for StartSpeechSynthesisTaskError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::EngineNotSupportedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidS3BucketException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidS3KeyException(_inner) => ::std::option::Option::Some(_inner),
@@ -466,6 +481,7 @@ impl ::std::error::Error for StartSpeechSynthesisTaskError {
             Self::LanguageNotSupportedException(_inner) => ::std::option::Option::Some(_inner),
             Self::LexiconNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::MarksNotSupportedForFormatException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::SsmlMarksNotSupportedForTextTypeException(_inner) => ::std::option::Option::Some(_inner),
             Self::TextLengthExceededException(_inner) => ::std::option::Option::Some(_inner),
@@ -476,6 +492,7 @@ impl ::std::error::Error for StartSpeechSynthesisTaskError {
 impl ::std::fmt::Display for StartSpeechSynthesisTaskError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::EngineNotSupportedException(_inner) => _inner.fmt(f),
             Self::InvalidS3BucketException(_inner) => _inner.fmt(f),
             Self::InvalidS3KeyException(_inner) => _inner.fmt(f),
@@ -485,6 +502,7 @@ impl ::std::fmt::Display for StartSpeechSynthesisTaskError {
             Self::LanguageNotSupportedException(_inner) => _inner.fmt(f),
             Self::LexiconNotFoundException(_inner) => _inner.fmt(f),
             Self::MarksNotSupportedForFormatException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceFailureException(_inner) => _inner.fmt(f),
             Self::SsmlMarksNotSupportedForTextTypeException(_inner) => _inner.fmt(f),
             Self::TextLengthExceededException(_inner) => _inner.fmt(f),
@@ -509,6 +527,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for StartSpeechSynthesisTaskErr
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartSpeechSynthesisTaskError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EngineNotSupportedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidS3BucketException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidS3KeyException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
@@ -518,6 +537,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartSpeechSy
             Self::LanguageNotSupportedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LexiconNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::MarksNotSupportedForFormatException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SsmlMarksNotSupportedForTextTypeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TextLengthExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

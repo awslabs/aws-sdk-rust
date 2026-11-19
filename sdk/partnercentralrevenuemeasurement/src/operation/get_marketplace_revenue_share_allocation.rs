@@ -191,9 +191,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetMarketplac
         };
 
         let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
-        if requested.should_capture("ProductId") {
-            if let ::std::option::Option::Some(value) = input.product_id.as_deref() {
-                captured.insert("ProductId", value);
+        if requested.should_capture("MarketplaceRevenueShareIdentifier") {
+            if let ::std::option::Option::Some(value) = input.marketplace_revenue_share_identifier.as_deref() {
+                captured.insert("MarketplaceRevenueShareIdentifier", value);
             }
         }
         if requested.should_capture("MarketplaceRevenueShareAllocationId") {

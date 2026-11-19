@@ -6,11 +6,29 @@
 pub struct UpdatedAgentSkillsAdditionalDataFields {
     /// <p>The patch for the agent skills markdown descriptor field.</p>
     pub skill_md: ::std::option::Option<crate::types::UpdatedAgentSkillsMdDescriptor>,
+    /// <p>The patch for the skill package source field.</p>
+    pub skill_package: ::std::option::Option<crate::types::UpdatedAgentSkillsPackageDescriptor>,
+    /// <p>The patch for the repository provider field.</p>
+    pub repository_provider: ::std::option::Option<crate::types::UpdatedAgentSkillsRepositoryProvider>,
+    /// <p>The patch for the source configuration field.</p>
+    pub source_configuration: ::std::option::Option<crate::types::UpdatedAgentSkillsSourceConfiguration>,
 }
 impl UpdatedAgentSkillsAdditionalDataFields {
     /// <p>The patch for the agent skills markdown descriptor field.</p>
     pub fn skill_md(&self) -> ::std::option::Option<&crate::types::UpdatedAgentSkillsMdDescriptor> {
         self.skill_md.as_ref()
+    }
+    /// <p>The patch for the skill package source field.</p>
+    pub fn skill_package(&self) -> ::std::option::Option<&crate::types::UpdatedAgentSkillsPackageDescriptor> {
+        self.skill_package.as_ref()
+    }
+    /// <p>The patch for the repository provider field.</p>
+    pub fn repository_provider(&self) -> ::std::option::Option<&crate::types::UpdatedAgentSkillsRepositoryProvider> {
+        self.repository_provider.as_ref()
+    }
+    /// <p>The patch for the source configuration field.</p>
+    pub fn source_configuration(&self) -> ::std::option::Option<&crate::types::UpdatedAgentSkillsSourceConfiguration> {
+        self.source_configuration.as_ref()
     }
 }
 impl UpdatedAgentSkillsAdditionalDataFields {
@@ -25,6 +43,9 @@ impl UpdatedAgentSkillsAdditionalDataFields {
 #[non_exhaustive]
 pub struct UpdatedAgentSkillsAdditionalDataFieldsBuilder {
     pub(crate) skill_md: ::std::option::Option<crate::types::UpdatedAgentSkillsMdDescriptor>,
+    pub(crate) skill_package: ::std::option::Option<crate::types::UpdatedAgentSkillsPackageDescriptor>,
+    pub(crate) repository_provider: ::std::option::Option<crate::types::UpdatedAgentSkillsRepositoryProvider>,
+    pub(crate) source_configuration: ::std::option::Option<crate::types::UpdatedAgentSkillsSourceConfiguration>,
 }
 impl UpdatedAgentSkillsAdditionalDataFieldsBuilder {
     /// <p>The patch for the agent skills markdown descriptor field.</p>
@@ -41,8 +62,55 @@ impl UpdatedAgentSkillsAdditionalDataFieldsBuilder {
     pub fn get_skill_md(&self) -> &::std::option::Option<crate::types::UpdatedAgentSkillsMdDescriptor> {
         &self.skill_md
     }
+    /// <p>The patch for the skill package source field.</p>
+    pub fn skill_package(mut self, input: crate::types::UpdatedAgentSkillsPackageDescriptor) -> Self {
+        self.skill_package = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The patch for the skill package source field.</p>
+    pub fn set_skill_package(mut self, input: ::std::option::Option<crate::types::UpdatedAgentSkillsPackageDescriptor>) -> Self {
+        self.skill_package = input;
+        self
+    }
+    /// <p>The patch for the skill package source field.</p>
+    pub fn get_skill_package(&self) -> &::std::option::Option<crate::types::UpdatedAgentSkillsPackageDescriptor> {
+        &self.skill_package
+    }
+    /// <p>The patch for the repository provider field.</p>
+    pub fn repository_provider(mut self, input: crate::types::UpdatedAgentSkillsRepositoryProvider) -> Self {
+        self.repository_provider = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The patch for the repository provider field.</p>
+    pub fn set_repository_provider(mut self, input: ::std::option::Option<crate::types::UpdatedAgentSkillsRepositoryProvider>) -> Self {
+        self.repository_provider = input;
+        self
+    }
+    /// <p>The patch for the repository provider field.</p>
+    pub fn get_repository_provider(&self) -> &::std::option::Option<crate::types::UpdatedAgentSkillsRepositoryProvider> {
+        &self.repository_provider
+    }
+    /// <p>The patch for the source configuration field.</p>
+    pub fn source_configuration(mut self, input: crate::types::UpdatedAgentSkillsSourceConfiguration) -> Self {
+        self.source_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The patch for the source configuration field.</p>
+    pub fn set_source_configuration(mut self, input: ::std::option::Option<crate::types::UpdatedAgentSkillsSourceConfiguration>) -> Self {
+        self.source_configuration = input;
+        self
+    }
+    /// <p>The patch for the source configuration field.</p>
+    pub fn get_source_configuration(&self) -> &::std::option::Option<crate::types::UpdatedAgentSkillsSourceConfiguration> {
+        &self.source_configuration
+    }
     /// Consumes the builder and constructs a [`UpdatedAgentSkillsAdditionalDataFields`](crate::types::UpdatedAgentSkillsAdditionalDataFields).
     pub fn build(self) -> crate::types::UpdatedAgentSkillsAdditionalDataFields {
-        crate::types::UpdatedAgentSkillsAdditionalDataFields { skill_md: self.skill_md }
+        crate::types::UpdatedAgentSkillsAdditionalDataFields {
+            skill_md: self.skill_md,
+            skill_package: self.skill_package,
+            repository_provider: self.repository_provider,
+            source_configuration: self.source_configuration,
+        }
     }
 }

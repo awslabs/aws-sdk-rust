@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventBusesOutput {
-    /// List of event bus summaries.
+    /// <p>List of event bus summaries.</p>
     pub event_buses: ::std::option::Option<::std::vec::Vec<crate::types::EventBusSummary>>,
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEventBusesOutput {
-    /// List of event bus summaries.
+    /// <p>List of event bus summaries.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_buses.is_none()`.
     pub fn event_buses(&self) -> &[crate::types::EventBusSummary] {
         self.event_buses.as_deref().unwrap_or_default()
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListEventBusesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_event_buses`](Self::set_event_buses).
     ///
-    /// List of event bus summaries.
+    /// <p>List of event bus summaries.</p>
     pub fn event_buses(mut self, input: crate::types::EventBusSummary) -> Self {
         let mut v = self.event_buses.unwrap_or_default();
         v.push(input);
         self.event_buses = ::std::option::Option::Some(v);
         self
     }
-    /// List of event bus summaries.
+    /// <p>List of event bus summaries.</p>
     pub fn set_event_buses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventBusSummary>>) -> Self {
         self.event_buses = input;
         self
     }
-    /// List of event bus summaries.
+    /// <p>List of event bus summaries.</p>
     pub fn get_event_buses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventBusSummary>> {
         &self.event_buses
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

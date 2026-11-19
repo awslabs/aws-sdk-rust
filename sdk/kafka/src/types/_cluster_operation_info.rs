@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterOperationInfo {
+    /// <p>Topic reassignment details of the UpdateBrokerType operation that started an upgrade from Standard brokers to Express brokers.</p>
+    pub broker_type_upgrade_info: ::std::option::Option<crate::types::BrokerTypeUpgradeInfo>,
     /// <p>The ID of the API request that triggered this operation.</p>
     pub client_request_id: ::std::option::Option<::std::string::String>,
     /// <p>ARN of the cluster.</p>
@@ -30,6 +32,10 @@ pub struct ClusterOperationInfo {
     pub vpc_connection_info: ::std::option::Option<crate::types::VpcConnectionInfo>,
 }
 impl ClusterOperationInfo {
+    /// <p>Topic reassignment details of the UpdateBrokerType operation that started an upgrade from Standard brokers to Express brokers.</p>
+    pub fn broker_type_upgrade_info(&self) -> ::std::option::Option<&crate::types::BrokerTypeUpgradeInfo> {
+        self.broker_type_upgrade_info.as_ref()
+    }
     /// <p>The ID of the API request that triggered this operation.</p>
     pub fn client_request_id(&self) -> ::std::option::Option<&str> {
         self.client_request_id.as_deref()
@@ -92,6 +98,7 @@ impl ClusterOperationInfo {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ClusterOperationInfoBuilder {
+    pub(crate) broker_type_upgrade_info: ::std::option::Option<crate::types::BrokerTypeUpgradeInfo>,
     pub(crate) client_request_id: ::std::option::Option<::std::string::String>,
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -106,6 +113,20 @@ pub struct ClusterOperationInfoBuilder {
     pub(crate) vpc_connection_info: ::std::option::Option<crate::types::VpcConnectionInfo>,
 }
 impl ClusterOperationInfoBuilder {
+    /// <p>Topic reassignment details of the UpdateBrokerType operation that started an upgrade from Standard brokers to Express brokers.</p>
+    pub fn broker_type_upgrade_info(mut self, input: crate::types::BrokerTypeUpgradeInfo) -> Self {
+        self.broker_type_upgrade_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Topic reassignment details of the UpdateBrokerType operation that started an upgrade from Standard brokers to Express brokers.</p>
+    pub fn set_broker_type_upgrade_info(mut self, input: ::std::option::Option<crate::types::BrokerTypeUpgradeInfo>) -> Self {
+        self.broker_type_upgrade_info = input;
+        self
+    }
+    /// <p>Topic reassignment details of the UpdateBrokerType operation that started an upgrade from Standard brokers to Express brokers.</p>
+    pub fn get_broker_type_upgrade_info(&self) -> &::std::option::Option<crate::types::BrokerTypeUpgradeInfo> {
+        &self.broker_type_upgrade_info
+    }
     /// <p>The ID of the API request that triggered this operation.</p>
     pub fn client_request_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_request_id = ::std::option::Option::Some(input.into());
@@ -283,6 +304,7 @@ impl ClusterOperationInfoBuilder {
     /// Consumes the builder and constructs a [`ClusterOperationInfo`](crate::types::ClusterOperationInfo).
     pub fn build(self) -> crate::types::ClusterOperationInfo {
         crate::types::ClusterOperationInfo {
+            broker_type_upgrade_info: self.broker_type_upgrade_info,
             client_request_id: self.client_request_id,
             cluster_arn: self.cluster_arn,
             creation_time: self.creation_time,

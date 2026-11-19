@@ -35,9 +35,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// How duplicate events are detected: by a hash of the event content (CONTENT_BASED).
-/// To deduplicate by a caller-supplied token instead, omit DeduplicationConfiguration and
-/// set DeduplicationId on each entry.
+/// <p>How duplicate events are detected: by a hash of the event content (CONTENT_BASED). To deduplicate by a caller-supplied token instead, omit DeduplicationConfiguration and set DeduplicationId on each entry.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

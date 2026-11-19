@@ -13,6 +13,10 @@ pub use crate::types::_health_check_config::HealthCheckConfig;
 
 pub use crate::types::_health_check::HealthCheck;
 
+pub use crate::types::_health_check_source_config::HealthCheckSourceConfig;
+
+pub use crate::types::_health_check_source_status::HealthCheckSourceStatus;
+
 pub use crate::types::_hosted_zone_config::HostedZoneConfig;
 
 pub use crate::types::_hosted_zone::HostedZone;
@@ -34,6 +38,8 @@ pub use crate::types::_account_limit::AccountLimit;
 pub use crate::types::_dnssec_status::DnssecStatus;
 
 pub use crate::types::_geo_location_details::GeoLocationDetails;
+
+pub use crate::types::_health_check_source::HealthCheckSource;
 
 pub use crate::types::_hosted_zone_limit_type::HostedZoneLimitType;
 
@@ -63,6 +69,8 @@ pub use crate::types::_tag::Tag;
 
 pub use crate::types::_health_check_type::HealthCheckType;
 
+pub use crate::types::_endpoint_type::EndpointType;
+
 pub use crate::types::_linked_service::LinkedService;
 
 pub use crate::types::_cloud_watch_alarm_configuration::CloudWatchAlarmConfiguration;
@@ -76,6 +84,8 @@ pub use crate::types::_protection_error::ProtectionError;
 pub use crate::types::_resource_record_set_protection_key::ResourceRecordSetProtectionKey;
 
 pub use crate::types::_health_check_observation::HealthCheckObservation;
+
+pub use crate::types::_health_check_source_status_reason_code::HealthCheckSourceStatusReasonCode;
 
 pub use crate::types::_cidr_block_summary::CidrBlockSummary;
 
@@ -104,6 +114,8 @@ pub use crate::types::_change::Change;
 pub use crate::types::_comparison_operator::ComparisonOperator;
 
 pub use crate::types::_statistic::Statistic;
+
+pub use crate::types::_subnet_configuration::SubnetConfiguration;
 
 pub use crate::types::_accelerated_recovery_status::AcceleratedRecoveryStatus;
 
@@ -179,6 +191,8 @@ mod _dimension;
 
 mod _dnssec_status;
 
+mod _endpoint_type;
+
 mod _geo_location;
 
 mod _geo_location_details;
@@ -192,6 +206,14 @@ mod _health_check_config;
 mod _health_check_observation;
 
 mod _health_check_region;
+
+mod _health_check_source;
+
+mod _health_check_source_config;
+
+mod _health_check_source_status;
+
+mod _health_check_source_status_reason_code;
 
 mod _health_check_type;
 
@@ -252,6 +274,8 @@ mod _rr_type;
 mod _statistic;
 
 mod _status_report;
+
+mod _subnet_configuration;
 
 mod _tag;
 

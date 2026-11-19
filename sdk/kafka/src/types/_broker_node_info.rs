@@ -8,6 +8,8 @@ pub struct BrokerNodeInfo {
     pub attached_eni_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the broker.</p>
     pub broker_id: ::std::option::Option<f64>,
+    /// <p>Whether this broker is a Standard broker or an Express broker. While an UpdateBrokerType operation upgrades a cluster in place from Standard brokers to Express brokers, the cluster contains brokers of both types and this field tells them apart.</p>
+    pub broker_node_type: ::std::option::Option<crate::types::BrokerNodeType>,
     /// <p>The client subnet to which this broker node belongs.</p>
     pub client_subnet: ::std::option::Option<::std::string::String>,
     /// <p>The virtual private cloud (VPC) of the client.</p>
@@ -25,6 +27,10 @@ impl BrokerNodeInfo {
     /// <p>The ID of the broker.</p>
     pub fn broker_id(&self) -> ::std::option::Option<f64> {
         self.broker_id
+    }
+    /// <p>Whether this broker is a Standard broker or an Express broker. While an UpdateBrokerType operation upgrades a cluster in place from Standard brokers to Express brokers, the cluster contains brokers of both types and this field tells them apart.</p>
+    pub fn broker_node_type(&self) -> ::std::option::Option<&crate::types::BrokerNodeType> {
+        self.broker_node_type.as_ref()
     }
     /// <p>The client subnet to which this broker node belongs.</p>
     pub fn client_subnet(&self) -> ::std::option::Option<&str> {
@@ -58,6 +64,7 @@ impl BrokerNodeInfo {
 pub struct BrokerNodeInfoBuilder {
     pub(crate) attached_eni_id: ::std::option::Option<::std::string::String>,
     pub(crate) broker_id: ::std::option::Option<f64>,
+    pub(crate) broker_node_type: ::std::option::Option<crate::types::BrokerNodeType>,
     pub(crate) client_subnet: ::std::option::Option<::std::string::String>,
     pub(crate) client_vpc_ip_address: ::std::option::Option<::std::string::String>,
     pub(crate) current_broker_software_info: ::std::option::Option<crate::types::BrokerSoftwareInfo>,
@@ -91,6 +98,20 @@ impl BrokerNodeInfoBuilder {
     /// <p>The ID of the broker.</p>
     pub fn get_broker_id(&self) -> &::std::option::Option<f64> {
         &self.broker_id
+    }
+    /// <p>Whether this broker is a Standard broker or an Express broker. While an UpdateBrokerType operation upgrades a cluster in place from Standard brokers to Express brokers, the cluster contains brokers of both types and this field tells them apart.</p>
+    pub fn broker_node_type(mut self, input: crate::types::BrokerNodeType) -> Self {
+        self.broker_node_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether this broker is a Standard broker or an Express broker. While an UpdateBrokerType operation upgrades a cluster in place from Standard brokers to Express brokers, the cluster contains brokers of both types and this field tells them apart.</p>
+    pub fn set_broker_node_type(mut self, input: ::std::option::Option<crate::types::BrokerNodeType>) -> Self {
+        self.broker_node_type = input;
+        self
+    }
+    /// <p>Whether this broker is a Standard broker or an Express broker. While an UpdateBrokerType operation upgrades a cluster in place from Standard brokers to Express brokers, the cluster contains brokers of both types and this field tells them apart.</p>
+    pub fn get_broker_node_type(&self) -> &::std::option::Option<crate::types::BrokerNodeType> {
+        &self.broker_node_type
     }
     /// <p>The client subnet to which this broker node belongs.</p>
     pub fn client_subnet(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -159,6 +180,7 @@ impl BrokerNodeInfoBuilder {
         crate::types::BrokerNodeInfo {
             attached_eni_id: self.attached_eni_id,
             broker_id: self.broker_id,
+            broker_node_type: self.broker_node_type,
             client_subnet: self.client_subnet,
             client_vpc_ip_address: self.client_vpc_ip_address,
             current_broker_software_info: self.current_broker_software_info,

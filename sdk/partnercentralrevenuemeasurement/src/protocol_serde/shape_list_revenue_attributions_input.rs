@@ -34,6 +34,15 @@ pub fn ser_list_revenue_attributions_input_input(
     if let Some(var_9) = &input.next_token {
         encoder.str("NextToken").str(var_9.as_str());
     }
+    if let Some(var_10) = &input.context_filters {
+        encoder.str("ContextFilters");
+        encoder.array((*var_10).len());
+        for item_11 in var_10 {
+            {
+                crate::protocol_serde::shape_context_filter::ser_context_filter(encoder, item_11)?;
+            }
+        }
+    }
     encoder.end();
     Ok(())
 }

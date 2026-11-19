@@ -114,20 +114,6 @@ impl ListConnectionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_connections::paginator::ListConnectionsPaginator {
         crate::operation::list_connections::paginator::ListConnectionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
-    pub fn provider_type_filter(mut self, input: crate::types::ProviderType) -> Self {
-        self.inner = self.inner.provider_type_filter(input);
-        self
-    }
-    /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
-    pub fn set_provider_type_filter(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
-        self.inner = self.inner.set_provider_type_filter(input);
-        self
-    }
-    /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
-    pub fn get_provider_type_filter(&self) -> &::std::option::Option<crate::types::ProviderType> {
-        self.inner.get_provider_type_filter()
-    }
     /// <p>Filters the list of connections to those associated with a specified host.</p>
     pub fn host_arn_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.host_arn_filter(input.into());
@@ -141,6 +127,20 @@ impl ListConnectionsFluentBuilder {
     /// <p>Filters the list of connections to those associated with a specified host.</p>
     pub fn get_host_arn_filter(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_host_arn_filter()
+    }
+    /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
+    pub fn provider_type_filter(mut self, input: crate::types::ProviderType) -> Self {
+        self.inner = self.inner.provider_type_filter(input);
+        self
+    }
+    /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
+    pub fn set_provider_type_filter(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
+        self.inner = self.inner.set_provider_type_filter(input);
+        self
+    }
+    /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
+    pub fn get_provider_type_filter(&self) -> &::std::option::Option<crate::types::ProviderType> {
+        self.inner.get_provider_type_filter()
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {

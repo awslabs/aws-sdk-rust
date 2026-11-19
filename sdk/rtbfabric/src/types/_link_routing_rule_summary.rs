@@ -16,6 +16,8 @@ pub struct LinkRoutingRuleSummary {
     pub created_at: ::aws_smithy_types::DateTime,
     /// <p>The timestamp of when the routing rule was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    pub error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
 }
 impl LinkRoutingRuleSummary {
     /// <p>The unique identifier of the routing rule.</p>
@@ -43,6 +45,12 @@ impl LinkRoutingRuleSummary {
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
     }
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_details.is_none()`.
+    pub fn error_details(&self) -> &[crate::types::ErrorDetail] {
+        self.error_details.as_deref().unwrap_or_default()
+    }
 }
 impl LinkRoutingRuleSummary {
     /// Creates a new builder-style object to manufacture [`LinkRoutingRuleSummary`](crate::types::LinkRoutingRuleSummary).
@@ -61,6 +69,7 @@ pub struct LinkRoutingRuleSummaryBuilder {
     pub(crate) status: ::std::option::Option<crate::types::RuleStatus>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
 }
 impl LinkRoutingRuleSummaryBuilder {
     /// <p>The unique identifier of the routing rule.</p>
@@ -153,6 +162,26 @@ impl LinkRoutingRuleSummaryBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// Appends an item to `error_details`.
+    ///
+    /// To override the contents of this collection use [`set_error_details`](Self::set_error_details).
+    ///
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    pub fn error_details(mut self, input: crate::types::ErrorDetail) -> Self {
+        let mut v = self.error_details.unwrap_or_default();
+        v.push(input);
+        self.error_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    pub fn set_error_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>) -> Self {
+        self.error_details = input;
+        self
+    }
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    pub fn get_error_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
+        &self.error_details
+    }
     /// Consumes the builder and constructs a [`LinkRoutingRuleSummary`](crate::types::LinkRoutingRuleSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`rule_id`](crate::types::builders::LinkRoutingRuleSummaryBuilder::rule_id)
@@ -193,6 +222,7 @@ impl LinkRoutingRuleSummaryBuilder {
                     "updated_at was not specified but it is required when building LinkRoutingRuleSummary",
                 )
             })?,
+            error_details: self.error_details,
         })
     }
 }

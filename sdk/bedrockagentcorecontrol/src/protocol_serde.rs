@@ -947,6 +947,8 @@ pub(crate) mod shape_atlassian_oauth2_provider_config_input;
 
 pub(crate) mod shape_atlassian_oauth2_provider_config_output;
 
+pub(crate) mod shape_aws_billing_connector_configuration;
+
 pub(crate) mod shape_browser_profile_summary;
 
 pub(crate) mod shape_browser_summary;
@@ -1598,6 +1600,8 @@ pub(crate) mod shape_configuration_bundle_reference;
 pub(crate) mod shape_connector_parameter_override;
 
 pub(crate) mod shape_consolidation_configuration;
+
+pub(crate) mod shape_cpu_options;
 
 pub(crate) mod shape_custom_consolidation_configuration_input;
 

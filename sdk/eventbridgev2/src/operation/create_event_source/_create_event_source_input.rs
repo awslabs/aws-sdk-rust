@@ -3,57 +3,41 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEventSourceInput {
-    /// EventSource name. First character alphanumeric; the rest may add '.', '-', '_'. Names may not begin with the reserved "aws." prefix. The grammar matches the ARN local-name segment in EventSourceArn (event-sourcev2/<type>
-    /// /
-    /// <name>
-    /// /
-    /// <id>
-    /// ), mirroring EventBusName, so a name the ARN cannot represent cannot be created.
-    /// </id>
-    /// </name>
-    /// </type>
+    /// <p>EventSource name. First character alphanumeric; the rest may add '.', '-', '_'. Names may not begin with the reserved "aws." prefix. The grammar matches the ARN local-name segment in EventSourceArn (event-sourcev2/&lt;type&gt;/&lt;name&gt;/&lt;id&gt;), mirroring EventBusName, so a name the ARN cannot represent cannot be created.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub event_bus_arn: ::std::option::Option<::std::string::String>,
-    /// Discriminated EventSource configuration. Exactly one variant must be set.
+    /// <p>Discriminated EventSource configuration. Exactly one variant must be set.</p>
     pub configuration: ::std::option::Option<crate::types::EventSourceConfiguration>,
-    /// Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.
+    /// <p>Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// Tags attached to a resource, as key-value pairs.
+    /// <p>Tags attached to a resource, as key-value pairs.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.
+    /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateEventSourceInput {
-    /// EventSource name. First character alphanumeric; the rest may add '.', '-', '_'. Names may not begin with the reserved "aws." prefix. The grammar matches the ARN local-name segment in EventSourceArn (event-sourcev2/<type>
-    /// /
-    /// <name>
-    /// /
-    /// <id>
-    /// ), mirroring EventBusName, so a name the ARN cannot represent cannot be created.
-    /// </id>
-    /// </name>
-    /// </type>
+    /// <p>EventSource name. First character alphanumeric; the rest may add '.', '-', '_'. Names may not begin with the reserved "aws." prefix. The grammar matches the ARN local-name segment in EventSourceArn (event-sourcev2/&lt;type&gt;/&lt;name&gt;/&lt;id&gt;), mirroring EventBusName, so a name the ARN cannot represent cannot be created.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn event_bus_arn(&self) -> ::std::option::Option<&str> {
         self.event_bus_arn.as_deref()
     }
-    /// Discriminated EventSource configuration. Exactly one variant must be set.
+    /// <p>Discriminated EventSource configuration. Exactly one variant must be set.</p>
     pub fn configuration(&self) -> ::std::option::Option<&crate::types::EventSourceConfiguration> {
         self.configuration.as_ref()
     }
-    /// Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.
+    /// <p>Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// Tags attached to a resource, as key-value pairs.
+    /// <p>Tags attached to a resource, as key-value pairs.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.
+    /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -77,86 +61,62 @@ pub struct CreateEventSourceInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateEventSourceInputBuilder {
-    /// EventSource name. First character alphanumeric; the rest may add '.', '-', '_'. Names may not begin with the reserved "aws." prefix. The grammar matches the ARN local-name segment in EventSourceArn (event-sourcev2/<type>
-    /// /
-    /// <name>
-    /// /
-    /// <id>
-    /// ), mirroring EventBusName, so a name the ARN cannot represent cannot be created.
-    /// </id>
-    /// </name>
-    /// </type>
+    /// <p>EventSource name. First character alphanumeric; the rest may add '.', '-', '_'. Names may not begin with the reserved "aws." prefix. The grammar matches the ARN local-name segment in EventSourceArn (event-sourcev2/&lt;type&gt;/&lt;name&gt;/&lt;id&gt;), mirroring EventBusName, so a name the ARN cannot represent cannot be created.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// EventSource name. First character alphanumeric; the rest may add '.', '-', '_'. Names may not begin with the reserved "aws." prefix. The grammar matches the ARN local-name segment in EventSourceArn (event-sourcev2/<type>
-    /// /
-    /// <name>
-    /// /
-    /// <id>
-    /// ), mirroring EventBusName, so a name the ARN cannot represent cannot be created.
-    /// </id>
-    /// </name>
-    /// </type>
+    /// <p>EventSource name. First character alphanumeric; the rest may add '.', '-', '_'. Names may not begin with the reserved "aws." prefix. The grammar matches the ARN local-name segment in EventSourceArn (event-sourcev2/&lt;type&gt;/&lt;name&gt;/&lt;id&gt;), mirroring EventBusName, so a name the ARN cannot represent cannot be created.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// EventSource name. First character alphanumeric; the rest may add '.', '-', '_'. Names may not begin with the reserved "aws." prefix. The grammar matches the ARN local-name segment in EventSourceArn (event-sourcev2/<type>
-    /// /
-    /// <name>
-    /// /
-    /// <id>
-    /// ), mirroring EventBusName, so a name the ARN cannot represent cannot be created.
-    /// </id>
-    /// </name>
-    /// </type>
+    /// <p>EventSource name. First character alphanumeric; the rest may add '.', '-', '_'. Names may not begin with the reserved "aws." prefix. The grammar matches the ARN local-name segment in EventSourceArn (event-sourcev2/&lt;type&gt;/&lt;name&gt;/&lt;id&gt;), mirroring EventBusName, so a name the ARN cannot represent cannot be created.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     /// This field is required.
     pub fn event_bus_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_bus_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn set_event_bus_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_bus_arn = input;
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn get_event_bus_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_bus_arn
     }
-    /// Discriminated EventSource configuration. Exactly one variant must be set.
+    /// <p>Discriminated EventSource configuration. Exactly one variant must be set.</p>
     /// This field is required.
     pub fn configuration(mut self, input: crate::types::EventSourceConfiguration) -> Self {
         self.configuration = ::std::option::Option::Some(input);
         self
     }
-    /// Discriminated EventSource configuration. Exactly one variant must be set.
+    /// <p>Discriminated EventSource configuration. Exactly one variant must be set.</p>
     pub fn set_configuration(mut self, input: ::std::option::Option<crate::types::EventSourceConfiguration>) -> Self {
         self.configuration = input;
         self
     }
-    /// Discriminated EventSource configuration. Exactly one variant must be set.
+    /// <p>Discriminated EventSource configuration. Exactly one variant must be set.</p>
     pub fn get_configuration(&self) -> &::std::option::Option<crate::types::EventSourceConfiguration> {
         &self.configuration
     }
-    /// Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.
+    /// <p>Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.
+    /// <p>Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.
+    /// <p>Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
@@ -164,33 +124,33 @@ impl CreateEventSourceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// Tags attached to a resource, as key-value pairs.
+    /// <p>Tags attached to a resource, as key-value pairs.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// Tags attached to a resource, as key-value pairs.
+    /// <p>Tags attached to a resource, as key-value pairs.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// Tags attached to a resource, as key-value pairs.
+    /// <p>Tags attached to a resource, as key-value pairs.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.
+    /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.
+    /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.
+    /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

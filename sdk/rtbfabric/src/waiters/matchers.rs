@@ -145,6 +145,32 @@ pub(crate) fn match_get_certificate_association_a32f07ce8edea6cb6(
         .unwrap_or_default()
 }
 
+/// Matcher union: {"output":{"path":"status","expected":"CREATE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_inbound_external_link_00d7b810548bbcb91(
+    _result: ::std::result::Result<
+        &crate::operation::get_inbound_external_link::GetInboundExternalLinkOutput,
+        &crate::operation::get_inbound_external_link::GetInboundExternalLinkError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_inbound_external_link::GetInboundExternalLinkOutput,
+    ) -> ::std::option::Option<&'a crate::types::LinkStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "CREATE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
 /// Matcher union: {"output":{"path":"status","expected":"ACTIVE","comparator":"stringEquals"}}
 pub(crate) fn match_get_inbound_external_link_a0b9c099115634691(
     _result: ::std::result::Result<
@@ -275,6 +301,53 @@ pub(crate) fn match_get_inbound_external_link_358421f14bfd10851(
         .unwrap_or_default()
 }
 
+/// Matcher union: {"output":{"path":"status","expected":"DELETE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_inbound_external_link_184758db81b6271a8(
+    _result: ::std::result::Result<
+        &crate::operation::get_inbound_external_link::GetInboundExternalLinkOutput,
+        &crate::operation::get_inbound_external_link::GetInboundExternalLinkError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_inbound_external_link::GetInboundExternalLinkOutput,
+    ) -> ::std::option::Option<&'a crate::types::LinkStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "DELETE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"CREATE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_link_00d7b810548bbcb91(
+    _result: ::std::result::Result<&crate::operation::get_link::GetLinkOutput, &crate::operation::get_link::GetLinkError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::get_link::GetLinkOutput) -> ::std::option::Option<&'a crate::types::LinkStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "CREATE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
 /// Matcher union: {"output":{"path":"status","expected":"ACCEPTED","comparator":"stringEquals"}}
 pub(crate) fn match_get_link_483c014a416def08d(
     _result: ::std::result::Result<&crate::operation::get_link::GetLinkOutput, &crate::operation::get_link::GetLinkError>,
@@ -380,6 +453,53 @@ pub(crate) fn match_get_link_a0b9c099115634691(
         .unwrap_or_default()
 }
 
+/// Matcher union: {"output":{"path":"status","expected":"DELETE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_link_184758db81b6271a8(
+    _result: ::std::result::Result<&crate::operation::get_link::GetLinkOutput, &crate::operation::get_link::GetLinkError>,
+) -> bool {
+    fn path_traversal<'a>(_output: &'a crate::operation::get_link::GetLinkOutput) -> ::std::option::Option<&'a crate::types::LinkStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "DELETE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"CREATE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_link_routing_rule_00d7b810548bbcb91(
+    _result: ::std::result::Result<
+        &crate::operation::get_link_routing_rule::GetLinkRoutingRuleOutput,
+        &crate::operation::get_link_routing_rule::GetLinkRoutingRuleError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_link_routing_rule::GetLinkRoutingRuleOutput,
+    ) -> ::std::option::Option<&'a crate::types::RuleStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "CREATE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
 /// Matcher union: {"output":{"path":"status","expected":"ACTIVE","comparator":"stringEquals"}}
 pub(crate) fn match_get_link_routing_rule_a0b9c099115634691(
     _result: ::std::result::Result<
@@ -458,6 +578,32 @@ pub(crate) fn match_get_link_routing_rule_8edac4c36e2a37f69(
         .unwrap_or_default()
 }
 
+/// Matcher union: {"output":{"path":"status","expected":"DELETE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_link_routing_rule_184758db81b6271a8(
+    _result: ::std::result::Result<
+        &crate::operation::get_link_routing_rule::GetLinkRoutingRuleOutput,
+        &crate::operation::get_link_routing_rule::GetLinkRoutingRuleError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_link_routing_rule::GetLinkRoutingRuleOutput,
+    ) -> ::std::option::Option<&'a crate::types::RuleStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "DELETE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
 /// Matcher union: {"errorType":"ResourceNotFoundException"}
 pub(crate) fn match_get_link_routing_rule_1cce2c05524fb92d4(
     _result: ::std::result::Result<
@@ -471,6 +617,32 @@ pub(crate) fn match_get_link_routing_rule_1cce2c05524fb92d4(
         }
     }
     false
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"CREATE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_outbound_external_link_00d7b810548bbcb91(
+    _result: ::std::result::Result<
+        &crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput,
+        &crate::operation::get_outbound_external_link::GetOutboundExternalLinkError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput,
+    ) -> ::std::option::Option<&'a crate::types::LinkStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "CREATE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
 }
 
 /// Matcher union: {"output":{"path":"status","expected":"ACTIVE","comparator":"stringEquals"}}
@@ -603,6 +775,58 @@ pub(crate) fn match_get_outbound_external_link_358421f14bfd10851(
         .unwrap_or_default()
 }
 
+/// Matcher union: {"output":{"path":"status","expected":"DELETE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_outbound_external_link_184758db81b6271a8(
+    _result: ::std::result::Result<
+        &crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput,
+        &crate::operation::get_outbound_external_link::GetOutboundExternalLinkError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput,
+    ) -> ::std::option::Option<&'a crate::types::LinkStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "DELETE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"CREATE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_requester_gateway_00d7b810548bbcb91(
+    _result: ::std::result::Result<
+        &crate::operation::get_requester_gateway::GetRequesterGatewayOutput,
+        &crate::operation::get_requester_gateway::GetRequesterGatewayError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_requester_gateway::GetRequesterGatewayOutput,
+    ) -> ::std::option::Option<&'a crate::types::RequesterGatewayStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "CREATE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
 /// Matcher union: {"output":{"path":"status","expected":"ACTIVE","comparator":"stringEquals"}}
 pub(crate) fn match_get_requester_gateway_a0b9c099115634691(
     _result: ::std::result::Result<
@@ -681,6 +905,32 @@ pub(crate) fn match_get_requester_gateway_fee4c6887d4203a96(
         .unwrap_or_default()
 }
 
+/// Matcher union: {"output":{"path":"status","expected":"DELETE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_requester_gateway_184758db81b6271a8(
+    _result: ::std::result::Result<
+        &crate::operation::get_requester_gateway::GetRequesterGatewayOutput,
+        &crate::operation::get_requester_gateway::GetRequesterGatewayError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_requester_gateway::GetRequesterGatewayOutput,
+    ) -> ::std::option::Option<&'a crate::types::RequesterGatewayStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "DELETE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
 /// Matcher union: {"errorType":"ResourceNotFoundException"}
 pub(crate) fn match_get_requester_gateway_1cce2c05524fb92d4(
     _result: ::std::result::Result<
@@ -694,6 +944,32 @@ pub(crate) fn match_get_requester_gateway_1cce2c05524fb92d4(
         }
     }
     false
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"CREATE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_responder_gateway_00d7b810548bbcb91(
+    _result: ::std::result::Result<
+        &crate::operation::get_responder_gateway::GetResponderGatewayOutput,
+        &crate::operation::get_responder_gateway::GetResponderGatewayError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_responder_gateway::GetResponderGatewayOutput,
+    ) -> ::std::option::Option<&'a crate::types::ResponderGatewayStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "CREATE_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
 }
 
 /// Matcher union: {"output":{"path":"status","expected":"ACTIVE","comparator":"stringEquals"}}
@@ -768,6 +1044,32 @@ pub(crate) fn match_get_responder_gateway_fee4c6887d4203a96(
         .map(|value| {
             let _tmp_2 = value.as_str();
             let right = "ERROR";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"status","expected":"DELETE_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_get_responder_gateway_184758db81b6271a8(
+    _result: ::std::result::Result<
+        &crate::operation::get_responder_gateway::GetResponderGatewayOutput,
+        &crate::operation::get_responder_gateway::GetResponderGatewayError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::get_responder_gateway::GetResponderGatewayOutput,
+    ) -> ::std::option::Option<&'a crate::types::ResponderGatewayStatus> {
+        let _fld_1 = &_output.status;
+        ::std::option::Option::Some(_fld_1)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "DELETE_FAILED";
             let _cmp_1 = _tmp_2 == right;
             _cmp_1
         })

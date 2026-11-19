@@ -135,6 +135,9 @@ pub struct CreateUserPoolClientInput {
     pub auth_session_validity: ::std::option::Option<i32>,
     /// <p>The configuration of your app client for refresh token rotation. When enabled, your app client issues new ID, access, and refresh tokens when users renew their sessions with refresh tokens. When disabled, token refresh issues only ID and access tokens.</p>
     pub refresh_token_rotation: ::std::option::Option<crate::types::RefreshTokenRotationType>,
+    /// <p>Specifies whether Amazon Cognito stores and manages this app client's secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon Web Services Secrets Manager</a> instead of returning the plaintext value. Applies only when <code>GenerateSecret</code> is <code>true</code>. When you set this parameter to <code>true</code>, the response returns <code>ClientSecretArn</code> instead of <code>ClientSecret</code>. Amazon Cognito starts the first rotation of the secret right away, and then rotates the secret every 7 days by default. You can change the rotation schedule in Secrets Manager.</p>
+    /// <p>Defaults to <code>false</code>. If you don't set this parameter, Amazon Cognito doesn't manage the secret in Secrets Manager and returns the plaintext <code>ClientSecret</code> value. The Amazon Cognito console turns on this option by default when it creates an app client with a generated client secret.</p>
+    pub publish_secrets_in_aws_secrets_manager: ::std::option::Option<bool>,
 }
 impl CreateUserPoolClientInput {
     /// <p>The ID of the user pool where you want to create an app client.</p>
@@ -332,6 +335,11 @@ impl CreateUserPoolClientInput {
     pub fn refresh_token_rotation(&self) -> ::std::option::Option<&crate::types::RefreshTokenRotationType> {
         self.refresh_token_rotation.as_ref()
     }
+    /// <p>Specifies whether Amazon Cognito stores and manages this app client's secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon Web Services Secrets Manager</a> instead of returning the plaintext value. Applies only when <code>GenerateSecret</code> is <code>true</code>. When you set this parameter to <code>true</code>, the response returns <code>ClientSecretArn</code> instead of <code>ClientSecret</code>. Amazon Cognito starts the first rotation of the secret right away, and then rotates the secret every 7 days by default. You can change the rotation schedule in Secrets Manager.</p>
+    /// <p>Defaults to <code>false</code>. If you don't set this parameter, Amazon Cognito doesn't manage the secret in Secrets Manager and returns the plaintext <code>ClientSecret</code> value. The Amazon Cognito console turns on this option by default when it creates an app client with a generated client secret.</p>
+    pub fn publish_secrets_in_aws_secrets_manager(&self) -> ::std::option::Option<bool> {
+        self.publish_secrets_in_aws_secrets_manager
+    }
 }
 impl ::std::fmt::Debug for CreateUserPoolClientInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -363,6 +371,7 @@ impl ::std::fmt::Debug for CreateUserPoolClientInput {
         );
         formatter.field("auth_session_validity", &self.auth_session_validity);
         formatter.field("refresh_token_rotation", &self.refresh_token_rotation);
+        formatter.field("publish_secrets_in_aws_secrets_manager", &self.publish_secrets_in_aws_secrets_manager);
         formatter.finish()
     }
 }
@@ -401,6 +410,7 @@ pub struct CreateUserPoolClientInputBuilder {
     pub(crate) enable_propagate_additional_user_context_data: ::std::option::Option<bool>,
     pub(crate) auth_session_validity: ::std::option::Option<i32>,
     pub(crate) refresh_token_rotation: ::std::option::Option<crate::types::RefreshTokenRotationType>,
+    pub(crate) publish_secrets_in_aws_secrets_manager: ::std::option::Option<bool>,
 }
 impl CreateUserPoolClientInputBuilder {
     /// <p>The ID of the user pool where you want to create an app client.</p>
@@ -1038,6 +1048,23 @@ impl CreateUserPoolClientInputBuilder {
     pub fn get_refresh_token_rotation(&self) -> &::std::option::Option<crate::types::RefreshTokenRotationType> {
         &self.refresh_token_rotation
     }
+    /// <p>Specifies whether Amazon Cognito stores and manages this app client's secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon Web Services Secrets Manager</a> instead of returning the plaintext value. Applies only when <code>GenerateSecret</code> is <code>true</code>. When you set this parameter to <code>true</code>, the response returns <code>ClientSecretArn</code> instead of <code>ClientSecret</code>. Amazon Cognito starts the first rotation of the secret right away, and then rotates the secret every 7 days by default. You can change the rotation schedule in Secrets Manager.</p>
+    /// <p>Defaults to <code>false</code>. If you don't set this parameter, Amazon Cognito doesn't manage the secret in Secrets Manager and returns the plaintext <code>ClientSecret</code> value. The Amazon Cognito console turns on this option by default when it creates an app client with a generated client secret.</p>
+    pub fn publish_secrets_in_aws_secrets_manager(mut self, input: bool) -> Self {
+        self.publish_secrets_in_aws_secrets_manager = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether Amazon Cognito stores and manages this app client's secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon Web Services Secrets Manager</a> instead of returning the plaintext value. Applies only when <code>GenerateSecret</code> is <code>true</code>. When you set this parameter to <code>true</code>, the response returns <code>ClientSecretArn</code> instead of <code>ClientSecret</code>. Amazon Cognito starts the first rotation of the secret right away, and then rotates the secret every 7 days by default. You can change the rotation schedule in Secrets Manager.</p>
+    /// <p>Defaults to <code>false</code>. If you don't set this parameter, Amazon Cognito doesn't manage the secret in Secrets Manager and returns the plaintext <code>ClientSecret</code> value. The Amazon Cognito console turns on this option by default when it creates an app client with a generated client secret.</p>
+    pub fn set_publish_secrets_in_aws_secrets_manager(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.publish_secrets_in_aws_secrets_manager = input;
+        self
+    }
+    /// <p>Specifies whether Amazon Cognito stores and manages this app client's secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon Web Services Secrets Manager</a> instead of returning the plaintext value. Applies only when <code>GenerateSecret</code> is <code>true</code>. When you set this parameter to <code>true</code>, the response returns <code>ClientSecretArn</code> instead of <code>ClientSecret</code>. Amazon Cognito starts the first rotation of the secret right away, and then rotates the secret every 7 days by default. You can change the rotation schedule in Secrets Manager.</p>
+    /// <p>Defaults to <code>false</code>. If you don't set this parameter, Amazon Cognito doesn't manage the secret in Secrets Manager and returns the plaintext <code>ClientSecret</code> value. The Amazon Cognito console turns on this option by default when it creates an app client with a generated client secret.</p>
+    pub fn get_publish_secrets_in_aws_secrets_manager(&self) -> &::std::option::Option<bool> {
+        &self.publish_secrets_in_aws_secrets_manager
+    }
     /// Consumes the builder and constructs a [`CreateUserPoolClientInput`](crate::operation::create_user_pool_client::CreateUserPoolClientInput).
     pub fn build(
         self,
@@ -1068,6 +1095,7 @@ impl CreateUserPoolClientInputBuilder {
             enable_propagate_additional_user_context_data: self.enable_propagate_additional_user_context_data,
             auth_session_validity: self.auth_session_validity,
             refresh_token_rotation: self.refresh_token_rotation,
+            publish_secrets_in_aws_secrets_manager: self.publish_secrets_in_aws_secrets_manager,
         })
     }
 }
@@ -1101,6 +1129,7 @@ impl ::std::fmt::Debug for CreateUserPoolClientInputBuilder {
         );
         formatter.field("auth_session_validity", &self.auth_session_validity);
         formatter.field("refresh_token_rotation", &self.refresh_token_rotation);
+        formatter.field("publish_secrets_in_aws_secrets_manager", &self.publish_secrets_in_aws_secrets_manager);
         formatter.finish()
     }
 }

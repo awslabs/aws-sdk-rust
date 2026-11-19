@@ -28,6 +28,7 @@ impl super::Client {
     ///   - [`linked_channel_settings(Option<DescribeLinkedChannelSettings>)`](crate::operation::delete_channel::DeleteChannelOutput::linked_channel_settings): Linked Channel Settings for this channel.
     ///   - [`channel_security_groups(Option<Vec::<String>>)`](crate::operation::delete_channel::DeleteChannelOutput::channel_security_groups): A list of IDs for all the Input Security Groups attached to the channel.
     ///   - [`inference_settings(Option<DescribeInferenceSettings>)`](crate::operation::delete_channel::DeleteChannelOutput::inference_settings): Include this setting to include Elemental Inference features in this channel.
+    ///   - [`jpeg_xs_input_specification(Option<JpegXsInputSpecification>)`](crate::operation::delete_channel::DeleteChannelOutput::jpeg_xs_input_specification): Specification of JPEG XS inputs for this channel
     /// - On failure, responds with [`SdkError<DeleteChannelError>`](crate::operation::delete_channel::DeleteChannelError)
     pub fn delete_channel(&self) -> crate::operation::delete_channel::builders::DeleteChannelFluentBuilder {
         crate::operation::delete_channel::builders::DeleteChannelFluentBuilder::new(self.handle.clone())

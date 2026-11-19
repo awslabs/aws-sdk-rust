@@ -108,6 +108,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetMark
                 .expect("required fields set"),
         ));
 
+        cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::SensitiveOutput);
         cfg.store_put(::aws_smithy_runtime_api::client::orchestrator::Metadata::new(
             "GetMarketplaceRevenueShare",
             "PartnerCentral Revenue Measurement",
@@ -191,9 +192,14 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetMarketplac
         };
 
         let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
-        if requested.should_capture("ProductId") {
-            if let ::std::option::Option::Some(value) = input.product_id.as_deref() {
-                captured.insert("ProductId", value);
+        if requested.should_capture("Identifier") {
+            if let ::std::option::Option::Some(value) = input.identifier.as_deref() {
+                captured.insert("Identifier", value);
+            }
+        }
+        if requested.should_capture("Revision") {
+            if let ::std::option::Option::Some(value) = input.revision.as_deref() {
+                captured.insert("Revision", value);
             }
         }
 

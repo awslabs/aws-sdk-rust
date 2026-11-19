@@ -14,6 +14,8 @@ impl super::Client {
     ///   - [`created_on(DateTime)`](crate::operation::get_code_security_integration::GetCodeSecurityIntegrationOutput::created_on): <p>The timestamp when the code security integration was created.</p>
     ///   - [`last_update_on(DateTime)`](crate::operation::get_code_security_integration::GetCodeSecurityIntegrationOutput::last_update_on): <p>The timestamp when the code security integration was last updated.</p>
     ///   - [`authorization_url(Option<String>)`](crate::operation::get_code_security_integration::GetCodeSecurityIntegrationOutput::authorization_url): <p>The URL used to authorize the integration with the repository provider. This is only returned if reauthorization is required to fix a connection issue. Otherwise, it is null.</p>
+    ///   - [`vpc_configuration(Option<CodeSecurityIntegrationVpcConfiguration>)`](crate::operation::get_code_security_integration::GetCodeSecurityIntegrationOutput::vpc_configuration): <p>The VPC configuration associated with the integration, if it connects to a repository provider in a private network.</p>
+    ///   - [`instance_url(Option<String>)`](crate::operation::get_code_security_integration::GetCodeSecurityIntegrationOutput::instance_url): <p>The URL of the self-managed GitLab or GitHub Enterprise Server instance associated with the integration.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_code_security_integration::GetCodeSecurityIntegrationOutput::tags): <p>The tags associated with the code security integration.</p>
     /// - On failure, responds with [`SdkError<GetCodeSecurityIntegrationError>`](crate::operation::get_code_security_integration::GetCodeSecurityIntegrationError)
     pub fn get_code_security_integration(

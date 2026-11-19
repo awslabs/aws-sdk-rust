@@ -112,13 +112,15 @@ pub struct FirewallRule {
     /// <p><code>DnsThreatProtection</code> — a built-in DNS Firewall Advanced threat detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p></li>
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — a third-party threat feed delivered through Amazon Web Services Marketplace.</p></li>
+    /// <li>
+    /// <p><code>AutoAllowlist</code> — an AutoAllowlist rule, which allows the domains on its managed domain list. See <code>AutoAllowlistConfig</code>.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
     pub firewall_rule_type: ::std::option::Option<crate::types::FirewallRuleType>,
     /// <p>The lifecycle state of the firewall rule. Possible values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created with the <code>PartnerThreatProtection</code> rule type begin in this state while DNS Firewall verifies the calling account's Amazon Web Services Marketplace entitlement.</p></li>
+    /// <p><code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created with the <code>PartnerThreatProtection</code> rule type begin in this state while DNS Firewall verifies the calling account's Amazon Web Services Marketplace entitlement. Rules created with the <code>AutoAllowlist</code> rule type begin in this state while DNS Firewall reads the look-back window of each VPC that uses the rule group.</p></li>
     /// <li>
     /// <p><code>COMPLETE</code> — The rule is provisioned and enforcing matches.</p></li>
     /// <li>
@@ -272,15 +274,17 @@ impl FirewallRule {
     /// <p><code>DnsThreatProtection</code> — a built-in DNS Firewall Advanced threat detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p></li>
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — a third-party threat feed delivered through Amazon Web Services Marketplace.</p></li>
+    /// <li>
+    /// <p><code>AutoAllowlist</code> — an AutoAllowlist rule, which allows the domains on its managed domain list. See <code>AutoAllowlistConfig</code>.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
     pub fn firewall_rule_type(&self) -> ::std::option::Option<&crate::types::FirewallRuleType> {
         self.firewall_rule_type.as_ref()
     }
     /// <p>The lifecycle state of the firewall rule. Possible values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created with the <code>PartnerThreatProtection</code> rule type begin in this state while DNS Firewall verifies the calling account's Amazon Web Services Marketplace entitlement.</p></li>
+    /// <p><code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created with the <code>PartnerThreatProtection</code> rule type begin in this state while DNS Firewall verifies the calling account's Amazon Web Services Marketplace entitlement. Rules created with the <code>AutoAllowlist</code> rule type begin in this state while DNS Firewall reads the look-back window of each VPC that uses the rule group.</p></li>
     /// <li>
     /// <p><code>COMPLETE</code> — The rule is provisioned and enforcing matches.</p></li>
     /// <li>
@@ -768,8 +772,10 @@ impl FirewallRuleBuilder {
     /// <p><code>DnsThreatProtection</code> — a built-in DNS Firewall Advanced threat detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p></li>
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — a third-party threat feed delivered through Amazon Web Services Marketplace.</p></li>
+    /// <li>
+    /// <p><code>AutoAllowlist</code> — an AutoAllowlist rule, which allows the domains on its managed domain list. See <code>AutoAllowlistConfig</code>.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
     pub fn firewall_rule_type(mut self, input: crate::types::FirewallRuleType) -> Self {
         self.firewall_rule_type = ::std::option::Option::Some(input);
         self
@@ -784,8 +790,10 @@ impl FirewallRuleBuilder {
     /// <p><code>DnsThreatProtection</code> — a built-in DNS Firewall Advanced threat detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p></li>
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — a third-party threat feed delivered through Amazon Web Services Marketplace.</p></li>
+    /// <li>
+    /// <p><code>AutoAllowlist</code> — an AutoAllowlist rule, which allows the domains on its managed domain list. See <code>AutoAllowlistConfig</code>.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
     pub fn set_firewall_rule_type(mut self, input: ::std::option::Option<crate::types::FirewallRuleType>) -> Self {
         self.firewall_rule_type = input;
         self
@@ -800,15 +808,17 @@ impl FirewallRuleBuilder {
     /// <p><code>DnsThreatProtection</code> — a built-in DNS Firewall Advanced threat detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p></li>
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — a third-party threat feed delivered through Amazon Web Services Marketplace.</p></li>
+    /// <li>
+    /// <p><code>AutoAllowlist</code> — an AutoAllowlist rule, which allows the domains on its managed domain list. See <code>AutoAllowlistConfig</code>.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
     pub fn get_firewall_rule_type(&self) -> &::std::option::Option<crate::types::FirewallRuleType> {
         &self.firewall_rule_type
     }
     /// <p>The lifecycle state of the firewall rule. Possible values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created with the <code>PartnerThreatProtection</code> rule type begin in this state while DNS Firewall verifies the calling account's Amazon Web Services Marketplace entitlement.</p></li>
+    /// <p><code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created with the <code>PartnerThreatProtection</code> rule type begin in this state while DNS Firewall verifies the calling account's Amazon Web Services Marketplace entitlement. Rules created with the <code>AutoAllowlist</code> rule type begin in this state while DNS Firewall reads the look-back window of each VPC that uses the rule group.</p></li>
     /// <li>
     /// <p><code>COMPLETE</code> — The rule is provisioned and enforcing matches.</p></li>
     /// <li>
@@ -822,7 +832,7 @@ impl FirewallRuleBuilder {
     /// <p>The lifecycle state of the firewall rule. Possible values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created with the <code>PartnerThreatProtection</code> rule type begin in this state while DNS Firewall verifies the calling account's Amazon Web Services Marketplace entitlement.</p></li>
+    /// <p><code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created with the <code>PartnerThreatProtection</code> rule type begin in this state while DNS Firewall verifies the calling account's Amazon Web Services Marketplace entitlement. Rules created with the <code>AutoAllowlist</code> rule type begin in this state while DNS Firewall reads the look-back window of each VPC that uses the rule group.</p></li>
     /// <li>
     /// <p><code>COMPLETE</code> — The rule is provisioned and enforcing matches.</p></li>
     /// <li>
@@ -836,7 +846,7 @@ impl FirewallRuleBuilder {
     /// <p>The lifecycle state of the firewall rule. Possible values:</p>
     /// <ul>
     /// <li>
-    /// <p><code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created with the <code>PartnerThreatProtection</code> rule type begin in this state while DNS Firewall verifies the calling account's Amazon Web Services Marketplace entitlement.</p></li>
+    /// <p><code>CREATING</code> — DNS Firewall is provisioning the rule. Rules created with the <code>PartnerThreatProtection</code> rule type begin in this state while DNS Firewall verifies the calling account's Amazon Web Services Marketplace entitlement. Rules created with the <code>AutoAllowlist</code> rule type begin in this state while DNS Firewall reads the look-back window of each VPC that uses the rule group.</p></li>
     /// <li>
     /// <p><code>COMPLETE</code> — The rule is provisioned and enforcing matches.</p></li>
     /// <li>

@@ -36,6 +36,16 @@ pub fn ser_create_saml_provider_input_input_input(
     if let Some(var_13) = &input.add_private_key {
         scope_12.string(var_13);
     }
+    #[allow(unused_mut)]
+    let mut scope_14 = writer.prefix("ContextProvider");
+    if let Some(var_15) = &input.context_provider {
+        crate::protocol_serde::shape_context_provider::ser_context_provider(scope_14, var_15)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_16 = writer.prefix("IdentityCenterInstanceArn");
+    if let Some(var_17) = &input.identity_center_instance_arn {
+        scope_16.string(var_17);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

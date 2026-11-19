@@ -15,6 +15,8 @@ pub struct DescribeTopicOutput {
     pub configs: ::std::option::Option<::std::string::String>,
     /// <p>The status of the topic.</p>
     pub status: ::std::option::Option<crate::types::TopicState>,
+    /// <p>The broker IDs hosting replicas of this topic's partitions.</p>
+    pub replica_ids: ::std::option::Option<::std::vec::Vec<i32>>,
     _request_id: Option<String>,
 }
 impl DescribeTopicOutput {
@@ -42,6 +44,12 @@ impl DescribeTopicOutput {
     pub fn status(&self) -> ::std::option::Option<&crate::types::TopicState> {
         self.status.as_ref()
     }
+    /// <p>The broker IDs hosting replicas of this topic's partitions.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replica_ids.is_none()`.
+    pub fn replica_ids(&self) -> &[i32] {
+        self.replica_ids.as_deref().unwrap_or_default()
+    }
 }
 impl ::aws_types::request_id::RequestId for DescribeTopicOutput {
     fn request_id(&self) -> Option<&str> {
@@ -65,6 +73,7 @@ pub struct DescribeTopicOutputBuilder {
     pub(crate) partition_count: ::std::option::Option<i32>,
     pub(crate) configs: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::TopicState>,
+    pub(crate) replica_ids: ::std::option::Option<::std::vec::Vec<i32>>,
     _request_id: Option<String>,
 }
 impl DescribeTopicOutputBuilder {
@@ -152,6 +161,26 @@ impl DescribeTopicOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::TopicState> {
         &self.status
     }
+    /// Appends an item to `replica_ids`.
+    ///
+    /// To override the contents of this collection use [`set_replica_ids`](Self::set_replica_ids).
+    ///
+    /// <p>The broker IDs hosting replicas of this topic's partitions.</p>
+    pub fn replica_ids(mut self, input: i32) -> Self {
+        let mut v = self.replica_ids.unwrap_or_default();
+        v.push(input);
+        self.replica_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The broker IDs hosting replicas of this topic's partitions.</p>
+    pub fn set_replica_ids(mut self, input: ::std::option::Option<::std::vec::Vec<i32>>) -> Self {
+        self.replica_ids = input;
+        self
+    }
+    /// <p>The broker IDs hosting replicas of this topic's partitions.</p>
+    pub fn get_replica_ids(&self) -> &::std::option::Option<::std::vec::Vec<i32>> {
+        &self.replica_ids
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -170,6 +199,7 @@ impl DescribeTopicOutputBuilder {
             partition_count: self.partition_count,
             configs: self.configs,
             status: self.status,
+            replica_ids: self.replica_ids,
             _request_id: self._request_id,
         }
     }

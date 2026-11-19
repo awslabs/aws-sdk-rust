@@ -565,6 +565,10 @@ pub(crate) mod shape_automation_stream_update;
 
 pub(crate) mod shape_available_limits;
 
+pub(crate) mod shape_aws_billing_x402_payment_input;
+
+pub(crate) mod shape_aws_billing_x402_payment_output;
+
 pub(crate) mod shape_batch_evaluation_summary;
 
 pub(crate) mod shape_branch_filter;
@@ -793,6 +797,8 @@ pub(crate) mod shape_agent_core_runtime_invocation_details;
 
 pub(crate) mod shape_agent_traces_config;
 
+pub(crate) mod shape_aws_billing_payment_options;
+
 pub(crate) mod shape_cloud_watch_filter_config;
 
 pub(crate) mod shape_configuration_bundle_ref;
@@ -918,6 +924,8 @@ pub(crate) mod shape_custom_data_identifier;
 pub(crate) mod shape_custom_data_identifier_list;
 
 pub(crate) mod shape_custom_descriptor;
+
+pub(crate) mod shape_dpop_jwk;
 
 pub(crate) mod shape_evaluator_filter;
 

@@ -53,7 +53,8 @@ pub struct UpdateStackSetInput {
     /// <li>
     /// <p><code>CAPABILITY_AUTO_EXPAND</code></p>
     /// <p>Some templates reference macros. If your StackSet template references one or more macros, you must update the StackSet directly from the processed template, without first reviewing the resulting changes in a change set. To update the StackSet directly, you must acknowledge this capability. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform custom processing on CloudFormation templates with template macros</a>.</p><important>
-    /// <p>StackSets with service-managed permissions do not currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a StackSet with service-managed permissions, if you reference a macro in your template the StackSet operation will fail.</p>
+    /// <p>With service-managed permissions, CloudFormation can process macros, nested stacks, and transforms in your StackSet template only when you provide a custom execution role template. (Macros include the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) The default service-managed execution role can't provision them: if you reference a macro in your template, the StackSet operation fails even when you specify this capability.</p>
+    /// <p>To use macros, nested stacks, or transforms with service-managed permissions, specify a custom execution role template in <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>, and specify both <code>CAPABILITY_NAMED_IAM</code> and <code>CAPABILITY_AUTO_EXPAND</code>.</p>
     /// </important></li>
     /// </ul>
     pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
@@ -75,9 +76,10 @@ pub struct UpdateStackSetInput {
     /// <p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific StackSets within the same administrator account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant self-managed permissions</a> in the <i>CloudFormation User Guide</i>.</p>
     /// <p>If you specified a customized administrator role when you created the StackSet, you must specify a customized administrator role, even if it is the same customized administrator role used with this StackSet previously.</p>
     pub administration_role_arn: ::std::option::Option<::std::string::String>,
-    /// <p>\[Self-managed permissions\] The name of the IAM execution role to use to update the stack set. If you do not specify an execution role, CloudFormation uses the AWSCloudFormationStackSetExecutionRole role for the StackSet operation.</p>
-    /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their StackSets.</p>
+    /// <p>The name of the IAM execution role that CloudFormation uses for StackSet operations in your target accounts.</p>
+    /// <p>\[Self-managed permissions\] The name of the IAM execution role to use to update the stack set. If you do not specify an execution role, CloudFormation uses the AWSCloudFormationStackSetExecutionRole role for the StackSet operation. Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their StackSets.</p>
     /// <p>If you specify a customized execution role, CloudFormation uses that role to update the stack. If you do not specify a customized execution role, CloudFormation performs the update using the role previously associated with the StackSet, so long as you have permissions to perform operations on the StackSet.</p>
+    /// <p>\[Service-managed permissions\] Set this name when you use custom execution roles. The role that your custom execution role template provisions in your target accounts must have this same name, and the name must begin with stacksets-exec-custom-. You don't need to specify this parameter if an execution role name is already configured for the StackSet and you aren't changing it.</p>
     pub execution_role_name: ::std::option::Option<::std::string::String>,
     /// <p>\[Service-managed permissions\] The Organizations accounts in which to update associated stack instances.</p>
     /// <p>To update all the stack instances associated with this StackSet, do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
@@ -119,6 +121,16 @@ pub struct UpdateStackSetInput {
     pub call_as: ::std::option::Option<crate::types::CallAs>,
     /// <p>Describes whether CloudFormation performs non-conflicting operations concurrently and queues conflicting operations.</p>
     pub managed_execution: ::std::option::Option<crate::types::ManagedExecution>,
+    /// <p>The body of the template that creates or updates a custom execution role in target accounts. This parameter applies only when the permissions model is <code>SERVICE_MANAGED</code>.</p>
+    /// <p>Conditional: Specify either <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>, but not both. If you don't specify either, CloudFormation uses the default service-managed execution role in target accounts.</p>
+    pub execution_role_template_body: ::std::option::Option<::std::string::String>,
+    /// <p>The URL of an Amazon S3 object that contains the template that creates or updates a custom execution role in target accounts. This parameter applies only when the permissions model is <code>SERVICE_MANAGED</code>.</p>
+    /// <p>Conditional: Specify either <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>, but not both. If you don't specify either, CloudFormation uses the default service-managed execution role in target accounts.</p>
+    pub execution_role_template_url: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether CloudFormation uses the default service-managed execution role instead of a custom execution role in target accounts. If you set this to <code>true</code>, CloudFormation ignores any custom execution role template specified in <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>.</p>
+    pub use_admin_execution_role: ::std::option::Option<bool>,
+    /// <p>The name of the Amazon S3 bucket that stores the execution role stack template body. CloudFormation uses this bucket only when you specify a custom execution role template.</p>
+    pub stack_set_output_bucket: ::std::option::Option<::std::string::String>,
 }
 impl UpdateStackSetInput {
     /// <p>The name or unique ID of the StackSet that you want to update.</p>
@@ -185,7 +197,8 @@ impl UpdateStackSetInput {
     /// <li>
     /// <p><code>CAPABILITY_AUTO_EXPAND</code></p>
     /// <p>Some templates reference macros. If your StackSet template references one or more macros, you must update the StackSet directly from the processed template, without first reviewing the resulting changes in a change set. To update the StackSet directly, you must acknowledge this capability. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform custom processing on CloudFormation templates with template macros</a>.</p><important>
-    /// <p>StackSets with service-managed permissions do not currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a StackSet with service-managed permissions, if you reference a macro in your template the StackSet operation will fail.</p>
+    /// <p>With service-managed permissions, CloudFormation can process macros, nested stacks, and transforms in your StackSet template only when you provide a custom execution role template. (Macros include the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) The default service-managed execution role can't provision them: if you reference a macro in your template, the StackSet operation fails even when you specify this capability.</p>
+    /// <p>To use macros, nested stacks, or transforms with service-managed permissions, specify a custom execution role template in <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>, and specify both <code>CAPABILITY_NAMED_IAM</code> and <code>CAPABILITY_AUTO_EXPAND</code>.</p>
     /// </important></li>
     /// </ul>
     ///
@@ -219,9 +232,10 @@ impl UpdateStackSetInput {
     pub fn administration_role_arn(&self) -> ::std::option::Option<&str> {
         self.administration_role_arn.as_deref()
     }
-    /// <p>\[Self-managed permissions\] The name of the IAM execution role to use to update the stack set. If you do not specify an execution role, CloudFormation uses the AWSCloudFormationStackSetExecutionRole role for the StackSet operation.</p>
-    /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their StackSets.</p>
+    /// <p>The name of the IAM execution role that CloudFormation uses for StackSet operations in your target accounts.</p>
+    /// <p>\[Self-managed permissions\] The name of the IAM execution role to use to update the stack set. If you do not specify an execution role, CloudFormation uses the AWSCloudFormationStackSetExecutionRole role for the StackSet operation. Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their StackSets.</p>
     /// <p>If you specify a customized execution role, CloudFormation uses that role to update the stack. If you do not specify a customized execution role, CloudFormation performs the update using the role previously associated with the StackSet, so long as you have permissions to perform operations on the StackSet.</p>
+    /// <p>\[Service-managed permissions\] Set this name when you use custom execution roles. The role that your custom execution role template provisions in your target accounts must have this same name, and the name must begin with stacksets-exec-custom-. You don't need to specify this parameter if an execution role name is already configured for the StackSet and you aren't changing it.</p>
     pub fn execution_role_name(&self) -> ::std::option::Option<&str> {
         self.execution_role_name.as_deref()
     }
@@ -285,6 +299,24 @@ impl UpdateStackSetInput {
     pub fn managed_execution(&self) -> ::std::option::Option<&crate::types::ManagedExecution> {
         self.managed_execution.as_ref()
     }
+    /// <p>The body of the template that creates or updates a custom execution role in target accounts. This parameter applies only when the permissions model is <code>SERVICE_MANAGED</code>.</p>
+    /// <p>Conditional: Specify either <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>, but not both. If you don't specify either, CloudFormation uses the default service-managed execution role in target accounts.</p>
+    pub fn execution_role_template_body(&self) -> ::std::option::Option<&str> {
+        self.execution_role_template_body.as_deref()
+    }
+    /// <p>The URL of an Amazon S3 object that contains the template that creates or updates a custom execution role in target accounts. This parameter applies only when the permissions model is <code>SERVICE_MANAGED</code>.</p>
+    /// <p>Conditional: Specify either <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>, but not both. If you don't specify either, CloudFormation uses the default service-managed execution role in target accounts.</p>
+    pub fn execution_role_template_url(&self) -> ::std::option::Option<&str> {
+        self.execution_role_template_url.as_deref()
+    }
+    /// <p>Specifies whether CloudFormation uses the default service-managed execution role instead of a custom execution role in target accounts. If you set this to <code>true</code>, CloudFormation ignores any custom execution role template specified in <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>.</p>
+    pub fn use_admin_execution_role(&self) -> ::std::option::Option<bool> {
+        self.use_admin_execution_role
+    }
+    /// <p>The name of the Amazon S3 bucket that stores the execution role stack template body. CloudFormation uses this bucket only when you specify a custom execution role template.</p>
+    pub fn stack_set_output_bucket(&self) -> ::std::option::Option<&str> {
+        self.stack_set_output_bucket.as_deref()
+    }
 }
 impl UpdateStackSetInput {
     /// Creates a new builder-style object to manufacture [`UpdateStackSetInput`](crate::operation::update_stack_set::UpdateStackSetInput).
@@ -316,6 +348,10 @@ pub struct UpdateStackSetInputBuilder {
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) call_as: ::std::option::Option<crate::types::CallAs>,
     pub(crate) managed_execution: ::std::option::Option<crate::types::ManagedExecution>,
+    pub(crate) execution_role_template_body: ::std::option::Option<::std::string::String>,
+    pub(crate) execution_role_template_url: ::std::option::Option<::std::string::String>,
+    pub(crate) use_admin_execution_role: ::std::option::Option<bool>,
+    pub(crate) stack_set_output_bucket: ::std::option::Option<::std::string::String>,
 }
 impl UpdateStackSetInputBuilder {
     /// <p>The name or unique ID of the StackSet that you want to update.</p>
@@ -457,7 +493,8 @@ impl UpdateStackSetInputBuilder {
     /// <li>
     /// <p><code>CAPABILITY_AUTO_EXPAND</code></p>
     /// <p>Some templates reference macros. If your StackSet template references one or more macros, you must update the StackSet directly from the processed template, without first reviewing the resulting changes in a change set. To update the StackSet directly, you must acknowledge this capability. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform custom processing on CloudFormation templates with template macros</a>.</p><important>
-    /// <p>StackSets with service-managed permissions do not currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a StackSet with service-managed permissions, if you reference a macro in your template the StackSet operation will fail.</p>
+    /// <p>With service-managed permissions, CloudFormation can process macros, nested stacks, and transforms in your StackSet template only when you provide a custom execution role template. (Macros include the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) The default service-managed execution role can't provision them: if you reference a macro in your template, the StackSet operation fails even when you specify this capability.</p>
+    /// <p>To use macros, nested stacks, or transforms with service-managed permissions, specify a custom execution role template in <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>, and specify both <code>CAPABILITY_NAMED_IAM</code> and <code>CAPABILITY_AUTO_EXPAND</code>.</p>
     /// </important></li>
     /// </ul>
     pub fn capabilities(mut self, input: crate::types::Capability) -> Self {
@@ -501,7 +538,8 @@ impl UpdateStackSetInputBuilder {
     /// <li>
     /// <p><code>CAPABILITY_AUTO_EXPAND</code></p>
     /// <p>Some templates reference macros. If your StackSet template references one or more macros, you must update the StackSet directly from the processed template, without first reviewing the resulting changes in a change set. To update the StackSet directly, you must acknowledge this capability. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform custom processing on CloudFormation templates with template macros</a>.</p><important>
-    /// <p>StackSets with service-managed permissions do not currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a StackSet with service-managed permissions, if you reference a macro in your template the StackSet operation will fail.</p>
+    /// <p>With service-managed permissions, CloudFormation can process macros, nested stacks, and transforms in your StackSet template only when you provide a custom execution role template. (Macros include the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) The default service-managed execution role can't provision them: if you reference a macro in your template, the StackSet operation fails even when you specify this capability.</p>
+    /// <p>To use macros, nested stacks, or transforms with service-managed permissions, specify a custom execution role template in <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>, and specify both <code>CAPABILITY_NAMED_IAM</code> and <code>CAPABILITY_AUTO_EXPAND</code>.</p>
     /// </important></li>
     /// </ul>
     pub fn set_capabilities(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>) -> Self {
@@ -543,7 +581,8 @@ impl UpdateStackSetInputBuilder {
     /// <li>
     /// <p><code>CAPABILITY_AUTO_EXPAND</code></p>
     /// <p>Some templates reference macros. If your StackSet template references one or more macros, you must update the StackSet directly from the processed template, without first reviewing the resulting changes in a change set. To update the StackSet directly, you must acknowledge this capability. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Perform custom processing on CloudFormation templates with template macros</a>.</p><important>
-    /// <p>StackSets with service-managed permissions do not currently support the use of macros in templates. (This includes the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) Even if you specify this capability for a StackSet with service-managed permissions, if you reference a macro in your template the StackSet operation will fail.</p>
+    /// <p>With service-managed permissions, CloudFormation can process macros, nested stacks, and transforms in your StackSet template only when you provide a custom execution role template. (Macros include the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-include.html">AWS::Include</a> and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.) The default service-managed execution role can't provision them: if you reference a macro in your template, the StackSet operation fails even when you specify this capability.</p>
+    /// <p>To use macros, nested stacks, or transforms with service-managed permissions, specify a custom execution role template in <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>, and specify both <code>CAPABILITY_NAMED_IAM</code> and <code>CAPABILITY_AUTO_EXPAND</code>.</p>
     /// </important></li>
     /// </ul>
     pub fn get_capabilities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Capability>> {
@@ -633,23 +672,26 @@ impl UpdateStackSetInputBuilder {
     pub fn get_administration_role_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.administration_role_arn
     }
-    /// <p>\[Self-managed permissions\] The name of the IAM execution role to use to update the stack set. If you do not specify an execution role, CloudFormation uses the AWSCloudFormationStackSetExecutionRole role for the StackSet operation.</p>
-    /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their StackSets.</p>
+    /// <p>The name of the IAM execution role that CloudFormation uses for StackSet operations in your target accounts.</p>
+    /// <p>\[Self-managed permissions\] The name of the IAM execution role to use to update the stack set. If you do not specify an execution role, CloudFormation uses the AWSCloudFormationStackSetExecutionRole role for the StackSet operation. Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their StackSets.</p>
     /// <p>If you specify a customized execution role, CloudFormation uses that role to update the stack. If you do not specify a customized execution role, CloudFormation performs the update using the role previously associated with the StackSet, so long as you have permissions to perform operations on the StackSet.</p>
+    /// <p>\[Service-managed permissions\] Set this name when you use custom execution roles. The role that your custom execution role template provisions in your target accounts must have this same name, and the name must begin with stacksets-exec-custom-. You don't need to specify this parameter if an execution role name is already configured for the StackSet and you aren't changing it.</p>
     pub fn execution_role_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.execution_role_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>\[Self-managed permissions\] The name of the IAM execution role to use to update the stack set. If you do not specify an execution role, CloudFormation uses the AWSCloudFormationStackSetExecutionRole role for the StackSet operation.</p>
-    /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their StackSets.</p>
+    /// <p>The name of the IAM execution role that CloudFormation uses for StackSet operations in your target accounts.</p>
+    /// <p>\[Self-managed permissions\] The name of the IAM execution role to use to update the stack set. If you do not specify an execution role, CloudFormation uses the AWSCloudFormationStackSetExecutionRole role for the StackSet operation. Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their StackSets.</p>
     /// <p>If you specify a customized execution role, CloudFormation uses that role to update the stack. If you do not specify a customized execution role, CloudFormation performs the update using the role previously associated with the StackSet, so long as you have permissions to perform operations on the StackSet.</p>
+    /// <p>\[Service-managed permissions\] Set this name when you use custom execution roles. The role that your custom execution role template provisions in your target accounts must have this same name, and the name must begin with stacksets-exec-custom-. You don't need to specify this parameter if an execution role name is already configured for the StackSet and you aren't changing it.</p>
     pub fn set_execution_role_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.execution_role_name = input;
         self
     }
-    /// <p>\[Self-managed permissions\] The name of the IAM execution role to use to update the stack set. If you do not specify an execution role, CloudFormation uses the AWSCloudFormationStackSetExecutionRole role for the StackSet operation.</p>
-    /// <p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their StackSets.</p>
+    /// <p>The name of the IAM execution role that CloudFormation uses for StackSet operations in your target accounts.</p>
+    /// <p>\[Self-managed permissions\] The name of the IAM execution role to use to update the stack set. If you do not specify an execution role, CloudFormation uses the AWSCloudFormationStackSetExecutionRole role for the StackSet operation. Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their StackSets.</p>
     /// <p>If you specify a customized execution role, CloudFormation uses that role to update the stack. If you do not specify a customized execution role, CloudFormation performs the update using the role previously associated with the StackSet, so long as you have permissions to perform operations on the StackSet.</p>
+    /// <p>\[Service-managed permissions\] Set this name when you use custom execution roles. The role that your custom execution role template provisions in your target accounts must have this same name, and the name must begin with stacksets-exec-custom-. You don't need to specify this parameter if an execution role name is already configured for the StackSet and you aren't changing it.</p>
     pub fn get_execution_role_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.execution_role_name
     }
@@ -849,6 +891,68 @@ impl UpdateStackSetInputBuilder {
     pub fn get_managed_execution(&self) -> &::std::option::Option<crate::types::ManagedExecution> {
         &self.managed_execution
     }
+    /// <p>The body of the template that creates or updates a custom execution role in target accounts. This parameter applies only when the permissions model is <code>SERVICE_MANAGED</code>.</p>
+    /// <p>Conditional: Specify either <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>, but not both. If you don't specify either, CloudFormation uses the default service-managed execution role in target accounts.</p>
+    pub fn execution_role_template_body(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.execution_role_template_body = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The body of the template that creates or updates a custom execution role in target accounts. This parameter applies only when the permissions model is <code>SERVICE_MANAGED</code>.</p>
+    /// <p>Conditional: Specify either <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>, but not both. If you don't specify either, CloudFormation uses the default service-managed execution role in target accounts.</p>
+    pub fn set_execution_role_template_body(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_role_template_body = input;
+        self
+    }
+    /// <p>The body of the template that creates or updates a custom execution role in target accounts. This parameter applies only when the permissions model is <code>SERVICE_MANAGED</code>.</p>
+    /// <p>Conditional: Specify either <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>, but not both. If you don't specify either, CloudFormation uses the default service-managed execution role in target accounts.</p>
+    pub fn get_execution_role_template_body(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_template_body
+    }
+    /// <p>The URL of an Amazon S3 object that contains the template that creates or updates a custom execution role in target accounts. This parameter applies only when the permissions model is <code>SERVICE_MANAGED</code>.</p>
+    /// <p>Conditional: Specify either <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>, but not both. If you don't specify either, CloudFormation uses the default service-managed execution role in target accounts.</p>
+    pub fn execution_role_template_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.execution_role_template_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The URL of an Amazon S3 object that contains the template that creates or updates a custom execution role in target accounts. This parameter applies only when the permissions model is <code>SERVICE_MANAGED</code>.</p>
+    /// <p>Conditional: Specify either <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>, but not both. If you don't specify either, CloudFormation uses the default service-managed execution role in target accounts.</p>
+    pub fn set_execution_role_template_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.execution_role_template_url = input;
+        self
+    }
+    /// <p>The URL of an Amazon S3 object that contains the template that creates or updates a custom execution role in target accounts. This parameter applies only when the permissions model is <code>SERVICE_MANAGED</code>.</p>
+    /// <p>Conditional: Specify either <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>, but not both. If you don't specify either, CloudFormation uses the default service-managed execution role in target accounts.</p>
+    pub fn get_execution_role_template_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.execution_role_template_url
+    }
+    /// <p>Specifies whether CloudFormation uses the default service-managed execution role instead of a custom execution role in target accounts. If you set this to <code>true</code>, CloudFormation ignores any custom execution role template specified in <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>.</p>
+    pub fn use_admin_execution_role(mut self, input: bool) -> Self {
+        self.use_admin_execution_role = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether CloudFormation uses the default service-managed execution role instead of a custom execution role in target accounts. If you set this to <code>true</code>, CloudFormation ignores any custom execution role template specified in <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>.</p>
+    pub fn set_use_admin_execution_role(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.use_admin_execution_role = input;
+        self
+    }
+    /// <p>Specifies whether CloudFormation uses the default service-managed execution role instead of a custom execution role in target accounts. If you set this to <code>true</code>, CloudFormation ignores any custom execution role template specified in <code>ExecutionRoleTemplateBody</code> or <code>ExecutionRoleTemplateUrl</code>.</p>
+    pub fn get_use_admin_execution_role(&self) -> &::std::option::Option<bool> {
+        &self.use_admin_execution_role
+    }
+    /// <p>The name of the Amazon S3 bucket that stores the execution role stack template body. CloudFormation uses this bucket only when you specify a custom execution role template.</p>
+    pub fn stack_set_output_bucket(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stack_set_output_bucket = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The name of the Amazon S3 bucket that stores the execution role stack template body. CloudFormation uses this bucket only when you specify a custom execution role template.</p>
+    pub fn set_stack_set_output_bucket(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stack_set_output_bucket = input;
+        self
+    }
+    /// <p>The name of the Amazon S3 bucket that stores the execution role stack template body. CloudFormation uses this bucket only when you specify a custom execution role template.</p>
+    pub fn get_stack_set_output_bucket(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_set_output_bucket
+    }
     /// Consumes the builder and constructs a [`UpdateStackSetInput`](crate::operation::update_stack_set::UpdateStackSetInput).
     pub fn build(
         self,
@@ -873,6 +977,10 @@ impl UpdateStackSetInputBuilder {
             regions: self.regions,
             call_as: self.call_as,
             managed_execution: self.managed_execution,
+            execution_role_template_body: self.execution_role_template_body,
+            execution_role_template_url: self.execution_role_template_url,
+            use_admin_execution_role: self.use_admin_execution_role,
+            stack_set_output_bucket: self.stack_set_output_bucket,
         })
     }
 }

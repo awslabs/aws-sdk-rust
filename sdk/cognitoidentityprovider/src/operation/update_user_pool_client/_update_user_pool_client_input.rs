@@ -132,6 +132,12 @@ pub struct UpdateUserPoolClientInput {
     pub auth_session_validity: ::std::option::Option<i32>,
     /// <p>The configuration of your app client for refresh token rotation. When enabled, your app client issues new ID, access, and refresh tokens when users renew their sessions with refresh tokens. When disabled, token refresh issues only ID and access tokens.</p>
     pub refresh_token_rotation: ::std::option::Option<crate::types::RefreshTokenRotationType>,
+    /// <p>Specifies whether Amazon Cognito stores and manages this app client's secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon Web Services Secrets Manager</a> instead of returning the plaintext value. When you set this parameter to <code>true</code>, the response returns <code>ClientSecretArn</code> instead of <code>ClientSecret</code>. By default, Amazon Cognito rotates the secret every 7 days. You can change the rotation schedule in Secrets Manager.</p>
+    /// <p>Set to <code>true</code> to migrate an existing generated secret into Secrets Manager, or <code>false</code> to move it back to Amazon Cognito and delete the Secrets Manager secret. If you omit this parameter, Amazon Cognito doesn't change how it manages the existing secret. Applies only to app clients that already have a generated secret.</p>
+    /// <p>When you set it to <code>true</code>, Amazon Cognito starts managing the app client's secret in Secrets Manager and rotates it right away. If the app client has two secrets, that first rotation deletes the older one.</p><important>
+    /// <p>When you set this parameter to <code>false</code>, Amazon Cognito immediately and permanently deletes the Secrets Manager secret. There's no recovery window. Applications that read the secret from Secrets Manager can no longer get it.</p>
+    /// </important>
+    pub publish_secrets_in_aws_secrets_manager: ::std::option::Option<bool>,
 }
 impl UpdateUserPoolClientInput {
     /// <p>The ID of the user pool where you want to update the app client.</p>
@@ -324,6 +330,14 @@ impl UpdateUserPoolClientInput {
     pub fn refresh_token_rotation(&self) -> ::std::option::Option<&crate::types::RefreshTokenRotationType> {
         self.refresh_token_rotation.as_ref()
     }
+    /// <p>Specifies whether Amazon Cognito stores and manages this app client's secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon Web Services Secrets Manager</a> instead of returning the plaintext value. When you set this parameter to <code>true</code>, the response returns <code>ClientSecretArn</code> instead of <code>ClientSecret</code>. By default, Amazon Cognito rotates the secret every 7 days. You can change the rotation schedule in Secrets Manager.</p>
+    /// <p>Set to <code>true</code> to migrate an existing generated secret into Secrets Manager, or <code>false</code> to move it back to Amazon Cognito and delete the Secrets Manager secret. If you omit this parameter, Amazon Cognito doesn't change how it manages the existing secret. Applies only to app clients that already have a generated secret.</p>
+    /// <p>When you set it to <code>true</code>, Amazon Cognito starts managing the app client's secret in Secrets Manager and rotates it right away. If the app client has two secrets, that first rotation deletes the older one.</p><important>
+    /// <p>When you set this parameter to <code>false</code>, Amazon Cognito immediately and permanently deletes the Secrets Manager secret. There's no recovery window. Applications that read the secret from Secrets Manager can no longer get it.</p>
+    /// </important>
+    pub fn publish_secrets_in_aws_secrets_manager(&self) -> ::std::option::Option<bool> {
+        self.publish_secrets_in_aws_secrets_manager
+    }
 }
 impl ::std::fmt::Debug for UpdateUserPoolClientInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -354,6 +368,7 @@ impl ::std::fmt::Debug for UpdateUserPoolClientInput {
         );
         formatter.field("auth_session_validity", &self.auth_session_validity);
         formatter.field("refresh_token_rotation", &self.refresh_token_rotation);
+        formatter.field("publish_secrets_in_aws_secrets_manager", &self.publish_secrets_in_aws_secrets_manager);
         formatter.finish()
     }
 }
@@ -391,6 +406,7 @@ pub struct UpdateUserPoolClientInputBuilder {
     pub(crate) enable_propagate_additional_user_context_data: ::std::option::Option<bool>,
     pub(crate) auth_session_validity: ::std::option::Option<i32>,
     pub(crate) refresh_token_rotation: ::std::option::Option<crate::types::RefreshTokenRotationType>,
+    pub(crate) publish_secrets_in_aws_secrets_manager: ::std::option::Option<bool>,
 }
 impl UpdateUserPoolClientInputBuilder {
     /// <p>The ID of the user pool where you want to update the app client.</p>
@@ -1011,6 +1027,32 @@ impl UpdateUserPoolClientInputBuilder {
     pub fn get_refresh_token_rotation(&self) -> &::std::option::Option<crate::types::RefreshTokenRotationType> {
         &self.refresh_token_rotation
     }
+    /// <p>Specifies whether Amazon Cognito stores and manages this app client's secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon Web Services Secrets Manager</a> instead of returning the plaintext value. When you set this parameter to <code>true</code>, the response returns <code>ClientSecretArn</code> instead of <code>ClientSecret</code>. By default, Amazon Cognito rotates the secret every 7 days. You can change the rotation schedule in Secrets Manager.</p>
+    /// <p>Set to <code>true</code> to migrate an existing generated secret into Secrets Manager, or <code>false</code> to move it back to Amazon Cognito and delete the Secrets Manager secret. If you omit this parameter, Amazon Cognito doesn't change how it manages the existing secret. Applies only to app clients that already have a generated secret.</p>
+    /// <p>When you set it to <code>true</code>, Amazon Cognito starts managing the app client's secret in Secrets Manager and rotates it right away. If the app client has two secrets, that first rotation deletes the older one.</p><important>
+    /// <p>When you set this parameter to <code>false</code>, Amazon Cognito immediately and permanently deletes the Secrets Manager secret. There's no recovery window. Applications that read the secret from Secrets Manager can no longer get it.</p>
+    /// </important>
+    pub fn publish_secrets_in_aws_secrets_manager(mut self, input: bool) -> Self {
+        self.publish_secrets_in_aws_secrets_manager = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether Amazon Cognito stores and manages this app client's secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon Web Services Secrets Manager</a> instead of returning the plaintext value. When you set this parameter to <code>true</code>, the response returns <code>ClientSecretArn</code> instead of <code>ClientSecret</code>. By default, Amazon Cognito rotates the secret every 7 days. You can change the rotation schedule in Secrets Manager.</p>
+    /// <p>Set to <code>true</code> to migrate an existing generated secret into Secrets Manager, or <code>false</code> to move it back to Amazon Cognito and delete the Secrets Manager secret. If you omit this parameter, Amazon Cognito doesn't change how it manages the existing secret. Applies only to app clients that already have a generated secret.</p>
+    /// <p>When you set it to <code>true</code>, Amazon Cognito starts managing the app client's secret in Secrets Manager and rotates it right away. If the app client has two secrets, that first rotation deletes the older one.</p><important>
+    /// <p>When you set this parameter to <code>false</code>, Amazon Cognito immediately and permanently deletes the Secrets Manager secret. There's no recovery window. Applications that read the secret from Secrets Manager can no longer get it.</p>
+    /// </important>
+    pub fn set_publish_secrets_in_aws_secrets_manager(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.publish_secrets_in_aws_secrets_manager = input;
+        self
+    }
+    /// <p>Specifies whether Amazon Cognito stores and manages this app client's secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon Web Services Secrets Manager</a> instead of returning the plaintext value. When you set this parameter to <code>true</code>, the response returns <code>ClientSecretArn</code> instead of <code>ClientSecret</code>. By default, Amazon Cognito rotates the secret every 7 days. You can change the rotation schedule in Secrets Manager.</p>
+    /// <p>Set to <code>true</code> to migrate an existing generated secret into Secrets Manager, or <code>false</code> to move it back to Amazon Cognito and delete the Secrets Manager secret. If you omit this parameter, Amazon Cognito doesn't change how it manages the existing secret. Applies only to app clients that already have a generated secret.</p>
+    /// <p>When you set it to <code>true</code>, Amazon Cognito starts managing the app client's secret in Secrets Manager and rotates it right away. If the app client has two secrets, that first rotation deletes the older one.</p><important>
+    /// <p>When you set this parameter to <code>false</code>, Amazon Cognito immediately and permanently deletes the Secrets Manager secret. There's no recovery window. Applications that read the secret from Secrets Manager can no longer get it.</p>
+    /// </important>
+    pub fn get_publish_secrets_in_aws_secrets_manager(&self) -> &::std::option::Option<bool> {
+        &self.publish_secrets_in_aws_secrets_manager
+    }
     /// Consumes the builder and constructs a [`UpdateUserPoolClientInput`](crate::operation::update_user_pool_client::UpdateUserPoolClientInput).
     pub fn build(
         self,
@@ -1040,6 +1082,7 @@ impl UpdateUserPoolClientInputBuilder {
             enable_propagate_additional_user_context_data: self.enable_propagate_additional_user_context_data,
             auth_session_validity: self.auth_session_validity,
             refresh_token_rotation: self.refresh_token_rotation,
+            publish_secrets_in_aws_secrets_manager: self.publish_secrets_in_aws_secrets_manager,
         })
     }
 }
@@ -1072,6 +1115,7 @@ impl ::std::fmt::Debug for UpdateUserPoolClientInputBuilder {
         );
         formatter.field("auth_session_validity", &self.auth_session_validity);
         formatter.field("refresh_token_rotation", &self.refresh_token_rotation);
+        formatter.field("publish_secrets_in_aws_secrets_manager", &self.publish_secrets_in_aws_secrets_manager);
         formatter.finish()
     }
 }

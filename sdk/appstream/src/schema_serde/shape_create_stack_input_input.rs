@@ -186,6 +186,16 @@ static CREATESTACKINPUT_MEMBER_CONTENT_REDIRECTION: ::aws_smithy_schema::Schema<
     "ContentRedirection",
     12,
 );
+static CREATESTACKINPUT_MEMBER_WEB_AUTHN_REDIRECTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.appstream.synthetic#CreateStackInput$WebAuthnRedirection",
+        "com.amazonaws.appstream.synthetic",
+        "CreateStackInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "WebAuthnRedirection",
+    13,
+);
 static CREATESTACKINPUT_MEMBER_AGENT_ACCESS_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.appstream.synthetic#CreateStackInput$AgentAccessConfig",
@@ -194,7 +204,7 @@ static CREATESTACKINPUT_MEMBER_AGENT_ACCESS_CONFIG: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "AgentAccessConfig",
-    13,
+    14,
 );
 static CREATESTACKINPUT_MEMBER_STORAGE_CONNECTOR_AUTHENTICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -204,7 +214,7 @@ static CREATESTACKINPUT_MEMBER_STORAGE_CONNECTOR_AUTHENTICATION: ::aws_smithy_sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "StorageConnectorAuthentication",
-    14,
+    15,
 );
 static CREATESTACKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -227,6 +237,7 @@ static CREATESTACKINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smi
         &CREATESTACKINPUT_MEMBER_EMBED_HOST_DOMAINS,
         &CREATESTACKINPUT_MEMBER_STREAMING_EXPERIENCE_SETTINGS,
         &CREATESTACKINPUT_MEMBER_CONTENT_REDIRECTION,
+        &CREATESTACKINPUT_MEMBER_WEB_AUTHN_REDIRECTION,
         &CREATESTACKINPUT_MEMBER_AGENT_ACCESS_CONFIG,
         &CREATESTACKINPUT_MEMBER_STORAGE_CONNECTOR_AUTHENTICATION,
     ],
@@ -326,6 +337,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::create
         }
         if let Some(ref val) = self.content_redirection {
             ser.write_struct(&CREATESTACKINPUT_MEMBER_CONTENT_REDIRECTION, val)?;
+        }
+        if let Some(ref val) = self.web_authn_redirection {
+            ser.write_struct(&CREATESTACKINPUT_MEMBER_WEB_AUTHN_REDIRECTION, val)?;
         }
         if let Some(ref val) = self.agent_access_config {
             ser.write_struct(&CREATESTACKINPUT_MEMBER_AGENT_ACCESS_CONFIG, val)?;
@@ -466,10 +480,17 @@ impl crate::operation::create_stack::builders::CreateStackInputBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.agent_access_config = Some(crate::types::AgentAccessConfig::deserialize(deser)?);
+                        self.web_authn_redirection = Some(crate::types::WebAuthnRedirection::deserialize(deser)?);
                     }
                 }
                 Some(14) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.agent_access_config = Some(crate::types::AgentAccessConfig::deserialize(deser)?);
+                    }
+                }
+                Some(15) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

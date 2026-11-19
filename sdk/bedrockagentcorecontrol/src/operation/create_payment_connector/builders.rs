@@ -170,11 +170,13 @@ impl CreatePaymentConnectorFluentBuilder {
     /// To override the contents of this collection use [`set_credential_provider_configurations`](Self::set_credential_provider_configurations).
     ///
     /// <p>The credential provider configurations for the payment connector. These configurations specify how the connector authenticates with the payment provider.</p>
+    /// <p>For an <code>AwsBilling</code> payment connector, omit this parameter or specify an empty list. The service uses the AWS Marketplace service-linked role in your account, which must exist before you create the connector, and you must have permission to call <code>iam:GetRole</code> on it.</p>
     pub fn credential_provider_configurations(mut self, input: crate::types::CredentialsProviderConfiguration) -> Self {
         self.inner = self.inner.credential_provider_configurations(input);
         self
     }
     /// <p>The credential provider configurations for the payment connector. These configurations specify how the connector authenticates with the payment provider.</p>
+    /// <p>For an <code>AwsBilling</code> payment connector, omit this parameter or specify an empty list. The service uses the AWS Marketplace service-linked role in your account, which must exist before you create the connector, and you must have permission to call <code>iam:GetRole</code> on it.</p>
     pub fn set_credential_provider_configurations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::CredentialsProviderConfiguration>>,
@@ -183,6 +185,7 @@ impl CreatePaymentConnectorFluentBuilder {
         self
     }
     /// <p>The credential provider configurations for the payment connector. These configurations specify how the connector authenticates with the payment provider.</p>
+    /// <p>For an <code>AwsBilling</code> payment connector, omit this parameter or specify an empty list. The service uses the AWS Marketplace service-linked role in your account, which must exist before you create the connector, and you must have permission to call <code>iam:GetRole</code> on it.</p>
     pub fn get_credential_provider_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CredentialsProviderConfiguration>> {
         self.inner.get_credential_provider_configurations()
     }

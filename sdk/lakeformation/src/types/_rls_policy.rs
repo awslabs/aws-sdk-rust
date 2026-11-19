@@ -12,6 +12,10 @@ pub struct RlsPolicy {
     pub attachment_columns: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
     /// <p>The filter predicate, written in a SQL-like syntax, that determines which rows are returned to the principal.</p>
     pub filter_expression: ::std::option::Option<::std::string::String>,
+    /// <p>Whether the row-level security policy can be evaluated. <code>VALID</code> means that every lookup table and user-defined function the filter expression references exists. <code>INVALID</code> means that a lookup table or user-defined function the filter expression references was deleted.</p>
+    pub status: ::std::option::Option<crate::types::RlsPolicyStatus>,
+    /// <p>The reason the row-level security policy is <code>INVALID</code>. <code>REFERENCED_LOOKUP_TABLE_DELETED</code> means that a lookup table the filter expression references was deleted. <code>REFERENCED_UDF_DELETED</code> means that a user-defined function the filter expression references was deleted. Not returned when the status is <code>VALID</code>.</p>
+    pub status_reason: ::std::option::Option<crate::types::RlsPolicyStatusReason>,
 }
 impl RlsPolicy {
     /// <p>The identifier for the Data Catalog that contains the policy. By default, the account ID.</p>
@@ -32,6 +36,14 @@ impl RlsPolicy {
     pub fn filter_expression(&self) -> ::std::option::Option<&str> {
         self.filter_expression.as_deref()
     }
+    /// <p>Whether the row-level security policy can be evaluated. <code>VALID</code> means that every lookup table and user-defined function the filter expression references exists. <code>INVALID</code> means that a lookup table or user-defined function the filter expression references was deleted.</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::RlsPolicyStatus> {
+        self.status.as_ref()
+    }
+    /// <p>The reason the row-level security policy is <code>INVALID</code>. <code>REFERENCED_LOOKUP_TABLE_DELETED</code> means that a lookup table the filter expression references was deleted. <code>REFERENCED_UDF_DELETED</code> means that a user-defined function the filter expression references was deleted. Not returned when the status is <code>VALID</code>.</p>
+    pub fn status_reason(&self) -> ::std::option::Option<&crate::types::RlsPolicyStatusReason> {
+        self.status_reason.as_ref()
+    }
 }
 impl RlsPolicy {
     /// Creates a new builder-style object to manufacture [`RlsPolicy`](crate::types::RlsPolicy).
@@ -48,6 +60,8 @@ pub struct RlsPolicyBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) attachment_columns: ::std::option::Option<::std::vec::Vec<crate::types::Column>>,
     pub(crate) filter_expression: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::RlsPolicyStatus>,
+    pub(crate) status_reason: ::std::option::Option<crate::types::RlsPolicyStatusReason>,
 }
 impl RlsPolicyBuilder {
     /// <p>The identifier for the Data Catalog that contains the policy. By default, the account ID.</p>
@@ -112,6 +126,34 @@ impl RlsPolicyBuilder {
     pub fn get_filter_expression(&self) -> &::std::option::Option<::std::string::String> {
         &self.filter_expression
     }
+    /// <p>Whether the row-level security policy can be evaluated. <code>VALID</code> means that every lookup table and user-defined function the filter expression references exists. <code>INVALID</code> means that a lookup table or user-defined function the filter expression references was deleted.</p>
+    pub fn status(mut self, input: crate::types::RlsPolicyStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Whether the row-level security policy can be evaluated. <code>VALID</code> means that every lookup table and user-defined function the filter expression references exists. <code>INVALID</code> means that a lookup table or user-defined function the filter expression references was deleted.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::RlsPolicyStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>Whether the row-level security policy can be evaluated. <code>VALID</code> means that every lookup table and user-defined function the filter expression references exists. <code>INVALID</code> means that a lookup table or user-defined function the filter expression references was deleted.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::RlsPolicyStatus> {
+        &self.status
+    }
+    /// <p>The reason the row-level security policy is <code>INVALID</code>. <code>REFERENCED_LOOKUP_TABLE_DELETED</code> means that a lookup table the filter expression references was deleted. <code>REFERENCED_UDF_DELETED</code> means that a user-defined function the filter expression references was deleted. Not returned when the status is <code>VALID</code>.</p>
+    pub fn status_reason(mut self, input: crate::types::RlsPolicyStatusReason) -> Self {
+        self.status_reason = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The reason the row-level security policy is <code>INVALID</code>. <code>REFERENCED_LOOKUP_TABLE_DELETED</code> means that a lookup table the filter expression references was deleted. <code>REFERENCED_UDF_DELETED</code> means that a user-defined function the filter expression references was deleted. Not returned when the status is <code>VALID</code>.</p>
+    pub fn set_status_reason(mut self, input: ::std::option::Option<crate::types::RlsPolicyStatusReason>) -> Self {
+        self.status_reason = input;
+        self
+    }
+    /// <p>The reason the row-level security policy is <code>INVALID</code>. <code>REFERENCED_LOOKUP_TABLE_DELETED</code> means that a lookup table the filter expression references was deleted. <code>REFERENCED_UDF_DELETED</code> means that a user-defined function the filter expression references was deleted. Not returned when the status is <code>VALID</code>.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<crate::types::RlsPolicyStatusReason> {
+        &self.status_reason
+    }
     /// Consumes the builder and constructs a [`RlsPolicy`](crate::types::RlsPolicy).
     pub fn build(self) -> crate::types::RlsPolicy {
         crate::types::RlsPolicy {
@@ -119,6 +161,8 @@ impl RlsPolicyBuilder {
             name: self.name,
             attachment_columns: self.attachment_columns,
             filter_expression: self.filter_expression,
+            status: self.status,
+            status_reason: self.status_reason,
         }
     }
 }

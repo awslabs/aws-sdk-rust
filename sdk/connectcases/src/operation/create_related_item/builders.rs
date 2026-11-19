@@ -24,6 +24,7 @@ impl crate::operation::create_related_item::builders::CreateRelatedItemInputBuil
 ///
 /// <p>Creates a related item (comments, tasks, and contacts) and associates it with a case.</p>
 /// <p>There's a quota for the number of fields allowed in a Custom type related item. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect Customer Cases quotas</a>.</p>
+/// <p>There's a quota for the number of SLAs that can be attached to a case. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect Customer Cases quotas</a>.</p>
 /// <p><b>Use cases</b></p>
 /// <p>Following are examples of related items that you may want to associate with a case:</p>
 /// <ul>

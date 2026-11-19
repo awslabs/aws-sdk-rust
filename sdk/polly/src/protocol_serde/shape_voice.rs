@@ -21,6 +21,13 @@ where
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "Arn" => {
+                            builder = builder.set_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "Gender" => {
                             builder = builder.set_gender(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -56,6 +63,27 @@ where
                                     .transpose()?,
                             );
                         }
+                        "Origin" => {
+                            builder = builder.set_origin(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::VoiceOrigin::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "Status" => {
+                            builder = builder.set_status(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::VoiceStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "StatusReason" => {
+                            builder = builder.set_status_reason(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "AdditionalLanguageCodes" => {
                             builder = builder.set_additional_language_codes(crate::protocol_serde::shape_language_code_list::de_language_code_list(
                                 tokens,
@@ -66,6 +94,24 @@ where
                         "SupportedEngines" => {
                             builder =
                                 builder.set_supported_engines(crate::protocol_serde::shape_engine_list::de_engine_list(tokens, _value, depth + 1)?);
+                        }
+                        "VoiceCreationData" => {
+                            builder = builder.set_voice_creation_data(crate::protocol_serde::shape_voice_creation_data::de_voice_creation_data(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
+                        "CustomerManagedEncryption" => {
+                            builder = builder.set_customer_managed_encryption(
+                                crate::protocol_serde::shape_customer_managed_encryption::de_customer_managed_encryption(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "CreationTime" => {
+                            builder = builder.set_creation_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

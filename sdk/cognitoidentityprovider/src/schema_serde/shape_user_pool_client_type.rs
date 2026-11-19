@@ -39,6 +39,16 @@ static USERPOOLCLIENTTYPE_MEMBER_CLIENT_SECRET: ::aws_smithy_schema::Schema<'sta
     "ClientSecret",
     3,
 );
+static USERPOOLCLIENTTYPE_MEMBER_CLIENT_SECRET_ARN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cognitoidentityprovider#UserPoolClientType$ClientSecretArn",
+        "com.amazonaws.cognitoidentityprovider",
+        "UserPoolClientType",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ClientSecretArn",
+    4,
+);
 static USERPOOLCLIENTTYPE_MEMBER_LAST_MODIFIED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.cognitoidentityprovider#UserPoolClientType$LastModifiedDate",
@@ -47,7 +57,7 @@ static USERPOOLCLIENTTYPE_MEMBER_LAST_MODIFIED_DATE: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::Timestamp,
     "LastModifiedDate",
-    4,
+    5,
 );
 static USERPOOLCLIENTTYPE_MEMBER_CREATION_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -57,7 +67,7 @@ static USERPOOLCLIENTTYPE_MEMBER_CREATION_DATE: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::Timestamp,
     "CreationDate",
-    5,
+    6,
 );
 static USERPOOLCLIENTTYPE_MEMBER_REFRESH_TOKEN_VALIDITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -67,7 +77,7 @@ static USERPOOLCLIENTTYPE_MEMBER_REFRESH_TOKEN_VALIDITY: ::aws_smithy_schema::Sc
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "RefreshTokenValidity",
-    6,
+    7,
 );
 static USERPOOLCLIENTTYPE_MEMBER_ACCESS_TOKEN_VALIDITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -77,7 +87,7 @@ static USERPOOLCLIENTTYPE_MEMBER_ACCESS_TOKEN_VALIDITY: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "AccessTokenValidity",
-    7,
+    8,
 );
 static USERPOOLCLIENTTYPE_MEMBER_ID_TOKEN_VALIDITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -87,7 +97,7 @@ static USERPOOLCLIENTTYPE_MEMBER_ID_TOKEN_VALIDITY: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "IdTokenValidity",
-    8,
+    9,
 );
 static USERPOOLCLIENTTYPE_MEMBER_TOKEN_VALIDITY_UNITS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -97,7 +107,7 @@ static USERPOOLCLIENTTYPE_MEMBER_TOKEN_VALIDITY_UNITS: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "TokenValidityUnits",
-    9,
+    10,
 );
 static USERPOOLCLIENTTYPE_MEMBER_READ_ATTRIBUTES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -117,7 +127,7 @@ static USERPOOLCLIENTTYPE_MEMBER_READ_ATTRIBUTES: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::List,
     "ReadAttributes",
-    10,
+    11,
 )
 .with_list_member(&USERPOOLCLIENTTYPE_MEMBER_READ_ATTRIBUTES_MEMBER);
 static USERPOOLCLIENTTYPE_MEMBER_WRITE_ATTRIBUTES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -138,7 +148,7 @@ static USERPOOLCLIENTTYPE_MEMBER_WRITE_ATTRIBUTES: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::List,
     "WriteAttributes",
-    11,
+    12,
 )
 .with_list_member(&USERPOOLCLIENTTYPE_MEMBER_WRITE_ATTRIBUTES_MEMBER);
 static USERPOOLCLIENTTYPE_MEMBER_EXPLICIT_AUTH_FLOWS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -159,7 +169,7 @@ static USERPOOLCLIENTTYPE_MEMBER_EXPLICIT_AUTH_FLOWS: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::List,
     "ExplicitAuthFlows",
-    12,
+    13,
 )
 .with_list_member(&USERPOOLCLIENTTYPE_MEMBER_EXPLICIT_AUTH_FLOWS_MEMBER);
 static USERPOOLCLIENTTYPE_MEMBER_SUPPORTED_IDENTITY_PROVIDERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -180,7 +190,7 @@ static USERPOOLCLIENTTYPE_MEMBER_SUPPORTED_IDENTITY_PROVIDERS: ::aws_smithy_sche
     ),
     ::aws_smithy_schema::ShapeType::List,
     "SupportedIdentityProviders",
-    13,
+    14,
 )
 .with_list_member(&USERPOOLCLIENTTYPE_MEMBER_SUPPORTED_IDENTITY_PROVIDERS_MEMBER);
 static USERPOOLCLIENTTYPE_MEMBER_CALLBACK_URLS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -201,7 +211,7 @@ static USERPOOLCLIENTTYPE_MEMBER_CALLBACK_URLS: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::List,
     "CallbackURLs",
-    14,
+    15,
 )
 .with_list_member(&USERPOOLCLIENTTYPE_MEMBER_CALLBACK_URLS_MEMBER);
 static USERPOOLCLIENTTYPE_MEMBER_LOGOUT_URLS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -222,7 +232,7 @@ static USERPOOLCLIENTTYPE_MEMBER_LOGOUT_URLS: ::aws_smithy_schema::Schema<'stati
     ),
     ::aws_smithy_schema::ShapeType::List,
     "LogoutURLs",
-    15,
+    16,
 )
 .with_list_member(&USERPOOLCLIENTTYPE_MEMBER_LOGOUT_URLS_MEMBER);
 static USERPOOLCLIENTTYPE_MEMBER_DEFAULT_REDIRECT_URI: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -233,7 +243,7 @@ static USERPOOLCLIENTTYPE_MEMBER_DEFAULT_REDIRECT_URI: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::String,
     "DefaultRedirectURI",
-    16,
+    17,
 );
 static USERPOOLCLIENTTYPE_MEMBER_ALLOWED_O_AUTH_FLOWS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -253,7 +263,7 @@ static USERPOOLCLIENTTYPE_MEMBER_ALLOWED_O_AUTH_FLOWS: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::List,
     "AllowedOAuthFlows",
-    17,
+    18,
 )
 .with_list_member(&USERPOOLCLIENTTYPE_MEMBER_ALLOWED_O_AUTH_FLOWS_MEMBER);
 static USERPOOLCLIENTTYPE_MEMBER_ALLOWED_O_AUTH_SCOPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -274,7 +284,7 @@ static USERPOOLCLIENTTYPE_MEMBER_ALLOWED_O_AUTH_SCOPES: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::List,
     "AllowedOAuthScopes",
-    18,
+    19,
 )
 .with_list_member(&USERPOOLCLIENTTYPE_MEMBER_ALLOWED_O_AUTH_SCOPES_MEMBER);
 static USERPOOLCLIENTTYPE_MEMBER_ALLOWED_O_AUTH_FLOWS_USER_POOL_CLIENT: ::aws_smithy_schema::Schema<'static> =
@@ -286,7 +296,7 @@ static USERPOOLCLIENTTYPE_MEMBER_ALLOWED_O_AUTH_FLOWS_USER_POOL_CLIENT: ::aws_sm
         ),
         ::aws_smithy_schema::ShapeType::Boolean,
         "AllowedOAuthFlowsUserPoolClient",
-        19,
+        20,
     );
 static USERPOOLCLIENTTYPE_MEMBER_ANALYTICS_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -296,7 +306,7 @@ static USERPOOLCLIENTTYPE_MEMBER_ANALYTICS_CONFIGURATION: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "AnalyticsConfiguration",
-    20,
+    21,
 );
 static USERPOOLCLIENTTYPE_MEMBER_PREVENT_USER_EXISTENCE_ERRORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -306,7 +316,7 @@ static USERPOOLCLIENTTYPE_MEMBER_PREVENT_USER_EXISTENCE_ERRORS: ::aws_smithy_sch
     ),
     ::aws_smithy_schema::ShapeType::String,
     "PreventUserExistenceErrors",
-    21,
+    22,
 );
 static USERPOOLCLIENTTYPE_MEMBER_ENABLE_TOKEN_REVOCATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -316,7 +326,7 @@ static USERPOOLCLIENTTYPE_MEMBER_ENABLE_TOKEN_REVOCATION: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::Boolean,
     "EnableTokenRevocation",
-    22,
+    23,
 );
 static USERPOOLCLIENTTYPE_MEMBER_ENABLE_PROPAGATE_ADDITIONAL_USER_CONTEXT_DATA: ::aws_smithy_schema::Schema<'static> =
     ::aws_smithy_schema::Schema::new_member(
@@ -327,7 +337,7 @@ static USERPOOLCLIENTTYPE_MEMBER_ENABLE_PROPAGATE_ADDITIONAL_USER_CONTEXT_DATA: 
         ),
         ::aws_smithy_schema::ShapeType::Boolean,
         "EnablePropagateAdditionalUserContextData",
-        23,
+        24,
     );
 static USERPOOLCLIENTTYPE_MEMBER_AUTH_SESSION_VALIDITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -337,7 +347,7 @@ static USERPOOLCLIENTTYPE_MEMBER_AUTH_SESSION_VALIDITY: ::aws_smithy_schema::Sch
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "AuthSessionValidity",
-    24,
+    25,
 );
 static USERPOOLCLIENTTYPE_MEMBER_REFRESH_TOKEN_ROTATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -347,7 +357,7 @@ static USERPOOLCLIENTTYPE_MEMBER_REFRESH_TOKEN_ROTATION: ::aws_smithy_schema::Sc
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "RefreshTokenRotation",
-    25,
+    26,
 );
 static USERPOOLCLIENTTYPE_MEMBER_CLIENT_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -357,7 +367,7 @@ static USERPOOLCLIENTTYPE_MEMBER_CLIENT_TYPE: ::aws_smithy_schema::Schema<'stati
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ClientType",
-    26,
+    27,
 );
 static USERPOOLCLIENTTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -371,6 +381,7 @@ static USERPOOLCLIENTTYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_s
         &USERPOOLCLIENTTYPE_MEMBER_CLIENT_NAME,
         &USERPOOLCLIENTTYPE_MEMBER_CLIENT_ID,
         &USERPOOLCLIENTTYPE_MEMBER_CLIENT_SECRET,
+        &USERPOOLCLIENTTYPE_MEMBER_CLIENT_SECRET_ARN,
         &USERPOOLCLIENTTYPE_MEMBER_LAST_MODIFIED_DATE,
         &USERPOOLCLIENTTYPE_MEMBER_CREATION_DATE,
         &USERPOOLCLIENTTYPE_MEMBER_REFRESH_TOKEN_VALIDITY,
@@ -421,6 +432,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::UserPoolCl
         }
         if let Some(ref val) = self.client_secret {
             ser.write_string(&USERPOOLCLIENTTYPE_MEMBER_CLIENT_SECRET, val)?;
+        }
+        if let Some(ref val) = self.client_secret_arn {
+            ser.write_string(&USERPOOLCLIENTTYPE_MEMBER_CLIENT_SECRET_ARN, val)?;
         }
         if let Some(ref val) = self.last_modified_date {
             ser.write_timestamp(&USERPOOLCLIENTTYPE_MEMBER_LAST_MODIFIED_DATE, val)?;
@@ -605,55 +619,62 @@ impl crate::types::builders::UserPoolClientTypeBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.last_modified_date = Some(deser.read_timestamp(member)?);
+                        self.client_secret_arn = Some(deser.read_string(member)?);
                     }
                 }
                 Some(5) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.creation_date = Some(deser.read_timestamp(member)?);
+                        self.last_modified_date = Some(deser.read_timestamp(member)?);
                     }
                 }
                 Some(6) => {
-                    self.refresh_token_validity = Some(deser.read_integer(member)?);
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.creation_date = Some(deser.read_timestamp(member)?);
+                    }
                 }
                 Some(7) => {
+                    self.refresh_token_validity = Some(deser.read_integer(member)?);
+                }
+                Some(8) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.access_token_validity = Some(deser.read_integer(member)?);
                     }
                 }
-                Some(8) => {
+                Some(9) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.id_token_validity = Some(deser.read_integer(member)?);
                     }
                 }
-                Some(9) => {
+                Some(10) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.token_validity_units = Some(crate::types::TokenValidityUnitsType::deserialize(deser)?);
                     }
                 }
-                Some(10) => {
+                Some(11) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.read_attributes = Some(deser.read_string_list(member)?);
                     }
                 }
-                Some(11) => {
+                Some(12) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.write_attributes = Some(deser.read_string_list(member)?);
                     }
                 }
-                Some(12) => {
+                Some(13) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -669,35 +690,35 @@ impl crate::types::builders::UserPoolClientTypeBuilder {
                         });
                     }
                 }
-                Some(13) => {
+                Some(14) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.supported_identity_providers = Some(deser.read_string_list(member)?);
                     }
                 }
-                Some(14) => {
+                Some(15) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.callback_urls = Some(deser.read_string_list(member)?);
                     }
                 }
-                Some(15) => {
+                Some(16) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.logout_urls = Some(deser.read_string_list(member)?);
                     }
                 }
-                Some(16) => {
+                Some(17) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.default_redirect_uri = Some(deser.read_string(member)?);
                     }
                 }
-                Some(17) => {
+                Some(18) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -713,28 +734,28 @@ impl crate::types::builders::UserPoolClientTypeBuilder {
                         });
                     }
                 }
-                Some(18) => {
+                Some(19) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.allowed_o_auth_scopes = Some(deser.read_string_list(member)?);
                     }
                 }
-                Some(19) => {
+                Some(20) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.allowed_o_auth_flows_user_pool_client = Some(deser.read_boolean(member)?);
                     }
                 }
-                Some(20) => {
+                Some(21) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.analytics_configuration = Some(crate::types::AnalyticsConfigurationType::deserialize(deser)?);
                     }
                 }
-                Some(21) => {
+                Some(22) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -742,35 +763,35 @@ impl crate::types::builders::UserPoolClientTypeBuilder {
                             Some(crate::types::PreventUserExistenceErrorTypes::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(22) => {
+                Some(23) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.enable_token_revocation = Some(deser.read_boolean(member)?);
                     }
                 }
-                Some(23) => {
+                Some(24) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.enable_propagate_additional_user_context_data = Some(deser.read_boolean(member)?);
                     }
                 }
-                Some(24) => {
+                Some(25) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.auth_session_validity = Some(deser.read_integer(member)?);
                     }
                 }
-                Some(25) => {
+                Some(26) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.refresh_token_rotation = Some(crate::types::RefreshTokenRotationType::deserialize(deser)?);
                     }
                 }
-                Some(26) => {
+                Some(27) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

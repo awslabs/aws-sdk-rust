@@ -34,55 +34,59 @@ pub fn ser_update_health_check_input_input_input(
         let mut inner_writer = scope.start_el("FullyQualifiedDomainName").finish();
         inner_writer.data(var_7.as_str());
     }
-    if let Some(var_8) = &input.health_check_version {
-        let mut inner_writer = scope.start_el("HealthCheckVersion").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_8).encode());
+    if let Some(var_8) = &input.health_check_source_id {
+        let mut inner_writer = scope.start_el("HealthCheckSourceId").finish();
+        inner_writer.data(var_8.as_str());
     }
-    if let Some(var_9) = &input.health_threshold {
-        let mut inner_writer = scope.start_el("HealthThreshold").finish();
+    if let Some(var_9) = &input.health_check_version {
+        let mut inner_writer = scope.start_el("HealthCheckVersion").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_9).encode());
     }
-    if let Some(var_10) = &input.ip_address {
-        let mut inner_writer = scope.start_el("IPAddress").finish();
-        inner_writer.data(var_10.as_str());
+    if let Some(var_10) = &input.health_threshold {
+        let mut inner_writer = scope.start_el("HealthThreshold").finish();
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_10).encode());
     }
-    if let Some(var_11) = &input.insufficient_data_health_status {
-        let mut inner_writer = scope.start_el("InsufficientDataHealthStatus").finish();
+    if let Some(var_11) = &input.ip_address {
+        let mut inner_writer = scope.start_el("IPAddress").finish();
         inner_writer.data(var_11.as_str());
     }
-    if let Some(var_12) = &input.inverted {
-        let mut inner_writer = scope.start_el("Inverted").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_12).encode());
+    if let Some(var_12) = &input.insufficient_data_health_status {
+        let mut inner_writer = scope.start_el("InsufficientDataHealthStatus").finish();
+        inner_writer.data(var_12.as_str());
     }
-    if let Some(var_13) = &input.port {
-        let mut inner_writer = scope.start_el("Port").finish();
+    if let Some(var_13) = &input.inverted {
+        let mut inner_writer = scope.start_el("Inverted").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_13).encode());
     }
-    if let Some(var_14) = &input.regions {
+    if let Some(var_14) = &input.port {
+        let mut inner_writer = scope.start_el("Port").finish();
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_14).encode());
+    }
+    if let Some(var_15) = &input.regions {
         let mut inner_writer = scope.start_el("Regions").finish();
-        for list_item_15 in var_14 {
+        for list_item_16 in var_15 {
             {
                 let mut inner_writer = inner_writer.start_el("Region").finish();
-                inner_writer.data(list_item_15.as_str());
+                inner_writer.data(list_item_16.as_str());
             }
         }
     }
-    if let Some(var_16) = &input.reset_elements {
+    if let Some(var_17) = &input.reset_elements {
         let mut inner_writer = scope.start_el("ResetElements").finish();
-        for list_item_17 in var_16 {
+        for list_item_18 in var_17 {
             {
                 let mut inner_writer = inner_writer.start_el("ResettableElementName").finish();
-                inner_writer.data(list_item_17.as_str());
+                inner_writer.data(list_item_18.as_str());
             }
         }
     }
-    if let Some(var_18) = &input.resource_path {
+    if let Some(var_19) = &input.resource_path {
         let mut inner_writer = scope.start_el("ResourcePath").finish();
-        inner_writer.data(var_18.as_str());
-    }
-    if let Some(var_19) = &input.search_string {
-        let mut inner_writer = scope.start_el("SearchString").finish();
         inner_writer.data(var_19.as_str());
+    }
+    if let Some(var_20) = &input.search_string {
+        let mut inner_writer = scope.start_el("SearchString").finish();
+        inner_writer.data(var_20.as_str());
     }
     scope.finish();
     Ok(())

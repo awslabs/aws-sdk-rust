@@ -182,6 +182,9 @@ where
 impl From<crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError> for Error {
     fn from(err: crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError) -> Self {
         match err {
+            crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError::InternalServiceErrorException(
                 inner,
             ) => Error::InternalServiceErrorException(inner),
@@ -284,6 +287,9 @@ where
 impl From<crate::operation::associate_resolver_rule::AssociateResolverRuleError> for Error {
     fn from(err: crate::operation::associate_resolver_rule::AssociateResolverRuleError) -> Self {
         match err {
+            crate::operation::associate_resolver_rule::AssociateResolverRuleError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::associate_resolver_rule::AssociateResolverRuleError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
@@ -869,6 +875,9 @@ where
 impl From<crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError> for Error {
     fn from(err: crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError) -> Self {
         match err {
+            crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
@@ -949,6 +958,7 @@ where
 impl From<crate::operation::delete_resolver_rule::DeleteResolverRuleError> for Error {
     fn from(err: crate::operation::delete_resolver_rule::DeleteResolverRuleError) -> Self {
         match err {
+            crate::operation::delete_resolver_rule::DeleteResolverRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_resolver_rule::DeleteResolverRuleError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
@@ -1040,6 +1050,7 @@ where
 impl From<crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError> for Error {
     fn from(err: crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError) -> Self {
         match err {
+            crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
             crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
@@ -1122,6 +1133,9 @@ where
 impl From<crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError> for Error {
     fn from(err: crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError) -> Self {
         match err {
+            crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::disassociate_resolver_rule::DisassociateResolverRuleError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
@@ -1440,6 +1454,7 @@ where
 impl From<crate::operation::get_resolver_endpoint::GetResolverEndpointError> for Error {
     fn from(err: crate::operation::get_resolver_endpoint::GetResolverEndpointError) -> Self {
         match err {
+            crate::operation::get_resolver_endpoint::GetResolverEndpointError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_resolver_endpoint::GetResolverEndpointError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
@@ -1612,6 +1627,7 @@ where
 impl From<crate::operation::get_resolver_rule::GetResolverRuleError> for Error {
     fn from(err: crate::operation::get_resolver_rule::GetResolverRuleError) -> Self {
         match err {
+            crate::operation::get_resolver_rule::GetResolverRuleError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_resolver_rule::GetResolverRuleError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
@@ -1642,6 +1658,9 @@ where
 impl From<crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError> for Error {
     fn from(err: crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError) -> Self {
         match err {
+            crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
@@ -1821,6 +1840,45 @@ impl From<crate::operation::list_firewall_domains::ListFirewallDomainsError> for
             crate::operation::list_firewall_domains::ListFirewallDomainsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_firewall_domains::ListFirewallDomainsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_firewall_domains::ListFirewallDomainsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_firewall_rule_domains::ListFirewallRuleDomainsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_firewall_rule_domains::ListFirewallRuleDomainsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_firewall_rule_domains::ListFirewallRuleDomainsError> for Error {
+    fn from(err: crate::operation::list_firewall_rule_domains::ListFirewallRuleDomainsError) -> Self {
+        match err {
+            crate::operation::list_firewall_rule_domains::ListFirewallRuleDomainsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_firewall_rule_domains::ListFirewallRuleDomainsError::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
+            crate::operation::list_firewall_rule_domains::ListFirewallRuleDomainsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_firewall_rule_domains::ListFirewallRuleDomainsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_firewall_rule_domains::ListFirewallRuleDomainsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_firewall_rule_domains::ListFirewallRuleDomainsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2099,6 +2157,9 @@ where
 impl From<crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesError> for Error {
     fn from(err: crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesError) -> Self {
         match err {
+            crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
@@ -2137,6 +2198,9 @@ where
 impl From<crate::operation::list_resolver_endpoints::ListResolverEndpointsError> for Error {
     fn from(err: crate::operation::list_resolver_endpoints::ListResolverEndpointsError) -> Self {
         match err {
+            crate::operation::list_resolver_endpoints::ListResolverEndpointsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::list_resolver_endpoints::ListResolverEndpointsError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
@@ -2262,6 +2326,9 @@ where
 impl From<crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsError> for Error {
     fn from(err: crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsError) -> Self {
         match err {
+            crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
             crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
@@ -2298,6 +2365,7 @@ where
 impl From<crate::operation::list_resolver_rules::ListResolverRulesError> for Error {
     fn from(err: crate::operation::list_resolver_rules::ListResolverRulesError) -> Self {
         match err {
+            crate::operation::list_resolver_rules::ListResolverRulesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_resolver_rules::ListResolverRulesError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
@@ -2330,6 +2398,7 @@ where
 impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> for Error {
     fn from(err: crate::operation::list_tags_for_resource::ListTagsForResourceError) -> Self {
         match err {
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
@@ -2494,6 +2563,7 @@ where
 impl From<crate::operation::tag_resource::TagResourceError> for Error {
     fn from(err: crate::operation::tag_resource::TagResourceError) -> Self {
         match err {
+            crate::operation::tag_resource::TagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::tag_resource::TagResourceError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
             crate::operation::tag_resource::TagResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::tag_resource::TagResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
@@ -2522,6 +2592,7 @@ where
 impl From<crate::operation::untag_resource::UntagResourceError> for Error {
     fn from(err: crate::operation::untag_resource::UntagResourceError) -> Self {
         match err {
+            crate::operation::untag_resource::UntagResourceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::untag_resource::UntagResourceError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
             crate::operation::untag_resource::UntagResourceError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
             crate::operation::untag_resource::UntagResourceError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),

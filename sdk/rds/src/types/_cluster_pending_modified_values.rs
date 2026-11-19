@@ -27,6 +27,12 @@ pub struct ClusterPendingModifiedValues {
     /// <p>The details of the DB instance’s server certificate.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html"> Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.</p>
     pub certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
+    /// <p>Indicates whether the DB cluster will use VPC networking after a pending networking change completes. For a pending move to a different DB subnet group, the value is <code>true</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub vpc_networking_enabled: ::std::option::Option<bool>,
+    /// <p>Indicates whether the DB cluster will use an internet access gateway after a pending networking change completes.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL DB clusters only</p>
+    pub internet_access_gateway_enabled: ::std::option::Option<bool>,
 }
 impl ClusterPendingModifiedValues {
     /// <p>A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.</p>
@@ -74,6 +80,16 @@ impl ClusterPendingModifiedValues {
     pub fn certificate_details(&self) -> ::std::option::Option<&crate::types::CertificateDetails> {
         self.certificate_details.as_ref()
     }
+    /// <p>Indicates whether the DB cluster will use VPC networking after a pending networking change completes. For a pending move to a different DB subnet group, the value is <code>true</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn vpc_networking_enabled(&self) -> ::std::option::Option<bool> {
+        self.vpc_networking_enabled
+    }
+    /// <p>Indicates whether the DB cluster will use an internet access gateway after a pending networking change completes.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL DB clusters only</p>
+    pub fn internet_access_gateway_enabled(&self) -> ::std::option::Option<bool> {
+        self.internet_access_gateway_enabled
+    }
 }
 impl ::std::fmt::Debug for ClusterPendingModifiedValues {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -89,6 +105,8 @@ impl ::std::fmt::Debug for ClusterPendingModifiedValues {
         formatter.field("rds_custom_cluster_configuration", &self.rds_custom_cluster_configuration);
         formatter.field("iops", &self.iops);
         formatter.field("certificate_details", &self.certificate_details);
+        formatter.field("vpc_networking_enabled", &self.vpc_networking_enabled);
+        formatter.field("internet_access_gateway_enabled", &self.internet_access_gateway_enabled);
         formatter.finish()
     }
 }
@@ -114,6 +132,8 @@ pub struct ClusterPendingModifiedValuesBuilder {
     pub(crate) rds_custom_cluster_configuration: ::std::option::Option<crate::types::RdsCustomClusterConfiguration>,
     pub(crate) iops: ::std::option::Option<i32>,
     pub(crate) certificate_details: ::std::option::Option<crate::types::CertificateDetails>,
+    pub(crate) vpc_networking_enabled: ::std::option::Option<bool>,
+    pub(crate) internet_access_gateway_enabled: ::std::option::Option<bool>,
 }
 impl ClusterPendingModifiedValuesBuilder {
     /// <p>A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.</p>
@@ -273,6 +293,40 @@ impl ClusterPendingModifiedValuesBuilder {
     pub fn get_certificate_details(&self) -> &::std::option::Option<crate::types::CertificateDetails> {
         &self.certificate_details
     }
+    /// <p>Indicates whether the DB cluster will use VPC networking after a pending networking change completes. For a pending move to a different DB subnet group, the value is <code>true</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn vpc_networking_enabled(mut self, input: bool) -> Self {
+        self.vpc_networking_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the DB cluster will use VPC networking after a pending networking change completes. For a pending move to a different DB subnet group, the value is <code>true</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn set_vpc_networking_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.vpc_networking_enabled = input;
+        self
+    }
+    /// <p>Indicates whether the DB cluster will use VPC networking after a pending networking change completes. For a pending move to a different DB subnet group, the value is <code>true</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
+    pub fn get_vpc_networking_enabled(&self) -> &::std::option::Option<bool> {
+        &self.vpc_networking_enabled
+    }
+    /// <p>Indicates whether the DB cluster will use an internet access gateway after a pending networking change completes.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL DB clusters only</p>
+    pub fn internet_access_gateway_enabled(mut self, input: bool) -> Self {
+        self.internet_access_gateway_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the DB cluster will use an internet access gateway after a pending networking change completes.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL DB clusters only</p>
+    pub fn set_internet_access_gateway_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.internet_access_gateway_enabled = input;
+        self
+    }
+    /// <p>Indicates whether the DB cluster will use an internet access gateway after a pending networking change completes.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL DB clusters only</p>
+    pub fn get_internet_access_gateway_enabled(&self) -> &::std::option::Option<bool> {
+        &self.internet_access_gateway_enabled
+    }
     /// Consumes the builder and constructs a [`ClusterPendingModifiedValues`](crate::types::ClusterPendingModifiedValues).
     pub fn build(self) -> crate::types::ClusterPendingModifiedValues {
         crate::types::ClusterPendingModifiedValues {
@@ -287,6 +341,8 @@ impl ClusterPendingModifiedValuesBuilder {
             rds_custom_cluster_configuration: self.rds_custom_cluster_configuration,
             iops: self.iops,
             certificate_details: self.certificate_details,
+            vpc_networking_enabled: self.vpc_networking_enabled,
+            internet_access_gateway_enabled: self.internet_access_gateway_enabled,
         }
     }
 }
@@ -304,6 +360,8 @@ impl ::std::fmt::Debug for ClusterPendingModifiedValuesBuilder {
         formatter.field("rds_custom_cluster_configuration", &self.rds_custom_cluster_configuration);
         formatter.field("iops", &self.iops);
         formatter.field("certificate_details", &self.certificate_details);
+        formatter.field("vpc_networking_enabled", &self.vpc_networking_enabled);
+        formatter.field("internet_access_gateway_enabled", &self.internet_access_gateway_enabled);
         formatter.finish()
     }
 }

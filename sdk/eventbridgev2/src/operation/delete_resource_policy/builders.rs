@@ -22,7 +22,7 @@ impl crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInp
 }
 /// Fluent builder constructing a request to `DeleteResourcePolicy`.
 ///
-/// Deletes the named resource policy attached to an event bus.
+/// <p>Deletes the named resource policy attached to an event bus.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,45 +108,45 @@ impl DeleteResourcePolicyFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }
-    /// Which named policy to delete. Defaults to "default" when omitted (a delete AWS Resource Access Manager makes on the owner's behalf resolves to "AWS_RAM" instead). The two writers are exclusive in both directions — only Resource Access Manager can delete "AWS_RAM", and only the bus owner can delete "default" — so naming the other party's policy fails with AccessDeniedException. A well-formed name that is neither of the two fails with InvalidInputException.
+    /// <p>Which named policy to delete. Defaults to "default" when omitted (a delete AWS Resource Access Manager makes on the owner's behalf resolves to "AWS_RAM" instead). The two writers are exclusive in both directions — only Resource Access Manager can delete "AWS_RAM", and only the bus owner can delete "default" — so naming the other party's policy fails with AccessDeniedException. A well-formed name that is neither of the two fails with InvalidInputException.</p>
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.policy_name(input.into());
         self
     }
-    /// Which named policy to delete. Defaults to "default" when omitted (a delete AWS Resource Access Manager makes on the owner's behalf resolves to "AWS_RAM" instead). The two writers are exclusive in both directions — only Resource Access Manager can delete "AWS_RAM", and only the bus owner can delete "default" — so naming the other party's policy fails with AccessDeniedException. A well-formed name that is neither of the two fails with InvalidInputException.
+    /// <p>Which named policy to delete. Defaults to "default" when omitted (a delete AWS Resource Access Manager makes on the owner's behalf resolves to "AWS_RAM" instead). The two writers are exclusive in both directions — only Resource Access Manager can delete "AWS_RAM", and only the bus owner can delete "default" — so naming the other party's policy fails with AccessDeniedException. A well-formed name that is neither of the two fails with InvalidInputException.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_policy_name(input);
         self
     }
-    /// Which named policy to delete. Defaults to "default" when omitted (a delete AWS Resource Access Manager makes on the owner's behalf resolves to "AWS_RAM" instead). The two writers are exclusive in both directions — only Resource Access Manager can delete "AWS_RAM", and only the bus owner can delete "default" — so naming the other party's policy fails with AccessDeniedException. A well-formed name that is neither of the two fails with InvalidInputException.
+    /// <p>Which named policy to delete. Defaults to "default" when omitted (a delete AWS Resource Access Manager makes on the owner's behalf resolves to "AWS_RAM" instead). The two writers are exclusive in both directions — only Resource Access Manager can delete "AWS_RAM", and only the bus owner can delete "default" — so naming the other party's policy fails with AccessDeniedException. A well-formed name that is neither of the two fails with InvalidInputException.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_policy_name()
     }
-    /// The delete succeeds only if the named policy's current revision ID matches this value; if it differs or the policy does not exist, the operation fails with ConflictException. The "NO_POLICY" sentinel is not valid here. When omitted, deleting an absent policy is an idempotent success. Supplying this value makes the delete non-idempotent: once it succeeds the expected revision no longer exists, so retrying an unanswered request fails with ConflictException even though the policy was deleted. To establish the outcome, read the policy back: ResourceNotFoundException means the delete took effect.
+    /// <p>The delete succeeds only if the named policy's current revision ID matches this value; if it differs or the policy does not exist, the operation fails with ConflictException. The "NO_POLICY" sentinel is not valid here. When omitted, deleting an absent policy is an idempotent success. Supplying this value makes the delete non-idempotent: once it succeeds the expected revision no longer exists, so retrying an unanswered request fails with ConflictException even though the policy was deleted. To establish the outcome, read the policy back: ResourceNotFoundException means the delete took effect.</p>
     pub fn expected_revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.expected_revision_id(input.into());
         self
     }
-    /// The delete succeeds only if the named policy's current revision ID matches this value; if it differs or the policy does not exist, the operation fails with ConflictException. The "NO_POLICY" sentinel is not valid here. When omitted, deleting an absent policy is an idempotent success. Supplying this value makes the delete non-idempotent: once it succeeds the expected revision no longer exists, so retrying an unanswered request fails with ConflictException even though the policy was deleted. To establish the outcome, read the policy back: ResourceNotFoundException means the delete took effect.
+    /// <p>The delete succeeds only if the named policy's current revision ID matches this value; if it differs or the policy does not exist, the operation fails with ConflictException. The "NO_POLICY" sentinel is not valid here. When omitted, deleting an absent policy is an idempotent success. Supplying this value makes the delete non-idempotent: once it succeeds the expected revision no longer exists, so retrying an unanswered request fails with ConflictException even though the policy was deleted. To establish the outcome, read the policy back: ResourceNotFoundException means the delete took effect.</p>
     pub fn set_expected_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_expected_revision_id(input);
         self
     }
-    /// The delete succeeds only if the named policy's current revision ID matches this value; if it differs or the policy does not exist, the operation fails with ConflictException. The "NO_POLICY" sentinel is not valid here. When omitted, deleting an absent policy is an idempotent success. Supplying this value makes the delete non-idempotent: once it succeeds the expected revision no longer exists, so retrying an unanswered request fails with ConflictException even though the policy was deleted. To establish the outcome, read the policy back: ResourceNotFoundException means the delete took effect.
+    /// <p>The delete succeeds only if the named policy's current revision ID matches this value; if it differs or the policy does not exist, the operation fails with ConflictException. The "NO_POLICY" sentinel is not valid here. When omitted, deleting an absent policy is an idempotent success. Supplying this value makes the delete non-idempotent: once it succeeds the expected revision no longer exists, so retrying an unanswered request fails with ConflictException even though the policy was deleted. To establish the outcome, read the policy back: ResourceNotFoundException means the delete took effect.</p>
     pub fn get_expected_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_expected_revision_id()
     }

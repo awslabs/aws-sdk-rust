@@ -9,6 +9,8 @@ pub struct UpdateLinkModuleFlowOutput {
     pub link_id: ::std::string::String,
     /// <p>The status of the request.</p>
     pub status: crate::types::LinkStatus,
+    /// <p>The ID of the update this call started.</p>
+    pub update_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateLinkModuleFlowOutput {
@@ -25,6 +27,10 @@ impl UpdateLinkModuleFlowOutput {
     /// <p>The status of the request.</p>
     pub fn status(&self) -> &crate::types::LinkStatus {
         &self.status
+    }
+    /// <p>The ID of the update this call started.</p>
+    pub fn update_id(&self) -> ::std::option::Option<&str> {
+        self.update_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateLinkModuleFlowOutput {
@@ -46,6 +52,7 @@ pub struct UpdateLinkModuleFlowOutputBuilder {
     pub(crate) gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) link_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::LinkStatus>,
+    pub(crate) update_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateLinkModuleFlowOutputBuilder {
@@ -94,6 +101,21 @@ impl UpdateLinkModuleFlowOutputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::LinkStatus> {
         &self.status
     }
+    /// <p>The ID of the update this call started.</p>
+    /// This field is required.
+    pub fn update_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.update_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the update this call started.</p>
+    pub fn set_update_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.update_id = input;
+        self
+    }
+    /// <p>The ID of the update this call started.</p>
+    pub fn get_update_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.update_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -131,6 +153,7 @@ impl UpdateLinkModuleFlowOutputBuilder {
                     "status was not specified but it is required when building UpdateLinkModuleFlowOutput",
                 )
             })?,
+            update_id: self.update_id,
             _request_id: self._request_id,
         })
     }

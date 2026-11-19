@@ -22,7 +22,7 @@ impl crate::operation::create_marketplace_revenue_share_allocation::builders::Cr
 }
 /// Fluent builder constructing a request to `CreateMarketplaceRevenueShareAllocation`.
 ///
-/// <p>Creates a new marketplace revenue share allocation for the specified product.</p>
+/// <p>Creates a new allocation under the specified marketplace revenue share.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateMarketplaceRevenueShareAllocationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -126,19 +126,19 @@ impl CreateMarketplaceRevenueShareAllocationFluentBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<crate::types::CatalogName> {
         self.inner.get_catalog()
     }
-    /// <p>The AWS Marketplace product identifier for the parent revenue share.</p>
-    pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.product_id(input.into());
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub fn marketplace_revenue_share_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.marketplace_revenue_share_identifier(input.into());
         self
     }
-    /// <p>The AWS Marketplace product identifier for the parent revenue share.</p>
-    pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_product_id(input);
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub fn set_marketplace_revenue_share_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_marketplace_revenue_share_identifier(input);
         self
     }
-    /// <p>The AWS Marketplace product identifier for the parent revenue share.</p>
-    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_product_id()
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub fn get_marketplace_revenue_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marketplace_revenue_share_identifier()
     }
     /// <p>A unique token to ensure idempotency of the create request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -154,6 +154,20 @@ impl CreateMarketplaceRevenueShareAllocationFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
+    /// <p>The revision of the parent marketplace revenue share that the caller last read, for optimistic concurrency control. A stale value returns ConflictException with Reason REVISION_MISMATCH.</p>
+    pub fn marketplace_revenue_share_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.marketplace_revenue_share_revision(input.into());
+        self
+    }
+    /// <p>The revision of the parent marketplace revenue share that the caller last read, for optimistic concurrency control. A stale value returns ConflictException with Reason REVISION_MISMATCH.</p>
+    pub fn set_marketplace_revenue_share_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_marketplace_revenue_share_revision(input);
+        self
+    }
+    /// <p>The revision of the parent marketplace revenue share that the caller last read, for optimistic concurrency control. A stale value returns ConflictException with Reason REVISION_MISMATCH.</p>
+    pub fn get_marketplace_revenue_share_revision(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marketplace_revenue_share_revision()
+    }
     /// <p>The effective start date for the allocation. Must be the first day of a month.</p>
     pub fn effective_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.effective_from(input.into());
@@ -168,17 +182,17 @@ impl CreateMarketplaceRevenueShareAllocationFluentBuilder {
     pub fn get_effective_from(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_effective_from()
     }
-    /// <p>The effective end date for the allocation. Must be the last day of a month (YYYY-MM-DD). Omit for open-ended allocations.</p>
+    /// <p>The effective end date for the allocation. Must be the last day of a month (YYYY-MM-DD).</p>
     pub fn effective_until(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.effective_until(input.into());
         self
     }
-    /// <p>The effective end date for the allocation. Must be the last day of a month (YYYY-MM-DD). Omit for open-ended allocations.</p>
+    /// <p>The effective end date for the allocation. Must be the last day of a month (YYYY-MM-DD).</p>
     pub fn set_effective_until(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_effective_until(input);
         self
     }
-    /// <p>The effective end date for the allocation. Must be the last day of a month (YYYY-MM-DD). Omit for open-ended allocations.</p>
+    /// <p>The effective end date for the allocation. Must be the last day of a month (YYYY-MM-DD).</p>
     pub fn get_effective_until(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_effective_until()
     }

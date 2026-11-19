@@ -199,6 +199,8 @@ mod get_bill_scenario;
 
 mod get_preferences;
 
+mod get_usage_lines_estimated_cost;
+
 mod get_workload_estimate;
 
 mod list_bill_estimate_commitments;

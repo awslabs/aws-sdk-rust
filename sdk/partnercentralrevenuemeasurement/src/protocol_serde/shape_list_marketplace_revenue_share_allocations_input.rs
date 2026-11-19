@@ -7,11 +7,11 @@ pub fn ser_list_marketplace_revenue_share_allocations_input_input(
     if let Some(var_1) = &input.catalog {
         encoder.str("Catalog").str(var_1.as_str());
     }
-    if let Some(var_2) = &input.product_id {
-        encoder.str("ProductId").str(var_2.as_str());
+    if let Some(var_2) = &input.marketplace_revenue_share_identifier {
+        encoder.str("MarketplaceRevenueShareIdentifier").str(var_2.as_str());
     }
-    if let Some(var_3) = &input.status {
-        encoder.str("Status").str(var_3.as_str());
+    if let Some(var_3) = &input.status_filter {
+        encoder.str("StatusFilter").str(var_3.as_str());
     }
     if let Some(var_4) = &input.after_effective_from {
         encoder.str("AfterEffectiveFrom").str(var_4.as_str());
@@ -19,20 +19,26 @@ pub fn ser_list_marketplace_revenue_share_allocations_input_input(
     if let Some(var_5) = &input.before_effective_from {
         encoder.str("BeforeEffectiveFrom").str(var_5.as_str());
     }
-    if let Some(var_6) = &input.sort_by {
-        encoder.str("SortBy").str(var_6.as_str());
+    if let Some(var_6) = &input.after_effective_until {
+        encoder.str("AfterEffectiveUntil").str(var_6.as_str());
     }
-    if let Some(var_7) = &input.sort_order {
-        encoder.str("SortOrder").str(var_7.as_str());
+    if let Some(var_7) = &input.before_effective_until {
+        encoder.str("BeforeEffectiveUntil").str(var_7.as_str());
     }
-    if let Some(var_8) = &input.max_results {
-        encoder.str("MaxResults").integer(*var_8);
+    if let Some(var_8) = &input.sort_by {
+        encoder.str("SortBy").str(var_8.as_str());
     }
-    if let Some(var_9) = &input.next_token {
-        encoder.str("NextToken").str(var_9.as_str());
+    if let Some(var_9) = &input.sort_order {
+        encoder.str("SortOrder").str(var_9.as_str());
     }
-    if let Some(var_10) = &input.marketplace_revenue_share_revision {
-        encoder.str("MarketplaceRevenueShareRevision").str(var_10.as_str());
+    if let Some(var_10) = &input.max_results {
+        encoder.str("MaxResults").integer(*var_10);
+    }
+    if let Some(var_11) = &input.next_token {
+        encoder.str("NextToken").str(var_11.as_str());
+    }
+    if let Some(var_12) = &input.marketplace_revenue_share_revision {
+        encoder.str("MarketplaceRevenueShareRevision").str(var_12.as_str());
     }
     encoder.end();
     Ok(())

@@ -17,11 +17,22 @@ static BROKERNODEINFO_MEMBER_BROKER_ID: ::aws_smithy_schema::Schema<'static> = :
     1,
 )
 .with_json_name("brokerId");
+static BROKERNODEINFO_MEMBER_BROKER_NODE_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kafka#BrokerNodeInfo$BrokerNodeType",
+        "com.amazonaws.kafka",
+        "BrokerNodeInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "BrokerNodeType",
+    2,
+)
+.with_json_name("brokerNodeType");
 static BROKERNODEINFO_MEMBER_CLIENT_SUBNET: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kafka#BrokerNodeInfo$ClientSubnet", "com.amazonaws.kafka", "BrokerNodeInfo"),
     ::aws_smithy_schema::ShapeType::String,
     "ClientSubnet",
-    2,
+    3,
 )
 .with_json_name("clientSubnet");
 static BROKERNODEINFO_MEMBER_CLIENT_VPC_IP_ADDRESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -32,7 +43,7 @@ static BROKERNODEINFO_MEMBER_CLIENT_VPC_IP_ADDRESS: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ClientVpcIpAddress",
-    3,
+    4,
 )
 .with_json_name("clientVpcIpAddress");
 static BROKERNODEINFO_MEMBER_CURRENT_BROKER_SOFTWARE_INFO: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -43,7 +54,7 @@ static BROKERNODEINFO_MEMBER_CURRENT_BROKER_SOFTWARE_INFO: ::aws_smithy_schema::
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "CurrentBrokerSoftwareInfo",
-    4,
+    5,
 )
 .with_json_name("currentBrokerSoftwareInfo");
 static BROKERNODEINFO_MEMBER_ENDPOINTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -56,7 +67,7 @@ static BROKERNODEINFO_MEMBER_ENDPOINTS: ::aws_smithy_schema::Schema<'static> = :
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kafka#BrokerNodeInfo$Endpoints", "com.amazonaws.kafka", "BrokerNodeInfo"),
     ::aws_smithy_schema::ShapeType::List,
     "Endpoints",
-    5,
+    6,
 )
 .with_json_name("endpoints")
 .with_list_member(&BROKERNODEINFO_MEMBER_ENDPOINTS_MEMBER);
@@ -66,6 +77,7 @@ static BROKERNODEINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smith
     &[
         &BROKERNODEINFO_MEMBER_ATTACHED_ENI_ID,
         &BROKERNODEINFO_MEMBER_BROKER_ID,
+        &BROKERNODEINFO_MEMBER_BROKER_NODE_TYPE,
         &BROKERNODEINFO_MEMBER_CLIENT_SUBNET,
         &BROKERNODEINFO_MEMBER_CLIENT_VPC_IP_ADDRESS,
         &BROKERNODEINFO_MEMBER_CURRENT_BROKER_SOFTWARE_INFO,
@@ -91,6 +103,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::BrokerNode
         }
         if let Some(ref val) = self.broker_id {
             ser.write_double(&BROKERNODEINFO_MEMBER_BROKER_ID, *val)?;
+        }
+        if let Some(ref val) = self.broker_node_type {
+            ser.write_string(&BROKERNODEINFO_MEMBER_BROKER_NODE_TYPE, val.as_str())?;
         }
         if let Some(ref val) = self.client_subnet {
             ser.write_string(&BROKERNODEINFO_MEMBER_CLIENT_SUBNET, val)?;
@@ -147,24 +162,31 @@ impl crate::types::builders::BrokerNodeInfoBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.client_subnet = Some(deser.read_string(member)?);
+                        self.broker_node_type = Some(crate::types::BrokerNodeType::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(3) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.client_vpc_ip_address = Some(deser.read_string(member)?);
+                        self.client_subnet = Some(deser.read_string(member)?);
                     }
                 }
                 Some(4) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.current_broker_software_info = Some(crate::types::BrokerSoftwareInfo::deserialize(deser)?);
+                        self.client_vpc_ip_address = Some(deser.read_string(member)?);
                     }
                 }
                 Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.current_broker_software_info = Some(crate::types::BrokerSoftwareInfo::deserialize(deser)?);
+                    }
+                }
+                Some(6) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

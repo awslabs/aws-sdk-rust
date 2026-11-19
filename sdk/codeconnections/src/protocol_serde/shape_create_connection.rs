@@ -18,6 +18,21 @@ pub fn de_create_connection_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "InvalidInputException" => crate::operation::create_connection::CreateConnectionError::InvalidInputException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_cbor_err(_response_body, output)
+                    .map_err(crate::operation::create_connection::CreateConnectionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "LimitExceededException" => crate::operation::create_connection::CreateConnectionError::LimitExceededException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -56,6 +71,24 @@ pub fn de_create_connection_http_error(
                 output =
                     crate::protocol_serde::shape_resource_unavailable_exception::de_resource_unavailable_exception_cbor_err(_response_body, output)
                         .map_err(crate::operation::create_connection::CreateConnectionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnsupportedProviderTypeException" => crate::operation::create_connection::CreateConnectionError::UnsupportedProviderTypeException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::UnsupportedProviderTypeExceptionBuilder::default();
+                output = crate::protocol_serde::shape_unsupported_provider_type_exception::de_unsupported_provider_type_exception_cbor_err(
+                    _response_body,
+                    output,
+                )
+                .map_err(crate::operation::create_connection::CreateConnectionError::unhandled)?;
                 let output = output.meta(generic);
                 output.build()
             };

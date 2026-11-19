@@ -3,53 +3,62 @@ pub fn ser_update_registry_record_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_registry_record::UpdateRegistryRecordInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.custom_metadata {
+    if let Some(var_1) = &input.artifact {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("customMetadata").start_object();
-        crate::protocol_serde::shape_updated_custom_metadata_map::ser_updated_custom_metadata_map(&mut object_2, var_1)?;
+        let mut object_2 = object.key("artifact").start_object();
+        crate::protocol_serde::shape_updated_registry_record_artifact::ser_updated_registry_record_artifact(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if let Some(var_3) = &input.description {
+    if let Some(var_3) = &input.custom_metadata {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("description").start_object();
-        crate::protocol_serde::shape_updated_description::ser_updated_description(&mut object_4, var_3)?;
+        let mut object_4 = object.key("customMetadata").start_object();
+        crate::protocol_serde::shape_updated_custom_metadata_map::ser_updated_custom_metadata_map(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.descriptors {
+    if let Some(var_5) = &input.description {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("descriptors").start_object();
-        crate::protocol_serde::shape_updated_descriptors::ser_updated_descriptors(&mut object_6, var_5)?;
+        let mut object_6 = object.key("description").start_object();
+        crate::protocol_serde::shape_updated_description::ser_updated_description(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.display_name {
+    if let Some(var_7) = &input.descriptors {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("displayName").start_object();
-        crate::protocol_serde::shape_updated_display_name::ser_updated_display_name(&mut object_8, var_7)?;
+        let mut object_8 = object.key("descriptors").start_object();
+        crate::protocol_serde::shape_updated_descriptors::ser_updated_descriptors(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.name {
-        object.key("name").string(var_9.as_str());
+    if let Some(var_9) = &input.display_name {
+        #[allow(unused_mut)]
+        let mut object_10 = object.key("displayName").start_object();
+        crate::protocol_serde::shape_updated_display_name::ser_updated_display_name(&mut object_10, var_9)?;
+        object_10.finish();
     }
-    if let Some(var_10) = &input.provenance {
-        let mut array_11 = object.key("provenance").start_array();
-        for item_12 in var_10 {
+    if let Some(var_11) = &input.force_authentication {
+        object.key("forceAuthentication").boolean(*var_11);
+    }
+    if let Some(var_12) = &input.name {
+        object.key("name").string(var_12.as_str());
+    }
+    if let Some(var_13) = &input.provenance {
+        let mut array_14 = object.key("provenance").start_array();
+        for item_15 in var_13 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_provenance::ser_provenance(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_16 = array_14.value().start_object();
+                crate::protocol_serde::shape_provenance::ser_provenance(&mut object_16, item_15)?;
+                object_16.finish();
             }
         }
-        array_11.finish();
+        array_14.finish();
     }
-    if let Some(var_14) = &input.record_type {
-        object.key("recordType").string(var_14.as_str());
+    if let Some(var_17) = &input.record_type {
+        object.key("recordType").string(var_17.as_str());
     }
-    if let Some(var_15) = &input.record_version {
-        object.key("recordVersion").string(var_15.as_str());
+    if let Some(var_18) = &input.record_version {
+        object.key("recordVersion").string(var_18.as_str());
     }
-    if let Some(var_16) = &input.trigger_synchronization {
-        object.key("triggerSynchronization").boolean(*var_16);
+    if let Some(var_19) = &input.trigger_synchronization {
+        object.key("triggerSynchronization").boolean(*var_19);
     }
     Ok(())
 }

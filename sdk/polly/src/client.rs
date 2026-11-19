@@ -59,13 +59,13 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`DeleteLexicon`](crate::operation::delete_lexicon) operation has
-/// a [`Client::delete_lexicon`], function which returns a builder for that operation.
+/// For example, the [`CreateVoice`](crate::operation::create_voice) operation has
+/// a [`Client::create_voice`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.delete_lexicon()
+/// let result = client.create_voice()
 ///     .name("example")
 ///     .send()
 ///     .await;
@@ -74,6 +74,20 @@ pub(crate) struct Handle {
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
+/// # Waiters
+///
+/// This client provides `wait_until` methods behind the [`Waiters`](crate::client::Waiters) trait.
+/// To use them, simply import the trait, and then call one of the `wait_until` methods. This will
+/// return a waiter fluent builder that takes various parameters, which are documented on the builder
+/// type. Once parameters have been provided, the `wait` method can be called to initiate waiting.
+///
+/// For example, if there was a `wait_until_thing` method, it could look like:
+/// ```rust,ignore
+/// let result = client.wait_until_thing()
+///     .thing_id("someId")
+///     .wait(Duration::from_secs(120))
+///     .await;
+/// ```
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct Client {
     handle: ::std::sync::Arc<Handle>,
@@ -120,6 +134,21 @@ impl Client {
     }
 }
 
+///
+/// Waiter functions for the client.
+///
+/// Import this trait to get `wait_until` methods on the client.
+///
+pub trait Waiters {
+    /// Wait until a custom voice is active and can be used for speech synthesis.
+    fn wait_until_voice_active(&self) -> crate::waiters::voice_active::VoiceActiveFluentBuilder;
+}
+impl Waiters for Client {
+    fn wait_until_voice_active(&self) -> crate::waiters::voice_active::VoiceActiveFluentBuilder {
+        crate::waiters::voice_active::VoiceActiveFluentBuilder::new(self.handle.clone())
+    }
+}
+
 impl Client {
     /// Creates a new client from an [SDK Config](::aws_types::sdk_config::SdkConfig).
     ///
@@ -136,6 +165,8 @@ impl Client {
     }
 }
 
+mod create_voice;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -147,7 +178,7 @@ impl Client {
 /// # let client: aws_sdk_polly::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.delete_lexicon()
+/// let result = client.create_voice()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -165,11 +196,15 @@ pub mod customize;
 
 mod delete_lexicon;
 
+mod delete_voice;
+
 mod describe_voices;
 
 mod get_lexicon;
 
 mod get_speech_synthesis_task;
+
+mod get_voice;
 
 mod list_lexicons;
 

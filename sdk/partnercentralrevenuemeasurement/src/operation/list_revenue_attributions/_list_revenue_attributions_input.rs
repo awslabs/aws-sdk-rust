@@ -19,6 +19,8 @@ pub struct ListRevenueAttributionsInput {
     pub max_results: ::std::option::Option<i32>,
     /// <p>Token for pagination. Use the value returned in the previous response to retrieve the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Filter results by context. Filters are combined with AND; values within a filter are combined with OR.</p>
+    pub context_filters: ::std::option::Option<::std::vec::Vec<crate::types::ContextFilter>>,
 }
 impl ListRevenueAttributionsInput {
     /// <p>The catalog to list revenue attributions from.</p>
@@ -55,6 +57,12 @@ impl ListRevenueAttributionsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>Filter results by context. Filters are combined with AND; values within a filter are combined with OR.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.context_filters.is_none()`.
+    pub fn context_filters(&self) -> &[crate::types::ContextFilter] {
+        self.context_filters.as_deref().unwrap_or_default()
+    }
 }
 impl ListRevenueAttributionsInput {
     /// Creates a new builder-style object to manufacture [`ListRevenueAttributionsInput`](crate::operation::list_revenue_attributions::ListRevenueAttributionsInput).
@@ -75,6 +83,7 @@ pub struct ListRevenueAttributionsInputBuilder {
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) context_filters: ::std::option::Option<::std::vec::Vec<crate::types::ContextFilter>>,
 }
 impl ListRevenueAttributionsInputBuilder {
     /// <p>The catalog to list revenue attributions from.</p>
@@ -196,6 +205,26 @@ impl ListRevenueAttributionsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// Appends an item to `context_filters`.
+    ///
+    /// To override the contents of this collection use [`set_context_filters`](Self::set_context_filters).
+    ///
+    /// <p>Filter results by context. Filters are combined with AND; values within a filter are combined with OR.</p>
+    pub fn context_filters(mut self, input: crate::types::ContextFilter) -> Self {
+        let mut v = self.context_filters.unwrap_or_default();
+        v.push(input);
+        self.context_filters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter results by context. Filters are combined with AND; values within a filter are combined with OR.</p>
+    pub fn set_context_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContextFilter>>) -> Self {
+        self.context_filters = input;
+        self
+    }
+    /// <p>Filter results by context. Filters are combined with AND; values within a filter are combined with OR.</p>
+    pub fn get_context_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContextFilter>> {
+        &self.context_filters
+    }
     /// Consumes the builder and constructs a [`ListRevenueAttributionsInput`](crate::operation::list_revenue_attributions::ListRevenueAttributionsInput).
     pub fn build(
         self,
@@ -212,6 +241,7 @@ impl ListRevenueAttributionsInputBuilder {
             sort_order: self.sort_order,
             max_results: self.max_results,
             next_token: self.next_token,
+            context_filters: self.context_filters,
         })
     }
 }

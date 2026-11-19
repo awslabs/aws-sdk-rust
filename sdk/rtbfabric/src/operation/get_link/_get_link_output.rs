@@ -25,6 +25,8 @@ pub struct GetLinkOutput {
     pub log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
     /// <p>The connectivity type of the link.</p>
     pub connectivity_type: ::std::option::Option<crate::types::ConnectivityType>,
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    pub error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     /// <p>The unique identifier of the link.</p>
     pub link_id: ::std::string::String,
     /// <p>A map of the key-value pairs for the tag or tags assigned to the specified resource.</p>
@@ -33,6 +35,10 @@ pub struct GetLinkOutput {
     pub http_responder_allowed: ::std::option::Option<bool>,
     /// <p>The timeout value in milliseconds.</p>
     pub timeout_in_millis: ::std::option::Option<i64>,
+    /// <p>The link's concurrency token. Pass it to PutLinkFlows unchanged; it changes whenever the link does.</p>
+    pub lock_token: ::std::option::Option<::std::string::String>,
+    /// <p>The link's active flows, in the form PutLinkFlows takes. Empty when the link has no modules, and absent when its modules were set with UpdateLinkModuleFlow.</p>
+    pub flows: ::std::option::Option<::std::vec::Vec<crate::types::Flow>>,
     _request_id: Option<String>,
 }
 impl GetLinkOutput {
@@ -86,6 +92,12 @@ impl GetLinkOutput {
     pub fn connectivity_type(&self) -> ::std::option::Option<&crate::types::ConnectivityType> {
         self.connectivity_type.as_ref()
     }
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_details.is_none()`.
+    pub fn error_details(&self) -> &[crate::types::ErrorDetail] {
+        self.error_details.as_deref().unwrap_or_default()
+    }
     /// <p>The unique identifier of the link.</p>
     pub fn link_id(&self) -> &str {
         use std::ops::Deref;
@@ -102,6 +114,16 @@ impl GetLinkOutput {
     /// <p>The timeout value in milliseconds.</p>
     pub fn timeout_in_millis(&self) -> ::std::option::Option<i64> {
         self.timeout_in_millis
+    }
+    /// <p>The link's concurrency token. Pass it to PutLinkFlows unchanged; it changes whenever the link does.</p>
+    pub fn lock_token(&self) -> ::std::option::Option<&str> {
+        self.lock_token.as_deref()
+    }
+    /// <p>The link's active flows, in the form PutLinkFlows takes. Empty when the link has no modules, and absent when its modules were set with UpdateLinkModuleFlow.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.flows.is_none()`.
+    pub fn flows(&self) -> &[crate::types::Flow] {
+        self.flows.as_deref().unwrap_or_default()
     }
 }
 impl ::aws_types::request_id::RequestId for GetLinkOutput {
@@ -131,10 +153,13 @@ pub struct GetLinkOutputBuilder {
     pub(crate) attributes: ::std::option::Option<crate::types::LinkAttributes>,
     pub(crate) log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
     pub(crate) connectivity_type: ::std::option::Option<crate::types::ConnectivityType>,
+    pub(crate) error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     pub(crate) link_id: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) http_responder_allowed: ::std::option::Option<bool>,
     pub(crate) timeout_in_millis: ::std::option::Option<i64>,
+    pub(crate) lock_token: ::std::option::Option<::std::string::String>,
+    pub(crate) flows: ::std::option::Option<::std::vec::Vec<crate::types::Flow>>,
     _request_id: Option<String>,
 }
 impl GetLinkOutputBuilder {
@@ -309,6 +334,26 @@ impl GetLinkOutputBuilder {
     pub fn get_connectivity_type(&self) -> &::std::option::Option<crate::types::ConnectivityType> {
         &self.connectivity_type
     }
+    /// Appends an item to `error_details`.
+    ///
+    /// To override the contents of this collection use [`set_error_details`](Self::set_error_details).
+    ///
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    pub fn error_details(mut self, input: crate::types::ErrorDetail) -> Self {
+        let mut v = self.error_details.unwrap_or_default();
+        v.push(input);
+        self.error_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    pub fn set_error_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>) -> Self {
+        self.error_details = input;
+        self
+    }
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    pub fn get_error_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
+        &self.error_details
+    }
     /// <p>The unique identifier of the link.</p>
     /// This field is required.
     pub fn link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -372,6 +417,40 @@ impl GetLinkOutputBuilder {
     pub fn get_timeout_in_millis(&self) -> &::std::option::Option<i64> {
         &self.timeout_in_millis
     }
+    /// <p>The link's concurrency token. Pass it to PutLinkFlows unchanged; it changes whenever the link does.</p>
+    pub fn lock_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.lock_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The link's concurrency token. Pass it to PutLinkFlows unchanged; it changes whenever the link does.</p>
+    pub fn set_lock_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.lock_token = input;
+        self
+    }
+    /// <p>The link's concurrency token. Pass it to PutLinkFlows unchanged; it changes whenever the link does.</p>
+    pub fn get_lock_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.lock_token
+    }
+    /// Appends an item to `flows`.
+    ///
+    /// To override the contents of this collection use [`set_flows`](Self::set_flows).
+    ///
+    /// <p>The link's active flows, in the form PutLinkFlows takes. Empty when the link has no modules, and absent when its modules were set with UpdateLinkModuleFlow.</p>
+    pub fn flows(mut self, input: crate::types::Flow) -> Self {
+        let mut v = self.flows.unwrap_or_default();
+        v.push(input);
+        self.flows = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The link's active flows, in the form PutLinkFlows takes. Empty when the link has no modules, and absent when its modules were set with UpdateLinkModuleFlow.</p>
+    pub fn set_flows(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Flow>>) -> Self {
+        self.flows = input;
+        self
+    }
+    /// <p>The link's active flows, in the form PutLinkFlows takes. Empty when the link has no modules, and absent when its modules were set with UpdateLinkModuleFlow.</p>
+    pub fn get_flows(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Flow>> {
+        &self.flows
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -427,6 +506,7 @@ impl GetLinkOutputBuilder {
             attributes: self.attributes,
             log_settings: self.log_settings,
             connectivity_type: self.connectivity_type,
+            error_details: self.error_details,
             link_id: self.link_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "link_id",
@@ -436,6 +516,8 @@ impl GetLinkOutputBuilder {
             tags: self.tags,
             http_responder_allowed: self.http_responder_allowed,
             timeout_in_millis: self.timeout_in_millis,
+            lock_token: self.lock_token,
+            flows: self.flows,
             _request_id: self._request_id,
         })
     }

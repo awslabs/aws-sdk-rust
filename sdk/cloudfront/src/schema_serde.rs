@@ -1373,6 +1373,8 @@ pub(crate) mod shape_verify_dns_configuration_output_output;
 
 pub(crate) mod shape_viewer_certificate;
 
+pub(crate) mod shape_viewer_fallback;
+
 pub(crate) mod shape_viewer_mtls_config;
 
 pub(crate) mod shape_vpc_origin;

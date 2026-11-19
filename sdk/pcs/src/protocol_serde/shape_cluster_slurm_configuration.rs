@@ -20,44 +20,51 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "scaleDownIdleTimeInSeconds" => {
-                            builder = builder.set_scale_down_idle_time_in_seconds(
-                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                    .map(i32::try_from)
-                                    .transpose()?,
-                            );
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "scaleDownIdleTimeInSeconds" => {
+                                builder = builder.set_scale_down_idle_time_in_seconds(
+                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                        .map(i32::try_from)
+                                        .transpose()?,
+                                );
+                            }
+                            "slurmCustomSettings" => {
+                                builder = builder.set_slurm_custom_settings(
+                                    crate::protocol_serde::shape_slurm_custom_settings::de_slurm_custom_settings(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "slurmdbdCustomSettings" => {
+                                builder = builder.set_slurmdbd_custom_settings(
+                                    crate::protocol_serde::shape_slurmdbd_custom_settings::de_slurmdbd_custom_settings(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "cgroupCustomSettings" => {
+                                builder = builder.set_cgroup_custom_settings(
+                                    crate::protocol_serde::shape_cgroup_custom_settings::de_cgroup_custom_settings(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "jobSubmitPlugins" => {
+                                builder = builder.set_job_submit_plugins(
+                                    crate::protocol_serde::shape_job_submit_plugin_list::de_job_submit_plugin_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "authKey" => {
+                                builder =
+                                    builder.set_auth_key(crate::protocol_serde::shape_slurm_auth_key::de_slurm_auth_key(tokens, _value, depth + 1)?);
+                            }
+                            "jwtAuth" => {
+                                builder = builder.set_jwt_auth(crate::protocol_serde::shape_jwt_auth::de_jwt_auth(tokens, _value, depth + 1)?);
+                            }
+                            "accounting" => {
+                                builder = builder.set_accounting(crate::protocol_serde::shape_accounting::de_accounting(tokens, _value, depth + 1)?);
+                            }
+                            "slurmRest" => {
+                                builder = builder.set_slurm_rest(crate::protocol_serde::shape_slurm_rest::de_slurm_rest(tokens, _value, depth + 1)?);
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        "slurmCustomSettings" => {
-                            builder = builder.set_slurm_custom_settings(
-                                crate::protocol_serde::shape_slurm_custom_settings::de_slurm_custom_settings(tokens, _value, depth + 1)?,
-                            );
-                        }
-                        "slurmdbdCustomSettings" => {
-                            builder = builder.set_slurmdbd_custom_settings(
-                                crate::protocol_serde::shape_slurmdbd_custom_settings::de_slurmdbd_custom_settings(tokens, _value, depth + 1)?,
-                            );
-                        }
-                        "cgroupCustomSettings" => {
-                            builder = builder.set_cgroup_custom_settings(
-                                crate::protocol_serde::shape_cgroup_custom_settings::de_cgroup_custom_settings(tokens, _value, depth + 1)?,
-                            );
-                        }
-                        "authKey" => {
-                            builder =
-                                builder.set_auth_key(crate::protocol_serde::shape_slurm_auth_key::de_slurm_auth_key(tokens, _value, depth + 1)?);
-                        }
-                        "jwtAuth" => {
-                            builder = builder.set_jwt_auth(crate::protocol_serde::shape_jwt_auth::de_jwt_auth(tokens, _value, depth + 1)?);
-                        }
-                        "accounting" => {
-                            builder = builder.set_accounting(crate::protocol_serde::shape_accounting::de_accounting(tokens, _value, depth + 1)?);
-                        }
-                        "slurmRest" => {
-                            builder = builder.set_slurm_rest(crate::protocol_serde::shape_slurm_rest::de_slurm_rest(tokens, _value, depth + 1)?);
-                        }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

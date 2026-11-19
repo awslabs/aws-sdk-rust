@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum PaymentOutput {
+    /// <p>Output from an AWS Billing x402 payment.</p>
+    AwsBillingX402(crate::types::AwsBillingX402PaymentOutput),
     /// <p>Output from a crypto X402 payment.</p>
     CryptoX402(crate::types::CryptoX402PaymentOutput),
     /// <p>Contains the payment credential, ready to retry the request.</p>
@@ -19,6 +21,19 @@ pub enum PaymentOutput {
     Unknown,
 }
 impl PaymentOutput {
+    /// Tries to convert the enum instance into [`AwsBillingX402`](crate::types::PaymentOutput::AwsBillingX402), extracting the inner [`AwsBillingX402PaymentOutput`](crate::types::AwsBillingX402PaymentOutput).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_aws_billing_x402(&self) -> ::std::result::Result<&crate::types::AwsBillingX402PaymentOutput, &Self> {
+        if let PaymentOutput::AwsBillingX402(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`AwsBillingX402`](crate::types::PaymentOutput::AwsBillingX402).
+    pub fn is_aws_billing_x402(&self) -> bool {
+        self.as_aws_billing_x402().is_ok()
+    }
     /// Tries to convert the enum instance into [`CryptoX402`](crate::types::PaymentOutput::CryptoX402), extracting the inner [`CryptoX402PaymentOutput`](crate::types::CryptoX402PaymentOutput).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_crypto_x402(&self) -> ::std::result::Result<&crate::types::CryptoX402PaymentOutput, &Self> {

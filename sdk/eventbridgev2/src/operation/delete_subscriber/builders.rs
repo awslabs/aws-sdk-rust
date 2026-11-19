@@ -22,7 +22,7 @@ impl crate::operation::delete_subscriber::builders::DeleteSubscriberInputBuilder
 }
 /// Fluent builder constructing a request to `DeleteSubscriber`.
 ///
-/// Deletes a subscriber. Events are no longer delivered to its target.
+/// <p>Deletes a subscriber. Events are no longer delivered to its target.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteSubscriberFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DeleteSubscriberFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies a subscriber.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a subscriber.</p>
     pub fn subscriber_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.subscriber_arn(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies a subscriber.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a subscriber.</p>
     pub fn set_subscriber_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_subscriber_arn(input);
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies a subscriber.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a subscriber.</p>
     pub fn get_subscriber_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_subscriber_arn()
     }

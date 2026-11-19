@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpportunityQuality {
-    /// <p>Deal quality score based on opportunity content completeness and sales methodology criteria. Values range from 0 to 100.</p>
+    /// <p>Deal quality score assigned to the opportunity. Values range from 0 to 100.</p>
     pub score: ::std::option::Option<i32>,
     /// <p>Direction of score change since last scoring iteration. Known values: <code>Improving</code>, <code>Declining</code>, <code>No Change</code>.</p>
     pub trend: ::std::option::Option<::std::string::String>,
 }
 impl OpportunityQuality {
-    /// <p>Deal quality score based on opportunity content completeness and sales methodology criteria. Values range from 0 to 100.</p>
+    /// <p>Deal quality score assigned to the opportunity. Values range from 0 to 100.</p>
     pub fn score(&self) -> ::std::option::Option<i32> {
         self.score
     }
@@ -34,17 +34,17 @@ pub struct OpportunityQualityBuilder {
     pub(crate) trend: ::std::option::Option<::std::string::String>,
 }
 impl OpportunityQualityBuilder {
-    /// <p>Deal quality score based on opportunity content completeness and sales methodology criteria. Values range from 0 to 100.</p>
+    /// <p>Deal quality score assigned to the opportunity. Values range from 0 to 100.</p>
     pub fn score(mut self, input: i32) -> Self {
         self.score = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Deal quality score based on opportunity content completeness and sales methodology criteria. Values range from 0 to 100.</p>
+    /// <p>Deal quality score assigned to the opportunity. Values range from 0 to 100.</p>
     pub fn set_score(mut self, input: ::std::option::Option<i32>) -> Self {
         self.score = input;
         self
     }
-    /// <p>Deal quality score based on opportunity content completeness and sales methodology criteria. Values range from 0 to 100.</p>
+    /// <p>Deal quality score assigned to the opportunity. Values range from 0 to 100.</p>
     pub fn get_score(&self) -> &::std::option::Option<i32> {
         &self.score
     }

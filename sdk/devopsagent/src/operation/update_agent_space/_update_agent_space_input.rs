@@ -14,6 +14,8 @@ pub struct UpdateAgentSpaceInput {
     pub locale: ::std::option::Option<::std::string::String>,
     /// <p>The preferences to configure on the agent space. When provided, this replaces the full set of configured preferences; preferences not included revert to their default values. When omitted, the current preferences are left unchanged.</p>
     pub preferences: ::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>>,
+    /// <p>Specifies whether the AgentSpace's Amazon Web Services source configuration targets an individual Amazon Web Services account or an Amazon Web Services Organization. Use this parameter to switch an existing AgentSpace between source modes.</p>
+    pub aws_source_mode: ::std::option::Option<crate::types::AwsSourceMode>,
 }
 impl UpdateAgentSpaceInput {
     /// <p>The unique identifier of the AgentSpace</p>
@@ -36,6 +38,10 @@ impl UpdateAgentSpaceInput {
     pub fn preferences(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>> {
         self.preferences.as_ref()
     }
+    /// <p>Specifies whether the AgentSpace's Amazon Web Services source configuration targets an individual Amazon Web Services account or an Amazon Web Services Organization. Use this parameter to switch an existing AgentSpace between source modes.</p>
+    pub fn aws_source_mode(&self) -> ::std::option::Option<&crate::types::AwsSourceMode> {
+        self.aws_source_mode.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateAgentSpaceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -45,6 +51,7 @@ impl ::std::fmt::Debug for UpdateAgentSpaceInput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("locale", &self.locale);
         formatter.field("preferences", &self.preferences);
+        formatter.field("aws_source_mode", &self.aws_source_mode);
         formatter.finish()
     }
 }
@@ -64,6 +71,7 @@ pub struct UpdateAgentSpaceInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) locale: ::std::option::Option<::std::string::String>,
     pub(crate) preferences: ::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>>,
+    pub(crate) aws_source_mode: ::std::option::Option<crate::types::AwsSourceMode>,
 }
 impl UpdateAgentSpaceInputBuilder {
     /// <p>The unique identifier of the AgentSpace</p>
@@ -143,6 +151,20 @@ impl UpdateAgentSpaceInputBuilder {
     pub fn get_preferences(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>> {
         &self.preferences
     }
+    /// <p>Specifies whether the AgentSpace's Amazon Web Services source configuration targets an individual Amazon Web Services account or an Amazon Web Services Organization. Use this parameter to switch an existing AgentSpace between source modes.</p>
+    pub fn aws_source_mode(mut self, input: crate::types::AwsSourceMode) -> Self {
+        self.aws_source_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the AgentSpace's Amazon Web Services source configuration targets an individual Amazon Web Services account or an Amazon Web Services Organization. Use this parameter to switch an existing AgentSpace between source modes.</p>
+    pub fn set_aws_source_mode(mut self, input: ::std::option::Option<crate::types::AwsSourceMode>) -> Self {
+        self.aws_source_mode = input;
+        self
+    }
+    /// <p>Specifies whether the AgentSpace's Amazon Web Services source configuration targets an individual Amazon Web Services account or an Amazon Web Services Organization. Use this parameter to switch an existing AgentSpace between source modes.</p>
+    pub fn get_aws_source_mode(&self) -> &::std::option::Option<crate::types::AwsSourceMode> {
+        &self.aws_source_mode
+    }
     /// Consumes the builder and constructs a [`UpdateAgentSpaceInput`](crate::operation::update_agent_space::UpdateAgentSpaceInput).
     pub fn build(
         self,
@@ -153,6 +175,7 @@ impl UpdateAgentSpaceInputBuilder {
             description: self.description,
             locale: self.locale,
             preferences: self.preferences,
+            aws_source_mode: self.aws_source_mode,
         })
     }
 }
@@ -164,6 +187,7 @@ impl ::std::fmt::Debug for UpdateAgentSpaceInputBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("locale", &self.locale);
         formatter.field("preferences", &self.preferences);
+        formatter.field("aws_source_mode", &self.aws_source_mode);
         formatter.finish()
     }
 }

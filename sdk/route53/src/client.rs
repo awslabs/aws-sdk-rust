@@ -142,10 +142,20 @@ impl Client {
 pub trait Waiters {
     /// Wait for `resource_record_sets_changed`
     fn wait_until_resource_record_sets_changed(&self) -> crate::waiters::resource_record_sets_changed::ResourceRecordSetsChangedFluentBuilder;
+    /// Wait for `health_check_source_created`
+    fn wait_until_health_check_source_created(&self) -> crate::waiters::health_check_source_created::HealthCheckSourceCreatedFluentBuilder;
+    /// Wait for `health_check_source_deleted`
+    fn wait_until_health_check_source_deleted(&self) -> crate::waiters::health_check_source_deleted::HealthCheckSourceDeletedFluentBuilder;
 }
 impl Waiters for Client {
     fn wait_until_resource_record_sets_changed(&self) -> crate::waiters::resource_record_sets_changed::ResourceRecordSetsChangedFluentBuilder {
         crate::waiters::resource_record_sets_changed::ResourceRecordSetsChangedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_health_check_source_created(&self) -> crate::waiters::health_check_source_created::HealthCheckSourceCreatedFluentBuilder {
+        crate::waiters::health_check_source_created::HealthCheckSourceCreatedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_health_check_source_deleted(&self) -> crate::waiters::health_check_source_deleted::HealthCheckSourceDeletedFluentBuilder {
+        crate::waiters::health_check_source_deleted::HealthCheckSourceDeletedFluentBuilder::new(self.handle.clone())
     }
 }
 
@@ -178,6 +188,8 @@ mod change_tags_for_resource;
 mod create_cidr_collection;
 
 mod create_health_check;
+
+mod create_health_check_source;
 
 mod create_hosted_zone;
 
@@ -230,6 +242,8 @@ mod delete_cidr_collection;
 
 mod delete_health_check;
 
+mod delete_health_check_source;
+
 mod delete_hosted_zone;
 
 mod delete_key_signing_key;
@@ -268,6 +282,8 @@ mod get_health_check_count;
 
 mod get_health_check_last_failure_reason;
 
+mod get_health_check_source;
+
 mod get_health_check_status;
 
 mod get_hosted_zone;
@@ -296,7 +312,11 @@ mod list_cidr_locations;
 
 mod list_geo_locations;
 
+mod list_health_check_sources;
+
 mod list_health_checks;
+
+mod list_health_checks_by_source;
 
 mod list_hosted_zones;
 

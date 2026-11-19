@@ -369,9 +369,13 @@ pub use crate::types::_crypto_x402_payment_input::CryptoX402PaymentInput;
 
 pub use crate::types::_mpp_payment_input::MppPaymentInput;
 
+pub use crate::types::_aws_billing_x402_payment_input::AwsBillingX402PaymentInput;
+
 pub use crate::types::_crypto_x402_payment_output::CryptoX402PaymentOutput;
 
 pub use crate::types::_mpp_payment_output::MppPaymentOutput;
+
+pub use crate::types::_aws_billing_x402_payment_output::AwsBillingX402PaymentOutput;
 
 pub use crate::types::_registry_record_summary::RegistryRecordSummary;
 
@@ -513,6 +517,8 @@ pub use crate::types::_memory_record_right_expression::MemoryRecordRightExpressi
 
 pub use crate::types::_currency::Currency;
 
+pub use crate::types::_aws_billing_payment_options::AwsBillingPaymentOptions;
+
 pub use crate::types::_descriptor_type::DescriptorType;
 
 pub use crate::types::_descriptors::Descriptors;
@@ -609,6 +615,8 @@ pub use crate::types::_right_expression::RightExpression;
 
 pub use crate::types::_linked_account::LinkedAccount;
 
+pub use crate::types::_dpop_jwk::DpopJwk;
+
 pub use crate::types::_mcp_descriptor::McpDescriptor;
 
 pub use crate::types::_a2a_descriptor::A2aDescriptor;
@@ -676,6 +684,10 @@ pub use crate::types::_linked_account_sms::LinkedAccountSms;
 pub use crate::types::_linked_account_developer_jwt::LinkedAccountDeveloperJwt;
 
 pub use crate::types::_linked_account_o_auth2::LinkedAccountOAuth2;
+
+pub use crate::types::_jwk_key_type::JwkKeyType;
+
+pub use crate::types::_jwk_elliptic_curve::JwkEllipticCurve;
 
 pub use crate::types::_server_definition::ServerDefinition;
 
@@ -786,6 +798,12 @@ mod _automation_stream_status;
 mod _automation_stream_update;
 
 mod _available_limits;
+
+mod _aws_billing_payment_options;
+
+mod _aws_billing_x402_payment_input;
+
+mod _aws_billing_x402_payment_output;
 
 mod _basic_auth;
 
@@ -916,6 +934,8 @@ mod _descriptor_type;
 mod _descriptors;
 
 mod _domain_filter;
+
+mod _dpop_jwk;
 
 mod _efs_configuration;
 
@@ -1162,6 +1182,10 @@ mod _invoke_agent_runtime_command_request_body;
 mod _invoke_agent_runtime_command_stream_output;
 
 mod _invoke_harness_stream_output;
+
+mod _jwk_elliptic_curve;
+
+mod _jwk_key_type;
 
 mod _key_press_arguments;
 

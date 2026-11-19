@@ -48,6 +48,8 @@ pub struct ChannelSummary {
     pub channel_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// Include this setting to include Elemental Inference features in this channel.
     pub inference_settings: ::std::option::Option<crate::types::DescribeInferenceSettings>,
+    /// Specification of JPEG XS inputs for this channel
+    pub jpeg_xs_input_specification: ::std::option::Option<crate::types::JpegXsInputSpecification>,
 }
 impl ChannelSummary {
     /// The unique arn of the channel.
@@ -148,6 +150,10 @@ impl ChannelSummary {
     pub fn inference_settings(&self) -> ::std::option::Option<&crate::types::DescribeInferenceSettings> {
         self.inference_settings.as_ref()
     }
+    /// Specification of JPEG XS inputs for this channel
+    pub fn jpeg_xs_input_specification(&self) -> ::std::option::Option<&crate::types::JpegXsInputSpecification> {
+        self.jpeg_xs_input_specification.as_ref()
+    }
 }
 impl ChannelSummary {
     /// Creates a new builder-style object to manufacture [`ChannelSummary`](crate::types::ChannelSummary).
@@ -182,6 +188,7 @@ pub struct ChannelSummaryBuilder {
     pub(crate) linked_channel_settings: ::std::option::Option<crate::types::DescribeLinkedChannelSettings>,
     pub(crate) channel_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) inference_settings: ::std::option::Option<crate::types::DescribeInferenceSettings>,
+    pub(crate) jpeg_xs_input_specification: ::std::option::Option<crate::types::JpegXsInputSpecification>,
 }
 impl ChannelSummaryBuilder {
     /// The unique arn of the channel.
@@ -531,6 +538,20 @@ impl ChannelSummaryBuilder {
     pub fn get_inference_settings(&self) -> &::std::option::Option<crate::types::DescribeInferenceSettings> {
         &self.inference_settings
     }
+    /// Specification of JPEG XS inputs for this channel
+    pub fn jpeg_xs_input_specification(mut self, input: crate::types::JpegXsInputSpecification) -> Self {
+        self.jpeg_xs_input_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specification of JPEG XS inputs for this channel
+    pub fn set_jpeg_xs_input_specification(mut self, input: ::std::option::Option<crate::types::JpegXsInputSpecification>) -> Self {
+        self.jpeg_xs_input_specification = input;
+        self
+    }
+    /// Specification of JPEG XS inputs for this channel
+    pub fn get_jpeg_xs_input_specification(&self) -> &::std::option::Option<crate::types::JpegXsInputSpecification> {
+        &self.jpeg_xs_input_specification
+    }
     /// Consumes the builder and constructs a [`ChannelSummary`](crate::types::ChannelSummary).
     pub fn build(self) -> crate::types::ChannelSummary {
         crate::types::ChannelSummary {
@@ -556,6 +577,7 @@ impl ChannelSummaryBuilder {
             linked_channel_settings: self.linked_channel_settings,
             channel_security_groups: self.channel_security_groups,
             inference_settings: self.inference_settings,
+            jpeg_xs_input_specification: self.jpeg_xs_input_specification,
         }
     }
 }

@@ -28,6 +28,7 @@
 ///     StackAttribute::StreamingExperienceSettings => { /* ... */ },
 ///     StackAttribute::ThemeName => { /* ... */ },
 ///     StackAttribute::UserSettings => { /* ... */ },
+///     StackAttribute::WebAuthnRedirection => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -97,6 +98,9 @@
 /// <li>
 /// <p>STORAGE_CONNECTOR_AUTHENTICATION</p>
 /// </li>
+/// <li>
+/// <p>WEB_AUTHN_REDIRECTION</p>
+/// </li>
 /// </ul>
 #[non_exhaustive]
 #[derive(
@@ -135,6 +139,8 @@ pub enum StackAttribute {
     ThemeName,
     #[allow(missing_docs)] // documentation missing in model
     UserSettings,
+    #[allow(missing_docs)] // documentation missing in model
+    WebAuthnRedirection,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -158,6 +164,7 @@ impl ::std::convert::From<&str> for StackAttribute {
             "STREAMING_EXPERIENCE_SETTINGS" => StackAttribute::StreamingExperienceSettings,
             "THEME_NAME" => StackAttribute::ThemeName,
             "USER_SETTINGS" => StackAttribute::UserSettings,
+            "WEB_AUTHN_REDIRECTION" => StackAttribute::WebAuthnRedirection,
             other => StackAttribute::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -189,6 +196,7 @@ impl StackAttribute {
             StackAttribute::StreamingExperienceSettings => "STREAMING_EXPERIENCE_SETTINGS",
             StackAttribute::ThemeName => "THEME_NAME",
             StackAttribute::UserSettings => "USER_SETTINGS",
+            StackAttribute::WebAuthnRedirection => "WEB_AUTHN_REDIRECTION",
             StackAttribute::Unknown(value) => value.as_str(),
         }
     }
@@ -211,6 +219,7 @@ impl StackAttribute {
             "STREAMING_EXPERIENCE_SETTINGS",
             "THEME_NAME",
             "USER_SETTINGS",
+            "WEB_AUTHN_REDIRECTION",
         ]
     }
 }
@@ -250,6 +259,7 @@ impl ::std::fmt::Display for StackAttribute {
             StackAttribute::StreamingExperienceSettings => write!(f, "STREAMING_EXPERIENCE_SETTINGS"),
             StackAttribute::ThemeName => write!(f, "THEME_NAME"),
             StackAttribute::UserSettings => write!(f, "USER_SETTINGS"),
+            StackAttribute::WebAuthnRedirection => write!(f, "WEB_AUTHN_REDIRECTION"),
             StackAttribute::Unknown(value) => write!(f, "{value}"),
         }
     }

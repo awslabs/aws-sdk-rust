@@ -16,6 +16,12 @@ pub fn ser_payment_input(
             crate::protocol_serde::shape_mpp_payment_input::ser_mpp_payment_input(&mut object_2, inner)?;
             object_2.finish();
         }
+        crate::types::PaymentInput::AwsBillingX402(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_3.key("awsBillingX402").start_object();
+            crate::protocol_serde::shape_aws_billing_x402_payment_input::ser_aws_billing_x402_payment_input(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::PaymentInput::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("PaymentInput")),
     }
     Ok(())

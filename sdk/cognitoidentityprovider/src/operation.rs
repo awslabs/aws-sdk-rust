@@ -118,6 +118,9 @@ pub mod confirm_forgot_password;
 /// Types for the `ConfirmSignUp` operation.
 pub mod confirm_sign_up;
 
+/// Types for the `CreateCIMDPolicy` operation.
+pub mod create_cimd_policy;
+
 /// Types for the `CreateGroup` operation.
 pub mod create_group;
 
@@ -147,6 +150,9 @@ pub mod create_user_pool_domain;
 
 /// Types for the `CreateUserPoolReplica` operation.
 pub mod create_user_pool_replica;
+
+/// Types for the `DeleteCIMDPolicy` operation.
+pub mod delete_cimd_policy;
 
 /// Types for the `DeleteGroup` operation.
 pub mod delete_group;
@@ -186,6 +192,9 @@ pub mod delete_user_pool_replica;
 
 /// Types for the `DeleteWebAuthnCredential` operation.
 pub mod delete_web_authn_credential;
+
+/// Types for the `DescribeCIMDPolicy` operation.
+pub mod describe_cimd_policy;
 
 /// Types for the `DescribeIdentityProvider` operation.
 pub mod describe_identity_provider;
@@ -288,6 +297,12 @@ pub mod initiate_auth;
 
 /// Types for the `InitiatePointInTimeRecovery` operation.
 pub mod initiate_point_in_time_recovery;
+
+/// Types for the `ListCIMDPolicies` operation.
+pub mod list_cimd_policies;
+
+/// Types for the `ListClientMetadataURLs` operation.
+pub mod list_client_metadata_urls;
 
 /// Types for the `ListDevices` operation.
 pub mod list_devices;
@@ -396,6 +411,12 @@ pub mod untag_resource;
 
 /// Types for the `UpdateAuthEventFeedback` operation.
 pub mod update_auth_event_feedback;
+
+/// Types for the `UpdateCIMDPolicy` operation.
+pub mod update_cimd_policy;
+
+/// Types for the `UpdateClientMetadataURLState` operation.
+pub mod update_client_metadata_url_state;
 
 /// Types for the `UpdateDeviceStatus` operation.
 pub mod update_device_status;

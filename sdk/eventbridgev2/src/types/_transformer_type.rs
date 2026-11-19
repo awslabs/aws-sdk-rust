@@ -43,11 +43,11 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum TransformerType {
-    /// Transform the event using a JSONata expression.
+    /// <p>Transform the event using a JSONata expression.</p>
     Jsonata,
-    /// Deliver the raw event payload.
+    /// <p>Deliver the raw event payload.</p>
     Raw,
-    /// Deliver the event with metadata envelope.
+    /// <p>Deliver the event with metadata envelope.</p>
     WithMetadata,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

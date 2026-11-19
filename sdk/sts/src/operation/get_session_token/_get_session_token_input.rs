@@ -11,7 +11,7 @@ pub struct GetSessionTokenInput {
     /// <p>The value provided by the MFA device, if MFA is required. If any policy requires the IAM user to submit an MFA code, specify this value. If MFA authentication is required, the user must provide a code when requesting a set of temporary security credentials. A user who fails to provide the code receives an "access denied" response when requesting resources that require MFA authentication.</p>
     /// <p>The format for this parameter, as described by its regex pattern, is a sequence of six numeric digits.</p>
     pub token_code: ::std::option::Option<::std::string::String>,
-    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    /// <p>The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.</p>
     pub minimum_session_token_size: ::std::option::Option<i32>,
 }
 impl GetSessionTokenInput {
@@ -29,7 +29,7 @@ impl GetSessionTokenInput {
     pub fn token_code(&self) -> ::std::option::Option<&str> {
         self.token_code.as_deref()
     }
-    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    /// <p>The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.</p>
     pub fn minimum_session_token_size(&self) -> ::std::option::Option<i32> {
         self.minimum_session_token_size
     }
@@ -99,17 +99,17 @@ impl GetSessionTokenInputBuilder {
     pub fn get_token_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.token_code
     }
-    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    /// <p>The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.</p>
     pub fn minimum_session_token_size(mut self, input: i32) -> Self {
         self.minimum_session_token_size = ::std::option::Option::Some(input);
         self
     }
-    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    /// <p>The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.</p>
     pub fn set_minimum_session_token_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.minimum_session_token_size = input;
         self
     }
-    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    /// <p>The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.</p>
     pub fn get_minimum_session_token_size(&self) -> &::std::option::Option<i32> {
         &self.minimum_session_token_size
     }

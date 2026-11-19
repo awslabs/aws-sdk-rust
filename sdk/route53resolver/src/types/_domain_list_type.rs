@@ -12,6 +12,7 @@
 /// ```text
 /// # let domainlisttype = unimplemented!();
 /// match domainlisttype {
+///     DomainListType::Autoallowlist => { /* ... */ },
 ///     DomainListType::Content => { /* ... */ },
 ///     DomainListType::Threat => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum DomainListType {
     #[allow(missing_docs)] // documentation missing in model
+    Autoallowlist,
+    #[allow(missing_docs)] // documentation missing in model
     Content,
     #[allow(missing_docs)] // documentation missing in model
     Threat,
@@ -53,6 +56,7 @@ pub enum DomainListType {
 impl ::std::convert::From<&str> for DomainListType {
     fn from(s: &str) -> Self {
         match s {
+            "AUTOALLOWLIST" => DomainListType::Autoallowlist,
             "CONTENT" => DomainListType::Content,
             "THREAT" => DomainListType::Threat,
             other => DomainListType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl DomainListType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            DomainListType::Autoallowlist => "AUTOALLOWLIST",
             DomainListType::Content => "CONTENT",
             DomainListType::Threat => "THREAT",
             DomainListType::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl DomainListType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CONTENT", "THREAT"]
+        &["AUTOALLOWLIST", "CONTENT", "THREAT"]
     }
 }
 impl ::std::convert::AsRef<str> for DomainListType {
@@ -100,6 +105,7 @@ impl DomainListType {
 impl ::std::fmt::Display for DomainListType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            DomainListType::Autoallowlist => write!(f, "AUTOALLOWLIST"),
             DomainListType::Content => write!(f, "CONTENT"),
             DomainListType::Threat => write!(f, "THREAT"),
             DomainListType::Unknown(value) => write!(f, "{value}"),

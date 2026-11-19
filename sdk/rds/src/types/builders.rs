@@ -101,6 +101,8 @@ pub use crate::types::_additional_storage_volume::AdditionalStorageVolumeBuilder
 
 pub use crate::types::_endpoint::EndpointBuilder;
 
+pub use crate::types::_primary_endpoint::PrimaryEndpointBuilder;
+
 pub use crate::types::_pending_modified_values::PendingModifiedValuesBuilder;
 
 pub use crate::types::_user_auth_config::UserAuthConfigBuilder;

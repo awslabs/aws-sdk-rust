@@ -167,6 +167,8 @@ pub(crate) mod shape_code_repository_on_demand_scan;
 
 pub(crate) mod shape_code_security_integration_summary;
 
+pub(crate) mod shape_code_security_integration_vpc_configuration;
+
 pub(crate) mod shape_code_security_resource;
 
 pub(crate) mod shape_code_security_scan_configuration;
@@ -252,6 +254,8 @@ pub(crate) mod shape_create_filter_output_output;
 pub(crate) mod shape_create_findings_report_input_input;
 
 pub(crate) mod shape_create_findings_report_output_output;
+
+pub(crate) mod shape_create_git_hub_enterprise_integration_detail;
 
 pub(crate) mod shape_create_git_lab_self_managed_integration_detail;
 
@@ -454,6 +458,8 @@ pub(crate) mod shape_get_on_demand_scan_status_output_output;
 pub(crate) mod shape_get_sbom_export_input_input;
 
 pub(crate) mod shape_get_sbom_export_output_output;
+
+pub(crate) mod shape_git_hub_enterprise_server_app_registration_detail;
 
 pub(crate) mod shape_image;
 
@@ -772,6 +778,10 @@ pub(crate) mod shape_update_encryption_key_output_output;
 pub(crate) mod shape_update_filter_input_input;
 
 pub(crate) mod shape_update_filter_output_output;
+
+pub(crate) mod shape_update_git_hub_enterprise_server_app_installation_detail;
+
+pub(crate) mod shape_update_git_hub_enterprise_server_integration_detail;
 
 pub(crate) mod shape_update_git_hub_integration_detail;
 

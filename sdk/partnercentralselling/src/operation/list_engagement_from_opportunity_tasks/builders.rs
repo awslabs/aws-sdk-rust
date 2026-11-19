@@ -22,7 +22,7 @@ impl crate::operation::list_engagement_from_opportunity_tasks::builders::ListEng
 }
 /// Fluent builder constructing a request to `ListEngagementFromOpportunityTasks`.
 ///
-/// <p>Lists all in-progress, completed, or failed <code>EngagementFromOpportunity</code> tasks that were initiated by the caller's account.</p>
+/// <p>Lists all in-progress, completed, or failed EngagementFromOpportunity tasks that were initiated by the caller's account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEngagementFromOpportunityTasksFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

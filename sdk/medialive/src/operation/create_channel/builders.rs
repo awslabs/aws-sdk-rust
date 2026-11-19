@@ -411,4 +411,18 @@ impl CreateChannelFluentBuilder {
     pub fn get_inference_settings(&self) -> &::std::option::Option<crate::types::InferenceSettings> {
         self.inner.get_inference_settings()
     }
+    /// Specification of JPEG XS inputs for this channel
+    pub fn jpeg_xs_input_specification(mut self, input: crate::types::JpegXsInputSpecification) -> Self {
+        self.inner = self.inner.jpeg_xs_input_specification(input);
+        self
+    }
+    /// Specification of JPEG XS inputs for this channel
+    pub fn set_jpeg_xs_input_specification(mut self, input: ::std::option::Option<crate::types::JpegXsInputSpecification>) -> Self {
+        self.inner = self.inner.set_jpeg_xs_input_specification(input);
+        self
+    }
+    /// Specification of JPEG XS inputs for this channel
+    pub fn get_jpeg_xs_input_specification(&self) -> &::std::option::Option<crate::types::JpegXsInputSpecification> {
+        self.inner.get_jpeg_xs_input_specification()
+    }
 }

@@ -178,4 +178,18 @@ impl CreateConnectionGroupFluentBuilder {
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_enabled()
     }
+    /// <p>The distribution whose certificate CloudFront uses for viewer requests that arrive on the connection group's Anycast static IPs without Server Name Indication (SNI).</p>
+    pub fn viewer_fallback(mut self, input: crate::types::ViewerFallback) -> Self {
+        self.inner = self.inner.viewer_fallback(input);
+        self
+    }
+    /// <p>The distribution whose certificate CloudFront uses for viewer requests that arrive on the connection group's Anycast static IPs without Server Name Indication (SNI).</p>
+    pub fn set_viewer_fallback(mut self, input: ::std::option::Option<crate::types::ViewerFallback>) -> Self {
+        self.inner = self.inner.set_viewer_fallback(input);
+        self
+    }
+    /// <p>The distribution whose certificate CloudFront uses for viewer requests that arrive on the connection group's Anycast static IPs without Server Name Indication (SNI).</p>
+    pub fn get_viewer_fallback(&self) -> &::std::option::Option<crate::types::ViewerFallback> {
+        self.inner.get_viewer_fallback()
+    }
 }

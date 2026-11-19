@@ -3,18 +3,18 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutEventsOutput {
-    /// The number of entries in the batch that failed to be published.
+    /// <p>The number of entries in the batch that failed to be published.</p>
     pub failed_entry_count: i32,
-    /// List of per-entry publish results, in the same order as the request entries.
+    /// <p>List of per-entry publish results, in the same order as the request entries.</p>
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::PutEventsResultEntry>>,
     _request_id: Option<String>,
 }
 impl PutEventsOutput {
-    /// The number of entries in the batch that failed to be published.
+    /// <p>The number of entries in the batch that failed to be published.</p>
     pub fn failed_entry_count(&self) -> i32 {
         self.failed_entry_count
     }
-    /// List of per-entry publish results, in the same order as the request entries.
+    /// <p>List of per-entry publish results, in the same order as the request entries.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
     pub fn entries(&self) -> &[crate::types::PutEventsResultEntry] {
@@ -42,17 +42,17 @@ pub struct PutEventsOutputBuilder {
     _request_id: Option<String>,
 }
 impl PutEventsOutputBuilder {
-    /// The number of entries in the batch that failed to be published.
+    /// <p>The number of entries in the batch that failed to be published.</p>
     pub fn failed_entry_count(mut self, input: i32) -> Self {
         self.failed_entry_count = ::std::option::Option::Some(input);
         self
     }
-    /// The number of entries in the batch that failed to be published.
+    /// <p>The number of entries in the batch that failed to be published.</p>
     pub fn set_failed_entry_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.failed_entry_count = input;
         self
     }
-    /// The number of entries in the batch that failed to be published.
+    /// <p>The number of entries in the batch that failed to be published.</p>
     pub fn get_failed_entry_count(&self) -> &::std::option::Option<i32> {
         &self.failed_entry_count
     }
@@ -60,19 +60,19 @@ impl PutEventsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// List of per-entry publish results, in the same order as the request entries.
+    /// <p>List of per-entry publish results, in the same order as the request entries.</p>
     pub fn entries(mut self, input: crate::types::PutEventsResultEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
         v.push(input);
         self.entries = ::std::option::Option::Some(v);
         self
     }
-    /// List of per-entry publish results, in the same order as the request entries.
+    /// <p>List of per-entry publish results, in the same order as the request entries.</p>
     pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutEventsResultEntry>>) -> Self {
         self.entries = input;
         self
     }
-    /// List of per-entry publish results, in the same order as the request entries.
+    /// <p>List of per-entry publish results, in the same order as the request entries.</p>
     pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutEventsResultEntry>> {
         &self.entries
     }

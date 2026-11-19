@@ -22,7 +22,7 @@ impl crate::operation::list_event_buses::builders::ListEventBusesInputBuilder {
 }
 /// Fluent builder constructing a request to `ListEventBuses`.
 ///
-/// Lists the event buses visible to the caller: buses the account owns and buses shared with it through AWS RAM. Shared entries carry identity fields only (Name, EventBusArn, EventBusAccountId); owned entries carry every summary field. Set EventBusAccountId to scope the list to one owner account.
+/// <p>Lists the event buses visible to the caller: buses the account owns and buses shared with it through AWS RAM. Shared entries carry identity fields only (Name, EventBusArn, EventBusAccountId); owned entries carry every summary field. Set EventBusAccountId to scope the list to one owner account.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListEventBusesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,74 +114,59 @@ impl ListEventBusesFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_event_buses::paginator::ListEventBusesPaginator {
         crate::operation::list_event_buses::paginator::ListEventBusesPaginator::new(self.handle, self.inner)
     }
-    /// Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/<name>
-    /// /
-    /// <id>
-    /// ), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.
-    /// </id>
-    /// </name>
+    /// <p>Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.</p>
     pub fn name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_prefix(input.into());
         self
     }
-    /// Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/<name>
-    /// /
-    /// <id>
-    /// ), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.
-    /// </id>
-    /// </name>
+    /// <p>Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.</p>
     pub fn set_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_prefix(input);
         self
     }
-    /// Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/<name>
-    /// /
-    /// <id>
-    /// ), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.
-    /// </id>
-    /// </name>
+    /// <p>Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.</p>
     pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name_prefix()
     }
-    /// AWS Account Id.
+    /// <p>AWS Account Id.</p>
     pub fn event_bus_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_bus_account_id(input.into());
         self
     }
-    /// AWS Account Id.
+    /// <p>AWS Account Id.</p>
     pub fn set_event_bus_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_bus_account_id(input);
         self
     }
-    /// AWS Account Id.
+    /// <p>AWS Account Id.</p>
     pub fn get_event_bus_account_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_event_bus_account_id()
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// Maximum number of results to return in one page of a List operation.
+    /// <p>Maximum number of results to return in one page of a List operation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// Maximum number of results to return in one page of a List operation.
+    /// <p>Maximum number of results to return in one page of a List operation.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// Maximum number of results to return in one page of a List operation.
+    /// <p>Maximum number of results to return in one page of a List operation.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

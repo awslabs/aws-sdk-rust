@@ -119,6 +119,16 @@ static CONNECTIONGROUP_MEMBER_IS_DEFAULT: ::aws_smithy_schema::Schema<'static> =
     "IsDefault",
     11,
 );
+static CONNECTIONGROUP_MEMBER_VIEWER_FALLBACK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudfront#ConnectionGroup$ViewerFallback",
+        "com.amazonaws.cloudfront",
+        "ConnectionGroup",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ViewerFallback",
+    12,
+);
 static CONNECTIONGROUP_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudfront#ConnectionGroup", "com.amazonaws.cloudfront", "ConnectionGroup"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -135,6 +145,7 @@ static CONNECTIONGROUP_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smit
         &CONNECTIONGROUP_MEMBER_STATUS,
         &CONNECTIONGROUP_MEMBER_ENABLED,
         &CONNECTIONGROUP_MEMBER_IS_DEFAULT,
+        &CONNECTIONGROUP_MEMBER_VIEWER_FALLBACK,
     ],
 );
 impl crate::types::ConnectionGroup {
@@ -186,6 +197,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Connection
         }
         if let Some(ref val) = self.is_default {
             ser.write_boolean(&CONNECTIONGROUP_MEMBER_IS_DEFAULT, *val)?;
+        }
+        if let Some(ref val) = self.viewer_fallback {
+            ser.write_struct(&CONNECTIONGROUP_MEMBER_VIEWER_FALLBACK, val)?;
         }
         Ok(())
     }
@@ -286,6 +300,13 @@ impl crate::types::builders::ConnectionGroupBuilder {
                         deser.read_null()?;
                     } else {
                         self.is_default = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.viewer_fallback = Some(crate::types::ViewerFallback::deserialize(deser)?);
                     }
                 }
                 _ => {}

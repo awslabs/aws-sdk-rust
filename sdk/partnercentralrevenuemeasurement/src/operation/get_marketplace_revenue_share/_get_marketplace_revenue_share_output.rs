@@ -3,24 +3,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMarketplaceRevenueShareOutput {
-    /// <p>The AWS Marketplace product identifier of the revenue share.</p>
-    pub product_id: ::std::string::String,
+    /// <p>The unique identifier of the marketplace revenue share, short ID form (mrs-...).</p>
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the marketplace revenue share.</p>
     pub arn: ::std::string::String,
     /// <p>The catalog that the marketplace revenue share belongs to.</p>
     pub catalog: crate::types::CatalogName,
-    /// <p>The AWS Marketplace product code.</p>
-    pub product_code: ::std::option::Option<::std::string::String>,
-    /// <p>The display name of the AWS Marketplace product.</p>
-    pub product_name: ::std::option::Option<::std::string::String>,
+    /// <p>The products in the marketplace revenue share, each with its typed account lists and full account IDs. Empty when the share is closed.</p>
+    pub products: ::std::option::Option<::std::vec::Vec<crate::types::MarketplaceRevenueShareProductDetail>>,
     /// <p>The date when the marketplace revenue share was created.</p>
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the marketplace revenue share was last modified.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The revision number of the retrieved marketplace revenue share.</p>
-    pub revision: ::std::option::Option<i32>,
-    /// <p>The latest revision number of the marketplace revenue share.</p>
-    pub latest_revision: ::std::option::Option<i32>,
+    /// <p>The revision of the retrieved marketplace revenue share.</p>
+    pub revision: ::std::option::Option<::std::string::String>,
+    /// <p>The latest revision of the marketplace revenue share.</p>
+    pub latest_revision: ::std::option::Option<::std::string::String>,
+    /// <p>The date from which this share is effective, derived from the earliest ACTIVE allocation start date (YYYY-MM-DD). Absent when no ACTIVE allocation remains.</p>
+    pub effective_from: ::std::option::Option<::std::string::String>,
+    /// <p>The date until which this share is effective, derived from the latest ACTIVE allocation end date (YYYY-MM-DD). Absent when no ACTIVE allocation remains.</p>
+    pub effective_until: ::std::option::Option<::std::string::String>,
     /// <p>The number of active allocations under this marketplace revenue share.</p>
     pub total_active_marketplace_revenue_share_allocation_count: ::std::option::Option<i32>,
     /// <p>The total number of allocations under this marketplace revenue share.</p>
@@ -28,10 +30,9 @@ pub struct GetMarketplaceRevenueShareOutput {
     _request_id: Option<String>,
 }
 impl GetMarketplaceRevenueShareOutput {
-    /// <p>The AWS Marketplace product identifier of the revenue share.</p>
-    pub fn product_id(&self) -> &str {
-        use std::ops::Deref;
-        self.product_id.deref()
+    /// <p>The unique identifier of the marketplace revenue share, short ID form (mrs-...).</p>
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the marketplace revenue share.</p>
     pub fn arn(&self) -> &str {
@@ -42,13 +43,11 @@ impl GetMarketplaceRevenueShareOutput {
     pub fn catalog(&self) -> &crate::types::CatalogName {
         &self.catalog
     }
-    /// <p>The AWS Marketplace product code.</p>
-    pub fn product_code(&self) -> ::std::option::Option<&str> {
-        self.product_code.as_deref()
-    }
-    /// <p>The display name of the AWS Marketplace product.</p>
-    pub fn product_name(&self) -> ::std::option::Option<&str> {
-        self.product_name.as_deref()
+    /// <p>The products in the marketplace revenue share, each with its typed account lists and full account IDs. Empty when the share is closed.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.products.is_none()`.
+    pub fn products(&self) -> &[crate::types::MarketplaceRevenueShareProductDetail] {
+        self.products.as_deref().unwrap_or_default()
     }
     /// <p>The date when the marketplace revenue share was created.</p>
     pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -58,13 +57,21 @@ impl GetMarketplaceRevenueShareOutput {
     pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
-    /// <p>The revision number of the retrieved marketplace revenue share.</p>
-    pub fn revision(&self) -> ::std::option::Option<i32> {
-        self.revision
+    /// <p>The revision of the retrieved marketplace revenue share.</p>
+    pub fn revision(&self) -> ::std::option::Option<&str> {
+        self.revision.as_deref()
     }
-    /// <p>The latest revision number of the marketplace revenue share.</p>
-    pub fn latest_revision(&self) -> ::std::option::Option<i32> {
-        self.latest_revision
+    /// <p>The latest revision of the marketplace revenue share.</p>
+    pub fn latest_revision(&self) -> ::std::option::Option<&str> {
+        self.latest_revision.as_deref()
+    }
+    /// <p>The date from which this share is effective, derived from the earliest ACTIVE allocation start date (YYYY-MM-DD). Absent when no ACTIVE allocation remains.</p>
+    pub fn effective_from(&self) -> ::std::option::Option<&str> {
+        self.effective_from.as_deref()
+    }
+    /// <p>The date until which this share is effective, derived from the latest ACTIVE allocation end date (YYYY-MM-DD). Absent when no ACTIVE allocation remains.</p>
+    pub fn effective_until(&self) -> ::std::option::Option<&str> {
+        self.effective_until.as_deref()
     }
     /// <p>The number of active allocations under this marketplace revenue share.</p>
     pub fn total_active_marketplace_revenue_share_allocation_count(&self) -> ::std::option::Option<i32> {
@@ -91,34 +98,35 @@ impl GetMarketplaceRevenueShareOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GetMarketplaceRevenueShareOutputBuilder {
-    pub(crate) product_id: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) catalog: ::std::option::Option<crate::types::CatalogName>,
-    pub(crate) product_code: ::std::option::Option<::std::string::String>,
-    pub(crate) product_name: ::std::option::Option<::std::string::String>,
+    pub(crate) products: ::std::option::Option<::std::vec::Vec<crate::types::MarketplaceRevenueShareProductDetail>>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) revision: ::std::option::Option<i32>,
-    pub(crate) latest_revision: ::std::option::Option<i32>,
+    pub(crate) revision: ::std::option::Option<::std::string::String>,
+    pub(crate) latest_revision: ::std::option::Option<::std::string::String>,
+    pub(crate) effective_from: ::std::option::Option<::std::string::String>,
+    pub(crate) effective_until: ::std::option::Option<::std::string::String>,
     pub(crate) total_active_marketplace_revenue_share_allocation_count: ::std::option::Option<i32>,
     pub(crate) total_marketplace_revenue_share_allocation_count: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl GetMarketplaceRevenueShareOutputBuilder {
-    /// <p>The AWS Marketplace product identifier of the revenue share.</p>
+    /// <p>The unique identifier of the marketplace revenue share, short ID form (mrs-...).</p>
     /// This field is required.
-    pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.product_id = ::std::option::Option::Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Marketplace product identifier of the revenue share.</p>
-    pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
+    /// <p>The unique identifier of the marketplace revenue share, short ID form (mrs-...).</p>
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.id = input;
         self
     }
-    /// <p>The AWS Marketplace product identifier of the revenue share.</p>
-    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.product_id
+    /// <p>The unique identifier of the marketplace revenue share, short ID form (mrs-...).</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The Amazon Resource Name (ARN) of the marketplace revenue share.</p>
     /// This field is required.
@@ -150,35 +158,28 @@ impl GetMarketplaceRevenueShareOutputBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<crate::types::CatalogName> {
         &self.catalog
     }
-    /// <p>The AWS Marketplace product code.</p>
-    pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.product_code = ::std::option::Option::Some(input.into());
+    /// Appends an item to `products`.
+    ///
+    /// To override the contents of this collection use [`set_products`](Self::set_products).
+    ///
+    /// <p>The products in the marketplace revenue share, each with its typed account lists and full account IDs. Empty when the share is closed.</p>
+    pub fn products(mut self, input: crate::types::MarketplaceRevenueShareProductDetail) -> Self {
+        let mut v = self.products.unwrap_or_default();
+        v.push(input);
+        self.products = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The AWS Marketplace product code.</p>
-    pub fn set_product_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_code = input;
+    /// <p>The products in the marketplace revenue share, each with its typed account lists and full account IDs. Empty when the share is closed.</p>
+    pub fn set_products(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MarketplaceRevenueShareProductDetail>>) -> Self {
+        self.products = input;
         self
     }
-    /// <p>The AWS Marketplace product code.</p>
-    pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
-        &self.product_code
-    }
-    /// <p>The display name of the AWS Marketplace product.</p>
-    pub fn product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.product_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The display name of the AWS Marketplace product.</p>
-    pub fn set_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_name = input;
-        self
-    }
-    /// <p>The display name of the AWS Marketplace product.</p>
-    pub fn get_product_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.product_name
+    /// <p>The products in the marketplace revenue share, each with its typed account lists and full account IDs. Empty when the share is closed.</p>
+    pub fn get_products(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MarketplaceRevenueShareProductDetail>> {
+        &self.products
     }
     /// <p>The date when the marketplace revenue share was created.</p>
+    /// This field is required.
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
         self
@@ -193,6 +194,7 @@ impl GetMarketplaceRevenueShareOutputBuilder {
         &self.created_date
     }
     /// <p>The date when the marketplace revenue share was last modified.</p>
+    /// This field is required.
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
         self
@@ -206,35 +208,66 @@ impl GetMarketplaceRevenueShareOutputBuilder {
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_date
     }
-    /// <p>The revision number of the retrieved marketplace revenue share.</p>
-    pub fn revision(mut self, input: i32) -> Self {
-        self.revision = ::std::option::Option::Some(input);
+    /// <p>The revision of the retrieved marketplace revenue share.</p>
+    /// This field is required.
+    pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revision = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The revision number of the retrieved marketplace revenue share.</p>
-    pub fn set_revision(mut self, input: ::std::option::Option<i32>) -> Self {
+    /// <p>The revision of the retrieved marketplace revenue share.</p>
+    pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision = input;
         self
     }
-    /// <p>The revision number of the retrieved marketplace revenue share.</p>
-    pub fn get_revision(&self) -> &::std::option::Option<i32> {
+    /// <p>The revision of the retrieved marketplace revenue share.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision
     }
-    /// <p>The latest revision number of the marketplace revenue share.</p>
-    pub fn latest_revision(mut self, input: i32) -> Self {
-        self.latest_revision = ::std::option::Option::Some(input);
+    /// <p>The latest revision of the marketplace revenue share.</p>
+    /// This field is required.
+    pub fn latest_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.latest_revision = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The latest revision number of the marketplace revenue share.</p>
-    pub fn set_latest_revision(mut self, input: ::std::option::Option<i32>) -> Self {
+    /// <p>The latest revision of the marketplace revenue share.</p>
+    pub fn set_latest_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.latest_revision = input;
         self
     }
-    /// <p>The latest revision number of the marketplace revenue share.</p>
-    pub fn get_latest_revision(&self) -> &::std::option::Option<i32> {
+    /// <p>The latest revision of the marketplace revenue share.</p>
+    pub fn get_latest_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_revision
     }
+    /// <p>The date from which this share is effective, derived from the earliest ACTIVE allocation start date (YYYY-MM-DD). Absent when no ACTIVE allocation remains.</p>
+    pub fn effective_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.effective_from = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The date from which this share is effective, derived from the earliest ACTIVE allocation start date (YYYY-MM-DD). Absent when no ACTIVE allocation remains.</p>
+    pub fn set_effective_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.effective_from = input;
+        self
+    }
+    /// <p>The date from which this share is effective, derived from the earliest ACTIVE allocation start date (YYYY-MM-DD). Absent when no ACTIVE allocation remains.</p>
+    pub fn get_effective_from(&self) -> &::std::option::Option<::std::string::String> {
+        &self.effective_from
+    }
+    /// <p>The date until which this share is effective, derived from the latest ACTIVE allocation end date (YYYY-MM-DD). Absent when no ACTIVE allocation remains.</p>
+    pub fn effective_until(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.effective_until = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The date until which this share is effective, derived from the latest ACTIVE allocation end date (YYYY-MM-DD). Absent when no ACTIVE allocation remains.</p>
+    pub fn set_effective_until(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.effective_until = input;
+        self
+    }
+    /// <p>The date until which this share is effective, derived from the latest ACTIVE allocation end date (YYYY-MM-DD). Absent when no ACTIVE allocation remains.</p>
+    pub fn get_effective_until(&self) -> &::std::option::Option<::std::string::String> {
+        &self.effective_until
+    }
     /// <p>The number of active allocations under this marketplace revenue share.</p>
+    /// This field is required.
     pub fn total_active_marketplace_revenue_share_allocation_count(mut self, input: i32) -> Self {
         self.total_active_marketplace_revenue_share_allocation_count = ::std::option::Option::Some(input);
         self
@@ -249,6 +282,7 @@ impl GetMarketplaceRevenueShareOutputBuilder {
         &self.total_active_marketplace_revenue_share_allocation_count
     }
     /// <p>The total number of allocations under this marketplace revenue share.</p>
+    /// This field is required.
     pub fn total_marketplace_revenue_share_allocation_count(mut self, input: i32) -> Self {
         self.total_marketplace_revenue_share_allocation_count = ::std::option::Option::Some(input);
         self
@@ -273,7 +307,6 @@ impl GetMarketplaceRevenueShareOutputBuilder {
     }
     /// Consumes the builder and constructs a [`GetMarketplaceRevenueShareOutput`](crate::operation::get_marketplace_revenue_share::GetMarketplaceRevenueShareOutput).
     /// This method will fail if any of the following fields are not set:
-    /// - [`product_id`](crate::operation::get_marketplace_revenue_share::builders::GetMarketplaceRevenueShareOutputBuilder::product_id)
     /// - [`arn`](crate::operation::get_marketplace_revenue_share::builders::GetMarketplaceRevenueShareOutputBuilder::arn)
     /// - [`catalog`](crate::operation::get_marketplace_revenue_share::builders::GetMarketplaceRevenueShareOutputBuilder::catalog)
     pub fn build(
@@ -283,12 +316,7 @@ impl GetMarketplaceRevenueShareOutputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_marketplace_revenue_share::GetMarketplaceRevenueShareOutput {
-            product_id: self.product_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "product_id",
-                    "product_id was not specified but it is required when building GetMarketplaceRevenueShareOutput",
-                )
-            })?,
+            id: self.id,
             arn: self.arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
@@ -301,12 +329,13 @@ impl GetMarketplaceRevenueShareOutputBuilder {
                     "catalog was not specified but it is required when building GetMarketplaceRevenueShareOutput",
                 )
             })?,
-            product_code: self.product_code,
-            product_name: self.product_name,
+            products: self.products,
             created_date: self.created_date,
             last_modified_date: self.last_modified_date,
             revision: self.revision,
             latest_revision: self.latest_revision,
+            effective_from: self.effective_from,
+            effective_until: self.effective_until,
             total_active_marketplace_revenue_share_allocation_count: self.total_active_marketplace_revenue_share_allocation_count,
             total_marketplace_revenue_share_allocation_count: self.total_marketplace_revenue_share_allocation_count,
             _request_id: self._request_id,

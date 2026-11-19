@@ -1,10 +1,10 @@
 [workspace]
 resolver = "2"
 exclude = [
-    "tests/webassembly-no-os",
+    "tests/telemetry",
     "tests/no-default-features",
-    "tests/webassembly-wstd",
-    "tests/telemetry"
+    "tests/webassembly-no-os",
+    "tests/webassembly-wstd"
 ]
 members = [
     "sdk/abusesignal",
@@ -340,6 +340,7 @@ members = [
     "sdk/partnercentralaccount",
     "sdk/partnercentralbenefits",
     "sdk/partnercentralchannel",
+    "sdk/partnercentralmarketing",
     "sdk/partnercentralrevenuemeasurement",
     "sdk/partnercentralselling",
     "sdk/paymentcryptography",

@@ -346,10 +346,12 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AssumeRoleEnd
 pub enum AssumeRoleError {
     /// <p>The web identity token that was passed is expired or is not valid. Get a new identity token from the identity provider and then retry the request.</p>
     ExpiredTokenException(crate::types::error::ExpiredTokenException),
+    /// <p>The request was rejected because the context assertion that was provided is invalid. This can happen if the context assertion supplied in the <code>ProvidedContexts</code> parameter is malformed, has expired, or does not match a trusted context provider.</p>
+    InvalidContextAssertionException(crate::types::error::InvalidContextAssertionException),
     /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::types::error::MalformedPolicyDocumentException),
-    /// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p>
-    /// <p>You could receive this error even though you meet other defined session policy and session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>The request was rejected because the session token exceeded the maximum allowed size. The error message reports the session token size and the maximum allowed size, both in bytes. Session policies and session tags add to the session token size. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>You might receive this error even though you meet the individual session policy and session tag limits. Monitor <code>SessionTokenUtilization</code> to track how close the session token is to the maximum allowed size. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.</p>
     PackedPolicyTooLargeException(crate::types::error::PackedPolicyTooLargeException),
     /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html#sts-regions-activate-deactivate">Activating and Deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::types::error::RegionDisabledException),
@@ -387,6 +389,7 @@ impl AssumeRoleError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::ExpiredTokenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidContextAssertionException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::MalformedPolicyDocumentException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::PackedPolicyTooLargeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::RegionDisabledException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -396,6 +399,10 @@ impl AssumeRoleError {
     /// Returns `true` if the error kind is `AssumeRoleError::ExpiredTokenException`.
     pub fn is_expired_token_exception(&self) -> bool {
         matches!(self, Self::ExpiredTokenException(_))
+    }
+    /// Returns `true` if the error kind is `AssumeRoleError::InvalidContextAssertionException`.
+    pub fn is_invalid_context_assertion_exception(&self) -> bool {
+        matches!(self, Self::InvalidContextAssertionException(_))
     }
     /// Returns `true` if the error kind is `AssumeRoleError::MalformedPolicyDocumentException`.
     pub fn is_malformed_policy_document_exception(&self) -> bool {
@@ -414,6 +421,7 @@ impl ::std::error::Error for AssumeRoleError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::ExpiredTokenException(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidContextAssertionException(_inner) => ::std::option::Option::Some(_inner),
             Self::MalformedPolicyDocumentException(_inner) => ::std::option::Option::Some(_inner),
             Self::PackedPolicyTooLargeException(_inner) => ::std::option::Option::Some(_inner),
             Self::RegionDisabledException(_inner) => ::std::option::Option::Some(_inner),
@@ -425,6 +433,7 @@ impl ::std::fmt::Display for AssumeRoleError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::ExpiredTokenException(_inner) => _inner.fmt(f),
+            Self::InvalidContextAssertionException(_inner) => _inner.fmt(f),
             Self::MalformedPolicyDocumentException(_inner) => _inner.fmt(f),
             Self::PackedPolicyTooLargeException(_inner) => _inner.fmt(f),
             Self::RegionDisabledException(_inner) => _inner.fmt(f),
@@ -450,6 +459,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AssumeRoleErr
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::ExpiredTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidContextAssertionException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::MalformedPolicyDocumentException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PackedPolicyTooLargeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::RegionDisabledException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

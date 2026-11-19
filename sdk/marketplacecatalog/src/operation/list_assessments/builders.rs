@@ -130,17 +130,17 @@ impl ListAssessmentsFluentBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_catalog()
     }
-    /// <p>The unique identifier of a framework. When specified, only assessments performed against this framework are returned. For example, <code>AMISecurity</code>.</p>
+    /// <p>The unique identifier of a framework. When specified, only assessments performed against this framework are returned. For example, <code>AMISecurity</code>. Required when you use <code>EntityIds</code> in <code>AssessmentTargetFilter</code>.</p>
     pub fn framework_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.framework_id(input.into());
         self
     }
-    /// <p>The unique identifier of a framework. When specified, only assessments performed against this framework are returned. For example, <code>AMISecurity</code>.</p>
+    /// <p>The unique identifier of a framework. When specified, only assessments performed against this framework are returned. For example, <code>AMISecurity</code>. Required when you use <code>EntityIds</code> in <code>AssessmentTargetFilter</code>.</p>
     pub fn set_framework_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_framework_id(input);
         self
     }
-    /// <p>The unique identifier of a framework. When specified, only assessments performed against this framework are returned. For example, <code>AMISecurity</code>.</p>
+    /// <p>The unique identifier of a framework. When specified, only assessments performed against this framework are returned. For example, <code>AMISecurity</code>. Required when you use <code>EntityIds</code> in <code>AssessmentTargetFilter</code>.</p>
     pub fn get_framework_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_framework_id()
     }

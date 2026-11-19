@@ -130,6 +130,26 @@ pub fn ser_update_stack_set_input_input_input(
     if let Some(var_53) = &input.managed_execution {
         crate::protocol_serde::shape_managed_execution::ser_managed_execution(scope_52, var_53)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_54 = writer.prefix("ExecutionRoleTemplateBody");
+    if let Some(var_55) = &input.execution_role_template_body {
+        scope_54.string(var_55);
+    }
+    #[allow(unused_mut)]
+    let mut scope_56 = writer.prefix("ExecutionRoleTemplateUrl");
+    if let Some(var_57) = &input.execution_role_template_url {
+        scope_56.string(var_57);
+    }
+    #[allow(unused_mut)]
+    let mut scope_58 = writer.prefix("UseAdminExecutionRole");
+    if let Some(var_59) = &input.use_admin_execution_role {
+        scope_58.boolean(*var_59);
+    }
+    #[allow(unused_mut)]
+    let mut scope_60 = writer.prefix("StackSetOutputBucket");
+    if let Some(var_61) = &input.stack_set_output_bucket {
+        scope_60.string(var_61);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

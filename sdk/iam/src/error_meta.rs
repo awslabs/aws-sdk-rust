@@ -1271,6 +1271,9 @@ where
 impl From<crate::operation::delete_open_id_connect_provider::DeleteOpenIDConnectProviderError> for Error {
     fn from(err: crate::operation::delete_open_id_connect_provider::DeleteOpenIDConnectProviderError) -> Self {
         match err {
+            crate::operation::delete_open_id_connect_provider::DeleteOpenIDConnectProviderError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
             crate::operation::delete_open_id_connect_provider::DeleteOpenIDConnectProviderError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
@@ -1449,6 +1452,9 @@ where
 impl From<crate::operation::delete_saml_provider::DeleteSAMLProviderError> for Error {
     fn from(err: crate::operation::delete_saml_provider::DeleteSAMLProviderError) -> Self {
         match err {
+            crate::operation::delete_saml_provider::DeleteSAMLProviderError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
             crate::operation::delete_saml_provider::DeleteSAMLProviderError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::delete_saml_provider::DeleteSAMLProviderError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::delete_saml_provider::DeleteSAMLProviderError::NoSuchEntityException(inner) => Error::NoSuchEntityException(inner),
@@ -5244,6 +5250,46 @@ impl From<crate::operation::update_login_profile::UpdateLoginProfileError> for E
             }
             crate::operation::update_login_profile::UpdateLoginProfileError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
             crate::operation::update_login_profile::UpdateLoginProfileError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_open_id_connect_provider::UpdateOpenIDConnectProviderError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_open_id_connect_provider::UpdateOpenIDConnectProviderError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_open_id_connect_provider::UpdateOpenIDConnectProviderError> for Error {
+    fn from(err: crate::operation::update_open_id_connect_provider::UpdateOpenIDConnectProviderError) -> Self {
+        match err {
+            crate::operation::update_open_id_connect_provider::UpdateOpenIDConnectProviderError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::update_open_id_connect_provider::UpdateOpenIDConnectProviderError::InvalidInputException(inner) => {
+                Error::InvalidInputException(inner)
+            }
+            crate::operation::update_open_id_connect_provider::UpdateOpenIDConnectProviderError::NoSuchEntityException(inner) => {
+                Error::NoSuchEntityException(inner)
+            }
+            crate::operation::update_open_id_connect_provider::UpdateOpenIDConnectProviderError::ServiceFailureException(inner) => {
+                Error::ServiceFailureException(inner)
+            }
+            crate::operation::update_open_id_connect_provider::UpdateOpenIDConnectProviderError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

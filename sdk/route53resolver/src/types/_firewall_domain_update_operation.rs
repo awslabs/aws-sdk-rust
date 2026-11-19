@@ -13,6 +13,7 @@
 /// # let firewalldomainupdateoperation = unimplemented!();
 /// match firewalldomainupdateoperation {
 ///     FirewallDomainUpdateOperation::Add => { /* ... */ },
+///     FirewallDomainUpdateOperation::Deny => { /* ... */ },
 ///     FirewallDomainUpdateOperation::Remove => { /* ... */ },
 ///     FirewallDomainUpdateOperation::Replace => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -46,6 +47,8 @@ pub enum FirewallDomainUpdateOperation {
     #[allow(missing_docs)] // documentation missing in model
     Add,
     #[allow(missing_docs)] // documentation missing in model
+    Deny,
+    #[allow(missing_docs)] // documentation missing in model
     Remove,
     #[allow(missing_docs)] // documentation missing in model
     Replace,
@@ -57,6 +60,7 @@ impl ::std::convert::From<&str> for FirewallDomainUpdateOperation {
     fn from(s: &str) -> Self {
         match s {
             "ADD" => FirewallDomainUpdateOperation::Add,
+            "DENY" => FirewallDomainUpdateOperation::Deny,
             "REMOVE" => FirewallDomainUpdateOperation::Remove,
             "REPLACE" => FirewallDomainUpdateOperation::Replace,
             other => FirewallDomainUpdateOperation::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -75,6 +79,7 @@ impl FirewallDomainUpdateOperation {
     pub fn as_str(&self) -> &str {
         match self {
             FirewallDomainUpdateOperation::Add => "ADD",
+            FirewallDomainUpdateOperation::Deny => "DENY",
             FirewallDomainUpdateOperation::Remove => "REMOVE",
             FirewallDomainUpdateOperation::Replace => "REPLACE",
             FirewallDomainUpdateOperation::Unknown(value) => value.as_str(),
@@ -82,7 +87,7 @@ impl FirewallDomainUpdateOperation {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["ADD", "REMOVE", "REPLACE"]
+        &["ADD", "DENY", "REMOVE", "REPLACE"]
     }
 }
 impl ::std::convert::AsRef<str> for FirewallDomainUpdateOperation {
@@ -106,6 +111,7 @@ impl ::std::fmt::Display for FirewallDomainUpdateOperation {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             FirewallDomainUpdateOperation::Add => write!(f, "ADD"),
+            FirewallDomainUpdateOperation::Deny => write!(f, "DENY"),
             FirewallDomainUpdateOperation::Remove => write!(f, "REMOVE"),
             FirewallDomainUpdateOperation::Replace => write!(f, "REPLACE"),
             FirewallDomainUpdateOperation::Unknown(value) => write!(f, "{value}"),

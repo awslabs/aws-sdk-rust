@@ -7,12 +7,18 @@ pub struct OpenIdConnectProviderListEntry {
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether trusted identity propagation is enabled for the OpenID Connect (OIDC) provider. This is <code>true</code> when an IAM Identity Center instance is associated with the provider.</p>
+    pub is_trusted_identity_propagation_enabled: bool,
 }
 impl OpenIdConnectProviderListEntry {
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
+    }
+    /// <p>Specifies whether trusted identity propagation is enabled for the OpenID Connect (OIDC) provider. This is <code>true</code> when an IAM Identity Center instance is associated with the provider.</p>
+    pub fn is_trusted_identity_propagation_enabled(&self) -> bool {
+        self.is_trusted_identity_propagation_enabled
     }
 }
 impl OpenIdConnectProviderListEntry {
@@ -27,6 +33,7 @@ impl OpenIdConnectProviderListEntry {
 #[non_exhaustive]
 pub struct OpenIdConnectProviderListEntryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) is_trusted_identity_propagation_enabled: ::std::option::Option<bool>,
 }
 impl OpenIdConnectProviderListEntryBuilder {
     /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
@@ -46,8 +53,25 @@ impl OpenIdConnectProviderListEntryBuilder {
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.arn
     }
+    /// <p>Specifies whether trusted identity propagation is enabled for the OpenID Connect (OIDC) provider. This is <code>true</code> when an IAM Identity Center instance is associated with the provider.</p>
+    pub fn is_trusted_identity_propagation_enabled(mut self, input: bool) -> Self {
+        self.is_trusted_identity_propagation_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether trusted identity propagation is enabled for the OpenID Connect (OIDC) provider. This is <code>true</code> when an IAM Identity Center instance is associated with the provider.</p>
+    pub fn set_is_trusted_identity_propagation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_trusted_identity_propagation_enabled = input;
+        self
+    }
+    /// <p>Specifies whether trusted identity propagation is enabled for the OpenID Connect (OIDC) provider. This is <code>true</code> when an IAM Identity Center instance is associated with the provider.</p>
+    pub fn get_is_trusted_identity_propagation_enabled(&self) -> &::std::option::Option<bool> {
+        &self.is_trusted_identity_propagation_enabled
+    }
     /// Consumes the builder and constructs a [`OpenIdConnectProviderListEntry`](crate::types::OpenIdConnectProviderListEntry).
     pub fn build(self) -> crate::types::OpenIdConnectProviderListEntry {
-        crate::types::OpenIdConnectProviderListEntry { arn: self.arn }
+        crate::types::OpenIdConnectProviderListEntry {
+            arn: self.arn,
+            is_trusted_identity_propagation_enabled: self.is_trusted_identity_propagation_enabled.unwrap_or_default(),
+        }
     }
 }

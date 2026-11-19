@@ -39,6 +39,10 @@ pub fn ser_invoke_configuration(
         encoder.str("EventBusV2Parameters");
         crate::protocol_serde::shape_event_bus_v2_parameters::ser_event_bus_v2_parameters(encoder, var_8)?;
     }
+    if let Some(var_9) = &input.msk_parameters {
+        encoder.str("MskParameters");
+        crate::protocol_serde::shape_msk_parameters::ser_msk_parameters(encoder, var_9)?;
+    }
     {
         encoder.str("TargetArn").str(input.target_arn.as_str());
     }
@@ -111,6 +115,9 @@ pub(crate) fn de_invoke_configuration(
                         depth + 1,
                     )?)),
                 )
+            })?,
+            "MskParameters" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_msk_parameters(Some(crate::protocol_serde::shape_msk_parameters::de_msk_parameters(decoder, depth + 1)?)))
             })?,
             "TargetArn" => builder.set_target_arn(Some(decoder.string()?)),
             _ => {

@@ -36,18 +36,15 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Position from which delivery resumes when a subscriber is unpaused.
-/// Honored only on an UpdateSubscriber call that transitions State
-/// from STOPPED to RUNNING (unpause); ignored on any other call and not accepted
-/// on Create. Defaults to LAST_PROCESSED when omitted.
+/// <p>Position from which delivery resumes when a subscriber is unpaused. Honored only on an UpdateSubscriber call that transitions State from STOPPED to RUNNING (unpause); ignored on any other call and not accepted on Create. Defaults to LAST_PROCESSED when omitted.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum ResumePosition {
-    /// Continue delivery from where it stopped (last persisted progress).
+    /// <p>Continue delivery from where it stopped (last persisted progress).</p>
     LastProcessed,
-    /// Skip the backlog accrued while stopped; deliver only new events (resume at the tip).
+    /// <p>Skip the backlog accrued while stopped; deliver only new events (resume at the tip).</p>
     Latest,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

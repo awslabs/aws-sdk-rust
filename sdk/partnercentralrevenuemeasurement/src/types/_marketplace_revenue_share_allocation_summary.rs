@@ -6,15 +6,11 @@
 pub struct MarketplaceRevenueShareAllocationSummary {
     /// <p>The unique identifier of the allocation.</p>
     pub marketplace_revenue_share_allocation_id: ::std::string::String,
-    /// <p>The AWS Marketplace product identifier.</p>
-    pub product_id: ::std::string::String,
-    /// <p>The display name of the AWS Marketplace product.</p>
-    pub product_name: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the parent marketplace revenue share.</p>
-    pub arn: ::std::string::String,
+    /// <p>The parent marketplace revenue share, short ID form (mrs-...).</p>
+    pub marketplace_revenue_share_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The effective start date of the allocation.</p>
     pub effective_from: ::std::string::String,
-    /// <p>The effective end date of the allocation, or null if open-ended.</p>
+    /// <p>The effective end date of the allocation.</p>
     pub effective_until: ::std::option::Option<::std::string::String>,
     /// <p>The revenue share percentage.</p>
     pub revenue_share_percent: ::std::string::String,
@@ -31,26 +27,16 @@ impl MarketplaceRevenueShareAllocationSummary {
         use std::ops::Deref;
         self.marketplace_revenue_share_allocation_id.deref()
     }
-    /// <p>The AWS Marketplace product identifier.</p>
-    pub fn product_id(&self) -> &str {
-        use std::ops::Deref;
-        self.product_id.deref()
-    }
-    /// <p>The display name of the AWS Marketplace product.</p>
-    pub fn product_name(&self) -> ::std::option::Option<&str> {
-        self.product_name.as_deref()
-    }
-    /// <p>The Amazon Resource Name (ARN) of the parent marketplace revenue share.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    /// <p>The parent marketplace revenue share, short ID form (mrs-...).</p>
+    pub fn marketplace_revenue_share_identifier(&self) -> ::std::option::Option<&str> {
+        self.marketplace_revenue_share_identifier.as_deref()
     }
     /// <p>The effective start date of the allocation.</p>
     pub fn effective_from(&self) -> &str {
         use std::ops::Deref;
         self.effective_from.deref()
     }
-    /// <p>The effective end date of the allocation, or null if open-ended.</p>
+    /// <p>The effective end date of the allocation.</p>
     pub fn effective_until(&self) -> ::std::option::Option<&str> {
         self.effective_until.as_deref()
     }
@@ -84,9 +70,7 @@ impl MarketplaceRevenueShareAllocationSummary {
 #[non_exhaustive]
 pub struct MarketplaceRevenueShareAllocationSummaryBuilder {
     pub(crate) marketplace_revenue_share_allocation_id: ::std::option::Option<::std::string::String>,
-    pub(crate) product_id: ::std::option::Option<::std::string::String>,
-    pub(crate) product_name: ::std::option::Option<::std::string::String>,
-    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) marketplace_revenue_share_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) effective_from: ::std::option::Option<::std::string::String>,
     pub(crate) effective_until: ::std::option::Option<::std::string::String>,
     pub(crate) revenue_share_percent: ::std::option::Option<::std::string::String>,
@@ -110,49 +94,20 @@ impl MarketplaceRevenueShareAllocationSummaryBuilder {
     pub fn get_marketplace_revenue_share_allocation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.marketplace_revenue_share_allocation_id
     }
-    /// <p>The AWS Marketplace product identifier.</p>
+    /// <p>The parent marketplace revenue share, short ID form (mrs-...).</p>
     /// This field is required.
-    pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.product_id = ::std::option::Option::Some(input.into());
+    pub fn marketplace_revenue_share_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marketplace_revenue_share_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Marketplace product identifier.</p>
-    pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
+    /// <p>The parent marketplace revenue share, short ID form (mrs-...).</p>
+    pub fn set_marketplace_revenue_share_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.marketplace_revenue_share_identifier = input;
         self
     }
-    /// <p>The AWS Marketplace product identifier.</p>
-    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.product_id
-    }
-    /// <p>The display name of the AWS Marketplace product.</p>
-    pub fn product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.product_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The display name of the AWS Marketplace product.</p>
-    pub fn set_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_name = input;
-        self
-    }
-    /// <p>The display name of the AWS Marketplace product.</p>
-    pub fn get_product_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.product_name
-    }
-    /// <p>The Amazon Resource Name (ARN) of the parent marketplace revenue share.</p>
-    /// This field is required.
-    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.arn = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The Amazon Resource Name (ARN) of the parent marketplace revenue share.</p>
-    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.arn = input;
-        self
-    }
-    /// <p>The Amazon Resource Name (ARN) of the parent marketplace revenue share.</p>
-    pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
-        &self.arn
+    /// <p>The parent marketplace revenue share, short ID form (mrs-...).</p>
+    pub fn get_marketplace_revenue_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marketplace_revenue_share_identifier
     }
     /// <p>The effective start date of the allocation.</p>
     /// This field is required.
@@ -169,17 +124,18 @@ impl MarketplaceRevenueShareAllocationSummaryBuilder {
     pub fn get_effective_from(&self) -> &::std::option::Option<::std::string::String> {
         &self.effective_from
     }
-    /// <p>The effective end date of the allocation, or null if open-ended.</p>
+    /// <p>The effective end date of the allocation.</p>
+    /// This field is required.
     pub fn effective_until(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.effective_until = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The effective end date of the allocation, or null if open-ended.</p>
+    /// <p>The effective end date of the allocation.</p>
     pub fn set_effective_until(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.effective_until = input;
         self
     }
-    /// <p>The effective end date of the allocation, or null if open-ended.</p>
+    /// <p>The effective end date of the allocation.</p>
     pub fn get_effective_until(&self) -> &::std::option::Option<::std::string::String> {
         &self.effective_until
     }
@@ -214,6 +170,7 @@ impl MarketplaceRevenueShareAllocationSummaryBuilder {
         &self.status
     }
     /// <p>The date when the allocation was created.</p>
+    /// This field is required.
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
         self
@@ -228,6 +185,7 @@ impl MarketplaceRevenueShareAllocationSummaryBuilder {
         &self.created_date
     }
     /// <p>The date when the allocation was last modified.</p>
+    /// This field is required.
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
         self
@@ -244,8 +202,6 @@ impl MarketplaceRevenueShareAllocationSummaryBuilder {
     /// Consumes the builder and constructs a [`MarketplaceRevenueShareAllocationSummary`](crate::types::MarketplaceRevenueShareAllocationSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`marketplace_revenue_share_allocation_id`](crate::types::builders::MarketplaceRevenueShareAllocationSummaryBuilder::marketplace_revenue_share_allocation_id)
-    /// - [`product_id`](crate::types::builders::MarketplaceRevenueShareAllocationSummaryBuilder::product_id)
-    /// - [`arn`](crate::types::builders::MarketplaceRevenueShareAllocationSummaryBuilder::arn)
     /// - [`effective_from`](crate::types::builders::MarketplaceRevenueShareAllocationSummaryBuilder::effective_from)
     /// - [`revenue_share_percent`](crate::types::builders::MarketplaceRevenueShareAllocationSummaryBuilder::revenue_share_percent)
     /// - [`status`](crate::types::builders::MarketplaceRevenueShareAllocationSummaryBuilder::status)
@@ -259,17 +215,7 @@ impl MarketplaceRevenueShareAllocationSummaryBuilder {
                         ::aws_smithy_types::error::operation::BuildError::missing_field("marketplace_revenue_share_allocation_id", "marketplace_revenue_share_allocation_id was not specified but it is required when building MarketplaceRevenueShareAllocationSummary")
                     )?
                 ,
-                product_id: self.product_id
-                    .ok_or_else(||
-                        ::aws_smithy_types::error::operation::BuildError::missing_field("product_id", "product_id was not specified but it is required when building MarketplaceRevenueShareAllocationSummary")
-                    )?
-                ,
-                product_name: self.product_name
-                ,
-                arn: self.arn
-                    .ok_or_else(||
-                        ::aws_smithy_types::error::operation::BuildError::missing_field("arn", "arn was not specified but it is required when building MarketplaceRevenueShareAllocationSummary")
-                    )?
+                marketplace_revenue_share_identifier: self.marketplace_revenue_share_identifier
                 ,
                 effective_from: self.effective_from
                     .ok_or_else(||

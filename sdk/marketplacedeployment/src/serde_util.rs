@@ -47,6 +47,42 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn get_deployment_configuration_output_output_correct_errors(
+    mut builder: crate::operation::get_deployment_configuration::builders::GetDeploymentConfigurationOutputBuilder,
+) -> crate::operation::get_deployment_configuration::builders::GetDeploymentConfigurationOutputBuilder {
+    if builder.configuration.is_none() {
+        builder.configuration = Some(crate::types::DeploymentConfigurationDetail::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn get_deployment_configuration_job_output_output_correct_errors(
+    mut builder: crate::operation::get_deployment_configuration_job::builders::GetDeploymentConfigurationJobOutputBuilder,
+) -> crate::operation::get_deployment_configuration_job::builders::GetDeploymentConfigurationJobOutputBuilder {
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.configuration.is_none() {
+        builder.configuration = Some(crate::types::DeploymentConfigurationDetail::Unknown)
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DeploymentConfigurationJobStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn list_deployment_configuration_jobs_output_output_correct_errors(
+    mut builder: crate::operation::list_deployment_configuration_jobs::builders::ListDeploymentConfigurationJobsOutputBuilder,
+) -> crate::operation::list_deployment_configuration_jobs::builders::ListDeploymentConfigurationJobsOutputBuilder {
+    if builder.jobs.is_none() {
+        builder.jobs = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn conflict_exception_correct_errors(
     mut builder: crate::types::error::builders::ConflictExceptionBuilder,
 ) -> crate::types::error::builders::ConflictExceptionBuilder {
@@ -79,6 +115,51 @@ pub(crate) fn put_deployment_parameter_output_output_correct_errors(
     }
     if builder.deployment_parameter_id.is_none() {
         builder.deployment_parameter_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_deployment_configuration_job_output_output_correct_errors(
+    mut builder: crate::operation::start_deployment_configuration_job::builders::StartDeploymentConfigurationJobOutputBuilder,
+) -> crate::operation::start_deployment_configuration_job::builders::StartDeploymentConfigurationJobOutputBuilder {
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.configuration.is_none() {
+        builder.configuration = Some(crate::types::DeploymentConfigurationDetail::Unknown)
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DeploymentConfigurationJobStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn data_as_a_service_configuration_detail_correct_errors(
+    mut builder: crate::types::builders::DataAsAServiceConfigurationDetailBuilder,
+) -> crate::types::builders::DataAsAServiceConfigurationDetailBuilder {
+    if builder.fulfillment_url.is_none() {
+        builder.fulfillment_url = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn deployment_configuration_job_summary_correct_errors(
+    mut builder: crate::types::builders::DeploymentConfigurationJobSummaryBuilder,
+) -> crate::types::builders::DeploymentConfigurationJobSummaryBuilder {
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::DeploymentConfigurationJobStatus>().ok()
+    }
+    if builder.configuration.is_none() {
+        builder.configuration = Some(crate::types::DeploymentConfigurationDetail::Unknown)
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

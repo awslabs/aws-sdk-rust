@@ -330,6 +330,17 @@ static CREATEUSERPOOLCLIENTINPUT_MEMBER_REFRESH_TOKEN_ROTATION: ::aws_smithy_sch
     "RefreshTokenRotation",
     23,
 );
+static CREATEUSERPOOLCLIENTINPUT_MEMBER_PUBLISH_SECRETS_IN_AWS_SECRETS_MANAGER: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolClientInput$PublishSecretsInAWSSecretsManager",
+            "com.amazonaws.cognitoidentityprovider.synthetic",
+            "CreateUserPoolClientInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "PublishSecretsInAWSSecretsManager",
+        24,
+    );
 static CREATEUSERPOOLCLIENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.cognitoidentityprovider.synthetic#CreateUserPoolClientInput",
@@ -362,6 +373,7 @@ static CREATEUSERPOOLCLIENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = 
         &CREATEUSERPOOLCLIENTINPUT_MEMBER_ENABLE_PROPAGATE_ADDITIONAL_USER_CONTEXT_DATA,
         &CREATEUSERPOOLCLIENTINPUT_MEMBER_AUTH_SESSION_VALIDITY,
         &CREATEUSERPOOLCLIENTINPUT_MEMBER_REFRESH_TOKEN_ROTATION,
+        &CREATEUSERPOOLCLIENTINPUT_MEMBER_PUBLISH_SECRETS_IN_AWS_SECRETS_MANAGER,
     ],
 )
 .with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
@@ -515,6 +527,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::create
         }
         if let Some(ref val) = self.refresh_token_rotation {
             ser.write_struct(&CREATEUSERPOOLCLIENTINPUT_MEMBER_REFRESH_TOKEN_ROTATION, val)?;
+        }
+        if let Some(ref val) = self.publish_secrets_in_aws_secrets_manager {
+            ser.write_boolean(&CREATEUSERPOOLCLIENTINPUT_MEMBER_PUBLISH_SECRETS_IN_AWS_SECRETS_MANAGER, *val)?;
         }
         Ok(())
     }
@@ -718,6 +733,13 @@ impl crate::operation::create_user_pool_client::builders::CreateUserPoolClientIn
                         deser.read_null()?;
                     } else {
                         self.refresh_token_rotation = Some(crate::types::RefreshTokenRotationType::deserialize(deser)?);
+                    }
+                }
+                Some(24) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.publish_secrets_in_aws_secrets_manager = Some(deser.read_boolean(member)?);
                     }
                 }
                 _ => {}

@@ -9,6 +9,27 @@ static GETFIREWALLDOMAINLISTOUTPUT_MEMBER_FIREWALL_DOMAIN_LIST: ::aws_smithy_sch
     "FirewallDomainList",
     0,
 );
+static GETFIREWALLDOMAINLISTOUTPUT_MEMBER_FIREWALL_RULE_GROUP_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver.synthetic#GetFirewallDomainListOutput$FirewallRuleGroupId",
+        "com.amazonaws.route53resolver.synthetic",
+        "GetFirewallDomainListOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FirewallRuleGroupId",
+    1,
+);
+static GETFIREWALLDOMAINLISTOUTPUT_MEMBER_FIREWALL_THREAT_PROTECTION_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.route53resolver.synthetic#GetFirewallDomainListOutput$FirewallThreatProtectionId",
+            "com.amazonaws.route53resolver.synthetic",
+            "GetFirewallDomainListOutput",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "FirewallThreatProtectionId",
+        2,
+    );
 static GETFIREWALLDOMAINLISTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.route53resolver.synthetic#GetFirewallDomainListOutput",
@@ -16,7 +37,11 @@ static GETFIREWALLDOMAINLISTOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> 
         "GetFirewallDomainListOutput",
     ),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&GETFIREWALLDOMAINLISTOUTPUT_MEMBER_FIREWALL_DOMAIN_LIST],
+    &[
+        &GETFIREWALLDOMAINLISTOUTPUT_MEMBER_FIREWALL_DOMAIN_LIST,
+        &GETFIREWALLDOMAINLISTOUTPUT_MEMBER_FIREWALL_RULE_GROUP_ID,
+        &GETFIREWALLDOMAINLISTOUTPUT_MEMBER_FIREWALL_THREAT_PROTECTION_ID,
+    ],
 )
 .with_original_name("GetFirewallDomainListResponse");
 impl crate::operation::get_firewall_domain_list::GetFirewallDomainListOutput {
@@ -35,6 +60,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::get_fi
     ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
         if let Some(ref val) = self.firewall_domain_list {
             ser.write_struct(&GETFIREWALLDOMAINLISTOUTPUT_MEMBER_FIREWALL_DOMAIN_LIST, val)?;
+        }
+        if let Some(ref val) = self.firewall_rule_group_id {
+            ser.write_string(&GETFIREWALLDOMAINLISTOUTPUT_MEMBER_FIREWALL_RULE_GROUP_ID, val)?;
+        }
+        if let Some(ref val) = self.firewall_threat_protection_id {
+            ser.write_string(&GETFIREWALLDOMAINLISTOUTPUT_MEMBER_FIREWALL_THREAT_PROTECTION_ID, val)?;
         }
         Ok(())
     }
@@ -58,6 +89,20 @@ impl crate::operation::get_firewall_domain_list::builders::GetFirewallDomainList
                         deser.read_null()?;
                     } else {
                         self.firewall_domain_list = Some(crate::types::FirewallDomainList::deserialize(deser)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.firewall_rule_group_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.firewall_threat_protection_id = Some(deser.read_string(member)?);
                     }
                 }
                 _ => {}

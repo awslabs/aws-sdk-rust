@@ -24,6 +24,21 @@ pub fn de_open_id_connect_provider_list_entry(
                 builder = builder.set_arn(var_1);
             }
             ,
+            s if s.matches("IsTrustedIdentityPropagationEnabled") /* IsTrustedIdentityPropagationEnabled com.amazonaws.iam#OpenIDConnectProviderListEntry$IsTrustedIdentityPropagationEnabled */ =>  {
+                let var_2 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_is_trusted_identity_propagation_enabled(var_2);
+            }
+            ,
             _ => {}
         }
     }

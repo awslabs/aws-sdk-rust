@@ -745,4 +745,21 @@ impl CreateUserPoolClientFluentBuilder {
     pub fn get_refresh_token_rotation(&self) -> &::std::option::Option<crate::types::RefreshTokenRotationType> {
         self.inner.get_refresh_token_rotation()
     }
+    /// <p>Specifies whether Amazon Cognito stores and manages this app client's secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon Web Services Secrets Manager</a> instead of returning the plaintext value. Applies only when <code>GenerateSecret</code> is <code>true</code>. When you set this parameter to <code>true</code>, the response returns <code>ClientSecretArn</code> instead of <code>ClientSecret</code>. Amazon Cognito starts the first rotation of the secret right away, and then rotates the secret every 7 days by default. You can change the rotation schedule in Secrets Manager.</p>
+    /// <p>Defaults to <code>false</code>. If you don't set this parameter, Amazon Cognito doesn't manage the secret in Secrets Manager and returns the plaintext <code>ClientSecret</code> value. The Amazon Cognito console turns on this option by default when it creates an app client with a generated client secret.</p>
+    pub fn publish_secrets_in_aws_secrets_manager(mut self, input: bool) -> Self {
+        self.inner = self.inner.publish_secrets_in_aws_secrets_manager(input);
+        self
+    }
+    /// <p>Specifies whether Amazon Cognito stores and manages this app client's secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon Web Services Secrets Manager</a> instead of returning the plaintext value. Applies only when <code>GenerateSecret</code> is <code>true</code>. When you set this parameter to <code>true</code>, the response returns <code>ClientSecretArn</code> instead of <code>ClientSecret</code>. Amazon Cognito starts the first rotation of the secret right away, and then rotates the secret every 7 days by default. You can change the rotation schedule in Secrets Manager.</p>
+    /// <p>Defaults to <code>false</code>. If you don't set this parameter, Amazon Cognito doesn't manage the secret in Secrets Manager and returns the plaintext <code>ClientSecret</code> value. The Amazon Cognito console turns on this option by default when it creates an app client with a generated client secret.</p>
+    pub fn set_publish_secrets_in_aws_secrets_manager(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_publish_secrets_in_aws_secrets_manager(input);
+        self
+    }
+    /// <p>Specifies whether Amazon Cognito stores and manages this app client's secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon Web Services Secrets Manager</a> instead of returning the plaintext value. Applies only when <code>GenerateSecret</code> is <code>true</code>. When you set this parameter to <code>true</code>, the response returns <code>ClientSecretArn</code> instead of <code>ClientSecret</code>. Amazon Cognito starts the first rotation of the secret right away, and then rotates the secret every 7 days by default. You can change the rotation schedule in Secrets Manager.</p>
+    /// <p>Defaults to <code>false</code>. If you don't set this parameter, Amazon Cognito doesn't manage the secret in Secrets Manager and returns the plaintext <code>ClientSecret</code> value. The Amazon Cognito console turns on this option by default when it creates an app client with a generated client secret.</p>
+    pub fn get_publish_secrets_in_aws_secrets_manager(&self) -> &::std::option::Option<bool> {
+        self.inner.get_publish_secrets_in_aws_secrets_manager()
+    }
 }

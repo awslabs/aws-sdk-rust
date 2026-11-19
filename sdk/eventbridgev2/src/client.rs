@@ -144,6 +144,8 @@ pub trait Waiters {
     fn wait_until_event_bus_active(&self) -> crate::waiters::event_bus_active::EventBusActiveFluentBuilder;
     /// Waits until the event bus is fully deleted, signaled by DescribeEventBus returning ResourceNotFoundException. Use after DeleteEventBus. Fails fast on the terminal DELETE_FAILED state, surfacing StateReason; retry DeleteEventBus after removing subscribers.
     fn wait_until_event_bus_deleted(&self) -> crate::waiters::event_bus_deleted::EventBusDeletedFluentBuilder;
+    /// Waits until an Amazon MSK subscriber's connectivity reports ACTIVE. Use after CreateSubscriber or UpdateSubscriber on a subscriber that targets an MSK cluster. Fails fast on PROVISION_FAILED, surfacing MskDetails.StateReason. PROVISIONING falls through to the implicit retry. Applies only to MSK subscribers; other subscribers return no MskDetails, so the waiter times out.
+    fn wait_until_msk_subscriber_active(&self) -> crate::waiters::msk_subscriber_active::MskSubscriberActiveFluentBuilder;
 }
 impl Waiters for Client {
     fn wait_until_event_bus_active(&self) -> crate::waiters::event_bus_active::EventBusActiveFluentBuilder {
@@ -151,6 +153,9 @@ impl Waiters for Client {
     }
     fn wait_until_event_bus_deleted(&self) -> crate::waiters::event_bus_deleted::EventBusDeletedFluentBuilder {
         crate::waiters::event_bus_deleted::EventBusDeletedFluentBuilder::new(self.handle.clone())
+    }
+    fn wait_until_msk_subscriber_active(&self) -> crate::waiters::msk_subscriber_active::MskSubscriberActiveFluentBuilder {
+        crate::waiters::msk_subscriber_active::MskSubscriberActiveFluentBuilder::new(self.handle.clone())
     }
 }
 
@@ -236,6 +241,8 @@ mod put_raw_events;
 mod put_resource_policy;
 
 mod revoke_resource;
+
+mod rotate_webhook_credentials;
 
 mod tag_resource;
 

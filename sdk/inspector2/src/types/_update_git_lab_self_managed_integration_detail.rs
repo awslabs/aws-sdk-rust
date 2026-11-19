@@ -6,6 +6,8 @@
 pub struct UpdateGitLabSelfManagedIntegrationDetail {
     /// <p>The authorization code received from the self-managed GitLab instance to update the integration.</p>
     pub auth_code: ::std::string::String,
+    /// <p>The PKCE state token used to validate the authorization request.</p>
+    pub state_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGitLabSelfManagedIntegrationDetail {
     /// <p>The authorization code received from the self-managed GitLab instance to update the integration.</p>
@@ -13,11 +15,16 @@ impl UpdateGitLabSelfManagedIntegrationDetail {
         use std::ops::Deref;
         self.auth_code.deref()
     }
+    /// <p>The PKCE state token used to validate the authorization request.</p>
+    pub fn state_token(&self) -> ::std::option::Option<&str> {
+        self.state_token.as_deref()
+    }
 }
 impl ::std::fmt::Debug for UpdateGitLabSelfManagedIntegrationDetail {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGitLabSelfManagedIntegrationDetail");
         formatter.field("auth_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("state_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -33,6 +40,7 @@ impl UpdateGitLabSelfManagedIntegrationDetail {
 #[non_exhaustive]
 pub struct UpdateGitLabSelfManagedIntegrationDetailBuilder {
     pub(crate) auth_code: ::std::option::Option<::std::string::String>,
+    pub(crate) state_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGitLabSelfManagedIntegrationDetailBuilder {
     /// <p>The authorization code received from the self-managed GitLab instance to update the integration.</p>
@@ -50,6 +58,20 @@ impl UpdateGitLabSelfManagedIntegrationDetailBuilder {
     pub fn get_auth_code(&self) -> &::std::option::Option<::std::string::String> {
         &self.auth_code
     }
+    /// <p>The PKCE state token used to validate the authorization request.</p>
+    pub fn state_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The PKCE state token used to validate the authorization request.</p>
+    pub fn set_state_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.state_token = input;
+        self
+    }
+    /// <p>The PKCE state token used to validate the authorization request.</p>
+    pub fn get_state_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_token
+    }
     /// Consumes the builder and constructs a [`UpdateGitLabSelfManagedIntegrationDetail`](crate::types::UpdateGitLabSelfManagedIntegrationDetail).
     /// This method will fail if any of the following fields are not set:
     /// - [`auth_code`](crate::types::builders::UpdateGitLabSelfManagedIntegrationDetailBuilder::auth_code)
@@ -63,6 +85,7 @@ impl UpdateGitLabSelfManagedIntegrationDetailBuilder {
                     "auth_code was not specified but it is required when building UpdateGitLabSelfManagedIntegrationDetail",
                 )
             })?,
+            state_token: self.state_token,
         })
     }
 }
@@ -70,6 +93,7 @@ impl ::std::fmt::Debug for UpdateGitLabSelfManagedIntegrationDetailBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGitLabSelfManagedIntegrationDetailBuilder");
         formatter.field("auth_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("state_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

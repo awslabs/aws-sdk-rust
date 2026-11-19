@@ -192,6 +192,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateSAMLPro
                 captured.insert("Name", value);
             }
         }
+        if requested.should_capture("IdentityCenterInstanceArn") {
+            if let ::std::option::Option::Some(value) = input.identity_center_instance_arn.as_deref() {
+                captured.insert("IdentityCenterInstanceArn", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())

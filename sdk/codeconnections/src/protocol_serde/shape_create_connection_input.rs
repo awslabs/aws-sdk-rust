@@ -22,6 +22,9 @@ pub fn ser_create_connection_input_input(
     if let Some(var_5) = &input.host_arn {
         encoder.str("HostArn").str(var_5.as_str());
     }
+    if let Some(var_6) = &input.provider_endpoint {
+        encoder.str("ProviderEndpoint").str(var_6.as_str());
+    }
     encoder.end();
     Ok(())
 }

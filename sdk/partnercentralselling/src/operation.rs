@@ -10,6 +10,9 @@ pub mod assign_opportunity;
 /// Types for the `AssociateOpportunity` operation.
 pub mod associate_opportunity;
 
+/// Types for the `CreateCustomerAccount` operation.
+pub mod create_customer_account;
+
 /// Types for the `CreateEngagement` operation.
 pub mod create_engagement;
 
@@ -28,6 +31,9 @@ pub mod create_resource_snapshot;
 /// Types for the `CreateResourceSnapshotJob` operation.
 pub mod create_resource_snapshot_job;
 
+/// Types for the `DeleteCustomerAccount` operation.
+pub mod delete_customer_account;
+
 /// Types for the `DeleteResourceSnapshotJob` operation.
 pub mod delete_resource_snapshot_job;
 
@@ -37,6 +43,18 @@ pub mod disassociate_opportunity;
 /// Types for the `GetAwsOpportunitySummary` operation.
 pub mod get_aws_opportunity_summary;
 
+/// Types for the `GetCustomerAccount` operation.
+pub mod get_customer_account;
+
+/// Types for the `GetCustomerAccountBulkJob` operation.
+pub mod get_customer_account_bulk_job;
+
+/// Types for the `GetCustomerAccountBulkJobReportUrl` operation.
+pub mod get_customer_account_bulk_job_report_url;
+
+/// Types for the `GetCustomerAccountStatistics` operation.
+pub mod get_customer_account_statistics;
+
 /// Types for the `GetEngagement` operation.
 pub mod get_engagement;
 
@@ -45,6 +63,9 @@ pub mod get_engagement_invitation;
 
 /// Types for the `GetOpportunity` operation.
 pub mod get_opportunity;
+
+/// Types for the `GetOpportunityBulkJobReportUrl` operation.
+pub mod get_opportunity_bulk_job_report_url;
 
 /// Types for the `GetProspectingFromEngagementTask` operation.
 pub mod get_prospecting_from_engagement_task;
@@ -58,11 +79,20 @@ pub mod get_resource_snapshot_job;
 /// Types for the `GetSellingSystemSettings` operation.
 pub mod get_selling_system_settings;
 
+/// Types for the `ListCustomerAccountBulkJobResults` operation.
+pub mod list_customer_account_bulk_job_results;
+
+/// Types for the `ListCustomerAccountBulkJobs` operation.
+pub mod list_customer_account_bulk_jobs;
+
 /// Types for the `ListEngagementByAcceptingInvitationTasks` operation.
 pub mod list_engagement_by_accepting_invitation_tasks;
 
 /// Types for the `ListEngagementFromOpportunityTasks` operation.
 pub mod list_engagement_from_opportunity_tasks;
+
+/// Types for the `ListEngagementGroups` operation.
+pub mod list_engagement_groups;
 
 /// Types for the `ListEngagementInvitations` operation.
 pub mod list_engagement_invitations;
@@ -78,6 +108,12 @@ pub mod list_engagements;
 
 /// Types for the `ListOpportunities` operation.
 pub mod list_opportunities;
+
+/// Types for the `ListOpportunityBulkJobResults` operation.
+pub mod list_opportunity_bulk_job_results;
+
+/// Types for the `ListOpportunityBulkJobs` operation.
+pub mod list_opportunity_bulk_jobs;
 
 /// Types for the `ListOpportunityFromEngagementTasks` operation.
 pub mod list_opportunity_from_engagement_tasks;
@@ -103,11 +139,26 @@ pub mod put_selling_system_settings;
 /// Types for the `RejectEngagementInvitation` operation.
 pub mod reject_engagement_invitation;
 
+/// Types for the `SearchCustomerAccounts` operation.
+pub mod search_customer_accounts;
+
+/// Types for the `SearchEngagements` operation.
+pub mod search_engagements;
+
+/// Types for the `SearchOpportunities` operation.
+pub mod search_opportunities;
+
+/// Types for the `StartCustomerAccountBulkJob` operation.
+pub mod start_customer_account_bulk_job;
+
 /// Types for the `StartEngagementByAcceptingInvitationTask` operation.
 pub mod start_engagement_by_accepting_invitation_task;
 
 /// Types for the `StartEngagementFromOpportunityTask` operation.
 pub mod start_engagement_from_opportunity_task;
+
+/// Types for the `StartOpportunityBulkJob` operation.
+pub mod start_opportunity_bulk_job;
 
 /// Types for the `StartOpportunityFromEngagementTask` operation.
 pub mod start_opportunity_from_engagement_task;
@@ -129,6 +180,9 @@ pub mod tag_resource;
 
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
+
+/// Types for the `UpdateCustomerAccount` operation.
+pub mod update_customer_account;
 
 /// Types for the `UpdateEngagementContext` operation.
 pub mod update_engagement_context;

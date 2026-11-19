@@ -231,4 +231,23 @@ impl ListRevenueAttributionsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    ///
+    /// Appends an item to `ContextFilters`.
+    ///
+    /// To override the contents of this collection use [`set_context_filters`](Self::set_context_filters).
+    ///
+    /// <p>Filter results by context. Filters are combined with AND; values within a filter are combined with OR.</p>
+    pub fn context_filters(mut self, input: crate::types::ContextFilter) -> Self {
+        self.inner = self.inner.context_filters(input);
+        self
+    }
+    /// <p>Filter results by context. Filters are combined with AND; values within a filter are combined with OR.</p>
+    pub fn set_context_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ContextFilter>>) -> Self {
+        self.inner = self.inner.set_context_filters(input);
+        self
+    }
+    /// <p>Filter results by context. Filters are combined with AND; values within a filter are combined with OR.</p>
+    pub fn get_context_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ContextFilter>> {
+        self.inner.get_context_filters()
+    }
 }

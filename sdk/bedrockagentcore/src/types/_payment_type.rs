@@ -12,6 +12,7 @@
 /// ```text
 /// # let paymenttype = unimplemented!();
 /// match paymenttype {
+///     PaymentType::AwsBillingX402 => { /* ... */ },
 ///     PaymentType::CryptoX402 => { /* ... */ },
 ///     PaymentType::Mpp => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum PaymentType {
     #[allow(missing_docs)] // documentation missing in model
+    AwsBillingX402,
+    #[allow(missing_docs)] // documentation missing in model
     CryptoX402,
     #[allow(missing_docs)] // documentation missing in model
     Mpp,
@@ -53,6 +56,7 @@ pub enum PaymentType {
 impl ::std::convert::From<&str> for PaymentType {
     fn from(s: &str) -> Self {
         match s {
+            "AWS_BILLING_X402" => PaymentType::AwsBillingX402,
             "CRYPTO_X402" => PaymentType::CryptoX402,
             "MPP" => PaymentType::Mpp,
             other => PaymentType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl PaymentType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PaymentType::AwsBillingX402 => "AWS_BILLING_X402",
             PaymentType::CryptoX402 => "CRYPTO_X402",
             PaymentType::Mpp => "MPP",
             PaymentType::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl PaymentType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CRYPTO_X402", "MPP"]
+        &["AWS_BILLING_X402", "CRYPTO_X402", "MPP"]
     }
 }
 impl ::std::convert::AsRef<str> for PaymentType {
@@ -100,6 +105,7 @@ impl PaymentType {
 impl ::std::fmt::Display for PaymentType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            PaymentType::AwsBillingX402 => write!(f, "AWS_BILLING_X402"),
             PaymentType::CryptoX402 => write!(f, "CRYPTO_X402"),
             PaymentType::Mpp => write!(f, "MPP"),
             PaymentType::Unknown(value) => write!(f, "{value}"),

@@ -137,33 +137,33 @@ impl ListMarketplaceRevenueShareAllocationsFluentBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<crate::types::CatalogName> {
         self.inner.get_catalog()
     }
-    /// <p>The AWS Marketplace product identifier for the parent revenue share.</p>
-    pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.product_id(input.into());
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub fn marketplace_revenue_share_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.marketplace_revenue_share_identifier(input.into());
         self
     }
-    /// <p>The AWS Marketplace product identifier for the parent revenue share.</p>
-    pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_product_id(input);
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub fn set_marketplace_revenue_share_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_marketplace_revenue_share_identifier(input);
         self
     }
-    /// <p>The AWS Marketplace product identifier for the parent revenue share.</p>
-    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_product_id()
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub fn get_marketplace_revenue_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marketplace_revenue_share_identifier()
     }
     /// <p>Filter by allocation status.</p>
-    pub fn status(mut self, input: crate::types::AllocationStatus) -> Self {
-        self.inner = self.inner.status(input);
-        self
-    }
-    /// <p>Filter by allocation status.</p>
-    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AllocationStatus>) -> Self {
-        self.inner = self.inner.set_status(input);
+    pub fn status_filter(mut self, input: crate::types::AllocationStatus) -> Self {
+        self.inner = self.inner.status_filter(input);
         self
     }
     /// <p>Filter by allocation status.</p>
-    pub fn get_status(&self) -> &::std::option::Option<crate::types::AllocationStatus> {
-        self.inner.get_status()
+    pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::AllocationStatus>) -> Self {
+        self.inner = self.inner.set_status_filter(input);
+        self
+    }
+    /// <p>Filter by allocation status.</p>
+    pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::AllocationStatus> {
+        self.inner.get_status_filter()
     }
     /// <p>Inclusive lower bound for EffectiveFrom date filter.</p>
     pub fn after_effective_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -193,6 +193,34 @@ impl ListMarketplaceRevenueShareAllocationsFluentBuilder {
     pub fn get_before_effective_from(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_before_effective_from()
     }
+    /// <p>Inclusive lower bound for EffectiveUntil date filter.</p>
+    pub fn after_effective_until(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.after_effective_until(input.into());
+        self
+    }
+    /// <p>Inclusive lower bound for EffectiveUntil date filter.</p>
+    pub fn set_after_effective_until(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_after_effective_until(input);
+        self
+    }
+    /// <p>Inclusive lower bound for EffectiveUntil date filter.</p>
+    pub fn get_after_effective_until(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_after_effective_until()
+    }
+    /// <p>Exclusive upper bound for EffectiveUntil date filter (half-open range).</p>
+    pub fn before_effective_until(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.before_effective_until(input.into());
+        self
+    }
+    /// <p>Exclusive upper bound for EffectiveUntil date filter (half-open range).</p>
+    pub fn set_before_effective_until(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_before_effective_until(input);
+        self
+    }
+    /// <p>Exclusive upper bound for EffectiveUntil date filter (half-open range).</p>
+    pub fn get_before_effective_until(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_before_effective_until()
+    }
     /// <p>The field to sort marketplace revenue share allocations by.</p>
     pub fn sort_by(mut self, input: crate::types::MarketplaceRevenueShareAllocationSortField) -> Self {
         self.inner = self.inner.sort_by(input);
@@ -207,17 +235,17 @@ impl ListMarketplaceRevenueShareAllocationsFluentBuilder {
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::MarketplaceRevenueShareAllocationSortField> {
         self.inner.get_sort_by()
     }
-    /// <p>The direction to sort results. Defaults to DESCENDING.</p>
+    /// <p>The direction to sort results. Defaults to ASCENDING.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
         self
     }
-    /// <p>The direction to sort results. Defaults to DESCENDING.</p>
+    /// <p>The direction to sort results. Defaults to ASCENDING.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
-    /// <p>The direction to sort results. Defaults to DESCENDING.</p>
+    /// <p>The direction to sort results. Defaults to ASCENDING.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         self.inner.get_sort_order()
     }

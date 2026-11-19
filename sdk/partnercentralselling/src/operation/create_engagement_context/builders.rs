@@ -164,17 +164,17 @@ impl CreateEngagementContextFluentBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::EngagementContextType> {
         self.inner.get_type()
     }
-    /// <p>Represents the payload of an Engagement context. The structure of this payload varies based on the context type specified in the EngagementContextDetails.</p>
+    /// <p>Contains the contextual information to add to the engagement. The structure of this payload depends on the context type in the <code>Type</code> field.</p>
     pub fn payload(mut self, input: crate::types::EngagementContextPayload) -> Self {
         self.inner = self.inner.payload(input);
         self
     }
-    /// <p>Represents the payload of an Engagement context. The structure of this payload varies based on the context type specified in the EngagementContextDetails.</p>
+    /// <p>Contains the contextual information to add to the engagement. The structure of this payload depends on the context type in the <code>Type</code> field.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<crate::types::EngagementContextPayload>) -> Self {
         self.inner = self.inner.set_payload(input);
         self
     }
-    /// <p>Represents the payload of an Engagement context. The structure of this payload varies based on the context type specified in the EngagementContextDetails.</p>
+    /// <p>Contains the contextual information to add to the engagement. The structure of this payload depends on the context type in the <code>Type</code> field.</p>
     pub fn get_payload(&self) -> &::std::option::Option<crate::types::EngagementContextPayload> {
         self.inner.get_payload()
     }

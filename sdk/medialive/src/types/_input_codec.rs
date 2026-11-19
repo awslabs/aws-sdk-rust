@@ -14,6 +14,7 @@
 /// match inputcodec {
 ///     InputCodec::Avc => { /* ... */ },
 ///     InputCodec::Hevc => { /* ... */ },
+///     InputCodec::Jpegxs => { /* ... */ },
 ///     InputCodec::Mpeg2 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum InputCodec {
     #[allow(missing_docs)] // documentation missing in model
     Hevc,
     #[allow(missing_docs)] // documentation missing in model
+    Jpegxs,
+    #[allow(missing_docs)] // documentation missing in model
     Mpeg2,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for InputCodec {
         match s {
             "AVC" => InputCodec::Avc,
             "HEVC" => InputCodec::Hevc,
+            "JPEGXS" => InputCodec::Jpegxs,
             "MPEG2" => InputCodec::Mpeg2,
             other => InputCodec::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -76,13 +80,14 @@ impl InputCodec {
         match self {
             InputCodec::Avc => "AVC",
             InputCodec::Hevc => "HEVC",
+            InputCodec::Jpegxs => "JPEGXS",
             InputCodec::Mpeg2 => "MPEG2",
             InputCodec::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AVC", "HEVC", "MPEG2"]
+        &["AVC", "HEVC", "JPEGXS", "MPEG2"]
     }
 }
 impl ::std::convert::AsRef<str> for InputCodec {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for InputCodec {
         match self {
             InputCodec::Avc => write!(f, "AVC"),
             InputCodec::Hevc => write!(f, "HEVC"),
+            InputCodec::Jpegxs => write!(f, "JPEGXS"),
             InputCodec::Mpeg2 => write!(f, "MPEG2"),
             InputCodec::Unknown(value) => write!(f, "{value}"),
         }

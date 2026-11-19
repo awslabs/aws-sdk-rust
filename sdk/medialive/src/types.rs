@@ -29,6 +29,8 @@ pub use crate::types::_linked_channel_settings::LinkedChannelSettings;
 
 pub use crate::types::_inference_settings::InferenceSettings;
 
+pub use crate::types::_jpeg_xs_input_specification::JpegXsInputSpecification;
+
 pub use crate::types::_channel::Channel;
 
 pub use crate::types::_channel_placement_group_state::ChannelPlacementGroupState;
@@ -220,6 +222,10 @@ pub use crate::types::_maintenance_day::MaintenanceDay;
 pub use crate::types::_follower_channel_settings::FollowerChannelSettings;
 
 pub use crate::types::_primary_channel_settings::PrimaryChannelSettings;
+
+pub use crate::types::_jpeg_xs_input_maximum_bitrate::JpegXsInputMaximumBitrate;
+
+pub use crate::types::_jpeg_xs_input_resolution::JpegXsInputResolution;
 
 pub use crate::types::_event_bridge_rule_template_target::EventBridgeRuleTemplateTarget;
 
@@ -2258,6 +2264,12 @@ mod _ip_pool;
 mod _ip_pool_create_request;
 
 mod _ip_pool_update_request;
+
+mod _jpeg_xs_input_maximum_bitrate;
+
+mod _jpeg_xs_input_resolution;
+
+mod _jpeg_xs_input_specification;
 
 mod _key_provider_settings;
 

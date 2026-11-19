@@ -22,6 +22,12 @@ pub fn ser_engagement_context_payload(
             crate::protocol_serde::shape_prospecting_result::ser_prospecting_result(&mut object_3, inner)?;
             object_3.finish();
         }
+        crate::types::EngagementContextPayload::CustomerAccount(inner) => {
+            #[allow(unused_mut)]
+            let mut object_4 = object_6.key("CustomerAccount").start_object();
+            crate::protocol_serde::shape_customer_account_context::ser_customer_account_context(&mut object_4, inner)?;
+            object_4.finish();
+        }
         crate::types::EngagementContextPayload::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "EngagementContextPayload",
@@ -82,6 +88,12 @@ where
                             crate::protocol_serde::shape_prospecting_result::de_prospecting_result(tokens, _value, depth + 1)?.ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'ProspectingResult' cannot be null")
                             })?,
+                        )),
+                        "CustomerAccount" => Some(crate::types::EngagementContextPayload::CustomerAccount(
+                            crate::protocol_serde::shape_customer_account_context::de_customer_account_context(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'CustomerAccount' cannot be null")
+                                })?,
                         )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;

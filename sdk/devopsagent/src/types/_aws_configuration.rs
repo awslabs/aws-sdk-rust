@@ -14,6 +14,8 @@ pub struct AwsConfiguration {
     pub agent_elevated_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Validation status of the agentElevatedRoleArn. Updated asynchronously after the customer registers an elevated role. Possible values: PENDING_CONFIRMATION (validation in progress), VALID (role validated), INVALID (validation failed).</p>
     pub agent_elevated_role_arn_status: ::std::option::Option<crate::types::ValidationStatus>,
+    /// <p>The Amazon Resource Name (ARN) of the Organizations service-managed role that AIDevOps uses to deploy and manage resources across the accounts in your Amazon Web Services Organization.</p>
+    pub service_management_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsConfiguration {
     /// <p>Role ARN to be assumed by AIDevOps to operate on behalf of customer.</p>
@@ -38,6 +40,10 @@ impl AwsConfiguration {
     pub fn agent_elevated_role_arn_status(&self) -> ::std::option::Option<&crate::types::ValidationStatus> {
         self.agent_elevated_role_arn_status.as_ref()
     }
+    /// <p>The Amazon Resource Name (ARN) of the Organizations service-managed role that AIDevOps uses to deploy and manage resources across the accounts in your Amazon Web Services Organization.</p>
+    pub fn service_management_role_arn(&self) -> ::std::option::Option<&str> {
+        self.service_management_role_arn.as_deref()
+    }
 }
 impl AwsConfiguration {
     /// Creates a new builder-style object to manufacture [`AwsConfiguration`](crate::types::AwsConfiguration).
@@ -55,6 +61,7 @@ pub struct AwsConfigurationBuilder {
     pub(crate) account_type: ::std::option::Option<crate::types::MonitorAccountType>,
     pub(crate) agent_elevated_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) agent_elevated_role_arn_status: ::std::option::Option<crate::types::ValidationStatus>,
+    pub(crate) service_management_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl AwsConfigurationBuilder {
     /// <p>Role ARN to be assumed by AIDevOps to operate on behalf of customer.</p>
@@ -130,6 +137,20 @@ impl AwsConfigurationBuilder {
     pub fn get_agent_elevated_role_arn_status(&self) -> &::std::option::Option<crate::types::ValidationStatus> {
         &self.agent_elevated_role_arn_status
     }
+    /// <p>The Amazon Resource Name (ARN) of the Organizations service-managed role that AIDevOps uses to deploy and manage resources across the accounts in your Amazon Web Services Organization.</p>
+    pub fn service_management_role_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.service_management_role_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Organizations service-managed role that AIDevOps uses to deploy and manage resources across the accounts in your Amazon Web Services Organization.</p>
+    pub fn set_service_management_role_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.service_management_role_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the Organizations service-managed role that AIDevOps uses to deploy and manage resources across the accounts in your Amazon Web Services Organization.</p>
+    pub fn get_service_management_role_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.service_management_role_arn
+    }
     /// Consumes the builder and constructs a [`AwsConfiguration`](crate::types::AwsConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`assumable_role_arn`](crate::types::builders::AwsConfigurationBuilder::assumable_role_arn)
@@ -157,6 +178,7 @@ impl AwsConfigurationBuilder {
             })?,
             agent_elevated_role_arn: self.agent_elevated_role_arn,
             agent_elevated_role_arn_status: self.agent_elevated_role_arn_status,
+            service_management_role_arn: self.service_management_role_arn,
         })
     }
 }

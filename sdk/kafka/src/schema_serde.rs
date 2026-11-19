@@ -3,6 +3,14 @@ pub(crate) mod shape_amazon_msk_cluster;
 
 pub(crate) mod shape_apache_kafka_cluster;
 
+pub(crate) mod shape_assessment_finding;
+
+pub(crate) mod shape_assessment_info;
+
+pub(crate) mod shape_assessment_parameters;
+
+pub(crate) mod shape_assessment_summary;
+
 pub(crate) mod shape_authorizer_logs;
 
 pub(crate) mod shape_bad_request_exception;
@@ -26,6 +34,8 @@ pub(crate) mod shape_broker_node_group_info;
 pub(crate) mod shape_broker_node_info;
 
 pub(crate) mod shape_broker_software_info;
+
+pub(crate) mod shape_broker_type_upgrade_info;
 
 pub(crate) mod shape_catalog;
 
@@ -81,6 +91,10 @@ pub(crate) mod shape_controller_moved_exception;
 
 pub(crate) mod shape_controller_node_info;
 
+pub(crate) mod shape_create_assessment_input_input;
+
+pub(crate) mod shape_create_assessment_output_output;
+
 pub(crate) mod shape_create_channel_input_input;
 
 pub(crate) mod shape_create_channel_output_output;
@@ -111,6 +125,10 @@ pub(crate) mod shape_create_vpc_connection_output_output;
 
 pub(crate) mod shape_dead_letter_queue_s3;
 
+pub(crate) mod shape_delete_assessment_input_input;
+
+pub(crate) mod shape_delete_assessment_output_output;
+
 pub(crate) mod shape_delete_channel_input_input;
 
 pub(crate) mod shape_delete_channel_output_output;
@@ -138,6 +156,10 @@ pub(crate) mod shape_delete_topic_output_output;
 pub(crate) mod shape_delete_vpc_connection_input_input;
 
 pub(crate) mod shape_delete_vpc_connection_output_output;
+
+pub(crate) mod shape_describe_assessment_input_input;
+
+pub(crate) mod shape_describe_assessment_output_output;
 
 pub(crate) mod shape_describe_channel_input_input;
 
@@ -179,6 +201,10 @@ pub(crate) mod shape_describe_topic_partitions_input_input;
 
 pub(crate) mod shape_describe_topic_partitions_output_output;
 
+pub(crate) mod shape_describe_topic_reassignment_input_input;
+
+pub(crate) mod shape_describe_topic_reassignment_output_output;
+
 pub(crate) mod shape_describe_vpc_connection_input_input;
 
 pub(crate) mod shape_describe_vpc_connection_output_output;
@@ -196,6 +222,8 @@ pub(crate) mod shape_encryption_in_transit;
 pub(crate) mod shape_encryption_info;
 
 pub(crate) mod shape_error_info;
+
+pub(crate) mod shape_finding_remediation;
 
 pub(crate) mod shape_firehose;
 
@@ -257,6 +285,14 @@ pub(crate) mod shape_kafka_timeout_exception;
 
 pub(crate) mod shape_kafka_version;
 
+pub(crate) mod shape_list_assessment_findings_input_input;
+
+pub(crate) mod shape_list_assessment_findings_output_output;
+
+pub(crate) mod shape_list_assessments_input_input;
+
+pub(crate) mod shape_list_assessments_output_output;
+
 pub(crate) mod shape_list_channels_input_input;
 
 pub(crate) mod shape_list_channels_output_output;
@@ -308,6 +344,10 @@ pub(crate) mod shape_list_scram_secrets_output_output;
 pub(crate) mod shape_list_tags_for_resource_input_input;
 
 pub(crate) mod shape_list_tags_for_resource_output_output;
+
+pub(crate) mod shape_list_topic_reassignments_input_input;
+
+pub(crate) mod shape_list_topic_reassignments_output_output;
 
 pub(crate) mod shape_list_topics_input_input;
 
@@ -421,7 +461,15 @@ pub(crate) mod shape_serverless_sasl;
 
 pub(crate) mod shape_service_unavailable_exception;
 
+pub(crate) mod shape_start_topic_reassignment_input_input;
+
+pub(crate) mod shape_start_topic_reassignment_output_output;
+
 pub(crate) mod shape_state_info;
+
+pub(crate) mod shape_stop_topic_reassignment_input_input;
+
+pub(crate) mod shape_stop_topic_reassignment_output_output;
 
 pub(crate) mod shape_storage_info;
 
@@ -442,6 +490,8 @@ pub(crate) mod shape_topic_exists_exception;
 pub(crate) mod shape_topic_info;
 
 pub(crate) mod shape_topic_partition_info;
+
+pub(crate) mod shape_topic_reassignment_info;
 
 pub(crate) mod shape_topic_replication;
 

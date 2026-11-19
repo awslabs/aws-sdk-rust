@@ -2871,6 +2871,12 @@ pub(crate) mod shape_voice_enhancement_config;
 
 pub(crate) mod shape_voice_recording_configuration;
 
+pub(crate) mod shape_voicemail_analysis_reference;
+
+pub(crate) mod shape_voicemail_info;
+
+pub(crate) mod shape_voicemail_recording_reference;
+
 pub(crate) mod shape_web_notification_content;
 
 pub(crate) mod shape_web_notification_source;

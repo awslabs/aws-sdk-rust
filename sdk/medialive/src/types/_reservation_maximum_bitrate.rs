@@ -14,6 +14,7 @@
 /// match reservationmaximumbitrate {
 ///     ReservationMaximumBitrate::Max10Mbps => { /* ... */ },
 ///     ReservationMaximumBitrate::Max20Mbps => { /* ... */ },
+///     ReservationMaximumBitrate::Max500Mbps => { /* ... */ },
 ///     ReservationMaximumBitrate::Max50Mbps => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum ReservationMaximumBitrate {
     #[allow(missing_docs)] // documentation missing in model
     Max20Mbps,
     #[allow(missing_docs)] // documentation missing in model
+    Max500Mbps,
+    #[allow(missing_docs)] // documentation missing in model
     Max50Mbps,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for ReservationMaximumBitrate {
         match s {
             "MAX_10_MBPS" => ReservationMaximumBitrate::Max10Mbps,
             "MAX_20_MBPS" => ReservationMaximumBitrate::Max20Mbps,
+            "MAX_500_MBPS" => ReservationMaximumBitrate::Max500Mbps,
             "MAX_50_MBPS" => ReservationMaximumBitrate::Max50Mbps,
             other => ReservationMaximumBitrate::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -76,13 +80,14 @@ impl ReservationMaximumBitrate {
         match self {
             ReservationMaximumBitrate::Max10Mbps => "MAX_10_MBPS",
             ReservationMaximumBitrate::Max20Mbps => "MAX_20_MBPS",
+            ReservationMaximumBitrate::Max500Mbps => "MAX_500_MBPS",
             ReservationMaximumBitrate::Max50Mbps => "MAX_50_MBPS",
             ReservationMaximumBitrate::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MAX_10_MBPS", "MAX_20_MBPS", "MAX_50_MBPS"]
+        &["MAX_10_MBPS", "MAX_20_MBPS", "MAX_500_MBPS", "MAX_50_MBPS"]
     }
 }
 impl ::std::convert::AsRef<str> for ReservationMaximumBitrate {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for ReservationMaximumBitrate {
         match self {
             ReservationMaximumBitrate::Max10Mbps => write!(f, "MAX_10_MBPS"),
             ReservationMaximumBitrate::Max20Mbps => write!(f, "MAX_20_MBPS"),
+            ReservationMaximumBitrate::Max500Mbps => write!(f, "MAX_500_MBPS"),
             ReservationMaximumBitrate::Max50Mbps => write!(f, "MAX_50_MBPS"),
             ReservationMaximumBitrate::Unknown(value) => write!(f, "{value}"),
         }

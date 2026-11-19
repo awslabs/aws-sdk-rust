@@ -77,6 +77,8 @@ pub use crate::types::_slurmdbd_custom_setting::SlurmdbdCustomSettingBuilder;
 
 pub use crate::types::_cgroup_custom_setting::CgroupCustomSettingBuilder;
 
+pub use crate::types::_job_submit_plugin::JobSubmitPluginBuilder;
+
 pub use crate::types::_slurm_auth_key::SlurmAuthKeyBuilder;
 
 pub use crate::types::_jwt_auth::JwtAuthBuilder;
@@ -86,6 +88,8 @@ pub use crate::types::_accounting::AccountingBuilder;
 pub use crate::types::_slurm_rest::SlurmRestBuilder;
 
 pub use crate::types::_error_info::ErrorInfoBuilder;
+
+pub use crate::types::_job_submit_script_source::JobSubmitScriptSourceBuilder;
 
 pub use crate::types::_jwt_key::JwtKeyBuilder;
 

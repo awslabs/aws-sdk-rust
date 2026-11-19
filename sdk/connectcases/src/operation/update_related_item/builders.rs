@@ -28,6 +28,8 @@ impl crate::operation::update_related_item::builders::UpdateRelatedItemInputBuil
 /// <p><b>Comment</b> - Update the text content of an existing comment</p></li>
 /// <li>
 /// <p><b>Custom</b> - Update the fields of a custom related item. You can add, modify, and remove fields from a custom related item. There's a quota for the number of fields allowed in a Custom type related item. See <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#cases-quotas">Connect Customer Cases quotas</a>.</p></li>
+/// <li>
+/// <p><b>Sla</b> - Update the target duration (<code>targetSlaMinutes</code>) of an SLA. The new deadline is counted from when the SLA was created. The SLA status is recalculated against the new deadline: an open SLA becomes Active or Overdue, and a completed SLA becomes Met or NotMet.</p></li>
 /// </ul>
 /// <p><b>Important things to know</b></p>
 /// <ul>

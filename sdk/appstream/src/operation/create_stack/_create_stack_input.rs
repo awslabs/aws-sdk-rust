@@ -33,6 +33,8 @@ pub struct CreateStackInput {
     pub streaming_experience_settings: ::std::option::Option<crate::types::StreamingExperienceSettings>,
     /// <p>Configuration for bidirectional URL redirection between the streaming session and the local client. Use HostToClient to redirect URLs from the remote desktop to the local browser.</p>
     pub content_redirection: ::std::option::Option<crate::types::ContentRedirection>,
+    /// <p>Configuration for WebAuthn redirection between the streaming session and the user's local device. Use ProcessCompatibilityList to specify which processes can use WebAuthn redirection on Windows fleets.</p>
+    pub web_authn_redirection: ::std::option::Option<crate::types::WebAuthnRedirection>,
     /// <p>The configuration for agent access on the stack. If specified, agent access is enabled for the stack.</p>
     pub agent_access_config: ::std::option::Option<crate::types::AgentAccessConfig>,
     /// <p>Specifies whether users' cloud storage authentication persists across streaming sessions. When you specify FORCE_REAUTHENTICATION, WorkSpaces Applications removes the stored authentication for the stack's OneDrive and Google Drive connectors when a user's session ends. The user links their cloud storage again on their next session. The default is REUSE_CREDENTIALS.</p>
@@ -103,6 +105,10 @@ impl CreateStackInput {
     pub fn content_redirection(&self) -> ::std::option::Option<&crate::types::ContentRedirection> {
         self.content_redirection.as_ref()
     }
+    /// <p>Configuration for WebAuthn redirection between the streaming session and the user's local device. Use ProcessCompatibilityList to specify which processes can use WebAuthn redirection on Windows fleets.</p>
+    pub fn web_authn_redirection(&self) -> ::std::option::Option<&crate::types::WebAuthnRedirection> {
+        self.web_authn_redirection.as_ref()
+    }
     /// <p>The configuration for agent access on the stack. If specified, agent access is enabled for the stack.</p>
     pub fn agent_access_config(&self) -> ::std::option::Option<&crate::types::AgentAccessConfig> {
         self.agent_access_config.as_ref()
@@ -136,6 +142,7 @@ pub struct CreateStackInputBuilder {
     pub(crate) embed_host_domains: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) streaming_experience_settings: ::std::option::Option<crate::types::StreamingExperienceSettings>,
     pub(crate) content_redirection: ::std::option::Option<crate::types::ContentRedirection>,
+    pub(crate) web_authn_redirection: ::std::option::Option<crate::types::WebAuthnRedirection>,
     pub(crate) agent_access_config: ::std::option::Option<crate::types::AgentAccessConfig>,
     pub(crate) storage_connector_authentication: ::std::option::Option<crate::types::StorageConnectorAuthentication>,
 }
@@ -365,6 +372,20 @@ impl CreateStackInputBuilder {
     pub fn get_content_redirection(&self) -> &::std::option::Option<crate::types::ContentRedirection> {
         &self.content_redirection
     }
+    /// <p>Configuration for WebAuthn redirection between the streaming session and the user's local device. Use ProcessCompatibilityList to specify which processes can use WebAuthn redirection on Windows fleets.</p>
+    pub fn web_authn_redirection(mut self, input: crate::types::WebAuthnRedirection) -> Self {
+        self.web_authn_redirection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Configuration for WebAuthn redirection between the streaming session and the user's local device. Use ProcessCompatibilityList to specify which processes can use WebAuthn redirection on Windows fleets.</p>
+    pub fn set_web_authn_redirection(mut self, input: ::std::option::Option<crate::types::WebAuthnRedirection>) -> Self {
+        self.web_authn_redirection = input;
+        self
+    }
+    /// <p>Configuration for WebAuthn redirection between the streaming session and the user's local device. Use ProcessCompatibilityList to specify which processes can use WebAuthn redirection on Windows fleets.</p>
+    pub fn get_web_authn_redirection(&self) -> &::std::option::Option<crate::types::WebAuthnRedirection> {
+        &self.web_authn_redirection
+    }
     /// <p>The configuration for agent access on the stack. If specified, agent access is enabled for the stack.</p>
     pub fn agent_access_config(mut self, input: crate::types::AgentAccessConfig) -> Self {
         self.agent_access_config = ::std::option::Option::Some(input);
@@ -409,6 +430,7 @@ impl CreateStackInputBuilder {
             embed_host_domains: self.embed_host_domains,
             streaming_experience_settings: self.streaming_experience_settings,
             content_redirection: self.content_redirection,
+            web_authn_redirection: self.web_authn_redirection,
             agent_access_config: self.agent_access_config,
             storage_connector_authentication: self.storage_connector_authentication,
         })

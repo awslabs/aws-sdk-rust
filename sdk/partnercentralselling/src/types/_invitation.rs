@@ -6,9 +6,9 @@
 pub struct Invitation {
     /// <p>A message accompanying the invitation.</p>
     pub message: ::std::string::String,
-    /// <p>Represents the entity that received the Engagement Invitation, including account and company details. This field is essential for tracking the partner who is being invited to collaborate.</p>
+    /// <p>Specifies the partner that receives the invitation.</p>
     pub receiver: ::std::option::Option<crate::types::Receiver>,
-    /// <p>Contains the data payload associated with the Engagement Invitation. This payload includes essential details related to the AWS opportunity and is used by partners to evaluate whether to accept or reject the engagement.</p>
+    /// <p>Contains the details that the invitation carries, such as the opportunity or the account planning details that the partner receives.</p>
     pub payload: ::std::option::Option<crate::types::Payload>,
 }
 impl Invitation {
@@ -17,11 +17,11 @@ impl Invitation {
         use std::ops::Deref;
         self.message.deref()
     }
-    /// <p>Represents the entity that received the Engagement Invitation, including account and company details. This field is essential for tracking the partner who is being invited to collaborate.</p>
+    /// <p>Specifies the partner that receives the invitation.</p>
     pub fn receiver(&self) -> ::std::option::Option<&crate::types::Receiver> {
         self.receiver.as_ref()
     }
-    /// <p>Contains the data payload associated with the Engagement Invitation. This payload includes essential details related to the AWS opportunity and is used by partners to evaluate whether to accept or reject the engagement.</p>
+    /// <p>Contains the details that the invitation carries, such as the opportunity or the account planning details that the partner receives.</p>
     pub fn payload(&self) -> ::std::option::Option<&crate::types::Payload> {
         self.payload.as_ref()
     }
@@ -66,33 +66,33 @@ impl InvitationBuilder {
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }
-    /// <p>Represents the entity that received the Engagement Invitation, including account and company details. This field is essential for tracking the partner who is being invited to collaborate.</p>
+    /// <p>Specifies the partner that receives the invitation.</p>
     /// This field is required.
     pub fn receiver(mut self, input: crate::types::Receiver) -> Self {
         self.receiver = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents the entity that received the Engagement Invitation, including account and company details. This field is essential for tracking the partner who is being invited to collaborate.</p>
+    /// <p>Specifies the partner that receives the invitation.</p>
     pub fn set_receiver(mut self, input: ::std::option::Option<crate::types::Receiver>) -> Self {
         self.receiver = input;
         self
     }
-    /// <p>Represents the entity that received the Engagement Invitation, including account and company details. This field is essential for tracking the partner who is being invited to collaborate.</p>
+    /// <p>Specifies the partner that receives the invitation.</p>
     pub fn get_receiver(&self) -> &::std::option::Option<crate::types::Receiver> {
         &self.receiver
     }
-    /// <p>Contains the data payload associated with the Engagement Invitation. This payload includes essential details related to the AWS opportunity and is used by partners to evaluate whether to accept or reject the engagement.</p>
+    /// <p>Contains the details that the invitation carries, such as the opportunity or the account planning details that the partner receives.</p>
     /// This field is required.
     pub fn payload(mut self, input: crate::types::Payload) -> Self {
         self.payload = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains the data payload associated with the Engagement Invitation. This payload includes essential details related to the AWS opportunity and is used by partners to evaluate whether to accept or reject the engagement.</p>
+    /// <p>Contains the details that the invitation carries, such as the opportunity or the account planning details that the partner receives.</p>
     pub fn set_payload(mut self, input: ::std::option::Option<crate::types::Payload>) -> Self {
         self.payload = input;
         self
     }
-    /// <p>Contains the data payload associated with the Engagement Invitation. This payload includes essential details related to the AWS opportunity and is used by partners to evaluate whether to accept or reject the engagement.</p>
+    /// <p>Contains the details that the invitation carries, such as the opportunity or the account planning details that the partner receives.</p>
     pub fn get_payload(&self) -> &::std::option::Option<crate::types::Payload> {
         &self.payload
     }

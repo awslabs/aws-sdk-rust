@@ -9,6 +9,8 @@ pub struct UpdateLinkRoutingRuleOutput {
     pub status: crate::types::RuleStatus,
     /// <p>The timestamp of when the routing rule was last updated.</p>
     pub updated_at: ::aws_smithy_types::DateTime,
+    /// <p>The ID of the update this call started.</p>
+    pub update_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateLinkRoutingRuleOutput {
@@ -24,6 +26,10 @@ impl UpdateLinkRoutingRuleOutput {
     /// <p>The timestamp of when the routing rule was last updated.</p>
     pub fn updated_at(&self) -> &::aws_smithy_types::DateTime {
         &self.updated_at
+    }
+    /// <p>The ID of the update this call started.</p>
+    pub fn update_id(&self) -> ::std::option::Option<&str> {
+        self.update_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for UpdateLinkRoutingRuleOutput {
@@ -45,6 +51,7 @@ pub struct UpdateLinkRoutingRuleOutputBuilder {
     pub(crate) rule_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::RuleStatus>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) update_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl UpdateLinkRoutingRuleOutputBuilder {
@@ -93,6 +100,21 @@ impl UpdateLinkRoutingRuleOutputBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>The ID of the update this call started.</p>
+    /// This field is required.
+    pub fn update_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.update_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the update this call started.</p>
+    pub fn set_update_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.update_id = input;
+        self
+    }
+    /// <p>The ID of the update this call started.</p>
+    pub fn get_update_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.update_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -132,6 +154,7 @@ impl UpdateLinkRoutingRuleOutputBuilder {
                     "updated_at was not specified but it is required when building UpdateLinkRoutingRuleOutput",
                 )
             })?,
+            update_id: self.update_id,
             _request_id: self._request_id,
         })
     }

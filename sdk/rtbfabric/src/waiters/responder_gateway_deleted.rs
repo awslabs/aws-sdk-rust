@@ -58,6 +58,10 @@ impl ResponderGatewayDeletedFluentBuilder {
             &crate::operation::get_responder_gateway::GetResponderGatewayOutput,
             &crate::operation::get_responder_gateway::GetResponderGatewayError,
         >| {
+            // Matches: {"output":{"path":"status","expected":"DELETE_FAILED","comparator":"stringEquals"}}
+            if crate::waiters::matchers::match_get_responder_gateway_184758db81b6271a8(result) {
+                return ::aws_smithy_runtime::client::waiters::AcceptorState::Failure;
+            }
             // Matches: {"output":{"path":"status","expected":"DELETED","comparator":"stringEquals"}}
             if crate::waiters::matchers::match_get_responder_gateway_8edac4c36e2a37f69(result) {
                 return ::aws_smithy_runtime::client::waiters::AcceptorState::Success;

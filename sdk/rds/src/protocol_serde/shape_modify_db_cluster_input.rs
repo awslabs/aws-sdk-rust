@@ -272,6 +272,21 @@ pub fn ser_modify_db_cluster_input_input_input(
     if let Some(var_99) = &input.engine_lifecycle_support {
         scope_98.string(var_99);
     }
+    #[allow(unused_mut)]
+    let mut scope_100 = writer.prefix("EnableInternetAccessGateway");
+    if let Some(var_101) = &input.enable_internet_access_gateway {
+        scope_100.boolean(*var_101);
+    }
+    #[allow(unused_mut)]
+    let mut scope_102 = writer.prefix("EnableVPCNetworking");
+    if let Some(var_103) = &input.enable_vpc_networking {
+        scope_102.boolean(*var_103);
+    }
+    #[allow(unused_mut)]
+    let mut scope_104 = writer.prefix("DBSubnetGroupName");
+    if let Some(var_105) = &input.db_subnet_group_name {
+        scope_104.string(var_105);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

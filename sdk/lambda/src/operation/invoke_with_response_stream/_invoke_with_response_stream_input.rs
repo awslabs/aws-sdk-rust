@@ -18,6 +18,7 @@ pub struct InvokeWithResponseStreamInput {
     /// <p>Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions only.</p>
     pub log_type: ::std::option::Option<crate::types::LogType>,
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
+    /// <p><code>ClientContext</code> is logged to CloudTrail if you turn on data events.</p>
     pub client_context: ::std::option::Option<::std::string::String>,
     /// <p>The alias name.</p>
     pub qualifier: ::std::option::Option<::std::string::String>,
@@ -55,6 +56,7 @@ impl InvokeWithResponseStreamInput {
         self.log_type.as_ref()
     }
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
+    /// <p><code>ClientContext</code> is logged to CloudTrail if you turn on data events.</p>
     pub fn client_context(&self) -> ::std::option::Option<&str> {
         self.client_context.as_deref()
     }
@@ -175,16 +177,19 @@ impl InvokeWithResponseStreamInputBuilder {
         &self.log_type
     }
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
+    /// <p><code>ClientContext</code> is logged to CloudTrail if you turn on data events.</p>
     pub fn client_context(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_context = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
+    /// <p><code>ClientContext</code> is logged to CloudTrail if you turn on data events.</p>
     pub fn set_client_context(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_context = input;
         self
     }
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
+    /// <p><code>ClientContext</code> is logged to CloudTrail if you turn on data events.</p>
     pub fn get_client_context(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_context
     }

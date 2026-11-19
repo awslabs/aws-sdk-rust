@@ -165,4 +165,18 @@ impl UpdateLinkFluentBuilder {
     pub fn get_timeout_in_millis(&self) -> &::std::option::Option<i64> {
         self.inner.get_timeout_in_millis()
     }
+    /// <p>A unique, case-sensitive identifier for the request. The SDK generates one when you don't.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.client_token(input.into());
+        self
+    }
+    /// <p>A unique, case-sensitive identifier for the request. The SDK generates one when you don't.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_client_token(input);
+        self
+    }
+    /// <p>A unique, case-sensitive identifier for the request. The SDK generates one when you don't.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_client_token()
+    }
 }

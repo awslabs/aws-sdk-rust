@@ -52,7 +52,7 @@ version = "1.10.4"
 [dependencies.aws-sdk-sts]
 path = "../sts"
 default-features = false
-version = "1.127.0"
+version = "1.128.0"
 
 [dependencies.aws-smithy-async]
 path = "../aws-smithy-async"

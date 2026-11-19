@@ -29,6 +29,8 @@ pub use crate::types::_resolver_config::ResolverConfigBuilder;
 
 pub use crate::types::_resolver_dnssec_config::ResolverDnssecConfigBuilder;
 
+pub use crate::types::_list_firewall_rule_domains_query_options::ListFirewallRuleDomainsQueryOptionsBuilder;
+
 pub use crate::types::_resolver_rule_config::ResolverRuleConfigBuilder;
 
 pub use crate::types::_tag::TagBuilder;
@@ -53,11 +55,15 @@ pub use crate::types::_firewall_advanced_threat_category_config::FirewallAdvance
 
 pub use crate::types::_dns_threat_protection_rule_type_config::DnsThreatProtectionRuleTypeConfigBuilder;
 
+pub use crate::types::_auto_allowlist_config::AutoAllowlistConfigBuilder;
+
 pub use crate::types::_ip_address_request::IpAddressRequestBuilder;
 
 pub use crate::types::_target_address::TargetAddressBuilder;
 
 pub use crate::types::_firewall_domain_list_metadata::FirewallDomainListMetadataBuilder;
+
+pub use crate::types::_firewall_rule_domain::FirewallRuleDomainBuilder;
 
 pub use crate::types::_firewall_rule_group_metadata::FirewallRuleGroupMetadataBuilder;
 

@@ -181,6 +181,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetWebIdentit
                 captured.insert("SigningAlgorithm", value);
             }
         }
+        if requested.should_capture("Scope") {
+            if let ::std::option::Option::Some(value) = input.scope.as_deref() {
+                captured.insert("Scope", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())

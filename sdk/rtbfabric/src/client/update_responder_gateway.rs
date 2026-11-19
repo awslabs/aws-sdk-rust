@@ -17,6 +17,7 @@ impl super::Client {
     ///   - [`gateway_id(String)`](crate::operation::update_responder_gateway::UpdateResponderGatewayOutput::gateway_id): <p>The unique identifier of the gateway.</p>
     ///   - [`status(ResponderGatewayStatus)`](crate::operation::update_responder_gateway::UpdateResponderGatewayOutput::status): <p>The status of the request.</p>
     ///   - [`client_routing_policy(Option<ClientRoutingPolicy>)`](crate::operation::update_responder_gateway::UpdateResponderGatewayOutput::client_routing_policy): <p>The client routing policy of the gateway. If the operation changed this policy, the gateway uses the new policy after its status returns to <code>ACTIVE</code>. For more information, see <a href="https://docs.aws.amazon.com/rtb-fabric/latest/userguide/working-with-responder-gateways.html#configuring-availability-zone-affinity">Configuring Availability Zone affinity</a> in the <i>Amazon Web Services RTB Fabric User Guide</i>.</p>
+    ///   - [`update_id(Option<String>)`](crate::operation::update_responder_gateway::UpdateResponderGatewayOutput::update_id): <p>The ID of the update this call started.</p>
     /// - On failure, responds with [`SdkError<UpdateResponderGatewayError>`](crate::operation::update_responder_gateway::UpdateResponderGatewayError)
     pub fn update_responder_gateway(&self) -> crate::operation::update_responder_gateway::builders::UpdateResponderGatewayFluentBuilder {
         crate::operation::update_responder_gateway::builders::UpdateResponderGatewayFluentBuilder::new(self.handle.clone())

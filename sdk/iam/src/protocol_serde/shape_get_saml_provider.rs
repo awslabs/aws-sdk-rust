@@ -137,8 +137,28 @@ pub fn de_get_saml_provider(
                 builder = builder.set_saml_metadata_document(var_2);
             }
             ,
-            s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam.synthetic#GetSAMLProviderOutput$CreateDate */ =>  {
+            s if s.matches("ContextProvider") /* ContextProvider com.amazonaws.iam.synthetic#GetSAMLProviderOutput$ContextProvider */ =>  {
                 let var_3 =
+                    Some(
+                        crate::protocol_serde::shape_context_provider::de_context_provider(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_context_provider(var_3);
+            }
+            ,
+            s if s.matches("SAMLKeyHashes") /* SAMLKeyHashes com.amazonaws.iam.synthetic#GetSAMLProviderOutput$SAMLKeyHashes */ =>  {
+                let var_4 =
+                    Some(
+                        crate::protocol_serde::shape_saml_key_hash_list_type::de_saml_key_hash_list_type(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_saml_key_hashes(var_4);
+            }
+            ,
+            s if s.matches("CreateDate") /* CreateDate com.amazonaws.iam.synthetic#GetSAMLProviderOutput$CreateDate */ =>  {
+                let var_5 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -148,11 +168,11 @@ pub fn de_get_saml_provider(
                         ?
                     )
                 ;
-                builder = builder.set_create_date(var_3);
+                builder = builder.set_create_date(var_5);
             }
             ,
             s if s.matches("ValidUntil") /* ValidUntil com.amazonaws.iam.synthetic#GetSAMLProviderOutput$ValidUntil */ =>  {
-                let var_4 =
+                let var_6 =
                     Some(
                         ::aws_smithy_types::DateTime::from_str(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -162,21 +182,21 @@ pub fn de_get_saml_provider(
                         ?
                     )
                 ;
-                builder = builder.set_valid_until(var_4);
+                builder = builder.set_valid_until(var_6);
             }
             ,
             s if s.matches("Tags") /* Tags com.amazonaws.iam.synthetic#GetSAMLProviderOutput$Tags */ =>  {
-                let var_5 =
+                let var_7 =
                     Some(
                         crate::protocol_serde::shape_tag_list_type::de_tag_list_type(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_tags(var_5);
+                builder = builder.set_tags(var_7);
             }
             ,
             s if s.matches("AssertionEncryptionMode") /* AssertionEncryptionMode com.amazonaws.iam.synthetic#GetSAMLProviderOutput$AssertionEncryptionMode */ =>  {
-                let var_6 =
+                let var_8 =
                     Some(
                         Result::<crate::types::AssertionEncryptionModeType, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             crate::types::AssertionEncryptionModeType::from(
@@ -186,17 +206,43 @@ pub fn de_get_saml_provider(
                         ?
                     )
                 ;
-                builder = builder.set_assertion_encryption_mode(var_6);
+                builder = builder.set_assertion_encryption_mode(var_8);
             }
             ,
             s if s.matches("PrivateKeyList") /* PrivateKeyList com.amazonaws.iam.synthetic#GetSAMLProviderOutput$PrivateKeyList */ =>  {
-                let var_7 =
+                let var_9 =
                     Some(
                         crate::protocol_serde::shape_private_key_list::de_private_key_list(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_private_key_list(var_7);
+                builder = builder.set_private_key_list(var_9);
+            }
+            ,
+            s if s.matches("IdentityCenterInstanceArn") /* IdentityCenterInstanceArn com.amazonaws.iam.synthetic#GetSAMLProviderOutput$IdentityCenterInstanceArn */ =>  {
+                let var_10 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_identity_center_instance_arn(var_10);
+            }
+            ,
+            s if s.matches("IdentityStoreArn") /* IdentityStoreArn com.amazonaws.iam.synthetic#GetSAMLProviderOutput$IdentityStoreArn */ =>  {
+                let var_11 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_identity_store_arn(var_11);
             }
             ,
             _ => {}

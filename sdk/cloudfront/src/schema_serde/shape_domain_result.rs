@@ -11,10 +11,20 @@ static DOMAINRESULT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_
     "Status",
     1,
 );
+static DOMAINRESULT_MEMBER_SERVE_ON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudfront#DomainResult$ServeOn",
+        "com.amazonaws.cloudfront",
+        "DomainResult",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServeOn",
+    2,
+);
 static DOMAINRESULT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudfront#DomainResult", "com.amazonaws.cloudfront", "DomainResult"),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&DOMAINRESULT_MEMBER_DOMAIN, &DOMAINRESULT_MEMBER_STATUS],
+    &[&DOMAINRESULT_MEMBER_DOMAIN, &DOMAINRESULT_MEMBER_STATUS, &DOMAINRESULT_MEMBER_SERVE_ON],
 );
 impl crate::types::DomainResult {
     /// The schema for this shape.
@@ -36,6 +46,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::DomainResu
         }
         if let Some(ref val) = self.status {
             ser.write_string(&DOMAINRESULT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.serve_on {
+            ser.write_string(&DOMAINRESULT_MEMBER_SERVE_ON, val.as_str())?;
         }
         Ok(())
     }
@@ -62,6 +75,13 @@ impl crate::types::builders::DomainResultBuilder {
                         deser.read_null()?;
                     } else {
                         self.status = Some(crate::types::DomainStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.serve_on = Some(crate::types::ServeOn::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}

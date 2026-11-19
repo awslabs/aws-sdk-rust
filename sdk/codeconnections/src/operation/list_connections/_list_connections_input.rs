@@ -3,23 +3,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConnectionsInput {
-    /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
-    pub provider_type_filter: ::std::option::Option<crate::types::ProviderType>,
     /// <p>Filters the list of connections to those associated with a specified host.</p>
     pub host_arn_filter: ::std::option::Option<::std::string::String>,
+    /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
+    pub provider_type_filter: ::std::option::Option<crate::types::ProviderType>,
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token that was returned from the previous <code>ListConnections</code> call, which can be used to return the next set of connections in the list.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListConnectionsInput {
-    /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
-    pub fn provider_type_filter(&self) -> ::std::option::Option<&crate::types::ProviderType> {
-        self.provider_type_filter.as_ref()
-    }
     /// <p>Filters the list of connections to those associated with a specified host.</p>
     pub fn host_arn_filter(&self) -> ::std::option::Option<&str> {
         self.host_arn_filter.as_deref()
+    }
+    /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
+    pub fn provider_type_filter(&self) -> ::std::option::Option<&crate::types::ProviderType> {
+        self.provider_type_filter.as_ref()
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -41,26 +41,12 @@ impl ListConnectionsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ListConnectionsInputBuilder {
-    pub(crate) provider_type_filter: ::std::option::Option<crate::types::ProviderType>,
     pub(crate) host_arn_filter: ::std::option::Option<::std::string::String>,
+    pub(crate) provider_type_filter: ::std::option::Option<crate::types::ProviderType>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListConnectionsInputBuilder {
-    /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
-    pub fn provider_type_filter(mut self, input: crate::types::ProviderType) -> Self {
-        self.provider_type_filter = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
-    pub fn set_provider_type_filter(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
-        self.provider_type_filter = input;
-        self
-    }
-    /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
-    pub fn get_provider_type_filter(&self) -> &::std::option::Option<crate::types::ProviderType> {
-        &self.provider_type_filter
-    }
     /// <p>Filters the list of connections to those associated with a specified host.</p>
     pub fn host_arn_filter(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.host_arn_filter = ::std::option::Option::Some(input.into());
@@ -74,6 +60,20 @@ impl ListConnectionsInputBuilder {
     /// <p>Filters the list of connections to those associated with a specified host.</p>
     pub fn get_host_arn_filter(&self) -> &::std::option::Option<::std::string::String> {
         &self.host_arn_filter
+    }
+    /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
+    pub fn provider_type_filter(mut self, input: crate::types::ProviderType) -> Self {
+        self.provider_type_filter = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
+    pub fn set_provider_type_filter(mut self, input: ::std::option::Option<crate::types::ProviderType>) -> Self {
+        self.provider_type_filter = input;
+        self
+    }
+    /// <p>Filters the list of connections to those associated with a specified provider, such as Bitbucket.</p>
+    pub fn get_provider_type_filter(&self) -> &::std::option::Option<crate::types::ProviderType> {
+        &self.provider_type_filter
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -108,8 +108,8 @@ impl ListConnectionsInputBuilder {
         self,
     ) -> ::std::result::Result<crate::operation::list_connections::ListConnectionsInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_connections::ListConnectionsInput {
-            provider_type_filter: self.provider_type_filter,
             host_arn_filter: self.host_arn_filter,
+            provider_type_filter: self.provider_type_filter,
             max_results: self.max_results,
             next_token: self.next_token,
         })

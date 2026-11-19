@@ -19,6 +19,10 @@ pub struct GetCodeSecurityIntegrationOutput {
     pub last_update_on: ::aws_smithy_types::DateTime,
     /// <p>The URL used to authorize the integration with the repository provider. This is only returned if reauthorization is required to fix a connection issue. Otherwise, it is null.</p>
     pub authorization_url: ::std::option::Option<::std::string::String>,
+    /// <p>The VPC configuration associated with the integration, if it connects to a repository provider in a private network.</p>
+    pub vpc_configuration: ::std::option::Option<crate::types::CodeSecurityIntegrationVpcConfiguration>,
+    /// <p>The URL of the self-managed GitLab or GitHub Enterprise Server instance associated with the integration.</p>
+    pub instance_url: ::std::option::Option<::std::string::String>,
     /// <p>The tags associated with the code security integration.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
@@ -59,6 +63,14 @@ impl GetCodeSecurityIntegrationOutput {
     pub fn authorization_url(&self) -> ::std::option::Option<&str> {
         self.authorization_url.as_deref()
     }
+    /// <p>The VPC configuration associated with the integration, if it connects to a repository provider in a private network.</p>
+    pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::CodeSecurityIntegrationVpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
+    /// <p>The URL of the self-managed GitLab or GitHub Enterprise Server instance associated with the integration.</p>
+    pub fn instance_url(&self) -> ::std::option::Option<&str> {
+        self.instance_url.as_deref()
+    }
     /// <p>The tags associated with the code security integration.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -75,6 +87,8 @@ impl ::std::fmt::Debug for GetCodeSecurityIntegrationOutput {
         formatter.field("created_on", &self.created_on);
         formatter.field("last_update_on", &self.last_update_on);
         formatter.field("authorization_url", &"*** Sensitive Data Redacted ***");
+        formatter.field("vpc_configuration", &self.vpc_configuration);
+        formatter.field("instance_url", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
@@ -104,6 +118,8 @@ pub struct GetCodeSecurityIntegrationOutputBuilder {
     pub(crate) created_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_update_on: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) authorization_url: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_configuration: ::std::option::Option<crate::types::CodeSecurityIntegrationVpcConfiguration>,
+    pub(crate) instance_url: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
@@ -227,6 +243,34 @@ impl GetCodeSecurityIntegrationOutputBuilder {
     pub fn get_authorization_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.authorization_url
     }
+    /// <p>The VPC configuration associated with the integration, if it connects to a repository provider in a private network.</p>
+    pub fn vpc_configuration(mut self, input: crate::types::CodeSecurityIntegrationVpcConfiguration) -> Self {
+        self.vpc_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The VPC configuration associated with the integration, if it connects to a repository provider in a private network.</p>
+    pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::CodeSecurityIntegrationVpcConfiguration>) -> Self {
+        self.vpc_configuration = input;
+        self
+    }
+    /// <p>The VPC configuration associated with the integration, if it connects to a repository provider in a private network.</p>
+    pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::CodeSecurityIntegrationVpcConfiguration> {
+        &self.vpc_configuration
+    }
+    /// <p>The URL of the self-managed GitLab or GitHub Enterprise Server instance associated with the integration.</p>
+    pub fn instance_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.instance_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The URL of the self-managed GitLab or GitHub Enterprise Server instance associated with the integration.</p>
+    pub fn set_instance_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.instance_url = input;
+        self
+    }
+    /// <p>The URL of the self-managed GitLab or GitHub Enterprise Server instance associated with the integration.</p>
+    pub fn get_instance_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.instance_url
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -315,6 +359,8 @@ impl GetCodeSecurityIntegrationOutputBuilder {
                 )
             })?,
             authorization_url: self.authorization_url,
+            vpc_configuration: self.vpc_configuration,
+            instance_url: self.instance_url,
             tags: self.tags,
             _request_id: self._request_id,
         })
@@ -331,6 +377,8 @@ impl ::std::fmt::Debug for GetCodeSecurityIntegrationOutputBuilder {
         formatter.field("created_on", &self.created_on);
         formatter.field("last_update_on", &self.last_update_on);
         formatter.field("authorization_url", &"*** Sensitive Data Redacted ***");
+        formatter.field("vpc_configuration", &self.vpc_configuration);
+        formatter.field("instance_url", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()

@@ -5,10 +5,16 @@ static DOMAINITEM_MEMBER_DOMAIN: ::aws_smithy_schema::Schema<'static> = ::aws_sm
     "Domain",
     0,
 );
+static DOMAINITEM_MEMBER_SERVE_ON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudfront#DomainItem$ServeOn", "com.amazonaws.cloudfront", "DomainItem"),
+    ::aws_smithy_schema::ShapeType::String,
+    "ServeOn",
+    1,
+);
 static DOMAINITEM_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudfront#DomainItem", "com.amazonaws.cloudfront", "DomainItem"),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&DOMAINITEM_MEMBER_DOMAIN],
+    &[&DOMAINITEM_MEMBER_DOMAIN, &DOMAINITEM_MEMBER_SERVE_ON],
 );
 impl crate::types::DomainItem {
     /// The schema for this shape.
@@ -27,6 +33,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::DomainItem
         {
             let val = &self.domain;
             ser.write_string(&DOMAINITEM_MEMBER_DOMAIN, val)?;
+        }
+        if let Some(ref val) = self.serve_on {
+            ser.write_string(&DOMAINITEM_MEMBER_SERVE_ON, val.as_str())?;
         }
         Ok(())
     }
@@ -47,6 +56,13 @@ impl crate::types::builders::DomainItemBuilder {
             match member.member_index() {
                 Some(0) => {
                     self.domain = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.serve_on = Some(crate::types::ServeOn::from(deser.read_string(member)?.as_str()));
+                    }
                 }
                 _ => {}
             }

@@ -59,6 +59,10 @@ pub(crate) mod shape_get_federation_token;
 
 pub(crate) mod shape_get_federation_token_input;
 
+pub(crate) mod shape_get_scoped_credentials;
+
+pub(crate) mod shape_get_scoped_credentials_input;
+
 pub(crate) mod shape_get_session_token;
 
 pub(crate) mod shape_get_session_token_input;
@@ -75,9 +79,15 @@ pub(crate) mod shape_idp_communication_error_exception;
 
 pub(crate) mod shape_idp_rejected_claim_exception;
 
+pub(crate) mod shape_insufficient_session_lifetime_exception;
+
 pub(crate) mod shape_invalid_authorization_message_exception;
 
+pub(crate) mod shape_invalid_context_assertion_exception;
+
 pub(crate) mod shape_invalid_identity_token_exception;
+
+pub(crate) mod shape_invalid_subject_credentials_exception;
 
 pub(crate) mod shape_jwt_payload_size_exceeded_exception;
 
@@ -102,3 +112,13 @@ pub(crate) mod shape_assumed_role_user;
 pub(crate) mod shape_credentials;
 
 pub(crate) mod shape_federated_user;
+
+pub(crate) mod shape_scoped_session;
+
+pub(crate) mod shape_trusted_identity_propagation_context;
+
+pub(crate) mod shape_origin_identity;
+
+pub(crate) mod shape_transaction_context;
+
+pub(crate) mod shape_transaction_context_identity_provider_map_type;

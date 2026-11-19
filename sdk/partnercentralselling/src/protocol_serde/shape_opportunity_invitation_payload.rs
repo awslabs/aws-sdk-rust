@@ -51,6 +51,13 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "OpportunityType" => {
+                            builder = builder.set_opportunity_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::OpportunityType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -108,6 +115,9 @@ pub fn ser_opportunity_invitation_payload(
         let mut object_10 = object.key("Project").start_object();
         crate::protocol_serde::shape_project_details::ser_project_details(&mut object_10, var_9)?;
         object_10.finish();
+    }
+    if let Some(var_11) = &input.opportunity_type {
+        object.key("OpportunityType").string(var_11.as_str());
     }
     Ok(())
 }

@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the only supported resource is an Amazon Polly lexicon.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. You can tag Amazon Polly lexicons and custom voices.</p>
     pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags to add to the resource, as key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the only supported resource is an Amazon Polly lexicon.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. You can tag Amazon Polly lexicons and custom voices.</p>
     pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
@@ -33,18 +33,18 @@ pub struct TagResourceInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TagResourceInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the only supported resource is an Amazon Polly lexicon.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. You can tag Amazon Polly lexicons and custom voices.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the only supported resource is an Amazon Polly lexicon.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. You can tag Amazon Polly lexicons and custom voices.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the resource to which to add tags. Currently, the only supported resource is an Amazon Polly lexicon.</p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to add tags to. You can tag Amazon Polly lexicons and custom voices.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }

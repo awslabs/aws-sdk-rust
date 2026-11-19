@@ -13,6 +13,10 @@ pub fn ser_event_source_configuration(
             encoder.str("PartnerEventsConfiguration");
             crate::protocol_serde::shape_partner_events_source_configuration::ser_partner_events_source_configuration(encoder, inner)?;
         }
+        crate::types::EventSourceConfiguration::WebhookEventsConfiguration(inner) => {
+            encoder.str("WebhookEventsConfiguration");
+            crate::protocol_serde::shape_webhook_events_source_configuration::ser_webhook_events_source_configuration(encoder, inner)?;
+        }
         crate::types::EventSourceConfiguration::Unknown => {
             return ::std::result::Result::Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "EventSourceConfiguration",
@@ -44,6 +48,9 @@ pub(crate) fn de_event_source_configuration(
             ),
             "PartnerEventsConfiguration" => crate::types::EventSourceConfiguration::PartnerEventsConfiguration(
                 crate::protocol_serde::shape_partner_events_source_configuration::de_partner_events_source_configuration(decoder, depth + 1)?,
+            ),
+            "WebhookEventsConfiguration" => crate::types::EventSourceConfiguration::WebhookEventsConfiguration(
+                crate::protocol_serde::shape_webhook_events_source_configuration::de_webhook_events_source_configuration(decoder, depth + 1)?,
             ),
             _ => {
                 decoder.skip()?;

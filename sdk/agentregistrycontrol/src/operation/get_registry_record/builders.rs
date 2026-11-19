@@ -22,7 +22,7 @@ impl crate::operation::get_registry_record::builders::GetRegistryRecordInputBuil
 }
 /// Fluent builder constructing a request to `GetRegistryRecord`.
 ///
-/// <p>Retrieves the details of a registry record</p>
+/// <p>Retrieves the details of a registry record. The response describes the record's latest revision, including a revision that isn't approved yet. For a skill record, the operation also returns the skill package in <code>artifact</code> and the source that the registry last synchronized the skill from in <code>synchronizedSource</code>.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct GetRegistryRecordFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

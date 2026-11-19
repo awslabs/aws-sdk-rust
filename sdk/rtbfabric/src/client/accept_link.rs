@@ -20,6 +20,7 @@ impl super::Client {
     ///   - [`attributes(Option<LinkAttributes>)`](crate::operation::accept_link::AcceptLinkOutput::attributes): <p>Attributes of the link.</p>
     ///   - [`log_settings(Option<LinkLogSettings>)`](crate::operation::accept_link::AcceptLinkOutput::log_settings): <p>Describes the settings for a link log.</p>
     ///   - [`connectivity_type(Option<ConnectivityType>)`](crate::operation::accept_link::AcceptLinkOutput::connectivity_type): <p>The connectivity type of the link.</p>
+    ///   - [`error_details(Option<Vec::<ErrorDetail>>)`](crate::operation::accept_link::AcceptLinkOutput::error_details): <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
     ///   - [`link_id(String)`](crate::operation::accept_link::AcceptLinkOutput::link_id): <p>The unique identifier of the link.</p>
     /// - On failure, responds with [`SdkError<AcceptLinkError>`](crate::operation::accept_link::AcceptLinkError)
     pub fn accept_link(&self) -> crate::operation::accept_link::builders::AcceptLinkFluentBuilder {

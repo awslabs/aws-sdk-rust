@@ -18,6 +18,10 @@
 ///     FileUseCaseType::EmailMessagePlainText => { /* ... */ },
 ///     FileUseCaseType::EmailMessagePlainTextRedacted => { /* ... */ },
 ///     FileUseCaseType::EmailMessageRedacted => { /* ... */ },
+///     FileUseCaseType::VoicemailAnalysis => { /* ... */ },
+///     FileUseCaseType::VoicemailAnalysisRedacted => { /* ... */ },
+///     FileUseCaseType::VoicemailRecording => { /* ... */ },
+///     FileUseCaseType::VoicemailRecordingRedacted => { /* ... */ },
 ///     FileUseCaseType::VoiceRecording => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -60,6 +64,14 @@ pub enum FileUseCaseType {
     #[allow(missing_docs)] // documentation missing in model
     EmailMessageRedacted,
     #[allow(missing_docs)] // documentation missing in model
+    VoicemailAnalysis,
+    #[allow(missing_docs)] // documentation missing in model
+    VoicemailAnalysisRedacted,
+    #[allow(missing_docs)] // documentation missing in model
+    VoicemailRecording,
+    #[allow(missing_docs)] // documentation missing in model
+    VoicemailRecordingRedacted,
+    #[allow(missing_docs)] // documentation missing in model
     VoiceRecording,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -74,6 +86,10 @@ impl ::std::convert::From<&str> for FileUseCaseType {
             "EMAIL_MESSAGE_PLAIN_TEXT" => FileUseCaseType::EmailMessagePlainText,
             "EMAIL_MESSAGE_PLAIN_TEXT_REDACTED" => FileUseCaseType::EmailMessagePlainTextRedacted,
             "EMAIL_MESSAGE_REDACTED" => FileUseCaseType::EmailMessageRedacted,
+            "VOICEMAIL_ANALYSIS" => FileUseCaseType::VoicemailAnalysis,
+            "VOICEMAIL_ANALYSIS_REDACTED" => FileUseCaseType::VoicemailAnalysisRedacted,
+            "VOICEMAIL_RECORDING" => FileUseCaseType::VoicemailRecording,
+            "VOICEMAIL_RECORDING_REDACTED" => FileUseCaseType::VoicemailRecordingRedacted,
             "VOICE_RECORDING" => FileUseCaseType::VoiceRecording,
             other => FileUseCaseType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -96,6 +112,10 @@ impl FileUseCaseType {
             FileUseCaseType::EmailMessagePlainText => "EMAIL_MESSAGE_PLAIN_TEXT",
             FileUseCaseType::EmailMessagePlainTextRedacted => "EMAIL_MESSAGE_PLAIN_TEXT_REDACTED",
             FileUseCaseType::EmailMessageRedacted => "EMAIL_MESSAGE_REDACTED",
+            FileUseCaseType::VoicemailAnalysis => "VOICEMAIL_ANALYSIS",
+            FileUseCaseType::VoicemailAnalysisRedacted => "VOICEMAIL_ANALYSIS_REDACTED",
+            FileUseCaseType::VoicemailRecording => "VOICEMAIL_RECORDING",
+            FileUseCaseType::VoicemailRecordingRedacted => "VOICEMAIL_RECORDING_REDACTED",
             FileUseCaseType::VoiceRecording => "VOICE_RECORDING",
             FileUseCaseType::Unknown(value) => value.as_str(),
         }
@@ -109,6 +129,10 @@ impl FileUseCaseType {
             "EMAIL_MESSAGE_PLAIN_TEXT",
             "EMAIL_MESSAGE_PLAIN_TEXT_REDACTED",
             "EMAIL_MESSAGE_REDACTED",
+            "VOICEMAIL_ANALYSIS",
+            "VOICEMAIL_ANALYSIS_REDACTED",
+            "VOICEMAIL_RECORDING",
+            "VOICEMAIL_RECORDING_REDACTED",
             "VOICE_RECORDING",
         ]
     }
@@ -139,6 +163,10 @@ impl ::std::fmt::Display for FileUseCaseType {
             FileUseCaseType::EmailMessagePlainText => write!(f, "EMAIL_MESSAGE_PLAIN_TEXT"),
             FileUseCaseType::EmailMessagePlainTextRedacted => write!(f, "EMAIL_MESSAGE_PLAIN_TEXT_REDACTED"),
             FileUseCaseType::EmailMessageRedacted => write!(f, "EMAIL_MESSAGE_REDACTED"),
+            FileUseCaseType::VoicemailAnalysis => write!(f, "VOICEMAIL_ANALYSIS"),
+            FileUseCaseType::VoicemailAnalysisRedacted => write!(f, "VOICEMAIL_ANALYSIS_REDACTED"),
+            FileUseCaseType::VoicemailRecording => write!(f, "VOICEMAIL_RECORDING"),
+            FileUseCaseType::VoicemailRecordingRedacted => write!(f, "VOICEMAIL_RECORDING_REDACTED"),
             FileUseCaseType::VoiceRecording => write!(f, "VOICE_RECORDING"),
             FileUseCaseType::Unknown(value) => write!(f, "{value}"),
         }

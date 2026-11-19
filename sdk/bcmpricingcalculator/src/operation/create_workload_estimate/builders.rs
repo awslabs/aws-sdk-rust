@@ -136,17 +136,17 @@ impl CreateWorkloadEstimateFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The type of pricing rates to use for the estimate.</p>
+    /// <p>The type of pricing rates for the estimate. You can only use a rate type that your Pricing Calculator rate preferences allow. If you use billing transfer as a bill source account, you can only use BEFORE_DISCOUNTS.</p>
     pub fn rate_type(mut self, input: crate::types::WorkloadEstimateRateType) -> Self {
         self.inner = self.inner.rate_type(input);
         self
     }
-    /// <p>The type of pricing rates to use for the estimate.</p>
+    /// <p>The type of pricing rates for the estimate. You can only use a rate type that your Pricing Calculator rate preferences allow. If you use billing transfer as a bill source account, you can only use BEFORE_DISCOUNTS.</p>
     pub fn set_rate_type(mut self, input: ::std::option::Option<crate::types::WorkloadEstimateRateType>) -> Self {
         self.inner = self.inner.set_rate_type(input);
         self
     }
-    /// <p>The type of pricing rates to use for the estimate.</p>
+    /// <p>The type of pricing rates for the estimate. You can only use a rate type that your Pricing Calculator rate preferences allow. If you use billing transfer as a bill source account, you can only use BEFORE_DISCOUNTS.</p>
     pub fn get_rate_type(&self) -> &::std::option::Option<crate::types::WorkloadEstimateRateType> {
         self.inner.get_rate_type()
     }

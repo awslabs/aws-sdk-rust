@@ -10,6 +10,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::get_requester_gateway::GetRequesterGatewayOutput::description): <p>The description of the requester gateway.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_requester_gateway::GetRequesterGatewayOutput::created_at): <p>The timestamp of when the requester gateway was created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_requester_gateway::GetRequesterGatewayOutput::updated_at): <p>The timestamp of when the requester gateway was updated.</p>
+    ///   - [`error_details(Option<Vec::<ErrorDetail>>)`](crate::operation::get_requester_gateway::GetRequesterGatewayOutput::error_details): <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
     ///   - [`vpc_id(String)`](crate::operation::get_requester_gateway::GetRequesterGatewayOutput::vpc_id): <p>The unique identifier of the Virtual Private Cloud (VPC).</p>
     ///   - [`subnet_ids(Vec::<String>)`](crate::operation::get_requester_gateway::GetRequesterGatewayOutput::subnet_ids): <p>The unique identifiers of the subnets.</p>
     ///   - [`security_group_ids(Vec::<String>)`](crate::operation::get_requester_gateway::GetRequesterGatewayOutput::security_group_ids): <p>The unique identifiers of the security groups.</p>

@@ -9,9 +9,26 @@ pub(crate) fn reflens_list_discoverable_registry_records_output_output_next_toke
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_search_discoverable_registry_records_output_output_next_token(
+    input: &crate::operation::search_discoverable_registry_records::SearchDiscoverableRegistryRecordsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_discoverable_registry_records_output_output_registry_records(
     input: crate::operation::list_discoverable_registry_records::ListDiscoverableRegistryRecordsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::DiscoverableRegistryRecordSummary>> {
+    let input = input.registry_records;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_search_discoverable_registry_records_output_output_registry_records(
+    input: crate::operation::search_discoverable_registry_records::SearchDiscoverableRegistryRecordsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::RegistryRecordSummary>> {
     let input = input.registry_records;
     ::std::option::Option::Some(input)
 }

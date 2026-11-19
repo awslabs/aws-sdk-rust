@@ -42,9 +42,9 @@
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum PointType {
-    /// Start from the earliest available event.
+    /// <p>Start from the earliest available event.</p>
     Horizon,
-    /// Start from a specific timestamp.
+    /// <p>Start from a specific timestamp.</p>
     Timestamp,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

@@ -12,6 +12,7 @@
 /// ```text
 /// # let engagementcontexttype = unimplemented!();
 /// match engagementcontexttype {
+///     EngagementContextType::CustomerAccount => { /* ... */ },
 ///     EngagementContextType::CustomerProject => { /* ... */ },
 ///     EngagementContextType::Lead => { /* ... */ },
 ///     EngagementContextType::ProspectingResult => { /* ... */ },
@@ -37,12 +38,14 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The type of an engagement context. Valid values are <code>CustomerProject</code>, <code>Lead</code>, <code>ProspectingResult</code>, and <code>CustomerAccount</code>.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum EngagementContextType {
+    #[allow(missing_docs)] // documentation missing in model
+    CustomerAccount,
     #[allow(missing_docs)] // documentation missing in model
     CustomerProject,
     #[allow(missing_docs)] // documentation missing in model
@@ -56,6 +59,7 @@ pub enum EngagementContextType {
 impl ::std::convert::From<&str> for EngagementContextType {
     fn from(s: &str) -> Self {
         match s {
+            "CustomerAccount" => EngagementContextType::CustomerAccount,
             "CustomerProject" => EngagementContextType::CustomerProject,
             "Lead" => EngagementContextType::Lead,
             "ProspectingResult" => EngagementContextType::ProspectingResult,
@@ -74,6 +78,7 @@ impl EngagementContextType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            EngagementContextType::CustomerAccount => "CustomerAccount",
             EngagementContextType::CustomerProject => "CustomerProject",
             EngagementContextType::Lead => "Lead",
             EngagementContextType::ProspectingResult => "ProspectingResult",
@@ -82,7 +87,7 @@ impl EngagementContextType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CustomerProject", "Lead", "ProspectingResult"]
+        &["CustomerAccount", "CustomerProject", "Lead", "ProspectingResult"]
     }
 }
 impl ::std::convert::AsRef<str> for EngagementContextType {
@@ -105,6 +110,7 @@ impl EngagementContextType {
 impl ::std::fmt::Display for EngagementContextType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            EngagementContextType::CustomerAccount => write!(f, "CustomerAccount"),
             EngagementContextType::CustomerProject => write!(f, "CustomerProject"),
             EngagementContextType::Lead => write!(f, "Lead"),
             EngagementContextType::ProspectingResult => write!(f, "ProspectingResult"),

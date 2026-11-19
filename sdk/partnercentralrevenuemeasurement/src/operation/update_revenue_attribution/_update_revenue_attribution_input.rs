@@ -13,6 +13,8 @@ pub struct UpdateRevenueAttributionInput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The current revision of the revenue attribution. Must match the server's current value.</p>
     pub revision: ::std::option::Option<::std::string::String>,
+    /// <p>Full-replacement context map. Omit to leave the stored context unchanged; pass an empty map to clear it.</p>
+    pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateRevenueAttributionInput {
     /// <p>The catalog that the revenue attribution belongs to.</p>
@@ -35,6 +37,10 @@ impl UpdateRevenueAttributionInput {
     pub fn revision(&self) -> ::std::option::Option<&str> {
         self.revision.as_deref()
     }
+    /// <p>Full-replacement context map. Omit to leave the stored context unchanged; pass an empty map to clear it.</p>
+    pub fn context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.context.as_ref()
+    }
 }
 impl UpdateRevenueAttributionInput {
     /// Creates a new builder-style object to manufacture [`UpdateRevenueAttributionInput`](crate::operation::update_revenue_attribution::UpdateRevenueAttributionInput).
@@ -52,6 +58,7 @@ pub struct UpdateRevenueAttributionInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) revision: ::std::option::Option<::std::string::String>,
+    pub(crate) context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl UpdateRevenueAttributionInputBuilder {
     /// <p>The catalog that the revenue attribution belongs to.</p>
@@ -127,6 +134,26 @@ impl UpdateRevenueAttributionInputBuilder {
     pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision
     }
+    /// Adds a key-value pair to `context`.
+    ///
+    /// To override the contents of this collection use [`set_context`](Self::set_context).
+    ///
+    /// <p>Full-replacement context map. Omit to leave the stored context unchanged; pass an empty map to clear it.</p>
+    pub fn context(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.context.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.context = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Full-replacement context map. Omit to leave the stored context unchanged; pass an empty map to clear it.</p>
+    pub fn set_context(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.context = input;
+        self
+    }
+    /// <p>Full-replacement context map. Omit to leave the stored context unchanged; pass an empty map to clear it.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.context
+    }
     /// Consumes the builder and constructs a [`UpdateRevenueAttributionInput`](crate::operation::update_revenue_attribution::UpdateRevenueAttributionInput).
     pub fn build(
         self,
@@ -140,6 +167,7 @@ impl UpdateRevenueAttributionInputBuilder {
             client_token: self.client_token,
             description: self.description,
             revision: self.revision,
+            context: self.context,
         })
     }
 }

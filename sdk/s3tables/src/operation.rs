@@ -40,6 +40,9 @@ pub mod delete_table_policy;
 /// Types for the `DeleteTableReplication` operation.
 pub mod delete_table_replication;
 
+/// Types for the `DisassociateTableReplication` operation.
+pub mod disassociate_table_replication;
+
 /// Types for the `GetNamespace` operation.
 pub mod get_namespace;
 

@@ -14,7 +14,9 @@
 /// match linkstatus {
 ///     LinkStatus::Accepted => { /* ... */ },
 ///     LinkStatus::Active => { /* ... */ },
+///     LinkStatus::CreateFailed => { /* ... */ },
 ///     LinkStatus::Deleted => { /* ... */ },
+///     LinkStatus::DeleteFailed => { /* ... */ },
 ///     LinkStatus::Failed => { /* ... */ },
 ///     LinkStatus::Isolated => { /* ... */ },
 ///     LinkStatus::PendingCreation => { /* ... */ },
@@ -58,7 +60,11 @@ pub enum LinkStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
+    CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
+    DeleteFailed,
     #[allow(missing_docs)] // documentation missing in model
     Failed,
     #[allow(missing_docs)] // documentation missing in model
@@ -88,7 +94,9 @@ impl ::std::convert::From<&str> for LinkStatus {
         match s {
             "ACCEPTED" => LinkStatus::Accepted,
             "ACTIVE" => LinkStatus::Active,
+            "CREATE_FAILED" => LinkStatus::CreateFailed,
             "DELETED" => LinkStatus::Deleted,
+            "DELETE_FAILED" => LinkStatus::DeleteFailed,
             "FAILED" => LinkStatus::Failed,
             "ISOLATED" => LinkStatus::Isolated,
             "PENDING_CREATION" => LinkStatus::PendingCreation,
@@ -116,7 +124,9 @@ impl LinkStatus {
         match self {
             LinkStatus::Accepted => "ACCEPTED",
             LinkStatus::Active => "ACTIVE",
+            LinkStatus::CreateFailed => "CREATE_FAILED",
             LinkStatus::Deleted => "DELETED",
+            LinkStatus::DeleteFailed => "DELETE_FAILED",
             LinkStatus::Failed => "FAILED",
             LinkStatus::Isolated => "ISOLATED",
             LinkStatus::PendingCreation => "PENDING_CREATION",
@@ -135,7 +145,9 @@ impl LinkStatus {
         &[
             "ACCEPTED",
             "ACTIVE",
+            "CREATE_FAILED",
             "DELETED",
+            "DELETE_FAILED",
             "FAILED",
             "ISOLATED",
             "PENDING_CREATION",
@@ -171,7 +183,9 @@ impl ::std::fmt::Display for LinkStatus {
         match self {
             LinkStatus::Accepted => write!(f, "ACCEPTED"),
             LinkStatus::Active => write!(f, "ACTIVE"),
+            LinkStatus::CreateFailed => write!(f, "CREATE_FAILED"),
             LinkStatus::Deleted => write!(f, "DELETED"),
+            LinkStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             LinkStatus::Failed => write!(f, "FAILED"),
             LinkStatus::Isolated => write!(f, "ISOLATED"),
             LinkStatus::PendingCreation => write!(f, "PENDING_CREATION"),

@@ -61,6 +61,9 @@ pub mod put_resource_policy;
 /// Types for the `RevokeResource` operation.
 pub mod revoke_resource;
 
+/// Types for the `RotateWebhookCredentials` operation.
+pub mod rotate_webhook_credentials;
+
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 

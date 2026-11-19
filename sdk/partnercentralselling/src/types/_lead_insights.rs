@@ -6,11 +6,17 @@
 pub struct LeadInsights {
     /// <p>A score that indicates the lead's readiness for engagement. Valid values are <code>Low</code>, <code>Medium</code>, and <code>High</code>. Use this score to prioritize leads based on their likelihood of conversion.</p>
     pub lead_readiness_score: ::std::option::Option<::std::string::String>,
+    /// <p>The outreach channel most commonly recommended for leads that share this lead's country, geography, region, and company segment. It includes the days and the Coordinated Universal Time (UTC) hours when that channel is best used. This is guidance for the group of similar leads. It doesn't describe this lead's own contact history. Present only when a recommendation is available for the lead.</p>
+    pub channel_recommendation: ::std::option::Option<crate::types::ChannelRecommendation>,
 }
 impl LeadInsights {
     /// <p>A score that indicates the lead's readiness for engagement. Valid values are <code>Low</code>, <code>Medium</code>, and <code>High</code>. Use this score to prioritize leads based on their likelihood of conversion.</p>
     pub fn lead_readiness_score(&self) -> ::std::option::Option<&str> {
         self.lead_readiness_score.as_deref()
+    }
+    /// <p>The outreach channel most commonly recommended for leads that share this lead's country, geography, region, and company segment. It includes the days and the Coordinated Universal Time (UTC) hours when that channel is best used. This is guidance for the group of similar leads. It doesn't describe this lead's own contact history. Present only when a recommendation is available for the lead.</p>
+    pub fn channel_recommendation(&self) -> ::std::option::Option<&crate::types::ChannelRecommendation> {
+        self.channel_recommendation.as_ref()
     }
 }
 impl LeadInsights {
@@ -25,6 +31,7 @@ impl LeadInsights {
 #[non_exhaustive]
 pub struct LeadInsightsBuilder {
     pub(crate) lead_readiness_score: ::std::option::Option<::std::string::String>,
+    pub(crate) channel_recommendation: ::std::option::Option<crate::types::ChannelRecommendation>,
 }
 impl LeadInsightsBuilder {
     /// <p>A score that indicates the lead's readiness for engagement. Valid values are <code>Low</code>, <code>Medium</code>, and <code>High</code>. Use this score to prioritize leads based on their likelihood of conversion.</p>
@@ -41,10 +48,25 @@ impl LeadInsightsBuilder {
     pub fn get_lead_readiness_score(&self) -> &::std::option::Option<::std::string::String> {
         &self.lead_readiness_score
     }
+    /// <p>The outreach channel most commonly recommended for leads that share this lead's country, geography, region, and company segment. It includes the days and the Coordinated Universal Time (UTC) hours when that channel is best used. This is guidance for the group of similar leads. It doesn't describe this lead's own contact history. Present only when a recommendation is available for the lead.</p>
+    pub fn channel_recommendation(mut self, input: crate::types::ChannelRecommendation) -> Self {
+        self.channel_recommendation = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The outreach channel most commonly recommended for leads that share this lead's country, geography, region, and company segment. It includes the days and the Coordinated Universal Time (UTC) hours when that channel is best used. This is guidance for the group of similar leads. It doesn't describe this lead's own contact history. Present only when a recommendation is available for the lead.</p>
+    pub fn set_channel_recommendation(mut self, input: ::std::option::Option<crate::types::ChannelRecommendation>) -> Self {
+        self.channel_recommendation = input;
+        self
+    }
+    /// <p>The outreach channel most commonly recommended for leads that share this lead's country, geography, region, and company segment. It includes the days and the Coordinated Universal Time (UTC) hours when that channel is best used. This is guidance for the group of similar leads. It doesn't describe this lead's own contact history. Present only when a recommendation is available for the lead.</p>
+    pub fn get_channel_recommendation(&self) -> &::std::option::Option<crate::types::ChannelRecommendation> {
+        &self.channel_recommendation
+    }
     /// Consumes the builder and constructs a [`LeadInsights`](crate::types::LeadInsights).
     pub fn build(self) -> crate::types::LeadInsights {
         crate::types::LeadInsights {
             lead_readiness_score: self.lead_readiness_score,
+            channel_recommendation: self.channel_recommendation,
         }
     }
 }

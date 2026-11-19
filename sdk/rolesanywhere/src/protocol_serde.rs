@@ -147,6 +147,8 @@ pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_list;
 
+pub(crate) mod shape_tip_configuration;
+
 pub(crate) mod shape_trust_anchor_detail;
 
 pub(crate) mod shape_trust_anchor_details;

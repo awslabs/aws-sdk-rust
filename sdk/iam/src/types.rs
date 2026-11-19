@@ -11,6 +11,8 @@ pub use crate::types::_instance_profile::InstanceProfile;
 
 pub use crate::types::_login_profile::LoginProfile;
 
+pub use crate::types::_context_provider::ContextProvider;
+
 pub use crate::types::_policy::Policy;
 
 pub use crate::types::_policy_version::PolicyVersion;
@@ -103,6 +105,8 @@ pub use crate::types::_access_detail::AccessDetail;
 
 pub use crate::types::_managed_by_type_type::ManagedByTypeType;
 
+pub use crate::types::_saml_key_hash_entry::SamlKeyHashEntry;
+
 pub use crate::types::_saml_private_key::SamlPrivateKey;
 
 pub use crate::types::_service_last_accessed::ServiceLastAccessed;
@@ -142,6 +146,8 @@ pub use crate::types::_policy_identifier::PolicyIdentifier;
 pub use crate::types::_permissions_boundary_attachment_type::PermissionsBoundaryAttachmentType;
 
 pub use crate::types::_policy_parameter::PolicyParameter;
+
+pub use crate::types::_context_provider_key_definition::ContextProviderKeyDefinition;
 
 pub use crate::types::_inline_policy::InlinePolicy;
 
@@ -212,6 +218,10 @@ mod _attachment_type;
 mod _context_entry;
 
 mod _context_key_type_enum;
+
+mod _context_provider;
+
+mod _context_provider_key_definition;
 
 mod _delegation_permission;
 
@@ -332,6 +342,8 @@ mod _role_last_used;
 mod _role_template_version;
 
 mod _role_usage_type;
+
+mod _saml_key_hash_entry;
 
 mod _saml_private_key;
 

@@ -26,6 +26,8 @@ pub struct ConnectionGroupSummary {
     pub status: ::std::option::Option<::std::string::String>,
     /// <p>Whether the connection group is the default connection group for the distribution tenants.</p>
     pub is_default: ::std::option::Option<bool>,
+    /// <p>The distribution whose certificate CloudFront uses for viewer requests that arrive on the connection group's Anycast static IPs without Server Name Indication (SNI).</p>
+    pub viewer_fallback: ::std::option::Option<crate::types::ViewerFallback>,
 }
 impl ConnectionGroupSummary {
     /// <p>The ID of the connection group.</p>
@@ -77,6 +79,10 @@ impl ConnectionGroupSummary {
     pub fn is_default(&self) -> ::std::option::Option<bool> {
         self.is_default
     }
+    /// <p>The distribution whose certificate CloudFront uses for viewer requests that arrive on the connection group's Anycast static IPs without Server Name Indication (SNI).</p>
+    pub fn viewer_fallback(&self) -> ::std::option::Option<&crate::types::ViewerFallback> {
+        self.viewer_fallback.as_ref()
+    }
 }
 impl ConnectionGroupSummary {
     /// Creates a new builder-style object to manufacture [`ConnectionGroupSummary`](crate::types::ConnectionGroupSummary).
@@ -100,6 +106,7 @@ pub struct ConnectionGroupSummaryBuilder {
     pub(crate) enabled: ::std::option::Option<bool>,
     pub(crate) status: ::std::option::Option<::std::string::String>,
     pub(crate) is_default: ::std::option::Option<bool>,
+    pub(crate) viewer_fallback: ::std::option::Option<crate::types::ViewerFallback>,
 }
 impl ConnectionGroupSummaryBuilder {
     /// <p>The ID of the connection group.</p>
@@ -263,6 +270,20 @@ impl ConnectionGroupSummaryBuilder {
     pub fn get_is_default(&self) -> &::std::option::Option<bool> {
         &self.is_default
     }
+    /// <p>The distribution whose certificate CloudFront uses for viewer requests that arrive on the connection group's Anycast static IPs without Server Name Indication (SNI).</p>
+    pub fn viewer_fallback(mut self, input: crate::types::ViewerFallback) -> Self {
+        self.viewer_fallback = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The distribution whose certificate CloudFront uses for viewer requests that arrive on the connection group's Anycast static IPs without Server Name Indication (SNI).</p>
+    pub fn set_viewer_fallback(mut self, input: ::std::option::Option<crate::types::ViewerFallback>) -> Self {
+        self.viewer_fallback = input;
+        self
+    }
+    /// <p>The distribution whose certificate CloudFront uses for viewer requests that arrive on the connection group's Anycast static IPs without Server Name Indication (SNI).</p>
+    pub fn get_viewer_fallback(&self) -> &::std::option::Option<crate::types::ViewerFallback> {
+        &self.viewer_fallback
+    }
     /// Consumes the builder and constructs a [`ConnectionGroupSummary`](crate::types::ConnectionGroupSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::types::builders::ConnectionGroupSummaryBuilder::id)
@@ -320,6 +341,7 @@ impl ConnectionGroupSummaryBuilder {
             enabled: self.enabled,
             status: self.status,
             is_default: self.is_default,
+            viewer_fallback: self.viewer_fallback,
         })
     }
 }

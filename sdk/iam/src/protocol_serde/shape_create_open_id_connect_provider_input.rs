@@ -43,6 +43,16 @@ pub fn ser_create_open_id_connect_provider_input_input_input(
         }
         list_16.finish();
     }
+    #[allow(unused_mut)]
+    let mut scope_18 = writer.prefix("ContextProvider");
+    if let Some(var_19) = &input.context_provider {
+        crate::protocol_serde::shape_context_provider::ser_context_provider(scope_18, var_19)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_20 = writer.prefix("IdentityCenterInstanceArn");
+    if let Some(var_21) = &input.identity_center_instance_arn {
+        scope_20.string(var_21);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -20,6 +20,8 @@ pub struct AgentSpace {
     pub agent_space_id: ::std::string::String,
     /// <p>The preferences configured on the agent space. Preferences that are not set take their default values.</p>
     pub preferences: ::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>>,
+    /// <p>The Amazon Web Services source mode for the AgentSpace, indicating whether its Amazon Web Services source configuration targets an individual Amazon Web Services account or an Amazon Web Services Organization.</p>
+    pub aws_source_mode: ::std::option::Option<crate::types::AwsSourceMode>,
 }
 impl AgentSpace {
     /// <p>The name of the AgentSpace.</p>
@@ -56,6 +58,10 @@ impl AgentSpace {
     pub fn preferences(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>> {
         self.preferences.as_ref()
     }
+    /// <p>The Amazon Web Services source mode for the AgentSpace, indicating whether its Amazon Web Services source configuration targets an individual Amazon Web Services account or an Amazon Web Services Organization.</p>
+    pub fn aws_source_mode(&self) -> ::std::option::Option<&crate::types::AwsSourceMode> {
+        self.aws_source_mode.as_ref()
+    }
 }
 impl ::std::fmt::Debug for AgentSpace {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -68,6 +74,7 @@ impl ::std::fmt::Debug for AgentSpace {
         formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("agent_space_id", &self.agent_space_id);
         formatter.field("preferences", &self.preferences);
+        formatter.field("aws_source_mode", &self.aws_source_mode);
         formatter.finish()
     }
 }
@@ -90,6 +97,7 @@ pub struct AgentSpaceBuilder {
     pub(crate) kms_key_arn: ::std::option::Option<::std::string::String>,
     pub(crate) agent_space_id: ::std::option::Option<::std::string::String>,
     pub(crate) preferences: ::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>>,
+    pub(crate) aws_source_mode: ::std::option::Option<crate::types::AwsSourceMode>,
 }
 impl AgentSpaceBuilder {
     /// <p>The name of the AgentSpace.</p>
@@ -214,6 +222,20 @@ impl AgentSpaceBuilder {
     pub fn get_preferences(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>> {
         &self.preferences
     }
+    /// <p>The Amazon Web Services source mode for the AgentSpace, indicating whether its Amazon Web Services source configuration targets an individual Amazon Web Services account or an Amazon Web Services Organization.</p>
+    pub fn aws_source_mode(mut self, input: crate::types::AwsSourceMode) -> Self {
+        self.aws_source_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Amazon Web Services source mode for the AgentSpace, indicating whether its Amazon Web Services source configuration targets an individual Amazon Web Services account or an Amazon Web Services Organization.</p>
+    pub fn set_aws_source_mode(mut self, input: ::std::option::Option<crate::types::AwsSourceMode>) -> Self {
+        self.aws_source_mode = input;
+        self
+    }
+    /// <p>The Amazon Web Services source mode for the AgentSpace, indicating whether its Amazon Web Services source configuration targets an individual Amazon Web Services account or an Amazon Web Services Organization.</p>
+    pub fn get_aws_source_mode(&self) -> &::std::option::Option<crate::types::AwsSourceMode> {
+        &self.aws_source_mode
+    }
     /// Consumes the builder and constructs a [`AgentSpace`](crate::types::AgentSpace).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::AgentSpaceBuilder::name)
@@ -250,6 +272,7 @@ impl AgentSpaceBuilder {
                 )
             })?,
             preferences: self.preferences,
+            aws_source_mode: self.aws_source_mode,
         })
     }
 }
@@ -264,6 +287,7 @@ impl ::std::fmt::Debug for AgentSpaceBuilder {
         formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.field("agent_space_id", &self.agent_space_id);
         formatter.field("preferences", &self.preferences);
+        formatter.field("aws_source_mode", &self.aws_source_mode);
         formatter.finish()
     }
 }

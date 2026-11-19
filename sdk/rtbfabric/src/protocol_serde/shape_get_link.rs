@@ -166,12 +166,18 @@ pub(crate) fn de_get_link(
                                 .transpose()?,
                         );
                     }
+                    "errorDetails" => {
+                        builder = builder.set_error_details(crate::protocol_serde::shape_error_details::de_error_details(tokens, _value, depth + 1)?);
+                    }
                     "flowModules" => {
                         builder = builder.set_flow_modules(crate::protocol_serde::shape_module_configuration_list::de_module_configuration_list(
                             tokens,
                             _value,
                             depth + 1,
                         )?);
+                    }
+                    "flows" => {
+                        builder = builder.set_flows(crate::protocol_serde::shape_flow_list::de_flow_list(tokens, _value, depth + 1)?);
                     }
                     "gatewayId" => {
                         builder = builder.set_gateway_id(
@@ -185,6 +191,13 @@ pub(crate) fn de_get_link(
                     }
                     "linkId" => {
                         builder = builder.set_link_id(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "lockToken" => {
+                        builder = builder.set_lock_token(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?,

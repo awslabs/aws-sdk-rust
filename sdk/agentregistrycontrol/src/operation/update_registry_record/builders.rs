@@ -22,7 +22,7 @@ impl crate::operation::update_registry_record::builders::UpdateRegistryRecordInp
 }
 /// Fluent builder constructing a request to `UpdateRegistryRecord`.
 ///
-/// <p>Updates a registry record. The update is asynchronous: the record is returned with the UPDATING status while it is processed. Fields that use update wrappers follow PATCH semantics: omit the field to leave it unchanged.</p>
+/// <p>Updates a registry record. The update is asynchronous: the operation returns the record with the <code>UPDATING</code> status while the registry processes it. If a GitHub user must first authorize access to the record's skill source, the operation returns the record with the <code>UPDATE_PENDING_AUTH</code> status instead. Fields that use update wrappers follow PATCH semantics: omit the field to leave it unchanged.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateRegistryRecordFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -206,6 +206,20 @@ impl UpdateRegistryRecordFluentBuilder {
     pub fn get_descriptors(&self) -> &::std::option::Option<crate::types::UpdatedDescriptors> {
         self.inner.get_descriptors()
     }
+    /// <p>The change to the record's uploaded skill package. Omit it to keep the current package, specify an empty object to remove an uploaded package, or specify <code>optionalValue</code> to upload a new package. An empty object doesn't remove a package that the record synchronizes from a source. To stop that synchronization, remove <code>skillPackage</code>. A request that changes <code>skillMd.data</code> replaces the record's package with that text, even if you omit this member.</p>
+    pub fn artifact(mut self, input: crate::types::UpdatedRegistryRecordArtifact) -> Self {
+        self.inner = self.inner.artifact(input);
+        self
+    }
+    /// <p>The change to the record's uploaded skill package. Omit it to keep the current package, specify an empty object to remove an uploaded package, or specify <code>optionalValue</code> to upload a new package. An empty object doesn't remove a package that the record synchronizes from a source. To stop that synchronization, remove <code>skillPackage</code>. A request that changes <code>skillMd.data</code> replaces the record's package with that text, even if you omit this member.</p>
+    pub fn set_artifact(mut self, input: ::std::option::Option<crate::types::UpdatedRegistryRecordArtifact>) -> Self {
+        self.inner = self.inner.set_artifact(input);
+        self
+    }
+    /// <p>The change to the record's uploaded skill package. Omit it to keep the current package, specify an empty object to remove an uploaded package, or specify <code>optionalValue</code> to upload a new package. An empty object doesn't remove a package that the record synchronizes from a source. To stop that synchronization, remove <code>skillPackage</code>. A request that changes <code>skillMd.data</code> replaces the record's package with that text, even if you omit this member.</p>
+    pub fn get_artifact(&self) -> &::std::option::Option<crate::types::UpdatedRegistryRecordArtifact> {
+        self.inner.get_artifact()
+    }
     /// <p>The updated version of the registry record. Omit to leave the version unchanged.</p>
     pub fn record_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.record_version(input.into());
@@ -234,19 +248,33 @@ impl UpdateRegistryRecordFluentBuilder {
     pub fn get_custom_metadata(&self) -> &::std::option::Option<crate::types::UpdatedCustomMetadataMap> {
         self.inner.get_custom_metadata()
     }
-    /// <p>Whether to trigger synchronization of the record's descriptor content from its source</p>
+    /// <p>Specifies whether to synchronize the record's descriptor content from its source. For a skill record, the registry reads the stored <code>skillMd.source</code> or <code>skillPackage.source</code> again, because it doesn't watch the source for changes. For a GitHub source, the operation also returns a new authorization link when one is needed. An update that sets a different skill source starts a synchronization even if you omit this member.</p>
     pub fn trigger_synchronization(mut self, input: bool) -> Self {
         self.inner = self.inner.trigger_synchronization(input);
         self
     }
-    /// <p>Whether to trigger synchronization of the record's descriptor content from its source</p>
+    /// <p>Specifies whether to synchronize the record's descriptor content from its source. For a skill record, the registry reads the stored <code>skillMd.source</code> or <code>skillPackage.source</code> again, because it doesn't watch the source for changes. For a GitHub source, the operation also returns a new authorization link when one is needed. An update that sets a different skill source starts a synchronization even if you omit this member.</p>
     pub fn set_trigger_synchronization(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_trigger_synchronization(input);
         self
     }
-    /// <p>Whether to trigger synchronization of the record's descriptor content from its source</p>
+    /// <p>Specifies whether to synchronize the record's descriptor content from its source. For a skill record, the registry reads the stored <code>skillMd.source</code> or <code>skillPackage.source</code> again, because it doesn't watch the source for changes. For a GitHub source, the operation also returns a new authorization link when one is needed. An update that sets a different skill source starts a synchronization even if you omit this member.</p>
     pub fn get_trigger_synchronization(&self) -> &::std::option::Option<bool> {
         self.inner.get_trigger_synchronization()
+    }
+    /// <p>Specifies whether to ask a GitHub user to authorize access again, even when the current authorization still works, for example to use a different GitHub account. You can use it only together with <code>triggerSynchronization</code>, for a GitHub source whose credential provider uses the <code>AUTHORIZATION_CODE</code> grant. The new authorization also replaces the one that the same IAM principal's other records in the registry use for the same host, credential provider, scopes, and custom parameters.</p>
+    pub fn force_authentication(mut self, input: bool) -> Self {
+        self.inner = self.inner.force_authentication(input);
+        self
+    }
+    /// <p>Specifies whether to ask a GitHub user to authorize access again, even when the current authorization still works, for example to use a different GitHub account. You can use it only together with <code>triggerSynchronization</code>, for a GitHub source whose credential provider uses the <code>AUTHORIZATION_CODE</code> grant. The new authorization also replaces the one that the same IAM principal's other records in the registry use for the same host, credential provider, scopes, and custom parameters.</p>
+    pub fn set_force_authentication(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_force_authentication(input);
+        self
+    }
+    /// <p>Specifies whether to ask a GitHub user to authorize access again, even when the current authorization still works, for example to use a different GitHub account. You can use it only together with <code>triggerSynchronization</code>, for a GitHub source whose credential provider uses the <code>AUTHORIZATION_CODE</code> grant. The new authorization also replaces the one that the same IAM principal's other records in the registry use for the same host, credential provider, scopes, and custom parameters.</p>
+    pub fn get_force_authentication(&self) -> &::std::option::Option<bool> {
+        self.inner.get_force_authentication()
     }
     ///
     /// Appends an item to `provenance`.

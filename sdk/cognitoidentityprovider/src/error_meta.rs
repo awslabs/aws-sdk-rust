@@ -7,6 +7,8 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>This exception is thrown when a user tries to confirm the account with an email address or phone number that has already been supplied as an alias for a different user profile. This exception indicates that an account with this email address or phone already exists in a user pool that you've configured to use email address or phone number as a sign-in alias.</p>
     AliasExistsException(crate::types::error::AliasExistsException),
+    /// <p>This exception is thrown when Amazon Cognito doesn't have a cached client metadata document for the URL in the request.</p>
+    CachedCimdurlDoesNotExistException(crate::types::error::CachedCimdurlDoesNotExistException),
     /// <p>This exception is thrown when a verification code fails to deliver successfully.</p>
     CodeDeliveryFailureException(crate::types::error::CodeDeliveryFailureException),
     /// <p>This exception is thrown if the provided code doesn't match what the server was expecting.</p>
@@ -142,6 +144,7 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::AliasExistsException(inner) => inner.fmt(f),
+            Error::CachedCimdurlDoesNotExistException(inner) => inner.fmt(f),
             Error::CodeDeliveryFailureException(inner) => inner.fmt(f),
             Error::CodeMismatchException(inner) => inner.fmt(f),
             Error::ConcurrentModificationException(inner) => inner.fmt(f),
@@ -222,6 +225,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::AliasExistsException(inner) => inner.meta(),
+            Self::CachedCimdurlDoesNotExistException(inner) => inner.meta(),
             Self::CodeDeliveryFailureException(inner) => inner.meta(),
             Self::CodeMismatchException(inner) => inner.meta(),
             Self::ConcurrentModificationException(inner) => inner.meta(),
@@ -2131,6 +2135,42 @@ impl From<crate::operation::confirm_sign_up::ConfirmSignUpError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cimd_policy::CreateCIMDPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_cimd_policy::CreateCIMDPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_cimd_policy::CreateCIMDPolicyError> for Error {
+    fn from(err: crate::operation::create_cimd_policy::CreateCIMDPolicyError) -> Self {
+        match err {
+            crate::operation::create_cimd_policy::CreateCIMDPolicyError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::create_cimd_policy::CreateCIMDPolicyError::FeatureUnavailableInTierException(inner) => {
+                Error::FeatureUnavailableInTierException(inner)
+            }
+            crate::operation::create_cimd_policy::CreateCIMDPolicyError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::create_cimd_policy::CreateCIMDPolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_cimd_policy::CreateCIMDPolicyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_cimd_policy::CreateCIMDPolicyError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::create_cimd_policy::CreateCIMDPolicyError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::create_cimd_policy::CreateCIMDPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_cimd_policy::CreateCIMDPolicyError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_cimd_policy::CreateCIMDPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_group::CreateGroupError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2555,6 +2595,38 @@ impl From<crate::operation::create_user_pool_replica::CreateUserPoolReplicaError
                 Error::UserPoolTaggingException(inner)
             }
             crate::operation::create_user_pool_replica::CreateUserPoolReplicaError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cimd_policy::DeleteCIMDPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_cimd_policy::DeleteCIMDPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_cimd_policy::DeleteCIMDPolicyError> for Error {
+    fn from(err: crate::operation::delete_cimd_policy::DeleteCIMDPolicyError) -> Self {
+        match err {
+            crate::operation::delete_cimd_policy::DeleteCIMDPolicyError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::delete_cimd_policy::DeleteCIMDPolicyError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::delete_cimd_policy::DeleteCIMDPolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_cimd_policy::DeleteCIMDPolicyError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::delete_cimd_policy::DeleteCIMDPolicyError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::delete_cimd_policy::DeleteCIMDPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_cimd_policy::DeleteCIMDPolicyError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_cimd_policy::DeleteCIMDPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3064,6 +3136,38 @@ impl From<crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentia
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::delete_web_authn_credential::DeleteWebAuthnCredentialError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_cimd_policy::DescribeCIMDPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_cimd_policy::DescribeCIMDPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_cimd_policy::DescribeCIMDPolicyError> for Error {
+    fn from(err: crate::operation::describe_cimd_policy::DescribeCIMDPolicyError) -> Self {
+        match err {
+            crate::operation::describe_cimd_policy::DescribeCIMDPolicyError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::describe_cimd_policy::DescribeCIMDPolicyError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::describe_cimd_policy::DescribeCIMDPolicyError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::describe_cimd_policy::DescribeCIMDPolicyError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::describe_cimd_policy::DescribeCIMDPolicyError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::describe_cimd_policy::DescribeCIMDPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4432,6 +4536,71 @@ impl From<crate::operation::initiate_point_in_time_recovery::InitiatePointInTime
                 Error::TooManyRequestsException(inner)
             }
             crate::operation::initiate_point_in_time_recovery::InitiatePointInTimeRecoveryError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cimd_policies::ListCIMDPoliciesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_cimd_policies::ListCIMDPoliciesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_cimd_policies::ListCIMDPoliciesError> for Error {
+    fn from(err: crate::operation::list_cimd_policies::ListCIMDPoliciesError) -> Self {
+        match err {
+            crate::operation::list_cimd_policies::ListCIMDPoliciesError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::list_cimd_policies::ListCIMDPoliciesError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_cimd_policies::ListCIMDPoliciesError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::list_cimd_policies::ListCIMDPoliciesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_cimd_policies::ListCIMDPoliciesError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_cimd_policies::ListCIMDPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_client_metadata_urls::ListClientMetadataURLsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_client_metadata_urls::ListClientMetadataURLsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_client_metadata_urls::ListClientMetadataURLsError> for Error {
+    fn from(err: crate::operation::list_client_metadata_urls::ListClientMetadataURLsError) -> Self {
+        match err {
+            crate::operation::list_client_metadata_urls::ListClientMetadataURLsError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::list_client_metadata_urls::ListClientMetadataURLsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::list_client_metadata_urls::ListClientMetadataURLsError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::list_client_metadata_urls::ListClientMetadataURLsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_client_metadata_urls::ListClientMetadataURLsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_client_metadata_urls::ListClientMetadataURLsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -5899,6 +6068,94 @@ impl From<crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackE
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cimd_policy::UpdateCIMDPolicyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_cimd_policy::UpdateCIMDPolicyError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_cimd_policy::UpdateCIMDPolicyError> for Error {
+    fn from(err: crate::operation::update_cimd_policy::UpdateCIMDPolicyError) -> Self {
+        match err {
+            crate::operation::update_cimd_policy::UpdateCIMDPolicyError::ConcurrentModificationException(inner) => {
+                Error::ConcurrentModificationException(inner)
+            }
+            crate::operation::update_cimd_policy::UpdateCIMDPolicyError::FeatureUnavailableInTierException(inner) => {
+                Error::FeatureUnavailableInTierException(inner)
+            }
+            crate::operation::update_cimd_policy::UpdateCIMDPolicyError::InternalErrorException(inner) => Error::InternalErrorException(inner),
+            crate::operation::update_cimd_policy::UpdateCIMDPolicyError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_cimd_policy::UpdateCIMDPolicyError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_cimd_policy::UpdateCIMDPolicyError::NotAuthorizedException(inner) => Error::NotAuthorizedException(inner),
+            crate::operation::update_cimd_policy::UpdateCIMDPolicyError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::update_cimd_policy::UpdateCIMDPolicyError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_cimd_policy::UpdateCIMDPolicyError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::update_cimd_policy::UpdateCIMDPolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_client_metadata_url_state::UpdateClientMetadataURLStateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_client_metadata_url_state::UpdateClientMetadataURLStateError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_client_metadata_url_state::UpdateClientMetadataURLStateError> for Error {
+    fn from(err: crate::operation::update_client_metadata_url_state::UpdateClientMetadataURLStateError) -> Self {
+        match err {
+            crate::operation::update_client_metadata_url_state::UpdateClientMetadataURLStateError::CachedCimdurlDoesNotExistException(inner) => {
+                Error::CachedCimdurlDoesNotExistException(inner)
+            }
+            crate::operation::update_client_metadata_url_state::UpdateClientMetadataURLStateError::FeatureUnavailableInTierException(inner) => {
+                Error::FeatureUnavailableInTierException(inner)
+            }
+            crate::operation::update_client_metadata_url_state::UpdateClientMetadataURLStateError::InternalErrorException(inner) => {
+                Error::InternalErrorException(inner)
+            }
+            crate::operation::update_client_metadata_url_state::UpdateClientMetadataURLStateError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::update_client_metadata_url_state::UpdateClientMetadataURLStateError::NotAuthorizedException(inner) => {
+                Error::NotAuthorizedException(inner)
+            }
+            crate::operation::update_client_metadata_url_state::UpdateClientMetadataURLStateError::OperationNotEnabledException(inner) => {
+                Error::OperationNotEnabledException(inner)
+            }
+            crate::operation::update_client_metadata_url_state::UpdateClientMetadataURLStateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_client_metadata_url_state::UpdateClientMetadataURLStateError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::update_client_metadata_url_state::UpdateClientMetadataURLStateError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_device_status::UpdateDeviceStatusError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -6538,6 +6795,7 @@ impl ::std::error::Error for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::AliasExistsException(inner) => inner.source(),
+            Error::CachedCimdurlDoesNotExistException(inner) => inner.source(),
             Error::CodeDeliveryFailureException(inner) => inner.source(),
             Error::CodeMismatchException(inner) => inner.source(),
             Error::ConcurrentModificationException(inner) => inner.source(),
@@ -6604,6 +6862,7 @@ impl ::aws_types::request_id::RequestId for Error {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::AliasExistsException(e) => e.request_id(),
+            Self::CachedCimdurlDoesNotExistException(e) => e.request_id(),
             Self::CodeDeliveryFailureException(e) => e.request_id(),
             Self::CodeMismatchException(e) => e.request_id(),
             Self::ConcurrentModificationException(e) => e.request_id(),

@@ -39,5 +39,11 @@ pub fn ser_update_profile_input_input(
     if let Some(var_11) = &input.session_policy {
         object.key("sessionPolicy").string(var_11.as_str());
     }
+    if let Some(var_12) = &input.tip_configuration {
+        #[allow(unused_mut)]
+        let mut object_13 = object.key("tipConfiguration").start_object();
+        crate::protocol_serde::shape_tip_configuration::ser_tip_configuration(&mut object_13, var_12)?;
+        object_13.finish();
+    }
     Ok(())
 }

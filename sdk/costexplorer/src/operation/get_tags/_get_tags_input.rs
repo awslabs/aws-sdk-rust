@@ -82,6 +82,16 @@ pub struct GetTagsInput {
     /// <p><code>UsageQuantity</code></p></li>
     /// <li>
     /// <p><code>NormalizedUsageAmount</code></p></li>
+    /// <li>
+    /// <p><code>BilledCost</code></p></li>
+    /// <li>
+    /// <p><code>ContractedCost</code></p></li>
+    /// <li>
+    /// <p><code>ListCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicEquivalentBilledCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicOnDemandCost</code></p></li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
@@ -182,6 +192,16 @@ impl GetTagsInput {
     /// <p><code>UsageQuantity</code></p></li>
     /// <li>
     /// <p><code>NormalizedUsageAmount</code></p></li>
+    /// <li>
+    /// <p><code>BilledCost</code></p></li>
+    /// <li>
+    /// <p><code>ContractedCost</code></p></li>
+    /// <li>
+    /// <p><code>ListCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicEquivalentBilledCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicOnDemandCost</code></p></li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
@@ -465,6 +485,16 @@ impl GetTagsInputBuilder {
     /// <p><code>UsageQuantity</code></p></li>
     /// <li>
     /// <p><code>NormalizedUsageAmount</code></p></li>
+    /// <li>
+    /// <p><code>BilledCost</code></p></li>
+    /// <li>
+    /// <p><code>ContractedCost</code></p></li>
+    /// <li>
+    /// <p><code>ListCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicEquivalentBilledCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicOnDemandCost</code></p></li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
@@ -491,6 +521,16 @@ impl GetTagsInputBuilder {
     /// <p><code>UsageQuantity</code></p></li>
     /// <li>
     /// <p><code>NormalizedUsageAmount</code></p></li>
+    /// <li>
+    /// <p><code>BilledCost</code></p></li>
+    /// <li>
+    /// <p><code>ContractedCost</code></p></li>
+    /// <li>
+    /// <p><code>ListCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicEquivalentBilledCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicOnDemandCost</code></p></li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
@@ -515,6 +555,16 @@ impl GetTagsInputBuilder {
     /// <p><code>UsageQuantity</code></p></li>
     /// <li>
     /// <p><code>NormalizedUsageAmount</code></p></li>
+    /// <li>
+    /// <p><code>BilledCost</code></p></li>
+    /// <li>
+    /// <p><code>ContractedCost</code></p></li>
+    /// <li>
+    /// <p><code>ListCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicEquivalentBilledCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicOnDemandCost</code></p></li>
     /// </ul>
     /// <p>The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.</p>
     /// <p>When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>

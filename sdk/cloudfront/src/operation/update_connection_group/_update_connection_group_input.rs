@@ -13,6 +13,8 @@ pub struct UpdateConnectionGroupInput {
     pub anycast_ip_list_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the connection group is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
+    /// <p>The distribution whose certificate CloudFront uses for viewer requests that arrive on the connection group's Anycast static IPs without Server Name Indication (SNI).</p>
+    pub viewer_fallback: ::std::option::Option<crate::types::ViewerFallback>,
 }
 impl UpdateConnectionGroupInput {
     /// <p>The ID of the connection group.</p>
@@ -35,6 +37,10 @@ impl UpdateConnectionGroupInput {
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
+    /// <p>The distribution whose certificate CloudFront uses for viewer requests that arrive on the connection group's Anycast static IPs without Server Name Indication (SNI).</p>
+    pub fn viewer_fallback(&self) -> ::std::option::Option<&crate::types::ViewerFallback> {
+        self.viewer_fallback.as_ref()
+    }
 }
 impl UpdateConnectionGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectionGroupInput`](crate::operation::update_connection_group::UpdateConnectionGroupInput).
@@ -52,6 +58,7 @@ pub struct UpdateConnectionGroupInputBuilder {
     pub(crate) if_match: ::std::option::Option<::std::string::String>,
     pub(crate) anycast_ip_list_id: ::std::option::Option<::std::string::String>,
     pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) viewer_fallback: ::std::option::Option<crate::types::ViewerFallback>,
 }
 impl UpdateConnectionGroupInputBuilder {
     /// <p>The ID of the connection group.</p>
@@ -126,6 +133,20 @@ impl UpdateConnectionGroupInputBuilder {
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
+    /// <p>The distribution whose certificate CloudFront uses for viewer requests that arrive on the connection group's Anycast static IPs without Server Name Indication (SNI).</p>
+    pub fn viewer_fallback(mut self, input: crate::types::ViewerFallback) -> Self {
+        self.viewer_fallback = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The distribution whose certificate CloudFront uses for viewer requests that arrive on the connection group's Anycast static IPs without Server Name Indication (SNI).</p>
+    pub fn set_viewer_fallback(mut self, input: ::std::option::Option<crate::types::ViewerFallback>) -> Self {
+        self.viewer_fallback = input;
+        self
+    }
+    /// <p>The distribution whose certificate CloudFront uses for viewer requests that arrive on the connection group's Anycast static IPs without Server Name Indication (SNI).</p>
+    pub fn get_viewer_fallback(&self) -> &::std::option::Option<crate::types::ViewerFallback> {
+        &self.viewer_fallback
+    }
     /// Consumes the builder and constructs a [`UpdateConnectionGroupInput`](crate::operation::update_connection_group::UpdateConnectionGroupInput).
     pub fn build(
         self,
@@ -137,6 +158,7 @@ impl UpdateConnectionGroupInputBuilder {
             if_match: self.if_match,
             anycast_ip_list_id: self.anycast_ip_list_id,
             enabled: self.enabled,
+            viewer_fallback: self.viewer_fallback,
         })
     }
 }

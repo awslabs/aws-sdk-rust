@@ -5,7 +5,7 @@
 pub struct BatchUpdateWorkloadEstimateUsageOutput {
     /// <p>Returns the list of successful usage line items that were updated for a Workload estimate.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::WorkloadEstimateUsageItem>>,
-    /// <p>Returns the list of error reasons and usage line item IDs that could not be updated for the Workload estimate.</p>
+    /// <p>Returns the list of error reasons and usage line item IDs that couldn't be updated for the Workload estimate.</p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateWorkloadEstimateUsageError>>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl BatchUpdateWorkloadEstimateUsageOutput {
     pub fn items(&self) -> &[crate::types::WorkloadEstimateUsageItem] {
         self.items.as_deref().unwrap_or_default()
     }
-    /// <p>Returns the list of error reasons and usage line item IDs that could not be updated for the Workload estimate.</p>
+    /// <p>Returns the list of error reasons and usage line item IDs that couldn't be updated for the Workload estimate.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
     pub fn errors(&self) -> &[crate::types::BatchUpdateWorkloadEstimateUsageError] {
@@ -68,19 +68,19 @@ impl BatchUpdateWorkloadEstimateUsageOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>Returns the list of error reasons and usage line item IDs that could not be updated for the Workload estimate.</p>
+    /// <p>Returns the list of error reasons and usage line item IDs that couldn't be updated for the Workload estimate.</p>
     pub fn errors(mut self, input: crate::types::BatchUpdateWorkloadEstimateUsageError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Returns the list of error reasons and usage line item IDs that could not be updated for the Workload estimate.</p>
+    /// <p>Returns the list of error reasons and usage line item IDs that couldn't be updated for the Workload estimate.</p>
     pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateWorkloadEstimateUsageError>>) -> Self {
         self.errors = input;
         self
     }
-    /// <p>Returns the list of error reasons and usage line item IDs that could not be updated for the Workload estimate.</p>
+    /// <p>Returns the list of error reasons and usage line item IDs that couldn't be updated for the Workload estimate.</p>
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchUpdateWorkloadEstimateUsageError>> {
         &self.errors
     }

@@ -18,6 +18,9 @@ pub fn ser_aws_configuration(
     if let Some(var_2) = &input.agent_elevated_role_arn_status {
         object.key("agentElevatedRoleArnStatus").string(var_2.as_str());
     }
+    if let Some(var_3) = &input.service_management_role_arn {
+        object.key("serviceManagementRoleArn").string(var_3.as_str());
+    }
     Ok(())
 }
 
@@ -75,6 +78,13 @@ where
                             builder = builder.set_agent_elevated_role_arn_status(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::ValidationStatus::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "serviceManagementRoleArn" => {
+                            builder = builder.set_service_management_role_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }

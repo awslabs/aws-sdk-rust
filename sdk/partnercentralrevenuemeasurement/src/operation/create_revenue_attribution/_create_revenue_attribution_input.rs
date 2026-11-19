@@ -17,6 +17,8 @@ pub struct CreateRevenueAttributionInput {
     pub product_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Tags to associate with the revenue attribution upon creation.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>Program-defined key-value attributes for the revenue attribution.</p>
+    pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateRevenueAttributionInput {
     /// <p>The catalog in which to create the revenue attribution.</p>
@@ -49,6 +51,10 @@ impl CreateRevenueAttributionInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>Program-defined key-value attributes for the revenue attribution.</p>
+    pub fn context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.context.as_ref()
+    }
 }
 impl CreateRevenueAttributionInput {
     /// Creates a new builder-style object to manufacture [`CreateRevenueAttributionInput`](crate::operation::create_revenue_attribution::CreateRevenueAttributionInput).
@@ -68,6 +74,7 @@ pub struct CreateRevenueAttributionInputBuilder {
     pub(crate) tenancy_model: ::std::option::Option<crate::types::TenancyModel>,
     pub(crate) product_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateRevenueAttributionInputBuilder {
     /// <p>The catalog in which to create the revenue attribution.</p>
@@ -177,6 +184,26 @@ impl CreateRevenueAttributionInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// Adds a key-value pair to `context`.
+    ///
+    /// To override the contents of this collection use [`set_context`](Self::set_context).
+    ///
+    /// <p>Program-defined key-value attributes for the revenue attribution.</p>
+    pub fn context(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.context.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.context = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Program-defined key-value attributes for the revenue attribution.</p>
+    pub fn set_context(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.context = input;
+        self
+    }
+    /// <p>Program-defined key-value attributes for the revenue attribution.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.context
+    }
     /// Consumes the builder and constructs a [`CreateRevenueAttributionInput`](crate::operation::create_revenue_attribution::CreateRevenueAttributionInput).
     pub fn build(
         self,
@@ -192,6 +219,7 @@ impl CreateRevenueAttributionInputBuilder {
             tenancy_model: self.tenancy_model,
             product_identifier: self.product_identifier,
             tags: self.tags,
+            context: self.context,
         })
     }
 }

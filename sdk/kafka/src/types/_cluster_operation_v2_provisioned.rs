@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ClusterOperationV2Provisioned {
+    /// <p>Topic reassignment details of the UpdateBrokerType operation that started an upgrade from Standard brokers to Express brokers.</p>
+    pub broker_type_upgrade_info: ::std::option::Option<crate::types::BrokerTypeUpgradeInfo>,
     /// <p>Steps completed during the operation.</p>
     pub operation_steps: ::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationStep>>,
     /// <p>Information about cluster attributes before a cluster is updated.</p>
@@ -14,6 +16,10 @@ pub struct ClusterOperationV2Provisioned {
     pub vpc_connection_info: ::std::option::Option<crate::types::VpcConnectionInfo>,
 }
 impl ClusterOperationV2Provisioned {
+    /// <p>Topic reassignment details of the UpdateBrokerType operation that started an upgrade from Standard brokers to Express brokers.</p>
+    pub fn broker_type_upgrade_info(&self) -> ::std::option::Option<&crate::types::BrokerTypeUpgradeInfo> {
+        self.broker_type_upgrade_info.as_ref()
+    }
     /// <p>Steps completed during the operation.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.operation_steps.is_none()`.
@@ -44,12 +50,27 @@ impl ClusterOperationV2Provisioned {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct ClusterOperationV2ProvisionedBuilder {
+    pub(crate) broker_type_upgrade_info: ::std::option::Option<crate::types::BrokerTypeUpgradeInfo>,
     pub(crate) operation_steps: ::std::option::Option<::std::vec::Vec<crate::types::ClusterOperationStep>>,
     pub(crate) source_cluster_info: ::std::option::Option<crate::types::MutableClusterInfo>,
     pub(crate) target_cluster_info: ::std::option::Option<crate::types::MutableClusterInfo>,
     pub(crate) vpc_connection_info: ::std::option::Option<crate::types::VpcConnectionInfo>,
 }
 impl ClusterOperationV2ProvisionedBuilder {
+    /// <p>Topic reassignment details of the UpdateBrokerType operation that started an upgrade from Standard brokers to Express brokers.</p>
+    pub fn broker_type_upgrade_info(mut self, input: crate::types::BrokerTypeUpgradeInfo) -> Self {
+        self.broker_type_upgrade_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Topic reassignment details of the UpdateBrokerType operation that started an upgrade from Standard brokers to Express brokers.</p>
+    pub fn set_broker_type_upgrade_info(mut self, input: ::std::option::Option<crate::types::BrokerTypeUpgradeInfo>) -> Self {
+        self.broker_type_upgrade_info = input;
+        self
+    }
+    /// <p>Topic reassignment details of the UpdateBrokerType operation that started an upgrade from Standard brokers to Express brokers.</p>
+    pub fn get_broker_type_upgrade_info(&self) -> &::std::option::Option<crate::types::BrokerTypeUpgradeInfo> {
+        &self.broker_type_upgrade_info
+    }
     /// Appends an item to `operation_steps`.
     ///
     /// To override the contents of this collection use [`set_operation_steps`](Self::set_operation_steps).
@@ -115,6 +136,7 @@ impl ClusterOperationV2ProvisionedBuilder {
     /// Consumes the builder and constructs a [`ClusterOperationV2Provisioned`](crate::types::ClusterOperationV2Provisioned).
     pub fn build(self) -> crate::types::ClusterOperationV2Provisioned {
         crate::types::ClusterOperationV2Provisioned {
+            broker_type_upgrade_info: self.broker_type_upgrade_info,
             operation_steps: self.operation_steps,
             source_cluster_info: self.source_cluster_info,
             target_cluster_info: self.target_cluster_info,

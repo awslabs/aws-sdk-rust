@@ -38,3 +38,15 @@ pub(crate) fn federated_user_correct_errors(
     }
     builder
 }
+
+pub(crate) fn scoped_session_correct_errors(
+    mut builder: crate::types::builders::ScopedSessionBuilder,
+) -> crate::types::builders::ScopedSessionBuilder {
+    if builder.scoped_session_id.is_none() {
+        builder.scoped_session_id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    builder
+}

@@ -283,6 +283,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyDBClust
                 captured.insert("EngineLifecycleSupport", value);
             }
         }
+        if requested.should_capture("DBSubnetGroupName") {
+            if let ::std::option::Option::Some(value) = input.db_subnet_group_name.as_deref() {
+                captured.insert("DBSubnetGroupName", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())

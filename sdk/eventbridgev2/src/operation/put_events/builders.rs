@@ -22,7 +22,8 @@ impl crate::operation::put_events::builders::PutEventsInputBuilder {
 }
 /// Fluent builder constructing a request to `PutEvents`.
 ///
-/// Publishes events to an event bus.
+/// <p>Publishes events to an event bus.</p>
+/// <p>The total size of all event entries in a request must not exceed 1 MB (1,048,576 bytes). The limit applies to the request as a whole, not to individual entries. If you exceed the limit, the request fails with <code>InvalidInputException</code> and the service publishes none of the entries in the request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutEventsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -102,17 +103,17 @@ impl PutEventsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn event_bus_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_bus_arn(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn set_event_bus_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_bus_arn(input);
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn get_event_bus_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_event_bus_arn()
     }
@@ -121,31 +122,31 @@ impl PutEventsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// List of event entries to publish. Must contain at least one entry.
+    /// <p>List of event entries to publish. Must contain at least one entry.</p>
     pub fn entries(mut self, input: crate::types::PutEventsRequestEntry) -> Self {
         self.inner = self.inner.entries(input);
         self
     }
-    /// List of event entries to publish. Must contain at least one entry.
+    /// <p>List of event entries to publish. Must contain at least one entry.</p>
     pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutEventsRequestEntry>>) -> Self {
         self.inner = self.inner.set_entries(input);
         self
     }
-    /// List of event entries to publish. Must contain at least one entry.
+    /// <p>List of event entries to publish. Must contain at least one entry.</p>
     pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutEventsRequestEntry>> {
         self.inner.get_entries()
     }
-    /// Request-level deduplication settings, applied to every entry in the batch.
+    /// <p>Request-level deduplication settings, applied to every entry in the batch.</p>
     pub fn deduplication_configuration(mut self, input: crate::types::DeduplicationConfiguration) -> Self {
         self.inner = self.inner.deduplication_configuration(input);
         self
     }
-    /// Request-level deduplication settings, applied to every entry in the batch.
+    /// <p>Request-level deduplication settings, applied to every entry in the batch.</p>
     pub fn set_deduplication_configuration(mut self, input: ::std::option::Option<crate::types::DeduplicationConfiguration>) -> Self {
         self.inner = self.inner.set_deduplication_configuration(input);
         self
     }
-    /// Request-level deduplication settings, applied to every entry in the batch.
+    /// <p>Request-level deduplication settings, applied to every entry in the batch.</p>
     pub fn get_deduplication_configuration(&self) -> &::std::option::Option<crate::types::DeduplicationConfiguration> {
         self.inner.get_deduplication_configuration()
     }

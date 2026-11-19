@@ -22,7 +22,7 @@ impl crate::operation::revoke_resource::builders::RevokeResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `RevokeResource`.
 ///
-/// Revokes a subscriber or an EventSource. The bus owner calls this to withdraw a misbehaving resource attached to their bus. Revocation is terminal: there is no operation that clears it. A revoked resource refuses mutating operations with InvalidStateException; delete stays available for cleanup.
+/// <p>Revokes a subscriber or an EventSource. The bus owner calls this to withdraw a misbehaving resource attached to their bus. Revocation is terminal: there is no operation that clears it. A revoked resource refuses mutating operations with InvalidStateException; delete stays available for cleanup.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RevokeResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl RevokeResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The pattern is the revocable subset of TaggableResourceArn; buses are not revocable.
+    /// <p>ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The pattern is the revocable subset of TaggableResourceArn; buses are not revocable.</p>
     pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
         self
     }
-    /// ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The pattern is the revocable subset of TaggableResourceArn; buses are not revocable.
+    /// <p>ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The pattern is the revocable subset of TaggableResourceArn; buses are not revocable.</p>
     pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_arn(input);
         self
     }
-    /// ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The pattern is the revocable subset of TaggableResourceArn; buses are not revocable.
+    /// <p>ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The pattern is the revocable subset of TaggableResourceArn; buses are not revocable.</p>
     pub fn get_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_arn()
     }

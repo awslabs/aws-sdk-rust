@@ -117,6 +117,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "tipConfiguration" => {
+                            builder = builder.set_tip_configuration(crate::protocol_serde::shape_tip_configuration::de_tip_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         "previousAliasName" => {
                             builder = builder.set_previous_alias_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

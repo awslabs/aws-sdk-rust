@@ -747,6 +747,8 @@ pub use crate::types::_kms_key_source_type::KmsKeySourceType;
 
 pub use crate::types::_payment_credential_provider_configuration::PaymentCredentialProviderConfiguration;
 
+pub use crate::types::_aws_billing_connector_configuration::AwsBillingConnectorConfiguration;
+
 pub use crate::types::_custom_claim_validation_type::CustomClaimValidationType;
 
 pub use crate::types::_lifecycle_hook_action::LifecycleHookAction;
@@ -877,6 +879,8 @@ pub use crate::types::_monitoring::Monitoring;
 
 pub use crate::types::_capacity_reservation_specification::CapacityReservationSpecification;
 
+pub use crate::types::_cpu_options::CpuOptions;
+
 pub use crate::types::_ebs_volume_configuration::EbsVolumeConfiguration;
 
 pub use crate::types::_example_field::ExampleField;
@@ -974,6 +978,8 @@ pub use crate::types::_license_specification::LicenseSpecification;
 pub use crate::types::_capacity_reservation_preference::CapacityReservationPreference;
 
 pub use crate::types::_capacity_reservation_target::CapacityReservationTarget;
+
+pub use crate::types::_nested_virtualization::NestedVirtualization;
 
 pub use crate::types::_dimension_rating_scale::DimensionRatingScale;
 
@@ -1187,6 +1193,8 @@ mod _authorizer_type;
 
 mod _authorizing_claim_match_value_type;
 
+mod _aws_billing_connector_configuration;
+
 mod _batch_put_limit_entry;
 
 mod _bedrock_evaluator_model_config;
@@ -1324,6 +1332,8 @@ mod _content_configuration;
 mod _content_level;
 
 mod _content_type;
+
+mod _cpu_options;
 
 mod _credential_provider;
 
@@ -1820,6 +1830,8 @@ mod _monitoring;
 mod _namespace_key_entry;
 
 mod _namespace_key_validation;
+
+mod _nested_virtualization;
 
 mod _network_configuration;
 

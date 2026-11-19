@@ -32,6 +32,17 @@ static UPDATEBROKERTYPEINPUT_MEMBER_TARGET_INSTANCE_TYPE: ::aws_smithy_schema::S
     2,
 )
 .with_json_name("targetInstanceType");
+static UPDATEBROKERTYPEINPUT_MEMBER_TOPIC_REASSIGNMENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kafka.synthetic#UpdateBrokerTypeInput$TopicReassignment",
+        "com.amazonaws.kafka.synthetic",
+        "UpdateBrokerTypeInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TopicReassignment",
+    3,
+)
+.with_json_name("topicReassignment");
 static UPDATEBROKERTYPEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.kafka.synthetic#UpdateBrokerTypeInput",
@@ -43,6 +54,7 @@ static UPDATEBROKERTYPEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aw
         &UPDATEBROKERTYPEINPUT_MEMBER_CLUSTER_ARN,
         &UPDATEBROKERTYPEINPUT_MEMBER_CURRENT_VERSION,
         &UPDATEBROKERTYPEINPUT_MEMBER_TARGET_INSTANCE_TYPE,
+        &UPDATEBROKERTYPEINPUT_MEMBER_TOPIC_REASSIGNMENT,
     ],
 )
 .with_http(aws_smithy_schema::traits::HttpTrait::new(
@@ -74,6 +86,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::update
         }
         if let Some(ref val) = self.target_instance_type {
             ser.write_string(&UPDATEBROKERTYPEINPUT_MEMBER_TARGET_INSTANCE_TYPE, val)?;
+        }
+        if let Some(ref val) = self.topic_reassignment {
+            ser.write_string(&UPDATEBROKERTYPEINPUT_MEMBER_TOPIC_REASSIGNMENT, val.as_str())?;
         }
         Ok(())
     }
@@ -111,6 +126,13 @@ impl crate::operation::update_broker_type::builders::UpdateBrokerTypeInputBuilde
                         deser.read_null()?;
                     } else {
                         self.target_instance_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.topic_reassignment = Some(crate::types::TopicReassignment::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}

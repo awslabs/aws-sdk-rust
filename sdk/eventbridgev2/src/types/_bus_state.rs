@@ -41,16 +41,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Lifecycle state of an event bus.
-/// - CREATING: Bus creation is in progress.
-/// - CREATE_FAILED: Bus creation failed; see StateReason. The bus cannot be recovered or
-/// recreated in place: delete it with DeleteEventBus, then create a new bus.
-/// - ACTIVE: Bus is fully operational and can accept events.
-/// - UPDATING: Bus update is in progress.
-/// - UPDATE_FAILED: Bus update failed; the bus remains operational with its previous configuration.
-/// - DELETING: Bus deletion is actively in progress.
-/// - DELETE_FAILED: Bus deletion failed; see StateReason. Retry DeleteEventBus after removing
-/// subscribers and event sources.
+/// <p>Lifecycle state of an event bus.</p> <ul> <li> <p>CREATING: Bus creation is in progress.</p> </li> <li> <p>CREATE_FAILED: Bus creation failed; see StateReason. The bus cannot be recovered or recreated in place: delete it with DeleteEventBus, then create a new bus.</p> </li> <li> <p>ACTIVE: Bus is fully operational and can accept events.</p> </li> <li> <p>UPDATING: Bus update is in progress.</p> </li> <li> <p>UPDATE_FAILED: Bus update failed; the bus remains operational with its previous configuration.</p> </li> <li> <p>DELETING: Bus deletion is actively in progress.</p> </li> <li> <p>DELETE_FAILED: Bus deletion failed; see StateReason. Retry DeleteEventBus after removing subscribers and event sources.</p> </li> </ul>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

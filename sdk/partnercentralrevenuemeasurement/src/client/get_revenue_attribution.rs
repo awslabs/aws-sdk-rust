@@ -22,6 +22,7 @@ impl super::Client {
     ///   - [`effective_until(Option<String>)`](crate::operation::get_revenue_attribution::GetRevenueAttributionOutput::effective_until): <p>The date until which this revenue attribution is effective, derived from the latest allocation end date (YYYY-MM-DD).</p>
     ///   - [`total_active_revenue_attribution_allocation_count(Option<i32>)`](crate::operation::get_revenue_attribution::GetRevenueAttributionOutput::total_active_revenue_attribution_allocation_count): <p>The total number of allocations under this revenue attribution whose Status is ACTIVE.</p>
     ///   - [`total_revenue_attribution_allocation_count(Option<i32>)`](crate::operation::get_revenue_attribution::GetRevenueAttributionOutput::total_revenue_attribution_allocation_count): <p>The total number of allocations under this revenue attribution, counting both ACTIVE and INACTIVE.</p>
+    ///   - [`context(Option<HashMap::<String, String>>)`](crate::operation::get_revenue_attribution::GetRevenueAttributionOutput::context): <p>Program-defined key-value attributes for the revenue attribution.</p>
     /// - On failure, responds with [`SdkError<GetRevenueAttributionError>`](crate::operation::get_revenue_attribution::GetRevenueAttributionError)
     pub fn get_revenue_attribution(&self) -> crate::operation::get_revenue_attribution::builders::GetRevenueAttributionFluentBuilder {
         crate::operation::get_revenue_attribution::builders::GetRevenueAttributionFluentBuilder::new(self.handle.clone())

@@ -5,7 +5,7 @@
 pub struct GetDelegatedAccessTokenOutput {
     /// <p>Amazon Web Services credentials for API authentication.</p>
     pub credentials: ::std::option::Option<crate::types::Credentials>,
-    /// <p>The percentage of the maximum policy size that is used by the session policy. The policy size is calculated as the sum of all the session policies and permission boundaries attached to the session. If the packed size exceeds 100%, the request fails.</p>
+    /// <p>This field is deprecated. It is not populated for <code>GetDelegatedAccessToken</code>.</p>
     #[deprecated(note = "Deprecated. This field is not populated for GetDelegatedAccessToken.", since = "2026-06-17")]
     pub packed_policy_size: ::std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the principal that was assumed when obtaining the delegated access token. This ARN identifies the IAM entity whose permissions are granted by the temporary credentials.</p>
@@ -17,7 +17,7 @@ impl GetDelegatedAccessTokenOutput {
     pub fn credentials(&self) -> ::std::option::Option<&crate::types::Credentials> {
         self.credentials.as_ref()
     }
-    /// <p>The percentage of the maximum policy size that is used by the session policy. The policy size is calculated as the sum of all the session policies and permission boundaries attached to the session. If the packed size exceeds 100%, the request fails.</p>
+    /// <p>This field is deprecated. It is not populated for <code>GetDelegatedAccessToken</code>.</p>
     #[deprecated(note = "Deprecated. This field is not populated for GetDelegatedAccessToken.", since = "2026-06-17")]
     pub fn packed_policy_size(&self) -> ::std::option::Option<i32> {
         self.packed_policy_size
@@ -73,19 +73,19 @@ impl GetDelegatedAccessTokenOutputBuilder {
     pub fn get_credentials(&self) -> &::std::option::Option<crate::types::Credentials> {
         &self.credentials
     }
-    /// <p>The percentage of the maximum policy size that is used by the session policy. The policy size is calculated as the sum of all the session policies and permission boundaries attached to the session. If the packed size exceeds 100%, the request fails.</p>
+    /// <p>This field is deprecated. It is not populated for <code>GetDelegatedAccessToken</code>.</p>
     #[deprecated(note = "Deprecated. This field is not populated for GetDelegatedAccessToken.", since = "2026-06-17")]
     pub fn packed_policy_size(mut self, input: i32) -> Self {
         self.packed_policy_size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The percentage of the maximum policy size that is used by the session policy. The policy size is calculated as the sum of all the session policies and permission boundaries attached to the session. If the packed size exceeds 100%, the request fails.</p>
+    /// <p>This field is deprecated. It is not populated for <code>GetDelegatedAccessToken</code>.</p>
     #[deprecated(note = "Deprecated. This field is not populated for GetDelegatedAccessToken.", since = "2026-06-17")]
     pub fn set_packed_policy_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.packed_policy_size = input;
         self
     }
-    /// <p>The percentage of the maximum policy size that is used by the session policy. The policy size is calculated as the sum of all the session policies and permission boundaries attached to the session. If the packed size exceeds 100%, the request fails.</p>
+    /// <p>This field is deprecated. It is not populated for <code>GetDelegatedAccessToken</code>.</p>
     #[deprecated(note = "Deprecated. This field is not populated for GetDelegatedAccessToken.", since = "2026-06-17")]
     pub fn get_packed_policy_size(&self) -> &::std::option::Option<i32> {
         &self.packed_policy_size

@@ -39,6 +39,8 @@ pub struct UpdateProfileInput {
     /// <p>An alias name contains 1 to 256 characters. It must begin with a letter (A-Z or a-z). It can contain only letters (A-Z and a-z), numbers (0-9), underscores (_), hyphens (-), and forward slashes (/). A forward slash can appear only between two other characters, so an alias name can't end with a forward slash or contain two in a row. Alias names that begin with <code>aws/</code>, in any combination of uppercase and lowercase letters, are reserved. Alias names are case sensitive.</p>
     /// <p>The alias name must be unique among resources of the same type in your account and Region. If another resource of the same type already has the alias, the request fails with a <code>ValidationException</code>. An invalid or reserved alias name also causes a <code>ValidationException</code>.</p>
     pub alias_name: ::std::option::Option<::std::string::String>,
+    /// <p>The trusted identity propagation (TIP) settings for the profile. The settings that you specify replace the current settings, and a field that you omit returns to its default. If you omit this parameter, the TIP settings don't change.</p>
+    pub tip_configuration: ::std::option::Option<crate::types::TipConfiguration>,
 }
 impl UpdateProfileInput {
     /// <p>The profile to act on. You can specify one of the following:</p>
@@ -97,6 +99,10 @@ impl UpdateProfileInput {
     pub fn alias_name(&self) -> ::std::option::Option<&str> {
         self.alias_name.as_deref()
     }
+    /// <p>The trusted identity propagation (TIP) settings for the profile. The settings that you specify replace the current settings, and a field that you omit returns to its default. If you omit this parameter, the TIP settings don't change.</p>
+    pub fn tip_configuration(&self) -> ::std::option::Option<&crate::types::TipConfiguration> {
+        self.tip_configuration.as_ref()
+    }
 }
 impl UpdateProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
@@ -117,6 +123,7 @@ pub struct UpdateProfileInputBuilder {
     pub(crate) duration_seconds: ::std::option::Option<i32>,
     pub(crate) accept_role_session_name: ::std::option::Option<bool>,
     pub(crate) alias_name: ::std::option::Option<::std::string::String>,
+    pub(crate) tip_configuration: ::std::option::Option<crate::types::TipConfiguration>,
 }
 impl UpdateProfileInputBuilder {
     /// <p>The profile to act on. You can specify one of the following:</p>
@@ -304,6 +311,20 @@ impl UpdateProfileInputBuilder {
     pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias_name
     }
+    /// <p>The trusted identity propagation (TIP) settings for the profile. The settings that you specify replace the current settings, and a field that you omit returns to its default. If you omit this parameter, the TIP settings don't change.</p>
+    pub fn tip_configuration(mut self, input: crate::types::TipConfiguration) -> Self {
+        self.tip_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The trusted identity propagation (TIP) settings for the profile. The settings that you specify replace the current settings, and a field that you omit returns to its default. If you omit this parameter, the TIP settings don't change.</p>
+    pub fn set_tip_configuration(mut self, input: ::std::option::Option<crate::types::TipConfiguration>) -> Self {
+        self.tip_configuration = input;
+        self
+    }
+    /// <p>The trusted identity propagation (TIP) settings for the profile. The settings that you specify replace the current settings, and a field that you omit returns to its default. If you omit this parameter, the TIP settings don't change.</p>
+    pub fn get_tip_configuration(&self) -> &::std::option::Option<crate::types::TipConfiguration> {
+        &self.tip_configuration
+    }
     /// Consumes the builder and constructs a [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
     pub fn build(
         self,
@@ -317,6 +338,7 @@ impl UpdateProfileInputBuilder {
             duration_seconds: self.duration_seconds,
             accept_role_session_name: self.accept_role_session_name,
             alias_name: self.alias_name,
+            tip_configuration: self.tip_configuration,
         })
     }
 }

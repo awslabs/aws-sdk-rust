@@ -23,13 +23,19 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_create_voice;
+
 pub(crate) mod shape_delete_lexicon;
+
+pub(crate) mod shape_delete_voice;
 
 pub(crate) mod shape_describe_voices;
 
 pub(crate) mod shape_get_lexicon;
 
 pub(crate) mod shape_get_speech_synthesis_task;
+
+pub(crate) mod shape_get_voice;
 
 pub(crate) mod shape_list_lexicons;
 
@@ -56,6 +62,12 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
         data
     }
 }
+
+pub(crate) mod shape_access_denied_exception;
+
+pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_voice_input;
 
 pub(crate) mod shape_engine_not_supported_exception;
 
@@ -135,6 +147,8 @@ pub fn parse_event_stream_error_metadata(
 
 pub(crate) mod shape_close_stream_event;
 
+pub(crate) mod shape_customer_managed_encryption;
+
 pub(crate) mod shape_lexicon;
 
 pub(crate) mod shape_lexicon_attributes;
@@ -153,13 +167,23 @@ pub(crate) mod shape_throttling_reason_list;
 
 pub(crate) mod shape_validation_exception_field_list;
 
+pub(crate) mod shape_voice;
+
+pub(crate) mod shape_voice_creation_data;
+
 pub(crate) mod shape_voice_list;
 
+pub(crate) mod shape_engine_list;
+
 pub(crate) mod shape_flush_stream_configuration;
+
+pub(crate) mod shape_language_code_list;
 
 pub(crate) mod shape_lexicon_description;
 
 pub(crate) mod shape_lexicon_name_list;
+
+pub(crate) mod shape_recording;
 
 pub(crate) mod shape_speech_mark_type_list;
 
@@ -169,8 +193,8 @@ pub(crate) mod shape_throttling_reason;
 
 pub(crate) mod shape_validation_exception_field;
 
-pub(crate) mod shape_voice;
+pub(crate) mod shape_encryption_context;
 
-pub(crate) mod shape_engine_list;
+pub(crate) mod shape_recording_data;
 
-pub(crate) mod shape_language_code_list;
+pub(crate) mod shape_recording_list;

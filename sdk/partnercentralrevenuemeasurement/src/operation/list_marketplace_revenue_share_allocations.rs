@@ -191,9 +191,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListMarketpla
         };
 
         let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
-        if requested.should_capture("ProductId") {
-            if let ::std::option::Option::Some(value) = input.product_id.as_deref() {
-                captured.insert("ProductId", value);
+        if requested.should_capture("MarketplaceRevenueShareIdentifier") {
+            if let ::std::option::Option::Some(value) = input.marketplace_revenue_share_identifier.as_deref() {
+                captured.insert("MarketplaceRevenueShareIdentifier", value);
             }
         }
         if requested.should_capture("AfterEffectiveFrom") {
@@ -204,6 +204,16 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListMarketpla
         if requested.should_capture("BeforeEffectiveFrom") {
             if let ::std::option::Option::Some(value) = input.before_effective_from.as_deref() {
                 captured.insert("BeforeEffectiveFrom", value);
+            }
+        }
+        if requested.should_capture("AfterEffectiveUntil") {
+            if let ::std::option::Option::Some(value) = input.after_effective_until.as_deref() {
+                captured.insert("AfterEffectiveUntil", value);
+            }
+        }
+        if requested.should_capture("BeforeEffectiveUntil") {
+            if let ::std::option::Option::Some(value) = input.before_effective_until.as_deref() {
+                captured.insert("BeforeEffectiveUntil", value);
             }
         }
         if requested.should_capture("NextToken") {

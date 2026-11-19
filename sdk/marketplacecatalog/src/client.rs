@@ -228,6 +228,8 @@ mod list_tags_for_resource;
 
 mod put_resource_policy;
 
+mod start_assessment;
+
 mod start_change_set;
 
 mod tag_resource;

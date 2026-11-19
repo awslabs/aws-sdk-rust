@@ -10,15 +10,19 @@ pub struct AssumeRoleWithSamlOutput {
     pub credentials: ::std::option::Option<crate::types::Credentials>,
     /// <p>The identifiers for the temporary security credentials that the operation returns.</p>
     pub assumed_role_user: ::std::option::Option<crate::types::AssumedRoleUser>,
-    /// <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
+    /// <p>This field is deprecated. Use <code>SessionTokenUtilization</code> instead.</p>
     #[deprecated(note = "Deprecated. Replaced by SessionTokenUtilization.", since = "2026-06-17")]
     pub packed_policy_size: ::std::option::Option<i32>,
     /// <p>The value of the <code>NameID</code> element in the <code>Subject</code> element of the SAML assertion.</p>
+    /// <p>This is not the trusted identity propagation subject (<code>aws:OriginIdentity/Subject</code>). When the session carries trusted identity propagation context, that value is returned in <code>TrustedIdentityPropagationContext</code>.</p>
     pub subject: ::std::option::Option<::std::string::String>,
     /// <p>The format of the name ID, as defined by the <code>Format</code> attribute in the <code>NameID</code> element of the SAML assertion. Typical examples of the format are <code>transient</code> or <code>persistent</code>.</p>
     /// <p>If the format includes the prefix <code>urn:oasis:names:tc:SAML:2.0:nameid-format</code>, that prefix is removed. For example, <code>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</code> is returned as <code>transient</code>. If the format includes any other prefix, the format is returned with no modifications.</p>
+    /// <p>This is not the trusted identity propagation subject type (<code>aws:OriginIdentity/SubjectType</code>). When the session carries trusted identity propagation context, that value is returned in <code>TrustedIdentityPropagationContext</code>.</p>
     pub subject_type: ::std::option::Option<::std::string::String>,
     /// <p>The value of the <code>Issuer</code> element of the SAML assertion.</p>
+    /// <p>This is not the trusted identity propagation issuer (<code>aws:OriginIdentity/Issuer</code>). When the session carries trusted identity propagation context, that value is returned in <code>TrustedIdentityPropagationContext</code>.</p>
     pub issuer: ::std::option::Option<::std::string::String>,
     /// <p>The value of the <code>Recipient</code> attribute of the <code>SubjectConfirmationData</code> element of the SAML assertion.</p>
     pub audience: ::std::option::Option<::std::string::String>,
@@ -39,10 +43,15 @@ pub struct AssumeRoleWithSamlOutput {
     /// <p>You can require users to set a source identity value when they assume a role. You do this by using the <code>sts:SourceIdentity</code> condition key in a role trust policy. That way, actions that are taken with the role are associated with that user. After the source identity is set, the value cannot be changed. It is present in the request for all actions that are taken by the role and persists across <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html#id_roles_terms-and-concepts">chained role</a> sessions. You can configure your SAML identity provider to use an attribute associated with your users, like user name or email, as the source identity when calling <code>AssumeRoleWithSAML</code>. You do this by adding an attribute to the SAML assertion. For more information about using source identity, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.</p>
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-</p>
     pub source_identity: ::std::option::Option<::std::string::String>,
-    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
     pub session_token_utilization: ::std::option::Option<i32>,
-    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    /// <p>The size, in bytes, of the session token returned in the Credentials for this response.</p>
     pub session_token_size: ::std::option::Option<i32>,
+    /// <p>The trusted identity propagation context that Amazon Web Services STS set in the session from the SAML assertion, through the context provider attached to the SAML identity provider. It is present only when Amazon Web Services STS set such context in the session. It contains the <code>aws:OriginIdentity/Subject</code>, <code>aws:OriginIdentity/SubjectType</code>, <code>aws:OriginIdentity/Issuer</code> and <code>aws:OriginIdentity/FederatedProviderArn</code> keys and the <code>aws:TransactionContext/IdentityProvider/*</code> keys that Amazon Web Services STS set in the session. Other keys in the session, such as <code>aws:IdentityCenterInstanceArn</code> and <code>aws:IdentityStoreArn</code> for an identity provider with an Identity Center instance attached, are not returned.</p>
+    /// <p>Its <code>OriginIdentity</code> members share the names <code>Subject</code>, <code>SubjectType</code> and <code>Issuer</code> with members of this response but carry the trusted identity propagation values, which differ from the SAML assertion values.</p>
+    /// <p>It is not returned when the SAML assertion is encrypted, even though the session carries the context.</p>
+    /// <p>This element contains information about the end user. Do not log it.</p>
+    pub trusted_identity_propagation_context: ::std::option::Option<crate::types::TrustedIdentityPropagationContext>,
     _request_id: Option<String>,
 }
 impl AssumeRoleWithSamlOutput {
@@ -56,21 +65,25 @@ impl AssumeRoleWithSamlOutput {
     pub fn assumed_role_user(&self) -> ::std::option::Option<&crate::types::AssumedRoleUser> {
         self.assumed_role_user.as_ref()
     }
-    /// <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
+    /// <p>This field is deprecated. Use <code>SessionTokenUtilization</code> instead.</p>
     #[deprecated(note = "Deprecated. Replaced by SessionTokenUtilization.", since = "2026-06-17")]
     pub fn packed_policy_size(&self) -> ::std::option::Option<i32> {
         self.packed_policy_size
     }
     /// <p>The value of the <code>NameID</code> element in the <code>Subject</code> element of the SAML assertion.</p>
+    /// <p>This is not the trusted identity propagation subject (<code>aws:OriginIdentity/Subject</code>). When the session carries trusted identity propagation context, that value is returned in <code>TrustedIdentityPropagationContext</code>.</p>
     pub fn subject(&self) -> ::std::option::Option<&str> {
         self.subject.as_deref()
     }
     /// <p>The format of the name ID, as defined by the <code>Format</code> attribute in the <code>NameID</code> element of the SAML assertion. Typical examples of the format are <code>transient</code> or <code>persistent</code>.</p>
     /// <p>If the format includes the prefix <code>urn:oasis:names:tc:SAML:2.0:nameid-format</code>, that prefix is removed. For example, <code>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</code> is returned as <code>transient</code>. If the format includes any other prefix, the format is returned with no modifications.</p>
+    /// <p>This is not the trusted identity propagation subject type (<code>aws:OriginIdentity/SubjectType</code>). When the session carries trusted identity propagation context, that value is returned in <code>TrustedIdentityPropagationContext</code>.</p>
     pub fn subject_type(&self) -> ::std::option::Option<&str> {
         self.subject_type.as_deref()
     }
     /// <p>The value of the <code>Issuer</code> element of the SAML assertion.</p>
+    /// <p>This is not the trusted identity propagation issuer (<code>aws:OriginIdentity/Issuer</code>). When the session carries trusted identity propagation context, that value is returned in <code>TrustedIdentityPropagationContext</code>.</p>
     pub fn issuer(&self) -> ::std::option::Option<&str> {
         self.issuer.as_deref()
     }
@@ -99,13 +112,20 @@ impl AssumeRoleWithSamlOutput {
     pub fn source_identity(&self) -> ::std::option::Option<&str> {
         self.source_identity.as_deref()
     }
-    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
     pub fn session_token_utilization(&self) -> ::std::option::Option<i32> {
         self.session_token_utilization
     }
-    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    /// <p>The size, in bytes, of the session token returned in the Credentials for this response.</p>
     pub fn session_token_size(&self) -> ::std::option::Option<i32> {
         self.session_token_size
+    }
+    /// <p>The trusted identity propagation context that Amazon Web Services STS set in the session from the SAML assertion, through the context provider attached to the SAML identity provider. It is present only when Amazon Web Services STS set such context in the session. It contains the <code>aws:OriginIdentity/Subject</code>, <code>aws:OriginIdentity/SubjectType</code>, <code>aws:OriginIdentity/Issuer</code> and <code>aws:OriginIdentity/FederatedProviderArn</code> keys and the <code>aws:TransactionContext/IdentityProvider/*</code> keys that Amazon Web Services STS set in the session. Other keys in the session, such as <code>aws:IdentityCenterInstanceArn</code> and <code>aws:IdentityStoreArn</code> for an identity provider with an Identity Center instance attached, are not returned.</p>
+    /// <p>Its <code>OriginIdentity</code> members share the names <code>Subject</code>, <code>SubjectType</code> and <code>Issuer</code> with members of this response but carry the trusted identity propagation values, which differ from the SAML assertion values.</p>
+    /// <p>It is not returned when the SAML assertion is encrypted, even though the session carries the context.</p>
+    /// <p>This element contains information about the end user. Do not log it.</p>
+    pub fn trusted_identity_propagation_context(&self) -> ::std::option::Option<&crate::types::TrustedIdentityPropagationContext> {
+        self.trusted_identity_propagation_context.as_ref()
     }
 }
 impl ::std::fmt::Debug for AssumeRoleWithSamlOutput {
@@ -122,6 +142,7 @@ impl ::std::fmt::Debug for AssumeRoleWithSamlOutput {
         formatter.field("source_identity", &self.source_identity);
         formatter.field("session_token_utilization", &self.session_token_utilization);
         formatter.field("session_token_size", &self.session_token_size);
+        formatter.field("trusted_identity_propagation_context", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -153,6 +174,7 @@ pub struct AssumeRoleWithSamlOutputBuilder {
     pub(crate) source_identity: ::std::option::Option<::std::string::String>,
     pub(crate) session_token_utilization: ::std::option::Option<i32>,
     pub(crate) session_token_size: ::std::option::Option<i32>,
+    pub(crate) trusted_identity_propagation_context: ::std::option::Option<crate::types::TrustedIdentityPropagationContext>,
     _request_id: Option<String>,
 }
 impl AssumeRoleWithSamlOutputBuilder {
@@ -190,65 +212,77 @@ impl AssumeRoleWithSamlOutputBuilder {
     pub fn get_assumed_role_user(&self) -> &::std::option::Option<crate::types::AssumedRoleUser> {
         &self.assumed_role_user
     }
-    /// <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
+    /// <p>This field is deprecated. Use <code>SessionTokenUtilization</code> instead.</p>
     #[deprecated(note = "Deprecated. Replaced by SessionTokenUtilization.", since = "2026-06-17")]
     pub fn packed_policy_size(mut self, input: i32) -> Self {
         self.packed_policy_size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
+    /// <p>This field is deprecated. Use <code>SessionTokenUtilization</code> instead.</p>
     #[deprecated(note = "Deprecated. Replaced by SessionTokenUtilization.", since = "2026-06-17")]
     pub fn set_packed_policy_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.packed_policy_size = input;
         self
     }
-    /// <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
+    /// <p>This field is deprecated. Use <code>SessionTokenUtilization</code> instead.</p>
     #[deprecated(note = "Deprecated. Replaced by SessionTokenUtilization.", since = "2026-06-17")]
     pub fn get_packed_policy_size(&self) -> &::std::option::Option<i32> {
         &self.packed_policy_size
     }
     /// <p>The value of the <code>NameID</code> element in the <code>Subject</code> element of the SAML assertion.</p>
+    /// <p>This is not the trusted identity propagation subject (<code>aws:OriginIdentity/Subject</code>). When the session carries trusted identity propagation context, that value is returned in <code>TrustedIdentityPropagationContext</code>.</p>
     pub fn subject(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the <code>NameID</code> element in the <code>Subject</code> element of the SAML assertion.</p>
+    /// <p>This is not the trusted identity propagation subject (<code>aws:OriginIdentity/Subject</code>). When the session carries trusted identity propagation context, that value is returned in <code>TrustedIdentityPropagationContext</code>.</p>
     pub fn set_subject(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subject = input;
         self
     }
     /// <p>The value of the <code>NameID</code> element in the <code>Subject</code> element of the SAML assertion.</p>
+    /// <p>This is not the trusted identity propagation subject (<code>aws:OriginIdentity/Subject</code>). When the session carries trusted identity propagation context, that value is returned in <code>TrustedIdentityPropagationContext</code>.</p>
     pub fn get_subject(&self) -> &::std::option::Option<::std::string::String> {
         &self.subject
     }
     /// <p>The format of the name ID, as defined by the <code>Format</code> attribute in the <code>NameID</code> element of the SAML assertion. Typical examples of the format are <code>transient</code> or <code>persistent</code>.</p>
     /// <p>If the format includes the prefix <code>urn:oasis:names:tc:SAML:2.0:nameid-format</code>, that prefix is removed. For example, <code>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</code> is returned as <code>transient</code>. If the format includes any other prefix, the format is returned with no modifications.</p>
+    /// <p>This is not the trusted identity propagation subject type (<code>aws:OriginIdentity/SubjectType</code>). When the session carries trusted identity propagation context, that value is returned in <code>TrustedIdentityPropagationContext</code>.</p>
     pub fn subject_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subject_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The format of the name ID, as defined by the <code>Format</code> attribute in the <code>NameID</code> element of the SAML assertion. Typical examples of the format are <code>transient</code> or <code>persistent</code>.</p>
     /// <p>If the format includes the prefix <code>urn:oasis:names:tc:SAML:2.0:nameid-format</code>, that prefix is removed. For example, <code>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</code> is returned as <code>transient</code>. If the format includes any other prefix, the format is returned with no modifications.</p>
+    /// <p>This is not the trusted identity propagation subject type (<code>aws:OriginIdentity/SubjectType</code>). When the session carries trusted identity propagation context, that value is returned in <code>TrustedIdentityPropagationContext</code>.</p>
     pub fn set_subject_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subject_type = input;
         self
     }
     /// <p>The format of the name ID, as defined by the <code>Format</code> attribute in the <code>NameID</code> element of the SAML assertion. Typical examples of the format are <code>transient</code> or <code>persistent</code>.</p>
     /// <p>If the format includes the prefix <code>urn:oasis:names:tc:SAML:2.0:nameid-format</code>, that prefix is removed. For example, <code>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</code> is returned as <code>transient</code>. If the format includes any other prefix, the format is returned with no modifications.</p>
+    /// <p>This is not the trusted identity propagation subject type (<code>aws:OriginIdentity/SubjectType</code>). When the session carries trusted identity propagation context, that value is returned in <code>TrustedIdentityPropagationContext</code>.</p>
     pub fn get_subject_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.subject_type
     }
     /// <p>The value of the <code>Issuer</code> element of the SAML assertion.</p>
+    /// <p>This is not the trusted identity propagation issuer (<code>aws:OriginIdentity/Issuer</code>). When the session carries trusted identity propagation context, that value is returned in <code>TrustedIdentityPropagationContext</code>.</p>
     pub fn issuer(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.issuer = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value of the <code>Issuer</code> element of the SAML assertion.</p>
+    /// <p>This is not the trusted identity propagation issuer (<code>aws:OriginIdentity/Issuer</code>). When the session carries trusted identity propagation context, that value is returned in <code>TrustedIdentityPropagationContext</code>.</p>
     pub fn set_issuer(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.issuer = input;
         self
     }
     /// <p>The value of the <code>Issuer</code> element of the SAML assertion.</p>
+    /// <p>This is not the trusted identity propagation issuer (<code>aws:OriginIdentity/Issuer</code>). When the session carries trusted identity propagation context, that value is returned in <code>TrustedIdentityPropagationContext</code>.</p>
     pub fn get_issuer(&self) -> &::std::option::Option<::std::string::String> {
         &self.issuer
     }
@@ -333,33 +367,56 @@ impl AssumeRoleWithSamlOutputBuilder {
     pub fn get_source_identity(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_identity
     }
-    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
     pub fn session_token_utilization(mut self, input: i32) -> Self {
         self.session_token_utilization = ::std::option::Option::Some(input);
         self
     }
-    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
     pub fn set_session_token_utilization(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_token_utilization = input;
         self
     }
-    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
     pub fn get_session_token_utilization(&self) -> &::std::option::Option<i32> {
         &self.session_token_utilization
     }
-    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    /// <p>The size, in bytes, of the session token returned in the Credentials for this response.</p>
     pub fn session_token_size(mut self, input: i32) -> Self {
         self.session_token_size = ::std::option::Option::Some(input);
         self
     }
-    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    /// <p>The size, in bytes, of the session token returned in the Credentials for this response.</p>
     pub fn set_session_token_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_token_size = input;
         self
     }
-    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    /// <p>The size, in bytes, of the session token returned in the Credentials for this response.</p>
     pub fn get_session_token_size(&self) -> &::std::option::Option<i32> {
         &self.session_token_size
+    }
+    /// <p>The trusted identity propagation context that Amazon Web Services STS set in the session from the SAML assertion, through the context provider attached to the SAML identity provider. It is present only when Amazon Web Services STS set such context in the session. It contains the <code>aws:OriginIdentity/Subject</code>, <code>aws:OriginIdentity/SubjectType</code>, <code>aws:OriginIdentity/Issuer</code> and <code>aws:OriginIdentity/FederatedProviderArn</code> keys and the <code>aws:TransactionContext/IdentityProvider/*</code> keys that Amazon Web Services STS set in the session. Other keys in the session, such as <code>aws:IdentityCenterInstanceArn</code> and <code>aws:IdentityStoreArn</code> for an identity provider with an Identity Center instance attached, are not returned.</p>
+    /// <p>Its <code>OriginIdentity</code> members share the names <code>Subject</code>, <code>SubjectType</code> and <code>Issuer</code> with members of this response but carry the trusted identity propagation values, which differ from the SAML assertion values.</p>
+    /// <p>It is not returned when the SAML assertion is encrypted, even though the session carries the context.</p>
+    /// <p>This element contains information about the end user. Do not log it.</p>
+    pub fn trusted_identity_propagation_context(mut self, input: crate::types::TrustedIdentityPropagationContext) -> Self {
+        self.trusted_identity_propagation_context = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The trusted identity propagation context that Amazon Web Services STS set in the session from the SAML assertion, through the context provider attached to the SAML identity provider. It is present only when Amazon Web Services STS set such context in the session. It contains the <code>aws:OriginIdentity/Subject</code>, <code>aws:OriginIdentity/SubjectType</code>, <code>aws:OriginIdentity/Issuer</code> and <code>aws:OriginIdentity/FederatedProviderArn</code> keys and the <code>aws:TransactionContext/IdentityProvider/*</code> keys that Amazon Web Services STS set in the session. Other keys in the session, such as <code>aws:IdentityCenterInstanceArn</code> and <code>aws:IdentityStoreArn</code> for an identity provider with an Identity Center instance attached, are not returned.</p>
+    /// <p>Its <code>OriginIdentity</code> members share the names <code>Subject</code>, <code>SubjectType</code> and <code>Issuer</code> with members of this response but carry the trusted identity propagation values, which differ from the SAML assertion values.</p>
+    /// <p>It is not returned when the SAML assertion is encrypted, even though the session carries the context.</p>
+    /// <p>This element contains information about the end user. Do not log it.</p>
+    pub fn set_trusted_identity_propagation_context(mut self, input: ::std::option::Option<crate::types::TrustedIdentityPropagationContext>) -> Self {
+        self.trusted_identity_propagation_context = input;
+        self
+    }
+    /// <p>The trusted identity propagation context that Amazon Web Services STS set in the session from the SAML assertion, through the context provider attached to the SAML identity provider. It is present only when Amazon Web Services STS set such context in the session. It contains the <code>aws:OriginIdentity/Subject</code>, <code>aws:OriginIdentity/SubjectType</code>, <code>aws:OriginIdentity/Issuer</code> and <code>aws:OriginIdentity/FederatedProviderArn</code> keys and the <code>aws:TransactionContext/IdentityProvider/*</code> keys that Amazon Web Services STS set in the session. Other keys in the session, such as <code>aws:IdentityCenterInstanceArn</code> and <code>aws:IdentityStoreArn</code> for an identity provider with an Identity Center instance attached, are not returned.</p>
+    /// <p>Its <code>OriginIdentity</code> members share the names <code>Subject</code>, <code>SubjectType</code> and <code>Issuer</code> with members of this response but carry the trusted identity propagation values, which differ from the SAML assertion values.</p>
+    /// <p>It is not returned when the SAML assertion is encrypted, even though the session carries the context.</p>
+    /// <p>This element contains information about the end user. Do not log it.</p>
+    pub fn get_trusted_identity_propagation_context(&self) -> &::std::option::Option<crate::types::TrustedIdentityPropagationContext> {
+        &self.trusted_identity_propagation_context
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -384,6 +441,7 @@ impl AssumeRoleWithSamlOutputBuilder {
             source_identity: self.source_identity,
             session_token_utilization: self.session_token_utilization,
             session_token_size: self.session_token_size,
+            trusted_identity_propagation_context: self.trusted_identity_propagation_context,
             _request_id: self._request_id,
         }
     }
@@ -402,6 +460,7 @@ impl ::std::fmt::Debug for AssumeRoleWithSamlOutputBuilder {
         formatter.field("source_identity", &self.source_identity);
         formatter.field("session_token_utilization", &self.session_token_utilization);
         formatter.field("session_token_size", &self.session_token_size);
+        formatter.field("trusted_identity_propagation_context", &"*** Sensitive Data Redacted ***");
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

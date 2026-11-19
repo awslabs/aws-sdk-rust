@@ -6,12 +6,30 @@
 pub struct DomainItem {
     /// <p>The domain name.</p>
     pub domain: ::std::string::String,
+    /// <p>Specifies which requests for this domain CloudFront routes to the distribution tenant. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>any</code> – CloudFront routes requests for this domain to the distribution tenant regardless of the IP address that they arrive on. This is the default if you don't specify a value.</p></li>
+    /// <li>
+    /// <p><code>anycast-ip-list-only</code> – CloudFront routes requests for this domain to the distribution tenant only when they arrive on the Anycast static IPs of the distribution tenant's connection group. CloudFront treats requests that arrive on other IP addresses as requests for an unknown domain.</p></li>
+    /// </ul>
+    pub serve_on: ::std::option::Option<crate::types::ServeOn>,
 }
 impl DomainItem {
     /// <p>The domain name.</p>
     pub fn domain(&self) -> &str {
         use std::ops::Deref;
         self.domain.deref()
+    }
+    /// <p>Specifies which requests for this domain CloudFront routes to the distribution tenant. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>any</code> – CloudFront routes requests for this domain to the distribution tenant regardless of the IP address that they arrive on. This is the default if you don't specify a value.</p></li>
+    /// <li>
+    /// <p><code>anycast-ip-list-only</code> – CloudFront routes requests for this domain to the distribution tenant only when they arrive on the Anycast static IPs of the distribution tenant's connection group. CloudFront treats requests that arrive on other IP addresses as requests for an unknown domain.</p></li>
+    /// </ul>
+    pub fn serve_on(&self) -> ::std::option::Option<&crate::types::ServeOn> {
+        self.serve_on.as_ref()
     }
 }
 impl DomainItem {
@@ -26,6 +44,7 @@ impl DomainItem {
 #[non_exhaustive]
 pub struct DomainItemBuilder {
     pub(crate) domain: ::std::option::Option<::std::string::String>,
+    pub(crate) serve_on: ::std::option::Option<crate::types::ServeOn>,
 }
 impl DomainItemBuilder {
     /// <p>The domain name.</p>
@@ -43,6 +62,38 @@ impl DomainItemBuilder {
     pub fn get_domain(&self) -> &::std::option::Option<::std::string::String> {
         &self.domain
     }
+    /// <p>Specifies which requests for this domain CloudFront routes to the distribution tenant. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>any</code> – CloudFront routes requests for this domain to the distribution tenant regardless of the IP address that they arrive on. This is the default if you don't specify a value.</p></li>
+    /// <li>
+    /// <p><code>anycast-ip-list-only</code> – CloudFront routes requests for this domain to the distribution tenant only when they arrive on the Anycast static IPs of the distribution tenant's connection group. CloudFront treats requests that arrive on other IP addresses as requests for an unknown domain.</p></li>
+    /// </ul>
+    pub fn serve_on(mut self, input: crate::types::ServeOn) -> Self {
+        self.serve_on = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies which requests for this domain CloudFront routes to the distribution tenant. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>any</code> – CloudFront routes requests for this domain to the distribution tenant regardless of the IP address that they arrive on. This is the default if you don't specify a value.</p></li>
+    /// <li>
+    /// <p><code>anycast-ip-list-only</code> – CloudFront routes requests for this domain to the distribution tenant only when they arrive on the Anycast static IPs of the distribution tenant's connection group. CloudFront treats requests that arrive on other IP addresses as requests for an unknown domain.</p></li>
+    /// </ul>
+    pub fn set_serve_on(mut self, input: ::std::option::Option<crate::types::ServeOn>) -> Self {
+        self.serve_on = input;
+        self
+    }
+    /// <p>Specifies which requests for this domain CloudFront routes to the distribution tenant. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>any</code> – CloudFront routes requests for this domain to the distribution tenant regardless of the IP address that they arrive on. This is the default if you don't specify a value.</p></li>
+    /// <li>
+    /// <p><code>anycast-ip-list-only</code> – CloudFront routes requests for this domain to the distribution tenant only when they arrive on the Anycast static IPs of the distribution tenant's connection group. CloudFront treats requests that arrive on other IP addresses as requests for an unknown domain.</p></li>
+    /// </ul>
+    pub fn get_serve_on(&self) -> &::std::option::Option<crate::types::ServeOn> {
+        &self.serve_on
+    }
     /// Consumes the builder and constructs a [`DomainItem`](crate::types::DomainItem).
     /// This method will fail if any of the following fields are not set:
     /// - [`domain`](crate::types::builders::DomainItemBuilder::domain)
@@ -54,6 +105,7 @@ impl DomainItemBuilder {
                     "domain was not specified but it is required when building DomainItem",
                 )
             })?,
+            serve_on: self.serve_on,
         })
     }
 }

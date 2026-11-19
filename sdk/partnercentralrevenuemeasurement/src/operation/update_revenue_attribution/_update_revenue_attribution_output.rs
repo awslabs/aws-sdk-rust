@@ -13,6 +13,8 @@ pub struct UpdateRevenueAttributionOutput {
     pub last_modified_date: ::aws_smithy_types::DateTime,
     /// <p>The latest revision of the attribution after the update.</p>
     pub latest_revision: ::std::option::Option<::std::string::String>,
+    /// <p>The context stored on the revenue attribution after the update.</p>
+    pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateRevenueAttributionOutput {
@@ -38,6 +40,10 @@ impl UpdateRevenueAttributionOutput {
     pub fn latest_revision(&self) -> ::std::option::Option<&str> {
         self.latest_revision.as_deref()
     }
+    /// <p>The context stored on the revenue attribution after the update.</p>
+    pub fn context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.context.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for UpdateRevenueAttributionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -60,6 +66,7 @@ pub struct UpdateRevenueAttributionOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) latest_revision: ::std::option::Option<::std::string::String>,
+    pub(crate) context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl UpdateRevenueAttributionOutputBuilder {
@@ -136,6 +143,26 @@ impl UpdateRevenueAttributionOutputBuilder {
     pub fn get_latest_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.latest_revision
     }
+    /// Adds a key-value pair to `context`.
+    ///
+    /// To override the contents of this collection use [`set_context`](Self::set_context).
+    ///
+    /// <p>The context stored on the revenue attribution after the update.</p>
+    pub fn context(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.context.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.context = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>The context stored on the revenue attribution after the update.</p>
+    pub fn set_context(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.context = input;
+        self
+    }
+    /// <p>The context stored on the revenue attribution after the update.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.context
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -177,6 +204,7 @@ impl UpdateRevenueAttributionOutputBuilder {
                 )
             })?,
             latest_revision: self.latest_revision,
+            context: self.context,
             _request_id: self._request_id,
         })
     }

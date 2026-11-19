@@ -125,10 +125,14 @@ where
 impl From<crate::operation::create_connection::CreateConnectionError> for Error {
     fn from(err: crate::operation::create_connection::CreateConnectionError) -> Self {
         match err {
+            crate::operation::create_connection::CreateConnectionError::InvalidInputException(inner) => Error::InvalidInputException(inner),
             crate::operation::create_connection::CreateConnectionError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::create_connection::CreateConnectionError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::create_connection::CreateConnectionError::ResourceUnavailableException(inner) => {
                 Error::ResourceUnavailableException(inner)
+            }
+            crate::operation::create_connection::CreateConnectionError::UnsupportedProviderTypeException(inner) => {
+                Error::UnsupportedProviderTypeException(inner)
             }
             crate::operation::create_connection::CreateConnectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -187,6 +191,9 @@ impl From<crate::operation::create_repository_link::CreateRepositoryLinkError> f
             crate::operation::create_repository_link::CreateRepositoryLinkError::ResourceAlreadyExistsException(inner) => {
                 Error::ResourceAlreadyExistsException(inner)
             }
+            crate::operation::create_repository_link::CreateRepositoryLinkError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::create_repository_link::CreateRepositoryLinkError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_repository_link::CreateRepositoryLinkError::Unhandled(inner) => Error::Unhandled(inner),
         }
@@ -229,6 +236,9 @@ impl From<crate::operation::create_sync_configuration::CreateSyncConfigurationEr
             }
             crate::operation::create_sync_configuration::CreateSyncConfigurationError::ResourceAlreadyExistsException(inner) => {
                 Error::ResourceAlreadyExistsException(inner)
+            }
+            crate::operation::create_sync_configuration::CreateSyncConfigurationError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
             }
             crate::operation::create_sync_configuration::CreateSyncConfigurationError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)

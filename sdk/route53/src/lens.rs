@@ -29,8 +29,28 @@ pub(crate) fn reflens_list_cidr_locations_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_health_check_sources_output_output_next_token(
+    input: &crate::operation::list_health_check_sources::ListHealthCheckSourcesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_health_checks_output_output_next_marker(
     input: &crate::operation::list_health_checks::ListHealthChecksOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_marker {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_health_checks_by_source_output_output_next_marker(
+    input: &crate::operation::list_health_checks_by_source::ListHealthChecksBySourceOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_marker {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -90,8 +110,22 @@ pub(crate) fn lens_list_cidr_locations_output_output_cidr_locations(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_health_check_sources_output_output_health_check_sources(
+    input: crate::operation::list_health_check_sources::ListHealthCheckSourcesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::HealthCheckSource>> {
+    let input = input.health_check_sources;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_health_checks_output_output_health_checks(
     input: crate::operation::list_health_checks::ListHealthChecksOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::HealthCheck>> {
+    let input = input.health_checks;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_health_checks_by_source_output_output_health_checks(
+    input: crate::operation::list_health_checks_by_source::ListHealthChecksBySourceOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::HealthCheck>> {
     let input = input.health_checks;
     ::std::option::Option::Some(input)

@@ -65,6 +65,24 @@ static DESCRIBETOPICOUTPUT_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> =
     5,
 )
 .with_json_name("status");
+static DESCRIBETOPICOUTPUT_MEMBER_REPLICA_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.kafka#__listOf__integer$member", "com.amazonaws.kafka", "__listOf__integer"),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "member",
+    0,
+);
+static DESCRIBETOPICOUTPUT_MEMBER_REPLICA_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.kafka.synthetic#DescribeTopicOutput$ReplicaIds",
+        "com.amazonaws.kafka.synthetic",
+        "DescribeTopicOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "ReplicaIds",
+    6,
+)
+.with_json_name("replicaIds")
+.with_list_member(&DESCRIBETOPICOUTPUT_MEMBER_REPLICA_IDS_MEMBER);
 static DESCRIBETOPICOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.kafka.synthetic#DescribeTopicOutput",
@@ -79,6 +97,7 @@ static DESCRIBETOPICOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_
         &DESCRIBETOPICOUTPUT_MEMBER_PARTITION_COUNT,
         &DESCRIBETOPICOUTPUT_MEMBER_CONFIGS,
         &DESCRIBETOPICOUTPUT_MEMBER_STATUS,
+        &DESCRIBETOPICOUTPUT_MEMBER_REPLICA_IDS,
     ],
 )
 .with_original_name("DescribeTopicResponse");
@@ -113,6 +132,17 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::descri
         }
         if let Some(ref val) = self.status {
             ser.write_string(&DESCRIBETOPICOUTPUT_MEMBER_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.replica_ids {
+            ser.write_list(
+                &DESCRIBETOPICOUTPUT_MEMBER_REPLICA_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_integer(&aws_smithy_schema::prelude::INTEGER, *item)?;
+                    }
+                    Ok(())
+                },
+            )?;
         }
         Ok(())
     }
@@ -171,6 +201,13 @@ impl crate::operation::describe_topic::builders::DescribeTopicOutputBuilder {
                         deser.read_null()?;
                     } else {
                         self.status = Some(crate::types::TopicState::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.replica_ids = Some(deser.read_integer_list(member)?);
                     }
                 }
                 _ => {}

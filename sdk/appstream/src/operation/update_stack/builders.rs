@@ -332,6 +332,20 @@ impl UpdateStackFluentBuilder {
     pub fn get_content_redirection(&self) -> &::std::option::Option<crate::types::ContentRedirection> {
         self.inner.get_content_redirection()
     }
+    /// <p>Configuration for WebAuthn redirection between the streaming session and the user's local device. Use ProcessCompatibilityList to specify which processes can use WebAuthn redirection on Windows fleets. To remove WebAuthn redirection, use AttributesToDelete with the WEB_AUTHN_REDIRECTION value.</p>
+    pub fn web_authn_redirection(mut self, input: crate::types::WebAuthnRedirection) -> Self {
+        self.inner = self.inner.web_authn_redirection(input);
+        self
+    }
+    /// <p>Configuration for WebAuthn redirection between the streaming session and the user's local device. Use ProcessCompatibilityList to specify which processes can use WebAuthn redirection on Windows fleets. To remove WebAuthn redirection, use AttributesToDelete with the WEB_AUTHN_REDIRECTION value.</p>
+    pub fn set_web_authn_redirection(mut self, input: ::std::option::Option<crate::types::WebAuthnRedirection>) -> Self {
+        self.inner = self.inner.set_web_authn_redirection(input);
+        self
+    }
+    /// <p>Configuration for WebAuthn redirection between the streaming session and the user's local device. Use ProcessCompatibilityList to specify which processes can use WebAuthn redirection on Windows fleets. To remove WebAuthn redirection, use AttributesToDelete with the WEB_AUTHN_REDIRECTION value.</p>
+    pub fn get_web_authn_redirection(&self) -> &::std::option::Option<crate::types::WebAuthnRedirection> {
+        self.inner.get_web_authn_redirection()
+    }
     /// <p>The configuration for agent access on the stack. Specify this to update agent access settings. To remove agent access, use AttributesToDelete with the AGENT_ACCESS_CONFIG value.</p>
     pub fn agent_access_config(mut self, input: crate::types::AgentAccessConfigForUpdate) -> Self {
         self.inner = self.inner.agent_access_config(input);

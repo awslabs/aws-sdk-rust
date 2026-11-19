@@ -17,6 +17,10 @@ pub use crate::types::_ami_security_summary::AmiSecuritySummaryBuilder;
 
 pub use crate::types::_container_security_summary::ContainerSecuritySummaryBuilder;
 
+pub use crate::types::_listing_quality_summary::ListingQualitySummaryBuilder;
+
+pub use crate::types::_listing_recommendations_summary::ListingRecommendationsSummaryBuilder;
+
 pub use crate::types::_control_assessment::ControlAssessmentBuilder;
 
 pub use crate::types::_change_summary::ChangeSummaryBuilder;
@@ -75,6 +79,8 @@ pub use crate::types::_entity_summary::EntitySummaryBuilder;
 
 pub use crate::types::_tag::TagBuilder;
 
+pub use crate::types::_control_input::ControlInputBuilder;
+
 pub use crate::types::_change::ChangeBuilder;
 
 pub use crate::types::_entity::EntityBuilder;
@@ -110,6 +116,8 @@ pub use crate::types::_offer_name_filter::OfferNameFilterBuilder;
 pub use crate::types::_offer_product_id_filter::OfferProductIdFilterBuilder;
 
 pub use crate::types::_offer_resale_authorization_id_filter::OfferResaleAuthorizationIdFilterBuilder;
+
+pub use crate::types::_offer_subsidiary_authorization_id_filter::OfferSubsidiaryAuthorizationIdFilterBuilder;
 
 pub use crate::types::_offer_release_date_filter::OfferReleaseDateFilterBuilder;
 
@@ -269,4 +277,36 @@ pub use crate::types::_subsidiary_authorization_created_date_filter_date_range::
 
 pub use crate::types::_subsidiary_authorization_last_modified_date_filter_date_range::SubsidiaryAuthorizationLastModifiedDateFilterDateRangeBuilder;
 
+pub use crate::types::_product_content_recommendations::ProductContentRecommendationsBuilder;
+
+pub use crate::types::_solution_content_recommendations::SolutionContentRecommendationsBuilder;
+
+pub use crate::types::_feature_recommendations::FeatureRecommendationsBuilder;
+
 pub use crate::types::_error_scope::ErrorScopeBuilder;
+
+pub use crate::types::_content_recommendation::ContentRecommendationBuilder;
+
+pub use crate::types::_recommendation_citation::RecommendationCitationBuilder;
+
+pub use crate::types::_feature_recommendation::FeatureRecommendationBuilder;
+
+pub use crate::types::_follow_up_question::FollowUpQuestionBuilder;
+
+pub use crate::types::_listing_finding::ListingFindingBuilder;
+
+pub use crate::types::_text_alternative::TextAlternativeBuilder;
+
+pub use crate::types::_text_list_alternative::TextListAlternativeBuilder;
+
+pub use crate::types::_additional_resources_alternative::AdditionalResourcesAlternativeBuilder;
+
+pub use crate::types::_use_cases_alternative::UseCasesAlternativeBuilder;
+
+pub use crate::types::_case_studies_alternative::CaseStudiesAlternativeBuilder;
+
+pub use crate::types::_additional_resource::AdditionalResourceBuilder;
+
+pub use crate::types::_listing_use_case::ListingUseCaseBuilder;
+
+pub use crate::types::_listing_case_study::ListingCaseStudyBuilder;

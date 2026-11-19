@@ -189,6 +189,8 @@ mod delete_table_policy;
 
 mod delete_table_replication;
 
+mod disassociate_table_replication;
+
 mod get_namespace;
 
 mod get_table;

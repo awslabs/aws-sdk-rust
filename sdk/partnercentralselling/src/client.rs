@@ -142,6 +142,8 @@ mod assign_opportunity;
 
 mod associate_opportunity;
 
+mod create_customer_account;
+
 mod create_engagement;
 
 mod create_engagement_context;
@@ -181,17 +183,29 @@ mod create_resource_snapshot_job;
 /// ```
 pub mod customize;
 
+mod delete_customer_account;
+
 mod delete_resource_snapshot_job;
 
 mod disassociate_opportunity;
 
 mod get_aws_opportunity_summary;
 
+mod get_customer_account;
+
+mod get_customer_account_bulk_job;
+
+mod get_customer_account_bulk_job_report_url;
+
+mod get_customer_account_statistics;
+
 mod get_engagement;
 
 mod get_engagement_invitation;
 
 mod get_opportunity;
+
+mod get_opportunity_bulk_job_report_url;
 
 mod get_prospecting_from_engagement_task;
 
@@ -201,9 +215,15 @@ mod get_resource_snapshot_job;
 
 mod get_selling_system_settings;
 
+mod list_customer_account_bulk_job_results;
+
+mod list_customer_account_bulk_jobs;
+
 mod list_engagement_by_accepting_invitation_tasks;
 
 mod list_engagement_from_opportunity_tasks;
+
+mod list_engagement_groups;
 
 mod list_engagement_invitations;
 
@@ -214,6 +234,10 @@ mod list_engagement_resource_associations;
 mod list_engagements;
 
 mod list_opportunities;
+
+mod list_opportunity_bulk_job_results;
+
+mod list_opportunity_bulk_jobs;
 
 mod list_opportunity_from_engagement_tasks;
 
@@ -231,9 +255,19 @@ mod put_selling_system_settings;
 
 mod reject_engagement_invitation;
 
+mod search_customer_accounts;
+
+mod search_engagements;
+
+mod search_opportunities;
+
+mod start_customer_account_bulk_job;
+
 mod start_engagement_by_accepting_invitation_task;
 
 mod start_engagement_from_opportunity_task;
+
+mod start_opportunity_bulk_job;
 
 mod start_opportunity_from_engagement_task;
 
@@ -248,6 +282,8 @@ mod submit_opportunity;
 mod tag_resource;
 
 mod untag_resource;
+
+mod update_customer_account;
 
 mod update_engagement_context;
 

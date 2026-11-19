@@ -695,6 +695,10 @@ pub(crate) mod shape_update_login_profile;
 
 pub(crate) mod shape_update_login_profile_input;
 
+pub(crate) mod shape_update_open_id_connect_provider;
+
+pub(crate) mod shape_update_open_id_connect_provider_input;
+
 pub(crate) mod shape_update_open_id_connect_provider_thumbprint;
 
 pub(crate) mod shape_update_open_id_connect_provider_thumbprint_input;
@@ -750,6 +754,8 @@ pub(crate) mod shape_caller_is_not_management_account_exception;
 pub(crate) mod shape_concurrent_modification_exception;
 
 pub(crate) mod shape_context_entry;
+
+pub(crate) mod shape_context_provider;
 
 pub(crate) mod shape_credential_report_expired_exception;
 
@@ -853,6 +859,8 @@ pub(crate) mod shape_client_id_list_type;
 
 pub(crate) mod shape_context_key_names_result_list_type;
 
+pub(crate) mod shape_context_provider_key_definition;
+
 pub(crate) mod shape_delegation_request;
 
 pub(crate) mod shape_delegation_requests_list_type;
@@ -919,6 +927,8 @@ pub(crate) mod shape_role_list_type;
 
 pub(crate) mod shape_role_template_version;
 
+pub(crate) mod shape_saml_key_hash_list_type;
+
 pub(crate) mod shape_saml_provider_list_type;
 
 pub(crate) mod shape_server_certificate;
@@ -971,6 +981,8 @@ pub(crate) mod shape_group_detail;
 
 pub(crate) mod shape_inline_policy_template_list_type;
 
+pub(crate) mod shape_key_definition_list_type;
+
 pub(crate) mod shape_list_policies_granting_service_access_entry;
 
 pub(crate) mod shape_managed_policy_arn_list_type;
@@ -997,6 +1009,8 @@ pub(crate) mod shape_role_permission_restriction_arn_list_type;
 
 pub(crate) mod shape_role_usage_list_type;
 
+pub(crate) mod shape_saml_key_hash_entry;
+
 pub(crate) mod shape_saml_private_key;
 
 pub(crate) mod shape_saml_provider_list_entry;
@@ -1020,6 +1034,8 @@ pub(crate) mod shape_eval_decision_details_type;
 pub(crate) mod shape_group_name_list_type;
 
 pub(crate) mod shape_inline_policy;
+
+pub(crate) mod shape_key_hash_list_type;
 
 pub(crate) mod shape_organizations_decision_detail;
 

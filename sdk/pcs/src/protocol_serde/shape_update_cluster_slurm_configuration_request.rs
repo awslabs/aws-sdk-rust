@@ -45,17 +45,29 @@ pub fn ser_update_cluster_slurm_configuration_request(
         }
         array_11.finish();
     }
-    if let Some(var_14) = &input.accounting {
-        #[allow(unused_mut)]
-        let mut object_15 = object.key("accounting").start_object();
-        crate::protocol_serde::shape_update_accounting_request::ser_update_accounting_request(&mut object_15, var_14)?;
-        object_15.finish();
+    if let Some(var_14) = &input.job_submit_plugins {
+        let mut array_15 = object.key("jobSubmitPlugins").start_array();
+        for item_16 in var_14 {
+            {
+                #[allow(unused_mut)]
+                let mut object_17 = array_15.value().start_object();
+                crate::protocol_serde::shape_job_submit_plugin::ser_job_submit_plugin(&mut object_17, item_16)?;
+                object_17.finish();
+            }
+        }
+        array_15.finish();
     }
-    if let Some(var_16) = &input.slurm_rest {
+    if let Some(var_18) = &input.accounting {
         #[allow(unused_mut)]
-        let mut object_17 = object.key("slurmRest").start_object();
-        crate::protocol_serde::shape_update_slurm_rest_request::ser_update_slurm_rest_request(&mut object_17, var_16)?;
-        object_17.finish();
+        let mut object_19 = object.key("accounting").start_object();
+        crate::protocol_serde::shape_update_accounting_request::ser_update_accounting_request(&mut object_19, var_18)?;
+        object_19.finish();
+    }
+    if let Some(var_20) = &input.slurm_rest {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("slurmRest").start_object();
+        crate::protocol_serde::shape_update_slurm_rest_request::ser_update_slurm_rest_request(&mut object_21, var_20)?;
+        object_21.finish();
     }
     Ok(())
 }

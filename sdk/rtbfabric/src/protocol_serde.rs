@@ -53,6 +53,10 @@ pub(crate) mod shape_delete_responder_gateway;
 
 pub(crate) mod shape_disassociate_certificate;
 
+pub(crate) mod shape_get_available_module;
+
+pub(crate) mod shape_get_available_module_version;
+
 pub(crate) mod shape_get_certificate_association;
 
 pub(crate) mod shape_get_inbound_external_link;
@@ -67,6 +71,12 @@ pub(crate) mod shape_get_requester_gateway;
 
 pub(crate) mod shape_get_responder_gateway;
 
+pub(crate) mod shape_get_update;
+
+pub(crate) mod shape_list_available_module_versions;
+
+pub(crate) mod shape_list_available_modules;
+
 pub(crate) mod shape_list_certificate_associations;
 
 pub(crate) mod shape_list_link_routing_rules;
@@ -78,6 +88,10 @@ pub(crate) mod shape_list_requester_gateways;
 pub(crate) mod shape_list_responder_gateways;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_list_updates;
+
+pub(crate) mod shape_put_link_flows;
 
 pub(crate) mod shape_reject_link;
 
@@ -125,6 +139,8 @@ pub(crate) mod shape_create_responder_gateway_input;
 
 pub(crate) mod shape_internal_server_exception;
 
+pub(crate) mod shape_put_link_flows_input;
+
 pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
@@ -145,7 +161,19 @@ pub(crate) mod shape_update_responder_gateway_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_available_module_summary_list;
+
+pub(crate) mod shape_available_module_version_summary_list;
+
 pub(crate) mod shape_certificate_association_summary_list;
+
+pub(crate) mod shape_configurable_action_list;
+
+pub(crate) mod shape_error_details;
+
+pub(crate) mod shape_flow;
+
+pub(crate) mod shape_flow_list;
 
 pub(crate) mod shape_gateway_id_list;
 
@@ -165,6 +193,8 @@ pub(crate) mod shape_module_configuration;
 
 pub(crate) mod shape_module_configuration_list;
 
+pub(crate) mod shape_module_permission_list;
+
 pub(crate) mod shape_rule_condition;
 
 pub(crate) mod shape_security_group_id_list;
@@ -175,13 +205,25 @@ pub(crate) mod shape_tags_map;
 
 pub(crate) mod shape_trust_store_configuration;
 
+pub(crate) mod shape_update;
+
+pub(crate) mod shape_update_summary_list;
+
 pub(crate) mod shape_auto_scaling_groups_configuration;
+
+pub(crate) mod shape_available_module_summary;
+
+pub(crate) mod shape_available_module_version_summary;
 
 pub(crate) mod shape_certificate_association_summary;
 
 pub(crate) mod shape_certificate_authority_certificates;
 
 pub(crate) mod shape_eks_endpoints_configuration;
+
+pub(crate) mod shape_error_detail;
+
+pub(crate) mod shape_flow_pipeline;
 
 pub(crate) mod shape_link_application_log_configuration;
 
@@ -199,7 +241,15 @@ pub(crate) mod shape_responder_error_masking;
 
 pub(crate) mod shape_responder_error_masking_for_http_code;
 
+pub(crate) mod shape_update_parameters;
+
+pub(crate) mod shape_update_summary;
+
+pub(crate) mod shape_update_target;
+
 pub(crate) mod shape_auto_scaling_group_name_list;
+
+pub(crate) mod shape_aws_resource_id_list;
 
 pub(crate) mod shape_flow_module_name_list;
 
@@ -207,15 +257,35 @@ pub(crate) mod shape_health_check_config;
 
 pub(crate) mod shape_link_application_log_sampling;
 
+pub(crate) mod shape_link_config_parameters;
+
+pub(crate) mod shape_link_flow_parameters;
+
+pub(crate) mod shape_link_target;
+
 pub(crate) mod shape_no_bid_module_parameters;
 
 pub(crate) mod shape_open_rtb_attribute_module_parameters;
 
+pub(crate) mod shape_phased_pipeline;
+
 pub(crate) mod shape_rate_limiter_module_parameters;
+
+pub(crate) mod shape_responder_gateway_config_parameters;
+
+pub(crate) mod shape_routing_rule_parameters;
+
+pub(crate) mod shape_routing_rule_target;
+
+pub(crate) mod shape_sequential_pipeline;
 
 pub(crate) mod shape_action;
 
 pub(crate) mod shape_filter;
+
+pub(crate) mod shape_flow_module;
+
+pub(crate) mod shape_flow_phase;
 
 pub(crate) mod shape_responder_error_masking_logging_types;
 
@@ -223,10 +293,16 @@ pub(crate) mod shape_filter_configuration;
 
 pub(crate) mod shape_filter_criterion;
 
+pub(crate) mod shape_flow_module_list;
+
+pub(crate) mod shape_flow_phase_list;
+
 pub(crate) mod shape_header_tag_action;
 
 pub(crate) mod shape_no_bid_action;
 
 pub(crate) mod shape_filter_criteria;
+
+pub(crate) mod shape_selected_action_list;
 
 pub(crate) mod shape_value_list;

@@ -491,6 +491,8 @@ pub use crate::types::_global_resiliency_metadata::GlobalResiliencyMetadataBuild
 
 pub use crate::types::_contact_lens::ContactLensBuilder;
 
+pub use crate::types::_voicemail_info::VoicemailInfoBuilder;
+
 pub use crate::types::_evaluation_metadata::EvaluationMetadataBuilder;
 
 pub use crate::types::_instance_status_reason::InstanceStatusReasonBuilder;
@@ -912,6 +914,10 @@ pub use crate::types::_date_reference::DateReferenceBuilder;
 pub use crate::types::_email_reference::EmailReferenceBuilder;
 
 pub use crate::types::_contact_analysis_reference::ContactAnalysisReferenceBuilder;
+
+pub use crate::types::_voicemail_recording_reference::VoicemailRecordingReferenceBuilder;
+
+pub use crate::types::_voicemail_analysis_reference::VoicemailAnalysisReferenceBuilder;
 
 pub use crate::types::_evaluation_form_ai_version_lifecycle::EvaluationFormAiVersionLifecycleBuilder;
 

@@ -34,7 +34,7 @@ impl crate::operation::get_session_token::builders::GetSessionTokenInputBuilder 
 /// <li>
 /// <p>You cannot call any IAM API operations unless MFA authentication information is included in the request.</p></li>
 /// <li>
-/// <p>You cannot call any STS API <i>except</i> <code>AssumeRole</code> or <code>GetCallerIdentity</code>.</p></li>
+/// <p>You cannot call any STS API <i>except</i> <code>AssumeRole</code>, <code>GetCallerIdentity</code>, <code>GetScopedCredentials</code>, <code>GetWebIdentityToken</code>, or <code>GetDelegatedAccessToken</code>.</p></li>
 /// </ul>
 /// <p>The credentials that <code>GetSessionToken</code> returns are based on permissions associated with the IAM user whose credentials were used to call the operation. The temporary credentials have the same permissions as the IAM user.</p><note>
 /// <p>Although it is possible to call <code>GetSessionToken</code> using the security credentials of an Amazon Web Services account root user rather than an IAM user, we do not recommend it. If <code>GetSessionToken</code> is called using root user credentials, the temporary credentials have root user permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials">Safeguard your root user credentials and don't use them for everyday tasks</a> in the <i>IAM User Guide</i></p>
@@ -173,17 +173,17 @@ impl GetSessionTokenFluentBuilder {
     pub fn get_token_code(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_token_code()
     }
-    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    /// <p>The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.</p>
     pub fn minimum_session_token_size(mut self, input: i32) -> Self {
         self.inner = self.inner.minimum_session_token_size(input);
         self
     }
-    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    /// <p>The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.</p>
     pub fn set_minimum_session_token_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_minimum_session_token_size(input);
         self
     }
-    /// The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.
+    /// <p>The minimum size, in bytes, of the session token that STS issues for the request. STS increases the session token to at least this size, regardless of its actual content. The value must not exceed 4,096 bytes. When set to 0 or not specified, the session token size is unchanged.</p>
     pub fn get_minimum_session_token_size(&self) -> &::std::option::Option<i32> {
         self.inner.get_minimum_session_token_size()
     }

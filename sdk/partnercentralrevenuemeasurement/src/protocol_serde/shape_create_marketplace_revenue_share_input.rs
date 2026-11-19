@@ -10,15 +10,21 @@ pub fn ser_create_marketplace_revenue_share_input_input(
     if let Some(var_2) = &input.client_token {
         encoder.str("ClientToken").str(var_2.as_str());
     }
-    if let Some(var_3) = &input.product_id {
-        encoder.str("ProductId").str(var_3.as_str());
-    }
-    if let Some(var_4) = &input.tags {
-        encoder.str("Tags");
-        encoder.array((*var_4).len());
-        for item_5 in var_4 {
+    if let Some(var_3) = &input.products {
+        encoder.str("Products");
+        encoder.array((*var_3).len());
+        for item_4 in var_3 {
             {
-                crate::protocol_serde::shape_tag::ser_tag(encoder, item_5)?;
+                crate::protocol_serde::shape_marketplace_revenue_share_product_entry::ser_marketplace_revenue_share_product_entry(encoder, item_4)?;
+            }
+        }
+    }
+    if let Some(var_5) = &input.tags {
+        encoder.str("Tags");
+        encoder.array((*var_5).len());
+        for item_6 in var_5 {
+            {
+                crate::protocol_serde::shape_tag::ser_tag(encoder, item_6)?;
             }
         }
     }

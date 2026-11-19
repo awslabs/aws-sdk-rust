@@ -22,9 +22,8 @@ impl crate::operation::delete_open_id_connect_provider::builders::DeleteOpenIdCo
 }
 /// Fluent builder constructing a request to `DeleteOpenIDConnectProvider`.
 ///
-/// <p>Deletes an OpenID Connect identity provider (IdP) resource object in IAM.</p>
+/// <p>Deletes an OpenID Connect identity provider (IdP) resource object in IAM. Deleting the provider also deletes its trusted identity propagation context provider and removes any IAM Identity Center instance association.</p>
 /// <p>Deleting an IAM OIDC provider resource does not update any roles that reference the provider as a principal in their trust policies. Any attempt to assume a role that references a deleted provider fails.</p>
-/// <p>This operation is idempotent; it does not fail or return an error if you call the operation for a provider that does not exist.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteOpenIDConnectProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

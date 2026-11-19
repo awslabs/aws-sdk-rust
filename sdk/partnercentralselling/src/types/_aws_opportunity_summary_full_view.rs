@@ -12,22 +12,24 @@ pub struct AwsOpportunitySummaryFullView {
     pub involvement_type: ::std::option::Option<crate::types::SalesInvolvementType>,
     /// <p>Visibility level for the AWS opportunity.</p>
     pub visibility: ::std::option::Option<crate::types::Visibility>,
-    /// <p>Tracks the lifecycle of the AWS opportunity, including stages such as qualification, validation, and closure. This field helps partners understand the current status and progression of the opportunity.</p>
+    /// <p>Contains lifecycle details of the AWS opportunity, such as its stage, review status, and target close date.</p>
     pub life_cycle: ::std::option::Option<crate::types::AwsOpportunityLifeCycle>,
     /// <p>AWS team members involved in the opportunity.</p>
     pub opportunity_team: ::std::option::Option<::std::vec::Vec<crate::types::AwsTeamMember>>,
-    /// <p>Contains insights provided by AWS for the opportunity, offering recommendations and analysis that can help the partner optimize their engagement and strategy.</p>
+    /// <p>Contains the insights that AWS provides for the opportunity, such as the engagement score and the recommended next actions.</p>
     pub insights: ::std::option::Option<crate::types::AwsOpportunityInsights>,
     /// <p>Reason for changes in AWS involvement type for the opportunity.</p>
     pub involvement_type_change_reason: ::std::option::Option<crate::types::InvolvementTypeChangeReason>,
-    /// <p>Represents other entities related to the AWS opportunity, such as AWS products, partner solutions, and marketplace offers. These associations help build a complete picture of the solution being sold.</p>
+    /// <p>Lists the identifiers of entities that relate to the AWS opportunity, such as AWS products and partner solutions.</p>
     pub related_entity_ids: ::std::option::Option<crate::types::AwsOpportunityRelatedEntities>,
-    /// <p>Represents the customer associated with the AWS opportunity. This field captures key details about the customer that are necessary for managing the opportunity.</p>
+    /// <p>Contains details about the customer that the AWS opportunity belongs to.</p>
     pub customer: ::std::option::Option<crate::types::AwsOpportunityCustomer>,
-    /// <p>Captures details about the project associated with the opportunity, including objectives, scope, and customer requirements.</p>
+    /// <p>Contains details about the project that the AWS opportunity covers.</p>
     pub project: ::std::option::Option<crate::types::AwsOpportunityProject>,
     /// <p>Engagement classification for this opportunity. Read-only. Null before scoring. Known values: <code>AWS Field-engaged</code>, <code>Agent-engaged</code>, <code>Partner-led</code>.</p>
     pub cosell_motion: ::std::option::Option<::std::string::String>,
+    /// <p>The plain-language reason for the current <code>CosellMotion</code> value. Read-only. Null when <code>CosellMotion</code> is null.</p>
+    pub cosell_motion_reason: ::std::option::Option<::std::string::String>,
     /// <p>Seller-provided PARC deal terms: commitment value, discount, and contract dates.</p>
     pub software_revenue: ::std::option::Option<crate::types::AwsSoftwareRevenue>,
 }
@@ -48,7 +50,7 @@ impl AwsOpportunitySummaryFullView {
     pub fn visibility(&self) -> ::std::option::Option<&crate::types::Visibility> {
         self.visibility.as_ref()
     }
-    /// <p>Tracks the lifecycle of the AWS opportunity, including stages such as qualification, validation, and closure. This field helps partners understand the current status and progression of the opportunity.</p>
+    /// <p>Contains lifecycle details of the AWS opportunity, such as its stage, review status, and target close date.</p>
     pub fn life_cycle(&self) -> ::std::option::Option<&crate::types::AwsOpportunityLifeCycle> {
         self.life_cycle.as_ref()
     }
@@ -58,7 +60,7 @@ impl AwsOpportunitySummaryFullView {
     pub fn opportunity_team(&self) -> &[crate::types::AwsTeamMember] {
         self.opportunity_team.as_deref().unwrap_or_default()
     }
-    /// <p>Contains insights provided by AWS for the opportunity, offering recommendations and analysis that can help the partner optimize their engagement and strategy.</p>
+    /// <p>Contains the insights that AWS provides for the opportunity, such as the engagement score and the recommended next actions.</p>
     pub fn insights(&self) -> ::std::option::Option<&crate::types::AwsOpportunityInsights> {
         self.insights.as_ref()
     }
@@ -66,21 +68,25 @@ impl AwsOpportunitySummaryFullView {
     pub fn involvement_type_change_reason(&self) -> ::std::option::Option<&crate::types::InvolvementTypeChangeReason> {
         self.involvement_type_change_reason.as_ref()
     }
-    /// <p>Represents other entities related to the AWS opportunity, such as AWS products, partner solutions, and marketplace offers. These associations help build a complete picture of the solution being sold.</p>
+    /// <p>Lists the identifiers of entities that relate to the AWS opportunity, such as AWS products and partner solutions.</p>
     pub fn related_entity_ids(&self) -> ::std::option::Option<&crate::types::AwsOpportunityRelatedEntities> {
         self.related_entity_ids.as_ref()
     }
-    /// <p>Represents the customer associated with the AWS opportunity. This field captures key details about the customer that are necessary for managing the opportunity.</p>
+    /// <p>Contains details about the customer that the AWS opportunity belongs to.</p>
     pub fn customer(&self) -> ::std::option::Option<&crate::types::AwsOpportunityCustomer> {
         self.customer.as_ref()
     }
-    /// <p>Captures details about the project associated with the opportunity, including objectives, scope, and customer requirements.</p>
+    /// <p>Contains details about the project that the AWS opportunity covers.</p>
     pub fn project(&self) -> ::std::option::Option<&crate::types::AwsOpportunityProject> {
         self.project.as_ref()
     }
     /// <p>Engagement classification for this opportunity. Read-only. Null before scoring. Known values: <code>AWS Field-engaged</code>, <code>Agent-engaged</code>, <code>Partner-led</code>.</p>
     pub fn cosell_motion(&self) -> ::std::option::Option<&str> {
         self.cosell_motion.as_deref()
+    }
+    /// <p>The plain-language reason for the current <code>CosellMotion</code> value. Read-only. Null when <code>CosellMotion</code> is null.</p>
+    pub fn cosell_motion_reason(&self) -> ::std::option::Option<&str> {
+        self.cosell_motion_reason.as_deref()
     }
     /// <p>Seller-provided PARC deal terms: commitment value, discount, and contract dates.</p>
     pub fn software_revenue(&self) -> ::std::option::Option<&crate::types::AwsSoftwareRevenue> {
@@ -110,6 +116,7 @@ pub struct AwsOpportunitySummaryFullViewBuilder {
     pub(crate) customer: ::std::option::Option<crate::types::AwsOpportunityCustomer>,
     pub(crate) project: ::std::option::Option<crate::types::AwsOpportunityProject>,
     pub(crate) cosell_motion: ::std::option::Option<::std::string::String>,
+    pub(crate) cosell_motion_reason: ::std::option::Option<::std::string::String>,
     pub(crate) software_revenue: ::std::option::Option<crate::types::AwsSoftwareRevenue>,
 }
 impl AwsOpportunitySummaryFullViewBuilder {
@@ -169,17 +176,17 @@ impl AwsOpportunitySummaryFullViewBuilder {
     pub fn get_visibility(&self) -> &::std::option::Option<crate::types::Visibility> {
         &self.visibility
     }
-    /// <p>Tracks the lifecycle of the AWS opportunity, including stages such as qualification, validation, and closure. This field helps partners understand the current status and progression of the opportunity.</p>
+    /// <p>Contains lifecycle details of the AWS opportunity, such as its stage, review status, and target close date.</p>
     pub fn life_cycle(mut self, input: crate::types::AwsOpportunityLifeCycle) -> Self {
         self.life_cycle = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Tracks the lifecycle of the AWS opportunity, including stages such as qualification, validation, and closure. This field helps partners understand the current status and progression of the opportunity.</p>
+    /// <p>Contains lifecycle details of the AWS opportunity, such as its stage, review status, and target close date.</p>
     pub fn set_life_cycle(mut self, input: ::std::option::Option<crate::types::AwsOpportunityLifeCycle>) -> Self {
         self.life_cycle = input;
         self
     }
-    /// <p>Tracks the lifecycle of the AWS opportunity, including stages such as qualification, validation, and closure. This field helps partners understand the current status and progression of the opportunity.</p>
+    /// <p>Contains lifecycle details of the AWS opportunity, such as its stage, review status, and target close date.</p>
     pub fn get_life_cycle(&self) -> &::std::option::Option<crate::types::AwsOpportunityLifeCycle> {
         &self.life_cycle
     }
@@ -203,17 +210,17 @@ impl AwsOpportunitySummaryFullViewBuilder {
     pub fn get_opportunity_team(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AwsTeamMember>> {
         &self.opportunity_team
     }
-    /// <p>Contains insights provided by AWS for the opportunity, offering recommendations and analysis that can help the partner optimize their engagement and strategy.</p>
+    /// <p>Contains the insights that AWS provides for the opportunity, such as the engagement score and the recommended next actions.</p>
     pub fn insights(mut self, input: crate::types::AwsOpportunityInsights) -> Self {
         self.insights = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains insights provided by AWS for the opportunity, offering recommendations and analysis that can help the partner optimize their engagement and strategy.</p>
+    /// <p>Contains the insights that AWS provides for the opportunity, such as the engagement score and the recommended next actions.</p>
     pub fn set_insights(mut self, input: ::std::option::Option<crate::types::AwsOpportunityInsights>) -> Self {
         self.insights = input;
         self
     }
-    /// <p>Contains insights provided by AWS for the opportunity, offering recommendations and analysis that can help the partner optimize their engagement and strategy.</p>
+    /// <p>Contains the insights that AWS provides for the opportunity, such as the engagement score and the recommended next actions.</p>
     pub fn get_insights(&self) -> &::std::option::Option<crate::types::AwsOpportunityInsights> {
         &self.insights
     }
@@ -231,45 +238,45 @@ impl AwsOpportunitySummaryFullViewBuilder {
     pub fn get_involvement_type_change_reason(&self) -> &::std::option::Option<crate::types::InvolvementTypeChangeReason> {
         &self.involvement_type_change_reason
     }
-    /// <p>Represents other entities related to the AWS opportunity, such as AWS products, partner solutions, and marketplace offers. These associations help build a complete picture of the solution being sold.</p>
+    /// <p>Lists the identifiers of entities that relate to the AWS opportunity, such as AWS products and partner solutions.</p>
     pub fn related_entity_ids(mut self, input: crate::types::AwsOpportunityRelatedEntities) -> Self {
         self.related_entity_ids = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents other entities related to the AWS opportunity, such as AWS products, partner solutions, and marketplace offers. These associations help build a complete picture of the solution being sold.</p>
+    /// <p>Lists the identifiers of entities that relate to the AWS opportunity, such as AWS products and partner solutions.</p>
     pub fn set_related_entity_ids(mut self, input: ::std::option::Option<crate::types::AwsOpportunityRelatedEntities>) -> Self {
         self.related_entity_ids = input;
         self
     }
-    /// <p>Represents other entities related to the AWS opportunity, such as AWS products, partner solutions, and marketplace offers. These associations help build a complete picture of the solution being sold.</p>
+    /// <p>Lists the identifiers of entities that relate to the AWS opportunity, such as AWS products and partner solutions.</p>
     pub fn get_related_entity_ids(&self) -> &::std::option::Option<crate::types::AwsOpportunityRelatedEntities> {
         &self.related_entity_ids
     }
-    /// <p>Represents the customer associated with the AWS opportunity. This field captures key details about the customer that are necessary for managing the opportunity.</p>
+    /// <p>Contains details about the customer that the AWS opportunity belongs to.</p>
     pub fn customer(mut self, input: crate::types::AwsOpportunityCustomer) -> Self {
         self.customer = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Represents the customer associated with the AWS opportunity. This field captures key details about the customer that are necessary for managing the opportunity.</p>
+    /// <p>Contains details about the customer that the AWS opportunity belongs to.</p>
     pub fn set_customer(mut self, input: ::std::option::Option<crate::types::AwsOpportunityCustomer>) -> Self {
         self.customer = input;
         self
     }
-    /// <p>Represents the customer associated with the AWS opportunity. This field captures key details about the customer that are necessary for managing the opportunity.</p>
+    /// <p>Contains details about the customer that the AWS opportunity belongs to.</p>
     pub fn get_customer(&self) -> &::std::option::Option<crate::types::AwsOpportunityCustomer> {
         &self.customer
     }
-    /// <p>Captures details about the project associated with the opportunity, including objectives, scope, and customer requirements.</p>
+    /// <p>Contains details about the project that the AWS opportunity covers.</p>
     pub fn project(mut self, input: crate::types::AwsOpportunityProject) -> Self {
         self.project = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Captures details about the project associated with the opportunity, including objectives, scope, and customer requirements.</p>
+    /// <p>Contains details about the project that the AWS opportunity covers.</p>
     pub fn set_project(mut self, input: ::std::option::Option<crate::types::AwsOpportunityProject>) -> Self {
         self.project = input;
         self
     }
-    /// <p>Captures details about the project associated with the opportunity, including objectives, scope, and customer requirements.</p>
+    /// <p>Contains details about the project that the AWS opportunity covers.</p>
     pub fn get_project(&self) -> &::std::option::Option<crate::types::AwsOpportunityProject> {
         &self.project
     }
@@ -286,6 +293,20 @@ impl AwsOpportunitySummaryFullViewBuilder {
     /// <p>Engagement classification for this opportunity. Read-only. Null before scoring. Known values: <code>AWS Field-engaged</code>, <code>Agent-engaged</code>, <code>Partner-led</code>.</p>
     pub fn get_cosell_motion(&self) -> &::std::option::Option<::std::string::String> {
         &self.cosell_motion
+    }
+    /// <p>The plain-language reason for the current <code>CosellMotion</code> value. Read-only. Null when <code>CosellMotion</code> is null.</p>
+    pub fn cosell_motion_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cosell_motion_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The plain-language reason for the current <code>CosellMotion</code> value. Read-only. Null when <code>CosellMotion</code> is null.</p>
+    pub fn set_cosell_motion_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.cosell_motion_reason = input;
+        self
+    }
+    /// <p>The plain-language reason for the current <code>CosellMotion</code> value. Read-only. Null when <code>CosellMotion</code> is null.</p>
+    pub fn get_cosell_motion_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.cosell_motion_reason
     }
     /// <p>Seller-provided PARC deal terms: commitment value, discount, and contract dates.</p>
     pub fn software_revenue(mut self, input: crate::types::AwsSoftwareRevenue) -> Self {
@@ -316,6 +337,7 @@ impl AwsOpportunitySummaryFullViewBuilder {
             customer: self.customer,
             project: self.project,
             cosell_motion: self.cosell_motion,
+            cosell_motion_reason: self.cosell_motion_reason,
             software_revenue: self.software_revenue,
         }
     }

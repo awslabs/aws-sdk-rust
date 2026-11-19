@@ -59,6 +59,8 @@ pub(crate) mod shape_get_bill_scenario;
 
 pub(crate) mod shape_get_preferences;
 
+pub(crate) mod shape_get_usage_lines_estimated_cost;
+
 pub(crate) mod shape_get_workload_estimate;
 
 pub(crate) mod shape_list_bill_estimate_commitments;
@@ -142,6 +144,8 @@ pub(crate) mod shape_delete_workload_estimate_input;
 pub(crate) mod shape_get_bill_estimate_input;
 
 pub(crate) mod shape_get_bill_scenario_input;
+
+pub(crate) mod shape_get_usage_lines_estimated_cost_input;
 
 pub(crate) mod shape_get_workload_estimate_input;
 
@@ -247,6 +251,10 @@ pub(crate) mod shape_bill_scenario_usage_modification_items;
 
 pub(crate) mod shape_filter_timestamp;
 
+pub(crate) mod shape_get_usage_lines_estimated_cost_errors;
+
+pub(crate) mod shape_get_usage_lines_estimated_cost_line_item_list;
+
 pub(crate) mod shape_list_bill_estimate_line_items_filter;
 
 pub(crate) mod shape_list_bill_estimates_filter;
@@ -311,6 +319,10 @@ pub(crate) mod shape_bill_scenario_usage_modification_item;
 
 pub(crate) mod shape_cost_difference;
 
+pub(crate) mod shape_get_usage_lines_estimated_cost_error;
+
+pub(crate) mod shape_get_usage_lines_estimated_cost_line_item;
+
 pub(crate) mod shape_historical_usage_entity;
 
 pub(crate) mod shape_service_cost_difference_map;
@@ -330,6 +342,8 @@ pub(crate) mod shape_add_savings_plan_action;
 pub(crate) mod shape_cost_amount;
 
 pub(crate) mod shape_expression;
+
+pub(crate) mod shape_get_usage_lines_estimated_cost_estimated_cost;
 
 pub(crate) mod shape_negate_reserved_instance_action;
 

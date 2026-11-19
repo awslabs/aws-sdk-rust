@@ -28,6 +28,11 @@ where
                                     .transpose()?,
                             );
                         }
+                        "ChannelRecommendation" => {
+                            builder = builder.set_channel_recommendation(
+                                crate::protocol_serde::shape_channel_recommendation::de_channel_recommendation(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -51,6 +56,12 @@ pub fn ser_lead_insights(
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     if let Some(var_1) = &input.lead_readiness_score {
         object.key("LeadReadinessScore").string(var_1.as_str());
+    }
+    if let Some(var_2) = &input.channel_recommendation {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("ChannelRecommendation").start_object();
+        crate::protocol_serde::shape_channel_recommendation::ser_channel_recommendation(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }

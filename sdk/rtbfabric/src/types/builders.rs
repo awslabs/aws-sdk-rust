@@ -3,11 +3,19 @@ pub use crate::types::_listener_config::ListenerConfigBuilder;
 
 pub use crate::types::_trust_store_configuration::TrustStoreConfigurationBuilder;
 
+pub use crate::types::_available_module_summary::AvailableModuleSummaryBuilder;
+
+pub use crate::types::_available_module_version_summary::AvailableModuleVersionSummaryBuilder;
+
 pub use crate::types::_link_attributes::LinkAttributesBuilder;
 
 pub use crate::types::_link_log_settings::LinkLogSettingsBuilder;
 
+pub use crate::types::_update::UpdateBuilder;
+
 pub use crate::types::_rule_condition::RuleConditionBuilder;
+
+pub use crate::types::_error_detail::ErrorDetailBuilder;
 
 pub use crate::types::_auto_scaling_groups_configuration::AutoScalingGroupsConfigurationBuilder;
 
@@ -21,6 +29,10 @@ pub use crate::types::_link_application_log_configuration::LinkApplicationLogCon
 
 pub use crate::types::_module_configuration::ModuleConfigurationBuilder;
 
+pub use crate::types::_flow::FlowBuilder;
+
+pub use crate::types::_update_summary::UpdateSummaryBuilder;
+
 pub use crate::types::_link_routing_rule_summary::LinkRoutingRuleSummaryBuilder;
 
 pub use crate::types::_query_string_key_value_pair::QueryStringKeyValuePairBuilder;
@@ -31,16 +43,36 @@ pub use crate::types::_responder_error_masking_for_http_code::ResponderErrorMask
 
 pub use crate::types::_link_application_log_sampling::LinkApplicationLogSamplingBuilder;
 
+pub use crate::types::_unit::UnitBuilder;
+
+pub use crate::types::_link_target::LinkTargetBuilder;
+
+pub use crate::types::_routing_rule_target::RoutingRuleTargetBuilder;
+
+pub use crate::types::_responder_gateway_config_parameters::ResponderGatewayConfigParametersBuilder;
+
+pub use crate::types::_link_config_parameters::LinkConfigParametersBuilder;
+
+pub use crate::types::_routing_rule_parameters::RoutingRuleParametersBuilder;
+
 pub use crate::types::_no_bid_module_parameters::NoBidModuleParametersBuilder;
 
 pub use crate::types::_open_rtb_attribute_module_parameters::OpenRtbAttributeModuleParametersBuilder;
 
 pub use crate::types::_rate_limiter_module_parameters::RateLimiterModuleParametersBuilder;
 
+pub use crate::types::_sequential_pipeline::SequentialPipelineBuilder;
+
+pub use crate::types::_phased_pipeline::PhasedPipelineBuilder;
+
 pub use crate::types::_filter::FilterBuilder;
 
 pub use crate::types::_no_bid_action::NoBidActionBuilder;
 
 pub use crate::types::_header_tag_action::HeaderTagActionBuilder;
+
+pub use crate::types::_flow_module::FlowModuleBuilder;
+
+pub use crate::types::_flow_phase::FlowPhaseBuilder;
 
 pub use crate::types::_filter_criterion::FilterCriterionBuilder;

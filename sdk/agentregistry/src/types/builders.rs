@@ -13,6 +13,8 @@ pub use crate::types::_discoverable_registry_record_summary::DiscoverableRegistr
 
 pub use crate::types::_descriptors::DescriptorsBuilder;
 
+pub use crate::types::_registry_record_artifact_download::RegistryRecordArtifactDownloadBuilder;
+
 pub use crate::types::_mcp_server_descriptor::McpServerDescriptorBuilder;
 
 pub use crate::types::_a2a_agent_card_descriptor::A2aAgentCardDescriptorBuilder;

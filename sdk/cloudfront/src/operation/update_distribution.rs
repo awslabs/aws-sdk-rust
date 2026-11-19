@@ -127,6 +127,15 @@ pub(crate) mod error_registry {
                         },
                     )
 .insert_error_shape(
+                        crate::types::error::EntityLimitExceeded::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::EntityLimitExceeded::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::EntityLimitExceeded::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
                         crate::types::error::EntityNotFound::SCHEMA,
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::EntityNotFound::deserialize(d)?))
@@ -919,6 +928,24 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateDis
                         tmp.build()
                     })
                 }
+                "EntityLimitExceeded" => crate::operation::update_distribution::UpdateDistributionError::EntityLimitExceeded({
+                    let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let mut tmp = <crate::types::error::builders::EntityLimitExceededBuilder>::default();
+                    tmp.deserialize_members(&mut *deser).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    let tmp = tmp.meta(generic);
+                    tmp.build()
+                }),
                 "EntityNotFound" => crate::operation::update_distribution::UpdateDistributionError::EntityNotFound({
                     let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
                         ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
@@ -2247,6 +2274,8 @@ pub enum UpdateDistributionError {
     CnameAlreadyExists(crate::types::error::CnameAlreadyExists),
     /// <p>You cannot delete a continuous deployment policy that is associated with a primary distribution.</p>
     ContinuousDeploymentPolicyInUse(crate::types::error::ContinuousDeploymentPolicyInUse),
+    /// <p>The entity limit has been exceeded.</p>
+    EntityLimitExceeded(crate::types::error::EntityLimitExceeded),
     /// <p>The entity was not found.</p>
     EntityNotFound(crate::types::error::EntityNotFound),
     /// <p>The specified configuration for field-level encryption can't be associated with the specified cache behavior.</p>
@@ -2413,6 +2442,7 @@ impl UpdateDistributionError {
             Self::AccessDenied(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::CnameAlreadyExists(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ContinuousDeploymentPolicyInUse(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EntityLimitExceeded(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EntityNotFound(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(e) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e)
@@ -2493,6 +2523,10 @@ impl UpdateDistributionError {
     /// Returns `true` if the error kind is `UpdateDistributionError::ContinuousDeploymentPolicyInUse`.
     pub fn is_continuous_deployment_policy_in_use(&self) -> bool {
         matches!(self, Self::ContinuousDeploymentPolicyInUse(_))
+    }
+    /// Returns `true` if the error kind is `UpdateDistributionError::EntityLimitExceeded`.
+    pub fn is_entity_limit_exceeded(&self) -> bool {
+        matches!(self, Self::EntityLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `UpdateDistributionError::EntityNotFound`.
     pub fn is_entity_not_found(&self) -> bool {
@@ -2757,6 +2791,7 @@ impl ::std::error::Error for UpdateDistributionError {
             Self::AccessDenied(_inner) => ::std::option::Option::Some(_inner),
             Self::CnameAlreadyExists(_inner) => ::std::option::Option::Some(_inner),
             Self::ContinuousDeploymentPolicyInUse(_inner) => ::std::option::Option::Some(_inner),
+            Self::EntityLimitExceeded(_inner) => ::std::option::Option::Some(_inner),
             Self::EntityNotFound(_inner) => ::std::option::Option::Some(_inner),
             Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) => ::std::option::Option::Some(_inner),
             Self::IllegalOriginAccessConfiguration(_inner) => ::std::option::Option::Some(_inner),
@@ -2831,6 +2866,7 @@ impl ::std::fmt::Display for UpdateDistributionError {
             Self::AccessDenied(_inner) => _inner.fmt(f),
             Self::CnameAlreadyExists(_inner) => _inner.fmt(f),
             Self::ContinuousDeploymentPolicyInUse(_inner) => _inner.fmt(f),
+            Self::EntityLimitExceeded(_inner) => _inner.fmt(f),
             Self::EntityNotFound(_inner) => _inner.fmt(f),
             Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) => _inner.fmt(f),
             Self::IllegalOriginAccessConfiguration(_inner) => _inner.fmt(f),
@@ -2919,6 +2955,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateDistrib
             Self::AccessDenied(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::CnameAlreadyExists(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ContinuousDeploymentPolicyInUse(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EntityLimitExceeded(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EntityNotFound(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) => {
                 ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)

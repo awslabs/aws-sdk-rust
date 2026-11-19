@@ -3,6 +3,8 @@ pub use crate::types::_trust_anchor_detail::TrustAnchorDetail;
 
 pub use crate::types::_crl_detail::CrlDetail;
 
+pub use crate::types::_tip_configuration::TipConfiguration;
+
 pub use crate::types::_profile_detail::ProfileDetail;
 
 pub use crate::types::_certificate_field::CertificateField;
@@ -16,6 +18,12 @@ pub use crate::types::_tag::Tag;
 pub use crate::types::_notification_setting::NotificationSetting;
 
 pub use crate::types::_notification_setting_key::NotificationSettingKey;
+
+pub use crate::types::_tip_status::TipStatus;
+
+pub use crate::types::_tip_subject_type::TipSubjectType;
+
+pub use crate::types::_tip_subject_source::TipSubjectSource;
 
 pub use crate::types::_mapping_rule::MappingRule;
 
@@ -70,6 +78,14 @@ mod _subject_detail;
 mod _subject_summary;
 
 mod _tag;
+
+mod _tip_configuration;
+
+mod _tip_status;
+
+mod _tip_subject_source;
+
+mod _tip_subject_type;
 
 mod _trust_anchor_detail;
 

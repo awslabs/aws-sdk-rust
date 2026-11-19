@@ -125,6 +125,21 @@ pub fn de_create_sync_configuration_http_error(
                 tmp
             })
         }
+        "ResourceNotFoundException" => crate::operation::create_sync_configuration::CreateSyncConfigurationError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_cbor_err(_response_body, output)
+                    .map_err(crate::operation::create_sync_configuration::CreateSyncConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ThrottlingException" => crate::operation::create_sync_configuration::CreateSyncConfigurationError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {

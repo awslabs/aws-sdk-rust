@@ -342,6 +342,21 @@ impl Builder {
         self.runtime_components.set_http_client(http_client);
         self
     }
+    /// Sets the bearer token that will be used for HTTP bearer auth.
+    pub fn bearer_token(self, bearer_token: crate::config::Token) -> Self {
+        self.bearer_token_resolver(bearer_token)
+    }
+
+    /// Sets a bearer token provider that will be used for HTTP bearer auth.
+    pub fn bearer_token_resolver(mut self, bearer_token_resolver: impl crate::config::ResolveIdentity + 'static) -> Self {
+        self.runtime_components.set_identity_resolver(
+            ::aws_smithy_runtime_api::client::auth::http::HTTP_BEARER_AUTH_SCHEME_ID,
+            ::aws_smithy_runtime_api::shared::IntoShared::<::aws_smithy_runtime_api::client::identity::SharedIdentityResolver>::into_shared(
+                bearer_token_resolver,
+            ),
+        );
+        self
+    }
     /// Adds an auth scheme to the builder
     ///
     /// If `auth_scheme` has an existing [AuthSchemeId](aws_smithy_runtime_api::client::auth::AuthSchemeId) in the runtime, the current identity
@@ -1165,6 +1180,36 @@ impl Builder {
         self.config.store_append(framework_metadata);
         self
     }
+    /// Sets the access token provider for this service
+    ///
+    /// Note: the [`Self::bearer_token`] and [`Self::bearer_token_resolver`] methods are
+    /// equivalent to this method, but take the [`Token`] and [`ResolveIdentity`] types
+    /// respectively.
+    ///
+    /// [`Token`]: crate::config::Token
+    /// [`ResolveIdentity`]: crate::config::ResolveIdentity
+    pub fn token_provider(mut self, token_provider: impl crate::config::ProvideToken + 'static) -> Self {
+        self.set_token_provider(::std::option::Option::Some(::aws_smithy_runtime_api::shared::IntoShared::<
+            crate::config::SharedTokenProvider,
+        >::into_shared(token_provider)));
+        self
+    }
+
+    /// Sets the access token provider for this service
+    ///
+    /// Note: the [`Self::bearer_token`] and [`Self::bearer_token_resolver`] methods are
+    /// equivalent to this method, but take the [`Token`] and [`ResolveIdentity`] types
+    /// respectively.
+    ///
+    /// [`Token`]: crate::config::Token
+    /// [`ResolveIdentity`]: crate::config::ResolveIdentity
+    pub fn set_token_provider(&mut self, token_provider: ::std::option::Option<crate::config::SharedTokenProvider>) -> &mut Self {
+        if let Some(token_provider) = token_provider {
+            self.runtime_components
+                .set_identity_resolver(::aws_smithy_runtime_api::client::auth::http::HTTP_BEARER_AUTH_SCHEME_ID, token_provider);
+        }
+        self
+    }
     /// Sets whether clock skew correction is disabled when making requests.
     pub fn disable_clock_skew_correction(mut self, disable_clock_skew_correction: impl ::std::convert::Into<::std::option::Option<bool>>) -> Self {
         self.set_disable_clock_skew_correction(disable_clock_skew_correction.into());
@@ -1346,6 +1391,7 @@ impl Builder {
             ::aws_smithy_async::time::StaticTimeSource::new(::std::time::UNIX_EPOCH + ::std::time::Duration::from_secs(1234567890)),
         )));
         self.config.store_put(::aws_runtime::user_agent::AwsUserAgent::for_tests());
+        self.set_token_provider(Some(crate::config::SharedTokenProvider::new(::aws_credential_types::Token::for_tests())));
         self.set_credentials_provider(Some(crate::config::SharedCredentialsProvider::new(
             ::aws_credential_types::Credentials::for_tests(),
         )));
@@ -1425,6 +1471,9 @@ impl ServiceRuntimePlugin {
             ::std::option::Option::Some(cfg.freeze())
         };
         let mut runtime_components = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ServiceRuntimePlugin");
+        runtime_components.push_auth_scheme(::aws_smithy_runtime_api::client::auth::SharedAuthScheme::new(
+            ::aws_smithy_runtime::client::auth::http::BearerAuthScheme::new(),
+        ));
         runtime_components.set_auth_scheme_option_resolver(::std::option::Option::Some({
             use crate::config::auth::ResolveAuthScheme;
             crate::config::auth::DefaultAuthSchemeResolver::default().into_shared_resolver()
@@ -1587,6 +1636,7 @@ impl From<&::aws_types::sdk_config::SdkConfig> for Builder {
             builder.set_identity_cache(cache);
         }
         builder = builder.disable_clock_skew_correction(input.disable_clock_skew_correction());
+        builder.set_token_provider(input.token_provider());
         builder.set_app_name(input.app_name().cloned());
         for framework_metadata in input.framework_metadata() {
             builder.push_framework_metadata(framework_metadata.clone());
@@ -1693,11 +1743,19 @@ pub use ::aws_smithy_runtime_api::client::http::HttpClient;
 
 pub use ::aws_smithy_runtime_api::shared::IntoShared;
 
+pub use ::aws_smithy_runtime_api::client::identity::http::Token;
+
+pub use ::aws_smithy_runtime_api::client::identity::ResolveIdentity;
+
 pub use ::aws_smithy_async::rt::sleep::AsyncSleep;
 
 pub use ::aws_smithy_runtime_api::client::identity::ResolveCachedIdentity;
 
 pub use ::aws_smithy_runtime_api::client::interceptors::Intercept;
+
+pub use ::aws_credential_types::provider::token::ProvideToken;
+
+pub use ::aws_credential_types::provider::token::SharedTokenProvider;
 
 pub use ::aws_credential_types::provider::ProvideCredentials;
 

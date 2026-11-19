@@ -25,7 +25,7 @@ pub struct SynthesizeSpeechInput {
     pub text: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/ssml.html">Using SSML</a>.</p>
     pub text_type: ::std::option::Option<crate::types::TextType>,
-    /// <p>Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
+    /// <p>The voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation. To use a custom voice, specify the voice ID that <code>CreateVoice</code> returned, for example, <code>vc-9a8fa85dd3</code>. You can't specify the ARN of a voice.</p>
     pub voice_id: ::std::option::Option<crate::types::VoiceId>,
 }
 impl SynthesizeSpeechInput {
@@ -71,7 +71,7 @@ impl SynthesizeSpeechInput {
     pub fn text_type(&self) -> ::std::option::Option<&crate::types::TextType> {
         self.text_type.as_ref()
     }
-    /// <p>Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
+    /// <p>The voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation. To use a custom voice, specify the voice ID that <code>CreateVoice</code> returned, for example, <code>vc-9a8fa85dd3</code>. You can't specify the ARN of a voice.</p>
     pub fn voice_id(&self) -> ::std::option::Option<&crate::types::VoiceId> {
         self.voice_id.as_ref()
     }
@@ -242,18 +242,18 @@ impl SynthesizeSpeechInputBuilder {
     pub fn get_text_type(&self) -> &::std::option::Option<crate::types::TextType> {
         &self.text_type
     }
-    /// <p>Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
+    /// <p>The voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation. To use a custom voice, specify the voice ID that <code>CreateVoice</code> returned, for example, <code>vc-9a8fa85dd3</code>. You can't specify the ARN of a voice.</p>
     /// This field is required.
     pub fn voice_id(mut self, input: crate::types::VoiceId) -> Self {
         self.voice_id = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
+    /// <p>The voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation. To use a custom voice, specify the voice ID that <code>CreateVoice</code> returned, for example, <code>vc-9a8fa85dd3</code>. You can't specify the ARN of a voice.</p>
     pub fn set_voice_id(mut self, input: ::std::option::Option<crate::types::VoiceId>) -> Self {
         self.voice_id = input;
         self
     }
-    /// <p>Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
+    /// <p>The voice ID to use for the synthesis. You can get a list of available voice IDs by calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation. To use a custom voice, specify the voice ID that <code>CreateVoice</code> returned, for example, <code>vc-9a8fa85dd3</code>. You can't specify the ARN of a voice.</p>
     pub fn get_voice_id(&self) -> &::std::option::Option<crate::types::VoiceId> {
         &self.voice_id
     }

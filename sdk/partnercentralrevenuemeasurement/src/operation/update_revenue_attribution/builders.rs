@@ -178,4 +178,23 @@ impl UpdateRevenueAttributionFluentBuilder {
     pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_revision()
     }
+    ///
+    /// Adds a key-value pair to `Context`.
+    ///
+    /// To override the contents of this collection use [`set_context`](Self::set_context).
+    ///
+    /// <p>Full-replacement context map. Omit to leave the stored context unchanged; pass an empty map to clear it.</p>
+    pub fn context(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.context(k.into(), v.into());
+        self
+    }
+    /// <p>Full-replacement context map. Omit to leave the stored context unchanged; pass an empty map to clear it.</p>
+    pub fn set_context(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.inner = self.inner.set_context(input);
+        self
+    }
+    /// <p>Full-replacement context map. Omit to leave the stored context unchanged; pass an empty map to clear it.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_context()
+    }
 }

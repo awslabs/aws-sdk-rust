@@ -21,7 +21,9 @@
 #![forbid(unsafe_code)]
 #![warn(missing_docs)]
 #![cfg_attr(docsrs, feature(doc_cfg))]
-//! The AWS Marketplace Deployment Service supports the Quick Launch experience, which is a deployment option for software as a service (SaaS) products. Quick Launch simplifies and reduces the time, resources, and steps required to configure, deploy, and launch a products. The AWS Marketplace Deployment Service provides sellers with a secure method for passing deployment parameters, such as API keys and external IDs, to buyers during the Quick Launch experience.
+//! The AWS Marketplace Deployment Service supports the Quick Launch experience, which is a deployment option for software as a service (SaaS) products. Quick Launch simplifies and reduces the time, resources, and steps required to configure, deploy, and launch a product. The AWS Marketplace Deployment Service provides sellers with a secure method for passing deployment parameters, such as API keys and external IDs, to buyers during the Quick Launch experience.
+//!
+//! You can also use the AWS Marketplace Deployment Service to publish deployment configurations. A deployment configuration defines how buyers access a product's delivery option after they subscribe. For example, for the Data as a Service delivery option, it specifies the seller's fulfillment URL.
 //!
 //! ## Getting Started
 //!
@@ -35,7 +37,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-marketplacedeployment = "1.119.0"
+//! aws-sdk-marketplacedeployment = "1.120.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -152,14 +154,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`ListTagsForResource`](crate::operation::list_tags_for_resource) operation has
-/// a [`Client::list_tags_for_resource`], function which returns a builder for that operation.
+/// For example, the [`GetDeploymentConfiguration`](crate::operation::get_deployment_configuration) operation has
+/// a [`Client::get_deployment_configuration`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.list_tags_for_resource()
-///     .resource_arn("example")
+/// let result = client.get_deployment_configuration()
+///     .catalog("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -202,6 +204,8 @@ mod sdk_feature_tracker;
 mod serialization_settings;
 
 mod endpoint_lib;
+
+mod lens;
 
 mod serde_util;
 

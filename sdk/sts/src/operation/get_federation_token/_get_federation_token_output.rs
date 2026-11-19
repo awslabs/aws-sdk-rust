@@ -10,12 +10,13 @@ pub struct GetFederationTokenOutput {
     pub credentials: ::std::option::Option<crate::types::Credentials>,
     /// <p>Identifiers for the federated user associated with the credentials (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or <code>123456789012:Bob</code>). You can use the federated user's ARN in your resource-based policies, such as an Amazon S3 bucket policy.</p>
     pub federated_user: ::std::option::Option<crate::types::FederatedUser>,
-    /// <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
+    /// <p>This field is deprecated. Use <code>SessionTokenUtilization</code> instead.</p>
     #[deprecated(note = "Deprecated. Replaced by SessionTokenUtilization.", since = "2026-06-17")]
     pub packed_policy_size: ::std::option::Option<i32>,
-    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
     pub session_token_utilization: ::std::option::Option<i32>,
-    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    /// <p>The size, in bytes, of the session token returned in the Credentials for this response.</p>
     pub session_token_size: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
@@ -30,16 +31,17 @@ impl GetFederationTokenOutput {
     pub fn federated_user(&self) -> ::std::option::Option<&crate::types::FederatedUser> {
         self.federated_user.as_ref()
     }
-    /// <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
+    /// <p>This field is deprecated. Use <code>SessionTokenUtilization</code> instead.</p>
     #[deprecated(note = "Deprecated. Replaced by SessionTokenUtilization.", since = "2026-06-17")]
     pub fn packed_policy_size(&self) -> ::std::option::Option<i32> {
         self.packed_policy_size
     }
-    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
     pub fn session_token_utilization(&self) -> ::std::option::Option<i32> {
         self.session_token_utilization
     }
-    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    /// <p>The size, in bytes, of the session token returned in the Credentials for this response.</p>
     pub fn session_token_size(&self) -> ::std::option::Option<i32> {
         self.session_token_size
     }
@@ -114,48 +116,51 @@ impl GetFederationTokenOutputBuilder {
     pub fn get_federated_user(&self) -> &::std::option::Option<crate::types::FederatedUser> {
         &self.federated_user
     }
-    /// <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
+    /// <p>This field is deprecated. Use <code>SessionTokenUtilization</code> instead.</p>
     #[deprecated(note = "Deprecated. Replaced by SessionTokenUtilization.", since = "2026-06-17")]
     pub fn packed_policy_size(mut self, input: i32) -> Self {
         self.packed_policy_size = ::std::option::Option::Some(input);
         self
     }
-    /// <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
+    /// <p>This field is deprecated. Use <code>SessionTokenUtilization</code> instead.</p>
     #[deprecated(note = "Deprecated. Replaced by SessionTokenUtilization.", since = "2026-06-17")]
     pub fn set_packed_policy_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.packed_policy_size = input;
         self
     }
-    /// <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
+    /// <p>This field is deprecated. Use <code>SessionTokenUtilization</code> instead.</p>
     #[deprecated(note = "Deprecated. Replaced by SessionTokenUtilization.", since = "2026-06-17")]
     pub fn get_packed_policy_size(&self) -> &::std::option::Option<i32> {
         &self.packed_policy_size
     }
-    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
     pub fn session_token_utilization(mut self, input: i32) -> Self {
         self.session_token_utilization = ::std::option::Option::Some(input);
         self
     }
-    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
     pub fn set_session_token_utilization(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_token_utilization = input;
         self
     }
-    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
     pub fn get_session_token_utilization(&self) -> &::std::option::Option<i32> {
         &self.session_token_utilization
     }
-    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    /// <p>The size, in bytes, of the session token returned in the Credentials for this response.</p>
     pub fn session_token_size(mut self, input: i32) -> Self {
         self.session_token_size = ::std::option::Option::Some(input);
         self
     }
-    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    /// <p>The size, in bytes, of the session token returned in the Credentials for this response.</p>
     pub fn set_session_token_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_token_size = input;
         self
     }
-    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    /// <p>The size, in bytes, of the session token returned in the Credentials for this response.</p>
     pub fn get_session_token_size(&self) -> &::std::option::Option<i32> {
         &self.session_token_size
     }

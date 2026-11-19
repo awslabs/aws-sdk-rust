@@ -5,8 +5,8 @@
 pub struct GetMarketplaceRevenueShareAllocationInput {
     /// <p>The catalog that the allocation belongs to.</p>
     pub catalog: ::std::option::Option<crate::types::CatalogName>,
-    /// <p>The AWS Marketplace product identifier of the parent revenue share.</p>
-    pub product_id: ::std::option::Option<::std::string::String>,
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub marketplace_revenue_share_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the allocation to retrieve.</p>
     pub marketplace_revenue_share_allocation_id: ::std::option::Option<::std::string::String>,
     /// <p>The revision of the parent marketplace revenue share at which to retrieve the allocation. Omit to return the latest.</p>
@@ -17,9 +17,9 @@ impl GetMarketplaceRevenueShareAllocationInput {
     pub fn catalog(&self) -> ::std::option::Option<&crate::types::CatalogName> {
         self.catalog.as_ref()
     }
-    /// <p>The AWS Marketplace product identifier of the parent revenue share.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
-        self.product_id.as_deref()
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub fn marketplace_revenue_share_identifier(&self) -> ::std::option::Option<&str> {
+        self.marketplace_revenue_share_identifier.as_deref()
     }
     /// <p>The unique identifier of the allocation to retrieve.</p>
     pub fn marketplace_revenue_share_allocation_id(&self) -> ::std::option::Option<&str> {
@@ -42,7 +42,7 @@ impl GetMarketplaceRevenueShareAllocationInput {
 #[non_exhaustive]
 pub struct GetMarketplaceRevenueShareAllocationInputBuilder {
     pub(crate) catalog: ::std::option::Option<crate::types::CatalogName>,
-    pub(crate) product_id: ::std::option::Option<::std::string::String>,
+    pub(crate) marketplace_revenue_share_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) marketplace_revenue_share_allocation_id: ::std::option::Option<::std::string::String>,
     pub(crate) marketplace_revenue_share_revision: ::std::option::Option<::std::string::String>,
 }
@@ -62,20 +62,20 @@ impl GetMarketplaceRevenueShareAllocationInputBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<crate::types::CatalogName> {
         &self.catalog
     }
-    /// <p>The AWS Marketplace product identifier of the parent revenue share.</p>
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
     /// This field is required.
-    pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.product_id = ::std::option::Option::Some(input.into());
+    pub fn marketplace_revenue_share_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marketplace_revenue_share_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Marketplace product identifier of the parent revenue share.</p>
-    pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub fn set_marketplace_revenue_share_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.marketplace_revenue_share_identifier = input;
         self
     }
-    /// <p>The AWS Marketplace product identifier of the parent revenue share.</p>
-    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.product_id
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub fn get_marketplace_revenue_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marketplace_revenue_share_identifier
     }
     /// <p>The unique identifier of the allocation to retrieve.</p>
     /// This field is required.
@@ -116,7 +116,7 @@ impl GetMarketplaceRevenueShareAllocationInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::get_marketplace_revenue_share_allocation::GetMarketplaceRevenueShareAllocationInput {
                 catalog: self.catalog,
-                product_id: self.product_id,
+                marketplace_revenue_share_identifier: self.marketplace_revenue_share_identifier,
                 marketplace_revenue_share_allocation_id: self.marketplace_revenue_share_allocation_id,
                 marketplace_revenue_share_revision: self.marketplace_revenue_share_revision,
             },

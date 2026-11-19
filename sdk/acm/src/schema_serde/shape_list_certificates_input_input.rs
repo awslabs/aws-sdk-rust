@@ -38,6 +38,23 @@ static LISTCERTIFICATESINPUT_MEMBER_CERTIFICATE_KEY_PAIR_ORIGINS: ::aws_smithy_s
     1,
 )
 .with_list_member(&LISTCERTIFICATESINPUT_MEMBER_CERTIFICATE_KEY_PAIR_ORIGINS_MEMBER);
+static LISTCERTIFICATESINPUT_MEMBER_ROOT_HIERARCHY_TYPES_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#RootHierarchyTypes$member", "com.amazonaws.acm", "RootHierarchyTypes"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static LISTCERTIFICATESINPUT_MEMBER_ROOT_HIERARCHY_TYPES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#ListCertificatesInput$RootHierarchyTypes",
+        "com.amazonaws.acm.synthetic",
+        "ListCertificatesInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "RootHierarchyTypes",
+    2,
+)
+.with_list_member(&LISTCERTIFICATESINPUT_MEMBER_ROOT_HIERARCHY_TYPES_MEMBER);
 static LISTCERTIFICATESINPUT_MEMBER_INCLUDES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.acm.synthetic#ListCertificatesInput$Includes",
@@ -46,7 +63,7 @@ static LISTCERTIFICATESINPUT_MEMBER_INCLUDES: ::aws_smithy_schema::Schema<'stati
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "Includes",
-    2,
+    3,
 );
 static LISTCERTIFICATESINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -56,7 +73,7 @@ static LISTCERTIFICATESINPUT_MEMBER_NEXT_TOKEN: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "NextToken",
-    3,
+    4,
 );
 static LISTCERTIFICATESINPUT_MEMBER_MAX_ITEMS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -66,7 +83,7 @@ static LISTCERTIFICATESINPUT_MEMBER_MAX_ITEMS: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "MaxItems",
-    4,
+    5,
 );
 static LISTCERTIFICATESINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -76,7 +93,7 @@ static LISTCERTIFICATESINPUT_MEMBER_SORT_BY: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::String,
     "SortBy",
-    5,
+    6,
 );
 static LISTCERTIFICATESINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -86,7 +103,7 @@ static LISTCERTIFICATESINPUT_MEMBER_SORT_ORDER: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "SortOrder",
-    6,
+    7,
 );
 static LISTCERTIFICATESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -98,6 +115,7 @@ static LISTCERTIFICATESINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aw
     &[
         &LISTCERTIFICATESINPUT_MEMBER_CERTIFICATE_STATUSES,
         &LISTCERTIFICATESINPUT_MEMBER_CERTIFICATE_KEY_PAIR_ORIGINS,
+        &LISTCERTIFICATESINPUT_MEMBER_ROOT_HIERARCHY_TYPES,
         &LISTCERTIFICATESINPUT_MEMBER_INCLUDES,
         &LISTCERTIFICATESINPUT_MEMBER_NEXT_TOKEN,
         &LISTCERTIFICATESINPUT_MEMBER_MAX_ITEMS,
@@ -135,6 +153,17 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::list_c
         if let Some(ref val) = self.certificate_key_pair_origins {
             ser.write_list(
                 &LISTCERTIFICATESINPUT_MEMBER_CERTIFICATE_KEY_PAIR_ORIGINS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.root_hierarchy_types {
+            ser.write_list(
+                &LISTCERTIFICATESINPUT_MEMBER_ROOT_HIERARCHY_TYPES,
                 &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
                     for item in val {
                         ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
@@ -211,31 +240,47 @@ impl crate::operation::list_certificates::builders::ListCertificatesInputBuilder
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.includes = Some(crate::types::Filters::deserialize(deser)?);
+                        self.root_hierarchy_types = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::RootHierarchyType::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
                     }
                 }
                 Some(3) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.next_token = Some(deser.read_string(member)?);
+                        self.includes = Some(crate::types::Filters::deserialize(deser)?);
                     }
                 }
                 Some(4) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.max_items = Some(deser.read_integer(member)?);
+                        self.next_token = Some(deser.read_string(member)?);
                     }
                 }
                 Some(5) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.sort_by = Some(crate::types::SortBy::from(deser.read_string(member)?.as_str()));
+                        self.max_items = Some(deser.read_integer(member)?);
                     }
                 }
                 Some(6) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.sort_by = Some(crate::types::SortBy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(7) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

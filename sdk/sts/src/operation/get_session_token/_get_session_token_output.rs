@@ -8,9 +8,9 @@ pub struct GetSessionTokenOutput {
     /// <p>The size of the security token that STS API operations return is not fixed. We strongly recommend that you make no assumptions about the maximum size.</p>
     /// </note>
     pub credentials: ::std::option::Option<crate::types::Credentials>,
-    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
     pub session_token_utilization: ::std::option::Option<i32>,
-    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    /// <p>The size, in bytes, of the session token returned in the Credentials for this response.</p>
     pub session_token_size: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
@@ -21,11 +21,11 @@ impl GetSessionTokenOutput {
     pub fn credentials(&self) -> ::std::option::Option<&crate::types::Credentials> {
         self.credentials.as_ref()
     }
-    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
     pub fn session_token_utilization(&self) -> ::std::option::Option<i32> {
         self.session_token_utilization
     }
-    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    /// <p>The size, in bytes, of the session token returned in the Credentials for this response.</p>
     pub fn session_token_size(&self) -> ::std::option::Option<i32> {
         self.session_token_size
     }
@@ -82,31 +82,31 @@ impl GetSessionTokenOutputBuilder {
     pub fn get_credentials(&self) -> &::std::option::Option<crate::types::Credentials> {
         &self.credentials
     }
-    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
     pub fn session_token_utilization(mut self, input: i32) -> Self {
         self.session_token_utilization = ::std::option::Option::Some(input);
         self
     }
-    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
     pub fn set_session_token_utilization(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_token_utilization = input;
         self
     }
-    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
     pub fn get_session_token_utilization(&self) -> &::std::option::Option<i32> {
         &self.session_token_utilization
     }
-    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    /// <p>The size, in bytes, of the session token returned in the Credentials for this response.</p>
     pub fn session_token_size(mut self, input: i32) -> Self {
         self.session_token_size = ::std::option::Option::Some(input);
         self
     }
-    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    /// <p>The size, in bytes, of the session token returned in the Credentials for this response.</p>
     pub fn set_session_token_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_token_size = input;
         self
     }
-    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    /// <p>The size, in bytes, of the session token returned in the Credentials for this response.</p>
     pub fn get_session_token_size(&self) -> &::std::option::Option<i32> {
         &self.session_token_size
     }

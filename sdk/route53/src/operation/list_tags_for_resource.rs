@@ -338,6 +338,8 @@ pub enum ListTagsForResourceError {
     InvalidInput(crate::types::error::InvalidInput),
     /// <p>No health check exists with the specified ID.</p>
     NoSuchHealthCheck(crate::types::error::NoSuchHealthCheck),
+    /// <p>No health check source exists with the specified ID. Verify that the ID is correct and that the health check source hasn't been deleted.</p>
+    NoSuchHealthCheckSource(crate::types::error::NoSuchHealthCheckSource),
     /// <p>No hosted zone exists with the ID that you specified.</p>
     NoSuchHostedZone(crate::types::error::NoSuchHostedZone),
     /// <p>If Amazon Route 53 can't process a request before the next request arrives, it will reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code> (<code>Bad request</code>). If Route 53 returns this error repeatedly for the same request, we recommend that you wait, in intervals of increasing duration, before you try the request again.</p>
@@ -379,6 +381,7 @@ impl ListTagsForResourceError {
         match self {
             Self::InvalidInput(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NoSuchHealthCheck(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::NoSuchHealthCheckSource(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::NoSuchHostedZone(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::PriorRequestNotComplete(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -392,6 +395,10 @@ impl ListTagsForResourceError {
     /// Returns `true` if the error kind is `ListTagsForResourceError::NoSuchHealthCheck`.
     pub fn is_no_such_health_check(&self) -> bool {
         matches!(self, Self::NoSuchHealthCheck(_))
+    }
+    /// Returns `true` if the error kind is `ListTagsForResourceError::NoSuchHealthCheckSource`.
+    pub fn is_no_such_health_check_source(&self) -> bool {
+        matches!(self, Self::NoSuchHealthCheckSource(_))
     }
     /// Returns `true` if the error kind is `ListTagsForResourceError::NoSuchHostedZone`.
     pub fn is_no_such_hosted_zone(&self) -> bool {
@@ -411,6 +418,7 @@ impl ::std::error::Error for ListTagsForResourceError {
         match self {
             Self::InvalidInput(_inner) => ::std::option::Option::Some(_inner),
             Self::NoSuchHealthCheck(_inner) => ::std::option::Option::Some(_inner),
+            Self::NoSuchHealthCheckSource(_inner) => ::std::option::Option::Some(_inner),
             Self::NoSuchHostedZone(_inner) => ::std::option::Option::Some(_inner),
             Self::PriorRequestNotComplete(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
@@ -423,6 +431,7 @@ impl ::std::fmt::Display for ListTagsForResourceError {
         match self {
             Self::InvalidInput(_inner) => _inner.fmt(f),
             Self::NoSuchHealthCheck(_inner) => _inner.fmt(f),
+            Self::NoSuchHealthCheckSource(_inner) => _inner.fmt(f),
             Self::NoSuchHostedZone(_inner) => _inner.fmt(f),
             Self::PriorRequestNotComplete(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
@@ -449,6 +458,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListTagsForRe
         match self {
             Self::InvalidInput(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NoSuchHealthCheck(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::NoSuchHealthCheckSource(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::NoSuchHostedZone(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PriorRequestNotComplete(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

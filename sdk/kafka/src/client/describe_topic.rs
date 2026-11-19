@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`partition_count(Option<i32>)`](crate::operation::describe_topic::DescribeTopicOutput::partition_count): <p>The partition count of the topic.</p>
     ///   - [`configs(Option<String>)`](crate::operation::describe_topic::DescribeTopicOutput::configs): <p>Topic configurations encoded as a Base64 string.</p>
     ///   - [`status(Option<TopicState>)`](crate::operation::describe_topic::DescribeTopicOutput::status): <p>The status of the topic.</p>
+    ///   - [`replica_ids(Option<Vec::<i32>>)`](crate::operation::describe_topic::DescribeTopicOutput::replica_ids): <p>The broker IDs hosting replicas of this topic's partitions.</p>
     /// - On failure, responds with [`SdkError<DescribeTopicError>`](crate::operation::describe_topic::DescribeTopicError)
     pub fn describe_topic(&self) -> crate::operation::describe_topic::builders::DescribeTopicFluentBuilder {
         crate::operation::describe_topic::builders::DescribeTopicFluentBuilder::new(self.handle.clone())

@@ -180,6 +180,13 @@ pub(crate) fn de_create_registry_record(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "authorizationData" => {
+                    builder = builder.set_authorization_data(crate::protocol_serde::shape_authorization_data::de_authorization_data(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "recordArn" => {
                     builder = builder.set_record_arn(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

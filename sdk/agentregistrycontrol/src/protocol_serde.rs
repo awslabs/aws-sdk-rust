@@ -93,6 +93,8 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_approval_configuration;
 
+pub(crate) mod shape_authorization_data;
+
 pub(crate) mod shape_auto_detection;
 
 pub(crate) mod shape_auto_detection_configuration;
@@ -111,9 +113,15 @@ pub(crate) mod shape_provenance_list;
 
 pub(crate) mod shape_registry_filter;
 
+pub(crate) mod shape_registry_record_artifact_download;
+
+pub(crate) mod shape_registry_record_artifact_upload;
+
 pub(crate) mod shape_registry_record_filter;
 
 pub(crate) mod shape_registry_record_summary_list;
+
+pub(crate) mod shape_registry_record_synchronized_source;
 
 pub(crate) mod shape_registry_summary_list;
 
@@ -135,6 +143,8 @@ pub(crate) mod shape_updated_discovery_configuration;
 
 pub(crate) mod shape_updated_display_name;
 
+pub(crate) mod shape_updated_registry_record_artifact;
+
 pub(crate) mod shape_validation_exception_field_list;
 
 pub(crate) mod shape_a2a_agent_card_descriptor;
@@ -149,9 +159,13 @@ pub(crate) mod shape_auto_approval_rule_list;
 
 pub(crate) mod shape_custom_descriptor;
 
+pub(crate) mod shape_git_hub_synchronized_source;
+
 pub(crate) mod shape_http_descriptor;
 
 pub(crate) mod shape_mcp_server_descriptor;
+
+pub(crate) mod shape_o_auth2_authorization_data;
 
 pub(crate) mod shape_record_type_schema_override;
 
@@ -160,6 +174,8 @@ pub(crate) mod shape_record_type_schema_override_list;
 pub(crate) mod shape_registry_record_summary;
 
 pub(crate) mod shape_registry_summary;
+
+pub(crate) mod shape_s3_synchronized_source;
 
 pub(crate) mod shape_source_details;
 
@@ -198,6 +214,10 @@ pub(crate) mod shape_updated_mcp_server_descriptor;
 pub(crate) mod shape_agent_core_runtime_protocol_configuration;
 
 pub(crate) mod shape_agent_skills_md_descriptor;
+
+pub(crate) mod shape_agent_skills_package_descriptor;
+
+pub(crate) mod shape_agent_skills_source_configuration;
 
 pub(crate) mod shape_allowed_audience_list;
 
@@ -243,6 +263,8 @@ pub(crate) mod shape_registry_record_credential_provider_configuration;
 
 pub(crate) mod shape_registry_record_credential_provider_configuration_list;
 
+pub(crate) mod shape_s3_source_configuration;
+
 pub(crate) mod shape_self_managed_lattice_resource;
 
 pub(crate) mod shape_updated_agent_skills_additional_data;
@@ -274,6 +296,12 @@ pub(crate) mod shape_registry_record_iam_credential_provider;
 pub(crate) mod shape_registry_record_o_auth_credential_provider;
 
 pub(crate) mod shape_updated_agent_skills_md_descriptor;
+
+pub(crate) mod shape_updated_agent_skills_package_descriptor;
+
+pub(crate) mod shape_updated_agent_skills_repository_provider;
+
+pub(crate) mod shape_updated_agent_skills_source_configuration;
 
 pub(crate) mod shape_updated_mcp_tools_descriptor;
 

@@ -51,6 +51,18 @@ where
                                 || ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'LeadInvitation' cannot be null"),
                             )?,
                         )),
+                        "AccountPlanningInvitation" => Some(crate::types::Payload::AccountPlanningInvitation(
+                            crate::protocol_serde::shape_account_planning_invitation_payload::de_account_planning_invitation_payload(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom(
+                                    "value for 'AccountPlanningInvitation' cannot be null",
+                                )
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::Payload::Unknown)
@@ -94,6 +106,12 @@ pub fn ser_payload(
             let mut object_2 = object_4.key("LeadInvitation").start_object();
             crate::protocol_serde::shape_lead_invitation_payload::ser_lead_invitation_payload(&mut object_2, inner)?;
             object_2.finish();
+        }
+        crate::types::Payload::AccountPlanningInvitation(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_4.key("AccountPlanningInvitation").start_object();
+            crate::protocol_serde::shape_account_planning_invitation_payload::ser_account_planning_invitation_payload(&mut object_3, inner)?;
+            object_3.finish();
         }
         crate::types::Payload::Unknown => return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant("Payload")),
     }

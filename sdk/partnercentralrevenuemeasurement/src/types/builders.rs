@@ -7,7 +7,15 @@ pub use crate::types::_marketplace_product_summary::MarketplaceProductSummaryBui
 
 pub use crate::types::_marketplace_revenue_share_summary::MarketplaceRevenueShareSummaryBuilder;
 
+pub use crate::types::_marketplace_revenue_share_product_entry::MarketplaceRevenueShareProductEntryBuilder;
+
+pub use crate::types::_marketplace_revenue_share_product_summary::MarketplaceRevenueShareProductSummaryBuilder;
+
+pub use crate::types::_marketplace_revenue_share_product_detail::MarketplaceRevenueShareProductDetailBuilder;
+
 pub use crate::types::_marketplace_revenue_share_allocation_summary::MarketplaceRevenueShareAllocationSummaryBuilder;
+
+pub use crate::types::_context_filter::ContextFilterBuilder;
 
 pub use crate::types::_attribution_summary::AttributionSummaryBuilder;
 
@@ -16,3 +24,9 @@ pub use crate::types::_revenue_attribution_allocation_error_detail::RevenueAttri
 pub use crate::types::_revenue_attribution_allocation_summary::RevenueAttributionAllocationSummaryBuilder;
 
 pub use crate::types::_revenue_share_allocation::RevenueShareAllocationBuilder;
+
+pub use crate::types::_revenue_share_product_account_entry::RevenueShareProductAccountEntryBuilder;
+
+pub use crate::types::_revenue_share_product_account_summary::RevenueShareProductAccountSummaryBuilder;
+
+pub use crate::types::_revenue_share_product_account_detail::RevenueShareProductAccountDetailBuilder;

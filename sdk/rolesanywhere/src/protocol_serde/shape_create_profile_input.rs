@@ -57,5 +57,11 @@ pub fn ser_create_profile_input_input(
         }
         array_15.finish();
     }
+    if let Some(var_18) = &input.tip_configuration {
+        #[allow(unused_mut)]
+        let mut object_19 = object.key("tipConfiguration").start_object();
+        crate::protocol_serde::shape_tip_configuration::ser_tip_configuration(&mut object_19, var_18)?;
+        object_19.finish();
+    }
     Ok(())
 }

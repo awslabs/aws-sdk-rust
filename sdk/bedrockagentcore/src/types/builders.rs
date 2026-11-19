@@ -241,9 +241,13 @@ pub use crate::types::_crypto_x402_payment_input::CryptoX402PaymentInputBuilder;
 
 pub use crate::types::_mpp_payment_input::MppPaymentInputBuilder;
 
+pub use crate::types::_aws_billing_x402_payment_input::AwsBillingX402PaymentInputBuilder;
+
 pub use crate::types::_crypto_x402_payment_output::CryptoX402PaymentOutputBuilder;
 
 pub use crate::types::_mpp_payment_output::MppPaymentOutputBuilder;
+
+pub use crate::types::_aws_billing_x402_payment_output::AwsBillingX402PaymentOutputBuilder;
 
 pub use crate::types::_registry_record_summary::RegistryRecordSummaryBuilder;
 
@@ -315,6 +319,8 @@ pub use crate::types::_memory_json_data::MemoryJsonDataBuilder;
 
 pub use crate::types::_event_metadata_filter_expression::EventMetadataFilterExpressionBuilder;
 
+pub use crate::types::_aws_billing_payment_options::AwsBillingPaymentOptionsBuilder;
+
 pub use crate::types::_descriptors::DescriptorsBuilder;
 
 pub use crate::types::_content_block::ContentBlockBuilder;
@@ -382,6 +388,8 @@ pub use crate::types::_tool_description_configuration_bundle::ToolDescriptionCon
 pub use crate::types::_tool_description_output::ToolDescriptionOutputBuilder;
 
 pub use crate::types::_generation_identifiers::GenerationIdentifiersBuilder;
+
+pub use crate::types::_dpop_jwk::DpopJwkBuilder;
 
 pub use crate::types::_mcp_descriptor::McpDescriptorBuilder;
 

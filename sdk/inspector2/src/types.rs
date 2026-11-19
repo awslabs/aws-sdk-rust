@@ -49,6 +49,8 @@ pub use crate::types::_cis_sort_order::CisSortOrder;
 
 pub use crate::types::_cluster_for_image_filter_criteria::ClusterForImageFilterCriteria;
 
+pub use crate::types::_code_security_integration_vpc_configuration::CodeSecurityIntegrationVpcConfiguration;
+
 pub use crate::types::_code_security_resource::CodeSecurityResource;
 
 pub use crate::types::_code_scan_status::CodeScanStatus;
@@ -175,6 +177,8 @@ pub use crate::types::_monthly_schedule::MonthlySchedule;
 
 pub use crate::types::_create_git_lab_self_managed_integration_detail::CreateGitLabSelfManagedIntegrationDetail;
 
+pub use crate::types::_create_git_hub_enterprise_integration_detail::CreateGitHubEnterpriseIntegrationDetail;
+
 pub use crate::types::_periodic_scan_configuration::PeriodicScanConfiguration;
 
 pub use crate::types::_continuous_integration_scan_configuration::ContinuousIntegrationScanConfiguration;
@@ -292,6 +296,8 @@ pub use crate::types::_compute_platform::ComputePlatform;
 pub use crate::types::_update_git_lab_self_managed_integration_detail::UpdateGitLabSelfManagedIntegrationDetail;
 
 pub use crate::types::_update_git_hub_integration_detail::UpdateGitHubIntegrationDetail;
+
+pub use crate::types::_update_git_hub_enterprise_server_integration_detail::UpdateGitHubEnterpriseServerIntegrationDetail;
 
 pub use crate::types::_ecr_rescan_duration::EcrRescanDuration;
 
@@ -538,6 +544,10 @@ pub use crate::types::_cvss2::Cvss2;
 pub use crate::types::_epss::Epss;
 
 pub use crate::types::_cis_rule_status::CisRuleStatus;
+
+pub use crate::types::_update_git_hub_enterprise_server_app_installation_detail::UpdateGitHubEnterpriseServerAppInstallationDetail;
+
+pub use crate::types::_git_hub_enterprise_server_app_registration_detail::GitHubEnterpriseServerAppRegistrationDetail;
 
 pub use crate::types::_container_image_rescan_duration::ContainerImageRescanDuration;
 
@@ -917,6 +927,8 @@ mod _code_scan_status;
 
 mod _code_security_integration_summary;
 
+mod _code_security_integration_vpc_configuration;
+
 mod _code_security_resource;
 
 mod _code_security_scan_configuration;
@@ -1004,6 +1016,8 @@ mod _coverage_string_filter;
 mod _covered_resource;
 
 mod _create_cis_targets;
+
+mod _create_git_hub_enterprise_integration_detail;
 
 mod _create_git_lab_self_managed_integration_detail;
 
@@ -1154,6 +1168,8 @@ mod _gcp_provider_detail_update;
 mod _gcp_scope_configuration;
 
 mod _gcp_scope_configuration_input;
+
+mod _git_hub_enterprise_server_app_registration_detail;
 
 mod _group_key;
 
@@ -1410,6 +1426,10 @@ mod _title_sort_by;
 mod _update_cis_targets;
 
 mod _update_configuration_inheritance;
+
+mod _update_git_hub_enterprise_server_app_installation_detail;
+
+mod _update_git_hub_enterprise_server_integration_detail;
 
 mod _update_git_hub_integration_detail;
 

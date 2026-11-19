@@ -8,6 +8,10 @@ pub enum FrameworkSummary {
     AmiSecuritySummary(crate::types::AmiSecuritySummary),
     /// <p>The details of the resource assessed under the Container Security framework.</p>
     ContainerSecuritySummary(crate::types::ContainerSecuritySummary),
+    /// <p>The details of the resource assessed under the Listing Quality framework.</p>
+    ListingQualitySummary(crate::types::ListingQualitySummary),
+    /// <p>The details of the resource assessed under the Listing Recommendations framework.</p>
+    ListingRecommendationsSummary(crate::types::ListingRecommendationsSummary),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -44,6 +48,32 @@ impl FrameworkSummary {
     /// Returns true if this is a [`ContainerSecuritySummary`](crate::types::FrameworkSummary::ContainerSecuritySummary).
     pub fn is_container_security_summary(&self) -> bool {
         self.as_container_security_summary().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ListingQualitySummary`](crate::types::FrameworkSummary::ListingQualitySummary), extracting the inner [`ListingQualitySummary`](crate::types::ListingQualitySummary).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_listing_quality_summary(&self) -> ::std::result::Result<&crate::types::ListingQualitySummary, &Self> {
+        if let FrameworkSummary::ListingQualitySummary(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ListingQualitySummary`](crate::types::FrameworkSummary::ListingQualitySummary).
+    pub fn is_listing_quality_summary(&self) -> bool {
+        self.as_listing_quality_summary().is_ok()
+    }
+    /// Tries to convert the enum instance into [`ListingRecommendationsSummary`](crate::types::FrameworkSummary::ListingRecommendationsSummary), extracting the inner [`ListingRecommendationsSummary`](crate::types::ListingRecommendationsSummary).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_listing_recommendations_summary(&self) -> ::std::result::Result<&crate::types::ListingRecommendationsSummary, &Self> {
+        if let FrameworkSummary::ListingRecommendationsSummary(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`ListingRecommendationsSummary`](crate::types::FrameworkSummary::ListingRecommendationsSummary).
+    pub fn is_listing_recommendations_summary(&self) -> bool {
+        self.as_listing_recommendations_summary().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

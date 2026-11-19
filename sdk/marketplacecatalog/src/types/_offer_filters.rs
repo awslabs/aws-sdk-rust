@@ -14,6 +14,10 @@ pub struct OfferFilters {
     /// <p>Not all offers have a <code>ResaleAuthorizationId</code>. The response will only include offers for which you have permissions.</p>
     /// </note>
     pub resale_authorization_id: ::std::option::Option<crate::types::OfferResaleAuthorizationIdFilter>,
+    /// <p>A filter that matches offers by the ID of the subsidiary authorization that they were created from.</p><note>
+    /// <p>Not all offers have a <code>SubsidiaryAuthorizationId</code>.</p>
+    /// </note>
+    pub subsidiary_authorization_id: ::std::option::Option<crate::types::OfferSubsidiaryAuthorizationIdFilter>,
     /// <p>Allows filtering on the <code>ReleaseDate</code> of an offer.</p>
     pub release_date: ::std::option::Option<crate::types::OfferReleaseDateFilter>,
     /// <p>Allows filtering on the <code>AvailabilityEndDate</code> of an offer.</p>
@@ -53,6 +57,12 @@ impl OfferFilters {
     /// </note>
     pub fn resale_authorization_id(&self) -> ::std::option::Option<&crate::types::OfferResaleAuthorizationIdFilter> {
         self.resale_authorization_id.as_ref()
+    }
+    /// <p>A filter that matches offers by the ID of the subsidiary authorization that they were created from.</p><note>
+    /// <p>Not all offers have a <code>SubsidiaryAuthorizationId</code>.</p>
+    /// </note>
+    pub fn subsidiary_authorization_id(&self) -> ::std::option::Option<&crate::types::OfferSubsidiaryAuthorizationIdFilter> {
+        self.subsidiary_authorization_id.as_ref()
     }
     /// <p>Allows filtering on the <code>ReleaseDate</code> of an offer.</p>
     pub fn release_date(&self) -> ::std::option::Option<&crate::types::OfferReleaseDateFilter> {
@@ -110,6 +120,7 @@ pub struct OfferFiltersBuilder {
     pub(crate) name: ::std::option::Option<crate::types::OfferNameFilter>,
     pub(crate) product_id: ::std::option::Option<crate::types::OfferProductIdFilter>,
     pub(crate) resale_authorization_id: ::std::option::Option<crate::types::OfferResaleAuthorizationIdFilter>,
+    pub(crate) subsidiary_authorization_id: ::std::option::Option<crate::types::OfferSubsidiaryAuthorizationIdFilter>,
     pub(crate) release_date: ::std::option::Option<crate::types::OfferReleaseDateFilter>,
     pub(crate) availability_end_date: ::std::option::Option<crate::types::OfferAvailabilityEndDateFilter>,
     pub(crate) buyer_accounts: ::std::option::Option<crate::types::OfferBuyerAccountsFilter>,
@@ -183,6 +194,26 @@ impl OfferFiltersBuilder {
     /// </note>
     pub fn get_resale_authorization_id(&self) -> &::std::option::Option<crate::types::OfferResaleAuthorizationIdFilter> {
         &self.resale_authorization_id
+    }
+    /// <p>A filter that matches offers by the ID of the subsidiary authorization that they were created from.</p><note>
+    /// <p>Not all offers have a <code>SubsidiaryAuthorizationId</code>.</p>
+    /// </note>
+    pub fn subsidiary_authorization_id(mut self, input: crate::types::OfferSubsidiaryAuthorizationIdFilter) -> Self {
+        self.subsidiary_authorization_id = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A filter that matches offers by the ID of the subsidiary authorization that they were created from.</p><note>
+    /// <p>Not all offers have a <code>SubsidiaryAuthorizationId</code>.</p>
+    /// </note>
+    pub fn set_subsidiary_authorization_id(mut self, input: ::std::option::Option<crate::types::OfferSubsidiaryAuthorizationIdFilter>) -> Self {
+        self.subsidiary_authorization_id = input;
+        self
+    }
+    /// <p>A filter that matches offers by the ID of the subsidiary authorization that they were created from.</p><note>
+    /// <p>Not all offers have a <code>SubsidiaryAuthorizationId</code>.</p>
+    /// </note>
+    pub fn get_subsidiary_authorization_id(&self) -> &::std::option::Option<crate::types::OfferSubsidiaryAuthorizationIdFilter> {
+        &self.subsidiary_authorization_id
     }
     /// <p>Allows filtering on the <code>ReleaseDate</code> of an offer.</p>
     pub fn release_date(mut self, input: crate::types::OfferReleaseDateFilter) -> Self {
@@ -331,6 +362,7 @@ impl OfferFiltersBuilder {
             name: self.name,
             product_id: self.product_id,
             resale_authorization_id: self.resale_authorization_id,
+            subsidiary_authorization_id: self.subsidiary_authorization_id,
             release_date: self.release_date,
             availability_end_date: self.availability_end_date,
             buyer_accounts: self.buyer_accounts,

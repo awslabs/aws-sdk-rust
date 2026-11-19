@@ -22,6 +22,10 @@ pub struct DbInstance {
     /// <p>The endpoint might not be shown for instances with the status of <code>creating</code>.</p>
     /// </note>
     pub endpoint: ::std::option::Option<crate::types::Endpoint>,
+    /// <p>Specifies the connection endpoint for the DB instance that currently has the primary role.</p>
+    /// <p>This endpoint points to the new primary DB instance after a switchover, so you don't have to connect to a different DNS name.</p>
+    /// <p>A read replica reports the same primary endpoint as the DB instance it replicates from. When you promote a read replica, it reports its own primary endpoint.</p>
+    pub primary_endpoint: ::std::option::Option<crate::types::PrimaryEndpoint>,
     /// <p>The amount of storage in gibibytes (GiB) allocated for the DB instance.</p>
     pub allocated_storage: ::std::option::Option<i32>,
     /// <p>The date and time when the DB instance was created.</p>
@@ -261,6 +265,8 @@ pub struct DbInstance {
     pub storage_operation_percent_progress: ::std::option::Option<i32>,
     /// <p>The identifier of the DB capacity reservation associated with this DB instance. Amazon RDS doesn't return this value if the DB instance doesn't use a DB capacity reservation.</p>
     pub db_capacity_reservation_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>Indicates whether the DB instance uses VPC networking. For a DB instance in an Aurora PostgreSQL DB cluster without VPC networking, the value is <code>false</code>.</p>
+    pub vpc_networking_enabled: ::std::option::Option<bool>,
 }
 impl DbInstance {
     /// <p>The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -293,6 +299,12 @@ impl DbInstance {
     /// </note>
     pub fn endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
         self.endpoint.as_ref()
+    }
+    /// <p>Specifies the connection endpoint for the DB instance that currently has the primary role.</p>
+    /// <p>This endpoint points to the new primary DB instance after a switchover, so you don't have to connect to a different DNS name.</p>
+    /// <p>A read replica reports the same primary endpoint as the DB instance it replicates from. When you promote a read replica, it reports its own primary endpoint.</p>
+    pub fn primary_endpoint(&self) -> ::std::option::Option<&crate::types::PrimaryEndpoint> {
+        self.primary_endpoint.as_ref()
     }
     /// <p>The amount of storage in gibibytes (GiB) allocated for the DB instance.</p>
     pub fn allocated_storage(&self) -> ::std::option::Option<i32> {
@@ -735,6 +747,10 @@ impl DbInstance {
     pub fn db_capacity_reservation_identifier(&self) -> ::std::option::Option<&str> {
         self.db_capacity_reservation_identifier.as_deref()
     }
+    /// <p>Indicates whether the DB instance uses VPC networking. For a DB instance in an Aurora PostgreSQL DB cluster without VPC networking, the value is <code>false</code>.</p>
+    pub fn vpc_networking_enabled(&self) -> ::std::option::Option<bool> {
+        self.vpc_networking_enabled
+    }
 }
 impl DbInstance {
     /// Creates a new builder-style object to manufacture [`DbInstance`](crate::types::DbInstance).
@@ -754,6 +770,7 @@ pub struct DbInstanceBuilder {
     pub(crate) master_username: ::std::option::Option<::std::string::String>,
     pub(crate) db_name: ::std::option::Option<::std::string::String>,
     pub(crate) endpoint: ::std::option::Option<crate::types::Endpoint>,
+    pub(crate) primary_endpoint: ::std::option::Option<crate::types::PrimaryEndpoint>,
     pub(crate) allocated_storage: ::std::option::Option<i32>,
     pub(crate) instance_create_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) preferred_backup_window: ::std::option::Option<::std::string::String>,
@@ -842,6 +859,7 @@ pub struct DbInstanceBuilder {
     pub(crate) storage_operation_status: ::std::option::Option<::std::string::String>,
     pub(crate) storage_operation_percent_progress: ::std::option::Option<i32>,
     pub(crate) db_capacity_reservation_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_networking_enabled: ::std::option::Option<bool>,
 }
 impl DbInstanceBuilder {
     /// <p>The user-supplied database identifier. This identifier is the unique key that identifies a DB instance.</p>
@@ -950,6 +968,26 @@ impl DbInstanceBuilder {
     /// </note>
     pub fn get_endpoint(&self) -> &::std::option::Option<crate::types::Endpoint> {
         &self.endpoint
+    }
+    /// <p>Specifies the connection endpoint for the DB instance that currently has the primary role.</p>
+    /// <p>This endpoint points to the new primary DB instance after a switchover, so you don't have to connect to a different DNS name.</p>
+    /// <p>A read replica reports the same primary endpoint as the DB instance it replicates from. When you promote a read replica, it reports its own primary endpoint.</p>
+    pub fn primary_endpoint(mut self, input: crate::types::PrimaryEndpoint) -> Self {
+        self.primary_endpoint = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the connection endpoint for the DB instance that currently has the primary role.</p>
+    /// <p>This endpoint points to the new primary DB instance after a switchover, so you don't have to connect to a different DNS name.</p>
+    /// <p>A read replica reports the same primary endpoint as the DB instance it replicates from. When you promote a read replica, it reports its own primary endpoint.</p>
+    pub fn set_primary_endpoint(mut self, input: ::std::option::Option<crate::types::PrimaryEndpoint>) -> Self {
+        self.primary_endpoint = input;
+        self
+    }
+    /// <p>Specifies the connection endpoint for the DB instance that currently has the primary role.</p>
+    /// <p>This endpoint points to the new primary DB instance after a switchover, so you don't have to connect to a different DNS name.</p>
+    /// <p>A read replica reports the same primary endpoint as the DB instance it replicates from. When you promote a read replica, it reports its own primary endpoint.</p>
+    pub fn get_primary_endpoint(&self) -> &::std::option::Option<crate::types::PrimaryEndpoint> {
+        &self.primary_endpoint
     }
     /// <p>The amount of storage in gibibytes (GiB) allocated for the DB instance.</p>
     pub fn allocated_storage(mut self, input: i32) -> Self {
@@ -2456,6 +2494,20 @@ impl DbInstanceBuilder {
     pub fn get_db_capacity_reservation_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.db_capacity_reservation_identifier
     }
+    /// <p>Indicates whether the DB instance uses VPC networking. For a DB instance in an Aurora PostgreSQL DB cluster without VPC networking, the value is <code>false</code>.</p>
+    pub fn vpc_networking_enabled(mut self, input: bool) -> Self {
+        self.vpc_networking_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Indicates whether the DB instance uses VPC networking. For a DB instance in an Aurora PostgreSQL DB cluster without VPC networking, the value is <code>false</code>.</p>
+    pub fn set_vpc_networking_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.vpc_networking_enabled = input;
+        self
+    }
+    /// <p>Indicates whether the DB instance uses VPC networking. For a DB instance in an Aurora PostgreSQL DB cluster without VPC networking, the value is <code>false</code>.</p>
+    pub fn get_vpc_networking_enabled(&self) -> &::std::option::Option<bool> {
+        &self.vpc_networking_enabled
+    }
     /// Consumes the builder and constructs a [`DbInstance`](crate::types::DbInstance).
     pub fn build(self) -> crate::types::DbInstance {
         crate::types::DbInstance {
@@ -2466,6 +2518,7 @@ impl DbInstanceBuilder {
             master_username: self.master_username,
             db_name: self.db_name,
             endpoint: self.endpoint,
+            primary_endpoint: self.primary_endpoint,
             allocated_storage: self.allocated_storage,
             instance_create_time: self.instance_create_time,
             preferred_backup_window: self.preferred_backup_window,
@@ -2553,6 +2606,7 @@ impl DbInstanceBuilder {
             storage_operation_status: self.storage_operation_status,
             storage_operation_percent_progress: self.storage_operation_percent_progress,
             db_capacity_reservation_identifier: self.db_capacity_reservation_identifier,
+            vpc_networking_enabled: self.vpc_networking_enabled,
         }
     }
 }

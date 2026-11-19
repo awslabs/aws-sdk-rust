@@ -167,6 +167,9 @@ pub(crate) fn de_get_responder_gateway(
                             .transpose()?,
                     );
                 }
+                "errorDetails" => {
+                    builder = builder.set_error_details(crate::protocol_serde::shape_error_details::de_error_details(tokens, _value, depth + 1)?);
+                }
                 "externalInboundEndpoint" => {
                     builder = builder.set_external_inbound_endpoint(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

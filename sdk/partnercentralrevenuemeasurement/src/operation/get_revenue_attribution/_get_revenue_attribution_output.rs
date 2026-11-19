@@ -33,6 +33,8 @@ pub struct GetRevenueAttributionOutput {
     pub total_active_revenue_attribution_allocation_count: ::std::option::Option<i32>,
     /// <p>The total number of allocations under this revenue attribution, counting both ACTIVE and INACTIVE.</p>
     pub total_revenue_attribution_allocation_count: ::std::option::Option<i32>,
+    /// <p>Program-defined key-value attributes for the revenue attribution.</p>
+    pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetRevenueAttributionOutput {
@@ -98,6 +100,10 @@ impl GetRevenueAttributionOutput {
     pub fn total_revenue_attribution_allocation_count(&self) -> ::std::option::Option<i32> {
         self.total_revenue_attribution_allocation_count
     }
+    /// <p>Program-defined key-value attributes for the revenue attribution.</p>
+    pub fn context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.context.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetRevenueAttributionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -130,6 +136,7 @@ pub struct GetRevenueAttributionOutputBuilder {
     pub(crate) effective_until: ::std::option::Option<::std::string::String>,
     pub(crate) total_active_revenue_attribution_allocation_count: ::std::option::Option<i32>,
     pub(crate) total_revenue_attribution_allocation_count: ::std::option::Option<i32>,
+    pub(crate) context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetRevenueAttributionOutputBuilder {
@@ -347,6 +354,26 @@ impl GetRevenueAttributionOutputBuilder {
     pub fn get_total_revenue_attribution_allocation_count(&self) -> &::std::option::Option<i32> {
         &self.total_revenue_attribution_allocation_count
     }
+    /// Adds a key-value pair to `context`.
+    ///
+    /// To override the contents of this collection use [`set_context`](Self::set_context).
+    ///
+    /// <p>Program-defined key-value attributes for the revenue attribution.</p>
+    pub fn context(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.context.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.context = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Program-defined key-value attributes for the revenue attribution.</p>
+    pub fn set_context(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.context = input;
+        self
+    }
+    /// <p>Program-defined key-value attributes for the revenue attribution.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.context
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -402,6 +429,7 @@ impl GetRevenueAttributionOutputBuilder {
             effective_until: self.effective_until,
             total_active_revenue_attribution_allocation_count: self.total_active_revenue_attribution_allocation_count,
             total_revenue_attribution_allocation_count: self.total_revenue_attribution_allocation_count,
+            context: self.context,
             _request_id: self._request_id,
         })
     }

@@ -39,6 +39,16 @@ static OFFERFILTERS_MEMBER_RESALE_AUTHORIZATION_ID: ::aws_smithy_schema::Schema<
     "ResaleAuthorizationId",
     3,
 );
+static OFFERFILTERS_MEMBER_SUBSIDIARY_AUTHORIZATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacecatalog#OfferFilters$SubsidiaryAuthorizationId",
+        "com.amazonaws.marketplacecatalog",
+        "OfferFilters",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "SubsidiaryAuthorizationId",
+    4,
+);
 static OFFERFILTERS_MEMBER_RELEASE_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.marketplacecatalog#OfferFilters$ReleaseDate",
@@ -47,7 +57,7 @@ static OFFERFILTERS_MEMBER_RELEASE_DATE: ::aws_smithy_schema::Schema<'static> = 
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "ReleaseDate",
-    4,
+    5,
 );
 static OFFERFILTERS_MEMBER_AVAILABILITY_END_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -57,7 +67,7 @@ static OFFERFILTERS_MEMBER_AVAILABILITY_END_DATE: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "AvailabilityEndDate",
-    5,
+    6,
 );
 static OFFERFILTERS_MEMBER_BUYER_ACCOUNTS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -67,7 +77,7 @@ static OFFERFILTERS_MEMBER_BUYER_ACCOUNTS: ::aws_smithy_schema::Schema<'static> 
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "BuyerAccounts",
-    6,
+    7,
 );
 static OFFERFILTERS_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -77,7 +87,7 @@ static OFFERFILTERS_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_s
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "State",
-    7,
+    8,
 );
 static OFFERFILTERS_MEMBER_TARGETING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -87,7 +97,7 @@ static OFFERFILTERS_MEMBER_TARGETING: ::aws_smithy_schema::Schema<'static> = ::a
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "Targeting",
-    8,
+    9,
 );
 static OFFERFILTERS_MEMBER_LAST_MODIFIED_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -97,7 +107,7 @@ static OFFERFILTERS_MEMBER_LAST_MODIFIED_DATE: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "LastModifiedDate",
-    9,
+    10,
 );
 static OFFERFILTERS_MEMBER_OFFER_SET_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -107,7 +117,7 @@ static OFFERFILTERS_MEMBER_OFFER_SET_ID: ::aws_smithy_schema::Schema<'static> = 
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "OfferSetId",
-    10,
+    11,
 );
 static OFFERFILTERS_MEMBER_TARGET_AGREEMENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -117,7 +127,7 @@ static OFFERFILTERS_MEMBER_TARGET_AGREEMENT_ID: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "TargetAgreementId",
-    11,
+    12,
 );
 static OFFERFILTERS_MEMBER_TARGET_AGREEMENT_INTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -127,7 +137,7 @@ static OFFERFILTERS_MEMBER_TARGET_AGREEMENT_INTENT: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "TargetAgreementIntent",
-    12,
+    13,
 );
 static OFFERFILTERS_MEMBER_CREATED_BY_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -137,7 +147,7 @@ static OFFERFILTERS_MEMBER_CREATED_BY_SOURCE: ::aws_smithy_schema::Schema<'stati
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "CreatedBySource",
-    13,
+    14,
 );
 static OFFERFILTERS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -151,6 +161,7 @@ static OFFERFILTERS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_
         &OFFERFILTERS_MEMBER_NAME,
         &OFFERFILTERS_MEMBER_PRODUCT_ID,
         &OFFERFILTERS_MEMBER_RESALE_AUTHORIZATION_ID,
+        &OFFERFILTERS_MEMBER_SUBSIDIARY_AUTHORIZATION_ID,
         &OFFERFILTERS_MEMBER_RELEASE_DATE,
         &OFFERFILTERS_MEMBER_AVAILABILITY_END_DATE,
         &OFFERFILTERS_MEMBER_BUYER_ACCOUNTS,
@@ -188,6 +199,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::OfferFilte
         }
         if let Some(ref val) = self.resale_authorization_id {
             ser.write_struct(&OFFERFILTERS_MEMBER_RESALE_AUTHORIZATION_ID, val)?;
+        }
+        if let Some(ref val) = self.subsidiary_authorization_id {
+            ser.write_struct(&OFFERFILTERS_MEMBER_SUBSIDIARY_AUTHORIZATION_ID, val)?;
         }
         if let Some(ref val) = self.release_date {
             ser.write_struct(&OFFERFILTERS_MEMBER_RELEASE_DATE, val)?;
@@ -268,66 +282,73 @@ impl crate::types::builders::OfferFiltersBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.release_date = Some(crate::types::OfferReleaseDateFilter::deserialize(deser)?);
+                        self.subsidiary_authorization_id = Some(crate::types::OfferSubsidiaryAuthorizationIdFilter::deserialize(deser)?);
                     }
                 }
                 Some(5) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.availability_end_date = Some(crate::types::OfferAvailabilityEndDateFilter::deserialize(deser)?);
+                        self.release_date = Some(crate::types::OfferReleaseDateFilter::deserialize(deser)?);
                     }
                 }
                 Some(6) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.buyer_accounts = Some(crate::types::OfferBuyerAccountsFilter::deserialize(deser)?);
+                        self.availability_end_date = Some(crate::types::OfferAvailabilityEndDateFilter::deserialize(deser)?);
                     }
                 }
                 Some(7) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.state = Some(crate::types::OfferStateFilter::deserialize(deser)?);
+                        self.buyer_accounts = Some(crate::types::OfferBuyerAccountsFilter::deserialize(deser)?);
                     }
                 }
                 Some(8) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.targeting = Some(crate::types::OfferTargetingFilter::deserialize(deser)?);
+                        self.state = Some(crate::types::OfferStateFilter::deserialize(deser)?);
                     }
                 }
                 Some(9) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.last_modified_date = Some(crate::types::OfferLastModifiedDateFilter::deserialize(deser)?);
+                        self.targeting = Some(crate::types::OfferTargetingFilter::deserialize(deser)?);
                     }
                 }
                 Some(10) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.offer_set_id = Some(crate::types::OfferSetIdFilter::deserialize(deser)?);
+                        self.last_modified_date = Some(crate::types::OfferLastModifiedDateFilter::deserialize(deser)?);
                     }
                 }
                 Some(11) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.target_agreement_id = Some(crate::types::OfferTargetAgreementIdFilter::deserialize(deser)?);
+                        self.offer_set_id = Some(crate::types::OfferSetIdFilter::deserialize(deser)?);
                     }
                 }
                 Some(12) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.target_agreement_intent = Some(crate::types::OfferTargetAgreementIntentFilter::deserialize(deser)?);
+                        self.target_agreement_id = Some(crate::types::OfferTargetAgreementIdFilter::deserialize(deser)?);
                     }
                 }
                 Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.target_agreement_intent = Some(crate::types::OfferTargetAgreementIntentFilter::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

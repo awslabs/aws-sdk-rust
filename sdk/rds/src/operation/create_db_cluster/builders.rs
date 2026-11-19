@@ -27,6 +27,7 @@ impl crate::operation::create_db_cluster::builders::CreateDbClusterInputBuilder 
 /// <p>You can use the <code>ReplicationSourceIdentifier</code> parameter to create an Amazon Aurora DB cluster as a read replica of another DB cluster or Amazon RDS for MySQL or PostgreSQL DB instance. For more information about Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p>
 /// <p>You can also use the <code>ReplicationSourceIdentifier</code> parameter to create a Multi-AZ DB cluster read replica with an RDS for MySQL or PostgreSQL DB instance as the source. For more information about Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p>
 /// <p>You can use the <code>WithExpressConfiguration</code> parameter to create an Aurora DB Cluster with express configuration and create cluster in seconds. Express configuration provides a cluster with a writer instance and feature specific values set to all other input parameters of this API.</p>
+/// <p>To create an Aurora PostgreSQL DB cluster without VPC networking, see <code>EnableVPCNetworking</code>.</p>
 /// <p>You can use the <code>AssociatedRoles</code> parameter to associate one or more Amazon Web Services Identity and Access Management (IAM) roles with an Aurora DB cluster. Each associated role lets the DB cluster access other Amazon Web Services on your behalf, such as Amazon S3 for data import and export, or Amazon Web Services Lambda for invoking functions.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateDBClusterFluentBuilder {
@@ -310,24 +311,28 @@ impl CreateDBClusterFluentBuilder {
     /// To override the contents of this collection use [`set_vpc_security_group_ids`](Self::set_vpc_security_group_ids).
     ///
     /// <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+    /// <p>Valid only for DB clusters inside a VPC. Don't specify it when you set <code>EnableVPCNetworking</code> to <code>false</code>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn vpc_security_group_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.vpc_security_group_ids(input.into());
         self
     }
     /// <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+    /// <p>Valid only for DB clusters inside a VPC. Don't specify it when you set <code>EnableVPCNetworking</code> to <code>false</code>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn set_vpc_security_group_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
     }
     /// <p>A list of EC2 VPC security groups to associate with this DB cluster.</p>
+    /// <p>Valid only for DB clusters inside a VPC. Don't specify it when you set <code>EnableVPCNetworking</code> to <code>false</code>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     pub fn get_vpc_security_group_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_vpc_security_group_ids()
     }
     /// <p>A DB subnet group to associate with this DB cluster.</p>
     /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
+    /// <p>Valid only for DB clusters inside a VPC. Don't specify it when you set <code>EnableVPCNetworking</code> to <code>false</code>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -341,6 +346,7 @@ impl CreateDBClusterFluentBuilder {
     }
     /// <p>A DB subnet group to associate with this DB cluster.</p>
     /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
+    /// <p>Valid only for DB clusters inside a VPC. Don't specify it when you set <code>EnableVPCNetworking</code> to <code>false</code>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -354,6 +360,7 @@ impl CreateDBClusterFluentBuilder {
     }
     /// <p>A DB subnet group to associate with this DB cluster.</p>
     /// <p>This setting is required to create a Multi-AZ DB cluster.</p>
+    /// <p>Valid only for DB clusters inside a VPC. Don't specify it when you set <code>EnableVPCNetworking</code> to <code>false</code>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
     /// <p>Constraints:</p>
     /// <ul>
@@ -1443,6 +1450,7 @@ impl CreateDBClusterFluentBuilder {
     /// <p>The network type of the DB cluster.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Don't specify it when you set <code>EnableVPCNetworking</code> to <code>false</code>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
     /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
     pub fn network_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -1452,6 +1460,7 @@ impl CreateDBClusterFluentBuilder {
     /// <p>The network type of the DB cluster.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Don't specify it when you set <code>EnableVPCNetworking</code> to <code>false</code>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
     /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
     pub fn set_network_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
@@ -1461,6 +1470,7 @@ impl CreateDBClusterFluentBuilder {
     /// <p>The network type of the DB cluster.</p>
     /// <p>The network type is determined by the <code>DBSubnetGroup</code> specified for the DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (<code>DUAL</code>).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html"> Working with a DB instance in a VPC</a> in the <i>Amazon Aurora User Guide.</i></p>
+    /// <p>Don't specify it when you set <code>EnableVPCNetworking</code> to <code>false</code>.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters only</p>
     /// <p>Valid Values: <code>IPV4 | DUAL</code></p>
     pub fn get_network_type(&self) -> &::std::option::Option<::std::string::String> {
@@ -1928,22 +1938,77 @@ impl CreateDBClusterFluentBuilder {
     pub fn get_master_user_authentication_type(&self) -> &::std::option::Option<crate::types::MasterUserAuthenticationType> {
         self.inner.get_master_user_authentication_type()
     }
+    /// <p>Specifies whether VPC networking is enabled for the DB cluster. Set to <code>false</code> to create a DB cluster without VPC networking.</p>
+    /// <p>A DB cluster without VPC networking needs an internet access gateway and IAM database authentication. Set <code>EnableInternetAccessGateway</code> and <code>EnableIAMDatabaseAuthentication</code> to <code>true</code>, and set <code>MasterUserAuthenticationType</code> to <code>iam-db-auth</code>.</p>
+    /// <p>Default: <code>true</code>. With <code>WithExpressConfiguration</code>, the default is <code>false</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL DB clusters only</p>
+    pub fn enable_vpc_networking(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_vpc_networking(input);
+        self
+    }
+    /// <p>Specifies whether VPC networking is enabled for the DB cluster. Set to <code>false</code> to create a DB cluster without VPC networking.</p>
+    /// <p>A DB cluster without VPC networking needs an internet access gateway and IAM database authentication. Set <code>EnableInternetAccessGateway</code> and <code>EnableIAMDatabaseAuthentication</code> to <code>true</code>, and set <code>MasterUserAuthenticationType</code> to <code>iam-db-auth</code>.</p>
+    /// <p>Default: <code>true</code>. With <code>WithExpressConfiguration</code>, the default is <code>false</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL DB clusters only</p>
+    pub fn set_enable_vpc_networking(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_vpc_networking(input);
+        self
+    }
+    /// <p>Specifies whether VPC networking is enabled for the DB cluster. Set to <code>false</code> to create a DB cluster without VPC networking.</p>
+    /// <p>A DB cluster without VPC networking needs an internet access gateway and IAM database authentication. Set <code>EnableInternetAccessGateway</code> and <code>EnableIAMDatabaseAuthentication</code> to <code>true</code>, and set <code>MasterUserAuthenticationType</code> to <code>iam-db-auth</code>.</p>
+    /// <p>Default: <code>true</code>. With <code>WithExpressConfiguration</code>, the default is <code>false</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL DB clusters only</p>
+    pub fn get_enable_vpc_networking(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_vpc_networking()
+    }
     /// <p>Specifies to create an Aurora DB Cluster with express configuration in seconds. Express configuration provides a cluster with a writer instance and feature specific values set to all other input parameters of this API.</p>
+    /// <p>By default, a DB cluster with express configuration doesn't use VPC networking. You connect to it over the internet through an internet access gateway.</p>
+    /// <p>To create the DB cluster in a VPC instead, set <code>EnableVPCNetworking</code> to <code>true</code> and <code>EnableInternetAccessGateway</code> to <code>false</code>. You can also specify <code>DBSubnetGroupName</code>, <code>VpcSecurityGroupIds</code>, and <code>NetworkType</code>. If you don't specify <code>DBSubnetGroupName</code>, the DB cluster uses the default DB subnet group for your Amazon Web Services account, in your default VPC.</p>
+    /// <p>A DB cluster with express configuration in a VPC takes longer to become available than one without VPC networking.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters</p>
     pub fn with_express_configuration(mut self, input: bool) -> Self {
         self.inner = self.inner.with_express_configuration(input);
         self
     }
     /// <p>Specifies to create an Aurora DB Cluster with express configuration in seconds. Express configuration provides a cluster with a writer instance and feature specific values set to all other input parameters of this API.</p>
+    /// <p>By default, a DB cluster with express configuration doesn't use VPC networking. You connect to it over the internet through an internet access gateway.</p>
+    /// <p>To create the DB cluster in a VPC instead, set <code>EnableVPCNetworking</code> to <code>true</code> and <code>EnableInternetAccessGateway</code> to <code>false</code>. You can also specify <code>DBSubnetGroupName</code>, <code>VpcSecurityGroupIds</code>, and <code>NetworkType</code>. If you don't specify <code>DBSubnetGroupName</code>, the DB cluster uses the default DB subnet group for your Amazon Web Services account, in your default VPC.</p>
+    /// <p>A DB cluster with express configuration in a VPC takes longer to become available than one without VPC networking.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters</p>
     pub fn set_with_express_configuration(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_with_express_configuration(input);
         self
     }
     /// <p>Specifies to create an Aurora DB Cluster with express configuration in seconds. Express configuration provides a cluster with a writer instance and feature specific values set to all other input parameters of this API.</p>
+    /// <p>By default, a DB cluster with express configuration doesn't use VPC networking. You connect to it over the internet through an internet access gateway.</p>
+    /// <p>To create the DB cluster in a VPC instead, set <code>EnableVPCNetworking</code> to <code>true</code> and <code>EnableInternetAccessGateway</code> to <code>false</code>. You can also specify <code>DBSubnetGroupName</code>, <code>VpcSecurityGroupIds</code>, and <code>NetworkType</code>. If you don't specify <code>DBSubnetGroupName</code>, the DB cluster uses the default DB subnet group for your Amazon Web Services account, in your default VPC.</p>
+    /// <p>A DB cluster with express configuration in a VPC takes longer to become available than one without VPC networking.</p>
     /// <p>Valid for Cluster Type: Aurora DB clusters</p>
     pub fn get_with_express_configuration(&self) -> &::std::option::Option<bool> {
         self.inner.get_with_express_configuration()
+    }
+    /// <p>Specifies whether the DB cluster uses an internet access gateway. With an internet access gateway, you connect to the DB cluster over the internet without a VPC.</p>
+    /// <p>Set to <code>true</code> only when you set <code>EnableVPCNetworking</code> to <code>false</code>. A DB cluster can't use VPC networking and an internet access gateway at the same time.</p>
+    /// <p>Default: <code>false</code>. With <code>WithExpressConfiguration</code>, the default is <code>true</code>. To create a DB cluster with express configuration in a VPC, set this parameter to <code>false</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL DB clusters only</p>
+    pub fn enable_internet_access_gateway(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_internet_access_gateway(input);
+        self
+    }
+    /// <p>Specifies whether the DB cluster uses an internet access gateway. With an internet access gateway, you connect to the DB cluster over the internet without a VPC.</p>
+    /// <p>Set to <code>true</code> only when you set <code>EnableVPCNetworking</code> to <code>false</code>. A DB cluster can't use VPC networking and an internet access gateway at the same time.</p>
+    /// <p>Default: <code>false</code>. With <code>WithExpressConfiguration</code>, the default is <code>true</code>. To create a DB cluster with express configuration in a VPC, set this parameter to <code>false</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL DB clusters only</p>
+    pub fn set_enable_internet_access_gateway(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_internet_access_gateway(input);
+        self
+    }
+    /// <p>Specifies whether the DB cluster uses an internet access gateway. With an internet access gateway, you connect to the DB cluster over the internet without a VPC.</p>
+    /// <p>Set to <code>true</code> only when you set <code>EnableVPCNetworking</code> to <code>false</code>. A DB cluster can't use VPC networking and an internet access gateway at the same time.</p>
+    /// <p>Default: <code>false</code>. With <code>WithExpressConfiguration</code>, the default is <code>true</code>. To create a DB cluster with express configuration in a VPC, set this parameter to <code>false</code>.</p>
+    /// <p>Valid for Cluster Type: Aurora PostgreSQL DB clusters only</p>
+    pub fn get_enable_internet_access_gateway(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_internet_access_gateway()
     }
     ///
     /// Appends an item to `AssociatedRoles`.

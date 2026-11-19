@@ -9,6 +9,16 @@ static CREATEINTEGRATIONDETAIL_MEMBER_GITLABSELFMANAGED: ::aws_smithy_schema::Sc
     "gitlabSelfManaged",
     0,
 );
+static CREATEINTEGRATIONDETAIL_MEMBER_GITHUBENTERPRISE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.inspector2#CreateIntegrationDetail$githubEnterprise",
+        "com.amazonaws.inspector2",
+        "CreateIntegrationDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "githubEnterprise",
+    1,
+);
 static CREATEINTEGRATIONDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.inspector2#CreateIntegrationDetail",
@@ -16,7 +26,10 @@ static CREATEINTEGRATIONDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::
         "CreateIntegrationDetail",
     ),
     ::aws_smithy_schema::ShapeType::Union,
-    &[&CREATEINTEGRATIONDETAIL_MEMBER_GITLABSELFMANAGED],
+    &[
+        &CREATEINTEGRATIONDETAIL_MEMBER_GITLABSELFMANAGED,
+        &CREATEINTEGRATIONDETAIL_MEMBER_GITHUBENTERPRISE,
+    ],
 );
 impl crate::types::CreateIntegrationDetail {
     /// The schema for this shape.
@@ -35,6 +48,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::CreateInte
         match self {
             Self::GitlabSelfManaged(val) => {
                 ser.write_struct(&CREATEINTEGRATIONDETAIL_MEMBER_GITLABSELFMANAGED, val)?;
+            }
+            Self::GithubEnterprise(val) => {
+                ser.write_struct(&CREATEINTEGRATIONDETAIL_MEMBER_GITHUBENTERPRISE, val)?;
             }
             Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
         }
@@ -58,6 +74,7 @@ impl crate::types::CreateIntegrationDetail {
             }
             result = ::std::option::Option::Some(match member.member_index() {
                 Some(0) => Self::GitlabSelfManaged(crate::types::CreateGitLabSelfManagedIntegrationDetail::deserialize(deser)?),
+                Some(1) => Self::GithubEnterprise(crate::types::CreateGitHubEnterpriseIntegrationDetail::deserialize(deser)?),
                 _ => Self::Unknown,
             });
             Ok(())

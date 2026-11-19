@@ -5,13 +5,15 @@
 pub struct CreateMarketplaceRevenueShareAllocationInput {
     /// <p>The catalog in which to create the allocation.</p>
     pub catalog: ::std::option::Option<crate::types::CatalogName>,
-    /// <p>The AWS Marketplace product identifier for the parent revenue share.</p>
-    pub product_id: ::std::option::Option<::std::string::String>,
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub marketplace_revenue_share_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique token to ensure idempotency of the create request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
+    /// <p>The revision of the parent marketplace revenue share that the caller last read, for optimistic concurrency control. A stale value returns ConflictException with Reason REVISION_MISMATCH.</p>
+    pub marketplace_revenue_share_revision: ::std::option::Option<::std::string::String>,
     /// <p>The effective start date for the allocation. Must be the first day of a month.</p>
     pub effective_from: ::std::option::Option<::std::string::String>,
-    /// <p>The effective end date for the allocation. Must be the last day of a month (YYYY-MM-DD). Omit for open-ended allocations.</p>
+    /// <p>The effective end date for the allocation. Must be the last day of a month (YYYY-MM-DD).</p>
     pub effective_until: ::std::option::Option<::std::string::String>,
     /// <p>The revenue share percentage for this allocation.</p>
     pub revenue_share_percent: ::std::option::Option<::std::string::String>,
@@ -21,19 +23,23 @@ impl CreateMarketplaceRevenueShareAllocationInput {
     pub fn catalog(&self) -> ::std::option::Option<&crate::types::CatalogName> {
         self.catalog.as_ref()
     }
-    /// <p>The AWS Marketplace product identifier for the parent revenue share.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
-        self.product_id.as_deref()
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub fn marketplace_revenue_share_identifier(&self) -> ::std::option::Option<&str> {
+        self.marketplace_revenue_share_identifier.as_deref()
     }
     /// <p>A unique token to ensure idempotency of the create request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
+    /// <p>The revision of the parent marketplace revenue share that the caller last read, for optimistic concurrency control. A stale value returns ConflictException with Reason REVISION_MISMATCH.</p>
+    pub fn marketplace_revenue_share_revision(&self) -> ::std::option::Option<&str> {
+        self.marketplace_revenue_share_revision.as_deref()
+    }
     /// <p>The effective start date for the allocation. Must be the first day of a month.</p>
     pub fn effective_from(&self) -> ::std::option::Option<&str> {
         self.effective_from.as_deref()
     }
-    /// <p>The effective end date for the allocation. Must be the last day of a month (YYYY-MM-DD). Omit for open-ended allocations.</p>
+    /// <p>The effective end date for the allocation. Must be the last day of a month (YYYY-MM-DD).</p>
     pub fn effective_until(&self) -> ::std::option::Option<&str> {
         self.effective_until.as_deref()
     }
@@ -54,8 +60,9 @@ impl CreateMarketplaceRevenueShareAllocationInput {
 #[non_exhaustive]
 pub struct CreateMarketplaceRevenueShareAllocationInputBuilder {
     pub(crate) catalog: ::std::option::Option<crate::types::CatalogName>,
-    pub(crate) product_id: ::std::option::Option<::std::string::String>,
+    pub(crate) marketplace_revenue_share_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
+    pub(crate) marketplace_revenue_share_revision: ::std::option::Option<::std::string::String>,
     pub(crate) effective_from: ::std::option::Option<::std::string::String>,
     pub(crate) effective_until: ::std::option::Option<::std::string::String>,
     pub(crate) revenue_share_percent: ::std::option::Option<::std::string::String>,
@@ -76,20 +83,20 @@ impl CreateMarketplaceRevenueShareAllocationInputBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<crate::types::CatalogName> {
         &self.catalog
     }
-    /// <p>The AWS Marketplace product identifier for the parent revenue share.</p>
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
     /// This field is required.
-    pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.product_id = ::std::option::Option::Some(input.into());
+    pub fn marketplace_revenue_share_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marketplace_revenue_share_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Marketplace product identifier for the parent revenue share.</p>
-    pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub fn set_marketplace_revenue_share_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.marketplace_revenue_share_identifier = input;
         self
     }
-    /// <p>The AWS Marketplace product identifier for the parent revenue share.</p>
-    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.product_id
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub fn get_marketplace_revenue_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marketplace_revenue_share_identifier
     }
     /// <p>A unique token to ensure idempotency of the create request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -104,6 +111,21 @@ impl CreateMarketplaceRevenueShareAllocationInputBuilder {
     /// <p>A unique token to ensure idempotency of the create request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
+    }
+    /// <p>The revision of the parent marketplace revenue share that the caller last read, for optimistic concurrency control. A stale value returns ConflictException with Reason REVISION_MISMATCH.</p>
+    /// This field is required.
+    pub fn marketplace_revenue_share_revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marketplace_revenue_share_revision = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The revision of the parent marketplace revenue share that the caller last read, for optimistic concurrency control. A stale value returns ConflictException with Reason REVISION_MISMATCH.</p>
+    pub fn set_marketplace_revenue_share_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.marketplace_revenue_share_revision = input;
+        self
+    }
+    /// <p>The revision of the parent marketplace revenue share that the caller last read, for optimistic concurrency control. A stale value returns ConflictException with Reason REVISION_MISMATCH.</p>
+    pub fn get_marketplace_revenue_share_revision(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marketplace_revenue_share_revision
     }
     /// <p>The effective start date for the allocation. Must be the first day of a month.</p>
     /// This field is required.
@@ -120,17 +142,18 @@ impl CreateMarketplaceRevenueShareAllocationInputBuilder {
     pub fn get_effective_from(&self) -> &::std::option::Option<::std::string::String> {
         &self.effective_from
     }
-    /// <p>The effective end date for the allocation. Must be the last day of a month (YYYY-MM-DD). Omit for open-ended allocations.</p>
+    /// <p>The effective end date for the allocation. Must be the last day of a month (YYYY-MM-DD).</p>
+    /// This field is required.
     pub fn effective_until(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.effective_until = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The effective end date for the allocation. Must be the last day of a month (YYYY-MM-DD). Omit for open-ended allocations.</p>
+    /// <p>The effective end date for the allocation. Must be the last day of a month (YYYY-MM-DD).</p>
     pub fn set_effective_until(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.effective_until = input;
         self
     }
-    /// <p>The effective end date for the allocation. Must be the last day of a month (YYYY-MM-DD). Omit for open-ended allocations.</p>
+    /// <p>The effective end date for the allocation. Must be the last day of a month (YYYY-MM-DD).</p>
     pub fn get_effective_until(&self) -> &::std::option::Option<::std::string::String> {
         &self.effective_until
     }
@@ -159,8 +182,9 @@ impl CreateMarketplaceRevenueShareAllocationInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::create_marketplace_revenue_share_allocation::CreateMarketplaceRevenueShareAllocationInput {
                 catalog: self.catalog,
-                product_id: self.product_id,
+                marketplace_revenue_share_identifier: self.marketplace_revenue_share_identifier,
                 client_token: self.client_token,
+                marketplace_revenue_share_revision: self.marketplace_revenue_share_revision,
                 effective_from: self.effective_from,
                 effective_until: self.effective_until,
                 revenue_share_percent: self.revenue_share_percent,

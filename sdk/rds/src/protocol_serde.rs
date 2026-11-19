@@ -1301,6 +1301,8 @@ pub(crate) mod shape_pending_maintenance_action_details;
 
 pub(crate) mod shape_pending_modified_values;
 
+pub(crate) mod shape_primary_endpoint;
+
 pub(crate) mod shape_processor_feature_list;
 
 pub(crate) mod shape_read_replica_db_cluster_identifier_list;

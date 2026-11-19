@@ -12,18 +12,24 @@ pub enum Error {
     /// <p>The identity provider (IdP) reported that authentication failed. This might be because the claim is invalid.</p>
     /// <p>If this error is returned for the <code>AssumeRoleWithWebIdentity</code> operation, it can also mean that the claim has expired or has been explicitly revoked.</p>
     IdpRejectedClaimException(crate::types::error::IdpRejectedClaimException),
+    /// <p>The request was rejected because the requested <code>DurationSeconds</code> is greater than the remaining lifetime of the calling session. <code>GetScopedCredentials</code> cannot extend a session beyond its original expiration. Request a duration that is less than or equal to the calling session's remaining lifetime, or omit <code>DurationSeconds</code> to inherit it.</p>
+    InsufficientSessionLifetimeException(crate::types::error::InsufficientSessionLifetimeException),
     /// <p>The error returned if the message passed to <code>DecodeAuthorizationMessage</code> was invalid. This can happen if the token contains invalid characters, such as line breaks, or if the message has expired.</p>
     InvalidAuthorizationMessageException(crate::types::error::InvalidAuthorizationMessageException),
+    /// <p>The request was rejected because the context assertion that was provided is invalid. This can happen if the context assertion supplied in the <code>ProvidedContexts</code> parameter is malformed, has expired, or does not match a trusted context provider.</p>
+    InvalidContextAssertionException(crate::types::error::InvalidContextAssertionException),
     /// <p>The web identity token that was passed could not be validated by Amazon Web Services. Get a new identity token from the identity provider and then retry the request.</p>
     InvalidIdentityTokenException(crate::types::error::InvalidIdentityTokenException),
+    /// <p>The request was rejected because the session used to call <code>GetScopedCredentials</code> is not a valid session. The calling session's credentials could not be validated or resolved.</p>
+    InvalidSubjectCredentialsException(crate::types::error::InvalidSubjectCredentialsException),
     /// <p>The requested token payload size exceeds the maximum allowed size. Reduce the number of request tags included in the <code>GetWebIdentityToken</code> API call to reduce the token payload size.</p>
     JwtPayloadSizeExceededException(crate::types::error::JwtPayloadSizeExceededException),
     /// <p>The request was rejected because the policy document was malformed. The error message describes the specific error.</p>
     MalformedPolicyDocumentException(crate::types::error::MalformedPolicyDocumentException),
     /// <p>The outbound web identity federation feature is not enabled for this account. To use this feature, you must first enable it through the Amazon Web Services Management Console or API.</p>
     OutboundWebIdentityFederationDisabledException(crate::types::error::OutboundWebIdentityFederationDisabledException),
-    /// <p>The request was rejected because the total packed size of the session policies and session tags combined was too large. An Amazon Web Services conversion compresses the session policy document, session policy ARNs, and session tags into a packed binary format that has a separate limit. The error message indicates by percentage how close the policies and tags are to the upper size limit. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p>
-    /// <p>You could receive this error even though you meet other defined session policy and session tag limits. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>The request was rejected because the session token exceeded the maximum allowed size. The error message reports the session token size and the maximum allowed size, both in bytes. Session policies and session tags add to the session token size. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing Session Tags in STS</a> in the <i>IAM User Guide</i>.</p>
+    /// <p>You might receive this error even though you meet the individual session policy and session tag limits. Monitor <code>SessionTokenUtilization</code> to track how close the session token is to the maximum allowed size. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-limits-entity-length">IAM and STS Entity Character Limits</a> in the <i>IAM User Guide</i>.</p>
     PackedPolicyTooLargeException(crate::types::error::PackedPolicyTooLargeException),
     /// <p>STS is not activated in the requested region for the account that is being asked to generate credentials. The account administrator must use the IAM console to activate STS in that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html#sts-regions-activate-deactivate">Activating and Deactivating STS in an Amazon Web Services Region</a> in the <i>IAM User Guide</i>.</p>
     RegionDisabledException(crate::types::error::RegionDisabledException),
@@ -45,8 +51,11 @@ impl ::std::fmt::Display for Error {
             Error::ExpiredTradeInTokenException(inner) => inner.fmt(f),
             Error::IdpCommunicationErrorException(inner) => inner.fmt(f),
             Error::IdpRejectedClaimException(inner) => inner.fmt(f),
+            Error::InsufficientSessionLifetimeException(inner) => inner.fmt(f),
             Error::InvalidAuthorizationMessageException(inner) => inner.fmt(f),
+            Error::InvalidContextAssertionException(inner) => inner.fmt(f),
             Error::InvalidIdentityTokenException(inner) => inner.fmt(f),
+            Error::InvalidSubjectCredentialsException(inner) => inner.fmt(f),
             Error::JwtPayloadSizeExceededException(inner) => inner.fmt(f),
             Error::MalformedPolicyDocumentException(inner) => inner.fmt(f),
             Error::OutboundWebIdentityFederationDisabledException(inner) => inner.fmt(f),
@@ -78,8 +87,11 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::ExpiredTradeInTokenException(inner) => inner.meta(),
             Self::IdpCommunicationErrorException(inner) => inner.meta(),
             Self::IdpRejectedClaimException(inner) => inner.meta(),
+            Self::InsufficientSessionLifetimeException(inner) => inner.meta(),
             Self::InvalidAuthorizationMessageException(inner) => inner.meta(),
+            Self::InvalidContextAssertionException(inner) => inner.meta(),
             Self::InvalidIdentityTokenException(inner) => inner.meta(),
+            Self::InvalidSubjectCredentialsException(inner) => inner.meta(),
             Self::JwtPayloadSizeExceededException(inner) => inner.meta(),
             Self::MalformedPolicyDocumentException(inner) => inner.meta(),
             Self::OutboundWebIdentityFederationDisabledException(inner) => inner.meta(),
@@ -108,6 +120,7 @@ impl From<crate::operation::assume_role::AssumeRoleError> for Error {
     fn from(err: crate::operation::assume_role::AssumeRoleError) -> Self {
         match err {
             crate::operation::assume_role::AssumeRoleError::ExpiredTokenException(inner) => Error::ExpiredTokenException(inner),
+            crate::operation::assume_role::AssumeRoleError::InvalidContextAssertionException(inner) => Error::InvalidContextAssertionException(inner),
             crate::operation::assume_role::AssumeRoleError::MalformedPolicyDocumentException(inner) => Error::MalformedPolicyDocumentException(inner),
             crate::operation::assume_role::AssumeRoleError::PackedPolicyTooLargeException(inner) => Error::PackedPolicyTooLargeException(inner),
             crate::operation::assume_role::AssumeRoleError::RegionDisabledException(inner) => Error::RegionDisabledException(inner),
@@ -348,6 +361,39 @@ impl From<crate::operation::get_federation_token::GetFederationTokenError> for E
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_scoped_credentials::GetScopedCredentialsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_scoped_credentials::GetScopedCredentialsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_scoped_credentials::GetScopedCredentialsError> for Error {
+    fn from(err: crate::operation::get_scoped_credentials::GetScopedCredentialsError) -> Self {
+        match err {
+            crate::operation::get_scoped_credentials::GetScopedCredentialsError::InsufficientSessionLifetimeException(inner) => {
+                Error::InsufficientSessionLifetimeException(inner)
+            }
+            crate::operation::get_scoped_credentials::GetScopedCredentialsError::InvalidSubjectCredentialsException(inner) => {
+                Error::InvalidSubjectCredentialsException(inner)
+            }
+            crate::operation::get_scoped_credentials::GetScopedCredentialsError::MalformedPolicyDocumentException(inner) => {
+                Error::MalformedPolicyDocumentException(inner)
+            }
+            crate::operation::get_scoped_credentials::GetScopedCredentialsError::PackedPolicyTooLargeException(inner) => {
+                Error::PackedPolicyTooLargeException(inner)
+            }
+            crate::operation::get_scoped_credentials::GetScopedCredentialsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_session_token::GetSessionTokenError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -407,8 +453,11 @@ impl ::std::error::Error for Error {
             Error::ExpiredTradeInTokenException(inner) => inner.source(),
             Error::IdpCommunicationErrorException(inner) => inner.source(),
             Error::IdpRejectedClaimException(inner) => inner.source(),
+            Error::InsufficientSessionLifetimeException(inner) => inner.source(),
             Error::InvalidAuthorizationMessageException(inner) => inner.source(),
+            Error::InvalidContextAssertionException(inner) => inner.source(),
             Error::InvalidIdentityTokenException(inner) => inner.source(),
+            Error::InvalidSubjectCredentialsException(inner) => inner.source(),
             Error::JwtPayloadSizeExceededException(inner) => inner.source(),
             Error::MalformedPolicyDocumentException(inner) => inner.source(),
             Error::OutboundWebIdentityFederationDisabledException(inner) => inner.source(),
@@ -426,8 +475,11 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::ExpiredTradeInTokenException(e) => e.request_id(),
             Self::IdpCommunicationErrorException(e) => e.request_id(),
             Self::IdpRejectedClaimException(e) => e.request_id(),
+            Self::InsufficientSessionLifetimeException(e) => e.request_id(),
             Self::InvalidAuthorizationMessageException(e) => e.request_id(),
+            Self::InvalidContextAssertionException(e) => e.request_id(),
             Self::InvalidIdentityTokenException(e) => e.request_id(),
+            Self::InvalidSubjectCredentialsException(e) => e.request_id(),
             Self::JwtPayloadSizeExceededException(e) => e.request_id(),
             Self::MalformedPolicyDocumentException(e) => e.request_id(),
             Self::OutboundWebIdentityFederationDisabledException(e) => e.request_id(),

@@ -37,6 +37,8 @@ pub struct ProfileDetail {
     /// <p>The alias ARN of the profile, in the form <code>arn:<i>partition</i>:rolesanywhere:<i>region</i>:<i>account</i>:alias/profile/<i>alias-name</i> </code>. Present only if the profile has an alias.</p>
     /// <p>You can use the alias ARN in place of the resource ID or ARN in the request parameters whose descriptions say that they accept an alias ARN. Don't use the alias ARN in Identity and Access Management (IAM) policies. A policy statement that names an alias ARN doesn't apply to the resource that holds the alias. Write policies with the ARN that contains the resource ID instead.</p>
     pub alias_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The trusted identity propagation (TIP) settings of the profile.</p>
+    pub tip_configuration: ::std::option::Option<crate::types::TipConfiguration>,
     /// <p>The alias that the resource had before the update request. IAM Roles Anywhere returns this value only in the response to an update request that changed or removed an existing alias. It isn't returned when the alias was unchanged, when the resource had no alias before the request, or by other operations.</p>
     pub previous_alias_name: ::std::option::Option<::std::string::String>,
 }
@@ -112,6 +114,10 @@ impl ProfileDetail {
     pub fn alias_arn(&self) -> ::std::option::Option<&str> {
         self.alias_arn.as_deref()
     }
+    /// <p>The trusted identity propagation (TIP) settings of the profile.</p>
+    pub fn tip_configuration(&self) -> ::std::option::Option<&crate::types::TipConfiguration> {
+        self.tip_configuration.as_ref()
+    }
     /// <p>The alias that the resource had before the update request. IAM Roles Anywhere returns this value only in the response to an update request that changed or removed an existing alias. It isn't returned when the alias was unchanged, when the resource had no alias before the request, or by other operations.</p>
     pub fn previous_alias_name(&self) -> ::std::option::Option<&str> {
         self.previous_alias_name.as_deref()
@@ -144,6 +150,7 @@ pub struct ProfileDetailBuilder {
     pub(crate) attribute_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AttributeMapping>>,
     pub(crate) alias_name: ::std::option::Option<::std::string::String>,
     pub(crate) alias_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) tip_configuration: ::std::option::Option<crate::types::TipConfiguration>,
     pub(crate) previous_alias_name: ::std::option::Option<::std::string::String>,
 }
 impl ProfileDetailBuilder {
@@ -392,6 +399,20 @@ impl ProfileDetailBuilder {
     pub fn get_alias_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias_arn
     }
+    /// <p>The trusted identity propagation (TIP) settings of the profile.</p>
+    pub fn tip_configuration(mut self, input: crate::types::TipConfiguration) -> Self {
+        self.tip_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The trusted identity propagation (TIP) settings of the profile.</p>
+    pub fn set_tip_configuration(mut self, input: ::std::option::Option<crate::types::TipConfiguration>) -> Self {
+        self.tip_configuration = input;
+        self
+    }
+    /// <p>The trusted identity propagation (TIP) settings of the profile.</p>
+    pub fn get_tip_configuration(&self) -> &::std::option::Option<crate::types::TipConfiguration> {
+        &self.tip_configuration
+    }
     /// <p>The alias that the resource had before the update request. IAM Roles Anywhere returns this value only in the response to an update request that changed or removed an existing alias. It isn't returned when the alias was unchanged, when the resource had no alias before the request, or by other operations.</p>
     pub fn previous_alias_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.previous_alias_name = ::std::option::Option::Some(input.into());
@@ -425,6 +446,7 @@ impl ProfileDetailBuilder {
             attribute_mappings: self.attribute_mappings,
             alias_name: self.alias_name,
             alias_arn: self.alias_arn,
+            tip_configuration: self.tip_configuration,
             previous_alias_name: self.previous_alias_name,
         }
     }

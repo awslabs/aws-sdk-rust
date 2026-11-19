@@ -161,6 +161,8 @@ pub(crate) mod shape_auth_event_type;
 
 pub(crate) mod shape_authentication_result_type;
 
+pub(crate) mod shape_cached_cimdurl_does_not_exist_exception;
+
 pub(crate) mod shape_cancel_point_in_time_recovery_input_input;
 
 pub(crate) mod shape_cancel_point_in_time_recovery_output_output;
@@ -171,7 +173,13 @@ pub(crate) mod shape_change_password_input_input;
 
 pub(crate) mod shape_change_password_output_output;
 
+pub(crate) mod shape_cimd_policy_summary_type;
+
+pub(crate) mod shape_cimd_policy_type;
+
 pub(crate) mod shape_client_authentication_result_type;
+
+pub(crate) mod shape_client_metadata_url_type;
 
 pub(crate) mod shape_client_secret_descriptor_type;
 
@@ -208,6 +216,10 @@ pub(crate) mod shape_confirm_sign_up_input_input;
 pub(crate) mod shape_confirm_sign_up_output_output;
 
 pub(crate) mod shape_context_data_type;
+
+pub(crate) mod shape_create_cimd_policy_input_input;
+
+pub(crate) mod shape_create_cimd_policy_output_output;
 
 pub(crate) mod shape_create_group_input_input;
 
@@ -256,6 +268,10 @@ pub(crate) mod shape_custom_email_lambda_version_config_type;
 pub(crate) mod shape_custom_sms_lambda_version_config_type;
 
 pub(crate) mod shape_dcr_configuration_type;
+
+pub(crate) mod shape_delete_cimd_policy_input_input;
+
+pub(crate) mod shape_delete_cimd_policy_output_output;
 
 pub(crate) mod shape_delete_group_input_input;
 
@@ -308,6 +324,10 @@ pub(crate) mod shape_delete_user_pool_replica_output_output;
 pub(crate) mod shape_delete_web_authn_credential_input_input;
 
 pub(crate) mod shape_delete_web_authn_credential_output_output;
+
+pub(crate) mod shape_describe_cimd_policy_input_input;
+
+pub(crate) mod shape_describe_cimd_policy_output_output;
 
 pub(crate) mod shape_describe_identity_provider_input_input;
 
@@ -524,6 +544,14 @@ pub(crate) mod shape_limit_definition_type;
 pub(crate) mod shape_limit_exceeded_exception;
 
 pub(crate) mod shape_limit_type;
+
+pub(crate) mod shape_list_cimd_policies_input_input;
+
+pub(crate) mod shape_list_cimd_policies_output_output;
+
+pub(crate) mod shape_list_client_metadata_urls_input_input;
+
+pub(crate) mod shape_list_client_metadata_urls_output_output;
 
 pub(crate) mod shape_list_devices_input_input;
 
@@ -788,6 +816,14 @@ pub(crate) mod shape_untag_resource_output_output;
 pub(crate) mod shape_update_auth_event_feedback_input_input;
 
 pub(crate) mod shape_update_auth_event_feedback_output_output;
+
+pub(crate) mod shape_update_cimd_policy_input_input;
+
+pub(crate) mod shape_update_cimd_policy_output_output;
+
+pub(crate) mod shape_update_client_metadata_url_state_input_input;
+
+pub(crate) mod shape_update_client_metadata_url_state_output_output;
 
 pub(crate) mod shape_update_device_status_input_input;
 

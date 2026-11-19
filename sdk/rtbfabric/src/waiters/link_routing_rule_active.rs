@@ -58,6 +58,10 @@ impl LinkRoutingRuleActiveFluentBuilder {
             &crate::operation::get_link_routing_rule::GetLinkRoutingRuleOutput,
             &crate::operation::get_link_routing_rule::GetLinkRoutingRuleError,
         >| {
+            // Matches: {"output":{"path":"status","expected":"CREATE_FAILED","comparator":"stringEquals"}}
+            if crate::waiters::matchers::match_get_link_routing_rule_00d7b810548bbcb91(result) {
+                return ::aws_smithy_runtime::client::waiters::AcceptorState::Failure;
+            }
             // Matches: {"output":{"path":"status","expected":"ACTIVE","comparator":"stringEquals"}}
             if crate::waiters::matchers::match_get_link_routing_rule_a0b9c099115634691(result) {
                 return ::aws_smithy_runtime::client::waiters::AcceptorState::Success;

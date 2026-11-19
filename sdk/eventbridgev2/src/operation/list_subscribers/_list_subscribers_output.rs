@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSubscribersOutput {
-    /// List of subscriber summaries.
+    /// <p>List of subscriber summaries.</p>
     pub subscribers: ::std::option::Option<::std::vec::Vec<crate::types::SubscriberSummary>>,
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListSubscribersOutput {
-    /// List of subscriber summaries.
+    /// <p>List of subscriber summaries.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.subscribers.is_none()`.
     pub fn subscribers(&self) -> &[crate::types::SubscriberSummary] {
         self.subscribers.as_deref().unwrap_or_default()
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListSubscribersOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
     ///
-    /// List of subscriber summaries.
+    /// <p>List of subscriber summaries.</p>
     pub fn subscribers(mut self, input: crate::types::SubscriberSummary) -> Self {
         let mut v = self.subscribers.unwrap_or_default();
         v.push(input);
         self.subscribers = ::std::option::Option::Some(v);
         self
     }
-    /// List of subscriber summaries.
+    /// <p>List of subscriber summaries.</p>
     pub fn set_subscribers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SubscriberSummary>>) -> Self {
         self.subscribers = input;
         self
     }
-    /// List of subscriber summaries.
+    /// <p>List of subscriber summaries.</p>
     pub fn get_subscribers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SubscriberSummary>> {
         &self.subscribers
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

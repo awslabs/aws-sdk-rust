@@ -5,13 +5,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomerProjectsContext {
-    /// <p>Contains details about the customer associated with the Engagement Invitation, including company information and industry.</p>
+    /// <p>Contains details about the customer that the customer project belongs to.</p>
     pub customer: ::std::option::Option<crate::types::EngagementCustomer>,
     /// <p>Information about the customer project associated with the Engagement.</p>
     pub project: ::std::option::Option<crate::types::EngagementCustomerProjectDetails>,
 }
 impl CustomerProjectsContext {
-    /// <p>Contains details about the customer associated with the Engagement Invitation, including company information and industry.</p>
+    /// <p>Contains details about the customer that the customer project belongs to.</p>
     pub fn customer(&self) -> ::std::option::Option<&crate::types::EngagementCustomer> {
         self.customer.as_ref()
     }
@@ -35,17 +35,17 @@ pub struct CustomerProjectsContextBuilder {
     pub(crate) project: ::std::option::Option<crate::types::EngagementCustomerProjectDetails>,
 }
 impl CustomerProjectsContextBuilder {
-    /// <p>Contains details about the customer associated with the Engagement Invitation, including company information and industry.</p>
+    /// <p>Contains details about the customer that the customer project belongs to.</p>
     pub fn customer(mut self, input: crate::types::EngagementCustomer) -> Self {
         self.customer = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains details about the customer associated with the Engagement Invitation, including company information and industry.</p>
+    /// <p>Contains details about the customer that the customer project belongs to.</p>
     pub fn set_customer(mut self, input: ::std::option::Option<crate::types::EngagementCustomer>) -> Self {
         self.customer = input;
         self
     }
-    /// <p>Contains details about the customer associated with the Engagement Invitation, including company information and industry.</p>
+    /// <p>Contains details about the customer that the customer project belongs to.</p>
     pub fn get_customer(&self) -> &::std::option::Option<crate::types::EngagementCustomer> {
         &self.customer
     }

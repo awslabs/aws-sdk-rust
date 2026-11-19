@@ -51,6 +51,21 @@ pub fn de_change_tags_for_resource_http_error(
             }
             tmp
         }),
+        "NoSuchHealthCheckSource" => crate::operation::change_tags_for_resource::ChangeTagsForResourceError::NoSuchHealthCheckSource({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::NoSuchHealthCheckSourceBuilder::default();
+                output = crate::protocol_serde::shape_no_such_health_check_source::de_no_such_health_check_source_xml_err(_response_body, output)
+                    .map_err(crate::operation::change_tags_for_resource::ChangeTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "NoSuchHostedZone" => crate::operation::change_tags_for_resource::ChangeTagsForResourceError::NoSuchHostedZone({
             #[allow(unused_mut)]
             let mut tmp = {

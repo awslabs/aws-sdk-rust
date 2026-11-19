@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`status(CertificateAssociationStatus)`](crate::operation::get_certificate_association::GetCertificateAssociationOutput::status): <p>The status of the certificate association.</p>
     ///   - [`associated_at(Option<DateTime>)`](crate::operation::get_certificate_association::GetCertificateAssociationOutput::associated_at): <p>The timestamp of when the certificate was associated.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_certificate_association::GetCertificateAssociationOutput::updated_at): <p>The timestamp of when the certificate association was last updated.</p>
+    ///   - [`error_details(Option<Vec::<ErrorDetail>>)`](crate::operation::get_certificate_association::GetCertificateAssociationOutput::error_details): <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
     /// - On failure, responds with [`SdkError<GetCertificateAssociationError>`](crate::operation::get_certificate_association::GetCertificateAssociationError)
     pub fn get_certificate_association(&self) -> crate::operation::get_certificate_association::builders::GetCertificateAssociationFluentBuilder {
         crate::operation::get_certificate_association::builders::GetCertificateAssociationFluentBuilder::new(self.handle.clone())

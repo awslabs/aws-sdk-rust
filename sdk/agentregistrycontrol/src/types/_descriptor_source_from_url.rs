@@ -4,13 +4,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescriptorSourceFromUrl {
-    /// <p>The URL from which the descriptor content is retrieved.</p>
+    /// <p>The URL from which the descriptor content is retrieved. For an agent skill source, specify an <code>s3://</code> URL of an object in a bucket in the same Amazon Web Services Region as the registry. For a GitHub skill source, specify a GitHub folder URL in the form <code>https://host/owner/repo/tree/branch-or-tag/path</code>. Other descriptor sources use <code>https://</code> URLs.</p>
     pub url: ::std::string::String,
     /// <p>The credential providers used to authenticate when fetching descriptor content from the source URL.</p>
     pub credential_provider_configurations: ::std::option::Option<::std::vec::Vec<crate::types::RegistryRecordCredentialProviderConfiguration>>,
 }
 impl DescriptorSourceFromUrl {
-    /// <p>The URL from which the descriptor content is retrieved.</p>
+    /// <p>The URL from which the descriptor content is retrieved. For an agent skill source, specify an <code>s3://</code> URL of an object in a bucket in the same Amazon Web Services Region as the registry. For a GitHub skill source, specify a GitHub folder URL in the form <code>https://host/owner/repo/tree/branch-or-tag/path</code>. Other descriptor sources use <code>https://</code> URLs.</p>
     pub fn url(&self) -> &str {
         use std::ops::Deref;
         self.url.deref()
@@ -38,18 +38,18 @@ pub struct DescriptorSourceFromUrlBuilder {
         ::std::option::Option<::std::vec::Vec<crate::types::RegistryRecordCredentialProviderConfiguration>>,
 }
 impl DescriptorSourceFromUrlBuilder {
-    /// <p>The URL from which the descriptor content is retrieved.</p>
+    /// <p>The URL from which the descriptor content is retrieved. For an agent skill source, specify an <code>s3://</code> URL of an object in a bucket in the same Amazon Web Services Region as the registry. For a GitHub skill source, specify a GitHub folder URL in the form <code>https://host/owner/repo/tree/branch-or-tag/path</code>. Other descriptor sources use <code>https://</code> URLs.</p>
     /// This field is required.
     pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL from which the descriptor content is retrieved.</p>
+    /// <p>The URL from which the descriptor content is retrieved. For an agent skill source, specify an <code>s3://</code> URL of an object in a bucket in the same Amazon Web Services Region as the registry. For a GitHub skill source, specify a GitHub folder URL in the form <code>https://host/owner/repo/tree/branch-or-tag/path</code>. Other descriptor sources use <code>https://</code> URLs.</p>
     pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
-    /// <p>The URL from which the descriptor content is retrieved.</p>
+    /// <p>The URL from which the descriptor content is retrieved. For an agent skill source, specify an <code>s3://</code> URL of an object in a bucket in the same Amazon Web Services Region as the registry. For a GitHub skill source, specify a GitHub folder URL in the form <code>https://host/owner/repo/tree/branch-or-tag/path</code>. Other descriptor sources use <code>https://</code> URLs.</p>
     pub fn get_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.url
     }

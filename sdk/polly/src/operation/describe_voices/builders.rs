@@ -22,10 +22,13 @@ impl crate::operation::describe_voices::builders::DescribeVoicesInputBuilder {
 }
 /// Fluent builder constructing a request to `DescribeVoices`.
 ///
-/// <p>Returns the list of voices that are available for use when requesting speech synthesis. Each voice speaks a specified language, is either male or female, and is identified by an ID, which is the ASCII version of the voice name.</p>
-/// <p>When synthesizing speech ( <code>SynthesizeSpeech</code> ), you provide the voice ID for the voice you want from the list of voices returned by <code>DescribeVoices</code>.</p>
-/// <p>For example, you want your news reader application to read news in a specific language, but giving a user the option to choose the voice. Using the <code>DescribeVoices</code> operation you can provide the user with a list of available voices to select from.</p>
+/// <p>Returns the list of voices: the voices that Amazon Polly provides and the custom voices in your account. Each voice speaks a specified language and is identified by an ID. A voice that Amazon Polly provides is either male or female, and its ID is the ASCII version of the voice name.</p>
+/// <p>When synthesizing speech (<code>SynthesizeSpeech</code>), you provide the voice ID for the voice you want from the list of voices returned by <code>DescribeVoices</code>.</p>
+/// <p>For example, your news reader application reads news in a specific language, and you want to give users the option to choose the voice. With the <code>DescribeVoices</code> operation, you can provide a list of available voices for users to choose from.</p>
 /// <p>You can optionally specify a language code to filter the available voices. For example, if you specify <code>en-US</code>, the operation returns a list of all available US English voices.</p>
+/// <p>The list includes custom voices in every status. For each voice, <code>Origin</code> indicates whether Amazon Polly provides the voice or you created it. You can use a custom voice for synthesis only when its status is <code>active</code>. A voice in <code>failed</code> status stays in the list until you delete it.</p>
+/// <p>For a custom voice, <code>DescribeVoices</code> returns <code>Origin</code>, <code>Id</code>, <code>Name</code>, <code>Status</code>, <code>LanguageCode</code>, <code>LanguageName</code>, <code>SupportedEngines</code>, and <code>CreationTime</code>. To get <code>Arn</code>, <code>StatusReason</code>, <code>VoiceCreationData</code>, and <code>CustomerManagedEncryption</code>, use <code>GetVoice</code>.</p>
+/// <p>The <code>LanguageCode</code> and <code>Engine</code> filters apply to custom voices in the same way as to voices that Amazon Polly provides.</p>
 /// <p>This operation requires permissions to perform the <code>polly:DescribeVoices</code> action.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeVoicesFluentBuilder {

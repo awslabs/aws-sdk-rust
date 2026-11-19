@@ -9,6 +9,8 @@ pub struct ListTagsForResourceInput {
     /// <li>
     /// <p>The resource type for health checks is <code>healthcheck</code>.</p></li>
     /// <li>
+    /// <p>The resource type for health check sources is <code>healthchecksource</code>.</p></li>
+    /// <li>
     /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
     /// </ul>
     pub resource_type: ::std::option::Option<crate::types::TagResourceType>,
@@ -20,6 +22,8 @@ impl ListTagsForResourceInput {
     /// <ul>
     /// <li>
     /// <p>The resource type for health checks is <code>healthcheck</code>.</p></li>
+    /// <li>
+    /// <p>The resource type for health check sources is <code>healthchecksource</code>.</p></li>
     /// <li>
     /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
     /// </ul>
@@ -51,6 +55,8 @@ impl ListTagsForResourceInputBuilder {
     /// <li>
     /// <p>The resource type for health checks is <code>healthcheck</code>.</p></li>
     /// <li>
+    /// <p>The resource type for health check sources is <code>healthchecksource</code>.</p></li>
+    /// <li>
     /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
     /// </ul>
     /// This field is required.
@@ -63,6 +69,8 @@ impl ListTagsForResourceInputBuilder {
     /// <li>
     /// <p>The resource type for health checks is <code>healthcheck</code>.</p></li>
     /// <li>
+    /// <p>The resource type for health check sources is <code>healthchecksource</code>.</p></li>
+    /// <li>
     /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
     /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::TagResourceType>) -> Self {
@@ -73,6 +81,8 @@ impl ListTagsForResourceInputBuilder {
     /// <ul>
     /// <li>
     /// <p>The resource type for health checks is <code>healthcheck</code>.</p></li>
+    /// <li>
+    /// <p>The resource type for health check sources is <code>healthchecksource</code>.</p></li>
     /// <li>
     /// <p>The resource type for hosted zones is <code>hostedzone</code>.</p></li>
     /// </ul>

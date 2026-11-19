@@ -63,6 +63,8 @@ pub use crate::types::_goal_schedule_input::GoalScheduleInput;
 
 pub use crate::types::_goal::Goal;
 
+pub use crate::types::_aws_source_mode::AwsSourceMode;
+
 pub use crate::types::_agent_space::AgentSpace;
 
 pub use crate::types::_included_data::IncludedData;
@@ -203,6 +205,8 @@ pub use crate::types::_send_message_content_block_delta::SendMessageContentBlock
 
 pub use crate::types::_source_aws_configuration::SourceAwsConfiguration;
 
+pub use crate::types::_source_aws_org_configuration::SourceAwsOrgConfiguration;
+
 pub use crate::types::_aws_configuration::AwsConfiguration;
 
 pub use crate::types::_git_hub_configuration::GitHubConfiguration;
@@ -311,6 +315,10 @@ pub use crate::types::_send_message_json_delta::SendMessageJsonDelta;
 
 pub use crate::types::_source_account_type::SourceAccountType;
 
+pub use crate::types::_source_aws_org_unit::SourceAwsOrgUnit;
+
+pub use crate::types::_org_source_deployment_state::OrgSourceDeploymentState;
+
 pub use crate::types::_monitor_account_type::MonitorAccountType;
 
 pub use crate::types::_github_repo_owner_type::GithubRepoOwnerType;
@@ -379,11 +387,15 @@ pub use crate::types::_weekly_recurrence::WeeklyRecurrence;
 
 pub use crate::types::_monthly_recurrence::MonthlyRecurrence;
 
+pub use crate::types::_org_source_issue::OrgSourceIssue;
+
 pub use crate::types::_tool_classification::ToolClassification;
 
 pub use crate::types::_pattern_filter::PatternFilter;
 
 pub use crate::types::_day_of_week::DayOfWeek;
+
+pub use crate::types::_org_source_account_reason_code::OrgSourceAccountReasonCode;
 
 pub use crate::types::_trigger_event::TriggerEvent;
 
@@ -430,6 +442,8 @@ mod _association;
 mod _auth_flow;
 
 mod _aws_configuration;
+
+mod _aws_source_mode;
 
 mod _azure_configuration;
 
@@ -574,6 +588,12 @@ mod _new_relic_service_details;
 mod _o_auth_additional_step_details;
 
 mod _order_type;
+
+mod _org_source_account_reason_code;
+
+mod _org_source_deployment_state;
+
+mod _org_source_issue;
 
 mod _pager_duty_authorization_config;
 
@@ -732,6 +752,10 @@ mod _slack_transmission_target;
 mod _source_account_type;
 
 mod _source_aws_configuration;
+
+mod _source_aws_org_configuration;
+
+mod _source_aws_org_unit;
 
 mod _task;
 

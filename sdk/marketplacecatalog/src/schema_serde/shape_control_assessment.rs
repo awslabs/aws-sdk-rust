@@ -19,6 +19,16 @@ static CONTROLASSESSMENT_MEMBER_CONTROL_ASSESSMENT_RESULT: ::aws_smithy_schema::
     "ControlAssessmentResult",
     1,
 );
+static CONTROLASSESSMENT_MEMBER_VERIFICATION_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacecatalog#ControlAssessment$VerificationSource",
+        "com.amazonaws.marketplacecatalog",
+        "ControlAssessment",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "VerificationSource",
+    2,
+);
 static CONTROLASSESSMENT_MEMBER_ERRORS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.marketplacecatalog#ControlErrorList$member",
@@ -37,9 +47,19 @@ static CONTROLASSESSMENT_MEMBER_ERRORS: ::aws_smithy_schema::Schema<'static> = :
     ),
     ::aws_smithy_schema::ShapeType::List,
     "Errors",
-    2,
+    3,
 )
 .with_list_member(&CONTROLASSESSMENT_MEMBER_ERRORS_MEMBER);
+static CONTROLASSESSMENT_MEMBER_CONTROL_SUMMARY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacecatalog#ControlAssessment$ControlSummary",
+        "com.amazonaws.marketplacecatalog",
+        "ControlAssessment",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "ControlSummary",
+    4,
+);
 static CONTROLASSESSMENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.marketplacecatalog#ControlAssessment",
@@ -50,7 +70,9 @@ static CONTROLASSESSMENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_sm
     &[
         &CONTROLASSESSMENT_MEMBER_CONTROL_ID,
         &CONTROLASSESSMENT_MEMBER_CONTROL_ASSESSMENT_RESULT,
+        &CONTROLASSESSMENT_MEMBER_VERIFICATION_SOURCE,
         &CONTROLASSESSMENT_MEMBER_ERRORS,
+        &CONTROLASSESSMENT_MEMBER_CONTROL_SUMMARY,
     ],
 );
 impl crate::types::ControlAssessment {
@@ -73,6 +95,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::ControlAss
         if let Some(ref val) = self.control_assessment_result {
             ser.write_string(&CONTROLASSESSMENT_MEMBER_CONTROL_ASSESSMENT_RESULT, val.as_str())?;
         }
+        if let Some(ref val) = self.verification_source {
+            ser.write_string(&CONTROLASSESSMENT_MEMBER_VERIFICATION_SOURCE, val.as_str())?;
+        }
         if let Some(ref val) = self.errors {
             ser.write_list(
                 &CONTROLASSESSMENT_MEMBER_ERRORS,
@@ -83,6 +108,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::ControlAss
                     Ok(())
                 },
             )?;
+        }
+        if let Some(ref val) = self.control_summary {
+            ser.write_struct(&CONTROLASSESSMENT_MEMBER_CONTROL_SUMMARY, val)?;
         }
         Ok(())
     }
@@ -119,6 +147,13 @@ impl crate::types::builders::ControlAssessmentBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
+                        self.verification_source = Some(crate::types::VerificationSource::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
                         self.errors = Some({
                             let mut container = Vec::new();
                             deser.read_list(member, &mut |deser| {
@@ -127,6 +162,13 @@ impl crate::types::builders::ControlAssessmentBuilder {
                             })?;
                             container
                         });
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.control_summary = Some(crate::types::ControlSummary::deserialize(deser)?);
                     }
                 }
                 _ => {}

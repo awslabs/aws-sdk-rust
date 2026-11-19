@@ -210,6 +210,19 @@ pub fn de_stack_set(
                 builder = builder.set_regions(var_17);
             }
             ,
+            s if s.matches("StackSetOutputBucketPath") /* StackSetOutputBucketPath com.amazonaws.cloudformation#StackSet$StackSetOutputBucketPath */ =>  {
+                let var_18 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_stack_set_output_bucket_path(var_18);
+            }
+            ,
             _ => {}
         }
     }

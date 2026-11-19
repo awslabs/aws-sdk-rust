@@ -14,6 +14,17 @@ pub struct GetOpenIdConnectProviderOutput {
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The trusted identity propagation context provider configuration associated with the IAM OIDC provider resource object. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+    /// <p>This element is returned only when a trusted identity propagation context provider is configured for the OIDC provider.</p>
+    pub context_provider: ::std::option::Option<crate::types::ContextProvider>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance associated with the IAM OIDC provider resource object.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    /// <p>This element is returned only when an IAM Identity Center instance is associated with the OIDC provider.</p>
+    pub identity_center_instance_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the identity store that is resolved from the associated IAM Identity Center instance.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    /// <p>This element is returned only when an IAM Identity Center instance is associated with the OIDC provider.</p>
+    pub identity_store_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetOpenIdConnectProviderOutput {
@@ -43,6 +54,23 @@ impl GetOpenIdConnectProviderOutput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The trusted identity propagation context provider configuration associated with the IAM OIDC provider resource object. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+    /// <p>This element is returned only when a trusted identity propagation context provider is configured for the OIDC provider.</p>
+    pub fn context_provider(&self) -> ::std::option::Option<&crate::types::ContextProvider> {
+        self.context_provider.as_ref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance associated with the IAM OIDC provider resource object.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    /// <p>This element is returned only when an IAM Identity Center instance is associated with the OIDC provider.</p>
+    pub fn identity_center_instance_arn(&self) -> ::std::option::Option<&str> {
+        self.identity_center_instance_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity store that is resolved from the associated IAM Identity Center instance.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    /// <p>This element is returned only when an IAM Identity Center instance is associated with the OIDC provider.</p>
+    pub fn identity_store_arn(&self) -> ::std::option::Option<&str> {
+        self.identity_store_arn.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetOpenIdConnectProviderOutput {
     fn request_id(&self) -> Option<&str> {
@@ -65,6 +93,9 @@ pub struct GetOpenIdConnectProviderOutputBuilder {
     pub(crate) thumbprint_list: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) context_provider: ::std::option::Option<crate::types::ContextProvider>,
+    pub(crate) identity_center_instance_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_store_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetOpenIdConnectProviderOutputBuilder {
@@ -156,6 +187,63 @@ impl GetOpenIdConnectProviderOutputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The trusted identity propagation context provider configuration associated with the IAM OIDC provider resource object. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+    /// <p>This element is returned only when a trusted identity propagation context provider is configured for the OIDC provider.</p>
+    pub fn context_provider(mut self, input: crate::types::ContextProvider) -> Self {
+        self.context_provider = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The trusted identity propagation context provider configuration associated with the IAM OIDC provider resource object. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+    /// <p>This element is returned only when a trusted identity propagation context provider is configured for the OIDC provider.</p>
+    pub fn set_context_provider(mut self, input: ::std::option::Option<crate::types::ContextProvider>) -> Self {
+        self.context_provider = input;
+        self
+    }
+    /// <p>The trusted identity propagation context provider configuration associated with the IAM OIDC provider resource object. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+    /// <p>This element is returned only when a trusted identity propagation context provider is configured for the OIDC provider.</p>
+    pub fn get_context_provider(&self) -> &::std::option::Option<crate::types::ContextProvider> {
+        &self.context_provider
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance associated with the IAM OIDC provider resource object.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    /// <p>This element is returned only when an IAM Identity Center instance is associated with the OIDC provider.</p>
+    pub fn identity_center_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_center_instance_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance associated with the IAM OIDC provider resource object.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    /// <p>This element is returned only when an IAM Identity Center instance is associated with the OIDC provider.</p>
+    pub fn set_identity_center_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_center_instance_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance associated with the IAM OIDC provider resource object.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    /// <p>This element is returned only when an IAM Identity Center instance is associated with the OIDC provider.</p>
+    pub fn get_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_center_instance_arn
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity store that is resolved from the associated IAM Identity Center instance.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    /// <p>This element is returned only when an IAM Identity Center instance is associated with the OIDC provider.</p>
+    pub fn identity_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_store_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity store that is resolved from the associated IAM Identity Center instance.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    /// <p>This element is returned only when an IAM Identity Center instance is associated with the OIDC provider.</p>
+    pub fn set_identity_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_store_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity store that is resolved from the associated IAM Identity Center instance.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    /// <p>This element is returned only when an IAM Identity Center instance is associated with the OIDC provider.</p>
+    pub fn get_identity_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -173,6 +261,9 @@ impl GetOpenIdConnectProviderOutputBuilder {
             thumbprint_list: self.thumbprint_list,
             create_date: self.create_date,
             tags: self.tags,
+            context_provider: self.context_provider,
+            identity_center_instance_arn: self.identity_center_instance_arn,
+            identity_store_arn: self.identity_store_arn,
             _request_id: self._request_id,
         }
     }

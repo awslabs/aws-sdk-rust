@@ -117,6 +117,15 @@ pub(crate) mod error_registry {
                         },
                     )
 .insert_error_shape(
+                        crate::types::error::EntityLimitExceeded::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::EntityLimitExceeded::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::EntityLimitExceeded::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
                         crate::types::error::EntityNotFound::SCHEMA,
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::EntityNotFound::deserialize(d)?))
@@ -141,6 +150,15 @@ pub(crate) mod error_registry {
                         },
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::InvalidArgument::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
+                        crate::types::error::InvalidAssociation::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::InvalidAssociation::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::InvalidAssociation::deserialize(d)?))
                         },
                     )
 .insert_error_shape(
@@ -339,6 +357,24 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateDom
                     let tmp = tmp.meta(generic);
                     tmp.build()
                 }),
+                "EntityLimitExceeded" => crate::operation::update_domain_association::UpdateDomainAssociationError::EntityLimitExceeded({
+                    let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let mut tmp = <crate::types::error::builders::EntityLimitExceededBuilder>::default();
+                    tmp.deserialize_members(&mut *deser).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    let tmp = tmp.meta(generic);
+                    tmp.build()
+                }),
                 "EntityNotFound" => crate::operation::update_domain_association::UpdateDomainAssociationError::EntityNotFound({
                     let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
                         ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
@@ -382,6 +418,24 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateDom
                         ))
                     })?;
                     let mut tmp = <crate::types::error::builders::InvalidArgumentBuilder>::default();
+                    tmp.deserialize_members(&mut *deser).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    let tmp = tmp.meta(generic);
+                    tmp.build()
+                }),
+                "InvalidAssociation" => crate::operation::update_domain_association::UpdateDomainAssociationError::InvalidAssociation({
+                    let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                        ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
+                            e,
+                        ))
+                    })?;
+                    let mut tmp = <crate::types::error::builders::InvalidAssociationBuilder>::default();
                     tmp.deserialize_members(&mut *deser).map_err(|e| {
                         ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(::aws_smithy_runtime_api::box_error::BoxError::from(
                             e,
@@ -554,12 +608,16 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateDomainA
 pub enum UpdateDomainAssociationError {
     /// <p>Access denied.</p>
     AccessDenied(crate::types::error::AccessDenied),
+    /// <p>The entity limit has been exceeded.</p>
+    EntityLimitExceeded(crate::types::error::EntityLimitExceeded),
     /// <p>The entity was not found.</p>
     EntityNotFound(crate::types::error::EntityNotFound),
     /// <p>The update contains modifications that are not allowed.</p>
     IllegalUpdate(crate::types::error::IllegalUpdate),
     /// <p>An argument is invalid.</p>
     InvalidArgument(crate::types::error::InvalidArgument),
+    /// <p>The specified CloudFront resource can't be associated.</p>
+    InvalidAssociation(crate::types::error::InvalidAssociation),
     /// <p>The <code>If-Match</code> version is missing or not valid.</p>
     InvalidIfMatchVersion(crate::types::error::InvalidIfMatchVersion),
     /// <p>The precondition in one or more of the request fields evaluated to <code>false</code>.</p>
@@ -598,9 +656,11 @@ impl UpdateDomainAssociationError {
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDenied(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::EntityLimitExceeded(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EntityNotFound(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::IllegalUpdate(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidArgument(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::InvalidAssociation(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidIfMatchVersion(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::PreconditionFailed(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
@@ -609,6 +669,10 @@ impl UpdateDomainAssociationError {
     /// Returns `true` if the error kind is `UpdateDomainAssociationError::AccessDenied`.
     pub fn is_access_denied(&self) -> bool {
         matches!(self, Self::AccessDenied(_))
+    }
+    /// Returns `true` if the error kind is `UpdateDomainAssociationError::EntityLimitExceeded`.
+    pub fn is_entity_limit_exceeded(&self) -> bool {
+        matches!(self, Self::EntityLimitExceeded(_))
     }
     /// Returns `true` if the error kind is `UpdateDomainAssociationError::EntityNotFound`.
     pub fn is_entity_not_found(&self) -> bool {
@@ -621,6 +685,10 @@ impl UpdateDomainAssociationError {
     /// Returns `true` if the error kind is `UpdateDomainAssociationError::InvalidArgument`.
     pub fn is_invalid_argument(&self) -> bool {
         matches!(self, Self::InvalidArgument(_))
+    }
+    /// Returns `true` if the error kind is `UpdateDomainAssociationError::InvalidAssociation`.
+    pub fn is_invalid_association(&self) -> bool {
+        matches!(self, Self::InvalidAssociation(_))
     }
     /// Returns `true` if the error kind is `UpdateDomainAssociationError::InvalidIfMatchVersion`.
     pub fn is_invalid_if_match_version(&self) -> bool {
@@ -635,9 +703,11 @@ impl ::std::error::Error for UpdateDomainAssociationError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Self::AccessDenied(_inner) => ::std::option::Option::Some(_inner),
+            Self::EntityLimitExceeded(_inner) => ::std::option::Option::Some(_inner),
             Self::EntityNotFound(_inner) => ::std::option::Option::Some(_inner),
             Self::IllegalUpdate(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidArgument(_inner) => ::std::option::Option::Some(_inner),
+            Self::InvalidAssociation(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidIfMatchVersion(_inner) => ::std::option::Option::Some(_inner),
             Self::PreconditionFailed(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
@@ -648,9 +718,11 @@ impl ::std::fmt::Display for UpdateDomainAssociationError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
             Self::AccessDenied(_inner) => _inner.fmt(f),
+            Self::EntityLimitExceeded(_inner) => _inner.fmt(f),
             Self::EntityNotFound(_inner) => _inner.fmt(f),
             Self::IllegalUpdate(_inner) => _inner.fmt(f),
             Self::InvalidArgument(_inner) => _inner.fmt(f),
+            Self::InvalidAssociation(_inner) => _inner.fmt(f),
             Self::InvalidIfMatchVersion(_inner) => _inner.fmt(f),
             Self::PreconditionFailed(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
@@ -675,9 +747,11 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateDomainA
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
             Self::AccessDenied(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::EntityLimitExceeded(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EntityNotFound(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::IllegalUpdate(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidArgument(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::InvalidAssociation(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidIfMatchVersion(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::PreconditionFailed(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,

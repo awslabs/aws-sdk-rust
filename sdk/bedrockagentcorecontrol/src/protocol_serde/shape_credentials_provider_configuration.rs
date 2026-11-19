@@ -22,6 +22,12 @@ pub fn ser_credentials_provider_configuration(
             )?;
             object_2.finish();
         }
+        crate::types::CredentialsProviderConfiguration::AwsBilling(inner) => {
+            #[allow(unused_mut)]
+            let mut object_3 = object_5.key("awsBilling").start_object();
+            crate::protocol_serde::shape_aws_billing_connector_configuration::ser_aws_billing_connector_configuration(&mut object_3, inner)?;
+            object_3.finish();
+        }
         crate::types::CredentialsProviderConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
                 "CredentialsProviderConfiguration",
@@ -86,6 +92,16 @@ where
                             )?
                             .ok_or_else(|| {
                                 ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'stripePrivy' cannot be null")
+                            })?,
+                        )),
+                        "awsBilling" => Some(crate::types::CredentialsProviderConfiguration::AwsBilling(
+                            crate::protocol_serde::shape_aws_billing_connector_configuration::de_aws_billing_connector_configuration(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'awsBilling' cannot be null")
                             })?,
                         )),
                         _ => {

@@ -412,6 +412,36 @@ impl From<crate::operation::put_resource_policy::PutResourcePolicyError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_assessment::StartAssessmentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_assessment::StartAssessmentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_assessment::StartAssessmentError> for Error {
+    fn from(err: crate::operation::start_assessment::StartAssessmentError) -> Self {
+        match err {
+            crate::operation::start_assessment::StartAssessmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_assessment::StartAssessmentError::InternalServiceException(inner) => Error::InternalServiceException(inner),
+            crate::operation::start_assessment::StartAssessmentError::ResourceInUseException(inner) => Error::ResourceInUseException(inner),
+            crate::operation::start_assessment::StartAssessmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_assessment::StartAssessmentError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_assessment::StartAssessmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_assessment::StartAssessmentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_assessment::StartAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_change_set::StartChangeSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

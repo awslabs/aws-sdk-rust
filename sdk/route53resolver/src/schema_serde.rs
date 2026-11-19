@@ -17,6 +17,8 @@ pub(crate) mod shape_associate_resolver_rule_input_input;
 
 pub(crate) mod shape_associate_resolver_rule_output_output;
 
+pub(crate) mod shape_auto_allowlist_config;
+
 pub(crate) mod shape_batch_create_firewall_rule_error;
 
 pub(crate) mod shape_batch_create_firewall_rule_input_input;
@@ -129,6 +131,8 @@ pub(crate) mod shape_firewall_domain_list_metadata;
 
 pub(crate) mod shape_firewall_rule;
 
+pub(crate) mod shape_firewall_rule_domain;
+
 pub(crate) mod shape_firewall_rule_group;
 
 pub(crate) mod shape_firewall_rule_group_association;
@@ -234,6 +238,12 @@ pub(crate) mod shape_list_firewall_domain_lists_output_output;
 pub(crate) mod shape_list_firewall_domains_input_input;
 
 pub(crate) mod shape_list_firewall_domains_output_output;
+
+pub(crate) mod shape_list_firewall_rule_domains_input_input;
+
+pub(crate) mod shape_list_firewall_rule_domains_output_output;
+
+pub(crate) mod shape_list_firewall_rule_domains_query_options;
 
 pub(crate) mod shape_list_firewall_rule_group_associations_input_input;
 

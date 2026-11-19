@@ -101,6 +101,10 @@ pub use crate::types::_principal_resource_permissions::PrincipalResourcePermissi
 
 pub use crate::types::_column_lf_tag::ColumnLfTag;
 
+pub use crate::types::_rls_policy_status::RlsPolicyStatus;
+
+pub use crate::types::_rls_policy_status_reason::RlsPolicyStatusReason;
+
 pub use crate::types::_partition_objects::PartitionObjects;
 
 pub use crate::types::_permission::Permission;
@@ -272,6 +276,10 @@ mod _rls_policy;
 mod _rls_policy_attachment;
 
 mod _rls_policy_resource;
+
+mod _rls_policy_status;
+
+mod _rls_policy_status_reason;
 
 mod _row_filter;
 

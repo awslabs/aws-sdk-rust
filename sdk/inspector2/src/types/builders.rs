@@ -17,6 +17,8 @@ pub use crate::types::_cis_scan_result_details_filter_criteria::CisScanResultDet
 
 pub use crate::types::_cluster_for_image_filter_criteria::ClusterForImageFilterCriteriaBuilder;
 
+pub use crate::types::_code_security_integration_vpc_configuration::CodeSecurityIntegrationVpcConfigurationBuilder;
+
 pub use crate::types::_ecr_configuration_state::EcrConfigurationStateBuilder;
 
 pub use crate::types::_ec2_configuration_state::Ec2ConfigurationStateBuilder;
@@ -100,6 +102,8 @@ pub use crate::types::_weekly_schedule::WeeklyScheduleBuilder;
 pub use crate::types::_monthly_schedule::MonthlyScheduleBuilder;
 
 pub use crate::types::_create_git_lab_self_managed_integration_detail::CreateGitLabSelfManagedIntegrationDetailBuilder;
+
+pub use crate::types::_create_git_hub_enterprise_integration_detail::CreateGitHubEnterpriseIntegrationDetailBuilder;
 
 pub use crate::types::_periodic_scan_configuration::PeriodicScanConfigurationBuilder;
 
@@ -340,6 +344,10 @@ pub use crate::types::_cvss3::Cvss3Builder;
 pub use crate::types::_cvss2::Cvss2Builder;
 
 pub use crate::types::_epss::EpssBuilder;
+
+pub use crate::types::_update_git_hub_enterprise_server_app_installation_detail::UpdateGitHubEnterpriseServerAppInstallationDetailBuilder;
+
+pub use crate::types::_git_hub_enterprise_server_app_registration_detail::GitHubEnterpriseServerAppRegistrationDetailBuilder;
 
 pub use crate::types::_code_line::CodeLineBuilder;
 

@@ -148,6 +148,15 @@ pub(crate) fn de_get_registry_record(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "artifact" => {
+                    builder = builder.set_artifact(
+                        crate::protocol_serde::shape_registry_record_artifact_download::de_registry_record_artifact_download(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
+                    );
+                }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
@@ -255,6 +264,15 @@ pub(crate) fn de_get_registry_record(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
+                    );
+                }
+                "synchronizedSource" => {
+                    builder = builder.set_synchronized_source(
+                        crate::protocol_serde::shape_registry_record_synchronized_source::de_registry_record_synchronized_source(
+                            tokens,
+                            _value,
+                            depth + 1,
+                        )?,
                     );
                 }
                 "updatedAt" => {

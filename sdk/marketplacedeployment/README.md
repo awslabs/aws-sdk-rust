@@ -1,6 +1,8 @@
 # aws-sdk-marketplacedeployment
 
-The AWS Marketplace Deployment Service supports the Quick Launch experience, which is a deployment option for software as a service (SaaS) products. Quick Launch simplifies and reduces the time, resources, and steps required to configure, deploy, and launch a products. The AWS Marketplace Deployment Service provides sellers with a secure method for passing deployment parameters, such as API keys and external IDs, to buyers during the Quick Launch experience.
+The AWS Marketplace Deployment Service supports the Quick Launch experience, which is a deployment option for software as a service (SaaS) products. Quick Launch simplifies and reduces the time, resources, and steps required to configure, deploy, and launch a product. The AWS Marketplace Deployment Service provides sellers with a secure method for passing deployment parameters, such as API keys and external IDs, to buyers during the Quick Launch experience.
+
+You can also use the AWS Marketplace Deployment Service to publish deployment configurations. A deployment configuration defines how buyers access a product's delivery option after they subscribe. For example, for the Data as a Service delivery option, it specifies the seller's fulfillment URL.
 
 ## Getting Started
 
@@ -14,7 +16,7 @@ your project, add the following to your **Cargo.toml** file:
 ```toml
 [dependencies]
 aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-aws-sdk-marketplacedeployment = "1.119.0"
+aws-sdk-marketplacedeployment = "1.120.0"
 tokio = { version = "1", features = ["full"] }
 ```
 

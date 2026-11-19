@@ -8,6 +8,8 @@ pub struct UpdateGitHubIntegrationDetail {
     pub code: ::std::string::String,
     /// <p>The installation ID of the GitHub App associated with the integration.</p>
     pub installation_id: ::std::string::String,
+    /// <p>The PKCE state token used to validate the authorization request.</p>
+    pub state_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGitHubIntegrationDetail {
     /// <p>The authorization code received from GitHub to update the integration.</p>
@@ -20,12 +22,17 @@ impl UpdateGitHubIntegrationDetail {
         use std::ops::Deref;
         self.installation_id.deref()
     }
+    /// <p>The PKCE state token used to validate the authorization request.</p>
+    pub fn state_token(&self) -> ::std::option::Option<&str> {
+        self.state_token.as_deref()
+    }
 }
 impl ::std::fmt::Debug for UpdateGitHubIntegrationDetail {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateGitHubIntegrationDetail");
         formatter.field("code", &"*** Sensitive Data Redacted ***");
         formatter.field("installation_id", &self.installation_id);
+        formatter.field("state_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
@@ -42,6 +49,7 @@ impl UpdateGitHubIntegrationDetail {
 pub struct UpdateGitHubIntegrationDetailBuilder {
     pub(crate) code: ::std::option::Option<::std::string::String>,
     pub(crate) installation_id: ::std::option::Option<::std::string::String>,
+    pub(crate) state_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGitHubIntegrationDetailBuilder {
     /// <p>The authorization code received from GitHub to update the integration.</p>
@@ -74,6 +82,20 @@ impl UpdateGitHubIntegrationDetailBuilder {
     pub fn get_installation_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.installation_id
     }
+    /// <p>The PKCE state token used to validate the authorization request.</p>
+    pub fn state_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The PKCE state token used to validate the authorization request.</p>
+    pub fn set_state_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.state_token = input;
+        self
+    }
+    /// <p>The PKCE state token used to validate the authorization request.</p>
+    pub fn get_state_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.state_token
+    }
     /// Consumes the builder and constructs a [`UpdateGitHubIntegrationDetail`](crate::types::UpdateGitHubIntegrationDetail).
     /// This method will fail if any of the following fields are not set:
     /// - [`code`](crate::types::builders::UpdateGitHubIntegrationDetailBuilder::code)
@@ -92,6 +114,7 @@ impl UpdateGitHubIntegrationDetailBuilder {
                     "installation_id was not specified but it is required when building UpdateGitHubIntegrationDetail",
                 )
             })?,
+            state_token: self.state_token,
         })
     }
 }
@@ -100,6 +123,7 @@ impl ::std::fmt::Debug for UpdateGitHubIntegrationDetailBuilder {
         let mut formatter = f.debug_struct("UpdateGitHubIntegrationDetailBuilder");
         formatter.field("code", &"*** Sensitive Data Redacted ***");
         formatter.field("installation_id", &self.installation_id);
+        formatter.field("state_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }

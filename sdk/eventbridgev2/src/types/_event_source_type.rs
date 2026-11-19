@@ -14,6 +14,7 @@
 /// match eventsourcetype {
 ///     EventSourceType::AwsServiceEvents => { /* ... */ },
 ///     EventSourceType::PartnerEvents => { /* ... */ },
+///     EventSourceType::WebhookEvents => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -36,8 +37,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Origin type of an EventSource: an AWS service's events (AWS_SERVICE_EVENTS)
-/// or a partner event source's events (PARTNER_EVENTS).
+/// <p>Origin type of an EventSource.</p> <ul> <li> <p>AWS_SERVICE_EVENTS - Events from an AWS service.</p> </li> <li> <p>PARTNER_EVENTS - Events from a partner event source.</p> </li> <li> <p>WEBHOOK_EVENTS - Events that a third-party provider sends to a webhook URL.</p> </li> </ul>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -47,6 +47,8 @@ pub enum EventSourceType {
     AwsServiceEvents,
     #[allow(missing_docs)] // documentation missing in model
     PartnerEvents,
+    #[allow(missing_docs)] // documentation missing in model
+    WebhookEvents,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -56,6 +58,7 @@ impl ::std::convert::From<&str> for EventSourceType {
         match s {
             "AWS_SERVICE_EVENTS" => EventSourceType::AwsServiceEvents,
             "PARTNER_EVENTS" => EventSourceType::PartnerEvents,
+            "WEBHOOK_EVENTS" => EventSourceType::WebhookEvents,
             other => EventSourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -73,12 +76,13 @@ impl EventSourceType {
         match self {
             EventSourceType::AwsServiceEvents => "AWS_SERVICE_EVENTS",
             EventSourceType::PartnerEvents => "PARTNER_EVENTS",
+            EventSourceType::WebhookEvents => "WEBHOOK_EVENTS",
             EventSourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AWS_SERVICE_EVENTS", "PARTNER_EVENTS"]
+        &["AWS_SERVICE_EVENTS", "PARTNER_EVENTS", "WEBHOOK_EVENTS"]
     }
 }
 impl ::std::convert::AsRef<str> for EventSourceType {
@@ -103,6 +107,7 @@ impl ::std::fmt::Display for EventSourceType {
         match self {
             EventSourceType::AwsServiceEvents => write!(f, "AWS_SERVICE_EVENTS"),
             EventSourceType::PartnerEvents => write!(f, "PARTNER_EVENTS"),
+            EventSourceType::WebhookEvents => write!(f, "WEBHOOK_EVENTS"),
             EventSourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

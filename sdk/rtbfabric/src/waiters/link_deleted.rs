@@ -52,6 +52,10 @@ impl LinkDeletedFluentBuilder {
         let time_source = time_components.time_source().expect("a time source is required by waiters");
 
         let acceptor = move |result: ::std::result::Result<&crate::operation::get_link::GetLinkOutput, &crate::operation::get_link::GetLinkError>| {
+            // Matches: {"output":{"path":"status","expected":"DELETE_FAILED","comparator":"stringEquals"}}
+            if crate::waiters::matchers::match_get_link_184758db81b6271a8(result) {
+                return ::aws_smithy_runtime::client::waiters::AcceptorState::Failure;
+            }
             // Matches: {"output":{"path":"status","expected":"DELETED","comparator":"stringEquals"}}
             if crate::waiters::matchers::match_get_link_8edac4c36e2a37f69(result) {
                 return ::aws_smithy_runtime::client::waiters::AcceptorState::Success;

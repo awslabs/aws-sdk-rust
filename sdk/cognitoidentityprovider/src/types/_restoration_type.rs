@@ -12,7 +12,7 @@ pub struct RestorationType {
     /// PREVIEW_GENERATING
     /// </dt>
     /// <dd>
-    /// <p>Amazon Cognito is waiting for available capacity in the Amazon Web Services Region or is generating the recovery preview. Write operations in the user pool are paused.</p>
+    /// <p>Amazon Cognito is generating the recovery preview, which might not be available immediately. Write operations in the user pool are paused.</p>
     /// </dd>
     /// <dt>
     /// PREVIEW_GENERATED
@@ -82,7 +82,7 @@ impl RestorationType {
     /// PREVIEW_GENERATING
     /// </dt>
     /// <dd>
-    /// <p>Amazon Cognito is waiting for available capacity in the Amazon Web Services Region or is generating the recovery preview. Write operations in the user pool are paused.</p>
+    /// <p>Amazon Cognito is generating the recovery preview, which might not be available immediately. Write operations in the user pool are paused.</p>
     /// </dd>
     /// <dt>
     /// PREVIEW_GENERATED
@@ -189,7 +189,7 @@ impl RestorationTypeBuilder {
     /// PREVIEW_GENERATING
     /// </dt>
     /// <dd>
-    /// <p>Amazon Cognito is waiting for available capacity in the Amazon Web Services Region or is generating the recovery preview. Write operations in the user pool are paused.</p>
+    /// <p>Amazon Cognito is generating the recovery preview, which might not be available immediately. Write operations in the user pool are paused.</p>
     /// </dd>
     /// <dt>
     /// PREVIEW_GENERATED
@@ -250,7 +250,7 @@ impl RestorationTypeBuilder {
     /// PREVIEW_GENERATING
     /// </dt>
     /// <dd>
-    /// <p>Amazon Cognito is waiting for available capacity in the Amazon Web Services Region or is generating the recovery preview. Write operations in the user pool are paused.</p>
+    /// <p>Amazon Cognito is generating the recovery preview, which might not be available immediately. Write operations in the user pool are paused.</p>
     /// </dd>
     /// <dt>
     /// PREVIEW_GENERATED
@@ -311,7 +311,7 @@ impl RestorationTypeBuilder {
     /// PREVIEW_GENERATING
     /// </dt>
     /// <dd>
-    /// <p>Amazon Cognito is waiting for available capacity in the Amazon Web Services Region or is generating the recovery preview. Write operations in the user pool are paused.</p>
+    /// <p>Amazon Cognito is generating the recovery preview, which might not be available immediately. Write operations in the user pool are paused.</p>
     /// </dd>
     /// <dt>
     /// PREVIEW_GENERATED

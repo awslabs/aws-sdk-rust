@@ -20,6 +20,8 @@ pub enum AcmCertificateMetadataFilter {
     ManagedBy(crate::types::CertificateManagedBy),
     /// <p>Filter by certificate renewal status.</p>
     RenewalStatus(crate::types::RenewalStatus),
+    /// <p>Filter by root hierarchy type. Specify <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code> to return Amazon N2 certificates.</p>
+    RootHierarchyType(crate::types::RootHierarchyType),
     /// <p>Filter by certificate status.</p>
     Status(crate::types::CertificateStatus),
     /// <p>Filter by certificate type.</p>
@@ -140,6 +142,19 @@ impl AcmCertificateMetadataFilter {
     /// Returns true if this is a [`RenewalStatus`](crate::types::AcmCertificateMetadataFilter::RenewalStatus).
     pub fn is_renewal_status(&self) -> bool {
         self.as_renewal_status().is_ok()
+    }
+    /// Tries to convert the enum instance into [`RootHierarchyType`](crate::types::AcmCertificateMetadataFilter::RootHierarchyType), extracting the inner [`RootHierarchyType`](crate::types::RootHierarchyType).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_root_hierarchy_type(&self) -> ::std::result::Result<&crate::types::RootHierarchyType, &Self> {
+        if let AcmCertificateMetadataFilter::RootHierarchyType(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`RootHierarchyType`](crate::types::AcmCertificateMetadataFilter::RootHierarchyType).
+    pub fn is_root_hierarchy_type(&self) -> bool {
+        self.as_root_hierarchy_type().is_ok()
     }
     /// Tries to convert the enum instance into [`Status`](crate::types::AcmCertificateMetadataFilter::Status), extracting the inner [`CertificateStatus`](crate::types::CertificateStatus).
     /// Returns `Err(&Self)` if it can't be converted.

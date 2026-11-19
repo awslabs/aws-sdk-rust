@@ -11,6 +11,8 @@ pub use crate::types::_health_check_config::HealthCheckConfigBuilder;
 
 pub use crate::types::_health_check::HealthCheckBuilder;
 
+pub use crate::types::_health_check_source_config::HealthCheckSourceConfigBuilder;
+
 pub use crate::types::_hosted_zone_config::HostedZoneConfigBuilder;
 
 pub use crate::types::_hosted_zone::HostedZoneBuilder;
@@ -30,6 +32,8 @@ pub use crate::types::_account_limit::AccountLimitBuilder;
 pub use crate::types::_dnssec_status::DnssecStatusBuilder;
 
 pub use crate::types::_geo_location_details::GeoLocationDetailsBuilder;
+
+pub use crate::types::_health_check_source::HealthCheckSourceBuilder;
 
 pub use crate::types::_hosted_zone_limit::HostedZoneLimitBuilder;
 
@@ -72,6 +76,8 @@ pub use crate::types::_resource_record_set::ResourceRecordSetBuilder;
 pub use crate::types::_traffic_policy_summary::TrafficPolicySummaryBuilder;
 
 pub use crate::types::_change::ChangeBuilder;
+
+pub use crate::types::_subnet_configuration::SubnetConfigurationBuilder;
 
 pub use crate::types::_hosted_zone_failure_reasons::HostedZoneFailureReasonsBuilder;
 

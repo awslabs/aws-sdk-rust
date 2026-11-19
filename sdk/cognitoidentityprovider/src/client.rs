@@ -255,6 +255,8 @@ mod confirm_forgot_password;
 
 mod confirm_sign_up;
 
+mod create_cimd_policy;
+
 mod create_group;
 
 mod create_identity_provider;
@@ -302,6 +304,8 @@ mod create_user_pool_replica;
 /// ```
 pub mod customize;
 
+mod delete_cimd_policy;
+
 mod delete_group;
 
 mod delete_identity_provider;
@@ -327,6 +331,8 @@ mod delete_user_pool_domain;
 mod delete_user_pool_replica;
 
 mod delete_web_authn_credential;
+
+mod describe_cimd_policy;
 
 mod describe_identity_provider;
 
@@ -395,6 +401,10 @@ mod global_sign_out;
 mod initiate_auth;
 
 mod initiate_point_in_time_recovery;
+
+mod list_cimd_policies;
+
+mod list_client_metadata_urls;
 
 mod list_devices;
 
@@ -467,6 +477,10 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_auth_event_feedback;
+
+mod update_cimd_policy;
+
+mod update_client_metadata_url_state;
 
 mod update_device_status;
 

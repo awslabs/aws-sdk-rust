@@ -2,16 +2,18 @@
 
 /// <p>The configuration for an OAuth 2.0 credential provider that authenticates requests to a registry record's source.</p>
 #[non_exhaustive]
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct RegistryRecordOAuthCredentialProvider {
     /// <p>The Amazon Resource Name (ARN) of the OAuth 2.0 credential provider resource in Amazon Bedrock AgentCore Identity.</p>
     pub provider_arn: ::std::string::String,
-    /// <p>The OAuth 2.0 grant type used to obtain access tokens.</p>
+    /// <p>The OAuth 2.0 grant type used to obtain access tokens. A GitHub skill source requires <code>AUTHORIZATION_CODE</code>. Other sources, such as MCP server and A2A agent card sources, use <code>CLIENT_CREDENTIALS</code>. A GitHub source takes exactly one OAuth credential provider, in the registry's Amazon Web Services account and Region. Only an IAM role or IAM user in the account that owns the registry can set, synchronize, or reauthorize it, and the caller needs <code>bedrock-agentcore:GetWorkloadAccessTokenForUserId</code> and <code>bedrock-agentcore:GetResourceOauth2Token</code> on the registry's workload identity, <code>registry-</code> followed by the registry ID.</p>
     pub grant_type: ::std::option::Option<crate::types::RegistryRecordOAuthGrantType>,
     /// <p>The OAuth 2.0 scopes to request when obtaining access tokens.</p>
     pub scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Additional parameters to include in the OAuth 2.0 token request.</p>
     pub custom_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The URL that the user's browser returns to after the user approves access on GitHub, for the <code>AUTHORIZATION_CODE</code> grant. There, your application completes the authorization by calling the Amazon Bedrock AgentCore Identity <code>CompleteResourceTokenAuth</code> operation with the <code>userId</code> from <code>authorizationData</code>. If you omit it, the user returns to the Amazon Web Services Agent Registry console, which completes the authorization when the user is signed in as the IAM principal that made the request. A request that joins an authorization already in progress uses the return URL of the request that started it.</p>
+    pub return_url: ::std::option::Option<::std::string::String>,
 }
 impl RegistryRecordOAuthCredentialProvider {
     /// <p>The Amazon Resource Name (ARN) of the OAuth 2.0 credential provider resource in Amazon Bedrock AgentCore Identity.</p>
@@ -19,7 +21,7 @@ impl RegistryRecordOAuthCredentialProvider {
         use std::ops::Deref;
         self.provider_arn.deref()
     }
-    /// <p>The OAuth 2.0 grant type used to obtain access tokens.</p>
+    /// <p>The OAuth 2.0 grant type used to obtain access tokens. A GitHub skill source requires <code>AUTHORIZATION_CODE</code>. Other sources, such as MCP server and A2A agent card sources, use <code>CLIENT_CREDENTIALS</code>. A GitHub source takes exactly one OAuth credential provider, in the registry's Amazon Web Services account and Region. Only an IAM role or IAM user in the account that owns the registry can set, synchronize, or reauthorize it, and the caller needs <code>bedrock-agentcore:GetWorkloadAccessTokenForUserId</code> and <code>bedrock-agentcore:GetResourceOauth2Token</code> on the registry's workload identity, <code>registry-</code> followed by the registry ID.</p>
     pub fn grant_type(&self) -> ::std::option::Option<&crate::types::RegistryRecordOAuthGrantType> {
         self.grant_type.as_ref()
     }
@@ -33,6 +35,21 @@ impl RegistryRecordOAuthCredentialProvider {
     pub fn custom_parameters(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.custom_parameters.as_ref()
     }
+    /// <p>The URL that the user's browser returns to after the user approves access on GitHub, for the <code>AUTHORIZATION_CODE</code> grant. There, your application completes the authorization by calling the Amazon Bedrock AgentCore Identity <code>CompleteResourceTokenAuth</code> operation with the <code>userId</code> from <code>authorizationData</code>. If you omit it, the user returns to the Amazon Web Services Agent Registry console, which completes the authorization when the user is signed in as the IAM principal that made the request. A request that joins an authorization already in progress uses the return URL of the request that started it.</p>
+    pub fn return_url(&self) -> ::std::option::Option<&str> {
+        self.return_url.as_deref()
+    }
+}
+impl ::std::fmt::Debug for RegistryRecordOAuthCredentialProvider {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RegistryRecordOAuthCredentialProvider");
+        formatter.field("provider_arn", &self.provider_arn);
+        formatter.field("grant_type", &self.grant_type);
+        formatter.field("scopes", &self.scopes);
+        formatter.field("custom_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("return_url", &self.return_url);
+        formatter.finish()
+    }
 }
 impl RegistryRecordOAuthCredentialProvider {
     /// Creates a new builder-style object to manufacture [`RegistryRecordOAuthCredentialProvider`](crate::types::RegistryRecordOAuthCredentialProvider).
@@ -42,13 +59,14 @@ impl RegistryRecordOAuthCredentialProvider {
 }
 
 /// A builder for [`RegistryRecordOAuthCredentialProvider`](crate::types::RegistryRecordOAuthCredentialProvider).
-#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 #[non_exhaustive]
 pub struct RegistryRecordOAuthCredentialProviderBuilder {
     pub(crate) provider_arn: ::std::option::Option<::std::string::String>,
     pub(crate) grant_type: ::std::option::Option<crate::types::RegistryRecordOAuthGrantType>,
     pub(crate) scopes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) custom_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) return_url: ::std::option::Option<::std::string::String>,
 }
 impl RegistryRecordOAuthCredentialProviderBuilder {
     /// <p>The Amazon Resource Name (ARN) of the OAuth 2.0 credential provider resource in Amazon Bedrock AgentCore Identity.</p>
@@ -66,17 +84,17 @@ impl RegistryRecordOAuthCredentialProviderBuilder {
     pub fn get_provider_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.provider_arn
     }
-    /// <p>The OAuth 2.0 grant type used to obtain access tokens.</p>
+    /// <p>The OAuth 2.0 grant type used to obtain access tokens. A GitHub skill source requires <code>AUTHORIZATION_CODE</code>. Other sources, such as MCP server and A2A agent card sources, use <code>CLIENT_CREDENTIALS</code>. A GitHub source takes exactly one OAuth credential provider, in the registry's Amazon Web Services account and Region. Only an IAM role or IAM user in the account that owns the registry can set, synchronize, or reauthorize it, and the caller needs <code>bedrock-agentcore:GetWorkloadAccessTokenForUserId</code> and <code>bedrock-agentcore:GetResourceOauth2Token</code> on the registry's workload identity, <code>registry-</code> followed by the registry ID.</p>
     pub fn grant_type(mut self, input: crate::types::RegistryRecordOAuthGrantType) -> Self {
         self.grant_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The OAuth 2.0 grant type used to obtain access tokens.</p>
+    /// <p>The OAuth 2.0 grant type used to obtain access tokens. A GitHub skill source requires <code>AUTHORIZATION_CODE</code>. Other sources, such as MCP server and A2A agent card sources, use <code>CLIENT_CREDENTIALS</code>. A GitHub source takes exactly one OAuth credential provider, in the registry's Amazon Web Services account and Region. Only an IAM role or IAM user in the account that owns the registry can set, synchronize, or reauthorize it, and the caller needs <code>bedrock-agentcore:GetWorkloadAccessTokenForUserId</code> and <code>bedrock-agentcore:GetResourceOauth2Token</code> on the registry's workload identity, <code>registry-</code> followed by the registry ID.</p>
     pub fn set_grant_type(mut self, input: ::std::option::Option<crate::types::RegistryRecordOAuthGrantType>) -> Self {
         self.grant_type = input;
         self
     }
-    /// <p>The OAuth 2.0 grant type used to obtain access tokens.</p>
+    /// <p>The OAuth 2.0 grant type used to obtain access tokens. A GitHub skill source requires <code>AUTHORIZATION_CODE</code>. Other sources, such as MCP server and A2A agent card sources, use <code>CLIENT_CREDENTIALS</code>. A GitHub source takes exactly one OAuth credential provider, in the registry's Amazon Web Services account and Region. Only an IAM role or IAM user in the account that owns the registry can set, synchronize, or reauthorize it, and the caller needs <code>bedrock-agentcore:GetWorkloadAccessTokenForUserId</code> and <code>bedrock-agentcore:GetResourceOauth2Token</code> on the registry's workload identity, <code>registry-</code> followed by the registry ID.</p>
     pub fn get_grant_type(&self) -> &::std::option::Option<crate::types::RegistryRecordOAuthGrantType> {
         &self.grant_type
     }
@@ -127,6 +145,20 @@ impl RegistryRecordOAuthCredentialProviderBuilder {
     pub fn get_custom_parameters(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.custom_parameters
     }
+    /// <p>The URL that the user's browser returns to after the user approves access on GitHub, for the <code>AUTHORIZATION_CODE</code> grant. There, your application completes the authorization by calling the Amazon Bedrock AgentCore Identity <code>CompleteResourceTokenAuth</code> operation with the <code>userId</code> from <code>authorizationData</code>. If you omit it, the user returns to the Amazon Web Services Agent Registry console, which completes the authorization when the user is signed in as the IAM principal that made the request. A request that joins an authorization already in progress uses the return URL of the request that started it.</p>
+    pub fn return_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.return_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The URL that the user's browser returns to after the user approves access on GitHub, for the <code>AUTHORIZATION_CODE</code> grant. There, your application completes the authorization by calling the Amazon Bedrock AgentCore Identity <code>CompleteResourceTokenAuth</code> operation with the <code>userId</code> from <code>authorizationData</code>. If you omit it, the user returns to the Amazon Web Services Agent Registry console, which completes the authorization when the user is signed in as the IAM principal that made the request. A request that joins an authorization already in progress uses the return URL of the request that started it.</p>
+    pub fn set_return_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.return_url = input;
+        self
+    }
+    /// <p>The URL that the user's browser returns to after the user approves access on GitHub, for the <code>AUTHORIZATION_CODE</code> grant. There, your application completes the authorization by calling the Amazon Bedrock AgentCore Identity <code>CompleteResourceTokenAuth</code> operation with the <code>userId</code> from <code>authorizationData</code>. If you omit it, the user returns to the Amazon Web Services Agent Registry console, which completes the authorization when the user is signed in as the IAM principal that made the request. A request that joins an authorization already in progress uses the return URL of the request that started it.</p>
+    pub fn get_return_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.return_url
+    }
     /// Consumes the builder and constructs a [`RegistryRecordOAuthCredentialProvider`](crate::types::RegistryRecordOAuthCredentialProvider).
     /// This method will fail if any of the following fields are not set:
     /// - [`provider_arn`](crate::types::builders::RegistryRecordOAuthCredentialProviderBuilder::provider_arn)
@@ -143,6 +175,18 @@ impl RegistryRecordOAuthCredentialProviderBuilder {
             grant_type: self.grant_type,
             scopes: self.scopes,
             custom_parameters: self.custom_parameters,
+            return_url: self.return_url,
         })
+    }
+}
+impl ::std::fmt::Debug for RegistryRecordOAuthCredentialProviderBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        let mut formatter = f.debug_struct("RegistryRecordOAuthCredentialProviderBuilder");
+        formatter.field("provider_arn", &self.provider_arn);
+        formatter.field("grant_type", &self.grant_type);
+        formatter.field("scopes", &self.scopes);
+        formatter.field("custom_parameters", &"*** Sensitive Data Redacted ***");
+        formatter.field("return_url", &self.return_url);
+        formatter.finish()
     }
 }

@@ -18,6 +18,9 @@ impl super::Client {
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::tags): <p>A map of the key-value pairs for the tag or tags assigned to the specified resource.</p>
     ///   - [`log_settings(Option<LinkLogSettings>)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::log_settings): <p>Settings for the application logs.</p>
     ///   - [`connectivity_type(Option<ConnectivityType>)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::connectivity_type): <p>The connectivity type of the link.</p>
+    ///   - [`error_details(Option<Vec::<ErrorDetail>>)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::error_details): <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    ///   - [`lock_token(Option<String>)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::lock_token): <p>The link's concurrency token. Pass it to PutLinkFlows unchanged; it changes whenever the link does.</p>
+    ///   - [`flows(Option<Vec::<Flow>>)`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkOutput::flows): <p>The link's active flows, in the form PutLinkFlows takes. Empty when the link has no modules, and absent when its modules were set with UpdateLinkModuleFlow.</p>
     /// - On failure, responds with [`SdkError<GetOutboundExternalLinkError>`](crate::operation::get_outbound_external_link::GetOutboundExternalLinkError)
     pub fn get_outbound_external_link(&self) -> crate::operation::get_outbound_external_link::builders::GetOutboundExternalLinkFluentBuilder {
         crate::operation::get_outbound_external_link::builders::GetOutboundExternalLinkFluentBuilder::new(self.handle.clone())

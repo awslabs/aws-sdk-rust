@@ -22,7 +22,7 @@ impl crate::operation::update_marketplace_revenue_share_allocation::builders::Up
 }
 /// Fluent builder constructing a request to `UpdateMarketplaceRevenueShareAllocation`.
 ///
-/// <p>Updates an existing marketplace revenue share allocation. Supports modifying effective dates, revenue share percentage, and status with time-based mutability rules.</p>
+/// <p>Updates an existing marketplace revenue share allocation. Supports modifying the revenue share percentage and status only, with time-based mutability rules.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateMarketplaceRevenueShareAllocationFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -126,19 +126,19 @@ impl UpdateMarketplaceRevenueShareAllocationFluentBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<crate::types::CatalogName> {
         self.inner.get_catalog()
     }
-    /// <p>The AWS Marketplace product identifier for the parent revenue share.</p>
-    pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.product_id(input.into());
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub fn marketplace_revenue_share_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.marketplace_revenue_share_identifier(input.into());
         self
     }
-    /// <p>The AWS Marketplace product identifier for the parent revenue share.</p>
-    pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_product_id(input);
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub fn set_marketplace_revenue_share_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_marketplace_revenue_share_identifier(input);
         self
     }
-    /// <p>The AWS Marketplace product identifier for the parent revenue share.</p>
-    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_product_id()
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub fn get_marketplace_revenue_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marketplace_revenue_share_identifier()
     }
     /// <p>The identifier of the allocation to update.</p>
     pub fn marketplace_revenue_share_allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -181,34 +181,6 @@ impl UpdateMarketplaceRevenueShareAllocationFluentBuilder {
     /// <p>A unique token to ensure idempotency of the update request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
-    }
-    /// <p>The new effective start date. Must be the first day of a month. Only modifiable on future-dated allocations.</p>
-    pub fn effective_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.effective_from(input.into());
-        self
-    }
-    /// <p>The new effective start date. Must be the first day of a month. Only modifiable on future-dated allocations.</p>
-    pub fn set_effective_from(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_effective_from(input);
-        self
-    }
-    /// <p>The new effective start date. Must be the first day of a month. Only modifiable on future-dated allocations.</p>
-    pub fn get_effective_from(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_effective_from()
-    }
-    /// <p>The new effective end date. Must be the last day of a month and on or after today.</p>
-    pub fn effective_until(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.effective_until(input.into());
-        self
-    }
-    /// <p>The new effective end date. Must be the last day of a month and on or after today.</p>
-    pub fn set_effective_until(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_effective_until(input);
-        self
-    }
-    /// <p>The new effective end date. Must be the last day of a month and on or after today.</p>
-    pub fn get_effective_until(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_effective_until()
     }
     /// <p>The new revenue share percentage. Only modifiable on future-dated allocations.</p>
     pub fn revenue_share_percent(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

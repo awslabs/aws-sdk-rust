@@ -210,6 +210,15 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     builder
 }
 
+pub(crate) fn tip_configuration_correct_errors(
+    mut builder: crate::types::builders::TipConfigurationBuilder,
+) -> crate::types::builders::TipConfigurationBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::TipStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn notification_setting_detail_correct_errors(
     mut builder: crate::types::builders::NotificationSettingDetailBuilder,
 ) -> crate::types::builders::NotificationSettingDetailBuilder {

@@ -17,6 +17,8 @@ pub struct CreateRevenueAttributionOutput {
     pub marketplace_product: ::std::option::Option<crate::types::MarketplaceProductSummary>,
     /// <p>The revision of the newly created attribution resource.</p>
     pub revision: ::std::option::Option<::std::string::String>,
+    /// <p>Program-defined key-value attributes for the revenue attribution.</p>
+    pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateRevenueAttributionOutput {
@@ -50,6 +52,10 @@ impl CreateRevenueAttributionOutput {
     pub fn revision(&self) -> ::std::option::Option<&str> {
         self.revision.as_deref()
     }
+    /// <p>Program-defined key-value attributes for the revenue attribution.</p>
+    pub fn context(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.context.as_ref()
+    }
 }
 impl ::aws_types::request_id::RequestId for CreateRevenueAttributionOutput {
     fn request_id(&self) -> Option<&str> {
@@ -74,6 +80,7 @@ pub struct CreateRevenueAttributionOutputBuilder {
     pub(crate) tenancy_model: ::std::option::Option<crate::types::TenancyModel>,
     pub(crate) marketplace_product: ::std::option::Option<crate::types::MarketplaceProductSummary>,
     pub(crate) revision: ::std::option::Option<::std::string::String>,
+    pub(crate) context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateRevenueAttributionOutputBuilder {
@@ -178,6 +185,26 @@ impl CreateRevenueAttributionOutputBuilder {
     pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision
     }
+    /// Adds a key-value pair to `context`.
+    ///
+    /// To override the contents of this collection use [`set_context`](Self::set_context).
+    ///
+    /// <p>Program-defined key-value attributes for the revenue attribution.</p>
+    pub fn context(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut hash_map = self.context.unwrap_or_default();
+        hash_map.insert(k.into(), v.into());
+        self.context = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Program-defined key-value attributes for the revenue attribution.</p>
+    pub fn set_context(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.context = input;
+        self
+    }
+    /// <p>Program-defined key-value attributes for the revenue attribution.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        &self.context
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -221,6 +248,7 @@ impl CreateRevenueAttributionOutputBuilder {
             })?,
             marketplace_product: self.marketplace_product,
             revision: self.revision,
+            context: self.context,
             _request_id: self._request_id,
         })
     }

@@ -14,12 +14,14 @@
 /// match registryrecordstatus {
 ///     RegistryRecordStatus::Approved => { /* ... */ },
 ///     RegistryRecordStatus::CreateFailed => { /* ... */ },
+///     RegistryRecordStatus::CreatePendingAuth => { /* ... */ },
 ///     RegistryRecordStatus::Creating => { /* ... */ },
 ///     RegistryRecordStatus::Deprecated => { /* ... */ },
 ///     RegistryRecordStatus::Draft => { /* ... */ },
 ///     RegistryRecordStatus::PendingApproval => { /* ... */ },
 ///     RegistryRecordStatus::Rejected => { /* ... */ },
 ///     RegistryRecordStatus::UpdateFailed => { /* ... */ },
+///     RegistryRecordStatus::UpdatePendingAuth => { /* ... */ },
 ///     RegistryRecordStatus::Updating => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -43,7 +45,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// <p>Registry record status</p>
+/// <p>The lifecycle status of a registry record. A record is <code>DRAFT</code> before it is submitted, <code>PENDING_APPROVAL</code> while it awaits curator review, and <code>APPROVED</code> after it is approved and discoverable. Rejecting a newer revision keeps the last approved revision discoverable. A <code>DEPRECATED</code> record isn't discoverable. <code>CREATING</code>, <code>UPDATING</code>, <code>CREATE_FAILED</code>, and <code>UPDATE_FAILED</code> reflect an asynchronous change that is in progress or has failed. <code>CREATE_PENDING_AUTH</code> and <code>UPDATE_PENDING_AUTH</code> mean that the record waits for a GitHub user to authorize access before it synchronizes from its GitHub source.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -53,6 +55,8 @@ pub enum RegistryRecordStatus {
     Approved,
     #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
+    CreatePendingAuth,
     #[allow(missing_docs)] // documentation missing in model
     Creating,
     #[allow(missing_docs)] // documentation missing in model
@@ -66,6 +70,8 @@ pub enum RegistryRecordStatus {
     #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
     #[allow(missing_docs)] // documentation missing in model
+    UpdatePendingAuth,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -76,12 +82,14 @@ impl ::std::convert::From<&str> for RegistryRecordStatus {
         match s {
             "APPROVED" => RegistryRecordStatus::Approved,
             "CREATE_FAILED" => RegistryRecordStatus::CreateFailed,
+            "CREATE_PENDING_AUTH" => RegistryRecordStatus::CreatePendingAuth,
             "CREATING" => RegistryRecordStatus::Creating,
             "DEPRECATED" => RegistryRecordStatus::Deprecated,
             "DRAFT" => RegistryRecordStatus::Draft,
             "PENDING_APPROVAL" => RegistryRecordStatus::PendingApproval,
             "REJECTED" => RegistryRecordStatus::Rejected,
             "UPDATE_FAILED" => RegistryRecordStatus::UpdateFailed,
+            "UPDATE_PENDING_AUTH" => RegistryRecordStatus::UpdatePendingAuth,
             "UPDATING" => RegistryRecordStatus::Updating,
             other => RegistryRecordStatus::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -100,12 +108,14 @@ impl RegistryRecordStatus {
         match self {
             RegistryRecordStatus::Approved => "APPROVED",
             RegistryRecordStatus::CreateFailed => "CREATE_FAILED",
+            RegistryRecordStatus::CreatePendingAuth => "CREATE_PENDING_AUTH",
             RegistryRecordStatus::Creating => "CREATING",
             RegistryRecordStatus::Deprecated => "DEPRECATED",
             RegistryRecordStatus::Draft => "DRAFT",
             RegistryRecordStatus::PendingApproval => "PENDING_APPROVAL",
             RegistryRecordStatus::Rejected => "REJECTED",
             RegistryRecordStatus::UpdateFailed => "UPDATE_FAILED",
+            RegistryRecordStatus::UpdatePendingAuth => "UPDATE_PENDING_AUTH",
             RegistryRecordStatus::Updating => "UPDATING",
             RegistryRecordStatus::Unknown(value) => value.as_str(),
         }
@@ -115,12 +125,14 @@ impl RegistryRecordStatus {
         &[
             "APPROVED",
             "CREATE_FAILED",
+            "CREATE_PENDING_AUTH",
             "CREATING",
             "DEPRECATED",
             "DRAFT",
             "PENDING_APPROVAL",
             "REJECTED",
             "UPDATE_FAILED",
+            "UPDATE_PENDING_AUTH",
             "UPDATING",
         ]
     }
@@ -147,12 +159,14 @@ impl ::std::fmt::Display for RegistryRecordStatus {
         match self {
             RegistryRecordStatus::Approved => write!(f, "APPROVED"),
             RegistryRecordStatus::CreateFailed => write!(f, "CREATE_FAILED"),
+            RegistryRecordStatus::CreatePendingAuth => write!(f, "CREATE_PENDING_AUTH"),
             RegistryRecordStatus::Creating => write!(f, "CREATING"),
             RegistryRecordStatus::Deprecated => write!(f, "DEPRECATED"),
             RegistryRecordStatus::Draft => write!(f, "DRAFT"),
             RegistryRecordStatus::PendingApproval => write!(f, "PENDING_APPROVAL"),
             RegistryRecordStatus::Rejected => write!(f, "REJECTED"),
             RegistryRecordStatus::UpdateFailed => write!(f, "UPDATE_FAILED"),
+            RegistryRecordStatus::UpdatePendingAuth => write!(f, "UPDATE_PENDING_AUTH"),
             RegistryRecordStatus::Updating => write!(f, "UPDATING"),
             RegistryRecordStatus::Unknown(value) => write!(f, "{value}"),
         }

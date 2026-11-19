@@ -5852,6 +5852,7 @@ impl From<crate::operation::update_distribution::UpdateDistributionError> for Er
             crate::operation::update_distribution::UpdateDistributionError::ContinuousDeploymentPolicyInUse(inner) => {
                 Error::ContinuousDeploymentPolicyInUse(inner)
             }
+            crate::operation::update_distribution::UpdateDistributionError::EntityLimitExceeded(inner) => Error::EntityLimitExceeded(inner),
             crate::operation::update_distribution::UpdateDistributionError::EntityNotFound(inner) => Error::EntityNotFound(inner),
             crate::operation::update_distribution::UpdateDistributionError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner) => {
                 Error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(inner)
@@ -6155,9 +6156,13 @@ impl From<crate::operation::update_domain_association::UpdateDomainAssociationEr
     fn from(err: crate::operation::update_domain_association::UpdateDomainAssociationError) -> Self {
         match err {
             crate::operation::update_domain_association::UpdateDomainAssociationError::AccessDenied(inner) => Error::AccessDenied(inner),
+            crate::operation::update_domain_association::UpdateDomainAssociationError::EntityLimitExceeded(inner) => {
+                Error::EntityLimitExceeded(inner)
+            }
             crate::operation::update_domain_association::UpdateDomainAssociationError::EntityNotFound(inner) => Error::EntityNotFound(inner),
             crate::operation::update_domain_association::UpdateDomainAssociationError::IllegalUpdate(inner) => Error::IllegalUpdate(inner),
             crate::operation::update_domain_association::UpdateDomainAssociationError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::operation::update_domain_association::UpdateDomainAssociationError::InvalidAssociation(inner) => Error::InvalidAssociation(inner),
             crate::operation::update_domain_association::UpdateDomainAssociationError::InvalidIfMatchVersion(inner) => {
                 Error::InvalidIfMatchVersion(inner)
             }

@@ -14,6 +14,8 @@
 /// match validationexceptionreason {
 ///     ValidationExceptionReason::FieldValidationFailed => { /* ... */ },
 ///     ValidationExceptionReason::InvalidInboundEvent => { /* ... */ },
+///     ValidationExceptionReason::KmsKeyNotFound => { /* ... */ },
+///     ValidationExceptionReason::KmsKeyUnusable => { /* ... */ },
 ///     ValidationExceptionReason::Other => { /* ... */ },
 ///     ValidationExceptionReason::UnsupportedOperation => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -49,6 +51,10 @@ pub enum ValidationExceptionReason {
     #[allow(missing_docs)] // documentation missing in model
     InvalidInboundEvent,
     #[allow(missing_docs)] // documentation missing in model
+    KmsKeyNotFound,
+    #[allow(missing_docs)] // documentation missing in model
+    KmsKeyUnusable,
+    #[allow(missing_docs)] // documentation missing in model
     Other,
     #[allow(missing_docs)] // documentation missing in model
     UnsupportedOperation,
@@ -61,6 +67,8 @@ impl ::std::convert::From<&str> for ValidationExceptionReason {
         match s {
             "fieldValidationFailed" => ValidationExceptionReason::FieldValidationFailed,
             "invalidInboundEvent" => ValidationExceptionReason::InvalidInboundEvent,
+            "kmsKeyNotFound" => ValidationExceptionReason::KmsKeyNotFound,
+            "kmsKeyUnusable" => ValidationExceptionReason::KmsKeyUnusable,
             "other" => ValidationExceptionReason::Other,
             "unsupportedOperation" => ValidationExceptionReason::UnsupportedOperation,
             other => ValidationExceptionReason::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -80,6 +88,8 @@ impl ValidationExceptionReason {
         match self {
             ValidationExceptionReason::FieldValidationFailed => "fieldValidationFailed",
             ValidationExceptionReason::InvalidInboundEvent => "invalidInboundEvent",
+            ValidationExceptionReason::KmsKeyNotFound => "kmsKeyNotFound",
+            ValidationExceptionReason::KmsKeyUnusable => "kmsKeyUnusable",
             ValidationExceptionReason::Other => "other",
             ValidationExceptionReason::UnsupportedOperation => "unsupportedOperation",
             ValidationExceptionReason::Unknown(value) => value.as_str(),
@@ -87,7 +97,14 @@ impl ValidationExceptionReason {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["fieldValidationFailed", "invalidInboundEvent", "other", "unsupportedOperation"]
+        &[
+            "fieldValidationFailed",
+            "invalidInboundEvent",
+            "kmsKeyNotFound",
+            "kmsKeyUnusable",
+            "other",
+            "unsupportedOperation",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for ValidationExceptionReason {
@@ -112,6 +129,8 @@ impl ::std::fmt::Display for ValidationExceptionReason {
         match self {
             ValidationExceptionReason::FieldValidationFailed => write!(f, "fieldValidationFailed"),
             ValidationExceptionReason::InvalidInboundEvent => write!(f, "invalidInboundEvent"),
+            ValidationExceptionReason::KmsKeyNotFound => write!(f, "kmsKeyNotFound"),
+            ValidationExceptionReason::KmsKeyUnusable => write!(f, "kmsKeyUnusable"),
             ValidationExceptionReason::Other => write!(f, "other"),
             ValidationExceptionReason::UnsupportedOperation => write!(f, "unsupportedOperation"),
             ValidationExceptionReason::Unknown(value) => write!(f, "{value}"),

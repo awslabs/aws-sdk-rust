@@ -29,6 +29,16 @@ pub(crate) fn reflens_list_firewall_domains_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_firewall_rule_domains_output_output_next_token(
+    input: &crate::operation::list_firewall_rule_domains::ListFirewallRuleDomainsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_firewall_rule_group_associations_output_output_next_token(
     input: &crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -186,6 +196,13 @@ pub(crate) fn lens_list_firewall_domain_lists_output_output_firewall_domain_list
 pub(crate) fn lens_list_firewall_domains_output_output_domains(
     input: crate::operation::list_firewall_domains::ListFirewallDomainsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
+    let input = input.domains?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_firewall_rule_domains_output_output_domains(
+    input: crate::operation::list_firewall_rule_domains::ListFirewallRuleDomainsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::FirewallRuleDomain>> {
     let input = input.domains?;
     ::std::option::Option::Some(input)
 }

@@ -7,8 +7,8 @@ pub fn ser_list_marketplace_revenue_shares_input_input(
     if let Some(var_1) = &input.catalog {
         encoder.str("Catalog").str(var_1.as_str());
     }
-    if let Some(var_2) = &input.product_ids {
-        encoder.str("ProductIds");
+    if let Some(var_2) = &input.identifiers {
+        encoder.str("Identifiers");
         encoder.array((*var_2).len());
         for item_3 in var_2 {
             {
@@ -16,8 +16,8 @@ pub fn ser_list_marketplace_revenue_shares_input_input(
             }
         }
     }
-    if let Some(var_4) = &input.product_codes {
-        encoder.str("ProductCodes");
+    if let Some(var_4) = &input.product_ids {
+        encoder.str("ProductIds");
         encoder.array((*var_4).len());
         for item_5 in var_4 {
             {
@@ -25,23 +25,32 @@ pub fn ser_list_marketplace_revenue_shares_input_input(
             }
         }
     }
-    if let Some(var_6) = &input.max_results {
-        encoder.str("MaxResults").integer(*var_6);
+    if let Some(var_6) = &input.product_codes {
+        encoder.str("ProductCodes");
+        encoder.array((*var_6).len());
+        for item_7 in var_6 {
+            {
+                encoder.str(item_7.as_str());
+            }
+        }
     }
-    if let Some(var_7) = &input.next_token {
-        encoder.str("NextToken").str(var_7.as_str());
+    if let Some(var_8) = &input.max_results {
+        encoder.str("MaxResults").integer(*var_8);
     }
-    if let Some(var_8) = &input.sort_by {
-        encoder.str("SortBy").str(var_8.as_str());
+    if let Some(var_9) = &input.next_token {
+        encoder.str("NextToken").str(var_9.as_str());
     }
-    if let Some(var_9) = &input.sort_order {
-        encoder.str("SortOrder").str(var_9.as_str());
+    if let Some(var_10) = &input.sort_by {
+        encoder.str("SortBy").str(var_10.as_str());
     }
-    if let Some(var_10) = &input.created_after {
-        encoder.str("CreatedAfter").timestamp(var_10);
+    if let Some(var_11) = &input.sort_order {
+        encoder.str("SortOrder").str(var_11.as_str());
     }
-    if let Some(var_11) = &input.created_before {
-        encoder.str("CreatedBefore").timestamp(var_11);
+    if let Some(var_12) = &input.created_after {
+        encoder.str("CreatedAfter").timestamp(var_12);
+    }
+    if let Some(var_13) = &input.created_before {
+        encoder.str("CreatedBefore").timestamp(var_13);
     }
     encoder.end();
     Ok(())

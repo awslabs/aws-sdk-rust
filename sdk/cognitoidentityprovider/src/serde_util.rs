@@ -29,6 +29,18 @@ pub(crate) fn admin_get_user_auth_factors_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_cimd_policy_output_output_correct_errors(
+    mut builder: crate::operation::create_cimd_policy::builders::CreateCimdPolicyOutputBuilder,
+) -> crate::operation::create_cimd_policy::builders::CreateCimdPolicyOutputBuilder {
+    if builder.cimd_policy.is_none() {
+        builder.cimd_policy = {
+            let builder = crate::types::builders::CimdPolicyTypeBuilder::default();
+            crate::serde_util::cimd_policy_type_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn create_identity_provider_output_output_correct_errors(
     mut builder: crate::operation::create_identity_provider::builders::CreateIdentityProviderOutputBuilder,
 ) -> crate::operation::create_identity_provider::builders::CreateIdentityProviderOutputBuilder {
@@ -48,6 +60,18 @@ pub(crate) fn create_resource_server_output_output_correct_errors(
         builder.resource_server = {
             let builder = crate::types::builders::ResourceServerTypeBuilder::default();
             Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn describe_cimd_policy_output_output_correct_errors(
+    mut builder: crate::operation::describe_cimd_policy::builders::DescribeCimdPolicyOutputBuilder,
+) -> crate::operation::describe_cimd_policy::builders::DescribeCimdPolicyOutputBuilder {
+    if builder.cimd_policy.is_none() {
+        builder.cimd_policy = {
+            let builder = crate::types::builders::CimdPolicyTypeBuilder::default();
+            crate::serde_util::cimd_policy_type_correct_errors(builder).build().ok()
         }
     }
     builder
@@ -173,6 +197,24 @@ pub(crate) fn get_user_auth_factors_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_cimd_policies_output_output_correct_errors(
+    mut builder: crate::operation::list_cimd_policies::builders::ListCimdPoliciesOutputBuilder,
+) -> crate::operation::list_cimd_policies::builders::ListCimdPoliciesOutputBuilder {
+    if builder.cimd_policies.is_none() {
+        builder.cimd_policies = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_client_metadata_urls_output_output_correct_errors(
+    mut builder: crate::operation::list_client_metadata_urls::builders::ListClientMetadataUrLsOutputBuilder,
+) -> crate::operation::list_client_metadata_urls::builders::ListClientMetadataUrLsOutputBuilder {
+    if builder.client_metadata_urls.is_none() {
+        builder.client_metadata_urls = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_identity_providers_output_output_correct_errors(
     mut builder: crate::operation::list_identity_providers::builders::ListIdentityProvidersOutputBuilder,
 ) -> crate::operation::list_identity_providers::builders::ListIdentityProvidersOutputBuilder {
@@ -254,6 +296,18 @@ pub(crate) fn start_web_authn_registration_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_cimd_policy_output_output_correct_errors(
+    mut builder: crate::operation::update_cimd_policy::builders::UpdateCimdPolicyOutputBuilder,
+) -> crate::operation::update_cimd_policy::builders::UpdateCimdPolicyOutputBuilder {
+    if builder.cimd_policy.is_none() {
+        builder.cimd_policy = {
+            let builder = crate::types::builders::CimdPolicyTypeBuilder::default();
+            crate::serde_util::cimd_policy_type_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn update_identity_provider_output_output_correct_errors(
     mut builder: crate::operation::update_identity_provider::builders::UpdateIdentityProviderOutputBuilder,
 ) -> crate::operation::update_identity_provider::builders::UpdateIdentityProviderOutputBuilder {
@@ -286,6 +340,21 @@ pub(crate) fn update_resource_server_output_output_correct_errors(
             let builder = crate::types::builders::ResourceServerTypeBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn cimd_policy_type_correct_errors(
+    mut builder: crate::types::builders::CimdPolicyTypeBuilder,
+) -> crate::types::builders::CimdPolicyTypeBuilder {
+    if builder.user_pool_id.is_none() {
+        builder.user_pool_id = Some(Default::default())
+    }
+    if builder.cimd_policy_id.is_none() {
+        builder.cimd_policy_id = Some(Default::default())
+    }
+    if builder.policy_name.is_none() {
+        builder.policy_name = Some(Default::default())
     }
     builder
 }

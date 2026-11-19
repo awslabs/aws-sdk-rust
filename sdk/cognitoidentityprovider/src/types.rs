@@ -41,6 +41,8 @@ pub use crate::types::_device_secret_verifier_config_type::DeviceSecretVerifierC
 
 pub use crate::types::_user_context_data_type::UserContextDataType;
 
+pub use crate::types::_cimd_policy_type::CimdPolicyType;
+
 pub use crate::types::_group_type::GroupType;
 
 pub use crate::types::_identity_provider_type_type::IdentityProviderTypeType;
@@ -157,6 +159,8 @@ pub use crate::types::_account_takeover_risk_configuration_type::AccountTakeover
 
 pub use crate::types::_risk_exception_configuration_type::RiskExceptionConfigurationType;
 
+pub use crate::types::_cimd_cache_action_type::CimdCacheActionType;
+
 pub use crate::types::_update_replica_status_type::UpdateReplicaStatusType;
 
 pub use crate::types::_verify_software_token_response_type::VerifySoftwareTokenResponseType;
@@ -248,6 +252,10 @@ pub use crate::types::_limit_class::LimitClass;
 pub use crate::types::_user_verification_type::UserVerificationType;
 
 pub use crate::types::_web_authn_factor_configuration_type::WebAuthnFactorConfigurationType;
+
+pub use crate::types::_cimd_policy_summary_type::CimdPolicySummaryType;
+
+pub use crate::types::_client_metadata_url_type::ClientMetadataUrlType;
 
 pub use crate::types::_provider_description::ProviderDescription;
 
@@ -395,7 +403,15 @@ mod _challenge_response;
 
 mod _challenge_response_type;
 
+mod _cimd_cache_action_type;
+
+mod _cimd_policy_summary_type;
+
+mod _cimd_policy_type;
+
 mod _client_authentication_result_type;
+
+mod _client_metadata_url_type;
 
 mod _client_secret_descriptor_type;
 

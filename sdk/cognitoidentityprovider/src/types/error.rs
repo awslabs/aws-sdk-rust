@@ -113,6 +113,8 @@ pub use crate::types::error::_unsupported_token_type_exception::UnsupportedToken
 
 pub use crate::types::error::_web_authn_configuration_missing_exception::WebAuthnConfigurationMissingException;
 
+pub use crate::types::error::_cached_cimdurl_does_not_exist_exception::CachedCimdurlDoesNotExistException;
+
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
 
 pub use crate::types::error::_enable_software_token_mfa_exception::EnableSoftwareTokenMfaException;
@@ -120,6 +122,8 @@ pub use crate::types::error::_enable_software_token_mfa_exception::EnableSoftwar
 mod _access_denied_exception;
 
 mod _alias_exists_exception;
+
+mod _cached_cimdurl_does_not_exist_exception;
 
 mod _code_delivery_failure_exception;
 

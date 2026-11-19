@@ -19,6 +19,8 @@ pub use crate::types::_function_config::FunctionConfig;
 
 pub use crate::types::_connection_function_summary::ConnectionFunctionSummary;
 
+pub use crate::types::_viewer_fallback::ViewerFallback;
+
 pub use crate::types::_connection_group::ConnectionGroup;
 
 pub use crate::types::_continuous_deployment_policy_config::ContinuousDeploymentPolicyConfig;
@@ -30,6 +32,8 @@ pub use crate::types::_distribution_config::DistributionConfig;
 pub use crate::types::_customizations::Customizations;
 
 pub use crate::types::_managed_certificate_request::ManagedCertificateRequest;
+
+pub use crate::types::_on_domain_takeover::OnDomainTakeover;
 
 pub use crate::types::_distribution_tenant::DistributionTenant;
 
@@ -328,6 +332,8 @@ pub use crate::types::_geo_restriction::GeoRestriction;
 pub use crate::types::_viewer_mtls_mode::ViewerMtlsMode;
 
 pub use crate::types::_trust_store_config::TrustStoreConfig;
+
+pub use crate::types::_serve_on::ServeOn;
 
 pub use crate::types::_customization_action_type::CustomizationActionType;
 
@@ -793,6 +799,8 @@ mod _minimum_protocol_version;
 
 mod _monitoring_subscription;
 
+mod _on_domain_takeover;
+
 mod _origin;
 
 mod _origin_access_control;
@@ -947,6 +955,8 @@ mod _s3_origin;
 
 mod _s3_origin_config;
 
+mod _serve_on;
+
 mod _session_stickiness_config;
 
 mod _signer;
@@ -1002,6 +1012,8 @@ mod _validation_token_detail;
 mod _validation_token_host;
 
 mod _viewer_certificate;
+
+mod _viewer_fallback;
 
 mod _viewer_mtls_config;
 

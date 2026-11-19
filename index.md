@@ -419,6 +419,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Partner Central Account API | [aws-sdk-partnercentralaccount](https://crates.io/crates/aws-sdk-partnercentralaccount) ([docs](https://docs.rs/aws-sdk-partnercentralaccount)) |
 | Partner Central Benefits API | [aws-sdk-partnercentralbenefits](https://crates.io/crates/aws-sdk-partnercentralbenefits) ([docs](https://docs.rs/aws-sdk-partnercentralbenefits)) |
 | Partner Central Channel API | [aws-sdk-partnercentralchannel](https://crates.io/crates/aws-sdk-partnercentralchannel) ([docs](https://docs.rs/aws-sdk-partnercentralchannel)) |
+| Partner Central Marketing API | [aws-sdk-partnercentralmarketing](https://crates.io/crates/aws-sdk-partnercentralmarketing) ([docs](https://docs.rs/aws-sdk-partnercentralmarketing)) |
 | Partner Central Revenue Measurement API | [aws-sdk-partnercentralrevenuemeasurement](https://crates.io/crates/aws-sdk-partnercentralrevenuemeasurement) ([docs](https://docs.rs/aws-sdk-partnercentralrevenuemeasurement)) |
 | Partner Central Selling API | [aws-sdk-partnercentralselling](https://crates.io/crates/aws-sdk-partnercentralselling) ([docs](https://docs.rs/aws-sdk-partnercentralselling)) |
 | Payment Cryptography Control Plane | [aws-sdk-paymentcryptography](https://crates.io/crates/aws-sdk-paymentcryptography) ([docs](https://docs.rs/aws-sdk-paymentcryptography)) |

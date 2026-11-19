@@ -153,6 +153,36 @@ pub fn de_cluster_pending_modified_values(
                 builder = builder.set_certificate_details(var_11);
             }
             ,
+            s if s.matches("VPCNetworkingEnabled") /* VPCNetworkingEnabled com.amazonaws.rds#ClusterPendingModifiedValues$VPCNetworkingEnabled */ =>  {
+                let var_12 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_vpc_networking_enabled(var_12);
+            }
+            ,
+            s if s.matches("InternetAccessGatewayEnabled") /* InternetAccessGatewayEnabled com.amazonaws.rds#ClusterPendingModifiedValues$InternetAccessGatewayEnabled */ =>  {
+                let var_13 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.rds#BooleanOptional`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_internet_access_gateway_enabled(var_13);
+            }
+            ,
             _ => {}
         }
     }

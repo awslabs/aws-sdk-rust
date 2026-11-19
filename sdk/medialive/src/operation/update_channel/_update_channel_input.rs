@@ -38,6 +38,8 @@ pub struct UpdateChannelInput {
     pub inference_settings: ::std::option::Option<crate::types::InferenceSettings>,
     /// When using MediaConnect Router as the source of a MediaLive input there's a special handoff that occurs when a router output is created. This group of settings is set on your behalf by the MediaConnect Router service using this set of settings. This setting object can only by used by that service.
     pub special_router_settings: ::std::option::Option<crate::types::SpecialRouterSettings>,
+    /// Specification of JPEG XS inputs for this channel
+    pub jpeg_xs_input_specification: ::std::option::Option<crate::types::JpegXsInputSpecification>,
 }
 impl UpdateChannelInput {
     /// Specification of CDI inputs for this channel
@@ -114,6 +116,10 @@ impl UpdateChannelInput {
     pub fn special_router_settings(&self) -> ::std::option::Option<&crate::types::SpecialRouterSettings> {
         self.special_router_settings.as_ref()
     }
+    /// Specification of JPEG XS inputs for this channel
+    pub fn jpeg_xs_input_specification(&self) -> ::std::option::Option<&crate::types::JpegXsInputSpecification> {
+        self.jpeg_xs_input_specification.as_ref()
+    }
 }
 impl UpdateChannelInput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
@@ -143,6 +149,7 @@ pub struct UpdateChannelInputBuilder {
     pub(crate) channel_security_groups: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) inference_settings: ::std::option::Option<crate::types::InferenceSettings>,
     pub(crate) special_router_settings: ::std::option::Option<crate::types::SpecialRouterSettings>,
+    pub(crate) jpeg_xs_input_specification: ::std::option::Option<crate::types::JpegXsInputSpecification>,
 }
 impl UpdateChannelInputBuilder {
     /// Specification of CDI inputs for this channel
@@ -402,6 +409,20 @@ impl UpdateChannelInputBuilder {
     pub fn get_special_router_settings(&self) -> &::std::option::Option<crate::types::SpecialRouterSettings> {
         &self.special_router_settings
     }
+    /// Specification of JPEG XS inputs for this channel
+    pub fn jpeg_xs_input_specification(mut self, input: crate::types::JpegXsInputSpecification) -> Self {
+        self.jpeg_xs_input_specification = ::std::option::Option::Some(input);
+        self
+    }
+    /// Specification of JPEG XS inputs for this channel
+    pub fn set_jpeg_xs_input_specification(mut self, input: ::std::option::Option<crate::types::JpegXsInputSpecification>) -> Self {
+        self.jpeg_xs_input_specification = input;
+        self
+    }
+    /// Specification of JPEG XS inputs for this channel
+    pub fn get_jpeg_xs_input_specification(&self) -> &::std::option::Option<crate::types::JpegXsInputSpecification> {
+        &self.jpeg_xs_input_specification
+    }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
     pub fn build(
         self,
@@ -424,6 +445,7 @@ impl UpdateChannelInputBuilder {
             channel_security_groups: self.channel_security_groups,
             inference_settings: self.inference_settings,
             special_router_settings: self.special_router_settings,
+            jpeg_xs_input_specification: self.jpeg_xs_input_specification,
         })
     }
 }

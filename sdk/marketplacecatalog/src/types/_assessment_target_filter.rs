@@ -8,6 +8,8 @@ pub struct AssessmentTargetFilter {
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID of the change set that triggered the assessments you want to list.</p>
     pub change_set_id: ::std::option::Option<::std::string::String>,
+    /// <p>A list of up to 50 entity IDs whose assessments you want to list. The response includes only the latest published assessment of each entity. You must also specify <code>FrameworkId</code> in the request, and you can't combine <code>EntityIds</code> with <code>EntityId</code> or <code>ChangeSetId</code>.</p>
+    pub entity_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssessmentTargetFilter {
     /// <p>The unique ID of the entity whose assessments you want to list.</p>
@@ -17,6 +19,12 @@ impl AssessmentTargetFilter {
     /// <p>The unique ID of the change set that triggered the assessments you want to list.</p>
     pub fn change_set_id(&self) -> ::std::option::Option<&str> {
         self.change_set_id.as_deref()
+    }
+    /// <p>A list of up to 50 entity IDs whose assessments you want to list. The response includes only the latest published assessment of each entity. You must also specify <code>FrameworkId</code> in the request, and you can't combine <code>EntityIds</code> with <code>EntityId</code> or <code>ChangeSetId</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entity_ids.is_none()`.
+    pub fn entity_ids(&self) -> &[::std::string::String] {
+        self.entity_ids.as_deref().unwrap_or_default()
     }
 }
 impl AssessmentTargetFilter {
@@ -32,6 +40,7 @@ impl AssessmentTargetFilter {
 pub struct AssessmentTargetFilterBuilder {
     pub(crate) entity_id: ::std::option::Option<::std::string::String>,
     pub(crate) change_set_id: ::std::option::Option<::std::string::String>,
+    pub(crate) entity_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl AssessmentTargetFilterBuilder {
     /// <p>The unique ID of the entity whose assessments you want to list.</p>
@@ -62,11 +71,32 @@ impl AssessmentTargetFilterBuilder {
     pub fn get_change_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.change_set_id
     }
+    /// Appends an item to `entity_ids`.
+    ///
+    /// To override the contents of this collection use [`set_entity_ids`](Self::set_entity_ids).
+    ///
+    /// <p>A list of up to 50 entity IDs whose assessments you want to list. The response includes only the latest published assessment of each entity. You must also specify <code>FrameworkId</code> in the request, and you can't combine <code>EntityIds</code> with <code>EntityId</code> or <code>ChangeSetId</code>.</p>
+    pub fn entity_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.entity_ids.unwrap_or_default();
+        v.push(input.into());
+        self.entity_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>A list of up to 50 entity IDs whose assessments you want to list. The response includes only the latest published assessment of each entity. You must also specify <code>FrameworkId</code> in the request, and you can't combine <code>EntityIds</code> with <code>EntityId</code> or <code>ChangeSetId</code>.</p>
+    pub fn set_entity_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.entity_ids = input;
+        self
+    }
+    /// <p>A list of up to 50 entity IDs whose assessments you want to list. The response includes only the latest published assessment of each entity. You must also specify <code>FrameworkId</code> in the request, and you can't combine <code>EntityIds</code> with <code>EntityId</code> or <code>ChangeSetId</code>.</p>
+    pub fn get_entity_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.entity_ids
+    }
     /// Consumes the builder and constructs a [`AssessmentTargetFilter`](crate::types::AssessmentTargetFilter).
     pub fn build(self) -> crate::types::AssessmentTargetFilter {
         crate::types::AssessmentTargetFilter {
             entity_id: self.entity_id,
             change_set_id: self.change_set_id,
+            entity_ids: self.entity_ids,
         }
     }
 }

@@ -11,6 +11,7 @@ impl super::Client {
     ///   - [`gateway_id(String)`](crate::operation::update_link_module_flow::UpdateLinkModuleFlowOutput::gateway_id): <p>The unique identifier of the gateway.</p>
     ///   - [`link_id(String)`](crate::operation::update_link_module_flow::UpdateLinkModuleFlowOutput::link_id): <p>The unique identifier of the link.</p>
     ///   - [`status(LinkStatus)`](crate::operation::update_link_module_flow::UpdateLinkModuleFlowOutput::status): <p>The status of the request.</p>
+    ///   - [`update_id(Option<String>)`](crate::operation::update_link_module_flow::UpdateLinkModuleFlowOutput::update_id): <p>The ID of the update this call started.</p>
     /// - On failure, responds with [`SdkError<UpdateLinkModuleFlowError>`](crate::operation::update_link_module_flow::UpdateLinkModuleFlowError)
     pub fn update_link_module_flow(&self) -> crate::operation::update_link_module_flow::builders::UpdateLinkModuleFlowFluentBuilder {
         crate::operation::update_link_module_flow::builders::UpdateLinkModuleFlowFluentBuilder::new(self.handle.clone())

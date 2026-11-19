@@ -3,39 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventBusesInput {
-    /// Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/<name>
-    /// /
-    /// <id>
-    /// ), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.
-    /// </id>
-    /// </name>
+    /// <p>Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.</p>
     pub name_prefix: ::std::option::Option<::std::string::String>,
-    /// AWS Account Id.
+    /// <p>AWS Account Id.</p>
     pub event_bus_account_id: ::std::option::Option<::std::string::String>,
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// Maximum number of results to return in one page of a List operation.
+    /// <p>Maximum number of results to return in one page of a List operation.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListEventBusesInput {
-    /// Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/<name>
-    /// /
-    /// <id>
-    /// ), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.
-    /// </id>
-    /// </name>
+    /// <p>Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.</p>
     pub fn name_prefix(&self) -> ::std::option::Option<&str> {
         self.name_prefix.as_deref()
     }
-    /// AWS Account Id.
+    /// <p>AWS Account Id.</p>
     pub fn event_bus_account_id(&self) -> ::std::option::Option<&str> {
         self.event_bus_account_id.as_deref()
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// Maximum number of results to return in one page of a List operation.
+    /// <p>Maximum number of results to return in one page of a List operation.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -57,74 +47,59 @@ pub struct ListEventBusesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListEventBusesInputBuilder {
-    /// Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/<name>
-    /// /
-    /// <id>
-    /// ), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.
-    /// </id>
-    /// </name>
+    /// <p>Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.</p>
     pub fn name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/<name>
-    /// /
-    /// <id>
-    /// ), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.
-    /// </id>
-    /// </name>
+    /// <p>Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.</p>
     pub fn set_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_prefix = input;
         self
     }
-    /// Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/<name>
-    /// /
-    /// <id>
-    /// ), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.
-    /// </id>
-    /// </name>
+    /// <p>Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.</p>
     pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.name_prefix
     }
-    /// AWS Account Id.
+    /// <p>AWS Account Id.</p>
     pub fn event_bus_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_bus_account_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// AWS Account Id.
+    /// <p>AWS Account Id.</p>
     pub fn set_event_bus_account_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_bus_account_id = input;
         self
     }
-    /// AWS Account Id.
+    /// <p>AWS Account Id.</p>
     pub fn get_event_bus_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_bus_account_id
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// Maximum number of results to return in one page of a List operation.
+    /// <p>Maximum number of results to return in one page of a List operation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// Maximum number of results to return in one page of a List operation.
+    /// <p>Maximum number of results to return in one page of a List operation.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// Maximum number of results to return in one page of a List operation.
+    /// <p>Maximum number of results to return in one page of a List operation.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

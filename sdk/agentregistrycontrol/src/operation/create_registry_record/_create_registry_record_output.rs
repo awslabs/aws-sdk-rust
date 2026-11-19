@@ -6,8 +6,10 @@
 pub struct CreateRegistryRecordOutput {
     /// <p>The ARN of the created registry record</p>
     pub record_arn: ::std::string::String,
-    /// <p>The status of the registry record, set to CREATING while the asynchronous workflow is in progress</p>
+    /// <p>The status of the registry record. <code>CREATING</code> means that the asynchronous workflow is in progress. <code>CREATE_PENDING_AUTH</code> means that the record waits for a GitHub user to authorize access before it synchronizes from its GitHub source. For the authorization link, see <code>authorizationData</code>.</p>
     pub status: crate::types::RegistryRecordStatus,
+    /// <p>The authorization that a GitHub user must complete before the record's synchronization starts. Present only in this response, and only while the status is <code>CREATE_PENDING_AUTH</code>. If the status is <code>CREATE_PENDING_AUTH</code> but this member is absent, call <code>UpdateRegistryRecord</code> with <code>triggerSynchronization</code> to get a new authorization link.</p>
+    pub authorization_data: ::std::option::Option<crate::types::AuthorizationData>,
     _request_id: Option<String>,
 }
 impl CreateRegistryRecordOutput {
@@ -16,9 +18,13 @@ impl CreateRegistryRecordOutput {
         use std::ops::Deref;
         self.record_arn.deref()
     }
-    /// <p>The status of the registry record, set to CREATING while the asynchronous workflow is in progress</p>
+    /// <p>The status of the registry record. <code>CREATING</code> means that the asynchronous workflow is in progress. <code>CREATE_PENDING_AUTH</code> means that the record waits for a GitHub user to authorize access before it synchronizes from its GitHub source. For the authorization link, see <code>authorizationData</code>.</p>
     pub fn status(&self) -> &crate::types::RegistryRecordStatus {
         &self.status
+    }
+    /// <p>The authorization that a GitHub user must complete before the record's synchronization starts. Present only in this response, and only while the status is <code>CREATE_PENDING_AUTH</code>. If the status is <code>CREATE_PENDING_AUTH</code> but this member is absent, call <code>UpdateRegistryRecord</code> with <code>triggerSynchronization</code> to get a new authorization link.</p>
+    pub fn authorization_data(&self) -> ::std::option::Option<&crate::types::AuthorizationData> {
+        self.authorization_data.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateRegistryRecordOutput {
@@ -39,6 +45,7 @@ impl CreateRegistryRecordOutput {
 pub struct CreateRegistryRecordOutputBuilder {
     pub(crate) record_arn: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::RegistryRecordStatus>,
+    pub(crate) authorization_data: ::std::option::Option<crate::types::AuthorizationData>,
     _request_id: Option<String>,
 }
 impl CreateRegistryRecordOutputBuilder {
@@ -57,20 +64,34 @@ impl CreateRegistryRecordOutputBuilder {
     pub fn get_record_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.record_arn
     }
-    /// <p>The status of the registry record, set to CREATING while the asynchronous workflow is in progress</p>
+    /// <p>The status of the registry record. <code>CREATING</code> means that the asynchronous workflow is in progress. <code>CREATE_PENDING_AUTH</code> means that the record waits for a GitHub user to authorize access before it synchronizes from its GitHub source. For the authorization link, see <code>authorizationData</code>.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::RegistryRecordStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The status of the registry record, set to CREATING while the asynchronous workflow is in progress</p>
+    /// <p>The status of the registry record. <code>CREATING</code> means that the asynchronous workflow is in progress. <code>CREATE_PENDING_AUTH</code> means that the record waits for a GitHub user to authorize access before it synchronizes from its GitHub source. For the authorization link, see <code>authorizationData</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RegistryRecordStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The status of the registry record, set to CREATING while the asynchronous workflow is in progress</p>
+    /// <p>The status of the registry record. <code>CREATING</code> means that the asynchronous workflow is in progress. <code>CREATE_PENDING_AUTH</code> means that the record waits for a GitHub user to authorize access before it synchronizes from its GitHub source. For the authorization link, see <code>authorizationData</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RegistryRecordStatus> {
         &self.status
+    }
+    /// <p>The authorization that a GitHub user must complete before the record's synchronization starts. Present only in this response, and only while the status is <code>CREATE_PENDING_AUTH</code>. If the status is <code>CREATE_PENDING_AUTH</code> but this member is absent, call <code>UpdateRegistryRecord</code> with <code>triggerSynchronization</code> to get a new authorization link.</p>
+    pub fn authorization_data(mut self, input: crate::types::AuthorizationData) -> Self {
+        self.authorization_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The authorization that a GitHub user must complete before the record's synchronization starts. Present only in this response, and only while the status is <code>CREATE_PENDING_AUTH</code>. If the status is <code>CREATE_PENDING_AUTH</code> but this member is absent, call <code>UpdateRegistryRecord</code> with <code>triggerSynchronization</code> to get a new authorization link.</p>
+    pub fn set_authorization_data(mut self, input: ::std::option::Option<crate::types::AuthorizationData>) -> Self {
+        self.authorization_data = input;
+        self
+    }
+    /// <p>The authorization that a GitHub user must complete before the record's synchronization starts. Present only in this response, and only while the status is <code>CREATE_PENDING_AUTH</code>. If the status is <code>CREATE_PENDING_AUTH</code> but this member is absent, call <code>UpdateRegistryRecord</code> with <code>triggerSynchronization</code> to get a new authorization link.</p>
+    pub fn get_authorization_data(&self) -> &::std::option::Option<crate::types::AuthorizationData> {
+        &self.authorization_data
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -102,6 +123,7 @@ impl CreateRegistryRecordOutputBuilder {
                     "status was not specified but it is required when building CreateRegistryRecordOutput",
                 )
             })?,
+            authorization_data: self.authorization_data,
             _request_id: self._request_id,
         })
     }

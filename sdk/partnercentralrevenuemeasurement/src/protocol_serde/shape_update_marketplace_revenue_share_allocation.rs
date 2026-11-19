@@ -192,26 +192,15 @@ pub(crate) fn de_update_marketplace_revenue_share_allocation(
     > {
         builder = match decoder.str()?.as_ref() {
             "MarketplaceRevenueShareAllocationId" => builder.set_marketplace_revenue_share_allocation_id(Some(decoder.string()?)),
-            "ProductId" => builder.set_product_id(Some(decoder.string()?)),
-            "ProductName" => {
-                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_product_name(Some(decoder.string()?))))?
-            }
-            "Arn" => builder.set_arn(Some(decoder.string()?)),
+            "MarketplaceRevenueShareIdentifier" => builder.set_marketplace_revenue_share_identifier(Some(decoder.string()?)),
             "EffectiveFrom" => builder.set_effective_from(Some(decoder.string()?)),
-            "EffectiveUntil" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_effective_until(Some(decoder.string()?)))
-            })?,
+            "EffectiveUntil" => builder.set_effective_until(Some(decoder.string()?)),
             "RevenueSharePercent" => builder.set_revenue_share_percent(Some(decoder.string()?)),
             "Status" => builder.set_status(Some(decoder.string().map(|s| crate::types::AllocationStatus::from(s.as_str()))?)),
-            "CreatedDate" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_created_date(Some(decoder.timestamp()?)))
-            })?,
-            "LastModifiedDate" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_last_modified_date(Some(decoder.timestamp()?)))
-            })?,
-            "LatestMarketplaceRevenueShareRevision" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_latest_marketplace_revenue_share_revision(Some(decoder.string()?)))
-            })?,
+            "CreatedDate" => builder.set_created_date(Some(decoder.timestamp()?)),
+            "LastModifiedDate" => builder.set_last_modified_date(Some(decoder.timestamp()?)),
+            "MarketplaceRevenueShareRevision" => builder.set_marketplace_revenue_share_revision(Some(decoder.string()?)),
+            "MarketplaceRevenueShareLatestRevision" => builder.set_marketplace_revenue_share_latest_revision(Some(decoder.string()?)),
             _ => {
                 decoder.skip()?;
                 builder

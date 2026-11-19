@@ -36,8 +36,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// How a compute target is invoked: EVENT invokes asynchronously and returns once the target has
-/// accepted the request; REQUEST_RESPONSE waits for the target to finish and surfaces its result.
+/// <p>How a compute target is invoked: EVENT invokes asynchronously and returns once the target has accepted the request; REQUEST_RESPONSE waits for the target to finish and surfaces its result.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

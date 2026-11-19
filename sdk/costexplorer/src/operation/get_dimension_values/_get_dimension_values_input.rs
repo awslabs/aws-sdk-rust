@@ -183,6 +183,16 @@ pub struct GetDimensionValuesInput {
     /// <p><code>UsageQuantity</code></p></li>
     /// <li>
     /// <p><code>NormalizedUsageAmount</code></p></li>
+    /// <li>
+    /// <p><code>BilledCost</code></p></li>
+    /// <li>
+    /// <p><code>ContractedCost</code></p></li>
+    /// <li>
+    /// <p><code>ListCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicEquivalentBilledCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicOnDemandCost</code></p></li>
     /// </ul>
     /// <p>The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
@@ -388,6 +398,16 @@ impl GetDimensionValuesInput {
     /// <p><code>UsageQuantity</code></p></li>
     /// <li>
     /// <p><code>NormalizedUsageAmount</code></p></li>
+    /// <li>
+    /// <p><code>BilledCost</code></p></li>
+    /// <li>
+    /// <p><code>ContractedCost</code></p></li>
+    /// <li>
+    /// <p><code>ListCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicEquivalentBilledCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicOnDemandCost</code></p></li>
     /// </ul>
     /// <p>The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
@@ -993,6 +1013,16 @@ impl GetDimensionValuesInputBuilder {
     /// <p><code>UsageQuantity</code></p></li>
     /// <li>
     /// <p><code>NormalizedUsageAmount</code></p></li>
+    /// <li>
+    /// <p><code>BilledCost</code></p></li>
+    /// <li>
+    /// <p><code>ContractedCost</code></p></li>
+    /// <li>
+    /// <p><code>ListCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicEquivalentBilledCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicOnDemandCost</code></p></li>
     /// </ul>
     /// <p>The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
@@ -1019,6 +1049,16 @@ impl GetDimensionValuesInputBuilder {
     /// <p><code>UsageQuantity</code></p></li>
     /// <li>
     /// <p><code>NormalizedUsageAmount</code></p></li>
+    /// <li>
+    /// <p><code>BilledCost</code></p></li>
+    /// <li>
+    /// <p><code>ContractedCost</code></p></li>
+    /// <li>
+    /// <p><code>ListCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicEquivalentBilledCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicOnDemandCost</code></p></li>
     /// </ul>
     /// <p>The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>
@@ -1043,6 +1083,16 @@ impl GetDimensionValuesInputBuilder {
     /// <p><code>UsageQuantity</code></p></li>
     /// <li>
     /// <p><code>NormalizedUsageAmount</code></p></li>
+    /// <li>
+    /// <p><code>BilledCost</code></p></li>
+    /// <li>
+    /// <p><code>ContractedCost</code></p></li>
+    /// <li>
+    /// <p><code>ListCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicEquivalentBilledCost</code></p></li>
+    /// <li>
+    /// <p><code>PublicOnDemandCost</code></p></li>
     /// </ul>
     /// <p>The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> aren't supported.</p>

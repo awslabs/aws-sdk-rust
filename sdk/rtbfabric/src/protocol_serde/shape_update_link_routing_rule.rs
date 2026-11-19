@@ -171,6 +171,13 @@ pub(crate) fn de_update_link_routing_rule(
                             .transpose()?,
                     );
                 }
+                "updateId" => {
+                    builder = builder.set_update_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "updatedAt" => {
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

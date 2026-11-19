@@ -26,6 +26,14 @@ pub enum ReferenceSummary {
     String(crate::types::StringReference),
     /// <p>Information about the reference when the <code>referenceType</code> is <code>URL</code>. Otherwise, null.</p>
     Url(crate::types::UrlReference),
+    /// <p>Information about the reference when the <code>referenceType</code> is <code>VOICEMAIL_ANALYSIS</code>. Otherwise, null.</p>
+    VoicemailAnalysis(crate::types::VoicemailAnalysisReference),
+    /// <p>Information about the reference when the <code>referenceType</code> is <code>VOICEMAIL_ANALYSIS_REDACTED</code>. Otherwise, null.</p>
+    VoicemailAnalysisRedacted(crate::types::VoicemailAnalysisReference),
+    /// <p>Information about the reference when the <code>referenceType</code> is <code>VOICEMAIL_RECORDING</code>. Otherwise, null.</p>
+    VoicemailRecording(crate::types::VoicemailRecordingReference),
+    /// <p>Information about the reference when the <code>referenceType</code> is <code>VOICEMAIL_RECORDING_REDACTED</code>. Otherwise, null.</p>
+    VoicemailRecordingRedacted(crate::types::VoicemailRecordingReference),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -179,6 +187,58 @@ impl ReferenceSummary {
     /// Returns true if this is a [`Url`](crate::types::ReferenceSummary::Url).
     pub fn is_url(&self) -> bool {
         self.as_url().is_ok()
+    }
+    /// Tries to convert the enum instance into [`VoicemailAnalysis`](crate::types::ReferenceSummary::VoicemailAnalysis), extracting the inner [`VoicemailAnalysisReference`](crate::types::VoicemailAnalysisReference).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_voicemail_analysis(&self) -> ::std::result::Result<&crate::types::VoicemailAnalysisReference, &Self> {
+        if let ReferenceSummary::VoicemailAnalysis(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`VoicemailAnalysis`](crate::types::ReferenceSummary::VoicemailAnalysis).
+    pub fn is_voicemail_analysis(&self) -> bool {
+        self.as_voicemail_analysis().is_ok()
+    }
+    /// Tries to convert the enum instance into [`VoicemailAnalysisRedacted`](crate::types::ReferenceSummary::VoicemailAnalysisRedacted), extracting the inner [`VoicemailAnalysisReference`](crate::types::VoicemailAnalysisReference).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_voicemail_analysis_redacted(&self) -> ::std::result::Result<&crate::types::VoicemailAnalysisReference, &Self> {
+        if let ReferenceSummary::VoicemailAnalysisRedacted(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`VoicemailAnalysisRedacted`](crate::types::ReferenceSummary::VoicemailAnalysisRedacted).
+    pub fn is_voicemail_analysis_redacted(&self) -> bool {
+        self.as_voicemail_analysis_redacted().is_ok()
+    }
+    /// Tries to convert the enum instance into [`VoicemailRecording`](crate::types::ReferenceSummary::VoicemailRecording), extracting the inner [`VoicemailRecordingReference`](crate::types::VoicemailRecordingReference).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_voicemail_recording(&self) -> ::std::result::Result<&crate::types::VoicemailRecordingReference, &Self> {
+        if let ReferenceSummary::VoicemailRecording(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`VoicemailRecording`](crate::types::ReferenceSummary::VoicemailRecording).
+    pub fn is_voicemail_recording(&self) -> bool {
+        self.as_voicemail_recording().is_ok()
+    }
+    /// Tries to convert the enum instance into [`VoicemailRecordingRedacted`](crate::types::ReferenceSummary::VoicemailRecordingRedacted), extracting the inner [`VoicemailRecordingReference`](crate::types::VoicemailRecordingReference).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_voicemail_recording_redacted(&self) -> ::std::result::Result<&crate::types::VoicemailRecordingReference, &Self> {
+        if let ReferenceSummary::VoicemailRecordingRedacted(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`VoicemailRecordingRedacted`](crate::types::ReferenceSummary::VoicemailRecordingRedacted).
+    pub fn is_voicemail_recording_redacted(&self) -> bool {
+        self.as_voicemail_recording_redacted().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

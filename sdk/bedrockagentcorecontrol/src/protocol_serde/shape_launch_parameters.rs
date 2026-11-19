@@ -61,6 +61,12 @@ pub fn ser_launch_parameters(
         }
         object_17.finish();
     }
+    if let Some(var_20) = &input.cpu_options {
+        #[allow(unused_mut)]
+        let mut object_21 = object.key("cpuOptions").start_object();
+        crate::protocol_serde::shape_cpu_options::ser_cpu_options(&mut object_21, var_20)?;
+        object_21.finish();
+    }
     Ok(())
 }
 
@@ -144,6 +150,9 @@ where
                         }
                         "propagatedTags" => {
                             builder = builder.set_propagated_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens, _value, depth + 1)?);
+                        }
+                        "cpuOptions" => {
+                            builder = builder.set_cpu_options(crate::protocol_serde::shape_cpu_options::de_cpu_options(tokens, _value, depth + 1)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

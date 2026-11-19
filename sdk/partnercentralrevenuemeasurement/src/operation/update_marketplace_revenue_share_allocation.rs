@@ -199,9 +199,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateMarketp
         };
 
         let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
-        if requested.should_capture("ProductId") {
-            if let ::std::option::Option::Some(value) = input.product_id.as_deref() {
-                captured.insert("ProductId", value);
+        if requested.should_capture("MarketplaceRevenueShareIdentifier") {
+            if let ::std::option::Option::Some(value) = input.marketplace_revenue_share_identifier.as_deref() {
+                captured.insert("MarketplaceRevenueShareIdentifier", value);
             }
         }
         if requested.should_capture("MarketplaceRevenueShareAllocationId") {
@@ -217,16 +217,6 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateMarketp
         if requested.should_capture("ClientToken") {
             if let ::std::option::Option::Some(value) = input.client_token.as_deref() {
                 captured.insert("ClientToken", value);
-            }
-        }
-        if requested.should_capture("EffectiveFrom") {
-            if let ::std::option::Option::Some(value) = input.effective_from.as_deref() {
-                captured.insert("EffectiveFrom", value);
-            }
-        }
-        if requested.should_capture("EffectiveUntil") {
-            if let ::std::option::Option::Some(value) = input.effective_until.as_deref() {
-                captured.insert("EffectiveUntil", value);
             }
         }
         if requested.should_capture("RevenueSharePercent") {

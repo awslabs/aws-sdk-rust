@@ -3,51 +3,41 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEventBusInput {
-    /// Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/<name>
-    /// /
-    /// <id>
-    /// ), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.
-    /// </id>
-    /// </name>
+    /// <p>Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.
+    /// <p>Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// Encryption configuration for an event bus.
+    /// <p>Encryption configuration for an event bus.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
-    /// Event storage configuration for an event bus.
+    /// <p>Event storage configuration for an event bus.</p>
     pub storage_configuration: ::std::option::Option<crate::types::StorageConfiguration>,
-    /// Tags attached to a resource, as key-value pairs.
+    /// <p>Tags attached to a resource, as key-value pairs.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.
+    /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateEventBusInput {
-    /// Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/<name>
-    /// /
-    /// <id>
-    /// ), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.
-    /// </id>
-    /// </name>
+    /// <p>Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.
+    /// <p>Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// Encryption configuration for an event bus.
+    /// <p>Encryption configuration for an event bus.</p>
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
-    /// Event storage configuration for an event bus.
+    /// <p>Event storage configuration for an event bus.</p>
     pub fn storage_configuration(&self) -> ::std::option::Option<&crate::types::StorageConfiguration> {
         self.storage_configuration.as_ref()
     }
-    /// Tags attached to a resource, as key-value pairs.
+    /// <p>Tags attached to a resource, as key-value pairs.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
-    /// Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.
+    /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -71,75 +61,60 @@ pub struct CreateEventBusInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateEventBusInputBuilder {
-    /// Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/<name>
-    /// /
-    /// <id>
-    /// ), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.
-    /// </id>
-    /// </name>
+    /// <p>Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/<name>
-    /// /
-    /// <id>
-    /// ), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.
-    /// </id>
-    /// </name>
+    /// <p>Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/<name>
-    /// /
-    /// <id>
-    /// ), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.
-    /// </id>
-    /// </name>
+    /// <p>Name of an event bus. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'. The grammar matches the name segment of EventBusArn (event-busv2/&lt;name&gt;/&lt;id&gt;), so every valid name can be represented in the bus's ARN. The same type is used everywhere a bus name appears.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.
+    /// <p>Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.
+    /// <p>Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.
+    /// <p>Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// Encryption configuration for an event bus.
+    /// <p>Encryption configuration for an event bus.</p>
     pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.encryption_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// Encryption configuration for an event bus.
+    /// <p>Encryption configuration for an event bus.</p>
     pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.encryption_configuration = input;
         self
     }
-    /// Encryption configuration for an event bus.
+    /// <p>Encryption configuration for an event bus.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
-    /// Event storage configuration for an event bus.
+    /// <p>Event storage configuration for an event bus.</p>
     pub fn storage_configuration(mut self, input: crate::types::StorageConfiguration) -> Self {
         self.storage_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// Event storage configuration for an event bus.
+    /// <p>Event storage configuration for an event bus.</p>
     pub fn set_storage_configuration(mut self, input: ::std::option::Option<crate::types::StorageConfiguration>) -> Self {
         self.storage_configuration = input;
         self
     }
-    /// Event storage configuration for an event bus.
+    /// <p>Event storage configuration for an event bus.</p>
     pub fn get_storage_configuration(&self) -> &::std::option::Option<crate::types::StorageConfiguration> {
         &self.storage_configuration
     }
@@ -147,33 +122,33 @@ impl CreateEventBusInputBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// Tags attached to a resource, as key-value pairs.
+    /// <p>Tags attached to a resource, as key-value pairs.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
         self.tags = ::std::option::Option::Some(hash_map);
         self
     }
-    /// Tags attached to a resource, as key-value pairs.
+    /// <p>Tags attached to a resource, as key-value pairs.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.tags = input;
         self
     }
-    /// Tags attached to a resource, as key-value pairs.
+    /// <p>Tags attached to a resource, as key-value pairs.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.tags
     }
-    /// Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.
+    /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.
+    /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.
+    /// <p>Unique, case-sensitive identifier that ensures the idempotency of the request. The SDK generates one automatically when the field is omitted.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

@@ -47,6 +47,8 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_marketplace_revenue_share;
+
 pub(crate) mod shape_update_marketplace_revenue_share_allocation;
 
 pub(crate) mod shape_update_revenue_attribution;
@@ -97,19 +99,31 @@ pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_marketplace_revenue_share_allocation_input;
 
+pub(crate) mod shape_update_marketplace_revenue_share_input;
+
 pub(crate) mod shape_update_revenue_attribution_input;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_context_filter;
+
 pub(crate) mod shape_marketplace_product_summary;
 
 pub(crate) mod shape_marketplace_revenue_share_allocation_summary_list;
+
+pub(crate) mod shape_marketplace_revenue_share_product_detail_list;
+
+pub(crate) mod shape_marketplace_revenue_share_product_entry;
+
+pub(crate) mod shape_marketplace_revenue_share_product_summary_list;
 
 pub(crate) mod shape_marketplace_revenue_share_summary_list;
 
 pub(crate) mod shape_revenue_attribution_allocation_error_detail_list;
 
 pub(crate) mod shape_revenue_attribution_allocation_summary_list;
+
+pub(crate) mod shape_revenue_attribution_context;
 
 pub(crate) mod shape_revenue_attribution_summaries;
 
@@ -125,10 +139,26 @@ pub(crate) mod shape_attribution_summary;
 
 pub(crate) mod shape_marketplace_revenue_share_allocation_summary;
 
+pub(crate) mod shape_marketplace_revenue_share_product_detail;
+
+pub(crate) mod shape_marketplace_revenue_share_product_summary;
+
 pub(crate) mod shape_marketplace_revenue_share_summary;
 
 pub(crate) mod shape_revenue_attribution_allocation_error_detail;
 
 pub(crate) mod shape_revenue_attribution_allocation_summary;
 
+pub(crate) mod shape_revenue_share_product_account_entry;
+
 pub(crate) mod shape_validation_exception_field;
+
+pub(crate) mod shape_revenue_share_product_account_detail_list;
+
+pub(crate) mod shape_revenue_share_product_account_summary_list;
+
+pub(crate) mod shape_revenue_share_product_account_detail;
+
+pub(crate) mod shape_revenue_share_product_account_summary;
+
+pub(crate) mod shape_revenue_share_product_account_id_list;

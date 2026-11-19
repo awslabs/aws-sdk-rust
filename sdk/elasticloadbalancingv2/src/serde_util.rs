@@ -67,6 +67,24 @@ pub(crate) fn authenticate_oidc_action_config_correct_errors(
     builder
 }
 
+pub(crate) fn client_certificate_identity_filter_correct_errors(
+    mut builder: crate::types::builders::ClientCertificateIdentityFilterBuilder,
+) -> crate::types::builders::ClientCertificateIdentityFilterBuilder {
+    if builder.field.is_none() {
+        builder.field = "no value was set".parse::<crate::types::ClientCertificateIdentityFilterField>().ok()
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::ClientCertificateIdentityFilterAction>().ok()
+    }
+    if builder.match_type.is_none() {
+        builder.match_type = "no value was set".parse::<crate::types::ClientCertificateIdentityFilterMatchType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn fixed_response_action_config_correct_errors(
     mut builder: crate::types::builders::FixedResponseActionConfigBuilder,
 ) -> crate::types::builders::FixedResponseActionConfigBuilder {

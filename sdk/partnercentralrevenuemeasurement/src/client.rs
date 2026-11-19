@@ -195,6 +195,8 @@ mod tag_resource;
 
 mod untag_resource;
 
+mod update_marketplace_revenue_share;
+
 mod update_marketplace_revenue_share_allocation;
 
 mod update_revenue_attribution;

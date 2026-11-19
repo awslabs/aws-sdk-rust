@@ -3,6 +3,10 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
+    /// <p>You don't have sufficient permissions to perform this action. For a custom voice that uses a customer managed key, Amazon Polly also returns this exception if you don't have the required Amazon Web Services KMS permissions on the key.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>The request conflicts with the current state of the resource. For a custom voice, the voice isn't in the status that the operation requires. Check the status with <code>GetVoice</code>, and then try again.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>This engine is not compatible with the voice that you have designated. Choose a new voice that is compatible with the engine or change the engine and restart the operation.</p>
     EngineNotSupportedException(crate::types::error::EngineNotSupportedException),
     /// <p>Amazon Polly can't find the specified lexicon. Verify that the lexicon's name is spelled correctly, and then try again.</p>
@@ -36,7 +40,7 @@ pub enum Error {
     MaxLexemeLengthExceededException(crate::types::error::MaxLexemeLengthExceededException),
     /// <p>The maximum number of lexicons would be exceeded by this operation.</p>
     MaxLexiconsNumberExceededException(crate::types::error::MaxLexiconsNumberExceededException),
-    /// <p>Amazon Polly can't find the specified resource. Verify that the resource exists in the Amazon Web Services account and Region of the request and that its ARN is spelled correctly, and then try again.</p>
+    /// <p>Amazon Polly can't find the specified resource. Verify that the resource exists in the Amazon Web Services account and Region of the request and that its ARN or ID is spelled correctly, and then try again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::types::error::ServiceFailureException),
@@ -70,6 +74,8 @@ pub enum Error {
 impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            Error::AccessDeniedException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::EngineNotSupportedException(inner) => inner.fmt(f),
             Error::InvalidLexiconException(inner) => inner.fmt(f),
             Error::InvalidNextTokenException(inner) => inner.fmt(f),
@@ -118,6 +124,8 @@ impl From<::aws_smithy_types::error::operation::BuildError> for Error {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
             Self::EngineNotSupportedException(inner) => inner.meta(),
             Self::InvalidLexiconException(inner) => inner.meta(),
             Self::InvalidNextTokenException(inner) => inner.meta(),
@@ -149,6 +157,34 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_voice::CreateVoiceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_voice::CreateVoiceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_voice::CreateVoiceError> for Error {
+    fn from(err: crate::operation::create_voice::CreateVoiceError) -> Self {
+        match err {
+            crate::operation::create_voice::CreateVoiceError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_voice::CreateVoiceError::InvalidTagParameterException(inner) => Error::InvalidTagParameterException(inner),
+            crate::operation::create_voice::CreateVoiceError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::create_voice::CreateVoiceError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_voice::CreateVoiceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_voice::CreateVoiceError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::create_voice::CreateVoiceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_voice::CreateVoiceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_lexicon::DeleteLexiconError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -169,6 +205,32 @@ impl From<crate::operation::delete_lexicon::DeleteLexiconError> for Error {
             crate::operation::delete_lexicon::DeleteLexiconError::LexiconNotFoundException(inner) => Error::LexiconNotFoundException(inner),
             crate::operation::delete_lexicon::DeleteLexiconError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
             crate::operation::delete_lexicon::DeleteLexiconError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_voice::DeleteVoiceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_voice::DeleteVoiceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_voice::DeleteVoiceError> for Error {
+    fn from(err: crate::operation::delete_voice::DeleteVoiceError) -> Self {
+        match err {
+            crate::operation::delete_voice::DeleteVoiceError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_voice::DeleteVoiceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_voice::DeleteVoiceError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::delete_voice::DeleteVoiceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_voice::DeleteVoiceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_voice::DeleteVoiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -248,6 +310,31 @@ impl From<crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskErr
                 Error::SynthesisTaskNotFoundException(inner)
             }
             crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_voice::GetVoiceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_voice::GetVoiceError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_voice::GetVoiceError> for Error {
+    fn from(err: crate::operation::get_voice::GetVoiceError) -> Self {
+        match err {
+            crate::operation::get_voice::GetVoiceError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_voice::GetVoiceError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+            crate::operation::get_voice::GetVoiceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_voice::GetVoiceError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_voice::GetVoiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -389,6 +476,12 @@ where
 impl From<crate::operation::start_speech_synthesis_stream::StartSpeechSynthesisStreamError> for Error {
     fn from(err: crate::operation::start_speech_synthesis_stream::StartSpeechSynthesisStreamError) -> Self {
         match err {
+            crate::operation::start_speech_synthesis_stream::StartSpeechSynthesisStreamError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_speech_synthesis_stream::StartSpeechSynthesisStreamError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::start_speech_synthesis_stream::StartSpeechSynthesisStreamError::ServiceFailureException(inner) => {
                 Error::ServiceFailureException(inner)
             }
@@ -425,6 +518,7 @@ where
 impl From<crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError> for Error {
     fn from(err: crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError) -> Self {
         match err {
+            crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::EngineNotSupportedException(inner) => {
                 Error::EngineNotSupportedException(inner)
             }
@@ -451,6 +545,9 @@ impl From<crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTas
             }
             crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::MarksNotSupportedForFormatException(inner) => {
                 Error::MarksNotSupportedForFormatException(inner)
+            }
+            crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
             }
             crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError::ServiceFailureException(inner) => {
                 Error::ServiceFailureException(inner)
@@ -482,6 +579,7 @@ where
 impl From<crate::operation::synthesize_speech::SynthesizeSpeechError> for Error {
     fn from(err: crate::operation::synthesize_speech::SynthesizeSpeechError) -> Self {
         match err {
+            crate::operation::synthesize_speech::SynthesizeSpeechError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::synthesize_speech::SynthesizeSpeechError::EngineNotSupportedException(inner) => {
                 Error::EngineNotSupportedException(inner)
             }
@@ -494,6 +592,7 @@ impl From<crate::operation::synthesize_speech::SynthesizeSpeechError> for Error 
             crate::operation::synthesize_speech::SynthesizeSpeechError::MarksNotSupportedForFormatException(inner) => {
                 Error::MarksNotSupportedForFormatException(inner)
             }
+            crate::operation::synthesize_speech::SynthesizeSpeechError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
             crate::operation::synthesize_speech::SynthesizeSpeechError::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
             crate::operation::synthesize_speech::SynthesizeSpeechError::SsmlMarksNotSupportedForTextTypeException(inner) => {
                 Error::SsmlMarksNotSupportedForTextTypeException(inner)
@@ -558,6 +657,18 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
+impl<O, E> ::std::convert::From<::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>> for Error
+where
+    O: ::std::fmt::Debug + ::std::marker::Send + ::std::marker::Sync + 'static,
+    E: ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>) -> Self {
+        Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+            meta: ::std::default::Default::default(),
+            source: err.into(),
+        })
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::types::error::StartSpeechSynthesisStreamActionStreamError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -609,6 +720,8 @@ impl From<crate::types::error::StartSpeechSynthesisStreamEventStreamError> for E
 impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Error::AccessDeniedException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::EngineNotSupportedException(inner) => inner.source(),
             Error::InvalidLexiconException(inner) => inner.source(),
             Error::InvalidNextTokenException(inner) => inner.source(),
@@ -643,6 +756,8 @@ impl ::std::error::Error for Error {
 impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::EngineNotSupportedException(e) => e.request_id(),
             Self::InvalidLexiconException(e) => e.request_id(),
             Self::InvalidNextTokenException(e) => e.request_id(),

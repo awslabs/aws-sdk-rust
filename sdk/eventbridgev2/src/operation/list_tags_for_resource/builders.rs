@@ -22,7 +22,7 @@ impl crate::operation::list_tags_for_resource::builders::ListTagsForResourceInpu
 }
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
-/// Lists the tags on an event bus, subscriber, or event source.
+/// <p>Lists the tags on an event bus, subscriber, or event source.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListTagsForResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl ListTagsForResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// ARN for an EventBridge resource that supports tagging: event buses, subscribers, and event sources.
+    /// <p>ARN for an EventBridge resource that supports tagging: event buses, subscribers, and event sources.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// ARN for an EventBridge resource that supports tagging: event buses, subscribers, and event sources.
+    /// <p>ARN for an EventBridge resource that supports tagging: event buses, subscribers, and event sources.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// ARN for an EventBridge resource that supports tagging: event buses, subscribers, and event sources.
+    /// <p>ARN for an EventBridge resource that supports tagging: event buses, subscribers, and event sources.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }

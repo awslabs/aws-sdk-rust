@@ -22,7 +22,7 @@ impl crate::operation::batch_get_discoverable_registry_record::builders::BatchGe
 }
 /// Fluent builder constructing a request to `BatchGetDiscoverableRegistryRecord`.
 ///
-/// <p>Retrieves multiple discoverable registry records by ID from a single registry. Records that cannot be retrieved are reported individually in the <code>errors</code> list rather than failing the entire request.</p>
+/// <p>Retrieves multiple discoverable registry records by ID from a single registry. Records that cannot be retrieved are reported individually in the <code>errors</code> list rather than failing the entire request. For each skill record that has a skill package, the operation also returns <code>artifact</code>. It contains a short-lived download URL and a SHA-256 checksum for the package of the record's latest approved revision. If the registry can't create a download URL for a package, the whole request fails.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct BatchGetDiscoverableRegistryRecordFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

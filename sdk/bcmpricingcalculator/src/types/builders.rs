@@ -9,6 +9,12 @@ pub use crate::types::_filter_timestamp::FilterTimestampBuilder;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
 
+pub use crate::types::_get_usage_lines_estimated_cost_input::GetUsageLinesEstimatedCostInputBuilder;
+
+pub use crate::types::_get_usage_lines_estimated_cost_line_item::GetUsageLinesEstimatedCostLineItemBuilder;
+
+pub use crate::types::_get_usage_lines_estimated_cost_error::GetUsageLinesEstimatedCostErrorBuilder;
+
 pub use crate::types::_cost_amount::CostAmountBuilder;
 
 pub use crate::types::_list_bill_estimates_filter::ListBillEstimatesFilterBuilder;
@@ -22,6 +28,8 @@ pub use crate::types::_bill_scenario_summary::BillScenarioSummaryBuilder;
 pub use crate::types::_list_workload_estimates_filter::ListWorkloadEstimatesFilterBuilder;
 
 pub use crate::types::_workload_estimate_summary::WorkloadEstimateSummaryBuilder;
+
+pub use crate::types::_get_usage_lines_estimated_cost_estimated_cost::GetUsageLinesEstimatedCostEstimatedCostBuilder;
 
 pub use crate::types::_bill_estimate_commitment_summary::BillEstimateCommitmentSummaryBuilder;
 

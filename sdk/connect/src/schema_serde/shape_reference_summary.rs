@@ -101,6 +101,46 @@ static REFERENCESUMMARY_MEMBER_CONTACTANALYSIS: ::aws_smithy_schema::Schema<'sta
     "ContactAnalysis",
     10,
 );
+static REFERENCESUMMARY_MEMBER_VOICEMAILRECORDING: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.connect#ReferenceSummary$VoicemailRecording",
+        "com.amazonaws.connect",
+        "ReferenceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VoicemailRecording",
+    11,
+);
+static REFERENCESUMMARY_MEMBER_VOICEMAILRECORDINGREDACTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.connect#ReferenceSummary$VoicemailRecordingRedacted",
+        "com.amazonaws.connect",
+        "ReferenceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VoicemailRecordingRedacted",
+    12,
+);
+static REFERENCESUMMARY_MEMBER_VOICEMAILANALYSIS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.connect#ReferenceSummary$VoicemailAnalysis",
+        "com.amazonaws.connect",
+        "ReferenceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VoicemailAnalysis",
+    13,
+);
+static REFERENCESUMMARY_MEMBER_VOICEMAILANALYSISREDACTED: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.connect#ReferenceSummary$VoicemailAnalysisRedacted",
+        "com.amazonaws.connect",
+        "ReferenceSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "VoicemailAnalysisRedacted",
+    14,
+);
 static REFERENCESUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.connect#ReferenceSummary", "com.amazonaws.connect", "ReferenceSummary"),
     ::aws_smithy_schema::ShapeType::Union,
@@ -116,6 +156,10 @@ static REFERENCESUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smi
         &REFERENCESUMMARY_MEMBER_DATE,
         &REFERENCESUMMARY_MEMBER_EMAIL,
         &REFERENCESUMMARY_MEMBER_CONTACTANALYSIS,
+        &REFERENCESUMMARY_MEMBER_VOICEMAILRECORDING,
+        &REFERENCESUMMARY_MEMBER_VOICEMAILRECORDINGREDACTED,
+        &REFERENCESUMMARY_MEMBER_VOICEMAILANALYSIS,
+        &REFERENCESUMMARY_MEMBER_VOICEMAILANALYSISREDACTED,
     ],
 );
 impl crate::types::ReferenceSummary {
@@ -166,6 +210,18 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::ReferenceS
             Self::ContactAnalysis(val) => {
                 ser.write_struct(&REFERENCESUMMARY_MEMBER_CONTACTANALYSIS, val)?;
             }
+            Self::VoicemailRecording(val) => {
+                ser.write_struct(&REFERENCESUMMARY_MEMBER_VOICEMAILRECORDING, val)?;
+            }
+            Self::VoicemailRecordingRedacted(val) => {
+                ser.write_struct(&REFERENCESUMMARY_MEMBER_VOICEMAILRECORDINGREDACTED, val)?;
+            }
+            Self::VoicemailAnalysis(val) => {
+                ser.write_struct(&REFERENCESUMMARY_MEMBER_VOICEMAILANALYSIS, val)?;
+            }
+            Self::VoicemailAnalysisRedacted(val) => {
+                ser.write_struct(&REFERENCESUMMARY_MEMBER_VOICEMAILANALYSISREDACTED, val)?;
+            }
             Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
         }
         Ok(())
@@ -198,6 +254,10 @@ impl crate::types::ReferenceSummary {
                 Some(8) => Self::Date(crate::types::DateReference::deserialize(deser)?),
                 Some(9) => Self::Email(crate::types::EmailReference::deserialize(deser)?),
                 Some(10) => Self::ContactAnalysis(crate::types::ContactAnalysisReference::deserialize(deser)?),
+                Some(11) => Self::VoicemailRecording(crate::types::VoicemailRecordingReference::deserialize(deser)?),
+                Some(12) => Self::VoicemailRecordingRedacted(crate::types::VoicemailRecordingReference::deserialize(deser)?),
+                Some(13) => Self::VoicemailAnalysis(crate::types::VoicemailAnalysisReference::deserialize(deser)?),
+                Some(14) => Self::VoicemailAnalysisRedacted(crate::types::VoicemailAnalysisReference::deserialize(deser)?),
                 _ => Self::Unknown,
             });
             Ok(())

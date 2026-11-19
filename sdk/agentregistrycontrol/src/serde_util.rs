@@ -248,6 +248,30 @@ pub(crate) fn auto_detection_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn git_hub_synchronized_source_correct_errors(
+    mut builder: crate::types::builders::GitHubSynchronizedSourceBuilder,
+) -> crate::types::builders::GitHubSynchronizedSourceBuilder {
+    if builder.url.is_none() {
+        builder.url = Some(Default::default())
+    }
+    if builder.synchronized_at.is_none() {
+        builder.synchronized_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.commit_id.is_none() {
+        builder.commit_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn o_auth2_authorization_data_correct_errors(
+    mut builder: crate::types::builders::OAuth2AuthorizationDataBuilder,
+) -> crate::types::builders::OAuth2AuthorizationDataBuilder {
+    if builder.authorization_url.is_none() {
+        builder.authorization_url = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn provenance_correct_errors(mut builder: crate::types::builders::ProvenanceBuilder) -> crate::types::builders::ProvenanceBuilder {
     if builder.relation.is_none() {
         builder.relation = "no value was set".parse::<crate::types::ProvenanceRelation>().ok()
@@ -311,6 +335,18 @@ pub(crate) fn registry_summary_correct_errors(
     }
     if builder.updated_at.is_none() {
         builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn s3_synchronized_source_correct_errors(
+    mut builder: crate::types::builders::S3SynchronizedSourceBuilder,
+) -> crate::types::builders::S3SynchronizedSourceBuilder {
+    if builder.url.is_none() {
+        builder.url = Some(Default::default())
+    }
+    if builder.synchronized_at.is_none() {
+        builder.synchronized_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }

@@ -12,11 +12,11 @@ pub struct OpportunitySummaryView {
     pub opportunity_team: ::std::option::Option<::std::vec::Vec<crate::types::Contact>>,
     /// <p>Identifies the type of support the partner needs from AWS.</p>
     pub primary_needs_from_aws: ::std::option::Option<::std::vec::Vec<crate::types::PrimaryNeedFromAws>>,
-    /// <p>An object that contains the customer's <code>Account</code> and <code>Contact</code>.</p>
+    /// <p>Contains details about the customer that the opportunity belongs to.</p>
     pub customer: ::std::option::Option<crate::types::Customer>,
     /// <p>Contains summary information about the project associated with the opportunity, including project name, description, timeline, and other relevant details.</p>
     pub project: ::std::option::Option<crate::types::ProjectView>,
-    /// <p>This field provides the associations' information for other entities with the opportunity. These entities include identifiers for <code>AWSProducts</code>, <code>Partner Solutions</code>, and <code>AWSMarketplaceOffers</code>.</p>
+    /// <p>Lists the identifiers of entities that relate to the opportunity, such as AWS products, partner solutions, and AWS Marketplace offers.</p>
     pub related_entity_identifiers: ::std::option::Option<crate::types::RelatedEntityIdentifiers>,
 }
 impl OpportunitySummaryView {
@@ -40,7 +40,7 @@ impl OpportunitySummaryView {
     pub fn primary_needs_from_aws(&self) -> &[crate::types::PrimaryNeedFromAws] {
         self.primary_needs_from_aws.as_deref().unwrap_or_default()
     }
-    /// <p>An object that contains the customer's <code>Account</code> and <code>Contact</code>.</p>
+    /// <p>Contains details about the customer that the opportunity belongs to.</p>
     pub fn customer(&self) -> ::std::option::Option<&crate::types::Customer> {
         self.customer.as_ref()
     }
@@ -48,7 +48,7 @@ impl OpportunitySummaryView {
     pub fn project(&self) -> ::std::option::Option<&crate::types::ProjectView> {
         self.project.as_ref()
     }
-    /// <p>This field provides the associations' information for other entities with the opportunity. These entities include identifiers for <code>AWSProducts</code>, <code>Partner Solutions</code>, and <code>AWSMarketplaceOffers</code>.</p>
+    /// <p>Lists the identifiers of entities that relate to the opportunity, such as AWS products, partner solutions, and AWS Marketplace offers.</p>
     pub fn related_entity_identifiers(&self) -> ::std::option::Option<&crate::types::RelatedEntityIdentifiers> {
         self.related_entity_identifiers.as_ref()
     }
@@ -141,17 +141,17 @@ impl OpportunitySummaryViewBuilder {
     pub fn get_primary_needs_from_aws(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PrimaryNeedFromAws>> {
         &self.primary_needs_from_aws
     }
-    /// <p>An object that contains the customer's <code>Account</code> and <code>Contact</code>.</p>
+    /// <p>Contains details about the customer that the opportunity belongs to.</p>
     pub fn customer(mut self, input: crate::types::Customer) -> Self {
         self.customer = ::std::option::Option::Some(input);
         self
     }
-    /// <p>An object that contains the customer's <code>Account</code> and <code>Contact</code>.</p>
+    /// <p>Contains details about the customer that the opportunity belongs to.</p>
     pub fn set_customer(mut self, input: ::std::option::Option<crate::types::Customer>) -> Self {
         self.customer = input;
         self
     }
-    /// <p>An object that contains the customer's <code>Account</code> and <code>Contact</code>.</p>
+    /// <p>Contains details about the customer that the opportunity belongs to.</p>
     pub fn get_customer(&self) -> &::std::option::Option<crate::types::Customer> {
         &self.customer
     }
@@ -169,17 +169,17 @@ impl OpportunitySummaryViewBuilder {
     pub fn get_project(&self) -> &::std::option::Option<crate::types::ProjectView> {
         &self.project
     }
-    /// <p>This field provides the associations' information for other entities with the opportunity. These entities include identifiers for <code>AWSProducts</code>, <code>Partner Solutions</code>, and <code>AWSMarketplaceOffers</code>.</p>
+    /// <p>Lists the identifiers of entities that relate to the opportunity, such as AWS products, partner solutions, and AWS Marketplace offers.</p>
     pub fn related_entity_identifiers(mut self, input: crate::types::RelatedEntityIdentifiers) -> Self {
         self.related_entity_identifiers = ::std::option::Option::Some(input);
         self
     }
-    /// <p>This field provides the associations' information for other entities with the opportunity. These entities include identifiers for <code>AWSProducts</code>, <code>Partner Solutions</code>, and <code>AWSMarketplaceOffers</code>.</p>
+    /// <p>Lists the identifiers of entities that relate to the opportunity, such as AWS products, partner solutions, and AWS Marketplace offers.</p>
     pub fn set_related_entity_identifiers(mut self, input: ::std::option::Option<crate::types::RelatedEntityIdentifiers>) -> Self {
         self.related_entity_identifiers = input;
         self
     }
-    /// <p>This field provides the associations' information for other entities with the opportunity. These entities include identifiers for <code>AWSProducts</code>, <code>Partner Solutions</code>, and <code>AWSMarketplaceOffers</code>.</p>
+    /// <p>Lists the identifiers of entities that relate to the opportunity, such as AWS products, partner solutions, and AWS Marketplace offers.</p>
     pub fn get_related_entity_identifiers(&self) -> &::std::option::Option<crate::types::RelatedEntityIdentifiers> {
         &self.related_entity_identifiers
     }

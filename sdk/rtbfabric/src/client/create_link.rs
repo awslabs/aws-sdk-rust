@@ -22,6 +22,7 @@ impl super::Client {
     ///   - [`attributes(Option<LinkAttributes>)`](crate::operation::create_link::CreateLinkOutput::attributes): <p>Attributes of the link.</p>
     ///   - [`log_settings(Option<LinkLogSettings>)`](crate::operation::create_link::CreateLinkOutput::log_settings): <p>Describes the settings for a link log.</p>
     ///   - [`connectivity_type(Option<ConnectivityType>)`](crate::operation::create_link::CreateLinkOutput::connectivity_type): <p>The connectivity type of the link.</p>
+    ///   - [`error_details(Option<Vec::<ErrorDetail>>)`](crate::operation::create_link::CreateLinkOutput::error_details): <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
     ///   - [`link_id(String)`](crate::operation::create_link::CreateLinkOutput::link_id): <p>The unique identifier of the link.</p>
     ///   - [`customer_provided_id(Option<String>)`](crate::operation::create_link::CreateLinkOutput::customer_provided_id): <p>The customer-provided unique identifier of the link.</p>
     /// - On failure, responds with [`SdkError<CreateLinkError>`](crate::operation::create_link::CreateLinkError)

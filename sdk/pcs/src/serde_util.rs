@@ -412,6 +412,24 @@ pub(crate) fn cgroup_custom_setting_correct_errors(
     builder
 }
 
+pub(crate) fn job_submit_plugin_correct_errors(
+    mut builder: crate::types::builders::JobSubmitPluginBuilder,
+) -> crate::types::builders::JobSubmitPluginBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::JobSubmitPluginType>().ok()
+    }
+    if builder.script_source.is_none() {
+        builder.script_source = {
+            let builder = crate::types::builders::JobSubmitScriptSourceBuilder::default();
+            crate::serde_util::job_submit_script_source_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn jwt_key_correct_errors(mut builder: crate::types::builders::JwtKeyBuilder) -> crate::types::builders::JwtKeyBuilder {
     if builder.secret_arn.is_none() {
         builder.secret_arn = Some(Default::default())
@@ -457,6 +475,15 @@ pub(crate) fn slurmdbd_custom_setting_correct_errors(
     }
     if builder.parameter_value.is_none() {
         builder.parameter_value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn job_submit_script_source_correct_errors(
+    mut builder: crate::types::builders::JobSubmitScriptSourceBuilder,
+) -> crate::types::builders::JobSubmitScriptSourceBuilder {
+    if builder.script_location.is_none() {
+        builder.script_location = Some(Default::default())
     }
     builder
 }

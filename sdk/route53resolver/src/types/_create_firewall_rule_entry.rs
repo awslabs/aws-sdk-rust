@@ -107,8 +107,10 @@ pub struct CreateFirewallRuleEntry {
     /// <p><code>DnsThreatProtection</code> — match a built-in DNS Firewall Advanced threat detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p></li>
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — match a third-party threat feed delivered through Amazon Web Services Marketplace. The selected partner must be an active subscription on the calling account.</p></li>
+    /// <li>
+    /// <p><code>AutoAllowlist</code> — automatically observe the domains that the VPCs associated with the rule group resolve, and allow the ones that you approve. See <code>AutoAllowlistConfig</code>.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
     pub firewall_rule_type: ::std::option::Option<crate::types::FirewallRuleType>,
 }
 impl CreateFirewallRuleEntry {
@@ -246,8 +248,10 @@ impl CreateFirewallRuleEntry {
     /// <p><code>DnsThreatProtection</code> — match a built-in DNS Firewall Advanced threat detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p></li>
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — match a third-party threat feed delivered through Amazon Web Services Marketplace. The selected partner must be an active subscription on the calling account.</p></li>
+    /// <li>
+    /// <p><code>AutoAllowlist</code> — automatically observe the domains that the VPCs associated with the rule group resolve, and allow the ones that you approve. See <code>AutoAllowlistConfig</code>.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
     pub fn firewall_rule_type(&self) -> ::std::option::Option<&crate::types::FirewallRuleType> {
         self.firewall_rule_type.as_ref()
     }
@@ -686,8 +690,10 @@ impl CreateFirewallRuleEntryBuilder {
     /// <p><code>DnsThreatProtection</code> — match a built-in DNS Firewall Advanced threat detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p></li>
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — match a third-party threat feed delivered through Amazon Web Services Marketplace. The selected partner must be an active subscription on the calling account.</p></li>
+    /// <li>
+    /// <p><code>AutoAllowlist</code> — automatically observe the domains that the VPCs associated with the rule group resolve, and allow the ones that you approve. See <code>AutoAllowlistConfig</code>.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
     pub fn firewall_rule_type(mut self, input: crate::types::FirewallRuleType) -> Self {
         self.firewall_rule_type = ::std::option::Option::Some(input);
         self
@@ -702,8 +708,10 @@ impl CreateFirewallRuleEntryBuilder {
     /// <p><code>DnsThreatProtection</code> — match a built-in DNS Firewall Advanced threat detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p></li>
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — match a third-party threat feed delivered through Amazon Web Services Marketplace. The selected partner must be an active subscription on the calling account.</p></li>
+    /// <li>
+    /// <p><code>AutoAllowlist</code> — automatically observe the domains that the VPCs associated with the rule group resolve, and allow the ones that you approve. See <code>AutoAllowlistConfig</code>.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
     pub fn set_firewall_rule_type(mut self, input: ::std::option::Option<crate::types::FirewallRuleType>) -> Self {
         self.firewall_rule_type = input;
         self
@@ -718,8 +726,10 @@ impl CreateFirewallRuleEntryBuilder {
     /// <p><code>DnsThreatProtection</code> — match a built-in DNS Firewall Advanced threat detector (<code>DGA</code>, <code>DNS_TUNNELING</code>, or <code>DICTIONARY_DGA</code>).</p></li>
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — match a third-party threat feed delivered through Amazon Web Services Marketplace. The selected partner must be an active subscription on the calling account.</p></li>
+    /// <li>
+    /// <p><code>AutoAllowlist</code> — automatically observe the domains that the VPCs associated with the rule group resolve, and allow the ones that you approve. See <code>AutoAllowlistConfig</code>.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
     pub fn get_firewall_rule_type(&self) -> &::std::option::Option<crate::types::FirewallRuleType> {
         &self.firewall_rule_type
     }

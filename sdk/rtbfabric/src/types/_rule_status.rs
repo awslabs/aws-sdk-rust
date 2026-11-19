@@ -13,8 +13,10 @@
 /// # let rulestatus = unimplemented!();
 /// match rulestatus {
 ///     RuleStatus::Active => { /* ... */ },
+///     RuleStatus::CreateFailed => { /* ... */ },
 ///     RuleStatus::CreationInProgress => { /* ... */ },
 ///     RuleStatus::Deleted => { /* ... */ },
+///     RuleStatus::DeleteFailed => { /* ... */ },
 ///     RuleStatus::DeletionInProgress => { /* ... */ },
 ///     RuleStatus::Failed => { /* ... */ },
 ///     RuleStatus::UpdateInProgress => { /* ... */ },
@@ -40,7 +42,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Status of a routing rule
+/// <p>Status of a routing rule</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -49,9 +51,13 @@ pub enum RuleStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
     #[allow(missing_docs)] // documentation missing in model
+    CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CreationInProgress,
     #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
+    DeleteFailed,
     #[allow(missing_docs)] // documentation missing in model
     DeletionInProgress,
     #[allow(missing_docs)] // documentation missing in model
@@ -66,8 +72,10 @@ impl ::std::convert::From<&str> for RuleStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => RuleStatus::Active,
+            "CREATE_FAILED" => RuleStatus::CreateFailed,
             "CREATION_IN_PROGRESS" => RuleStatus::CreationInProgress,
             "DELETED" => RuleStatus::Deleted,
+            "DELETE_FAILED" => RuleStatus::DeleteFailed,
             "DELETION_IN_PROGRESS" => RuleStatus::DeletionInProgress,
             "FAILED" => RuleStatus::Failed,
             "UPDATE_IN_PROGRESS" => RuleStatus::UpdateInProgress,
@@ -87,8 +95,10 @@ impl RuleStatus {
     pub fn as_str(&self) -> &str {
         match self {
             RuleStatus::Active => "ACTIVE",
+            RuleStatus::CreateFailed => "CREATE_FAILED",
             RuleStatus::CreationInProgress => "CREATION_IN_PROGRESS",
             RuleStatus::Deleted => "DELETED",
+            RuleStatus::DeleteFailed => "DELETE_FAILED",
             RuleStatus::DeletionInProgress => "DELETION_IN_PROGRESS",
             RuleStatus::Failed => "FAILED",
             RuleStatus::UpdateInProgress => "UPDATE_IN_PROGRESS",
@@ -99,8 +109,10 @@ impl RuleStatus {
     pub const fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
+            "CREATE_FAILED",
             "CREATION_IN_PROGRESS",
             "DELETED",
+            "DELETE_FAILED",
             "DELETION_IN_PROGRESS",
             "FAILED",
             "UPDATE_IN_PROGRESS",
@@ -128,8 +140,10 @@ impl ::std::fmt::Display for RuleStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             RuleStatus::Active => write!(f, "ACTIVE"),
+            RuleStatus::CreateFailed => write!(f, "CREATE_FAILED"),
             RuleStatus::CreationInProgress => write!(f, "CREATION_IN_PROGRESS"),
             RuleStatus::Deleted => write!(f, "DELETED"),
+            RuleStatus::DeleteFailed => write!(f, "DELETE_FAILED"),
             RuleStatus::DeletionInProgress => write!(f, "DELETION_IN_PROGRESS"),
             RuleStatus::Failed => write!(f, "FAILED"),
             RuleStatus::UpdateInProgress => write!(f, "UPDATE_IN_PROGRESS"),

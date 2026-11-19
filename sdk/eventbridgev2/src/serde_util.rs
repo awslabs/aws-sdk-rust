@@ -29,6 +29,15 @@ pub(crate) fn put_resource_policy_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn rotate_webhook_credentials_output_output_correct_errors(
+    mut builder: crate::operation::rotate_webhook_credentials::builders::RotateWebhookCredentialsOutputBuilder,
+) -> crate::operation::rotate_webhook_credentials::builders::RotateWebhookCredentialsOutputBuilder {
+    if builder.secret_arn.is_none() {
+        builder.secret_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn invoke_configuration_correct_errors(
     mut builder: crate::types::builders::InvokeConfigurationBuilder,
 ) -> crate::types::builders::InvokeConfigurationBuilder {
@@ -68,6 +77,18 @@ pub(crate) fn jsonata_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn msk_parameters_correct_errors(
+    mut builder: crate::types::builders::MskParametersBuilder,
+) -> crate::types::builders::MskParametersBuilder {
+    if builder.topic_name.is_none() {
+        builder.topic_name = Some(Default::default())
+    }
+    if builder.connectivity.is_none() {
+        builder.connectivity = "no value was set".parse::<crate::types::MskConnectivity>().ok()
+    }
+    builder
+}
+
 pub(crate) fn partner_events_source_configuration_correct_errors(
     mut builder: crate::types::builders::PartnerEventsSourceConfigurationBuilder,
 ) -> crate::types::builders::PartnerEventsSourceConfigurationBuilder {
@@ -98,6 +119,18 @@ pub(crate) fn universal_target_parameters_correct_errors(
     builder
 }
 
+pub(crate) fn webhook_events_source_configuration_correct_errors(
+    mut builder: crate::types::builders::WebhookEventsSourceConfigurationBuilder,
+) -> crate::types::builders::WebhookEventsSourceConfigurationBuilder {
+    if builder.auth_configuration.is_none() {
+        builder.auth_configuration = Some(crate::types::WebhookAuthConfiguration::Unknown)
+    }
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn deduplication_configuration_correct_errors(
     mut builder: crate::types::builders::DeduplicationConfigurationBuilder,
 ) -> crate::types::builders::DeduplicationConfigurationBuilder {
@@ -113,6 +146,49 @@ pub(crate) fn filter_correct_errors(mut builder: crate::types::builders::FilterB
     }
     if builder.scope.is_none() {
         builder.scope = "no value was set".parse::<crate::types::FilterScope>().ok()
+    }
+    builder
+}
+
+pub(crate) fn webhook_deduplication_configuration_correct_errors(
+    mut builder: crate::types::builders::WebhookDeduplicationConfigurationBuilder,
+) -> crate::types::builders::WebhookDeduplicationConfigurationBuilder {
+    if builder.deduplication_type.is_none() {
+        builder.deduplication_type = "no value was set".parse::<crate::types::WebhookDeduplicationType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn msk_header_correct_errors(mut builder: crate::types::builders::MskHeaderBuilder) -> crate::types::builders::MskHeaderBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn webhook_hmac_auth_configuration_correct_errors(
+    mut builder: crate::types::builders::WebhookHmacAuthConfigurationBuilder,
+) -> crate::types::builders::WebhookHmacAuthConfigurationBuilder {
+    if builder.algorithm.is_none() {
+        builder.algorithm = "no value was set".parse::<crate::types::WebhookHmacAlgorithm>().ok()
+    }
+    if builder.encoding.is_none() {
+        builder.encoding = "no value was set".parse::<crate::types::WebhookHmacEncoding>().ok()
+    }
+    if builder.signature_http_header.is_none() {
+        builder.signature_http_header = Some(Default::default())
+    }
+    if builder.signed_message_composition.is_none() {
+        builder.signed_message_composition = "no value was set".parse::<crate::types::WebhookSignedMessageComposition>().ok()
+    }
+    builder
+}
+
+pub(crate) fn webhook_static_token_auth_configuration_correct_errors(
+    mut builder: crate::types::builders::WebhookStaticTokenAuthConfigurationBuilder,
+) -> crate::types::builders::WebhookStaticTokenAuthConfigurationBuilder {
+    if builder.token_http_header.is_none() {
+        builder.token_http_header = Some(Default::default())
     }
     builder
 }

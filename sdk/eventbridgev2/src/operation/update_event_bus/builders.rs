@@ -22,7 +22,7 @@ impl crate::operation::update_event_bus::builders::UpdateEventBusInputBuilder {
 }
 /// Fluent builder constructing a request to `UpdateEventBus`.
 ///
-/// Updates an event bus. The update is asynchronous: the bus moves to UPDATING and returns to ACTIVE when the change is applied. Fields omitted from the request are left unchanged.
+/// <p>Updates an event bus. The update is asynchronous: the bus moves to UPDATING and returns to ACTIVE when the change is applied. Fields omitted from the request are left unchanged.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateEventBusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,59 +108,59 @@ impl UpdateEventBusFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn event_bus_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_bus_arn(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn set_event_bus_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_bus_arn(input);
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn get_event_bus_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_event_bus_arn()
     }
-    /// Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.
+    /// <p>Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.
+    /// <p>Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.
+    /// <p>Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }
-    /// Encryption configuration for an event bus.
+    /// <p>Encryption configuration for an event bus.</p>
     pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
         self.inner = self.inner.encryption_configuration(input);
         self
     }
-    /// Encryption configuration for an event bus.
+    /// <p>Encryption configuration for an event bus.</p>
     pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
         self.inner = self.inner.set_encryption_configuration(input);
         self
     }
-    /// Encryption configuration for an event bus.
+    /// <p>Encryption configuration for an event bus.</p>
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         self.inner.get_encryption_configuration()
     }
-    /// Event storage configuration for an event bus.
+    /// <p>Event storage configuration for an event bus.</p>
     pub fn storage_configuration(mut self, input: crate::types::StorageConfiguration) -> Self {
         self.inner = self.inner.storage_configuration(input);
         self
     }
-    /// Event storage configuration for an event bus.
+    /// <p>Event storage configuration for an event bus.</p>
     pub fn set_storage_configuration(mut self, input: ::std::option::Option<crate::types::StorageConfiguration>) -> Self {
         self.inner = self.inner.set_storage_configuration(input);
         self
     }
-    /// Event storage configuration for an event bus.
+    /// <p>Event storage configuration for an event bus.</p>
     pub fn get_storage_configuration(&self) -> &::std::option::Option<crate::types::StorageConfiguration> {
         self.inner.get_storage_configuration()
     }

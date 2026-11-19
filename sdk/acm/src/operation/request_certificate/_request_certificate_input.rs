@@ -24,7 +24,7 @@ pub struct RequestCertificateInput {
     /// <p>The domain name that you want ACM to use to send you emails so that you can validate domain ownership.</p>
     pub domain_validation_options: ::std::option::Option<::std::vec::Vec<crate::types::DomainValidationOption>>,
     /// <p>You can use this parameter to specify whether to export your certificate.</p>
-    /// <p>Certificate transparency logging opt-out is no longer available. All public certificates are recorded in a certificate transparency log. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>.</p>
+    /// <p>Certificate transparency logging opt-out is no longer available. ACM records all public certificates other than Amazon N2 certificates in a certificate transparency log. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>.</p>
     /// <p>You can export public ACM certificates to use with Amazon Web Services services as well as outside the Amazon Web Services Cloud. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html">Certificate Manager exportable public certificate</a>.</p>
     pub options: ::std::option::Option<crate::types::CertificateOptions>,
     /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon Web Services Private Certificate Authority</a> user guide. The ARN must have the following form:</p>
@@ -50,6 +50,37 @@ pub struct RequestCertificateInput {
     pub key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
     /// <p>Identifies the Amazon Web Services service that manages the certificate issued by ACM.</p>
     pub managed_by: ::std::option::Option<crate::types::CertificateManagedBy>,
+    /// <p>The Extended Key Usage profile of the certificate. You can specify this parameter only when <code>RootHierarchyType</code> is <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code>. If you specify <code>CertificateUsage</code> with any other root hierarchy type, or without <code>RootHierarchyType</code>, the request fails with a <code>ValidationException</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLIENT_AND_SERVER_AUTH</code> authenticates both the client and the server. Valid for both N2 root hierarchy types.</p></li>
+    /// <li>
+    /// <p><code>CLIENT_AUTH_ONLY</code> authenticates only the client. Valid only for <code>N2_AMAZON_MANAGED</code>.</p></li>
+    /// </ul>
+    /// <p>Default: CLIENT_AND_SERVER_AUTH</p>
+    pub certificate_usage: ::std::option::Option<crate::types::CertificateUsage>,
+    /// <p>The root hierarchy from which ACM issues the certificate. Specify one of the following values to request an Amazon N2 certificate:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>N2_AMAZON_MANAGED</code> – An Amazon N2 certificate that chains to an Amazon N2 root. The maximum validity period, which is also the default, is 395 days.</p></li>
+    /// <li>
+    /// <p><code>N2_SFG2_AMAZON_MANAGED</code> – An Amazon N2 certificate that chains to an Amazon N2 root cross-signed by Starfield G2. The maximum validity period, which is also the default, is 98 days.</p></li>
+    /// </ul>
+    /// <p>You cannot specify <code>RootHierarchyType</code> together with <code>CertificateAuthorityArn</code>.</p>
+    /// <p>If you omit this parameter, ACM issues a standard public certificate. A request that specifies any value other than <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code> fails with a <code>ValidationException</code>.</p>
+    /// <p>An Amazon N2 certificate request must specify a <code>ValidationMethod</code> of <code>DNS</code>. Amazon N2 certificates are not recorded in a certificate transparency log.</p>
+    /// <p>A request for a validity period longer than the maximum fails with a <code>ValidationException</code>.</p><note>
+    /// <p>Algorithms supported for an N2 certificate request include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RSA_2048</code></p></li>
+    /// <li>
+    /// <p><code>EC_prime256v1</code></p></li>
+    /// <li>
+    /// <p><code>EC_secp384r1</code></p></li>
+    /// </ul>
+    /// </note>
+    pub root_hierarchy_type: ::std::option::Option<crate::types::RootHierarchyType>,
 }
 impl RequestCertificateInput {
     /// <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.</p>
@@ -87,7 +118,7 @@ impl RequestCertificateInput {
         self.domain_validation_options.as_deref().unwrap_or_default()
     }
     /// <p>You can use this parameter to specify whether to export your certificate.</p>
-    /// <p>Certificate transparency logging opt-out is no longer available. All public certificates are recorded in a certificate transparency log. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>.</p>
+    /// <p>Certificate transparency logging opt-out is no longer available. ACM records all public certificates other than Amazon N2 certificates in a certificate transparency log. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>.</p>
     /// <p>You can export public ACM certificates to use with Amazon Web Services services as well as outside the Amazon Web Services Cloud. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html">Certificate Manager exportable public certificate</a>.</p>
     pub fn options(&self) -> ::std::option::Option<&crate::types::CertificateOptions> {
         self.options.as_ref()
@@ -125,6 +156,41 @@ impl RequestCertificateInput {
     pub fn managed_by(&self) -> ::std::option::Option<&crate::types::CertificateManagedBy> {
         self.managed_by.as_ref()
     }
+    /// <p>The Extended Key Usage profile of the certificate. You can specify this parameter only when <code>RootHierarchyType</code> is <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code>. If you specify <code>CertificateUsage</code> with any other root hierarchy type, or without <code>RootHierarchyType</code>, the request fails with a <code>ValidationException</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLIENT_AND_SERVER_AUTH</code> authenticates both the client and the server. Valid for both N2 root hierarchy types.</p></li>
+    /// <li>
+    /// <p><code>CLIENT_AUTH_ONLY</code> authenticates only the client. Valid only for <code>N2_AMAZON_MANAGED</code>.</p></li>
+    /// </ul>
+    /// <p>Default: CLIENT_AND_SERVER_AUTH</p>
+    pub fn certificate_usage(&self) -> ::std::option::Option<&crate::types::CertificateUsage> {
+        self.certificate_usage.as_ref()
+    }
+    /// <p>The root hierarchy from which ACM issues the certificate. Specify one of the following values to request an Amazon N2 certificate:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>N2_AMAZON_MANAGED</code> – An Amazon N2 certificate that chains to an Amazon N2 root. The maximum validity period, which is also the default, is 395 days.</p></li>
+    /// <li>
+    /// <p><code>N2_SFG2_AMAZON_MANAGED</code> – An Amazon N2 certificate that chains to an Amazon N2 root cross-signed by Starfield G2. The maximum validity period, which is also the default, is 98 days.</p></li>
+    /// </ul>
+    /// <p>You cannot specify <code>RootHierarchyType</code> together with <code>CertificateAuthorityArn</code>.</p>
+    /// <p>If you omit this parameter, ACM issues a standard public certificate. A request that specifies any value other than <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code> fails with a <code>ValidationException</code>.</p>
+    /// <p>An Amazon N2 certificate request must specify a <code>ValidationMethod</code> of <code>DNS</code>. Amazon N2 certificates are not recorded in a certificate transparency log.</p>
+    /// <p>A request for a validity period longer than the maximum fails with a <code>ValidationException</code>.</p><note>
+    /// <p>Algorithms supported for an N2 certificate request include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RSA_2048</code></p></li>
+    /// <li>
+    /// <p><code>EC_prime256v1</code></p></li>
+    /// <li>
+    /// <p><code>EC_secp384r1</code></p></li>
+    /// </ul>
+    /// </note>
+    pub fn root_hierarchy_type(&self) -> ::std::option::Option<&crate::types::RootHierarchyType> {
+        self.root_hierarchy_type.as_ref()
+    }
 }
 impl RequestCertificateInput {
     /// Creates a new builder-style object to manufacture [`RequestCertificateInput`](crate::operation::request_certificate::RequestCertificateInput).
@@ -147,6 +213,8 @@ pub struct RequestCertificateInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) key_algorithm: ::std::option::Option<crate::types::KeyAlgorithm>,
     pub(crate) managed_by: ::std::option::Option<crate::types::CertificateManagedBy>,
+    pub(crate) certificate_usage: ::std::option::Option<crate::types::CertificateUsage>,
+    pub(crate) root_hierarchy_type: ::std::option::Option<crate::types::RootHierarchyType>,
 }
 impl RequestCertificateInputBuilder {
     /// <p>Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com.</p>
@@ -263,21 +331,21 @@ impl RequestCertificateInputBuilder {
         &self.domain_validation_options
     }
     /// <p>You can use this parameter to specify whether to export your certificate.</p>
-    /// <p>Certificate transparency logging opt-out is no longer available. All public certificates are recorded in a certificate transparency log. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>.</p>
+    /// <p>Certificate transparency logging opt-out is no longer available. ACM records all public certificates other than Amazon N2 certificates in a certificate transparency log. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>.</p>
     /// <p>You can export public ACM certificates to use with Amazon Web Services services as well as outside the Amazon Web Services Cloud. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html">Certificate Manager exportable public certificate</a>.</p>
     pub fn options(mut self, input: crate::types::CertificateOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
     }
     /// <p>You can use this parameter to specify whether to export your certificate.</p>
-    /// <p>Certificate transparency logging opt-out is no longer available. All public certificates are recorded in a certificate transparency log. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>.</p>
+    /// <p>Certificate transparency logging opt-out is no longer available. ACM records all public certificates other than Amazon N2 certificates in a certificate transparency log. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>.</p>
     /// <p>You can export public ACM certificates to use with Amazon Web Services services as well as outside the Amazon Web Services Cloud. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html">Certificate Manager exportable public certificate</a>.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::CertificateOptions>) -> Self {
         self.options = input;
         self
     }
     /// <p>You can use this parameter to specify whether to export your certificate.</p>
-    /// <p>Certificate transparency logging opt-out is no longer available. All public certificates are recorded in a certificate transparency log. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>.</p>
+    /// <p>Certificate transparency logging opt-out is no longer available. ACM records all public certificates other than Amazon N2 certificates in a certificate transparency log. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate Transparency Logging</a>.</p>
     /// <p>You can export public ACM certificates to use with Amazon Web Services services as well as outside the Amazon Web Services Cloud. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html">Certificate Manager exportable public certificate</a>.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::CertificateOptions> {
         &self.options
@@ -389,6 +457,115 @@ impl RequestCertificateInputBuilder {
     pub fn get_managed_by(&self) -> &::std::option::Option<crate::types::CertificateManagedBy> {
         &self.managed_by
     }
+    /// <p>The Extended Key Usage profile of the certificate. You can specify this parameter only when <code>RootHierarchyType</code> is <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code>. If you specify <code>CertificateUsage</code> with any other root hierarchy type, or without <code>RootHierarchyType</code>, the request fails with a <code>ValidationException</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLIENT_AND_SERVER_AUTH</code> authenticates both the client and the server. Valid for both N2 root hierarchy types.</p></li>
+    /// <li>
+    /// <p><code>CLIENT_AUTH_ONLY</code> authenticates only the client. Valid only for <code>N2_AMAZON_MANAGED</code>.</p></li>
+    /// </ul>
+    /// <p>Default: CLIENT_AND_SERVER_AUTH</p>
+    pub fn certificate_usage(mut self, input: crate::types::CertificateUsage) -> Self {
+        self.certificate_usage = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Extended Key Usage profile of the certificate. You can specify this parameter only when <code>RootHierarchyType</code> is <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code>. If you specify <code>CertificateUsage</code> with any other root hierarchy type, or without <code>RootHierarchyType</code>, the request fails with a <code>ValidationException</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLIENT_AND_SERVER_AUTH</code> authenticates both the client and the server. Valid for both N2 root hierarchy types.</p></li>
+    /// <li>
+    /// <p><code>CLIENT_AUTH_ONLY</code> authenticates only the client. Valid only for <code>N2_AMAZON_MANAGED</code>.</p></li>
+    /// </ul>
+    /// <p>Default: CLIENT_AND_SERVER_AUTH</p>
+    pub fn set_certificate_usage(mut self, input: ::std::option::Option<crate::types::CertificateUsage>) -> Self {
+        self.certificate_usage = input;
+        self
+    }
+    /// <p>The Extended Key Usage profile of the certificate. You can specify this parameter only when <code>RootHierarchyType</code> is <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code>. If you specify <code>CertificateUsage</code> with any other root hierarchy type, or without <code>RootHierarchyType</code>, the request fails with a <code>ValidationException</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CLIENT_AND_SERVER_AUTH</code> authenticates both the client and the server. Valid for both N2 root hierarchy types.</p></li>
+    /// <li>
+    /// <p><code>CLIENT_AUTH_ONLY</code> authenticates only the client. Valid only for <code>N2_AMAZON_MANAGED</code>.</p></li>
+    /// </ul>
+    /// <p>Default: CLIENT_AND_SERVER_AUTH</p>
+    pub fn get_certificate_usage(&self) -> &::std::option::Option<crate::types::CertificateUsage> {
+        &self.certificate_usage
+    }
+    /// <p>The root hierarchy from which ACM issues the certificate. Specify one of the following values to request an Amazon N2 certificate:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>N2_AMAZON_MANAGED</code> – An Amazon N2 certificate that chains to an Amazon N2 root. The maximum validity period, which is also the default, is 395 days.</p></li>
+    /// <li>
+    /// <p><code>N2_SFG2_AMAZON_MANAGED</code> – An Amazon N2 certificate that chains to an Amazon N2 root cross-signed by Starfield G2. The maximum validity period, which is also the default, is 98 days.</p></li>
+    /// </ul>
+    /// <p>You cannot specify <code>RootHierarchyType</code> together with <code>CertificateAuthorityArn</code>.</p>
+    /// <p>If you omit this parameter, ACM issues a standard public certificate. A request that specifies any value other than <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code> fails with a <code>ValidationException</code>.</p>
+    /// <p>An Amazon N2 certificate request must specify a <code>ValidationMethod</code> of <code>DNS</code>. Amazon N2 certificates are not recorded in a certificate transparency log.</p>
+    /// <p>A request for a validity period longer than the maximum fails with a <code>ValidationException</code>.</p><note>
+    /// <p>Algorithms supported for an N2 certificate request include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RSA_2048</code></p></li>
+    /// <li>
+    /// <p><code>EC_prime256v1</code></p></li>
+    /// <li>
+    /// <p><code>EC_secp384r1</code></p></li>
+    /// </ul>
+    /// </note>
+    pub fn root_hierarchy_type(mut self, input: crate::types::RootHierarchyType) -> Self {
+        self.root_hierarchy_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The root hierarchy from which ACM issues the certificate. Specify one of the following values to request an Amazon N2 certificate:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>N2_AMAZON_MANAGED</code> – An Amazon N2 certificate that chains to an Amazon N2 root. The maximum validity period, which is also the default, is 395 days.</p></li>
+    /// <li>
+    /// <p><code>N2_SFG2_AMAZON_MANAGED</code> – An Amazon N2 certificate that chains to an Amazon N2 root cross-signed by Starfield G2. The maximum validity period, which is also the default, is 98 days.</p></li>
+    /// </ul>
+    /// <p>You cannot specify <code>RootHierarchyType</code> together with <code>CertificateAuthorityArn</code>.</p>
+    /// <p>If you omit this parameter, ACM issues a standard public certificate. A request that specifies any value other than <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code> fails with a <code>ValidationException</code>.</p>
+    /// <p>An Amazon N2 certificate request must specify a <code>ValidationMethod</code> of <code>DNS</code>. Amazon N2 certificates are not recorded in a certificate transparency log.</p>
+    /// <p>A request for a validity period longer than the maximum fails with a <code>ValidationException</code>.</p><note>
+    /// <p>Algorithms supported for an N2 certificate request include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RSA_2048</code></p></li>
+    /// <li>
+    /// <p><code>EC_prime256v1</code></p></li>
+    /// <li>
+    /// <p><code>EC_secp384r1</code></p></li>
+    /// </ul>
+    /// </note>
+    pub fn set_root_hierarchy_type(mut self, input: ::std::option::Option<crate::types::RootHierarchyType>) -> Self {
+        self.root_hierarchy_type = input;
+        self
+    }
+    /// <p>The root hierarchy from which ACM issues the certificate. Specify one of the following values to request an Amazon N2 certificate:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>N2_AMAZON_MANAGED</code> – An Amazon N2 certificate that chains to an Amazon N2 root. The maximum validity period, which is also the default, is 395 days.</p></li>
+    /// <li>
+    /// <p><code>N2_SFG2_AMAZON_MANAGED</code> – An Amazon N2 certificate that chains to an Amazon N2 root cross-signed by Starfield G2. The maximum validity period, which is also the default, is 98 days.</p></li>
+    /// </ul>
+    /// <p>You cannot specify <code>RootHierarchyType</code> together with <code>CertificateAuthorityArn</code>.</p>
+    /// <p>If you omit this parameter, ACM issues a standard public certificate. A request that specifies any value other than <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code> fails with a <code>ValidationException</code>.</p>
+    /// <p>An Amazon N2 certificate request must specify a <code>ValidationMethod</code> of <code>DNS</code>. Amazon N2 certificates are not recorded in a certificate transparency log.</p>
+    /// <p>A request for a validity period longer than the maximum fails with a <code>ValidationException</code>.</p><note>
+    /// <p>Algorithms supported for an N2 certificate request include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>RSA_2048</code></p></li>
+    /// <li>
+    /// <p><code>EC_prime256v1</code></p></li>
+    /// <li>
+    /// <p><code>EC_secp384r1</code></p></li>
+    /// </ul>
+    /// </note>
+    pub fn get_root_hierarchy_type(&self) -> &::std::option::Option<crate::types::RootHierarchyType> {
+        &self.root_hierarchy_type
+    }
     /// Consumes the builder and constructs a [`RequestCertificateInput`](crate::operation::request_certificate::RequestCertificateInput).
     pub fn build(
         self,
@@ -404,6 +581,8 @@ impl RequestCertificateInputBuilder {
             tags: self.tags,
             key_algorithm: self.key_algorithm,
             managed_by: self.managed_by,
+            certificate_usage: self.certificate_usage,
+            root_hierarchy_type: self.root_hierarchy_type,
         })
     }
 }

@@ -17,13 +17,19 @@ pub use crate::types::_currency_code::CurrencyCode;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
+pub use crate::types::_rate_type::RateType;
+
 pub use crate::types::_cost_difference::CostDifference;
 
 pub use crate::types::_filter_timestamp::FilterTimestamp;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
-pub use crate::types::_rate_type::RateType;
+pub use crate::types::_get_usage_lines_estimated_cost_input::GetUsageLinesEstimatedCostInput;
+
+pub use crate::types::_get_usage_lines_estimated_cost_line_item::GetUsageLinesEstimatedCostLineItem;
+
+pub use crate::types::_get_usage_lines_estimated_cost_error::GetUsageLinesEstimatedCostError;
 
 pub use crate::types::_cost_amount::CostAmount;
 
@@ -38,6 +44,10 @@ pub use crate::types::_bill_scenario_summary::BillScenarioSummary;
 pub use crate::types::_list_workload_estimates_filter::ListWorkloadEstimatesFilter;
 
 pub use crate::types::_workload_estimate_summary::WorkloadEstimateSummary;
+
+pub use crate::types::_get_usage_lines_estimated_cost_estimated_cost::GetUsageLinesEstimatedCostEstimatedCost;
+
+pub use crate::types::_get_usage_lines_estimated_cost_error_code::GetUsageLinesEstimatedCostErrorCode;
 
 pub use crate::types::_bill_estimate_commitment_summary::BillEstimateCommitmentSummary;
 
@@ -240,6 +250,16 @@ mod _expression;
 mod _expression_filter;
 
 mod _filter_timestamp;
+
+mod _get_usage_lines_estimated_cost_error;
+
+mod _get_usage_lines_estimated_cost_error_code;
+
+mod _get_usage_lines_estimated_cost_estimated_cost;
+
+mod _get_usage_lines_estimated_cost_input;
+
+mod _get_usage_lines_estimated_cost_line_item;
 
 mod _group_sharing_preference_enum;
 

@@ -35,6 +35,8 @@ pub use crate::types::error::_invalid_change_batch::InvalidChangeBatch;
 
 pub use crate::types::error::_no_such_health_check::NoSuchHealthCheck;
 
+pub use crate::types::error::_no_such_health_check_source::NoSuchHealthCheckSource;
+
 pub use crate::types::error::_throttling_exception::ThrottlingException;
 
 pub use crate::types::error::_cidr_collection_already_exists_exception::CidrCollectionAlreadyExistsException;
@@ -42,6 +44,10 @@ pub use crate::types::error::_cidr_collection_already_exists_exception::CidrColl
 pub use crate::types::error::_health_check_already_exists::HealthCheckAlreadyExists;
 
 pub use crate::types::error::_too_many_health_checks::TooManyHealthChecks;
+
+pub use crate::types::error::_health_check_source_already_exists::HealthCheckSourceAlreadyExists;
+
+pub use crate::types::error::_too_many_health_check_sources::TooManyHealthCheckSources;
 
 pub use crate::types::error::_delegation_set_not_available::DelegationSetNotAvailable;
 
@@ -171,6 +177,8 @@ mod _health_check_already_exists;
 
 mod _health_check_in_use;
 
+mod _health_check_source_already_exists;
+
 mod _health_check_version_mismatch;
 
 mod _hosted_zone_already_exists;
@@ -237,6 +245,8 @@ mod _no_such_geo_location;
 
 mod _no_such_health_check;
 
+mod _no_such_health_check_source;
+
 mod _no_such_hosted_zone;
 
 mod _no_such_key_signing_key;
@@ -258,6 +268,8 @@ mod _public_zone_vpc_association;
 mod _query_logging_config_already_exists;
 
 mod _throttling_exception;
+
+mod _too_many_health_check_sources;
 
 mod _too_many_health_checks;
 

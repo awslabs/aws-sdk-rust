@@ -129,6 +129,8 @@ pub use crate::types::_comment_update_content::CommentUpdateContent;
 
 pub use crate::types::_custom_update_content::CustomUpdateContent;
 
+pub use crate::types::_sla_update_content::SlaUpdateContent;
+
 pub use crate::types::_contact_content::ContactContent;
 
 pub use crate::types::_sla_content::SlaContent;
@@ -184,6 +186,8 @@ pub use crate::types::_field_namespace::FieldNamespace;
 pub use crate::types::_layout_sections::LayoutSections;
 
 pub use crate::types::_tag_propagation_resource_type::TagPropagationResourceType;
+
+pub use crate::types::_sla_update_configuration::SlaUpdateConfiguration;
 
 pub use crate::types::_sla_configuration::SlaConfiguration;
 
@@ -422,6 +426,10 @@ mod _sla_input_content;
 mod _sla_status;
 
 mod _sla_type;
+
+mod _sla_update_configuration;
+
+mod _sla_update_content;
 
 mod _sort;
 

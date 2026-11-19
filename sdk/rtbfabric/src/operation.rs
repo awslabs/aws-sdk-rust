@@ -46,6 +46,12 @@ pub mod delete_responder_gateway;
 /// Types for the `DisassociateCertificate` operation.
 pub mod disassociate_certificate;
 
+/// Types for the `GetAvailableModule` operation.
+pub mod get_available_module;
+
+/// Types for the `GetAvailableModuleVersion` operation.
+pub mod get_available_module_version;
+
 /// Types for the `GetCertificateAssociation` operation.
 pub mod get_certificate_association;
 
@@ -67,6 +73,15 @@ pub mod get_requester_gateway;
 /// Types for the `GetResponderGateway` operation.
 pub mod get_responder_gateway;
 
+/// Types for the `GetUpdate` operation.
+pub mod get_update;
+
+/// Types for the `ListAvailableModuleVersions` operation.
+pub mod list_available_module_versions;
+
+/// Types for the `ListAvailableModules` operation.
+pub mod list_available_modules;
+
 /// Types for the `ListCertificateAssociations` operation.
 pub mod list_certificate_associations;
 
@@ -84,6 +99,12 @@ pub mod list_responder_gateways;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `ListUpdates` operation.
+pub mod list_updates;
+
+/// Types for the `PutLinkFlows` operation.
+pub mod put_link_flows;
 
 /// Types for the `RejectLink` operation.
 pub mod reject_link;

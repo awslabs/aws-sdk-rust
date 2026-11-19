@@ -4,23 +4,23 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeRemediationTask {
-    /// <p>The current status of the code remediation task.</p>
+    /// <p>The current status of the overall code remediation task.</p>
     pub status: crate::types::CodeRemediationTaskStatus,
-    /// <p>The reason for the current status of the code remediation task.</p>
+    /// <p>The reason for the current status of the overall code remediation task.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
-    /// <p>The list of details for the code remediation task, including repository name, code diff link, and pull request link.</p>
+    /// <p>The list of details for a code remediation task, including repository names, status of code remediation for each associated repository, and generated code diff or pull request links.</p>
     pub task_details: ::std::option::Option<::std::vec::Vec<crate::types::CodeRemediationTaskDetails>>,
 }
 impl CodeRemediationTask {
-    /// <p>The current status of the code remediation task.</p>
+    /// <p>The current status of the overall code remediation task.</p>
     pub fn status(&self) -> &crate::types::CodeRemediationTaskStatus {
         &self.status
     }
-    /// <p>The reason for the current status of the code remediation task.</p>
+    /// <p>The reason for the current status of the overall code remediation task.</p>
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
         self.status_reason.as_deref()
     }
-    /// <p>The list of details for the code remediation task, including repository name, code diff link, and pull request link.</p>
+    /// <p>The list of details for a code remediation task, including repository names, status of code remediation for each associated repository, and generated code diff or pull request links.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.task_details.is_none()`.
     pub fn task_details(&self) -> &[crate::types::CodeRemediationTaskDetails] {
@@ -43,32 +43,32 @@ pub struct CodeRemediationTaskBuilder {
     pub(crate) task_details: ::std::option::Option<::std::vec::Vec<crate::types::CodeRemediationTaskDetails>>,
 }
 impl CodeRemediationTaskBuilder {
-    /// <p>The current status of the code remediation task.</p>
+    /// <p>The current status of the overall code remediation task.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::CodeRemediationTaskStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The current status of the code remediation task.</p>
+    /// <p>The current status of the overall code remediation task.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::CodeRemediationTaskStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The current status of the code remediation task.</p>
+    /// <p>The current status of the overall code remediation task.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::CodeRemediationTaskStatus> {
         &self.status
     }
-    /// <p>The reason for the current status of the code remediation task.</p>
+    /// <p>The reason for the current status of the overall code remediation task.</p>
     pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.status_reason = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The reason for the current status of the code remediation task.</p>
+    /// <p>The reason for the current status of the overall code remediation task.</p>
     pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status_reason = input;
         self
     }
-    /// <p>The reason for the current status of the code remediation task.</p>
+    /// <p>The reason for the current status of the overall code remediation task.</p>
     pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.status_reason
     }
@@ -76,19 +76,19 @@ impl CodeRemediationTaskBuilder {
     ///
     /// To override the contents of this collection use [`set_task_details`](Self::set_task_details).
     ///
-    /// <p>The list of details for the code remediation task, including repository name, code diff link, and pull request link.</p>
+    /// <p>The list of details for a code remediation task, including repository names, status of code remediation for each associated repository, and generated code diff or pull request links.</p>
     pub fn task_details(mut self, input: crate::types::CodeRemediationTaskDetails) -> Self {
         let mut v = self.task_details.unwrap_or_default();
         v.push(input);
         self.task_details = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The list of details for the code remediation task, including repository name, code diff link, and pull request link.</p>
+    /// <p>The list of details for a code remediation task, including repository names, status of code remediation for each associated repository, and generated code diff or pull request links.</p>
     pub fn set_task_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CodeRemediationTaskDetails>>) -> Self {
         self.task_details = input;
         self
     }
-    /// <p>The list of details for the code remediation task, including repository name, code diff link, and pull request link.</p>
+    /// <p>The list of details for a code remediation task, including repository names, status of code remediation for each associated repository, and generated code diff or pull request links.</p>
     pub fn get_task_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CodeRemediationTaskDetails>> {
         &self.task_details
     }

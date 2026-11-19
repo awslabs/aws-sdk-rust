@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>You do not have sufficient access to perform this action.</p>
+    /// <p>The request is denied because you don't have sufficient permissions to perform this operation. Verify that you have the required permissions and try again.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// <p>The request could not be processed because of conflict in the current state of the resource.</p>
+    /// <p>The request couldn't be processed because the resource is in a conflicting state. Verify the resource's current state and retry the request.</p>
     ConflictException(crate::types::error::ConflictException),
     /// <p>The requested data is currently unavailable.</p>
     DataUnavailableException(crate::types::error::DataUnavailableException),
     /// <p>An internal error has occurred. Retry your request, but if the problem persists, contact Amazon Web Services support.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The specified resource was not found.</p>
+    /// <p>The specified resource wasn't found.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>The request would cause you to exceed your service quota.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
@@ -748,6 +748,45 @@ impl From<crate::operation::get_preferences::GetPreferencesError> for Error {
             crate::operation::get_preferences::GetPreferencesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_preferences::GetPreferencesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_preferences::GetPreferencesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_usage_lines_estimated_cost::GetUsageLinesEstimatedCostError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_usage_lines_estimated_cost::GetUsageLinesEstimatedCostError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_usage_lines_estimated_cost::GetUsageLinesEstimatedCostError> for Error {
+    fn from(err: crate::operation::get_usage_lines_estimated_cost::GetUsageLinesEstimatedCostError) -> Self {
+        match err {
+            crate::operation::get_usage_lines_estimated_cost::GetUsageLinesEstimatedCostError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_usage_lines_estimated_cost::GetUsageLinesEstimatedCostError::DataUnavailableException(inner) => {
+                Error::DataUnavailableException(inner)
+            }
+            crate::operation::get_usage_lines_estimated_cost::GetUsageLinesEstimatedCostError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_usage_lines_estimated_cost::GetUsageLinesEstimatedCostError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_usage_lines_estimated_cost::GetUsageLinesEstimatedCostError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_usage_lines_estimated_cost::GetUsageLinesEstimatedCostError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

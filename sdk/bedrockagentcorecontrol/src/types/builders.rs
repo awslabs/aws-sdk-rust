@@ -467,6 +467,8 @@ pub use crate::types::_kms_key_source_type::KmsKeySourceTypeBuilder;
 
 pub use crate::types::_payment_credential_provider_configuration::PaymentCredentialProviderConfigurationBuilder;
 
+pub use crate::types::_aws_billing_connector_configuration::AwsBillingConnectorConfigurationBuilder;
+
 pub use crate::types::_custom_claim_validation_type::CustomClaimValidationTypeBuilder;
 
 pub use crate::types::_secrets_manager_location::SecretsManagerLocationBuilder;
@@ -554,6 +556,8 @@ pub use crate::types::_http_post_lifecycle_hook_action::HttpPostLifecycleHookAct
 pub use crate::types::_instance_requirements::InstanceRequirementsBuilder;
 
 pub use crate::types::_capacity_reservation_specification::CapacityReservationSpecificationBuilder;
+
+pub use crate::types::_cpu_options::CpuOptionsBuilder;
 
 pub use crate::types::_ebs_volume_configuration::EbsVolumeConfigurationBuilder;
 

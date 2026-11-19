@@ -23,9 +23,17 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_get_deployment_configuration;
+
+pub(crate) mod shape_get_deployment_configuration_job;
+
+pub(crate) mod shape_list_deployment_configuration_jobs;
+
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_put_deployment_parameter;
+
+pub(crate) mod shape_start_deployment_configuration_job;
 
 pub(crate) mod shape_tag_resource;
 
@@ -51,14 +59,24 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_service_quota_exceeded_exception;
 
+pub(crate) mod shape_start_deployment_configuration_job_input;
+
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
 
 pub(crate) mod shape_validation_exception;
 
+pub(crate) mod shape_deployment_configuration_detail;
+
+pub(crate) mod shape_deployment_configuration_job_summaries;
+
 pub(crate) mod shape_deployment_parameter_input;
 
 pub(crate) mod shape_tags;
 
 pub(crate) mod shape_tags_map;
+
+pub(crate) mod shape_data_as_a_service_configuration_detail;
+
+pub(crate) mod shape_deployment_configuration_job_summary;

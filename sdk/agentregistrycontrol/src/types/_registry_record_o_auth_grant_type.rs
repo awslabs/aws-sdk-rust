@@ -12,6 +12,7 @@
 /// ```text
 /// # let registryrecordoauthgranttype = unimplemented!();
 /// match registryrecordoauthgranttype {
+///     RegistryRecordOAuthGrantType::AuthorizationCode => { /* ... */ },
 ///     RegistryRecordOAuthGrantType::ClientCredentials => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -35,12 +36,14 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The OAuth 2.0 grant type that a credential provider uses to obtain access tokens. <code>CLIENT_CREDENTIALS</code> obtains tokens for the client application itself and is the grant for sources such as MCP server and A2A agent card sources. <code>AUTHORIZATION_CODE</code> obtains tokens with a user's approval and is required for GitHub skill sources. A GitHub user approves access once. Later requests from the same IAM principal for the same registry, host, credential provider, scopes, and custom parameters reuse that approval.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum RegistryRecordOAuthGrantType {
+    #[allow(missing_docs)] // documentation missing in model
+    AuthorizationCode,
     #[allow(missing_docs)] // documentation missing in model
     ClientCredentials,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -50,6 +53,7 @@ pub enum RegistryRecordOAuthGrantType {
 impl ::std::convert::From<&str> for RegistryRecordOAuthGrantType {
     fn from(s: &str) -> Self {
         match s {
+            "AUTHORIZATION_CODE" => RegistryRecordOAuthGrantType::AuthorizationCode,
             "CLIENT_CREDENTIALS" => RegistryRecordOAuthGrantType::ClientCredentials,
             other => RegistryRecordOAuthGrantType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +70,14 @@ impl RegistryRecordOAuthGrantType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RegistryRecordOAuthGrantType::AuthorizationCode => "AUTHORIZATION_CODE",
             RegistryRecordOAuthGrantType::ClientCredentials => "CLIENT_CREDENTIALS",
             RegistryRecordOAuthGrantType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CLIENT_CREDENTIALS"]
+        &["AUTHORIZATION_CODE", "CLIENT_CREDENTIALS"]
     }
 }
 impl ::std::convert::AsRef<str> for RegistryRecordOAuthGrantType {
@@ -95,6 +100,7 @@ impl RegistryRecordOAuthGrantType {
 impl ::std::fmt::Display for RegistryRecordOAuthGrantType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RegistryRecordOAuthGrantType::AuthorizationCode => write!(f, "AUTHORIZATION_CODE"),
             RegistryRecordOAuthGrantType::ClientCredentials => write!(f, "CLIENT_CREDENTIALS"),
             RegistryRecordOAuthGrantType::Unknown(value) => write!(f, "{value}"),
         }

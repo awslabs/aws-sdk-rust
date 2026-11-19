@@ -242,6 +242,14 @@ pub(crate) fn de_create_event_source(
                 "State" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_state(Some(decoder.string().map(|s| crate::types::EventSourceState::from(s.as_str()))?)))
                 })?,
+                "EventSourceDetails" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(
+                        builder.set_event_source_details(Some(crate::protocol_serde::shape_event_source_details::de_event_source_details(
+                            decoder,
+                            depth + 1,
+                        )?)),
+                    )
+                })?,
                 "CreationTime" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_creation_time(Some(decoder.timestamp()?)))
                 })?,

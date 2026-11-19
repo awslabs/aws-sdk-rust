@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ValidationException {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A human-readable message describing the validation failure.</p>
     pub message: ::std::string::String,
     /// <p>The reason for the validation failure.</p>
     pub reason: crate::types::ValidationExceptionReason,
@@ -68,18 +68,18 @@ pub struct ValidationExceptionBuilder {
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ValidationExceptionBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A human-readable message describing the validation failure.</p>
     /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A human-readable message describing the validation failure.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A human-readable message describing the validation failure.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }

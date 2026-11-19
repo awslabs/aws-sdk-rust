@@ -129,21 +129,40 @@ impl ListMarketplaceRevenueSharesFluentBuilder {
         self.inner.get_catalog()
     }
     ///
+    /// Appends an item to `Identifiers`.
+    ///
+    /// To override the contents of this collection use [`set_identifiers`](Self::set_identifiers).
+    ///
+    /// <p>Filter results to only include these marketplace revenue shares, by ID or ARN. 1 to 100 identifiers. When several filters are sent, a share must match all of them.</p>
+    pub fn identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.identifiers(input.into());
+        self
+    }
+    /// <p>Filter results to only include these marketplace revenue shares, by ID or ARN. 1 to 100 identifiers. When several filters are sent, a share must match all of them.</p>
+    pub fn set_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_identifiers(input);
+        self
+    }
+    /// <p>Filter results to only include these marketplace revenue shares, by ID or ARN. 1 to 100 identifiers. When several filters are sent, a share must match all of them.</p>
+    pub fn get_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_identifiers()
+    }
+    ///
     /// Appends an item to `ProductIds`.
     ///
     /// To override the contents of this collection use [`set_product_ids`](Self::set_product_ids).
     ///
-    /// <p>Filter results to only include shares with these product identifiers.</p>
+    /// <p>Filter results to the marketplace revenue shares that contain any of these products. 1 to 10 product IDs or product ARNs. Shares the caller does not own are never returned.</p>
     pub fn product_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_ids(input.into());
         self
     }
-    /// <p>Filter results to only include shares with these product identifiers.</p>
+    /// <p>Filter results to the marketplace revenue shares that contain any of these products. 1 to 10 product IDs or product ARNs. Shares the caller does not own are never returned.</p>
     pub fn set_product_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_product_ids(input);
         self
     }
-    /// <p>Filter results to only include shares with these product identifiers.</p>
+    /// <p>Filter results to the marketplace revenue shares that contain any of these products. 1 to 10 product IDs or product ARNs. Shares the caller does not own are never returned.</p>
     pub fn get_product_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_product_ids()
     }
@@ -152,17 +171,17 @@ impl ListMarketplaceRevenueSharesFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
     ///
-    /// <p>Filter results to only include shares with these product codes.</p>
+    /// <p>Filter results to the marketplace revenue shares that contain a product with any of these product codes. 1 to 10 product codes.</p>
     pub fn product_codes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.product_codes(input.into());
         self
     }
-    /// <p>Filter results to only include shares with these product codes.</p>
+    /// <p>Filter results to the marketplace revenue shares that contain a product with any of these product codes. 1 to 10 product codes.</p>
     pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_product_codes(input);
         self
     }
-    /// <p>Filter results to only include shares with these product codes.</p>
+    /// <p>Filter results to the marketplace revenue shares that contain a product with any of these product codes. 1 to 10 product codes.</p>
     pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_product_codes()
     }
@@ -222,31 +241,31 @@ impl ListMarketplaceRevenueSharesFluentBuilder {
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         self.inner.get_sort_order()
     }
-    /// <p>Filter results to only include marketplace revenue shares created after this timestamp.</p>
+    /// <p>Filter results to marketplace revenue shares created at or after this timestamp (inclusive).</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_after(input);
         self
     }
-    /// <p>Filter results to only include marketplace revenue shares created after this timestamp.</p>
+    /// <p>Filter results to marketplace revenue shares created at or after this timestamp (inclusive).</p>
     pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_after(input);
         self
     }
-    /// <p>Filter results to only include marketplace revenue shares created after this timestamp.</p>
+    /// <p>Filter results to marketplace revenue shares created at or after this timestamp (inclusive).</p>
     pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_created_after()
     }
-    /// <p>Filter results to only include marketplace revenue shares created before this timestamp.</p>
+    /// <p>Filter results to marketplace revenue shares created before this timestamp (exclusive).</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.created_before(input);
         self
     }
-    /// <p>Filter results to only include marketplace revenue shares created before this timestamp.</p>
+    /// <p>Filter results to marketplace revenue shares created before this timestamp (exclusive).</p>
     pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
     }
-    /// <p>Filter results to only include marketplace revenue shares created before this timestamp.</p>
+    /// <p>Filter results to marketplace revenue shares created before this timestamp (exclusive).</p>
     pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_created_before()
     }

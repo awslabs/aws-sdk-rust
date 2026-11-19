@@ -239,6 +239,13 @@ pub(crate) fn de_get_aws_opportunity_summary(
                             .transpose()?,
                     );
                 }
+                "CosellMotionReason" => {
+                    builder = builder.set_cosell_motion_reason(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "SoftwareRevenue" => {
                     builder = builder.set_software_revenue(crate::protocol_serde::shape_aws_software_revenue::de_aws_software_revenue(
                         tokens,

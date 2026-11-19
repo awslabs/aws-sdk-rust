@@ -3,54 +3,60 @@ pub fn ser_create_registry_record_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_registry_record::CreateRegistryRecordInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.client_token {
-        object.key("clientToken").string(var_1.as_str());
-    }
-    if let Some(var_2) = &input.custom_metadata {
-        object.key("customMetadata").document(var_2);
-    }
-    if let Some(var_3) = &input.description {
-        object.key("description").string(var_3.as_str());
-    }
-    if let Some(var_4) = &input.descriptors {
+    if let Some(var_1) = &input.artifact {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("descriptors").start_object();
-        crate::protocol_serde::shape_descriptors::ser_descriptors(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_2 = object.key("artifact").start_object();
+        crate::protocol_serde::shape_registry_record_artifact_upload::ser_registry_record_artifact_upload(&mut object_2, var_1)?;
+        object_2.finish();
     }
-    if let Some(var_6) = &input.display_name {
-        object.key("displayName").string(var_6.as_str());
+    if let Some(var_3) = &input.client_token {
+        object.key("clientToken").string(var_3.as_str());
     }
-    if let Some(var_7) = &input.name {
-        object.key("name").string(var_7.as_str());
+    if let Some(var_4) = &input.custom_metadata {
+        object.key("customMetadata").document(var_4);
     }
-    if let Some(var_8) = &input.provenance {
-        let mut array_9 = object.key("provenance").start_array();
-        for item_10 in var_8 {
+    if let Some(var_5) = &input.description {
+        object.key("description").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.descriptors {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("descriptors").start_object();
+        crate::protocol_serde::shape_descriptors::ser_descriptors(&mut object_7, var_6)?;
+        object_7.finish();
+    }
+    if let Some(var_8) = &input.display_name {
+        object.key("displayName").string(var_8.as_str());
+    }
+    if let Some(var_9) = &input.name {
+        object.key("name").string(var_9.as_str());
+    }
+    if let Some(var_10) = &input.provenance {
+        let mut array_11 = object.key("provenance").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_11 = array_9.value().start_object();
-                crate::protocol_serde::shape_provenance::ser_provenance(&mut object_11, item_10)?;
-                object_11.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_provenance::ser_provenance(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_9.finish();
+        array_11.finish();
     }
-    if let Some(var_12) = &input.record_type {
-        object.key("recordType").string(var_12.as_str());
+    if let Some(var_14) = &input.record_type {
+        object.key("recordType").string(var_14.as_str());
     }
-    if let Some(var_13) = &input.record_version {
-        object.key("recordVersion").string(var_13.as_str());
+    if let Some(var_15) = &input.record_version {
+        object.key("recordVersion").string(var_15.as_str());
     }
-    if let Some(var_14) = &input.tags {
+    if let Some(var_16) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("tags").start_object();
-        for (key_16, value_17) in var_14 {
+        let mut object_17 = object.key("tags").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                object_15.key(key_16.as_str()).string(value_17.as_str());
+                object_17.key(key_18.as_str()).string(value_19.as_str());
             }
         }
-        object_15.finish();
+        object_17.finish();
     }
     Ok(())
 }

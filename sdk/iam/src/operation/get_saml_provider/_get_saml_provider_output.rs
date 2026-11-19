@@ -8,6 +8,11 @@ pub struct GetSamlProviderOutput {
     pub saml_provider_uuid: ::std::option::Option<::std::string::String>,
     /// <p>The XML metadata document that includes information about an identity provider.</p>
     pub saml_metadata_document: ::std::option::Option<::std::string::String>,
+    /// <p>The trusted identity propagation context provider configuration associated with the SAML provider. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+    /// <p>This element is returned only when a trusted identity propagation context provider is configured for the SAML provider.</p>
+    pub context_provider: ::std::option::Option<crate::types::ContextProvider>,
+    /// <p>The key hashes associated with the SAML provider, grouped by identity provider issuer. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SAMLKeyHashEntry.html">SAMLKeyHashEntry</a>.</p>
+    pub saml_key_hashes: ::std::option::Option<::std::vec::Vec<crate::types::SamlKeyHashEntry>>,
     /// <p>The date and time when the SAML provider was created.</p>
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The expiration date and time for the SAML provider.</p>
@@ -18,6 +23,14 @@ pub struct GetSamlProviderOutput {
     pub assertion_encryption_mode: ::std::option::Option<crate::types::AssertionEncryptionModeType>,
     /// <p>The private key metadata for the SAML provider.</p>
     pub private_key_list: ::std::option::Option<::std::vec::Vec<crate::types::SamlPrivateKey>>,
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance associated with the SAML provider.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    /// <p>This element is returned only when an IAM Identity Center instance is associated with the SAML provider.</p>
+    pub identity_center_instance_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the identity store that is resolved from the associated IAM Identity Center instance.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    /// <p>This element is returned only when an IAM Identity Center instance is associated with the SAML provider.</p>
+    pub identity_store_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetSamlProviderOutput {
@@ -28,6 +41,17 @@ impl GetSamlProviderOutput {
     /// <p>The XML metadata document that includes information about an identity provider.</p>
     pub fn saml_metadata_document(&self) -> ::std::option::Option<&str> {
         self.saml_metadata_document.as_deref()
+    }
+    /// <p>The trusted identity propagation context provider configuration associated with the SAML provider. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+    /// <p>This element is returned only when a trusted identity propagation context provider is configured for the SAML provider.</p>
+    pub fn context_provider(&self) -> ::std::option::Option<&crate::types::ContextProvider> {
+        self.context_provider.as_ref()
+    }
+    /// <p>The key hashes associated with the SAML provider, grouped by identity provider issuer. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SAMLKeyHashEntry.html">SAMLKeyHashEntry</a>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.saml_key_hashes.is_none()`.
+    pub fn saml_key_hashes(&self) -> &[crate::types::SamlKeyHashEntry] {
+        self.saml_key_hashes.as_deref().unwrap_or_default()
     }
     /// <p>The date and time when the SAML provider was created.</p>
     pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -53,6 +77,18 @@ impl GetSamlProviderOutput {
     pub fn private_key_list(&self) -> &[crate::types::SamlPrivateKey] {
         self.private_key_list.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance associated with the SAML provider.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    /// <p>This element is returned only when an IAM Identity Center instance is associated with the SAML provider.</p>
+    pub fn identity_center_instance_arn(&self) -> ::std::option::Option<&str> {
+        self.identity_center_instance_arn.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity store that is resolved from the associated IAM Identity Center instance.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    /// <p>This element is returned only when an IAM Identity Center instance is associated with the SAML provider.</p>
+    pub fn identity_store_arn(&self) -> ::std::option::Option<&str> {
+        self.identity_store_arn.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetSamlProviderOutput {
     fn request_id(&self) -> Option<&str> {
@@ -72,11 +108,15 @@ impl GetSamlProviderOutput {
 pub struct GetSamlProviderOutputBuilder {
     pub(crate) saml_provider_uuid: ::std::option::Option<::std::string::String>,
     pub(crate) saml_metadata_document: ::std::option::Option<::std::string::String>,
+    pub(crate) context_provider: ::std::option::Option<crate::types::ContextProvider>,
+    pub(crate) saml_key_hashes: ::std::option::Option<::std::vec::Vec<crate::types::SamlKeyHashEntry>>,
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) valid_until: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) assertion_encryption_mode: ::std::option::Option<crate::types::AssertionEncryptionModeType>,
     pub(crate) private_key_list: ::std::option::Option<::std::vec::Vec<crate::types::SamlPrivateKey>>,
+    pub(crate) identity_center_instance_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) identity_store_arn: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetSamlProviderOutputBuilder {
@@ -107,6 +147,43 @@ impl GetSamlProviderOutputBuilder {
     /// <p>The XML metadata document that includes information about an identity provider.</p>
     pub fn get_saml_metadata_document(&self) -> &::std::option::Option<::std::string::String> {
         &self.saml_metadata_document
+    }
+    /// <p>The trusted identity propagation context provider configuration associated with the SAML provider. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+    /// <p>This element is returned only when a trusted identity propagation context provider is configured for the SAML provider.</p>
+    pub fn context_provider(mut self, input: crate::types::ContextProvider) -> Self {
+        self.context_provider = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The trusted identity propagation context provider configuration associated with the SAML provider. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+    /// <p>This element is returned only when a trusted identity propagation context provider is configured for the SAML provider.</p>
+    pub fn set_context_provider(mut self, input: ::std::option::Option<crate::types::ContextProvider>) -> Self {
+        self.context_provider = input;
+        self
+    }
+    /// <p>The trusted identity propagation context provider configuration associated with the SAML provider. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+    /// <p>This element is returned only when a trusted identity propagation context provider is configured for the SAML provider.</p>
+    pub fn get_context_provider(&self) -> &::std::option::Option<crate::types::ContextProvider> {
+        &self.context_provider
+    }
+    /// Appends an item to `saml_key_hashes`.
+    ///
+    /// To override the contents of this collection use [`set_saml_key_hashes`](Self::set_saml_key_hashes).
+    ///
+    /// <p>The key hashes associated with the SAML provider, grouped by identity provider issuer. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SAMLKeyHashEntry.html">SAMLKeyHashEntry</a>.</p>
+    pub fn saml_key_hashes(mut self, input: crate::types::SamlKeyHashEntry) -> Self {
+        let mut v = self.saml_key_hashes.unwrap_or_default();
+        v.push(input);
+        self.saml_key_hashes = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The key hashes associated with the SAML provider, grouped by identity provider issuer. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SAMLKeyHashEntry.html">SAMLKeyHashEntry</a>.</p>
+    pub fn set_saml_key_hashes(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SamlKeyHashEntry>>) -> Self {
+        self.saml_key_hashes = input;
+        self
+    }
+    /// <p>The key hashes associated with the SAML provider, grouped by identity provider issuer. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SAMLKeyHashEntry.html">SAMLKeyHashEntry</a>.</p>
+    pub fn get_saml_key_hashes(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SamlKeyHashEntry>> {
+        &self.saml_key_hashes
     }
     /// <p>The date and time when the SAML provider was created.</p>
     pub fn create_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -190,6 +267,46 @@ impl GetSamlProviderOutputBuilder {
     pub fn get_private_key_list(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SamlPrivateKey>> {
         &self.private_key_list
     }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance associated with the SAML provider.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    /// <p>This element is returned only when an IAM Identity Center instance is associated with the SAML provider.</p>
+    pub fn identity_center_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_center_instance_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance associated with the SAML provider.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    /// <p>This element is returned only when an IAM Identity Center instance is associated with the SAML provider.</p>
+    pub fn set_identity_center_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_center_instance_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance associated with the SAML provider.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    /// <p>This element is returned only when an IAM Identity Center instance is associated with the SAML provider.</p>
+    pub fn get_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_center_instance_arn
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity store that is resolved from the associated IAM Identity Center instance.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    /// <p>This element is returned only when an IAM Identity Center instance is associated with the SAML provider.</p>
+    pub fn identity_store_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identity_store_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity store that is resolved from the associated IAM Identity Center instance.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    /// <p>This element is returned only when an IAM Identity Center instance is associated with the SAML provider.</p>
+    pub fn set_identity_store_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identity_store_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the identity store that is resolved from the associated IAM Identity Center instance.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    /// <p>This element is returned only when an IAM Identity Center instance is associated with the SAML provider.</p>
+    pub fn get_identity_store_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identity_store_arn
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -204,11 +321,15 @@ impl GetSamlProviderOutputBuilder {
         crate::operation::get_saml_provider::GetSamlProviderOutput {
             saml_provider_uuid: self.saml_provider_uuid,
             saml_metadata_document: self.saml_metadata_document,
+            context_provider: self.context_provider,
+            saml_key_hashes: self.saml_key_hashes,
             create_date: self.create_date,
             valid_until: self.valid_until,
             tags: self.tags,
             assertion_encryption_mode: self.assertion_encryption_mode,
             private_key_list: self.private_key_list,
+            identity_center_instance_arn: self.identity_center_instance_arn,
+            identity_store_arn: self.identity_store_arn,
             _request_id: self._request_id,
         }
     }

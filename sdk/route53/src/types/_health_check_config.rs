@@ -12,9 +12,9 @@ pub struct HealthCheckConfig {
     /// <li>
     /// <p><b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.</p></li>
     /// </ul>
-    /// <p>If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance will never change.</p>
+    /// <p>For a public health check, if the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance will never change.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>.</p>
-    /// <p>Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create health checks, see the following documents:</p>
+    /// <p>Constraints: For a public health check (<code>EndpointType</code> of <code>PUBLIC</code>, the default), Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create public health checks, see the following documents:</p>
     /// <ul>
     /// <li>
     /// <p><a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a></p></li>
@@ -23,6 +23,7 @@ pub struct HealthCheckConfig {
     /// <li>
     /// <p><a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a></p></li>
     /// </ul>
+    /// <p>For a private endpoint health check (<code>EndpointType</code> of <code>PRIVATE</code>), if you specify <code>IPAddress</code>, it must be a private IPv4 or IPv6 address. Route 53 sends health checks to it from the health check source that you specify in <code>HealthCheckSourceId</code>.</p>
     /// <p>When the value of <code>Type</code> is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit <code>IPAddress</code>.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
     /// <p>The port on the endpoint that you want Amazon Route 53 to perform health checks on.</p><note>
@@ -145,6 +146,20 @@ pub struct HealthCheckConfig {
     /// <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing control.</p>
     /// <p>For more information about Route 53 Application Recovery Controller, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route 53 Application Recovery Controller Developer Guide.</a>.</p>
     pub routing_control_arn: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether the health check targets a public endpoint or a private endpoint in a virtual private cloud (VPC). Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PUBLIC</code>: The health check targets an endpoint that is reachable over the internet. This is the default.</p></li>
+    /// <li>
+    /// <p><code>PRIVATE</code>: The health check targets a private endpoint in your virtual private cloud. You must also specify <code>HealthCheckSourceId</code>. <code>PRIVATE</code> isn't supported for health checks with a <code>Type</code> of <code>CALCULATED</code>, <code>CLOUDWATCH_METRIC</code>, or <code>RECOVERY_CONTROL</code>.</p></li>
+    /// </ul><important>
+    /// <p>You can't change the value of <code>EndpointType</code> after you create a health check.</p>
+    /// </important>
+    pub endpoint_type: ::std::option::Option<crate::types::EndpointType>,
+    /// <p>The ID of the health check source that Route 53 uses to send health checks to a private endpoint. Required when <code>EndpointType</code> is <code>PRIVATE</code>.</p>
+    /// <p>You can change <code>HealthCheckSourceId</code> on an existing private health check. You can't add it to a public health check.</p>
+    /// <p>Each health check source supports a limited number of active health checks. If you reach that limit, specify a different health check source.</p>
+    pub health_check_source_id: ::std::option::Option<::std::string::String>,
 }
 impl HealthCheckConfig {
     /// <p>The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If you don't specify a value for <code>IPAddress</code>, Route 53 sends a DNS request to resolve the domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in <code>RequestInterval</code>. Using an IP address returned by DNS, Route 53 then checks the health of the endpoint.</p>
@@ -155,9 +170,9 @@ impl HealthCheckConfig {
     /// <li>
     /// <p><b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.</p></li>
     /// </ul>
-    /// <p>If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance will never change.</p>
+    /// <p>For a public health check, if the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance will never change.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>.</p>
-    /// <p>Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create health checks, see the following documents:</p>
+    /// <p>Constraints: For a public health check (<code>EndpointType</code> of <code>PUBLIC</code>, the default), Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create public health checks, see the following documents:</p>
     /// <ul>
     /// <li>
     /// <p><a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a></p></li>
@@ -166,6 +181,7 @@ impl HealthCheckConfig {
     /// <li>
     /// <p><a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a></p></li>
     /// </ul>
+    /// <p>For a private endpoint health check (<code>EndpointType</code> of <code>PRIVATE</code>), if you specify <code>IPAddress</code>, it must be a private IPv4 or IPv6 address. Route 53 sends health checks to it from the health check source that you specify in <code>HealthCheckSourceId</code>.</p>
     /// <p>When the value of <code>Type</code> is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit <code>IPAddress</code>.</p>
     pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
@@ -328,6 +344,24 @@ impl HealthCheckConfig {
     pub fn routing_control_arn(&self) -> ::std::option::Option<&str> {
         self.routing_control_arn.as_deref()
     }
+    /// <p>Specifies whether the health check targets a public endpoint or a private endpoint in a virtual private cloud (VPC). Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PUBLIC</code>: The health check targets an endpoint that is reachable over the internet. This is the default.</p></li>
+    /// <li>
+    /// <p><code>PRIVATE</code>: The health check targets a private endpoint in your virtual private cloud. You must also specify <code>HealthCheckSourceId</code>. <code>PRIVATE</code> isn't supported for health checks with a <code>Type</code> of <code>CALCULATED</code>, <code>CLOUDWATCH_METRIC</code>, or <code>RECOVERY_CONTROL</code>.</p></li>
+    /// </ul><important>
+    /// <p>You can't change the value of <code>EndpointType</code> after you create a health check.</p>
+    /// </important>
+    pub fn endpoint_type(&self) -> ::std::option::Option<&crate::types::EndpointType> {
+        self.endpoint_type.as_ref()
+    }
+    /// <p>The ID of the health check source that Route 53 uses to send health checks to a private endpoint. Required when <code>EndpointType</code> is <code>PRIVATE</code>.</p>
+    /// <p>You can change <code>HealthCheckSourceId</code> on an existing private health check. You can't add it to a public health check.</p>
+    /// <p>Each health check source supports a limited number of active health checks. If you reach that limit, specify a different health check source.</p>
+    pub fn health_check_source_id(&self) -> ::std::option::Option<&str> {
+        self.health_check_source_id.as_deref()
+    }
 }
 impl HealthCheckConfig {
     /// Creates a new builder-style object to manufacture [`HealthCheckConfig`](crate::types::HealthCheckConfig).
@@ -358,6 +392,8 @@ pub struct HealthCheckConfigBuilder {
     pub(crate) alarm_identifier: ::std::option::Option<crate::types::AlarmIdentifier>,
     pub(crate) insufficient_data_health_status: ::std::option::Option<crate::types::InsufficientDataHealthStatus>,
     pub(crate) routing_control_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) endpoint_type: ::std::option::Option<crate::types::EndpointType>,
+    pub(crate) health_check_source_id: ::std::option::Option<::std::string::String>,
 }
 impl HealthCheckConfigBuilder {
     /// <p>The IPv4 or IPv6 IP address of the endpoint that you want Amazon Route 53 to perform health checks on. If you don't specify a value for <code>IPAddress</code>, Route 53 sends a DNS request to resolve the domain name that you specify in <code>FullyQualifiedDomainName</code> at the interval that you specify in <code>RequestInterval</code>. Using an IP address returned by DNS, Route 53 then checks the health of the endpoint.</p>
@@ -368,9 +404,9 @@ impl HealthCheckConfigBuilder {
     /// <li>
     /// <p><b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.</p></li>
     /// </ul>
-    /// <p>If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance will never change.</p>
+    /// <p>For a public health check, if the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance will never change.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>.</p>
-    /// <p>Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create health checks, see the following documents:</p>
+    /// <p>Constraints: For a public health check (<code>EndpointType</code> of <code>PUBLIC</code>, the default), Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create public health checks, see the following documents:</p>
     /// <ul>
     /// <li>
     /// <p><a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a></p></li>
@@ -379,6 +415,7 @@ impl HealthCheckConfigBuilder {
     /// <li>
     /// <p><a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a></p></li>
     /// </ul>
+    /// <p>For a private endpoint health check (<code>EndpointType</code> of <code>PRIVATE</code>), if you specify <code>IPAddress</code>, it must be a private IPv4 or IPv6 address. Route 53 sends health checks to it from the health check source that you specify in <code>HealthCheckSourceId</code>.</p>
     /// <p>When the value of <code>Type</code> is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit <code>IPAddress</code>.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.ip_address = ::std::option::Option::Some(input.into());
@@ -392,9 +429,9 @@ impl HealthCheckConfigBuilder {
     /// <li>
     /// <p><b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.</p></li>
     /// </ul>
-    /// <p>If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance will never change.</p>
+    /// <p>For a public health check, if the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance will never change.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>.</p>
-    /// <p>Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create health checks, see the following documents:</p>
+    /// <p>Constraints: For a public health check (<code>EndpointType</code> of <code>PUBLIC</code>, the default), Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create public health checks, see the following documents:</p>
     /// <ul>
     /// <li>
     /// <p><a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a></p></li>
@@ -403,6 +440,7 @@ impl HealthCheckConfigBuilder {
     /// <li>
     /// <p><a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a></p></li>
     /// </ul>
+    /// <p>For a private endpoint health check (<code>EndpointType</code> of <code>PRIVATE</code>), if you specify <code>IPAddress</code>, it must be a private IPv4 or IPv6 address. Route 53 sends health checks to it from the health check source that you specify in <code>HealthCheckSourceId</code>.</p>
     /// <p>When the value of <code>Type</code> is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit <code>IPAddress</code>.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.ip_address = input;
@@ -416,9 +454,9 @@ impl HealthCheckConfigBuilder {
     /// <li>
     /// <p><b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.</p></li>
     /// </ul>
-    /// <p>If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance will never change.</p>
+    /// <p>For a public health check, if the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance will never change.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>.</p>
-    /// <p>Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create health checks, see the following documents:</p>
+    /// <p>Constraints: For a public health check (<code>EndpointType</code> of <code>PUBLIC</code>, the default), Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create public health checks, see the following documents:</p>
     /// <ul>
     /// <li>
     /// <p><a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a></p></li>
@@ -427,6 +465,7 @@ impl HealthCheckConfigBuilder {
     /// <li>
     /// <p><a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a></p></li>
     /// </ul>
+    /// <p>For a private endpoint health check (<code>EndpointType</code> of <code>PRIVATE</code>), if you specify <code>IPAddress</code>, it must be a private IPv4 or IPv6 address. Route 53 sends health checks to it from the health check source that you specify in <code>HealthCheckSourceId</code>.</p>
     /// <p>When the value of <code>Type</code> is <code>CALCULATED</code> or <code>CLOUDWATCH_METRIC</code>, omit <code>IPAddress</code>.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address
@@ -940,6 +979,64 @@ impl HealthCheckConfigBuilder {
     pub fn get_routing_control_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.routing_control_arn
     }
+    /// <p>Specifies whether the health check targets a public endpoint or a private endpoint in a virtual private cloud (VPC). Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PUBLIC</code>: The health check targets an endpoint that is reachable over the internet. This is the default.</p></li>
+    /// <li>
+    /// <p><code>PRIVATE</code>: The health check targets a private endpoint in your virtual private cloud. You must also specify <code>HealthCheckSourceId</code>. <code>PRIVATE</code> isn't supported for health checks with a <code>Type</code> of <code>CALCULATED</code>, <code>CLOUDWATCH_METRIC</code>, or <code>RECOVERY_CONTROL</code>.</p></li>
+    /// </ul><important>
+    /// <p>You can't change the value of <code>EndpointType</code> after you create a health check.</p>
+    /// </important>
+    pub fn endpoint_type(mut self, input: crate::types::EndpointType) -> Self {
+        self.endpoint_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the health check targets a public endpoint or a private endpoint in a virtual private cloud (VPC). Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PUBLIC</code>: The health check targets an endpoint that is reachable over the internet. This is the default.</p></li>
+    /// <li>
+    /// <p><code>PRIVATE</code>: The health check targets a private endpoint in your virtual private cloud. You must also specify <code>HealthCheckSourceId</code>. <code>PRIVATE</code> isn't supported for health checks with a <code>Type</code> of <code>CALCULATED</code>, <code>CLOUDWATCH_METRIC</code>, or <code>RECOVERY_CONTROL</code>.</p></li>
+    /// </ul><important>
+    /// <p>You can't change the value of <code>EndpointType</code> after you create a health check.</p>
+    /// </important>
+    pub fn set_endpoint_type(mut self, input: ::std::option::Option<crate::types::EndpointType>) -> Self {
+        self.endpoint_type = input;
+        self
+    }
+    /// <p>Specifies whether the health check targets a public endpoint or a private endpoint in a virtual private cloud (VPC). Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>PUBLIC</code>: The health check targets an endpoint that is reachable over the internet. This is the default.</p></li>
+    /// <li>
+    /// <p><code>PRIVATE</code>: The health check targets a private endpoint in your virtual private cloud. You must also specify <code>HealthCheckSourceId</code>. <code>PRIVATE</code> isn't supported for health checks with a <code>Type</code> of <code>CALCULATED</code>, <code>CLOUDWATCH_METRIC</code>, or <code>RECOVERY_CONTROL</code>.</p></li>
+    /// </ul><important>
+    /// <p>You can't change the value of <code>EndpointType</code> after you create a health check.</p>
+    /// </important>
+    pub fn get_endpoint_type(&self) -> &::std::option::Option<crate::types::EndpointType> {
+        &self.endpoint_type
+    }
+    /// <p>The ID of the health check source that Route 53 uses to send health checks to a private endpoint. Required when <code>EndpointType</code> is <code>PRIVATE</code>.</p>
+    /// <p>You can change <code>HealthCheckSourceId</code> on an existing private health check. You can't add it to a public health check.</p>
+    /// <p>Each health check source supports a limited number of active health checks. If you reach that limit, specify a different health check source.</p>
+    pub fn health_check_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.health_check_source_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the health check source that Route 53 uses to send health checks to a private endpoint. Required when <code>EndpointType</code> is <code>PRIVATE</code>.</p>
+    /// <p>You can change <code>HealthCheckSourceId</code> on an existing private health check. You can't add it to a public health check.</p>
+    /// <p>Each health check source supports a limited number of active health checks. If you reach that limit, specify a different health check source.</p>
+    pub fn set_health_check_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.health_check_source_id = input;
+        self
+    }
+    /// <p>The ID of the health check source that Route 53 uses to send health checks to a private endpoint. Required when <code>EndpointType</code> is <code>PRIVATE</code>.</p>
+    /// <p>You can change <code>HealthCheckSourceId</code> on an existing private health check. You can't add it to a public health check.</p>
+    /// <p>Each health check source supports a limited number of active health checks. If you reach that limit, specify a different health check source.</p>
+    pub fn get_health_check_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.health_check_source_id
+    }
     /// Consumes the builder and constructs a [`HealthCheckConfig`](crate::types::HealthCheckConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`r#type`](crate::types::builders::HealthCheckConfigBuilder::type)
@@ -968,6 +1065,8 @@ impl HealthCheckConfigBuilder {
             alarm_identifier: self.alarm_identifier,
             insufficient_data_health_status: self.insufficient_data_health_status,
             routing_control_arn: self.routing_control_arn,
+            endpoint_type: self.endpoint_type,
+            health_check_source_id: self.health_check_source_id,
         })
     }
 }

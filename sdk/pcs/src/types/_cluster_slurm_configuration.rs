@@ -13,6 +13,8 @@ pub struct ClusterSlurmConfiguration {
     pub slurmdbd_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::SlurmdbdCustomSetting>>,
     /// <p>Additional Cgroup-specific configuration that directly maps to Cgroup settings.</p>
     pub cgroup_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::CgroupCustomSetting>>,
+    /// <p>The job submit plugins to run on the cluster controller. Use job submit plugins to execute custom scripts during job submission and job modification to validate or modify the job's configuration. Custom scripts can accept or reject jobs based on their configuration or modify the configuration before job execution.</p>
+    pub job_submit_plugins: ::std::option::Option<::std::vec::Vec<crate::types::JobSubmitPlugin>>,
     /// <p>The shared Slurm key for authentication, also known as the <b>cluster secret</b>.</p>
     pub auth_key: ::std::option::Option<crate::types::SlurmAuthKey>,
     /// <p>The JWT authentication configuration for Slurm REST API access.</p>
@@ -46,6 +48,12 @@ impl ClusterSlurmConfiguration {
     pub fn cgroup_custom_settings(&self) -> &[crate::types::CgroupCustomSetting] {
         self.cgroup_custom_settings.as_deref().unwrap_or_default()
     }
+    /// <p>The job submit plugins to run on the cluster controller. Use job submit plugins to execute custom scripts during job submission and job modification to validate or modify the job's configuration. Custom scripts can accept or reject jobs based on their configuration or modify the configuration before job execution.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_submit_plugins.is_none()`.
+    pub fn job_submit_plugins(&self) -> &[crate::types::JobSubmitPlugin] {
+        self.job_submit_plugins.as_deref().unwrap_or_default()
+    }
     /// <p>The shared Slurm key for authentication, also known as the <b>cluster secret</b>.</p>
     pub fn auth_key(&self) -> ::std::option::Option<&crate::types::SlurmAuthKey> {
         self.auth_key.as_ref()
@@ -78,6 +86,7 @@ pub struct ClusterSlurmConfigurationBuilder {
     pub(crate) slurm_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::SlurmCustomSetting>>,
     pub(crate) slurmdbd_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::SlurmdbdCustomSetting>>,
     pub(crate) cgroup_custom_settings: ::std::option::Option<::std::vec::Vec<crate::types::CgroupCustomSetting>>,
+    pub(crate) job_submit_plugins: ::std::option::Option<::std::vec::Vec<crate::types::JobSubmitPlugin>>,
     pub(crate) auth_key: ::std::option::Option<crate::types::SlurmAuthKey>,
     pub(crate) jwt_auth: ::std::option::Option<crate::types::JwtAuth>,
     pub(crate) accounting: ::std::option::Option<crate::types::Accounting>,
@@ -161,6 +170,26 @@ impl ClusterSlurmConfigurationBuilder {
     pub fn get_cgroup_custom_settings(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CgroupCustomSetting>> {
         &self.cgroup_custom_settings
     }
+    /// Appends an item to `job_submit_plugins`.
+    ///
+    /// To override the contents of this collection use [`set_job_submit_plugins`](Self::set_job_submit_plugins).
+    ///
+    /// <p>The job submit plugins to run on the cluster controller. Use job submit plugins to execute custom scripts during job submission and job modification to validate or modify the job's configuration. Custom scripts can accept or reject jobs based on their configuration or modify the configuration before job execution.</p>
+    pub fn job_submit_plugins(mut self, input: crate::types::JobSubmitPlugin) -> Self {
+        let mut v = self.job_submit_plugins.unwrap_or_default();
+        v.push(input);
+        self.job_submit_plugins = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The job submit plugins to run on the cluster controller. Use job submit plugins to execute custom scripts during job submission and job modification to validate or modify the job's configuration. Custom scripts can accept or reject jobs based on their configuration or modify the configuration before job execution.</p>
+    pub fn set_job_submit_plugins(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::JobSubmitPlugin>>) -> Self {
+        self.job_submit_plugins = input;
+        self
+    }
+    /// <p>The job submit plugins to run on the cluster controller. Use job submit plugins to execute custom scripts during job submission and job modification to validate or modify the job's configuration. Custom scripts can accept or reject jobs based on their configuration or modify the configuration before job execution.</p>
+    pub fn get_job_submit_plugins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::JobSubmitPlugin>> {
+        &self.job_submit_plugins
+    }
     /// <p>The shared Slurm key for authentication, also known as the <b>cluster secret</b>.</p>
     pub fn auth_key(mut self, input: crate::types::SlurmAuthKey) -> Self {
         self.auth_key = ::std::option::Option::Some(input);
@@ -224,6 +253,7 @@ impl ClusterSlurmConfigurationBuilder {
             slurm_custom_settings: self.slurm_custom_settings,
             slurmdbd_custom_settings: self.slurmdbd_custom_settings,
             cgroup_custom_settings: self.cgroup_custom_settings,
+            job_submit_plugins: self.job_submit_plugins,
             auth_key: self.auth_key,
             jwt_auth: self.jwt_auth,
             accounting: self.accounting,

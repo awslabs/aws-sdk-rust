@@ -3,16 +3,19 @@ pub fn ser_update_link_routing_rule_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_link_routing_rule::UpdateLinkRoutingRuleInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.conditions {
-        #[allow(unused_mut)]
-        let mut object_2 = object.key("conditions").start_object();
-        crate::protocol_serde::shape_rule_condition::ser_rule_condition(&mut object_2, var_1)?;
-        object_2.finish();
+    if let Some(var_1) = &input.client_token {
+        object.key("clientToken").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.priority {
+    if let Some(var_2) = &input.conditions {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("conditions").start_object();
+        crate::protocol_serde::shape_rule_condition::ser_rule_condition(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.priority {
         object.key("priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())

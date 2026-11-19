@@ -184,17 +184,17 @@ impl ListResourceSnapshotJobsFluentBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ResourceSnapshotJobStatus> {
         self.inner.get_status()
     }
-    /// <p>Configures the sorting of the response. If omitted, results are sorted by <code>CreatedDate</code> in descending order.</p>
+    /// <p>Configures the sorting of the response. If omitted, results are sorted by CreatedDate in descending order.</p>
     pub fn sort(mut self, input: crate::types::SortObject) -> Self {
         self.inner = self.inner.sort(input);
         self
     }
-    /// <p>Configures the sorting of the response. If omitted, results are sorted by <code>CreatedDate</code> in descending order.</p>
+    /// <p>Configures the sorting of the response. If omitted, results are sorted by CreatedDate in descending order.</p>
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::SortObject>) -> Self {
         self.inner = self.inner.set_sort(input);
         self
     }
-    /// <p>Configures the sorting of the response. If omitted, results are sorted by <code>CreatedDate</code> in descending order.</p>
+    /// <p>Configures the sorting of the response. If omitted, results are sorted by CreatedDate in descending order.</p>
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::SortObject> {
         self.inner.get_sort()
     }

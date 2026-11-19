@@ -23,6 +23,7 @@ impl crate::operation::search_discoverable_registry_records::builders::SearchDis
 /// Fluent builder constructing a request to `SearchDiscoverableRegistryRecords`.
 ///
 /// <p>Searches the discoverable registry records in a registry using a natural language query. Returns metadata for the matching records ordered by relevance.</p>
+/// <p>Returns at most 1000 results across all pages when <code>searchType</code> is <code>KEYWORD</code>, and at most 20 results when it is <code>HYBRID</code> or <code>SEMANTIC</code>. To retrieve more records, refine the query or filters, or use <code>ListDiscoverableRegistryRecords</code> to list every record.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchDiscoverableRegistryRecordsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +109,23 @@ impl SearchDiscoverableRegistryRecordsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The natural language query to search for matching registry records.</p>
+    /// Create a paginator for this request
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::search_discoverable_registry_records::paginator::SearchDiscoverableRegistryRecordsPaginator::send) which returns a [`PaginationStream`](aws_smithy_async::future::pagination_stream::PaginationStream).
+    pub fn into_paginator(self) -> crate::operation::search_discoverable_registry_records::paginator::SearchDiscoverableRegistryRecordsPaginator {
+        crate::operation::search_discoverable_registry_records::paginator::SearchDiscoverableRegistryRecordsPaginator::new(self.handle, self.inner)
+    }
+    /// <p>The natural language query to search for matching registry records. If you specify an empty string, the operation returns the records that match the <code>filters</code>, most recently updated first, up to the result limit for the <code>searchType</code>.</p>
     pub fn search_query(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.search_query(input.into());
         self
     }
-    /// <p>The natural language query to search for matching registry records.</p>
+    /// <p>The natural language query to search for matching registry records. If you specify an empty string, the operation returns the records that match the <code>filters</code>, most recently updated first, up to the result limit for the <code>searchType</code>.</p>
     pub fn set_search_query(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_search_query(input);
         self
     }
-    /// <p>The natural language query to search for matching registry records.</p>
+    /// <p>The natural language query to search for matching registry records. If you specify an empty string, the operation returns the records that match the <code>filters</code>, most recently updated first, up to the result limit for the <code>searchType</code>.</p>
     pub fn get_search_query(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_search_query()
     }
@@ -141,17 +148,17 @@ impl SearchDiscoverableRegistryRecordsFluentBuilder {
     pub fn get_registry_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_registry_ids()
     }
-    /// <p>The maximum number of results to return. Valid values are 1 through 20. The default value is 10.</p>
+    /// <p>The maximum number of results to return in one page. Valid values are 1 through 50 when <code>searchType</code> is <code>KEYWORD</code>, and 1 through 20 when it is <code>HYBRID</code> or <code>SEMANTIC</code>. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return. Valid values are 1 through 20. The default value is 10.</p>
+    /// <p>The maximum number of results to return in one page. Valid values are 1 through 50 when <code>searchType</code> is <code>KEYWORD</code>, and 1 through 20 when it is <code>HYBRID</code> or <code>SEMANTIC</code>. The default value is 10.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results to return. Valid values are 1 through 20. The default value is 10.</p>
+    /// <p>The maximum number of results to return in one page. Valid values are 1 through 50 when <code>searchType</code> is <code>KEYWORD</code>, and 1 through 20 when it is <code>HYBRID</code> or <code>SEMANTIC</code>. The default value is 10.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
@@ -171,5 +178,60 @@ impl SearchDiscoverableRegistryRecordsFluentBuilder {
     /// <p>Specifies additional filtering on custom metadata fields using the <code>customMetadata.{key}</code> prefix. For example, to filter by a custom metadata field: <code>{"customMetadata.environment": {"$eq": "production"}}</code>. For a Boolean field, you can also use a native JSON boolean value, for example: <code>{"customMetadata.requiresApproval": {"$eq": true}}</code>.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         self.inner.get_filters()
+    }
+    /// <p>Specifies how the service ranks registry records against the search query. If you omit this parameter, the service uses <code>HYBRID</code> in Amazon Web Services Regions that support semantic search and <code>KEYWORD</code> in Regions that do not. The response reports the search type that the service used. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>KEYWORD</code> – Ranks records by keyword match between the query terms and the record name, description, descriptors, and custom metadata text values. Available in every Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p><code>SEMANTIC</code> – Ranks records by semantic similarity to the query and returns the most similar records, up to <code>maxResults</code>, even when none of them closely matches the query.</p></li>
+    /// <li>
+    /// <p><code>HYBRID</code> – Combines keyword ranking and semantic ranking.</p></li>
+    /// </ul>
+    /// <p><code>HYBRID</code> and <code>SEMANTIC</code> are available in a limited number of Regions. If you specify either one in a Region that does not support semantic search, the request fails with a <code>ValidationException</code> that has the reason <code>UnsupportedInRegion</code>.</p>
+    pub fn search_type(mut self, input: crate::types::SearchType) -> Self {
+        self.inner = self.inner.search_type(input);
+        self
+    }
+    /// <p>Specifies how the service ranks registry records against the search query. If you omit this parameter, the service uses <code>HYBRID</code> in Amazon Web Services Regions that support semantic search and <code>KEYWORD</code> in Regions that do not. The response reports the search type that the service used. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>KEYWORD</code> – Ranks records by keyword match between the query terms and the record name, description, descriptors, and custom metadata text values. Available in every Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p><code>SEMANTIC</code> – Ranks records by semantic similarity to the query and returns the most similar records, up to <code>maxResults</code>, even when none of them closely matches the query.</p></li>
+    /// <li>
+    /// <p><code>HYBRID</code> – Combines keyword ranking and semantic ranking.</p></li>
+    /// </ul>
+    /// <p><code>HYBRID</code> and <code>SEMANTIC</code> are available in a limited number of Regions. If you specify either one in a Region that does not support semantic search, the request fails with a <code>ValidationException</code> that has the reason <code>UnsupportedInRegion</code>.</p>
+    pub fn set_search_type(mut self, input: ::std::option::Option<crate::types::SearchType>) -> Self {
+        self.inner = self.inner.set_search_type(input);
+        self
+    }
+    /// <p>Specifies how the service ranks registry records against the search query. If you omit this parameter, the service uses <code>HYBRID</code> in Amazon Web Services Regions that support semantic search and <code>KEYWORD</code> in Regions that do not. The response reports the search type that the service used. Valid values are the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>KEYWORD</code> – Ranks records by keyword match between the query terms and the record name, description, descriptors, and custom metadata text values. Available in every Amazon Web Services Region.</p></li>
+    /// <li>
+    /// <p><code>SEMANTIC</code> – Ranks records by semantic similarity to the query and returns the most similar records, up to <code>maxResults</code>, even when none of them closely matches the query.</p></li>
+    /// <li>
+    /// <p><code>HYBRID</code> – Combines keyword ranking and semantic ranking.</p></li>
+    /// </ul>
+    /// <p><code>HYBRID</code> and <code>SEMANTIC</code> are available in a limited number of Regions. If you specify either one in a Region that does not support semantic search, the request fails with a <code>ValidationException</code> that has the reason <code>UnsupportedInRegion</code>.</p>
+    pub fn get_search_type(&self) -> &::std::option::Option<crate::types::SearchType> {
+        self.inner.get_search_type()
+    }
+    /// <p>The pagination token from a previous response. Use it to retrieve the next page of results, and send the same <code>searchQuery</code>, <code>registryIds</code>, <code>filters</code>, and <code>searchType</code> that you used for the first page. If any of them differ, the request fails with a <code>ValidationException</code>. A pagination token expires 15 minutes after the service returns the first page.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.next_token(input.into());
+        self
+    }
+    /// <p>The pagination token from a previous response. Use it to retrieve the next page of results, and send the same <code>searchQuery</code>, <code>registryIds</code>, <code>filters</code>, and <code>searchType</code> that you used for the first page. If any of them differ, the request fails with a <code>ValidationException</code>. A pagination token expires 15 minutes after the service returns the first page.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_next_token(input);
+        self
+    }
+    /// <p>The pagination token from a previous response. Use it to retrieve the next page of results, and send the same <code>searchQuery</code>, <code>registryIds</code>, <code>filters</code>, and <code>searchType</code> that you used for the first page. If any of them differ, the request fails with a <code>ValidationException</code>. A pagination token expires 15 minutes after the service returns the first page.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_next_token()
     }
 }

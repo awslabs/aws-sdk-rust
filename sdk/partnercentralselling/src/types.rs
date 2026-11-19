@@ -9,7 +9,33 @@ pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
 pub use crate::types::_update_engagement_context_payload::UpdateEngagementContextPayload;
 
+pub use crate::types::_filter::Filter;
+
+pub use crate::types::_customer_account_sort::CustomerAccountSort;
+
+pub use crate::types::_customer_account_data::CustomerAccountData;
+
+pub use crate::types::_enrichment_status::EnrichmentStatus;
+
+pub use crate::types::_aws_enrichment::AwsEnrichment;
+
+pub use crate::types::_customer_account_failure_reason::CustomerAccountFailureReason;
+
+pub use crate::types::_customer_account_bulk_job_filter::CustomerAccountBulkJobFilter;
+
+pub use crate::types::_bulk_job_status::BulkJobStatus;
+
+pub use crate::types::_bulk_report_type::BulkReportType;
+
+pub use crate::types::_bulk_report_status::BulkReportStatus;
+
+pub use crate::types::_bulk_record_status::BulkRecordStatus;
+
 pub use crate::types::_engagement_sort::EngagementSort;
+
+pub use crate::types::_engagement_search_filter::EngagementSearchFilter;
+
+pub use crate::types::_engagement_search_sort::EngagementSearchSort;
 
 pub use crate::types::_list_tasks_sort_base::ListTasksSortBase;
 
@@ -18,6 +44,10 @@ pub use crate::types::_task_status::TaskStatus;
 pub use crate::types::_reason_code::ReasonCode;
 
 pub use crate::types::_aws_submission::AwsSubmission;
+
+pub use crate::types::_readiness_level::ReadinessLevel;
+
+pub use crate::types::_engagement_group_sort::EngagementGroupSort;
 
 pub use crate::types::_opportunity_engagement_invitation_sort::OpportunityEngagementInvitationSort;
 
@@ -83,6 +113,12 @@ pub use crate::types::_aws_opportunity_project::AwsOpportunityProject;
 
 pub use crate::types::_aws_software_revenue::AwsSoftwareRevenue;
 
+pub use crate::types::_opportunity_search_filter::OpportunitySearchFilter;
+
+pub use crate::types::_opportunity_search_sort::OpportunitySearchSort;
+
+pub use crate::types::_bulk_file_format::BulkFileFormat;
+
 pub use crate::types::_prospecting_from_engagement_task_sort::ProspectingFromEngagementTaskSort;
 
 pub use crate::types::_prospecting_task_status::ProspectingTaskStatus;
@@ -103,13 +139,37 @@ pub use crate::types::_lead_context::LeadContext;
 
 pub use crate::types::_prospecting_result::ProspectingResult;
 
+pub use crate::types::_customer_account_context::CustomerAccountContext;
+
 pub use crate::types::_validation_exception_error::ValidationExceptionError;
 
 pub use crate::types::_tag::Tag;
 
 pub use crate::types::_update_lead_context::UpdateLeadContext;
 
+pub use crate::types::_filter_condition::FilterCondition;
+
+pub use crate::types::_sortable_field::SortableField;
+
 pub use crate::types::_sort_order::SortOrder;
+
+pub use crate::types::_customer_account_summary::CustomerAccountSummary;
+
+pub use crate::types::_address::Address;
+
+pub use crate::types::_issue::Issue;
+
+pub use crate::types::_aws_enrichment_customer::AwsEnrichmentCustomer;
+
+pub use crate::types::_aws_enrichment_insights::AwsEnrichmentInsights;
+
+pub use crate::types::_aggregation_request::AggregationRequest;
+
+pub use crate::types::_aggregation_result::AggregationResult;
+
+pub use crate::types::_customer_account_bulk_job_summary::CustomerAccountBulkJobSummary;
+
+pub use crate::types::_bulk_job_result::BulkJobResult;
 
 pub use crate::types::_engagement_sort_name::EngagementSortName;
 
@@ -119,11 +179,21 @@ pub use crate::types::_engagement_context_details::EngagementContextDetails;
 
 pub use crate::types::_engagement_member::EngagementMember;
 
+pub use crate::types::_engagement_search_predicate::EngagementSearchPredicate;
+
+pub use crate::types::_engagement_search_sort_name::EngagementSearchSortName;
+
+pub use crate::types::_engagement_search_summary::EngagementSearchSummary;
+
 pub use crate::types::_list_tasks_sort_name::ListTasksSortName;
 
 pub use crate::types::_list_engagement_by_accepting_invitation_task_summary::ListEngagementByAcceptingInvitationTaskSummary;
 
 pub use crate::types::_list_engagement_from_opportunity_task_summary::ListEngagementFromOpportunityTaskSummary;
+
+pub use crate::types::_engagement_group_sort_name::EngagementGroupSortName;
+
+pub use crate::types::_engagement_group_summary::EngagementGroupSummary;
 
 pub use crate::types::_opportunity_engagement_invitation_sort_name::OpportunityEngagementInvitationSortName;
 
@@ -134,6 +204,8 @@ pub use crate::types::_account_receiver::AccountReceiver;
 pub use crate::types::_opportunity_invitation_payload::OpportunityInvitationPayload;
 
 pub use crate::types::_lead_invitation_payload::LeadInvitationPayload;
+
+pub use crate::types::_account_planning_invitation_payload::AccountPlanningInvitationPayload;
 
 pub use crate::types::_engagement_member_summary::EngagementMemberSummary;
 
@@ -183,6 +255,14 @@ pub use crate::types::_aws_products_spend_insights_by_source::AwsProductsSpendIn
 
 pub use crate::types::_opportunity_quality::OpportunityQuality;
 
+pub use crate::types::_opportunity_search_predicate::OpportunitySearchPredicate;
+
+pub use crate::types::_opportunity_search_sort_name::OpportunitySearchSortName;
+
+pub use crate::types::_opportunity_search_summary::OpportunitySearchSummary;
+
+pub use crate::types::_opportunity_bulk_job_summary::OpportunityBulkJobSummary;
+
 pub use crate::types::_list_opportunity_from_engagement_task_summary::ListOpportunityFromEngagementTaskSummary;
 
 pub use crate::types::_prospecting_from_engagement_task_sort_name::ProspectingFromEngagementTaskSortName;
@@ -217,9 +297,25 @@ pub use crate::types::_lead_customer::LeadCustomer;
 
 pub use crate::types::_prospecting_result_aws::ProspectingResultAws;
 
+pub use crate::types::_account_customer::AccountCustomer;
+
 pub use crate::types::_validation_exception_error_code::ValidationExceptionErrorCode;
 
 pub use crate::types::_lead_interaction::LeadInteraction;
+
+pub use crate::types::_filterable_field::FilterableField;
+
+pub use crate::types::_filter_value::FilterValue;
+
+pub use crate::types::_customer_account_details_summary::CustomerAccountDetailsSummary;
+
+pub use crate::types::_aws_enrichment_summary::AwsEnrichmentSummary;
+
+pub use crate::types::_country_code::CountryCode;
+
+pub use crate::types::_engagement_search_filter_name::EngagementSearchFilterName;
+
+pub use crate::types::_engagement_search_filter_value::EngagementSearchFilterValue;
 
 pub use crate::types::_project_details::ProjectDetails;
 
@@ -227,9 +323,13 @@ pub use crate::types::_lead_invitation_customer::LeadInvitationCustomer;
 
 pub use crate::types::_lead_invitation_interaction::LeadInvitationInteraction;
 
+pub use crate::types::_preferred_contact_window::PreferredContactWindow;
+
 pub use crate::types::_prospecting_result_customer::ProspectingResultCustomer;
 
 pub use crate::types::_prospecting_insights::ProspectingInsights;
+
+pub use crate::types::_channel_recommendation::ChannelRecommendation;
 
 pub use crate::types::_life_cycle_summary::LifeCycleSummary;
 
@@ -238,8 +338,6 @@ pub use crate::types::_customer_summary::CustomerSummary;
 pub use crate::types::_project_summary::ProjectSummary;
 
 pub use crate::types::_industry::Industry;
-
-pub use crate::types::_address::Address;
 
 pub use crate::types::_delivery_model::DeliveryModel;
 
@@ -263,33 +361,79 @@ pub use crate::types::_aws_product_insights::AwsProductInsights;
 
 pub use crate::types::_recommendation::Recommendation;
 
+pub use crate::types::_opportunity_search_filter_name::OpportunitySearchFilterName;
+
+pub use crate::types::_opportunity_search_filter_value::OpportunitySearchFilterValue;
+
+pub use crate::types::_opportunity_search_life_cycle::OpportunitySearchLifeCycle;
+
+pub use crate::types::_opportunity_search_customer::OpportunitySearchCustomer;
+
+pub use crate::types::_opportunity_search_project::OpportunitySearchProject;
+
+pub use crate::types::_opportunity_search_related_entity_identifiers::OpportunitySearchRelatedEntityIdentifiers;
+
+pub use crate::types::_opportunity_search_aws_summary::OpportunitySearchAwsSummary;
+
+pub use crate::types::_bulk_operation_type::BulkOperationType;
+
 pub use crate::types::_life_cycle_for_view::LifeCycleForView;
 
 pub use crate::types::_project_view::ProjectView;
-
-pub use crate::types::_country_code::CountryCode;
 
 pub use crate::types::_lead_address::LeadAddress;
 
 pub use crate::types::_lead_contact::LeadContact;
 
+pub use crate::types::_aws_enrichment_customer_summary::AwsEnrichmentCustomerSummary;
+
+pub use crate::types::_aws_enrichment_insights_summary::AwsEnrichmentInsightsSummary;
+
+pub use crate::types::_aggregatable_field::AggregatableField;
+
+pub use crate::types::_bucket::Bucket;
+
 pub use crate::types::_sender_contact::SenderContact;
 
 pub use crate::types::_receiver_responsibility::ReceiverResponsibility;
+
+pub use crate::types::_contact_window::ContactWindow;
 
 pub use crate::types::_account_summary::AccountSummary;
 
 pub use crate::types::_payment_frequency::PaymentFrequency;
 
+pub use crate::types::_opportunity_search_account::OpportunitySearchAccount;
+
+pub use crate::types::_opportunity_search_team_member::OpportunitySearchTeamMember;
+
+pub use crate::types::_opportunity_search_insights::OpportunitySearchInsights;
+
+pub use crate::types::_best_outreach_window::BestOutreachWindow;
+
 pub use crate::types::_address_summary::AddressSummary;
 
 pub use crate::types::_aws_product_details::AwsProductDetails;
+
+pub use crate::types::_opportunity_search_address::OpportunitySearchAddress;
+
+pub use crate::types::_opportunity_search_expected_customer_spend::OpportunitySearchExpectedCustomerSpend;
+
+pub use crate::types::_search_engagement_score::SearchEngagementScore;
+
+pub use crate::types::_opportunity_search_opportunity_quality::OpportunitySearchOpportunityQuality;
+
+pub use crate::types::_day_of_week::DayOfWeek;
 
 pub use crate::types::_aws_product_optimization::AwsProductOptimization;
 
 mod _access_denied_exception_error_code;
 
 mod _account;
+
+mod _account_customer;
+
+mod _account_planning_invitation_payload;
 
 mod _account_receiver;
 
@@ -299,9 +443,27 @@ mod _address;
 
 mod _address_summary;
 
+mod _aggregatable_field;
+
+mod _aggregation_request;
+
+mod _aggregation_result;
+
 mod _assignee_contact;
 
 mod _aws_closed_lost_reason;
+
+mod _aws_enrichment;
+
+mod _aws_enrichment_customer;
+
+mod _aws_enrichment_customer_summary;
+
+mod _aws_enrichment_insights;
+
+mod _aws_enrichment_insights_summary;
+
+mod _aws_enrichment_summary;
 
 mod _aws_funding_used;
 
@@ -337,13 +499,35 @@ mod _aws_submission;
 
 mod _aws_team_member;
 
+mod _best_outreach_window;
+
+mod _bucket;
+
+mod _bulk_file_format;
+
+mod _bulk_job_result;
+
+mod _bulk_job_status;
+
+mod _bulk_operation_type;
+
+mod _bulk_record_status;
+
+mod _bulk_report_status;
+
+mod _bulk_report_type;
+
 mod _channel;
+
+mod _channel_recommendation;
 
 mod _closed_lost_reason;
 
 mod _competitor_name;
 
 mod _contact;
+
+mod _contact_window;
 
 mod _country_code;
 
@@ -353,9 +537,27 @@ mod _currency_code;
 
 mod _customer;
 
+mod _customer_account_bulk_job_filter;
+
+mod _customer_account_bulk_job_summary;
+
+mod _customer_account_context;
+
+mod _customer_account_data;
+
+mod _customer_account_details_summary;
+
+mod _customer_account_failure_reason;
+
+mod _customer_account_sort;
+
+mod _customer_account_summary;
+
 mod _customer_projects_context;
 
 mod _customer_summary;
+
+mod _day_of_week;
 
 mod _delivery_model;
 
@@ -368,6 +570,12 @@ mod _engagement_context_type;
 mod _engagement_customer;
 
 mod _engagement_customer_project_details;
+
+mod _engagement_group_sort;
+
+mod _engagement_group_sort_name;
+
+mod _engagement_group_summary;
 
 mod _engagement_invitation_payload_type;
 
@@ -383,6 +591,20 @@ mod _engagement_resource_association_summary;
 
 mod _engagement_score;
 
+mod _engagement_search_filter;
+
+mod _engagement_search_filter_name;
+
+mod _engagement_search_filter_value;
+
+mod _engagement_search_predicate;
+
+mod _engagement_search_sort;
+
+mod _engagement_search_sort_name;
+
+mod _engagement_search_summary;
+
 mod _engagement_sort;
 
 mod _engagement_sort_name;
@@ -391,11 +613,21 @@ mod _engagement_summary;
 
 mod _enrichment_context;
 
+mod _enrichment_status;
+
 mod _expected_contract_duration;
 
 mod _expected_contract_duration_term;
 
 mod _expected_customer_spend;
+
+mod _filter;
+
+mod _filter_condition;
+
+mod _filter_value;
+
+mod _filterable_field;
 
 mod _industry;
 
@@ -406,6 +638,8 @@ mod _invitation_prospecting_result_aws;
 mod _invitation_status;
 
 mod _involvement_type_change_reason;
+
+mod _issue;
 
 mod _last_modified_date;
 
@@ -453,6 +687,8 @@ mod _national_security;
 
 mod _next_steps_history;
 
+mod _opportunity_bulk_job_summary;
+
 mod _opportunity_engagement_invitation_sort;
 
 mod _opportunity_engagement_invitation_sort_name;
@@ -462,6 +698,42 @@ mod _opportunity_invitation_payload;
 mod _opportunity_origin;
 
 mod _opportunity_quality;
+
+mod _opportunity_search_account;
+
+mod _opportunity_search_address;
+
+mod _opportunity_search_aws_summary;
+
+mod _opportunity_search_customer;
+
+mod _opportunity_search_expected_customer_spend;
+
+mod _opportunity_search_filter;
+
+mod _opportunity_search_filter_name;
+
+mod _opportunity_search_filter_value;
+
+mod _opportunity_search_insights;
+
+mod _opportunity_search_life_cycle;
+
+mod _opportunity_search_opportunity_quality;
+
+mod _opportunity_search_predicate;
+
+mod _opportunity_search_project;
+
+mod _opportunity_search_related_entity_identifiers;
+
+mod _opportunity_search_sort;
+
+mod _opportunity_search_sort_name;
+
+mod _opportunity_search_summary;
+
+mod _opportunity_search_team_member;
 
 mod _opportunity_sort;
 
@@ -478,6 +750,8 @@ mod _participant_type;
 mod _payload;
 
 mod _payment_frequency;
+
+mod _preferred_contact_window;
 
 mod _primary_need_from_aws;
 
@@ -506,6 +780,8 @@ mod _prospecting_result_customer;
 mod _prospecting_task_status;
 
 mod _prospecting_task_summary;
+
+mod _readiness_level;
 
 mod _reason_code;
 
@@ -537,6 +813,8 @@ mod _sales_activity;
 
 mod _sales_involvement_type;
 
+mod _search_engagement_score;
+
 mod _sender_contact;
 
 mod _software_revenue;
@@ -554,6 +832,8 @@ mod _sort_by;
 mod _sort_object;
 
 mod _sort_order;
+
+mod _sortable_field;
 
 mod _stage;
 

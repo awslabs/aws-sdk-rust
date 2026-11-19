@@ -131,6 +131,8 @@ pub use crate::types::_custom_filter::CustomFilterBuilder;
 
 pub use crate::types::_layout_sections::LayoutSectionsBuilder;
 
+pub use crate::types::_sla_update_configuration::SlaUpdateConfigurationBuilder;
+
 pub use crate::types::_sla_configuration::SlaConfigurationBuilder;
 
 pub use crate::types::_empty_field_value::EmptyFieldValueBuilder;

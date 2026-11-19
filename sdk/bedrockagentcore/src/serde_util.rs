@@ -1306,6 +1306,18 @@ pub(crate) fn agent_insight_summary_correct_errors(
     builder
 }
 
+pub(crate) fn aws_billing_x402_payment_output_correct_errors(
+    mut builder: crate::types::builders::AwsBillingX402PaymentOutputBuilder,
+) -> crate::types::builders::AwsBillingX402PaymentOutputBuilder {
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.payment_token.is_none() {
+        builder.payment_token = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn batch_evaluation_summary_correct_errors(
     mut builder: crate::types::builders::BatchEvaluationSummaryBuilder,
 ) -> crate::types::builders::BatchEvaluationSummaryBuilder {

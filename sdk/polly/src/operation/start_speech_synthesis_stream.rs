@@ -336,6 +336,10 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartSpeechSy
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum StartSpeechSynthesisStreamError {
+    /// <p>The request conflicts with the current state of the resource. For a custom voice, the voice isn't in the status that the operation requires. Check the status with <code>GetVoice</code>, and then try again.</p>
+    ConflictException(crate::types::error::ConflictException),
+    /// <p>Amazon Polly can't find the specified resource. Verify that the resource exists in the Amazon Web Services account and Region of the request and that its ARN or ID is spelled correctly, and then try again.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::types::error::ServiceFailureException),
     /// <p>The request would cause a service quota to be exceeded.</p>
@@ -377,12 +381,22 @@ impl StartSpeechSynthesisStreamError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceQuotaExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ValidationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `StartSpeechSynthesisStreamError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
+    }
+    /// Returns `true` if the error kind is `StartSpeechSynthesisStreamError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
     }
     /// Returns `true` if the error kind is `StartSpeechSynthesisStreamError::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
@@ -404,6 +418,8 @@ impl StartSpeechSynthesisStreamError {
 impl ::std::error::Error for StartSpeechSynthesisStreamError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceQuotaExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ThrottlingException(_inner) => ::std::option::Option::Some(_inner),
@@ -415,6 +431,8 @@ impl ::std::error::Error for StartSpeechSynthesisStreamError {
 impl ::std::fmt::Display for StartSpeechSynthesisStreamError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConflictException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceFailureException(_inner) => _inner.fmt(f),
             Self::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
             Self::ThrottlingException(_inner) => _inner.fmt(f),
@@ -440,6 +458,8 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for StartSpeechSynthesisStreamE
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for StartSpeechSynthesisStreamError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceQuotaExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ThrottlingException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

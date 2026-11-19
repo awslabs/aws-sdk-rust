@@ -19,6 +19,16 @@ static UPDATEGITHUBINTEGRATIONDETAIL_MEMBER_INSTALLATION_ID: ::aws_smithy_schema
     "installationId",
     1,
 );
+static UPDATEGITHUBINTEGRATIONDETAIL_MEMBER_STATE_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.inspector2#UpdateGitHubIntegrationDetail$stateToken",
+        "com.amazonaws.inspector2",
+        "UpdateGitHubIntegrationDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "stateToken",
+    2,
+);
 static UPDATEGITHUBINTEGRATIONDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.inspector2#UpdateGitHubIntegrationDetail",
@@ -29,6 +39,7 @@ static UPDATEGITHUBINTEGRATIONDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static
     &[
         &UPDATEGITHUBINTEGRATIONDETAIL_MEMBER_CODE,
         &UPDATEGITHUBINTEGRATIONDETAIL_MEMBER_INSTALLATION_ID,
+        &UPDATEGITHUBINTEGRATIONDETAIL_MEMBER_STATE_TOKEN,
     ],
 );
 impl crate::types::UpdateGitHubIntegrationDetail {
@@ -53,6 +64,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::UpdateGitH
             let val = &self.installation_id;
             ser.write_string(&UPDATEGITHUBINTEGRATIONDETAIL_MEMBER_INSTALLATION_ID, val)?;
         }
+        if let Some(ref val) = self.state_token {
+            ser.write_string(&UPDATEGITHUBINTEGRATIONDETAIL_MEMBER_STATE_TOKEN, val)?;
+        }
         Ok(())
     }
 }
@@ -75,6 +89,13 @@ impl crate::types::builders::UpdateGitHubIntegrationDetailBuilder {
                 }
                 Some(1) => {
                     self.installation_id = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state_token = Some(deser.read_string(member)?);
+                    }
                 }
                 _ => {}
             }

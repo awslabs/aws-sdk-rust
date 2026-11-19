@@ -49,6 +49,16 @@ static CREATECONNECTIONGROUPINPUT_MEMBER_ENABLED: ::aws_smithy_schema::Schema<'s
     "Enabled",
     4,
 );
+static CREATECONNECTIONGROUPINPUT_MEMBER_VIEWER_FALLBACK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudfront.synthetic#CreateConnectionGroupInput$ViewerFallback",
+        "com.amazonaws.cloudfront.synthetic",
+        "CreateConnectionGroupInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "ViewerFallback",
+    5,
+);
 static CREATECONNECTIONGROUPINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.cloudfront.synthetic#CreateConnectionGroupInput",
@@ -62,6 +72,7 @@ static CREATECONNECTIONGROUPINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> =
         &CREATECONNECTIONGROUPINPUT_MEMBER_TAGS,
         &CREATECONNECTIONGROUPINPUT_MEMBER_ANYCAST_IP_LIST_ID,
         &CREATECONNECTIONGROUPINPUT_MEMBER_ENABLED,
+        &CREATECONNECTIONGROUPINPUT_MEMBER_VIEWER_FALLBACK,
     ],
 )
 .with_http(aws_smithy_schema::traits::HttpTrait::new(
@@ -99,6 +110,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::create
         }
         if let Some(ref val) = self.enabled {
             ser.write_boolean(&CREATECONNECTIONGROUPINPUT_MEMBER_ENABLED, *val)?;
+        }
+        if let Some(ref val) = self.viewer_fallback {
+            ser.write_struct(&CREATECONNECTIONGROUPINPUT_MEMBER_VIEWER_FALLBACK, val)?;
         }
         Ok(())
     }
@@ -150,6 +164,13 @@ impl crate::operation::create_connection_group::builders::CreateConnectionGroupI
                         deser.read_null()?;
                     } else {
                         self.enabled = Some(deser.read_boolean(member)?);
+                    }
+                }
+                Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.viewer_fallback = Some(crate::types::ViewerFallback::deserialize(deser)?);
                     }
                 }
                 _ => {}

@@ -12,7 +12,7 @@ pub struct ResourceDetails {
     pub aws_lambda_function: ::std::option::Option<crate::types::AwsLambdaFunctionDetails>,
     /// <p>Contains details about a code repository resource associated with a finding.</p>
     pub code_repository: ::std::option::Option<crate::types::CodeRepositoryDetails>,
-    /// Details about a machine image resource scanned directly by Inspector.
+    /// <p>An object that contains details about the Amazon Machine Image (AMI) involved in the finding.</p>
     pub machine_image: ::std::option::Option<crate::types::MachineImageDetails>,
     /// <p>An object that contains details about a VM instance involved in the finding.</p>
     pub vm: ::std::option::Option<crate::types::Vm>,
@@ -38,7 +38,7 @@ impl ResourceDetails {
     pub fn code_repository(&self) -> ::std::option::Option<&crate::types::CodeRepositoryDetails> {
         self.code_repository.as_ref()
     }
-    /// Details about a machine image resource scanned directly by Inspector.
+    /// <p>An object that contains details about the Amazon Machine Image (AMI) involved in the finding.</p>
     pub fn machine_image(&self) -> ::std::option::Option<&crate::types::MachineImageDetails> {
         self.machine_image.as_ref()
     }
@@ -132,17 +132,17 @@ impl ResourceDetailsBuilder {
     pub fn get_code_repository(&self) -> &::std::option::Option<crate::types::CodeRepositoryDetails> {
         &self.code_repository
     }
-    /// Details about a machine image resource scanned directly by Inspector.
+    /// <p>An object that contains details about the Amazon Machine Image (AMI) involved in the finding.</p>
     pub fn machine_image(mut self, input: crate::types::MachineImageDetails) -> Self {
         self.machine_image = ::std::option::Option::Some(input);
         self
     }
-    /// Details about a machine image resource scanned directly by Inspector.
+    /// <p>An object that contains details about the Amazon Machine Image (AMI) involved in the finding.</p>
     pub fn set_machine_image(mut self, input: ::std::option::Option<crate::types::MachineImageDetails>) -> Self {
         self.machine_image = input;
         self
     }
-    /// Details about a machine image resource scanned directly by Inspector.
+    /// <p>An object that contains details about the Amazon Machine Image (AMI) involved in the finding.</p>
     pub fn get_machine_image(&self) -> &::std::option::Option<crate::types::MachineImageDetails> {
         &self.machine_image
     }

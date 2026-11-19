@@ -22,7 +22,7 @@ impl crate::operation::untag_resource::builders::UntagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `UntagResource`.
 ///
-/// Removes tags from an event bus, subscriber, or event source.
+/// <p>Removes tags from an event bus, subscriber, or event source.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl UntagResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// ARN for an EventBridge resource that supports tagging: event buses, subscribers, and event sources.
+    /// <p>ARN for an EventBridge resource that supports tagging: event buses, subscribers, and event sources.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// ARN for an EventBridge resource that supports tagging: event buses, subscribers, and event sources.
+    /// <p>ARN for an EventBridge resource that supports tagging: event buses, subscribers, and event sources.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// ARN for an EventBridge resource that supports tagging: event buses, subscribers, and event sources.
+    /// <p>ARN for an EventBridge resource that supports tagging: event buses, subscribers, and event sources.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }
@@ -127,17 +127,17 @@ impl UntagResourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
     ///
-    /// List of tag keys.
+    /// <p>List of tag keys.</p>
     pub fn tag_keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tag_keys(input.into());
         self
     }
-    /// List of tag keys.
+    /// <p>List of tag keys.</p>
     pub fn set_tag_keys(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
-    /// List of tag keys.
+    /// <p>List of tag keys.</p>
     pub fn get_tag_keys(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_tag_keys()
     }

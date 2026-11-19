@@ -337,6 +337,10 @@ pub(crate) mod shape_sla_input_configuration;
 
 pub(crate) mod shape_sla_input_content;
 
+pub(crate) mod shape_sla_update_configuration;
+
+pub(crate) mod shape_sla_update_content;
+
 pub(crate) mod shape_sort;
 
 pub(crate) mod shape_start_merge_cases_input_input;

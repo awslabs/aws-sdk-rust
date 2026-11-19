@@ -5,12 +5,24 @@
 pub struct GetFirewallDomainListOutput {
     /// <p>The domain list that you requested.</p>
     pub firewall_domain_list: ::std::option::Option<crate::types::FirewallDomainList>,
+    /// <p>For an AutoAllowlist domain list, the ID of the firewall rule group that contains the AutoAllowlist rule that owns this domain list. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+    pub firewall_rule_group_id: ::std::option::Option<::std::string::String>,
+    /// <p>For an AutoAllowlist domain list, the threat protection ID of the auto-allowlist rule that owns this domain list. Provide it to <code>ListFirewallRuleDomains</code> to review the observed, allowed, and denied domains. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+    pub firewall_threat_protection_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetFirewallDomainListOutput {
     /// <p>The domain list that you requested.</p>
     pub fn firewall_domain_list(&self) -> ::std::option::Option<&crate::types::FirewallDomainList> {
         self.firewall_domain_list.as_ref()
+    }
+    /// <p>For an AutoAllowlist domain list, the ID of the firewall rule group that contains the AutoAllowlist rule that owns this domain list. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+    pub fn firewall_rule_group_id(&self) -> ::std::option::Option<&str> {
+        self.firewall_rule_group_id.as_deref()
+    }
+    /// <p>For an AutoAllowlist domain list, the threat protection ID of the auto-allowlist rule that owns this domain list. Provide it to <code>ListFirewallRuleDomains</code> to review the observed, allowed, and denied domains. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+    pub fn firewall_threat_protection_id(&self) -> ::std::option::Option<&str> {
+        self.firewall_threat_protection_id.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetFirewallDomainListOutput {
@@ -30,6 +42,8 @@ impl GetFirewallDomainListOutput {
 #[non_exhaustive]
 pub struct GetFirewallDomainListOutputBuilder {
     pub(crate) firewall_domain_list: ::std::option::Option<crate::types::FirewallDomainList>,
+    pub(crate) firewall_rule_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) firewall_threat_protection_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetFirewallDomainListOutputBuilder {
@@ -47,6 +61,34 @@ impl GetFirewallDomainListOutputBuilder {
     pub fn get_firewall_domain_list(&self) -> &::std::option::Option<crate::types::FirewallDomainList> {
         &self.firewall_domain_list
     }
+    /// <p>For an AutoAllowlist domain list, the ID of the firewall rule group that contains the AutoAllowlist rule that owns this domain list. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+    pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.firewall_rule_group_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>For an AutoAllowlist domain list, the ID of the firewall rule group that contains the AutoAllowlist rule that owns this domain list. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+    pub fn set_firewall_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.firewall_rule_group_id = input;
+        self
+    }
+    /// <p>For an AutoAllowlist domain list, the ID of the firewall rule group that contains the AutoAllowlist rule that owns this domain list. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+    pub fn get_firewall_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_rule_group_id
+    }
+    /// <p>For an AutoAllowlist domain list, the threat protection ID of the auto-allowlist rule that owns this domain list. Provide it to <code>ListFirewallRuleDomains</code> to review the observed, allowed, and denied domains. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+    pub fn firewall_threat_protection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.firewall_threat_protection_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>For an AutoAllowlist domain list, the threat protection ID of the auto-allowlist rule that owns this domain list. Provide it to <code>ListFirewallRuleDomains</code> to review the observed, allowed, and denied domains. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+    pub fn set_firewall_threat_protection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.firewall_threat_protection_id = input;
+        self
+    }
+    /// <p>For an AutoAllowlist domain list, the threat protection ID of the auto-allowlist rule that owns this domain list. Provide it to <code>ListFirewallRuleDomains</code> to review the observed, allowed, and denied domains. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+    pub fn get_firewall_threat_protection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_threat_protection_id
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -60,6 +102,8 @@ impl GetFirewallDomainListOutputBuilder {
     pub fn build(self) -> crate::operation::get_firewall_domain_list::GetFirewallDomainListOutput {
         crate::operation::get_firewall_domain_list::GetFirewallDomainListOutput {
             firewall_domain_list: self.firewall_domain_list,
+            firewall_rule_group_id: self.firewall_rule_group_id,
+            firewall_threat_protection_id: self.firewall_threat_protection_id,
             _request_id: self._request_id,
         }
     }

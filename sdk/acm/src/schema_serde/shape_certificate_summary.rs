@@ -212,6 +212,26 @@ static CERTIFICATESUMMARY_MEMBER_CERTIFICATE_KEY_PAIR_ORIGIN: ::aws_smithy_schem
     "CertificateKeyPairOrigin",
     20,
 );
+static CERTIFICATESUMMARY_MEMBER_CERTIFICATE_USAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateSummary$CertificateUsage",
+        "com.amazonaws.acm",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CertificateUsage",
+    21,
+);
+static CERTIFICATESUMMARY_MEMBER_ROOT_HIERARCHY_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateSummary$RootHierarchyType",
+        "com.amazonaws.acm",
+        "CertificateSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RootHierarchyType",
+    22,
+);
 static CERTIFICATESUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#CertificateSummary", "com.amazonaws.acm", "CertificateSummary"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -237,6 +257,8 @@ static CERTIFICATESUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_s
         &CERTIFICATESUMMARY_MEMBER_REVOKED_AT,
         &CERTIFICATESUMMARY_MEMBER_MANAGED_BY,
         &CERTIFICATESUMMARY_MEMBER_CERTIFICATE_KEY_PAIR_ORIGIN,
+        &CERTIFICATESUMMARY_MEMBER_CERTIFICATE_USAGE,
+        &CERTIFICATESUMMARY_MEMBER_ROOT_HIERARCHY_TYPE,
     ],
 );
 impl crate::types::CertificateSummary {
@@ -339,6 +361,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Certificat
         }
         if let Some(ref val) = self.certificate_key_pair_origin {
             ser.write_string(&CERTIFICATESUMMARY_MEMBER_CERTIFICATE_KEY_PAIR_ORIGIN, val.as_str())?;
+        }
+        if let Some(ref val) = self.certificate_usage {
+            ser.write_string(&CERTIFICATESUMMARY_MEMBER_CERTIFICATE_USAGE, val.as_str())?;
+        }
+        if let Some(ref val) = self.root_hierarchy_type {
+            ser.write_string(&CERTIFICATESUMMARY_MEMBER_ROOT_HIERARCHY_TYPE, val.as_str())?;
         }
         Ok(())
     }
@@ -520,6 +548,20 @@ impl crate::types::builders::CertificateSummaryBuilder {
                         deser.read_null()?;
                     } else {
                         self.certificate_key_pair_origin = Some(crate::types::CertificateKeyPairOrigin::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_usage = Some(crate::types::CertificateUsage::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(22) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.root_hierarchy_type = Some(crate::types::RootHierarchyType::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}

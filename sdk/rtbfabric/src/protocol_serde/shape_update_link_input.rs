@@ -3,16 +3,19 @@ pub fn ser_update_link_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_link::UpdateLinkInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.log_settings {
-        #[allow(unused_mut)]
-        let mut object_2 = object.key("logSettings").start_object();
-        crate::protocol_serde::shape_link_log_settings::ser_link_log_settings(&mut object_2, var_1)?;
-        object_2.finish();
+    if let Some(var_1) = &input.client_token {
+        object.key("clientToken").string(var_1.as_str());
     }
-    if let Some(var_3) = &input.timeout_in_millis {
+    if let Some(var_2) = &input.log_settings {
+        #[allow(unused_mut)]
+        let mut object_3 = object.key("logSettings").start_object();
+        crate::protocol_serde::shape_link_log_settings::ser_link_log_settings(&mut object_3, var_2)?;
+        object_3.finish();
+    }
+    if let Some(var_4) = &input.timeout_in_millis {
         object.key("timeoutInMillis").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_3).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
     Ok(())

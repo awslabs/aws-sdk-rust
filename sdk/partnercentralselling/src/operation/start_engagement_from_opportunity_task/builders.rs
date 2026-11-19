@@ -150,17 +150,17 @@ impl StartEngagementFromOpportunityTaskFluentBuilder {
     pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_identifier()
     }
-    /// <p>Indicates the level of AWS involvement in the opportunity. This field helps track AWS participation throughout the engagement, such as providing technical support, deal assistance, and sales support.</p>
+    /// <p>Specifies the level of AWS involvement for the opportunity. The value includes the involvement type and the visibility of that involvement.</p>
     pub fn aws_submission(mut self, input: crate::types::AwsSubmission) -> Self {
         self.inner = self.inner.aws_submission(input);
         self
     }
-    /// <p>Indicates the level of AWS involvement in the opportunity. This field helps track AWS participation throughout the engagement, such as providing technical support, deal assistance, and sales support.</p>
+    /// <p>Specifies the level of AWS involvement for the opportunity. The value includes the involvement type and the visibility of that involvement.</p>
     pub fn set_aws_submission(mut self, input: ::std::option::Option<crate::types::AwsSubmission>) -> Self {
         self.inner = self.inner.set_aws_submission(input);
         self
     }
-    /// <p>Indicates the level of AWS involvement in the opportunity. This field helps track AWS participation throughout the engagement, such as providing technical support, deal assistance, and sales support.</p>
+    /// <p>Specifies the level of AWS involvement for the opportunity. The value includes the involvement type and the visibility of that involvement.</p>
     pub fn get_aws_submission(&self) -> &::std::option::Option<crate::types::AwsSubmission> {
         self.inner.get_aws_submission()
     }

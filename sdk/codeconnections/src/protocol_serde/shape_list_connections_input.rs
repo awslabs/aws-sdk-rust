@@ -4,11 +4,11 @@ pub fn ser_list_connections_input_input(
     #[allow(unused)] input: &crate::operation::list_connections::ListConnectionsInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     encoder.begin_map();
-    if let Some(var_1) = &input.provider_type_filter {
-        encoder.str("ProviderTypeFilter").str(var_1.as_str());
+    if let Some(var_1) = &input.host_arn_filter {
+        encoder.str("HostArnFilter").str(var_1.as_str());
     }
-    if let Some(var_2) = &input.host_arn_filter {
-        encoder.str("HostArnFilter").str(var_2.as_str());
+    if let Some(var_2) = &input.provider_type_filter {
+        encoder.str("ProviderTypeFilter").str(var_2.as_str());
     }
     if let Some(var_3) = &input.max_results {
         encoder.str("MaxResults").integer(*var_3);

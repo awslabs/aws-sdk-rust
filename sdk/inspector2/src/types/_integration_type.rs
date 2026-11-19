@@ -13,6 +13,7 @@
 /// # let integrationtype = unimplemented!();
 /// match integrationtype {
 ///     IntegrationType::Github => { /* ... */ },
+///     IntegrationType::GithubEnterpriseServer => { /* ... */ },
 ///     IntegrationType::GitlabSelfManaged => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum IntegrationType {
     #[allow(missing_docs)] // documentation missing in model
     Github,
     #[allow(missing_docs)] // documentation missing in model
+    GithubEnterpriseServer,
+    #[allow(missing_docs)] // documentation missing in model
     GitlabSelfManaged,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for IntegrationType {
     fn from(s: &str) -> Self {
         match s {
             "GITHUB" => IntegrationType::Github,
+            "GITHUB_ENTERPRISE_SERVER" => IntegrationType::GithubEnterpriseServer,
             "GITLAB_SELF_MANAGED" => IntegrationType::GitlabSelfManaged,
             other => IntegrationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl IntegrationType {
     pub fn as_str(&self) -> &str {
         match self {
             IntegrationType::Github => "GITHUB",
+            IntegrationType::GithubEnterpriseServer => "GITHUB_ENTERPRISE_SERVER",
             IntegrationType::GitlabSelfManaged => "GITLAB_SELF_MANAGED",
             IntegrationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["GITHUB", "GITLAB_SELF_MANAGED"]
+        &["GITHUB", "GITHUB_ENTERPRISE_SERVER", "GITLAB_SELF_MANAGED"]
     }
 }
 impl ::std::convert::AsRef<str> for IntegrationType {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for IntegrationType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             IntegrationType::Github => write!(f, "GITHUB"),
+            IntegrationType::GithubEnterpriseServer => write!(f, "GITHUB_ENTERPRISE_SERVER"),
             IntegrationType::GitlabSelfManaged => write!(f, "GITLAB_SELF_MANAGED"),
             IntegrationType::Unknown(value) => write!(f, "{value}"),
         }

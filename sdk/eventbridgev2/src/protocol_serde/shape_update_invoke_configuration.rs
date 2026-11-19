@@ -39,6 +39,10 @@ pub fn ser_update_invoke_configuration(
         encoder.str("EventBusV2Parameters");
         crate::protocol_serde::shape_event_bus_v2_parameters::ser_event_bus_v2_parameters(encoder, var_8)?;
     }
+    if let Some(var_9) = &input.msk_parameters {
+        encoder.str("MskParameters");
+        crate::protocol_serde::shape_msk_parameters::ser_msk_parameters(encoder, var_9)?;
+    }
     encoder.end();
     Ok(())
 }

@@ -6,6 +6,8 @@
 pub enum UpdateIntegrationDetails {
     /// <p>Details specific to updating an integration with GitHub.</p>
     Github(crate::types::UpdateGitHubIntegrationDetail),
+    /// <p>Details specific to updating an integration with a GitHub Enterprise Server instance.</p>
+    GithubEnterpriseServer(crate::types::UpdateGitHubEnterpriseServerIntegrationDetail),
     /// <p>Details specific to updating an integration with a self-managed GitLab instance.</p>
     GitlabSelfManaged(crate::types::UpdateGitLabSelfManagedIntegrationDetail),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -31,6 +33,19 @@ impl UpdateIntegrationDetails {
     /// Returns true if this is a [`Github`](crate::types::UpdateIntegrationDetails::Github).
     pub fn is_github(&self) -> bool {
         self.as_github().is_ok()
+    }
+    /// Tries to convert the enum instance into [`GithubEnterpriseServer`](crate::types::UpdateIntegrationDetails::GithubEnterpriseServer), extracting the inner [`UpdateGitHubEnterpriseServerIntegrationDetail`](crate::types::UpdateGitHubEnterpriseServerIntegrationDetail).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_github_enterprise_server(&self) -> ::std::result::Result<&crate::types::UpdateGitHubEnterpriseServerIntegrationDetail, &Self> {
+        if let UpdateIntegrationDetails::GithubEnterpriseServer(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`GithubEnterpriseServer`](crate::types::UpdateIntegrationDetails::GithubEnterpriseServer).
+    pub fn is_github_enterprise_server(&self) -> bool {
+        self.as_github_enterprise_server().is_ok()
     }
     /// Tries to convert the enum instance into [`GitlabSelfManaged`](crate::types::UpdateIntegrationDetails::GitlabSelfManaged), extracting the inner [`UpdateGitLabSelfManagedIntegrationDetail`](crate::types::UpdateGitLabSelfManagedIntegrationDetail).
     /// Returns `Err(&Self)` if it can't be converted.

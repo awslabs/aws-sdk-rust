@@ -3,24 +3,27 @@ pub fn ser_update_agent_space_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_agent_space::UpdateAgentSpaceInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
+    if let Some(var_1) = &input.aws_source_mode {
+        object.key("awsSourceMode").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.locale {
-        object.key("locale").string(var_2.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("description").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.name {
-        object.key("name").string(var_3.as_str());
+    if let Some(var_3) = &input.locale {
+        object.key("locale").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.preferences {
+    if let Some(var_4) = &input.name {
+        object.key("name").string(var_4.as_str());
+    }
+    if let Some(var_5) = &input.preferences {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("preferences").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_6 = object.key("preferences").start_object();
+        for (key_7, value_8) in var_5 {
             {
-                object_5.key(key_6.as_str()).boolean(*value_7);
+                object_6.key(key_7.as_str()).boolean(*value_8);
             }
         }
-        object_5.finish();
+        object_6.finish();
     }
     Ok(())
 }

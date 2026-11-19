@@ -23,6 +23,10 @@ impl crate::operation::update_firewall_domains::builders::UpdateFirewallDomainsI
 /// Fluent builder constructing a request to `UpdateFirewallDomains`.
 ///
 /// <p>Updates the firewall domain list from an array of domain specifications.</p>
+/// <p>For an AutoAllowlist rule's managed domain list, use <code>ADD</code> to approve observed domains, <code>REMOVE</code> to stop allowing domains, unless a wildcard entry that's still on the list matches them, and <code>DENY</code> to dismiss observed domains. <code>REPLACE</code> and <code>ImportFirewallDomains</code> aren't supported for these lists.</p>
+/// <p>DNS Firewall throttles <code>UpdateFirewallDomains</code> requests based on both the request rate and the total number of domains across your requests.</p>
+/// <p><b>Best Practice for Updating Domain Lists</b></p>
+/// <p>If you only need to modify a subset of domains, use the <code>ADD</code> or <code>REMOVE</code> operations instead of <code>REPLACE</code>. With <code>REPLACE</code>, you send the complete list you want to end up with, and throttling counts every domain in that request, including domains that aren't changing, which can use up your available throttling capacity.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateFirewallDomainsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -125,11 +129,13 @@ impl UpdateFirewallDomainsFluentBuilder {
     /// <p>What you want DNS Firewall to do with the domains that you are providing:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ADD</code> - Add the domains to the ones that are already in the domain list.</p></li>
+    /// <p><code>ADD</code> - Add the domains to the ones that are already in the domain list. For an AutoAllowlist rule's managed domain list, this also marks the observed domains as allowed.</p></li>
     /// <li>
-    /// <p><code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p></li>
+    /// <p><code>REMOVE</code> - Search the domain list for the domains and remove them from the list. For an AutoAllowlist rule's managed domain list, the rule no longer allows the removed domains, unless a wildcard entry that's still on the list matches them.</p></li>
     /// <li>
-    /// <p><code>REPLACE</code> - Update the domain list to exactly match the list that you are providing.</p></li>
+    /// <p><code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. Not supported for an AutoAllowlist rule's managed domain list.</p></li>
+    /// <li>
+    /// <p><code>DENY</code> - For an AutoAllowlist rule's managed domain list only, mark the specified observed domains as denied so that they're no longer listed for review. If a domain is on the managed domain list, <code>DENY</code> also removes it from the list. Specify fully qualified domain names. Wildcards aren't accepted.</p></li>
     /// </ul>
     pub fn operation(mut self, input: crate::types::FirewallDomainUpdateOperation) -> Self {
         self.inner = self.inner.operation(input);
@@ -138,11 +144,13 @@ impl UpdateFirewallDomainsFluentBuilder {
     /// <p>What you want DNS Firewall to do with the domains that you are providing:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ADD</code> - Add the domains to the ones that are already in the domain list.</p></li>
+    /// <p><code>ADD</code> - Add the domains to the ones that are already in the domain list. For an AutoAllowlist rule's managed domain list, this also marks the observed domains as allowed.</p></li>
     /// <li>
-    /// <p><code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p></li>
+    /// <p><code>REMOVE</code> - Search the domain list for the domains and remove them from the list. For an AutoAllowlist rule's managed domain list, the rule no longer allows the removed domains, unless a wildcard entry that's still on the list matches them.</p></li>
     /// <li>
-    /// <p><code>REPLACE</code> - Update the domain list to exactly match the list that you are providing.</p></li>
+    /// <p><code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. Not supported for an AutoAllowlist rule's managed domain list.</p></li>
+    /// <li>
+    /// <p><code>DENY</code> - For an AutoAllowlist rule's managed domain list only, mark the specified observed domains as denied so that they're no longer listed for review. If a domain is on the managed domain list, <code>DENY</code> also removes it from the list. Specify fully qualified domain names. Wildcards aren't accepted.</p></li>
     /// </ul>
     pub fn set_operation(mut self, input: ::std::option::Option<crate::types::FirewallDomainUpdateOperation>) -> Self {
         self.inner = self.inner.set_operation(input);
@@ -151,11 +159,13 @@ impl UpdateFirewallDomainsFluentBuilder {
     /// <p>What you want DNS Firewall to do with the domains that you are providing:</p>
     /// <ul>
     /// <li>
-    /// <p><code>ADD</code> - Add the domains to the ones that are already in the domain list.</p></li>
+    /// <p><code>ADD</code> - Add the domains to the ones that are already in the domain list. For an AutoAllowlist rule's managed domain list, this also marks the observed domains as allowed.</p></li>
     /// <li>
-    /// <p><code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p></li>
+    /// <p><code>REMOVE</code> - Search the domain list for the domains and remove them from the list. For an AutoAllowlist rule's managed domain list, the rule no longer allows the removed domains, unless a wildcard entry that's still on the list matches them.</p></li>
     /// <li>
-    /// <p><code>REPLACE</code> - Update the domain list to exactly match the list that you are providing.</p></li>
+    /// <p><code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. Not supported for an AutoAllowlist rule's managed domain list.</p></li>
+    /// <li>
+    /// <p><code>DENY</code> - For an AutoAllowlist rule's managed domain list only, mark the specified observed domains as denied so that they're no longer listed for review. If a domain is on the managed domain list, <code>DENY</code> also removes it from the list. Specify fully qualified domain names. Wildcards aren't accepted.</p></li>
     /// </ul>
     pub fn get_operation(&self) -> &::std::option::Option<crate::types::FirewallDomainUpdateOperation> {
         self.inner.get_operation()

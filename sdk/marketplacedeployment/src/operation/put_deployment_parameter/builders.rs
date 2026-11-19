@@ -150,17 +150,17 @@ impl PutDeploymentParameterFluentBuilder {
     pub fn get_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_agreement_id()
     }
-    /// <p>The deployment parameter targeted to the acceptor of an agreement for which to create the AWS Secret Manager resource.</p>
+    /// <p>The deployment parameter targeted to the acceptor of an agreement for which to create the AWS Secrets Manager resource.</p>
     pub fn deployment_parameter(mut self, input: crate::types::DeploymentParameterInput) -> Self {
         self.inner = self.inner.deployment_parameter(input);
         self
     }
-    /// <p>The deployment parameter targeted to the acceptor of an agreement for which to create the AWS Secret Manager resource.</p>
+    /// <p>The deployment parameter targeted to the acceptor of an agreement for which to create the AWS Secrets Manager resource.</p>
     pub fn set_deployment_parameter(mut self, input: ::std::option::Option<crate::types::DeploymentParameterInput>) -> Self {
         self.inner = self.inner.set_deployment_parameter(input);
         self
     }
-    /// <p>The deployment parameter targeted to the acceptor of an agreement for which to create the AWS Secret Manager resource.</p>
+    /// <p>The deployment parameter targeted to the acceptor of an agreement for which to create the AWS Secrets Manager resource.</p>
     pub fn get_deployment_parameter(&self) -> &::std::option::Option<crate::types::DeploymentParameterInput> {
         self.inner.get_deployment_parameter()
     }

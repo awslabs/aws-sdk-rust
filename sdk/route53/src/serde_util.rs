@@ -59,6 +59,21 @@ pub(crate) fn create_health_check_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn create_health_check_source_output_output_correct_errors(
+    mut builder: crate::operation::create_health_check_source::builders::CreateHealthCheckSourceOutputBuilder,
+) -> crate::operation::create_health_check_source::builders::CreateHealthCheckSourceOutputBuilder {
+    if builder.health_check_source_id.is_none() {
+        builder.health_check_source_id = Some(Default::default())
+    }
+    if builder.health_check_source_status.is_none() {
+        builder.health_check_source_status = "no value was set".parse::<crate::types::HealthCheckSourceStatus>().ok()
+    }
+    if builder.location.is_none() {
+        builder.location = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_hosted_zone_output_output_correct_errors(
     mut builder: crate::operation::create_hosted_zone::builders::CreateHostedZoneOutputBuilder,
 ) -> crate::operation::create_hosted_zone::builders::CreateHostedZoneOutputBuilder {
@@ -227,6 +242,18 @@ pub(crate) fn deactivate_key_signing_key_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn delete_health_check_source_output_output_correct_errors(
+    mut builder: crate::operation::delete_health_check_source::builders::DeleteHealthCheckSourceOutputBuilder,
+) -> crate::operation::delete_health_check_source::builders::DeleteHealthCheckSourceOutputBuilder {
+    if builder.health_check_source_id.is_none() {
+        builder.health_check_source_id = Some(Default::default())
+    }
+    if builder.health_check_source_status.is_none() {
+        builder.health_check_source_status = "no value was set".parse::<crate::types::HealthCheckSourceStatus>().ok()
+    }
+    builder
+}
+
 pub(crate) fn delete_hosted_zone_output_output_correct_errors(
     mut builder: crate::operation::delete_hosted_zone::builders::DeleteHostedZoneOutputBuilder,
 ) -> crate::operation::delete_hosted_zone::builders::DeleteHostedZoneOutputBuilder {
@@ -380,6 +407,18 @@ pub(crate) fn get_health_check_last_failure_reason_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_health_check_source_output_output_correct_errors(
+    mut builder: crate::operation::get_health_check_source::builders::GetHealthCheckSourceOutputBuilder,
+) -> crate::operation::get_health_check_source::builders::GetHealthCheckSourceOutputBuilder {
+    if builder.health_check_source.is_none() {
+        builder.health_check_source = {
+            let builder = crate::types::builders::HealthCheckSourceBuilder::default();
+            crate::serde_util::health_check_source_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_health_check_status_output_output_correct_errors(
     mut builder: crate::operation::get_health_check_status::builders::GetHealthCheckStatusOutputBuilder,
 ) -> crate::operation::get_health_check_status::builders::GetHealthCheckStatusOutputBuilder {
@@ -512,6 +551,15 @@ pub(crate) fn list_geo_locations_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_health_check_sources_output_output_correct_errors(
+    mut builder: crate::operation::list_health_check_sources::builders::ListHealthCheckSourcesOutputBuilder,
+) -> crate::operation::list_health_check_sources::builders::ListHealthCheckSourcesOutputBuilder {
+    if builder.health_check_sources.is_none() {
+        builder.health_check_sources = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_health_checks_output_output_correct_errors(
     mut builder: crate::operation::list_health_checks::builders::ListHealthChecksOutputBuilder,
 ) -> crate::operation::list_health_checks::builders::ListHealthChecksOutputBuilder {
@@ -520,6 +568,21 @@ pub(crate) fn list_health_checks_output_output_correct_errors(
     }
     if builder.marker.is_none() {
         builder.marker = Some(Default::default())
+    }
+    if builder.is_truncated.is_none() {
+        builder.is_truncated = Some(Default::default())
+    }
+    if builder.max_items.is_none() {
+        builder.max_items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_health_checks_by_source_output_output_correct_errors(
+    mut builder: crate::operation::list_health_checks_by_source::builders::ListHealthChecksBySourceOutputBuilder,
+) -> crate::operation::list_health_checks_by_source::builders::ListHealthChecksBySourceOutputBuilder {
+    if builder.health_checks.is_none() {
+        builder.health_checks = Some(Default::default())
     }
     if builder.is_truncated.is_none() {
         builder.is_truncated = Some(Default::default())
@@ -945,6 +1008,24 @@ pub(crate) fn account_limit_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn health_check_source_correct_errors(
+    mut builder: crate::types::builders::HealthCheckSourceBuilder,
+) -> crate::types::builders::HealthCheckSourceBuilder {
+    if builder.health_check_source_id.is_none() {
+        builder.health_check_source_id = Some(Default::default())
+    }
+    if builder.health_check_source_status.is_none() {
+        builder.health_check_source_status = "no value was set".parse::<crate::types::HealthCheckSourceStatus>().ok()
+    }
+    if builder.health_check_source_config.is_none() {
+        builder.health_check_source_config = {
+            let builder = crate::types::builders::HealthCheckSourceConfigBuilder::default();
+            crate::serde_util::health_check_source_config_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn hosted_zone_limit_correct_errors(
     mut builder: crate::types::builders::HostedZoneLimitBuilder,
 ) -> crate::types::builders::HostedZoneLimitBuilder {
@@ -974,6 +1055,18 @@ pub(crate) fn health_check_config_correct_errors(
 ) -> crate::types::builders::HealthCheckConfigBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::HealthCheckType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn health_check_source_config_correct_errors(
+    mut builder: crate::types::builders::HealthCheckSourceConfigBuilder,
+) -> crate::types::builders::HealthCheckSourceConfigBuilder {
+    if builder.vpc_id.is_none() {
+        builder.vpc_id = Some(Default::default())
+    }
+    if builder.subnet_configuration_list.is_none() {
+        builder.subnet_configuration_list = Some(Default::default())
     }
     builder
 }
@@ -1148,6 +1241,21 @@ pub(crate) fn resource_record_correct_errors(
 ) -> crate::types::builders::ResourceRecordBuilder {
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn subnet_configuration_correct_errors(
+    mut builder: crate::types::builders::SubnetConfigurationBuilder,
+) -> crate::types::builders::SubnetConfigurationBuilder {
+    if builder.subnet_id.is_none() {
+        builder.subnet_id = Some(Default::default())
+    }
+    if builder.availability_zone_id.is_none() {
+        builder.availability_zone_id = Some(Default::default())
+    }
+    if builder.security_group_id_list.is_none() {
+        builder.security_group_id_list = Some(Default::default())
     }
     builder
 }

@@ -3,29 +3,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMarketplaceRevenueShareOutput {
-    /// <p>The AWS Marketplace product identifier of the newly created revenue share.</p>
-    pub product_id: ::std::string::String,
+    /// <p>The unique identifier of the newly created marketplace revenue share, short ID form (mrs-...).</p>
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the newly created marketplace revenue share.</p>
     pub arn: ::std::string::String,
     /// <p>The catalog that the marketplace revenue share belongs to.</p>
     pub catalog: ::std::option::Option<crate::types::CatalogName>,
-    /// <p>The AWS Marketplace product code.</p>
-    pub product_code: ::std::option::Option<::std::string::String>,
-    /// <p>The display name of the AWS Marketplace product.</p>
-    pub product_name: ::std::option::Option<::std::string::String>,
+    /// <p>The products in the newly created marketplace revenue share, each with per-type account counts.</p>
+    pub products: ::std::option::Option<::std::vec::Vec<crate::types::MarketplaceRevenueShareProductSummary>>,
     /// <p>The date when the marketplace revenue share was created.</p>
     pub created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date when the marketplace revenue share was last modified.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The revision number of the newly created marketplace revenue share.</p>
-    pub revision: ::std::option::Option<i32>,
+    /// <p>The revision of the newly created marketplace revenue share.</p>
+    pub revision: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateMarketplaceRevenueShareOutput {
-    /// <p>The AWS Marketplace product identifier of the newly created revenue share.</p>
-    pub fn product_id(&self) -> &str {
-        use std::ops::Deref;
-        self.product_id.deref()
+    /// <p>The unique identifier of the newly created marketplace revenue share, short ID form (mrs-...).</p>
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the newly created marketplace revenue share.</p>
     pub fn arn(&self) -> &str {
@@ -36,13 +33,11 @@ impl CreateMarketplaceRevenueShareOutput {
     pub fn catalog(&self) -> ::std::option::Option<&crate::types::CatalogName> {
         self.catalog.as_ref()
     }
-    /// <p>The AWS Marketplace product code.</p>
-    pub fn product_code(&self) -> ::std::option::Option<&str> {
-        self.product_code.as_deref()
-    }
-    /// <p>The display name of the AWS Marketplace product.</p>
-    pub fn product_name(&self) -> ::std::option::Option<&str> {
-        self.product_name.as_deref()
+    /// <p>The products in the newly created marketplace revenue share, each with per-type account counts.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.products.is_none()`.
+    pub fn products(&self) -> &[crate::types::MarketplaceRevenueShareProductSummary] {
+        self.products.as_deref().unwrap_or_default()
     }
     /// <p>The date when the marketplace revenue share was created.</p>
     pub fn created_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -52,9 +47,9 @@ impl CreateMarketplaceRevenueShareOutput {
     pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
-    /// <p>The revision number of the newly created marketplace revenue share.</p>
-    pub fn revision(&self) -> ::std::option::Option<i32> {
-        self.revision
+    /// <p>The revision of the newly created marketplace revenue share.</p>
+    pub fn revision(&self) -> ::std::option::Option<&str> {
+        self.revision.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for CreateMarketplaceRevenueShareOutput {
@@ -73,31 +68,30 @@ impl CreateMarketplaceRevenueShareOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct CreateMarketplaceRevenueShareOutputBuilder {
-    pub(crate) product_id: ::std::option::Option<::std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) catalog: ::std::option::Option<crate::types::CatalogName>,
-    pub(crate) product_code: ::std::option::Option<::std::string::String>,
-    pub(crate) product_name: ::std::option::Option<::std::string::String>,
+    pub(crate) products: ::std::option::Option<::std::vec::Vec<crate::types::MarketplaceRevenueShareProductSummary>>,
     pub(crate) created_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) revision: ::std::option::Option<i32>,
+    pub(crate) revision: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl CreateMarketplaceRevenueShareOutputBuilder {
-    /// <p>The AWS Marketplace product identifier of the newly created revenue share.</p>
+    /// <p>The unique identifier of the newly created marketplace revenue share, short ID form (mrs-...).</p>
     /// This field is required.
-    pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.product_id = ::std::option::Option::Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Marketplace product identifier of the newly created revenue share.</p>
-    pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
+    /// <p>The unique identifier of the newly created marketplace revenue share, short ID form (mrs-...).</p>
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.id = input;
         self
     }
-    /// <p>The AWS Marketplace product identifier of the newly created revenue share.</p>
-    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.product_id
+    /// <p>The unique identifier of the newly created marketplace revenue share, short ID form (mrs-...).</p>
+    pub fn get_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.id
     }
     /// <p>The Amazon Resource Name (ARN) of the newly created marketplace revenue share.</p>
     /// This field is required.
@@ -115,6 +109,7 @@ impl CreateMarketplaceRevenueShareOutputBuilder {
         &self.arn
     }
     /// <p>The catalog that the marketplace revenue share belongs to.</p>
+    /// This field is required.
     pub fn catalog(mut self, input: crate::types::CatalogName) -> Self {
         self.catalog = ::std::option::Option::Some(input);
         self
@@ -128,35 +123,28 @@ impl CreateMarketplaceRevenueShareOutputBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<crate::types::CatalogName> {
         &self.catalog
     }
-    /// <p>The AWS Marketplace product code.</p>
-    pub fn product_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.product_code = ::std::option::Option::Some(input.into());
+    /// Appends an item to `products`.
+    ///
+    /// To override the contents of this collection use [`set_products`](Self::set_products).
+    ///
+    /// <p>The products in the newly created marketplace revenue share, each with per-type account counts.</p>
+    pub fn products(mut self, input: crate::types::MarketplaceRevenueShareProductSummary) -> Self {
+        let mut v = self.products.unwrap_or_default();
+        v.push(input);
+        self.products = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The AWS Marketplace product code.</p>
-    pub fn set_product_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_code = input;
+    /// <p>The products in the newly created marketplace revenue share, each with per-type account counts.</p>
+    pub fn set_products(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MarketplaceRevenueShareProductSummary>>) -> Self {
+        self.products = input;
         self
     }
-    /// <p>The AWS Marketplace product code.</p>
-    pub fn get_product_code(&self) -> &::std::option::Option<::std::string::String> {
-        &self.product_code
-    }
-    /// <p>The display name of the AWS Marketplace product.</p>
-    pub fn product_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.product_name = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The display name of the AWS Marketplace product.</p>
-    pub fn set_product_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_name = input;
-        self
-    }
-    /// <p>The display name of the AWS Marketplace product.</p>
-    pub fn get_product_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.product_name
+    /// <p>The products in the newly created marketplace revenue share, each with per-type account counts.</p>
+    pub fn get_products(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MarketplaceRevenueShareProductSummary>> {
+        &self.products
     }
     /// <p>The date when the marketplace revenue share was created.</p>
+    /// This field is required.
     pub fn created_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_date = ::std::option::Option::Some(input);
         self
@@ -171,6 +159,7 @@ impl CreateMarketplaceRevenueShareOutputBuilder {
         &self.created_date
     }
     /// <p>The date when the marketplace revenue share was last modified.</p>
+    /// This field is required.
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_date = ::std::option::Option::Some(input);
         self
@@ -184,18 +173,19 @@ impl CreateMarketplaceRevenueShareOutputBuilder {
     pub fn get_last_modified_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_date
     }
-    /// <p>The revision number of the newly created marketplace revenue share.</p>
-    pub fn revision(mut self, input: i32) -> Self {
-        self.revision = ::std::option::Option::Some(input);
+    /// <p>The revision of the newly created marketplace revenue share.</p>
+    /// This field is required.
+    pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revision = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The revision number of the newly created marketplace revenue share.</p>
-    pub fn set_revision(mut self, input: ::std::option::Option<i32>) -> Self {
+    /// <p>The revision of the newly created marketplace revenue share.</p>
+    pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision = input;
         self
     }
-    /// <p>The revision number of the newly created marketplace revenue share.</p>
-    pub fn get_revision(&self) -> &::std::option::Option<i32> {
+    /// <p>The revision of the newly created marketplace revenue share.</p>
+    pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
@@ -209,7 +199,6 @@ impl CreateMarketplaceRevenueShareOutputBuilder {
     }
     /// Consumes the builder and constructs a [`CreateMarketplaceRevenueShareOutput`](crate::operation::create_marketplace_revenue_share::CreateMarketplaceRevenueShareOutput).
     /// This method will fail if any of the following fields are not set:
-    /// - [`product_id`](crate::operation::create_marketplace_revenue_share::builders::CreateMarketplaceRevenueShareOutputBuilder::product_id)
     /// - [`arn`](crate::operation::create_marketplace_revenue_share::builders::CreateMarketplaceRevenueShareOutputBuilder::arn)
     pub fn build(
         self,
@@ -218,12 +207,7 @@ impl CreateMarketplaceRevenueShareOutputBuilder {
         ::aws_smithy_types::error::operation::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_marketplace_revenue_share::CreateMarketplaceRevenueShareOutput {
-            product_id: self.product_id.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "product_id",
-                    "product_id was not specified but it is required when building CreateMarketplaceRevenueShareOutput",
-                )
-            })?,
+            id: self.id,
             arn: self.arn.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "arn",
@@ -231,8 +215,7 @@ impl CreateMarketplaceRevenueShareOutputBuilder {
                 )
             })?,
             catalog: self.catalog,
-            product_code: self.product_code,
-            product_name: self.product_name,
+            products: self.products,
             created_date: self.created_date,
             last_modified_date: self.last_modified_date,
             revision: self.revision,

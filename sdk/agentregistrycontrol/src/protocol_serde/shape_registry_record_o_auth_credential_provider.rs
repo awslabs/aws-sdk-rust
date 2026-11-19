@@ -28,6 +28,9 @@ pub fn ser_registry_record_o_auth_credential_provider(
         }
         object_6.finish();
     }
+    if let Some(var_9) = &input.return_url {
+        object.key("returnUrl").string(var_9.as_str());
+    }
     Ok(())
 }
 
@@ -76,6 +79,13 @@ where
                                 _value,
                                 depth + 1,
                             )?);
+                        }
+                        "returnUrl" => {
+                            builder = builder.set_return_url(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -244,4 +244,36 @@ impl CreateDistributionTenantFluentBuilder {
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         self.inner.get_enabled()
     }
+    /// <p>Specifies whether CloudFront moves a domain in this request to this distribution tenant when the domain is already associated with another standard distribution or distribution tenant. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>allow</code> – CloudFront moves the domain to this distribution tenant when the domain's DNS points to this distribution tenant.</p></li>
+    /// <li>
+    /// <p><code>reject</code> – CloudFront doesn't move the domain, and the request fails if the domain is associated with another resource. This is the default if you don't specify a value.</p></li>
+    /// </ul>
+    pub fn on_domain_takeover(mut self, input: crate::types::OnDomainTakeover) -> Self {
+        self.inner = self.inner.on_domain_takeover(input);
+        self
+    }
+    /// <p>Specifies whether CloudFront moves a domain in this request to this distribution tenant when the domain is already associated with another standard distribution or distribution tenant. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>allow</code> – CloudFront moves the domain to this distribution tenant when the domain's DNS points to this distribution tenant.</p></li>
+    /// <li>
+    /// <p><code>reject</code> – CloudFront doesn't move the domain, and the request fails if the domain is associated with another resource. This is the default if you don't specify a value.</p></li>
+    /// </ul>
+    pub fn set_on_domain_takeover(mut self, input: ::std::option::Option<crate::types::OnDomainTakeover>) -> Self {
+        self.inner = self.inner.set_on_domain_takeover(input);
+        self
+    }
+    /// <p>Specifies whether CloudFront moves a domain in this request to this distribution tenant when the domain is already associated with another standard distribution or distribution tenant. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>allow</code> – CloudFront moves the domain to this distribution tenant when the domain's DNS points to this distribution tenant.</p></li>
+    /// <li>
+    /// <p><code>reject</code> – CloudFront doesn't move the domain, and the request fails if the domain is associated with another resource. This is the default if you don't specify a value.</p></li>
+    /// </ul>
+    pub fn get_on_domain_takeover(&self) -> &::std::option::Option<crate::types::OnDomainTakeover> {
+        self.inner.get_on_domain_takeover()
+    }
 }

@@ -8,8 +8,18 @@ pub struct ControlAssessment {
     pub control_id: ::std::option::Option<::std::string::String>,
     /// <p>The result of the control evaluation.</p>
     pub control_assessment_result: ::std::option::Option<crate::types::ControlAssessmentResult>,
+    /// <p>Where the result of the control came from. This value doesn't say whether the control passed. A control that you attested to can still have a result of <code>PASS</code>. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS_VERIFIED</code> - AWS evaluated the control.</p></li>
+    /// <li>
+    /// <p><code>SELF_ATTESTED</code> - You attested to the result of the control.</p></li>
+    /// </ul>
+    pub verification_source: ::std::option::Option<crate::types::VerificationSource>,
     /// <p>An array of <code>ControlError</code> objects associated with the control evaluation.</p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::ControlError>>,
+    /// <p>A summary of what the control produced, such as recommendations for the listing.</p>
+    pub control_summary: ::std::option::Option<crate::types::ControlSummary>,
 }
 impl ControlAssessment {
     /// <p>The unique ID of the control that was evaluated.</p>
@@ -20,11 +30,25 @@ impl ControlAssessment {
     pub fn control_assessment_result(&self) -> ::std::option::Option<&crate::types::ControlAssessmentResult> {
         self.control_assessment_result.as_ref()
     }
+    /// <p>Where the result of the control came from. This value doesn't say whether the control passed. A control that you attested to can still have a result of <code>PASS</code>. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS_VERIFIED</code> - AWS evaluated the control.</p></li>
+    /// <li>
+    /// <p><code>SELF_ATTESTED</code> - You attested to the result of the control.</p></li>
+    /// </ul>
+    pub fn verification_source(&self) -> ::std::option::Option<&crate::types::VerificationSource> {
+        self.verification_source.as_ref()
+    }
     /// <p>An array of <code>ControlError</code> objects associated with the control evaluation.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
     pub fn errors(&self) -> &[crate::types::ControlError] {
         self.errors.as_deref().unwrap_or_default()
+    }
+    /// <p>A summary of what the control produced, such as recommendations for the listing.</p>
+    pub fn control_summary(&self) -> ::std::option::Option<&crate::types::ControlSummary> {
+        self.control_summary.as_ref()
     }
 }
 impl ControlAssessment {
@@ -40,7 +64,9 @@ impl ControlAssessment {
 pub struct ControlAssessmentBuilder {
     pub(crate) control_id: ::std::option::Option<::std::string::String>,
     pub(crate) control_assessment_result: ::std::option::Option<crate::types::ControlAssessmentResult>,
+    pub(crate) verification_source: ::std::option::Option<crate::types::VerificationSource>,
     pub(crate) errors: ::std::option::Option<::std::vec::Vec<crate::types::ControlError>>,
+    pub(crate) control_summary: ::std::option::Option<crate::types::ControlSummary>,
 }
 impl ControlAssessmentBuilder {
     /// <p>The unique ID of the control that was evaluated.</p>
@@ -71,6 +97,38 @@ impl ControlAssessmentBuilder {
     pub fn get_control_assessment_result(&self) -> &::std::option::Option<crate::types::ControlAssessmentResult> {
         &self.control_assessment_result
     }
+    /// <p>Where the result of the control came from. This value doesn't say whether the control passed. A control that you attested to can still have a result of <code>PASS</code>. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS_VERIFIED</code> - AWS evaluated the control.</p></li>
+    /// <li>
+    /// <p><code>SELF_ATTESTED</code> - You attested to the result of the control.</p></li>
+    /// </ul>
+    pub fn verification_source(mut self, input: crate::types::VerificationSource) -> Self {
+        self.verification_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Where the result of the control came from. This value doesn't say whether the control passed. A control that you attested to can still have a result of <code>PASS</code>. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS_VERIFIED</code> - AWS evaluated the control.</p></li>
+    /// <li>
+    /// <p><code>SELF_ATTESTED</code> - You attested to the result of the control.</p></li>
+    /// </ul>
+    pub fn set_verification_source(mut self, input: ::std::option::Option<crate::types::VerificationSource>) -> Self {
+        self.verification_source = input;
+        self
+    }
+    /// <p>Where the result of the control came from. This value doesn't say whether the control passed. A control that you attested to can still have a result of <code>PASS</code>. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS_VERIFIED</code> - AWS evaluated the control.</p></li>
+    /// <li>
+    /// <p><code>SELF_ATTESTED</code> - You attested to the result of the control.</p></li>
+    /// </ul>
+    pub fn get_verification_source(&self) -> &::std::option::Option<crate::types::VerificationSource> {
+        &self.verification_source
+    }
     /// Appends an item to `errors`.
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
@@ -91,12 +149,28 @@ impl ControlAssessmentBuilder {
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ControlError>> {
         &self.errors
     }
+    /// <p>A summary of what the control produced, such as recommendations for the listing.</p>
+    pub fn control_summary(mut self, input: crate::types::ControlSummary) -> Self {
+        self.control_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A summary of what the control produced, such as recommendations for the listing.</p>
+    pub fn set_control_summary(mut self, input: ::std::option::Option<crate::types::ControlSummary>) -> Self {
+        self.control_summary = input;
+        self
+    }
+    /// <p>A summary of what the control produced, such as recommendations for the listing.</p>
+    pub fn get_control_summary(&self) -> &::std::option::Option<crate::types::ControlSummary> {
+        &self.control_summary
+    }
     /// Consumes the builder and constructs a [`ControlAssessment`](crate::types::ControlAssessment).
     pub fn build(self) -> crate::types::ControlAssessment {
         crate::types::ControlAssessment {
             control_id: self.control_id,
             control_assessment_result: self.control_assessment_result,
+            verification_source: self.verification_source,
             errors: self.errors,
+            control_summary: self.control_summary,
         }
     }
 }

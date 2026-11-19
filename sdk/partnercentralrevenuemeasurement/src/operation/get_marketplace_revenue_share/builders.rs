@@ -122,32 +122,32 @@ impl GetMarketplaceRevenueShareFluentBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<crate::types::CatalogName> {
         self.inner.get_catalog()
     }
-    /// <p>The AWS Marketplace product identifier of the revenue share to retrieve.</p>
-    pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.product_id(input.into());
+    /// <p>The marketplace revenue share to retrieve, by ID (mrs-...) or ARN.</p>
+    pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.identifier(input.into());
         self
     }
-    /// <p>The AWS Marketplace product identifier of the revenue share to retrieve.</p>
-    pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_product_id(input);
+    /// <p>The marketplace revenue share to retrieve, by ID (mrs-...) or ARN.</p>
+    pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_identifier(input);
         self
     }
-    /// <p>The AWS Marketplace product identifier of the revenue share to retrieve.</p>
-    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_product_id()
+    /// <p>The marketplace revenue share to retrieve, by ID (mrs-...) or ARN.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identifier()
     }
     /// <p>The revision of the marketplace revenue share to retrieve. Omit to return the latest revision.</p>
-    pub fn revision(mut self, input: i32) -> Self {
-        self.inner = self.inner.revision(input);
+    pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.revision(input.into());
         self
     }
     /// <p>The revision of the marketplace revenue share to retrieve. Omit to return the latest revision.</p>
-    pub fn set_revision(mut self, input: ::std::option::Option<i32>) -> Self {
+    pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_revision(input);
         self
     }
     /// <p>The revision of the marketplace revenue share to retrieve. Omit to return the latest revision.</p>
-    pub fn get_revision(&self) -> &::std::option::Option<i32> {
+    pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_revision()
     }
 }

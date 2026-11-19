@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum Payload {
+    /// <p>The content of an account-planning invitation. This field is present when the invitation is for account planning.</p>
+    AccountPlanningInvitation(crate::types::AccountPlanningInvitationPayload),
     /// <p>Specifies the details of the lead invitation within the Engagement Invitation payload. This data helps partners understand the lead context, customer information, and interaction history for the lead opportunity from AWS.</p>
     LeadInvitation(crate::types::LeadInvitationPayload),
     /// <p>Specifies the details of the opportunity invitation within the Engagement Invitation payload. This data helps partners understand the context, scope, and expected involvement for the opportunity from AWS.</p>
@@ -19,6 +21,19 @@ pub enum Payload {
     Unknown,
 }
 impl Payload {
+    /// Tries to convert the enum instance into [`AccountPlanningInvitation`](crate::types::Payload::AccountPlanningInvitation), extracting the inner [`AccountPlanningInvitationPayload`](crate::types::AccountPlanningInvitationPayload).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_account_planning_invitation(&self) -> ::std::result::Result<&crate::types::AccountPlanningInvitationPayload, &Self> {
+        if let Payload::AccountPlanningInvitation(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`AccountPlanningInvitation`](crate::types::Payload::AccountPlanningInvitation).
+    pub fn is_account_planning_invitation(&self) -> bool {
+        self.as_account_planning_invitation().is_ok()
+    }
     /// Tries to convert the enum instance into [`LeadInvitation`](crate::types::Payload::LeadInvitation), extracting the inner [`LeadInvitationPayload`](crate::types::LeadInvitationPayload).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_lead_invitation(&self) -> ::std::result::Result<&crate::types::LeadInvitationPayload, &Self> {

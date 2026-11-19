@@ -43,6 +43,7 @@ pub struct UpdateFirewallRuleInput {
     /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.</p>
     /// <p><code>INSPECT_REDIRECTION_DOMAIN</code>: (Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the domain list.</p>
     /// <p><code>TRUST_REDIRECTION_DOMAIN</code>: Inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain list.</p>
+    /// <p>You can't set this value on an AutoAllowlist rule, which always inspects the redirection chain.</p>
     pub firewall_domain_redirection_action: ::std::option::Option<crate::types::FirewallDomainRedirectionAction>,
     /// <p>The DNS query type you want the rule to evaluate. Allowed values are;</p>
     /// <ul>
@@ -77,6 +78,7 @@ pub struct UpdateFirewallRuleInput {
     /// <p>If you set up a firewall BLOCK rule with action NXDOMAIN on query type equals AAAA, this action will not be applied to synthetic IPv6 addresses generated when DNS64 is enabled.</p>
     /// </note></li>
     /// </ul>
+    /// <p>You can't set <code>Qtype</code> on an AutoAllowlist rule, because the rule applies to all query types.</p>
     pub qtype: ::std::option::Option<::std::string::String>,
     /// <p>The type of the DNS Firewall Advanced rule. This setting is mutually exclusive with <code>FirewallDomainListId</code> and <code>FirewallRuleType</code>. Valid values are:</p>
     /// <ul>
@@ -109,7 +111,8 @@ pub struct UpdateFirewallRuleInput {
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — match a third-party threat feed delivered through Amazon Web Services Marketplace. The selected partner must be an active subscription on the calling account.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
+    /// <p>You can't specify <code>FirewallRuleType</code> when you update an AutoAllowlist rule, even with its current values. <code>InitialDataTimeframeHours</code> and <code>ImportFromFirewallDomainListId</code> can't be changed. To change them, delete the rule and create a new one. Deleting an AutoAllowlist rule also deletes its managed domain list and the domains that you allowed.</p>
     pub firewall_rule_type: ::std::option::Option<crate::types::FirewallRuleType>,
 }
 impl UpdateFirewallRuleInput {
@@ -173,6 +176,7 @@ impl UpdateFirewallRuleInput {
     /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.</p>
     /// <p><code>INSPECT_REDIRECTION_DOMAIN</code>: (Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the domain list.</p>
     /// <p><code>TRUST_REDIRECTION_DOMAIN</code>: Inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain list.</p>
+    /// <p>You can't set this value on an AutoAllowlist rule, which always inspects the redirection chain.</p>
     pub fn firewall_domain_redirection_action(&self) -> ::std::option::Option<&crate::types::FirewallDomainRedirectionAction> {
         self.firewall_domain_redirection_action.as_ref()
     }
@@ -209,6 +213,7 @@ impl UpdateFirewallRuleInput {
     /// <p>If you set up a firewall BLOCK rule with action NXDOMAIN on query type equals AAAA, this action will not be applied to synthetic IPv6 addresses generated when DNS64 is enabled.</p>
     /// </note></li>
     /// </ul>
+    /// <p>You can't set <code>Qtype</code> on an AutoAllowlist rule, because the rule applies to all query types.</p>
     pub fn qtype(&self) -> ::std::option::Option<&str> {
         self.qtype.as_deref()
     }
@@ -247,7 +252,8 @@ impl UpdateFirewallRuleInput {
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — match a third-party threat feed delivered through Amazon Web Services Marketplace. The selected partner must be an active subscription on the calling account.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
+    /// <p>You can't specify <code>FirewallRuleType</code> when you update an AutoAllowlist rule, even with its current values. <code>InitialDataTimeframeHours</code> and <code>ImportFromFirewallDomainListId</code> can't be changed. To change them, delete the rule and create a new one. Deleting an AutoAllowlist rule also deletes its managed domain list and the domains that you allowed.</p>
     pub fn firewall_rule_type(&self) -> ::std::option::Option<&crate::types::FirewallRuleType> {
         self.firewall_rule_type.as_ref()
     }
@@ -475,6 +481,7 @@ impl UpdateFirewallRuleInputBuilder {
     /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.</p>
     /// <p><code>INSPECT_REDIRECTION_DOMAIN</code>: (Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the domain list.</p>
     /// <p><code>TRUST_REDIRECTION_DOMAIN</code>: Inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain list.</p>
+    /// <p>You can't set this value on an AutoAllowlist rule, which always inspects the redirection chain.</p>
     pub fn firewall_domain_redirection_action(mut self, input: crate::types::FirewallDomainRedirectionAction) -> Self {
         self.firewall_domain_redirection_action = ::std::option::Option::Some(input);
         self
@@ -482,6 +489,7 @@ impl UpdateFirewallRuleInputBuilder {
     /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.</p>
     /// <p><code>INSPECT_REDIRECTION_DOMAIN</code>: (Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the domain list.</p>
     /// <p><code>TRUST_REDIRECTION_DOMAIN</code>: Inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain list.</p>
+    /// <p>You can't set this value on an AutoAllowlist rule, which always inspects the redirection chain.</p>
     pub fn set_firewall_domain_redirection_action(mut self, input: ::std::option::Option<crate::types::FirewallDomainRedirectionAction>) -> Self {
         self.firewall_domain_redirection_action = input;
         self
@@ -489,6 +497,7 @@ impl UpdateFirewallRuleInputBuilder {
     /// <p>How you want the the rule to evaluate DNS redirection in the DNS redirection chain, such as CNAME or DNAME.</p>
     /// <p><code>INSPECT_REDIRECTION_DOMAIN</code>: (Default) inspects all domains in the redirection chain. The individual domains in the redirection chain must be added to the domain list.</p>
     /// <p><code>TRUST_REDIRECTION_DOMAIN</code>: Inspects only the first domain in the redirection chain. You don't need to add the subsequent domains in the domain in the redirection list to the domain list.</p>
+    /// <p>You can't set this value on an AutoAllowlist rule, which always inspects the redirection chain.</p>
     pub fn get_firewall_domain_redirection_action(&self) -> &::std::option::Option<crate::types::FirewallDomainRedirectionAction> {
         &self.firewall_domain_redirection_action
     }
@@ -525,6 +534,7 @@ impl UpdateFirewallRuleInputBuilder {
     /// <p>If you set up a firewall BLOCK rule with action NXDOMAIN on query type equals AAAA, this action will not be applied to synthetic IPv6 addresses generated when DNS64 is enabled.</p>
     /// </note></li>
     /// </ul>
+    /// <p>You can't set <code>Qtype</code> on an AutoAllowlist rule, because the rule applies to all query types.</p>
     pub fn qtype(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.qtype = ::std::option::Option::Some(input.into());
         self
@@ -562,6 +572,7 @@ impl UpdateFirewallRuleInputBuilder {
     /// <p>If you set up a firewall BLOCK rule with action NXDOMAIN on query type equals AAAA, this action will not be applied to synthetic IPv6 addresses generated when DNS64 is enabled.</p>
     /// </note></li>
     /// </ul>
+    /// <p>You can't set <code>Qtype</code> on an AutoAllowlist rule, because the rule applies to all query types.</p>
     pub fn set_qtype(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.qtype = input;
         self
@@ -599,6 +610,7 @@ impl UpdateFirewallRuleInputBuilder {
     /// <p>If you set up a firewall BLOCK rule with action NXDOMAIN on query type equals AAAA, this action will not be applied to synthetic IPv6 addresses generated when DNS64 is enabled.</p>
     /// </note></li>
     /// </ul>
+    /// <p>You can't set <code>Qtype</code> on an AutoAllowlist rule, because the rule applies to all query types.</p>
     pub fn get_qtype(&self) -> &::std::option::Option<::std::string::String> {
         &self.qtype
     }
@@ -689,7 +701,8 @@ impl UpdateFirewallRuleInputBuilder {
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — match a third-party threat feed delivered through Amazon Web Services Marketplace. The selected partner must be an active subscription on the calling account.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
+    /// <p>You can't specify <code>FirewallRuleType</code> when you update an AutoAllowlist rule, even with its current values. <code>InitialDataTimeframeHours</code> and <code>ImportFromFirewallDomainListId</code> can't be changed. To change them, delete the rule and create a new one. Deleting an AutoAllowlist rule also deletes its managed domain list and the domains that you allowed.</p>
     pub fn firewall_rule_type(mut self, input: crate::types::FirewallRuleType) -> Self {
         self.firewall_rule_type = ::std::option::Option::Some(input);
         self
@@ -705,7 +718,8 @@ impl UpdateFirewallRuleInputBuilder {
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — match a third-party threat feed delivered through Amazon Web Services Marketplace. The selected partner must be an active subscription on the calling account.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
+    /// <p>You can't specify <code>FirewallRuleType</code> when you update an AutoAllowlist rule, even with its current values. <code>InitialDataTimeframeHours</code> and <code>ImportFromFirewallDomainListId</code> can't be changed. To change them, delete the rule and create a new one. Deleting an AutoAllowlist rule also deletes its managed domain list and the domains that you allowed.</p>
     pub fn set_firewall_rule_type(mut self, input: ::std::option::Option<crate::types::FirewallRuleType>) -> Self {
         self.firewall_rule_type = input;
         self
@@ -721,7 +735,8 @@ impl UpdateFirewallRuleInputBuilder {
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — match a third-party threat feed delivered through Amazon Web Services Marketplace. The selected partner must be an active subscription on the calling account.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
+    /// <p>You can't specify <code>FirewallRuleType</code> when you update an AutoAllowlist rule, even with its current values. <code>InitialDataTimeframeHours</code> and <code>ImportFromFirewallDomainListId</code> can't be changed. To change them, delete the rule and create a new one. Deleting an AutoAllowlist rule also deletes its managed domain list and the domains that you allowed.</p>
     pub fn get_firewall_rule_type(&self) -> &::std::option::Option<crate::types::FirewallRuleType> {
         &self.firewall_rule_type
     }

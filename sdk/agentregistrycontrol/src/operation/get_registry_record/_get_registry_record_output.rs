@@ -18,7 +18,7 @@ pub struct GetRegistryRecordOutput {
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of the registry record, such as MCP, AGENT, SKILL, or CUSTOM.</p>
     pub record_type: crate::types::RecordType,
-    /// <p>The typed descriptors that define the content of the registry record.</p>
+    /// <p>The typed descriptors that define the content of the registry record. For a skill record with a skill package or a synchronized source, <code>skillMd.data</code> contains the SKILL.md that the registry took from the package or the source.</p>
     pub descriptors: ::std::option::Option<crate::types::Descriptors>,
     /// <p>The version identifier of the registry record.</p>
     pub record_version: ::std::option::Option<::std::string::String>,
@@ -40,6 +40,10 @@ pub struct GetRegistryRecordOutput {
     pub custom_metadata: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>Indicates whether this record's custom metadata conforms to the registry's current schema. This status is computed at read time against the latest schema.</p>
     pub custom_metadata_schema_compliance_status: ::std::option::Option<crate::types::CustomMetadataSchemaComplianceStatus>,
+    /// <p>The skill package of the record's latest revision, including a revision in <code>DRAFT</code> or <code>PENDING_APPROVAL</code> status, as a download URL and a SHA-256 checksum. While an update of the record is in progress or after it fails, this is the last package that passed validation, unless the update switches between an uploaded package and a synchronized one: then it is absent until the update succeeds. Absent while the record is being created or after its creation fails, and when the record has no package, for example when its content is inline or it synchronizes only SKILL.md.</p>
+    pub artifact: ::std::option::Option<crate::types::RegistryRecordArtifactDownload>,
+    /// <p>The source that the registry last synchronized the record's skill content from, including when the registry read the source and which version it read. Absent until the first successful synchronization, and after an update replaces the synchronized content, for example with an uploaded package. A failed synchronization leaves this member unchanged. After you change the source, this member shows the previous source until the registry successfully synchronizes from the new source.</p>
+    pub synchronized_source: ::std::option::Option<crate::types::RegistryRecordSynchronizedSource>,
     _request_id: Option<String>,
 }
 impl GetRegistryRecordOutput {
@@ -75,7 +79,7 @@ impl GetRegistryRecordOutput {
     pub fn record_type(&self) -> &crate::types::RecordType {
         &self.record_type
     }
-    /// <p>The typed descriptors that define the content of the registry record.</p>
+    /// <p>The typed descriptors that define the content of the registry record. For a skill record with a skill package or a synchronized source, <code>skillMd.data</code> contains the SKILL.md that the registry took from the package or the source.</p>
     pub fn descriptors(&self) -> ::std::option::Option<&crate::types::Descriptors> {
         self.descriptors.as_ref()
     }
@@ -121,6 +125,14 @@ impl GetRegistryRecordOutput {
     pub fn custom_metadata_schema_compliance_status(&self) -> ::std::option::Option<&crate::types::CustomMetadataSchemaComplianceStatus> {
         self.custom_metadata_schema_compliance_status.as_ref()
     }
+    /// <p>The skill package of the record's latest revision, including a revision in <code>DRAFT</code> or <code>PENDING_APPROVAL</code> status, as a download URL and a SHA-256 checksum. While an update of the record is in progress or after it fails, this is the last package that passed validation, unless the update switches between an uploaded package and a synchronized one: then it is absent until the update succeeds. Absent while the record is being created or after its creation fails, and when the record has no package, for example when its content is inline or it synchronizes only SKILL.md.</p>
+    pub fn artifact(&self) -> ::std::option::Option<&crate::types::RegistryRecordArtifactDownload> {
+        self.artifact.as_ref()
+    }
+    /// <p>The source that the registry last synchronized the record's skill content from, including when the registry read the source and which version it read. Absent until the first successful synchronization, and after an update replaces the synchronized content, for example with an uploaded package. A failed synchronization leaves this member unchanged. After you change the source, this member shows the previous source until the registry successfully synchronizes from the new source.</p>
+    pub fn synchronized_source(&self) -> ::std::option::Option<&crate::types::RegistryRecordSynchronizedSource> {
+        self.synchronized_source.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetRegistryRecordOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -143,6 +155,8 @@ impl ::std::fmt::Debug for GetRegistryRecordOutput {
         formatter.field("created_by", &self.created_by);
         formatter.field("custom_metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_metadata_schema_compliance_status", &self.custom_metadata_schema_compliance_status);
+        formatter.field("artifact", &self.artifact);
+        formatter.field("synchronized_source", &self.synchronized_source);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -181,6 +195,8 @@ pub struct GetRegistryRecordOutputBuilder {
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) custom_metadata: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) custom_metadata_schema_compliance_status: ::std::option::Option<crate::types::CustomMetadataSchemaComplianceStatus>,
+    pub(crate) artifact: ::std::option::Option<crate::types::RegistryRecordArtifactDownload>,
+    pub(crate) synchronized_source: ::std::option::Option<crate::types::RegistryRecordSynchronizedSource>,
     _request_id: Option<String>,
 }
 impl GetRegistryRecordOutputBuilder {
@@ -287,17 +303,17 @@ impl GetRegistryRecordOutputBuilder {
     pub fn get_record_type(&self) -> &::std::option::Option<crate::types::RecordType> {
         &self.record_type
     }
-    /// <p>The typed descriptors that define the content of the registry record.</p>
+    /// <p>The typed descriptors that define the content of the registry record. For a skill record with a skill package or a synchronized source, <code>skillMd.data</code> contains the SKILL.md that the registry took from the package or the source.</p>
     pub fn descriptors(mut self, input: crate::types::Descriptors) -> Self {
         self.descriptors = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The typed descriptors that define the content of the registry record.</p>
+    /// <p>The typed descriptors that define the content of the registry record. For a skill record with a skill package or a synchronized source, <code>skillMd.data</code> contains the SKILL.md that the registry took from the package or the source.</p>
     pub fn set_descriptors(mut self, input: ::std::option::Option<crate::types::Descriptors>) -> Self {
         self.descriptors = input;
         self
     }
-    /// <p>The typed descriptors that define the content of the registry record.</p>
+    /// <p>The typed descriptors that define the content of the registry record. For a skill record with a skill package or a synchronized source, <code>skillMd.data</code> contains the SKILL.md that the registry took from the package or the source.</p>
     pub fn get_descriptors(&self) -> &::std::option::Option<crate::types::Descriptors> {
         &self.descriptors
     }
@@ -453,6 +469,34 @@ impl GetRegistryRecordOutputBuilder {
     pub fn get_custom_metadata_schema_compliance_status(&self) -> &::std::option::Option<crate::types::CustomMetadataSchemaComplianceStatus> {
         &self.custom_metadata_schema_compliance_status
     }
+    /// <p>The skill package of the record's latest revision, including a revision in <code>DRAFT</code> or <code>PENDING_APPROVAL</code> status, as a download URL and a SHA-256 checksum. While an update of the record is in progress or after it fails, this is the last package that passed validation, unless the update switches between an uploaded package and a synchronized one: then it is absent until the update succeeds. Absent while the record is being created or after its creation fails, and when the record has no package, for example when its content is inline or it synchronizes only SKILL.md.</p>
+    pub fn artifact(mut self, input: crate::types::RegistryRecordArtifactDownload) -> Self {
+        self.artifact = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The skill package of the record's latest revision, including a revision in <code>DRAFT</code> or <code>PENDING_APPROVAL</code> status, as a download URL and a SHA-256 checksum. While an update of the record is in progress or after it fails, this is the last package that passed validation, unless the update switches between an uploaded package and a synchronized one: then it is absent until the update succeeds. Absent while the record is being created or after its creation fails, and when the record has no package, for example when its content is inline or it synchronizes only SKILL.md.</p>
+    pub fn set_artifact(mut self, input: ::std::option::Option<crate::types::RegistryRecordArtifactDownload>) -> Self {
+        self.artifact = input;
+        self
+    }
+    /// <p>The skill package of the record's latest revision, including a revision in <code>DRAFT</code> or <code>PENDING_APPROVAL</code> status, as a download URL and a SHA-256 checksum. While an update of the record is in progress or after it fails, this is the last package that passed validation, unless the update switches between an uploaded package and a synchronized one: then it is absent until the update succeeds. Absent while the record is being created or after its creation fails, and when the record has no package, for example when its content is inline or it synchronizes only SKILL.md.</p>
+    pub fn get_artifact(&self) -> &::std::option::Option<crate::types::RegistryRecordArtifactDownload> {
+        &self.artifact
+    }
+    /// <p>The source that the registry last synchronized the record's skill content from, including when the registry read the source and which version it read. Absent until the first successful synchronization, and after an update replaces the synchronized content, for example with an uploaded package. A failed synchronization leaves this member unchanged. After you change the source, this member shows the previous source until the registry successfully synchronizes from the new source.</p>
+    pub fn synchronized_source(mut self, input: crate::types::RegistryRecordSynchronizedSource) -> Self {
+        self.synchronized_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The source that the registry last synchronized the record's skill content from, including when the registry read the source and which version it read. Absent until the first successful synchronization, and after an update replaces the synchronized content, for example with an uploaded package. A failed synchronization leaves this member unchanged. After you change the source, this member shows the previous source until the registry successfully synchronizes from the new source.</p>
+    pub fn set_synchronized_source(mut self, input: ::std::option::Option<crate::types::RegistryRecordSynchronizedSource>) -> Self {
+        self.synchronized_source = input;
+        self
+    }
+    /// <p>The source that the registry last synchronized the record's skill content from, including when the registry read the source and which version it read. Absent until the first successful synchronization, and after an update replaces the synchronized content, for example with an uploaded package. A failed synchronization leaves this member unchanged. After you change the source, this member shows the previous source until the registry successfully synchronizes from the new source.</p>
+    pub fn get_synchronized_source(&self) -> &::std::option::Option<crate::types::RegistryRecordSynchronizedSource> {
+        &self.synchronized_source
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -534,6 +578,8 @@ impl GetRegistryRecordOutputBuilder {
             created_by: self.created_by,
             custom_metadata: self.custom_metadata,
             custom_metadata_schema_compliance_status: self.custom_metadata_schema_compliance_status,
+            artifact: self.artifact,
+            synchronized_source: self.synchronized_source,
             _request_id: self._request_id,
         })
     }
@@ -559,6 +605,8 @@ impl ::std::fmt::Debug for GetRegistryRecordOutputBuilder {
         formatter.field("created_by", &self.created_by);
         formatter.field("custom_metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_metadata_schema_compliance_status", &self.custom_metadata_schema_compliance_status);
+        formatter.field("artifact", &self.artifact);
+        formatter.field("synchronized_source", &self.synchronized_source);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

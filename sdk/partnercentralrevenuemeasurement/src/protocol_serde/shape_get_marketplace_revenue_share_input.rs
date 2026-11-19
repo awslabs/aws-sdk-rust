@@ -7,11 +7,11 @@ pub fn ser_get_marketplace_revenue_share_input_input(
     if let Some(var_1) = &input.catalog {
         encoder.str("Catalog").str(var_1.as_str());
     }
-    if let Some(var_2) = &input.product_id {
-        encoder.str("ProductId").str(var_2.as_str());
+    if let Some(var_2) = &input.identifier {
+        encoder.str("Identifier").str(var_2.as_str());
     }
     if let Some(var_3) = &input.revision {
-        encoder.str("Revision").integer(*var_3);
+        encoder.str("Revision").str(var_3.as_str());
     }
     encoder.end();
     Ok(())

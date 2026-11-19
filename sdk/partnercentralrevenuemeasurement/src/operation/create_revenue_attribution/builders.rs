@@ -211,4 +211,23 @@ impl CreateRevenueAttributionFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    ///
+    /// Adds a key-value pair to `Context`.
+    ///
+    /// To override the contents of this collection use [`set_context`](Self::set_context).
+    ///
+    /// <p>Program-defined key-value attributes for the revenue attribution.</p>
+    pub fn context(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.context(k.into(), v.into());
+        self
+    }
+    /// <p>Program-defined key-value attributes for the revenue attribution.</p>
+    pub fn set_context(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
+        self.inner = self.inner.set_context(input);
+        self
+    }
+    /// <p>Program-defined key-value attributes for the revenue attribution.</p>
+    pub fn get_context(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.inner.get_context()
+    }
 }

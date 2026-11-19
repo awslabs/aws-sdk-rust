@@ -25,6 +25,8 @@ pub struct CreateLinkOutput {
     pub log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
     /// <p>The connectivity type of the link.</p>
     pub connectivity_type: ::std::option::Option<crate::types::ConnectivityType>,
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    pub error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     /// <p>The unique identifier of the link.</p>
     pub link_id: ::std::string::String,
     /// <p>The customer-provided unique identifier of the link.</p>
@@ -82,6 +84,12 @@ impl CreateLinkOutput {
     pub fn connectivity_type(&self) -> ::std::option::Option<&crate::types::ConnectivityType> {
         self.connectivity_type.as_ref()
     }
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_details.is_none()`.
+    pub fn error_details(&self) -> &[crate::types::ErrorDetail] {
+        self.error_details.as_deref().unwrap_or_default()
+    }
     /// <p>The unique identifier of the link.</p>
     pub fn link_id(&self) -> &str {
         use std::ops::Deref;
@@ -119,6 +127,7 @@ pub struct CreateLinkOutputBuilder {
     pub(crate) attributes: ::std::option::Option<crate::types::LinkAttributes>,
     pub(crate) log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
     pub(crate) connectivity_type: ::std::option::Option<crate::types::ConnectivityType>,
+    pub(crate) error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     pub(crate) link_id: ::std::option::Option<::std::string::String>,
     pub(crate) customer_provided_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
@@ -295,6 +304,26 @@ impl CreateLinkOutputBuilder {
     pub fn get_connectivity_type(&self) -> &::std::option::Option<crate::types::ConnectivityType> {
         &self.connectivity_type
     }
+    /// Appends an item to `error_details`.
+    ///
+    /// To override the contents of this collection use [`set_error_details`](Self::set_error_details).
+    ///
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    pub fn error_details(mut self, input: crate::types::ErrorDetail) -> Self {
+        let mut v = self.error_details.unwrap_or_default();
+        v.push(input);
+        self.error_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    pub fn set_error_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>) -> Self {
+        self.error_details = input;
+        self
+    }
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    pub fn get_error_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
+        &self.error_details
+    }
     /// <p>The unique identifier of the link.</p>
     /// This field is required.
     pub fn link_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -379,6 +408,7 @@ impl CreateLinkOutputBuilder {
             attributes: self.attributes,
             log_settings: self.log_settings,
             connectivity_type: self.connectivity_type,
+            error_details: self.error_details,
             link_id: self.link_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "link_id",

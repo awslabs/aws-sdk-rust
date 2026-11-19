@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RevokeResource`](crate::operation::revoke_resource::builders::RevokeResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::revoke_resource::builders::RevokeResourceFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::revoke_resource::builders::RevokeResourceFluentBuilder::set_arn):<br>required: **true**<br>ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The pattern is the revocable subset of TaggableResourceArn; buses are not revocable.<br>
+    ///   - [`arn(impl Into<String>)`](crate::operation::revoke_resource::builders::RevokeResourceFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::revoke_resource::builders::RevokeResourceFluentBuilder::set_arn):<br>required: **true**<br><p>ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The pattern is the revocable subset of TaggableResourceArn; buses are not revocable.</p><br>
     /// - On success, responds with [`RevokeResourceOutput`](crate::operation::revoke_resource::RevokeResourceOutput) with field(s):
-    ///   - [`arn(Option<String>)`](crate::operation::revoke_resource::RevokeResourceOutput::arn): ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The pattern is the revocable subset of TaggableResourceArn; buses are not revocable.
+    ///   - [`arn(Option<String>)`](crate::operation::revoke_resource::RevokeResourceOutput::arn): <p>ARN of a resource a bus owner can revoke: a subscriber or an EventSource. The pattern is the revocable subset of TaggableResourceArn; buses are not revocable.</p>
     /// - On failure, responds with [`SdkError<RevokeResourceError>`](crate::operation::revoke_resource::RevokeResourceError)
     pub fn revoke_resource(&self) -> crate::operation::revoke_resource::builders::RevokeResourceFluentBuilder {
         crate::operation::revoke_resource::builders::RevokeResourceFluentBuilder::new(self.handle.clone())

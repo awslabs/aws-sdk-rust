@@ -19,6 +19,16 @@ static RELATEDITEMUPDATECONTENT_MEMBER_CUSTOM: ::aws_smithy_schema::Schema<'stat
     "custom",
     1,
 );
+static RELATEDITEMUPDATECONTENT_MEMBER_SLA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.connectcases#RelatedItemUpdateContent$sla",
+        "com.amazonaws.connectcases",
+        "RelatedItemUpdateContent",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "sla",
+    2,
+);
 static RELATEDITEMUPDATECONTENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.connectcases#RelatedItemUpdateContent",
@@ -26,7 +36,11 @@ static RELATEDITEMUPDATECONTENT_SCHEMA: ::aws_smithy_schema::Schema<'static> = :
         "RelatedItemUpdateContent",
     ),
     ::aws_smithy_schema::ShapeType::Union,
-    &[&RELATEDITEMUPDATECONTENT_MEMBER_COMMENT, &RELATEDITEMUPDATECONTENT_MEMBER_CUSTOM],
+    &[
+        &RELATEDITEMUPDATECONTENT_MEMBER_COMMENT,
+        &RELATEDITEMUPDATECONTENT_MEMBER_CUSTOM,
+        &RELATEDITEMUPDATECONTENT_MEMBER_SLA,
+    ],
 );
 impl crate::types::RelatedItemUpdateContent {
     /// The schema for this shape.
@@ -48,6 +62,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::RelatedIte
             }
             Self::Custom(val) => {
                 ser.write_struct(&RELATEDITEMUPDATECONTENT_MEMBER_CUSTOM, val)?;
+            }
+            Self::Sla(val) => {
+                ser.write_struct(&RELATEDITEMUPDATECONTENT_MEMBER_SLA, val)?;
             }
             Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
         }
@@ -72,6 +89,7 @@ impl crate::types::RelatedItemUpdateContent {
             result = ::std::option::Option::Some(match member.member_index() {
                 Some(0) => Self::Comment(crate::types::CommentUpdateContent::deserialize(deser)?),
                 Some(1) => Self::Custom(crate::types::CustomUpdateContent::deserialize(deser)?),
+                Some(2) => Self::Sla(crate::types::SlaUpdateContent::deserialize(deser)?),
                 _ => Self::Unknown,
             });
             Ok(())

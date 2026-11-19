@@ -15,6 +15,8 @@ pub struct CreateRegistryRecordInput {
     pub record_type: ::std::option::Option<crate::types::RecordType>,
     /// <p>The typed descriptor content for the registry record</p>
     pub descriptors: ::std::option::Option<crate::types::Descriptors>,
+    /// <p>The skill package to store with the record, for a record of type <code>SKILL</code> with an <code>agentSkillsDefinition</code> descriptor. The registry validates the package after the operation returns and sets <code>skillMd.data</code> from the package's SKILL.md. A request that uploads a package can't also set a skill source or send new <code>skillMd.data</code>.</p>
+    pub artifact: ::std::option::Option<crate::types::RegistryRecordArtifactUpload>,
     /// <p>The version of the registry record</p>
     pub record_version: ::std::option::Option<::std::string::String>,
     /// <p>Client token for idempotency</p>
@@ -51,6 +53,10 @@ impl CreateRegistryRecordInput {
     pub fn descriptors(&self) -> ::std::option::Option<&crate::types::Descriptors> {
         self.descriptors.as_ref()
     }
+    /// <p>The skill package to store with the record, for a record of type <code>SKILL</code> with an <code>agentSkillsDefinition</code> descriptor. The registry validates the package after the operation returns and sets <code>skillMd.data</code> from the package's SKILL.md. A request that uploads a package can't also set a skill source or send new <code>skillMd.data</code>.</p>
+    pub fn artifact(&self) -> ::std::option::Option<&crate::types::RegistryRecordArtifactUpload> {
+        self.artifact.as_ref()
+    }
     /// <p>The version of the registry record</p>
     pub fn record_version(&self) -> ::std::option::Option<&str> {
         self.record_version.as_deref()
@@ -83,6 +89,7 @@ impl ::std::fmt::Debug for CreateRegistryRecordInput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("record_type", &self.record_type);
         formatter.field("descriptors", &self.descriptors);
+        formatter.field("artifact", &self.artifact);
         formatter.field("record_version", &self.record_version);
         formatter.field("client_token", &self.client_token);
         formatter.field("provenance", &self.provenance);
@@ -108,6 +115,7 @@ pub struct CreateRegistryRecordInputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) record_type: ::std::option::Option<crate::types::RecordType>,
     pub(crate) descriptors: ::std::option::Option<crate::types::Descriptors>,
+    pub(crate) artifact: ::std::option::Option<crate::types::RegistryRecordArtifactUpload>,
     pub(crate) record_version: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) provenance: ::std::option::Option<::std::vec::Vec<crate::types::Provenance>>,
@@ -203,6 +211,20 @@ impl CreateRegistryRecordInputBuilder {
     pub fn get_descriptors(&self) -> &::std::option::Option<crate::types::Descriptors> {
         &self.descriptors
     }
+    /// <p>The skill package to store with the record, for a record of type <code>SKILL</code> with an <code>agentSkillsDefinition</code> descriptor. The registry validates the package after the operation returns and sets <code>skillMd.data</code> from the package's SKILL.md. A request that uploads a package can't also set a skill source or send new <code>skillMd.data</code>.</p>
+    pub fn artifact(mut self, input: crate::types::RegistryRecordArtifactUpload) -> Self {
+        self.artifact = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The skill package to store with the record, for a record of type <code>SKILL</code> with an <code>agentSkillsDefinition</code> descriptor. The registry validates the package after the operation returns and sets <code>skillMd.data</code> from the package's SKILL.md. A request that uploads a package can't also set a skill source or send new <code>skillMd.data</code>.</p>
+    pub fn set_artifact(mut self, input: ::std::option::Option<crate::types::RegistryRecordArtifactUpload>) -> Self {
+        self.artifact = input;
+        self
+    }
+    /// <p>The skill package to store with the record, for a record of type <code>SKILL</code> with an <code>agentSkillsDefinition</code> descriptor. The registry validates the package after the operation returns and sets <code>skillMd.data</code> from the package's SKILL.md. A request that uploads a package can't also set a skill source or send new <code>skillMd.data</code>.</p>
+    pub fn get_artifact(&self) -> &::std::option::Option<crate::types::RegistryRecordArtifactUpload> {
+        &self.artifact
+    }
     /// <p>The version of the registry record</p>
     pub fn record_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.record_version = ::std::option::Option::Some(input.into());
@@ -297,6 +319,7 @@ impl CreateRegistryRecordInputBuilder {
             description: self.description,
             record_type: self.record_type,
             descriptors: self.descriptors,
+            artifact: self.artifact,
             record_version: self.record_version,
             client_token: self.client_token,
             provenance: self.provenance,
@@ -314,6 +337,7 @@ impl ::std::fmt::Debug for CreateRegistryRecordInputBuilder {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("record_type", &self.record_type);
         formatter.field("descriptors", &self.descriptors);
+        formatter.field("artifact", &self.artifact);
         formatter.field("record_version", &self.record_version);
         formatter.field("client_token", &self.client_token);
         formatter.field("provenance", &self.provenance);

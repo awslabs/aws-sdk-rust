@@ -23,6 +23,9 @@ impl crate::operation::update_saml_provider::builders::UpdateSamlProviderInputBu
 /// Fluent builder constructing a request to `UpdateSAMLProvider`.
 ///
 /// <p>Updates the metadata document, SAML encryption settings, and private keys for an existing SAML provider. To rotate private keys, add your new private key and then remove the old key in a separate request.</p>
+/// <p>You can also use this operation to set, change, or remove the trusted identity propagation context provider, and to associate or disassociate an IAM Identity Center instance with the provider. To remove a configuration rather than replace it, use the <code>RemoveContextProvider</code> and <code>RemoveIdentityCenterInstance</code> parameters. For each configuration, provide either the new value or the corresponding <code>Remove</code> flag in a single request, but not both.</p>
+/// <p>A single request can change either the context provider or the provider metadata, but not both. Provider metadata includes the SAML metadata document, assertion encryption mode, private keys, and IAM Identity Center association. To change both, make separate <code>UpdateSAMLProvider</code> requests. To remove the context provider, first remove the IAM Identity Center association in a separate request.</p>
+/// <p>To control who can configure trusted identity propagation on a SAML provider, use the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityPropagation">iam:EnableIdentityPropagation</a>, <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityCenterAssociation">iam:EnableIdentityCenterAssociation</a>, <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityProviderIssuers">iam:RequestIdentityProviderIssuers</a>, <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityProviderIssuers">iam:ResourceIdentityProviderIssuers</a>, <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityCenterInstanceArn">iam:RequestIdentityCenterInstanceArn</a>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityCenterInstanceArn">iam:ResourceIdentityCenterInstanceArn</a> condition keys in IAM policies. The <code>Request</code> keys contain the values in the request. The <code>Resource</code> keys contain the values stored on the provider.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateSAMLProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -180,5 +183,64 @@ impl UpdateSAMLProviderFluentBuilder {
     /// <p>The Key ID of the private key to remove.</p>
     pub fn get_remove_private_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_remove_private_key()
+    }
+    /// <p>The trusted identity propagation context provider configuration to associate with the SAML provider. This replaces the existing context provider configuration. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+    pub fn context_provider(mut self, input: crate::types::ContextProvider) -> Self {
+        self.inner = self.inner.context_provider(input);
+        self
+    }
+    /// <p>The trusted identity propagation context provider configuration to associate with the SAML provider. This replaces the existing context provider configuration. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+    pub fn set_context_provider(mut self, input: ::std::option::Option<crate::types::ContextProvider>) -> Self {
+        self.inner = self.inner.set_context_provider(input);
+        self
+    }
+    /// <p>The trusted identity propagation context provider configuration to associate with the SAML provider. This replaces the existing context provider configuration. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+    pub fn get_context_provider(&self) -> &::std::option::Option<crate::types::ContextProvider> {
+        self.inner.get_context_provider()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance to associate with the SAML provider.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    pub fn identity_center_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.identity_center_instance_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance to associate with the SAML provider.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    pub fn set_identity_center_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_identity_center_instance_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance to associate with the SAML provider.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    pub fn get_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_center_instance_arn()
+    }
+    /// <p>Specifies whether to remove the existing trusted identity propagation context provider configuration from the SAML provider. When set to <code>true</code>, the context provider is removed. This parameter is mutually exclusive with <code>ContextProvider</code>.</p>
+    pub fn remove_context_provider(mut self, input: bool) -> Self {
+        self.inner = self.inner.remove_context_provider(input);
+        self
+    }
+    /// <p>Specifies whether to remove the existing trusted identity propagation context provider configuration from the SAML provider. When set to <code>true</code>, the context provider is removed. This parameter is mutually exclusive with <code>ContextProvider</code>.</p>
+    pub fn set_remove_context_provider(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_remove_context_provider(input);
+        self
+    }
+    /// <p>Specifies whether to remove the existing trusted identity propagation context provider configuration from the SAML provider. When set to <code>true</code>, the context provider is removed. This parameter is mutually exclusive with <code>ContextProvider</code>.</p>
+    pub fn get_remove_context_provider(&self) -> &::std::option::Option<bool> {
+        self.inner.get_remove_context_provider()
+    }
+    /// <p>Specifies whether to disassociate the IAM Identity Center instance from the SAML provider. When set to <code>true</code>, the instance is disassociated. This parameter is mutually exclusive with <code>IdentityCenterInstanceArn</code>.</p>
+    pub fn remove_identity_center_instance(mut self, input: bool) -> Self {
+        self.inner = self.inner.remove_identity_center_instance(input);
+        self
+    }
+    /// <p>Specifies whether to disassociate the IAM Identity Center instance from the SAML provider. When set to <code>true</code>, the instance is disassociated. This parameter is mutually exclusive with <code>IdentityCenterInstanceArn</code>.</p>
+    pub fn set_remove_identity_center_instance(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_remove_identity_center_instance(input);
+        self
+    }
+    /// <p>Specifies whether to disassociate the IAM Identity Center instance from the SAML provider. When set to <code>true</code>, the instance is disassociated. This parameter is mutually exclusive with <code>IdentityCenterInstanceArn</code>.</p>
+    pub fn get_remove_identity_center_instance(&self) -> &::std::option::Option<bool> {
+        self.inner.get_remove_identity_center_instance()
     }
 }

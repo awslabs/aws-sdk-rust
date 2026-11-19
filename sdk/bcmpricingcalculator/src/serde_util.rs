@@ -263,6 +263,39 @@ pub(crate) fn bill_scenario_usage_modification_item_correct_errors(
     builder
 }
 
+pub(crate) fn get_usage_lines_estimated_cost_error_correct_errors(
+    mut builder: crate::types::builders::GetUsageLinesEstimatedCostErrorBuilder,
+) -> crate::types::builders::GetUsageLinesEstimatedCostErrorBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    if builder.service_code.is_none() {
+        builder.service_code = Some(Default::default())
+    }
+    if builder.usage_type.is_none() {
+        builder.usage_type = Some(Default::default())
+    }
+    if builder.operation.is_none() {
+        builder.operation = Some(Default::default())
+    }
+    if builder.error_code.is_none() {
+        builder.error_code = "no value was set".parse::<crate::types::GetUsageLinesEstimatedCostErrorCode>().ok()
+    }
+    if builder.error_message.is_none() {
+        builder.error_message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_usage_lines_estimated_cost_line_item_correct_errors(
+    mut builder: crate::types::builders::GetUsageLinesEstimatedCostLineItemBuilder,
+) -> crate::types::builders::GetUsageLinesEstimatedCostLineItemBuilder {
+    if builder.key.is_none() {
+        builder.key = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn validation_exception_field_correct_errors(
     mut builder: crate::types::builders::ValidationExceptionFieldBuilder,
 ) -> crate::types::builders::ValidationExceptionFieldBuilder {

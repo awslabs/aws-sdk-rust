@@ -79,6 +79,26 @@ static GETCODESECURITYINTEGRATIONOUTPUT_MEMBER_AUTHORIZATION_URL: ::aws_smithy_s
     "authorizationUrl",
     7,
 );
+static GETCODESECURITYINTEGRATIONOUTPUT_MEMBER_VPC_CONFIGURATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.inspector2.synthetic#GetCodeSecurityIntegrationOutput$vpcConfiguration",
+        "com.amazonaws.inspector2.synthetic",
+        "GetCodeSecurityIntegrationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "vpcConfiguration",
+    8,
+);
+static GETCODESECURITYINTEGRATIONOUTPUT_MEMBER_INSTANCE_URL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.inspector2.synthetic#GetCodeSecurityIntegrationOutput$instanceUrl",
+        "com.amazonaws.inspector2.synthetic",
+        "GetCodeSecurityIntegrationOutput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "instanceUrl",
+    9,
+);
 static GETCODESECURITYINTEGRATIONOUTPUT_MEMBER_TAGS_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.inspector2#TagMap$key", "com.amazonaws.inspector2", "TagMap"),
     ::aws_smithy_schema::ShapeType::String,
@@ -99,7 +119,7 @@ static GETCODESECURITYINTEGRATIONOUTPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema
     ),
     ::aws_smithy_schema::ShapeType::Map,
     "tags",
-    8,
+    10,
 )
 .with_map_members(
     &GETCODESECURITYINTEGRATIONOUTPUT_MEMBER_TAGS_KEY,
@@ -121,6 +141,8 @@ static GETCODESECURITYINTEGRATIONOUTPUT_SCHEMA: ::aws_smithy_schema::Schema<'sta
         &GETCODESECURITYINTEGRATIONOUTPUT_MEMBER_CREATED_ON,
         &GETCODESECURITYINTEGRATIONOUTPUT_MEMBER_LAST_UPDATE_ON,
         &GETCODESECURITYINTEGRATIONOUTPUT_MEMBER_AUTHORIZATION_URL,
+        &GETCODESECURITYINTEGRATIONOUTPUT_MEMBER_VPC_CONFIGURATION,
+        &GETCODESECURITYINTEGRATIONOUTPUT_MEMBER_INSTANCE_URL,
         &GETCODESECURITYINTEGRATIONOUTPUT_MEMBER_TAGS,
     ],
 )
@@ -169,6 +191,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::get_co
         }
         if let Some(ref val) = self.authorization_url {
             ser.write_string(&GETCODESECURITYINTEGRATIONOUTPUT_MEMBER_AUTHORIZATION_URL, val)?;
+        }
+        if let Some(ref val) = self.vpc_configuration {
+            ser.write_struct(&GETCODESECURITYINTEGRATIONOUTPUT_MEMBER_VPC_CONFIGURATION, val)?;
+        }
+        if let Some(ref val) = self.instance_url {
+            ser.write_string(&GETCODESECURITYINTEGRATIONOUTPUT_MEMBER_INSTANCE_URL, val)?;
         }
         if let Some(ref val) = self.tags {
             ser.write_map(
@@ -228,6 +256,20 @@ impl crate::operation::get_code_security_integration::builders::GetCodeSecurityI
                     }
                 }
                 Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_configuration = Some(crate::types::CodeSecurityIntegrationVpcConfiguration::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.instance_url = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(10) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

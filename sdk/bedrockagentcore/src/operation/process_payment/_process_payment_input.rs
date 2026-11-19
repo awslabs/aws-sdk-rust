@@ -12,7 +12,7 @@ pub struct ProcessPaymentInput {
     pub payment_manager_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the payment session.</p>
     pub payment_session_id: ::std::option::Option<::std::string::String>,
-    /// <p>The ID of the payment instrument to use.</p>
+    /// <p>The ID of the payment instrument to use. For the <code>CRYPTO_X402</code> and <code>MPP</code> payment types, specify the ID of a payment instrument that you created. For the <code>AWS_BILLING_X402</code> payment type, specify the service-managed instrument ID <code>aws.agentcorepayments.awsbilling.v1</code>. You don't create this instrument; it's available for any payment manager that has an AWS Billing payment connector.</p>
     pub payment_instrument_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of payment to process.</p>
     pub payment_type: ::std::option::Option<crate::types::PaymentType>,
@@ -38,7 +38,7 @@ impl ProcessPaymentInput {
     pub fn payment_session_id(&self) -> ::std::option::Option<&str> {
         self.payment_session_id.as_deref()
     }
-    /// <p>The ID of the payment instrument to use.</p>
+    /// <p>The ID of the payment instrument to use. For the <code>CRYPTO_X402</code> and <code>MPP</code> payment types, specify the ID of a payment instrument that you created. For the <code>AWS_BILLING_X402</code> payment type, specify the service-managed instrument ID <code>aws.agentcorepayments.awsbilling.v1</code>. You don't create this instrument; it's available for any payment manager that has an AWS Billing payment connector.</p>
     pub fn payment_instrument_id(&self) -> ::std::option::Option<&str> {
         self.payment_instrument_id.as_deref()
     }
@@ -134,18 +134,18 @@ impl ProcessPaymentInputBuilder {
     pub fn get_payment_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.payment_session_id
     }
-    /// <p>The ID of the payment instrument to use.</p>
+    /// <p>The ID of the payment instrument to use. For the <code>CRYPTO_X402</code> and <code>MPP</code> payment types, specify the ID of a payment instrument that you created. For the <code>AWS_BILLING_X402</code> payment type, specify the service-managed instrument ID <code>aws.agentcorepayments.awsbilling.v1</code>. You don't create this instrument; it's available for any payment manager that has an AWS Billing payment connector.</p>
     /// This field is required.
     pub fn payment_instrument_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payment_instrument_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the payment instrument to use.</p>
+    /// <p>The ID of the payment instrument to use. For the <code>CRYPTO_X402</code> and <code>MPP</code> payment types, specify the ID of a payment instrument that you created. For the <code>AWS_BILLING_X402</code> payment type, specify the service-managed instrument ID <code>aws.agentcorepayments.awsbilling.v1</code>. You don't create this instrument; it's available for any payment manager that has an AWS Billing payment connector.</p>
     pub fn set_payment_instrument_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.payment_instrument_id = input;
         self
     }
-    /// <p>The ID of the payment instrument to use.</p>
+    /// <p>The ID of the payment instrument to use. For the <code>CRYPTO_X402</code> and <code>MPP</code> payment types, specify the ID of a payment instrument that you created. For the <code>AWS_BILLING_X402</code> payment type, specify the service-managed instrument ID <code>aws.agentcorepayments.awsbilling.v1</code>. You don't create this instrument; it's available for any payment manager that has an AWS Billing payment connector.</p>
     pub fn get_payment_instrument_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.payment_instrument_id
     }

@@ -9,6 +9,21 @@ pub fn ser_agent_skills_additional_data(
         crate::protocol_serde::shape_agent_skills_md_descriptor::ser_agent_skills_md_descriptor(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.skill_package {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("skillPackage").start_object();
+        crate::protocol_serde::shape_agent_skills_package_descriptor::ser_agent_skills_package_descriptor(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.repository_provider {
+        object.key("repositoryProvider").string(var_5.as_str());
+    }
+    if let Some(var_6) = &input.source_configuration {
+        #[allow(unused_mut)]
+        let mut object_7 = object.key("sourceConfiguration").start_object();
+        crate::protocol_serde::shape_agent_skills_source_configuration::ser_agent_skills_source_configuration(&mut object_7, var_6)?;
+        object_7.finish();
+    }
     Ok(())
 }
 
@@ -40,6 +55,31 @@ where
                                 _value,
                                 depth + 1,
                             )?);
+                        }
+                        "skillPackage" => {
+                            builder = builder.set_skill_package(
+                                crate::protocol_serde::shape_agent_skills_package_descriptor::de_agent_skills_package_descriptor(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "repositoryProvider" => {
+                            builder = builder.set_repository_provider(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AgentSkillsRepositoryProvider::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "sourceConfiguration" => {
+                            builder = builder.set_source_configuration(
+                                crate::protocol_serde::shape_agent_skills_source_configuration::de_agent_skills_source_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

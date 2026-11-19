@@ -98,6 +98,21 @@ pub fn ser_create_stack_set_input_input_input(
     if let Some(var_39) = &input.managed_execution {
         crate::protocol_serde::shape_managed_execution::ser_managed_execution(scope_38, var_39)?;
     }
+    #[allow(unused_mut)]
+    let mut scope_40 = writer.prefix("ExecutionRoleTemplateBody");
+    if let Some(var_41) = &input.execution_role_template_body {
+        scope_40.string(var_41);
+    }
+    #[allow(unused_mut)]
+    let mut scope_42 = writer.prefix("ExecutionRoleTemplateUrl");
+    if let Some(var_43) = &input.execution_role_template_url {
+        scope_42.string(var_43);
+    }
+    #[allow(unused_mut)]
+    let mut scope_44 = writer.prefix("StackSetOutputBucket");
+    if let Some(var_45) = &input.stack_set_output_bucket {
+        scope_44.string(var_45);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

@@ -125,19 +125,19 @@ impl GetMarketplaceRevenueShareAllocationFluentBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<crate::types::CatalogName> {
         self.inner.get_catalog()
     }
-    /// <p>The AWS Marketplace product identifier of the parent revenue share.</p>
-    pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.product_id(input.into());
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub fn marketplace_revenue_share_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.marketplace_revenue_share_identifier(input.into());
         self
     }
-    /// <p>The AWS Marketplace product identifier of the parent revenue share.</p>
-    pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_product_id(input);
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub fn set_marketplace_revenue_share_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_marketplace_revenue_share_identifier(input);
         self
     }
-    /// <p>The AWS Marketplace product identifier of the parent revenue share.</p>
-    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_product_id()
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub fn get_marketplace_revenue_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_marketplace_revenue_share_identifier()
     }
     /// <p>The unique identifier of the allocation to retrieve.</p>
     pub fn marketplace_revenue_share_allocation_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

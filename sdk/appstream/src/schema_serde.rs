@@ -508,3 +508,5 @@ pub(crate) mod shape_user_stack_association_error;
 pub(crate) mod shape_volume_config;
 
 pub(crate) mod shape_vpc_config;
+
+pub(crate) mod shape_web_authn_redirection;

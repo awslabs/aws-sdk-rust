@@ -18,6 +18,8 @@ pub struct CreateAgentSpaceInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The preferences to configure on the agent space. Preferences not provided take their default values.</p>
     pub preferences: ::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>>,
+    /// <p>Specifies whether the AgentSpace's Amazon Web Services source configuration targets an individual Amazon Web Services account or an Amazon Web Services Organization.</p>
+    pub aws_source_mode: ::std::option::Option<crate::types::AwsSourceMode>,
 }
 impl CreateAgentSpaceInput {
     /// <p>The name of the AgentSpace.</p>
@@ -48,6 +50,10 @@ impl CreateAgentSpaceInput {
     pub fn preferences(&self) -> ::std::option::Option<&::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>> {
         self.preferences.as_ref()
     }
+    /// <p>Specifies whether the AgentSpace's Amazon Web Services source configuration targets an individual Amazon Web Services account or an Amazon Web Services Organization.</p>
+    pub fn aws_source_mode(&self) -> ::std::option::Option<&crate::types::AwsSourceMode> {
+        self.aws_source_mode.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateAgentSpaceInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -59,6 +65,7 @@ impl ::std::fmt::Debug for CreateAgentSpaceInput {
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &self.tags);
         formatter.field("preferences", &self.preferences);
+        formatter.field("aws_source_mode", &self.aws_source_mode);
         formatter.finish()
     }
 }
@@ -80,6 +87,7 @@ pub struct CreateAgentSpaceInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) preferences: ::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>>,
+    pub(crate) aws_source_mode: ::std::option::Option<crate::types::AwsSourceMode>,
 }
 impl CreateAgentSpaceInputBuilder {
     /// <p>The name of the AgentSpace.</p>
@@ -193,6 +201,20 @@ impl CreateAgentSpaceInputBuilder {
     pub fn get_preferences(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>> {
         &self.preferences
     }
+    /// <p>Specifies whether the AgentSpace's Amazon Web Services source configuration targets an individual Amazon Web Services account or an Amazon Web Services Organization.</p>
+    pub fn aws_source_mode(mut self, input: crate::types::AwsSourceMode) -> Self {
+        self.aws_source_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the AgentSpace's Amazon Web Services source configuration targets an individual Amazon Web Services account or an Amazon Web Services Organization.</p>
+    pub fn set_aws_source_mode(mut self, input: ::std::option::Option<crate::types::AwsSourceMode>) -> Self {
+        self.aws_source_mode = input;
+        self
+    }
+    /// <p>Specifies whether the AgentSpace's Amazon Web Services source configuration targets an individual Amazon Web Services account or an Amazon Web Services Organization.</p>
+    pub fn get_aws_source_mode(&self) -> &::std::option::Option<crate::types::AwsSourceMode> {
+        &self.aws_source_mode
+    }
     /// Consumes the builder and constructs a [`CreateAgentSpaceInput`](crate::operation::create_agent_space::CreateAgentSpaceInput).
     pub fn build(
         self,
@@ -205,6 +227,7 @@ impl CreateAgentSpaceInputBuilder {
             client_token: self.client_token,
             tags: self.tags,
             preferences: self.preferences,
+            aws_source_mode: self.aws_source_mode,
         })
     }
 }
@@ -218,6 +241,7 @@ impl ::std::fmt::Debug for CreateAgentSpaceInputBuilder {
         formatter.field("client_token", &self.client_token);
         formatter.field("tags", &self.tags);
         formatter.field("preferences", &self.preferences);
+        formatter.field("aws_source_mode", &self.aws_source_mode);
         formatter.finish()
     }
 }

@@ -22,7 +22,7 @@ impl crate::operation::describe_event_bus::builders::DescribeEventBusInputBuilde
 }
 /// Fluent builder constructing a request to `DescribeEventBus`.
 ///
-/// Returns the full configuration and lifecycle state of an event bus.
+/// <p>Returns the full configuration and lifecycle state of an event bus.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DescribeEventBusFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl DescribeEventBusFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn event_bus_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_bus_arn(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn set_event_bus_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_bus_arn(input);
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn get_event_bus_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_event_bus_arn()
     }

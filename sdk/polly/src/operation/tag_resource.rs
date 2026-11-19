@@ -309,7 +309,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for TagResourceEn
 pub enum TagResourceError {
     /// <p>The resource ARN or a tag in the request isn't valid. Specify the ARN of a supported resource in the Amazon Web Services account and Region of the request. Tag keys can have a maximum length of 128 characters, and tag values can have a maximum length of 256 characters. Correct the ARN or the tags, and then try again.</p>
     InvalidTagParameterException(crate::types::error::InvalidTagParameterException),
-    /// <p>Amazon Polly can't find the specified resource. Verify that the resource exists in the Amazon Web Services account and Region of the request and that its ARN is spelled correctly, and then try again.</p>
+    /// <p>Amazon Polly can't find the specified resource. Verify that the resource exists in the Amazon Web Services account and Region of the request and that its ARN or ID is spelled correctly, and then try again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::types::error::ServiceFailureException),

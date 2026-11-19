@@ -104,6 +104,8 @@ pub struct Contact {
     pub global_resiliency_metadata: ::std::option::Option<crate::types::GlobalResiliencyMetadata>,
     /// <p>Information about the conversational analytics configuration applied to the contact. This field is present only for contacts where conversational analytics is enabled in the contact flow.</p>
     pub contact_lens: ::std::option::Option<crate::types::ContactLens>,
+    /// <p>If one or more voicemails were recorded for the contact, this contains information about the voicemails.</p>
+    pub voicemail_info: ::std::option::Option<crate::types::VoicemailInfo>,
 }
 impl Contact {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
@@ -314,6 +316,10 @@ impl Contact {
     pub fn contact_lens(&self) -> ::std::option::Option<&crate::types::ContactLens> {
         self.contact_lens.as_ref()
     }
+    /// <p>If one or more voicemails were recorded for the contact, this contains information about the voicemails.</p>
+    pub fn voicemail_info(&self) -> ::std::option::Option<&crate::types::VoicemailInfo> {
+        self.voicemail_info.as_ref()
+    }
 }
 impl ::std::fmt::Debug for Contact {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -368,6 +374,7 @@ impl ::std::fmt::Debug for Contact {
         formatter.field("next_contacts", &self.next_contacts);
         formatter.field("global_resiliency_metadata", &self.global_resiliency_metadata);
         formatter.field("contact_lens", &self.contact_lens);
+        formatter.field("voicemail_info", &self.voicemail_info);
         formatter.finish()
     }
 }
@@ -432,6 +439,7 @@ pub struct ContactBuilder {
     pub(crate) next_contacts: ::std::option::Option<::std::vec::Vec<crate::types::NextContactEntry>>,
     pub(crate) global_resiliency_metadata: ::std::option::Option<crate::types::GlobalResiliencyMetadata>,
     pub(crate) contact_lens: ::std::option::Option<crate::types::ContactLens>,
+    pub(crate) voicemail_info: ::std::option::Option<crate::types::VoicemailInfo>,
 }
 impl ContactBuilder {
     /// <p>The Amazon Resource Name (ARN) for the contact.</p>
@@ -1186,6 +1194,20 @@ impl ContactBuilder {
     pub fn get_contact_lens(&self) -> &::std::option::Option<crate::types::ContactLens> {
         &self.contact_lens
     }
+    /// <p>If one or more voicemails were recorded for the contact, this contains information about the voicemails.</p>
+    pub fn voicemail_info(mut self, input: crate::types::VoicemailInfo) -> Self {
+        self.voicemail_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>If one or more voicemails were recorded for the contact, this contains information about the voicemails.</p>
+    pub fn set_voicemail_info(mut self, input: ::std::option::Option<crate::types::VoicemailInfo>) -> Self {
+        self.voicemail_info = input;
+        self
+    }
+    /// <p>If one or more voicemails were recorded for the contact, this contains information about the voicemails.</p>
+    pub fn get_voicemail_info(&self) -> &::std::option::Option<crate::types::VoicemailInfo> {
+        &self.voicemail_info
+    }
     /// Consumes the builder and constructs a [`Contact`](crate::types::Contact).
     pub fn build(self) -> crate::types::Contact {
         crate::types::Contact {
@@ -1239,6 +1261,7 @@ impl ContactBuilder {
             next_contacts: self.next_contacts,
             global_resiliency_metadata: self.global_resiliency_metadata,
             contact_lens: self.contact_lens,
+            voicemail_info: self.voicemail_info,
         }
     }
 }
@@ -1295,6 +1318,7 @@ impl ::std::fmt::Debug for ContactBuilder {
         formatter.field("next_contacts", &self.next_contacts);
         formatter.field("global_resiliency_metadata", &self.global_resiliency_metadata);
         formatter.field("contact_lens", &self.contact_lens);
+        formatter.field("voicemail_info", &self.voicemail_info);
         formatter.finish()
     }
 }

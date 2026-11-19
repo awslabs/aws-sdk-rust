@@ -109,6 +109,16 @@ static ACMCERTIFICATEMETADATAFILTER_MEMBER_ACMEACCOUNTID: ::aws_smithy_schema::S
     "AcmeAccountId",
     10,
 );
+static ACMCERTIFICATEMETADATAFILTER_MEMBER_ROOTHIERARCHYTYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#AcmCertificateMetadataFilter$RootHierarchyType",
+        "com.amazonaws.acm",
+        "AcmCertificateMetadataFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RootHierarchyType",
+    11,
+);
 static ACMCERTIFICATEMETADATAFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.acm#AcmCertificateMetadataFilter",
@@ -128,6 +138,7 @@ static ACMCERTIFICATEMETADATAFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static>
         &ACMCERTIFICATEMETADATAFILTER_MEMBER_CERTIFICATEKEYPAIRORIGIN,
         &ACMCERTIFICATEMETADATAFILTER_MEMBER_ACMEENDPOINTARN,
         &ACMCERTIFICATEMETADATAFILTER_MEMBER_ACMEACCOUNTID,
+        &ACMCERTIFICATEMETADATAFILTER_MEMBER_ROOTHIERARCHYTYPE,
     ],
 );
 impl crate::types::AcmCertificateMetadataFilter {
@@ -178,6 +189,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::AcmCertifi
             Self::AcmeAccountId(val) => {
                 ser.write_string(&ACMCERTIFICATEMETADATAFILTER_MEMBER_ACMEACCOUNTID, val)?;
             }
+            Self::RootHierarchyType(val) => {
+                ser.write_string(&ACMCERTIFICATEMETADATAFILTER_MEMBER_ROOTHIERARCHYTYPE, val.as_str())?;
+            }
             Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
         }
         Ok(())
@@ -210,6 +224,7 @@ impl crate::types::AcmCertificateMetadataFilter {
                 Some(8) => Self::CertificateKeyPairOrigin(crate::types::CertificateKeyPairOrigin::from(deser.read_string(member)?.as_str())),
                 Some(9) => Self::AcmeEndpointArn(deser.read_string(member)?),
                 Some(10) => Self::AcmeAccountId(deser.read_string(member)?),
+                Some(11) => Self::RootHierarchyType(crate::types::RootHierarchyType::from(deser.read_string(member)?.as_str())),
                 _ => Self::Unknown,
             });
             Ok(())

@@ -3,12 +3,12 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyOutput {
-    /// Revision ID of the policy that was deleted. Absent when no policy was deleted.
+    /// <p>Revision ID of the policy that was deleted. Absent when no policy was deleted.</p>
     pub revision_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DeleteResourcePolicyOutput {
-    /// Revision ID of the policy that was deleted. Absent when no policy was deleted.
+    /// <p>Revision ID of the policy that was deleted. Absent when no policy was deleted.</p>
     pub fn revision_id(&self) -> ::std::option::Option<&str> {
         self.revision_id.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct DeleteResourcePolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl DeleteResourcePolicyOutputBuilder {
-    /// Revision ID of the policy that was deleted. Absent when no policy was deleted.
+    /// <p>Revision ID of the policy that was deleted. Absent when no policy was deleted.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Revision ID of the policy that was deleted. Absent when no policy was deleted.
+    /// <p>Revision ID of the policy that was deleted. Absent when no policy was deleted.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
     }
-    /// Revision ID of the policy that was deleted. Absent when no policy was deleted.
+    /// <p>Revision ID of the policy that was deleted. Absent when no policy was deleted.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision_id
     }

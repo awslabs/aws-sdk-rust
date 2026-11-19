@@ -3,25 +3,25 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutEventsInput {
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub event_bus_arn: ::std::option::Option<::std::string::String>,
-    /// List of event entries to publish. Must contain at least one entry.
+    /// <p>List of event entries to publish. Must contain at least one entry.</p>
     pub entries: ::std::option::Option<::std::vec::Vec<crate::types::PutEventsRequestEntry>>,
-    /// Request-level deduplication settings, applied to every entry in the batch.
+    /// <p>Request-level deduplication settings, applied to every entry in the batch.</p>
     pub deduplication_configuration: ::std::option::Option<crate::types::DeduplicationConfiguration>,
 }
 impl PutEventsInput {
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn event_bus_arn(&self) -> ::std::option::Option<&str> {
         self.event_bus_arn.as_deref()
     }
-    /// List of event entries to publish. Must contain at least one entry.
+    /// <p>List of event entries to publish. Must contain at least one entry.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
     pub fn entries(&self) -> &[crate::types::PutEventsRequestEntry] {
         self.entries.as_deref().unwrap_or_default()
     }
-    /// Request-level deduplication settings, applied to every entry in the batch.
+    /// <p>Request-level deduplication settings, applied to every entry in the batch.</p>
     pub fn deduplication_configuration(&self) -> ::std::option::Option<&crate::types::DeduplicationConfiguration> {
         self.deduplication_configuration.as_ref()
     }
@@ -42,18 +42,18 @@ pub struct PutEventsInputBuilder {
     pub(crate) deduplication_configuration: ::std::option::Option<crate::types::DeduplicationConfiguration>,
 }
 impl PutEventsInputBuilder {
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     /// This field is required.
     pub fn event_bus_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_bus_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn set_event_bus_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_bus_arn = input;
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn get_event_bus_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_bus_arn
     }
@@ -61,33 +61,33 @@ impl PutEventsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// List of event entries to publish. Must contain at least one entry.
+    /// <p>List of event entries to publish. Must contain at least one entry.</p>
     pub fn entries(mut self, input: crate::types::PutEventsRequestEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
         v.push(input);
         self.entries = ::std::option::Option::Some(v);
         self
     }
-    /// List of event entries to publish. Must contain at least one entry.
+    /// <p>List of event entries to publish. Must contain at least one entry.</p>
     pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutEventsRequestEntry>>) -> Self {
         self.entries = input;
         self
     }
-    /// List of event entries to publish. Must contain at least one entry.
+    /// <p>List of event entries to publish. Must contain at least one entry.</p>
     pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutEventsRequestEntry>> {
         &self.entries
     }
-    /// Request-level deduplication settings, applied to every entry in the batch.
+    /// <p>Request-level deduplication settings, applied to every entry in the batch.</p>
     pub fn deduplication_configuration(mut self, input: crate::types::DeduplicationConfiguration) -> Self {
         self.deduplication_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// Request-level deduplication settings, applied to every entry in the batch.
+    /// <p>Request-level deduplication settings, applied to every entry in the batch.</p>
     pub fn set_deduplication_configuration(mut self, input: ::std::option::Option<crate::types::DeduplicationConfiguration>) -> Self {
         self.deduplication_configuration = input;
         self
     }
-    /// Request-level deduplication settings, applied to every entry in the batch.
+    /// <p>Request-level deduplication settings, applied to every entry in the batch.</p>
     pub fn get_deduplication_configuration(&self) -> &::std::option::Option<crate::types::DeduplicationConfiguration> {
         &self.deduplication_configuration
     }

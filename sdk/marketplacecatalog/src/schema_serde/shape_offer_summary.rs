@@ -29,6 +29,16 @@ static OFFERSUMMARY_MEMBER_RESALE_AUTHORIZATION_ID: ::aws_smithy_schema::Schema<
     "ResaleAuthorizationId",
     2,
 );
+static OFFERSUMMARY_MEMBER_SUBSIDIARY_AUTHORIZATION_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacecatalog#OfferSummary$SubsidiaryAuthorizationId",
+        "com.amazonaws.marketplacecatalog",
+        "OfferSummary",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "SubsidiaryAuthorizationId",
+    3,
+);
 static OFFERSUMMARY_MEMBER_RELEASE_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.marketplacecatalog#OfferSummary$ReleaseDate",
@@ -37,7 +47,7 @@ static OFFERSUMMARY_MEMBER_RELEASE_DATE: ::aws_smithy_schema::Schema<'static> = 
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ReleaseDate",
-    3,
+    4,
 );
 static OFFERSUMMARY_MEMBER_AVAILABILITY_END_DATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -47,7 +57,7 @@ static OFFERSUMMARY_MEMBER_AVAILABILITY_END_DATE: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "AvailabilityEndDate",
-    4,
+    5,
 );
 static OFFERSUMMARY_MEMBER_BUYER_ACCOUNTS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -67,7 +77,7 @@ static OFFERSUMMARY_MEMBER_BUYER_ACCOUNTS: ::aws_smithy_schema::Schema<'static> 
     ),
     ::aws_smithy_schema::ShapeType::List,
     "BuyerAccounts",
-    5,
+    6,
 )
 .with_list_member(&OFFERSUMMARY_MEMBER_BUYER_ACCOUNTS_MEMBER);
 static OFFERSUMMARY_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -78,7 +88,7 @@ static OFFERSUMMARY_MEMBER_STATE: ::aws_smithy_schema::Schema<'static> = ::aws_s
     ),
     ::aws_smithy_schema::ShapeType::String,
     "State",
-    6,
+    7,
 );
 static OFFERSUMMARY_MEMBER_TARGETING_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -98,7 +108,7 @@ static OFFERSUMMARY_MEMBER_TARGETING: ::aws_smithy_schema::Schema<'static> = ::a
     ),
     ::aws_smithy_schema::ShapeType::List,
     "Targeting",
-    7,
+    8,
 )
 .with_list_member(&OFFERSUMMARY_MEMBER_TARGETING_MEMBER);
 static OFFERSUMMARY_MEMBER_OFFER_SET_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -109,7 +119,7 @@ static OFFERSUMMARY_MEMBER_OFFER_SET_ID: ::aws_smithy_schema::Schema<'static> = 
     ),
     ::aws_smithy_schema::ShapeType::String,
     "OfferSetId",
-    8,
+    9,
 );
 static OFFERSUMMARY_MEMBER_TARGET_AGREEMENT_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -119,7 +129,7 @@ static OFFERSUMMARY_MEMBER_TARGET_AGREEMENT_ID: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "TargetAgreementId",
-    9,
+    10,
 );
 static OFFERSUMMARY_MEMBER_TARGET_AGREEMENT_INTENT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -129,7 +139,7 @@ static OFFERSUMMARY_MEMBER_TARGET_AGREEMENT_INTENT: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::String,
     "TargetAgreementIntent",
-    10,
+    11,
 );
 static OFFERSUMMARY_MEMBER_CREATED_BY_SOURCE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -139,7 +149,7 @@ static OFFERSUMMARY_MEMBER_CREATED_BY_SOURCE: ::aws_smithy_schema::Schema<'stati
     ),
     ::aws_smithy_schema::ShapeType::String,
     "CreatedBySource",
-    11,
+    12,
 );
 static OFFERSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -152,6 +162,7 @@ static OFFERSUMMARY_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_
         &OFFERSUMMARY_MEMBER_NAME,
         &OFFERSUMMARY_MEMBER_PRODUCT_ID,
         &OFFERSUMMARY_MEMBER_RESALE_AUTHORIZATION_ID,
+        &OFFERSUMMARY_MEMBER_SUBSIDIARY_AUTHORIZATION_ID,
         &OFFERSUMMARY_MEMBER_RELEASE_DATE,
         &OFFERSUMMARY_MEMBER_AVAILABILITY_END_DATE,
         &OFFERSUMMARY_MEMBER_BUYER_ACCOUNTS,
@@ -185,6 +196,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::OfferSumma
         }
         if let Some(ref val) = self.resale_authorization_id {
             ser.write_string(&OFFERSUMMARY_MEMBER_RESALE_AUTHORIZATION_ID, val)?;
+        }
+        if let Some(ref val) = self.subsidiary_authorization_id {
+            ser.write_string(&OFFERSUMMARY_MEMBER_SUBSIDIARY_AUTHORIZATION_ID, val)?;
         }
         if let Some(ref val) = self.release_date {
             ser.write_string(&OFFERSUMMARY_MEMBER_RELEASE_DATE, val)?;
@@ -271,31 +285,38 @@ impl crate::types::builders::OfferSummaryBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.release_date = Some(deser.read_string(member)?);
+                        self.subsidiary_authorization_id = Some(deser.read_string(member)?);
                     }
                 }
                 Some(4) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.availability_end_date = Some(deser.read_string(member)?);
+                        self.release_date = Some(deser.read_string(member)?);
                     }
                 }
                 Some(5) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.buyer_accounts = Some(deser.read_string_list(member)?);
+                        self.availability_end_date = Some(deser.read_string(member)?);
                     }
                 }
                 Some(6) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.state = Some(crate::types::OfferStateString::from(deser.read_string(member)?.as_str()));
+                        self.buyer_accounts = Some(deser.read_string_list(member)?);
                     }
                 }
                 Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state = Some(crate::types::OfferStateString::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(8) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -311,21 +332,21 @@ impl crate::types::builders::OfferSummaryBuilder {
                         });
                     }
                 }
-                Some(8) => {
+                Some(9) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.offer_set_id = Some(deser.read_string(member)?);
                     }
                 }
-                Some(9) => {
+                Some(10) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.target_agreement_id = Some(deser.read_string(member)?);
                     }
                 }
-                Some(10) => {
+                Some(11) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -333,7 +354,7 @@ impl crate::types::builders::OfferSummaryBuilder {
                             Some(crate::types::OfferTargetAgreementIntentString::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(11) => {
+                Some(12) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

@@ -46,6 +46,8 @@ pub enum ServiceConfiguration {
     Slack(crate::types::SlackConfiguration),
     /// <p>AWS source account configuration for monitoring resources.</p>
     SourceAws(crate::types::SourceAwsConfiguration),
+    /// <p>The Amazon Web Services Organization source configuration used to monitor resources across an entire Amazon Web Services Organization or specified organizational units.</p>
+    SourceAwsOrg(crate::types::SourceAwsOrgConfiguration),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant
     ///
@@ -329,6 +331,19 @@ impl ServiceConfiguration {
     /// Returns true if this is a [`SourceAws`](crate::types::ServiceConfiguration::SourceAws).
     pub fn is_source_aws(&self) -> bool {
         self.as_source_aws().is_ok()
+    }
+    /// Tries to convert the enum instance into [`SourceAwsOrg`](crate::types::ServiceConfiguration::SourceAwsOrg), extracting the inner [`SourceAwsOrgConfiguration`](crate::types::SourceAwsOrgConfiguration).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_source_aws_org(&self) -> ::std::result::Result<&crate::types::SourceAwsOrgConfiguration, &Self> {
+        if let ServiceConfiguration::SourceAwsOrg(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`SourceAwsOrg`](crate::types::ServiceConfiguration::SourceAwsOrg).
+    pub fn is_source_aws_org(&self) -> bool {
+        self.as_source_aws_org().is_ok()
     }
     /// Returns true if the enum instance is the `Unknown` variant.
     pub fn is_unknown(&self) -> bool {

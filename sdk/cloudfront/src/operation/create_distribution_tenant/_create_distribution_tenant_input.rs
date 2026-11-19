@@ -21,6 +21,14 @@ pub struct CreateDistributionTenantInput {
     pub managed_certificate_request: ::std::option::Option<crate::types::ManagedCertificateRequest>,
     /// <p>Indicates whether the distribution tenant should be enabled when created. If the distribution tenant is disabled, the distribution tenant won't serve traffic.</p>
     pub enabled: ::std::option::Option<bool>,
+    /// <p>Specifies whether CloudFront moves a domain in this request to this distribution tenant when the domain is already associated with another standard distribution or distribution tenant. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>allow</code> – CloudFront moves the domain to this distribution tenant when the domain's DNS points to this distribution tenant.</p></li>
+    /// <li>
+    /// <p><code>reject</code> – CloudFront doesn't move the domain, and the request fails if the domain is associated with another resource. This is the default if you don't specify a value.</p></li>
+    /// </ul>
+    pub on_domain_takeover: ::std::option::Option<crate::types::OnDomainTakeover>,
 }
 impl CreateDistributionTenantInput {
     /// <p>The ID of the multi-tenant distribution to use for creating the distribution tenant.</p>
@@ -63,6 +71,16 @@ impl CreateDistributionTenantInput {
     pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
+    /// <p>Specifies whether CloudFront moves a domain in this request to this distribution tenant when the domain is already associated with another standard distribution or distribution tenant. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>allow</code> – CloudFront moves the domain to this distribution tenant when the domain's DNS points to this distribution tenant.</p></li>
+    /// <li>
+    /// <p><code>reject</code> – CloudFront doesn't move the domain, and the request fails if the domain is associated with another resource. This is the default if you don't specify a value.</p></li>
+    /// </ul>
+    pub fn on_domain_takeover(&self) -> ::std::option::Option<&crate::types::OnDomainTakeover> {
+        self.on_domain_takeover.as_ref()
+    }
 }
 impl CreateDistributionTenantInput {
     /// Creates a new builder-style object to manufacture [`CreateDistributionTenantInput`](crate::operation::create_distribution_tenant::CreateDistributionTenantInput).
@@ -84,6 +102,7 @@ pub struct CreateDistributionTenantInputBuilder {
     pub(crate) connection_group_id: ::std::option::Option<::std::string::String>,
     pub(crate) managed_certificate_request: ::std::option::Option<crate::types::ManagedCertificateRequest>,
     pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) on_domain_takeover: ::std::option::Option<crate::types::OnDomainTakeover>,
 }
 impl CreateDistributionTenantInputBuilder {
     /// <p>The ID of the multi-tenant distribution to use for creating the distribution tenant.</p>
@@ -226,6 +245,38 @@ impl CreateDistributionTenantInputBuilder {
     pub fn get_enabled(&self) -> &::std::option::Option<bool> {
         &self.enabled
     }
+    /// <p>Specifies whether CloudFront moves a domain in this request to this distribution tenant when the domain is already associated with another standard distribution or distribution tenant. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>allow</code> – CloudFront moves the domain to this distribution tenant when the domain's DNS points to this distribution tenant.</p></li>
+    /// <li>
+    /// <p><code>reject</code> – CloudFront doesn't move the domain, and the request fails if the domain is associated with another resource. This is the default if you don't specify a value.</p></li>
+    /// </ul>
+    pub fn on_domain_takeover(mut self, input: crate::types::OnDomainTakeover) -> Self {
+        self.on_domain_takeover = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether CloudFront moves a domain in this request to this distribution tenant when the domain is already associated with another standard distribution or distribution tenant. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>allow</code> – CloudFront moves the domain to this distribution tenant when the domain's DNS points to this distribution tenant.</p></li>
+    /// <li>
+    /// <p><code>reject</code> – CloudFront doesn't move the domain, and the request fails if the domain is associated with another resource. This is the default if you don't specify a value.</p></li>
+    /// </ul>
+    pub fn set_on_domain_takeover(mut self, input: ::std::option::Option<crate::types::OnDomainTakeover>) -> Self {
+        self.on_domain_takeover = input;
+        self
+    }
+    /// <p>Specifies whether CloudFront moves a domain in this request to this distribution tenant when the domain is already associated with another standard distribution or distribution tenant. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>allow</code> – CloudFront moves the domain to this distribution tenant when the domain's DNS points to this distribution tenant.</p></li>
+    /// <li>
+    /// <p><code>reject</code> – CloudFront doesn't move the domain, and the request fails if the domain is associated with another resource. This is the default if you don't specify a value.</p></li>
+    /// </ul>
+    pub fn get_on_domain_takeover(&self) -> &::std::option::Option<crate::types::OnDomainTakeover> {
+        &self.on_domain_takeover
+    }
     /// Consumes the builder and constructs a [`CreateDistributionTenantInput`](crate::operation::create_distribution_tenant::CreateDistributionTenantInput).
     pub fn build(
         self,
@@ -243,6 +294,7 @@ impl CreateDistributionTenantInputBuilder {
             connection_group_id: self.connection_group_id,
             managed_certificate_request: self.managed_certificate_request,
             enabled: self.enabled,
+            on_domain_takeover: self.on_domain_takeover,
         })
     }
 }

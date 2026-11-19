@@ -129,6 +129,8 @@ pub use crate::types::_send_message_usage_info::SendMessageUsageInfoBuilder;
 
 pub use crate::types::_source_aws_configuration::SourceAwsConfigurationBuilder;
 
+pub use crate::types::_source_aws_org_configuration::SourceAwsOrgConfigurationBuilder;
+
 pub use crate::types::_aws_configuration::AwsConfigurationBuilder;
 
 pub use crate::types::_git_hub_configuration::GitHubConfigurationBuilder;
@@ -209,6 +211,10 @@ pub use crate::types::_send_message_text_delta::SendMessageTextDeltaBuilder;
 
 pub use crate::types::_send_message_json_delta::SendMessageJsonDeltaBuilder;
 
+pub use crate::types::_source_aws_org_unit::SourceAwsOrgUnitBuilder;
+
+pub use crate::types::_org_source_deployment_state::OrgSourceDeploymentStateBuilder;
+
 pub use crate::types::_slack_transmission_target::SlackTransmissionTargetBuilder;
 
 pub use crate::types::_slack_bidirectional_configuration::SlackBidirectionalConfigurationBuilder;
@@ -258,5 +264,7 @@ pub use crate::types::_daily_recurrence::DailyRecurrenceBuilder;
 pub use crate::types::_weekly_recurrence::WeeklyRecurrenceBuilder;
 
 pub use crate::types::_monthly_recurrence::MonthlyRecurrenceBuilder;
+
+pub use crate::types::_org_source_issue::OrgSourceIssueBuilder;
 
 pub use crate::types::_pattern_filter::PatternFilterBuilder;

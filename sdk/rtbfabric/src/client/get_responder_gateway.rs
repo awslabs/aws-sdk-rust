@@ -12,6 +12,7 @@ impl super::Client {
     ///   - [`description(Option<String>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::description): <p>The description of the responder gateway.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::created_at): <p>The timestamp of when the responder gateway was created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::updated_at): <p>The timestamp of when the responder gateway was updated.</p>
+    ///   - [`error_details(Option<Vec::<ErrorDetail>>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::error_details): <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
     ///   - [`domain_name(Option<String>)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::domain_name): <p>The domain name of the responder gateway.</p>
     ///   - [`port(i32)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::port): <p>The networking port.</p>
     ///   - [`protocol(Protocol)`](crate::operation::get_responder_gateway::GetResponderGatewayOutput::protocol): <p>The networking protocol.</p>

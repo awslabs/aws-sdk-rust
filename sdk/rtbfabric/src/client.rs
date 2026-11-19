@@ -292,6 +292,10 @@ mod delete_responder_gateway;
 
 mod disassociate_certificate;
 
+mod get_available_module;
+
+mod get_available_module_version;
+
 mod get_certificate_association;
 
 mod get_inbound_external_link;
@@ -306,6 +310,12 @@ mod get_requester_gateway;
 
 mod get_responder_gateway;
 
+mod get_update;
+
+mod list_available_module_versions;
+
+mod list_available_modules;
+
 mod list_certificate_associations;
 
 mod list_link_routing_rules;
@@ -317,6 +327,10 @@ mod list_requester_gateways;
 mod list_responder_gateways;
 
 mod list_tags_for_resource;
+
+mod list_updates;
+
+mod put_link_flows;
 
 mod reject_link;
 

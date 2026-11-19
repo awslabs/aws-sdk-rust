@@ -12,6 +12,7 @@
 /// ```text
 /// # let quotacode = unimplemented!();
 /// match quotacode {
+///     QuotaCode::CustomVoiceMaxCount => { /* ... */ },
 ///     QuotaCode::InputStreamInboundEventTimeout => { /* ... */ },
 ///     QuotaCode::InputStreamTimeout => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum QuotaCode {
     #[allow(missing_docs)] // documentation missing in model
+    CustomVoiceMaxCount,
+    #[allow(missing_docs)] // documentation missing in model
     InputStreamInboundEventTimeout,
     #[allow(missing_docs)] // documentation missing in model
     InputStreamTimeout,
@@ -53,6 +56,7 @@ pub enum QuotaCode {
 impl ::std::convert::From<&str> for QuotaCode {
     fn from(s: &str) -> Self {
         match s {
+            "custom-voice-max-count" => QuotaCode::CustomVoiceMaxCount,
             "input-stream-inbound-event-timeout" => QuotaCode::InputStreamInboundEventTimeout,
             "input-stream-timeout" => QuotaCode::InputStreamTimeout,
             other => QuotaCode::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl QuotaCode {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            QuotaCode::CustomVoiceMaxCount => "custom-voice-max-count",
             QuotaCode::InputStreamInboundEventTimeout => "input-stream-inbound-event-timeout",
             QuotaCode::InputStreamTimeout => "input-stream-timeout",
             QuotaCode::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl QuotaCode {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["input-stream-inbound-event-timeout", "input-stream-timeout"]
+        &["custom-voice-max-count", "input-stream-inbound-event-timeout", "input-stream-timeout"]
     }
 }
 impl ::std::convert::AsRef<str> for QuotaCode {
@@ -100,6 +105,7 @@ impl QuotaCode {
 impl ::std::fmt::Display for QuotaCode {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            QuotaCode::CustomVoiceMaxCount => write!(f, "custom-voice-max-count"),
             QuotaCode::InputStreamInboundEventTimeout => write!(f, "input-stream-inbound-event-timeout"),
             QuotaCode::InputStreamTimeout => write!(f, "input-stream-timeout"),
             QuotaCode::Unknown(value) => write!(f, "{value}"),

@@ -19,6 +19,17 @@ static CREATEGITLABSELFMANAGEDINTEGRATIONDETAIL_MEMBER_ACCESS_TOKEN: ::aws_smith
     "accessToken",
     1,
 );
+static CREATEGITLABSELFMANAGEDINTEGRATIONDETAIL_MEMBER_VPC_CONFIGURATION: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.inspector2#CreateGitLabSelfManagedIntegrationDetail$vpcConfiguration",
+            "com.amazonaws.inspector2",
+            "CreateGitLabSelfManagedIntegrationDetail",
+        ),
+        ::aws_smithy_schema::ShapeType::Structure,
+        "vpcConfiguration",
+        2,
+    );
 static CREATEGITLABSELFMANAGEDINTEGRATIONDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.inspector2#CreateGitLabSelfManagedIntegrationDetail",
@@ -29,6 +40,7 @@ static CREATEGITLABSELFMANAGEDINTEGRATIONDETAIL_SCHEMA: ::aws_smithy_schema::Sch
     &[
         &CREATEGITLABSELFMANAGEDINTEGRATIONDETAIL_MEMBER_INSTANCE_URL,
         &CREATEGITLABSELFMANAGEDINTEGRATIONDETAIL_MEMBER_ACCESS_TOKEN,
+        &CREATEGITLABSELFMANAGEDINTEGRATIONDETAIL_MEMBER_VPC_CONFIGURATION,
     ],
 );
 impl crate::types::CreateGitLabSelfManagedIntegrationDetail {
@@ -53,6 +65,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::CreateGitL
             let val = &self.access_token;
             ser.write_string(&CREATEGITLABSELFMANAGEDINTEGRATIONDETAIL_MEMBER_ACCESS_TOKEN, val)?;
         }
+        if let Some(ref val) = self.vpc_configuration {
+            ser.write_struct(&CREATEGITLABSELFMANAGEDINTEGRATIONDETAIL_MEMBER_VPC_CONFIGURATION, val)?;
+        }
         Ok(())
     }
 }
@@ -75,6 +90,13 @@ impl crate::types::builders::CreateGitLabSelfManagedIntegrationDetailBuilder {
                 }
                 Some(1) => {
                     self.access_token = Some(deser.read_string(member)?);
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vpc_configuration = Some(crate::types::CodeSecurityIntegrationVpcConfiguration::deserialize(deser)?);
+                    }
                 }
                 _ => {}
             }

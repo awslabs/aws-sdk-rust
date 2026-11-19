@@ -22,7 +22,7 @@ pub struct UpdateRegistryRecordOutput {
     pub descriptors: ::std::option::Option<crate::types::Descriptors>,
     /// <p>The version identifier of the registry record.</p>
     pub record_version: ::std::option::Option<::std::string::String>,
-    /// <p>The lifecycle status of the registry record.</p>
+    /// <p>The lifecycle status of the registry record. <code>UPDATE_PENDING_AUTH</code> means that the update waits for a GitHub user to authorize access before the record synchronizes from its GitHub source. For the authorization link, see <code>authorizationData</code>.</p>
     pub status: crate::types::RegistryRecordStatus,
     /// <p>The timestamp when the registry record was created.</p>
     pub created_at: ::aws_smithy_types::DateTime,
@@ -40,6 +40,8 @@ pub struct UpdateRegistryRecordOutput {
     pub custom_metadata: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>Indicates whether this record's custom metadata conforms to the registry's current schema. This status is computed at read time against the latest schema.</p>
     pub custom_metadata_schema_compliance_status: ::std::option::Option<crate::types::CustomMetadataSchemaComplianceStatus>,
+    /// <p>The authorization that a GitHub user must complete before the record's synchronization starts. Present only in this response, and only while the status is <code>UPDATE_PENDING_AUTH</code>. If the status is <code>UPDATE_PENDING_AUTH</code> but this member is absent, call <code>UpdateRegistryRecord</code> again with <code>triggerSynchronization</code> to get a new authorization link.</p>
+    pub authorization_data: ::std::option::Option<crate::types::AuthorizationData>,
     _request_id: Option<String>,
 }
 impl UpdateRegistryRecordOutput {
@@ -83,7 +85,7 @@ impl UpdateRegistryRecordOutput {
     pub fn record_version(&self) -> ::std::option::Option<&str> {
         self.record_version.as_deref()
     }
-    /// <p>The lifecycle status of the registry record.</p>
+    /// <p>The lifecycle status of the registry record. <code>UPDATE_PENDING_AUTH</code> means that the update waits for a GitHub user to authorize access before the record synchronizes from its GitHub source. For the authorization link, see <code>authorizationData</code>.</p>
     pub fn status(&self) -> &crate::types::RegistryRecordStatus {
         &self.status
     }
@@ -121,6 +123,10 @@ impl UpdateRegistryRecordOutput {
     pub fn custom_metadata_schema_compliance_status(&self) -> ::std::option::Option<&crate::types::CustomMetadataSchemaComplianceStatus> {
         self.custom_metadata_schema_compliance_status.as_ref()
     }
+    /// <p>The authorization that a GitHub user must complete before the record's synchronization starts. Present only in this response, and only while the status is <code>UPDATE_PENDING_AUTH</code>. If the status is <code>UPDATE_PENDING_AUTH</code> but this member is absent, call <code>UpdateRegistryRecord</code> again with <code>triggerSynchronization</code> to get a new authorization link.</p>
+    pub fn authorization_data(&self) -> ::std::option::Option<&crate::types::AuthorizationData> {
+        self.authorization_data.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateRegistryRecordOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -143,6 +149,7 @@ impl ::std::fmt::Debug for UpdateRegistryRecordOutput {
         formatter.field("created_by", &self.created_by);
         formatter.field("custom_metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_metadata_schema_compliance_status", &self.custom_metadata_schema_compliance_status);
+        formatter.field("authorization_data", &self.authorization_data);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -181,6 +188,7 @@ pub struct UpdateRegistryRecordOutputBuilder {
     pub(crate) created_by: ::std::option::Option<::std::string::String>,
     pub(crate) custom_metadata: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) custom_metadata_schema_compliance_status: ::std::option::Option<crate::types::CustomMetadataSchemaComplianceStatus>,
+    pub(crate) authorization_data: ::std::option::Option<crate::types::AuthorizationData>,
     _request_id: Option<String>,
 }
 impl UpdateRegistryRecordOutputBuilder {
@@ -315,18 +323,18 @@ impl UpdateRegistryRecordOutputBuilder {
     pub fn get_record_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.record_version
     }
-    /// <p>The lifecycle status of the registry record.</p>
+    /// <p>The lifecycle status of the registry record. <code>UPDATE_PENDING_AUTH</code> means that the update waits for a GitHub user to authorize access before the record synchronizes from its GitHub source. For the authorization link, see <code>authorizationData</code>.</p>
     /// This field is required.
     pub fn status(mut self, input: crate::types::RegistryRecordStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The lifecycle status of the registry record.</p>
+    /// <p>The lifecycle status of the registry record. <code>UPDATE_PENDING_AUTH</code> means that the update waits for a GitHub user to authorize access before the record synchronizes from its GitHub source. For the authorization link, see <code>authorizationData</code>.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::RegistryRecordStatus>) -> Self {
         self.status = input;
         self
     }
-    /// <p>The lifecycle status of the registry record.</p>
+    /// <p>The lifecycle status of the registry record. <code>UPDATE_PENDING_AUTH</code> means that the update waits for a GitHub user to authorize access before the record synchronizes from its GitHub source. For the authorization link, see <code>authorizationData</code>.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::RegistryRecordStatus> {
         &self.status
     }
@@ -453,6 +461,20 @@ impl UpdateRegistryRecordOutputBuilder {
     pub fn get_custom_metadata_schema_compliance_status(&self) -> &::std::option::Option<crate::types::CustomMetadataSchemaComplianceStatus> {
         &self.custom_metadata_schema_compliance_status
     }
+    /// <p>The authorization that a GitHub user must complete before the record's synchronization starts. Present only in this response, and only while the status is <code>UPDATE_PENDING_AUTH</code>. If the status is <code>UPDATE_PENDING_AUTH</code> but this member is absent, call <code>UpdateRegistryRecord</code> again with <code>triggerSynchronization</code> to get a new authorization link.</p>
+    pub fn authorization_data(mut self, input: crate::types::AuthorizationData) -> Self {
+        self.authorization_data = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The authorization that a GitHub user must complete before the record's synchronization starts. Present only in this response, and only while the status is <code>UPDATE_PENDING_AUTH</code>. If the status is <code>UPDATE_PENDING_AUTH</code> but this member is absent, call <code>UpdateRegistryRecord</code> again with <code>triggerSynchronization</code> to get a new authorization link.</p>
+    pub fn set_authorization_data(mut self, input: ::std::option::Option<crate::types::AuthorizationData>) -> Self {
+        self.authorization_data = input;
+        self
+    }
+    /// <p>The authorization that a GitHub user must complete before the record's synchronization starts. Present only in this response, and only while the status is <code>UPDATE_PENDING_AUTH</code>. If the status is <code>UPDATE_PENDING_AUTH</code> but this member is absent, call <code>UpdateRegistryRecord</code> again with <code>triggerSynchronization</code> to get a new authorization link.</p>
+    pub fn get_authorization_data(&self) -> &::std::option::Option<crate::types::AuthorizationData> {
+        &self.authorization_data
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -535,6 +557,7 @@ impl UpdateRegistryRecordOutputBuilder {
             created_by: self.created_by,
             custom_metadata: self.custom_metadata,
             custom_metadata_schema_compliance_status: self.custom_metadata_schema_compliance_status,
+            authorization_data: self.authorization_data,
             _request_id: self._request_id,
         })
     }
@@ -560,6 +583,7 @@ impl ::std::fmt::Debug for UpdateRegistryRecordOutputBuilder {
         formatter.field("created_by", &self.created_by);
         formatter.field("custom_metadata", &"*** Sensitive Data Redacted ***");
         formatter.field("custom_metadata_schema_compliance_status", &self.custom_metadata_schema_compliance_status);
+        formatter.field("authorization_data", &self.authorization_data);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

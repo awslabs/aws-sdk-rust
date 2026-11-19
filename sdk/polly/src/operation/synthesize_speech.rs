@@ -468,6 +468,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SynthesizeSpe
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum SynthesizeSpeechError {
+    /// <p>The request conflicts with the current state of the resource. For a custom voice, the voice isn't in the status that the operation requires. Check the status with <code>GetVoice</code>, and then try again.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>This engine is not compatible with the voice that you have designated. Choose a new voice that is compatible with the engine or change the engine and restart the operation.</p>
     EngineNotSupportedException(crate::types::error::EngineNotSupportedException),
     /// <p>The specified sample rate is not valid.</p>
@@ -481,6 +483,8 @@ pub enum SynthesizeSpeechError {
     LexiconNotFoundException(crate::types::error::LexiconNotFoundException),
     /// <p>Speech marks are not supported for the <code>OutputFormat</code> selected. Speech marks are only available for content in <code>json</code> format.</p>
     MarksNotSupportedForFormatException(crate::types::error::MarksNotSupportedForFormatException),
+    /// <p>Amazon Polly can't find the specified resource. Verify that the resource exists in the Amazon Web Services account and Region of the request and that its ARN or ID is spelled correctly, and then try again.</p>
+    ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>An unknown condition has caused a service failure.</p>
     ServiceFailureException(crate::types::error::ServiceFailureException),
     /// <p>SSML speech marks are not supported for plain text-type input.</p>
@@ -520,17 +524,23 @@ impl SynthesizeSpeechError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EngineNotSupportedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidSampleRateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidSsmlException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LanguageNotSupportedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LexiconNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::MarksNotSupportedForFormatException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ServiceFailureException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::SsmlMarksNotSupportedForTextTypeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::TextLengthExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `SynthesizeSpeechError::ConflictException`.
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(self, Self::ConflictException(_))
     }
     /// Returns `true` if the error kind is `SynthesizeSpeechError::EngineNotSupportedException`.
     pub fn is_engine_not_supported_exception(&self) -> bool {
@@ -556,6 +566,10 @@ impl SynthesizeSpeechError {
     pub fn is_marks_not_supported_for_format_exception(&self) -> bool {
         matches!(self, Self::MarksNotSupportedForFormatException(_))
     }
+    /// Returns `true` if the error kind is `SynthesizeSpeechError::ResourceNotFoundException`.
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(self, Self::ResourceNotFoundException(_))
+    }
     /// Returns `true` if the error kind is `SynthesizeSpeechError::ServiceFailureException`.
     pub fn is_service_failure_exception(&self) -> bool {
         matches!(self, Self::ServiceFailureException(_))
@@ -572,12 +586,14 @@ impl SynthesizeSpeechError {
 impl ::std::error::Error for SynthesizeSpeechError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::ConflictException(_inner) => ::std::option::Option::Some(_inner),
             Self::EngineNotSupportedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidSampleRateException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidSsmlException(_inner) => ::std::option::Option::Some(_inner),
             Self::LanguageNotSupportedException(_inner) => ::std::option::Option::Some(_inner),
             Self::LexiconNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::MarksNotSupportedForFormatException(_inner) => ::std::option::Option::Some(_inner),
+            Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ServiceFailureException(_inner) => ::std::option::Option::Some(_inner),
             Self::SsmlMarksNotSupportedForTextTypeException(_inner) => ::std::option::Option::Some(_inner),
             Self::TextLengthExceededException(_inner) => ::std::option::Option::Some(_inner),
@@ -588,12 +604,14 @@ impl ::std::error::Error for SynthesizeSpeechError {
 impl ::std::fmt::Display for SynthesizeSpeechError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::ConflictException(_inner) => _inner.fmt(f),
             Self::EngineNotSupportedException(_inner) => _inner.fmt(f),
             Self::InvalidSampleRateException(_inner) => _inner.fmt(f),
             Self::InvalidSsmlException(_inner) => _inner.fmt(f),
             Self::LanguageNotSupportedException(_inner) => _inner.fmt(f),
             Self::LexiconNotFoundException(_inner) => _inner.fmt(f),
             Self::MarksNotSupportedForFormatException(_inner) => _inner.fmt(f),
+            Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ServiceFailureException(_inner) => _inner.fmt(f),
             Self::SsmlMarksNotSupportedForTextTypeException(_inner) => _inner.fmt(f),
             Self::TextLengthExceededException(_inner) => _inner.fmt(f),
@@ -618,12 +636,14 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for SynthesizeSpeechError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for SynthesizeSpeechError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::ConflictException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EngineNotSupportedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidSampleRateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidSsmlException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LanguageNotSupportedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LexiconNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::MarksNotSupportedForFormatException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ServiceFailureException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::SsmlMarksNotSupportedForTextTypeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::TextLengthExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

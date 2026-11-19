@@ -11,6 +11,8 @@ pub use crate::types::_instance_profile::InstanceProfileBuilder;
 
 pub use crate::types::_login_profile::LoginProfileBuilder;
 
+pub use crate::types::_context_provider::ContextProviderBuilder;
+
 pub use crate::types::_policy::PolicyBuilder;
 
 pub use crate::types::_policy_version::PolicyVersionBuilder;
@@ -61,6 +63,8 @@ pub use crate::types::_managed_policy_detail::ManagedPolicyDetailBuilder;
 
 pub use crate::types::_access_detail::AccessDetailBuilder;
 
+pub use crate::types::_saml_key_hash_entry::SamlKeyHashEntryBuilder;
+
 pub use crate::types::_saml_private_key::SamlPrivateKeyBuilder;
 
 pub use crate::types::_service_last_accessed::ServiceLastAccessedBuilder;
@@ -96,6 +100,8 @@ pub use crate::types::_context_entry::ContextEntryBuilder;
 pub use crate::types::_evaluation_result::EvaluationResultBuilder;
 
 pub use crate::types::_policy_parameter::PolicyParameterBuilder;
+
+pub use crate::types::_context_provider_key_definition::ContextProviderKeyDefinitionBuilder;
 
 pub use crate::types::_inline_policy::InlinePolicyBuilder;
 

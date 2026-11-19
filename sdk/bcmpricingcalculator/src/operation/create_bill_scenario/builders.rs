@@ -155,17 +155,17 @@ impl CreateBillScenarioFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }
-    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    /// <p>The setting for the reserved instance and savings plans group sharing used in this estimate.</p>
     pub fn group_sharing_preference(mut self, input: crate::types::GroupSharingPreferenceEnum) -> Self {
         self.inner = self.inner.group_sharing_preference(input);
         self
     }
-    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    /// <p>The setting for the reserved instance and savings plans group sharing used in this estimate.</p>
     pub fn set_group_sharing_preference(mut self, input: ::std::option::Option<crate::types::GroupSharingPreferenceEnum>) -> Self {
         self.inner = self.inner.set_group_sharing_preference(input);
         self
     }
-    /// <p>The setting for the reserved instance and savings plan group sharing used in this estimate.</p>
+    /// <p>The setting for the reserved instance and savings plans group sharing used in this estimate.</p>
     pub fn get_group_sharing_preference(&self) -> &::std::option::Option<crate::types::GroupSharingPreferenceEnum> {
         self.inner.get_group_sharing_preference()
     }

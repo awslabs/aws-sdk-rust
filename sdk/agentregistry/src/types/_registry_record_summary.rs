@@ -30,6 +30,8 @@ pub struct RegistryRecordSummary {
     pub updated_at: ::aws_smithy_types::DateTime,
     /// <p>The custom metadata attached to this registry record. Values are strings (maximum 128 characters) or booleans. This field is only present if the registry has a custom metadata schema configured.</p>
     pub custom_metadata: ::std::option::Option<::aws_smithy_types::Document>,
+    /// <p>The skill package of the record's latest approved revision, as the package's SHA-256 checksum and a download URL that is valid for up to 5 minutes. Only <code>BatchGetDiscoverableRegistryRecord</code> returns this member, not <code>SearchDiscoverableRegistryRecords</code>. Absent when the record has no skill package.</p>
+    pub artifact: ::std::option::Option<crate::types::RegistryRecordArtifactDownload>,
 }
 impl RegistryRecordSummary {
     /// <p>The Amazon Resource Name (ARN) of the parent registry that owns the record.</p>
@@ -89,6 +91,10 @@ impl RegistryRecordSummary {
     pub fn custom_metadata(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.custom_metadata.as_ref()
     }
+    /// <p>The skill package of the record's latest approved revision, as the package's SHA-256 checksum and a download URL that is valid for up to 5 minutes. Only <code>BatchGetDiscoverableRegistryRecord</code> returns this member, not <code>SearchDiscoverableRegistryRecords</code>. Absent when the record has no skill package.</p>
+    pub fn artifact(&self) -> ::std::option::Option<&crate::types::RegistryRecordArtifactDownload> {
+        self.artifact.as_ref()
+    }
 }
 impl ::std::fmt::Debug for RegistryRecordSummary {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -106,6 +112,7 @@ impl ::std::fmt::Debug for RegistryRecordSummary {
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("custom_metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("artifact", &self.artifact);
         formatter.finish()
     }
 }
@@ -133,6 +140,7 @@ pub struct RegistryRecordSummaryBuilder {
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) custom_metadata: ::std::option::Option<::aws_smithy_types::Document>,
+    pub(crate) artifact: ::std::option::Option<crate::types::RegistryRecordArtifactDownload>,
 }
 impl RegistryRecordSummaryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the parent registry that owns the record.</p>
@@ -327,6 +335,20 @@ impl RegistryRecordSummaryBuilder {
     pub fn get_custom_metadata(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.custom_metadata
     }
+    /// <p>The skill package of the record's latest approved revision, as the package's SHA-256 checksum and a download URL that is valid for up to 5 minutes. Only <code>BatchGetDiscoverableRegistryRecord</code> returns this member, not <code>SearchDiscoverableRegistryRecords</code>. Absent when the record has no skill package.</p>
+    pub fn artifact(mut self, input: crate::types::RegistryRecordArtifactDownload) -> Self {
+        self.artifact = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The skill package of the record's latest approved revision, as the package's SHA-256 checksum and a download URL that is valid for up to 5 minutes. Only <code>BatchGetDiscoverableRegistryRecord</code> returns this member, not <code>SearchDiscoverableRegistryRecords</code>. Absent when the record has no skill package.</p>
+    pub fn set_artifact(mut self, input: ::std::option::Option<crate::types::RegistryRecordArtifactDownload>) -> Self {
+        self.artifact = input;
+        self
+    }
+    /// <p>The skill package of the record's latest approved revision, as the package's SHA-256 checksum and a download URL that is valid for up to 5 minutes. Only <code>BatchGetDiscoverableRegistryRecord</code> returns this member, not <code>SearchDiscoverableRegistryRecords</code>. Absent when the record has no skill package.</p>
+    pub fn get_artifact(&self) -> &::std::option::Option<crate::types::RegistryRecordArtifactDownload> {
+        &self.artifact
+    }
     /// Consumes the builder and constructs a [`RegistryRecordSummary`](crate::types::RegistryRecordSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`registry_arn`](crate::types::builders::RegistryRecordSummaryBuilder::registry_arn)
@@ -398,6 +420,7 @@ impl RegistryRecordSummaryBuilder {
                 )
             })?,
             custom_metadata: self.custom_metadata,
+            artifact: self.artifact,
         })
     }
 }
@@ -417,6 +440,7 @@ impl ::std::fmt::Debug for RegistryRecordSummaryBuilder {
         formatter.field("created_at", &self.created_at);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("custom_metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("artifact", &self.artifact);
         formatter.finish()
     }
 }

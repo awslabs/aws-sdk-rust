@@ -3,26 +3,26 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourcePolicyOutput {
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub resource_arn: ::std::string::String,
-    /// Name of a policy attached to a resource. Valid values: "default" (the customer-managed policy) and "AWS_RAM" (managed exclusively by AWS Resource Access Manager). Any other value is rejected.
+    /// <p>Name of a policy attached to a resource. Valid values: "default" (the customer-managed policy) and "AWS_RAM" (managed exclusively by AWS Resource Access Manager). Any other value is rejected.</p>
     pub policy_name: ::std::string::String,
-    /// Absent when the write removed the policy; a removal produces no new revision.
+    /// <p>Absent when the write removed the policy; a removal produces no new revision.</p>
     pub revision_id: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl PutResourcePolicyOutput {
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn resource_arn(&self) -> &str {
         use std::ops::Deref;
         self.resource_arn.deref()
     }
-    /// Name of a policy attached to a resource. Valid values: "default" (the customer-managed policy) and "AWS_RAM" (managed exclusively by AWS Resource Access Manager). Any other value is rejected.
+    /// <p>Name of a policy attached to a resource. Valid values: "default" (the customer-managed policy) and "AWS_RAM" (managed exclusively by AWS Resource Access Manager). Any other value is rejected.</p>
     pub fn policy_name(&self) -> &str {
         use std::ops::Deref;
         self.policy_name.deref()
     }
-    /// Absent when the write removed the policy; a removal produces no new revision.
+    /// <p>Absent when the write removed the policy; a removal produces no new revision.</p>
     pub fn revision_id(&self) -> ::std::option::Option<&str> {
         self.revision_id.as_deref()
     }
@@ -49,47 +49,47 @@ pub struct PutResourcePolicyOutputBuilder {
     _request_id: Option<String>,
 }
 impl PutResourcePolicyOutputBuilder {
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     /// This field is required.
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.resource_arn
     }
-    /// Name of a policy attached to a resource. Valid values: "default" (the customer-managed policy) and "AWS_RAM" (managed exclusively by AWS Resource Access Manager). Any other value is rejected.
+    /// <p>Name of a policy attached to a resource. Valid values: "default" (the customer-managed policy) and "AWS_RAM" (managed exclusively by AWS Resource Access Manager). Any other value is rejected.</p>
     /// This field is required.
     pub fn policy_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.policy_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// Name of a policy attached to a resource. Valid values: "default" (the customer-managed policy) and "AWS_RAM" (managed exclusively by AWS Resource Access Manager). Any other value is rejected.
+    /// <p>Name of a policy attached to a resource. Valid values: "default" (the customer-managed policy) and "AWS_RAM" (managed exclusively by AWS Resource Access Manager). Any other value is rejected.</p>
     pub fn set_policy_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy_name = input;
         self
     }
-    /// Name of a policy attached to a resource. Valid values: "default" (the customer-managed policy) and "AWS_RAM" (managed exclusively by AWS Resource Access Manager). Any other value is rejected.
+    /// <p>Name of a policy attached to a resource. Valid values: "default" (the customer-managed policy) and "AWS_RAM" (managed exclusively by AWS Resource Access Manager). Any other value is rejected.</p>
     pub fn get_policy_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.policy_name
     }
-    /// Absent when the write removed the policy; a removal produces no new revision.
+    /// <p>Absent when the write removed the policy; a removal produces no new revision.</p>
     pub fn revision_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.revision_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// Absent when the write removed the policy; a removal produces no new revision.
+    /// <p>Absent when the write removed the policy; a removal produces no new revision.</p>
     pub fn set_revision_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision_id = input;
         self
     }
-    /// Absent when the write removed the policy; a removal produces no new revision.
+    /// <p>Absent when the write removed the policy; a removal produces no new revision.</p>
     pub fn get_revision_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision_id
     }

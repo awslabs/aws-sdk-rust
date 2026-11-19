@@ -11,9 +11,9 @@ pub struct AssumeRootOutput {
     /// <p>You can use the <code>aws:SourceIdentity</code> condition key to control access based on the value of source identity. For more information about using source identity, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.</p>
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-</p>
     pub source_identity: ::std::option::Option<::std::string::String>,
-    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
     pub session_token_utilization: ::std::option::Option<i32>,
-    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    /// <p>The size, in bytes, of the session token returned in the Credentials for this response.</p>
     pub session_token_size: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
@@ -30,11 +30,11 @@ impl AssumeRootOutput {
     pub fn source_identity(&self) -> ::std::option::Option<&str> {
         self.source_identity.as_deref()
     }
-    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
     pub fn session_token_utilization(&self) -> ::std::option::Option<i32> {
         self.session_token_utilization
     }
-    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    /// <p>The size, in bytes, of the session token returned in the Credentials for this response.</p>
     pub fn session_token_size(&self) -> ::std::option::Option<i32> {
         self.session_token_size
     }
@@ -113,31 +113,31 @@ impl AssumeRootOutputBuilder {
     pub fn get_source_identity(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_identity
     }
-    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
     pub fn session_token_utilization(mut self, input: i32) -> Self {
         self.session_token_utilization = ::std::option::Option::Some(input);
         self
     }
-    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
     pub fn set_session_token_utilization(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_token_utilization = input;
         self
     }
-    /// The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.
+    /// <p>The percentage (0-100) of the maximum allowed session token size that the returned session token consumes.</p>
     pub fn get_session_token_utilization(&self) -> &::std::option::Option<i32> {
         &self.session_token_utilization
     }
-    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    /// <p>The size, in bytes, of the session token returned in the Credentials for this response.</p>
     pub fn session_token_size(mut self, input: i32) -> Self {
         self.session_token_size = ::std::option::Option::Some(input);
         self
     }
-    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    /// <p>The size, in bytes, of the session token returned in the Credentials for this response.</p>
     pub fn set_session_token_size(mut self, input: ::std::option::Option<i32>) -> Self {
         self.session_token_size = input;
         self
     }
-    /// The size, in bytes, of the session token returned in the Credentials for this response.
+    /// <p>The size, in bytes, of the session token returned in the Credentials for this response.</p>
     pub fn get_session_token_size(&self) -> &::std::option::Option<i32> {
         &self.session_token_size
     }

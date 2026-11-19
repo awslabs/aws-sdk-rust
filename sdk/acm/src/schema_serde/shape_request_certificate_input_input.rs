@@ -126,6 +126,26 @@ static REQUESTCERTIFICATEINPUT_MEMBER_MANAGED_BY: ::aws_smithy_schema::Schema<'s
     "ManagedBy",
     9,
 );
+static REQUESTCERTIFICATEINPUT_MEMBER_CERTIFICATE_USAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#RequestCertificateInput$CertificateUsage",
+        "com.amazonaws.acm.synthetic",
+        "RequestCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CertificateUsage",
+    10,
+);
+static REQUESTCERTIFICATEINPUT_MEMBER_ROOT_HIERARCHY_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm.synthetic#RequestCertificateInput$RootHierarchyType",
+        "com.amazonaws.acm.synthetic",
+        "RequestCertificateInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RootHierarchyType",
+    11,
+);
 static REQUESTCERTIFICATEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.acm.synthetic#RequestCertificateInput",
@@ -144,6 +164,8 @@ static REQUESTCERTIFICATEINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::
         &REQUESTCERTIFICATEINPUT_MEMBER_TAGS,
         &REQUESTCERTIFICATEINPUT_MEMBER_KEY_ALGORITHM,
         &REQUESTCERTIFICATEINPUT_MEMBER_MANAGED_BY,
+        &REQUESTCERTIFICATEINPUT_MEMBER_CERTIFICATE_USAGE,
+        &REQUESTCERTIFICATEINPUT_MEMBER_ROOT_HIERARCHY_TYPE,
     ],
 )
 .with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
@@ -215,6 +237,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::reques
         }
         if let Some(ref val) = self.managed_by {
             ser.write_string(&REQUESTCERTIFICATEINPUT_MEMBER_MANAGED_BY, val.as_str())?;
+        }
+        if let Some(ref val) = self.certificate_usage {
+            ser.write_string(&REQUESTCERTIFICATEINPUT_MEMBER_CERTIFICATE_USAGE, val.as_str())?;
+        }
+        if let Some(ref val) = self.root_hierarchy_type {
+            ser.write_string(&REQUESTCERTIFICATEINPUT_MEMBER_ROOT_HIERARCHY_TYPE, val.as_str())?;
         }
         Ok(())
     }
@@ -315,6 +343,20 @@ impl crate::operation::request_certificate::builders::RequestCertificateInputBui
                         deser.read_null()?;
                     } else {
                         self.managed_by = Some(crate::types::CertificateManagedBy::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_usage = Some(crate::types::CertificateUsage::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.root_hierarchy_type = Some(crate::types::RootHierarchyType::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}

@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsSoftwareRevenue {
-    /// <p>Specifies payments details.</p>
+    /// <p>The committed value and currency for the procurement terms.</p>
     pub value: ::std::option::Option<crate::types::MonetaryValue>,
     /// <p>Discount percentage offered on the software revenue. Percent convention: 15.00 means 15%.</p>
     pub discount: ::std::option::Option<::std::string::String>,
@@ -14,7 +14,7 @@ pub struct AwsSoftwareRevenue {
     pub expiration_date: ::std::option::Option<::std::string::String>,
 }
 impl AwsSoftwareRevenue {
-    /// <p>Specifies payments details.</p>
+    /// <p>The committed value and currency for the procurement terms.</p>
     pub fn value(&self) -> ::std::option::Option<&crate::types::MonetaryValue> {
         self.value.as_ref()
     }
@@ -48,17 +48,17 @@ pub struct AwsSoftwareRevenueBuilder {
     pub(crate) expiration_date: ::std::option::Option<::std::string::String>,
 }
 impl AwsSoftwareRevenueBuilder {
-    /// <p>Specifies payments details.</p>
+    /// <p>The committed value and currency for the procurement terms.</p>
     pub fn value(mut self, input: crate::types::MonetaryValue) -> Self {
         self.value = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies payments details.</p>
+    /// <p>The committed value and currency for the procurement terms.</p>
     pub fn set_value(mut self, input: ::std::option::Option<crate::types::MonetaryValue>) -> Self {
         self.value = input;
         self
     }
-    /// <p>Specifies payments details.</p>
+    /// <p>The committed value and currency for the procurement terms.</p>
     pub fn get_value(&self) -> &::std::option::Option<crate::types::MonetaryValue> {
         &self.value
     }

@@ -27,6 +27,8 @@ pub use crate::types::_device_secret_verifier_config_type::DeviceSecretVerifierC
 
 pub use crate::types::_user_context_data_type::UserContextDataTypeBuilder;
 
+pub use crate::types::_cimd_policy_type::CimdPolicyTypeBuilder;
+
 pub use crate::types::_group_type::GroupTypeBuilder;
 
 pub use crate::types::_identity_provider_type::IdentityProviderTypeBuilder;
@@ -154,6 +156,10 @@ pub use crate::types::_advanced_security_additional_flows_type::AdvancedSecurity
 pub use crate::types::_acr_level_config_type::AcrLevelConfigTypeBuilder;
 
 pub use crate::types::_failover_type::FailoverTypeBuilder;
+
+pub use crate::types::_cimd_policy_summary_type::CimdPolicySummaryTypeBuilder;
+
+pub use crate::types::_client_metadata_url_type::ClientMetadataUrlTypeBuilder;
 
 pub use crate::types::_provider_description::ProviderDescriptionBuilder;
 

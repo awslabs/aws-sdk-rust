@@ -28,6 +28,7 @@ impl crate::operation::start_speech_synthesis_stream::builders::StartSpeechSynth
 /// <li>
 /// <p><a href="https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html">SynthesizeSpeech</a></p></li>
 /// </ul>
+/// <p>To use a custom voice, specify its ID in <code>VoiceId</code>. The voice must be in <code>active</code> status. If the voice is in <code>pending</code> or <code>failed</code> status, the request fails with <code>ConflictException</code>. If no custom voice with the specified ID exists in your account and Region, the request fails with <code>ResourceNotFoundException</code>. If the custom voice uses a customer managed key, you need <code>kms:Decrypt</code> permission on the key. If you disabled the key or scheduled it for deletion, the request fails with <code>ValidationException</code>. If you don't have permission to use the key, the request fails with <code>AccessDeniedException</code>. If Amazon Web Services KMS throttles Amazon Polly's request to use the key, the request fails with <code>ThrottlingException</code>.</p>
 #[derive(::std::fmt::Debug)]
 pub struct StartSpeechSynthesisStreamFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -188,17 +189,17 @@ impl StartSpeechSynthesisStreamFluentBuilder {
     pub fn get_sample_rate(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_sample_rate()
     }
-    /// <p>The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
+    /// <p>The voice ID to use for the synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation. To use a custom voice, specify the voice ID that <code>CreateVoice</code> returned, for example, <code>vc-9a8fa85dd3</code>. You can't specify the ARN of a voice.</p>
     pub fn voice_id(mut self, input: crate::types::VoiceId) -> Self {
         self.inner = self.inner.voice_id(input);
         self
     }
-    /// <p>The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
+    /// <p>The voice ID to use for the synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation. To use a custom voice, specify the voice ID that <code>CreateVoice</code> returned, for example, <code>vc-9a8fa85dd3</code>. You can't specify the ARN of a voice.</p>
     pub fn set_voice_id(mut self, input: ::std::option::Option<crate::types::VoiceId>) -> Self {
         self.inner = self.inner.set_voice_id(input);
         self
     }
-    /// <p>The voice to use in synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation.</p>
+    /// <p>The voice ID to use for the synthesis. To get a list of available voice IDs, use the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation. To use a custom voice, specify the voice ID that <code>CreateVoice</code> returned, for example, <code>vc-9a8fa85dd3</code>. You can't specify the ARN of a voice.</p>
     pub fn get_voice_id(&self) -> &::std::option::Option<crate::types::VoiceId> {
         self.inner.get_voice_id()
     }

@@ -23,6 +23,10 @@
 ///     ReferenceType::Number => { /* ... */ },
 ///     ReferenceType::String => { /* ... */ },
 ///     ReferenceType::Url => { /* ... */ },
+///     ReferenceType::VoicemailAnalysis => { /* ... */ },
+///     ReferenceType::VoicemailAnalysisRedacted => { /* ... */ },
+///     ReferenceType::VoicemailRecording => { /* ... */ },
+///     ReferenceType::VoicemailRecordingRedacted => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -73,6 +77,14 @@ pub enum ReferenceType {
     String,
     #[allow(missing_docs)] // documentation missing in model
     Url,
+    #[allow(missing_docs)] // documentation missing in model
+    VoicemailAnalysis,
+    #[allow(missing_docs)] // documentation missing in model
+    VoicemailAnalysisRedacted,
+    #[allow(missing_docs)] // documentation missing in model
+    VoicemailRecording,
+    #[allow(missing_docs)] // documentation missing in model
+    VoicemailRecordingRedacted,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -91,6 +103,10 @@ impl ::std::convert::From<&str> for ReferenceType {
             "NUMBER" => ReferenceType::Number,
             "STRING" => ReferenceType::String,
             "URL" => ReferenceType::Url,
+            "VOICEMAIL_ANALYSIS" => ReferenceType::VoicemailAnalysis,
+            "VOICEMAIL_ANALYSIS_REDACTED" => ReferenceType::VoicemailAnalysisRedacted,
+            "VOICEMAIL_RECORDING" => ReferenceType::VoicemailRecording,
+            "VOICEMAIL_RECORDING_REDACTED" => ReferenceType::VoicemailRecordingRedacted,
             other => ReferenceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -117,6 +133,10 @@ impl ReferenceType {
             ReferenceType::Number => "NUMBER",
             ReferenceType::String => "STRING",
             ReferenceType::Url => "URL",
+            ReferenceType::VoicemailAnalysis => "VOICEMAIL_ANALYSIS",
+            ReferenceType::VoicemailAnalysisRedacted => "VOICEMAIL_ANALYSIS_REDACTED",
+            ReferenceType::VoicemailRecording => "VOICEMAIL_RECORDING",
+            ReferenceType::VoicemailRecordingRedacted => "VOICEMAIL_RECORDING_REDACTED",
             ReferenceType::Unknown(value) => value.as_str(),
         }
     }
@@ -134,6 +154,10 @@ impl ReferenceType {
             "NUMBER",
             "STRING",
             "URL",
+            "VOICEMAIL_ANALYSIS",
+            "VOICEMAIL_ANALYSIS_REDACTED",
+            "VOICEMAIL_RECORDING",
+            "VOICEMAIL_RECORDING_REDACTED",
         ]
     }
 }
@@ -168,6 +192,10 @@ impl ::std::fmt::Display for ReferenceType {
             ReferenceType::Number => write!(f, "NUMBER"),
             ReferenceType::String => write!(f, "STRING"),
             ReferenceType::Url => write!(f, "URL"),
+            ReferenceType::VoicemailAnalysis => write!(f, "VOICEMAIL_ANALYSIS"),
+            ReferenceType::VoicemailAnalysisRedacted => write!(f, "VOICEMAIL_ANALYSIS_REDACTED"),
+            ReferenceType::VoicemailRecording => write!(f, "VOICEMAIL_RECORDING"),
+            ReferenceType::VoicemailRecordingRedacted => write!(f, "VOICEMAIL_RECORDING_REDACTED"),
             ReferenceType::Unknown(value) => write!(f, "{value}"),
         }
     }

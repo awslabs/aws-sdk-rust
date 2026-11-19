@@ -16,6 +16,7 @@
 ///     ReservationCodec::Av1 => { /* ... */ },
 ///     ReservationCodec::Avc => { /* ... */ },
 ///     ReservationCodec::Hevc => { /* ... */ },
+///     ReservationCodec::Jpegxs => { /* ... */ },
 ///     ReservationCodec::Link => { /* ... */ },
 ///     ReservationCodec::Mpeg2 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -55,6 +56,8 @@ pub enum ReservationCodec {
     #[allow(missing_docs)] // documentation missing in model
     Hevc,
     #[allow(missing_docs)] // documentation missing in model
+    Jpegxs,
+    #[allow(missing_docs)] // documentation missing in model
     Link,
     #[allow(missing_docs)] // documentation missing in model
     Mpeg2,
@@ -69,6 +72,7 @@ impl ::std::convert::From<&str> for ReservationCodec {
             "AV1" => ReservationCodec::Av1,
             "AVC" => ReservationCodec::Avc,
             "HEVC" => ReservationCodec::Hevc,
+            "JPEGXS" => ReservationCodec::Jpegxs,
             "LINK" => ReservationCodec::Link,
             "MPEG2" => ReservationCodec::Mpeg2,
             other => ReservationCodec::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -90,6 +94,7 @@ impl ReservationCodec {
             ReservationCodec::Av1 => "AV1",
             ReservationCodec::Avc => "AVC",
             ReservationCodec::Hevc => "HEVC",
+            ReservationCodec::Jpegxs => "JPEGXS",
             ReservationCodec::Link => "LINK",
             ReservationCodec::Mpeg2 => "MPEG2",
             ReservationCodec::Unknown(value) => value.as_str(),
@@ -97,7 +102,7 @@ impl ReservationCodec {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["AUDIO", "AV1", "AVC", "HEVC", "LINK", "MPEG2"]
+        &["AUDIO", "AV1", "AVC", "HEVC", "JPEGXS", "LINK", "MPEG2"]
     }
 }
 impl ::std::convert::AsRef<str> for ReservationCodec {
@@ -124,6 +129,7 @@ impl ::std::fmt::Display for ReservationCodec {
             ReservationCodec::Av1 => write!(f, "AV1"),
             ReservationCodec::Avc => write!(f, "AVC"),
             ReservationCodec::Hevc => write!(f, "HEVC"),
+            ReservationCodec::Jpegxs => write!(f, "JPEGXS"),
             ReservationCodec::Link => write!(f, "LINK"),
             ReservationCodec::Mpeg2 => write!(f, "MPEG2"),
             ReservationCodec::Unknown(value) => write!(f, "{value}"),

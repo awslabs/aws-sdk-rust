@@ -34,6 +34,9 @@ pub(crate) fn de_connection(
             "HostArn" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_host_arn(Some(decoder.string()?))))?
             }
+            "ProviderEndpoint" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_provider_endpoint(Some(decoder.string()?)))
+            })?,
             _ => {
                 decoder.skip()?;
                 builder

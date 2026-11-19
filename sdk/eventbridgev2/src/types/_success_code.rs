@@ -36,15 +36,15 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Indicates the outcome for a successfully processed publish entry.
+/// <p>Indicates the outcome for a successfully processed publish entry.</p>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum SuccessCode {
-    /// The event was identified as a duplicate and was not re-published.
+    /// <p>The event was identified as a duplicate and was not re-published.</p>
     Deduplicated,
-    /// The event was published to the message store.
+    /// <p>The event was published to the message store.</p>
     Published,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]

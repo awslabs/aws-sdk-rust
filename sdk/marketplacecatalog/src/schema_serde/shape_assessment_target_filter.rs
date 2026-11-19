@@ -19,6 +19,27 @@ static ASSESSMENTTARGETFILTER_MEMBER_CHANGE_SET_ID: ::aws_smithy_schema::Schema<
     "ChangeSetId",
     1,
 );
+static ASSESSMENTTARGETFILTER_MEMBER_ENTITY_IDS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacecatalog#EntityIdList$member",
+        "com.amazonaws.marketplacecatalog",
+        "EntityIdList",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+);
+static ASSESSMENTTARGETFILTER_MEMBER_ENTITY_IDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.marketplacecatalog#AssessmentTargetFilter$EntityIds",
+        "com.amazonaws.marketplacecatalog",
+        "AssessmentTargetFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "EntityIds",
+    2,
+)
+.with_list_member(&ASSESSMENTTARGETFILTER_MEMBER_ENTITY_IDS_MEMBER);
 static ASSESSMENTTARGETFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.marketplacecatalog#AssessmentTargetFilter",
@@ -26,7 +47,11 @@ static ASSESSMENTTARGETFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::a
         "AssessmentTargetFilter",
     ),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&ASSESSMENTTARGETFILTER_MEMBER_ENTITY_ID, &ASSESSMENTTARGETFILTER_MEMBER_CHANGE_SET_ID],
+    &[
+        &ASSESSMENTTARGETFILTER_MEMBER_ENTITY_ID,
+        &ASSESSMENTTARGETFILTER_MEMBER_CHANGE_SET_ID,
+        &ASSESSMENTTARGETFILTER_MEMBER_ENTITY_IDS,
+    ],
 );
 impl crate::types::AssessmentTargetFilter {
     /// The schema for this shape.
@@ -47,6 +72,17 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Assessment
         }
         if let Some(ref val) = self.change_set_id {
             ser.write_string(&ASSESSMENTTARGETFILTER_MEMBER_CHANGE_SET_ID, val)?;
+        }
+        if let Some(ref val) = self.entity_ids {
+            ser.write_list(
+                &ASSESSMENTTARGETFILTER_MEMBER_ENTITY_IDS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
         }
         Ok(())
     }
@@ -77,6 +113,13 @@ impl crate::types::builders::AssessmentTargetFilterBuilder {
                         deser.read_null()?;
                     } else {
                         self.change_set_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.entity_ids = Some(deser.read_string_list(member)?);
                     }
                 }
                 _ => {}

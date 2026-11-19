@@ -49,6 +49,8 @@ pub(crate) mod shape_delete_table_policy;
 
 pub(crate) mod shape_delete_table_replication;
 
+pub(crate) mod shape_disassociate_table_replication;
+
 pub(crate) mod shape_get_namespace;
 
 pub(crate) mod shape_get_table;

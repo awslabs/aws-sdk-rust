@@ -22,7 +22,9 @@ impl crate::operation::put_raw_events::builders::PutRawEventsInputBuilder {
 }
 /// Fluent builder constructing a request to `PutRawEvents`.
 ///
-/// Publishes pre-shaped events to an event bus.
+/// <p>Publishes pre-shaped events to an event bus.</p>
+/// <p>The total size of all event entries in a request must not exceed 1 MB (1,048,576 bytes), including the <code>Data</code> payload and the keys and values of <code>Metadata</code> for each entry. The limit applies to the request as a whole, not to individual entries.</p>
+/// <p>If you exceed the limit, the request fails with <code>InvalidInputException</code>, and the service doesn't publish any of the entries in the request.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutRawEventsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +110,17 @@ impl PutRawEventsFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn event_bus_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_bus_arn(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn set_event_bus_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_bus_arn(input);
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn get_event_bus_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_event_bus_arn()
     }
@@ -127,45 +129,45 @@ impl PutRawEventsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_entries`](Self::set_entries).
     ///
-    /// List of event entries to publish. Must contain at least one entry.
+    /// <p>List of event entries to publish. Must contain at least one entry.</p>
     pub fn entries(mut self, input: crate::types::PutRawEventsRequestEntry) -> Self {
         self.inner = self.inner.entries(input);
         self
     }
-    /// List of event entries to publish. Must contain at least one entry.
+    /// <p>List of event entries to publish. Must contain at least one entry.</p>
     pub fn set_entries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PutRawEventsRequestEntry>>) -> Self {
         self.inner = self.inner.set_entries(input);
         self
     }
-    /// List of event entries to publish. Must contain at least one entry.
+    /// <p>List of event entries to publish. Must contain at least one entry.</p>
     pub fn get_entries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PutRawEventsRequestEntry>> {
         self.inner.get_entries()
     }
-    /// Schema-registry settings for encoding open-format (Avro/Protobuf) events. Required for open-format entries; ignored for JSON entries. The registry is read with the caller's credentials, so the caller needs read access to the registry it references.
+    /// <p>Schema-registry settings for encoding open-format (Avro/Protobuf) events. Required for open-format entries; ignored for JSON entries. The registry is read with the caller's credentials, so the caller needs read access to the registry it references.</p>
     pub fn schema_registry_configuration(mut self, input: crate::types::SchemaRegistryConfiguration) -> Self {
         self.inner = self.inner.schema_registry_configuration(input);
         self
     }
-    /// Schema-registry settings for encoding open-format (Avro/Protobuf) events. Required for open-format entries; ignored for JSON entries. The registry is read with the caller's credentials, so the caller needs read access to the registry it references.
+    /// <p>Schema-registry settings for encoding open-format (Avro/Protobuf) events. Required for open-format entries; ignored for JSON entries. The registry is read with the caller's credentials, so the caller needs read access to the registry it references.</p>
     pub fn set_schema_registry_configuration(mut self, input: ::std::option::Option<crate::types::SchemaRegistryConfiguration>) -> Self {
         self.inner = self.inner.set_schema_registry_configuration(input);
         self
     }
-    /// Schema-registry settings for encoding open-format (Avro/Protobuf) events. Required for open-format entries; ignored for JSON entries. The registry is read with the caller's credentials, so the caller needs read access to the registry it references.
+    /// <p>Schema-registry settings for encoding open-format (Avro/Protobuf) events. Required for open-format entries; ignored for JSON entries. The registry is read with the caller's credentials, so the caller needs read access to the registry it references.</p>
     pub fn get_schema_registry_configuration(&self) -> &::std::option::Option<crate::types::SchemaRegistryConfiguration> {
         self.inner.get_schema_registry_configuration()
     }
-    /// Request-level deduplication settings, applied to every entry in the batch.
+    /// <p>Request-level deduplication settings, applied to every entry in the batch.</p>
     pub fn deduplication_configuration(mut self, input: crate::types::DeduplicationConfiguration) -> Self {
         self.inner = self.inner.deduplication_configuration(input);
         self
     }
-    /// Request-level deduplication settings, applied to every entry in the batch.
+    /// <p>Request-level deduplication settings, applied to every entry in the batch.</p>
     pub fn set_deduplication_configuration(mut self, input: ::std::option::Option<crate::types::DeduplicationConfiguration>) -> Self {
         self.inner = self.inner.set_deduplication_configuration(input);
         self
     }
-    /// Request-level deduplication settings, applied to every entry in the batch.
+    /// <p>Request-level deduplication settings, applied to every entry in the batch.</p>
     pub fn get_deduplication_configuration(&self) -> &::std::option::Option<crate::types::DeduplicationConfiguration> {
         self.inner.get_deduplication_configuration()
     }

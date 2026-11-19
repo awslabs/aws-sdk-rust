@@ -19,6 +19,26 @@ pub(crate) fn reflens_admin_list_user_auth_events_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_cimd_policies_output_output_next_token(
+    input: &crate::operation::list_cimd_policies::ListCimdPoliciesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_client_metadata_urls_output_output_next_token(
+    input: &crate::operation::list_client_metadata_urls::ListClientMetadataUrLsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_groups_output_output_next_token(
     input: &crate::operation::list_groups::ListGroupsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -100,6 +120,20 @@ pub(crate) fn lens_admin_list_user_auth_events_output_output_auth_events(
     input: crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AuthEventType>> {
     let input = input.auth_events?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_cimd_policies_output_output_cimd_policies(
+    input: crate::operation::list_cimd_policies::ListCimdPoliciesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::CimdPolicySummaryType>> {
+    let input = input.cimd_policies;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_client_metadata_urls_output_output_client_metadata_urls(
+    input: crate::operation::list_client_metadata_urls::ListClientMetadataUrLsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ClientMetadataUrlType>> {
+    let input = input.client_metadata_urls;
     ::std::option::Option::Some(input)
 }
 

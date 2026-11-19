@@ -12,17 +12,23 @@ pub fn ser_search_discoverable_registry_records_input_input(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_3) = &input.registry_ids {
-        let mut array_4 = object.key("registryIds").start_array();
-        for item_5 in var_3 {
+    if let Some(var_3) = &input.next_token {
+        object.key("nextToken").string(var_3.as_str());
+    }
+    if let Some(var_4) = &input.registry_ids {
+        let mut array_5 = object.key("registryIds").start_array();
+        for item_6 in var_4 {
             {
-                array_4.value().string(item_5.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
-    if let Some(var_6) = &input.search_query {
-        object.key("searchQuery").string(var_6.as_str());
+    if let Some(var_7) = &input.search_query {
+        object.key("searchQuery").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.search_type {
+        object.key("searchType").string(var_8.as_str());
     }
     Ok(())
 }

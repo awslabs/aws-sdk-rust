@@ -526,6 +526,55 @@ impl From<crate::operation::delete_table_replication::DeleteTableReplicationErro
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_table_replication::DisassociateTableReplicationError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::disassociate_table_replication::DisassociateTableReplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_table_replication::DisassociateTableReplicationError> for Error {
+    fn from(err: crate::operation::disassociate_table_replication::DisassociateTableReplicationError) -> Self {
+        match err {
+            crate::operation::disassociate_table_replication::DisassociateTableReplicationError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::disassociate_table_replication::DisassociateTableReplicationError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::disassociate_table_replication::DisassociateTableReplicationError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::disassociate_table_replication::DisassociateTableReplicationError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::disassociate_table_replication::DisassociateTableReplicationError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::disassociate_table_replication::DisassociateTableReplicationError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::disassociate_table_replication::DisassociateTableReplicationError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::disassociate_table_replication::DisassociateTableReplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_namespace::GetNamespaceError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

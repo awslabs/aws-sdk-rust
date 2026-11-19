@@ -71,6 +71,8 @@ pub use crate::types::_forward_action_config::ForwardActionConfigBuilder;
 
 pub use crate::types::_jwt_validation_action_config::JwtValidationActionConfigBuilder;
 
+pub use crate::types::_client_certificate_identity_filter::ClientCertificateIdentityFilterBuilder;
+
 pub use crate::types::_load_balancer_state::LoadBalancerStateBuilder;
 
 pub use crate::types::_host_header_condition_config::HostHeaderConditionConfigBuilder;

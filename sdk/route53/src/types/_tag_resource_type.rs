@@ -13,6 +13,7 @@
 /// # let tagresourcetype = unimplemented!();
 /// match tagresourcetype {
 ///     TagResourceType::Healthcheck => { /* ... */ },
+///     TagResourceType::Healthchecksource => { /* ... */ },
 ///     TagResourceType::Hostedzone => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -45,6 +46,8 @@ pub enum TagResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Healthcheck,
     #[allow(missing_docs)] // documentation missing in model
+    Healthchecksource,
+    #[allow(missing_docs)] // documentation missing in model
     Hostedzone,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -54,6 +57,7 @@ impl ::std::convert::From<&str> for TagResourceType {
     fn from(s: &str) -> Self {
         match s {
             "healthcheck" => TagResourceType::Healthcheck,
+            "healthchecksource" => TagResourceType::Healthchecksource,
             "hostedzone" => TagResourceType::Hostedzone,
             other => TagResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -71,13 +75,14 @@ impl TagResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             TagResourceType::Healthcheck => "healthcheck",
+            TagResourceType::Healthchecksource => "healthchecksource",
             TagResourceType::Hostedzone => "hostedzone",
             TagResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["healthcheck", "hostedzone"]
+        &["healthcheck", "healthchecksource", "hostedzone"]
     }
 }
 impl ::std::convert::AsRef<str> for TagResourceType {
@@ -101,6 +106,7 @@ impl ::std::fmt::Display for TagResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             TagResourceType::Healthcheck => write!(f, "healthcheck"),
+            TagResourceType::Healthchecksource => write!(f, "healthchecksource"),
             TagResourceType::Hostedzone => write!(f, "hostedzone"),
             TagResourceType::Unknown(value) => write!(f, "{value}"),
         }

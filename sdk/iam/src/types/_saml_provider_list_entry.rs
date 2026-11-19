@@ -10,6 +10,8 @@ pub struct SamlProviderListEntry {
     pub valid_until: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the SAML provider was created.</p>
     pub create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Specifies whether trusted identity propagation is enabled for the SAML provider. This is <code>true</code> when an IAM Identity Center instance is associated with the provider.</p>
+    pub is_trusted_identity_propagation_enabled: bool,
 }
 impl SamlProviderListEntry {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
@@ -23,6 +25,10 @@ impl SamlProviderListEntry {
     /// <p>The date and time when the SAML provider was created.</p>
     pub fn create_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.create_date.as_ref()
+    }
+    /// <p>Specifies whether trusted identity propagation is enabled for the SAML provider. This is <code>true</code> when an IAM Identity Center instance is associated with the provider.</p>
+    pub fn is_trusted_identity_propagation_enabled(&self) -> bool {
+        self.is_trusted_identity_propagation_enabled
     }
 }
 impl SamlProviderListEntry {
@@ -39,6 +45,7 @@ pub struct SamlProviderListEntryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) valid_until: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) create_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) is_trusted_identity_propagation_enabled: ::std::option::Option<bool>,
 }
 impl SamlProviderListEntryBuilder {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
@@ -83,12 +90,27 @@ impl SamlProviderListEntryBuilder {
     pub fn get_create_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.create_date
     }
+    /// <p>Specifies whether trusted identity propagation is enabled for the SAML provider. This is <code>true</code> when an IAM Identity Center instance is associated with the provider.</p>
+    pub fn is_trusted_identity_propagation_enabled(mut self, input: bool) -> Self {
+        self.is_trusted_identity_propagation_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether trusted identity propagation is enabled for the SAML provider. This is <code>true</code> when an IAM Identity Center instance is associated with the provider.</p>
+    pub fn set_is_trusted_identity_propagation_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.is_trusted_identity_propagation_enabled = input;
+        self
+    }
+    /// <p>Specifies whether trusted identity propagation is enabled for the SAML provider. This is <code>true</code> when an IAM Identity Center instance is associated with the provider.</p>
+    pub fn get_is_trusted_identity_propagation_enabled(&self) -> &::std::option::Option<bool> {
+        &self.is_trusted_identity_propagation_enabled
+    }
     /// Consumes the builder and constructs a [`SamlProviderListEntry`](crate::types::SamlProviderListEntry).
     pub fn build(self) -> crate::types::SamlProviderListEntry {
         crate::types::SamlProviderListEntry {
             arn: self.arn,
             valid_until: self.valid_until,
             create_date: self.create_date,
+            is_trusted_identity_propagation_enabled: self.is_trusted_identity_propagation_enabled.unwrap_or_default(),
         }
     }
 }

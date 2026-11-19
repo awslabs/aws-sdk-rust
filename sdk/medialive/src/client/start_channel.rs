@@ -28,6 +28,7 @@ impl super::Client {
     ///   - [`linked_channel_settings(Option<DescribeLinkedChannelSettings>)`](crate::operation::start_channel::StartChannelOutput::linked_channel_settings): Linked Channel Settings for this channel.
     ///   - [`channel_security_groups(Option<Vec::<String>>)`](crate::operation::start_channel::StartChannelOutput::channel_security_groups): A list of IDs for all the Input Security Groups attached to the channel.
     ///   - [`inference_settings(Option<DescribeInferenceSettings>)`](crate::operation::start_channel::StartChannelOutput::inference_settings): Include this setting to include Elemental Inference features in this channel.
+    ///   - [`jpeg_xs_input_specification(Option<JpegXsInputSpecification>)`](crate::operation::start_channel::StartChannelOutput::jpeg_xs_input_specification): Specification of JPEG XS inputs for this channel
     /// - On failure, responds with [`SdkError<StartChannelError>`](crate::operation::start_channel::StartChannelError)
     pub fn start_channel(&self) -> crate::operation::start_channel::builders::StartChannelFluentBuilder {
         crate::operation::start_channel::builders::StartChannelFluentBuilder::new(self.handle.clone())

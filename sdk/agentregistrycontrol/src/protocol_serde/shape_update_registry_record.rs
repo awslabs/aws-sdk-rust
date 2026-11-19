@@ -162,6 +162,13 @@ pub(crate) fn de_update_registry_record(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                "authorizationData" => {
+                    builder = builder.set_authorization_data(crate::protocol_serde::shape_authorization_data::de_authorization_data(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "createdAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

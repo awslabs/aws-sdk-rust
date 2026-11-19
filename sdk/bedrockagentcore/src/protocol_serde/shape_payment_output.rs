@@ -46,6 +46,16 @@ where
                             crate::protocol_serde::shape_mpp_payment_output::de_mpp_payment_output(tokens, _value, depth + 1)?
                                 .ok_or_else(|| ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'mpp' cannot be null"))?,
                         )),
+                        "awsBillingX402" => Some(crate::types::PaymentOutput::AwsBillingX402(
+                            crate::protocol_serde::shape_aws_billing_x402_payment_output::de_aws_billing_x402_payment_output(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?
+                            .ok_or_else(|| {
+                                ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'awsBillingX402' cannot be null")
+                            })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::PaymentOutput::Unknown)

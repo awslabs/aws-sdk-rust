@@ -195,6 +195,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateConnect
                 captured.insert("HostArn", value);
             }
         }
+        if requested.should_capture("ProviderEndpoint") {
+            if let ::std::option::Option::Some(value) = input.provider_endpoint.as_deref() {
+                captured.insert("ProviderEndpoint", value);
+            }
+        }
 
         cfg.interceptor_state().store_put(captured);
         ::std::result::Result::Ok(())
@@ -322,12 +327,16 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateConnect
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateConnectionError {
+    /// <p>The input is not valid. Verify that the action is typed correctly.</p>
+    InvalidInputException(crate::types::error::InvalidInputException),
     /// <p>Exceeded the maximum limit for connections.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
     /// <p>Resource not found. Verify the connection resource ARN and try again.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
     /// <p>Resource not found. Verify the ARN for the host resource and try again.</p>
     ResourceUnavailableException(crate::types::error::ResourceUnavailableException),
+    /// <p>The specified provider type is not supported for connections.</p>
+    UnsupportedProviderTypeException(crate::types::error::UnsupportedProviderTypeException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
     variable wildcard pattern and check `.code()`:
@@ -361,11 +370,17 @@ impl CreateConnectionError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidInputException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceUnavailableException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::UnsupportedProviderTypeException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `CreateConnectionError::InvalidInputException`.
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(self, Self::InvalidInputException(_))
     }
     /// Returns `true` if the error kind is `CreateConnectionError::LimitExceededException`.
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -379,13 +394,19 @@ impl CreateConnectionError {
     pub fn is_resource_unavailable_exception(&self) -> bool {
         matches!(self, Self::ResourceUnavailableException(_))
     }
+    /// Returns `true` if the error kind is `CreateConnectionError::UnsupportedProviderTypeException`.
+    pub fn is_unsupported_provider_type_exception(&self) -> bool {
+        matches!(self, Self::UnsupportedProviderTypeException(_))
+    }
 }
 impl ::std::error::Error for CreateConnectionError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::InvalidInputException(_inner) => ::std::option::Option::Some(_inner),
             Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceUnavailableException(_inner) => ::std::option::Option::Some(_inner),
+            Self::UnsupportedProviderTypeException(_inner) => ::std::option::Option::Some(_inner),
             Self::Unhandled(_inner) => ::std::option::Option::Some(&*_inner.source),
         }
     }
@@ -393,9 +414,11 @@ impl ::std::error::Error for CreateConnectionError {
 impl ::std::fmt::Display for CreateConnectionError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::InvalidInputException(_inner) => _inner.fmt(f),
             Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::ResourceUnavailableException(_inner) => _inner.fmt(f),
+            Self::UnsupportedProviderTypeException(_inner) => _inner.fmt(f),
             Self::Unhandled(_inner) => {
                 if let ::std::option::Option::Some(code) = ::aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self) {
                     write!(f, "unhandled error ({code})")
@@ -417,9 +440,11 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for CreateConnectionError {
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for CreateConnectionError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::InvalidInputException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceUnavailableException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::UnsupportedProviderTypeException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::Unhandled(_inner) => &_inner.meta,
         }
     }

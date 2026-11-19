@@ -9,6 +9,16 @@ static UPDATEGITLABSELFMANAGEDINTEGRATIONDETAIL_MEMBER_AUTH_CODE: ::aws_smithy_s
     "authCode",
     0,
 );
+static UPDATEGITLABSELFMANAGEDINTEGRATIONDETAIL_MEMBER_STATE_TOKEN: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.inspector2#UpdateGitLabSelfManagedIntegrationDetail$stateToken",
+        "com.amazonaws.inspector2",
+        "UpdateGitLabSelfManagedIntegrationDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "stateToken",
+    1,
+);
 static UPDATEGITLABSELFMANAGEDINTEGRATIONDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.inspector2#UpdateGitLabSelfManagedIntegrationDetail",
@@ -16,7 +26,10 @@ static UPDATEGITLABSELFMANAGEDINTEGRATIONDETAIL_SCHEMA: ::aws_smithy_schema::Sch
         "UpdateGitLabSelfManagedIntegrationDetail",
     ),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&UPDATEGITLABSELFMANAGEDINTEGRATIONDETAIL_MEMBER_AUTH_CODE],
+    &[
+        &UPDATEGITLABSELFMANAGEDINTEGRATIONDETAIL_MEMBER_AUTH_CODE,
+        &UPDATEGITLABSELFMANAGEDINTEGRATIONDETAIL_MEMBER_STATE_TOKEN,
+    ],
 );
 impl crate::types::UpdateGitLabSelfManagedIntegrationDetail {
     /// The schema for this shape.
@@ -35,6 +48,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::UpdateGitL
         {
             let val = &self.auth_code;
             ser.write_string(&UPDATEGITLABSELFMANAGEDINTEGRATIONDETAIL_MEMBER_AUTH_CODE, val)?;
+        }
+        if let Some(ref val) = self.state_token {
+            ser.write_string(&UPDATEGITLABSELFMANAGEDINTEGRATIONDETAIL_MEMBER_STATE_TOKEN, val)?;
         }
         Ok(())
     }
@@ -55,6 +71,13 @@ impl crate::types::builders::UpdateGitLabSelfManagedIntegrationDetailBuilder {
             match member.member_index() {
                 Some(0) => {
                     self.auth_code = Some(deser.read_string(member)?);
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.state_token = Some(deser.read_string(member)?);
+                    }
                 }
                 _ => {}
             }

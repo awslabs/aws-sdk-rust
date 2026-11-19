@@ -7,7 +7,7 @@ pub struct CreateWorkloadEstimateInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The type of pricing rates to use for the estimate.</p>
+    /// <p>The type of pricing rates for the estimate. You can only use a rate type that your Pricing Calculator rate preferences allow. If you use billing transfer as a bill source account, you can only use BEFORE_DISCOUNTS.</p>
     pub rate_type: ::std::option::Option<crate::types::WorkloadEstimateRateType>,
     /// <p>The tags to apply to the workload estimate.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -21,7 +21,7 @@ impl CreateWorkloadEstimateInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The type of pricing rates to use for the estimate.</p>
+    /// <p>The type of pricing rates for the estimate. You can only use a rate type that your Pricing Calculator rate preferences allow. If you use billing transfer as a bill source account, you can only use BEFORE_DISCOUNTS.</p>
     pub fn rate_type(&self) -> ::std::option::Option<&crate::types::WorkloadEstimateRateType> {
         self.rate_type.as_ref()
     }
@@ -76,17 +76,17 @@ impl CreateWorkloadEstimateInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The type of pricing rates to use for the estimate.</p>
+    /// <p>The type of pricing rates for the estimate. You can only use a rate type that your Pricing Calculator rate preferences allow. If you use billing transfer as a bill source account, you can only use BEFORE_DISCOUNTS.</p>
     pub fn rate_type(mut self, input: crate::types::WorkloadEstimateRateType) -> Self {
         self.rate_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of pricing rates to use for the estimate.</p>
+    /// <p>The type of pricing rates for the estimate. You can only use a rate type that your Pricing Calculator rate preferences allow. If you use billing transfer as a bill source account, you can only use BEFORE_DISCOUNTS.</p>
     pub fn set_rate_type(mut self, input: ::std::option::Option<crate::types::WorkloadEstimateRateType>) -> Self {
         self.rate_type = input;
         self
     }
-    /// <p>The type of pricing rates to use for the estimate.</p>
+    /// <p>The type of pricing rates for the estimate. You can only use a rate type that your Pricing Calculator rate preferences allow. If you use billing transfer as a bill source account, you can only use BEFORE_DISCOUNTS.</p>
     pub fn get_rate_type(&self) -> &::std::option::Option<crate::types::WorkloadEstimateRateType> {
         &self.rate_type
     }

@@ -19,6 +19,16 @@ static UPDATEINTEGRATIONDETAILS_MEMBER_GITHUB: ::aws_smithy_schema::Schema<'stat
     "github",
     1,
 );
+static UPDATEINTEGRATIONDETAILS_MEMBER_GITHUBENTERPRISESERVER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.inspector2#UpdateIntegrationDetails$githubEnterpriseServer",
+        "com.amazonaws.inspector2",
+        "UpdateIntegrationDetails",
+    ),
+    ::aws_smithy_schema::ShapeType::Union,
+    "githubEnterpriseServer",
+    2,
+);
 static UPDATEINTEGRATIONDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.inspector2#UpdateIntegrationDetails",
@@ -29,6 +39,7 @@ static UPDATEINTEGRATIONDETAILS_SCHEMA: ::aws_smithy_schema::Schema<'static> = :
     &[
         &UPDATEINTEGRATIONDETAILS_MEMBER_GITLABSELFMANAGED,
         &UPDATEINTEGRATIONDETAILS_MEMBER_GITHUB,
+        &UPDATEINTEGRATIONDETAILS_MEMBER_GITHUBENTERPRISESERVER,
     ],
 );
 impl crate::types::UpdateIntegrationDetails {
@@ -51,6 +62,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::UpdateInte
             }
             Self::Github(val) => {
                 ser.write_struct(&UPDATEINTEGRATIONDETAILS_MEMBER_GITHUB, val)?;
+            }
+            Self::GithubEnterpriseServer(val) => {
+                ser.write_struct(&UPDATEINTEGRATIONDETAILS_MEMBER_GITHUBENTERPRISESERVER, val)?;
             }
             Self::Unknown => return Err(::aws_smithy_schema::serde::SerdeError::custom("cannot serialize unknown union variant")),
         }
@@ -75,6 +89,7 @@ impl crate::types::UpdateIntegrationDetails {
             result = ::std::option::Option::Some(match member.member_index() {
                 Some(0) => Self::GitlabSelfManaged(crate::types::UpdateGitLabSelfManagedIntegrationDetail::deserialize(deser)?),
                 Some(1) => Self::Github(crate::types::UpdateGitHubIntegrationDetail::deserialize(deser)?),
+                Some(2) => Self::GithubEnterpriseServer(crate::types::UpdateGitHubEnterpriseServerIntegrationDetail::deserialize(deser)?),
                 _ => Self::Unknown,
             });
             Ok(())

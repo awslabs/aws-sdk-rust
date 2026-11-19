@@ -49,6 +49,9 @@ pub mod tag_resource;
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
 
+/// Types for the `UpdateMarketplaceRevenueShare` operation.
+pub mod update_marketplace_revenue_share;
+
 /// Types for the `UpdateMarketplaceRevenueShareAllocation` operation.
 pub mod update_marketplace_revenue_share_allocation;
 

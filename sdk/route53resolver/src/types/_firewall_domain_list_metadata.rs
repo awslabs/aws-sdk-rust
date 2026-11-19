@@ -19,6 +19,12 @@ pub struct FirewallDomainListMetadata {
     pub managed_list_type: ::std::option::Option<crate::types::DomainListType>,
     /// <p>The category of the domain list.</p>
     pub category: ::std::option::Option<::std::string::String>,
+    /// <p>For an AutoAllowlist domain list, the ID of the firewall rule group that contains the auto-allowlist rule that owns this domain list. Use it to navigate to the rule group and its VPC associations. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+    pub firewall_rule_group_id: ::std::option::Option<::std::string::String>,
+    /// <p>For an AutoAllowlist domain list, the threat protection ID of the auto-allowlist rule that owns this domain list. Provide it to <code>ListFirewallRuleDomains</code> to review the observed, allowed, and denied domains. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+    pub firewall_threat_protection_id: ::std::option::Option<::std::string::String>,
+    /// <p>For an AutoAllowlist domain list, the status of the list: <code>IMPORTING</code> while domains are being copied from the source domain list specified at rule creation, <code>COMPLETE_IMPORT_FAILED</code> if that copy failed, <code>UPDATING</code> while a change made with <code>UpdateFirewallDomains</code> is being applied, <code>COMPLETE</code> otherwise, and <code>DELETING</code> while the owning rule is being deleted. The first change that you make after a failed copy replaces <code>COMPLETE_IMPORT_FAILED</code> with <code>UPDATING</code> and then <code>COMPLETE</code>. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>. Use <code>GetFirewallDomainList</code> for the status of other domain lists.</p>
+    pub status: ::std::option::Option<crate::types::FirewallDomainListStatus>,
 }
 impl FirewallDomainListMetadata {
     /// <p>The ID of the domain list.</p>
@@ -49,6 +55,18 @@ impl FirewallDomainListMetadata {
     pub fn category(&self) -> ::std::option::Option<&str> {
         self.category.as_deref()
     }
+    /// <p>For an AutoAllowlist domain list, the ID of the firewall rule group that contains the auto-allowlist rule that owns this domain list. Use it to navigate to the rule group and its VPC associations. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+    pub fn firewall_rule_group_id(&self) -> ::std::option::Option<&str> {
+        self.firewall_rule_group_id.as_deref()
+    }
+    /// <p>For an AutoAllowlist domain list, the threat protection ID of the auto-allowlist rule that owns this domain list. Provide it to <code>ListFirewallRuleDomains</code> to review the observed, allowed, and denied domains. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+    pub fn firewall_threat_protection_id(&self) -> ::std::option::Option<&str> {
+        self.firewall_threat_protection_id.as_deref()
+    }
+    /// <p>For an AutoAllowlist domain list, the status of the list: <code>IMPORTING</code> while domains are being copied from the source domain list specified at rule creation, <code>COMPLETE_IMPORT_FAILED</code> if that copy failed, <code>UPDATING</code> while a change made with <code>UpdateFirewallDomains</code> is being applied, <code>COMPLETE</code> otherwise, and <code>DELETING</code> while the owning rule is being deleted. The first change that you make after a failed copy replaces <code>COMPLETE_IMPORT_FAILED</code> with <code>UPDATING</code> and then <code>COMPLETE</code>. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>. Use <code>GetFirewallDomainList</code> for the status of other domain lists.</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::FirewallDomainListStatus> {
+        self.status.as_ref()
+    }
 }
 impl FirewallDomainListMetadata {
     /// Creates a new builder-style object to manufacture [`FirewallDomainListMetadata`](crate::types::FirewallDomainListMetadata).
@@ -68,6 +86,9 @@ pub struct FirewallDomainListMetadataBuilder {
     pub(crate) managed_owner_name: ::std::option::Option<::std::string::String>,
     pub(crate) managed_list_type: ::std::option::Option<crate::types::DomainListType>,
     pub(crate) category: ::std::option::Option<::std::string::String>,
+    pub(crate) firewall_rule_group_id: ::std::option::Option<::std::string::String>,
+    pub(crate) firewall_threat_protection_id: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::FirewallDomainListStatus>,
 }
 impl FirewallDomainListMetadataBuilder {
     /// <p>The ID of the domain list.</p>
@@ -168,6 +189,48 @@ impl FirewallDomainListMetadataBuilder {
     pub fn get_category(&self) -> &::std::option::Option<::std::string::String> {
         &self.category
     }
+    /// <p>For an AutoAllowlist domain list, the ID of the firewall rule group that contains the auto-allowlist rule that owns this domain list. Use it to navigate to the rule group and its VPC associations. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+    pub fn firewall_rule_group_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.firewall_rule_group_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>For an AutoAllowlist domain list, the ID of the firewall rule group that contains the auto-allowlist rule that owns this domain list. Use it to navigate to the rule group and its VPC associations. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+    pub fn set_firewall_rule_group_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.firewall_rule_group_id = input;
+        self
+    }
+    /// <p>For an AutoAllowlist domain list, the ID of the firewall rule group that contains the auto-allowlist rule that owns this domain list. Use it to navigate to the rule group and its VPC associations. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+    pub fn get_firewall_rule_group_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_rule_group_id
+    }
+    /// <p>For an AutoAllowlist domain list, the threat protection ID of the auto-allowlist rule that owns this domain list. Provide it to <code>ListFirewallRuleDomains</code> to review the observed, allowed, and denied domains. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+    pub fn firewall_threat_protection_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.firewall_threat_protection_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>For an AutoAllowlist domain list, the threat protection ID of the auto-allowlist rule that owns this domain list. Provide it to <code>ListFirewallRuleDomains</code> to review the observed, allowed, and denied domains. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+    pub fn set_firewall_threat_protection_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.firewall_threat_protection_id = input;
+        self
+    }
+    /// <p>For an AutoAllowlist domain list, the threat protection ID of the auto-allowlist rule that owns this domain list. Provide it to <code>ListFirewallRuleDomains</code> to review the observed, allowed, and denied domains. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>.</p>
+    pub fn get_firewall_threat_protection_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.firewall_threat_protection_id
+    }
+    /// <p>For an AutoAllowlist domain list, the status of the list: <code>IMPORTING</code> while domains are being copied from the source domain list specified at rule creation, <code>COMPLETE_IMPORT_FAILED</code> if that copy failed, <code>UPDATING</code> while a change made with <code>UpdateFirewallDomains</code> is being applied, <code>COMPLETE</code> otherwise, and <code>DELETING</code> while the owning rule is being deleted. The first change that you make after a failed copy replaces <code>COMPLETE_IMPORT_FAILED</code> with <code>UPDATING</code> and then <code>COMPLETE</code>. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>. Use <code>GetFirewallDomainList</code> for the status of other domain lists.</p>
+    pub fn status(mut self, input: crate::types::FirewallDomainListStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>For an AutoAllowlist domain list, the status of the list: <code>IMPORTING</code> while domains are being copied from the source domain list specified at rule creation, <code>COMPLETE_IMPORT_FAILED</code> if that copy failed, <code>UPDATING</code> while a change made with <code>UpdateFirewallDomains</code> is being applied, <code>COMPLETE</code> otherwise, and <code>DELETING</code> while the owning rule is being deleted. The first change that you make after a failed copy replaces <code>COMPLETE_IMPORT_FAILED</code> with <code>UPDATING</code> and then <code>COMPLETE</code>. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>. Use <code>GetFirewallDomainList</code> for the status of other domain lists.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::FirewallDomainListStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>For an AutoAllowlist domain list, the status of the list: <code>IMPORTING</code> while domains are being copied from the source domain list specified at rule creation, <code>COMPLETE_IMPORT_FAILED</code> if that copy failed, <code>UPDATING</code> while a change made with <code>UpdateFirewallDomains</code> is being applied, <code>COMPLETE</code> otherwise, and <code>DELETING</code> while the owning rule is being deleted. The first change that you make after a failed copy replaces <code>COMPLETE_IMPORT_FAILED</code> with <code>UPDATING</code> and then <code>COMPLETE</code>. Present only when <code>ManagedListType</code> is <code>AUTOALLOWLIST</code>. Use <code>GetFirewallDomainList</code> for the status of other domain lists.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::FirewallDomainListStatus> {
+        &self.status
+    }
     /// Consumes the builder and constructs a [`FirewallDomainListMetadata`](crate::types::FirewallDomainListMetadata).
     pub fn build(self) -> crate::types::FirewallDomainListMetadata {
         crate::types::FirewallDomainListMetadata {
@@ -178,6 +241,9 @@ impl FirewallDomainListMetadataBuilder {
             managed_owner_name: self.managed_owner_name,
             managed_list_type: self.managed_list_type,
             category: self.category,
+            firewall_rule_group_id: self.firewall_rule_group_id,
+            firewall_threat_protection_id: self.firewall_threat_protection_id,
+            status: self.status,
         }
     }
 }

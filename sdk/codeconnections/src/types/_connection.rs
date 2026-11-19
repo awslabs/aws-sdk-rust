@@ -19,6 +19,8 @@ pub struct Connection {
     pub connection_status: ::std::option::Option<crate::types::ConnectionStatus>,
     /// <p>The Amazon Resource Name (ARN) of the host associated with the connection.</p>
     pub host_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The endpoint of the ghe.com tenant where your organization resides. This value is populated only for a connection with a <code>ProviderType</code> of <code>GitHubEnterpriseCloudDataResidency</code>. It is empty for all other provider types.</p>
+    pub provider_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl Connection {
     /// <p>The name of the connection. Connection names must be unique in an Amazon Web Services account.</p>
@@ -47,6 +49,10 @@ impl Connection {
     pub fn host_arn(&self) -> ::std::option::Option<&str> {
         self.host_arn.as_deref()
     }
+    /// <p>The endpoint of the ghe.com tenant where your organization resides. This value is populated only for a connection with a <code>ProviderType</code> of <code>GitHubEnterpriseCloudDataResidency</code>. It is empty for all other provider types.</p>
+    pub fn provider_endpoint(&self) -> ::std::option::Option<&str> {
+        self.provider_endpoint.as_deref()
+    }
 }
 impl Connection {
     /// Creates a new builder-style object to manufacture [`Connection`](crate::types::Connection).
@@ -65,6 +71,7 @@ pub struct ConnectionBuilder {
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) connection_status: ::std::option::Option<crate::types::ConnectionStatus>,
     pub(crate) host_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) provider_endpoint: ::std::option::Option<::std::string::String>,
 }
 impl ConnectionBuilder {
     /// <p>The name of the connection. Connection names must be unique in an Amazon Web Services account.</p>
@@ -157,6 +164,20 @@ impl ConnectionBuilder {
     pub fn get_host_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.host_arn
     }
+    /// <p>The endpoint of the ghe.com tenant where your organization resides. This value is populated only for a connection with a <code>ProviderType</code> of <code>GitHubEnterpriseCloudDataResidency</code>. It is empty for all other provider types.</p>
+    pub fn provider_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.provider_endpoint = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The endpoint of the ghe.com tenant where your organization resides. This value is populated only for a connection with a <code>ProviderType</code> of <code>GitHubEnterpriseCloudDataResidency</code>. It is empty for all other provider types.</p>
+    pub fn set_provider_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.provider_endpoint = input;
+        self
+    }
+    /// <p>The endpoint of the ghe.com tenant where your organization resides. This value is populated only for a connection with a <code>ProviderType</code> of <code>GitHubEnterpriseCloudDataResidency</code>. It is empty for all other provider types.</p>
+    pub fn get_provider_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        &self.provider_endpoint
+    }
     /// Consumes the builder and constructs a [`Connection`](crate::types::Connection).
     pub fn build(self) -> crate::types::Connection {
         crate::types::Connection {
@@ -166,6 +187,7 @@ impl ConnectionBuilder {
             owner_account_id: self.owner_account_id,
             connection_status: self.connection_status,
             host_arn: self.host_arn,
+            provider_endpoint: self.provider_endpoint,
         }
     }
 }

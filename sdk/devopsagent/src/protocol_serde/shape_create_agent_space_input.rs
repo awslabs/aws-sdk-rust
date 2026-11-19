@@ -3,40 +3,43 @@ pub fn ser_create_agent_space_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_agent_space::CreateAgentSpaceInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.client_token {
-        object.key("clientToken").string(var_1.as_str());
+    if let Some(var_1) = &input.aws_source_mode {
+        object.key("awsSourceMode").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
+    if let Some(var_2) = &input.client_token {
+        object.key("clientToken").string(var_2.as_str());
     }
-    if let Some(var_3) = &input.kms_key_arn {
-        object.key("kmsKeyArn").string(var_3.as_str());
+    if let Some(var_3) = &input.description {
+        object.key("description").string(var_3.as_str());
     }
-    if let Some(var_4) = &input.locale {
-        object.key("locale").string(var_4.as_str());
+    if let Some(var_4) = &input.kms_key_arn {
+        object.key("kmsKeyArn").string(var_4.as_str());
     }
-    if let Some(var_5) = &input.name {
-        object.key("name").string(var_5.as_str());
+    if let Some(var_5) = &input.locale {
+        object.key("locale").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.preferences {
+    if let Some(var_6) = &input.name {
+        object.key("name").string(var_6.as_str());
+    }
+    if let Some(var_7) = &input.preferences {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("preferences").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_8 = object.key("preferences").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_7.key(key_8.as_str()).boolean(*value_9);
+                object_8.key(key_9.as_str()).boolean(*value_10);
             }
         }
-        object_7.finish();
+        object_8.finish();
     }
-    if let Some(var_10) = &input.tags {
+    if let Some(var_11) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("tags").start_object();
-        for (key_12, value_13) in var_10 {
+        let mut object_12 = object.key("tags").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                object_11.key(key_12.as_str()).string(value_13.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        object_11.finish();
+        object_12.finish();
     }
     Ok(())
 }

@@ -3,10 +3,18 @@ pub use crate::types::_credentials::CredentialsBuilder;
 
 pub use crate::types::_assumed_role_user::AssumedRoleUserBuilder;
 
+pub use crate::types::_trusted_identity_propagation_context::TrustedIdentityPropagationContextBuilder;
+
 pub use crate::types::_policy_descriptor_type::PolicyDescriptorTypeBuilder;
 
 pub use crate::types::_federated_user::FederatedUserBuilder;
 
+pub use crate::types::_scoped_session::ScopedSessionBuilder;
+
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_provided_context::ProvidedContextBuilder;
+
+pub use crate::types::_origin_identity::OriginIdentityBuilder;
+
+pub use crate::types::_transaction_context::TransactionContextBuilder;

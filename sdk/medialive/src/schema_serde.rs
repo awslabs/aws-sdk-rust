@@ -639,6 +639,8 @@ pub(crate) mod shape_ip_pool_create_request;
 
 pub(crate) mod shape_ip_pool_update_request;
 
+pub(crate) mod shape_jpeg_xs_input_specification;
+
 pub(crate) mod shape_key_provider_settings;
 
 pub(crate) mod shape_linked_channel_settings;

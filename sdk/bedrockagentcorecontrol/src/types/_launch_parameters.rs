@@ -22,6 +22,8 @@ pub struct LaunchParameters {
     pub instance_profile_arn: ::std::option::Option<::std::string::String>,
     /// <p>The tags to propagate to all Amazon EC2 resources (instances, volumes, and network interfaces) that the capacity provider creates.</p>
     pub propagated_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The central processing unit (CPU) options for the instances that the capacity provider launches.</p>
+    pub cpu_options: ::std::option::Option<crate::types::CpuOptions>,
 }
 impl LaunchParameters {
     /// <p>The operating system and CPU architecture for the instances.</p>
@@ -64,6 +66,10 @@ impl LaunchParameters {
     pub fn propagated_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.propagated_tags.as_ref()
     }
+    /// <p>The central processing unit (CPU) options for the instances that the capacity provider launches.</p>
+    pub fn cpu_options(&self) -> ::std::option::Option<&crate::types::CpuOptions> {
+        self.cpu_options.as_ref()
+    }
 }
 impl LaunchParameters {
     /// Creates a new builder-style object to manufacture [`LaunchParameters`](crate::types::LaunchParameters).
@@ -85,6 +91,7 @@ pub struct LaunchParametersBuilder {
     pub(crate) ssh_key_name: ::std::option::Option<::std::string::String>,
     pub(crate) instance_profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) propagated_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) cpu_options: ::std::option::Option<crate::types::CpuOptions>,
 }
 impl LaunchParametersBuilder {
     /// <p>The operating system and CPU architecture for the instances.</p>
@@ -240,6 +247,20 @@ impl LaunchParametersBuilder {
     pub fn get_propagated_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.propagated_tags
     }
+    /// <p>The central processing unit (CPU) options for the instances that the capacity provider launches.</p>
+    pub fn cpu_options(mut self, input: crate::types::CpuOptions) -> Self {
+        self.cpu_options = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The central processing unit (CPU) options for the instances that the capacity provider launches.</p>
+    pub fn set_cpu_options(mut self, input: ::std::option::Option<crate::types::CpuOptions>) -> Self {
+        self.cpu_options = input;
+        self
+    }
+    /// <p>The central processing unit (CPU) options for the instances that the capacity provider launches.</p>
+    pub fn get_cpu_options(&self) -> &::std::option::Option<crate::types::CpuOptions> {
+        &self.cpu_options
+    }
     /// Consumes the builder and constructs a [`LaunchParameters`](crate::types::LaunchParameters).
     /// This method will fail if any of the following fields are not set:
     /// - [`operating_system`](crate::types::builders::LaunchParametersBuilder::operating_system)
@@ -259,6 +280,7 @@ impl LaunchParametersBuilder {
             ssh_key_name: self.ssh_key_name,
             instance_profile_arn: self.instance_profile_arn,
             propagated_tags: self.propagated_tags,
+            cpu_options: self.cpu_options,
         })
     }
 }

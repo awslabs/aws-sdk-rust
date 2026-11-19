@@ -7,9 +7,11 @@ impl super::Client {
     ///   - [`link_id(impl Into<String>)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::link_id) / [`set_link_id(Option<String>)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::set_link_id):<br>required: **true**<br><p>The unique identifier of the link.</p><br>
     ///   - [`log_settings(LinkLogSettings)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::log_settings) / [`set_log_settings(Option<LinkLogSettings>)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::set_log_settings):<br>required: **false**<br><p>Settings for the application logs.</p><br>
     ///   - [`timeout_in_millis(i64)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::timeout_in_millis) / [`set_timeout_in_millis(Option<i64>)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::set_timeout_in_millis):<br>required: **false**<br><p>The timeout value in milliseconds.</p><br>
+    ///   - [`client_token(impl Into<String>)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::update_link::builders::UpdateLinkFluentBuilder::set_client_token):<br>required: **false**<br><p>A unique, case-sensitive identifier for the request. The SDK generates one when you don't.</p><br>
     /// - On success, responds with [`UpdateLinkOutput`](crate::operation::update_link::UpdateLinkOutput) with field(s):
     ///   - [`link_id(String)`](crate::operation::update_link::UpdateLinkOutput::link_id): <p>The unique identifier of the link.</p>
     ///   - [`status(LinkStatus)`](crate::operation::update_link::UpdateLinkOutput::status): <p>The status of the request.</p>
+    ///   - [`update_id(Option<String>)`](crate::operation::update_link::UpdateLinkOutput::update_id): <p>The ID of the update this call started.</p>
     /// - On failure, responds with [`SdkError<UpdateLinkError>`](crate::operation::update_link::UpdateLinkError)
     pub fn update_link(&self) -> crate::operation::update_link::builders::UpdateLinkFluentBuilder {
         crate::operation::update_link::builders::UpdateLinkFluentBuilder::new(self.handle.clone())

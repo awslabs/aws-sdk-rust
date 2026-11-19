@@ -7,20 +7,23 @@ pub fn ser_create_marketplace_revenue_share_allocation_input_input(
     if let Some(var_1) = &input.catalog {
         encoder.str("Catalog").str(var_1.as_str());
     }
-    if let Some(var_2) = &input.product_id {
-        encoder.str("ProductId").str(var_2.as_str());
+    if let Some(var_2) = &input.marketplace_revenue_share_identifier {
+        encoder.str("MarketplaceRevenueShareIdentifier").str(var_2.as_str());
     }
     if let Some(var_3) = &input.client_token {
         encoder.str("ClientToken").str(var_3.as_str());
     }
-    if let Some(var_4) = &input.effective_from {
-        encoder.str("EffectiveFrom").str(var_4.as_str());
+    if let Some(var_4) = &input.marketplace_revenue_share_revision {
+        encoder.str("MarketplaceRevenueShareRevision").str(var_4.as_str());
     }
-    if let Some(var_5) = &input.effective_until {
-        encoder.str("EffectiveUntil").str(var_5.as_str());
+    if let Some(var_5) = &input.effective_from {
+        encoder.str("EffectiveFrom").str(var_5.as_str());
     }
-    if let Some(var_6) = &input.revenue_share_percent {
-        encoder.str("RevenueSharePercent").str(var_6.as_str());
+    if let Some(var_6) = &input.effective_until {
+        encoder.str("EffectiveUntil").str(var_6.as_str());
+    }
+    if let Some(var_7) = &input.revenue_share_percent {
+        encoder.str("RevenueSharePercent").str(var_7.as_str());
     }
     encoder.end();
     Ok(())

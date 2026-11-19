@@ -22,7 +22,7 @@ impl crate::operation::create_registry_record::builders::CreateRegistryRecordInp
 }
 /// Fluent builder constructing a request to `CreateRegistryRecord`.
 ///
-/// <p>Creates a registry record within a registry. A registry record describes a discoverable resource, such as an MCP server, an agent, an agent skill, or a custom resource. Creation is asynchronous: the record is returned with the CREATING status while it is processed.</p>
+/// <p>Creates a registry record within a registry. A registry record describes a discoverable resource, such as an MCP server, an agent, an agent skill, or a custom resource. For an agent skill, you can upload a skill package in <code>artifact</code>, or synchronize the skill from an Amazon S3 or GitHub source. Creation is asynchronous: the operation returns the record with the <code>CREATING</code> status while the registry processes it. If a GitHub user must first authorize access to the source, the operation returns the record with the <code>CREATE_PENDING_AUTH</code> status instead.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateRegistryRecordFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -191,6 +191,20 @@ impl CreateRegistryRecordFluentBuilder {
     /// <p>The typed descriptor content for the registry record</p>
     pub fn get_descriptors(&self) -> &::std::option::Option<crate::types::Descriptors> {
         self.inner.get_descriptors()
+    }
+    /// <p>The skill package to store with the record, for a record of type <code>SKILL</code> with an <code>agentSkillsDefinition</code> descriptor. The registry validates the package after the operation returns and sets <code>skillMd.data</code> from the package's SKILL.md. A request that uploads a package can't also set a skill source or send new <code>skillMd.data</code>.</p>
+    pub fn artifact(mut self, input: crate::types::RegistryRecordArtifactUpload) -> Self {
+        self.inner = self.inner.artifact(input);
+        self
+    }
+    /// <p>The skill package to store with the record, for a record of type <code>SKILL</code> with an <code>agentSkillsDefinition</code> descriptor. The registry validates the package after the operation returns and sets <code>skillMd.data</code> from the package's SKILL.md. A request that uploads a package can't also set a skill source or send new <code>skillMd.data</code>.</p>
+    pub fn set_artifact(mut self, input: ::std::option::Option<crate::types::RegistryRecordArtifactUpload>) -> Self {
+        self.inner = self.inner.set_artifact(input);
+        self
+    }
+    /// <p>The skill package to store with the record, for a record of type <code>SKILL</code> with an <code>agentSkillsDefinition</code> descriptor. The registry validates the package after the operation returns and sets <code>skillMd.data</code> from the package's SKILL.md. A request that uploads a package can't also set a skill source or send new <code>skillMd.data</code>.</p>
+    pub fn get_artifact(&self) -> &::std::option::Option<crate::types::RegistryRecordArtifactUpload> {
+        self.inner.get_artifact()
     }
     /// <p>The version of the registry record</p>
     pub fn record_version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

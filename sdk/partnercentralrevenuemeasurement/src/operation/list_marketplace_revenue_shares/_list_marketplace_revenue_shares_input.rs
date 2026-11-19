@@ -5,9 +5,11 @@
 pub struct ListMarketplaceRevenueSharesInput {
     /// <p>The catalog to list marketplace revenue shares from.</p>
     pub catalog: ::std::option::Option<crate::types::CatalogName>,
-    /// <p>Filter results to only include shares with these product identifiers.</p>
+    /// <p>Filter results to only include these marketplace revenue shares, by ID or ARN. 1 to 100 identifiers. When several filters are sent, a share must match all of them.</p>
+    pub identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>Filter results to the marketplace revenue shares that contain any of these products. 1 to 10 product IDs or product ARNs. Shares the caller does not own are never returned.</p>
     pub product_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>Filter results to only include shares with these product codes.</p>
+    /// <p>Filter results to the marketplace revenue shares that contain a product with any of these product codes. 1 to 10 product codes.</p>
     pub product_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The maximum number of results to return in a single call.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -17,9 +19,9 @@ pub struct ListMarketplaceRevenueSharesInput {
     pub sort_by: ::std::option::Option<crate::types::MarketplaceRevenueShareSortBy>,
     /// <p>The direction to sort results.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
-    /// <p>Filter results to only include marketplace revenue shares created after this timestamp.</p>
+    /// <p>Filter results to marketplace revenue shares created at or after this timestamp (inclusive).</p>
     pub created_after: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Filter results to only include marketplace revenue shares created before this timestamp.</p>
+    /// <p>Filter results to marketplace revenue shares created before this timestamp (exclusive).</p>
     pub created_before: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ListMarketplaceRevenueSharesInput {
@@ -27,13 +29,19 @@ impl ListMarketplaceRevenueSharesInput {
     pub fn catalog(&self) -> ::std::option::Option<&crate::types::CatalogName> {
         self.catalog.as_ref()
     }
-    /// <p>Filter results to only include shares with these product identifiers.</p>
+    /// <p>Filter results to only include these marketplace revenue shares, by ID or ARN. 1 to 100 identifiers. When several filters are sent, a share must match all of them.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.identifiers.is_none()`.
+    pub fn identifiers(&self) -> &[::std::string::String] {
+        self.identifiers.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter results to the marketplace revenue shares that contain any of these products. 1 to 10 product IDs or product ARNs. Shares the caller does not own are never returned.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_ids.is_none()`.
     pub fn product_ids(&self) -> &[::std::string::String] {
         self.product_ids.as_deref().unwrap_or_default()
     }
-    /// <p>Filter results to only include shares with these product codes.</p>
+    /// <p>Filter results to the marketplace revenue shares that contain a product with any of these product codes. 1 to 10 product codes.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.product_codes.is_none()`.
     pub fn product_codes(&self) -> &[::std::string::String] {
@@ -55,11 +63,11 @@ impl ListMarketplaceRevenueSharesInput {
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
-    /// <p>Filter results to only include marketplace revenue shares created after this timestamp.</p>
+    /// <p>Filter results to marketplace revenue shares created at or after this timestamp (inclusive).</p>
     pub fn created_after(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_after.as_ref()
     }
-    /// <p>Filter results to only include marketplace revenue shares created before this timestamp.</p>
+    /// <p>Filter results to marketplace revenue shares created before this timestamp (exclusive).</p>
     pub fn created_before(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_before.as_ref()
     }
@@ -76,6 +84,7 @@ impl ListMarketplaceRevenueSharesInput {
 #[non_exhaustive]
 pub struct ListMarketplaceRevenueSharesInputBuilder {
     pub(crate) catalog: ::std::option::Option<crate::types::CatalogName>,
+    pub(crate) identifiers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) product_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) product_codes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -101,23 +110,43 @@ impl ListMarketplaceRevenueSharesInputBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<crate::types::CatalogName> {
         &self.catalog
     }
+    /// Appends an item to `identifiers`.
+    ///
+    /// To override the contents of this collection use [`set_identifiers`](Self::set_identifiers).
+    ///
+    /// <p>Filter results to only include these marketplace revenue shares, by ID or ARN. 1 to 100 identifiers. When several filters are sent, a share must match all of them.</p>
+    pub fn identifiers(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.identifiers.unwrap_or_default();
+        v.push(input.into());
+        self.identifiers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter results to only include these marketplace revenue shares, by ID or ARN. 1 to 100 identifiers. When several filters are sent, a share must match all of them.</p>
+    pub fn set_identifiers(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.identifiers = input;
+        self
+    }
+    /// <p>Filter results to only include these marketplace revenue shares, by ID or ARN. 1 to 100 identifiers. When several filters are sent, a share must match all of them.</p>
+    pub fn get_identifiers(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.identifiers
+    }
     /// Appends an item to `product_ids`.
     ///
     /// To override the contents of this collection use [`set_product_ids`](Self::set_product_ids).
     ///
-    /// <p>Filter results to only include shares with these product identifiers.</p>
+    /// <p>Filter results to the marketplace revenue shares that contain any of these products. 1 to 10 product IDs or product ARNs. Shares the caller does not own are never returned.</p>
     pub fn product_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.product_ids.unwrap_or_default();
         v.push(input.into());
         self.product_ids = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filter results to only include shares with these product identifiers.</p>
+    /// <p>Filter results to the marketplace revenue shares that contain any of these products. 1 to 10 product IDs or product ARNs. Shares the caller does not own are never returned.</p>
     pub fn set_product_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.product_ids = input;
         self
     }
-    /// <p>Filter results to only include shares with these product identifiers.</p>
+    /// <p>Filter results to the marketplace revenue shares that contain any of these products. 1 to 10 product IDs or product ARNs. Shares the caller does not own are never returned.</p>
     pub fn get_product_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.product_ids
     }
@@ -125,19 +154,19 @@ impl ListMarketplaceRevenueSharesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_product_codes`](Self::set_product_codes).
     ///
-    /// <p>Filter results to only include shares with these product codes.</p>
+    /// <p>Filter results to the marketplace revenue shares that contain a product with any of these product codes. 1 to 10 product codes.</p>
     pub fn product_codes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.product_codes.unwrap_or_default();
         v.push(input.into());
         self.product_codes = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filter results to only include shares with these product codes.</p>
+    /// <p>Filter results to the marketplace revenue shares that contain a product with any of these product codes. 1 to 10 product codes.</p>
     pub fn set_product_codes(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.product_codes = input;
         self
     }
-    /// <p>Filter results to only include shares with these product codes.</p>
+    /// <p>Filter results to the marketplace revenue shares that contain a product with any of these product codes. 1 to 10 product codes.</p>
     pub fn get_product_codes(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.product_codes
     }
@@ -197,31 +226,31 @@ impl ListMarketplaceRevenueSharesInputBuilder {
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         &self.sort_order
     }
-    /// <p>Filter results to only include marketplace revenue shares created after this timestamp.</p>
+    /// <p>Filter results to marketplace revenue shares created at or after this timestamp (inclusive).</p>
     pub fn created_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_after = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filter results to only include marketplace revenue shares created after this timestamp.</p>
+    /// <p>Filter results to marketplace revenue shares created at or after this timestamp (inclusive).</p>
     pub fn set_created_after(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_after = input;
         self
     }
-    /// <p>Filter results to only include marketplace revenue shares created after this timestamp.</p>
+    /// <p>Filter results to marketplace revenue shares created at or after this timestamp (inclusive).</p>
     pub fn get_created_after(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_after
     }
-    /// <p>Filter results to only include marketplace revenue shares created before this timestamp.</p>
+    /// <p>Filter results to marketplace revenue shares created before this timestamp (exclusive).</p>
     pub fn created_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_before = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filter results to only include marketplace revenue shares created before this timestamp.</p>
+    /// <p>Filter results to marketplace revenue shares created before this timestamp (exclusive).</p>
     pub fn set_created_before(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.created_before = input;
         self
     }
-    /// <p>Filter results to only include marketplace revenue shares created before this timestamp.</p>
+    /// <p>Filter results to marketplace revenue shares created before this timestamp (exclusive).</p>
     pub fn get_created_before(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.created_before
     }
@@ -234,6 +263,7 @@ impl ListMarketplaceRevenueSharesInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::list_marketplace_revenue_shares::ListMarketplaceRevenueSharesInput {
             catalog: self.catalog,
+            identifiers: self.identifiers,
             product_ids: self.product_ids,
             product_codes: self.product_codes,
             max_results: self.max_results,

@@ -11,6 +11,8 @@ pub struct UpdateLinkInput {
     pub log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
     /// <p>The timeout value in milliseconds.</p>
     pub timeout_in_millis: ::std::option::Option<i64>,
+    /// <p>A unique, case-sensitive identifier for the request. The SDK generates one when you don't.</p>
+    pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLinkInput {
     /// <p>The unique identifier of the gateway.</p>
@@ -29,6 +31,10 @@ impl UpdateLinkInput {
     pub fn timeout_in_millis(&self) -> ::std::option::Option<i64> {
         self.timeout_in_millis
     }
+    /// <p>A unique, case-sensitive identifier for the request. The SDK generates one when you don't.</p>
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
+    }
 }
 impl UpdateLinkInput {
     /// Creates a new builder-style object to manufacture [`UpdateLinkInput`](crate::operation::update_link::UpdateLinkInput).
@@ -45,6 +51,7 @@ pub struct UpdateLinkInputBuilder {
     pub(crate) link_id: ::std::option::Option<::std::string::String>,
     pub(crate) log_settings: ::std::option::Option<crate::types::LinkLogSettings>,
     pub(crate) timeout_in_millis: ::std::option::Option<i64>,
+    pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateLinkInputBuilder {
     /// <p>The unique identifier of the gateway.</p>
@@ -105,6 +112,20 @@ impl UpdateLinkInputBuilder {
     pub fn get_timeout_in_millis(&self) -> &::std::option::Option<i64> {
         &self.timeout_in_millis
     }
+    /// <p>A unique, case-sensitive identifier for the request. The SDK generates one when you don't.</p>
+    pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A unique, case-sensitive identifier for the request. The SDK generates one when you don't.</p>
+    pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_token = input;
+        self
+    }
+    /// <p>A unique, case-sensitive identifier for the request. The SDK generates one when you don't.</p>
+    pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_token
+    }
     /// Consumes the builder and constructs a [`UpdateLinkInput`](crate::operation::update_link::UpdateLinkInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::update_link::UpdateLinkInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_link::UpdateLinkInput {
@@ -112,6 +133,7 @@ impl UpdateLinkInputBuilder {
             link_id: self.link_id,
             log_settings: self.log_settings,
             timeout_in_millis: self.timeout_in_millis,
+            client_token: self.client_token,
         })
     }
 }

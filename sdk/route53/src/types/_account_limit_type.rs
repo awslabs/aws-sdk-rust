@@ -13,6 +13,7 @@
 /// # let accountlimittype = unimplemented!();
 /// match accountlimittype {
 ///     AccountLimitType::MaxHealthChecksByOwner => { /* ... */ },
+///     AccountLimitType::MaxHealthCheckSourcesByOwner => { /* ... */ },
 ///     AccountLimitType::MaxHostedZonesByOwner => { /* ... */ },
 ///     AccountLimitType::MaxReusableDelegationSetsByOwner => { /* ... */ },
 ///     AccountLimitType::MaxTrafficPoliciesByOwner => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum AccountLimitType {
     #[allow(missing_docs)] // documentation missing in model
     MaxHealthChecksByOwner,
     #[allow(missing_docs)] // documentation missing in model
+    MaxHealthCheckSourcesByOwner,
+    #[allow(missing_docs)] // documentation missing in model
     MaxHostedZonesByOwner,
     #[allow(missing_docs)] // documentation missing in model
     MaxReusableDelegationSetsByOwner,
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for AccountLimitType {
     fn from(s: &str) -> Self {
         match s {
             "MAX_HEALTH_CHECKS_BY_OWNER" => AccountLimitType::MaxHealthChecksByOwner,
+            "MAX_HEALTH_CHECK_SOURCES_BY_OWNER" => AccountLimitType::MaxHealthCheckSourcesByOwner,
             "MAX_HOSTED_ZONES_BY_OWNER" => AccountLimitType::MaxHostedZonesByOwner,
             "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER" => AccountLimitType::MaxReusableDelegationSetsByOwner,
             "MAX_TRAFFIC_POLICIES_BY_OWNER" => AccountLimitType::MaxTrafficPoliciesByOwner,
@@ -83,6 +87,7 @@ impl AccountLimitType {
     pub fn as_str(&self) -> &str {
         match self {
             AccountLimitType::MaxHealthChecksByOwner => "MAX_HEALTH_CHECKS_BY_OWNER",
+            AccountLimitType::MaxHealthCheckSourcesByOwner => "MAX_HEALTH_CHECK_SOURCES_BY_OWNER",
             AccountLimitType::MaxHostedZonesByOwner => "MAX_HOSTED_ZONES_BY_OWNER",
             AccountLimitType::MaxReusableDelegationSetsByOwner => "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER",
             AccountLimitType::MaxTrafficPoliciesByOwner => "MAX_TRAFFIC_POLICIES_BY_OWNER",
@@ -94,6 +99,7 @@ impl AccountLimitType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "MAX_HEALTH_CHECKS_BY_OWNER",
+            "MAX_HEALTH_CHECK_SOURCES_BY_OWNER",
             "MAX_HOSTED_ZONES_BY_OWNER",
             "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER",
             "MAX_TRAFFIC_POLICIES_BY_OWNER",
@@ -122,6 +128,7 @@ impl ::std::fmt::Display for AccountLimitType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             AccountLimitType::MaxHealthChecksByOwner => write!(f, "MAX_HEALTH_CHECKS_BY_OWNER"),
+            AccountLimitType::MaxHealthCheckSourcesByOwner => write!(f, "MAX_HEALTH_CHECK_SOURCES_BY_OWNER"),
             AccountLimitType::MaxHostedZonesByOwner => write!(f, "MAX_HOSTED_ZONES_BY_OWNER"),
             AccountLimitType::MaxReusableDelegationSetsByOwner => write!(f, "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER"),
             AccountLimitType::MaxTrafficPoliciesByOwner => write!(f, "MAX_TRAFFIC_POLICIES_BY_OWNER"),

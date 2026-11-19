@@ -3,15 +3,27 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchDiscoverableRegistryRecordsOutput {
-    /// <p>The registry records that match the search query, ordered by relevance.</p>
+    /// <p>The registry records that match the search query, ordered by relevance. A page can contain fewer than <code>maxResults</code> records, or none, even when the response includes a <code>nextToken</code>. To retrieve every result, continue until the response has no <code>nextToken</code>.</p>
     pub registry_records: ::std::vec::Vec<crate::types::RegistryRecordSummary>,
+    /// <p>Specifies the search type that the service used to rank the returned records. If you omitted <code>searchType</code> in the request, this is the default for the Amazon Web Services Region: <code>HYBRID</code> where semantic search is supported, and <code>KEYWORD</code> elsewhere.</p>
+    pub search_type: ::std::option::Option<crate::types::SearchType>,
+    /// <p>The pagination token to pass to a subsequent request to retrieve the next page of results. This field is absent when there are no more results, or when the search has returned the maximum number of results for its search type.</p>
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SearchDiscoverableRegistryRecordsOutput {
-    /// <p>The registry records that match the search query, ordered by relevance.</p>
+    /// <p>The registry records that match the search query, ordered by relevance. A page can contain fewer than <code>maxResults</code> records, or none, even when the response includes a <code>nextToken</code>. To retrieve every result, continue until the response has no <code>nextToken</code>.</p>
     pub fn registry_records(&self) -> &[crate::types::RegistryRecordSummary] {
         use std::ops::Deref;
         self.registry_records.deref()
+    }
+    /// <p>Specifies the search type that the service used to rank the returned records. If you omitted <code>searchType</code> in the request, this is the default for the Amazon Web Services Region: <code>HYBRID</code> where semantic search is supported, and <code>KEYWORD</code> elsewhere.</p>
+    pub fn search_type(&self) -> ::std::option::Option<&crate::types::SearchType> {
+        self.search_type.as_ref()
+    }
+    /// <p>The pagination token to pass to a subsequent request to retrieve the next page of results. This field is absent when there are no more results, or when the search has returned the maximum number of results for its search type.</p>
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
+        self.next_token.as_deref()
     }
 }
 impl ::aws_types::request_id::RequestId for SearchDiscoverableRegistryRecordsOutput {
@@ -31,6 +43,8 @@ impl SearchDiscoverableRegistryRecordsOutput {
 #[non_exhaustive]
 pub struct SearchDiscoverableRegistryRecordsOutputBuilder {
     pub(crate) registry_records: ::std::option::Option<::std::vec::Vec<crate::types::RegistryRecordSummary>>,
+    pub(crate) search_type: ::std::option::Option<crate::types::SearchType>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl SearchDiscoverableRegistryRecordsOutputBuilder {
@@ -38,21 +52,49 @@ impl SearchDiscoverableRegistryRecordsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_registry_records`](Self::set_registry_records).
     ///
-    /// <p>The registry records that match the search query, ordered by relevance.</p>
+    /// <p>The registry records that match the search query, ordered by relevance. A page can contain fewer than <code>maxResults</code> records, or none, even when the response includes a <code>nextToken</code>. To retrieve every result, continue until the response has no <code>nextToken</code>.</p>
     pub fn registry_records(mut self, input: crate::types::RegistryRecordSummary) -> Self {
         let mut v = self.registry_records.unwrap_or_default();
         v.push(input);
         self.registry_records = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The registry records that match the search query, ordered by relevance.</p>
+    /// <p>The registry records that match the search query, ordered by relevance. A page can contain fewer than <code>maxResults</code> records, or none, even when the response includes a <code>nextToken</code>. To retrieve every result, continue until the response has no <code>nextToken</code>.</p>
     pub fn set_registry_records(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegistryRecordSummary>>) -> Self {
         self.registry_records = input;
         self
     }
-    /// <p>The registry records that match the search query, ordered by relevance.</p>
+    /// <p>The registry records that match the search query, ordered by relevance. A page can contain fewer than <code>maxResults</code> records, or none, even when the response includes a <code>nextToken</code>. To retrieve every result, continue until the response has no <code>nextToken</code>.</p>
     pub fn get_registry_records(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegistryRecordSummary>> {
         &self.registry_records
+    }
+    /// <p>Specifies the search type that the service used to rank the returned records. If you omitted <code>searchType</code> in the request, this is the default for the Amazon Web Services Region: <code>HYBRID</code> where semantic search is supported, and <code>KEYWORD</code> elsewhere.</p>
+    pub fn search_type(mut self, input: crate::types::SearchType) -> Self {
+        self.search_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the search type that the service used to rank the returned records. If you omitted <code>searchType</code> in the request, this is the default for the Amazon Web Services Region: <code>HYBRID</code> where semantic search is supported, and <code>KEYWORD</code> elsewhere.</p>
+    pub fn set_search_type(mut self, input: ::std::option::Option<crate::types::SearchType>) -> Self {
+        self.search_type = input;
+        self
+    }
+    /// <p>Specifies the search type that the service used to rank the returned records. If you omitted <code>searchType</code> in the request, this is the default for the Amazon Web Services Region: <code>HYBRID</code> where semantic search is supported, and <code>KEYWORD</code> elsewhere.</p>
+    pub fn get_search_type(&self) -> &::std::option::Option<crate::types::SearchType> {
+        &self.search_type
+    }
+    /// <p>The pagination token to pass to a subsequent request to retrieve the next page of results. This field is absent when there are no more results, or when the search has returned the maximum number of results for its search type.</p>
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The pagination token to pass to a subsequent request to retrieve the next page of results. This field is absent when there are no more results, or when the search has returned the maximum number of results for its search type.</p>
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.next_token = input;
+        self
+    }
+    /// <p>The pagination token to pass to a subsequent request to retrieve the next page of results. This field is absent when there are no more results, or when the search has returned the maximum number of results for its search type.</p>
+    pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
+        &self.next_token
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -80,6 +122,8 @@ impl SearchDiscoverableRegistryRecordsOutputBuilder {
                         "registry_records was not specified but it is required when building SearchDiscoverableRegistryRecordsOutput",
                     )
                 })?,
+                search_type: self.search_type,
+                next_token: self.next_token,
                 _request_id: self._request_id,
             },
         )

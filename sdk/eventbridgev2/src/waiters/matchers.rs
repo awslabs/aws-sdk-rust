@@ -118,3 +118,59 @@ pub(crate) fn match_describe_event_bus_1cce2c05524fb92d4(
     }
     false
 }
+
+/// Matcher union: {"output":{"path":"SubscriberDetails.MskDetails.ConnectivityState","expected":"PROVISION_FAILED","comparator":"stringEquals"}}
+pub(crate) fn match_describe_subscriber_a923ac27adb994b9d(
+    _result: ::std::result::Result<
+        &crate::operation::describe_subscriber::DescribeSubscriberOutput,
+        &crate::operation::describe_subscriber::DescribeSubscriberError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_subscriber::DescribeSubscriberOutput,
+    ) -> ::std::option::Option<&'a crate::types::ConnectivityState> {
+        let _fld_1 = _output.subscriber_details.as_ref()?;
+        let _fld_2 = _fld_1.msk_details.as_ref()?;
+        let _fld_3 = _fld_2.connectivity_state.as_ref()?;
+        ::std::option::Option::Some(_fld_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "PROVISION_FAILED";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}
+
+/// Matcher union: {"output":{"path":"SubscriberDetails.MskDetails.ConnectivityState","expected":"ACTIVE","comparator":"stringEquals"}}
+pub(crate) fn match_describe_subscriber_8e4427049469837f5(
+    _result: ::std::result::Result<
+        &crate::operation::describe_subscriber::DescribeSubscriberOutput,
+        &crate::operation::describe_subscriber::DescribeSubscriberError,
+    >,
+) -> bool {
+    fn path_traversal<'a>(
+        _output: &'a crate::operation::describe_subscriber::DescribeSubscriberOutput,
+    ) -> ::std::option::Option<&'a crate::types::ConnectivityState> {
+        let _fld_1 = _output.subscriber_details.as_ref()?;
+        let _fld_2 = _fld_1.msk_details.as_ref()?;
+        let _fld_3 = _fld_2.connectivity_state.as_ref()?;
+        ::std::option::Option::Some(_fld_3)
+    }
+    _result
+        .as_ref()
+        .ok()
+        .and_then(|output| path_traversal(output))
+        .map(|value| {
+            let _tmp_2 = value.as_str();
+            let right = "ACTIVE";
+            let _cmp_1 = _tmp_2 == right;
+            _cmp_1
+        })
+        .unwrap_or_default()
+}

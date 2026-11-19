@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum EngagementContextPayload {
+    /// <p>The customer account context for account planning. This field appears only when the context type is <code>CustomerAccount</code>.</p>
+    CustomerAccount(crate::types::CustomerAccountContext),
     /// <p>Contains detailed information about a customer project when the context type is "CustomerProject". This field is present only when the Type in EngagementContextDetails is set to "CustomerProject".</p>
     CustomerProject(crate::types::CustomerProjectsContext),
     /// <p>Contains detailed information about a lead when the context type is "Lead". This field is present only when the Type in EngagementContextDetails is set to "Lead".</p>
@@ -21,6 +23,19 @@ pub enum EngagementContextPayload {
     Unknown,
 }
 impl EngagementContextPayload {
+    /// Tries to convert the enum instance into [`CustomerAccount`](crate::types::EngagementContextPayload::CustomerAccount), extracting the inner [`CustomerAccountContext`](crate::types::CustomerAccountContext).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_customer_account(&self) -> ::std::result::Result<&crate::types::CustomerAccountContext, &Self> {
+        if let EngagementContextPayload::CustomerAccount(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`CustomerAccount`](crate::types::EngagementContextPayload::CustomerAccount).
+    pub fn is_customer_account(&self) -> bool {
+        self.as_customer_account().is_ok()
+    }
     /// Tries to convert the enum instance into [`CustomerProject`](crate::types::EngagementContextPayload::CustomerProject), extracting the inner [`CustomerProjectsContext`](crate::types::CustomerProjectsContext).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_customer_project(&self) -> ::std::result::Result<&crate::types::CustomerProjectsContext, &Self> {

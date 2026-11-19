@@ -4,15 +4,21 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CodeRemediationTaskDetails {
-    /// <p>The name of the repository where the remediation was applied.</p>
+    /// <p>The name of an associated repository where the remediation was applied.</p>
     pub repo_name: ::std::option::Option<::std::string::String>,
     /// <p>The link to the code diff for the remediation.</p>
     pub code_diff_link: ::std::option::Option<::std::string::String>,
     /// <p>The link to the pull request created for the remediation.</p>
     pub pull_request_link: ::std::option::Option<::std::string::String>,
+    /// <p>The current status of the code remediation task for the particular repository.</p>
+    pub status: ::std::option::Option<crate::types::CodeRemediationJobStatus>,
+    /// <p>A category classifier if a repository's code remediation fails.</p>
+    pub status_code: ::std::option::Option<::std::string::String>,
+    /// <p>A descriptive reason when a repository's code remediation fails.</p>
+    pub status_reason: ::std::option::Option<::std::string::String>,
 }
 impl CodeRemediationTaskDetails {
-    /// <p>The name of the repository where the remediation was applied.</p>
+    /// <p>The name of an associated repository where the remediation was applied.</p>
     pub fn repo_name(&self) -> ::std::option::Option<&str> {
         self.repo_name.as_deref()
     }
@@ -23,6 +29,18 @@ impl CodeRemediationTaskDetails {
     /// <p>The link to the pull request created for the remediation.</p>
     pub fn pull_request_link(&self) -> ::std::option::Option<&str> {
         self.pull_request_link.as_deref()
+    }
+    /// <p>The current status of the code remediation task for the particular repository.</p>
+    pub fn status(&self) -> ::std::option::Option<&crate::types::CodeRemediationJobStatus> {
+        self.status.as_ref()
+    }
+    /// <p>A category classifier if a repository's code remediation fails.</p>
+    pub fn status_code(&self) -> ::std::option::Option<&str> {
+        self.status_code.as_deref()
+    }
+    /// <p>A descriptive reason when a repository's code remediation fails.</p>
+    pub fn status_reason(&self) -> ::std::option::Option<&str> {
+        self.status_reason.as_deref()
     }
 }
 impl CodeRemediationTaskDetails {
@@ -39,19 +57,22 @@ pub struct CodeRemediationTaskDetailsBuilder {
     pub(crate) repo_name: ::std::option::Option<::std::string::String>,
     pub(crate) code_diff_link: ::std::option::Option<::std::string::String>,
     pub(crate) pull_request_link: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::CodeRemediationJobStatus>,
+    pub(crate) status_code: ::std::option::Option<::std::string::String>,
+    pub(crate) status_reason: ::std::option::Option<::std::string::String>,
 }
 impl CodeRemediationTaskDetailsBuilder {
-    /// <p>The name of the repository where the remediation was applied.</p>
+    /// <p>The name of an associated repository where the remediation was applied.</p>
     pub fn repo_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.repo_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The name of the repository where the remediation was applied.</p>
+    /// <p>The name of an associated repository where the remediation was applied.</p>
     pub fn set_repo_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.repo_name = input;
         self
     }
-    /// <p>The name of the repository where the remediation was applied.</p>
+    /// <p>The name of an associated repository where the remediation was applied.</p>
     pub fn get_repo_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.repo_name
     }
@@ -83,12 +104,57 @@ impl CodeRemediationTaskDetailsBuilder {
     pub fn get_pull_request_link(&self) -> &::std::option::Option<::std::string::String> {
         &self.pull_request_link
     }
+    /// <p>The current status of the code remediation task for the particular repository.</p>
+    pub fn status(mut self, input: crate::types::CodeRemediationJobStatus) -> Self {
+        self.status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of the code remediation task for the particular repository.</p>
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::CodeRemediationJobStatus>) -> Self {
+        self.status = input;
+        self
+    }
+    /// <p>The current status of the code remediation task for the particular repository.</p>
+    pub fn get_status(&self) -> &::std::option::Option<crate::types::CodeRemediationJobStatus> {
+        &self.status
+    }
+    /// <p>A category classifier if a repository's code remediation fails.</p>
+    pub fn status_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_code = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A category classifier if a repository's code remediation fails.</p>
+    pub fn set_status_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_code = input;
+        self
+    }
+    /// <p>A category classifier if a repository's code remediation fails.</p>
+    pub fn get_status_code(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_code
+    }
+    /// <p>A descriptive reason when a repository's code remediation fails.</p>
+    pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status_reason = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>A descriptive reason when a repository's code remediation fails.</p>
+    pub fn set_status_reason(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.status_reason = input;
+        self
+    }
+    /// <p>A descriptive reason when a repository's code remediation fails.</p>
+    pub fn get_status_reason(&self) -> &::std::option::Option<::std::string::String> {
+        &self.status_reason
+    }
     /// Consumes the builder and constructs a [`CodeRemediationTaskDetails`](crate::types::CodeRemediationTaskDetails).
     pub fn build(self) -> crate::types::CodeRemediationTaskDetails {
         crate::types::CodeRemediationTaskDetails {
             repo_name: self.repo_name,
             code_diff_link: self.code_diff_link,
             pull_request_link: self.pull_request_link,
+            status: self.status,
+            status_code: self.status_code,
+            status_reason: self.status_reason,
         }
     }
 }

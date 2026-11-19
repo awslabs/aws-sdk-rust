@@ -13,6 +13,8 @@ pub struct GetRequesterGatewayOutput {
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp of when the requester gateway was updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    pub error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     /// <p>The unique identifier of the Virtual Private Cloud (VPC).</p>
     pub vpc_id: ::std::string::String,
     /// <p>The unique identifiers of the subnets.</p>
@@ -50,6 +52,12 @@ impl GetRequesterGatewayOutput {
     /// <p>The timestamp of when the requester gateway was updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
+    }
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_details.is_none()`.
+    pub fn error_details(&self) -> &[crate::types::ErrorDetail] {
+        self.error_details.as_deref().unwrap_or_default()
     }
     /// <p>The unique identifier of the Virtual Private Cloud (VPC).</p>
     pub fn vpc_id(&self) -> &str {
@@ -105,6 +113,7 @@ pub struct GetRequesterGatewayOutputBuilder {
     pub(crate) description: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) error_details: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) subnet_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -186,6 +195,26 @@ impl GetRequesterGatewayOutputBuilder {
     /// <p>The timestamp of when the requester gateway was updated.</p>
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
+    }
+    /// Appends an item to `error_details`.
+    ///
+    /// To override the contents of this collection use [`set_error_details`](Self::set_error_details).
+    ///
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    pub fn error_details(mut self, input: crate::types::ErrorDetail) -> Self {
+        let mut v = self.error_details.unwrap_or_default();
+        v.push(input);
+        self.error_details = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    pub fn set_error_details(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>>) -> Self {
+        self.error_details = input;
+        self
+    }
+    /// <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
+    pub fn get_error_details(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ErrorDetail>> {
+        &self.error_details
     }
     /// <p>The unique identifier of the Virtual Private Cloud (VPC).</p>
     /// This field is required.
@@ -342,6 +371,7 @@ impl GetRequesterGatewayOutputBuilder {
             description: self.description,
             created_at: self.created_at,
             updated_at: self.updated_at,
+            error_details: self.error_details,
             vpc_id: self.vpc_id.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "vpc_id",

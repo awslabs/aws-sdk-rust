@@ -311,6 +311,16 @@ pub fn de_assume_role_with_web_identity(
                 builder = builder.set_session_token_size(var_9);
             }
             ,
+            s if s.matches("TrustedIdentityPropagationContext") /* TrustedIdentityPropagationContext com.amazonaws.sts.synthetic#AssumeRoleWithWebIdentityOutput$TrustedIdentityPropagationContext */ =>  {
+                let var_10 =
+                    Some(
+                        crate::protocol_serde::shape_trusted_identity_propagation_context::de_trusted_identity_propagation_context(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_trusted_identity_propagation_context(var_10);
+            }
+            ,
             _ => {}
         }
         }

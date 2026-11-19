@@ -28,6 +28,9 @@ pub mod get_delegated_access_token;
 /// Types for the `GetFederationToken` operation.
 pub mod get_federation_token;
 
+/// Types for the `GetScopedCredentials` operation.
+pub mod get_scoped_credentials;
+
 /// Types for the `GetSessionToken` operation.
 pub mod get_session_token;
 

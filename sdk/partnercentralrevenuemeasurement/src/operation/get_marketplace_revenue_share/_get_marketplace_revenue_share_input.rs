@@ -5,23 +5,23 @@
 pub struct GetMarketplaceRevenueShareInput {
     /// <p>The catalog that the marketplace revenue share belongs to.</p>
     pub catalog: ::std::option::Option<crate::types::CatalogName>,
-    /// <p>The AWS Marketplace product identifier of the revenue share to retrieve.</p>
-    pub product_id: ::std::option::Option<::std::string::String>,
+    /// <p>The marketplace revenue share to retrieve, by ID (mrs-...) or ARN.</p>
+    pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The revision of the marketplace revenue share to retrieve. Omit to return the latest revision.</p>
-    pub revision: ::std::option::Option<i32>,
+    pub revision: ::std::option::Option<::std::string::String>,
 }
 impl GetMarketplaceRevenueShareInput {
     /// <p>The catalog that the marketplace revenue share belongs to.</p>
     pub fn catalog(&self) -> ::std::option::Option<&crate::types::CatalogName> {
         self.catalog.as_ref()
     }
-    /// <p>The AWS Marketplace product identifier of the revenue share to retrieve.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
-        self.product_id.as_deref()
+    /// <p>The marketplace revenue share to retrieve, by ID (mrs-...) or ARN.</p>
+    pub fn identifier(&self) -> ::std::option::Option<&str> {
+        self.identifier.as_deref()
     }
     /// <p>The revision of the marketplace revenue share to retrieve. Omit to return the latest revision.</p>
-    pub fn revision(&self) -> ::std::option::Option<i32> {
-        self.revision
+    pub fn revision(&self) -> ::std::option::Option<&str> {
+        self.revision.as_deref()
     }
 }
 impl GetMarketplaceRevenueShareInput {
@@ -36,8 +36,8 @@ impl GetMarketplaceRevenueShareInput {
 #[non_exhaustive]
 pub struct GetMarketplaceRevenueShareInputBuilder {
     pub(crate) catalog: ::std::option::Option<crate::types::CatalogName>,
-    pub(crate) product_id: ::std::option::Option<::std::string::String>,
-    pub(crate) revision: ::std::option::Option<i32>,
+    pub(crate) identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) revision: ::std::option::Option<::std::string::String>,
 }
 impl GetMarketplaceRevenueShareInputBuilder {
     /// <p>The catalog that the marketplace revenue share belongs to.</p>
@@ -55,33 +55,33 @@ impl GetMarketplaceRevenueShareInputBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<crate::types::CatalogName> {
         &self.catalog
     }
-    /// <p>The AWS Marketplace product identifier of the revenue share to retrieve.</p>
+    /// <p>The marketplace revenue share to retrieve, by ID (mrs-...) or ARN.</p>
     /// This field is required.
-    pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.product_id = ::std::option::Option::Some(input.into());
+    pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Marketplace product identifier of the revenue share to retrieve.</p>
-    pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
+    /// <p>The marketplace revenue share to retrieve, by ID (mrs-...) or ARN.</p>
+    pub fn set_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.identifier = input;
         self
     }
-    /// <p>The AWS Marketplace product identifier of the revenue share to retrieve.</p>
-    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.product_id
+    /// <p>The marketplace revenue share to retrieve, by ID (mrs-...) or ARN.</p>
+    pub fn get_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.identifier
     }
     /// <p>The revision of the marketplace revenue share to retrieve. Omit to return the latest revision.</p>
-    pub fn revision(mut self, input: i32) -> Self {
-        self.revision = ::std::option::Option::Some(input);
+    pub fn revision(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.revision = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The revision of the marketplace revenue share to retrieve. Omit to return the latest revision.</p>
-    pub fn set_revision(mut self, input: ::std::option::Option<i32>) -> Self {
+    pub fn set_revision(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.revision = input;
         self
     }
     /// <p>The revision of the marketplace revenue share to retrieve. Omit to return the latest revision.</p>
-    pub fn get_revision(&self) -> &::std::option::Option<i32> {
+    pub fn get_revision(&self) -> &::std::option::Option<::std::string::String> {
         &self.revision
     }
     /// Consumes the builder and constructs a [`GetMarketplaceRevenueShareInput`](crate::operation::get_marketplace_revenue_share::GetMarketplaceRevenueShareInput).
@@ -93,7 +93,7 @@ impl GetMarketplaceRevenueShareInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::get_marketplace_revenue_share::GetMarketplaceRevenueShareInput {
             catalog: self.catalog,
-            product_id: self.product_id,
+            identifier: self.identifier,
             revision: self.revision,
         })
     }

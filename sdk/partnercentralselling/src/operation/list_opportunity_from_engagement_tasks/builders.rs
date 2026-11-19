@@ -142,17 +142,17 @@ impl ListOpportunityFromEngagementTasksFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// <p>Defines the sorting parameters for listing tasks. This structure allows for specifying the field to sort by and the order of sorting.</p>
+    /// <p>Specifies how to sort the returned tasks. You can sort by the time that the tasks started.</p>
     pub fn sort(mut self, input: crate::types::ListTasksSortBase) -> Self {
         self.inner = self.inner.sort(input);
         self
     }
-    /// <p>Defines the sorting parameters for listing tasks. This structure allows for specifying the field to sort by and the order of sorting.</p>
+    /// <p>Specifies how to sort the returned tasks. You can sort by the time that the tasks started.</p>
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::ListTasksSortBase>) -> Self {
         self.inner = self.inner.set_sort(input);
         self
     }
-    /// <p>Defines the sorting parameters for listing tasks. This structure allows for specifying the field to sort by and the order of sorting.</p>
+    /// <p>Specifies how to sort the returned tasks. You can sort by the time that the tasks started.</p>
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::ListTasksSortBase> {
         self.inner.get_sort()
     }

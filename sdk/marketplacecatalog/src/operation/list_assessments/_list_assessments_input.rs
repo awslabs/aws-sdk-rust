@@ -5,7 +5,7 @@
 pub struct ListAssessmentsInput {
     /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code></p>
     pub catalog: ::std::option::Option<::std::string::String>,
-    /// <p>The unique identifier of a framework. When specified, only assessments performed against this framework are returned. For example, <code>AMISecurity</code>.</p>
+    /// <p>The unique identifier of a framework. When specified, only assessments performed against this framework are returned. For example, <code>AMISecurity</code>. Required when you use <code>EntityIds</code> in <code>AssessmentTargetFilter</code>.</p>
     pub framework_id: ::std::option::Option<::std::string::String>,
     /// <p>Filters the list of assessments to those performed against a specific entity or change set.</p>
     pub assessment_target_filter: ::std::option::Option<crate::types::AssessmentTargetFilter>,
@@ -21,7 +21,7 @@ impl ListAssessmentsInput {
     pub fn catalog(&self) -> ::std::option::Option<&str> {
         self.catalog.as_deref()
     }
-    /// <p>The unique identifier of a framework. When specified, only assessments performed against this framework are returned. For example, <code>AMISecurity</code>.</p>
+    /// <p>The unique identifier of a framework. When specified, only assessments performed against this framework are returned. For example, <code>AMISecurity</code>. Required when you use <code>EntityIds</code> in <code>AssessmentTargetFilter</code>.</p>
     pub fn framework_id(&self) -> ::std::option::Option<&str> {
         self.framework_id.as_deref()
     }
@@ -76,17 +76,17 @@ impl ListAssessmentsInputBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog
     }
-    /// <p>The unique identifier of a framework. When specified, only assessments performed against this framework are returned. For example, <code>AMISecurity</code>.</p>
+    /// <p>The unique identifier of a framework. When specified, only assessments performed against this framework are returned. For example, <code>AMISecurity</code>. Required when you use <code>EntityIds</code> in <code>AssessmentTargetFilter</code>.</p>
     pub fn framework_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.framework_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The unique identifier of a framework. When specified, only assessments performed against this framework are returned. For example, <code>AMISecurity</code>.</p>
+    /// <p>The unique identifier of a framework. When specified, only assessments performed against this framework are returned. For example, <code>AMISecurity</code>. Required when you use <code>EntityIds</code> in <code>AssessmentTargetFilter</code>.</p>
     pub fn set_framework_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.framework_id = input;
         self
     }
-    /// <p>The unique identifier of a framework. When specified, only assessments performed against this framework are returned. For example, <code>AMISecurity</code>.</p>
+    /// <p>The unique identifier of a framework. When specified, only assessments performed against this framework are returned. For example, <code>AMISecurity</code>. Required when you use <code>EntityIds</code> in <code>AssessmentTargetFilter</code>.</p>
     pub fn get_framework_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.framework_id
     }

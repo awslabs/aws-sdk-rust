@@ -10,125 +10,131 @@ pub fn ser_service_configuration(
             crate::protocol_serde::shape_source_aws_configuration::ser_source_aws_configuration(&mut object_1, inner)?;
             object_1.finish();
         }
+        crate::types::ServiceConfiguration::SourceAwsOrg(inner) => {
+            #[allow(unused_mut)]
+            let mut object_2 = object_7.key("sourceAwsOrg").start_object();
+            crate::protocol_serde::shape_source_aws_org_configuration::ser_source_aws_org_configuration(&mut object_2, inner)?;
+            object_2.finish();
+        }
         crate::types::ServiceConfiguration::Aws(inner) => {
             #[allow(unused_mut)]
-            let mut object_2 = object_7.key("aws").start_object();
-            crate::protocol_serde::shape_aws_configuration::ser_aws_configuration(&mut object_2, inner)?;
-            object_2.finish();
+            let mut object_3 = object_7.key("aws").start_object();
+            crate::protocol_serde::shape_aws_configuration::ser_aws_configuration(&mut object_3, inner)?;
+            object_3.finish();
         }
         crate::types::ServiceConfiguration::Github(inner) => {
             #[allow(unused_mut)]
-            let mut object_3 = object_7.key("github").start_object();
-            crate::protocol_serde::shape_git_hub_configuration::ser_git_hub_configuration(&mut object_3, inner)?;
-            object_3.finish();
+            let mut object_4 = object_7.key("github").start_object();
+            crate::protocol_serde::shape_git_hub_configuration::ser_git_hub_configuration(&mut object_4, inner)?;
+            object_4.finish();
         }
         crate::types::ServiceConfiguration::Slack(inner) => {
             #[allow(unused_mut)]
-            let mut object_4 = object_7.key("slack").start_object();
-            crate::protocol_serde::shape_slack_configuration::ser_slack_configuration(&mut object_4, inner)?;
-            object_4.finish();
+            let mut object_5 = object_7.key("slack").start_object();
+            crate::protocol_serde::shape_slack_configuration::ser_slack_configuration(&mut object_5, inner)?;
+            object_5.finish();
         }
         crate::types::ServiceConfiguration::Dynatrace(inner) => {
             #[allow(unused_mut)]
-            let mut object_5 = object_7.key("dynatrace").start_object();
-            crate::protocol_serde::shape_dynatrace_configuration::ser_dynatrace_configuration(&mut object_5, inner)?;
-            object_5.finish();
+            let mut object_6 = object_7.key("dynatrace").start_object();
+            crate::protocol_serde::shape_dynatrace_configuration::ser_dynatrace_configuration(&mut object_6, inner)?;
+            object_6.finish();
         }
         crate::types::ServiceConfiguration::Servicenow(inner) => {
             #[allow(unused_mut)]
-            let mut object_6 = object_7.key("servicenow").start_object();
-            crate::protocol_serde::shape_service_now_configuration::ser_service_now_configuration(&mut object_6, inner)?;
-            object_6.finish();
+            let mut object_7 = object_7.key("servicenow").start_object();
+            crate::protocol_serde::shape_service_now_configuration::ser_service_now_configuration(&mut object_7, inner)?;
+            object_7.finish();
         }
         crate::types::ServiceConfiguration::Mcpservernewrelic(inner) => {
             #[allow(unused_mut)]
-            let mut object_7 = object_7.key("mcpservernewrelic").start_object();
-            crate::protocol_serde::shape_mcp_server_new_relic_configuration::ser_mcp_server_new_relic_configuration(&mut object_7, inner)?;
-            object_7.finish();
+            let mut object_8 = object_7.key("mcpservernewrelic").start_object();
+            crate::protocol_serde::shape_mcp_server_new_relic_configuration::ser_mcp_server_new_relic_configuration(&mut object_8, inner)?;
+            object_8.finish();
         }
         crate::types::ServiceConfiguration::Mcpserverdatadog(inner) => {
             #[allow(unused_mut)]
-            let mut object_8 = object_7.key("mcpserverdatadog").start_object();
-            crate::protocol_serde::shape_mcp_server_datadog_configuration::ser_mcp_server_datadog_configuration(&mut object_8, inner)?;
-            object_8.finish();
+            let mut object_9 = object_7.key("mcpserverdatadog").start_object();
+            crate::protocol_serde::shape_mcp_server_datadog_configuration::ser_mcp_server_datadog_configuration(&mut object_9, inner)?;
+            object_9.finish();
         }
         crate::types::ServiceConfiguration::Mcpserver(inner) => {
             #[allow(unused_mut)]
-            let mut object_9 = object_7.key("mcpserver").start_object();
-            crate::protocol_serde::shape_mcp_server_configuration::ser_mcp_server_configuration(&mut object_9, inner)?;
-            object_9.finish();
+            let mut object_10 = object_7.key("mcpserver").start_object();
+            crate::protocol_serde::shape_mcp_server_configuration::ser_mcp_server_configuration(&mut object_10, inner)?;
+            object_10.finish();
         }
         crate::types::ServiceConfiguration::Gitlab(inner) => {
             #[allow(unused_mut)]
-            let mut object_10 = object_7.key("gitlab").start_object();
-            crate::protocol_serde::shape_git_lab_configuration::ser_git_lab_configuration(&mut object_10, inner)?;
-            object_10.finish();
+            let mut object_11 = object_7.key("gitlab").start_object();
+            crate::protocol_serde::shape_git_lab_configuration::ser_git_lab_configuration(&mut object_11, inner)?;
+            object_11.finish();
         }
         crate::types::ServiceConfiguration::Mcpserversplunk(inner) => {
             #[allow(unused_mut)]
-            let mut object_11 = object_7.key("mcpserversplunk").start_object();
-            crate::protocol_serde::shape_mcp_server_splunk_configuration::ser_mcp_server_splunk_configuration(&mut object_11, inner)?;
-            object_11.finish();
+            let mut object_12 = object_7.key("mcpserversplunk").start_object();
+            crate::protocol_serde::shape_mcp_server_splunk_configuration::ser_mcp_server_splunk_configuration(&mut object_12, inner)?;
+            object_12.finish();
         }
         crate::types::ServiceConfiguration::EventChannel(inner) => {
             #[allow(unused_mut)]
-            let mut object_12 = object_7.key("eventChannel").start_object();
-            crate::protocol_serde::shape_event_channel_configuration::ser_event_channel_configuration(&mut object_12, inner)?;
-            object_12.finish();
+            let mut object_13 = object_7.key("eventChannel").start_object();
+            crate::protocol_serde::shape_event_channel_configuration::ser_event_channel_configuration(&mut object_13, inner)?;
+            object_13.finish();
         }
         crate::types::ServiceConfiguration::Azure(inner) => {
             #[allow(unused_mut)]
-            let mut object_13 = object_7.key("azure").start_object();
-            crate::protocol_serde::shape_azure_configuration::ser_azure_configuration(&mut object_13, inner)?;
-            object_13.finish();
+            let mut object_14 = object_7.key("azure").start_object();
+            crate::protocol_serde::shape_azure_configuration::ser_azure_configuration(&mut object_14, inner)?;
+            object_14.finish();
         }
         crate::types::ServiceConfiguration::Azuredevops(inner) => {
             #[allow(unused_mut)]
-            let mut object_14 = object_7.key("azuredevops").start_object();
-            crate::protocol_serde::shape_azure_dev_ops_configuration::ser_azure_dev_ops_configuration(&mut object_14, inner)?;
-            object_14.finish();
+            let mut object_15 = object_7.key("azuredevops").start_object();
+            crate::protocol_serde::shape_azure_dev_ops_configuration::ser_azure_dev_ops_configuration(&mut object_15, inner)?;
+            object_15.finish();
         }
         crate::types::ServiceConfiguration::Mcpservergrafana(inner) => {
             #[allow(unused_mut)]
-            let mut object_15 = object_7.key("mcpservergrafana").start_object();
-            crate::protocol_serde::shape_mcp_server_grafana_configuration::ser_mcp_server_grafana_configuration(&mut object_15, inner)?;
-            object_15.finish();
+            let mut object_16 = object_7.key("mcpservergrafana").start_object();
+            crate::protocol_serde::shape_mcp_server_grafana_configuration::ser_mcp_server_grafana_configuration(&mut object_16, inner)?;
+            object_16.finish();
         }
         crate::types::ServiceConfiguration::Pagerduty(inner) => {
             #[allow(unused_mut)]
-            let mut object_16 = object_7.key("pagerduty").start_object();
-            crate::protocol_serde::shape_pager_duty_configuration::ser_pager_duty_configuration(&mut object_16, inner)?;
-            object_16.finish();
+            let mut object_17 = object_7.key("pagerduty").start_object();
+            crate::protocol_serde::shape_pager_duty_configuration::ser_pager_duty_configuration(&mut object_17, inner)?;
+            object_17.finish();
         }
         crate::types::ServiceConfiguration::Mcpserversigv4(inner) => {
             #[allow(unused_mut)]
-            let mut object_17 = object_7.key("mcpserversigv4").start_object();
-            crate::protocol_serde::shape_mcp_server_sigv4_configuration::ser_mcp_server_sigv4_configuration(&mut object_17, inner)?;
-            object_17.finish();
+            let mut object_18 = object_7.key("mcpserversigv4").start_object();
+            crate::protocol_serde::shape_mcp_server_sigv4_configuration::ser_mcp_server_sigv4_configuration(&mut object_18, inner)?;
+            object_18.finish();
         }
         crate::types::ServiceConfiguration::Remoteagent(inner) => {
             #[allow(unused_mut)]
-            let mut object_18 = object_7.key("remoteagent").start_object();
-            crate::protocol_serde::shape_remote_agent_configuration::ser_remote_agent_configuration(&mut object_18, inner)?;
-            object_18.finish();
+            let mut object_19 = object_7.key("remoteagent").start_object();
+            crate::protocol_serde::shape_remote_agent_configuration::ser_remote_agent_configuration(&mut object_19, inner)?;
+            object_19.finish();
         }
         crate::types::ServiceConfiguration::Remoteagentsigv4(inner) => {
             #[allow(unused_mut)]
-            let mut object_19 = object_7.key("remoteagentsigv4").start_object();
-            crate::protocol_serde::shape_remote_agent_sigv4_configuration::ser_remote_agent_sigv4_configuration(&mut object_19, inner)?;
-            object_19.finish();
+            let mut object_20 = object_7.key("remoteagentsigv4").start_object();
+            crate::protocol_serde::shape_remote_agent_sigv4_configuration::ser_remote_agent_sigv4_configuration(&mut object_20, inner)?;
+            object_20.finish();
         }
         crate::types::ServiceConfiguration::Msteams(inner) => {
             #[allow(unused_mut)]
-            let mut object_20 = object_7.key("msteams").start_object();
-            crate::protocol_serde::shape_ms_teams_configuration::ser_ms_teams_configuration(&mut object_20, inner)?;
-            object_20.finish();
+            let mut object_21 = object_7.key("msteams").start_object();
+            crate::protocol_serde::shape_ms_teams_configuration::ser_ms_teams_configuration(&mut object_21, inner)?;
+            object_21.finish();
         }
         crate::types::ServiceConfiguration::ReleaseManagement(inner) => {
             #[allow(unused_mut)]
-            let mut object_21 = object_7.key("releaseManagement").start_object();
-            crate::protocol_serde::shape_release_management_configuration::ser_release_management_configuration(&mut object_21, inner)?;
-            object_21.finish();
+            let mut object_22 = object_7.key("releaseManagement").start_object();
+            crate::protocol_serde::shape_release_management_configuration::ser_release_management_configuration(&mut object_22, inner)?;
+            object_22.finish();
         }
         crate::types::ServiceConfiguration::Unknown => {
             return Err(::aws_smithy_types::error::operation::SerializationError::unknown_variant(
@@ -180,6 +186,12 @@ where
                             crate::protocol_serde::shape_source_aws_configuration::de_source_aws_configuration(tokens, _value, depth + 1)?
                                 .ok_or_else(|| {
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sourceAws' cannot be null")
+                                })?,
+                        )),
+                        "sourceAwsOrg" => Some(crate::types::ServiceConfiguration::SourceAwsOrg(
+                            crate::protocol_serde::shape_source_aws_org_configuration::de_source_aws_org_configuration(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'sourceAwsOrg' cannot be null")
                                 })?,
                         )),
                         "aws" => Some(crate::types::ServiceConfiguration::Aws(

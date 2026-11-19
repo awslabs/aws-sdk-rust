@@ -543,6 +543,8 @@ mod update_group;
 
 mod update_login_profile;
 
+mod update_open_id_connect_provider;
+
 mod update_open_id_connect_provider_thumbprint;
 
 mod update_role;

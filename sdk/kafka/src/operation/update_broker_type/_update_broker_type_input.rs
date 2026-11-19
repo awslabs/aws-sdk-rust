@@ -7,8 +7,10 @@ pub struct UpdateBrokerTypeInput {
     pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The cluster version that you want to change. After this operation completes successfully, the cluster will have a new version.</p>
     pub current_version: ::std::option::Option<::std::string::String>,
-    /// <p>The Amazon MSK broker type that you want all of the brokers in this cluster to be.</p>
+    /// <p>The type of Amazon EC2 instances to use for Kafka brokers. For in-place upgrades to Express, use the composite format to initiate mixed mode, the Express instance type to complete the upgrade, or the Standard instance type to rollback.</p>
     pub target_instance_type: ::std::option::Option<::std::string::String>,
+    /// <p>Controls automatic topic reassignment when entering mixed broker mode. When set to AUTO, MSK automatically reassigns all topics to the target broker type after adding new brokers. When set to MANUAL (default), customers manage topic reassignment using the StartTopicReassignment API. Only valid when targetInstanceType is a composite mixed-mode value. Must be set to MANUAL before completing the upgrade or rolling back.</p>
+    pub topic_reassignment: ::std::option::Option<crate::types::TopicReassignment>,
 }
 impl UpdateBrokerTypeInput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -19,9 +21,13 @@ impl UpdateBrokerTypeInput {
     pub fn current_version(&self) -> ::std::option::Option<&str> {
         self.current_version.as_deref()
     }
-    /// <p>The Amazon MSK broker type that you want all of the brokers in this cluster to be.</p>
+    /// <p>The type of Amazon EC2 instances to use for Kafka brokers. For in-place upgrades to Express, use the composite format to initiate mixed mode, the Express instance type to complete the upgrade, or the Standard instance type to rollback.</p>
     pub fn target_instance_type(&self) -> ::std::option::Option<&str> {
         self.target_instance_type.as_deref()
+    }
+    /// <p>Controls automatic topic reassignment when entering mixed broker mode. When set to AUTO, MSK automatically reassigns all topics to the target broker type after adding new brokers. When set to MANUAL (default), customers manage topic reassignment using the StartTopicReassignment API. Only valid when targetInstanceType is a composite mixed-mode value. Must be set to MANUAL before completing the upgrade or rolling back.</p>
+    pub fn topic_reassignment(&self) -> ::std::option::Option<&crate::types::TopicReassignment> {
+        self.topic_reassignment.as_ref()
     }
 }
 impl UpdateBrokerTypeInput {
@@ -38,6 +44,7 @@ pub struct UpdateBrokerTypeInputBuilder {
     pub(crate) cluster_arn: ::std::option::Option<::std::string::String>,
     pub(crate) current_version: ::std::option::Option<::std::string::String>,
     pub(crate) target_instance_type: ::std::option::Option<::std::string::String>,
+    pub(crate) topic_reassignment: ::std::option::Option<crate::types::TopicReassignment>,
 }
 impl UpdateBrokerTypeInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
@@ -70,20 +77,34 @@ impl UpdateBrokerTypeInputBuilder {
     pub fn get_current_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.current_version
     }
-    /// <p>The Amazon MSK broker type that you want all of the brokers in this cluster to be.</p>
+    /// <p>The type of Amazon EC2 instances to use for Kafka brokers. For in-place upgrades to Express, use the composite format to initiate mixed mode, the Express instance type to complete the upgrade, or the Standard instance type to rollback.</p>
     /// This field is required.
     pub fn target_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.target_instance_type = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The Amazon MSK broker type that you want all of the brokers in this cluster to be.</p>
+    /// <p>The type of Amazon EC2 instances to use for Kafka brokers. For in-place upgrades to Express, use the composite format to initiate mixed mode, the Express instance type to complete the upgrade, or the Standard instance type to rollback.</p>
     pub fn set_target_instance_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target_instance_type = input;
         self
     }
-    /// <p>The Amazon MSK broker type that you want all of the brokers in this cluster to be.</p>
+    /// <p>The type of Amazon EC2 instances to use for Kafka brokers. For in-place upgrades to Express, use the composite format to initiate mixed mode, the Express instance type to complete the upgrade, or the Standard instance type to rollback.</p>
     pub fn get_target_instance_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_instance_type
+    }
+    /// <p>Controls automatic topic reassignment when entering mixed broker mode. When set to AUTO, MSK automatically reassigns all topics to the target broker type after adding new brokers. When set to MANUAL (default), customers manage topic reassignment using the StartTopicReassignment API. Only valid when targetInstanceType is a composite mixed-mode value. Must be set to MANUAL before completing the upgrade or rolling back.</p>
+    pub fn topic_reassignment(mut self, input: crate::types::TopicReassignment) -> Self {
+        self.topic_reassignment = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Controls automatic topic reassignment when entering mixed broker mode. When set to AUTO, MSK automatically reassigns all topics to the target broker type after adding new brokers. When set to MANUAL (default), customers manage topic reassignment using the StartTopicReassignment API. Only valid when targetInstanceType is a composite mixed-mode value. Must be set to MANUAL before completing the upgrade or rolling back.</p>
+    pub fn set_topic_reassignment(mut self, input: ::std::option::Option<crate::types::TopicReassignment>) -> Self {
+        self.topic_reassignment = input;
+        self
+    }
+    /// <p>Controls automatic topic reassignment when entering mixed broker mode. When set to AUTO, MSK automatically reassigns all topics to the target broker type after adding new brokers. When set to MANUAL (default), customers manage topic reassignment using the StartTopicReassignment API. Only valid when targetInstanceType is a composite mixed-mode value. Must be set to MANUAL before completing the upgrade or rolling back.</p>
+    pub fn get_topic_reassignment(&self) -> &::std::option::Option<crate::types::TopicReassignment> {
+        &self.topic_reassignment
     }
     /// Consumes the builder and constructs a [`UpdateBrokerTypeInput`](crate::operation::update_broker_type::UpdateBrokerTypeInput).
     pub fn build(
@@ -93,6 +114,7 @@ impl UpdateBrokerTypeInputBuilder {
             cluster_arn: self.cluster_arn,
             current_version: self.current_version,
             target_instance_type: self.target_instance_type,
+            topic_reassignment: self.topic_reassignment,
         })
     }
 }

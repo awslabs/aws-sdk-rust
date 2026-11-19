@@ -7,8 +7,8 @@ pub struct CreateMarketplaceRevenueShareInput {
     pub catalog: ::std::option::Option<crate::types::CatalogName>,
     /// <p>A unique token to ensure idempotency of the create request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
-    /// <p>The AWS Marketplace product identifier for this revenue share.</p>
-    pub product_id: ::std::option::Option<::std::string::String>,
+    /// <p>The products in the marketplace revenue share, each with its typed account lists. 1 to 25 products.</p>
+    pub products: ::std::option::Option<::std::vec::Vec<crate::types::MarketplaceRevenueShareProductEntry>>,
     /// <p>Tags to associate with the marketplace revenue share upon creation.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
@@ -21,9 +21,11 @@ impl CreateMarketplaceRevenueShareInput {
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
-    /// <p>The AWS Marketplace product identifier for this revenue share.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
-        self.product_id.as_deref()
+    /// <p>The products in the marketplace revenue share, each with its typed account lists. 1 to 25 products.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.products.is_none()`.
+    pub fn products(&self) -> &[crate::types::MarketplaceRevenueShareProductEntry] {
+        self.products.as_deref().unwrap_or_default()
     }
     /// <p>Tags to associate with the marketplace revenue share upon creation.</p>
     ///
@@ -45,7 +47,7 @@ impl CreateMarketplaceRevenueShareInput {
 pub struct CreateMarketplaceRevenueShareInputBuilder {
     pub(crate) catalog: ::std::option::Option<crate::types::CatalogName>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
-    pub(crate) product_id: ::std::option::Option<::std::string::String>,
+    pub(crate) products: ::std::option::Option<::std::vec::Vec<crate::types::MarketplaceRevenueShareProductEntry>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateMarketplaceRevenueShareInputBuilder {
@@ -78,20 +80,25 @@ impl CreateMarketplaceRevenueShareInputBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }
-    /// <p>The AWS Marketplace product identifier for this revenue share.</p>
-    /// This field is required.
-    pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.product_id = ::std::option::Option::Some(input.into());
+    /// Appends an item to `products`.
+    ///
+    /// To override the contents of this collection use [`set_products`](Self::set_products).
+    ///
+    /// <p>The products in the marketplace revenue share, each with its typed account lists. 1 to 25 products.</p>
+    pub fn products(mut self, input: crate::types::MarketplaceRevenueShareProductEntry) -> Self {
+        let mut v = self.products.unwrap_or_default();
+        v.push(input);
+        self.products = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The AWS Marketplace product identifier for this revenue share.</p>
-    pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
+    /// <p>The products in the marketplace revenue share, each with its typed account lists. 1 to 25 products.</p>
+    pub fn set_products(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MarketplaceRevenueShareProductEntry>>) -> Self {
+        self.products = input;
         self
     }
-    /// <p>The AWS Marketplace product identifier for this revenue share.</p>
-    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.product_id
+    /// <p>The products in the marketplace revenue share, each with its typed account lists. 1 to 25 products.</p>
+    pub fn get_products(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MarketplaceRevenueShareProductEntry>> {
+        &self.products
     }
     /// Appends an item to `tags`.
     ///
@@ -123,7 +130,7 @@ impl CreateMarketplaceRevenueShareInputBuilder {
         ::std::result::Result::Ok(crate::operation::create_marketplace_revenue_share::CreateMarketplaceRevenueShareInput {
             catalog: self.catalog,
             client_token: self.client_token,
-            product_id: self.product_id,
+            products: self.products,
             tags: self.tags,
         })
     }

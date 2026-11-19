@@ -347,20 +347,30 @@ pub fn ser_create_db_cluster_input_input_input(
         scope_130.string(var_131.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_132 = writer.prefix("WithExpressConfiguration");
-    if let Some(var_133) = &input.with_express_configuration {
+    let mut scope_132 = writer.prefix("EnableVPCNetworking");
+    if let Some(var_133) = &input.enable_vpc_networking {
         scope_132.boolean(*var_133);
     }
     #[allow(unused_mut)]
-    let mut scope_134 = writer.prefix("AssociatedRoles");
-    if let Some(var_135) = &input.associated_roles {
-        let mut list_137 = scope_134.start_list(false, Some("DBClusterAssociatedRole"));
-        for item_136 in var_135 {
+    let mut scope_134 = writer.prefix("WithExpressConfiguration");
+    if let Some(var_135) = &input.with_express_configuration {
+        scope_134.boolean(*var_135);
+    }
+    #[allow(unused_mut)]
+    let mut scope_136 = writer.prefix("EnableInternetAccessGateway");
+    if let Some(var_137) = &input.enable_internet_access_gateway {
+        scope_136.boolean(*var_137);
+    }
+    #[allow(unused_mut)]
+    let mut scope_138 = writer.prefix("AssociatedRoles");
+    if let Some(var_139) = &input.associated_roles {
+        let mut list_141 = scope_138.start_list(false, Some("DBClusterAssociatedRole"));
+        for item_140 in var_139 {
             #[allow(unused_mut)]
-            let mut entry_138 = list_137.entry();
-            crate::protocol_serde::shape_db_cluster_associated_role::ser_db_cluster_associated_role(entry_138, item_136)?;
+            let mut entry_142 = list_141.entry();
+            crate::protocol_serde::shape_db_cluster_associated_role::ser_db_cluster_associated_role(entry_142, item_140)?;
         }
-        list_137.finish();
+        list_141.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

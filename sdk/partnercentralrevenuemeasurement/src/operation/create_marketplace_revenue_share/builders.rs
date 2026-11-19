@@ -136,19 +136,24 @@ impl CreateMarketplaceRevenueShareFluentBuilder {
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }
-    /// <p>The AWS Marketplace product identifier for this revenue share.</p>
-    pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.product_id(input.into());
+    ///
+    /// Appends an item to `Products`.
+    ///
+    /// To override the contents of this collection use [`set_products`](Self::set_products).
+    ///
+    /// <p>The products in the marketplace revenue share, each with its typed account lists. 1 to 25 products.</p>
+    pub fn products(mut self, input: crate::types::MarketplaceRevenueShareProductEntry) -> Self {
+        self.inner = self.inner.products(input);
         self
     }
-    /// <p>The AWS Marketplace product identifier for this revenue share.</p>
-    pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_product_id(input);
+    /// <p>The products in the marketplace revenue share, each with its typed account lists. 1 to 25 products.</p>
+    pub fn set_products(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::MarketplaceRevenueShareProductEntry>>) -> Self {
+        self.inner = self.inner.set_products(input);
         self
     }
-    /// <p>The AWS Marketplace product identifier for this revenue share.</p>
-    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_product_id()
+    /// <p>The products in the marketplace revenue share, each with its typed account lists. 1 to 25 products.</p>
+    pub fn get_products(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::MarketplaceRevenueShareProductEntry>> {
+        self.inner.get_products()
     }
     ///
     /// Appends an item to `Tags`.

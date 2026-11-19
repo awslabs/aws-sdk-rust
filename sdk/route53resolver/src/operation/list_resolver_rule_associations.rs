@@ -108,6 +108,15 @@ pub(crate) mod error_registry {
     pub(crate) static REGISTRY: ::std::sync::LazyLock<::aws_smithy_schema::registry::TypeRegistry> = ::std::sync::LazyLock::new(|| {
         ::aws_smithy_schema::registry::TypeRegistry::builder()
                             .insert_error_shape(
+                        crate::types::error::AccessDeniedException::SCHEMA,
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::AccessDeniedException::deserialize(d)?))
+                        },
+                        |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync>, ::aws_smithy_schema::serde::SerdeError> {
+                            ::std::result::Result::Ok(::std::boxed::Box::new(crate::types::error::AccessDeniedException::deserialize(d)?))
+                        },
+                    )
+.insert_error_shape(
                         crate::types::error::InternalServiceErrorException::SCHEMA,
                         |d: &mut dyn ::aws_smithy_schema::serde::ShapeDeserializer| -> ::std::result::Result<::aws_smithy_types::type_erasure::TypeErasedBox, ::aws_smithy_schema::serde::SerdeError> {
                             ::std::result::Result::Ok(::aws_smithy_types::type_erasure::TypeErasedBox::new(crate::types::error::InternalServiceErrorException::deserialize(d)?))
@@ -307,6 +316,26 @@ impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListResol
             };
             let _error_message = generic.message().map(|msg| msg.to_owned());
             let err = match error_code {
+                "AccessDeniedException" => {
+                    crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsError::AccessDeniedException({
+                        let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        let mut tmp = <crate::types::error::builders::AccessDeniedExceptionBuilder>::default();
+                        tmp.deserialize_members(&mut *deser).map_err(|e| {
+                            ::aws_smithy_runtime_api::client::orchestrator::OrchestratorError::other(
+                                ::aws_smithy_runtime_api::box_error::BoxError::from(e),
+                            )
+                        })?;
+                        if tmp.message.is_none() {
+                            tmp.message = _error_message;
+                        }
+                        let tmp = tmp.meta(generic);
+                        tmp.build()
+                    })
+                }
                 "InternalServiceErrorException" => {
                     crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsError::InternalServiceErrorException({
                         let mut deser = protocol.deserialize_error_response(response, _cfg).map_err(|e| {
@@ -529,6 +558,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListResolverR
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum ListResolverRuleAssociationsError {
+    /// <p>The current account doesn't have the IAM permissions required to perform the specified Resolver operation.</p>
+    /// <p>This error can also be thrown when a customer has reached the 5120 character limit for a resource policy for CloudWatch Logs.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>We encountered an unknown error. Try again in a few minutes.</p>
     InternalServiceErrorException(crate::types::error::InternalServiceErrorException),
     /// <p>The value that you specified for <code>NextToken</code> in a <code>List</code> request isn't valid.</p>
@@ -572,6 +604,7 @@ impl ListResolverRuleAssociationsError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServiceErrorException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidNextTokenException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidParameterException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -579,6 +612,10 @@ impl ListResolverRuleAssociationsError {
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `ListResolverRuleAssociationsError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `ListResolverRuleAssociationsError::InternalServiceErrorException`.
     pub fn is_internal_service_error_exception(&self) -> bool {
@@ -604,6 +641,7 @@ impl ListResolverRuleAssociationsError {
 impl ::std::error::Error for ListResolverRuleAssociationsError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServiceErrorException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidNextTokenException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidParameterException(_inner) => ::std::option::Option::Some(_inner),
@@ -616,6 +654,7 @@ impl ::std::error::Error for ListResolverRuleAssociationsError {
 impl ::std::fmt::Display for ListResolverRuleAssociationsError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalServiceErrorException(_inner) => _inner.fmt(f),
             Self::InvalidNextTokenException(_inner) => _inner.fmt(f),
             Self::InvalidParameterException(_inner) => _inner.fmt(f),
@@ -642,6 +681,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for ListResolverRuleAssociation
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for ListResolverRuleAssociationsError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServiceErrorException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidNextTokenException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidParameterException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

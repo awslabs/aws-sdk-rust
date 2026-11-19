@@ -326,15 +326,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeEvent
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum DescribeEventBusError {
-    /// The resource does not exist.
+    /// <p>The resource does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// The caller does not have the permissions required to perform the operation. This error is also returned when the operation cannot use the AWS KMS key for the event bus.
+    /// <p>The caller does not have the permissions required to perform the operation. This error is also returned when the operation cannot use the AWS KMS key for the event bus.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// The request failed because of an internal service error. Retry the request.
+    /// <p>The request failed because of an internal service error. Retry the request.</p>
     InternalException(crate::types::error::InternalException),
-    /// A request parameter is missing or not valid.
+    /// <p>A request parameter is missing or not valid.</p>
     InvalidInputException(crate::types::error::InvalidInputException),
-    /// The request was throttled because it exceeds a request rate limit. Retry the request with backoff.
+    /// <p>The request was throttled because it exceeds a request rate limit. Retry the request with backoff.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

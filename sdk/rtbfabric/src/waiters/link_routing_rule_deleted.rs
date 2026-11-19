@@ -58,6 +58,10 @@ impl LinkRoutingRuleDeletedFluentBuilder {
             &crate::operation::get_link_routing_rule::GetLinkRoutingRuleOutput,
             &crate::operation::get_link_routing_rule::GetLinkRoutingRuleError,
         >| {
+            // Matches: {"output":{"path":"status","expected":"DELETE_FAILED","comparator":"stringEquals"}}
+            if crate::waiters::matchers::match_get_link_routing_rule_184758db81b6271a8(result) {
+                return ::aws_smithy_runtime::client::waiters::AcceptorState::Failure;
+            }
             // Matches: {"output":{"path":"status","expected":"DELETED","comparator":"stringEquals"}}
             if crate::waiters::matchers::match_get_link_routing_rule_8edac4c36e2a37f69(result) {
                 return ::aws_smithy_runtime::client::waiters::AcceptorState::Success;

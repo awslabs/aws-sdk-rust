@@ -197,6 +197,11 @@ pub(crate) fn de_create_revenue_attribution(
             "Revision" => {
                 ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_revision(Some(decoder.string()?))))?
             }
+            "Context" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_context(Some(
+                    crate::protocol_serde::shape_revenue_attribution_context::de_revenue_attribution_context(decoder, depth + 1)?,
+                )))
+            })?,
             _ => {
                 decoder.skip()?;
                 builder

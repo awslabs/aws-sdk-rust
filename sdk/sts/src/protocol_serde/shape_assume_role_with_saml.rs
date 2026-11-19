@@ -315,6 +315,16 @@ pub fn de_assume_role_with_saml(
                 builder = builder.set_session_token_size(var_11);
             }
             ,
+            s if s.matches("TrustedIdentityPropagationContext") /* TrustedIdentityPropagationContext com.amazonaws.sts.synthetic#AssumeRoleWithSAMLOutput$TrustedIdentityPropagationContext */ =>  {
+                let var_12 =
+                    Some(
+                        crate::protocol_serde::shape_trusted_identity_propagation_context::de_trusted_identity_propagation_context(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_trusted_identity_propagation_context(var_12);
+            }
+            ,
             _ => {}
         }
         }

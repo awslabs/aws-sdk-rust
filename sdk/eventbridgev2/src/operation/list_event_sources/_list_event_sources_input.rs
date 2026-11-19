@@ -3,45 +3,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventSourcesInput {
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub event_bus_arn: ::std::option::Option<::std::string::String>,
-    /// EventSource name. First character alphanumeric; the rest may add '.', '-', '_'. Names may not begin with the reserved "aws." prefix. The grammar matches the ARN local-name segment in EventSourceArn (event-sourcev2/<type>
-    /// /
-    /// <name>
-    /// /
-    /// <id>
-    /// ), mirroring EventBusName, so a name the ARN cannot represent cannot be created.
-    /// </id>
-    /// </name>
-    /// </type>
+    /// <p>EventSource name. First character alphanumeric; the rest may add '.', '-', '_'. Names may not begin with the reserved "aws." prefix. The grammar matches the ARN local-name segment in EventSourceArn (event-sourcev2/&lt;type&gt;/&lt;name&gt;/&lt;id&gt;), mirroring EventBusName, so a name the ARN cannot represent cannot be created.</p>
     pub name_prefix: ::std::option::Option<::std::string::String>,
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
-    /// Maximum number of results to return in one page of a List operation.
+    /// <p>Maximum number of results to return in one page of a List operation.</p>
     pub max_results: ::std::option::Option<i32>,
 }
 impl ListEventSourcesInput {
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn event_bus_arn(&self) -> ::std::option::Option<&str> {
         self.event_bus_arn.as_deref()
     }
-    /// EventSource name. First character alphanumeric; the rest may add '.', '-', '_'. Names may not begin with the reserved "aws." prefix. The grammar matches the ARN local-name segment in EventSourceArn (event-sourcev2/<type>
-    /// /
-    /// <name>
-    /// /
-    /// <id>
-    /// ), mirroring EventBusName, so a name the ARN cannot represent cannot be created.
-    /// </id>
-    /// </name>
-    /// </type>
+    /// <p>EventSource name. First character alphanumeric; the rest may add '.', '-', '_'. Names may not begin with the reserved "aws." prefix. The grammar matches the ARN local-name segment in EventSourceArn (event-sourcev2/&lt;type&gt;/&lt;name&gt;/&lt;id&gt;), mirroring EventBusName, so a name the ARN cannot represent cannot be created.</p>
     pub fn name_prefix(&self) -> ::std::option::Option<&str> {
         self.name_prefix.as_deref()
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// Maximum number of results to return in one page of a List operation.
+    /// <p>Maximum number of results to return in one page of a List operation.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -63,83 +47,59 @@ pub struct ListEventSourcesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
 }
 impl ListEventSourcesInputBuilder {
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn event_bus_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_bus_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn set_event_bus_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_bus_arn = input;
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn get_event_bus_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_bus_arn
     }
-    /// EventSource name. First character alphanumeric; the rest may add '.', '-', '_'. Names may not begin with the reserved "aws." prefix. The grammar matches the ARN local-name segment in EventSourceArn (event-sourcev2/<type>
-    /// /
-    /// <name>
-    /// /
-    /// <id>
-    /// ), mirroring EventBusName, so a name the ARN cannot represent cannot be created.
-    /// </id>
-    /// </name>
-    /// </type>
+    /// <p>EventSource name. First character alphanumeric; the rest may add '.', '-', '_'. Names may not begin with the reserved "aws." prefix. The grammar matches the ARN local-name segment in EventSourceArn (event-sourcev2/&lt;type&gt;/&lt;name&gt;/&lt;id&gt;), mirroring EventBusName, so a name the ARN cannot represent cannot be created.</p>
     pub fn name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name_prefix = ::std::option::Option::Some(input.into());
         self
     }
-    /// EventSource name. First character alphanumeric; the rest may add '.', '-', '_'. Names may not begin with the reserved "aws." prefix. The grammar matches the ARN local-name segment in EventSourceArn (event-sourcev2/<type>
-    /// /
-    /// <name>
-    /// /
-    /// <id>
-    /// ), mirroring EventBusName, so a name the ARN cannot represent cannot be created.
-    /// </id>
-    /// </name>
-    /// </type>
+    /// <p>EventSource name. First character alphanumeric; the rest may add '.', '-', '_'. Names may not begin with the reserved "aws." prefix. The grammar matches the ARN local-name segment in EventSourceArn (event-sourcev2/&lt;type&gt;/&lt;name&gt;/&lt;id&gt;), mirroring EventBusName, so a name the ARN cannot represent cannot be created.</p>
     pub fn set_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name_prefix = input;
         self
     }
-    /// EventSource name. First character alphanumeric; the rest may add '.', '-', '_'. Names may not begin with the reserved "aws." prefix. The grammar matches the ARN local-name segment in EventSourceArn (event-sourcev2/<type>
-    /// /
-    /// <name>
-    /// /
-    /// <id>
-    /// ), mirroring EventBusName, so a name the ARN cannot represent cannot be created.
-    /// </id>
-    /// </name>
-    /// </type>
+    /// <p>EventSource name. First character alphanumeric; the rest may add '.', '-', '_'. Names may not begin with the reserved "aws." prefix. The grammar matches the ARN local-name segment in EventSourceArn (event-sourcev2/&lt;type&gt;/&lt;name&gt;/&lt;id&gt;), mirroring EventBusName, so a name the ARN cannot represent cannot be created.</p>
     pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
         &self.name_prefix
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
-    /// Maximum number of results to return in one page of a List operation.
+    /// <p>Maximum number of results to return in one page of a List operation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// Maximum number of results to return in one page of a List operation.
+    /// <p>Maximum number of results to return in one page of a List operation.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// Maximum number of results to return in one page of a List operation.
+    /// <p>Maximum number of results to return in one page of a List operation.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

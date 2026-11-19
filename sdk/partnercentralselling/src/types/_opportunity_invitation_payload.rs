@@ -12,6 +12,16 @@ pub struct OpportunityInvitationPayload {
     pub customer: ::std::option::Option<crate::types::EngagementCustomer>,
     /// <p>Describes the project details associated with the opportunity, including the customer’s needs and the scope of work expected to be performed.</p>
     pub project: ::std::option::Option<crate::types::ProjectDetails>,
+    /// <p>The type of the opportunity being shared. The sender of the invitation sets it. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Net New Business</code>: A new business opportunity with a potential customer that's not previously engaged with your solutions or services.</p></li>
+    /// <li>
+    /// <p><code>Flat Renewal</code>: An opportunity to renew an existing contract or subscription with a current customer, ensuring continuity of service.</p></li>
+    /// <li>
+    /// <p><code>Expansion</code>: An opportunity to expand the scope of an existing contract or subscription, either by adding new services or increasing the volume of existing services for a current customer.</p></li>
+    /// </ul>
+    pub opportunity_type: ::std::option::Option<crate::types::OpportunityType>,
 }
 impl OpportunityInvitationPayload {
     /// <p>Represents the contact details of the AWS representatives involved in sending the Engagement Invitation. These contacts are opportunity stakeholders.</p>
@@ -33,6 +43,18 @@ impl OpportunityInvitationPayload {
     pub fn project(&self) -> ::std::option::Option<&crate::types::ProjectDetails> {
         self.project.as_ref()
     }
+    /// <p>The type of the opportunity being shared. The sender of the invitation sets it. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Net New Business</code>: A new business opportunity with a potential customer that's not previously engaged with your solutions or services.</p></li>
+    /// <li>
+    /// <p><code>Flat Renewal</code>: An opportunity to renew an existing contract or subscription with a current customer, ensuring continuity of service.</p></li>
+    /// <li>
+    /// <p><code>Expansion</code>: An opportunity to expand the scope of an existing contract or subscription, either by adding new services or increasing the volume of existing services for a current customer.</p></li>
+    /// </ul>
+    pub fn opportunity_type(&self) -> ::std::option::Option<&crate::types::OpportunityType> {
+        self.opportunity_type.as_ref()
+    }
 }
 impl OpportunityInvitationPayload {
     /// Creates a new builder-style object to manufacture [`OpportunityInvitationPayload`](crate::types::OpportunityInvitationPayload).
@@ -49,6 +71,7 @@ pub struct OpportunityInvitationPayloadBuilder {
     pub(crate) receiver_responsibilities: ::std::option::Option<::std::vec::Vec<crate::types::ReceiverResponsibility>>,
     pub(crate) customer: ::std::option::Option<crate::types::EngagementCustomer>,
     pub(crate) project: ::std::option::Option<crate::types::ProjectDetails>,
+    pub(crate) opportunity_type: ::std::option::Option<crate::types::OpportunityType>,
 }
 impl OpportunityInvitationPayloadBuilder {
     /// Appends an item to `sender_contacts`.
@@ -121,6 +144,44 @@ impl OpportunityInvitationPayloadBuilder {
     pub fn get_project(&self) -> &::std::option::Option<crate::types::ProjectDetails> {
         &self.project
     }
+    /// <p>The type of the opportunity being shared. The sender of the invitation sets it. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Net New Business</code>: A new business opportunity with a potential customer that's not previously engaged with your solutions or services.</p></li>
+    /// <li>
+    /// <p><code>Flat Renewal</code>: An opportunity to renew an existing contract or subscription with a current customer, ensuring continuity of service.</p></li>
+    /// <li>
+    /// <p><code>Expansion</code>: An opportunity to expand the scope of an existing contract or subscription, either by adding new services or increasing the volume of existing services for a current customer.</p></li>
+    /// </ul>
+    pub fn opportunity_type(mut self, input: crate::types::OpportunityType) -> Self {
+        self.opportunity_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the opportunity being shared. The sender of the invitation sets it. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Net New Business</code>: A new business opportunity with a potential customer that's not previously engaged with your solutions or services.</p></li>
+    /// <li>
+    /// <p><code>Flat Renewal</code>: An opportunity to renew an existing contract or subscription with a current customer, ensuring continuity of service.</p></li>
+    /// <li>
+    /// <p><code>Expansion</code>: An opportunity to expand the scope of an existing contract or subscription, either by adding new services or increasing the volume of existing services for a current customer.</p></li>
+    /// </ul>
+    pub fn set_opportunity_type(mut self, input: ::std::option::Option<crate::types::OpportunityType>) -> Self {
+        self.opportunity_type = input;
+        self
+    }
+    /// <p>The type of the opportunity being shared. The sender of the invitation sets it. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>Net New Business</code>: A new business opportunity with a potential customer that's not previously engaged with your solutions or services.</p></li>
+    /// <li>
+    /// <p><code>Flat Renewal</code>: An opportunity to renew an existing contract or subscription with a current customer, ensuring continuity of service.</p></li>
+    /// <li>
+    /// <p><code>Expansion</code>: An opportunity to expand the scope of an existing contract or subscription, either by adding new services or increasing the volume of existing services for a current customer.</p></li>
+    /// </ul>
+    pub fn get_opportunity_type(&self) -> &::std::option::Option<crate::types::OpportunityType> {
+        &self.opportunity_type
+    }
     /// Consumes the builder and constructs a [`OpportunityInvitationPayload`](crate::types::OpportunityInvitationPayload).
     /// This method will fail if any of the following fields are not set:
     /// - [`receiver_responsibilities`](crate::types::builders::OpportunityInvitationPayloadBuilder::receiver_responsibilities)
@@ -135,6 +196,7 @@ impl OpportunityInvitationPayloadBuilder {
             })?,
             customer: self.customer,
             project: self.project,
+            opportunity_type: self.opportunity_type,
         })
     }
 }

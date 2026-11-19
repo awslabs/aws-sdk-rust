@@ -288,6 +288,26 @@ static CERTIFICATEDETAIL_MEMBER_ACME_ACCOUNT_ID: ::aws_smithy_schema::Schema<'st
     "AcmeAccountId",
     30,
 );
+static CERTIFICATEDETAIL_MEMBER_CERTIFICATE_USAGE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateDetail$CertificateUsage",
+        "com.amazonaws.acm",
+        "CertificateDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "CertificateUsage",
+    31,
+);
+static CERTIFICATEDETAIL_MEMBER_ROOT_HIERARCHY_TYPE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.acm#CertificateDetail$RootHierarchyType",
+        "com.amazonaws.acm",
+        "CertificateDetail",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "RootHierarchyType",
+    32,
+);
 static CERTIFICATEDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.acm#CertificateDetail", "com.amazonaws.acm", "CertificateDetail"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -323,6 +343,8 @@ static CERTIFICATEDETAIL_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_sm
         &CERTIFICATEDETAIL_MEMBER_CERTIFICATE_KEY_PAIR_ORIGIN,
         &CERTIFICATEDETAIL_MEMBER_ACME_ENDPOINT_ARN,
         &CERTIFICATEDETAIL_MEMBER_ACME_ACCOUNT_ID,
+        &CERTIFICATEDETAIL_MEMBER_CERTIFICATE_USAGE,
+        &CERTIFICATEDETAIL_MEMBER_ROOT_HIERARCHY_TYPE,
     ],
 );
 impl crate::types::CertificateDetail {
@@ -471,6 +493,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Certificat
         }
         if let Some(ref val) = self.acme_account_id {
             ser.write_string(&CERTIFICATEDETAIL_MEMBER_ACME_ACCOUNT_ID, val)?;
+        }
+        if let Some(ref val) = self.certificate_usage {
+            ser.write_string(&CERTIFICATEDETAIL_MEMBER_CERTIFICATE_USAGE, val.as_str())?;
+        }
+        if let Some(ref val) = self.root_hierarchy_type {
+            ser.write_string(&CERTIFICATEDETAIL_MEMBER_ROOT_HIERARCHY_TYPE, val.as_str())?;
         }
         Ok(())
     }
@@ -725,6 +753,20 @@ impl crate::types::builders::CertificateDetailBuilder {
                         deser.read_null()?;
                     } else {
                         self.acme_account_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(31) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.certificate_usage = Some(crate::types::CertificateUsage::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(32) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.root_hierarchy_type = Some(crate::types::RootHierarchyType::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}

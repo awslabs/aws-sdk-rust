@@ -365,6 +365,8 @@ pub use crate::types::_verification_script_env_var::VerificationScriptEnvVar;
 
 pub use crate::types::_access_type::AccessType;
 
+pub use crate::types::_code_remediation_job_status::CodeRemediationJobStatus;
+
 pub use crate::types::_trigger_filter_group::TriggerFilterGroup;
 
 pub use crate::types::_trigger_event::TriggerEvent;
@@ -446,6 +448,8 @@ mod _client_certificate;
 mod _cloud_watch_log;
 
 mod _code_location;
+
+mod _code_remediation_job_status;
 
 mod _code_remediation_strategy;
 

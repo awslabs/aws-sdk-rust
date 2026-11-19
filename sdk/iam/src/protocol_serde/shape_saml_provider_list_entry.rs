@@ -52,6 +52,21 @@ pub fn de_saml_provider_list_entry(
                 builder = builder.set_create_date(var_3);
             }
             ,
+            s if s.matches("IsTrustedIdentityPropagationEnabled") /* IsTrustedIdentityPropagationEnabled com.amazonaws.iam#SAMLProviderListEntry$IsTrustedIdentityPropagationEnabled */ =>  {
+                let var_4 =
+                    Some(
+                         {
+                            <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                            .map_err(|_|::aws_smithy_xml::decode::XmlDecodeError::custom("expected (boolean: `com.amazonaws.iam#booleanType`)"))
+                        }
+                        ?
+                    )
+                ;
+                builder = builder.set_is_trusted_identity_propagation_enabled(var_4);
+            }
+            ,
             _ => {}
         }
     }

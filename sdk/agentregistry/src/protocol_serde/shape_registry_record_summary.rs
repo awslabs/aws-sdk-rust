@@ -102,6 +102,15 @@ where
                         "customMetadata" => {
                             builder = builder.set_custom_metadata(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
                         }
+                        "artifact" => {
+                            builder = builder.set_artifact(
+                                crate::protocol_serde::shape_registry_record_artifact_download::de_registry_record_artifact_download(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

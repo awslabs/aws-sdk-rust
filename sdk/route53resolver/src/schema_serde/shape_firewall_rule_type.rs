@@ -39,6 +39,16 @@ static FIREWALLRULETYPE_MEMBER_DNS_THREAT_PROTECTION: ::aws_smithy_schema::Schem
     "DnsThreatProtection",
     3,
 );
+static FIREWALLRULETYPE_MEMBER_AUTO_ALLOWLIST: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallRuleType$AutoAllowlist",
+        "com.amazonaws.route53resolver",
+        "FirewallRuleType",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "AutoAllowlist",
+    4,
+);
 static FIREWALLRULETYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.route53resolver#FirewallRuleType",
@@ -51,6 +61,7 @@ static FIREWALLRULETYPE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smi
         &FIREWALLRULETYPE_MEMBER_FIREWALL_ADVANCED_CONTENT_CATEGORY,
         &FIREWALLRULETYPE_MEMBER_FIREWALL_ADVANCED_THREAT_CATEGORY,
         &FIREWALLRULETYPE_MEMBER_DNS_THREAT_PROTECTION,
+        &FIREWALLRULETYPE_MEMBER_AUTO_ALLOWLIST,
     ],
 );
 impl crate::types::FirewallRuleType {
@@ -78,6 +89,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::FirewallRu
         }
         if let Some(ref val) = self.dns_threat_protection {
             ser.write_struct(&FIREWALLRULETYPE_MEMBER_DNS_THREAT_PROTECTION, val)?;
+        }
+        if let Some(ref val) = self.auto_allowlist {
+            ser.write_struct(&FIREWALLRULETYPE_MEMBER_AUTO_ALLOWLIST, val)?;
         }
         Ok(())
     }
@@ -122,6 +136,13 @@ impl crate::types::builders::FirewallRuleTypeBuilder {
                         deser.read_null()?;
                     } else {
                         self.dns_threat_protection = Some(crate::types::DnsThreatProtectionRuleTypeConfig::deserialize(deser)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.auto_allowlist = Some(crate::types::AutoAllowlistConfig::deserialize(deser)?);
                     }
                 }
                 _ => {}

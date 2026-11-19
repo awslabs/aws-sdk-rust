@@ -11,6 +11,27 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn create_customer_account_output_output_correct_errors(
+    mut builder: crate::operation::create_customer_account::builders::CreateCustomerAccountOutputBuilder,
+) -> crate::operation::create_customer_account::builders::CreateCustomerAccountOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::EnrichmentStatus>().ok()
+    }
+    if builder.catalog.is_none() {
+        builder.catalog = Some(Default::default())
+    }
+    if builder.created_date.is_none() {
+        builder.created_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn create_engagement_invitation_output_output_correct_errors(
     mut builder: crate::operation::create_engagement_invitation::builders::CreateEngagementInvitationOutputBuilder,
 ) -> crate::operation::create_engagement_invitation::builders::CreateEngagementInvitationOutputBuilder {
@@ -37,6 +58,90 @@ pub(crate) fn get_aws_opportunity_summary_output_output_correct_errors(
 ) -> crate::operation::get_aws_opportunity_summary::builders::GetAwsOpportunitySummaryOutputBuilder {
     if builder.catalog.is_none() {
         builder.catalog = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn get_customer_account_output_output_correct_errors(
+    mut builder: crate::operation::get_customer_account::builders::GetCustomerAccountOutputBuilder,
+) -> crate::operation::get_customer_account::builders::GetCustomerAccountOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.catalog.is_none() {
+        builder.catalog = Some(Default::default())
+    }
+    if builder.enrichment_status.is_none() {
+        builder.enrichment_status = "no value was set".parse::<crate::types::EnrichmentStatus>().ok()
+    }
+    if builder.created_date.is_none() {
+        builder.created_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_date.is_none() {
+        builder.last_modified_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.account.is_none() {
+        builder.account = {
+            let builder = crate::types::builders::CustomerAccountDataBuilder::default();
+            crate::serde_util::customer_account_data_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn get_customer_account_bulk_job_output_output_correct_errors(
+    mut builder: crate::operation::get_customer_account_bulk_job::builders::GetCustomerAccountBulkJobOutputBuilder,
+) -> crate::operation::get_customer_account_bulk_job::builders::GetCustomerAccountBulkJobOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::BulkJobStatus>().ok()
+    }
+    if builder.total_records.is_none() {
+        builder.total_records = Some(Default::default())
+    }
+    if builder.processed_records.is_none() {
+        builder.processed_records = Some(Default::default())
+    }
+    if builder.success_count.is_none() {
+        builder.success_count = Some(Default::default())
+    }
+    if builder.failure_count.is_none() {
+        builder.failure_count = Some(Default::default())
+    }
+    if builder.deleted_count.is_none() {
+        builder.deleted_count = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn get_customer_account_bulk_job_report_url_output_output_correct_errors(
+    mut builder: crate::operation::get_customer_account_bulk_job_report_url::builders::GetCustomerAccountBulkJobReportUrlOutputBuilder,
+) -> crate::operation::get_customer_account_bulk_job_report_url::builders::GetCustomerAccountBulkJobReportUrlOutputBuilder {
+    if builder.report_status.is_none() {
+        builder.report_status = "no value was set".parse::<crate::types::BulkReportStatus>().ok()
+    }
+    if builder.report_type.is_none() {
+        builder.report_type = "no value was set".parse::<crate::types::BulkReportType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn get_customer_account_statistics_output_output_correct_errors(
+    mut builder: crate::operation::get_customer_account_statistics::builders::GetCustomerAccountStatisticsOutputBuilder,
+) -> crate::operation::get_customer_account_statistics::builders::GetCustomerAccountStatisticsOutputBuilder {
+    if builder.total_count.is_none() {
+        builder.total_count = Some(Default::default())
     }
     builder
 }
@@ -73,6 +178,21 @@ pub(crate) fn get_opportunity_output_output_correct_errors(
             let builder = crate::types::builders::RelatedEntityIdentifiersBuilder::default();
             Some(builder.build())
         }
+    }
+    builder
+}
+
+pub(crate) fn get_opportunity_bulk_job_report_url_output_output_correct_errors(
+    mut builder: crate::operation::get_opportunity_bulk_job_report_url::builders::GetOpportunityBulkJobReportUrlOutputBuilder,
+) -> crate::operation::get_opportunity_bulk_job_report_url::builders::GetOpportunityBulkJobReportUrlOutputBuilder {
+    if builder.report_status.is_none() {
+        builder.report_status = "no value was set".parse::<crate::types::BulkReportStatus>().ok()
+    }
+    if builder.report_type.is_none() {
+        builder.report_type = "no value was set".parse::<crate::types::BulkReportType>().ok()
+    }
+    if builder.report_format.is_none() {
+        builder.report_format = "no value was set".parse::<crate::types::BulkFileFormat>().ok()
     }
     builder
 }
@@ -125,6 +245,24 @@ pub(crate) fn get_selling_system_settings_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_customer_account_bulk_job_results_output_output_correct_errors(
+    mut builder: crate::operation::list_customer_account_bulk_job_results::builders::ListCustomerAccountBulkJobResultsOutputBuilder,
+) -> crate::operation::list_customer_account_bulk_job_results::builders::ListCustomerAccountBulkJobResultsOutputBuilder {
+    if builder.results.is_none() {
+        builder.results = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_customer_account_bulk_jobs_output_output_correct_errors(
+    mut builder: crate::operation::list_customer_account_bulk_jobs::builders::ListCustomerAccountBulkJobsOutputBuilder,
+) -> crate::operation::list_customer_account_bulk_jobs::builders::ListCustomerAccountBulkJobsOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_engagement_members_output_output_correct_errors(
     mut builder: crate::operation::list_engagement_members::builders::ListEngagementMembersOutputBuilder,
 ) -> crate::operation::list_engagement_members::builders::ListEngagementMembersOutputBuilder {
@@ -157,6 +295,24 @@ pub(crate) fn list_opportunities_output_output_correct_errors(
 ) -> crate::operation::list_opportunities::builders::ListOpportunitiesOutputBuilder {
     if builder.opportunity_summaries.is_none() {
         builder.opportunity_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_opportunity_bulk_job_results_output_output_correct_errors(
+    mut builder: crate::operation::list_opportunity_bulk_job_results::builders::ListOpportunityBulkJobResultsOutputBuilder,
+) -> crate::operation::list_opportunity_bulk_job_results::builders::ListOpportunityBulkJobResultsOutputBuilder {
+    if builder.results.is_none() {
+        builder.results = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_opportunity_bulk_jobs_output_output_correct_errors(
+    mut builder: crate::operation::list_opportunity_bulk_jobs::builders::ListOpportunityBulkJobsOutputBuilder,
+) -> crate::operation::list_opportunity_bulk_jobs::builders::ListOpportunityBulkJobsOutputBuilder {
+    if builder.opportunity_bulk_job_summaries.is_none() {
+        builder.opportunity_bulk_job_summaries = Some(Default::default())
     }
     builder
 }
@@ -215,6 +371,51 @@ pub(crate) fn put_selling_system_settings_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn search_customer_accounts_output_output_correct_errors(
+    mut builder: crate::operation::search_customer_accounts::builders::SearchCustomerAccountsOutputBuilder,
+) -> crate::operation::search_customer_accounts::builders::SearchCustomerAccountsOutputBuilder {
+    if builder.customer_account_summaries.is_none() {
+        builder.customer_account_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn search_opportunities_output_output_correct_errors(
+    mut builder: crate::operation::search_opportunities::builders::SearchOpportunitiesOutputBuilder,
+) -> crate::operation::search_opportunities::builders::SearchOpportunitiesOutputBuilder {
+    if builder.opportunity_search_summaries.is_none() {
+        builder.opportunity_search_summaries = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_customer_account_bulk_job_output_output_correct_errors(
+    mut builder: crate::operation::start_customer_account_bulk_job::builders::StartCustomerAccountBulkJobOutputBuilder,
+) -> crate::operation::start_customer_account_bulk_job::builders::StartCustomerAccountBulkJobOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::BulkJobStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn start_opportunity_bulk_job_output_output_correct_errors(
+    mut builder: crate::operation::start_opportunity_bulk_job::builders::StartOpportunityBulkJobOutputBuilder,
+) -> crate::operation::start_opportunity_bulk_job::builders::StartOpportunityBulkJobOutputBuilder {
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn start_prospecting_from_engagement_task_output_output_correct_errors(
     mut builder: crate::operation::start_prospecting_from_engagement_task::builders::StartProspectingFromEngagementTaskOutputBuilder,
 ) -> crate::operation::start_prospecting_from_engagement_task::builders::StartProspectingFromEngagementTaskOutputBuilder {
@@ -229,6 +430,30 @@ pub(crate) fn start_prospecting_from_engagement_task_output_output_correct_error
     }
     if builder.task_status.is_none() {
         builder.task_status = "no value was set".parse::<crate::types::ProspectingTaskStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn update_customer_account_output_output_correct_errors(
+    mut builder: crate::operation::update_customer_account::builders::UpdateCustomerAccountOutputBuilder,
+) -> crate::operation::update_customer_account::builders::UpdateCustomerAccountOutputBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::EnrichmentStatus>().ok()
+    }
+    if builder.catalog.is_none() {
+        builder.catalog = Some(Default::default())
+    }
+    if builder.created_date.is_none() {
+        builder.created_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_date.is_none() {
+        builder.last_modified_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -263,6 +488,15 @@ pub(crate) fn update_opportunity_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn customer_account_data_correct_errors(
+    mut builder: crate::types::builders::CustomerAccountDataBuilder,
+) -> crate::types::builders::CustomerAccountDataBuilder {
+    if builder.company_name.is_none() {
+        builder.company_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn account_correct_errors(mut builder: crate::types::builders::AccountBuilder) -> crate::types::builders::AccountBuilder {
     if builder.company_name.is_none() {
         builder.company_name = Some(Default::default())
@@ -279,11 +513,110 @@ pub(crate) fn account_receiver_correct_errors(
     builder
 }
 
+pub(crate) fn aggregation_result_correct_errors(
+    mut builder: crate::types::builders::AggregationResultBuilder,
+) -> crate::types::builders::AggregationResultBuilder {
+    if builder.group_by.is_none() {
+        builder.group_by = Some(Default::default())
+    }
+    if builder.buckets.is_none() {
+        builder.buckets = Some(Default::default())
+    }
+    if builder.other_count.is_none() {
+        builder.other_count = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn bulk_job_result_correct_errors(
+    mut builder: crate::types::builders::BulkJobResultBuilder,
+) -> crate::types::builders::BulkJobResultBuilder {
+    if builder.request_id.is_none() {
+        builder.request_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::BulkRecordStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn customer_account_bulk_job_summary_correct_errors(
+    mut builder: crate::types::builders::CustomerAccountBulkJobSummaryBuilder,
+) -> crate::types::builders::CustomerAccountBulkJobSummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::BulkJobStatus>().ok()
+    }
+    if builder.total_records.is_none() {
+        builder.total_records = Some(Default::default())
+    }
+    if builder.processed_records.is_none() {
+        builder.processed_records = Some(Default::default())
+    }
+    if builder.success_count.is_none() {
+        builder.success_count = Some(Default::default())
+    }
+    if builder.failure_count.is_none() {
+        builder.failure_count = Some(Default::default())
+    }
+    if builder.deleted_count.is_none() {
+        builder.deleted_count = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn customer_account_summary_correct_errors(
+    mut builder: crate::types::builders::CustomerAccountSummaryBuilder,
+) -> crate::types::builders::CustomerAccountSummaryBuilder {
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.catalog.is_none() {
+        builder.catalog = Some(Default::default())
+    }
+    if builder.enrichment_status.is_none() {
+        builder.enrichment_status = "no value was set".parse::<crate::types::EnrichmentStatus>().ok()
+    }
+    if builder.created_date.is_none() {
+        builder.created_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.last_modified_date.is_none() {
+        builder.last_modified_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.customer_account.is_none() {
+        builder.customer_account = {
+            let builder = crate::types::builders::CustomerAccountDetailsSummaryBuilder::default();
+            crate::serde_util::customer_account_details_summary_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn engagement_context_details_correct_errors(
     mut builder: crate::types::builders::EngagementContextDetailsBuilder,
 ) -> crate::types::builders::EngagementContextDetailsBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::EngagementContextType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn engagement_group_summary_correct_errors(
+    mut builder: crate::types::builders::EngagementGroupSummaryBuilder,
+) -> crate::types::builders::EngagementGroupSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
     }
     builder
 }
@@ -363,6 +696,33 @@ pub(crate) fn monetary_value_correct_errors(
     builder
 }
 
+pub(crate) fn opportunity_bulk_job_summary_correct_errors(
+    mut builder: crate::types::builders::OpportunityBulkJobSummaryBuilder,
+) -> crate::types::builders::OpportunityBulkJobSummaryBuilder {
+    if builder.job_id.is_none() {
+        builder.job_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::BulkJobStatus>().ok()
+    }
+    if builder.total_records.is_none() {
+        builder.total_records = Some(Default::default())
+    }
+    if builder.processed_records.is_none() {
+        builder.processed_records = Some(Default::default())
+    }
+    if builder.success_count.is_none() {
+        builder.success_count = Some(Default::default())
+    }
+    if builder.failure_count.is_none() {
+        builder.failure_count = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn opportunity_invitation_payload_correct_errors(
     mut builder: crate::types::builders::OpportunityInvitationPayloadBuilder,
 ) -> crate::types::builders::OpportunityInvitationPayloadBuilder {
@@ -380,6 +740,21 @@ pub(crate) fn opportunity_invitation_payload_correct_errors(
             let builder = crate::types::builders::ProjectDetailsBuilder::default();
             crate::serde_util::project_details_correct_errors(builder).build().ok()
         }
+    }
+    builder
+}
+
+pub(crate) fn opportunity_search_summary_correct_errors(
+    mut builder: crate::types::builders::OpportunitySearchSummaryBuilder,
+) -> crate::types::builders::OpportunitySearchSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.last_modified_date.is_none() {
+        builder.last_modified_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.created_date.is_none() {
+        builder.created_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -464,6 +839,15 @@ pub(crate) fn validation_exception_error_correct_errors(
     builder
 }
 
+pub(crate) fn account_customer_correct_errors(
+    mut builder: crate::types::builders::AccountCustomerBuilder,
+) -> crate::types::builders::AccountCustomerBuilder {
+    if builder.company_name.is_none() {
+        builder.company_name = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn aws_product_insights_correct_errors(
     mut builder: crate::types::builders::AwsProductInsightsBuilder,
 ) -> crate::types::builders::AwsProductInsightsBuilder {
@@ -478,6 +862,24 @@ pub(crate) fn aws_product_insights_correct_errors(
     }
     if builder.aws_products.is_none() {
         builder.aws_products = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn channel_recommendation_correct_errors(
+    mut builder: crate::types::builders::ChannelRecommendationBuilder,
+) -> crate::types::builders::ChannelRecommendationBuilder {
+    if builder.recommended_channel.is_none() {
+        builder.recommended_channel = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn customer_account_details_summary_correct_errors(
+    mut builder: crate::types::builders::CustomerAccountDetailsSummaryBuilder,
+) -> crate::types::builders::CustomerAccountDetailsSummaryBuilder {
+    if builder.company_name.is_none() {
+        builder.company_name = Some(Default::default())
     }
     builder
 }
@@ -596,6 +998,16 @@ pub(crate) fn account_summary_correct_errors(
     builder
 }
 
+pub(crate) fn bucket_correct_errors(mut builder: crate::types::builders::BucketBuilder) -> crate::types::builders::BucketBuilder {
+    if builder.values.is_none() {
+        builder.values = Some(Default::default())
+    }
+    if builder.count.is_none() {
+        builder.count = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn lead_context_correct_errors(mut builder: crate::types::builders::LeadContextBuilder) -> crate::types::builders::LeadContextBuilder {
     if builder.customer.is_none() {
         builder.customer = {
@@ -633,6 +1045,21 @@ pub(crate) fn aws_product_details_correct_errors(
     builder
 }
 
+pub(crate) fn best_outreach_window_correct_errors(
+    mut builder: crate::types::builders::BestOutreachWindowBuilder,
+) -> crate::types::builders::BestOutreachWindowBuilder {
+    if builder.day.is_none() {
+        builder.day = "no value was set".parse::<crate::types::DayOfWeek>().ok()
+    }
+    if builder.start_time_utc.is_none() {
+        builder.start_time_utc = Some(Default::default())
+    }
+    if builder.end_time_utc.is_none() {
+        builder.end_time_utc = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn engagement_customer_project_details_correct_errors(
     mut builder: crate::types::builders::EngagementCustomerProjectDetailsBuilder,
 ) -> crate::types::builders::EngagementCustomerProjectDetailsBuilder {
@@ -651,6 +1078,15 @@ pub(crate) fn engagement_customer_project_details_correct_errors(
 pub(crate) fn lead_customer_correct_errors(mut builder: crate::types::builders::LeadCustomerBuilder) -> crate::types::builders::LeadCustomerBuilder {
     if builder.company_name.is_none() {
         builder.company_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn opportunity_search_expected_customer_spend_correct_errors(
+    mut builder: crate::types::builders::OpportunitySearchExpectedCustomerSpendBuilder,
+) -> crate::types::builders::OpportunitySearchExpectedCustomerSpendBuilder {
+    if builder.currency_code.is_none() {
+        builder.currency_code = "no value was set".parse::<crate::types::CurrencyCode>().ok()
     }
     builder
 }

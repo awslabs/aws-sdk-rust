@@ -23,6 +23,7 @@
 ///     OfferSortBy::ReleaseDate => { /* ... */ },
 ///     OfferSortBy::ResaleAuthorizationId => { /* ... */ },
 ///     OfferSortBy::State => { /* ... */ },
+///     OfferSortBy::SubsidiaryAuthorizationId => { /* ... */ },
 ///     OfferSortBy::TargetAgreementId => { /* ... */ },
 ///     OfferSortBy::TargetAgreementIntent => { /* ... */ },
 ///     OfferSortBy::Targeting => { /* ... */ },
@@ -77,6 +78,8 @@ pub enum OfferSortBy {
     #[allow(missing_docs)] // documentation missing in model
     State,
     #[allow(missing_docs)] // documentation missing in model
+    SubsidiaryAuthorizationId,
+    #[allow(missing_docs)] // documentation missing in model
     TargetAgreementId,
     #[allow(missing_docs)] // documentation missing in model
     TargetAgreementIntent,
@@ -100,6 +103,7 @@ impl ::std::convert::From<&str> for OfferSortBy {
             "ReleaseDate" => OfferSortBy::ReleaseDate,
             "ResaleAuthorizationId" => OfferSortBy::ResaleAuthorizationId,
             "State" => OfferSortBy::State,
+            "SubsidiaryAuthorizationId" => OfferSortBy::SubsidiaryAuthorizationId,
             "TargetAgreementId" => OfferSortBy::TargetAgreementId,
             "TargetAgreementIntent" => OfferSortBy::TargetAgreementIntent,
             "Targeting" => OfferSortBy::Targeting,
@@ -129,6 +133,7 @@ impl OfferSortBy {
             OfferSortBy::ReleaseDate => "ReleaseDate",
             OfferSortBy::ResaleAuthorizationId => "ResaleAuthorizationId",
             OfferSortBy::State => "State",
+            OfferSortBy::SubsidiaryAuthorizationId => "SubsidiaryAuthorizationId",
             OfferSortBy::TargetAgreementId => "TargetAgreementId",
             OfferSortBy::TargetAgreementIntent => "TargetAgreementIntent",
             OfferSortBy::Targeting => "Targeting",
@@ -149,6 +154,7 @@ impl OfferSortBy {
             "ReleaseDate",
             "ResaleAuthorizationId",
             "State",
+            "SubsidiaryAuthorizationId",
             "TargetAgreementId",
             "TargetAgreementIntent",
             "Targeting",
@@ -186,6 +192,7 @@ impl ::std::fmt::Display for OfferSortBy {
             OfferSortBy::ReleaseDate => write!(f, "ReleaseDate"),
             OfferSortBy::ResaleAuthorizationId => write!(f, "ResaleAuthorizationId"),
             OfferSortBy::State => write!(f, "State"),
+            OfferSortBy::SubsidiaryAuthorizationId => write!(f, "SubsidiaryAuthorizationId"),
             OfferSortBy::TargetAgreementId => write!(f, "TargetAgreementId"),
             OfferSortBy::TargetAgreementIntent => write!(f, "TargetAgreementIntent"),
             OfferSortBy::Targeting => write!(f, "Targeting"),

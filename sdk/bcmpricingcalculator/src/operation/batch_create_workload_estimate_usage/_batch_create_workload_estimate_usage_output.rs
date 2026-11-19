@@ -5,7 +5,7 @@
 pub struct BatchCreateWorkloadEstimateUsageOutput {
     /// <p>Returns the list of successful usage line items that were created for the Workload estimate.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateWorkloadEstimateUsageItem>>,
-    /// <p>Returns the list of errors reason and the usage item keys that cannot be created in the Workload estimate.</p>
+    /// <p>Returns the list of errors reason and the usage item keys that can't be created in the Workload estimate.</p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateWorkloadEstimateUsageError>>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl BatchCreateWorkloadEstimateUsageOutput {
     pub fn items(&self) -> &[crate::types::BatchCreateWorkloadEstimateUsageItem] {
         self.items.as_deref().unwrap_or_default()
     }
-    /// <p>Returns the list of errors reason and the usage item keys that cannot be created in the Workload estimate.</p>
+    /// <p>Returns the list of errors reason and the usage item keys that can't be created in the Workload estimate.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
     pub fn errors(&self) -> &[crate::types::BatchCreateWorkloadEstimateUsageError] {
@@ -68,19 +68,19 @@ impl BatchCreateWorkloadEstimateUsageOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>Returns the list of errors reason and the usage item keys that cannot be created in the Workload estimate.</p>
+    /// <p>Returns the list of errors reason and the usage item keys that can't be created in the Workload estimate.</p>
     pub fn errors(mut self, input: crate::types::BatchCreateWorkloadEstimateUsageError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Returns the list of errors reason and the usage item keys that cannot be created in the Workload estimate.</p>
+    /// <p>Returns the list of errors reason and the usage item keys that can't be created in the Workload estimate.</p>
     pub fn set_errors(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateWorkloadEstimateUsageError>>) -> Self {
         self.errors = input;
         self
     }
-    /// <p>Returns the list of errors reason and the usage item keys that cannot be created in the Workload estimate.</p>
+    /// <p>Returns the list of errors reason and the usage item keys that can't be created in the Workload estimate.</p>
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchCreateWorkloadEstimateUsageError>> {
         &self.errors
     }

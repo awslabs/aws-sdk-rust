@@ -8,6 +8,8 @@ pub struct CreateGitLabSelfManagedIntegrationDetail {
     pub instance_url: ::std::string::String,
     /// <p>The personal access token used to authenticate with the self-managed GitLab instance.</p>
     pub access_token: ::std::string::String,
+    /// <p>The VPC configuration used to connect to the self-managed GitLab instance in a private network. For publicly accessible instances, omit this field.</p>
+    pub vpc_configuration: ::std::option::Option<crate::types::CodeSecurityIntegrationVpcConfiguration>,
 }
 impl CreateGitLabSelfManagedIntegrationDetail {
     /// <p>The URL of the self-managed GitLab instance.</p>
@@ -20,12 +22,17 @@ impl CreateGitLabSelfManagedIntegrationDetail {
         use std::ops::Deref;
         self.access_token.deref()
     }
+    /// <p>The VPC configuration used to connect to the self-managed GitLab instance in a private network. For publicly accessible instances, omit this field.</p>
+    pub fn vpc_configuration(&self) -> ::std::option::Option<&crate::types::CodeSecurityIntegrationVpcConfiguration> {
+        self.vpc_configuration.as_ref()
+    }
 }
 impl ::std::fmt::Debug for CreateGitLabSelfManagedIntegrationDetail {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGitLabSelfManagedIntegrationDetail");
         formatter.field("instance_url", &"*** Sensitive Data Redacted ***");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("vpc_configuration", &self.vpc_configuration);
         formatter.finish()
     }
 }
@@ -42,6 +49,7 @@ impl CreateGitLabSelfManagedIntegrationDetail {
 pub struct CreateGitLabSelfManagedIntegrationDetailBuilder {
     pub(crate) instance_url: ::std::option::Option<::std::string::String>,
     pub(crate) access_token: ::std::option::Option<::std::string::String>,
+    pub(crate) vpc_configuration: ::std::option::Option<crate::types::CodeSecurityIntegrationVpcConfiguration>,
 }
 impl CreateGitLabSelfManagedIntegrationDetailBuilder {
     /// <p>The URL of the self-managed GitLab instance.</p>
@@ -74,6 +82,20 @@ impl CreateGitLabSelfManagedIntegrationDetailBuilder {
     pub fn get_access_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.access_token
     }
+    /// <p>The VPC configuration used to connect to the self-managed GitLab instance in a private network. For publicly accessible instances, omit this field.</p>
+    pub fn vpc_configuration(mut self, input: crate::types::CodeSecurityIntegrationVpcConfiguration) -> Self {
+        self.vpc_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The VPC configuration used to connect to the self-managed GitLab instance in a private network. For publicly accessible instances, omit this field.</p>
+    pub fn set_vpc_configuration(mut self, input: ::std::option::Option<crate::types::CodeSecurityIntegrationVpcConfiguration>) -> Self {
+        self.vpc_configuration = input;
+        self
+    }
+    /// <p>The VPC configuration used to connect to the self-managed GitLab instance in a private network. For publicly accessible instances, omit this field.</p>
+    pub fn get_vpc_configuration(&self) -> &::std::option::Option<crate::types::CodeSecurityIntegrationVpcConfiguration> {
+        &self.vpc_configuration
+    }
     /// Consumes the builder and constructs a [`CreateGitLabSelfManagedIntegrationDetail`](crate::types::CreateGitLabSelfManagedIntegrationDetail).
     /// This method will fail if any of the following fields are not set:
     /// - [`instance_url`](crate::types::builders::CreateGitLabSelfManagedIntegrationDetailBuilder::instance_url)
@@ -94,6 +116,7 @@ impl CreateGitLabSelfManagedIntegrationDetailBuilder {
                     "access_token was not specified but it is required when building CreateGitLabSelfManagedIntegrationDetail",
                 )
             })?,
+            vpc_configuration: self.vpc_configuration,
         })
     }
 }
@@ -102,6 +125,7 @@ impl ::std::fmt::Debug for CreateGitLabSelfManagedIntegrationDetailBuilder {
         let mut formatter = f.debug_struct("CreateGitLabSelfManagedIntegrationDetailBuilder");
         formatter.field("instance_url", &"*** Sensitive Data Redacted ***");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("vpc_configuration", &self.vpc_configuration);
         formatter.finish()
     }
 }

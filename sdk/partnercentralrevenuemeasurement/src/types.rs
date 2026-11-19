@@ -39,7 +39,15 @@ pub use crate::types::_field_validation_code::FieldValidationCode;
 
 pub use crate::types::_marketplace_revenue_share_summary::MarketplaceRevenueShareSummary;
 
+pub use crate::types::_marketplace_revenue_share_product_entry::MarketplaceRevenueShareProductEntry;
+
+pub use crate::types::_marketplace_revenue_share_product_summary::MarketplaceRevenueShareProductSummary;
+
+pub use crate::types::_marketplace_revenue_share_product_detail::MarketplaceRevenueShareProductDetail;
+
 pub use crate::types::_marketplace_revenue_share_allocation_summary::MarketplaceRevenueShareAllocationSummary;
+
+pub use crate::types::_context_filter::ContextFilter;
 
 pub use crate::types::_attribution_summary::AttributionSummary;
 
@@ -53,6 +61,14 @@ pub use crate::types::_revenue_attribution_allocation_action::RevenueAttribution
 
 pub use crate::types::_revenue_attribution_allocation_error_code::RevenueAttributionAllocationErrorCode;
 
+pub use crate::types::_revenue_share_product_account_entry::RevenueShareProductAccountEntry;
+
+pub use crate::types::_revenue_share_product_account_summary::RevenueShareProductAccountSummary;
+
+pub use crate::types::_revenue_share_product_account_detail::RevenueShareProductAccountDetail;
+
+pub use crate::types::_revenue_share_product_account_type::RevenueShareProductAccountType;
+
 mod _access_denied_exception_reason;
 
 mod _allocation_status;
@@ -65,6 +81,8 @@ mod _catalog_name;
 
 mod _conflict_exception_reason;
 
+mod _context_filter;
+
 mod _entity_type;
 
 mod _field_validation_code;
@@ -74,6 +92,12 @@ mod _marketplace_product_summary;
 mod _marketplace_revenue_share_allocation_sort_field;
 
 mod _marketplace_revenue_share_allocation_summary;
+
+mod _marketplace_revenue_share_product_detail;
+
+mod _marketplace_revenue_share_product_entry;
+
+mod _marketplace_revenue_share_product_summary;
 
 mod _marketplace_revenue_share_sort_by;
 
@@ -94,6 +118,14 @@ mod _revenue_attribution_allocation_summary;
 mod _revenue_attribution_allocation_task_status;
 
 mod _revenue_share_allocation;
+
+mod _revenue_share_product_account_detail;
+
+mod _revenue_share_product_account_entry;
+
+mod _revenue_share_product_account_summary;
+
+mod _revenue_share_product_account_type;
 
 mod _service_quota_exceeded_exception_reason;
 

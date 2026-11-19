@@ -202,6 +202,39 @@ impl From<crate::operation::batch_disassociate_scram_secret::BatchDisassociateSc
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_assessment::CreateAssessmentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_assessment::CreateAssessmentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_assessment::CreateAssessmentError> for Error {
+    fn from(err: crate::operation::create_assessment::CreateAssessmentError) -> Self {
+        match err {
+            crate::operation::create_assessment::CreateAssessmentError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::create_assessment::CreateAssessmentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_assessment::CreateAssessmentError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::create_assessment::CreateAssessmentError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::create_assessment::CreateAssessmentError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::create_assessment::CreateAssessmentError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::create_assessment::CreateAssessmentError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::create_assessment::CreateAssessmentError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::create_assessment::CreateAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_channel::CreateChannelError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -430,6 +463,39 @@ impl From<crate::operation::create_vpc_connection::CreateVpcConnectionError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_assessment::DeleteAssessmentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_assessment::DeleteAssessmentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_assessment::DeleteAssessmentError> for Error {
+    fn from(err: crate::operation::delete_assessment::DeleteAssessmentError) -> Self {
+        match err {
+            crate::operation::delete_assessment::DeleteAssessmentError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::delete_assessment::DeleteAssessmentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_assessment::DeleteAssessmentError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_assessment::DeleteAssessmentError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::delete_assessment::DeleteAssessmentError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::delete_assessment::DeleteAssessmentError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::delete_assessment::DeleteAssessmentError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::delete_assessment::DeleteAssessmentError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::delete_assessment::DeleteAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_channel::DeleteChannelError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -628,6 +694,38 @@ impl From<crate::operation::delete_vpc_connection::DeleteVpcConnectionError> for
             }
             crate::operation::delete_vpc_connection::DeleteVpcConnectionError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::delete_vpc_connection::DeleteVpcConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_assessment::DescribeAssessmentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_assessment::DescribeAssessmentError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_assessment::DescribeAssessmentError> for Error {
+    fn from(err: crate::operation::describe_assessment::DescribeAssessmentError) -> Self {
+        match err {
+            crate::operation::describe_assessment::DescribeAssessmentError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::describe_assessment::DescribeAssessmentError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::describe_assessment::DescribeAssessmentError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::describe_assessment::DescribeAssessmentError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::describe_assessment::DescribeAssessmentError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_assessment::DescribeAssessmentError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::describe_assessment::DescribeAssessmentError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::describe_assessment::DescribeAssessmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -971,6 +1069,51 @@ impl From<crate::operation::describe_topic_partitions::DescribeTopicPartitionsEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_topic_reassignment::DescribeTopicReassignmentError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_topic_reassignment::DescribeTopicReassignmentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_topic_reassignment::DescribeTopicReassignmentError> for Error {
+    fn from(err: crate::operation::describe_topic_reassignment::DescribeTopicReassignmentError) -> Self {
+        match err {
+            crate::operation::describe_topic_reassignment::DescribeTopicReassignmentError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::operation::describe_topic_reassignment::DescribeTopicReassignmentError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::operation::describe_topic_reassignment::DescribeTopicReassignmentError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::describe_topic_reassignment::DescribeTopicReassignmentError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::operation::describe_topic_reassignment::DescribeTopicReassignmentError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::describe_topic_reassignment::DescribeTopicReassignmentError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::describe_topic_reassignment::DescribeTopicReassignmentError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::describe_topic_reassignment::DescribeTopicReassignmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_vpc_connection::DescribeVpcConnectionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1103,6 +1246,75 @@ impl From<crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVer
                 Error::UnauthorizedException(inner)
             }
             crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_assessment_findings::ListAssessmentFindingsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_assessment_findings::ListAssessmentFindingsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_assessment_findings::ListAssessmentFindingsError> for Error {
+    fn from(err: crate::operation::list_assessment_findings::ListAssessmentFindingsError) -> Self {
+        match err {
+            crate::operation::list_assessment_findings::ListAssessmentFindingsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_assessment_findings::ListAssessmentFindingsError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::list_assessment_findings::ListAssessmentFindingsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_assessment_findings::ListAssessmentFindingsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_assessment_findings::ListAssessmentFindingsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_assessment_findings::ListAssessmentFindingsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_assessment_findings::ListAssessmentFindingsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_assessment_findings::ListAssessmentFindingsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::list_assessment_findings::ListAssessmentFindingsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_assessments::ListAssessmentsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_assessments::ListAssessmentsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_assessments::ListAssessmentsError> for Error {
+    fn from(err: crate::operation::list_assessments::ListAssessmentsError) -> Self {
+        match err {
+            crate::operation::list_assessments::ListAssessmentsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_assessments::ListAssessmentsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_assessments::ListAssessmentsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_assessments::ListAssessmentsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_assessments::ListAssessmentsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_assessments::ListAssessmentsError::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
+            crate::operation::list_assessments::ListAssessmentsError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::list_assessments::ListAssessmentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1509,6 +1721,44 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_topic_reassignments::ListTopicReassignmentsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_topic_reassignments::ListTopicReassignmentsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_topic_reassignments::ListTopicReassignmentsError> for Error {
+    fn from(err: crate::operation::list_topic_reassignments::ListTopicReassignmentsError) -> Self {
+        match err {
+            crate::operation::list_topic_reassignments::ListTopicReassignmentsError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::list_topic_reassignments::ListTopicReassignmentsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_topic_reassignments::ListTopicReassignmentsError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::list_topic_reassignments::ListTopicReassignmentsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::list_topic_reassignments::ListTopicReassignmentsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_topic_reassignments::ListTopicReassignmentsError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::list_topic_reassignments::ListTopicReassignmentsError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::list_topic_reassignments::ListTopicReassignmentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_topics::ListTopicsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1655,6 +1905,83 @@ impl From<crate::operation::reject_client_vpc_connection::RejectClientVpcConnect
                 Error::UnauthorizedException(inner)
             }
             crate::operation::reject_client_vpc_connection::RejectClientVpcConnectionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_topic_reassignment::StartTopicReassignmentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_topic_reassignment::StartTopicReassignmentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_topic_reassignment::StartTopicReassignmentError> for Error {
+    fn from(err: crate::operation::start_topic_reassignment::StartTopicReassignmentError) -> Self {
+        match err {
+            crate::operation::start_topic_reassignment::StartTopicReassignmentError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::start_topic_reassignment::StartTopicReassignmentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_topic_reassignment::StartTopicReassignmentError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::start_topic_reassignment::StartTopicReassignmentError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::start_topic_reassignment::StartTopicReassignmentError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::start_topic_reassignment::StartTopicReassignmentError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::start_topic_reassignment::StartTopicReassignmentError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::start_topic_reassignment::StartTopicReassignmentError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::start_topic_reassignment::StartTopicReassignmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_topic_reassignment::StopTopicReassignmentError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::stop_topic_reassignment::StopTopicReassignmentError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::stop_topic_reassignment::StopTopicReassignmentError> for Error {
+    fn from(err: crate::operation::stop_topic_reassignment::StopTopicReassignmentError) -> Self {
+        match err {
+            crate::operation::stop_topic_reassignment::StopTopicReassignmentError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::stop_topic_reassignment::StopTopicReassignmentError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::stop_topic_reassignment::StopTopicReassignmentError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::operation::stop_topic_reassignment::StopTopicReassignmentError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::operation::stop_topic_reassignment::StopTopicReassignmentError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::stop_topic_reassignment::StopTopicReassignmentError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::operation::stop_topic_reassignment::StopTopicReassignmentError::UnauthorizedException(inner) => {
+                Error::UnauthorizedException(inner)
+            }
+            crate::operation::stop_topic_reassignment::StopTopicReassignmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

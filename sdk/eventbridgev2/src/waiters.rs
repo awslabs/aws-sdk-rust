@@ -6,6 +6,9 @@ pub mod event_bus_active;
 /// Supporting types for the `event_bus_deleted` waiter.
 pub mod event_bus_deleted;
 
+/// Supporting types for the `msk_subscriber_active` waiter.
+pub mod msk_subscriber_active;
+
 #[allow(clippy::needless_lifetimes)]
 #[allow(clippy::let_and_return)]
 pub(crate) mod matchers;

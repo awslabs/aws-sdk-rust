@@ -35,6 +35,10 @@ pub use crate::types::_key_algorithm::KeyAlgorithm;
 
 pub use crate::types::_certificate_managed_by::CertificateManagedBy;
 
+pub use crate::types::_certificate_usage::CertificateUsage;
+
+pub use crate::types::_root_hierarchy_type::RootHierarchyType;
+
 pub use crate::types::_revocation_reason::RevocationReason;
 
 pub use crate::types::_certificate_filter_statement::CertificateFilterStatement;
@@ -235,6 +239,8 @@ mod _certificate_transparency_logging_preference;
 
 mod _certificate_type;
 
+mod _certificate_usage;
+
 mod _common_name_filter;
 
 mod _comparison_operator;
@@ -314,6 +320,8 @@ mod _renewal_summary;
 mod _resource_record;
 
 mod _revocation_reason;
+
+mod _root_hierarchy_type;
 
 mod _search_certificates_sort_by;
 

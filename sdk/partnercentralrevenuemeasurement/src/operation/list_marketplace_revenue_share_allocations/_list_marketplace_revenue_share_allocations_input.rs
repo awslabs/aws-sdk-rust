@@ -5,17 +5,21 @@
 pub struct ListMarketplaceRevenueShareAllocationsInput {
     /// <p>The catalog containing the allocations.</p>
     pub catalog: ::std::option::Option<crate::types::CatalogName>,
-    /// <p>The AWS Marketplace product identifier for the parent revenue share.</p>
-    pub product_id: ::std::option::Option<::std::string::String>,
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub marketplace_revenue_share_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Filter by allocation status.</p>
-    pub status: ::std::option::Option<crate::types::AllocationStatus>,
+    pub status_filter: ::std::option::Option<crate::types::AllocationStatus>,
     /// <p>Inclusive lower bound for EffectiveFrom date filter.</p>
     pub after_effective_from: ::std::option::Option<::std::string::String>,
     /// <p>Exclusive upper bound for EffectiveFrom date filter (half-open range).</p>
     pub before_effective_from: ::std::option::Option<::std::string::String>,
+    /// <p>Inclusive lower bound for EffectiveUntil date filter.</p>
+    pub after_effective_until: ::std::option::Option<::std::string::String>,
+    /// <p>Exclusive upper bound for EffectiveUntil date filter (half-open range).</p>
+    pub before_effective_until: ::std::option::Option<::std::string::String>,
     /// <p>The field to sort marketplace revenue share allocations by.</p>
     pub sort_by: ::std::option::Option<crate::types::MarketplaceRevenueShareAllocationSortField>,
-    /// <p>The direction to sort results. Defaults to DESCENDING.</p>
+    /// <p>The direction to sort results. Defaults to ASCENDING.</p>
     pub sort_order: ::std::option::Option<crate::types::SortOrder>,
     /// <p>Maximum number of results per page.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -29,13 +33,13 @@ impl ListMarketplaceRevenueShareAllocationsInput {
     pub fn catalog(&self) -> ::std::option::Option<&crate::types::CatalogName> {
         self.catalog.as_ref()
     }
-    /// <p>The AWS Marketplace product identifier for the parent revenue share.</p>
-    pub fn product_id(&self) -> ::std::option::Option<&str> {
-        self.product_id.as_deref()
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub fn marketplace_revenue_share_identifier(&self) -> ::std::option::Option<&str> {
+        self.marketplace_revenue_share_identifier.as_deref()
     }
     /// <p>Filter by allocation status.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::AllocationStatus> {
-        self.status.as_ref()
+    pub fn status_filter(&self) -> ::std::option::Option<&crate::types::AllocationStatus> {
+        self.status_filter.as_ref()
     }
     /// <p>Inclusive lower bound for EffectiveFrom date filter.</p>
     pub fn after_effective_from(&self) -> ::std::option::Option<&str> {
@@ -45,11 +49,19 @@ impl ListMarketplaceRevenueShareAllocationsInput {
     pub fn before_effective_from(&self) -> ::std::option::Option<&str> {
         self.before_effective_from.as_deref()
     }
+    /// <p>Inclusive lower bound for EffectiveUntil date filter.</p>
+    pub fn after_effective_until(&self) -> ::std::option::Option<&str> {
+        self.after_effective_until.as_deref()
+    }
+    /// <p>Exclusive upper bound for EffectiveUntil date filter (half-open range).</p>
+    pub fn before_effective_until(&self) -> ::std::option::Option<&str> {
+        self.before_effective_until.as_deref()
+    }
     /// <p>The field to sort marketplace revenue share allocations by.</p>
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::MarketplaceRevenueShareAllocationSortField> {
         self.sort_by.as_ref()
     }
-    /// <p>The direction to sort results. Defaults to DESCENDING.</p>
+    /// <p>The direction to sort results. Defaults to ASCENDING.</p>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
@@ -78,10 +90,12 @@ impl ListMarketplaceRevenueShareAllocationsInput {
 #[non_exhaustive]
 pub struct ListMarketplaceRevenueShareAllocationsInputBuilder {
     pub(crate) catalog: ::std::option::Option<crate::types::CatalogName>,
-    pub(crate) product_id: ::std::option::Option<::std::string::String>,
-    pub(crate) status: ::std::option::Option<crate::types::AllocationStatus>,
+    pub(crate) marketplace_revenue_share_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) status_filter: ::std::option::Option<crate::types::AllocationStatus>,
     pub(crate) after_effective_from: ::std::option::Option<::std::string::String>,
     pub(crate) before_effective_from: ::std::option::Option<::std::string::String>,
+    pub(crate) after_effective_until: ::std::option::Option<::std::string::String>,
+    pub(crate) before_effective_until: ::std::option::Option<::std::string::String>,
     pub(crate) sort_by: ::std::option::Option<crate::types::MarketplaceRevenueShareAllocationSortField>,
     pub(crate) sort_order: ::std::option::Option<crate::types::SortOrder>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -104,34 +118,34 @@ impl ListMarketplaceRevenueShareAllocationsInputBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<crate::types::CatalogName> {
         &self.catalog
     }
-    /// <p>The AWS Marketplace product identifier for the parent revenue share.</p>
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
     /// This field is required.
-    pub fn product_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.product_id = ::std::option::Option::Some(input.into());
+    pub fn marketplace_revenue_share_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.marketplace_revenue_share_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The AWS Marketplace product identifier for the parent revenue share.</p>
-    pub fn set_product_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.product_id = input;
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub fn set_marketplace_revenue_share_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.marketplace_revenue_share_identifier = input;
         self
     }
-    /// <p>The AWS Marketplace product identifier for the parent revenue share.</p>
-    pub fn get_product_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.product_id
+    /// <p>The parent marketplace revenue share, by ID (mrs-...) or ARN.</p>
+    pub fn get_marketplace_revenue_share_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.marketplace_revenue_share_identifier
     }
     /// <p>Filter by allocation status.</p>
-    pub fn status(mut self, input: crate::types::AllocationStatus) -> Self {
-        self.status = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>Filter by allocation status.</p>
-    pub fn set_status(mut self, input: ::std::option::Option<crate::types::AllocationStatus>) -> Self {
-        self.status = input;
+    pub fn status_filter(mut self, input: crate::types::AllocationStatus) -> Self {
+        self.status_filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>Filter by allocation status.</p>
-    pub fn get_status(&self) -> &::std::option::Option<crate::types::AllocationStatus> {
-        &self.status
+    pub fn set_status_filter(mut self, input: ::std::option::Option<crate::types::AllocationStatus>) -> Self {
+        self.status_filter = input;
+        self
+    }
+    /// <p>Filter by allocation status.</p>
+    pub fn get_status_filter(&self) -> &::std::option::Option<crate::types::AllocationStatus> {
+        &self.status_filter
     }
     /// <p>Inclusive lower bound for EffectiveFrom date filter.</p>
     pub fn after_effective_from(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,6 +175,34 @@ impl ListMarketplaceRevenueShareAllocationsInputBuilder {
     pub fn get_before_effective_from(&self) -> &::std::option::Option<::std::string::String> {
         &self.before_effective_from
     }
+    /// <p>Inclusive lower bound for EffectiveUntil date filter.</p>
+    pub fn after_effective_until(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.after_effective_until = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Inclusive lower bound for EffectiveUntil date filter.</p>
+    pub fn set_after_effective_until(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.after_effective_until = input;
+        self
+    }
+    /// <p>Inclusive lower bound for EffectiveUntil date filter.</p>
+    pub fn get_after_effective_until(&self) -> &::std::option::Option<::std::string::String> {
+        &self.after_effective_until
+    }
+    /// <p>Exclusive upper bound for EffectiveUntil date filter (half-open range).</p>
+    pub fn before_effective_until(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.before_effective_until = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>Exclusive upper bound for EffectiveUntil date filter (half-open range).</p>
+    pub fn set_before_effective_until(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.before_effective_until = input;
+        self
+    }
+    /// <p>Exclusive upper bound for EffectiveUntil date filter (half-open range).</p>
+    pub fn get_before_effective_until(&self) -> &::std::option::Option<::std::string::String> {
+        &self.before_effective_until
+    }
     /// <p>The field to sort marketplace revenue share allocations by.</p>
     pub fn sort_by(mut self, input: crate::types::MarketplaceRevenueShareAllocationSortField) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
@@ -175,17 +217,17 @@ impl ListMarketplaceRevenueShareAllocationsInputBuilder {
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::MarketplaceRevenueShareAllocationSortField> {
         &self.sort_by
     }
-    /// <p>The direction to sort results. Defaults to DESCENDING.</p>
+    /// <p>The direction to sort results. Defaults to ASCENDING.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The direction to sort results. Defaults to DESCENDING.</p>
+    /// <p>The direction to sort results. Defaults to ASCENDING.</p>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.sort_order = input;
         self
     }
-    /// <p>The direction to sort results. Defaults to DESCENDING.</p>
+    /// <p>The direction to sort results. Defaults to ASCENDING.</p>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SortOrder> {
         &self.sort_order
     }
@@ -241,10 +283,12 @@ impl ListMarketplaceRevenueShareAllocationsInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::list_marketplace_revenue_share_allocations::ListMarketplaceRevenueShareAllocationsInput {
                 catalog: self.catalog,
-                product_id: self.product_id,
-                status: self.status,
+                marketplace_revenue_share_identifier: self.marketplace_revenue_share_identifier,
+                status_filter: self.status_filter,
                 after_effective_from: self.after_effective_from,
                 before_effective_from: self.before_effective_from,
+                after_effective_until: self.after_effective_until,
+                before_effective_until: self.before_effective_until,
                 sort_by: self.sort_by,
                 sort_order: self.sort_order,
                 max_results: self.max_results,

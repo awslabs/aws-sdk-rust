@@ -10,7 +10,7 @@ pub struct ProcessPaymentOutput {
     pub payment_manager_arn: ::std::string::String,
     /// <p>The ID of the payment session used.</p>
     pub payment_session_id: ::std::string::String,
-    /// <p>The ID of the payment instrument used.</p>
+    /// <p>The ID of the payment instrument used. For the <code>AWS_BILLING_X402</code> payment type, this is the service-managed instrument ID <code>aws.agentcorepayments.awsbilling.v1</code>.</p>
     pub payment_instrument_id: ::std::string::String,
     /// <p>The type of payment processed.</p>
     pub payment_type: crate::types::PaymentType,
@@ -40,7 +40,7 @@ impl ProcessPaymentOutput {
         use std::ops::Deref;
         self.payment_session_id.deref()
     }
-    /// <p>The ID of the payment instrument used.</p>
+    /// <p>The ID of the payment instrument used. For the <code>AWS_BILLING_X402</code> payment type, this is the service-managed instrument ID <code>aws.agentcorepayments.awsbilling.v1</code>.</p>
     pub fn payment_instrument_id(&self) -> &str {
         use std::ops::Deref;
         self.payment_instrument_id.deref()
@@ -139,18 +139,18 @@ impl ProcessPaymentOutputBuilder {
     pub fn get_payment_session_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.payment_session_id
     }
-    /// <p>The ID of the payment instrument used.</p>
+    /// <p>The ID of the payment instrument used. For the <code>AWS_BILLING_X402</code> payment type, this is the service-managed instrument ID <code>aws.agentcorepayments.awsbilling.v1</code>.</p>
     /// This field is required.
     pub fn payment_instrument_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.payment_instrument_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The ID of the payment instrument used.</p>
+    /// <p>The ID of the payment instrument used. For the <code>AWS_BILLING_X402</code> payment type, this is the service-managed instrument ID <code>aws.agentcorepayments.awsbilling.v1</code>.</p>
     pub fn set_payment_instrument_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.payment_instrument_id = input;
         self
     }
-    /// <p>The ID of the payment instrument used.</p>
+    /// <p>The ID of the payment instrument used. For the <code>AWS_BILLING_X402</code> payment type, this is the service-managed instrument ID <code>aws.agentcorepayments.awsbilling.v1</code>.</p>
     pub fn get_payment_instrument_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.payment_instrument_id
     }

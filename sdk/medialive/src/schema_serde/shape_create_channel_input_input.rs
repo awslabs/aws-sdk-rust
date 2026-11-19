@@ -265,6 +265,17 @@ static CREATECHANNELINPUT_MEMBER_INFERENCE_SETTINGS: ::aws_smithy_schema::Schema
     19,
 )
 .with_json_name("inferenceSettings");
+static CREATECHANNELINPUT_MEMBER_JPEG_XS_INPUT_SPECIFICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.medialive.synthetic#CreateChannelInput$JpegXsInputSpecification",
+        "com.amazonaws.medialive.synthetic",
+        "CreateChannelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "JpegXsInputSpecification",
+    20,
+)
+.with_json_name("jpegXsInputSpecification");
 static CREATECHANNELINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.medialive.synthetic#CreateChannelInput",
@@ -293,6 +304,7 @@ static CREATECHANNELINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_s
         &CREATECHANNELINPUT_MEMBER_LINKED_CHANNEL_SETTINGS,
         &CREATECHANNELINPUT_MEMBER_CHANNEL_SECURITY_GROUPS,
         &CREATECHANNELINPUT_MEMBER_INFERENCE_SETTINGS,
+        &CREATECHANNELINPUT_MEMBER_JPEG_XS_INPUT_SPECIFICATION,
     ],
 )
 .with_http(aws_smithy_schema::traits::HttpTrait::new("POST", "/prod/channels", Some(201)))
@@ -404,6 +416,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::create
         }
         if let Some(ref val) = self.inference_settings {
             ser.write_struct(&CREATECHANNELINPUT_MEMBER_INFERENCE_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.jpeg_xs_input_specification {
+            ser.write_struct(&CREATECHANNELINPUT_MEMBER_JPEG_XS_INPUT_SPECIFICATION, val)?;
         }
         Ok(())
     }
@@ -574,6 +589,13 @@ impl crate::operation::create_channel::builders::CreateChannelInputBuilder {
                         deser.read_null()?;
                     } else {
                         self.inference_settings = Some(crate::types::InferenceSettings::deserialize(deser)?);
+                    }
+                }
+                Some(20) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.jpeg_xs_input_specification = Some(crate::types::JpegXsInputSpecification::deserialize(deser)?);
                     }
                 }
                 _ => {}

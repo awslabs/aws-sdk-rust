@@ -61,6 +61,8 @@ pub use crate::types::_streaming_experience_settings::StreamingExperienceSetting
 
 pub use crate::types::_content_redirection::ContentRedirection;
 
+pub use crate::types::_web_authn_redirection::WebAuthnRedirection;
+
 pub use crate::types::_agent_access_config::AgentAccessConfig;
 
 pub use crate::types::_storage_connector_authentication::StorageConnectorAuthentication;
@@ -442,6 +444,8 @@ mod _visibility_type;
 mod _volume_config;
 
 mod _vpc_config;
+
+mod _web_authn_redirection;
 
 /// Builders
 pub mod builders;

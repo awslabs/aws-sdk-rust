@@ -25,6 +25,8 @@ pub use crate::types::_linked_channel_settings::LinkedChannelSettingsBuilder;
 
 pub use crate::types::_inference_settings::InferenceSettingsBuilder;
 
+pub use crate::types::_jpeg_xs_input_specification::JpegXsInputSpecificationBuilder;
+
 pub use crate::types::_channel::ChannelBuilder;
 
 pub use crate::types::_cluster_network_settings_create_request::ClusterNetworkSettingsCreateRequestBuilder;

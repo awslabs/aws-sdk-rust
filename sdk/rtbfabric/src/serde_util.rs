@@ -287,6 +287,60 @@ pub(crate) fn disassociate_certificate_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_available_module_output_output_correct_errors(
+    mut builder: crate::operation::get_available_module::builders::GetAvailableModuleOutputBuilder,
+) -> crate::operation::get_available_module::builders::GetAvailableModuleOutputBuilder {
+    if builder.module_id.is_none() {
+        builder.module_id = Some(Default::default())
+    }
+    if builder.module_arn.is_none() {
+        builder.module_arn = Some(Default::default())
+    }
+    if builder.module_name.is_none() {
+        builder.module_name = Some(Default::default())
+    }
+    if builder.subscription_type.is_none() {
+        builder.subscription_type = "no value was set".parse::<crate::types::SubscriptionType>().ok()
+    }
+    if builder.subscription_status.is_none() {
+        builder.subscription_status = "no value was set".parse::<crate::types::SubscriptionStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn get_available_module_version_output_output_correct_errors(
+    mut builder: crate::operation::get_available_module_version::builders::GetAvailableModuleVersionOutputBuilder,
+) -> crate::operation::get_available_module_version::builders::GetAvailableModuleVersionOutputBuilder {
+    if builder.module_id.is_none() {
+        builder.module_id = Some(Default::default())
+    }
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.module_version_arn.is_none() {
+        builder.module_version_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ModuleVersionStatus>().ok()
+    }
+    if builder.permissions.is_none() {
+        builder.permissions = Some(Default::default())
+    }
+    if builder.configurable_actions.is_none() {
+        builder.configurable_actions = Some(Default::default())
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn get_certificate_association_output_output_correct_errors(
     mut builder: crate::operation::get_certificate_association::builders::GetCertificateAssociationOutputBuilder,
 ) -> crate::operation::get_certificate_association::builders::GetCertificateAssociationOutputBuilder {
@@ -446,11 +500,71 @@ pub(crate) fn get_responder_gateway_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_update_output_output_correct_errors(
+    mut builder: crate::operation::get_update::builders::GetUpdateOutputBuilder,
+) -> crate::operation::get_update::builders::GetUpdateOutputBuilder {
+    if builder.update.is_none() {
+        builder.update = {
+            let builder = crate::types::builders::UpdateBuilder::default();
+            crate::serde_util::update_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn list_available_module_versions_output_output_correct_errors(
+    mut builder: crate::operation::list_available_module_versions::builders::ListAvailableModuleVersionsOutputBuilder,
+) -> crate::operation::list_available_module_versions::builders::ListAvailableModuleVersionsOutputBuilder {
+    if builder.module_id.is_none() {
+        builder.module_id = Some(Default::default())
+    }
+    if builder.versions.is_none() {
+        builder.versions = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_available_modules_output_output_correct_errors(
+    mut builder: crate::operation::list_available_modules::builders::ListAvailableModulesOutputBuilder,
+) -> crate::operation::list_available_modules::builders::ListAvailableModulesOutputBuilder {
+    if builder.modules.is_none() {
+        builder.modules = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_certificate_associations_output_output_correct_errors(
     mut builder: crate::operation::list_certificate_associations::builders::ListCertificateAssociationsOutputBuilder,
 ) -> crate::operation::list_certificate_associations::builders::ListCertificateAssociationsOutputBuilder {
     if builder.certificate_associations.is_none() {
         builder.certificate_associations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_updates_output_output_correct_errors(
+    mut builder: crate::operation::list_updates::builders::ListUpdatesOutputBuilder,
+) -> crate::operation::list_updates::builders::ListUpdatesOutputBuilder {
+    if builder.updates.is_none() {
+        builder.updates = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn put_link_flows_output_output_correct_errors(
+    mut builder: crate::operation::put_link_flows::builders::PutLinkFlowsOutputBuilder,
+) -> crate::operation::put_link_flows::builders::PutLinkFlowsOutputBuilder {
+    if builder.gateway_id.is_none() {
+        builder.gateway_id = Some(Default::default())
+    }
+    if builder.link_id.is_none() {
+        builder.link_id = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::LinkStatus>().ok()
+    }
+    if builder.update_id.is_none() {
+        builder.update_id = Some(Default::default())
     }
     builder
 }
@@ -488,6 +602,9 @@ pub(crate) fn update_link_output_output_correct_errors(
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::LinkStatus>().ok()
     }
+    if builder.update_id.is_none() {
+        builder.update_id = Some(Default::default())
+    }
     builder
 }
 
@@ -503,6 +620,9 @@ pub(crate) fn update_link_module_flow_output_output_correct_errors(
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::LinkStatus>().ok()
     }
+    if builder.update_id.is_none() {
+        builder.update_id = Some(Default::default())
+    }
     builder
 }
 
@@ -517,6 +637,9 @@ pub(crate) fn update_link_routing_rule_output_output_correct_errors(
     }
     if builder.updated_at.is_none() {
         builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.update_id.is_none() {
+        builder.update_id = Some(Default::default())
     }
     builder
 }
@@ -541,6 +664,28 @@ pub(crate) fn update_responder_gateway_output_output_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::ResponderGatewayStatus>().ok()
+    }
+    if builder.update_id.is_none() {
+        builder.update_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn update_correct_errors(mut builder: crate::types::builders::UpdateBuilder) -> crate::types::builders::UpdateBuilder {
+    if builder.update_id.is_none() {
+        builder.update_id = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::UpdateType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::UpdateStatus>().ok()
+    }
+    if builder.target.is_none() {
+        builder.target = Some(crate::types::UpdateTarget::Unknown)
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
     }
     builder
 }
@@ -587,6 +732,45 @@ pub(crate) fn auto_scaling_groups_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn available_module_summary_correct_errors(
+    mut builder: crate::types::builders::AvailableModuleSummaryBuilder,
+) -> crate::types::builders::AvailableModuleSummaryBuilder {
+    if builder.module_id.is_none() {
+        builder.module_id = Some(Default::default())
+    }
+    if builder.module_arn.is_none() {
+        builder.module_arn = Some(Default::default())
+    }
+    if builder.module_name.is_none() {
+        builder.module_name = Some(Default::default())
+    }
+    if builder.subscription_type.is_none() {
+        builder.subscription_type = "no value was set".parse::<crate::types::SubscriptionType>().ok()
+    }
+    if builder.subscription_status.is_none() {
+        builder.subscription_status = "no value was set".parse::<crate::types::SubscriptionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn available_module_version_summary_correct_errors(
+    mut builder: crate::types::builders::AvailableModuleVersionSummaryBuilder,
+) -> crate::types::builders::AvailableModuleVersionSummaryBuilder {
+    if builder.version.is_none() {
+        builder.version = Some(Default::default())
+    }
+    if builder.module_version_arn.is_none() {
+        builder.module_version_arn = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ModuleVersionStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn certificate_association_summary_correct_errors(
     mut builder: crate::types::builders::CertificateAssociationSummaryBuilder,
 ) -> crate::types::builders::CertificateAssociationSummaryBuilder {
@@ -619,6 +803,26 @@ pub(crate) fn eks_endpoints_configuration_correct_errors(
     }
     if builder.role_arn.is_none() {
         builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn error_detail_correct_errors(mut builder: crate::types::builders::ErrorDetailBuilder) -> crate::types::builders::ErrorDetailBuilder {
+    if builder.code.is_none() {
+        builder.code = "no value was set".parse::<crate::types::ErrorCode>().ok()
+    }
+    if builder.message.is_none() {
+        builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn flow_correct_errors(mut builder: crate::types::builders::FlowBuilder) -> crate::types::builders::FlowBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.pipeline.is_none() {
+        builder.pipeline = Some(crate::types::FlowPipeline::Unknown)
     }
     builder
 }
@@ -707,6 +911,24 @@ pub(crate) fn query_string_key_value_pair_correct_errors(
     builder
 }
 
+pub(crate) fn update_summary_correct_errors(
+    mut builder: crate::types::builders::UpdateSummaryBuilder,
+) -> crate::types::builders::UpdateSummaryBuilder {
+    if builder.update_id.is_none() {
+        builder.update_id = Some(Default::default())
+    }
+    if builder.r#type.is_none() {
+        builder.r#type = "no value was set".parse::<crate::types::UpdateType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::UpdateStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn health_check_config_correct_errors(
     mut builder: crate::types::builders::HealthCheckConfigBuilder,
 ) -> crate::types::builders::HealthCheckConfigBuilder {
@@ -731,6 +953,13 @@ pub(crate) fn link_application_log_sampling_correct_errors(
     builder
 }
 
+pub(crate) fn link_target_correct_errors(mut builder: crate::types::builders::LinkTargetBuilder) -> crate::types::builders::LinkTargetBuilder {
+    if builder.link_id.is_none() {
+        builder.link_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn responder_error_masking_for_http_code_correct_errors(
     mut builder: crate::types::builders::ResponderErrorMaskingForHttpCodeBuilder,
 ) -> crate::types::builders::ResponderErrorMaskingForHttpCodeBuilder {
@@ -742,6 +971,45 @@ pub(crate) fn responder_error_masking_for_http_code_correct_errors(
     }
     if builder.logging_types.is_none() {
         builder.logging_types = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn responder_gateway_config_parameters_correct_errors(
+    mut builder: crate::types::builders::ResponderGatewayConfigParametersBuilder,
+) -> crate::types::builders::ResponderGatewayConfigParametersBuilder {
+    if builder.port.is_none() {
+        builder.port = Some(Default::default())
+    }
+    if builder.protocol.is_none() {
+        builder.protocol = "no value was set".parse::<crate::types::Protocol>().ok()
+    }
+    builder
+}
+
+pub(crate) fn routing_rule_parameters_correct_errors(
+    mut builder: crate::types::builders::RoutingRuleParametersBuilder,
+) -> crate::types::builders::RoutingRuleParametersBuilder {
+    if builder.priority.is_none() {
+        builder.priority = Some(Default::default())
+    }
+    if builder.conditions.is_none() {
+        builder.conditions = {
+            let builder = crate::types::builders::RuleConditionBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
+pub(crate) fn routing_rule_target_correct_errors(
+    mut builder: crate::types::builders::RoutingRuleTargetBuilder,
+) -> crate::types::builders::RoutingRuleTargetBuilder {
+    if builder.link_id.is_none() {
+        builder.link_id = Some(Default::default())
+    }
+    if builder.rule_id.is_none() {
+        builder.rule_id = Some(Default::default())
     }
     builder
 }
@@ -764,9 +1032,44 @@ pub(crate) fn open_rtb_attribute_module_parameters_correct_errors(
     builder
 }
 
+pub(crate) fn phased_pipeline_correct_errors(
+    mut builder: crate::types::builders::PhasedPipelineBuilder,
+) -> crate::types::builders::PhasedPipelineBuilder {
+    if builder.phases.is_none() {
+        builder.phases = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn sequential_pipeline_correct_errors(
+    mut builder: crate::types::builders::SequentialPipelineBuilder,
+) -> crate::types::builders::SequentialPipelineBuilder {
+    if builder.modules.is_none() {
+        builder.modules = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn filter_correct_errors(mut builder: crate::types::builders::FilterBuilder) -> crate::types::builders::FilterBuilder {
     if builder.criteria.is_none() {
         builder.criteria = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn flow_module_correct_errors(mut builder: crate::types::builders::FlowModuleBuilder) -> crate::types::builders::FlowModuleBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.module_version_arn.is_none() {
+        builder.module_version_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn flow_phase_correct_errors(mut builder: crate::types::builders::FlowPhaseBuilder) -> crate::types::builders::FlowPhaseBuilder {
+    if builder.modules.is_none() {
+        builder.modules = Some(Default::default())
     }
     builder
 }

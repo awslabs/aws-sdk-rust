@@ -5,7 +5,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessDeniedException {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A message that describes why access was denied.</p>
     pub message: ::std::option::Option<::std::string::String>,
     /// <p>The reason why access was denied for the requested operation.</p>
     pub reason: ::std::option::Option<crate::types::AccessDeniedExceptionErrorCode>,
@@ -62,17 +62,17 @@ pub struct AccessDeniedExceptionBuilder {
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl AccessDeniedExceptionBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A message that describes why access was denied.</p>
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A message that describes why access was denied.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A message that describes why access was denied.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }

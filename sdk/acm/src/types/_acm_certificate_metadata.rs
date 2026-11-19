@@ -37,6 +37,10 @@ pub struct AcmCertificateMetadata {
     pub acme_endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ACME account identifier associated with the certificate.</p>
     pub acme_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Extended Key Usage profile of the certificate. This value exists only for Amazon N2 certificates. If <code>CertificateUsage</code> was omitted from the request, this value is <code>CLIENT_AND_SERVER_AUTH</code>.</p>
+    pub certificate_usage: ::std::option::Option<crate::types::CertificateUsage>,
+    /// <p>The root hierarchy from which the certificate was issued. This value exists only for Amazon N2 certificates, which have a <code>Type</code> of <code>AMAZON_ISSUED</code>.</p>
+    pub root_hierarchy_type: ::std::option::Option<crate::types::RootHierarchyType>,
 }
 impl AcmCertificateMetadata {
     /// <p>The time at which the certificate was requested.</p>
@@ -104,6 +108,14 @@ impl AcmCertificateMetadata {
     pub fn acme_account_id(&self) -> ::std::option::Option<&str> {
         self.acme_account_id.as_deref()
     }
+    /// <p>The Extended Key Usage profile of the certificate. This value exists only for Amazon N2 certificates. If <code>CertificateUsage</code> was omitted from the request, this value is <code>CLIENT_AND_SERVER_AUTH</code>.</p>
+    pub fn certificate_usage(&self) -> ::std::option::Option<&crate::types::CertificateUsage> {
+        self.certificate_usage.as_ref()
+    }
+    /// <p>The root hierarchy from which the certificate was issued. This value exists only for Amazon N2 certificates, which have a <code>Type</code> of <code>AMAZON_ISSUED</code>.</p>
+    pub fn root_hierarchy_type(&self) -> ::std::option::Option<&crate::types::RootHierarchyType> {
+        self.root_hierarchy_type.as_ref()
+    }
 }
 impl AcmCertificateMetadata {
     /// Creates a new builder-style object to manufacture [`AcmCertificateMetadata`](crate::types::AcmCertificateMetadata).
@@ -132,6 +144,8 @@ pub struct AcmCertificateMetadataBuilder {
     pub(crate) certificate_key_pair_origin: ::std::option::Option<crate::types::CertificateKeyPairOrigin>,
     pub(crate) acme_endpoint_arn: ::std::option::Option<::std::string::String>,
     pub(crate) acme_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_usage: ::std::option::Option<crate::types::CertificateUsage>,
+    pub(crate) root_hierarchy_type: ::std::option::Option<crate::types::RootHierarchyType>,
 }
 impl AcmCertificateMetadataBuilder {
     /// <p>The time at which the certificate was requested.</p>
@@ -361,6 +375,34 @@ impl AcmCertificateMetadataBuilder {
     pub fn get_acme_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.acme_account_id
     }
+    /// <p>The Extended Key Usage profile of the certificate. This value exists only for Amazon N2 certificates. If <code>CertificateUsage</code> was omitted from the request, this value is <code>CLIENT_AND_SERVER_AUTH</code>.</p>
+    pub fn certificate_usage(mut self, input: crate::types::CertificateUsage) -> Self {
+        self.certificate_usage = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Extended Key Usage profile of the certificate. This value exists only for Amazon N2 certificates. If <code>CertificateUsage</code> was omitted from the request, this value is <code>CLIENT_AND_SERVER_AUTH</code>.</p>
+    pub fn set_certificate_usage(mut self, input: ::std::option::Option<crate::types::CertificateUsage>) -> Self {
+        self.certificate_usage = input;
+        self
+    }
+    /// <p>The Extended Key Usage profile of the certificate. This value exists only for Amazon N2 certificates. If <code>CertificateUsage</code> was omitted from the request, this value is <code>CLIENT_AND_SERVER_AUTH</code>.</p>
+    pub fn get_certificate_usage(&self) -> &::std::option::Option<crate::types::CertificateUsage> {
+        &self.certificate_usage
+    }
+    /// <p>The root hierarchy from which the certificate was issued. This value exists only for Amazon N2 certificates, which have a <code>Type</code> of <code>AMAZON_ISSUED</code>.</p>
+    pub fn root_hierarchy_type(mut self, input: crate::types::RootHierarchyType) -> Self {
+        self.root_hierarchy_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The root hierarchy from which the certificate was issued. This value exists only for Amazon N2 certificates, which have a <code>Type</code> of <code>AMAZON_ISSUED</code>.</p>
+    pub fn set_root_hierarchy_type(mut self, input: ::std::option::Option<crate::types::RootHierarchyType>) -> Self {
+        self.root_hierarchy_type = input;
+        self
+    }
+    /// <p>The root hierarchy from which the certificate was issued. This value exists only for Amazon N2 certificates, which have a <code>Type</code> of <code>AMAZON_ISSUED</code>.</p>
+    pub fn get_root_hierarchy_type(&self) -> &::std::option::Option<crate::types::RootHierarchyType> {
+        &self.root_hierarchy_type
+    }
     /// Consumes the builder and constructs a [`AcmCertificateMetadata`](crate::types::AcmCertificateMetadata).
     pub fn build(self) -> crate::types::AcmCertificateMetadata {
         crate::types::AcmCertificateMetadata {
@@ -380,6 +422,8 @@ impl AcmCertificateMetadataBuilder {
             certificate_key_pair_origin: self.certificate_key_pair_origin,
             acme_endpoint_arn: self.acme_endpoint_arn,
             acme_account_id: self.acme_account_id,
+            certificate_usage: self.certificate_usage,
+            root_hierarchy_type: self.root_hierarchy_type,
         }
     }
 }

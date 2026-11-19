@@ -334,23 +334,23 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateEventBu
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateEventBusError {
-    /// Another change to the resource is already in progress. Retry the request.
+    /// <p>Another change to the resource is already in progress. Retry the request.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
-    /// The request reuses the client token of an earlier request with different parameters. Use a new client token, or resend the earlier request unchanged.
+    /// <p>The request reuses the client token of an earlier request with different parameters. Use a new client token, or resend the earlier request unchanged.</p>
     IdempotentParameterMismatchException(crate::types::error::IdempotentParameterMismatchException),
-    /// The resource is not in a state that allows the operation. For example, an event bus that is still being created cannot accept events.
+    /// <p>The resource is not in a state that allows the operation. For example, an event bus that is still being created cannot accept events.</p>
     InvalidStateException(crate::types::error::InvalidStateException),
-    /// The request would exceed a service quota for the account.
+    /// <p>The request would exceed a service quota for the account.</p>
     LimitExceededException(crate::types::error::LimitExceededException),
-    /// A resource with the same name already exists.
+    /// <p>A resource with the same name already exists.</p>
     ResourceAlreadyExistsException(crate::types::error::ResourceAlreadyExistsException),
-    /// The caller does not have the permissions required to perform the operation. This error is also returned when the operation cannot use the AWS KMS key for the event bus.
+    /// <p>The caller does not have the permissions required to perform the operation. This error is also returned when the operation cannot use the AWS KMS key for the event bus.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// The request failed because of an internal service error. Retry the request.
+    /// <p>The request failed because of an internal service error. Retry the request.</p>
     InternalException(crate::types::error::InternalException),
-    /// A request parameter is missing or not valid.
+    /// <p>A request parameter is missing or not valid.</p>
     InvalidInputException(crate::types::error::InvalidInputException),
-    /// The request was throttled because it exceeds a request rate limit. Retry the request with backoff.
+    /// <p>The request was throttled because it exceeds a request rate limit. Retry the request with backoff.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

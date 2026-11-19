@@ -144,11 +144,17 @@ static STACK_MEMBER_CONTENT_REDIRECTION: ::aws_smithy_schema::Schema<'static> = 
     "ContentRedirection",
     14,
 );
+static STACK_MEMBER_WEB_AUTHN_REDIRECTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Stack$WebAuthnRedirection", "com.amazonaws.appstream", "Stack"),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "WebAuthnRedirection",
+    15,
+);
 static STACK_MEMBER_AGENT_ACCESS_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Stack$AgentAccessConfig", "com.amazonaws.appstream", "Stack"),
     ::aws_smithy_schema::ShapeType::Structure,
     "AgentAccessConfig",
-    15,
+    16,
 );
 static STACK_MEMBER_STORAGE_CONNECTOR_AUTHENTICATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -158,7 +164,7 @@ static STACK_MEMBER_STORAGE_CONNECTOR_AUTHENTICATION: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::String,
     "StorageConnectorAuthentication",
-    16,
+    17,
 );
 static STACK_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.appstream#Stack", "com.amazonaws.appstream", "Stack"),
@@ -179,6 +185,7 @@ static STACK_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema:
         &STACK_MEMBER_EMBED_HOST_DOMAINS,
         &STACK_MEMBER_STREAMING_EXPERIENCE_SETTINGS,
         &STACK_MEMBER_CONTENT_REDIRECTION,
+        &STACK_MEMBER_WEB_AUTHN_REDIRECTION,
         &STACK_MEMBER_AGENT_ACCESS_CONFIG,
         &STACK_MEMBER_STORAGE_CONNECTOR_AUTHENTICATION,
     ],
@@ -281,6 +288,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Stack {
         }
         if let Some(ref val) = self.content_redirection {
             ser.write_struct(&STACK_MEMBER_CONTENT_REDIRECTION, val)?;
+        }
+        if let Some(ref val) = self.web_authn_redirection {
+            ser.write_struct(&STACK_MEMBER_WEB_AUTHN_REDIRECTION, val)?;
         }
         if let Some(ref val) = self.agent_access_config {
             ser.write_struct(&STACK_MEMBER_AGENT_ACCESS_CONFIG, val)?;
@@ -442,10 +452,17 @@ impl crate::types::builders::StackBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.agent_access_config = Some(crate::types::AgentAccessConfig::deserialize(deser)?);
+                        self.web_authn_redirection = Some(crate::types::WebAuthnRedirection::deserialize(deser)?);
                     }
                 }
                 Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.agent_access_config = Some(crate::types::AgentAccessConfig::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

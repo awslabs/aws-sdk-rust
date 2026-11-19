@@ -47,6 +47,8 @@ pub use crate::types::_streaming_experience_settings::StreamingExperienceSetting
 
 pub use crate::types::_content_redirection::ContentRedirectionBuilder;
 
+pub use crate::types::_web_authn_redirection::WebAuthnRedirectionBuilder;
+
 pub use crate::types::_agent_access_config::AgentAccessConfigBuilder;
 
 pub use crate::types::_stack::StackBuilder;

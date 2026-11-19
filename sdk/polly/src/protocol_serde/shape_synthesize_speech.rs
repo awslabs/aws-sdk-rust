@@ -88,6 +88,20 @@ pub fn de_synthesize_speech_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ConflictException" => crate::operation::synthesize_speech::SynthesizeSpeechError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ConflictExceptionBuilder::default();
+                output = crate::protocol_serde::shape_conflict_exception::de_conflict_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::conflict_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?
+            };
+            tmp
+        }),
         "EngineNotSupportedException" => crate::operation::synthesize_speech::SynthesizeSpeechError::EngineNotSupportedException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -184,6 +198,20 @@ pub fn de_synthesize_speech_http_error(
             if tmp.message.is_none() {
                 tmp.message = _error_message;
             }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::operation::synthesize_speech::SynthesizeSpeechError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::ResourceNotFoundExceptionBuilder::default();
+                output = crate::protocol_serde::shape_resource_not_found_exception::de_resource_not_found_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::resource_not_found_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::synthesize_speech::SynthesizeSpeechError::unhandled)?
+            };
             tmp
         }),
         "ServiceFailureException" => crate::operation::synthesize_speech::SynthesizeSpeechError::ServiceFailureException({

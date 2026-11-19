@@ -10,6 +10,8 @@ pub struct OfferSummary {
     pub product_id: ::std::option::Option<::std::string::String>,
     /// <p>The ResaleAuthorizationId of the offer.</p>
     pub resale_authorization_id: ::std::option::Option<::std::string::String>,
+    /// <p>The ID of the subsidiary authorization that the offer was created from. The ID begins with <code>subauthz-</code> followed by 13 alphanumeric characters.</p>
+    pub subsidiary_authorization_id: ::std::option::Option<::std::string::String>,
     /// <p>The release date of the offer.</p>
     pub release_date: ::std::option::Option<::std::string::String>,
     /// <p>The availability end date of the offer.</p>
@@ -41,6 +43,10 @@ impl OfferSummary {
     /// <p>The ResaleAuthorizationId of the offer.</p>
     pub fn resale_authorization_id(&self) -> ::std::option::Option<&str> {
         self.resale_authorization_id.as_deref()
+    }
+    /// <p>The ID of the subsidiary authorization that the offer was created from. The ID begins with <code>subauthz-</code> followed by 13 alphanumeric characters.</p>
+    pub fn subsidiary_authorization_id(&self) -> ::std::option::Option<&str> {
+        self.subsidiary_authorization_id.as_deref()
     }
     /// <p>The release date of the offer.</p>
     pub fn release_date(&self) -> ::std::option::Option<&str> {
@@ -97,6 +103,7 @@ pub struct OfferSummaryBuilder {
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) product_id: ::std::option::Option<::std::string::String>,
     pub(crate) resale_authorization_id: ::std::option::Option<::std::string::String>,
+    pub(crate) subsidiary_authorization_id: ::std::option::Option<::std::string::String>,
     pub(crate) release_date: ::std::option::Option<::std::string::String>,
     pub(crate) availability_end_date: ::std::option::Option<::std::string::String>,
     pub(crate) buyer_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -149,6 +156,20 @@ impl OfferSummaryBuilder {
     /// <p>The ResaleAuthorizationId of the offer.</p>
     pub fn get_resale_authorization_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.resale_authorization_id
+    }
+    /// <p>The ID of the subsidiary authorization that the offer was created from. The ID begins with <code>subauthz-</code> followed by 13 alphanumeric characters.</p>
+    pub fn subsidiary_authorization_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.subsidiary_authorization_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID of the subsidiary authorization that the offer was created from. The ID begins with <code>subauthz-</code> followed by 13 alphanumeric characters.</p>
+    pub fn set_subsidiary_authorization_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.subsidiary_authorization_id = input;
+        self
+    }
+    /// <p>The ID of the subsidiary authorization that the offer was created from. The ID begins with <code>subauthz-</code> followed by 13 alphanumeric characters.</p>
+    pub fn get_subsidiary_authorization_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.subsidiary_authorization_id
     }
     /// <p>The release date of the offer.</p>
     pub fn release_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -294,6 +315,7 @@ impl OfferSummaryBuilder {
             name: self.name,
             product_id: self.product_id,
             resale_authorization_id: self.resale_authorization_id,
+            subsidiary_authorization_id: self.subsidiary_authorization_id,
             release_date: self.release_date,
             availability_end_date: self.availability_end_date,
             buyer_accounts: self.buyer_accounts,

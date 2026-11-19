@@ -37,6 +37,9 @@ pub mod list_tags_for_resource;
 /// Types for the `PutResourcePolicy` operation.
 pub mod put_resource_policy;
 
+/// Types for the `StartAssessment` operation.
+pub mod start_assessment;
+
 /// Types for the `StartChangeSet` operation.
 pub mod start_change_set;
 

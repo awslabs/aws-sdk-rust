@@ -30,7 +30,9 @@ impl crate::operation::create_health_check::builders::CreateHealthCheckInputBuil
 /// <p>You can associate health checks with failover resource record sets in a private hosted zone. Note the following:</p>
 /// <ul>
 /// <li>
-/// <p>Route 53 health checkers are outside the VPC. To check the health of an endpoint within a VPC by IP address, you must assign a public IP address to the instance in the VPC.</p></li>
+/// <p>For a public health check, Route 53 health checkers are outside the VPC. To check the health of an endpoint within a VPC by IP address, you must assign a public IP address to the instance in the VPC.</p></li>
+/// <li>
+/// <p>To check the health of an endpoint within a VPC by using a private IP address, use a private endpoint health check (<code>EndpointType</code> of <code>PRIVATE</code>). For more information, see <code>CreateHealthCheckSource</code>.</p></li>
 /// <li>
 /// <p>You can configure a health checker to check the health of an external resource that the instance relies on, such as a database server.</p></li>
 /// <li>

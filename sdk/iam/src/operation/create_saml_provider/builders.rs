@@ -28,6 +28,7 @@ impl crate::operation::create_saml_provider::builders::CreateSamlProviderInputBu
 /// <p>This operation requires <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>.</p>
 /// </note>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html">Enabling SAML 2.0 federated users to access the Amazon Web Services Management Console</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based federation</a> in the <i>IAM User Guide</i>.</p>
+/// <p>To control who can configure trusted identity propagation on a SAML provider, use the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityPropagation">iam:EnableIdentityPropagation</a>, <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_EnableIdentityCenterAssociation">iam:EnableIdentityCenterAssociation</a>, <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityProviderIssuers">iam:RequestIdentityProviderIssuers</a>, <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityProviderIssuers">iam:ResourceIdentityProviderIssuers</a>, <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_RequestIdentityCenterInstanceArn">iam:RequestIdentityCenterInstanceArn</a>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceIdentityCenterInstanceArn">iam:ResourceIdentityCenterInstanceArn</a> condition keys in IAM policies. The <code>Request</code> keys contain the values in the request. The <code>Resource</code> keys contain the values stored on the provider.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateSAMLProviderFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -199,5 +200,36 @@ impl CreateSAMLProviderFluentBuilder {
     /// <p>The private key generated from your external identity provider. The private key must be a .pem file that uses AES-GCM or AES-CBC encryption algorithm to decrypt SAML assertions.</p>
     pub fn get_add_private_key(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_add_private_key()
+    }
+    /// <p>The trusted identity propagation context provider configuration to associate with the SAML provider. The context provider defines how the subject is derived and how keys from the provider's SAML assertion are mapped into trusted context keys. Specifying a context provider enables trusted identity propagation for the provider. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+    pub fn context_provider(mut self, input: crate::types::ContextProvider) -> Self {
+        self.inner = self.inner.context_provider(input);
+        self
+    }
+    /// <p>The trusted identity propagation context provider configuration to associate with the SAML provider. The context provider defines how the subject is derived and how keys from the provider's SAML assertion are mapped into trusted context keys. Specifying a context provider enables trusted identity propagation for the provider. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+    pub fn set_context_provider(mut self, input: ::std::option::Option<crate::types::ContextProvider>) -> Self {
+        self.inner = self.inner.set_context_provider(input);
+        self
+    }
+    /// <p>The trusted identity propagation context provider configuration to associate with the SAML provider. The context provider defines how the subject is derived and how keys from the provider's SAML assertion are mapped into trusted context keys. Specifying a context provider enables trusted identity propagation for the provider. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_ContextProvider.html">ContextProvider</a>.</p>
+    pub fn get_context_provider(&self) -> &::std::option::Option<crate::types::ContextProvider> {
+        self.inner.get_context_provider()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance to associate with the SAML provider. If you specify this parameter, you must also specify <code>ContextProvider</code>.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    pub fn identity_center_instance_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.identity_center_instance_arn(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance to associate with the SAML provider. If you specify this parameter, you must also specify <code>ContextProvider</code>.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    pub fn set_identity_center_instance_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_identity_center_instance_arn(input);
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM Identity Center instance to associate with the SAML provider. If you specify this parameter, you must also specify <code>ContextProvider</code>.</p>
+    /// <p>For the format, see <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_InstanceMetadata.html">InstanceMetadata</a> in the <i>IAM Identity Center API Reference</i>.</p>
+    pub fn get_identity_center_instance_arn(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_identity_center_instance_arn()
     }
 }

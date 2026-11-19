@@ -24,6 +24,8 @@ impl crate::operation::list_certificates::builders::ListCertificatesInputBuilder
 ///
 /// <p>Retrieves a list of certificate ARNs and domain names. You can request that only certificates that match a specific status be listed. You can also filter by specific attributes of the certificate. Default filtering returns only <code>RSA_2048</code> certificates. For more information, see <code>Filters</code>.</p><note>
 /// <p>By default, this action does not return certificates with a <code>CertificateKeyPairOrigin</code> of <code>ACME</code>. To include ACME certificates, specify <code>ACME</code> in the <code>CertificateKeyPairOrigins</code> filter.</p>
+/// </note> <note>
+/// <p>By default, this action does not return certificates with a <code>RootHierarchyType</code> of <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code>. To list only Amazon N2 certificates, specify one or both of these values in the <code>RootHierarchyTypes</code> filter.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListCertificatesFluentBuilder {
@@ -153,6 +155,25 @@ impl ListCertificatesFluentBuilder {
     /// <p>Filter the certificate list by certificate key pair origin. Specify one or more <code>CertificateKeyPairOrigin</code> values. Default filtering returns only certificates with key pair origin of <code>AWS_MANAGED</code> and <code>CUSTOMER_PROVIDED</code>.</p>
     pub fn get_certificate_key_pair_origins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateKeyPairOrigin>> {
         self.inner.get_certificate_key_pair_origins()
+    }
+    ///
+    /// Appends an item to `RootHierarchyTypes`.
+    ///
+    /// To override the contents of this collection use [`set_root_hierarchy_types`](Self::set_root_hierarchy_types).
+    ///
+    /// <p>Filter the certificate list by root hierarchy type. Specify one or more <code>RootHierarchyType</code> values. By default, this action does not return certificates with a <code>RootHierarchyType</code> of <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code>. To list only Amazon N2 certificates, specify one or both of these values in the <code>RootHierarchyTypes</code> filter.</p>
+    pub fn root_hierarchy_types(mut self, input: crate::types::RootHierarchyType) -> Self {
+        self.inner = self.inner.root_hierarchy_types(input);
+        self
+    }
+    /// <p>Filter the certificate list by root hierarchy type. Specify one or more <code>RootHierarchyType</code> values. By default, this action does not return certificates with a <code>RootHierarchyType</code> of <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code>. To list only Amazon N2 certificates, specify one or both of these values in the <code>RootHierarchyTypes</code> filter.</p>
+    pub fn set_root_hierarchy_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RootHierarchyType>>) -> Self {
+        self.inner = self.inner.set_root_hierarchy_types(input);
+        self
+    }
+    /// <p>Filter the certificate list by root hierarchy type. Specify one or more <code>RootHierarchyType</code> values. By default, this action does not return certificates with a <code>RootHierarchyType</code> of <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code>. To list only Amazon N2 certificates, specify one or both of these values in the <code>RootHierarchyTypes</code> filter.</p>
+    pub fn get_root_hierarchy_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RootHierarchyType>> {
+        self.inner.get_root_hierarchy_types()
     }
     /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
     pub fn includes(mut self, input: crate::types::Filters) -> Self {

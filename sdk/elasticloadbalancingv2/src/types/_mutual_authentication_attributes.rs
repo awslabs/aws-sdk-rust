@@ -4,7 +4,9 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MutualAuthenticationAttributes {
-    /// <p>The client certificate handling method. Options are <code>off</code>, <code>passthrough</code> or <code>verify</code>. The default value is <code>off</code>.</p>
+    /// <p>The client certificate handling method. The default value is <code>off</code>.</p>
+    /// <p>\[Application Load Balancers\] The possible values are off, passthrough, and verify.</p>
+    /// <p>\[Network Load Balancers\] The possible values are off and verify.</p>
     pub mode: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the trust store.</p>
     pub trust_store_arn: ::std::option::Option<::std::string::String>,
@@ -14,9 +16,14 @@ pub struct MutualAuthenticationAttributes {
     pub trust_store_association_status: ::std::option::Option<crate::types::TrustStoreAssociationStatusEnum>,
     /// <p>Indicates whether trust store CA certificate names are advertised.</p>
     pub advertise_trust_store_ca_names: ::std::option::Option<crate::types::AdvertiseTrustStoreCaNamesEnum>,
+    /// <p>\[Network Load Balancers\] The client certificate identity filters. The load balancer admits a connection only if the client certificate matches at least one filter. If you don't specify any filters, the load balancer admits every client certificate that passes trust store validation and revocation checks.</p>
+    /// <p>You can specify filters only when the mode is <code>verify</code>. You can specify up to 100 filters per listener.</p>
+    pub client_certificate_identity_filters: ::std::option::Option<::std::vec::Vec<crate::types::ClientCertificateIdentityFilter>>,
 }
 impl MutualAuthenticationAttributes {
-    /// <p>The client certificate handling method. Options are <code>off</code>, <code>passthrough</code> or <code>verify</code>. The default value is <code>off</code>.</p>
+    /// <p>The client certificate handling method. The default value is <code>off</code>.</p>
+    /// <p>\[Application Load Balancers\] The possible values are off, passthrough, and verify.</p>
+    /// <p>\[Network Load Balancers\] The possible values are off and verify.</p>
     pub fn mode(&self) -> ::std::option::Option<&str> {
         self.mode.as_deref()
     }
@@ -36,6 +43,13 @@ impl MutualAuthenticationAttributes {
     pub fn advertise_trust_store_ca_names(&self) -> ::std::option::Option<&crate::types::AdvertiseTrustStoreCaNamesEnum> {
         self.advertise_trust_store_ca_names.as_ref()
     }
+    /// <p>\[Network Load Balancers\] The client certificate identity filters. The load balancer admits a connection only if the client certificate matches at least one filter. If you don't specify any filters, the load balancer admits every client certificate that passes trust store validation and revocation checks.</p>
+    /// <p>You can specify filters only when the mode is <code>verify</code>. You can specify up to 100 filters per listener.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.client_certificate_identity_filters.is_none()`.
+    pub fn client_certificate_identity_filters(&self) -> &[crate::types::ClientCertificateIdentityFilter] {
+        self.client_certificate_identity_filters.as_deref().unwrap_or_default()
+    }
 }
 impl MutualAuthenticationAttributes {
     /// Creates a new builder-style object to manufacture [`MutualAuthenticationAttributes`](crate::types::MutualAuthenticationAttributes).
@@ -53,19 +67,26 @@ pub struct MutualAuthenticationAttributesBuilder {
     pub(crate) ignore_client_certificate_expiry: ::std::option::Option<bool>,
     pub(crate) trust_store_association_status: ::std::option::Option<crate::types::TrustStoreAssociationStatusEnum>,
     pub(crate) advertise_trust_store_ca_names: ::std::option::Option<crate::types::AdvertiseTrustStoreCaNamesEnum>,
+    pub(crate) client_certificate_identity_filters: ::std::option::Option<::std::vec::Vec<crate::types::ClientCertificateIdentityFilter>>,
 }
 impl MutualAuthenticationAttributesBuilder {
-    /// <p>The client certificate handling method. Options are <code>off</code>, <code>passthrough</code> or <code>verify</code>. The default value is <code>off</code>.</p>
+    /// <p>The client certificate handling method. The default value is <code>off</code>.</p>
+    /// <p>\[Application Load Balancers\] The possible values are off, passthrough, and verify.</p>
+    /// <p>\[Network Load Balancers\] The possible values are off and verify.</p>
     pub fn mode(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.mode = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The client certificate handling method. Options are <code>off</code>, <code>passthrough</code> or <code>verify</code>. The default value is <code>off</code>.</p>
+    /// <p>The client certificate handling method. The default value is <code>off</code>.</p>
+    /// <p>\[Application Load Balancers\] The possible values are off, passthrough, and verify.</p>
+    /// <p>\[Network Load Balancers\] The possible values are off and verify.</p>
     pub fn set_mode(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.mode = input;
         self
     }
-    /// <p>The client certificate handling method. Options are <code>off</code>, <code>passthrough</code> or <code>verify</code>. The default value is <code>off</code>.</p>
+    /// <p>The client certificate handling method. The default value is <code>off</code>.</p>
+    /// <p>\[Application Load Balancers\] The possible values are off, passthrough, and verify.</p>
+    /// <p>\[Network Load Balancers\] The possible values are off and verify.</p>
     pub fn get_mode(&self) -> &::std::option::Option<::std::string::String> {
         &self.mode
     }
@@ -125,6 +146,32 @@ impl MutualAuthenticationAttributesBuilder {
     pub fn get_advertise_trust_store_ca_names(&self) -> &::std::option::Option<crate::types::AdvertiseTrustStoreCaNamesEnum> {
         &self.advertise_trust_store_ca_names
     }
+    /// Appends an item to `client_certificate_identity_filters`.
+    ///
+    /// To override the contents of this collection use [`set_client_certificate_identity_filters`](Self::set_client_certificate_identity_filters).
+    ///
+    /// <p>\[Network Load Balancers\] The client certificate identity filters. The load balancer admits a connection only if the client certificate matches at least one filter. If you don't specify any filters, the load balancer admits every client certificate that passes trust store validation and revocation checks.</p>
+    /// <p>You can specify filters only when the mode is <code>verify</code>. You can specify up to 100 filters per listener.</p>
+    pub fn client_certificate_identity_filters(mut self, input: crate::types::ClientCertificateIdentityFilter) -> Self {
+        let mut v = self.client_certificate_identity_filters.unwrap_or_default();
+        v.push(input);
+        self.client_certificate_identity_filters = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>\[Network Load Balancers\] The client certificate identity filters. The load balancer admits a connection only if the client certificate matches at least one filter. If you don't specify any filters, the load balancer admits every client certificate that passes trust store validation and revocation checks.</p>
+    /// <p>You can specify filters only when the mode is <code>verify</code>. You can specify up to 100 filters per listener.</p>
+    pub fn set_client_certificate_identity_filters(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ClientCertificateIdentityFilter>>,
+    ) -> Self {
+        self.client_certificate_identity_filters = input;
+        self
+    }
+    /// <p>\[Network Load Balancers\] The client certificate identity filters. The load balancer admits a connection only if the client certificate matches at least one filter. If you don't specify any filters, the load balancer admits every client certificate that passes trust store validation and revocation checks.</p>
+    /// <p>You can specify filters only when the mode is <code>verify</code>. You can specify up to 100 filters per listener.</p>
+    pub fn get_client_certificate_identity_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ClientCertificateIdentityFilter>> {
+        &self.client_certificate_identity_filters
+    }
     /// Consumes the builder and constructs a [`MutualAuthenticationAttributes`](crate::types::MutualAuthenticationAttributes).
     pub fn build(self) -> crate::types::MutualAuthenticationAttributes {
         crate::types::MutualAuthenticationAttributes {
@@ -133,6 +180,7 @@ impl MutualAuthenticationAttributesBuilder {
             ignore_client_certificate_expiry: self.ignore_client_certificate_expiry,
             trust_store_association_status: self.trust_store_association_status,
             advertise_trust_store_ca_names: self.advertise_trust_store_ca_names,
+            client_certificate_identity_filters: self.client_certificate_identity_filters,
         }
     }
 }

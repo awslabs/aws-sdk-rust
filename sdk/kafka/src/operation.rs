@@ -7,6 +7,9 @@ pub mod batch_associate_scram_secret;
 /// Types for the `BatchDisassociateScramSecret` operation.
 pub mod batch_disassociate_scram_secret;
 
+/// Types for the `CreateAssessment` operation.
+pub mod create_assessment;
+
 /// Types for the `CreateChannel` operation.
 pub mod create_channel;
 
@@ -28,6 +31,9 @@ pub mod create_topic;
 /// Types for the `CreateVpcConnection` operation.
 pub mod create_vpc_connection;
 
+/// Types for the `DeleteAssessment` operation.
+pub mod delete_assessment;
+
 /// Types for the `DeleteChannel` operation.
 pub mod delete_channel;
 
@@ -48,6 +54,9 @@ pub mod delete_topic;
 
 /// Types for the `DeleteVpcConnection` operation.
 pub mod delete_vpc_connection;
+
+/// Types for the `DescribeAssessment` operation.
+pub mod describe_assessment;
 
 /// Types for the `DescribeChannel` operation.
 pub mod describe_channel;
@@ -79,6 +88,9 @@ pub mod describe_topic;
 /// Types for the `DescribeTopicPartitions` operation.
 pub mod describe_topic_partitions;
 
+/// Types for the `DescribeTopicReassignment` operation.
+pub mod describe_topic_reassignment;
+
 /// Types for the `DescribeVpcConnection` operation.
 pub mod describe_vpc_connection;
 
@@ -90,6 +102,12 @@ pub mod get_cluster_policy;
 
 /// Types for the `GetCompatibleKafkaVersions` operation.
 pub mod get_compatible_kafka_versions;
+
+/// Types for the `ListAssessmentFindings` operation.
+pub mod list_assessment_findings;
+
+/// Types for the `ListAssessments` operation.
+pub mod list_assessments;
 
 /// Types for the `ListChannels` operation.
 pub mod list_channels;
@@ -130,6 +148,9 @@ pub mod list_scram_secrets;
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
+/// Types for the `ListTopicReassignments` operation.
+pub mod list_topic_reassignments;
+
 /// Types for the `ListTopics` operation.
 pub mod list_topics;
 
@@ -144,6 +165,12 @@ pub mod reboot_broker;
 
 /// Types for the `RejectClientVpcConnection` operation.
 pub mod reject_client_vpc_connection;
+
+/// Types for the `StartTopicReassignment` operation.
+pub mod start_topic_reassignment;
+
+/// Types for the `StopTopicReassignment` operation.
+pub mod stop_topic_reassignment;
 
 /// Types for the `TagResource` operation.
 pub mod tag_resource;

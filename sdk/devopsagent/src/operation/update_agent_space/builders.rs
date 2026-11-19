@@ -183,4 +183,18 @@ impl UpdateAgentSpaceFluentBuilder {
     pub fn get_preferences(&self) -> &::std::option::Option<::std::collections::HashMap<crate::types::AgentSpacePreferenceKey, bool>> {
         self.inner.get_preferences()
     }
+    /// <p>Specifies whether the AgentSpace's Amazon Web Services source configuration targets an individual Amazon Web Services account or an Amazon Web Services Organization. Use this parameter to switch an existing AgentSpace between source modes.</p>
+    pub fn aws_source_mode(mut self, input: crate::types::AwsSourceMode) -> Self {
+        self.inner = self.inner.aws_source_mode(input);
+        self
+    }
+    /// <p>Specifies whether the AgentSpace's Amazon Web Services source configuration targets an individual Amazon Web Services account or an Amazon Web Services Organization. Use this parameter to switch an existing AgentSpace between source modes.</p>
+    pub fn set_aws_source_mode(mut self, input: ::std::option::Option<crate::types::AwsSourceMode>) -> Self {
+        self.inner = self.inner.set_aws_source_mode(input);
+        self
+    }
+    /// <p>Specifies whether the AgentSpace's Amazon Web Services source configuration targets an individual Amazon Web Services account or an Amazon Web Services Organization. Use this parameter to switch an existing AgentSpace between source modes.</p>
+    pub fn get_aws_source_mode(&self) -> &::std::option::Option<crate::types::AwsSourceMode> {
+        self.inner.get_aws_source_mode()
+    }
 }

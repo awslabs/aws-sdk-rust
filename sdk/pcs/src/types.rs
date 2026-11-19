@@ -99,6 +99,8 @@ pub use crate::types::_slurmdbd_custom_setting::SlurmdbdCustomSetting;
 
 pub use crate::types::_cgroup_custom_setting::CgroupCustomSetting;
 
+pub use crate::types::_job_submit_plugin::JobSubmitPlugin;
+
 pub use crate::types::_accounting_mode::AccountingMode;
 
 pub use crate::types::_slurm_rest_mode::SlurmRestMode;
@@ -114,6 +116,10 @@ pub use crate::types::_slurm_rest::SlurmRest;
 pub use crate::types::_error_info::ErrorInfo;
 
 pub use crate::types::_endpoint_type::EndpointType;
+
+pub use crate::types::_job_submit_plugin_type::JobSubmitPluginType;
+
+pub use crate::types::_job_submit_script_source::JobSubmitScriptSource;
 
 pub use crate::types::_jwt_key::JwtKey;
 
@@ -166,6 +172,12 @@ mod _error_info;
 mod _execution_policy;
 
 mod _instance_config;
+
+mod _job_submit_plugin;
+
+mod _job_submit_plugin_type;
+
+mod _job_submit_script_source;
 
 mod _jwt_auth;
 

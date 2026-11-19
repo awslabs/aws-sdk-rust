@@ -53,6 +53,8 @@ pub use crate::types::_firewall_domain_import_operation::FirewallDomainImportOpe
 
 pub use crate::types::_firewall_domain_list_status::FirewallDomainListStatus;
 
+pub use crate::types::_list_firewall_rule_domains_query_options::ListFirewallRuleDomainsQueryOptions;
+
 pub use crate::types::_firewall_rule_group_association_status::FirewallRuleGroupAssociationStatus;
 
 pub use crate::types::_sort_order::SortOrder;
@@ -99,6 +101,8 @@ pub use crate::types::_firewall_advanced_threat_category_config::FirewallAdvance
 
 pub use crate::types::_dns_threat_protection_rule_type_config::DnsThreatProtectionRuleTypeConfig;
 
+pub use crate::types::_auto_allowlist_config::AutoAllowlistConfig;
+
 pub use crate::types::_firewall_rule_group_status::FirewallRuleGroupStatus;
 
 pub use crate::types::_share_status::ShareStatus;
@@ -121,6 +125,14 @@ pub use crate::types::_resolver_dnssec_validation_status::ResolverDnssecValidati
 
 pub use crate::types::_firewall_domain_list_metadata::FirewallDomainListMetadata;
 
+pub use crate::types::_firewall_domain_status_filter::FirewallDomainStatusFilter;
+
+pub use crate::types::_firewall_rule_domain_sort_by::FirewallRuleDomainSortBy;
+
+pub use crate::types::_firewall_rule_domain_sort_order::FirewallRuleDomainSortOrder;
+
+pub use crate::types::_firewall_rule_domain::FirewallRuleDomain;
+
 pub use crate::types::_firewall_rule_group_metadata::FirewallRuleGroupMetadata;
 
 pub use crate::types::_firewall_rule_type_definition::FirewallRuleTypeDefinition;
@@ -131,11 +143,15 @@ pub use crate::types::_ip_address_response::IpAddressResponse;
 
 pub use crate::types::_update_ip_address::UpdateIpAddress;
 
+pub use crate::types::_firewall_domain_status::FirewallDomainStatus;
+
 pub use crate::types::_subscription_info::SubscriptionInfo;
 
 pub use crate::types::_ip_address_status::IpAddressStatus;
 
 mod _action;
+
+mod _auto_allowlist_config;
 
 mod _autodefined_reverse_flag;
 
@@ -179,11 +195,21 @@ mod _firewall_domain_list_status;
 
 mod _firewall_domain_redirection_action;
 
+mod _firewall_domain_status;
+
+mod _firewall_domain_status_filter;
+
 mod _firewall_domain_update_operation;
 
 mod _firewall_fail_open_status;
 
 mod _firewall_rule;
+
+mod _firewall_rule_domain;
+
+mod _firewall_rule_domain_sort_by;
+
+mod _firewall_rule_domain_sort_order;
 
 mod _firewall_rule_group;
 
@@ -206,6 +232,8 @@ mod _ip_address_response;
 mod _ip_address_status;
 
 mod _ip_address_update;
+
+mod _list_firewall_rule_domains_query_options;
 
 mod _mutation_protection_status;
 

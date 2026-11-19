@@ -22,7 +22,7 @@ impl crate::operation::tag_resource::builders::TagResourceInputBuilder {
 }
 /// Fluent builder constructing a request to `TagResource`.
 ///
-/// Adds or replaces tags on an event bus, subscriber, or event source.
+/// <p>Adds or replaces tags on an event bus, subscriber, or event source.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct TagResourceFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -108,17 +108,17 @@ impl TagResourceFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// ARN for an EventBridge resource that supports tagging: event buses, subscribers, and event sources.
+    /// <p>ARN for an EventBridge resource that supports tagging: event buses, subscribers, and event sources.</p>
     pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
         self
     }
-    /// ARN for an EventBridge resource that supports tagging: event buses, subscribers, and event sources.
+    /// <p>ARN for an EventBridge resource that supports tagging: event buses, subscribers, and event sources.</p>
     pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_resource_arn(input);
         self
     }
-    /// ARN for an EventBridge resource that supports tagging: event buses, subscribers, and event sources.
+    /// <p>ARN for an EventBridge resource that supports tagging: event buses, subscribers, and event sources.</p>
     pub fn get_resource_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_resource_arn()
     }
@@ -127,17 +127,17 @@ impl TagResourceFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// Tags attached to a resource, as key-value pairs.
+    /// <p>Tags attached to a resource, as key-value pairs.</p>
     pub fn tags(mut self, k: impl ::std::convert::Into<::std::string::String>, v: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// Tags attached to a resource, as key-value pairs.
+    /// <p>Tags attached to a resource, as key-value pairs.</p>
     pub fn set_tags(mut self, input: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// Tags attached to a resource, as key-value pairs.
+    /// <p>Tags attached to a resource, as key-value pairs.</p>
     pub fn get_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_tags()
     }

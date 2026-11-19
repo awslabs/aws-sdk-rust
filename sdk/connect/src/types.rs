@@ -653,6 +653,8 @@ pub use crate::types::_global_resiliency_metadata::GlobalResiliencyMetadata;
 
 pub use crate::types::_contact_lens::ContactLens;
 
+pub use crate::types::_voicemail_info::VoicemailInfo;
+
 pub use crate::types::_evaluation_metadata::EvaluationMetadata;
 
 pub use crate::types::_evaluation_status::EvaluationStatus;
@@ -1196,6 +1198,10 @@ pub use crate::types::_date_reference::DateReference;
 pub use crate::types::_email_reference::EmailReference;
 
 pub use crate::types::_contact_analysis_reference::ContactAnalysisReference;
+
+pub use crate::types::_voicemail_recording_reference::VoicemailRecordingReference;
+
+pub use crate::types::_voicemail_analysis_reference::VoicemailAnalysisReference;
 
 pub use crate::types::_evaluation_form_ai_version_lifecycle::EvaluationFormAiVersionLifecycle;
 
@@ -3280,6 +3286,12 @@ mod _voice_enhancement_mode;
 mod _voice_recording_configuration;
 
 mod _voice_recording_track;
+
+mod _voicemail_analysis_reference;
+
+mod _voicemail_info;
+
+mod _voicemail_recording_reference;
 
 mod _web_notification_content;
 

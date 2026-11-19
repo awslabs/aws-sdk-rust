@@ -7,6 +7,8 @@ pub struct ListCertificatesInput {
     pub certificate_statuses: ::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>>,
     /// <p>Filter the certificate list by certificate key pair origin. Specify one or more <code>CertificateKeyPairOrigin</code> values. Default filtering returns only certificates with key pair origin of <code>AWS_MANAGED</code> and <code>CUSTOMER_PROVIDED</code>.</p>
     pub certificate_key_pair_origins: ::std::option::Option<::std::vec::Vec<crate::types::CertificateKeyPairOrigin>>,
+    /// <p>Filter the certificate list by root hierarchy type. Specify one or more <code>RootHierarchyType</code> values. By default, this action does not return certificates with a <code>RootHierarchyType</code> of <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code>. To list only Amazon N2 certificates, specify one or both of these values in the <code>RootHierarchyTypes</code> filter.</p>
+    pub root_hierarchy_types: ::std::option::Option<::std::vec::Vec<crate::types::RootHierarchyType>>,
     /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
     pub includes: ::std::option::Option<crate::types::Filters>,
     /// <p>Use this parameter only when paginating results and only in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextToken</code> from the response you just received.</p>
@@ -30,6 +32,12 @@ impl ListCertificatesInput {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.certificate_key_pair_origins.is_none()`.
     pub fn certificate_key_pair_origins(&self) -> &[crate::types::CertificateKeyPairOrigin] {
         self.certificate_key_pair_origins.as_deref().unwrap_or_default()
+    }
+    /// <p>Filter the certificate list by root hierarchy type. Specify one or more <code>RootHierarchyType</code> values. By default, this action does not return certificates with a <code>RootHierarchyType</code> of <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code>. To list only Amazon N2 certificates, specify one or both of these values in the <code>RootHierarchyTypes</code> filter.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.root_hierarchy_types.is_none()`.
+    pub fn root_hierarchy_types(&self) -> &[crate::types::RootHierarchyType] {
+        self.root_hierarchy_types.as_deref().unwrap_or_default()
     }
     /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
     pub fn includes(&self) -> ::std::option::Option<&crate::types::Filters> {
@@ -65,6 +73,7 @@ impl ListCertificatesInput {
 pub struct ListCertificatesInputBuilder {
     pub(crate) certificate_statuses: ::std::option::Option<::std::vec::Vec<crate::types::CertificateStatus>>,
     pub(crate) certificate_key_pair_origins: ::std::option::Option<::std::vec::Vec<crate::types::CertificateKeyPairOrigin>>,
+    pub(crate) root_hierarchy_types: ::std::option::Option<::std::vec::Vec<crate::types::RootHierarchyType>>,
     pub(crate) includes: ::std::option::Option<crate::types::Filters>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) max_items: ::std::option::Option<i32>,
@@ -111,6 +120,26 @@ impl ListCertificatesInputBuilder {
     /// <p>Filter the certificate list by certificate key pair origin. Specify one or more <code>CertificateKeyPairOrigin</code> values. Default filtering returns only certificates with key pair origin of <code>AWS_MANAGED</code> and <code>CUSTOMER_PROVIDED</code>.</p>
     pub fn get_certificate_key_pair_origins(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CertificateKeyPairOrigin>> {
         &self.certificate_key_pair_origins
+    }
+    /// Appends an item to `root_hierarchy_types`.
+    ///
+    /// To override the contents of this collection use [`set_root_hierarchy_types`](Self::set_root_hierarchy_types).
+    ///
+    /// <p>Filter the certificate list by root hierarchy type. Specify one or more <code>RootHierarchyType</code> values. By default, this action does not return certificates with a <code>RootHierarchyType</code> of <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code>. To list only Amazon N2 certificates, specify one or both of these values in the <code>RootHierarchyTypes</code> filter.</p>
+    pub fn root_hierarchy_types(mut self, input: crate::types::RootHierarchyType) -> Self {
+        let mut v = self.root_hierarchy_types.unwrap_or_default();
+        v.push(input);
+        self.root_hierarchy_types = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Filter the certificate list by root hierarchy type. Specify one or more <code>RootHierarchyType</code> values. By default, this action does not return certificates with a <code>RootHierarchyType</code> of <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code>. To list only Amazon N2 certificates, specify one or both of these values in the <code>RootHierarchyTypes</code> filter.</p>
+    pub fn set_root_hierarchy_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RootHierarchyType>>) -> Self {
+        self.root_hierarchy_types = input;
+        self
+    }
+    /// <p>Filter the certificate list by root hierarchy type. Specify one or more <code>RootHierarchyType</code> values. By default, this action does not return certificates with a <code>RootHierarchyType</code> of <code>N2_AMAZON_MANAGED</code> or <code>N2_SFG2_AMAZON_MANAGED</code>. To list only Amazon N2 certificates, specify one or both of these values in the <code>RootHierarchyTypes</code> filter.</p>
+    pub fn get_root_hierarchy_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RootHierarchyType>> {
+        &self.root_hierarchy_types
     }
     /// <p>Filter the certificate list. For more information, see the <code>Filters</code> structure.</p>
     pub fn includes(mut self, input: crate::types::Filters) -> Self {
@@ -189,6 +218,7 @@ impl ListCertificatesInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_certificates::ListCertificatesInput {
             certificate_statuses: self.certificate_statuses,
             certificate_key_pair_origins: self.certificate_key_pair_origins,
+            root_hierarchy_types: self.root_hierarchy_types,
             includes: self.includes,
             next_token: self.next_token,
             max_items: self.max_items,

@@ -26,6 +26,9 @@ pub struct CreateProfileInput {
     /// <p>The alias name must be unique among resources of the same type in your account and Region. If another resource of the same type already has the alias, the request fails with a <code>ValidationException</code>. An invalid or reserved alias name also causes a <code>ValidationException</code>.</p>
     /// <p>If you omit this parameter or specify an empty string, the resource is created without an alias.</p>
     pub alias_name: ::std::option::Option<::std::string::String>,
+    /// <p>The trusted identity propagation (TIP) settings for the profile. When you enable TIP, sessions from the profile include the identity from the certificate in <code>aws:OriginIdentity</code> condition keys.</p>
+    /// <p>If you omit this parameter, the profile doesn't use TIP.</p>
+    pub tip_configuration: ::std::option::Option<crate::types::TipConfiguration>,
 }
 impl CreateProfileInput {
     /// <p>The name of the profile.</p>
@@ -77,6 +80,11 @@ impl CreateProfileInput {
     pub fn alias_name(&self) -> ::std::option::Option<&str> {
         self.alias_name.as_deref()
     }
+    /// <p>The trusted identity propagation (TIP) settings for the profile. When you enable TIP, sessions from the profile include the identity from the certificate in <code>aws:OriginIdentity</code> condition keys.</p>
+    /// <p>If you omit this parameter, the profile doesn't use TIP.</p>
+    pub fn tip_configuration(&self) -> ::std::option::Option<&crate::types::TipConfiguration> {
+        self.tip_configuration.as_ref()
+    }
 }
 impl CreateProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
@@ -99,6 +107,7 @@ pub struct CreateProfileInputBuilder {
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) accept_role_session_name: ::std::option::Option<bool>,
     pub(crate) alias_name: ::std::option::Option<::std::string::String>,
+    pub(crate) tip_configuration: ::std::option::Option<crate::types::TipConfiguration>,
 }
 impl CreateProfileInputBuilder {
     /// <p>The name of the profile.</p>
@@ -269,6 +278,23 @@ impl CreateProfileInputBuilder {
     pub fn get_alias_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.alias_name
     }
+    /// <p>The trusted identity propagation (TIP) settings for the profile. When you enable TIP, sessions from the profile include the identity from the certificate in <code>aws:OriginIdentity</code> condition keys.</p>
+    /// <p>If you omit this parameter, the profile doesn't use TIP.</p>
+    pub fn tip_configuration(mut self, input: crate::types::TipConfiguration) -> Self {
+        self.tip_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The trusted identity propagation (TIP) settings for the profile. When you enable TIP, sessions from the profile include the identity from the certificate in <code>aws:OriginIdentity</code> condition keys.</p>
+    /// <p>If you omit this parameter, the profile doesn't use TIP.</p>
+    pub fn set_tip_configuration(mut self, input: ::std::option::Option<crate::types::TipConfiguration>) -> Self {
+        self.tip_configuration = input;
+        self
+    }
+    /// <p>The trusted identity propagation (TIP) settings for the profile. When you enable TIP, sessions from the profile include the identity from the certificate in <code>aws:OriginIdentity</code> condition keys.</p>
+    /// <p>If you omit this parameter, the profile doesn't use TIP.</p>
+    pub fn get_tip_configuration(&self) -> &::std::option::Option<crate::types::TipConfiguration> {
+        &self.tip_configuration
+    }
     /// Consumes the builder and constructs a [`CreateProfileInput`](crate::operation::create_profile::CreateProfileInput).
     pub fn build(
         self,
@@ -284,6 +310,7 @@ impl CreateProfileInputBuilder {
             tags: self.tags,
             accept_role_session_name: self.accept_role_session_name,
             alias_name: self.alias_name,
+            tip_configuration: self.tip_configuration,
         })
     }
 }

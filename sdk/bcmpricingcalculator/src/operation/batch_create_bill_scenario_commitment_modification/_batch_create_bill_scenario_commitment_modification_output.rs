@@ -5,7 +5,7 @@
 pub struct BatchCreateBillScenarioCommitmentModificationOutput {
     /// <p>Returns the list of successful commitment line items that were created for the Bill Scenario.</p>
     pub items: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateBillScenarioCommitmentModificationItem>>,
-    /// <p>Returns the list of errors reason and the commitment item keys that cannot be created in the Bill Scenario.</p>
+    /// <p>Returns the list of errors reason and the commitment item keys that can't be created in the Bill Scenario.</p>
     pub errors: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateBillScenarioCommitmentModificationError>>,
     _request_id: Option<String>,
 }
@@ -16,7 +16,7 @@ impl BatchCreateBillScenarioCommitmentModificationOutput {
     pub fn items(&self) -> &[crate::types::BatchCreateBillScenarioCommitmentModificationItem] {
         self.items.as_deref().unwrap_or_default()
     }
-    /// <p>Returns the list of errors reason and the commitment item keys that cannot be created in the Bill Scenario.</p>
+    /// <p>Returns the list of errors reason and the commitment item keys that can't be created in the Bill Scenario.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.errors.is_none()`.
     pub fn errors(&self) -> &[crate::types::BatchCreateBillScenarioCommitmentModificationError] {
@@ -73,14 +73,14 @@ impl BatchCreateBillScenarioCommitmentModificationOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_errors`](Self::set_errors).
     ///
-    /// <p>Returns the list of errors reason and the commitment item keys that cannot be created in the Bill Scenario.</p>
+    /// <p>Returns the list of errors reason and the commitment item keys that can't be created in the Bill Scenario.</p>
     pub fn errors(mut self, input: crate::types::BatchCreateBillScenarioCommitmentModificationError) -> Self {
         let mut v = self.errors.unwrap_or_default();
         v.push(input);
         self.errors = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Returns the list of errors reason and the commitment item keys that cannot be created in the Bill Scenario.</p>
+    /// <p>Returns the list of errors reason and the commitment item keys that can't be created in the Bill Scenario.</p>
     pub fn set_errors(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::BatchCreateBillScenarioCommitmentModificationError>>,
@@ -88,7 +88,7 @@ impl BatchCreateBillScenarioCommitmentModificationOutputBuilder {
         self.errors = input;
         self
     }
-    /// <p>Returns the list of errors reason and the commitment item keys that cannot be created in the Bill Scenario.</p>
+    /// <p>Returns the list of errors reason and the commitment item keys that can't be created in the Bill Scenario.</p>
     pub fn get_errors(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::BatchCreateBillScenarioCommitmentModificationError>> {
         &self.errors
     }

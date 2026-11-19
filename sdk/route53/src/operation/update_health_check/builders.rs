@@ -166,7 +166,7 @@ impl UpdateHealthCheckFluentBuilder {
     /// <li>
     /// <p><b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.</p></li>
     /// </ul>
-    /// <p>If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance never changes. For more information, see the applicable documentation:</p>
+    /// <p>For a public health check, if the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance never changes. For more information, see the applicable documentation:</p>
     /// <ul>
     /// <li>
     /// <p>Linux: <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i></p></li>
@@ -176,7 +176,7 @@ impl UpdateHealthCheckFluentBuilder {
     /// <p>If a health check already has a value for <code>IPAddress</code>, you can change the value. However, you can't update an existing health check to add or remove the value of <code>IPAddress</code>.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>.</p>
-    /// <p>Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create health checks, see the following documents:</p>
+    /// <p>Constraints: For a public health check (<code>EndpointType</code> of <code>PUBLIC</code>, the default), Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create public health checks, see the following documents:</p>
     /// <ul>
     /// <li>
     /// <p><a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a></p></li>
@@ -185,6 +185,7 @@ impl UpdateHealthCheckFluentBuilder {
     /// <li>
     /// <p><a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a></p></li>
     /// </ul>
+    /// <p>For a private endpoint health check (<code>EndpointType</code> of <code>PRIVATE</code>), if you specify <code>IPAddress</code>, it must be a private IPv4 or IPv6 address. Route 53 sends health checks to it from the health check source that you specify in <code>HealthCheckSourceId</code>.</p>
     pub fn ip_address(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ip_address(input.into());
         self
@@ -197,7 +198,7 @@ impl UpdateHealthCheckFluentBuilder {
     /// <li>
     /// <p><b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.</p></li>
     /// </ul>
-    /// <p>If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance never changes. For more information, see the applicable documentation:</p>
+    /// <p>For a public health check, if the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance never changes. For more information, see the applicable documentation:</p>
     /// <ul>
     /// <li>
     /// <p>Linux: <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i></p></li>
@@ -207,7 +208,7 @@ impl UpdateHealthCheckFluentBuilder {
     /// <p>If a health check already has a value for <code>IPAddress</code>, you can change the value. However, you can't update an existing health check to add or remove the value of <code>IPAddress</code>.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>.</p>
-    /// <p>Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create health checks, see the following documents:</p>
+    /// <p>Constraints: For a public health check (<code>EndpointType</code> of <code>PUBLIC</code>, the default), Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create public health checks, see the following documents:</p>
     /// <ul>
     /// <li>
     /// <p><a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a></p></li>
@@ -216,6 +217,7 @@ impl UpdateHealthCheckFluentBuilder {
     /// <li>
     /// <p><a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a></p></li>
     /// </ul>
+    /// <p>For a private endpoint health check (<code>EndpointType</code> of <code>PRIVATE</code>), if you specify <code>IPAddress</code>, it must be a private IPv4 or IPv6 address. Route 53 sends health checks to it from the health check source that you specify in <code>HealthCheckSourceId</code>.</p>
     pub fn set_ip_address(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_ip_address(input);
         self
@@ -228,7 +230,7 @@ impl UpdateHealthCheckFluentBuilder {
     /// <li>
     /// <p><b>IPv6 address</b>: eight groups of four hexadecimal values, separated by colons (:), for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>. You can also shorten IPv6 addresses as described in RFC 5952, for example, <code>2001:db8:85a3::abcd:1:2345</code>.</p></li>
     /// </ul>
-    /// <p>If the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance never changes. For more information, see the applicable documentation:</p>
+    /// <p>For a public health check, if the endpoint is an EC2 instance, we recommend that you create an Elastic IP address, associate it with your EC2 instance, and specify the Elastic IP address for <code>IPAddress</code>. This ensures that the IP address of your instance never changes. For more information, see the applicable documentation:</p>
     /// <ul>
     /// <li>
     /// <p>Linux: <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses (EIP)</a> in the <i>Amazon EC2 User Guide for Linux Instances</i></p></li>
@@ -238,7 +240,7 @@ impl UpdateHealthCheckFluentBuilder {
     /// <p>If a health check already has a value for <code>IPAddress</code>, you can change the value. However, you can't update an existing health check to add or remove the value of <code>IPAddress</code>.</p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html#Route53-UpdateHealthCheck-request-FullyQualifiedDomainName">FullyQualifiedDomainName</a>.</p>
-    /// <p>Constraints: Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create health checks, see the following documents:</p>
+    /// <p>Constraints: For a public health check (<code>EndpointType</code> of <code>PUBLIC</code>, the default), Route 53 can't check the health of endpoints for which the IP address is in local, private, non-routable, or multicast ranges. For more information about IP addresses for which you can't create public health checks, see the following documents:</p>
     /// <ul>
     /// <li>
     /// <p><a href="https://tools.ietf.org/html/rfc5735">RFC 5735, Special Use IPv4 Addresses</a></p></li>
@@ -247,6 +249,7 @@ impl UpdateHealthCheckFluentBuilder {
     /// <li>
     /// <p><a href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6 Addresses</a></p></li>
     /// </ul>
+    /// <p>For a private endpoint health check (<code>EndpointType</code> of <code>PRIVATE</code>), if you specify <code>IPAddress</code>, it must be a private IPv4 or IPv6 address. Route 53 sends health checks to it from the health check source that you specify in <code>HealthCheckSourceId</code>.</p>
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_ip_address()
     }
@@ -652,5 +655,22 @@ impl UpdateHealthCheckFluentBuilder {
     /// </ul>
     pub fn get_reset_elements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ResettableElementName>> {
         self.inner.get_reset_elements()
+    }
+    /// <p>The ID of the health check source from which Route&nbsp;53 sends requests to the endpoint. Applies only to health checks that have an <code>EndpointType</code> of <code>PRIVATE</code>. The health check source must be in the same account and have a status of <code>CREATE_COMPLETED</code>.</p>
+    /// <p>Each health check source supports a limited number of active health checks. If you reach that limit, specify a different health check source.</p>
+    pub fn health_check_source_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.health_check_source_id(input.into());
+        self
+    }
+    /// <p>The ID of the health check source from which Route&nbsp;53 sends requests to the endpoint. Applies only to health checks that have an <code>EndpointType</code> of <code>PRIVATE</code>. The health check source must be in the same account and have a status of <code>CREATE_COMPLETED</code>.</p>
+    /// <p>Each health check source supports a limited number of active health checks. If you reach that limit, specify a different health check source.</p>
+    pub fn set_health_check_source_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_health_check_source_id(input);
+        self
+    }
+    /// <p>The ID of the health check source from which Route&nbsp;53 sends requests to the endpoint. Applies only to health checks that have an <code>EndpointType</code> of <code>PRIVATE</code>. The health check source must be in the same account and have a status of <code>CREATE_COMPLETED</code>.</p>
+    /// <p>Each health check source supports a limited number of active health checks. If you reach that limit, specify a different health check source.</p>
+    pub fn get_health_check_source_id(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_health_check_source_id()
     }
 }

@@ -69,6 +69,37 @@ static FIREWALLDOMAINLISTMETADATA_MEMBER_CATEGORY: ::aws_smithy_schema::Schema<'
     "Category",
     6,
 );
+static FIREWALLDOMAINLISTMETADATA_MEMBER_FIREWALL_RULE_GROUP_ID: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallDomainListMetadata$FirewallRuleGroupId",
+        "com.amazonaws.route53resolver",
+        "FirewallDomainListMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FirewallRuleGroupId",
+    7,
+);
+static FIREWALLDOMAINLISTMETADATA_MEMBER_FIREWALL_THREAT_PROTECTION_ID: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.route53resolver#FirewallDomainListMetadata$FirewallThreatProtectionId",
+            "com.amazonaws.route53resolver",
+            "FirewallDomainListMetadata",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "FirewallThreatProtectionId",
+        8,
+    );
+static FIREWALLDOMAINLISTMETADATA_MEMBER_STATUS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.route53resolver#FirewallDomainListMetadata$Status",
+        "com.amazonaws.route53resolver",
+        "FirewallDomainListMetadata",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Status",
+    9,
+);
 static FIREWALLDOMAINLISTMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.route53resolver#FirewallDomainListMetadata",
@@ -84,6 +115,9 @@ static FIREWALLDOMAINLISTMETADATA_SCHEMA: ::aws_smithy_schema::Schema<'static> =
         &FIREWALLDOMAINLISTMETADATA_MEMBER_MANAGED_OWNER_NAME,
         &FIREWALLDOMAINLISTMETADATA_MEMBER_MANAGED_LIST_TYPE,
         &FIREWALLDOMAINLISTMETADATA_MEMBER_CATEGORY,
+        &FIREWALLDOMAINLISTMETADATA_MEMBER_FIREWALL_RULE_GROUP_ID,
+        &FIREWALLDOMAINLISTMETADATA_MEMBER_FIREWALL_THREAT_PROTECTION_ID,
+        &FIREWALLDOMAINLISTMETADATA_MEMBER_STATUS,
     ],
 );
 impl crate::types::FirewallDomainListMetadata {
@@ -120,6 +154,15 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::FirewallDo
         }
         if let Some(ref val) = self.category {
             ser.write_string(&FIREWALLDOMAINLISTMETADATA_MEMBER_CATEGORY, val)?;
+        }
+        if let Some(ref val) = self.firewall_rule_group_id {
+            ser.write_string(&FIREWALLDOMAINLISTMETADATA_MEMBER_FIREWALL_RULE_GROUP_ID, val)?;
+        }
+        if let Some(ref val) = self.firewall_threat_protection_id {
+            ser.write_string(&FIREWALLDOMAINLISTMETADATA_MEMBER_FIREWALL_THREAT_PROTECTION_ID, val)?;
+        }
+        if let Some(ref val) = self.status {
+            ser.write_string(&FIREWALLDOMAINLISTMETADATA_MEMBER_STATUS, val.as_str())?;
         }
         Ok(())
     }
@@ -185,6 +228,27 @@ impl crate::types::builders::FirewallDomainListMetadataBuilder {
                         deser.read_null()?;
                     } else {
                         self.category = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.firewall_rule_group_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.firewall_threat_protection_id = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.status = Some(crate::types::FirewallDomainListStatus::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}

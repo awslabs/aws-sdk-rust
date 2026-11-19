@@ -50,6 +50,10 @@ pub struct CertificateSummary {
     pub managed_by: ::std::option::Option<crate::types::CertificateManagedBy>,
     /// <p>The origin of the certificate's key pair.</p>
     pub certificate_key_pair_origin: ::std::option::Option<crate::types::CertificateKeyPairOrigin>,
+    /// <p>The Extended Key Usage profile of the certificate. This value exists only for Amazon N2 certificates. If <code>CertificateUsage</code> was omitted from the request, this value is <code>CLIENT_AND_SERVER_AUTH</code>.</p>
+    pub certificate_usage: ::std::option::Option<crate::types::CertificateUsage>,
+    /// <p>The root hierarchy from which the certificate was issued. This value exists only for Amazon N2 certificates, which have a <code>Type</code> of <code>AMAZON_ISSUED</code>.</p>
+    pub root_hierarchy_type: ::std::option::Option<crate::types::RootHierarchyType>,
 }
 impl CertificateSummary {
     /// <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p>
@@ -146,6 +150,14 @@ impl CertificateSummary {
     pub fn certificate_key_pair_origin(&self) -> ::std::option::Option<&crate::types::CertificateKeyPairOrigin> {
         self.certificate_key_pair_origin.as_ref()
     }
+    /// <p>The Extended Key Usage profile of the certificate. This value exists only for Amazon N2 certificates. If <code>CertificateUsage</code> was omitted from the request, this value is <code>CLIENT_AND_SERVER_AUTH</code>.</p>
+    pub fn certificate_usage(&self) -> ::std::option::Option<&crate::types::CertificateUsage> {
+        self.certificate_usage.as_ref()
+    }
+    /// <p>The root hierarchy from which the certificate was issued. This value exists only for Amazon N2 certificates, which have a <code>Type</code> of <code>AMAZON_ISSUED</code>.</p>
+    pub fn root_hierarchy_type(&self) -> ::std::option::Option<&crate::types::RootHierarchyType> {
+        self.root_hierarchy_type.as_ref()
+    }
 }
 impl CertificateSummary {
     /// Creates a new builder-style object to manufacture [`CertificateSummary`](crate::types::CertificateSummary).
@@ -179,6 +191,8 @@ pub struct CertificateSummaryBuilder {
     pub(crate) revoked_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) managed_by: ::std::option::Option<crate::types::CertificateManagedBy>,
     pub(crate) certificate_key_pair_origin: ::std::option::Option<crate::types::CertificateKeyPairOrigin>,
+    pub(crate) certificate_usage: ::std::option::Option<crate::types::CertificateUsage>,
+    pub(crate) root_hierarchy_type: ::std::option::Option<crate::types::RootHierarchyType>,
 }
 impl CertificateSummaryBuilder {
     /// <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p>
@@ -505,6 +519,34 @@ impl CertificateSummaryBuilder {
     pub fn get_certificate_key_pair_origin(&self) -> &::std::option::Option<crate::types::CertificateKeyPairOrigin> {
         &self.certificate_key_pair_origin
     }
+    /// <p>The Extended Key Usage profile of the certificate. This value exists only for Amazon N2 certificates. If <code>CertificateUsage</code> was omitted from the request, this value is <code>CLIENT_AND_SERVER_AUTH</code>.</p>
+    pub fn certificate_usage(mut self, input: crate::types::CertificateUsage) -> Self {
+        self.certificate_usage = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Extended Key Usage profile of the certificate. This value exists only for Amazon N2 certificates. If <code>CertificateUsage</code> was omitted from the request, this value is <code>CLIENT_AND_SERVER_AUTH</code>.</p>
+    pub fn set_certificate_usage(mut self, input: ::std::option::Option<crate::types::CertificateUsage>) -> Self {
+        self.certificate_usage = input;
+        self
+    }
+    /// <p>The Extended Key Usage profile of the certificate. This value exists only for Amazon N2 certificates. If <code>CertificateUsage</code> was omitted from the request, this value is <code>CLIENT_AND_SERVER_AUTH</code>.</p>
+    pub fn get_certificate_usage(&self) -> &::std::option::Option<crate::types::CertificateUsage> {
+        &self.certificate_usage
+    }
+    /// <p>The root hierarchy from which the certificate was issued. This value exists only for Amazon N2 certificates, which have a <code>Type</code> of <code>AMAZON_ISSUED</code>.</p>
+    pub fn root_hierarchy_type(mut self, input: crate::types::RootHierarchyType) -> Self {
+        self.root_hierarchy_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The root hierarchy from which the certificate was issued. This value exists only for Amazon N2 certificates, which have a <code>Type</code> of <code>AMAZON_ISSUED</code>.</p>
+    pub fn set_root_hierarchy_type(mut self, input: ::std::option::Option<crate::types::RootHierarchyType>) -> Self {
+        self.root_hierarchy_type = input;
+        self
+    }
+    /// <p>The root hierarchy from which the certificate was issued. This value exists only for Amazon N2 certificates, which have a <code>Type</code> of <code>AMAZON_ISSUED</code>.</p>
+    pub fn get_root_hierarchy_type(&self) -> &::std::option::Option<crate::types::RootHierarchyType> {
+        &self.root_hierarchy_type
+    }
     /// Consumes the builder and constructs a [`CertificateSummary`](crate::types::CertificateSummary).
     pub fn build(self) -> crate::types::CertificateSummary {
         crate::types::CertificateSummary {
@@ -529,6 +571,8 @@ impl CertificateSummaryBuilder {
             revoked_at: self.revoked_at,
             managed_by: self.managed_by,
             certificate_key_pair_origin: self.certificate_key_pair_origin,
+            certificate_usage: self.certificate_usage,
+            root_hierarchy_type: self.root_hierarchy_type,
         }
     }
 }

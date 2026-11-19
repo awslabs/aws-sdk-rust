@@ -79,6 +79,8 @@ pub(crate) mod shape_descriptor_type_list;
 
 pub(crate) mod shape_descriptors;
 
+pub(crate) mod shape_registry_record_artifact_download;
+
 pub(crate) mod shape_a2a_agent_card_descriptor;
 
 pub(crate) mod shape_ag_ui_descriptor;

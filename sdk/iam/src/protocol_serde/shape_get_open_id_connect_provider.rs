@@ -181,6 +181,42 @@ pub fn de_get_open_id_connect_provider(
                 builder = builder.set_tags(var_5);
             }
             ,
+            s if s.matches("ContextProvider") /* ContextProvider com.amazonaws.iam.synthetic#GetOpenIDConnectProviderOutput$ContextProvider */ =>  {
+                let var_6 =
+                    Some(
+                        crate::protocol_serde::shape_context_provider::de_context_provider(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_context_provider(var_6);
+            }
+            ,
+            s if s.matches("IdentityCenterInstanceArn") /* IdentityCenterInstanceArn com.amazonaws.iam.synthetic#GetOpenIDConnectProviderOutput$IdentityCenterInstanceArn */ =>  {
+                let var_7 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_identity_center_instance_arn(var_7);
+            }
+            ,
+            s if s.matches("IdentityStoreArn") /* IdentityStoreArn com.amazonaws.iam.synthetic#GetOpenIDConnectProviderOutput$IdentityStoreArn */ =>  {
+                let var_8 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_identity_store_arn(var_8);
+            }
+            ,
             _ => {}
         }
         }

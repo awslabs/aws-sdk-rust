@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThrottlingException {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A human-readable message indicating that the request rate limit has been exceeded.</p>
     pub message: ::std::string::String,
     /// <p>The service code associated with the throttling error.</p>
     pub service_code: ::std::option::Option<::std::string::String>,
@@ -70,18 +70,18 @@ pub struct ThrottlingExceptionBuilder {
     meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl ThrottlingExceptionBuilder {
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A human-readable message indicating that the request rate limit has been exceeded.</p>
     /// This field is required.
     pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.message = ::std::option::Option::Some(input.into());
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A human-readable message indicating that the request rate limit has been exceeded.</p>
     pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
-    #[allow(missing_docs)] // documentation missing in model
+    /// <p>A human-readable message indicating that the request rate limit has been exceeded.</p>
     pub fn get_message(&self) -> &::std::option::Option<::std::string::String> {
         &self.message
     }

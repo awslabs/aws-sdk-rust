@@ -379,6 +379,8 @@ pub(crate) mod shape_availability_zones;
 
 pub(crate) mod shape_certificate_list;
 
+pub(crate) mod shape_client_certificate_identity_filter;
+
 pub(crate) mod shape_describe_trust_store_revocation_response;
 
 pub(crate) mod shape_fixed_response_action_config;
@@ -508,6 +510,8 @@ pub(crate) mod shape_tag_list;
 pub(crate) mod shape_target_health;
 
 pub(crate) mod shape_cipher;
+
+pub(crate) mod shape_client_certificate_identity_filters;
 
 pub(crate) mod shape_load_balancer_address;
 

@@ -471,6 +471,8 @@ pub(crate) mod shape_slack_configuration;
 
 pub(crate) mod shape_source_aws_configuration;
 
+pub(crate) mod shape_source_aws_org_configuration;
+
 pub(crate) mod shape_trigger_filter_group;
 
 pub(crate) mod shape_validation_exception_field;
@@ -496,6 +498,8 @@ pub(crate) mod shape_ms_teams_transmission_target;
 pub(crate) mod shape_network_access_configuration;
 
 pub(crate) mod shape_new_relic_service_authorization_config;
+
+pub(crate) mod shape_org_source_deployment_state;
 
 pub(crate) mod shape_pager_duty_authorization_config;
 
@@ -537,6 +541,8 @@ pub(crate) mod shape_slack_bidirectional_configuration;
 
 pub(crate) mod shape_slack_transmission_target;
 
+pub(crate) mod shape_source_aws_org_unit;
+
 pub(crate) mod shape_user_reference;
 
 pub(crate) mod shape_assistant_message;
@@ -571,6 +577,8 @@ pub(crate) mod shape_ms_teams_channel;
 
 pub(crate) mod shape_new_relic_api_key_config;
 
+pub(crate) mod shape_org_source_issue;
+
 pub(crate) mod shape_pager_duty_o_auth_client_credentials_config;
 
 pub(crate) mod shape_pager_duty_scopes_list;
@@ -603,7 +611,11 @@ pub(crate) mod shape_user_message;
 
 pub(crate) mod shape_web_identity_token_audience_list;
 
+pub(crate) mod shape_account_id_list;
+
 pub(crate) mod shape_assistant_message_block;
+
+pub(crate) mod shape_org_source_issue_list;
 
 pub(crate) mod shape_recurrence;
 

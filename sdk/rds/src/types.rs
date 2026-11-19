@@ -149,6 +149,8 @@ pub use crate::types::_additional_storage_volume::AdditionalStorageVolume;
 
 pub use crate::types::_endpoint::Endpoint;
 
+pub use crate::types::_primary_endpoint::PrimaryEndpoint;
+
 pub use crate::types::_pending_modified_values::PendingModifiedValues;
 
 pub use crate::types::_user_auth_config::UserAuthConfig;
@@ -598,6 +600,8 @@ mod _performance_insights_metric_dimension_group;
 mod _performance_insights_metric_query;
 
 mod _performance_issue_details;
+
+mod _primary_endpoint;
 
 mod _processor_feature;
 

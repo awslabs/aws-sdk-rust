@@ -22,7 +22,8 @@ impl crate::operation::start_speech_synthesis_task::builders::StartSpeechSynthes
 }
 /// Fluent builder constructing a request to `StartSpeechSynthesisTask`.
 ///
-/// <p>Allows the creation of an asynchronous synthesis task, by starting a new <code>SpeechSynthesisTask</code>. This operation requires all the standard information needed for speech synthesis, plus the name of an Amazon S3 bucket for the service to store the output of the synthesis task and two optional parameters (<code>OutputS3KeyPrefix</code> and <code>SnsTopicArn</code>). Once the synthesis task is created, this operation will return a <code>SpeechSynthesisTask</code> object, which will include an identifier of this task as well as the current status. The <code>SpeechSynthesisTask</code> object is available for 72 hours after starting the asynchronous synthesis task.</p>
+/// <p>Starts an asynchronous synthesis task by creating a new <code>SpeechSynthesisTask</code>. This operation requires all the standard information needed for speech synthesis, plus the name of an Amazon S3 bucket for the service to store the output of the synthesis task and two optional parameters (<code>OutputS3KeyPrefix</code> and <code>SnsTopicArn</code>). After Amazon Polly creates the synthesis task, the operation returns a <code>SpeechSynthesisTask</code> object that includes an identifier for the task and its current status. The <code>SpeechSynthesisTask</code> object is available for 72 hours after you start the asynchronous synthesis task.</p>
+/// <p>To use a custom voice, specify its ID in <code>VoiceId</code>. The voice must be in <code>active</code> status. If the voice is in <code>pending</code> or <code>failed</code> status, the request fails with <code>ConflictException</code>. If no custom voice with the specified ID exists in your account and Region, the request fails with <code>ResourceNotFoundException</code>. If the custom voice uses a customer managed key, you need <code>kms:Decrypt</code> permission on the key. If you disable the key or schedule it for deletion before the task runs, the task fails and <code>TaskStatusReason</code> describes the cause.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartSpeechSynthesisTaskFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -287,17 +288,17 @@ impl StartSpeechSynthesisTaskFluentBuilder {
     pub fn get_text_type(&self) -> &::std::option::Option<crate::types::TextType> {
         self.inner.get_text_type()
     }
-    /// <p>Voice ID to use for the synthesis.</p>
+    /// <p>The voice ID to use for the synthesis. To use a custom voice, specify the voice ID that <code>CreateVoice</code> returned, for example, <code>vc-9a8fa85dd3</code>. You can't specify the ARN of a voice.</p>
     pub fn voice_id(mut self, input: crate::types::VoiceId) -> Self {
         self.inner = self.inner.voice_id(input);
         self
     }
-    /// <p>Voice ID to use for the synthesis.</p>
+    /// <p>The voice ID to use for the synthesis. To use a custom voice, specify the voice ID that <code>CreateVoice</code> returned, for example, <code>vc-9a8fa85dd3</code>. You can't specify the ARN of a voice.</p>
     pub fn set_voice_id(mut self, input: ::std::option::Option<crate::types::VoiceId>) -> Self {
         self.inner = self.inner.set_voice_id(input);
         self
     }
-    /// <p>Voice ID to use for the synthesis.</p>
+    /// <p>The voice ID to use for the synthesis. To use a custom voice, specify the voice ID that <code>CreateVoice</code> returned, for example, <code>vc-9a8fa85dd3</code>. You can't specify the ARN of a voice.</p>
     pub fn get_voice_id(&self) -> &::std::option::Option<crate::types::VoiceId> {
         self.inner.get_voice_id()
     }

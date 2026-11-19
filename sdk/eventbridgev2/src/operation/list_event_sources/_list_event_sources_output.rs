@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEventSourcesOutput {
-    /// List of EventSource summaries.
+    /// <p>List of EventSource summaries.</p>
     pub event_sources: ::std::option::Option<::std::vec::Vec<crate::types::EventSourceSummary>>,
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListEventSourcesOutput {
-    /// List of EventSource summaries.
+    /// <p>List of EventSource summaries.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.event_sources.is_none()`.
     pub fn event_sources(&self) -> &[crate::types::EventSourceSummary] {
         self.event_sources.as_deref().unwrap_or_default()
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListEventSourcesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_event_sources`](Self::set_event_sources).
     ///
-    /// List of EventSource summaries.
+    /// <p>List of EventSource summaries.</p>
     pub fn event_sources(mut self, input: crate::types::EventSourceSummary) -> Self {
         let mut v = self.event_sources.unwrap_or_default();
         v.push(input);
         self.event_sources = ::std::option::Option::Some(v);
         self
     }
-    /// List of EventSource summaries.
+    /// <p>List of EventSource summaries.</p>
     pub fn set_event_sources(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::EventSourceSummary>>) -> Self {
         self.event_sources = input;
         self
     }
-    /// List of EventSource summaries.
+    /// <p>List of EventSource summaries.</p>
     pub fn get_event_sources(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EventSourceSummary>> {
         &self.event_sources
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

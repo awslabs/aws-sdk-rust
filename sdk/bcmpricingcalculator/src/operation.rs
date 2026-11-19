@@ -55,6 +55,9 @@ pub mod get_bill_scenario;
 /// Types for the `GetPreferences` operation.
 pub mod get_preferences;
 
+/// Types for the `GetUsageLinesEstimatedCost` operation.
+pub mod get_usage_lines_estimated_cost;
+
 /// Types for the `GetWorkloadEstimate` operation.
 pub mod get_workload_estimate;
 

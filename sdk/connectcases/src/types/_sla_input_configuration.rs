@@ -8,7 +8,7 @@ pub struct SlaInputConfiguration {
     pub name: ::std::string::String,
     /// <p>Type of SLA.</p>
     pub r#type: crate::types::SlaType,
-    /// <p>Unique identifier of a field.</p>
+    /// <p>Unique identifier of the case field that the SLA tracks. The field must be a single-select field, such as the system <code>status</code> field or a custom single-select field.</p>
     pub field_id: ::std::option::Option<::std::string::String>,
     /// <p>Represents a list of target field values for the fieldId specified in SlaInputConfiguration. The SLA is considered met if any one of these target field values matches the actual field value.</p>
     pub target_field_values: ::std::option::Option<::std::vec::Vec<crate::types::FieldValueUnion>>,
@@ -25,7 +25,7 @@ impl SlaInputConfiguration {
     pub fn r#type(&self) -> &crate::types::SlaType {
         &self.r#type
     }
-    /// <p>Unique identifier of a field.</p>
+    /// <p>Unique identifier of the case field that the SLA tracks. The field must be a single-select field, such as the system <code>status</code> field or a custom single-select field.</p>
     pub fn field_id(&self) -> ::std::option::Option<&str> {
         self.field_id.as_deref()
     }
@@ -99,17 +99,17 @@ impl SlaInputConfigurationBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::SlaType> {
         &self.r#type
     }
-    /// <p>Unique identifier of a field.</p>
+    /// <p>Unique identifier of the case field that the SLA tracks. The field must be a single-select field, such as the system <code>status</code> field or a custom single-select field.</p>
     pub fn field_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.field_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Unique identifier of a field.</p>
+    /// <p>Unique identifier of the case field that the SLA tracks. The field must be a single-select field, such as the system <code>status</code> field or a custom single-select field.</p>
     pub fn set_field_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_id = input;
         self
     }
-    /// <p>Unique identifier of a field.</p>
+    /// <p>Unique identifier of the case field that the SLA tracks. The field must be a single-select field, such as the system <code>status</code> field or a custom single-select field.</p>
     pub fn get_field_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.field_id
     }

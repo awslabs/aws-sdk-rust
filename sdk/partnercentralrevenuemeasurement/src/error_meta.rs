@@ -150,6 +150,7 @@ impl From<crate::operation::create_marketplace_revenue_share_allocation::CreateM
             crate::operation::create_marketplace_revenue_share_allocation::CreateMarketplaceRevenueShareAllocationError::ConflictException(inner) => Error::ConflictException(inner),
             crate::operation::create_marketplace_revenue_share_allocation::CreateMarketplaceRevenueShareAllocationError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::create_marketplace_revenue_share_allocation::CreateMarketplaceRevenueShareAllocationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_marketplace_revenue_share_allocation::CreateMarketplaceRevenueShareAllocationError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
             crate::operation::create_marketplace_revenue_share_allocation::CreateMarketplaceRevenueShareAllocationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_marketplace_revenue_share_allocation::CreateMarketplaceRevenueShareAllocationError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_marketplace_revenue_share_allocation::CreateMarketplaceRevenueShareAllocationError::Unhandled(inner) => Error::Unhandled(inner),
@@ -499,6 +500,9 @@ impl From<crate::operation::list_marketplace_revenue_shares::ListMarketplaceReve
             crate::operation::list_marketplace_revenue_shares::ListMarketplaceRevenueSharesError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
+            crate::operation::list_marketplace_revenue_shares::ListMarketplaceRevenueSharesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
             crate::operation::list_marketplace_revenue_shares::ListMarketplaceRevenueSharesError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
@@ -730,6 +734,56 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_marketplace_revenue_share::UpdateMarketplaceRevenueShareError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_marketplace_revenue_share::UpdateMarketplaceRevenueShareError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_marketplace_revenue_share::UpdateMarketplaceRevenueShareError> for Error {
+    fn from(err: crate::operation::update_marketplace_revenue_share::UpdateMarketplaceRevenueShareError) -> Self {
+        match err {
+            crate::operation::update_marketplace_revenue_share::UpdateMarketplaceRevenueShareError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_marketplace_revenue_share::UpdateMarketplaceRevenueShareError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_marketplace_revenue_share::UpdateMarketplaceRevenueShareError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_marketplace_revenue_share::UpdateMarketplaceRevenueShareError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_marketplace_revenue_share::UpdateMarketplaceRevenueShareError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_marketplace_revenue_share::UpdateMarketplaceRevenueShareError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::update_marketplace_revenue_share::UpdateMarketplaceRevenueShareError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::update_marketplace_revenue_share::UpdateMarketplaceRevenueShareError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

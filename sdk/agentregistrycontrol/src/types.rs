@@ -5,15 +5,25 @@ pub use crate::types::_record_type::RecordType;
 
 pub use crate::types::_descriptors::Descriptors;
 
+pub use crate::types::_registry_record_artifact_upload::RegistryRecordArtifactUpload;
+
 pub use crate::types::_registry_record_status::RegistryRecordStatus;
 
+pub use crate::types::_authorization_data::AuthorizationData;
+
 pub use crate::types::_custom_metadata_schema_compliance_status::CustomMetadataSchemaComplianceStatus;
+
+pub use crate::types::_registry_record_artifact_download::RegistryRecordArtifactDownload;
+
+pub use crate::types::_registry_record_synchronized_source::RegistryRecordSynchronizedSource;
 
 pub use crate::types::_updated_display_name::UpdatedDisplayName;
 
 pub use crate::types::_updated_description::UpdatedDescription;
 
 pub use crate::types::_updated_descriptors::UpdatedDescriptors;
+
+pub use crate::types::_updated_registry_record_artifact::UpdatedRegistryRecordArtifact;
 
 pub use crate::types::_updated_custom_metadata_map::UpdatedCustomMetadataMap;
 
@@ -58,6 +68,12 @@ pub use crate::types::_http_descriptor::HttpDescriptor;
 pub use crate::types::_ag_ui_descriptor::AgUiDescriptor;
 
 pub use crate::types::_provenance::Provenance;
+
+pub use crate::types::_o_auth2_authorization_data::OAuth2AuthorizationData;
+
+pub use crate::types::_s3_synchronized_source::S3SynchronizedSource;
+
+pub use crate::types::_git_hub_synchronized_source::GitHubSynchronizedSource;
 
 pub use crate::types::_updated_descriptors_fields::UpdatedDescriptorsFields;
 
@@ -117,6 +133,12 @@ pub use crate::types::_descriptor_source_from_url::DescriptorSourceFromUrl;
 
 pub use crate::types::_agent_skills_md_descriptor::AgentSkillsMdDescriptor;
 
+pub use crate::types::_agent_skills_package_descriptor::AgentSkillsPackageDescriptor;
+
+pub use crate::types::_agent_skills_repository_provider::AgentSkillsRepositoryProvider;
+
+pub use crate::types::_agent_skills_source_configuration::AgentSkillsSourceConfiguration;
+
 pub use crate::types::_agent_core_runtime_source_details::AgentCoreRuntimeSourceDetails;
 
 pub use crate::types::_agent_core_gateway_source_details::AgentCoreGatewaySourceDetails;
@@ -134,6 +156,8 @@ pub use crate::types::_updated_http_descriptor_fields::UpdatedHttpDescriptorFiel
 pub use crate::types::_updated_ag_ui_descriptor_fields::UpdatedAgUiDescriptorFields;
 
 pub use crate::types::_private_endpoint::PrivateEndpoint;
+
+pub use crate::types::_s3_source_configuration::S3SourceConfiguration;
 
 pub use crate::types::_agent_core_runtime_protocol_configuration::AgentCoreRuntimeProtocolConfiguration;
 
@@ -181,6 +205,12 @@ pub use crate::types::_updated_mcp_tools_descriptor::UpdatedMcpToolsDescriptor;
 
 pub use crate::types::_updated_agent_skills_md_descriptor::UpdatedAgentSkillsMdDescriptor;
 
+pub use crate::types::_updated_agent_skills_package_descriptor::UpdatedAgentSkillsPackageDescriptor;
+
+pub use crate::types::_updated_agent_skills_repository_provider::UpdatedAgentSkillsRepositoryProvider;
+
+pub use crate::types::_updated_agent_skills_source_configuration::UpdatedAgentSkillsSourceConfiguration;
+
 pub use crate::types::_claim_match_value_type::ClaimMatchValueType;
 
 pub use crate::types::_claim_match_operator_type::ClaimMatchOperatorType;
@@ -215,7 +245,15 @@ mod _agent_skills_definition_descriptor;
 
 mod _agent_skills_md_descriptor;
 
+mod _agent_skills_package_descriptor;
+
+mod _agent_skills_repository_provider;
+
+mod _agent_skills_source_configuration;
+
 mod _approval_configuration;
+
+mod _authorization_data;
 
 mod _authorizer_configuration;
 
@@ -257,6 +295,8 @@ mod _encryption_configuration;
 
 mod _endpoint_ip_address_type;
 
+mod _git_hub_synchronized_source;
+
 mod _http_descriptor;
 
 mod _inbound_token_claim_value_type;
@@ -268,6 +308,8 @@ mod _mcp_server_additional_data;
 mod _mcp_server_descriptor;
 
 mod _mcp_tools_descriptor;
+
+mod _o_auth2_authorization_data;
 
 mod _private_endpoint;
 
@@ -289,6 +331,10 @@ mod _registry_filter;
 
 mod _registry_filter_name;
 
+mod _registry_record_artifact_download;
+
+mod _registry_record_artifact_upload;
+
 mod _registry_record_credential_provider_configuration;
 
 mod _registry_record_credential_provider_type;
@@ -309,9 +355,15 @@ mod _registry_record_status;
 
 mod _registry_record_summary;
 
+mod _registry_record_synchronized_source;
+
 mod _registry_status;
 
 mod _registry_summary;
+
+mod _s3_source_configuration;
+
+mod _s3_synchronized_source;
 
 mod _self_managed_lattice_resource;
 
@@ -338,6 +390,12 @@ mod _updated_agent_skills_definition_descriptor_fields;
 mod _updated_agent_skills_md_descriptor;
 
 mod _updated_agent_skills_md_descriptor_fields;
+
+mod _updated_agent_skills_package_descriptor;
+
+mod _updated_agent_skills_repository_provider;
+
+mod _updated_agent_skills_source_configuration;
 
 mod _updated_approval_configuration;
 
@@ -384,6 +442,8 @@ mod _updated_mcp_server_descriptor_fields;
 mod _updated_mcp_tools_descriptor;
 
 mod _updated_mcp_tools_descriptor_fields;
+
+mod _updated_registry_record_artifact;
 
 mod _validation_exception_field;
 

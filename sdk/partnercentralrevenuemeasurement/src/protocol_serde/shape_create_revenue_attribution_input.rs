@@ -31,6 +31,15 @@ pub fn ser_create_revenue_attribution_input_input(
             }
         }
     }
+    if let Some(var_9) = &input.context {
+        encoder.str("Context");
+        encoder.map((*var_9).len());
+        for (key_10, value_11) in var_9 {
+            {
+                encoder.str(key_10.as_str()).str(value_11.as_str());
+            }
+        }
+    }
     encoder.end();
     Ok(())
 }

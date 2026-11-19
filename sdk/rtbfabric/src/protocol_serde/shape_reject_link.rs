@@ -167,6 +167,9 @@ pub(crate) fn de_reject_link(
                                 .transpose()?,
                         );
                     }
+                    "errorDetails" => {
+                        builder = builder.set_error_details(crate::protocol_serde::shape_error_details::de_error_details(tokens, _value, depth + 1)?);
+                    }
                     "flowModules" => {
                         builder = builder.set_flow_modules(crate::protocol_serde::shape_module_configuration_list::de_module_configuration_list(
                             tokens,

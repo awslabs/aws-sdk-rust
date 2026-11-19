@@ -9,5 +9,23 @@ pub fn ser_updated_agent_skills_additional_data_fields(
         crate::protocol_serde::shape_updated_agent_skills_md_descriptor::ser_updated_agent_skills_md_descriptor(&mut object_2, var_1)?;
         object_2.finish();
     }
+    if let Some(var_3) = &input.skill_package {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("skillPackage").start_object();
+        crate::protocol_serde::shape_updated_agent_skills_package_descriptor::ser_updated_agent_skills_package_descriptor(&mut object_4, var_3)?;
+        object_4.finish();
+    }
+    if let Some(var_5) = &input.repository_provider {
+        #[allow(unused_mut)]
+        let mut object_6 = object.key("repositoryProvider").start_object();
+        crate::protocol_serde::shape_updated_agent_skills_repository_provider::ser_updated_agent_skills_repository_provider(&mut object_6, var_5)?;
+        object_6.finish();
+    }
+    if let Some(var_7) = &input.source_configuration {
+        #[allow(unused_mut)]
+        let mut object_8 = object.key("sourceConfiguration").start_object();
+        crate::protocol_serde::shape_updated_agent_skills_source_configuration::ser_updated_agent_skills_source_configuration(&mut object_8, var_7)?;
+        object_8.finish();
+    }
     Ok(())
 }

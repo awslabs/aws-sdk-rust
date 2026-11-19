@@ -183,26 +183,18 @@ pub(crate) fn de_create_marketplace_revenue_share(
         ::aws_smithy_cbor::decode::DeserializeError,
     > {
         builder = match decoder.str()?.as_ref() {
-            "ProductId" => builder.set_product_id(Some(decoder.string()?)),
+            "Id" => builder.set_id(Some(decoder.string()?)),
             "Arn" => builder.set_arn(Some(decoder.string()?)),
-            "Catalog" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_catalog(Some(decoder.string().map(|s| crate::types::CatalogName::from(s.as_str()))?)))
-            })?,
-            "ProductCode" => {
-                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_product_code(Some(decoder.string()?))))?
-            }
-            "ProductName" => {
-                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_product_name(Some(decoder.string()?))))?
-            }
-            "CreatedDate" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_created_date(Some(decoder.timestamp()?)))
-            })?,
-            "LastModifiedDate" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_last_modified_date(Some(decoder.timestamp()?)))
-            })?,
-            "Revision" => {
-                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_revision(Some(decoder.integer()?))))?
-            }
+            "Catalog" => builder.set_catalog(Some(decoder.string().map(|s| crate::types::CatalogName::from(s.as_str()))?)),
+            "Products" => builder.set_products(Some(
+                crate::protocol_serde::shape_marketplace_revenue_share_product_summary_list::de_marketplace_revenue_share_product_summary_list(
+                    decoder,
+                    depth + 1,
+                )?,
+            )),
+            "CreatedDate" => builder.set_created_date(Some(decoder.timestamp()?)),
+            "LastModifiedDate" => builder.set_last_modified_date(Some(decoder.timestamp()?)),
+            "Revision" => builder.set_revision(Some(decoder.string()?)),
             _ => {
                 decoder.skip()?;
                 builder

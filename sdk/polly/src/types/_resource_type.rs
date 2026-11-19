@@ -13,6 +13,7 @@
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
 ///     ResourceType::Lexicon => { /* ... */ },
+///     ResourceType::Voice => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,6 +44,8 @@
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Lexicon,
+    #[allow(missing_docs)] // documentation missing in model
+    Voice,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -51,6 +54,7 @@ impl ::std::convert::From<&str> for ResourceType {
     fn from(s: &str) -> Self {
         match s {
             "lexicon" => ResourceType::Lexicon,
+            "voice" => ResourceType::Voice,
             other => ResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -67,12 +71,13 @@ impl ResourceType {
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Lexicon => "lexicon",
+            ResourceType::Voice => "voice",
             ResourceType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["lexicon"]
+        &["lexicon", "voice"]
     }
 }
 impl ::std::convert::AsRef<str> for ResourceType {
@@ -96,6 +101,7 @@ impl ::std::fmt::Display for ResourceType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ResourceType::Lexicon => write!(f, "lexicon"),
+            ResourceType::Voice => write!(f, "voice"),
             ResourceType::Unknown(value) => write!(f, "{value}"),
         }
     }

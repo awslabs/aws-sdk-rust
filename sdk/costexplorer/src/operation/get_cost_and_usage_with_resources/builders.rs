@@ -171,7 +171,8 @@ impl GetCostAndUsageWithResourcesFluentBuilder {
     /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
     ///
     /// <p>Which metrics are returned in the query. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>.</p>
-    /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>.</p><note>
+    /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, <code>UsageQuantity</code>, <code>BilledCost</code>, <code>ContractedCost</code>, <code>ListCost</code>, <code>PublicEquivalentBilledCost</code>, and <code>PublicOnDemandCost</code>.</p>
+    /// <p><code>BilledCost</code>, <code>ContractedCost</code>, <code>ListCost</code>, <code>PublicEquivalentBilledCost</code>, and <code>PublicOnDemandCost</code> are cost analytics metrics. They use the same definitions as the cost analytics columns in Cost and Usage Report (CUR) 2.0.</p><note>
     /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking the units into account. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for example, hour or GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>.</p>
     /// </note>
     /// <p><code>Metrics</code> is required for <code>GetCostAndUsageWithResources</code> requests.</p>
@@ -180,7 +181,8 @@ impl GetCostAndUsageWithResourcesFluentBuilder {
         self
     }
     /// <p>Which metrics are returned in the query. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>.</p>
-    /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>.</p><note>
+    /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, <code>UsageQuantity</code>, <code>BilledCost</code>, <code>ContractedCost</code>, <code>ListCost</code>, <code>PublicEquivalentBilledCost</code>, and <code>PublicOnDemandCost</code>.</p>
+    /// <p><code>BilledCost</code>, <code>ContractedCost</code>, <code>ListCost</code>, <code>PublicEquivalentBilledCost</code>, and <code>PublicOnDemandCost</code> are cost analytics metrics. They use the same definitions as the cost analytics columns in Cost and Usage Report (CUR) 2.0.</p><note>
     /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking the units into account. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for example, hour or GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>.</p>
     /// </note>
     /// <p><code>Metrics</code> is required for <code>GetCostAndUsageWithResources</code> requests.</p>
@@ -189,7 +191,8 @@ impl GetCostAndUsageWithResourcesFluentBuilder {
         self
     }
     /// <p>Which metrics are returned in the query. For more information about blended and unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation appear on some line items in my bill?</a>.</p>
-    /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>.</p><note>
+    /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, <code>UsageQuantity</code>, <code>BilledCost</code>, <code>ContractedCost</code>, <code>ListCost</code>, <code>PublicEquivalentBilledCost</code>, and <code>PublicOnDemandCost</code>.</p>
+    /// <p><code>BilledCost</code>, <code>ContractedCost</code>, <code>ListCost</code>, <code>PublicEquivalentBilledCost</code>, and <code>PublicOnDemandCost</code> are cost analytics metrics. They use the same definitions as the cost analytics columns in Cost and Usage Report (CUR) 2.0.</p><note>
     /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without taking the units into account. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units (for example, hour or GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or <code>UsageTypeGroups</code>.</p>
     /// </note>
     /// <p><code>Metrics</code> is required for <code>GetCostAndUsageWithResources</code> requests.</p>

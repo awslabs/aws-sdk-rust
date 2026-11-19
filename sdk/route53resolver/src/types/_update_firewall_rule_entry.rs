@@ -108,7 +108,8 @@ pub struct UpdateFirewallRuleEntry {
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — match a third-party threat feed delivered through Amazon Web Services Marketplace. The selected partner must be an active subscription on the calling account.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
+    /// <p>You can't specify <code>FirewallRuleType</code> when you update an AutoAllowlist rule, even with its current values. <code>InitialDataTimeframeHours</code> and <code>ImportFromFirewallDomainListId</code> can't be changed. To change them, delete the rule and create a new one. Deleting an AutoAllowlist rule also deletes its managed domain list and the domains that you allowed.</p>
     pub firewall_rule_type: ::std::option::Option<crate::types::FirewallRuleType>,
 }
 impl UpdateFirewallRuleEntry {
@@ -245,7 +246,8 @@ impl UpdateFirewallRuleEntry {
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — match a third-party threat feed delivered through Amazon Web Services Marketplace. The selected partner must be an active subscription on the calling account.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
+    /// <p>You can't specify <code>FirewallRuleType</code> when you update an AutoAllowlist rule, even with its current values. <code>InitialDataTimeframeHours</code> and <code>ImportFromFirewallDomainListId</code> can't be changed. To change them, delete the rule and create a new one. Deleting an AutoAllowlist rule also deletes its managed domain list and the domains that you allowed.</p>
     pub fn firewall_rule_type(&self) -> ::std::option::Option<&crate::types::FirewallRuleType> {
         self.firewall_rule_type.as_ref()
     }
@@ -681,7 +683,8 @@ impl UpdateFirewallRuleEntryBuilder {
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — match a third-party threat feed delivered through Amazon Web Services Marketplace. The selected partner must be an active subscription on the calling account.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
+    /// <p>You can't specify <code>FirewallRuleType</code> when you update an AutoAllowlist rule, even with its current values. <code>InitialDataTimeframeHours</code> and <code>ImportFromFirewallDomainListId</code> can't be changed. To change them, delete the rule and create a new one. Deleting an AutoAllowlist rule also deletes its managed domain list and the domains that you allowed.</p>
     pub fn firewall_rule_type(mut self, input: crate::types::FirewallRuleType) -> Self {
         self.firewall_rule_type = ::std::option::Option::Some(input);
         self
@@ -697,7 +700,8 @@ impl UpdateFirewallRuleEntryBuilder {
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — match a third-party threat feed delivered through Amazon Web Services Marketplace. The selected partner must be an active subscription on the calling account.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
+    /// <p>You can't specify <code>FirewallRuleType</code> when you update an AutoAllowlist rule, even with its current values. <code>InitialDataTimeframeHours</code> and <code>ImportFromFirewallDomainListId</code> can't be changed. To change them, delete the rule and create a new one. Deleting an AutoAllowlist rule also deletes its managed domain list and the domains that you allowed.</p>
     pub fn set_firewall_rule_type(mut self, input: ::std::option::Option<crate::types::FirewallRuleType>) -> Self {
         self.firewall_rule_type = input;
         self
@@ -713,7 +717,8 @@ impl UpdateFirewallRuleEntryBuilder {
     /// <li>
     /// <p><code>PartnerThreatProtection</code> — match a third-party threat feed delivered through Amazon Web Services Marketplace. The selected partner must be an active subscription on the calling account.</p></li>
     /// </ul>
-    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>.</p>
+    /// <p>To enumerate the values supported in your account, call <code>ListFirewallRuleTypes</code>. It doesn't return <code>AutoAllowlist</code>.</p>
+    /// <p>You can't specify <code>FirewallRuleType</code> when you update an AutoAllowlist rule, even with its current values. <code>InitialDataTimeframeHours</code> and <code>ImportFromFirewallDomainListId</code> can't be changed. To change them, delete the rule and create a new one. Deleting an AutoAllowlist rule also deletes its managed domain list and the domains that you allowed.</p>
     pub fn get_firewall_rule_type(&self) -> &::std::option::Option<crate::types::FirewallRuleType> {
         &self.firewall_rule_type
     }

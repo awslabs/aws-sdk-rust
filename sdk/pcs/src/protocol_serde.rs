@@ -193,6 +193,8 @@ pub(crate) mod shape_error_info_list;
 
 pub(crate) mod shape_instance_list;
 
+pub(crate) mod shape_job_submit_plugin;
+
 pub(crate) mod shape_networking;
 
 pub(crate) mod shape_node_lifecycle_stages;
@@ -228,6 +230,10 @@ pub(crate) mod shape_cgroup_custom_settings;
 pub(crate) mod shape_error_info;
 
 pub(crate) mod shape_gres_custom_settings;
+
+pub(crate) mod shape_job_submit_plugin_list;
+
+pub(crate) mod shape_job_submit_script_source;
 
 pub(crate) mod shape_jwt_auth;
 

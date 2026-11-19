@@ -169,4 +169,18 @@ impl CreateConnectionFluentBuilder {
     pub fn get_host_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_host_arn()
     }
+    /// <p>The endpoint of the ghe.com tenant where your organization resides. Provide this parameter only when <code>ProviderType</code> is <code>GitHubEnterpriseCloudDataResidency</code>. Leave this parameter empty for all other provider types.</p>
+    pub fn provider_endpoint(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.provider_endpoint(input.into());
+        self
+    }
+    /// <p>The endpoint of the ghe.com tenant where your organization resides. Provide this parameter only when <code>ProviderType</code> is <code>GitHubEnterpriseCloudDataResidency</code>. Leave this parameter empty for all other provider types.</p>
+    pub fn set_provider_endpoint(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_provider_endpoint(input);
+        self
+    }
+    /// <p>The endpoint of the ghe.com tenant where your organization resides. Provide this parameter only when <code>ProviderType</code> is <code>GitHubEnterpriseCloudDataResidency</code>. Leave this parameter empty for all other provider types.</p>
+    pub fn get_provider_endpoint(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_provider_endpoint()
+    }
 }

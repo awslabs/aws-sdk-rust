@@ -173,6 +173,41 @@ impl From<crate::operation::associate_opportunity::AssociateOpportunityError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_customer_account::CreateCustomerAccountError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_customer_account::CreateCustomerAccountError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_customer_account::CreateCustomerAccountError> for Error {
+    fn from(err: crate::operation::create_customer_account::CreateCustomerAccountError) -> Self {
+        match err {
+            crate::operation::create_customer_account::CreateCustomerAccountError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_customer_account::CreateCustomerAccountError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_customer_account::CreateCustomerAccountError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_customer_account::CreateCustomerAccountError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_customer_account::CreateCustomerAccountError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_customer_account::CreateCustomerAccountError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_customer_account::CreateCustomerAccountError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_engagement::CreateEngagementError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -401,6 +436,37 @@ impl From<crate::operation::create_resource_snapshot_job::CreateResourceSnapshot
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_customer_account::DeleteCustomerAccountError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_customer_account::DeleteCustomerAccountError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_customer_account::DeleteCustomerAccountError> for Error {
+    fn from(err: crate::operation::delete_customer_account::DeleteCustomerAccountError) -> Self {
+        match err {
+            crate::operation::delete_customer_account::DeleteCustomerAccountError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_customer_account::DeleteCustomerAccountError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_customer_account::DeleteCustomerAccountError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_customer_account::DeleteCustomerAccountError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_customer_account::DeleteCustomerAccountError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_resource_snapshot_job::DeleteResourceSnapshotJobError, R>>
     for Error
 where
@@ -517,6 +583,165 @@ impl From<crate::operation::get_aws_opportunity_summary::GetAwsOpportunitySummar
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_customer_account::GetCustomerAccountError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_customer_account::GetCustomerAccountError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_customer_account::GetCustomerAccountError> for Error {
+    fn from(err: crate::operation::get_customer_account::GetCustomerAccountError) -> Self {
+        match err {
+            crate::operation::get_customer_account::GetCustomerAccountError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_customer_account::GetCustomerAccountError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_customer_account::GetCustomerAccountError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_customer_account::GetCustomerAccountError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_customer_account::GetCustomerAccountError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_customer_account::GetCustomerAccountError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_customer_account_bulk_job::GetCustomerAccountBulkJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_customer_account_bulk_job::GetCustomerAccountBulkJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_customer_account_bulk_job::GetCustomerAccountBulkJobError> for Error {
+    fn from(err: crate::operation::get_customer_account_bulk_job::GetCustomerAccountBulkJobError) -> Self {
+        match err {
+            crate::operation::get_customer_account_bulk_job::GetCustomerAccountBulkJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_customer_account_bulk_job::GetCustomerAccountBulkJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_customer_account_bulk_job::GetCustomerAccountBulkJobError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_customer_account_bulk_job::GetCustomerAccountBulkJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_customer_account_bulk_job::GetCustomerAccountBulkJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_customer_account_bulk_job::GetCustomerAccountBulkJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_customer_account_bulk_job_report_url::GetCustomerAccountBulkJobReportUrlError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_customer_account_bulk_job_report_url::GetCustomerAccountBulkJobReportUrlError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_customer_account_bulk_job_report_url::GetCustomerAccountBulkJobReportUrlError> for Error {
+    fn from(err: crate::operation::get_customer_account_bulk_job_report_url::GetCustomerAccountBulkJobReportUrlError) -> Self {
+        match err {
+            crate::operation::get_customer_account_bulk_job_report_url::GetCustomerAccountBulkJobReportUrlError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_customer_account_bulk_job_report_url::GetCustomerAccountBulkJobReportUrlError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::get_customer_account_bulk_job_report_url::GetCustomerAccountBulkJobReportUrlError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_customer_account_bulk_job_report_url::GetCustomerAccountBulkJobReportUrlError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_customer_account_bulk_job_report_url::GetCustomerAccountBulkJobReportUrlError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_customer_account_bulk_job_report_url::GetCustomerAccountBulkJobReportUrlError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_customer_account_bulk_job_report_url::GetCustomerAccountBulkJobReportUrlError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_customer_account_statistics::GetCustomerAccountStatisticsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_customer_account_statistics::GetCustomerAccountStatisticsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_customer_account_statistics::GetCustomerAccountStatisticsError> for Error {
+    fn from(err: crate::operation::get_customer_account_statistics::GetCustomerAccountStatisticsError) -> Self {
+        match err {
+            crate::operation::get_customer_account_statistics::GetCustomerAccountStatisticsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_customer_account_statistics::GetCustomerAccountStatisticsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_customer_account_statistics::GetCustomerAccountStatisticsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_customer_account_statistics::GetCustomerAccountStatisticsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_customer_account_statistics::GetCustomerAccountStatisticsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_engagement::GetEngagementError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -605,6 +830,56 @@ impl From<crate::operation::get_opportunity::GetOpportunityError> for Error {
             crate::operation::get_opportunity::GetOpportunityError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_opportunity::GetOpportunityError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_opportunity::GetOpportunityError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_opportunity_bulk_job_report_url::GetOpportunityBulkJobReportUrlError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_opportunity_bulk_job_report_url::GetOpportunityBulkJobReportUrlError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_opportunity_bulk_job_report_url::GetOpportunityBulkJobReportUrlError> for Error {
+    fn from(err: crate::operation::get_opportunity_bulk_job_report_url::GetOpportunityBulkJobReportUrlError) -> Self {
+        match err {
+            crate::operation::get_opportunity_bulk_job_report_url::GetOpportunityBulkJobReportUrlError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_opportunity_bulk_job_report_url::GetOpportunityBulkJobReportUrlError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::get_opportunity_bulk_job_report_url::GetOpportunityBulkJobReportUrlError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_opportunity_bulk_job_report_url::GetOpportunityBulkJobReportUrlError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_opportunity_bulk_job_report_url::GetOpportunityBulkJobReportUrlError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_opportunity_bulk_job_report_url::GetOpportunityBulkJobReportUrlError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_opportunity_bulk_job_report_url::GetOpportunityBulkJobReportUrlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -764,6 +1039,95 @@ impl From<crate::operation::get_selling_system_settings::GetSellingSystemSetting
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_customer_account_bulk_job_results::ListCustomerAccountBulkJobResultsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_customer_account_bulk_job_results::ListCustomerAccountBulkJobResultsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_customer_account_bulk_job_results::ListCustomerAccountBulkJobResultsError> for Error {
+    fn from(err: crate::operation::list_customer_account_bulk_job_results::ListCustomerAccountBulkJobResultsError) -> Self {
+        match err {
+            crate::operation::list_customer_account_bulk_job_results::ListCustomerAccountBulkJobResultsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_customer_account_bulk_job_results::ListCustomerAccountBulkJobResultsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_customer_account_bulk_job_results::ListCustomerAccountBulkJobResultsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_customer_account_bulk_job_results::ListCustomerAccountBulkJobResultsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_customer_account_bulk_job_results::ListCustomerAccountBulkJobResultsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_customer_account_bulk_job_results::ListCustomerAccountBulkJobResultsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_customer_account_bulk_jobs::ListCustomerAccountBulkJobsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_customer_account_bulk_jobs::ListCustomerAccountBulkJobsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_customer_account_bulk_jobs::ListCustomerAccountBulkJobsError> for Error {
+    fn from(err: crate::operation::list_customer_account_bulk_jobs::ListCustomerAccountBulkJobsError) -> Self {
+        match err {
+            crate::operation::list_customer_account_bulk_jobs::ListCustomerAccountBulkJobsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_customer_account_bulk_jobs::ListCustomerAccountBulkJobsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_customer_account_bulk_jobs::ListCustomerAccountBulkJobsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_customer_account_bulk_jobs::ListCustomerAccountBulkJobsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_customer_account_bulk_jobs::ListCustomerAccountBulkJobsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_engagement_by_accepting_invitation_tasks::ListEngagementByAcceptingInvitationTasksError,
             R,
         >,
@@ -844,6 +1208,33 @@ impl From<crate::operation::list_engagement_from_opportunity_tasks::ListEngageme
             crate::operation::list_engagement_from_opportunity_tasks::ListEngagementFromOpportunityTasksError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_engagement_groups::ListEngagementGroupsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_engagement_groups::ListEngagementGroupsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_engagement_groups::ListEngagementGroupsError> for Error {
+    fn from(err: crate::operation::list_engagement_groups::ListEngagementGroupsError) -> Self {
+        match err {
+            crate::operation::list_engagement_groups::ListEngagementGroupsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_engagement_groups::ListEngagementGroupsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_engagement_groups::ListEngagementGroupsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_engagement_groups::ListEngagementGroupsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_engagement_groups::ListEngagementGroupsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1018,6 +1409,92 @@ impl From<crate::operation::list_opportunities::ListOpportunitiesError> for Erro
             crate::operation::list_opportunities::ListOpportunitiesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_opportunities::ListOpportunitiesError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_opportunities::ListOpportunitiesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_opportunity_bulk_job_results::ListOpportunityBulkJobResultsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_opportunity_bulk_job_results::ListOpportunityBulkJobResultsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_opportunity_bulk_job_results::ListOpportunityBulkJobResultsError> for Error {
+    fn from(err: crate::operation::list_opportunity_bulk_job_results::ListOpportunityBulkJobResultsError) -> Self {
+        match err {
+            crate::operation::list_opportunity_bulk_job_results::ListOpportunityBulkJobResultsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_opportunity_bulk_job_results::ListOpportunityBulkJobResultsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_opportunity_bulk_job_results::ListOpportunityBulkJobResultsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_opportunity_bulk_job_results::ListOpportunityBulkJobResultsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_opportunity_bulk_job_results::ListOpportunityBulkJobResultsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_opportunity_bulk_job_results::ListOpportunityBulkJobResultsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_opportunity_bulk_jobs::ListOpportunityBulkJobsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_opportunity_bulk_jobs::ListOpportunityBulkJobsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_opportunity_bulk_jobs::ListOpportunityBulkJobsError> for Error {
+    fn from(err: crate::operation::list_opportunity_bulk_jobs::ListOpportunityBulkJobsError) -> Self {
+        match err {
+            crate::operation::list_opportunity_bulk_jobs::ListOpportunityBulkJobsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_opportunity_bulk_jobs::ListOpportunityBulkJobsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_opportunity_bulk_jobs::ListOpportunityBulkJobsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_opportunity_bulk_jobs::ListOpportunityBulkJobsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_opportunity_bulk_jobs::ListOpportunityBulkJobsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_opportunity_bulk_jobs::ListOpportunityBulkJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1326,6 +1803,136 @@ impl From<crate::operation::reject_engagement_invitation::RejectEngagementInvita
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_customer_accounts::SearchCustomerAccountsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_customer_accounts::SearchCustomerAccountsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_customer_accounts::SearchCustomerAccountsError> for Error {
+    fn from(err: crate::operation::search_customer_accounts::SearchCustomerAccountsError) -> Self {
+        match err {
+            crate::operation::search_customer_accounts::SearchCustomerAccountsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::search_customer_accounts::SearchCustomerAccountsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::search_customer_accounts::SearchCustomerAccountsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_customer_accounts::SearchCustomerAccountsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::search_customer_accounts::SearchCustomerAccountsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_engagements::SearchEngagementsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_engagements::SearchEngagementsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_engagements::SearchEngagementsError> for Error {
+    fn from(err: crate::operation::search_engagements::SearchEngagementsError) -> Self {
+        match err {
+            crate::operation::search_engagements::SearchEngagementsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::search_engagements::SearchEngagementsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::search_engagements::SearchEngagementsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_engagements::SearchEngagementsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::search_engagements::SearchEngagementsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_opportunities::SearchOpportunitiesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::search_opportunities::SearchOpportunitiesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::search_opportunities::SearchOpportunitiesError> for Error {
+    fn from(err: crate::operation::search_opportunities::SearchOpportunitiesError) -> Self {
+        match err {
+            crate::operation::search_opportunities::SearchOpportunitiesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::search_opportunities::SearchOpportunitiesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::search_opportunities::SearchOpportunitiesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::search_opportunities::SearchOpportunitiesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::search_opportunities::SearchOpportunitiesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::search_opportunities::SearchOpportunitiesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_customer_account_bulk_job::StartCustomerAccountBulkJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_customer_account_bulk_job::StartCustomerAccountBulkJobError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_customer_account_bulk_job::StartCustomerAccountBulkJobError> for Error {
+    fn from(err: crate::operation::start_customer_account_bulk_job::StartCustomerAccountBulkJobError) -> Self {
+        match err {
+            crate::operation::start_customer_account_bulk_job::StartCustomerAccountBulkJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_customer_account_bulk_job::StartCustomerAccountBulkJobError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_customer_account_bulk_job::StartCustomerAccountBulkJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_customer_account_bulk_job::StartCustomerAccountBulkJobError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_customer_account_bulk_job::StartCustomerAccountBulkJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_customer_account_bulk_job::StartCustomerAccountBulkJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_customer_account_bulk_job::StartCustomerAccountBulkJobError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -1417,6 +2024,46 @@ impl From<crate::operation::start_engagement_from_opportunity_task::StartEngagem
             crate::operation::start_engagement_from_opportunity_task::StartEngagementFromOpportunityTaskError::Unhandled(inner) => {
                 Error::Unhandled(inner)
             }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_opportunity_bulk_job::StartOpportunityBulkJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_opportunity_bulk_job::StartOpportunityBulkJobError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_opportunity_bulk_job::StartOpportunityBulkJobError> for Error {
+    fn from(err: crate::operation::start_opportunity_bulk_job::StartOpportunityBulkJobError) -> Self {
+        match err {
+            crate::operation::start_opportunity_bulk_job::StartOpportunityBulkJobError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_opportunity_bulk_job::StartOpportunityBulkJobError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::start_opportunity_bulk_job::StartOpportunityBulkJobError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_opportunity_bulk_job::StartOpportunityBulkJobError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::start_opportunity_bulk_job::StartOpportunityBulkJobError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_opportunity_bulk_job::StartOpportunityBulkJobError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_opportunity_bulk_job::StartOpportunityBulkJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1682,6 +2329,41 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
             crate::operation::untag_resource::UntagResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::untag_resource::UntagResourceError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::untag_resource::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_customer_account::UpdateCustomerAccountError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_customer_account::UpdateCustomerAccountError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_customer_account::UpdateCustomerAccountError> for Error {
+    fn from(err: crate::operation::update_customer_account::UpdateCustomerAccountError) -> Self {
+        match err {
+            crate::operation::update_customer_account::UpdateCustomerAccountError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::update_customer_account::UpdateCustomerAccountError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_customer_account::UpdateCustomerAccountError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::update_customer_account::UpdateCustomerAccountError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::update_customer_account::UpdateCustomerAccountError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_customer_account::UpdateCustomerAccountError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_customer_account::UpdateCustomerAccountError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

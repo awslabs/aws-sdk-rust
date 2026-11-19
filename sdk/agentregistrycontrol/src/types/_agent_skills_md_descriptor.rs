@@ -8,7 +8,7 @@ pub struct AgentSkillsMdDescriptor {
     pub data: ::std::option::Option<::std::string::String>,
     /// <p>The schema version of the descriptor payload.</p>
     pub data_schema_version: ::std::option::Option<::std::string::String>,
-    /// <p>The optional source configuration used to synchronize the agent skills markdown content.</p>
+    /// <p>The optional source of the skill's SKILL.md only. The registry synchronizes the SKILL.md from this source into <code>data</code>. Specify an <code>s3://</code> URL of a SKILL.md object, or a GitHub folder URL together with <code>repositoryProvider</code> set to <code>GITHUB</code>. The registry rejects a new <code>https://</code> URL without <code>repositoryProvider</code>, and you can't set both this source and <code>skillPackage.source</code>.</p>
     pub source: ::std::option::Option<crate::types::DescriptorSource>,
 }
 impl AgentSkillsMdDescriptor {
@@ -20,7 +20,7 @@ impl AgentSkillsMdDescriptor {
     pub fn data_schema_version(&self) -> ::std::option::Option<&str> {
         self.data_schema_version.as_deref()
     }
-    /// <p>The optional source configuration used to synchronize the agent skills markdown content.</p>
+    /// <p>The optional source of the skill's SKILL.md only. The registry synchronizes the SKILL.md from this source into <code>data</code>. Specify an <code>s3://</code> URL of a SKILL.md object, or a GitHub folder URL together with <code>repositoryProvider</code> set to <code>GITHUB</code>. The registry rejects a new <code>https://</code> URL without <code>repositoryProvider</code>, and you can't set both this source and <code>skillPackage.source</code>.</p>
     pub fn source(&self) -> ::std::option::Option<&crate::types::DescriptorSource> {
         self.source.as_ref()
     }
@@ -78,17 +78,17 @@ impl AgentSkillsMdDescriptorBuilder {
     pub fn get_data_schema_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.data_schema_version
     }
-    /// <p>The optional source configuration used to synchronize the agent skills markdown content.</p>
+    /// <p>The optional source of the skill's SKILL.md only. The registry synchronizes the SKILL.md from this source into <code>data</code>. Specify an <code>s3://</code> URL of a SKILL.md object, or a GitHub folder URL together with <code>repositoryProvider</code> set to <code>GITHUB</code>. The registry rejects a new <code>https://</code> URL without <code>repositoryProvider</code>, and you can't set both this source and <code>skillPackage.source</code>.</p>
     pub fn source(mut self, input: crate::types::DescriptorSource) -> Self {
         self.source = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The optional source configuration used to synchronize the agent skills markdown content.</p>
+    /// <p>The optional source of the skill's SKILL.md only. The registry synchronizes the SKILL.md from this source into <code>data</code>. Specify an <code>s3://</code> URL of a SKILL.md object, or a GitHub folder URL together with <code>repositoryProvider</code> set to <code>GITHUB</code>. The registry rejects a new <code>https://</code> URL without <code>repositoryProvider</code>, and you can't set both this source and <code>skillPackage.source</code>.</p>
     pub fn set_source(mut self, input: ::std::option::Option<crate::types::DescriptorSource>) -> Self {
         self.source = input;
         self
     }
-    /// <p>The optional source configuration used to synchronize the agent skills markdown content.</p>
+    /// <p>The optional source of the skill's SKILL.md only. The registry synchronizes the SKILL.md from this source into <code>data</code>. Specify an <code>s3://</code> URL of a SKILL.md object, or a GitHub folder URL together with <code>repositoryProvider</code> set to <code>GITHUB</code>. The registry rejects a new <code>https://</code> URL without <code>repositoryProvider</code>, and you can't set both this source and <code>skillPackage.source</code>.</p>
     pub fn get_source(&self) -> &::std::option::Option<crate::types::DescriptorSource> {
         &self.source
     }

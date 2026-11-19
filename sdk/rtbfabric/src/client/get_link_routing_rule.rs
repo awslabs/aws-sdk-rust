@@ -16,6 +16,7 @@ impl super::Client {
     ///   - [`created_at(DateTime)`](crate::operation::get_link_routing_rule::GetLinkRoutingRuleOutput::created_at): <p>The timestamp of when the routing rule was created.</p>
     ///   - [`updated_at(DateTime)`](crate::operation::get_link_routing_rule::GetLinkRoutingRuleOutput::updated_at): <p>The timestamp of when the routing rule was last updated.</p>
     ///   - [`tags(Option<HashMap::<String, String>>)`](crate::operation::get_link_routing_rule::GetLinkRoutingRuleOutput::tags): <p>A map of the key-value pairs for the tag or tags assigned to the specified resource.</p>
+    ///   - [`error_details(Option<Vec::<ErrorDetail>>)`](crate::operation::get_link_routing_rule::GetLinkRoutingRuleOutput::error_details): <p>The causes of the failure, such as a deleted subnet. Present only when the resource has failed.</p>
     /// - On failure, responds with [`SdkError<GetLinkRoutingRuleError>`](crate::operation::get_link_routing_rule::GetLinkRoutingRuleError)
     pub fn get_link_routing_rule(&self) -> crate::operation::get_link_routing_rule::builders::GetLinkRoutingRuleFluentBuilder {
         crate::operation::get_link_routing_rule::builders::GetLinkRoutingRuleFluentBuilder::new(self.handle.clone())

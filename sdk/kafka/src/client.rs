@@ -181,6 +181,8 @@ mod batch_associate_scram_secret;
 
 mod batch_disassociate_scram_secret;
 
+mod create_assessment;
+
 mod create_channel;
 
 mod create_cluster;
@@ -222,6 +224,8 @@ mod create_vpc_connection;
 /// ```
 pub mod customize;
 
+mod delete_assessment;
+
 mod delete_channel;
 
 mod delete_cluster;
@@ -235,6 +239,8 @@ mod delete_replicator;
 mod delete_topic;
 
 mod delete_vpc_connection;
+
+mod describe_assessment;
 
 mod describe_channel;
 
@@ -256,6 +262,8 @@ mod describe_topic;
 
 mod describe_topic_partitions;
 
+mod describe_topic_reassignment;
+
 mod describe_vpc_connection;
 
 mod get_bootstrap_brokers;
@@ -263,6 +271,10 @@ mod get_bootstrap_brokers;
 mod get_cluster_policy;
 
 mod get_compatible_kafka_versions;
+
+mod list_assessment_findings;
+
+mod list_assessments;
 
 mod list_channels;
 
@@ -290,6 +302,8 @@ mod list_scram_secrets;
 
 mod list_tags_for_resource;
 
+mod list_topic_reassignments;
+
 mod list_topics;
 
 mod list_vpc_connections;
@@ -299,6 +313,10 @@ mod put_cluster_policy;
 mod reboot_broker;
 
 mod reject_client_vpc_connection;
+
+mod start_topic_reassignment;
+
+mod stop_topic_reassignment;
 
 mod tag_resource;
 

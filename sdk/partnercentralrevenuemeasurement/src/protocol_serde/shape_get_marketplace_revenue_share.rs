@@ -159,33 +159,29 @@ pub(crate) fn de_get_marketplace_revenue_share(
         ::aws_smithy_cbor::decode::DeserializeError,
     > {
         builder = match decoder.str()?.as_ref() {
-            "ProductId" => builder.set_product_id(Some(decoder.string()?)),
+            "Id" => builder.set_id(Some(decoder.string()?)),
             "Arn" => builder.set_arn(Some(decoder.string()?)),
             "Catalog" => builder.set_catalog(Some(decoder.string().map(|s| crate::types::CatalogName::from(s.as_str()))?)),
-            "ProductCode" => {
-                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_product_code(Some(decoder.string()?))))?
+            "Products" => builder.set_products(Some(
+                crate::protocol_serde::shape_marketplace_revenue_share_product_detail_list::de_marketplace_revenue_share_product_detail_list(
+                    decoder,
+                    depth + 1,
+                )?,
+            )),
+            "CreatedDate" => builder.set_created_date(Some(decoder.timestamp()?)),
+            "LastModifiedDate" => builder.set_last_modified_date(Some(decoder.timestamp()?)),
+            "Revision" => builder.set_revision(Some(decoder.string()?)),
+            "LatestRevision" => builder.set_latest_revision(Some(decoder.string()?)),
+            "EffectiveFrom" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_effective_from(Some(decoder.string()?)))
+            })?,
+            "EffectiveUntil" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_effective_until(Some(decoder.string()?)))
+            })?,
+            "TotalActiveMarketplaceRevenueShareAllocationCount" => {
+                builder.set_total_active_marketplace_revenue_share_allocation_count(Some(decoder.integer()?))
             }
-            "ProductName" => {
-                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_product_name(Some(decoder.string()?))))?
-            }
-            "CreatedDate" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_created_date(Some(decoder.timestamp()?)))
-            })?,
-            "LastModifiedDate" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_last_modified_date(Some(decoder.timestamp()?)))
-            })?,
-            "Revision" => {
-                ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| Ok(builder.set_revision(Some(decoder.integer()?))))?
-            }
-            "LatestRevision" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_latest_revision(Some(decoder.integer()?)))
-            })?,
-            "TotalActiveMarketplaceRevenueShareAllocationCount" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_total_active_marketplace_revenue_share_allocation_count(Some(decoder.integer()?)))
-            })?,
-            "TotalMarketplaceRevenueShareAllocationCount" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
-                Ok(builder.set_total_marketplace_revenue_share_allocation_count(Some(decoder.integer()?)))
-            })?,
+            "TotalMarketplaceRevenueShareAllocationCount" => builder.set_total_marketplace_revenue_share_allocation_count(Some(decoder.integer()?)),
             _ => {
                 decoder.skip()?;
                 builder

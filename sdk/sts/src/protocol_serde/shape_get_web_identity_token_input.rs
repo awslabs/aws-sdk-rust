@@ -30,15 +30,25 @@ pub fn ser_get_web_identity_token_input_input_input(
         scope_8.string(var_9);
     }
     #[allow(unused_mut)]
-    let mut scope_10 = writer.prefix("Tags");
-    if let Some(var_11) = &input.tags {
-        let mut list_13 = scope_10.start_list(false, None);
-        for item_12 in var_11 {
+    let mut scope_10 = writer.prefix("Scope");
+    if let Some(var_11) = &input.scope {
+        scope_10.string(var_11);
+    }
+    #[allow(unused_mut)]
+    let mut scope_12 = writer.prefix("SubjectMode");
+    if let Some(var_13) = &input.subject_mode {
+        scope_12.string(var_13.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_14 = writer.prefix("Tags");
+    if let Some(var_15) = &input.tags {
+        let mut list_17 = scope_14.start_list(false, None);
+        for item_16 in var_15 {
             #[allow(unused_mut)]
-            let mut entry_14 = list_13.entry();
-            crate::protocol_serde::shape_tag::ser_tag(entry_14, item_12)?;
+            let mut entry_18 = list_17.entry();
+            crate::protocol_serde::shape_tag::ser_tag(entry_18, item_16)?;
         }
-        list_13.finish();
+        list_17.finish();
     }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))

@@ -6,37 +6,24 @@
 pub struct GetReservationCoverageInput {
     /// <p>The start and end dates of the period that you want to retrieve data about reservation coverage for. You can retrieve data for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
     pub time_period: ::std::option::Option<crate::types::DateInterval>,
-    /// <p>You can group the data by the following attributes:</p>
+    /// <p>You can group the data by the following attributes. The attributes that you can use depend on the service in the <code>SERVICE</code> filter. If you don't provide a <code>SERVICE</code> filter, Cost Explorer uses Amazon Elastic Compute Cloud - Compute.</p>
     /// <ul>
     /// <li>
-    /// <p>AZ</p></li>
+    /// <p>Amazon Elastic Compute Cloud - Compute: <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>INSTANCE_TYPE_FAMILY</code>, <code>LINKED_ACCOUNT</code>, <code>PLATFORM</code>, <code>REGION</code>, and <code>TENANCY</code></p></li>
     /// <li>
-    /// <p>CACHE_ENGINE</p></li>
+    /// <p>Amazon Relational Database Service: <code>AZ</code>, <code>DATABASE_ENGINE</code>, <code>DEPLOYMENT_OPTION</code>, <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, and <code>REGION</code></p></li>
     /// <li>
-    /// <p>DATABASE_ENGINE</p></li>
+    /// <p>Amazon ElastiCache and Amazon MemoryDB: <code>AZ</code>, <code>CACHE_ENGINE</code>, <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, and <code>REGION</code></p></li>
     /// <li>
-    /// <p>DEPLOYMENT_OPTION</p></li>
-    /// <li>
-    /// <p>INSTANCE_TYPE</p></li>
-    /// <li>
-    /// <p>INVOICING_ENTITY</p></li>
-    /// <li>
-    /// <p>LINKED_ACCOUNT</p></li>
-    /// <li>
-    /// <p>OPERATING_SYSTEM</p></li>
-    /// <li>
-    /// <p>PLATFORM</p></li>
-    /// <li>
-    /// <p>REGION</p></li>
-    /// <li>
-    /// <p>TENANCY</p></li>
+    /// <p>Amazon Redshift, Amazon Elasticsearch Service, and Amazon OpenSearch Service: <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, and <code>REGION</code></p></li>
     /// </ul>
+    /// <p>If you specify two <code>SERVICE</code> values, use only attributes that both services support. You can specify up to four attributes, and only the <code>DIMENSION</code> type is supported.</p>
     pub group_by: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>,
     /// <p>The granularity of the Amazon Web Services cost data for the reservation. Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p>
     /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
     /// <p>The <code>GetReservationCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
     pub granularity: ::std::option::Option<crate::types::Granularity>,
-    /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
+    /// <p>Filters coverage data by dimensions. You can filter by the following dimensions:</p>
     /// <ul>
     /// <li>
     /// <p>AZ</p></li>
@@ -49,26 +36,29 @@ pub struct GetReservationCoverageInput {
     /// <li>
     /// <p>INSTANCE_TYPE</p></li>
     /// <li>
-    /// <p>LINKED_ACCOUNT</p></li>
+    /// <p>INSTANCE_TYPE_FAMILY</p></li>
     /// <li>
-    /// <p>OPERATING_SYSTEM</p></li>
+    /// <p>LINKED_ACCOUNT</p></li>
     /// <li>
     /// <p>PLATFORM</p></li>
     /// <li>
     /// <p>REGION</p></li>
     /// <li>
-    /// <p>SERVICE</p></li>
+    /// <p>SERVICE</p><note>
+    /// <p>Supported values for <code>SERVICE</code> are Amazon Elastic Compute Cloud - Compute, Amazon Relational Database Service, Amazon ElastiCache, Amazon MemoryDB, Amazon Redshift, Amazon Elasticsearch Service, and Amazon OpenSearch Service. You can specify up to two <code>SERVICE</code> values.</p>
+    /// </note></li>
     /// <li>
     /// <p>TAG</p></li>
     /// <li>
     /// <p>TENANCY</p></li>
     /// </ul>
+    /// <p>The dimensions that you can use depend on the service in the <code>SERVICE</code> filter. <code>CACHE_ENGINE</code> applies only to Amazon ElastiCache and Amazon MemoryDB. <code>DATABASE_ENGINE</code> and <code>DEPLOYMENT_OPTION</code> apply only to Amazon Relational Database Service. <code>INSTANCE_TYPE_FAMILY</code>, <code>PLATFORM</code>, and <code>TENANCY</code> apply only to Amazon Elastic Compute Cloud - Compute. If you specify two <code>SERVICE</code> values, use only dimensions that both services support.</p>
     /// <p><code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
     /// <p>If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
     /// <p>Cost category is also supported.</p>
     pub filter: ::std::option::Option<crate::types::Expression>,
     /// <p>The measurement that you want your reservation coverage reported in.</p>
-    /// <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>. You can use multiple values in a request.</p>
+    /// <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>. You can use multiple values in a request. <code>Hour</code> returns <code>CoverageHours</code>, <code>Unit</code> returns <code>CoverageNormalizedUnits</code>, and <code>Cost</code> returns <code>CoverageCost</code>. <code>Unit</code> is supported only for Amazon Elastic Compute Cloud - Compute. If you don't specify <code>Metrics</code>, the response includes only <code>CoverageHours</code>.</p>
     pub metrics: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: ::std::option::Option<::std::string::String>,
@@ -106,31 +96,18 @@ impl GetReservationCoverageInput {
     pub fn time_period(&self) -> ::std::option::Option<&crate::types::DateInterval> {
         self.time_period.as_ref()
     }
-    /// <p>You can group the data by the following attributes:</p>
+    /// <p>You can group the data by the following attributes. The attributes that you can use depend on the service in the <code>SERVICE</code> filter. If you don't provide a <code>SERVICE</code> filter, Cost Explorer uses Amazon Elastic Compute Cloud - Compute.</p>
     /// <ul>
     /// <li>
-    /// <p>AZ</p></li>
+    /// <p>Amazon Elastic Compute Cloud - Compute: <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>INSTANCE_TYPE_FAMILY</code>, <code>LINKED_ACCOUNT</code>, <code>PLATFORM</code>, <code>REGION</code>, and <code>TENANCY</code></p></li>
     /// <li>
-    /// <p>CACHE_ENGINE</p></li>
+    /// <p>Amazon Relational Database Service: <code>AZ</code>, <code>DATABASE_ENGINE</code>, <code>DEPLOYMENT_OPTION</code>, <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, and <code>REGION</code></p></li>
     /// <li>
-    /// <p>DATABASE_ENGINE</p></li>
+    /// <p>Amazon ElastiCache and Amazon MemoryDB: <code>AZ</code>, <code>CACHE_ENGINE</code>, <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, and <code>REGION</code></p></li>
     /// <li>
-    /// <p>DEPLOYMENT_OPTION</p></li>
-    /// <li>
-    /// <p>INSTANCE_TYPE</p></li>
-    /// <li>
-    /// <p>INVOICING_ENTITY</p></li>
-    /// <li>
-    /// <p>LINKED_ACCOUNT</p></li>
-    /// <li>
-    /// <p>OPERATING_SYSTEM</p></li>
-    /// <li>
-    /// <p>PLATFORM</p></li>
-    /// <li>
-    /// <p>REGION</p></li>
-    /// <li>
-    /// <p>TENANCY</p></li>
+    /// <p>Amazon Redshift, Amazon Elasticsearch Service, and Amazon OpenSearch Service: <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, and <code>REGION</code></p></li>
     /// </ul>
+    /// <p>If you specify two <code>SERVICE</code> values, use only attributes that both services support. You can specify up to four attributes, and only the <code>DIMENSION</code> type is supported.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_by.is_none()`.
     pub fn group_by(&self) -> &[crate::types::GroupDefinition] {
@@ -142,7 +119,7 @@ impl GetReservationCoverageInput {
     pub fn granularity(&self) -> ::std::option::Option<&crate::types::Granularity> {
         self.granularity.as_ref()
     }
-    /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
+    /// <p>Filters coverage data by dimensions. You can filter by the following dimensions:</p>
     /// <ul>
     /// <li>
     /// <p>AZ</p></li>
@@ -155,20 +132,23 @@ impl GetReservationCoverageInput {
     /// <li>
     /// <p>INSTANCE_TYPE</p></li>
     /// <li>
-    /// <p>LINKED_ACCOUNT</p></li>
+    /// <p>INSTANCE_TYPE_FAMILY</p></li>
     /// <li>
-    /// <p>OPERATING_SYSTEM</p></li>
+    /// <p>LINKED_ACCOUNT</p></li>
     /// <li>
     /// <p>PLATFORM</p></li>
     /// <li>
     /// <p>REGION</p></li>
     /// <li>
-    /// <p>SERVICE</p></li>
+    /// <p>SERVICE</p><note>
+    /// <p>Supported values for <code>SERVICE</code> are Amazon Elastic Compute Cloud - Compute, Amazon Relational Database Service, Amazon ElastiCache, Amazon MemoryDB, Amazon Redshift, Amazon Elasticsearch Service, and Amazon OpenSearch Service. You can specify up to two <code>SERVICE</code> values.</p>
+    /// </note></li>
     /// <li>
     /// <p>TAG</p></li>
     /// <li>
     /// <p>TENANCY</p></li>
     /// </ul>
+    /// <p>The dimensions that you can use depend on the service in the <code>SERVICE</code> filter. <code>CACHE_ENGINE</code> applies only to Amazon ElastiCache and Amazon MemoryDB. <code>DATABASE_ENGINE</code> and <code>DEPLOYMENT_OPTION</code> apply only to Amazon Relational Database Service. <code>INSTANCE_TYPE_FAMILY</code>, <code>PLATFORM</code>, and <code>TENANCY</code> apply only to Amazon Elastic Compute Cloud - Compute. If you specify two <code>SERVICE</code> values, use only dimensions that both services support.</p>
     /// <p><code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
     /// <p>If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
     /// <p>Cost category is also supported.</p>
@@ -176,7 +156,7 @@ impl GetReservationCoverageInput {
         self.filter.as_ref()
     }
     /// <p>The measurement that you want your reservation coverage reported in.</p>
-    /// <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>. You can use multiple values in a request.</p>
+    /// <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>. You can use multiple values in a request. <code>Hour</code> returns <code>CoverageHours</code>, <code>Unit</code> returns <code>CoverageNormalizedUnits</code>, and <code>Cost</code> returns <code>CoverageCost</code>. <code>Unit</code> is supported only for Amazon Elastic Compute Cloud - Compute. If you don't specify <code>Metrics</code>, the response includes only <code>CoverageHours</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metrics.is_none()`.
     pub fn metrics(&self) -> &[::std::string::String] {
@@ -259,91 +239,52 @@ impl GetReservationCoverageInputBuilder {
     ///
     /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
     ///
-    /// <p>You can group the data by the following attributes:</p>
+    /// <p>You can group the data by the following attributes. The attributes that you can use depend on the service in the <code>SERVICE</code> filter. If you don't provide a <code>SERVICE</code> filter, Cost Explorer uses Amazon Elastic Compute Cloud - Compute.</p>
     /// <ul>
     /// <li>
-    /// <p>AZ</p></li>
+    /// <p>Amazon Elastic Compute Cloud - Compute: <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>INSTANCE_TYPE_FAMILY</code>, <code>LINKED_ACCOUNT</code>, <code>PLATFORM</code>, <code>REGION</code>, and <code>TENANCY</code></p></li>
     /// <li>
-    /// <p>CACHE_ENGINE</p></li>
+    /// <p>Amazon Relational Database Service: <code>AZ</code>, <code>DATABASE_ENGINE</code>, <code>DEPLOYMENT_OPTION</code>, <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, and <code>REGION</code></p></li>
     /// <li>
-    /// <p>DATABASE_ENGINE</p></li>
+    /// <p>Amazon ElastiCache and Amazon MemoryDB: <code>AZ</code>, <code>CACHE_ENGINE</code>, <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, and <code>REGION</code></p></li>
     /// <li>
-    /// <p>DEPLOYMENT_OPTION</p></li>
-    /// <li>
-    /// <p>INSTANCE_TYPE</p></li>
-    /// <li>
-    /// <p>INVOICING_ENTITY</p></li>
-    /// <li>
-    /// <p>LINKED_ACCOUNT</p></li>
-    /// <li>
-    /// <p>OPERATING_SYSTEM</p></li>
-    /// <li>
-    /// <p>PLATFORM</p></li>
-    /// <li>
-    /// <p>REGION</p></li>
-    /// <li>
-    /// <p>TENANCY</p></li>
+    /// <p>Amazon Redshift, Amazon Elasticsearch Service, and Amazon OpenSearch Service: <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, and <code>REGION</code></p></li>
     /// </ul>
+    /// <p>If you specify two <code>SERVICE</code> values, use only attributes that both services support. You can specify up to four attributes, and only the <code>DIMENSION</code> type is supported.</p>
     pub fn group_by(mut self, input: crate::types::GroupDefinition) -> Self {
         let mut v = self.group_by.unwrap_or_default();
         v.push(input);
         self.group_by = ::std::option::Option::Some(v);
         self
     }
-    /// <p>You can group the data by the following attributes:</p>
+    /// <p>You can group the data by the following attributes. The attributes that you can use depend on the service in the <code>SERVICE</code> filter. If you don't provide a <code>SERVICE</code> filter, Cost Explorer uses Amazon Elastic Compute Cloud - Compute.</p>
     /// <ul>
     /// <li>
-    /// <p>AZ</p></li>
+    /// <p>Amazon Elastic Compute Cloud - Compute: <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>INSTANCE_TYPE_FAMILY</code>, <code>LINKED_ACCOUNT</code>, <code>PLATFORM</code>, <code>REGION</code>, and <code>TENANCY</code></p></li>
     /// <li>
-    /// <p>CACHE_ENGINE</p></li>
+    /// <p>Amazon Relational Database Service: <code>AZ</code>, <code>DATABASE_ENGINE</code>, <code>DEPLOYMENT_OPTION</code>, <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, and <code>REGION</code></p></li>
     /// <li>
-    /// <p>DATABASE_ENGINE</p></li>
+    /// <p>Amazon ElastiCache and Amazon MemoryDB: <code>AZ</code>, <code>CACHE_ENGINE</code>, <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, and <code>REGION</code></p></li>
     /// <li>
-    /// <p>DEPLOYMENT_OPTION</p></li>
-    /// <li>
-    /// <p>INSTANCE_TYPE</p></li>
-    /// <li>
-    /// <p>INVOICING_ENTITY</p></li>
-    /// <li>
-    /// <p>LINKED_ACCOUNT</p></li>
-    /// <li>
-    /// <p>OPERATING_SYSTEM</p></li>
-    /// <li>
-    /// <p>PLATFORM</p></li>
-    /// <li>
-    /// <p>REGION</p></li>
-    /// <li>
-    /// <p>TENANCY</p></li>
+    /// <p>Amazon Redshift, Amazon Elasticsearch Service, and Amazon OpenSearch Service: <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, and <code>REGION</code></p></li>
     /// </ul>
+    /// <p>If you specify two <code>SERVICE</code> values, use only attributes that both services support. You can specify up to four attributes, and only the <code>DIMENSION</code> type is supported.</p>
     pub fn set_group_by(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>>) -> Self {
         self.group_by = input;
         self
     }
-    /// <p>You can group the data by the following attributes:</p>
+    /// <p>You can group the data by the following attributes. The attributes that you can use depend on the service in the <code>SERVICE</code> filter. If you don't provide a <code>SERVICE</code> filter, Cost Explorer uses Amazon Elastic Compute Cloud - Compute.</p>
     /// <ul>
     /// <li>
-    /// <p>AZ</p></li>
+    /// <p>Amazon Elastic Compute Cloud - Compute: <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>INSTANCE_TYPE_FAMILY</code>, <code>LINKED_ACCOUNT</code>, <code>PLATFORM</code>, <code>REGION</code>, and <code>TENANCY</code></p></li>
     /// <li>
-    /// <p>CACHE_ENGINE</p></li>
+    /// <p>Amazon Relational Database Service: <code>AZ</code>, <code>DATABASE_ENGINE</code>, <code>DEPLOYMENT_OPTION</code>, <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, and <code>REGION</code></p></li>
     /// <li>
-    /// <p>DATABASE_ENGINE</p></li>
+    /// <p>Amazon ElastiCache and Amazon MemoryDB: <code>AZ</code>, <code>CACHE_ENGINE</code>, <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, and <code>REGION</code></p></li>
     /// <li>
-    /// <p>DEPLOYMENT_OPTION</p></li>
-    /// <li>
-    /// <p>INSTANCE_TYPE</p></li>
-    /// <li>
-    /// <p>INVOICING_ENTITY</p></li>
-    /// <li>
-    /// <p>LINKED_ACCOUNT</p></li>
-    /// <li>
-    /// <p>OPERATING_SYSTEM</p></li>
-    /// <li>
-    /// <p>PLATFORM</p></li>
-    /// <li>
-    /// <p>REGION</p></li>
-    /// <li>
-    /// <p>TENANCY</p></li>
+    /// <p>Amazon Redshift, Amazon Elasticsearch Service, and Amazon OpenSearch Service: <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LINKED_ACCOUNT</code>, and <code>REGION</code></p></li>
     /// </ul>
+    /// <p>If you specify two <code>SERVICE</code> values, use only attributes that both services support. You can specify up to four attributes, and only the <code>DIMENSION</code> type is supported.</p>
     pub fn get_group_by(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::GroupDefinition>> {
         &self.group_by
     }
@@ -367,7 +308,7 @@ impl GetReservationCoverageInputBuilder {
     pub fn get_granularity(&self) -> &::std::option::Option<crate::types::Granularity> {
         &self.granularity
     }
-    /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
+    /// <p>Filters coverage data by dimensions. You can filter by the following dimensions:</p>
     /// <ul>
     /// <li>
     /// <p>AZ</p></li>
@@ -380,20 +321,23 @@ impl GetReservationCoverageInputBuilder {
     /// <li>
     /// <p>INSTANCE_TYPE</p></li>
     /// <li>
-    /// <p>LINKED_ACCOUNT</p></li>
+    /// <p>INSTANCE_TYPE_FAMILY</p></li>
     /// <li>
-    /// <p>OPERATING_SYSTEM</p></li>
+    /// <p>LINKED_ACCOUNT</p></li>
     /// <li>
     /// <p>PLATFORM</p></li>
     /// <li>
     /// <p>REGION</p></li>
     /// <li>
-    /// <p>SERVICE</p></li>
+    /// <p>SERVICE</p><note>
+    /// <p>Supported values for <code>SERVICE</code> are Amazon Elastic Compute Cloud - Compute, Amazon Relational Database Service, Amazon ElastiCache, Amazon MemoryDB, Amazon Redshift, Amazon Elasticsearch Service, and Amazon OpenSearch Service. You can specify up to two <code>SERVICE</code> values.</p>
+    /// </note></li>
     /// <li>
     /// <p>TAG</p></li>
     /// <li>
     /// <p>TENANCY</p></li>
     /// </ul>
+    /// <p>The dimensions that you can use depend on the service in the <code>SERVICE</code> filter. <code>CACHE_ENGINE</code> applies only to Amazon ElastiCache and Amazon MemoryDB. <code>DATABASE_ENGINE</code> and <code>DEPLOYMENT_OPTION</code> apply only to Amazon Relational Database Service. <code>INSTANCE_TYPE_FAMILY</code>, <code>PLATFORM</code>, and <code>TENANCY</code> apply only to Amazon Elastic Compute Cloud - Compute. If you specify two <code>SERVICE</code> values, use only dimensions that both services support.</p>
     /// <p><code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
     /// <p>If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
     /// <p>Cost category is also supported.</p>
@@ -401,7 +345,7 @@ impl GetReservationCoverageInputBuilder {
         self.filter = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
+    /// <p>Filters coverage data by dimensions. You can filter by the following dimensions:</p>
     /// <ul>
     /// <li>
     /// <p>AZ</p></li>
@@ -414,20 +358,23 @@ impl GetReservationCoverageInputBuilder {
     /// <li>
     /// <p>INSTANCE_TYPE</p></li>
     /// <li>
-    /// <p>LINKED_ACCOUNT</p></li>
+    /// <p>INSTANCE_TYPE_FAMILY</p></li>
     /// <li>
-    /// <p>OPERATING_SYSTEM</p></li>
+    /// <p>LINKED_ACCOUNT</p></li>
     /// <li>
     /// <p>PLATFORM</p></li>
     /// <li>
     /// <p>REGION</p></li>
     /// <li>
-    /// <p>SERVICE</p></li>
+    /// <p>SERVICE</p><note>
+    /// <p>Supported values for <code>SERVICE</code> are Amazon Elastic Compute Cloud - Compute, Amazon Relational Database Service, Amazon ElastiCache, Amazon MemoryDB, Amazon Redshift, Amazon Elasticsearch Service, and Amazon OpenSearch Service. You can specify up to two <code>SERVICE</code> values.</p>
+    /// </note></li>
     /// <li>
     /// <p>TAG</p></li>
     /// <li>
     /// <p>TENANCY</p></li>
     /// </ul>
+    /// <p>The dimensions that you can use depend on the service in the <code>SERVICE</code> filter. <code>CACHE_ENGINE</code> applies only to Amazon ElastiCache and Amazon MemoryDB. <code>DATABASE_ENGINE</code> and <code>DEPLOYMENT_OPTION</code> apply only to Amazon Relational Database Service. <code>INSTANCE_TYPE_FAMILY</code>, <code>PLATFORM</code>, and <code>TENANCY</code> apply only to Amazon Elastic Compute Cloud - Compute. If you specify two <code>SERVICE</code> values, use only dimensions that both services support.</p>
     /// <p><code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
     /// <p>If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
     /// <p>Cost category is also supported.</p>
@@ -435,7 +382,7 @@ impl GetReservationCoverageInputBuilder {
         self.filter = input;
         self
     }
-    /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
+    /// <p>Filters coverage data by dimensions. You can filter by the following dimensions:</p>
     /// <ul>
     /// <li>
     /// <p>AZ</p></li>
@@ -448,20 +395,23 @@ impl GetReservationCoverageInputBuilder {
     /// <li>
     /// <p>INSTANCE_TYPE</p></li>
     /// <li>
-    /// <p>LINKED_ACCOUNT</p></li>
+    /// <p>INSTANCE_TYPE_FAMILY</p></li>
     /// <li>
-    /// <p>OPERATING_SYSTEM</p></li>
+    /// <p>LINKED_ACCOUNT</p></li>
     /// <li>
     /// <p>PLATFORM</p></li>
     /// <li>
     /// <p>REGION</p></li>
     /// <li>
-    /// <p>SERVICE</p></li>
+    /// <p>SERVICE</p><note>
+    /// <p>Supported values for <code>SERVICE</code> are Amazon Elastic Compute Cloud - Compute, Amazon Relational Database Service, Amazon ElastiCache, Amazon MemoryDB, Amazon Redshift, Amazon Elasticsearch Service, and Amazon OpenSearch Service. You can specify up to two <code>SERVICE</code> values.</p>
+    /// </note></li>
     /// <li>
     /// <p>TAG</p></li>
     /// <li>
     /// <p>TENANCY</p></li>
     /// </ul>
+    /// <p>The dimensions that you can use depend on the service in the <code>SERVICE</code> filter. <code>CACHE_ENGINE</code> applies only to Amazon ElastiCache and Amazon MemoryDB. <code>DATABASE_ENGINE</code> and <code>DEPLOYMENT_OPTION</code> apply only to Amazon Relational Database Service. <code>INSTANCE_TYPE_FAMILY</code>, <code>PLATFORM</code>, and <code>TENANCY</code> apply only to Amazon Elastic Compute Cloud - Compute. If you specify two <code>SERVICE</code> values, use only dimensions that both services support.</p>
     /// <p><code>GetReservationCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
     /// <p>If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
     /// <p>Cost category is also supported.</p>
@@ -473,7 +423,7 @@ impl GetReservationCoverageInputBuilder {
     /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
     ///
     /// <p>The measurement that you want your reservation coverage reported in.</p>
-    /// <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>. You can use multiple values in a request.</p>
+    /// <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>. You can use multiple values in a request. <code>Hour</code> returns <code>CoverageHours</code>, <code>Unit</code> returns <code>CoverageNormalizedUnits</code>, and <code>Cost</code> returns <code>CoverageCost</code>. <code>Unit</code> is supported only for Amazon Elastic Compute Cloud - Compute. If you don't specify <code>Metrics</code>, the response includes only <code>CoverageHours</code>.</p>
     pub fn metrics(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.metrics.unwrap_or_default();
         v.push(input.into());
@@ -481,13 +431,13 @@ impl GetReservationCoverageInputBuilder {
         self
     }
     /// <p>The measurement that you want your reservation coverage reported in.</p>
-    /// <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>. You can use multiple values in a request.</p>
+    /// <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>. You can use multiple values in a request. <code>Hour</code> returns <code>CoverageHours</code>, <code>Unit</code> returns <code>CoverageNormalizedUnits</code>, and <code>Cost</code> returns <code>CoverageCost</code>. <code>Unit</code> is supported only for Amazon Elastic Compute Cloud - Compute. If you don't specify <code>Metrics</code>, the response includes only <code>CoverageHours</code>.</p>
     pub fn set_metrics(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.metrics = input;
         self
     }
     /// <p>The measurement that you want your reservation coverage reported in.</p>
-    /// <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>. You can use multiple values in a request.</p>
+    /// <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>. You can use multiple values in a request. <code>Hour</code> returns <code>CoverageHours</code>, <code>Unit</code> returns <code>CoverageNormalizedUnits</code>, and <code>Cost</code> returns <code>CoverageCost</code>. <code>Unit</code> is supported only for Amazon Elastic Compute Cloud - Compute. If you don't specify <code>Metrics</code>, the response includes only <code>CoverageHours</code>.</p>
     pub fn get_metrics(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.metrics
     }

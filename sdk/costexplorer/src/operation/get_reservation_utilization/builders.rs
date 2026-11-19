@@ -163,25 +163,25 @@ impl GetReservationUtilizationFluentBuilder {
     /// <li>
     /// <p>AZ</p></li>
     /// <li>
-    /// <p>CACHE_ENGINE</p></li>
-    /// <li>
-    /// <p>DEPLOYMENT_OPTION</p></li>
-    /// <li>
     /// <p>INSTANCE_TYPE</p></li>
     /// <li>
-    /// <p>LINKED_ACCOUNT</p></li>
+    /// <p>INSTANCE_TYPE_FAMILY</p></li>
     /// <li>
-    /// <p>OPERATING_SYSTEM</p></li>
+    /// <p>LINKED_ACCOUNT</p></li>
     /// <li>
     /// <p>PLATFORM</p></li>
     /// <li>
     /// <p>REGION</p></li>
     /// <li>
     /// <p>SERVICE</p><note>
-    /// <p>If not specified, the <code>SERVICE</code> filter defaults to Amazon Elastic Compute Cloud - Compute. Supported values for <code>SERVICE</code> are Amazon Elastic Compute Cloud - Compute, Amazon Relational Database Service, Amazon ElastiCache, Amazon Redshift, and Amazon Elasticsearch Service. The value for the <code>SERVICE</code> filter should not exceed "1".</p>
+    /// <p>If not specified, the <code>SERVICE</code> filter defaults to Amazon Elastic Compute Cloud - Compute. Supported values for <code>SERVICE</code> are Amazon Elastic Compute Cloud - Compute, Amazon Relational Database Service, Amazon ElastiCache, Amazon MemoryDB, Amazon Redshift, Amazon Elasticsearch Service, and Amazon OpenSearch Service.</p>
     /// </note></li>
     /// <li>
     /// <p>SCOPE</p></li>
+    /// <li>
+    /// <p>SUBSCRIPTION_ID</p><note>
+    /// <p>Values for <code>SUBSCRIPTION_ID</code> must contain only digits.</p>
+    /// </note></li>
     /// <li>
     /// <p>TENANCY</p></li>
     /// </ul>
@@ -195,25 +195,25 @@ impl GetReservationUtilizationFluentBuilder {
     /// <li>
     /// <p>AZ</p></li>
     /// <li>
-    /// <p>CACHE_ENGINE</p></li>
-    /// <li>
-    /// <p>DEPLOYMENT_OPTION</p></li>
-    /// <li>
     /// <p>INSTANCE_TYPE</p></li>
     /// <li>
-    /// <p>LINKED_ACCOUNT</p></li>
+    /// <p>INSTANCE_TYPE_FAMILY</p></li>
     /// <li>
-    /// <p>OPERATING_SYSTEM</p></li>
+    /// <p>LINKED_ACCOUNT</p></li>
     /// <li>
     /// <p>PLATFORM</p></li>
     /// <li>
     /// <p>REGION</p></li>
     /// <li>
     /// <p>SERVICE</p><note>
-    /// <p>If not specified, the <code>SERVICE</code> filter defaults to Amazon Elastic Compute Cloud - Compute. Supported values for <code>SERVICE</code> are Amazon Elastic Compute Cloud - Compute, Amazon Relational Database Service, Amazon ElastiCache, Amazon Redshift, and Amazon Elasticsearch Service. The value for the <code>SERVICE</code> filter should not exceed "1".</p>
+    /// <p>If not specified, the <code>SERVICE</code> filter defaults to Amazon Elastic Compute Cloud - Compute. Supported values for <code>SERVICE</code> are Amazon Elastic Compute Cloud - Compute, Amazon Relational Database Service, Amazon ElastiCache, Amazon MemoryDB, Amazon Redshift, Amazon Elasticsearch Service, and Amazon OpenSearch Service.</p>
     /// </note></li>
     /// <li>
     /// <p>SCOPE</p></li>
+    /// <li>
+    /// <p>SUBSCRIPTION_ID</p><note>
+    /// <p>Values for <code>SUBSCRIPTION_ID</code> must contain only digits.</p>
+    /// </note></li>
     /// <li>
     /// <p>TENANCY</p></li>
     /// </ul>
@@ -227,25 +227,25 @@ impl GetReservationUtilizationFluentBuilder {
     /// <li>
     /// <p>AZ</p></li>
     /// <li>
-    /// <p>CACHE_ENGINE</p></li>
-    /// <li>
-    /// <p>DEPLOYMENT_OPTION</p></li>
-    /// <li>
     /// <p>INSTANCE_TYPE</p></li>
     /// <li>
-    /// <p>LINKED_ACCOUNT</p></li>
+    /// <p>INSTANCE_TYPE_FAMILY</p></li>
     /// <li>
-    /// <p>OPERATING_SYSTEM</p></li>
+    /// <p>LINKED_ACCOUNT</p></li>
     /// <li>
     /// <p>PLATFORM</p></li>
     /// <li>
     /// <p>REGION</p></li>
     /// <li>
     /// <p>SERVICE</p><note>
-    /// <p>If not specified, the <code>SERVICE</code> filter defaults to Amazon Elastic Compute Cloud - Compute. Supported values for <code>SERVICE</code> are Amazon Elastic Compute Cloud - Compute, Amazon Relational Database Service, Amazon ElastiCache, Amazon Redshift, and Amazon Elasticsearch Service. The value for the <code>SERVICE</code> filter should not exceed "1".</p>
+    /// <p>If not specified, the <code>SERVICE</code> filter defaults to Amazon Elastic Compute Cloud - Compute. Supported values for <code>SERVICE</code> are Amazon Elastic Compute Cloud - Compute, Amazon Relational Database Service, Amazon ElastiCache, Amazon MemoryDB, Amazon Redshift, Amazon Elasticsearch Service, and Amazon OpenSearch Service.</p>
     /// </note></li>
     /// <li>
     /// <p>SCOPE</p></li>
+    /// <li>
+    /// <p>SUBSCRIPTION_ID</p><note>
+    /// <p>Values for <code>SUBSCRIPTION_ID</code> must contain only digits.</p>
+    /// </note></li>
     /// <li>
     /// <p>TENANCY</p></li>
     /// </ul>

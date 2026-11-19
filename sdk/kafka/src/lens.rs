@@ -9,6 +9,26 @@ pub(crate) fn reflens_describe_topic_partitions_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_assessment_findings_output_output_next_token(
+    input: &crate::operation::list_assessment_findings::ListAssessmentFindingsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_assessments_output_output_next_token(
+    input: &crate::operation::list_assessments::ListAssessmentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_client_vpc_connections_output_output_next_token(
     input: &crate::operation::list_client_vpc_connections::ListClientVpcConnectionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -119,6 +139,16 @@ pub(crate) fn reflens_list_scram_secrets_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_topic_reassignments_output_output_next_token(
+    input: &crate::operation::list_topic_reassignments::ListTopicReassignmentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_topics_output_output_next_token(
     input: &crate::operation::list_topics::ListTopicsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -143,6 +173,20 @@ pub(crate) fn lens_describe_topic_partitions_output_output_partitions(
     input: crate::operation::describe_topic_partitions::DescribeTopicPartitionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::TopicPartitionInfo>> {
     let input = input.partitions?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_assessment_findings_output_output_findings(
+    input: crate::operation::list_assessment_findings::ListAssessmentFindingsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AssessmentFinding>> {
+    let input = input.findings?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_assessments_output_output_assessments(
+    input: crate::operation::list_assessments::ListAssessmentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AssessmentInfo>> {
+    let input = input.assessments?;
     ::std::option::Option::Some(input)
 }
 
@@ -220,6 +264,13 @@ pub(crate) fn lens_list_scram_secrets_output_output_secret_arn_list(
     input: crate::operation::list_scram_secrets::ListScramSecretsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<::std::string::String>> {
     let input = input.secret_arn_list?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_topic_reassignments_output_output_reassignments(
+    input: crate::operation::list_topic_reassignments::ListTopicReassignmentsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TopicReassignmentInfo>> {
+    let input = input.reassignments?;
     ::std::option::Option::Some(input)
 }
 

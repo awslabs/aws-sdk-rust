@@ -3,116 +3,122 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSubscriberOutput {
-    /// The Amazon Resource Name (ARN) that uniquely identifies a subscriber.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a subscriber.</p>
     pub subscriber_arn: ::std::option::Option<::std::string::String>,
-    /// Name of a subscriber. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'.
+    /// <p>Name of a subscriber. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub event_bus_arn: ::std::option::Option<::std::string::String>,
-    /// Configuration for how the subscriber invokes its target.
+    /// <p>Configuration for how the subscriber invokes its target.</p>
     pub invoke_configuration: ::std::option::Option<crate::types::InvokeConfiguration>,
-    /// Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.
+    /// <p>Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// Configuration for filtering events delivered to a subscriber. On CreateSubscriber, Filters is required and must contain at least one Filter with a non-empty Pattern. On UpdateSubscriber, an empty `FilterConfiguration:{}` clears the existing filter. Any non-empty shape (including `{Language:X}` without Filters) must contain a valid Filters list — same contract as CreateSubscriber. A non-empty Filters list overwrites; an omitted FilterConfiguration preserves existing state. All Filters are implicitly ANDed — an event must match every Filter to be delivered.
+    /// <p>Configuration for filtering events delivered to a subscriber. On CreateSubscriber, Filters is required and must contain at least one Filter with a non-empty Pattern. On UpdateSubscriber, an empty <code>FilterConfiguration:{}</code> clears the existing filter. Any non-empty shape (including <code>{Language:X}</code> without Filters) must contain a valid Filters list — same contract as CreateSubscriber. A non-empty Filters list overwrites; an omitted FilterConfiguration preserves existing state. All Filters are implicitly ANDed — an event must match every Filter to be delivered.</p>
     pub filter_configuration: ::std::option::Option<crate::types::FilterConfiguration>,
-    /// Delivery ordering mode of a subscriber: FIFO delivers events in order within an event group; UNORDERED delivers without an ordering guarantee.
+    /// <p>Delivery ordering mode of a subscriber: FIFO delivers events in order within an event group; UNORDERED delivers without an ordering guarantee.</p>
     pub r#type: ::std::option::Option<crate::types::OrderingType>,
-    /// Starting position for a subscriber.
+    /// <p>Starting position for a subscriber.</p>
     pub starting_position: ::std::option::Option<crate::types::StartingPosition>,
-    /// Point-in-time configuration for a subscriber. Only applicable when StartingPosition is POINT_IN_TIME.
+    /// <p>Point-in-time configuration for a subscriber. Only applicable when StartingPosition is POINT_IN_TIME.</p>
     pub point_in_time_configuration: ::std::option::Option<crate::types::PointInTimeConfiguration>,
-    /// Batching configuration for a subscriber.
+    /// <p>Batching configuration for a subscriber.</p>
     pub batch_configuration: ::std::option::Option<crate::types::BatchConfiguration>,
-    /// Absent for universal (aws-sdk) targets, whose input transformation is UniversalTargetParameters.Input.
+    /// <p>Transformer configuration for a subscriber.</p>
     pub transformer: ::std::option::Option<crate::types::Transformer>,
-    /// Retry policy for a subscriber.
+    /// <p>Retry policy for a subscriber.</p>
     pub retry_policy: ::std::option::Option<crate::types::RetryPolicy>,
-    /// On-failure configuration: where a failed delivery is sent. Shared by the subscriber and the EventSource.
+    /// <p>On-failure configuration: where a failed delivery is sent. Shared by the subscriber and the EventSource.</p>
     pub on_failure_configuration: ::std::option::Option<crate::types::OnFailureConfiguration>,
-    /// Log configuration for a subscriber.
+    /// <p>Log configuration for a subscriber.</p>
     pub log_configuration: ::std::option::Option<crate::types::LogConfiguration>,
-    /// Customer-controlled run state of a subscriber, set on create or update. Distinct from the bus lifecycle vocabulary, where ACTIVE means "provisioned and healthy". Delivery requires State RUNNING on a subscriber that is not revoked.
+    /// <p>Customer-controlled run state of a subscriber, set on create or update. Distinct from the bus lifecycle vocabulary, where ACTIVE means "provisioned and healthy". Delivery requires State RUNNING on a subscriber that is not revoked.</p>
     pub state: ::std::option::Option<crate::types::SubscriberState>,
-    /// True when the bus owner has revoked this subscriber. Present only when true, so an absent member means the subscriber is not revoked. Revocation is terminal: it never returns to false. Mutating operations on a revoked subscriber fail with InvalidStateException, except DeleteSubscriber, which stays available so a revoked subscriber can still be cleaned up.
+    /// <p>True when the bus owner has revoked this subscriber. Present only when true, so an absent member means the subscriber is not revoked. Revocation is terminal: it never returns to false. Mutating operations on a revoked subscriber fail with InvalidStateException, except DeleteSubscriber, which stays available so a revoked subscriber can still be cleaned up.</p>
     pub revoked: ::std::option::Option<bool>,
-    /// The time the subscriber was created.
+    /// <p>The time the subscriber was created.</p>
     pub creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// The time the subscriber was last modified.
+    /// <p>The time the subscriber was last modified.</p>
     pub last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Values EventBridge manages for a subscriber that depend on its target type. Only the member for the subscriber's target type is set. Returned in responses only; the customer never supplies these values.</p>
+    pub subscriber_details: ::std::option::Option<crate::types::SubscriberDetails>,
     _request_id: Option<String>,
 }
 impl DescribeSubscriberOutput {
-    /// The Amazon Resource Name (ARN) that uniquely identifies a subscriber.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a subscriber.</p>
     pub fn subscriber_arn(&self) -> ::std::option::Option<&str> {
         self.subscriber_arn.as_deref()
     }
-    /// Name of a subscriber. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'.
+    /// <p>Name of a subscriber. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn event_bus_arn(&self) -> ::std::option::Option<&str> {
         self.event_bus_arn.as_deref()
     }
-    /// Configuration for how the subscriber invokes its target.
+    /// <p>Configuration for how the subscriber invokes its target.</p>
     pub fn invoke_configuration(&self) -> ::std::option::Option<&crate::types::InvokeConfiguration> {
         self.invoke_configuration.as_ref()
     }
-    /// Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.
+    /// <p>Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// Configuration for filtering events delivered to a subscriber. On CreateSubscriber, Filters is required and must contain at least one Filter with a non-empty Pattern. On UpdateSubscriber, an empty `FilterConfiguration:{}` clears the existing filter. Any non-empty shape (including `{Language:X}` without Filters) must contain a valid Filters list — same contract as CreateSubscriber. A non-empty Filters list overwrites; an omitted FilterConfiguration preserves existing state. All Filters are implicitly ANDed — an event must match every Filter to be delivered.
+    /// <p>Configuration for filtering events delivered to a subscriber. On CreateSubscriber, Filters is required and must contain at least one Filter with a non-empty Pattern. On UpdateSubscriber, an empty <code>FilterConfiguration:{}</code> clears the existing filter. Any non-empty shape (including <code>{Language:X}</code> without Filters) must contain a valid Filters list — same contract as CreateSubscriber. A non-empty Filters list overwrites; an omitted FilterConfiguration preserves existing state. All Filters are implicitly ANDed — an event must match every Filter to be delivered.</p>
     pub fn filter_configuration(&self) -> ::std::option::Option<&crate::types::FilterConfiguration> {
         self.filter_configuration.as_ref()
     }
-    /// Delivery ordering mode of a subscriber: FIFO delivers events in order within an event group; UNORDERED delivers without an ordering guarantee.
+    /// <p>Delivery ordering mode of a subscriber: FIFO delivers events in order within an event group; UNORDERED delivers without an ordering guarantee.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::OrderingType> {
         self.r#type.as_ref()
     }
-    /// Starting position for a subscriber.
+    /// <p>Starting position for a subscriber.</p>
     pub fn starting_position(&self) -> ::std::option::Option<&crate::types::StartingPosition> {
         self.starting_position.as_ref()
     }
-    /// Point-in-time configuration for a subscriber. Only applicable when StartingPosition is POINT_IN_TIME.
+    /// <p>Point-in-time configuration for a subscriber. Only applicable when StartingPosition is POINT_IN_TIME.</p>
     pub fn point_in_time_configuration(&self) -> ::std::option::Option<&crate::types::PointInTimeConfiguration> {
         self.point_in_time_configuration.as_ref()
     }
-    /// Batching configuration for a subscriber.
+    /// <p>Batching configuration for a subscriber.</p>
     pub fn batch_configuration(&self) -> ::std::option::Option<&crate::types::BatchConfiguration> {
         self.batch_configuration.as_ref()
     }
-    /// Absent for universal (aws-sdk) targets, whose input transformation is UniversalTargetParameters.Input.
+    /// <p>Transformer configuration for a subscriber.</p>
     pub fn transformer(&self) -> ::std::option::Option<&crate::types::Transformer> {
         self.transformer.as_ref()
     }
-    /// Retry policy for a subscriber.
+    /// <p>Retry policy for a subscriber.</p>
     pub fn retry_policy(&self) -> ::std::option::Option<&crate::types::RetryPolicy> {
         self.retry_policy.as_ref()
     }
-    /// On-failure configuration: where a failed delivery is sent. Shared by the subscriber and the EventSource.
+    /// <p>On-failure configuration: where a failed delivery is sent. Shared by the subscriber and the EventSource.</p>
     pub fn on_failure_configuration(&self) -> ::std::option::Option<&crate::types::OnFailureConfiguration> {
         self.on_failure_configuration.as_ref()
     }
-    /// Log configuration for a subscriber.
+    /// <p>Log configuration for a subscriber.</p>
     pub fn log_configuration(&self) -> ::std::option::Option<&crate::types::LogConfiguration> {
         self.log_configuration.as_ref()
     }
-    /// Customer-controlled run state of a subscriber, set on create or update. Distinct from the bus lifecycle vocabulary, where ACTIVE means "provisioned and healthy". Delivery requires State RUNNING on a subscriber that is not revoked.
+    /// <p>Customer-controlled run state of a subscriber, set on create or update. Distinct from the bus lifecycle vocabulary, where ACTIVE means "provisioned and healthy". Delivery requires State RUNNING on a subscriber that is not revoked.</p>
     pub fn state(&self) -> ::std::option::Option<&crate::types::SubscriberState> {
         self.state.as_ref()
     }
-    /// True when the bus owner has revoked this subscriber. Present only when true, so an absent member means the subscriber is not revoked. Revocation is terminal: it never returns to false. Mutating operations on a revoked subscriber fail with InvalidStateException, except DeleteSubscriber, which stays available so a revoked subscriber can still be cleaned up.
+    /// <p>True when the bus owner has revoked this subscriber. Present only when true, so an absent member means the subscriber is not revoked. Revocation is terminal: it never returns to false. Mutating operations on a revoked subscriber fail with InvalidStateException, except DeleteSubscriber, which stays available so a revoked subscriber can still be cleaned up.</p>
     pub fn revoked(&self) -> ::std::option::Option<bool> {
         self.revoked
     }
-    /// The time the subscriber was created.
+    /// <p>The time the subscriber was created.</p>
     pub fn creation_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// The time the subscriber was last modified.
+    /// <p>The time the subscriber was last modified.</p>
     pub fn last_modified_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
+    }
+    /// <p>Values EventBridge manages for a subscriber that depend on its target type. Only the member for the subscriber's target type is set. Returned in responses only; the customer never supplies these values.</p>
+    pub fn subscriber_details(&self) -> ::std::option::Option<&crate::types::SubscriberDetails> {
+        self.subscriber_details.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for DescribeSubscriberOutput {
@@ -149,260 +155,275 @@ pub struct DescribeSubscriberOutputBuilder {
     pub(crate) revoked: ::std::option::Option<bool>,
     pub(crate) creation_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) subscriber_details: ::std::option::Option<crate::types::SubscriberDetails>,
     _request_id: Option<String>,
 }
 impl DescribeSubscriberOutputBuilder {
-    /// The Amazon Resource Name (ARN) that uniquely identifies a subscriber.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a subscriber.</p>
     pub fn subscriber_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscriber_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies a subscriber.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a subscriber.</p>
     pub fn set_subscriber_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscriber_arn = input;
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies a subscriber.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a subscriber.</p>
     pub fn get_subscriber_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscriber_arn
     }
-    /// Name of a subscriber. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'.
+    /// <p>Name of a subscriber. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.name = ::std::option::Option::Some(input.into());
         self
     }
-    /// Name of a subscriber. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'.
+    /// <p>Name of a subscriber. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'.</p>
     pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
-    /// Name of a subscriber. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'.
+    /// <p>Name of a subscriber. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'.</p>
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn event_bus_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.event_bus_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn set_event_bus_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.event_bus_arn = input;
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn get_event_bus_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.event_bus_arn
     }
-    /// Configuration for how the subscriber invokes its target.
+    /// <p>Configuration for how the subscriber invokes its target.</p>
     pub fn invoke_configuration(mut self, input: crate::types::InvokeConfiguration) -> Self {
         self.invoke_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// Configuration for how the subscriber invokes its target.
+    /// <p>Configuration for how the subscriber invokes its target.</p>
     pub fn set_invoke_configuration(mut self, input: ::std::option::Option<crate::types::InvokeConfiguration>) -> Self {
         self.invoke_configuration = input;
         self
     }
-    /// Configuration for how the subscriber invokes its target.
+    /// <p>Configuration for how the subscriber invokes its target.</p>
     pub fn get_invoke_configuration(&self) -> &::std::option::Option<crate::types::InvokeConfiguration> {
         &self.invoke_configuration
     }
-    /// Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.
+    /// <p>Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.</p>
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.description = ::std::option::Option::Some(input.into());
         self
     }
-    /// Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.
+    /// <p>Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.</p>
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
-    /// Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.
+    /// <p>Free-text description. Used by every resource type that has one: event buses, subscribers, and event sources.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
     }
-    /// Configuration for filtering events delivered to a subscriber. On CreateSubscriber, Filters is required and must contain at least one Filter with a non-empty Pattern. On UpdateSubscriber, an empty `FilterConfiguration:{}` clears the existing filter. Any non-empty shape (including `{Language:X}` without Filters) must contain a valid Filters list — same contract as CreateSubscriber. A non-empty Filters list overwrites; an omitted FilterConfiguration preserves existing state. All Filters are implicitly ANDed — an event must match every Filter to be delivered.
+    /// <p>Configuration for filtering events delivered to a subscriber. On CreateSubscriber, Filters is required and must contain at least one Filter with a non-empty Pattern. On UpdateSubscriber, an empty <code>FilterConfiguration:{}</code> clears the existing filter. Any non-empty shape (including <code>{Language:X}</code> without Filters) must contain a valid Filters list — same contract as CreateSubscriber. A non-empty Filters list overwrites; an omitted FilterConfiguration preserves existing state. All Filters are implicitly ANDed — an event must match every Filter to be delivered.</p>
     pub fn filter_configuration(mut self, input: crate::types::FilterConfiguration) -> Self {
         self.filter_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// Configuration for filtering events delivered to a subscriber. On CreateSubscriber, Filters is required and must contain at least one Filter with a non-empty Pattern. On UpdateSubscriber, an empty `FilterConfiguration:{}` clears the existing filter. Any non-empty shape (including `{Language:X}` without Filters) must contain a valid Filters list — same contract as CreateSubscriber. A non-empty Filters list overwrites; an omitted FilterConfiguration preserves existing state. All Filters are implicitly ANDed — an event must match every Filter to be delivered.
+    /// <p>Configuration for filtering events delivered to a subscriber. On CreateSubscriber, Filters is required and must contain at least one Filter with a non-empty Pattern. On UpdateSubscriber, an empty <code>FilterConfiguration:{}</code> clears the existing filter. Any non-empty shape (including <code>{Language:X}</code> without Filters) must contain a valid Filters list — same contract as CreateSubscriber. A non-empty Filters list overwrites; an omitted FilterConfiguration preserves existing state. All Filters are implicitly ANDed — an event must match every Filter to be delivered.</p>
     pub fn set_filter_configuration(mut self, input: ::std::option::Option<crate::types::FilterConfiguration>) -> Self {
         self.filter_configuration = input;
         self
     }
-    /// Configuration for filtering events delivered to a subscriber. On CreateSubscriber, Filters is required and must contain at least one Filter with a non-empty Pattern. On UpdateSubscriber, an empty `FilterConfiguration:{}` clears the existing filter. Any non-empty shape (including `{Language:X}` without Filters) must contain a valid Filters list — same contract as CreateSubscriber. A non-empty Filters list overwrites; an omitted FilterConfiguration preserves existing state. All Filters are implicitly ANDed — an event must match every Filter to be delivered.
+    /// <p>Configuration for filtering events delivered to a subscriber. On CreateSubscriber, Filters is required and must contain at least one Filter with a non-empty Pattern. On UpdateSubscriber, an empty <code>FilterConfiguration:{}</code> clears the existing filter. Any non-empty shape (including <code>{Language:X}</code> without Filters) must contain a valid Filters list — same contract as CreateSubscriber. A non-empty Filters list overwrites; an omitted FilterConfiguration preserves existing state. All Filters are implicitly ANDed — an event must match every Filter to be delivered.</p>
     pub fn get_filter_configuration(&self) -> &::std::option::Option<crate::types::FilterConfiguration> {
         &self.filter_configuration
     }
-    /// Delivery ordering mode of a subscriber: FIFO delivers events in order within an event group; UNORDERED delivers without an ordering guarantee.
+    /// <p>Delivery ordering mode of a subscriber: FIFO delivers events in order within an event group; UNORDERED delivers without an ordering guarantee.</p>
     pub fn r#type(mut self, input: crate::types::OrderingType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// Delivery ordering mode of a subscriber: FIFO delivers events in order within an event group; UNORDERED delivers without an ordering guarantee.
+    /// <p>Delivery ordering mode of a subscriber: FIFO delivers events in order within an event group; UNORDERED delivers without an ordering guarantee.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::OrderingType>) -> Self {
         self.r#type = input;
         self
     }
-    /// Delivery ordering mode of a subscriber: FIFO delivers events in order within an event group; UNORDERED delivers without an ordering guarantee.
+    /// <p>Delivery ordering mode of a subscriber: FIFO delivers events in order within an event group; UNORDERED delivers without an ordering guarantee.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::OrderingType> {
         &self.r#type
     }
-    /// Starting position for a subscriber.
+    /// <p>Starting position for a subscriber.</p>
     pub fn starting_position(mut self, input: crate::types::StartingPosition) -> Self {
         self.starting_position = ::std::option::Option::Some(input);
         self
     }
-    /// Starting position for a subscriber.
+    /// <p>Starting position for a subscriber.</p>
     pub fn set_starting_position(mut self, input: ::std::option::Option<crate::types::StartingPosition>) -> Self {
         self.starting_position = input;
         self
     }
-    /// Starting position for a subscriber.
+    /// <p>Starting position for a subscriber.</p>
     pub fn get_starting_position(&self) -> &::std::option::Option<crate::types::StartingPosition> {
         &self.starting_position
     }
-    /// Point-in-time configuration for a subscriber. Only applicable when StartingPosition is POINT_IN_TIME.
+    /// <p>Point-in-time configuration for a subscriber. Only applicable when StartingPosition is POINT_IN_TIME.</p>
     pub fn point_in_time_configuration(mut self, input: crate::types::PointInTimeConfiguration) -> Self {
         self.point_in_time_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// Point-in-time configuration for a subscriber. Only applicable when StartingPosition is POINT_IN_TIME.
+    /// <p>Point-in-time configuration for a subscriber. Only applicable when StartingPosition is POINT_IN_TIME.</p>
     pub fn set_point_in_time_configuration(mut self, input: ::std::option::Option<crate::types::PointInTimeConfiguration>) -> Self {
         self.point_in_time_configuration = input;
         self
     }
-    /// Point-in-time configuration for a subscriber. Only applicable when StartingPosition is POINT_IN_TIME.
+    /// <p>Point-in-time configuration for a subscriber. Only applicable when StartingPosition is POINT_IN_TIME.</p>
     pub fn get_point_in_time_configuration(&self) -> &::std::option::Option<crate::types::PointInTimeConfiguration> {
         &self.point_in_time_configuration
     }
-    /// Batching configuration for a subscriber.
+    /// <p>Batching configuration for a subscriber.</p>
     pub fn batch_configuration(mut self, input: crate::types::BatchConfiguration) -> Self {
         self.batch_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// Batching configuration for a subscriber.
+    /// <p>Batching configuration for a subscriber.</p>
     pub fn set_batch_configuration(mut self, input: ::std::option::Option<crate::types::BatchConfiguration>) -> Self {
         self.batch_configuration = input;
         self
     }
-    /// Batching configuration for a subscriber.
+    /// <p>Batching configuration for a subscriber.</p>
     pub fn get_batch_configuration(&self) -> &::std::option::Option<crate::types::BatchConfiguration> {
         &self.batch_configuration
     }
-    /// Absent for universal (aws-sdk) targets, whose input transformation is UniversalTargetParameters.Input.
+    /// <p>Transformer configuration for a subscriber.</p>
     pub fn transformer(mut self, input: crate::types::Transformer) -> Self {
         self.transformer = ::std::option::Option::Some(input);
         self
     }
-    /// Absent for universal (aws-sdk) targets, whose input transformation is UniversalTargetParameters.Input.
+    /// <p>Transformer configuration for a subscriber.</p>
     pub fn set_transformer(mut self, input: ::std::option::Option<crate::types::Transformer>) -> Self {
         self.transformer = input;
         self
     }
-    /// Absent for universal (aws-sdk) targets, whose input transformation is UniversalTargetParameters.Input.
+    /// <p>Transformer configuration for a subscriber.</p>
     pub fn get_transformer(&self) -> &::std::option::Option<crate::types::Transformer> {
         &self.transformer
     }
-    /// Retry policy for a subscriber.
+    /// <p>Retry policy for a subscriber.</p>
     pub fn retry_policy(mut self, input: crate::types::RetryPolicy) -> Self {
         self.retry_policy = ::std::option::Option::Some(input);
         self
     }
-    /// Retry policy for a subscriber.
+    /// <p>Retry policy for a subscriber.</p>
     pub fn set_retry_policy(mut self, input: ::std::option::Option<crate::types::RetryPolicy>) -> Self {
         self.retry_policy = input;
         self
     }
-    /// Retry policy for a subscriber.
+    /// <p>Retry policy for a subscriber.</p>
     pub fn get_retry_policy(&self) -> &::std::option::Option<crate::types::RetryPolicy> {
         &self.retry_policy
     }
-    /// On-failure configuration: where a failed delivery is sent. Shared by the subscriber and the EventSource.
+    /// <p>On-failure configuration: where a failed delivery is sent. Shared by the subscriber and the EventSource.</p>
     pub fn on_failure_configuration(mut self, input: crate::types::OnFailureConfiguration) -> Self {
         self.on_failure_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// On-failure configuration: where a failed delivery is sent. Shared by the subscriber and the EventSource.
+    /// <p>On-failure configuration: where a failed delivery is sent. Shared by the subscriber and the EventSource.</p>
     pub fn set_on_failure_configuration(mut self, input: ::std::option::Option<crate::types::OnFailureConfiguration>) -> Self {
         self.on_failure_configuration = input;
         self
     }
-    /// On-failure configuration: where a failed delivery is sent. Shared by the subscriber and the EventSource.
+    /// <p>On-failure configuration: where a failed delivery is sent. Shared by the subscriber and the EventSource.</p>
     pub fn get_on_failure_configuration(&self) -> &::std::option::Option<crate::types::OnFailureConfiguration> {
         &self.on_failure_configuration
     }
-    /// Log configuration for a subscriber.
+    /// <p>Log configuration for a subscriber.</p>
     pub fn log_configuration(mut self, input: crate::types::LogConfiguration) -> Self {
         self.log_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// Log configuration for a subscriber.
+    /// <p>Log configuration for a subscriber.</p>
     pub fn set_log_configuration(mut self, input: ::std::option::Option<crate::types::LogConfiguration>) -> Self {
         self.log_configuration = input;
         self
     }
-    /// Log configuration for a subscriber.
+    /// <p>Log configuration for a subscriber.</p>
     pub fn get_log_configuration(&self) -> &::std::option::Option<crate::types::LogConfiguration> {
         &self.log_configuration
     }
-    /// Customer-controlled run state of a subscriber, set on create or update. Distinct from the bus lifecycle vocabulary, where ACTIVE means "provisioned and healthy". Delivery requires State RUNNING on a subscriber that is not revoked.
+    /// <p>Customer-controlled run state of a subscriber, set on create or update. Distinct from the bus lifecycle vocabulary, where ACTIVE means "provisioned and healthy". Delivery requires State RUNNING on a subscriber that is not revoked.</p>
     pub fn state(mut self, input: crate::types::SubscriberState) -> Self {
         self.state = ::std::option::Option::Some(input);
         self
     }
-    /// Customer-controlled run state of a subscriber, set on create or update. Distinct from the bus lifecycle vocabulary, where ACTIVE means "provisioned and healthy". Delivery requires State RUNNING on a subscriber that is not revoked.
+    /// <p>Customer-controlled run state of a subscriber, set on create or update. Distinct from the bus lifecycle vocabulary, where ACTIVE means "provisioned and healthy". Delivery requires State RUNNING on a subscriber that is not revoked.</p>
     pub fn set_state(mut self, input: ::std::option::Option<crate::types::SubscriberState>) -> Self {
         self.state = input;
         self
     }
-    /// Customer-controlled run state of a subscriber, set on create or update. Distinct from the bus lifecycle vocabulary, where ACTIVE means "provisioned and healthy". Delivery requires State RUNNING on a subscriber that is not revoked.
+    /// <p>Customer-controlled run state of a subscriber, set on create or update. Distinct from the bus lifecycle vocabulary, where ACTIVE means "provisioned and healthy". Delivery requires State RUNNING on a subscriber that is not revoked.</p>
     pub fn get_state(&self) -> &::std::option::Option<crate::types::SubscriberState> {
         &self.state
     }
-    /// True when the bus owner has revoked this subscriber. Present only when true, so an absent member means the subscriber is not revoked. Revocation is terminal: it never returns to false. Mutating operations on a revoked subscriber fail with InvalidStateException, except DeleteSubscriber, which stays available so a revoked subscriber can still be cleaned up.
+    /// <p>True when the bus owner has revoked this subscriber. Present only when true, so an absent member means the subscriber is not revoked. Revocation is terminal: it never returns to false. Mutating operations on a revoked subscriber fail with InvalidStateException, except DeleteSubscriber, which stays available so a revoked subscriber can still be cleaned up.</p>
     pub fn revoked(mut self, input: bool) -> Self {
         self.revoked = ::std::option::Option::Some(input);
         self
     }
-    /// True when the bus owner has revoked this subscriber. Present only when true, so an absent member means the subscriber is not revoked. Revocation is terminal: it never returns to false. Mutating operations on a revoked subscriber fail with InvalidStateException, except DeleteSubscriber, which stays available so a revoked subscriber can still be cleaned up.
+    /// <p>True when the bus owner has revoked this subscriber. Present only when true, so an absent member means the subscriber is not revoked. Revocation is terminal: it never returns to false. Mutating operations on a revoked subscriber fail with InvalidStateException, except DeleteSubscriber, which stays available so a revoked subscriber can still be cleaned up.</p>
     pub fn set_revoked(mut self, input: ::std::option::Option<bool>) -> Self {
         self.revoked = input;
         self
     }
-    /// True when the bus owner has revoked this subscriber. Present only when true, so an absent member means the subscriber is not revoked. Revocation is terminal: it never returns to false. Mutating operations on a revoked subscriber fail with InvalidStateException, except DeleteSubscriber, which stays available so a revoked subscriber can still be cleaned up.
+    /// <p>True when the bus owner has revoked this subscriber. Present only when true, so an absent member means the subscriber is not revoked. Revocation is terminal: it never returns to false. Mutating operations on a revoked subscriber fail with InvalidStateException, except DeleteSubscriber, which stays available so a revoked subscriber can still be cleaned up.</p>
     pub fn get_revoked(&self) -> &::std::option::Option<bool> {
         &self.revoked
     }
-    /// The time the subscriber was created.
+    /// <p>The time the subscriber was created.</p>
     pub fn creation_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.creation_time = ::std::option::Option::Some(input);
         self
     }
-    /// The time the subscriber was created.
+    /// <p>The time the subscriber was created.</p>
     pub fn set_creation_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.creation_time = input;
         self
     }
-    /// The time the subscriber was created.
+    /// <p>The time the subscriber was created.</p>
     pub fn get_creation_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.creation_time
     }
-    /// The time the subscriber was last modified.
+    /// <p>The time the subscriber was last modified.</p>
     pub fn last_modified_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.last_modified_time = ::std::option::Option::Some(input);
         self
     }
-    /// The time the subscriber was last modified.
+    /// <p>The time the subscriber was last modified.</p>
     pub fn set_last_modified_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.last_modified_time = input;
         self
     }
-    /// The time the subscriber was last modified.
+    /// <p>The time the subscriber was last modified.</p>
     pub fn get_last_modified_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_modified_time
+    }
+    /// <p>Values EventBridge manages for a subscriber that depend on its target type. Only the member for the subscriber's target type is set. Returned in responses only; the customer never supplies these values.</p>
+    pub fn subscriber_details(mut self, input: crate::types::SubscriberDetails) -> Self {
+        self.subscriber_details = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Values EventBridge manages for a subscriber that depend on its target type. Only the member for the subscriber's target type is set. Returned in responses only; the customer never supplies these values.</p>
+    pub fn set_subscriber_details(mut self, input: ::std::option::Option<crate::types::SubscriberDetails>) -> Self {
+        self.subscriber_details = input;
+        self
+    }
+    /// <p>Values EventBridge manages for a subscriber that depend on its target type. Only the member for the subscriber's target type is set. Returned in responses only; the customer never supplies these values.</p>
+    pub fn get_subscriber_details(&self) -> &::std::option::Option<crate::types::SubscriberDetails> {
+        &self.subscriber_details
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -434,6 +455,7 @@ impl DescribeSubscriberOutputBuilder {
             revoked: self.revoked,
             creation_time: self.creation_time,
             last_modified_time: self.last_modified_time,
+            subscriber_details: self.subscriber_details,
             _request_id: self._request_id,
         }
     }

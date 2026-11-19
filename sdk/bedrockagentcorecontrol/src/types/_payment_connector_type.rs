@@ -12,6 +12,7 @@
 /// ```text
 /// # let paymentconnectortype = unimplemented!();
 /// match paymentconnectortype {
+///     PaymentConnectorType::AwsBilling => { /* ... */ },
 ///     PaymentConnectorType::CoinbaseCdp => { /* ... */ },
 ///     PaymentConnectorType::StripePrivy => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum PaymentConnectorType {
     #[allow(missing_docs)] // documentation missing in model
+    AwsBilling,
+    #[allow(missing_docs)] // documentation missing in model
     CoinbaseCdp,
     #[allow(missing_docs)] // documentation missing in model
     StripePrivy,
@@ -53,6 +56,7 @@ pub enum PaymentConnectorType {
 impl ::std::convert::From<&str> for PaymentConnectorType {
     fn from(s: &str) -> Self {
         match s {
+            "AwsBilling" => PaymentConnectorType::AwsBilling,
             "CoinbaseCDP" => PaymentConnectorType::CoinbaseCdp,
             "StripePrivy" => PaymentConnectorType::StripePrivy,
             other => PaymentConnectorType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl PaymentConnectorType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PaymentConnectorType::AwsBilling => "AwsBilling",
             PaymentConnectorType::CoinbaseCdp => "CoinbaseCDP",
             PaymentConnectorType::StripePrivy => "StripePrivy",
             PaymentConnectorType::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl PaymentConnectorType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["CoinbaseCDP", "StripePrivy"]
+        &["AwsBilling", "CoinbaseCDP", "StripePrivy"]
     }
 }
 impl ::std::convert::AsRef<str> for PaymentConnectorType {
@@ -100,6 +105,7 @@ impl PaymentConnectorType {
 impl ::std::fmt::Display for PaymentConnectorType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            PaymentConnectorType::AwsBilling => write!(f, "AwsBilling"),
             PaymentConnectorType::CoinbaseCdp => write!(f, "CoinbaseCDP"),
             PaymentConnectorType::StripePrivy => write!(f, "StripePrivy"),
             PaymentConnectorType::Unknown(value) => write!(f, "{value}"),

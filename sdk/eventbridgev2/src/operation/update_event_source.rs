@@ -322,19 +322,21 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateEventSo
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum UpdateEventSourceError {
-    /// Another change to the resource is already in progress. Retry the request.
+    /// <p>Another change to the resource is already in progress. Retry the request.</p>
     ConcurrentModificationException(crate::types::error::ConcurrentModificationException),
-    /// The resource is not in a state that allows the operation. For example, an event bus that is still being created cannot accept events.
+    /// <p>The resource is not in a state that allows the operation. For example, an event bus that is still being created cannot accept events.</p>
     InvalidStateException(crate::types::error::InvalidStateException),
-    /// The resource does not exist.
+    /// <p>The request would exceed a service quota for the account.</p>
+    LimitExceededException(crate::types::error::LimitExceededException),
+    /// <p>The resource does not exist.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// The caller does not have the permissions required to perform the operation. This error is also returned when the operation cannot use the AWS KMS key for the event bus.
+    /// <p>The caller does not have the permissions required to perform the operation. This error is also returned when the operation cannot use the AWS KMS key for the event bus.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
-    /// The request failed because of an internal service error. Retry the request.
+    /// <p>The request failed because of an internal service error. Retry the request.</p>
     InternalException(crate::types::error::InternalException),
-    /// A request parameter is missing or not valid.
+    /// <p>A request parameter is missing or not valid.</p>
     InvalidInputException(crate::types::error::InvalidInputException),
-    /// The request was throttled because it exceeds a request rate limit. Retry the request with backoff.
+    /// <p>The request was throttled because it exceeds a request rate limit. Retry the request with backoff.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -371,6 +373,7 @@ impl UpdateEventSourceError {
         match self {
             Self::ConcurrentModificationException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidStateException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
+            Self::LimitExceededException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ResourceNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
@@ -386,6 +389,10 @@ impl UpdateEventSourceError {
     /// Returns `true` if the error kind is `UpdateEventSourceError::InvalidStateException`.
     pub fn is_invalid_state_exception(&self) -> bool {
         matches!(self, Self::InvalidStateException(_))
+    }
+    /// Returns `true` if the error kind is `UpdateEventSourceError::LimitExceededException`.
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(self, Self::LimitExceededException(_))
     }
     /// Returns `true` if the error kind is `UpdateEventSourceError::ResourceNotFoundException`.
     pub fn is_resource_not_found_exception(&self) -> bool {
@@ -413,6 +420,7 @@ impl ::std::error::Error for UpdateEventSourceError {
         match self {
             Self::ConcurrentModificationException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidStateException(_inner) => ::std::option::Option::Some(_inner),
+            Self::LimitExceededException(_inner) => ::std::option::Option::Some(_inner),
             Self::ResourceNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalException(_inner) => ::std::option::Option::Some(_inner),
@@ -427,6 +435,7 @@ impl ::std::fmt::Display for UpdateEventSourceError {
         match self {
             Self::ConcurrentModificationException(_inner) => _inner.fmt(f),
             Self::InvalidStateException(_inner) => _inner.fmt(f),
+            Self::LimitExceededException(_inner) => _inner.fmt(f),
             Self::ResourceNotFoundException(_inner) => _inner.fmt(f),
             Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::InternalException(_inner) => _inner.fmt(f),
@@ -460,6 +469,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateEventSo
         match self {
             Self::ConcurrentModificationException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidStateException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
+            Self::LimitExceededException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::ResourceNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

@@ -48,6 +48,8 @@ pub enum Error {
     /// <p>This error code is not in use.</p>
     #[deprecated]
     HealthCheckInUse(crate::types::error::HealthCheckInUse),
+    /// <p>The health check source that you're attempting to create already exists. Route&nbsp;53 returns this error when you submit a request that has the same value for <code>CallerReference</code> as an existing health check source and one or more values that differ from the existing health check source. To create another health check source, specify a new value for <code>CallerReference</code>. To find the existing health check source, call <code>ListHealthCheckSources</code>.</p>
+    HealthCheckSourceAlreadyExists(crate::types::error::HealthCheckSourceAlreadyExists),
     /// <p>The value of <code>HealthCheckVersion</code> in the request doesn't match the value of <code>HealthCheckVersion</code> in the health check.</p>
     HealthCheckVersionMismatch(crate::types::error::HealthCheckVersionMismatch),
     /// <p>The hosted zone you're trying to create already exists. Amazon Route 53 returns this error when a hosted zone has already been created with the specified <code>CallerReference</code>.</p>
@@ -127,6 +129,8 @@ pub enum Error {
     NoSuchGeoLocation(crate::types::error::NoSuchGeoLocation),
     /// <p>No health check exists with the specified ID.</p>
     NoSuchHealthCheck(crate::types::error::NoSuchHealthCheck),
+    /// <p>No health check source exists with the specified ID. Verify that the ID is correct and that the health check source hasn't been deleted.</p>
+    NoSuchHealthCheckSource(crate::types::error::NoSuchHealthCheckSource),
     /// <p>No hosted zone exists with the ID that you specified.</p>
     NoSuchHostedZone(crate::types::error::NoSuchHostedZone),
     /// <p>The specified key-signing key (KSK) doesn't exist.</p>
@@ -149,7 +153,11 @@ pub enum Error {
     QueryLoggingConfigAlreadyExists(crate::types::error::QueryLoggingConfigAlreadyExists),
     /// <p>The limit on the number of requests per second was exceeded.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>This health check can't be created because the current account has reached the limit on the number of active health checks.</p>
+    /// <p>You can't create this health check source because the current account has reached its maximum number of health check sources. The maximum includes every health check source that hasn't reached <code>DELETE_COMPLETED</code> status, including a health check source with a status of <code>CREATE_FAILED</code>.</p>
+    /// <p>For information about default limits, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
+    /// <p>For information about how to get the current limit for an account, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
+    TooManyHealthCheckSources(crate::types::error::TooManyHealthCheckSources),
+    /// <p>This health check can't be created because the current account has reached the limit on the number of active health checks, or because the health check source for a private health check has reached its limit on active health checks. In the second case, specify a different health check source.</p>
     /// <p>For information about default limits, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>For information about how to get the current limit for an account, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
     /// <p>You have reached the maximum number of active health checks for an Amazon Web Services account. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
@@ -214,6 +222,7 @@ impl ::std::fmt::Display for Error {
             Error::DelegationSetNotReusable(inner) => inner.fmt(f),
             Error::HealthCheckAlreadyExists(inner) => inner.fmt(f),
             Error::HealthCheckInUse(inner) => inner.fmt(f),
+            Error::HealthCheckSourceAlreadyExists(inner) => inner.fmt(f),
             Error::HealthCheckVersionMismatch(inner) => inner.fmt(f),
             Error::HostedZoneAlreadyExists(inner) => inner.fmt(f),
             Error::HostedZoneNotEmpty(inner) => inner.fmt(f),
@@ -247,6 +256,7 @@ impl ::std::fmt::Display for Error {
             Error::NoSuchDelegationSet(inner) => inner.fmt(f),
             Error::NoSuchGeoLocation(inner) => inner.fmt(f),
             Error::NoSuchHealthCheck(inner) => inner.fmt(f),
+            Error::NoSuchHealthCheckSource(inner) => inner.fmt(f),
             Error::NoSuchHostedZone(inner) => inner.fmt(f),
             Error::NoSuchKeySigningKey(inner) => inner.fmt(f),
             Error::NoSuchQueryLoggingConfig(inner) => inner.fmt(f),
@@ -258,6 +268,7 @@ impl ::std::fmt::Display for Error {
             Error::PublicZoneVpcAssociation(inner) => inner.fmt(f),
             Error::QueryLoggingConfigAlreadyExists(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
+            Error::TooManyHealthCheckSources(inner) => inner.fmt(f),
             Error::TooManyHealthChecks(inner) => inner.fmt(f),
             Error::TooManyHostedZones(inner) => inner.fmt(f),
             Error::TooManyKeySigningKeys(inner) => inner.fmt(f),
@@ -306,6 +317,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::DelegationSetNotReusable(inner) => inner.meta(),
             Self::HealthCheckAlreadyExists(inner) => inner.meta(),
             Self::HealthCheckInUse(inner) => inner.meta(),
+            Self::HealthCheckSourceAlreadyExists(inner) => inner.meta(),
             Self::HealthCheckVersionMismatch(inner) => inner.meta(),
             Self::HostedZoneAlreadyExists(inner) => inner.meta(),
             Self::HostedZoneNotEmpty(inner) => inner.meta(),
@@ -339,6 +351,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::NoSuchDelegationSet(inner) => inner.meta(),
             Self::NoSuchGeoLocation(inner) => inner.meta(),
             Self::NoSuchHealthCheck(inner) => inner.meta(),
+            Self::NoSuchHealthCheckSource(inner) => inner.meta(),
             Self::NoSuchHostedZone(inner) => inner.meta(),
             Self::NoSuchKeySigningKey(inner) => inner.meta(),
             Self::NoSuchQueryLoggingConfig(inner) => inner.meta(),
@@ -350,6 +363,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::PublicZoneVpcAssociation(inner) => inner.meta(),
             Self::QueryLoggingConfigAlreadyExists(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
+            Self::TooManyHealthCheckSources(inner) => inner.meta(),
             Self::TooManyHealthChecks(inner) => inner.meta(),
             Self::TooManyHostedZones(inner) => inner.meta(),
             Self::TooManyKeySigningKeys(inner) => inner.meta(),
@@ -530,6 +544,9 @@ impl From<crate::operation::change_tags_for_resource::ChangeTagsForResourceError
         match err {
             crate::operation::change_tags_for_resource::ChangeTagsForResourceError::InvalidInput(inner) => Error::InvalidInput(inner),
             crate::operation::change_tags_for_resource::ChangeTagsForResourceError::NoSuchHealthCheck(inner) => Error::NoSuchHealthCheck(inner),
+            crate::operation::change_tags_for_resource::ChangeTagsForResourceError::NoSuchHealthCheckSource(inner) => {
+                Error::NoSuchHealthCheckSource(inner)
+            }
             crate::operation::change_tags_for_resource::ChangeTagsForResourceError::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
             crate::operation::change_tags_for_resource::ChangeTagsForResourceError::PriorRequestNotComplete(inner) => {
                 Error::PriorRequestNotComplete(inner)
@@ -589,6 +606,38 @@ impl From<crate::operation::create_health_check::CreateHealthCheckError> for Err
             crate::operation::create_health_check::CreateHealthCheckError::InvalidInput(inner) => Error::InvalidInput(inner),
             crate::operation::create_health_check::CreateHealthCheckError::TooManyHealthChecks(inner) => Error::TooManyHealthChecks(inner),
             crate::operation::create_health_check::CreateHealthCheckError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_health_check_source::CreateHealthCheckSourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_health_check_source::CreateHealthCheckSourceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_health_check_source::CreateHealthCheckSourceError> for Error {
+    fn from(err: crate::operation::create_health_check_source::CreateHealthCheckSourceError) -> Self {
+        match err {
+            crate::operation::create_health_check_source::CreateHealthCheckSourceError::HealthCheckSourceAlreadyExists(inner) => {
+                Error::HealthCheckSourceAlreadyExists(inner)
+            }
+            crate::operation::create_health_check_source::CreateHealthCheckSourceError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::create_health_check_source::CreateHealthCheckSourceError::InvalidVpcId(inner) => Error::InvalidVpcId(inner),
+            crate::operation::create_health_check_source::CreateHealthCheckSourceError::TooManyHealthCheckSources(inner) => {
+                Error::TooManyHealthCheckSources(inner)
+            }
+            crate::operation::create_health_check_source::CreateHealthCheckSourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1029,6 +1078,37 @@ impl From<crate::operation::delete_health_check::DeleteHealthCheckError> for Err
             crate::operation::delete_health_check::DeleteHealthCheckError::InvalidInput(inner) => Error::InvalidInput(inner),
             crate::operation::delete_health_check::DeleteHealthCheckError::NoSuchHealthCheck(inner) => Error::NoSuchHealthCheck(inner),
             crate::operation::delete_health_check::DeleteHealthCheckError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_health_check_source::DeleteHealthCheckSourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_health_check_source::DeleteHealthCheckSourceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_health_check_source::DeleteHealthCheckSourceError> for Error {
+    fn from(err: crate::operation::delete_health_check_source::DeleteHealthCheckSourceError) -> Self {
+        match err {
+            crate::operation::delete_health_check_source::DeleteHealthCheckSourceError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::delete_health_check_source::DeleteHealthCheckSourceError::NoSuchHealthCheckSource(inner) => {
+                Error::NoSuchHealthCheckSource(inner)
+            }
+            crate::operation::delete_health_check_source::DeleteHealthCheckSourceError::PriorRequestNotComplete(inner) => {
+                Error::PriorRequestNotComplete(inner)
+            }
+            crate::operation::delete_health_check_source::DeleteHealthCheckSourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1623,6 +1703,33 @@ impl From<crate::operation::get_health_check_last_failure_reason::GetHealthCheck
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_health_check_source::GetHealthCheckSourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_health_check_source::GetHealthCheckSourceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_health_check_source::GetHealthCheckSourceError> for Error {
+    fn from(err: crate::operation::get_health_check_source::GetHealthCheckSourceError) -> Self {
+        match err {
+            crate::operation::get_health_check_source::GetHealthCheckSourceError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::get_health_check_source::GetHealthCheckSourceError::NoSuchHealthCheckSource(inner) => {
+                Error::NoSuchHealthCheckSource(inner)
+            }
+            crate::operation::get_health_check_source::GetHealthCheckSourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_health_check_status::GetHealthCheckStatusError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2014,6 +2121,59 @@ impl From<crate::operation::list_health_checks::ListHealthChecksError> for Error
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_health_checks_by_source::ListHealthChecksBySourceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_health_checks_by_source::ListHealthChecksBySourceError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_health_checks_by_source::ListHealthChecksBySourceError> for Error {
+    fn from(err: crate::operation::list_health_checks_by_source::ListHealthChecksBySourceError) -> Self {
+        match err {
+            crate::operation::list_health_checks_by_source::ListHealthChecksBySourceError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::list_health_checks_by_source::ListHealthChecksBySourceError::NoSuchHealthCheckSource(inner) => {
+                Error::NoSuchHealthCheckSource(inner)
+            }
+            crate::operation::list_health_checks_by_source::ListHealthChecksBySourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_health_check_sources::ListHealthCheckSourcesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_health_check_sources::ListHealthCheckSourcesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_health_check_sources::ListHealthCheckSourcesError> for Error {
+    fn from(err: crate::operation::list_health_check_sources::ListHealthCheckSourcesError) -> Self {
+        match err {
+            crate::operation::list_health_check_sources::ListHealthCheckSourcesError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::list_health_check_sources::ListHealthCheckSourcesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_hosted_zones::ListHostedZonesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2232,6 +2392,9 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         match err {
             crate::operation::list_tags_for_resource::ListTagsForResourceError::InvalidInput(inner) => Error::InvalidInput(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::NoSuchHealthCheck(inner) => Error::NoSuchHealthCheck(inner),
+            crate::operation::list_tags_for_resource::ListTagsForResourceError::NoSuchHealthCheckSource(inner) => {
+                Error::NoSuchHealthCheckSource(inner)
+            }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::PriorRequestNotComplete(inner) => {
                 Error::PriorRequestNotComplete(inner)
@@ -2262,6 +2425,9 @@ impl From<crate::operation::list_tags_for_resources::ListTagsForResourcesError> 
         match err {
             crate::operation::list_tags_for_resources::ListTagsForResourcesError::InvalidInput(inner) => Error::InvalidInput(inner),
             crate::operation::list_tags_for_resources::ListTagsForResourcesError::NoSuchHealthCheck(inner) => Error::NoSuchHealthCheck(inner),
+            crate::operation::list_tags_for_resources::ListTagsForResourcesError::NoSuchHealthCheckSource(inner) => {
+                Error::NoSuchHealthCheckSource(inner)
+            }
             crate::operation::list_tags_for_resources::ListTagsForResourcesError::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
             crate::operation::list_tags_for_resources::ListTagsForResourcesError::PriorRequestNotComplete(inner) => {
                 Error::PriorRequestNotComplete(inner)
@@ -2678,6 +2844,7 @@ impl ::std::error::Error for Error {
             Error::DelegationSetNotReusable(inner) => inner.source(),
             Error::HealthCheckAlreadyExists(inner) => inner.source(),
             Error::HealthCheckInUse(inner) => inner.source(),
+            Error::HealthCheckSourceAlreadyExists(inner) => inner.source(),
             Error::HealthCheckVersionMismatch(inner) => inner.source(),
             Error::HostedZoneAlreadyExists(inner) => inner.source(),
             Error::HostedZoneNotEmpty(inner) => inner.source(),
@@ -2711,6 +2878,7 @@ impl ::std::error::Error for Error {
             Error::NoSuchDelegationSet(inner) => inner.source(),
             Error::NoSuchGeoLocation(inner) => inner.source(),
             Error::NoSuchHealthCheck(inner) => inner.source(),
+            Error::NoSuchHealthCheckSource(inner) => inner.source(),
             Error::NoSuchHostedZone(inner) => inner.source(),
             Error::NoSuchKeySigningKey(inner) => inner.source(),
             Error::NoSuchQueryLoggingConfig(inner) => inner.source(),
@@ -2722,6 +2890,7 @@ impl ::std::error::Error for Error {
             Error::PublicZoneVpcAssociation(inner) => inner.source(),
             Error::QueryLoggingConfigAlreadyExists(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
+            Error::TooManyHealthCheckSources(inner) => inner.source(),
             Error::TooManyHealthChecks(inner) => inner.source(),
             Error::TooManyHostedZones(inner) => inner.source(),
             Error::TooManyKeySigningKeys(inner) => inner.source(),
@@ -2756,6 +2925,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::DelegationSetNotReusable(e) => e.request_id(),
             Self::HealthCheckAlreadyExists(e) => e.request_id(),
             Self::HealthCheckInUse(e) => e.request_id(),
+            Self::HealthCheckSourceAlreadyExists(e) => e.request_id(),
             Self::HealthCheckVersionMismatch(e) => e.request_id(),
             Self::HostedZoneAlreadyExists(e) => e.request_id(),
             Self::HostedZoneNotEmpty(e) => e.request_id(),
@@ -2789,6 +2959,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::NoSuchDelegationSet(e) => e.request_id(),
             Self::NoSuchGeoLocation(e) => e.request_id(),
             Self::NoSuchHealthCheck(e) => e.request_id(),
+            Self::NoSuchHealthCheckSource(e) => e.request_id(),
             Self::NoSuchHostedZone(e) => e.request_id(),
             Self::NoSuchKeySigningKey(e) => e.request_id(),
             Self::NoSuchQueryLoggingConfig(e) => e.request_id(),
@@ -2800,6 +2971,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::PublicZoneVpcAssociation(e) => e.request_id(),
             Self::QueryLoggingConfigAlreadyExists(e) => e.request_id(),
             Self::ThrottlingException(e) => e.request_id(),
+            Self::TooManyHealthCheckSources(e) => e.request_id(),
             Self::TooManyHealthChecks(e) => e.request_id(),
             Self::TooManyHostedZones(e) => e.request_id(),
             Self::TooManyKeySigningKeys(e) => e.request_id(),

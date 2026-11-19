@@ -4688,6 +4688,15 @@ pub(crate) fn api_gateway_target_configuration_correct_errors(
     builder
 }
 
+pub(crate) fn aws_billing_connector_configuration_correct_errors(
+    mut builder: crate::types::builders::AwsBillingConnectorConfigurationBuilder,
+) -> crate::types::builders::AwsBillingConnectorConfigurationBuilder {
+    if builder.iam_role_arn.is_none() {
+        builder.iam_role_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn capacity_provider_volume_configuration_correct_errors(
     mut builder: crate::types::builders::CapacityProviderVolumeConfigurationBuilder,
 ) -> crate::types::builders::CapacityProviderVolumeConfigurationBuilder {

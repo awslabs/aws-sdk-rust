@@ -691,6 +691,15 @@ pub(crate) fn access_key_last_used_correct_errors(
     builder
 }
 
+pub(crate) fn context_provider_correct_errors(
+    mut builder: crate::types::builders::ContextProviderBuilder,
+) -> crate::types::builders::ContextProviderBuilder {
+    if builder.subject_source_key.is_none() {
+        builder.subject_source_key = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn error_details_correct_errors(mut builder: crate::types::builders::ErrorDetailsBuilder) -> crate::types::builders::ErrorDetailsBuilder {
     if builder.message.is_none() {
         builder.message = Some(Default::default())
@@ -875,6 +884,15 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn context_provider_key_definition_correct_errors(
+    mut builder: crate::types::builders::ContextProviderKeyDefinitionBuilder,
+) -> crate::types::builders::ContextProviderKeyDefinitionBuilder {
+    if builder.source_key.is_none() {
+        builder.source_key = Some(Default::default())
     }
     builder
 }

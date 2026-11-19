@@ -204,17 +204,17 @@ impl ListEngagementsFluentBuilder {
     pub fn get_exclude_context_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::EngagementContextType>> {
         self.inner.get_exclude_context_types()
     }
-    /// <p>Specifies the sorting parameters for listing Engagements.</p>
+    /// <p>Specifies how to sort the returned engagements.</p>
     pub fn sort(mut self, input: crate::types::EngagementSort) -> Self {
         self.inner = self.inner.sort(input);
         self
     }
-    /// <p>Specifies the sorting parameters for listing Engagements.</p>
+    /// <p>Specifies how to sort the returned engagements.</p>
     pub fn set_sort(mut self, input: ::std::option::Option<crate::types::EngagementSort>) -> Self {
         self.inner = self.inner.set_sort(input);
         self
     }
-    /// <p>Specifies the sorting parameters for listing Engagements.</p>
+    /// <p>Specifies how to sort the returned engagements.</p>
     pub fn get_sort(&self) -> &::std::option::Option<crate::types::EngagementSort> {
         self.inner.get_sort()
     }

@@ -35,6 +35,8 @@ pub use crate::types::error::_invalid_change_batch::InvalidChangeBatchBuilder;
 
 pub use crate::types::error::_no_such_health_check::NoSuchHealthCheckBuilder;
 
+pub use crate::types::error::_no_such_health_check_source::NoSuchHealthCheckSourceBuilder;
+
 pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
 
 pub use crate::types::error::_cidr_collection_already_exists_exception::CidrCollectionAlreadyExistsExceptionBuilder;
@@ -42,6 +44,10 @@ pub use crate::types::error::_cidr_collection_already_exists_exception::CidrColl
 pub use crate::types::error::_health_check_already_exists::HealthCheckAlreadyExistsBuilder;
 
 pub use crate::types::error::_too_many_health_checks::TooManyHealthChecksBuilder;
+
+pub use crate::types::error::_health_check_source_already_exists::HealthCheckSourceAlreadyExistsBuilder;
+
+pub use crate::types::error::_too_many_health_check_sources::TooManyHealthCheckSourcesBuilder;
 
 pub use crate::types::error::_delegation_set_not_available::DelegationSetNotAvailableBuilder;
 

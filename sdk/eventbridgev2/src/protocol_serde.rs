@@ -55,6 +55,8 @@ pub(crate) mod shape_put_resource_policy;
 
 pub(crate) mod shape_revoke_resource;
 
+pub(crate) mod shape_rotate_webhook_credentials;
+
 pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
@@ -131,6 +133,8 @@ pub(crate) mod shape_resource_not_found_exception;
 
 pub(crate) mod shape_revoke_resource_input;
 
+pub(crate) mod shape_rotate_webhook_credentials_input;
+
 pub(crate) mod shape_schema_registry_unavailable_exception;
 
 pub(crate) mod shape_tag_resource_input;
@@ -154,6 +158,8 @@ pub(crate) mod shape_encryption_configuration;
 pub(crate) mod shape_event_bus_summary_list;
 
 pub(crate) mod shape_event_source_configuration;
+
+pub(crate) mod shape_event_source_details;
 
 pub(crate) mod shape_event_source_summary_list;
 
@@ -185,6 +191,8 @@ pub(crate) mod shape_storage_configuration;
 
 pub(crate) mod shape_storage_configuration_output;
 
+pub(crate) mod shape_subscriber_details;
+
 pub(crate) mod shape_subscriber_summary_list;
 
 pub(crate) mod shape_tag_map;
@@ -192,6 +200,8 @@ pub(crate) mod shape_tag_map;
 pub(crate) mod shape_transformer;
 
 pub(crate) mod shape_update_invoke_configuration;
+
+pub(crate) mod shape_webhook_credential;
 
 pub(crate) mod shape_aws_service_events_source_configuration;
 
@@ -215,6 +225,10 @@ pub(crate) mod shape_kinesis_parameters;
 
 pub(crate) mod shape_lambda_parameters;
 
+pub(crate) mod shape_msk_details;
+
+pub(crate) mod shape_msk_parameters;
+
 pub(crate) mod shape_partner_events_source_configuration;
 
 pub(crate) mod shape_put_events_result_entry;
@@ -237,11 +251,19 @@ pub(crate) mod shape_subscriber_summary;
 
 pub(crate) mod shape_universal_target_parameters;
 
+pub(crate) mod shape_webhook_details;
+
+pub(crate) mod shape_webhook_events_source_configuration;
+
 pub(crate) mod shape_event_bus_v2_metadata_map;
 
 pub(crate) mod shape_event_bus_v2_system_metadata;
 
 pub(crate) mod shape_header_parameters_map;
+
+pub(crate) mod shape_msk_header;
+
+pub(crate) mod shape_msk_header_list;
 
 pub(crate) mod shape_path_parameter_list;
 
@@ -254,3 +276,15 @@ pub(crate) mod shape_sns_message_attribute_value;
 pub(crate) mod shape_sqs_message_attribute_map;
 
 pub(crate) mod shape_sqs_message_attribute_value;
+
+pub(crate) mod shape_webhook_auth_configuration;
+
+pub(crate) mod shape_webhook_deduplication_configuration;
+
+pub(crate) mod shape_webhook_metadata_http_header_list;
+
+pub(crate) mod shape_webhook_basic_http_auth_configuration;
+
+pub(crate) mod shape_webhook_hmac_auth_configuration;
+
+pub(crate) mod shape_webhook_static_token_auth_configuration;

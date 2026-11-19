@@ -12,6 +12,8 @@ pub struct UserPoolClientType {
     pub client_id: ::std::option::Option<::std::string::String>,
     /// <p>The app client secret.</p>
     pub client_secret: ::std::option::Option<::std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon Web Services Secrets Manager</a> secret that stores this app client's secret, when Amazon Cognito manages the secret in Secrets Manager. Retrieve the secret from Secrets Manager by this ARN. The <code>SecretString</code> value is a JSON object with <code>userPoolId</code>, <code>userPoolClientId</code>, and <code>clientSecretValue</code> fields. Use <code>clientSecretValue</code> as the app client secret. Amazon Cognito returns this ARN instead of <code>ClientSecret</code> for app clients whose secret it manages in Secrets Manager.</p>
+    pub client_secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the item was modified. Amazon Cognito returns this timestamp in UNIX epoch time format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
     pub last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the item was created. Amazon Cognito returns this timestamp in UNIX epoch time format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
@@ -186,6 +188,10 @@ impl UserPoolClientType {
     /// <p>The app client secret.</p>
     pub fn client_secret(&self) -> ::std::option::Option<&str> {
         self.client_secret.as_deref()
+    }
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon Web Services Secrets Manager</a> secret that stores this app client's secret, when Amazon Cognito manages the secret in Secrets Manager. Retrieve the secret from Secrets Manager by this ARN. The <code>SecretString</code> value is a JSON object with <code>userPoolId</code>, <code>userPoolClientId</code>, and <code>clientSecretValue</code> fields. Use <code>clientSecretValue</code> as the app client secret. Amazon Cognito returns this ARN instead of <code>ClientSecret</code> for app clients whose secret it manages in Secrets Manager.</p>
+    pub fn client_secret_arn(&self) -> ::std::option::Option<&str> {
+        self.client_secret_arn.as_deref()
     }
     /// <p>The date and time when the item was modified. Amazon Cognito returns this timestamp in UNIX epoch time format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
     pub fn last_modified_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -414,6 +420,7 @@ impl ::std::fmt::Debug for UserPoolClientType {
         formatter.field("client_name", &self.client_name);
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
         formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_secret_arn", &self.client_secret_arn);
         formatter.field("last_modified_date", &self.last_modified_date);
         formatter.field("creation_date", &self.creation_date);
         formatter.field("refresh_token_validity", &self.refresh_token_validity);
@@ -458,6 +465,7 @@ pub struct UserPoolClientTypeBuilder {
     pub(crate) client_name: ::std::option::Option<::std::string::String>,
     pub(crate) client_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_secret: ::std::option::Option<::std::string::String>,
+    pub(crate) client_secret_arn: ::std::option::Option<::std::string::String>,
     pub(crate) last_modified_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) creation_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) refresh_token_validity: ::std::option::Option<i32>,
@@ -538,6 +546,20 @@ impl UserPoolClientTypeBuilder {
     /// <p>The app client secret.</p>
     pub fn get_client_secret(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_secret
+    }
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon Web Services Secrets Manager</a> secret that stores this app client's secret, when Amazon Cognito manages the secret in Secrets Manager. Retrieve the secret from Secrets Manager by this ARN. The <code>SecretString</code> value is a JSON object with <code>userPoolId</code>, <code>userPoolClientId</code>, and <code>clientSecretValue</code> fields. Use <code>clientSecretValue</code> as the app client secret. Amazon Cognito returns this ARN instead of <code>ClientSecret</code> for app clients whose secret it manages in Secrets Manager.</p>
+    pub fn client_secret_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.client_secret_arn = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon Web Services Secrets Manager</a> secret that stores this app client's secret, when Amazon Cognito manages the secret in Secrets Manager. Retrieve the secret from Secrets Manager by this ARN. The <code>SecretString</code> value is a JSON object with <code>userPoolId</code>, <code>userPoolClientId</code>, and <code>clientSecretValue</code> fields. Use <code>clientSecretValue</code> as the app client secret. Amazon Cognito returns this ARN instead of <code>ClientSecret</code> for app clients whose secret it manages in Secrets Manager.</p>
+    pub fn set_client_secret_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.client_secret_arn = input;
+        self
+    }
+    /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon Web Services Secrets Manager</a> secret that stores this app client's secret, when Amazon Cognito manages the secret in Secrets Manager. Retrieve the secret from Secrets Manager by this ARN. The <code>SecretString</code> value is a JSON object with <code>userPoolId</code>, <code>userPoolClientId</code>, and <code>clientSecretValue</code> fields. Use <code>clientSecretValue</code> as the app client secret. Amazon Cognito returns this ARN instead of <code>ClientSecret</code> for app clients whose secret it manages in Secrets Manager.</p>
+    pub fn get_client_secret_arn(&self) -> &::std::option::Option<::std::string::String> {
+        &self.client_secret_arn
     }
     /// <p>The date and time when the item was modified. Amazon Cognito returns this timestamp in UNIX epoch time format. Your SDK might render the output in a human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
     pub fn last_modified_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -1249,6 +1271,7 @@ impl UserPoolClientTypeBuilder {
             client_name: self.client_name,
             client_id: self.client_id,
             client_secret: self.client_secret,
+            client_secret_arn: self.client_secret_arn,
             last_modified_date: self.last_modified_date,
             creation_date: self.creation_date,
             refresh_token_validity: self.refresh_token_validity.unwrap_or_default(),
@@ -1282,6 +1305,7 @@ impl ::std::fmt::Debug for UserPoolClientTypeBuilder {
         formatter.field("client_name", &self.client_name);
         formatter.field("client_id", &"*** Sensitive Data Redacted ***");
         formatter.field("client_secret", &"*** Sensitive Data Redacted ***");
+        formatter.field("client_secret_arn", &self.client_secret_arn);
         formatter.field("last_modified_date", &self.last_modified_date);
         formatter.field("creation_date", &self.creation_date);
         formatter.field("refresh_token_validity", &self.refresh_token_validity);

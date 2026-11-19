@@ -3,11 +3,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSubscriberInput {
-    /// The Amazon Resource Name (ARN) that uniquely identifies a subscriber.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a subscriber.</p>
     pub subscriber_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSubscriberInput {
-    /// The Amazon Resource Name (ARN) that uniquely identifies a subscriber.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a subscriber.</p>
     pub fn subscriber_arn(&self) -> ::std::option::Option<&str> {
         self.subscriber_arn.as_deref()
     }
@@ -26,18 +26,18 @@ pub struct DescribeSubscriberInputBuilder {
     pub(crate) subscriber_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSubscriberInputBuilder {
-    /// The Amazon Resource Name (ARN) that uniquely identifies a subscriber.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a subscriber.</p>
     /// This field is required.
     pub fn subscriber_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subscriber_arn = ::std::option::Option::Some(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies a subscriber.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a subscriber.</p>
     pub fn set_subscriber_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.subscriber_arn = input;
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies a subscriber.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies a subscriber.</p>
     pub fn get_subscriber_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.subscriber_arn
     }

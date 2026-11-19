@@ -47,6 +47,8 @@ pub struct StackSet {
     pub managed_execution: ::std::option::Option<crate::types::ManagedExecution>,
     /// <p>Returns a list of all Amazon Web Services Regions the given StackSet has stack instances deployed in. The Amazon Web Services Regions list output is in no particular order.</p>
     pub regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The Amazon S3 bucket path where CloudFormation stores the execution role stack template body. CloudFormation uses this bucket only when you specify a custom execution role template.</p>
+    pub stack_set_output_bucket_path: ::std::option::Option<::std::string::String>,
 }
 impl StackSet {
     /// <p>The name that's associated with the StackSet.</p>
@@ -136,6 +138,10 @@ impl StackSet {
     pub fn regions(&self) -> &[::std::string::String] {
         self.regions.as_deref().unwrap_or_default()
     }
+    /// <p>The Amazon S3 bucket path where CloudFormation stores the execution role stack template body. CloudFormation uses this bucket only when you specify a custom execution role template.</p>
+    pub fn stack_set_output_bucket_path(&self) -> ::std::option::Option<&str> {
+        self.stack_set_output_bucket_path.as_deref()
+    }
 }
 impl StackSet {
     /// Creates a new builder-style object to manufacture [`StackSet`](crate::types::StackSet).
@@ -165,6 +171,7 @@ pub struct StackSetBuilder {
     pub(crate) organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) managed_execution: ::std::option::Option<crate::types::ManagedExecution>,
     pub(crate) regions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) stack_set_output_bucket_path: ::std::option::Option<::std::string::String>,
 }
 impl StackSetBuilder {
     /// <p>The name that's associated with the StackSet.</p>
@@ -462,6 +469,20 @@ impl StackSetBuilder {
     pub fn get_regions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.regions
     }
+    /// <p>The Amazon S3 bucket path where CloudFormation stores the execution role stack template body. CloudFormation uses this bucket only when you specify a custom execution role template.</p>
+    pub fn stack_set_output_bucket_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.stack_set_output_bucket_path = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The Amazon S3 bucket path where CloudFormation stores the execution role stack template body. CloudFormation uses this bucket only when you specify a custom execution role template.</p>
+    pub fn set_stack_set_output_bucket_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.stack_set_output_bucket_path = input;
+        self
+    }
+    /// <p>The Amazon S3 bucket path where CloudFormation stores the execution role stack template body. CloudFormation uses this bucket only when you specify a custom execution role template.</p>
+    pub fn get_stack_set_output_bucket_path(&self) -> &::std::option::Option<::std::string::String> {
+        &self.stack_set_output_bucket_path
+    }
     /// Consumes the builder and constructs a [`StackSet`](crate::types::StackSet).
     pub fn build(self) -> crate::types::StackSet {
         crate::types::StackSet {
@@ -482,6 +503,7 @@ impl StackSetBuilder {
             organizational_unit_ids: self.organizational_unit_ids,
             managed_execution: self.managed_execution,
             regions: self.regions,
+            stack_set_output_bucket_path: self.stack_set_output_bucket_path,
         }
     }
 }

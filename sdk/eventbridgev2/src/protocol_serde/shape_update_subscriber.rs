@@ -215,6 +215,14 @@ pub(crate) fn de_update_subscriber(
                 "LastModifiedTime" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_last_modified_time(Some(decoder.timestamp()?)))
                 })?,
+                "SubscriberDetails" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(
+                        builder.set_subscriber_details(Some(crate::protocol_serde::shape_subscriber_details::de_subscriber_details(
+                            decoder,
+                            depth + 1,
+                        )?)),
+                    )
+                })?,
                 _ => {
                     decoder.skip()?;
                     builder

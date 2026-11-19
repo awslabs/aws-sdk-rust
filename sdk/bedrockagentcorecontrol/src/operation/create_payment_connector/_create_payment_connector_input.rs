@@ -12,6 +12,7 @@ pub struct CreatePaymentConnectorInput {
     /// <p>The type of payment connector, which determines the payment provider integration.</p>
     pub r#type: ::std::option::Option<crate::types::PaymentConnectorType>,
     /// <p>The credential provider configurations for the payment connector. These configurations specify how the connector authenticates with the payment provider.</p>
+    /// <p>For an <code>AwsBilling</code> payment connector, omit this parameter or specify an empty list. The service uses the AWS Marketplace service-linked role in your account, which must exist before you create the connector, and you must have permission to call <code>iam:GetRole</code> on it.</p>
     pub credential_provider_configurations: ::std::option::Option<::std::vec::Vec<crate::types::CredentialsProviderConfiguration>>,
     /// <p>The provision mode for creating the payment connector. If you don't specify a value, the default is <code>MANUAL</code>.</p>
     /// <ul>
@@ -42,6 +43,7 @@ impl CreatePaymentConnectorInput {
         self.r#type.as_ref()
     }
     /// <p>The credential provider configurations for the payment connector. These configurations specify how the connector authenticates with the payment provider.</p>
+    /// <p>For an <code>AwsBilling</code> payment connector, omit this parameter or specify an empty list. The service uses the AWS Marketplace service-linked role in your account, which must exist before you create the connector, and you must have permission to call <code>iam:GetRole</code> on it.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.credential_provider_configurations.is_none()`.
     pub fn credential_provider_configurations(&self) -> &[crate::types::CredentialsProviderConfiguration] {
@@ -146,6 +148,7 @@ impl CreatePaymentConnectorInputBuilder {
     /// To override the contents of this collection use [`set_credential_provider_configurations`](Self::set_credential_provider_configurations).
     ///
     /// <p>The credential provider configurations for the payment connector. These configurations specify how the connector authenticates with the payment provider.</p>
+    /// <p>For an <code>AwsBilling</code> payment connector, omit this parameter or specify an empty list. The service uses the AWS Marketplace service-linked role in your account, which must exist before you create the connector, and you must have permission to call <code>iam:GetRole</code> on it.</p>
     pub fn credential_provider_configurations(mut self, input: crate::types::CredentialsProviderConfiguration) -> Self {
         let mut v = self.credential_provider_configurations.unwrap_or_default();
         v.push(input);
@@ -153,6 +156,7 @@ impl CreatePaymentConnectorInputBuilder {
         self
     }
     /// <p>The credential provider configurations for the payment connector. These configurations specify how the connector authenticates with the payment provider.</p>
+    /// <p>For an <code>AwsBilling</code> payment connector, omit this parameter or specify an empty list. The service uses the AWS Marketplace service-linked role in your account, which must exist before you create the connector, and you must have permission to call <code>iam:GetRole</code> on it.</p>
     pub fn set_credential_provider_configurations(
         mut self,
         input: ::std::option::Option<::std::vec::Vec<crate::types::CredentialsProviderConfiguration>>,
@@ -161,6 +165,7 @@ impl CreatePaymentConnectorInputBuilder {
         self
     }
     /// <p>The credential provider configurations for the payment connector. These configurations specify how the connector authenticates with the payment provider.</p>
+    /// <p>For an <code>AwsBilling</code> payment connector, omit this parameter or specify an empty list. The service uses the AWS Marketplace service-linked role in your account, which must exist before you create the connector, and you must have permission to call <code>iam:GetRole</code> on it.</p>
     pub fn get_credential_provider_configurations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CredentialsProviderConfiguration>> {
         &self.credential_provider_configurations
     }

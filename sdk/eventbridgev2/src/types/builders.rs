@@ -5,6 +5,8 @@ pub use crate::types::_storage_configuration::StorageConfigurationBuilder;
 
 pub use crate::types::_storage_configuration_output::StorageConfigurationOutputBuilder;
 
+pub use crate::types::_event_source_details::EventSourceDetailsBuilder;
+
 pub use crate::types::_invoke_configuration::InvokeConfigurationBuilder;
 
 pub use crate::types::_filter_configuration::FilterConfigurationBuilder;
@@ -21,6 +23,8 @@ pub use crate::types::_on_failure_configuration::OnFailureConfigurationBuilder;
 
 pub use crate::types::_log_configuration::LogConfigurationBuilder;
 
+pub use crate::types::_subscriber_details::SubscriberDetailsBuilder;
+
 pub use crate::types::_deduplication_configuration::DeduplicationConfigurationBuilder;
 
 pub use crate::types::_schema_registry_configuration::SchemaRegistryConfigurationBuilder;
@@ -30,6 +34,10 @@ pub use crate::types::_update_invoke_configuration::UpdateInvokeConfigurationBui
 pub use crate::types::_aws_service_events_source_configuration::AwsServiceEventsSourceConfigurationBuilder;
 
 pub use crate::types::_partner_events_source_configuration::PartnerEventsSourceConfigurationBuilder;
+
+pub use crate::types::_webhook_events_source_configuration::WebhookEventsSourceConfigurationBuilder;
+
+pub use crate::types::_webhook_details::WebhookDetailsBuilder;
 
 pub use crate::types::_lambda_parameters::LambdaParametersBuilder;
 
@@ -47,7 +55,11 @@ pub use crate::types::_universal_target_parameters::UniversalTargetParametersBui
 
 pub use crate::types::_event_bus_v2_parameters::EventBusV2ParametersBuilder;
 
+pub use crate::types::_msk_parameters::MskParametersBuilder;
+
 pub use crate::types::_jsonata_configuration::JsonataConfigurationBuilder;
+
+pub use crate::types::_msk_details::MskDetailsBuilder;
 
 pub use crate::types::_event_bus_summary::EventBusSummaryBuilder;
 
@@ -67,6 +79,8 @@ pub use crate::types::_confluent_public_registry_configuration::ConfluentPublicR
 
 pub use crate::types::_put_raw_events_result_entry::PutRawEventsResultEntryBuilder;
 
+pub use crate::types::_webhook_deduplication_configuration::WebhookDeduplicationConfigurationBuilder;
+
 pub use crate::types::_event_bus_v2_system_metadata::EventBusV2SystemMetadataBuilder;
 
 pub use crate::types::_filter::FilterBuilder;
@@ -75,6 +89,14 @@ pub use crate::types::_put_events_system_metadata::PutEventsSystemMetadataBuilde
 
 pub use crate::types::_put_raw_events_system_metadata::PutRawEventsSystemMetadataBuilder;
 
+pub use crate::types::_webhook_static_token_auth_configuration::WebhookStaticTokenAuthConfigurationBuilder;
+
+pub use crate::types::_webhook_basic_http_auth_configuration::WebhookBasicHttpAuthConfigurationBuilder;
+
+pub use crate::types::_webhook_hmac_auth_configuration::WebhookHmacAuthConfigurationBuilder;
+
 pub use crate::types::_sqs_message_attribute_value::SqsMessageAttributeValueBuilder;
 
 pub use crate::types::_sns_message_attribute_value::SnsMessageAttributeValueBuilder;
+
+pub use crate::types::_msk_header::MskHeaderBuilder;

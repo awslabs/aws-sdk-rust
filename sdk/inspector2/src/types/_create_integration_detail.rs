@@ -4,6 +4,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum CreateIntegrationDetail {
+    /// <p>Details specific to creating an integration with a GitHub Enterprise Server instance.</p>
+    GithubEnterprise(crate::types::CreateGitHubEnterpriseIntegrationDetail),
     /// <p>Details specific to creating an integration with a self-managed GitLab instance.</p>
     GitlabSelfManaged(crate::types::CreateGitLabSelfManagedIntegrationDetail),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
@@ -17,7 +19,19 @@ pub enum CreateIntegrationDetail {
     Unknown,
 }
 impl CreateIntegrationDetail {
-    #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into [`GithubEnterprise`](crate::types::CreateIntegrationDetail::GithubEnterprise), extracting the inner [`CreateGitHubEnterpriseIntegrationDetail`](crate::types::CreateGitHubEnterpriseIntegrationDetail).
+    /// Returns `Err(&Self)` if it can't be converted.
+    pub fn as_github_enterprise(&self) -> ::std::result::Result<&crate::types::CreateGitHubEnterpriseIntegrationDetail, &Self> {
+        if let CreateIntegrationDetail::GithubEnterprise(val) = &self {
+            ::std::result::Result::Ok(val)
+        } else {
+            ::std::result::Result::Err(self)
+        }
+    }
+    /// Returns true if this is a [`GithubEnterprise`](crate::types::CreateIntegrationDetail::GithubEnterprise).
+    pub fn is_github_enterprise(&self) -> bool {
+        self.as_github_enterprise().is_ok()
+    }
     /// Tries to convert the enum instance into [`GitlabSelfManaged`](crate::types::CreateIntegrationDetail::GitlabSelfManaged), extracting the inner [`CreateGitLabSelfManagedIntegrationDetail`](crate::types::CreateGitLabSelfManagedIntegrationDetail).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_gitlab_self_managed(&self) -> ::std::result::Result<&crate::types::CreateGitLabSelfManagedIntegrationDetail, &Self> {

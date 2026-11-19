@@ -58,6 +58,10 @@ impl InboundExternalLinkActiveFluentBuilder {
             &crate::operation::get_inbound_external_link::GetInboundExternalLinkOutput,
             &crate::operation::get_inbound_external_link::GetInboundExternalLinkError,
         >| {
+            // Matches: {"output":{"path":"status","expected":"CREATE_FAILED","comparator":"stringEquals"}}
+            if crate::waiters::matchers::match_get_inbound_external_link_00d7b810548bbcb91(result) {
+                return ::aws_smithy_runtime::client::waiters::AcceptorState::Failure;
+            }
             // Matches: {"output":{"path":"status","expected":"ACTIVE","comparator":"stringEquals"}}
             if crate::waiters::matchers::match_get_inbound_external_link_a0b9c099115634691(result) {
                 return ::aws_smithy_runtime::client::waiters::AcceptorState::Success;

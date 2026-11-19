@@ -728,4 +728,30 @@ impl UpdateUserPoolClientFluentBuilder {
     pub fn get_refresh_token_rotation(&self) -> &::std::option::Option<crate::types::RefreshTokenRotationType> {
         self.inner.get_refresh_token_rotation()
     }
+    /// <p>Specifies whether Amazon Cognito stores and manages this app client's secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon Web Services Secrets Manager</a> instead of returning the plaintext value. When you set this parameter to <code>true</code>, the response returns <code>ClientSecretArn</code> instead of <code>ClientSecret</code>. By default, Amazon Cognito rotates the secret every 7 days. You can change the rotation schedule in Secrets Manager.</p>
+    /// <p>Set to <code>true</code> to migrate an existing generated secret into Secrets Manager, or <code>false</code> to move it back to Amazon Cognito and delete the Secrets Manager secret. If you omit this parameter, Amazon Cognito doesn't change how it manages the existing secret. Applies only to app clients that already have a generated secret.</p>
+    /// <p>When you set it to <code>true</code>, Amazon Cognito starts managing the app client's secret in Secrets Manager and rotates it right away. If the app client has two secrets, that first rotation deletes the older one.</p><important>
+    /// <p>When you set this parameter to <code>false</code>, Amazon Cognito immediately and permanently deletes the Secrets Manager secret. There's no recovery window. Applications that read the secret from Secrets Manager can no longer get it.</p>
+    /// </important>
+    pub fn publish_secrets_in_aws_secrets_manager(mut self, input: bool) -> Self {
+        self.inner = self.inner.publish_secrets_in_aws_secrets_manager(input);
+        self
+    }
+    /// <p>Specifies whether Amazon Cognito stores and manages this app client's secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon Web Services Secrets Manager</a> instead of returning the plaintext value. When you set this parameter to <code>true</code>, the response returns <code>ClientSecretArn</code> instead of <code>ClientSecret</code>. By default, Amazon Cognito rotates the secret every 7 days. You can change the rotation schedule in Secrets Manager.</p>
+    /// <p>Set to <code>true</code> to migrate an existing generated secret into Secrets Manager, or <code>false</code> to move it back to Amazon Cognito and delete the Secrets Manager secret. If you omit this parameter, Amazon Cognito doesn't change how it manages the existing secret. Applies only to app clients that already have a generated secret.</p>
+    /// <p>When you set it to <code>true</code>, Amazon Cognito starts managing the app client's secret in Secrets Manager and rotates it right away. If the app client has two secrets, that first rotation deletes the older one.</p><important>
+    /// <p>When you set this parameter to <code>false</code>, Amazon Cognito immediately and permanently deletes the Secrets Manager secret. There's no recovery window. Applications that read the secret from Secrets Manager can no longer get it.</p>
+    /// </important>
+    pub fn set_publish_secrets_in_aws_secrets_manager(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_publish_secrets_in_aws_secrets_manager(input);
+        self
+    }
+    /// <p>Specifies whether Amazon Cognito stores and manages this app client's secret in <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html">Amazon Web Services Secrets Manager</a> instead of returning the plaintext value. When you set this parameter to <code>true</code>, the response returns <code>ClientSecretArn</code> instead of <code>ClientSecret</code>. By default, Amazon Cognito rotates the secret every 7 days. You can change the rotation schedule in Secrets Manager.</p>
+    /// <p>Set to <code>true</code> to migrate an existing generated secret into Secrets Manager, or <code>false</code> to move it back to Amazon Cognito and delete the Secrets Manager secret. If you omit this parameter, Amazon Cognito doesn't change how it manages the existing secret. Applies only to app clients that already have a generated secret.</p>
+    /// <p>When you set it to <code>true</code>, Amazon Cognito starts managing the app client's secret in Secrets Manager and rotates it right away. If the app client has two secrets, that first rotation deletes the older one.</p><important>
+    /// <p>When you set this parameter to <code>false</code>, Amazon Cognito immediately and permanently deletes the Secrets Manager secret. There's no recovery window. Applications that read the secret from Secrets Manager can no longer get it.</p>
+    /// </important>
+    pub fn get_publish_secrets_in_aws_secrets_manager(&self) -> &::std::option::Option<bool> {
+        self.inner.get_publish_secrets_in_aws_secrets_manager()
+    }
 }

@@ -99,6 +99,8 @@ pub use crate::types::_forward_action_config::ForwardActionConfig;
 
 pub use crate::types::_jwt_validation_action_config::JwtValidationActionConfig;
 
+pub use crate::types::_client_certificate_identity_filter::ClientCertificateIdentityFilter;
+
 pub use crate::types::_load_balancer_state::LoadBalancerState;
 
 pub use crate::types::_host_header_condition_config::HostHeaderConditionConfig;
@@ -136,6 +138,12 @@ pub use crate::types::_authenticate_cognito_action_conditional_behavior_enum::Au
 pub use crate::types::_redirect_action_status_code_enum::RedirectActionStatusCodeEnum;
 
 pub use crate::types::_target_group_stickiness_config::TargetGroupStickinessConfig;
+
+pub use crate::types::_client_certificate_identity_filter_field::ClientCertificateIdentityFilterField;
+
+pub use crate::types::_client_certificate_identity_filter_action::ClientCertificateIdentityFilterAction;
+
+pub use crate::types::_client_certificate_identity_filter_match_type::ClientCertificateIdentityFilterMatchType;
 
 pub use crate::types::_load_balancer_state_enum::LoadBalancerStateEnum;
 
@@ -198,6 +206,14 @@ mod _capacity_reservation_status;
 mod _certificate;
 
 mod _cipher;
+
+mod _client_certificate_identity_filter;
+
+mod _client_certificate_identity_filter_action;
+
+mod _client_certificate_identity_filter_field;
+
+mod _client_certificate_identity_filter_match_type;
 
 mod _describe_target_health_input_include_enum;
 

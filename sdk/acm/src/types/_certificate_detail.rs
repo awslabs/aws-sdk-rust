@@ -58,7 +58,7 @@ pub struct CertificateDetail {
     pub certificate_authority_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether the certificate is eligible for renewal. At this time, only exported private certificates can be renewed with the <code>RenewCertificate</code> command.</p>
     pub renewal_eligibility: ::std::option::Option<crate::types::RenewalEligibility>,
-    /// <p>Contains the certificate options. Certificate transparency logging opt-out is no longer available. All public certificates are recorded in a certificate transparency log.</p>
+    /// <p>Contains the certificate options. Certificate transparency logging opt-out is no longer available. ACM records all public certificates other than Amazon N2 certificates in a certificate transparency log.</p>
     pub options: ::std::option::Option<crate::types::CertificateOptions>,
     /// <p>Contains information about the most recent update to the certificate. This field exists only when the certificate type is <code>AMAZON_ISSUED</code> and a certificate update has been requested.</p>
     pub update_summary: ::std::option::Option<crate::types::UpdateSummary>,
@@ -68,6 +68,10 @@ pub struct CertificateDetail {
     pub acme_endpoint_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ACME account identifier associated with the certificate.</p>
     pub acme_account_id: ::std::option::Option<::std::string::String>,
+    /// <p>The Extended Key Usage profile of the certificate. This value exists only for Amazon N2 certificates. If <code>CertificateUsage</code> was omitted from the request, this value is <code>CLIENT_AND_SERVER_AUTH</code>.</p>
+    pub certificate_usage: ::std::option::Option<crate::types::CertificateUsage>,
+    /// <p>The root hierarchy from which the certificate was issued. This value exists only for Amazon N2 certificates, which have a <code>Type</code> of <code>AMAZON_ISSUED</code>.</p>
+    pub root_hierarchy_type: ::std::option::Option<crate::types::RootHierarchyType>,
 }
 impl CertificateDetail {
     /// <p>The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -186,7 +190,7 @@ impl CertificateDetail {
     pub fn renewal_eligibility(&self) -> ::std::option::Option<&crate::types::RenewalEligibility> {
         self.renewal_eligibility.as_ref()
     }
-    /// <p>Contains the certificate options. Certificate transparency logging opt-out is no longer available. All public certificates are recorded in a certificate transparency log.</p>
+    /// <p>Contains the certificate options. Certificate transparency logging opt-out is no longer available. ACM records all public certificates other than Amazon N2 certificates in a certificate transparency log.</p>
     pub fn options(&self) -> ::std::option::Option<&crate::types::CertificateOptions> {
         self.options.as_ref()
     }
@@ -205,6 +209,14 @@ impl CertificateDetail {
     /// <p>The ACME account identifier associated with the certificate.</p>
     pub fn acme_account_id(&self) -> ::std::option::Option<&str> {
         self.acme_account_id.as_deref()
+    }
+    /// <p>The Extended Key Usage profile of the certificate. This value exists only for Amazon N2 certificates. If <code>CertificateUsage</code> was omitted from the request, this value is <code>CLIENT_AND_SERVER_AUTH</code>.</p>
+    pub fn certificate_usage(&self) -> ::std::option::Option<&crate::types::CertificateUsage> {
+        self.certificate_usage.as_ref()
+    }
+    /// <p>The root hierarchy from which the certificate was issued. This value exists only for Amazon N2 certificates, which have a <code>Type</code> of <code>AMAZON_ISSUED</code>.</p>
+    pub fn root_hierarchy_type(&self) -> ::std::option::Option<&crate::types::RootHierarchyType> {
+        self.root_hierarchy_type.as_ref()
     }
 }
 impl CertificateDetail {
@@ -249,6 +261,8 @@ pub struct CertificateDetailBuilder {
     pub(crate) certificate_key_pair_origin: ::std::option::Option<crate::types::CertificateKeyPairOrigin>,
     pub(crate) acme_endpoint_arn: ::std::option::Option<::std::string::String>,
     pub(crate) acme_account_id: ::std::option::Option<::std::string::String>,
+    pub(crate) certificate_usage: ::std::option::Option<crate::types::CertificateUsage>,
+    pub(crate) root_hierarchy_type: ::std::option::Option<crate::types::RootHierarchyType>,
 }
 impl CertificateDetailBuilder {
     /// <p>The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
@@ -651,17 +665,17 @@ impl CertificateDetailBuilder {
     pub fn get_renewal_eligibility(&self) -> &::std::option::Option<crate::types::RenewalEligibility> {
         &self.renewal_eligibility
     }
-    /// <p>Contains the certificate options. Certificate transparency logging opt-out is no longer available. All public certificates are recorded in a certificate transparency log.</p>
+    /// <p>Contains the certificate options. Certificate transparency logging opt-out is no longer available. ACM records all public certificates other than Amazon N2 certificates in a certificate transparency log.</p>
     pub fn options(mut self, input: crate::types::CertificateOptions) -> Self {
         self.options = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Contains the certificate options. Certificate transparency logging opt-out is no longer available. All public certificates are recorded in a certificate transparency log.</p>
+    /// <p>Contains the certificate options. Certificate transparency logging opt-out is no longer available. ACM records all public certificates other than Amazon N2 certificates in a certificate transparency log.</p>
     pub fn set_options(mut self, input: ::std::option::Option<crate::types::CertificateOptions>) -> Self {
         self.options = input;
         self
     }
-    /// <p>Contains the certificate options. Certificate transparency logging opt-out is no longer available. All public certificates are recorded in a certificate transparency log.</p>
+    /// <p>Contains the certificate options. Certificate transparency logging opt-out is no longer available. ACM records all public certificates other than Amazon N2 certificates in a certificate transparency log.</p>
     pub fn get_options(&self) -> &::std::option::Option<crate::types::CertificateOptions> {
         &self.options
     }
@@ -721,6 +735,34 @@ impl CertificateDetailBuilder {
     pub fn get_acme_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.acme_account_id
     }
+    /// <p>The Extended Key Usage profile of the certificate. This value exists only for Amazon N2 certificates. If <code>CertificateUsage</code> was omitted from the request, this value is <code>CLIENT_AND_SERVER_AUTH</code>.</p>
+    pub fn certificate_usage(mut self, input: crate::types::CertificateUsage) -> Self {
+        self.certificate_usage = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The Extended Key Usage profile of the certificate. This value exists only for Amazon N2 certificates. If <code>CertificateUsage</code> was omitted from the request, this value is <code>CLIENT_AND_SERVER_AUTH</code>.</p>
+    pub fn set_certificate_usage(mut self, input: ::std::option::Option<crate::types::CertificateUsage>) -> Self {
+        self.certificate_usage = input;
+        self
+    }
+    /// <p>The Extended Key Usage profile of the certificate. This value exists only for Amazon N2 certificates. If <code>CertificateUsage</code> was omitted from the request, this value is <code>CLIENT_AND_SERVER_AUTH</code>.</p>
+    pub fn get_certificate_usage(&self) -> &::std::option::Option<crate::types::CertificateUsage> {
+        &self.certificate_usage
+    }
+    /// <p>The root hierarchy from which the certificate was issued. This value exists only for Amazon N2 certificates, which have a <code>Type</code> of <code>AMAZON_ISSUED</code>.</p>
+    pub fn root_hierarchy_type(mut self, input: crate::types::RootHierarchyType) -> Self {
+        self.root_hierarchy_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The root hierarchy from which the certificate was issued. This value exists only for Amazon N2 certificates, which have a <code>Type</code> of <code>AMAZON_ISSUED</code>.</p>
+    pub fn set_root_hierarchy_type(mut self, input: ::std::option::Option<crate::types::RootHierarchyType>) -> Self {
+        self.root_hierarchy_type = input;
+        self
+    }
+    /// <p>The root hierarchy from which the certificate was issued. This value exists only for Amazon N2 certificates, which have a <code>Type</code> of <code>AMAZON_ISSUED</code>.</p>
+    pub fn get_root_hierarchy_type(&self) -> &::std::option::Option<crate::types::RootHierarchyType> {
+        &self.root_hierarchy_type
+    }
     /// Consumes the builder and constructs a [`CertificateDetail`](crate::types::CertificateDetail).
     pub fn build(self) -> crate::types::CertificateDetail {
         crate::types::CertificateDetail {
@@ -755,6 +797,8 @@ impl CertificateDetailBuilder {
             certificate_key_pair_origin: self.certificate_key_pair_origin,
             acme_endpoint_arn: self.acme_endpoint_arn,
             acme_account_id: self.acme_account_id,
+            certificate_usage: self.certificate_usage,
+            root_hierarchy_type: self.root_hierarchy_type,
         }
     }
 }

@@ -30,6 +30,26 @@ pub fn ser_update_saml_provider_input_input_input(
     if let Some(var_10) = &input.remove_private_key {
         scope_9.string(var_10);
     }
+    #[allow(unused_mut)]
+    let mut scope_11 = writer.prefix("ContextProvider");
+    if let Some(var_12) = &input.context_provider {
+        crate::protocol_serde::shape_context_provider::ser_context_provider(scope_11, var_12)?;
+    }
+    #[allow(unused_mut)]
+    let mut scope_13 = writer.prefix("IdentityCenterInstanceArn");
+    if let Some(var_14) = &input.identity_center_instance_arn {
+        scope_13.string(var_14);
+    }
+    #[allow(unused_mut)]
+    let mut scope_15 = writer.prefix("RemoveContextProvider");
+    if let Some(var_16) = &input.remove_context_provider {
+        scope_15.boolean(*var_16);
+    }
+    #[allow(unused_mut)]
+    let mut scope_17 = writer.prefix("RemoveIdentityCenterInstance");
+    if let Some(var_18) = &input.remove_identity_center_instance {
+        scope_17.boolean(*var_18);
+    }
     writer.finish();
     Ok(::aws_smithy_types::body::SdkBody::from(out))
 }

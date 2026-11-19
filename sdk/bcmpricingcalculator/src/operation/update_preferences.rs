@@ -278,7 +278,7 @@ pub enum UpdatePreferencesError {
     DataUnavailableException(crate::types::error::DataUnavailableException),
     /// <p>The request would cause you to exceed your service quota.</p>
     ServiceQuotaExceededException(crate::types::error::ServiceQuotaExceededException),
-    /// <p>You do not have sufficient access to perform this action.</p>
+    /// <p>The request is denied because you don't have sufficient permissions to perform this operation. Verify that you have the required permissions and try again.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>An internal error has occurred. Retry your request, but if the problem persists, contact Amazon Web Services support.</p>
     InternalServerException(crate::types::error::InternalServerException),

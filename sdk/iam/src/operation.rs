@@ -505,6 +505,9 @@ pub mod update_group;
 /// Types for the `UpdateLoginProfile` operation.
 pub mod update_login_profile;
 
+/// Types for the `UpdateOpenIDConnectProvider` operation.
+pub mod update_open_id_connect_provider;
+
 /// Types for the `UpdateOpenIDConnectProviderThumbprint` operation.
 pub mod update_open_id_connect_provider_thumbprint;
 

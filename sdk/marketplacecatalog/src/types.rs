@@ -35,6 +35,10 @@ pub use crate::types::_ami_security_summary::AmiSecuritySummary;
 
 pub use crate::types::_container_security_summary::ContainerSecuritySummary;
 
+pub use crate::types::_listing_quality_summary::ListingQualitySummary;
+
+pub use crate::types::_listing_recommendations_summary::ListingRecommendationsSummary;
+
 pub use crate::types::_control_assessment::ControlAssessment;
 
 pub use crate::types::_change_summary::ChangeSummary;
@@ -95,11 +99,19 @@ pub use crate::types::_entity_summary::EntitySummary;
 
 pub use crate::types::_tag::Tag;
 
+pub use crate::types::_control_input::ControlInput;
+
 pub use crate::types::_change::Change;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
 
+pub use crate::types::_listing_quality_tier::ListingQualityTier;
+
 pub use crate::types::_control_assessment_result::ControlAssessmentResult;
+
+pub use crate::types::_verification_source::VerificationSource;
+
+pub use crate::types::_control_summary::ControlSummary;
 
 pub use crate::types::_entity::Entity;
 
@@ -134,6 +146,8 @@ pub use crate::types::_offer_name_filter::OfferNameFilter;
 pub use crate::types::_offer_product_id_filter::OfferProductIdFilter;
 
 pub use crate::types::_offer_resale_authorization_id_filter::OfferResaleAuthorizationIdFilter;
+
+pub use crate::types::_offer_subsidiary_authorization_id_filter::OfferSubsidiaryAuthorizationIdFilter;
 
 pub use crate::types::_offer_release_date_filter::OfferReleaseDateFilter;
 
@@ -281,6 +295,8 @@ pub use crate::types::_subsidiary_authorization_summary::SubsidiaryAuthorization
 
 pub use crate::types::_control_error::ControlError;
 
+pub use crate::types::_listing_recommendations::ListingRecommendations;
+
 pub use crate::types::_error_detail::ErrorDetail;
 
 pub use crate::types::_data_product_last_modified_date_filter_date_range::DataProductLastModifiedDateFilterDateRange;
@@ -337,11 +353,59 @@ pub use crate::types::_offer_set_state_string::OfferSetStateString;
 
 pub use crate::types::_express_private_offer_configuration_state_string::ExpressPrivateOfferConfigurationStateString;
 
+pub use crate::types::_product_content_recommendations::ProductContentRecommendations;
+
+pub use crate::types::_solution_content_recommendations::SolutionContentRecommendations;
+
+pub use crate::types::_feature_recommendations::FeatureRecommendations;
+
 pub use crate::types::_offer_targeting_string::OfferTargetingString;
 
 pub use crate::types::_subsidiary_authorization_status_string::SubsidiaryAuthorizationStatusString;
 
 pub use crate::types::_error_scope::ErrorScope;
+
+pub use crate::types::_content_recommendation::ContentRecommendation;
+
+pub use crate::types::_content_recommendation_status::ContentRecommendationStatus;
+
+pub use crate::types::_content_alternatives::ContentAlternatives;
+
+pub use crate::types::_recommendation_citation::RecommendationCitation;
+
+pub use crate::types::_feature_recommendation::FeatureRecommendation;
+
+pub use crate::types::_follow_up_question::FollowUpQuestion;
+
+pub use crate::types::_listing_finding::ListingFinding;
+
+pub use crate::types::_recommended_feature_id::RecommendedFeatureId;
+
+pub use crate::types::_recommendation_severity::RecommendationSeverity;
+
+pub use crate::types::_recommended_feature_status::RecommendedFeatureStatus;
+
+pub use crate::types::_text_alternative::TextAlternative;
+
+pub use crate::types::_text_list_alternative::TextListAlternative;
+
+pub use crate::types::_additional_resources_alternative::AdditionalResourcesAlternative;
+
+pub use crate::types::_use_cases_alternative::UseCasesAlternative;
+
+pub use crate::types::_case_studies_alternative::CaseStudiesAlternative;
+
+pub use crate::types::_listing_finding_status::ListingFindingStatus;
+
+pub use crate::types::_additional_resource::AdditionalResource;
+
+pub use crate::types::_listing_use_case::ListingUseCase;
+
+pub use crate::types::_listing_case_study::ListingCaseStudy;
+
+mod _additional_resource;
+
+mod _additional_resources_alternative;
 
 mod _ami_product_entity_id_filter;
 
@@ -377,6 +441,8 @@ mod _assessment_target_summary;
 
 mod _batch_describe_error_detail;
 
+mod _case_studies_alternative;
+
 mod _change;
 
 mod _change_set_summary_list_item;
@@ -409,11 +475,21 @@ mod _container_security_filters;
 
 mod _container_security_summary;
 
+mod _content_alternatives;
+
+mod _content_recommendation;
+
+mod _content_recommendation_status;
+
 mod _control_assessment;
 
 mod _control_assessment_result;
 
 mod _control_error;
+
+mod _control_input;
+
+mod _control_summary;
 
 mod _data_product_entity_id_filter;
 
@@ -469,13 +545,35 @@ mod _express_private_offer_configuration_summary;
 
 mod _failure_code;
 
+mod _feature_recommendation;
+
+mod _feature_recommendations;
+
 mod _filter;
+
+mod _follow_up_question;
 
 mod _framework_filters;
 
 mod _framework_summary;
 
 mod _intent;
+
+mod _listing_case_study;
+
+mod _listing_finding;
+
+mod _listing_finding_status;
+
+mod _listing_quality_summary;
+
+mod _listing_quality_tier;
+
+mod _listing_recommendations;
+
+mod _listing_recommendations_summary;
+
+mod _listing_use_case;
 
 mod _machine_learning_product_entity_id_filter;
 
@@ -563,6 +661,8 @@ mod _offer_state_filter;
 
 mod _offer_state_string;
 
+mod _offer_subsidiary_authorization_id_filter;
+
 mod _offer_summary;
 
 mod _offer_target_agreement_id_filter;
@@ -576,6 +676,16 @@ mod _offer_targeting_filter;
 mod _offer_targeting_string;
 
 mod _ownership_type;
+
+mod _product_content_recommendations;
+
+mod _recommendation_citation;
+
+mod _recommendation_severity;
+
+mod _recommended_feature_id;
+
+mod _recommended_feature_status;
 
 mod _resale_authorization_availability_end_date_filter;
 
@@ -647,6 +757,8 @@ mod _saa_s_product_visibility_filter;
 
 mod _saa_s_product_visibility_string;
 
+mod _solution_content_recommendations;
+
 mod _sort;
 
 mod _sort_order;
@@ -683,9 +795,17 @@ mod _subsidiary_authorization_summary;
 
 mod _tag;
 
+mod _text_alternative;
+
+mod _text_list_alternative;
+
+mod _use_cases_alternative;
+
 mod _validation_exception_field;
 
 mod _validation_exception_reason;
+
+mod _verification_source;
 
 /// Builders
 pub mod builders;

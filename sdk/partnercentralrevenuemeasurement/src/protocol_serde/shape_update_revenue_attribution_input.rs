@@ -19,6 +19,15 @@ pub fn ser_update_revenue_attribution_input_input(
     if let Some(var_5) = &input.revision {
         encoder.str("Revision").str(var_5.as_str());
     }
+    if let Some(var_6) = &input.context {
+        encoder.str("Context");
+        encoder.map((*var_6).len());
+        for (key_7, value_8) in var_6 {
+            {
+                encoder.str(key_7.as_str()).str(value_8.as_str());
+            }
+        }
+    }
     encoder.end();
     Ok(())
 }

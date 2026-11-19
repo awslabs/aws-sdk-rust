@@ -22,7 +22,7 @@ impl crate::operation::list_subscribers::builders::ListSubscribersInputBuilder {
 }
 /// Fluent builder constructing a request to `ListSubscribers`.
 ///
-/// Lists subscribers as summaries. By default the list spans the subscribers the caller account owns across all buses; set EventBusArn to scope it to one bus. Use DescribeSubscriber to retrieve full configuration.
+/// <p>Lists subscribers as summaries. By default the list spans the subscribers the caller account owns across all buses; set EventBusArn to scope it to one bus. Use DescribeSubscriber to retrieve full configuration.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListSubscribersFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,59 +114,59 @@ impl ListSubscribersFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_subscribers::paginator::ListSubscribersPaginator {
         crate::operation::list_subscribers::paginator::ListSubscribersPaginator::new(self.handle, self.inner)
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn event_bus_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.event_bus_arn(input.into());
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn set_event_bus_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_event_bus_arn(input);
         self
     }
-    /// The Amazon Resource Name (ARN) that uniquely identifies an event bus.
+    /// <p>The Amazon Resource Name (ARN) that uniquely identifies an event bus.</p>
     pub fn get_event_bus_arn(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_event_bus_arn()
     }
-    /// Name of a subscriber. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'.
+    /// <p>Name of a subscriber. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'.</p>
     pub fn name_prefix(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name_prefix(input.into());
         self
     }
-    /// Name of a subscriber. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'.
+    /// <p>Name of a subscriber. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'.</p>
     pub fn set_name_prefix(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_name_prefix(input);
         self
     }
-    /// Name of a subscriber. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'.
+    /// <p>Name of a subscriber. The first character must be alphanumeric; the remaining characters may also include '.', '-', and '_'.</p>
     pub fn get_name_prefix(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name_prefix()
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.
+    /// <p>Opaque pagination token returned by a List operation. Pass it back in the next request to retrieve the next page of results.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
-    /// Maximum number of results to return in one page of a List operation.
+    /// <p>Maximum number of results to return in one page of a List operation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// Maximum number of results to return in one page of a List operation.
+    /// <p>Maximum number of results to return in one page of a List operation.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// Maximum number of results to return in one page of a List operation.
+    /// <p>Maximum number of results to return in one page of a List operation.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
