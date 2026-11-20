@@ -170,8 +170,8 @@ pub(crate) fn de_disassociate_glossary_terms(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "AssetIdentifier" => {
-                    builder = builder.set_asset_identifier(
+                "AssetId" => {
+                    builder = builder.set_asset_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
@@ -184,19 +184,17 @@ pub(crate) fn de_disassociate_glossary_terms(
                             .transpose()?,
                     );
                 }
-                "ItemIdentifier" => {
-                    builder = builder.set_item_identifier(
+                "ItemId" => {
+                    builder = builder.set_item_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
                     );
                 }
                 "GlossaryTerms" => {
-                    builder = builder.set_glossary_terms(crate::protocol_serde::shape_glossary_term_id_list::de_glossary_term_id_list(
-                        tokens,
-                        _value,
-                        depth + 1,
-                    )?);
+                    builder = builder.set_glossary_terms(
+                        crate::protocol_serde::shape_glossary_term_id_output_list::de_glossary_term_id_output_list(tokens, _value, depth + 1)?,
+                    );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

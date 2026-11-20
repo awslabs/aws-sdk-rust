@@ -169,6 +169,8 @@ pub mod customize;
 
 mod delete_automation_rule;
 
+mod delete_organization_enrollment_configuration;
+
 mod disassociate_accounts;
 
 mod get_automation_event;
@@ -191,11 +193,17 @@ mod list_automation_rule_preview_summaries;
 
 mod list_automation_rules;
 
+mod list_organization_enrollment_configurations;
+
+mod list_organizational_units;
+
 mod list_recommended_action_summaries;
 
 mod list_recommended_actions;
 
 mod list_tags_for_resource;
+
+mod put_organization_enrollment_configuration;
 
 mod rollback_automation_event;
 

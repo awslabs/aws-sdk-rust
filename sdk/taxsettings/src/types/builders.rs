@@ -89,6 +89,12 @@ pub use crate::types::_germany_additional_info::GermanyAdditionalInfoBuilder;
 
 pub use crate::types::_mexico_additional_info::MexicoAdditionalInfoBuilder;
 
+pub use crate::types::_united_arab_emirates_additional_info::UnitedArabEmiratesAdditionalInfoBuilder;
+
+pub use crate::types::_norway_additional_info::NorwayAdditionalInfoBuilder;
+
+pub use crate::types::_new_zealand_additional_info::NewZealandAdditionalInfoBuilder;
+
 pub use crate::types::_brazil_additional_info::BrazilAdditionalInfoBuilder;
 
 pub use crate::types::_india_additional_info::IndiaAdditionalInfoBuilder;

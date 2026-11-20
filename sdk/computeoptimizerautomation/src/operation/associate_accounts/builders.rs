@@ -22,7 +22,8 @@ impl crate::operation::associate_accounts::builders::AssociateAccountsInputBuild
 }
 /// Fluent builder constructing a request to `AssociateAccounts`.
 ///
-/// <p>Associates one or more member accounts with your organization's management account, enabling centralized implementation of optimization actions across those accounts. Once associated, the management account (or a delegated administrator) can apply recommended actions to the member account. When you associate a member account, its organization rule mode is automatically set to "Any allowed," which permits the management account to create Automation rules that automatically apply actions to that account. If the member account has not previously enabled the Automation feature, the association process automatically enables it.</p><note>
+/// <p>Associates one or more member accounts with your organization's management account, enabling centralized implementation of optimization actions across those accounts. Once associated, the management account (or a delegated administrator) can apply recommended actions to the member account. When you associate a member account, its organization rule mode is automatically set to "Any allowed," which permits the management account to create Automation rules that automatically apply actions to that account. If the member account has not previously enabled the Automation feature, the association process automatically enables it.</p>
+/// <p>Requests that include an account to which an organization enrollment configuration applies are rejected.</p><note>
 /// <p>Only the management account or a delegated administrator can perform this action.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -129,17 +130,17 @@ impl AssociateAccountsFluentBuilder {
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         self.inner.get_account_ids()
     }
-    /// <p>A unique identifier to ensure idempotency of the request. Valid for 24 hours after creation.</p>
+    /// <p>A unique identifier to ensure idempotency of the request. Valid for 30 minutes after creation.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
         self
     }
-    /// <p>A unique identifier to ensure idempotency of the request. Valid for 24 hours after creation.</p>
+    /// <p>A unique identifier to ensure idempotency of the request. Valid for 30 minutes after creation.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>A unique identifier to ensure idempotency of the request. Valid for 24 hours after creation.</p>
+    /// <p>A unique identifier to ensure idempotency of the request. Valid for 30 minutes after creation.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
     }

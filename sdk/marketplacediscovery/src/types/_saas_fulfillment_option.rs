@@ -12,14 +12,30 @@ pub struct SaasFulfillmentOption {
     pub fulfillment_option_display_name: ::std::string::String,
     /// <p>The URL of the seller's software registration landing page.</p>
     pub fulfillment_url: ::std::option::Option<::std::string::String>,
-    /// <p>Instructions on how to access and use this SaaS product.</p>
+    /// <p>Instructions on how you access and use this SaaS product.</p>
     pub usage_instructions: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the SaaS product became available for fulfillment.</p>
     pub available_from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The URL that a buyer uses to launch the seller's SaaS product. This URL is distinct from <code>fulfillmentUrl</code>, which is the seller's software registration landing page.</p>
+    /// <p>The URL that you use to launch the seller's SaaS product. This URL is distinct from <code>fulfillmentUrl</code>, which is the seller's software registration landing page.</p>
     pub launch_url: ::std::option::Option<::std::string::String>,
-    /// <p>Specifies whether the SaaS product supports quick-launch deployment.</p>
+    /// <p>Specifies whether the SaaS product supports Quick Launch deployment. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// DISABLED
+    /// </dt>
+    /// <dd>
+    /// <p>The product does not support Quick Launch.</p>
+    /// </dd>
+    /// <dt>
+    /// ENABLED
+    /// </dt>
+    /// <dd>
+    /// <p>The product supports Quick Launch.</p>
+    /// </dd>
+    /// </dl>
     pub quick_launch: crate::types::SaasQuickLaunchStatus,
+    /// <p>The AWS CloudFormation deployment templates available for this SaaS product. The list is empty when no deployment templates are available.</p>
+    pub deployment_templates: ::std::vec::Vec<crate::types::SaasDeploymentTemplate>,
 }
 impl SaasFulfillmentOption {
     /// <p>The unique identifier of the fulfillment option.</p>
@@ -40,7 +56,7 @@ impl SaasFulfillmentOption {
     pub fn fulfillment_url(&self) -> ::std::option::Option<&str> {
         self.fulfillment_url.as_deref()
     }
-    /// <p>Instructions on how to access and use this SaaS product.</p>
+    /// <p>Instructions on how you access and use this SaaS product.</p>
     pub fn usage_instructions(&self) -> ::std::option::Option<&str> {
         self.usage_instructions.as_deref()
     }
@@ -48,13 +64,32 @@ impl SaasFulfillmentOption {
     pub fn available_from_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.available_from_time.as_ref()
     }
-    /// <p>The URL that a buyer uses to launch the seller's SaaS product. This URL is distinct from <code>fulfillmentUrl</code>, which is the seller's software registration landing page.</p>
+    /// <p>The URL that you use to launch the seller's SaaS product. This URL is distinct from <code>fulfillmentUrl</code>, which is the seller's software registration landing page.</p>
     pub fn launch_url(&self) -> ::std::option::Option<&str> {
         self.launch_url.as_deref()
     }
-    /// <p>Specifies whether the SaaS product supports quick-launch deployment.</p>
+    /// <p>Specifies whether the SaaS product supports Quick Launch deployment. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// DISABLED
+    /// </dt>
+    /// <dd>
+    /// <p>The product does not support Quick Launch.</p>
+    /// </dd>
+    /// <dt>
+    /// ENABLED
+    /// </dt>
+    /// <dd>
+    /// <p>The product supports Quick Launch.</p>
+    /// </dd>
+    /// </dl>
     pub fn quick_launch(&self) -> &crate::types::SaasQuickLaunchStatus {
         &self.quick_launch
+    }
+    /// <p>The AWS CloudFormation deployment templates available for this SaaS product. The list is empty when no deployment templates are available.</p>
+    pub fn deployment_templates(&self) -> &[crate::types::SaasDeploymentTemplate] {
+        use std::ops::Deref;
+        self.deployment_templates.deref()
     }
 }
 impl SaasFulfillmentOption {
@@ -76,6 +111,7 @@ pub struct SaasFulfillmentOptionBuilder {
     pub(crate) available_from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) launch_url: ::std::option::Option<::std::string::String>,
     pub(crate) quick_launch: ::std::option::Option<crate::types::SaasQuickLaunchStatus>,
+    pub(crate) deployment_templates: ::std::option::Option<::std::vec::Vec<crate::types::SaasDeploymentTemplate>>,
 }
 impl SaasFulfillmentOptionBuilder {
     /// <p>The unique identifier of the fulfillment option.</p>
@@ -137,17 +173,17 @@ impl SaasFulfillmentOptionBuilder {
     pub fn get_fulfillment_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.fulfillment_url
     }
-    /// <p>Instructions on how to access and use this SaaS product.</p>
+    /// <p>Instructions on how you access and use this SaaS product.</p>
     pub fn usage_instructions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.usage_instructions = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Instructions on how to access and use this SaaS product.</p>
+    /// <p>Instructions on how you access and use this SaaS product.</p>
     pub fn set_usage_instructions(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.usage_instructions = input;
         self
     }
-    /// <p>Instructions on how to access and use this SaaS product.</p>
+    /// <p>Instructions on how you access and use this SaaS product.</p>
     pub fn get_usage_instructions(&self) -> &::std::option::Option<::std::string::String> {
         &self.usage_instructions
     }
@@ -165,34 +201,96 @@ impl SaasFulfillmentOptionBuilder {
     pub fn get_available_from_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.available_from_time
     }
-    /// <p>The URL that a buyer uses to launch the seller's SaaS product. This URL is distinct from <code>fulfillmentUrl</code>, which is the seller's software registration landing page.</p>
+    /// <p>The URL that you use to launch the seller's SaaS product. This URL is distinct from <code>fulfillmentUrl</code>, which is the seller's software registration landing page.</p>
     pub fn launch_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.launch_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL that a buyer uses to launch the seller's SaaS product. This URL is distinct from <code>fulfillmentUrl</code>, which is the seller's software registration landing page.</p>
+    /// <p>The URL that you use to launch the seller's SaaS product. This URL is distinct from <code>fulfillmentUrl</code>, which is the seller's software registration landing page.</p>
     pub fn set_launch_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.launch_url = input;
         self
     }
-    /// <p>The URL that a buyer uses to launch the seller's SaaS product. This URL is distinct from <code>fulfillmentUrl</code>, which is the seller's software registration landing page.</p>
+    /// <p>The URL that you use to launch the seller's SaaS product. This URL is distinct from <code>fulfillmentUrl</code>, which is the seller's software registration landing page.</p>
     pub fn get_launch_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.launch_url
     }
-    /// <p>Specifies whether the SaaS product supports quick-launch deployment.</p>
+    /// <p>Specifies whether the SaaS product supports Quick Launch deployment. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// DISABLED
+    /// </dt>
+    /// <dd>
+    /// <p>The product does not support Quick Launch.</p>
+    /// </dd>
+    /// <dt>
+    /// ENABLED
+    /// </dt>
+    /// <dd>
+    /// <p>The product supports Quick Launch.</p>
+    /// </dd>
+    /// </dl>
     /// This field is required.
     pub fn quick_launch(mut self, input: crate::types::SaasQuickLaunchStatus) -> Self {
         self.quick_launch = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether the SaaS product supports quick-launch deployment.</p>
+    /// <p>Specifies whether the SaaS product supports Quick Launch deployment. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// DISABLED
+    /// </dt>
+    /// <dd>
+    /// <p>The product does not support Quick Launch.</p>
+    /// </dd>
+    /// <dt>
+    /// ENABLED
+    /// </dt>
+    /// <dd>
+    /// <p>The product supports Quick Launch.</p>
+    /// </dd>
+    /// </dl>
     pub fn set_quick_launch(mut self, input: ::std::option::Option<crate::types::SaasQuickLaunchStatus>) -> Self {
         self.quick_launch = input;
         self
     }
-    /// <p>Specifies whether the SaaS product supports quick-launch deployment.</p>
+    /// <p>Specifies whether the SaaS product supports Quick Launch deployment. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// DISABLED
+    /// </dt>
+    /// <dd>
+    /// <p>The product does not support Quick Launch.</p>
+    /// </dd>
+    /// <dt>
+    /// ENABLED
+    /// </dt>
+    /// <dd>
+    /// <p>The product supports Quick Launch.</p>
+    /// </dd>
+    /// </dl>
     pub fn get_quick_launch(&self) -> &::std::option::Option<crate::types::SaasQuickLaunchStatus> {
         &self.quick_launch
+    }
+    /// Appends an item to `deployment_templates`.
+    ///
+    /// To override the contents of this collection use [`set_deployment_templates`](Self::set_deployment_templates).
+    ///
+    /// <p>The AWS CloudFormation deployment templates available for this SaaS product. The list is empty when no deployment templates are available.</p>
+    pub fn deployment_templates(mut self, input: crate::types::SaasDeploymentTemplate) -> Self {
+        let mut v = self.deployment_templates.unwrap_or_default();
+        v.push(input);
+        self.deployment_templates = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The AWS CloudFormation deployment templates available for this SaaS product. The list is empty when no deployment templates are available.</p>
+    pub fn set_deployment_templates(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SaasDeploymentTemplate>>) -> Self {
+        self.deployment_templates = input;
+        self
+    }
+    /// <p>The AWS CloudFormation deployment templates available for this SaaS product. The list is empty when no deployment templates are available.</p>
+    pub fn get_deployment_templates(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SaasDeploymentTemplate>> {
+        &self.deployment_templates
     }
     /// Consumes the builder and constructs a [`SaasFulfillmentOption`](crate::types::SaasFulfillmentOption).
     /// This method will fail if any of the following fields are not set:
@@ -230,6 +328,7 @@ impl SaasFulfillmentOptionBuilder {
                     "quick_launch was not specified but it is required when building SaasFulfillmentOption",
                 )
             })?,
+            deployment_templates: self.deployment_templates.unwrap_or_default(),
         })
     }
 }

@@ -511,6 +511,8 @@ mod update_account_pool;
 
 mod update_asset_filter;
 
+mod update_asset_owner;
+
 mod update_connection;
 
 mod update_data_source;

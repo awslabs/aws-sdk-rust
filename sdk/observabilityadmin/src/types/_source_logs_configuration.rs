@@ -10,6 +10,10 @@ pub struct SourceLogsConfiguration {
     pub data_source_selection_criteria: ::std::option::Option<::std::string::String>,
     /// <p>A strategy determining whether to centralize source log groups that are encrypted with customer managed KMS keys (CMK). ALLOW will consider CMK encrypted source log groups for centralization while SKIP will skip CMK encrypted source log groups from centralization.</p>
     pub encrypted_log_group_strategy: crate::types::EncryptedLogGroupStrategy,
+    /// <p>Specifies whether this centralization rule centralizes log events with data protection applied. If you don't specify this setting, or you set it to <code>DISABLED</code>, the rule centralizes the original log events, including any sensitive data that a data protection policy on the source log group masks.</p>
+    /// <p>When you set this to <code>ENABLED</code>, the rule centralizes the same masked data that anyone in the source account without the <code>logs:Unmask</code> permission sees. The rule doesn't copy the original values to the destination, so you can't unmask them in the destination account. The rule centralizes log events from source log groups that don't have a data protection policy without changes.</p>
+    /// <p>The setting applies only to log events that the rule centralizes after you enable it. It doesn't change log events that the rule already centralized.</p>
+    pub centralize_with_data_protection: ::std::option::Option<crate::types::CentralizeWithDataProtection>,
 }
 impl SourceLogsConfiguration {
     /// <p>The selection criteria that specifies which source log groups to centralize. The selection criteria uses the same format as OAM link filters.</p>
@@ -24,6 +28,12 @@ impl SourceLogsConfiguration {
     /// <p>A strategy determining whether to centralize source log groups that are encrypted with customer managed KMS keys (CMK). ALLOW will consider CMK encrypted source log groups for centralization while SKIP will skip CMK encrypted source log groups from centralization.</p>
     pub fn encrypted_log_group_strategy(&self) -> &crate::types::EncryptedLogGroupStrategy {
         &self.encrypted_log_group_strategy
+    }
+    /// <p>Specifies whether this centralization rule centralizes log events with data protection applied. If you don't specify this setting, or you set it to <code>DISABLED</code>, the rule centralizes the original log events, including any sensitive data that a data protection policy on the source log group masks.</p>
+    /// <p>When you set this to <code>ENABLED</code>, the rule centralizes the same masked data that anyone in the source account without the <code>logs:Unmask</code> permission sees. The rule doesn't copy the original values to the destination, so you can't unmask them in the destination account. The rule centralizes log events from source log groups that don't have a data protection policy without changes.</p>
+    /// <p>The setting applies only to log events that the rule centralizes after you enable it. It doesn't change log events that the rule already centralized.</p>
+    pub fn centralize_with_data_protection(&self) -> ::std::option::Option<&crate::types::CentralizeWithDataProtection> {
+        self.centralize_with_data_protection.as_ref()
     }
 }
 impl SourceLogsConfiguration {
@@ -40,6 +50,7 @@ pub struct SourceLogsConfigurationBuilder {
     pub(crate) log_group_selection_criteria: ::std::option::Option<::std::string::String>,
     pub(crate) data_source_selection_criteria: ::std::option::Option<::std::string::String>,
     pub(crate) encrypted_log_group_strategy: ::std::option::Option<crate::types::EncryptedLogGroupStrategy>,
+    pub(crate) centralize_with_data_protection: ::std::option::Option<crate::types::CentralizeWithDataProtection>,
 }
 impl SourceLogsConfigurationBuilder {
     /// <p>The selection criteria that specifies which source log groups to centralize. The selection criteria uses the same format as OAM link filters.</p>
@@ -85,6 +96,26 @@ impl SourceLogsConfigurationBuilder {
     pub fn get_encrypted_log_group_strategy(&self) -> &::std::option::Option<crate::types::EncryptedLogGroupStrategy> {
         &self.encrypted_log_group_strategy
     }
+    /// <p>Specifies whether this centralization rule centralizes log events with data protection applied. If you don't specify this setting, or you set it to <code>DISABLED</code>, the rule centralizes the original log events, including any sensitive data that a data protection policy on the source log group masks.</p>
+    /// <p>When you set this to <code>ENABLED</code>, the rule centralizes the same masked data that anyone in the source account without the <code>logs:Unmask</code> permission sees. The rule doesn't copy the original values to the destination, so you can't unmask them in the destination account. The rule centralizes log events from source log groups that don't have a data protection policy without changes.</p>
+    /// <p>The setting applies only to log events that the rule centralizes after you enable it. It doesn't change log events that the rule already centralized.</p>
+    pub fn centralize_with_data_protection(mut self, input: crate::types::CentralizeWithDataProtection) -> Self {
+        self.centralize_with_data_protection = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether this centralization rule centralizes log events with data protection applied. If you don't specify this setting, or you set it to <code>DISABLED</code>, the rule centralizes the original log events, including any sensitive data that a data protection policy on the source log group masks.</p>
+    /// <p>When you set this to <code>ENABLED</code>, the rule centralizes the same masked data that anyone in the source account without the <code>logs:Unmask</code> permission sees. The rule doesn't copy the original values to the destination, so you can't unmask them in the destination account. The rule centralizes log events from source log groups that don't have a data protection policy without changes.</p>
+    /// <p>The setting applies only to log events that the rule centralizes after you enable it. It doesn't change log events that the rule already centralized.</p>
+    pub fn set_centralize_with_data_protection(mut self, input: ::std::option::Option<crate::types::CentralizeWithDataProtection>) -> Self {
+        self.centralize_with_data_protection = input;
+        self
+    }
+    /// <p>Specifies whether this centralization rule centralizes log events with data protection applied. If you don't specify this setting, or you set it to <code>DISABLED</code>, the rule centralizes the original log events, including any sensitive data that a data protection policy on the source log group masks.</p>
+    /// <p>When you set this to <code>ENABLED</code>, the rule centralizes the same masked data that anyone in the source account without the <code>logs:Unmask</code> permission sees. The rule doesn't copy the original values to the destination, so you can't unmask them in the destination account. The rule centralizes log events from source log groups that don't have a data protection policy without changes.</p>
+    /// <p>The setting applies only to log events that the rule centralizes after you enable it. It doesn't change log events that the rule already centralized.</p>
+    pub fn get_centralize_with_data_protection(&self) -> &::std::option::Option<crate::types::CentralizeWithDataProtection> {
+        &self.centralize_with_data_protection
+    }
     /// Consumes the builder and constructs a [`SourceLogsConfiguration`](crate::types::SourceLogsConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`encrypted_log_group_strategy`](crate::types::builders::SourceLogsConfigurationBuilder::encrypted_log_group_strategy)
@@ -98,6 +129,7 @@ impl SourceLogsConfigurationBuilder {
                     "encrypted_log_group_strategy was not specified but it is required when building SourceLogsConfiguration",
                 )
             })?,
+            centralize_with_data_protection: self.centralize_with_data_protection,
         })
     }
 }

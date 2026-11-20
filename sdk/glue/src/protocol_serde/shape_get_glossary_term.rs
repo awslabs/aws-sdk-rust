@@ -63,6 +63,21 @@ pub fn de_get_glossary_term_http_error(
             }
             tmp
         }),
+        "InvalidInputException" => crate::operation::get_glossary_term::GetGlossaryTermError::InvalidInputException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::InvalidInputExceptionBuilder::default();
+                output = crate::protocol_serde::shape_invalid_input_exception::de_invalid_input_exception_json_err(_response_body, output)
+                    .map_err(crate::operation::get_glossary_term::GetGlossaryTermError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         "ThrottlingException" => crate::operation::get_glossary_term::GetGlossaryTermError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {

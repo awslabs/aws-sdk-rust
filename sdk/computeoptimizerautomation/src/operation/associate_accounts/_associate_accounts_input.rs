@@ -5,7 +5,7 @@
 pub struct AssociateAccountsInput {
     /// <p>The IDs of the member accounts to associate. You can specify up to 50 account IDs.</p>
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    /// <p>A unique identifier to ensure idempotency of the request. Valid for 24 hours after creation.</p>
+    /// <p>A unique identifier to ensure idempotency of the request. Valid for 30 minutes after creation.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl AssociateAccountsInput {
@@ -15,7 +15,7 @@ impl AssociateAccountsInput {
     pub fn account_ids(&self) -> &[::std::string::String] {
         self.account_ids.as_deref().unwrap_or_default()
     }
-    /// <p>A unique identifier to ensure idempotency of the request. Valid for 24 hours after creation.</p>
+    /// <p>A unique identifier to ensure idempotency of the request. Valid for 30 minutes after creation.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
         self.client_token.as_deref()
     }
@@ -55,17 +55,17 @@ impl AssociateAccountsInputBuilder {
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
-    /// <p>A unique identifier to ensure idempotency of the request. Valid for 24 hours after creation.</p>
+    /// <p>A unique identifier to ensure idempotency of the request. Valid for 30 minutes after creation.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.client_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A unique identifier to ensure idempotency of the request. Valid for 24 hours after creation.</p>
+    /// <p>A unique identifier to ensure idempotency of the request. Valid for 30 minutes after creation.</p>
     pub fn set_client_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.client_token = input;
         self
     }
-    /// <p>A unique identifier to ensure idempotency of the request. Valid for 24 hours after creation.</p>
+    /// <p>A unique identifier to ensure idempotency of the request. Valid for 30 minutes after creation.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.client_token
     }

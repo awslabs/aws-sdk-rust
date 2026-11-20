@@ -13,6 +13,15 @@ pub struct UpdateFirewallEncryptionConfigurationInput {
     pub firewall_name: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub firewall_type: ::std::option::Option<crate::types::FirewallType>,
 }
 impl UpdateFirewallEncryptionConfigurationInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.</p>
@@ -33,6 +42,17 @@ impl UpdateFirewallEncryptionConfigurationInput {
     pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub fn firewall_type(&self) -> ::std::option::Option<&crate::types::FirewallType> {
+        self.firewall_type.as_ref()
+    }
 }
 impl UpdateFirewallEncryptionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallEncryptionConfigurationInput`](crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationInput).
@@ -49,6 +69,7 @@ pub struct UpdateFirewallEncryptionConfigurationInputBuilder {
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_name: ::std::option::Option<::std::string::String>,
     pub(crate) encryption_configuration: ::std::option::Option<crate::types::EncryptionConfiguration>,
+    pub(crate) firewall_type: ::std::option::Option<crate::types::FirewallType>,
 }
 impl UpdateFirewallEncryptionConfigurationInputBuilder {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.</p>
@@ -113,6 +134,41 @@ impl UpdateFirewallEncryptionConfigurationInputBuilder {
     pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::EncryptionConfiguration> {
         &self.encryption_configuration
     }
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub fn firewall_type(mut self, input: crate::types::FirewallType) -> Self {
+        self.firewall_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub fn set_firewall_type(mut self, input: ::std::option::Option<crate::types::FirewallType>) -> Self {
+        self.firewall_type = input;
+        self
+    }
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub fn get_firewall_type(&self) -> &::std::option::Option<crate::types::FirewallType> {
+        &self.firewall_type
+    }
     /// Consumes the builder and constructs a [`UpdateFirewallEncryptionConfigurationInput`](crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationInput).
     pub fn build(
         self,
@@ -126,6 +182,7 @@ impl UpdateFirewallEncryptionConfigurationInputBuilder {
                 firewall_arn: self.firewall_arn,
                 firewall_name: self.firewall_name,
                 encryption_configuration: self.encryption_configuration,
+                firewall_type: self.firewall_type,
             },
         )
     }

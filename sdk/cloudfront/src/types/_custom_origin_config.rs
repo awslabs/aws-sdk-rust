@@ -31,6 +31,11 @@ pub struct CustomOriginConfig {
     pub ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     /// <p>Configures mutual TLS authentication between CloudFront and your origin server.</p>
     pub origin_mtls_config: ::std::option::Option<crate::types::OriginMtlsConfig>,
+    /// <p>The HTTP version that CloudFront uses for requests to your custom origin. Valid values are <code>http1.1</code> and <code>http2</code>. If you don't specify a value, CloudFront uses HTTP/1.1.</p>
+    /// <p>When you specify <code>http2</code>, CloudFront offers HTTP/2 to the origin by using ALPN. If the origin doesn't negotiate HTTP/2, CloudFront uses HTTP/1.1. CloudFront uses HTTP/2 only over Transport Layer Security (TLS) 1.2 or later. Otherwise, it uses HTTP/1.1.</p>
+    /// <p>If you use a version of an AWS SDK or the AWS CLI that doesn't support this field, an update that sends back a configuration you got from CloudFront removes the value, and CloudFront then uses HTTP/1.1.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginHttpVersion">Origin HTTP version</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub origin_http_version: ::std::option::Option<crate::types::OriginHttpVersion>,
 }
 impl CustomOriginConfig {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens on.</p>
@@ -76,6 +81,13 @@ impl CustomOriginConfig {
     pub fn origin_mtls_config(&self) -> ::std::option::Option<&crate::types::OriginMtlsConfig> {
         self.origin_mtls_config.as_ref()
     }
+    /// <p>The HTTP version that CloudFront uses for requests to your custom origin. Valid values are <code>http1.1</code> and <code>http2</code>. If you don't specify a value, CloudFront uses HTTP/1.1.</p>
+    /// <p>When you specify <code>http2</code>, CloudFront offers HTTP/2 to the origin by using ALPN. If the origin doesn't negotiate HTTP/2, CloudFront uses HTTP/1.1. CloudFront uses HTTP/2 only over Transport Layer Security (TLS) 1.2 or later. Otherwise, it uses HTTP/1.1.</p>
+    /// <p>If you use a version of an AWS SDK or the AWS CLI that doesn't support this field, an update that sends back a configuration you got from CloudFront removes the value, and CloudFront then uses HTTP/1.1.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginHttpVersion">Origin HTTP version</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn origin_http_version(&self) -> ::std::option::Option<&crate::types::OriginHttpVersion> {
+        self.origin_http_version.as_ref()
+    }
 }
 impl CustomOriginConfig {
     /// Creates a new builder-style object to manufacture [`CustomOriginConfig`](crate::types::CustomOriginConfig).
@@ -96,6 +108,7 @@ pub struct CustomOriginConfigBuilder {
     pub(crate) origin_keepalive_timeout: ::std::option::Option<i32>,
     pub(crate) ip_address_type: ::std::option::Option<crate::types::IpAddressType>,
     pub(crate) origin_mtls_config: ::std::option::Option<crate::types::OriginMtlsConfig>,
+    pub(crate) origin_http_version: ::std::option::Option<crate::types::OriginHttpVersion>,
 }
 impl CustomOriginConfigBuilder {
     /// <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin listens on.</p>
@@ -246,6 +259,29 @@ impl CustomOriginConfigBuilder {
     pub fn get_origin_mtls_config(&self) -> &::std::option::Option<crate::types::OriginMtlsConfig> {
         &self.origin_mtls_config
     }
+    /// <p>The HTTP version that CloudFront uses for requests to your custom origin. Valid values are <code>http1.1</code> and <code>http2</code>. If you don't specify a value, CloudFront uses HTTP/1.1.</p>
+    /// <p>When you specify <code>http2</code>, CloudFront offers HTTP/2 to the origin by using ALPN. If the origin doesn't negotiate HTTP/2, CloudFront uses HTTP/1.1. CloudFront uses HTTP/2 only over Transport Layer Security (TLS) 1.2 or later. Otherwise, it uses HTTP/1.1.</p>
+    /// <p>If you use a version of an AWS SDK or the AWS CLI that doesn't support this field, an update that sends back a configuration you got from CloudFront removes the value, and CloudFront then uses HTTP/1.1.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginHttpVersion">Origin HTTP version</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn origin_http_version(mut self, input: crate::types::OriginHttpVersion) -> Self {
+        self.origin_http_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The HTTP version that CloudFront uses for requests to your custom origin. Valid values are <code>http1.1</code> and <code>http2</code>. If you don't specify a value, CloudFront uses HTTP/1.1.</p>
+    /// <p>When you specify <code>http2</code>, CloudFront offers HTTP/2 to the origin by using ALPN. If the origin doesn't negotiate HTTP/2, CloudFront uses HTTP/1.1. CloudFront uses HTTP/2 only over Transport Layer Security (TLS) 1.2 or later. Otherwise, it uses HTTP/1.1.</p>
+    /// <p>If you use a version of an AWS SDK or the AWS CLI that doesn't support this field, an update that sends back a configuration you got from CloudFront removes the value, and CloudFront then uses HTTP/1.1.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginHttpVersion">Origin HTTP version</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn set_origin_http_version(mut self, input: ::std::option::Option<crate::types::OriginHttpVersion>) -> Self {
+        self.origin_http_version = input;
+        self
+    }
+    /// <p>The HTTP version that CloudFront uses for requests to your custom origin. Valid values are <code>http1.1</code> and <code>http2</code>. If you don't specify a value, CloudFront uses HTTP/1.1.</p>
+    /// <p>When you specify <code>http2</code>, CloudFront offers HTTP/2 to the origin by using ALPN. If the origin doesn't negotiate HTTP/2, CloudFront uses HTTP/1.1. CloudFront uses HTTP/2 only over Transport Layer Security (TLS) 1.2 or later. Otherwise, it uses HTTP/1.1.</p>
+    /// <p>If you use a version of an AWS SDK or the AWS CLI that doesn't support this field, an update that sends back a configuration you got from CloudFront removes the value, and CloudFront then uses HTTP/1.1.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginHttpVersion">Origin HTTP version</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_origin_http_version(&self) -> &::std::option::Option<crate::types::OriginHttpVersion> {
+        &self.origin_http_version
+    }
     /// Consumes the builder and constructs a [`CustomOriginConfig`](crate::types::CustomOriginConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`http_port`](crate::types::builders::CustomOriginConfigBuilder::http_port)
@@ -276,6 +312,7 @@ impl CustomOriginConfigBuilder {
             origin_keepalive_timeout: self.origin_keepalive_timeout,
             ip_address_type: self.ip_address_type,
             origin_mtls_config: self.origin_mtls_config,
+            origin_http_version: self.origin_http_version,
         })
     }
 }

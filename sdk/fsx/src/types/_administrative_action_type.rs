@@ -160,7 +160,7 @@
 /// <li>
 /// <p>
 /// <code>DOWNLOAD_DATA_FROM_BACKUP</code> - An FSx for ONTAP backup is
-/// being restored to a new volume on a second-generation file system. Once the all the file
+/// being restored to a new volume on a second-generation or third-generation file system. Once the all the file
 /// metadata is loaded onto the volume, you can mount the volume with read-only access.
 /// during this process.</p>
 /// </li>

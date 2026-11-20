@@ -10,7 +10,9 @@ pub struct CreateDevicePoolInput {
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The device pool's description.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>The device pool's rules.</p>
+    /// <p>The device pool's rules.</p><note>
+    /// <p>A device pool contains either physical devices or virtual devices, but not both. If you define the pool with attribute rules and those rules do not include a <code>DEVICE_TYPE</code> rule, the pool contains only physical devices. If you define the pool by listing device ARNs, the pool contains the devices you list.</p>
+    /// </note>
     pub rules: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>,
     /// <p>The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available and meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices meet these constraints, your device pool might contain fewer devices than the value for this parameter.</p>
     /// <p>By specifying the maximum number of devices, you can control the costs that you incur by running tests.</p>
@@ -29,7 +31,9 @@ impl CreateDevicePoolInput {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The device pool's rules.</p>
+    /// <p>The device pool's rules.</p><note>
+    /// <p>A device pool contains either physical devices or virtual devices, but not both. If you define the pool with attribute rules and those rules do not include a <code>DEVICE_TYPE</code> rule, the pool contains only physical devices. If you define the pool by listing device ARNs, the pool contains the devices you list.</p>
+    /// </note>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rules.is_none()`.
     pub fn rules(&self) -> &[crate::types::Rule] {
@@ -107,19 +111,25 @@ impl CreateDevicePoolInputBuilder {
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
     ///
-    /// <p>The device pool's rules.</p>
+    /// <p>The device pool's rules.</p><note>
+    /// <p>A device pool contains either physical devices or virtual devices, but not both. If you define the pool with attribute rules and those rules do not include a <code>DEVICE_TYPE</code> rule, the pool contains only physical devices. If you define the pool by listing device ARNs, the pool contains the devices you list.</p>
+    /// </note>
     pub fn rules(mut self, input: crate::types::Rule) -> Self {
         let mut v = self.rules.unwrap_or_default();
         v.push(input);
         self.rules = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The device pool's rules.</p>
+    /// <p>The device pool's rules.</p><note>
+    /// <p>A device pool contains either physical devices or virtual devices, but not both. If you define the pool with attribute rules and those rules do not include a <code>DEVICE_TYPE</code> rule, the pool contains only physical devices. If you define the pool by listing device ARNs, the pool contains the devices you list.</p>
+    /// </note>
     pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.rules = input;
         self
     }
-    /// <p>The device pool's rules.</p>
+    /// <p>The device pool's rules.</p><note>
+    /// <p>A device pool contains either physical devices or virtual devices, but not both. If you define the pool with attribute rules and those rules do not include a <code>DEVICE_TYPE</code> rule, the pool contains only physical devices. If you define the pool by listing device ARNs, the pool contains the devices you list.</p>
+    /// </note>
     pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
         &self.rules
     }

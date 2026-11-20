@@ -37,6 +37,8 @@ pub enum Error {
     DelegationSetNotAvailable(crate::types::error::DelegationSetNotAvailable),
     /// <p>A reusable delegation set with the specified ID does not exist.</p>
     DelegationSetNotReusable(crate::types::error::DelegationSetNotReusable),
+    /// <p>This error occurs when a feature that the operation requires isn't turned on for the hosted zone. For example, the tier of the hosted zone doesn't include Change History. To resolve this error, turn on the feature, or move the hosted zone to a tier that includes it.</p>
+    FeatureNotEnabled(crate::types::error::FeatureNotEnabled),
     /// <p>The health check you're attempting to create already exists. Amazon Route 53 returns this error when you submit a request that has the following values:</p>
     /// <ul>
     /// <li>
@@ -160,7 +162,6 @@ pub enum Error {
     /// <p>This health check can't be created because the current account has reached the limit on the number of active health checks, or because the health check source for a private health check has reached its limit on active health checks. In the second case, specify a different health check source.</p>
     /// <p>For information about default limits, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
     /// <p>For information about how to get the current limit for an account, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetAccountLimit.html">GetAccountLimit</a>. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
-    /// <p>You have reached the maximum number of active health checks for an Amazon Web Services account. To request a higher limit, <a href="http://aws.amazon.com/route53-request">create a case</a> with the Amazon Web Services Support Center.</p>
     TooManyHealthChecks(crate::types::error::TooManyHealthChecks),
     /// <p>This operation can't be completed either because the current account has reached the limit on the number of hosted zones or because you've reached the limit on the number of hosted zones that can be associated with a reusable delegation set.</p>
     /// <p>For information about default limits, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a> in the <i>Amazon Route 53 Developer Guide</i>.</p>
@@ -220,6 +221,7 @@ impl ::std::fmt::Display for Error {
             Error::DelegationSetInUse(inner) => inner.fmt(f),
             Error::DelegationSetNotAvailable(inner) => inner.fmt(f),
             Error::DelegationSetNotReusable(inner) => inner.fmt(f),
+            Error::FeatureNotEnabled(inner) => inner.fmt(f),
             Error::HealthCheckAlreadyExists(inner) => inner.fmt(f),
             Error::HealthCheckInUse(inner) => inner.fmt(f),
             Error::HealthCheckSourceAlreadyExists(inner) => inner.fmt(f),
@@ -315,6 +317,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
             Self::DelegationSetInUse(inner) => inner.meta(),
             Self::DelegationSetNotAvailable(inner) => inner.meta(),
             Self::DelegationSetNotReusable(inner) => inner.meta(),
+            Self::FeatureNotEnabled(inner) => inner.meta(),
             Self::HealthCheckAlreadyExists(inner) => inner.meta(),
             Self::HealthCheckInUse(inner) => inner.meta(),
             Self::HealthCheckSourceAlreadyExists(inner) => inner.meta(),
@@ -1778,6 +1781,36 @@ impl From<crate::operation::get_hosted_zone::GetHostedZoneError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_hosted_zone_change_batch::GetHostedZoneChangeBatchError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_hosted_zone_change_batch::GetHostedZoneChangeBatchError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_hosted_zone_change_batch::GetHostedZoneChangeBatchError> for Error {
+    fn from(err: crate::operation::get_hosted_zone_change_batch::GetHostedZoneChangeBatchError) -> Self {
+        match err {
+            crate::operation::get_hosted_zone_change_batch::GetHostedZoneChangeBatchError::FeatureNotEnabled(inner) => {
+                Error::FeatureNotEnabled(inner)
+            }
+            crate::operation::get_hosted_zone_change_batch::GetHostedZoneChangeBatchError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::get_hosted_zone_change_batch::GetHostedZoneChangeBatchError::NoSuchChange(inner) => Error::NoSuchChange(inner),
+            crate::operation::get_hosted_zone_change_batch::GetHostedZoneChangeBatchError::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
+            crate::operation::get_hosted_zone_change_batch::GetHostedZoneChangeBatchError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_hosted_zone_count::GetHostedZoneCountError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2174,6 +2207,44 @@ impl From<crate::operation::list_health_check_sources::ListHealthCheckSourcesErr
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_hosted_zone_change_batches::ListHostedZoneChangeBatchesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_hosted_zone_change_batches::ListHostedZoneChangeBatchesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_hosted_zone_change_batches::ListHostedZoneChangeBatchesError> for Error {
+    fn from(err: crate::operation::list_hosted_zone_change_batches::ListHostedZoneChangeBatchesError) -> Self {
+        match err {
+            crate::operation::list_hosted_zone_change_batches::ListHostedZoneChangeBatchesError::FeatureNotEnabled(inner) => {
+                Error::FeatureNotEnabled(inner)
+            }
+            crate::operation::list_hosted_zone_change_batches::ListHostedZoneChangeBatchesError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::list_hosted_zone_change_batches::ListHostedZoneChangeBatchesError::InvalidPaginationToken(inner) => {
+                Error::InvalidPaginationToken(inner)
+            }
+            crate::operation::list_hosted_zone_change_batches::ListHostedZoneChangeBatchesError::NoSuchHostedZone(inner) => {
+                Error::NoSuchHostedZone(inner)
+            }
+            crate::operation::list_hosted_zone_change_batches::ListHostedZoneChangeBatchesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_hosted_zones::ListHostedZonesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2276,6 +2347,44 @@ impl From<crate::operation::list_query_logging_configs::ListQueryLoggingConfigsE
             }
             crate::operation::list_query_logging_configs::ListQueryLoggingConfigsError::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
             crate::operation::list_query_logging_configs::ListQueryLoggingConfigsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_resource_record_set_changes::ListResourceRecordSetChangesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_resource_record_set_changes::ListResourceRecordSetChangesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_resource_record_set_changes::ListResourceRecordSetChangesError> for Error {
+    fn from(err: crate::operation::list_resource_record_set_changes::ListResourceRecordSetChangesError) -> Self {
+        match err {
+            crate::operation::list_resource_record_set_changes::ListResourceRecordSetChangesError::FeatureNotEnabled(inner) => {
+                Error::FeatureNotEnabled(inner)
+            }
+            crate::operation::list_resource_record_set_changes::ListResourceRecordSetChangesError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::list_resource_record_set_changes::ListResourceRecordSetChangesError::InvalidPaginationToken(inner) => {
+                Error::InvalidPaginationToken(inner)
+            }
+            crate::operation::list_resource_record_set_changes::ListResourceRecordSetChangesError::NoSuchHostedZone(inner) => {
+                Error::NoSuchHostedZone(inner)
+            }
+            crate::operation::list_resource_record_set_changes::ListResourceRecordSetChangesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2742,6 +2851,34 @@ impl From<crate::operation::update_hosted_zone_features::UpdateHostedZoneFeature
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_hosted_zone_tier::UpdateHostedZoneTierError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_hosted_zone_tier::UpdateHostedZoneTierError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_hosted_zone_tier::UpdateHostedZoneTierError> for Error {
+    fn from(err: crate::operation::update_hosted_zone_tier::UpdateHostedZoneTierError) -> Self {
+        match err {
+            crate::operation::update_hosted_zone_tier::UpdateHostedZoneTierError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::operation::update_hosted_zone_tier::UpdateHostedZoneTierError::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
+            crate::operation::update_hosted_zone_tier::UpdateHostedZoneTierError::PriorRequestNotComplete(inner) => {
+                Error::PriorRequestNotComplete(inner)
+            }
+            crate::operation::update_hosted_zone_tier::UpdateHostedZoneTierError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_traffic_policy_comment::UpdateTrafficPolicyCommentError, R>>
     for Error
 where
@@ -2842,6 +2979,7 @@ impl ::std::error::Error for Error {
             Error::DelegationSetInUse(inner) => inner.source(),
             Error::DelegationSetNotAvailable(inner) => inner.source(),
             Error::DelegationSetNotReusable(inner) => inner.source(),
+            Error::FeatureNotEnabled(inner) => inner.source(),
             Error::HealthCheckAlreadyExists(inner) => inner.source(),
             Error::HealthCheckInUse(inner) => inner.source(),
             Error::HealthCheckSourceAlreadyExists(inner) => inner.source(),
@@ -2923,6 +3061,7 @@ impl ::aws_types::request_id::RequestId for Error {
             Self::DelegationSetInUse(e) => e.request_id(),
             Self::DelegationSetNotAvailable(e) => e.request_id(),
             Self::DelegationSetNotReusable(e) => e.request_id(),
+            Self::FeatureNotEnabled(e) => e.request_id(),
             Self::HealthCheckAlreadyExists(e) => e.request_id(),
             Self::HealthCheckInUse(e) => e.request_id(),
             Self::HealthCheckSourceAlreadyExists(e) => e.request_id(),

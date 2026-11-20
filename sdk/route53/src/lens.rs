@@ -59,6 +59,16 @@ pub(crate) fn reflens_list_health_checks_by_source_output_output_next_marker(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_hosted_zone_change_batches_output_output_next_token(
+    input: &crate::operation::list_hosted_zone_change_batches::ListHostedZoneChangeBatchesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_hosted_zones_output_output_next_marker(
     input: &crate::operation::list_hosted_zones::ListHostedZonesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -71,6 +81,16 @@ pub(crate) fn reflens_list_hosted_zones_output_output_next_marker(
 
 pub(crate) fn reflens_list_query_logging_configs_output_output_next_token(
     input: &crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_resource_record_set_changes_output_output_next_token(
+    input: &crate::operation::list_resource_record_set_changes::ListResourceRecordSetChangesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -131,6 +151,13 @@ pub(crate) fn lens_list_health_checks_by_source_output_output_health_checks(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_hosted_zone_change_batches_output_output_change_batch_summaries(
+    input: crate::operation::list_hosted_zone_change_batches::ListHostedZoneChangeBatchesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ChangeBatchSummary>> {
+    let input = input.change_batch_summaries;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_hosted_zones_output_output_hosted_zones(
     input: crate::operation::list_hosted_zones::ListHostedZonesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::HostedZone>> {
@@ -142,6 +169,13 @@ pub(crate) fn lens_list_query_logging_configs_output_output_query_logging_config
     input: crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::QueryLoggingConfig>> {
     let input = input.query_logging_configs;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_resource_record_set_changes_output_output_resource_record_set_changes(
+    input: crate::operation::list_resource_record_set_changes::ListResourceRecordSetChangesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceRecordSetChange>> {
+    let input = input.resource_record_set_changes;
     ::std::option::Option::Some(input)
 }
 

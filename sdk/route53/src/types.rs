@@ -41,6 +41,8 @@ pub use crate::types::_geo_location_details::GeoLocationDetails;
 
 pub use crate::types::_health_check_source::HealthCheckSource;
 
+pub use crate::types::_change_batch_summary::ChangeBatchSummary;
+
 pub use crate::types::_hosted_zone_limit_type::HostedZoneLimitType;
 
 pub use crate::types::_hosted_zone_limit::HostedZoneLimit;
@@ -48,6 +50,8 @@ pub use crate::types::_hosted_zone_limit::HostedZoneLimit;
 pub use crate::types::_reusable_delegation_set_limit_type::ReusableDelegationSetLimitType;
 
 pub use crate::types::_reusable_delegation_set_limit::ReusableDelegationSetLimit;
+
+pub use crate::types::_change_history_sort_order::ChangeHistorySortOrder;
 
 pub use crate::types::_hosted_zone_type::HostedZoneType;
 
@@ -60,6 +64,8 @@ pub use crate::types::_resource_tag_set::ResourceTagSet;
 pub use crate::types::_alarm_identifier::AlarmIdentifier;
 
 pub use crate::types::_insufficient_data_health_status::InsufficientDataHealthStatus;
+
+pub use crate::types::_hosted_zone_tier::HostedZoneTier;
 
 pub use crate::types::_change_status::ChangeStatus;
 
@@ -75,6 +81,8 @@ pub use crate::types::_linked_service::LinkedService;
 
 pub use crate::types::_cloud_watch_alarm_configuration::CloudWatchAlarmConfiguration;
 
+pub use crate::types::_change_guardrail::ChangeGuardrail;
+
 pub use crate::types::_hosted_zone_features::HostedZoneFeatures;
 
 pub use crate::types::_resource_record_set_protection_config::ResourceRecordSetProtectionConfig;
@@ -87,6 +95,8 @@ pub use crate::types::_health_check_observation::HealthCheckObservation;
 
 pub use crate::types::_health_check_source_status_reason_code::HealthCheckSourceStatusReasonCode;
 
+pub use crate::types::_change_history_operation::ChangeHistoryOperation;
+
 pub use crate::types::_cidr_block_summary::CidrBlockSummary;
 
 pub use crate::types::_collection_summary::CollectionSummary;
@@ -94,6 +104,8 @@ pub use crate::types::_collection_summary::CollectionSummary;
 pub use crate::types::_location_summary::LocationSummary;
 
 pub use crate::types::_hosted_zone_summary::HostedZoneSummary;
+
+pub use crate::types::_resource_record_set_change::ResourceRecordSetChange;
 
 pub use crate::types::_resource_record_set_protection::ResourceRecordSetProtection;
 
@@ -117,13 +129,23 @@ pub use crate::types::_statistic::Statistic;
 
 pub use crate::types::_subnet_configuration::SubnetConfiguration;
 
+pub use crate::types::_change_guardrail_name::ChangeGuardrailName;
+
+pub use crate::types::_change_guardrail_status::ChangeGuardrailStatus;
+
 pub use crate::types::_accelerated_recovery_status::AcceleratedRecoveryStatus;
+
+pub use crate::types::_feature_status::FeatureStatus;
+
+pub use crate::types::_change_history_feature::ChangeHistoryFeature;
 
 pub use crate::types::_hosted_zone_failure_reasons::HostedZoneFailureReasons;
 
 pub use crate::types::_status_report::StatusReport;
 
 pub use crate::types::_hosted_zone_owner::HostedZoneOwner;
+
+pub use crate::types::_change_action::ChangeAction;
 
 pub use crate::types::_resource_record_set_region::ResourceRecordSetRegion;
 
@@ -137,13 +159,17 @@ pub use crate::types::_cidr_routing_config::CidrRoutingConfig;
 
 pub use crate::types::_geo_proximity_location::GeoProximityLocation;
 
-pub use crate::types::_change_action::ChangeAction;
+pub use crate::types::_az_affinity::AzAffinity;
 
 pub use crate::types::_dimension::Dimension;
+
+pub use crate::types::_feature_enablement::FeatureEnablement;
 
 pub use crate::types::_resource_record::ResourceRecord;
 
 pub use crate::types::_coordinates::Coordinates;
+
+pub use crate::types::_az_affinity_location_type::AzAffinityLocationType;
 
 mod _accelerated_recovery_status;
 
@@ -155,11 +181,29 @@ mod _alarm_identifier;
 
 mod _alias_target;
 
+mod _az_affinity;
+
+mod _az_affinity_location_type;
+
 mod _change;
 
 mod _change_action;
 
 mod _change_batch;
+
+mod _change_batch_summary;
+
+mod _change_guardrail;
+
+mod _change_guardrail_name;
+
+mod _change_guardrail_status;
+
+mod _change_history_feature;
+
+mod _change_history_operation;
+
+mod _change_history_sort_order;
 
 mod _change_info;
 
@@ -192,6 +236,10 @@ mod _dimension;
 mod _dnssec_status;
 
 mod _endpoint_type;
+
+mod _feature_enablement;
+
+mod _feature_status;
 
 mod _geo_location;
 
@@ -233,6 +281,8 @@ mod _hosted_zone_owner;
 
 mod _hosted_zone_summary;
 
+mod _hosted_zone_tier;
+
 mod _hosted_zone_type;
 
 mod _insufficient_data_health_status;
@@ -252,6 +302,8 @@ mod _resettable_element_name;
 mod _resource_record;
 
 mod _resource_record_set;
+
+mod _resource_record_set_change;
 
 mod _resource_record_set_failover;
 

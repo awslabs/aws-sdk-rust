@@ -31,6 +31,8 @@ pub use crate::types::_seller_engagement::SellerEngagement;
 
 pub use crate::types::_use_case_entry::UseCaseEntry;
 
+pub use crate::types::_purchase_indicator::PurchaseIndicator;
+
 pub use crate::types::_offer_associated_entity::OfferAssociatedEntity;
 
 pub use crate::types::_pricing_model_type::PricingModelType;
@@ -42,6 +44,10 @@ pub use crate::types::_offer_set_associated_entity::OfferSetAssociatedEntity;
 pub use crate::types::_offer_term::OfferTerm;
 
 pub use crate::types::_fulfillment_option::FulfillmentOption;
+
+pub use crate::types::_listing_attribute_type::ListingAttributeType;
+
+pub use crate::types::_listing_attribute_results::ListingAttributeResults;
 
 pub use crate::types::_purchase_option_filter::PurchaseOptionFilter;
 
@@ -78,6 +84,8 @@ pub use crate::types::_seller_engagement_type::SellerEngagementType;
 pub use crate::types::_seller_engagement_content_type::SellerEngagementContentType;
 
 pub use crate::types::_use_case::UseCase;
+
+pub use crate::types::_purchase_indicator_type::PurchaseIndicatorType;
 
 pub use crate::types::_offer_set_information::OfferSetInformation;
 
@@ -133,6 +141,22 @@ pub use crate::types::_sage_maker_algorithm_fulfillment_option::SageMakerAlgorit
 
 pub use crate::types::_sage_maker_model_fulfillment_option::SageMakerModelFulfillmentOption;
 
+pub use crate::types::_case_study::CaseStudy;
+
+pub use crate::types::_specialization_detail::SpecializationDetail;
+
+pub use crate::types::_trust_center_source::TrustCenterSource;
+
+pub use crate::types::_trust_center_certification_attribute::TrustCenterCertificationAttribute;
+
+pub use crate::types::_trust_center_document_attribute::TrustCenterDocumentAttribute;
+
+pub use crate::types::_trust_center_control::TrustCenterControl;
+
+pub use crate::types::_trust_center_faq_attribute::TrustCenterFaqAttribute;
+
+pub use crate::types::_trust_center_update_attribute::TrustCenterUpdateAttribute;
+
 pub use crate::types::_purchase_option_filter_type::PurchaseOptionFilterType;
 
 pub use crate::types::_purchase_option_type::PurchaseOptionType;
@@ -140,6 +164,12 @@ pub use crate::types::_purchase_option_type::PurchaseOptionType;
 pub use crate::types::_search_filter_type::SearchFilterType;
 
 pub use crate::types::_listing_facet::ListingFacet;
+
+pub use crate::types::_trust_center_summary::TrustCenterSummary;
+
+pub use crate::types::_case_studies_summary::CaseStudiesSummary;
+
+pub use crate::types::_use_case_summary::UseCaseSummary;
 
 pub use crate::types::_review_source_id::ReviewSourceId;
 
@@ -158,6 +188,16 @@ pub use crate::types::_saas_quick_launch_status::SaasQuickLaunchStatus;
 pub use crate::types::_sage_maker_algorithm_recommendation::SageMakerAlgorithmRecommendation;
 
 pub use crate::types::_sage_maker_model_recommendation::SageMakerModelRecommendation;
+
+pub use crate::types::_engagement_dates::EngagementDates;
+
+pub use crate::types::_specialization::Specialization;
+
+pub use crate::types::_specialization_category::SpecializationCategory;
+
+pub use crate::types::_trust_center_provider::TrustCenterProvider;
+
+pub use crate::types::_trust_center_document_access_type::TrustCenterDocumentAccessType;
 
 pub use crate::types::_purchase_option_associated_entity::PurchaseOptionAssociatedEntity;
 
@@ -191,6 +231,18 @@ pub use crate::types::_eks_add_on_operating_system::EksAddOnOperatingSystem;
 
 pub use crate::types::_data_artifact::DataArtifact;
 
+pub use crate::types::_saas_deployment_template::SaasDeploymentTemplate;
+
+pub use crate::types::_case_study_resource::CaseStudyResource;
+
+pub use crate::types::_trust_center_control_domain::TrustCenterControlDomain;
+
+pub use crate::types::_trust_center_source_summary::TrustCenterSourceSummary;
+
+pub use crate::types::_trust_center_certification_summary::TrustCenterCertificationSummary;
+
+pub use crate::types::_use_case_summary_entry::UseCaseSummaryEntry;
+
 pub use crate::types::_selector::Selector;
 
 pub use crate::types::_constraints::Constraints;
@@ -201,6 +253,14 @@ pub use crate::types::_payment_schedule_term_template::PaymentScheduleTermTempla
 
 pub use crate::types::_amazon_machine_image_security_group::AmazonMachineImageSecurityGroup;
 
+pub use crate::types::_saas_cloud_formation_deployment_template::SaasCloudFormationDeploymentTemplate;
+
+pub use crate::types::_case_study_resource_type::CaseStudyResourceType;
+
+pub use crate::types::_specialization_type_detail::SpecializationTypeDetail;
+
+pub use crate::types::_use_case_information::UseCaseInformation;
+
 pub use crate::types::_selector_type::SelectorType;
 
 pub use crate::types::_rate_card_constraint_type::RateCardConstraintType;
@@ -209,9 +269,13 @@ pub use crate::types::_rate_card_item::RateCardItem;
 
 pub use crate::types::_dimension_label::DimensionLabel;
 
+pub use crate::types::_specialization_type::SpecializationType;
+
 pub use crate::types::_dimension_label_type::DimensionLabelType;
 
 pub use crate::types::_payment_schedule_entry::PaymentScheduleEntry;
+
+pub use crate::types::_regional_price::RegionalPrice;
 
 mod _amazon_machine_image_ebs_volume;
 
@@ -230,6 +294,14 @@ mod _aws_supported_service;
 mod _billing_period_type;
 
 mod _byol_pricing_term;
+
+mod _case_studies_summary;
+
+mod _case_study;
+
+mod _case_study_resource;
+
+mod _case_study_resource_type;
 
 mod _category;
 
@@ -263,6 +335,8 @@ mod _eks_add_on_fulfillment_option;
 
 mod _eks_add_on_operating_system;
 
+mod _engagement_dates;
+
 mod _fixed_percentage;
 
 mod _fixed_upfront_pricing_term;
@@ -286,6 +360,10 @@ mod _legal_document_type;
 mod _legal_term;
 
 mod _listing_associated_entity;
+
+mod _listing_attribute_results;
+
+mod _listing_attribute_type;
 
 mod _listing_badge;
 
@@ -337,6 +415,10 @@ mod _promotional_embedded_video;
 
 mod _promotional_media;
 
+mod _purchase_indicator;
+
+mod _purchase_indicator_type;
+
 mod _purchase_option_associated_entity;
 
 mod _purchase_option_badge;
@@ -357,6 +439,8 @@ mod _rate_card_item;
 
 mod _recurring_payment_term;
 
+mod _regional_price;
+
 mod _renewal_term;
 
 mod _resource;
@@ -370,6 +454,10 @@ mod _review_source_id;
 mod _review_source_summary;
 
 mod _review_summary;
+
+mod _saas_cloud_formation_deployment_template;
+
+mod _saas_deployment_template;
 
 mod _saas_fulfillment_option;
 
@@ -407,11 +495,45 @@ mod _seller_engagement_type;
 
 mod _seller_information;
 
+mod _specialization;
+
+mod _specialization_category;
+
+mod _specialization_detail;
+
+mod _specialization_type;
+
+mod _specialization_type_detail;
+
 mod _support_term;
 
 mod _term_template;
 
 mod _term_type;
+
+mod _trust_center_certification_attribute;
+
+mod _trust_center_certification_summary;
+
+mod _trust_center_control;
+
+mod _trust_center_control_domain;
+
+mod _trust_center_document_access_type;
+
+mod _trust_center_document_attribute;
+
+mod _trust_center_faq_attribute;
+
+mod _trust_center_provider;
+
+mod _trust_center_source;
+
+mod _trust_center_source_summary;
+
+mod _trust_center_summary;
+
+mod _trust_center_update_attribute;
 
 mod _usage_based_pricing_term;
 
@@ -420,6 +542,12 @@ mod _usage_based_rate_card_item;
 mod _use_case;
 
 mod _use_case_entry;
+
+mod _use_case_information;
+
+mod _use_case_summary;
+
+mod _use_case_summary_entry;
 
 mod _validation_exception_reason;
 

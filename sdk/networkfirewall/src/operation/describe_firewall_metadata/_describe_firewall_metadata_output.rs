@@ -10,6 +10,7 @@ pub struct DescribeFirewallMetadataOutput {
     /// <p>A description of the firewall.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The readiness of the configured firewall to handle network traffic across all of the Availability Zones where you have it configured. This setting is <code>READY</code> only when the <code>ConfigurationSyncStateSummary</code> value is <code>IN_SYNC</code> and the <code>Attachment</code> <code>Status</code> values for all of the configured subnets are <code>READY</code>.</p>
+    /// <p>For an internet gateway firewall, this setting is <code>STANDBY</code> while no Availability Zone in the VPC has resources that need the firewall. Network Firewall provisions the firewall in an Availability Zone when the first resource is launched there.</p>
     pub status: ::std::option::Option<crate::types::FirewallStatusValue>,
     /// <p>The Availability Zones that the firewall currently supports. This includes all Availability Zones for which the firewall has a subnet defined.</p>
     pub supported_availability_zones:
@@ -32,6 +33,7 @@ impl DescribeFirewallMetadataOutput {
         self.description.as_deref()
     }
     /// <p>The readiness of the configured firewall to handle network traffic across all of the Availability Zones where you have it configured. This setting is <code>READY</code> only when the <code>ConfigurationSyncStateSummary</code> value is <code>IN_SYNC</code> and the <code>Attachment</code> <code>Status</code> values for all of the configured subnets are <code>READY</code>.</p>
+    /// <p>For an internet gateway firewall, this setting is <code>STANDBY</code> while no Availability Zone in the VPC has resources that need the firewall. Network Firewall provisions the firewall in an Availability Zone when the first resource is launched there.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::FirewallStatusValue> {
         self.status.as_ref()
     }
@@ -115,16 +117,19 @@ impl DescribeFirewallMetadataOutputBuilder {
         &self.description
     }
     /// <p>The readiness of the configured firewall to handle network traffic across all of the Availability Zones where you have it configured. This setting is <code>READY</code> only when the <code>ConfigurationSyncStateSummary</code> value is <code>IN_SYNC</code> and the <code>Attachment</code> <code>Status</code> values for all of the configured subnets are <code>READY</code>.</p>
+    /// <p>For an internet gateway firewall, this setting is <code>STANDBY</code> while no Availability Zone in the VPC has resources that need the firewall. Network Firewall provisions the firewall in an Availability Zone when the first resource is launched there.</p>
     pub fn status(mut self, input: crate::types::FirewallStatusValue) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The readiness of the configured firewall to handle network traffic across all of the Availability Zones where you have it configured. This setting is <code>READY</code> only when the <code>ConfigurationSyncStateSummary</code> value is <code>IN_SYNC</code> and the <code>Attachment</code> <code>Status</code> values for all of the configured subnets are <code>READY</code>.</p>
+    /// <p>For an internet gateway firewall, this setting is <code>STANDBY</code> while no Availability Zone in the VPC has resources that need the firewall. Network Firewall provisions the firewall in an Availability Zone when the first resource is launched there.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::FirewallStatusValue>) -> Self {
         self.status = input;
         self
     }
     /// <p>The readiness of the configured firewall to handle network traffic across all of the Availability Zones where you have it configured. This setting is <code>READY</code> only when the <code>ConfigurationSyncStateSummary</code> value is <code>IN_SYNC</code> and the <code>Attachment</code> <code>Status</code> values for all of the configured subnets are <code>READY</code>.</p>
+    /// <p>For an internet gateway firewall, this setting is <code>STANDBY</code> while no Availability Zone in the VPC has resources that need the firewall. Network Firewall provisions the firewall in an Availability Zone when the first resource is launched there.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::FirewallStatusValue> {
         &self.status
     }

@@ -46,10 +46,12 @@ pub struct DefaultRunSetting {
     pub configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>Optional inline policy json for scoping down permissions via a session policy on the IAM role provided in the roleArn parameter.</p>
     pub session_policy: ::std::option::Option<::std::string::String>,
-    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles, Nextflow runtime configuration).</p>
     pub engine_settings: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If not specified, this will default to SHARED. This configuration is applicable only for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.</p>
     pub scratch_storage_mode: ::std::option::Option<crate::types::ScratchStorageMode>,
+    /// <p>Specifies whether each workflow run in the batch can read inputs from Amazon Simple Storage Service (Amazon S3) buckets that use Requester Pays. Your account pays the request and data transfer charges for those reads. The default is <code>false</code>.</p>
+    pub requester_pays_enabled: ::std::option::Option<bool>,
 }
 impl DefaultRunSetting {
     /// <p>The identifier of the workflow to run.</p>
@@ -138,13 +140,17 @@ impl DefaultRunSetting {
     pub fn session_policy(&self) -> ::std::option::Option<&str> {
         self.session_policy.as_deref()
     }
-    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles, Nextflow runtime configuration).</p>
     pub fn engine_settings(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.engine_settings.as_ref()
     }
     /// <p>Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If not specified, this will default to SHARED. This configuration is applicable only for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.</p>
     pub fn scratch_storage_mode(&self) -> ::std::option::Option<&crate::types::ScratchStorageMode> {
         self.scratch_storage_mode.as_ref()
+    }
+    /// <p>Specifies whether each workflow run in the batch can read inputs from Amazon Simple Storage Service (Amazon S3) buckets that use Requester Pays. Your account pays the request and data transfer charges for those reads. The default is <code>false</code>.</p>
+    pub fn requester_pays_enabled(&self) -> ::std::option::Option<bool> {
+        self.requester_pays_enabled
     }
 }
 impl DefaultRunSetting {
@@ -181,6 +187,7 @@ pub struct DefaultRunSettingBuilder {
     pub(crate) session_policy: ::std::option::Option<::std::string::String>,
     pub(crate) engine_settings: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) scratch_storage_mode: ::std::option::Option<crate::types::ScratchStorageMode>,
+    pub(crate) requester_pays_enabled: ::std::option::Option<bool>,
 }
 impl DefaultRunSettingBuilder {
     /// <p>The identifier of the workflow to run.</p>
@@ -485,17 +492,17 @@ impl DefaultRunSettingBuilder {
     pub fn get_session_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_policy
     }
-    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles, Nextflow runtime configuration).</p>
     pub fn engine_settings(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.engine_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles, Nextflow runtime configuration).</p>
     pub fn set_engine_settings(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.engine_settings = input;
         self
     }
-    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles, Nextflow runtime configuration).</p>
     pub fn get_engine_settings(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.engine_settings
     }
@@ -512,6 +519,20 @@ impl DefaultRunSettingBuilder {
     /// <p>Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If not specified, this will default to SHARED. This configuration is applicable only for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.</p>
     pub fn get_scratch_storage_mode(&self) -> &::std::option::Option<crate::types::ScratchStorageMode> {
         &self.scratch_storage_mode
+    }
+    /// <p>Specifies whether each workflow run in the batch can read inputs from Amazon Simple Storage Service (Amazon S3) buckets that use Requester Pays. Your account pays the request and data transfer charges for those reads. The default is <code>false</code>.</p>
+    pub fn requester_pays_enabled(mut self, input: bool) -> Self {
+        self.requester_pays_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether each workflow run in the batch can read inputs from Amazon Simple Storage Service (Amazon S3) buckets that use Requester Pays. Your account pays the request and data transfer charges for those reads. The default is <code>false</code>.</p>
+    pub fn set_requester_pays_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.requester_pays_enabled = input;
+        self
+    }
+    /// <p>Specifies whether each workflow run in the batch can read inputs from Amazon Simple Storage Service (Amazon S3) buckets that use Requester Pays. Your account pays the request and data transfer charges for those reads. The default is <code>false</code>.</p>
+    pub fn get_requester_pays_enabled(&self) -> &::std::option::Option<bool> {
+        &self.requester_pays_enabled
     }
     /// Consumes the builder and constructs a [`DefaultRunSetting`](crate::types::DefaultRunSetting).
     /// This method will fail if any of the following fields are not set:
@@ -552,6 +573,7 @@ impl DefaultRunSettingBuilder {
             session_policy: self.session_policy,
             engine_settings: self.engine_settings,
             scratch_storage_mode: self.scratch_storage_mode,
+            requester_pays_enabled: self.requester_pays_enabled,
         })
     }
 }

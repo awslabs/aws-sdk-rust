@@ -27,6 +27,10 @@ pub use crate::types::_analytics_config::AnalyticsConfigBuilder;
 
 pub use crate::types::_web_acl_summary::WebAclSummaryBuilder;
 
+pub use crate::types::_event_detail_summary::EventDetailSummaryBuilder;
+
+pub use crate::types::_event_actor_detail::EventActorDetailBuilder;
+
 pub use crate::types::_ip_set::IpSetBuilder;
 
 pub use crate::types::_logging_configuration::LoggingConfigurationBuilder;
@@ -73,6 +77,10 @@ pub use crate::types::_rule_summary::RuleSummaryBuilder;
 
 pub use crate::types::_label_summary::LabelSummaryBuilder;
 
+pub use crate::types::_api_security_event_detail::ApiSecurityEventDetailBuilder;
+
+pub use crate::types::_event_actor_detail_summary::EventActorDetailSummaryBuilder;
+
 pub use crate::types::_logging_filter::LoggingFilterBuilder;
 
 pub use crate::types::_monetization_filter::MonetizationFilterBuilder;
@@ -92,6 +100,12 @@ pub use crate::types::_api_key_summary::ApiKeySummaryBuilder;
 pub use crate::types::_managed_rule_group_summary::ManagedRuleGroupSummaryBuilder;
 
 pub use crate::types::_managed_rule_group_version::ManagedRuleGroupVersionBuilder;
+
+pub use crate::types::_event_actor_summary::EventActorSummaryBuilder;
+
+pub use crate::types::_event_filter::EventFilterBuilder;
+
+pub use crate::types::_api_pattern_filter::ApiPatternFilterBuilder;
 
 pub use crate::types::_managed_rule_set_summary::ManagedRuleSetSummaryBuilder;
 
@@ -120,6 +134,10 @@ pub use crate::types::_request_body_associated_resource_type_config::RequestBody
 pub use crate::types::_challenge_javascript_sdk_injection_config::ChallengeJavascriptSdkInjectionConfigBuilder;
 
 pub use crate::types::_application_attribute::ApplicationAttributeBuilder;
+
+pub use crate::types::_related_event::RelatedEventBuilder;
+
+pub use crate::types::_event_actor_change::EventActorChangeBuilder;
 
 pub use crate::types::_field_to_match::FieldToMatchBuilder;
 
@@ -182,6 +200,12 @@ pub use crate::types::_label::LabelBuilder;
 pub use crate::types::_payment_network::PaymentNetworkBuilder;
 
 pub use crate::types::_field_to_protect::FieldToProtectBuilder;
+
+pub use crate::types::_api_pattern::ApiPatternBuilder;
+
+pub use crate::types::_event_actor_reference::EventActorReferenceBuilder;
+
+pub use crate::types::_event_timeline_entry::EventTimelineEntryBuilder;
 
 pub use crate::types::_single_header::SingleHeaderBuilder;
 
@@ -287,6 +311,8 @@ pub use crate::types::_aws_managed_rules_acfp_rule_set::AwsManagedRulesAcfpRuleS
 
 pub use crate::types::_aws_managed_rules_anti_d_do_s_rule_set::AwsManagedRulesAntiDDoSRuleSetBuilder;
 
+pub use crate::types::_aws_managed_rules_ai_security_rule_set::AwsManagedRulesAiSecurityRuleSetBuilder;
+
 pub use crate::types::_connected_account_price::ConnectedAccountPriceBuilder;
 
 pub use crate::types::_action_condition::ActionConditionBuilder;
@@ -301,6 +327,8 @@ pub use crate::types::_request_inspection_acfp::RequestInspectionAcfpBuilder;
 
 pub use crate::types::_client_side_action_config::ClientSideActionConfigBuilder;
 
+pub use crate::types::_bedrock_guardrails::BedrockGuardrailsBuilder;
+
 pub use crate::types::_response_inspection_status_code::ResponseInspectionStatusCodeBuilder;
 
 pub use crate::types::_response_inspection_header::ResponseInspectionHeaderBuilder;
@@ -312,6 +340,12 @@ pub use crate::types::_response_inspection_json::ResponseInspectionJsonBuilder;
 pub use crate::types::_email_field::EmailFieldBuilder;
 
 pub use crate::types::_client_side_action::ClientSideActionBuilder;
+
+pub use crate::types::_disable_bedrock_guardrails::DisableBedrockGuardrailsBuilder;
+
+pub use crate::types::_bedrock_guardrails_request_only::BedrockGuardrailsRequestOnlyBuilder;
+
+pub use crate::types::_bedrock_guardrails_request_and_response::BedrockGuardrailsRequestAndResponseBuilder;
 
 pub use crate::types::_phone_number_field::PhoneNumberFieldBuilder;
 

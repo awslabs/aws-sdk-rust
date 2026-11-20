@@ -269,6 +269,11 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTemplate
                         query.push_kv("status", &::aws_smithy_http::query::fmt_string(inner_3.as_str()));
                     }
                 }
+                if let ::std::option::Option::Some(inner_4) = &_input.template_owner {
+                    {
+                        query.push_kv("templateOwner", &::aws_smithy_http::query::fmt_string(inner_4.as_str()));
+                    }
+                }
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

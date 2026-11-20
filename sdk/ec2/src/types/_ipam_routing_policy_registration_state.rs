@@ -17,6 +17,7 @@
 ///     IpamRoutingPolicyRegistrationState::CreateInProgress => { /* ... */ },
 ///     IpamRoutingPolicyRegistrationState::DeleteComplete => { /* ... */ },
 ///     IpamRoutingPolicyRegistrationState::DeleteInProgress => { /* ... */ },
+///     IpamRoutingPolicyRegistrationState::DisableComplete => { /* ... */ },
 ///     IpamRoutingPolicyRegistrationState::PendingActivate => { /* ... */ },
 ///     IpamRoutingPolicyRegistrationState::UpdateComplete => { /* ... */ },
 ///     IpamRoutingPolicyRegistrationState::UpdateInProgress => { /* ... */ },
@@ -59,6 +60,8 @@ pub enum IpamRoutingPolicyRegistrationState {
     #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
     #[allow(missing_docs)] // documentation missing in model
+    DisableComplete,
+    #[allow(missing_docs)] // documentation missing in model
     PendingActivate,
     #[allow(missing_docs)] // documentation missing in model
     UpdateComplete,
@@ -76,6 +79,7 @@ impl ::std::convert::From<&str> for IpamRoutingPolicyRegistrationState {
             "create-in-progress" => IpamRoutingPolicyRegistrationState::CreateInProgress,
             "delete-complete" => IpamRoutingPolicyRegistrationState::DeleteComplete,
             "delete-in-progress" => IpamRoutingPolicyRegistrationState::DeleteInProgress,
+            "disable-complete" => IpamRoutingPolicyRegistrationState::DisableComplete,
             "pending-activate" => IpamRoutingPolicyRegistrationState::PendingActivate,
             "update-complete" => IpamRoutingPolicyRegistrationState::UpdateComplete,
             "update-in-progress" => IpamRoutingPolicyRegistrationState::UpdateInProgress,
@@ -99,6 +103,7 @@ impl IpamRoutingPolicyRegistrationState {
             IpamRoutingPolicyRegistrationState::CreateInProgress => "create-in-progress",
             IpamRoutingPolicyRegistrationState::DeleteComplete => "delete-complete",
             IpamRoutingPolicyRegistrationState::DeleteInProgress => "delete-in-progress",
+            IpamRoutingPolicyRegistrationState::DisableComplete => "disable-complete",
             IpamRoutingPolicyRegistrationState::PendingActivate => "pending-activate",
             IpamRoutingPolicyRegistrationState::UpdateComplete => "update-complete",
             IpamRoutingPolicyRegistrationState::UpdateInProgress => "update-in-progress",
@@ -113,6 +118,7 @@ impl IpamRoutingPolicyRegistrationState {
             "create-in-progress",
             "delete-complete",
             "delete-in-progress",
+            "disable-complete",
             "pending-activate",
             "update-complete",
             "update-in-progress",
@@ -144,6 +150,7 @@ impl ::std::fmt::Display for IpamRoutingPolicyRegistrationState {
             IpamRoutingPolicyRegistrationState::CreateInProgress => write!(f, "create-in-progress"),
             IpamRoutingPolicyRegistrationState::DeleteComplete => write!(f, "delete-complete"),
             IpamRoutingPolicyRegistrationState::DeleteInProgress => write!(f, "delete-in-progress"),
+            IpamRoutingPolicyRegistrationState::DisableComplete => write!(f, "disable-complete"),
             IpamRoutingPolicyRegistrationState::PendingActivate => write!(f, "pending-activate"),
             IpamRoutingPolicyRegistrationState::UpdateComplete => write!(f, "update-complete"),
             IpamRoutingPolicyRegistrationState::UpdateInProgress => write!(f, "update-in-progress"),

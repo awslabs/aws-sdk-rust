@@ -9,6 +9,14 @@ pub struct ListTemplatesInput {
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Filters the results by status, either <code>ACTIVE</code> or <code>DRAFT</code>.</p>
     pub status: ::std::option::Option<crate::types::EntityStatusFilter>,
+    /// <p>Specifies which templates to list. The default is <code>CUSTOMER</code>. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOMER</code> – Lists the templates in your account.</p></li>
+    /// <li>
+    /// <p><code>AWS</code> – Lists the AWS managed templates.</p></li>
+    /// </ul>
+    pub template_owner: ::std::option::Option<crate::types::TemplateOwner>,
 }
 impl ListTemplatesInput {
     /// <p>The maximum number of results to return in a single call. Valid range: 1-100. To retrieve the remaining results, use the returned <code>nextToken</code> value in a subsequent call.</p>
@@ -22,6 +30,16 @@ impl ListTemplatesInput {
     /// <p>Filters the results by status, either <code>ACTIVE</code> or <code>DRAFT</code>.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::EntityStatusFilter> {
         self.status.as_ref()
+    }
+    /// <p>Specifies which templates to list. The default is <code>CUSTOMER</code>. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOMER</code> – Lists the templates in your account.</p></li>
+    /// <li>
+    /// <p><code>AWS</code> – Lists the AWS managed templates.</p></li>
+    /// </ul>
+    pub fn template_owner(&self) -> ::std::option::Option<&crate::types::TemplateOwner> {
+        self.template_owner.as_ref()
     }
 }
 impl ListTemplatesInput {
@@ -38,6 +56,7 @@ pub struct ListTemplatesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::EntityStatusFilter>,
+    pub(crate) template_owner: ::std::option::Option<crate::types::TemplateOwner>,
 }
 impl ListTemplatesInputBuilder {
     /// <p>The maximum number of results to return in a single call. Valid range: 1-100. To retrieve the remaining results, use the returned <code>nextToken</code> value in a subsequent call.</p>
@@ -82,6 +101,38 @@ impl ListTemplatesInputBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EntityStatusFilter> {
         &self.status
     }
+    /// <p>Specifies which templates to list. The default is <code>CUSTOMER</code>. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOMER</code> – Lists the templates in your account.</p></li>
+    /// <li>
+    /// <p><code>AWS</code> – Lists the AWS managed templates.</p></li>
+    /// </ul>
+    pub fn template_owner(mut self, input: crate::types::TemplateOwner) -> Self {
+        self.template_owner = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies which templates to list. The default is <code>CUSTOMER</code>. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOMER</code> – Lists the templates in your account.</p></li>
+    /// <li>
+    /// <p><code>AWS</code> – Lists the AWS managed templates.</p></li>
+    /// </ul>
+    pub fn set_template_owner(mut self, input: ::std::option::Option<crate::types::TemplateOwner>) -> Self {
+        self.template_owner = input;
+        self
+    }
+    /// <p>Specifies which templates to list. The default is <code>CUSTOMER</code>. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOMER</code> – Lists the templates in your account.</p></li>
+    /// <li>
+    /// <p><code>AWS</code> – Lists the AWS managed templates.</p></li>
+    /// </ul>
+    pub fn get_template_owner(&self) -> &::std::option::Option<crate::types::TemplateOwner> {
+        &self.template_owner
+    }
     /// Consumes the builder and constructs a [`ListTemplatesInput`](crate::operation::list_templates::ListTemplatesInput).
     pub fn build(
         self,
@@ -90,6 +141,7 @@ impl ListTemplatesInputBuilder {
             max_results: self.max_results,
             next_token: self.next_token,
             status: self.status,
+            template_owner: self.template_owner,
         })
     }
 }

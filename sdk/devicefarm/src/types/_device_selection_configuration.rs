@@ -24,6 +24,8 @@ pub struct DeviceSelectionConfiguration {
     /// <li>
     /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p></li>
     /// <li>
+    /// <p>DEVICE_TYPE: The device type. Valid values are PHYSICAL or VIRTUAL.</p></li>
+    /// <li>
     /// <p>MANUFACTURER: The device manufacturer (for example, Apple).</p></li>
     /// <li>
     /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p></li>
@@ -68,9 +70,13 @@ pub struct DeviceSelectionConfiguration {
     /// <li>
     /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
     /// <li>
+    /// <p>The DEVICE_TYPE attribute can be set to PHYSICAL or VIRTUAL.</p></li>
+    /// <li>
     /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
     /// </ul></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If the filters select devices by attribute and do not include a <code>DEVICE_TYPE</code> filter, only physical devices are selected. If the filters select devices by ARN, the run uses the devices you list.</p>
+    /// </note>
     pub filters: ::std::vec::Vec<crate::types::DeviceFilter>,
     /// <p>The maximum number of devices to be included in a test run.</p>
     pub max_devices: i32,
@@ -96,6 +102,8 @@ impl DeviceSelectionConfiguration {
     /// <li>
     /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p></li>
     /// <li>
+    /// <p>DEVICE_TYPE: The device type. Valid values are PHYSICAL or VIRTUAL.</p></li>
+    /// <li>
     /// <p>MANUFACTURER: The device manufacturer (for example, Apple).</p></li>
     /// <li>
     /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p></li>
@@ -140,9 +148,13 @@ impl DeviceSelectionConfiguration {
     /// <li>
     /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
     /// <li>
+    /// <p>The DEVICE_TYPE attribute can be set to PHYSICAL or VIRTUAL.</p></li>
+    /// <li>
     /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
     /// </ul></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If the filters select devices by attribute and do not include a <code>DEVICE_TYPE</code> filter, only physical devices are selected. If the filters select devices by ARN, the run uses the devices you list.</p>
+    /// </note>
     pub fn filters(&self) -> &[crate::types::DeviceFilter] {
         use std::ops::Deref;
         self.filters.deref()
@@ -191,6 +203,8 @@ impl DeviceSelectionConfigurationBuilder {
     /// <li>
     /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p></li>
     /// <li>
+    /// <p>DEVICE_TYPE: The device type. Valid values are PHYSICAL or VIRTUAL.</p></li>
+    /// <li>
     /// <p>MANUFACTURER: The device manufacturer (for example, Apple).</p></li>
     /// <li>
     /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p></li>
@@ -235,9 +249,13 @@ impl DeviceSelectionConfigurationBuilder {
     /// <li>
     /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
     /// <li>
+    /// <p>The DEVICE_TYPE attribute can be set to PHYSICAL or VIRTUAL.</p></li>
+    /// <li>
     /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
     /// </ul></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If the filters select devices by attribute and do not include a <code>DEVICE_TYPE</code> filter, only physical devices are selected. If the filters select devices by ARN, the run uses the devices you list.</p>
+    /// </note>
     pub fn filters(mut self, input: crate::types::DeviceFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
@@ -264,6 +282,8 @@ impl DeviceSelectionConfigurationBuilder {
     /// <li>
     /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p></li>
     /// <li>
+    /// <p>DEVICE_TYPE: The device type. Valid values are PHYSICAL or VIRTUAL.</p></li>
+    /// <li>
     /// <p>MANUFACTURER: The device manufacturer (for example, Apple).</p></li>
     /// <li>
     /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p></li>
@@ -308,9 +328,13 @@ impl DeviceSelectionConfigurationBuilder {
     /// <li>
     /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
     /// <li>
+    /// <p>The DEVICE_TYPE attribute can be set to PHYSICAL or VIRTUAL.</p></li>
+    /// <li>
     /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
     /// </ul></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If the filters select devices by attribute and do not include a <code>DEVICE_TYPE</code> filter, only physical devices are selected. If the filters select devices by ARN, the run uses the devices you list.</p>
+    /// </note>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>>) -> Self {
         self.filters = input;
         self
@@ -335,6 +359,8 @@ impl DeviceSelectionConfigurationBuilder {
     /// <li>
     /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p></li>
     /// <li>
+    /// <p>DEVICE_TYPE: The device type. Valid values are PHYSICAL or VIRTUAL.</p></li>
+    /// <li>
     /// <p>MANUFACTURER: The device manufacturer (for example, Apple).</p></li>
     /// <li>
     /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p></li>
@@ -379,9 +405,13 @@ impl DeviceSelectionConfigurationBuilder {
     /// <li>
     /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
     /// <li>
+    /// <p>The DEVICE_TYPE attribute can be set to PHYSICAL or VIRTUAL.</p></li>
+    /// <li>
     /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
     /// </ul></li>
-    /// </ul>
+    /// </ul><note>
+    /// <p>If the filters select devices by attribute and do not include a <code>DEVICE_TYPE</code> filter, only physical devices are selected. If the filters select devices by ARN, the run uses the devices you list.</p>
+    /// </note>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DeviceFilter>> {
         &self.filters
     }

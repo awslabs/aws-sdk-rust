@@ -20,16 +20,22 @@ pub struct RelationshipDetail {
     pub associated_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the relationship.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The resale account model for the relationship.</p>
+    /// <p>The resale account model for the relationship. Applies only to billing transfer relationships.</p>
     pub resale_account_model: ::std::option::Option<crate::types::ResaleAccountModel>,
     /// <p>The business sector for the relationship.</p>
     pub sector: ::std::option::Option<crate::types::Sector>,
+    /// <p>The account scope of the managed services relationship. Applies only to managed services relationships.</p>
+    pub account_scope: ::std::option::Option<crate::types::AccountScope>,
+    /// <p>The identifier of the channel contract currently in effect for the relationship. Applies only to managed services relationships.</p>
+    pub channel_contract_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the relationship was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp when the relationship was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The start date of the relationship.</p>
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The end date of the relationship.</p>
+    pub end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RelationshipDetail {
     /// <p>The Amazon Resource Name (ARN) of the relationship.</p>
@@ -64,13 +70,21 @@ impl RelationshipDetail {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The resale account model for the relationship.</p>
+    /// <p>The resale account model for the relationship. Applies only to billing transfer relationships.</p>
     pub fn resale_account_model(&self) -> ::std::option::Option<&crate::types::ResaleAccountModel> {
         self.resale_account_model.as_ref()
     }
     /// <p>The business sector for the relationship.</p>
     pub fn sector(&self) -> ::std::option::Option<&crate::types::Sector> {
         self.sector.as_ref()
+    }
+    /// <p>The account scope of the managed services relationship. Applies only to managed services relationships.</p>
+    pub fn account_scope(&self) -> ::std::option::Option<&crate::types::AccountScope> {
+        self.account_scope.as_ref()
+    }
+    /// <p>The identifier of the channel contract currently in effect for the relationship. Applies only to managed services relationships.</p>
+    pub fn channel_contract_id(&self) -> ::std::option::Option<&str> {
+        self.channel_contract_id.as_deref()
     }
     /// <p>The timestamp when the relationship was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -83,6 +97,10 @@ impl RelationshipDetail {
     /// <p>The start date of the relationship.</p>
     pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_date.as_ref()
+    }
+    /// <p>The end date of the relationship.</p>
+    pub fn end_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.end_date.as_ref()
     }
 }
 impl RelationshipDetail {
@@ -106,9 +124,12 @@ pub struct RelationshipDetailBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
     pub(crate) resale_account_model: ::std::option::Option<crate::types::ResaleAccountModel>,
     pub(crate) sector: ::std::option::Option<crate::types::Sector>,
+    pub(crate) account_scope: ::std::option::Option<crate::types::AccountScope>,
+    pub(crate) channel_contract_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) end_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl RelationshipDetailBuilder {
     /// <p>The Amazon Resource Name (ARN) of the relationship.</p>
@@ -223,17 +244,17 @@ impl RelationshipDetailBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The resale account model for the relationship.</p>
+    /// <p>The resale account model for the relationship. Applies only to billing transfer relationships.</p>
     pub fn resale_account_model(mut self, input: crate::types::ResaleAccountModel) -> Self {
         self.resale_account_model = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The resale account model for the relationship.</p>
+    /// <p>The resale account model for the relationship. Applies only to billing transfer relationships.</p>
     pub fn set_resale_account_model(mut self, input: ::std::option::Option<crate::types::ResaleAccountModel>) -> Self {
         self.resale_account_model = input;
         self
     }
-    /// <p>The resale account model for the relationship.</p>
+    /// <p>The resale account model for the relationship. Applies only to billing transfer relationships.</p>
     pub fn get_resale_account_model(&self) -> &::std::option::Option<crate::types::ResaleAccountModel> {
         &self.resale_account_model
     }
@@ -250,6 +271,34 @@ impl RelationshipDetailBuilder {
     /// <p>The business sector for the relationship.</p>
     pub fn get_sector(&self) -> &::std::option::Option<crate::types::Sector> {
         &self.sector
+    }
+    /// <p>The account scope of the managed services relationship. Applies only to managed services relationships.</p>
+    pub fn account_scope(mut self, input: crate::types::AccountScope) -> Self {
+        self.account_scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The account scope of the managed services relationship. Applies only to managed services relationships.</p>
+    pub fn set_account_scope(mut self, input: ::std::option::Option<crate::types::AccountScope>) -> Self {
+        self.account_scope = input;
+        self
+    }
+    /// <p>The account scope of the managed services relationship. Applies only to managed services relationships.</p>
+    pub fn get_account_scope(&self) -> &::std::option::Option<crate::types::AccountScope> {
+        &self.account_scope
+    }
+    /// <p>The identifier of the channel contract currently in effect for the relationship. Applies only to managed services relationships.</p>
+    pub fn channel_contract_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.channel_contract_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the channel contract currently in effect for the relationship. Applies only to managed services relationships.</p>
+    pub fn set_channel_contract_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.channel_contract_id = input;
+        self
+    }
+    /// <p>The identifier of the channel contract currently in effect for the relationship. Applies only to managed services relationships.</p>
+    pub fn get_channel_contract_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.channel_contract_id
     }
     /// <p>The timestamp when the relationship was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -293,6 +342,20 @@ impl RelationshipDetailBuilder {
     pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.start_date
     }
+    /// <p>The end date of the relationship.</p>
+    pub fn end_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.end_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The end date of the relationship.</p>
+    pub fn set_end_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.end_date = input;
+        self
+    }
+    /// <p>The end date of the relationship.</p>
+    pub fn get_end_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.end_date
+    }
     /// Consumes the builder and constructs a [`RelationshipDetail`](crate::types::RelationshipDetail).
     pub fn build(self) -> crate::types::RelationshipDetail {
         crate::types::RelationshipDetail {
@@ -306,9 +369,12 @@ impl RelationshipDetailBuilder {
             display_name: self.display_name,
             resale_account_model: self.resale_account_model,
             sector: self.sector,
+            account_scope: self.account_scope,
+            channel_contract_id: self.channel_contract_id,
             created_at: self.created_at,
             updated_at: self.updated_at,
             start_date: self.start_date,
+            end_date: self.end_date,
         }
     }
 }

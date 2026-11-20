@@ -23,6 +23,8 @@ pub struct UpdateProjectInput {
     pub user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>>,
     /// <p>The project profile version to which the project should be updated. You can only specify the following string for this parameter: <code>latest</code>.</p>
     pub project_profile_version: ::std::option::Option<::std::string::String>,
+    /// <p>The action to perform on the project profile of the project. Specify <code>DISASSOCIATE</code> to disassociate the project from its project profile.</p>
+    pub project_profile_action: ::std::option::Option<crate::types::ProjectProfileAction>,
 }
 impl UpdateProjectInput {
     /// <p>The ID of the Amazon DataZone domain where a project is being updated.</p>
@@ -69,6 +71,10 @@ impl UpdateProjectInput {
     pub fn project_profile_version(&self) -> ::std::option::Option<&str> {
         self.project_profile_version.as_deref()
     }
+    /// <p>The action to perform on the project profile of the project. Specify <code>DISASSOCIATE</code> to disassociate the project from its project profile.</p>
+    pub fn project_profile_action(&self) -> ::std::option::Option<&crate::types::ProjectProfileAction> {
+        self.project_profile_action.as_ref()
+    }
 }
 impl ::std::fmt::Debug for UpdateProjectInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -83,6 +89,7 @@ impl ::std::fmt::Debug for UpdateProjectInput {
         formatter.field("environment_deployment_details", &self.environment_deployment_details);
         formatter.field("user_parameters", &self.user_parameters);
         formatter.field("project_profile_version", &self.project_profile_version);
+        formatter.field("project_profile_action", &self.project_profile_action);
         formatter.finish()
     }
 }
@@ -107,6 +114,7 @@ pub struct UpdateProjectInputBuilder {
     pub(crate) environment_deployment_details: ::std::option::Option<crate::types::EnvironmentDeploymentDetails>,
     pub(crate) user_parameters: ::std::option::Option<::std::vec::Vec<crate::types::EnvironmentConfigurationUserParameter>>,
     pub(crate) project_profile_version: ::std::option::Option<::std::string::String>,
+    pub(crate) project_profile_action: ::std::option::Option<crate::types::ProjectProfileAction>,
 }
 impl UpdateProjectInputBuilder {
     /// <p>The ID of the Amazon DataZone domain where a project is being updated.</p>
@@ -272,6 +280,20 @@ impl UpdateProjectInputBuilder {
     pub fn get_project_profile_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.project_profile_version
     }
+    /// <p>The action to perform on the project profile of the project. Specify <code>DISASSOCIATE</code> to disassociate the project from its project profile.</p>
+    pub fn project_profile_action(mut self, input: crate::types::ProjectProfileAction) -> Self {
+        self.project_profile_action = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The action to perform on the project profile of the project. Specify <code>DISASSOCIATE</code> to disassociate the project from its project profile.</p>
+    pub fn set_project_profile_action(mut self, input: ::std::option::Option<crate::types::ProjectProfileAction>) -> Self {
+        self.project_profile_action = input;
+        self
+    }
+    /// <p>The action to perform on the project profile of the project. Specify <code>DISASSOCIATE</code> to disassociate the project from its project profile.</p>
+    pub fn get_project_profile_action(&self) -> &::std::option::Option<crate::types::ProjectProfileAction> {
+        &self.project_profile_action
+    }
     /// Consumes the builder and constructs a [`UpdateProjectInput`](crate::operation::update_project::UpdateProjectInput).
     pub fn build(
         self,
@@ -287,6 +309,7 @@ impl UpdateProjectInputBuilder {
             environment_deployment_details: self.environment_deployment_details,
             user_parameters: self.user_parameters,
             project_profile_version: self.project_profile_version,
+            project_profile_action: self.project_profile_action,
         })
     }
 }
@@ -303,6 +326,7 @@ impl ::std::fmt::Debug for UpdateProjectInputBuilder {
         formatter.field("environment_deployment_details", &self.environment_deployment_details);
         formatter.field("user_parameters", &self.user_parameters);
         formatter.field("project_profile_version", &self.project_profile_version);
+        formatter.field("project_profile_action", &self.project_profile_action);
         formatter.finish()
     }
 }

@@ -12,6 +12,7 @@
 /// ```text
 /// # let rulefirewalltype = unimplemented!();
 /// match rulefirewalltype {
+///     RuleFirewallType::IgwFirewall => { /* ... */ },
 ///     RuleFirewallType::Waf => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -42,6 +43,8 @@
 )]
 pub enum RuleFirewallType {
     #[allow(missing_docs)] // documentation missing in model
+    IgwFirewall,
+    #[allow(missing_docs)] // documentation missing in model
     Waf,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -50,6 +53,7 @@ pub enum RuleFirewallType {
 impl ::std::convert::From<&str> for RuleFirewallType {
     fn from(s: &str) -> Self {
         match s {
+            "IGW_FIREWALL" => RuleFirewallType::IgwFirewall,
             "WAF" => RuleFirewallType::Waf,
             other => RuleFirewallType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +70,14 @@ impl RuleFirewallType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            RuleFirewallType::IgwFirewall => "IGW_FIREWALL",
             RuleFirewallType::Waf => "WAF",
             RuleFirewallType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["WAF"]
+        &["IGW_FIREWALL", "WAF"]
     }
 }
 impl ::std::convert::AsRef<str> for RuleFirewallType {
@@ -95,6 +100,7 @@ impl RuleFirewallType {
 impl ::std::fmt::Display for RuleFirewallType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            RuleFirewallType::IgwFirewall => write!(f, "IGW_FIREWALL"),
             RuleFirewallType::Waf => write!(f, "WAF"),
             RuleFirewallType::Unknown(value) => write!(f, "{value}"),
         }

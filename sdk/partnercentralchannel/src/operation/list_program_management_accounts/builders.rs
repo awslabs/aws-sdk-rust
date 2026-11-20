@@ -246,4 +246,18 @@ impl ListProgramManagementAccountsFluentBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }
+    /// <p>Filter by program management account type.</p>
+    pub fn r#type(mut self, input: crate::types::ProgramManagementAccountType) -> Self {
+        self.inner = self.inner.r#type(input);
+        self
+    }
+    /// <p>Filter by program management account type.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProgramManagementAccountType>) -> Self {
+        self.inner = self.inner.set_type(input);
+        self
+    }
+    /// <p>Filter by program management account type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ProgramManagementAccountType> {
+        self.inner.get_type()
+    }
 }

@@ -27,6 +27,15 @@ pub struct CreateMicrovmImageInput {
     pub hooks: ::std::option::Option<crate::types::Hooks>,
     /// <p>Environment variables set in the MicroVM runtime environment.</p>
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts the contents and metadata of your MicroVM image version. You must have permission to use the key. Specify the key in one of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Key ARN</p></li>
+    /// <li>
+    /// <p>Alias ARN</p></li>
+    /// </ul>
+    /// <p>If you don't specify a key, your MicroVM image version uses an Amazon Web Services owned key.</p>
+    pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the MicroVM image. Must be unique within the AWS account.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A set of key-value pairs that you can attach to the resource. Use tags to categorize resources for cost allocation, access control (ABAC), and organization.</p>
@@ -91,6 +100,17 @@ impl CreateMicrovmImageInput {
     pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment_variables.as_ref()
     }
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts the contents and metadata of your MicroVM image version. You must have permission to use the key. Specify the key in one of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Key ARN</p></li>
+    /// <li>
+    /// <p>Alias ARN</p></li>
+    /// </ul>
+    /// <p>If you don't specify a key, your MicroVM image version uses an Amazon Web Services owned key.</p>
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+        self.kms_key_identifier.as_deref()
+    }
     /// <p>The name of the MicroVM image. Must be unique within the AWS account.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
@@ -119,6 +139,7 @@ impl ::std::fmt::Debug for CreateMicrovmImageInput {
         formatter.field("additional_os_capabilities", &self.additional_os_capabilities);
         formatter.field("hooks", &self.hooks);
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("kms_key_identifier", &self.kms_key_identifier);
         formatter.field("name", &self.name);
         formatter.field("tags", &self.tags);
         formatter.field("client_token", &self.client_token);
@@ -148,6 +169,7 @@ pub struct CreateMicrovmImageInputBuilder {
     pub(crate) additional_os_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
     pub(crate) hooks: ::std::option::Option<crate::types::Hooks>,
     pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -361,6 +383,41 @@ impl CreateMicrovmImageInputBuilder {
     pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment_variables
     }
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts the contents and metadata of your MicroVM image version. You must have permission to use the key. Specify the key in one of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Key ARN</p></li>
+    /// <li>
+    /// <p>Alias ARN</p></li>
+    /// </ul>
+    /// <p>If you don't specify a key, your MicroVM image version uses an Amazon Web Services owned key.</p>
+    pub fn kms_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts the contents and metadata of your MicroVM image version. You must have permission to use the key. Specify the key in one of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Key ARN</p></li>
+    /// <li>
+    /// <p>Alias ARN</p></li>
+    /// </ul>
+    /// <p>If you don't specify a key, your MicroVM image version uses an Amazon Web Services owned key.</p>
+    pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_identifier = input;
+        self
+    }
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts the contents and metadata of your MicroVM image version. You must have permission to use the key. Specify the key in one of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Key ARN</p></li>
+    /// <li>
+    /// <p>Alias ARN</p></li>
+    /// </ul>
+    /// <p>If you don't specify a key, your MicroVM image version uses an Amazon Web Services owned key.</p>
+    pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_identifier
+    }
     /// <p>The name of the MicroVM image. Must be unique within the AWS account.</p>
     /// This field is required.
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -428,6 +485,7 @@ impl CreateMicrovmImageInputBuilder {
             additional_os_capabilities: self.additional_os_capabilities,
             hooks: self.hooks,
             environment_variables: self.environment_variables,
+            kms_key_identifier: self.kms_key_identifier,
             name: self.name,
             tags: self.tags,
             client_token: self.client_token,
@@ -449,6 +507,7 @@ impl ::std::fmt::Debug for CreateMicrovmImageInputBuilder {
         formatter.field("additional_os_capabilities", &self.additional_os_capabilities);
         formatter.field("hooks", &self.hooks);
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("kms_key_identifier", &self.kms_key_identifier);
         formatter.field("name", &self.name);
         formatter.field("tags", &self.tags);
         formatter.field("client_token", &self.client_token);

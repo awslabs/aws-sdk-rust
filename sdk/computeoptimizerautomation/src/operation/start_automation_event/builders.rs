@@ -23,7 +23,7 @@ impl crate::operation::start_automation_event::builders::StartAutomationEventInp
 /// Fluent builder constructing a request to `StartAutomationEvent`.
 ///
 /// <p>Initiates a one-time, on-demand automation for the specified recommended action.</p><note>
-/// <p>Management accounts and delegated administrators can only initiate recommended actions for associated member accounts. You can associate a member account using <code>AssociateAccounts</code>.</p>
+/// <p>Management accounts and delegated administrators can initiate recommended actions for member accounts that are associated using <code>AssociateAccounts</code> or have an applicable organization enrollment configuration with <code>organizationRuleMode</code> set to <code>AnyAllowed</code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartAutomationEventFluentBuilder {

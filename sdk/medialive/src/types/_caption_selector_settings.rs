@@ -20,6 +20,8 @@ pub struct CaptionSelectorSettings {
     pub teletext_source_settings: ::std::option::Option<crate::types::TeletextSourceSettings>,
     /// Smart Subtitle Source Settings
     pub smart_subtitle_source_settings: ::std::option::Option<crate::types::SmartSubtitleSourceSettings>,
+    /// Webvtt Source Settings
+    pub webvtt_source_settings: ::std::option::Option<crate::types::WebvttSourceSettings>,
 }
 impl CaptionSelectorSettings {
     /// Ancillary Source Settings
@@ -54,6 +56,10 @@ impl CaptionSelectorSettings {
     pub fn smart_subtitle_source_settings(&self) -> ::std::option::Option<&crate::types::SmartSubtitleSourceSettings> {
         self.smart_subtitle_source_settings.as_ref()
     }
+    /// Webvtt Source Settings
+    pub fn webvtt_source_settings(&self) -> ::std::option::Option<&crate::types::WebvttSourceSettings> {
+        self.webvtt_source_settings.as_ref()
+    }
 }
 impl CaptionSelectorSettings {
     /// Creates a new builder-style object to manufacture [`CaptionSelectorSettings`](crate::types::CaptionSelectorSettings).
@@ -74,6 +80,7 @@ pub struct CaptionSelectorSettingsBuilder {
     pub(crate) scte27_source_settings: ::std::option::Option<crate::types::Scte27SourceSettings>,
     pub(crate) teletext_source_settings: ::std::option::Option<crate::types::TeletextSourceSettings>,
     pub(crate) smart_subtitle_source_settings: ::std::option::Option<crate::types::SmartSubtitleSourceSettings>,
+    pub(crate) webvtt_source_settings: ::std::option::Option<crate::types::WebvttSourceSettings>,
 }
 impl CaptionSelectorSettingsBuilder {
     /// Ancillary Source Settings
@@ -188,6 +195,20 @@ impl CaptionSelectorSettingsBuilder {
     pub fn get_smart_subtitle_source_settings(&self) -> &::std::option::Option<crate::types::SmartSubtitleSourceSettings> {
         &self.smart_subtitle_source_settings
     }
+    /// Webvtt Source Settings
+    pub fn webvtt_source_settings(mut self, input: crate::types::WebvttSourceSettings) -> Self {
+        self.webvtt_source_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Webvtt Source Settings
+    pub fn set_webvtt_source_settings(mut self, input: ::std::option::Option<crate::types::WebvttSourceSettings>) -> Self {
+        self.webvtt_source_settings = input;
+        self
+    }
+    /// Webvtt Source Settings
+    pub fn get_webvtt_source_settings(&self) -> &::std::option::Option<crate::types::WebvttSourceSettings> {
+        &self.webvtt_source_settings
+    }
     /// Consumes the builder and constructs a [`CaptionSelectorSettings`](crate::types::CaptionSelectorSettings).
     pub fn build(self) -> crate::types::CaptionSelectorSettings {
         crate::types::CaptionSelectorSettings {
@@ -199,6 +220,7 @@ impl CaptionSelectorSettingsBuilder {
             scte27_source_settings: self.scte27_source_settings,
             teletext_source_settings: self.teletext_source_settings,
             smart_subtitle_source_settings: self.smart_subtitle_source_settings,
+            webvtt_source_settings: self.webvtt_source_settings,
         }
     }
 }

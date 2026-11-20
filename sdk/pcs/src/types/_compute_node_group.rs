@@ -55,6 +55,8 @@ pub struct ComputeNodeGroup {
     pub slurm_configuration: ::std::option::Option<crate::types::ComputeNodeGroupSlurmConfiguration>,
     /// <p>The lifecycle actions to run on compute nodes in the compute node group. Use lifecycle actions to run custom scripts at defined stages of a compute node's lifecycle, such as when a compute node finishes bootstrapping or becomes ready to accept jobs.</p>
     pub node_lifecycle_actions: ::std::option::Option<crate::types::NodeLifecycleActions>,
+    /// <p>The instance health check settings of the compute node group. Instance health checks detect faults on instances in the compute node group and respond with the repair action that you choose.</p>
+    pub instance_health_checks: ::std::option::Option<crate::types::InstanceHealthChecks>,
     /// <p>The list of errors that occurred during compute node group provisioning.</p>
     pub error_info: ::std::option::Option<::std::vec::Vec<crate::types::ErrorInfo>>,
 }
@@ -159,6 +161,10 @@ impl ComputeNodeGroup {
     pub fn node_lifecycle_actions(&self) -> ::std::option::Option<&crate::types::NodeLifecycleActions> {
         self.node_lifecycle_actions.as_ref()
     }
+    /// <p>The instance health check settings of the compute node group. Instance health checks detect faults on instances in the compute node group and respond with the repair action that you choose.</p>
+    pub fn instance_health_checks(&self) -> ::std::option::Option<&crate::types::InstanceHealthChecks> {
+        self.instance_health_checks.as_ref()
+    }
     /// <p>The list of errors that occurred during compute node group provisioning.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.error_info.is_none()`.
@@ -197,6 +203,7 @@ pub struct ComputeNodeGroupBuilder {
     pub(crate) spot_options: ::std::option::Option<crate::types::SpotOptions>,
     pub(crate) slurm_configuration: ::std::option::Option<crate::types::ComputeNodeGroupSlurmConfiguration>,
     pub(crate) node_lifecycle_actions: ::std::option::Option<crate::types::NodeLifecycleActions>,
+    pub(crate) instance_health_checks: ::std::option::Option<crate::types::InstanceHealthChecks>,
     pub(crate) error_info: ::std::option::Option<::std::vec::Vec<crate::types::ErrorInfo>>,
 }
 impl ComputeNodeGroupBuilder {
@@ -540,6 +547,20 @@ impl ComputeNodeGroupBuilder {
     pub fn get_node_lifecycle_actions(&self) -> &::std::option::Option<crate::types::NodeLifecycleActions> {
         &self.node_lifecycle_actions
     }
+    /// <p>The instance health check settings of the compute node group. Instance health checks detect faults on instances in the compute node group and respond with the repair action that you choose.</p>
+    pub fn instance_health_checks(mut self, input: crate::types::InstanceHealthChecks) -> Self {
+        self.instance_health_checks = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The instance health check settings of the compute node group. Instance health checks detect faults on instances in the compute node group and respond with the repair action that you choose.</p>
+    pub fn set_instance_health_checks(mut self, input: ::std::option::Option<crate::types::InstanceHealthChecks>) -> Self {
+        self.instance_health_checks = input;
+        self
+    }
+    /// <p>The instance health check settings of the compute node group. Instance health checks detect faults on instances in the compute node group and respond with the repair action that you choose.</p>
+    pub fn get_instance_health_checks(&self) -> &::std::option::Option<crate::types::InstanceHealthChecks> {
+        &self.instance_health_checks
+    }
     /// Appends an item to `error_info`.
     ///
     /// To override the contents of this collection use [`set_error_info`](Self::set_error_info).
@@ -648,6 +669,7 @@ impl ComputeNodeGroupBuilder {
             spot_options: self.spot_options,
             slurm_configuration: self.slurm_configuration,
             node_lifecycle_actions: self.node_lifecycle_actions,
+            instance_health_checks: self.instance_health_checks,
             error_info: self.error_info,
         })
     }

@@ -74,19 +74,19 @@ where
 }
 
 pub fn ser_logging(
-    object_25: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
+    object_26: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::Logging,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     match input {
         crate::types::Logging::Disabled(inner) => {
             #[allow(unused_mut)]
-            let mut object_1 = object_25.key("disabled").start_object();
+            let mut object_1 = object_26.key("disabled").start_object();
             crate::protocol_serde::shape_logging_disabled::ser_logging_disabled(&mut object_1, inner)?;
             object_1.finish();
         }
         crate::types::Logging::CloudWatch(inner) => {
             #[allow(unused_mut)]
-            let mut object_2 = object_25.key("cloudWatch").start_object();
+            let mut object_2 = object_26.key("cloudWatch").start_object();
             crate::protocol_serde::shape_cloud_watch_logging::ser_cloud_watch_logging(&mut object_2, inner)?;
             object_2.finish();
         }

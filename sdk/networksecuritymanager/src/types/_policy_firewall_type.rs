@@ -12,6 +12,7 @@
 /// ```text
 /// # let policyfirewalltype = unimplemented!();
 /// match policyfirewalltype {
+///     PolicyFirewallType::IgwFirewall => { /* ... */ },
 ///     PolicyFirewallType::ShieldAdvanced => { /* ... */ },
 ///     PolicyFirewallType::Waf => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -43,6 +44,8 @@
 )]
 pub enum PolicyFirewallType {
     #[allow(missing_docs)] // documentation missing in model
+    IgwFirewall,
+    #[allow(missing_docs)] // documentation missing in model
     ShieldAdvanced,
     #[allow(missing_docs)] // documentation missing in model
     Waf,
@@ -53,6 +56,7 @@ pub enum PolicyFirewallType {
 impl ::std::convert::From<&str> for PolicyFirewallType {
     fn from(s: &str) -> Self {
         match s {
+            "IGW_FIREWALL" => PolicyFirewallType::IgwFirewall,
             "SHIELD_ADVANCED" => PolicyFirewallType::ShieldAdvanced,
             "WAF" => PolicyFirewallType::Waf,
             other => PolicyFirewallType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -70,6 +74,7 @@ impl PolicyFirewallType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            PolicyFirewallType::IgwFirewall => "IGW_FIREWALL",
             PolicyFirewallType::ShieldAdvanced => "SHIELD_ADVANCED",
             PolicyFirewallType::Waf => "WAF",
             PolicyFirewallType::Unknown(value) => value.as_str(),
@@ -77,7 +82,7 @@ impl PolicyFirewallType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["SHIELD_ADVANCED", "WAF"]
+        &["IGW_FIREWALL", "SHIELD_ADVANCED", "WAF"]
     }
 }
 impl ::std::convert::AsRef<str> for PolicyFirewallType {
@@ -100,6 +105,7 @@ impl PolicyFirewallType {
 impl ::std::fmt::Display for PolicyFirewallType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            PolicyFirewallType::IgwFirewall => write!(f, "IGW_FIREWALL"),
             PolicyFirewallType::ShieldAdvanced => write!(f, "SHIELD_ADVANCED"),
             PolicyFirewallType::Waf => write!(f, "WAF"),
             PolicyFirewallType::Unknown(value) => write!(f, "{value}"),

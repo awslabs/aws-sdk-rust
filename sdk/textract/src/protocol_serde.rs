@@ -25,9 +25,19 @@ pub(crate) mod shape_create_adapter;
 
 pub(crate) mod shape_create_adapter_version;
 
+pub(crate) mod shape_create_blueprint;
+
+pub(crate) mod shape_create_blueprint_version;
+
+pub(crate) mod shape_create_project;
+
 pub(crate) mod shape_delete_adapter;
 
 pub(crate) mod shape_delete_adapter_version;
+
+pub(crate) mod shape_delete_blueprint;
+
+pub(crate) mod shape_delete_project;
 
 pub(crate) mod shape_detect_document_text;
 
@@ -35,7 +45,11 @@ pub(crate) mod shape_get_adapter;
 
 pub(crate) mod shape_get_adapter_version;
 
+pub(crate) mod shape_get_blueprint;
+
 pub(crate) mod shape_get_document_analysis;
+
+pub(crate) mod shape_get_document_insights;
 
 pub(crate) mod shape_get_document_text_detection;
 
@@ -45,13 +59,21 @@ pub(crate) mod shape_get_lending_analysis;
 
 pub(crate) mod shape_get_lending_analysis_summary;
 
+pub(crate) mod shape_get_project;
+
 pub(crate) mod shape_list_adapter_versions;
 
 pub(crate) mod shape_list_adapters;
 
+pub(crate) mod shape_list_blueprints;
+
+pub(crate) mod shape_list_projects;
+
 pub(crate) mod shape_list_tags_for_resource;
 
 pub(crate) mod shape_start_document_analysis;
+
+pub(crate) mod shape_start_document_insights;
 
 pub(crate) mod shape_start_document_text_detection;
 
@@ -64,6 +86,10 @@ pub(crate) mod shape_tag_resource;
 pub(crate) mod shape_untag_resource;
 
 pub(crate) mod shape_update_adapter;
+
+pub(crate) mod shape_update_blueprint;
+
+pub(crate) mod shape_update_project;
 
 pub(crate) mod shape_access_denied_exception;
 
@@ -81,9 +107,19 @@ pub(crate) mod shape_create_adapter_input;
 
 pub(crate) mod shape_create_adapter_version_input;
 
+pub(crate) mod shape_create_blueprint_input;
+
+pub(crate) mod shape_create_blueprint_version_input;
+
+pub(crate) mod shape_create_project_input;
+
 pub(crate) mod shape_delete_adapter_input;
 
 pub(crate) mod shape_delete_adapter_version_input;
+
+pub(crate) mod shape_delete_blueprint_input;
+
+pub(crate) mod shape_delete_project_input;
 
 pub(crate) mod shape_detect_document_text_input;
 
@@ -93,7 +129,11 @@ pub(crate) mod shape_get_adapter_input;
 
 pub(crate) mod shape_get_adapter_version_input;
 
+pub(crate) mod shape_get_blueprint_input;
+
 pub(crate) mod shape_get_document_analysis_input;
+
+pub(crate) mod shape_get_document_insights_input;
 
 pub(crate) mod shape_get_document_text_detection_input;
 
@@ -102,6 +142,8 @@ pub(crate) mod shape_get_expense_analysis_input;
 pub(crate) mod shape_get_lending_analysis_input;
 
 pub(crate) mod shape_get_lending_analysis_summary_input;
+
+pub(crate) mod shape_get_project_input;
 
 pub(crate) mod shape_human_loop_quota_exceeded_exception;
 
@@ -123,6 +165,10 @@ pub(crate) mod shape_list_adapter_versions_input;
 
 pub(crate) mod shape_list_adapters_input;
 
+pub(crate) mod shape_list_blueprints_input;
+
+pub(crate) mod shape_list_projects_input;
+
 pub(crate) mod shape_list_tags_for_resource_input;
 
 pub(crate) mod shape_provisioned_throughput_exceeded_exception;
@@ -132,6 +178,8 @@ pub(crate) mod shape_resource_not_found_exception;
 pub(crate) mod shape_service_quota_exceeded_exception;
 
 pub(crate) mod shape_start_document_analysis_input;
+
+pub(crate) mod shape_start_document_insights_input;
 
 pub(crate) mod shape_start_document_text_detection_input;
 
@@ -149,6 +197,10 @@ pub(crate) mod shape_untag_resource_input;
 
 pub(crate) mod shape_update_adapter_input;
 
+pub(crate) mod shape_update_blueprint_input;
+
+pub(crate) mod shape_update_project_input;
+
 pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_adapter_list;
@@ -163,15 +215,29 @@ pub(crate) mod shape_adapters_config;
 
 pub(crate) mod shape_block_list;
 
+pub(crate) mod shape_blueprint_filter;
+
+pub(crate) mod shape_blueprint_item;
+
+pub(crate) mod shape_blueprint_summary_list;
+
+pub(crate) mod shape_custom_configuration;
+
 pub(crate) mod shape_document;
 
 pub(crate) mod shape_document_location;
 
 pub(crate) mod shape_document_metadata;
 
+pub(crate) mod shape_encryption_configuration;
+
 pub(crate) mod shape_expense_document_list;
 
+pub(crate) mod shape_extraction_configuration;
+
 pub(crate) mod shape_feature_types;
+
+pub(crate) mod shape_generative_configuration;
 
 pub(crate) mod shape_human_loop_activation_output;
 
@@ -179,15 +245,31 @@ pub(crate) mod shape_human_loop_config;
 
 pub(crate) mod shape_identity_document_list;
 
+pub(crate) mod shape_input_configuration;
+
+pub(crate) mod shape_kms_encryption_context;
+
 pub(crate) mod shape_lending_result_list;
 
 pub(crate) mod shape_lending_summary;
 
 pub(crate) mod shape_notification_channel;
 
+pub(crate) mod shape_notification_configuration;
+
 pub(crate) mod shape_output_config;
 
+pub(crate) mod shape_output_configuration;
+
+pub(crate) mod shape_project_filter;
+
+pub(crate) mod shape_project_summary_list;
+
 pub(crate) mod shape_queries_config;
+
+pub(crate) mod shape_sensitive_data_configuration;
+
+pub(crate) mod shape_splitter_configuration;
 
 pub(crate) mod shape_tag_map;
 
@@ -203,9 +285,23 @@ pub(crate) mod shape_adapter_version_overview;
 
 pub(crate) mod shape_block;
 
+pub(crate) mod shape_blueprint_items;
+
+pub(crate) mod shape_blueprint_summary;
+
+pub(crate) mod shape_bounding_box_configuration;
+
 pub(crate) mod shape_document_group_list;
 
+pub(crate) mod shape_event_bridge_configuration;
+
 pub(crate) mod shape_expense_document;
+
+pub(crate) mod shape_extraction_granularity;
+
+pub(crate) mod shape_fallback_blueprint_items;
+
+pub(crate) mod shape_figure_caption_configuration;
 
 pub(crate) mod shape_human_loop_activation_reasons;
 
@@ -215,9 +311,17 @@ pub(crate) mod shape_identity_document;
 
 pub(crate) mod shape_lending_result;
 
+pub(crate) mod shape_output_format;
+
+pub(crate) mod shape_pii_entities_configuration;
+
+pub(crate) mod shape_project_summary;
+
 pub(crate) mod shape_query;
 
 pub(crate) mod shape_s3_object;
+
+pub(crate) mod shape_summarization_configuration;
 
 pub(crate) mod shape_undetected_document_type_list;
 
@@ -231,6 +335,8 @@ pub(crate) mod shape_evaluation_metric;
 
 pub(crate) mod shape_expense_field_list;
 
+pub(crate) mod shape_extraction_granularity_types;
+
 pub(crate) mod shape_extraction_list;
 
 pub(crate) mod shape_geometry;
@@ -239,9 +345,15 @@ pub(crate) mod shape_identity_document_field_list;
 
 pub(crate) mod shape_line_item_group_list;
 
+pub(crate) mod shape_output_additional_file_format;
+
+pub(crate) mod shape_output_text_format;
+
 pub(crate) mod shape_page_classification;
 
 pub(crate) mod shape_pages;
+
+pub(crate) mod shape_pii_entity_types;
 
 pub(crate) mod shape_relationship_list;
 
@@ -256,6 +368,8 @@ pub(crate) mod shape_extraction;
 pub(crate) mod shape_identity_document_field;
 
 pub(crate) mod shape_line_item_group;
+
+pub(crate) mod shape_output_text_format_types;
 
 pub(crate) mod shape_polygon;
 

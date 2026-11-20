@@ -115,6 +115,9 @@ pub mod start_transcription_job;
 /// Types for the `TagResource` operation.
 pub mod tag_resource;
 
+/// Types for the `TranscribeAudio` operation.
+pub mod transcribe_audio;
+
 /// Types for the `UntagResource` operation.
 pub mod untag_resource;
 

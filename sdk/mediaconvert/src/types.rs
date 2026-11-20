@@ -181,6 +181,8 @@ pub use crate::types::_rectangle::Rectangle;
 
 pub use crate::types::_drop_frame_timecode::DropFrameTimecode;
 
+pub use crate::types::_dynamic_multiview_settings::DynamicMultiviewSettings;
+
 pub use crate::types::_respond_to_afd::RespondToAfd;
 
 pub use crate::types::_scaling_behavior::ScalingBehavior;
@@ -411,6 +413,8 @@ pub use crate::types::_vp9_settings::Vp9Settings;
 
 pub use crate::types::_xavc_settings::XavcSettings;
 
+pub use crate::types::_dynamic_multiview_settings_enabled::DynamicMultiviewSettingsEnabled;
+
 pub use crate::types::_color_corrector::ColorCorrector;
 
 pub use crate::types::_deinterlacer::Deinterlacer;
@@ -511,6 +515,10 @@ pub use crate::types::_aiff_settings::AiffSettings;
 
 pub use crate::types::_audio_codec::AudioCodec;
 
+pub use crate::types::_dtsc_settings::DtscSettings;
+
+pub use crate::types::_dtsx_settings::DtsxSettings;
+
 pub use crate::types::_eac3_atmos_settings::Eac3AtmosSettings;
 
 pub use crate::types::_eac3_settings::Eac3Settings;
@@ -557,11 +565,15 @@ pub use crate::types::_av1_adaptive_quantization::Av1AdaptiveQuantization;
 
 pub use crate::types::_av1_bit_depth::Av1BitDepth;
 
+pub use crate::types::_av1_fast_decode::Av1FastDecode;
+
 pub use crate::types::_av1_film_grain_synthesis::Av1FilmGrainSynthesis;
 
 pub use crate::types::_av1_framerate_control::Av1FramerateControl;
 
 pub use crate::types::_av1_framerate_conversion_algorithm::Av1FramerateConversionAlgorithm;
+
+pub use crate::types::_av1_gop_size_units::Av1GopSizeUnits;
 
 pub use crate::types::_av1_qvbr_settings::Av1QvbrSettings;
 
@@ -570,6 +582,8 @@ pub use crate::types::_av1_rate_control_mode::Av1RateControlMode;
 pub use crate::types::_av1_scene_change_detect::Av1SceneChangeDetect;
 
 pub use crate::types::_av1_spatial_adaptive_quantization::Av1SpatialAdaptiveQuantization;
+
+pub use crate::types::_av1_temporal_adaptive_quantization::Av1TemporalAdaptiveQuantization;
 
 pub use crate::types::_avc_intra_class::AvcIntraClass;
 
@@ -1071,6 +1085,8 @@ pub use crate::types::_ac4_dynamic_range_compression_drc_profile::Ac4DynamicRang
 
 pub use crate::types::_ac4_stereo_downmix::Ac4StereoDownmix;
 
+pub use crate::types::_dtsx_coding_mode::DtsxCodingMode;
+
 pub use crate::types::_eac3_atmos_bitstream_mode::Eac3AtmosBitstreamMode;
 
 pub use crate::types::_eac3_atmos_coding_mode::Eac3AtmosCodingMode;
@@ -1531,11 +1547,15 @@ mod _av1_adaptive_quantization;
 
 mod _av1_bit_depth;
 
+mod _av1_fast_decode;
+
 mod _av1_film_grain_synthesis;
 
 mod _av1_framerate_control;
 
 mod _av1_framerate_conversion_algorithm;
+
+mod _av1_gop_size_units;
 
 mod _av1_qvbr_settings;
 
@@ -1546,6 +1566,8 @@ mod _av1_scene_change_detect;
 mod _av1_settings;
 
 mod _av1_spatial_adaptive_quantization;
+
+mod _av1_temporal_adaptive_quantization;
 
 mod _avail_blanking;
 
@@ -1803,6 +1825,12 @@ mod _dolby_vision_profile;
 
 mod _drop_frame_timecode;
 
+mod _dtsc_settings;
+
+mod _dtsx_coding_mode;
+
+mod _dtsx_settings;
+
 mod _duration_control;
 
 mod _dvb_nit_settings;
@@ -1840,6 +1868,10 @@ mod _dvbdds_handling;
 mod _dynamic_audio_selector;
 
 mod _dynamic_audio_selector_type;
+
+mod _dynamic_multiview_settings;
+
+mod _dynamic_multiview_settings_enabled;
 
 mod _eac3_atmos_bitstream_mode;
 

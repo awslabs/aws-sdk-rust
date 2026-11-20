@@ -128,6 +128,24 @@ static CREATEDOCUMENTINPUT_MEMBER_TAGS: ::aws_smithy_schema::Schema<'static> = :
     9,
 )
 .with_list_member(&CREATEDOCUMENTINPUT_MEMBER_TAGS_MEMBER);
+static CREATEDOCUMENTINPUT_MEMBER_CLOUD_PROVIDERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#CloudProviderList$member", "com.amazonaws.ssm", "CloudProviderList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+)
+.with_xml_name("CloudProvider");
+static CREATEDOCUMENTINPUT_MEMBER_CLOUD_PROVIDERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#CreateDocumentInput$CloudProviders",
+        "com.amazonaws.ssm.synthetic",
+        "CreateDocumentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CloudProviders",
+    10,
+)
+.with_list_member(&CREATEDOCUMENTINPUT_MEMBER_CLOUD_PROVIDERS_MEMBER);
 static CREATEDOCUMENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.ssm.synthetic#CreateDocumentInput",
@@ -146,6 +164,7 @@ static CREATEDOCUMENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_
         &CREATEDOCUMENTINPUT_MEMBER_DOCUMENT_FORMAT,
         &CREATEDOCUMENTINPUT_MEMBER_TARGET_TYPE,
         &CREATEDOCUMENTINPUT_MEMBER_TAGS,
+        &CREATEDOCUMENTINPUT_MEMBER_CLOUD_PROVIDERS,
     ],
 )
 .with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
@@ -213,6 +232,17 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::create
                 &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
                     for item in val {
                         ser.write_struct(crate::types::Tag::SCHEMA, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.cloud_providers {
+            ser.write_list(
+                &CREATEDOCUMENTINPUT_MEMBER_CLOUD_PROVIDERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
                     }
                     Ok(())
                 },
@@ -320,6 +350,22 @@ impl crate::operation::create_document::builders::CreateDocumentInputBuilder {
                             let mut container = Vec::new();
                             deser.read_list(member, &mut |deser| {
                                 container.push(crate::types::Tag::deserialize(deser)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_providers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CloudProvider::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
                                 Ok(())
                             })?;
                             container

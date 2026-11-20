@@ -11,6 +11,8 @@ pub use crate::types::_admin_scope_input::AdminScopeInputBuilder;
 
 pub use crate::types::_waf_config::WafConfigBuilder;
 
+pub use crate::types::_igw_firewall_config::IgwFirewallConfigBuilder;
+
 pub use crate::types::_validation_exception_field::ValidationExceptionFieldBuilder;
 
 pub use crate::types::_admin_scope::AdminScopeBuilder;
@@ -18,6 +20,8 @@ pub use crate::types::_admin_scope::AdminScopeBuilder;
 pub use crate::types::_admin_account_summary::AdminAccountSummaryBuilder;
 
 pub use crate::types::_resource_synchronization_status_summary::ResourceSynchronizationStatusSummaryBuilder;
+
+pub use crate::types::_resource_coverage_summary::ResourceCoverageSummaryBuilder;
 
 pub use crate::types::_resource_association::ResourceAssociationBuilder;
 
@@ -57,6 +61,8 @@ pub use crate::types::_associated_rule::AssociatedRuleBuilder;
 
 pub use crate::types::_admin_scope_selection_input::AdminScopeSelectionInputBuilder;
 
+pub use crate::types::_subnet_connectivity_override::SubnetConnectivityOverrideBuilder;
+
 pub use crate::types::_resource_set::ResourceSetBuilder;
 
 pub use crate::types::_admin_scope_selection::AdminScopeSelectionBuilder;
@@ -74,3 +80,5 @@ pub use crate::types::_invalid_firewall_reasons::InvalidFirewallReasonsBuilder;
 pub use crate::types::_alb_configuration::AlbConfigurationBuilder;
 
 pub use crate::types::_configuration_issue::ConfigurationIssueBuilder;
+
+pub use crate::types::_invalid_resource_issue::InvalidResourceIssueBuilder;

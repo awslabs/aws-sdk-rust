@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateRegistry`](crate::operation::create_registry) operation has
-/// a [`Client::create_registry`], function which returns a builder for that operation.
+/// For example, the [`AssociatePublisher`](crate::operation::associate_publisher) operation has
+/// a [`Client::associate_publisher`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_registry()
-///     .name("example")
+/// let result = client.associate_publisher()
+///     .record_arn("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -170,6 +170,10 @@ impl Client {
     }
 }
 
+mod associate_publisher;
+
+mod create_publisher;
+
 mod create_registry;
 
 mod create_registry_record;
@@ -185,7 +189,7 @@ mod create_registry_record;
 /// # let client: aws_sdk_agentregistrycontrol::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.create_registry()
+/// let result = client.associate_publisher()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -201,13 +205,23 @@ mod create_registry_record;
 /// ```
 pub mod customize;
 
+mod delete_publisher;
+
 mod delete_registry;
 
 mod delete_registry_record;
 
+mod disassociate_publisher;
+
+mod get_publisher;
+
 mod get_registry;
 
 mod get_registry_record;
+
+mod list_publisher_associations;
+
+mod list_publishers;
 
 mod list_registries;
 
@@ -221,8 +235,12 @@ mod tag_resource;
 
 mod untag_resource;
 
+mod update_publisher_association_approval_status;
+
 mod update_registry;
 
 mod update_registry_record;
 
 mod update_registry_record_status;
+
+mod validate_publisher;

@@ -6,17 +6,57 @@
 pub struct HostedZoneFeatures {
     /// <p>The current status of accelerated recovery for the hosted zone.</p>
     pub accelerated_recovery_status: ::std::option::Option<crate::types::AcceleratedRecoveryStatus>,
+    /// <p>The current status of public DNS fallback for the hosted zone. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Public DNS fallback is enabled.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Public DNS fallback is disabled.</p></li>
+    /// <li>
+    /// <p><code>ENABLING</code>: A request to enable public DNS fallback is still propagating.</p></li>
+    /// <li>
+    /// <p><code>DISABLING</code>: A request to disable public DNS fallback is still propagating.</p></li>
+    /// </ul>
+    pub public_dns_fallback_status: ::std::option::Option<crate::types::FeatureStatus>,
+    /// <p>The status of Change History for the hosted zone, and the earliest time from which you can read its change history.</p>
+    pub change_history: ::std::option::Option<crate::types::ChangeHistoryFeature>,
     /// <p>Information about any failures that occurred when attempting to enable or configure features for the hosted zone.</p>
     pub failure_reasons: ::std::option::Option<crate::types::HostedZoneFailureReasons>,
+    /// <p>The name and status of each Change Guardrail for the hosted zone. For the guardrail names and statuses, see <code>ChangeGuardrail</code>.</p>
+    pub change_guardrails: ::std::option::Option<::std::vec::Vec<crate::types::ChangeGuardrail>>,
 }
 impl HostedZoneFeatures {
     /// <p>The current status of accelerated recovery for the hosted zone.</p>
     pub fn accelerated_recovery_status(&self) -> ::std::option::Option<&crate::types::AcceleratedRecoveryStatus> {
         self.accelerated_recovery_status.as_ref()
     }
+    /// <p>The current status of public DNS fallback for the hosted zone. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Public DNS fallback is enabled.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Public DNS fallback is disabled.</p></li>
+    /// <li>
+    /// <p><code>ENABLING</code>: A request to enable public DNS fallback is still propagating.</p></li>
+    /// <li>
+    /// <p><code>DISABLING</code>: A request to disable public DNS fallback is still propagating.</p></li>
+    /// </ul>
+    pub fn public_dns_fallback_status(&self) -> ::std::option::Option<&crate::types::FeatureStatus> {
+        self.public_dns_fallback_status.as_ref()
+    }
+    /// <p>The status of Change History for the hosted zone, and the earliest time from which you can read its change history.</p>
+    pub fn change_history(&self) -> ::std::option::Option<&crate::types::ChangeHistoryFeature> {
+        self.change_history.as_ref()
+    }
     /// <p>Information about any failures that occurred when attempting to enable or configure features for the hosted zone.</p>
     pub fn failure_reasons(&self) -> ::std::option::Option<&crate::types::HostedZoneFailureReasons> {
         self.failure_reasons.as_ref()
+    }
+    /// <p>The name and status of each Change Guardrail for the hosted zone. For the guardrail names and statuses, see <code>ChangeGuardrail</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.change_guardrails.is_none()`.
+    pub fn change_guardrails(&self) -> &[crate::types::ChangeGuardrail] {
+        self.change_guardrails.as_deref().unwrap_or_default()
     }
 }
 impl HostedZoneFeatures {
@@ -31,7 +71,10 @@ impl HostedZoneFeatures {
 #[non_exhaustive]
 pub struct HostedZoneFeaturesBuilder {
     pub(crate) accelerated_recovery_status: ::std::option::Option<crate::types::AcceleratedRecoveryStatus>,
+    pub(crate) public_dns_fallback_status: ::std::option::Option<crate::types::FeatureStatus>,
+    pub(crate) change_history: ::std::option::Option<crate::types::ChangeHistoryFeature>,
     pub(crate) failure_reasons: ::std::option::Option<crate::types::HostedZoneFailureReasons>,
+    pub(crate) change_guardrails: ::std::option::Option<::std::vec::Vec<crate::types::ChangeGuardrail>>,
 }
 impl HostedZoneFeaturesBuilder {
     /// <p>The current status of accelerated recovery for the hosted zone.</p>
@@ -48,6 +91,64 @@ impl HostedZoneFeaturesBuilder {
     pub fn get_accelerated_recovery_status(&self) -> &::std::option::Option<crate::types::AcceleratedRecoveryStatus> {
         &self.accelerated_recovery_status
     }
+    /// <p>The current status of public DNS fallback for the hosted zone. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Public DNS fallback is enabled.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Public DNS fallback is disabled.</p></li>
+    /// <li>
+    /// <p><code>ENABLING</code>: A request to enable public DNS fallback is still propagating.</p></li>
+    /// <li>
+    /// <p><code>DISABLING</code>: A request to disable public DNS fallback is still propagating.</p></li>
+    /// </ul>
+    pub fn public_dns_fallback_status(mut self, input: crate::types::FeatureStatus) -> Self {
+        self.public_dns_fallback_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The current status of public DNS fallback for the hosted zone. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Public DNS fallback is enabled.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Public DNS fallback is disabled.</p></li>
+    /// <li>
+    /// <p><code>ENABLING</code>: A request to enable public DNS fallback is still propagating.</p></li>
+    /// <li>
+    /// <p><code>DISABLING</code>: A request to disable public DNS fallback is still propagating.</p></li>
+    /// </ul>
+    pub fn set_public_dns_fallback_status(mut self, input: ::std::option::Option<crate::types::FeatureStatus>) -> Self {
+        self.public_dns_fallback_status = input;
+        self
+    }
+    /// <p>The current status of public DNS fallback for the hosted zone. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Public DNS fallback is enabled.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Public DNS fallback is disabled.</p></li>
+    /// <li>
+    /// <p><code>ENABLING</code>: A request to enable public DNS fallback is still propagating.</p></li>
+    /// <li>
+    /// <p><code>DISABLING</code>: A request to disable public DNS fallback is still propagating.</p></li>
+    /// </ul>
+    pub fn get_public_dns_fallback_status(&self) -> &::std::option::Option<crate::types::FeatureStatus> {
+        &self.public_dns_fallback_status
+    }
+    /// <p>The status of Change History for the hosted zone, and the earliest time from which you can read its change history.</p>
+    pub fn change_history(mut self, input: crate::types::ChangeHistoryFeature) -> Self {
+        self.change_history = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The status of Change History for the hosted zone, and the earliest time from which you can read its change history.</p>
+    pub fn set_change_history(mut self, input: ::std::option::Option<crate::types::ChangeHistoryFeature>) -> Self {
+        self.change_history = input;
+        self
+    }
+    /// <p>The status of Change History for the hosted zone, and the earliest time from which you can read its change history.</p>
+    pub fn get_change_history(&self) -> &::std::option::Option<crate::types::ChangeHistoryFeature> {
+        &self.change_history
+    }
     /// <p>Information about any failures that occurred when attempting to enable or configure features for the hosted zone.</p>
     pub fn failure_reasons(mut self, input: crate::types::HostedZoneFailureReasons) -> Self {
         self.failure_reasons = ::std::option::Option::Some(input);
@@ -62,11 +163,34 @@ impl HostedZoneFeaturesBuilder {
     pub fn get_failure_reasons(&self) -> &::std::option::Option<crate::types::HostedZoneFailureReasons> {
         &self.failure_reasons
     }
+    /// Appends an item to `change_guardrails`.
+    ///
+    /// To override the contents of this collection use [`set_change_guardrails`](Self::set_change_guardrails).
+    ///
+    /// <p>The name and status of each Change Guardrail for the hosted zone. For the guardrail names and statuses, see <code>ChangeGuardrail</code>.</p>
+    pub fn change_guardrails(mut self, input: crate::types::ChangeGuardrail) -> Self {
+        let mut v = self.change_guardrails.unwrap_or_default();
+        v.push(input);
+        self.change_guardrails = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The name and status of each Change Guardrail for the hosted zone. For the guardrail names and statuses, see <code>ChangeGuardrail</code>.</p>
+    pub fn set_change_guardrails(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeGuardrail>>) -> Self {
+        self.change_guardrails = input;
+        self
+    }
+    /// <p>The name and status of each Change Guardrail for the hosted zone. For the guardrail names and statuses, see <code>ChangeGuardrail</code>.</p>
+    pub fn get_change_guardrails(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeGuardrail>> {
+        &self.change_guardrails
+    }
     /// Consumes the builder and constructs a [`HostedZoneFeatures`](crate::types::HostedZoneFeatures).
     pub fn build(self) -> crate::types::HostedZoneFeatures {
         crate::types::HostedZoneFeatures {
             accelerated_recovery_status: self.accelerated_recovery_status,
+            public_dns_fallback_status: self.public_dns_fallback_status,
+            change_history: self.change_history,
             failure_reasons: self.failure_reasons,
+            change_guardrails: self.change_guardrails,
         }
     }
 }

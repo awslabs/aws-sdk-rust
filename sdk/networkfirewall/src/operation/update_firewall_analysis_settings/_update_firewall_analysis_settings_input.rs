@@ -15,6 +15,15 @@ pub struct UpdateFirewallAnalysisSettingsInput {
     /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.</p>
     pub update_token: ::std::option::Option<::std::string::String>,
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub firewall_type: ::std::option::Option<crate::types::FirewallType>,
 }
 impl UpdateFirewallAnalysisSettingsInput {
     /// <p>An optional setting indicating the specific traffic analysis types to enable on the firewall.</p>
@@ -39,6 +48,17 @@ impl UpdateFirewallAnalysisSettingsInput {
     pub fn update_token(&self) -> ::std::option::Option<&str> {
         self.update_token.as_deref()
     }
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub fn firewall_type(&self) -> ::std::option::Option<&crate::types::FirewallType> {
+        self.firewall_type.as_ref()
+    }
 }
 impl UpdateFirewallAnalysisSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallAnalysisSettingsInput`](crate::operation::update_firewall_analysis_settings::UpdateFirewallAnalysisSettingsInput).
@@ -55,6 +75,7 @@ pub struct UpdateFirewallAnalysisSettingsInputBuilder {
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_name: ::std::option::Option<::std::string::String>,
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
+    pub(crate) firewall_type: ::std::option::Option<crate::types::FirewallType>,
 }
 impl UpdateFirewallAnalysisSettingsInputBuilder {
     /// Appends an item to `enabled_analysis_types`.
@@ -131,6 +152,41 @@ impl UpdateFirewallAnalysisSettingsInputBuilder {
     pub fn get_update_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.update_token
     }
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub fn firewall_type(mut self, input: crate::types::FirewallType) -> Self {
+        self.firewall_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub fn set_firewall_type(mut self, input: ::std::option::Option<crate::types::FirewallType>) -> Self {
+        self.firewall_type = input;
+        self
+    }
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub fn get_firewall_type(&self) -> &::std::option::Option<crate::types::FirewallType> {
+        &self.firewall_type
+    }
     /// Consumes the builder and constructs a [`UpdateFirewallAnalysisSettingsInput`](crate::operation::update_firewall_analysis_settings::UpdateFirewallAnalysisSettingsInput).
     pub fn build(
         self,
@@ -143,6 +199,7 @@ impl UpdateFirewallAnalysisSettingsInputBuilder {
             firewall_arn: self.firewall_arn,
             firewall_name: self.firewall_name,
             update_token: self.update_token,
+            firewall_type: self.firewall_type,
         })
     }
 }

@@ -35,6 +35,8 @@ pub use crate::types::_geo_location_details::GeoLocationDetailsBuilder;
 
 pub use crate::types::_health_check_source::HealthCheckSourceBuilder;
 
+pub use crate::types::_change_batch_summary::ChangeBatchSummaryBuilder;
+
 pub use crate::types::_hosted_zone_limit::HostedZoneLimitBuilder;
 
 pub use crate::types::_reusable_delegation_set_limit::ReusableDelegationSetLimitBuilder;
@@ -50,6 +52,8 @@ pub use crate::types::_tag::TagBuilder;
 pub use crate::types::_linked_service::LinkedServiceBuilder;
 
 pub use crate::types::_cloud_watch_alarm_configuration::CloudWatchAlarmConfigurationBuilder;
+
+pub use crate::types::_change_guardrail::ChangeGuardrailBuilder;
 
 pub use crate::types::_hosted_zone_features::HostedZoneFeaturesBuilder;
 
@@ -69,6 +73,8 @@ pub use crate::types::_location_summary::LocationSummaryBuilder;
 
 pub use crate::types::_hosted_zone_summary::HostedZoneSummaryBuilder;
 
+pub use crate::types::_resource_record_set_change::ResourceRecordSetChangeBuilder;
+
 pub use crate::types::_resource_record_set_protection::ResourceRecordSetProtectionBuilder;
 
 pub use crate::types::_resource_record_set::ResourceRecordSetBuilder;
@@ -78,6 +84,8 @@ pub use crate::types::_traffic_policy_summary::TrafficPolicySummaryBuilder;
 pub use crate::types::_change::ChangeBuilder;
 
 pub use crate::types::_subnet_configuration::SubnetConfigurationBuilder;
+
+pub use crate::types::_change_history_feature::ChangeHistoryFeatureBuilder;
 
 pub use crate::types::_hosted_zone_failure_reasons::HostedZoneFailureReasonsBuilder;
 
@@ -92,6 +100,8 @@ pub use crate::types::_alias_target::AliasTargetBuilder;
 pub use crate::types::_cidr_routing_config::CidrRoutingConfigBuilder;
 
 pub use crate::types::_geo_proximity_location::GeoProximityLocationBuilder;
+
+pub use crate::types::_az_affinity::AzAffinityBuilder;
 
 pub use crate::types::_dimension::DimensionBuilder;
 

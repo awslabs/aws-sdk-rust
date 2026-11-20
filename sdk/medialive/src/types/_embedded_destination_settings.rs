@@ -8,6 +8,10 @@ pub struct EmbeddedDestinationSettings {
     pub position: ::std::option::Option<crate::types::EmbeddedCaptionPositionSettings>,
     /// Controls the source of position and style information for the output captions. - "passthrough": Carry the caption position and style from the source captions. When the source captions are embedded, SCTE-20, or ancillary, the position and style are preserved exactly. When the source captions are another format, the position and any supported style are carried over. - "manual": Applies the specified styling and positioning. All other styling and positioning is given default values.
     pub style_control: ::std::option::Option<crate::types::EmbeddedDestinationStyleControl>,
+    /// CC Channel / Service number for 608/708 encode mode. Serves as both the 608 CC channel and the 708 service number (e.g., 1 = CC1 + Service 1). Only takes effect when the source is non-embedded (teletext, smart captions, etc.) — ignored in passthrough mode. Range 1-4: valid for embedded608Only, embedded708Only, or embedded608And708. Range 5-63: valid for embedded708Only.
+    pub caption_service_channel: ::std::option::Option<i32>,
+    /// Controls what the encoder generates when in encode mode (non-embedded source → embedded destination). Ignored in passthrough mode (embedded source → embedded destination). - "embedded608Only": Generate CEA-608 CC pairs only (channel must be 1-4) - "embedded708Only": Generate CEA-708 service blocks only (channel 1-63) - "embedded608And708": Generate both 608 CC pairs and 708 service blocks (channel 1-4 gets both, 5-63 gets 708 only)
+    pub embedded_mode: ::std::option::Option<crate::types::EmbeddedModeType>,
 }
 impl EmbeddedDestinationSettings {
     /// Specifies the position of the output captions. Applies only when styleControl is set to manual.
@@ -17,6 +21,14 @@ impl EmbeddedDestinationSettings {
     /// Controls the source of position and style information for the output captions. - "passthrough": Carry the caption position and style from the source captions. When the source captions are embedded, SCTE-20, or ancillary, the position and style are preserved exactly. When the source captions are another format, the position and any supported style are carried over. - "manual": Applies the specified styling and positioning. All other styling and positioning is given default values.
     pub fn style_control(&self) -> ::std::option::Option<&crate::types::EmbeddedDestinationStyleControl> {
         self.style_control.as_ref()
+    }
+    /// CC Channel / Service number for 608/708 encode mode. Serves as both the 608 CC channel and the 708 service number (e.g., 1 = CC1 + Service 1). Only takes effect when the source is non-embedded (teletext, smart captions, etc.) — ignored in passthrough mode. Range 1-4: valid for embedded608Only, embedded708Only, or embedded608And708. Range 5-63: valid for embedded708Only.
+    pub fn caption_service_channel(&self) -> ::std::option::Option<i32> {
+        self.caption_service_channel
+    }
+    /// Controls what the encoder generates when in encode mode (non-embedded source → embedded destination). Ignored in passthrough mode (embedded source → embedded destination). - "embedded608Only": Generate CEA-608 CC pairs only (channel must be 1-4) - "embedded708Only": Generate CEA-708 service blocks only (channel 1-63) - "embedded608And708": Generate both 608 CC pairs and 708 service blocks (channel 1-4 gets both, 5-63 gets 708 only)
+    pub fn embedded_mode(&self) -> ::std::option::Option<&crate::types::EmbeddedModeType> {
+        self.embedded_mode.as_ref()
     }
 }
 impl EmbeddedDestinationSettings {
@@ -32,6 +44,8 @@ impl EmbeddedDestinationSettings {
 pub struct EmbeddedDestinationSettingsBuilder {
     pub(crate) position: ::std::option::Option<crate::types::EmbeddedCaptionPositionSettings>,
     pub(crate) style_control: ::std::option::Option<crate::types::EmbeddedDestinationStyleControl>,
+    pub(crate) caption_service_channel: ::std::option::Option<i32>,
+    pub(crate) embedded_mode: ::std::option::Option<crate::types::EmbeddedModeType>,
 }
 impl EmbeddedDestinationSettingsBuilder {
     /// Specifies the position of the output captions. Applies only when styleControl is set to manual.
@@ -62,11 +76,41 @@ impl EmbeddedDestinationSettingsBuilder {
     pub fn get_style_control(&self) -> &::std::option::Option<crate::types::EmbeddedDestinationStyleControl> {
         &self.style_control
     }
+    /// CC Channel / Service number for 608/708 encode mode. Serves as both the 608 CC channel and the 708 service number (e.g., 1 = CC1 + Service 1). Only takes effect when the source is non-embedded (teletext, smart captions, etc.) — ignored in passthrough mode. Range 1-4: valid for embedded608Only, embedded708Only, or embedded608And708. Range 5-63: valid for embedded708Only.
+    pub fn caption_service_channel(mut self, input: i32) -> Self {
+        self.caption_service_channel = ::std::option::Option::Some(input);
+        self
+    }
+    /// CC Channel / Service number for 608/708 encode mode. Serves as both the 608 CC channel and the 708 service number (e.g., 1 = CC1 + Service 1). Only takes effect when the source is non-embedded (teletext, smart captions, etc.) — ignored in passthrough mode. Range 1-4: valid for embedded608Only, embedded708Only, or embedded608And708. Range 5-63: valid for embedded708Only.
+    pub fn set_caption_service_channel(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.caption_service_channel = input;
+        self
+    }
+    /// CC Channel / Service number for 608/708 encode mode. Serves as both the 608 CC channel and the 708 service number (e.g., 1 = CC1 + Service 1). Only takes effect when the source is non-embedded (teletext, smart captions, etc.) — ignored in passthrough mode. Range 1-4: valid for embedded608Only, embedded708Only, or embedded608And708. Range 5-63: valid for embedded708Only.
+    pub fn get_caption_service_channel(&self) -> &::std::option::Option<i32> {
+        &self.caption_service_channel
+    }
+    /// Controls what the encoder generates when in encode mode (non-embedded source → embedded destination). Ignored in passthrough mode (embedded source → embedded destination). - "embedded608Only": Generate CEA-608 CC pairs only (channel must be 1-4) - "embedded708Only": Generate CEA-708 service blocks only (channel 1-63) - "embedded608And708": Generate both 608 CC pairs and 708 service blocks (channel 1-4 gets both, 5-63 gets 708 only)
+    pub fn embedded_mode(mut self, input: crate::types::EmbeddedModeType) -> Self {
+        self.embedded_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// Controls what the encoder generates when in encode mode (non-embedded source → embedded destination). Ignored in passthrough mode (embedded source → embedded destination). - "embedded608Only": Generate CEA-608 CC pairs only (channel must be 1-4) - "embedded708Only": Generate CEA-708 service blocks only (channel 1-63) - "embedded608And708": Generate both 608 CC pairs and 708 service blocks (channel 1-4 gets both, 5-63 gets 708 only)
+    pub fn set_embedded_mode(mut self, input: ::std::option::Option<crate::types::EmbeddedModeType>) -> Self {
+        self.embedded_mode = input;
+        self
+    }
+    /// Controls what the encoder generates when in encode mode (non-embedded source → embedded destination). Ignored in passthrough mode (embedded source → embedded destination). - "embedded608Only": Generate CEA-608 CC pairs only (channel must be 1-4) - "embedded708Only": Generate CEA-708 service blocks only (channel 1-63) - "embedded608And708": Generate both 608 CC pairs and 708 service blocks (channel 1-4 gets both, 5-63 gets 708 only)
+    pub fn get_embedded_mode(&self) -> &::std::option::Option<crate::types::EmbeddedModeType> {
+        &self.embedded_mode
+    }
     /// Consumes the builder and constructs a [`EmbeddedDestinationSettings`](crate::types::EmbeddedDestinationSettings).
     pub fn build(self) -> crate::types::EmbeddedDestinationSettings {
         crate::types::EmbeddedDestinationSettings {
             position: self.position,
             style_control: self.style_control,
+            caption_service_channel: self.caption_service_channel,
+            embedded_mode: self.embedded_mode,
         }
     }
 }

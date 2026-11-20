@@ -178,17 +178,17 @@ impl CreateRelationshipFluentBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }
-    /// <p>The resale account model for the relationship.</p>
+    /// <p>The resale account model for the relationship. Applies only to billing transfer relationships.</p>
     pub fn resale_account_model(mut self, input: crate::types::ResaleAccountModel) -> Self {
         self.inner = self.inner.resale_account_model(input);
         self
     }
-    /// <p>The resale account model for the relationship.</p>
+    /// <p>The resale account model for the relationship. Applies only to billing transfer relationships.</p>
     pub fn set_resale_account_model(mut self, input: ::std::option::Option<crate::types::ResaleAccountModel>) -> Self {
         self.inner = self.inner.set_resale_account_model(input);
         self
     }
-    /// <p>The resale account model for the relationship.</p>
+    /// <p>The resale account model for the relationship. Applies only to billing transfer relationships.</p>
     pub fn get_resale_account_model(&self) -> &::std::option::Option<crate::types::ResaleAccountModel> {
         self.inner.get_resale_account_model()
     }
@@ -239,18 +239,46 @@ impl CreateRelationshipFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
-    /// <p>The support plan requested for this relationship.</p>
+    /// <p>The support plan requested for this relationship. Applies only to billing transfer relationships.</p>
     pub fn requested_support_plan(mut self, input: crate::types::SupportPlan) -> Self {
         self.inner = self.inner.requested_support_plan(input);
         self
     }
-    /// <p>The support plan requested for this relationship.</p>
+    /// <p>The support plan requested for this relationship. Applies only to billing transfer relationships.</p>
     pub fn set_requested_support_plan(mut self, input: ::std::option::Option<crate::types::SupportPlan>) -> Self {
         self.inner = self.inner.set_requested_support_plan(input);
         self
     }
-    /// <p>The support plan requested for this relationship.</p>
+    /// <p>The support plan requested for this relationship. Applies only to billing transfer relationships.</p>
     pub fn get_requested_support_plan(&self) -> &::std::option::Option<crate::types::SupportPlan> {
         self.inner.get_requested_support_plan()
+    }
+    /// <p>The account scope for a managed services relationship (for example, entire organization, specific member accounts). Applies only to managed services relationships.</p>
+    pub fn account_scope(mut self, input: crate::types::AccountScope) -> Self {
+        self.inner = self.inner.account_scope(input);
+        self
+    }
+    /// <p>The account scope for a managed services relationship (for example, entire organization, specific member accounts). Applies only to managed services relationships.</p>
+    pub fn set_account_scope(mut self, input: ::std::option::Option<crate::types::AccountScope>) -> Self {
+        self.inner = self.inner.set_account_scope(input);
+        self
+    }
+    /// <p>The account scope for a managed services relationship (for example, entire organization, specific member accounts). Applies only to managed services relationships.</p>
+    pub fn get_account_scope(&self) -> &::std::option::Option<crate::types::AccountScope> {
+        self.inner.get_account_scope()
+    }
+    /// <p>The start date of the managed services relationship. Applies only to managed services relationships.</p>
+    pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.inner = self.inner.start_date(input);
+        self
+    }
+    /// <p>The start date of the managed services relationship. Applies only to managed services relationships.</p>
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.inner = self.inner.set_start_date(input);
+        self
+    }
+    /// <p>The start date of the managed services relationship. Applies only to managed services relationships.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        self.inner.get_start_date()
     }
 }

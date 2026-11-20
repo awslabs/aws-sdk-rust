@@ -5,6 +5,21 @@
 /// <p>You can also use Amazon Web Services-provided keys, some of which have specific allowed values. These keys and their associated values are as follows:</p>
 /// <dl>
 /// <dt>
+/// CloudProviders
+/// </dt>
+/// <dd>
+/// <p>Returns documents whose default version can run against any of the specified cloud providers. The <code>CloudProviders</code> key supports the following values:</p>
+/// <ul>
+/// <li>
+/// <p><code>AWS</code> - Documents that run against Amazon Web Services resources.</p></li>
+/// <li>
+/// <p><code>Azure</code> - Documents that run against Microsoft Azure resources.</p></li>
+/// <li>
+/// <p><code>GCP</code> - Documents that run against Google Cloud resources.</p></li>
+/// </ul>
+/// <p>If you created a document before Systems Manager supported cloud providers, the document runs against <code>AWS</code>.</p>
+/// </dd>
+/// <dt>
 /// DocumentType
 /// </dt>
 /// <dd>

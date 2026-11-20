@@ -3,13 +3,13 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOfferSetInput {
-    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    /// <p>The preferred locale for response content, as a Best Current Practice 47 (BCP 47) language tag or a comma-separated priority list of language tags. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If you omit this field, the service returns content in the default locale.</p>
     pub locale: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the offer set to retrieve.</p>
     pub offer_set_id: ::std::option::Option<::std::string::String>,
 }
 impl GetOfferSetInput {
-    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    /// <p>The preferred locale for response content, as a Best Current Practice 47 (BCP 47) language tag or a comma-separated priority list of language tags. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If you omit this field, the service returns content in the default locale.</p>
     pub fn locale(&self) -> ::std::option::Option<&str> {
         self.locale.as_deref()
     }
@@ -33,17 +33,17 @@ pub struct GetOfferSetInputBuilder {
     pub(crate) offer_set_id: ::std::option::Option<::std::string::String>,
 }
 impl GetOfferSetInputBuilder {
-    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    /// <p>The preferred locale for response content, as a Best Current Practice 47 (BCP 47) language tag or a comma-separated priority list of language tags. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If you omit this field, the service returns content in the default locale.</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    /// <p>The preferred locale for response content, as a Best Current Practice 47 (BCP 47) language tag or a comma-separated priority list of language tags. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If you omit this field, the service returns content in the default locale.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale = input;
         self
     }
-    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    /// <p>The preferred locale for response content, as a Best Current Practice 47 (BCP 47) language tag or a comma-separated priority list of language tags. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If you omit this field, the service returns content in the default locale.</p>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
         &self.locale
     }

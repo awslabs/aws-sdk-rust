@@ -12,6 +12,7 @@
 /// ```text
 /// # let av1adaptivequantization = unimplemented!();
 /// match av1adaptivequantization {
+///     Av1AdaptiveQuantization::Auto => { /* ... */ },
 ///     Av1AdaptiveQuantization::High => { /* ... */ },
 ///     Av1AdaptiveQuantization::Higher => { /* ... */ },
 ///     Av1AdaptiveQuantization::Low => { /* ... */ },
@@ -40,12 +41,14 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies to Spatial adaptive quantization.
+/// Specify whether MediaConvert applies adaptive quantization in this output. With AV1, adaptive quantization is on or off; there is no strength to choose. Choose Auto to let MediaConvert manage adaptive quantization for you. MediaConvert enables both Spatial adaptive quantization and Temporal adaptive quantization, and you can't specify either one yourself. To choose the filters yourself, set Adaptive quantization to any of the strength values, Low, Medium, High, Higher or Max, and then use the related settings Spatial adaptive quantization and Temporal adaptive quantization. With AV1 these strength values all behave the same, because AV1 adaptive quantization has no strength. If you don't want MediaConvert to do any adaptive quantization in this transcode, set Adaptive quantization to Off. Related settings: The value that you choose here applies to the following settings: Av1SpatialAdaptiveQuantization and Av1TemporalAdaptiveQuantization.
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
 )]
 pub enum Av1AdaptiveQuantization {
+    #[allow(missing_docs)] // documentation missing in model
+    Auto,
     #[allow(missing_docs)] // documentation missing in model
     High,
     #[allow(missing_docs)] // documentation missing in model
@@ -65,6 +68,7 @@ pub enum Av1AdaptiveQuantization {
 impl ::std::convert::From<&str> for Av1AdaptiveQuantization {
     fn from(s: &str) -> Self {
         match s {
+            "AUTO" => Av1AdaptiveQuantization::Auto,
             "HIGH" => Av1AdaptiveQuantization::High,
             "HIGHER" => Av1AdaptiveQuantization::Higher,
             "LOW" => Av1AdaptiveQuantization::Low,
@@ -86,6 +90,7 @@ impl Av1AdaptiveQuantization {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            Av1AdaptiveQuantization::Auto => "AUTO",
             Av1AdaptiveQuantization::High => "HIGH",
             Av1AdaptiveQuantization::Higher => "HIGHER",
             Av1AdaptiveQuantization::Low => "LOW",
@@ -97,7 +102,7 @@ impl Av1AdaptiveQuantization {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["HIGH", "HIGHER", "LOW", "MAX", "MEDIUM", "OFF"]
+        &["AUTO", "HIGH", "HIGHER", "LOW", "MAX", "MEDIUM", "OFF"]
     }
 }
 impl ::std::convert::AsRef<str> for Av1AdaptiveQuantization {
@@ -120,6 +125,7 @@ impl Av1AdaptiveQuantization {
 impl ::std::fmt::Display for Av1AdaptiveQuantization {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            Av1AdaptiveQuantization::Auto => write!(f, "AUTO"),
             Av1AdaptiveQuantization::High => write!(f, "HIGH"),
             Av1AdaptiveQuantization::Higher => write!(f, "HIGHER"),
             Av1AdaptiveQuantization::Low => write!(f, "LOW"),

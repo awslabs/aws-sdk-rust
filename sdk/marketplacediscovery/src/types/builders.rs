@@ -21,6 +21,8 @@ pub use crate::types::_seller_engagement::SellerEngagementBuilder;
 
 pub use crate::types::_use_case_entry::UseCaseEntryBuilder;
 
+pub use crate::types::_purchase_indicator::PurchaseIndicatorBuilder;
+
 pub use crate::types::_offer_associated_entity::OfferAssociatedEntityBuilder;
 
 pub use crate::types::_purchase_option_badge::PurchaseOptionBadgeBuilder;
@@ -99,7 +101,27 @@ pub use crate::types::_sage_maker_algorithm_fulfillment_option::SageMakerAlgorit
 
 pub use crate::types::_sage_maker_model_fulfillment_option::SageMakerModelFulfillmentOptionBuilder;
 
+pub use crate::types::_case_study::CaseStudyBuilder;
+
+pub use crate::types::_trust_center_source::TrustCenterSourceBuilder;
+
+pub use crate::types::_trust_center_certification_attribute::TrustCenterCertificationAttributeBuilder;
+
+pub use crate::types::_trust_center_document_attribute::TrustCenterDocumentAttributeBuilder;
+
+pub use crate::types::_trust_center_control::TrustCenterControlBuilder;
+
+pub use crate::types::_trust_center_faq_attribute::TrustCenterFaqAttributeBuilder;
+
+pub use crate::types::_trust_center_update_attribute::TrustCenterUpdateAttributeBuilder;
+
 pub use crate::types::_listing_facet::ListingFacetBuilder;
+
+pub use crate::types::_trust_center_summary::TrustCenterSummaryBuilder;
+
+pub use crate::types::_case_studies_summary::CaseStudiesSummaryBuilder;
+
+pub use crate::types::_use_case_summary::UseCaseSummaryBuilder;
 
 pub use crate::types::_amazon_machine_image_recommendation::AmazonMachineImageRecommendationBuilder;
 
@@ -108,6 +130,12 @@ pub use crate::types::_amazon_machine_image_ebs_volume::AmazonMachineImageEbsVol
 pub use crate::types::_sage_maker_algorithm_recommendation::SageMakerAlgorithmRecommendationBuilder;
 
 pub use crate::types::_sage_maker_model_recommendation::SageMakerModelRecommendationBuilder;
+
+pub use crate::types::_engagement_dates::EngagementDatesBuilder;
+
+pub use crate::types::_specialization::SpecializationBuilder;
+
+pub use crate::types::_specialization_category::SpecializationCategoryBuilder;
 
 pub use crate::types::_purchase_option_associated_entity::PurchaseOptionAssociatedEntityBuilder;
 
@@ -139,6 +167,14 @@ pub use crate::types::_eks_add_on_operating_system::EksAddOnOperatingSystemBuild
 
 pub use crate::types::_data_artifact::DataArtifactBuilder;
 
+pub use crate::types::_case_study_resource::CaseStudyResourceBuilder;
+
+pub use crate::types::_trust_center_source_summary::TrustCenterSourceSummaryBuilder;
+
+pub use crate::types::_trust_center_certification_summary::TrustCenterCertificationSummaryBuilder;
+
+pub use crate::types::_use_case_summary_entry::UseCaseSummaryEntryBuilder;
+
 pub use crate::types::_selector::SelectorBuilder;
 
 pub use crate::types::_constraints::ConstraintsBuilder;
@@ -147,8 +183,16 @@ pub use crate::types::_payment_schedule_term_template::PaymentScheduleTermTempla
 
 pub use crate::types::_amazon_machine_image_security_group::AmazonMachineImageSecurityGroupBuilder;
 
+pub use crate::types::_saas_cloud_formation_deployment_template::SaasCloudFormationDeploymentTemplateBuilder;
+
+pub use crate::types::_specialization_type_detail::SpecializationTypeDetailBuilder;
+
+pub use crate::types::_use_case_information::UseCaseInformationBuilder;
+
 pub use crate::types::_rate_card_item::RateCardItemBuilder;
 
 pub use crate::types::_dimension_label::DimensionLabelBuilder;
 
 pub use crate::types::_payment_schedule_entry::PaymentScheduleEntryBuilder;
+
+pub use crate::types::_regional_price::RegionalPriceBuilder;

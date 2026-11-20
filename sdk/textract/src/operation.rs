@@ -16,11 +16,26 @@ pub mod create_adapter;
 /// Types for the `CreateAdapterVersion` operation.
 pub mod create_adapter_version;
 
+/// Types for the `CreateBlueprint` operation.
+pub mod create_blueprint;
+
+/// Types for the `CreateBlueprintVersion` operation.
+pub mod create_blueprint_version;
+
+/// Types for the `CreateProject` operation.
+pub mod create_project;
+
 /// Types for the `DeleteAdapter` operation.
 pub mod delete_adapter;
 
 /// Types for the `DeleteAdapterVersion` operation.
 pub mod delete_adapter_version;
+
+/// Types for the `DeleteBlueprint` operation.
+pub mod delete_blueprint;
+
+/// Types for the `DeleteProject` operation.
+pub mod delete_project;
 
 /// Types for the `DetectDocumentText` operation.
 pub mod detect_document_text;
@@ -31,8 +46,14 @@ pub mod get_adapter;
 /// Types for the `GetAdapterVersion` operation.
 pub mod get_adapter_version;
 
+/// Types for the `GetBlueprint` operation.
+pub mod get_blueprint;
+
 /// Types for the `GetDocumentAnalysis` operation.
 pub mod get_document_analysis;
+
+/// Types for the `GetDocumentInsights` operation.
+pub mod get_document_insights;
 
 /// Types for the `GetDocumentTextDetection` operation.
 pub mod get_document_text_detection;
@@ -46,17 +67,29 @@ pub mod get_lending_analysis;
 /// Types for the `GetLendingAnalysisSummary` operation.
 pub mod get_lending_analysis_summary;
 
+/// Types for the `GetProject` operation.
+pub mod get_project;
+
 /// Types for the `ListAdapterVersions` operation.
 pub mod list_adapter_versions;
 
 /// Types for the `ListAdapters` operation.
 pub mod list_adapters;
 
+/// Types for the `ListBlueprints` operation.
+pub mod list_blueprints;
+
+/// Types for the `ListProjects` operation.
+pub mod list_projects;
+
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
 
 /// Types for the `StartDocumentAnalysis` operation.
 pub mod start_document_analysis;
+
+/// Types for the `StartDocumentInsights` operation.
+pub mod start_document_insights;
 
 /// Types for the `StartDocumentTextDetection` operation.
 pub mod start_document_text_detection;
@@ -75,3 +108,9 @@ pub mod untag_resource;
 
 /// Types for the `UpdateAdapter` operation.
 pub mod update_adapter;
+
+/// Types for the `UpdateBlueprint` operation.
+pub mod update_blueprint;
+
+/// Types for the `UpdateProject` operation.
+pub mod update_project;

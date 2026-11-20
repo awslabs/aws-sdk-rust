@@ -91,6 +91,17 @@ pub struct GetRunOutput {
     pub session_policy: ::std::option::Option<::std::string::String>,
     /// <p>The service returns the value that the <code>StartRun</code> request specified for <code>outputUriPrefixMode</code>. The service returns <code>SERVICE_DEFINED</code> if the request did not specify a value.</p>
     pub output_uri_prefix_mode: ::std::option::Option<crate::types::RunOutputUriPrefixMode>,
+    /// <p>Specifies whether this workflow run can read inputs from Amazon S3 buckets that use Requester Pays, as set in the <code>StartRun</code> or <code>StartRunBatch</code> request.</p>
+    pub requester_pays_enabled: ::std::option::Option<bool>,
+    /// <p>For a run that you started with <code>parametersUri</code>, the service returns the location of the run parameters in this field instead of <code>parameters</code>. The value is one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>A presigned HTTPS URL for the copy of the parameters file that Amazon Web Services HealthOmics stores for the run</p></li>
+    /// <li>
+    /// <p>The S3 URI that you submitted, if Amazon Web Services HealthOmics has not stored a copy of the file yet or the run failed validation</p></li>
+    /// </ul>
+    /// <p>A presigned URL expires after a limited time. Call <code>GetRun</code> again to get a new URL. Treat the URL as a credential and do not share it. If the run failed because the parameters were not valid, check <code>failureReason</code> and <code>statusMessage</code>.</p>
+    pub parameters_uri: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRunOutput {
@@ -270,6 +281,21 @@ impl GetRunOutput {
     pub fn output_uri_prefix_mode(&self) -> ::std::option::Option<&crate::types::RunOutputUriPrefixMode> {
         self.output_uri_prefix_mode.as_ref()
     }
+    /// <p>Specifies whether this workflow run can read inputs from Amazon S3 buckets that use Requester Pays, as set in the <code>StartRun</code> or <code>StartRunBatch</code> request.</p>
+    pub fn requester_pays_enabled(&self) -> ::std::option::Option<bool> {
+        self.requester_pays_enabled
+    }
+    /// <p>For a run that you started with <code>parametersUri</code>, the service returns the location of the run parameters in this field instead of <code>parameters</code>. The value is one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>A presigned HTTPS URL for the copy of the parameters file that Amazon Web Services HealthOmics stores for the run</p></li>
+    /// <li>
+    /// <p>The S3 URI that you submitted, if Amazon Web Services HealthOmics has not stored a copy of the file yet or the run failed validation</p></li>
+    /// </ul>
+    /// <p>A presigned URL expires after a limited time. Call <code>GetRun</code> again to get a new URL. Treat the URL as a credential and do not share it. If the run failed because the parameters were not valid, check <code>failureReason</code> and <code>statusMessage</code>.</p>
+    pub fn parameters_uri(&self) -> ::std::option::Option<&str> {
+        self.parameters_uri.as_deref()
+    }
 }
 impl ::aws_types::request_id::RequestId for GetRunOutput {
     fn request_id(&self) -> Option<&str> {
@@ -331,6 +357,8 @@ pub struct GetRunOutputBuilder {
     pub(crate) engine_settings: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) session_policy: ::std::option::Option<::std::string::String>,
     pub(crate) output_uri_prefix_mode: ::std::option::Option<crate::types::RunOutputUriPrefixMode>,
+    pub(crate) requester_pays_enabled: ::std::option::Option<bool>,
+    pub(crate) parameters_uri: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetRunOutputBuilder {
@@ -969,6 +997,55 @@ impl GetRunOutputBuilder {
     pub fn get_output_uri_prefix_mode(&self) -> &::std::option::Option<crate::types::RunOutputUriPrefixMode> {
         &self.output_uri_prefix_mode
     }
+    /// <p>Specifies whether this workflow run can read inputs from Amazon S3 buckets that use Requester Pays, as set in the <code>StartRun</code> or <code>StartRunBatch</code> request.</p>
+    pub fn requester_pays_enabled(mut self, input: bool) -> Self {
+        self.requester_pays_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether this workflow run can read inputs from Amazon S3 buckets that use Requester Pays, as set in the <code>StartRun</code> or <code>StartRunBatch</code> request.</p>
+    pub fn set_requester_pays_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.requester_pays_enabled = input;
+        self
+    }
+    /// <p>Specifies whether this workflow run can read inputs from Amazon S3 buckets that use Requester Pays, as set in the <code>StartRun</code> or <code>StartRunBatch</code> request.</p>
+    pub fn get_requester_pays_enabled(&self) -> &::std::option::Option<bool> {
+        &self.requester_pays_enabled
+    }
+    /// <p>For a run that you started with <code>parametersUri</code>, the service returns the location of the run parameters in this field instead of <code>parameters</code>. The value is one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>A presigned HTTPS URL for the copy of the parameters file that Amazon Web Services HealthOmics stores for the run</p></li>
+    /// <li>
+    /// <p>The S3 URI that you submitted, if Amazon Web Services HealthOmics has not stored a copy of the file yet or the run failed validation</p></li>
+    /// </ul>
+    /// <p>A presigned URL expires after a limited time. Call <code>GetRun</code> again to get a new URL. Treat the URL as a credential and do not share it. If the run failed because the parameters were not valid, check <code>failureReason</code> and <code>statusMessage</code>.</p>
+    pub fn parameters_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parameters_uri = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>For a run that you started with <code>parametersUri</code>, the service returns the location of the run parameters in this field instead of <code>parameters</code>. The value is one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>A presigned HTTPS URL for the copy of the parameters file that Amazon Web Services HealthOmics stores for the run</p></li>
+    /// <li>
+    /// <p>The S3 URI that you submitted, if Amazon Web Services HealthOmics has not stored a copy of the file yet or the run failed validation</p></li>
+    /// </ul>
+    /// <p>A presigned URL expires after a limited time. Call <code>GetRun</code> again to get a new URL. Treat the URL as a credential and do not share it. If the run failed because the parameters were not valid, check <code>failureReason</code> and <code>statusMessage</code>.</p>
+    pub fn set_parameters_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parameters_uri = input;
+        self
+    }
+    /// <p>For a run that you started with <code>parametersUri</code>, the service returns the location of the run parameters in this field instead of <code>parameters</code>. The value is one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>A presigned HTTPS URL for the copy of the parameters file that Amazon Web Services HealthOmics stores for the run</p></li>
+    /// <li>
+    /// <p>The S3 URI that you submitted, if Amazon Web Services HealthOmics has not stored a copy of the file yet or the run failed validation</p></li>
+    /// </ul>
+    /// <p>A presigned URL expires after a limited time. Call <code>GetRun</code> again to get a new URL. Treat the URL as a credential and do not share it. If the run failed because the parameters were not valid, check <code>failureReason</code> and <code>statusMessage</code>.</p>
+    pub fn get_parameters_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameters_uri
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -1025,6 +1102,8 @@ impl GetRunOutputBuilder {
             engine_settings: self.engine_settings,
             session_policy: self.session_policy,
             output_uri_prefix_mode: self.output_uri_prefix_mode,
+            requester_pays_enabled: self.requester_pays_enabled,
+            parameters_uri: self.parameters_uri,
             _request_id: self._request_id,
         }
     }

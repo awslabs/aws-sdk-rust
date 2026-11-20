@@ -91,6 +91,24 @@ static DOCUMENTVERSIONINFO_MEMBER_REVIEW_STATUS: ::aws_smithy_schema::Schema<'st
     "ReviewStatus",
     9,
 );
+static DOCUMENTVERSIONINFO_MEMBER_CLOUD_PROVIDERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#CloudProviderList$member", "com.amazonaws.ssm", "CloudProviderList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+)
+.with_xml_name("CloudProvider");
+static DOCUMENTVERSIONINFO_MEMBER_CLOUD_PROVIDERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentVersionInfo$CloudProviders",
+        "com.amazonaws.ssm",
+        "DocumentVersionInfo",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CloudProviders",
+    10,
+)
+.with_list_member(&DOCUMENTVERSIONINFO_MEMBER_CLOUD_PROVIDERS_MEMBER);
 static DOCUMENTVERSIONINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentVersionInfo", "com.amazonaws.ssm", "DocumentVersionInfo"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -105,6 +123,7 @@ static DOCUMENTVERSIONINFO_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_
         &DOCUMENTVERSIONINFO_MEMBER_STATUS,
         &DOCUMENTVERSIONINFO_MEMBER_STATUS_INFORMATION,
         &DOCUMENTVERSIONINFO_MEMBER_REVIEW_STATUS,
+        &DOCUMENTVERSIONINFO_MEMBER_CLOUD_PROVIDERS,
     ],
 );
 impl crate::types::DocumentVersionInfo {
@@ -151,6 +170,17 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::DocumentVe
         }
         if let Some(ref val) = self.review_status {
             ser.write_string(&DOCUMENTVERSIONINFO_MEMBER_REVIEW_STATUS, val.as_str())?;
+        }
+        if let Some(ref val) = self.cloud_providers {
+            ser.write_list(
+                &DOCUMENTVERSIONINFO_MEMBER_CLOUD_PROVIDERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
         }
         Ok(())
     }
@@ -233,6 +263,22 @@ impl crate::types::builders::DocumentVersionInfoBuilder {
                         deser.read_null()?;
                     } else {
                         self.review_status = Some(crate::types::ReviewStatus::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_providers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CloudProvider::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
                     }
                 }
                 _ => {}

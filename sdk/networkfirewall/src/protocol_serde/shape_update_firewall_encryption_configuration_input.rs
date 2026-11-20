@@ -17,6 +17,9 @@ pub fn ser_update_firewall_encryption_configuration_input_input(
         encoder.str("EncryptionConfiguration");
         crate::protocol_serde::shape_encryption_configuration::ser_encryption_configuration(encoder, var_4)?;
     }
+    if let Some(var_5) = &input.firewall_type {
+        encoder.str("FirewallType").str(var_5.as_str());
+    }
     encoder.end();
     Ok(())
 }

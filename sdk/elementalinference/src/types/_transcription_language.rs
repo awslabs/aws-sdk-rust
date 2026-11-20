@@ -12,6 +12,7 @@
 /// ```text
 /// # let transcriptionlanguage = unimplemented!();
 /// match transcriptionlanguage {
+///     TranscriptionLanguage::Ara => { /* ... */ },
 ///     TranscriptionLanguage::Deu => { /* ... */ },
 ///     TranscriptionLanguage::Eng => { /* ... */ },
 ///     TranscriptionLanguage::EngAu => { /* ... */ },
@@ -50,6 +51,8 @@
 )]
 pub enum TranscriptionLanguage {
     #[allow(missing_docs)] // documentation missing in model
+    Ara,
+    #[allow(missing_docs)] // documentation missing in model
     Deu,
     #[allow(missing_docs)] // documentation missing in model
     Eng,
@@ -74,6 +77,7 @@ pub enum TranscriptionLanguage {
 impl ::std::convert::From<&str> for TranscriptionLanguage {
     fn from(s: &str) -> Self {
         match s {
+            "ara" => TranscriptionLanguage::Ara,
             "deu" => TranscriptionLanguage::Deu,
             "eng" => TranscriptionLanguage::Eng,
             "eng-au" => TranscriptionLanguage::EngAu,
@@ -98,6 +102,7 @@ impl TranscriptionLanguage {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            TranscriptionLanguage::Ara => "ara",
             TranscriptionLanguage::Deu => "deu",
             TranscriptionLanguage::Eng => "eng",
             TranscriptionLanguage::EngAu => "eng-au",
@@ -112,7 +117,7 @@ impl TranscriptionLanguage {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["deu", "eng", "eng-au", "eng-gb", "eng-us", "fra", "ita", "por", "spa"]
+        &["ara", "deu", "eng", "eng-au", "eng-gb", "eng-us", "fra", "ita", "por", "spa"]
     }
 }
 impl ::std::convert::AsRef<str> for TranscriptionLanguage {
@@ -135,6 +140,7 @@ impl TranscriptionLanguage {
 impl ::std::fmt::Display for TranscriptionLanguage {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            TranscriptionLanguage::Ara => write!(f, "ara"),
             TranscriptionLanguage::Deu => write!(f, "deu"),
             TranscriptionLanguage::Eng => write!(f, "eng"),
             TranscriptionLanguage::EngAu => write!(f, "eng-au"),

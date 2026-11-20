@@ -39,6 +39,10 @@ pub use crate::types::_log_scope::LogScope;
 
 pub use crate::types::_platform::Platform;
 
+pub use crate::types::_event_detail_summary::EventDetailSummary;
+
+pub use crate::types::_event_actor_detail::EventActorDetail;
+
 pub use crate::types::_ip_set::IpSet;
 
 pub use crate::types::_logging_configuration::LoggingConfiguration;
@@ -72,6 +76,10 @@ pub use crate::types::_interval_type::IntervalType;
 pub use crate::types::_rule_group::RuleGroup;
 
 pub use crate::types::_web_acl::WebAcl;
+
+pub use crate::types::_event_actor_sort_by::EventActorSortBy;
+
+pub use crate::types::_event_sort_by::EventSortBy;
 
 pub use crate::types::_resource_type::ResourceType;
 
@@ -109,6 +117,14 @@ pub use crate::types::_rule_summary::RuleSummary;
 
 pub use crate::types::_label_summary::LabelSummary;
 
+pub use crate::types::_event_status::EventStatus;
+
+pub use crate::types::_event_category::EventCategory;
+
+pub use crate::types::_api_security_event_detail::ApiSecurityEventDetail;
+
+pub use crate::types::_event_actor_detail_summary::EventActorDetailSummary;
+
 pub use crate::types::_logging_filter::LoggingFilter;
 
 pub use crate::types::_monetization_filter::MonetizationFilter;
@@ -128,6 +144,14 @@ pub use crate::types::_api_key_summary::ApiKeySummary;
 pub use crate::types::_managed_rule_group_summary::ManagedRuleGroupSummary;
 
 pub use crate::types::_managed_rule_group_version::ManagedRuleGroupVersion;
+
+pub use crate::types::_event_actor_summary::EventActorSummary;
+
+pub use crate::types::_event_filter::EventFilter;
+
+pub use crate::types::_api_pattern_filter::ApiPatternFilter;
+
+pub use crate::types::_event_include_field::EventIncludeField;
 
 pub use crate::types::_managed_rule_set_summary::ManagedRuleSetSummary;
 
@@ -161,6 +185,12 @@ pub use crate::types::_challenge_javascript_sdk_injection_config::ChallengeJavas
 
 pub use crate::types::_application_attribute::ApplicationAttribute;
 
+pub use crate::types::_confidence::Confidence;
+
+pub use crate::types::_related_event::RelatedEvent;
+
+pub use crate::types::_event_actor_change::EventActorChange;
+
 pub use crate::types::_field_to_match::FieldToMatch;
 
 pub use crate::types::_filter_behavior::FilterBehavior;
@@ -176,6 +206,8 @@ pub use crate::types::_challenge_response::ChallengeResponse;
 pub use crate::types::_filter_source::FilterSource;
 
 pub use crate::types::_firewall_manager_rule_group::FirewallManagerRuleGroup;
+
+pub use crate::types::_event_filter_key::EventFilterKey;
 
 pub use crate::types::_settlement_status::SettlementStatus;
 
@@ -230,6 +262,12 @@ pub use crate::types::_field_to_protect::FieldToProtect;
 pub use crate::types::_data_protection_action::DataProtectionAction;
 
 pub use crate::types::_size_inspection_limit::SizeInspectionLimit;
+
+pub use crate::types::_api_pattern::ApiPattern;
+
+pub use crate::types::_event_actor_reference::EventActorReference;
+
+pub use crate::types::_event_timeline_entry::EventTimelineEntry;
 
 pub use crate::types::_single_header::SingleHeader;
 
@@ -375,6 +413,8 @@ pub use crate::types::_aws_managed_rules_acfp_rule_set::AwsManagedRulesAcfpRuleS
 
 pub use crate::types::_aws_managed_rules_anti_d_do_s_rule_set::AwsManagedRulesAntiDDoSRuleSet;
 
+pub use crate::types::_aws_managed_rules_ai_security_rule_set::AwsManagedRulesAiSecurityRuleSet;
+
 pub use crate::types::_crypto_currency::CryptoCurrency;
 
 pub use crate::types::_connected_account_price::ConnectedAccountPrice;
@@ -395,6 +435,8 @@ pub use crate::types::_client_side_action_config::ClientSideActionConfig;
 
 pub use crate::types::_sensitivity_to_act::SensitivityToAct;
 
+pub use crate::types::_bedrock_guardrails::BedrockGuardrails;
+
 pub use crate::types::_action_value::ActionValue;
 
 pub use crate::types::_response_inspection_status_code::ResponseInspectionStatusCode;
@@ -408,6 +450,12 @@ pub use crate::types::_response_inspection_json::ResponseInspectionJson;
 pub use crate::types::_email_field::EmailField;
 
 pub use crate::types::_client_side_action::ClientSideAction;
+
+pub use crate::types::_disable_bedrock_guardrails::DisableBedrockGuardrails;
+
+pub use crate::types::_bedrock_guardrails_request_only::BedrockGuardrailsRequestOnly;
+
+pub use crate::types::_bedrock_guardrails_request_and_response::BedrockGuardrailsRequestAndResponse;
 
 pub use crate::types::_phone_number_field::PhoneNumberField;
 
@@ -435,6 +483,12 @@ mod _and_statement;
 
 mod _api_key_summary;
 
+mod _api_pattern;
+
+mod _api_pattern_filter;
+
+mod _api_security_event_detail;
+
 mod _application_attribute;
 
 mod _application_config;
@@ -447,11 +501,19 @@ mod _association_config;
 
 mod _aws_managed_rules_acfp_rule_set;
 
+mod _aws_managed_rules_ai_security_rule_set;
+
 mod _aws_managed_rules_anti_d_do_s_rule_set;
 
 mod _aws_managed_rules_atp_rule_set;
 
 mod _aws_managed_rules_bot_control_rule_set;
+
+mod _bedrock_guardrails;
+
+mod _bedrock_guardrails_request_and_response;
+
+mod _bedrock_guardrails_request_only;
 
 mod _block_action;
 
@@ -486,6 +548,8 @@ mod _client_side_action_config;
 mod _comparison_operator;
 
 mod _condition;
+
+mod _confidence;
 
 mod _connected_account_chain;
 
@@ -529,9 +593,39 @@ mod _data_protection_config;
 
 mod _default_action;
 
+mod _disable_bedrock_guardrails;
+
 mod _disallowed_feature;
 
 mod _email_field;
+
+mod _event_actor_change;
+
+mod _event_actor_detail;
+
+mod _event_actor_detail_summary;
+
+mod _event_actor_reference;
+
+mod _event_actor_sort_by;
+
+mod _event_actor_summary;
+
+mod _event_category;
+
+mod _event_detail_summary;
+
+mod _event_filter;
+
+mod _event_filter_key;
+
+mod _event_include_field;
+
+mod _event_sort_by;
+
+mod _event_status;
+
+mod _event_timeline_entry;
 
 mod _excluded_rule;
 
@@ -730,6 +824,8 @@ mod _regex_pattern_set;
 mod _regex_pattern_set_reference_statement;
 
 mod _regex_pattern_set_summary;
+
+mod _related_event;
 
 mod _release_summary;
 

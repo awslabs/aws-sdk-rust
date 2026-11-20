@@ -22,7 +22,7 @@ impl crate::operation::list_purchase_options::builders::ListPurchaseOptionsInput
 }
 /// Fluent builder constructing a request to `ListPurchaseOptions`.
 ///
-/// <p>Returns the purchase options (offers and offer sets) available to the buyer. You can filter results by product, seller, purchase option type, visibility scope, and availability status.</p><note>
+/// <p>Retrieves the purchase options (offers and offer sets) available to you. You can filter results by product, seller, purchase option type, visibility scope, and availability status. The operation returns results in pages. Use <code>nextToken</code> to retrieve the next page.</p><note>
 /// <p>You must include at least one of the following filters in the request: a <code>PRODUCT_ID</code> filter to specify the product for which to retrieve purchase options, or a <code>VISIBILITY_SCOPE</code> filter to retrieve purchase options by visibility.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
@@ -116,17 +116,17 @@ impl ListPurchaseOptionsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::list_purchase_options::paginator::ListPurchaseOptionsPaginator {
         crate::operation::list_purchase_options::paginator::ListPurchaseOptionsPaginator::new(self.handle, self.inner)
     }
-    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    /// <p>The preferred locale for response content, as a Best Current Practice 47 (BCP 47) language tag or a comma-separated priority list of language tags. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If you omit this field, the service returns content in the default locale.</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale(input.into());
         self
     }
-    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    /// <p>The preferred locale for response content, as a Best Current Practice 47 (BCP 47) language tag or a comma-separated priority list of language tags. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If you omit this field, the service returns content in the default locale.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale(input);
         self
     }
-    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    /// <p>The preferred locale for response content, as a Best Current Practice 47 (BCP 47) language tag or a comma-separated priority list of language tags. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If you omit this field, the service returns content in the default locale.</p>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_locale()
     }
@@ -135,45 +135,45 @@ impl ListPurchaseOptionsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters to narrow the results. Multiple filters are combined with AND logic. Multiple values within the same filter are combined with OR logic.</p>
+    /// <p>Filters to narrow the results. A result must match every filter. Within one filter, a result matches if it has any of the values.</p>
     pub fn filters(mut self, input: crate::types::PurchaseOptionFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>Filters to narrow the results. Multiple filters are combined with AND logic. Multiple values within the same filter are combined with OR logic.</p>
+    /// <p>Filters to narrow the results. A result must match every filter. Within one filter, a result matches if it has any of the values.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PurchaseOptionFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>Filters to narrow the results. Multiple filters are combined with AND logic. Multiple values within the same filter are combined with OR logic.</p>
+    /// <p>Filters to narrow the results. A result must match every filter. Within one filter, a result matches if it has any of the values.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PurchaseOptionFilter>> {
         self.inner.get_filters()
     }
-    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to get more results.</p>
+    /// <p>The maximum number of purchase options to return in each call. If you omit this field, the default is 25. Use <code>nextToken</code> to retrieve the next page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to get more results.</p>
+    /// <p>The maximum number of purchase options to return in each call. If you omit this field, the default is 25. Use <code>nextToken</code> to retrieve the next page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to get more results.</p>
+    /// <p>The maximum number of purchase options to return in each call. If you omit this field, the default is 25. Use <code>nextToken</code> to retrieve the next page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
+    /// <p>If the service returns <code>nextToken</code>, more results are available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again with the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. An expired pagination token returns a <code>ValidationException</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
+    /// <p>If the service returns <code>nextToken</code>, more results are available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again with the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. An expired pagination token returns a <code>ValidationException</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
+    /// <p>If the service returns <code>nextToken</code>, more results are available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again with the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. An expired pagination token returns a <code>ValidationException</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

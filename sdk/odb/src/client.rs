@@ -255,6 +255,8 @@ mod list_autonomous_database_clones;
 
 mod list_autonomous_database_peers;
 
+mod list_autonomous_database_refreshable_clones;
+
 mod list_autonomous_database_versions;
 
 mod list_autonomous_databases;
@@ -300,6 +302,8 @@ mod restore_autonomous_database;
 mod shrink_autonomous_database;
 
 mod start_autonomous_database;
+
+mod start_autonomous_database_refresh;
 
 mod start_db_node;
 

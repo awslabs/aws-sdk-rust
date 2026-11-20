@@ -3,23 +3,51 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchListingsInput {
-    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    /// <p>The preferred locale for response content, as a Best Current Practice 47 (BCP 47) language tag or a comma-separated priority list of language tags. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If you omit this field, the service returns content in the default locale.</p>
     pub locale: ::std::option::Option<::std::string::String>,
     /// <p>The search query text to find relevant listings.</p>
     pub search_text: ::std::option::Option<::std::string::String>,
-    /// <p>Filters to narrow search results. Multiple filters are combined with AND logic. Multiple values within the same filter are combined with OR logic.</p>
+    /// <p>Filters to narrow search results. A result must match every filter. Within one filter, a result matches if it has any of the values.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>>,
-    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to get more results.</p>
+    /// <p>The maximum number of listings to return in each call. If you omit this field, the default is 25. Use <code>nextToken</code> to retrieve the next page.</p>
     pub max_results: ::std::option::Option<i32>,
-    /// <p>The field to sort results by. Valid values are <code>RELEVANCE</code> and <code>AVERAGE_CUSTOMER_RATING</code>.</p>
+    /// <p>The field to sort results by. If you do not specify a value, the service sorts by <code>RELEVANCE</code>. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// AVERAGE_CUSTOMER_RATING
+    /// </dt>
+    /// <dd>
+    /// <p>Sorts by average customer rating.</p>
+    /// </dd>
+    /// <dt>
+    /// RELEVANCE
+    /// </dt>
+    /// <dd>
+    /// <p>Sorts by relevance to the search query.</p>
+    /// </dd>
+    /// </dl>
     pub sort_by: ::std::option::Option<crate::types::SearchListingsSortBy>,
-    /// <p>The sort direction. Valid values are <code>DESCENDING</code> and <code>ASCENDING</code>.</p>
+    /// <p>The sort direction. If you do not specify a value, the service sorts in <code>DESCENDING</code> order. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// ASCENDING
+    /// </dt>
+    /// <dd>
+    /// <p>Sorts from lowest to highest.</p>
+    /// </dd>
+    /// <dt>
+    /// DESCENDING
+    /// </dt>
+    /// <dd>
+    /// <p>Sorts from highest to lowest.</p>
+    /// </dd>
+    /// </dl>
     pub sort_order: ::std::option::Option<crate::types::SearchListingsSortOrder>,
-    /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
+    /// <p>If the service returns <code>nextToken</code>, more results are available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again with the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. An expired pagination token returns a <code>ValidationException</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl SearchListingsInput {
-    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    /// <p>The preferred locale for response content, as a Best Current Practice 47 (BCP 47) language tag or a comma-separated priority list of language tags. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If you omit this field, the service returns content in the default locale.</p>
     pub fn locale(&self) -> ::std::option::Option<&str> {
         self.locale.as_deref()
     }
@@ -27,25 +55,53 @@ impl SearchListingsInput {
     pub fn search_text(&self) -> ::std::option::Option<&str> {
         self.search_text.as_deref()
     }
-    /// <p>Filters to narrow search results. Multiple filters are combined with AND logic. Multiple values within the same filter are combined with OR logic.</p>
+    /// <p>Filters to narrow search results. A result must match every filter. Within one filter, a result matches if it has any of the values.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::SearchFilter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to get more results.</p>
+    /// <p>The maximum number of listings to return in each call. If you omit this field, the default is 25. Use <code>nextToken</code> to retrieve the next page.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The field to sort results by. Valid values are <code>RELEVANCE</code> and <code>AVERAGE_CUSTOMER_RATING</code>.</p>
+    /// <p>The field to sort results by. If you do not specify a value, the service sorts by <code>RELEVANCE</code>. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// AVERAGE_CUSTOMER_RATING
+    /// </dt>
+    /// <dd>
+    /// <p>Sorts by average customer rating.</p>
+    /// </dd>
+    /// <dt>
+    /// RELEVANCE
+    /// </dt>
+    /// <dd>
+    /// <p>Sorts by relevance to the search query.</p>
+    /// </dd>
+    /// </dl>
     pub fn sort_by(&self) -> ::std::option::Option<&crate::types::SearchListingsSortBy> {
         self.sort_by.as_ref()
     }
-    /// <p>The sort direction. Valid values are <code>DESCENDING</code> and <code>ASCENDING</code>.</p>
+    /// <p>The sort direction. If you do not specify a value, the service sorts in <code>DESCENDING</code> order. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// ASCENDING
+    /// </dt>
+    /// <dd>
+    /// <p>Sorts from lowest to highest.</p>
+    /// </dd>
+    /// <dt>
+    /// DESCENDING
+    /// </dt>
+    /// <dd>
+    /// <p>Sorts from highest to lowest.</p>
+    /// </dd>
+    /// </dl>
     pub fn sort_order(&self) -> ::std::option::Option<&crate::types::SearchListingsSortOrder> {
         self.sort_order.as_ref()
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
+    /// <p>If the service returns <code>nextToken</code>, more results are available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again with the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. An expired pagination token returns a <code>ValidationException</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -70,17 +126,17 @@ pub struct SearchListingsInputBuilder {
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl SearchListingsInputBuilder {
-    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    /// <p>The preferred locale for response content, as a Best Current Practice 47 (BCP 47) language tag or a comma-separated priority list of language tags. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If you omit this field, the service returns content in the default locale.</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    /// <p>The preferred locale for response content, as a Best Current Practice 47 (BCP 47) language tag or a comma-separated priority list of language tags. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If you omit this field, the service returns content in the default locale.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale = input;
         self
     }
-    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    /// <p>The preferred locale for response content, as a Best Current Practice 47 (BCP 47) language tag or a comma-separated priority list of language tags. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If you omit this field, the service returns content in the default locale.</p>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
         &self.locale
     }
@@ -102,75 +158,159 @@ impl SearchListingsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters to narrow search results. Multiple filters are combined with AND logic. Multiple values within the same filter are combined with OR logic.</p>
+    /// <p>Filters to narrow search results. A result must match every filter. Within one filter, a result matches if it has any of the values.</p>
     pub fn filters(mut self, input: crate::types::SearchFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
         v.push(input);
         self.filters = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filters to narrow search results. Multiple filters are combined with AND logic. Multiple values within the same filter are combined with OR logic.</p>
+    /// <p>Filters to narrow search results. A result must match every filter. Within one filter, a result matches if it has any of the values.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>>) -> Self {
         self.filters = input;
         self
     }
-    /// <p>Filters to narrow search results. Multiple filters are combined with AND logic. Multiple values within the same filter are combined with OR logic.</p>
+    /// <p>Filters to narrow search results. A result must match every filter. Within one filter, a result matches if it has any of the values.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>> {
         &self.filters
     }
-    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to get more results.</p>
+    /// <p>The maximum number of listings to return in each call. If you omit this field, the default is 25. Use <code>nextToken</code> to retrieve the next page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to get more results.</p>
+    /// <p>The maximum number of listings to return in each call. If you omit this field, the default is 25. Use <code>nextToken</code> to retrieve the next page.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of results that are returned per call. You can use <code>nextToken</code> to get more results.</p>
+    /// <p>The maximum number of listings to return in each call. If you omit this field, the default is 25. Use <code>nextToken</code> to retrieve the next page.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
-    /// <p>The field to sort results by. Valid values are <code>RELEVANCE</code> and <code>AVERAGE_CUSTOMER_RATING</code>.</p>
+    /// <p>The field to sort results by. If you do not specify a value, the service sorts by <code>RELEVANCE</code>. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// AVERAGE_CUSTOMER_RATING
+    /// </dt>
+    /// <dd>
+    /// <p>Sorts by average customer rating.</p>
+    /// </dd>
+    /// <dt>
+    /// RELEVANCE
+    /// </dt>
+    /// <dd>
+    /// <p>Sorts by relevance to the search query.</p>
+    /// </dd>
+    /// </dl>
     pub fn sort_by(mut self, input: crate::types::SearchListingsSortBy) -> Self {
         self.sort_by = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The field to sort results by. Valid values are <code>RELEVANCE</code> and <code>AVERAGE_CUSTOMER_RATING</code>.</p>
+    /// <p>The field to sort results by. If you do not specify a value, the service sorts by <code>RELEVANCE</code>. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// AVERAGE_CUSTOMER_RATING
+    /// </dt>
+    /// <dd>
+    /// <p>Sorts by average customer rating.</p>
+    /// </dd>
+    /// <dt>
+    /// RELEVANCE
+    /// </dt>
+    /// <dd>
+    /// <p>Sorts by relevance to the search query.</p>
+    /// </dd>
+    /// </dl>
     pub fn set_sort_by(mut self, input: ::std::option::Option<crate::types::SearchListingsSortBy>) -> Self {
         self.sort_by = input;
         self
     }
-    /// <p>The field to sort results by. Valid values are <code>RELEVANCE</code> and <code>AVERAGE_CUSTOMER_RATING</code>.</p>
+    /// <p>The field to sort results by. If you do not specify a value, the service sorts by <code>RELEVANCE</code>. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// AVERAGE_CUSTOMER_RATING
+    /// </dt>
+    /// <dd>
+    /// <p>Sorts by average customer rating.</p>
+    /// </dd>
+    /// <dt>
+    /// RELEVANCE
+    /// </dt>
+    /// <dd>
+    /// <p>Sorts by relevance to the search query.</p>
+    /// </dd>
+    /// </dl>
     pub fn get_sort_by(&self) -> &::std::option::Option<crate::types::SearchListingsSortBy> {
         &self.sort_by
     }
-    /// <p>The sort direction. Valid values are <code>DESCENDING</code> and <code>ASCENDING</code>.</p>
+    /// <p>The sort direction. If you do not specify a value, the service sorts in <code>DESCENDING</code> order. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// ASCENDING
+    /// </dt>
+    /// <dd>
+    /// <p>Sorts from lowest to highest.</p>
+    /// </dd>
+    /// <dt>
+    /// DESCENDING
+    /// </dt>
+    /// <dd>
+    /// <p>Sorts from highest to lowest.</p>
+    /// </dd>
+    /// </dl>
     pub fn sort_order(mut self, input: crate::types::SearchListingsSortOrder) -> Self {
         self.sort_order = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The sort direction. Valid values are <code>DESCENDING</code> and <code>ASCENDING</code>.</p>
+    /// <p>The sort direction. If you do not specify a value, the service sorts in <code>DESCENDING</code> order. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// ASCENDING
+    /// </dt>
+    /// <dd>
+    /// <p>Sorts from lowest to highest.</p>
+    /// </dd>
+    /// <dt>
+    /// DESCENDING
+    /// </dt>
+    /// <dd>
+    /// <p>Sorts from highest to lowest.</p>
+    /// </dd>
+    /// </dl>
     pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SearchListingsSortOrder>) -> Self {
         self.sort_order = input;
         self
     }
-    /// <p>The sort direction. Valid values are <code>DESCENDING</code> and <code>ASCENDING</code>.</p>
+    /// <p>The sort direction. If you do not specify a value, the service sorts in <code>DESCENDING</code> order. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// ASCENDING
+    /// </dt>
+    /// <dd>
+    /// <p>Sorts from lowest to highest.</p>
+    /// </dd>
+    /// <dt>
+    /// DESCENDING
+    /// </dt>
+    /// <dd>
+    /// <p>Sorts from highest to lowest.</p>
+    /// </dd>
+    /// </dl>
     pub fn get_sort_order(&self) -> &::std::option::Option<crate::types::SearchListingsSortOrder> {
         &self.sort_order
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
+    /// <p>If the service returns <code>nextToken</code>, more results are available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again with the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. An expired pagination token returns a <code>ValidationException</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
+    /// <p>If the service returns <code>nextToken</code>, more results are available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again with the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. An expired pagination token returns a <code>ValidationException</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
+    /// <p>If the service returns <code>nextToken</code>, more results are available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again with the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. An expired pagination token returns a <code>ValidationException</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

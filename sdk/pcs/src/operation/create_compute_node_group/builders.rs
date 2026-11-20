@@ -336,6 +336,20 @@ impl CreateComputeNodeGroupFluentBuilder {
     pub fn get_node_lifecycle_actions(&self) -> &::std::option::Option<crate::types::NodeLifecycleActionsRequest> {
         self.inner.get_node_lifecycle_actions()
     }
+    /// <p>The instance health check settings for the compute node group. Instance health checks detect faults on instances in the compute node group and respond with the repair action that you choose. You can configure health monitoring, deep health checks, or both. You can't specify an empty object (<code>{}</code>). Instance health checks require Slurm version 26.05 or later.</p>
+    pub fn instance_health_checks(mut self, input: crate::types::InstanceHealthChecksRequest) -> Self {
+        self.inner = self.inner.instance_health_checks(input);
+        self
+    }
+    /// <p>The instance health check settings for the compute node group. Instance health checks detect faults on instances in the compute node group and respond with the repair action that you choose. You can configure health monitoring, deep health checks, or both. You can't specify an empty object (<code>{}</code>). Instance health checks require Slurm version 26.05 or later.</p>
+    pub fn set_instance_health_checks(mut self, input: ::std::option::Option<crate::types::InstanceHealthChecksRequest>) -> Self {
+        self.inner = self.inner.set_instance_health_checks(input);
+        self
+    }
+    /// <p>The instance health check settings for the compute node group. Instance health checks detect faults on instances in the compute node group and respond with the repair action that you choose. You can configure health monitoring, deep health checks, or both. You can't specify an empty object (<code>{}</code>). Instance health checks require Slurm version 26.05 or later.</p>
+    pub fn get_instance_health_checks(&self) -> &::std::option::Option<crate::types::InstanceHealthChecksRequest> {
+        self.inner.get_instance_health_checks()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect. If you don't specify a client token, the CLI and SDK automatically generate one for you.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

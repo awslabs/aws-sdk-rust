@@ -137,6 +137,8 @@ pub use crate::types::error::_no_such_geo_location::NoSuchGeoLocationBuilder;
 
 pub use crate::types::error::_incompatible_version::IncompatibleVersionBuilder;
 
+pub use crate::types::error::_feature_not_enabled::FeatureNotEnabledBuilder;
+
 pub use crate::types::error::_hosted_zone_not_private::HostedZoneNotPrivateBuilder;
 
 pub use crate::types::error::_no_such_cidr_location_exception::NoSuchCidrLocationExceptionBuilder;

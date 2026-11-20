@@ -87,18 +87,24 @@ pub fn ser_create_compute_node_group_input_input(
         crate::protocol_serde::shape_node_lifecycle_actions_request::ser_node_lifecycle_actions_request(&mut object_27, var_26)?;
         object_27.finish();
     }
-    if let Some(var_28) = &input.client_token {
-        object.key("clientToken").string(var_28.as_str());
-    }
-    if let Some(var_29) = &input.tags {
+    if let Some(var_28) = &input.instance_health_checks {
         #[allow(unused_mut)]
-        let mut object_30 = object.key("tags").start_object();
-        for (key_31, value_32) in var_29 {
+        let mut object_29 = object.key("instanceHealthChecks").start_object();
+        crate::protocol_serde::shape_instance_health_checks_request::ser_instance_health_checks_request(&mut object_29, var_28)?;
+        object_29.finish();
+    }
+    if let Some(var_30) = &input.client_token {
+        object.key("clientToken").string(var_30.as_str());
+    }
+    if let Some(var_31) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_32 = object.key("tags").start_object();
+        for (key_33, value_34) in var_31 {
             {
-                object_30.key(key_31.as_str()).string(value_32.as_str());
+                object_32.key(key_33.as_str()).string(value_34.as_str());
             }
         }
-        object_30.finish();
+        object_32.finish();
     }
     Ok(())
 }

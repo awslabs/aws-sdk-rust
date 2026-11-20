@@ -79,6 +79,11 @@ pub(crate) fn de_firewall(
                 "AvailabilityZoneChangeProtection" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_availability_zone_change_protection(Some(decoder.boolean()?)))
                 })?,
+                "IgwFirewallConfiguration" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_igw_firewall_configuration(Some(
+                        crate::protocol_serde::shape_igw_firewall_configuration::de_igw_firewall_configuration(decoder, depth + 1)?,
+                    )))
+                })?,
                 "NatGatewayCreateMappings" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_nat_gateway_create_mappings(Some(
                         crate::protocol_serde::shape_nat_gateway_create_mappings_list::de_nat_gateway_create_mappings_list(decoder, depth + 1)?,

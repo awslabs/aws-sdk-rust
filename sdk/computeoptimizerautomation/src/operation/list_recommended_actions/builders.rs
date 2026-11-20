@@ -22,8 +22,8 @@ impl crate::operation::list_recommended_actions::builders::ListRecommendedAction
 }
 /// Fluent builder constructing a request to `ListRecommendedActions`.
 ///
-/// <p>Lists the recommended actions based that match specified filters.</p><note>
-/// <p>Management accounts and delegated administrators can retrieve recommended actions that include associated member accounts. You can associate a member account using <code>AssociateAccounts</code>.</p>
+/// <p>Lists the recommended actions that match the specified filters.</p><note>
+/// <p>Management accounts and delegated administrators can retrieve recommended actions for member accounts that are associated using <code>AssociateAccounts</code> or have an applicable organization enrollment configuration with <code>organizationRuleMode</code> set to <code>AnyAllowed</code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListRecommendedActionsFluentBuilder {
@@ -135,17 +135,36 @@ impl ListRecommendedActionsFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendedActionFilter>> {
         self.inner.get_filters()
     }
-    /// <p>The maximum number of recommended actions to return in a single response. Valid range is 1-1000.</p>
+    ///
+    /// Appends an item to `organizationalUnitIds`.
+    ///
+    /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
+    ///
+    /// <p>The organizational unit (OU) or organization root IDs to use to filter the results. The response includes recommended actions for accounts in the specified OUs and their child OUs. Only the management account or a delegated administrator can specify this parameter.</p>
+    pub fn organizational_unit_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.organizational_unit_ids(input.into());
+        self
+    }
+    /// <p>The organizational unit (OU) or organization root IDs to use to filter the results. The response includes recommended actions for accounts in the specified OUs and their child OUs. Only the management account or a delegated administrator can specify this parameter.</p>
+    pub fn set_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_organizational_unit_ids(input);
+        self
+    }
+    /// <p>The organizational unit (OU) or organization root IDs to use to filter the results. The response includes recommended actions for accounts in the specified OUs and their child OUs. Only the management account or a delegated administrator can specify this parameter.</p>
+    pub fn get_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_organizational_unit_ids()
+    }
+    /// <p>The maximum number of recommended actions to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of recommended actions to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of recommended actions to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of recommended actions to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of recommended actions to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

@@ -1201,6 +1201,8 @@ pub(crate) mod shape_request_header_allowlist;
 
 pub(crate) mod shape_resource_location;
 
+pub(crate) mod shape_response_streaming_configuration;
+
 pub(crate) mod shape_route_to_target_action;
 
 pub(crate) mod shape_s3_bucket_mount_configuration;

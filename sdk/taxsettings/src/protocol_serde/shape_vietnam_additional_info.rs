@@ -15,6 +15,9 @@ pub fn ser_vietnam_additional_info(
     if let Some(var_4) = &input.payment_voucher_number_date {
         object.key("paymentVoucherNumberDate").string(var_4.as_str());
     }
+    if let Some(var_5) = &input.vat_credit_method {
+        object.key("vatCreditMethod").boolean(*var_5);
+    }
     Ok(())
 }
 
@@ -67,6 +70,9 @@ where
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "vatCreditMethod" => {
+                            builder = builder.set_vat_credit_method(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

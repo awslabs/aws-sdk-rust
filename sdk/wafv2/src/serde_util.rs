@@ -11,6 +11,54 @@ pub(crate) fn get_top_path_statistics_by_traffic_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_event_actors_output_output_correct_errors(
+    mut builder: crate::operation::list_event_actors::builders::ListEventActorsOutputBuilder,
+) -> crate::operation::list_event_actors::builders::ListEventActorsOutputBuilder {
+    if builder.event_actors.is_none() {
+        builder.event_actors = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_events_output_output_correct_errors(
+    mut builder: crate::operation::list_events::builders::ListEventsOutputBuilder,
+) -> crate::operation::list_events::builders::ListEventsOutputBuilder {
+    if builder.events.is_none() {
+        builder.events = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_events_by_web_acl_output_output_correct_errors(
+    mut builder: crate::operation::list_events_by_web_acl::builders::ListEventsByWebAclOutputBuilder,
+) -> crate::operation::list_events_by_web_acl::builders::ListEventsByWebAclOutputBuilder {
+    if builder.events.is_none() {
+        builder.events = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn event_actor_detail_correct_errors(
+    mut builder: crate::types::builders::EventActorDetailBuilder,
+) -> crate::types::builders::EventActorDetailBuilder {
+    if builder.summary.is_none() {
+        builder.summary = {
+            let builder = crate::types::builders::EventActorDetailSummaryBuilder::default();
+            crate::serde_util::event_actor_detail_summary_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
+pub(crate) fn event_detail_summary_correct_errors(
+    mut builder: crate::types::builders::EventDetailSummaryBuilder,
+) -> crate::types::builders::EventDetailSummaryBuilder {
+    if builder.event_id.is_none() {
+        builder.event_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn ip_set_correct_errors(mut builder: crate::types::builders::IpSetBuilder) -> crate::types::builders::IpSetBuilder {
     if builder.name.is_none() {
         builder.name = Some(Default::default())
@@ -128,6 +176,24 @@ pub(crate) fn data_protection_config_correct_errors(
 ) -> crate::types::builders::DataProtectionConfigBuilder {
     if builder.data_protections.is_none() {
         builder.data_protections = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn event_actor_detail_summary_correct_errors(
+    mut builder: crate::types::builders::EventActorDetailSummaryBuilder,
+) -> crate::types::builders::EventActorDetailSummaryBuilder {
+    if builder.event_actor_id.is_none() {
+        builder.event_actor_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn event_actor_summary_correct_errors(
+    mut builder: crate::types::builders::EventActorSummaryBuilder,
+) -> crate::types::builders::EventActorSummaryBuilder {
+    if builder.event_actor_id.is_none() {
+        builder.event_actor_id = Some(Default::default())
     }
     builder
 }
@@ -876,6 +942,18 @@ pub(crate) fn aws_managed_rules_acfp_rule_set_correct_errors(
     builder
 }
 
+pub(crate) fn aws_managed_rules_ai_security_rule_set_correct_errors(
+    mut builder: crate::types::builders::AwsManagedRulesAiSecurityRuleSetBuilder,
+) -> crate::types::builders::AwsManagedRulesAiSecurityRuleSetBuilder {
+    if builder.bedrock_guardrails.is_none() {
+        builder.bedrock_guardrails = {
+            let builder = crate::types::builders::BedrockGuardrailsBuilder::default();
+            Some(builder.build())
+        }
+    }
+    builder
+}
+
 pub(crate) fn aws_managed_rules_anti_d_do_s_rule_set_correct_errors(
     mut builder: crate::types::builders::AwsManagedRulesAntiDDoSRuleSetBuilder,
 ) -> crate::types::builders::AwsManagedRulesAntiDDoSRuleSetBuilder {
@@ -1055,6 +1133,24 @@ pub(crate) fn request_inspection_acfp_correct_errors(
 ) -> crate::types::builders::RequestInspectionAcfpBuilder {
     if builder.payload_type.is_none() {
         builder.payload_type = "no value was set".parse::<crate::types::PayloadType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn bedrock_guardrails_request_and_response_correct_errors(
+    mut builder: crate::types::builders::BedrockGuardrailsRequestAndResponseBuilder,
+) -> crate::types::builders::BedrockGuardrailsRequestAndResponseBuilder {
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn bedrock_guardrails_request_only_correct_errors(
+    mut builder: crate::types::builders::BedrockGuardrailsRequestOnlyBuilder,
+) -> crate::types::builders::BedrockGuardrailsRequestOnlyBuilder {
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
     }
     builder
 }

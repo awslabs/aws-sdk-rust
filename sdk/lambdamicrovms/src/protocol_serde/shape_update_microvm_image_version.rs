@@ -297,6 +297,13 @@ pub(crate) fn de_update_microvm_image_version(
                                 .transpose()?,
                         );
                     }
+                    "kmsKeyIdentifier" => {
+                        builder = builder.set_kms_key_identifier(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
                     "logging" => {
                         builder = builder.set_logging(crate::protocol_serde::shape_logging::de_logging(tokens, _value, depth + 1)?);
                     }

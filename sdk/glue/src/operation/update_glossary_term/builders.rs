@@ -136,31 +136,31 @@ impl UpdateGlossaryTermFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The updated short description of the glossary term.</p>
+    /// The new short description. Omit it to keep the current one; set it to an empty string to clear it.
     pub fn short_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.short_description(input.into());
         self
     }
-    /// <p>The updated short description of the glossary term.</p>
+    /// The new short description. Omit it to keep the current one; set it to an empty string to clear it.
     pub fn set_short_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_short_description(input);
         self
     }
-    /// <p>The updated short description of the glossary term.</p>
+    /// The new short description. Omit it to keep the current one; set it to an empty string to clear it.
     pub fn get_short_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_short_description()
     }
-    /// <p>The updated long description of the glossary term.</p>
+    /// The new long description. Omit it to keep the current one; set it to an empty string to clear it.
     pub fn long_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.long_description(input.into());
         self
     }
-    /// <p>The updated long description of the glossary term.</p>
+    /// The new long description. Omit it to keep the current one; set it to an empty string to clear it.
     pub fn set_long_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_long_description(input);
         self
     }
-    /// <p>The updated long description of the glossary term.</p>
+    /// The new long description. Omit it to keep the current one; set it to an empty string to clear it.
     pub fn get_long_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_long_description()
     }

@@ -13,17 +13,26 @@ pub fn ser_list_automation_events_input_input(
             }
         }
     }
-    if let Some(var_3) = &input.start_time_inclusive {
-        encoder.str("startTimeInclusive").timestamp(var_3);
+    if let Some(var_3) = &input.organizational_unit_ids {
+        encoder.str("organizationalUnitIds");
+        encoder.array((*var_3).len());
+        for item_4 in var_3 {
+            {
+                encoder.str(item_4.as_str());
+            }
+        }
     }
-    if let Some(var_4) = &input.end_time_exclusive {
-        encoder.str("endTimeExclusive").timestamp(var_4);
+    if let Some(var_5) = &input.start_time_inclusive {
+        encoder.str("startTimeInclusive").timestamp(var_5);
     }
-    if let Some(var_5) = &input.max_results {
-        encoder.str("maxResults").integer(*var_5);
+    if let Some(var_6) = &input.end_time_exclusive {
+        encoder.str("endTimeExclusive").timestamp(var_6);
     }
-    if let Some(var_6) = &input.next_token {
-        encoder.str("nextToken").str(var_6.as_str());
+    if let Some(var_7) = &input.max_results {
+        encoder.str("maxResults").integer(*var_7);
+    }
+    if let Some(var_8) = &input.next_token {
+        encoder.str("nextToken").str(var_8.as_str());
     }
     encoder.end();
     Ok(())

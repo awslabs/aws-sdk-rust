@@ -138,7 +138,11 @@ impl Client {
 
 mod accept_channel_handshake;
 
+mod cancel_channel_contract;
+
 mod cancel_channel_handshake;
+
+mod create_channel_contract;
 
 mod create_channel_handshake;
 
@@ -177,7 +181,11 @@ mod delete_program_management_account;
 
 mod delete_relationship;
 
+mod get_channel_contract;
+
 mod get_relationship;
+
+mod list_channel_contracts;
 
 mod list_channel_handshakes;
 

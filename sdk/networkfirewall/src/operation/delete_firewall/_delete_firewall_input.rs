@@ -9,6 +9,15 @@ pub struct DeleteFirewallInput {
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub firewall_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub firewall_type: ::std::option::Option<crate::types::FirewallType>,
     /// <p>Specifies whether to delete the NAT gateways that Network Firewall created for a proxy mode firewall when you delete the firewall. You can choose from the following values:</p>
     /// <ul>
     /// <li>
@@ -29,6 +38,17 @@ impl DeleteFirewallInput {
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn firewall_arn(&self) -> ::std::option::Option<&str> {
         self.firewall_arn.as_deref()
+    }
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub fn firewall_type(&self) -> ::std::option::Option<&crate::types::FirewallType> {
+        self.firewall_type.as_ref()
     }
     /// <p>Specifies whether to delete the NAT gateways that Network Firewall created for a proxy mode firewall when you delete the firewall. You can choose from the following values:</p>
     /// <ul>
@@ -55,6 +75,7 @@ impl DeleteFirewallInput {
 pub struct DeleteFirewallInputBuilder {
     pub(crate) firewall_name: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) firewall_type: ::std::option::Option<crate::types::FirewallType>,
     pub(crate) delete_associated_nat_gateways: ::std::option::Option<bool>,
 }
 impl DeleteFirewallInputBuilder {
@@ -91,6 +112,41 @@ impl DeleteFirewallInputBuilder {
     /// <p>You must specify the ARN or the name, and you can specify both.</p>
     pub fn get_firewall_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_arn
+    }
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub fn firewall_type(mut self, input: crate::types::FirewallType) -> Self {
+        self.firewall_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub fn set_firewall_type(mut self, input: ::std::option::Option<crate::types::FirewallType>) -> Self {
+        self.firewall_type = input;
+        self
+    }
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub fn get_firewall_type(&self) -> &::std::option::Option<crate::types::FirewallType> {
+        &self.firewall_type
     }
     /// <p>Specifies whether to delete the NAT gateways that Network Firewall created for a proxy mode firewall when you delete the firewall. You can choose from the following values:</p>
     /// <ul>
@@ -134,6 +190,7 @@ impl DeleteFirewallInputBuilder {
         ::std::result::Result::Ok(crate::operation::delete_firewall::DeleteFirewallInput {
             firewall_name: self.firewall_name,
             firewall_arn: self.firewall_arn,
+            firewall_type: self.firewall_type,
             delete_associated_nat_gateways: self.delete_associated_nat_gateways,
         })
     }

@@ -72,8 +72,14 @@ pub fn ser_update_compute_node_group_input_input(
         crate::protocol_serde::shape_update_node_lifecycle_actions_request::ser_update_node_lifecycle_actions_request(&mut object_23, var_22)?;
         object_23.finish();
     }
-    if let Some(var_24) = &input.client_token {
-        object.key("clientToken").string(var_24.as_str());
+    if let Some(var_24) = &input.instance_health_checks {
+        #[allow(unused_mut)]
+        let mut object_25 = object.key("instanceHealthChecks").start_object();
+        crate::protocol_serde::shape_update_instance_health_checks_request::ser_update_instance_health_checks_request(&mut object_25, var_24)?;
+        object_25.finish();
+    }
+    if let Some(var_26) = &input.client_token {
+        object.key("clientToken").string(var_26.as_str());
     }
     Ok(())
 }

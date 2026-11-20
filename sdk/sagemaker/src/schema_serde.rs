@@ -13,6 +13,10 @@ pub(crate) mod shape_add_association_output_output;
 
 pub(crate) mod shape_add_cluster_node_specification;
 
+pub(crate) mod shape_add_inference_gateway_input_input;
+
+pub(crate) mod shape_add_inference_gateway_output_output;
+
 pub(crate) mod shape_add_tags_input_input;
 
 pub(crate) mod shape_add_tags_output_output;
@@ -603,6 +607,10 @@ pub(crate) mod shape_create_flow_definition_input_input;
 
 pub(crate) mod shape_create_flow_definition_output_output;
 
+pub(crate) mod shape_create_global_inference_gateway_input_input;
+
+pub(crate) mod shape_create_global_inference_gateway_output_output;
+
 pub(crate) mod shape_create_hub_content_presigned_urls_input_input;
 
 pub(crate) mod shape_create_hub_content_presigned_urls_output_output;
@@ -947,6 +955,10 @@ pub(crate) mod shape_delete_flow_definition_input_input;
 
 pub(crate) mod shape_delete_flow_definition_output_output;
 
+pub(crate) mod shape_delete_global_inference_gateway_input_input;
+
+pub(crate) mod shape_delete_global_inference_gateway_output_output;
+
 pub(crate) mod shape_delete_hub_content_input_input;
 
 pub(crate) mod shape_delete_hub_content_output_output;
@@ -1248,6 +1260,10 @@ pub(crate) mod shape_describe_feature_metadata_output_output;
 pub(crate) mod shape_describe_flow_definition_input_input;
 
 pub(crate) mod shape_describe_flow_definition_output_output;
+
+pub(crate) mod shape_describe_global_inference_gateway_input_input;
+
+pub(crate) mod shape_describe_global_inference_gateway_output_output;
 
 pub(crate) mod shape_describe_hub_content_input_input;
 
@@ -1671,6 +1687,20 @@ pub(crate) mod shape_git_config;
 
 pub(crate) mod shape_git_config_for_update;
 
+pub(crate) mod shape_global_inference_gateway_filter;
+
+pub(crate) mod shape_global_inference_gateway_member;
+
+pub(crate) mod shape_global_inference_gateway_member_filter;
+
+pub(crate) mod shape_global_inference_gateway_member_summary;
+
+pub(crate) mod shape_global_inference_gateway_routing;
+
+pub(crate) mod shape_global_inference_gateway_routing_weights;
+
+pub(crate) mod shape_global_inference_gateway_summary;
+
 pub(crate) mod shape_hidden_sage_maker_image;
 
 pub(crate) mod shape_holiday_config_attributes;
@@ -2041,6 +2071,10 @@ pub(crate) mod shape_list_flow_definitions_input_input;
 
 pub(crate) mod shape_list_flow_definitions_output_output;
 
+pub(crate) mod shape_list_global_inference_gateways_input_input;
+
+pub(crate) mod shape_list_global_inference_gateways_output_output;
+
 pub(crate) mod shape_list_hub_content_versions_input_input;
 
 pub(crate) mod shape_list_hub_content_versions_output_output;
@@ -2076,6 +2110,10 @@ pub(crate) mod shape_list_inference_components_output_output;
 pub(crate) mod shape_list_inference_experiments_input_input;
 
 pub(crate) mod shape_list_inference_experiments_output_output;
+
+pub(crate) mod shape_list_inference_gateways_input_input;
+
+pub(crate) mod shape_list_inference_gateways_output_output;
 
 pub(crate) mod shape_list_inference_recommendations_job_steps_input_input;
 
@@ -2491,6 +2529,14 @@ pub(crate) mod shape_monitoring_statistics_resource;
 
 pub(crate) mod shape_monitoring_stopping_condition;
 
+pub(crate) mod shape_move_cluster_node_logical_ids_error;
+
+pub(crate) mod shape_move_cluster_nodes_error;
+
+pub(crate) mod shape_move_cluster_nodes_input_input;
+
+pub(crate) mod shape_move_cluster_nodes_output_output;
+
 pub(crate) mod shape_multi_model_config;
 
 pub(crate) mod shape_neo_vpc_config;
@@ -2736,6 +2782,10 @@ pub(crate) mod shape_register_model_step_metadata;
 pub(crate) mod shape_remote_debug_config;
 
 pub(crate) mod shape_remote_debug_config_for_update;
+
+pub(crate) mod shape_remove_inference_gateway_input_input;
+
+pub(crate) mod shape_remove_inference_gateway_output_output;
 
 pub(crate) mod shape_render_ui_template_input_input;
 
@@ -3238,6 +3288,10 @@ pub(crate) mod shape_update_feature_group_output_output;
 pub(crate) mod shape_update_feature_metadata_input_input;
 
 pub(crate) mod shape_update_feature_metadata_output_output;
+
+pub(crate) mod shape_update_global_inference_gateway_input_input;
+
+pub(crate) mod shape_update_global_inference_gateway_output_output;
 
 pub(crate) mod shape_update_hub_content_input_input;
 

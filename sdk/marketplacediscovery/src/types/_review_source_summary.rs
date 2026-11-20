@@ -15,16 +15,28 @@ pub struct ReviewSourceSummary {
     /// </ul>
     pub source_name: ::std::string::String,
     /// <p>The machine-readable identifier of the review source. This field has one of the following values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>AWS_MARKETPLACE</code> – The reviews come from AWS Marketplace.</p></li>
-    /// <li>
-    /// <p><code>G2</code> – The reviews come from G2.</p></li>
-    /// <li>
-    /// <p><code>PEERSPOT</code> – The reviews come from PeerSpot.</p></li>
-    /// </ul>
+    /// <dl>
+    /// <dt>
+    /// AWS_MARKETPLACE
+    /// </dt>
+    /// <dd>
+    /// <p>The reviews come from AWS Marketplace.</p>
+    /// </dd>
+    /// <dt>
+    /// G2
+    /// </dt>
+    /// <dd>
+    /// <p>The reviews come from G2.</p>
+    /// </dd>
+    /// <dt>
+    /// PEERSPOT
+    /// </dt>
+    /// <dd>
+    /// <p>The reviews come from PeerSpot.</p>
+    /// </dd>
+    /// </dl>
     pub source_id: crate::types::ReviewSourceId,
-    /// <p>The URL where the reviews can be accessed at the source.</p>
+    /// <p>The URL where you can read the reviews at their source.</p>
     pub source_url: ::std::option::Option<::std::string::String>,
     /// <p>The average rating across all reviews from this source.</p>
     pub average_rating: ::std::string::String,
@@ -46,18 +58,30 @@ impl ReviewSourceSummary {
         self.source_name.deref()
     }
     /// <p>The machine-readable identifier of the review source. This field has one of the following values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>AWS_MARKETPLACE</code> – The reviews come from AWS Marketplace.</p></li>
-    /// <li>
-    /// <p><code>G2</code> – The reviews come from G2.</p></li>
-    /// <li>
-    /// <p><code>PEERSPOT</code> – The reviews come from PeerSpot.</p></li>
-    /// </ul>
+    /// <dl>
+    /// <dt>
+    /// AWS_MARKETPLACE
+    /// </dt>
+    /// <dd>
+    /// <p>The reviews come from AWS Marketplace.</p>
+    /// </dd>
+    /// <dt>
+    /// G2
+    /// </dt>
+    /// <dd>
+    /// <p>The reviews come from G2.</p>
+    /// </dd>
+    /// <dt>
+    /// PEERSPOT
+    /// </dt>
+    /// <dd>
+    /// <p>The reviews come from PeerSpot.</p>
+    /// </dd>
+    /// </dl>
     pub fn source_id(&self) -> &crate::types::ReviewSourceId {
         &self.source_id
     }
-    /// <p>The URL where the reviews can be accessed at the source.</p>
+    /// <p>The URL where you can read the reviews at their source.</p>
     pub fn source_url(&self) -> ::std::option::Option<&str> {
         self.source_url.as_deref()
     }
@@ -129,55 +153,91 @@ impl ReviewSourceSummaryBuilder {
         &self.source_name
     }
     /// <p>The machine-readable identifier of the review source. This field has one of the following values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>AWS_MARKETPLACE</code> – The reviews come from AWS Marketplace.</p></li>
-    /// <li>
-    /// <p><code>G2</code> – The reviews come from G2.</p></li>
-    /// <li>
-    /// <p><code>PEERSPOT</code> – The reviews come from PeerSpot.</p></li>
-    /// </ul>
+    /// <dl>
+    /// <dt>
+    /// AWS_MARKETPLACE
+    /// </dt>
+    /// <dd>
+    /// <p>The reviews come from AWS Marketplace.</p>
+    /// </dd>
+    /// <dt>
+    /// G2
+    /// </dt>
+    /// <dd>
+    /// <p>The reviews come from G2.</p>
+    /// </dd>
+    /// <dt>
+    /// PEERSPOT
+    /// </dt>
+    /// <dd>
+    /// <p>The reviews come from PeerSpot.</p>
+    /// </dd>
+    /// </dl>
     /// This field is required.
     pub fn source_id(mut self, input: crate::types::ReviewSourceId) -> Self {
         self.source_id = ::std::option::Option::Some(input);
         self
     }
     /// <p>The machine-readable identifier of the review source. This field has one of the following values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>AWS_MARKETPLACE</code> – The reviews come from AWS Marketplace.</p></li>
-    /// <li>
-    /// <p><code>G2</code> – The reviews come from G2.</p></li>
-    /// <li>
-    /// <p><code>PEERSPOT</code> – The reviews come from PeerSpot.</p></li>
-    /// </ul>
+    /// <dl>
+    /// <dt>
+    /// AWS_MARKETPLACE
+    /// </dt>
+    /// <dd>
+    /// <p>The reviews come from AWS Marketplace.</p>
+    /// </dd>
+    /// <dt>
+    /// G2
+    /// </dt>
+    /// <dd>
+    /// <p>The reviews come from G2.</p>
+    /// </dd>
+    /// <dt>
+    /// PEERSPOT
+    /// </dt>
+    /// <dd>
+    /// <p>The reviews come from PeerSpot.</p>
+    /// </dd>
+    /// </dl>
     pub fn set_source_id(mut self, input: ::std::option::Option<crate::types::ReviewSourceId>) -> Self {
         self.source_id = input;
         self
     }
     /// <p>The machine-readable identifier of the review source. This field has one of the following values:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>AWS_MARKETPLACE</code> – The reviews come from AWS Marketplace.</p></li>
-    /// <li>
-    /// <p><code>G2</code> – The reviews come from G2.</p></li>
-    /// <li>
-    /// <p><code>PEERSPOT</code> – The reviews come from PeerSpot.</p></li>
-    /// </ul>
+    /// <dl>
+    /// <dt>
+    /// AWS_MARKETPLACE
+    /// </dt>
+    /// <dd>
+    /// <p>The reviews come from AWS Marketplace.</p>
+    /// </dd>
+    /// <dt>
+    /// G2
+    /// </dt>
+    /// <dd>
+    /// <p>The reviews come from G2.</p>
+    /// </dd>
+    /// <dt>
+    /// PEERSPOT
+    /// </dt>
+    /// <dd>
+    /// <p>The reviews come from PeerSpot.</p>
+    /// </dd>
+    /// </dl>
     pub fn get_source_id(&self) -> &::std::option::Option<crate::types::ReviewSourceId> {
         &self.source_id
     }
-    /// <p>The URL where the reviews can be accessed at the source.</p>
+    /// <p>The URL where you can read the reviews at their source.</p>
     pub fn source_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.source_url = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The URL where the reviews can be accessed at the source.</p>
+    /// <p>The URL where you can read the reviews at their source.</p>
     pub fn set_source_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.source_url = input;
         self
     }
-    /// <p>The URL where the reviews can be accessed at the source.</p>
+    /// <p>The URL where you can read the reviews at their source.</p>
     pub fn get_source_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_url
     }

@@ -247,6 +247,16 @@ pub fn de_route(
                 builder = builder.set_ip_address(var_18);
             }
             ,
+            s if s.matches("igwFirewall") /* IgwFirewall com.amazonaws.ec2#Route$IgwFirewall */ =>  {
+                let var_19 =
+                    Some(
+                        crate::protocol_serde::shape_igw_firewall::de_igw_firewall(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_igw_firewall(var_19);
+            }
+            ,
             _ => {}
         }
     }

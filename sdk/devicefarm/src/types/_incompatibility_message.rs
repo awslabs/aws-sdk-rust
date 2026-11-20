@@ -12,6 +12,8 @@ pub struct IncompatibilityMessage {
     /// <li>
     /// <p>ARN</p></li>
     /// <li>
+    /// <p>DEVICE_TYPE (for example, physical or virtual)</p></li>
+    /// <li>
     /// <p>FORM_FACTOR (for example, phone or tablet)</p></li>
     /// <li>
     /// <p>MANUFACTURER</p></li>
@@ -34,6 +36,8 @@ impl IncompatibilityMessage {
     /// <ul>
     /// <li>
     /// <p>ARN</p></li>
+    /// <li>
+    /// <p>DEVICE_TYPE (for example, physical or virtual)</p></li>
     /// <li>
     /// <p>FORM_FACTOR (for example, phone or tablet)</p></li>
     /// <li>
@@ -84,6 +88,8 @@ impl IncompatibilityMessageBuilder {
     /// <li>
     /// <p>ARN</p></li>
     /// <li>
+    /// <p>DEVICE_TYPE (for example, physical or virtual)</p></li>
+    /// <li>
     /// <p>FORM_FACTOR (for example, phone or tablet)</p></li>
     /// <li>
     /// <p>MANUFACTURER</p></li>
@@ -104,6 +110,8 @@ impl IncompatibilityMessageBuilder {
     /// <li>
     /// <p>ARN</p></li>
     /// <li>
+    /// <p>DEVICE_TYPE (for example, physical or virtual)</p></li>
+    /// <li>
     /// <p>FORM_FACTOR (for example, phone or tablet)</p></li>
     /// <li>
     /// <p>MANUFACTURER</p></li>
@@ -123,6 +131,8 @@ impl IncompatibilityMessageBuilder {
     /// <ul>
     /// <li>
     /// <p>ARN</p></li>
+    /// <li>
+    /// <p>DEVICE_TYPE (for example, physical or virtual)</p></li>
     /// <li>
     /// <p>FORM_FACTOR (for example, phone or tablet)</p></li>
     /// <li>

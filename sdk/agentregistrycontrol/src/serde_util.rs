@@ -11,6 +11,45 @@ pub(crate) fn validation_exception_correct_errors(
     builder
 }
 
+pub(crate) fn associate_publisher_output_output_correct_errors(
+    mut builder: crate::operation::associate_publisher::builders::AssociatePublisherOutputBuilder,
+) -> crate::operation::associate_publisher::builders::AssociatePublisherOutputBuilder {
+    if builder.record_arn.is_none() {
+        builder.record_arn = Some(Default::default())
+    }
+    if builder.public_identifier.is_none() {
+        builder.public_identifier = Some(Default::default())
+    }
+    if builder.publisher.is_none() {
+        builder.publisher = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::AssociationStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn create_publisher_output_output_correct_errors(
+    mut builder: crate::operation::create_publisher::builders::CreatePublisherOutputBuilder,
+) -> crate::operation::create_publisher::builders::CreatePublisherOutputBuilder {
+    if builder.value.is_none() {
+        builder.value = Some(crate::types::Identifier::Unknown)
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::VerificationStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.publisher_arn.is_none() {
+        builder.publisher_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn create_registry_output_output_correct_errors(
     mut builder: crate::operation::create_registry::builders::CreateRegistryOutputBuilder,
 ) -> crate::operation::create_registry::builders::CreateRegistryOutputBuilder {
@@ -37,6 +76,27 @@ pub(crate) fn delete_registry_output_output_correct_errors(
 ) -> crate::operation::delete_registry::builders::DeleteRegistryOutputBuilder {
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::RegistryStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn get_publisher_output_output_correct_errors(
+    mut builder: crate::operation::get_publisher::builders::GetPublisherOutputBuilder,
+) -> crate::operation::get_publisher::builders::GetPublisherOutputBuilder {
+    if builder.value.is_none() {
+        builder.value = Some(crate::types::Identifier::Unknown)
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::VerificationStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.publisher_arn.is_none() {
+        builder.publisher_arn = Some(Default::default())
     }
     builder
 }
@@ -91,6 +151,24 @@ pub(crate) fn get_registry_record_output_output_correct_errors(
     }
     if builder.updated_at.is_none() {
         builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
+pub(crate) fn list_publisher_associations_output_output_correct_errors(
+    mut builder: crate::operation::list_publisher_associations::builders::ListPublisherAssociationsOutputBuilder,
+) -> crate::operation::list_publisher_associations::builders::ListPublisherAssociationsOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_publishers_output_output_correct_errors(
+    mut builder: crate::operation::list_publishers::builders::ListPublishersOutputBuilder,
+) -> crate::operation::list_publishers::builders::ListPublishersOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
     }
     builder
 }
@@ -212,6 +290,27 @@ pub(crate) fn update_registry_record_status_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn validate_publisher_output_output_correct_errors(
+    mut builder: crate::operation::validate_publisher::builders::ValidatePublisherOutputBuilder,
+) -> crate::operation::validate_publisher::builders::ValidatePublisherOutputBuilder {
+    if builder.value.is_none() {
+        builder.value = Some(crate::types::Identifier::Unknown)
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::VerificationStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.publisher_arn.is_none() {
+        builder.publisher_arn = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn auto_detection_correct_errors(
     mut builder: crate::types::builders::AutoDetectionBuilder,
 ) -> crate::types::builders::AutoDetectionBuilder {
@@ -223,6 +322,18 @@ pub(crate) fn auto_detection_correct_errors(
     }
     if builder.status.is_none() {
         builder.status = "no value was set".parse::<crate::types::AutoDetectionStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn domain_challenge_correct_errors(
+    mut builder: crate::types::builders::DomainChallengeBuilder,
+) -> crate::types::builders::DomainChallengeBuilder {
+    if builder.record_name.is_none() {
+        builder.record_name = Some(Default::default())
+    }
+    if builder.record_value.is_none() {
+        builder.record_value = Some(Default::default())
     }
     builder
 }
@@ -278,6 +389,42 @@ pub(crate) fn provenance_correct_errors(mut builder: crate::types::builders::Pro
     }
     if builder.source_id.is_none() {
         builder.source_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn publisher_association_correct_errors(
+    mut builder: crate::types::builders::PublisherAssociationBuilder,
+) -> crate::types::builders::PublisherAssociationBuilder {
+    if builder.record_arn.is_none() {
+        builder.record_arn = Some(Default::default())
+    }
+    if builder.public_identifier.is_none() {
+        builder.public_identifier = Some(Default::default())
+    }
+    if builder.publisher.is_none() {
+        builder.publisher = Some(Default::default())
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::AssociationStatus>().ok()
+    }
+    builder
+}
+
+pub(crate) fn publisher_summary_correct_errors(
+    mut builder: crate::types::builders::PublisherSummaryBuilder,
+) -> crate::types::builders::PublisherSummaryBuilder {
+    if builder.value.is_none() {
+        builder.value = Some(crate::types::Identifier::Unknown)
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::VerificationStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.publisher_arn.is_none() {
+        builder.publisher_arn = Some(Default::default())
     }
     builder
 }

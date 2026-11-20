@@ -16,10 +16,13 @@
 ///     LogType::AlbAccess => { /* ... */ },
 ///     LogType::AlbConnection => { /* ... */ },
 ///     LogType::AlbHealthCheck => { /* ... */ },
+///     LogType::Alert => { /* ... */ },
 ///     LogType::Application => { /* ... */ },
 ///     LogType::Connection => { /* ... */ },
+///     LogType::Flow => { /* ... */ },
 ///     LogType::S3ServerAccess => { /* ... */ },
 ///     LogType::SecurityFinding => { /* ... */ },
+///     LogType::Tls => { /* ... */ },
 ///     LogType::Usage => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -43,7 +46,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-/// <p>The following log types are supported for log delivery configuration:</p> <ul> <li> <p>APPLICATION_LOGS – Application-level logs.</p> </li> <li> <p>USAGE_LOGS – Resource usage logs.</p> </li> <li> <p>SECURITY_FINDING_LOGS – Security finding logs.</p> </li> <li> <p>ACCESS_LOGS – Access logs (such as Elastic Load Balancing access logs).</p> </li> <li> <p>CONNECTION_LOGS – Connection logs.</p> </li> <li> <p>S3_SERVER_ACCESS_LOGS – Amazon S3 server access logs.</p> </li> </ul>
+/// <p>The following log types are supported for log delivery configuration:</p> <ul> <li> <p>APPLICATION_LOGS – Application-level logs.</p> </li> <li> <p>USAGE_LOGS – Resource usage logs.</p> </li> <li> <p>SECURITY_FINDING_LOGS – Security finding logs.</p> </li> <li> <p>ACCESS_LOGS – Access logs (such as Elastic Load Balancing access logs).</p> </li> <li> <p>CONNECTION_LOGS – Connection logs.</p> </li> <li> <p>S3_SERVER_ACCESS_LOGS – Amazon S3 server access logs.</p> </li> <li> <p>FLOW_LOGS – Amazon Web Services Network Firewall flow logs.</p> </li> <li> <p>ALERT_LOGS – Amazon Web Services Network Firewall alert logs.</p> </li> <li> <p>TLS_LOGS – Amazon Web Services Network Firewall TLS logs.</p> </li> </ul>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,
@@ -58,13 +61,19 @@ pub enum LogType {
     #[allow(missing_docs)] // documentation missing in model
     AlbHealthCheck,
     #[allow(missing_docs)] // documentation missing in model
+    Alert,
+    #[allow(missing_docs)] // documentation missing in model
     Application,
     #[allow(missing_docs)] // documentation missing in model
     Connection,
     #[allow(missing_docs)] // documentation missing in model
+    Flow,
+    #[allow(missing_docs)] // documentation missing in model
     S3ServerAccess,
     #[allow(missing_docs)] // documentation missing in model
     SecurityFinding,
+    #[allow(missing_docs)] // documentation missing in model
+    Tls,
     #[allow(missing_docs)] // documentation missing in model
     Usage,
     /// `Unknown` contains new variants that have been added since this code was generated.
@@ -78,10 +87,13 @@ impl ::std::convert::From<&str> for LogType {
             "ALB_ACCESS_LOGS" => LogType::AlbAccess,
             "ALB_CONNECTION_LOGS" => LogType::AlbConnection,
             "ALB_HEALTH_CHECK_LOGS" => LogType::AlbHealthCheck,
+            "ALERT_LOGS" => LogType::Alert,
             "APPLICATION_LOGS" => LogType::Application,
             "CONNECTION_LOGS" => LogType::Connection,
+            "FLOW_LOGS" => LogType::Flow,
             "S3_SERVER_ACCESS_LOGS" => LogType::S3ServerAccess,
             "SECURITY_FINDING_LOGS" => LogType::SecurityFinding,
+            "TLS_LOGS" => LogType::Tls,
             "USAGE_LOGS" => LogType::Usage,
             other => LogType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -102,10 +114,13 @@ impl LogType {
             LogType::AlbAccess => "ALB_ACCESS_LOGS",
             LogType::AlbConnection => "ALB_CONNECTION_LOGS",
             LogType::AlbHealthCheck => "ALB_HEALTH_CHECK_LOGS",
+            LogType::Alert => "ALERT_LOGS",
             LogType::Application => "APPLICATION_LOGS",
             LogType::Connection => "CONNECTION_LOGS",
+            LogType::Flow => "FLOW_LOGS",
             LogType::S3ServerAccess => "S3_SERVER_ACCESS_LOGS",
             LogType::SecurityFinding => "SECURITY_FINDING_LOGS",
+            LogType::Tls => "TLS_LOGS",
             LogType::Usage => "USAGE_LOGS",
             LogType::Unknown(value) => value.as_str(),
         }
@@ -117,10 +132,13 @@ impl LogType {
             "ALB_ACCESS_LOGS",
             "ALB_CONNECTION_LOGS",
             "ALB_HEALTH_CHECK_LOGS",
+            "ALERT_LOGS",
             "APPLICATION_LOGS",
             "CONNECTION_LOGS",
+            "FLOW_LOGS",
             "S3_SERVER_ACCESS_LOGS",
             "SECURITY_FINDING_LOGS",
+            "TLS_LOGS",
             "USAGE_LOGS",
         ]
     }
@@ -149,10 +167,13 @@ impl ::std::fmt::Display for LogType {
             LogType::AlbAccess => write!(f, "ALB_ACCESS_LOGS"),
             LogType::AlbConnection => write!(f, "ALB_CONNECTION_LOGS"),
             LogType::AlbHealthCheck => write!(f, "ALB_HEALTH_CHECK_LOGS"),
+            LogType::Alert => write!(f, "ALERT_LOGS"),
             LogType::Application => write!(f, "APPLICATION_LOGS"),
             LogType::Connection => write!(f, "CONNECTION_LOGS"),
+            LogType::Flow => write!(f, "FLOW_LOGS"),
             LogType::S3ServerAccess => write!(f, "S3_SERVER_ACCESS_LOGS"),
             LogType::SecurityFinding => write!(f, "SECURITY_FINDING_LOGS"),
+            LogType::Tls => write!(f, "TLS_LOGS"),
             LogType::Usage => write!(f, "USAGE_LOGS"),
             LogType::Unknown(value) => write!(f, "{value}"),
         }

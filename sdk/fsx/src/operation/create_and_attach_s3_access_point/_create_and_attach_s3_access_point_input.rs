@@ -7,7 +7,7 @@ pub struct CreateAndAttachS3AccessPointInput {
     pub client_request_token: ::std::option::Option<::std::string::String>,
     /// <p>The name you want to assign to this S3 access point.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The type of S3 access point you want to create. Only <code>OpenZFS</code> is supported.</p>
+    /// <p>The type of S3 access point you want to create. Valid values are <code>OPENZFS</code> and <code>ONTAP</code>.</p>
     pub r#type: ::std::option::Option<crate::types::S3AccessPointAttachmentType>,
     /// <p>Specifies the configuration to use when creating and attaching an S3 access point to an FSx for OpenZFS volume.</p>
     pub open_zfs_configuration: ::std::option::Option<crate::types::CreateAndAttachS3AccessPointOpenZfsConfiguration>,
@@ -25,7 +25,7 @@ impl CreateAndAttachS3AccessPointInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of S3 access point you want to create. Only <code>OpenZFS</code> is supported.</p>
+    /// <p>The type of S3 access point you want to create. Valid values are <code>OPENZFS</code> and <code>ONTAP</code>.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::S3AccessPointAttachmentType> {
         self.r#type.as_ref()
     }
@@ -90,18 +90,18 @@ impl CreateAndAttachS3AccessPointInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The type of S3 access point you want to create. Only <code>OpenZFS</code> is supported.</p>
+    /// <p>The type of S3 access point you want to create. Valid values are <code>OPENZFS</code> and <code>ONTAP</code>.</p>
     /// This field is required.
     pub fn r#type(mut self, input: crate::types::S3AccessPointAttachmentType) -> Self {
         self.r#type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of S3 access point you want to create. Only <code>OpenZFS</code> is supported.</p>
+    /// <p>The type of S3 access point you want to create. Valid values are <code>OPENZFS</code> and <code>ONTAP</code>.</p>
     pub fn set_type(mut self, input: ::std::option::Option<crate::types::S3AccessPointAttachmentType>) -> Self {
         self.r#type = input;
         self
     }
-    /// <p>The type of S3 access point you want to create. Only <code>OpenZFS</code> is supported.</p>
+    /// <p>The type of S3 access point you want to create. Valid values are <code>OPENZFS</code> and <code>ONTAP</code>.</p>
     pub fn get_type(&self) -> &::std::option::Option<crate::types::S3AccessPointAttachmentType> {
         &self.r#type
     }

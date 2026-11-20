@@ -3,8 +3,8 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAssetInput {
-    /// <p>The identifier of the asset type for the asset.</p>
-    pub asset_type_id: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the asset type for the asset. This field is required.</p>
+    pub asset_type_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the asset. If an asset with this identifier already exists, it is updated.</p>
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the asset.</p>
@@ -12,14 +12,14 @@ pub struct PutAssetInput {
     /// <p>The description of the asset.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The forms to set on the asset, keyed by form name. Each entry specifies the form type and its JSON content.</p>
-    pub forms: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetFormEntry>>,
+    pub forms: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetFormInput>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl PutAssetInput {
-    /// <p>The identifier of the asset type for the asset.</p>
-    pub fn asset_type_id(&self) -> ::std::option::Option<&str> {
-        self.asset_type_id.as_deref()
+    /// <p>The identifier of the asset type for the asset. This field is required.</p>
+    pub fn asset_type_identifier(&self) -> ::std::option::Option<&str> {
+        self.asset_type_identifier.as_deref()
     }
     /// <p>The unique identifier of the asset. If an asset with this identifier already exists, it is updated.</p>
     pub fn identifier(&self) -> ::std::option::Option<&str> {
@@ -34,7 +34,7 @@ impl PutAssetInput {
         self.description.as_deref()
     }
     /// <p>The forms to set on the asset, keyed by form name. Each entry specifies the form type and its JSON content.</p>
-    pub fn forms(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AssetFormEntry>> {
+    pub fn forms(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AssetFormInput>> {
         self.forms.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -53,28 +53,27 @@ impl PutAssetInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct PutAssetInputBuilder {
-    pub(crate) asset_type_id: ::std::option::Option<::std::string::String>,
+    pub(crate) asset_type_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) identifier: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
-    pub(crate) forms: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetFormEntry>>,
+    pub(crate) forms: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetFormInput>>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl PutAssetInputBuilder {
-    /// <p>The identifier of the asset type for the asset.</p>
-    /// This field is required.
-    pub fn asset_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.asset_type_id = ::std::option::Option::Some(input.into());
+    /// <p>The identifier of the asset type for the asset. This field is required.</p>
+    pub fn asset_type_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asset_type_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the asset type for the asset.</p>
-    pub fn set_asset_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_type_id = input;
+    /// <p>The identifier of the asset type for the asset. This field is required.</p>
+    pub fn set_asset_type_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.asset_type_identifier = input;
         self
     }
-    /// <p>The identifier of the asset type for the asset.</p>
-    pub fn get_asset_type_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.asset_type_id
+    /// <p>The identifier of the asset type for the asset. This field is required.</p>
+    pub fn get_asset_type_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_type_identifier
     }
     /// <p>The unique identifier of the asset. If an asset with this identifier already exists, it is updated.</p>
     /// This field is required.
@@ -125,7 +124,7 @@ impl PutAssetInputBuilder {
     /// To override the contents of this collection use [`set_forms`](Self::set_forms).
     ///
     /// <p>The forms to set on the asset, keyed by form name. Each entry specifies the form type and its JSON content.</p>
-    pub fn forms(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AssetFormEntry) -> Self {
+    pub fn forms(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AssetFormInput) -> Self {
         let mut hash_map = self.forms.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.forms = ::std::option::Option::Some(hash_map);
@@ -134,13 +133,13 @@ impl PutAssetInputBuilder {
     /// <p>The forms to set on the asset, keyed by form name. Each entry specifies the form type and its JSON content.</p>
     pub fn set_forms(
         mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetFormEntry>>,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetFormInput>>,
     ) -> Self {
         self.forms = input;
         self
     }
     /// <p>The forms to set on the asset, keyed by form name. Each entry specifies the form type and its JSON content.</p>
-    pub fn get_forms(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetFormEntry>> {
+    pub fn get_forms(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetFormInput>> {
         &self.forms
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -160,7 +159,7 @@ impl PutAssetInputBuilder {
     /// Consumes the builder and constructs a [`PutAssetInput`](crate::operation::put_asset::PutAssetInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::put_asset::PutAssetInput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_asset::PutAssetInput {
-            asset_type_id: self.asset_type_id,
+            asset_type_identifier: self.asset_type_identifier,
             identifier: self.identifier,
             name: self.name,
             description: self.description,

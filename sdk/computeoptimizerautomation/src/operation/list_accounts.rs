@@ -331,7 +331,7 @@ pub enum ListAccountsError {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p>The operation can only be performed by a management account.</p>
+    /// <p>The operation can only be performed by an organization's management account or a delegated administrator.</p>
     NotManagementAccountException(crate::types::error::NotManagementAccountException),
     /// <p>The account must be opted in to Compute Optimizer Automation before performing this action.</p>
     OptInRequiredException(crate::types::error::OptInRequiredException),

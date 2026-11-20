@@ -545,6 +545,15 @@ pub(crate) fn context_store_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn igw_firewall_configuration_correct_errors(
+    mut builder: crate::types::builders::IgwFirewallConfigurationBuilder,
+) -> crate::types::builders::IgwFirewallConfigurationBuilder {
+    if builder.enforcement_mode.is_none() {
+        builder.enforcement_mode = "no value was set".parse::<crate::types::EnforcementMode>().ok()
+    }
+    builder
+}
+
 pub(crate) fn resource_context_correct_errors(
     mut builder: crate::types::builders::ResourceContextBuilder,
 ) -> crate::types::builders::ResourceContextBuilder {

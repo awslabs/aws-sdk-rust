@@ -19,6 +19,9 @@ pub mod get_product;
 /// Types for the `ListFulfillmentOptions` operation.
 pub mod list_fulfillment_options;
 
+/// Types for the `ListListingAttributes` operation.
+pub mod list_listing_attributes;
+
 /// Types for the `ListPurchaseOptions` operation.
 pub mod list_purchase_options;
 

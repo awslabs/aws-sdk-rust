@@ -101,6 +101,12 @@ pub use crate::types::_germany_additional_info::GermanyAdditionalInfo;
 
 pub use crate::types::_mexico_additional_info::MexicoAdditionalInfo;
 
+pub use crate::types::_united_arab_emirates_additional_info::UnitedArabEmiratesAdditionalInfo;
+
+pub use crate::types::_norway_additional_info::NorwayAdditionalInfo;
+
+pub use crate::types::_new_zealand_additional_info::NewZealandAdditionalInfo;
+
 pub use crate::types::_brazil_additional_info::BrazilAdditionalInfo;
 
 pub use crate::types::_india_additional_info::IndiaAdditionalInfo;
@@ -140,6 +146,10 @@ pub use crate::types::_indonesia_tax_registration_number_type::IndonesiaTaxRegis
 pub use crate::types::_uzbekistan_tax_registration_number_type::UzbekistanTaxRegistrationNumberType;
 
 pub use crate::types::_chile_document_type::ChileDocumentType;
+
+pub use crate::types::_uae_tax_registration_number_type::UaeTaxRegistrationNumberType;
+
+pub use crate::types::_norway_tax_registration_number_type::NorwayTaxRegistrationNumberType;
 
 pub use crate::types::_tax_registration_document::TaxRegistrationDocument;
 
@@ -235,6 +245,12 @@ mod _mexico_additional_info;
 
 mod _monaco_additional_info;
 
+mod _new_zealand_additional_info;
+
+mod _norway_additional_info;
+
+mod _norway_tax_registration_number_type;
+
 mod _person_type;
 
 mod _philippines_additional_info;
@@ -295,9 +311,13 @@ mod _tax_registration_with_jurisdiction;
 
 mod _turkey_additional_info;
 
+mod _uae_tax_registration_number_type;
+
 mod _ukraine_additional_info;
 
 mod _ukraine_trn_type;
+
+mod _united_arab_emirates_additional_info;
 
 mod _uzbekistan_additional_info;
 

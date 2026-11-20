@@ -7,6 +7,8 @@ pub enum Error {
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>The request conflicts with the current state of the resource.</p>
     ConflictException(crate::types::error::ConflictException),
+    /// This exception is thrown on a database (or other dependency) error. Modeled as a server error so SDKs retry it (5xx) and it feeds server-error alarming. Marked @retryable because it represents a transient downstream failure that is safe to retry (matches the forwarder's own retry-on-DependencyException behavior).
+    DependencyException(crate::types::error::DependencyException),
     /// <p>The request failed due to an unexpected internal error; the caller may retry.</p>
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>The requested resource was not found.</p>
@@ -31,6 +33,7 @@ impl ::std::fmt::Display for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
             Error::ConflictException(inner) => inner.fmt(f),
+            Error::DependencyException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceQuotaExceededException(inner) => inner.fmt(f),
@@ -59,12 +62,72 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
             Self::ConflictException(inner) => inner.meta(),
+            Self::DependencyException(inner) => inner.meta(),
             Self::InternalServerException(inner) => inner.meta(),
             Self::ResourceNotFoundException(inner) => inner.meta(),
             Self::ServiceQuotaExceededException(inner) => inner.meta(),
             Self::ThrottlingException(inner) => inner.meta(),
             Self::ValidationException(inner) => inner.meta(),
             Self::Unhandled(inner) => &inner.meta,
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_publisher::AssociatePublisherError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::associate_publisher::AssociatePublisherError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::associate_publisher::AssociatePublisherError> for Error {
+    fn from(err: crate::operation::associate_publisher::AssociatePublisherError) -> Self {
+        match err {
+            crate::operation::associate_publisher::AssociatePublisherError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::associate_publisher::AssociatePublisherError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::associate_publisher::AssociatePublisherError::DependencyException(inner) => Error::DependencyException(inner),
+            crate::operation::associate_publisher::AssociatePublisherError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::associate_publisher::AssociatePublisherError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::associate_publisher::AssociatePublisherError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::associate_publisher::AssociatePublisherError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::associate_publisher::AssociatePublisherError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_publisher::CreatePublisherError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_publisher::CreatePublisherError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_publisher::CreatePublisherError> for Error {
+    fn from(err: crate::operation::create_publisher::CreatePublisherError) -> Self {
+        match err {
+            crate::operation::create_publisher::CreatePublisherError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_publisher::CreatePublisherError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_publisher::CreatePublisherError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_publisher::CreatePublisherError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_publisher::CreatePublisherError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_publisher::CreatePublisherError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_publisher::CreatePublisherError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -131,6 +194,33 @@ impl From<crate::operation::create_registry_record::CreateRegistryRecordError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_publisher::DeletePublisherError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_publisher::DeletePublisherError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_publisher::DeletePublisherError> for Error {
+    fn from(err: crate::operation::delete_publisher::DeletePublisherError) -> Self {
+        match err {
+            crate::operation::delete_publisher::DeletePublisherError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_publisher::DeletePublisherError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_publisher::DeletePublisherError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_publisher::DeletePublisherError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_publisher::DeletePublisherError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_publisher::DeletePublisherError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_publisher::DeletePublisherError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_registry::DeleteRegistryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -189,6 +279,61 @@ impl From<crate::operation::delete_registry_record::DeleteRegistryRecordError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_publisher::DisassociatePublisherError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::disassociate_publisher::DisassociatePublisherError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::disassociate_publisher::DisassociatePublisherError> for Error {
+    fn from(err: crate::operation::disassociate_publisher::DisassociatePublisherError) -> Self {
+        match err {
+            crate::operation::disassociate_publisher::DisassociatePublisherError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::disassociate_publisher::DisassociatePublisherError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::disassociate_publisher::DisassociatePublisherError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::disassociate_publisher::DisassociatePublisherError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::disassociate_publisher::DisassociatePublisherError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_publisher::GetPublisherError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_publisher::GetPublisherError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_publisher::GetPublisherError> for Error {
+    fn from(err: crate::operation::get_publisher::GetPublisherError) -> Self {
+        match err {
+            crate::operation::get_publisher::GetPublisherError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_publisher::GetPublisherError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_publisher::GetPublisherError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_publisher::GetPublisherError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_publisher::GetPublisherError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_publisher::GetPublisherError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_registry::GetRegistryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -241,6 +386,67 @@ impl From<crate::operation::get_registry_record::GetRegistryRecordError> for Err
             crate::operation::get_registry_record::GetRegistryRecordError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_registry_record::GetRegistryRecordError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_registry_record::GetRegistryRecordError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_publisher_associations::ListPublisherAssociationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_publisher_associations::ListPublisherAssociationsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_publisher_associations::ListPublisherAssociationsError> for Error {
+    fn from(err: crate::operation::list_publisher_associations::ListPublisherAssociationsError) -> Self {
+        match err {
+            crate::operation::list_publisher_associations::ListPublisherAssociationsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_publisher_associations::ListPublisherAssociationsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_publisher_associations::ListPublisherAssociationsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_publisher_associations::ListPublisherAssociationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_publisher_associations::ListPublisherAssociationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_publishers::ListPublishersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_publishers::ListPublishersError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_publishers::ListPublishersError> for Error {
+    fn from(err: crate::operation::list_publishers::ListPublishersError) -> Self {
+        match err {
+            crate::operation::list_publishers::ListPublishersError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_publishers::ListPublishersError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_publishers::ListPublishersError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_publishers::ListPublishersError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_publishers::ListPublishersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -433,6 +639,43 @@ impl From<crate::operation::untag_resource::UntagResourceError> for Error {
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_publisher_association_approval_status::UpdatePublisherAssociationApprovalStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_publisher_association_approval_status::UpdatePublisherAssociationApprovalStatusError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_publisher_association_approval_status::UpdatePublisherAssociationApprovalStatusError> for Error {
+    fn from(err: crate::operation::update_publisher_association_approval_status::UpdatePublisherAssociationApprovalStatusError) -> Self {
+        match err {
+            crate::operation::update_publisher_association_approval_status::UpdatePublisherAssociationApprovalStatusError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_publisher_association_approval_status::UpdatePublisherAssociationApprovalStatusError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_publisher_association_approval_status::UpdatePublisherAssociationApprovalStatusError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_publisher_association_approval_status::UpdatePublisherAssociationApprovalStatusError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_publisher_association_approval_status::UpdatePublisherAssociationApprovalStatusError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_publisher_association_approval_status::UpdatePublisherAssociationApprovalStatusError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_registry::UpdateRegistryError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -536,6 +779,32 @@ impl From<crate::operation::update_registry_record_status::UpdateRegistryRecordS
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::validate_publisher::ValidatePublisherError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::validate_publisher::ValidatePublisherError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::validate_publisher::ValidatePublisherError> for Error {
+    fn from(err: crate::operation::validate_publisher::ValidatePublisherError) -> Self {
+        match err {
+            crate::operation::validate_publisher::ValidatePublisherError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::validate_publisher::ValidatePublisherError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::validate_publisher::ValidatePublisherError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::validate_publisher::ValidatePublisherError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::validate_publisher::ValidatePublisherError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::validate_publisher::ValidatePublisherError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<O, E> ::std::convert::From<::aws_smithy_runtime_api::client::waiters::error::WaiterError<O, E>> for Error
 where
     O: ::std::fmt::Debug + ::std::marker::Send + ::std::marker::Sync + 'static,
@@ -553,6 +822,7 @@ impl ::std::error::Error for Error {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
             Error::ConflictException(inner) => inner.source(),
+            Error::DependencyException(inner) => inner.source(),
             Error::InternalServerException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceQuotaExceededException(inner) => inner.source(),
@@ -567,6 +837,7 @@ impl ::aws_types::request_id::RequestId for Error {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
             Self::ConflictException(e) => e.request_id(),
+            Self::DependencyException(e) => e.request_id(),
             Self::InternalServerException(e) => e.request_id(),
             Self::ResourceNotFoundException(e) => e.request_id(),
             Self::ServiceQuotaExceededException(e) => e.request_id(),

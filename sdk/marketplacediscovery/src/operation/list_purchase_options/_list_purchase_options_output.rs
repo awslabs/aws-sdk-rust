@@ -3,20 +3,20 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPurchaseOptionsOutput {
-    /// <p>The purchase options available to the buyer. Each option is either an offer for a single product or an offer set spanning multiple products.</p>
+    /// <p>The purchase options available to you. Each option is either an offer for a single product or an offer set spanning multiple products.</p>
     pub purchase_options: ::std::option::Option<::std::vec::Vec<crate::types::PurchaseOptionSummary>>,
-    /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
+    /// <p>If the service returns <code>nextToken</code>, more results are available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again with the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. An expired pagination token returns a <code>ValidationException</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPurchaseOptionsOutput {
-    /// <p>The purchase options available to the buyer. Each option is either an offer for a single product or an offer set spanning multiple products.</p>
+    /// <p>The purchase options available to you. Each option is either an offer for a single product or an offer set spanning multiple products.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.purchase_options.is_none()`.
     pub fn purchase_options(&self) -> &[crate::types::PurchaseOptionSummary] {
         self.purchase_options.as_deref().unwrap_or_default()
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
+    /// <p>If the service returns <code>nextToken</code>, more results are available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again with the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. An expired pagination token returns a <code>ValidationException</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -46,33 +46,33 @@ impl ListPurchaseOptionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_purchase_options`](Self::set_purchase_options).
     ///
-    /// <p>The purchase options available to the buyer. Each option is either an offer for a single product or an offer set spanning multiple products.</p>
+    /// <p>The purchase options available to you. Each option is either an offer for a single product or an offer set spanning multiple products.</p>
     pub fn purchase_options(mut self, input: crate::types::PurchaseOptionSummary) -> Self {
         let mut v = self.purchase_options.unwrap_or_default();
         v.push(input);
         self.purchase_options = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The purchase options available to the buyer. Each option is either an offer for a single product or an offer set spanning multiple products.</p>
+    /// <p>The purchase options available to you. Each option is either an offer for a single product or an offer set spanning multiple products.</p>
     pub fn set_purchase_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PurchaseOptionSummary>>) -> Self {
         self.purchase_options = input;
         self
     }
-    /// <p>The purchase options available to the buyer. Each option is either an offer for a single product or an offer set spanning multiple products.</p>
+    /// <p>The purchase options available to you. Each option is either an offer for a single product or an offer set spanning multiple products.</p>
     pub fn get_purchase_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PurchaseOptionSummary>> {
         &self.purchase_options
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
+    /// <p>If the service returns <code>nextToken</code>, more results are available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again with the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. An expired pagination token returns a <code>ValidationException</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
+    /// <p>If the service returns <code>nextToken</code>, more results are available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again with the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. An expired pagination token returns a <code>ValidationException</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
+    /// <p>If the service returns <code>nextToken</code>, more results are available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again with the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. An expired pagination token returns a <code>ValidationException</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

@@ -178,6 +178,13 @@ pub(crate) fn de_put_asset(
                             .transpose()?,
                     );
                 }
+                "AssetTypeId" => {
+                    builder = builder.set_asset_type_id(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "CreatedAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),

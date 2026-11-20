@@ -42,6 +42,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "templateOwner" => {
+                            builder = builder.set_template_owner(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::TemplateOwner::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "status" => {
                             builder = builder.set_status(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

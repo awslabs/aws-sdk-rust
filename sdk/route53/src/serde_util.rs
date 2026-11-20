@@ -440,6 +440,24 @@ pub(crate) fn get_hosted_zone_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn get_hosted_zone_change_batch_output_output_correct_errors(
+    mut builder: crate::operation::get_hosted_zone_change_batch::builders::GetHostedZoneChangeBatchOutputBuilder,
+) -> crate::operation::get_hosted_zone_change_batch::builders::GetHostedZoneChangeBatchOutputBuilder {
+    if builder.change_batch_summary.is_none() {
+        builder.change_batch_summary = {
+            let builder = crate::types::builders::ChangeBatchSummaryBuilder::default();
+            crate::serde_util::change_batch_summary_correct_errors(builder).build().ok()
+        }
+    }
+    if builder.change_batch.is_none() {
+        builder.change_batch = {
+            let builder = crate::types::builders::ChangeBatchBuilder::default();
+            crate::serde_util::change_batch_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn get_hosted_zone_count_output_output_correct_errors(
     mut builder: crate::operation::get_hosted_zone_count::builders::GetHostedZoneCountOutputBuilder,
 ) -> crate::operation::get_hosted_zone_count::builders::GetHostedZoneCountOutputBuilder {
@@ -593,6 +611,15 @@ pub(crate) fn list_health_checks_by_source_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_hosted_zone_change_batches_output_output_correct_errors(
+    mut builder: crate::operation::list_hosted_zone_change_batches::builders::ListHostedZoneChangeBatchesOutputBuilder,
+) -> crate::operation::list_hosted_zone_change_batches::builders::ListHostedZoneChangeBatchesOutputBuilder {
+    if builder.change_batch_summaries.is_none() {
+        builder.change_batch_summaries = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_hosted_zones_output_output_correct_errors(
     mut builder: crate::operation::list_hosted_zones::builders::ListHostedZonesOutputBuilder,
 ) -> crate::operation::list_hosted_zones::builders::ListHostedZonesOutputBuilder {
@@ -643,6 +670,15 @@ pub(crate) fn list_query_logging_configs_output_output_correct_errors(
 ) -> crate::operation::list_query_logging_configs::builders::ListQueryLoggingConfigsOutputBuilder {
     if builder.query_logging_configs.is_none() {
         builder.query_logging_configs = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_resource_record_set_changes_output_output_correct_errors(
+    mut builder: crate::operation::list_resource_record_set_changes::builders::ListResourceRecordSetChangesOutputBuilder,
+) -> crate::operation::list_resource_record_set_changes::builders::ListResourceRecordSetChangesOutputBuilder {
+    if builder.resource_record_set_changes.is_none() {
+        builder.resource_record_set_changes = Some(Default::default())
     }
     builder
 }
@@ -1026,6 +1062,31 @@ pub(crate) fn health_check_source_correct_errors(
     builder
 }
 
+pub(crate) fn change_batch_summary_correct_errors(
+    mut builder: crate::types::builders::ChangeBatchSummaryBuilder,
+) -> crate::types::builders::ChangeBatchSummaryBuilder {
+    if builder.change_id.is_none() {
+        builder.change_id = Some(Default::default())
+    }
+    if builder.operation.is_none() {
+        builder.operation = "no value was set".parse::<crate::types::ChangeHistoryOperation>().ok()
+    }
+    if builder.submitted_at.is_none() {
+        builder.submitted_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.change_count.is_none() {
+        builder.change_count = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn change_batch_correct_errors(mut builder: crate::types::builders::ChangeBatchBuilder) -> crate::types::builders::ChangeBatchBuilder {
+    if builder.changes.is_none() {
+        builder.changes = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn hosted_zone_limit_correct_errors(
     mut builder: crate::types::builders::HostedZoneLimitBuilder,
 ) -> crate::types::builders::HostedZoneLimitBuilder {
@@ -1146,6 +1207,30 @@ pub(crate) fn resource_record_set_correct_errors(
     builder
 }
 
+pub(crate) fn resource_record_set_change_correct_errors(
+    mut builder: crate::types::builders::ResourceRecordSetChangeBuilder,
+) -> crate::types::builders::ResourceRecordSetChangeBuilder {
+    if builder.change_id.is_none() {
+        builder.change_id = Some(Default::default())
+    }
+    if builder.operation.is_none() {
+        builder.operation = "no value was set".parse::<crate::types::ChangeHistoryOperation>().ok()
+    }
+    if builder.submitted_at.is_none() {
+        builder.submitted_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::ChangeAction>().ok()
+    }
+    if builder.resource_record_set.is_none() {
+        builder.resource_record_set = {
+            let builder = crate::types::builders::ResourceRecordSetBuilder::default();
+            crate::serde_util::resource_record_set_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn resource_record_set_protection_correct_errors(
     mut builder: crate::types::builders::ResourceRecordSetProtectionBuilder,
 ) -> crate::types::builders::ResourceRecordSetProtectionBuilder {
@@ -1204,6 +1289,19 @@ pub(crate) fn alias_target_correct_errors(mut builder: crate::types::builders::A
     builder
 }
 
+pub(crate) fn change_correct_errors(mut builder: crate::types::builders::ChangeBuilder) -> crate::types::builders::ChangeBuilder {
+    if builder.action.is_none() {
+        builder.action = "no value was set".parse::<crate::types::ChangeAction>().ok()
+    }
+    if builder.resource_record_set.is_none() {
+        builder.resource_record_set = {
+            let builder = crate::types::builders::ResourceRecordSetBuilder::default();
+            crate::serde_util::resource_record_set_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn cidr_routing_config_correct_errors(
     mut builder: crate::types::builders::CidrRoutingConfigBuilder,
 ) -> crate::types::builders::CidrRoutingConfigBuilder {
@@ -1212,6 +1310,18 @@ pub(crate) fn cidr_routing_config_correct_errors(
     }
     if builder.location_name.is_none() {
         builder.location_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn change_guardrail_correct_errors(
+    mut builder: crate::types::builders::ChangeGuardrailBuilder,
+) -> crate::types::builders::ChangeGuardrailBuilder {
+    if builder.name.is_none() {
+        builder.name = "no value was set".parse::<crate::types::ChangeGuardrailName>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ChangeGuardrailStatus>().ok()
     }
     builder
 }

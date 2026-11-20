@@ -19,6 +19,8 @@ pub struct ListProgramManagementAccountsInput {
     pub sort: ::std::option::Option<crate::types::ListProgramManagementAccountsSortBase>,
     /// <p>Token for retrieving the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
+    /// <p>Filter by program management account type.</p>
+    pub r#type: ::std::option::Option<crate::types::ProgramManagementAccountType>,
 }
 impl ListProgramManagementAccountsInput {
     /// <p>The catalog identifier to filter accounts.</p>
@@ -61,6 +63,10 @@ impl ListProgramManagementAccountsInput {
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
+    /// <p>Filter by program management account type.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ProgramManagementAccountType> {
+        self.r#type.as_ref()
+    }
 }
 impl ListProgramManagementAccountsInput {
     /// Creates a new builder-style object to manufacture [`ListProgramManagementAccountsInput`](crate::operation::list_program_management_accounts::ListProgramManagementAccountsInput).
@@ -81,6 +87,7 @@ pub struct ListProgramManagementAccountsInputBuilder {
     pub(crate) statuses: ::std::option::Option<::std::vec::Vec<crate::types::ProgramManagementAccountStatus>>,
     pub(crate) sort: ::std::option::Option<crate::types::ListProgramManagementAccountsSortBase>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ProgramManagementAccountType>,
 }
 impl ListProgramManagementAccountsInputBuilder {
     /// <p>The catalog identifier to filter accounts.</p>
@@ -220,6 +227,20 @@ impl ListProgramManagementAccountsInputBuilder {
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }
+    /// <p>Filter by program management account type.</p>
+    pub fn r#type(mut self, input: crate::types::ProgramManagementAccountType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Filter by program management account type.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProgramManagementAccountType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>Filter by program management account type.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ProgramManagementAccountType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`ListProgramManagementAccountsInput`](crate::operation::list_program_management_accounts::ListProgramManagementAccountsInput).
     pub fn build(
         self,
@@ -236,6 +257,7 @@ impl ListProgramManagementAccountsInputBuilder {
             statuses: self.statuses,
             sort: self.sort,
             next_token: self.next_token,
+            r#type: self.r#type,
         })
     }
 }

@@ -13,11 +13,20 @@ pub fn ser_list_recommended_actions_input_input(
             }
         }
     }
-    if let Some(var_3) = &input.max_results {
-        encoder.str("maxResults").integer(*var_3);
+    if let Some(var_3) = &input.organizational_unit_ids {
+        encoder.str("organizationalUnitIds");
+        encoder.array((*var_3).len());
+        for item_4 in var_3 {
+            {
+                encoder.str(item_4.as_str());
+            }
+        }
     }
-    if let Some(var_4) = &input.next_token {
-        encoder.str("nextToken").str(var_4.as_str());
+    if let Some(var_5) = &input.max_results {
+        encoder.str("maxResults").integer(*var_5);
+    }
+    if let Some(var_6) = &input.next_token {
+        encoder.str("nextToken").str(var_6.as_str());
     }
     encoder.end();
     Ok(())

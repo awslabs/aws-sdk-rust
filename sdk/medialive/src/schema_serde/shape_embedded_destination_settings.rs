@@ -21,6 +21,28 @@ static EMBEDDEDDESTINATIONSETTINGS_MEMBER_STYLE_CONTROL: ::aws_smithy_schema::Sc
     1,
 )
 .with_json_name("styleControl");
+static EMBEDDEDDESTINATIONSETTINGS_MEMBER_CAPTION_SERVICE_CHANNEL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.medialive#EmbeddedDestinationSettings$CaptionServiceChannel",
+        "com.amazonaws.medialive",
+        "EmbeddedDestinationSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Integer,
+    "CaptionServiceChannel",
+    2,
+)
+.with_json_name("captionServiceChannel");
+static EMBEDDEDDESTINATIONSETTINGS_MEMBER_EMBEDDED_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.medialive#EmbeddedDestinationSettings$EmbeddedMode",
+        "com.amazonaws.medialive",
+        "EmbeddedDestinationSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "EmbeddedMode",
+    3,
+)
+.with_json_name("embeddedMode");
 static EMBEDDEDDESTINATIONSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.medialive#EmbeddedDestinationSettings",
@@ -31,6 +53,8 @@ static EMBEDDEDDESTINATIONSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> 
     &[
         &EMBEDDEDDESTINATIONSETTINGS_MEMBER_POSITION,
         &EMBEDDEDDESTINATIONSETTINGS_MEMBER_STYLE_CONTROL,
+        &EMBEDDEDDESTINATIONSETTINGS_MEMBER_CAPTION_SERVICE_CHANNEL,
+        &EMBEDDEDDESTINATIONSETTINGS_MEMBER_EMBEDDED_MODE,
     ],
 );
 impl crate::types::EmbeddedDestinationSettings {
@@ -52,6 +76,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::EmbeddedDe
         }
         if let Some(ref val) = self.style_control {
             ser.write_string(&EMBEDDEDDESTINATIONSETTINGS_MEMBER_STYLE_CONTROL, val.as_str())?;
+        }
+        if let Some(ref val) = self.caption_service_channel {
+            ser.write_integer(&EMBEDDEDDESTINATIONSETTINGS_MEMBER_CAPTION_SERVICE_CHANNEL, *val)?;
+        }
+        if let Some(ref val) = self.embedded_mode {
+            ser.write_string(&EMBEDDEDDESTINATIONSETTINGS_MEMBER_EMBEDDED_MODE, val.as_str())?;
         }
         Ok(())
     }
@@ -82,6 +112,20 @@ impl crate::types::builders::EmbeddedDestinationSettingsBuilder {
                         deser.read_null()?;
                     } else {
                         self.style_control = Some(crate::types::EmbeddedDestinationStyleControl::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.caption_service_channel = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(3) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.embedded_mode = Some(crate::types::EmbeddedModeType::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}

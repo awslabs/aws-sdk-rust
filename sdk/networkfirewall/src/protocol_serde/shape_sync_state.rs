@@ -27,6 +27,14 @@ pub(crate) fn de_sync_state(
                     )?)),
                 )
             })?,
+            "AddressTranslations" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(
+                    builder.set_address_translations(Some(crate::protocol_serde::shape_address_translations::de_address_translations(
+                        decoder,
+                        depth + 1,
+                    )?)),
+                )
+            })?,
             "NatGatewayAttachments" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                 Ok(builder.set_nat_gateway_attachments(Some(
                     crate::protocol_serde::shape_nat_gateway_attachments_list::de_nat_gateway_attachments_list(decoder, depth + 1)?,

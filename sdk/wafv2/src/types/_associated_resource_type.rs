@@ -14,6 +14,7 @@
 /// match associatedresourcetype {
 ///     AssociatedResourceType::AgentcoreGateway => { /* ... */ },
 ///     AssociatedResourceType::ApiGateway => { /* ... */ },
+///     AssociatedResourceType::ApplicationLoadBalancer => { /* ... */ },
 ///     AssociatedResourceType::AppRunnerService => { /* ... */ },
 ///     AssociatedResourceType::Cloudfront => { /* ... */ },
 ///     AssociatedResourceType::CognitoUserPool => { /* ... */ },
@@ -51,6 +52,8 @@ pub enum AssociatedResourceType {
     #[allow(missing_docs)] // documentation missing in model
     ApiGateway,
     #[allow(missing_docs)] // documentation missing in model
+    ApplicationLoadBalancer,
+    #[allow(missing_docs)] // documentation missing in model
     AppRunnerService,
     #[allow(missing_docs)] // documentation missing in model
     Cloudfront,
@@ -67,6 +70,7 @@ impl ::std::convert::From<&str> for AssociatedResourceType {
         match s {
             "AGENTCORE_GATEWAY" => AssociatedResourceType::AgentcoreGateway,
             "API_GATEWAY" => AssociatedResourceType::ApiGateway,
+            "APPLICATION_LOAD_BALANCER" => AssociatedResourceType::ApplicationLoadBalancer,
             "APP_RUNNER_SERVICE" => AssociatedResourceType::AppRunnerService,
             "CLOUDFRONT" => AssociatedResourceType::Cloudfront,
             "COGNITO_USER_POOL" => AssociatedResourceType::CognitoUserPool,
@@ -88,6 +92,7 @@ impl AssociatedResourceType {
         match self {
             AssociatedResourceType::AgentcoreGateway => "AGENTCORE_GATEWAY",
             AssociatedResourceType::ApiGateway => "API_GATEWAY",
+            AssociatedResourceType::ApplicationLoadBalancer => "APPLICATION_LOAD_BALANCER",
             AssociatedResourceType::AppRunnerService => "APP_RUNNER_SERVICE",
             AssociatedResourceType::Cloudfront => "CLOUDFRONT",
             AssociatedResourceType::CognitoUserPool => "COGNITO_USER_POOL",
@@ -100,6 +105,7 @@ impl AssociatedResourceType {
         &[
             "AGENTCORE_GATEWAY",
             "API_GATEWAY",
+            "APPLICATION_LOAD_BALANCER",
             "APP_RUNNER_SERVICE",
             "CLOUDFRONT",
             "COGNITO_USER_POOL",
@@ -129,6 +135,7 @@ impl ::std::fmt::Display for AssociatedResourceType {
         match self {
             AssociatedResourceType::AgentcoreGateway => write!(f, "AGENTCORE_GATEWAY"),
             AssociatedResourceType::ApiGateway => write!(f, "API_GATEWAY"),
+            AssociatedResourceType::ApplicationLoadBalancer => write!(f, "APPLICATION_LOAD_BALANCER"),
             AssociatedResourceType::AppRunnerService => write!(f, "APP_RUNNER_SERVICE"),
             AssociatedResourceType::Cloudfront => write!(f, "CLOUDFRONT"),
             AssociatedResourceType::CognitoUserPool => write!(f, "COGNITO_USER_POOL"),

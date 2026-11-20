@@ -197,4 +197,18 @@ impl CreateProgramManagementAccountFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    /// <p>The type of the program management account (for example, resale billing transfer, managed services), required for the managed services provider program.</p>
+    pub fn r#type(mut self, input: crate::types::ProgramManagementAccountType) -> Self {
+        self.inner = self.inner.r#type(input);
+        self
+    }
+    /// <p>The type of the program management account (for example, resale billing transfer, managed services), required for the managed services provider program.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProgramManagementAccountType>) -> Self {
+        self.inner = self.inner.set_type(input);
+        self
+    }
+    /// <p>The type of the program management account (for example, resale billing transfer, managed services), required for the managed services provider program.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ProgramManagementAccountType> {
+        self.inner.get_type()
+    }
 }

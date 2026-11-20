@@ -13,6 +13,10 @@ pub fn ser_hosted_zone_config(
         let mut inner_writer = scope.start_el("PrivateZone").finish();
         inner_writer.data(::aws_smithy_types::primitive::Encoder::from(input.private_zone).encode());
     }
+    if let Some(var_2) = &input.hosted_zone_tier {
+        let mut inner_writer = scope.start_el("HostedZoneTier").finish();
+        inner_writer.data(var_2.as_str());
+    }
     scope.finish();
     Ok(())
 }
@@ -30,7 +34,7 @@ pub fn de_hosted_zone_config(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Comment") /* Comment com.amazonaws.route53#HostedZoneConfig$Comment */ =>  {
-                let var_2 =
+                let var_3 =
                     Some(
                         Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
                             ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -39,11 +43,11 @@ pub fn de_hosted_zone_config(
                         ?
                     )
                 ;
-                builder = builder.set_comment(var_2);
+                builder = builder.set_comment(var_3);
             }
             ,
             s if s.matches("PrivateZone") /* PrivateZone com.amazonaws.route53#HostedZoneConfig$PrivateZone */ =>  {
-                let var_3 =
+                let var_4 =
                     Some(
                          {
                             <bool as ::aws_smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -54,7 +58,21 @@ pub fn de_hosted_zone_config(
                         ?
                     )
                 ;
-                builder = builder.set_private_zone(var_3);
+                builder = builder.set_private_zone(var_4);
+            }
+            ,
+            s if s.matches("HostedZoneTier") /* HostedZoneTier com.amazonaws.route53#HostedZoneConfig$HostedZoneTier */ =>  {
+                let var_5 =
+                    Some(
+                        Result::<crate::types::HostedZoneTier, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::HostedZoneTier::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_hosted_zone_tier(var_5);
             }
             ,
             _ => {}

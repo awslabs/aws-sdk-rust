@@ -7,13 +7,13 @@ pub struct ListAutomationRulePreviewInput {
     /// <p>Only the management account or a delegated administrator can set the ruleType to be OrganizationRule.</p>
     /// </note>
     pub rule_type: ::std::option::Option<crate::types::RuleType>,
-    /// <p>The organizational scope for the rule preview.</p>
+    /// <p>The organizational scope for the rule preview. This parameter is required when <code>ruleType</code> is <code>OrganizationRule</code>. Don't specify it when <code>ruleType</code> is <code>AccountRule</code>.</p>
     pub organization_scope: ::std::option::Option<crate::types::OrganizationScope>,
     /// <p>The types of recommended actions to include in the preview.</p>
     pub recommended_action_types: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedActionType>>,
     /// <p>A set of conditions that specify which recommended action qualify for implementation. When a rule is active and a recommended action matches these criteria, Compute Optimizer implements the action at the scheduled run time.</p>
     pub criteria: ::std::option::Option<crate::types::Criteria>,
-    /// <p>The maximum number of automation rule preview results to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of automation rule preview results to return in a single response. If you don't specify a value, the default is 100.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token used for pagination to retrieve the next set of results when the response is truncated.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -25,7 +25,7 @@ impl ListAutomationRulePreviewInput {
     pub fn rule_type(&self) -> ::std::option::Option<&crate::types::RuleType> {
         self.rule_type.as_ref()
     }
-    /// <p>The organizational scope for the rule preview.</p>
+    /// <p>The organizational scope for the rule preview. This parameter is required when <code>ruleType</code> is <code>OrganizationRule</code>. Don't specify it when <code>ruleType</code> is <code>AccountRule</code>.</p>
     pub fn organization_scope(&self) -> ::std::option::Option<&crate::types::OrganizationScope> {
         self.organization_scope.as_ref()
     }
@@ -39,7 +39,7 @@ impl ListAutomationRulePreviewInput {
     pub fn criteria(&self) -> ::std::option::Option<&crate::types::Criteria> {
         self.criteria.as_ref()
     }
-    /// <p>The maximum number of automation rule preview results to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of automation rule preview results to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -88,17 +88,17 @@ impl ListAutomationRulePreviewInputBuilder {
     pub fn get_rule_type(&self) -> &::std::option::Option<crate::types::RuleType> {
         &self.rule_type
     }
-    /// <p>The organizational scope for the rule preview.</p>
+    /// <p>The organizational scope for the rule preview. This parameter is required when <code>ruleType</code> is <code>OrganizationRule</code>. Don't specify it when <code>ruleType</code> is <code>AccountRule</code>.</p>
     pub fn organization_scope(mut self, input: crate::types::OrganizationScope) -> Self {
         self.organization_scope = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The organizational scope for the rule preview.</p>
+    /// <p>The organizational scope for the rule preview. This parameter is required when <code>ruleType</code> is <code>OrganizationRule</code>. Don't specify it when <code>ruleType</code> is <code>AccountRule</code>.</p>
     pub fn set_organization_scope(mut self, input: ::std::option::Option<crate::types::OrganizationScope>) -> Self {
         self.organization_scope = input;
         self
     }
-    /// <p>The organizational scope for the rule preview.</p>
+    /// <p>The organizational scope for the rule preview. This parameter is required when <code>ruleType</code> is <code>OrganizationRule</code>. Don't specify it when <code>ruleType</code> is <code>AccountRule</code>.</p>
     pub fn get_organization_scope(&self) -> &::std::option::Option<crate::types::OrganizationScope> {
         &self.organization_scope
     }
@@ -136,17 +136,17 @@ impl ListAutomationRulePreviewInputBuilder {
     pub fn get_criteria(&self) -> &::std::option::Option<crate::types::Criteria> {
         &self.criteria
     }
-    /// <p>The maximum number of automation rule preview results to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of automation rule preview results to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of automation rule preview results to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of automation rule preview results to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of automation rule preview results to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of automation rule preview results to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

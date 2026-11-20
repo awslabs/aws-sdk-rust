@@ -19,6 +19,8 @@ pub struct RegisterComputeNodeGroupInstanceOutput {
     pub node_lifecycle_actions: ::std::option::Option<crate::types::NodeLifecycleActions>,
     /// <p>The scheduler version that the cluster is running. A compute node uses this value to run the matching scheduler version.</p>
     pub scheduler_version: ::std::option::Option<::std::string::String>,
+    /// <p>The instance health check settings configured for the compute node group that the compute node registered into. The compute node uses these settings to configure health monitoring and deep health checks.</p>
+    pub instance_health_checks: ::std::option::Option<crate::types::InstanceHealthChecks>,
     _request_id: Option<String>,
 }
 impl RegisterComputeNodeGroupInstanceOutput {
@@ -57,6 +59,10 @@ impl RegisterComputeNodeGroupInstanceOutput {
     pub fn scheduler_version(&self) -> ::std::option::Option<&str> {
         self.scheduler_version.as_deref()
     }
+    /// <p>The instance health check settings configured for the compute node group that the compute node registered into. The compute node uses these settings to configure health monitoring and deep health checks.</p>
+    pub fn instance_health_checks(&self) -> ::std::option::Option<&crate::types::InstanceHealthChecks> {
+        self.instance_health_checks.as_ref()
+    }
 }
 impl ::std::fmt::Debug for RegisterComputeNodeGroupInstanceOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -69,6 +75,7 @@ impl ::std::fmt::Debug for RegisterComputeNodeGroupInstanceOutput {
         formatter.field("compute_node_group_name", &self.compute_node_group_name);
         formatter.field("node_lifecycle_actions", &self.node_lifecycle_actions);
         formatter.field("scheduler_version", &self.scheduler_version);
+        formatter.field("instance_health_checks", &self.instance_health_checks);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -97,6 +104,7 @@ pub struct RegisterComputeNodeGroupInstanceOutputBuilder {
     pub(crate) compute_node_group_name: ::std::option::Option<::std::string::String>,
     pub(crate) node_lifecycle_actions: ::std::option::Option<crate::types::NodeLifecycleActions>,
     pub(crate) scheduler_version: ::std::option::Option<::std::string::String>,
+    pub(crate) instance_health_checks: ::std::option::Option<crate::types::InstanceHealthChecks>,
     _request_id: Option<String>,
 }
 impl RegisterComputeNodeGroupInstanceOutputBuilder {
@@ -220,6 +228,20 @@ impl RegisterComputeNodeGroupInstanceOutputBuilder {
     pub fn get_scheduler_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.scheduler_version
     }
+    /// <p>The instance health check settings configured for the compute node group that the compute node registered into. The compute node uses these settings to configure health monitoring and deep health checks.</p>
+    pub fn instance_health_checks(mut self, input: crate::types::InstanceHealthChecks) -> Self {
+        self.instance_health_checks = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The instance health check settings configured for the compute node group that the compute node registered into. The compute node uses these settings to configure health monitoring and deep health checks.</p>
+    pub fn set_instance_health_checks(mut self, input: ::std::option::Option<crate::types::InstanceHealthChecks>) -> Self {
+        self.instance_health_checks = input;
+        self
+    }
+    /// <p>The instance health check settings configured for the compute node group that the compute node registered into. The compute node uses these settings to configure health monitoring and deep health checks.</p>
+    pub fn get_instance_health_checks(&self) -> &::std::option::Option<crate::types::InstanceHealthChecks> {
+        &self.instance_health_checks
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -265,6 +287,7 @@ impl RegisterComputeNodeGroupInstanceOutputBuilder {
                 compute_node_group_name: self.compute_node_group_name,
                 node_lifecycle_actions: self.node_lifecycle_actions,
                 scheduler_version: self.scheduler_version,
+                instance_health_checks: self.instance_health_checks,
                 _request_id: self._request_id,
             },
         )
@@ -281,6 +304,7 @@ impl ::std::fmt::Debug for RegisterComputeNodeGroupInstanceOutputBuilder {
         formatter.field("compute_node_group_name", &self.compute_node_group_name);
         formatter.field("node_lifecycle_actions", &self.node_lifecycle_actions);
         formatter.field("scheduler_version", &self.scheduler_version);
+        formatter.field("instance_health_checks", &self.instance_health_checks);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

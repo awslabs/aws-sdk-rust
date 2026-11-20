@@ -23,7 +23,11 @@ pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExce
 
 pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExceededException;
 
+pub use crate::types::error::_conflict_exception::ConflictException;
+
 mod _access_denied_exception;
+
+mod _conflict_exception;
 
 mod _forbidden_exception;
 

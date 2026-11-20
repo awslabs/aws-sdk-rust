@@ -569,6 +569,12 @@ pub use crate::types::_gcp_capability_scope_input::GcpCapabilityScopeInput;
 
 pub use crate::types::_map_comparison::MapComparison;
 
+pub use crate::types::_runtime_reachability_filter::RuntimeReachabilityFilter;
+
+pub use crate::types::_runtime_reachability_reason_filter::RuntimeReachabilityReasonFilter;
+
+pub use crate::types::_purl_qualifier_filter::PurlQualifierFilter;
+
 pub use crate::types::_resource_string_comparison::ResourceStringComparison;
 
 pub use crate::types::_resource_map_comparison::ResourceMapComparison;
@@ -666,6 +672,14 @@ pub use crate::types::_free_trial_status::FreeTrialStatus;
 pub use crate::types::_cloud_provider::CloudProvider;
 
 pub use crate::types::_scope_type::ScopeType;
+
+pub use crate::types::_runtime_reachability_comparison::RuntimeReachabilityComparison;
+
+pub use crate::types::_runtime_reachability::RuntimeReachability;
+
+pub use crate::types::_runtime_reachability_reason::RuntimeReachabilityReason;
+
+pub use crate::types::_purl_qualifier_key::PurlQualifierKey;
 
 pub use crate::types::_cluster_metadata::ClusterMetadata;
 
@@ -1293,6 +1307,10 @@ mod _provider_detail_update;
 
 mod _provider_filter;
 
+mod _purl_qualifier_filter;
+
+mod _purl_qualifier_key;
+
 mod _recommendation;
 
 mod _relationship_status;
@@ -1336,6 +1354,16 @@ mod _resource_type;
 mod _rule_set_category;
 
 mod _runtime;
+
+mod _runtime_reachability;
+
+mod _runtime_reachability_comparison;
+
+mod _runtime_reachability_filter;
+
+mod _runtime_reachability_reason;
+
+mod _runtime_reachability_reason_filter;
 
 mod _sbom_report_format;
 

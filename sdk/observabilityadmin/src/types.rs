@@ -161,6 +161,8 @@ pub use crate::types::_pipeline_output_error::PipelineOutputError;
 
 pub use crate::types::_encrypted_log_group_strategy::EncryptedLogGroupStrategy;
 
+pub use crate::types::_centralize_with_data_protection::CentralizeWithDataProtection;
+
 pub use crate::types::_logs_encryption_configuration::LogsEncryptionConfiguration;
 
 pub use crate::types::_logs_backup_configuration::LogsBackupConfiguration;
@@ -330,6 +332,8 @@ mod _centralization_rule_destination;
 mod _centralization_rule_source;
 
 mod _centralization_rule_summary;
+
+mod _centralize_with_data_protection;
 
 mod _cloudtrail_parameters;
 

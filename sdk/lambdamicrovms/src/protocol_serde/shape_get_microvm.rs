@@ -219,6 +219,13 @@ pub(crate) fn de_get_microvm(
                             crate::protocol_serde::shape_network_connector_list::de_network_connector_list(tokens, _value, depth + 1)?,
                         );
                     }
+                    "kmsKeyIdentifier" => {
+                        builder = builder.set_kms_key_identifier(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
                     "maximumDurationInSeconds" => {
                         builder = builder.set_maximum_duration_in_seconds(
                             ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?

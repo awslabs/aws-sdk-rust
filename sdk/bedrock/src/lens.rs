@@ -169,6 +169,16 @@ pub(crate) fn reflens_list_model_invocation_jobs_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_projects_output_output_next_token(
+    input: &crate::operation::list_projects::ListProjectsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_prompt_routers_output_output_next_token(
     input: &crate::operation::list_prompt_routers::ListPromptRoutersOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -181,6 +191,16 @@ pub(crate) fn reflens_list_prompt_routers_output_output_next_token(
 
 pub(crate) fn reflens_list_provisioned_model_throughputs_output_output_next_token(
     input: &crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_trusted_access_programs_output_output_next_token(
+    input: &crate::operation::list_trusted_access_programs::ListTrustedAccessProgramsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -308,6 +328,13 @@ pub(crate) fn lens_list_model_invocation_jobs_output_output_invocation_job_summa
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_projects_output_output_project_summaries(
+    input: crate::operation::list_projects::ListProjectsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>> {
+    let input = input.project_summaries;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_prompt_routers_output_output_prompt_router_summaries(
     input: crate::operation::list_prompt_routers::ListPromptRoutersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PromptRouterSummary>> {
@@ -319,5 +346,12 @@ pub(crate) fn lens_list_provisioned_model_throughputs_output_output_provisioned_
     input: crate::operation::list_provisioned_model_throughputs::ListProvisionedModelThroughputsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::ProvisionedModelSummary>> {
     let input = input.provisioned_model_summaries?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_trusted_access_programs_output_output_program_summaries(
+    input: crate::operation::list_trusted_access_programs::ListTrustedAccessProgramsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::TrustedAccessProgramSummary>> {
+    let input = input.program_summaries;
     ::std::option::Option::Some(input)
 }

@@ -16,6 +16,8 @@
 ///     AudioCodec::Ac3 => { /* ... */ },
 ///     AudioCodec::Ac4 => { /* ... */ },
 ///     AudioCodec::Aiff => { /* ... */ },
+///     AudioCodec::Dtsc => { /* ... */ },
+///     AudioCodec::Dtsx => { /* ... */ },
 ///     AudioCodec::Eac3 => { /* ... */ },
 ///     AudioCodec::Eac3Atmos => { /* ... */ },
 ///     AudioCodec::Flac => { /* ... */ },
@@ -62,6 +64,10 @@ pub enum AudioCodec {
     #[allow(missing_docs)] // documentation missing in model
     Aiff,
     #[allow(missing_docs)] // documentation missing in model
+    Dtsc,
+    #[allow(missing_docs)] // documentation missing in model
+    Dtsx,
+    #[allow(missing_docs)] // documentation missing in model
     Eac3,
     #[allow(missing_docs)] // documentation missing in model
     Eac3Atmos,
@@ -90,6 +96,8 @@ impl ::std::convert::From<&str> for AudioCodec {
             "AC3" => AudioCodec::Ac3,
             "AC4" => AudioCodec::Ac4,
             "AIFF" => AudioCodec::Aiff,
+            "DTSC" => AudioCodec::Dtsc,
+            "DTSX" => AudioCodec::Dtsx,
             "EAC3" => AudioCodec::Eac3,
             "EAC3_ATMOS" => AudioCodec::Eac3Atmos,
             "FLAC" => AudioCodec::Flac,
@@ -118,6 +126,8 @@ impl AudioCodec {
             AudioCodec::Ac3 => "AC3",
             AudioCodec::Ac4 => "AC4",
             AudioCodec::Aiff => "AIFF",
+            AudioCodec::Dtsc => "DTSC",
+            AudioCodec::Dtsx => "DTSX",
             AudioCodec::Eac3 => "EAC3",
             AudioCodec::Eac3Atmos => "EAC3_ATMOS",
             AudioCodec::Flac => "FLAC",
@@ -137,6 +147,8 @@ impl AudioCodec {
             "AC3",
             "AC4",
             "AIFF",
+            "DTSC",
+            "DTSX",
             "EAC3",
             "EAC3_ATMOS",
             "FLAC",
@@ -173,6 +185,8 @@ impl ::std::fmt::Display for AudioCodec {
             AudioCodec::Ac3 => write!(f, "AC3"),
             AudioCodec::Ac4 => write!(f, "AC4"),
             AudioCodec::Aiff => write!(f, "AIFF"),
+            AudioCodec::Dtsc => write!(f, "DTSC"),
+            AudioCodec::Dtsx => write!(f, "DTSX"),
             AudioCodec::Eac3 => write!(f, "EAC3"),
             AudioCodec::Eac3Atmos => write!(f, "EAC3_ATMOS"),
             AudioCodec::Flac => write!(f, "FLAC"),

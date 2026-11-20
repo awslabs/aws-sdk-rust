@@ -16,7 +16,7 @@ pub struct SelfManagedActiveDirectoryConfiguration {
     pub user_name: ::std::option::Option<::std::string::String>,
     /// <p>The password for the service account on your self-managed AD domain that Amazon FSx will use to join to your AD domain.</p>
     pub password: ::std::option::Option<::std::string::String>,
-    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
+    /// <p>A list of IP addresses of DNS servers or domain controllers in the self-managed AD directory. FSx for ONTAP SVMs support up to three IP addresses, FSx for Windows supports up to two.</p>
     pub dns_ips: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager secret containing the self-managed Active Directory domain join service account credentials. When provided, Amazon FSx uses the credentials stored in this secret to join the file system to your self-managed Active Directory domain.</p>
     /// <p>The secret must contain two key-value pairs:</p>
@@ -52,7 +52,7 @@ impl SelfManagedActiveDirectoryConfiguration {
     pub fn password(&self) -> ::std::option::Option<&str> {
         self.password.as_deref()
     }
-    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
+    /// <p>A list of IP addresses of DNS servers or domain controllers in the self-managed AD directory. FSx for ONTAP SVMs support up to three IP addresses, FSx for Windows supports up to two.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dns_ips.is_none()`.
     pub fn dns_ips(&self) -> &[::std::string::String] {
@@ -185,19 +185,19 @@ impl SelfManagedActiveDirectoryConfigurationBuilder {
     ///
     /// To override the contents of this collection use [`set_dns_ips`](Self::set_dns_ips).
     ///
-    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
+    /// <p>A list of IP addresses of DNS servers or domain controllers in the self-managed AD directory. FSx for ONTAP SVMs support up to three IP addresses, FSx for Windows supports up to two.</p>
     pub fn dns_ips(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.dns_ips.unwrap_or_default();
         v.push(input.into());
         self.dns_ips = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
+    /// <p>A list of IP addresses of DNS servers or domain controllers in the self-managed AD directory. FSx for ONTAP SVMs support up to three IP addresses, FSx for Windows supports up to two.</p>
     pub fn set_dns_ips(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.dns_ips = input;
         self
     }
-    /// <p>A list of up to three IP addresses of DNS servers or domain controllers in the self-managed AD directory.</p>
+    /// <p>A list of IP addresses of DNS servers or domain controllers in the self-managed AD directory. FSx for ONTAP SVMs support up to three IP addresses, FSx for Windows supports up to two.</p>
     pub fn get_dns_ips(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.dns_ips
     }

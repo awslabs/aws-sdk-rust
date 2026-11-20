@@ -225,6 +225,9 @@ pub struct ResourceRecordSet {
     pub cidr_routing_config: ::std::option::Option<crate::types::CidrRoutingConfig>,
     /// <p><i> GeoproximityLocation resource record sets only:</i> A complex type that lets you control how Route&nbsp;53 responds to DNS queries based on the geographic origin of the query and your resources.</p>
     pub geo_proximity_location: ::std::option::Option<crate::types::GeoProximityLocation>,
+    /// <p><i>AZ-affinity resource record sets only:</i> The location that this resource record set answers DNS queries from, such as an Availability Zone (AZ) or an Amazon Web Services Region. For each query, Route&nbsp;53 starts with the most specific location that the query matches and falls back to a less specific location when there's no record for that location or the record is unhealthy (its health check fails or, for an alias record that has <code>EvaluateTargetHealth</code> set to <code>true</code>, its target is unhealthy). You must also specify <code>SetIdentifier</code>, and you can't specify another routing policy element, such as <code>Weight</code>, in the same resource record set.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-azaffinity.html">AZ-affinity routing</a> in the <i>Amazon Route&nbsp;53 Developer Guide</i>.</p>
+    pub az_affinity: ::std::option::Option<crate::types::AzAffinity>,
 }
 impl ResourceRecordSet {
     /// <p>For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.</p>
@@ -481,6 +484,11 @@ impl ResourceRecordSet {
     pub fn geo_proximity_location(&self) -> ::std::option::Option<&crate::types::GeoProximityLocation> {
         self.geo_proximity_location.as_ref()
     }
+    /// <p><i>AZ-affinity resource record sets only:</i> The location that this resource record set answers DNS queries from, such as an Availability Zone (AZ) or an Amazon Web Services Region. For each query, Route&nbsp;53 starts with the most specific location that the query matches and falls back to a less specific location when there's no record for that location or the record is unhealthy (its health check fails or, for an alias record that has <code>EvaluateTargetHealth</code> set to <code>true</code>, its target is unhealthy). You must also specify <code>SetIdentifier</code>, and you can't specify another routing policy element, such as <code>Weight</code>, in the same resource record set.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-azaffinity.html">AZ-affinity routing</a> in the <i>Amazon Route&nbsp;53 Developer Guide</i>.</p>
+    pub fn az_affinity(&self) -> ::std::option::Option<&crate::types::AzAffinity> {
+        self.az_affinity.as_ref()
+    }
 }
 impl ResourceRecordSet {
     /// Creates a new builder-style object to manufacture [`ResourceRecordSet`](crate::types::ResourceRecordSet).
@@ -508,6 +516,7 @@ pub struct ResourceRecordSetBuilder {
     pub(crate) traffic_policy_instance_id: ::std::option::Option<::std::string::String>,
     pub(crate) cidr_routing_config: ::std::option::Option<crate::types::CidrRoutingConfig>,
     pub(crate) geo_proximity_location: ::std::option::Option<crate::types::GeoProximityLocation>,
+    pub(crate) az_affinity: ::std::option::Option<crate::types::AzAffinity>,
 }
 impl ResourceRecordSetBuilder {
     /// <p>For <code>ChangeResourceRecordSets</code> requests, the name of the record that you want to create, update, or delete. For <code>ListResourceRecordSets</code> responses, the name of a record in the specified hosted zone.</p>
@@ -1301,6 +1310,23 @@ impl ResourceRecordSetBuilder {
     pub fn get_geo_proximity_location(&self) -> &::std::option::Option<crate::types::GeoProximityLocation> {
         &self.geo_proximity_location
     }
+    /// <p><i>AZ-affinity resource record sets only:</i> The location that this resource record set answers DNS queries from, such as an Availability Zone (AZ) or an Amazon Web Services Region. For each query, Route&nbsp;53 starts with the most specific location that the query matches and falls back to a less specific location when there's no record for that location or the record is unhealthy (its health check fails or, for an alias record that has <code>EvaluateTargetHealth</code> set to <code>true</code>, its target is unhealthy). You must also specify <code>SetIdentifier</code>, and you can't specify another routing policy element, such as <code>Weight</code>, in the same resource record set.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-azaffinity.html">AZ-affinity routing</a> in the <i>Amazon Route&nbsp;53 Developer Guide</i>.</p>
+    pub fn az_affinity(mut self, input: crate::types::AzAffinity) -> Self {
+        self.az_affinity = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p><i>AZ-affinity resource record sets only:</i> The location that this resource record set answers DNS queries from, such as an Availability Zone (AZ) or an Amazon Web Services Region. For each query, Route&nbsp;53 starts with the most specific location that the query matches and falls back to a less specific location when there's no record for that location or the record is unhealthy (its health check fails or, for an alias record that has <code>EvaluateTargetHealth</code> set to <code>true</code>, its target is unhealthy). You must also specify <code>SetIdentifier</code>, and you can't specify another routing policy element, such as <code>Weight</code>, in the same resource record set.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-azaffinity.html">AZ-affinity routing</a> in the <i>Amazon Route&nbsp;53 Developer Guide</i>.</p>
+    pub fn set_az_affinity(mut self, input: ::std::option::Option<crate::types::AzAffinity>) -> Self {
+        self.az_affinity = input;
+        self
+    }
+    /// <p><i>AZ-affinity resource record sets only:</i> The location that this resource record set answers DNS queries from, such as an Availability Zone (AZ) or an Amazon Web Services Region. For each query, Route&nbsp;53 starts with the most specific location that the query matches and falls back to a less specific location when there's no record for that location or the record is unhealthy (its health check fails or, for an alias record that has <code>EvaluateTargetHealth</code> set to <code>true</code>, its target is unhealthy). You must also specify <code>SetIdentifier</code>, and you can't specify another routing policy element, such as <code>Weight</code>, in the same resource record set.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-azaffinity.html">AZ-affinity routing</a> in the <i>Amazon Route&nbsp;53 Developer Guide</i>.</p>
+    pub fn get_az_affinity(&self) -> &::std::option::Option<crate::types::AzAffinity> {
+        &self.az_affinity
+    }
     /// Consumes the builder and constructs a [`ResourceRecordSet`](crate::types::ResourceRecordSet).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::ResourceRecordSetBuilder::name)
@@ -1332,6 +1358,7 @@ impl ResourceRecordSetBuilder {
             traffic_policy_instance_id: self.traffic_policy_instance_id,
             cidr_routing_config: self.cidr_routing_config,
             geo_proximity_location: self.geo_proximity_location,
+            az_affinity: self.az_affinity,
         })
     }
 }

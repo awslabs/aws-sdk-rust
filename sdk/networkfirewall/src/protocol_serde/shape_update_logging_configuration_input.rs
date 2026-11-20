@@ -10,12 +10,15 @@ pub fn ser_update_logging_configuration_input_input(
     if let Some(var_2) = &input.firewall_name {
         encoder.str("FirewallName").str(var_2.as_str());
     }
-    if let Some(var_3) = &input.logging_configuration {
-        encoder.str("LoggingConfiguration");
-        crate::protocol_serde::shape_logging_configuration::ser_logging_configuration(encoder, var_3)?;
+    if let Some(var_3) = &input.firewall_type {
+        encoder.str("FirewallType").str(var_3.as_str());
     }
-    if let Some(var_4) = &input.enable_monitoring_dashboard {
-        encoder.str("EnableMonitoringDashboard").boolean(*var_4);
+    if let Some(var_4) = &input.logging_configuration {
+        encoder.str("LoggingConfiguration");
+        crate::protocol_serde::shape_logging_configuration::ser_logging_configuration(encoder, var_4)?;
+    }
+    if let Some(var_5) = &input.enable_monitoring_dashboard {
+        encoder.str("EnableMonitoringDashboard").boolean(*var_5);
     }
     encoder.end();
     Ok(())

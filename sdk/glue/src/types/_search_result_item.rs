@@ -7,9 +7,11 @@ pub struct SearchResultItem {
     /// <p>The unique identifier of the matched asset.</p>
     pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the matched asset.</p>
-    pub asset_name: ::std::option::Option<::std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the matched asset.</p>
-    pub asset_description: ::std::option::Option<::std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The timestamp at which the matched asset was created.</p>
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp at which the matched asset was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The identifier of the asset type for the matched asset.</p>
@@ -21,12 +23,16 @@ impl SearchResultItem {
         self.id.as_deref()
     }
     /// <p>The name of the matched asset.</p>
-    pub fn asset_name(&self) -> ::std::option::Option<&str> {
-        self.asset_name.as_deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The description of the matched asset.</p>
-    pub fn asset_description(&self) -> ::std::option::Option<&str> {
-        self.asset_description.as_deref()
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
+    }
+    /// <p>The timestamp at which the matched asset was created.</p>
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.created_at.as_ref()
     }
     /// <p>The timestamp at which the matched asset was last updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -49,8 +55,9 @@ impl SearchResultItem {
 #[non_exhaustive]
 pub struct SearchResultItemBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
-    pub(crate) asset_name: ::std::option::Option<::std::string::String>,
-    pub(crate) asset_description: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) asset_type_id: ::std::option::Option<::std::string::String>,
 }
@@ -70,32 +77,46 @@ impl SearchResultItemBuilder {
         &self.id
     }
     /// <p>The name of the matched asset.</p>
-    pub fn asset_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.asset_name = ::std::option::Option::Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the matched asset.</p>
-    pub fn set_asset_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_name = input;
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.name = input;
         self
     }
     /// <p>The name of the matched asset.</p>
-    pub fn get_asset_name(&self) -> &::std::option::Option<::std::string::String> {
-        &self.asset_name
+    pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
+        &self.name
     }
     /// <p>The description of the matched asset.</p>
-    pub fn asset_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.asset_description = ::std::option::Option::Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the matched asset.</p>
-    pub fn set_asset_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.asset_description = input;
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.description = input;
         self
     }
     /// <p>The description of the matched asset.</p>
-    pub fn get_asset_description(&self) -> &::std::option::Option<::std::string::String> {
-        &self.asset_description
+    pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
+        &self.description
+    }
+    /// <p>The timestamp at which the matched asset was created.</p>
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The timestamp at which the matched asset was created.</p>
+    pub fn set_created_at(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.created_at = input;
+        self
+    }
+    /// <p>The timestamp at which the matched asset was created.</p>
+    pub fn get_created_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.created_at
     }
     /// <p>The timestamp at which the matched asset was last updated.</p>
     pub fn updated_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -129,8 +150,9 @@ impl SearchResultItemBuilder {
     pub fn build(self) -> crate::types::SearchResultItem {
         crate::types::SearchResultItem {
             id: self.id,
-            asset_name: self.asset_name,
-            asset_description: self.asset_description,
+            name: self.name,
+            description: self.description,
+            created_at: self.created_at,
             updated_at: self.updated_at,
             asset_type_id: self.asset_type_id,
         }

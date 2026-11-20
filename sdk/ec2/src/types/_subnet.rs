@@ -34,6 +34,20 @@ pub struct Subnet {
     pub block_public_access_states: ::std::option::Option<crate::types::BlockPublicAccessStates>,
     /// <p>Indicates if this is a subnet used with Amazon Elastic VMware Service (EVS). Possible values are <code>Elastic VMware Service</code> or no value. For more information about Amazon EVS, see <a href="https://docs.aws.amazon.com/evs/latest/APIReference/Welcome.html"> <i>Amazon Elastic VMware Service API Reference</i> </a>.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
+    /// <p>The internet connectivity treatment that the Automated Internet Firewall applies to the subnet. The response includes this value only if the subnet is in a VPC that has a firewall. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>az-unsupported</code>: The firewall doesn't support the subnet's Availability Zone, so it doesn't inspect traffic for the subnet.</p></li>
+    /// <li>
+    /// <p><code>bidirectional</code>: Provides bidirectional internet connectivity to every network interface that has a public IP association. Any network interface without a public IP cannot communicate with the internet unless a NAT device is explicitly inserted in the path. All inbound and outbound traffic is inspected against your firewall rules.</p></li>
+    /// <li>
+    /// <p><code>exclude</code>: The firewall doesn't inspect traffic for the subnet. The subnet bypasses the firewall, and its traffic passes directly through the internet gateway.</p></li>
+    /// <li>
+    /// <p><code>flexible</code>: Sets the connectivity for each network interface in the subnet based on whether it is associated with a public IP address. A network interface with a public IP address gets bidirectional internet connectivity. A network interface without a public IP address gets outbound-only connectivity. All traffic is inspected against your firewall rules.</p></li>
+    /// <li>
+    /// <p><code>outbound-only</code>: Provides egress-only connectivity for all network interfaces in the subnet. All outbound traffic and inbound responses are inspected against your firewall rules. Unsolicited inbound connections are dropped. For IPv4 traffic, the firewall performs NAT.</p></li>
+    /// </ul>
+    pub network_firewall_connectivity_type: ::std::option::Option<crate::types::NetworkFirewallConnectivityType>,
     /// <p>The ID of the subnet.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the subnet.</p>
@@ -123,6 +137,22 @@ impl Subnet {
     pub fn r#type(&self) -> ::std::option::Option<&str> {
         self.r#type.as_deref()
     }
+    /// <p>The internet connectivity treatment that the Automated Internet Firewall applies to the subnet. The response includes this value only if the subnet is in a VPC that has a firewall. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>az-unsupported</code>: The firewall doesn't support the subnet's Availability Zone, so it doesn't inspect traffic for the subnet.</p></li>
+    /// <li>
+    /// <p><code>bidirectional</code>: Provides bidirectional internet connectivity to every network interface that has a public IP association. Any network interface without a public IP cannot communicate with the internet unless a NAT device is explicitly inserted in the path. All inbound and outbound traffic is inspected against your firewall rules.</p></li>
+    /// <li>
+    /// <p><code>exclude</code>: The firewall doesn't inspect traffic for the subnet. The subnet bypasses the firewall, and its traffic passes directly through the internet gateway.</p></li>
+    /// <li>
+    /// <p><code>flexible</code>: Sets the connectivity for each network interface in the subnet based on whether it is associated with a public IP address. A network interface with a public IP address gets bidirectional internet connectivity. A network interface without a public IP address gets outbound-only connectivity. All traffic is inspected against your firewall rules.</p></li>
+    /// <li>
+    /// <p><code>outbound-only</code>: Provides egress-only connectivity for all network interfaces in the subnet. All outbound traffic and inbound responses are inspected against your firewall rules. Unsolicited inbound connections are dropped. For IPv4 traffic, the firewall performs NAT.</p></li>
+    /// </ul>
+    pub fn network_firewall_connectivity_type(&self) -> ::std::option::Option<&crate::types::NetworkFirewallConnectivityType> {
+        self.network_firewall_connectivity_type.as_ref()
+    }
     /// <p>The ID of the subnet.</p>
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
@@ -189,6 +219,7 @@ pub struct SubnetBuilder {
     pub(crate) private_dns_name_options_on_launch: ::std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch>,
     pub(crate) block_public_access_states: ::std::option::Option<crate::types::BlockPublicAccessStates>,
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
+    pub(crate) network_firewall_connectivity_type: ::std::option::Option<crate::types::NetworkFirewallConnectivityType>,
     pub(crate) subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::SubnetState>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
@@ -424,6 +455,56 @@ impl SubnetBuilder {
     pub fn get_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.r#type
     }
+    /// <p>The internet connectivity treatment that the Automated Internet Firewall applies to the subnet. The response includes this value only if the subnet is in a VPC that has a firewall. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>az-unsupported</code>: The firewall doesn't support the subnet's Availability Zone, so it doesn't inspect traffic for the subnet.</p></li>
+    /// <li>
+    /// <p><code>bidirectional</code>: Provides bidirectional internet connectivity to every network interface that has a public IP association. Any network interface without a public IP cannot communicate with the internet unless a NAT device is explicitly inserted in the path. All inbound and outbound traffic is inspected against your firewall rules.</p></li>
+    /// <li>
+    /// <p><code>exclude</code>: The firewall doesn't inspect traffic for the subnet. The subnet bypasses the firewall, and its traffic passes directly through the internet gateway.</p></li>
+    /// <li>
+    /// <p><code>flexible</code>: Sets the connectivity for each network interface in the subnet based on whether it is associated with a public IP address. A network interface with a public IP address gets bidirectional internet connectivity. A network interface without a public IP address gets outbound-only connectivity. All traffic is inspected against your firewall rules.</p></li>
+    /// <li>
+    /// <p><code>outbound-only</code>: Provides egress-only connectivity for all network interfaces in the subnet. All outbound traffic and inbound responses are inspected against your firewall rules. Unsolicited inbound connections are dropped. For IPv4 traffic, the firewall performs NAT.</p></li>
+    /// </ul>
+    pub fn network_firewall_connectivity_type(mut self, input: crate::types::NetworkFirewallConnectivityType) -> Self {
+        self.network_firewall_connectivity_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The internet connectivity treatment that the Automated Internet Firewall applies to the subnet. The response includes this value only if the subnet is in a VPC that has a firewall. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>az-unsupported</code>: The firewall doesn't support the subnet's Availability Zone, so it doesn't inspect traffic for the subnet.</p></li>
+    /// <li>
+    /// <p><code>bidirectional</code>: Provides bidirectional internet connectivity to every network interface that has a public IP association. Any network interface without a public IP cannot communicate with the internet unless a NAT device is explicitly inserted in the path. All inbound and outbound traffic is inspected against your firewall rules.</p></li>
+    /// <li>
+    /// <p><code>exclude</code>: The firewall doesn't inspect traffic for the subnet. The subnet bypasses the firewall, and its traffic passes directly through the internet gateway.</p></li>
+    /// <li>
+    /// <p><code>flexible</code>: Sets the connectivity for each network interface in the subnet based on whether it is associated with a public IP address. A network interface with a public IP address gets bidirectional internet connectivity. A network interface without a public IP address gets outbound-only connectivity. All traffic is inspected against your firewall rules.</p></li>
+    /// <li>
+    /// <p><code>outbound-only</code>: Provides egress-only connectivity for all network interfaces in the subnet. All outbound traffic and inbound responses are inspected against your firewall rules. Unsolicited inbound connections are dropped. For IPv4 traffic, the firewall performs NAT.</p></li>
+    /// </ul>
+    pub fn set_network_firewall_connectivity_type(mut self, input: ::std::option::Option<crate::types::NetworkFirewallConnectivityType>) -> Self {
+        self.network_firewall_connectivity_type = input;
+        self
+    }
+    /// <p>The internet connectivity treatment that the Automated Internet Firewall applies to the subnet. The response includes this value only if the subnet is in a VPC that has a firewall. Possible values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>az-unsupported</code>: The firewall doesn't support the subnet's Availability Zone, so it doesn't inspect traffic for the subnet.</p></li>
+    /// <li>
+    /// <p><code>bidirectional</code>: Provides bidirectional internet connectivity to every network interface that has a public IP association. Any network interface without a public IP cannot communicate with the internet unless a NAT device is explicitly inserted in the path. All inbound and outbound traffic is inspected against your firewall rules.</p></li>
+    /// <li>
+    /// <p><code>exclude</code>: The firewall doesn't inspect traffic for the subnet. The subnet bypasses the firewall, and its traffic passes directly through the internet gateway.</p></li>
+    /// <li>
+    /// <p><code>flexible</code>: Sets the connectivity for each network interface in the subnet based on whether it is associated with a public IP address. A network interface with a public IP address gets bidirectional internet connectivity. A network interface without a public IP address gets outbound-only connectivity. All traffic is inspected against your firewall rules.</p></li>
+    /// <li>
+    /// <p><code>outbound-only</code>: Provides egress-only connectivity for all network interfaces in the subnet. All outbound traffic and inbound responses are inspected against your firewall rules. Unsolicited inbound connections are dropped. For IPv4 traffic, the firewall performs NAT.</p></li>
+    /// </ul>
+    pub fn get_network_firewall_connectivity_type(&self) -> &::std::option::Option<crate::types::NetworkFirewallConnectivityType> {
+        &self.network_firewall_connectivity_type
+    }
     /// <p>The ID of the subnet.</p>
     pub fn subnet_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.subnet_id = ::std::option::Option::Some(input.into());
@@ -575,6 +656,7 @@ impl SubnetBuilder {
             private_dns_name_options_on_launch: self.private_dns_name_options_on_launch,
             block_public_access_states: self.block_public_access_states,
             r#type: self.r#type,
+            network_firewall_connectivity_type: self.network_firewall_connectivity_type,
             subnet_id: self.subnet_id,
             state: self.state,
             vpc_id: self.vpc_id,

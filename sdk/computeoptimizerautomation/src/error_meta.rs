@@ -5,6 +5,8 @@
 pub enum Error {
     /// <p>You do not have sufficient permissions to perform this action.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
+    /// <p>The request conflicts with a concurrent change to the same resource. Retry the request.</p>
+    ConflictException(crate::types::error::ConflictException),
     /// <p>You are not authorized to perform this action.</p>
     ForbiddenException(crate::types::error::ForbiddenException),
     /// <p>The specified client token is already in use.</p>
@@ -15,7 +17,7 @@ pub enum Error {
     InternalServerException(crate::types::error::InternalServerException),
     /// <p>One or more parameter values are not valid.</p>
     InvalidParameterValueException(crate::types::error::InvalidParameterValueException),
-    /// <p>The operation can only be performed by a management account.</p>
+    /// <p>The operation can only be performed by an organization's management account or a delegated administrator.</p>
     NotManagementAccountException(crate::types::error::NotManagementAccountException),
     /// <p>The account must be opted in to Compute Optimizer Automation before performing this action.</p>
     OptInRequiredException(crate::types::error::OptInRequiredException),
@@ -40,6 +42,7 @@ impl ::std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::AccessDeniedException(inner) => inner.fmt(f),
+            Error::ConflictException(inner) => inner.fmt(f),
             Error::ForbiddenException(inner) => inner.fmt(f),
             Error::IdempotencyTokenInUseException(inner) => inner.fmt(f),
             Error::IdempotentParameterMismatchException(inner) => inner.fmt(f),
@@ -73,6 +76,7 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
     fn meta(&self) -> &::aws_smithy_types::error::metadata::ErrorMetadata {
         match self {
             Self::AccessDeniedException(inner) => inner.meta(),
+            Self::ConflictException(inner) => inner.meta(),
             Self::ForbiddenException(inner) => inner.meta(),
             Self::IdempotencyTokenInUseException(inner) => inner.meta(),
             Self::IdempotentParameterMismatchException(inner) => inner.meta(),
@@ -219,6 +223,48 @@ impl From<crate::operation::delete_automation_rule::DeleteAutomationRuleError> f
             }
             crate::operation::delete_automation_rule::DeleteAutomationRuleError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_automation_rule::DeleteAutomationRuleError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_organization_enrollment_configuration::DeleteOrganizationEnrollmentConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_organization_enrollment_configuration::DeleteOrganizationEnrollmentConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_organization_enrollment_configuration::DeleteOrganizationEnrollmentConfigurationError> for Error {
+    fn from(err: crate::operation::delete_organization_enrollment_configuration::DeleteOrganizationEnrollmentConfigurationError) -> Self {
+        match err {
+            crate::operation::delete_organization_enrollment_configuration::DeleteOrganizationEnrollmentConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_organization_enrollment_configuration::DeleteOrganizationEnrollmentConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_organization_enrollment_configuration::DeleteOrganizationEnrollmentConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::delete_organization_enrollment_configuration::DeleteOrganizationEnrollmentConfigurationError::IdempotencyTokenInUseException(inner) => Error::IdempotencyTokenInUseException(inner),
+            crate::operation::delete_organization_enrollment_configuration::DeleteOrganizationEnrollmentConfigurationError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::delete_organization_enrollment_configuration::DeleteOrganizationEnrollmentConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::delete_organization_enrollment_configuration::DeleteOrganizationEnrollmentConfigurationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::delete_organization_enrollment_configuration::DeleteOrganizationEnrollmentConfigurationError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::delete_organization_enrollment_configuration::DeleteOrganizationEnrollmentConfigurationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::delete_organization_enrollment_configuration::DeleteOrganizationEnrollmentConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::delete_organization_enrollment_configuration::DeleteOrganizationEnrollmentConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -679,6 +725,88 @@ impl From<crate::operation::list_automation_rules::ListAutomationRulesError> for
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_organizational_units::ListOrganizationalUnitsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_organizational_units::ListOrganizationalUnitsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_organizational_units::ListOrganizationalUnitsError> for Error {
+    fn from(err: crate::operation::list_organizational_units::ListOrganizationalUnitsError) -> Self {
+        match err {
+            crate::operation::list_organizational_units::ListOrganizationalUnitsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_organizational_units::ListOrganizationalUnitsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_organizational_units::ListOrganizationalUnitsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_organizational_units::ListOrganizationalUnitsError::InvalidParameterValueException(inner) => {
+                Error::InvalidParameterValueException(inner)
+            }
+            crate::operation::list_organizational_units::ListOrganizationalUnitsError::OptInRequiredException(inner) => {
+                Error::OptInRequiredException(inner)
+            }
+            crate::operation::list_organizational_units::ListOrganizationalUnitsError::ServiceUnavailableException(inner) => {
+                Error::ServiceUnavailableException(inner)
+            }
+            crate::operation::list_organizational_units::ListOrganizationalUnitsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_organizational_units::ListOrganizationalUnitsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_organization_enrollment_configurations::ListOrganizationEnrollmentConfigurationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_organization_enrollment_configurations::ListOrganizationEnrollmentConfigurationsError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_organization_enrollment_configurations::ListOrganizationEnrollmentConfigurationsError> for Error {
+    fn from(err: crate::operation::list_organization_enrollment_configurations::ListOrganizationEnrollmentConfigurationsError) -> Self {
+        match err {
+            crate::operation::list_organization_enrollment_configurations::ListOrganizationEnrollmentConfigurationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_organization_enrollment_configurations::ListOrganizationEnrollmentConfigurationsError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::list_organization_enrollment_configurations::ListOrganizationEnrollmentConfigurationsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_organization_enrollment_configurations::ListOrganizationEnrollmentConfigurationsError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::list_organization_enrollment_configurations::ListOrganizationEnrollmentConfigurationsError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::list_organization_enrollment_configurations::ListOrganizationEnrollmentConfigurationsError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::list_organization_enrollment_configurations::ListOrganizationEnrollmentConfigurationsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_organization_enrollment_configurations::ListOrganizationEnrollmentConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_recommended_actions::ListRecommendedActionsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -806,6 +934,48 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
             }
             crate::operation::list_tags_for_resource::ListTagsForResourceError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_tags_for_resource::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_organization_enrollment_configuration::PutOrganizationEnrollmentConfigurationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_organization_enrollment_configuration::PutOrganizationEnrollmentConfigurationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_organization_enrollment_configuration::PutOrganizationEnrollmentConfigurationError> for Error {
+    fn from(err: crate::operation::put_organization_enrollment_configuration::PutOrganizationEnrollmentConfigurationError) -> Self {
+        match err {
+            crate::operation::put_organization_enrollment_configuration::PutOrganizationEnrollmentConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_organization_enrollment_configuration::PutOrganizationEnrollmentConfigurationError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_organization_enrollment_configuration::PutOrganizationEnrollmentConfigurationError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::operation::put_organization_enrollment_configuration::PutOrganizationEnrollmentConfigurationError::IdempotencyTokenInUseException(inner) => Error::IdempotencyTokenInUseException(inner),
+            crate::operation::put_organization_enrollment_configuration::PutOrganizationEnrollmentConfigurationError::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
+            crate::operation::put_organization_enrollment_configuration::PutOrganizationEnrollmentConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_organization_enrollment_configuration::PutOrganizationEnrollmentConfigurationError::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+            crate::operation::put_organization_enrollment_configuration::PutOrganizationEnrollmentConfigurationError::OptInRequiredException(inner) => Error::OptInRequiredException(inner),
+            crate::operation::put_organization_enrollment_configuration::PutOrganizationEnrollmentConfigurationError::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+            crate::operation::put_organization_enrollment_configuration::PutOrganizationEnrollmentConfigurationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_organization_enrollment_configuration::PutOrganizationEnrollmentConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1089,6 +1259,7 @@ impl ::std::error::Error for Error {
     fn source(&self) -> std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
             Error::AccessDeniedException(inner) => inner.source(),
+            Error::ConflictException(inner) => inner.source(),
             Error::ForbiddenException(inner) => inner.source(),
             Error::IdempotencyTokenInUseException(inner) => inner.source(),
             Error::IdempotentParameterMismatchException(inner) => inner.source(),
@@ -1108,6 +1279,7 @@ impl ::aws_types::request_id::RequestId for Error {
     fn request_id(&self) -> Option<&str> {
         match self {
             Self::AccessDeniedException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
             Self::ForbiddenException(e) => e.request_id(),
             Self::IdempotencyTokenInUseException(e) => e.request_id(),
             Self::IdempotentParameterMismatchException(e) => e.request_id(),

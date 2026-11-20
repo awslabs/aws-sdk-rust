@@ -3,105 +3,169 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFulfillmentOptionsOutput {
-    /// <p>A BCP 47 language tag or comma-separated priority list of language tags that specifies the preferred locale for response content. The field accepts a maximum of two language tags.</p>
-    /// <p>The service resolves a locale string to the nearest supported locale. If no supported locale matches, the service applies the fallback behavior described below.</p>
+    /// <p>A Best Current Practice 47 (BCP 47) language tag or comma-separated priority list of language tags that specifies the preferred locale for response content. The field accepts a maximum of two language tags.</p>
+    /// <p>The service resolves a locale string to the nearest supported locale. If no supported locale matches, the service applies the fallback behavior described in the following lists.</p>
     /// <ul>
     /// <li>
     /// <p><b>Preferred locale</b> (first tag) – The locale you want the service to return content in.</p></li>
     /// <li>
     /// <p><b>Fallback locale</b> (optional, second tag) – The service default locale (<code>en-US</code> or <code>en</code>). The service returns content in this locale when translated content for the preferred locale is unavailable.</p></li>
     /// </ul>
-    /// <p>The field is optional. If omitted or null, the service returns content in the default locale (<code>en-US</code>).</p>
-    /// <p><b>Supported locales:</b></p>
-    /// <ul>
-    /// <li>
-    /// <p><code>en-US</code> – English (service default, also resolves from <code>en</code>)</p></li>
-    /// <li>
-    /// <p><code>fr</code> – French</p></li>
-    /// <li>
-    /// <p><code>es</code> – Spanish</p></li>
-    /// <li>
-    /// <p><code>ko</code> – Korean</p></li>
-    /// <li>
-    /// <p><code>ja</code> – Japanese</p></li>
-    /// </ul>
-    /// <p><b>Fallback behavior:</b></p>
+    /// <p>The field is optional. If you omit this field or set it to null, the service returns content in the default locale (<code>en-US</code>).</p>
+    /// <p>The service supports the following locales:</p>
+    /// <dl>
+    /// <dt>
+    /// en-US
+    /// </dt>
+    /// <dd>
+    /// <p>English (service default, also resolves from <code>en</code>)</p>
+    /// </dd>
+    /// <dt>
+    /// fr
+    /// </dt>
+    /// <dd>
+    /// <p>French</p>
+    /// </dd>
+    /// <dt>
+    /// es
+    /// </dt>
+    /// <dd>
+    /// <p>Spanish</p>
+    /// </dd>
+    /// <dt>
+    /// ko
+    /// </dt>
+    /// <dd>
+    /// <p>Korean</p>
+    /// </dd>
+    /// <dt>
+    /// ja
+    /// </dt>
+    /// <dd>
+    /// <p>Japanese</p>
+    /// </dd>
+    /// </dl>
+    /// <p>The fallback behavior is as follows:</p>
     /// <ul>
     /// <li>
     /// <p>If translated content for the preferred locale is unavailable, the service returns content in the default locale.</p></li>
     /// <li>
-    /// <p>If the preferred locale is not supported and no fallback is provided, the service returns a <code>ValidationException</code>.</p></li>
+    /// <p>If the preferred locale is not supported and you provide no fallback, the service returns a <code>ValidationException</code>.</p></li>
     /// <li>
     /// <p>If you provide an unsupported locale with the default locale as fallback (for example, <code>xx, en-US</code>), the service returns content in the default locale.</p></li>
     /// </ul>
-    /// <p><b>Response locale field (Get APIs):</b> The <code>locale</code> field in Get API responses indicates the locale of the returned content. You can use this field to determine whether the response contains content in the requested locale or the default locale.</p>
-    /// <p><b>Examples:</b></p>
-    /// <ul>
-    /// <li>
-    /// <p><code>fr</code> – Request French content. If unavailable, falls back to <code>en-US</code>.</p></li>
-    /// <li>
-    /// <p><code>fr, en-US</code> – Request French content with explicit fallback to English.</p></li>
-    /// <li>
-    /// <p><code>en-US</code> – Request content in the default locale.</p></li>
-    /// </ul>
+    /// <p>The <code>locale</code> field in Get API responses indicates the locale of the returned content. You can use this field to determine whether the response contains content in the requested locale or the default locale.</p>
+    /// <p>The following examples show how the field works:</p>
+    /// <dl>
+    /// <dt>
+    /// fr
+    /// </dt>
+    /// <dd>
+    /// <p>Request French content. If unavailable, falls back to <code>en-US</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// fr, en-US
+    /// </dt>
+    /// <dd>
+    /// <p>Request French content with explicit fallback to English.</p>
+    /// </dd>
+    /// <dt>
+    /// en-US
+    /// </dt>
+    /// <dd>
+    /// <p>Request content in the default locale.</p>
+    /// </dd>
+    /// </dl>
     pub locale: ::std::option::Option<::std::string::String>,
-    /// <p>The fulfillment options available for the product. Each option describes how the buyer can deploy or access the product.</p>
+    /// <p>The fulfillment options available for the product. Each option describes how you can deploy or access the product.</p>
     pub fulfillment_options: ::std::vec::Vec<crate::types::FulfillmentOption>,
-    /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
+    /// <p>If the service returns <code>nextToken</code>, more results are available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again with the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. An expired pagination token returns a <code>ValidationException</code>.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListFulfillmentOptionsOutput {
-    /// <p>A BCP 47 language tag or comma-separated priority list of language tags that specifies the preferred locale for response content. The field accepts a maximum of two language tags.</p>
-    /// <p>The service resolves a locale string to the nearest supported locale. If no supported locale matches, the service applies the fallback behavior described below.</p>
+    /// <p>A Best Current Practice 47 (BCP 47) language tag or comma-separated priority list of language tags that specifies the preferred locale for response content. The field accepts a maximum of two language tags.</p>
+    /// <p>The service resolves a locale string to the nearest supported locale. If no supported locale matches, the service applies the fallback behavior described in the following lists.</p>
     /// <ul>
     /// <li>
     /// <p><b>Preferred locale</b> (first tag) – The locale you want the service to return content in.</p></li>
     /// <li>
     /// <p><b>Fallback locale</b> (optional, second tag) – The service default locale (<code>en-US</code> or <code>en</code>). The service returns content in this locale when translated content for the preferred locale is unavailable.</p></li>
     /// </ul>
-    /// <p>The field is optional. If omitted or null, the service returns content in the default locale (<code>en-US</code>).</p>
-    /// <p><b>Supported locales:</b></p>
-    /// <ul>
-    /// <li>
-    /// <p><code>en-US</code> – English (service default, also resolves from <code>en</code>)</p></li>
-    /// <li>
-    /// <p><code>fr</code> – French</p></li>
-    /// <li>
-    /// <p><code>es</code> – Spanish</p></li>
-    /// <li>
-    /// <p><code>ko</code> – Korean</p></li>
-    /// <li>
-    /// <p><code>ja</code> – Japanese</p></li>
-    /// </ul>
-    /// <p><b>Fallback behavior:</b></p>
+    /// <p>The field is optional. If you omit this field or set it to null, the service returns content in the default locale (<code>en-US</code>).</p>
+    /// <p>The service supports the following locales:</p>
+    /// <dl>
+    /// <dt>
+    /// en-US
+    /// </dt>
+    /// <dd>
+    /// <p>English (service default, also resolves from <code>en</code>)</p>
+    /// </dd>
+    /// <dt>
+    /// fr
+    /// </dt>
+    /// <dd>
+    /// <p>French</p>
+    /// </dd>
+    /// <dt>
+    /// es
+    /// </dt>
+    /// <dd>
+    /// <p>Spanish</p>
+    /// </dd>
+    /// <dt>
+    /// ko
+    /// </dt>
+    /// <dd>
+    /// <p>Korean</p>
+    /// </dd>
+    /// <dt>
+    /// ja
+    /// </dt>
+    /// <dd>
+    /// <p>Japanese</p>
+    /// </dd>
+    /// </dl>
+    /// <p>The fallback behavior is as follows:</p>
     /// <ul>
     /// <li>
     /// <p>If translated content for the preferred locale is unavailable, the service returns content in the default locale.</p></li>
     /// <li>
-    /// <p>If the preferred locale is not supported and no fallback is provided, the service returns a <code>ValidationException</code>.</p></li>
+    /// <p>If the preferred locale is not supported and you provide no fallback, the service returns a <code>ValidationException</code>.</p></li>
     /// <li>
     /// <p>If you provide an unsupported locale with the default locale as fallback (for example, <code>xx, en-US</code>), the service returns content in the default locale.</p></li>
     /// </ul>
-    /// <p><b>Response locale field (Get APIs):</b> The <code>locale</code> field in Get API responses indicates the locale of the returned content. You can use this field to determine whether the response contains content in the requested locale or the default locale.</p>
-    /// <p><b>Examples:</b></p>
-    /// <ul>
-    /// <li>
-    /// <p><code>fr</code> – Request French content. If unavailable, falls back to <code>en-US</code>.</p></li>
-    /// <li>
-    /// <p><code>fr, en-US</code> – Request French content with explicit fallback to English.</p></li>
-    /// <li>
-    /// <p><code>en-US</code> – Request content in the default locale.</p></li>
-    /// </ul>
+    /// <p>The <code>locale</code> field in Get API responses indicates the locale of the returned content. You can use this field to determine whether the response contains content in the requested locale or the default locale.</p>
+    /// <p>The following examples show how the field works:</p>
+    /// <dl>
+    /// <dt>
+    /// fr
+    /// </dt>
+    /// <dd>
+    /// <p>Request French content. If unavailable, falls back to <code>en-US</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// fr, en-US
+    /// </dt>
+    /// <dd>
+    /// <p>Request French content with explicit fallback to English.</p>
+    /// </dd>
+    /// <dt>
+    /// en-US
+    /// </dt>
+    /// <dd>
+    /// <p>Request content in the default locale.</p>
+    /// </dd>
+    /// </dl>
     pub fn locale(&self) -> ::std::option::Option<&str> {
         self.locale.as_deref()
     }
-    /// <p>The fulfillment options available for the product. Each option describes how the buyer can deploy or access the product.</p>
+    /// <p>The fulfillment options available for the product. Each option describes how you can deploy or access the product.</p>
     pub fn fulfillment_options(&self) -> &[crate::types::FulfillmentOption] {
         use std::ops::Deref;
         self.fulfillment_options.deref()
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
+    /// <p>If the service returns <code>nextToken</code>, more results are available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again with the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. An expired pagination token returns a <code>ValidationException</code>.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
@@ -128,137 +192,233 @@ pub struct ListFulfillmentOptionsOutputBuilder {
     _request_id: Option<String>,
 }
 impl ListFulfillmentOptionsOutputBuilder {
-    /// <p>A BCP 47 language tag or comma-separated priority list of language tags that specifies the preferred locale for response content. The field accepts a maximum of two language tags.</p>
-    /// <p>The service resolves a locale string to the nearest supported locale. If no supported locale matches, the service applies the fallback behavior described below.</p>
+    /// <p>A Best Current Practice 47 (BCP 47) language tag or comma-separated priority list of language tags that specifies the preferred locale for response content. The field accepts a maximum of two language tags.</p>
+    /// <p>The service resolves a locale string to the nearest supported locale. If no supported locale matches, the service applies the fallback behavior described in the following lists.</p>
     /// <ul>
     /// <li>
     /// <p><b>Preferred locale</b> (first tag) – The locale you want the service to return content in.</p></li>
     /// <li>
     /// <p><b>Fallback locale</b> (optional, second tag) – The service default locale (<code>en-US</code> or <code>en</code>). The service returns content in this locale when translated content for the preferred locale is unavailable.</p></li>
     /// </ul>
-    /// <p>The field is optional. If omitted or null, the service returns content in the default locale (<code>en-US</code>).</p>
-    /// <p><b>Supported locales:</b></p>
-    /// <ul>
-    /// <li>
-    /// <p><code>en-US</code> – English (service default, also resolves from <code>en</code>)</p></li>
-    /// <li>
-    /// <p><code>fr</code> – French</p></li>
-    /// <li>
-    /// <p><code>es</code> – Spanish</p></li>
-    /// <li>
-    /// <p><code>ko</code> – Korean</p></li>
-    /// <li>
-    /// <p><code>ja</code> – Japanese</p></li>
-    /// </ul>
-    /// <p><b>Fallback behavior:</b></p>
+    /// <p>The field is optional. If you omit this field or set it to null, the service returns content in the default locale (<code>en-US</code>).</p>
+    /// <p>The service supports the following locales:</p>
+    /// <dl>
+    /// <dt>
+    /// en-US
+    /// </dt>
+    /// <dd>
+    /// <p>English (service default, also resolves from <code>en</code>)</p>
+    /// </dd>
+    /// <dt>
+    /// fr
+    /// </dt>
+    /// <dd>
+    /// <p>French</p>
+    /// </dd>
+    /// <dt>
+    /// es
+    /// </dt>
+    /// <dd>
+    /// <p>Spanish</p>
+    /// </dd>
+    /// <dt>
+    /// ko
+    /// </dt>
+    /// <dd>
+    /// <p>Korean</p>
+    /// </dd>
+    /// <dt>
+    /// ja
+    /// </dt>
+    /// <dd>
+    /// <p>Japanese</p>
+    /// </dd>
+    /// </dl>
+    /// <p>The fallback behavior is as follows:</p>
     /// <ul>
     /// <li>
     /// <p>If translated content for the preferred locale is unavailable, the service returns content in the default locale.</p></li>
     /// <li>
-    /// <p>If the preferred locale is not supported and no fallback is provided, the service returns a <code>ValidationException</code>.</p></li>
+    /// <p>If the preferred locale is not supported and you provide no fallback, the service returns a <code>ValidationException</code>.</p></li>
     /// <li>
     /// <p>If you provide an unsupported locale with the default locale as fallback (for example, <code>xx, en-US</code>), the service returns content in the default locale.</p></li>
     /// </ul>
-    /// <p><b>Response locale field (Get APIs):</b> The <code>locale</code> field in Get API responses indicates the locale of the returned content. You can use this field to determine whether the response contains content in the requested locale or the default locale.</p>
-    /// <p><b>Examples:</b></p>
-    /// <ul>
-    /// <li>
-    /// <p><code>fr</code> – Request French content. If unavailable, falls back to <code>en-US</code>.</p></li>
-    /// <li>
-    /// <p><code>fr, en-US</code> – Request French content with explicit fallback to English.</p></li>
-    /// <li>
-    /// <p><code>en-US</code> – Request content in the default locale.</p></li>
-    /// </ul>
+    /// <p>The <code>locale</code> field in Get API responses indicates the locale of the returned content. You can use this field to determine whether the response contains content in the requested locale or the default locale.</p>
+    /// <p>The following examples show how the field works:</p>
+    /// <dl>
+    /// <dt>
+    /// fr
+    /// </dt>
+    /// <dd>
+    /// <p>Request French content. If unavailable, falls back to <code>en-US</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// fr, en-US
+    /// </dt>
+    /// <dd>
+    /// <p>Request French content with explicit fallback to English.</p>
+    /// </dd>
+    /// <dt>
+    /// en-US
+    /// </dt>
+    /// <dd>
+    /// <p>Request content in the default locale.</p>
+    /// </dd>
+    /// </dl>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>A BCP 47 language tag or comma-separated priority list of language tags that specifies the preferred locale for response content. The field accepts a maximum of two language tags.</p>
-    /// <p>The service resolves a locale string to the nearest supported locale. If no supported locale matches, the service applies the fallback behavior described below.</p>
+    /// <p>A Best Current Practice 47 (BCP 47) language tag or comma-separated priority list of language tags that specifies the preferred locale for response content. The field accepts a maximum of two language tags.</p>
+    /// <p>The service resolves a locale string to the nearest supported locale. If no supported locale matches, the service applies the fallback behavior described in the following lists.</p>
     /// <ul>
     /// <li>
     /// <p><b>Preferred locale</b> (first tag) – The locale you want the service to return content in.</p></li>
     /// <li>
     /// <p><b>Fallback locale</b> (optional, second tag) – The service default locale (<code>en-US</code> or <code>en</code>). The service returns content in this locale when translated content for the preferred locale is unavailable.</p></li>
     /// </ul>
-    /// <p>The field is optional. If omitted or null, the service returns content in the default locale (<code>en-US</code>).</p>
-    /// <p><b>Supported locales:</b></p>
-    /// <ul>
-    /// <li>
-    /// <p><code>en-US</code> – English (service default, also resolves from <code>en</code>)</p></li>
-    /// <li>
-    /// <p><code>fr</code> – French</p></li>
-    /// <li>
-    /// <p><code>es</code> – Spanish</p></li>
-    /// <li>
-    /// <p><code>ko</code> – Korean</p></li>
-    /// <li>
-    /// <p><code>ja</code> – Japanese</p></li>
-    /// </ul>
-    /// <p><b>Fallback behavior:</b></p>
+    /// <p>The field is optional. If you omit this field or set it to null, the service returns content in the default locale (<code>en-US</code>).</p>
+    /// <p>The service supports the following locales:</p>
+    /// <dl>
+    /// <dt>
+    /// en-US
+    /// </dt>
+    /// <dd>
+    /// <p>English (service default, also resolves from <code>en</code>)</p>
+    /// </dd>
+    /// <dt>
+    /// fr
+    /// </dt>
+    /// <dd>
+    /// <p>French</p>
+    /// </dd>
+    /// <dt>
+    /// es
+    /// </dt>
+    /// <dd>
+    /// <p>Spanish</p>
+    /// </dd>
+    /// <dt>
+    /// ko
+    /// </dt>
+    /// <dd>
+    /// <p>Korean</p>
+    /// </dd>
+    /// <dt>
+    /// ja
+    /// </dt>
+    /// <dd>
+    /// <p>Japanese</p>
+    /// </dd>
+    /// </dl>
+    /// <p>The fallback behavior is as follows:</p>
     /// <ul>
     /// <li>
     /// <p>If translated content for the preferred locale is unavailable, the service returns content in the default locale.</p></li>
     /// <li>
-    /// <p>If the preferred locale is not supported and no fallback is provided, the service returns a <code>ValidationException</code>.</p></li>
+    /// <p>If the preferred locale is not supported and you provide no fallback, the service returns a <code>ValidationException</code>.</p></li>
     /// <li>
     /// <p>If you provide an unsupported locale with the default locale as fallback (for example, <code>xx, en-US</code>), the service returns content in the default locale.</p></li>
     /// </ul>
-    /// <p><b>Response locale field (Get APIs):</b> The <code>locale</code> field in Get API responses indicates the locale of the returned content. You can use this field to determine whether the response contains content in the requested locale or the default locale.</p>
-    /// <p><b>Examples:</b></p>
-    /// <ul>
-    /// <li>
-    /// <p><code>fr</code> – Request French content. If unavailable, falls back to <code>en-US</code>.</p></li>
-    /// <li>
-    /// <p><code>fr, en-US</code> – Request French content with explicit fallback to English.</p></li>
-    /// <li>
-    /// <p><code>en-US</code> – Request content in the default locale.</p></li>
-    /// </ul>
+    /// <p>The <code>locale</code> field in Get API responses indicates the locale of the returned content. You can use this field to determine whether the response contains content in the requested locale or the default locale.</p>
+    /// <p>The following examples show how the field works:</p>
+    /// <dl>
+    /// <dt>
+    /// fr
+    /// </dt>
+    /// <dd>
+    /// <p>Request French content. If unavailable, falls back to <code>en-US</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// fr, en-US
+    /// </dt>
+    /// <dd>
+    /// <p>Request French content with explicit fallback to English.</p>
+    /// </dd>
+    /// <dt>
+    /// en-US
+    /// </dt>
+    /// <dd>
+    /// <p>Request content in the default locale.</p>
+    /// </dd>
+    /// </dl>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale = input;
         self
     }
-    /// <p>A BCP 47 language tag or comma-separated priority list of language tags that specifies the preferred locale for response content. The field accepts a maximum of two language tags.</p>
-    /// <p>The service resolves a locale string to the nearest supported locale. If no supported locale matches, the service applies the fallback behavior described below.</p>
+    /// <p>A Best Current Practice 47 (BCP 47) language tag or comma-separated priority list of language tags that specifies the preferred locale for response content. The field accepts a maximum of two language tags.</p>
+    /// <p>The service resolves a locale string to the nearest supported locale. If no supported locale matches, the service applies the fallback behavior described in the following lists.</p>
     /// <ul>
     /// <li>
     /// <p><b>Preferred locale</b> (first tag) – The locale you want the service to return content in.</p></li>
     /// <li>
     /// <p><b>Fallback locale</b> (optional, second tag) – The service default locale (<code>en-US</code> or <code>en</code>). The service returns content in this locale when translated content for the preferred locale is unavailable.</p></li>
     /// </ul>
-    /// <p>The field is optional. If omitted or null, the service returns content in the default locale (<code>en-US</code>).</p>
-    /// <p><b>Supported locales:</b></p>
-    /// <ul>
-    /// <li>
-    /// <p><code>en-US</code> – English (service default, also resolves from <code>en</code>)</p></li>
-    /// <li>
-    /// <p><code>fr</code> – French</p></li>
-    /// <li>
-    /// <p><code>es</code> – Spanish</p></li>
-    /// <li>
-    /// <p><code>ko</code> – Korean</p></li>
-    /// <li>
-    /// <p><code>ja</code> – Japanese</p></li>
-    /// </ul>
-    /// <p><b>Fallback behavior:</b></p>
+    /// <p>The field is optional. If you omit this field or set it to null, the service returns content in the default locale (<code>en-US</code>).</p>
+    /// <p>The service supports the following locales:</p>
+    /// <dl>
+    /// <dt>
+    /// en-US
+    /// </dt>
+    /// <dd>
+    /// <p>English (service default, also resolves from <code>en</code>)</p>
+    /// </dd>
+    /// <dt>
+    /// fr
+    /// </dt>
+    /// <dd>
+    /// <p>French</p>
+    /// </dd>
+    /// <dt>
+    /// es
+    /// </dt>
+    /// <dd>
+    /// <p>Spanish</p>
+    /// </dd>
+    /// <dt>
+    /// ko
+    /// </dt>
+    /// <dd>
+    /// <p>Korean</p>
+    /// </dd>
+    /// <dt>
+    /// ja
+    /// </dt>
+    /// <dd>
+    /// <p>Japanese</p>
+    /// </dd>
+    /// </dl>
+    /// <p>The fallback behavior is as follows:</p>
     /// <ul>
     /// <li>
     /// <p>If translated content for the preferred locale is unavailable, the service returns content in the default locale.</p></li>
     /// <li>
-    /// <p>If the preferred locale is not supported and no fallback is provided, the service returns a <code>ValidationException</code>.</p></li>
+    /// <p>If the preferred locale is not supported and you provide no fallback, the service returns a <code>ValidationException</code>.</p></li>
     /// <li>
     /// <p>If you provide an unsupported locale with the default locale as fallback (for example, <code>xx, en-US</code>), the service returns content in the default locale.</p></li>
     /// </ul>
-    /// <p><b>Response locale field (Get APIs):</b> The <code>locale</code> field in Get API responses indicates the locale of the returned content. You can use this field to determine whether the response contains content in the requested locale or the default locale.</p>
-    /// <p><b>Examples:</b></p>
-    /// <ul>
-    /// <li>
-    /// <p><code>fr</code> – Request French content. If unavailable, falls back to <code>en-US</code>.</p></li>
-    /// <li>
-    /// <p><code>fr, en-US</code> – Request French content with explicit fallback to English.</p></li>
-    /// <li>
-    /// <p><code>en-US</code> – Request content in the default locale.</p></li>
-    /// </ul>
+    /// <p>The <code>locale</code> field in Get API responses indicates the locale of the returned content. You can use this field to determine whether the response contains content in the requested locale or the default locale.</p>
+    /// <p>The following examples show how the field works:</p>
+    /// <dl>
+    /// <dt>
+    /// fr
+    /// </dt>
+    /// <dd>
+    /// <p>Request French content. If unavailable, falls back to <code>en-US</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// fr, en-US
+    /// </dt>
+    /// <dd>
+    /// <p>Request French content with explicit fallback to English.</p>
+    /// </dd>
+    /// <dt>
+    /// en-US
+    /// </dt>
+    /// <dd>
+    /// <p>Request content in the default locale.</p>
+    /// </dd>
+    /// </dl>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
         &self.locale
     }
@@ -266,33 +426,33 @@ impl ListFulfillmentOptionsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_fulfillment_options`](Self::set_fulfillment_options).
     ///
-    /// <p>The fulfillment options available for the product. Each option describes how the buyer can deploy or access the product.</p>
+    /// <p>The fulfillment options available for the product. Each option describes how you can deploy or access the product.</p>
     pub fn fulfillment_options(mut self, input: crate::types::FulfillmentOption) -> Self {
         let mut v = self.fulfillment_options.unwrap_or_default();
         v.push(input);
         self.fulfillment_options = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The fulfillment options available for the product. Each option describes how the buyer can deploy or access the product.</p>
+    /// <p>The fulfillment options available for the product. Each option describes how you can deploy or access the product.</p>
     pub fn set_fulfillment_options(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FulfillmentOption>>) -> Self {
         self.fulfillment_options = input;
         self
     }
-    /// <p>The fulfillment options available for the product. Each option describes how the buyer can deploy or access the product.</p>
+    /// <p>The fulfillment options available for the product. Each option describes how you can deploy or access the product.</p>
     pub fn get_fulfillment_options(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FulfillmentOption>> {
         &self.fulfillment_options
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
+    /// <p>If the service returns <code>nextToken</code>, more results are available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again with the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. An expired pagination token returns a <code>ValidationException</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.next_token = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
+    /// <p>If the service returns <code>nextToken</code>, more results are available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again with the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. An expired pagination token returns a <code>ValidationException</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
+    /// <p>If the service returns <code>nextToken</code>, more results are available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again with the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. An expired pagination token returns a <code>ValidationException</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         &self.next_token
     }

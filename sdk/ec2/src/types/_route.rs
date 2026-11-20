@@ -50,6 +50,8 @@ pub struct Route {
     pub odb_network_arn: ::std::option::Option<::std::string::String>,
     /// <p>The next hop IP address for routes propagated by VPC Route Server into VPC route tables.</p>
     pub ip_address: ::std::option::Option<::std::string::String>,
+    /// <p>Information about the Automated Internet Firewall that inspects traffic for this route. The response includes this value only for routes that target an internet gateway or egress-only internet gateway in a VPC that has a firewall. The route target remains the internet gateway or egress-only internet gateway.</p>
+    pub igw_firewall: ::std::option::Option<crate::types::IgwFirewall>,
 }
 impl Route {
     /// <p>The IPv4 CIDR block used for the destination match.</p>
@@ -134,6 +136,10 @@ impl Route {
     pub fn ip_address(&self) -> ::std::option::Option<&str> {
         self.ip_address.as_deref()
     }
+    /// <p>Information about the Automated Internet Firewall that inspects traffic for this route. The response includes this value only for routes that target an internet gateway or egress-only internet gateway in a VPC that has a firewall. The route target remains the internet gateway or egress-only internet gateway.</p>
+    pub fn igw_firewall(&self) -> ::std::option::Option<&crate::types::IgwFirewall> {
+        self.igw_firewall.as_ref()
+    }
 }
 impl Route {
     /// Creates a new builder-style object to manufacture [`Route`](crate::types::Route).
@@ -164,6 +170,7 @@ pub struct RouteBuilder {
     pub(crate) core_network_arn: ::std::option::Option<::std::string::String>,
     pub(crate) odb_network_arn: ::std::option::Option<::std::string::String>,
     pub(crate) ip_address: ::std::option::Option<::std::string::String>,
+    pub(crate) igw_firewall: ::std::option::Option<crate::types::IgwFirewall>,
 }
 impl RouteBuilder {
     /// <p>The IPv4 CIDR block used for the destination match.</p>
@@ -448,6 +455,20 @@ impl RouteBuilder {
     pub fn get_ip_address(&self) -> &::std::option::Option<::std::string::String> {
         &self.ip_address
     }
+    /// <p>Information about the Automated Internet Firewall that inspects traffic for this route. The response includes this value only for routes that target an internet gateway or egress-only internet gateway in a VPC that has a firewall. The route target remains the internet gateway or egress-only internet gateway.</p>
+    pub fn igw_firewall(mut self, input: crate::types::IgwFirewall) -> Self {
+        self.igw_firewall = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the Automated Internet Firewall that inspects traffic for this route. The response includes this value only for routes that target an internet gateway or egress-only internet gateway in a VPC that has a firewall. The route target remains the internet gateway or egress-only internet gateway.</p>
+    pub fn set_igw_firewall(mut self, input: ::std::option::Option<crate::types::IgwFirewall>) -> Self {
+        self.igw_firewall = input;
+        self
+    }
+    /// <p>Information about the Automated Internet Firewall that inspects traffic for this route. The response includes this value only for routes that target an internet gateway or egress-only internet gateway in a VPC that has a firewall. The route target remains the internet gateway or egress-only internet gateway.</p>
+    pub fn get_igw_firewall(&self) -> &::std::option::Option<crate::types::IgwFirewall> {
+        &self.igw_firewall
+    }
     /// Consumes the builder and constructs a [`Route`](crate::types::Route).
     pub fn build(self) -> crate::types::Route {
         crate::types::Route {
@@ -469,6 +490,7 @@ impl RouteBuilder {
             core_network_arn: self.core_network_arn,
             odb_network_arn: self.odb_network_arn,
             ip_address: self.ip_address,
+            igw_firewall: self.igw_firewall,
         }
     }
 }

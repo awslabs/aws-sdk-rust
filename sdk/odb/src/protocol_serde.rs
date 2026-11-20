@@ -115,6 +115,8 @@ pub(crate) mod shape_list_autonomous_database_clones;
 
 pub(crate) mod shape_list_autonomous_database_peers;
 
+pub(crate) mod shape_list_autonomous_database_refreshable_clones;
+
 pub(crate) mod shape_list_autonomous_database_versions;
 
 pub(crate) mod shape_list_autonomous_databases;
@@ -160,6 +162,8 @@ pub(crate) mod shape_restore_autonomous_database;
 pub(crate) mod shape_shrink_autonomous_database;
 
 pub(crate) mod shape_start_autonomous_database;
+
+pub(crate) mod shape_start_autonomous_database_refresh;
 
 pub(crate) mod shape_start_db_node;
 
@@ -299,6 +303,8 @@ pub(crate) mod shape_list_autonomous_database_clones_input;
 
 pub(crate) mod shape_list_autonomous_database_peers_input;
 
+pub(crate) mod shape_list_autonomous_database_refreshable_clones_input;
+
 pub(crate) mod shape_list_autonomous_database_versions_input;
 
 pub(crate) mod shape_list_autonomous_databases_input;
@@ -348,6 +354,8 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 pub(crate) mod shape_shrink_autonomous_database_input;
 
 pub(crate) mod shape_start_autonomous_database_input;
+
+pub(crate) mod shape_start_autonomous_database_refresh_input;
 
 pub(crate) mod shape_start_db_node_input;
 
@@ -400,6 +408,8 @@ pub(crate) mod shape_autonomous_database_character_set_list;
 pub(crate) mod shape_autonomous_database_list;
 
 pub(crate) mod shape_autonomous_database_peer_list;
+
+pub(crate) mod shape_autonomous_database_refreshable_clone_list;
 
 pub(crate) mod shape_autonomous_database_version_list;
 
@@ -502,6 +512,8 @@ pub(crate) mod shape_autonomous_database_connection_strings;
 pub(crate) mod shape_autonomous_database_connection_urls;
 
 pub(crate) mod shape_autonomous_database_peer_summary;
+
+pub(crate) mod shape_autonomous_database_refreshable_clone_summary;
 
 pub(crate) mod shape_autonomous_database_summary;
 

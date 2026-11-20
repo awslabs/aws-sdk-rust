@@ -13,6 +13,33 @@ pub fn ser_organization_scope(
             }
         }
     }
+    if let Some(var_3) = &input.organizational_unit_ids {
+        encoder.str("organizationalUnitIds");
+        encoder.array((*var_3).len());
+        for item_4 in var_3 {
+            {
+                encoder.str(item_4.as_str());
+            }
+        }
+    }
+    if let Some(var_5) = &input.excluded_organizational_unit_ids {
+        encoder.str("excludedOrganizationalUnitIds");
+        encoder.array((*var_5).len());
+        for item_6 in var_5 {
+            {
+                encoder.str(item_6.as_str());
+            }
+        }
+    }
+    if let Some(var_7) = &input.excluded_account_ids {
+        encoder.str("excludedAccountIds");
+        encoder.array((*var_7).len());
+        for item_8 in var_7 {
+            {
+                encoder.str(item_8.as_str());
+            }
+        }
+    }
     encoder.end();
     Ok(())
 }

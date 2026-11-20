@@ -521,6 +521,15 @@ pub(crate) fn list_deployments_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_entity_coverages_output_output_correct_errors(
+    mut builder: crate::operation::list_entity_coverages::builders::ListEntityCoveragesOutputBuilder,
+) -> crate::operation::list_entity_coverages::builders::ListEntityCoveragesOutputBuilder {
+    if builder.resource_coverages.is_none() {
+        builder.resource_coverages = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_policies_output_output_correct_errors(
     mut builder: crate::operation::list_policies::builders::ListPoliciesOutputBuilder,
 ) -> crate::operation::list_policies::builders::ListPoliciesOutputBuilder {
@@ -535,6 +544,15 @@ pub(crate) fn list_policy_snapshots_output_output_correct_errors(
 ) -> crate::operation::list_policy_snapshots::builders::ListPolicySnapshotsOutputBuilder {
     if builder.snapshots.is_none() {
         builder.snapshots = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_protected_resource_coverages_output_output_correct_errors(
+    mut builder: crate::operation::list_protected_resource_coverages::builders::ListProtectedResourceCoveragesOutputBuilder,
+) -> crate::operation::list_protected_resource_coverages::builders::ListProtectedResourceCoveragesOutputBuilder {
+    if builder.resource_coverages.is_none() {
+        builder.resource_coverages = Some(Default::default())
     }
     builder
 }
@@ -970,6 +988,18 @@ pub(crate) fn not_visible_marker_correct_errors(
 ) -> crate::types::builders::NotVisibleMarkerBuilder {
     if builder.reason.is_none() {
         builder.reason = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn subnet_connectivity_override_correct_errors(
+    mut builder: crate::types::builders::SubnetConnectivityOverrideBuilder,
+) -> crate::types::builders::SubnetConnectivityOverrideBuilder {
+    if builder.connectivity_type.is_none() {
+        builder.connectivity_type = "no value was set".parse::<crate::types::SubnetConnectivity>().ok()
+    }
+    if builder.scopes.is_none() {
+        builder.scopes = Some(Default::default())
     }
     builder
 }

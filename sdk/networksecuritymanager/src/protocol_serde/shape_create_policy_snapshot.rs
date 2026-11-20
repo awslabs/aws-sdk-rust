@@ -94,6 +94,21 @@ pub fn de_create_policy_snapshot_http_error(
             };
             tmp
         }),
+        "TagPolicyViolationException" => crate::operation::create_policy_snapshot::CreatePolicySnapshotError::TagPolicyViolationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TagPolicyViolationExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_tag_policy_violation_exception::de_tag_policy_violation_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::create_policy_snapshot::CreatePolicySnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::tag_policy_violation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_policy_snapshot::CreatePolicySnapshotError::unhandled)?
+            };
+            tmp
+        }),
         "ThrottlingException" => crate::operation::create_policy_snapshot::CreatePolicySnapshotError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {

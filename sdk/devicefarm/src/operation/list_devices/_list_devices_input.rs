@@ -27,6 +27,8 @@ pub struct ListDevicesInput {
     /// <li>
     /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p></li>
     /// <li>
+    /// <p>DEVICE_TYPE: The device type. Valid values are PHYSICAL or VIRTUAL.</p></li>
+    /// <li>
     /// <p>MANUFACTURER: The device manufacturer (for example, Apple).</p></li>
     /// <li>
     /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p></li>
@@ -91,6 +93,8 @@ impl ListDevicesInput {
     /// <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p></li>
     /// <li>
     /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p></li>
+    /// <li>
+    /// <p>DEVICE_TYPE: The device type. Valid values are PHYSICAL or VIRTUAL.</p></li>
     /// <li>
     /// <p>MANUFACTURER: The device manufacturer (for example, Apple).</p></li>
     /// <li>
@@ -200,6 +204,8 @@ impl ListDevicesInputBuilder {
     /// <li>
     /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p></li>
     /// <li>
+    /// <p>DEVICE_TYPE: The device type. Valid values are PHYSICAL or VIRTUAL.</p></li>
+    /// <li>
     /// <p>MANUFACTURER: The device manufacturer (for example, Apple).</p></li>
     /// <li>
     /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p></li>
@@ -260,6 +266,8 @@ impl ListDevicesInputBuilder {
     /// <li>
     /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p></li>
     /// <li>
+    /// <p>DEVICE_TYPE: The device type. Valid values are PHYSICAL or VIRTUAL.</p></li>
+    /// <li>
     /// <p>MANUFACTURER: The device manufacturer (for example, Apple).</p></li>
     /// <li>
     /// <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are TRUE or FALSE.</p></li>
@@ -317,6 +325,8 @@ impl ListDevicesInputBuilder {
     /// <p>AVAILABILITY: The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p></li>
     /// <li>
     /// <p>FORM_FACTOR: The device form factor. Valid values are PHONE or TABLET.</p></li>
+    /// <li>
+    /// <p>DEVICE_TYPE: The device type. Valid values are PHYSICAL or VIRTUAL.</p></li>
     /// <li>
     /// <p>MANUFACTURER: The device manufacturer (for example, Apple).</p></li>
     /// <li>

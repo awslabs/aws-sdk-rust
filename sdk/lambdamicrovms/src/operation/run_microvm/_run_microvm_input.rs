@@ -17,6 +17,9 @@ pub struct RunMicrovmInput {
     pub idle_policy: ::std::option::Option<crate::types::IdlePolicy>,
     /// <p>The logging configuration for this MicroVM instance. Specify {"cloudWatch": {"logGroup": "..."}} to stream application logs to a custom CloudWatch log group, or {"disabled": {}} to turn off logging.</p>
     pub logging: ::std::option::Option<crate::types::Logging>,
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts your MicroVM configuration at rest. To use this operation, you must have permission to use the key. Specify the key ARN or the alias ARN.</p>
+    /// <p>If you don't specify a key, your MicroVM uses an Amazon Web Services owned key.</p>
+    pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Per-MicroVM initialization data delivered as the request body of the /run lifecycle hook. Use to pass tenant-specific configuration such as session IDs or secret references. Maximum: 16,384 bytes.</p>
     pub run_hook_payload: ::std::option::Option<::std::string::String>,
     /// <p>The maximum duration in seconds that the MicroVM can exist before being terminated by the platform. Valid range: 1–28,800 (8 hours).</p>
@@ -57,6 +60,11 @@ impl RunMicrovmInput {
     pub fn logging(&self) -> ::std::option::Option<&crate::types::Logging> {
         self.logging.as_ref()
     }
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts your MicroVM configuration at rest. To use this operation, you must have permission to use the key. Specify the key ARN or the alias ARN.</p>
+    /// <p>If you don't specify a key, your MicroVM uses an Amazon Web Services owned key.</p>
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+        self.kms_key_identifier.as_deref()
+    }
     /// <p>Per-MicroVM initialization data delivered as the request body of the /run lifecycle hook. Use to pass tenant-specific configuration such as session IDs or secret references. Maximum: 16,384 bytes.</p>
     pub fn run_hook_payload(&self) -> ::std::option::Option<&str> {
         self.run_hook_payload.as_deref()
@@ -80,6 +88,7 @@ impl ::std::fmt::Debug for RunMicrovmInput {
         formatter.field("execution_role_arn", &self.execution_role_arn);
         formatter.field("idle_policy", &self.idle_policy);
         formatter.field("logging", &self.logging);
+        formatter.field("kms_key_identifier", &self.kms_key_identifier);
         formatter.field("run_hook_payload", &"*** Sensitive Data Redacted ***");
         formatter.field("maximum_duration_in_seconds", &self.maximum_duration_in_seconds);
         formatter.field("client_token", &self.client_token);
@@ -104,6 +113,7 @@ pub struct RunMicrovmInputBuilder {
     pub(crate) execution_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) idle_policy: ::std::option::Option<crate::types::IdlePolicy>,
     pub(crate) logging: ::std::option::Option<crate::types::Logging>,
+    pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) run_hook_payload: ::std::option::Option<::std::string::String>,
     pub(crate) maximum_duration_in_seconds: ::std::option::Option<i32>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
@@ -220,6 +230,23 @@ impl RunMicrovmInputBuilder {
     pub fn get_logging(&self) -> &::std::option::Option<crate::types::Logging> {
         &self.logging
     }
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts your MicroVM configuration at rest. To use this operation, you must have permission to use the key. Specify the key ARN or the alias ARN.</p>
+    /// <p>If you don't specify a key, your MicroVM uses an Amazon Web Services owned key.</p>
+    pub fn kms_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts your MicroVM configuration at rest. To use this operation, you must have permission to use the key. Specify the key ARN or the alias ARN.</p>
+    /// <p>If you don't specify a key, your MicroVM uses an Amazon Web Services owned key.</p>
+    pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_identifier = input;
+        self
+    }
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts your MicroVM configuration at rest. To use this operation, you must have permission to use the key. Specify the key ARN or the alias ARN.</p>
+    /// <p>If you don't specify a key, your MicroVM uses an Amazon Web Services owned key.</p>
+    pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_identifier
+    }
     /// <p>Per-MicroVM initialization data delivered as the request body of the /run lifecycle hook. Use to pass tenant-specific configuration such as session IDs or secret references. Maximum: 16,384 bytes.</p>
     pub fn run_hook_payload(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.run_hook_payload = ::std::option::Option::Some(input.into());
@@ -272,6 +299,7 @@ impl RunMicrovmInputBuilder {
             execution_role_arn: self.execution_role_arn,
             idle_policy: self.idle_policy,
             logging: self.logging,
+            kms_key_identifier: self.kms_key_identifier,
             run_hook_payload: self.run_hook_payload,
             maximum_duration_in_seconds: self.maximum_duration_in_seconds,
             client_token: self.client_token,
@@ -288,6 +316,7 @@ impl ::std::fmt::Debug for RunMicrovmInputBuilder {
         formatter.field("execution_role_arn", &self.execution_role_arn);
         formatter.field("idle_policy", &self.idle_policy);
         formatter.field("logging", &self.logging);
+        formatter.field("kms_key_identifier", &self.kms_key_identifier);
         formatter.field("run_hook_payload", &"*** Sensitive Data Redacted ***");
         formatter.field("maximum_duration_in_seconds", &self.maximum_duration_in_seconds);
         formatter.field("client_token", &self.client_token);

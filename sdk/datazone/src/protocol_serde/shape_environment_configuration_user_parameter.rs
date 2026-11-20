@@ -6,26 +6,29 @@ pub fn ser_environment_configuration_user_parameter(
     if let Some(var_1) = &input.environment_id {
         object.key("environmentId").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.environment_resolved_account {
+    if let Some(var_2) = &input.environment_blueprint_id {
+        object.key("environmentBlueprintId").string(var_2.as_str());
+    }
+    if let Some(var_3) = &input.environment_resolved_account {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("environmentResolvedAccount").start_object();
-        crate::protocol_serde::shape_environment_resolved_account::ser_environment_resolved_account(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("environmentResolvedAccount").start_object();
+        crate::protocol_serde::shape_environment_resolved_account::ser_environment_resolved_account(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.environment_configuration_name {
-        object.key("environmentConfigurationName").string(var_4.as_str());
+    if let Some(var_5) = &input.environment_configuration_name {
+        object.key("environmentConfigurationName").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.environment_parameters {
-        let mut array_6 = object.key("environmentParameters").start_array();
-        for item_7 in var_5 {
+    if let Some(var_6) = &input.environment_parameters {
+        let mut array_7 = object.key("environmentParameters").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_environment_parameter::ser_environment_parameter(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_environment_parameter::ser_environment_parameter(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
     Ok(())
 }
@@ -54,6 +57,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "environmentId" => {
                             builder = builder.set_environment_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "environmentBlueprintId" => {
+                            builder = builder.set_environment_blueprint_id(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

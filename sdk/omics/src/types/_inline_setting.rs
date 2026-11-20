@@ -18,7 +18,7 @@ pub struct InlineSetting {
     pub output_bucket_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>Per-run Amazon Web Services tags. Merged with <code>defaultRunSetting.runTags</code>; values in this object take precedence when keys overlap.</p>
     pub run_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
-    /// <p>Per-run engine-specific settings. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles). Overrides <code>defaultRunSetting.engineSettings</code> for this run.</p>
+    /// <p>Per-run engine-specific settings. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles, Nextflow runtime configuration). Overrides <code>defaultRunSetting.engineSettings</code> for this run.</p>
     pub engine_settings: ::std::option::Option<::aws_smithy_types::Document>,
 }
 impl InlineSetting {
@@ -51,7 +51,7 @@ impl InlineSetting {
     pub fn run_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.run_tags.as_ref()
     }
-    /// <p>Per-run engine-specific settings. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles). Overrides <code>defaultRunSetting.engineSettings</code> for this run.</p>
+    /// <p>Per-run engine-specific settings. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles, Nextflow runtime configuration). Overrides <code>defaultRunSetting.engineSettings</code> for this run.</p>
     pub fn engine_settings(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.engine_settings.as_ref()
     }
@@ -182,17 +182,17 @@ impl InlineSettingBuilder {
     pub fn get_run_tags(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.run_tags
     }
-    /// <p>Per-run engine-specific settings. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles). Overrides <code>defaultRunSetting.engineSettings</code> for this run.</p>
+    /// <p>Per-run engine-specific settings. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles, Nextflow runtime configuration). Overrides <code>defaultRunSetting.engineSettings</code> for this run.</p>
     pub fn engine_settings(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.engine_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Per-run engine-specific settings. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles). Overrides <code>defaultRunSetting.engineSettings</code> for this run.</p>
+    /// <p>Per-run engine-specific settings. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles, Nextflow runtime configuration). Overrides <code>defaultRunSetting.engineSettings</code> for this run.</p>
     pub fn set_engine_settings(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.engine_settings = input;
         self
     }
-    /// <p>Per-run engine-specific settings. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles). Overrides <code>defaultRunSetting.engineSettings</code> for this run.</p>
+    /// <p>Per-run engine-specific settings. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles, Nextflow runtime configuration). Overrides <code>defaultRunSetting.engineSettings</code> for this run.</p>
     pub fn get_engine_settings(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.engine_settings
     }

@@ -87,6 +87,17 @@ static CAPTIONSELECTORSETTINGS_MEMBER_SMART_SUBTITLE_SOURCE_SETTINGS: ::aws_smit
     7,
 )
 .with_json_name("smartSubtitleSourceSettings");
+static CAPTIONSELECTORSETTINGS_MEMBER_WEBVTT_SOURCE_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.medialive#CaptionSelectorSettings$WebvttSourceSettings",
+        "com.amazonaws.medialive",
+        "CaptionSelectorSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "WebvttSourceSettings",
+    8,
+)
+.with_json_name("webvttSourceSettings");
 static CAPTIONSELECTORSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.medialive#CaptionSelectorSettings",
@@ -103,6 +114,7 @@ static CAPTIONSELECTORSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::
         &CAPTIONSELECTORSETTINGS_MEMBER_SCTE27_SOURCE_SETTINGS,
         &CAPTIONSELECTORSETTINGS_MEMBER_TELETEXT_SOURCE_SETTINGS,
         &CAPTIONSELECTORSETTINGS_MEMBER_SMART_SUBTITLE_SOURCE_SETTINGS,
+        &CAPTIONSELECTORSETTINGS_MEMBER_WEBVTT_SOURCE_SETTINGS,
     ],
 );
 impl crate::types::CaptionSelectorSettings {
@@ -142,6 +154,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::CaptionSel
         }
         if let Some(ref val) = self.smart_subtitle_source_settings {
             ser.write_struct(&CAPTIONSELECTORSETTINGS_MEMBER_SMART_SUBTITLE_SOURCE_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.webvtt_source_settings {
+            ser.write_struct(&CAPTIONSELECTORSETTINGS_MEMBER_WEBVTT_SOURCE_SETTINGS, val)?;
         }
         Ok(())
     }
@@ -214,6 +229,13 @@ impl crate::types::builders::CaptionSelectorSettingsBuilder {
                         deser.read_null()?;
                     } else {
                         self.smart_subtitle_source_settings = Some(crate::types::SmartSubtitleSourceSettings::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.webvtt_source_settings = Some(crate::types::WebvttSourceSettings::deserialize(deser)?);
                     }
                 }
                 _ => {}

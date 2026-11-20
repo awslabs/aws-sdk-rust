@@ -18,8 +18,8 @@ pub fn ser_put_attachment_input_input(
     if let Some(var_5) = &input.content {
         object.key("Content").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.form_type_id {
-        object.key("FormTypeId").string(var_6.as_str());
+    if let Some(var_6) = &input.form_type_identifier {
+        object.key("FormTypeIdentifier").string(var_6.as_str());
     }
     if let Some(var_7) = &input.client_token {
         object.key("ClientToken").string(var_7.as_str());

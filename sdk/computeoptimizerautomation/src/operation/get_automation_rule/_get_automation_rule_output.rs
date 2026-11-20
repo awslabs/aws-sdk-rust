@@ -17,7 +17,7 @@ pub struct GetAutomationRuleOutput {
     pub rule_revision: ::std::option::Option<i64>,
     /// <p>The 12-digit Amazon Web Services account ID that owns this automation rule.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
-    /// <p>Configuration settings for organization-wide automation rules.</p>
+    /// <p>Configuration settings that define the scope of an organization-wide automation rule. Each organizational unit (OU) list can contain up to 150 OUs or organization roots, and each account list can contain up to 50 accounts. Each included OU or organization root must have an effective organization rule mode of <code>AnyAllowed</code>. Exclusions take precedence over inclusions. An account that is in an included OU and is also excluded is excluded. The rule doesn't apply to the management account when the account is reached through an OU or the organization root.</p>
     pub organization_configuration: ::std::option::Option<crate::types::OrganizationConfiguration>,
     /// <p>A string representation of a decimal number between 0 and 1 (having up to 30 digits after the decimal point) that determines the priority of the rule.</p>
     pub priority: ::std::option::Option<::std::string::String>,
@@ -66,7 +66,7 @@ impl GetAutomationRuleOutput {
     pub fn account_id(&self) -> ::std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>Configuration settings for organization-wide automation rules.</p>
+    /// <p>Configuration settings that define the scope of an organization-wide automation rule. Each organizational unit (OU) list can contain up to 150 OUs or organization roots, and each account list can contain up to 50 accounts. Each included OU or organization root must have an effective organization rule mode of <code>AnyAllowed</code>. Exclusions take precedence over inclusions. An account that is in an included OU and is also excluded is excluded. The rule doesn't apply to the management account when the account is reached through an OU or the organization root.</p>
     pub fn organization_configuration(&self) -> ::std::option::Option<&crate::types::OrganizationConfiguration> {
         self.organization_configuration.as_ref()
     }
@@ -240,17 +240,17 @@ impl GetAutomationRuleOutputBuilder {
     pub fn get_account_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.account_id
     }
-    /// <p>Configuration settings for organization-wide automation rules.</p>
+    /// <p>Configuration settings that define the scope of an organization-wide automation rule. Each organizational unit (OU) list can contain up to 150 OUs or organization roots, and each account list can contain up to 50 accounts. Each included OU or organization root must have an effective organization rule mode of <code>AnyAllowed</code>. Exclusions take precedence over inclusions. An account that is in an included OU and is also excluded is excluded. The rule doesn't apply to the management account when the account is reached through an OU or the organization root.</p>
     pub fn organization_configuration(mut self, input: crate::types::OrganizationConfiguration) -> Self {
         self.organization_configuration = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Configuration settings for organization-wide automation rules.</p>
+    /// <p>Configuration settings that define the scope of an organization-wide automation rule. Each organizational unit (OU) list can contain up to 150 OUs or organization roots, and each account list can contain up to 50 accounts. Each included OU or organization root must have an effective organization rule mode of <code>AnyAllowed</code>. Exclusions take precedence over inclusions. An account that is in an included OU and is also excluded is excluded. The rule doesn't apply to the management account when the account is reached through an OU or the organization root.</p>
     pub fn set_organization_configuration(mut self, input: ::std::option::Option<crate::types::OrganizationConfiguration>) -> Self {
         self.organization_configuration = input;
         self
     }
-    /// <p>Configuration settings for organization-wide automation rules.</p>
+    /// <p>Configuration settings that define the scope of an organization-wide automation rule. Each organizational unit (OU) list can contain up to 150 OUs or organization roots, and each account list can contain up to 50 accounts. Each included OU or organization root must have an effective organization rule mode of <code>AnyAllowed</code>. Exclusions take precedence over inclusions. An account that is in an included OU and is also excluded is excluded. The rule doesn't apply to the management account when the account is reached through an OU or the organization root.</p>
     pub fn get_organization_configuration(&self) -> &::std::option::Option<crate::types::OrganizationConfiguration> {
         &self.organization_configuration
     }

@@ -45,6 +45,9 @@ pub struct InvokeModelWithResponseStreamInput {
     pub service_tier: ::std::option::Option<crate::types::ServiceTierType>,
     /// <p>Key-value pairs that you can use to filter invocation logs.</p>
     pub request_metadata: ::std::option::Option<::std::string::String>,
+    /// <p>The ID or Amazon Resource Name (ARN) of the project to use for this invocation. The project must be active and belong to your AWS account and the AWS Region to which you send the request. Specify <code>default</code> or omit this field to use the default project for your account.</p>
+    /// <p>For a non-default project, the inference target must resolve to a foundation model or system-defined inference profile. Application inference profiles don't support non-default projects.</p>
+    pub project_identifier: ::std::option::Option<::std::string::String>,
 }
 impl InvokeModelWithResponseStreamInput {
     /// <p>The prompt and inference parameters in the format specified in the <code>contentType</code> in the header. You must provide the body in JSON format. To see the format and content of the request and response bodies for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run inference</a> in the Bedrock User Guide.</p>
@@ -109,6 +112,11 @@ impl InvokeModelWithResponseStreamInput {
     pub fn request_metadata(&self) -> ::std::option::Option<&str> {
         self.request_metadata.as_deref()
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the project to use for this invocation. The project must be active and belong to your AWS account and the AWS Region to which you send the request. Specify <code>default</code> or omit this field to use the default project for your account.</p>
+    /// <p>For a non-default project, the inference target must resolve to a foundation model or system-defined inference profile. Application inference profiles don't support non-default projects.</p>
+    pub fn project_identifier(&self) -> ::std::option::Option<&str> {
+        self.project_identifier.as_deref()
+    }
 }
 impl ::std::fmt::Debug for InvokeModelWithResponseStreamInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -123,6 +131,7 @@ impl ::std::fmt::Debug for InvokeModelWithResponseStreamInput {
         formatter.field("performance_config_latency", &self.performance_config_latency);
         formatter.field("service_tier", &self.service_tier);
         formatter.field("request_metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("project_identifier", &self.project_identifier);
         formatter.finish()
     }
 }
@@ -147,6 +156,7 @@ pub struct InvokeModelWithResponseStreamInputBuilder {
     pub(crate) performance_config_latency: ::std::option::Option<crate::types::PerformanceConfigLatency>,
     pub(crate) service_tier: ::std::option::Option<crate::types::ServiceTierType>,
     pub(crate) request_metadata: ::std::option::Option<::std::string::String>,
+    pub(crate) project_identifier: ::std::option::Option<::std::string::String>,
 }
 impl InvokeModelWithResponseStreamInputBuilder {
     /// <p>The prompt and inference parameters in the format specified in the <code>contentType</code> in the header. You must provide the body in JSON format. To see the format and content of the request and response bodies for different models, refer to <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference parameters</a>. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/api-methods-run.html">Run inference</a> in the Bedrock User Guide.</p>
@@ -356,6 +366,23 @@ impl InvokeModelWithResponseStreamInputBuilder {
     pub fn get_request_metadata(&self) -> &::std::option::Option<::std::string::String> {
         &self.request_metadata
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the project to use for this invocation. The project must be active and belong to your AWS account and the AWS Region to which you send the request. Specify <code>default</code> or omit this field to use the default project for your account.</p>
+    /// <p>For a non-default project, the inference target must resolve to a foundation model or system-defined inference profile. Application inference profiles don't support non-default projects.</p>
+    pub fn project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the project to use for this invocation. The project must be active and belong to your AWS account and the AWS Region to which you send the request. Specify <code>default</code> or omit this field to use the default project for your account.</p>
+    /// <p>For a non-default project, the inference target must resolve to a foundation model or system-defined inference profile. Application inference profiles don't support non-default projects.</p>
+    pub fn set_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.project_identifier = input;
+        self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the project to use for this invocation. The project must be active and belong to your AWS account and the AWS Region to which you send the request. Specify <code>default</code> or omit this field to use the default project for your account.</p>
+    /// <p>For a non-default project, the inference target must resolve to a foundation model or system-defined inference profile. Application inference profiles don't support non-default projects.</p>
+    pub fn get_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_identifier
+    }
     /// Consumes the builder and constructs a [`InvokeModelWithResponseStreamInput`](crate::operation::invoke_model_with_response_stream::InvokeModelWithResponseStreamInput).
     pub fn build(
         self,
@@ -374,6 +401,7 @@ impl InvokeModelWithResponseStreamInputBuilder {
             performance_config_latency: self.performance_config_latency,
             service_tier: self.service_tier,
             request_metadata: self.request_metadata,
+            project_identifier: self.project_identifier,
         })
     }
 }
@@ -390,6 +418,7 @@ impl ::std::fmt::Debug for InvokeModelWithResponseStreamInputBuilder {
         formatter.field("performance_config_latency", &self.performance_config_latency);
         formatter.field("service_tier", &self.service_tier);
         formatter.field("request_metadata", &"*** Sensitive Data Redacted ***");
+        formatter.field("project_identifier", &self.project_identifier);
         formatter.finish()
     }
 }

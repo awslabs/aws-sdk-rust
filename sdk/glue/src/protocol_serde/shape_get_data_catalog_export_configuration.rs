@@ -21,6 +21,23 @@ pub fn de_get_data_catalog_export_configuration_http_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedException" => {
+            crate::operation::get_data_catalog_export_configuration::GetDataCatalogExportConfigurationError::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::types::error::builders::AccessDeniedExceptionBuilder::default();
+                    output = crate::protocol_serde::shape_access_denied_exception::de_access_denied_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::get_data_catalog_export_configuration::GetDataCatalogExportConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         "EntityNotFoundException" => {
             crate::operation::get_data_catalog_export_configuration::GetDataCatalogExportConfigurationError::EntityNotFoundException({
                 #[allow(unused_mut)]
@@ -135,32 +152,6 @@ pub(crate) fn de_get_data_catalog_export_configuration(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "ExportSetting" => {
-                    builder = builder.set_export_setting(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::ExportSetting::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "Status" => {
-                    builder = builder.set_status(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::ExportStatus::from(u.as_ref())))
-                            .transpose()?,
-                    );
-                }
-                "EncryptionConfiguration" => {
-                    builder = builder.set_encryption_configuration(
-                        crate::protocol_serde::shape_export_encryption_configuration::de_export_encryption_configuration(tokens, _value, depth + 1)?,
-                    );
-                }
-                "S3TableBucketArn" => {
-                    builder = builder.set_s3_table_bucket_arn(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                            .transpose()?,
-                    );
-                }
                 "CreatedAt" => {
                     builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
@@ -171,6 +162,18 @@ pub(crate) fn de_get_data_catalog_export_configuration(
                     builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                         tokens.next(),
                         ::aws_smithy_types::date_time::Format::EpochSeconds,
+                    )?);
+                }
+                "S3TablesConfiguration" => {
+                    builder = builder.set_s3_tables_configuration(
+                        crate::protocol_serde::shape_s3_tables_configuration_result::de_s3_tables_configuration_result(tokens, _value, depth + 1)?,
+                    );
+                }
+                "Assets" => {
+                    builder = builder.set_assets(crate::protocol_serde::shape_assets_export_result::de_assets_export_result(
+                        tokens,
+                        _value,
+                        depth + 1,
                     )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -63,6 +63,15 @@ where
                                 depth + 1,
                             )?);
                         }
+                        "signatureAgentCard" => {
+                            builder = builder.set_signature_agent_card(
+                                crate::protocol_serde::shape_signature_agent_card_descriptor::de_signature_agent_card_descriptor(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

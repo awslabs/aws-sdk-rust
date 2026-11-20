@@ -165,6 +165,13 @@ pub(crate) fn de_get_scope(
                             .transpose()?,
                     );
                 }
+                "specializedScopeType" => {
+                    builder = builder.set_specialized_scope_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::SpecializedScopeType::from(u.as_ref())))
+                            .transpose()?,
+                    );
+                }
                 "status" => {
                     builder = builder.set_status(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

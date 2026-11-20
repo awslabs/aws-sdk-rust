@@ -16,6 +16,9 @@ pub fn ser_update_firewall_delete_protection_input_input(
     if let Some(var_4) = &input.delete_protection {
         encoder.str("DeleteProtection").boolean(*var_4);
     }
+    if let Some(var_5) = &input.firewall_type {
+        encoder.str("FirewallType").str(var_5.as_str());
+    }
     encoder.end();
     Ok(())
 }

@@ -4,31 +4,31 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum OfferTerm {
-    /// <p>Defines a Bring Your Own License (BYOL) pricing term, where buyers use their existing license for the product.</p>
+    /// <p>Describes a Bring Your Own License (BYOL) pricing term. With this term, you use your existing license for the product.</p>
     ByolPricingTerm(crate::types::ByolPricingTerm),
-    /// <p>Defines a configurable upfront pricing term with selectable rate cards, where buyers choose from predefined pricing configurations.</p>
+    /// <p>Describes a configurable upfront pricing term with selectable rate cards. You choose from predefined pricing configurations.</p>
     ConfigurableUpfrontPricingTerm(crate::types::ConfigurableUpfrontPricingTerm),
-    /// <p>Defines a fixed upfront pricing term with a pre-paid amount and granted entitlements.</p>
+    /// <p>Describes a fixed upfront pricing term with a pre-paid amount and granted entitlements.</p>
     FixedUpfrontPricingTerm(crate::types::FixedUpfrontPricingTerm),
-    /// <p>Defines a free trial pricing term that enables customers to try the product before purchasing.</p>
+    /// <p>Describes a free trial pricing term. With this term, you can try the product before you purchase it.</p>
     FreeTrialPricingTerm(crate::types::FreeTrialPricingTerm),
-    /// <p>Defines a legal term containing documents proposed to buyers, such as EULAs and data subscription agreements.</p>
+    /// <p>Describes a legal term containing documents proposed to you, such as End User License Agreements (EULAs) and data subscription agreements.</p>
     LegalTerm(crate::types::LegalTerm),
     /// <p>A net payment term.</p>
     NetPaymentTerm(crate::types::NetPaymentTerm),
-    /// <p>Defines a payment schedule term with installment payments at specified dates.</p>
+    /// <p>Describes a payment schedule term with installment payments at specified dates.</p>
     PaymentScheduleTerm(crate::types::PaymentScheduleTerm),
-    /// <p>Defines a recurring payment term with fixed charges at regular billing intervals.</p>
+    /// <p>Describes a recurring payment term with fixed charges at regular billing intervals.</p>
     RecurringPaymentTerm(crate::types::RecurringPaymentTerm),
-    /// <p>Defines a renewal term that enables automatic agreement renewal.</p>
+    /// <p>Describes a renewal term that renews the agreement automatically.</p>
     RenewalTerm(crate::types::RenewalTerm),
-    /// <p>Defines a support term that includes the refund policy for the offer.</p>
+    /// <p>Describes a support term that includes the refund policy for the offer.</p>
     SupportTerm(crate::types::SupportTerm),
-    /// <p>Defines a usage-based pricing term (typically pay-as-you-go), where buyers are charged based on product usage.</p>
+    /// <p>Describes a usage-based pricing term, typically pay-as-you-go. You are charged based on your use of the product.</p>
     UsageBasedPricingTerm(crate::types::UsageBasedPricingTerm),
-    /// <p>Defines a validity term that specifies the duration or date range of an agreement.</p>
+    /// <p>Describes a validity term that specifies the duration or date range of an agreement.</p>
     ValidityTerm(crate::types::ValidityTerm),
-    /// <p>Defines a variable payment term with a maximum total charge amount.</p>
+    /// <p>Describes a variable payment term with a maximum total charge amount.</p>
     VariablePaymentTerm(crate::types::VariablePaymentTerm),
     /// The `Unknown` variant represents cases where new union variant was received. Consider upgrading the SDK to the latest available version.
     /// An unknown enum variant

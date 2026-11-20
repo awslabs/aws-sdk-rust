@@ -13,9 +13,13 @@ pub use crate::types::error::_service_quota_exceeded_exception::ServiceQuotaExce
 
 pub use crate::types::error::_conflict_exception::ConflictException;
 
+pub use crate::types::error::_dependency_exception::DependencyException;
+
 mod _access_denied_exception;
 
 mod _conflict_exception;
+
+mod _dependency_exception;
 
 mod _internal_server_exception;
 

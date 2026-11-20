@@ -149,6 +149,11 @@ where
                                 crate::protocol_serde::shape_node_lifecycle_actions::de_node_lifecycle_actions(tokens, _value, depth + 1)?,
                             );
                         }
+                        "instanceHealthChecks" => {
+                            builder = builder.set_instance_health_checks(
+                                crate::protocol_serde::shape_instance_health_checks::de_instance_health_checks(tokens, _value, depth + 1)?,
+                            );
+                        }
                         "errorInfo" => {
                             builder = builder.set_error_info(crate::protocol_serde::shape_error_info_list::de_error_info_list(
                                 tokens,

@@ -45,5 +45,13 @@ pub fn ser_create_relationship_input_input(
         crate::protocol_serde::shape_support_plan::ser_support_plan(&mut object_14, var_13)?;
         object_14.finish();
     }
+    if let Some(var_15) = &input.account_scope {
+        object.key("accountScope").string(var_15.as_str());
+    }
+    if let Some(var_16) = &input.start_date {
+        object
+            .key("startDate")
+            .date_time(var_16, ::aws_smithy_types::date_time::Format::DateTime)?;
+    }
     Ok(())
 }

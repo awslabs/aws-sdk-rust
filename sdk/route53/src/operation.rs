@@ -130,6 +130,9 @@ pub mod get_health_check_status;
 /// Types for the `GetHostedZone` operation.
 pub mod get_hosted_zone;
 
+/// Types for the `GetHostedZoneChangeBatch` operation.
+pub mod get_hosted_zone_change_batch;
+
 /// Types for the `GetHostedZoneCount` operation.
 pub mod get_hosted_zone_count;
 
@@ -175,6 +178,9 @@ pub mod list_health_checks;
 /// Types for the `ListHealthChecksBySource` operation.
 pub mod list_health_checks_by_source;
 
+/// Types for the `ListHostedZoneChangeBatches` operation.
+pub mod list_hosted_zone_change_batches;
+
 /// Types for the `ListHostedZones` operation.
 pub mod list_hosted_zones;
 
@@ -186,6 +192,9 @@ pub mod list_hosted_zones_by_vpc;
 
 /// Types for the `ListQueryLoggingConfigs` operation.
 pub mod list_query_logging_configs;
+
+/// Types for the `ListResourceRecordSetChanges` operation.
+pub mod list_resource_record_set_changes;
 
 /// Types for the `ListResourceRecordSetProtections` operation.
 pub mod list_resource_record_set_protections;
@@ -231,6 +240,9 @@ pub mod update_hosted_zone_comment;
 
 /// Types for the `UpdateHostedZoneFeatures` operation.
 pub mod update_hosted_zone_features;
+
+/// Types for the `UpdateHostedZoneTier` operation.
+pub mod update_hosted_zone_tier;
 
 /// Types for the `UpdateTrafficPolicyComment` operation.
 pub mod update_traffic_policy_comment;

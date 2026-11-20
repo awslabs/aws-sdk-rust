@@ -159,11 +159,9 @@ pub use crate::types::_resource_share_type::ResourceShareType;
 
 pub use crate::types::_data_catalog_encryption_settings::DataCatalogEncryptionSettings;
 
-pub use crate::types::_export_setting::ExportSetting;
+pub use crate::types::_s3_tables_configuration_result::S3TablesConfigurationResult;
 
-pub use crate::types::_export_status::ExportStatus;
-
-pub use crate::types::_export_encryption_configuration::ExportEncryptionConfiguration;
+pub use crate::types::_assets_export_result::AssetsExportResult;
 
 pub use crate::types::_data_quality_model_status::DataQualityModelStatus;
 
@@ -258,6 +256,10 @@ pub use crate::types::_timestamp_filter::TimestampFilter;
 pub use crate::types::_data_quality_configuration_v2::DataQualityConfigurationV2;
 
 pub use crate::types::_data_quality_telemetry::DataQualityTelemetry;
+
+pub use crate::types::_s3_tables_configuration::S3TablesConfiguration;
+
+pub use crate::types::_assets_export::AssetsExport;
 
 pub use crate::types::_inclusion_annotation_value::InclusionAnnotationValue;
 
@@ -467,7 +469,7 @@ pub use crate::types::_asset_form_entry::AssetFormEntry;
 
 pub use crate::types::_iterable_form_entry::IterableFormEntry;
 
-pub use crate::types::_asset_type_form_reference::AssetTypeFormReference;
+pub use crate::types::_asset_type_form_output::AssetTypeFormOutput;
 
 pub use crate::types::_blueprint_status::BlueprintStatus;
 
@@ -514,6 +516,12 @@ pub use crate::types::_database_attributes::DatabaseAttributes;
 pub use crate::types::_encryption_at_rest::EncryptionAtRest;
 
 pub use crate::types::_connection_password_encryption::ConnectionPasswordEncryption;
+
+pub use crate::types::_export_encryption_configuration::ExportEncryptionConfiguration;
+
+pub use crate::types::_export_setting::ExportSetting;
+
+pub use crate::types::_s3_tables_export_state::S3TablesExportState;
 
 pub use crate::types::_statistic_model_result::StatisticModelResult;
 
@@ -654,6 +662,8 @@ pub use crate::types::_schema_version_list_item::SchemaVersionListItem;
 pub use crate::types::_usage_profile_definition::UsageProfileDefinition;
 
 pub use crate::types::_data_quality_engine::DataQualityEngine;
+
+pub use crate::types::_asset_form_input::AssetFormInput;
 
 pub use crate::types::_metadata_info::MetadataInfo;
 
@@ -947,6 +957,8 @@ pub use crate::types::_last_crawl_status::LastCrawlStatus;
 
 pub use crate::types::_catalog_encryption_mode::CatalogEncryptionMode;
 
+pub use crate::types::_export_status::ExportStatus;
+
 pub use crate::types::_data_quality_rule_result_status::DataQualityRuleResultStatus;
 
 pub use crate::types::_metric_based_observation::MetricBasedObservation;
@@ -1007,7 +1019,7 @@ pub use crate::types::_jwt_bearer_properties::JwtBearerProperties;
 
 pub use crate::types::_connector_authorization_code_properties::ConnectorAuthorizationCodeProperties;
 
-pub use crate::types::_search_filter_operator::SearchFilterOperator;
+pub use crate::types::_search_filter_comparator::SearchFilterComparator;
 
 pub use crate::types::_search_filter_value::SearchFilterValue;
 
@@ -1305,9 +1317,15 @@ mod _apply_mapping;
 
 mod _asset_form_entry;
 
-mod _asset_type_form_reference;
+mod _asset_form_input;
+
+mod _asset_type_form_output;
 
 mod _asset_type_item;
+
+mod _assets_export;
+
+mod _assets_export_result;
 
 mod _athena_connector_source;
 
@@ -2255,6 +2273,12 @@ mod _s3_parquet_source;
 
 mod _s3_source_additional_options;
 
+mod _s3_tables_configuration;
+
+mod _s3_tables_configuration_result;
+
+mod _s3_tables_export_state;
+
 mod _s3_target;
 
 mod _schedule;
@@ -2289,7 +2313,7 @@ mod _search_attribute_filter;
 
 mod _search_filter_clause;
 
-mod _search_filter_operator;
+mod _search_filter_comparator;
 
 mod _search_filter_value;
 

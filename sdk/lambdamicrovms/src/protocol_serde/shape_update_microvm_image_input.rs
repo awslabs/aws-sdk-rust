@@ -70,23 +70,26 @@ pub fn ser_update_microvm_image_input_input(
         crate::protocol_serde::shape_hooks::ser_hooks(&mut object_23, var_22)?;
         object_23.finish();
     }
-    if let Some(var_24) = &input.logging {
-        #[allow(unused_mut)]
-        let mut object_25 = object.key("logging").start_object();
-        crate::protocol_serde::shape_logging::ser_logging(&mut object_25, var_24)?;
-        object_25.finish();
+    if let Some(var_24) = &input.kms_key_identifier {
+        object.key("kmsKeyIdentifier").string(var_24.as_str());
     }
-    if let Some(var_26) = &input.resources {
-        let mut array_27 = object.key("resources").start_array();
-        for item_28 in var_26 {
+    if let Some(var_25) = &input.logging {
+        #[allow(unused_mut)]
+        let mut object_26 = object.key("logging").start_object();
+        crate::protocol_serde::shape_logging::ser_logging(&mut object_26, var_25)?;
+        object_26.finish();
+    }
+    if let Some(var_27) = &input.resources {
+        let mut array_28 = object.key("resources").start_array();
+        for item_29 in var_27 {
             {
                 #[allow(unused_mut)]
-                let mut object_29 = array_27.value().start_object();
-                crate::protocol_serde::shape_resources::ser_resources(&mut object_29, item_28)?;
-                object_29.finish();
+                let mut object_30 = array_28.value().start_object();
+                crate::protocol_serde::shape_resources::ser_resources(&mut object_30, item_29)?;
+                object_30.finish();
             }
         }
-        array_27.finish();
+        array_28.finish();
     }
     Ok(())
 }

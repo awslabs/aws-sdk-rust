@@ -15,6 +15,7 @@
 ///     ResourceType::Apigw => { /* ... */ },
 ///     ResourceType::Cfd => { /* ... */ },
 ///     ResourceType::Eip => { /* ... */ },
+///     ResourceType::Vpc => { /* ... */ },
 ///     ResourceType::Clb => { /* ... */ },
 ///     ResourceType::Alb => { /* ... */ },
 ///     ResourceType::ShieldProtection => { /* ... */ },
@@ -55,6 +56,8 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Eip,
     #[allow(missing_docs)] // documentation missing in model
+    Vpc,
+    #[allow(missing_docs)] // documentation missing in model
     Clb,
     #[allow(missing_docs)] // documentation missing in model
     Alb,
@@ -74,6 +77,7 @@ impl ::std::convert::From<&str> for ResourceType {
             "AWS::ApiGateway::Stage" => ResourceType::Apigw,
             "AWS::CloudFront::Distribution" => ResourceType::Cfd,
             "AWS::EC2::EIP" => ResourceType::Eip,
+            "AWS::EC2::VPC" => ResourceType::Vpc,
             "AWS::ElasticLoadBalancing::LoadBalancer" => ResourceType::Clb,
             "AWS::ElasticLoadBalancingV2::LoadBalancer::application" => ResourceType::Alb,
             "AWS::Shield::Protection" => ResourceType::ShieldProtection,
@@ -97,6 +101,7 @@ impl ResourceType {
             ResourceType::Apigw => "AWS::ApiGateway::Stage",
             ResourceType::Cfd => "AWS::CloudFront::Distribution",
             ResourceType::Eip => "AWS::EC2::EIP",
+            ResourceType::Vpc => "AWS::EC2::VPC",
             ResourceType::Clb => "AWS::ElasticLoadBalancing::LoadBalancer",
             ResourceType::Alb => "AWS::ElasticLoadBalancingV2::LoadBalancer::application",
             ResourceType::ShieldProtection => "AWS::Shield::Protection",
@@ -111,6 +116,7 @@ impl ResourceType {
             "AWS::ApiGateway::Stage",
             "AWS::CloudFront::Distribution",
             "AWS::EC2::EIP",
+            "AWS::EC2::VPC",
             "AWS::ElasticLoadBalancing::LoadBalancer",
             "AWS::ElasticLoadBalancingV2::LoadBalancer::application",
             "AWS::Shield::Protection",
@@ -142,6 +148,7 @@ impl ::std::fmt::Display for ResourceType {
             ResourceType::Apigw => write!(f, "AWS::ApiGateway::Stage"),
             ResourceType::Cfd => write!(f, "AWS::CloudFront::Distribution"),
             ResourceType::Eip => write!(f, "AWS::EC2::EIP"),
+            ResourceType::Vpc => write!(f, "AWS::EC2::VPC"),
             ResourceType::Clb => write!(f, "AWS::ElasticLoadBalancing::LoadBalancer"),
             ResourceType::Alb => write!(f, "AWS::ElasticLoadBalancingV2::LoadBalancer::application"),
             ResourceType::ShieldProtection => write!(f, "AWS::Shield::Protection"),

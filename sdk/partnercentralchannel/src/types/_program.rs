@@ -14,6 +14,7 @@
 /// match program {
 ///     Program::Distribution => { /* ... */ },
 ///     Program::DistributionSeller => { /* ... */ },
+///     Program::ManagedServicesProvider => { /* ... */ },
 ///     Program::SolutionProvider => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -48,6 +49,8 @@ pub enum Program {
     #[allow(missing_docs)] // documentation missing in model
     DistributionSeller,
     #[allow(missing_docs)] // documentation missing in model
+    ManagedServicesProvider,
+    #[allow(missing_docs)] // documentation missing in model
     SolutionProvider,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -58,6 +61,7 @@ impl ::std::convert::From<&str> for Program {
         match s {
             "DISTRIBUTION" => Program::Distribution,
             "DISTRIBUTION_SELLER" => Program::DistributionSeller,
+            "MANAGED_SERVICES_PROVIDER" => Program::ManagedServicesProvider,
             "SOLUTION_PROVIDER" => Program::SolutionProvider,
             other => Program::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -76,13 +80,14 @@ impl Program {
         match self {
             Program::Distribution => "DISTRIBUTION",
             Program::DistributionSeller => "DISTRIBUTION_SELLER",
+            Program::ManagedServicesProvider => "MANAGED_SERVICES_PROVIDER",
             Program::SolutionProvider => "SOLUTION_PROVIDER",
             Program::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DISTRIBUTION", "DISTRIBUTION_SELLER", "SOLUTION_PROVIDER"]
+        &["DISTRIBUTION", "DISTRIBUTION_SELLER", "MANAGED_SERVICES_PROVIDER", "SOLUTION_PROVIDER"]
     }
 }
 impl ::std::convert::AsRef<str> for Program {
@@ -107,6 +112,7 @@ impl ::std::fmt::Display for Program {
         match self {
             Program::Distribution => write!(f, "DISTRIBUTION"),
             Program::DistributionSeller => write!(f, "DISTRIBUTION_SELLER"),
+            Program::ManagedServicesProvider => write!(f, "MANAGED_SERVICES_PROVIDER"),
             Program::SolutionProvider => write!(f, "SOLUTION_PROVIDER"),
             Program::Unknown(value) => write!(f, "{value}"),
         }

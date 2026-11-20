@@ -5,11 +5,21 @@
 pub struct GetInferenceProfileInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the inference profile.</p>
     pub inference_profile_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's trusted access program participation when determining whether to return a system-defined inference profile. The project must belong to your account in the same AWS Region and partition as the request.</p>
+    /// <p>If you omit this parameter or specify <code>default</code>, Amazon Bedrock uses your account's participation, including organization inheritance.</p>
+    /// <p>A project that doesn't exist or is archived causes a <code>ValidationException</code>. Specifying a project other than <code>default</code> for an application inference profile also causes a <code>ValidationException</code>.</p>
+    pub project_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetInferenceProfileInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the inference profile.</p>
     pub fn inference_profile_identifier(&self) -> ::std::option::Option<&str> {
         self.inference_profile_identifier.as_deref()
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's trusted access program participation when determining whether to return a system-defined inference profile. The project must belong to your account in the same AWS Region and partition as the request.</p>
+    /// <p>If you omit this parameter or specify <code>default</code>, Amazon Bedrock uses your account's participation, including organization inheritance.</p>
+    /// <p>A project that doesn't exist or is archived causes a <code>ValidationException</code>. Specifying a project other than <code>default</code> for an application inference profile also causes a <code>ValidationException</code>.</p>
+    pub fn project_identifier(&self) -> ::std::option::Option<&str> {
+        self.project_identifier.as_deref()
     }
 }
 impl GetInferenceProfileInput {
@@ -24,6 +34,7 @@ impl GetInferenceProfileInput {
 #[non_exhaustive]
 pub struct GetInferenceProfileInputBuilder {
     pub(crate) inference_profile_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) project_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetInferenceProfileInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the inference profile.</p>
@@ -41,6 +52,26 @@ impl GetInferenceProfileInputBuilder {
     pub fn get_inference_profile_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.inference_profile_identifier
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's trusted access program participation when determining whether to return a system-defined inference profile. The project must belong to your account in the same AWS Region and partition as the request.</p>
+    /// <p>If you omit this parameter or specify <code>default</code>, Amazon Bedrock uses your account's participation, including organization inheritance.</p>
+    /// <p>A project that doesn't exist or is archived causes a <code>ValidationException</code>. Specifying a project other than <code>default</code> for an application inference profile also causes a <code>ValidationException</code>.</p>
+    pub fn project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's trusted access program participation when determining whether to return a system-defined inference profile. The project must belong to your account in the same AWS Region and partition as the request.</p>
+    /// <p>If you omit this parameter or specify <code>default</code>, Amazon Bedrock uses your account's participation, including organization inheritance.</p>
+    /// <p>A project that doesn't exist or is archived causes a <code>ValidationException</code>. Specifying a project other than <code>default</code> for an application inference profile also causes a <code>ValidationException</code>.</p>
+    pub fn set_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.project_identifier = input;
+        self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's trusted access program participation when determining whether to return a system-defined inference profile. The project must belong to your account in the same AWS Region and partition as the request.</p>
+    /// <p>If you omit this parameter or specify <code>default</code>, Amazon Bedrock uses your account's participation, including organization inheritance.</p>
+    /// <p>A project that doesn't exist or is archived causes a <code>ValidationException</code>. Specifying a project other than <code>default</code> for an application inference profile also causes a <code>ValidationException</code>.</p>
+    pub fn get_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_identifier
+    }
     /// Consumes the builder and constructs a [`GetInferenceProfileInput`](crate::operation::get_inference_profile::GetInferenceProfileInput).
     pub fn build(
         self,
@@ -48,6 +79,7 @@ impl GetInferenceProfileInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::get_inference_profile::GetInferenceProfileInput {
             inference_profile_identifier: self.inference_profile_identifier,
+            project_identifier: self.project_identifier,
         })
     }
 }

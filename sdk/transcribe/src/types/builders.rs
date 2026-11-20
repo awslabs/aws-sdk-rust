@@ -35,6 +35,12 @@ pub use crate::types::_content_redaction::ContentRedactionBuilder;
 
 pub use crate::types::_subtitles::SubtitlesBuilder;
 
+pub use crate::types::_vocabulary_filter_settings::VocabularyFilterSettingsBuilder;
+
+pub use crate::types::_sync_output_configuration::SyncOutputConfigurationBuilder;
+
+pub use crate::types::_transcript_response::TranscriptResponseBuilder;
+
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_call_analytics_job_details::CallAnalyticsJobDetailsBuilder;
@@ -73,6 +79,12 @@ pub use crate::types::_language_id_settings::LanguageIdSettingsBuilder;
 
 pub use crate::types::_toxicity_detection_settings::ToxicityDetectionSettingsBuilder;
 
+pub use crate::types::_vocabulary_settings_entry::VocabularySettingsEntryBuilder;
+
+pub use crate::types::_transcribe_audio_metadata::TranscribeAudioMetadataBuilder;
+
+pub use crate::types::_transcribe_audio_results::TranscribeAudioResultsBuilder;
+
 pub use crate::types::_non_talk_time_filter::NonTalkTimeFilterBuilder;
 
 pub use crate::types::_interruption_filter::InterruptionFilterBuilder;
@@ -83,8 +95,18 @@ pub use crate::types::_sentiment_filter::SentimentFilterBuilder;
 
 pub use crate::types::_language_code_item::LanguageCodeItemBuilder;
 
+pub use crate::types::_vocabulary_filter_entry::VocabularyFilterEntryBuilder;
+
 pub use crate::types::_absolute_time_range::AbsoluteTimeRangeBuilder;
 
 pub use crate::types::_relative_time_range::RelativeTimeRangeBuilder;
 
 pub use crate::types::_call_analytics_skipped_feature::CallAnalyticsSkippedFeatureBuilder;
+
+pub use crate::types::_vocabulary_phrase::VocabularyPhraseBuilder;
+
+pub use crate::types::_sync_language_code_item::SyncLanguageCodeItemBuilder;
+
+pub use crate::types::_sync_item::SyncItemBuilder;
+
+pub use crate::types::_sync_redaction::SyncRedactionBuilder;

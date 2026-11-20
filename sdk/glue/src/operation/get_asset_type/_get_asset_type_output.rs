@@ -8,7 +8,7 @@ pub struct GetAssetTypeOutput {
     /// <p>The name of the asset type.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The forms that make up the asset type, keyed by form name.</p>
-    pub forms: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetTypeFormReference>>,
+    pub forms: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetTypeFormOutput>>,
     _request_id: Option<String>,
 }
 impl GetAssetTypeOutput {
@@ -21,7 +21,7 @@ impl GetAssetTypeOutput {
         self.name.as_deref()
     }
     /// <p>The forms that make up the asset type, keyed by form name.</p>
-    pub fn forms(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AssetTypeFormReference>> {
+    pub fn forms(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::AssetTypeFormOutput>> {
         self.forms.as_ref()
     }
 }
@@ -43,7 +43,7 @@ impl GetAssetTypeOutput {
 pub struct GetAssetTypeOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
-    pub(crate) forms: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetTypeFormReference>>,
+    pub(crate) forms: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetTypeFormOutput>>,
     _request_id: Option<String>,
 }
 impl GetAssetTypeOutputBuilder {
@@ -80,7 +80,7 @@ impl GetAssetTypeOutputBuilder {
     /// To override the contents of this collection use [`set_forms`](Self::set_forms).
     ///
     /// <p>The forms that make up the asset type, keyed by form name.</p>
-    pub fn forms(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AssetTypeFormReference) -> Self {
+    pub fn forms(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AssetTypeFormOutput) -> Self {
         let mut hash_map = self.forms.unwrap_or_default();
         hash_map.insert(k.into(), v);
         self.forms = ::std::option::Option::Some(hash_map);
@@ -89,13 +89,13 @@ impl GetAssetTypeOutputBuilder {
     /// <p>The forms that make up the asset type, keyed by form name.</p>
     pub fn set_forms(
         mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetTypeFormReference>>,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetTypeFormOutput>>,
     ) -> Self {
         self.forms = input;
         self
     }
     /// <p>The forms that make up the asset type, keyed by form name.</p>
-    pub fn get_forms(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetTypeFormReference>> {
+    pub fn get_forms(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetTypeFormOutput>> {
         &self.forms
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {

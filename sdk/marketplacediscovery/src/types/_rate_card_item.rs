@@ -10,12 +10,14 @@ pub struct RateCardItem {
     pub display_name: ::std::string::String,
     /// <p>A description of the dimension being priced.</p>
     pub description: ::std::option::Option<::std::string::String>,
-    /// <p>Labels used to categorize this dimension, such as by region.</p>
+    /// <p>Labels that categorize this dimension, such as by region.</p>
     pub dimension_labels: ::std::option::Option<::std::vec::Vec<crate::types::DimensionLabel>>,
     /// <p>The unit of measurement for the dimension.</p>
     pub unit: ::std::string::String,
     /// <p>The price per unit for the dimension.</p>
     pub price: ::std::string::String,
+    /// <p>The price overrides for the dimension in individual AWS Regions. When a Regional price is present for an AWS Region, it replaces the default price.</p>
+    pub regional_prices: ::std::vec::Vec<crate::types::RegionalPrice>,
 }
 impl RateCardItem {
     /// <p>The machine-readable key identifying the dimension being priced.</p>
@@ -32,7 +34,7 @@ impl RateCardItem {
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Labels used to categorize this dimension, such as by region.</p>
+    /// <p>Labels that categorize this dimension, such as by region.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dimension_labels.is_none()`.
     pub fn dimension_labels(&self) -> &[crate::types::DimensionLabel] {
@@ -47,6 +49,11 @@ impl RateCardItem {
     pub fn price(&self) -> &str {
         use std::ops::Deref;
         self.price.deref()
+    }
+    /// <p>The price overrides for the dimension in individual AWS Regions. When a Regional price is present for an AWS Region, it replaces the default price.</p>
+    pub fn regional_prices(&self) -> &[crate::types::RegionalPrice] {
+        use std::ops::Deref;
+        self.regional_prices.deref()
     }
 }
 impl RateCardItem {
@@ -66,6 +73,7 @@ pub struct RateCardItemBuilder {
     pub(crate) dimension_labels: ::std::option::Option<::std::vec::Vec<crate::types::DimensionLabel>>,
     pub(crate) unit: ::std::option::Option<::std::string::String>,
     pub(crate) price: ::std::option::Option<::std::string::String>,
+    pub(crate) regional_prices: ::std::option::Option<::std::vec::Vec<crate::types::RegionalPrice>>,
 }
 impl RateCardItemBuilder {
     /// <p>The machine-readable key identifying the dimension being priced.</p>
@@ -116,19 +124,19 @@ impl RateCardItemBuilder {
     ///
     /// To override the contents of this collection use [`set_dimension_labels`](Self::set_dimension_labels).
     ///
-    /// <p>Labels used to categorize this dimension, such as by region.</p>
+    /// <p>Labels that categorize this dimension, such as by region.</p>
     pub fn dimension_labels(mut self, input: crate::types::DimensionLabel) -> Self {
         let mut v = self.dimension_labels.unwrap_or_default();
         v.push(input);
         self.dimension_labels = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Labels used to categorize this dimension, such as by region.</p>
+    /// <p>Labels that categorize this dimension, such as by region.</p>
     pub fn set_dimension_labels(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::DimensionLabel>>) -> Self {
         self.dimension_labels = input;
         self
     }
-    /// <p>Labels used to categorize this dimension, such as by region.</p>
+    /// <p>Labels that categorize this dimension, such as by region.</p>
     pub fn get_dimension_labels(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::DimensionLabel>> {
         &self.dimension_labels
     }
@@ -161,6 +169,26 @@ impl RateCardItemBuilder {
     /// <p>The price per unit for the dimension.</p>
     pub fn get_price(&self) -> &::std::option::Option<::std::string::String> {
         &self.price
+    }
+    /// Appends an item to `regional_prices`.
+    ///
+    /// To override the contents of this collection use [`set_regional_prices`](Self::set_regional_prices).
+    ///
+    /// <p>The price overrides for the dimension in individual AWS Regions. When a Regional price is present for an AWS Region, it replaces the default price.</p>
+    pub fn regional_prices(mut self, input: crate::types::RegionalPrice) -> Self {
+        let mut v = self.regional_prices.unwrap_or_default();
+        v.push(input);
+        self.regional_prices = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The price overrides for the dimension in individual AWS Regions. When a Regional price is present for an AWS Region, it replaces the default price.</p>
+    pub fn set_regional_prices(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::RegionalPrice>>) -> Self {
+        self.regional_prices = input;
+        self
+    }
+    /// <p>The price overrides for the dimension in individual AWS Regions. When a Regional price is present for an AWS Region, it replaces the default price.</p>
+    pub fn get_regional_prices(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RegionalPrice>> {
+        &self.regional_prices
     }
     /// Consumes the builder and constructs a [`RateCardItem`](crate::types::RateCardItem).
     /// This method will fail if any of the following fields are not set:
@@ -196,6 +224,7 @@ impl RateCardItemBuilder {
                     "price was not specified but it is required when building RateCardItem",
                 )
             })?,
+            regional_prices: self.regional_prices.unwrap_or_default(),
         })
     }
 }

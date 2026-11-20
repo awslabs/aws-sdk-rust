@@ -22,6 +22,9 @@ pub fn ser_associate_availability_zones_input_input(
             }
         }
     }
+    if let Some(var_6) = &input.firewall_type {
+        encoder.str("FirewallType").str(var_6.as_str());
+    }
     encoder.end();
     Ok(())
 }

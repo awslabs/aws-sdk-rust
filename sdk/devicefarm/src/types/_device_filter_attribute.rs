@@ -14,6 +14,7 @@
 /// match devicefilterattribute {
 ///     DeviceFilterAttribute::Arn => { /* ... */ },
 ///     DeviceFilterAttribute::Availability => { /* ... */ },
+///     DeviceFilterAttribute::DeviceType => { /* ... */ },
 ///     DeviceFilterAttribute::FleetType => { /* ... */ },
 ///     DeviceFilterAttribute::FormFactor => { /* ... */ },
 ///     DeviceFilterAttribute::InstanceArn => { /* ... */ },
@@ -57,6 +58,8 @@ pub enum DeviceFilterAttribute {
     #[allow(missing_docs)] // documentation missing in model
     Availability,
     #[allow(missing_docs)] // documentation missing in model
+    DeviceType,
+    #[allow(missing_docs)] // documentation missing in model
     FleetType,
     #[allow(missing_docs)] // documentation missing in model
     FormFactor,
@@ -85,6 +88,7 @@ impl ::std::convert::From<&str> for DeviceFilterAttribute {
         match s {
             "ARN" => DeviceFilterAttribute::Arn,
             "AVAILABILITY" => DeviceFilterAttribute::Availability,
+            "DEVICE_TYPE" => DeviceFilterAttribute::DeviceType,
             "FLEET_TYPE" => DeviceFilterAttribute::FleetType,
             "FORM_FACTOR" => DeviceFilterAttribute::FormFactor,
             "INSTANCE_ARN" => DeviceFilterAttribute::InstanceArn,
@@ -112,6 +116,7 @@ impl DeviceFilterAttribute {
         match self {
             DeviceFilterAttribute::Arn => "ARN",
             DeviceFilterAttribute::Availability => "AVAILABILITY",
+            DeviceFilterAttribute::DeviceType => "DEVICE_TYPE",
             DeviceFilterAttribute::FleetType => "FLEET_TYPE",
             DeviceFilterAttribute::FormFactor => "FORM_FACTOR",
             DeviceFilterAttribute::InstanceArn => "INSTANCE_ARN",
@@ -130,6 +135,7 @@ impl DeviceFilterAttribute {
         &[
             "ARN",
             "AVAILABILITY",
+            "DEVICE_TYPE",
             "FLEET_TYPE",
             "FORM_FACTOR",
             "INSTANCE_ARN",
@@ -165,6 +171,7 @@ impl ::std::fmt::Display for DeviceFilterAttribute {
         match self {
             DeviceFilterAttribute::Arn => write!(f, "ARN"),
             DeviceFilterAttribute::Availability => write!(f, "AVAILABILITY"),
+            DeviceFilterAttribute::DeviceType => write!(f, "DEVICE_TYPE"),
             DeviceFilterAttribute::FleetType => write!(f, "FLEET_TYPE"),
             DeviceFilterAttribute::FormFactor => write!(f, "FORM_FACTOR"),
             DeviceFilterAttribute::InstanceArn => write!(f, "INSTANCE_ARN"),

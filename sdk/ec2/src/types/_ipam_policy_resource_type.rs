@@ -14,6 +14,8 @@
 /// match ipampolicyresourcetype {
 ///     IpamPolicyResourceType::Alb => { /* ... */ },
 ///     IpamPolicyResourceType::Eip => { /* ... */ },
+///     IpamPolicyResourceType::IgwFirewall => { /* ... */ },
+///     IpamPolicyResourceType::LambdaNetworkConnector => { /* ... */ },
 ///     IpamPolicyResourceType::Rds => { /* ... */ },
 ///     IpamPolicyResourceType::Rnat => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -49,6 +51,10 @@ pub enum IpamPolicyResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Eip,
     #[allow(missing_docs)] // documentation missing in model
+    IgwFirewall,
+    #[allow(missing_docs)] // documentation missing in model
+    LambdaNetworkConnector,
+    #[allow(missing_docs)] // documentation missing in model
     Rds,
     #[allow(missing_docs)] // documentation missing in model
     Rnat,
@@ -61,6 +67,8 @@ impl ::std::convert::From<&str> for IpamPolicyResourceType {
         match s {
             "alb" => IpamPolicyResourceType::Alb,
             "eip" => IpamPolicyResourceType::Eip,
+            "igw-firewall" => IpamPolicyResourceType::IgwFirewall,
+            "lambda-network-connector" => IpamPolicyResourceType::LambdaNetworkConnector,
             "rds" => IpamPolicyResourceType::Rds,
             "rnat" => IpamPolicyResourceType::Rnat,
             other => IpamPolicyResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -80,6 +88,8 @@ impl IpamPolicyResourceType {
         match self {
             IpamPolicyResourceType::Alb => "alb",
             IpamPolicyResourceType::Eip => "eip",
+            IpamPolicyResourceType::IgwFirewall => "igw-firewall",
+            IpamPolicyResourceType::LambdaNetworkConnector => "lambda-network-connector",
             IpamPolicyResourceType::Rds => "rds",
             IpamPolicyResourceType::Rnat => "rnat",
             IpamPolicyResourceType::Unknown(value) => value.as_str(),
@@ -87,7 +97,7 @@ impl IpamPolicyResourceType {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["alb", "eip", "rds", "rnat"]
+        &["alb", "eip", "igw-firewall", "lambda-network-connector", "rds", "rnat"]
     }
 }
 impl ::std::convert::AsRef<str> for IpamPolicyResourceType {
@@ -112,6 +122,8 @@ impl ::std::fmt::Display for IpamPolicyResourceType {
         match self {
             IpamPolicyResourceType::Alb => write!(f, "alb"),
             IpamPolicyResourceType::Eip => write!(f, "eip"),
+            IpamPolicyResourceType::IgwFirewall => write!(f, "igw-firewall"),
+            IpamPolicyResourceType::LambdaNetworkConnector => write!(f, "lambda-network-connector"),
             IpamPolicyResourceType::Rds => write!(f, "rds"),
             IpamPolicyResourceType::Rnat => write!(f, "rnat"),
             IpamPolicyResourceType::Unknown(value) => write!(f, "{value}"),

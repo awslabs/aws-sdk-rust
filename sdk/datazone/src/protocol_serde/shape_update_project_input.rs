@@ -27,33 +27,36 @@ pub fn ser_update_project_input_input(
     if let Some(var_8) = &input.name {
         object.key("name").string(var_8.as_str());
     }
-    if let Some(var_9) = &input.project_profile_version {
-        object.key("projectProfileVersion").string(var_9.as_str());
+    if let Some(var_9) = &input.project_profile_action {
+        object.key("projectProfileAction").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.resource_tags {
+    if let Some(var_10) = &input.project_profile_version {
+        object.key("projectProfileVersion").string(var_10.as_str());
+    }
+    if let Some(var_11) = &input.resource_tags {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("resourceTags").start_object();
-        for (key_12, value_13) in var_10 {
+        let mut object_12 = object.key("resourceTags").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                object_11.key(key_12.as_str()).string(value_13.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        object_11.finish();
+        object_12.finish();
     }
-    if let Some(var_14) = &input.user_parameters {
-        let mut array_15 = object.key("userParameters").start_array();
-        for item_16 in var_14 {
+    if let Some(var_15) = &input.user_parameters {
+        let mut array_16 = object.key("userParameters").start_array();
+        for item_17 in var_15 {
             {
                 #[allow(unused_mut)]
-                let mut object_17 = array_15.value().start_object();
+                let mut object_18 = array_16.value().start_object();
                 crate::protocol_serde::shape_environment_configuration_user_parameter::ser_environment_configuration_user_parameter(
-                    &mut object_17,
-                    item_16,
+                    &mut object_18,
+                    item_17,
                 )?;
-                object_17.finish();
+                object_18.finish();
             }
         }
-        array_15.finish();
+        array_16.finish();
     }
     Ok(())
 }

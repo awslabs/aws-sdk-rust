@@ -7,9 +7,9 @@ pub struct UpdateGlossaryTermInput {
     pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>The updated name of the glossary term.</p>
     pub name: ::std::option::Option<::std::string::String>,
-    /// <p>The updated short description of the glossary term.</p>
+    /// The new short description. Omit it to keep the current one; set it to an empty string to clear it.
     pub short_description: ::std::option::Option<::std::string::String>,
-    /// <p>The updated long description of the glossary term.</p>
+    /// The new long description. Omit it to keep the current one; set it to an empty string to clear it.
     pub long_description: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
@@ -23,11 +23,11 @@ impl UpdateGlossaryTermInput {
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The updated short description of the glossary term.</p>
+    /// The new short description. Omit it to keep the current one; set it to an empty string to clear it.
     pub fn short_description(&self) -> ::std::option::Option<&str> {
         self.short_description.as_deref()
     }
-    /// <p>The updated long description of the glossary term.</p>
+    /// The new long description. Omit it to keep the current one; set it to an empty string to clear it.
     pub fn long_description(&self) -> ::std::option::Option<&str> {
         self.long_description.as_deref()
     }
@@ -83,31 +83,31 @@ impl UpdateGlossaryTermInputBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.name
     }
-    /// <p>The updated short description of the glossary term.</p>
+    /// The new short description. Omit it to keep the current one; set it to an empty string to clear it.
     pub fn short_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.short_description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The updated short description of the glossary term.</p>
+    /// The new short description. Omit it to keep the current one; set it to an empty string to clear it.
     pub fn set_short_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.short_description = input;
         self
     }
-    /// <p>The updated short description of the glossary term.</p>
+    /// The new short description. Omit it to keep the current one; set it to an empty string to clear it.
     pub fn get_short_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.short_description
     }
-    /// <p>The updated long description of the glossary term.</p>
+    /// The new long description. Omit it to keep the current one; set it to an empty string to clear it.
     pub fn long_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.long_description = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The updated long description of the glossary term.</p>
+    /// The new long description. Omit it to keep the current one; set it to an empty string to clear it.
     pub fn set_long_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.long_description = input;
         self
     }
-    /// <p>The updated long description of the glossary term.</p>
+    /// The new long description. Omit it to keep the current one; set it to an empty string to clear it.
     pub fn get_long_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.long_description
     }

@@ -4,9 +4,49 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Resource {
-    /// <p>The category of the resource, such as manufacturer support or usage instructions.</p>
+    /// <p>The category of the resource, such as manufacturer support or usage instructions. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// MANUFACTURER_INSTRUCTIONS
+    /// </dt>
+    /// <dd>
+    /// <p>Usage instructions from the seller.</p>
+    /// </dd>
+    /// <dt>
+    /// MANUFACTURER_SUPPORT
+    /// </dt>
+    /// <dd>
+    /// <p>Support information from the seller.</p>
+    /// </dd>
+    /// </dl>
     pub resource_type: crate::types::ResourceType,
-    /// <p>The format of the resource content, such as a URL, email address, or text.</p>
+    /// <p>The format of the resource content, such as a URL, email address, or text. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// EMAIL
+    /// </dt>
+    /// <dd>
+    /// <p>An email address.</p>
+    /// </dd>
+    /// <dt>
+    /// LINK
+    /// </dt>
+    /// <dd>
+    /// <p>A URL.</p>
+    /// </dd>
+    /// <dt>
+    /// OTHER
+    /// </dt>
+    /// <dd>
+    /// <p>Text in another format.</p>
+    /// </dd>
+    /// <dt>
+    /// PHONE_NUMBER
+    /// </dt>
+    /// <dd>
+    /// <p>A phone number.</p>
+    /// </dd>
+    /// </dl>
     pub content_type: crate::types::ResourceContentType,
     /// <p>The resource content. Interpretation depends on the content type.</p>
     pub value: ::std::string::String,
@@ -14,11 +54,51 @@ pub struct Resource {
     pub display_name: ::std::option::Option<::std::string::String>,
 }
 impl Resource {
-    /// <p>The category of the resource, such as manufacturer support or usage instructions.</p>
+    /// <p>The category of the resource, such as manufacturer support or usage instructions. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// MANUFACTURER_INSTRUCTIONS
+    /// </dt>
+    /// <dd>
+    /// <p>Usage instructions from the seller.</p>
+    /// </dd>
+    /// <dt>
+    /// MANUFACTURER_SUPPORT
+    /// </dt>
+    /// <dd>
+    /// <p>Support information from the seller.</p>
+    /// </dd>
+    /// </dl>
     pub fn resource_type(&self) -> &crate::types::ResourceType {
         &self.resource_type
     }
-    /// <p>The format of the resource content, such as a URL, email address, or text.</p>
+    /// <p>The format of the resource content, such as a URL, email address, or text. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// EMAIL
+    /// </dt>
+    /// <dd>
+    /// <p>An email address.</p>
+    /// </dd>
+    /// <dt>
+    /// LINK
+    /// </dt>
+    /// <dd>
+    /// <p>A URL.</p>
+    /// </dd>
+    /// <dt>
+    /// OTHER
+    /// </dt>
+    /// <dd>
+    /// <p>Text in another format.</p>
+    /// </dd>
+    /// <dt>
+    /// PHONE_NUMBER
+    /// </dt>
+    /// <dd>
+    /// <p>A phone number.</p>
+    /// </dd>
+    /// </dl>
     pub fn content_type(&self) -> &crate::types::ResourceContentType {
         &self.content_type
     }
@@ -49,33 +129,153 @@ pub struct ResourceBuilder {
     pub(crate) display_name: ::std::option::Option<::std::string::String>,
 }
 impl ResourceBuilder {
-    /// <p>The category of the resource, such as manufacturer support or usage instructions.</p>
+    /// <p>The category of the resource, such as manufacturer support or usage instructions. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// MANUFACTURER_INSTRUCTIONS
+    /// </dt>
+    /// <dd>
+    /// <p>Usage instructions from the seller.</p>
+    /// </dd>
+    /// <dt>
+    /// MANUFACTURER_SUPPORT
+    /// </dt>
+    /// <dd>
+    /// <p>Support information from the seller.</p>
+    /// </dd>
+    /// </dl>
     /// This field is required.
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The category of the resource, such as manufacturer support or usage instructions.</p>
+    /// <p>The category of the resource, such as manufacturer support or usage instructions. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// MANUFACTURER_INSTRUCTIONS
+    /// </dt>
+    /// <dd>
+    /// <p>Usage instructions from the seller.</p>
+    /// </dd>
+    /// <dt>
+    /// MANUFACTURER_SUPPORT
+    /// </dt>
+    /// <dd>
+    /// <p>Support information from the seller.</p>
+    /// </dd>
+    /// </dl>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::ResourceType>) -> Self {
         self.resource_type = input;
         self
     }
-    /// <p>The category of the resource, such as manufacturer support or usage instructions.</p>
+    /// <p>The category of the resource, such as manufacturer support or usage instructions. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// MANUFACTURER_INSTRUCTIONS
+    /// </dt>
+    /// <dd>
+    /// <p>Usage instructions from the seller.</p>
+    /// </dd>
+    /// <dt>
+    /// MANUFACTURER_SUPPORT
+    /// </dt>
+    /// <dd>
+    /// <p>Support information from the seller.</p>
+    /// </dd>
+    /// </dl>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::ResourceType> {
         &self.resource_type
     }
-    /// <p>The format of the resource content, such as a URL, email address, or text.</p>
+    /// <p>The format of the resource content, such as a URL, email address, or text. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// EMAIL
+    /// </dt>
+    /// <dd>
+    /// <p>An email address.</p>
+    /// </dd>
+    /// <dt>
+    /// LINK
+    /// </dt>
+    /// <dd>
+    /// <p>A URL.</p>
+    /// </dd>
+    /// <dt>
+    /// OTHER
+    /// </dt>
+    /// <dd>
+    /// <p>Text in another format.</p>
+    /// </dd>
+    /// <dt>
+    /// PHONE_NUMBER
+    /// </dt>
+    /// <dd>
+    /// <p>A phone number.</p>
+    /// </dd>
+    /// </dl>
     /// This field is required.
     pub fn content_type(mut self, input: crate::types::ResourceContentType) -> Self {
         self.content_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The format of the resource content, such as a URL, email address, or text.</p>
+    /// <p>The format of the resource content, such as a URL, email address, or text. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// EMAIL
+    /// </dt>
+    /// <dd>
+    /// <p>An email address.</p>
+    /// </dd>
+    /// <dt>
+    /// LINK
+    /// </dt>
+    /// <dd>
+    /// <p>A URL.</p>
+    /// </dd>
+    /// <dt>
+    /// OTHER
+    /// </dt>
+    /// <dd>
+    /// <p>Text in another format.</p>
+    /// </dd>
+    /// <dt>
+    /// PHONE_NUMBER
+    /// </dt>
+    /// <dd>
+    /// <p>A phone number.</p>
+    /// </dd>
+    /// </dl>
     pub fn set_content_type(mut self, input: ::std::option::Option<crate::types::ResourceContentType>) -> Self {
         self.content_type = input;
         self
     }
-    /// <p>The format of the resource content, such as a URL, email address, or text.</p>
+    /// <p>The format of the resource content, such as a URL, email address, or text. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// EMAIL
+    /// </dt>
+    /// <dd>
+    /// <p>An email address.</p>
+    /// </dd>
+    /// <dt>
+    /// LINK
+    /// </dt>
+    /// <dd>
+    /// <p>A URL.</p>
+    /// </dd>
+    /// <dt>
+    /// OTHER
+    /// </dt>
+    /// <dd>
+    /// <p>Text in another format.</p>
+    /// </dd>
+    /// <dt>
+    /// PHONE_NUMBER
+    /// </dt>
+    /// <dd>
+    /// <p>A phone number.</p>
+    /// </dd>
+    /// </dl>
     pub fn get_content_type(&self) -> &::std::option::Option<crate::types::ResourceContentType> {
         &self.content_type
     }

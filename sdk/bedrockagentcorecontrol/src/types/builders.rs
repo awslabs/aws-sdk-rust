@@ -377,6 +377,8 @@ pub use crate::types::_streaming_configuration::StreamingConfigurationBuilder;
 
 pub use crate::types::_interceptor_input_configuration::InterceptorInputConfigurationBuilder;
 
+pub use crate::types::_response_streaming_configuration::ResponseStreamingConfigurationBuilder;
+
 pub use crate::types::_match_principals::MatchPrincipalsBuilder;
 
 pub use crate::types::_match_paths::MatchPathsBuilder;

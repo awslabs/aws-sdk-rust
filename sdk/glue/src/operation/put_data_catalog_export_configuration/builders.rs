@@ -108,34 +108,6 @@ impl PutDataCatalogExportConfigurationFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The export setting for the data catalog. Specify <code>ENABLED</code> to start exporting catalog metadata to S3 Tables, or <code>DISABLED</code> to stop exporting. This field is required.</p>
-    pub fn export_setting(mut self, input: crate::types::ExportSetting) -> Self {
-        self.inner = self.inner.export_setting(input);
-        self
-    }
-    /// <p>The export setting for the data catalog. Specify <code>ENABLED</code> to start exporting catalog metadata to S3 Tables, or <code>DISABLED</code> to stop exporting. This field is required.</p>
-    pub fn set_export_setting(mut self, input: ::std::option::Option<crate::types::ExportSetting>) -> Self {
-        self.inner = self.inner.set_export_setting(input);
-        self
-    }
-    /// <p>The export setting for the data catalog. Specify <code>ENABLED</code> to start exporting catalog metadata to S3 Tables, or <code>DISABLED</code> to stop exporting. This field is required.</p>
-    pub fn get_export_setting(&self) -> &::std::option::Option<crate::types::ExportSetting> {
-        self.inner.get_export_setting()
-    }
-    /// <p>The encryption configuration for the exported data. If not specified, the default encryption settings are used.</p>
-    pub fn encryption_configuration(mut self, input: crate::types::ExportEncryptionConfiguration) -> Self {
-        self.inner = self.inner.encryption_configuration(input);
-        self
-    }
-    /// <p>The encryption configuration for the exported data. If not specified, the default encryption settings are used.</p>
-    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ExportEncryptionConfiguration>) -> Self {
-        self.inner = self.inner.set_encryption_configuration(input);
-        self
-    }
-    /// <p>The encryption configuration for the exported data. If not specified, the default encryption settings are used.</p>
-    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::ExportEncryptionConfiguration> {
-        self.inner.get_encryption_configuration()
-    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -149,5 +121,33 @@ impl PutDataCatalogExportConfigurationFluentBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn get_client_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_client_token()
+    }
+    /// <p>The S3 Tables configuration for the export. The encryption configuration applies only when Glue creates the table bucket that holds the exported catalog metadata. If not specified, the default encryption settings are used.</p>
+    pub fn s3_tables_configuration(mut self, input: crate::types::S3TablesConfiguration) -> Self {
+        self.inner = self.inner.s3_tables_configuration(input);
+        self
+    }
+    /// <p>The S3 Tables configuration for the export. The encryption configuration applies only when Glue creates the table bucket that holds the exported catalog metadata. If not specified, the default encryption settings are used.</p>
+    pub fn set_s3_tables_configuration(mut self, input: ::std::option::Option<crate::types::S3TablesConfiguration>) -> Self {
+        self.inner = self.inner.set_s3_tables_configuration(input);
+        self
+    }
+    /// <p>The S3 Tables configuration for the export. The encryption configuration applies only when Glue creates the table bucket that holds the exported catalog metadata. If not specified, the default encryption settings are used.</p>
+    pub fn get_s3_tables_configuration(&self) -> &::std::option::Option<crate::types::S3TablesConfiguration> {
+        self.inner.get_s3_tables_configuration()
+    }
+    /// <p>The export setting for asset metadata. Set <code>S3TablesExport</code> to <code>ENABLED</code> to start exporting asset metadata to S3 Tables, or to <code>DISABLED</code> to stop exporting.</p>
+    pub fn assets(mut self, input: crate::types::AssetsExport) -> Self {
+        self.inner = self.inner.assets(input);
+        self
+    }
+    /// <p>The export setting for asset metadata. Set <code>S3TablesExport</code> to <code>ENABLED</code> to start exporting asset metadata to S3 Tables, or to <code>DISABLED</code> to stop exporting.</p>
+    pub fn set_assets(mut self, input: ::std::option::Option<crate::types::AssetsExport>) -> Self {
+        self.inner = self.inner.set_assets(input);
+        self
+    }
+    /// <p>The export setting for asset metadata. Set <code>S3TablesExport</code> to <code>ENABLED</code> to start exporting asset metadata to S3 Tables, or to <code>DISABLED</code> to stop exporting.</p>
+    pub fn get_assets(&self) -> &::std::option::Option<crate::types::AssetsExport> {
+        self.inner.get_assets()
     }
 }

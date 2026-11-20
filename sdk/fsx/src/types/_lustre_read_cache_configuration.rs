@@ -15,7 +15,7 @@ pub struct LustreReadCacheConfiguration {
     /// </ul>
     pub sizing_mode: ::std::option::Option<crate::types::LustreReadCacheSizingMode>,
     /// <p>Required if <code>SizingMode</code> is set to <code>USER_PROVISIONED</code>. Specifies the size of the file system's SSD read cache, in gibibytes (GiB).</p>
-    /// <p>The SSD read cache size is distributed across provisioned file servers in your file system. Intelligent-Tiering file systems support a minimum of 32 GiB and maximum of 131072 GiB for SSD read cache size for every 4,000 MB/s of throughput capacity provisioned.</p>
+    /// <p>The SSD read cache size is distributed across provisioned file servers in your file system. Intelligent-Tiering file systems support a minimum of 8 GiB and maximum of 32768 GiB for SSD read cache size for every 1000 MBps of throughput capacity provisioned.</p>
     pub size_gib: ::std::option::Option<i32>,
 }
 impl LustreReadCacheConfiguration {
@@ -32,7 +32,7 @@ impl LustreReadCacheConfiguration {
         self.sizing_mode.as_ref()
     }
     /// <p>Required if <code>SizingMode</code> is set to <code>USER_PROVISIONED</code>. Specifies the size of the file system's SSD read cache, in gibibytes (GiB).</p>
-    /// <p>The SSD read cache size is distributed across provisioned file servers in your file system. Intelligent-Tiering file systems support a minimum of 32 GiB and maximum of 131072 GiB for SSD read cache size for every 4,000 MB/s of throughput capacity provisioned.</p>
+    /// <p>The SSD read cache size is distributed across provisioned file servers in your file system. Intelligent-Tiering file systems support a minimum of 8 GiB and maximum of 32768 GiB for SSD read cache size for every 1000 MBps of throughput capacity provisioned.</p>
     pub fn size_gib(&self) -> ::std::option::Option<i32> {
         self.size_gib
     }
@@ -91,19 +91,19 @@ impl LustreReadCacheConfigurationBuilder {
         &self.sizing_mode
     }
     /// <p>Required if <code>SizingMode</code> is set to <code>USER_PROVISIONED</code>. Specifies the size of the file system's SSD read cache, in gibibytes (GiB).</p>
-    /// <p>The SSD read cache size is distributed across provisioned file servers in your file system. Intelligent-Tiering file systems support a minimum of 32 GiB and maximum of 131072 GiB for SSD read cache size for every 4,000 MB/s of throughput capacity provisioned.</p>
+    /// <p>The SSD read cache size is distributed across provisioned file servers in your file system. Intelligent-Tiering file systems support a minimum of 8 GiB and maximum of 32768 GiB for SSD read cache size for every 1000 MBps of throughput capacity provisioned.</p>
     pub fn size_gib(mut self, input: i32) -> Self {
         self.size_gib = ::std::option::Option::Some(input);
         self
     }
     /// <p>Required if <code>SizingMode</code> is set to <code>USER_PROVISIONED</code>. Specifies the size of the file system's SSD read cache, in gibibytes (GiB).</p>
-    /// <p>The SSD read cache size is distributed across provisioned file servers in your file system. Intelligent-Tiering file systems support a minimum of 32 GiB and maximum of 131072 GiB for SSD read cache size for every 4,000 MB/s of throughput capacity provisioned.</p>
+    /// <p>The SSD read cache size is distributed across provisioned file servers in your file system. Intelligent-Tiering file systems support a minimum of 8 GiB and maximum of 32768 GiB for SSD read cache size for every 1000 MBps of throughput capacity provisioned.</p>
     pub fn set_size_gib(mut self, input: ::std::option::Option<i32>) -> Self {
         self.size_gib = input;
         self
     }
     /// <p>Required if <code>SizingMode</code> is set to <code>USER_PROVISIONED</code>. Specifies the size of the file system's SSD read cache, in gibibytes (GiB).</p>
-    /// <p>The SSD read cache size is distributed across provisioned file servers in your file system. Intelligent-Tiering file systems support a minimum of 32 GiB and maximum of 131072 GiB for SSD read cache size for every 4,000 MB/s of throughput capacity provisioned.</p>
+    /// <p>The SSD read cache size is distributed across provisioned file servers in your file system. Intelligent-Tiering file systems support a minimum of 8 GiB and maximum of 32768 GiB for SSD read cache size for every 1000 MBps of throughput capacity provisioned.</p>
     pub fn get_size_gib(&self) -> &::std::option::Option<i32> {
         &self.size_gib
     }

@@ -62,6 +62,12 @@ pub struct AdditionalInfoResponse {
     pub mexico_additional_info: ::std::option::Option<crate::types::MexicoAdditionalInfo>,
     /// <p>Additional tax information associated with your Tax Registration Number (TRN) in Colombia.</p>
     pub colombia_additional_info: ::std::option::Option<crate::types::ColombiaAdditionalInfo>,
+    /// <p>Additional tax information associated with your Tax Registration Number (TRN) in the United Arab Emirates.</p>
+    pub united_arab_emirates_additional_info: ::std::option::Option<crate::types::UnitedArabEmiratesAdditionalInfo>,
+    /// <p>Additional tax information associated with your Tax Registration Number (TRN) in Norway.</p>
+    pub norway_additional_info: ::std::option::Option<crate::types::NorwayAdditionalInfo>,
+    /// <p>Additional tax information associated with your Tax Registration Number (TRN) in New Zealand.</p>
+    pub new_zealand_additional_info: ::std::option::Option<crate::types::NewZealandAdditionalInfo>,
 }
 impl AdditionalInfoResponse {
     /// <p>Additional tax information associated with your TRN in Malaysia.</p>
@@ -180,6 +186,18 @@ impl AdditionalInfoResponse {
     pub fn colombia_additional_info(&self) -> ::std::option::Option<&crate::types::ColombiaAdditionalInfo> {
         self.colombia_additional_info.as_ref()
     }
+    /// <p>Additional tax information associated with your Tax Registration Number (TRN) in the United Arab Emirates.</p>
+    pub fn united_arab_emirates_additional_info(&self) -> ::std::option::Option<&crate::types::UnitedArabEmiratesAdditionalInfo> {
+        self.united_arab_emirates_additional_info.as_ref()
+    }
+    /// <p>Additional tax information associated with your Tax Registration Number (TRN) in Norway.</p>
+    pub fn norway_additional_info(&self) -> ::std::option::Option<&crate::types::NorwayAdditionalInfo> {
+        self.norway_additional_info.as_ref()
+    }
+    /// <p>Additional tax information associated with your Tax Registration Number (TRN) in New Zealand.</p>
+    pub fn new_zealand_additional_info(&self) -> ::std::option::Option<&crate::types::NewZealandAdditionalInfo> {
+        self.new_zealand_additional_info.as_ref()
+    }
 }
 impl AdditionalInfoResponse {
     /// Creates a new builder-style object to manufacture [`AdditionalInfoResponse`](crate::types::AdditionalInfoResponse).
@@ -221,6 +239,9 @@ pub struct AdditionalInfoResponseBuilder {
     pub(crate) germany_additional_info: ::std::option::Option<crate::types::GermanyAdditionalInfo>,
     pub(crate) mexico_additional_info: ::std::option::Option<crate::types::MexicoAdditionalInfo>,
     pub(crate) colombia_additional_info: ::std::option::Option<crate::types::ColombiaAdditionalInfo>,
+    pub(crate) united_arab_emirates_additional_info: ::std::option::Option<crate::types::UnitedArabEmiratesAdditionalInfo>,
+    pub(crate) norway_additional_info: ::std::option::Option<crate::types::NorwayAdditionalInfo>,
+    pub(crate) new_zealand_additional_info: ::std::option::Option<crate::types::NewZealandAdditionalInfo>,
 }
 impl AdditionalInfoResponseBuilder {
     /// <p>Additional tax information associated with your TRN in Malaysia.</p>
@@ -629,6 +650,48 @@ impl AdditionalInfoResponseBuilder {
     pub fn get_colombia_additional_info(&self) -> &::std::option::Option<crate::types::ColombiaAdditionalInfo> {
         &self.colombia_additional_info
     }
+    /// <p>Additional tax information associated with your Tax Registration Number (TRN) in the United Arab Emirates.</p>
+    pub fn united_arab_emirates_additional_info(mut self, input: crate::types::UnitedArabEmiratesAdditionalInfo) -> Self {
+        self.united_arab_emirates_additional_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Additional tax information associated with your Tax Registration Number (TRN) in the United Arab Emirates.</p>
+    pub fn set_united_arab_emirates_additional_info(mut self, input: ::std::option::Option<crate::types::UnitedArabEmiratesAdditionalInfo>) -> Self {
+        self.united_arab_emirates_additional_info = input;
+        self
+    }
+    /// <p>Additional tax information associated with your Tax Registration Number (TRN) in the United Arab Emirates.</p>
+    pub fn get_united_arab_emirates_additional_info(&self) -> &::std::option::Option<crate::types::UnitedArabEmiratesAdditionalInfo> {
+        &self.united_arab_emirates_additional_info
+    }
+    /// <p>Additional tax information associated with your Tax Registration Number (TRN) in Norway.</p>
+    pub fn norway_additional_info(mut self, input: crate::types::NorwayAdditionalInfo) -> Self {
+        self.norway_additional_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Additional tax information associated with your Tax Registration Number (TRN) in Norway.</p>
+    pub fn set_norway_additional_info(mut self, input: ::std::option::Option<crate::types::NorwayAdditionalInfo>) -> Self {
+        self.norway_additional_info = input;
+        self
+    }
+    /// <p>Additional tax information associated with your Tax Registration Number (TRN) in Norway.</p>
+    pub fn get_norway_additional_info(&self) -> &::std::option::Option<crate::types::NorwayAdditionalInfo> {
+        &self.norway_additional_info
+    }
+    /// <p>Additional tax information associated with your Tax Registration Number (TRN) in New Zealand.</p>
+    pub fn new_zealand_additional_info(mut self, input: crate::types::NewZealandAdditionalInfo) -> Self {
+        self.new_zealand_additional_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Additional tax information associated with your Tax Registration Number (TRN) in New Zealand.</p>
+    pub fn set_new_zealand_additional_info(mut self, input: ::std::option::Option<crate::types::NewZealandAdditionalInfo>) -> Self {
+        self.new_zealand_additional_info = input;
+        self
+    }
+    /// <p>Additional tax information associated with your Tax Registration Number (TRN) in New Zealand.</p>
+    pub fn get_new_zealand_additional_info(&self) -> &::std::option::Option<crate::types::NewZealandAdditionalInfo> {
+        &self.new_zealand_additional_info
+    }
     /// Consumes the builder and constructs a [`AdditionalInfoResponse`](crate::types::AdditionalInfoResponse).
     pub fn build(self) -> crate::types::AdditionalInfoResponse {
         crate::types::AdditionalInfoResponse {
@@ -661,6 +724,9 @@ impl AdditionalInfoResponseBuilder {
             germany_additional_info: self.germany_additional_info,
             mexico_additional_info: self.mexico_additional_info,
             colombia_additional_info: self.colombia_additional_info,
+            united_arab_emirates_additional_info: self.united_arab_emirates_additional_info,
+            norway_additional_info: self.norway_additional_info,
+            new_zealand_additional_info: self.new_zealand_additional_info,
         }
     }
 }

@@ -6,14 +6,14 @@ pub fn ser_search_attribute_filter(
     {
         object.key("Attribute").string(input.attribute.as_str());
     }
-    {
-        object.key("Operator").string(input.operator.as_str());
+    if let Some(var_1) = &input.comparator {
+        object.key("Comparator").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.value {
+    if let Some(var_2) = &input.value {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("Value").start_object();
-        crate::protocol_serde::shape_search_filter_value::ser_search_filter_value(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_3 = object.key("Value").start_object();
+        crate::protocol_serde::shape_search_filter_value::ser_search_filter_value(&mut object_3, var_2)?;
+        object_3.finish();
     }
     Ok(())
 }

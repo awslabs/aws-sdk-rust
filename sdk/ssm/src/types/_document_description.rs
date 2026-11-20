@@ -68,6 +68,8 @@ pub struct DocumentDescription {
     pub category: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The value that identifies a document's category.</p>
     pub category_enum: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>This field specifies the cloud providers that the returned version of the document can run against.</p>
+    pub cloud_providers: ::std::option::Option<::std::vec::Vec<crate::types::CloudProvider>>,
 }
 impl DocumentDescription {
     /// <p>The SHA1 hash of the document, which you can use for verification.</p>
@@ -210,6 +212,12 @@ impl DocumentDescription {
     pub fn category_enum(&self) -> &[::std::string::String] {
         self.category_enum.as_deref().unwrap_or_default()
     }
+    /// <p>This field specifies the cloud providers that the returned version of the document can run against.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_providers.is_none()`.
+    pub fn cloud_providers(&self) -> &[crate::types::CloudProvider] {
+        self.cloud_providers.as_deref().unwrap_or_default()
+    }
 }
 impl DocumentDescription {
     /// Creates a new builder-style object to manufacture [`DocumentDescription`](crate::types::DocumentDescription).
@@ -252,6 +260,7 @@ pub struct DocumentDescriptionBuilder {
     pub(crate) review_status: ::std::option::Option<crate::types::ReviewStatus>,
     pub(crate) category: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) category_enum: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) cloud_providers: ::std::option::Option<::std::vec::Vec<crate::types::CloudProvider>>,
 }
 impl DocumentDescriptionBuilder {
     /// <p>The SHA1 hash of the document, which you can use for verification.</p>
@@ -734,6 +743,26 @@ impl DocumentDescriptionBuilder {
     pub fn get_category_enum(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.category_enum
     }
+    /// Appends an item to `cloud_providers`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_providers`](Self::set_cloud_providers).
+    ///
+    /// <p>This field specifies the cloud providers that the returned version of the document can run against.</p>
+    pub fn cloud_providers(mut self, input: crate::types::CloudProvider) -> Self {
+        let mut v = self.cloud_providers.unwrap_or_default();
+        v.push(input);
+        self.cloud_providers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>This field specifies the cloud providers that the returned version of the document can run against.</p>
+    pub fn set_cloud_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CloudProvider>>) -> Self {
+        self.cloud_providers = input;
+        self
+    }
+    /// <p>This field specifies the cloud providers that the returned version of the document can run against.</p>
+    pub fn get_cloud_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudProvider>> {
+        &self.cloud_providers
+    }
     /// Consumes the builder and constructs a [`DocumentDescription`](crate::types::DocumentDescription).
     pub fn build(self) -> crate::types::DocumentDescription {
         crate::types::DocumentDescription {
@@ -767,6 +796,7 @@ impl DocumentDescriptionBuilder {
             review_status: self.review_status,
             category: self.category,
             category_enum: self.category_enum,
+            cloud_providers: self.cloud_providers,
         }
     }
 }

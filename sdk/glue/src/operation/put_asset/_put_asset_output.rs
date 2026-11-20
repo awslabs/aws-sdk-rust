@@ -9,6 +9,8 @@ pub struct PutAssetOutput {
     pub name: ::std::string::String,
     /// <p>The description of the asset.</p>
     pub description: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the asset type for this asset.</p>
+    pub asset_type_id: ::std::string::String,
     /// <p>The timestamp at which the asset was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The forms attached to the asset, keyed by form name.</p>
@@ -29,6 +31,11 @@ impl PutAssetOutput {
     /// <p>The description of the asset.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
+    }
+    /// <p>The identifier of the asset type for this asset.</p>
+    pub fn asset_type_id(&self) -> &str {
+        use std::ops::Deref;
+        self.asset_type_id.deref()
     }
     /// <p>The timestamp at which the asset was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -58,6 +65,7 @@ pub struct PutAssetOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) asset_type_id: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) forms: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetFormEntry>>,
     _request_id: Option<String>,
@@ -106,6 +114,21 @@ impl PutAssetOutputBuilder {
     /// <p>The description of the asset.</p>
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         &self.description
+    }
+    /// <p>The identifier of the asset type for this asset.</p>
+    /// This field is required.
+    pub fn asset_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.asset_type_id = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The identifier of the asset type for this asset.</p>
+    pub fn set_asset_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.asset_type_id = input;
+        self
+    }
+    /// <p>The identifier of the asset type for this asset.</p>
+    pub fn get_asset_type_id(&self) -> &::std::option::Option<::std::string::String> {
+        &self.asset_type_id
     }
     /// <p>The timestamp at which the asset was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
@@ -157,6 +180,7 @@ impl PutAssetOutputBuilder {
     /// This method will fail if any of the following fields are not set:
     /// - [`id`](crate::operation::put_asset::builders::PutAssetOutputBuilder::id)
     /// - [`name`](crate::operation::put_asset::builders::PutAssetOutputBuilder::name)
+    /// - [`asset_type_id`](crate::operation::put_asset::builders::PutAssetOutputBuilder::asset_type_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::put_asset::PutAssetOutput, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_asset::PutAssetOutput {
             id: self.id.ok_or_else(|| {
@@ -172,6 +196,12 @@ impl PutAssetOutputBuilder {
                 )
             })?,
             description: self.description,
+            asset_type_id: self.asset_type_id.ok_or_else(|| {
+                ::aws_smithy_types::error::operation::BuildError::missing_field(
+                    "asset_type_id",
+                    "asset_type_id was not specified but it is required when building PutAssetOutput",
+                )
+            })?,
             created_at: self.created_at,
             forms: self.forms,
             _request_id: self._request_id,

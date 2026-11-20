@@ -15,6 +15,8 @@ pub struct CreateProgramManagementAccountInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs to associate with the program management account.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    /// <p>The type of the program management account (for example, resale billing transfer, managed services), required for the managed services provider program.</p>
+    pub r#type: ::std::option::Option<crate::types::ProgramManagementAccountType>,
 }
 impl CreateProgramManagementAccountInput {
     /// <p>The catalog identifier for the program management account.</p>
@@ -43,6 +45,10 @@ impl CreateProgramManagementAccountInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
+    /// <p>The type of the program management account (for example, resale billing transfer, managed services), required for the managed services provider program.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ProgramManagementAccountType> {
+        self.r#type.as_ref()
+    }
 }
 impl CreateProgramManagementAccountInput {
     /// Creates a new builder-style object to manufacture [`CreateProgramManagementAccountInput`](crate::operation::create_program_management_account::CreateProgramManagementAccountInput).
@@ -61,6 +67,7 @@ pub struct CreateProgramManagementAccountInputBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ProgramManagementAccountType>,
 }
 impl CreateProgramManagementAccountInputBuilder {
     /// <p>The catalog identifier for the program management account.</p>
@@ -157,6 +164,20 @@ impl CreateProgramManagementAccountInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
+    /// <p>The type of the program management account (for example, resale billing transfer, managed services), required for the managed services provider program.</p>
+    pub fn r#type(mut self, input: crate::types::ProgramManagementAccountType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the program management account (for example, resale billing transfer, managed services), required for the managed services provider program.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProgramManagementAccountType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of the program management account (for example, resale billing transfer, managed services), required for the managed services provider program.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ProgramManagementAccountType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`CreateProgramManagementAccountInput`](crate::operation::create_program_management_account::CreateProgramManagementAccountInput).
     pub fn build(
         self,
@@ -171,6 +192,7 @@ impl CreateProgramManagementAccountInputBuilder {
             account_id: self.account_id,
             client_token: self.client_token,
             tags: self.tags,
+            r#type: self.r#type,
         })
     }
 }

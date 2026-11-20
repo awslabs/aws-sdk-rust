@@ -16,6 +16,8 @@ pub struct UpdatedDescriptorsFields {
     pub http: ::std::option::Option<crate::types::UpdatedHttpDescriptor>,
     /// <p>The patch for the AG-UI descriptor.</p>
     pub agui: ::std::option::Option<crate::types::UpdatedAgUiDescriptor>,
+    /// <p>The patch for the signature agent card descriptor.</p>
+    pub signature_agent_card: ::std::option::Option<crate::types::UpdatedSignatureAgentCardDescriptor>,
 }
 impl UpdatedDescriptorsFields {
     /// <p>The patch for the MCP server descriptor.</p>
@@ -42,6 +44,10 @@ impl UpdatedDescriptorsFields {
     pub fn agui(&self) -> ::std::option::Option<&crate::types::UpdatedAgUiDescriptor> {
         self.agui.as_ref()
     }
+    /// <p>The patch for the signature agent card descriptor.</p>
+    pub fn signature_agent_card(&self) -> ::std::option::Option<&crate::types::UpdatedSignatureAgentCardDescriptor> {
+        self.signature_agent_card.as_ref()
+    }
 }
 impl UpdatedDescriptorsFields {
     /// Creates a new builder-style object to manufacture [`UpdatedDescriptorsFields`](crate::types::UpdatedDescriptorsFields).
@@ -60,6 +66,7 @@ pub struct UpdatedDescriptorsFieldsBuilder {
     pub(crate) custom: ::std::option::Option<crate::types::UpdatedCustomDescriptor>,
     pub(crate) http: ::std::option::Option<crate::types::UpdatedHttpDescriptor>,
     pub(crate) agui: ::std::option::Option<crate::types::UpdatedAgUiDescriptor>,
+    pub(crate) signature_agent_card: ::std::option::Option<crate::types::UpdatedSignatureAgentCardDescriptor>,
 }
 impl UpdatedDescriptorsFieldsBuilder {
     /// <p>The patch for the MCP server descriptor.</p>
@@ -146,6 +153,20 @@ impl UpdatedDescriptorsFieldsBuilder {
     pub fn get_agui(&self) -> &::std::option::Option<crate::types::UpdatedAgUiDescriptor> {
         &self.agui
     }
+    /// <p>The patch for the signature agent card descriptor.</p>
+    pub fn signature_agent_card(mut self, input: crate::types::UpdatedSignatureAgentCardDescriptor) -> Self {
+        self.signature_agent_card = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The patch for the signature agent card descriptor.</p>
+    pub fn set_signature_agent_card(mut self, input: ::std::option::Option<crate::types::UpdatedSignatureAgentCardDescriptor>) -> Self {
+        self.signature_agent_card = input;
+        self
+    }
+    /// <p>The patch for the signature agent card descriptor.</p>
+    pub fn get_signature_agent_card(&self) -> &::std::option::Option<crate::types::UpdatedSignatureAgentCardDescriptor> {
+        &self.signature_agent_card
+    }
     /// Consumes the builder and constructs a [`UpdatedDescriptorsFields`](crate::types::UpdatedDescriptorsFields).
     pub fn build(self) -> crate::types::UpdatedDescriptorsFields {
         crate::types::UpdatedDescriptorsFields {
@@ -155,6 +176,7 @@ impl UpdatedDescriptorsFieldsBuilder {
             custom: self.custom,
             http: self.http,
             agui: self.agui,
+            signature_agent_card: self.signature_agent_card,
         }
     }
 }

@@ -3,9 +3,9 @@ pub use crate::types::error::_resource_limit_exceeded::ResourceLimitExceeded;
 
 pub use crate::types::error::_resource_not_found::ResourceNotFound;
 
-pub use crate::types::error::_resource_in_use::ResourceInUse;
-
 pub use crate::types::error::_conflict_exception::ConflictException;
+
+pub use crate::types::error::_resource_in_use::ResourceInUse;
 
 pub use crate::types::error::_resource_already_exists::ResourceAlreadyExists;
 

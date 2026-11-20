@@ -22,7 +22,7 @@ impl crate::operation::search_facets::builders::SearchFacetsInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchFacets`.
 ///
-/// <p>Returns available facet values for filtering listings, such as categories, pricing models, fulfillment option types, publishers, and customer ratings. Each facet value includes a count of matching listings.</p>
+/// <p>Retrieves the available facet values for filtering listings, such as categories, pricing models, fulfillment option types, publishers, and customer ratings. Each facet value includes a count of matching listings.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchFacetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -114,17 +114,17 @@ impl SearchFacetsFluentBuilder {
     pub fn into_paginator(self) -> crate::operation::search_facets::paginator::SearchFacetsPaginator {
         crate::operation::search_facets::paginator::SearchFacetsPaginator::new(self.handle, self.inner)
     }
-    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    /// <p>The preferred locale for response content, as a Best Current Practice 47 (BCP 47) language tag or a comma-separated priority list of language tags. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If you omit this field, the service returns content in the default locale.</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.locale(input.into());
         self
     }
-    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    /// <p>The preferred locale for response content, as a Best Current Practice 47 (BCP 47) language tag or a comma-separated priority list of language tags. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If you omit this field, the service returns content in the default locale.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_locale(input);
         self
     }
-    /// <p>A BCP 47 language tag or comma-separated priority list specifying the preferred locale for response content. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If omitted, the service returns content in the default locale.</p>
+    /// <p>The preferred locale for response content, as a Best Current Practice 47 (BCP 47) language tag or a comma-separated priority list of language tags. See <code>Locale</code> for supported values, constraints, fallback behavior, and the default locale. If you omit this field, the service returns content in the default locale.</p>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_locale()
     }
@@ -147,17 +147,17 @@ impl SearchFacetsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters to apply before retrieving facets. Multiple filters are combined with AND logic. Multiple values within the same filter are combined with OR logic.</p>
+    /// <p>Filters to apply before retrieving facets. A result must match every filter. Within one filter, a result matches if it has any of the values.</p>
     pub fn filters(mut self, input: crate::types::SearchFilter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>Filters to apply before retrieving facets. Multiple filters are combined with AND logic. Multiple values within the same filter are combined with OR logic.</p>
+    /// <p>Filters to apply before retrieving facets. A result must match every filter. Within one filter, a result matches if it has any of the values.</p>
     pub fn set_filters(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>>) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>Filters to apply before retrieving facets. Multiple filters are combined with AND logic. Multiple values within the same filter are combined with OR logic.</p>
+    /// <p>Filters to apply before retrieving facets. A result must match every filter. Within one filter, a result matches if it has any of the values.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchFilter>> {
         self.inner.get_filters()
     }
@@ -166,31 +166,31 @@ impl SearchFacetsFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_facet_types`](Self::set_facet_types).
     ///
-    /// <p>A list of specific facet types to retrieve. If empty or null, all available facets are returned.</p>
+    /// <p>The facet types to retrieve. If you omit this field or leave it empty, the service returns all available facets.</p>
     pub fn facet_types(mut self, input: crate::types::SearchFacetType) -> Self {
         self.inner = self.inner.facet_types(input);
         self
     }
-    /// <p>A list of specific facet types to retrieve. If empty or null, all available facets are returned.</p>
+    /// <p>The facet types to retrieve. If you omit this field or leave it empty, the service returns all available facets.</p>
     pub fn set_facet_types(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SearchFacetType>>) -> Self {
         self.inner = self.inner.set_facet_types(input);
         self
     }
-    /// <p>A list of specific facet types to retrieve. If empty or null, all available facets are returned.</p>
+    /// <p>The facet types to retrieve. If you omit this field or leave it empty, the service returns all available facets.</p>
     pub fn get_facet_types(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SearchFacetType>> {
         self.inner.get_facet_types()
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
+    /// <p>If the service returns <code>nextToken</code>, more results are available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again with the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. An expired pagination token returns a <code>ValidationException</code>.</p>
     pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
+    /// <p>If the service returns <code>nextToken</code>, more results are available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again with the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. An expired pagination token returns a <code>ValidationException</code>.</p>
     pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
-    /// <p>If <code>nextToken</code> is returned, there are more results available. Make the call again using the returned token to retrieve the next page.</p>
+    /// <p>If the service returns <code>nextToken</code>, more results are available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again with the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. An expired pagination token returns a <code>ValidationException</code>.</p>
     pub fn get_next_token(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_next_token()
     }

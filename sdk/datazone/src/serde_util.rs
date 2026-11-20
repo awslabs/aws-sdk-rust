@@ -1964,6 +1964,24 @@ pub(crate) fn update_asset_filter_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn update_asset_owner_output_output_correct_errors(
+    mut builder: crate::operation::update_asset_owner::builders::UpdateAssetOwnerOutputBuilder,
+) -> crate::operation::update_asset_owner::builders::UpdateAssetOwnerOutputBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.revision.is_none() {
+        builder.revision = Some(Default::default())
+    }
+    if builder.ownership_transfer.is_none() {
+        builder.ownership_transfer = {
+            let builder = crate::types::builders::AssetOwnershipTransferBuilder::default();
+            crate::serde_util::asset_ownership_transfer_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn update_connection_output_output_correct_errors(
     mut builder: crate::operation::update_connection::builders::UpdateConnectionOutputBuilder,
 ) -> crate::operation::update_connection::builders::UpdateConnectionOutputBuilder {
@@ -2407,6 +2425,21 @@ pub(crate) fn subscribed_listing_correct_errors(
     }
     if builder.owner_project_id.is_none() {
         builder.owner_project_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn asset_ownership_transfer_correct_errors(
+    mut builder: crate::types::builders::AssetOwnershipTransferBuilder,
+) -> crate::types::builders::AssetOwnershipTransferBuilder {
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::AssetOwnershipTransferStatus>().ok()
+    }
+    if builder.source_project_id.is_none() {
+        builder.source_project_id = Some(Default::default())
+    }
+    if builder.target_project_id.is_none() {
+        builder.target_project_id = Some(Default::default())
     }
     builder
 }

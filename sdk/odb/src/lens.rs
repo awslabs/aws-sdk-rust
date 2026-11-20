@@ -39,6 +39,16 @@ pub(crate) fn reflens_list_autonomous_database_peers_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_autonomous_database_refreshable_clones_output_output_next_token(
+    input: &crate::operation::list_autonomous_database_refreshable_clones::ListAutonomousDatabaseRefreshableClonesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_autonomous_database_versions_output_output_next_token(
     input: &crate::operation::list_autonomous_database_versions::ListAutonomousDatabaseVersionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -234,6 +244,13 @@ pub(crate) fn lens_list_autonomous_database_peers_output_output_autonomous_datab
     input: crate::operation::list_autonomous_database_peers::ListAutonomousDatabasePeersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AutonomousDatabasePeerSummary>> {
     let input = input.autonomous_database_peers;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_autonomous_database_refreshable_clones_output_output_autonomous_database_refreshable_clones(
+    input: crate::operation::list_autonomous_database_refreshable_clones::ListAutonomousDatabaseRefreshableClonesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::AutonomousDatabaseRefreshableCloneSummary>> {
+    let input = input.autonomous_database_refreshable_clones;
     ::std::option::Option::Some(input)
 }
 

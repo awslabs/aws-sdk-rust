@@ -278,6 +278,8 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetDataCatalo
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetDataCatalogExportConfigurationError {
+    /// <p>Access to a resource was denied.</p>
+    AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>A specified entity does not exist</p>
     EntityNotFoundException(crate::types::error::EntityNotFoundException),
     /// <p>An internal service error occurred.</p>
@@ -319,12 +321,17 @@ impl GetDataCatalogExportConfigurationError {
     ///
     pub fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::EntityNotFoundException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InternalServiceException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::InvalidInputException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::ThrottlingException(e) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(e),
             Self::Unhandled(e) => &e.meta,
         }
+    }
+    /// Returns `true` if the error kind is `GetDataCatalogExportConfigurationError::AccessDeniedException`.
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(self, Self::AccessDeniedException(_))
     }
     /// Returns `true` if the error kind is `GetDataCatalogExportConfigurationError::EntityNotFoundException`.
     pub fn is_entity_not_found_exception(&self) -> bool {
@@ -346,6 +353,7 @@ impl GetDataCatalogExportConfigurationError {
 impl ::std::error::Error for GetDataCatalogExportConfigurationError {
     fn source(&self) -> ::std::option::Option<&(dyn ::std::error::Error + 'static)> {
         match self {
+            Self::AccessDeniedException(_inner) => ::std::option::Option::Some(_inner),
             Self::EntityNotFoundException(_inner) => ::std::option::Option::Some(_inner),
             Self::InternalServiceException(_inner) => ::std::option::Option::Some(_inner),
             Self::InvalidInputException(_inner) => ::std::option::Option::Some(_inner),
@@ -357,6 +365,7 @@ impl ::std::error::Error for GetDataCatalogExportConfigurationError {
 impl ::std::fmt::Display for GetDataCatalogExportConfigurationError {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         match self {
+            Self::AccessDeniedException(_inner) => _inner.fmt(f),
             Self::EntityNotFoundException(_inner) => _inner.fmt(f),
             Self::InternalServiceException(_inner) => _inner.fmt(f),
             Self::InvalidInputException(_inner) => _inner.fmt(f),
@@ -382,6 +391,7 @@ impl ::aws_smithy_types::retry::ProvideErrorKind for GetDataCatalogExportConfigu
 impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for GetDataCatalogExportConfigurationError {
     fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         match self {
+            Self::AccessDeniedException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::EntityNotFoundException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InternalServiceException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),
             Self::InvalidInputException(_inner) => ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner),

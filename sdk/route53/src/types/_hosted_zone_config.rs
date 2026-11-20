@@ -8,6 +8,23 @@ pub struct HostedZoneConfig {
     pub comment: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether this is a private hosted zone.</p>
     pub private_zone: bool,
+    /// <p>The tier of the hosted zone. The tier controls which features you get and which optional features you can turn on. Valid values are the following:</p>
+    /// <dl>
+    /// <dt>
+    /// STANDARD
+    /// </dt>
+    /// <dd>
+    /// <p><code>STANDARD</code> is the default tier for new hosted zones.</p>
+    /// </dd>
+    /// <dt>
+    /// ADVANCED
+    /// </dt>
+    /// <dd>
+    /// <p><code>ADVANCED</code> is a tier that includes Change History and offers more optional features.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>If you don't specify a tier when you create a hosted zone, Route 53 uses <code>STANDARD</code>. Route 53 always returns this value. For pricing information, see Amazon Route 53 pricing on the <a href="https://aws.amazon.com/route53/pricing/">AWS website</a>.</p>
+    pub hosted_zone_tier: ::std::option::Option<crate::types::HostedZoneTier>,
 }
 impl HostedZoneConfig {
     /// <p>Any comments that you want to include about the hosted zone.</p>
@@ -17,6 +34,25 @@ impl HostedZoneConfig {
     /// <p>A value that indicates whether this is a private hosted zone.</p>
     pub fn private_zone(&self) -> bool {
         self.private_zone
+    }
+    /// <p>The tier of the hosted zone. The tier controls which features you get and which optional features you can turn on. Valid values are the following:</p>
+    /// <dl>
+    /// <dt>
+    /// STANDARD
+    /// </dt>
+    /// <dd>
+    /// <p><code>STANDARD</code> is the default tier for new hosted zones.</p>
+    /// </dd>
+    /// <dt>
+    /// ADVANCED
+    /// </dt>
+    /// <dd>
+    /// <p><code>ADVANCED</code> is a tier that includes Change History and offers more optional features.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>If you don't specify a tier when you create a hosted zone, Route 53 uses <code>STANDARD</code>. Route 53 always returns this value. For pricing information, see Amazon Route 53 pricing on the <a href="https://aws.amazon.com/route53/pricing/">AWS website</a>.</p>
+    pub fn hosted_zone_tier(&self) -> ::std::option::Option<&crate::types::HostedZoneTier> {
+        self.hosted_zone_tier.as_ref()
     }
 }
 impl HostedZoneConfig {
@@ -32,6 +68,7 @@ impl HostedZoneConfig {
 pub struct HostedZoneConfigBuilder {
     pub(crate) comment: ::std::option::Option<::std::string::String>,
     pub(crate) private_zone: ::std::option::Option<bool>,
+    pub(crate) hosted_zone_tier: ::std::option::Option<crate::types::HostedZoneTier>,
 }
 impl HostedZoneConfigBuilder {
     /// <p>Any comments that you want to include about the hosted zone.</p>
@@ -62,11 +99,71 @@ impl HostedZoneConfigBuilder {
     pub fn get_private_zone(&self) -> &::std::option::Option<bool> {
         &self.private_zone
     }
+    /// <p>The tier of the hosted zone. The tier controls which features you get and which optional features you can turn on. Valid values are the following:</p>
+    /// <dl>
+    /// <dt>
+    /// STANDARD
+    /// </dt>
+    /// <dd>
+    /// <p><code>STANDARD</code> is the default tier for new hosted zones.</p>
+    /// </dd>
+    /// <dt>
+    /// ADVANCED
+    /// </dt>
+    /// <dd>
+    /// <p><code>ADVANCED</code> is a tier that includes Change History and offers more optional features.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>If you don't specify a tier when you create a hosted zone, Route 53 uses <code>STANDARD</code>. Route 53 always returns this value. For pricing information, see Amazon Route 53 pricing on the <a href="https://aws.amazon.com/route53/pricing/">AWS website</a>.</p>
+    pub fn hosted_zone_tier(mut self, input: crate::types::HostedZoneTier) -> Self {
+        self.hosted_zone_tier = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The tier of the hosted zone. The tier controls which features you get and which optional features you can turn on. Valid values are the following:</p>
+    /// <dl>
+    /// <dt>
+    /// STANDARD
+    /// </dt>
+    /// <dd>
+    /// <p><code>STANDARD</code> is the default tier for new hosted zones.</p>
+    /// </dd>
+    /// <dt>
+    /// ADVANCED
+    /// </dt>
+    /// <dd>
+    /// <p><code>ADVANCED</code> is a tier that includes Change History and offers more optional features.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>If you don't specify a tier when you create a hosted zone, Route 53 uses <code>STANDARD</code>. Route 53 always returns this value. For pricing information, see Amazon Route 53 pricing on the <a href="https://aws.amazon.com/route53/pricing/">AWS website</a>.</p>
+    pub fn set_hosted_zone_tier(mut self, input: ::std::option::Option<crate::types::HostedZoneTier>) -> Self {
+        self.hosted_zone_tier = input;
+        self
+    }
+    /// <p>The tier of the hosted zone. The tier controls which features you get and which optional features you can turn on. Valid values are the following:</p>
+    /// <dl>
+    /// <dt>
+    /// STANDARD
+    /// </dt>
+    /// <dd>
+    /// <p><code>STANDARD</code> is the default tier for new hosted zones.</p>
+    /// </dd>
+    /// <dt>
+    /// ADVANCED
+    /// </dt>
+    /// <dd>
+    /// <p><code>ADVANCED</code> is a tier that includes Change History and offers more optional features.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>If you don't specify a tier when you create a hosted zone, Route 53 uses <code>STANDARD</code>. Route 53 always returns this value. For pricing information, see Amazon Route 53 pricing on the <a href="https://aws.amazon.com/route53/pricing/">AWS website</a>.</p>
+    pub fn get_hosted_zone_tier(&self) -> &::std::option::Option<crate::types::HostedZoneTier> {
+        &self.hosted_zone_tier
+    }
     /// Consumes the builder and constructs a [`HostedZoneConfig`](crate::types::HostedZoneConfig).
     pub fn build(self) -> crate::types::HostedZoneConfig {
         crate::types::HostedZoneConfig {
             comment: self.comment,
             private_zone: self.private_zone.unwrap_or_default(),
+            hosted_zone_tier: self.hosted_zone_tier,
         }
     }
 }

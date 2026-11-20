@@ -185,9 +185,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutAssetTelem
         };
 
         let mut captured = ::aws_smithy_types::telemetry::CapturedTelemetryAttributes::default();
-        if requested.should_capture("AssetTypeId") {
-            if let ::std::option::Option::Some(value) = input.asset_type_id.as_deref() {
-                captured.insert("AssetTypeId", value);
+        if requested.should_capture("AssetTypeIdentifier") {
+            if let ::std::option::Option::Some(value) = input.asset_type_identifier.as_deref() {
+                captured.insert("AssetTypeIdentifier", value);
             }
         }
         if requested.should_capture("Identifier") {

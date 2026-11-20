@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>Your request didn't pass one or more validation tests. This can occur when the entity you're trying to delete doesn't exist or if it's in a non-terminal state (such as <code>IN PROGRESS</code>). See the exception message field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. This can occur when a parameter has an invalid value, when you combine parameters in a way that isn't supported, when the entity you're trying to delete doesn't exist, or if it's in a non-terminal state (such as <code>IN PROGRESS</code>). See the exception message field for more information.</p>
     BadRequestException(crate::types::error::BadRequestException),
     /// <p>A resource already exists with this name. Resource names must be unique within an Amazon Web Services account.</p>
     ConflictException(crate::types::error::ConflictException),
@@ -1226,6 +1226,30 @@ impl From<crate::operation::tag_resource::TagResourceError> for Error {
             crate::operation::tag_resource::TagResourceError::LimitExceededException(inner) => Error::LimitExceededException(inner),
             crate::operation::tag_resource::TagResourceError::NotFoundException(inner) => Error::NotFoundException(inner),
             crate::operation::tag_resource::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::transcribe_audio::TranscribeAudioError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::transcribe_audio::TranscribeAudioError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::transcribe_audio::TranscribeAudioError> for Error {
+    fn from(err: crate::operation::transcribe_audio::TranscribeAudioError) -> Self {
+        match err {
+            crate::operation::transcribe_audio::TranscribeAudioError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::operation::transcribe_audio::TranscribeAudioError::InternalFailureException(inner) => Error::InternalFailureException(inner),
+            crate::operation::transcribe_audio::TranscribeAudioError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::transcribe_audio::TranscribeAudioError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

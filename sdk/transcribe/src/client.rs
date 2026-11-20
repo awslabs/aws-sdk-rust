@@ -343,6 +343,8 @@ mod start_transcription_job;
 
 mod tag_resource;
 
+mod transcribe_audio;
+
 mod untag_resource;
 
 mod update_call_analytics_category;

@@ -6,6 +6,12 @@
 pub struct OrganizationScope {
     /// <p>List of Amazon Web Services account IDs to include in the organization scope.</p>
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The organizational unit (OU) or organization root IDs to include in the preview scope. The preview includes accounts in the specified OUs and their child OUs.</p>
+    pub organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The organizational unit (OU) or organization root IDs to exclude from the preview scope. The preview doesn't include accounts in the specified OUs or their child OUs.</p>
+    pub excluded_organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The Amazon Web Services account IDs to exclude from the preview scope.</p>
+    pub excluded_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl OrganizationScope {
     /// <p>List of Amazon Web Services account IDs to include in the organization scope.</p>
@@ -13,6 +19,24 @@ impl OrganizationScope {
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
     pub fn account_ids(&self) -> &[::std::string::String] {
         self.account_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The organizational unit (OU) or organization root IDs to include in the preview scope. The preview includes accounts in the specified OUs and their child OUs.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_unit_ids.is_none()`.
+    pub fn organizational_unit_ids(&self) -> &[::std::string::String] {
+        self.organizational_unit_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The organizational unit (OU) or organization root IDs to exclude from the preview scope. The preview doesn't include accounts in the specified OUs or their child OUs.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_organizational_unit_ids.is_none()`.
+    pub fn excluded_organizational_unit_ids(&self) -> &[::std::string::String] {
+        self.excluded_organizational_unit_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The Amazon Web Services account IDs to exclude from the preview scope.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.excluded_account_ids.is_none()`.
+    pub fn excluded_account_ids(&self) -> &[::std::string::String] {
+        self.excluded_account_ids.as_deref().unwrap_or_default()
     }
 }
 impl OrganizationScope {
@@ -27,6 +51,9 @@ impl OrganizationScope {
 #[non_exhaustive]
 pub struct OrganizationScopeBuilder {
     pub(crate) account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) excluded_organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) excluded_account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl OrganizationScopeBuilder {
     /// Appends an item to `account_ids`.
@@ -49,10 +76,73 @@ impl OrganizationScopeBuilder {
     pub fn get_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.account_ids
     }
+    /// Appends an item to `organizational_unit_ids`.
+    ///
+    /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
+    ///
+    /// <p>The organizational unit (OU) or organization root IDs to include in the preview scope. The preview includes accounts in the specified OUs and their child OUs.</p>
+    pub fn organizational_unit_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.organizational_unit_ids.unwrap_or_default();
+        v.push(input.into());
+        self.organizational_unit_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The organizational unit (OU) or organization root IDs to include in the preview scope. The preview includes accounts in the specified OUs and their child OUs.</p>
+    pub fn set_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.organizational_unit_ids = input;
+        self
+    }
+    /// <p>The organizational unit (OU) or organization root IDs to include in the preview scope. The preview includes accounts in the specified OUs and their child OUs.</p>
+    pub fn get_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.organizational_unit_ids
+    }
+    /// Appends an item to `excluded_organizational_unit_ids`.
+    ///
+    /// To override the contents of this collection use [`set_excluded_organizational_unit_ids`](Self::set_excluded_organizational_unit_ids).
+    ///
+    /// <p>The organizational unit (OU) or organization root IDs to exclude from the preview scope. The preview doesn't include accounts in the specified OUs or their child OUs.</p>
+    pub fn excluded_organizational_unit_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.excluded_organizational_unit_ids.unwrap_or_default();
+        v.push(input.into());
+        self.excluded_organizational_unit_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The organizational unit (OU) or organization root IDs to exclude from the preview scope. The preview doesn't include accounts in the specified OUs or their child OUs.</p>
+    pub fn set_excluded_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.excluded_organizational_unit_ids = input;
+        self
+    }
+    /// <p>The organizational unit (OU) or organization root IDs to exclude from the preview scope. The preview doesn't include accounts in the specified OUs or their child OUs.</p>
+    pub fn get_excluded_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.excluded_organizational_unit_ids
+    }
+    /// Appends an item to `excluded_account_ids`.
+    ///
+    /// To override the contents of this collection use [`set_excluded_account_ids`](Self::set_excluded_account_ids).
+    ///
+    /// <p>The Amazon Web Services account IDs to exclude from the preview scope.</p>
+    pub fn excluded_account_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.excluded_account_ids.unwrap_or_default();
+        v.push(input.into());
+        self.excluded_account_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The Amazon Web Services account IDs to exclude from the preview scope.</p>
+    pub fn set_excluded_account_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.excluded_account_ids = input;
+        self
+    }
+    /// <p>The Amazon Web Services account IDs to exclude from the preview scope.</p>
+    pub fn get_excluded_account_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.excluded_account_ids
+    }
     /// Consumes the builder and constructs a [`OrganizationScope`](crate::types::OrganizationScope).
     pub fn build(self) -> crate::types::OrganizationScope {
         crate::types::OrganizationScope {
             account_ids: self.account_ids,
+            organizational_unit_ids: self.organizational_unit_ids,
+            excluded_organizational_unit_ids: self.excluded_organizational_unit_ids,
+            excluded_account_ids: self.excluded_account_ids,
         }
     }
 }

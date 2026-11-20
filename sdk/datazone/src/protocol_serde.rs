@@ -373,6 +373,8 @@ pub(crate) mod shape_update_account_pool;
 
 pub(crate) mod shape_update_asset_filter;
 
+pub(crate) mod shape_update_asset_owner;
+
 pub(crate) mod shape_update_connection;
 
 pub(crate) mod shape_update_data_source;
@@ -563,6 +565,8 @@ pub(crate) mod shape_update_account_pool_input;
 
 pub(crate) mod shape_update_asset_filter_input;
 
+pub(crate) mod shape_update_asset_owner_input;
+
 pub(crate) mod shape_update_connection_input;
 
 pub(crate) mod shape_update_data_source_input;
@@ -634,6 +638,8 @@ pub(crate) mod shape_asset_filter_configuration;
 pub(crate) mod shape_asset_filters;
 
 pub(crate) mod shape_asset_listing_details;
+
+pub(crate) mod shape_asset_ownership_transfer;
 
 pub(crate) mod shape_asset_permission;
 

@@ -65,6 +65,10 @@ pub(crate) mod shape_generate_mobile_sdk_release_url;
 
 pub(crate) mod shape_get_decrypted_api_key;
 
+pub(crate) mod shape_get_event;
+
+pub(crate) mod shape_get_event_actor;
+
 pub(crate) mod shape_get_ip_set;
 
 pub(crate) mod shape_get_logging_configuration;
@@ -100,6 +104,12 @@ pub(crate) mod shape_list_api_keys;
 pub(crate) mod shape_list_available_managed_rule_group_versions;
 
 pub(crate) mod shape_list_available_managed_rule_groups;
+
+pub(crate) mod shape_list_event_actors;
+
+pub(crate) mod shape_list_events;
+
+pub(crate) mod shape_list_events_by_web_acl;
 
 pub(crate) mod shape_list_ip_sets;
 
@@ -191,6 +201,10 @@ pub(crate) mod shape_generate_mobile_sdk_release_url_input;
 
 pub(crate) mod shape_get_decrypted_api_key_input;
 
+pub(crate) mod shape_get_event_actor_input;
+
+pub(crate) mod shape_get_event_input;
+
 pub(crate) mod shape_get_ip_set_input;
 
 pub(crate) mod shape_get_logging_configuration_input;
@@ -226,6 +240,12 @@ pub(crate) mod shape_list_api_keys_input;
 pub(crate) mod shape_list_available_managed_rule_group_versions_input;
 
 pub(crate) mod shape_list_available_managed_rule_groups_input;
+
+pub(crate) mod shape_list_event_actors_input;
+
+pub(crate) mod shape_list_events_by_web_acl_input;
+
+pub(crate) mod shape_list_events_input;
 
 pub(crate) mod shape_list_ip_sets_input;
 
@@ -311,6 +331,8 @@ pub(crate) mod shape_analytics_config;
 
 pub(crate) mod shape_api_key_summaries;
 
+pub(crate) mod shape_api_pattern_filter;
+
 pub(crate) mod shape_application_config;
 
 pub(crate) mod shape_association_config;
@@ -328,6 +350,16 @@ pub(crate) mod shape_data_protection_config;
 pub(crate) mod shape_default_action;
 
 pub(crate) mod shape_disallowed_features;
+
+pub(crate) mod shape_event_actor_detail;
+
+pub(crate) mod shape_event_actor_summary_list;
+
+pub(crate) mod shape_event_detail_summary;
+
+pub(crate) mod shape_event_detail_summary_list;
+
+pub(crate) mod shape_event_filter;
 
 pub(crate) mod shape_ip_set;
 
@@ -417,6 +449,8 @@ pub(crate) mod shape_allow_action;
 
 pub(crate) mod shape_api_key_summary;
 
+pub(crate) mod shape_api_security_event_detail;
+
 pub(crate) mod shape_application_attribute;
 
 pub(crate) mod shape_block_action;
@@ -434,6 +468,12 @@ pub(crate) mod shape_data_point_entry;
 pub(crate) mod shape_data_protection;
 
 pub(crate) mod shape_disallowed_feature;
+
+pub(crate) mod shape_event_actor_change_list;
+
+pub(crate) mod shape_event_actor_detail_summary;
+
+pub(crate) mod shape_event_actor_summary;
 
 pub(crate) mod shape_field_to_match;
 
@@ -469,6 +509,8 @@ pub(crate) mod shape_redacted_fields;
 
 pub(crate) mod shape_regular_expression_list;
 
+pub(crate) mod shape_related_event_list;
+
 pub(crate) mod shape_release_summary;
 
 pub(crate) mod shape_request_body_associated_resource_type_config;
@@ -494,6 +536,8 @@ pub(crate) mod shape_tag_list;
 pub(crate) mod shape_all_query_arguments;
 
 pub(crate) mod shape_and_statement;
+
+pub(crate) mod shape_api_pattern_list;
 
 pub(crate) mod shape_application_attributes;
 
@@ -528,6 +572,12 @@ pub(crate) mod shape_custom_request_handling;
 pub(crate) mod shape_custom_response;
 
 pub(crate) mod shape_data_protections;
+
+pub(crate) mod shape_event_actor_change;
+
+pub(crate) mod shape_event_actor_reference_list;
+
+pub(crate) mod shape_event_timeline_entry_list;
 
 pub(crate) mod shape_field_to_protect;
 
@@ -585,6 +635,8 @@ pub(crate) mod shape_regex_match_statement;
 
 pub(crate) mod shape_regex_pattern_set_reference_statement;
 
+pub(crate) mod shape_related_event;
+
 pub(crate) mod shape_request_body;
 
 pub(crate) mod shape_rule_group_reference_statement;
@@ -603,6 +655,8 @@ pub(crate) mod shape_uri_path;
 
 pub(crate) mod shape_xss_match_statement;
 
+pub(crate) mod shape_api_pattern;
+
 pub(crate) mod shape_bot_statistics;
 
 pub(crate) mod shape_condition;
@@ -612,6 +666,10 @@ pub(crate) mod shape_connected_account_price;
 pub(crate) mod shape_cookie_match_pattern;
 
 pub(crate) mod shape_custom_http_header;
+
+pub(crate) mod shape_event_actor_reference;
+
+pub(crate) mod shape_event_timeline_entry;
 
 pub(crate) mod shape_excluded_rule;
 
@@ -649,6 +707,8 @@ pub(crate) mod shape_attribute_values;
 
 pub(crate) mod shape_aws_managed_rules_acfp_rule_set;
 
+pub(crate) mod shape_aws_managed_rules_ai_security_rule_set;
+
 pub(crate) mod shape_aws_managed_rules_anti_d_do_s_rule_set;
 
 pub(crate) mod shape_aws_managed_rules_atp_rule_set;
@@ -660,6 +720,8 @@ pub(crate) mod shape_conditions;
 pub(crate) mod shape_connected_account_payment_networks;
 
 pub(crate) mod shape_custom_http_headers;
+
+pub(crate) mod shape_domain_list;
 
 pub(crate) mod shape_label_name_condition;
 
@@ -692,6 +754,8 @@ pub(crate) mod shape_rate_limit_uri_path;
 pub(crate) mod shape_username_field;
 
 pub(crate) mod shape_asn_list;
+
+pub(crate) mod shape_bedrock_guardrails;
 
 pub(crate) mod shape_client_side_action_config;
 
@@ -729,9 +793,15 @@ pub(crate) mod shape_text_transformations;
 
 pub(crate) mod shape_address_field;
 
+pub(crate) mod shape_bedrock_guardrails_request_and_response;
+
+pub(crate) mod shape_bedrock_guardrails_request_only;
+
 pub(crate) mod shape_client_side_action;
 
 pub(crate) mod shape_connected_account_prices;
+
+pub(crate) mod shape_disable_bedrock_guardrails;
 
 pub(crate) mod shape_email_field;
 

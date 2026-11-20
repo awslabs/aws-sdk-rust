@@ -20,101 +20,125 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                        "listingId" => {
-                            builder = builder.set_listing_id(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "listingName" => {
-                            builder = builder.set_listing_name(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "publisher" => {
-                            builder = builder.set_publisher(crate::protocol_serde::shape_seller_information::de_seller_information(
-                                tokens,
-                                _value,
-                                depth + 1,
-                            )?);
-                        }
-                        "fulfillmentOptionSummaries" => {
-                            builder = builder.set_fulfillment_option_summaries(
-                                crate::protocol_serde::shape_fulfillment_option_summary_list::de_fulfillment_option_summary_list(
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "listingId" => {
+                                builder = builder.set_listing_id(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "listingName" => {
+                                builder = builder.set_listing_name(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "publisher" => {
+                                builder = builder.set_publisher(crate::protocol_serde::shape_seller_information::de_seller_information(
                                     tokens,
                                     _value,
                                     depth + 1,
-                                )?,
-                            );
-                        }
-                        "catalog" => {
-                            builder = builder.set_catalog(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "shortDescription" => {
-                            builder = builder.set_short_description(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "logoThumbnailUrl" => {
-                            builder = builder.set_logo_thumbnail_url(
-                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                    .transpose()?,
-                            );
-                        }
-                        "categories" => {
-                            builder =
-                                builder.set_categories(crate::protocol_serde::shape_category_list::de_category_list(tokens, _value, depth + 1)?);
-                        }
-                        "badges" => {
-                            builder = builder.set_badges(crate::protocol_serde::shape_listing_badge_list::de_listing_badge_list(
-                                tokens,
-                                _value,
-                                depth + 1,
-                            )?);
-                        }
-                        "reviewSummary" => {
-                            builder = builder.set_review_summary(crate::protocol_serde::shape_review_summary::de_review_summary(
-                                tokens,
-                                _value,
-                                depth + 1,
-                            )?);
-                        }
-                        "pricingModels" => {
-                            builder = builder.set_pricing_models(crate::protocol_serde::shape_pricing_model_list::de_pricing_model_list(
-                                tokens,
-                                _value,
-                                depth + 1,
-                            )?);
-                        }
-                        "pricingUnits" => {
-                            builder = builder.set_pricing_units(crate::protocol_serde::shape_pricing_unit_list::de_pricing_unit_list(
-                                tokens,
-                                _value,
-                                depth + 1,
-                            )?);
-                        }
-                        "associatedEntities" => {
-                            builder = builder.set_associated_entities(
-                                crate::protocol_serde::shape_listing_summary_associated_entity_list::de_listing_summary_associated_entity_list(
+                                )?);
+                            }
+                            "fulfillmentOptionSummaries" => {
+                                builder = builder.set_fulfillment_option_summaries(
+                                    crate::protocol_serde::shape_fulfillment_option_summary_list::de_fulfillment_option_summary_list(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "catalog" => {
+                                builder = builder.set_catalog(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "shortDescription" => {
+                                builder = builder.set_short_description(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "logoThumbnailUrl" => {
+                                builder = builder.set_logo_thumbnail_url(
+                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                        .transpose()?,
+                                );
+                            }
+                            "categories" => {
+                                builder =
+                                    builder.set_categories(crate::protocol_serde::shape_category_list::de_category_list(tokens, _value, depth + 1)?);
+                            }
+                            "badges" => {
+                                builder = builder.set_badges(crate::protocol_serde::shape_listing_badge_list::de_listing_badge_list(
                                     tokens,
                                     _value,
                                     depth + 1,
-                                )?,
-                            );
+                                )?);
+                            }
+                            "reviewSummary" => {
+                                builder = builder.set_review_summary(crate::protocol_serde::shape_review_summary::de_review_summary(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "pricingModels" => {
+                                builder = builder.set_pricing_models(crate::protocol_serde::shape_pricing_model_list::de_pricing_model_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "pricingUnits" => {
+                                builder = builder.set_pricing_units(crate::protocol_serde::shape_pricing_unit_list::de_pricing_unit_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "associatedEntities" => {
+                                builder = builder.set_associated_entities(
+                                    crate::protocol_serde::shape_listing_summary_associated_entity_list::de_listing_summary_associated_entity_list(
+                                        tokens,
+                                        _value,
+                                        depth + 1,
+                                    )?,
+                                );
+                            }
+                            "trustCenterSummary" => {
+                                builder = builder.set_trust_center_summary(
+                                    crate::protocol_serde::shape_trust_center_summary::de_trust_center_summary(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "caseStudiesSummary" => {
+                                builder = builder.set_case_studies_summary(
+                                    crate::protocol_serde::shape_case_studies_summary::de_case_studies_summary(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            "useCaseSummary" => {
+                                builder = builder.set_use_case_summary(crate::protocol_serde::shape_use_case_summary::de_use_case_summary(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?);
+                            }
+                            "sellerEngagements" => {
+                                builder = builder.set_seller_engagements(
+                                    crate::protocol_serde::shape_seller_engagement_list::de_seller_engagement_list(tokens, _value, depth + 1)?,
+                                );
+                            }
+                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                         }
-                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-                    },
+                    }
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {other:?}"

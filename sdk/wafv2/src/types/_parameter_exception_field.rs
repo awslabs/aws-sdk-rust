@@ -17,6 +17,7 @@
 ///     ParameterExceptionField::AssociableResource => { /* ... */ },
 ///     ParameterExceptionField::AssociatedResourceType => { /* ... */ },
 ///     ParameterExceptionField::AtpRuleSetResponseInspection => { /* ... */ },
+///     ParameterExceptionField::BedrockGuardrails => { /* ... */ },
 ///     ParameterExceptionField::BodyParsingFallbackBehavior => { /* ... */ },
 ///     ParameterExceptionField::ByteMatchStatement => { /* ... */ },
 ///     ParameterExceptionField::ChallengeConfig => { /* ... */ },
@@ -72,6 +73,7 @@
 ///     ParameterExceptionField::ResourceArn => { /* ... */ },
 ///     ParameterExceptionField::ResourceType => { /* ... */ },
 ///     ParameterExceptionField::ResponseContentType => { /* ... */ },
+///     ParameterExceptionField::RoleArn => { /* ... */ },
 ///     ParameterExceptionField::Rule => { /* ... */ },
 ///     ParameterExceptionField::RuleAction => { /* ... */ },
 ///     ParameterExceptionField::RuleGroup => { /* ... */ },
@@ -128,6 +130,8 @@ pub enum ParameterExceptionField {
     AssociatedResourceType,
     #[allow(missing_docs)] // documentation missing in model
     AtpRuleSetResponseInspection,
+    #[allow(missing_docs)] // documentation missing in model
+    BedrockGuardrails,
     #[allow(missing_docs)] // documentation missing in model
     BodyParsingFallbackBehavior,
     #[allow(missing_docs)] // documentation missing in model
@@ -239,6 +243,8 @@ pub enum ParameterExceptionField {
     #[allow(missing_docs)] // documentation missing in model
     ResponseContentType,
     #[allow(missing_docs)] // documentation missing in model
+    RoleArn,
+    #[allow(missing_docs)] // documentation missing in model
     Rule,
     #[allow(missing_docs)] // documentation missing in model
     RuleAction,
@@ -286,6 +292,7 @@ impl ::std::convert::From<&str> for ParameterExceptionField {
             "ASSOCIABLE_RESOURCE" => ParameterExceptionField::AssociableResource,
             "ASSOCIATED_RESOURCE_TYPE" => ParameterExceptionField::AssociatedResourceType,
             "ATP_RULE_SET_RESPONSE_INSPECTION" => ParameterExceptionField::AtpRuleSetResponseInspection,
+            "BEDROCK_GUARDRAILS" => ParameterExceptionField::BedrockGuardrails,
             "BODY_PARSING_FALLBACK_BEHAVIOR" => ParameterExceptionField::BodyParsingFallbackBehavior,
             "BYTE_MATCH_STATEMENT" => ParameterExceptionField::ByteMatchStatement,
             "CHALLENGE_CONFIG" => ParameterExceptionField::ChallengeConfig,
@@ -341,6 +348,7 @@ impl ::std::convert::From<&str> for ParameterExceptionField {
             "RESOURCE_ARN" => ParameterExceptionField::ResourceArn,
             "RESOURCE_TYPE" => ParameterExceptionField::ResourceType,
             "RESPONSE_CONTENT_TYPE" => ParameterExceptionField::ResponseContentType,
+            "ROLE_ARN" => ParameterExceptionField::RoleArn,
             "RULE" => ParameterExceptionField::Rule,
             "RULE_ACTION" => ParameterExceptionField::RuleAction,
             "RULE_GROUP" => ParameterExceptionField::RuleGroup,
@@ -379,6 +387,7 @@ impl ParameterExceptionField {
             ParameterExceptionField::AssociableResource => "ASSOCIABLE_RESOURCE",
             ParameterExceptionField::AssociatedResourceType => "ASSOCIATED_RESOURCE_TYPE",
             ParameterExceptionField::AtpRuleSetResponseInspection => "ATP_RULE_SET_RESPONSE_INSPECTION",
+            ParameterExceptionField::BedrockGuardrails => "BEDROCK_GUARDRAILS",
             ParameterExceptionField::BodyParsingFallbackBehavior => "BODY_PARSING_FALLBACK_BEHAVIOR",
             ParameterExceptionField::ByteMatchStatement => "BYTE_MATCH_STATEMENT",
             ParameterExceptionField::ChallengeConfig => "CHALLENGE_CONFIG",
@@ -434,6 +443,7 @@ impl ParameterExceptionField {
             ParameterExceptionField::ResourceArn => "RESOURCE_ARN",
             ParameterExceptionField::ResourceType => "RESOURCE_TYPE",
             ParameterExceptionField::ResponseContentType => "RESPONSE_CONTENT_TYPE",
+            ParameterExceptionField::RoleArn => "ROLE_ARN",
             ParameterExceptionField::Rule => "RULE",
             ParameterExceptionField::RuleAction => "RULE_ACTION",
             ParameterExceptionField::RuleGroup => "RULE_GROUP",
@@ -463,6 +473,7 @@ impl ParameterExceptionField {
             "ASSOCIABLE_RESOURCE",
             "ASSOCIATED_RESOURCE_TYPE",
             "ATP_RULE_SET_RESPONSE_INSPECTION",
+            "BEDROCK_GUARDRAILS",
             "BODY_PARSING_FALLBACK_BEHAVIOR",
             "BYTE_MATCH_STATEMENT",
             "CHALLENGE_CONFIG",
@@ -518,6 +529,7 @@ impl ParameterExceptionField {
             "RESOURCE_ARN",
             "RESOURCE_TYPE",
             "RESPONSE_CONTENT_TYPE",
+            "ROLE_ARN",
             "RULE",
             "RULE_ACTION",
             "RULE_GROUP",
@@ -564,6 +576,7 @@ impl ::std::fmt::Display for ParameterExceptionField {
             ParameterExceptionField::AssociableResource => write!(f, "ASSOCIABLE_RESOURCE"),
             ParameterExceptionField::AssociatedResourceType => write!(f, "ASSOCIATED_RESOURCE_TYPE"),
             ParameterExceptionField::AtpRuleSetResponseInspection => write!(f, "ATP_RULE_SET_RESPONSE_INSPECTION"),
+            ParameterExceptionField::BedrockGuardrails => write!(f, "BEDROCK_GUARDRAILS"),
             ParameterExceptionField::BodyParsingFallbackBehavior => write!(f, "BODY_PARSING_FALLBACK_BEHAVIOR"),
             ParameterExceptionField::ByteMatchStatement => write!(f, "BYTE_MATCH_STATEMENT"),
             ParameterExceptionField::ChallengeConfig => write!(f, "CHALLENGE_CONFIG"),
@@ -619,6 +632,7 @@ impl ::std::fmt::Display for ParameterExceptionField {
             ParameterExceptionField::ResourceArn => write!(f, "RESOURCE_ARN"),
             ParameterExceptionField::ResourceType => write!(f, "RESOURCE_TYPE"),
             ParameterExceptionField::ResponseContentType => write!(f, "RESPONSE_CONTENT_TYPE"),
+            ParameterExceptionField::RoleArn => write!(f, "ROLE_ARN"),
             ParameterExceptionField::Rule => write!(f, "RULE"),
             ParameterExceptionField::RuleAction => write!(f, "RULE_ACTION"),
             ParameterExceptionField::RuleGroup => write!(f, "RULE_GROUP"),

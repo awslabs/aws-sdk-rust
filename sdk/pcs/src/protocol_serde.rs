@@ -141,6 +141,10 @@ pub(crate) mod shape_endpoints;
 
 pub(crate) mod shape_instance_config;
 
+pub(crate) mod shape_instance_health_checks;
+
+pub(crate) mod shape_instance_health_checks_request;
+
 pub(crate) mod shape_networking_request;
 
 pub(crate) mod shape_node_lifecycle_actions;
@@ -165,6 +169,8 @@ pub(crate) mod shape_update_cluster_slurm_configuration_request;
 
 pub(crate) mod shape_update_compute_node_group_slurm_configuration_request;
 
+pub(crate) mod shape_update_instance_health_checks_request;
+
 pub(crate) mod shape_update_node_lifecycle_actions_request;
 
 pub(crate) mod shape_update_queue_slurm_configuration_request;
@@ -187,9 +193,13 @@ pub(crate) mod shape_compute_node_group_slurm_configuration;
 
 pub(crate) mod shape_compute_node_group_summary;
 
+pub(crate) mod shape_deep_health_checks;
+
 pub(crate) mod shape_endpoint;
 
 pub(crate) mod shape_error_info_list;
+
+pub(crate) mod shape_health_monitoring;
 
 pub(crate) mod shape_instance_list;
 
@@ -226,6 +236,8 @@ pub(crate) mod shape_validation_exception_field;
 pub(crate) mod shape_accounting;
 
 pub(crate) mod shape_cgroup_custom_settings;
+
+pub(crate) mod shape_deep_health_check_on_start;
 
 pub(crate) mod shape_error_info;
 

@@ -4,11 +4,11 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LabelNameCondition {
-    /// <p>The label name to match, supporting alphanumeric characters, underscores, hyphens, and colons.</p>
+    /// <p>The label name to match, supporting alphanumeric characters, underscores, hyphens, colons, and periods.</p>
     pub label_name: ::std::option::Option<::std::string::String>,
 }
 impl LabelNameCondition {
-    /// <p>The label name to match, supporting alphanumeric characters, underscores, hyphens, and colons.</p>
+    /// <p>The label name to match, supporting alphanumeric characters, underscores, hyphens, colons, and periods.</p>
     pub fn label_name(&self) -> ::std::option::Option<&str> {
         self.label_name.as_deref()
     }
@@ -27,17 +27,17 @@ pub struct LabelNameConditionBuilder {
     pub(crate) label_name: ::std::option::Option<::std::string::String>,
 }
 impl LabelNameConditionBuilder {
-    /// <p>The label name to match, supporting alphanumeric characters, underscores, hyphens, and colons.</p>
+    /// <p>The label name to match, supporting alphanumeric characters, underscores, hyphens, colons, and periods.</p>
     pub fn label_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.label_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The label name to match, supporting alphanumeric characters, underscores, hyphens, and colons.</p>
+    /// <p>The label name to match, supporting alphanumeric characters, underscores, hyphens, colons, and periods.</p>
     pub fn set_label_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.label_name = input;
         self
     }
-    /// <p>The label name to match, supporting alphanumeric characters, underscores, hyphens, and colons.</p>
+    /// <p>The label name to match, supporting alphanumeric characters, underscores, hyphens, colons, and periods.</p>
     pub fn get_label_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.label_name
     }

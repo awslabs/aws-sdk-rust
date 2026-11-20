@@ -368,4 +368,50 @@ impl CreateDocumentFluentBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         self.inner.get_tags()
     }
+    ///
+    /// Appends an item to `CloudProviders`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_providers`](Self::set_cloud_providers).
+    ///
+    /// <p>The cloud providers that the document can run against. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> - The document runs against Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>Azure</code> - The document runs against Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> - The document runs against Google Cloud resources.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, the default is <code>AWS</code>.</p>
+    pub fn cloud_providers(mut self, input: crate::types::CloudProvider) -> Self {
+        self.inner = self.inner.cloud_providers(input);
+        self
+    }
+    /// <p>The cloud providers that the document can run against. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> - The document runs against Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>Azure</code> - The document runs against Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> - The document runs against Google Cloud resources.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, the default is <code>AWS</code>.</p>
+    pub fn set_cloud_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CloudProvider>>) -> Self {
+        self.inner = self.inner.set_cloud_providers(input);
+        self
+    }
+    /// <p>The cloud providers that the document can run against. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> - The document runs against Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>Azure</code> - The document runs against Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> - The document runs against Google Cloud resources.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, the default is <code>AWS</code>.</p>
+    pub fn get_cloud_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudProvider>> {
+        self.inner.get_cloud_providers()
+    }
 }

@@ -76,6 +76,17 @@ static VIDEODESCRIPTION_MEMBER_DROP_FRAME_TIMECODE: ::aws_smithy_schema::Schema<
     6,
 )
 .with_json_name("dropFrameTimecode");
+static VIDEODESCRIPTION_MEMBER_DYNAMIC_MULTIVIEW_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconvert#VideoDescription$DynamicMultiviewSettings",
+        "com.amazonaws.mediaconvert",
+        "VideoDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DynamicMultiviewSettings",
+    7,
+)
+.with_json_name("dynamicMultiviewSettings");
 static VIDEODESCRIPTION_MEMBER_FIXED_AFD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.mediaconvert#VideoDescription$FixedAfd",
@@ -84,7 +95,7 @@ static VIDEODESCRIPTION_MEMBER_FIXED_AFD: ::aws_smithy_schema::Schema<'static> =
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "FixedAfd",
-    7,
+    8,
 )
 .with_json_name("fixedAfd");
 static VIDEODESCRIPTION_MEMBER_HEIGHT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -95,7 +106,7 @@ static VIDEODESCRIPTION_MEMBER_HEIGHT: ::aws_smithy_schema::Schema<'static> = ::
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "Height",
-    8,
+    9,
 )
 .with_json_name("height");
 static VIDEODESCRIPTION_MEMBER_POSITION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -106,7 +117,7 @@ static VIDEODESCRIPTION_MEMBER_POSITION: ::aws_smithy_schema::Schema<'static> = 
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "Position",
-    9,
+    10,
 )
 .with_json_name("position");
 static VIDEODESCRIPTION_MEMBER_RESPOND_TO_AFD: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -117,7 +128,7 @@ static VIDEODESCRIPTION_MEMBER_RESPOND_TO_AFD: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "RespondToAfd",
-    10,
+    11,
 )
 .with_json_name("respondToAfd");
 static VIDEODESCRIPTION_MEMBER_SCALING_BEHAVIOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -128,7 +139,7 @@ static VIDEODESCRIPTION_MEMBER_SCALING_BEHAVIOR: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::String,
     "ScalingBehavior",
-    11,
+    12,
 )
 .with_json_name("scalingBehavior");
 static VIDEODESCRIPTION_MEMBER_SHARPNESS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -139,7 +150,7 @@ static VIDEODESCRIPTION_MEMBER_SHARPNESS: ::aws_smithy_schema::Schema<'static> =
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "Sharpness",
-    12,
+    13,
 )
 .with_json_name("sharpness");
 static VIDEODESCRIPTION_MEMBER_TIMECODE_INSERTION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -150,7 +161,7 @@ static VIDEODESCRIPTION_MEMBER_TIMECODE_INSERTION: ::aws_smithy_schema::Schema<'
     ),
     ::aws_smithy_schema::ShapeType::String,
     "TimecodeInsertion",
-    13,
+    14,
 )
 .with_json_name("timecodeInsertion");
 static VIDEODESCRIPTION_MEMBER_TIMECODE_TRACK: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -161,7 +172,7 @@ static VIDEODESCRIPTION_MEMBER_TIMECODE_TRACK: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "TimecodeTrack",
-    14,
+    15,
 )
 .with_json_name("timecodeTrack");
 static VIDEODESCRIPTION_MEMBER_VIDEO_PREPROCESSORS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -172,7 +183,7 @@ static VIDEODESCRIPTION_MEMBER_VIDEO_PREPROCESSORS: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "VideoPreprocessors",
-    15,
+    16,
 )
 .with_json_name("videoPreprocessors");
 static VIDEODESCRIPTION_MEMBER_WIDTH: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -183,7 +194,7 @@ static VIDEODESCRIPTION_MEMBER_WIDTH: ::aws_smithy_schema::Schema<'static> = ::a
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "Width",
-    16,
+    17,
 )
 .with_json_name("width");
 static VIDEODESCRIPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
@@ -201,6 +212,7 @@ static VIDEODESCRIPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smi
         &VIDEODESCRIPTION_MEMBER_COLOR_METADATA,
         &VIDEODESCRIPTION_MEMBER_CROP,
         &VIDEODESCRIPTION_MEMBER_DROP_FRAME_TIMECODE,
+        &VIDEODESCRIPTION_MEMBER_DYNAMIC_MULTIVIEW_SETTINGS,
         &VIDEODESCRIPTION_MEMBER_FIXED_AFD,
         &VIDEODESCRIPTION_MEMBER_HEIGHT,
         &VIDEODESCRIPTION_MEMBER_POSITION,
@@ -247,6 +259,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::VideoDescr
         }
         if let Some(ref val) = self.drop_frame_timecode {
             ser.write_string(&VIDEODESCRIPTION_MEMBER_DROP_FRAME_TIMECODE, val.as_str())?;
+        }
+        if let Some(ref val) = self.dynamic_multiview_settings {
+            ser.write_struct(&VIDEODESCRIPTION_MEMBER_DYNAMIC_MULTIVIEW_SETTINGS, val)?;
         }
         if let Some(ref val) = self.fixed_afd {
             ser.write_integer(&VIDEODESCRIPTION_MEMBER_FIXED_AFD, *val)?;
@@ -348,66 +363,73 @@ impl crate::types::builders::VideoDescriptionBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.fixed_afd = Some(deser.read_integer(member)?);
+                        self.dynamic_multiview_settings = Some(crate::types::DynamicMultiviewSettings::deserialize(deser)?);
                     }
                 }
                 Some(8) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.height = Some(deser.read_integer(member)?);
+                        self.fixed_afd = Some(deser.read_integer(member)?);
                     }
                 }
                 Some(9) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.position = Some(crate::types::Rectangle::deserialize(deser)?);
+                        self.height = Some(deser.read_integer(member)?);
                     }
                 }
                 Some(10) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.respond_to_afd = Some(crate::types::RespondToAfd::from(deser.read_string(member)?.as_str()));
+                        self.position = Some(crate::types::Rectangle::deserialize(deser)?);
                     }
                 }
                 Some(11) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.scaling_behavior = Some(crate::types::ScalingBehavior::from(deser.read_string(member)?.as_str()));
+                        self.respond_to_afd = Some(crate::types::RespondToAfd::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(12) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.sharpness = Some(deser.read_integer(member)?);
+                        self.scaling_behavior = Some(crate::types::ScalingBehavior::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(13) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.timecode_insertion = Some(crate::types::VideoTimecodeInsertion::from(deser.read_string(member)?.as_str()));
+                        self.sharpness = Some(deser.read_integer(member)?);
                     }
                 }
                 Some(14) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.timecode_track = Some(crate::types::TimecodeTrack::from(deser.read_string(member)?.as_str()));
+                        self.timecode_insertion = Some(crate::types::VideoTimecodeInsertion::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(15) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.video_preprocessors = Some(crate::types::VideoPreprocessor::deserialize(deser)?);
+                        self.timecode_track = Some(crate::types::TimecodeTrack::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(16) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.video_preprocessors = Some(crate::types::VideoPreprocessor::deserialize(deser)?);
+                    }
+                }
+                Some(17) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

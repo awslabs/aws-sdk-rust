@@ -175,6 +175,8 @@ mod get_product;
 
 mod list_fulfillment_options;
 
+mod list_listing_attributes;
+
 mod list_purchase_options;
 
 mod search_facets;

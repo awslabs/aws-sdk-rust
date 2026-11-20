@@ -3,8 +3,8 @@ pub fn ser_put_asset_input_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_asset::PutAssetInput,
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
-    if let Some(var_1) = &input.asset_type_id {
-        object.key("AssetTypeId").string(var_1.as_str());
+    if let Some(var_1) = &input.asset_type_identifier {
+        object.key("AssetTypeIdentifier").string(var_1.as_str());
     }
     if let Some(var_2) = &input.identifier {
         object.key("Identifier").string(var_2.as_str());
@@ -22,7 +22,7 @@ pub fn ser_put_asset_input_input(
             {
                 #[allow(unused_mut)]
                 let mut object_9 = object_6.key(key_7.as_str()).start_object();
-                crate::protocol_serde::shape_asset_form_entry::ser_asset_form_entry(&mut object_9, value_8)?;
+                crate::protocol_serde::shape_asset_form_input::ser_asset_form_input(&mut object_9, value_8)?;
                 object_9.finish();
             }
         }

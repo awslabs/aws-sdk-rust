@@ -139,6 +139,9 @@ pub mod list_autonomous_database_clones;
 /// Types for the `ListAutonomousDatabasePeers` operation.
 pub mod list_autonomous_database_peers;
 
+/// Types for the `ListAutonomousDatabaseRefreshableClones` operation.
+pub mod list_autonomous_database_refreshable_clones;
+
 /// Types for the `ListAutonomousDatabaseVersions` operation.
 pub mod list_autonomous_database_versions;
 
@@ -207,6 +210,9 @@ pub mod shrink_autonomous_database;
 
 /// Types for the `StartAutonomousDatabase` operation.
 pub mod start_autonomous_database;
+
+/// Types for the `StartAutonomousDatabaseRefresh` operation.
+pub mod start_autonomous_database_refresh;
 
 /// Types for the `StartDbNode` operation.
 pub mod start_db_node;

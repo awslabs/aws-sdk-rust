@@ -29,6 +29,10 @@ pub use crate::types::_filter::FilterBuilder;
 
 pub use crate::types::_automation_rule::AutomationRuleBuilder;
 
+pub use crate::types::_organizational_unit_info::OrganizationalUnitInfoBuilder;
+
+pub use crate::types::_organization_enrollment_configuration::OrganizationEnrollmentConfigurationBuilder;
+
 pub use crate::types::_recommended_action_filter::RecommendedActionFilterBuilder;
 
 pub use crate::types::_recommended_action::RecommendedActionBuilder;
@@ -42,6 +46,8 @@ pub use crate::types::_integer_criteria_condition::IntegerCriteriaConditionBuild
 pub use crate::types::_double_criteria_condition::DoubleCriteriaConditionBuilder;
 
 pub use crate::types::_resource_tags_criteria_condition::ResourceTagsCriteriaConditionBuilder;
+
+pub use crate::types::_organization_rule_mode_source::OrganizationRuleModeSourceBuilder;
 
 pub use crate::types::_time_period::TimePeriodBuilder;
 

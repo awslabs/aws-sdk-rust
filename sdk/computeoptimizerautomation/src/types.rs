@@ -9,6 +9,8 @@ pub use crate::types::_schedule::Schedule;
 
 pub use crate::types::_rule_status::RuleStatus;
 
+pub use crate::types::_organization_target::OrganizationTarget;
+
 pub use crate::types::_event_type::EventType;
 
 pub use crate::types::_event_status::EventStatus;
@@ -21,13 +23,19 @@ pub use crate::types::_enrollment_status::EnrollmentStatus;
 
 pub use crate::types::_organization_rule_mode::OrganizationRuleMode;
 
+pub use crate::types::_organization_enrollment_configuration_status::OrganizationEnrollmentConfigurationStatus;
+
 pub use crate::types::_organization_scope::OrganizationScope;
+
+pub use crate::types::_organization_target_type::OrganizationTargetType;
 
 pub use crate::types::_rule_apply_order::RuleApplyOrder;
 
 pub use crate::types::_recommended_action_type::RecommendedActionType;
 
 pub use crate::types::_tag::Tag;
+
+pub use crate::types::_organization_enrollment_configuration_type::OrganizationEnrollmentConfigurationType;
 
 pub use crate::types::_savings_estimation_mode::SavingsEstimationMode;
 
@@ -49,6 +57,10 @@ pub use crate::types::_filter::Filter;
 
 pub use crate::types::_automation_rule::AutomationRule;
 
+pub use crate::types::_organizational_unit_info::OrganizationalUnitInfo;
+
+pub use crate::types::_organization_enrollment_configuration::OrganizationEnrollmentConfiguration;
+
 pub use crate::types::_recommended_action_filter::RecommendedActionFilter;
 
 pub use crate::types::_recommended_action::RecommendedAction;
@@ -62,6 +74,8 @@ pub use crate::types::_integer_criteria_condition::IntegerCriteriaCondition;
 pub use crate::types::_double_criteria_condition::DoubleCriteriaCondition;
 
 pub use crate::types::_resource_tags_criteria_condition::ResourceTagsCriteriaCondition;
+
+pub use crate::types::_organization_rule_mode_source::OrganizationRuleModeSource;
 
 pub use crate::types::_automation_event_filter_name::AutomationEventFilterName;
 
@@ -79,11 +93,15 @@ pub use crate::types::_rule_preview_total::RulePreviewTotal;
 
 pub use crate::types::_automation_rule_filter_name::AutomationRuleFilterName;
 
+pub use crate::types::_auto_enroll_member_accounts::AutoEnrollMemberAccounts;
+
 pub use crate::types::_recommended_action_filter_name::RecommendedActionFilterName;
 
 pub use crate::types::_recommended_action_total::RecommendedActionTotal;
 
 pub use crate::types::_comparison_operator::ComparisonOperator;
+
+pub use crate::types::_organization_rule_mode_source_type::OrganizationRuleModeSourceType;
 
 pub use crate::types::_summary_dimension::SummaryDimension;
 
@@ -94,6 +112,8 @@ pub use crate::types::_summary_dimension_key::SummaryDimensionKey;
 pub use crate::types::_ebs_volume_configuration::EbsVolumeConfiguration;
 
 mod _account_info;
+
+mod _auto_enroll_member_accounts;
 
 mod _automation_event;
 
@@ -133,9 +153,25 @@ mod _integer_criteria_condition;
 
 mod _organization_configuration;
 
+mod _organization_enrollment_configuration;
+
+mod _organization_enrollment_configuration_status;
+
+mod _organization_enrollment_configuration_type;
+
 mod _organization_rule_mode;
 
+mod _organization_rule_mode_source;
+
+mod _organization_rule_mode_source_type;
+
 mod _organization_scope;
+
+mod _organization_target;
+
+mod _organization_target_type;
+
+mod _organizational_unit_info;
 
 mod _preview_result;
 

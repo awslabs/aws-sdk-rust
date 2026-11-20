@@ -25,6 +25,8 @@ pub struct RunMicrovmOutput {
     pub terminated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The reason for why the MicroVM is in the current state.</p>
     pub state_reason: ::std::option::Option<::std::string::String>,
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts your MicroVM configuration at rest. If you don't specify a key, your MicroVM uses an Amazon Web Services owned key.</p>
+    pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The list of ingress network connectors configured for the MicroVM.</p>
     pub ingress_network_connectors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The list of egress network connectors available to the MicroVM at runtime.</p>
@@ -80,6 +82,10 @@ impl RunMicrovmOutput {
     pub fn state_reason(&self) -> ::std::option::Option<&str> {
         self.state_reason.as_deref()
     }
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts your MicroVM configuration at rest. If you don't specify a key, your MicroVM uses an Amazon Web Services owned key.</p>
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+        self.kms_key_identifier.as_deref()
+    }
     /// <p>The list of ingress network connectors configured for the MicroVM.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ingress_network_connectors.is_none()`.
@@ -120,6 +126,7 @@ pub struct RunMicrovmOutputBuilder {
     pub(crate) started_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) terminated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) state_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) ingress_network_connectors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) egress_network_connectors: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     _request_id: Option<String>,
@@ -286,6 +293,20 @@ impl RunMicrovmOutputBuilder {
     pub fn get_state_reason(&self) -> &::std::option::Option<::std::string::String> {
         &self.state_reason
     }
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts your MicroVM configuration at rest. If you don't specify a key, your MicroVM uses an Amazon Web Services owned key.</p>
+    pub fn kms_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts your MicroVM configuration at rest. If you don't specify a key, your MicroVM uses an Amazon Web Services owned key.</p>
+    pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_identifier = input;
+        self
+    }
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts your MicroVM configuration at rest. If you don't specify a key, your MicroVM uses an Amazon Web Services owned key.</p>
+    pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_identifier
+    }
     /// Appends an item to `ingress_network_connectors`.
     ///
     /// To override the contents of this collection use [`set_ingress_network_connectors`](Self::set_ingress_network_connectors).
@@ -392,6 +413,7 @@ impl RunMicrovmOutputBuilder {
             })?,
             terminated_at: self.terminated_at,
             state_reason: self.state_reason,
+            kms_key_identifier: self.kms_key_identifier,
             ingress_network_connectors: self.ingress_network_connectors,
             egress_network_connectors: self.egress_network_connectors,
             _request_id: self._request_id,

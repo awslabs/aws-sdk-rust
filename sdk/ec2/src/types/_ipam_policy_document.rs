@@ -13,6 +13,16 @@ pub struct IpamPolicyDocument {
     /// <ul>
     /// <li>
     /// <p>Elastic IP addresses</p></li>
+    /// <li>
+    /// <p>Application Load Balancers</p></li>
+    /// <li>
+    /// <p>Amazon RDS</p></li>
+    /// <li>
+    /// <p>NAT gateways in regional availability mode</p></li>
+    /// <li>
+    /// <p>Lambda Network Connector</p></li>
+    /// <li>
+    /// <p>Automated Internet Firewall</p></li>
     /// </ul>
     pub resource_type: ::std::option::Option<crate::types::IpamPolicyResourceType>,
     /// <p>The allocation rules in the IPAM policy document.</p>
@@ -33,6 +43,16 @@ impl IpamPolicyDocument {
     /// <ul>
     /// <li>
     /// <p>Elastic IP addresses</p></li>
+    /// <li>
+    /// <p>Application Load Balancers</p></li>
+    /// <li>
+    /// <p>Amazon RDS</p></li>
+    /// <li>
+    /// <p>NAT gateways in regional availability mode</p></li>
+    /// <li>
+    /// <p>Lambda Network Connector</p></li>
+    /// <li>
+    /// <p>Automated Internet Firewall</p></li>
     /// </ul>
     pub fn resource_type(&self) -> ::std::option::Option<&crate::types::IpamPolicyResourceType> {
         self.resource_type.as_ref()
@@ -95,6 +115,16 @@ impl IpamPolicyDocumentBuilder {
     /// <ul>
     /// <li>
     /// <p>Elastic IP addresses</p></li>
+    /// <li>
+    /// <p>Application Load Balancers</p></li>
+    /// <li>
+    /// <p>Amazon RDS</p></li>
+    /// <li>
+    /// <p>NAT gateways in regional availability mode</p></li>
+    /// <li>
+    /// <p>Lambda Network Connector</p></li>
+    /// <li>
+    /// <p>Automated Internet Firewall</p></li>
     /// </ul>
     pub fn resource_type(mut self, input: crate::types::IpamPolicyResourceType) -> Self {
         self.resource_type = ::std::option::Option::Some(input);
@@ -105,6 +135,16 @@ impl IpamPolicyDocumentBuilder {
     /// <ul>
     /// <li>
     /// <p>Elastic IP addresses</p></li>
+    /// <li>
+    /// <p>Application Load Balancers</p></li>
+    /// <li>
+    /// <p>Amazon RDS</p></li>
+    /// <li>
+    /// <p>NAT gateways in regional availability mode</p></li>
+    /// <li>
+    /// <p>Lambda Network Connector</p></li>
+    /// <li>
+    /// <p>Automated Internet Firewall</p></li>
     /// </ul>
     pub fn set_resource_type(mut self, input: ::std::option::Option<crate::types::IpamPolicyResourceType>) -> Self {
         self.resource_type = input;
@@ -115,6 +155,16 @@ impl IpamPolicyDocumentBuilder {
     /// <ul>
     /// <li>
     /// <p>Elastic IP addresses</p></li>
+    /// <li>
+    /// <p>Application Load Balancers</p></li>
+    /// <li>
+    /// <p>Amazon RDS</p></li>
+    /// <li>
+    /// <p>NAT gateways in regional availability mode</p></li>
+    /// <li>
+    /// <p>Lambda Network Connector</p></li>
+    /// <li>
+    /// <p>Automated Internet Firewall</p></li>
     /// </ul>
     pub fn get_resource_type(&self) -> &::std::option::Option<crate::types::IpamPolicyResourceType> {
         &self.resource_type

@@ -10,6 +10,16 @@ pub struct GatewayInterceptorConfiguration {
     pub interception_points: ::std::vec::Vec<crate::types::GatewayInterceptionPoint>,
     /// <p>The configuration for the input of the interceptor. This field specifies how the input to the interceptor is constructed</p>
     pub input_configuration: ::std::option::Option<crate::types::InterceptorInputConfiguration>,
+    /// <p>Specifies how the interceptor processes streamed target responses. You can set this field only on an interceptor that includes the <code>RESPONSE</code> interception point. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BUFFERED</code> - The gateway collects the complete target response and then invokes the interceptor once. This is the default.</p></li>
+    /// <li>
+    /// <p><code>STREAM</code> - The gateway sends a streamed target response to the interceptor in batches of events and returns each processed batch to the client as soon as it's ready. Non-streamed responses still use <code>BUFFERED</code> processing. If you specify <code>STREAM</code>, you must also specify <code>responseStreamingConfiguration</code>, and the input configuration can't exclude the response body.</p></li>
+    /// </ul>
+    pub response_interception_mode: ::std::option::Option<crate::types::ResponseInterceptionMode>,
+    /// <p>Specifies the batching settings for a streamed response. Specify this field only when <code>responseInterceptionMode</code> is <code>STREAM</code>. You must specify it for <code>STREAM</code>.</p>
+    pub response_streaming_configuration: ::std::option::Option<crate::types::ResponseStreamingConfiguration>,
 }
 impl GatewayInterceptorConfiguration {
     /// <p>The infrastructure settings of an interceptor configuration. This structure defines how the interceptor can be invoked.</p>
@@ -24,6 +34,20 @@ impl GatewayInterceptorConfiguration {
     /// <p>The configuration for the input of the interceptor. This field specifies how the input to the interceptor is constructed</p>
     pub fn input_configuration(&self) -> ::std::option::Option<&crate::types::InterceptorInputConfiguration> {
         self.input_configuration.as_ref()
+    }
+    /// <p>Specifies how the interceptor processes streamed target responses. You can set this field only on an interceptor that includes the <code>RESPONSE</code> interception point. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BUFFERED</code> - The gateway collects the complete target response and then invokes the interceptor once. This is the default.</p></li>
+    /// <li>
+    /// <p><code>STREAM</code> - The gateway sends a streamed target response to the interceptor in batches of events and returns each processed batch to the client as soon as it's ready. Non-streamed responses still use <code>BUFFERED</code> processing. If you specify <code>STREAM</code>, you must also specify <code>responseStreamingConfiguration</code>, and the input configuration can't exclude the response body.</p></li>
+    /// </ul>
+    pub fn response_interception_mode(&self) -> ::std::option::Option<&crate::types::ResponseInterceptionMode> {
+        self.response_interception_mode.as_ref()
+    }
+    /// <p>Specifies the batching settings for a streamed response. Specify this field only when <code>responseInterceptionMode</code> is <code>STREAM</code>. You must specify it for <code>STREAM</code>.</p>
+    pub fn response_streaming_configuration(&self) -> ::std::option::Option<&crate::types::ResponseStreamingConfiguration> {
+        self.response_streaming_configuration.as_ref()
     }
 }
 impl GatewayInterceptorConfiguration {
@@ -40,6 +64,8 @@ pub struct GatewayInterceptorConfigurationBuilder {
     pub(crate) interceptor: ::std::option::Option<crate::types::InterceptorConfiguration>,
     pub(crate) interception_points: ::std::option::Option<::std::vec::Vec<crate::types::GatewayInterceptionPoint>>,
     pub(crate) input_configuration: ::std::option::Option<crate::types::InterceptorInputConfiguration>,
+    pub(crate) response_interception_mode: ::std::option::Option<crate::types::ResponseInterceptionMode>,
+    pub(crate) response_streaming_configuration: ::std::option::Option<crate::types::ResponseStreamingConfiguration>,
 }
 impl GatewayInterceptorConfigurationBuilder {
     /// <p>The infrastructure settings of an interceptor configuration. This structure defines how the interceptor can be invoked.</p>
@@ -91,6 +117,52 @@ impl GatewayInterceptorConfigurationBuilder {
     pub fn get_input_configuration(&self) -> &::std::option::Option<crate::types::InterceptorInputConfiguration> {
         &self.input_configuration
     }
+    /// <p>Specifies how the interceptor processes streamed target responses. You can set this field only on an interceptor that includes the <code>RESPONSE</code> interception point. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BUFFERED</code> - The gateway collects the complete target response and then invokes the interceptor once. This is the default.</p></li>
+    /// <li>
+    /// <p><code>STREAM</code> - The gateway sends a streamed target response to the interceptor in batches of events and returns each processed batch to the client as soon as it's ready. Non-streamed responses still use <code>BUFFERED</code> processing. If you specify <code>STREAM</code>, you must also specify <code>responseStreamingConfiguration</code>, and the input configuration can't exclude the response body.</p></li>
+    /// </ul>
+    pub fn response_interception_mode(mut self, input: crate::types::ResponseInterceptionMode) -> Self {
+        self.response_interception_mode = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies how the interceptor processes streamed target responses. You can set this field only on an interceptor that includes the <code>RESPONSE</code> interception point. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BUFFERED</code> - The gateway collects the complete target response and then invokes the interceptor once. This is the default.</p></li>
+    /// <li>
+    /// <p><code>STREAM</code> - The gateway sends a streamed target response to the interceptor in batches of events and returns each processed batch to the client as soon as it's ready. Non-streamed responses still use <code>BUFFERED</code> processing. If you specify <code>STREAM</code>, you must also specify <code>responseStreamingConfiguration</code>, and the input configuration can't exclude the response body.</p></li>
+    /// </ul>
+    pub fn set_response_interception_mode(mut self, input: ::std::option::Option<crate::types::ResponseInterceptionMode>) -> Self {
+        self.response_interception_mode = input;
+        self
+    }
+    /// <p>Specifies how the interceptor processes streamed target responses. You can set this field only on an interceptor that includes the <code>RESPONSE</code> interception point. Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>BUFFERED</code> - The gateway collects the complete target response and then invokes the interceptor once. This is the default.</p></li>
+    /// <li>
+    /// <p><code>STREAM</code> - The gateway sends a streamed target response to the interceptor in batches of events and returns each processed batch to the client as soon as it's ready. Non-streamed responses still use <code>BUFFERED</code> processing. If you specify <code>STREAM</code>, you must also specify <code>responseStreamingConfiguration</code>, and the input configuration can't exclude the response body.</p></li>
+    /// </ul>
+    pub fn get_response_interception_mode(&self) -> &::std::option::Option<crate::types::ResponseInterceptionMode> {
+        &self.response_interception_mode
+    }
+    /// <p>Specifies the batching settings for a streamed response. Specify this field only when <code>responseInterceptionMode</code> is <code>STREAM</code>. You must specify it for <code>STREAM</code>.</p>
+    pub fn response_streaming_configuration(mut self, input: crate::types::ResponseStreamingConfiguration) -> Self {
+        self.response_streaming_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies the batching settings for a streamed response. Specify this field only when <code>responseInterceptionMode</code> is <code>STREAM</code>. You must specify it for <code>STREAM</code>.</p>
+    pub fn set_response_streaming_configuration(mut self, input: ::std::option::Option<crate::types::ResponseStreamingConfiguration>) -> Self {
+        self.response_streaming_configuration = input;
+        self
+    }
+    /// <p>Specifies the batching settings for a streamed response. Specify this field only when <code>responseInterceptionMode</code> is <code>STREAM</code>. You must specify it for <code>STREAM</code>.</p>
+    pub fn get_response_streaming_configuration(&self) -> &::std::option::Option<crate::types::ResponseStreamingConfiguration> {
+        &self.response_streaming_configuration
+    }
     /// Consumes the builder and constructs a [`GatewayInterceptorConfiguration`](crate::types::GatewayInterceptorConfiguration).
     /// This method will fail if any of the following fields are not set:
     /// - [`interception_points`](crate::types::builders::GatewayInterceptorConfigurationBuilder::interception_points)
@@ -104,6 +176,8 @@ impl GatewayInterceptorConfigurationBuilder {
                 )
             })?,
             input_configuration: self.input_configuration,
+            response_interception_mode: self.response_interception_mode,
+            response_streaming_configuration: self.response_streaming_configuration,
         })
     }
 }

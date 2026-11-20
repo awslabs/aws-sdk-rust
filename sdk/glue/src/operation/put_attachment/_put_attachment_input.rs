@@ -13,8 +13,8 @@ pub struct PutAttachmentInput {
     pub attachment_name: ::std::option::Option<::std::string::String>,
     /// <p>The JSON content of the form, conforming to the schema of the specified form type.</p>
     pub content: ::std::option::Option<::std::string::String>,
-    /// <p>The identifier of the form type for this attachment.</p>
-    pub form_type_id: ::std::option::Option<::std::string::String>,
+    /// <p>The identifier of the form type for this attachment. This field is required.</p>
+    pub form_type_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -39,9 +39,9 @@ impl PutAttachmentInput {
     pub fn content(&self) -> ::std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>The identifier of the form type for this attachment.</p>
-    pub fn form_type_id(&self) -> ::std::option::Option<&str> {
-        self.form_type_id.as_deref()
+    /// <p>The identifier of the form type for this attachment. This field is required.</p>
+    pub fn form_type_identifier(&self) -> ::std::option::Option<&str> {
+        self.form_type_identifier.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -64,7 +64,7 @@ pub struct PutAttachmentInputBuilder {
     pub(crate) item_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) attachment_name: ::std::option::Option<::std::string::String>,
     pub(crate) content: ::std::option::Option<::std::string::String>,
-    pub(crate) form_type_id: ::std::option::Option<::std::string::String>,
+    pub(crate) form_type_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
 }
 impl PutAttachmentInputBuilder {
@@ -141,20 +141,19 @@ impl PutAttachmentInputBuilder {
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         &self.content
     }
-    /// <p>The identifier of the form type for this attachment.</p>
-    /// This field is required.
-    pub fn form_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.form_type_id = ::std::option::Option::Some(input.into());
+    /// <p>The identifier of the form type for this attachment. This field is required.</p>
+    pub fn form_type_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.form_type_identifier = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the form type for this attachment.</p>
-    pub fn set_form_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.form_type_id = input;
+    /// <p>The identifier of the form type for this attachment. This field is required.</p>
+    pub fn set_form_type_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.form_type_identifier = input;
         self
     }
-    /// <p>The identifier of the form type for this attachment.</p>
-    pub fn get_form_type_id(&self) -> &::std::option::Option<::std::string::String> {
-        &self.form_type_id
+    /// <p>The identifier of the form type for this attachment. This field is required.</p>
+    pub fn get_form_type_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.form_type_identifier
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -180,7 +179,7 @@ impl PutAttachmentInputBuilder {
             item_identifier: self.item_identifier,
             attachment_name: self.attachment_name,
             content: self.content,
-            form_type_id: self.form_type_id,
+            form_type_identifier: self.form_type_identifier,
             client_token: self.client_token,
         })
     }

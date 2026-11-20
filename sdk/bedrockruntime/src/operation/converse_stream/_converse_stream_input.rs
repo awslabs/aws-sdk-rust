@@ -29,6 +29,9 @@ pub struct ConverseStreamInput {
     pub tool_config: ::std::option::Option<crate::types::ToolConfiguration>,
     /// <p>Configuration information for a guardrail that you want to use in the request. If you include <code>guardContent</code> blocks in the <code>content</code> field in the <code>messages</code> field, the guardrail operates only on those messages. If you include no <code>guardContent</code> blocks, the guardrail operates on all messages in the request body and in any included prompt resource.</p>
     pub guardrail_config: ::std::option::Option<crate::types::GuardrailStreamConfiguration>,
+    /// <p>The ID or Amazon Resource Name (ARN) of the project to use for this invocation. The project must be active and belong to your AWS account and the AWS Region to which you send the request. Specify <code>default</code> or omit this field to use the default project for your account.</p>
+    /// <p>For a non-default project, the inference target must resolve to a foundation model or system-defined inference profile. Application inference profiles don't support non-default projects.</p>
+    pub project_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Additional inference parameters that the model supports, beyond the base set of inference parameters that <code>Converse</code> and <code>ConverseStream</code> support in the <code>inferenceConfig</code> field. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Model parameters</a>.</p>
     pub additional_model_request_fields: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>Contains a map of variables in a prompt from Prompt management to objects containing the values to fill in for them when running model invocation. This field is ignored if you don't specify a prompt resource in the <code>modelId</code> field.</p>
@@ -90,6 +93,11 @@ impl ConverseStreamInput {
     pub fn guardrail_config(&self) -> ::std::option::Option<&crate::types::GuardrailStreamConfiguration> {
         self.guardrail_config.as_ref()
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of the project to use for this invocation. The project must be active and belong to your AWS account and the AWS Region to which you send the request. Specify <code>default</code> or omit this field to use the default project for your account.</p>
+    /// <p>For a non-default project, the inference target must resolve to a foundation model or system-defined inference profile. Application inference profiles don't support non-default projects.</p>
+    pub fn project_identifier(&self) -> ::std::option::Option<&str> {
+        self.project_identifier.as_deref()
+    }
     /// <p>Additional inference parameters that the model supports, beyond the base set of inference parameters that <code>Converse</code> and <code>ConverseStream</code> support in the <code>inferenceConfig</code> field. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Model parameters</a>.</p>
     pub fn additional_model_request_fields(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.additional_model_request_fields.as_ref()
@@ -133,6 +141,7 @@ impl ::std::fmt::Debug for ConverseStreamInput {
         formatter.field("inference_config", &self.inference_config);
         formatter.field("tool_config", &self.tool_config);
         formatter.field("guardrail_config", &self.guardrail_config);
+        formatter.field("project_identifier", &self.project_identifier);
         formatter.field("additional_model_request_fields", &self.additional_model_request_fields);
         formatter.field("prompt_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("additional_model_response_field_paths", &self.additional_model_response_field_paths);
@@ -160,6 +169,7 @@ pub struct ConverseStreamInputBuilder {
     pub(crate) inference_config: ::std::option::Option<crate::types::InferenceConfiguration>,
     pub(crate) tool_config: ::std::option::Option<crate::types::ToolConfiguration>,
     pub(crate) guardrail_config: ::std::option::Option<crate::types::GuardrailStreamConfiguration>,
+    pub(crate) project_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) additional_model_request_fields: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) prompt_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PromptVariableValues>>,
     pub(crate) additional_model_response_field_paths: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -307,6 +317,23 @@ impl ConverseStreamInputBuilder {
     /// <p>Configuration information for a guardrail that you want to use in the request. If you include <code>guardContent</code> blocks in the <code>content</code> field in the <code>messages</code> field, the guardrail operates only on those messages. If you include no <code>guardContent</code> blocks, the guardrail operates on all messages in the request body and in any included prompt resource.</p>
     pub fn get_guardrail_config(&self) -> &::std::option::Option<crate::types::GuardrailStreamConfiguration> {
         &self.guardrail_config
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the project to use for this invocation. The project must be active and belong to your AWS account and the AWS Region to which you send the request. Specify <code>default</code> or omit this field to use the default project for your account.</p>
+    /// <p>For a non-default project, the inference target must resolve to a foundation model or system-defined inference profile. Application inference profiles don't support non-default projects.</p>
+    pub fn project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the project to use for this invocation. The project must be active and belong to your AWS account and the AWS Region to which you send the request. Specify <code>default</code> or omit this field to use the default project for your account.</p>
+    /// <p>For a non-default project, the inference target must resolve to a foundation model or system-defined inference profile. Application inference profiles don't support non-default projects.</p>
+    pub fn set_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.project_identifier = input;
+        self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the project to use for this invocation. The project must be active and belong to your AWS account and the AWS Region to which you send the request. Specify <code>default</code> or omit this field to use the default project for your account.</p>
+    /// <p>For a non-default project, the inference target must resolve to a foundation model or system-defined inference profile. Application inference profiles don't support non-default projects.</p>
+    pub fn get_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_identifier
     }
     /// <p>Additional inference parameters that the model supports, beyond the base set of inference parameters that <code>Converse</code> and <code>ConverseStream</code> support in the <code>inferenceConfig</code> field. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Model parameters</a>.</p>
     pub fn additional_model_request_fields(mut self, input: ::aws_smithy_types::Document) -> Self {
@@ -456,6 +483,7 @@ impl ConverseStreamInputBuilder {
             inference_config: self.inference_config,
             tool_config: self.tool_config,
             guardrail_config: self.guardrail_config,
+            project_identifier: self.project_identifier,
             additional_model_request_fields: self.additional_model_request_fields,
             prompt_variables: self.prompt_variables,
             additional_model_response_field_paths: self.additional_model_response_field_paths,
@@ -475,6 +503,7 @@ impl ::std::fmt::Debug for ConverseStreamInputBuilder {
         formatter.field("inference_config", &self.inference_config);
         formatter.field("tool_config", &self.tool_config);
         formatter.field("guardrail_config", &self.guardrail_config);
+        formatter.field("project_identifier", &self.project_identifier);
         formatter.field("additional_model_request_fields", &self.additional_model_request_fields);
         formatter.field("prompt_variables", &"*** Sensitive Data Redacted ***");
         formatter.field("additional_model_response_field_paths", &self.additional_model_response_field_paths);

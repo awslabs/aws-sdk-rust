@@ -136,17 +136,17 @@ impl UpdateGlossaryFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The updated description of the glossary.</p>
+    /// The new description. Omit it to keep the current description; set it to an empty string to clear it.
     pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
         self
     }
-    /// <p>The updated description of the glossary.</p>
+    /// The new description. Omit it to keep the current description; set it to an empty string to clear it.
     pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The updated description of the glossary.</p>
+    /// The new description. Omit it to keep the current description; set it to an empty string to clear it.
     pub fn get_description(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_description()
     }

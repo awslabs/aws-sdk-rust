@@ -90,6 +90,24 @@ static UPDATEDOCUMENTINPUT_MEMBER_TARGET_TYPE: ::aws_smithy_schema::Schema<'stat
     "TargetType",
     7,
 );
+static UPDATEDOCUMENTINPUT_MEMBER_CLOUD_PROVIDERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#CloudProviderList$member", "com.amazonaws.ssm", "CloudProviderList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+)
+.with_xml_name("CloudProvider");
+static UPDATEDOCUMENTINPUT_MEMBER_CLOUD_PROVIDERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm.synthetic#UpdateDocumentInput$CloudProviders",
+        "com.amazonaws.ssm.synthetic",
+        "UpdateDocumentInput",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CloudProviders",
+    8,
+)
+.with_list_member(&UPDATEDOCUMENTINPUT_MEMBER_CLOUD_PROVIDERS_MEMBER);
 static UPDATEDOCUMENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.ssm.synthetic#UpdateDocumentInput",
@@ -106,6 +124,7 @@ static UPDATEDOCUMENTINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_
         &UPDATEDOCUMENTINPUT_MEMBER_DOCUMENT_VERSION,
         &UPDATEDOCUMENTINPUT_MEMBER_DOCUMENT_FORMAT,
         &UPDATEDOCUMENTINPUT_MEMBER_TARGET_TYPE,
+        &UPDATEDOCUMENTINPUT_MEMBER_CLOUD_PROVIDERS,
     ],
 )
 .with_payload_hint(::aws_smithy_schema::PayloadHint::NoStructPayload)
@@ -155,6 +174,17 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::update
         }
         if let Some(ref val) = self.target_type {
             ser.write_string(&UPDATEDOCUMENTINPUT_MEMBER_TARGET_TYPE, val)?;
+        }
+        if let Some(ref val) = self.cloud_providers {
+            ser.write_list(
+                &UPDATEDOCUMENTINPUT_MEMBER_CLOUD_PROVIDERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
+                    }
+                    Ok(())
+                },
+            )?;
         }
         Ok(())
     }
@@ -234,6 +264,22 @@ impl crate::operation::update_document::builders::UpdateDocumentInputBuilder {
                         deser.read_null()?;
                     } else {
                         self.target_type = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_providers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CloudProvider::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
                     }
                 }
                 _ => {}

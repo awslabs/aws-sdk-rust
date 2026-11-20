@@ -16,6 +16,8 @@ pub struct SyncState {
     pub attachment: ::std::option::Option<crate::types::Attachment>,
     /// <p>The configuration status of the firewall endpoint in a single VPC subnet. Network Firewall provides each endpoint with the rules that are configured in the firewall policy. Each time you add a subnet or modify the associated firewall policy, Network Firewall synchronizes the rules in the endpoint, so it can properly filter network traffic.</p>
     pub config: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PerObjectStatus>>,
+    /// <p>The public IP addresses that an internet gateway firewall uses for network address translation in this Availability Zone. Network Firewall allocates these addresses in your account and adds or removes addresses automatically based on traffic. This setting is only present for an internet gateway firewall.</p>
+    pub address_translations: ::std::option::Option<crate::types::AddressTranslations>,
     /// <p>The NAT gateway that's attached to a proxy mode firewall in the Availability Zone, and the status of the attachment. To get NAT gateway details, such as IP addresses, use the Amazon EC2 <code>DescribeNatGateways</code> action.</p>
     /// <p>A proxy mode firewall is <code>READY</code> when at least one Availability Zone's firewall endpoint and NAT gateway attachment are <code>READY</code>.</p>
     pub nat_gateway_attachments: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAttachment>>,
@@ -28,6 +30,10 @@ impl SyncState {
     /// <p>The configuration status of the firewall endpoint in a single VPC subnet. Network Firewall provides each endpoint with the rules that are configured in the firewall policy. Each time you add a subnet or modify the associated firewall policy, Network Firewall synchronizes the rules in the endpoint, so it can properly filter network traffic.</p>
     pub fn config(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::PerObjectStatus>> {
         self.config.as_ref()
+    }
+    /// <p>The public IP addresses that an internet gateway firewall uses for network address translation in this Availability Zone. Network Firewall allocates these addresses in your account and adds or removes addresses automatically based on traffic. This setting is only present for an internet gateway firewall.</p>
+    pub fn address_translations(&self) -> ::std::option::Option<&crate::types::AddressTranslations> {
+        self.address_translations.as_ref()
     }
     /// <p>The NAT gateway that's attached to a proxy mode firewall in the Availability Zone, and the status of the attachment. To get NAT gateway details, such as IP addresses, use the Amazon EC2 <code>DescribeNatGateways</code> action.</p>
     /// <p>A proxy mode firewall is <code>READY</code> when at least one Availability Zone's firewall endpoint and NAT gateway attachment are <code>READY</code>.</p>
@@ -50,6 +56,7 @@ impl SyncState {
 pub struct SyncStateBuilder {
     pub(crate) attachment: ::std::option::Option<crate::types::Attachment>,
     pub(crate) config: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PerObjectStatus>>,
+    pub(crate) address_translations: ::std::option::Option<crate::types::AddressTranslations>,
     pub(crate) nat_gateway_attachments: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayAttachment>>,
 }
 impl SyncStateBuilder {
@@ -90,6 +97,20 @@ impl SyncStateBuilder {
     pub fn get_config(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::PerObjectStatus>> {
         &self.config
     }
+    /// <p>The public IP addresses that an internet gateway firewall uses for network address translation in this Availability Zone. Network Firewall allocates these addresses in your account and adds or removes addresses automatically based on traffic. This setting is only present for an internet gateway firewall.</p>
+    pub fn address_translations(mut self, input: crate::types::AddressTranslations) -> Self {
+        self.address_translations = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The public IP addresses that an internet gateway firewall uses for network address translation in this Availability Zone. Network Firewall allocates these addresses in your account and adds or removes addresses automatically based on traffic. This setting is only present for an internet gateway firewall.</p>
+    pub fn set_address_translations(mut self, input: ::std::option::Option<crate::types::AddressTranslations>) -> Self {
+        self.address_translations = input;
+        self
+    }
+    /// <p>The public IP addresses that an internet gateway firewall uses for network address translation in this Availability Zone. Network Firewall allocates these addresses in your account and adds or removes addresses automatically based on traffic. This setting is only present for an internet gateway firewall.</p>
+    pub fn get_address_translations(&self) -> &::std::option::Option<crate::types::AddressTranslations> {
+        &self.address_translations
+    }
     /// Appends an item to `nat_gateway_attachments`.
     ///
     /// To override the contents of this collection use [`set_nat_gateway_attachments`](Self::set_nat_gateway_attachments).
@@ -118,6 +139,7 @@ impl SyncStateBuilder {
         crate::types::SyncState {
             attachment: self.attachment,
             config: self.config,
+            address_translations: self.address_translations,
             nat_gateway_attachments: self.nat_gateway_attachments,
         }
     }

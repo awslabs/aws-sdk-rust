@@ -523,6 +523,9 @@ pub mod update_account_pool;
 /// Types for the `UpdateAssetFilter` operation.
 pub mod update_asset_filter;
 
+/// Types for the `UpdateAssetOwner` operation.
+pub mod update_asset_owner;
+
 /// Types for the `UpdateConnection` operation.
 pub mod update_connection;
 

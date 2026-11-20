@@ -43,11 +43,13 @@ where
                             );
                         }
                         "GlossaryTerms" => {
-                            builder = builder.set_glossary_terms(crate::protocol_serde::shape_glossary_term_id_list::de_glossary_term_id_list(
-                                tokens,
-                                _value,
-                                depth + 1,
-                            )?);
+                            builder = builder.set_glossary_terms(
+                                crate::protocol_serde::shape_glossary_term_id_output_list::de_glossary_term_id_output_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

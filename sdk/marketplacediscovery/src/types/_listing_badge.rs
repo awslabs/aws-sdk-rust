@@ -6,7 +6,7 @@
 pub struct ListingBadge {
     /// <p>The human-readable name of the badge.</p>
     pub display_name: ::std::string::String,
-    /// <p>The machine-readable type of the badge.</p>
+    /// <p>The machine-readable type of the badge. See <code>ListingBadgeType</code> for the values.</p>
     pub badge_type: crate::types::ListingBadgeType,
 }
 impl ListingBadge {
@@ -15,7 +15,7 @@ impl ListingBadge {
         use std::ops::Deref;
         self.display_name.deref()
     }
-    /// <p>The machine-readable type of the badge.</p>
+    /// <p>The machine-readable type of the badge. See <code>ListingBadgeType</code> for the values.</p>
     pub fn badge_type(&self) -> &crate::types::ListingBadgeType {
         &self.badge_type
     }
@@ -50,18 +50,18 @@ impl ListingBadgeBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The machine-readable type of the badge.</p>
+    /// <p>The machine-readable type of the badge. See <code>ListingBadgeType</code> for the values.</p>
     /// This field is required.
     pub fn badge_type(mut self, input: crate::types::ListingBadgeType) -> Self {
         self.badge_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The machine-readable type of the badge.</p>
+    /// <p>The machine-readable type of the badge. See <code>ListingBadgeType</code> for the values.</p>
     pub fn set_badge_type(mut self, input: ::std::option::Option<crate::types::ListingBadgeType>) -> Self {
         self.badge_type = input;
         self
     }
-    /// <p>The machine-readable type of the badge.</p>
+    /// <p>The machine-readable type of the badge. See <code>ListingBadgeType</code> for the values.</p>
     pub fn get_badge_type(&self) -> &::std::option::Option<crate::types::ListingBadgeType> {
         &self.badge_type
     }

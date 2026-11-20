@@ -155,17 +155,23 @@ impl UpdateDevicePoolFluentBuilder {
     ///
     /// To override the contents of this collection use [`set_rules`](Self::set_rules).
     ///
-    /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your request, the update replaces the existing rules.</p>
+    /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your request, the update replaces the existing rules.</p><note>
+    /// <p>A device pool contains either physical devices or virtual devices, but not both. If you define the pool with attribute rules and those rules do not include a <code>DEVICE_TYPE</code> rule, the pool contains only physical devices. If you define the pool by listing device ARNs, the pool contains the devices you list.</p>
+    /// </note>
     pub fn rules(mut self, input: crate::types::Rule) -> Self {
         self.inner = self.inner.rules(input);
         self
     }
-    /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your request, the update replaces the existing rules.</p>
+    /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your request, the update replaces the existing rules.</p><note>
+    /// <p>A device pool contains either physical devices or virtual devices, but not both. If you define the pool with attribute rules and those rules do not include a <code>DEVICE_TYPE</code> rule, the pool contains only physical devices. If you define the pool by listing device ARNs, the pool contains the devices you list.</p>
+    /// </note>
     pub fn set_rules(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Rule>>) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }
-    /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your request, the update replaces the existing rules.</p>
+    /// <p>Represents the rules to modify for the device pool. Updating rules is optional. If you update rules for your request, the update replaces the existing rules.</p><note>
+    /// <p>A device pool contains either physical devices or virtual devices, but not both. If you define the pool with attribute rules and those rules do not include a <code>DEVICE_TYPE</code> rule, the pool contains only physical devices. If you define the pool by listing device ARNs, the pool contains the devices you list.</p>
+    /// </note>
     pub fn get_rules(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Rule>> {
         self.inner.get_rules()
     }

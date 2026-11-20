@@ -359,6 +359,16 @@ pub(crate) fn reflens_list_flow_definitions_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_global_inference_gateways_output_output_next_token(
+    input: &crate::operation::list_global_inference_gateways::ListGlobalInferenceGatewaysOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_human_task_uis_output_output_next_token(
     input: &crate::operation::list_human_task_uis::ListHumanTaskUisOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -411,6 +421,16 @@ pub(crate) fn reflens_list_inference_components_output_output_next_token(
 
 pub(crate) fn reflens_list_inference_experiments_output_output_next_token(
     input: &crate::operation::list_inference_experiments::ListInferenceExperimentsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_inference_gateways_output_output_next_token(
+    input: &crate::operation::list_inference_gateways::ListInferenceGatewaysOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -1211,6 +1231,13 @@ pub(crate) fn lens_list_flow_definitions_output_output_flow_definition_summaries
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_global_inference_gateways_output_output_global_inference_gateway_summaries(
+    input: crate::operation::list_global_inference_gateways::ListGlobalInferenceGatewaysOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::GlobalInferenceGatewaySummary>> {
+    let input = input.global_inference_gateway_summaries?;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_human_task_uis_output_output_human_task_ui_summaries(
     input: crate::operation::list_human_task_uis::ListHumanTaskUisOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::HumanTaskUiSummary>> {
@@ -1250,6 +1277,13 @@ pub(crate) fn lens_list_inference_experiments_output_output_inference_experiment
     input: crate::operation::list_inference_experiments::ListInferenceExperimentsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::InferenceExperimentSummary>> {
     let input = input.inference_experiments?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_inference_gateways_output_output_inference_gateway_summaries(
+    input: crate::operation::list_inference_gateways::ListInferenceGatewaysOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::GlobalInferenceGatewayMemberSummary>> {
+    let input = input.inference_gateway_summaries?;
     ::std::option::Option::Some(input)
 }
 

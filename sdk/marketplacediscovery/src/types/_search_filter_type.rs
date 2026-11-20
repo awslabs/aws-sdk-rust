@@ -13,6 +13,7 @@
 /// # let searchfiltertype = unimplemented!();
 /// match searchfiltertype {
 ///     SearchFilterType::Category => { /* ... */ },
+///     SearchFilterType::Certificates => { /* ... */ },
 ///     SearchFilterType::DeployedOnAws => { /* ... */ },
 ///     SearchFilterType::FulfillmentOptionType => { /* ... */ },
 ///     SearchFilterType::MaxAverageCustomerRating => { /* ... */ },
@@ -20,7 +21,12 @@
 ///     SearchFilterType::NumberOfProducts => { /* ... */ },
 ///     SearchFilterType::PricingModel => { /* ... */ },
 ///     SearchFilterType::PricingUnit => { /* ... */ },
+///     SearchFilterType::ProductId => { /* ... */ },
 ///     SearchFilterType::Publisher => { /* ... */ },
+///     SearchFilterType::SellerEngagement => { /* ... */ },
+///     SearchFilterType::Specialization => { /* ... */ },
+///     SearchFilterType::SpecializationCategory => { /* ... */ },
+///     SearchFilterType::TrustCenter => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,6 +58,8 @@ pub enum SearchFilterType {
     #[allow(missing_docs)] // documentation missing in model
     Category,
     #[allow(missing_docs)] // documentation missing in model
+    Certificates,
+    #[allow(missing_docs)] // documentation missing in model
     DeployedOnAws,
     #[allow(missing_docs)] // documentation missing in model
     FulfillmentOptionType,
@@ -66,7 +74,17 @@ pub enum SearchFilterType {
     #[allow(missing_docs)] // documentation missing in model
     PricingUnit,
     #[allow(missing_docs)] // documentation missing in model
+    ProductId,
+    #[allow(missing_docs)] // documentation missing in model
     Publisher,
+    #[allow(missing_docs)] // documentation missing in model
+    SellerEngagement,
+    #[allow(missing_docs)] // documentation missing in model
+    Specialization,
+    #[allow(missing_docs)] // documentation missing in model
+    SpecializationCategory,
+    #[allow(missing_docs)] // documentation missing in model
+    TrustCenter,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -75,6 +93,7 @@ impl ::std::convert::From<&str> for SearchFilterType {
     fn from(s: &str) -> Self {
         match s {
             "CATEGORY" => SearchFilterType::Category,
+            "CERTIFICATES" => SearchFilterType::Certificates,
             "DEPLOYED_ON_AWS" => SearchFilterType::DeployedOnAws,
             "FULFILLMENT_OPTION_TYPE" => SearchFilterType::FulfillmentOptionType,
             "MAX_AVERAGE_CUSTOMER_RATING" => SearchFilterType::MaxAverageCustomerRating,
@@ -82,7 +101,12 @@ impl ::std::convert::From<&str> for SearchFilterType {
             "NUMBER_OF_PRODUCTS" => SearchFilterType::NumberOfProducts,
             "PRICING_MODEL" => SearchFilterType::PricingModel,
             "PRICING_UNIT" => SearchFilterType::PricingUnit,
+            "PRODUCT_ID" => SearchFilterType::ProductId,
             "PUBLISHER" => SearchFilterType::Publisher,
+            "SELLER_ENGAGEMENT" => SearchFilterType::SellerEngagement,
+            "SPECIALIZATION" => SearchFilterType::Specialization,
+            "SPECIALIZATION_CATEGORY" => SearchFilterType::SpecializationCategory,
+            "TRUST_CENTER" => SearchFilterType::TrustCenter,
             other => SearchFilterType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -99,6 +123,7 @@ impl SearchFilterType {
     pub fn as_str(&self) -> &str {
         match self {
             SearchFilterType::Category => "CATEGORY",
+            SearchFilterType::Certificates => "CERTIFICATES",
             SearchFilterType::DeployedOnAws => "DEPLOYED_ON_AWS",
             SearchFilterType::FulfillmentOptionType => "FULFILLMENT_OPTION_TYPE",
             SearchFilterType::MaxAverageCustomerRating => "MAX_AVERAGE_CUSTOMER_RATING",
@@ -106,7 +131,12 @@ impl SearchFilterType {
             SearchFilterType::NumberOfProducts => "NUMBER_OF_PRODUCTS",
             SearchFilterType::PricingModel => "PRICING_MODEL",
             SearchFilterType::PricingUnit => "PRICING_UNIT",
+            SearchFilterType::ProductId => "PRODUCT_ID",
             SearchFilterType::Publisher => "PUBLISHER",
+            SearchFilterType::SellerEngagement => "SELLER_ENGAGEMENT",
+            SearchFilterType::Specialization => "SPECIALIZATION",
+            SearchFilterType::SpecializationCategory => "SPECIALIZATION_CATEGORY",
+            SearchFilterType::TrustCenter => "TRUST_CENTER",
             SearchFilterType::Unknown(value) => value.as_str(),
         }
     }
@@ -114,6 +144,7 @@ impl SearchFilterType {
     pub const fn values() -> &'static [&'static str] {
         &[
             "CATEGORY",
+            "CERTIFICATES",
             "DEPLOYED_ON_AWS",
             "FULFILLMENT_OPTION_TYPE",
             "MAX_AVERAGE_CUSTOMER_RATING",
@@ -121,7 +152,12 @@ impl SearchFilterType {
             "NUMBER_OF_PRODUCTS",
             "PRICING_MODEL",
             "PRICING_UNIT",
+            "PRODUCT_ID",
             "PUBLISHER",
+            "SELLER_ENGAGEMENT",
+            "SPECIALIZATION",
+            "SPECIALIZATION_CATEGORY",
+            "TRUST_CENTER",
         ]
     }
 }
@@ -146,6 +182,7 @@ impl ::std::fmt::Display for SearchFilterType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             SearchFilterType::Category => write!(f, "CATEGORY"),
+            SearchFilterType::Certificates => write!(f, "CERTIFICATES"),
             SearchFilterType::DeployedOnAws => write!(f, "DEPLOYED_ON_AWS"),
             SearchFilterType::FulfillmentOptionType => write!(f, "FULFILLMENT_OPTION_TYPE"),
             SearchFilterType::MaxAverageCustomerRating => write!(f, "MAX_AVERAGE_CUSTOMER_RATING"),
@@ -153,7 +190,12 @@ impl ::std::fmt::Display for SearchFilterType {
             SearchFilterType::NumberOfProducts => write!(f, "NUMBER_OF_PRODUCTS"),
             SearchFilterType::PricingModel => write!(f, "PRICING_MODEL"),
             SearchFilterType::PricingUnit => write!(f, "PRICING_UNIT"),
+            SearchFilterType::ProductId => write!(f, "PRODUCT_ID"),
             SearchFilterType::Publisher => write!(f, "PUBLISHER"),
+            SearchFilterType::SellerEngagement => write!(f, "SELLER_ENGAGEMENT"),
+            SearchFilterType::Specialization => write!(f, "SPECIALIZATION"),
+            SearchFilterType::SpecializationCategory => write!(f, "SPECIALIZATION_CATEGORY"),
+            SearchFilterType::TrustCenter => write!(f, "TRUST_CENTER"),
             SearchFilterType::Unknown(value) => write!(f, "{value}"),
         }
     }

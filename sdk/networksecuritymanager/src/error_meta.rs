@@ -144,6 +144,9 @@ impl From<crate::operation::create_deployment_snapshot::CreateDeploymentSnapshot
             crate::operation::create_deployment_snapshot::CreateDeploymentSnapshotError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::create_deployment_snapshot::CreateDeploymentSnapshotError::TagPolicyViolationException(inner) => {
+                Error::TagPolicyViolationException(inner)
+            }
             crate::operation::create_deployment_snapshot::CreateDeploymentSnapshotError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
@@ -211,6 +214,9 @@ impl From<crate::operation::create_policy_snapshot::CreatePolicySnapshotError> f
             crate::operation::create_policy_snapshot::CreatePolicySnapshotError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
+            crate::operation::create_policy_snapshot::CreatePolicySnapshotError::TagPolicyViolationException(inner) => {
+                Error::TagPolicyViolationException(inner)
+            }
             crate::operation::create_policy_snapshot::CreatePolicySnapshotError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_policy_snapshot::CreatePolicySnapshotError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::create_policy_snapshot::CreatePolicySnapshotError::Unhandled(inner) => Error::Unhandled(inner),
@@ -271,6 +277,9 @@ impl From<crate::operation::create_rule_snapshot::CreateRuleSnapshotError> for E
             }
             crate::operation::create_rule_snapshot::CreateRuleSnapshotError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_rule_snapshot::CreateRuleSnapshotError::TagPolicyViolationException(inner) => {
+                Error::TagPolicyViolationException(inner)
             }
             crate::operation::create_rule_snapshot::CreateRuleSnapshotError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_rule_snapshot::CreateRuleSnapshotError::ValidationException(inner) => Error::ValidationException(inner),
@@ -334,6 +343,9 @@ impl From<crate::operation::create_scope_snapshot::CreateScopeSnapshotError> for
             }
             crate::operation::create_scope_snapshot::CreateScopeSnapshotError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_scope_snapshot::CreateScopeSnapshotError::TagPolicyViolationException(inner) => {
+                Error::TagPolicyViolationException(inner)
             }
             crate::operation::create_scope_snapshot::CreateScopeSnapshotError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_scope_snapshot::CreateScopeSnapshotError::ValidationException(inner) => Error::ValidationException(inner),
@@ -403,6 +415,9 @@ impl From<crate::operation::create_template_snapshot::CreateTemplateSnapshotErro
             }
             crate::operation::create_template_snapshot::CreateTemplateSnapshotError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_template_snapshot::CreateTemplateSnapshotError::TagPolicyViolationException(inner) => {
+                Error::TagPolicyViolationException(inner)
             }
             crate::operation::create_template_snapshot::CreateTemplateSnapshotError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::create_template_snapshot::CreateTemplateSnapshotError::ValidationException(inner) => Error::ValidationException(inner),
@@ -882,6 +897,33 @@ impl From<crate::operation::list_deployment_snapshots::ListDeploymentSnapshotsEr
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_entity_coverages::ListEntityCoveragesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_entity_coverages::ListEntityCoveragesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_entity_coverages::ListEntityCoveragesError> for Error {
+    fn from(err: crate::operation::list_entity_coverages::ListEntityCoveragesError) -> Self {
+        match err {
+            crate::operation::list_entity_coverages::ListEntityCoveragesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_entity_coverages::ListEntityCoveragesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_entity_coverages::ListEntityCoveragesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_entity_coverages::ListEntityCoveragesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_entity_coverages::ListEntityCoveragesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_policies::ListPoliciesError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -934,6 +976,50 @@ impl From<crate::operation::list_policy_snapshots::ListPolicySnapshotsError> for
             crate::operation::list_policy_snapshots::ListPolicySnapshotsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_policy_snapshots::ListPolicySnapshotsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_policy_snapshots::ListPolicySnapshotsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_protected_resource_coverages::ListProtectedResourceCoveragesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_protected_resource_coverages::ListProtectedResourceCoveragesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_protected_resource_coverages::ListProtectedResourceCoveragesError> for Error {
+    fn from(err: crate::operation::list_protected_resource_coverages::ListProtectedResourceCoveragesError) -> Self {
+        match err {
+            crate::operation::list_protected_resource_coverages::ListProtectedResourceCoveragesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_protected_resource_coverages::ListProtectedResourceCoveragesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_protected_resource_coverages::ListProtectedResourceCoveragesError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_protected_resource_coverages::ListProtectedResourceCoveragesError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_protected_resource_coverages::ListProtectedResourceCoveragesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

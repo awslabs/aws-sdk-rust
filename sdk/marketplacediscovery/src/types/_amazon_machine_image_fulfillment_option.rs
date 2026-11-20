@@ -16,9 +16,9 @@ pub struct AmazonMachineImageFulfillmentOption {
     pub fulfillment_option_display_name: ::std::string::String,
     /// <p>The operating systems supported by this AMI.</p>
     pub operating_systems: ::std::vec::Vec<crate::types::AmazonMachineImageOperatingSystem>,
-    /// <p>Recommended instance types for running this AMI.</p>
+    /// <p>The recommended instance types for running this AMI.</p>
     pub recommendation: ::std::option::Option<crate::types::AmazonMachineImageRecommendation>,
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub release_notes: ::std::option::Option<::std::string::String>,
     /// <p>Instructions on how to deploy and use this fulfillment option.</p>
     pub usage_instructions: ::std::option::Option<::std::string::String>,
@@ -30,7 +30,7 @@ pub struct AmazonMachineImageFulfillmentOption {
     pub architecture: ::std::string::String,
     /// <p>The alias of the AMI associated with this fulfillment option.</p>
     pub ami_alias: ::std::option::Option<::std::string::String>,
-    /// <p>The supported Amazon EBS volume configuration for the AMI.</p>
+    /// <p>The supported Amazon Elastic Block Store (Amazon EBS) volume configuration for the AMI.</p>
     pub ebs_volume: ::std::option::Option<crate::types::AmazonMachineImageEbsVolume>,
     /// <p>A short description of the fulfillment option.</p>
     pub short_description: ::std::option::Option<::std::string::String>,
@@ -64,11 +64,11 @@ impl AmazonMachineImageFulfillmentOption {
         use std::ops::Deref;
         self.operating_systems.deref()
     }
-    /// <p>Recommended instance types for running this AMI.</p>
+    /// <p>The recommended instance types for running this AMI.</p>
     pub fn recommendation(&self) -> ::std::option::Option<&crate::types::AmazonMachineImageRecommendation> {
         self.recommendation.as_ref()
     }
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub fn release_notes(&self) -> ::std::option::Option<&str> {
         self.release_notes.as_deref()
     }
@@ -93,7 +93,7 @@ impl AmazonMachineImageFulfillmentOption {
     pub fn ami_alias(&self) -> ::std::option::Option<&str> {
         self.ami_alias.as_deref()
     }
-    /// <p>The supported Amazon EBS volume configuration for the AMI.</p>
+    /// <p>The supported Amazon Elastic Block Store (Amazon EBS) volume configuration for the AMI.</p>
     pub fn ebs_volume(&self) -> ::std::option::Option<&crate::types::AmazonMachineImageEbsVolume> {
         self.ebs_volume.as_ref()
     }
@@ -224,31 +224,31 @@ impl AmazonMachineImageFulfillmentOptionBuilder {
     pub fn get_operating_systems(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AmazonMachineImageOperatingSystem>> {
         &self.operating_systems
     }
-    /// <p>Recommended instance types for running this AMI.</p>
+    /// <p>The recommended instance types for running this AMI.</p>
     pub fn recommendation(mut self, input: crate::types::AmazonMachineImageRecommendation) -> Self {
         self.recommendation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Recommended instance types for running this AMI.</p>
+    /// <p>The recommended instance types for running this AMI.</p>
     pub fn set_recommendation(mut self, input: ::std::option::Option<crate::types::AmazonMachineImageRecommendation>) -> Self {
         self.recommendation = input;
         self
     }
-    /// <p>Recommended instance types for running this AMI.</p>
+    /// <p>The recommended instance types for running this AMI.</p>
     pub fn get_recommendation(&self) -> &::std::option::Option<crate::types::AmazonMachineImageRecommendation> {
         &self.recommendation
     }
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub fn release_notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_notes = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub fn set_release_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_notes = input;
         self
     }
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub fn get_release_notes(&self) -> &::std::option::Option<::std::string::String> {
         &self.release_notes
     }
@@ -323,17 +323,17 @@ impl AmazonMachineImageFulfillmentOptionBuilder {
     pub fn get_ami_alias(&self) -> &::std::option::Option<::std::string::String> {
         &self.ami_alias
     }
-    /// <p>The supported Amazon EBS volume configuration for the AMI.</p>
+    /// <p>The supported Amazon Elastic Block Store (Amazon EBS) volume configuration for the AMI.</p>
     pub fn ebs_volume(mut self, input: crate::types::AmazonMachineImageEbsVolume) -> Self {
         self.ebs_volume = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The supported Amazon EBS volume configuration for the AMI.</p>
+    /// <p>The supported Amazon Elastic Block Store (Amazon EBS) volume configuration for the AMI.</p>
     pub fn set_ebs_volume(mut self, input: ::std::option::Option<crate::types::AmazonMachineImageEbsVolume>) -> Self {
         self.ebs_volume = input;
         self
     }
-    /// <p>The supported Amazon EBS volume configuration for the AMI.</p>
+    /// <p>The supported Amazon Elastic Block Store (Amazon EBS) volume configuration for the AMI.</p>
     pub fn get_ebs_volume(&self) -> &::std::option::Option<crate::types::AmazonMachineImageEbsVolume> {
         &self.ebs_volume
     }

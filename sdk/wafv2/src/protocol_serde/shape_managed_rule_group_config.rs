@@ -45,6 +45,12 @@ pub fn ser_managed_rule_group_config(
         crate::protocol_serde::shape_aws_managed_rules_anti_d_do_s_rule_set::ser_aws_managed_rules_anti_d_do_s_rule_set(&mut object_14, var_13)?;
         object_14.finish();
     }
+    if let Some(var_15) = &input.aws_managed_rules_ai_security_rule_set {
+        #[allow(unused_mut)]
+        let mut object_16 = object.key("AWSManagedRulesAISecurityRuleSet").start_object();
+        crate::protocol_serde::shape_aws_managed_rules_ai_security_rule_set::ser_aws_managed_rules_ai_security_rule_set(&mut object_16, var_15)?;
+        object_16.finish();
+    }
     Ok(())
 }
 
@@ -128,6 +134,15 @@ where
                         "AWSManagedRulesAntiDDoSRuleSet" => {
                             builder = builder.set_aws_managed_rules_anti_d_do_s_rule_set(
                                 crate::protocol_serde::shape_aws_managed_rules_anti_d_do_s_rule_set::de_aws_managed_rules_anti_d_do_s_rule_set(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "AWSManagedRulesAISecurityRuleSet" => {
+                            builder = builder.set_aws_managed_rules_ai_security_rule_set(
+                                crate::protocol_serde::shape_aws_managed_rules_ai_security_rule_set::de_aws_managed_rules_ai_security_rule_set(
                                     tokens,
                                     _value,
                                     depth + 1,

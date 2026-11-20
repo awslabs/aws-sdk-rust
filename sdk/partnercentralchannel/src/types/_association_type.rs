@@ -15,6 +15,7 @@
 ///     AssociationType::DownstreamSeller => { /* ... */ },
 ///     AssociationType::EndCustomer => { /* ... */ },
 ///     AssociationType::Internal => { /* ... */ },
+///     AssociationType::ManagedServicesEndCustomer => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,6 +50,8 @@ pub enum AssociationType {
     EndCustomer,
     #[allow(missing_docs)] // documentation missing in model
     Internal,
+    #[allow(missing_docs)] // documentation missing in model
+    ManagedServicesEndCustomer,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -59,6 +62,7 @@ impl ::std::convert::From<&str> for AssociationType {
             "DOWNSTREAM_SELLER" => AssociationType::DownstreamSeller,
             "END_CUSTOMER" => AssociationType::EndCustomer,
             "INTERNAL" => AssociationType::Internal,
+            "MANAGED_SERVICES_END_CUSTOMER" => AssociationType::ManagedServicesEndCustomer,
             other => AssociationType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -77,12 +81,13 @@ impl AssociationType {
             AssociationType::DownstreamSeller => "DOWNSTREAM_SELLER",
             AssociationType::EndCustomer => "END_CUSTOMER",
             AssociationType::Internal => "INTERNAL",
+            AssociationType::ManagedServicesEndCustomer => "MANAGED_SERVICES_END_CUSTOMER",
             AssociationType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DOWNSTREAM_SELLER", "END_CUSTOMER", "INTERNAL"]
+        &["DOWNSTREAM_SELLER", "END_CUSTOMER", "INTERNAL", "MANAGED_SERVICES_END_CUSTOMER"]
     }
 }
 impl ::std::convert::AsRef<str> for AssociationType {
@@ -108,6 +113,7 @@ impl ::std::fmt::Display for AssociationType {
             AssociationType::DownstreamSeller => write!(f, "DOWNSTREAM_SELLER"),
             AssociationType::EndCustomer => write!(f, "END_CUSTOMER"),
             AssociationType::Internal => write!(f, "INTERNAL"),
+            AssociationType::ManagedServicesEndCustomer => write!(f, "MANAGED_SERVICES_END_CUSTOMER"),
             AssociationType::Unknown(value) => write!(f, "{value}"),
         }
     }

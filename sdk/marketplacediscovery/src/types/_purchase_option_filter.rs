@@ -4,43 +4,149 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseOptionFilter {
-    /// <p>The type of filter to apply, such as <code>PRODUCT_ID</code>, <code>VISIBILITY_SCOPE</code>, or <code>PURCHASE_OPTION_TYPE</code>.</p>
+    /// <p>The type of filter to apply. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// AVAILABILITY_STATUS
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by whether the purchase option is available or expired.</p>
+    /// </dd>
+    /// <dt>
+    /// PRODUCT_ID
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by product.</p>
+    /// </dd>
+    /// <dt>
+    /// PURCHASE_OPTION_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by offer or offer set.</p>
+    /// </dd>
+    /// <dt>
+    /// SELLER_OF_RECORD_PROFILE_ID
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by seller.</p>
+    /// </dd>
+    /// <dt>
+    /// VISIBILITY_SCOPE
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by visibility.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>See <code>filterValues</code> for the values that each type accepts.</p>
     pub filter_type: crate::types::PurchaseOptionFilterType,
     /// <p>The values to filter by. Supported values depend on <code>filterType</code>:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>PRODUCT_ID</code> – One or more product identifiers to filter by.</p></li>
-    /// <li>
-    /// <p><code>SELLER_OF_RECORD_PROFILE_ID</code> – One or more seller profile identifiers to filter by.</p></li>
-    /// <li>
-    /// <p><code>PURCHASE_OPTION_TYPE</code> – One or more purchase option types to filter by: <code>OFFER</code> or <code>OFFERSET</code>.</p></li>
-    /// <li>
-    /// <p><code>VISIBILITY_SCOPE</code> – The visibility scope to filter by: <code>PRIVATE</code>.</p></li>
-    /// <li>
-    /// <p><code>AVAILABILITY_STATUS</code> – One or more availability statuses to filter by: <code>AVAILABLE</code> or <code>EXPIRED</code>.</p></li>
-    /// </ul>
-    /// <p>To retrieve private offers and offer sets visible to you, use <code>VISIBILITY_SCOPE</code> with <code>PRIVATE</code>. OR logic combines multiple values within the same filter.</p>
+    /// <dl>
+    /// <dt>
+    /// AVAILABILITY_STATUS
+    /// </dt>
+    /// <dd>
+    /// <p>One or more availability statuses to filter by: <code>AVAILABLE</code> or <code>EXPIRED</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// PRODUCT_ID
+    /// </dt>
+    /// <dd>
+    /// <p>One or more product identifiers to filter by.</p>
+    /// </dd>
+    /// <dt>
+    /// PURCHASE_OPTION_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>One or more purchase option types to filter by: <code>OFFER</code> or <code>OFFERSET</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// SELLER_OF_RECORD_PROFILE_ID
+    /// </dt>
+    /// <dd>
+    /// <p>One or more seller profile identifiers to filter by.</p>
+    /// </dd>
+    /// <dt>
+    /// VISIBILITY_SCOPE
+    /// </dt>
+    /// <dd>
+    /// <p>The visibility scope to filter by: <code>PRIVATE</code>.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>To retrieve private offers and offer sets visible to you, use <code>VISIBILITY_SCOPE</code> with <code>PRIVATE</code>. Within one filter, a result matches if it has any of the values.</p>
     pub filter_values: ::std::vec::Vec<::std::string::String>,
 }
 impl PurchaseOptionFilter {
-    /// <p>The type of filter to apply, such as <code>PRODUCT_ID</code>, <code>VISIBILITY_SCOPE</code>, or <code>PURCHASE_OPTION_TYPE</code>.</p>
+    /// <p>The type of filter to apply. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// AVAILABILITY_STATUS
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by whether the purchase option is available or expired.</p>
+    /// </dd>
+    /// <dt>
+    /// PRODUCT_ID
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by product.</p>
+    /// </dd>
+    /// <dt>
+    /// PURCHASE_OPTION_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by offer or offer set.</p>
+    /// </dd>
+    /// <dt>
+    /// SELLER_OF_RECORD_PROFILE_ID
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by seller.</p>
+    /// </dd>
+    /// <dt>
+    /// VISIBILITY_SCOPE
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by visibility.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>See <code>filterValues</code> for the values that each type accepts.</p>
     pub fn filter_type(&self) -> &crate::types::PurchaseOptionFilterType {
         &self.filter_type
     }
     /// <p>The values to filter by. Supported values depend on <code>filterType</code>:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>PRODUCT_ID</code> – One or more product identifiers to filter by.</p></li>
-    /// <li>
-    /// <p><code>SELLER_OF_RECORD_PROFILE_ID</code> – One or more seller profile identifiers to filter by.</p></li>
-    /// <li>
-    /// <p><code>PURCHASE_OPTION_TYPE</code> – One or more purchase option types to filter by: <code>OFFER</code> or <code>OFFERSET</code>.</p></li>
-    /// <li>
-    /// <p><code>VISIBILITY_SCOPE</code> – The visibility scope to filter by: <code>PRIVATE</code>.</p></li>
-    /// <li>
-    /// <p><code>AVAILABILITY_STATUS</code> – One or more availability statuses to filter by: <code>AVAILABLE</code> or <code>EXPIRED</code>.</p></li>
-    /// </ul>
-    /// <p>To retrieve private offers and offer sets visible to you, use <code>VISIBILITY_SCOPE</code> with <code>PRIVATE</code>. OR logic combines multiple values within the same filter.</p>
+    /// <dl>
+    /// <dt>
+    /// AVAILABILITY_STATUS
+    /// </dt>
+    /// <dd>
+    /// <p>One or more availability statuses to filter by: <code>AVAILABLE</code> or <code>EXPIRED</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// PRODUCT_ID
+    /// </dt>
+    /// <dd>
+    /// <p>One or more product identifiers to filter by.</p>
+    /// </dd>
+    /// <dt>
+    /// PURCHASE_OPTION_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>One or more purchase option types to filter by: <code>OFFER</code> or <code>OFFERSET</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// SELLER_OF_RECORD_PROFILE_ID
+    /// </dt>
+    /// <dd>
+    /// <p>One or more seller profile identifiers to filter by.</p>
+    /// </dd>
+    /// <dt>
+    /// VISIBILITY_SCOPE
+    /// </dt>
+    /// <dd>
+    /// <p>The visibility scope to filter by: <code>PRIVATE</code>.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>To retrieve private offers and offer sets visible to you, use <code>VISIBILITY_SCOPE</code> with <code>PRIVATE</code>. Within one filter, a result matches if it has any of the values.</p>
     pub fn filter_values(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.filter_values.deref()
@@ -61,18 +167,117 @@ pub struct PurchaseOptionFilterBuilder {
     pub(crate) filter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl PurchaseOptionFilterBuilder {
-    /// <p>The type of filter to apply, such as <code>PRODUCT_ID</code>, <code>VISIBILITY_SCOPE</code>, or <code>PURCHASE_OPTION_TYPE</code>.</p>
+    /// <p>The type of filter to apply. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// AVAILABILITY_STATUS
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by whether the purchase option is available or expired.</p>
+    /// </dd>
+    /// <dt>
+    /// PRODUCT_ID
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by product.</p>
+    /// </dd>
+    /// <dt>
+    /// PURCHASE_OPTION_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by offer or offer set.</p>
+    /// </dd>
+    /// <dt>
+    /// SELLER_OF_RECORD_PROFILE_ID
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by seller.</p>
+    /// </dd>
+    /// <dt>
+    /// VISIBILITY_SCOPE
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by visibility.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>See <code>filterValues</code> for the values that each type accepts.</p>
     /// This field is required.
     pub fn filter_type(mut self, input: crate::types::PurchaseOptionFilterType) -> Self {
         self.filter_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of filter to apply, such as <code>PRODUCT_ID</code>, <code>VISIBILITY_SCOPE</code>, or <code>PURCHASE_OPTION_TYPE</code>.</p>
+    /// <p>The type of filter to apply. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// AVAILABILITY_STATUS
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by whether the purchase option is available or expired.</p>
+    /// </dd>
+    /// <dt>
+    /// PRODUCT_ID
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by product.</p>
+    /// </dd>
+    /// <dt>
+    /// PURCHASE_OPTION_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by offer or offer set.</p>
+    /// </dd>
+    /// <dt>
+    /// SELLER_OF_RECORD_PROFILE_ID
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by seller.</p>
+    /// </dd>
+    /// <dt>
+    /// VISIBILITY_SCOPE
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by visibility.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>See <code>filterValues</code> for the values that each type accepts.</p>
     pub fn set_filter_type(mut self, input: ::std::option::Option<crate::types::PurchaseOptionFilterType>) -> Self {
         self.filter_type = input;
         self
     }
-    /// <p>The type of filter to apply, such as <code>PRODUCT_ID</code>, <code>VISIBILITY_SCOPE</code>, or <code>PURCHASE_OPTION_TYPE</code>.</p>
+    /// <p>The type of filter to apply. This field has one of the following values:</p>
+    /// <dl>
+    /// <dt>
+    /// AVAILABILITY_STATUS
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by whether the purchase option is available or expired.</p>
+    /// </dd>
+    /// <dt>
+    /// PRODUCT_ID
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by product.</p>
+    /// </dd>
+    /// <dt>
+    /// PURCHASE_OPTION_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by offer or offer set.</p>
+    /// </dd>
+    /// <dt>
+    /// SELLER_OF_RECORD_PROFILE_ID
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by seller.</p>
+    /// </dd>
+    /// <dt>
+    /// VISIBILITY_SCOPE
+    /// </dt>
+    /// <dd>
+    /// <p>Filters by visibility.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>See <code>filterValues</code> for the values that each type accepts.</p>
     pub fn get_filter_type(&self) -> &::std::option::Option<crate::types::PurchaseOptionFilterType> {
         &self.filter_type
     }
@@ -81,19 +286,39 @@ impl PurchaseOptionFilterBuilder {
     /// To override the contents of this collection use [`set_filter_values`](Self::set_filter_values).
     ///
     /// <p>The values to filter by. Supported values depend on <code>filterType</code>:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>PRODUCT_ID</code> – One or more product identifiers to filter by.</p></li>
-    /// <li>
-    /// <p><code>SELLER_OF_RECORD_PROFILE_ID</code> – One or more seller profile identifiers to filter by.</p></li>
-    /// <li>
-    /// <p><code>PURCHASE_OPTION_TYPE</code> – One or more purchase option types to filter by: <code>OFFER</code> or <code>OFFERSET</code>.</p></li>
-    /// <li>
-    /// <p><code>VISIBILITY_SCOPE</code> – The visibility scope to filter by: <code>PRIVATE</code>.</p></li>
-    /// <li>
-    /// <p><code>AVAILABILITY_STATUS</code> – One or more availability statuses to filter by: <code>AVAILABLE</code> or <code>EXPIRED</code>.</p></li>
-    /// </ul>
-    /// <p>To retrieve private offers and offer sets visible to you, use <code>VISIBILITY_SCOPE</code> with <code>PRIVATE</code>. OR logic combines multiple values within the same filter.</p>
+    /// <dl>
+    /// <dt>
+    /// AVAILABILITY_STATUS
+    /// </dt>
+    /// <dd>
+    /// <p>One or more availability statuses to filter by: <code>AVAILABLE</code> or <code>EXPIRED</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// PRODUCT_ID
+    /// </dt>
+    /// <dd>
+    /// <p>One or more product identifiers to filter by.</p>
+    /// </dd>
+    /// <dt>
+    /// PURCHASE_OPTION_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>One or more purchase option types to filter by: <code>OFFER</code> or <code>OFFERSET</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// SELLER_OF_RECORD_PROFILE_ID
+    /// </dt>
+    /// <dd>
+    /// <p>One or more seller profile identifiers to filter by.</p>
+    /// </dd>
+    /// <dt>
+    /// VISIBILITY_SCOPE
+    /// </dt>
+    /// <dd>
+    /// <p>The visibility scope to filter by: <code>PRIVATE</code>.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>To retrieve private offers and offer sets visible to you, use <code>VISIBILITY_SCOPE</code> with <code>PRIVATE</code>. Within one filter, a result matches if it has any of the values.</p>
     pub fn filter_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.filter_values.unwrap_or_default();
         v.push(input.into());
@@ -101,37 +326,77 @@ impl PurchaseOptionFilterBuilder {
         self
     }
     /// <p>The values to filter by. Supported values depend on <code>filterType</code>:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>PRODUCT_ID</code> – One or more product identifiers to filter by.</p></li>
-    /// <li>
-    /// <p><code>SELLER_OF_RECORD_PROFILE_ID</code> – One or more seller profile identifiers to filter by.</p></li>
-    /// <li>
-    /// <p><code>PURCHASE_OPTION_TYPE</code> – One or more purchase option types to filter by: <code>OFFER</code> or <code>OFFERSET</code>.</p></li>
-    /// <li>
-    /// <p><code>VISIBILITY_SCOPE</code> – The visibility scope to filter by: <code>PRIVATE</code>.</p></li>
-    /// <li>
-    /// <p><code>AVAILABILITY_STATUS</code> – One or more availability statuses to filter by: <code>AVAILABLE</code> or <code>EXPIRED</code>.</p></li>
-    /// </ul>
-    /// <p>To retrieve private offers and offer sets visible to you, use <code>VISIBILITY_SCOPE</code> with <code>PRIVATE</code>. OR logic combines multiple values within the same filter.</p>
+    /// <dl>
+    /// <dt>
+    /// AVAILABILITY_STATUS
+    /// </dt>
+    /// <dd>
+    /// <p>One or more availability statuses to filter by: <code>AVAILABLE</code> or <code>EXPIRED</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// PRODUCT_ID
+    /// </dt>
+    /// <dd>
+    /// <p>One or more product identifiers to filter by.</p>
+    /// </dd>
+    /// <dt>
+    /// PURCHASE_OPTION_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>One or more purchase option types to filter by: <code>OFFER</code> or <code>OFFERSET</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// SELLER_OF_RECORD_PROFILE_ID
+    /// </dt>
+    /// <dd>
+    /// <p>One or more seller profile identifiers to filter by.</p>
+    /// </dd>
+    /// <dt>
+    /// VISIBILITY_SCOPE
+    /// </dt>
+    /// <dd>
+    /// <p>The visibility scope to filter by: <code>PRIVATE</code>.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>To retrieve private offers and offer sets visible to you, use <code>VISIBILITY_SCOPE</code> with <code>PRIVATE</code>. Within one filter, a result matches if it has any of the values.</p>
     pub fn set_filter_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.filter_values = input;
         self
     }
     /// <p>The values to filter by. Supported values depend on <code>filterType</code>:</p>
-    /// <ul>
-    /// <li>
-    /// <p><code>PRODUCT_ID</code> – One or more product identifiers to filter by.</p></li>
-    /// <li>
-    /// <p><code>SELLER_OF_RECORD_PROFILE_ID</code> – One or more seller profile identifiers to filter by.</p></li>
-    /// <li>
-    /// <p><code>PURCHASE_OPTION_TYPE</code> – One or more purchase option types to filter by: <code>OFFER</code> or <code>OFFERSET</code>.</p></li>
-    /// <li>
-    /// <p><code>VISIBILITY_SCOPE</code> – The visibility scope to filter by: <code>PRIVATE</code>.</p></li>
-    /// <li>
-    /// <p><code>AVAILABILITY_STATUS</code> – One or more availability statuses to filter by: <code>AVAILABLE</code> or <code>EXPIRED</code>.</p></li>
-    /// </ul>
-    /// <p>To retrieve private offers and offer sets visible to you, use <code>VISIBILITY_SCOPE</code> with <code>PRIVATE</code>. OR logic combines multiple values within the same filter.</p>
+    /// <dl>
+    /// <dt>
+    /// AVAILABILITY_STATUS
+    /// </dt>
+    /// <dd>
+    /// <p>One or more availability statuses to filter by: <code>AVAILABLE</code> or <code>EXPIRED</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// PRODUCT_ID
+    /// </dt>
+    /// <dd>
+    /// <p>One or more product identifiers to filter by.</p>
+    /// </dd>
+    /// <dt>
+    /// PURCHASE_OPTION_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>One or more purchase option types to filter by: <code>OFFER</code> or <code>OFFERSET</code>.</p>
+    /// </dd>
+    /// <dt>
+    /// SELLER_OF_RECORD_PROFILE_ID
+    /// </dt>
+    /// <dd>
+    /// <p>One or more seller profile identifiers to filter by.</p>
+    /// </dd>
+    /// <dt>
+    /// VISIBILITY_SCOPE
+    /// </dt>
+    /// <dd>
+    /// <p>The visibility scope to filter by: <code>PRIVATE</code>.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>To retrieve private offers and offer sets visible to you, use <code>VISIBILITY_SCOPE</code> with <code>PRIVATE</code>. Within one filter, a result matches if it has any of the values.</p>
     pub fn get_filter_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.filter_values
     }

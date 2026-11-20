@@ -13,7 +13,7 @@ pub struct UpdateRelationshipInput {
     pub revision: ::std::option::Option<::std::string::String>,
     /// <p>The new display name for the relationship.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The updated support plan for the relationship.</p>
+    /// <p>The updated support plan for the relationship. Applies only to billing transfer relationships.</p>
     pub requested_support_plan: ::std::option::Option<crate::types::SupportPlan>,
 }
 impl UpdateRelationshipInput {
@@ -37,7 +37,7 @@ impl UpdateRelationshipInput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The updated support plan for the relationship.</p>
+    /// <p>The updated support plan for the relationship. Applies only to billing transfer relationships.</p>
     pub fn requested_support_plan(&self) -> ::std::option::Option<&crate::types::SupportPlan> {
         self.requested_support_plan.as_ref()
     }
@@ -134,17 +134,17 @@ impl UpdateRelationshipInputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The updated support plan for the relationship.</p>
+    /// <p>The updated support plan for the relationship. Applies only to billing transfer relationships.</p>
     pub fn requested_support_plan(mut self, input: crate::types::SupportPlan) -> Self {
         self.requested_support_plan = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The updated support plan for the relationship.</p>
+    /// <p>The updated support plan for the relationship. Applies only to billing transfer relationships.</p>
     pub fn set_requested_support_plan(mut self, input: ::std::option::Option<crate::types::SupportPlan>) -> Self {
         self.requested_support_plan = input;
         self
     }
-    /// <p>The updated support plan for the relationship.</p>
+    /// <p>The updated support plan for the relationship. Applies only to billing transfer relationships.</p>
     pub fn get_requested_support_plan(&self) -> &::std::option::Option<crate::types::SupportPlan> {
         &self.requested_support_plan
     }

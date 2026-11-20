@@ -307,6 +307,13 @@ pub(crate) fn de_update_microvm_image(
                                 .transpose()?,
                         );
                     }
+                    "kmsKeyIdentifier" => {
+                        builder = builder.set_kms_key_identifier(
+                            ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
                     "latestActiveImageVersion" => {
                         builder = builder.set_latest_active_image_version(
                             ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

@@ -205,6 +205,10 @@ mod generate_mobile_sdk_release_url;
 
 mod get_decrypted_api_key;
 
+mod get_event;
+
+mod get_event_actor;
+
 mod get_ip_set;
 
 mod get_logging_configuration;
@@ -240,6 +244,12 @@ mod list_api_keys;
 mod list_available_managed_rule_group_versions;
 
 mod list_available_managed_rule_groups;
+
+mod list_event_actors;
+
+mod list_events;
+
+mod list_events_by_web_acl;
 
 mod list_ip_sets;
 

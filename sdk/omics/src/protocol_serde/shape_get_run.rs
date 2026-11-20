@@ -298,12 +298,22 @@ pub(crate) fn de_get_run(
                 "parameters" => {
                     builder = builder.set_parameters(Some(::aws_smithy_json::deserialize::token::expect_document(tokens)?));
                 }
+                "parametersUri" => {
+                    builder = builder.set_parameters_uri(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
                 "priority" => {
                     builder = builder.set_priority(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                             .map(i32::try_from)
                             .transpose()?,
                     );
+                }
+                "requesterPaysEnabled" => {
+                    builder = builder.set_requester_pays_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "resourceDigests" => {
                     builder = builder.set_resource_digests(crate::protocol_serde::shape_run_resource_digests::de_run_resource_digests(

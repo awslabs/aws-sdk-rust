@@ -65,6 +65,8 @@ pub use crate::types::_wallet_password_source_configuration_input::WalletPasswor
 
 pub use crate::types::_autonomous_database_wallet_details::AutonomousDatabaseWalletDetails;
 
+pub use crate::types::_refreshable_status::RefreshableStatus;
+
 pub use crate::types::_maintenance_window::MaintenanceWindow;
 
 pub use crate::types::_cloud_autonomous_vm_cluster::CloudAutonomousVmCluster;
@@ -171,8 +173,6 @@ pub use crate::types::_data_guard_role::DataGuardRole;
 
 pub use crate::types::_disaster_recovery_configuration::DisasterRecoveryConfiguration;
 
-pub use crate::types::_refreshable_status::RefreshableStatus;
-
 pub use crate::types::_encryption_summary::EncryptionSummary;
 
 pub use crate::types::_admin_password_source_summary::AdminPasswordSourceSummary;
@@ -184,6 +184,8 @@ pub use crate::types::_autonomous_database_wallet_status::AutonomousDatabaseWall
 pub use crate::types::_wallet_password_source_summary::WalletPasswordSourceSummary;
 
 pub use crate::types::_autonomous_database_peer_summary::AutonomousDatabasePeerSummary;
+
+pub use crate::types::_autonomous_database_refreshable_clone_summary::AutonomousDatabaseRefreshableCloneSummary;
 
 pub use crate::types::_cloud_autonomous_vm_cluster_summary::CloudAutonomousVmClusterSummary;
 
@@ -332,6 +334,8 @@ mod _autonomous_database_connection_strings;
 mod _autonomous_database_connection_urls;
 
 mod _autonomous_database_peer_summary;
+
+mod _autonomous_database_refreshable_clone_summary;
 
 mod _autonomous_database_resource_status;
 

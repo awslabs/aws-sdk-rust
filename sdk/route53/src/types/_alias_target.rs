@@ -195,7 +195,7 @@ pub struct AliasTarget {
     /// </dd>
     /// </dl>
     pub dns_name: ::std::string::String,
-    /// <p><i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p>
+    /// <p><i>Applies only to alias, az-affinity alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p>
     /// <p>Note the following:</p>
     /// <dl>
     /// <dt>
@@ -454,7 +454,7 @@ impl AliasTarget {
         use std::ops::Deref;
         self.dns_name.deref()
     }
-    /// <p><i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p>
+    /// <p><i>Applies only to alias, az-affinity alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p>
     /// <p>Note the following:</p>
     /// <dl>
     /// <dt>
@@ -1114,7 +1114,7 @@ impl AliasTargetBuilder {
     pub fn get_dns_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.dns_name
     }
-    /// <p><i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p>
+    /// <p><i>Applies only to alias, az-affinity alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p>
     /// <p>Note the following:</p>
     /// <dl>
     /// <dt>
@@ -1183,7 +1183,7 @@ impl AliasTargetBuilder {
         self.evaluate_target_health = ::std::option::Option::Some(input);
         self
     }
-    /// <p><i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p>
+    /// <p><i>Applies only to alias, az-affinity alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p>
     /// <p>Note the following:</p>
     /// <dl>
     /// <dt>
@@ -1251,7 +1251,7 @@ impl AliasTargetBuilder {
         self.evaluate_target_health = input;
         self
     }
-    /// <p><i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p>
+    /// <p><i>Applies only to alias, az-affinity alias, failover alias, geolocation alias, latency alias, and weighted alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>, an alias resource record set inherits the health of the referenced Amazon Web Services resource, such as an ELB load balancer or another resource record set in the hosted zone.</p>
     /// <p>Note the following:</p>
     /// <dl>
     /// <dt>

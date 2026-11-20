@@ -42,5 +42,11 @@ pub fn ser_updated_descriptors_fields(
         crate::protocol_serde::shape_updated_ag_ui_descriptor::ser_updated_ag_ui_descriptor(&mut object_12, var_11)?;
         object_12.finish();
     }
+    if let Some(var_13) = &input.signature_agent_card {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("signatureAgentCard").start_object();
+        crate::protocol_serde::shape_updated_signature_agent_card_descriptor::ser_updated_signature_agent_card_descriptor(&mut object_14, var_13)?;
+        object_14.finish();
+    }
     Ok(())
 }

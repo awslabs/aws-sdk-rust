@@ -115,7 +115,9 @@ pub use crate::types::_database::DatabaseBuilder;
 
 pub use crate::types::_data_catalog_encryption_settings::DataCatalogEncryptionSettingsBuilder;
 
-pub use crate::types::_export_encryption_configuration::ExportEncryptionConfigurationBuilder;
+pub use crate::types::_s3_tables_configuration_result::S3TablesConfigurationResultBuilder;
+
+pub use crate::types::_assets_export_result::AssetsExportResultBuilder;
 
 pub use crate::types::_data_source::DataSourceBuilder;
 
@@ -194,6 +196,10 @@ pub use crate::types::_timestamp_filter::TimestampFilterBuilder;
 pub use crate::types::_data_quality_configuration_v2::DataQualityConfigurationV2Builder;
 
 pub use crate::types::_data_quality_telemetry::DataQualityTelemetryBuilder;
+
+pub use crate::types::_s3_tables_configuration::S3TablesConfigurationBuilder;
+
+pub use crate::types::_assets_export::AssetsExportBuilder;
 
 pub use crate::types::_metadata_key_value_pair::MetadataKeyValuePairBuilder;
 
@@ -345,7 +351,7 @@ pub use crate::types::_asset_form_entry::AssetFormEntryBuilder;
 
 pub use crate::types::_iterable_form_entry::IterableFormEntryBuilder;
 
-pub use crate::types::_asset_type_form_reference::AssetTypeFormReferenceBuilder;
+pub use crate::types::_asset_type_form_output::AssetTypeFormOutputBuilder;
 
 pub use crate::types::_last_active_definition::LastActiveDefinitionBuilder;
 
@@ -376,6 +382,10 @@ pub use crate::types::_crawler_metrics::CrawlerMetricsBuilder;
 pub use crate::types::_encryption_at_rest::EncryptionAtRestBuilder;
 
 pub use crate::types::_connection_password_encryption::ConnectionPasswordEncryptionBuilder;
+
+pub use crate::types::_export_encryption_configuration::ExportEncryptionConfigurationBuilder;
+
+pub use crate::types::_s3_tables_export_state::S3TablesExportStateBuilder;
 
 pub use crate::types::_statistic_model_result::StatisticModelResultBuilder;
 
@@ -484,6 +494,8 @@ pub use crate::types::_schema_list_item::SchemaListItemBuilder;
 pub use crate::types::_schema_version_list_item::SchemaVersionListItemBuilder;
 
 pub use crate::types::_usage_profile_definition::UsageProfileDefinitionBuilder;
+
+pub use crate::types::_asset_form_input::AssetFormInputBuilder;
 
 pub use crate::types::_metadata_info::MetadataInfoBuilder;
 

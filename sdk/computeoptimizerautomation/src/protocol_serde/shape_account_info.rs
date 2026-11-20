@@ -22,6 +22,11 @@ pub(crate) fn de_account_info(
                 "organizationRuleMode" => {
                     builder.set_organization_rule_mode(Some(decoder.string().map(|s| crate::types::OrganizationRuleMode::from(s.as_str()))?))
                 }
+                "organizationRuleModeSource" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_organization_rule_mode_source(Some(
+                        crate::protocol_serde::shape_organization_rule_mode_source::de_organization_rule_mode_source(decoder, depth + 1)?,
+                    )))
+                })?,
                 "statusReason" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_status_reason(Some(decoder.string()?)))
                 })?,

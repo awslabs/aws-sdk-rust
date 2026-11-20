@@ -61,6 +61,16 @@ pub use crate::types::_model_status::ModelStatus;
 
 pub use crate::types::_data_retention_mode::DataRetentionMode;
 
+pub use crate::types::_data_retention_storage_model_provider::DataRetentionStorageModelProvider;
+
+pub use crate::types::_data_retention_storage_scope::DataRetentionStorageScope;
+
+pub use crate::types::_data_retention_storage_destination::DataRetentionStorageDestination;
+
+pub use crate::types::_data_retention_storage_configuration::DataRetentionStorageConfiguration;
+
+pub use crate::types::_data_retention_storage_resource_status::DataRetentionStorageResourceStatus;
+
 pub use crate::types::_account_enforced_guardrail_inference_input_configuration::AccountEnforcedGuardrailInferenceInputConfiguration;
 
 pub use crate::types::_application_type::ApplicationType;
@@ -137,6 +147,10 @@ pub use crate::types::_model_modality::ModelModality;
 
 pub use crate::types::_inference_type::InferenceType;
 
+pub use crate::types::_project_status::ProjectStatus;
+
+pub use crate::types::_project_data_retention::ProjectDataRetention;
+
 pub use crate::types::_prompt_router_type::PromptRouterType;
 
 pub use crate::types::_routing_criteria::RoutingCriteria;
@@ -166,6 +180,16 @@ pub use crate::types::_model_customization_job_status::ModelCustomizationJobStat
 pub use crate::types::_status_details::StatusDetails;
 
 pub use crate::types::_fine_tuning_job_status::FineTuningJobStatus;
+
+pub use crate::types::_trusted_access_program_status::TrustedAccessProgramStatus;
+
+pub use crate::types::_trusted_access_program_scope::TrustedAccessProgramScope;
+
+pub use crate::types::_trusted_access_resolution_context::TrustedAccessResolutionContext;
+
+pub use crate::types::_trusted_access_program_opt_in::TrustedAccessProgramOptIn;
+
+pub use crate::types::_trusted_access_program_application_result::TrustedAccessProgramApplicationResult;
 
 pub use crate::types::_batch_delete_advanced_prompt_optimization_job_error::BatchDeleteAdvancedPromptOptimizationJobError;
 
@@ -281,6 +305,8 @@ pub use crate::types::_foundation_model_lifecycle::FoundationModelLifecycle;
 
 pub use crate::types::_foundation_model_summary::FoundationModelSummary;
 
+pub use crate::types::_project_summary::ProjectSummary;
+
 pub use crate::types::_prompt_router_summary::PromptRouterSummary;
 
 pub use crate::types::_provisioned_model_summary::ProvisionedModelSummary;
@@ -296,6 +322,10 @@ pub use crate::types::_data_processing_details::DataProcessingDetails;
 pub use crate::types::_training_details::TrainingDetails;
 
 pub use crate::types::_model_customization_job_summary::ModelCustomizationJobSummary;
+
+pub use crate::types::_trusted_access_program_summary::TrustedAccessProgramSummary;
+
+pub use crate::types::_trusted_access_program_provider_handoff::TrustedAccessProgramProviderHandoff;
 
 pub use crate::types::_inference_configuration::InferenceConfiguration;
 
@@ -933,6 +963,16 @@ mod _data_processing_details;
 
 mod _data_retention_mode;
 
+mod _data_retention_storage_configuration;
+
+mod _data_retention_storage_destination;
+
+mod _data_retention_storage_model_provider;
+
+mod _data_retention_storage_resource_status;
+
+mod _data_retention_storage_scope;
+
 mod _dimensional_price_rate;
 
 mod _distillation_config;
@@ -1221,6 +1261,12 @@ mod _performance_configuration;
 
 mod _pricing_term;
 
+mod _project_data_retention;
+
+mod _project_status;
+
+mod _project_summary;
+
 mod _prompt_router_status;
 
 mod _prompt_router_summary;
@@ -1314,6 +1360,20 @@ mod _training_data_config;
 mod _training_details;
 
 mod _training_metrics;
+
+mod _trusted_access_program_application_result;
+
+mod _trusted_access_program_opt_in;
+
+mod _trusted_access_program_provider_handoff;
+
+mod _trusted_access_program_scope;
+
+mod _trusted_access_program_status;
+
+mod _trusted_access_program_summary;
+
+mod _trusted_access_resolution_context;
 
 mod _validation_data_config;
 

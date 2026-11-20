@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProductOutput {
-    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    /// <p>The locale of the returned content. This value indicates whether the response contains content in the requested locale or fell back to the default locale. See <code>Locale</code> for details.</p>
     pub locale: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the product.</p>
     pub product_id: ::std::string::String,
@@ -13,7 +13,7 @@ pub struct GetProductOutput {
     pub product_name: ::std::string::String,
     /// <p>The entity who manufactured the product.</p>
     pub manufacturer: ::std::option::Option<crate::types::SellerInformation>,
-    /// <p>Indicates whether the product is deployed on AWS infrastructure.</p>
+    /// <p>Specifies whether the product is deployed on AWS infrastructure.</p>
     pub deployed_on_aws: crate::types::DeployedOnAwsStatus,
     /// <p>A 1–3 sentence summary describing the key aspects of the product.</p>
     pub short_description: ::std::string::String,
@@ -21,9 +21,9 @@ pub struct GetProductOutput {
     pub long_description: ::std::string::String,
     /// <p>The URL of the logo thumbnail image for the product.</p>
     pub logo_thumbnail_url: ::std::string::String,
-    /// <p>A summary of fulfillment options available for deploying or accessing the product, such as AMI, SaaS, or Container.</p>
+    /// <p>A summary of fulfillment options available for deploying or accessing the product, such as Amazon Machine Image (AMI), Software as a Service (SaaS), or Container.</p>
     pub fulfillment_option_summaries: ::std::vec::Vec<crate::types::FulfillmentOptionSummary>,
-    /// <p>The categories used to classify this product into logical groups.</p>
+    /// <p>The categories that classify this product into logical groups.</p>
     pub categories: ::std::vec::Vec<crate::types::Category>,
     /// <p>A list of key features that the product offers to customers.</p>
     pub highlights: ::std::vec::Vec<::std::string::String>,
@@ -31,14 +31,16 @@ pub struct GetProductOutput {
     pub promotional_media: ::std::vec::Vec<crate::types::PromotionalMedia>,
     /// <p>Resources that provide further information about using the product or requesting support, such as documentation links, support contacts, and usage instructions.</p>
     pub resources: ::std::vec::Vec<crate::types::Resource>,
-    /// <p>Engagement options available to potential buyers, such as requesting a private offer or requesting a demo.</p>
+    /// <p>The engagement options available to you, such as buying now, requesting a private offer, or requesting a demo.</p>
     pub seller_engagements: ::std::vec::Vec<crate::types::SellerEngagement>,
     /// <p>The default listing identifier associated with the product.</p>
     pub listing_id: ::std::string::String,
+    /// <p>Indicators describing purchase characteristics of this product, such as whether you can subscribe to it or use it without a subscription. The list is empty when no special purchase conditions apply.</p>
+    pub purchase_indicators: ::std::vec::Vec<crate::types::PurchaseIndicator>,
     _request_id: Option<String>,
 }
 impl GetProductOutput {
-    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    /// <p>The locale of the returned content. This value indicates whether the response contains content in the requested locale or fell back to the default locale. See <code>Locale</code> for details.</p>
     pub fn locale(&self) -> ::std::option::Option<&str> {
         self.locale.as_deref()
     }
@@ -61,7 +63,7 @@ impl GetProductOutput {
     pub fn manufacturer(&self) -> ::std::option::Option<&crate::types::SellerInformation> {
         self.manufacturer.as_ref()
     }
-    /// <p>Indicates whether the product is deployed on AWS infrastructure.</p>
+    /// <p>Specifies whether the product is deployed on AWS infrastructure.</p>
     pub fn deployed_on_aws(&self) -> &crate::types::DeployedOnAwsStatus {
         &self.deployed_on_aws
     }
@@ -80,12 +82,12 @@ impl GetProductOutput {
         use std::ops::Deref;
         self.logo_thumbnail_url.deref()
     }
-    /// <p>A summary of fulfillment options available for deploying or accessing the product, such as AMI, SaaS, or Container.</p>
+    /// <p>A summary of fulfillment options available for deploying or accessing the product, such as Amazon Machine Image (AMI), Software as a Service (SaaS), or Container.</p>
     pub fn fulfillment_option_summaries(&self) -> &[crate::types::FulfillmentOptionSummary] {
         use std::ops::Deref;
         self.fulfillment_option_summaries.deref()
     }
-    /// <p>The categories used to classify this product into logical groups.</p>
+    /// <p>The categories that classify this product into logical groups.</p>
     pub fn categories(&self) -> &[crate::types::Category] {
         use std::ops::Deref;
         self.categories.deref()
@@ -105,7 +107,7 @@ impl GetProductOutput {
         use std::ops::Deref;
         self.resources.deref()
     }
-    /// <p>Engagement options available to potential buyers, such as requesting a private offer or requesting a demo.</p>
+    /// <p>The engagement options available to you, such as buying now, requesting a private offer, or requesting a demo.</p>
     pub fn seller_engagements(&self) -> &[crate::types::SellerEngagement] {
         use std::ops::Deref;
         self.seller_engagements.deref()
@@ -114,6 +116,11 @@ impl GetProductOutput {
     pub fn listing_id(&self) -> &str {
         use std::ops::Deref;
         self.listing_id.deref()
+    }
+    /// <p>Indicators describing purchase characteristics of this product, such as whether you can subscribe to it or use it without a subscription. The list is empty when no special purchase conditions apply.</p>
+    pub fn purchase_indicators(&self) -> &[crate::types::PurchaseIndicator] {
+        use std::ops::Deref;
+        self.purchase_indicators.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetProductOutput {
@@ -148,20 +155,21 @@ pub struct GetProductOutputBuilder {
     pub(crate) resources: ::std::option::Option<::std::vec::Vec<crate::types::Resource>>,
     pub(crate) seller_engagements: ::std::option::Option<::std::vec::Vec<crate::types::SellerEngagement>>,
     pub(crate) listing_id: ::std::option::Option<::std::string::String>,
+    pub(crate) purchase_indicators: ::std::option::Option<::std::vec::Vec<crate::types::PurchaseIndicator>>,
     _request_id: Option<String>,
 }
 impl GetProductOutputBuilder {
-    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    /// <p>The locale of the returned content. This value indicates whether the response contains content in the requested locale or fell back to the default locale. See <code>Locale</code> for details.</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    /// <p>The locale of the returned content. This value indicates whether the response contains content in the requested locale or fell back to the default locale. See <code>Locale</code> for details.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale = input;
         self
     }
-    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    /// <p>The locale of the returned content. This value indicates whether the response contains content in the requested locale or fell back to the default locale. See <code>Locale</code> for details.</p>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
         &self.locale
     }
@@ -225,18 +233,18 @@ impl GetProductOutputBuilder {
     pub fn get_manufacturer(&self) -> &::std::option::Option<crate::types::SellerInformation> {
         &self.manufacturer
     }
-    /// <p>Indicates whether the product is deployed on AWS infrastructure.</p>
+    /// <p>Specifies whether the product is deployed on AWS infrastructure.</p>
     /// This field is required.
     pub fn deployed_on_aws(mut self, input: crate::types::DeployedOnAwsStatus) -> Self {
         self.deployed_on_aws = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Indicates whether the product is deployed on AWS infrastructure.</p>
+    /// <p>Specifies whether the product is deployed on AWS infrastructure.</p>
     pub fn set_deployed_on_aws(mut self, input: ::std::option::Option<crate::types::DeployedOnAwsStatus>) -> Self {
         self.deployed_on_aws = input;
         self
     }
-    /// <p>Indicates whether the product is deployed on AWS infrastructure.</p>
+    /// <p>Specifies whether the product is deployed on AWS infrastructure.</p>
     pub fn get_deployed_on_aws(&self) -> &::std::option::Option<crate::types::DeployedOnAwsStatus> {
         &self.deployed_on_aws
     }
@@ -289,19 +297,19 @@ impl GetProductOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_fulfillment_option_summaries`](Self::set_fulfillment_option_summaries).
     ///
-    /// <p>A summary of fulfillment options available for deploying or accessing the product, such as AMI, SaaS, or Container.</p>
+    /// <p>A summary of fulfillment options available for deploying or accessing the product, such as Amazon Machine Image (AMI), Software as a Service (SaaS), or Container.</p>
     pub fn fulfillment_option_summaries(mut self, input: crate::types::FulfillmentOptionSummary) -> Self {
         let mut v = self.fulfillment_option_summaries.unwrap_or_default();
         v.push(input);
         self.fulfillment_option_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A summary of fulfillment options available for deploying or accessing the product, such as AMI, SaaS, or Container.</p>
+    /// <p>A summary of fulfillment options available for deploying or accessing the product, such as Amazon Machine Image (AMI), Software as a Service (SaaS), or Container.</p>
     pub fn set_fulfillment_option_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FulfillmentOptionSummary>>) -> Self {
         self.fulfillment_option_summaries = input;
         self
     }
-    /// <p>A summary of fulfillment options available for deploying or accessing the product, such as AMI, SaaS, or Container.</p>
+    /// <p>A summary of fulfillment options available for deploying or accessing the product, such as Amazon Machine Image (AMI), Software as a Service (SaaS), or Container.</p>
     pub fn get_fulfillment_option_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FulfillmentOptionSummary>> {
         &self.fulfillment_option_summaries
     }
@@ -309,19 +317,19 @@ impl GetProductOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_categories`](Self::set_categories).
     ///
-    /// <p>The categories used to classify this product into logical groups.</p>
+    /// <p>The categories that classify this product into logical groups.</p>
     pub fn categories(mut self, input: crate::types::Category) -> Self {
         let mut v = self.categories.unwrap_or_default();
         v.push(input);
         self.categories = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The categories used to classify this product into logical groups.</p>
+    /// <p>The categories that classify this product into logical groups.</p>
     pub fn set_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Category>>) -> Self {
         self.categories = input;
         self
     }
-    /// <p>The categories used to classify this product into logical groups.</p>
+    /// <p>The categories that classify this product into logical groups.</p>
     pub fn get_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Category>> {
         &self.categories
     }
@@ -389,19 +397,19 @@ impl GetProductOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_seller_engagements`](Self::set_seller_engagements).
     ///
-    /// <p>Engagement options available to potential buyers, such as requesting a private offer or requesting a demo.</p>
+    /// <p>The engagement options available to you, such as buying now, requesting a private offer, or requesting a demo.</p>
     pub fn seller_engagements(mut self, input: crate::types::SellerEngagement) -> Self {
         let mut v = self.seller_engagements.unwrap_or_default();
         v.push(input);
         self.seller_engagements = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Engagement options available to potential buyers, such as requesting a private offer or requesting a demo.</p>
+    /// <p>The engagement options available to you, such as buying now, requesting a private offer, or requesting a demo.</p>
     pub fn set_seller_engagements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SellerEngagement>>) -> Self {
         self.seller_engagements = input;
         self
     }
-    /// <p>Engagement options available to potential buyers, such as requesting a private offer or requesting a demo.</p>
+    /// <p>The engagement options available to you, such as buying now, requesting a private offer, or requesting a demo.</p>
     pub fn get_seller_engagements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SellerEngagement>> {
         &self.seller_engagements
     }
@@ -419,6 +427,26 @@ impl GetProductOutputBuilder {
     /// <p>The default listing identifier associated with the product.</p>
     pub fn get_listing_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.listing_id
+    }
+    /// Appends an item to `purchase_indicators`.
+    ///
+    /// To override the contents of this collection use [`set_purchase_indicators`](Self::set_purchase_indicators).
+    ///
+    /// <p>Indicators describing purchase characteristics of this product, such as whether you can subscribe to it or use it without a subscription. The list is empty when no special purchase conditions apply.</p>
+    pub fn purchase_indicators(mut self, input: crate::types::PurchaseIndicator) -> Self {
+        let mut v = self.purchase_indicators.unwrap_or_default();
+        v.push(input);
+        self.purchase_indicators = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Indicators describing purchase characteristics of this product, such as whether you can subscribe to it or use it without a subscription. The list is empty when no special purchase conditions apply.</p>
+    pub fn set_purchase_indicators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PurchaseIndicator>>) -> Self {
+        self.purchase_indicators = input;
+        self
+    }
+    /// <p>Indicators describing purchase characteristics of this product, such as whether you can subscribe to it or use it without a subscription. The list is empty when no special purchase conditions apply.</p>
+    pub fn get_purchase_indicators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PurchaseIndicator>> {
+        &self.purchase_indicators
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -533,6 +561,7 @@ impl GetProductOutputBuilder {
                     "listing_id was not specified but it is required when building GetProductOutput",
                 )
             })?,
+            purchase_indicators: self.purchase_indicators.unwrap_or_default(),
             _request_id: self._request_id,
         })
     }

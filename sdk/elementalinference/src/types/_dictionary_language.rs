@@ -12,6 +12,7 @@
 /// ```text
 /// # let dictionarylanguage = unimplemented!();
 /// match dictionarylanguage {
+///     DictionaryLanguage::Ara => { /* ... */ },
 ///     DictionaryLanguage::Deu => { /* ... */ },
 ///     DictionaryLanguage::Eng => { /* ... */ },
 ///     DictionaryLanguage::Fra => { /* ... */ },
@@ -47,6 +48,8 @@
 )]
 pub enum DictionaryLanguage {
     #[allow(missing_docs)] // documentation missing in model
+    Ara,
+    #[allow(missing_docs)] // documentation missing in model
     Deu,
     #[allow(missing_docs)] // documentation missing in model
     Eng,
@@ -65,6 +68,7 @@ pub enum DictionaryLanguage {
 impl ::std::convert::From<&str> for DictionaryLanguage {
     fn from(s: &str) -> Self {
         match s {
+            "ara" => DictionaryLanguage::Ara,
             "deu" => DictionaryLanguage::Deu,
             "eng" => DictionaryLanguage::Eng,
             "fra" => DictionaryLanguage::Fra,
@@ -86,6 +90,7 @@ impl DictionaryLanguage {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            DictionaryLanguage::Ara => "ara",
             DictionaryLanguage::Deu => "deu",
             DictionaryLanguage::Eng => "eng",
             DictionaryLanguage::Fra => "fra",
@@ -97,7 +102,7 @@ impl DictionaryLanguage {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["deu", "eng", "fra", "ita", "por", "spa"]
+        &["ara", "deu", "eng", "fra", "ita", "por", "spa"]
     }
 }
 impl ::std::convert::AsRef<str> for DictionaryLanguage {
@@ -120,6 +125,7 @@ impl DictionaryLanguage {
 impl ::std::fmt::Display for DictionaryLanguage {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            DictionaryLanguage::Ara => write!(f, "ara"),
             DictionaryLanguage::Deu => write!(f, "deu"),
             DictionaryLanguage::Eng => write!(f, "eng"),
             DictionaryLanguage::Fra => write!(f, "fra"),

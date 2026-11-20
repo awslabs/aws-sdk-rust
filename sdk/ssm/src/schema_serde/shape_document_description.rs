@@ -347,6 +347,24 @@ static DOCUMENTDESCRIPTION_MEMBER_CATEGORY_ENUM: ::aws_smithy_schema::Schema<'st
     29,
 )
 .with_list_member(&DOCUMENTDESCRIPTION_MEMBER_CATEGORY_ENUM_MEMBER);
+static DOCUMENTDESCRIPTION_MEMBER_CLOUD_PROVIDERS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#CloudProviderList$member", "com.amazonaws.ssm", "CloudProviderList"),
+    ::aws_smithy_schema::ShapeType::String,
+    "member",
+    0,
+)
+.with_xml_name("CloudProvider");
+static DOCUMENTDESCRIPTION_MEMBER_CLOUD_PROVIDERS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.ssm#DocumentDescription$CloudProviders",
+        "com.amazonaws.ssm",
+        "DocumentDescription",
+    ),
+    ::aws_smithy_schema::ShapeType::List,
+    "CloudProviders",
+    30,
+)
+.with_list_member(&DOCUMENTDESCRIPTION_MEMBER_CLOUD_PROVIDERS_MEMBER);
 static DOCUMENTDESCRIPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.ssm#DocumentDescription", "com.amazonaws.ssm", "DocumentDescription"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -381,6 +399,7 @@ static DOCUMENTDESCRIPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_
         &DOCUMENTDESCRIPTION_MEMBER_REVIEW_STATUS,
         &DOCUMENTDESCRIPTION_MEMBER_CATEGORY,
         &DOCUMENTDESCRIPTION_MEMBER_CATEGORY_ENUM,
+        &DOCUMENTDESCRIPTION_MEMBER_CLOUD_PROVIDERS,
     ],
 );
 impl crate::types::DocumentDescription {
@@ -546,6 +565,17 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::DocumentDe
                 &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
                     for item in val {
                         ser.write_string(&aws_smithy_schema::prelude::STRING, item)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.cloud_providers {
+            ser.write_list(
+                &DOCUMENTDESCRIPTION_MEMBER_CLOUD_PROVIDERS,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for item in val {
+                        ser.write_string(&aws_smithy_schema::prelude::STRING, item.as_str())?;
                     }
                     Ok(())
                 },
@@ -820,6 +850,22 @@ impl crate::types::builders::DocumentDescriptionBuilder {
                         deser.read_null()?;
                     } else {
                         self.category_enum = Some(deser.read_string_list(member)?);
+                    }
+                }
+                Some(30) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.cloud_providers = Some({
+                            let mut container = Vec::new();
+                            deser.read_list(member, &mut |deser| {
+                                container.push(crate::types::CloudProvider::from(
+                                    deser.read_string(&::aws_smithy_schema::prelude::STRING)?.as_str(),
+                                ));
+                                Ok(())
+                            })?;
+                            container
+                        });
                     }
                 }
                 _ => {}

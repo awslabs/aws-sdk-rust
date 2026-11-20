@@ -288,6 +288,8 @@ mod get_health_check_status;
 
 mod get_hosted_zone;
 
+mod get_hosted_zone_change_batch;
+
 mod get_hosted_zone_count;
 
 mod get_hosted_zone_limit;
@@ -318,6 +320,8 @@ mod list_health_checks;
 
 mod list_health_checks_by_source;
 
+mod list_hosted_zone_change_batches;
+
 mod list_hosted_zones;
 
 mod list_hosted_zones_by_name;
@@ -325,6 +329,8 @@ mod list_hosted_zones_by_name;
 mod list_hosted_zones_by_vpc;
 
 mod list_query_logging_configs;
+
+mod list_resource_record_set_changes;
 
 mod list_resource_record_set_protections;
 
@@ -355,6 +361,8 @@ mod update_health_check;
 mod update_hosted_zone_comment;
 
 mod update_hosted_zone_features;
+
+mod update_hosted_zone_tier;
 
 mod update_traffic_policy_comment;
 

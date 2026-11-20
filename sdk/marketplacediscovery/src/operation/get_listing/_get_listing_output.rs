@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetListingOutput {
-    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    /// <p>The locale of the returned content. This value indicates whether the response contains content in the requested locale or fell back to the default locale. See <code>Locale</code> for details.</p>
     pub locale: ::std::option::Option<::std::string::String>,
     /// <p>The products and offers associated with this listing. Each entity contains product and offer information.</p>
     pub associated_entities: ::std::vec::Vec<crate::types::ListingAssociatedEntity>,
@@ -11,9 +11,9 @@ pub struct GetListingOutput {
     pub badges: ::std::vec::Vec<crate::types::ListingBadge>,
     /// <p>The name of the catalog that the listing belongs to.</p>
     pub catalog: ::std::string::String,
-    /// <p>The categories used to classify this listing into logical groups.</p>
+    /// <p>The categories that classify this listing into logical groups.</p>
     pub categories: ::std::vec::Vec<crate::types::Category>,
-    /// <p>A summary of fulfillment options available for deploying or accessing the listing, such as AMI, SaaS, or Container.</p>
+    /// <p>A summary of fulfillment options available for deploying or accessing the listing, such as Amazon Machine Image (AMI), Software as a Service (SaaS), or Container.</p>
     pub fulfillment_option_summaries: ::std::vec::Vec<crate::types::FulfillmentOptionSummary>,
     /// <p>A list of key features that the listing offers to customers.</p>
     pub highlights: ::std::vec::Vec<::std::string::String>,
@@ -27,7 +27,7 @@ pub struct GetListingOutput {
     pub logo_thumbnail_url: ::std::string::String,
     /// <p>A detailed description of what the listing offers, in paragraph format.</p>
     pub long_description: ::std::string::String,
-    /// <p>The pricing models for offers associated with this listing, such as usage-based, contract, BYOL, or free.</p>
+    /// <p>The pricing models for offers associated with this listing, such as usage-based, contract, Bring Your Own License (BYOL), or free.</p>
     pub pricing_models: ::std::vec::Vec<crate::types::PricingModel>,
     /// <p>The pricing units that define the billing dimensions for offers associated with this listing, such as users, hosts, or data.</p>
     pub pricing_units: ::std::vec::Vec<crate::types::PricingUnit>,
@@ -39,16 +39,18 @@ pub struct GetListingOutput {
     pub resources: ::std::vec::Vec<crate::types::Resource>,
     /// <p>A summary of customer reviews available for the listing, including average rating and total review count by source.</p>
     pub review_summary: ::std::option::Option<crate::types::ReviewSummary>,
-    /// <p>Engagement options available to potential buyers, such as requesting a private offer or requesting a demo.</p>
+    /// <p>The engagement options available to you, such as buying now, requesting a private offer, or requesting a demo.</p>
     pub seller_engagements: ::std::vec::Vec<crate::types::SellerEngagement>,
     /// <p>A 1–3 sentence summary describing the key aspects of the listing.</p>
     pub short_description: ::std::string::String,
-    /// <p>Use cases associated with the listing, describing scenarios where the product can be applied.</p>
+    /// <p>Use cases associated with the listing, describing scenarios where you can apply the product.</p>
     pub use_cases: ::std::vec::Vec<crate::types::UseCaseEntry>,
+    /// <p>Indicators describing purchase characteristics of this listing, such as whether you can subscribe to it or use it without a subscription. The list is empty when no special purchase conditions apply.</p>
+    pub purchase_indicators: ::std::vec::Vec<crate::types::PurchaseIndicator>,
     _request_id: Option<String>,
 }
 impl GetListingOutput {
-    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    /// <p>The locale of the returned content. This value indicates whether the response contains content in the requested locale or fell back to the default locale. See <code>Locale</code> for details.</p>
     pub fn locale(&self) -> ::std::option::Option<&str> {
         self.locale.as_deref()
     }
@@ -67,12 +69,12 @@ impl GetListingOutput {
         use std::ops::Deref;
         self.catalog.deref()
     }
-    /// <p>The categories used to classify this listing into logical groups.</p>
+    /// <p>The categories that classify this listing into logical groups.</p>
     pub fn categories(&self) -> &[crate::types::Category] {
         use std::ops::Deref;
         self.categories.deref()
     }
-    /// <p>A summary of fulfillment options available for deploying or accessing the listing, such as AMI, SaaS, or Container.</p>
+    /// <p>A summary of fulfillment options available for deploying or accessing the listing, such as Amazon Machine Image (AMI), Software as a Service (SaaS), or Container.</p>
     pub fn fulfillment_option_summaries(&self) -> &[crate::types::FulfillmentOptionSummary] {
         use std::ops::Deref;
         self.fulfillment_option_summaries.deref()
@@ -106,7 +108,7 @@ impl GetListingOutput {
         use std::ops::Deref;
         self.long_description.deref()
     }
-    /// <p>The pricing models for offers associated with this listing, such as usage-based, contract, BYOL, or free.</p>
+    /// <p>The pricing models for offers associated with this listing, such as usage-based, contract, Bring Your Own License (BYOL), or free.</p>
     pub fn pricing_models(&self) -> &[crate::types::PricingModel] {
         use std::ops::Deref;
         self.pricing_models.deref()
@@ -134,7 +136,7 @@ impl GetListingOutput {
     pub fn review_summary(&self) -> ::std::option::Option<&crate::types::ReviewSummary> {
         self.review_summary.as_ref()
     }
-    /// <p>Engagement options available to potential buyers, such as requesting a private offer or requesting a demo.</p>
+    /// <p>The engagement options available to you, such as buying now, requesting a private offer, or requesting a demo.</p>
     pub fn seller_engagements(&self) -> &[crate::types::SellerEngagement] {
         use std::ops::Deref;
         self.seller_engagements.deref()
@@ -144,10 +146,15 @@ impl GetListingOutput {
         use std::ops::Deref;
         self.short_description.deref()
     }
-    /// <p>Use cases associated with the listing, describing scenarios where the product can be applied.</p>
+    /// <p>Use cases associated with the listing, describing scenarios where you can apply the product.</p>
     pub fn use_cases(&self) -> &[crate::types::UseCaseEntry] {
         use std::ops::Deref;
         self.use_cases.deref()
+    }
+    /// <p>Indicators describing purchase characteristics of this listing, such as whether you can subscribe to it or use it without a subscription. The list is empty when no special purchase conditions apply.</p>
+    pub fn purchase_indicators(&self) -> &[crate::types::PurchaseIndicator] {
+        use std::ops::Deref;
+        self.purchase_indicators.deref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetListingOutput {
@@ -187,20 +194,21 @@ pub struct GetListingOutputBuilder {
     pub(crate) seller_engagements: ::std::option::Option<::std::vec::Vec<crate::types::SellerEngagement>>,
     pub(crate) short_description: ::std::option::Option<::std::string::String>,
     pub(crate) use_cases: ::std::option::Option<::std::vec::Vec<crate::types::UseCaseEntry>>,
+    pub(crate) purchase_indicators: ::std::option::Option<::std::vec::Vec<crate::types::PurchaseIndicator>>,
     _request_id: Option<String>,
 }
 impl GetListingOutputBuilder {
-    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    /// <p>The locale of the returned content. This value indicates whether the response contains content in the requested locale or fell back to the default locale. See <code>Locale</code> for details.</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    /// <p>The locale of the returned content. This value indicates whether the response contains content in the requested locale or fell back to the default locale. See <code>Locale</code> for details.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale = input;
         self
     }
-    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    /// <p>The locale of the returned content. This value indicates whether the response contains content in the requested locale or fell back to the default locale. See <code>Locale</code> for details.</p>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
         &self.locale
     }
@@ -263,19 +271,19 @@ impl GetListingOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_categories`](Self::set_categories).
     ///
-    /// <p>The categories used to classify this listing into logical groups.</p>
+    /// <p>The categories that classify this listing into logical groups.</p>
     pub fn categories(mut self, input: crate::types::Category) -> Self {
         let mut v = self.categories.unwrap_or_default();
         v.push(input);
         self.categories = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The categories used to classify this listing into logical groups.</p>
+    /// <p>The categories that classify this listing into logical groups.</p>
     pub fn set_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Category>>) -> Self {
         self.categories = input;
         self
     }
-    /// <p>The categories used to classify this listing into logical groups.</p>
+    /// <p>The categories that classify this listing into logical groups.</p>
     pub fn get_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Category>> {
         &self.categories
     }
@@ -283,19 +291,19 @@ impl GetListingOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_fulfillment_option_summaries`](Self::set_fulfillment_option_summaries).
     ///
-    /// <p>A summary of fulfillment options available for deploying or accessing the listing, such as AMI, SaaS, or Container.</p>
+    /// <p>A summary of fulfillment options available for deploying or accessing the listing, such as Amazon Machine Image (AMI), Software as a Service (SaaS), or Container.</p>
     pub fn fulfillment_option_summaries(mut self, input: crate::types::FulfillmentOptionSummary) -> Self {
         let mut v = self.fulfillment_option_summaries.unwrap_or_default();
         v.push(input);
         self.fulfillment_option_summaries = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A summary of fulfillment options available for deploying or accessing the listing, such as AMI, SaaS, or Container.</p>
+    /// <p>A summary of fulfillment options available for deploying or accessing the listing, such as Amazon Machine Image (AMI), Software as a Service (SaaS), or Container.</p>
     pub fn set_fulfillment_option_summaries(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::FulfillmentOptionSummary>>) -> Self {
         self.fulfillment_option_summaries = input;
         self
     }
-    /// <p>A summary of fulfillment options available for deploying or accessing the listing, such as AMI, SaaS, or Container.</p>
+    /// <p>A summary of fulfillment options available for deploying or accessing the listing, such as Amazon Machine Image (AMI), Software as a Service (SaaS), or Container.</p>
     pub fn get_fulfillment_option_summaries(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::FulfillmentOptionSummary>> {
         &self.fulfillment_option_summaries
     }
@@ -397,19 +405,19 @@ impl GetListingOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_pricing_models`](Self::set_pricing_models).
     ///
-    /// <p>The pricing models for offers associated with this listing, such as usage-based, contract, BYOL, or free.</p>
+    /// <p>The pricing models for offers associated with this listing, such as usage-based, contract, Bring Your Own License (BYOL), or free.</p>
     pub fn pricing_models(mut self, input: crate::types::PricingModel) -> Self {
         let mut v = self.pricing_models.unwrap_or_default();
         v.push(input);
         self.pricing_models = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The pricing models for offers associated with this listing, such as usage-based, contract, BYOL, or free.</p>
+    /// <p>The pricing models for offers associated with this listing, such as usage-based, contract, Bring Your Own License (BYOL), or free.</p>
     pub fn set_pricing_models(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PricingModel>>) -> Self {
         self.pricing_models = input;
         self
     }
-    /// <p>The pricing models for offers associated with this listing, such as usage-based, contract, BYOL, or free.</p>
+    /// <p>The pricing models for offers associated with this listing, such as usage-based, contract, Bring Your Own License (BYOL), or free.</p>
     pub fn get_pricing_models(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PricingModel>> {
         &self.pricing_models
     }
@@ -506,19 +514,19 @@ impl GetListingOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_seller_engagements`](Self::set_seller_engagements).
     ///
-    /// <p>Engagement options available to potential buyers, such as requesting a private offer or requesting a demo.</p>
+    /// <p>The engagement options available to you, such as buying now, requesting a private offer, or requesting a demo.</p>
     pub fn seller_engagements(mut self, input: crate::types::SellerEngagement) -> Self {
         let mut v = self.seller_engagements.unwrap_or_default();
         v.push(input);
         self.seller_engagements = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Engagement options available to potential buyers, such as requesting a private offer or requesting a demo.</p>
+    /// <p>The engagement options available to you, such as buying now, requesting a private offer, or requesting a demo.</p>
     pub fn set_seller_engagements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SellerEngagement>>) -> Self {
         self.seller_engagements = input;
         self
     }
-    /// <p>Engagement options available to potential buyers, such as requesting a private offer or requesting a demo.</p>
+    /// <p>The engagement options available to you, such as buying now, requesting a private offer, or requesting a demo.</p>
     pub fn get_seller_engagements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SellerEngagement>> {
         &self.seller_engagements
     }
@@ -541,21 +549,41 @@ impl GetListingOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_use_cases`](Self::set_use_cases).
     ///
-    /// <p>Use cases associated with the listing, describing scenarios where the product can be applied.</p>
+    /// <p>Use cases associated with the listing, describing scenarios where you can apply the product.</p>
     pub fn use_cases(mut self, input: crate::types::UseCaseEntry) -> Self {
         let mut v = self.use_cases.unwrap_or_default();
         v.push(input);
         self.use_cases = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Use cases associated with the listing, describing scenarios where the product can be applied.</p>
+    /// <p>Use cases associated with the listing, describing scenarios where you can apply the product.</p>
     pub fn set_use_cases(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::UseCaseEntry>>) -> Self {
         self.use_cases = input;
         self
     }
-    /// <p>Use cases associated with the listing, describing scenarios where the product can be applied.</p>
+    /// <p>Use cases associated with the listing, describing scenarios where you can apply the product.</p>
     pub fn get_use_cases(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::UseCaseEntry>> {
         &self.use_cases
+    }
+    /// Appends an item to `purchase_indicators`.
+    ///
+    /// To override the contents of this collection use [`set_purchase_indicators`](Self::set_purchase_indicators).
+    ///
+    /// <p>Indicators describing purchase characteristics of this listing, such as whether you can subscribe to it or use it without a subscription. The list is empty when no special purchase conditions apply.</p>
+    pub fn purchase_indicators(mut self, input: crate::types::PurchaseIndicator) -> Self {
+        let mut v = self.purchase_indicators.unwrap_or_default();
+        v.push(input);
+        self.purchase_indicators = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Indicators describing purchase characteristics of this listing, such as whether you can subscribe to it or use it without a subscription. The list is empty when no special purchase conditions apply.</p>
+    pub fn set_purchase_indicators(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PurchaseIndicator>>) -> Self {
+        self.purchase_indicators = input;
+        self
+    }
+    /// <p>Indicators describing purchase characteristics of this listing, such as whether you can subscribe to it or use it without a subscription. The list is empty when no special purchase conditions apply.</p>
+    pub fn get_purchase_indicators(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PurchaseIndicator>> {
+        &self.purchase_indicators
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
@@ -693,6 +721,7 @@ impl GetListingOutputBuilder {
                     "use_cases was not specified but it is required when building GetListingOutput",
                 )
             })?,
+            purchase_indicators: self.purchase_indicators.unwrap_or_default(),
             _request_id: self._request_id,
         })
     }

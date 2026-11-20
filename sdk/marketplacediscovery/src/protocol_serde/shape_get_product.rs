@@ -221,6 +221,13 @@ pub(crate) fn de_get_product(
                         depth + 1,
                     )?);
                 }
+                "purchaseIndicators" => {
+                    builder = builder.set_purchase_indicators(crate::protocol_serde::shape_purchase_indicator_list::de_purchase_indicator_list(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "resources" => {
                     builder = builder.set_resources(crate::protocol_serde::shape_resource_list::de_resource_list(tokens, _value, depth + 1)?);
                 }

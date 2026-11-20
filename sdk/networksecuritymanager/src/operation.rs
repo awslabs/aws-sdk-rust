@@ -82,11 +82,17 @@ pub mod list_deployment_snapshots;
 /// Types for the `ListDeployments` operation.
 pub mod list_deployments;
 
+/// Types for the `ListEntityCoverages` operation.
+pub mod list_entity_coverages;
+
 /// Types for the `ListPolicies` operation.
 pub mod list_policies;
 
 /// Types for the `ListPolicySnapshots` operation.
 pub mod list_policy_snapshots;
+
+/// Types for the `ListProtectedResourceCoverages` operation.
+pub mod list_protected_resource_coverages;
 
 /// Types for the `ListResourceAssociations` operation.
 pub mod list_resource_associations;

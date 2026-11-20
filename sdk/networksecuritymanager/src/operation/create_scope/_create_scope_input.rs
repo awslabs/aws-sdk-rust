@@ -11,6 +11,8 @@ pub struct CreateScopeInput {
     pub scope_description: ::std::option::Option<::std::string::String>,
     /// <p>The configuration that defines which accounts and resources are in scope.</p>
     pub scope_configuration: ::std::option::Option<crate::types::ScopeConfiguration>,
+    /// <p>The specialized type of the scope. Omit this value to create a standard scope that you can associate with a deployment. Set it to create a scope that is built for one specific purpose: a specialized scope can be used only for the purpose that its type defines, is validated against that use, and can't be associated with a deployment. This value is set when the scope is created and can't be changed.</p>
+    pub specialized_scope_type: ::std::option::Option<crate::types::SpecializedScopeType>,
     /// <p>Specifies whether to publish the resource. When <code>true</code>, the resource is saved in published (<code>ACTIVE</code>) state. When <code>false</code>, it is saved as a draft (<code>DRAFT</code>). Default: <code>true</code>.</p>
     pub is_published: ::std::option::Option<bool>,
     /// <p>The tags to add to the resource when it is created.</p>
@@ -32,6 +34,10 @@ impl CreateScopeInput {
     /// <p>The configuration that defines which accounts and resources are in scope.</p>
     pub fn scope_configuration(&self) -> ::std::option::Option<&crate::types::ScopeConfiguration> {
         self.scope_configuration.as_ref()
+    }
+    /// <p>The specialized type of the scope. Omit this value to create a standard scope that you can associate with a deployment. Set it to create a scope that is built for one specific purpose: a specialized scope can be used only for the purpose that its type defines, is validated against that use, and can't be associated with a deployment. This value is set when the scope is created and can't be changed.</p>
+    pub fn specialized_scope_type(&self) -> ::std::option::Option<&crate::types::SpecializedScopeType> {
+        self.specialized_scope_type.as_ref()
     }
     /// <p>Specifies whether to publish the resource. When <code>true</code>, the resource is saved in published (<code>ACTIVE</code>) state. When <code>false</code>, it is saved as a draft (<code>DRAFT</code>). Default: <code>true</code>.</p>
     pub fn is_published(&self) -> ::std::option::Option<bool> {
@@ -57,6 +63,7 @@ pub struct CreateScopeInputBuilder {
     pub(crate) scope_name: ::std::option::Option<::std::string::String>,
     pub(crate) scope_description: ::std::option::Option<::std::string::String>,
     pub(crate) scope_configuration: ::std::option::Option<crate::types::ScopeConfiguration>,
+    pub(crate) specialized_scope_type: ::std::option::Option<crate::types::SpecializedScopeType>,
     pub(crate) is_published: ::std::option::Option<bool>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -119,6 +126,20 @@ impl CreateScopeInputBuilder {
     pub fn get_scope_configuration(&self) -> &::std::option::Option<crate::types::ScopeConfiguration> {
         &self.scope_configuration
     }
+    /// <p>The specialized type of the scope. Omit this value to create a standard scope that you can associate with a deployment. Set it to create a scope that is built for one specific purpose: a specialized scope can be used only for the purpose that its type defines, is validated against that use, and can't be associated with a deployment. This value is set when the scope is created and can't be changed.</p>
+    pub fn specialized_scope_type(mut self, input: crate::types::SpecializedScopeType) -> Self {
+        self.specialized_scope_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The specialized type of the scope. Omit this value to create a standard scope that you can associate with a deployment. Set it to create a scope that is built for one specific purpose: a specialized scope can be used only for the purpose that its type defines, is validated against that use, and can't be associated with a deployment. This value is set when the scope is created and can't be changed.</p>
+    pub fn set_specialized_scope_type(mut self, input: ::std::option::Option<crate::types::SpecializedScopeType>) -> Self {
+        self.specialized_scope_type = input;
+        self
+    }
+    /// <p>The specialized type of the scope. Omit this value to create a standard scope that you can associate with a deployment. Set it to create a scope that is built for one specific purpose: a specialized scope can be used only for the purpose that its type defines, is validated against that use, and can't be associated with a deployment. This value is set when the scope is created and can't be changed.</p>
+    pub fn get_specialized_scope_type(&self) -> &::std::option::Option<crate::types::SpecializedScopeType> {
+        &self.specialized_scope_type
+    }
     /// <p>Specifies whether to publish the resource. When <code>true</code>, the resource is saved in published (<code>ACTIVE</code>) state. When <code>false</code>, it is saved as a draft (<code>DRAFT</code>). Default: <code>true</code>.</p>
     pub fn is_published(mut self, input: bool) -> Self {
         self.is_published = ::std::option::Option::Some(input);
@@ -160,6 +181,7 @@ impl CreateScopeInputBuilder {
             scope_name: self.scope_name,
             scope_description: self.scope_description,
             scope_configuration: self.scope_configuration,
+            specialized_scope_type: self.specialized_scope_type,
             is_published: self.is_published,
             tags: self.tags,
         })

@@ -70,6 +70,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "type" => {
+                            builder = builder.set_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::DeviceType::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
                         "os" => {
                             builder = builder.set_os(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

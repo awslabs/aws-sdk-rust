@@ -122,17 +122,65 @@ impl CreateDictionaryFluentBuilder {
     pub fn get_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_name()
     }
-    /// <p>The language of the dictionary entries. Specify the language using an ISO 639-2/T three-letter code. Supported values: eng, fra, ita, deu, spa, por.</p>
+    /// <p>The language of the dictionary entries. Specify the language using an ISO 639-2/T three-letter code. Supported values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>eng – English</p></li>
+    /// <li>
+    /// <p>fra – French</p></li>
+    /// <li>
+    /// <p>ita – Italian</p></li>
+    /// <li>
+    /// <p>deu – German</p></li>
+    /// <li>
+    /// <p>spa – Spanish</p></li>
+    /// <li>
+    /// <p>por – Portuguese</p></li>
+    /// <li>
+    /// <p>ara – Arabic</p></li>
+    /// </ul>
     pub fn language(mut self, input: crate::types::DictionaryLanguage) -> Self {
         self.inner = self.inner.language(input);
         self
     }
-    /// <p>The language of the dictionary entries. Specify the language using an ISO 639-2/T three-letter code. Supported values: eng, fra, ita, deu, spa, por.</p>
+    /// <p>The language of the dictionary entries. Specify the language using an ISO 639-2/T three-letter code. Supported values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>eng – English</p></li>
+    /// <li>
+    /// <p>fra – French</p></li>
+    /// <li>
+    /// <p>ita – Italian</p></li>
+    /// <li>
+    /// <p>deu – German</p></li>
+    /// <li>
+    /// <p>spa – Spanish</p></li>
+    /// <li>
+    /// <p>por – Portuguese</p></li>
+    /// <li>
+    /// <p>ara – Arabic</p></li>
+    /// </ul>
     pub fn set_language(mut self, input: ::std::option::Option<crate::types::DictionaryLanguage>) -> Self {
         self.inner = self.inner.set_language(input);
         self
     }
-    /// <p>The language of the dictionary entries. Specify the language using an ISO 639-2/T three-letter code. Supported values: eng, fra, ita, deu, spa, por.</p>
+    /// <p>The language of the dictionary entries. Specify the language using an ISO 639-2/T three-letter code. Supported values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>eng – English</p></li>
+    /// <li>
+    /// <p>fra – French</p></li>
+    /// <li>
+    /// <p>ita – Italian</p></li>
+    /// <li>
+    /// <p>deu – German</p></li>
+    /// <li>
+    /// <p>spa – Spanish</p></li>
+    /// <li>
+    /// <p>por – Portuguese</p></li>
+    /// <li>
+    /// <p>ara – Arabic</p></li>
+    /// </ul>
     pub fn get_language(&self) -> &::std::option::Option<crate::types::DictionaryLanguage> {
         self.inner.get_language()
     }

@@ -80,6 +80,75 @@ pub(crate) fn service_quota_exceeded_exception_correct_errors(
     builder
 }
 
+pub(crate) fn list_channel_contracts_output_output_correct_errors(
+    mut builder: crate::operation::list_channel_contracts::builders::ListChannelContractsOutputBuilder,
+) -> crate::operation::list_channel_contracts::builders::ListChannelContractsOutputBuilder {
+    if builder.items.is_none() {
+        builder.items = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn channel_contract_detail_correct_errors(
+    mut builder: crate::types::builders::ChannelContractDetailBuilder,
+) -> crate::types::builders::ChannelContractDetailBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.catalog.is_none() {
+        builder.catalog = Some(Default::default())
+    }
+    if builder.contract_type.is_none() {
+        builder.contract_type = "no value was set".parse::<crate::types::ChannelContractType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ChannelContractStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.details.is_none() {
+        builder.details = Some(crate::types::ChannelContractDetails::Unknown)
+    }
+    builder
+}
+
+pub(crate) fn channel_contract_summary_correct_errors(
+    mut builder: crate::types::builders::ChannelContractSummaryBuilder,
+) -> crate::types::builders::ChannelContractSummaryBuilder {
+    if builder.id.is_none() {
+        builder.id = Some(Default::default())
+    }
+    if builder.arn.is_none() {
+        builder.arn = Some(Default::default())
+    }
+    if builder.catalog.is_none() {
+        builder.catalog = Some(Default::default())
+    }
+    if builder.contract_type.is_none() {
+        builder.contract_type = "no value was set".parse::<crate::types::ChannelContractType>().ok()
+    }
+    if builder.status.is_none() {
+        builder.status = "no value was set".parse::<crate::types::ChannelContractStatus>().ok()
+    }
+    if builder.created_at.is_none() {
+        builder.created_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.updated_at.is_none() {
+        builder.updated_at = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.details.is_none() {
+        builder.details = Some(crate::types::ChannelContractSummaryDetails::Unknown)
+    }
+    builder
+}
+
 pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder) -> crate::types::builders::TagBuilder {
     if builder.key.is_none() {
         builder.key = Some(Default::default())
@@ -101,6 +170,73 @@ pub(crate) fn validation_exception_field_correct_errors(
     }
     if builder.message.is_none() {
         builder.message = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn managed_services_attestation_details_correct_errors(
+    mut builder: crate::types::builders::ManagedServicesAttestationDetailsBuilder,
+) -> crate::types::builders::ManagedServicesAttestationDetailsBuilder {
+    if builder.legal_entity_name.is_none() {
+        builder.legal_entity_name = Some(Default::default())
+    }
+    if builder.relationship_identifier.is_none() {
+        builder.relationship_identifier = Some(Default::default())
+    }
+    if builder.program_management_account_identifier.is_none() {
+        builder.program_management_account_identifier = Some(Default::default())
+    }
+    if builder.end_date.is_none() {
+        builder.end_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.supported_services.is_none() {
+        builder.supported_services = Some(Default::default())
+    }
+    if builder.signatory_name.is_none() {
+        builder.signatory_name = Some(Default::default())
+    }
+    if builder.signatory_email.is_none() {
+        builder.signatory_email = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn address_correct_errors(mut builder: crate::types::builders::AddressBuilder) -> crate::types::builders::AddressBuilder {
+    if builder.city.is_none() {
+        builder.city = Some(Default::default())
+    }
+    if builder.state_or_region.is_none() {
+        builder.state_or_region = Some(Default::default())
+    }
+    if builder.postal_code.is_none() {
+        builder.postal_code = Some(Default::default())
+    }
+    if builder.country_code.is_none() {
+        builder.country_code = Some(Default::default())
+    }
+    if builder.address_line.is_none() {
+        builder.address_line = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn managed_services_attestation_summary_details_correct_errors(
+    mut builder: crate::types::builders::ManagedServicesAttestationSummaryDetailsBuilder,
+) -> crate::types::builders::ManagedServicesAttestationSummaryDetailsBuilder {
+    if builder.legal_entity_name.is_none() {
+        builder.legal_entity_name = Some(Default::default())
+    }
+    if builder.relationship_identifier.is_none() {
+        builder.relationship_identifier = Some(Default::default())
+    }
+    if builder.program_management_account_identifier.is_none() {
+        builder.program_management_account_identifier = Some(Default::default())
+    }
+    if builder.end_date.is_none() {
+        builder.end_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    if builder.supported_services.is_none() {
+        builder.supported_services = Some(Default::default())
     }
     builder
 }

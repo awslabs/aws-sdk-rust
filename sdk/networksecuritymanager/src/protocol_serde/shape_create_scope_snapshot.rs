@@ -94,6 +94,21 @@ pub fn de_create_scope_snapshot_http_error(
             };
             tmp
         }),
+        "TagPolicyViolationException" => crate::operation::create_scope_snapshot::CreateScopeSnapshotError::TagPolicyViolationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::types::error::builders::TagPolicyViolationExceptionBuilder::default();
+                output =
+                    crate::protocol_serde::shape_tag_policy_violation_exception::de_tag_policy_violation_exception_json_err(_response_body, output)
+                        .map_err(crate::operation::create_scope_snapshot::CreateScopeSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                crate::serde_util::tag_policy_violation_exception_correct_errors(output)
+                    .build()
+                    .map_err(crate::operation::create_scope_snapshot::CreateScopeSnapshotError::unhandled)?
+            };
+            tmp
+        }),
         "ThrottlingException" => crate::operation::create_scope_snapshot::CreateScopeSnapshotError::ThrottlingException({
             #[allow(unused_mut)]
             let mut tmp = {
@@ -212,6 +227,13 @@ pub(crate) fn de_create_scope_snapshot(
                     builder = builder.set_scope_name(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                            .transpose()?,
+                    );
+                }
+                "specializedScopeType" => {
+                    builder = builder.set_specialized_scope_type(
+                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                            .map(|s| s.to_unescaped().map(|u| crate::types::SpecializedScopeType::from(u.as_ref())))
                             .transpose()?,
                     );
                 }

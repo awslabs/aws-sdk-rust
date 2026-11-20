@@ -203,6 +203,10 @@ pub(crate) mod shape_mexico_additional_info;
 
 pub(crate) mod shape_monaco_additional_info;
 
+pub(crate) mod shape_new_zealand_additional_info;
+
+pub(crate) mod shape_norway_additional_info;
+
 pub(crate) mod shape_philippines_additional_info;
 
 pub(crate) mod shape_poland_additional_info;
@@ -226,6 +230,8 @@ pub(crate) mod shape_tax_registration_with_jurisdiction;
 pub(crate) mod shape_turkey_additional_info;
 
 pub(crate) mod shape_ukraine_additional_info;
+
+pub(crate) mod shape_united_arab_emirates_additional_info;
 
 pub(crate) mod shape_uzbekistan_additional_info;
 

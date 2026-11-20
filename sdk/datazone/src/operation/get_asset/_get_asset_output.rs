@@ -41,6 +41,8 @@ pub struct GetAssetOutput {
     pub read_only_forms_output: ::std::option::Option<::std::vec::Vec<crate::types::FormOutput>>,
     /// <p>The latest data point that was imported into the time series form for the asset.</p>
     pub latest_time_series_data_point_forms_output: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>>,
+    /// <p>The most recent ownership transfer of the asset. The response omits this member if the asset has never had an ownership transfer.</p>
+    pub ownership_transfer: ::std::option::Option<crate::types::AssetOwnershipTransfer>,
     _request_id: Option<String>,
 }
 impl GetAssetOutput {
@@ -136,6 +138,10 @@ impl GetAssetOutput {
     pub fn latest_time_series_data_point_forms_output(&self) -> &[crate::types::TimeSeriesDataPointSummaryFormOutput] {
         self.latest_time_series_data_point_forms_output.as_deref().unwrap_or_default()
     }
+    /// <p>The most recent ownership transfer of the asset. The response omits this member if the asset has never had an ownership transfer.</p>
+    pub fn ownership_transfer(&self) -> ::std::option::Option<&crate::types::AssetOwnershipTransfer> {
+        self.ownership_transfer.as_ref()
+    }
 }
 impl ::std::fmt::Debug for GetAssetOutput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
@@ -162,6 +168,7 @@ impl ::std::fmt::Debug for GetAssetOutput {
             "latest_time_series_data_point_forms_output",
             &self.latest_time_series_data_point_forms_output,
         );
+        formatter.field("ownership_transfer", &self.ownership_transfer);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
@@ -201,6 +208,7 @@ pub struct GetAssetOutputBuilder {
     pub(crate) forms_output: ::std::option::Option<::std::vec::Vec<crate::types::FormOutput>>,
     pub(crate) read_only_forms_output: ::std::option::Option<::std::vec::Vec<crate::types::FormOutput>>,
     pub(crate) latest_time_series_data_point_forms_output: ::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>>,
+    pub(crate) ownership_transfer: ::std::option::Option<crate::types::AssetOwnershipTransfer>,
     _request_id: Option<String>,
 }
 impl GetAssetOutputBuilder {
@@ -512,6 +520,20 @@ impl GetAssetOutputBuilder {
     ) -> &::std::option::Option<::std::vec::Vec<crate::types::TimeSeriesDataPointSummaryFormOutput>> {
         &self.latest_time_series_data_point_forms_output
     }
+    /// <p>The most recent ownership transfer of the asset. The response omits this member if the asset has never had an ownership transfer.</p>
+    pub fn ownership_transfer(mut self, input: crate::types::AssetOwnershipTransfer) -> Self {
+        self.ownership_transfer = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The most recent ownership transfer of the asset. The response omits this member if the asset has never had an ownership transfer.</p>
+    pub fn set_ownership_transfer(mut self, input: ::std::option::Option<crate::types::AssetOwnershipTransfer>) -> Self {
+        self.ownership_transfer = input;
+        self
+    }
+    /// <p>The most recent ownership transfer of the asset. The response omits this member if the asset has never had an ownership transfer.</p>
+    pub fn get_ownership_transfer(&self) -> &::std::option::Option<crate::types::AssetOwnershipTransfer> {
+        &self.ownership_transfer
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -592,6 +614,7 @@ impl GetAssetOutputBuilder {
             })?,
             read_only_forms_output: self.read_only_forms_output,
             latest_time_series_data_point_forms_output: self.latest_time_series_data_point_forms_output,
+            ownership_transfer: self.ownership_transfer,
             _request_id: self._request_id,
         })
     }
@@ -621,6 +644,7 @@ impl ::std::fmt::Debug for GetAssetOutputBuilder {
             "latest_time_series_data_point_forms_output",
             &self.latest_time_series_data_point_forms_output,
         );
+        formatter.field("ownership_transfer", &self.ownership_transfer);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }

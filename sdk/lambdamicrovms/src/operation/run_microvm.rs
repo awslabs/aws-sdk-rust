@@ -207,6 +207,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RunMicrovmTel
                 captured.insert("executionRoleArn", value);
             }
         }
+        if requested.should_capture("kmsKeyIdentifier") {
+            if let ::std::option::Option::Some(value) = input.kms_key_identifier.as_deref() {
+                captured.insert("kmsKeyIdentifier", value);
+            }
+        }
         if requested.should_capture("clientToken") {
             if let ::std::option::Option::Some(value) = input.client_token.as_deref() {
                 captured.insert("clientToken", value);

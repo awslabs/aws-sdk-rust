@@ -39,6 +39,12 @@ pub fn ser_descriptors(
         crate::protocol_serde::shape_ag_ui_descriptor::ser_ag_ui_descriptor(&mut object_12, var_11)?;
         object_12.finish();
     }
+    if let Some(var_13) = &input.signature_agent_card {
+        #[allow(unused_mut)]
+        let mut object_14 = object.key("signatureAgentCard").start_object();
+        crate::protocol_serde::shape_signature_agent_card_descriptor::ser_signature_agent_card_descriptor(&mut object_14, var_13)?;
+        object_14.finish();
+    }
     Ok(())
 }
 
@@ -105,6 +111,15 @@ where
                                 _value,
                                 depth + 1,
                             )?);
+                        }
+                        "signatureAgentCard" => {
+                            builder = builder.set_signature_agent_card(
+                                crate::protocol_serde::shape_signature_agent_card_descriptor::de_signature_agent_card_descriptor(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

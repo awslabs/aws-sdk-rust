@@ -305,6 +305,15 @@ pub(crate) fn list_autonomous_database_peers_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_autonomous_database_refreshable_clones_output_output_correct_errors(
+    mut builder: crate::operation::list_autonomous_database_refreshable_clones::builders::ListAutonomousDatabaseRefreshableClonesOutputBuilder,
+) -> crate::operation::list_autonomous_database_refreshable_clones::builders::ListAutonomousDatabaseRefreshableClonesOutputBuilder {
+    if builder.autonomous_database_refreshable_clones.is_none() {
+        builder.autonomous_database_refreshable_clones = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn list_autonomous_database_versions_output_output_correct_errors(
     mut builder: crate::operation::list_autonomous_database_versions::builders::ListAutonomousDatabaseVersionsOutputBuilder,
 ) -> crate::operation::list_autonomous_database_versions::builders::ListAutonomousDatabaseVersionsOutputBuilder {
@@ -497,6 +506,15 @@ pub(crate) fn shrink_autonomous_database_output_output_correct_errors(
 pub(crate) fn start_autonomous_database_output_output_correct_errors(
     mut builder: crate::operation::start_autonomous_database::builders::StartAutonomousDatabaseOutputBuilder,
 ) -> crate::operation::start_autonomous_database::builders::StartAutonomousDatabaseOutputBuilder {
+    if builder.autonomous_database_id.is_none() {
+        builder.autonomous_database_id = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn start_autonomous_database_refresh_output_output_correct_errors(
+    mut builder: crate::operation::start_autonomous_database_refresh::builders::StartAutonomousDatabaseRefreshOutputBuilder,
+) -> crate::operation::start_autonomous_database_refresh::builders::StartAutonomousDatabaseRefreshOutputBuilder {
     if builder.autonomous_database_id.is_none() {
         builder.autonomous_database_id = Some(Default::default())
     }

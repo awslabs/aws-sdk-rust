@@ -5,11 +5,13 @@
 pub struct ListAutomationEventSummariesInput {
     /// <p>The filters to apply to the list of automation event summaries.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::AutomationEventFilter>>,
+    /// <p>The organizational unit (OU) or organization root IDs to use to filter the results. The response includes event summaries for accounts in the specified OUs and their child OUs. Only the management account or a delegated administrator can specify this parameter.</p>
+    pub organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The start date for filtering automation event summaries, inclusive. Events created on or after this date will be included.</p>
     pub start_date_inclusive: ::std::option::Option<::std::string::String>,
     /// <p>The end date for filtering automation event summaries, exclusive. Events created before this date will be included.</p>
     pub end_date_exclusive: ::std::option::Option<::std::string::String>,
-    /// <p>The maximum number of automation event summaries to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of automation event summaries to return in a single response. If you don't specify a value, the default is 100.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token used for pagination to retrieve the next set of results when the response is truncated.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -21,6 +23,12 @@ impl ListAutomationEventSummariesInput {
     pub fn filters(&self) -> &[crate::types::AutomationEventFilter] {
         self.filters.as_deref().unwrap_or_default()
     }
+    /// <p>The organizational unit (OU) or organization root IDs to use to filter the results. The response includes event summaries for accounts in the specified OUs and their child OUs. Only the management account or a delegated administrator can specify this parameter.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_unit_ids.is_none()`.
+    pub fn organizational_unit_ids(&self) -> &[::std::string::String] {
+        self.organizational_unit_ids.as_deref().unwrap_or_default()
+    }
     /// <p>The start date for filtering automation event summaries, inclusive. Events created on or after this date will be included.</p>
     pub fn start_date_inclusive(&self) -> ::std::option::Option<&str> {
         self.start_date_inclusive.as_deref()
@@ -29,7 +37,7 @@ impl ListAutomationEventSummariesInput {
     pub fn end_date_exclusive(&self) -> ::std::option::Option<&str> {
         self.end_date_exclusive.as_deref()
     }
-    /// <p>The maximum number of automation event summaries to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of automation event summaries to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -50,6 +58,7 @@ impl ListAutomationEventSummariesInput {
 #[non_exhaustive]
 pub struct ListAutomationEventSummariesInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::AutomationEventFilter>>,
+    pub(crate) organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) start_date_inclusive: ::std::option::Option<::std::string::String>,
     pub(crate) end_date_exclusive: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
@@ -75,6 +84,26 @@ impl ListAutomationEventSummariesInputBuilder {
     /// <p>The filters to apply to the list of automation event summaries.</p>
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationEventFilter>> {
         &self.filters
+    }
+    /// Appends an item to `organizational_unit_ids`.
+    ///
+    /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
+    ///
+    /// <p>The organizational unit (OU) or organization root IDs to use to filter the results. The response includes event summaries for accounts in the specified OUs and their child OUs. Only the management account or a delegated administrator can specify this parameter.</p>
+    pub fn organizational_unit_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.organizational_unit_ids.unwrap_or_default();
+        v.push(input.into());
+        self.organizational_unit_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The organizational unit (OU) or organization root IDs to use to filter the results. The response includes event summaries for accounts in the specified OUs and their child OUs. Only the management account or a delegated administrator can specify this parameter.</p>
+    pub fn set_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.organizational_unit_ids = input;
+        self
+    }
+    /// <p>The organizational unit (OU) or organization root IDs to use to filter the results. The response includes event summaries for accounts in the specified OUs and their child OUs. Only the management account or a delegated administrator can specify this parameter.</p>
+    pub fn get_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.organizational_unit_ids
     }
     /// <p>The start date for filtering automation event summaries, inclusive. Events created on or after this date will be included.</p>
     pub fn start_date_inclusive(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -104,17 +133,17 @@ impl ListAutomationEventSummariesInputBuilder {
     pub fn get_end_date_exclusive(&self) -> &::std::option::Option<::std::string::String> {
         &self.end_date_exclusive
     }
-    /// <p>The maximum number of automation event summaries to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of automation event summaries to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of automation event summaries to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of automation event summaries to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of automation event summaries to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of automation event summaries to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
@@ -141,6 +170,7 @@ impl ListAutomationEventSummariesInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::list_automation_event_summaries::ListAutomationEventSummariesInput {
             filters: self.filters,
+            organizational_unit_ids: self.organizational_unit_ids,
             start_date_inclusive: self.start_date_inclusive,
             end_date_exclusive: self.end_date_exclusive,
             max_results: self.max_results,

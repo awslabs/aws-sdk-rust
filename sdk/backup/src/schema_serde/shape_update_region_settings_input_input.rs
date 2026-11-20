@@ -73,6 +73,43 @@ static UPDATEREGIONSETTINGSINPUT_MEMBER_RESOURCE_TYPE_MANAGEMENT_PREFERENCE: ::a
         &UPDATEREGIONSETTINGSINPUT_MEMBER_RESOURCE_TYPE_MANAGEMENT_PREFERENCE_KEY,
         &UPDATEREGIONSETTINGSINPUT_MEMBER_RESOURCE_TYPE_MANAGEMENT_PREFERENCE_VALUE,
     );
+static UPDATEREGIONSETTINGSINPUT_MEMBER_RESOURCE_TYPE_OPT_IN_INCREMENTAL_KEY: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.backup#ResourceTypeOptInIncremental$key",
+            "com.amazonaws.backup",
+            "ResourceTypeOptInIncremental",
+        ),
+        ::aws_smithy_schema::ShapeType::String,
+        "key",
+        0,
+    );
+static UPDATEREGIONSETTINGSINPUT_MEMBER_RESOURCE_TYPE_OPT_IN_INCREMENTAL_VALUE: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.backup#ResourceTypeOptInIncremental$value",
+            "com.amazonaws.backup",
+            "ResourceTypeOptInIncremental",
+        ),
+        ::aws_smithy_schema::ShapeType::Boolean,
+        "value",
+        1,
+    );
+static UPDATEREGIONSETTINGSINPUT_MEMBER_RESOURCE_TYPE_OPT_IN_INCREMENTAL: ::aws_smithy_schema::Schema<'static> =
+    ::aws_smithy_schema::Schema::new_member(
+        ::aws_smithy_schema::ShapeId::from_parts(
+            "com.amazonaws.backup.synthetic#UpdateRegionSettingsInput$ResourceTypeOptInIncremental",
+            "com.amazonaws.backup.synthetic",
+            "UpdateRegionSettingsInput",
+        ),
+        ::aws_smithy_schema::ShapeType::Map,
+        "ResourceTypeOptInIncremental",
+        2,
+    )
+    .with_map_members(
+        &UPDATEREGIONSETTINGSINPUT_MEMBER_RESOURCE_TYPE_OPT_IN_INCREMENTAL_KEY,
+        &UPDATEREGIONSETTINGSINPUT_MEMBER_RESOURCE_TYPE_OPT_IN_INCREMENTAL_VALUE,
+    );
 static UPDATEREGIONSETTINGSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.backup.synthetic#UpdateRegionSettingsInput",
@@ -83,6 +120,7 @@ static UPDATEREGIONSETTINGSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = 
     &[
         &UPDATEREGIONSETTINGSINPUT_MEMBER_RESOURCE_TYPE_OPT_IN_PREFERENCE,
         &UPDATEREGIONSETTINGSINPUT_MEMBER_RESOURCE_TYPE_MANAGEMENT_PREFERENCE,
+        &UPDATEREGIONSETTINGSINPUT_MEMBER_RESOURCE_TYPE_OPT_IN_INCREMENTAL,
     ],
 )
 .with_http(aws_smithy_schema::traits::HttpTrait::new("PUT", "/account-settings", None))
@@ -117,6 +155,18 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::update
         if let Some(ref val) = self.resource_type_management_preference {
             ser.write_map(
                 &UPDATEREGIONSETTINGSINPUT_MEMBER_RESOURCE_TYPE_MANAGEMENT_PREFERENCE,
+                &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
+                    for (key, value) in val {
+                        ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
+                        ser.write_boolean(&::aws_smithy_schema::prelude::BOOLEAN, *value)?;
+                    }
+                    Ok(())
+                },
+            )?;
+        }
+        if let Some(ref val) = self.resource_type_opt_in_incremental {
+            ser.write_map(
+                &UPDATEREGIONSETTINGSINPUT_MEMBER_RESOURCE_TYPE_OPT_IN_INCREMENTAL,
                 &|ser: &mut dyn ::aws_smithy_schema::serde::ShapeSerializer| {
                     for (key, value) in val {
                         ser.write_string(&::aws_smithy_schema::prelude::STRING, key)?;
@@ -162,6 +212,20 @@ impl crate::operation::update_region_settings::builders::UpdateRegionSettingsInp
                         deser.read_null()?;
                     } else {
                         self.resource_type_management_preference = Some({
+                            let mut container = std::collections::HashMap::new();
+                            deser.read_map(member, &mut |key, deser| {
+                                container.insert(key, deser.read_boolean(&::aws_smithy_schema::prelude::BOOLEAN)?);
+                                Ok(())
+                            })?;
+                            container
+                        });
+                    }
+                }
+                Some(2) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.resource_type_opt_in_incremental = Some({
                             let mut container = std::collections::HashMap::new();
                             deser.read_map(member, &mut |key, deser| {
                                 container.insert(key, deser.read_boolean(&::aws_smithy_schema::prelude::BOOLEAN)?);

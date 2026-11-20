@@ -505,6 +505,8 @@ pub use crate::types::_response_headers_policy_access_control_allow_methods_valu
 
 pub use crate::types::_origin_mtls_config::OriginMtlsConfig;
 
+pub use crate::types::_origin_http_version::OriginHttpVersion;
+
 pub use crate::types::_status_codes::StatusCodes;
 
 pub use crate::types::_event_type::EventType;
@@ -830,6 +832,8 @@ mod _origin_group_members;
 mod _origin_group_selection_criteria;
 
 mod _origin_groups;
+
+mod _origin_http_version;
 
 mod _origin_mtls_config;
 

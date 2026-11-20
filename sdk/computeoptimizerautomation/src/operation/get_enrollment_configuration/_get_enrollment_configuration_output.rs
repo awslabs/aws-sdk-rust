@@ -11,6 +11,8 @@ pub struct GetEnrollmentConfigurationOutput {
     pub organization_rule_mode: ::std::option::Option<crate::types::OrganizationRuleMode>,
     /// <p>The timestamp of the last update to the enrollment configuration.</p>
     pub last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>Specifies whether an organization enrollment configuration on your account, or inherited from a parent OU or the organization root, enables Automation for your member account. Associations made using <code>AssociateAccounts</code> don't affect this status. This field is returned for organization member accounts, including delegated administrators. It's omitted for management accounts and accounts that aren't in an organization.</p>
+    pub organization_enrollment_configuration_status: ::std::option::Option<crate::types::OrganizationEnrollmentConfigurationStatus>,
     _request_id: Option<String>,
 }
 impl GetEnrollmentConfigurationOutput {
@@ -29,6 +31,10 @@ impl GetEnrollmentConfigurationOutput {
     /// <p>The timestamp of the last update to the enrollment configuration.</p>
     pub fn last_updated_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
+    }
+    /// <p>Specifies whether an organization enrollment configuration on your account, or inherited from a parent OU or the organization root, enables Automation for your member account. Associations made using <code>AssociateAccounts</code> don't affect this status. This field is returned for organization member accounts, including delegated administrators. It's omitted for management accounts and accounts that aren't in an organization.</p>
+    pub fn organization_enrollment_configuration_status(&self) -> ::std::option::Option<&crate::types::OrganizationEnrollmentConfigurationStatus> {
+        self.organization_enrollment_configuration_status.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetEnrollmentConfigurationOutput {
@@ -51,6 +57,7 @@ pub struct GetEnrollmentConfigurationOutputBuilder {
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) organization_rule_mode: ::std::option::Option<crate::types::OrganizationRuleMode>,
     pub(crate) last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) organization_enrollment_configuration_status: ::std::option::Option<crate::types::OrganizationEnrollmentConfigurationStatus>,
     _request_id: Option<String>,
 }
 impl GetEnrollmentConfigurationOutputBuilder {
@@ -111,6 +118,25 @@ impl GetEnrollmentConfigurationOutputBuilder {
     pub fn get_last_updated_timestamp(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.last_updated_timestamp
     }
+    /// <p>Specifies whether an organization enrollment configuration on your account, or inherited from a parent OU or the organization root, enables Automation for your member account. Associations made using <code>AssociateAccounts</code> don't affect this status. This field is returned for organization member accounts, including delegated administrators. It's omitted for management accounts and accounts that aren't in an organization.</p>
+    pub fn organization_enrollment_configuration_status(mut self, input: crate::types::OrganizationEnrollmentConfigurationStatus) -> Self {
+        self.organization_enrollment_configuration_status = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether an organization enrollment configuration on your account, or inherited from a parent OU or the organization root, enables Automation for your member account. Associations made using <code>AssociateAccounts</code> don't affect this status. This field is returned for organization member accounts, including delegated administrators. It's omitted for management accounts and accounts that aren't in an organization.</p>
+    pub fn set_organization_enrollment_configuration_status(
+        mut self,
+        input: ::std::option::Option<crate::types::OrganizationEnrollmentConfigurationStatus>,
+    ) -> Self {
+        self.organization_enrollment_configuration_status = input;
+        self
+    }
+    /// <p>Specifies whether an organization enrollment configuration on your account, or inherited from a parent OU or the organization root, enables Automation for your member account. Associations made using <code>AssociateAccounts</code> don't affect this status. This field is returned for organization member accounts, including delegated administrators. It's omitted for management accounts and accounts that aren't in an organization.</p>
+    pub fn get_organization_enrollment_configuration_status(
+        &self,
+    ) -> &::std::option::Option<crate::types::OrganizationEnrollmentConfigurationStatus> {
+        &self.organization_enrollment_configuration_status
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -139,6 +165,7 @@ impl GetEnrollmentConfigurationOutputBuilder {
             status_reason: self.status_reason,
             organization_rule_mode: self.organization_rule_mode,
             last_updated_timestamp: self.last_updated_timestamp,
+            organization_enrollment_configuration_status: self.organization_enrollment_configuration_status,
             _request_id: self._request_id,
         })
     }

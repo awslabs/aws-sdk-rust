@@ -266,4 +266,18 @@ impl UpdateProjectFluentBuilder {
     pub fn get_project_profile_version(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_project_profile_version()
     }
+    /// <p>The action to perform on the project profile of the project. Specify <code>DISASSOCIATE</code> to disassociate the project from its project profile.</p>
+    pub fn project_profile_action(mut self, input: crate::types::ProjectProfileAction) -> Self {
+        self.inner = self.inner.project_profile_action(input);
+        self
+    }
+    /// <p>The action to perform on the project profile of the project. Specify <code>DISASSOCIATE</code> to disassociate the project from its project profile.</p>
+    pub fn set_project_profile_action(mut self, input: ::std::option::Option<crate::types::ProjectProfileAction>) -> Self {
+        self.inner = self.inner.set_project_profile_action(input);
+        self
+    }
+    /// <p>The action to perform on the project profile of the project. Specify <code>DISASSOCIATE</code> to disassociate the project from its project profile.</p>
+    pub fn get_project_profile_action(&self) -> &::std::option::Option<crate::types::ProjectProfileAction> {
+        self.inner.get_project_profile_action()
+    }
 }

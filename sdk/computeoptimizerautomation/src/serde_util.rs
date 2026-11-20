@@ -17,6 +17,24 @@ pub(crate) fn list_accounts_output_output_correct_errors(
     builder
 }
 
+pub(crate) fn list_organization_enrollment_configurations_output_output_correct_errors(
+    mut builder: crate::operation::list_organization_enrollment_configurations::builders::ListOrganizationEnrollmentConfigurationsOutputBuilder,
+) -> crate::operation::list_organization_enrollment_configurations::builders::ListOrganizationEnrollmentConfigurationsOutputBuilder {
+    if builder.organization_enrollment_configurations.is_none() {
+        builder.organization_enrollment_configurations = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_organizational_units_output_output_correct_errors(
+    mut builder: crate::operation::list_organizational_units::builders::ListOrganizationalUnitsOutputBuilder,
+) -> crate::operation::list_organizational_units::builders::ListOrganizationalUnitsOutputBuilder {
+    if builder.organizational_units.is_none() {
+        builder.organizational_units = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn update_enrollment_configuration_output_output_correct_errors(
     mut builder: crate::operation::update_enrollment_configuration::builders::UpdateEnrollmentConfigurationOutputBuilder,
 ) -> crate::operation::update_enrollment_configuration::builders::UpdateEnrollmentConfigurationOutputBuilder {
@@ -63,6 +81,39 @@ pub(crate) fn account_info_correct_errors(mut builder: crate::types::builders::A
     builder
 }
 
+pub(crate) fn organization_enrollment_configuration_correct_errors(
+    mut builder: crate::types::builders::OrganizationEnrollmentConfigurationBuilder,
+) -> crate::types::builders::OrganizationEnrollmentConfigurationBuilder {
+    if builder.target_id.is_none() {
+        builder.target_id = Some(Default::default())
+    }
+    if builder.target_type.is_none() {
+        builder.target_type = "no value was set".parse::<crate::types::OrganizationTargetType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn organizational_unit_info_correct_errors(
+    mut builder: crate::types::builders::OrganizationalUnitInfoBuilder,
+) -> crate::types::builders::OrganizationalUnitInfoBuilder {
+    if builder.organizational_unit_id.is_none() {
+        builder.organizational_unit_id = Some(Default::default())
+    }
+    if builder.auto_enroll_member_accounts.is_none() {
+        builder.auto_enroll_member_accounts = "no value was set".parse::<crate::types::AutoEnrollMemberAccounts>().ok()
+    }
+    if builder.organization_rule_mode.is_none() {
+        builder.organization_rule_mode = "no value was set".parse::<crate::types::OrganizationRuleMode>().ok()
+    }
+    if builder.organization_rule_mode_source.is_none() {
+        builder.organization_rule_mode_source = {
+            let builder = crate::types::builders::OrganizationRuleModeSourceBuilder::default();
+            crate::serde_util::organization_rule_mode_source_correct_errors(builder).build().ok()
+        }
+    }
+    builder
+}
+
 pub(crate) fn preview_result_summary_correct_errors(
     mut builder: crate::types::builders::PreviewResultSummaryBuilder,
 ) -> crate::types::builders::PreviewResultSummaryBuilder {
@@ -99,6 +150,15 @@ pub(crate) fn tag_correct_errors(mut builder: crate::types::builders::TagBuilder
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn organization_rule_mode_source_correct_errors(
+    mut builder: crate::types::builders::OrganizationRuleModeSourceBuilder,
+) -> crate::types::builders::OrganizationRuleModeSourceBuilder {
+    if builder.source_type.is_none() {
+        builder.source_type = "no value was set".parse::<crate::types::OrganizationRuleModeSourceType>().ok()
     }
     builder
 }

@@ -26,6 +26,8 @@ pub struct ProgramManagementAccountSummary {
     pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the program management account.</p>
     pub status: ::std::option::Option<crate::types::ProgramManagementAccountStatus>,
+    /// <p>The type of the program management account.</p>
+    pub r#type: ::std::option::Option<crate::types::ProgramManagementAccountType>,
 }
 impl ProgramManagementAccountSummary {
     /// <p>The unique identifier of the program management account.</p>
@@ -72,6 +74,10 @@ impl ProgramManagementAccountSummary {
     pub fn status(&self) -> ::std::option::Option<&crate::types::ProgramManagementAccountStatus> {
         self.status.as_ref()
     }
+    /// <p>The type of the program management account.</p>
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ProgramManagementAccountType> {
+        self.r#type.as_ref()
+    }
 }
 impl ProgramManagementAccountSummary {
     /// Creates a new builder-style object to manufacture [`ProgramManagementAccountSummary`](crate::types::ProgramManagementAccountSummary).
@@ -95,6 +101,7 @@ pub struct ProgramManagementAccountSummaryBuilder {
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) status: ::std::option::Option<crate::types::ProgramManagementAccountStatus>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ProgramManagementAccountType>,
 }
 impl ProgramManagementAccountSummaryBuilder {
     /// <p>The unique identifier of the program management account.</p>
@@ -251,6 +258,20 @@ impl ProgramManagementAccountSummaryBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::ProgramManagementAccountStatus> {
         &self.status
     }
+    /// <p>The type of the program management account.</p>
+    pub fn r#type(mut self, input: crate::types::ProgramManagementAccountType) -> Self {
+        self.r#type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of the program management account.</p>
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ProgramManagementAccountType>) -> Self {
+        self.r#type = input;
+        self
+    }
+    /// <p>The type of the program management account.</p>
+    pub fn get_type(&self) -> &::std::option::Option<crate::types::ProgramManagementAccountType> {
+        &self.r#type
+    }
     /// Consumes the builder and constructs a [`ProgramManagementAccountSummary`](crate::types::ProgramManagementAccountSummary).
     pub fn build(self) -> crate::types::ProgramManagementAccountSummary {
         crate::types::ProgramManagementAccountSummary {
@@ -265,6 +286,7 @@ impl ProgramManagementAccountSummaryBuilder {
             updated_at: self.updated_at,
             start_date: self.start_date,
             status: self.status,
+            r#type: self.r#type,
         }
     }
 }

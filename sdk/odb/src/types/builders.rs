@@ -101,6 +101,8 @@ pub use crate::types::_wallet_password_source_summary::WalletPasswordSourceSumma
 
 pub use crate::types::_autonomous_database_peer_summary::AutonomousDatabasePeerSummaryBuilder;
 
+pub use crate::types::_autonomous_database_refreshable_clone_summary::AutonomousDatabaseRefreshableCloneSummaryBuilder;
+
 pub use crate::types::_cloud_autonomous_vm_cluster_summary::CloudAutonomousVmClusterSummaryBuilder;
 
 pub use crate::types::_autonomous_virtual_machine_summary::AutonomousVirtualMachineSummaryBuilder;

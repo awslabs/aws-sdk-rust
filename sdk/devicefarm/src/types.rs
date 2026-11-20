@@ -89,6 +89,8 @@ pub use crate::types::_device_form_factor::DeviceFormFactor;
 
 pub use crate::types::_device_platform::DevicePlatform;
 
+pub use crate::types::_device_type::DeviceType;
+
 pub use crate::types::_cpu::Cpu;
 
 pub use crate::types::_resolution::Resolution;
@@ -226,6 +228,8 @@ mod _device_proxy;
 mod _device_selection_configuration;
 
 mod _device_selection_result;
+
+mod _device_type;
 
 mod _environment_variable;
 

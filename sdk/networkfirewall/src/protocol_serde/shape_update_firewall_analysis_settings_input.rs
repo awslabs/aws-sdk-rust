@@ -22,6 +22,9 @@ pub fn ser_update_firewall_analysis_settings_input_input(
     if let Some(var_5) = &input.update_token {
         encoder.str("UpdateToken").str(var_5.as_str());
     }
+    if let Some(var_6) = &input.firewall_type {
+        encoder.str("FirewallType").str(var_6.as_str());
+    }
     encoder.end();
     Ok(())
 }

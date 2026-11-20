@@ -4,7 +4,29 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SubtitlingConfig {
-    /// <p>The language of the audio in the source media. Elemental Inference uses this setting to optimize transcription accuracy. Specify the language using an ISO 639-2/T three-letter code, optionally with a region subtag. Supported values: eng, eng-au, eng-gb, eng-us, fra, ita, deu, spa, por.</p>
+    /// <p>The language of the audio in the source media. Elemental Inference uses this setting to optimize transcription accuracy. Specify the language using an ISO 639-2/T three-letter code, optionally with a region subtag. Supported values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>eng – English</p></li>
+    /// <li>
+    /// <p>eng-au – English (Australia)</p></li>
+    /// <li>
+    /// <p>eng-gb – English (United Kingdom)</p></li>
+    /// <li>
+    /// <p>eng-us – English (United States)</p></li>
+    /// <li>
+    /// <p>fra – French</p></li>
+    /// <li>
+    /// <p>ita – Italian</p></li>
+    /// <li>
+    /// <p>deu – German</p></li>
+    /// <li>
+    /// <p>spa – Spanish</p></li>
+    /// <li>
+    /// <p>por – Portuguese</p></li>
+    /// <li>
+    /// <p>ara – Arabic</p></li>
+    /// </ul>
     pub language: crate::types::TranscriptionLanguage,
     /// <p>The aspect ratio of the output video, specified as width and height integer values. Elemental Inference uses the aspect ratio to determine subtitle layout and line lengths.</p>
     pub aspect_ratio: ::std::option::Option<crate::types::AspectRatio>,
@@ -14,7 +36,29 @@ pub struct SubtitlingConfig {
     pub profanity_filter: ::std::option::Option<crate::types::ProfanityFilterMode>,
 }
 impl SubtitlingConfig {
-    /// <p>The language of the audio in the source media. Elemental Inference uses this setting to optimize transcription accuracy. Specify the language using an ISO 639-2/T three-letter code, optionally with a region subtag. Supported values: eng, eng-au, eng-gb, eng-us, fra, ita, deu, spa, por.</p>
+    /// <p>The language of the audio in the source media. Elemental Inference uses this setting to optimize transcription accuracy. Specify the language using an ISO 639-2/T three-letter code, optionally with a region subtag. Supported values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>eng – English</p></li>
+    /// <li>
+    /// <p>eng-au – English (Australia)</p></li>
+    /// <li>
+    /// <p>eng-gb – English (United Kingdom)</p></li>
+    /// <li>
+    /// <p>eng-us – English (United States)</p></li>
+    /// <li>
+    /// <p>fra – French</p></li>
+    /// <li>
+    /// <p>ita – Italian</p></li>
+    /// <li>
+    /// <p>deu – German</p></li>
+    /// <li>
+    /// <p>spa – Spanish</p></li>
+    /// <li>
+    /// <p>por – Portuguese</p></li>
+    /// <li>
+    /// <p>ara – Arabic</p></li>
+    /// </ul>
     pub fn language(&self) -> &crate::types::TranscriptionLanguage {
         &self.language
     }
@@ -48,18 +92,84 @@ pub struct SubtitlingConfigBuilder {
     pub(crate) profanity_filter: ::std::option::Option<crate::types::ProfanityFilterMode>,
 }
 impl SubtitlingConfigBuilder {
-    /// <p>The language of the audio in the source media. Elemental Inference uses this setting to optimize transcription accuracy. Specify the language using an ISO 639-2/T three-letter code, optionally with a region subtag. Supported values: eng, eng-au, eng-gb, eng-us, fra, ita, deu, spa, por.</p>
+    /// <p>The language of the audio in the source media. Elemental Inference uses this setting to optimize transcription accuracy. Specify the language using an ISO 639-2/T three-letter code, optionally with a region subtag. Supported values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>eng – English</p></li>
+    /// <li>
+    /// <p>eng-au – English (Australia)</p></li>
+    /// <li>
+    /// <p>eng-gb – English (United Kingdom)</p></li>
+    /// <li>
+    /// <p>eng-us – English (United States)</p></li>
+    /// <li>
+    /// <p>fra – French</p></li>
+    /// <li>
+    /// <p>ita – Italian</p></li>
+    /// <li>
+    /// <p>deu – German</p></li>
+    /// <li>
+    /// <p>spa – Spanish</p></li>
+    /// <li>
+    /// <p>por – Portuguese</p></li>
+    /// <li>
+    /// <p>ara – Arabic</p></li>
+    /// </ul>
     /// This field is required.
     pub fn language(mut self, input: crate::types::TranscriptionLanguage) -> Self {
         self.language = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The language of the audio in the source media. Elemental Inference uses this setting to optimize transcription accuracy. Specify the language using an ISO 639-2/T three-letter code, optionally with a region subtag. Supported values: eng, eng-au, eng-gb, eng-us, fra, ita, deu, spa, por.</p>
+    /// <p>The language of the audio in the source media. Elemental Inference uses this setting to optimize transcription accuracy. Specify the language using an ISO 639-2/T three-letter code, optionally with a region subtag. Supported values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>eng – English</p></li>
+    /// <li>
+    /// <p>eng-au – English (Australia)</p></li>
+    /// <li>
+    /// <p>eng-gb – English (United Kingdom)</p></li>
+    /// <li>
+    /// <p>eng-us – English (United States)</p></li>
+    /// <li>
+    /// <p>fra – French</p></li>
+    /// <li>
+    /// <p>ita – Italian</p></li>
+    /// <li>
+    /// <p>deu – German</p></li>
+    /// <li>
+    /// <p>spa – Spanish</p></li>
+    /// <li>
+    /// <p>por – Portuguese</p></li>
+    /// <li>
+    /// <p>ara – Arabic</p></li>
+    /// </ul>
     pub fn set_language(mut self, input: ::std::option::Option<crate::types::TranscriptionLanguage>) -> Self {
         self.language = input;
         self
     }
-    /// <p>The language of the audio in the source media. Elemental Inference uses this setting to optimize transcription accuracy. Specify the language using an ISO 639-2/T three-letter code, optionally with a region subtag. Supported values: eng, eng-au, eng-gb, eng-us, fra, ita, deu, spa, por.</p>
+    /// <p>The language of the audio in the source media. Elemental Inference uses this setting to optimize transcription accuracy. Specify the language using an ISO 639-2/T three-letter code, optionally with a region subtag. Supported values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>eng – English</p></li>
+    /// <li>
+    /// <p>eng-au – English (Australia)</p></li>
+    /// <li>
+    /// <p>eng-gb – English (United Kingdom)</p></li>
+    /// <li>
+    /// <p>eng-us – English (United States)</p></li>
+    /// <li>
+    /// <p>fra – French</p></li>
+    /// <li>
+    /// <p>ita – Italian</p></li>
+    /// <li>
+    /// <p>deu – German</p></li>
+    /// <li>
+    /// <p>spa – Spanish</p></li>
+    /// <li>
+    /// <p>por – Portuguese</p></li>
+    /// <li>
+    /// <p>ara – Arabic</p></li>
+    /// </ul>
     pub fn get_language(&self) -> &::std::option::Option<crate::types::TranscriptionLanguage> {
         &self.language
     }

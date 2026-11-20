@@ -27,6 +27,28 @@ pub(crate) fn de_organization_configuration(
                     )?,
                 )))
             })?,
+            "organizationalUnitIds" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_organizational_unit_ids(
+                    Some(
+                        crate::protocol_serde::shape_organization_configuration_organizational_unit_ids::de_organization_configuration_organizational_unit_ids(decoder, depth + 1)?
+                    )
+                ))
+            })?,
+            "excludedOrganizationalUnitIds" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_excluded_organizational_unit_ids(
+                    Some(
+                        crate::protocol_serde::shape_organization_configuration_organizational_unit_ids::de_organization_configuration_organizational_unit_ids(decoder, depth + 1)?
+                    )
+                ))
+            })?,
+            "excludedAccountIds" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                Ok(builder.set_excluded_account_ids(Some(
+                    crate::protocol_serde::shape_organization_configuration_account_ids::de_organization_configuration_account_ids(
+                        decoder,
+                        depth + 1,
+                    )?,
+                )))
+            })?,
             _ => {
                 decoder.skip()?;
                 builder
@@ -75,6 +97,33 @@ pub fn ser_organization_configuration(
         for item_3 in var_2 {
             {
                 encoder.str(item_3.as_str());
+            }
+        }
+    }
+    if let Some(var_4) = &input.organizational_unit_ids {
+        encoder.str("organizationalUnitIds");
+        encoder.array((*var_4).len());
+        for item_5 in var_4 {
+            {
+                encoder.str(item_5.as_str());
+            }
+        }
+    }
+    if let Some(var_6) = &input.excluded_organizational_unit_ids {
+        encoder.str("excludedOrganizationalUnitIds");
+        encoder.array((*var_6).len());
+        for item_7 in var_6 {
+            {
+                encoder.str(item_7.as_str());
+            }
+        }
+    }
+    if let Some(var_8) = &input.excluded_account_ids {
+        encoder.str("excludedAccountIds");
+        encoder.array((*var_8).len());
+        for item_9 in var_8 {
+            {
+                encoder.str(item_9.as_str());
             }
         }
     }

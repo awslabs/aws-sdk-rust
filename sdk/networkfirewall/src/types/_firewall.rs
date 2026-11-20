@@ -45,6 +45,8 @@ pub struct Firewall {
     pub availability_zone_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMapping>>,
     /// <p>A setting indicating whether the firewall is protected against changes to its Availability Zone configuration. When set to <code>TRUE</code>, you must first disable this protection before adding or removing Availability Zones.</p>
     pub availability_zone_change_protection: bool,
+    /// <p>Contains the settings that configure an internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC. Network Firewall returns this setting only for an internet gateway firewall. For a standard firewall, this setting isn't present.</p>
+    pub igw_firewall_configuration: ::std::option::Option<crate::types::IgwFirewallConfiguration>,
     /// <p>The NAT gateways that you specified for Network Firewall to create for a proxy mode firewall. To get the IDs and status of the NAT gateways that are attached to the firewall, see <code>NatGatewayAttachments</code> in the firewall's <code>SyncStates</code>.</p>
     pub nat_gateway_create_mappings: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayCreateMapping>>,
     /// <p>The proxy settings of a proxy mode firewall: its listeners and, if you specified them, your own <code>CertificateArn</code> and <code>DomainName</code>.</p>
@@ -144,6 +146,10 @@ impl Firewall {
     pub fn availability_zone_change_protection(&self) -> bool {
         self.availability_zone_change_protection
     }
+    /// <p>Contains the settings that configure an internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC. Network Firewall returns this setting only for an internet gateway firewall. For a standard firewall, this setting isn't present.</p>
+    pub fn igw_firewall_configuration(&self) -> ::std::option::Option<&crate::types::IgwFirewallConfiguration> {
+        self.igw_firewall_configuration.as_ref()
+    }
     /// <p>The NAT gateways that you specified for Network Firewall to create for a proxy mode firewall. To get the IDs and status of the NAT gateways that are attached to the firewall, see <code>NatGatewayAttachments</code> in the firewall's <code>SyncStates</code>.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nat_gateway_create_mappings.is_none()`.
@@ -200,6 +206,7 @@ pub struct FirewallBuilder {
     pub(crate) transit_gateway_owner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMapping>>,
     pub(crate) availability_zone_change_protection: ::std::option::Option<bool>,
+    pub(crate) igw_firewall_configuration: ::std::option::Option<crate::types::IgwFirewallConfiguration>,
     pub(crate) nat_gateway_create_mappings: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayCreateMapping>>,
     pub(crate) proxy_settings: ::std::option::Option<crate::types::ProxySettings>,
     pub(crate) vpc_endpoint: ::std::option::Option<crate::types::VpcEndpoint>,
@@ -496,6 +503,20 @@ impl FirewallBuilder {
     pub fn get_availability_zone_change_protection(&self) -> &::std::option::Option<bool> {
         &self.availability_zone_change_protection
     }
+    /// <p>Contains the settings that configure an internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC. Network Firewall returns this setting only for an internet gateway firewall. For a standard firewall, this setting isn't present.</p>
+    pub fn igw_firewall_configuration(mut self, input: crate::types::IgwFirewallConfiguration) -> Self {
+        self.igw_firewall_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Contains the settings that configure an internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC. Network Firewall returns this setting only for an internet gateway firewall. For a standard firewall, this setting isn't present.</p>
+    pub fn set_igw_firewall_configuration(mut self, input: ::std::option::Option<crate::types::IgwFirewallConfiguration>) -> Self {
+        self.igw_firewall_configuration = input;
+        self
+    }
+    /// <p>Contains the settings that configure an internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC. Network Firewall returns this setting only for an internet gateway firewall. For a standard firewall, this setting isn't present.</p>
+    pub fn get_igw_firewall_configuration(&self) -> &::std::option::Option<crate::types::IgwFirewallConfiguration> {
+        &self.igw_firewall_configuration
+    }
     /// Appends an item to `nat_gateway_create_mappings`.
     ///
     /// To override the contents of this collection use [`set_nat_gateway_create_mappings`](Self::set_nat_gateway_create_mappings).
@@ -632,6 +653,7 @@ impl FirewallBuilder {
             transit_gateway_owner_account_id: self.transit_gateway_owner_account_id,
             availability_zone_mappings: self.availability_zone_mappings,
             availability_zone_change_protection: self.availability_zone_change_protection.unwrap_or_default(),
+            igw_firewall_configuration: self.igw_firewall_configuration,
             nat_gateway_create_mappings: self.nat_gateway_create_mappings,
             proxy_settings: self.proxy_settings,
             vpc_endpoint: self.vpc_endpoint,

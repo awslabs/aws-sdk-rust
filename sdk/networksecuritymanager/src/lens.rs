@@ -39,6 +39,16 @@ pub(crate) fn reflens_list_deployments_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_entity_coverages_output_output_next_token(
+    input: &crate::operation::list_entity_coverages::ListEntityCoveragesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_policies_output_output_next_token(
     input: &crate::operation::list_policies::ListPoliciesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -51,6 +61,16 @@ pub(crate) fn reflens_list_policies_output_output_next_token(
 
 pub(crate) fn reflens_list_policy_snapshots_output_output_next_token(
     input: &crate::operation::list_policy_snapshots::ListPolicySnapshotsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_protected_resource_coverages_output_output_next_token(
+    input: &crate::operation::list_protected_resource_coverages::ListProtectedResourceCoveragesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
     let input = match &input.next_token {
         ::std::option::Option::None => return ::std::option::Option::None,
@@ -167,6 +187,13 @@ pub(crate) fn lens_list_deployments_output_output_deployments(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn lens_list_entity_coverages_output_output_resource_coverages(
+    input: crate::operation::list_entity_coverages::ListEntityCoveragesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceCoverageSummary>> {
+    let input = input.resource_coverages;
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_policies_output_output_policies(
     input: crate::operation::list_policies::ListPoliciesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicySummary>> {
@@ -178,6 +205,13 @@ pub(crate) fn lens_list_policy_snapshots_output_output_snapshots(
     input: crate::operation::list_policy_snapshots::ListPolicySnapshotsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::PolicySummary>> {
     let input = input.snapshots;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_protected_resource_coverages_output_output_resource_coverages(
+    input: crate::operation::list_protected_resource_coverages::ListProtectedResourceCoveragesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ResourceCoverageSummary>> {
+    let input = input.resource_coverages;
     ::std::option::Option::Some(input)
 }
 

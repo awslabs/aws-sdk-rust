@@ -36,7 +36,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The category of a resource. This field has one of the following values:</p> <dl> <dt>MANUFACTURER_INSTRUCTIONS</dt> <dd> <p>Usage instructions from the seller.</p> </dd> <dt>MANUFACTURER_SUPPORT</dt> <dd> <p>Support information from the seller.</p> </dd> </dl>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

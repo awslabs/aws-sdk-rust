@@ -16,6 +16,7 @@
 ///     SizeInspectionLimit::Kb32 => { /* ... */ },
 ///     SizeInspectionLimit::Kb48 => { /* ... */ },
 ///     SizeInspectionLimit::Kb64 => { /* ... */ },
+///     SizeInspectionLimit::Kb8 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,6 +53,8 @@ pub enum SizeInspectionLimit {
     Kb48,
     #[allow(missing_docs)] // documentation missing in model
     Kb64,
+    #[allow(missing_docs)] // documentation missing in model
+    Kb8,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for SizeInspectionLimit {
             "KB_32" => SizeInspectionLimit::Kb32,
             "KB_48" => SizeInspectionLimit::Kb48,
             "KB_64" => SizeInspectionLimit::Kb64,
+            "KB_8" => SizeInspectionLimit::Kb8,
             other => SizeInspectionLimit::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,12 +86,13 @@ impl SizeInspectionLimit {
             SizeInspectionLimit::Kb32 => "KB_32",
             SizeInspectionLimit::Kb48 => "KB_48",
             SizeInspectionLimit::Kb64 => "KB_64",
+            SizeInspectionLimit::Kb8 => "KB_8",
             SizeInspectionLimit::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["KB_16", "KB_32", "KB_48", "KB_64"]
+        &["KB_16", "KB_32", "KB_48", "KB_64", "KB_8"]
     }
 }
 impl ::std::convert::AsRef<str> for SizeInspectionLimit {
@@ -114,6 +119,7 @@ impl ::std::fmt::Display for SizeInspectionLimit {
             SizeInspectionLimit::Kb32 => write!(f, "KB_32"),
             SizeInspectionLimit::Kb48 => write!(f, "KB_48"),
             SizeInspectionLimit::Kb64 => write!(f, "KB_64"),
+            SizeInspectionLimit::Kb8 => write!(f, "KB_8"),
             SizeInspectionLimit::Unknown(value) => write!(f, "{value}"),
         }
     }

@@ -8,6 +8,9 @@ pub struct UpdateRegionSettingsInput {
     pub resource_type_opt_in_preference: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
     /// <p>Enables or disables full Backup management of backups for a resource type. To enable full Backup management for DynamoDB along with <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a>, follow the procedure to <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> enable advanced DynamoDB backup programmatically</a>.</p>
     pub resource_type_management_preference: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
+    /// <p>Specifies whether you opt in to incremental backups for each resource type in the Region. Opt in when you want to reduce backup storage and backup time for large resources that change infrequently. Incremental backup opt-in is currently available for Amazon DynamoDB.</p>
+    /// <p>To view your current incremental backup settings, use the <code>DescribeRegionSettings</code> API. For the resource types that each Backup feature supports, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature availability by resource</a> table.</p>
+    pub resource_type_opt_in_incremental: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
 }
 impl UpdateRegionSettingsInput {
     /// <p>Updates the list of services along with the opt-in preferences for the Region.</p>
@@ -18,6 +21,11 @@ impl UpdateRegionSettingsInput {
     /// <p>Enables or disables full Backup management of backups for a resource type. To enable full Backup management for DynamoDB along with <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html"> Backup's advanced DynamoDB backup features</a>, follow the procedure to <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli"> enable advanced DynamoDB backup programmatically</a>.</p>
     pub fn resource_type_management_preference(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, bool>> {
         self.resource_type_management_preference.as_ref()
+    }
+    /// <p>Specifies whether you opt in to incremental backups for each resource type in the Region. Opt in when you want to reduce backup storage and backup time for large resources that change infrequently. Incremental backup opt-in is currently available for Amazon DynamoDB.</p>
+    /// <p>To view your current incremental backup settings, use the <code>DescribeRegionSettings</code> API. For the resource types that each Backup feature supports, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature availability by resource</a> table.</p>
+    pub fn resource_type_opt_in_incremental(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, bool>> {
+        self.resource_type_opt_in_incremental.as_ref()
     }
 }
 impl UpdateRegionSettingsInput {
@@ -33,6 +41,7 @@ impl UpdateRegionSettingsInput {
 pub struct UpdateRegionSettingsInputBuilder {
     pub(crate) resource_type_opt_in_preference: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
     pub(crate) resource_type_management_preference: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
+    pub(crate) resource_type_opt_in_incremental: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
 }
 impl UpdateRegionSettingsInputBuilder {
     /// Adds a key-value pair to `resource_type_opt_in_preference`.
@@ -84,6 +93,32 @@ impl UpdateRegionSettingsInputBuilder {
     pub fn get_resource_type_management_preference(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
         &self.resource_type_management_preference
     }
+    /// Adds a key-value pair to `resource_type_opt_in_incremental`.
+    ///
+    /// To override the contents of this collection use [`set_resource_type_opt_in_incremental`](Self::set_resource_type_opt_in_incremental).
+    ///
+    /// <p>Specifies whether you opt in to incremental backups for each resource type in the Region. Opt in when you want to reduce backup storage and backup time for large resources that change infrequently. Incremental backup opt-in is currently available for Amazon DynamoDB.</p>
+    /// <p>To view your current incremental backup settings, use the <code>DescribeRegionSettings</code> API. For the resource types that each Backup feature supports, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature availability by resource</a> table.</p>
+    pub fn resource_type_opt_in_incremental(mut self, k: impl ::std::convert::Into<::std::string::String>, v: bool) -> Self {
+        let mut hash_map = self.resource_type_opt_in_incremental.unwrap_or_default();
+        hash_map.insert(k.into(), v);
+        self.resource_type_opt_in_incremental = ::std::option::Option::Some(hash_map);
+        self
+    }
+    /// <p>Specifies whether you opt in to incremental backups for each resource type in the Region. Opt in when you want to reduce backup storage and backup time for large resources that change infrequently. Incremental backup opt-in is currently available for Amazon DynamoDB.</p>
+    /// <p>To view your current incremental backup settings, use the <code>DescribeRegionSettings</code> API. For the resource types that each Backup feature supports, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature availability by resource</a> table.</p>
+    pub fn set_resource_type_opt_in_incremental(
+        mut self,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, bool>>,
+    ) -> Self {
+        self.resource_type_opt_in_incremental = input;
+        self
+    }
+    /// <p>Specifies whether you opt in to incremental backups for each resource type in the Region. Opt in when you want to reduce backup storage and backup time for large resources that change infrequently. Incremental backup opt-in is currently available for Amazon DynamoDB.</p>
+    /// <p>To view your current incremental backup settings, use the <code>DescribeRegionSettings</code> API. For the resource types that each Backup feature supports, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html#features-by-resource">Feature availability by resource</a> table.</p>
+    pub fn get_resource_type_opt_in_incremental(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, bool>> {
+        &self.resource_type_opt_in_incremental
+    }
     /// Consumes the builder and constructs a [`UpdateRegionSettingsInput`](crate::operation::update_region_settings::UpdateRegionSettingsInput).
     pub fn build(
         self,
@@ -92,6 +127,7 @@ impl UpdateRegionSettingsInputBuilder {
         ::std::result::Result::Ok(crate::operation::update_region_settings::UpdateRegionSettingsInput {
             resource_type_opt_in_preference: self.resource_type_opt_in_preference,
             resource_type_management_preference: self.resource_type_management_preference,
+            resource_type_opt_in_incremental: self.resource_type_opt_in_incremental,
         })
     }
 }

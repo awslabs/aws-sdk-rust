@@ -151,6 +151,8 @@ pub use crate::types::_document_requires::DocumentRequires;
 
 pub use crate::types::_attachments_source::AttachmentsSource;
 
+pub use crate::types::_cloud_provider::CloudProvider;
+
 pub use crate::types::_ops_item_data_value::OpsItemDataValue;
 
 pub use crate::types::_ops_item_notification::OpsItemNotification;
@@ -662,6 +664,8 @@ mod _cloud_connector_filter;
 mod _cloud_connector_filter_key;
 
 mod _cloud_connector_summary;
+
+mod _cloud_provider;
 
 mod _cloud_watch_output_config;
 

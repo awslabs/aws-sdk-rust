@@ -349,6 +349,23 @@ impl CreateFirewallFluentBuilder {
     pub fn get_availability_zone_change_protection(&self) -> &::std::option::Option<bool> {
         self.inner.get_availability_zone_change_protection()
     }
+    /// <p>Settings that make this firewall an internet gateway firewall. An internet gateway firewall inspects all traffic between a VPC and its internet gateway, without changes to your subnets or route tables. Amazon Web Services Network Security Manager creates and manages internet gateway firewalls on your behalf, so you don't include this setting when you create a standard Network Firewall firewall.</p>
+    /// <p>When this setting is present, <code>FirewallName</code> must equal the <code>VpcId</code>, <code>AvailabilityZoneMappings</code> is required and must use Availability Zone IDs, and you can't specify <code>SubnetMappings</code> or a transit gateway.</p>
+    pub fn igw_firewall_configuration(mut self, input: crate::types::IgwFirewallConfiguration) -> Self {
+        self.inner = self.inner.igw_firewall_configuration(input);
+        self
+    }
+    /// <p>Settings that make this firewall an internet gateway firewall. An internet gateway firewall inspects all traffic between a VPC and its internet gateway, without changes to your subnets or route tables. Amazon Web Services Network Security Manager creates and manages internet gateway firewalls on your behalf, so you don't include this setting when you create a standard Network Firewall firewall.</p>
+    /// <p>When this setting is present, <code>FirewallName</code> must equal the <code>VpcId</code>, <code>AvailabilityZoneMappings</code> is required and must use Availability Zone IDs, and you can't specify <code>SubnetMappings</code> or a transit gateway.</p>
+    pub fn set_igw_firewall_configuration(mut self, input: ::std::option::Option<crate::types::IgwFirewallConfiguration>) -> Self {
+        self.inner = self.inner.set_igw_firewall_configuration(input);
+        self
+    }
+    /// <p>Settings that make this firewall an internet gateway firewall. An internet gateway firewall inspects all traffic between a VPC and its internet gateway, without changes to your subnets or route tables. Amazon Web Services Network Security Manager creates and manages internet gateway firewalls on your behalf, so you don't include this setting when you create a standard Network Firewall firewall.</p>
+    /// <p>When this setting is present, <code>FirewallName</code> must equal the <code>VpcId</code>, <code>AvailabilityZoneMappings</code> is required and must use Availability Zone IDs, and you can't specify <code>SubnetMappings</code> or a transit gateway.</p>
+    pub fn get_igw_firewall_configuration(&self) -> &::std::option::Option<crate::types::IgwFirewallConfiguration> {
+        self.inner.get_igw_firewall_configuration()
+    }
     ///
     /// Appends an item to `NatGatewayCreateMappings`.
     ///

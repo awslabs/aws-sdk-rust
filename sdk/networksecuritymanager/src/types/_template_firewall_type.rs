@@ -12,6 +12,7 @@
 /// ```text
 /// # let templatefirewalltype = unimplemented!();
 /// match templatefirewalltype {
+///     TemplateFirewallType::IgwFirewall => { /* ... */ },
 ///     TemplateFirewallType::Waf => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
@@ -42,6 +43,8 @@
 )]
 pub enum TemplateFirewallType {
     #[allow(missing_docs)] // documentation missing in model
+    IgwFirewall,
+    #[allow(missing_docs)] // documentation missing in model
     Waf,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
@@ -50,6 +53,7 @@ pub enum TemplateFirewallType {
 impl ::std::convert::From<&str> for TemplateFirewallType {
     fn from(s: &str) -> Self {
         match s {
+            "IGW_FIREWALL" => TemplateFirewallType::IgwFirewall,
             "WAF" => TemplateFirewallType::Waf,
             other => TemplateFirewallType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
@@ -66,13 +70,14 @@ impl TemplateFirewallType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            TemplateFirewallType::IgwFirewall => "IGW_FIREWALL",
             TemplateFirewallType::Waf => "WAF",
             TemplateFirewallType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["WAF"]
+        &["IGW_FIREWALL", "WAF"]
     }
 }
 impl ::std::convert::AsRef<str> for TemplateFirewallType {
@@ -95,6 +100,7 @@ impl TemplateFirewallType {
 impl ::std::fmt::Display for TemplateFirewallType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            TemplateFirewallType::IgwFirewall => write!(f, "IGW_FIREWALL"),
             TemplateFirewallType::Waf => write!(f, "WAF"),
             TemplateFirewallType::Unknown(value) => write!(f, "{value}"),
         }

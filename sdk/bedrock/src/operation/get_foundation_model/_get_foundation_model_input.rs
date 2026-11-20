@@ -5,11 +5,21 @@
 pub struct GetFoundationModelInput {
     /// <p>The model identifier.</p>
     pub model_identifier: ::std::option::Option<::std::string::String>,
+    /// <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's trusted access program participation when determining whether to return the model. The project must belong to your account in the same AWS Region and partition as the request.</p>
+    /// <p>If you omit this parameter or specify <code>default</code>, Amazon Bedrock uses your account's participation, including organization inheritance.</p>
+    /// <p>A project that doesn't exist or is archived causes a <code>ValidationException</code>. A model outside the project's available model catalog causes a <code>ResourceNotFoundException</code>.</p>
+    pub project_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetFoundationModelInput {
     /// <p>The model identifier.</p>
     pub fn model_identifier(&self) -> ::std::option::Option<&str> {
         self.model_identifier.as_deref()
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's trusted access program participation when determining whether to return the model. The project must belong to your account in the same AWS Region and partition as the request.</p>
+    /// <p>If you omit this parameter or specify <code>default</code>, Amazon Bedrock uses your account's participation, including organization inheritance.</p>
+    /// <p>A project that doesn't exist or is archived causes a <code>ValidationException</code>. A model outside the project's available model catalog causes a <code>ResourceNotFoundException</code>.</p>
+    pub fn project_identifier(&self) -> ::std::option::Option<&str> {
+        self.project_identifier.as_deref()
     }
 }
 impl GetFoundationModelInput {
@@ -24,6 +34,7 @@ impl GetFoundationModelInput {
 #[non_exhaustive]
 pub struct GetFoundationModelInputBuilder {
     pub(crate) model_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) project_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetFoundationModelInputBuilder {
     /// <p>The model identifier.</p>
@@ -41,6 +52,26 @@ impl GetFoundationModelInputBuilder {
     pub fn get_model_identifier(&self) -> &::std::option::Option<::std::string::String> {
         &self.model_identifier
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's trusted access program participation when determining whether to return the model. The project must belong to your account in the same AWS Region and partition as the request.</p>
+    /// <p>If you omit this parameter or specify <code>default</code>, Amazon Bedrock uses your account's participation, including organization inheritance.</p>
+    /// <p>A project that doesn't exist or is archived causes a <code>ValidationException</code>. A model outside the project's available model catalog causes a <code>ResourceNotFoundException</code>.</p>
+    pub fn project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's trusted access program participation when determining whether to return the model. The project must belong to your account in the same AWS Region and partition as the request.</p>
+    /// <p>If you omit this parameter or specify <code>default</code>, Amazon Bedrock uses your account's participation, including organization inheritance.</p>
+    /// <p>A project that doesn't exist or is archived causes a <code>ValidationException</code>. A model outside the project's available model catalog causes a <code>ResourceNotFoundException</code>.</p>
+    pub fn set_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.project_identifier = input;
+        self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's trusted access program participation when determining whether to return the model. The project must belong to your account in the same AWS Region and partition as the request.</p>
+    /// <p>If you omit this parameter or specify <code>default</code>, Amazon Bedrock uses your account's participation, including organization inheritance.</p>
+    /// <p>A project that doesn't exist or is archived causes a <code>ValidationException</code>. A model outside the project's available model catalog causes a <code>ResourceNotFoundException</code>.</p>
+    pub fn get_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_identifier
+    }
     /// Consumes the builder and constructs a [`GetFoundationModelInput`](crate::operation::get_foundation_model::GetFoundationModelInput).
     pub fn build(
         self,
@@ -48,6 +79,7 @@ impl GetFoundationModelInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::get_foundation_model::GetFoundationModelInput {
             model_identifier: self.model_identifier,
+            project_identifier: self.project_identifier,
         })
     }
 }

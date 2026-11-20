@@ -70,36 +70,39 @@ pub fn ser_create_microvm_image_input_input(
         crate::protocol_serde::shape_hooks::ser_hooks(&mut object_23, var_22)?;
         object_23.finish();
     }
-    if let Some(var_24) = &input.logging {
+    if let Some(var_24) = &input.kms_key_identifier {
+        object.key("kmsKeyIdentifier").string(var_24.as_str());
+    }
+    if let Some(var_25) = &input.logging {
         #[allow(unused_mut)]
-        let mut object_25 = object.key("logging").start_object();
-        crate::protocol_serde::shape_logging::ser_logging(&mut object_25, var_24)?;
-        object_25.finish();
+        let mut object_26 = object.key("logging").start_object();
+        crate::protocol_serde::shape_logging::ser_logging(&mut object_26, var_25)?;
+        object_26.finish();
     }
-    if let Some(var_26) = &input.name {
-        object.key("name").string(var_26.as_str());
+    if let Some(var_27) = &input.name {
+        object.key("name").string(var_27.as_str());
     }
-    if let Some(var_27) = &input.resources {
-        let mut array_28 = object.key("resources").start_array();
-        for item_29 in var_27 {
+    if let Some(var_28) = &input.resources {
+        let mut array_29 = object.key("resources").start_array();
+        for item_30 in var_28 {
             {
                 #[allow(unused_mut)]
-                let mut object_30 = array_28.value().start_object();
-                crate::protocol_serde::shape_resources::ser_resources(&mut object_30, item_29)?;
-                object_30.finish();
+                let mut object_31 = array_29.value().start_object();
+                crate::protocol_serde::shape_resources::ser_resources(&mut object_31, item_30)?;
+                object_31.finish();
             }
         }
-        array_28.finish();
+        array_29.finish();
     }
-    if let Some(var_31) = &input.tags {
+    if let Some(var_32) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_32 = object.key("tags").start_object();
-        for (key_33, value_34) in var_31 {
+        let mut object_33 = object.key("tags").start_object();
+        for (key_34, value_35) in var_32 {
             {
-                object_32.key(key_33.as_str()).string(value_34.as_str());
+                object_33.key(key_34.as_str()).string(value_35.as_str());
             }
         }
-        object_32.finish();
+        object_33.finish();
     }
     Ok(())
 }

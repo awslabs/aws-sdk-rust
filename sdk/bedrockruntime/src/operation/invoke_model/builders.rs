@@ -24,7 +24,7 @@ impl crate::operation::invoke_model::builders::InvokeModelInputBuilder {
 ///
 /// <p>Invokes the specified Amazon Bedrock model to run inference using the prompt and inference parameters provided in the request body. You use model inference to generate text, images, and embeddings.</p>
 /// <p>For example code, see <i>Invoke model code examples</i> in the <i>Amazon Bedrock User Guide</i>.</p>
-/// <p>This operation requires permission for the <code>bedrock:InvokeModel</code> action.</p><important>
+/// <p>This operation requires permission for the <code>bedrock:InvokeModel</code> action on both the inference target and the project. If you omit <code>projectIdentifier</code> or specify <code>default</code>, this includes permission on the default project for your account.</p><important>
 /// <p>To deny all inference access to resources that you specify in the modelId field, you need to deny access to the <code>bedrock:InvokeModel</code> and <code>bedrock:InvokeModelWithResponseStream</code> actions. Doing this also denies access to the resource through the Converse API actions (<a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_Converse.html">Converse</a> and <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_ConverseStream.html">ConverseStream</a>). For more information see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference">Deny access for inference on specific models</a>.</p>
 /// </important>
 /// <p>For troubleshooting some of the common errors you might encounter when using the <code>InvokeModel</code> API, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html">Troubleshooting Amazon Bedrock API Error Codes</a> in the Amazon Bedrock User Guide</p>
@@ -318,5 +318,22 @@ impl InvokeModelFluentBuilder {
     /// <p>Key-value pairs that you can use to filter invocation logs.</p>
     pub fn get_request_metadata(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_request_metadata()
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the project to use for this invocation. The project must be active and belong to your AWS account and the AWS Region to which you send the request. Specify <code>default</code> or omit this field to use the default project for your account.</p>
+    /// <p>For a non-default project, the inference target must resolve to a foundation model or system-defined inference profile. Application inference profiles don't support non-default projects.</p>
+    pub fn project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.project_identifier(input.into());
+        self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the project to use for this invocation. The project must be active and belong to your AWS account and the AWS Region to which you send the request. Specify <code>default</code> or omit this field to use the default project for your account.</p>
+    /// <p>For a non-default project, the inference target must resolve to a foundation model or system-defined inference profile. Application inference profiles don't support non-default projects.</p>
+    pub fn set_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_project_identifier(input);
+        self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of the project to use for this invocation. The project must be active and belong to your AWS account and the AWS Region to which you send the request. Specify <code>default</code> or omit this field to use the default project for your account.</p>
+    /// <p>For a non-default project, the inference target must resolve to a foundation model or system-defined inference profile. Application inference profiles don't support non-default projects.</p>
+    pub fn get_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_project_identifier()
     }
 }

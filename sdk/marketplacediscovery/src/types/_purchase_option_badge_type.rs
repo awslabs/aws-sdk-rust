@@ -38,7 +38,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The type of a purchase option badge. This field has one of the following values:</p> <dl> <dt>AUTO_RENEW</dt> <dd> <p>The purchase option includes auto-renewal terms that the seller configured.</p> </dd> <dt>FUTURE_DATED</dt> <dd> <p>The purchase option is future-dated.</p> </dd> <dt>PRIVATE_PRICING</dt> <dd> <p>The purchase option has private pricing.</p> </dd> <dt>REPLACEMENT_OFFER</dt> <dd> <p>The purchase option replaces an existing agreement.</p> </dd> </dl>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

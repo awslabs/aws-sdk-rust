@@ -76,6 +76,20 @@ where
                                 ::aws_smithy_types::date_time::Format::EpochSeconds,
                             )?);
                         }
+                        "architectureDiagramUrl" => {
+                            builder = builder.set_architecture_diagram_url(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "deploymentTemplateUrl" => {
+                            builder = builder.set_deployment_template_url(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "shortDescription" => {
                             builder = builder.set_short_description(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

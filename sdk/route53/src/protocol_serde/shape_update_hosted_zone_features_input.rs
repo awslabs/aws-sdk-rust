@@ -5,9 +5,26 @@ pub fn ser_update_hosted_zone_features_input_input_input(
 ) -> ::std::result::Result<(), ::aws_smithy_types::error::operation::SerializationError> {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_1) = &input.enable_accelerated_recovery {
+    if let Some(var_1) = &input.change_guardrails {
+        let mut inner_writer = scope.start_el("ChangeGuardrails").finish();
+        for list_item_2 in var_1 {
+            {
+                let inner_writer = inner_writer.start_el("ChangeGuardrail");
+                crate::protocol_serde::shape_change_guardrail::ser_change_guardrail(list_item_2, inner_writer)?
+            }
+        }
+    }
+    if let Some(var_3) = &input.dry_run {
+        let mut inner_writer = scope.start_el("DryRun").finish();
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_3).encode());
+    }
+    if let Some(var_4) = &input.enable_accelerated_recovery {
         let mut inner_writer = scope.start_el("EnableAcceleratedRecovery").finish();
-        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_1).encode());
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_4).encode());
+    }
+    if let Some(var_5) = &input.enable_public_dns_fallback {
+        let mut inner_writer = scope.start_el("EnablePublicDNSFallback").finish();
+        inner_writer.data(::aws_smithy_types::primitive::Encoder::from(*var_5).encode());
     }
     scope.finish();
     Ok(())

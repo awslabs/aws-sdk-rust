@@ -14,12 +14,17 @@
 /// match searchfacettype {
 ///     SearchFacetType::AverageCustomerRating => { /* ... */ },
 ///     SearchFacetType::Category => { /* ... */ },
+///     SearchFacetType::Certificates => { /* ... */ },
 ///     SearchFacetType::DeployedOnAws => { /* ... */ },
 ///     SearchFacetType::FulfillmentOptionType => { /* ... */ },
 ///     SearchFacetType::NumberOfProducts => { /* ... */ },
 ///     SearchFacetType::PricingModel => { /* ... */ },
 ///     SearchFacetType::PricingUnit => { /* ... */ },
 ///     SearchFacetType::Publisher => { /* ... */ },
+///     SearchFacetType::SellerEngagement => { /* ... */ },
+///     SearchFacetType::Specialization => { /* ... */ },
+///     SearchFacetType::SpecializationCategory => { /* ... */ },
+///     SearchFacetType::TrustCenter => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -53,6 +58,8 @@ pub enum SearchFacetType {
     #[allow(missing_docs)] // documentation missing in model
     Category,
     #[allow(missing_docs)] // documentation missing in model
+    Certificates,
+    #[allow(missing_docs)] // documentation missing in model
     DeployedOnAws,
     #[allow(missing_docs)] // documentation missing in model
     FulfillmentOptionType,
@@ -64,6 +71,14 @@ pub enum SearchFacetType {
     PricingUnit,
     #[allow(missing_docs)] // documentation missing in model
     Publisher,
+    #[allow(missing_docs)] // documentation missing in model
+    SellerEngagement,
+    #[allow(missing_docs)] // documentation missing in model
+    Specialization,
+    #[allow(missing_docs)] // documentation missing in model
+    SpecializationCategory,
+    #[allow(missing_docs)] // documentation missing in model
+    TrustCenter,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -73,12 +88,17 @@ impl ::std::convert::From<&str> for SearchFacetType {
         match s {
             "AVERAGE_CUSTOMER_RATING" => SearchFacetType::AverageCustomerRating,
             "CATEGORY" => SearchFacetType::Category,
+            "CERTIFICATES" => SearchFacetType::Certificates,
             "DEPLOYED_ON_AWS" => SearchFacetType::DeployedOnAws,
             "FULFILLMENT_OPTION_TYPE" => SearchFacetType::FulfillmentOptionType,
             "NUMBER_OF_PRODUCTS" => SearchFacetType::NumberOfProducts,
             "PRICING_MODEL" => SearchFacetType::PricingModel,
             "PRICING_UNIT" => SearchFacetType::PricingUnit,
             "PUBLISHER" => SearchFacetType::Publisher,
+            "SELLER_ENGAGEMENT" => SearchFacetType::SellerEngagement,
+            "SPECIALIZATION" => SearchFacetType::Specialization,
+            "SPECIALIZATION_CATEGORY" => SearchFacetType::SpecializationCategory,
+            "TRUST_CENTER" => SearchFacetType::TrustCenter,
             other => SearchFacetType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -96,12 +116,17 @@ impl SearchFacetType {
         match self {
             SearchFacetType::AverageCustomerRating => "AVERAGE_CUSTOMER_RATING",
             SearchFacetType::Category => "CATEGORY",
+            SearchFacetType::Certificates => "CERTIFICATES",
             SearchFacetType::DeployedOnAws => "DEPLOYED_ON_AWS",
             SearchFacetType::FulfillmentOptionType => "FULFILLMENT_OPTION_TYPE",
             SearchFacetType::NumberOfProducts => "NUMBER_OF_PRODUCTS",
             SearchFacetType::PricingModel => "PRICING_MODEL",
             SearchFacetType::PricingUnit => "PRICING_UNIT",
             SearchFacetType::Publisher => "PUBLISHER",
+            SearchFacetType::SellerEngagement => "SELLER_ENGAGEMENT",
+            SearchFacetType::Specialization => "SPECIALIZATION",
+            SearchFacetType::SpecializationCategory => "SPECIALIZATION_CATEGORY",
+            SearchFacetType::TrustCenter => "TRUST_CENTER",
             SearchFacetType::Unknown(value) => value.as_str(),
         }
     }
@@ -110,12 +135,17 @@ impl SearchFacetType {
         &[
             "AVERAGE_CUSTOMER_RATING",
             "CATEGORY",
+            "CERTIFICATES",
             "DEPLOYED_ON_AWS",
             "FULFILLMENT_OPTION_TYPE",
             "NUMBER_OF_PRODUCTS",
             "PRICING_MODEL",
             "PRICING_UNIT",
             "PUBLISHER",
+            "SELLER_ENGAGEMENT",
+            "SPECIALIZATION",
+            "SPECIALIZATION_CATEGORY",
+            "TRUST_CENTER",
         ]
     }
 }
@@ -141,12 +171,17 @@ impl ::std::fmt::Display for SearchFacetType {
         match self {
             SearchFacetType::AverageCustomerRating => write!(f, "AVERAGE_CUSTOMER_RATING"),
             SearchFacetType::Category => write!(f, "CATEGORY"),
+            SearchFacetType::Certificates => write!(f, "CERTIFICATES"),
             SearchFacetType::DeployedOnAws => write!(f, "DEPLOYED_ON_AWS"),
             SearchFacetType::FulfillmentOptionType => write!(f, "FULFILLMENT_OPTION_TYPE"),
             SearchFacetType::NumberOfProducts => write!(f, "NUMBER_OF_PRODUCTS"),
             SearchFacetType::PricingModel => write!(f, "PRICING_MODEL"),
             SearchFacetType::PricingUnit => write!(f, "PRICING_UNIT"),
             SearchFacetType::Publisher => write!(f, "PUBLISHER"),
+            SearchFacetType::SellerEngagement => write!(f, "SELLER_ENGAGEMENT"),
+            SearchFacetType::Specialization => write!(f, "SPECIALIZATION"),
+            SearchFacetType::SpecializationCategory => write!(f, "SPECIALIZATION_CATEGORY"),
+            SearchFacetType::TrustCenter => write!(f, "TRUST_CENTER"),
             SearchFacetType::Unknown(value) => write!(f, "{value}"),
         }
     }

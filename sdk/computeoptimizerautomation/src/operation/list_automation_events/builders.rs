@@ -133,6 +133,25 @@ impl ListAutomationEventsFluentBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::AutomationEventFilter>> {
         self.inner.get_filters()
     }
+    ///
+    /// Appends an item to `organizationalUnitIds`.
+    ///
+    /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
+    ///
+    /// <p>The organizational unit (OU) or organization root IDs to use to filter the results. The response includes events for accounts in the specified OUs and their child OUs. Only the management account or a delegated administrator can specify this parameter.</p>
+    pub fn organizational_unit_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.organizational_unit_ids(input.into());
+        self
+    }
+    /// <p>The organizational unit (OU) or organization root IDs to use to filter the results. The response includes events for accounts in the specified OUs and their child OUs. Only the management account or a delegated administrator can specify this parameter.</p>
+    pub fn set_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_organizational_unit_ids(input);
+        self
+    }
+    /// <p>The organizational unit (OU) or organization root IDs to use to filter the results. The response includes events for accounts in the specified OUs and their child OUs. Only the management account or a delegated administrator can specify this parameter.</p>
+    pub fn get_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_organizational_unit_ids()
+    }
     /// <p>The start of the time range to query for events.</p>
     pub fn start_time_inclusive(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time_inclusive(input);
@@ -161,17 +180,17 @@ impl ListAutomationEventsFluentBuilder {
     pub fn get_end_time_exclusive(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         self.inner.get_end_time_exclusive()
     }
-    /// <p>The maximum number of results to return in a single call.</p>
+    /// <p>The maximum number of automation events to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of results to return in a single call.</p>
+    /// <p>The maximum number of automation events to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of results to return in a single call.</p>
+    /// <p>The maximum number of automation events to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

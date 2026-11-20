@@ -109,6 +109,36 @@ static VULNERABLEPACKAGE_MEMBER_SOURCE_LAMBDA_LAYER_ARN: ::aws_smithy_schema::Sc
     "sourceLambdaLayerArn",
     10,
 );
+static VULNERABLEPACKAGE_MEMBER_RUNTIME_REACHABILITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.inspector2#VulnerablePackage$runtimeReachability",
+        "com.amazonaws.inspector2",
+        "VulnerablePackage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "runtimeReachability",
+    11,
+);
+static VULNERABLEPACKAGE_MEMBER_RUNTIME_REACHABILITY_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.inspector2#VulnerablePackage$runtimeReachabilityReason",
+        "com.amazonaws.inspector2",
+        "VulnerablePackage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "runtimeReachabilityReason",
+    12,
+);
+static VULNERABLEPACKAGE_MEMBER_PURL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.inspector2#VulnerablePackage$purl",
+        "com.amazonaws.inspector2",
+        "VulnerablePackage",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "purl",
+    13,
+);
 static VULNERABLEPACKAGE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.inspector2#VulnerablePackage",
@@ -128,6 +158,9 @@ static VULNERABLEPACKAGE_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_sm
         &VULNERABLEPACKAGE_MEMBER_FIXED_IN_VERSION,
         &VULNERABLEPACKAGE_MEMBER_REMEDIATION,
         &VULNERABLEPACKAGE_MEMBER_SOURCE_LAMBDA_LAYER_ARN,
+        &VULNERABLEPACKAGE_MEMBER_RUNTIME_REACHABILITY,
+        &VULNERABLEPACKAGE_MEMBER_RUNTIME_REACHABILITY_REASON,
+        &VULNERABLEPACKAGE_MEMBER_PURL,
     ],
 );
 impl crate::types::VulnerablePackage {
@@ -179,6 +212,15 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Vulnerable
         }
         if let Some(ref val) = self.source_lambda_layer_arn {
             ser.write_string(&VULNERABLEPACKAGE_MEMBER_SOURCE_LAMBDA_LAYER_ARN, val)?;
+        }
+        if let Some(ref val) = self.runtime_reachability {
+            ser.write_string(&VULNERABLEPACKAGE_MEMBER_RUNTIME_REACHABILITY, val.as_str())?;
+        }
+        if let Some(ref val) = self.runtime_reachability_reason {
+            ser.write_string(&VULNERABLEPACKAGE_MEMBER_RUNTIME_REACHABILITY_REASON, val.as_str())?;
+        }
+        if let Some(ref val) = self.purl {
+            ser.write_string(&VULNERABLEPACKAGE_MEMBER_PURL, val)?;
         }
         Ok(())
     }
@@ -260,6 +302,27 @@ impl crate::types::builders::VulnerablePackageBuilder {
                         deser.read_null()?;
                     } else {
                         self.source_lambda_layer_arn = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(11) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.runtime_reachability = Some(crate::types::RuntimeReachability::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.runtime_reachability_reason = Some(crate::types::RuntimeReachabilityReason::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.purl = Some(deser.read_string(member)?);
                     }
                 }
                 _ => {}

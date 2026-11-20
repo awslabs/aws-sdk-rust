@@ -325,15 +325,15 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetOfferTerms
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum GetOfferTermsError {
-    /// <p>The specified resource doesn't exist.</p>
+    /// <p>The specified resource doesn't exist. Verify that the identifier is correct.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this action. Verify that you have the required permissions.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Unexpected error during processing of the request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The request was denied due to request throttling.</p>
+    /// <p>The request was denied due to request throttling. Reduce the frequency of your requests and retry.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by the service.</p>
+    /// <p>The input fails to satisfy the constraints specified by the service. Check the <code>reason</code> field for the constraint that failed.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \

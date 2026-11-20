@@ -46,7 +46,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The type of a fulfillment option, which is how you deploy or access the product. This field has one of the following values:</p> <dl> <dt>AMAZON_MACHINE_IMAGE</dt> <dd> <p>An Amazon Machine Image (AMI) that you launch on Amazon EC2.</p> </dd> <dt>API</dt> <dd> <p>An API that you call, such as an agent, a guardrail, a knowledge base, or a Model Context Protocol (MCP) server.</p> </dd> <dt>CLOUDFORMATION_TEMPLATE</dt> <dd> <p>An AWS CloudFormation template that you deploy.</p> </dd> <dt>CONTAINER</dt> <dd> <p>A container image.</p> </dd> <dt>DATA_EXCHANGE</dt> <dd> <p>A data set that you access through AWS Data Exchange.</p> </dd> <dt>EC2_IMAGE_BUILDER_COMPONENT</dt> <dd> <p>An EC2 Image Builder component.</p> </dd> <dt>EKS_ADD_ON</dt> <dd> <p>An Amazon EKS add-on.</p> </dd> <dt>HELM</dt> <dd> <p>A Helm chart.</p> </dd> <dt>PROFESSIONAL_SERVICES</dt> <dd> <p>A professional service that the seller delivers to you.</p> </dd> <dt>SAAS</dt> <dd> <p>A Software as a Service (SaaS) product that you access through the seller's website.</p> </dd> <dt>SAGEMAKER_ALGORITHM</dt> <dd> <p>An Amazon SageMaker algorithm.</p> </dd> <dt>SAGEMAKER_MODEL</dt> <dd> <p>An Amazon SageMaker model.</p> </dd> </dl>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

@@ -91,6 +91,20 @@ where
                                     .transpose()?,
                             );
                         }
+                        "accountScope" => {
+                            builder = builder.set_account_scope(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::AccountScope::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "channelContractId" => {
+                            builder = builder.set_channel_contract_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
                         "createdAt" => {
                             builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
@@ -105,6 +119,12 @@ where
                         }
                         "startDate" => {
                             builder = builder.set_start_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
+                            )?);
+                        }
+                        "endDate" => {
+                            builder = builder.set_end_date(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
                                 tokens.next(),
                                 ::aws_smithy_types::date_time::Format::DateTimeWithOffset,
                             )?);

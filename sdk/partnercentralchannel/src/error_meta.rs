@@ -102,6 +102,41 @@ impl From<crate::operation::accept_channel_handshake::AcceptChannelHandshakeErro
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_channel_contract::CancelChannelContractError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_channel_contract::CancelChannelContractError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::cancel_channel_contract::CancelChannelContractError> for Error {
+    fn from(err: crate::operation::cancel_channel_contract::CancelChannelContractError) -> Self {
+        match err {
+            crate::operation::cancel_channel_contract::CancelChannelContractError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::cancel_channel_contract::CancelChannelContractError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::cancel_channel_contract::CancelChannelContractError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::cancel_channel_contract::CancelChannelContractError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::cancel_channel_contract::CancelChannelContractError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::cancel_channel_contract::CancelChannelContractError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::cancel_channel_contract::CancelChannelContractError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::cancel_channel_handshake::CancelChannelHandshakeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -133,6 +168,44 @@ impl From<crate::operation::cancel_channel_handshake::CancelChannelHandshakeErro
             crate::operation::cancel_channel_handshake::CancelChannelHandshakeError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::cancel_channel_handshake::CancelChannelHandshakeError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::cancel_channel_handshake::CancelChannelHandshakeError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_channel_contract::CreateChannelContractError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_channel_contract::CreateChannelContractError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_channel_contract::CreateChannelContractError> for Error {
+    fn from(err: crate::operation::create_channel_contract::CreateChannelContractError) -> Self {
+        match err {
+            crate::operation::create_channel_contract::CreateChannelContractError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_channel_contract::CreateChannelContractError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_channel_contract::CreateChannelContractError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_channel_contract::CreateChannelContractError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_channel_contract::CreateChannelContractError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::create_channel_contract::CreateChannelContractError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_channel_contract::CreateChannelContractError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_channel_contract::CreateChannelContractError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -338,6 +411,34 @@ impl From<crate::operation::delete_relationship::DeleteRelationshipError> for Er
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_channel_contract::GetChannelContractError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_channel_contract::GetChannelContractError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_channel_contract::GetChannelContractError> for Error {
+    fn from(err: crate::operation::get_channel_contract::GetChannelContractError) -> Self {
+        match err {
+            crate::operation::get_channel_contract::GetChannelContractError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_channel_contract::GetChannelContractError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_channel_contract::GetChannelContractError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_channel_contract::GetChannelContractError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_channel_contract::GetChannelContractError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_channel_contract::GetChannelContractError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_relationship::GetRelationshipError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -361,6 +462,36 @@ impl From<crate::operation::get_relationship::GetRelationshipError> for Error {
             crate::operation::get_relationship::GetRelationshipError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_relationship::GetRelationshipError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_relationship::GetRelationshipError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_channel_contracts::ListChannelContractsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_channel_contracts::ListChannelContractsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_channel_contracts::ListChannelContractsError> for Error {
+    fn from(err: crate::operation::list_channel_contracts::ListChannelContractsError) -> Self {
+        match err {
+            crate::operation::list_channel_contracts::ListChannelContractsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_channel_contracts::ListChannelContractsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_channel_contracts::ListChannelContractsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_channel_contracts::ListChannelContractsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_channel_contracts::ListChannelContractsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_channel_contracts::ListChannelContractsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

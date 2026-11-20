@@ -13,6 +13,8 @@ pub use crate::types::_rule_type::RuleType;
 
 pub use crate::types::_scope_configuration::ScopeConfiguration;
 
+pub use crate::types::_specialized_scope_type::SpecializedScopeType;
+
 pub use crate::types::_template_firewall_type::TemplateFirewallType;
 
 pub use crate::types::_validation_exception_reason::ValidationExceptionReason;
@@ -23,13 +25,19 @@ pub use crate::types::_admin_account_details::AdminAccountDetails;
 
 pub use crate::types::_synchronization_status::SynchronizationStatus;
 
+pub use crate::types::_service_resource_type::ServiceResourceType;
+
 pub use crate::types::_admin_scope_input::AdminScopeInput;
 
 pub use crate::types::_waf_config::WafConfig;
 
+pub use crate::types::_igw_firewall_config::IgwFirewallConfig;
+
 pub use crate::types::_account_filter::AccountFilter;
 
 pub use crate::types::_entity_status_filter::EntityStatusFilter;
+
+pub use crate::types::_template_owner::TemplateOwner;
 
 pub use crate::types::_validation_exception_field::ValidationExceptionField;
 
@@ -41,6 +49,8 @@ pub use crate::types::_admin_account_summary::AdminAccountSummary;
 
 pub use crate::types::_resource_synchronization_status_summary::ResourceSynchronizationStatusSummary;
 
+pub use crate::types::_resource_coverage_summary::ResourceCoverageSummary;
+
 pub use crate::types::_resource_association::ResourceAssociation;
 
 pub use crate::types::_admin_scope_filter_input::AdminScopeFilterInput;
@@ -50,6 +60,8 @@ pub use crate::types::_admin_firewall_type_scope::AdminFirewallTypeScope;
 pub use crate::types::_existing_customer_web_acl_resolution::ExistingCustomerWebAclResolution;
 
 pub use crate::types::_waf_conflict_resolution_options::WafConflictResolutionOptions;
+
+pub use crate::types::_default_subnet_connectivity::DefaultSubnetConnectivity;
 
 pub use crate::types::_unit::Unit;
 
@@ -97,15 +109,19 @@ pub use crate::types::_out_of_sync_reasons_view::OutOfSyncReasonsView;
 
 pub use crate::types::_remediation_issues_view::RemediationIssuesView;
 
-pub use crate::types::_service_resource_type::ServiceResourceType;
+pub use crate::types::_coverage_status::CoverageStatus;
 
 pub use crate::types::_admin_scope_selection_input::AdminScopeSelectionInput;
+
+pub use crate::types::_subnet_connectivity_override::SubnetConnectivityOverride;
 
 pub use crate::types::_resource_set::ResourceSet;
 
 pub use crate::types::_admin_scope_selection::AdminScopeSelection;
 
 pub use crate::types::_not_visible_marker::NotVisibleMarker;
+
+pub use crate::types::_subnet_connectivity::SubnetConnectivity;
 
 pub use crate::types::_resource_logical_expression::ResourceLogicalExpression;
 
@@ -128,6 +144,8 @@ pub use crate::types::_scheme::Scheme;
 pub use crate::types::_ip_address_type::IpAddressType;
 
 pub use crate::types::_configuration_issue::ConfigurationIssue;
+
+pub use crate::types::_invalid_resource_issue::InvalidResourceIssue;
 
 mod _account_filter;
 
@@ -167,6 +185,10 @@ mod _associated_template_or_rule;
 
 mod _configuration_issue;
 
+mod _coverage_status;
+
+mod _default_subnet_connectivity;
+
 mod _deployment_configuration;
 
 mod _deployment_coverage_entry;
@@ -183,7 +205,11 @@ mod _existing_customer_web_acl_resolution;
 
 mod _firewall_sync_reason;
 
+mod _igw_firewall_config;
+
 mod _invalid_firewall_reasons;
+
+mod _invalid_resource_issue;
 
 mod _ip_address_type;
 
@@ -206,6 +232,8 @@ mod _remediation_issue_details;
 mod _remediation_issues_view;
 
 mod _resource_association;
+
+mod _resource_coverage_summary;
 
 mod _resource_criteria;
 
@@ -239,11 +267,19 @@ mod _scope_summary;
 
 mod _service_resource_type;
 
+mod _specialized_scope_type;
+
+mod _subnet_connectivity;
+
+mod _subnet_connectivity_override;
+
 mod _synchronization_status;
 
 mod _template_firewall_type;
 
 mod _template_or_rule_reference;
+
+mod _template_owner;
 
 mod _template_summary;
 

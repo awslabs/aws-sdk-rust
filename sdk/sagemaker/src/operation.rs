@@ -4,6 +4,9 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AddAssociation` operation.
 pub mod add_association;
 
+/// Types for the `AddInferenceGateway` operation.
+pub mod add_inference_gateway;
+
 /// Types for the `AddTags` operation.
 pub mod add_tags;
 
@@ -114,6 +117,9 @@ pub mod create_feature_group;
 
 /// Types for the `CreateFlowDefinition` operation.
 pub mod create_flow_definition;
+
+/// Types for the `CreateGlobalInferenceGateway` operation.
+pub mod create_global_inference_gateway;
 
 /// Types for the `CreateHub` operation.
 pub mod create_hub;
@@ -337,6 +343,9 @@ pub mod delete_feature_group;
 /// Types for the `DeleteFlowDefinition` operation.
 pub mod delete_flow_definition;
 
+/// Types for the `DeleteGlobalInferenceGateway` operation.
+pub mod delete_global_inference_gateway;
+
 /// Types for the `DeleteHub` operation.
 pub mod delete_hub;
 
@@ -552,6 +561,9 @@ pub mod describe_feature_metadata;
 
 /// Types for the `DescribeFlowDefinition` operation.
 pub mod describe_flow_definition;
+
+/// Types for the `DescribeGlobalInferenceGateway` operation.
+pub mod describe_global_inference_gateway;
 
 /// Types for the `DescribeHub` operation.
 pub mod describe_hub;
@@ -838,6 +850,9 @@ pub mod list_feature_groups;
 /// Types for the `ListFlowDefinitions` operation.
 pub mod list_flow_definitions;
 
+/// Types for the `ListGlobalInferenceGateways` operation.
+pub mod list_global_inference_gateways;
+
 /// Types for the `ListHubContentVersions` operation.
 pub mod list_hub_content_versions;
 
@@ -864,6 +879,9 @@ pub mod list_inference_components;
 
 /// Types for the `ListInferenceExperiments` operation.
 pub mod list_inference_experiments;
+
+/// Types for the `ListInferenceGateways` operation.
+pub mod list_inference_gateways;
 
 /// Types for the `ListInferenceRecommendationsJobSteps` operation.
 pub mod list_inference_recommendations_job_steps;
@@ -1021,6 +1039,9 @@ pub mod list_workforces;
 /// Types for the `ListWorkteams` operation.
 pub mod list_workteams;
 
+/// Types for the `MoveClusterNodes` operation.
+pub mod move_cluster_nodes;
+
 /// Types for the `PutEndpointPolicy` operation.
 pub mod put_endpoint_policy;
 
@@ -1032,6 +1053,9 @@ pub mod query_lineage;
 
 /// Types for the `RegisterDevices` operation.
 pub mod register_devices;
+
+/// Types for the `RemoveInferenceGateway` operation.
+pub mod remove_inference_gateway;
 
 /// Types for the `RenderUiTemplate` operation.
 pub mod render_ui_template;
@@ -1188,6 +1212,9 @@ pub mod update_feature_group;
 
 /// Types for the `UpdateFeatureMetadata` operation.
 pub mod update_feature_metadata;
+
+/// Types for the `UpdateGlobalInferenceGateway` operation.
+pub mod update_global_inference_gateway;
 
 /// Types for the `UpdateHub` operation.
 pub mod update_hub;

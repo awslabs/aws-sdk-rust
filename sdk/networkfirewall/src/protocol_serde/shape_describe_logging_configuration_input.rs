@@ -10,6 +10,9 @@ pub fn ser_describe_logging_configuration_input_input(
     if let Some(var_2) = &input.firewall_name {
         encoder.str("FirewallName").str(var_2.as_str());
     }
+    if let Some(var_3) = &input.firewall_type {
+        encoder.str("FirewallType").str(var_3.as_str());
+    }
     encoder.end();
     Ok(())
 }

@@ -18,7 +18,7 @@ pub struct ListingSummary {
     pub short_description: ::std::string::String,
     /// <p>The URL of the logo thumbnail image for the listing.</p>
     pub logo_thumbnail_url: ::std::string::String,
-    /// <p>The categories used to classify this listing into logical groups.</p>
+    /// <p>The categories that classify this listing into logical groups.</p>
     pub categories: ::std::vec::Vec<crate::types::Category>,
     /// <p>Badges indicating special attributes of the listing.</p>
     pub badges: ::std::vec::Vec<crate::types::ListingBadge>,
@@ -30,6 +30,14 @@ pub struct ListingSummary {
     pub pricing_units: ::std::vec::Vec<crate::types::PricingUnit>,
     /// <p>The products associated with this listing.</p>
     pub associated_entities: ::std::vec::Vec<crate::types::ListingSummaryAssociatedEntity>,
+    /// <p>A summary of trust center sources and certifications associated with the listing.</p>
+    pub trust_center_summary: ::std::option::Option<crate::types::TrustCenterSummary>,
+    /// <p>A summary of the case studies associated with the listing. Retrieve the case studies with <code>ListListingAttributes</code>.</p>
+    pub case_studies_summary: ::std::option::Option<crate::types::CaseStudiesSummary>,
+    /// <p>A summary of the use cases the listing is written for: the name and identifier of each, without descriptions. The summary is empty when the listing has none.</p>
+    pub use_case_summary: ::std::option::Option<crate::types::UseCaseSummary>,
+    /// <p>The seller engagement options available for this listing, such as buying now, requesting a private offer, or requesting a demo.</p>
+    pub seller_engagements: ::std::option::Option<::std::vec::Vec<crate::types::SellerEngagement>>,
 }
 impl ListingSummary {
     /// <p>The unique identifier of the listing.</p>
@@ -66,7 +74,7 @@ impl ListingSummary {
         use std::ops::Deref;
         self.logo_thumbnail_url.deref()
     }
-    /// <p>The categories used to classify this listing into logical groups.</p>
+    /// <p>The categories that classify this listing into logical groups.</p>
     pub fn categories(&self) -> &[crate::types::Category] {
         use std::ops::Deref;
         self.categories.deref()
@@ -95,6 +103,24 @@ impl ListingSummary {
         use std::ops::Deref;
         self.associated_entities.deref()
     }
+    /// <p>A summary of trust center sources and certifications associated with the listing.</p>
+    pub fn trust_center_summary(&self) -> ::std::option::Option<&crate::types::TrustCenterSummary> {
+        self.trust_center_summary.as_ref()
+    }
+    /// <p>A summary of the case studies associated with the listing. Retrieve the case studies with <code>ListListingAttributes</code>.</p>
+    pub fn case_studies_summary(&self) -> ::std::option::Option<&crate::types::CaseStudiesSummary> {
+        self.case_studies_summary.as_ref()
+    }
+    /// <p>A summary of the use cases the listing is written for: the name and identifier of each, without descriptions. The summary is empty when the listing has none.</p>
+    pub fn use_case_summary(&self) -> ::std::option::Option<&crate::types::UseCaseSummary> {
+        self.use_case_summary.as_ref()
+    }
+    /// <p>The seller engagement options available for this listing, such as buying now, requesting a private offer, or requesting a demo.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.seller_engagements.is_none()`.
+    pub fn seller_engagements(&self) -> &[crate::types::SellerEngagement] {
+        self.seller_engagements.as_deref().unwrap_or_default()
+    }
 }
 impl ListingSummary {
     /// Creates a new builder-style object to manufacture [`ListingSummary`](crate::types::ListingSummary).
@@ -120,6 +146,10 @@ pub struct ListingSummaryBuilder {
     pub(crate) pricing_models: ::std::option::Option<::std::vec::Vec<crate::types::PricingModel>>,
     pub(crate) pricing_units: ::std::option::Option<::std::vec::Vec<crate::types::PricingUnit>>,
     pub(crate) associated_entities: ::std::option::Option<::std::vec::Vec<crate::types::ListingSummaryAssociatedEntity>>,
+    pub(crate) trust_center_summary: ::std::option::Option<crate::types::TrustCenterSummary>,
+    pub(crate) case_studies_summary: ::std::option::Option<crate::types::CaseStudiesSummary>,
+    pub(crate) use_case_summary: ::std::option::Option<crate::types::UseCaseSummary>,
+    pub(crate) seller_engagements: ::std::option::Option<::std::vec::Vec<crate::types::SellerEngagement>>,
 }
 impl ListingSummaryBuilder {
     /// <p>The unique identifier of the listing.</p>
@@ -236,19 +266,19 @@ impl ListingSummaryBuilder {
     ///
     /// To override the contents of this collection use [`set_categories`](Self::set_categories).
     ///
-    /// <p>The categories used to classify this listing into logical groups.</p>
+    /// <p>The categories that classify this listing into logical groups.</p>
     pub fn categories(mut self, input: crate::types::Category) -> Self {
         let mut v = self.categories.unwrap_or_default();
         v.push(input);
         self.categories = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The categories used to classify this listing into logical groups.</p>
+    /// <p>The categories that classify this listing into logical groups.</p>
     pub fn set_categories(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Category>>) -> Self {
         self.categories = input;
         self
     }
-    /// <p>The categories used to classify this listing into logical groups.</p>
+    /// <p>The categories that classify this listing into logical groups.</p>
     pub fn get_categories(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Category>> {
         &self.categories
     }
@@ -347,6 +377,68 @@ impl ListingSummaryBuilder {
     pub fn get_associated_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ListingSummaryAssociatedEntity>> {
         &self.associated_entities
     }
+    /// <p>A summary of trust center sources and certifications associated with the listing.</p>
+    pub fn trust_center_summary(mut self, input: crate::types::TrustCenterSummary) -> Self {
+        self.trust_center_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A summary of trust center sources and certifications associated with the listing.</p>
+    pub fn set_trust_center_summary(mut self, input: ::std::option::Option<crate::types::TrustCenterSummary>) -> Self {
+        self.trust_center_summary = input;
+        self
+    }
+    /// <p>A summary of trust center sources and certifications associated with the listing.</p>
+    pub fn get_trust_center_summary(&self) -> &::std::option::Option<crate::types::TrustCenterSummary> {
+        &self.trust_center_summary
+    }
+    /// <p>A summary of the case studies associated with the listing. Retrieve the case studies with <code>ListListingAttributes</code>.</p>
+    pub fn case_studies_summary(mut self, input: crate::types::CaseStudiesSummary) -> Self {
+        self.case_studies_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A summary of the case studies associated with the listing. Retrieve the case studies with <code>ListListingAttributes</code>.</p>
+    pub fn set_case_studies_summary(mut self, input: ::std::option::Option<crate::types::CaseStudiesSummary>) -> Self {
+        self.case_studies_summary = input;
+        self
+    }
+    /// <p>A summary of the case studies associated with the listing. Retrieve the case studies with <code>ListListingAttributes</code>.</p>
+    pub fn get_case_studies_summary(&self) -> &::std::option::Option<crate::types::CaseStudiesSummary> {
+        &self.case_studies_summary
+    }
+    /// <p>A summary of the use cases the listing is written for: the name and identifier of each, without descriptions. The summary is empty when the listing has none.</p>
+    pub fn use_case_summary(mut self, input: crate::types::UseCaseSummary) -> Self {
+        self.use_case_summary = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>A summary of the use cases the listing is written for: the name and identifier of each, without descriptions. The summary is empty when the listing has none.</p>
+    pub fn set_use_case_summary(mut self, input: ::std::option::Option<crate::types::UseCaseSummary>) -> Self {
+        self.use_case_summary = input;
+        self
+    }
+    /// <p>A summary of the use cases the listing is written for: the name and identifier of each, without descriptions. The summary is empty when the listing has none.</p>
+    pub fn get_use_case_summary(&self) -> &::std::option::Option<crate::types::UseCaseSummary> {
+        &self.use_case_summary
+    }
+    /// Appends an item to `seller_engagements`.
+    ///
+    /// To override the contents of this collection use [`set_seller_engagements`](Self::set_seller_engagements).
+    ///
+    /// <p>The seller engagement options available for this listing, such as buying now, requesting a private offer, or requesting a demo.</p>
+    pub fn seller_engagements(mut self, input: crate::types::SellerEngagement) -> Self {
+        let mut v = self.seller_engagements.unwrap_or_default();
+        v.push(input);
+        self.seller_engagements = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The seller engagement options available for this listing, such as buying now, requesting a private offer, or requesting a demo.</p>
+    pub fn set_seller_engagements(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::SellerEngagement>>) -> Self {
+        self.seller_engagements = input;
+        self
+    }
+    /// <p>The seller engagement options available for this listing, such as buying now, requesting a private offer, or requesting a demo.</p>
+    pub fn get_seller_engagements(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::SellerEngagement>> {
+        &self.seller_engagements
+    }
     /// Consumes the builder and constructs a [`ListingSummary`](crate::types::ListingSummary).
     /// This method will fail if any of the following fields are not set:
     /// - [`listing_id`](crate::types::builders::ListingSummaryBuilder::listing_id)
@@ -430,6 +522,10 @@ impl ListingSummaryBuilder {
                     "associated_entities was not specified but it is required when building ListingSummary",
                 )
             })?,
+            trust_center_summary: self.trust_center_summary,
+            case_studies_summary: self.case_studies_summary,
+            use_case_summary: self.use_case_summary,
+            seller_engagements: self.seller_engagements,
         })
     }
 }

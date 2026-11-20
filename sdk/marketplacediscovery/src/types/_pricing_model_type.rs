@@ -38,7 +38,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The type of a pricing model. This field has one of the following values:</p> <dl> <dt>BYOL</dt> <dd> <p>You bring your own license to use the product.</p> </dd> <dt>CONTRACT</dt> <dd> <p>You pay in advance for the use of the product, or on a flexible payment schedule. You can also pay for additional usage beyond the contract.</p> </dd> <dt>FREE</dt> <dd> <p>You pay nothing for the product. No pricing term or payment schedule term has a non-zero rate.</p> </dd> <dt>USAGE</dt> <dd> <p>You pay for your usage of the product.</p> </dd> </dl>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

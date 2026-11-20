@@ -39,7 +39,7 @@
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 ///
-#[allow(missing_docs)] // documentation missing in model
+/// <p>The type of a listing badge. This field has one of the following values:</p> <dl> <dt>AWS_FREE_TIER</dt> <dd> <p>The listing is eligible for the AWS Free Tier.</p> </dd> <dt>DEPLOYED_ON_AWS</dt> <dd> <p>The products in the listing are deployed on AWS infrastructure.</p> </dd> <dt>FREE_TRIAL</dt> <dd> <p>The listing offers a free trial.</p> </dd> <dt>MULTI_PRODUCT</dt> <dd> <p>The listing is a multi-product solution.</p> </dd> <dt>QUICK_LAUNCH</dt> <dd> <p>The listing supports Quick Launch, an AWS Marketplace deployment option that reduces the time, resources, and steps required to configure, deploy, and launch the software.</p> </dd> </dl>
 #[non_exhaustive]
 #[derive(
     ::std::clone::Clone, ::std::cmp::Eq, ::std::cmp::Ord, ::std::cmp::PartialEq, ::std::cmp::PartialOrd, ::std::fmt::Debug, ::std::hash::Hash,

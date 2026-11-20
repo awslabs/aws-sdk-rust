@@ -51,6 +51,13 @@ pub struct DeviceFilter {
     /// <p>Supported operators: <code>EQUALS</code></p>
     /// </dd>
     /// <dt>
+    /// DEVICE_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>The device type. Valid values are PHYSICAL or VIRTUAL.</p>
+    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// </dd>
+    /// <dt>
     /// MANUFACTURER
     /// </dt>
     /// <dd>
@@ -114,6 +121,8 @@ pub struct DeviceFilter {
     /// <li>
     /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
     /// <li>
+    /// <p>The DEVICE_TYPE attribute can be set to PHYSICAL or VIRTUAL.</p></li>
+    /// <li>
     /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
     /// </ul>
     pub values: ::std::vec::Vec<::std::string::String>,
@@ -162,6 +171,13 @@ impl DeviceFilter {
     /// </dt>
     /// <dd>
     /// <p>The device form factor. Valid values are PHONE or TABLET.</p>
+    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// </dd>
+    /// <dt>
+    /// DEVICE_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>The device type. Valid values are PHYSICAL or VIRTUAL.</p>
     /// <p>Supported operators: <code>EQUALS</code></p>
     /// </dd>
     /// <dt>
@@ -232,6 +248,8 @@ impl DeviceFilter {
     /// <li>
     /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
     /// <li>
+    /// <p>The DEVICE_TYPE attribute can be set to PHYSICAL or VIRTUAL.</p></li>
+    /// <li>
     /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
     /// </ul>
     pub fn values(&self) -> &[::std::string::String] {
@@ -298,6 +316,13 @@ impl DeviceFilterBuilder {
     /// </dt>
     /// <dd>
     /// <p>The device form factor. Valid values are PHONE or TABLET.</p>
+    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// </dd>
+    /// <dt>
+    /// DEVICE_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>The device type. Valid values are PHYSICAL or VIRTUAL.</p>
     /// <p>Supported operators: <code>EQUALS</code></p>
     /// </dd>
     /// <dt>
@@ -395,6 +420,13 @@ impl DeviceFilterBuilder {
     /// <p>Supported operators: <code>EQUALS</code></p>
     /// </dd>
     /// <dt>
+    /// DEVICE_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>The device type. Valid values are PHYSICAL or VIRTUAL.</p>
+    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// </dd>
+    /// <dt>
     /// MANUFACTURER
     /// </dt>
     /// <dd>
@@ -488,6 +520,13 @@ impl DeviceFilterBuilder {
     /// <p>Supported operators: <code>EQUALS</code></p>
     /// </dd>
     /// <dt>
+    /// DEVICE_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>The device type. Valid values are PHYSICAL or VIRTUAL.</p>
+    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// </dd>
+    /// <dt>
     /// MANUFACTURER
     /// </dt>
     /// <dd>
@@ -570,6 +609,8 @@ impl DeviceFilterBuilder {
     /// <li>
     /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
     /// <li>
+    /// <p>The DEVICE_TYPE attribute can be set to PHYSICAL or VIRTUAL.</p></li>
+    /// <li>
     /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
     /// </ul>
     pub fn values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -595,6 +636,8 @@ impl DeviceFilterBuilder {
     /// <li>
     /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
     /// <li>
+    /// <p>The DEVICE_TYPE attribute can be set to PHYSICAL or VIRTUAL.</p></li>
+    /// <li>
     /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
     /// </ul>
     pub fn set_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
@@ -617,6 +660,8 @@ impl DeviceFilterBuilder {
     /// <p>The AVAILABILITY attribute can be set to AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p></li>
     /// <li>
     /// <p>The FORM_FACTOR attribute can be set to PHONE or TABLET.</p></li>
+    /// <li>
+    /// <p>The DEVICE_TYPE attribute can be set to PHYSICAL or VIRTUAL.</p></li>
     /// <li>
     /// <p>The FLEET_TYPE attribute can be set to PUBLIC or PRIVATE.</p></li>
     /// </ul>

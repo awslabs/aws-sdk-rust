@@ -15,6 +15,15 @@ pub struct AssociateFirewallPolicyInput {
     pub firewall_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
     pub firewall_policy_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub firewall_type: ::std::option::Option<crate::types::FirewallType>,
 }
 impl AssociateFirewallPolicyInput {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.</p>
@@ -37,6 +46,17 @@ impl AssociateFirewallPolicyInput {
     pub fn firewall_policy_arn(&self) -> ::std::option::Option<&str> {
         self.firewall_policy_arn.as_deref()
     }
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub fn firewall_type(&self) -> ::std::option::Option<&crate::types::FirewallType> {
+        self.firewall_type.as_ref()
+    }
 }
 impl AssociateFirewallPolicyInput {
     /// Creates a new builder-style object to manufacture [`AssociateFirewallPolicyInput`](crate::operation::associate_firewall_policy::AssociateFirewallPolicyInput).
@@ -53,6 +73,7 @@ pub struct AssociateFirewallPolicyInputBuilder {
     pub(crate) firewall_arn: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_name: ::std::option::Option<::std::string::String>,
     pub(crate) firewall_policy_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) firewall_type: ::std::option::Option<crate::types::FirewallType>,
 }
 impl AssociateFirewallPolicyInputBuilder {
     /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.</p>
@@ -124,6 +145,41 @@ impl AssociateFirewallPolicyInputBuilder {
     pub fn get_firewall_policy_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.firewall_policy_arn
     }
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub fn firewall_type(mut self, input: crate::types::FirewallType) -> Self {
+        self.firewall_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub fn set_firewall_type(mut self, input: ::std::option::Option<crate::types::FirewallType>) -> Self {
+        self.firewall_type = input;
+        self
+    }
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub fn get_firewall_type(&self) -> &::std::option::Option<crate::types::FirewallType> {
+        &self.firewall_type
+    }
     /// Consumes the builder and constructs a [`AssociateFirewallPolicyInput`](crate::operation::associate_firewall_policy::AssociateFirewallPolicyInput).
     pub fn build(
         self,
@@ -136,6 +192,7 @@ impl AssociateFirewallPolicyInputBuilder {
             firewall_arn: self.firewall_arn,
             firewall_name: self.firewall_name,
             firewall_policy_arn: self.firewall_policy_arn,
+            firewall_type: self.firewall_type,
         })
     }
 }

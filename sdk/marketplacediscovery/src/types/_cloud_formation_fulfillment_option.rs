@@ -14,12 +14,16 @@ pub struct CloudFormationFulfillmentOption {
     pub fulfillment_option_display_name: ::std::string::String,
     /// <p>The version identifier of the fulfillment option.</p>
     pub fulfillment_option_version: ::std::option::Option<::std::string::String>,
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub release_notes: ::std::option::Option<::std::string::String>,
     /// <p>Instructions on how to deploy and use this CloudFormation template.</p>
     pub usage_instructions: ::std::option::Option<::std::string::String>,
     /// <p>The date and time when the CloudFormation fulfillment option became available for fulfillment.</p>
     pub available_from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The URL of the architecture diagram for the CloudFormation template.</p>
+    pub architecture_diagram_url: ::std::option::Option<::std::string::String>,
+    /// <p>The URL of the CloudFormation template.</p>
+    pub deployment_template_url: ::std::option::Option<::std::string::String>,
     /// <p>A short description of the fulfillment option.</p>
     pub short_description: ::std::option::Option<::std::string::String>,
     /// <p>A detailed description of the fulfillment option.</p>
@@ -49,7 +53,7 @@ impl CloudFormationFulfillmentOption {
     pub fn fulfillment_option_version(&self) -> ::std::option::Option<&str> {
         self.fulfillment_option_version.as_deref()
     }
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub fn release_notes(&self) -> ::std::option::Option<&str> {
         self.release_notes.as_deref()
     }
@@ -60,6 +64,14 @@ impl CloudFormationFulfillmentOption {
     /// <p>The date and time when the CloudFormation fulfillment option became available for fulfillment.</p>
     pub fn available_from_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.available_from_time.as_ref()
+    }
+    /// <p>The URL of the architecture diagram for the CloudFormation template.</p>
+    pub fn architecture_diagram_url(&self) -> ::std::option::Option<&str> {
+        self.architecture_diagram_url.as_deref()
+    }
+    /// <p>The URL of the CloudFormation template.</p>
+    pub fn deployment_template_url(&self) -> ::std::option::Option<&str> {
+        self.deployment_template_url.as_deref()
     }
     /// <p>A short description of the fulfillment option.</p>
     pub fn short_description(&self) -> ::std::option::Option<&str> {
@@ -89,6 +101,8 @@ pub struct CloudFormationFulfillmentOptionBuilder {
     pub(crate) release_notes: ::std::option::Option<::std::string::String>,
     pub(crate) usage_instructions: ::std::option::Option<::std::string::String>,
     pub(crate) available_from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) architecture_diagram_url: ::std::option::Option<::std::string::String>,
+    pub(crate) deployment_template_url: ::std::option::Option<::std::string::String>,
     pub(crate) short_description: ::std::option::Option<::std::string::String>,
     pub(crate) long_description: ::std::option::Option<::std::string::String>,
 }
@@ -167,17 +181,17 @@ impl CloudFormationFulfillmentOptionBuilder {
     pub fn get_fulfillment_option_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.fulfillment_option_version
     }
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub fn release_notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_notes = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub fn set_release_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_notes = input;
         self
     }
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub fn get_release_notes(&self) -> &::std::option::Option<::std::string::String> {
         &self.release_notes
     }
@@ -208,6 +222,34 @@ impl CloudFormationFulfillmentOptionBuilder {
     /// <p>The date and time when the CloudFormation fulfillment option became available for fulfillment.</p>
     pub fn get_available_from_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.available_from_time
+    }
+    /// <p>The URL of the architecture diagram for the CloudFormation template.</p>
+    pub fn architecture_diagram_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.architecture_diagram_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The URL of the architecture diagram for the CloudFormation template.</p>
+    pub fn set_architecture_diagram_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.architecture_diagram_url = input;
+        self
+    }
+    /// <p>The URL of the architecture diagram for the CloudFormation template.</p>
+    pub fn get_architecture_diagram_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.architecture_diagram_url
+    }
+    /// <p>The URL of the CloudFormation template.</p>
+    pub fn deployment_template_url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.deployment_template_url = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The URL of the CloudFormation template.</p>
+    pub fn set_deployment_template_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.deployment_template_url = input;
+        self
+    }
+    /// <p>The URL of the CloudFormation template.</p>
+    pub fn get_deployment_template_url(&self) -> &::std::option::Option<::std::string::String> {
+        &self.deployment_template_url
     }
     /// <p>A short description of the fulfillment option.</p>
     pub fn short_description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -273,6 +315,8 @@ impl CloudFormationFulfillmentOptionBuilder {
             release_notes: self.release_notes,
             usage_instructions: self.usage_instructions,
             available_from_time: self.available_from_time,
+            architecture_diagram_url: self.architecture_diagram_url,
+            deployment_template_url: self.deployment_template_url,
             short_description: self.short_description,
             long_description: self.long_description,
         })

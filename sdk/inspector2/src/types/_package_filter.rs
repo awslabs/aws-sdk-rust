@@ -20,6 +20,12 @@ pub struct PackageFilter {
     pub source_lambda_layer_arn: ::std::option::Option<crate::types::StringFilter>,
     /// <p>An object that contains details on the package file path to filter on.</p>
     pub file_path: ::std::option::Option<crate::types::StringFilter>,
+    /// <p>An object that contains details on the runtime reachability status of the package to filter on. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding runtime reachability</a> in the Amazon Inspector user guide.</p>
+    pub runtime_reachability: ::std::option::Option<crate::types::RuntimeReachabilityFilter>,
+    /// <p>An object that contains details on the runtime reachability reason of the package to filter on. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding runtime reachability</a> in the Amazon Inspector user guide.</p>
+    pub runtime_reachability_reason: ::std::option::Option<crate::types::RuntimeReachabilityReasonFilter>,
+    /// <p>An object that contains details on the package URL (purl) qualifier to filter on.</p>
+    pub purl_qualifier: ::std::option::Option<crate::types::PurlQualifierFilter>,
 }
 impl PackageFilter {
     /// <p>An object that contains details on the name of the package to filter on.</p>
@@ -54,6 +60,18 @@ impl PackageFilter {
     pub fn file_path(&self) -> ::std::option::Option<&crate::types::StringFilter> {
         self.file_path.as_ref()
     }
+    /// <p>An object that contains details on the runtime reachability status of the package to filter on. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding runtime reachability</a> in the Amazon Inspector user guide.</p>
+    pub fn runtime_reachability(&self) -> ::std::option::Option<&crate::types::RuntimeReachabilityFilter> {
+        self.runtime_reachability.as_ref()
+    }
+    /// <p>An object that contains details on the runtime reachability reason of the package to filter on. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding runtime reachability</a> in the Amazon Inspector user guide.</p>
+    pub fn runtime_reachability_reason(&self) -> ::std::option::Option<&crate::types::RuntimeReachabilityReasonFilter> {
+        self.runtime_reachability_reason.as_ref()
+    }
+    /// <p>An object that contains details on the package URL (purl) qualifier to filter on.</p>
+    pub fn purl_qualifier(&self) -> ::std::option::Option<&crate::types::PurlQualifierFilter> {
+        self.purl_qualifier.as_ref()
+    }
 }
 impl PackageFilter {
     /// Creates a new builder-style object to manufacture [`PackageFilter`](crate::types::PackageFilter).
@@ -74,6 +92,9 @@ pub struct PackageFilterBuilder {
     pub(crate) source_layer_hash: ::std::option::Option<crate::types::StringFilter>,
     pub(crate) source_lambda_layer_arn: ::std::option::Option<crate::types::StringFilter>,
     pub(crate) file_path: ::std::option::Option<crate::types::StringFilter>,
+    pub(crate) runtime_reachability: ::std::option::Option<crate::types::RuntimeReachabilityFilter>,
+    pub(crate) runtime_reachability_reason: ::std::option::Option<crate::types::RuntimeReachabilityReasonFilter>,
+    pub(crate) purl_qualifier: ::std::option::Option<crate::types::PurlQualifierFilter>,
 }
 impl PackageFilterBuilder {
     /// <p>An object that contains details on the name of the package to filter on.</p>
@@ -188,6 +209,48 @@ impl PackageFilterBuilder {
     pub fn get_file_path(&self) -> &::std::option::Option<crate::types::StringFilter> {
         &self.file_path
     }
+    /// <p>An object that contains details on the runtime reachability status of the package to filter on. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding runtime reachability</a> in the Amazon Inspector user guide.</p>
+    pub fn runtime_reachability(mut self, input: crate::types::RuntimeReachabilityFilter) -> Self {
+        self.runtime_reachability = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains details on the runtime reachability status of the package to filter on. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding runtime reachability</a> in the Amazon Inspector user guide.</p>
+    pub fn set_runtime_reachability(mut self, input: ::std::option::Option<crate::types::RuntimeReachabilityFilter>) -> Self {
+        self.runtime_reachability = input;
+        self
+    }
+    /// <p>An object that contains details on the runtime reachability status of the package to filter on. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding runtime reachability</a> in the Amazon Inspector user guide.</p>
+    pub fn get_runtime_reachability(&self) -> &::std::option::Option<crate::types::RuntimeReachabilityFilter> {
+        &self.runtime_reachability
+    }
+    /// <p>An object that contains details on the runtime reachability reason of the package to filter on. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding runtime reachability</a> in the Amazon Inspector user guide.</p>
+    pub fn runtime_reachability_reason(mut self, input: crate::types::RuntimeReachabilityReasonFilter) -> Self {
+        self.runtime_reachability_reason = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains details on the runtime reachability reason of the package to filter on. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding runtime reachability</a> in the Amazon Inspector user guide.</p>
+    pub fn set_runtime_reachability_reason(mut self, input: ::std::option::Option<crate::types::RuntimeReachabilityReasonFilter>) -> Self {
+        self.runtime_reachability_reason = input;
+        self
+    }
+    /// <p>An object that contains details on the runtime reachability reason of the package to filter on. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding runtime reachability</a> in the Amazon Inspector user guide.</p>
+    pub fn get_runtime_reachability_reason(&self) -> &::std::option::Option<crate::types::RuntimeReachabilityReasonFilter> {
+        &self.runtime_reachability_reason
+    }
+    /// <p>An object that contains details on the package URL (purl) qualifier to filter on.</p>
+    pub fn purl_qualifier(mut self, input: crate::types::PurlQualifierFilter) -> Self {
+        self.purl_qualifier = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>An object that contains details on the package URL (purl) qualifier to filter on.</p>
+    pub fn set_purl_qualifier(mut self, input: ::std::option::Option<crate::types::PurlQualifierFilter>) -> Self {
+        self.purl_qualifier = input;
+        self
+    }
+    /// <p>An object that contains details on the package URL (purl) qualifier to filter on.</p>
+    pub fn get_purl_qualifier(&self) -> &::std::option::Option<crate::types::PurlQualifierFilter> {
+        &self.purl_qualifier
+    }
     /// Consumes the builder and constructs a [`PackageFilter`](crate::types::PackageFilter).
     pub fn build(self) -> crate::types::PackageFilter {
         crate::types::PackageFilter {
@@ -199,6 +262,9 @@ impl PackageFilterBuilder {
             source_layer_hash: self.source_layer_hash,
             source_lambda_layer_arn: self.source_lambda_layer_arn,
             file_path: self.file_path,
+            runtime_reachability: self.runtime_reachability,
+            runtime_reachability_reason: self.runtime_reachability_reason,
+            purl_qualifier: self.purl_qualifier,
         }
     }
 }

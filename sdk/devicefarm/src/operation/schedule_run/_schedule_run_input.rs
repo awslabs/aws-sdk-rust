@@ -11,7 +11,9 @@ pub struct ScheduleRunInput {
     /// <p>The ARN of the device pool for the run to be scheduled.</p>
     pub device_pool_arn: ::std::option::Option<::std::string::String>,
     /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
-    /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
+    /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p><note>
+    /// <p>If the filters select devices by attribute and do not include a <code>DEVICE_TYPE</code> filter, only physical devices are selected. If the filters select devices by ARN, the run uses the devices you list.</p>
+    /// </note>
     pub device_selection_configuration: ::std::option::Option<crate::types::DeviceSelectionConfiguration>,
     /// <p>The name for the run to be scheduled.</p>
     pub name: ::std::option::Option<::std::string::String>,
@@ -36,7 +38,9 @@ impl ScheduleRunInput {
         self.device_pool_arn.as_deref()
     }
     /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
-    /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
+    /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p><note>
+    /// <p>If the filters select devices by attribute and do not include a <code>DEVICE_TYPE</code> filter, only physical devices are selected. If the filters select devices by ARN, the run uses the devices you list.</p>
+    /// </note>
     pub fn device_selection_configuration(&self) -> ::std::option::Option<&crate::types::DeviceSelectionConfiguration> {
         self.device_selection_configuration.as_ref()
     }
@@ -122,19 +126,25 @@ impl ScheduleRunInputBuilder {
         &self.device_pool_arn
     }
     /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
-    /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
+    /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p><note>
+    /// <p>If the filters select devices by attribute and do not include a <code>DEVICE_TYPE</code> filter, only physical devices are selected. If the filters select devices by ARN, the run uses the devices you list.</p>
+    /// </note>
     pub fn device_selection_configuration(mut self, input: crate::types::DeviceSelectionConfiguration) -> Self {
         self.device_selection_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
-    /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
+    /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p><note>
+    /// <p>If the filters select devices by attribute and do not include a <code>DEVICE_TYPE</code> filter, only physical devices are selected. If the filters select devices by ARN, the run uses the devices you list.</p>
+    /// </note>
     pub fn set_device_selection_configuration(mut self, input: ::std::option::Option<crate::types::DeviceSelectionConfiguration>) -> Self {
         self.device_selection_configuration = input;
         self
     }
     /// <p>The filter criteria used to dynamically select a set of devices for a test run and the maximum number of devices to be included in the run.</p>
-    /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p>
+    /// <p>Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code> </b> is required in a request.</p><note>
+    /// <p>If the filters select devices by attribute and do not include a <code>DEVICE_TYPE</code> filter, only physical devices are selected. If the filters select devices by ARN, the run uses the devices you list.</p>
+    /// </note>
     pub fn get_device_selection_configuration(&self) -> &::std::option::Option<crate::types::DeviceSelectionConfiguration> {
         &self.device_selection_configuration
     }

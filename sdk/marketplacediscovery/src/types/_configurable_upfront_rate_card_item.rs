@@ -6,7 +6,7 @@
 pub struct ConfigurableUpfrontRateCardItem {
     /// <p>The selector criteria for this rate card, such as duration.</p>
     pub selector: ::std::option::Option<crate::types::Selector>,
-    /// <p>Constraints on how the buyer can configure this rate card, such as whether multiple dimensions can be selected.</p>
+    /// <p>Constraints on how you can configure this rate card, such as whether you can select multiple dimensions.</p>
     pub constraints: ::std::option::Option<crate::types::Constraints>,
     /// <p>The per-unit rates for this configuration.</p>
     pub rate_card: ::std::vec::Vec<crate::types::RateCardItem>,
@@ -16,7 +16,7 @@ impl ConfigurableUpfrontRateCardItem {
     pub fn selector(&self) -> ::std::option::Option<&crate::types::Selector> {
         self.selector.as_ref()
     }
-    /// <p>Constraints on how the buyer can configure this rate card, such as whether multiple dimensions can be selected.</p>
+    /// <p>Constraints on how you can configure this rate card, such as whether you can select multiple dimensions.</p>
     pub fn constraints(&self) -> ::std::option::Option<&crate::types::Constraints> {
         self.constraints.as_ref()
     }
@@ -57,18 +57,18 @@ impl ConfigurableUpfrontRateCardItemBuilder {
     pub fn get_selector(&self) -> &::std::option::Option<crate::types::Selector> {
         &self.selector
     }
-    /// <p>Constraints on how the buyer can configure this rate card, such as whether multiple dimensions can be selected.</p>
+    /// <p>Constraints on how you can configure this rate card, such as whether you can select multiple dimensions.</p>
     /// This field is required.
     pub fn constraints(mut self, input: crate::types::Constraints) -> Self {
         self.constraints = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Constraints on how the buyer can configure this rate card, such as whether multiple dimensions can be selected.</p>
+    /// <p>Constraints on how you can configure this rate card, such as whether you can select multiple dimensions.</p>
     pub fn set_constraints(mut self, input: ::std::option::Option<crate::types::Constraints>) -> Self {
         self.constraints = input;
         self
     }
-    /// <p>Constraints on how the buyer can configure this rate card, such as whether multiple dimensions can be selected.</p>
+    /// <p>Constraints on how you can configure this rate card, such as whether you can select multiple dimensions.</p>
     pub fn get_constraints(&self) -> &::std::option::Option<crate::types::Constraints> {
         &self.constraints
     }

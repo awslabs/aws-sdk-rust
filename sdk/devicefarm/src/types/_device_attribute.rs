@@ -15,6 +15,7 @@
 ///     DeviceAttribute::AppiumVersion => { /* ... */ },
 ///     DeviceAttribute::Arn => { /* ... */ },
 ///     DeviceAttribute::Availability => { /* ... */ },
+///     DeviceAttribute::DeviceType => { /* ... */ },
 ///     DeviceAttribute::FleetType => { /* ... */ },
 ///     DeviceAttribute::FormFactor => { /* ... */ },
 ///     DeviceAttribute::InstanceArn => { /* ... */ },
@@ -60,6 +61,8 @@ pub enum DeviceAttribute {
     #[allow(missing_docs)] // documentation missing in model
     Availability,
     #[allow(missing_docs)] // documentation missing in model
+    DeviceType,
+    #[allow(missing_docs)] // documentation missing in model
     FleetType,
     #[allow(missing_docs)] // documentation missing in model
     FormFactor,
@@ -89,6 +92,7 @@ impl ::std::convert::From<&str> for DeviceAttribute {
             "APPIUM_VERSION" => DeviceAttribute::AppiumVersion,
             "ARN" => DeviceAttribute::Arn,
             "AVAILABILITY" => DeviceAttribute::Availability,
+            "DEVICE_TYPE" => DeviceAttribute::DeviceType,
             "FLEET_TYPE" => DeviceAttribute::FleetType,
             "FORM_FACTOR" => DeviceAttribute::FormFactor,
             "INSTANCE_ARN" => DeviceAttribute::InstanceArn,
@@ -117,6 +121,7 @@ impl DeviceAttribute {
             DeviceAttribute::AppiumVersion => "APPIUM_VERSION",
             DeviceAttribute::Arn => "ARN",
             DeviceAttribute::Availability => "AVAILABILITY",
+            DeviceAttribute::DeviceType => "DEVICE_TYPE",
             DeviceAttribute::FleetType => "FLEET_TYPE",
             DeviceAttribute::FormFactor => "FORM_FACTOR",
             DeviceAttribute::InstanceArn => "INSTANCE_ARN",
@@ -136,6 +141,7 @@ impl DeviceAttribute {
             "APPIUM_VERSION",
             "ARN",
             "AVAILABILITY",
+            "DEVICE_TYPE",
             "FLEET_TYPE",
             "FORM_FACTOR",
             "INSTANCE_ARN",
@@ -172,6 +178,7 @@ impl ::std::fmt::Display for DeviceAttribute {
             DeviceAttribute::AppiumVersion => write!(f, "APPIUM_VERSION"),
             DeviceAttribute::Arn => write!(f, "ARN"),
             DeviceAttribute::Availability => write!(f, "AVAILABILITY"),
+            DeviceAttribute::DeviceType => write!(f, "DEVICE_TYPE"),
             DeviceAttribute::FleetType => write!(f, "FLEET_TYPE"),
             DeviceAttribute::FormFactor => write!(f, "FORM_FACTOR"),
             DeviceAttribute::InstanceArn => write!(f, "INSTANCE_ARN"),

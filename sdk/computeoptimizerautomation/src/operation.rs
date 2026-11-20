@@ -10,6 +10,9 @@ pub mod create_automation_rule;
 /// Types for the `DeleteAutomationRule` operation.
 pub mod delete_automation_rule;
 
+/// Types for the `DeleteOrganizationEnrollmentConfiguration` operation.
+pub mod delete_organization_enrollment_configuration;
+
 /// Types for the `DisassociateAccounts` operation.
 pub mod disassociate_accounts;
 
@@ -43,6 +46,12 @@ pub mod list_automation_rule_preview_summaries;
 /// Types for the `ListAutomationRules` operation.
 pub mod list_automation_rules;
 
+/// Types for the `ListOrganizationEnrollmentConfigurations` operation.
+pub mod list_organization_enrollment_configurations;
+
+/// Types for the `ListOrganizationalUnits` operation.
+pub mod list_organizational_units;
+
 /// Types for the `ListRecommendedActionSummaries` operation.
 pub mod list_recommended_action_summaries;
 
@@ -51,6 +60,9 @@ pub mod list_recommended_actions;
 
 /// Types for the `ListTagsForResource` operation.
 pub mod list_tags_for_resource;
+
+/// Types for the `PutOrganizationEnrollmentConfiguration` operation.
+pub mod put_organization_enrollment_configuration;
 
 /// Types for the `RollbackAutomationEvent` operation.
 pub mod rollback_automation_event;

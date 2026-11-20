@@ -861,6 +861,8 @@ pub use crate::types::_embedded_caption_position_settings::EmbeddedCaptionPositi
 
 pub use crate::types::_embedded_destination_style_control::EmbeddedDestinationStyleControl;
 
+pub use crate::types::_embedded_mode_type::EmbeddedModeType;
+
 pub use crate::types::_ttml_destination_style_control::TtmlDestinationStyleControl;
 
 pub use crate::types::_text_caption_position_settings::TextCaptionPositionSettings;
@@ -1250,6 +1252,8 @@ pub use crate::types::_scte27_source_settings::Scte27SourceSettings;
 pub use crate::types::_teletext_source_settings::TeletextSourceSettings;
 
 pub use crate::types::_smart_subtitle_source_settings::SmartSubtitleSourceSettings;
+
+pub use crate::types::_webvtt_source_settings::WebvttSourceSettings;
 
 pub use crate::types::_last_frame_clipping_behavior::LastFrameClippingBehavior;
 
@@ -1850,6 +1854,8 @@ mod _embedded_convert608_to708;
 mod _embedded_destination_settings;
 
 mod _embedded_destination_style_control;
+
+mod _embedded_mode_type;
 
 mod _embedded_plus_scte20_destination_settings;
 
@@ -2878,6 +2884,8 @@ mod _wav_settings;
 mod _webvtt_destination_settings;
 
 mod _webvtt_destination_style_control;
+
+mod _webvtt_source_settings;
 
 /// Builders
 pub mod builders;

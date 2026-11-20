@@ -17,15 +17,41 @@ pub use crate::types::_adapter_version_dataset_config::AdapterVersionDatasetConf
 
 pub use crate::types::_output_config::OutputConfig;
 
+pub use crate::types::_encryption_configuration::EncryptionConfiguration;
+
+pub use crate::types::_extraction_configuration::ExtractionConfiguration;
+
+pub use crate::types::_generative_configuration::GenerativeConfiguration;
+
+pub use crate::types::_custom_configuration::CustomConfiguration;
+
+pub use crate::types::_splitter_configuration::SplitterConfiguration;
+
+pub use crate::types::_sensitive_data_configuration::SensitiveDataConfiguration;
+
+pub use crate::types::_project_status::ProjectStatus;
+
 pub use crate::types::_adapter_version_status::AdapterVersionStatus;
 
 pub use crate::types::_job_status::JobStatus;
 
+pub use crate::types::_output_configuration::OutputConfiguration;
+
 pub use crate::types::_lending_summary::LendingSummary;
+
+pub use crate::types::_project_filter::ProjectFilter;
+
+pub use crate::types::_resource_owner::ResourceOwner;
+
+pub use crate::types::_blueprint_filter::BlueprintFilter;
 
 pub use crate::types::_document_location::DocumentLocation;
 
 pub use crate::types::_notification_channel::NotificationChannel;
+
+pub use crate::types::_input_configuration::InputConfiguration;
+
+pub use crate::types::_notification_configuration::NotificationConfiguration;
 
 pub use crate::types::_s3_object::S3Object;
 
@@ -39,6 +65,22 @@ pub use crate::types::_expense_document::ExpenseDocument;
 
 pub use crate::types::_identity_document::IdentityDocument;
 
+pub use crate::types::_bounding_box_configuration::BoundingBoxConfiguration;
+
+pub use crate::types::_extraction_granularity::ExtractionGranularity;
+
+pub use crate::types::_output_format::OutputFormat;
+
+pub use crate::types::_summarization_configuration::SummarizationConfiguration;
+
+pub use crate::types::_figure_caption_configuration::FigureCaptionConfiguration;
+
+pub use crate::types::_state::State;
+
+pub use crate::types::_sensitive_data_detection_mode::SensitiveDataDetectionMode;
+
+pub use crate::types::_pii_entities_configuration::PiiEntitiesConfiguration;
+
 pub use crate::types::_adapter_version_evaluation_metric::AdapterVersionEvaluationMetric;
 
 pub use crate::types::_warning::Warning;
@@ -48,6 +90,14 @@ pub use crate::types::_lending_result::LendingResult;
 pub use crate::types::_adapter_overview::AdapterOverview;
 
 pub use crate::types::_adapter_version_overview::AdapterVersionOverview;
+
+pub use crate::types::_blueprint_summary::BlueprintSummary;
+
+pub use crate::types::_project_summary::ProjectSummary;
+
+pub use crate::types::_blueprint_item::BlueprintItem;
+
+pub use crate::types::_event_bridge_configuration::EventBridgeConfiguration;
 
 pub use crate::types::_query::Query;
 
@@ -60,6 +110,12 @@ pub use crate::types::_text_type::TextType;
 pub use crate::types::_geometry::Geometry;
 
 pub use crate::types::_selection_status::SelectionStatus;
+
+pub use crate::types::_output_additional_file_format::OutputAdditionalFileFormat;
+
+pub use crate::types::_output_text_format::OutputTextFormat;
+
+pub use crate::types::_pii_redaction_mask_mode::PiiRedactionMaskMode;
 
 pub use crate::types::_evaluation_metric::EvaluationMetric;
 
@@ -81,6 +137,10 @@ pub use crate::types::_line_item_group::LineItemGroup;
 
 pub use crate::types::_identity_document_field::IdentityDocumentField;
 
+pub use crate::types::_extraction_granularity_type::ExtractionGranularityType;
+
+pub use crate::types::_pii_entity_type::PiiEntityType;
+
 pub use crate::types::_extraction::Extraction;
 
 pub use crate::types::_point::Point;
@@ -94,6 +154,8 @@ pub use crate::types::_expense_detection::ExpenseDetection;
 pub use crate::types::_expense_currency::ExpenseCurrency;
 
 pub use crate::types::_analyze_id_detections::AnalyzeIdDetections;
+
+pub use crate::types::_output_text_format_type::OutputTextFormatType;
 
 pub use crate::types::_prediction::Prediction;
 
@@ -141,9 +203,19 @@ mod _block;
 
 mod _block_type;
 
+mod _blueprint_filter;
+
+mod _blueprint_item;
+
+mod _blueprint_summary;
+
 mod _bounding_box;
 
+mod _bounding_box_configuration;
+
 mod _content_classifier;
+
+mod _custom_configuration;
 
 mod _detected_signature;
 
@@ -155,9 +227,13 @@ mod _document_location;
 
 mod _document_metadata;
 
+mod _encryption_configuration;
+
 mod _entity_type;
 
 mod _evaluation_metric;
+
+mod _event_bridge_configuration;
 
 mod _expense_currency;
 
@@ -173,7 +249,17 @@ mod _expense_type;
 
 mod _extraction;
 
+mod _extraction_configuration;
+
+mod _extraction_granularity;
+
+mod _extraction_granularity_type;
+
 mod _feature_type;
+
+mod _figure_caption_configuration;
+
+mod _generative_configuration;
 
 mod _geometry;
 
@@ -186,6 +272,8 @@ mod _human_loop_data_attributes;
 mod _identity_document;
 
 mod _identity_document_field;
+
+mod _input_configuration;
 
 mod _job_status;
 
@@ -207,13 +295,37 @@ mod _normalized_value;
 
 mod _notification_channel;
 
+mod _notification_configuration;
+
+mod _output_additional_file_format;
+
 mod _output_config;
 
+mod _output_configuration;
+
+mod _output_format;
+
+mod _output_text_format;
+
+mod _output_text_format_type;
+
 mod _page_classification;
+
+mod _pii_entities_configuration;
+
+mod _pii_entity_type;
+
+mod _pii_redaction_mask_mode;
 
 mod _point;
 
 mod _prediction;
+
+mod _project_filter;
+
+mod _project_status;
+
+mod _project_summary;
 
 mod _queries_config;
 
@@ -223,13 +335,25 @@ mod _relationship;
 
 mod _relationship_type;
 
+mod _resource_owner;
+
 mod _s3_object;
 
 mod _selection_status;
 
+mod _sensitive_data_configuration;
+
+mod _sensitive_data_detection_mode;
+
 mod _signature_detection;
 
 mod _split_document;
+
+mod _splitter_configuration;
+
+mod _state;
+
+mod _summarization_configuration;
 
 mod _text_type;
 

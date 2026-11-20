@@ -21,6 +21,8 @@ pub(crate) mod shape_create_automation_rule;
 
 pub(crate) mod shape_delete_automation_rule;
 
+pub(crate) mod shape_delete_organization_enrollment_configuration;
+
 pub(crate) mod shape_disassociate_accounts;
 
 pub(crate) mod shape_get_automation_event;
@@ -43,11 +45,17 @@ pub(crate) mod shape_list_automation_rule_preview_summaries;
 
 pub(crate) mod shape_list_automation_rules;
 
+pub(crate) mod shape_list_organization_enrollment_configurations;
+
+pub(crate) mod shape_list_organizational_units;
+
 pub(crate) mod shape_list_recommended_action_summaries;
 
 pub(crate) mod shape_list_recommended_actions;
 
 pub(crate) mod shape_list_tags_for_resource;
+
+pub(crate) mod shape_put_organization_enrollment_configuration;
 
 pub(crate) mod shape_rollback_automation_event;
 
@@ -65,9 +73,13 @@ pub(crate) mod shape_access_denied_exception;
 
 pub(crate) mod shape_associate_accounts_input;
 
+pub(crate) mod shape_conflict_exception;
+
 pub(crate) mod shape_create_automation_rule_input;
 
 pub(crate) mod shape_delete_automation_rule_input;
+
+pub(crate) mod shape_delete_organization_enrollment_configuration_input;
 
 pub(crate) mod shape_disassociate_accounts_input;
 
@@ -101,6 +113,10 @@ pub(crate) mod shape_list_automation_rule_preview_summaries_input;
 
 pub(crate) mod shape_list_automation_rules_input;
 
+pub(crate) mod shape_list_organization_enrollment_configurations_input;
+
+pub(crate) mod shape_list_organizational_units_input;
+
 pub(crate) mod shape_list_recommended_action_summaries_input;
 
 pub(crate) mod shape_list_recommended_actions_input;
@@ -110,6 +126,8 @@ pub(crate) mod shape_list_tags_for_resource_input;
 pub(crate) mod shape_not_management_account_exception;
 
 pub(crate) mod shape_opt_in_required_exception;
+
+pub(crate) mod shape_put_organization_enrollment_configuration_input;
 
 pub(crate) mod shape_resource_not_found_exception;
 
@@ -153,7 +171,13 @@ pub(crate) mod shape_filter;
 
 pub(crate) mod shape_organization_configuration;
 
+pub(crate) mod shape_organization_enrollment_configurations;
+
 pub(crate) mod shape_organization_scope;
+
+pub(crate) mod shape_organization_target;
+
+pub(crate) mod shape_organizational_unit_info_list;
 
 pub(crate) mod shape_preview_result_summaries;
 
@@ -195,6 +219,12 @@ pub(crate) mod shape_integer_criteria_condition_list;
 
 pub(crate) mod shape_organization_configuration_account_ids;
 
+pub(crate) mod shape_organization_configuration_organizational_unit_ids;
+
+pub(crate) mod shape_organization_enrollment_configuration;
+
+pub(crate) mod shape_organizational_unit_info;
+
 pub(crate) mod shape_preview_result;
 
 pub(crate) mod shape_preview_result_summary;
@@ -210,6 +240,8 @@ pub(crate) mod shape_resource_tags_criteria_condition_list;
 pub(crate) mod shape_string_criteria_condition;
 
 pub(crate) mod shape_string_criteria_condition_list;
+
+pub(crate) mod shape_organization_rule_mode_source;
 
 pub(crate) mod shape_recommended_action_total;
 

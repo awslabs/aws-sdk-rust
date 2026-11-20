@@ -160,6 +160,13 @@ pub(crate) fn de_register_compute_node_group_instance(
                             .transpose()?,
                     );
                 }
+                "instanceHealthChecks" => {
+                    builder = builder.set_instance_health_checks(crate::protocol_serde::shape_instance_health_checks::de_instance_health_checks(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },
             other => {

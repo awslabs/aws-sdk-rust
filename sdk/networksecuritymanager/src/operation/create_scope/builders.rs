@@ -164,6 +164,20 @@ impl CreateScopeFluentBuilder {
     pub fn get_scope_configuration(&self) -> &::std::option::Option<crate::types::ScopeConfiguration> {
         self.inner.get_scope_configuration()
     }
+    /// <p>The specialized type of the scope. Omit this value to create a standard scope that you can associate with a deployment. Set it to create a scope that is built for one specific purpose: a specialized scope can be used only for the purpose that its type defines, is validated against that use, and can't be associated with a deployment. This value is set when the scope is created and can't be changed.</p>
+    pub fn specialized_scope_type(mut self, input: crate::types::SpecializedScopeType) -> Self {
+        self.inner = self.inner.specialized_scope_type(input);
+        self
+    }
+    /// <p>The specialized type of the scope. Omit this value to create a standard scope that you can associate with a deployment. Set it to create a scope that is built for one specific purpose: a specialized scope can be used only for the purpose that its type defines, is validated against that use, and can't be associated with a deployment. This value is set when the scope is created and can't be changed.</p>
+    pub fn set_specialized_scope_type(mut self, input: ::std::option::Option<crate::types::SpecializedScopeType>) -> Self {
+        self.inner = self.inner.set_specialized_scope_type(input);
+        self
+    }
+    /// <p>The specialized type of the scope. Omit this value to create a standard scope that you can associate with a deployment. Set it to create a scope that is built for one specific purpose: a specialized scope can be used only for the purpose that its type defines, is validated against that use, and can't be associated with a deployment. This value is set when the scope is created and can't be changed.</p>
+    pub fn get_specialized_scope_type(&self) -> &::std::option::Option<crate::types::SpecializedScopeType> {
+        self.inner.get_specialized_scope_type()
+    }
     /// <p>Specifies whether to publish the resource. When <code>true</code>, the resource is saved in published (<code>ACTIVE</code>) state. When <code>false</code>, it is saved as a draft (<code>DRAFT</code>). Default: <code>true</code>.</p>
     pub fn is_published(mut self, input: bool) -> Self {
         self.inner = self.inner.is_published(input);

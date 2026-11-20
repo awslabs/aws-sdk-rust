@@ -308,6 +308,41 @@ impl CreateMicrovmImageFluentBuilder {
     pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.inner.get_environment_variables()
     }
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts the contents and metadata of your MicroVM image version. You must have permission to use the key. Specify the key in one of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Key ARN</p></li>
+    /// <li>
+    /// <p>Alias ARN</p></li>
+    /// </ul>
+    /// <p>If you don't specify a key, your MicroVM image version uses an Amazon Web Services owned key.</p>
+    pub fn kms_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.kms_key_identifier(input.into());
+        self
+    }
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts the contents and metadata of your MicroVM image version. You must have permission to use the key. Specify the key in one of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Key ARN</p></li>
+    /// <li>
+    /// <p>Alias ARN</p></li>
+    /// </ul>
+    /// <p>If you don't specify a key, your MicroVM image version uses an Amazon Web Services owned key.</p>
+    pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_kms_key_identifier(input);
+        self
+    }
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts the contents and metadata of your MicroVM image version. You must have permission to use the key. Specify the key in one of the following formats:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Key ARN</p></li>
+    /// <li>
+    /// <p>Alias ARN</p></li>
+    /// </ul>
+    /// <p>If you don't specify a key, your MicroVM image version uses an Amazon Web Services owned key.</p>
+    pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_kms_key_identifier()
+    }
     /// <p>The name of the MicroVM image. Must be unique within the AWS account.</p>
     pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());

@@ -17,6 +17,8 @@ pub use crate::types::_update_scheduler_request::UpdateSchedulerRequest;
 
 pub use crate::types::_node_lifecycle_actions::NodeLifecycleActions;
 
+pub use crate::types::_instance_health_checks::InstanceHealthChecks;
+
 pub use crate::types::_purchase_option::PurchaseOption;
 
 pub use crate::types::_launch_template_mode::LaunchTemplateMode;
@@ -31,11 +33,15 @@ pub use crate::types::_compute_node_group_slurm_configuration_request::ComputeNo
 
 pub use crate::types::_node_lifecycle_actions_request::NodeLifecycleActionsRequest;
 
+pub use crate::types::_instance_health_checks_request::InstanceHealthChecksRequest;
+
 pub use crate::types::_compute_node_group::ComputeNodeGroup;
 
 pub use crate::types::_update_compute_node_group_slurm_configuration_request::UpdateComputeNodeGroupSlurmConfigurationRequest;
 
 pub use crate::types::_update_node_lifecycle_actions_request::UpdateNodeLifecycleActionsRequest;
+
+pub use crate::types::_update_instance_health_checks_request::UpdateInstanceHealthChecksRequest;
 
 pub use crate::types::_queue_slurm_configuration_request::QueueSlurmConfigurationRequest;
 
@@ -70,6 +76,10 @@ pub use crate::types::_endpoint::Endpoint;
 pub use crate::types::_node_lifecycle_stages::NodeLifecycleStages;
 
 pub use crate::types::_script_caching_policy::ScriptCachingPolicy;
+
+pub use crate::types::_health_monitoring::HealthMonitoring;
+
+pub use crate::types::_deep_health_checks::DeepHealthChecks;
 
 pub use crate::types::_cluster_summary::ClusterSummary;
 
@@ -117,6 +127,12 @@ pub use crate::types::_error_info::ErrorInfo;
 
 pub use crate::types::_endpoint_type::EndpointType;
 
+pub use crate::types::_health_monitoring_mode::HealthMonitoringMode;
+
+pub use crate::types::_health_monitoring_repair_action::HealthMonitoringRepairAction;
+
+pub use crate::types::_deep_health_check_on_start::DeepHealthCheckOnStart;
+
 pub use crate::types::_job_submit_plugin_type::JobSubmitPluginType;
 
 pub use crate::types::_job_submit_script_source::JobSubmitScriptSource;
@@ -124,6 +140,10 @@ pub use crate::types::_job_submit_script_source::JobSubmitScriptSource;
 pub use crate::types::_jwt_key::JwtKey;
 
 pub use crate::types::_node_lifecycle_script::NodeLifecycleScript;
+
+pub use crate::types::_deep_health_check_on_start_profile::DeepHealthCheckOnStartProfile;
+
+pub use crate::types::_deep_health_check_on_start_repair_action::DeepHealthCheckOnStartRepairAction;
 
 pub use crate::types::_script_source::ScriptSource;
 
@@ -163,6 +183,14 @@ mod _compute_node_group_summary;
 
 mod _custom_launch_template;
 
+mod _deep_health_check_on_start;
+
+mod _deep_health_check_on_start_profile;
+
+mod _deep_health_check_on_start_repair_action;
+
+mod _deep_health_checks;
+
 mod _endpoint;
 
 mod _endpoint_type;
@@ -171,7 +199,17 @@ mod _error_info;
 
 mod _execution_policy;
 
+mod _health_monitoring;
+
+mod _health_monitoring_mode;
+
+mod _health_monitoring_repair_action;
+
 mod _instance_config;
+
+mod _instance_health_checks;
+
+mod _instance_health_checks_request;
 
 mod _job_submit_plugin;
 
@@ -250,6 +288,8 @@ mod _update_accounting_request;
 mod _update_cluster_slurm_configuration_request;
 
 mod _update_compute_node_group_slurm_configuration_request;
+
+mod _update_instance_health_checks_request;
 
 mod _update_node_lifecycle_actions_request;
 

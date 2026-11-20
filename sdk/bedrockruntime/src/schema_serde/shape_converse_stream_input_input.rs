@@ -78,6 +78,16 @@ static CONVERSESTREAMINPUT_MEMBER_GUARDRAIL_CONFIG: ::aws_smithy_schema::Schema<
     "guardrailConfig",
     5,
 );
+static CONVERSESTREAMINPUT_MEMBER_PROJECT_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.bedrockruntime.synthetic#ConverseStreamInput$projectIdentifier",
+        "com.amazonaws.bedrockruntime.synthetic",
+        "ConverseStreamInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "projectIdentifier",
+    6,
+);
 static CONVERSESTREAMINPUT_MEMBER_ADDITIONAL_MODEL_REQUEST_FIELDS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.bedrockruntime.synthetic#ConverseStreamInput$additionalModelRequestFields",
@@ -86,7 +96,7 @@ static CONVERSESTREAMINPUT_MEMBER_ADDITIONAL_MODEL_REQUEST_FIELDS: ::aws_smithy_
     ),
     ::aws_smithy_schema::ShapeType::Document,
     "additionalModelRequestFields",
-    6,
+    7,
 );
 static CONVERSESTREAMINPUT_MEMBER_PROMPT_VARIABLES_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -116,7 +126,7 @@ static CONVERSESTREAMINPUT_MEMBER_PROMPT_VARIABLES: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::Map,
     "promptVariables",
-    7,
+    8,
 )
 .with_map_members(
     &CONVERSESTREAMINPUT_MEMBER_PROMPT_VARIABLES_KEY,
@@ -142,7 +152,7 @@ static CONVERSESTREAMINPUT_MEMBER_ADDITIONAL_MODEL_RESPONSE_FIELD_PATHS: ::aws_s
         ),
         ::aws_smithy_schema::ShapeType::List,
         "additionalModelResponseFieldPaths",
-        8,
+        9,
     )
     .with_list_member(&CONVERSESTREAMINPUT_MEMBER_ADDITIONAL_MODEL_RESPONSE_FIELD_PATHS_MEMBER);
 static CONVERSESTREAMINPUT_MEMBER_REQUEST_METADATA_KEY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -173,7 +183,7 @@ static CONVERSESTREAMINPUT_MEMBER_REQUEST_METADATA: ::aws_smithy_schema::Schema<
     ),
     ::aws_smithy_schema::ShapeType::Map,
     "requestMetadata",
-    9,
+    10,
 )
 .with_map_members(
     &CONVERSESTREAMINPUT_MEMBER_REQUEST_METADATA_KEY,
@@ -187,7 +197,7 @@ static CONVERSESTREAMINPUT_MEMBER_PERFORMANCE_CONFIG: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "performanceConfig",
-    10,
+    11,
 );
 static CONVERSESTREAMINPUT_MEMBER_SERVICE_TIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -197,7 +207,7 @@ static CONVERSESTREAMINPUT_MEMBER_SERVICE_TIER: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "serviceTier",
-    11,
+    12,
 );
 static CONVERSESTREAMINPUT_MEMBER_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -207,7 +217,7 @@ static CONVERSESTREAMINPUT_MEMBER_OUTPUT_CONFIG: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "outputConfig",
-    12,
+    13,
 );
 static CONVERSESTREAMINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
@@ -223,6 +233,7 @@ static CONVERSESTREAMINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_
         &CONVERSESTREAMINPUT_MEMBER_INFERENCE_CONFIG,
         &CONVERSESTREAMINPUT_MEMBER_TOOL_CONFIG,
         &CONVERSESTREAMINPUT_MEMBER_GUARDRAIL_CONFIG,
+        &CONVERSESTREAMINPUT_MEMBER_PROJECT_IDENTIFIER,
         &CONVERSESTREAMINPUT_MEMBER_ADDITIONAL_MODEL_REQUEST_FIELDS,
         &CONVERSESTREAMINPUT_MEMBER_PROMPT_VARIABLES,
         &CONVERSESTREAMINPUT_MEMBER_ADDITIONAL_MODEL_RESPONSE_FIELD_PATHS,
@@ -286,6 +297,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::conver
         }
         if let Some(ref val) = self.guardrail_config {
             ser.write_struct(&CONVERSESTREAMINPUT_MEMBER_GUARDRAIL_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.project_identifier {
+            ser.write_string(&CONVERSESTREAMINPUT_MEMBER_PROJECT_IDENTIFIER, val)?;
         }
         if let Some(ref val) = self.additional_model_request_fields {
             ser.write_document(&CONVERSESTREAMINPUT_MEMBER_ADDITIONAL_MODEL_REQUEST_FIELDS, val)?;
@@ -411,10 +425,17 @@ impl crate::operation::converse_stream::builders::ConverseStreamInputBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.additional_model_request_fields = Some(deser.read_document(member)?);
+                        self.project_identifier = Some(deser.read_string(member)?);
                     }
                 }
                 Some(7) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.additional_model_request_fields = Some(deser.read_document(member)?);
+                    }
+                }
+                Some(8) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -428,35 +449,35 @@ impl crate::operation::converse_stream::builders::ConverseStreamInputBuilder {
                         });
                     }
                 }
-                Some(8) => {
+                Some(9) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.additional_model_response_field_paths = Some(deser.read_string_list(member)?);
                     }
                 }
-                Some(9) => {
+                Some(10) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.request_metadata = Some(deser.read_string_string_map(member)?);
                     }
                 }
-                Some(10) => {
+                Some(11) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.performance_config = Some(crate::types::PerformanceConfiguration::deserialize(deser)?);
                     }
                 }
-                Some(11) => {
+                Some(12) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.service_tier = Some(crate::types::ServiceTier::deserialize(deser)?);
                     }
                 }
-                Some(12) => {
+                Some(13) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

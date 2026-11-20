@@ -5,7 +5,7 @@
 pub struct ListAutomationRulesInput {
     /// <p>The filters to apply to the list of automation rules.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::Filter>>,
-    /// <p>The maximum number of automation rules to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of automation rules to return in a single response. If you don't specify a value, the default is 100.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token used for pagination to retrieve the next set of results when the response is truncated.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -17,7 +17,7 @@ impl ListAutomationRulesInput {
     pub fn filters(&self) -> &[crate::types::Filter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>The maximum number of automation rules to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of automation rules to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -62,17 +62,17 @@ impl ListAutomationRulesInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Filter>> {
         &self.filters
     }
-    /// <p>The maximum number of automation rules to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of automation rules to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of automation rules to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of automation rules to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of automation rules to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of automation rules to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }

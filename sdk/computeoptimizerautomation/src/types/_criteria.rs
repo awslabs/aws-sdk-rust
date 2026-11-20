@@ -18,7 +18,7 @@ pub struct Criteria {
     pub resource_tag: ::std::option::Option<::std::vec::Vec<crate::types::ResourceTagsCriteriaCondition>>,
     /// <p>Filter criteria for the lookback period in days used to analyze resource utilization.</p>
     pub look_back_period_in_days: ::std::option::Option<::std::vec::Vec<crate::types::IntegerCriteriaCondition>>,
-    /// <p>Filter criteria indicating whether the recommended action requires a resource restart.</p>
+    /// <p>Filter criteria indicating whether the recommended action requires a resource restart. Valid values are <code>true</code> and <code>false</code>. Values are case-sensitive unless you use an <code>IgnoreCase</code> comparison operator. For example, <code>StringEquals</code> with the value <code>False</code> matches no recommended actions.</p>
     pub restart_needed: ::std::option::Option<::std::vec::Vec<crate::types::StringCriteriaCondition>>,
 }
 impl Criteria {
@@ -64,7 +64,7 @@ impl Criteria {
     pub fn look_back_period_in_days(&self) -> &[crate::types::IntegerCriteriaCondition] {
         self.look_back_period_in_days.as_deref().unwrap_or_default()
     }
-    /// <p>Filter criteria indicating whether the recommended action requires a resource restart.</p>
+    /// <p>Filter criteria indicating whether the recommended action requires a resource restart. Valid values are <code>true</code> and <code>false</code>. Values are case-sensitive unless you use an <code>IgnoreCase</code> comparison operator. For example, <code>StringEquals</code> with the value <code>False</code> matches no recommended actions.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.restart_needed.is_none()`.
     pub fn restart_needed(&self) -> &[crate::types::StringCriteriaCondition] {
@@ -236,19 +236,19 @@ impl CriteriaBuilder {
     ///
     /// To override the contents of this collection use [`set_restart_needed`](Self::set_restart_needed).
     ///
-    /// <p>Filter criteria indicating whether the recommended action requires a resource restart.</p>
+    /// <p>Filter criteria indicating whether the recommended action requires a resource restart. Valid values are <code>true</code> and <code>false</code>. Values are case-sensitive unless you use an <code>IgnoreCase</code> comparison operator. For example, <code>StringEquals</code> with the value <code>False</code> matches no recommended actions.</p>
     pub fn restart_needed(mut self, input: crate::types::StringCriteriaCondition) -> Self {
         let mut v = self.restart_needed.unwrap_or_default();
         v.push(input);
         self.restart_needed = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Filter criteria indicating whether the recommended action requires a resource restart.</p>
+    /// <p>Filter criteria indicating whether the recommended action requires a resource restart. Valid values are <code>true</code> and <code>false</code>. Values are case-sensitive unless you use an <code>IgnoreCase</code> comparison operator. For example, <code>StringEquals</code> with the value <code>False</code> matches no recommended actions.</p>
     pub fn set_restart_needed(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::StringCriteriaCondition>>) -> Self {
         self.restart_needed = input;
         self
     }
-    /// <p>Filter criteria indicating whether the recommended action requires a resource restart.</p>
+    /// <p>Filter criteria indicating whether the recommended action requires a resource restart. Valid values are <code>true</code> and <code>false</code>. Values are case-sensitive unless you use an <code>IgnoreCase</code> comparison operator. For example, <code>StringEquals</code> with the value <code>False</code> matches no recommended actions.</p>
     pub fn get_restart_needed(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringCriteriaCondition>> {
         &self.restart_needed
     }

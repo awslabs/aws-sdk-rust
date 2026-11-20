@@ -4,8 +4,14 @@ pub use ::aws_types::request_id::RequestId;
 /// Types for the `AcceptChannelHandshake` operation.
 pub mod accept_channel_handshake;
 
+/// Types for the `CancelChannelContract` operation.
+pub mod cancel_channel_contract;
+
 /// Types for the `CancelChannelHandshake` operation.
 pub mod cancel_channel_handshake;
+
+/// Types for the `CreateChannelContract` operation.
+pub mod create_channel_contract;
 
 /// Types for the `CreateChannelHandshake` operation.
 pub mod create_channel_handshake;
@@ -22,8 +28,14 @@ pub mod delete_program_management_account;
 /// Types for the `DeleteRelationship` operation.
 pub mod delete_relationship;
 
+/// Types for the `GetChannelContract` operation.
+pub mod get_channel_contract;
+
 /// Types for the `GetRelationship` operation.
 pub mod get_relationship;
+
+/// Types for the `ListChannelContracts` operation.
+pub mod list_channel_contracts;
 
 /// Types for the `ListChannelHandshakes` operation.
 pub mod list_channel_handshakes;

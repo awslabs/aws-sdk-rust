@@ -37,6 +37,9 @@ pub struct CreateFirewallInput {
     /// <p>Optional. A setting indicating whether the firewall is protected against changes to its Availability Zone configuration. When set to <code>TRUE</code>, you cannot add or remove Availability Zones without first disabling this protection using <code>UpdateAvailabilityZoneChangeProtection</code>.</p>
     /// <p>Default value: <code>FALSE</code></p>
     pub availability_zone_change_protection: ::std::option::Option<bool>,
+    /// <p>Settings that make this firewall an internet gateway firewall. An internet gateway firewall inspects all traffic between a VPC and its internet gateway, without changes to your subnets or route tables. Amazon Web Services Network Security Manager creates and manages internet gateway firewalls on your behalf, so you don't include this setting when you create a standard Network Firewall firewall.</p>
+    /// <p>When this setting is present, <code>FirewallName</code> must equal the <code>VpcId</code>, <code>AvailabilityZoneMappings</code> is required and must use Availability Zone IDs, and you can't specify <code>SubnetMappings</code> or a transit gateway.</p>
+    pub igw_firewall_configuration: ::std::option::Option<crate::types::IgwFirewallConfiguration>,
     /// <p>The NAT gateways that Network Firewall creates for a proxy mode firewall, one for each Availability Zone. When you specify this, you create a proxy mode firewall. Destinations see the IP address of the NAT gateway in the client's Availability Zone as the source of the traffic.</p>
     /// <p>Specify one mapping for each Availability Zone in <code>VpcEndpoint</code>, and no other Availability Zones. Each NAT gateway subnet must be in the <code>VpcEndpoint</code> VPC and can't be one of the firewall endpoint subnets.</p>
     /// <p>You need permission to call the Amazon EC2 <code>CreateNatGateway</code> action.</p>
@@ -129,6 +132,11 @@ impl CreateFirewallInput {
     pub fn availability_zone_change_protection(&self) -> ::std::option::Option<bool> {
         self.availability_zone_change_protection
     }
+    /// <p>Settings that make this firewall an internet gateway firewall. An internet gateway firewall inspects all traffic between a VPC and its internet gateway, without changes to your subnets or route tables. Amazon Web Services Network Security Manager creates and manages internet gateway firewalls on your behalf, so you don't include this setting when you create a standard Network Firewall firewall.</p>
+    /// <p>When this setting is present, <code>FirewallName</code> must equal the <code>VpcId</code>, <code>AvailabilityZoneMappings</code> is required and must use Availability Zone IDs, and you can't specify <code>SubnetMappings</code> or a transit gateway.</p>
+    pub fn igw_firewall_configuration(&self) -> ::std::option::Option<&crate::types::IgwFirewallConfiguration> {
+        self.igw_firewall_configuration.as_ref()
+    }
     /// <p>The NAT gateways that Network Firewall creates for a proxy mode firewall, one for each Availability Zone. When you specify this, you create a proxy mode firewall. Destinations see the IP address of the NAT gateway in the client's Availability Zone as the source of the traffic.</p>
     /// <p>Specify one mapping for each Availability Zone in <code>VpcEndpoint</code>, and no other Availability Zones. Each NAT gateway subnet must be in the <code>VpcEndpoint</code> VPC and can't be one of the firewall endpoint subnets.</p>
     /// <p>You need permission to call the Amazon EC2 <code>CreateNatGateway</code> action.</p>
@@ -185,6 +193,7 @@ pub struct CreateFirewallInputBuilder {
     pub(crate) transit_gateway_id: ::std::option::Option<::std::string::String>,
     pub(crate) availability_zone_mappings: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZoneMapping>>,
     pub(crate) availability_zone_change_protection: ::std::option::Option<bool>,
+    pub(crate) igw_firewall_configuration: ::std::option::Option<crate::types::IgwFirewallConfiguration>,
     pub(crate) nat_gateway_create_mappings: ::std::option::Option<::std::vec::Vec<crate::types::NatGatewayCreateMapping>>,
     pub(crate) proxy_settings: ::std::option::Option<crate::types::ProxySettings>,
     pub(crate) vpc_endpoint: ::std::option::Option<crate::types::VpcEndpoint>,
@@ -431,6 +440,23 @@ impl CreateFirewallInputBuilder {
     pub fn get_availability_zone_change_protection(&self) -> &::std::option::Option<bool> {
         &self.availability_zone_change_protection
     }
+    /// <p>Settings that make this firewall an internet gateway firewall. An internet gateway firewall inspects all traffic between a VPC and its internet gateway, without changes to your subnets or route tables. Amazon Web Services Network Security Manager creates and manages internet gateway firewalls on your behalf, so you don't include this setting when you create a standard Network Firewall firewall.</p>
+    /// <p>When this setting is present, <code>FirewallName</code> must equal the <code>VpcId</code>, <code>AvailabilityZoneMappings</code> is required and must use Availability Zone IDs, and you can't specify <code>SubnetMappings</code> or a transit gateway.</p>
+    pub fn igw_firewall_configuration(mut self, input: crate::types::IgwFirewallConfiguration) -> Self {
+        self.igw_firewall_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Settings that make this firewall an internet gateway firewall. An internet gateway firewall inspects all traffic between a VPC and its internet gateway, without changes to your subnets or route tables. Amazon Web Services Network Security Manager creates and manages internet gateway firewalls on your behalf, so you don't include this setting when you create a standard Network Firewall firewall.</p>
+    /// <p>When this setting is present, <code>FirewallName</code> must equal the <code>VpcId</code>, <code>AvailabilityZoneMappings</code> is required and must use Availability Zone IDs, and you can't specify <code>SubnetMappings</code> or a transit gateway.</p>
+    pub fn set_igw_firewall_configuration(mut self, input: ::std::option::Option<crate::types::IgwFirewallConfiguration>) -> Self {
+        self.igw_firewall_configuration = input;
+        self
+    }
+    /// <p>Settings that make this firewall an internet gateway firewall. An internet gateway firewall inspects all traffic between a VPC and its internet gateway, without changes to your subnets or route tables. Amazon Web Services Network Security Manager creates and manages internet gateway firewalls on your behalf, so you don't include this setting when you create a standard Network Firewall firewall.</p>
+    /// <p>When this setting is present, <code>FirewallName</code> must equal the <code>VpcId</code>, <code>AvailabilityZoneMappings</code> is required and must use Availability Zone IDs, and you can't specify <code>SubnetMappings</code> or a transit gateway.</p>
+    pub fn get_igw_firewall_configuration(&self) -> &::std::option::Option<crate::types::IgwFirewallConfiguration> {
+        &self.igw_firewall_configuration
+    }
     /// Appends an item to `nat_gateway_create_mappings`.
     ///
     /// To override the contents of this collection use [`set_nat_gateway_create_mappings`](Self::set_nat_gateway_create_mappings).
@@ -548,6 +574,7 @@ impl CreateFirewallInputBuilder {
             transit_gateway_id: self.transit_gateway_id,
             availability_zone_mappings: self.availability_zone_mappings,
             availability_zone_change_protection: self.availability_zone_change_protection,
+            igw_firewall_configuration: self.igw_firewall_configuration,
             nat_gateway_create_mappings: self.nat_gateway_create_mappings,
             proxy_settings: self.proxy_settings,
             vpc_endpoint: self.vpc_endpoint,

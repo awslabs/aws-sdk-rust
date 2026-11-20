@@ -12,13 +12,13 @@ pub struct SageMakerModelFulfillmentOption {
     pub fulfillment_option_display_name: ::std::string::String,
     /// <p>The version identifier of the fulfillment option.</p>
     pub fulfillment_option_version: ::std::option::Option<::std::string::String>,
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub release_notes: ::std::option::Option<::std::string::String>,
     /// <p>Instructions on how to use this SageMaker model.</p>
     pub usage_instructions: ::std::option::Option<::std::string::String>,
-    /// <p>Recommended instance types for inference with this model.</p>
+    /// <p>The recommended instance types for inference with this model.</p>
     pub recommendation: ::std::option::Option<crate::types::SageMakerModelRecommendation>,
-    /// <p>The MIME types that this model accepts as input.</p>
+    /// <p>The Multipurpose Internet Mail Extensions (MIME) types that this model accepts as input.</p>
     pub supported_content_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The MIME types that this model returns as output.</p>
     pub supported_response_mime_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -42,7 +42,7 @@ impl SageMakerModelFulfillmentOption {
     pub fn fulfillment_option_version(&self) -> ::std::option::Option<&str> {
         self.fulfillment_option_version.as_deref()
     }
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub fn release_notes(&self) -> ::std::option::Option<&str> {
         self.release_notes.as_deref()
     }
@@ -50,11 +50,11 @@ impl SageMakerModelFulfillmentOption {
     pub fn usage_instructions(&self) -> ::std::option::Option<&str> {
         self.usage_instructions.as_deref()
     }
-    /// <p>Recommended instance types for inference with this model.</p>
+    /// <p>The recommended instance types for inference with this model.</p>
     pub fn recommendation(&self) -> ::std::option::Option<&crate::types::SageMakerModelRecommendation> {
         self.recommendation.as_ref()
     }
-    /// <p>The MIME types that this model accepts as input.</p>
+    /// <p>The Multipurpose Internet Mail Extensions (MIME) types that this model accepts as input.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.supported_content_types.is_none()`.
     pub fn supported_content_types(&self) -> &[::std::string::String] {
@@ -148,17 +148,17 @@ impl SageMakerModelFulfillmentOptionBuilder {
     pub fn get_fulfillment_option_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.fulfillment_option_version
     }
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub fn release_notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_notes = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub fn set_release_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_notes = input;
         self
     }
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub fn get_release_notes(&self) -> &::std::option::Option<::std::string::String> {
         &self.release_notes
     }
@@ -176,17 +176,17 @@ impl SageMakerModelFulfillmentOptionBuilder {
     pub fn get_usage_instructions(&self) -> &::std::option::Option<::std::string::String> {
         &self.usage_instructions
     }
-    /// <p>Recommended instance types for inference with this model.</p>
+    /// <p>The recommended instance types for inference with this model.</p>
     pub fn recommendation(mut self, input: crate::types::SageMakerModelRecommendation) -> Self {
         self.recommendation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Recommended instance types for inference with this model.</p>
+    /// <p>The recommended instance types for inference with this model.</p>
     pub fn set_recommendation(mut self, input: ::std::option::Option<crate::types::SageMakerModelRecommendation>) -> Self {
         self.recommendation = input;
         self
     }
-    /// <p>Recommended instance types for inference with this model.</p>
+    /// <p>The recommended instance types for inference with this model.</p>
     pub fn get_recommendation(&self) -> &::std::option::Option<crate::types::SageMakerModelRecommendation> {
         &self.recommendation
     }
@@ -194,19 +194,19 @@ impl SageMakerModelFulfillmentOptionBuilder {
     ///
     /// To override the contents of this collection use [`set_supported_content_types`](Self::set_supported_content_types).
     ///
-    /// <p>The MIME types that this model accepts as input.</p>
+    /// <p>The Multipurpose Internet Mail Extensions (MIME) types that this model accepts as input.</p>
     pub fn supported_content_types(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.supported_content_types.unwrap_or_default();
         v.push(input.into());
         self.supported_content_types = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The MIME types that this model accepts as input.</p>
+    /// <p>The Multipurpose Internet Mail Extensions (MIME) types that this model accepts as input.</p>
     pub fn set_supported_content_types(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.supported_content_types = input;
         self
     }
-    /// <p>The MIME types that this model accepts as input.</p>
+    /// <p>The Multipurpose Internet Mail Extensions (MIME) types that this model accepts as input.</p>
     pub fn get_supported_content_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.supported_content_types
     }

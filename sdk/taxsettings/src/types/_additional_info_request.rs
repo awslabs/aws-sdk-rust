@@ -59,6 +59,12 @@ pub struct AdditionalInfoRequest {
     pub germany_additional_info: ::std::option::Option<crate::types::GermanyAdditionalInfo>,
     /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in Mexico.</p>
     pub mexico_additional_info: ::std::option::Option<crate::types::MexicoAdditionalInfo>,
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in the United Arab Emirates.</p>
+    pub united_arab_emirates_additional_info: ::std::option::Option<crate::types::UnitedArabEmiratesAdditionalInfo>,
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in Norway.</p>
+    pub norway_additional_info: ::std::option::Option<crate::types::NorwayAdditionalInfo>,
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in New Zealand.</p>
+    pub new_zealand_additional_info: ::std::option::Option<crate::types::NewZealandAdditionalInfo>,
 }
 impl AdditionalInfoRequest {
     /// <p>Additional tax information to specify for a TRN in Malaysia.</p>
@@ -165,6 +171,18 @@ impl AdditionalInfoRequest {
     pub fn mexico_additional_info(&self) -> ::std::option::Option<&crate::types::MexicoAdditionalInfo> {
         self.mexico_additional_info.as_ref()
     }
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in the United Arab Emirates.</p>
+    pub fn united_arab_emirates_additional_info(&self) -> ::std::option::Option<&crate::types::UnitedArabEmiratesAdditionalInfo> {
+        self.united_arab_emirates_additional_info.as_ref()
+    }
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in Norway.</p>
+    pub fn norway_additional_info(&self) -> ::std::option::Option<&crate::types::NorwayAdditionalInfo> {
+        self.norway_additional_info.as_ref()
+    }
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in New Zealand.</p>
+    pub fn new_zealand_additional_info(&self) -> ::std::option::Option<&crate::types::NewZealandAdditionalInfo> {
+        self.new_zealand_additional_info.as_ref()
+    }
 }
 impl AdditionalInfoRequest {
     /// Creates a new builder-style object to manufacture [`AdditionalInfoRequest`](crate::types::AdditionalInfoRequest).
@@ -203,6 +221,9 @@ pub struct AdditionalInfoRequestBuilder {
     pub(crate) monaco_additional_info: ::std::option::Option<crate::types::MonacoAdditionalInfo>,
     pub(crate) germany_additional_info: ::std::option::Option<crate::types::GermanyAdditionalInfo>,
     pub(crate) mexico_additional_info: ::std::option::Option<crate::types::MexicoAdditionalInfo>,
+    pub(crate) united_arab_emirates_additional_info: ::std::option::Option<crate::types::UnitedArabEmiratesAdditionalInfo>,
+    pub(crate) norway_additional_info: ::std::option::Option<crate::types::NorwayAdditionalInfo>,
+    pub(crate) new_zealand_additional_info: ::std::option::Option<crate::types::NewZealandAdditionalInfo>,
 }
 impl AdditionalInfoRequestBuilder {
     /// <p>Additional tax information to specify for a TRN in Malaysia.</p>
@@ -569,6 +590,48 @@ impl AdditionalInfoRequestBuilder {
     pub fn get_mexico_additional_info(&self) -> &::std::option::Option<crate::types::MexicoAdditionalInfo> {
         &self.mexico_additional_info
     }
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in the United Arab Emirates.</p>
+    pub fn united_arab_emirates_additional_info(mut self, input: crate::types::UnitedArabEmiratesAdditionalInfo) -> Self {
+        self.united_arab_emirates_additional_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in the United Arab Emirates.</p>
+    pub fn set_united_arab_emirates_additional_info(mut self, input: ::std::option::Option<crate::types::UnitedArabEmiratesAdditionalInfo>) -> Self {
+        self.united_arab_emirates_additional_info = input;
+        self
+    }
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in the United Arab Emirates.</p>
+    pub fn get_united_arab_emirates_additional_info(&self) -> &::std::option::Option<crate::types::UnitedArabEmiratesAdditionalInfo> {
+        &self.united_arab_emirates_additional_info
+    }
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in Norway.</p>
+    pub fn norway_additional_info(mut self, input: crate::types::NorwayAdditionalInfo) -> Self {
+        self.norway_additional_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in Norway.</p>
+    pub fn set_norway_additional_info(mut self, input: ::std::option::Option<crate::types::NorwayAdditionalInfo>) -> Self {
+        self.norway_additional_info = input;
+        self
+    }
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in Norway.</p>
+    pub fn get_norway_additional_info(&self) -> &::std::option::Option<crate::types::NorwayAdditionalInfo> {
+        &self.norway_additional_info
+    }
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in New Zealand.</p>
+    pub fn new_zealand_additional_info(mut self, input: crate::types::NewZealandAdditionalInfo) -> Self {
+        self.new_zealand_additional_info = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in New Zealand.</p>
+    pub fn set_new_zealand_additional_info(mut self, input: ::std::option::Option<crate::types::NewZealandAdditionalInfo>) -> Self {
+        self.new_zealand_additional_info = input;
+        self
+    }
+    /// <p>Additional tax information to specify for a Tax Registration Number (TRN) in New Zealand.</p>
+    pub fn get_new_zealand_additional_info(&self) -> &::std::option::Option<crate::types::NewZealandAdditionalInfo> {
+        &self.new_zealand_additional_info
+    }
     /// Consumes the builder and constructs a [`AdditionalInfoRequest`](crate::types::AdditionalInfoRequest).
     pub fn build(self) -> crate::types::AdditionalInfoRequest {
         crate::types::AdditionalInfoRequest {
@@ -598,6 +661,9 @@ impl AdditionalInfoRequestBuilder {
             monaco_additional_info: self.monaco_additional_info,
             germany_additional_info: self.germany_additional_info,
             mexico_additional_info: self.mexico_additional_info,
+            united_arab_emirates_additional_info: self.united_arab_emirates_additional_info,
+            norway_additional_info: self.norway_additional_info,
+            new_zealand_additional_info: self.new_zealand_additional_info,
         }
     }
 }

@@ -17,6 +17,7 @@ pub struct Attachment {
     pub endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the firewall endpoint instantiation in the subnet.</p>
     /// <p>When this value is <code>READY</code>, the endpoint is available to handle network traffic. Otherwise, this value reflects its state, for example <code>CREATING</code> or <code>DELETING</code>.</p>
+    /// <p>For an internet gateway firewall, <code>STANDBY</code> indicates an Availability Zone that has no resources yet. Network Firewall provisions the endpoint there when the first resource is launched in that Availability Zone.</p>
     pub status: ::std::option::Option<crate::types::AttachmentStatus>,
     /// <p>If Network Firewall fails to create or delete the firewall endpoint in the subnet, it populates this with the reason for the error or failure and how to resolve it. A <code>FAILED</code> status indicates a non-recoverable state, and a <code>ERROR</code> status indicates an issue that you can fix. Depending on the error, it can take as many as 15 minutes to populate this field. For more information about the causes for failiure or errors and solutions available for this field, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html">Troubleshooting firewall endpoint failures</a> in the <i>Network Firewall Developer Guide</i>.</p>
     pub status_message: ::std::option::Option<::std::string::String>,
@@ -35,6 +36,7 @@ impl Attachment {
     }
     /// <p>The current status of the firewall endpoint instantiation in the subnet.</p>
     /// <p>When this value is <code>READY</code>, the endpoint is available to handle network traffic. Otherwise, this value reflects its state, for example <code>CREATING</code> or <code>DELETING</code>.</p>
+    /// <p>For an internet gateway firewall, <code>STANDBY</code> indicates an Availability Zone that has no resources yet. Network Firewall provisions the endpoint there when the first resource is launched in that Availability Zone.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::AttachmentStatus> {
         self.status.as_ref()
     }
@@ -96,18 +98,21 @@ impl AttachmentBuilder {
     }
     /// <p>The current status of the firewall endpoint instantiation in the subnet.</p>
     /// <p>When this value is <code>READY</code>, the endpoint is available to handle network traffic. Otherwise, this value reflects its state, for example <code>CREATING</code> or <code>DELETING</code>.</p>
+    /// <p>For an internet gateway firewall, <code>STANDBY</code> indicates an Availability Zone that has no resources yet. Network Firewall provisions the endpoint there when the first resource is launched in that Availability Zone.</p>
     pub fn status(mut self, input: crate::types::AttachmentStatus) -> Self {
         self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the firewall endpoint instantiation in the subnet.</p>
     /// <p>When this value is <code>READY</code>, the endpoint is available to handle network traffic. Otherwise, this value reflects its state, for example <code>CREATING</code> or <code>DELETING</code>.</p>
+    /// <p>For an internet gateway firewall, <code>STANDBY</code> indicates an Availability Zone that has no resources yet. Network Firewall provisions the endpoint there when the first resource is launched in that Availability Zone.</p>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::AttachmentStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The current status of the firewall endpoint instantiation in the subnet.</p>
     /// <p>When this value is <code>READY</code>, the endpoint is available to handle network traffic. Otherwise, this value reflects its state, for example <code>CREATING</code> or <code>DELETING</code>.</p>
+    /// <p>For an internet gateway firewall, <code>STANDBY</code> indicates an Availability Zone that has no resources yet. Network Firewall provisions the endpoint there when the first resource is launched in that Availability Zone.</p>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::AttachmentStatus> {
         &self.status
     }

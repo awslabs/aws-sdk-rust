@@ -16,6 +16,9 @@ pub fn ser_associate_firewall_policy_input_input(
     if let Some(var_4) = &input.firewall_policy_arn {
         encoder.str("FirewallPolicyArn").str(var_4.as_str());
     }
+    if let Some(var_5) = &input.firewall_type {
+        encoder.str("FirewallType").str(var_5.as_str());
+    }
     encoder.end();
     Ok(())
 }

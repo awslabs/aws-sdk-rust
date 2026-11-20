@@ -283,8 +283,6 @@ pub mod customize;
 
 mod delete_asset;
 
-mod delete_asset_type;
-
 mod delete_attachment;
 
 mod delete_blueprint;
@@ -634,8 +632,6 @@ mod modify_integration;
 mod publish_data_quality_result_v2;
 
 mod put_asset;
-
-mod put_asset_type;
 
 mod put_attachment;
 

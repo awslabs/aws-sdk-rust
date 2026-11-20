@@ -43,6 +43,17 @@ static LISTFOUNDATIONMODELSINPUT_MEMBER_BY_INFERENCE_TYPE: ::aws_smithy_schema::
     3,
 )
 .with_http_query("byInferenceType");
+static LISTFOUNDATIONMODELSINPUT_MEMBER_PROJECT_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.bedrock.synthetic#ListFoundationModelsInput$projectIdentifier",
+        "com.amazonaws.bedrock.synthetic",
+        "ListFoundationModelsInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "projectIdentifier",
+    4,
+)
+.with_http_query("projectIdentifier");
 static LISTFOUNDATIONMODELSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.bedrock.synthetic#ListFoundationModelsInput",
@@ -55,6 +66,7 @@ static LISTFOUNDATIONMODELSINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = 
         &LISTFOUNDATIONMODELSINPUT_MEMBER_BY_CUSTOMIZATION_TYPE,
         &LISTFOUNDATIONMODELSINPUT_MEMBER_BY_OUTPUT_MODALITY,
         &LISTFOUNDATIONMODELSINPUT_MEMBER_BY_INFERENCE_TYPE,
+        &LISTFOUNDATIONMODELSINPUT_MEMBER_PROJECT_IDENTIFIER,
     ],
 )
 .with_http(aws_smithy_schema::traits::HttpTrait::new("GET", "/foundation-models", None))
@@ -86,6 +98,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::list_f
         }
         if let Some(ref val) = self.by_inference_type {
             ser.write_string(&LISTFOUNDATIONMODELSINPUT_MEMBER_BY_INFERENCE_TYPE, val.as_str())?;
+        }
+        if let Some(ref val) = self.project_identifier {
+            ser.write_string(&LISTFOUNDATIONMODELSINPUT_MEMBER_PROJECT_IDENTIFIER, val)?;
         }
         Ok(())
     }
@@ -130,6 +145,13 @@ impl crate::operation::list_foundation_models::builders::ListFoundationModelsInp
                         deser.read_null()?;
                     } else {
                         self.by_inference_type = Some(crate::types::InferenceType::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.project_identifier = Some(deser.read_string(member)?);
                     }
                 }
                 _ => {}

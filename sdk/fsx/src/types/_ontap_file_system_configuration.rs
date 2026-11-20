@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct OntapFileSystemConfiguration {
-    /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
+    /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups and deletes all existing automatic backups for the file system's volumes. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
     pub automatic_backup_retention_days: ::std::option::Option<i32>,
     /// <p>A recurring daily time, in the format <code>HH:MM</code>. <code>HH</code> is the zero-padded hour of the day (0-23), and <code>MM</code> is the zero-padded minute of the hour. For example, <code>05:00</code> specifies 5 AM daily.</p>
     pub daily_automatic_backup_start_time: ::std::option::Option<::std::string::String>,
@@ -18,6 +18,10 @@ pub struct OntapFileSystemConfiguration {
     /// <p><code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy. This is a first-generation FSx for ONTAP file system.</p></li>
     /// <li>
     /// <p><code>SINGLE_AZ_2</code> - A file system configured with multiple high-availability (HA) pairs for Single-AZ redundancy. This is a second-generation FSx for ONTAP file system.</p></li>
+    /// <li>
+    /// <p><code>MULTI_AZ_3</code> - A high availability file system configured for Multi-AZ redundancy to tolerate temporary AZ unavailability. This is a third-generation FSx for ONTAP file system.</p></li>
+    /// <li>
+    /// <p><code>SINGLE_AZ_3</code> - A file system configured with multiple high-availability (HA) pairs for Single-AZ redundancy. This is a third-generation FSx for ONTAP file system.</p></li>
     /// </ul>
     /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or Single-AZ file system deployment</a>.</p>
     pub deployment_type: ::std::option::Option<crate::types::OntapDeploymentType>,
@@ -44,7 +48,7 @@ pub struct OntapFileSystemConfiguration {
     /// <li>
     /// <p>The value of <code>HAPairs</code> is less than 1 or greater than 12.</p></li>
     /// <li>
-    /// <p>The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code>, <code>MULTI_AZ_1</code>, or <code>MULTI_AZ_2</code>.</p></li>
+    /// <p>The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code>, <code>MULTI_AZ_1</code>, <code>MULTI_AZ_2</code>, or <code>MULTI_AZ_3</code>.</p></li>
     /// </ul>
     pub ha_pairs: ::std::option::Option<i32>,
     /// <p>Use to choose the throughput capacity per HA pair. When the value of <code>HAPairs</code> is equal to 1, the value of <code>ThroughputCapacityPerHAPair</code> is the total throughput for the file system.</p>
@@ -57,13 +61,17 @@ pub struct OntapFileSystemConfiguration {
     /// <p>For <code>SINGLE_AZ_2</code>, valid values are 1536, 3072, or 6144 MBps.</p></li>
     /// <li>
     /// <p>For <code>MULTI_AZ_2</code>, valid values are 384, 768, 1536, 3072, or 6144 MBps.</p></li>
+    /// <li>
+    /// <p>For <code>SINGLE_AZ_3</code>, valid values are 1536, 3072, 6144, 12288, or 18432 MBps.</p></li>
+    /// <li>
+    /// <p>For <code>MULTI_AZ_3</code>, valid values are 384, 768, 1536, 3072, 6144, 12288, or 18432 MBps.</p></li>
     /// </ul>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p></li>
     /// <li>
-    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is not a valid HA pair (a value between 1 and 12).</p></li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> or <code>SINGLE_AZ_3</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is not a valid HA pair (a value between 1 and 12).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>
@@ -72,7 +80,7 @@ pub struct OntapFileSystemConfiguration {
     pub endpoint_ipv6_address_range: ::std::option::Option<::std::string::String>,
 }
 impl OntapFileSystemConfiguration {
-    /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
+    /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups and deletes all existing automatic backups for the file system's volumes. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
     pub fn automatic_backup_retention_days(&self) -> ::std::option::Option<i32> {
         self.automatic_backup_retention_days
     }
@@ -90,6 +98,10 @@ impl OntapFileSystemConfiguration {
     /// <p><code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy. This is a first-generation FSx for ONTAP file system.</p></li>
     /// <li>
     /// <p><code>SINGLE_AZ_2</code> - A file system configured with multiple high-availability (HA) pairs for Single-AZ redundancy. This is a second-generation FSx for ONTAP file system.</p></li>
+    /// <li>
+    /// <p><code>MULTI_AZ_3</code> - A high availability file system configured for Multi-AZ redundancy to tolerate temporary AZ unavailability. This is a third-generation FSx for ONTAP file system.</p></li>
+    /// <li>
+    /// <p><code>SINGLE_AZ_3</code> - A file system configured with multiple high-availability (HA) pairs for Single-AZ redundancy. This is a third-generation FSx for ONTAP file system.</p></li>
     /// </ul>
     /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or Single-AZ file system deployment</a>.</p>
     pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::OntapDeploymentType> {
@@ -136,7 +148,7 @@ impl OntapFileSystemConfiguration {
     /// <li>
     /// <p>The value of <code>HAPairs</code> is less than 1 or greater than 12.</p></li>
     /// <li>
-    /// <p>The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code>, <code>MULTI_AZ_1</code>, or <code>MULTI_AZ_2</code>.</p></li>
+    /// <p>The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code>, <code>MULTI_AZ_1</code>, <code>MULTI_AZ_2</code>, or <code>MULTI_AZ_3</code>.</p></li>
     /// </ul>
     pub fn ha_pairs(&self) -> ::std::option::Option<i32> {
         self.ha_pairs
@@ -151,13 +163,17 @@ impl OntapFileSystemConfiguration {
     /// <p>For <code>SINGLE_AZ_2</code>, valid values are 1536, 3072, or 6144 MBps.</p></li>
     /// <li>
     /// <p>For <code>MULTI_AZ_2</code>, valid values are 384, 768, 1536, 3072, or 6144 MBps.</p></li>
+    /// <li>
+    /// <p>For <code>SINGLE_AZ_3</code>, valid values are 1536, 3072, 6144, 12288, or 18432 MBps.</p></li>
+    /// <li>
+    /// <p>For <code>MULTI_AZ_3</code>, valid values are 384, 768, 1536, 3072, 6144, 12288, or 18432 MBps.</p></li>
     /// </ul>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p></li>
     /// <li>
-    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is not a valid HA pair (a value between 1 and 12).</p></li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> or <code>SINGLE_AZ_3</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is not a valid HA pair (a value between 1 and 12).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>
@@ -216,17 +232,17 @@ pub struct OntapFileSystemConfigurationBuilder {
     pub(crate) endpoint_ipv6_address_range: ::std::option::Option<::std::string::String>,
 }
 impl OntapFileSystemConfigurationBuilder {
-    /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
+    /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups and deletes all existing automatic backups for the file system's volumes. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
     pub fn automatic_backup_retention_days(mut self, input: i32) -> Self {
         self.automatic_backup_retention_days = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
+    /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups and deletes all existing automatic backups for the file system's volumes. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
     pub fn set_automatic_backup_retention_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.automatic_backup_retention_days = input;
         self
     }
-    /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
+    /// <p>The number of days to retain automatic backups. Setting this property to <code>0</code> disables automatic backups and deletes all existing automatic backups for the file system's volumes. You can retain automatic backups for a maximum of 90 days. The default is <code>30</code>.</p>
     pub fn get_automatic_backup_retention_days(&self) -> &::std::option::Option<i32> {
         &self.automatic_backup_retention_days
     }
@@ -254,6 +270,10 @@ impl OntapFileSystemConfigurationBuilder {
     /// <p><code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy. This is a first-generation FSx for ONTAP file system.</p></li>
     /// <li>
     /// <p><code>SINGLE_AZ_2</code> - A file system configured with multiple high-availability (HA) pairs for Single-AZ redundancy. This is a second-generation FSx for ONTAP file system.</p></li>
+    /// <li>
+    /// <p><code>MULTI_AZ_3</code> - A high availability file system configured for Multi-AZ redundancy to tolerate temporary AZ unavailability. This is a third-generation FSx for ONTAP file system.</p></li>
+    /// <li>
+    /// <p><code>SINGLE_AZ_3</code> - A file system configured with multiple high-availability (HA) pairs for Single-AZ redundancy. This is a third-generation FSx for ONTAP file system.</p></li>
     /// </ul>
     /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or Single-AZ file system deployment</a>.</p>
     pub fn deployment_type(mut self, input: crate::types::OntapDeploymentType) -> Self {
@@ -270,6 +290,10 @@ impl OntapFileSystemConfigurationBuilder {
     /// <p><code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy. This is a first-generation FSx for ONTAP file system.</p></li>
     /// <li>
     /// <p><code>SINGLE_AZ_2</code> - A file system configured with multiple high-availability (HA) pairs for Single-AZ redundancy. This is a second-generation FSx for ONTAP file system.</p></li>
+    /// <li>
+    /// <p><code>MULTI_AZ_3</code> - A high availability file system configured for Multi-AZ redundancy to tolerate temporary AZ unavailability. This is a third-generation FSx for ONTAP file system.</p></li>
+    /// <li>
+    /// <p><code>SINGLE_AZ_3</code> - A file system configured with multiple high-availability (HA) pairs for Single-AZ redundancy. This is a third-generation FSx for ONTAP file system.</p></li>
     /// </ul>
     /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or Single-AZ file system deployment</a>.</p>
     pub fn set_deployment_type(mut self, input: ::std::option::Option<crate::types::OntapDeploymentType>) -> Self {
@@ -286,6 +310,10 @@ impl OntapFileSystemConfigurationBuilder {
     /// <p><code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy. This is a first-generation FSx for ONTAP file system.</p></li>
     /// <li>
     /// <p><code>SINGLE_AZ_2</code> - A file system configured with multiple high-availability (HA) pairs for Single-AZ redundancy. This is a second-generation FSx for ONTAP file system.</p></li>
+    /// <li>
+    /// <p><code>MULTI_AZ_3</code> - A high availability file system configured for Multi-AZ redundancy to tolerate temporary AZ unavailability. This is a third-generation FSx for ONTAP file system.</p></li>
+    /// <li>
+    /// <p><code>SINGLE_AZ_3</code> - A file system configured with multiple high-availability (HA) pairs for Single-AZ redundancy. This is a third-generation FSx for ONTAP file system.</p></li>
     /// </ul>
     /// <p>For information about the use cases for Multi-AZ and Single-AZ deployments, refer to <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/high-availability-multiAZ.html">Choosing Multi-AZ or Single-AZ file system deployment</a>.</p>
     pub fn get_deployment_type(&self) -> &::std::option::Option<crate::types::OntapDeploymentType> {
@@ -418,7 +446,7 @@ impl OntapFileSystemConfigurationBuilder {
     /// <li>
     /// <p>The value of <code>HAPairs</code> is less than 1 or greater than 12.</p></li>
     /// <li>
-    /// <p>The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code>, <code>MULTI_AZ_1</code>, or <code>MULTI_AZ_2</code>.</p></li>
+    /// <p>The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code>, <code>MULTI_AZ_1</code>, <code>MULTI_AZ_2</code>, or <code>MULTI_AZ_3</code>.</p></li>
     /// </ul>
     pub fn ha_pairs(mut self, input: i32) -> Self {
         self.ha_pairs = ::std::option::Option::Some(input);
@@ -430,7 +458,7 @@ impl OntapFileSystemConfigurationBuilder {
     /// <li>
     /// <p>The value of <code>HAPairs</code> is less than 1 or greater than 12.</p></li>
     /// <li>
-    /// <p>The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code>, <code>MULTI_AZ_1</code>, or <code>MULTI_AZ_2</code>.</p></li>
+    /// <p>The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code>, <code>MULTI_AZ_1</code>, <code>MULTI_AZ_2</code>, or <code>MULTI_AZ_3</code>.</p></li>
     /// </ul>
     pub fn set_ha_pairs(mut self, input: ::std::option::Option<i32>) -> Self {
         self.ha_pairs = input;
@@ -442,7 +470,7 @@ impl OntapFileSystemConfigurationBuilder {
     /// <li>
     /// <p>The value of <code>HAPairs</code> is less than 1 or greater than 12.</p></li>
     /// <li>
-    /// <p>The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code>, <code>MULTI_AZ_1</code>, or <code>MULTI_AZ_2</code>.</p></li>
+    /// <p>The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code> is <code>SINGLE_AZ_1</code>, <code>MULTI_AZ_1</code>, <code>MULTI_AZ_2</code>, or <code>MULTI_AZ_3</code>.</p></li>
     /// </ul>
     pub fn get_ha_pairs(&self) -> &::std::option::Option<i32> {
         &self.ha_pairs
@@ -457,13 +485,17 @@ impl OntapFileSystemConfigurationBuilder {
     /// <p>For <code>SINGLE_AZ_2</code>, valid values are 1536, 3072, or 6144 MBps.</p></li>
     /// <li>
     /// <p>For <code>MULTI_AZ_2</code>, valid values are 384, 768, 1536, 3072, or 6144 MBps.</p></li>
+    /// <li>
+    /// <p>For <code>SINGLE_AZ_3</code>, valid values are 1536, 3072, 6144, 12288, or 18432 MBps.</p></li>
+    /// <li>
+    /// <p>For <code>MULTI_AZ_3</code>, valid values are 384, 768, 1536, 3072, 6144, 12288, or 18432 MBps.</p></li>
     /// </ul>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p></li>
     /// <li>
-    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is not a valid HA pair (a value between 1 and 12).</p></li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> or <code>SINGLE_AZ_3</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is not a valid HA pair (a value between 1 and 12).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>
@@ -481,13 +513,17 @@ impl OntapFileSystemConfigurationBuilder {
     /// <p>For <code>SINGLE_AZ_2</code>, valid values are 1536, 3072, or 6144 MBps.</p></li>
     /// <li>
     /// <p>For <code>MULTI_AZ_2</code>, valid values are 384, 768, 1536, 3072, or 6144 MBps.</p></li>
+    /// <li>
+    /// <p>For <code>SINGLE_AZ_3</code>, valid values are 1536, 3072, 6144, 12288, or 18432 MBps.</p></li>
+    /// <li>
+    /// <p>For <code>MULTI_AZ_3</code>, valid values are 384, 768, 1536, 3072, 6144, 12288, or 18432 MBps.</p></li>
     /// </ul>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p></li>
     /// <li>
-    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is not a valid HA pair (a value between 1 and 12).</p></li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> or <code>SINGLE_AZ_3</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is not a valid HA pair (a value between 1 and 12).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>
@@ -505,13 +541,17 @@ impl OntapFileSystemConfigurationBuilder {
     /// <p>For <code>SINGLE_AZ_2</code>, valid values are 1536, 3072, or 6144 MBps.</p></li>
     /// <li>
     /// <p>For <code>MULTI_AZ_2</code>, valid values are 384, 768, 1536, 3072, or 6144 MBps.</p></li>
+    /// <li>
+    /// <p>For <code>SINGLE_AZ_3</code>, valid values are 1536, 3072, 6144, 12288, or 18432 MBps.</p></li>
+    /// <li>
+    /// <p>For <code>MULTI_AZ_3</code>, valid values are 384, 768, 1536, 3072, 6144, 12288, or 18432 MBps.</p></li>
     /// </ul>
     /// <p>Amazon FSx responds with an HTTP status code 400 (Bad Request) for the following conditions:</p>
     /// <ul>
     /// <li>
     /// <p>The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code> are not the same value.</p></li>
     /// <li>
-    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is not a valid HA pair (a value between 1 and 12).</p></li>
+    /// <p>The value of deployment type is <code>SINGLE_AZ_2</code> or <code>SINGLE_AZ_3</code> and <code>ThroughputCapacity</code> / <code>ThroughputCapacityPerHAPair</code> is not a valid HA pair (a value between 1 and 12).</p></li>
     /// <li>
     /// <p>The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.</p></li>
     /// </ul>

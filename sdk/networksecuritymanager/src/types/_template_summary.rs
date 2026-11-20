@@ -10,6 +10,14 @@ pub struct TemplateSummary {
     pub template_arn: ::std::string::String,
     /// <p>The name of the template.</p>
     pub template_name: ::std::string::String,
+    /// <p>The owner of the template. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOMER</code> – The template is in your account.</p></li>
+    /// <li>
+    /// <p><code>AWS</code> – The template is an AWS managed template.</p></li>
+    /// </ul>
+    pub template_owner: ::std::option::Option<crate::types::TemplateOwner>,
     /// <p>The current status of the resource: <code>DRAFT</code> (unpublished, editable) or <code>ACTIVE</code> (published, in use).</p>
     pub status: ::std::option::Option<crate::types::EntityStatus>,
     /// <p>The version of the resource.</p>
@@ -36,6 +44,16 @@ impl TemplateSummary {
     pub fn template_name(&self) -> &str {
         use std::ops::Deref;
         self.template_name.deref()
+    }
+    /// <p>The owner of the template. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOMER</code> – The template is in your account.</p></li>
+    /// <li>
+    /// <p><code>AWS</code> – The template is an AWS managed template.</p></li>
+    /// </ul>
+    pub fn template_owner(&self) -> ::std::option::Option<&crate::types::TemplateOwner> {
+        self.template_owner.as_ref()
     }
     /// <p>The current status of the resource: <code>DRAFT</code> (unpublished, editable) or <code>ACTIVE</code> (published, in use).</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::EntityStatus> {
@@ -72,6 +90,7 @@ pub struct TemplateSummaryBuilder {
     pub(crate) template_id: ::std::option::Option<::std::string::String>,
     pub(crate) template_arn: ::std::option::Option<::std::string::String>,
     pub(crate) template_name: ::std::option::Option<::std::string::String>,
+    pub(crate) template_owner: ::std::option::Option<crate::types::TemplateOwner>,
     pub(crate) status: ::std::option::Option<crate::types::EntityStatus>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) has_published_version: ::std::option::Option<bool>,
@@ -123,6 +142,38 @@ impl TemplateSummaryBuilder {
     /// <p>The name of the template.</p>
     pub fn get_template_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.template_name
+    }
+    /// <p>The owner of the template. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOMER</code> – The template is in your account.</p></li>
+    /// <li>
+    /// <p><code>AWS</code> – The template is an AWS managed template.</p></li>
+    /// </ul>
+    pub fn template_owner(mut self, input: crate::types::TemplateOwner) -> Self {
+        self.template_owner = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The owner of the template. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOMER</code> – The template is in your account.</p></li>
+    /// <li>
+    /// <p><code>AWS</code> – The template is an AWS managed template.</p></li>
+    /// </ul>
+    pub fn set_template_owner(mut self, input: ::std::option::Option<crate::types::TemplateOwner>) -> Self {
+        self.template_owner = input;
+        self
+    }
+    /// <p>The owner of the template. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOMER</code> – The template is in your account.</p></li>
+    /// <li>
+    /// <p><code>AWS</code> – The template is an AWS managed template.</p></li>
+    /// </ul>
+    pub fn get_template_owner(&self) -> &::std::option::Option<crate::types::TemplateOwner> {
+        &self.template_owner
     }
     /// <p>The current status of the resource: <code>DRAFT</code> (unpublished, editable) or <code>ACTIVE</code> (published, in use).</p>
     pub fn status(mut self, input: crate::types::EntityStatus) -> Self {
@@ -219,6 +270,7 @@ impl TemplateSummaryBuilder {
                     "template_name was not specified but it is required when building TemplateSummary",
                 )
             })?,
+            template_owner: self.template_owner,
             status: self.status,
             version: self.version,
             has_published_version: self.has_published_version,

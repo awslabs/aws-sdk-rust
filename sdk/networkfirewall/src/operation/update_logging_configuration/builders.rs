@@ -153,6 +153,41 @@ impl UpdateLoggingConfigurationFluentBuilder {
     pub fn get_firewall_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_firewall_name()
     }
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub fn firewall_type(mut self, input: crate::types::FirewallType) -> Self {
+        self.inner = self.inner.firewall_type(input);
+        self
+    }
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub fn set_firewall_type(mut self, input: ::std::option::Option<crate::types::FirewallType>) -> Self {
+        self.inner = self.inner.set_firewall_type(input);
+        self
+    }
+    /// <p>The type of firewall that the request targets. Network Firewall supports the following firewall types:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - An internet gateway firewall, which Amazon Web Services Network Security Manager creates and manages for a VPC.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - A standard Network Firewall firewall.</p></li>
+    /// </ul>
+    /// <p>If you specify the firewall ARN, the type must match the resource type in the ARN. If you specify only the firewall name, Network Firewall uses this value to identify the firewall. If you don't specify a type, the default is <code>FIREWALL</code>.</p>
+    pub fn get_firewall_type(&self) -> &::std::option::Option<crate::types::FirewallType> {
+        self.inner.get_firewall_type()
+    }
     /// <p>Defines how Network Firewall performs logging for a firewall. If you omit this setting, Network Firewall disables logging for the firewall.</p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
         self.inner = self.inner.logging_configuration(input);

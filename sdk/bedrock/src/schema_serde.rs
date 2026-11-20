@@ -13,6 +13,10 @@ pub(crate) mod shape_advanced_prompt_optimization_output_config;
 
 pub(crate) mod shape_agreement_availability;
 
+pub(crate) mod shape_archive_project_input_input;
+
+pub(crate) mod shape_archive_project_output_output;
+
 pub(crate) mod shape_automated_evaluation_config;
 
 pub(crate) mod shape_automated_evaluation_custom_metric_config;
@@ -283,6 +287,10 @@ pub(crate) mod shape_create_model_invocation_job_input_input;
 
 pub(crate) mod shape_create_model_invocation_job_output_output;
 
+pub(crate) mod shape_create_project_input_input;
+
+pub(crate) mod shape_create_project_output_output;
+
 pub(crate) mod shape_create_prompt_router_input_input;
 
 pub(crate) mod shape_create_prompt_router_output_output;
@@ -310,6 +318,12 @@ pub(crate) mod shape_custom_model_units;
 pub(crate) mod shape_customization_config;
 
 pub(crate) mod shape_data_processing_details;
+
+pub(crate) mod shape_data_retention_storage_configuration;
+
+pub(crate) mod shape_delete_account_data_retention_storage_input_input;
+
+pub(crate) mod shape_delete_account_data_retention_storage_output_output;
 
 pub(crate) mod shape_delete_automated_reasoning_policy_build_workflow_input_input;
 
@@ -358,6 +372,14 @@ pub(crate) mod shape_delete_marketplace_model_endpoint_output_output;
 pub(crate) mod shape_delete_model_invocation_logging_configuration_input_input;
 
 pub(crate) mod shape_delete_model_invocation_logging_configuration_output_output;
+
+pub(crate) mod shape_delete_organization_data_retention_storage_input_input;
+
+pub(crate) mod shape_delete_organization_data_retention_storage_output_output;
+
+pub(crate) mod shape_delete_project_data_retention_storage_input_input;
+
+pub(crate) mod shape_delete_project_data_retention_storage_output_output;
 
 pub(crate) mod shape_delete_prompt_router_input_input;
 
@@ -440,6 +462,10 @@ pub(crate) mod shape_generation_configuration;
 pub(crate) mod shape_get_account_data_retention_input_input;
 
 pub(crate) mod shape_get_account_data_retention_output_output;
+
+pub(crate) mod shape_get_account_data_retention_storage_input_input;
+
+pub(crate) mod shape_get_account_data_retention_storage_output_output;
 
 pub(crate) mod shape_get_advanced_prompt_optimization_job_input_input;
 
@@ -529,6 +555,18 @@ pub(crate) mod shape_get_model_invocation_logging_configuration_input_input;
 
 pub(crate) mod shape_get_model_invocation_logging_configuration_output_output;
 
+pub(crate) mod shape_get_organization_data_retention_storage_input_input;
+
+pub(crate) mod shape_get_organization_data_retention_storage_output_output;
+
+pub(crate) mod shape_get_project_data_retention_storage_input_input;
+
+pub(crate) mod shape_get_project_data_retention_storage_output_output;
+
+pub(crate) mod shape_get_project_input_input;
+
+pub(crate) mod shape_get_project_output_output;
+
 pub(crate) mod shape_get_prompt_router_input_input;
 
 pub(crate) mod shape_get_prompt_router_output_output;
@@ -540,6 +578,22 @@ pub(crate) mod shape_get_provisioned_model_throughput_output_output;
 pub(crate) mod shape_get_resource_policy_input_input;
 
 pub(crate) mod shape_get_resource_policy_output_output;
+
+pub(crate) mod shape_get_trusted_access_program_account_enrollment_input_input;
+
+pub(crate) mod shape_get_trusted_access_program_account_enrollment_output_output;
+
+pub(crate) mod shape_get_trusted_access_program_input_input;
+
+pub(crate) mod shape_get_trusted_access_program_organization_enrollment_input_input;
+
+pub(crate) mod shape_get_trusted_access_program_organization_enrollment_output_output;
+
+pub(crate) mod shape_get_trusted_access_program_output_output;
+
+pub(crate) mod shape_get_trusted_access_program_project_enrollment_input_input;
+
+pub(crate) mod shape_get_trusted_access_program_project_enrollment_output_output;
 
 pub(crate) mod shape_get_use_case_for_model_access_input_input;
 
@@ -733,6 +787,10 @@ pub(crate) mod shape_list_model_invocation_jobs_input_input;
 
 pub(crate) mod shape_list_model_invocation_jobs_output_output;
 
+pub(crate) mod shape_list_projects_input_input;
+
+pub(crate) mod shape_list_projects_output_output;
+
 pub(crate) mod shape_list_prompt_routers_input_input;
 
 pub(crate) mod shape_list_prompt_routers_output_output;
@@ -744,6 +802,10 @@ pub(crate) mod shape_list_provisioned_model_throughputs_output_output;
 pub(crate) mod shape_list_tags_for_resource_input_input;
 
 pub(crate) mod shape_list_tags_for_resource_output_output;
+
+pub(crate) mod shape_list_trusted_access_programs_input_input;
+
+pub(crate) mod shape_list_trusted_access_programs_output_output;
 
 pub(crate) mod shape_logging_config;
 
@@ -789,6 +851,10 @@ pub(crate) mod shape_performance_configuration;
 
 pub(crate) mod shape_pricing_term;
 
+pub(crate) mod shape_project_data_retention;
+
+pub(crate) mod shape_project_summary;
+
 pub(crate) mod shape_prompt_router_summary;
 
 pub(crate) mod shape_prompt_router_target_model;
@@ -801,6 +867,10 @@ pub(crate) mod shape_put_account_data_retention_input_input;
 
 pub(crate) mod shape_put_account_data_retention_output_output;
 
+pub(crate) mod shape_put_account_data_retention_storage_input_input;
+
+pub(crate) mod shape_put_account_data_retention_storage_output_output;
+
 pub(crate) mod shape_put_enforced_guardrail_configuration_input_input;
 
 pub(crate) mod shape_put_enforced_guardrail_configuration_output_output;
@@ -809,9 +879,29 @@ pub(crate) mod shape_put_model_invocation_logging_configuration_input_input;
 
 pub(crate) mod shape_put_model_invocation_logging_configuration_output_output;
 
+pub(crate) mod shape_put_organization_data_retention_storage_input_input;
+
+pub(crate) mod shape_put_organization_data_retention_storage_output_output;
+
+pub(crate) mod shape_put_project_data_retention_storage_input_input;
+
+pub(crate) mod shape_put_project_data_retention_storage_output_output;
+
 pub(crate) mod shape_put_resource_policy_input_input;
 
 pub(crate) mod shape_put_resource_policy_output_output;
+
+pub(crate) mod shape_put_trusted_access_program_account_enrollment_input_input;
+
+pub(crate) mod shape_put_trusted_access_program_account_enrollment_output_output;
+
+pub(crate) mod shape_put_trusted_access_program_organization_enrollment_input_input;
+
+pub(crate) mod shape_put_trusted_access_program_organization_enrollment_output_output;
+
+pub(crate) mod shape_put_trusted_access_program_project_enrollment_input_input;
+
+pub(crate) mod shape_put_trusted_access_program_project_enrollment_output_output;
 
 pub(crate) mod shape_put_use_case_for_model_access_input_input;
 
@@ -873,6 +963,18 @@ pub(crate) mod shape_start_automated_reasoning_policy_test_workflow_input_input;
 
 pub(crate) mod shape_start_automated_reasoning_policy_test_workflow_output_output;
 
+pub(crate) mod shape_start_trusted_access_program_account_application_input_input;
+
+pub(crate) mod shape_start_trusted_access_program_account_application_output_output;
+
+pub(crate) mod shape_start_trusted_access_program_organization_application_input_input;
+
+pub(crate) mod shape_start_trusted_access_program_organization_application_output_output;
+
+pub(crate) mod shape_start_trusted_access_program_project_application_input_input;
+
+pub(crate) mod shape_start_trusted_access_program_project_application_output_output;
+
 pub(crate) mod shape_status_details;
 
 pub(crate) mod shape_stop_advanced_prompt_optimization_job_input_input;
@@ -915,6 +1017,14 @@ pub(crate) mod shape_training_details;
 
 pub(crate) mod shape_training_metrics;
 
+pub(crate) mod shape_trusted_access_program_application_result;
+
+pub(crate) mod shape_trusted_access_program_provider_handoff;
+
+pub(crate) mod shape_trusted_access_program_summary;
+
+pub(crate) mod shape_trusted_access_resolution_context;
+
 pub(crate) mod shape_untag_resource_input_input;
 
 pub(crate) mod shape_untag_resource_output_output;
@@ -942,6 +1052,10 @@ pub(crate) mod shape_update_guardrail_output_output;
 pub(crate) mod shape_update_marketplace_model_endpoint_input_input;
 
 pub(crate) mod shape_update_marketplace_model_endpoint_output_output;
+
+pub(crate) mod shape_update_project_input_input;
+
+pub(crate) mod shape_update_project_output_output;
 
 pub(crate) mod shape_update_provisioned_model_throughput_input_input;
 

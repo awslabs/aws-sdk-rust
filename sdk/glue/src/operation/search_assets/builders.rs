@@ -22,7 +22,7 @@ impl crate::operation::search_assets::builders::SearchAssetsInputBuilder {
 }
 /// Fluent builder constructing a request to `SearchAssets`.
 ///
-/// <p>Searches for assets in Glue Data Catalog using full-text search, filters, sorting, and aggregations. Returns matching assets with relevance-ranked results.</p>
+/// <p>Searches for assets in Glue Data Catalog using full-text search, filters, and sorting. Returns matching assets with relevance-ranked results.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct SearchAssetsFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,

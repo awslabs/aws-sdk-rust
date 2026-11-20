@@ -16,6 +16,7 @@
 ///     FirewallStatusValue::Failed => { /* ... */ },
 ///     FirewallStatusValue::Provisioning => { /* ... */ },
 ///     FirewallStatusValue::Ready => { /* ... */ },
+///     FirewallStatusValue::Standby => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -52,6 +53,8 @@ pub enum FirewallStatusValue {
     Provisioning,
     #[allow(missing_docs)] // documentation missing in model
     Ready,
+    #[allow(missing_docs)] // documentation missing in model
+    Standby,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -63,6 +66,7 @@ impl ::std::convert::From<&str> for FirewallStatusValue {
             "FAILED" => FirewallStatusValue::Failed,
             "PROVISIONING" => FirewallStatusValue::Provisioning,
             "READY" => FirewallStatusValue::Ready,
+            "STANDBY" => FirewallStatusValue::Standby,
             other => FirewallStatusValue::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -82,12 +86,13 @@ impl FirewallStatusValue {
             FirewallStatusValue::Failed => "FAILED",
             FirewallStatusValue::Provisioning => "PROVISIONING",
             FirewallStatusValue::Ready => "READY",
+            FirewallStatusValue::Standby => "STANDBY",
             FirewallStatusValue::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["DELETING", "FAILED", "PROVISIONING", "READY"]
+        &["DELETING", "FAILED", "PROVISIONING", "READY", "STANDBY"]
     }
 }
 impl ::std::convert::AsRef<str> for FirewallStatusValue {
@@ -114,6 +119,7 @@ impl ::std::fmt::Display for FirewallStatusValue {
             FirewallStatusValue::Failed => write!(f, "FAILED"),
             FirewallStatusValue::Provisioning => write!(f, "PROVISIONING"),
             FirewallStatusValue::Ready => write!(f, "READY"),
+            FirewallStatusValue::Standby => write!(f, "STANDBY"),
             FirewallStatusValue::Unknown(value) => write!(f, "{value}"),
         }
     }

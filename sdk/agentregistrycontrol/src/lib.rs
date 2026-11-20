@@ -35,7 +35,7 @@
 //! ```toml
 //! [dependencies]
 //! aws-config = { version = "1.1.7", features = ["behavior-version-latest"] }
-//! aws-sdk-agentregistrycontrol = "1.22.0"
+//! aws-sdk-agentregistrycontrol = "1.23.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
 //!
@@ -152,14 +152,14 @@ pub use config::Config;
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CreateRegistry`](crate::operation::create_registry) operation has
-/// a [`Client::create_registry`], function which returns a builder for that operation.
+/// For example, the [`AssociatePublisher`](crate::operation::associate_publisher) operation has
+/// a [`Client::associate_publisher`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.create_registry()
-///     .name("example")
+/// let result = client.associate_publisher()
+///     .record_arn("example")
 ///     .send()
 ///     .await;
 /// ```

@@ -6,7 +6,7 @@
 pub struct AmazonMachineImageEbsVolume {
     /// <p>The supported Amazon EBS volume types.</p>
     pub volume_types: ::std::vec::Vec<::std::string::String>,
-    /// <p>The total number of provisioned IOPS supported.</p>
+    /// <p>The total number of provisioned input/output operations per second (IOPS) that the volume supports.</p>
     pub iops: ::std::option::Option<i32>,
 }
 impl AmazonMachineImageEbsVolume {
@@ -15,7 +15,7 @@ impl AmazonMachineImageEbsVolume {
         use std::ops::Deref;
         self.volume_types.deref()
     }
-    /// <p>The total number of provisioned IOPS supported.</p>
+    /// <p>The total number of provisioned input/output operations per second (IOPS) that the volume supports.</p>
     pub fn iops(&self) -> ::std::option::Option<i32> {
         self.iops
     }
@@ -55,17 +55,17 @@ impl AmazonMachineImageEbsVolumeBuilder {
     pub fn get_volume_types(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.volume_types
     }
-    /// <p>The total number of provisioned IOPS supported.</p>
+    /// <p>The total number of provisioned input/output operations per second (IOPS) that the volume supports.</p>
     pub fn iops(mut self, input: i32) -> Self {
         self.iops = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The total number of provisioned IOPS supported.</p>
+    /// <p>The total number of provisioned input/output operations per second (IOPS) that the volume supports.</p>
     pub fn set_iops(mut self, input: ::std::option::Option<i32>) -> Self {
         self.iops = input;
         self
     }
-    /// <p>The total number of provisioned IOPS supported.</p>
+    /// <p>The total number of provisioned input/output operations per second (IOPS) that the volume supports.</p>
     pub fn get_iops(&self) -> &::std::option::Option<i32> {
         &self.iops
     }

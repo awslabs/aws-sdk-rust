@@ -239,6 +239,9 @@ pub(crate) fn put_asset_output_output_correct_errors(
     if builder.name.is_none() {
         builder.name = Some(Default::default())
     }
+    if builder.asset_type_id.is_none() {
+        builder.asset_type_id = Some(Default::default())
+    }
     builder
 }
 
@@ -338,15 +341,6 @@ pub(crate) fn transform_parameters_correct_errors(
 ) -> crate::types::builders::TransformParametersBuilder {
     if builder.transform_type.is_none() {
         builder.transform_type = "no value was set".parse::<crate::types::TransformType>().ok()
-    }
-    builder
-}
-
-pub(crate) fn asset_type_form_reference_correct_errors(
-    mut builder: crate::types::builders::AssetTypeFormReferenceBuilder,
-) -> crate::types::builders::AssetTypeFormReferenceBuilder {
-    if builder.form_type_identifier.is_none() {
-        builder.form_type_identifier = Some(Default::default())
     }
     builder
 }

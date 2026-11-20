@@ -13,6 +13,8 @@ pub use crate::types::_update_scheduler_request::UpdateSchedulerRequestBuilder;
 
 pub use crate::types::_node_lifecycle_actions::NodeLifecycleActionsBuilder;
 
+pub use crate::types::_instance_health_checks::InstanceHealthChecksBuilder;
+
 pub use crate::types::_custom_launch_template::CustomLaunchTemplateBuilder;
 
 pub use crate::types::_scaling_configuration_request::ScalingConfigurationRequestBuilder;
@@ -23,11 +25,15 @@ pub use crate::types::_compute_node_group_slurm_configuration_request::ComputeNo
 
 pub use crate::types::_node_lifecycle_actions_request::NodeLifecycleActionsRequestBuilder;
 
+pub use crate::types::_instance_health_checks_request::InstanceHealthChecksRequestBuilder;
+
 pub use crate::types::_compute_node_group::ComputeNodeGroupBuilder;
 
 pub use crate::types::_update_compute_node_group_slurm_configuration_request::UpdateComputeNodeGroupSlurmConfigurationRequestBuilder;
 
 pub use crate::types::_update_node_lifecycle_actions_request::UpdateNodeLifecycleActionsRequestBuilder;
+
+pub use crate::types::_update_instance_health_checks_request::UpdateInstanceHealthChecksRequestBuilder;
 
 pub use crate::types::_queue_slurm_configuration_request::QueueSlurmConfigurationRequestBuilder;
 
@@ -54,6 +60,10 @@ pub use crate::types::_update_slurm_rest_request::UpdateSlurmRestRequestBuilder;
 pub use crate::types::_endpoint::EndpointBuilder;
 
 pub use crate::types::_node_lifecycle_stages::NodeLifecycleStagesBuilder;
+
+pub use crate::types::_health_monitoring::HealthMonitoringBuilder;
+
+pub use crate::types::_deep_health_checks::DeepHealthChecksBuilder;
 
 pub use crate::types::_cluster_summary::ClusterSummaryBuilder;
 
@@ -88,6 +98,8 @@ pub use crate::types::_accounting::AccountingBuilder;
 pub use crate::types::_slurm_rest::SlurmRestBuilder;
 
 pub use crate::types::_error_info::ErrorInfoBuilder;
+
+pub use crate::types::_deep_health_check_on_start::DeepHealthCheckOnStartBuilder;
 
 pub use crate::types::_job_submit_script_source::JobSubmitScriptSourceBuilder;
 

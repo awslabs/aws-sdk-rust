@@ -54,6 +54,28 @@ static AUDIOCODECSETTINGS_MEMBER_CODEC: ::aws_smithy_schema::Schema<'static> = :
     4,
 )
 .with_json_name("codec");
+static AUDIOCODECSETTINGS_MEMBER_DTSC_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconvert#AudioCodecSettings$DtscSettings",
+        "com.amazonaws.mediaconvert",
+        "AudioCodecSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DtscSettings",
+    5,
+)
+.with_json_name("dtscSettings");
+static AUDIOCODECSETTINGS_MEMBER_DTSX_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconvert#AudioCodecSettings$DtsxSettings",
+        "com.amazonaws.mediaconvert",
+        "AudioCodecSettings",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "DtsxSettings",
+    6,
+)
+.with_json_name("dtsxSettings");
 static AUDIOCODECSETTINGS_MEMBER_EAC3_ATMOS_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.mediaconvert#AudioCodecSettings$Eac3AtmosSettings",
@@ -62,7 +84,7 @@ static AUDIOCODECSETTINGS_MEMBER_EAC3_ATMOS_SETTINGS: ::aws_smithy_schema::Schem
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "Eac3AtmosSettings",
-    5,
+    7,
 )
 .with_json_name("eac3AtmosSettings");
 static AUDIOCODECSETTINGS_MEMBER_EAC3_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -73,7 +95,7 @@ static AUDIOCODECSETTINGS_MEMBER_EAC3_SETTINGS: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "Eac3Settings",
-    6,
+    8,
 )
 .with_json_name("eac3Settings");
 static AUDIOCODECSETTINGS_MEMBER_FLAC_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -84,7 +106,7 @@ static AUDIOCODECSETTINGS_MEMBER_FLAC_SETTINGS: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "FlacSettings",
-    7,
+    9,
 )
 .with_json_name("flacSettings");
 static AUDIOCODECSETTINGS_MEMBER_MP2_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -95,7 +117,7 @@ static AUDIOCODECSETTINGS_MEMBER_MP2_SETTINGS: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "Mp2Settings",
-    8,
+    10,
 )
 .with_json_name("mp2Settings");
 static AUDIOCODECSETTINGS_MEMBER_MP3_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -106,7 +128,7 @@ static AUDIOCODECSETTINGS_MEMBER_MP3_SETTINGS: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "Mp3Settings",
-    9,
+    11,
 )
 .with_json_name("mp3Settings");
 static AUDIOCODECSETTINGS_MEMBER_OPUS_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -117,7 +139,7 @@ static AUDIOCODECSETTINGS_MEMBER_OPUS_SETTINGS: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "OpusSettings",
-    10,
+    12,
 )
 .with_json_name("opusSettings");
 static AUDIOCODECSETTINGS_MEMBER_VORBIS_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -128,7 +150,7 @@ static AUDIOCODECSETTINGS_MEMBER_VORBIS_SETTINGS: ::aws_smithy_schema::Schema<'s
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "VorbisSettings",
-    11,
+    13,
 )
 .with_json_name("vorbisSettings");
 static AUDIOCODECSETTINGS_MEMBER_WAV_SETTINGS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -139,7 +161,7 @@ static AUDIOCODECSETTINGS_MEMBER_WAV_SETTINGS: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "WavSettings",
-    12,
+    14,
 )
 .with_json_name("wavSettings");
 static AUDIOCODECSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
@@ -155,6 +177,8 @@ static AUDIOCODECSETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_s
         &AUDIOCODECSETTINGS_MEMBER_AC4_SETTINGS,
         &AUDIOCODECSETTINGS_MEMBER_AIFF_SETTINGS,
         &AUDIOCODECSETTINGS_MEMBER_CODEC,
+        &AUDIOCODECSETTINGS_MEMBER_DTSC_SETTINGS,
+        &AUDIOCODECSETTINGS_MEMBER_DTSX_SETTINGS,
         &AUDIOCODECSETTINGS_MEMBER_EAC3_ATMOS_SETTINGS,
         &AUDIOCODECSETTINGS_MEMBER_EAC3_SETTINGS,
         &AUDIOCODECSETTINGS_MEMBER_FLAC_SETTINGS,
@@ -193,6 +217,12 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::AudioCodec
         }
         if let Some(ref val) = self.codec {
             ser.write_string(&AUDIOCODECSETTINGS_MEMBER_CODEC, val.as_str())?;
+        }
+        if let Some(ref val) = self.dtsc_settings {
+            ser.write_struct(&AUDIOCODECSETTINGS_MEMBER_DTSC_SETTINGS, val)?;
+        }
+        if let Some(ref val) = self.dtsx_settings {
+            ser.write_struct(&AUDIOCODECSETTINGS_MEMBER_DTSX_SETTINGS, val)?;
         }
         if let Some(ref val) = self.eac3_atmos_settings {
             ser.write_struct(&AUDIOCODECSETTINGS_MEMBER_EAC3_ATMOS_SETTINGS, val)?;
@@ -274,52 +304,66 @@ impl crate::types::builders::AudioCodecSettingsBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.eac3_atmos_settings = Some(crate::types::Eac3AtmosSettings::deserialize(deser)?);
+                        self.dtsc_settings = Some(crate::types::DtscSettings::deserialize(deser)?);
                     }
                 }
                 Some(6) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.eac3_settings = Some(crate::types::Eac3Settings::deserialize(deser)?);
+                        self.dtsx_settings = Some(crate::types::DtsxSettings::deserialize(deser)?);
                     }
                 }
                 Some(7) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.flac_settings = Some(crate::types::FlacSettings::deserialize(deser)?);
+                        self.eac3_atmos_settings = Some(crate::types::Eac3AtmosSettings::deserialize(deser)?);
                     }
                 }
                 Some(8) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.mp2_settings = Some(crate::types::Mp2Settings::deserialize(deser)?);
+                        self.eac3_settings = Some(crate::types::Eac3Settings::deserialize(deser)?);
                     }
                 }
                 Some(9) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.mp3_settings = Some(crate::types::Mp3Settings::deserialize(deser)?);
+                        self.flac_settings = Some(crate::types::FlacSettings::deserialize(deser)?);
                     }
                 }
                 Some(10) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.opus_settings = Some(crate::types::OpusSettings::deserialize(deser)?);
+                        self.mp2_settings = Some(crate::types::Mp2Settings::deserialize(deser)?);
                     }
                 }
                 Some(11) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.vorbis_settings = Some(crate::types::VorbisSettings::deserialize(deser)?);
+                        self.mp3_settings = Some(crate::types::Mp3Settings::deserialize(deser)?);
                     }
                 }
                 Some(12) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.opus_settings = Some(crate::types::OpusSettings::deserialize(deser)?);
+                    }
+                }
+                Some(13) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.vorbis_settings = Some(crate::types::VorbisSettings::deserialize(deser)?);
+                    }
+                }
+                Some(14) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {

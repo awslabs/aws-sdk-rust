@@ -30,6 +30,13 @@ where
                         "wafConfig" => {
                             builder = builder.set_waf_config(crate::protocol_serde::shape_waf_config::de_waf_config(tokens, _value, depth + 1)?);
                         }
+                        "igwFirewallConfig" => {
+                            builder = builder.set_igw_firewall_config(crate::protocol_serde::shape_igw_firewall_config::de_igw_firewall_config(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -62,6 +69,12 @@ pub fn ser_policy_configuration(
         let mut object_2 = object.key("wafConfig").start_object();
         crate::protocol_serde::shape_waf_config::ser_waf_config(&mut object_2, var_1)?;
         object_2.finish();
+    }
+    if let Some(var_3) = &input.igw_firewall_config {
+        #[allow(unused_mut)]
+        let mut object_4 = object.key("igwFirewallConfig").start_object();
+        crate::protocol_serde::shape_igw_firewall_config::ser_igw_firewall_config(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

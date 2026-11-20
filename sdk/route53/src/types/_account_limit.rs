@@ -9,7 +9,7 @@ pub struct AccountLimit {
     /// <li>
     /// <p><b>MAX_HEALTH_CHECKS_BY_OWNER</b>: The maximum number of health checks that you can create using the current account.</p></li>
     /// <li>
-    /// <p><b>MAX_HEALTH_CHECK_SOURCES_BY_OWNER</b> The maximum number of health check sources that you can create using the current account.</p></li>
+    /// <p><b>MAX_HEALTH_CHECK_SOURCES_BY_OWNER</b>: The maximum number of health check sources that you can create using the current account.</p></li>
     /// <li>
     /// <p><b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can create using the current account.</p></li>
     /// <li>
@@ -29,7 +29,7 @@ impl AccountLimit {
     /// <li>
     /// <p><b>MAX_HEALTH_CHECKS_BY_OWNER</b>: The maximum number of health checks that you can create using the current account.</p></li>
     /// <li>
-    /// <p><b>MAX_HEALTH_CHECK_SOURCES_BY_OWNER</b> The maximum number of health check sources that you can create using the current account.</p></li>
+    /// <p><b>MAX_HEALTH_CHECK_SOURCES_BY_OWNER</b>: The maximum number of health check sources that you can create using the current account.</p></li>
     /// <li>
     /// <p><b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can create using the current account.</p></li>
     /// <li>
@@ -67,7 +67,7 @@ impl AccountLimitBuilder {
     /// <li>
     /// <p><b>MAX_HEALTH_CHECKS_BY_OWNER</b>: The maximum number of health checks that you can create using the current account.</p></li>
     /// <li>
-    /// <p><b>MAX_HEALTH_CHECK_SOURCES_BY_OWNER</b> The maximum number of health check sources that you can create using the current account.</p></li>
+    /// <p><b>MAX_HEALTH_CHECK_SOURCES_BY_OWNER</b>: The maximum number of health check sources that you can create using the current account.</p></li>
     /// <li>
     /// <p><b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can create using the current account.</p></li>
     /// <li>
@@ -87,7 +87,7 @@ impl AccountLimitBuilder {
     /// <li>
     /// <p><b>MAX_HEALTH_CHECKS_BY_OWNER</b>: The maximum number of health checks that you can create using the current account.</p></li>
     /// <li>
-    /// <p><b>MAX_HEALTH_CHECK_SOURCES_BY_OWNER</b> The maximum number of health check sources that you can create using the current account.</p></li>
+    /// <p><b>MAX_HEALTH_CHECK_SOURCES_BY_OWNER</b>: The maximum number of health check sources that you can create using the current account.</p></li>
     /// <li>
     /// <p><b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can create using the current account.</p></li>
     /// <li>
@@ -106,7 +106,7 @@ impl AccountLimitBuilder {
     /// <li>
     /// <p><b>MAX_HEALTH_CHECKS_BY_OWNER</b>: The maximum number of health checks that you can create using the current account.</p></li>
     /// <li>
-    /// <p><b>MAX_HEALTH_CHECK_SOURCES_BY_OWNER</b> The maximum number of health check sources that you can create using the current account.</p></li>
+    /// <p><b>MAX_HEALTH_CHECK_SOURCES_BY_OWNER</b>: The maximum number of health check sources that you can create using the current account.</p></li>
     /// <li>
     /// <p><b>MAX_HOSTED_ZONES_BY_OWNER</b>: The maximum number of hosted zones that you can create using the current account.</p></li>
     /// <li>

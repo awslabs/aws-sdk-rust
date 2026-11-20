@@ -87,6 +87,7 @@ pub struct CreateFileSystemLustreConfiguration {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-compression.html">Lustre data compression</a> in the <i>Amazon FSx for Lustre User Guide</i>.</p>
     pub data_compression_type: ::std::option::Option<crate::types::DataCompressionType>,
     /// <p>(Optional) Specifies whether Elastic Fabric Adapter (EFA) and GPUDirect Storage (GDS) support is enabled for the Amazon FSx for Lustre file system.</p>
+    /// <p>On file systems that use the Intelligent-Tiering storage class, you can enable EFA only when <code>ThroughputCapacity</code> is 4000 MBps or a multiple of 4000 MBps.</p>
     /// <p>(Default = <code>false</code>)</p>
     pub efa_enabled: ::std::option::Option<bool>,
     /// <p>The Lustre logging configuration used when creating an Amazon FSx for Lustre file system. When logging is enabled, Lustre logs error and warning events for data repositories associated with your file system to Amazon CloudWatch Logs.</p>
@@ -95,7 +96,7 @@ pub struct CreateFileSystemLustreConfiguration {
     pub root_squash_configuration: ::std::option::Option<crate::types::LustreRootSquashConfiguration>,
     /// <p>The Lustre metadata performance configuration for the creation of an FSx for Lustre file system using a <code>PERSISTENT_2</code> deployment type.</p>
     pub metadata_configuration: ::std::option::Option<crate::types::CreateFileSystemLustreMetadataConfiguration>,
-    /// <p>Specifies the throughput of an FSx for Lustre file system using the Intelligent-Tiering storage class, measured in megabytes per second (MBps). Valid values are 4000 MBps or multiples of 4000 MBps. You pay for the amount of throughput that you provision.</p>
+    /// <p>Specifies the throughput of an FSx for Lustre file system using the Intelligent-Tiering storage class, measured in megabytes per second (MBps). Valid values are 1000 MBps, 2000 MBps, and multiples of 4000 MBps, up to a maximum of 2000000 MBps. You pay for the amount of throughput that you provision.</p>
     pub throughput_capacity: ::std::option::Option<i32>,
     /// <p>Specifies the optional provisioned SSD read cache on FSx for Lustre file systems that use the Intelligent-Tiering storage class. Required when <code>StorageType</code> is set to <code>INTELLIGENT_TIERING</code>.</p>
     pub data_read_cache_configuration: ::std::option::Option<crate::types::LustreReadCacheConfiguration>,
@@ -196,6 +197,7 @@ impl CreateFileSystemLustreConfiguration {
         self.data_compression_type.as_ref()
     }
     /// <p>(Optional) Specifies whether Elastic Fabric Adapter (EFA) and GPUDirect Storage (GDS) support is enabled for the Amazon FSx for Lustre file system.</p>
+    /// <p>On file systems that use the Intelligent-Tiering storage class, you can enable EFA only when <code>ThroughputCapacity</code> is 4000 MBps or a multiple of 4000 MBps.</p>
     /// <p>(Default = <code>false</code>)</p>
     pub fn efa_enabled(&self) -> ::std::option::Option<bool> {
         self.efa_enabled
@@ -212,7 +214,7 @@ impl CreateFileSystemLustreConfiguration {
     pub fn metadata_configuration(&self) -> ::std::option::Option<&crate::types::CreateFileSystemLustreMetadataConfiguration> {
         self.metadata_configuration.as_ref()
     }
-    /// <p>Specifies the throughput of an FSx for Lustre file system using the Intelligent-Tiering storage class, measured in megabytes per second (MBps). Valid values are 4000 MBps or multiples of 4000 MBps. You pay for the amount of throughput that you provision.</p>
+    /// <p>Specifies the throughput of an FSx for Lustre file system using the Intelligent-Tiering storage class, measured in megabytes per second (MBps). Valid values are 1000 MBps, 2000 MBps, and multiples of 4000 MBps, up to a maximum of 2000000 MBps. You pay for the amount of throughput that you provision.</p>
     pub fn throughput_capacity(&self) -> ::std::option::Option<i32> {
         self.throughput_capacity
     }
@@ -559,18 +561,21 @@ impl CreateFileSystemLustreConfigurationBuilder {
         &self.data_compression_type
     }
     /// <p>(Optional) Specifies whether Elastic Fabric Adapter (EFA) and GPUDirect Storage (GDS) support is enabled for the Amazon FSx for Lustre file system.</p>
+    /// <p>On file systems that use the Intelligent-Tiering storage class, you can enable EFA only when <code>ThroughputCapacity</code> is 4000 MBps or a multiple of 4000 MBps.</p>
     /// <p>(Default = <code>false</code>)</p>
     pub fn efa_enabled(mut self, input: bool) -> Self {
         self.efa_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>(Optional) Specifies whether Elastic Fabric Adapter (EFA) and GPUDirect Storage (GDS) support is enabled for the Amazon FSx for Lustre file system.</p>
+    /// <p>On file systems that use the Intelligent-Tiering storage class, you can enable EFA only when <code>ThroughputCapacity</code> is 4000 MBps or a multiple of 4000 MBps.</p>
     /// <p>(Default = <code>false</code>)</p>
     pub fn set_efa_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.efa_enabled = input;
         self
     }
     /// <p>(Optional) Specifies whether Elastic Fabric Adapter (EFA) and GPUDirect Storage (GDS) support is enabled for the Amazon FSx for Lustre file system.</p>
+    /// <p>On file systems that use the Intelligent-Tiering storage class, you can enable EFA only when <code>ThroughputCapacity</code> is 4000 MBps or a multiple of 4000 MBps.</p>
     /// <p>(Default = <code>false</code>)</p>
     pub fn get_efa_enabled(&self) -> &::std::option::Option<bool> {
         &self.efa_enabled
@@ -617,17 +622,17 @@ impl CreateFileSystemLustreConfigurationBuilder {
     pub fn get_metadata_configuration(&self) -> &::std::option::Option<crate::types::CreateFileSystemLustreMetadataConfiguration> {
         &self.metadata_configuration
     }
-    /// <p>Specifies the throughput of an FSx for Lustre file system using the Intelligent-Tiering storage class, measured in megabytes per second (MBps). Valid values are 4000 MBps or multiples of 4000 MBps. You pay for the amount of throughput that you provision.</p>
+    /// <p>Specifies the throughput of an FSx for Lustre file system using the Intelligent-Tiering storage class, measured in megabytes per second (MBps). Valid values are 1000 MBps, 2000 MBps, and multiples of 4000 MBps, up to a maximum of 2000000 MBps. You pay for the amount of throughput that you provision.</p>
     pub fn throughput_capacity(mut self, input: i32) -> Self {
         self.throughput_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies the throughput of an FSx for Lustre file system using the Intelligent-Tiering storage class, measured in megabytes per second (MBps). Valid values are 4000 MBps or multiples of 4000 MBps. You pay for the amount of throughput that you provision.</p>
+    /// <p>Specifies the throughput of an FSx for Lustre file system using the Intelligent-Tiering storage class, measured in megabytes per second (MBps). Valid values are 1000 MBps, 2000 MBps, and multiples of 4000 MBps, up to a maximum of 2000000 MBps. You pay for the amount of throughput that you provision.</p>
     pub fn set_throughput_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput_capacity = input;
         self
     }
-    /// <p>Specifies the throughput of an FSx for Lustre file system using the Intelligent-Tiering storage class, measured in megabytes per second (MBps). Valid values are 4000 MBps or multiples of 4000 MBps. You pay for the amount of throughput that you provision.</p>
+    /// <p>Specifies the throughput of an FSx for Lustre file system using the Intelligent-Tiering storage class, measured in megabytes per second (MBps). Valid values are 1000 MBps, 2000 MBps, and multiples of 4000 MBps, up to a maximum of 2000000 MBps. You pay for the amount of throughput that you provision.</p>
     pub fn get_throughput_capacity(&self) -> &::std::option::Option<i32> {
         &self.throughput_capacity
     }

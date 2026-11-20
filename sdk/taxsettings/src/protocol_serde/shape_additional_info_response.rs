@@ -170,6 +170,25 @@ where
                                 crate::protocol_serde::shape_colombia_additional_info::de_colombia_additional_info(tokens, _value, depth + 1)?,
                             );
                         }
+                        "unitedArabEmiratesAdditionalInfo" => {
+                            builder = builder.set_united_arab_emirates_additional_info(
+                                crate::protocol_serde::shape_united_arab_emirates_additional_info::de_united_arab_emirates_additional_info(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "norwayAdditionalInfo" => {
+                            builder = builder.set_norway_additional_info(
+                                crate::protocol_serde::shape_norway_additional_info::de_norway_additional_info(tokens, _value, depth + 1)?,
+                            );
+                        }
+                        "newZealandAdditionalInfo" => {
+                            builder = builder.set_new_zealand_additional_info(
+                                crate::protocol_serde::shape_new_zealand_additional_info::de_new_zealand_additional_info(tokens, _value, depth + 1)?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

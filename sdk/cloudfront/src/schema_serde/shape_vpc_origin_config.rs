@@ -39,6 +39,16 @@ static VPCORIGINCONFIG_MEMBER_ORIGIN_KEEPALIVE_TIMEOUT: ::aws_smithy_schema::Sch
     "OriginKeepaliveTimeout",
     3,
 );
+static VPCORIGINCONFIG_MEMBER_ORIGIN_HTTP_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudfront#VpcOriginConfig$OriginHttpVersion",
+        "com.amazonaws.cloudfront",
+        "VpcOriginConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OriginHttpVersion",
+    4,
+);
 static VPCORIGINCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.cloudfront#VpcOriginConfig", "com.amazonaws.cloudfront", "VpcOriginConfig"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -47,6 +57,7 @@ static VPCORIGINCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smit
         &VPCORIGINCONFIG_MEMBER_OWNER_ACCOUNT_ID,
         &VPCORIGINCONFIG_MEMBER_ORIGIN_READ_TIMEOUT,
         &VPCORIGINCONFIG_MEMBER_ORIGIN_KEEPALIVE_TIMEOUT,
+        &VPCORIGINCONFIG_MEMBER_ORIGIN_HTTP_VERSION,
     ],
 );
 impl crate::types::VpcOriginConfig {
@@ -75,6 +86,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::VpcOriginC
         }
         if let Some(ref val) = self.origin_keepalive_timeout {
             ser.write_integer(&VPCORIGINCONFIG_MEMBER_ORIGIN_KEEPALIVE_TIMEOUT, *val)?;
+        }
+        if let Some(ref val) = self.origin_http_version {
+            ser.write_string(&VPCORIGINCONFIG_MEMBER_ORIGIN_HTTP_VERSION, val.as_str())?;
         }
         Ok(())
     }
@@ -115,6 +129,13 @@ impl crate::types::builders::VpcOriginConfigBuilder {
                         deser.read_null()?;
                     } else {
                         self.origin_keepalive_timeout = Some(deser.read_integer(member)?);
+                    }
+                }
+                Some(4) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.origin_http_version = Some(crate::types::OriginHttpVersion::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}

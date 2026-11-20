@@ -64,6 +64,12 @@ pub mod generate_mobile_sdk_release_url;
 /// Types for the `GetDecryptedAPIKey` operation.
 pub mod get_decrypted_api_key;
 
+/// Types for the `GetEvent` operation.
+pub mod get_event;
+
+/// Types for the `GetEventActor` operation.
+pub mod get_event_actor;
+
 /// Types for the `GetIPSet` operation.
 pub mod get_ip_set;
 
@@ -117,6 +123,15 @@ pub mod list_available_managed_rule_group_versions;
 
 /// Types for the `ListAvailableManagedRuleGroups` operation.
 pub mod list_available_managed_rule_groups;
+
+/// Types for the `ListEventActors` operation.
+pub mod list_event_actors;
+
+/// Types for the `ListEvents` operation.
+pub mod list_events;
+
+/// Types for the `ListEventsByWebACL` operation.
+pub mod list_events_by_web_acl;
 
 /// Types for the `ListIPSets` operation.
 pub mod list_ip_sets;

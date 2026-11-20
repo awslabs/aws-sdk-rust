@@ -48,7 +48,7 @@ pub struct UpdateFileSystemLustreConfiguration {
     pub per_unit_storage_throughput: ::std::option::Option<i32>,
     /// <p>The Lustre metadata performance configuration for an Amazon FSx for Lustre file system using a <code>PERSISTENT_2</code> deployment type. When this configuration is enabled, the file system supports increasing metadata performance.</p>
     pub metadata_configuration: ::std::option::Option<crate::types::UpdateFileSystemLustreMetadataConfiguration>,
-    /// <p>The throughput of an Amazon FSx for Lustre file system using an Intelligent-Tiering storage class, measured in megabytes per second (MBps). You can only increase your file system's throughput. Valid values are 4000 MBps or multiples of 4000 MBps.</p>
+    /// <p>The throughput of an FSx for Lustre file system using the Intelligent-Tiering storage class, measured in megabytes per second (MBps). You can only increase your file system's throughput capacity. Valid values are 1000 MBps, 2000 MBps, and multiples of 4000 MBps, up to a maximum of 2000000 MBps.</p>
     pub throughput_capacity: ::std::option::Option<i32>,
     /// <p>Specifies the optional provisioned SSD read cache on Amazon FSx for Lustre file systems that use the Intelligent-Tiering storage class.</p>
     pub data_read_cache_configuration: ::std::option::Option<crate::types::LustreReadCacheConfiguration>,
@@ -116,7 +116,7 @@ impl UpdateFileSystemLustreConfiguration {
     pub fn metadata_configuration(&self) -> ::std::option::Option<&crate::types::UpdateFileSystemLustreMetadataConfiguration> {
         self.metadata_configuration.as_ref()
     }
-    /// <p>The throughput of an Amazon FSx for Lustre file system using an Intelligent-Tiering storage class, measured in megabytes per second (MBps). You can only increase your file system's throughput. Valid values are 4000 MBps or multiples of 4000 MBps.</p>
+    /// <p>The throughput of an FSx for Lustre file system using the Intelligent-Tiering storage class, measured in megabytes per second (MBps). You can only increase your file system's throughput capacity. Valid values are 1000 MBps, 2000 MBps, and multiples of 4000 MBps, up to a maximum of 2000000 MBps.</p>
     pub fn throughput_capacity(&self) -> ::std::option::Option<i32> {
         self.throughput_capacity
     }
@@ -353,17 +353,17 @@ impl UpdateFileSystemLustreConfigurationBuilder {
     pub fn get_metadata_configuration(&self) -> &::std::option::Option<crate::types::UpdateFileSystemLustreMetadataConfiguration> {
         &self.metadata_configuration
     }
-    /// <p>The throughput of an Amazon FSx for Lustre file system using an Intelligent-Tiering storage class, measured in megabytes per second (MBps). You can only increase your file system's throughput. Valid values are 4000 MBps or multiples of 4000 MBps.</p>
+    /// <p>The throughput of an FSx for Lustre file system using the Intelligent-Tiering storage class, measured in megabytes per second (MBps). You can only increase your file system's throughput capacity. Valid values are 1000 MBps, 2000 MBps, and multiples of 4000 MBps, up to a maximum of 2000000 MBps.</p>
     pub fn throughput_capacity(mut self, input: i32) -> Self {
         self.throughput_capacity = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The throughput of an Amazon FSx for Lustre file system using an Intelligent-Tiering storage class, measured in megabytes per second (MBps). You can only increase your file system's throughput. Valid values are 4000 MBps or multiples of 4000 MBps.</p>
+    /// <p>The throughput of an FSx for Lustre file system using the Intelligent-Tiering storage class, measured in megabytes per second (MBps). You can only increase your file system's throughput capacity. Valid values are 1000 MBps, 2000 MBps, and multiples of 4000 MBps, up to a maximum of 2000000 MBps.</p>
     pub fn set_throughput_capacity(mut self, input: ::std::option::Option<i32>) -> Self {
         self.throughput_capacity = input;
         self
     }
-    /// <p>The throughput of an Amazon FSx for Lustre file system using an Intelligent-Tiering storage class, measured in megabytes per second (MBps). You can only increase your file system's throughput. Valid values are 4000 MBps or multiples of 4000 MBps.</p>
+    /// <p>The throughput of an FSx for Lustre file system using the Intelligent-Tiering storage class, measured in megabytes per second (MBps). You can only increase your file system's throughput capacity. Valid values are 1000 MBps, 2000 MBps, and multiples of 4000 MBps, up to a maximum of 2000000 MBps.</p>
     pub fn get_throughput_capacity(&self) -> &::std::option::Option<i32> {
         &self.throughput_capacity
     }

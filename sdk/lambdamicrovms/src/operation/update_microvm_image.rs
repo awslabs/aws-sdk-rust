@@ -219,6 +219,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateMicrovm
                 captured.insert("description", value);
             }
         }
+        if requested.should_capture("kmsKeyIdentifier") {
+            if let ::std::option::Option::Some(value) = input.kms_key_identifier.as_deref() {
+                captured.insert("kmsKeyIdentifier", value);
+            }
+        }
         if requested.should_capture("imageIdentifier") {
             if let ::std::option::Option::Some(value) = input.image_identifier.as_deref() {
                 captured.insert("imageIdentifier", value);

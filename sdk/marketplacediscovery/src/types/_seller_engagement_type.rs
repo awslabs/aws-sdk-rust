@@ -12,8 +12,11 @@
 /// ```text
 /// # let sellerengagementtype = unimplemented!();
 /// match sellerengagementtype {
+///     SellerEngagementType::BuyNow => { /* ... */ },
+///     SellerEngagementType::ExpressPrivateOffer => { /* ... */ },
 ///     SellerEngagementType::RequestForDemo => { /* ... */ },
 ///     SellerEngagementType::RequestForPrivateOffer => { /* ... */ },
+///     SellerEngagementType::TryForFree => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -43,9 +46,15 @@
 )]
 pub enum SellerEngagementType {
     #[allow(missing_docs)] // documentation missing in model
+    BuyNow,
+    #[allow(missing_docs)] // documentation missing in model
+    ExpressPrivateOffer,
+    #[allow(missing_docs)] // documentation missing in model
     RequestForDemo,
     #[allow(missing_docs)] // documentation missing in model
     RequestForPrivateOffer,
+    #[allow(missing_docs)] // documentation missing in model
+    TryForFree,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -53,8 +62,11 @@ pub enum SellerEngagementType {
 impl ::std::convert::From<&str> for SellerEngagementType {
     fn from(s: &str) -> Self {
         match s {
+            "BUY_NOW" => SellerEngagementType::BuyNow,
+            "EXPRESS_PRIVATE_OFFER" => SellerEngagementType::ExpressPrivateOffer,
             "REQUEST_FOR_DEMO" => SellerEngagementType::RequestForDemo,
             "REQUEST_FOR_PRIVATE_OFFER" => SellerEngagementType::RequestForPrivateOffer,
+            "TRY_FOR_FREE" => SellerEngagementType::TryForFree,
             other => SellerEngagementType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -70,14 +82,23 @@ impl SellerEngagementType {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            SellerEngagementType::BuyNow => "BUY_NOW",
+            SellerEngagementType::ExpressPrivateOffer => "EXPRESS_PRIVATE_OFFER",
             SellerEngagementType::RequestForDemo => "REQUEST_FOR_DEMO",
             SellerEngagementType::RequestForPrivateOffer => "REQUEST_FOR_PRIVATE_OFFER",
+            SellerEngagementType::TryForFree => "TRY_FOR_FREE",
             SellerEngagementType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["REQUEST_FOR_DEMO", "REQUEST_FOR_PRIVATE_OFFER"]
+        &[
+            "BUY_NOW",
+            "EXPRESS_PRIVATE_OFFER",
+            "REQUEST_FOR_DEMO",
+            "REQUEST_FOR_PRIVATE_OFFER",
+            "TRY_FOR_FREE",
+        ]
     }
 }
 impl ::std::convert::AsRef<str> for SellerEngagementType {
@@ -100,8 +121,11 @@ impl SellerEngagementType {
 impl ::std::fmt::Display for SellerEngagementType {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            SellerEngagementType::BuyNow => write!(f, "BUY_NOW"),
+            SellerEngagementType::ExpressPrivateOffer => write!(f, "EXPRESS_PRIVATE_OFFER"),
             SellerEngagementType::RequestForDemo => write!(f, "REQUEST_FOR_DEMO"),
             SellerEngagementType::RequestForPrivateOffer => write!(f, "REQUEST_FOR_PRIVATE_OFFER"),
+            SellerEngagementType::TryForFree => write!(f, "TRY_FOR_FREE"),
             SellerEngagementType::Unknown(value) => write!(f, "{value}"),
         }
     }

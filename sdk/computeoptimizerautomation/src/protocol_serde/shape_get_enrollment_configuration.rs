@@ -214,6 +214,13 @@ pub(crate) fn de_get_enrollment_configuration(
                 "lastUpdatedTimestamp" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
                     Ok(builder.set_last_updated_timestamp(Some(decoder.timestamp()?)))
                 })?,
+                "organizationEnrollmentConfigurationStatus" => ::aws_smithy_cbor::decode::set_optional(builder, decoder, |builder, decoder| {
+                    Ok(builder.set_organization_enrollment_configuration_status(Some(
+                        decoder
+                            .string()
+                            .map(|s| crate::types::OrganizationEnrollmentConfigurationStatus::from(s.as_str()))?,
+                    )))
+                })?,
                 _ => {
                     decoder.skip()?;
                     builder

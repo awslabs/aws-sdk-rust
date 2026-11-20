@@ -63,6 +63,13 @@ where
                                     .transpose()?,
                             );
                         }
+                        "regionalPrices" => {
+                            builder = builder.set_regional_prices(crate::protocol_serde::shape_regional_price_list::de_regional_price_list(
+                                tokens,
+                                _value,
+                                depth + 1,
+                            )?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

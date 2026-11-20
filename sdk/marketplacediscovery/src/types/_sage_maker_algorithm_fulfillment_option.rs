@@ -12,11 +12,11 @@ pub struct SageMakerAlgorithmFulfillmentOption {
     pub fulfillment_option_display_name: ::std::string::String,
     /// <p>The version identifier of the fulfillment option.</p>
     pub fulfillment_option_version: ::std::option::Option<::std::string::String>,
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub release_notes: ::std::option::Option<::std::string::String>,
     /// <p>Instructions on how to use this SageMaker algorithm.</p>
     pub usage_instructions: ::std::option::Option<::std::string::String>,
-    /// <p>Recommended instance types for training and inference with this algorithm.</p>
+    /// <p>The recommended instance types for training and inference with this algorithm.</p>
     pub recommendation: ::std::option::Option<crate::types::SageMakerAlgorithmRecommendation>,
 }
 impl SageMakerAlgorithmFulfillmentOption {
@@ -38,7 +38,7 @@ impl SageMakerAlgorithmFulfillmentOption {
     pub fn fulfillment_option_version(&self) -> ::std::option::Option<&str> {
         self.fulfillment_option_version.as_deref()
     }
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub fn release_notes(&self) -> ::std::option::Option<&str> {
         self.release_notes.as_deref()
     }
@@ -46,7 +46,7 @@ impl SageMakerAlgorithmFulfillmentOption {
     pub fn usage_instructions(&self) -> ::std::option::Option<&str> {
         self.usage_instructions.as_deref()
     }
-    /// <p>Recommended instance types for training and inference with this algorithm.</p>
+    /// <p>The recommended instance types for training and inference with this algorithm.</p>
     pub fn recommendation(&self) -> ::std::option::Option<&crate::types::SageMakerAlgorithmRecommendation> {
         self.recommendation.as_ref()
     }
@@ -130,17 +130,17 @@ impl SageMakerAlgorithmFulfillmentOptionBuilder {
     pub fn get_fulfillment_option_version(&self) -> &::std::option::Option<::std::string::String> {
         &self.fulfillment_option_version
     }
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub fn release_notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_notes = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub fn set_release_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_notes = input;
         self
     }
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub fn get_release_notes(&self) -> &::std::option::Option<::std::string::String> {
         &self.release_notes
     }
@@ -158,17 +158,17 @@ impl SageMakerAlgorithmFulfillmentOptionBuilder {
     pub fn get_usage_instructions(&self) -> &::std::option::Option<::std::string::String> {
         &self.usage_instructions
     }
-    /// <p>Recommended instance types for training and inference with this algorithm.</p>
+    /// <p>The recommended instance types for training and inference with this algorithm.</p>
     pub fn recommendation(mut self, input: crate::types::SageMakerAlgorithmRecommendation) -> Self {
         self.recommendation = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Recommended instance types for training and inference with this algorithm.</p>
+    /// <p>The recommended instance types for training and inference with this algorithm.</p>
     pub fn set_recommendation(mut self, input: ::std::option::Option<crate::types::SageMakerAlgorithmRecommendation>) -> Self {
         self.recommendation = input;
         self
     }
-    /// <p>Recommended instance types for training and inference with this algorithm.</p>
+    /// <p>The recommended instance types for training and inference with this algorithm.</p>
     pub fn get_recommendation(&self) -> &::std::option::Option<crate::types::SageMakerAlgorithmRecommendation> {
         &self.recommendation
     }

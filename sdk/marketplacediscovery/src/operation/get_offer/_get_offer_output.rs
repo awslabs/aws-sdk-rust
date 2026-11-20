@@ -3,34 +3,34 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOfferOutput {
-    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    /// <p>The locale of the returned content. This value indicates whether the response contains content in the requested locale or fell back to the default locale. See <code>Locale</code> for details.</p>
     pub locale: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the offer.</p>
     pub offer_id: ::std::string::String,
     /// <p>The name of the catalog that the offer belongs to.</p>
     pub catalog: ::std::string::String,
-    /// <p>The display name of the offer. This is free-form text provided by the seller.</p>
+    /// <p>The display name of the offer. The seller provides this free-form text.</p>
     pub offer_name: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time until when the offer can be procured. This value is null for offers that never expire.</p>
+    /// <p>The date and time until which you can procure the offer. This value is null for offers that never expire.</p>
     pub expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>The date and time when the offer became available to the buyer.</p>
+    /// <p>The date and time when the offer became available to you.</p>
     pub available_from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The entity responsible for selling the product under this offer.</p>
     pub seller_of_record: ::std::option::Option<crate::types::SellerInformation>,
     /// <p>The products and offer sets associated with this offer.</p>
     pub associated_entities: ::std::vec::Vec<crate::types::OfferAssociatedEntity>,
-    /// <p>An encoded string to be passed by the acceptor of the terms when creating an agreement.</p>
+    /// <p>An encoded string that you pass when you accept the terms and create an agreement.</p>
     pub agreement_proposal_id: ::std::string::String,
-    /// <p>The identifier of the existing agreement that this offer would replace. Enables agreement-based offer functionality.</p>
+    /// <p>The identifier of the existing agreement that this offer would replace.</p>
     pub replacement_agreement_id: ::std::option::Option<::std::string::String>,
-    /// <p>The pricing model that determines how buyers are charged, such as usage-based, contract, BYOL, or free.</p>
+    /// <p>The pricing model that determines how you are charged, such as usage-based, contract, Bring Your Own License (BYOL), or free.</p>
     pub pricing_model: ::std::option::Option<crate::types::PricingModel>,
-    /// <p>Badges indicating special attributes of the offer, such as private pricing, future dated, or replacement offer.</p>
+    /// <p>Badges indicating special attributes of the offer, such as private pricing, future-dated, or replacement offer.</p>
     pub badges: ::std::vec::Vec<crate::types::PurchaseOptionBadge>,
     _request_id: Option<String>,
 }
 impl GetOfferOutput {
-    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    /// <p>The locale of the returned content. This value indicates whether the response contains content in the requested locale or fell back to the default locale. See <code>Locale</code> for details.</p>
     pub fn locale(&self) -> ::std::option::Option<&str> {
         self.locale.as_deref()
     }
@@ -44,15 +44,15 @@ impl GetOfferOutput {
         use std::ops::Deref;
         self.catalog.deref()
     }
-    /// <p>The display name of the offer. This is free-form text provided by the seller.</p>
+    /// <p>The display name of the offer. The seller provides this free-form text.</p>
     pub fn offer_name(&self) -> ::std::option::Option<&str> {
         self.offer_name.as_deref()
     }
-    /// <p>The date and time until when the offer can be procured. This value is null for offers that never expire.</p>
+    /// <p>The date and time until which you can procure the offer. This value is null for offers that never expire.</p>
     pub fn expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
-    /// <p>The date and time when the offer became available to the buyer.</p>
+    /// <p>The date and time when the offer became available to you.</p>
     pub fn available_from_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.available_from_time.as_ref()
     }
@@ -65,20 +65,20 @@ impl GetOfferOutput {
         use std::ops::Deref;
         self.associated_entities.deref()
     }
-    /// <p>An encoded string to be passed by the acceptor of the terms when creating an agreement.</p>
+    /// <p>An encoded string that you pass when you accept the terms and create an agreement.</p>
     pub fn agreement_proposal_id(&self) -> &str {
         use std::ops::Deref;
         self.agreement_proposal_id.deref()
     }
-    /// <p>The identifier of the existing agreement that this offer would replace. Enables agreement-based offer functionality.</p>
+    /// <p>The identifier of the existing agreement that this offer would replace.</p>
     pub fn replacement_agreement_id(&self) -> ::std::option::Option<&str> {
         self.replacement_agreement_id.as_deref()
     }
-    /// <p>The pricing model that determines how buyers are charged, such as usage-based, contract, BYOL, or free.</p>
+    /// <p>The pricing model that determines how you are charged, such as usage-based, contract, Bring Your Own License (BYOL), or free.</p>
     pub fn pricing_model(&self) -> ::std::option::Option<&crate::types::PricingModel> {
         self.pricing_model.as_ref()
     }
-    /// <p>Badges indicating special attributes of the offer, such as private pricing, future dated, or replacement offer.</p>
+    /// <p>Badges indicating special attributes of the offer, such as private pricing, future-dated, or replacement offer.</p>
     pub fn badges(&self) -> &[crate::types::PurchaseOptionBadge] {
         use std::ops::Deref;
         self.badges.deref()
@@ -115,17 +115,17 @@ pub struct GetOfferOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetOfferOutputBuilder {
-    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    /// <p>The locale of the returned content. This value indicates whether the response contains content in the requested locale or fell back to the default locale. See <code>Locale</code> for details.</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    /// <p>The locale of the returned content. This value indicates whether the response contains content in the requested locale or fell back to the default locale. See <code>Locale</code> for details.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale = input;
         self
     }
-    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    /// <p>The locale of the returned content. This value indicates whether the response contains content in the requested locale or fell back to the default locale. See <code>Locale</code> for details.</p>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
         &self.locale
     }
@@ -159,45 +159,45 @@ impl GetOfferOutputBuilder {
     pub fn get_catalog(&self) -> &::std::option::Option<::std::string::String> {
         &self.catalog
     }
-    /// <p>The display name of the offer. This is free-form text provided by the seller.</p>
+    /// <p>The display name of the offer. The seller provides this free-form text.</p>
     pub fn offer_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.offer_name = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The display name of the offer. This is free-form text provided by the seller.</p>
+    /// <p>The display name of the offer. The seller provides this free-form text.</p>
     pub fn set_offer_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.offer_name = input;
         self
     }
-    /// <p>The display name of the offer. This is free-form text provided by the seller.</p>
+    /// <p>The display name of the offer. The seller provides this free-form text.</p>
     pub fn get_offer_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.offer_name
     }
-    /// <p>The date and time until when the offer can be procured. This value is null for offers that never expire.</p>
+    /// <p>The date and time until which you can procure the offer. This value is null for offers that never expire.</p>
     pub fn expiration_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.expiration_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time until when the offer can be procured. This value is null for offers that never expire.</p>
+    /// <p>The date and time until which you can procure the offer. This value is null for offers that never expire.</p>
     pub fn set_expiration_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.expiration_time = input;
         self
     }
-    /// <p>The date and time until when the offer can be procured. This value is null for offers that never expire.</p>
+    /// <p>The date and time until which you can procure the offer. This value is null for offers that never expire.</p>
     pub fn get_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expiration_time
     }
-    /// <p>The date and time when the offer became available to the buyer.</p>
+    /// <p>The date and time when the offer became available to you.</p>
     pub fn available_from_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.available_from_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time when the offer became available to the buyer.</p>
+    /// <p>The date and time when the offer became available to you.</p>
     pub fn set_available_from_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.available_from_time = input;
         self
     }
-    /// <p>The date and time when the offer became available to the buyer.</p>
+    /// <p>The date and time when the offer became available to you.</p>
     pub fn get_available_from_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.available_from_time
     }
@@ -236,47 +236,47 @@ impl GetOfferOutputBuilder {
     pub fn get_associated_entities(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::OfferAssociatedEntity>> {
         &self.associated_entities
     }
-    /// <p>An encoded string to be passed by the acceptor of the terms when creating an agreement.</p>
+    /// <p>An encoded string that you pass when you accept the terms and create an agreement.</p>
     /// This field is required.
     pub fn agreement_proposal_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.agreement_proposal_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>An encoded string to be passed by the acceptor of the terms when creating an agreement.</p>
+    /// <p>An encoded string that you pass when you accept the terms and create an agreement.</p>
     pub fn set_agreement_proposal_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.agreement_proposal_id = input;
         self
     }
-    /// <p>An encoded string to be passed by the acceptor of the terms when creating an agreement.</p>
+    /// <p>An encoded string that you pass when you accept the terms and create an agreement.</p>
     pub fn get_agreement_proposal_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.agreement_proposal_id
     }
-    /// <p>The identifier of the existing agreement that this offer would replace. Enables agreement-based offer functionality.</p>
+    /// <p>The identifier of the existing agreement that this offer would replace.</p>
     pub fn replacement_agreement_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.replacement_agreement_id = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The identifier of the existing agreement that this offer would replace. Enables agreement-based offer functionality.</p>
+    /// <p>The identifier of the existing agreement that this offer would replace.</p>
     pub fn set_replacement_agreement_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.replacement_agreement_id = input;
         self
     }
-    /// <p>The identifier of the existing agreement that this offer would replace. Enables agreement-based offer functionality.</p>
+    /// <p>The identifier of the existing agreement that this offer would replace.</p>
     pub fn get_replacement_agreement_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.replacement_agreement_id
     }
-    /// <p>The pricing model that determines how buyers are charged, such as usage-based, contract, BYOL, or free.</p>
+    /// <p>The pricing model that determines how you are charged, such as usage-based, contract, Bring Your Own License (BYOL), or free.</p>
     /// This field is required.
     pub fn pricing_model(mut self, input: crate::types::PricingModel) -> Self {
         self.pricing_model = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The pricing model that determines how buyers are charged, such as usage-based, contract, BYOL, or free.</p>
+    /// <p>The pricing model that determines how you are charged, such as usage-based, contract, Bring Your Own License (BYOL), or free.</p>
     pub fn set_pricing_model(mut self, input: ::std::option::Option<crate::types::PricingModel>) -> Self {
         self.pricing_model = input;
         self
     }
-    /// <p>The pricing model that determines how buyers are charged, such as usage-based, contract, BYOL, or free.</p>
+    /// <p>The pricing model that determines how you are charged, such as usage-based, contract, Bring Your Own License (BYOL), or free.</p>
     pub fn get_pricing_model(&self) -> &::std::option::Option<crate::types::PricingModel> {
         &self.pricing_model
     }
@@ -284,19 +284,19 @@ impl GetOfferOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_badges`](Self::set_badges).
     ///
-    /// <p>Badges indicating special attributes of the offer, such as private pricing, future dated, or replacement offer.</p>
+    /// <p>Badges indicating special attributes of the offer, such as private pricing, future-dated, or replacement offer.</p>
     pub fn badges(mut self, input: crate::types::PurchaseOptionBadge) -> Self {
         let mut v = self.badges.unwrap_or_default();
         v.push(input);
         self.badges = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Badges indicating special attributes of the offer, such as private pricing, future dated, or replacement offer.</p>
+    /// <p>Badges indicating special attributes of the offer, such as private pricing, future-dated, or replacement offer.</p>
     pub fn set_badges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PurchaseOptionBadge>>) -> Self {
         self.badges = input;
         self
     }
-    /// <p>Badges indicating special attributes of the offer, such as private pricing, future dated, or replacement offer.</p>
+    /// <p>Badges indicating special attributes of the offer, such as private pricing, future-dated, or replacement offer.</p>
     pub fn get_badges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PurchaseOptionBadge>> {
         &self.badges
     }

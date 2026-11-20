@@ -5,7 +5,9 @@
 pub struct ListRecommendedActionsInput {
     /// <p>The filters to apply to the list of recommended actions.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedActionFilter>>,
-    /// <p>The maximum number of recommended actions to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The organizational unit (OU) or organization root IDs to use to filter the results. The response includes recommended actions for accounts in the specified OUs and their child OUs. Only the management account or a delegated administrator can specify this parameter.</p>
+    pub organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    /// <p>The maximum number of recommended actions to return in a single response. If you don't specify a value, the default is 100.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A token used for pagination to retrieve the next set of results when the response is truncated.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -17,7 +19,13 @@ impl ListRecommendedActionsInput {
     pub fn filters(&self) -> &[crate::types::RecommendedActionFilter] {
         self.filters.as_deref().unwrap_or_default()
     }
-    /// <p>The maximum number of recommended actions to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The organizational unit (OU) or organization root IDs to use to filter the results. The response includes recommended actions for accounts in the specified OUs and their child OUs. Only the management account or a delegated administrator can specify this parameter.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.organizational_unit_ids.is_none()`.
+    pub fn organizational_unit_ids(&self) -> &[::std::string::String] {
+        self.organizational_unit_ids.as_deref().unwrap_or_default()
+    }
+    /// <p>The maximum number of recommended actions to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
@@ -38,6 +46,7 @@ impl ListRecommendedActionsInput {
 #[non_exhaustive]
 pub struct ListRecommendedActionsInputBuilder {
     pub(crate) filters: ::std::option::Option<::std::vec::Vec<crate::types::RecommendedActionFilter>>,
+    pub(crate) organizational_unit_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
@@ -62,17 +71,37 @@ impl ListRecommendedActionsInputBuilder {
     pub fn get_filters(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::RecommendedActionFilter>> {
         &self.filters
     }
-    /// <p>The maximum number of recommended actions to return in a single response. Valid range is 1-1000.</p>
+    /// Appends an item to `organizational_unit_ids`.
+    ///
+    /// To override the contents of this collection use [`set_organizational_unit_ids`](Self::set_organizational_unit_ids).
+    ///
+    /// <p>The organizational unit (OU) or organization root IDs to use to filter the results. The response includes recommended actions for accounts in the specified OUs and their child OUs. Only the management account or a delegated administrator can specify this parameter.</p>
+    pub fn organizational_unit_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.organizational_unit_ids.unwrap_or_default();
+        v.push(input.into());
+        self.organizational_unit_ids = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The organizational unit (OU) or organization root IDs to use to filter the results. The response includes recommended actions for accounts in the specified OUs and their child OUs. Only the management account or a delegated administrator can specify this parameter.</p>
+    pub fn set_organizational_unit_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.organizational_unit_ids = input;
+        self
+    }
+    /// <p>The organizational unit (OU) or organization root IDs to use to filter the results. The response includes recommended actions for accounts in the specified OUs and their child OUs. Only the management account or a delegated administrator can specify this parameter.</p>
+    pub fn get_organizational_unit_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.organizational_unit_ids
+    }
+    /// <p>The maximum number of recommended actions to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The maximum number of recommended actions to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of recommended actions to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_results = input;
         self
     }
-    /// <p>The maximum number of recommended actions to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of recommended actions to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         &self.max_results
     }
@@ -99,6 +128,7 @@ impl ListRecommendedActionsInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::list_recommended_actions::ListRecommendedActionsInput {
             filters: self.filters,
+            organizational_unit_ids: self.organizational_unit_ids,
             max_results: self.max_results,
             next_token: self.next_token,
         })

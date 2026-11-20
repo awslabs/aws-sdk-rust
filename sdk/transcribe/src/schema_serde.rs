@@ -233,6 +233,16 @@ pub(crate) mod shape_subtitles_output;
 
 pub(crate) mod shape_summarization;
 
+pub(crate) mod shape_sync_item;
+
+pub(crate) mod shape_sync_language_code_item;
+
+pub(crate) mod shape_sync_media;
+
+pub(crate) mod shape_sync_output_configuration;
+
+pub(crate) mod shape_sync_redaction;
+
 pub(crate) mod shape_tag;
 
 pub(crate) mod shape_tag_resource_input_input;
@@ -241,9 +251,19 @@ pub(crate) mod shape_tag_resource_output_output;
 
 pub(crate) mod shape_toxicity_detection_settings;
 
+pub(crate) mod shape_transcribe_audio_input_input;
+
+pub(crate) mod shape_transcribe_audio_metadata;
+
+pub(crate) mod shape_transcribe_audio_output_output;
+
+pub(crate) mod shape_transcribe_audio_results;
+
 pub(crate) mod shape_transcript;
 
 pub(crate) mod shape_transcript_filter;
+
+pub(crate) mod shape_transcript_response;
 
 pub(crate) mod shape_transcription_job;
 
@@ -273,6 +293,14 @@ pub(crate) mod shape_update_vocabulary_input_input;
 
 pub(crate) mod shape_update_vocabulary_output_output;
 
+pub(crate) mod shape_vocabulary_filter_entry;
+
 pub(crate) mod shape_vocabulary_filter_info;
 
+pub(crate) mod shape_vocabulary_filter_settings;
+
 pub(crate) mod shape_vocabulary_info;
+
+pub(crate) mod shape_vocabulary_phrase;
+
+pub(crate) mod shape_vocabulary_settings_entry;

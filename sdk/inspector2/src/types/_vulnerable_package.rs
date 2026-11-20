@@ -26,6 +26,12 @@ pub struct VulnerablePackage {
     pub remediation: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Number (ARN) of the Amazon Web Services Lambda function affected by a finding.</p>
     pub source_lambda_layer_arn: ::std::option::Option<::std::string::String>,
+    /// <p>The runtime reachability status of the vulnerable package. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding runtime reachability</a> in the Amazon Inspector user guide.</p>
+    pub runtime_reachability: ::std::option::Option<crate::types::RuntimeReachability>,
+    /// <p>The reason for the runtime reachability status of the vulnerable package. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding runtime reachability</a> in the Amazon Inspector user guide.</p>
+    pub runtime_reachability_reason: ::std::option::Option<crate::types::RuntimeReachabilityReason>,
+    /// <p>The package URL (purl) of the vulnerable package.</p>
+    pub purl: ::std::option::Option<::std::string::String>,
 }
 impl VulnerablePackage {
     /// <p>The name of the vulnerable package.</p>
@@ -74,6 +80,18 @@ impl VulnerablePackage {
     pub fn source_lambda_layer_arn(&self) -> ::std::option::Option<&str> {
         self.source_lambda_layer_arn.as_deref()
     }
+    /// <p>The runtime reachability status of the vulnerable package. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding runtime reachability</a> in the Amazon Inspector user guide.</p>
+    pub fn runtime_reachability(&self) -> ::std::option::Option<&crate::types::RuntimeReachability> {
+        self.runtime_reachability.as_ref()
+    }
+    /// <p>The reason for the runtime reachability status of the vulnerable package. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding runtime reachability</a> in the Amazon Inspector user guide.</p>
+    pub fn runtime_reachability_reason(&self) -> ::std::option::Option<&crate::types::RuntimeReachabilityReason> {
+        self.runtime_reachability_reason.as_ref()
+    }
+    /// <p>The package URL (purl) of the vulnerable package.</p>
+    pub fn purl(&self) -> ::std::option::Option<&str> {
+        self.purl.as_deref()
+    }
 }
 impl VulnerablePackage {
     /// Creates a new builder-style object to manufacture [`VulnerablePackage`](crate::types::VulnerablePackage).
@@ -97,6 +115,9 @@ pub struct VulnerablePackageBuilder {
     pub(crate) fixed_in_version: ::std::option::Option<::std::string::String>,
     pub(crate) remediation: ::std::option::Option<::std::string::String>,
     pub(crate) source_lambda_layer_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) runtime_reachability: ::std::option::Option<crate::types::RuntimeReachability>,
+    pub(crate) runtime_reachability_reason: ::std::option::Option<crate::types::RuntimeReachabilityReason>,
+    pub(crate) purl: ::std::option::Option<::std::string::String>,
 }
 impl VulnerablePackageBuilder {
     /// <p>The name of the vulnerable package.</p>
@@ -255,6 +276,48 @@ impl VulnerablePackageBuilder {
     pub fn get_source_lambda_layer_arn(&self) -> &::std::option::Option<::std::string::String> {
         &self.source_lambda_layer_arn
     }
+    /// <p>The runtime reachability status of the vulnerable package. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding runtime reachability</a> in the Amazon Inspector user guide.</p>
+    pub fn runtime_reachability(mut self, input: crate::types::RuntimeReachability) -> Self {
+        self.runtime_reachability = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The runtime reachability status of the vulnerable package. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding runtime reachability</a> in the Amazon Inspector user guide.</p>
+    pub fn set_runtime_reachability(mut self, input: ::std::option::Option<crate::types::RuntimeReachability>) -> Self {
+        self.runtime_reachability = input;
+        self
+    }
+    /// <p>The runtime reachability status of the vulnerable package. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding runtime reachability</a> in the Amazon Inspector user guide.</p>
+    pub fn get_runtime_reachability(&self) -> &::std::option::Option<crate::types::RuntimeReachability> {
+        &self.runtime_reachability
+    }
+    /// <p>The reason for the runtime reachability status of the vulnerable package. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding runtime reachability</a> in the Amazon Inspector user guide.</p>
+    pub fn runtime_reachability_reason(mut self, input: crate::types::RuntimeReachabilityReason) -> Self {
+        self.runtime_reachability_reason = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The reason for the runtime reachability status of the vulnerable package. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding runtime reachability</a> in the Amazon Inspector user guide.</p>
+    pub fn set_runtime_reachability_reason(mut self, input: ::std::option::Option<crate::types::RuntimeReachabilityReason>) -> Self {
+        self.runtime_reachability_reason = input;
+        self
+    }
+    /// <p>The reason for the runtime reachability status of the vulnerable package. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-runtime-reachability.html">Understanding runtime reachability</a> in the Amazon Inspector user guide.</p>
+    pub fn get_runtime_reachability_reason(&self) -> &::std::option::Option<crate::types::RuntimeReachabilityReason> {
+        &self.runtime_reachability_reason
+    }
+    /// <p>The package URL (purl) of the vulnerable package.</p>
+    pub fn purl(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.purl = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The package URL (purl) of the vulnerable package.</p>
+    pub fn set_purl(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.purl = input;
+        self
+    }
+    /// <p>The package URL (purl) of the vulnerable package.</p>
+    pub fn get_purl(&self) -> &::std::option::Option<::std::string::String> {
+        &self.purl
+    }
     /// Consumes the builder and constructs a [`VulnerablePackage`](crate::types::VulnerablePackage).
     /// This method will fail if any of the following fields are not set:
     /// - [`name`](crate::types::builders::VulnerablePackageBuilder::name)
@@ -282,6 +345,9 @@ impl VulnerablePackageBuilder {
             fixed_in_version: self.fixed_in_version,
             remediation: self.remediation,
             source_lambda_layer_arn: self.source_lambda_layer_arn,
+            runtime_reachability: self.runtime_reachability,
+            runtime_reachability_reason: self.runtime_reachability_reason,
+            purl: self.purl,
         })
     }
 }

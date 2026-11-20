@@ -171,6 +171,10 @@ pub(crate) mod shape_dolby_vision_level6_metadata;
 
 pub(crate) mod shape_dolby_vision_metadata;
 
+pub(crate) mod shape_dtsc_settings;
+
+pub(crate) mod shape_dtsx_settings;
+
 pub(crate) mod shape_duration_control;
 
 pub(crate) mod shape_dvb_nit_settings;
@@ -184,6 +188,8 @@ pub(crate) mod shape_dvb_sub_source_settings;
 pub(crate) mod shape_dvb_tdt_settings;
 
 pub(crate) mod shape_dynamic_audio_selector;
+
+pub(crate) mod shape_dynamic_multiview_settings;
 
 pub(crate) mod shape_eac3_atmos_settings;
 

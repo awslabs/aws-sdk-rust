@@ -3,15 +3,15 @@
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum Error {
-    /// <p>You don't have sufficient access to perform this action.</p>
+    /// <p>You don't have sufficient access to perform this action. Verify that you have the required permissions.</p>
     AccessDeniedException(crate::types::error::AccessDeniedException),
     /// <p>Unexpected error during processing of the request.</p>
     InternalServerException(crate::types::error::InternalServerException),
-    /// <p>The specified resource doesn't exist.</p>
+    /// <p>The specified resource doesn't exist. Verify that the identifier is correct.</p>
     ResourceNotFoundException(crate::types::error::ResourceNotFoundException),
-    /// <p>The request was denied due to request throttling.</p>
+    /// <p>The request was denied due to request throttling. Reduce the frequency of your requests and retry.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
-    /// <p>The input fails to satisfy the constraints specified by the service.</p>
+    /// <p>The input fails to satisfy the constraints specified by the service. Check the <code>reason</code> field for the constraint that failed.</p>
     ValidationException(crate::types::error::ValidationException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     #[deprecated(note = "Matching `Unhandled` directly is not forwards compatible. Instead, match using a \
@@ -221,6 +221,40 @@ impl From<crate::operation::list_fulfillment_options::ListFulfillmentOptionsErro
             crate::operation::list_fulfillment_options::ListFulfillmentOptionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_fulfillment_options::ListFulfillmentOptionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_fulfillment_options::ListFulfillmentOptionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_listing_attributes::ListListingAttributesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_listing_attributes::ListListingAttributesError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_listing_attributes::ListListingAttributesError> for Error {
+    fn from(err: crate::operation::list_listing_attributes::ListListingAttributesError) -> Self {
+        match err {
+            crate::operation::list_listing_attributes::ListListingAttributesError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_listing_attributes::ListListingAttributesError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_listing_attributes::ListListingAttributesError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_listing_attributes::ListListingAttributesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_listing_attributes::ListListingAttributesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_listing_attributes::ListListingAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

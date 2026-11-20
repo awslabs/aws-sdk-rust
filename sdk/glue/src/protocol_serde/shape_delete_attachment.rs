@@ -158,8 +158,8 @@ pub(crate) fn de_delete_attachment(
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "AssetIdentifier" => {
-                    builder = builder.set_asset_identifier(
+                "AssetId" => {
+                    builder = builder.set_asset_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,
@@ -172,8 +172,8 @@ pub(crate) fn de_delete_attachment(
                             .transpose()?,
                     );
                 }
-                "ItemIdentifier" => {
-                    builder = builder.set_item_identifier(
+                "ItemId" => {
+                    builder = builder.set_item_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                             .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                             .transpose()?,

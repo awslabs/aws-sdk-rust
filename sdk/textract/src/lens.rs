@@ -19,6 +19,26 @@ pub(crate) fn reflens_list_adapters_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_blueprints_output_output_next_token(
+    input: &crate::operation::list_blueprints::ListBlueprintsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_projects_output_output_next_token(
+    input: &crate::operation::list_projects::ListProjectsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn lens_list_adapter_versions_output_output_adapter_versions(
     input: crate::operation::list_adapter_versions::ListAdapterVersionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AdapterVersionOverview>> {
@@ -30,5 +50,19 @@ pub(crate) fn lens_list_adapters_output_output_adapters(
     input: crate::operation::list_adapters::ListAdaptersOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AdapterOverview>> {
     let input = input.adapters?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_blueprints_output_output_blueprints(
+    input: crate::operation::list_blueprints::ListBlueprintsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::BlueprintSummary>> {
+    let input = input.blueprints;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_projects_output_output_projects(
+    input: crate::operation::list_projects::ListProjectsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ProjectSummary>> {
+    let input = input.projects;
     ::std::option::Option::Some(input)
 }

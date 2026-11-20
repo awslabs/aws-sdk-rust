@@ -16,6 +16,9 @@ pub fn ser_update_firewall_policy_change_protection_input_input(
     if let Some(var_4) = &input.firewall_policy_change_protection {
         encoder.str("FirewallPolicyChangeProtection").boolean(*var_4);
     }
+    if let Some(var_5) = &input.firewall_type {
+        encoder.str("FirewallType").str(var_5.as_str());
+    }
     encoder.end();
     Ok(())
 }

@@ -28,19 +28,25 @@ where
                                     .transpose()?,
                             );
                         }
-                        "AssetName" => {
-                            builder = builder.set_asset_name(
+                        "Name" => {
+                            builder = builder.set_name(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
-                        "AssetDescription" => {
-                            builder = builder.set_asset_description(
+                        "Description" => {
+                            builder = builder.set_description(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
+                        }
+                        "CreatedAt" => {
+                            builder = builder.set_created_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(
+                                tokens.next(),
+                                ::aws_smithy_types::date_time::Format::EpochSeconds,
+                            )?);
                         }
                         "UpdatedAt" => {
                             builder = builder.set_updated_at(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

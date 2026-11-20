@@ -361,6 +361,12 @@ pub use crate::types::_scope_configuration_input::ScopeConfigurationInputBuilder
 
 pub use crate::types::_gcp_capability_scope_input::GcpCapabilityScopeInputBuilder;
 
+pub use crate::types::_runtime_reachability_filter::RuntimeReachabilityFilterBuilder;
+
+pub use crate::types::_runtime_reachability_reason_filter::RuntimeReachabilityReasonFilterBuilder;
+
+pub use crate::types::_purl_qualifier_filter::PurlQualifierFilterBuilder;
+
 pub use crate::types::_cluster_details::ClusterDetailsBuilder;
 
 pub use crate::types::_ami_tag_filter::AmiTagFilterBuilder;

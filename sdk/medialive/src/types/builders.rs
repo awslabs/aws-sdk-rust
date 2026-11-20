@@ -673,6 +673,8 @@ pub use crate::types::_teletext_source_settings::TeletextSourceSettingsBuilder;
 
 pub use crate::types::_smart_subtitle_source_settings::SmartSubtitleSourceSettingsBuilder;
 
+pub use crate::types::_webvtt_source_settings::WebvttSourceSettingsBuilder;
+
 pub use crate::types::_scte35_descriptor_settings::Scte35DescriptorSettingsBuilder;
 
 pub use crate::types::_input_channel_level::InputChannelLevelBuilder;

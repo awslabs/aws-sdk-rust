@@ -4,7 +4,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum FulfillmentOption {
-    /// <p>An Amazon Machine Image (AMI) fulfillment option for EC2 deployment.</p>
+    /// <p>An Amazon Machine Image (AMI) fulfillment option for Amazon Elastic Compute Cloud (Amazon EC2) deployment.</p>
     AmazonMachineImageFulfillmentOption(crate::types::AmazonMachineImageFulfillmentOption),
     /// <p>An API-based fulfillment option for programmatic integration.</p>
     ApiFulfillmentOption(crate::types::ApiFulfillmentOption),
@@ -14,7 +14,7 @@ pub enum FulfillmentOption {
     ContainerFulfillmentOption(crate::types::ContainerFulfillmentOption),
     /// <p>An AWS Data Exchange fulfillment option for data set delivery.</p>
     DataExchangeFulfillmentOption(crate::types::DataExchangeFulfillmentOption),
-    /// <p>An EC2 Image Builder component fulfillment option.</p>
+    /// <p>An Amazon Elastic Compute Cloud (Amazon EC2) Image Builder component fulfillment option.</p>
     Ec2ImageBuilderComponentFulfillmentOption(crate::types::Ec2ImageBuilderComponentFulfillmentOption),
     /// <p>An Amazon EKS add-on fulfillment option.</p>
     EksAddOnFulfillmentOption(crate::types::EksAddOnFulfillmentOption),

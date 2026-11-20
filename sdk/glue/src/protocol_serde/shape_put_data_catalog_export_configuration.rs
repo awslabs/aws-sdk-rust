@@ -156,21 +156,19 @@ pub(crate) fn de_put_data_catalog_export_configuration(
     loop {
         match tokens.next().transpose()? {
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
-                "ExportSetting" => {
-                    builder = builder.set_export_setting(
-                        ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                            .map(|s| s.to_unescaped().map(|u| crate::types::ExportSetting::from(u.as_ref())))
-                            .transpose()?,
-                    );
+            Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                match key.to_unescaped()?.as_ref() {
+                    "S3TablesConfiguration" => {
+                        builder = builder.set_s3_tables_configuration(
+                            crate::protocol_serde::shape_s3_tables_configuration::de_s3_tables_configuration(tokens, _value, depth + 1)?,
+                        );
+                    }
+                    "Assets" => {
+                        builder = builder.set_assets(crate::protocol_serde::shape_assets_export::de_assets_export(tokens, _value, depth + 1)?);
+                    }
+                    _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                 }
-                "EncryptionConfiguration" => {
-                    builder = builder.set_encryption_configuration(
-                        crate::protocol_serde::shape_export_encryption_configuration::de_export_encryption_configuration(tokens, _value, depth + 1)?,
-                    );
-                }
-                _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
-            },
+            }
             other => {
                 return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                     "expected object key or end object, found: {other:?}"

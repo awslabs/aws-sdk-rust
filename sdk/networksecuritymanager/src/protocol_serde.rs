@@ -77,9 +77,13 @@ pub(crate) mod shape_list_deployment_snapshots;
 
 pub(crate) mod shape_list_deployments;
 
+pub(crate) mod shape_list_entity_coverages;
+
 pub(crate) mod shape_list_policies;
 
 pub(crate) mod shape_list_policy_snapshots;
+
+pub(crate) mod shape_list_protected_resource_coverages;
 
 pub(crate) mod shape_list_resource_associations;
 
@@ -207,6 +211,8 @@ pub(crate) mod shape_policy_summary_list;
 
 pub(crate) mod shape_resource_association_list;
 
+pub(crate) mod shape_resource_coverage_summary_list;
+
 pub(crate) mod shape_resource_synchronization_status_summary_list;
 
 pub(crate) mod shape_rule_reference;
@@ -251,9 +257,13 @@ pub(crate) mod shape_deployment_summary;
 
 pub(crate) mod shape_deployment_warning_entry;
 
+pub(crate) mod shape_igw_firewall_config;
+
 pub(crate) mod shape_policy_summary;
 
 pub(crate) mod shape_resource_association;
+
+pub(crate) mod shape_resource_coverage_summary;
 
 pub(crate) mod shape_resource_scope;
 
@@ -277,6 +287,8 @@ pub(crate) mod shape_admin_scope_filter;
 
 pub(crate) mod shape_admin_scope_selection_input;
 
+pub(crate) mod shape_deployment_arn_set;
+
 pub(crate) mod shape_deployment_policy_arn_list;
 
 pub(crate) mod shape_deployment_resource_type_list;
@@ -286,6 +298,10 @@ pub(crate) mod shape_out_of_sync_reasons_view;
 pub(crate) mod shape_remediation_issues_view;
 
 pub(crate) mod shape_resource_set;
+
+pub(crate) mod shape_subnet_connectivity_override;
+
+pub(crate) mod shape_subnet_connectivity_override_list;
 
 pub(crate) mod shape_account_list;
 
@@ -315,11 +331,15 @@ pub(crate) mod shape_resource_arn_list;
 
 pub(crate) mod shape_resource_criteria;
 
+pub(crate) mod shape_subnet_connectivity_scope_arn_list;
+
 pub(crate) mod shape_account_reference;
 
 pub(crate) mod shape_alb_configuration;
 
 pub(crate) mod shape_invalid_firewall_reasons;
+
+pub(crate) mod shape_invalid_resources_by_type;
 
 pub(crate) mod shape_organizational_unit_reference;
 
@@ -327,6 +347,10 @@ pub(crate) mod shape_resource_logical_expression_list;
 
 pub(crate) mod shape_configuration_issue_list;
 
+pub(crate) mod shape_invalid_resource_issue_list;
+
 pub(crate) mod shape_string_map;
 
 pub(crate) mod shape_configuration_issue;
+
+pub(crate) mod shape_invalid_resource_issue;

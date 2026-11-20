@@ -59,14 +59,14 @@ pub(crate) struct Handle {
 /// # Using the `Client`
 ///
 /// A client has a function for every operation that can be performed by the service.
-/// For example, the [`CancelAutomatedReasoningPolicyBuildWorkflow`](crate::operation::cancel_automated_reasoning_policy_build_workflow) operation has
-/// a [`Client::cancel_automated_reasoning_policy_build_workflow`], function which returns a builder for that operation.
+/// For example, the [`ArchiveProject`](crate::operation::archive_project) operation has
+/// a [`Client::archive_project`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
 ///
 /// ```rust,ignore
-/// let result = client.cancel_automated_reasoning_policy_build_workflow()
-///     .policy_arn("example")
+/// let result = client.archive_project()
+///     .project_identifier("example")
 ///     .send()
 ///     .await;
 /// ```
@@ -177,6 +177,8 @@ impl Client {
     }
 }
 
+mod archive_project;
+
 mod batch_delete_advanced_prompt_optimization_job;
 
 mod batch_delete_evaluation_job;
@@ -215,6 +217,8 @@ mod create_model_import_job;
 
 mod create_model_invocation_job;
 
+mod create_project;
+
 mod create_prompt_router;
 
 mod create_provisioned_model_throughput;
@@ -230,7 +234,7 @@ mod create_provisioned_model_throughput;
 /// # let client: aws_sdk_bedrock::Client = unimplemented!();
 /// use ::http_1x::header::{HeaderName, HeaderValue};
 ///
-/// let result = client.batch_delete_advanced_prompt_optimization_job()
+/// let result = client.archive_project()
 ///     .customize()
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
@@ -245,6 +249,8 @@ mod create_provisioned_model_throughput;
 /// # }
 /// ```
 pub mod customize;
+
+mod delete_account_data_retention_storage;
 
 mod delete_automated_reasoning_policy;
 
@@ -270,6 +276,10 @@ mod delete_marketplace_model_endpoint;
 
 mod delete_model_invocation_logging_configuration;
 
+mod delete_organization_data_retention_storage;
+
+mod delete_project_data_retention_storage;
+
 mod delete_prompt_router;
 
 mod delete_provisioned_model_throughput;
@@ -281,6 +291,8 @@ mod deregister_marketplace_model_endpoint;
 mod export_automated_reasoning_policy_version;
 
 mod get_account_data_retention;
+
+mod get_account_data_retention_storage;
 
 mod get_advanced_prompt_optimization_job;
 
@@ -326,11 +338,25 @@ mod get_model_invocation_job;
 
 mod get_model_invocation_logging_configuration;
 
+mod get_organization_data_retention_storage;
+
+mod get_project;
+
+mod get_project_data_retention_storage;
+
 mod get_prompt_router;
 
 mod get_provisioned_model_throughput;
 
 mod get_resource_policy;
+
+mod get_trusted_access_program;
+
+mod get_trusted_access_program_account_enrollment;
+
+mod get_trusted_access_program_organization_enrollment;
+
+mod get_trusted_access_program_project_enrollment;
 
 mod get_use_case_for_model_access;
 
@@ -372,19 +398,35 @@ mod list_model_import_jobs;
 
 mod list_model_invocation_jobs;
 
+mod list_projects;
+
 mod list_prompt_routers;
 
 mod list_provisioned_model_throughputs;
 
 mod list_tags_for_resource;
 
+mod list_trusted_access_programs;
+
 mod put_account_data_retention;
+
+mod put_account_data_retention_storage;
 
 mod put_enforced_guardrail_configuration;
 
 mod put_model_invocation_logging_configuration;
 
+mod put_organization_data_retention_storage;
+
+mod put_project_data_retention_storage;
+
 mod put_resource_policy;
+
+mod put_trusted_access_program_account_enrollment;
+
+mod put_trusted_access_program_organization_enrollment;
+
+mod put_trusted_access_program_project_enrollment;
 
 mod put_use_case_for_model_access;
 
@@ -393,6 +435,12 @@ mod register_marketplace_model_endpoint;
 mod start_automated_reasoning_policy_build_workflow;
 
 mod start_automated_reasoning_policy_test_workflow;
+
+mod start_trusted_access_program_account_application;
+
+mod start_trusted_access_program_organization_application;
+
+mod start_trusted_access_program_project_application;
 
 mod stop_advanced_prompt_optimization_job;
 
@@ -417,5 +465,7 @@ mod update_custom_model_deployment;
 mod update_guardrail;
 
 mod update_marketplace_model_endpoint;
+
+mod update_project;
 
 mod update_provisioned_model_throughput;

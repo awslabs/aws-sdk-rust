@@ -15,6 +15,10 @@ pub struct ListInferenceProfilesInput {
     /// <p><code>APPLICATION</code> – The inference profile was created by a user. This type of inference profile can track metrics and costs when invoking the model in it. The inference profile may route requests to one or multiple regions.</p></li>
     /// </ul>
     pub type_equals: ::std::option::Option<crate::types::InferenceProfileType>,
+    /// <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's trusted access program participation when determining which system-defined inference profiles to return. The project must belong to your account in the same AWS Region and partition as the request.</p>
+    /// <p>If you omit this parameter or specify <code>default</code>, Amazon Bedrock uses your account's participation, including organization inheritance.</p>
+    /// <p>A project that doesn't exist or is archived causes a <code>ValidationException</code>. Specifying a project other than <code>default</code> with <code>typeEquals</code> set to <code>APPLICATION</code> also causes a <code>ValidationException</code>. Omit <code>typeEquals</code> or set it to <code>SYSTEM_DEFINED</code> to list system-defined inference profiles for the project.</p>
+    pub project_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ListInferenceProfilesInput {
     /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
@@ -35,6 +39,12 @@ impl ListInferenceProfilesInput {
     pub fn type_equals(&self) -> ::std::option::Option<&crate::types::InferenceProfileType> {
         self.type_equals.as_ref()
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's trusted access program participation when determining which system-defined inference profiles to return. The project must belong to your account in the same AWS Region and partition as the request.</p>
+    /// <p>If you omit this parameter or specify <code>default</code>, Amazon Bedrock uses your account's participation, including organization inheritance.</p>
+    /// <p>A project that doesn't exist or is archived causes a <code>ValidationException</code>. Specifying a project other than <code>default</code> with <code>typeEquals</code> set to <code>APPLICATION</code> also causes a <code>ValidationException</code>. Omit <code>typeEquals</code> or set it to <code>SYSTEM_DEFINED</code> to list system-defined inference profiles for the project.</p>
+    pub fn project_identifier(&self) -> ::std::option::Option<&str> {
+        self.project_identifier.as_deref()
+    }
 }
 impl ListInferenceProfilesInput {
     /// Creates a new builder-style object to manufacture [`ListInferenceProfilesInput`](crate::operation::list_inference_profiles::ListInferenceProfilesInput).
@@ -50,6 +60,7 @@ pub struct ListInferenceProfilesInputBuilder {
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
     pub(crate) type_equals: ::std::option::Option<crate::types::InferenceProfileType>,
+    pub(crate) project_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ListInferenceProfilesInputBuilder {
     /// <p>The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the <code>nextToken</code> field when making another request to return the next batch of results.</p>
@@ -112,6 +123,26 @@ impl ListInferenceProfilesInputBuilder {
     pub fn get_type_equals(&self) -> &::std::option::Option<crate::types::InferenceProfileType> {
         &self.type_equals
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's trusted access program participation when determining which system-defined inference profiles to return. The project must belong to your account in the same AWS Region and partition as the request.</p>
+    /// <p>If you omit this parameter or specify <code>default</code>, Amazon Bedrock uses your account's participation, including organization inheritance.</p>
+    /// <p>A project that doesn't exist or is archived causes a <code>ValidationException</code>. Specifying a project other than <code>default</code> with <code>typeEquals</code> set to <code>APPLICATION</code> also causes a <code>ValidationException</code>. Omit <code>typeEquals</code> or set it to <code>SYSTEM_DEFINED</code> to list system-defined inference profiles for the project.</p>
+    pub fn project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's trusted access program participation when determining which system-defined inference profiles to return. The project must belong to your account in the same AWS Region and partition as the request.</p>
+    /// <p>If you omit this parameter or specify <code>default</code>, Amazon Bedrock uses your account's participation, including organization inheritance.</p>
+    /// <p>A project that doesn't exist or is archived causes a <code>ValidationException</code>. Specifying a project other than <code>default</code> with <code>typeEquals</code> set to <code>APPLICATION</code> also causes a <code>ValidationException</code>. Omit <code>typeEquals</code> or set it to <code>SYSTEM_DEFINED</code> to list system-defined inference profiles for the project.</p>
+    pub fn set_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.project_identifier = input;
+        self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's trusted access program participation when determining which system-defined inference profiles to return. The project must belong to your account in the same AWS Region and partition as the request.</p>
+    /// <p>If you omit this parameter or specify <code>default</code>, Amazon Bedrock uses your account's participation, including organization inheritance.</p>
+    /// <p>A project that doesn't exist or is archived causes a <code>ValidationException</code>. Specifying a project other than <code>default</code> with <code>typeEquals</code> set to <code>APPLICATION</code> also causes a <code>ValidationException</code>. Omit <code>typeEquals</code> or set it to <code>SYSTEM_DEFINED</code> to list system-defined inference profiles for the project.</p>
+    pub fn get_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_identifier
+    }
     /// Consumes the builder and constructs a [`ListInferenceProfilesInput`](crate::operation::list_inference_profiles::ListInferenceProfilesInput).
     pub fn build(
         self,
@@ -121,6 +152,7 @@ impl ListInferenceProfilesInputBuilder {
             max_results: self.max_results,
             next_token: self.next_token,
             type_equals: self.type_equals,
+            project_identifier: self.project_identifier,
         })
     }
 }

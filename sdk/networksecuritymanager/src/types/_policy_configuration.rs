@@ -6,23 +6,29 @@
 pub struct PolicyConfiguration {
     /// <p>Specifies whether AWS Network Security Manager automatically remediates noncompliant resources. Default: <code>false</code>.</p>
     pub remediation_enabled: bool,
-    /// <p>Specifies whether AWS Network Security Manager automatically removes the resources it created when they are no longer needed. Default: <code>false</code>.</p>
+    /// <p>Specifies whether AWS Network Security Manager automatically removes the resources it created when they are no longer needed. This member is required, and the only supported value is <code>true</code>.</p>
     pub resources_clean_up: bool,
     /// <p>AWS WAF-specific policy settings. This is populated only for AWS WAF policies.</p>
     pub waf_config: ::std::option::Option<crate::types::WafConfig>,
+    /// <p>Policy settings for Network Firewall automated internet firewall policies. Specify these settings only for this policy type.</p>
+    pub igw_firewall_config: ::std::option::Option<crate::types::IgwFirewallConfig>,
 }
 impl PolicyConfiguration {
     /// <p>Specifies whether AWS Network Security Manager automatically remediates noncompliant resources. Default: <code>false</code>.</p>
     pub fn remediation_enabled(&self) -> bool {
         self.remediation_enabled
     }
-    /// <p>Specifies whether AWS Network Security Manager automatically removes the resources it created when they are no longer needed. Default: <code>false</code>.</p>
+    /// <p>Specifies whether AWS Network Security Manager automatically removes the resources it created when they are no longer needed. This member is required, and the only supported value is <code>true</code>.</p>
     pub fn resources_clean_up(&self) -> bool {
         self.resources_clean_up
     }
     /// <p>AWS WAF-specific policy settings. This is populated only for AWS WAF policies.</p>
     pub fn waf_config(&self) -> ::std::option::Option<&crate::types::WafConfig> {
         self.waf_config.as_ref()
+    }
+    /// <p>Policy settings for Network Firewall automated internet firewall policies. Specify these settings only for this policy type.</p>
+    pub fn igw_firewall_config(&self) -> ::std::option::Option<&crate::types::IgwFirewallConfig> {
+        self.igw_firewall_config.as_ref()
     }
 }
 impl PolicyConfiguration {
@@ -39,6 +45,7 @@ pub struct PolicyConfigurationBuilder {
     pub(crate) remediation_enabled: ::std::option::Option<bool>,
     pub(crate) resources_clean_up: ::std::option::Option<bool>,
     pub(crate) waf_config: ::std::option::Option<crate::types::WafConfig>,
+    pub(crate) igw_firewall_config: ::std::option::Option<crate::types::IgwFirewallConfig>,
 }
 impl PolicyConfigurationBuilder {
     /// <p>Specifies whether AWS Network Security Manager automatically remediates noncompliant resources. Default: <code>false</code>.</p>
@@ -56,18 +63,18 @@ impl PolicyConfigurationBuilder {
     pub fn get_remediation_enabled(&self) -> &::std::option::Option<bool> {
         &self.remediation_enabled
     }
-    /// <p>Specifies whether AWS Network Security Manager automatically removes the resources it created when they are no longer needed. Default: <code>false</code>.</p>
+    /// <p>Specifies whether AWS Network Security Manager automatically removes the resources it created when they are no longer needed. This member is required, and the only supported value is <code>true</code>.</p>
     /// This field is required.
     pub fn resources_clean_up(mut self, input: bool) -> Self {
         self.resources_clean_up = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Specifies whether AWS Network Security Manager automatically removes the resources it created when they are no longer needed. Default: <code>false</code>.</p>
+    /// <p>Specifies whether AWS Network Security Manager automatically removes the resources it created when they are no longer needed. This member is required, and the only supported value is <code>true</code>.</p>
     pub fn set_resources_clean_up(mut self, input: ::std::option::Option<bool>) -> Self {
         self.resources_clean_up = input;
         self
     }
-    /// <p>Specifies whether AWS Network Security Manager automatically removes the resources it created when they are no longer needed. Default: <code>false</code>.</p>
+    /// <p>Specifies whether AWS Network Security Manager automatically removes the resources it created when they are no longer needed. This member is required, and the only supported value is <code>true</code>.</p>
     pub fn get_resources_clean_up(&self) -> &::std::option::Option<bool> {
         &self.resources_clean_up
     }
@@ -85,12 +92,27 @@ impl PolicyConfigurationBuilder {
     pub fn get_waf_config(&self) -> &::std::option::Option<crate::types::WafConfig> {
         &self.waf_config
     }
+    /// <p>Policy settings for Network Firewall automated internet firewall policies. Specify these settings only for this policy type.</p>
+    pub fn igw_firewall_config(mut self, input: crate::types::IgwFirewallConfig) -> Self {
+        self.igw_firewall_config = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Policy settings for Network Firewall automated internet firewall policies. Specify these settings only for this policy type.</p>
+    pub fn set_igw_firewall_config(mut self, input: ::std::option::Option<crate::types::IgwFirewallConfig>) -> Self {
+        self.igw_firewall_config = input;
+        self
+    }
+    /// <p>Policy settings for Network Firewall automated internet firewall policies. Specify these settings only for this policy type.</p>
+    pub fn get_igw_firewall_config(&self) -> &::std::option::Option<crate::types::IgwFirewallConfig> {
+        &self.igw_firewall_config
+    }
     /// Consumes the builder and constructs a [`PolicyConfiguration`](crate::types::PolicyConfiguration).
     pub fn build(self) -> crate::types::PolicyConfiguration {
         crate::types::PolicyConfiguration {
             remediation_enabled: self.remediation_enabled.unwrap_or_default(),
             resources_clean_up: self.resources_clean_up.unwrap_or_default(),
             waf_config: self.waf_config,
+            igw_firewall_config: self.igw_firewall_config,
         }
     }
 }

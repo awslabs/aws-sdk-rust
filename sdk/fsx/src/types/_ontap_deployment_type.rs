@@ -14,8 +14,10 @@
 /// match ontapdeploymenttype {
 ///     OntapDeploymentType::MultiAz1 => { /* ... */ },
 ///     OntapDeploymentType::MultiAz2 => { /* ... */ },
+///     OntapDeploymentType::MultiAz3 => { /* ... */ },
 ///     OntapDeploymentType::SingleAz1 => { /* ... */ },
 ///     OntapDeploymentType::SingleAz2 => { /* ... */ },
+///     OntapDeploymentType::SingleAz3 => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
 ///     _ => { /* ... */ },
 /// }
@@ -49,9 +51,13 @@ pub enum OntapDeploymentType {
     #[allow(missing_docs)] // documentation missing in model
     MultiAz2,
     #[allow(missing_docs)] // documentation missing in model
+    MultiAz3,
+    #[allow(missing_docs)] // documentation missing in model
     SingleAz1,
     #[allow(missing_docs)] // documentation missing in model
     SingleAz2,
+    #[allow(missing_docs)] // documentation missing in model
+    SingleAz3,
     /// `Unknown` contains new variants that have been added since this code was generated.
     #[deprecated(note = "Don't directly match on `Unknown`. See the docs on this enum for the correct way to handle unknown variants.")]
     Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue),
@@ -61,8 +67,10 @@ impl ::std::convert::From<&str> for OntapDeploymentType {
         match s {
             "MULTI_AZ_1" => OntapDeploymentType::MultiAz1,
             "MULTI_AZ_2" => OntapDeploymentType::MultiAz2,
+            "MULTI_AZ_3" => OntapDeploymentType::MultiAz3,
             "SINGLE_AZ_1" => OntapDeploymentType::SingleAz1,
             "SINGLE_AZ_2" => OntapDeploymentType::SingleAz2,
+            "SINGLE_AZ_3" => OntapDeploymentType::SingleAz3,
             other => OntapDeploymentType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
         }
     }
@@ -80,14 +88,16 @@ impl OntapDeploymentType {
         match self {
             OntapDeploymentType::MultiAz1 => "MULTI_AZ_1",
             OntapDeploymentType::MultiAz2 => "MULTI_AZ_2",
+            OntapDeploymentType::MultiAz3 => "MULTI_AZ_3",
             OntapDeploymentType::SingleAz1 => "SINGLE_AZ_1",
             OntapDeploymentType::SingleAz2 => "SINGLE_AZ_2",
+            OntapDeploymentType::SingleAz3 => "SINGLE_AZ_3",
             OntapDeploymentType::Unknown(value) => value.as_str(),
         }
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["MULTI_AZ_1", "MULTI_AZ_2", "SINGLE_AZ_1", "SINGLE_AZ_2"]
+        &["MULTI_AZ_1", "MULTI_AZ_2", "MULTI_AZ_3", "SINGLE_AZ_1", "SINGLE_AZ_2", "SINGLE_AZ_3"]
     }
 }
 impl ::std::convert::AsRef<str> for OntapDeploymentType {
@@ -112,8 +122,10 @@ impl ::std::fmt::Display for OntapDeploymentType {
         match self {
             OntapDeploymentType::MultiAz1 => write!(f, "MULTI_AZ_1"),
             OntapDeploymentType::MultiAz2 => write!(f, "MULTI_AZ_2"),
+            OntapDeploymentType::MultiAz3 => write!(f, "MULTI_AZ_3"),
             OntapDeploymentType::SingleAz1 => write!(f, "SINGLE_AZ_1"),
             OntapDeploymentType::SingleAz2 => write!(f, "SINGLE_AZ_2"),
+            OntapDeploymentType::SingleAz3 => write!(f, "SINGLE_AZ_3"),
             OntapDeploymentType::Unknown(value) => write!(f, "{value}"),
         }
     }

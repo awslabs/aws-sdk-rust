@@ -99,19 +99,19 @@ impl PutAssetFluentBuilder {
         self.config_override = config_override;
         self
     }
-    /// <p>The identifier of the asset type for the asset.</p>
-    pub fn asset_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.asset_type_id(input.into());
+    /// <p>The identifier of the asset type for the asset. This field is required.</p>
+    pub fn asset_type_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.asset_type_identifier(input.into());
         self
     }
-    /// <p>The identifier of the asset type for the asset.</p>
-    pub fn set_asset_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_asset_type_id(input);
+    /// <p>The identifier of the asset type for the asset. This field is required.</p>
+    pub fn set_asset_type_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_asset_type_identifier(input);
         self
     }
-    /// <p>The identifier of the asset type for the asset.</p>
-    pub fn get_asset_type_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_asset_type_id()
+    /// <p>The identifier of the asset type for the asset. This field is required.</p>
+    pub fn get_asset_type_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_asset_type_identifier()
     }
     /// <p>The unique identifier of the asset. If an asset with this identifier already exists, it is updated.</p>
     pub fn identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -161,20 +161,20 @@ impl PutAssetFluentBuilder {
     /// To override the contents of this collection use [`set_forms`](Self::set_forms).
     ///
     /// <p>The forms to set on the asset, keyed by form name. Each entry specifies the form type and its JSON content.</p>
-    pub fn forms(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AssetFormEntry) -> Self {
+    pub fn forms(mut self, k: impl ::std::convert::Into<::std::string::String>, v: crate::types::AssetFormInput) -> Self {
         self.inner = self.inner.forms(k.into(), v);
         self
     }
     /// <p>The forms to set on the asset, keyed by form name. Each entry specifies the form type and its JSON content.</p>
     pub fn set_forms(
         mut self,
-        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetFormEntry>>,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetFormInput>>,
     ) -> Self {
         self.inner = self.inner.set_forms(input);
         self
     }
     /// <p>The forms to set on the asset, keyed by form name. Each entry specifies the form type and its JSON content.</p>
-    pub fn get_forms(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetFormEntry>> {
+    pub fn get_forms(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::AssetFormInput>> {
         self.inner.get_forms()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>

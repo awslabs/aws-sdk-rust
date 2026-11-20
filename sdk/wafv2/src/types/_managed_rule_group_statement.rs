@@ -25,6 +25,8 @@ pub struct ManagedRuleGroupStatement {
     /// <li>
     /// <p>Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure the account creation fraud prevention managed rule group. The configuration includes the registration and sign-up pages of your application and the locations in the account creation request payload of data, such as the user email and phone number fields.</p></li>
     /// <li>
+    /// <p>Use the <code>AWSManagedRulesAISecurityRuleSet</code> configuration object to configure the AI security managed rule group. The configuration specifies whether the rule group uses Amazon Bedrock Guardrails to inspect web requests, or web requests and responses, and the IAM role that WAF uses to call Amazon Bedrock Guardrails.</p></li>
+    /// <li>
     /// <p>Use the <code>AWSManagedRulesAntiDDoSRuleSet</code> configuration object to configure the anti-DDoS managed rule group. The configuration includes the sensitivity levels to use in the rules that typically block and challenge requests that might be participating in DDoS attacks and the specification to use to indicate whether a request can handle a silent browser challenge.</p></li>
     /// <li>
     /// <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover prevention managed rule group. The configuration includes the sign-in page of your application and the locations in the login request payload of data such as the username and password.</p></li>
@@ -70,6 +72,8 @@ impl ManagedRuleGroupStatement {
     /// <ul>
     /// <li>
     /// <p>Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure the account creation fraud prevention managed rule group. The configuration includes the registration and sign-up pages of your application and the locations in the account creation request payload of data, such as the user email and phone number fields.</p></li>
+    /// <li>
+    /// <p>Use the <code>AWSManagedRulesAISecurityRuleSet</code> configuration object to configure the AI security managed rule group. The configuration specifies whether the rule group uses Amazon Bedrock Guardrails to inspect web requests, or web requests and responses, and the IAM role that WAF uses to call Amazon Bedrock Guardrails.</p></li>
     /// <li>
     /// <p>Use the <code>AWSManagedRulesAntiDDoSRuleSet</code> configuration object to configure the anti-DDoS managed rule group. The configuration includes the sensitivity levels to use in the rules that typically block and challenge requests that might be participating in DDoS attacks and the specification to use to indicate whether a request can handle a silent browser challenge.</p></li>
     /// <li>
@@ -206,6 +210,8 @@ impl ManagedRuleGroupStatementBuilder {
     /// <li>
     /// <p>Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure the account creation fraud prevention managed rule group. The configuration includes the registration and sign-up pages of your application and the locations in the account creation request payload of data, such as the user email and phone number fields.</p></li>
     /// <li>
+    /// <p>Use the <code>AWSManagedRulesAISecurityRuleSet</code> configuration object to configure the AI security managed rule group. The configuration specifies whether the rule group uses Amazon Bedrock Guardrails to inspect web requests, or web requests and responses, and the IAM role that WAF uses to call Amazon Bedrock Guardrails.</p></li>
+    /// <li>
     /// <p>Use the <code>AWSManagedRulesAntiDDoSRuleSet</code> configuration object to configure the anti-DDoS managed rule group. The configuration includes the sensitivity levels to use in the rules that typically block and challenge requests that might be participating in DDoS attacks and the specification to use to indicate whether a request can handle a silent browser challenge.</p></li>
     /// <li>
     /// <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover prevention managed rule group. The configuration includes the sign-in page of your application and the locations in the login request payload of data such as the username and password.</p></li>
@@ -224,6 +230,8 @@ impl ManagedRuleGroupStatementBuilder {
     /// <li>
     /// <p>Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure the account creation fraud prevention managed rule group. The configuration includes the registration and sign-up pages of your application and the locations in the account creation request payload of data, such as the user email and phone number fields.</p></li>
     /// <li>
+    /// <p>Use the <code>AWSManagedRulesAISecurityRuleSet</code> configuration object to configure the AI security managed rule group. The configuration specifies whether the rule group uses Amazon Bedrock Guardrails to inspect web requests, or web requests and responses, and the IAM role that WAF uses to call Amazon Bedrock Guardrails.</p></li>
+    /// <li>
     /// <p>Use the <code>AWSManagedRulesAntiDDoSRuleSet</code> configuration object to configure the anti-DDoS managed rule group. The configuration includes the sensitivity levels to use in the rules that typically block and challenge requests that might be participating in DDoS attacks and the specification to use to indicate whether a request can handle a silent browser challenge.</p></li>
     /// <li>
     /// <p>Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the account takeover prevention managed rule group. The configuration includes the sign-in page of your application and the locations in the login request payload of data such as the username and password.</p></li>
@@ -239,6 +247,8 @@ impl ManagedRuleGroupStatementBuilder {
     /// <ul>
     /// <li>
     /// <p>Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure the account creation fraud prevention managed rule group. The configuration includes the registration and sign-up pages of your application and the locations in the account creation request payload of data, such as the user email and phone number fields.</p></li>
+    /// <li>
+    /// <p>Use the <code>AWSManagedRulesAISecurityRuleSet</code> configuration object to configure the AI security managed rule group. The configuration specifies whether the rule group uses Amazon Bedrock Guardrails to inspect web requests, or web requests and responses, and the IAM role that WAF uses to call Amazon Bedrock Guardrails.</p></li>
     /// <li>
     /// <p>Use the <code>AWSManagedRulesAntiDDoSRuleSet</code> configuration object to configure the anti-DDoS managed rule group. The configuration includes the sensitivity levels to use in the rules that typically block and challenge requests that might be participating in DDoS attacks and the specification to use to indicate whether a request can handle a silent browser challenge.</p></li>
     /// <li>

@@ -35,6 +35,8 @@ pub(crate) mod shape_get_product;
 
 pub(crate) mod shape_list_fulfillment_options;
 
+pub(crate) mod shape_list_listing_attributes;
+
 pub(crate) mod shape_list_purchase_options;
 
 pub(crate) mod shape_search_facets;
@@ -65,6 +67,8 @@ pub(crate) mod shape_internal_server_exception;
 
 pub(crate) mod shape_list_fulfillment_options_input;
 
+pub(crate) mod shape_list_listing_attributes_input;
+
 pub(crate) mod shape_list_purchase_options_input;
 
 pub(crate) mod shape_resource_not_found_exception;
@@ -87,6 +91,8 @@ pub(crate) mod shape_highlight_list;
 
 pub(crate) mod shape_listing_associated_entity_list;
 
+pub(crate) mod shape_listing_attribute_results_list;
+
 pub(crate) mod shape_listing_badge_list;
 
 pub(crate) mod shape_listing_summary_list;
@@ -104,6 +110,8 @@ pub(crate) mod shape_pricing_model_list;
 pub(crate) mod shape_pricing_unit_list;
 
 pub(crate) mod shape_promotional_media_list;
+
+pub(crate) mod shape_purchase_indicator_list;
 
 pub(crate) mod shape_purchase_option_badge_list;
 
@@ -133,6 +141,8 @@ pub(crate) mod shape_fulfillment_option_summary;
 
 pub(crate) mod shape_listing_associated_entity;
 
+pub(crate) mod shape_listing_attribute_results;
+
 pub(crate) mod shape_listing_badge;
 
 pub(crate) mod shape_listing_facet_list;
@@ -148,6 +158,8 @@ pub(crate) mod shape_offer_term;
 pub(crate) mod shape_pricing_unit;
 
 pub(crate) mod shape_promotional_media;
+
+pub(crate) mod shape_purchase_indicator;
 
 pub(crate) mod shape_purchase_option_badge;
 
@@ -166,6 +178,10 @@ pub(crate) mod shape_amazon_machine_image_fulfillment_option;
 pub(crate) mod shape_api_fulfillment_option;
 
 pub(crate) mod shape_byol_pricing_term;
+
+pub(crate) mod shape_case_studies_summary;
+
+pub(crate) mod shape_case_study;
 
 pub(crate) mod shape_cloud_formation_fulfillment_option;
 
@@ -221,11 +237,29 @@ pub(crate) mod shape_sage_maker_algorithm_fulfillment_option;
 
 pub(crate) mod shape_sage_maker_model_fulfillment_option;
 
+pub(crate) mod shape_specialization_detail;
+
 pub(crate) mod shape_support_term;
+
+pub(crate) mod shape_trust_center_certification_attribute;
+
+pub(crate) mod shape_trust_center_control;
+
+pub(crate) mod shape_trust_center_document_attribute;
+
+pub(crate) mod shape_trust_center_faq_attribute;
+
+pub(crate) mod shape_trust_center_source;
+
+pub(crate) mod shape_trust_center_summary;
+
+pub(crate) mod shape_trust_center_update_attribute;
 
 pub(crate) mod shape_usage_based_pricing_term;
 
 pub(crate) mod shape_use_case;
+
+pub(crate) mod shape_use_case_summary;
 
 pub(crate) mod shape_validity_term;
 
@@ -239,6 +273,8 @@ pub(crate) mod shape_amazon_machine_image_recommendation;
 
 pub(crate) mod shape_aws_supported_service_list;
 
+pub(crate) mod shape_case_study_resource_list;
+
 pub(crate) mod shape_configurable_upfront_rate_card_list;
 
 pub(crate) mod shape_container_operating_system_list;
@@ -248,6 +284,8 @@ pub(crate) mod shape_data_artifact_list;
 pub(crate) mod shape_document_list;
 
 pub(crate) mod shape_eks_add_on_operating_system_list;
+
+pub(crate) mod shape_engagement_dates;
 
 pub(crate) mod shape_grant_list;
 
@@ -259,6 +297,8 @@ pub(crate) mod shape_price_increase;
 
 pub(crate) mod shape_purchase_option_associated_entity;
 
+pub(crate) mod shape_saas_deployment_template_list;
+
 pub(crate) mod shape_sage_maker_algorithm_recommendation;
 
 pub(crate) mod shape_sage_maker_model_content_type_list;
@@ -269,9 +309,21 @@ pub(crate) mod shape_sage_maker_model_response_mime_type_list;
 
 pub(crate) mod shape_schedule_list;
 
+pub(crate) mod shape_specialization;
+
+pub(crate) mod shape_specialization_category;
+
 pub(crate) mod shape_term_template_list;
 
+pub(crate) mod shape_trust_center_certification_summary_list;
+
+pub(crate) mod shape_trust_center_control_domain_list;
+
+pub(crate) mod shape_trust_center_source_summary_list;
+
 pub(crate) mod shape_usage_based_rate_card_list;
+
+pub(crate) mod shape_use_case_summary_list;
 
 pub(crate) mod shape_amazon_machine_image_ebs_volume_type_list;
 
@@ -280,6 +332,10 @@ pub(crate) mod shape_amazon_machine_image_operating_system;
 pub(crate) mod shape_amazon_machine_image_security_group_list;
 
 pub(crate) mod shape_aws_supported_service;
+
+pub(crate) mod shape_case_study_id_list;
+
+pub(crate) mod shape_case_study_resource;
 
 pub(crate) mod shape_configurable_upfront_rate_card_item;
 
@@ -299,11 +355,21 @@ pub(crate) mod shape_helm_operating_system;
 
 pub(crate) mod shape_percentage_range;
 
+pub(crate) mod shape_saas_deployment_template;
+
 pub(crate) mod shape_schedule_item;
+
+pub(crate) mod shape_specialization_type_list;
 
 pub(crate) mod shape_term_template;
 
+pub(crate) mod shape_trust_center_certification_summary;
+
+pub(crate) mod shape_trust_center_source_summary;
+
 pub(crate) mod shape_usage_based_rate_card_item;
+
+pub(crate) mod shape_use_case_summary_entry;
 
 pub(crate) mod shape_amazon_machine_image_security_group;
 
@@ -315,7 +381,13 @@ pub(crate) mod shape_payment_schedule_term_template;
 
 pub(crate) mod shape_rate_card_list;
 
+pub(crate) mod shape_saas_cloud_formation_deployment_template;
+
 pub(crate) mod shape_selector;
+
+pub(crate) mod shape_specialization_type_detail;
+
+pub(crate) mod shape_use_case_information;
 
 pub(crate) mod shape_amazon_machine_image_cidr_ip_address_list;
 
@@ -326,3 +398,7 @@ pub(crate) mod shape_payment_schedule_entry_list;
 pub(crate) mod shape_rate_card_item;
 
 pub(crate) mod shape_payment_schedule_entry;
+
+pub(crate) mod shape_regional_price_list;
+
+pub(crate) mod shape_regional_price;

@@ -25,6 +25,8 @@ pub use crate::types::_output_data_config::OutputDataConfigBuilder;
 
 pub use crate::types::_training_metrics::TrainingMetricsBuilder;
 
+pub use crate::types::_data_retention_storage_configuration::DataRetentionStorageConfigurationBuilder;
+
 pub use crate::types::_account_enforced_guardrail_inference_input_configuration::AccountEnforcedGuardrailInferenceInputConfigurationBuilder;
 
 pub use crate::types::_evaluation_output_data_config::EvaluationOutputDataConfigBuilder;
@@ -65,6 +67,8 @@ pub use crate::types::_custom_model_units::CustomModelUnitsBuilder;
 
 pub use crate::types::_foundation_model_details::FoundationModelDetailsBuilder;
 
+pub use crate::types::_project_data_retention::ProjectDataRetentionBuilder;
+
 pub use crate::types::_routing_criteria::RoutingCriteriaBuilder;
 
 pub use crate::types::_prompt_router_target_model::PromptRouterTargetModelBuilder;
@@ -72,6 +76,8 @@ pub use crate::types::_prompt_router_target_model::PromptRouterTargetModelBuilde
 pub use crate::types::_agreement_availability::AgreementAvailabilityBuilder;
 
 pub use crate::types::_status_details::StatusDetailsBuilder;
+
+pub use crate::types::_trusted_access_resolution_context::TrustedAccessResolutionContextBuilder;
 
 pub use crate::types::_batch_delete_advanced_prompt_optimization_job_error::BatchDeleteAdvancedPromptOptimizationJobErrorBuilder;
 
@@ -175,6 +181,8 @@ pub use crate::types::_foundation_model_lifecycle::FoundationModelLifecycleBuild
 
 pub use crate::types::_foundation_model_summary::FoundationModelSummaryBuilder;
 
+pub use crate::types::_project_summary::ProjectSummaryBuilder;
+
 pub use crate::types::_prompt_router_summary::PromptRouterSummaryBuilder;
 
 pub use crate::types::_provisioned_model_summary::ProvisionedModelSummaryBuilder;
@@ -188,6 +196,10 @@ pub use crate::types::_data_processing_details::DataProcessingDetailsBuilder;
 pub use crate::types::_training_details::TrainingDetailsBuilder;
 
 pub use crate::types::_model_customization_job_summary::ModelCustomizationJobSummaryBuilder;
+
+pub use crate::types::_trusted_access_program_summary::TrustedAccessProgramSummaryBuilder;
+
+pub use crate::types::_trusted_access_program_provider_handoff::TrustedAccessProgramProviderHandoffBuilder;
 
 pub use crate::types::_inference_configuration::InferenceConfigurationBuilder;
 

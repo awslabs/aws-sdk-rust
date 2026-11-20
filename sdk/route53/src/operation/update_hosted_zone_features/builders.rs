@@ -22,8 +22,9 @@ impl crate::operation::update_hosted_zone_features::builders::UpdateHostedZoneFe
 }
 /// Fluent builder constructing a request to `UpdateHostedZoneFeatures`.
 ///
-/// <p>Updates the features configuration for a hosted zone. This operation allows you to enable or disable specific features for your hosted zone, such as accelerated recovery.</p>
+/// <p>Updates the features configuration for a hosted zone. This operation allows you to enable or disable specific features for your hosted zone, such as accelerated recovery and public DNS fallback.</p>
 /// <p>Accelerated recovery enables you to update DNS records in your public hosted zone even when the us-east-1 region is unavailable.</p>
+/// <p>Public DNS fallback enables Route 53 to retry a query against public DNS when a query for a domain name in a private hosted zone matches no existing name (<code>NXDOMAIN</code>). Fallback does not occur when the name exists but has no record of the requested type. Public DNS fallback is supported only for private hosted zones.</p>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct UpdateHostedZoneFeaturesFluentBuilder {
     handle: ::std::sync::Arc<crate::client::Handle>,
@@ -136,5 +137,82 @@ impl UpdateHostedZoneFeaturesFluentBuilder {
     /// <p>Specifies whether to enable accelerated recovery for the hosted zone. Set to <code>true</code> to enable accelerated recovery, or <code>false</code> to disable it.</p>
     pub fn get_enable_accelerated_recovery(&self) -> &::std::option::Option<bool> {
         self.inner.get_enable_accelerated_recovery()
+    }
+    /// <p>Specifies whether to enable public DNS fallback for the hosted zone. Set to <code>true</code> to enable public DNS fallback, or <code>false</code> to disable it.</p>
+    /// <p>Public DNS fallback applies to the entire hosted zone and to all VPCs that are associated with it. To check whether a change has propagated, call <code>GetHostedZone</code> and review <code>PublicDNSFallbackStatus</code> in the response.</p>
+    /// <p>Public DNS fallback is supported only for private hosted zones.</p>
+    pub fn enable_public_dns_fallback(mut self, input: bool) -> Self {
+        self.inner = self.inner.enable_public_dns_fallback(input);
+        self
+    }
+    /// <p>Specifies whether to enable public DNS fallback for the hosted zone. Set to <code>true</code> to enable public DNS fallback, or <code>false</code> to disable it.</p>
+    /// <p>Public DNS fallback applies to the entire hosted zone and to all VPCs that are associated with it. To check whether a change has propagated, call <code>GetHostedZone</code> and review <code>PublicDNSFallbackStatus</code> in the response.</p>
+    /// <p>Public DNS fallback is supported only for private hosted zones.</p>
+    pub fn set_enable_public_dns_fallback(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_enable_public_dns_fallback(input);
+        self
+    }
+    /// <p>Specifies whether to enable public DNS fallback for the hosted zone. Set to <code>true</code> to enable public DNS fallback, or <code>false</code> to disable it.</p>
+    /// <p>Public DNS fallback applies to the entire hosted zone and to all VPCs that are associated with it. To check whether a change has propagated, call <code>GetHostedZone</code> and review <code>PublicDNSFallbackStatus</code> in the response.</p>
+    /// <p>Public DNS fallback is supported only for private hosted zones.</p>
+    pub fn get_enable_public_dns_fallback(&self) -> &::std::option::Option<bool> {
+        self.inner.get_enable_public_dns_fallback()
+    }
+    ///
+    /// Appends an item to `ChangeGuardrails`.
+    ///
+    /// To override the contents of this collection use [`set_change_guardrails`](Self::set_change_guardrails).
+    ///
+    /// <p>Specify the Change Guardrails to turn on or off for the hosted zone. Each entry specifies the name of a guardrail and one of the following statuses:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Turns on the guardrail.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Turns off the guardrail.</p></li>
+    /// </ul>
+    /// <p>Guardrails that aren't in the request keep their current status.</p>
+    /// <p>You can turn on an optional guardrail only if the tier of the hosted zone offers it. You can't turn off a guardrail that the tier includes, such as <code>NS_FORMAT_CHECK</code>. In either case, Route 53 returns an <code>InvalidInput</code> error.</p>
+    pub fn change_guardrails(mut self, input: crate::types::ChangeGuardrail) -> Self {
+        self.inner = self.inner.change_guardrails(input);
+        self
+    }
+    /// <p>Specify the Change Guardrails to turn on or off for the hosted zone. Each entry specifies the name of a guardrail and one of the following statuses:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Turns on the guardrail.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Turns off the guardrail.</p></li>
+    /// </ul>
+    /// <p>Guardrails that aren't in the request keep their current status.</p>
+    /// <p>You can turn on an optional guardrail only if the tier of the hosted zone offers it. You can't turn off a guardrail that the tier includes, such as <code>NS_FORMAT_CHECK</code>. In either case, Route 53 returns an <code>InvalidInput</code> error.</p>
+    pub fn set_change_guardrails(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeGuardrail>>) -> Self {
+        self.inner = self.inner.set_change_guardrails(input);
+        self
+    }
+    /// <p>Specify the Change Guardrails to turn on or off for the hosted zone. Each entry specifies the name of a guardrail and one of the following statuses:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>ENABLED</code>: Turns on the guardrail.</p></li>
+    /// <li>
+    /// <p><code>DISABLED</code>: Turns off the guardrail.</p></li>
+    /// </ul>
+    /// <p>Guardrails that aren't in the request keep their current status.</p>
+    /// <p>You can turn on an optional guardrail only if the tier of the hosted zone offers it. You can't turn off a guardrail that the tier includes, such as <code>NS_FORMAT_CHECK</code>. In either case, Route 53 returns an <code>InvalidInput</code> error.</p>
+    pub fn get_change_guardrails(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeGuardrail>> {
+        self.inner.get_change_guardrails()
+    }
+    /// <p>Specifies whether to validate the request without changing any features. Route 53 returns the same errors as for a real request, but doesn't change the hosted zone. The default is <code>false</code>.</p>
+    pub fn dry_run(mut self, input: bool) -> Self {
+        self.inner = self.inner.dry_run(input);
+        self
+    }
+    /// <p>Specifies whether to validate the request without changing any features. Route 53 returns the same errors as for a real request, but doesn't change the hosted zone. The default is <code>false</code>.</p>
+    pub fn set_dry_run(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_dry_run(input);
+        self
+    }
+    /// <p>Specifies whether to validate the request without changing any features. Route 53 returns the same errors as for a real request, but doesn't change the hosted zone. The default is <code>false</code>.</p>
+    pub fn get_dry_run(&self) -> &::std::option::Option<bool> {
+        self.inner.get_dry_run()
     }
 }

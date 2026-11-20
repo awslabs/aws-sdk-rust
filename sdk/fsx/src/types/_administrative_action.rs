@@ -39,7 +39,7 @@ pub struct AdministrativeAction {
     /// <li>
     /// <p><code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p></li>
     /// <li>
-    /// <p><code>DOWNLOAD_DATA_FROM_BACKUP</code> - An FSx for ONTAP backup is being restored to a new volume on a second-generation file system. Once the all the file metadata is loaded onto the volume, you can mount the volume with read-only access. during this process.</p></li>
+    /// <p><code>DOWNLOAD_DATA_FROM_BACKUP</code> - An FSx for ONTAP backup is being restored to a new volume on a second-generation or third-generation file system. Once the all the file metadata is loaded onto the volume, you can mount the volume with read-only access. during this process.</p></li>
     /// <li>
     /// <p><code>VOLUME_INITIALIZE_WITH_SNAPSHOT</code> - A volume is being created from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CreateVolume</code>), or CLI (<code>create-volume</code>) when using the using the <code>FULL_COPY</code> strategy.</p></li>
     /// <li>
@@ -60,13 +60,13 @@ pub struct AdministrativeAction {
     /// <p><code>PENDING</code> - Amazon FSx is waiting to process the administrative action.</p></li>
     /// <li>
     /// <p><code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p>
-    /// <p>For a backup restore to a second-generation FSx for ONTAP file system, indicates that all data has been downloaded to the volume, and clients now have read-write access to volume.</p></li>
+    /// <p>For a backup restore to a second-generation or third-generation FSx for ONTAP file system, indicates that all data has been downloaded to the volume, and clients now have read-write access to volume.</p></li>
     /// <li>
     /// <p><code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process.</p></li>
     /// <li>
-    /// <p><code>PENDING</code> - For a backup restore to a second-generation FSx for ONTAP file system, indicates that the file metadata is being downloaded onto the volume. The volume's Lifecycle state is CREATING.</p></li>
+    /// <p><code>PENDING</code> - For a backup restore to a second-generation or third-generation FSx for ONTAP file system, indicates that the file metadata is being downloaded onto the volume. The volume's Lifecycle state is CREATING.</p></li>
     /// <li>
-    /// <p><code>IN_PROGRESS</code> - For a backup restore to a second-generation FSx for ONTAP file system, indicates that all metadata has been downloaded to the new volume and client can access data with read-only access while Amazon FSx downloads the file data to the volume. Track the progress of this process with the <code>ProgressPercent</code> element.</p></li>
+    /// <p><code>IN_PROGRESS</code> - For a backup restore to a second-generation or third-generation FSx for ONTAP file system, indicates that all metadata has been downloaded to the new volume and client can access data with read-only access while Amazon FSx downloads the file data to the volume. Track the progress of this process with the <code>ProgressPercent</code> element.</p></li>
     /// </ul>
     pub status: ::std::option::Option<crate::types::Status>,
     /// <p>The target value for the administration action, provided in the <code>UpdateFileSystem</code> operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions.</p>
@@ -120,7 +120,7 @@ impl AdministrativeAction {
     /// <li>
     /// <p><code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p></li>
     /// <li>
-    /// <p><code>DOWNLOAD_DATA_FROM_BACKUP</code> - An FSx for ONTAP backup is being restored to a new volume on a second-generation file system. Once the all the file metadata is loaded onto the volume, you can mount the volume with read-only access. during this process.</p></li>
+    /// <p><code>DOWNLOAD_DATA_FROM_BACKUP</code> - An FSx for ONTAP backup is being restored to a new volume on a second-generation or third-generation file system. Once the all the file metadata is loaded onto the volume, you can mount the volume with read-only access. during this process.</p></li>
     /// <li>
     /// <p><code>VOLUME_INITIALIZE_WITH_SNAPSHOT</code> - A volume is being created from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CreateVolume</code>), or CLI (<code>create-volume</code>) when using the using the <code>FULL_COPY</code> strategy.</p></li>
     /// <li>
@@ -147,13 +147,13 @@ impl AdministrativeAction {
     /// <p><code>PENDING</code> - Amazon FSx is waiting to process the administrative action.</p></li>
     /// <li>
     /// <p><code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p>
-    /// <p>For a backup restore to a second-generation FSx for ONTAP file system, indicates that all data has been downloaded to the volume, and clients now have read-write access to volume.</p></li>
+    /// <p>For a backup restore to a second-generation or third-generation FSx for ONTAP file system, indicates that all data has been downloaded to the volume, and clients now have read-write access to volume.</p></li>
     /// <li>
     /// <p><code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process.</p></li>
     /// <li>
-    /// <p><code>PENDING</code> - For a backup restore to a second-generation FSx for ONTAP file system, indicates that the file metadata is being downloaded onto the volume. The volume's Lifecycle state is CREATING.</p></li>
+    /// <p><code>PENDING</code> - For a backup restore to a second-generation or third-generation FSx for ONTAP file system, indicates that the file metadata is being downloaded onto the volume. The volume's Lifecycle state is CREATING.</p></li>
     /// <li>
-    /// <p><code>IN_PROGRESS</code> - For a backup restore to a second-generation FSx for ONTAP file system, indicates that all metadata has been downloaded to the new volume and client can access data with read-only access while Amazon FSx downloads the file data to the volume. Track the progress of this process with the <code>ProgressPercent</code> element.</p></li>
+    /// <p><code>IN_PROGRESS</code> - For a backup restore to a second-generation or third-generation FSx for ONTAP file system, indicates that all metadata has been downloaded to the new volume and client can access data with read-only access while Amazon FSx downloads the file data to the volume. Track the progress of this process with the <code>ProgressPercent</code> element.</p></li>
     /// </ul>
     pub fn status(&self) -> ::std::option::Option<&crate::types::Status> {
         self.status.as_ref()
@@ -246,7 +246,7 @@ impl AdministrativeActionBuilder {
     /// <li>
     /// <p><code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p></li>
     /// <li>
-    /// <p><code>DOWNLOAD_DATA_FROM_BACKUP</code> - An FSx for ONTAP backup is being restored to a new volume on a second-generation file system. Once the all the file metadata is loaded onto the volume, you can mount the volume with read-only access. during this process.</p></li>
+    /// <p><code>DOWNLOAD_DATA_FROM_BACKUP</code> - An FSx for ONTAP backup is being restored to a new volume on a second-generation or third-generation file system. Once the all the file metadata is loaded onto the volume, you can mount the volume with read-only access. during this process.</p></li>
     /// <li>
     /// <p><code>VOLUME_INITIALIZE_WITH_SNAPSHOT</code> - A volume is being created from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CreateVolume</code>), or CLI (<code>create-volume</code>) when using the using the <code>FULL_COPY</code> strategy.</p></li>
     /// <li>
@@ -291,7 +291,7 @@ impl AdministrativeActionBuilder {
     /// <li>
     /// <p><code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p></li>
     /// <li>
-    /// <p><code>DOWNLOAD_DATA_FROM_BACKUP</code> - An FSx for ONTAP backup is being restored to a new volume on a second-generation file system. Once the all the file metadata is loaded onto the volume, you can mount the volume with read-only access. during this process.</p></li>
+    /// <p><code>DOWNLOAD_DATA_FROM_BACKUP</code> - An FSx for ONTAP backup is being restored to a new volume on a second-generation or third-generation file system. Once the all the file metadata is loaded onto the volume, you can mount the volume with read-only access. during this process.</p></li>
     /// <li>
     /// <p><code>VOLUME_INITIALIZE_WITH_SNAPSHOT</code> - A volume is being created from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CreateVolume</code>), or CLI (<code>create-volume</code>) when using the using the <code>FULL_COPY</code> strategy.</p></li>
     /// <li>
@@ -336,7 +336,7 @@ impl AdministrativeActionBuilder {
     /// <li>
     /// <p><code>RELEASE_NFS_V3_LOCKS</code> - Tracks the release of Network File System (NFS) V3 locks on an Amazon FSx for OpenZFS file system.</p></li>
     /// <li>
-    /// <p><code>DOWNLOAD_DATA_FROM_BACKUP</code> - An FSx for ONTAP backup is being restored to a new volume on a second-generation file system. Once the all the file metadata is loaded onto the volume, you can mount the volume with read-only access. during this process.</p></li>
+    /// <p><code>DOWNLOAD_DATA_FROM_BACKUP</code> - An FSx for ONTAP backup is being restored to a new volume on a second-generation or third-generation file system. Once the all the file metadata is loaded onto the volume, you can mount the volume with read-only access. during this process.</p></li>
     /// <li>
     /// <p><code>VOLUME_INITIALIZE_WITH_SNAPSHOT</code> - A volume is being created from a snapshot on a different FSx for OpenZFS file system. You can initiate this from the Amazon FSx console, API (<code>CreateVolume</code>), or CLI (<code>create-volume</code>) when using the using the <code>FULL_COPY</code> strategy.</p></li>
     /// <li>
@@ -383,13 +383,13 @@ impl AdministrativeActionBuilder {
     /// <p><code>PENDING</code> - Amazon FSx is waiting to process the administrative action.</p></li>
     /// <li>
     /// <p><code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p>
-    /// <p>For a backup restore to a second-generation FSx for ONTAP file system, indicates that all data has been downloaded to the volume, and clients now have read-write access to volume.</p></li>
+    /// <p>For a backup restore to a second-generation or third-generation FSx for ONTAP file system, indicates that all data has been downloaded to the volume, and clients now have read-write access to volume.</p></li>
     /// <li>
     /// <p><code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process.</p></li>
     /// <li>
-    /// <p><code>PENDING</code> - For a backup restore to a second-generation FSx for ONTAP file system, indicates that the file metadata is being downloaded onto the volume. The volume's Lifecycle state is CREATING.</p></li>
+    /// <p><code>PENDING</code> - For a backup restore to a second-generation or third-generation FSx for ONTAP file system, indicates that the file metadata is being downloaded onto the volume. The volume's Lifecycle state is CREATING.</p></li>
     /// <li>
-    /// <p><code>IN_PROGRESS</code> - For a backup restore to a second-generation FSx for ONTAP file system, indicates that all metadata has been downloaded to the new volume and client can access data with read-only access while Amazon FSx downloads the file data to the volume. Track the progress of this process with the <code>ProgressPercent</code> element.</p></li>
+    /// <p><code>IN_PROGRESS</code> - For a backup restore to a second-generation or third-generation FSx for ONTAP file system, indicates that all metadata has been downloaded to the new volume and client can access data with read-only access while Amazon FSx downloads the file data to the volume. Track the progress of this process with the <code>ProgressPercent</code> element.</p></li>
     /// </ul>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = ::std::option::Option::Some(input);
@@ -405,13 +405,13 @@ impl AdministrativeActionBuilder {
     /// <p><code>PENDING</code> - Amazon FSx is waiting to process the administrative action.</p></li>
     /// <li>
     /// <p><code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p>
-    /// <p>For a backup restore to a second-generation FSx for ONTAP file system, indicates that all data has been downloaded to the volume, and clients now have read-write access to volume.</p></li>
+    /// <p>For a backup restore to a second-generation or third-generation FSx for ONTAP file system, indicates that all data has been downloaded to the volume, and clients now have read-write access to volume.</p></li>
     /// <li>
     /// <p><code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process.</p></li>
     /// <li>
-    /// <p><code>PENDING</code> - For a backup restore to a second-generation FSx for ONTAP file system, indicates that the file metadata is being downloaded onto the volume. The volume's Lifecycle state is CREATING.</p></li>
+    /// <p><code>PENDING</code> - For a backup restore to a second-generation or third-generation FSx for ONTAP file system, indicates that the file metadata is being downloaded onto the volume. The volume's Lifecycle state is CREATING.</p></li>
     /// <li>
-    /// <p><code>IN_PROGRESS</code> - For a backup restore to a second-generation FSx for ONTAP file system, indicates that all metadata has been downloaded to the new volume and client can access data with read-only access while Amazon FSx downloads the file data to the volume. Track the progress of this process with the <code>ProgressPercent</code> element.</p></li>
+    /// <p><code>IN_PROGRESS</code> - For a backup restore to a second-generation or third-generation FSx for ONTAP file system, indicates that all metadata has been downloaded to the new volume and client can access data with read-only access while Amazon FSx downloads the file data to the volume. Track the progress of this process with the <code>ProgressPercent</code> element.</p></li>
     /// </ul>
     pub fn set_status(mut self, input: ::std::option::Option<crate::types::Status>) -> Self {
         self.status = input;
@@ -427,13 +427,13 @@ impl AdministrativeActionBuilder {
     /// <p><code>PENDING</code> - Amazon FSx is waiting to process the administrative action.</p></li>
     /// <li>
     /// <p><code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.</p>
-    /// <p>For a backup restore to a second-generation FSx for ONTAP file system, indicates that all data has been downloaded to the volume, and clients now have read-write access to volume.</p></li>
+    /// <p>For a backup restore to a second-generation or third-generation FSx for ONTAP file system, indicates that all data has been downloaded to the volume, and clients now have read-write access to volume.</p></li>
     /// <li>
     /// <p><code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon FSx has updated the file system with the new storage capacity, and is now performing the storage-optimization process.</p></li>
     /// <li>
-    /// <p><code>PENDING</code> - For a backup restore to a second-generation FSx for ONTAP file system, indicates that the file metadata is being downloaded onto the volume. The volume's Lifecycle state is CREATING.</p></li>
+    /// <p><code>PENDING</code> - For a backup restore to a second-generation or third-generation FSx for ONTAP file system, indicates that the file metadata is being downloaded onto the volume. The volume's Lifecycle state is CREATING.</p></li>
     /// <li>
-    /// <p><code>IN_PROGRESS</code> - For a backup restore to a second-generation FSx for ONTAP file system, indicates that all metadata has been downloaded to the new volume and client can access data with read-only access while Amazon FSx downloads the file data to the volume. Track the progress of this process with the <code>ProgressPercent</code> element.</p></li>
+    /// <p><code>IN_PROGRESS</code> - For a backup restore to a second-generation or third-generation FSx for ONTAP file system, indicates that all metadata has been downloaded to the new volume and client can access data with read-only access while Amazon FSx downloads the file data to the volume. Track the progress of this process with the <code>ProgressPercent</code> element.</p></li>
     /// </ul>
     pub fn get_status(&self) -> &::std::option::Option<crate::types::Status> {
         &self.status

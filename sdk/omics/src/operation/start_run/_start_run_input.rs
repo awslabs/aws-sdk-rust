@@ -21,7 +21,7 @@ pub struct StartRunInput {
     pub run_group_id: ::std::option::Option<::std::string::String>,
     /// <p>Use the run priority (highest: 1) to establish the order of runs in a run group when you start a run. If multiple runs share the same priority, the run that was initiated first will have the higher priority. Runs that do not belong to a run group can be assigned a priority. The priorities of these runs are ranked among other runs that are not in a run group. For more information, see <a href="https://docs.aws.amazon.com/omics/latest/dev/creating-run-groups.html#run-priority">Run priority</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
     pub priority: ::std::option::Option<i32>,
-    /// <p>Parameters for the run. The run needs all required parameters and can include optional parameters. The run cannot include any parameters that are not defined in the parameter template. To retrieve parameters from the run, use the GetRun API operation.</p>
+    /// <p>Parameters for the run. The run needs all required parameters and can include optional parameters. The run cannot include any parameters that are not defined in the parameter template. To retrieve parameters from the run, use the GetRun API operation. To supply the parameters in a file in S3 instead, use <code>parametersUri</code>. Specify either <code>parameters</code> or <code>parametersUri</code>, not both.</p>
     pub parameters: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>The <code>STATIC</code> storage capacity (in gibibytes, GiB) for this run. The default run storage capacity is 1200 GiB. If your requested storage capacity is unavailable, the system rounds up the value to the nearest 1200 GiB multiple. If the requested storage capacity is still unavailable, the system rounds up the value to the nearest 2400 GiB multiple. This field is not required if the storage type is <code>DYNAMIC</code> (the system ignores any value that you enter).</p>
     pub storage_capacity: ::std::option::Option<i32>,
@@ -51,10 +51,15 @@ pub struct StartRunInput {
     pub configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>Optional inline policy json for scoping down permissions via a session policy on the IAM role provided in the roleArn parameter.</p>
     pub session_policy: ::std::option::Option<::std::string::String>,
-    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles, Nextflow runtime configuration).</p>
     pub engine_settings: ::std::option::Option<::aws_smithy_types::Document>,
     /// <p>You can control the path prefixes that the service adds beneath <code>outputUri</code>. If you don't specify a value, the service uses <code>SERVICE_DEFINED</code>, which adds a run-specific prefix.</p>
     pub output_uri_prefix_mode: ::std::option::Option<crate::types::RunOutputUriPrefixMode>,
+    /// <p>Specifies whether the workflow run that this request starts can read inputs from Amazon S3 buckets that use Requester Pays. Your account pays the request and data transfer charges for those reads. The default is <code>false</code>.</p>
+    pub requester_pays_enabled: ::std::option::Option<bool>,
+    /// <p>The S3 URI of a JSON file that contains the run parameters. Use this field instead of <code>parameters</code> when your parameters are too large for the request. Specify either <code>parameters</code> or <code>parametersUri</code>, not both.</p>
+    /// <p>Amazon Web Services HealthOmics validates the file after <code>StartRun</code> returns. If the file isn't valid, Amazon Web Services HealthOmics fails the run with the failure reason <code>INVALID_RUN_PARAMETERS</code>. For more information about permissions, limits, and other requirements, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-run-inputs.html">Amazon Web Services HealthOmics run inputs</a> and <a href="https://docs.aws.amazon.com/omics/latest/dev/fixed-quotas.html">Amazon Web Services HealthOmics service quotas</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub parameters_uri: ::std::option::Option<::std::string::String>,
 }
 impl StartRunInput {
     /// <p>The run's workflow ID. The <code>workflowId</code> is not the UUID.</p>
@@ -93,7 +98,7 @@ impl StartRunInput {
     pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
-    /// <p>Parameters for the run. The run needs all required parameters and can include optional parameters. The run cannot include any parameters that are not defined in the parameter template. To retrieve parameters from the run, use the GetRun API operation.</p>
+    /// <p>Parameters for the run. The run needs all required parameters and can include optional parameters. The run cannot include any parameters that are not defined in the parameter template. To retrieve parameters from the run, use the GetRun API operation. To supply the parameters in a file in S3 instead, use <code>parametersUri</code>. Specify either <code>parameters</code> or <code>parametersUri</code>, not both.</p>
     pub fn parameters(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.parameters.as_ref()
     }
@@ -151,13 +156,22 @@ impl StartRunInput {
     pub fn session_policy(&self) -> ::std::option::Option<&str> {
         self.session_policy.as_deref()
     }
-    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles, Nextflow runtime configuration).</p>
     pub fn engine_settings(&self) -> ::std::option::Option<&::aws_smithy_types::Document> {
         self.engine_settings.as_ref()
     }
     /// <p>You can control the path prefixes that the service adds beneath <code>outputUri</code>. If you don't specify a value, the service uses <code>SERVICE_DEFINED</code>, which adds a run-specific prefix.</p>
     pub fn output_uri_prefix_mode(&self) -> ::std::option::Option<&crate::types::RunOutputUriPrefixMode> {
         self.output_uri_prefix_mode.as_ref()
+    }
+    /// <p>Specifies whether the workflow run that this request starts can read inputs from Amazon S3 buckets that use Requester Pays. Your account pays the request and data transfer charges for those reads. The default is <code>false</code>.</p>
+    pub fn requester_pays_enabled(&self) -> ::std::option::Option<bool> {
+        self.requester_pays_enabled
+    }
+    /// <p>The S3 URI of a JSON file that contains the run parameters. Use this field instead of <code>parameters</code> when your parameters are too large for the request. Specify either <code>parameters</code> or <code>parametersUri</code>, not both.</p>
+    /// <p>Amazon Web Services HealthOmics validates the file after <code>StartRun</code> returns. If the file isn't valid, Amazon Web Services HealthOmics fails the run with the failure reason <code>INVALID_RUN_PARAMETERS</code>. For more information about permissions, limits, and other requirements, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-run-inputs.html">Amazon Web Services HealthOmics run inputs</a> and <a href="https://docs.aws.amazon.com/omics/latest/dev/fixed-quotas.html">Amazon Web Services HealthOmics service quotas</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn parameters_uri(&self) -> ::std::option::Option<&str> {
+        self.parameters_uri.as_deref()
     }
 }
 impl StartRunInput {
@@ -196,6 +210,8 @@ pub struct StartRunInputBuilder {
     pub(crate) session_policy: ::std::option::Option<::std::string::String>,
     pub(crate) engine_settings: ::std::option::Option<::aws_smithy_types::Document>,
     pub(crate) output_uri_prefix_mode: ::std::option::Option<crate::types::RunOutputUriPrefixMode>,
+    pub(crate) requester_pays_enabled: ::std::option::Option<bool>,
+    pub(crate) parameters_uri: ::std::option::Option<::std::string::String>,
 }
 impl StartRunInputBuilder {
     /// <p>The run's workflow ID. The <code>workflowId</code> is not the UUID.</p>
@@ -325,17 +341,17 @@ impl StartRunInputBuilder {
     pub fn get_priority(&self) -> &::std::option::Option<i32> {
         &self.priority
     }
-    /// <p>Parameters for the run. The run needs all required parameters and can include optional parameters. The run cannot include any parameters that are not defined in the parameter template. To retrieve parameters from the run, use the GetRun API operation.</p>
+    /// <p>Parameters for the run. The run needs all required parameters and can include optional parameters. The run cannot include any parameters that are not defined in the parameter template. To retrieve parameters from the run, use the GetRun API operation. To supply the parameters in a file in S3 instead, use <code>parametersUri</code>. Specify either <code>parameters</code> or <code>parametersUri</code>, not both.</p>
     pub fn parameters(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.parameters = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Parameters for the run. The run needs all required parameters and can include optional parameters. The run cannot include any parameters that are not defined in the parameter template. To retrieve parameters from the run, use the GetRun API operation.</p>
+    /// <p>Parameters for the run. The run needs all required parameters and can include optional parameters. The run cannot include any parameters that are not defined in the parameter template. To retrieve parameters from the run, use the GetRun API operation. To supply the parameters in a file in S3 instead, use <code>parametersUri</code>. Specify either <code>parameters</code> or <code>parametersUri</code>, not both.</p>
     pub fn set_parameters(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.parameters = input;
         self
     }
-    /// <p>Parameters for the run. The run needs all required parameters and can include optional parameters. The run cannot include any parameters that are not defined in the parameter template. To retrieve parameters from the run, use the GetRun API operation.</p>
+    /// <p>Parameters for the run. The run needs all required parameters and can include optional parameters. The run cannot include any parameters that are not defined in the parameter template. To retrieve parameters from the run, use the GetRun API operation. To supply the parameters in a file in S3 instead, use <code>parametersUri</code>. Specify either <code>parameters</code> or <code>parametersUri</code>, not both.</p>
     pub fn get_parameters(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.parameters
     }
@@ -535,17 +551,17 @@ impl StartRunInputBuilder {
     pub fn get_session_policy(&self) -> &::std::option::Option<::std::string::String> {
         &self.session_policy
     }
-    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles, Nextflow runtime configuration).</p>
     pub fn engine_settings(mut self, input: ::aws_smithy_types::Document) -> Self {
         self.engine_settings = ::std::option::Option::Some(input);
         self
     }
-    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles, Nextflow runtime configuration).</p>
     pub fn set_engine_settings(mut self, input: ::std::option::Option<::aws_smithy_types::Document>) -> Self {
         self.engine_settings = input;
         self
     }
-    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles).</p>
+    /// <p>Engine-specific settings for the workflow run. Use this field to specify configuration options that are specific to the workflow engine (for example, Nextflow profiles, Nextflow runtime configuration).</p>
     pub fn get_engine_settings(&self) -> &::std::option::Option<::aws_smithy_types::Document> {
         &self.engine_settings
     }
@@ -562,6 +578,37 @@ impl StartRunInputBuilder {
     /// <p>You can control the path prefixes that the service adds beneath <code>outputUri</code>. If you don't specify a value, the service uses <code>SERVICE_DEFINED</code>, which adds a run-specific prefix.</p>
     pub fn get_output_uri_prefix_mode(&self) -> &::std::option::Option<crate::types::RunOutputUriPrefixMode> {
         &self.output_uri_prefix_mode
+    }
+    /// <p>Specifies whether the workflow run that this request starts can read inputs from Amazon S3 buckets that use Requester Pays. Your account pays the request and data transfer charges for those reads. The default is <code>false</code>.</p>
+    pub fn requester_pays_enabled(mut self, input: bool) -> Self {
+        self.requester_pays_enabled = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether the workflow run that this request starts can read inputs from Amazon S3 buckets that use Requester Pays. Your account pays the request and data transfer charges for those reads. The default is <code>false</code>.</p>
+    pub fn set_requester_pays_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.requester_pays_enabled = input;
+        self
+    }
+    /// <p>Specifies whether the workflow run that this request starts can read inputs from Amazon S3 buckets that use Requester Pays. Your account pays the request and data transfer charges for those reads. The default is <code>false</code>.</p>
+    pub fn get_requester_pays_enabled(&self) -> &::std::option::Option<bool> {
+        &self.requester_pays_enabled
+    }
+    /// <p>The S3 URI of a JSON file that contains the run parameters. Use this field instead of <code>parameters</code> when your parameters are too large for the request. Specify either <code>parameters</code> or <code>parametersUri</code>, not both.</p>
+    /// <p>Amazon Web Services HealthOmics validates the file after <code>StartRun</code> returns. If the file isn't valid, Amazon Web Services HealthOmics fails the run with the failure reason <code>INVALID_RUN_PARAMETERS</code>. For more information about permissions, limits, and other requirements, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-run-inputs.html">Amazon Web Services HealthOmics run inputs</a> and <a href="https://docs.aws.amazon.com/omics/latest/dev/fixed-quotas.html">Amazon Web Services HealthOmics service quotas</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn parameters_uri(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.parameters_uri = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The S3 URI of a JSON file that contains the run parameters. Use this field instead of <code>parameters</code> when your parameters are too large for the request. Specify either <code>parameters</code> or <code>parametersUri</code>, not both.</p>
+    /// <p>Amazon Web Services HealthOmics validates the file after <code>StartRun</code> returns. If the file isn't valid, Amazon Web Services HealthOmics fails the run with the failure reason <code>INVALID_RUN_PARAMETERS</code>. For more information about permissions, limits, and other requirements, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-run-inputs.html">Amazon Web Services HealthOmics run inputs</a> and <a href="https://docs.aws.amazon.com/omics/latest/dev/fixed-quotas.html">Amazon Web Services HealthOmics service quotas</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn set_parameters_uri(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.parameters_uri = input;
+        self
+    }
+    /// <p>The S3 URI of a JSON file that contains the run parameters. Use this field instead of <code>parameters</code> when your parameters are too large for the request. Specify either <code>parameters</code> or <code>parametersUri</code>, not both.</p>
+    /// <p>Amazon Web Services HealthOmics validates the file after <code>StartRun</code> returns. If the file isn't valid, Amazon Web Services HealthOmics fails the run with the failure reason <code>INVALID_RUN_PARAMETERS</code>. For more information about permissions, limits, and other requirements, see <a href="https://docs.aws.amazon.com/omics/latest/dev/workflows-run-inputs.html">Amazon Web Services HealthOmics run inputs</a> and <a href="https://docs.aws.amazon.com/omics/latest/dev/fixed-quotas.html">Amazon Web Services HealthOmics service quotas</a> in the <i>Amazon Web Services HealthOmics User Guide</i>.</p>
+    pub fn get_parameters_uri(&self) -> &::std::option::Option<::std::string::String> {
+        &self.parameters_uri
     }
     /// Consumes the builder and constructs a [`StartRunInput`](crate::operation::start_run::StartRunInput).
     pub fn build(self) -> ::std::result::Result<crate::operation::start_run::StartRunInput, ::aws_smithy_types::error::operation::BuildError> {
@@ -591,6 +638,8 @@ impl StartRunInputBuilder {
             session_policy: self.session_policy,
             engine_settings: self.engine_settings,
             output_uri_prefix_mode: self.output_uri_prefix_mode,
+            requester_pays_enabled: self.requester_pays_enabled,
+            parameters_uri: self.parameters_uri,
         })
     }
 }

@@ -69,6 +69,26 @@ pub(crate) fn reflens_list_automation_rules_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_organization_enrollment_configurations_output_output_next_token(
+    input: &crate::operation::list_organization_enrollment_configurations::ListOrganizationEnrollmentConfigurationsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn reflens_list_organizational_units_output_output_next_token(
+    input: &crate::operation::list_organizational_units::ListOrganizationalUnitsOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_recommended_action_summaries_output_output_next_token(
     input: &crate::operation::list_recommended_action_summaries::ListRecommendedActionSummariesOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -135,6 +155,20 @@ pub(crate) fn lens_list_automation_rules_output_output_automation_rules(
     input: crate::operation::list_automation_rules::ListAutomationRulesOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::AutomationRule>> {
     let input = input.automation_rules?;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_organization_enrollment_configurations_output_output_organization_enrollment_configurations(
+    input: crate::operation::list_organization_enrollment_configurations::ListOrganizationEnrollmentConfigurationsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::OrganizationEnrollmentConfiguration>> {
+    let input = input.organization_enrollment_configurations;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_organizational_units_output_output_organizational_units(
+    input: crate::operation::list_organizational_units::ListOrganizationalUnitsOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::OrganizationalUnitInfo>> {
+    let input = input.organizational_units;
     ::std::option::Option::Some(input)
 }
 

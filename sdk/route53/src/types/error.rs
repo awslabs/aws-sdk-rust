@@ -137,6 +137,8 @@ pub use crate::types::error::_no_such_geo_location::NoSuchGeoLocation;
 
 pub use crate::types::error::_incompatible_version::IncompatibleVersion;
 
+pub use crate::types::error::_feature_not_enabled::FeatureNotEnabled;
+
 pub use crate::types::error::_hosted_zone_not_private::HostedZoneNotPrivate;
 
 pub use crate::types::error::_no_such_cidr_location_exception::NoSuchCidrLocationException;
@@ -172,6 +174,8 @@ mod _delegation_set_not_available;
 mod _delegation_set_not_reusable;
 
 mod _dnssec_not_found;
+
+mod _feature_not_enabled;
 
 mod _health_check_already_exists;
 

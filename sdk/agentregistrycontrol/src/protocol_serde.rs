@@ -23,17 +23,31 @@ pub fn parse_http_error_metadata(
     crate::json_errors::parse_error_metadata(response_body, response_headers)
 }
 
+pub(crate) mod shape_associate_publisher;
+
+pub(crate) mod shape_create_publisher;
+
 pub(crate) mod shape_create_registry;
 
 pub(crate) mod shape_create_registry_record;
+
+pub(crate) mod shape_delete_publisher;
 
 pub(crate) mod shape_delete_registry;
 
 pub(crate) mod shape_delete_registry_record;
 
+pub(crate) mod shape_disassociate_publisher;
+
+pub(crate) mod shape_get_publisher;
+
 pub(crate) mod shape_get_registry;
 
 pub(crate) mod shape_get_registry_record;
+
+pub(crate) mod shape_list_publisher_associations;
+
+pub(crate) mod shape_list_publishers;
 
 pub(crate) mod shape_list_registries;
 
@@ -47,11 +61,15 @@ pub(crate) mod shape_tag_resource;
 
 pub(crate) mod shape_untag_resource;
 
+pub(crate) mod shape_update_publisher_association_approval_status;
+
 pub(crate) mod shape_update_registry;
 
 pub(crate) mod shape_update_registry_record;
 
 pub(crate) mod shape_update_registry_record_status;
+
+pub(crate) mod shape_validate_publisher;
 
 pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
     if data.is_empty() {
@@ -63,11 +81,17 @@ pub(crate) fn or_empty_doc(data: &[u8]) -> &[u8] {
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_associate_publisher_input;
+
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_publisher_input;
 
 pub(crate) mod shape_create_registry_input;
 
 pub(crate) mod shape_create_registry_record_input;
+
+pub(crate) mod shape_dependency_exception;
 
 pub(crate) mod shape_internal_server_exception;
 
@@ -82,6 +106,8 @@ pub(crate) mod shape_service_quota_exceeded_exception;
 pub(crate) mod shape_tag_resource_input;
 
 pub(crate) mod shape_throttling_exception;
+
+pub(crate) mod shape_update_publisher_association_approval_status_input;
 
 pub(crate) mod shape_update_registry_input;
 
@@ -105,11 +131,19 @@ pub(crate) mod shape_descriptors;
 
 pub(crate) mod shape_discovery_configuration;
 
+pub(crate) mod shape_domain_challenge;
+
 pub(crate) mod shape_encryption_configuration;
+
+pub(crate) mod shape_identifier;
 
 pub(crate) mod shape_provenance;
 
 pub(crate) mod shape_provenance_list;
+
+pub(crate) mod shape_publisher_association_list;
+
+pub(crate) mod shape_publisher_summary_list;
 
 pub(crate) mod shape_registry_filter;
 
@@ -126,6 +160,8 @@ pub(crate) mod shape_registry_record_synchronized_source;
 pub(crate) mod shape_registry_summary_list;
 
 pub(crate) mod shape_resource_tags_map;
+
+pub(crate) mod shape_tag_map;
 
 pub(crate) mod shape_updated_approval_configuration;
 
@@ -167,6 +203,10 @@ pub(crate) mod shape_mcp_server_descriptor;
 
 pub(crate) mod shape_o_auth2_authorization_data;
 
+pub(crate) mod shape_publisher_association;
+
+pub(crate) mod shape_publisher_summary;
+
 pub(crate) mod shape_record_type_schema_override;
 
 pub(crate) mod shape_record_type_schema_override_list;
@@ -176,6 +216,8 @@ pub(crate) mod shape_registry_record_summary;
 pub(crate) mod shape_registry_summary;
 
 pub(crate) mod shape_s3_synchronized_source;
+
+pub(crate) mod shape_signature_agent_card_descriptor;
 
 pub(crate) mod shape_source_details;
 
@@ -199,6 +241,8 @@ pub(crate) mod shape_mcp_server_additional_data;
 
 pub(crate) mod shape_provenance_summary_list;
 
+pub(crate) mod shape_signature_agent_card_additional_data;
+
 pub(crate) mod shape_updated_a2a_agent_card_descriptor;
 
 pub(crate) mod shape_updated_ag_ui_descriptor;
@@ -210,6 +254,8 @@ pub(crate) mod shape_updated_custom_descriptor;
 pub(crate) mod shape_updated_http_descriptor;
 
 pub(crate) mod shape_updated_mcp_server_descriptor;
+
+pub(crate) mod shape_updated_signature_agent_card_descriptor;
 
 pub(crate) mod shape_agent_core_runtime_protocol_configuration;
 
@@ -253,6 +299,8 @@ pub(crate) mod shape_updated_http_descriptor_fields;
 
 pub(crate) mod shape_updated_mcp_server_descriptor_fields;
 
+pub(crate) mod shape_updated_signature_agent_card_descriptor_fields;
+
 pub(crate) mod shape_workload_identity_details;
 
 pub(crate) mod shape_authorizing_claim_match_value_type;
@@ -277,6 +325,8 @@ pub(crate) mod shape_updated_descriptor_source;
 
 pub(crate) mod shape_updated_mcp_server_additional_data;
 
+pub(crate) mod shape_updated_signature_agent_card_additional_data;
+
 pub(crate) mod shape_claim_match_value_type;
 
 pub(crate) mod shape_registry_record_credential_provider_union;
@@ -291,6 +341,8 @@ pub(crate) mod shape_updated_agent_skills_additional_data_fields;
 
 pub(crate) mod shape_updated_mcp_server_additional_data_fields;
 
+pub(crate) mod shape_updated_signature_agent_card_additional_data_fields;
+
 pub(crate) mod shape_registry_record_iam_credential_provider;
 
 pub(crate) mod shape_registry_record_o_auth_credential_provider;
@@ -302,6 +354,8 @@ pub(crate) mod shape_updated_agent_skills_package_descriptor;
 pub(crate) mod shape_updated_agent_skills_repository_provider;
 
 pub(crate) mod shape_updated_agent_skills_source_configuration;
+
+pub(crate) mod shape_updated_bot_category;
 
 pub(crate) mod shape_updated_mcp_tools_descriptor;
 

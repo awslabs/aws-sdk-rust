@@ -219,6 +219,11 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateMicrovm
                 captured.insert("description", value);
             }
         }
+        if requested.should_capture("kmsKeyIdentifier") {
+            if let ::std::option::Option::Some(value) = input.kms_key_identifier.as_deref() {
+                captured.insert("kmsKeyIdentifier", value);
+            }
+        }
         if requested.should_capture("name") {
             if let ::std::option::Option::Some(value) = input.name.as_deref() {
                 captured.insert("name", value);

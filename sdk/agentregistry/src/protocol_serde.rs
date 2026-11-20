@@ -93,11 +93,15 @@ pub(crate) mod shape_http_descriptor;
 
 pub(crate) mod shape_mcp_server_descriptor;
 
+pub(crate) mod shape_signature_agent_card_descriptor;
+
 pub(crate) mod shape_agent_skills_additional_data;
 
 pub(crate) mod shape_descriptor_source;
 
 pub(crate) mod shape_mcp_server_additional_data;
+
+pub(crate) mod shape_signature_agent_card_additional_data;
 
 pub(crate) mod shape_agent_skills_md_descriptor;
 

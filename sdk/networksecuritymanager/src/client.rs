@@ -217,9 +217,13 @@ mod list_deployment_snapshots;
 
 mod list_deployments;
 
+mod list_entity_coverages;
+
 mod list_policies;
 
 mod list_policy_snapshots;
+
+mod list_protected_resource_coverages;
 
 mod list_resource_associations;
 

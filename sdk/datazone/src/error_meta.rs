@@ -5922,6 +5922,37 @@ impl From<crate::operation::update_asset_filter::UpdateAssetFilterError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_asset_owner::UpdateAssetOwnerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_asset_owner::UpdateAssetOwnerError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_asset_owner::UpdateAssetOwnerError> for Error {
+    fn from(err: crate::operation::update_asset_owner::UpdateAssetOwnerError) -> Self {
+        match err {
+            crate::operation::update_asset_owner::UpdateAssetOwnerError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_asset_owner::UpdateAssetOwnerError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_asset_owner::UpdateAssetOwnerError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_asset_owner::UpdateAssetOwnerError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_asset_owner::UpdateAssetOwnerError::ServiceQuotaExceededException(inner) => {
+                Error::ServiceQuotaExceededException(inner)
+            }
+            crate::operation::update_asset_owner::UpdateAssetOwnerError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_asset_owner::UpdateAssetOwnerError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_asset_owner::UpdateAssetOwnerError::UnauthorizedException(inner) => Error::UnauthorizedException(inner),
+            crate::operation::update_asset_owner::UpdateAssetOwnerError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_connection::UpdateConnectionError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,

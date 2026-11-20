@@ -6,8 +6,8 @@
 pub struct SearchAttributeFilter {
     /// <p>The attribute name to filter on.</p>
     pub attribute: ::std::string::String,
-    /// <p>The comparison operator. Valid values are <code>equals</code>, <code>greaterThan</code>, <code>greaterThanOrEquals</code>, <code>lessThan</code>, <code>lessThanOrEquals</code>, and <code>notExists</code>.</p>
-    pub operator: crate::types::SearchFilterOperator,
+    /// <p>The comparison operator. Valid values are <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, and <code>NOT_EXISTS</code>. This field is required.</p>
+    pub comparator: ::std::option::Option<crate::types::SearchFilterComparator>,
     /// <p>The value to compare against.</p>
     pub value: ::std::option::Option<crate::types::SearchFilterValue>,
 }
@@ -17,9 +17,9 @@ impl SearchAttributeFilter {
         use std::ops::Deref;
         self.attribute.deref()
     }
-    /// <p>The comparison operator. Valid values are <code>equals</code>, <code>greaterThan</code>, <code>greaterThanOrEquals</code>, <code>lessThan</code>, <code>lessThanOrEquals</code>, and <code>notExists</code>.</p>
-    pub fn operator(&self) -> &crate::types::SearchFilterOperator {
-        &self.operator
+    /// <p>The comparison operator. Valid values are <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, and <code>NOT_EXISTS</code>. This field is required.</p>
+    pub fn comparator(&self) -> ::std::option::Option<&crate::types::SearchFilterComparator> {
+        self.comparator.as_ref()
     }
     /// <p>The value to compare against.</p>
     pub fn value(&self) -> ::std::option::Option<&crate::types::SearchFilterValue> {
@@ -38,7 +38,7 @@ impl SearchAttributeFilter {
 #[non_exhaustive]
 pub struct SearchAttributeFilterBuilder {
     pub(crate) attribute: ::std::option::Option<::std::string::String>,
-    pub(crate) operator: ::std::option::Option<crate::types::SearchFilterOperator>,
+    pub(crate) comparator: ::std::option::Option<crate::types::SearchFilterComparator>,
     pub(crate) value: ::std::option::Option<crate::types::SearchFilterValue>,
 }
 impl SearchAttributeFilterBuilder {
@@ -57,20 +57,19 @@ impl SearchAttributeFilterBuilder {
     pub fn get_attribute(&self) -> &::std::option::Option<::std::string::String> {
         &self.attribute
     }
-    /// <p>The comparison operator. Valid values are <code>equals</code>, <code>greaterThan</code>, <code>greaterThanOrEquals</code>, <code>lessThan</code>, <code>lessThanOrEquals</code>, and <code>notExists</code>.</p>
-    /// This field is required.
-    pub fn operator(mut self, input: crate::types::SearchFilterOperator) -> Self {
-        self.operator = ::std::option::Option::Some(input);
+    /// <p>The comparison operator. Valid values are <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, and <code>NOT_EXISTS</code>. This field is required.</p>
+    pub fn comparator(mut self, input: crate::types::SearchFilterComparator) -> Self {
+        self.comparator = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The comparison operator. Valid values are <code>equals</code>, <code>greaterThan</code>, <code>greaterThanOrEquals</code>, <code>lessThan</code>, <code>lessThanOrEquals</code>, and <code>notExists</code>.</p>
-    pub fn set_operator(mut self, input: ::std::option::Option<crate::types::SearchFilterOperator>) -> Self {
-        self.operator = input;
+    /// <p>The comparison operator. Valid values are <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, and <code>NOT_EXISTS</code>. This field is required.</p>
+    pub fn set_comparator(mut self, input: ::std::option::Option<crate::types::SearchFilterComparator>) -> Self {
+        self.comparator = input;
         self
     }
-    /// <p>The comparison operator. Valid values are <code>equals</code>, <code>greaterThan</code>, <code>greaterThanOrEquals</code>, <code>lessThan</code>, <code>lessThanOrEquals</code>, and <code>notExists</code>.</p>
-    pub fn get_operator(&self) -> &::std::option::Option<crate::types::SearchFilterOperator> {
-        &self.operator
+    /// <p>The comparison operator. Valid values are <code>EQUALS</code>, <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, and <code>NOT_EXISTS</code>. This field is required.</p>
+    pub fn get_comparator(&self) -> &::std::option::Option<crate::types::SearchFilterComparator> {
+        &self.comparator
     }
     /// <p>The value to compare against.</p>
     pub fn value(mut self, input: crate::types::SearchFilterValue) -> Self {
@@ -89,7 +88,6 @@ impl SearchAttributeFilterBuilder {
     /// Consumes the builder and constructs a [`SearchAttributeFilter`](crate::types::SearchAttributeFilter).
     /// This method will fail if any of the following fields are not set:
     /// - [`attribute`](crate::types::builders::SearchAttributeFilterBuilder::attribute)
-    /// - [`operator`](crate::types::builders::SearchAttributeFilterBuilder::operator)
     pub fn build(self) -> ::std::result::Result<crate::types::SearchAttributeFilter, ::aws_smithy_types::error::operation::BuildError> {
         ::std::result::Result::Ok(crate::types::SearchAttributeFilter {
             attribute: self.attribute.ok_or_else(|| {
@@ -98,12 +96,7 @@ impl SearchAttributeFilterBuilder {
                     "attribute was not specified but it is required when building SearchAttributeFilter",
                 )
             })?,
-            operator: self.operator.ok_or_else(|| {
-                ::aws_smithy_types::error::operation::BuildError::missing_field(
-                    "operator",
-                    "operator was not specified but it is required when building SearchAttributeFilter",
-                )
-            })?,
+            comparator: self.comparator,
             value: self.value,
         })
     }

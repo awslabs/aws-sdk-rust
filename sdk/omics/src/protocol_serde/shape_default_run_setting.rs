@@ -170,6 +170,9 @@ where
                                     .transpose()?,
                             );
                         }
+                        "requesterPaysEnabled" => {
+                            builder = builder.set_requester_pays_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {
@@ -274,6 +277,9 @@ pub fn ser_default_run_setting(
     }
     if let Some(var_24) = &input.scratch_storage_mode {
         object.key("scratchStorageMode").string(var_24.as_str());
+    }
+    if let Some(var_25) = &input.requester_pays_enabled {
+        object.key("requesterPaysEnabled").boolean(*var_25);
     }
     Ok(())
 }

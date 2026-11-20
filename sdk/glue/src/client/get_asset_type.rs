@@ -7,7 +7,7 @@ impl super::Client {
     /// - On success, responds with [`GetAssetTypeOutput`](crate::operation::get_asset_type::GetAssetTypeOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_asset_type::GetAssetTypeOutput::id): <p>The identifier of the asset type.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_asset_type::GetAssetTypeOutput::name): <p>The name of the asset type.</p>
-    ///   - [`forms(Option<HashMap::<String, AssetTypeFormReference>>)`](crate::operation::get_asset_type::GetAssetTypeOutput::forms): <p>The forms that make up the asset type, keyed by form name.</p>
+    ///   - [`forms(Option<HashMap::<String, AssetTypeFormOutput>>)`](crate::operation::get_asset_type::GetAssetTypeOutput::forms): <p>The forms that make up the asset type, keyed by form name.</p>
     /// - On failure, responds with [`SdkError<GetAssetTypeError>`](crate::operation::get_asset_type::GetAssetTypeError)
     pub fn get_asset_type(&self) -> crate::operation::get_asset_type::builders::GetAssetTypeFluentBuilder {
         crate::operation::get_asset_type::builders::GetAssetTypeFluentBuilder::new(self.handle.clone())

@@ -23,7 +23,7 @@ impl crate::operation::rollback_automation_event::builders::RollbackAutomationEv
 /// Fluent builder constructing a request to `RollbackAutomationEvent`.
 ///
 /// <p>Initiates a rollback for a completed automation event.</p><note>
-/// <p>Management accounts and delegated administrators can only initiate a rollback for events belonging to associated member accounts. You can associate a member account using <code>AssociateAccounts</code>.</p>
+/// <p>Management accounts and delegated administrators can initiate a rollback for events belonging to member accounts that are associated using <code>AssociateAccounts</code> or have an applicable organization enrollment configuration with <code>organizationRuleMode</code> set to <code>AnyAllowed</code>.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct RollbackAutomationEventFluentBuilder {

@@ -3,6 +3,8 @@ pub use crate::types::_input_type::InputType;
 
 pub use crate::types::_category_properties::CategoryProperties;
 
+pub use crate::types::_bad_request_exception_reason::BadRequestExceptionReason;
+
 pub use crate::types::_clm_language_code::ClmLanguageCode;
 
 pub use crate::types::_base_model_name::BaseModelName;
@@ -61,6 +63,18 @@ pub use crate::types::_content_redaction::ContentRedaction;
 
 pub use crate::types::_subtitles::Subtitles;
 
+pub use crate::types::_sync_media::SyncMedia;
+
+pub use crate::types::_sync_language::SyncLanguage;
+
+pub use crate::types::_language_detection_mode::LanguageDetectionMode;
+
+pub use crate::types::_vocabulary_filter_settings::VocabularyFilterSettings;
+
+pub use crate::types::_sync_output_configuration::SyncOutputConfiguration;
+
+pub use crate::types::_transcript_response::TranscriptResponse;
+
 pub use crate::types::_rule::Rule;
 
 pub use crate::types::_tag::Tag;
@@ -109,6 +123,12 @@ pub use crate::types::_language_id_settings::LanguageIdSettings;
 
 pub use crate::types::_toxicity_detection_settings::ToxicityDetectionSettings;
 
+pub use crate::types::_vocabulary_settings_entry::VocabularySettingsEntry;
+
+pub use crate::types::_transcribe_audio_metadata::TranscribeAudioMetadata;
+
+pub use crate::types::_transcribe_audio_results::TranscribeAudioResults;
+
 pub use crate::types::_non_talk_time_filter::NonTalkTimeFilter;
 
 pub use crate::types::_interruption_filter::InterruptionFilter;
@@ -133,6 +153,10 @@ pub use crate::types::_pii_entity_type::PiiEntityType;
 
 pub use crate::types::_subtitle_format::SubtitleFormat;
 
+pub use crate::types::_vocabulary_filter_entry::VocabularyFilterEntry;
+
+pub use crate::types::_sync_language_code::SyncLanguageCode;
+
 pub use crate::types::_absolute_time_range::AbsoluteTimeRange;
 
 pub use crate::types::_relative_time_range::RelativeTimeRange;
@@ -143,13 +167,23 @@ pub use crate::types::_call_analytics_skipped_feature::CallAnalyticsSkippedFeatu
 
 pub use crate::types::_toxicity_category::ToxicityCategory;
 
+pub use crate::types::_vocabulary_phrase::VocabularyPhrase;
+
+pub use crate::types::_sync_language_code_item::SyncLanguageCodeItem;
+
+pub use crate::types::_sync_item::SyncItem;
+
 pub use crate::types::_sentiment_value::SentimentValue;
 
 pub use crate::types::_call_analytics_feature::CallAnalyticsFeature;
 
 pub use crate::types::_call_analytics_skipped_reason_code::CallAnalyticsSkippedReasonCode;
 
+pub use crate::types::_sync_redaction::SyncRedaction;
+
 mod _absolute_time_range;
+
+mod _bad_request_exception_reason;
 
 mod _base_model_name;
 
@@ -192,6 +226,8 @@ mod _job_execution_settings;
 mod _language_code;
 
 mod _language_code_item;
+
+mod _language_detection_mode;
 
 mod _language_id_settings;
 
@@ -271,17 +307,37 @@ mod _subtitles_output;
 
 mod _summarization;
 
+mod _sync_item;
+
+mod _sync_language;
+
+mod _sync_language_code;
+
+mod _sync_language_code_item;
+
+mod _sync_media;
+
+mod _sync_output_configuration;
+
+mod _sync_redaction;
+
 mod _tag;
 
 mod _toxicity_category;
 
 mod _toxicity_detection_settings;
 
+mod _transcribe_audio_metadata;
+
+mod _transcribe_audio_results;
+
 mod _transcript;
 
 mod _transcript_filter;
 
 mod _transcript_filter_type;
+
+mod _transcript_response;
 
 mod _transcription_job;
 
@@ -291,11 +347,19 @@ mod _transcription_job_summary;
 
 mod _type_;
 
+mod _vocabulary_filter_entry;
+
 mod _vocabulary_filter_info;
 
 mod _vocabulary_filter_method;
 
+mod _vocabulary_filter_settings;
+
 mod _vocabulary_info;
+
+mod _vocabulary_phrase;
+
+mod _vocabulary_settings_entry;
 
 mod _vocabulary_state;
 

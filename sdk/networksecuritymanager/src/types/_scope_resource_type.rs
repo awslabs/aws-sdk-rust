@@ -15,6 +15,8 @@
 ///     ScopeResourceType::Apigw => { /* ... */ },
 ///     ScopeResourceType::Cfd => { /* ... */ },
 ///     ScopeResourceType::Eip => { /* ... */ },
+///     ScopeResourceType::Subnet => { /* ... */ },
+///     ScopeResourceType::Vpc => { /* ... */ },
 ///     ScopeResourceType::Clb => { /* ... */ },
 ///     ScopeResourceType::Alb => { /* ... */ },
 ///     other @ _ if other.as_str() == "NewFeature" => { /* handles a case for `NewFeature` */ },
@@ -52,6 +54,10 @@ pub enum ScopeResourceType {
     #[allow(missing_docs)] // documentation missing in model
     Eip,
     #[allow(missing_docs)] // documentation missing in model
+    Subnet,
+    #[allow(missing_docs)] // documentation missing in model
+    Vpc,
+    #[allow(missing_docs)] // documentation missing in model
     Clb,
     #[allow(missing_docs)] // documentation missing in model
     Alb,
@@ -65,6 +71,8 @@ impl ::std::convert::From<&str> for ScopeResourceType {
             "AWS::ApiGateway::Stage" => ScopeResourceType::Apigw,
             "AWS::CloudFront::Distribution" => ScopeResourceType::Cfd,
             "AWS::EC2::EIP" => ScopeResourceType::Eip,
+            "AWS::EC2::Subnet" => ScopeResourceType::Subnet,
+            "AWS::EC2::VPC" => ScopeResourceType::Vpc,
             "AWS::ElasticLoadBalancing::LoadBalancer" => ScopeResourceType::Clb,
             "AWS::ElasticLoadBalancingV2::LoadBalancer::application" => ScopeResourceType::Alb,
             other => ScopeResourceType::Unknown(crate::primitives::sealed_enum_unknown::UnknownVariantValue(other.to_owned())),
@@ -85,6 +93,8 @@ impl ScopeResourceType {
             ScopeResourceType::Apigw => "AWS::ApiGateway::Stage",
             ScopeResourceType::Cfd => "AWS::CloudFront::Distribution",
             ScopeResourceType::Eip => "AWS::EC2::EIP",
+            ScopeResourceType::Subnet => "AWS::EC2::Subnet",
+            ScopeResourceType::Vpc => "AWS::EC2::VPC",
             ScopeResourceType::Clb => "AWS::ElasticLoadBalancing::LoadBalancer",
             ScopeResourceType::Alb => "AWS::ElasticLoadBalancingV2::LoadBalancer::application",
             ScopeResourceType::Unknown(value) => value.as_str(),
@@ -96,6 +106,8 @@ impl ScopeResourceType {
             "AWS::ApiGateway::Stage",
             "AWS::CloudFront::Distribution",
             "AWS::EC2::EIP",
+            "AWS::EC2::Subnet",
+            "AWS::EC2::VPC",
             "AWS::ElasticLoadBalancing::LoadBalancer",
             "AWS::ElasticLoadBalancingV2::LoadBalancer::application",
         ]
@@ -124,6 +136,8 @@ impl ::std::fmt::Display for ScopeResourceType {
             ScopeResourceType::Apigw => write!(f, "AWS::ApiGateway::Stage"),
             ScopeResourceType::Cfd => write!(f, "AWS::CloudFront::Distribution"),
             ScopeResourceType::Eip => write!(f, "AWS::EC2::EIP"),
+            ScopeResourceType::Subnet => write!(f, "AWS::EC2::Subnet"),
+            ScopeResourceType::Vpc => write!(f, "AWS::EC2::VPC"),
             ScopeResourceType::Clb => write!(f, "AWS::ElasticLoadBalancing::LoadBalancer"),
             ScopeResourceType::Alb => write!(f, "AWS::ElasticLoadBalancingV2::LoadBalancer::application"),
             ScopeResourceType::Unknown(value) => write!(f, "{value}"),

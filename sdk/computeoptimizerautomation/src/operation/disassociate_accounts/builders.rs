@@ -22,7 +22,8 @@ impl crate::operation::disassociate_accounts::builders::DisassociateAccountsInpu
 }
 /// Fluent builder constructing a request to `DisassociateAccounts`.
 ///
-/// <p>Disassociates member accounts from your organization's management account, removing centralized automation capabilities. Once disassociated, organization rules no longer apply to the member account, and the management account (or delegated administrator) cannot create Automation rules for that account.</p><note>
+/// <p>Disassociates member accounts from your organization's management account, removing centralized automation capabilities. Once disassociated, organization rules no longer apply to the member account, and the management account (or delegated administrator) can't create automation rules for that account.</p>
+/// <p>Requests that include an account to which an organization enrollment configuration applies are rejected.</p><note>
 /// <p>Only the management account or a delegated administrator can perform this action.</p>
 /// </note>
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -13,6 +13,8 @@
 /// # let servicemanaged = unimplemented!();
 /// match servicemanaged {
 ///     ServiceManaged::Alb => { /* ... */ },
+///     ServiceManaged::IgwFirewall => { /* ... */ },
+///     ServiceManaged::LambdaNetworkConnector => { /* ... */ },
 ///     ServiceManaged::Nlb => { /* ... */ },
 ///     ServiceManaged::Rds => { /* ... */ },
 ///     ServiceManaged::Rnat => { /* ... */ },
@@ -47,6 +49,10 @@ pub enum ServiceManaged {
     #[allow(missing_docs)] // documentation missing in model
     Alb,
     #[allow(missing_docs)] // documentation missing in model
+    IgwFirewall,
+    #[allow(missing_docs)] // documentation missing in model
+    LambdaNetworkConnector,
+    #[allow(missing_docs)] // documentation missing in model
     Nlb,
     #[allow(missing_docs)] // documentation missing in model
     Rds,
@@ -60,6 +66,8 @@ impl ::std::convert::From<&str> for ServiceManaged {
     fn from(s: &str) -> Self {
         match s {
             "alb" => ServiceManaged::Alb,
+            "igw-firewall" => ServiceManaged::IgwFirewall,
+            "lambda-network-connector" => ServiceManaged::LambdaNetworkConnector,
             "nlb" => ServiceManaged::Nlb,
             "rds" => ServiceManaged::Rds,
             "rnat" => ServiceManaged::Rnat,
@@ -79,6 +87,8 @@ impl ServiceManaged {
     pub fn as_str(&self) -> &str {
         match self {
             ServiceManaged::Alb => "alb",
+            ServiceManaged::IgwFirewall => "igw-firewall",
+            ServiceManaged::LambdaNetworkConnector => "lambda-network-connector",
             ServiceManaged::Nlb => "nlb",
             ServiceManaged::Rds => "rds",
             ServiceManaged::Rnat => "rnat",
@@ -87,7 +97,7 @@ impl ServiceManaged {
     }
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
-        &["alb", "nlb", "rds", "rnat"]
+        &["alb", "igw-firewall", "lambda-network-connector", "nlb", "rds", "rnat"]
     }
 }
 impl ::std::convert::AsRef<str> for ServiceManaged {
@@ -111,6 +121,8 @@ impl ::std::fmt::Display for ServiceManaged {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
             ServiceManaged::Alb => write!(f, "alb"),
+            ServiceManaged::IgwFirewall => write!(f, "igw-firewall"),
+            ServiceManaged::LambdaNetworkConnector => write!(f, "lambda-network-connector"),
             ServiceManaged::Nlb => write!(f, "nlb"),
             ServiceManaged::Rds => write!(f, "rds"),
             ServiceManaged::Rnat => write!(f, "rnat"),

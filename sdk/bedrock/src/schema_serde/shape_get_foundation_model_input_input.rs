@@ -10,6 +10,17 @@ static GETFOUNDATIONMODELINPUT_MEMBER_MODEL_IDENTIFIER: ::aws_smithy_schema::Sch
     0,
 )
 .with_http_label();
+static GETFOUNDATIONMODELINPUT_MEMBER_PROJECT_IDENTIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.bedrock.synthetic#GetFoundationModelInput$projectIdentifier",
+        "com.amazonaws.bedrock.synthetic",
+        "GetFoundationModelInput",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "projectIdentifier",
+    1,
+)
+.with_http_query("projectIdentifier");
 static GETFOUNDATIONMODELINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.bedrock.synthetic#GetFoundationModelInput",
@@ -17,7 +28,10 @@ static GETFOUNDATIONMODELINPUT_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::
         "GetFoundationModelInput",
     ),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&GETFOUNDATIONMODELINPUT_MEMBER_MODEL_IDENTIFIER],
+    &[
+        &GETFOUNDATIONMODELINPUT_MEMBER_MODEL_IDENTIFIER,
+        &GETFOUNDATIONMODELINPUT_MEMBER_PROJECT_IDENTIFIER,
+    ],
 )
 .with_http(aws_smithy_schema::traits::HttpTrait::new(
     "GET",
@@ -44,6 +58,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::operation::get_fo
         if let Some(ref val) = self.model_identifier {
             ser.write_string(&GETFOUNDATIONMODELINPUT_MEMBER_MODEL_IDENTIFIER, val)?;
         }
+        if let Some(ref val) = self.project_identifier {
+            ser.write_string(&GETFOUNDATIONMODELINPUT_MEMBER_PROJECT_IDENTIFIER, val)?;
+        }
         Ok(())
     }
 }
@@ -66,6 +83,13 @@ impl crate::operation::get_foundation_model::builders::GetFoundationModelInputBu
                         deser.read_null()?;
                     } else {
                         self.model_identifier = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.project_identifier = Some(deser.read_string(member)?);
                     }
                 }
                 _ => {}

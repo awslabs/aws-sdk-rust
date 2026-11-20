@@ -11,6 +11,9 @@ pub struct ListFoundationModelsInput {
     pub by_output_modality: ::std::option::Option<crate::types::ModelModality>,
     /// <p>Return models that support the inference type that you specify. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned Throughput</a> in the <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Amazon Bedrock User Guide</a>.</p>
     pub by_inference_type: ::std::option::Option<crate::types::InferenceType>,
+    /// <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's trusted access program participation when determining which models to return. The project must belong to your account in the same AWS Region and partition as the request.</p>
+    /// <p>If you omit this parameter or specify <code>default</code>, Amazon Bedrock uses your account's participation, including organization inheritance. A project that doesn't exist or is archived causes a <code>ValidationException</code>.</p>
+    pub project_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ListFoundationModelsInput {
     /// <p>Return models belonging to the model provider that you specify.</p>
@@ -29,6 +32,11 @@ impl ListFoundationModelsInput {
     pub fn by_inference_type(&self) -> ::std::option::Option<&crate::types::InferenceType> {
         self.by_inference_type.as_ref()
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's trusted access program participation when determining which models to return. The project must belong to your account in the same AWS Region and partition as the request.</p>
+    /// <p>If you omit this parameter or specify <code>default</code>, Amazon Bedrock uses your account's participation, including organization inheritance. A project that doesn't exist or is archived causes a <code>ValidationException</code>.</p>
+    pub fn project_identifier(&self) -> ::std::option::Option<&str> {
+        self.project_identifier.as_deref()
+    }
 }
 impl ListFoundationModelsInput {
     /// Creates a new builder-style object to manufacture [`ListFoundationModelsInput`](crate::operation::list_foundation_models::ListFoundationModelsInput).
@@ -45,6 +53,7 @@ pub struct ListFoundationModelsInputBuilder {
     pub(crate) by_customization_type: ::std::option::Option<crate::types::ModelCustomization>,
     pub(crate) by_output_modality: ::std::option::Option<crate::types::ModelModality>,
     pub(crate) by_inference_type: ::std::option::Option<crate::types::InferenceType>,
+    pub(crate) project_identifier: ::std::option::Option<::std::string::String>,
 }
 impl ListFoundationModelsInputBuilder {
     /// <p>Return models belonging to the model provider that you specify.</p>
@@ -103,6 +112,23 @@ impl ListFoundationModelsInputBuilder {
     pub fn get_by_inference_type(&self) -> &::std::option::Option<crate::types::InferenceType> {
         &self.by_inference_type
     }
+    /// <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's trusted access program participation when determining which models to return. The project must belong to your account in the same AWS Region and partition as the request.</p>
+    /// <p>If you omit this parameter or specify <code>default</code>, Amazon Bedrock uses your account's participation, including organization inheritance. A project that doesn't exist or is archived causes a <code>ValidationException</code>.</p>
+    pub fn project_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.project_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's trusted access program participation when determining which models to return. The project must belong to your account in the same AWS Region and partition as the request.</p>
+    /// <p>If you omit this parameter or specify <code>default</code>, Amazon Bedrock uses your account's participation, including organization inheritance. A project that doesn't exist or is archived causes a <code>ValidationException</code>.</p>
+    pub fn set_project_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.project_identifier = input;
+        self
+    }
+    /// <p>The ID or Amazon Resource Name (ARN) of a project. Amazon Bedrock uses the project's trusted access program participation when determining which models to return. The project must belong to your account in the same AWS Region and partition as the request.</p>
+    /// <p>If you omit this parameter or specify <code>default</code>, Amazon Bedrock uses your account's participation, including organization inheritance. A project that doesn't exist or is archived causes a <code>ValidationException</code>.</p>
+    pub fn get_project_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.project_identifier
+    }
     /// Consumes the builder and constructs a [`ListFoundationModelsInput`](crate::operation::list_foundation_models::ListFoundationModelsInput).
     pub fn build(
         self,
@@ -113,6 +139,7 @@ impl ListFoundationModelsInputBuilder {
             by_customization_type: self.by_customization_type,
             by_output_modality: self.by_output_modality,
             by_inference_type: self.by_inference_type,
+            project_identifier: self.project_identifier,
         })
     }
 }

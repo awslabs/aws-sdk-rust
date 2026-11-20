@@ -16,6 +16,9 @@ pub fn ser_update_firewall_description_input_input(
     if let Some(var_4) = &input.description {
         encoder.str("Description").str(var_4.as_str());
     }
+    if let Some(var_5) = &input.firewall_type {
+        encoder.str("FirewallType").str(var_5.as_str());
+    }
     encoder.end();
     Ok(())
 }

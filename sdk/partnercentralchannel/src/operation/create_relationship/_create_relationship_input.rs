@@ -13,7 +13,7 @@ pub struct CreateRelationshipInput {
     pub associated_account_id: ::std::option::Option<::std::string::String>,
     /// <p>A human-readable name for the relationship.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
-    /// <p>The resale account model for the relationship.</p>
+    /// <p>The resale account model for the relationship. Applies only to billing transfer relationships.</p>
     pub resale_account_model: ::std::option::Option<crate::types::ResaleAccountModel>,
     /// <p>The business sector for the relationship.</p>
     pub sector: ::std::option::Option<crate::types::Sector>,
@@ -21,8 +21,12 @@ pub struct CreateRelationshipInput {
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Key-value pairs to associate with the relationship.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
-    /// <p>The support plan requested for this relationship.</p>
+    /// <p>The support plan requested for this relationship. Applies only to billing transfer relationships.</p>
     pub requested_support_plan: ::std::option::Option<crate::types::SupportPlan>,
+    /// <p>The account scope for a managed services relationship (for example, entire organization, specific member accounts). Applies only to managed services relationships.</p>
+    pub account_scope: ::std::option::Option<crate::types::AccountScope>,
+    /// <p>The start date of the managed services relationship. Applies only to managed services relationships.</p>
+    pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CreateRelationshipInput {
     /// <p>The catalog identifier for the relationship.</p>
@@ -45,7 +49,7 @@ impl CreateRelationshipInput {
     pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
-    /// <p>The resale account model for the relationship.</p>
+    /// <p>The resale account model for the relationship. Applies only to billing transfer relationships.</p>
     pub fn resale_account_model(&self) -> ::std::option::Option<&crate::types::ResaleAccountModel> {
         self.resale_account_model.as_ref()
     }
@@ -63,9 +67,17 @@ impl CreateRelationshipInput {
     pub fn tags(&self) -> &[crate::types::Tag] {
         self.tags.as_deref().unwrap_or_default()
     }
-    /// <p>The support plan requested for this relationship.</p>
+    /// <p>The support plan requested for this relationship. Applies only to billing transfer relationships.</p>
     pub fn requested_support_plan(&self) -> ::std::option::Option<&crate::types::SupportPlan> {
         self.requested_support_plan.as_ref()
+    }
+    /// <p>The account scope for a managed services relationship (for example, entire organization, specific member accounts). Applies only to managed services relationships.</p>
+    pub fn account_scope(&self) -> ::std::option::Option<&crate::types::AccountScope> {
+        self.account_scope.as_ref()
+    }
+    /// <p>The start date of the managed services relationship. Applies only to managed services relationships.</p>
+    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.start_date.as_ref()
     }
 }
 impl CreateRelationshipInput {
@@ -89,6 +101,8 @@ pub struct CreateRelationshipInputBuilder {
     pub(crate) client_token: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) requested_support_plan: ::std::option::Option<crate::types::SupportPlan>,
+    pub(crate) account_scope: ::std::option::Option<crate::types::AccountScope>,
+    pub(crate) start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl CreateRelationshipInputBuilder {
     /// <p>The catalog identifier for the relationship.</p>
@@ -137,7 +151,6 @@ impl CreateRelationshipInputBuilder {
         &self.program_management_account_identifier
     }
     /// <p>The AWS account ID to associate in this relationship.</p>
-    /// This field is required.
     pub fn associated_account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.associated_account_id = ::std::option::Option::Some(input.into());
         self
@@ -166,17 +179,17 @@ impl CreateRelationshipInputBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.display_name
     }
-    /// <p>The resale account model for the relationship.</p>
+    /// <p>The resale account model for the relationship. Applies only to billing transfer relationships.</p>
     pub fn resale_account_model(mut self, input: crate::types::ResaleAccountModel) -> Self {
         self.resale_account_model = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The resale account model for the relationship.</p>
+    /// <p>The resale account model for the relationship. Applies only to billing transfer relationships.</p>
     pub fn set_resale_account_model(mut self, input: ::std::option::Option<crate::types::ResaleAccountModel>) -> Self {
         self.resale_account_model = input;
         self
     }
-    /// <p>The resale account model for the relationship.</p>
+    /// <p>The resale account model for the relationship. Applies only to billing transfer relationships.</p>
     pub fn get_resale_account_model(&self) -> &::std::option::Option<crate::types::ResaleAccountModel> {
         &self.resale_account_model
     }
@@ -229,19 +242,47 @@ impl CreateRelationshipInputBuilder {
     pub fn get_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.tags
     }
-    /// <p>The support plan requested for this relationship.</p>
+    /// <p>The support plan requested for this relationship. Applies only to billing transfer relationships.</p>
     pub fn requested_support_plan(mut self, input: crate::types::SupportPlan) -> Self {
         self.requested_support_plan = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The support plan requested for this relationship.</p>
+    /// <p>The support plan requested for this relationship. Applies only to billing transfer relationships.</p>
     pub fn set_requested_support_plan(mut self, input: ::std::option::Option<crate::types::SupportPlan>) -> Self {
         self.requested_support_plan = input;
         self
     }
-    /// <p>The support plan requested for this relationship.</p>
+    /// <p>The support plan requested for this relationship. Applies only to billing transfer relationships.</p>
     pub fn get_requested_support_plan(&self) -> &::std::option::Option<crate::types::SupportPlan> {
         &self.requested_support_plan
+    }
+    /// <p>The account scope for a managed services relationship (for example, entire organization, specific member accounts). Applies only to managed services relationships.</p>
+    pub fn account_scope(mut self, input: crate::types::AccountScope) -> Self {
+        self.account_scope = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The account scope for a managed services relationship (for example, entire organization, specific member accounts). Applies only to managed services relationships.</p>
+    pub fn set_account_scope(mut self, input: ::std::option::Option<crate::types::AccountScope>) -> Self {
+        self.account_scope = input;
+        self
+    }
+    /// <p>The account scope for a managed services relationship (for example, entire organization, specific member accounts). Applies only to managed services relationships.</p>
+    pub fn get_account_scope(&self) -> &::std::option::Option<crate::types::AccountScope> {
+        &self.account_scope
+    }
+    /// <p>The start date of the managed services relationship. Applies only to managed services relationships.</p>
+    pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_date = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The start date of the managed services relationship. Applies only to managed services relationships.</p>
+    pub fn set_start_date(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
+        self.start_date = input;
+        self
+    }
+    /// <p>The start date of the managed services relationship. Applies only to managed services relationships.</p>
+    pub fn get_start_date(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
+        &self.start_date
     }
     /// Consumes the builder and constructs a [`CreateRelationshipInput`](crate::operation::create_relationship::CreateRelationshipInput).
     pub fn build(
@@ -258,6 +299,8 @@ impl CreateRelationshipInputBuilder {
             client_token: self.client_token,
             tags: self.tags,
             requested_support_plan: self.requested_support_plan,
+            account_scope: self.account_scope,
+            start_date: self.start_date,
         })
     }
 }

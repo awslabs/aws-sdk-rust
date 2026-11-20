@@ -178,19 +178,19 @@ impl PutAttachmentFluentBuilder {
     pub fn get_content(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_content()
     }
-    /// <p>The identifier of the form type for this attachment.</p>
-    pub fn form_type_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.form_type_id(input.into());
+    /// <p>The identifier of the form type for this attachment. This field is required.</p>
+    pub fn form_type_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.form_type_identifier(input.into());
         self
     }
-    /// <p>The identifier of the form type for this attachment.</p>
-    pub fn set_form_type_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_form_type_id(input);
+    /// <p>The identifier of the form type for this attachment. This field is required.</p>
+    pub fn set_form_type_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_form_type_identifier(input);
         self
     }
-    /// <p>The identifier of the form type for this attachment.</p>
-    pub fn get_form_type_id(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_form_type_id()
+    /// <p>The identifier of the form type for this attachment. This field is required.</p>
+    pub fn get_form_type_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_form_type_identifier()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

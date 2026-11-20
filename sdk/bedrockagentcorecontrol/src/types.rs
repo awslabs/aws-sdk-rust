@@ -621,6 +621,10 @@ pub use crate::types::_interceptor_configuration::InterceptorConfiguration;
 
 pub use crate::types::_interceptor_input_configuration::InterceptorInputConfiguration;
 
+pub use crate::types::_response_interception_mode::ResponseInterceptionMode;
+
+pub use crate::types::_response_streaming_configuration::ResponseStreamingConfiguration;
+
 pub use crate::types::_match_principals::MatchPrincipals;
 
 pub use crate::types::_match_paths::MatchPaths;
@@ -2006,6 +2010,10 @@ mod _resource_configuration;
 mod _resource_location;
 
 mod _resource_type;
+
+mod _response_interception_mode;
+
+mod _response_streaming_configuration;
 
 mod _rest_api_method;
 

@@ -76,6 +76,15 @@ where
                                     .transpose()?,
                             );
                         }
+                        "deploymentTemplates" => {
+                            builder = builder.set_deployment_templates(
+                                crate::protocol_serde::shape_saas_deployment_template_list::de_saas_deployment_template_list(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
                     other => {

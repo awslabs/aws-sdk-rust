@@ -16,6 +16,7 @@ impl super::Client {
     ///   - [`started_at(DateTime)`](crate::operation::get_microvm::GetMicrovmOutput::started_at): <p>The timestamp when the MicroVM first started.</p>
     ///   - [`terminated_at(Option<DateTime>)`](crate::operation::get_microvm::GetMicrovmOutput::terminated_at): <p>The timestamp when the MicroVM terminated.</p>
     ///   - [`state_reason(Option<String>)`](crate::operation::get_microvm::GetMicrovmOutput::state_reason): <p>The reason for why the MicroVM is in the current state.</p>
+    ///   - [`kms_key_identifier(Option<String>)`](crate::operation::get_microvm::GetMicrovmOutput::kms_key_identifier): <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts your MicroVM configuration at rest. If you don't specify a key, your MicroVM uses an Amazon Web Services owned key.</p>
     ///   - [`ingress_network_connectors(Option<Vec::<String>>)`](crate::operation::get_microvm::GetMicrovmOutput::ingress_network_connectors): <p>The list of ingress network connectors configured for the MicroVM.</p>
     ///   - [`egress_network_connectors(Option<Vec::<String>>)`](crate::operation::get_microvm::GetMicrovmOutput::egress_network_connectors): <p>The list of egress network connectors available to the MicroVM at runtime.</p>
     /// - On failure, responds with [`SdkError<GetMicrovmError>`](crate::operation::get_microvm::GetMicrovmError)

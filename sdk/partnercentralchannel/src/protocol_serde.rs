@@ -25,7 +25,11 @@ pub fn parse_http_error_metadata(
 
 pub(crate) mod shape_accept_channel_handshake;
 
+pub(crate) mod shape_cancel_channel_contract;
+
 pub(crate) mod shape_cancel_channel_handshake;
+
+pub(crate) mod shape_create_channel_contract;
 
 pub(crate) mod shape_create_channel_handshake;
 
@@ -37,7 +41,11 @@ pub(crate) mod shape_delete_program_management_account;
 
 pub(crate) mod shape_delete_relationship;
 
+pub(crate) mod shape_get_channel_contract;
+
 pub(crate) mod shape_get_relationship;
+
+pub(crate) mod shape_list_channel_contracts;
 
 pub(crate) mod shape_list_channel_handshakes;
 
@@ -69,9 +77,13 @@ pub(crate) mod shape_accept_channel_handshake_input;
 
 pub(crate) mod shape_access_denied_exception;
 
+pub(crate) mod shape_cancel_channel_contract_input;
+
 pub(crate) mod shape_cancel_channel_handshake_input;
 
 pub(crate) mod shape_conflict_exception;
+
+pub(crate) mod shape_create_channel_contract_input;
 
 pub(crate) mod shape_create_channel_handshake_input;
 
@@ -83,9 +95,13 @@ pub(crate) mod shape_delete_program_management_account_input;
 
 pub(crate) mod shape_delete_relationship_input;
 
+pub(crate) mod shape_get_channel_contract_input;
+
 pub(crate) mod shape_get_relationship_input;
 
 pub(crate) mod shape_internal_server_exception;
+
+pub(crate) mod shape_list_channel_contracts_input;
 
 pub(crate) mod shape_list_channel_handshakes_input;
 
@@ -115,17 +131,31 @@ pub(crate) mod shape_validation_exception;
 
 pub(crate) mod shape_accept_channel_handshake_detail;
 
+pub(crate) mod shape_cancel_channel_contract_detail;
+
 pub(crate) mod shape_cancel_channel_handshake_detail;
+
+pub(crate) mod shape_channel_contract_detail;
+
+pub(crate) mod shape_channel_contract_payload;
+
+pub(crate) mod shape_channel_contract_summaries;
 
 pub(crate) mod shape_channel_handshake_payload;
 
 pub(crate) mod shape_channel_handshake_summaries;
+
+pub(crate) mod shape_create_channel_contract_detail;
 
 pub(crate) mod shape_create_channel_handshake_detail;
 
 pub(crate) mod shape_create_program_management_account_detail;
 
 pub(crate) mod shape_create_relationship_detail;
+
+pub(crate) mod shape_list_channel_contracts_type_filters;
+
+pub(crate) mod shape_list_channel_contracts_type_sort;
 
 pub(crate) mod shape_list_channel_handshakes_type_filters;
 
@@ -155,7 +185,17 @@ pub(crate) mod shape_update_relationship_detail;
 
 pub(crate) mod shape_validation_exception_field_list;
 
+pub(crate) mod shape_channel_contract_details;
+
+pub(crate) mod shape_channel_contract_summary;
+
 pub(crate) mod shape_channel_handshake_summary;
+
+pub(crate) mod shape_managed_services_attestation_payload;
+
+pub(crate) mod shape_managed_services_attestation_type_filters;
+
+pub(crate) mod shape_managed_services_attestation_type_sort;
 
 pub(crate) mod shape_partner_led_support;
 
@@ -185,7 +225,19 @@ pub(crate) mod shape_start_service_period_type_sort;
 
 pub(crate) mod shape_validation_exception_field;
 
+pub(crate) mod shape_address;
+
+pub(crate) mod shape_channel_contract_summary_details;
+
 pub(crate) mod shape_handshake_detail;
+
+pub(crate) mod shape_managed_services_attestation_details;
+
+pub(crate) mod shape_managed_services_attestation_summary_details;
+
+pub(crate) mod shape_managed_services_supported_service_list;
+
+pub(crate) mod shape_member_account_id_list;
 
 pub(crate) mod shape_program_management_account_handshake_detail;
 

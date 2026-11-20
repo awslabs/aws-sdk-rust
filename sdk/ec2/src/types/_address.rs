@@ -30,9 +30,7 @@ pub struct Address {
     pub carrier_ip: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the subnet where the IP address is allocated.</p>
     pub subnet_id: ::std::option::Option<::std::string::String>,
-    /// <p>The service that manages the elastic IP address.</p><note>
-    /// <p>The only option supported today is <code>alb</code>.</p>
-    /// </note>
+    /// <p>The service that manages the elastic IP address.</p>
     pub service_managed: ::std::option::Option<crate::types::ServiceManaged>,
     /// <p>The ID of the instance that the address is associated with (if any).</p>
     pub instance_id: ::std::option::Option<::std::string::String>,
@@ -94,9 +92,7 @@ impl Address {
     pub fn subnet_id(&self) -> ::std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
-    /// <p>The service that manages the elastic IP address.</p><note>
-    /// <p>The only option supported today is <code>alb</code>.</p>
-    /// </note>
+    /// <p>The service that manages the elastic IP address.</p>
     pub fn service_managed(&self) -> ::std::option::Option<&crate::types::ServiceManaged> {
         self.service_managed.as_ref()
     }
@@ -326,23 +322,17 @@ impl AddressBuilder {
     pub fn get_subnet_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.subnet_id
     }
-    /// <p>The service that manages the elastic IP address.</p><note>
-    /// <p>The only option supported today is <code>alb</code>.</p>
-    /// </note>
+    /// <p>The service that manages the elastic IP address.</p>
     pub fn service_managed(mut self, input: crate::types::ServiceManaged) -> Self {
         self.service_managed = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The service that manages the elastic IP address.</p><note>
-    /// <p>The only option supported today is <code>alb</code>.</p>
-    /// </note>
+    /// <p>The service that manages the elastic IP address.</p>
     pub fn set_service_managed(mut self, input: ::std::option::Option<crate::types::ServiceManaged>) -> Self {
         self.service_managed = input;
         self
     }
-    /// <p>The service that manages the elastic IP address.</p><note>
-    /// <p>The only option supported today is <code>alb</code>.</p>
-    /// </note>
+    /// <p>The service that manages the elastic IP address.</p>
     pub fn get_service_managed(&self) -> &::std::option::Option<crate::types::ServiceManaged> {
         &self.service_managed
     }

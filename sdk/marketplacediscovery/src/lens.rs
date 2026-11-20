@@ -19,6 +19,16 @@ pub(crate) fn reflens_list_fulfillment_options_output_output_next_token(
     ::std::option::Option::Some(input)
 }
 
+pub(crate) fn reflens_list_listing_attributes_output_output_next_token(
+    input: &crate::operation::list_listing_attributes::ListListingAttributesOutput,
+) -> ::std::option::Option<&::std::string::String> {
+    let input = match &input.next_token {
+        ::std::option::Option::None => return ::std::option::Option::None,
+        ::std::option::Option::Some(t) => t,
+    };
+    ::std::option::Option::Some(input)
+}
+
 pub(crate) fn reflens_list_purchase_options_output_output_next_token(
     input: &crate::operation::list_purchase_options::ListPurchaseOptionsOutput,
 ) -> ::std::option::Option<&::std::string::String> {
@@ -60,6 +70,13 @@ pub(crate) fn lens_list_fulfillment_options_output_output_fulfillment_options(
     input: crate::operation::list_fulfillment_options::ListFulfillmentOptionsOutput,
 ) -> ::std::option::Option<::std::vec::Vec<crate::types::FulfillmentOption>> {
     let input = input.fulfillment_options;
+    ::std::option::Option::Some(input)
+}
+
+pub(crate) fn lens_list_listing_attributes_output_output_listing_attributes(
+    input: crate::operation::list_listing_attributes::ListListingAttributesOutput,
+) -> ::std::option::Option<::std::vec::Vec<crate::types::ListingAttributeResults>> {
+    let input = input.listing_attributes;
     ::std::option::Option::Some(input)
 }
 

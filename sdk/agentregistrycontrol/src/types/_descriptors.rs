@@ -16,6 +16,8 @@ pub struct Descriptors {
     pub http: ::std::option::Option<crate::types::HttpDescriptor>,
     /// <p>The AG-UI descriptor, populated for records detected from an AG-UI protocol source.</p>
     pub agui: ::std::option::Option<crate::types::AgUiDescriptor>,
+    /// <p>The signature agent card descriptor, populated when the record type is WEB_BOT.</p>
+    pub signature_agent_card: ::std::option::Option<crate::types::SignatureAgentCardDescriptor>,
 }
 impl Descriptors {
     /// <p>The MCP server descriptor, populated when the record type is MCP.</p>
@@ -42,6 +44,10 @@ impl Descriptors {
     pub fn agui(&self) -> ::std::option::Option<&crate::types::AgUiDescriptor> {
         self.agui.as_ref()
     }
+    /// <p>The signature agent card descriptor, populated when the record type is WEB_BOT.</p>
+    pub fn signature_agent_card(&self) -> ::std::option::Option<&crate::types::SignatureAgentCardDescriptor> {
+        self.signature_agent_card.as_ref()
+    }
 }
 impl Descriptors {
     /// Creates a new builder-style object to manufacture [`Descriptors`](crate::types::Descriptors).
@@ -60,6 +66,7 @@ pub struct DescriptorsBuilder {
     pub(crate) custom: ::std::option::Option<crate::types::CustomDescriptor>,
     pub(crate) http: ::std::option::Option<crate::types::HttpDescriptor>,
     pub(crate) agui: ::std::option::Option<crate::types::AgUiDescriptor>,
+    pub(crate) signature_agent_card: ::std::option::Option<crate::types::SignatureAgentCardDescriptor>,
 }
 impl DescriptorsBuilder {
     /// <p>The MCP server descriptor, populated when the record type is MCP.</p>
@@ -146,6 +153,20 @@ impl DescriptorsBuilder {
     pub fn get_agui(&self) -> &::std::option::Option<crate::types::AgUiDescriptor> {
         &self.agui
     }
+    /// <p>The signature agent card descriptor, populated when the record type is WEB_BOT.</p>
+    pub fn signature_agent_card(mut self, input: crate::types::SignatureAgentCardDescriptor) -> Self {
+        self.signature_agent_card = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The signature agent card descriptor, populated when the record type is WEB_BOT.</p>
+    pub fn set_signature_agent_card(mut self, input: ::std::option::Option<crate::types::SignatureAgentCardDescriptor>) -> Self {
+        self.signature_agent_card = input;
+        self
+    }
+    /// <p>The signature agent card descriptor, populated when the record type is WEB_BOT.</p>
+    pub fn get_signature_agent_card(&self) -> &::std::option::Option<crate::types::SignatureAgentCardDescriptor> {
+        &self.signature_agent_card
+    }
     /// Consumes the builder and constructs a [`Descriptors`](crate::types::Descriptors).
     pub fn build(self) -> crate::types::Descriptors {
         crate::types::Descriptors {
@@ -155,6 +176,7 @@ impl DescriptorsBuilder {
             custom: self.custom,
             http: self.http,
             agui: self.agui,
+            signature_agent_card: self.signature_agent_card,
         }
     }
 }

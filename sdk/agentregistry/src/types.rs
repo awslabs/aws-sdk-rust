@@ -39,17 +39,23 @@ pub use crate::types::_http_descriptor::HttpDescriptor;
 
 pub use crate::types::_ag_ui_descriptor::AgUiDescriptor;
 
+pub use crate::types::_signature_agent_card_descriptor::SignatureAgentCardDescriptor;
+
 pub use crate::types::_mcp_server_additional_data::McpServerAdditionalData;
 
 pub use crate::types::_descriptor_source::DescriptorSource;
 
 pub use crate::types::_agent_skills_additional_data::AgentSkillsAdditionalData;
 
+pub use crate::types::_signature_agent_card_additional_data::SignatureAgentCardAdditionalData;
+
 pub use crate::types::_mcp_tools_descriptor::McpToolsDescriptor;
 
 pub use crate::types::_descriptor_source_from_url::DescriptorSourceFromUrl;
 
 pub use crate::types::_agent_skills_md_descriptor::AgentSkillsMdDescriptor;
+
+pub use crate::types::_bot_category::BotCategory;
 
 mod _a2a_agent_card_descriptor;
 
@@ -64,6 +70,8 @@ mod _agent_skills_md_descriptor;
 mod _batch_get_discoverable_registry_record_error;
 
 mod _batch_get_discoverable_registry_record_error_code;
+
+mod _bot_category;
 
 mod _custom_descriptor;
 
@@ -98,6 +106,10 @@ mod _registry_record_summary;
 mod _registry_records_entry;
 
 mod _search_type;
+
+mod _signature_agent_card_additional_data;
+
+mod _signature_agent_card_descriptor;
 
 mod _validation_exception_field;
 

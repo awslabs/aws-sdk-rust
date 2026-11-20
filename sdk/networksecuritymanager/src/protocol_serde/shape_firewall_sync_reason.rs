@@ -50,6 +50,12 @@ where
                                     ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'invalidFirewall' cannot be null")
                                 })?,
                         )),
+                        "invalidResource" => Some(crate::types::FirewallSyncReason::InvalidResource(
+                            crate::protocol_serde::shape_invalid_resources_by_type::de_invalid_resources_by_type(tokens, _value, depth + 1)?
+                                .ok_or_else(|| {
+                                    ::aws_smithy_json::deserialize::error::DeserializeError::custom("value for 'invalidResource' cannot be null")
+                                })?,
+                        )),
                         _ => {
                             ::aws_smithy_json::deserialize::token::skip_value(tokens)?;
                             Some(crate::types::FirewallSyncReason::Unknown)

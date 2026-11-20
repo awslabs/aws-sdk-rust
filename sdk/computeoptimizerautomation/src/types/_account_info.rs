@@ -10,6 +10,8 @@ pub struct AccountInfo {
     pub status: crate::types::EnrollmentStatus,
     /// <p>Specifies whether the management account can create Automation rules that implement optimization actions for this account.</p>
     pub organization_rule_mode: crate::types::OrganizationRuleMode,
+    /// <p>Information about the source of the account's effective organization rule mode.</p>
+    pub organization_rule_mode_source: ::std::option::Option<crate::types::OrganizationRuleModeSource>,
     /// <p>The reason for the current Automation enrollment status.</p>
     pub status_reason: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the account's Automation enrollment status was last updated.</p>
@@ -28,6 +30,10 @@ impl AccountInfo {
     /// <p>Specifies whether the management account can create Automation rules that implement optimization actions for this account.</p>
     pub fn organization_rule_mode(&self) -> &crate::types::OrganizationRuleMode {
         &self.organization_rule_mode
+    }
+    /// <p>Information about the source of the account's effective organization rule mode.</p>
+    pub fn organization_rule_mode_source(&self) -> ::std::option::Option<&crate::types::OrganizationRuleModeSource> {
+        self.organization_rule_mode_source.as_ref()
     }
     /// <p>The reason for the current Automation enrollment status.</p>
     pub fn status_reason(&self) -> ::std::option::Option<&str> {
@@ -52,6 +58,7 @@ pub struct AccountInfoBuilder {
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
     pub(crate) status: ::std::option::Option<crate::types::EnrollmentStatus>,
     pub(crate) organization_rule_mode: ::std::option::Option<crate::types::OrganizationRuleMode>,
+    pub(crate) organization_rule_mode_source: ::std::option::Option<crate::types::OrganizationRuleModeSource>,
     pub(crate) status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) last_updated_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
@@ -100,6 +107,20 @@ impl AccountInfoBuilder {
     /// <p>Specifies whether the management account can create Automation rules that implement optimization actions for this account.</p>
     pub fn get_organization_rule_mode(&self) -> &::std::option::Option<crate::types::OrganizationRuleMode> {
         &self.organization_rule_mode
+    }
+    /// <p>Information about the source of the account's effective organization rule mode.</p>
+    pub fn organization_rule_mode_source(mut self, input: crate::types::OrganizationRuleModeSource) -> Self {
+        self.organization_rule_mode_source = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Information about the source of the account's effective organization rule mode.</p>
+    pub fn set_organization_rule_mode_source(mut self, input: ::std::option::Option<crate::types::OrganizationRuleModeSource>) -> Self {
+        self.organization_rule_mode_source = input;
+        self
+    }
+    /// <p>Information about the source of the account's effective organization rule mode.</p>
+    pub fn get_organization_rule_mode_source(&self) -> &::std::option::Option<crate::types::OrganizationRuleModeSource> {
+        &self.organization_rule_mode_source
     }
     /// <p>The reason for the current Automation enrollment status.</p>
     pub fn status_reason(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -156,6 +177,7 @@ impl AccountInfoBuilder {
                     "organization_rule_mode was not specified but it is required when building AccountInfo",
                 )
             })?,
+            organization_rule_mode_source: self.organization_rule_mode_source,
             status_reason: self.status_reason,
             last_updated_timestamp: self.last_updated_timestamp.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(

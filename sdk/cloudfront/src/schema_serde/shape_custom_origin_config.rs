@@ -79,6 +79,16 @@ static CUSTOMORIGINCONFIG_MEMBER_ORIGIN_MTLS_CONFIG: ::aws_smithy_schema::Schema
     "OriginMtlsConfig",
     7,
 );
+static CUSTOMORIGINCONFIG_MEMBER_ORIGIN_HTTP_VERSION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.cloudfront#CustomOriginConfig$OriginHttpVersion",
+        "com.amazonaws.cloudfront",
+        "CustomOriginConfig",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "OriginHttpVersion",
+    8,
+);
 static CUSTOMORIGINCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.cloudfront#CustomOriginConfig",
@@ -95,6 +105,7 @@ static CUSTOMORIGINCONFIG_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_s
         &CUSTOMORIGINCONFIG_MEMBER_ORIGIN_KEEPALIVE_TIMEOUT,
         &CUSTOMORIGINCONFIG_MEMBER_IP_ADDRESS_TYPE,
         &CUSTOMORIGINCONFIG_MEMBER_ORIGIN_MTLS_CONFIG,
+        &CUSTOMORIGINCONFIG_MEMBER_ORIGIN_HTTP_VERSION,
     ],
 );
 impl crate::types::CustomOriginConfig {
@@ -137,6 +148,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::CustomOrig
         }
         if let Some(ref val) = self.origin_mtls_config {
             ser.write_struct(&CUSTOMORIGINCONFIG_MEMBER_ORIGIN_MTLS_CONFIG, val)?;
+        }
+        if let Some(ref val) = self.origin_http_version {
+            ser.write_string(&CUSTOMORIGINCONFIG_MEMBER_ORIGIN_HTTP_VERSION, val.as_str())?;
         }
         Ok(())
     }
@@ -197,6 +211,13 @@ impl crate::types::builders::CustomOriginConfigBuilder {
                         deser.read_null()?;
                     } else {
                         self.origin_mtls_config = Some(crate::types::OriginMtlsConfig::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.origin_http_version = Some(crate::types::OriginHttpVersion::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}

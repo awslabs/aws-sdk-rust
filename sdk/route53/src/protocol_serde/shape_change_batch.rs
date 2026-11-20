@@ -21,3 +21,46 @@ pub fn ser_change_batch(
     scope.finish();
     Ok(())
 }
+
+#[allow(clippy::needless_question_mark)]
+pub fn de_change_batch(
+    decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder,
+    depth: u32,
+) -> ::std::result::Result<crate::types::ChangeBatch, ::aws_smithy_xml::decode::XmlDecodeError> {
+    if depth >= 128u32 {
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom("maximum nesting depth exceeded"));
+    }
+    #[allow(unused_mut)]
+    let mut builder = crate::types::ChangeBatch::builder();
+    while let Some(mut tag) = decoder.next_tag() {
+        match tag.start_el() {
+            s if s.matches("Comment") /* Comment com.amazonaws.route53#ChangeBatch$Comment */ =>  {
+                let var_3 =
+                    Some(
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_comment(var_3);
+            }
+            ,
+            s if s.matches("Changes") /* Changes com.amazonaws.route53#ChangeBatch$Changes */ =>  {
+                let var_4 =
+                    Some(
+                        crate::protocol_serde::shape_changes::de_changes(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_changes(var_4);
+            }
+            ,
+            _ => {}
+        }
+    }
+    Ok(crate::serde_util::change_batch_correct_errors(builder)
+        .build()
+        .map_err(|_| ::aws_smithy_xml::decode::XmlDecodeError::custom("missing field"))?)
+}

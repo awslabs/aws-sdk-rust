@@ -146,6 +146,12 @@ mod create_adapter;
 
 mod create_adapter_version;
 
+mod create_blueprint;
+
+mod create_blueprint_version;
+
+mod create_project;
+
 /// Operation customization and supporting types.
 ///
 /// The underlying HTTP requests made during an operation can be customized
@@ -177,13 +183,21 @@ mod delete_adapter;
 
 mod delete_adapter_version;
 
+mod delete_blueprint;
+
+mod delete_project;
+
 mod detect_document_text;
 
 mod get_adapter;
 
 mod get_adapter_version;
 
+mod get_blueprint;
+
 mod get_document_analysis;
+
+mod get_document_insights;
 
 mod get_document_text_detection;
 
@@ -193,13 +207,21 @@ mod get_lending_analysis;
 
 mod get_lending_analysis_summary;
 
+mod get_project;
+
 mod list_adapter_versions;
 
 mod list_adapters;
 
+mod list_blueprints;
+
+mod list_projects;
+
 mod list_tags_for_resource;
 
 mod start_document_analysis;
+
+mod start_document_insights;
 
 mod start_document_text_detection;
 
@@ -212,3 +234,7 @@ mod tag_resource;
 mod untag_resource;
 
 mod update_adapter;
+
+mod update_blueprint;
+
+mod update_project;

@@ -60,5 +60,8 @@ pub fn ser_list_program_management_accounts_input_input(
     if let Some(var_17) = &input.next_token {
         object.key("nextToken").string(var_17.as_str());
     }
+    if let Some(var_18) = &input.r#type {
+        object.key("type").string(var_18.as_str());
+    }
     Ok(())
 }

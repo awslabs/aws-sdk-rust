@@ -16,7 +16,7 @@ pub struct HelmFulfillmentOption {
     pub fulfillment_option_version: ::std::option::Option<::std::string::String>,
     /// <p>The operating systems supported by this Helm chart.</p>
     pub operating_systems: ::std::option::Option<::std::vec::Vec<crate::types::HelmOperatingSystem>>,
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub release_notes: ::std::option::Option<::std::string::String>,
     /// <p>The AWS services supported by this Helm chart deployment.</p>
     pub aws_supported_services: ::std::option::Option<::std::vec::Vec<crate::types::AwsSupportedService>>,
@@ -53,7 +53,7 @@ impl HelmFulfillmentOption {
     pub fn operating_systems(&self) -> &[crate::types::HelmOperatingSystem] {
         self.operating_systems.as_deref().unwrap_or_default()
     }
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub fn release_notes(&self) -> ::std::option::Option<&str> {
         self.release_notes.as_deref()
     }
@@ -184,17 +184,17 @@ impl HelmFulfillmentOptionBuilder {
     pub fn get_operating_systems(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::HelmOperatingSystem>> {
         &self.operating_systems
     }
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub fn release_notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.release_notes = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub fn set_release_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release_notes = input;
         self
     }
-    /// <p>Release notes describing changes in this version of the fulfillment option.</p>
+    /// <p>Release notes that describe the changes in this version of the fulfillment option.</p>
     pub fn get_release_notes(&self) -> &::std::option::Option<::std::string::String> {
         &self.release_notes
     }

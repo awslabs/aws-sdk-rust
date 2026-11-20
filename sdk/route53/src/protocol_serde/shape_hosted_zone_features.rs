@@ -25,14 +25,48 @@ pub fn de_hosted_zone_features(
                 builder = builder.set_accelerated_recovery_status(var_1);
             }
             ,
-            s if s.matches("FailureReasons") /* FailureReasons com.amazonaws.route53#HostedZoneFeatures$FailureReasons */ =>  {
+            s if s.matches("PublicDNSFallbackStatus") /* PublicDNSFallbackStatus com.amazonaws.route53#HostedZoneFeatures$PublicDNSFallbackStatus */ =>  {
                 let var_2 =
+                    Some(
+                        Result::<crate::types::FeatureStatus, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            crate::types::FeatureStatus::from(
+                                ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            )
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_public_dns_fallback_status(var_2);
+            }
+            ,
+            s if s.matches("ChangeHistory") /* ChangeHistory com.amazonaws.route53#HostedZoneFeatures$ChangeHistory */ =>  {
+                let var_3 =
+                    Some(
+                        crate::protocol_serde::shape_change_history_feature::de_change_history_feature(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_change_history(var_3);
+            }
+            ,
+            s if s.matches("FailureReasons") /* FailureReasons com.amazonaws.route53#HostedZoneFeatures$FailureReasons */ =>  {
+                let var_4 =
                     Some(
                         crate::protocol_serde::shape_hosted_zone_failure_reasons::de_hosted_zone_failure_reasons(&mut tag, depth + 1)
                         ?
                     )
                 ;
-                builder = builder.set_failure_reasons(var_2);
+                builder = builder.set_failure_reasons(var_4);
+            }
+            ,
+            s if s.matches("ChangeGuardrails") /* ChangeGuardrails com.amazonaws.route53#HostedZoneFeatures$ChangeGuardrails */ =>  {
+                let var_5 =
+                    Some(
+                        crate::protocol_serde::shape_change_guardrails::de_change_guardrails(&mut tag, depth + 1)
+                        ?
+                    )
+                ;
+                builder = builder.set_change_guardrails(var_5);
             }
             ,
             _ => {}

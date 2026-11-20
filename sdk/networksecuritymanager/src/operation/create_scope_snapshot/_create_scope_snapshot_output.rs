@@ -13,6 +13,8 @@ pub struct CreateScopeSnapshotOutput {
     pub scope_description: ::std::option::Option<::std::string::String>,
     /// <p>The configuration that defines which accounts and resources are in scope.</p>
     pub scope_configuration: ::std::option::Option<crate::types::ScopeConfiguration>,
+    /// <p>The specialized type of the scope, if the scope is built for one specific purpose. A scope with no <code>specializedScopeType</code> is a standard scope that you can associate with a deployment. A specialized scope can be used only for the purpose that its type defines and can't be associated with a deployment. This value is set when the scope is created and can't be changed.</p>
+    pub specialized_scope_type: ::std::option::Option<crate::types::SpecializedScopeType>,
     /// <p>The current status of the resource: <code>DRAFT</code> (unpublished, editable) or <code>ACTIVE</code> (published, in use).</p>
     pub status: crate::types::EntityStatus,
     /// <p>The version of the resource.</p>
@@ -50,6 +52,10 @@ impl CreateScopeSnapshotOutput {
     /// <p>The configuration that defines which accounts and resources are in scope.</p>
     pub fn scope_configuration(&self) -> ::std::option::Option<&crate::types::ScopeConfiguration> {
         self.scope_configuration.as_ref()
+    }
+    /// <p>The specialized type of the scope, if the scope is built for one specific purpose. A scope with no <code>specializedScopeType</code> is a standard scope that you can associate with a deployment. A specialized scope can be used only for the purpose that its type defines and can't be associated with a deployment. This value is set when the scope is created and can't be changed.</p>
+    pub fn specialized_scope_type(&self) -> ::std::option::Option<&crate::types::SpecializedScopeType> {
+        self.specialized_scope_type.as_ref()
     }
     /// <p>The current status of the resource: <code>DRAFT</code> (unpublished, editable) or <code>ACTIVE</code> (published, in use).</p>
     pub fn status(&self) -> &crate::types::EntityStatus {
@@ -98,6 +104,7 @@ pub struct CreateScopeSnapshotOutputBuilder {
     pub(crate) scope_name: ::std::option::Option<::std::string::String>,
     pub(crate) scope_description: ::std::option::Option<::std::string::String>,
     pub(crate) scope_configuration: ::std::option::Option<crate::types::ScopeConfiguration>,
+    pub(crate) specialized_scope_type: ::std::option::Option<crate::types::SpecializedScopeType>,
     pub(crate) status: ::std::option::Option<crate::types::EntityStatus>,
     pub(crate) version: ::std::option::Option<::std::string::String>,
     pub(crate) update_token: ::std::option::Option<::std::string::String>,
@@ -179,6 +186,20 @@ impl CreateScopeSnapshotOutputBuilder {
     /// <p>The configuration that defines which accounts and resources are in scope.</p>
     pub fn get_scope_configuration(&self) -> &::std::option::Option<crate::types::ScopeConfiguration> {
         &self.scope_configuration
+    }
+    /// <p>The specialized type of the scope, if the scope is built for one specific purpose. A scope with no <code>specializedScopeType</code> is a standard scope that you can associate with a deployment. A specialized scope can be used only for the purpose that its type defines and can't be associated with a deployment. This value is set when the scope is created and can't be changed.</p>
+    pub fn specialized_scope_type(mut self, input: crate::types::SpecializedScopeType) -> Self {
+        self.specialized_scope_type = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The specialized type of the scope, if the scope is built for one specific purpose. A scope with no <code>specializedScopeType</code> is a standard scope that you can associate with a deployment. A specialized scope can be used only for the purpose that its type defines and can't be associated with a deployment. This value is set when the scope is created and can't be changed.</p>
+    pub fn set_specialized_scope_type(mut self, input: ::std::option::Option<crate::types::SpecializedScopeType>) -> Self {
+        self.specialized_scope_type = input;
+        self
+    }
+    /// <p>The specialized type of the scope, if the scope is built for one specific purpose. A scope with no <code>specializedScopeType</code> is a standard scope that you can associate with a deployment. A specialized scope can be used only for the purpose that its type defines and can't be associated with a deployment. This value is set when the scope is created and can't be changed.</p>
+    pub fn get_specialized_scope_type(&self) -> &::std::option::Option<crate::types::SpecializedScopeType> {
+        &self.specialized_scope_type
     }
     /// <p>The current status of the resource: <code>DRAFT</code> (unpublished, editable) or <code>ACTIVE</code> (published, in use).</p>
     /// This field is required.
@@ -307,6 +328,7 @@ impl CreateScopeSnapshotOutputBuilder {
             })?,
             scope_description: self.scope_description,
             scope_configuration: self.scope_configuration,
+            specialized_scope_type: self.specialized_scope_type,
             status: self.status.ok_or_else(|| {
                 ::aws_smithy_types::error::operation::BuildError::missing_field(
                     "status",

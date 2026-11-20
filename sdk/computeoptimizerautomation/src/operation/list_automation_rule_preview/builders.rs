@@ -134,17 +134,17 @@ impl ListAutomationRulePreviewFluentBuilder {
     pub fn get_rule_type(&self) -> &::std::option::Option<crate::types::RuleType> {
         self.inner.get_rule_type()
     }
-    /// <p>The organizational scope for the rule preview.</p>
+    /// <p>The organizational scope for the rule preview. This parameter is required when <code>ruleType</code> is <code>OrganizationRule</code>. Don't specify it when <code>ruleType</code> is <code>AccountRule</code>.</p>
     pub fn organization_scope(mut self, input: crate::types::OrganizationScope) -> Self {
         self.inner = self.inner.organization_scope(input);
         self
     }
-    /// <p>The organizational scope for the rule preview.</p>
+    /// <p>The organizational scope for the rule preview. This parameter is required when <code>ruleType</code> is <code>OrganizationRule</code>. Don't specify it when <code>ruleType</code> is <code>AccountRule</code>.</p>
     pub fn set_organization_scope(mut self, input: ::std::option::Option<crate::types::OrganizationScope>) -> Self {
         self.inner = self.inner.set_organization_scope(input);
         self
     }
-    /// <p>The organizational scope for the rule preview.</p>
+    /// <p>The organizational scope for the rule preview. This parameter is required when <code>ruleType</code> is <code>OrganizationRule</code>. Don't specify it when <code>ruleType</code> is <code>AccountRule</code>.</p>
     pub fn get_organization_scope(&self) -> &::std::option::Option<crate::types::OrganizationScope> {
         self.inner.get_organization_scope()
     }
@@ -181,17 +181,17 @@ impl ListAutomationRulePreviewFluentBuilder {
     pub fn get_criteria(&self) -> &::std::option::Option<crate::types::Criteria> {
         self.inner.get_criteria()
     }
-    /// <p>The maximum number of automation rule preview results to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of automation rule preview results to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of automation rule preview results to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of automation rule preview results to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of automation rule preview results to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of automation rule preview results to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

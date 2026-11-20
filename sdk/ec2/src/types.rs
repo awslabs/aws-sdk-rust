@@ -1069,6 +1069,8 @@ pub use crate::types::_private_dns_name_options_on_launch::PrivateDnsNameOptions
 
 pub use crate::types::_block_public_access_states::BlockPublicAccessStates;
 
+pub use crate::types::_network_firewall_connectivity_type::NetworkFirewallConnectivityType;
+
 pub use crate::types::_subnet_state::SubnetState;
 
 pub use crate::types::_vpc_state::VpcState;
@@ -2001,6 +2003,8 @@ pub use crate::types::_client_vpn_trust_provider_request::ClientVpnTrustProvider
 
 pub use crate::types::_block_public_access_mode::BlockPublicAccessMode;
 
+pub use crate::types::_network_firewall_association::NetworkFirewallAssociation;
+
 pub use crate::types::_dhcp_configuration::DhcpConfiguration;
 
 pub use crate::types::_internet_gateway_attachment::InternetGatewayAttachment;
@@ -2545,6 +2549,10 @@ pub use crate::types::_allocation_type::AllocationType;
 
 pub use crate::types::_client_vpn_device_trust_provider_type::ClientVpnDeviceTrustProviderType;
 
+pub use crate::types::_firewall_onboarding_status::FirewallOnboardingStatus;
+
+pub use crate::types::_firewall_mode::FirewallMode;
+
 pub use crate::types::_fleet_replacement_strategy::FleetReplacementStrategy;
 
 pub use crate::types::_reserved_capacity_fallback_market_type::ReservedCapacityFallbackMarketType;
@@ -2578,6 +2586,8 @@ pub use crate::types::_path_statement::PathStatement;
 pub use crate::types::_route_origin::RouteOrigin;
 
 pub use crate::types::_route_state::RouteState;
+
+pub use crate::types::_igw_firewall::IgwFirewall;
 
 pub use crate::types::_secondary_network_cidr_block_association_state::SecondaryNetworkCidrBlockAssociationState;
 
@@ -3839,6 +3849,10 @@ mod _filter_port_range;
 
 mod _findings_found;
 
+mod _firewall_mode;
+
+mod _firewall_onboarding_status;
+
 mod _firewall_stateful_rule;
 
 mod _firewall_stateless_rule;
@@ -4026,6 +4040,8 @@ mod _icmp_type_code;
 mod _id_format;
 
 mod _igmpv2_support_value;
+
+mod _igw_firewall;
 
 mod _ike_versions_list_value;
 
@@ -4840,6 +4856,10 @@ mod _network_bandwidth_gbps_request;
 mod _network_card_info;
 
 mod _network_card_interface_type;
+
+mod _network_firewall_association;
+
+mod _network_firewall_connectivity_type;
 
 mod _network_info;
 

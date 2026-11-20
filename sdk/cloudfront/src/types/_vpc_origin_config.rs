@@ -14,6 +14,11 @@ pub struct VpcOriginConfig {
     /// <p>Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1 second, the maximum is 120 seconds, and the default (if you don't specify otherwise) is 5 seconds.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginKeepaliveTimeout">Keep-alive timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub origin_keepalive_timeout: ::std::option::Option<i32>,
+    /// <p>The HTTP version that CloudFront uses for requests to the VPC origin for this distribution. Valid values are <code>http1.1</code> and <code>http2</code>. If you don't specify a value, CloudFront uses HTTP/1.1.</p>
+    /// <p>When you specify <code>http2</code>, CloudFront offers HTTP/2 to the origin by using ALPN. If the origin doesn't negotiate HTTP/2, CloudFront uses HTTP/1.1. CloudFront uses HTTP/2 only over Transport Layer Security (TLS) 1.2 or later. Otherwise, it uses HTTP/1.1.</p>
+    /// <p>If you use a version of an AWS SDK or the AWS CLI that doesn't support this field, an update that sends back a configuration you got from CloudFront removes the value, and CloudFront then uses HTTP/1.1.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginHttpVersion">Origin HTTP version</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub origin_http_version: ::std::option::Option<crate::types::OriginHttpVersion>,
 }
 impl VpcOriginConfig {
     /// <p>The VPC origin ID.</p>
@@ -35,6 +40,13 @@ impl VpcOriginConfig {
     pub fn origin_keepalive_timeout(&self) -> ::std::option::Option<i32> {
         self.origin_keepalive_timeout
     }
+    /// <p>The HTTP version that CloudFront uses for requests to the VPC origin for this distribution. Valid values are <code>http1.1</code> and <code>http2</code>. If you don't specify a value, CloudFront uses HTTP/1.1.</p>
+    /// <p>When you specify <code>http2</code>, CloudFront offers HTTP/2 to the origin by using ALPN. If the origin doesn't negotiate HTTP/2, CloudFront uses HTTP/1.1. CloudFront uses HTTP/2 only over Transport Layer Security (TLS) 1.2 or later. Otherwise, it uses HTTP/1.1.</p>
+    /// <p>If you use a version of an AWS SDK or the AWS CLI that doesn't support this field, an update that sends back a configuration you got from CloudFront removes the value, and CloudFront then uses HTTP/1.1.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginHttpVersion">Origin HTTP version</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn origin_http_version(&self) -> ::std::option::Option<&crate::types::OriginHttpVersion> {
+        self.origin_http_version.as_ref()
+    }
 }
 impl VpcOriginConfig {
     /// Creates a new builder-style object to manufacture [`VpcOriginConfig`](crate::types::VpcOriginConfig).
@@ -51,6 +63,7 @@ pub struct VpcOriginConfigBuilder {
     pub(crate) owner_account_id: ::std::option::Option<::std::string::String>,
     pub(crate) origin_read_timeout: ::std::option::Option<i32>,
     pub(crate) origin_keepalive_timeout: ::std::option::Option<i32>,
+    pub(crate) origin_http_version: ::std::option::Option<crate::types::OriginHttpVersion>,
 }
 impl VpcOriginConfigBuilder {
     /// <p>The VPC origin ID.</p>
@@ -116,6 +129,29 @@ impl VpcOriginConfigBuilder {
     pub fn get_origin_keepalive_timeout(&self) -> &::std::option::Option<i32> {
         &self.origin_keepalive_timeout
     }
+    /// <p>The HTTP version that CloudFront uses for requests to the VPC origin for this distribution. Valid values are <code>http1.1</code> and <code>http2</code>. If you don't specify a value, CloudFront uses HTTP/1.1.</p>
+    /// <p>When you specify <code>http2</code>, CloudFront offers HTTP/2 to the origin by using ALPN. If the origin doesn't negotiate HTTP/2, CloudFront uses HTTP/1.1. CloudFront uses HTTP/2 only over Transport Layer Security (TLS) 1.2 or later. Otherwise, it uses HTTP/1.1.</p>
+    /// <p>If you use a version of an AWS SDK or the AWS CLI that doesn't support this field, an update that sends back a configuration you got from CloudFront removes the value, and CloudFront then uses HTTP/1.1.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginHttpVersion">Origin HTTP version</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn origin_http_version(mut self, input: crate::types::OriginHttpVersion) -> Self {
+        self.origin_http_version = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The HTTP version that CloudFront uses for requests to the VPC origin for this distribution. Valid values are <code>http1.1</code> and <code>http2</code>. If you don't specify a value, CloudFront uses HTTP/1.1.</p>
+    /// <p>When you specify <code>http2</code>, CloudFront offers HTTP/2 to the origin by using ALPN. If the origin doesn't negotiate HTTP/2, CloudFront uses HTTP/1.1. CloudFront uses HTTP/2 only over Transport Layer Security (TLS) 1.2 or later. Otherwise, it uses HTTP/1.1.</p>
+    /// <p>If you use a version of an AWS SDK or the AWS CLI that doesn't support this field, an update that sends back a configuration you got from CloudFront removes the value, and CloudFront then uses HTTP/1.1.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginHttpVersion">Origin HTTP version</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn set_origin_http_version(mut self, input: ::std::option::Option<crate::types::OriginHttpVersion>) -> Self {
+        self.origin_http_version = input;
+        self
+    }
+    /// <p>The HTTP version that CloudFront uses for requests to the VPC origin for this distribution. Valid values are <code>http1.1</code> and <code>http2</code>. If you don't specify a value, CloudFront uses HTTP/1.1.</p>
+    /// <p>When you specify <code>http2</code>, CloudFront offers HTTP/2 to the origin by using ALPN. If the origin doesn't negotiate HTTP/2, CloudFront uses HTTP/1.1. CloudFront uses HTTP/2 only over Transport Layer Security (TLS) 1.2 or later. Otherwise, it uses HTTP/1.1.</p>
+    /// <p>If you use a version of an AWS SDK or the AWS CLI that doesn't support this field, an update that sends back a configuration you got from CloudFront removes the value, and CloudFront then uses HTTP/1.1.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistValuesOrigin.html#DownloadDistValuesOriginHttpVersion">Origin HTTP version</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    pub fn get_origin_http_version(&self) -> &::std::option::Option<crate::types::OriginHttpVersion> {
+        &self.origin_http_version
+    }
     /// Consumes the builder and constructs a [`VpcOriginConfig`](crate::types::VpcOriginConfig).
     /// This method will fail if any of the following fields are not set:
     /// - [`vpc_origin_id`](crate::types::builders::VpcOriginConfigBuilder::vpc_origin_id)
@@ -130,6 +166,7 @@ impl VpcOriginConfigBuilder {
             owner_account_id: self.owner_account_id,
             origin_read_timeout: self.origin_read_timeout,
             origin_keepalive_timeout: self.origin_keepalive_timeout,
+            origin_http_version: self.origin_http_version,
         })
     }
 }

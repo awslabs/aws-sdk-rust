@@ -228,6 +228,13 @@ pub(crate) fn de_get_asset(
                             .transpose()?,
                     );
                 }
+                "ownershipTransfer" => {
+                    builder = builder.set_ownership_transfer(crate::protocol_serde::shape_asset_ownership_transfer::de_asset_ownership_transfer(
+                        tokens,
+                        _value,
+                        depth + 1,
+                    )?);
+                }
                 "owningProjectId" => {
                     builder = builder.set_owning_project_id(
                         ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?

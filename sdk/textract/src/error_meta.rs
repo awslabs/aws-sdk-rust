@@ -298,6 +298,108 @@ impl From<crate::operation::create_adapter_version::CreateAdapterVersionError> f
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_blueprint::CreateBlueprintError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_blueprint::CreateBlueprintError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_blueprint::CreateBlueprintError> for Error {
+    fn from(err: crate::operation::create_blueprint::CreateBlueprintError) -> Self {
+        match err {
+            crate::operation::create_blueprint::CreateBlueprintError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_blueprint::CreateBlueprintError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_blueprint::CreateBlueprintError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::create_blueprint::CreateBlueprintError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_blueprint::CreateBlueprintError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_blueprint::CreateBlueprintError::ProvisionedThroughputExceededException(inner) => {
+                Error::ProvisionedThroughputExceededException(inner)
+            }
+            crate::operation::create_blueprint::CreateBlueprintError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_blueprint::CreateBlueprintError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_blueprint_version::CreateBlueprintVersionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_blueprint_version::CreateBlueprintVersionError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_blueprint_version::CreateBlueprintVersionError> for Error {
+    fn from(err: crate::operation::create_blueprint_version::CreateBlueprintVersionError) -> Self {
+        match err {
+            crate::operation::create_blueprint_version::CreateBlueprintVersionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_blueprint_version::CreateBlueprintVersionError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_blueprint_version::CreateBlueprintVersionError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::create_blueprint_version::CreateBlueprintVersionError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::create_blueprint_version::CreateBlueprintVersionError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::create_blueprint_version::CreateBlueprintVersionError::ProvisionedThroughputExceededException(inner) => {
+                Error::ProvisionedThroughputExceededException(inner)
+            }
+            crate::operation::create_blueprint_version::CreateBlueprintVersionError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::create_blueprint_version::CreateBlueprintVersionError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_blueprint_version::CreateBlueprintVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_project::CreateProjectError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_project::CreateProjectError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_project::CreateProjectError> for Error {
+    fn from(err: crate::operation::create_project::CreateProjectError) -> Self {
+        match err {
+            crate::operation::create_project::CreateProjectError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_project::CreateProjectError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_project::CreateProjectError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::create_project::CreateProjectError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::create_project::CreateProjectError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::create_project::CreateProjectError::ProvisionedThroughputExceededException(inner) => {
+                Error::ProvisionedThroughputExceededException(inner)
+            }
+            crate::operation::create_project::CreateProjectError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::create_project::CreateProjectError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_project::CreateProjectError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_adapter::DeleteAdapterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -361,6 +463,65 @@ impl From<crate::operation::delete_adapter_version::DeleteAdapterVersionError> f
             crate::operation::delete_adapter_version::DeleteAdapterVersionError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::delete_adapter_version::DeleteAdapterVersionError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::delete_adapter_version::DeleteAdapterVersionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_blueprint::DeleteBlueprintError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_blueprint::DeleteBlueprintError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_blueprint::DeleteBlueprintError> for Error {
+    fn from(err: crate::operation::delete_blueprint::DeleteBlueprintError) -> Self {
+        match err {
+            crate::operation::delete_blueprint::DeleteBlueprintError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_blueprint::DeleteBlueprintError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::delete_blueprint::DeleteBlueprintError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_blueprint::DeleteBlueprintError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_blueprint::DeleteBlueprintError::ProvisionedThroughputExceededException(inner) => {
+                Error::ProvisionedThroughputExceededException(inner)
+            }
+            crate::operation::delete_blueprint::DeleteBlueprintError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_blueprint::DeleteBlueprintError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_blueprint::DeleteBlueprintError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_project::DeleteProjectError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_project::DeleteProjectError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_project::DeleteProjectError> for Error {
+    fn from(err: crate::operation::delete_project::DeleteProjectError) -> Self {
+        match err {
+            crate::operation::delete_project::DeleteProjectError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::delete_project::DeleteProjectError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::delete_project::DeleteProjectError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::delete_project::DeleteProjectError::ProvisionedThroughputExceededException(inner) => {
+                Error::ProvisionedThroughputExceededException(inner)
+            }
+            crate::operation::delete_project::DeleteProjectError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::delete_project::DeleteProjectError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::delete_project::DeleteProjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -468,6 +629,35 @@ impl From<crate::operation::get_adapter_version::GetAdapterVersionError> for Err
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_blueprint::GetBlueprintError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_blueprint::GetBlueprintError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_blueprint::GetBlueprintError> for Error {
+    fn from(err: crate::operation::get_blueprint::GetBlueprintError) -> Self {
+        match err {
+            crate::operation::get_blueprint::GetBlueprintError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_blueprint::GetBlueprintError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::get_blueprint::GetBlueprintError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_blueprint::GetBlueprintError::ProvisionedThroughputExceededException(inner) => {
+                Error::ProvisionedThroughputExceededException(inner)
+            }
+            crate::operation::get_blueprint::GetBlueprintError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_blueprint::GetBlueprintError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_blueprint::GetBlueprintError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_document_analysis::GetDocumentAnalysisError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -500,6 +690,37 @@ impl From<crate::operation::get_document_analysis::GetDocumentAnalysisError> for
             }
             crate::operation::get_document_analysis::GetDocumentAnalysisError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_document_analysis::GetDocumentAnalysisError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_document_insights::GetDocumentInsightsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_document_insights::GetDocumentInsightsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_document_insights::GetDocumentInsightsError> for Error {
+    fn from(err: crate::operation::get_document_insights::GetDocumentInsightsError) -> Self {
+        match err {
+            crate::operation::get_document_insights::GetDocumentInsightsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_document_insights::GetDocumentInsightsError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::get_document_insights::GetDocumentInsightsError::InvalidJobIdException(inner) => Error::InvalidJobIdException(inner),
+            crate::operation::get_document_insights::GetDocumentInsightsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::get_document_insights::GetDocumentInsightsError::ProvisionedThroughputExceededException(inner) => {
+                Error::ProvisionedThroughputExceededException(inner)
+            }
+            crate::operation::get_document_insights::GetDocumentInsightsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_document_insights::GetDocumentInsightsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -669,6 +890,35 @@ impl From<crate::operation::get_lending_analysis_summary::GetLendingAnalysisSumm
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_project::GetProjectError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_project::GetProjectError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_project::GetProjectError> for Error {
+    fn from(err: crate::operation::get_project::GetProjectError) -> Self {
+        match err {
+            crate::operation::get_project::GetProjectError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_project::GetProjectError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::get_project::GetProjectError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::get_project::GetProjectError::ProvisionedThroughputExceededException(inner) => {
+                Error::ProvisionedThroughputExceededException(inner)
+            }
+            crate::operation::get_project::GetProjectError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_project::GetProjectError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_project::GetProjectError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_adapters::ListAdaptersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -729,6 +979,64 @@ impl From<crate::operation::list_adapter_versions::ListAdapterVersionsError> for
             crate::operation::list_adapter_versions::ListAdapterVersionsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::list_adapter_versions::ListAdapterVersionsError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::list_adapter_versions::ListAdapterVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_blueprints::ListBlueprintsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_blueprints::ListBlueprintsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_blueprints::ListBlueprintsError> for Error {
+    fn from(err: crate::operation::list_blueprints::ListBlueprintsError) -> Self {
+        match err {
+            crate::operation::list_blueprints::ListBlueprintsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_blueprints::ListBlueprintsError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::list_blueprints::ListBlueprintsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_blueprints::ListBlueprintsError::ProvisionedThroughputExceededException(inner) => {
+                Error::ProvisionedThroughputExceededException(inner)
+            }
+            crate::operation::list_blueprints::ListBlueprintsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_blueprints::ListBlueprintsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_blueprints::ListBlueprintsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_projects::ListProjectsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_projects::ListProjectsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_projects::ListProjectsError> for Error {
+    fn from(err: crate::operation::list_projects::ListProjectsError) -> Self {
+        match err {
+            crate::operation::list_projects::ListProjectsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_projects::ListProjectsError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::list_projects::ListProjectsError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::list_projects::ListProjectsError::ProvisionedThroughputExceededException(inner) => {
+                Error::ProvisionedThroughputExceededException(inner)
+            }
+            crate::operation::list_projects::ListProjectsError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_projects::ListProjectsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_projects::ListProjectsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -816,6 +1124,46 @@ impl From<crate::operation::start_document_analysis::StartDocumentAnalysisError>
                 Error::UnsupportedDocumentException(inner)
             }
             crate::operation::start_document_analysis::StartDocumentAnalysisError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_document_insights::StartDocumentInsightsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_document_insights::StartDocumentInsightsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_document_insights::StartDocumentInsightsError> for Error {
+    fn from(err: crate::operation::start_document_insights::StartDocumentInsightsError) -> Self {
+        match err {
+            crate::operation::start_document_insights::StartDocumentInsightsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_document_insights::StartDocumentInsightsError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::start_document_insights::StartDocumentInsightsError::InvalidParameterException(inner) => {
+                Error::InvalidParameterException(inner)
+            }
+            crate::operation::start_document_insights::StartDocumentInsightsError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::operation::start_document_insights::StartDocumentInsightsError::ProvisionedThroughputExceededException(inner) => {
+                Error::ProvisionedThroughputExceededException(inner)
+            }
+            crate::operation::start_document_insights::StartDocumentInsightsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_document_insights::StartDocumentInsightsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_document_insights::StartDocumentInsightsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1066,6 +1414,67 @@ impl From<crate::operation::update_adapter::UpdateAdapterError> for Error {
             crate::operation::update_adapter::UpdateAdapterError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::update_adapter::UpdateAdapterError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::update_adapter::UpdateAdapterError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_blueprint::UpdateBlueprintError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_blueprint::UpdateBlueprintError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_blueprint::UpdateBlueprintError> for Error {
+    fn from(err: crate::operation::update_blueprint::UpdateBlueprintError) -> Self {
+        match err {
+            crate::operation::update_blueprint::UpdateBlueprintError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_blueprint::UpdateBlueprintError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_blueprint::UpdateBlueprintError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::update_blueprint::UpdateBlueprintError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_blueprint::UpdateBlueprintError::ProvisionedThroughputExceededException(inner) => {
+                Error::ProvisionedThroughputExceededException(inner)
+            }
+            crate::operation::update_blueprint::UpdateBlueprintError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_blueprint::UpdateBlueprintError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_blueprint::UpdateBlueprintError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_project::UpdateProjectError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_project::UpdateProjectError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_project::UpdateProjectError> for Error {
+    fn from(err: crate::operation::update_project::UpdateProjectError) -> Self {
+        match err {
+            crate::operation::update_project::UpdateProjectError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_project::UpdateProjectError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_project::UpdateProjectError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::operation::update_project::UpdateProjectError::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+            crate::operation::update_project::UpdateProjectError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::operation::update_project::UpdateProjectError::ProvisionedThroughputExceededException(inner) => {
+                Error::ProvisionedThroughputExceededException(inner)
+            }
+            crate::operation::update_project::UpdateProjectError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_project::UpdateProjectError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_project::UpdateProjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

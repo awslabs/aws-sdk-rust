@@ -178,17 +178,17 @@ impl UpdateRelationshipFluentBuilder {
     pub fn get_display_name(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_display_name()
     }
-    /// <p>The updated support plan for the relationship.</p>
+    /// <p>The updated support plan for the relationship. Applies only to billing transfer relationships.</p>
     pub fn requested_support_plan(mut self, input: crate::types::SupportPlan) -> Self {
         self.inner = self.inner.requested_support_plan(input);
         self
     }
-    /// <p>The updated support plan for the relationship.</p>
+    /// <p>The updated support plan for the relationship. Applies only to billing transfer relationships.</p>
     pub fn set_requested_support_plan(mut self, input: ::std::option::Option<crate::types::SupportPlan>) -> Self {
         self.inner = self.inner.set_requested_support_plan(input);
         self
     }
-    /// <p>The updated support plan for the relationship.</p>
+    /// <p>The updated support plan for the relationship. Applies only to billing transfer relationships.</p>
     pub fn get_requested_support_plan(&self) -> &::std::option::Option<crate::types::SupportPlan> {
         self.inner.get_requested_support_plan()
     }

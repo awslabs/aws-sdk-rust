@@ -155,7 +155,7 @@ pub(crate) fn de_get_asset_type(
                     );
                 }
                 "Forms" => {
-                    builder = builder.set_forms(crate::protocol_serde::shape_asset_type_forms_map::de_asset_type_forms_map(
+                    builder = builder.set_forms(crate::protocol_serde::shape_asset_type_form_output_map::de_asset_type_form_output_map(
                         tokens,
                         _value,
                         depth + 1,

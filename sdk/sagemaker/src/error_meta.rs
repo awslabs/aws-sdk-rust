@@ -83,6 +83,31 @@ impl From<crate::operation::add_association::AddAssociationError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_inference_gateway::AddInferenceGatewayError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_inference_gateway::AddInferenceGatewayError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::add_inference_gateway::AddInferenceGatewayError> for Error {
+    fn from(err: crate::operation::add_inference_gateway::AddInferenceGatewayError) -> Self {
+        match err {
+            crate::operation::add_inference_gateway::AddInferenceGatewayError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::add_inference_gateway::AddInferenceGatewayError::ResourceInUse(inner) => Error::ResourceInUse(inner),
+            crate::operation::add_inference_gateway::AddInferenceGatewayError::ResourceLimitExceeded(inner) => Error::ResourceLimitExceeded(inner),
+            crate::operation::add_inference_gateway::AddInferenceGatewayError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::add_inference_gateway::AddInferenceGatewayError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::add_tags::AddTagsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1008,6 +1033,38 @@ impl From<crate::operation::create_flow_definition::CreateFlowDefinitionError> f
             crate::operation::create_flow_definition::CreateFlowDefinitionError::ResourceInUse(inner) => Error::ResourceInUse(inner),
             crate::operation::create_flow_definition::CreateFlowDefinitionError::ResourceLimitExceeded(inner) => Error::ResourceLimitExceeded(inner),
             crate::operation::create_flow_definition::CreateFlowDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_global_inference_gateway::CreateGlobalInferenceGatewayError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::create_global_inference_gateway::CreateGlobalInferenceGatewayError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_global_inference_gateway::CreateGlobalInferenceGatewayError> for Error {
+    fn from(err: crate::operation::create_global_inference_gateway::CreateGlobalInferenceGatewayError) -> Self {
+        match err {
+            crate::operation::create_global_inference_gateway::CreateGlobalInferenceGatewayError::ResourceInUse(inner) => Error::ResourceInUse(inner),
+            crate::operation::create_global_inference_gateway::CreateGlobalInferenceGatewayError::ResourceLimitExceeded(inner) => {
+                Error::ResourceLimitExceeded(inner)
+            }
+            crate::operation::create_global_inference_gateway::CreateGlobalInferenceGatewayError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2933,6 +2990,37 @@ impl From<crate::operation::delete_flow_definition::DeleteFlowDefinitionError> f
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_global_inference_gateway::DeleteGlobalInferenceGatewayError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_global_inference_gateway::DeleteGlobalInferenceGatewayError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_global_inference_gateway::DeleteGlobalInferenceGatewayError> for Error {
+    fn from(err: crate::operation::delete_global_inference_gateway::DeleteGlobalInferenceGatewayError) -> Self {
+        match err {
+            crate::operation::delete_global_inference_gateway::DeleteGlobalInferenceGatewayError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::delete_global_inference_gateway::DeleteGlobalInferenceGatewayError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_hub::DeleteHubError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -4698,6 +4786,41 @@ impl From<crate::operation::describe_flow_definition::DescribeFlowDefinitionErro
         match err {
             crate::operation::describe_flow_definition::DescribeFlowDefinitionError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::describe_flow_definition::DescribeFlowDefinitionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_global_inference_gateway::DescribeGlobalInferenceGatewayError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::describe_global_inference_gateway::DescribeGlobalInferenceGatewayError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::describe_global_inference_gateway::DescribeGlobalInferenceGatewayError> for Error {
+    fn from(err: crate::operation::describe_global_inference_gateway::DescribeGlobalInferenceGatewayError) -> Self {
+        match err {
+            crate::operation::describe_global_inference_gateway::DescribeGlobalInferenceGatewayError::ResourceNotFound(inner) => {
+                Error::ResourceNotFound(inner)
+            }
+            crate::operation::describe_global_inference_gateway::DescribeGlobalInferenceGatewayError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -7053,6 +7176,34 @@ impl From<crate::operation::list_flow_definitions::ListFlowDefinitionsError> for
         }
     }
 }
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_global_inference_gateways::ListGlobalInferenceGatewaysError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_global_inference_gateways::ListGlobalInferenceGatewaysError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_global_inference_gateways::ListGlobalInferenceGatewaysError> for Error {
+    fn from(err: crate::operation::list_global_inference_gateways::ListGlobalInferenceGatewaysError) -> Self {
+        match err {
+            crate::operation::list_global_inference_gateways::ListGlobalInferenceGatewaysError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_hub_contents::ListHubContentsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -7258,6 +7409,30 @@ impl From<crate::operation::list_inference_experiments::ListInferenceExperiments
     fn from(err: crate::operation::list_inference_experiments::ListInferenceExperimentsError) -> Self {
         match err {
             crate::operation::list_inference_experiments::ListInferenceExperimentsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_inference_gateways::ListInferenceGatewaysError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_inference_gateways::ListInferenceGatewaysError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_inference_gateways::ListInferenceGatewaysError> for Error {
+    fn from(err: crate::operation::list_inference_gateways::ListInferenceGatewaysError) -> Self {
+        match err {
+            crate::operation::list_inference_gateways::ListInferenceGatewaysError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::list_inference_gateways::ListInferenceGatewaysError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -8527,6 +8702,28 @@ impl From<crate::operation::list_workteams::ListWorkteamsError> for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::move_cluster_nodes::MoveClusterNodesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::move_cluster_nodes::MoveClusterNodesError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::move_cluster_nodes::MoveClusterNodesError> for Error {
+    fn from(err: crate::operation::move_cluster_nodes::MoveClusterNodesError) -> Self {
+        match err {
+            crate::operation::move_cluster_nodes::MoveClusterNodesError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::move_cluster_nodes::MoveClusterNodesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_endpoint_policy::PutEndpointPolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -8617,6 +8814,31 @@ impl From<crate::operation::register_devices::RegisterDevicesError> for Error {
         match err {
             crate::operation::register_devices::RegisterDevicesError::ResourceLimitExceeded(inner) => Error::ResourceLimitExceeded(inner),
             crate::operation::register_devices::RegisterDevicesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_inference_gateway::RemoveInferenceGatewayError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::remove_inference_gateway::RemoveInferenceGatewayError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::remove_inference_gateway::RemoveInferenceGatewayError> for Error {
+    fn from(err: crate::operation::remove_inference_gateway::RemoveInferenceGatewayError) -> Self {
+        match err {
+            crate::operation::remove_inference_gateway::RemoveInferenceGatewayError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::remove_inference_gateway::RemoveInferenceGatewayError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
+            crate::operation::remove_inference_gateway::RemoveInferenceGatewayError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -9936,6 +10158,40 @@ impl From<crate::operation::update_feature_metadata::UpdateFeatureMetadataError>
         match err {
             crate::operation::update_feature_metadata::UpdateFeatureMetadataError::ResourceNotFound(inner) => Error::ResourceNotFound(inner),
             crate::operation::update_feature_metadata::UpdateFeatureMetadataError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_global_inference_gateway::UpdateGlobalInferenceGatewayError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::update_global_inference_gateway::UpdateGlobalInferenceGatewayError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_global_inference_gateway::UpdateGlobalInferenceGatewayError> for Error {
+    fn from(err: crate::operation::update_global_inference_gateway::UpdateGlobalInferenceGatewayError) -> Self {
+        match err {
+            crate::operation::update_global_inference_gateway::UpdateGlobalInferenceGatewayError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::update_global_inference_gateway::UpdateGlobalInferenceGatewayError::ResourceNotFound(inner) => {
+                Error::ResourceNotFound(inner)
+            }
+            crate::operation::update_global_inference_gateway::UpdateGlobalInferenceGatewayError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

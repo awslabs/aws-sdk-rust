@@ -24,6 +24,8 @@ pub struct DocumentVersionInfo {
     pub status_information: ::std::option::Option<::std::string::String>,
     /// <p>The current status of the approval review for the latest version of the document.</p>
     pub review_status: ::std::option::Option<crate::types::ReviewStatus>,
+    /// <p>This field specifies the cloud providers that this version of the document can run against.</p>
+    pub cloud_providers: ::std::option::Option<::std::vec::Vec<crate::types::CloudProvider>>,
 }
 impl DocumentVersionInfo {
     /// <p>The document name.</p>
@@ -66,6 +68,12 @@ impl DocumentVersionInfo {
     pub fn review_status(&self) -> ::std::option::Option<&crate::types::ReviewStatus> {
         self.review_status.as_ref()
     }
+    /// <p>This field specifies the cloud providers that this version of the document can run against.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_providers.is_none()`.
+    pub fn cloud_providers(&self) -> &[crate::types::CloudProvider] {
+        self.cloud_providers.as_deref().unwrap_or_default()
+    }
 }
 impl DocumentVersionInfo {
     /// Creates a new builder-style object to manufacture [`DocumentVersionInfo`](crate::types::DocumentVersionInfo).
@@ -88,6 +96,7 @@ pub struct DocumentVersionInfoBuilder {
     pub(crate) status: ::std::option::Option<crate::types::DocumentStatus>,
     pub(crate) status_information: ::std::option::Option<::std::string::String>,
     pub(crate) review_status: ::std::option::Option<crate::types::ReviewStatus>,
+    pub(crate) cloud_providers: ::std::option::Option<::std::vec::Vec<crate::types::CloudProvider>>,
 }
 impl DocumentVersionInfoBuilder {
     /// <p>The document name.</p>
@@ -230,6 +239,26 @@ impl DocumentVersionInfoBuilder {
     pub fn get_review_status(&self) -> &::std::option::Option<crate::types::ReviewStatus> {
         &self.review_status
     }
+    /// Appends an item to `cloud_providers`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_providers`](Self::set_cloud_providers).
+    ///
+    /// <p>This field specifies the cloud providers that this version of the document can run against.</p>
+    pub fn cloud_providers(mut self, input: crate::types::CloudProvider) -> Self {
+        let mut v = self.cloud_providers.unwrap_or_default();
+        v.push(input);
+        self.cloud_providers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>This field specifies the cloud providers that this version of the document can run against.</p>
+    pub fn set_cloud_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CloudProvider>>) -> Self {
+        self.cloud_providers = input;
+        self
+    }
+    /// <p>This field specifies the cloud providers that this version of the document can run against.</p>
+    pub fn get_cloud_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudProvider>> {
+        &self.cloud_providers
+    }
     /// Consumes the builder and constructs a [`DocumentVersionInfo`](crate::types::DocumentVersionInfo).
     pub fn build(self) -> crate::types::DocumentVersionInfo {
         crate::types::DocumentVersionInfo {
@@ -243,6 +272,7 @@ impl DocumentVersionInfoBuilder {
             status: self.status,
             status_information: self.status_information,
             review_status: self.review_status,
+            cloud_providers: self.cloud_providers,
         }
     }
 }

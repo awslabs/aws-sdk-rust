@@ -280,6 +280,8 @@ impl Client {
 
 mod add_association;
 
+mod add_inference_gateway;
+
 mod add_tags;
 
 mod associate_trial_component;
@@ -353,6 +355,8 @@ mod create_experiment;
 mod create_feature_group;
 
 mod create_flow_definition;
+
+mod create_global_inference_gateway;
 
 mod create_hub;
 
@@ -529,6 +533,8 @@ mod delete_feature_group;
 
 mod delete_flow_definition;
 
+mod delete_global_inference_gateway;
+
 mod delete_hub;
 
 mod delete_hub_content;
@@ -672,6 +678,8 @@ mod describe_feature_group;
 mod describe_feature_metadata;
 
 mod describe_flow_definition;
+
+mod describe_global_inference_gateway;
 
 mod describe_hub;
 
@@ -863,6 +871,8 @@ mod list_feature_groups;
 
 mod list_flow_definitions;
 
+mod list_global_inference_gateways;
+
 mod list_hub_content_versions;
 
 mod list_hub_contents;
@@ -880,6 +890,8 @@ mod list_images;
 mod list_inference_components;
 
 mod list_inference_experiments;
+
+mod list_inference_gateways;
 
 mod list_inference_recommendations_job_steps;
 
@@ -985,6 +997,8 @@ mod list_workforces;
 
 mod list_workteams;
 
+mod move_cluster_nodes;
+
 mod put_endpoint_policy;
 
 mod put_model_package_group_policy;
@@ -992,6 +1006,8 @@ mod put_model_package_group_policy;
 mod query_lineage;
 
 mod register_devices;
+
+mod remove_inference_gateway;
 
 mod render_ui_template;
 
@@ -1096,6 +1112,8 @@ mod update_experiment;
 mod update_feature_group;
 
 mod update_feature_metadata;
+
+mod update_global_inference_gateway;
 
 mod update_hub;
 

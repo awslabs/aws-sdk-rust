@@ -3,7 +3,7 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOfferSetOutput {
-    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    /// <p>The locale of the returned content. This value indicates whether the response contains content in the requested locale or fell back to the default locale. See <code>Locale</code> for details.</p>
     pub locale: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the offer set.</p>
     pub offer_set_id: ::std::string::String,
@@ -11,22 +11,22 @@ pub struct GetOfferSetOutput {
     pub catalog: ::std::string::String,
     /// <p>The display name of the offer set.</p>
     pub offer_set_name: ::std::option::Option<::std::string::String>,
-    /// <p>The date and time when the offer set became available to the buyer.</p>
+    /// <p>The date and time when the offer set became available to you.</p>
     pub available_from_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time when the offer set expires and is no longer available for procurement.</p>
     pub expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
-    /// <p>Detailed information about the offer set that helps buyers understand its purpose and contents.</p>
+    /// <p>Detailed information about the offer set that helps you understand its purpose and contents.</p>
     pub buyer_notes: ::std::option::Option<::std::string::String>,
     /// <p>The entity responsible for selling the products under this offer set.</p>
     pub seller_of_record: ::std::option::Option<crate::types::SellerInformation>,
-    /// <p>Badges indicating special attributes of the offer set, such as private pricing or future dated.</p>
+    /// <p>Badges indicating special attributes of the offer set, such as private pricing or future-dated.</p>
     pub badges: ::std::vec::Vec<crate::types::PurchaseOptionBadge>,
     /// <p>The products and offers included in this offer set.</p>
     pub associated_entities: ::std::vec::Vec<crate::types::OfferSetAssociatedEntity>,
     _request_id: Option<String>,
 }
 impl GetOfferSetOutput {
-    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    /// <p>The locale of the returned content. This value indicates whether the response contains content in the requested locale or fell back to the default locale. See <code>Locale</code> for details.</p>
     pub fn locale(&self) -> ::std::option::Option<&str> {
         self.locale.as_deref()
     }
@@ -44,7 +44,7 @@ impl GetOfferSetOutput {
     pub fn offer_set_name(&self) -> ::std::option::Option<&str> {
         self.offer_set_name.as_deref()
     }
-    /// <p>The date and time when the offer set became available to the buyer.</p>
+    /// <p>The date and time when the offer set became available to you.</p>
     pub fn available_from_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.available_from_time.as_ref()
     }
@@ -52,7 +52,7 @@ impl GetOfferSetOutput {
     pub fn expiration_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.expiration_time.as_ref()
     }
-    /// <p>Detailed information about the offer set that helps buyers understand its purpose and contents.</p>
+    /// <p>Detailed information about the offer set that helps you understand its purpose and contents.</p>
     pub fn buyer_notes(&self) -> ::std::option::Option<&str> {
         self.buyer_notes.as_deref()
     }
@@ -60,7 +60,7 @@ impl GetOfferSetOutput {
     pub fn seller_of_record(&self) -> ::std::option::Option<&crate::types::SellerInformation> {
         self.seller_of_record.as_ref()
     }
-    /// <p>Badges indicating special attributes of the offer set, such as private pricing or future dated.</p>
+    /// <p>Badges indicating special attributes of the offer set, such as private pricing or future-dated.</p>
     pub fn badges(&self) -> &[crate::types::PurchaseOptionBadge] {
         use std::ops::Deref;
         self.badges.deref()
@@ -100,17 +100,17 @@ pub struct GetOfferSetOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetOfferSetOutputBuilder {
-    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    /// <p>The locale of the returned content. This value indicates whether the response contains content in the requested locale or fell back to the default locale. See <code>Locale</code> for details.</p>
     pub fn locale(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.locale = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    /// <p>The locale of the returned content. This value indicates whether the response contains content in the requested locale or fell back to the default locale. See <code>Locale</code> for details.</p>
     pub fn set_locale(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.locale = input;
         self
     }
-    /// <p>The locale of the returned content. Indicates whether the response contains content in the requested locale, or fell back to the default locale. See <code>Locale</code> for details.</p>
+    /// <p>The locale of the returned content. This value indicates whether the response contains content in the requested locale or fell back to the default locale. See <code>Locale</code> for details.</p>
     pub fn get_locale(&self) -> &::std::option::Option<::std::string::String> {
         &self.locale
     }
@@ -158,17 +158,17 @@ impl GetOfferSetOutputBuilder {
     pub fn get_offer_set_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.offer_set_name
     }
-    /// <p>The date and time when the offer set became available to the buyer.</p>
+    /// <p>The date and time when the offer set became available to you.</p>
     pub fn available_from_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.available_from_time = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The date and time when the offer set became available to the buyer.</p>
+    /// <p>The date and time when the offer set became available to you.</p>
     pub fn set_available_from_time(mut self, input: ::std::option::Option<::aws_smithy_types::DateTime>) -> Self {
         self.available_from_time = input;
         self
     }
-    /// <p>The date and time when the offer set became available to the buyer.</p>
+    /// <p>The date and time when the offer set became available to you.</p>
     pub fn get_available_from_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.available_from_time
     }
@@ -186,17 +186,17 @@ impl GetOfferSetOutputBuilder {
     pub fn get_expiration_time(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.expiration_time
     }
-    /// <p>Detailed information about the offer set that helps buyers understand its purpose and contents.</p>
+    /// <p>Detailed information about the offer set that helps you understand its purpose and contents.</p>
     pub fn buyer_notes(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.buyer_notes = ::std::option::Option::Some(input.into());
         self
     }
-    /// <p>Detailed information about the offer set that helps buyers understand its purpose and contents.</p>
+    /// <p>Detailed information about the offer set that helps you understand its purpose and contents.</p>
     pub fn set_buyer_notes(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.buyer_notes = input;
         self
     }
-    /// <p>Detailed information about the offer set that helps buyers understand its purpose and contents.</p>
+    /// <p>Detailed information about the offer set that helps you understand its purpose and contents.</p>
     pub fn get_buyer_notes(&self) -> &::std::option::Option<::std::string::String> {
         &self.buyer_notes
     }
@@ -219,19 +219,19 @@ impl GetOfferSetOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_badges`](Self::set_badges).
     ///
-    /// <p>Badges indicating special attributes of the offer set, such as private pricing or future dated.</p>
+    /// <p>Badges indicating special attributes of the offer set, such as private pricing or future-dated.</p>
     pub fn badges(mut self, input: crate::types::PurchaseOptionBadge) -> Self {
         let mut v = self.badges.unwrap_or_default();
         v.push(input);
         self.badges = ::std::option::Option::Some(v);
         self
     }
-    /// <p>Badges indicating special attributes of the offer set, such as private pricing or future dated.</p>
+    /// <p>Badges indicating special attributes of the offer set, such as private pricing or future-dated.</p>
     pub fn set_badges(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::PurchaseOptionBadge>>) -> Self {
         self.badges = input;
         self
     }
-    /// <p>Badges indicating special attributes of the offer set, such as private pricing or future dated.</p>
+    /// <p>Badges indicating special attributes of the offer set, such as private pricing or future-dated.</p>
     pub fn get_badges(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::PurchaseOptionBadge>> {
         &self.badges
     }

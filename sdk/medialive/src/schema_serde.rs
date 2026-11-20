@@ -1244,3 +1244,5 @@ pub(crate) mod shape_vpc_output_settings_description;
 pub(crate) mod shape_wav_settings;
 
 pub(crate) mod shape_webvtt_destination_settings;
+
+pub(crate) mod shape_webvtt_source_settings;

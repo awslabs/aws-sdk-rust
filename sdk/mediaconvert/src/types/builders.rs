@@ -113,6 +113,8 @@ pub use crate::types::_video_codec_settings::VideoCodecSettingsBuilder;
 
 pub use crate::types::_rectangle::RectangleBuilder;
 
+pub use crate::types::_dynamic_multiview_settings::DynamicMultiviewSettingsBuilder;
+
 pub use crate::types::_video_preprocessor::VideoPreprocessorBuilder;
 
 pub use crate::types::_service_override::ServiceOverrideBuilder;
@@ -248,6 +250,10 @@ pub use crate::types::_ac3_settings::Ac3SettingsBuilder;
 pub use crate::types::_ac4_settings::Ac4SettingsBuilder;
 
 pub use crate::types::_aiff_settings::AiffSettingsBuilder;
+
+pub use crate::types::_dtsc_settings::DtscSettingsBuilder;
+
+pub use crate::types::_dtsx_settings::DtsxSettingsBuilder;
 
 pub use crate::types::_eac3_atmos_settings::Eac3AtmosSettingsBuilder;
 

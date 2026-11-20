@@ -15,11 +15,33 @@ pub use crate::types::_adapter_version_dataset_config::AdapterVersionDatasetConf
 
 pub use crate::types::_output_config::OutputConfigBuilder;
 
+pub use crate::types::_encryption_configuration::EncryptionConfigurationBuilder;
+
+pub use crate::types::_extraction_configuration::ExtractionConfigurationBuilder;
+
+pub use crate::types::_generative_configuration::GenerativeConfigurationBuilder;
+
+pub use crate::types::_custom_configuration::CustomConfigurationBuilder;
+
+pub use crate::types::_splitter_configuration::SplitterConfigurationBuilder;
+
+pub use crate::types::_sensitive_data_configuration::SensitiveDataConfigurationBuilder;
+
+pub use crate::types::_output_configuration::OutputConfigurationBuilder;
+
 pub use crate::types::_lending_summary::LendingSummaryBuilder;
+
+pub use crate::types::_project_filter::ProjectFilterBuilder;
+
+pub use crate::types::_blueprint_filter::BlueprintFilterBuilder;
 
 pub use crate::types::_document_location::DocumentLocationBuilder;
 
 pub use crate::types::_notification_channel::NotificationChannelBuilder;
+
+pub use crate::types::_input_configuration::InputConfigurationBuilder;
+
+pub use crate::types::_notification_configuration::NotificationConfigurationBuilder;
 
 pub use crate::types::_s3_object::S3ObjectBuilder;
 
@@ -31,6 +53,18 @@ pub use crate::types::_expense_document::ExpenseDocumentBuilder;
 
 pub use crate::types::_identity_document::IdentityDocumentBuilder;
 
+pub use crate::types::_bounding_box_configuration::BoundingBoxConfigurationBuilder;
+
+pub use crate::types::_extraction_granularity::ExtractionGranularityBuilder;
+
+pub use crate::types::_output_format::OutputFormatBuilder;
+
+pub use crate::types::_summarization_configuration::SummarizationConfigurationBuilder;
+
+pub use crate::types::_figure_caption_configuration::FigureCaptionConfigurationBuilder;
+
+pub use crate::types::_pii_entities_configuration::PiiEntitiesConfigurationBuilder;
+
 pub use crate::types::_adapter_version_evaluation_metric::AdapterVersionEvaluationMetricBuilder;
 
 pub use crate::types::_warning::WarningBuilder;
@@ -41,11 +75,23 @@ pub use crate::types::_adapter_overview::AdapterOverviewBuilder;
 
 pub use crate::types::_adapter_version_overview::AdapterVersionOverviewBuilder;
 
+pub use crate::types::_blueprint_summary::BlueprintSummaryBuilder;
+
+pub use crate::types::_project_summary::ProjectSummaryBuilder;
+
+pub use crate::types::_blueprint_item::BlueprintItemBuilder;
+
+pub use crate::types::_event_bridge_configuration::EventBridgeConfigurationBuilder;
+
 pub use crate::types::_query::QueryBuilder;
 
 pub use crate::types::_adapter::AdapterBuilder;
 
 pub use crate::types::_geometry::GeometryBuilder;
+
+pub use crate::types::_output_additional_file_format::OutputAdditionalFileFormatBuilder;
+
+pub use crate::types::_output_text_format::OutputTextFormatBuilder;
 
 pub use crate::types::_evaluation_metric::EvaluationMetricBuilder;
 

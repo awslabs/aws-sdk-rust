@@ -32,6 +32,17 @@ static AV1SETTINGS_MEMBER_BITRATE: ::aws_smithy_schema::Schema<'static> = ::aws_
     2,
 )
 .with_json_name("bitrate");
+static AV1SETTINGS_MEMBER_FAST_DECODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconvert#Av1Settings$FastDecode",
+        "com.amazonaws.mediaconvert",
+        "Av1Settings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "FastDecode",
+    3,
+)
+.with_json_name("fastDecode");
 static AV1SETTINGS_MEMBER_FILM_GRAIN_SYNTHESIS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.mediaconvert#Av1Settings$FilmGrainSynthesis",
@@ -40,7 +51,7 @@ static AV1SETTINGS_MEMBER_FILM_GRAIN_SYNTHESIS: ::aws_smithy_schema::Schema<'sta
     ),
     ::aws_smithy_schema::ShapeType::String,
     "FilmGrainSynthesis",
-    3,
+    4,
 )
 .with_json_name("filmGrainSynthesis");
 static AV1SETTINGS_MEMBER_FRAMERATE_CONTROL: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -51,7 +62,7 @@ static AV1SETTINGS_MEMBER_FRAMERATE_CONTROL: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::String,
     "FramerateControl",
-    4,
+    5,
 )
 .with_json_name("framerateControl");
 static AV1SETTINGS_MEMBER_FRAMERATE_CONVERSION_ALGORITHM: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -62,7 +73,7 @@ static AV1SETTINGS_MEMBER_FRAMERATE_CONVERSION_ALGORITHM: ::aws_smithy_schema::S
     ),
     ::aws_smithy_schema::ShapeType::String,
     "FramerateConversionAlgorithm",
-    5,
+    6,
 )
 .with_json_name("framerateConversionAlgorithm");
 static AV1SETTINGS_MEMBER_FRAMERATE_DENOMINATOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -73,7 +84,7 @@ static AV1SETTINGS_MEMBER_FRAMERATE_DENOMINATOR: ::aws_smithy_schema::Schema<'st
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "FramerateDenominator",
-    6,
+    7,
 )
 .with_json_name("framerateDenominator");
 static AV1SETTINGS_MEMBER_FRAMERATE_NUMERATOR: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -84,7 +95,7 @@ static AV1SETTINGS_MEMBER_FRAMERATE_NUMERATOR: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "FramerateNumerator",
-    7,
+    8,
 )
 .with_json_name("framerateNumerator");
 static AV1SETTINGS_MEMBER_GOP_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -95,9 +106,20 @@ static AV1SETTINGS_MEMBER_GOP_SIZE: ::aws_smithy_schema::Schema<'static> = ::aws
     ),
     ::aws_smithy_schema::ShapeType::Double,
     "GopSize",
-    8,
+    9,
 )
 .with_json_name("gopSize");
+static AV1SETTINGS_MEMBER_GOP_SIZE_UNITS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconvert#Av1Settings$GopSizeUnits",
+        "com.amazonaws.mediaconvert",
+        "Av1Settings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "GopSizeUnits",
+    10,
+)
+.with_json_name("gopSizeUnits");
 static AV1SETTINGS_MEMBER_MAX_BITRATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.mediaconvert#Av1Settings$MaxBitrate",
@@ -106,7 +128,7 @@ static AV1SETTINGS_MEMBER_MAX_BITRATE: ::aws_smithy_schema::Schema<'static> = ::
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "MaxBitrate",
-    9,
+    11,
 )
 .with_json_name("maxBitrate");
 static AV1SETTINGS_MEMBER_NUMBER_B_FRAMES_BETWEEN_REFERENCE_FRAMES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -117,7 +139,7 @@ static AV1SETTINGS_MEMBER_NUMBER_B_FRAMES_BETWEEN_REFERENCE_FRAMES: ::aws_smithy
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "NumberBFramesBetweenReferenceFrames",
-    10,
+    12,
 )
 .with_json_name("numberBFramesBetweenReferenceFrames");
 static AV1SETTINGS_MEMBER_PER_FRAME_METRICS_MEMBER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -138,7 +160,7 @@ static AV1SETTINGS_MEMBER_PER_FRAME_METRICS: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::List,
     "PerFrameMetrics",
-    11,
+    13,
 )
 .with_json_name("perFrameMetrics")
 .with_list_member(&AV1SETTINGS_MEMBER_PER_FRAME_METRICS_MEMBER);
@@ -150,7 +172,7 @@ static AV1SETTINGS_MEMBER_QVBR_SETTINGS: ::aws_smithy_schema::Schema<'static> = 
     ),
     ::aws_smithy_schema::ShapeType::Structure,
     "QvbrSettings",
-    12,
+    14,
 )
 .with_json_name("qvbrSettings");
 static AV1SETTINGS_MEMBER_RATE_CONTROL_MODE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -161,7 +183,7 @@ static AV1SETTINGS_MEMBER_RATE_CONTROL_MODE: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::String,
     "RateControlMode",
-    13,
+    15,
 )
 .with_json_name("rateControlMode");
 static AV1SETTINGS_MEMBER_SCENE_CHANGE_DETECT: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -172,7 +194,7 @@ static AV1SETTINGS_MEMBER_SCENE_CHANGE_DETECT: ::aws_smithy_schema::Schema<'stat
     ),
     ::aws_smithy_schema::ShapeType::String,
     "SceneChangeDetect",
-    14,
+    16,
 )
 .with_json_name("sceneChangeDetect");
 static AV1SETTINGS_MEMBER_SLICES: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -183,7 +205,7 @@ static AV1SETTINGS_MEMBER_SLICES: ::aws_smithy_schema::Schema<'static> = ::aws_s
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "Slices",
-    15,
+    17,
 )
 .with_json_name("slices");
 static AV1SETTINGS_MEMBER_SLIDING_WINDOW_MS: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -194,7 +216,7 @@ static AV1SETTINGS_MEMBER_SLIDING_WINDOW_MS: ::aws_smithy_schema::Schema<'static
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "SlidingWindowMs",
-    16,
+    18,
 )
 .with_json_name("slidingWindowMs");
 static AV1SETTINGS_MEMBER_SLIDING_WINDOW_PEAK_BITRATE: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -205,7 +227,7 @@ static AV1SETTINGS_MEMBER_SLIDING_WINDOW_PEAK_BITRATE: ::aws_smithy_schema::Sche
     ),
     ::aws_smithy_schema::ShapeType::Integer,
     "SlidingWindowPeakBitrate",
-    17,
+    19,
 )
 .with_json_name("slidingWindowPeakBitrate");
 static AV1SETTINGS_MEMBER_SPATIAL_ADAPTIVE_QUANTIZATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
@@ -216,9 +238,20 @@ static AV1SETTINGS_MEMBER_SPATIAL_ADAPTIVE_QUANTIZATION: ::aws_smithy_schema::Sc
     ),
     ::aws_smithy_schema::ShapeType::String,
     "SpatialAdaptiveQuantization",
-    18,
+    20,
 )
 .with_json_name("spatialAdaptiveQuantization");
+static AV1SETTINGS_MEMBER_TEMPORAL_ADAPTIVE_QUANTIZATION: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.mediaconvert#Av1Settings$TemporalAdaptiveQuantization",
+        "com.amazonaws.mediaconvert",
+        "Av1Settings",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "TemporalAdaptiveQuantization",
+    21,
+)
+.with_json_name("temporalAdaptiveQuantization");
 static AV1SETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.mediaconvert#Av1Settings", "com.amazonaws.mediaconvert", "Av1Settings"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -226,12 +259,14 @@ static AV1SETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_s
         &AV1SETTINGS_MEMBER_ADAPTIVE_QUANTIZATION,
         &AV1SETTINGS_MEMBER_BIT_DEPTH,
         &AV1SETTINGS_MEMBER_BITRATE,
+        &AV1SETTINGS_MEMBER_FAST_DECODE,
         &AV1SETTINGS_MEMBER_FILM_GRAIN_SYNTHESIS,
         &AV1SETTINGS_MEMBER_FRAMERATE_CONTROL,
         &AV1SETTINGS_MEMBER_FRAMERATE_CONVERSION_ALGORITHM,
         &AV1SETTINGS_MEMBER_FRAMERATE_DENOMINATOR,
         &AV1SETTINGS_MEMBER_FRAMERATE_NUMERATOR,
         &AV1SETTINGS_MEMBER_GOP_SIZE,
+        &AV1SETTINGS_MEMBER_GOP_SIZE_UNITS,
         &AV1SETTINGS_MEMBER_MAX_BITRATE,
         &AV1SETTINGS_MEMBER_NUMBER_B_FRAMES_BETWEEN_REFERENCE_FRAMES,
         &AV1SETTINGS_MEMBER_PER_FRAME_METRICS,
@@ -242,6 +277,7 @@ static AV1SETTINGS_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_s
         &AV1SETTINGS_MEMBER_SLIDING_WINDOW_MS,
         &AV1SETTINGS_MEMBER_SLIDING_WINDOW_PEAK_BITRATE,
         &AV1SETTINGS_MEMBER_SPATIAL_ADAPTIVE_QUANTIZATION,
+        &AV1SETTINGS_MEMBER_TEMPORAL_ADAPTIVE_QUANTIZATION,
     ],
 );
 impl crate::types::Av1Settings {
@@ -267,6 +303,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Av1Setting
         if let Some(ref val) = self.bitrate {
             ser.write_integer(&AV1SETTINGS_MEMBER_BITRATE, *val)?;
         }
+        if let Some(ref val) = self.fast_decode {
+            ser.write_string(&AV1SETTINGS_MEMBER_FAST_DECODE, val.as_str())?;
+        }
         if let Some(ref val) = self.film_grain_synthesis {
             ser.write_string(&AV1SETTINGS_MEMBER_FILM_GRAIN_SYNTHESIS, val.as_str())?;
         }
@@ -284,6 +323,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Av1Setting
         }
         if let Some(ref val) = self.gop_size {
             ser.write_double(&AV1SETTINGS_MEMBER_GOP_SIZE, *val)?;
+        }
+        if let Some(ref val) = self.gop_size_units {
+            ser.write_string(&AV1SETTINGS_MEMBER_GOP_SIZE_UNITS, val.as_str())?;
         }
         if let Some(ref val) = self.max_bitrate {
             ser.write_integer(&AV1SETTINGS_MEMBER_MAX_BITRATE, *val)?;
@@ -322,6 +364,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::Av1Setting
         }
         if let Some(ref val) = self.spatial_adaptive_quantization {
             ser.write_string(&AV1SETTINGS_MEMBER_SPATIAL_ADAPTIVE_QUANTIZATION, val.as_str())?;
+        }
+        if let Some(ref val) = self.temporal_adaptive_quantization {
+            ser.write_string(&AV1SETTINGS_MEMBER_TEMPORAL_ADAPTIVE_QUANTIZATION, val.as_str())?;
         }
         Ok(())
     }
@@ -365,17 +410,24 @@ impl crate::types::builders::Av1SettingsBuilder {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.film_grain_synthesis = Some(crate::types::Av1FilmGrainSynthesis::from(deser.read_string(member)?.as_str()));
+                        self.fast_decode = Some(crate::types::Av1FastDecode::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(4) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
-                        self.framerate_control = Some(crate::types::Av1FramerateControl::from(deser.read_string(member)?.as_str()));
+                        self.film_grain_synthesis = Some(crate::types::Av1FilmGrainSynthesis::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 Some(5) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.framerate_control = Some(crate::types::Av1FramerateControl::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(6) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -383,42 +435,49 @@ impl crate::types::builders::Av1SettingsBuilder {
                             Some(crate::types::Av1FramerateConversionAlgorithm::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(6) => {
+                Some(7) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.framerate_denominator = Some(deser.read_integer(member)?);
                     }
                 }
-                Some(7) => {
+                Some(8) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.framerate_numerator = Some(deser.read_integer(member)?);
                     }
                 }
-                Some(8) => {
+                Some(9) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.gop_size = Some(deser.read_double(member)?);
                     }
                 }
-                Some(9) => {
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.gop_size_units = Some(crate::types::Av1GopSizeUnits::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(11) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.max_bitrate = Some(deser.read_integer(member)?);
                     }
                 }
-                Some(10) => {
+                Some(12) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.number_b_frames_between_reference_frames = Some(deser.read_integer(member)?);
                     }
                 }
-                Some(11) => {
+                Some(13) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
@@ -434,54 +493,62 @@ impl crate::types::builders::Av1SettingsBuilder {
                         });
                     }
                 }
-                Some(12) => {
+                Some(14) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.qvbr_settings = Some(crate::types::Av1QvbrSettings::deserialize(deser)?);
                     }
                 }
-                Some(13) => {
+                Some(15) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.rate_control_mode = Some(crate::types::Av1RateControlMode::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(14) => {
+                Some(16) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.scene_change_detect = Some(crate::types::Av1SceneChangeDetect::from(deser.read_string(member)?.as_str()));
                     }
                 }
-                Some(15) => {
+                Some(17) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.slices = Some(deser.read_integer(member)?);
                     }
                 }
-                Some(16) => {
+                Some(18) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.sliding_window_ms = Some(deser.read_integer(member)?);
                     }
                 }
-                Some(17) => {
+                Some(19) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.sliding_window_peak_bitrate = Some(deser.read_integer(member)?);
                     }
                 }
-                Some(18) => {
+                Some(20) => {
                     if deser.is_null() {
                         deser.read_null()?;
                     } else {
                         self.spatial_adaptive_quantization =
                             Some(crate::types::Av1SpatialAdaptiveQuantization::from(deser.read_string(member)?.as_str()));
+                    }
+                }
+                Some(21) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.temporal_adaptive_quantization =
+                            Some(crate::types::Av1TemporalAdaptiveQuantization::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}

@@ -4,37 +4,17 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataCatalogExportConfigurationOutput {
-    /// <p>The export setting for the data catalog. Valid values are <code>ENABLED</code> and <code>DISABLED</code>.</p>
-    pub export_setting: ::std::option::Option<crate::types::ExportSetting>,
-    /// <p>The current status of the export. Valid values are <code>ENABLING</code>, <code>ENABLED</code>, <code>DISABLING</code>, <code>DISABLED</code>, and <code>FAILED</code>.</p>
-    pub status: ::std::option::Option<crate::types::ExportStatus>,
-    /// <p>The encryption configuration for the exported data.</p>
-    pub encryption_configuration: ::std::option::Option<crate::types::ExportEncryptionConfiguration>,
-    /// <p>The ARN of the S3 Tables bucket where catalog metadata is exported.</p>
-    pub s3_table_bucket_arn: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp at which the export configuration was created.</p>
     pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The timestamp at which the export configuration was last updated.</p>
     pub updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    /// <p>The S3 Tables configuration for the export, including the table bucket that holds the exported catalog metadata and its encryption configuration.</p>
+    pub s3_tables_configuration: ::std::option::Option<crate::types::S3TablesConfigurationResult>,
+    /// <p>The export setting and current export state for asset metadata.</p>
+    pub assets: ::std::option::Option<crate::types::AssetsExportResult>,
     _request_id: Option<String>,
 }
 impl GetDataCatalogExportConfigurationOutput {
-    /// <p>The export setting for the data catalog. Valid values are <code>ENABLED</code> and <code>DISABLED</code>.</p>
-    pub fn export_setting(&self) -> ::std::option::Option<&crate::types::ExportSetting> {
-        self.export_setting.as_ref()
-    }
-    /// <p>The current status of the export. Valid values are <code>ENABLING</code>, <code>ENABLED</code>, <code>DISABLING</code>, <code>DISABLED</code>, and <code>FAILED</code>.</p>
-    pub fn status(&self) -> ::std::option::Option<&crate::types::ExportStatus> {
-        self.status.as_ref()
-    }
-    /// <p>The encryption configuration for the exported data.</p>
-    pub fn encryption_configuration(&self) -> ::std::option::Option<&crate::types::ExportEncryptionConfiguration> {
-        self.encryption_configuration.as_ref()
-    }
-    /// <p>The ARN of the S3 Tables bucket where catalog metadata is exported.</p>
-    pub fn s3_table_bucket_arn(&self) -> ::std::option::Option<&str> {
-        self.s3_table_bucket_arn.as_deref()
-    }
     /// <p>The timestamp at which the export configuration was created.</p>
     pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
@@ -42,6 +22,14 @@ impl GetDataCatalogExportConfigurationOutput {
     /// <p>The timestamp at which the export configuration was last updated.</p>
     pub fn updated_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
+    }
+    /// <p>The S3 Tables configuration for the export, including the table bucket that holds the exported catalog metadata and its encryption configuration.</p>
+    pub fn s3_tables_configuration(&self) -> ::std::option::Option<&crate::types::S3TablesConfigurationResult> {
+        self.s3_tables_configuration.as_ref()
+    }
+    /// <p>The export setting and current export state for asset metadata.</p>
+    pub fn assets(&self) -> ::std::option::Option<&crate::types::AssetsExportResult> {
+        self.assets.as_ref()
     }
 }
 impl ::aws_types::request_id::RequestId for GetDataCatalogExportConfigurationOutput {
@@ -60,71 +48,13 @@ impl GetDataCatalogExportConfigurationOutput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 #[non_exhaustive]
 pub struct GetDataCatalogExportConfigurationOutputBuilder {
-    pub(crate) export_setting: ::std::option::Option<crate::types::ExportSetting>,
-    pub(crate) status: ::std::option::Option<crate::types::ExportStatus>,
-    pub(crate) encryption_configuration: ::std::option::Option<crate::types::ExportEncryptionConfiguration>,
-    pub(crate) s3_table_bucket_arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) s3_tables_configuration: ::std::option::Option<crate::types::S3TablesConfigurationResult>,
+    pub(crate) assets: ::std::option::Option<crate::types::AssetsExportResult>,
     _request_id: Option<String>,
 }
 impl GetDataCatalogExportConfigurationOutputBuilder {
-    /// <p>The export setting for the data catalog. Valid values are <code>ENABLED</code> and <code>DISABLED</code>.</p>
-    pub fn export_setting(mut self, input: crate::types::ExportSetting) -> Self {
-        self.export_setting = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The export setting for the data catalog. Valid values are <code>ENABLED</code> and <code>DISABLED</code>.</p>
-    pub fn set_export_setting(mut self, input: ::std::option::Option<crate::types::ExportSetting>) -> Self {
-        self.export_setting = input;
-        self
-    }
-    /// <p>The export setting for the data catalog. Valid values are <code>ENABLED</code> and <code>DISABLED</code>.</p>
-    pub fn get_export_setting(&self) -> &::std::option::Option<crate::types::ExportSetting> {
-        &self.export_setting
-    }
-    /// <p>The current status of the export. Valid values are <code>ENABLING</code>, <code>ENABLED</code>, <code>DISABLING</code>, <code>DISABLED</code>, and <code>FAILED</code>.</p>
-    pub fn status(mut self, input: crate::types::ExportStatus) -> Self {
-        self.status = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The current status of the export. Valid values are <code>ENABLING</code>, <code>ENABLED</code>, <code>DISABLING</code>, <code>DISABLED</code>, and <code>FAILED</code>.</p>
-    pub fn set_status(mut self, input: ::std::option::Option<crate::types::ExportStatus>) -> Self {
-        self.status = input;
-        self
-    }
-    /// <p>The current status of the export. Valid values are <code>ENABLING</code>, <code>ENABLED</code>, <code>DISABLING</code>, <code>DISABLED</code>, and <code>FAILED</code>.</p>
-    pub fn get_status(&self) -> &::std::option::Option<crate::types::ExportStatus> {
-        &self.status
-    }
-    /// <p>The encryption configuration for the exported data.</p>
-    pub fn encryption_configuration(mut self, input: crate::types::ExportEncryptionConfiguration) -> Self {
-        self.encryption_configuration = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The encryption configuration for the exported data.</p>
-    pub fn set_encryption_configuration(mut self, input: ::std::option::Option<crate::types::ExportEncryptionConfiguration>) -> Self {
-        self.encryption_configuration = input;
-        self
-    }
-    /// <p>The encryption configuration for the exported data.</p>
-    pub fn get_encryption_configuration(&self) -> &::std::option::Option<crate::types::ExportEncryptionConfiguration> {
-        &self.encryption_configuration
-    }
-    /// <p>The ARN of the S3 Tables bucket where catalog metadata is exported.</p>
-    pub fn s3_table_bucket_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.s3_table_bucket_arn = ::std::option::Option::Some(input.into());
-        self
-    }
-    /// <p>The ARN of the S3 Tables bucket where catalog metadata is exported.</p>
-    pub fn set_s3_table_bucket_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3_table_bucket_arn = input;
-        self
-    }
-    /// <p>The ARN of the S3 Tables bucket where catalog metadata is exported.</p>
-    pub fn get_s3_table_bucket_arn(&self) -> &::std::option::Option<::std::string::String> {
-        &self.s3_table_bucket_arn
-    }
     /// <p>The timestamp at which the export configuration was created.</p>
     pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.created_at = ::std::option::Option::Some(input);
@@ -153,6 +83,34 @@ impl GetDataCatalogExportConfigurationOutputBuilder {
     pub fn get_updated_at(&self) -> &::std::option::Option<::aws_smithy_types::DateTime> {
         &self.updated_at
     }
+    /// <p>The S3 Tables configuration for the export, including the table bucket that holds the exported catalog metadata and its encryption configuration.</p>
+    pub fn s3_tables_configuration(mut self, input: crate::types::S3TablesConfigurationResult) -> Self {
+        self.s3_tables_configuration = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The S3 Tables configuration for the export, including the table bucket that holds the exported catalog metadata and its encryption configuration.</p>
+    pub fn set_s3_tables_configuration(mut self, input: ::std::option::Option<crate::types::S3TablesConfigurationResult>) -> Self {
+        self.s3_tables_configuration = input;
+        self
+    }
+    /// <p>The S3 Tables configuration for the export, including the table bucket that holds the exported catalog metadata and its encryption configuration.</p>
+    pub fn get_s3_tables_configuration(&self) -> &::std::option::Option<crate::types::S3TablesConfigurationResult> {
+        &self.s3_tables_configuration
+    }
+    /// <p>The export setting and current export state for asset metadata.</p>
+    pub fn assets(mut self, input: crate::types::AssetsExportResult) -> Self {
+        self.assets = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>The export setting and current export state for asset metadata.</p>
+    pub fn set_assets(mut self, input: ::std::option::Option<crate::types::AssetsExportResult>) -> Self {
+        self.assets = input;
+        self
+    }
+    /// <p>The export setting and current export state for asset metadata.</p>
+    pub fn get_assets(&self) -> &::std::option::Option<crate::types::AssetsExportResult> {
+        &self.assets
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
         self._request_id = Some(request_id.into());
         self
@@ -165,12 +123,10 @@ impl GetDataCatalogExportConfigurationOutputBuilder {
     /// Consumes the builder and constructs a [`GetDataCatalogExportConfigurationOutput`](crate::operation::get_data_catalog_export_configuration::GetDataCatalogExportConfigurationOutput).
     pub fn build(self) -> crate::operation::get_data_catalog_export_configuration::GetDataCatalogExportConfigurationOutput {
         crate::operation::get_data_catalog_export_configuration::GetDataCatalogExportConfigurationOutput {
-            export_setting: self.export_setting,
-            status: self.status,
-            encryption_configuration: self.encryption_configuration,
-            s3_table_bucket_arn: self.s3_table_bucket_arn,
             created_at: self.created_at,
             updated_at: self.updated_at,
+            s3_tables_configuration: self.s3_tables_configuration,
+            assets: self.assets,
             _request_id: self._request_id,
         }
     }

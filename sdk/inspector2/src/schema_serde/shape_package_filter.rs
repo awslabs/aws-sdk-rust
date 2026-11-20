@@ -75,6 +75,36 @@ static PACKAGEFILTER_MEMBER_FILE_PATH: ::aws_smithy_schema::Schema<'static> = ::
     "filePath",
     7,
 );
+static PACKAGEFILTER_MEMBER_RUNTIME_REACHABILITY: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.inspector2#PackageFilter$runtimeReachability",
+        "com.amazonaws.inspector2",
+        "PackageFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "runtimeReachability",
+    8,
+);
+static PACKAGEFILTER_MEMBER_RUNTIME_REACHABILITY_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.inspector2#PackageFilter$runtimeReachabilityReason",
+        "com.amazonaws.inspector2",
+        "PackageFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "runtimeReachabilityReason",
+    9,
+);
+static PACKAGEFILTER_MEMBER_PURL_QUALIFIER: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.inspector2#PackageFilter$purlQualifier",
+        "com.amazonaws.inspector2",
+        "PackageFilter",
+    ),
+    ::aws_smithy_schema::ShapeType::Structure,
+    "purlQualifier",
+    10,
+);
 static PACKAGEFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts("com.amazonaws.inspector2#PackageFilter", "com.amazonaws.inspector2", "PackageFilter"),
     ::aws_smithy_schema::ShapeType::Structure,
@@ -87,6 +117,9 @@ static PACKAGEFILTER_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy
         &PACKAGEFILTER_MEMBER_SOURCE_LAYER_HASH,
         &PACKAGEFILTER_MEMBER_SOURCE_LAMBDA_LAYER_ARN,
         &PACKAGEFILTER_MEMBER_FILE_PATH,
+        &PACKAGEFILTER_MEMBER_RUNTIME_REACHABILITY,
+        &PACKAGEFILTER_MEMBER_RUNTIME_REACHABILITY_REASON,
+        &PACKAGEFILTER_MEMBER_PURL_QUALIFIER,
     ],
 );
 impl crate::types::PackageFilter {
@@ -126,6 +159,15 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::PackageFil
         }
         if let Some(ref val) = self.file_path {
             ser.write_struct(&PACKAGEFILTER_MEMBER_FILE_PATH, val)?;
+        }
+        if let Some(ref val) = self.runtime_reachability {
+            ser.write_struct(&PACKAGEFILTER_MEMBER_RUNTIME_REACHABILITY, val)?;
+        }
+        if let Some(ref val) = self.runtime_reachability_reason {
+            ser.write_struct(&PACKAGEFILTER_MEMBER_RUNTIME_REACHABILITY_REASON, val)?;
+        }
+        if let Some(ref val) = self.purl_qualifier {
+            ser.write_struct(&PACKAGEFILTER_MEMBER_PURL_QUALIFIER, val)?;
         }
         Ok(())
     }
@@ -198,6 +240,27 @@ impl crate::types::builders::PackageFilterBuilder {
                         deser.read_null()?;
                     } else {
                         self.file_path = Some(crate::types::StringFilter::deserialize(deser)?);
+                    }
+                }
+                Some(8) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.runtime_reachability = Some(crate::types::RuntimeReachabilityFilter::deserialize(deser)?);
+                    }
+                }
+                Some(9) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.runtime_reachability_reason = Some(crate::types::RuntimeReachabilityReasonFilter::deserialize(deser)?);
+                    }
+                }
+                Some(10) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.purl_qualifier = Some(crate::types::PurlQualifierFilter::deserialize(deser)?);
                     }
                 }
                 _ => {}

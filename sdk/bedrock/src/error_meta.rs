@@ -80,6 +80,33 @@ impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for Error {
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::archive_project::ArchiveProjectError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::archive_project::ArchiveProjectError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::archive_project::ArchiveProjectError> for Error {
+    fn from(err: crate::operation::archive_project::ArchiveProjectError) -> Self {
+        match err {
+            crate::operation::archive_project::ArchiveProjectError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::archive_project::ArchiveProjectError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::archive_project::ArchiveProjectError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::archive_project::ArchiveProjectError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::archive_project::ArchiveProjectError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::archive_project::ArchiveProjectError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::archive_project::ArchiveProjectError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R>
     From<
         ::aws_smithy_runtime_api::client::result::SdkError<
@@ -874,6 +901,34 @@ impl From<crate::operation::create_model_invocation_job::CreateModelInvocationJo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_project::CreateProjectError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_project::CreateProjectError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::create_project::CreateProjectError> for Error {
+    fn from(err: crate::operation::create_project::CreateProjectError) -> Self {
+        match err {
+            crate::operation::create_project::CreateProjectError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::create_project::CreateProjectError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::create_project::CreateProjectError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::create_project::CreateProjectError::ServiceQuotaExceededException(inner) => Error::ServiceQuotaExceededException(inner),
+            crate::operation::create_project::CreateProjectError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::create_project::CreateProjectError::TooManyTagsException(inner) => Error::TooManyTagsException(inner),
+            crate::operation::create_project::CreateProjectError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::create_project::CreateProjectError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::create_prompt_router::CreatePromptRouterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -957,6 +1012,52 @@ impl From<crate::operation::create_provisioned_model_throughput::CreateProvision
                 Error::ValidationException(inner)
             }
             crate::operation::create_provisioned_model_throughput::CreateProvisionedModelThroughputError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_account_data_retention_storage::DeleteAccountDataRetentionStorageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_account_data_retention_storage::DeleteAccountDataRetentionStorageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_account_data_retention_storage::DeleteAccountDataRetentionStorageError> for Error {
+    fn from(err: crate::operation::delete_account_data_retention_storage::DeleteAccountDataRetentionStorageError) -> Self {
+        match err {
+            crate::operation::delete_account_data_retention_storage::DeleteAccountDataRetentionStorageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_account_data_retention_storage::DeleteAccountDataRetentionStorageError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_account_data_retention_storage::DeleteAccountDataRetentionStorageError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_account_data_retention_storage::DeleteAccountDataRetentionStorageError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_account_data_retention_storage::DeleteAccountDataRetentionStorageError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1457,6 +1558,101 @@ impl From<crate::operation::delete_model_invocation_logging_configuration::Delet
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_organization_data_retention_storage::DeleteOrganizationDataRetentionStorageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_organization_data_retention_storage::DeleteOrganizationDataRetentionStorageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_organization_data_retention_storage::DeleteOrganizationDataRetentionStorageError> for Error {
+    fn from(err: crate::operation::delete_organization_data_retention_storage::DeleteOrganizationDataRetentionStorageError) -> Self {
+        match err {
+            crate::operation::delete_organization_data_retention_storage::DeleteOrganizationDataRetentionStorageError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::operation::delete_organization_data_retention_storage::DeleteOrganizationDataRetentionStorageError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::operation::delete_organization_data_retention_storage::DeleteOrganizationDataRetentionStorageError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_organization_data_retention_storage::DeleteOrganizationDataRetentionStorageError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_organization_data_retention_storage::DeleteOrganizationDataRetentionStorageError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_project_data_retention_storage::DeleteProjectDataRetentionStorageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::delete_project_data_retention_storage::DeleteProjectDataRetentionStorageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::delete_project_data_retention_storage::DeleteProjectDataRetentionStorageError> for Error {
+    fn from(err: crate::operation::delete_project_data_retention_storage::DeleteProjectDataRetentionStorageError) -> Self {
+        match err {
+            crate::operation::delete_project_data_retention_storage::DeleteProjectDataRetentionStorageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::delete_project_data_retention_storage::DeleteProjectDataRetentionStorageError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::delete_project_data_retention_storage::DeleteProjectDataRetentionStorageError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::delete_project_data_retention_storage::DeleteProjectDataRetentionStorageError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::delete_project_data_retention_storage::DeleteProjectDataRetentionStorageError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::delete_project_data_retention_storage::DeleteProjectDataRetentionStorageError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::delete_prompt_router::DeletePromptRouterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1699,6 +1895,53 @@ impl From<crate::operation::get_account_data_retention::GetAccountDataRetentionE
                 Error::ValidationException(inner)
             }
             crate::operation::get_account_data_retention::GetAccountDataRetentionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_account_data_retention_storage::GetAccountDataRetentionStorageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_account_data_retention_storage::GetAccountDataRetentionStorageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_account_data_retention_storage::GetAccountDataRetentionStorageError> for Error {
+    fn from(err: crate::operation::get_account_data_retention_storage::GetAccountDataRetentionStorageError) -> Self {
+        match err {
+            crate::operation::get_account_data_retention_storage::GetAccountDataRetentionStorageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_account_data_retention_storage::GetAccountDataRetentionStorageError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_account_data_retention_storage::GetAccountDataRetentionStorageError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_account_data_retention_storage::GetAccountDataRetentionStorageError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_account_data_retention_storage::GetAccountDataRetentionStorageError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_account_data_retention_storage::GetAccountDataRetentionStorageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2517,6 +2760,128 @@ impl From<crate::operation::get_model_invocation_logging_configuration::GetModel
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_organization_data_retention_storage::GetOrganizationDataRetentionStorageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_organization_data_retention_storage::GetOrganizationDataRetentionStorageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_organization_data_retention_storage::GetOrganizationDataRetentionStorageError> for Error {
+    fn from(err: crate::operation::get_organization_data_retention_storage::GetOrganizationDataRetentionStorageError) -> Self {
+        match err {
+            crate::operation::get_organization_data_retention_storage::GetOrganizationDataRetentionStorageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_organization_data_retention_storage::GetOrganizationDataRetentionStorageError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_organization_data_retention_storage::GetOrganizationDataRetentionStorageError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_organization_data_retention_storage::GetOrganizationDataRetentionStorageError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_organization_data_retention_storage::GetOrganizationDataRetentionStorageError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_organization_data_retention_storage::GetOrganizationDataRetentionStorageError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_project::GetProjectError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_project::GetProjectError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_project::GetProjectError> for Error {
+    fn from(err: crate::operation::get_project::GetProjectError) -> Self {
+        match err {
+            crate::operation::get_project::GetProjectError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_project::GetProjectError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_project::GetProjectError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_project::GetProjectError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_project::GetProjectError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_project::GetProjectError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_project_data_retention_storage::GetProjectDataRetentionStorageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_project_data_retention_storage::GetProjectDataRetentionStorageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_project_data_retention_storage::GetProjectDataRetentionStorageError> for Error {
+    fn from(err: crate::operation::get_project_data_retention_storage::GetProjectDataRetentionStorageError) -> Self {
+        match err {
+            crate::operation::get_project_data_retention_storage::GetProjectDataRetentionStorageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_project_data_retention_storage::GetProjectDataRetentionStorageError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_project_data_retention_storage::GetProjectDataRetentionStorageError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_project_data_retention_storage::GetProjectDataRetentionStorageError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_project_data_retention_storage::GetProjectDataRetentionStorageError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_project_data_retention_storage::GetProjectDataRetentionStorageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_prompt_router::GetPromptRouterError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -2612,6 +2977,156 @@ impl From<crate::operation::get_resource_policy::GetResourcePolicyError> for Err
             crate::operation::get_resource_policy::GetResourcePolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::get_resource_policy::GetResourcePolicyError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::get_resource_policy::GetResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_trusted_access_program::GetTrustedAccessProgramError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_trusted_access_program::GetTrustedAccessProgramError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_trusted_access_program::GetTrustedAccessProgramError> for Error {
+    fn from(err: crate::operation::get_trusted_access_program::GetTrustedAccessProgramError) -> Self {
+        match err {
+            crate::operation::get_trusted_access_program::GetTrustedAccessProgramError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::get_trusted_access_program::GetTrustedAccessProgramError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::get_trusted_access_program::GetTrustedAccessProgramError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::get_trusted_access_program::GetTrustedAccessProgramError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::get_trusted_access_program::GetTrustedAccessProgramError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::get_trusted_access_program::GetTrustedAccessProgramError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_trusted_access_program_account_enrollment::GetTrustedAccessProgramAccountEnrollmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_trusted_access_program_account_enrollment::GetTrustedAccessProgramAccountEnrollmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_trusted_access_program_account_enrollment::GetTrustedAccessProgramAccountEnrollmentError> for Error {
+    fn from(err: crate::operation::get_trusted_access_program_account_enrollment::GetTrustedAccessProgramAccountEnrollmentError) -> Self {
+        match err {
+            crate::operation::get_trusted_access_program_account_enrollment::GetTrustedAccessProgramAccountEnrollmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_trusted_access_program_account_enrollment::GetTrustedAccessProgramAccountEnrollmentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_trusted_access_program_account_enrollment::GetTrustedAccessProgramAccountEnrollmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_trusted_access_program_account_enrollment::GetTrustedAccessProgramAccountEnrollmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_trusted_access_program_account_enrollment::GetTrustedAccessProgramAccountEnrollmentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_trusted_access_program_account_enrollment::GetTrustedAccessProgramAccountEnrollmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_trusted_access_program_organization_enrollment::GetTrustedAccessProgramOrganizationEnrollmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_trusted_access_program_organization_enrollment::GetTrustedAccessProgramOrganizationEnrollmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_trusted_access_program_organization_enrollment::GetTrustedAccessProgramOrganizationEnrollmentError> for Error {
+    fn from(err: crate::operation::get_trusted_access_program_organization_enrollment::GetTrustedAccessProgramOrganizationEnrollmentError) -> Self {
+        match err {
+            crate::operation::get_trusted_access_program_organization_enrollment::GetTrustedAccessProgramOrganizationEnrollmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_trusted_access_program_organization_enrollment::GetTrustedAccessProgramOrganizationEnrollmentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_trusted_access_program_organization_enrollment::GetTrustedAccessProgramOrganizationEnrollmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_trusted_access_program_organization_enrollment::GetTrustedAccessProgramOrganizationEnrollmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_trusted_access_program_organization_enrollment::GetTrustedAccessProgramOrganizationEnrollmentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_trusted_access_program_organization_enrollment::GetTrustedAccessProgramOrganizationEnrollmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_trusted_access_program_project_enrollment::GetTrustedAccessProgramProjectEnrollmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_trusted_access_program_project_enrollment::GetTrustedAccessProgramProjectEnrollmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_trusted_access_program_project_enrollment::GetTrustedAccessProgramProjectEnrollmentError> for Error {
+    fn from(err: crate::operation::get_trusted_access_program_project_enrollment::GetTrustedAccessProgramProjectEnrollmentError) -> Self {
+        match err {
+            crate::operation::get_trusted_access_program_project_enrollment::GetTrustedAccessProgramProjectEnrollmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::get_trusted_access_program_project_enrollment::GetTrustedAccessProgramProjectEnrollmentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::get_trusted_access_program_project_enrollment::GetTrustedAccessProgramProjectEnrollmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::get_trusted_access_program_project_enrollment::GetTrustedAccessProgramProjectEnrollmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::get_trusted_access_program_project_enrollment::GetTrustedAccessProgramProjectEnrollmentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::get_trusted_access_program_project_enrollment::GetTrustedAccessProgramProjectEnrollmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3332,6 +3847,31 @@ impl From<crate::operation::list_model_invocation_jobs::ListModelInvocationJobsE
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_projects::ListProjectsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_projects::ListProjectsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_projects::ListProjectsError> for Error {
+    fn from(err: crate::operation::list_projects::ListProjectsError) -> Self {
+        match err {
+            crate::operation::list_projects::ListProjectsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_projects::ListProjectsError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_projects::ListProjectsError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_projects::ListProjectsError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_projects::ListProjectsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_prompt_routers::ListPromptRoutersError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3431,6 +3971,45 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_trusted_access_programs::ListTrustedAccessProgramsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_trusted_access_programs::ListTrustedAccessProgramsError, R>,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_trusted_access_programs::ListTrustedAccessProgramsError> for Error {
+    fn from(err: crate::operation::list_trusted_access_programs::ListTrustedAccessProgramsError) -> Self {
+        match err {
+            crate::operation::list_trusted_access_programs::ListTrustedAccessProgramsError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::list_trusted_access_programs::ListTrustedAccessProgramsError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::list_trusted_access_programs::ListTrustedAccessProgramsError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::list_trusted_access_programs::ListTrustedAccessProgramsError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::list_trusted_access_programs::ListTrustedAccessProgramsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::list_trusted_access_programs::ListTrustedAccessProgramsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_account_data_retention::PutAccountDataRetentionError, R>>
     for Error
 where
@@ -3464,6 +4043,53 @@ impl From<crate::operation::put_account_data_retention::PutAccountDataRetentionE
                 Error::ValidationException(inner)
             }
             crate::operation::put_account_data_retention::PutAccountDataRetentionError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_account_data_retention_storage::PutAccountDataRetentionStorageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_account_data_retention_storage::PutAccountDataRetentionStorageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_account_data_retention_storage::PutAccountDataRetentionStorageError> for Error {
+    fn from(err: crate::operation::put_account_data_retention_storage::PutAccountDataRetentionStorageError) -> Self {
+        match err {
+            crate::operation::put_account_data_retention_storage::PutAccountDataRetentionStorageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_account_data_retention_storage::PutAccountDataRetentionStorageError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_account_data_retention_storage::PutAccountDataRetentionStorageError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_account_data_retention_storage::PutAccountDataRetentionStorageError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::put_account_data_retention_storage::PutAccountDataRetentionStorageError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_account_data_retention_storage::PutAccountDataRetentionStorageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3565,6 +4191,105 @@ impl From<crate::operation::put_model_invocation_logging_configuration::PutModel
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_organization_data_retention_storage::PutOrganizationDataRetentionStorageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_organization_data_retention_storage::PutOrganizationDataRetentionStorageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_organization_data_retention_storage::PutOrganizationDataRetentionStorageError> for Error {
+    fn from(err: crate::operation::put_organization_data_retention_storage::PutOrganizationDataRetentionStorageError) -> Self {
+        match err {
+            crate::operation::put_organization_data_retention_storage::PutOrganizationDataRetentionStorageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_organization_data_retention_storage::PutOrganizationDataRetentionStorageError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_organization_data_retention_storage::PutOrganizationDataRetentionStorageError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_organization_data_retention_storage::PutOrganizationDataRetentionStorageError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::put_organization_data_retention_storage::PutOrganizationDataRetentionStorageError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_organization_data_retention_storage::PutOrganizationDataRetentionStorageError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_project_data_retention_storage::PutProjectDataRetentionStorageError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_project_data_retention_storage::PutProjectDataRetentionStorageError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_project_data_retention_storage::PutProjectDataRetentionStorageError> for Error {
+    fn from(err: crate::operation::put_project_data_retention_storage::PutProjectDataRetentionStorageError) -> Self {
+        match err {
+            crate::operation::put_project_data_retention_storage::PutProjectDataRetentionStorageError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::put_project_data_retention_storage::PutProjectDataRetentionStorageError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::put_project_data_retention_storage::PutProjectDataRetentionStorageError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::put_project_data_retention_storage::PutProjectDataRetentionStorageError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::put_project_data_retention_storage::PutProjectDataRetentionStorageError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::put_project_data_retention_storage::PutProjectDataRetentionStorageError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::put_project_data_retention_storage::PutProjectDataRetentionStorageError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::put_resource_policy::PutResourcePolicyError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -3588,6 +4313,120 @@ impl From<crate::operation::put_resource_policy::PutResourcePolicyError> for Err
             crate::operation::put_resource_policy::PutResourcePolicyError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::put_resource_policy::PutResourcePolicyError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::put_resource_policy::PutResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_trusted_access_program_account_enrollment::PutTrustedAccessProgramAccountEnrollmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_trusted_access_program_account_enrollment::PutTrustedAccessProgramAccountEnrollmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_trusted_access_program_account_enrollment::PutTrustedAccessProgramAccountEnrollmentError> for Error {
+    fn from(err: crate::operation::put_trusted_access_program_account_enrollment::PutTrustedAccessProgramAccountEnrollmentError) -> Self {
+        match err {
+            crate::operation::put_trusted_access_program_account_enrollment::PutTrustedAccessProgramAccountEnrollmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_trusted_access_program_account_enrollment::PutTrustedAccessProgramAccountEnrollmentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_trusted_access_program_account_enrollment::PutTrustedAccessProgramAccountEnrollmentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_trusted_access_program_account_enrollment::PutTrustedAccessProgramAccountEnrollmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_trusted_access_program_account_enrollment::PutTrustedAccessProgramAccountEnrollmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_trusted_access_program_account_enrollment::PutTrustedAccessProgramAccountEnrollmentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_trusted_access_program_account_enrollment::PutTrustedAccessProgramAccountEnrollmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_trusted_access_program_organization_enrollment::PutTrustedAccessProgramOrganizationEnrollmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_trusted_access_program_organization_enrollment::PutTrustedAccessProgramOrganizationEnrollmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_trusted_access_program_organization_enrollment::PutTrustedAccessProgramOrganizationEnrollmentError> for Error {
+    fn from(err: crate::operation::put_trusted_access_program_organization_enrollment::PutTrustedAccessProgramOrganizationEnrollmentError) -> Self {
+        match err {
+            crate::operation::put_trusted_access_program_organization_enrollment::PutTrustedAccessProgramOrganizationEnrollmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_trusted_access_program_organization_enrollment::PutTrustedAccessProgramOrganizationEnrollmentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_trusted_access_program_organization_enrollment::PutTrustedAccessProgramOrganizationEnrollmentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_trusted_access_program_organization_enrollment::PutTrustedAccessProgramOrganizationEnrollmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_trusted_access_program_organization_enrollment::PutTrustedAccessProgramOrganizationEnrollmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_trusted_access_program_organization_enrollment::PutTrustedAccessProgramOrganizationEnrollmentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_trusted_access_program_organization_enrollment::PutTrustedAccessProgramOrganizationEnrollmentError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_trusted_access_program_project_enrollment::PutTrustedAccessProgramProjectEnrollmentError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_trusted_access_program_project_enrollment::PutTrustedAccessProgramProjectEnrollmentError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::put_trusted_access_program_project_enrollment::PutTrustedAccessProgramProjectEnrollmentError> for Error {
+    fn from(err: crate::operation::put_trusted_access_program_project_enrollment::PutTrustedAccessProgramProjectEnrollmentError) -> Self {
+        match err {
+            crate::operation::put_trusted_access_program_project_enrollment::PutTrustedAccessProgramProjectEnrollmentError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::put_trusted_access_program_project_enrollment::PutTrustedAccessProgramProjectEnrollmentError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::put_trusted_access_program_project_enrollment::PutTrustedAccessProgramProjectEnrollmentError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::put_trusted_access_program_project_enrollment::PutTrustedAccessProgramProjectEnrollmentError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::put_trusted_access_program_project_enrollment::PutTrustedAccessProgramProjectEnrollmentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::put_trusted_access_program_project_enrollment::PutTrustedAccessProgramProjectEnrollmentError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::put_trusted_access_program_project_enrollment::PutTrustedAccessProgramProjectEnrollmentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -3752,6 +4591,119 @@ impl From<crate::operation::start_automated_reasoning_policy_test_workflow::Star
             crate::operation::start_automated_reasoning_policy_test_workflow::StartAutomatedReasoningPolicyTestWorkflowError::ThrottlingException(inner) => Error::ThrottlingException(inner),
             crate::operation::start_automated_reasoning_policy_test_workflow::StartAutomatedReasoningPolicyTestWorkflowError::ValidationException(inner) => Error::ValidationException(inner),
             crate::operation::start_automated_reasoning_policy_test_workflow::StartAutomatedReasoningPolicyTestWorkflowError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_trusted_access_program_account_application::StartTrustedAccessProgramAccountApplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_trusted_access_program_account_application::StartTrustedAccessProgramAccountApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_trusted_access_program_account_application::StartTrustedAccessProgramAccountApplicationError> for Error {
+    fn from(err: crate::operation::start_trusted_access_program_account_application::StartTrustedAccessProgramAccountApplicationError) -> Self {
+        match err {
+            crate::operation::start_trusted_access_program_account_application::StartTrustedAccessProgramAccountApplicationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_trusted_access_program_account_application::StartTrustedAccessProgramAccountApplicationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_trusted_access_program_account_application::StartTrustedAccessProgramAccountApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_trusted_access_program_account_application::StartTrustedAccessProgramAccountApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_trusted_access_program_account_application::StartTrustedAccessProgramAccountApplicationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_trusted_access_program_account_application::StartTrustedAccessProgramAccountApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_trusted_access_program_organization_application::StartTrustedAccessProgramOrganizationApplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_trusted_access_program_organization_application::StartTrustedAccessProgramOrganizationApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_trusted_access_program_organization_application::StartTrustedAccessProgramOrganizationApplicationError> for Error {
+    fn from(
+        err: crate::operation::start_trusted_access_program_organization_application::StartTrustedAccessProgramOrganizationApplicationError,
+    ) -> Self {
+        match err {
+            crate::operation::start_trusted_access_program_organization_application::StartTrustedAccessProgramOrganizationApplicationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_trusted_access_program_organization_application::StartTrustedAccessProgramOrganizationApplicationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_trusted_access_program_organization_application::StartTrustedAccessProgramOrganizationApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_trusted_access_program_organization_application::StartTrustedAccessProgramOrganizationApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_trusted_access_program_organization_application::StartTrustedAccessProgramOrganizationApplicationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_trusted_access_program_organization_application::StartTrustedAccessProgramOrganizationApplicationError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_trusted_access_program_project_application::StartTrustedAccessProgramProjectApplicationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_trusted_access_program_project_application::StartTrustedAccessProgramProjectApplicationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_trusted_access_program_project_application::StartTrustedAccessProgramProjectApplicationError> for Error {
+    fn from(err: crate::operation::start_trusted_access_program_project_application::StartTrustedAccessProgramProjectApplicationError) -> Self {
+        match err {
+            crate::operation::start_trusted_access_program_project_application::StartTrustedAccessProgramProjectApplicationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::start_trusted_access_program_project_application::StartTrustedAccessProgramProjectApplicationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::start_trusted_access_program_project_application::StartTrustedAccessProgramProjectApplicationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::start_trusted_access_program_project_application::StartTrustedAccessProgramProjectApplicationError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::start_trusted_access_program_project_application::StartTrustedAccessProgramProjectApplicationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::start_trusted_access_program_project_application::StartTrustedAccessProgramProjectApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -4236,6 +5188,33 @@ impl From<crate::operation::update_marketplace_model_endpoint::UpdateMarketplace
                 Error::ValidationException(inner)
             }
             crate::operation::update_marketplace_model_endpoint::UpdateMarketplaceModelEndpointError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_project::UpdateProjectError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::update_project::UpdateProjectError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::update_project::UpdateProjectError> for Error {
+    fn from(err: crate::operation::update_project::UpdateProjectError) -> Self {
+        match err {
+            crate::operation::update_project::UpdateProjectError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::update_project::UpdateProjectError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::operation::update_project::UpdateProjectError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::update_project::UpdateProjectError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::update_project::UpdateProjectError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::update_project::UpdateProjectError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::update_project::UpdateProjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -10,7 +10,7 @@ pub struct AmazonMachineImageSecurityGroup {
     pub from_port: i32,
     /// <p>The end of the port range.</p>
     pub to_port: i32,
-    /// <p>The IP address ranges in CIDR format.</p>
+    /// <p>The IP address ranges in Classless Inter-Domain Routing (CIDR) format.</p>
     pub cidr_ip_addresses: ::std::vec::Vec<::std::string::String>,
 }
 impl AmazonMachineImageSecurityGroup {
@@ -27,7 +27,7 @@ impl AmazonMachineImageSecurityGroup {
     pub fn to_port(&self) -> i32 {
         self.to_port
     }
-    /// <p>The IP address ranges in CIDR format.</p>
+    /// <p>The IP address ranges in Classless Inter-Domain Routing (CIDR) format.</p>
     pub fn cidr_ip_addresses(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.cidr_ip_addresses.deref()
@@ -99,19 +99,19 @@ impl AmazonMachineImageSecurityGroupBuilder {
     ///
     /// To override the contents of this collection use [`set_cidr_ip_addresses`](Self::set_cidr_ip_addresses).
     ///
-    /// <p>The IP address ranges in CIDR format.</p>
+    /// <p>The IP address ranges in Classless Inter-Domain Routing (CIDR) format.</p>
     pub fn cidr_ip_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.cidr_ip_addresses.unwrap_or_default();
         v.push(input.into());
         self.cidr_ip_addresses = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The IP address ranges in CIDR format.</p>
+    /// <p>The IP address ranges in Classless Inter-Domain Routing (CIDR) format.</p>
     pub fn set_cidr_ip_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.cidr_ip_addresses = input;
         self
     }
-    /// <p>The IP address ranges in CIDR format.</p>
+    /// <p>The IP address ranges in Classless Inter-Domain Routing (CIDR) format.</p>
     pub fn get_cidr_ip_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.cidr_ip_addresses
     }

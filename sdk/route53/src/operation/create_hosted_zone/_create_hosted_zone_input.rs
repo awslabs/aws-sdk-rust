@@ -25,6 +25,13 @@ pub struct CreateHostedZoneInput {
     /// <p>If you want to associate a reusable delegation set with this hosted zone, the ID that Amazon Route&nbsp;53 assigned to the reusable delegation set when you created it. For more information about reusable delegation sets, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateReusableDelegationSet.html">CreateReusableDelegationSet</a>.</p>
     /// <p>If you are using a reusable delegation set to create a public hosted zone for a subdomain, make sure that the parent hosted zone doesn't use one or more of the same name servers. If you have overlapping nameservers, the operation will cause a <code>ConflictingDomainsExist</code> error.</p>
     pub delegation_set_id: ::std::option::Option<::std::string::String>,
+    /// <p>Specifies whether to enable public DNS fallback for the hosted zone. When public DNS fallback is enabled and a query for a domain name in the private hosted zone matches no existing name (<code>NXDOMAIN</code>), Route 53 retries the query against public DNS instead of returning a negative response. Fallback does not occur when the name exists but has no record of the requested type.</p>
+    /// <p>Set to <code>true</code> to enable public DNS fallback, or <code>false</code> to disable it. The default is <code>false</code>.</p>
+    /// <p>Public DNS fallback is supported only for private hosted zones. If you specify <code>true</code> for a public hosted zone, the request fails with an <code>InvalidInput</code> error.</p>
+    pub enable_public_dns_fallback: ::std::option::Option<bool>,
+    /// <p>Specify the optional Change Guardrails to turn on for the hosted zone. Each entry specifies the name and status of a guardrail. For the guardrail names and statuses, see <code>ChangeGuardrail</code>.</p>
+    /// <p>Route 53 turns on the guardrails that the tier of the hosted zone includes, so you don't need to specify them. If you turn on a guardrail that the tier doesn't offer, Route 53 returns an <code>InvalidInput</code> error.</p>
+    pub change_guardrails: ::std::option::Option<::std::vec::Vec<crate::types::ChangeGuardrail>>,
 }
 impl CreateHostedZoneInput {
     /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route&nbsp;53 assumes that the domain name is fully qualified. This means that Route&nbsp;53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
@@ -58,6 +65,19 @@ impl CreateHostedZoneInput {
     pub fn delegation_set_id(&self) -> ::std::option::Option<&str> {
         self.delegation_set_id.as_deref()
     }
+    /// <p>Specifies whether to enable public DNS fallback for the hosted zone. When public DNS fallback is enabled and a query for a domain name in the private hosted zone matches no existing name (<code>NXDOMAIN</code>), Route 53 retries the query against public DNS instead of returning a negative response. Fallback does not occur when the name exists but has no record of the requested type.</p>
+    /// <p>Set to <code>true</code> to enable public DNS fallback, or <code>false</code> to disable it. The default is <code>false</code>.</p>
+    /// <p>Public DNS fallback is supported only for private hosted zones. If you specify <code>true</code> for a public hosted zone, the request fails with an <code>InvalidInput</code> error.</p>
+    pub fn enable_public_dns_fallback(&self) -> ::std::option::Option<bool> {
+        self.enable_public_dns_fallback
+    }
+    /// <p>Specify the optional Change Guardrails to turn on for the hosted zone. Each entry specifies the name and status of a guardrail. For the guardrail names and statuses, see <code>ChangeGuardrail</code>.</p>
+    /// <p>Route 53 turns on the guardrails that the tier of the hosted zone includes, so you don't need to specify them. If you turn on a guardrail that the tier doesn't offer, Route 53 returns an <code>InvalidInput</code> error.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.change_guardrails.is_none()`.
+    pub fn change_guardrails(&self) -> &[crate::types::ChangeGuardrail] {
+        self.change_guardrails.as_deref().unwrap_or_default()
+    }
 }
 impl CreateHostedZoneInput {
     /// Creates a new builder-style object to manufacture [`CreateHostedZoneInput`](crate::operation::create_hosted_zone::CreateHostedZoneInput).
@@ -75,6 +95,8 @@ pub struct CreateHostedZoneInputBuilder {
     pub(crate) caller_reference: ::std::option::Option<::std::string::String>,
     pub(crate) hosted_zone_config: ::std::option::Option<crate::types::HostedZoneConfig>,
     pub(crate) delegation_set_id: ::std::option::Option<::std::string::String>,
+    pub(crate) enable_public_dns_fallback: ::std::option::Option<bool>,
+    pub(crate) change_guardrails: ::std::option::Option<::std::vec::Vec<crate::types::ChangeGuardrail>>,
 }
 impl CreateHostedZoneInputBuilder {
     /// <p>The name of the domain. Specify a fully qualified domain name, for example, <i>www.example.com</i>. The trailing dot is optional; Amazon Route&nbsp;53 assumes that the domain name is fully qualified. This means that Route&nbsp;53 treats <i>www.example.com</i> (without a trailing dot) and <i>www.example.com.</i> (with a trailing dot) as identical.</p>
@@ -182,6 +204,49 @@ impl CreateHostedZoneInputBuilder {
     pub fn get_delegation_set_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.delegation_set_id
     }
+    /// <p>Specifies whether to enable public DNS fallback for the hosted zone. When public DNS fallback is enabled and a query for a domain name in the private hosted zone matches no existing name (<code>NXDOMAIN</code>), Route 53 retries the query against public DNS instead of returning a negative response. Fallback does not occur when the name exists but has no record of the requested type.</p>
+    /// <p>Set to <code>true</code> to enable public DNS fallback, or <code>false</code> to disable it. The default is <code>false</code>.</p>
+    /// <p>Public DNS fallback is supported only for private hosted zones. If you specify <code>true</code> for a public hosted zone, the request fails with an <code>InvalidInput</code> error.</p>
+    pub fn enable_public_dns_fallback(mut self, input: bool) -> Self {
+        self.enable_public_dns_fallback = ::std::option::Option::Some(input);
+        self
+    }
+    /// <p>Specifies whether to enable public DNS fallback for the hosted zone. When public DNS fallback is enabled and a query for a domain name in the private hosted zone matches no existing name (<code>NXDOMAIN</code>), Route 53 retries the query against public DNS instead of returning a negative response. Fallback does not occur when the name exists but has no record of the requested type.</p>
+    /// <p>Set to <code>true</code> to enable public DNS fallback, or <code>false</code> to disable it. The default is <code>false</code>.</p>
+    /// <p>Public DNS fallback is supported only for private hosted zones. If you specify <code>true</code> for a public hosted zone, the request fails with an <code>InvalidInput</code> error.</p>
+    pub fn set_enable_public_dns_fallback(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.enable_public_dns_fallback = input;
+        self
+    }
+    /// <p>Specifies whether to enable public DNS fallback for the hosted zone. When public DNS fallback is enabled and a query for a domain name in the private hosted zone matches no existing name (<code>NXDOMAIN</code>), Route 53 retries the query against public DNS instead of returning a negative response. Fallback does not occur when the name exists but has no record of the requested type.</p>
+    /// <p>Set to <code>true</code> to enable public DNS fallback, or <code>false</code> to disable it. The default is <code>false</code>.</p>
+    /// <p>Public DNS fallback is supported only for private hosted zones. If you specify <code>true</code> for a public hosted zone, the request fails with an <code>InvalidInput</code> error.</p>
+    pub fn get_enable_public_dns_fallback(&self) -> &::std::option::Option<bool> {
+        &self.enable_public_dns_fallback
+    }
+    /// Appends an item to `change_guardrails`.
+    ///
+    /// To override the contents of this collection use [`set_change_guardrails`](Self::set_change_guardrails).
+    ///
+    /// <p>Specify the optional Change Guardrails to turn on for the hosted zone. Each entry specifies the name and status of a guardrail. For the guardrail names and statuses, see <code>ChangeGuardrail</code>.</p>
+    /// <p>Route 53 turns on the guardrails that the tier of the hosted zone includes, so you don't need to specify them. If you turn on a guardrail that the tier doesn't offer, Route 53 returns an <code>InvalidInput</code> error.</p>
+    pub fn change_guardrails(mut self, input: crate::types::ChangeGuardrail) -> Self {
+        let mut v = self.change_guardrails.unwrap_or_default();
+        v.push(input);
+        self.change_guardrails = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Specify the optional Change Guardrails to turn on for the hosted zone. Each entry specifies the name and status of a guardrail. For the guardrail names and statuses, see <code>ChangeGuardrail</code>.</p>
+    /// <p>Route 53 turns on the guardrails that the tier of the hosted zone includes, so you don't need to specify them. If you turn on a guardrail that the tier doesn't offer, Route 53 returns an <code>InvalidInput</code> error.</p>
+    pub fn set_change_guardrails(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::ChangeGuardrail>>) -> Self {
+        self.change_guardrails = input;
+        self
+    }
+    /// <p>Specify the optional Change Guardrails to turn on for the hosted zone. Each entry specifies the name and status of a guardrail. For the guardrail names and statuses, see <code>ChangeGuardrail</code>.</p>
+    /// <p>Route 53 turns on the guardrails that the tier of the hosted zone includes, so you don't need to specify them. If you turn on a guardrail that the tier doesn't offer, Route 53 returns an <code>InvalidInput</code> error.</p>
+    pub fn get_change_guardrails(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::ChangeGuardrail>> {
+        &self.change_guardrails
+    }
     /// Consumes the builder and constructs a [`CreateHostedZoneInput`](crate::operation::create_hosted_zone::CreateHostedZoneInput).
     pub fn build(
         self,
@@ -192,6 +257,8 @@ impl CreateHostedZoneInputBuilder {
             caller_reference: self.caller_reference,
             hosted_zone_config: self.hosted_zone_config,
             delegation_set_id: self.delegation_set_id,
+            enable_public_dns_fallback: self.enable_public_dns_fallback,
+            change_guardrails: self.change_guardrails,
         })
     }
 }

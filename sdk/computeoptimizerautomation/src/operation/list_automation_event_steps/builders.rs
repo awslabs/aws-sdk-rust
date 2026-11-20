@@ -128,17 +128,17 @@ impl ListAutomationEventStepsFluentBuilder {
     pub fn get_event_id(&self) -> &::std::option::Option<::std::string::String> {
         self.inner.get_event_id()
     }
-    /// <p>The maximum number of automation event steps to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of automation event steps to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
         self
     }
-    /// <p>The maximum number of automation event steps to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of automation event steps to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>The maximum number of automation event steps to return in a single response. Valid range is 1-1000.</p>
+    /// <p>The maximum number of automation event steps to return in a single response. If you don't specify a value, the default is 100.</p>
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }

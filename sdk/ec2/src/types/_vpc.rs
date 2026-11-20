@@ -21,6 +21,8 @@ pub struct Vpc {
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>The state of VPC Block Public Access (BPA).</p>
     pub block_public_access_states: ::std::option::Option<crate::types::BlockPublicAccessStates>,
+    /// <p>Information about the firewall associations for the VPC. Automated Internet Firewall, a feature of Amazon Virtual Private Cloud (Amazon VPC), inspects traffic between the VPC and its internet gateway or egress-only internet gateway. This list is empty if the VPC doesn't have a firewall.</p>
+    pub network_firewall_associations: ::std::option::Option<::std::vec::Vec<crate::types::NetworkFirewallAssociation>>,
     /// <p>The ID of the VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The current state of the VPC.</p>
@@ -70,6 +72,12 @@ impl Vpc {
     pub fn block_public_access_states(&self) -> ::std::option::Option<&crate::types::BlockPublicAccessStates> {
         self.block_public_access_states.as_ref()
     }
+    /// <p>Information about the firewall associations for the VPC. Automated Internet Firewall, a feature of Amazon Virtual Private Cloud (Amazon VPC), inspects traffic between the VPC and its internet gateway or egress-only internet gateway. This list is empty if the VPC doesn't have a firewall.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_firewall_associations.is_none()`.
+    pub fn network_firewall_associations(&self) -> &[crate::types::NetworkFirewallAssociation] {
+        self.network_firewall_associations.as_deref().unwrap_or_default()
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
@@ -106,6 +114,7 @@ pub struct VpcBuilder {
     pub(crate) encryption_control: ::std::option::Option<crate::types::VpcEncryptionControl>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) block_public_access_states: ::std::option::Option<crate::types::BlockPublicAccessStates>,
+    pub(crate) network_firewall_associations: ::std::option::Option<::std::vec::Vec<crate::types::NetworkFirewallAssociation>>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
     pub(crate) state: ::std::option::Option<crate::types::VpcState>,
     pub(crate) cidr_block: ::std::option::Option<::std::string::String>,
@@ -248,6 +257,29 @@ impl VpcBuilder {
     pub fn get_block_public_access_states(&self) -> &::std::option::Option<crate::types::BlockPublicAccessStates> {
         &self.block_public_access_states
     }
+    /// Appends an item to `network_firewall_associations`.
+    ///
+    /// To override the contents of this collection use [`set_network_firewall_associations`](Self::set_network_firewall_associations).
+    ///
+    /// <p>Information about the firewall associations for the VPC. Automated Internet Firewall, a feature of Amazon Virtual Private Cloud (Amazon VPC), inspects traffic between the VPC and its internet gateway or egress-only internet gateway. This list is empty if the VPC doesn't have a firewall.</p>
+    pub fn network_firewall_associations(mut self, input: crate::types::NetworkFirewallAssociation) -> Self {
+        let mut v = self.network_firewall_associations.unwrap_or_default();
+        v.push(input);
+        self.network_firewall_associations = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>Information about the firewall associations for the VPC. Automated Internet Firewall, a feature of Amazon Virtual Private Cloud (Amazon VPC), inspects traffic between the VPC and its internet gateway or egress-only internet gateway. This list is empty if the VPC doesn't have a firewall.</p>
+    pub fn set_network_firewall_associations(
+        mut self,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::NetworkFirewallAssociation>>,
+    ) -> Self {
+        self.network_firewall_associations = input;
+        self
+    }
+    /// <p>Information about the firewall associations for the VPC. Automated Internet Firewall, a feature of Amazon Virtual Private Cloud (Amazon VPC), inspects traffic between the VPC and its internet gateway or egress-only internet gateway. This list is empty if the VPC doesn't have a firewall.</p>
+    pub fn get_network_firewall_associations(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::NetworkFirewallAssociation>> {
+        &self.network_firewall_associations
+    }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.vpc_id = ::std::option::Option::Some(input.into());
@@ -315,6 +347,7 @@ impl VpcBuilder {
             encryption_control: self.encryption_control,
             tags: self.tags,
             block_public_access_states: self.block_public_access_states,
+            network_firewall_associations: self.network_firewall_associations,
             vpc_id: self.vpc_id,
             state: self.state,
             cidr_block: self.cidr_block,

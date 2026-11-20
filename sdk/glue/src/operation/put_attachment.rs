@@ -214,9 +214,9 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutAttachment
                 captured.insert("Content", value);
             }
         }
-        if requested.should_capture("FormTypeId") {
-            if let ::std::option::Option::Some(value) = input.form_type_id.as_deref() {
-                captured.insert("FormTypeId", value);
+        if requested.should_capture("FormTypeIdentifier") {
+            if let ::std::option::Option::Some(value) = input.form_type_identifier.as_deref() {
+                captured.insert("FormTypeIdentifier", value);
             }
         }
         if requested.should_capture("ClientToken") {

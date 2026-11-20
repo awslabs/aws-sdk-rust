@@ -1,10 +1,10 @@
 [workspace]
 resolver = "2"
 exclude = [
+    "tests/webassembly-wstd",
     "tests/telemetry",
     "tests/no-default-features",
-    "tests/webassembly-no-os",
-    "tests/webassembly-wstd"
+    "tests/webassembly-no-os"
 ]
 members = [
     "sdk/abusesignal",
@@ -14,6 +14,7 @@ members = [
     "sdk/accountaccessruntime",
     "sdk/acm",
     "sdk/acmpca",
+    "sdk/agentdiscovery",
     "sdk/agentregistry",
     "sdk/agentregistrycontrol",
     "sdk/aiops",
@@ -24,6 +25,7 @@ members = [
     "sdk/apigateway",
     "sdk/apigatewaymanagement",
     "sdk/apigatewayv2",
+    "sdk/apiportal",
     "sdk/appconfig",
     "sdk/appconfigdata",
     "sdk/appfabric",
@@ -345,6 +347,7 @@ members = [
     "sdk/partnercentralselling",
     "sdk/paymentcryptography",
     "sdk/paymentcryptographydata",
+    "sdk/payments",
     "sdk/pcaconnectorad",
     "sdk/pcaconnectorscep",
     "sdk/pcs",
@@ -400,6 +403,7 @@ members = [
     "sdk/sagemakera2iruntime",
     "sdk/sagemakeredge",
     "sdk/sagemakerfeaturestoreruntime",
+    "sdk/sagemakergatewayruntime",
     "sdk/sagemakergeospatial",
     "sdk/sagemakerinferencerouterruntime",
     "sdk/sagemakerjobruntime",

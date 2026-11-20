@@ -59,6 +59,9 @@ pub(crate) fn get_listing_output_output_correct_errors(
     if builder.use_cases.is_none() {
         builder.use_cases = Some(Default::default())
     }
+    if builder.purchase_indicators.is_none() {
+        builder.purchase_indicators = Some(Default::default())
+    }
     builder
 }
 
@@ -179,6 +182,9 @@ pub(crate) fn get_product_output_output_correct_errors(
     if builder.listing_id.is_none() {
         builder.listing_id = Some(Default::default())
     }
+    if builder.purchase_indicators.is_none() {
+        builder.purchase_indicators = Some(Default::default())
+    }
     builder
 }
 
@@ -187,6 +193,15 @@ pub(crate) fn list_fulfillment_options_output_output_correct_errors(
 ) -> crate::operation::list_fulfillment_options::builders::ListFulfillmentOptionsOutputBuilder {
     if builder.fulfillment_options.is_none() {
         builder.fulfillment_options = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn list_listing_attributes_output_output_correct_errors(
+    mut builder: crate::operation::list_listing_attributes::builders::ListListingAttributesOutputBuilder,
+) -> crate::operation::list_listing_attributes::builders::ListListingAttributesOutputBuilder {
+    if builder.listing_attributes.is_none() {
+        builder.listing_attributes = Some(Default::default())
     }
     builder
 }
@@ -369,6 +384,15 @@ pub(crate) fn pricing_unit_correct_errors(mut builder: crate::types::builders::P
     builder
 }
 
+pub(crate) fn purchase_indicator_correct_errors(
+    mut builder: crate::types::builders::PurchaseIndicatorBuilder,
+) -> crate::types::builders::PurchaseIndicatorBuilder {
+    if builder.indicator_type.is_none() {
+        builder.indicator_type = "no value was set".parse::<crate::types::PurchaseIndicatorType>().ok()
+    }
+    builder
+}
+
 pub(crate) fn purchase_option_badge_correct_errors(
     mut builder: crate::types::builders::PurchaseOptionBadgeBuilder,
 ) -> crate::types::builders::PurchaseOptionBadgeBuilder {
@@ -493,6 +517,28 @@ pub(crate) fn byol_pricing_term_correct_errors(
     }
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::TermType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn case_studies_summary_correct_errors(
+    mut builder: crate::types::builders::CaseStudiesSummaryBuilder,
+) -> crate::types::builders::CaseStudiesSummaryBuilder {
+    if builder.case_study_count.is_none() {
+        builder.case_study_count = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn case_study_correct_errors(mut builder: crate::types::builders::CaseStudyBuilder) -> crate::types::builders::CaseStudyBuilder {
+    if builder.case_study_id.is_none() {
+        builder.case_study_id = Some(Default::default())
+    }
+    if builder.case_study_name.is_none() {
+        builder.case_study_name = Some(Default::default())
+    }
+    if builder.short_description.is_none() {
+        builder.short_description = Some(Default::default())
     }
     builder
 }
@@ -869,6 +915,9 @@ pub(crate) fn saas_fulfillment_option_correct_errors(
     if builder.quick_launch.is_none() {
         builder.quick_launch = "no value was set".parse::<crate::types::SaasQuickLaunchStatus>().ok()
     }
+    if builder.deployment_templates.is_none() {
+        builder.deployment_templates = Some(Default::default())
+    }
     builder
 }
 
@@ -915,6 +964,105 @@ pub(crate) fn support_term_correct_errors(mut builder: crate::types::builders::S
     builder
 }
 
+pub(crate) fn trust_center_certification_attribute_correct_errors(
+    mut builder: crate::types::builders::TrustCenterCertificationAttributeBuilder,
+) -> crate::types::builders::TrustCenterCertificationAttributeBuilder {
+    if builder.certification_type.is_none() {
+        builder.certification_type = Some(Default::default())
+    }
+    if builder.display_name.is_none() {
+        builder.display_name = Some(Default::default())
+    }
+    if builder.logo_url.is_none() {
+        builder.logo_url = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn trust_center_control_correct_errors(
+    mut builder: crate::types::builders::TrustCenterControlBuilder,
+) -> crate::types::builders::TrustCenterControlBuilder {
+    if builder.name.is_none() {
+        builder.name = Some(Default::default())
+    }
+    if builder.domains.is_none() {
+        builder.domains = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn trust_center_document_attribute_correct_errors(
+    mut builder: crate::types::builders::TrustCenterDocumentAttributeBuilder,
+) -> crate::types::builders::TrustCenterDocumentAttributeBuilder {
+    if builder.content_type.is_none() {
+        builder.content_type = "no value was set".parse::<crate::types::ResourceContentType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    if builder.access_type.is_none() {
+        builder.access_type = "no value was set".parse::<crate::types::TrustCenterDocumentAccessType>().ok()
+    }
+    builder
+}
+
+pub(crate) fn trust_center_faq_attribute_correct_errors(
+    mut builder: crate::types::builders::TrustCenterFaqAttributeBuilder,
+) -> crate::types::builders::TrustCenterFaqAttributeBuilder {
+    if builder.question.is_none() {
+        builder.question = Some(Default::default())
+    }
+    if builder.answer.is_none() {
+        builder.answer = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn trust_center_source_correct_errors(
+    mut builder: crate::types::builders::TrustCenterSourceBuilder,
+) -> crate::types::builders::TrustCenterSourceBuilder {
+    if builder.content_type.is_none() {
+        builder.content_type = "no value was set".parse::<crate::types::ResourceContentType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    if builder.provider.is_none() {
+        builder.provider = "no value was set".parse::<crate::types::TrustCenterProvider>().ok()
+    }
+    builder
+}
+
+pub(crate) fn trust_center_summary_correct_errors(
+    mut builder: crate::types::builders::TrustCenterSummaryBuilder,
+) -> crate::types::builders::TrustCenterSummaryBuilder {
+    if builder.source_summaries.is_none() {
+        builder.source_summaries = Some(Default::default())
+    }
+    if builder.certification_summaries.is_none() {
+        builder.certification_summaries = Some(Default::default())
+    }
+    if builder.total_certification_count.is_none() {
+        builder.total_certification_count = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn trust_center_update_attribute_correct_errors(
+    mut builder: crate::types::builders::TrustCenterUpdateAttributeBuilder,
+) -> crate::types::builders::TrustCenterUpdateAttributeBuilder {
+    if builder.title.is_none() {
+        builder.title = Some(Default::default())
+    }
+    if builder.description.is_none() {
+        builder.description = Some(Default::default())
+    }
+    if builder.published_time.is_none() {
+        builder.published_time = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn usage_based_pricing_term_correct_errors(
     mut builder: crate::types::builders::UsageBasedPricingTermBuilder,
 ) -> crate::types::builders::UsageBasedPricingTermBuilder {
@@ -942,6 +1090,15 @@ pub(crate) fn use_case_correct_errors(mut builder: crate::types::builders::UseCa
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn use_case_summary_correct_errors(
+    mut builder: crate::types::builders::UseCaseSummaryBuilder,
+) -> crate::types::builders::UseCaseSummaryBuilder {
+    if builder.use_cases.is_none() {
+        builder.use_cases = Some(Default::default())
     }
     builder
 }
@@ -992,6 +1149,15 @@ pub(crate) fn amazon_machine_image_recommendation_correct_errors(
     builder
 }
 
+pub(crate) fn engagement_dates_correct_errors(
+    mut builder: crate::types::builders::EngagementDatesBuilder,
+) -> crate::types::builders::EngagementDatesBuilder {
+    if builder.start_date.is_none() {
+        builder.start_date = Some(::aws_smithy_types::DateTime::from_fractional_secs(0, 0_f64))
+    }
+    builder
+}
+
 pub(crate) fn purchase_option_associated_entity_correct_errors(
     mut builder: crate::types::builders::PurchaseOptionAssociatedEntityBuilder,
 ) -> crate::types::builders::PurchaseOptionAssociatedEntityBuilder {
@@ -1031,6 +1197,36 @@ pub(crate) fn sage_maker_model_recommendation_correct_errors(
     builder
 }
 
+pub(crate) fn specialization_correct_errors(
+    mut builder: crate::types::builders::SpecializationBuilder,
+) -> crate::types::builders::SpecializationBuilder {
+    if builder.specialization_id.is_none() {
+        builder.specialization_id = Some(Default::default())
+    }
+    if builder.specialization_name.is_none() {
+        builder.specialization_name = Some(Default::default())
+    }
+    if builder.specialization_types.is_none() {
+        builder.specialization_types = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn specialization_category_correct_errors(
+    mut builder: crate::types::builders::SpecializationCategoryBuilder,
+) -> crate::types::builders::SpecializationCategoryBuilder {
+    if builder.specialization_category_id.is_none() {
+        builder.specialization_category_id = Some(Default::default())
+    }
+    if builder.specialization_category_name.is_none() {
+        builder.specialization_category_name = Some(Default::default())
+    }
+    if builder.parent_specialization_id.is_none() {
+        builder.parent_specialization_id = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn amazon_machine_image_operating_system_correct_errors(
     mut builder: crate::types::builders::AmazonMachineImageOperatingSystemBuilder,
 ) -> crate::types::builders::AmazonMachineImageOperatingSystemBuilder {
@@ -1054,6 +1250,21 @@ pub(crate) fn aws_supported_service_correct_errors(
     }
     if builder.description.is_none() {
         builder.description = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn case_study_resource_correct_errors(
+    mut builder: crate::types::builders::CaseStudyResourceBuilder,
+) -> crate::types::builders::CaseStudyResourceBuilder {
+    if builder.content_type.is_none() {
+        builder.content_type = "no value was set".parse::<crate::types::ResourceContentType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    if builder.resource_type.is_none() {
+        builder.resource_type = "no value was set".parse::<crate::types::CaseStudyResourceType>().ok()
     }
     builder
 }
@@ -1182,11 +1393,53 @@ pub(crate) fn schedule_item_correct_errors(mut builder: crate::types::builders::
     builder
 }
 
+pub(crate) fn trust_center_certification_summary_correct_errors(
+    mut builder: crate::types::builders::TrustCenterCertificationSummaryBuilder,
+) -> crate::types::builders::TrustCenterCertificationSummaryBuilder {
+    if builder.certification_type.is_none() {
+        builder.certification_type = Some(Default::default())
+    }
+    if builder.display_name.is_none() {
+        builder.display_name = Some(Default::default())
+    }
+    if builder.logo_url.is_none() {
+        builder.logo_url = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn trust_center_source_summary_correct_errors(
+    mut builder: crate::types::builders::TrustCenterSourceSummaryBuilder,
+) -> crate::types::builders::TrustCenterSourceSummaryBuilder {
+    if builder.content_type.is_none() {
+        builder.content_type = "no value was set".parse::<crate::types::ResourceContentType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    if builder.provider.is_none() {
+        builder.provider = "no value was set".parse::<crate::types::TrustCenterProvider>().ok()
+    }
+    builder
+}
+
 pub(crate) fn usage_based_rate_card_item_correct_errors(
     mut builder: crate::types::builders::UsageBasedRateCardItemBuilder,
 ) -> crate::types::builders::UsageBasedRateCardItemBuilder {
     if builder.rate_card.is_none() {
         builder.rate_card = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn use_case_summary_entry_correct_errors(
+    mut builder: crate::types::builders::UseCaseSummaryEntryBuilder,
+) -> crate::types::builders::UseCaseSummaryEntryBuilder {
+    if builder.use_case.is_none() {
+        builder.use_case = {
+            let builder = crate::types::builders::UseCaseInformationBuilder::default();
+            crate::serde_util::use_case_information_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -1228,9 +1481,51 @@ pub(crate) fn payment_schedule_term_template_correct_errors(
     builder
 }
 
+pub(crate) fn saas_cloud_formation_deployment_template_correct_errors(
+    mut builder: crate::types::builders::SaasCloudFormationDeploymentTemplateBuilder,
+) -> crate::types::builders::SaasCloudFormationDeploymentTemplateBuilder {
+    if builder.template_name.is_none() {
+        builder.template_name = Some(Default::default())
+    }
+    if builder.default_stack_name.is_none() {
+        builder.default_stack_name = Some(Default::default())
+    }
+    if builder.template_url.is_none() {
+        builder.template_url = Some(Default::default())
+    }
+    if builder.iam_policy.is_none() {
+        builder.iam_policy = Some(Default::default())
+    }
+    builder
+}
+
 pub(crate) fn selector_correct_errors(mut builder: crate::types::builders::SelectorBuilder) -> crate::types::builders::SelectorBuilder {
     if builder.r#type.is_none() {
         builder.r#type = "no value was set".parse::<crate::types::SelectorType>().ok()
+    }
+    if builder.value.is_none() {
+        builder.value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn specialization_type_detail_correct_errors(
+    mut builder: crate::types::builders::SpecializationTypeDetailBuilder,
+) -> crate::types::builders::SpecializationTypeDetailBuilder {
+    if builder.specialization_type.is_none() {
+        builder.specialization_type = "no value was set".parse::<crate::types::SpecializationType>().ok()
+    }
+    if builder.display_name.is_none() {
+        builder.display_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn use_case_information_correct_errors(
+    mut builder: crate::types::builders::UseCaseInformationBuilder,
+) -> crate::types::builders::UseCaseInformationBuilder {
+    if builder.display_name.is_none() {
+        builder.display_name = Some(Default::default())
     }
     if builder.value.is_none() {
         builder.value = Some(Default::default())
@@ -1263,6 +1558,9 @@ pub(crate) fn rate_card_item_correct_errors(mut builder: crate::types::builders:
     if builder.price.is_none() {
         builder.price = Some(Default::default())
     }
+    if builder.regional_prices.is_none() {
+        builder.regional_prices = Some(Default::default())
+    }
     builder
 }
 
@@ -1274,6 +1572,21 @@ pub(crate) fn payment_schedule_entry_correct_errors(
     }
     if builder.charge_percentage.is_none() {
         builder.charge_percentage = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn regional_price_correct_errors(
+    mut builder: crate::types::builders::RegionalPriceBuilder,
+) -> crate::types::builders::RegionalPriceBuilder {
+    if builder.region.is_none() {
+        builder.region = Some(Default::default())
+    }
+    if builder.display_name.is_none() {
+        builder.display_name = Some(Default::default())
+    }
+    if builder.price.is_none() {
+        builder.price = Some(Default::default())
     }
     builder
 }

@@ -181,9 +181,6 @@ pub mod create_workflow;
 /// Types for the `DeleteAsset` operation.
 pub mod delete_asset;
 
-/// Types for the `DeleteAssetType` operation.
-pub mod delete_asset_type;
-
 /// Types for the `DeleteAttachment` operation.
 pub mod delete_attachment;
 
@@ -708,9 +705,6 @@ pub mod publish_data_quality_result_v2;
 
 /// Types for the `PutAsset` operation.
 pub mod put_asset;
-
-/// Types for the `PutAssetType` operation.
-pub mod put_asset_type;
 
 /// Types for the `PutAttachment` operation.
 pub mod put_attachment;

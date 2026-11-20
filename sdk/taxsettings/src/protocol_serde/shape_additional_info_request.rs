@@ -159,5 +159,23 @@ pub fn ser_additional_info_request(
         crate::protocol_serde::shape_mexico_additional_info::ser_mexico_additional_info(&mut object_52, var_51)?;
         object_52.finish();
     }
+    if let Some(var_53) = &input.united_arab_emirates_additional_info {
+        #[allow(unused_mut)]
+        let mut object_54 = object.key("unitedArabEmiratesAdditionalInfo").start_object();
+        crate::protocol_serde::shape_united_arab_emirates_additional_info::ser_united_arab_emirates_additional_info(&mut object_54, var_53)?;
+        object_54.finish();
+    }
+    if let Some(var_55) = &input.norway_additional_info {
+        #[allow(unused_mut)]
+        let mut object_56 = object.key("norwayAdditionalInfo").start_object();
+        crate::protocol_serde::shape_norway_additional_info::ser_norway_additional_info(&mut object_56, var_55)?;
+        object_56.finish();
+    }
+    if let Some(var_57) = &input.new_zealand_additional_info {
+        #[allow(unused_mut)]
+        let mut object_58 = object.key("newZealandAdditionalInfo").start_object();
+        crate::protocol_serde::shape_new_zealand_additional_info::ser_new_zealand_additional_info(&mut object_58, var_57)?;
+        object_58.finish();
+    }
     Ok(())
 }

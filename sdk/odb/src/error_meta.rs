@@ -1898,6 +1898,43 @@ impl From<crate::operation::list_autonomous_database_peers::ListAutonomousDataba
         }
     }
 }
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_autonomous_database_refreshable_clones::ListAutonomousDatabaseRefreshableClonesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::list_autonomous_database_refreshable_clones::ListAutonomousDatabaseRefreshableClonesError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_autonomous_database_refreshable_clones::ListAutonomousDatabaseRefreshableClonesError> for Error {
+    fn from(err: crate::operation::list_autonomous_database_refreshable_clones::ListAutonomousDatabaseRefreshableClonesError) -> Self {
+        match err {
+            crate::operation::list_autonomous_database_refreshable_clones::ListAutonomousDatabaseRefreshableClonesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::operation::list_autonomous_database_refreshable_clones::ListAutonomousDatabaseRefreshableClonesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::operation::list_autonomous_database_refreshable_clones::ListAutonomousDatabaseRefreshableClonesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::operation::list_autonomous_database_refreshable_clones::ListAutonomousDatabaseRefreshableClonesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::operation::list_autonomous_database_refreshable_clones::ListAutonomousDatabaseRefreshableClonesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::operation::list_autonomous_database_refreshable_clones::ListAutonomousDatabaseRefreshableClonesError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_autonomous_databases::ListAutonomousDatabasesError, R>>
     for Error
 where
@@ -2671,6 +2708,56 @@ impl From<crate::operation::start_autonomous_database::StartAutonomousDatabaseEr
                 Error::ValidationException(inner)
             }
             crate::operation::start_autonomous_database::StartAutonomousDatabaseError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R>
+    From<
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_autonomous_database_refresh::StartAutonomousDatabaseRefreshError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_autonomous_database_refresh::StartAutonomousDatabaseRefreshError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::start_autonomous_database_refresh::StartAutonomousDatabaseRefreshError> for Error {
+    fn from(err: crate::operation::start_autonomous_database_refresh::StartAutonomousDatabaseRefreshError) -> Self {
+        match err {
+            crate::operation::start_autonomous_database_refresh::StartAutonomousDatabaseRefreshError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::start_autonomous_database_refresh::StartAutonomousDatabaseRefreshError::ConflictException(inner) => {
+                Error::ConflictException(inner)
+            }
+            crate::operation::start_autonomous_database_refresh::StartAutonomousDatabaseRefreshError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::start_autonomous_database_refresh::StartAutonomousDatabaseRefreshError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::operation::start_autonomous_database_refresh::StartAutonomousDatabaseRefreshError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::operation::start_autonomous_database_refresh::StartAutonomousDatabaseRefreshError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::operation::start_autonomous_database_refresh::StartAutonomousDatabaseRefreshError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

@@ -39,20 +39,23 @@ pub fn ser_run_microvm_input_input(
         }
         array_11.finish();
     }
-    if let Some(var_13) = &input.logging {
-        #[allow(unused_mut)]
-        let mut object_14 = object.key("logging").start_object();
-        crate::protocol_serde::shape_logging::ser_logging(&mut object_14, var_13)?;
-        object_14.finish();
+    if let Some(var_13) = &input.kms_key_identifier {
+        object.key("kmsKeyIdentifier").string(var_13.as_str());
     }
-    if let Some(var_15) = &input.maximum_duration_in_seconds {
+    if let Some(var_14) = &input.logging {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("logging").start_object();
+        crate::protocol_serde::shape_logging::ser_logging(&mut object_15, var_14)?;
+        object_15.finish();
+    }
+    if let Some(var_16) = &input.maximum_duration_in_seconds {
         object.key("maximumDurationInSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_15).into()),
+            ::aws_smithy_types::Number::NegInt((*var_16).into()),
         );
     }
-    if let Some(var_16) = &input.run_hook_payload {
-        object.key("runHookPayload").string(var_16.as_str());
+    if let Some(var_17) = &input.run_hook_payload {
+        object.key("runHookPayload").string(var_17.as_str());
     }
     Ok(())
 }

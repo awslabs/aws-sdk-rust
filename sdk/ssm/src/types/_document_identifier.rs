@@ -34,6 +34,8 @@ pub struct DocumentIdentifier {
     pub review_status: ::std::option::Option<crate::types::ReviewStatus>,
     /// <p>The user in your organization who created the document.</p>
     pub author: ::std::option::Option<::std::string::String>,
+    /// <p>This field specifies the cloud providers that the default version of the document can run against.</p>
+    pub cloud_providers: ::std::option::Option<::std::vec::Vec<crate::types::CloudProvider>>,
 }
 impl DocumentIdentifier {
     /// <p>The name of the SSM document.</p>
@@ -102,6 +104,12 @@ impl DocumentIdentifier {
     pub fn author(&self) -> ::std::option::Option<&str> {
         self.author.as_deref()
     }
+    /// <p>This field specifies the cloud providers that the default version of the document can run against.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_providers.is_none()`.
+    pub fn cloud_providers(&self) -> &[crate::types::CloudProvider] {
+        self.cloud_providers.as_deref().unwrap_or_default()
+    }
 }
 impl DocumentIdentifier {
     /// Creates a new builder-style object to manufacture [`DocumentIdentifier`](crate::types::DocumentIdentifier).
@@ -129,6 +137,7 @@ pub struct DocumentIdentifierBuilder {
     pub(crate) requires: ::std::option::Option<::std::vec::Vec<crate::types::DocumentRequires>>,
     pub(crate) review_status: ::std::option::Option<crate::types::ReviewStatus>,
     pub(crate) author: ::std::option::Option<::std::string::String>,
+    pub(crate) cloud_providers: ::std::option::Option<::std::vec::Vec<crate::types::CloudProvider>>,
 }
 impl DocumentIdentifierBuilder {
     /// <p>The name of the SSM document.</p>
@@ -359,6 +368,26 @@ impl DocumentIdentifierBuilder {
     pub fn get_author(&self) -> &::std::option::Option<::std::string::String> {
         &self.author
     }
+    /// Appends an item to `cloud_providers`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_providers`](Self::set_cloud_providers).
+    ///
+    /// <p>This field specifies the cloud providers that the default version of the document can run against.</p>
+    pub fn cloud_providers(mut self, input: crate::types::CloudProvider) -> Self {
+        let mut v = self.cloud_providers.unwrap_or_default();
+        v.push(input);
+        self.cloud_providers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>This field specifies the cloud providers that the default version of the document can run against.</p>
+    pub fn set_cloud_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CloudProvider>>) -> Self {
+        self.cloud_providers = input;
+        self
+    }
+    /// <p>This field specifies the cloud providers that the default version of the document can run against.</p>
+    pub fn get_cloud_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudProvider>> {
+        &self.cloud_providers
+    }
     /// Consumes the builder and constructs a [`DocumentIdentifier`](crate::types::DocumentIdentifier).
     pub fn build(self) -> crate::types::DocumentIdentifier {
         crate::types::DocumentIdentifier {
@@ -377,6 +406,7 @@ impl DocumentIdentifierBuilder {
             requires: self.requires,
             review_status: self.review_status,
             author: self.author,
+            cloud_providers: self.cloud_providers,
         }
     }
 }

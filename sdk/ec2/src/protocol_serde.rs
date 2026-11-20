@@ -5207,6 +5207,8 @@ pub(crate) mod shape_network_acl_association_list;
 
 pub(crate) mod shape_network_acl_entry_list;
 
+pub(crate) mod shape_network_firewall_association_set;
+
 pub(crate) mod shape_network_interface_association;
 
 pub(crate) mod shape_network_interface_id_set;
@@ -5807,6 +5809,8 @@ pub(crate) mod shape_network_acl_entry;
 
 pub(crate) mod shape_network_bandwidth_gbps;
 
+pub(crate) mod shape_network_firewall_association;
+
 pub(crate) mod shape_network_info;
 
 pub(crate) mod shape_network_interface_count;
@@ -6096,6 +6100,8 @@ pub(crate) mod shape_health_check_path_destination_response_list;
 pub(crate) mod shape_health_check_path_source_response_object;
 
 pub(crate) mod shape_host_instance;
+
+pub(crate) mod shape_igw_firewall;
 
 pub(crate) mod shape_image_usage_resource_type;
 

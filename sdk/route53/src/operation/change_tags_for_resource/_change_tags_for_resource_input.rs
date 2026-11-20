@@ -16,7 +16,7 @@ pub struct ChangeTagsForResourceInput {
     pub resource_type: ::std::option::Option<crate::types::TagResourceType>,
     /// <p>The ID of the resource for which you want to add, change, or delete tags.</p>
     pub resource_id: ::std::option::Option<::std::string::String>,
-    /// <p>A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
+    /// <p>A complex type that contains a list of the tags that you want to add to the specified health check, health check source, or hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
     /// <p>You can add a maximum of 10 tags to a health check, a health check source, or a hosted zone.</p>
     pub add_tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>A complex type that contains a list of the tags that you want to delete from the specified health check or hosted zone. You can specify up to 10 keys.</p>
@@ -39,7 +39,7 @@ impl ChangeTagsForResourceInput {
     pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
-    /// <p>A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
+    /// <p>A complex type that contains a list of the tags that you want to add to the specified health check, health check source, or hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
     /// <p>You can add a maximum of 10 tags to a health check, a health check source, or a hosted zone.</p>
     ///
     /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.add_tags.is_none()`.
@@ -128,7 +128,7 @@ impl ChangeTagsForResourceInputBuilder {
     ///
     /// To override the contents of this collection use [`set_add_tags`](Self::set_add_tags).
     ///
-    /// <p>A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
+    /// <p>A complex type that contains a list of the tags that you want to add to the specified health check, health check source, or hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
     /// <p>You can add a maximum of 10 tags to a health check, a health check source, or a hosted zone.</p>
     pub fn add_tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.add_tags.unwrap_or_default();
@@ -136,13 +136,13 @@ impl ChangeTagsForResourceInputBuilder {
         self.add_tags = ::std::option::Option::Some(v);
         self
     }
-    /// <p>A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
+    /// <p>A complex type that contains a list of the tags that you want to add to the specified health check, health check source, or hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
     /// <p>You can add a maximum of 10 tags to a health check, a health check source, or a hosted zone.</p>
     pub fn set_add_tags(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>) -> Self {
         self.add_tags = input;
         self
     }
-    /// <p>A complex type that contains a list of the tags that you want to add to the specified health check or hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
+    /// <p>A complex type that contains a list of the tags that you want to add to the specified health check, health check source, or hosted zone and/or the tags that you want to edit <code>Value</code> for.</p>
     /// <p>You can add a maximum of 10 tags to a health check, a health check source, or a hosted zone.</p>
     pub fn get_add_tags(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::Tag>> {
         &self.add_tags

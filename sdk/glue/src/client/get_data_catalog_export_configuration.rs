@@ -4,12 +4,10 @@ impl super::Client {
     ///
     /// - The fluent builder takes no input, just [`send`](crate::operation::get_data_catalog_export_configuration::builders::GetDataCatalogExportConfigurationFluentBuilder::send) it.
     /// - On success, responds with [`GetDataCatalogExportConfigurationOutput`](crate::operation::get_data_catalog_export_configuration::GetDataCatalogExportConfigurationOutput) with field(s):
-    ///   - [`export_setting(Option<ExportSetting>)`](crate::operation::get_data_catalog_export_configuration::GetDataCatalogExportConfigurationOutput::export_setting): <p>The export setting for the data catalog. Valid values are <code>ENABLED</code> and <code>DISABLED</code>.</p>
-    ///   - [`status(Option<ExportStatus>)`](crate::operation::get_data_catalog_export_configuration::GetDataCatalogExportConfigurationOutput::status): <p>The current status of the export. Valid values are <code>ENABLING</code>, <code>ENABLED</code>, <code>DISABLING</code>, <code>DISABLED</code>, and <code>FAILED</code>.</p>
-    ///   - [`encryption_configuration(Option<ExportEncryptionConfiguration>)`](crate::operation::get_data_catalog_export_configuration::GetDataCatalogExportConfigurationOutput::encryption_configuration): <p>The encryption configuration for the exported data.</p>
-    ///   - [`s3_table_bucket_arn(Option<String>)`](crate::operation::get_data_catalog_export_configuration::GetDataCatalogExportConfigurationOutput::s3_table_bucket_arn): <p>The ARN of the S3 Tables bucket where catalog metadata is exported.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::get_data_catalog_export_configuration::GetDataCatalogExportConfigurationOutput::created_at): <p>The timestamp at which the export configuration was created.</p>
     ///   - [`updated_at(Option<DateTime>)`](crate::operation::get_data_catalog_export_configuration::GetDataCatalogExportConfigurationOutput::updated_at): <p>The timestamp at which the export configuration was last updated.</p>
+    ///   - [`s3_tables_configuration(Option<S3TablesConfigurationResult>)`](crate::operation::get_data_catalog_export_configuration::GetDataCatalogExportConfigurationOutput::s3_tables_configuration): <p>The S3 Tables configuration for the export, including the table bucket that holds the exported catalog metadata and its encryption configuration.</p>
+    ///   - [`assets(Option<AssetsExportResult>)`](crate::operation::get_data_catalog_export_configuration::GetDataCatalogExportConfigurationOutput::assets): <p>The export setting and current export state for asset metadata.</p>
     /// - On failure, responds with [`SdkError<GetDataCatalogExportConfigurationError>`](crate::operation::get_data_catalog_export_configuration::GetDataCatalogExportConfigurationError)
     pub fn get_data_catalog_export_configuration(
         &self,

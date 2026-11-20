@@ -3,8 +3,8 @@ pub use crate::types::error::_resource_limit_exceeded::ResourceLimitExceededBuil
 
 pub use crate::types::error::_resource_not_found::ResourceNotFoundBuilder;
 
-pub use crate::types::error::_resource_in_use::ResourceInUseBuilder;
-
 pub use crate::types::error::_conflict_exception::ConflictExceptionBuilder;
+
+pub use crate::types::error::_resource_in_use::ResourceInUseBuilder;
 
 pub use crate::types::error::_resource_already_exists::ResourceAlreadyExistsBuilder;

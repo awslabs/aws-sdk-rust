@@ -109,6 +109,8 @@ pub(crate) mod shape_get_health_check_status;
 
 pub(crate) mod shape_get_hosted_zone;
 
+pub(crate) mod shape_get_hosted_zone_change_batch;
+
 pub(crate) mod shape_get_hosted_zone_count;
 
 pub(crate) mod shape_get_hosted_zone_limit;
@@ -139,6 +141,8 @@ pub(crate) mod shape_list_health_checks;
 
 pub(crate) mod shape_list_health_checks_by_source;
 
+pub(crate) mod shape_list_hosted_zone_change_batches;
+
 pub(crate) mod shape_list_hosted_zones;
 
 pub(crate) mod shape_list_hosted_zones_by_name;
@@ -146,6 +150,8 @@ pub(crate) mod shape_list_hosted_zones_by_name;
 pub(crate) mod shape_list_hosted_zones_by_vpc;
 
 pub(crate) mod shape_list_query_logging_configs;
+
+pub(crate) mod shape_list_resource_record_set_changes;
 
 pub(crate) mod shape_list_resource_record_set_protections;
 
@@ -176,6 +182,8 @@ pub(crate) mod shape_update_health_check;
 pub(crate) mod shape_update_hosted_zone_comment;
 
 pub(crate) mod shape_update_hosted_zone_features;
+
+pub(crate) mod shape_update_hosted_zone_tier;
 
 pub(crate) mod shape_update_traffic_policy_comment;
 
@@ -264,6 +272,8 @@ pub(crate) mod shape_delete_vpc_association_authorization_input;
 pub(crate) mod shape_disassociate_vpc_from_hosted_zone_input;
 
 pub(crate) mod shape_dnssec_not_found;
+
+pub(crate) mod shape_feature_not_enabled;
 
 pub(crate) mod shape_health_check_already_exists;
 
@@ -391,6 +401,8 @@ pub(crate) mod shape_update_hosted_zone_comment_input;
 
 pub(crate) mod shape_update_hosted_zone_features_input;
 
+pub(crate) mod shape_update_hosted_zone_tier_input;
+
 pub(crate) mod shape_update_traffic_policy_comment_input;
 
 pub(crate) mod shape_update_traffic_policy_instance_input;
@@ -404,6 +416,12 @@ pub(crate) mod shape_account_limit;
 pub(crate) mod shape_alarm_identifier;
 
 pub(crate) mod shape_change_batch;
+
+pub(crate) mod shape_change_batch_summaries;
+
+pub(crate) mod shape_change_batch_summary;
+
+pub(crate) mod shape_change_guardrail;
 
 pub(crate) mod shape_change_info;
 
@@ -467,6 +485,8 @@ pub(crate) mod shape_query_logging_configs;
 
 pub(crate) mod shape_record_data;
 
+pub(crate) mod shape_resource_record_set_changes;
+
 pub(crate) mod shape_resource_record_set_protection_config;
 
 pub(crate) mod shape_resource_record_set_protection_key;
@@ -499,6 +519,8 @@ pub(crate) mod shape_vpcs;
 
 pub(crate) mod shape_change;
 
+pub(crate) mod shape_changes;
+
 pub(crate) mod shape_cidr_block_summary;
 
 pub(crate) mod shape_cloud_watch_alarm_configuration;
@@ -521,6 +543,8 @@ pub(crate) mod shape_protection_error;
 
 pub(crate) mod shape_resource_record_set;
 
+pub(crate) mod shape_resource_record_set_change;
+
 pub(crate) mod shape_resource_record_set_protection;
 
 pub(crate) mod shape_subnet_configuration;
@@ -530,6 +554,12 @@ pub(crate) mod shape_tag_list;
 pub(crate) mod shape_traffic_policy_summary;
 
 pub(crate) mod shape_alias_target;
+
+pub(crate) mod shape_az_affinity;
+
+pub(crate) mod shape_change_guardrails;
+
+pub(crate) mod shape_change_history_feature;
 
 pub(crate) mod shape_child_health_check_list;
 

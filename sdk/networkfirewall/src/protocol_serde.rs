@@ -379,6 +379,8 @@ pub(crate) mod shape_flow_operations;
 
 pub(crate) mod shape_flows;
 
+pub(crate) mod shape_igw_firewall_configuration;
+
 pub(crate) mod shape_ips_rule_group;
 
 pub(crate) mod shape_logging_configuration;
@@ -603,6 +605,8 @@ pub(crate) mod shape_sync_state;
 
 pub(crate) mod shape_unique_sources;
 
+pub(crate) mod shape_address_translations;
+
 pub(crate) mod shape_attachment;
 
 pub(crate) mod shape_domain_match;
@@ -654,6 +658,10 @@ pub(crate) mod shape_ip_set_metadata;
 pub(crate) mod shape_nat_gateway_attachment;
 
 pub(crate) mod shape_per_object_status;
+
+pub(crate) mod shape_public_ipv4_addresses;
+
+pub(crate) mod shape_public_ipv6_addresses;
 
 pub(crate) mod shape_rule_definition;
 

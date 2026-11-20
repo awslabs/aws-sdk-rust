@@ -29,6 +29,13 @@ pub struct Rule {
     /// <p>Supported operators: <code>EQUALS</code></p>
     /// </dd>
     /// <dt>
+    /// DEVICE_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>The device type. Valid values are PHYSICAL or VIRTUAL.</p>
+    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// </dd>
+    /// <dt>
     /// FLEET_TYPE
     /// </dt>
     /// <dd>
@@ -129,6 +136,13 @@ impl Rule {
     /// </dt>
     /// <dd>
     /// <p>The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
+    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// </dd>
+    /// <dt>
+    /// DEVICE_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>The device type. Valid values are PHYSICAL or VIRTUAL.</p>
     /// <p>Supported operators: <code>EQUALS</code></p>
     /// </dd>
     /// <dt>
@@ -256,6 +270,13 @@ impl RuleBuilder {
     /// <p>Supported operators: <code>EQUALS</code></p>
     /// </dd>
     /// <dt>
+    /// DEVICE_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>The device type. Valid values are PHYSICAL or VIRTUAL.</p>
+    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// </dd>
+    /// <dt>
     /// FLEET_TYPE
     /// </dt>
     /// <dd>
@@ -356,6 +377,13 @@ impl RuleBuilder {
     /// <p>Supported operators: <code>EQUALS</code></p>
     /// </dd>
     /// <dt>
+    /// DEVICE_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>The device type. Valid values are PHYSICAL or VIRTUAL.</p>
+    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// </dd>
+    /// <dt>
     /// FLEET_TYPE
     /// </dt>
     /// <dd>
@@ -453,6 +481,13 @@ impl RuleBuilder {
     /// </dt>
     /// <dd>
     /// <p>The current availability of the device. Valid values are AVAILABLE, HIGHLY_AVAILABLE, BUSY, or TEMPORARY_NOT_AVAILABLE.</p>
+    /// <p>Supported operators: <code>EQUALS</code></p>
+    /// </dd>
+    /// <dt>
+    /// DEVICE_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>The device type. Valid values are PHYSICAL or VIRTUAL.</p>
     /// <p>Supported operators: <code>EQUALS</code></p>
     /// </dd>
     /// <dt>

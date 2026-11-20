@@ -16,6 +16,9 @@ pub fn ser_source_logs_configuration(
             .key("EncryptedLogGroupStrategy")
             .string(input.encrypted_log_group_strategy.as_str());
     }
+    if let Some(var_2) = &input.centralize_with_data_protection {
+        object.key("CentralizeWithDataProtection").string(var_2.as_str());
+    }
     Ok(())
 }
 
@@ -59,6 +62,13 @@ where
                             builder = builder.set_encrypted_log_group_strategy(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| crate::types::EncryptedLogGroupStrategy::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "CentralizeWithDataProtection" => {
+                            builder = builder.set_centralize_with_data_protection(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::CentralizeWithDataProtection::from(u.as_ref())))
                                     .transpose()?,
                             );
                         }

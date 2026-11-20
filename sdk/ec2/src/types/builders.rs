@@ -1305,6 +1305,8 @@ pub use crate::types::_federated_authentication_request::FederatedAuthentication
 
 pub use crate::types::_client_vpn_trust_provider_request::ClientVpnTrustProviderRequestBuilder;
 
+pub use crate::types::_network_firewall_association::NetworkFirewallAssociationBuilder;
+
 pub use crate::types::_dhcp_configuration::DhcpConfigurationBuilder;
 
 pub use crate::types::_internet_gateway_attachment::InternetGatewayAttachmentBuilder;
@@ -1682,6 +1684,8 @@ pub use crate::types::_resource_statement_request::ResourceStatementRequestBuild
 pub use crate::types::_through_resources_statement_request::ThroughResourcesStatementRequestBuilder;
 
 pub use crate::types::_path_statement::PathStatementBuilder;
+
+pub use crate::types::_igw_firewall::IgwFirewallBuilder;
 
 pub use crate::types::_transit_gateway_attachment_bgp_configuration::TransitGatewayAttachmentBgpConfigurationBuilder;
 

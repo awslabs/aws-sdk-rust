@@ -12,7 +12,9 @@
 /// ```text
 /// # let clusterinstancestatus = unimplemented!();
 /// match clusterinstancestatus {
+///     ClusterInstanceStatus::AttachInProgress => { /* ... */ },
 ///     ClusterInstanceStatus::DeepHealthCheckInProgress => { /* ... */ },
+///     ClusterInstanceStatus::DetachInProgress => { /* ... */ },
 ///     ClusterInstanceStatus::Failure => { /* ... */ },
 ///     ClusterInstanceStatus::NotFound => { /* ... */ },
 ///     ClusterInstanceStatus::Pending => { /* ... */ },
@@ -48,7 +50,11 @@
 )]
 pub enum ClusterInstanceStatus {
     #[allow(missing_docs)] // documentation missing in model
+    AttachInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     DeepHealthCheckInProgress,
+    #[allow(missing_docs)] // documentation missing in model
+    DetachInProgress,
     #[allow(missing_docs)] // documentation missing in model
     Failure,
     #[allow(missing_docs)] // documentation missing in model
@@ -68,7 +74,9 @@ pub enum ClusterInstanceStatus {
 impl ::std::convert::From<&str> for ClusterInstanceStatus {
     fn from(s: &str) -> Self {
         match s {
+            "AttachInProgress" => ClusterInstanceStatus::AttachInProgress,
             "DeepHealthCheckInProgress" => ClusterInstanceStatus::DeepHealthCheckInProgress,
+            "DetachInProgress" => ClusterInstanceStatus::DetachInProgress,
             "Failure" => ClusterInstanceStatus::Failure,
             "NotFound" => ClusterInstanceStatus::NotFound,
             "Pending" => ClusterInstanceStatus::Pending,
@@ -90,7 +98,9 @@ impl ClusterInstanceStatus {
     /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
+            ClusterInstanceStatus::AttachInProgress => "AttachInProgress",
             ClusterInstanceStatus::DeepHealthCheckInProgress => "DeepHealthCheckInProgress",
+            ClusterInstanceStatus::DetachInProgress => "DetachInProgress",
             ClusterInstanceStatus::Failure => "Failure",
             ClusterInstanceStatus::NotFound => "NotFound",
             ClusterInstanceStatus::Pending => "Pending",
@@ -103,7 +113,9 @@ impl ClusterInstanceStatus {
     /// Returns all the `&str` representations of the enum members.
     pub const fn values() -> &'static [&'static str] {
         &[
+            "AttachInProgress",
             "DeepHealthCheckInProgress",
+            "DetachInProgress",
             "Failure",
             "NotFound",
             "Pending",
@@ -133,7 +145,9 @@ impl ClusterInstanceStatus {
 impl ::std::fmt::Display for ClusterInstanceStatus {
     fn fmt(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
         match self {
+            ClusterInstanceStatus::AttachInProgress => write!(f, "AttachInProgress"),
             ClusterInstanceStatus::DeepHealthCheckInProgress => write!(f, "DeepHealthCheckInProgress"),
+            ClusterInstanceStatus::DetachInProgress => write!(f, "DetachInProgress"),
             ClusterInstanceStatus::Failure => write!(f, "Failure"),
             ClusterInstanceStatus::NotFound => write!(f, "NotFound"),
             ClusterInstanceStatus::Pending => write!(f, "Pending"),

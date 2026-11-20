@@ -143,8 +143,6 @@ pub(crate) mod shape_create_workflow;
 
 pub(crate) mod shape_delete_asset;
 
-pub(crate) mod shape_delete_asset_type;
-
 pub(crate) mod shape_delete_attachment;
 
 pub(crate) mod shape_delete_blueprint;
@@ -495,8 +493,6 @@ pub(crate) mod shape_publish_data_quality_result_v2;
 
 pub(crate) mod shape_put_asset;
 
-pub(crate) mod shape_put_asset_type;
-
 pub(crate) mod shape_put_attachment;
 
 pub(crate) mod shape_put_data_catalog_encryption_settings;
@@ -802,8 +798,6 @@ pub(crate) mod shape_create_user_defined_function_input;
 pub(crate) mod shape_create_workflow_input;
 
 pub(crate) mod shape_delete_asset_input;
-
-pub(crate) mod shape_delete_asset_type_input;
 
 pub(crate) mod shape_delete_attachment_input;
 
@@ -1201,8 +1195,6 @@ pub(crate) mod shape_publish_data_quality_result_v2_input;
 
 pub(crate) mod shape_put_asset_input;
 
-pub(crate) mod shape_put_asset_type_input;
-
 pub(crate) mod shape_put_attachment_input;
 
 pub(crate) mod shape_put_data_catalog_encryption_settings_input;
@@ -1385,15 +1377,17 @@ pub(crate) mod shape_annotation_error_list;
 
 pub(crate) mod shape_annotation_list;
 
-pub(crate) mod shape_asset_form_entry;
+pub(crate) mod shape_asset_form_input;
 
 pub(crate) mod shape_asset_form_map;
 
-pub(crate) mod shape_asset_type_form_reference;
-
-pub(crate) mod shape_asset_type_forms_map;
+pub(crate) mod shape_asset_type_form_output_map;
 
 pub(crate) mod shape_asset_type_item_list;
+
+pub(crate) mod shape_assets_export;
+
+pub(crate) mod shape_assets_export_result;
 
 pub(crate) mod shape_audit_context;
 
@@ -1615,8 +1609,6 @@ pub(crate) mod shape_event_batching_condition;
 
 pub(crate) mod shape_execution_property;
 
-pub(crate) mod shape_export_encryption_configuration;
-
 pub(crate) mod shape_fields_list;
 
 pub(crate) mod shape_form_type_item_list;
@@ -1629,7 +1621,7 @@ pub(crate) mod shape_get_table_versions_list;
 
 pub(crate) mod shape_glossary_item_list;
 
-pub(crate) mod shape_glossary_term_id_list;
+pub(crate) mod shape_glossary_term_id_output_list;
 
 pub(crate) mod shape_glossary_term_item_list;
 
@@ -1756,6 +1748,10 @@ pub(crate) mod shape_registry_list_definition;
 pub(crate) mod shape_rest_configuration;
 
 pub(crate) mod shape_ruleset_names;
+
+pub(crate) mod shape_s3_tables_configuration;
+
+pub(crate) mod shape_s3_tables_configuration_result;
 
 pub(crate) mod shape_schema_change_policy;
 
@@ -1914,6 +1910,10 @@ pub(crate) mod shape_amazon_redshift_target;
 pub(crate) mod shape_annotation_error;
 
 pub(crate) mod shape_apply_mapping;
+
+pub(crate) mod shape_asset_form_entry;
+
+pub(crate) mod shape_asset_type_form_output;
 
 pub(crate) mod shape_asset_type_item;
 
@@ -2092,6 +2092,8 @@ pub(crate) mod shape_evaluate_data_quality;
 pub(crate) mod shape_evaluate_data_quality_multi_frame;
 
 pub(crate) mod shape_execution_attempt;
+
+pub(crate) mod shape_export_encryption_configuration;
 
 pub(crate) mod shape_export_labels_task_run_properties;
 
@@ -2310,6 +2312,8 @@ pub(crate) mod shape_s3_iceberg_direct_target;
 pub(crate) mod shape_s3_json_source;
 
 pub(crate) mod shape_s3_parquet_source;
+
+pub(crate) mod shape_s3_tables_export_state;
 
 pub(crate) mod shape_s3_target;
 

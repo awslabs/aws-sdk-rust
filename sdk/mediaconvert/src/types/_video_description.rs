@@ -18,6 +18,8 @@ pub struct VideoDescription {
     pub crop: ::std::option::Option<crate::types::Rectangle>,
     /// Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion or Timecode track is enabled.
     pub drop_frame_timecode: ::std::option::Option<crate::types::DropFrameTimecode>,
+    /// Dynamic Multiview settings. Encodes this video output so that a downstream packager can combine it with other outputs in a Dynamic Multiview presentation, or replace parts of it. Available for H.264 and H.265 outputs. Enabling Dynamic Multiview reduces compression efficiency.
+    pub dynamic_multiview_settings: ::std::option::Option<crate::types::DynamicMultiviewSettings>,
     /// Applies only if you set AFD Signaling to Fixed. Use Fixed to specify a four-bit AFD value which the service will write on all frames of this video output.
     pub fixed_afd: ::std::option::Option<i32>,
     /// Use Height to define the video resolution height, in pixels, for this output. To use the same resolution as your input: Leave both Width and Height blank. To evenly scale from your input resolution: Leave Height blank and enter a value for Width. For example, if your input is 1920x1080 and you set Width to 1280, your output will be 1280x720.
@@ -67,6 +69,10 @@ impl VideoDescription {
     /// Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion or Timecode track is enabled.
     pub fn drop_frame_timecode(&self) -> ::std::option::Option<&crate::types::DropFrameTimecode> {
         self.drop_frame_timecode.as_ref()
+    }
+    /// Dynamic Multiview settings. Encodes this video output so that a downstream packager can combine it with other outputs in a Dynamic Multiview presentation, or replace parts of it. Available for H.264 and H.265 outputs. Enabling Dynamic Multiview reduces compression efficiency.
+    pub fn dynamic_multiview_settings(&self) -> ::std::option::Option<&crate::types::DynamicMultiviewSettings> {
+        self.dynamic_multiview_settings.as_ref()
     }
     /// Applies only if you set AFD Signaling to Fixed. Use Fixed to specify a four-bit AFD value which the service will write on all frames of this video output.
     pub fn fixed_afd(&self) -> ::std::option::Option<i32> {
@@ -127,6 +133,7 @@ pub struct VideoDescriptionBuilder {
     pub(crate) color_metadata: ::std::option::Option<crate::types::ColorMetadata>,
     pub(crate) crop: ::std::option::Option<crate::types::Rectangle>,
     pub(crate) drop_frame_timecode: ::std::option::Option<crate::types::DropFrameTimecode>,
+    pub(crate) dynamic_multiview_settings: ::std::option::Option<crate::types::DynamicMultiviewSettings>,
     pub(crate) fixed_afd: ::std::option::Option<i32>,
     pub(crate) height: ::std::option::Option<i32>,
     pub(crate) position: ::std::option::Option<crate::types::Rectangle>,
@@ -236,6 +243,20 @@ impl VideoDescriptionBuilder {
     /// Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion or Timecode track is enabled.
     pub fn get_drop_frame_timecode(&self) -> &::std::option::Option<crate::types::DropFrameTimecode> {
         &self.drop_frame_timecode
+    }
+    /// Dynamic Multiview settings. Encodes this video output so that a downstream packager can combine it with other outputs in a Dynamic Multiview presentation, or replace parts of it. Available for H.264 and H.265 outputs. Enabling Dynamic Multiview reduces compression efficiency.
+    pub fn dynamic_multiview_settings(mut self, input: crate::types::DynamicMultiviewSettings) -> Self {
+        self.dynamic_multiview_settings = ::std::option::Option::Some(input);
+        self
+    }
+    /// Dynamic Multiview settings. Encodes this video output so that a downstream packager can combine it with other outputs in a Dynamic Multiview presentation, or replace parts of it. Available for H.264 and H.265 outputs. Enabling Dynamic Multiview reduces compression efficiency.
+    pub fn set_dynamic_multiview_settings(mut self, input: ::std::option::Option<crate::types::DynamicMultiviewSettings>) -> Self {
+        self.dynamic_multiview_settings = input;
+        self
+    }
+    /// Dynamic Multiview settings. Encodes this video output so that a downstream packager can combine it with other outputs in a Dynamic Multiview presentation, or replace parts of it. Available for H.264 and H.265 outputs. Enabling Dynamic Multiview reduces compression efficiency.
+    pub fn get_dynamic_multiview_settings(&self) -> &::std::option::Option<crate::types::DynamicMultiviewSettings> {
+        &self.dynamic_multiview_settings
     }
     /// Applies only if you set AFD Signaling to Fixed. Use Fixed to specify a four-bit AFD value which the service will write on all frames of this video output.
     pub fn fixed_afd(mut self, input: i32) -> Self {
@@ -387,6 +408,7 @@ impl VideoDescriptionBuilder {
             color_metadata: self.color_metadata,
             crop: self.crop,
             drop_frame_timecode: self.drop_frame_timecode,
+            dynamic_multiview_settings: self.dynamic_multiview_settings,
             fixed_afd: self.fixed_afd,
             height: self.height,
             position: self.position,

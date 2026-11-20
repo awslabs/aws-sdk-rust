@@ -338,6 +338,23 @@ impl UpdateComputeNodeGroupFluentBuilder {
     pub fn get_node_lifecycle_actions(&self) -> &::std::option::Option<crate::types::UpdateNodeLifecycleActionsRequest> {
         self.inner.get_node_lifecycle_actions()
     }
+    /// <p>The instance health check settings for the compute node group. Instance health checks detect faults on instances in the compute node group and respond with the repair action that you choose. You can configure health monitoring, deep health checks, or both. You can't specify an empty object (<code>{}</code>). Instance health checks require Slurm version 26.05 or later.</p>
+    /// <p>The settings that you specify replace all of the current instance health check settings of the compute node group. Include every setting that you want to keep. If you omit this member, the current settings don't change. If you omit <code>healthMonitoring</code> or <code>deepHealthChecks</code>, that check is turned off. You can also turn off a check: set <code>healthMonitoring.mode</code> or <code>deepHealthChecks.onStart.profile</code> to <code>NONE</code> and omit its <code>repairAction</code>. When you change these settings, PCS drains and replaces the instances in the compute node group.</p>
+    pub fn instance_health_checks(mut self, input: crate::types::UpdateInstanceHealthChecksRequest) -> Self {
+        self.inner = self.inner.instance_health_checks(input);
+        self
+    }
+    /// <p>The instance health check settings for the compute node group. Instance health checks detect faults on instances in the compute node group and respond with the repair action that you choose. You can configure health monitoring, deep health checks, or both. You can't specify an empty object (<code>{}</code>). Instance health checks require Slurm version 26.05 or later.</p>
+    /// <p>The settings that you specify replace all of the current instance health check settings of the compute node group. Include every setting that you want to keep. If you omit this member, the current settings don't change. If you omit <code>healthMonitoring</code> or <code>deepHealthChecks</code>, that check is turned off. You can also turn off a check: set <code>healthMonitoring.mode</code> or <code>deepHealthChecks.onStart.profile</code> to <code>NONE</code> and omit its <code>repairAction</code>. When you change these settings, PCS drains and replaces the instances in the compute node group.</p>
+    pub fn set_instance_health_checks(mut self, input: ::std::option::Option<crate::types::UpdateInstanceHealthChecksRequest>) -> Self {
+        self.inner = self.inner.set_instance_health_checks(input);
+        self
+    }
+    /// <p>The instance health check settings for the compute node group. Instance health checks detect faults on instances in the compute node group and respond with the repair action that you choose. You can configure health monitoring, deep health checks, or both. You can't specify an empty object (<code>{}</code>). Instance health checks require Slurm version 26.05 or later.</p>
+    /// <p>The settings that you specify replace all of the current instance health check settings of the compute node group. Include every setting that you want to keep. If you omit this member, the current settings don't change. If you omit <code>healthMonitoring</code> or <code>deepHealthChecks</code>, that check is turned off. You can also turn off a check: set <code>healthMonitoring.mode</code> or <code>deepHealthChecks.onStart.profile</code> to <code>NONE</code> and omit its <code>repairAction</code>. When you change these settings, PCS drains and replaces the instances in the compute node group.</p>
+    pub fn get_instance_health_checks(&self) -> &::std::option::Option<crate::types::UpdateInstanceHealthChecksRequest> {
+        self.inner.get_instance_health_checks()
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries with the same client token return the result from the original successful request and they have no additional effect. If you don't specify a client token, the CLI and SDK automatically generate one for you.</p>
     pub fn client_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());

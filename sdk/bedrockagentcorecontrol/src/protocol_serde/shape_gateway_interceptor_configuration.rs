@@ -24,6 +24,15 @@ pub fn ser_gateway_interceptor_configuration(
         crate::protocol_serde::shape_interceptor_input_configuration::ser_interceptor_input_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
+    if let Some(var_7) = &input.response_interception_mode {
+        object.key("responseInterceptionMode").string(var_7.as_str());
+    }
+    if let Some(var_8) = &input.response_streaming_configuration {
+        #[allow(unused_mut)]
+        let mut object_9 = object.key("responseStreamingConfiguration").start_object();
+        crate::protocol_serde::shape_response_streaming_configuration::ser_response_streaming_configuration(&mut object_9, var_8)?;
+        object_9.finish();
+    }
     Ok(())
 }
 
@@ -64,6 +73,22 @@ where
                         "inputConfiguration" => {
                             builder = builder.set_input_configuration(
                                 crate::protocol_serde::shape_interceptor_input_configuration::de_interceptor_input_configuration(
+                                    tokens,
+                                    _value,
+                                    depth + 1,
+                                )?,
+                            );
+                        }
+                        "responseInterceptionMode" => {
+                            builder = builder.set_response_interception_mode(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| crate::types::ResponseInterceptionMode::from(u.as_ref())))
+                                    .transpose()?,
+                            );
+                        }
+                        "responseStreamingConfiguration" => {
+                            builder = builder.set_response_streaming_configuration(
+                                crate::protocol_serde::shape_response_streaming_configuration::de_response_streaming_configuration(
                                     tokens,
                                     _value,
                                     depth + 1,

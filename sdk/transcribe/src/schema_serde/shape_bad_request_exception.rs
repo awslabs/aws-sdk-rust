@@ -9,6 +9,16 @@ static BADREQUESTEXCEPTION_MEMBER_MESSAGE: ::aws_smithy_schema::Schema<'static> 
     "Message",
     0,
 );
+static BADREQUESTEXCEPTION_MEMBER_REASON: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_member(
+    ::aws_smithy_schema::ShapeId::from_parts(
+        "com.amazonaws.transcribe#BadRequestException$Reason",
+        "com.amazonaws.transcribe",
+        "BadRequestException",
+    ),
+    ::aws_smithy_schema::ShapeType::String,
+    "Reason",
+    1,
+);
 static BADREQUESTEXCEPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_smithy_schema::Schema::new_struct(
     ::aws_smithy_schema::ShapeId::from_parts(
         "com.amazonaws.transcribe#BadRequestException",
@@ -16,7 +26,7 @@ static BADREQUESTEXCEPTION_SCHEMA: ::aws_smithy_schema::Schema<'static> = ::aws_
         "BadRequestException",
     ),
     ::aws_smithy_schema::ShapeType::Structure,
-    &[&BADREQUESTEXCEPTION_MEMBER_MESSAGE],
+    &[&BADREQUESTEXCEPTION_MEMBER_MESSAGE, &BADREQUESTEXCEPTION_MEMBER_REASON],
 );
 impl crate::types::error::BadRequestException {
     /// The schema for this shape.
@@ -34,6 +44,9 @@ impl ::aws_smithy_schema::serde::SerializableStruct for crate::types::error::Bad
     ) -> ::std::result::Result<(), ::aws_smithy_schema::serde::SerdeError> {
         if let Some(ref val) = self.message {
             ser.write_string(&BADREQUESTEXCEPTION_MEMBER_MESSAGE, val)?;
+        }
+        if let Some(ref val) = self.reason {
+            ser.write_string(&BADREQUESTEXCEPTION_MEMBER_REASON, val.as_str())?;
         }
         Ok(())
     }
@@ -57,6 +70,13 @@ impl crate::types::error::builders::BadRequestExceptionBuilder {
                         deser.read_null()?;
                     } else {
                         self.message = Some(deser.read_string(member)?);
+                    }
+                }
+                Some(1) => {
+                    if deser.is_null() {
+                        deser.read_null()?;
+                    } else {
+                        self.reason = Some(crate::types::BadRequestExceptionReason::from(deser.read_string(member)?.as_str()));
                     }
                 }
                 _ => {}

@@ -21,6 +21,17 @@ pub struct UpdateDocumentInput {
     pub document_format: ::std::option::Option<crate::types::DocumentFormat>,
     /// <p>Specify a new target type for the document.</p>
     pub target_type: ::std::option::Option<::std::string::String>,
+    /// <p>The cloud providers that the new document version can run against. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> - The document runs against Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>Azure</code> - The document runs against Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> - The document runs against Google Cloud resources.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, the new version uses the cloud providers of the latest version.</p>
+    pub cloud_providers: ::std::option::Option<::std::vec::Vec<crate::types::CloudProvider>>,
 }
 impl UpdateDocumentInput {
     /// <p>A valid JSON or YAML string.</p>
@@ -59,6 +70,21 @@ impl UpdateDocumentInput {
     pub fn target_type(&self) -> ::std::option::Option<&str> {
         self.target_type.as_deref()
     }
+    /// <p>The cloud providers that the new document version can run against. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> - The document runs against Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>Azure</code> - The document runs against Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> - The document runs against Google Cloud resources.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, the new version uses the cloud providers of the latest version.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.cloud_providers.is_none()`.
+    pub fn cloud_providers(&self) -> &[crate::types::CloudProvider] {
+        self.cloud_providers.as_deref().unwrap_or_default()
+    }
 }
 impl UpdateDocumentInput {
     /// Creates a new builder-style object to manufacture [`UpdateDocumentInput`](crate::operation::update_document::UpdateDocumentInput).
@@ -79,6 +105,7 @@ pub struct UpdateDocumentInputBuilder {
     pub(crate) document_version: ::std::option::Option<::std::string::String>,
     pub(crate) document_format: ::std::option::Option<crate::types::DocumentFormat>,
     pub(crate) target_type: ::std::option::Option<::std::string::String>,
+    pub(crate) cloud_providers: ::std::option::Option<::std::vec::Vec<crate::types::CloudProvider>>,
 }
 impl UpdateDocumentInputBuilder {
     /// <p>A valid JSON or YAML string.</p>
@@ -207,6 +234,53 @@ impl UpdateDocumentInputBuilder {
     pub fn get_target_type(&self) -> &::std::option::Option<::std::string::String> {
         &self.target_type
     }
+    /// Appends an item to `cloud_providers`.
+    ///
+    /// To override the contents of this collection use [`set_cloud_providers`](Self::set_cloud_providers).
+    ///
+    /// <p>The cloud providers that the new document version can run against. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> - The document runs against Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>Azure</code> - The document runs against Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> - The document runs against Google Cloud resources.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, the new version uses the cloud providers of the latest version.</p>
+    pub fn cloud_providers(mut self, input: crate::types::CloudProvider) -> Self {
+        let mut v = self.cloud_providers.unwrap_or_default();
+        v.push(input);
+        self.cloud_providers = ::std::option::Option::Some(v);
+        self
+    }
+    /// <p>The cloud providers that the new document version can run against. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> - The document runs against Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>Azure</code> - The document runs against Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> - The document runs against Google Cloud resources.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, the new version uses the cloud providers of the latest version.</p>
+    pub fn set_cloud_providers(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::CloudProvider>>) -> Self {
+        self.cloud_providers = input;
+        self
+    }
+    /// <p>The cloud providers that the new document version can run against. Valid values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>AWS</code> - The document runs against Amazon Web Services resources.</p></li>
+    /// <li>
+    /// <p><code>Azure</code> - The document runs against Microsoft Azure resources.</p></li>
+    /// <li>
+    /// <p><code>GCP</code> - The document runs against Google Cloud resources.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a value, the new version uses the cloud providers of the latest version.</p>
+    pub fn get_cloud_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CloudProvider>> {
+        &self.cloud_providers
+    }
     /// Consumes the builder and constructs a [`UpdateDocumentInput`](crate::operation::update_document::UpdateDocumentInput).
     pub fn build(
         self,
@@ -220,6 +294,7 @@ impl UpdateDocumentInputBuilder {
             document_version: self.document_version,
             document_format: self.document_format,
             target_type: self.target_type,
+            cloud_providers: self.cloud_providers,
         })
     }
 }

@@ -156,4 +156,36 @@ impl ListTemplatesFluentBuilder {
     pub fn get_status(&self) -> &::std::option::Option<crate::types::EntityStatusFilter> {
         self.inner.get_status()
     }
+    /// <p>Specifies which templates to list. The default is <code>CUSTOMER</code>. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOMER</code> – Lists the templates in your account.</p></li>
+    /// <li>
+    /// <p><code>AWS</code> – Lists the AWS managed templates.</p></li>
+    /// </ul>
+    pub fn template_owner(mut self, input: crate::types::TemplateOwner) -> Self {
+        self.inner = self.inner.template_owner(input);
+        self
+    }
+    /// <p>Specifies which templates to list. The default is <code>CUSTOMER</code>. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOMER</code> – Lists the templates in your account.</p></li>
+    /// <li>
+    /// <p><code>AWS</code> – Lists the AWS managed templates.</p></li>
+    /// </ul>
+    pub fn set_template_owner(mut self, input: ::std::option::Option<crate::types::TemplateOwner>) -> Self {
+        self.inner = self.inner.set_template_owner(input);
+        self
+    }
+    /// <p>Specifies which templates to list. The default is <code>CUSTOMER</code>. Valid values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>CUSTOMER</code> – Lists the templates in your account.</p></li>
+    /// <li>
+    /// <p><code>AWS</code> – Lists the AWS managed templates.</p></li>
+    /// </ul>
+    pub fn get_template_owner(&self) -> &::std::option::Option<crate::types::TemplateOwner> {
+        self.inner.get_template_owner()
+    }
 }

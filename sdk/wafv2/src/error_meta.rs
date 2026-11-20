@@ -923,6 +923,56 @@ impl From<crate::operation::get_decrypted_api_key::GetDecryptedAPIKeyError> for 
         }
     }
 }
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_event::GetEventError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_event::GetEventError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_event::GetEventError> for Error {
+    fn from(err: crate::operation::get_event::GetEventError) -> Self {
+        match err {
+            crate::operation::get_event::GetEventError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::get_event::GetEventError::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::operation::get_event::GetEventError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::operation::get_event::GetEventError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::operation::get_event::GetEventError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_event_actor::GetEventActorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_event_actor::GetEventActorError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::get_event_actor::GetEventActorError> for Error {
+    fn from(err: crate::operation::get_event_actor::GetEventActorError) -> Self {
+        match err {
+            crate::operation::get_event_actor::GetEventActorError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::get_event_actor::GetEventActorError::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::operation::get_event_actor::GetEventActorError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::operation::get_event_actor::GetEventActorError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+            crate::operation::get_event_actor::GetEventActorError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
 impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::get_ip_set::GetIPSetError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
@@ -1531,6 +1581,91 @@ impl From<crate::operation::list_available_managed_rule_group_versions::ListAvai
             crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
             crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsError::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
             crate::operation::list_available_managed_rule_group_versions::ListAvailableManagedRuleGroupVersionsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_event_actors::ListEventActorsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_event_actors::ListEventActorsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_event_actors::ListEventActorsError> for Error {
+    fn from(err: crate::operation::list_event_actors::ListEventActorsError) -> Self {
+        match err {
+            crate::operation::list_event_actors::ListEventActorsError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::list_event_actors::ListEventActorsError::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::operation::list_event_actors::ListEventActorsError::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::operation::list_event_actors::ListEventActorsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_events::ListEventsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_events::ListEventsError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_events::ListEventsError> for Error {
+    fn from(err: crate::operation::list_events::ListEventsError) -> Self {
+        match err {
+            crate::operation::list_events::ListEventsError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::list_events::ListEventsError::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+            crate::operation::list_events::ListEventsError::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+            crate::operation::list_events::ListEventsError::Unhandled(inner) => Error::Unhandled(inner),
+        }
+    }
+}
+impl<R> From<::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_events_by_web_acl::ListEventsByWebACLError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::list_events_by_web_acl::ListEventsByWebACLError, R>) -> Self {
+        match err {
+            ::aws_smithy_runtime_api::client::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            _ => Error::Unhandled(crate::error::sealed_unhandled::Unhandled {
+                meta: ::aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                source: err.into(),
+            }),
+        }
+    }
+}
+impl From<crate::operation::list_events_by_web_acl::ListEventsByWebACLError> for Error {
+    fn from(err: crate::operation::list_events_by_web_acl::ListEventsByWebACLError) -> Self {
+        match err {
+            crate::operation::list_events_by_web_acl::ListEventsByWebACLError::WafInternalErrorException(inner) => {
+                Error::WafInternalErrorException(inner)
+            }
+            crate::operation::list_events_by_web_acl::ListEventsByWebACLError::WafInvalidOperationException(inner) => {
+                Error::WafInvalidOperationException(inner)
+            }
+            crate::operation::list_events_by_web_acl::ListEventsByWebACLError::WafInvalidParameterException(inner) => {
+                Error::WafInvalidParameterException(inner)
+            }
+            crate::operation::list_events_by_web_acl::ListEventsByWebACLError::WafNonexistentItemException(inner) => {
+                Error::WafNonexistentItemException(inner)
+            }
+            crate::operation::list_events_by_web_acl::ListEventsByWebACLError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

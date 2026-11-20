@@ -508,7 +508,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateVocabul
 #[non_exhaustive]
 #[derive(::std::fmt::Debug)]
 pub enum CreateVocabularyError {
-    /// <p>Your request didn't pass one or more validation tests. This can occur when the entity you're trying to delete doesn't exist or if it's in a non-terminal state (such as <code>IN PROGRESS</code>). See the exception message field for more information.</p>
+    /// <p>Your request didn't pass one or more validation tests. This can occur when a parameter has an invalid value, when you combine parameters in a way that isn't supported, when the entity you're trying to delete doesn't exist, or if it's in a non-terminal state (such as <code>IN PROGRESS</code>). See the exception message field for more information.</p>
     BadRequestException(crate::types::error::BadRequestException),
     /// <p>A resource already exists with this name. Resource names must be unique within an Amazon Web Services account.</p>
     ConflictException(crate::types::error::ConflictException),

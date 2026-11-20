@@ -619,6 +619,8 @@ pub(crate) mod shape_provider_detail_update;
 
 pub(crate) mod shape_provider_filter;
 
+pub(crate) mod shape_purl_qualifier_filter;
+
 pub(crate) mod shape_recommendation;
 
 pub(crate) mod shape_remediation;
@@ -648,6 +650,10 @@ pub(crate) mod shape_resource_state;
 pub(crate) mod shape_resource_status;
 
 pub(crate) mod shape_resource_string_filter;
+
+pub(crate) mod shape_runtime_reachability_filter;
+
+pub(crate) mod shape_runtime_reachability_reason_filter;
 
 pub(crate) mod shape_scan_status;
 

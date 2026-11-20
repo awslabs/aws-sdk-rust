@@ -39,6 +39,8 @@ pub struct CreateMicrovmImageOutput {
     pub hooks: ::std::option::Option<crate::types::Hooks>,
     /// <p>Environment variables set in the MicroVM runtime environment.</p>
     pub environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts the contents and metadata of your MicroVM image version. If you don't specify a key, your MicroVM image version uses an Amazon Web Services owned key.</p>
+    pub kms_key_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A set of key-value pairs that you can attach to the resource. Use tags to categorize resources for cost allocation, access control (ABAC), and organization.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The timestamp when the MicroVM image was last updated.</p>
@@ -132,6 +134,10 @@ impl CreateMicrovmImageOutput {
     pub fn environment_variables(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.environment_variables.as_ref()
     }
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts the contents and metadata of your MicroVM image version. If you don't specify a key, your MicroVM image version uses an Amazon Web Services owned key.</p>
+    pub fn kms_key_identifier(&self) -> ::std::option::Option<&str> {
+        self.kms_key_identifier.as_deref()
+    }
     /// <p>A set of key-value pairs that you can attach to the resource. Use tags to categorize resources for cost allocation, access control (ABAC), and organization.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
@@ -167,6 +173,7 @@ impl ::std::fmt::Debug for CreateMicrovmImageOutput {
         formatter.field("additional_os_capabilities", &self.additional_os_capabilities);
         formatter.field("hooks", &self.hooks);
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("kms_key_identifier", &self.kms_key_identifier);
         formatter.field("tags", &self.tags);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("image_version", &self.image_version);
@@ -208,6 +215,7 @@ pub struct CreateMicrovmImageOutputBuilder {
     pub(crate) additional_os_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
     pub(crate) hooks: ::std::option::Option<crate::types::Hooks>,
     pub(crate) environment_variables: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
+    pub(crate) kms_key_identifier: ::std::option::Option<::std::string::String>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) image_version: ::std::option::Option<::std::string::String>,
@@ -510,6 +518,20 @@ impl CreateMicrovmImageOutputBuilder {
     pub fn get_environment_variables(&self) -> &::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         &self.environment_variables
     }
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts the contents and metadata of your MicroVM image version. If you don't specify a key, your MicroVM image version uses an Amazon Web Services owned key.</p>
+    pub fn kms_key_identifier(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_identifier = ::std::option::Option::Some(input.into());
+        self
+    }
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts the contents and metadata of your MicroVM image version. If you don't specify a key, your MicroVM image version uses an Amazon Web Services owned key.</p>
+    pub fn set_kms_key_identifier(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.kms_key_identifier = input;
+        self
+    }
+    /// <p>The customer managed Amazon Web Services Key Management Service (Amazon Web Services KMS) key that encrypts the contents and metadata of your MicroVM image version. If you don't specify a key, your MicroVM image version uses an Amazon Web Services owned key.</p>
+    pub fn get_kms_key_identifier(&self) -> &::std::option::Option<::std::string::String> {
+        &self.kms_key_identifier
+    }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -630,6 +652,7 @@ impl CreateMicrovmImageOutputBuilder {
             additional_os_capabilities: self.additional_os_capabilities,
             hooks: self.hooks,
             environment_variables: self.environment_variables,
+            kms_key_identifier: self.kms_key_identifier,
             tags: self.tags,
             updated_at: self.updated_at,
             image_version: self.image_version.ok_or_else(|| {
@@ -663,6 +686,7 @@ impl ::std::fmt::Debug for CreateMicrovmImageOutputBuilder {
         formatter.field("additional_os_capabilities", &self.additional_os_capabilities);
         formatter.field("hooks", &self.hooks);
         formatter.field("environment_variables", &"*** Sensitive Data Redacted ***");
+        formatter.field("kms_key_identifier", &self.kms_key_identifier);
         formatter.field("tags", &self.tags);
         formatter.field("updated_at", &self.updated_at);
         formatter.field("image_version", &self.image_version);

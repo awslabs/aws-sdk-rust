@@ -162,4 +162,39 @@ impl ListFirewallsFluentBuilder {
     pub fn get_max_results(&self) -> &::std::option::Option<i32> {
         self.inner.get_max_results()
     }
+    /// <p>Specifies the firewall type to filter the results by. You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - Returns only internet gateway firewalls, which Amazon Web Services Network Security Manager creates and manages for your VPCs.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - Returns only standard Network Firewall firewalls.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a type, the default is to return firewalls of both types.</p>
+    pub fn firewall_type(mut self, input: crate::types::FirewallType) -> Self {
+        self.inner = self.inner.firewall_type(input);
+        self
+    }
+    /// <p>Specifies the firewall type to filter the results by. You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - Returns only internet gateway firewalls, which Amazon Web Services Network Security Manager creates and manages for your VPCs.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - Returns only standard Network Firewall firewalls.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a type, the default is to return firewalls of both types.</p>
+    pub fn set_firewall_type(mut self, input: ::std::option::Option<crate::types::FirewallType>) -> Self {
+        self.inner = self.inner.set_firewall_type(input);
+        self
+    }
+    /// <p>Specifies the firewall type to filter the results by. You can specify one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p><code>IGW_FIREWALL</code> - Returns only internet gateway firewalls, which Amazon Web Services Network Security Manager creates and manages for your VPCs.</p></li>
+    /// <li>
+    /// <p><code>FIREWALL</code> - Returns only standard Network Firewall firewalls.</p></li>
+    /// </ul>
+    /// <p>If you don't specify a type, the default is to return firewalls of both types.</p>
+    pub fn get_firewall_type(&self) -> &::std::option::Option<crate::types::FirewallType> {
+        self.inner.get_firewall_type()
+    }
 }

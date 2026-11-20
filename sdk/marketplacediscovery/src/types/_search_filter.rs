@@ -4,17 +4,203 @@
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchFilter {
-    /// <p>The type of filter to apply.</p>
+    /// <p>The type of filter to apply. See <code>filterValues</code> for the supported types and their values.</p>
     pub filter_type: crate::types::SearchFilterType,
-    /// <p>The values to filter by. Term filters accept multiple values (OR logic). Range filters (MIN/MAX_AVERAGE_CUSTOMER_RATING) accept a single value between 0.0 and 5.0.</p>
+    /// <p>The values to filter by. Term filters accept multiple values, and a result matches if it has any of them. Range filters accept a single value. The supported values for each <code>filterType</code> are as follows:</p>
+    /// <dl>
+    /// <dt>
+    /// CATEGORY
+    /// </dt>
+    /// <dd>
+    /// <p>One or more category identifiers. Matches listings in those categories.</p>
+    /// </dd>
+    /// <dt>
+    /// CERTIFICATES
+    /// </dt>
+    /// <dd>
+    /// <p>One or more certification identifiers, such as <code>ISO_27001</code> or <code>SOC2_TYPE_2</code>. Matches listings that hold those certifications.</p>
+    /// </dd>
+    /// <dt>
+    /// DEPLOYED_ON_AWS
+    /// </dt>
+    /// <dd>
+    /// <p>The single value <code>DEPLOYED_ON_AWS</code>. Matches listings whose products are deployed on AWS infrastructure.</p>
+    /// </dd>
+    /// <dt>
+    /// FULFILLMENT_OPTION_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>One or more fulfillment option types, such as <code>SAAS</code>, <code>AMAZON_MACHINE_IMAGE</code>, or <code>CONTAINER</code>. Matches listings that you can deploy or access in those ways.</p>
+    /// </dd>
+    /// <dt>
+    /// MAX_AVERAGE_CUSTOMER_RATING
+    /// </dt>
+    /// <dd>
+    /// <p>A single rating between <code>0.0</code> and <code>5.0</code>. Matches listings whose average customer rating is at or below that value.</p>
+    /// </dd>
+    /// <dt>
+    /// MIN_AVERAGE_CUSTOMER_RATING
+    /// </dt>
+    /// <dd>
+    /// <p>A single rating between <code>0.0</code> and <code>5.0</code>. Matches listings whose average customer rating is at or above that value.</p>
+    /// </dd>
+    /// <dt>
+    /// NUMBER_OF_PRODUCTS
+    /// </dt>
+    /// <dd>
+    /// <p><code>SINGLE_PRODUCT</code> or <code>MULTI_PRODUCT</code>. Matches single-product listings or multi-product solutions.</p>
+    /// </dd>
+    /// <dt>
+    /// PRICING_MODEL
+    /// </dt>
+    /// <dd>
+    /// <p>One or more of <code>BYOL</code>, <code>CONTRACT</code>, <code>FREE</code>, and <code>USAGE</code>. Matches listings with offers that use those pricing models.</p>
+    /// </dd>
+    /// <dt>
+    /// PRICING_UNIT
+    /// </dt>
+    /// <dd>
+    /// <p>One or more pricing units, such as <code>USERS</code>, <code>HOSTS</code>, or <code>REQUESTS</code>. Matches listings that bill by those units.</p>
+    /// </dd>
+    /// <dt>
+    /// PRODUCT_ID
+    /// </dt>
+    /// <dd>
+    /// <p>One or more product identifiers. Matches listings that contain those products.</p>
+    /// </dd>
+    /// <dt>
+    /// PUBLISHER
+    /// </dt>
+    /// <dd>
+    /// <p>One or more publisher identifiers. Matches listings from those sellers.</p>
+    /// </dd>
+    /// <dt>
+    /// SELLER_ENGAGEMENT
+    /// </dt>
+    /// <dd>
+    /// <p>One or more <code>SellerEngagementType</code> values, such as <code>BUY_NOW</code> or <code>REQUEST_FOR_DEMO</code>. Matches listings that offer those ways to engage with the seller.</p>
+    /// </dd>
+    /// <dt>
+    /// SPECIALIZATION
+    /// </dt>
+    /// <dd>
+    /// <p>One or more specialization identifiers. Matches listings that earned those specializations.</p>
+    /// </dd>
+    /// <dt>
+    /// SPECIALIZATION_CATEGORY
+    /// </dt>
+    /// <dd>
+    /// <p>One or more specialization category identifiers. Matches listings that earned a category under a specialization.</p>
+    /// </dd>
+    /// <dt>
+    /// TRUST_CENTER
+    /// </dt>
+    /// <dd>
+    /// <p>The single value <code>HAS_TRUST_CENTER</code>. Matches listings that have a trust center.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>Use <code>SearchFacets</code> to retrieve the values available for <code>CATEGORY</code>, <code>PUBLISHER</code>, <code>CERTIFICATES</code>, <code>SPECIALIZATION</code>, and <code>SPECIALIZATION_CATEGORY</code>.</p>
     pub filter_values: ::std::vec::Vec<::std::string::String>,
 }
 impl SearchFilter {
-    /// <p>The type of filter to apply.</p>
+    /// <p>The type of filter to apply. See <code>filterValues</code> for the supported types and their values.</p>
     pub fn filter_type(&self) -> &crate::types::SearchFilterType {
         &self.filter_type
     }
-    /// <p>The values to filter by. Term filters accept multiple values (OR logic). Range filters (MIN/MAX_AVERAGE_CUSTOMER_RATING) accept a single value between 0.0 and 5.0.</p>
+    /// <p>The values to filter by. Term filters accept multiple values, and a result matches if it has any of them. Range filters accept a single value. The supported values for each <code>filterType</code> are as follows:</p>
+    /// <dl>
+    /// <dt>
+    /// CATEGORY
+    /// </dt>
+    /// <dd>
+    /// <p>One or more category identifiers. Matches listings in those categories.</p>
+    /// </dd>
+    /// <dt>
+    /// CERTIFICATES
+    /// </dt>
+    /// <dd>
+    /// <p>One or more certification identifiers, such as <code>ISO_27001</code> or <code>SOC2_TYPE_2</code>. Matches listings that hold those certifications.</p>
+    /// </dd>
+    /// <dt>
+    /// DEPLOYED_ON_AWS
+    /// </dt>
+    /// <dd>
+    /// <p>The single value <code>DEPLOYED_ON_AWS</code>. Matches listings whose products are deployed on AWS infrastructure.</p>
+    /// </dd>
+    /// <dt>
+    /// FULFILLMENT_OPTION_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>One or more fulfillment option types, such as <code>SAAS</code>, <code>AMAZON_MACHINE_IMAGE</code>, or <code>CONTAINER</code>. Matches listings that you can deploy or access in those ways.</p>
+    /// </dd>
+    /// <dt>
+    /// MAX_AVERAGE_CUSTOMER_RATING
+    /// </dt>
+    /// <dd>
+    /// <p>A single rating between <code>0.0</code> and <code>5.0</code>. Matches listings whose average customer rating is at or below that value.</p>
+    /// </dd>
+    /// <dt>
+    /// MIN_AVERAGE_CUSTOMER_RATING
+    /// </dt>
+    /// <dd>
+    /// <p>A single rating between <code>0.0</code> and <code>5.0</code>. Matches listings whose average customer rating is at or above that value.</p>
+    /// </dd>
+    /// <dt>
+    /// NUMBER_OF_PRODUCTS
+    /// </dt>
+    /// <dd>
+    /// <p><code>SINGLE_PRODUCT</code> or <code>MULTI_PRODUCT</code>. Matches single-product listings or multi-product solutions.</p>
+    /// </dd>
+    /// <dt>
+    /// PRICING_MODEL
+    /// </dt>
+    /// <dd>
+    /// <p>One or more of <code>BYOL</code>, <code>CONTRACT</code>, <code>FREE</code>, and <code>USAGE</code>. Matches listings with offers that use those pricing models.</p>
+    /// </dd>
+    /// <dt>
+    /// PRICING_UNIT
+    /// </dt>
+    /// <dd>
+    /// <p>One or more pricing units, such as <code>USERS</code>, <code>HOSTS</code>, or <code>REQUESTS</code>. Matches listings that bill by those units.</p>
+    /// </dd>
+    /// <dt>
+    /// PRODUCT_ID
+    /// </dt>
+    /// <dd>
+    /// <p>One or more product identifiers. Matches listings that contain those products.</p>
+    /// </dd>
+    /// <dt>
+    /// PUBLISHER
+    /// </dt>
+    /// <dd>
+    /// <p>One or more publisher identifiers. Matches listings from those sellers.</p>
+    /// </dd>
+    /// <dt>
+    /// SELLER_ENGAGEMENT
+    /// </dt>
+    /// <dd>
+    /// <p>One or more <code>SellerEngagementType</code> values, such as <code>BUY_NOW</code> or <code>REQUEST_FOR_DEMO</code>. Matches listings that offer those ways to engage with the seller.</p>
+    /// </dd>
+    /// <dt>
+    /// SPECIALIZATION
+    /// </dt>
+    /// <dd>
+    /// <p>One or more specialization identifiers. Matches listings that earned those specializations.</p>
+    /// </dd>
+    /// <dt>
+    /// SPECIALIZATION_CATEGORY
+    /// </dt>
+    /// <dd>
+    /// <p>One or more specialization category identifiers. Matches listings that earned a category under a specialization.</p>
+    /// </dd>
+    /// <dt>
+    /// TRUST_CENTER
+    /// </dt>
+    /// <dd>
+    /// <p>The single value <code>HAS_TRUST_CENTER</code>. Matches listings that have a trust center.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>Use <code>SearchFacets</code> to retrieve the values available for <code>CATEGORY</code>, <code>PUBLISHER</code>, <code>CERTIFICATES</code>, <code>SPECIALIZATION</code>, and <code>SPECIALIZATION_CATEGORY</code>.</p>
     pub fn filter_values(&self) -> &[::std::string::String] {
         use std::ops::Deref;
         self.filter_values.deref()
@@ -35,18 +221,18 @@ pub struct SearchFilterBuilder {
     pub(crate) filter_values: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl SearchFilterBuilder {
-    /// <p>The type of filter to apply.</p>
+    /// <p>The type of filter to apply. See <code>filterValues</code> for the supported types and their values.</p>
     /// This field is required.
     pub fn filter_type(mut self, input: crate::types::SearchFilterType) -> Self {
         self.filter_type = ::std::option::Option::Some(input);
         self
     }
-    /// <p>The type of filter to apply.</p>
+    /// <p>The type of filter to apply. See <code>filterValues</code> for the supported types and their values.</p>
     pub fn set_filter_type(mut self, input: ::std::option::Option<crate::types::SearchFilterType>) -> Self {
         self.filter_type = input;
         self
     }
-    /// <p>The type of filter to apply.</p>
+    /// <p>The type of filter to apply. See <code>filterValues</code> for the supported types and their values.</p>
     pub fn get_filter_type(&self) -> &::std::option::Option<crate::types::SearchFilterType> {
         &self.filter_type
     }
@@ -54,19 +240,298 @@ impl SearchFilterBuilder {
     ///
     /// To override the contents of this collection use [`set_filter_values`](Self::set_filter_values).
     ///
-    /// <p>The values to filter by. Term filters accept multiple values (OR logic). Range filters (MIN/MAX_AVERAGE_CUSTOMER_RATING) accept a single value between 0.0 and 5.0.</p>
+    /// <p>The values to filter by. Term filters accept multiple values, and a result matches if it has any of them. Range filters accept a single value. The supported values for each <code>filterType</code> are as follows:</p>
+    /// <dl>
+    /// <dt>
+    /// CATEGORY
+    /// </dt>
+    /// <dd>
+    /// <p>One or more category identifiers. Matches listings in those categories.</p>
+    /// </dd>
+    /// <dt>
+    /// CERTIFICATES
+    /// </dt>
+    /// <dd>
+    /// <p>One or more certification identifiers, such as <code>ISO_27001</code> or <code>SOC2_TYPE_2</code>. Matches listings that hold those certifications.</p>
+    /// </dd>
+    /// <dt>
+    /// DEPLOYED_ON_AWS
+    /// </dt>
+    /// <dd>
+    /// <p>The single value <code>DEPLOYED_ON_AWS</code>. Matches listings whose products are deployed on AWS infrastructure.</p>
+    /// </dd>
+    /// <dt>
+    /// FULFILLMENT_OPTION_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>One or more fulfillment option types, such as <code>SAAS</code>, <code>AMAZON_MACHINE_IMAGE</code>, or <code>CONTAINER</code>. Matches listings that you can deploy or access in those ways.</p>
+    /// </dd>
+    /// <dt>
+    /// MAX_AVERAGE_CUSTOMER_RATING
+    /// </dt>
+    /// <dd>
+    /// <p>A single rating between <code>0.0</code> and <code>5.0</code>. Matches listings whose average customer rating is at or below that value.</p>
+    /// </dd>
+    /// <dt>
+    /// MIN_AVERAGE_CUSTOMER_RATING
+    /// </dt>
+    /// <dd>
+    /// <p>A single rating between <code>0.0</code> and <code>5.0</code>. Matches listings whose average customer rating is at or above that value.</p>
+    /// </dd>
+    /// <dt>
+    /// NUMBER_OF_PRODUCTS
+    /// </dt>
+    /// <dd>
+    /// <p><code>SINGLE_PRODUCT</code> or <code>MULTI_PRODUCT</code>. Matches single-product listings or multi-product solutions.</p>
+    /// </dd>
+    /// <dt>
+    /// PRICING_MODEL
+    /// </dt>
+    /// <dd>
+    /// <p>One or more of <code>BYOL</code>, <code>CONTRACT</code>, <code>FREE</code>, and <code>USAGE</code>. Matches listings with offers that use those pricing models.</p>
+    /// </dd>
+    /// <dt>
+    /// PRICING_UNIT
+    /// </dt>
+    /// <dd>
+    /// <p>One or more pricing units, such as <code>USERS</code>, <code>HOSTS</code>, or <code>REQUESTS</code>. Matches listings that bill by those units.</p>
+    /// </dd>
+    /// <dt>
+    /// PRODUCT_ID
+    /// </dt>
+    /// <dd>
+    /// <p>One or more product identifiers. Matches listings that contain those products.</p>
+    /// </dd>
+    /// <dt>
+    /// PUBLISHER
+    /// </dt>
+    /// <dd>
+    /// <p>One or more publisher identifiers. Matches listings from those sellers.</p>
+    /// </dd>
+    /// <dt>
+    /// SELLER_ENGAGEMENT
+    /// </dt>
+    /// <dd>
+    /// <p>One or more <code>SellerEngagementType</code> values, such as <code>BUY_NOW</code> or <code>REQUEST_FOR_DEMO</code>. Matches listings that offer those ways to engage with the seller.</p>
+    /// </dd>
+    /// <dt>
+    /// SPECIALIZATION
+    /// </dt>
+    /// <dd>
+    /// <p>One or more specialization identifiers. Matches listings that earned those specializations.</p>
+    /// </dd>
+    /// <dt>
+    /// SPECIALIZATION_CATEGORY
+    /// </dt>
+    /// <dd>
+    /// <p>One or more specialization category identifiers. Matches listings that earned a category under a specialization.</p>
+    /// </dd>
+    /// <dt>
+    /// TRUST_CENTER
+    /// </dt>
+    /// <dd>
+    /// <p>The single value <code>HAS_TRUST_CENTER</code>. Matches listings that have a trust center.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>Use <code>SearchFacets</code> to retrieve the values available for <code>CATEGORY</code>, <code>PUBLISHER</code>, <code>CERTIFICATES</code>, <code>SPECIALIZATION</code>, and <code>SPECIALIZATION_CATEGORY</code>.</p>
     pub fn filter_values(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.filter_values.unwrap_or_default();
         v.push(input.into());
         self.filter_values = ::std::option::Option::Some(v);
         self
     }
-    /// <p>The values to filter by. Term filters accept multiple values (OR logic). Range filters (MIN/MAX_AVERAGE_CUSTOMER_RATING) accept a single value between 0.0 and 5.0.</p>
+    /// <p>The values to filter by. Term filters accept multiple values, and a result matches if it has any of them. Range filters accept a single value. The supported values for each <code>filterType</code> are as follows:</p>
+    /// <dl>
+    /// <dt>
+    /// CATEGORY
+    /// </dt>
+    /// <dd>
+    /// <p>One or more category identifiers. Matches listings in those categories.</p>
+    /// </dd>
+    /// <dt>
+    /// CERTIFICATES
+    /// </dt>
+    /// <dd>
+    /// <p>One or more certification identifiers, such as <code>ISO_27001</code> or <code>SOC2_TYPE_2</code>. Matches listings that hold those certifications.</p>
+    /// </dd>
+    /// <dt>
+    /// DEPLOYED_ON_AWS
+    /// </dt>
+    /// <dd>
+    /// <p>The single value <code>DEPLOYED_ON_AWS</code>. Matches listings whose products are deployed on AWS infrastructure.</p>
+    /// </dd>
+    /// <dt>
+    /// FULFILLMENT_OPTION_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>One or more fulfillment option types, such as <code>SAAS</code>, <code>AMAZON_MACHINE_IMAGE</code>, or <code>CONTAINER</code>. Matches listings that you can deploy or access in those ways.</p>
+    /// </dd>
+    /// <dt>
+    /// MAX_AVERAGE_CUSTOMER_RATING
+    /// </dt>
+    /// <dd>
+    /// <p>A single rating between <code>0.0</code> and <code>5.0</code>. Matches listings whose average customer rating is at or below that value.</p>
+    /// </dd>
+    /// <dt>
+    /// MIN_AVERAGE_CUSTOMER_RATING
+    /// </dt>
+    /// <dd>
+    /// <p>A single rating between <code>0.0</code> and <code>5.0</code>. Matches listings whose average customer rating is at or above that value.</p>
+    /// </dd>
+    /// <dt>
+    /// NUMBER_OF_PRODUCTS
+    /// </dt>
+    /// <dd>
+    /// <p><code>SINGLE_PRODUCT</code> or <code>MULTI_PRODUCT</code>. Matches single-product listings or multi-product solutions.</p>
+    /// </dd>
+    /// <dt>
+    /// PRICING_MODEL
+    /// </dt>
+    /// <dd>
+    /// <p>One or more of <code>BYOL</code>, <code>CONTRACT</code>, <code>FREE</code>, and <code>USAGE</code>. Matches listings with offers that use those pricing models.</p>
+    /// </dd>
+    /// <dt>
+    /// PRICING_UNIT
+    /// </dt>
+    /// <dd>
+    /// <p>One or more pricing units, such as <code>USERS</code>, <code>HOSTS</code>, or <code>REQUESTS</code>. Matches listings that bill by those units.</p>
+    /// </dd>
+    /// <dt>
+    /// PRODUCT_ID
+    /// </dt>
+    /// <dd>
+    /// <p>One or more product identifiers. Matches listings that contain those products.</p>
+    /// </dd>
+    /// <dt>
+    /// PUBLISHER
+    /// </dt>
+    /// <dd>
+    /// <p>One or more publisher identifiers. Matches listings from those sellers.</p>
+    /// </dd>
+    /// <dt>
+    /// SELLER_ENGAGEMENT
+    /// </dt>
+    /// <dd>
+    /// <p>One or more <code>SellerEngagementType</code> values, such as <code>BUY_NOW</code> or <code>REQUEST_FOR_DEMO</code>. Matches listings that offer those ways to engage with the seller.</p>
+    /// </dd>
+    /// <dt>
+    /// SPECIALIZATION
+    /// </dt>
+    /// <dd>
+    /// <p>One or more specialization identifiers. Matches listings that earned those specializations.</p>
+    /// </dd>
+    /// <dt>
+    /// SPECIALIZATION_CATEGORY
+    /// </dt>
+    /// <dd>
+    /// <p>One or more specialization category identifiers. Matches listings that earned a category under a specialization.</p>
+    /// </dd>
+    /// <dt>
+    /// TRUST_CENTER
+    /// </dt>
+    /// <dd>
+    /// <p>The single value <code>HAS_TRUST_CENTER</code>. Matches listings that have a trust center.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>Use <code>SearchFacets</code> to retrieve the values available for <code>CATEGORY</code>, <code>PUBLISHER</code>, <code>CERTIFICATES</code>, <code>SPECIALIZATION</code>, and <code>SPECIALIZATION_CATEGORY</code>.</p>
     pub fn set_filter_values(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
         self.filter_values = input;
         self
     }
-    /// <p>The values to filter by. Term filters accept multiple values (OR logic). Range filters (MIN/MAX_AVERAGE_CUSTOMER_RATING) accept a single value between 0.0 and 5.0.</p>
+    /// <p>The values to filter by. Term filters accept multiple values, and a result matches if it has any of them. Range filters accept a single value. The supported values for each <code>filterType</code> are as follows:</p>
+    /// <dl>
+    /// <dt>
+    /// CATEGORY
+    /// </dt>
+    /// <dd>
+    /// <p>One or more category identifiers. Matches listings in those categories.</p>
+    /// </dd>
+    /// <dt>
+    /// CERTIFICATES
+    /// </dt>
+    /// <dd>
+    /// <p>One or more certification identifiers, such as <code>ISO_27001</code> or <code>SOC2_TYPE_2</code>. Matches listings that hold those certifications.</p>
+    /// </dd>
+    /// <dt>
+    /// DEPLOYED_ON_AWS
+    /// </dt>
+    /// <dd>
+    /// <p>The single value <code>DEPLOYED_ON_AWS</code>. Matches listings whose products are deployed on AWS infrastructure.</p>
+    /// </dd>
+    /// <dt>
+    /// FULFILLMENT_OPTION_TYPE
+    /// </dt>
+    /// <dd>
+    /// <p>One or more fulfillment option types, such as <code>SAAS</code>, <code>AMAZON_MACHINE_IMAGE</code>, or <code>CONTAINER</code>. Matches listings that you can deploy or access in those ways.</p>
+    /// </dd>
+    /// <dt>
+    /// MAX_AVERAGE_CUSTOMER_RATING
+    /// </dt>
+    /// <dd>
+    /// <p>A single rating between <code>0.0</code> and <code>5.0</code>. Matches listings whose average customer rating is at or below that value.</p>
+    /// </dd>
+    /// <dt>
+    /// MIN_AVERAGE_CUSTOMER_RATING
+    /// </dt>
+    /// <dd>
+    /// <p>A single rating between <code>0.0</code> and <code>5.0</code>. Matches listings whose average customer rating is at or above that value.</p>
+    /// </dd>
+    /// <dt>
+    /// NUMBER_OF_PRODUCTS
+    /// </dt>
+    /// <dd>
+    /// <p><code>SINGLE_PRODUCT</code> or <code>MULTI_PRODUCT</code>. Matches single-product listings or multi-product solutions.</p>
+    /// </dd>
+    /// <dt>
+    /// PRICING_MODEL
+    /// </dt>
+    /// <dd>
+    /// <p>One or more of <code>BYOL</code>, <code>CONTRACT</code>, <code>FREE</code>, and <code>USAGE</code>. Matches listings with offers that use those pricing models.</p>
+    /// </dd>
+    /// <dt>
+    /// PRICING_UNIT
+    /// </dt>
+    /// <dd>
+    /// <p>One or more pricing units, such as <code>USERS</code>, <code>HOSTS</code>, or <code>REQUESTS</code>. Matches listings that bill by those units.</p>
+    /// </dd>
+    /// <dt>
+    /// PRODUCT_ID
+    /// </dt>
+    /// <dd>
+    /// <p>One or more product identifiers. Matches listings that contain those products.</p>
+    /// </dd>
+    /// <dt>
+    /// PUBLISHER
+    /// </dt>
+    /// <dd>
+    /// <p>One or more publisher identifiers. Matches listings from those sellers.</p>
+    /// </dd>
+    /// <dt>
+    /// SELLER_ENGAGEMENT
+    /// </dt>
+    /// <dd>
+    /// <p>One or more <code>SellerEngagementType</code> values, such as <code>BUY_NOW</code> or <code>REQUEST_FOR_DEMO</code>. Matches listings that offer those ways to engage with the seller.</p>
+    /// </dd>
+    /// <dt>
+    /// SPECIALIZATION
+    /// </dt>
+    /// <dd>
+    /// <p>One or more specialization identifiers. Matches listings that earned those specializations.</p>
+    /// </dd>
+    /// <dt>
+    /// SPECIALIZATION_CATEGORY
+    /// </dt>
+    /// <dd>
+    /// <p>One or more specialization category identifiers. Matches listings that earned a category under a specialization.</p>
+    /// </dd>
+    /// <dt>
+    /// TRUST_CENTER
+    /// </dt>
+    /// <dd>
+    /// <p>The single value <code>HAS_TRUST_CENTER</code>. Matches listings that have a trust center.</p>
+    /// </dd>
+    /// </dl>
+    /// <p>Use <code>SearchFacets</code> to retrieve the values available for <code>CATEGORY</code>, <code>PUBLISHER</code>, <code>CERTIFICATES</code>, <code>SPECIALIZATION</code>, and <code>SPECIALIZATION_CATEGORY</code>.</p>
     pub fn get_filter_values(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.filter_values
     }

@@ -4,6 +4,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 
 | Service | Package |
 | ------- | ------- |
+| APIPortal | [aws-sdk-apiportal](https://crates.io/crates/aws-sdk-apiportal) ([docs](https://docs.rs/aws-sdk-apiportal)) |
 | ARC - Region switch | [aws-sdk-arcregionswitch](https://crates.io/crates/aws-sdk-arcregionswitch) ([docs](https://docs.rs/aws-sdk-arcregionswitch)) |
 | AWS AI Ops | [aws-sdk-aiops](https://crates.io/crates/aws-sdk-aiops) ([docs](https://docs.rs/aws-sdk-aiops)) |
 | AWS ARC - Zonal Shift | [aws-sdk-arczonalshift](https://crates.io/crates/aws-sdk-arczonalshift) ([docs](https://docs.rs/aws-sdk-arczonalshift)) |
@@ -130,6 +131,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | AWS Organizations | [aws-sdk-organizations](https://crates.io/crates/aws-sdk-organizations) ([docs](https://docs.rs/aws-sdk-organizations)) |
 | AWS Outposts | [aws-sdk-outposts](https://crates.io/crates/aws-sdk-outposts) ([docs](https://docs.rs/aws-sdk-outposts)) |
 | AWS Parallel Computing Service | [aws-sdk-pcs](https://crates.io/crates/aws-sdk-pcs) ([docs](https://docs.rs/aws-sdk-pcs)) |
+| AWS Payments | [aws-sdk-payments](https://crates.io/crates/aws-sdk-payments) ([docs](https://docs.rs/aws-sdk-payments)) |
 | AWS Performance Insights | [aws-sdk-pi](https://crates.io/crates/aws-sdk-pi) ([docs](https://docs.rs/aws-sdk-pi)) |
 | AWS Price List Service | [aws-sdk-pricing](https://crates.io/crates/aws-sdk-pricing) ([docs](https://docs.rs/aws-sdk-pricing)) |
 | AWS Proton | [aws-sdk-proton](https://crates.io/crates/aws-sdk-proton) ([docs](https://docs.rs/aws-sdk-proton)) |
@@ -190,6 +192,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Access Analyzer | [aws-sdk-accessanalyzer](https://crates.io/crates/aws-sdk-accessanalyzer) ([docs](https://docs.rs/aws-sdk-accessanalyzer)) |
 | Account Access | [aws-sdk-accountaccess](https://crates.io/crates/aws-sdk-accountaccess) ([docs](https://docs.rs/aws-sdk-accountaccess)) |
 | Account Access Runtime | [aws-sdk-accountaccessruntime](https://crates.io/crates/aws-sdk-accountaccessruntime) ([docs](https://docs.rs/aws-sdk-accountaccessruntime)) |
+| Agent Discovery | [aws-sdk-agentdiscovery](https://crates.io/crates/aws-sdk-agentdiscovery) ([docs](https://docs.rs/aws-sdk-agentdiscovery)) |
 | Agent Registry | [aws-sdk-agentregistry](https://crates.io/crates/aws-sdk-agentregistry) ([docs](https://docs.rs/aws-sdk-agentregistry)) |
 | Agent Registry Control | [aws-sdk-agentregistrycontrol](https://crates.io/crates/aws-sdk-agentregistrycontrol) ([docs](https://docs.rs/aws-sdk-agentregistrycontrol)) |
 | Agents for Amazon Bedrock | [aws-sdk-bedrockagent](https://crates.io/crates/aws-sdk-bedrockagent) ([docs](https://docs.rs/aws-sdk-bedrockagent)) |
@@ -341,6 +344,7 @@ The AWS SDK for Rust contains one crate for each AWS service, as well as [aws-co
 | Amazon S3 Vectors | [aws-sdk-s3vectors](https://crates.io/crates/aws-sdk-s3vectors) ([docs](https://docs.rs/aws-sdk-s3vectors)) |
 | Amazon S3 on Outposts | [aws-sdk-s3outposts](https://crates.io/crates/aws-sdk-s3outposts) ([docs](https://docs.rs/aws-sdk-s3outposts)) |
 | Amazon SageMaker Feature Store Runtime | [aws-sdk-sagemakerfeaturestoreruntime](https://crates.io/crates/aws-sdk-sagemakerfeaturestoreruntime) ([docs](https://docs.rs/aws-sdk-sagemakerfeaturestoreruntime)) |
+| Amazon SageMaker Gateway Runtime | [aws-sdk-sagemakergatewayruntime](https://crates.io/crates/aws-sdk-sagemakergatewayruntime) ([docs](https://docs.rs/aws-sdk-sagemakergatewayruntime)) |
 | Amazon SageMaker Inference Router Runtime | [aws-sdk-sagemakerinferencerouterruntime](https://crates.io/crates/aws-sdk-sagemakerinferencerouterruntime) ([docs](https://docs.rs/aws-sdk-sagemakerinferencerouterruntime)) |
 | Amazon SageMaker Metrics Service | [aws-sdk-sagemakermetrics](https://crates.io/crates/aws-sdk-sagemakermetrics) ([docs](https://docs.rs/aws-sdk-sagemakermetrics)) |
 | Amazon SageMaker Runtime | [aws-sdk-sagemakerruntime](https://crates.io/crates/aws-sdk-sagemakerruntime) ([docs](https://docs.rs/aws-sdk-sagemakerruntime)) |
